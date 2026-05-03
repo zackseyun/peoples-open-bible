@@ -1,20 +1,26 @@
 #!/usr/bin/env python3
-"""azure_bulk_revise.py — bulk Azure GPT-5.4 revision pass for all COB verses.
+"""azure_bulk_revise.py — bulk Azure GPT-5 revision pass for all COB verses.
 
 Scans every verse YAML that lacks a `revision_pass` block and calls
-Azure GPT-5.4 to review and improve the draft translation.
+Azure GPT-5 to review and improve the draft translation.
+
+For 1 Enoch verses, automatically loads both the Charles 1906 and Dillmann
+1851 Ge'ez witnesses via tools/enoch/multi_witness.py and adds an explicit
+completeness check to catch any remaining OCR-truncation blind spots.
 
 Usage:
     python3 tools/azure_bulk_revise.py
     python3 tools/azure_bulk_revise.py --concurrency 20
     python3 tools/azure_bulk_revise.py --testament nt        # nt | ot | extra_canonical
+    python3 tools/azure_bulk_revise.py --book 1_enoch        # path substring filter
     python3 tools/azure_bulk_revise.py --dry-run             # count only, no API calls
-    python3 tools/azure_bulk_revise.py --limit 100           # process at most N verses
+    python3 tools/azure_bulk_revise.py --limit 5             # slow-ramp: start small
+    python3 tools/azure_bulk_revise.py --progress-interval 5 # print every N verses
 
 Env (auto-loaded from AWS Secrets Manager if not set):
     AZURE_OPENAI_ENDPOINT
     AZURE_OPENAI_API_KEY
-    AZURE_OPENAI_DEPLOYMENT_ID  (default: gpt-5-4-deployment)
+    AZURE_OPENAI_DEPLOYMENT_ID  (default: gpt-5-deployment)
     AZURE_OPENAI_API_VERSION    (default: 2025-04-01-preview)
 """
 from __future__ import annotations
@@ -39,9 +45,32 @@ REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 TRANSLATION_ROOT = REPO_ROOT / "translation"
 REVISION_POLICY_FILE = REPO_ROOT / "tools" / "prompts" / "revision_policy.md"
 
-DEFAULT_DEPLOYMENT = os.environ.get("AZURE_OPENAI_DEPLOYMENT_ID", "gpt-5-4-deployment")
+DEFAULT_DEPLOYMENT = os.environ.get("AZURE_OPENAI_DEPLOYMENT_ID", "gpt-5-deployment")
 DEFAULT_API_VERSION = os.environ.get("AZURE_OPENAI_API_VERSION", "2025-04-01-preview")
+MODEL_LABEL = "gpt-5"
+ADJUDICATOR_LABEL = "azure-gpt-5-revision-pass"
 REVISION_TOOL_NAME = "submit_verse_revision"
+
+MINI_DEPLOYMENT = "gpt-5-4-mini-deployment"
+MINI_API_VERSION = "2025-04-01-preview"
+MINI_MODEL_LABEL = "gpt-5.4-mini"
+MINI_ADJUDICATOR_LABEL = "azure-gpt-5.4-mini-revision-pass"
+
+# Lazily import multi_witness only when needed (avoids boto3/yaml import at module level)
+_multi_witness = None
+
+def _get_multi_witness():
+    global _multi_witness
+    if _multi_witness is None:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location(
+            "multi_witness",
+            REPO_ROOT / "tools" / "enoch" / "multi_witness.py",
+        )
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        _multi_witness = mod
+    return _multi_witness
 
 
 def _load_revision_policy() -> str:
@@ -57,10 +86,14 @@ Your job: perform a focused revision pass on one verse's draft English translati
 
 Review the draft for:
 1. Lexical accuracy — does the English faithfully represent the source words and their range?
-2. Completeness — are all source words accounted for (no unintended omissions)?
+2. Completeness — are ALL source words accounted for? Do NOT assume completeness just because \
+the English reads naturally. Verify every clause in the source has a counterpart in the English.
 3. Natural English — is it readable without paraphrase or interpretive expansion?
 4. Consistency — are key terms rendered consistently within the verse?
 5. Register — is the tone appropriate for a formal translation?
+
+If a SECONDARY WITNESS is provided alongside the primary source, use it to cross-check \
+completeness and catch any content present in one witness but absent from the other.
 
 Translation philosophy: optimal equivalence (balanced formal/dynamic).
 
@@ -117,12 +150,18 @@ def utc_now() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
-def load_azure_credentials() -> tuple[str, str]:
-    """Return (endpoint, api_key), loading from AWS Secrets Manager if needed."""
+def load_azure_credentials(mini: bool = False) -> tuple[str, str]:
+    """Return (endpoint, api_key) for the selected model tier."""
+    if mini:
+        env_ep = os.environ.get("AZURE_MINI_ENDPOINT", "").strip().rstrip("/")
+        env_key = os.environ.get("AZURE_MINI_API_KEY", "").strip()
+        if env_ep and env_key:
+            return env_ep, env_key
+
     endpoint = os.environ.get("AZURE_OPENAI_ENDPOINT", "").strip().rstrip("/")
     api_key = os.environ.get("AZURE_OPENAI_API_KEY", "").strip()
 
-    if endpoint and api_key:
+    if endpoint and api_key and not mini:
         return endpoint, api_key
 
     print("Loading Azure credentials from AWS Secrets Manager...", flush=True)
@@ -136,12 +175,24 @@ def load_azure_credentials() -> tuple[str, str]:
         text=True,
     ).strip()
     obj = json.loads(raw)
-    endpoint = obj.get("endpoint", "").rstrip("/")
-    api_key = obj.get("api_key", "")
-    if not endpoint or not api_key:
-        raise RuntimeError(f"Incomplete Azure credentials in secret: {list(obj.keys())}")
-    os.environ["AZURE_OPENAI_ENDPOINT"] = endpoint
-    os.environ["AZURE_OPENAI_API_KEY"] = api_key
+
+    if mini:
+        endpoint = obj.get("mini_endpoint", "").rstrip("/")
+        api_key = obj.get("mini_api_key", "")
+        if not endpoint or not api_key:
+            raise RuntimeError("mini_endpoint / mini_api_key not found in secret")
+        os.environ["AZURE_MINI_ENDPOINT"] = endpoint
+        os.environ["AZURE_MINI_API_KEY"] = api_key
+        os.environ["AZURE_OPENAI_DEPLOYMENT_ID"] = MINI_DEPLOYMENT
+        os.environ["AZURE_OPENAI_API_VERSION"] = MINI_API_VERSION
+    else:
+        endpoint = obj.get("endpoint", "").rstrip("/")
+        api_key = obj.get("api_key", "")
+        if not endpoint or not api_key:
+            raise RuntimeError(f"Incomplete Azure credentials in secret: {list(obj.keys())}")
+        os.environ["AZURE_OPENAI_ENDPOINT"] = endpoint
+        os.environ["AZURE_OPENAI_API_KEY"] = api_key
+
     print(f"  endpoint: {endpoint[:50]}...", flush=True)
     return endpoint, api_key
 
@@ -173,9 +224,7 @@ def call_azure(
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": user_text},
         ],
-        "temperature": 0.1,
         "max_completion_tokens": 8000,
-        "parallel_tool_calls": False,
         "tool_choice": {"type": "function", "function": {"name": REVISION_TOOL_NAME}},
         "tools": [REVISION_TOOL],
     }
@@ -225,6 +274,36 @@ def needs_revision(data: dict[str, Any]) -> bool:
     return "revision_pass" not in data
 
 
+def _enoch_witness_block(path: pathlib.Path, data: dict[str, Any]) -> str:
+    """Return a Dillmann 1851 context block for 1 Enoch verses, or '' otherwise."""
+    if "1_enoch" not in str(path):
+        return ""
+    ref_id = str(data.get("id") or "")
+    # id format: 1EN.{chapter}.{verse}
+    parts = ref_id.split(".")
+    if len(parts) != 3:
+        return ""
+    try:
+        chapter, verse = int(parts[1]), int(parts[2])
+    except ValueError:
+        return ""
+    try:
+        mw = _get_multi_witness()
+        ws = mw.load_verse(chapter, verse)
+        if ws is None:
+            return ""
+        dillmann = ws.geez_dillmann
+        if dillmann is None:
+            return ""
+        return (
+            f"\n\nDILLMANN 1851 SECONDARY WITNESS (independent Ge'ez edition — "
+            f"use to cross-check completeness; spelling variants are normal):\n"
+            f"{dillmann.text}"
+        )
+    except Exception:
+        return ""
+
+
 def revise_verse(
     path: pathlib.Path,
     endpoint: str,
@@ -246,8 +325,17 @@ def revise_verse(
     current_text = str(translation.get("text") or "").strip()
     reference = str(data.get("reference") or path.stem)
 
-    if not source_text or not current_text:
-        return {"path": str(path), "error": "missing source or translation text"}
+    # Skip chapter-level YAMLs (they store source as rows, not text)
+    if (data.get("source") or {}).get("rows"):
+        return {"path": str(path), "status": "skipped", "reason": "chapter-level yaml"}
+
+    if not current_text:
+        return {"path": str(path), "status": "skipped", "reason": "no translation text"}
+
+    # Proceed even without source text — review on English quality only
+    if not source_text:
+        source_text = "(source text not available for this verse)"
+        source_language = str(source.get("language") or "unknown").strip()
 
     # Build context: lexical decisions, footnotes, prior revisions
     context_parts = []
@@ -276,6 +364,9 @@ def revise_verse(
         )
     context_block = ("\n\n" + "\n\n".join(context_parts)) if context_parts else ""
 
+    # Append Dillmann secondary witness for 1 Enoch verses
+    context_block += _enoch_witness_block(path, data)
+
     try:
         args = call_azure(
             endpoint,
@@ -298,7 +389,7 @@ def revise_verse(
 
     # Build revision_pass block
     revision_pass = {
-        "model": "gpt-5.4",
+        "model": MODEL_LABEL,
         "timestamp": utc_now(),
         "unchanged": unchanged,
         "changes_summary": changes_summary,
@@ -313,8 +404,8 @@ def revise_verse(
         revisions = data.setdefault("revisions", [])
         revisions.append({
             "timestamp": utc_now(),
-            "adjudicator": "azure-gpt-5.4-revision-pass",
-            "reviewer_model": "gpt-5.4",
+            "adjudicator": ADJUDICATOR_LABEL,
+            "reviewer_model": MODEL_LABEL,
             "category": "revision_pass",
             "from": current_text,
             "to": revised_text,
@@ -350,12 +441,17 @@ def collect_verse_paths(testaments: list[str]) -> list[pathlib.Path]:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Bulk Azure GPT-5.4 revision pass")
+    parser = argparse.ArgumentParser(description="Bulk Azure GPT-5 revision pass")
     parser.add_argument(
         "--testament", "-t",
         nargs="*",
         default=["nt", "ot", "extra_canonical", "deuterocanon"],
         help="Testaments to process (default: all)",
+    )
+    parser.add_argument(
+        "--book",
+        default="",
+        help="Optional path substring filter, e.g. '1_enoch' or 'matthew'",
     )
     parser.add_argument(
         "--concurrency", "-j",
@@ -372,14 +468,37 @@ def main() -> None:
         "--limit",
         type=int,
         default=0,
-        help="Process at most N verses (0 = all)",
+        help="Process at most N verses (0 = all). Start small to verify.",
+    )
+    parser.add_argument(
+        "--progress-interval",
+        type=int,
+        default=10,
+        help="Print progress every N completed verses (default: 10)",
+    )
+    parser.add_argument(
+        "--mini",
+        action="store_true",
+        help="Use o3-mini (westus) instead of GPT-5 (eastus2) — faster and cheaper",
     )
     args = parser.parse_args()
 
-    endpoint, api_key = load_azure_credentials()
+    # Select model labels based on --mini flag
+    if args.mini:
+        global MODEL_LABEL, ADJUDICATOR_LABEL, DEFAULT_DEPLOYMENT, DEFAULT_API_VERSION
+        MODEL_LABEL = MINI_MODEL_LABEL
+        ADJUDICATOR_LABEL = MINI_ADJUDICATOR_LABEL
+        DEFAULT_DEPLOYMENT = MINI_DEPLOYMENT
+        DEFAULT_API_VERSION = MINI_API_VERSION
+
+    endpoint, api_key = load_azure_credentials(mini=args.mini)
 
     print(f"Scanning {args.testament}...", flush=True)
     all_paths = collect_verse_paths(args.testament)
+
+    if args.book:
+        all_paths = [p for p in all_paths if args.book in str(p)]
+        print(f"  (filtered to paths containing '{args.book}')", flush=True)
 
     pending = [p for p in all_paths if needs_revision(yaml.safe_load(p.read_text(encoding="utf-8")) or {})]
     total = len(pending)
@@ -410,19 +529,26 @@ def main() -> None:
                 else:
                     _stats["unchanged"] += 1
                 done = _stats["processed"]
-                if done % 100 == 0:
+                interval = args.progress_interval if hasattr(args, "progress_interval") else 10
+                if done % interval == 0 or done == total:
                     elapsed = time.monotonic() - start
-                    rate = done / elapsed * 60
-                    remaining = (total - done) / (done / elapsed) if done else 0
+                    rate = done / elapsed * 60 if elapsed > 0 else 0
+                    remaining = (total - done) / (done / elapsed) if done and elapsed else 0
                     print(
-                        f"  [{done}/{total}] {rate:.0f}/min "
-                        f"changed={_stats['changed']} errors={_stats['errors']} "
-                        f"~{remaining/60:.1f}min remaining",
+                        f"  [{done}/{total}] {rate:.0f} v/min "
+                        f"changed={_stats['changed']} unchanged={_stats['unchanged']} "
+                        f"errors={_stats['errors']} ~{remaining/60:.1f}min left",
                         flush=True,
                     )
         return result
 
-    print(f"\nStarting revision pass ({args.concurrency} workers)...", flush=True)
+    limit_note = f" limit={args.limit}" if args.limit else ""
+    book_note = f" book={args.book}" if args.book else ""
+    print(
+        f"\nStarting revision pass — model={MODEL_LABEL} deployment={DEFAULT_DEPLOYMENT} "
+        f"workers={args.concurrency}{limit_note}{book_note}",
+        flush=True,
+    )
     with ThreadPoolExecutor(max_workers=args.concurrency) as pool:
         futures = {pool.submit(worker, p): p for p in pending}
         for fut in as_completed(futures):

@@ -1,12 +1,12 @@
 # Methodology
 
 The People's Open Bible is produced by a pipeline that treats every verse
-as auditable: each rendering is committed to this repository alongside
-its source text, the OCR evidence behind that source text, the prompt
-and model that drafted it, the revision pass that read it against the
-source, and any subsequent edit with its rationale. This document
-describes how that pipeline actually works in practice — including the
-parts that took two or three tries to get right.
+as auditable. Each rendering is committed alongside the source text
+behind it, the draft/revision metadata that shaped it, and any later
+edit with its rationale. This document is a reproducibility map: it
+shows the sources, review layers, and public artifacts someone would
+need in order to inspect or reproduce the results without replaying
+our internal work log step by step.
 
 ## Pipeline overview
 
@@ -29,26 +29,26 @@ lexical defaults, see [DOCTRINE.md](DOCTRINE.md) and
 [PHILOSOPHY.md](PHILOSOPHY.md). For the source-licensing inventory,
 see [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md).
 
-## How the work was actually built
+## Reproducible workflow at a glance
 
-The translation came together in four overlapping bodies of work,
-not in tidy sequence. Internally we tracked these as numbered phases;
-the phase numbers are kept in commit messages and in the operational
-phase docs under `docs/`, but the public-facing narrative is more
-honestly told as four chapters.
+The translation came together across four overlapping corpora. The
+details below are not meant as a run-by-run history; they name the
+source families, repeatable checks, and durable outputs that matter
+for reproducing or auditing the work.
 
-### Chapter 1 — Canonical drafting
+### Chapter 1 — Canonical corpus
 
-| Stage | Corpus | What it solved |
+| Reproducible step | Scope | What to inspect or repeat |
 |---|---|---|
-| Pilot | Philippians | Proved the four-stage per-verse loop end-to-end on one short epistle. |
-| First full-scale draft | Pauline epistles (Romans → Philemon, ~1,925 verses) | First production-scale draft. The first revision runbook ([docs/PHASE1_REVISION_RUNBOOK.md](docs/PHASE1_REVISION_RUNBOOK.md)) was written here, and the global Χριστός → Messiah and μετανοέω rule decisions were made off the back of this corpus. |
-| Continuous run | The remaining 53 canonical books — Gospels, Acts, Catholic Epistles, Revelation, plus the entire Hebrew Bible (Genesis through Malachi) | Drafted continuously after the Pauline pass, without further milestone tagging. ~28,000 verses. Same per-verse pipeline; same drafter (GPT-5.4); same DOCTRINE-anchored prompt. |
+| Source selection | New Testament + Hebrew Bible | Use the canonical source bundles named in Stage 1: SBLGNT for the Greek New Testament, WLC/UHB for the Hebrew Bible, and the project-level source/licensing inventory in [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md). |
+| Draft generation | Every canonical verse | Re-run the same per-verse draft pattern: source text + doctrine/philosophy anchors + versioned prompt/model metadata. The output is stored as verse YAML, not as an opaque compiled file. |
+| Review and revision | Same canonical corpus | Run the source-facing review pass and inspect each verse's `revisions` block to see whether the reviewer changed the draft, accepted it unchanged, or preserved an alternate reading. |
 
-This continuous canonical run is the largest single body of work in
-the project — about two-thirds of all verses — and the part most
-often elided by phase-table summaries. It is included here for
-honesty.
+The internal pilot and milestone order are preserved in commit history
+and older operational docs, but they are not the important thing to
+reproduce. For a reader or outside reviewer, the repeatable unit is
+the verse record: source evidence, draft metadata, review result, and
+published artifact.
 
 ### Chapter 2 — Deuterocanon
 

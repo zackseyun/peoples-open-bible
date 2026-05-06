@@ -14,9 +14,9 @@ our internal work log step by step.
   source text  ──▶  AI draft     ──▶  revision pass    ──▶  spot fix         ──▶  publication
   (SBLGNT,         (GPT-5.4,          (Gemini 3.1 Pro       (Claude Opus 4.7      (commit +
    WLC, UHB,        prompt             reads draft           on individual         tagged
-   Swete LXX,       anchored           against source;       verses where          release +
-   Charles APOT,    in DOCTRINE)       applies edits         another set of        CDN publish)
-   Bensly Latin,                       or marks              eyes is useful)
+   Swete LXX,       anchored           against source;       verses to fight       release +
+   Charles APOT,    in DOCTRINE)       applies edits         against same-model    CDN publish)
+   Bensly Latin,                       or marks              bias)
    Charles 1895                        unchanged)
    Ge'ez,
    Coptic NHC)

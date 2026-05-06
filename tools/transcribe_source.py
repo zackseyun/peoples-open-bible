@@ -64,7 +64,7 @@ def azure_api_version() -> str:
 def fetch_swete_image(vol: int, page: int, width: int) -> tuple[bytes, str]:
     basename = SWETE_VOL_BASENAME[vol]
     url = SWETE_PAGE_URL_TEMPLATE.format(item=SWETE_ARCHIVE_ITEM, basename=basename, page=page, width=width)
-    req = urllib.request.Request(url, headers={"User-Agent": "cartha-open-bible/1.0"})
+    req = urllib.request.Request(url, headers={"User-Agent": "peoples-open-bible/1.0"})
     with urllib.request.urlopen(req, timeout=60) as r:
         return r.read(), url
 

@@ -1,8 +1,9 @@
-# CodeBuild operations for Public Open Bible
+# CodeBuild operations for People's Open Bible
 
 GitHub Actions are disabled for this repository. The operational jobs now run in AWS CodeBuild so GitHub runner minutes stay out of the critical path.
 
-> Note: `zackseyun/cartha-open-bible` is public, so its standard GitHub-hosted Actions minutes generally do **not** count against the private-account included-minute quota. The migration is still useful because it centralizes operational jobs in AWS, uses AWS-native IAM, and removes noisy/failing Actions runs.
+> Note: `zackseyun/peoples-open-bible` is public, so its standard GitHub-hosted Actions minutes generally do **not** count against the private-account included-minute quota. The migration is still useful because it centralizes operational jobs in AWS, uses AWS-native IAM, and removes noisy/failing Actions runs.
+> Legacy AWS resource names still use the historical `cartha-open-bible-*` prefix unless we intentionally reprovision them. That prefix is only an internal AWS identifier now; the GitHub repository is `zackseyun/peoples-open-bible`.
 
 ## CodeBuild projects
 

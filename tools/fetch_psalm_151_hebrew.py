@@ -23,7 +23,7 @@ OUT_PATH = OUT_DIR / "psalm151_kahana_1937.json"
 
 
 def fetch() -> dict:
-    req = urllib.request.Request(API_URL, headers={"User-Agent": "cartha-open-bible/1.0"})
+    req = urllib.request.Request(API_URL, headers={"User-Agent": "peoples-open-bible/1.0"})
     with urllib.request.urlopen(req, timeout=30) as r:
         payload = json.loads(r.read().decode("utf-8"))
 

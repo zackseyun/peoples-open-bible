@@ -72,7 +72,7 @@ fetch_image() {
   local basename
   basename=$(vol_basename "$VOL") || return 1
   local url="https://archive.org/download/${SWETE_ITEM}/${basename}/page/n${page}_w1500.jpg"
-  curl -sL --user-agent "cartha-open-bible/1.0" -o "$img" "$url" || { rm -f "$img"; return 1; }
+  curl -sL --user-agent "peoples-open-bible/1.0" -o "$img" "$url" || { rm -f "$img"; return 1; }
   [[ -s "$img" ]] || { rm -f "$img"; return 1; }
   echo "$img"
 }

@@ -29,6 +29,13 @@ from typing import Any
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 TRANSLATION_ROOT = REPO_ROOT / "translation"
 STATUS_PATH = REPO_ROOT / "status.json"
+REPO_FULL_NAME = "zackseyun/peoples-open-bible"
+
+LEGACY_PUBLIC_TEXT_REPLACEMENTS = {
+    "https://github.com/zackseyun/cartha-open-bible": "https://github.com/zackseyun/peoples-open-bible",
+    "git@github.com:zackseyun/cartha-open-bible.git": "git@github.com:zackseyun/peoples-open-bible.git",
+    "zackseyun/cartha-open-bible": REPO_FULL_NAME,
+}
 
 # Canonical Protestant ordering with chapter *and* verse counts per
 # book. Chapter counts are stable across major critical editions.
@@ -233,6 +240,8 @@ def recent_translation_commits(limit: int = 40) -> list[dict[str, str]]:
         if len(parts) != 4:
             continue
         full, short, date, subject = parts
+        for old, new in LEGACY_PUBLIC_TEXT_REPLACEMENTS.items():
+            subject = subject.replace(old, new)
         # The revision-pass commits and mechanical normalizations all
         # start with lowercase verbs. Tag them so the UI can show just
         # the revision subset when the reader flips a filter.
@@ -457,7 +466,7 @@ def main() -> int:
         "generated_at": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
         "commit_sha": full_sha,
         "commit_short": short_sha,
-        "repo": "zackseyun/cartha-open-bible",
+        "repo": REPO_FULL_NAME,
         "totals": totals,
         "books": all_books,
         "recent_commits": recent_translation_commits(40),

@@ -27,7 +27,7 @@ phases:
           echo "Skipping status regeneration because commit message contains [skip ci]."
           exit 0
         fi
-      - git remote set-url origin git@github.com:zackseyun/cartha-open-bible.git
+      - git remote set-url origin git@github.com:zackseyun/peoples-open-bible.git
       - git fetch origin main --tags --force
       - git checkout -B main origin/main
   build:
@@ -39,8 +39,8 @@ phases:
           echo "status.json unchanged — nothing to commit."
           exit 0
         fi
-      - git config user.name 'codebuild-cartha-open-bible[bot]'
-      - git config user.email 'codebuild-cartha-open-bible@users.noreply.github.com'
+      - git config user.name 'codebuild-peoples-open-bible[bot]'
+      - git config user.email 'codebuild-peoples-open-bible@users.noreply.github.com'
       - git add status.json
       - |
         git commit -m 'status: regenerate snapshot [skip ci]'

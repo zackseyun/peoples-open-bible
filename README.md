@@ -441,7 +441,7 @@ release is `v0.1-preview`.
 ## Directory structure
 
 ```
-cartha-open-bible/
+peoples-open-bible/
 ├── README.md            You are here
 ├── DEDICATION.md        Blessing and hope — to whom this work is offered
 ├── LICENSE              CC-BY 4.0

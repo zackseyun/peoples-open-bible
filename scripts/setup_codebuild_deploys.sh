@@ -5,7 +5,7 @@ REGION="${AWS_REGION:-us-east-2}"
 AWS_RESOURCE_REGION="${AWS_RESOURCE_REGION:-us-west-2}"
 ACCOUNT_ID="${AWS_ACCOUNT_ID:-$(aws sts get-caller-identity --query Account --output text)}"
 REPO_OWNER="${REPO_OWNER:-zackseyun}"
-REPO_NAME="${REPO_NAME:-cartha-open-bible}"
+REPO_NAME="${REPO_NAME:-peoples-open-bible}"
 REPO_URL="${REPO_URL:-https://github.com/${REPO_OWNER}/${REPO_NAME}.git}"
 ROLE_NAME="${CODEBUILD_ROLE_NAME:-cartha-open-bible-codebuild-role}"
 ROLE_ARN="arn:aws:iam::${ACCOUNT_ID}:role/${ROLE_NAME}"
@@ -20,7 +20,7 @@ EMBEDDINGS_PROJECT="${EMBEDDINGS_PROJECT:-cartha-open-bible-regen-embeddings}"
 STATUS_RULE="${STATUS_RULE:-cartha-open-bible-regen-status-hourly}"
 SUMMARY_RULE="${SUMMARY_RULE:-cartha-open-bible-regen-summary-cache-hourly}"
 STATUS_DEPLOY_KEY_SECRET="${STATUS_DEPLOY_KEY_SECRET:-cartha-open-bible/codebuild-status-deploy-key}"
-STATUS_DEPLOY_KEY_TITLE="${STATUS_DEPLOY_KEY_TITLE:-codebuild-cartha-open-bible-status}"
+STATUS_DEPLOY_KEY_TITLE="${STATUS_DEPLOY_KEY_TITLE:-codebuild-peoples-open-bible-status}"
 
 if [[ -z "$CONNECTION_ARN" ]]; then
   CONNECTION_ARN=$(aws codeconnections list-connections --region "$REGION" \
@@ -273,9 +273,9 @@ upsert_project() {
   fi
 }
 
-write_project_json "$PUBLISH_PROJECT" "Publish POB CDN from cartha-open-bible commits" "buildspecs/codebuild-publish-pob.yml" "BUILD_GENERAL1_SMALL" 20 1 "$TMP_DIR/publish-project.json"
-write_project_json "$STATUS_PROJECT" "Regenerate and commit status.json for cartha-open-bible" "buildspecs/codebuild-regen-status.yml" "BUILD_GENERAL1_SMALL" 20 0 "$TMP_DIR/status-project.json"
-write_project_json "$SUMMARY_PROJECT" "Fill BibleSummaryCache-alpha gaps from cartha-open-bible" "buildspecs/codebuild-regen-summary-cache.yml" "BUILD_GENERAL1_MEDIUM" 120 1 "$TMP_DIR/summary-project.json"
+write_project_json "$PUBLISH_PROJECT" "Publish POB CDN from peoples-open-bible commits" "buildspecs/codebuild-publish-pob.yml" "BUILD_GENERAL1_SMALL" 20 1 "$TMP_DIR/publish-project.json"
+write_project_json "$STATUS_PROJECT" "Regenerate and commit status.json for peoples-open-bible" "buildspecs/codebuild-regen-status.yml" "BUILD_GENERAL1_SMALL" 20 0 "$TMP_DIR/status-project.json"
+write_project_json "$SUMMARY_PROJECT" "Fill BibleSummaryCache-alpha gaps from peoples-open-bible" "buildspecs/codebuild-regen-summary-cache.yml" "BUILD_GENERAL1_MEDIUM" 120 1 "$TMP_DIR/summary-project.json"
 write_project_json "$EMBEDDINGS_PROJECT" "Submit scripture embedding regeneration job to EKS" "buildspecs/codebuild-regen-embeddings.yml" "BUILD_GENERAL1_MEDIUM" 90 1 "$TMP_DIR/embeddings-project.json"
 
 upsert_project "$PUBLISH_PROJECT" "$TMP_DIR/publish-project.json"

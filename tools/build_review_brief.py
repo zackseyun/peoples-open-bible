@@ -126,6 +126,47 @@ def load_reference_panel(book_slug: str, sub_book: str | None,
     return out
 
 
+def load_parent_source(yaml_path: pathlib.Path, yaml_data: dict) -> str:
+    """For per-verse YAMLs that don't carry source.text directly (Hermas
+    sections, T12P chapter splits), pull the parent record's source.text
+    so the reviewer sees the actual original-language text.
+
+    Returns the parent source.text plus a 1-line citation, or empty string
+    if no parent or no parent text is found.
+    """
+    src = (yaml_data.get("source") or {})
+    if src.get("text"):
+        return ""  # already has its own source text
+    # Hermas: per-verse lives under <chapter_dir>/<verse>.yaml; parent
+    # section file is the flat <chapter>.yaml at the same level.
+    parent_path = yaml_path.parent.parent / f"{yaml_path.parent.name}.yaml"
+    if not parent_path.exists():
+        # T12P fallback: parent chapter file at <patriarch>/<chap>.yaml
+        chap_dir = yaml_path.parent
+        parent_path = chap_dir.parent / f"{chap_dir.name}.yaml"
+    if not parent_path.exists():
+        return ""
+    try:
+        parent_data = yaml.safe_load(parent_path.read_text(encoding="utf-8"))
+    except Exception:
+        return ""
+    if not isinstance(parent_data, dict):
+        return ""
+    parent_text = (parent_data.get("source") or {}).get("text", "").strip()
+    if not parent_text:
+        return ""
+    parent_id = parent_data.get("id") or src.get("parent_id") or "(parent)"
+    rel = parent_path.relative_to(REPO_ROOT)
+    return (
+        f"### Parent (section/chapter) source — `{parent_id}` "
+        f"from `{rel}`\n\n"
+        f"The per-verse YAML carries metadata only; the original-language "
+        f"text lives at the parent record. Use this as the source for "
+        f"reviewing the verse.\n\n"
+        f"```\n{parent_text}\n```\n"
+    )
+
+
 def build_brief(entry: dict) -> tuple[str, dict]:
     """Return (brief_markdown, target_metadata)."""
     yaml_path = REPO_ROOT / entry["yaml_path"]
@@ -141,6 +182,7 @@ def build_brief(entry: dict) -> tuple[str, dict]:
     book_context = load_book_context(book_slug, sub_book)
     chapter_context = load_chapter_context(yaml_path, verse)
     panel = load_reference_panel(book_slug, sub_book, chap, verse)
+    parent_source = load_parent_source(yaml_path, yaml_data)
 
     md_lines: list[str] = []
     md_lines.append(f"# Review brief — {ref_id}\n")
@@ -150,6 +192,10 @@ def build_brief(entry: dict) -> tuple[str, dict]:
 
     md_lines.append("## Target verse YAML (review this)\n")
     md_lines.append("```yaml\n" + yaml_text + "\n```\n")
+
+    if parent_source:
+        md_lines.append("## Original-language source (from parent record)\n")
+        md_lines.append(parent_source)
 
     if chapter_context:
         md_lines.append("## Chapter context (neighboring verses — do NOT review these)\n")

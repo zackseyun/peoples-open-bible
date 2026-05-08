@@ -159,3 +159,54 @@ These are project-design questions only the maintainer can answer:
 `yaml.safe_load` succeeds on every chapter-level Judah YAML and every
 per-verse YAML inspected. **No translation files were modified by
 this audit.** The only output is this document.
+
+---
+
+## Addendum — `charles_alpha_verses` per-verse metadata field (2026-05-06)
+
+**Decision: NO.** The field will not be added to per-verse YAMLs, for Judah or for
+any other T12P testament.
+
+### Rationale
+
+1. **Mostly redundant.** The overwhelming majority of Judah per-verse YAMLs are
+   1:1 with Charles α-verse numbering. Adding `charles_alpha_verses: ["XVIII.5"]`
+   to a file whose `id` is already `T12P.JUD.18.5` carries no new information in
+   the common case; it merely duplicates the primary key in a different notation.
+
+2. **Non-trivial mappings are already documented at the right granularity.**
+   The five chapters with genuine re-flow (3/4, 18, 19/20, and the accepted
+   off-by-one consolidations) are fully documented in the chapter-level
+   `verse_count_note:` field on the relevant `NNN.yaml` files — with exact
+   Charles verse-to-project-verse correspondence spelled out in plain prose
+   (see `018.yaml` for the canonical example). The present document also covers
+   all 20 deferred chapters in detail. A scholar needing cross-reference can
+   consult either source without a per-verse field.
+
+3. **~168 fields to maintain with near-zero payoff.** Every future skeleton
+   adjustment (e.g., resolving the ch6/ch8/ch19 under-population decisions)
+   would require simultaneous updates to both the verse content and the
+   `charles_alpha_verses` field. The maintenance cost is real; the benefit
+   over the existing documentation is negligible.
+
+4. **Inconsistent scope.** Adding the field to Judah only would be an anomaly in
+   the T12P corpus (and in the broader COB schema). Applying it T12P-wide would
+   require auditing all eleven remaining testaments before their skeletons are
+   even finalized — premature investment. The right time to re-evaluate is after
+   the full T12P per-verse pass is complete and a pattern of genuine cross-reference
+   need has been demonstrated.
+
+5. **Schema cost.** `schema/verse.schema.json` does not currently include this
+   field. Adding it purely for Judah would either require a schema change that
+   signals false generality, or an `additionalProperties` bypass that weakens
+   validation.
+
+### How cross-reference works today (sufficient for scholarly use)
+
+- **Chapter-level `verse_count_note:`** on any NNN.yaml that has non-trivial
+  mapping gives explicit Charles XVII.x → project 18:y correspondence in prose.
+- **This document** (JUDAH_SKELETON_DECISION.md) tables all 20 deferred chapters
+  with Charles α counts, project YAML counts, and per-chapter mapping rationale.
+- Both sources are committed to the public repo and linked from CLAUDE.md.
+
+No per-verse field is needed to achieve scholarly citation precision for Judah.

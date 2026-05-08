@@ -19,14 +19,11 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Así que José no mintió[a] al decir estas cosas, pues quería ocultarme los hechos[b] de nuestros hermanos.
+  text: Y ellos mismos no mintieron al decir estas cosas; pues él quería ocultarme los hechos[a] de nuestros hermanos.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'El griego tiene αὐτοὶ ἐψεύσαντο, tercera persona del plural: «ellos mismos no mintieron». El inglés POB traduce con sujeto singular «José», decisión editorial que probablemente refleja la variante textual señalada por la nota ³¹ en la edición Charles 1908. El referente plural podría designar a quienes informaron a Benjamín sobre los hechos de los hermanos, mientras el singular «él» de la cláusula siguiente (ἤθελεν) apunta a José como sujeto distinto. La presente traducción española sigue la lectura singular del inglés POB; la alternativa plural sería: «Así que ellos mismos no mintieron al decir estas cosas».'
-    reason: textual_variant
-  - marker: b
-    text: 'Griego τὰ ἔργα (tà érga): «los hechos», «las obras» o «las acciones». Se prefiere «hechos» por su naturalidad en español narrativo para actos concretos ya realizados; «obras» es viable pero se asocia más con creaciones o actividades continuas.'
+    text: 'Griego τὰ ἔργα (tà érga): «los hechos», «las obras» o «las acciones». Se prefiere «hechos» por su naturalidad en español narrativo para actos concretos ya realizados.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: Καὶ
@@ -116,4 +113,43 @@ ai_draft:
     estimated_cost_usd: 0.153242
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Así que José no mintió[a] al decir estas cosas, pues quería ocultarme los hechos[b] de nuestros hermanos.
+  to: Y ellos mismos no mintieron al decir estas cosas; pues él quería ocultarme los hechos[a] de nuestros hermanos.
+  rationale: The EN base text was revised by the phase2_realign pass to reflect the Greek plural αὐτοὶ ἐψεύσαντο ('they themselves did not lie'). The Spanish draft followed the old singular reading and must be updated. The subject becomes 'ellos mismos' (αὐτοί) and the clause 'él quería' retains the singular for ἤθελεν (whose subject is Joseph, distinct from the plural αὐτοί). Footnote [a] defending the old singular is removed; footnote on ἔργα is retained.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:13:15Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: The Greek αὐτοὶ ἐψεύσαντο is a third-person plural (they themselves did not lie). A subsequent phase2_realign pass (2026-05-08) revised the EN base text to 'And they themselves did not lie in saying these things'. The Spanish draft was generated against the old EN ('Thus Joseph did not lie...') and retains the singular subject 'José no mintió [a]', now misaligned with both the revised EN and the Greek plural.
+  spanish_quality_summary: The draft Spanish is fluent and well-documented, but the subject-number error (singular José vs. plural αὐτοί) is a direct source-alignment failure introduced by drafting against a superseded EN. Footnote [a] attempts to explain the tension but defends a reading the EN has since abandoned. Footnote [b] on ἔργα is sound.
+  glossary_alignment: No YHWH/Mesías/δοῦλος/πνεῦμα terms. ἔργα rendered 'hechos' in revised text; no glossary violations.
+  issues:
+  - severity: high
+    issue: Spanish draft uses singular 'José no mintió' following superseded EN; the current revised EN and the Greek both have plural subject 'they themselves did not lie'.
+    rationale: The phase2_realign pass on the EN YAML (2026-05-08) corrected the subject from singular Joseph to plural αὐτοί. The Spanish must follow the corrected text. The previous footnote [a] defending the singular is now obsolete.
+  revised_spanish_text: Y ellos mismos no mintieron al decir estas cosas; pues él quería ocultarme los hechos[a] de nuestros hermanos.
+  revised_footnotes:
+  - marker: a
+    text: 'Griego τὰ ἔργα (tà érga): «los hechos», «las obras» o «las acciones». Se prefiere «hechos» por su naturalidad en español narrativo para actos concretos ya realizados.'
+    reason: lexical_alternative
+  revision_rationale: The EN base text was revised by the phase2_realign pass to reflect the Greek plural αὐτοὶ ἐψεύσαντο ('they themselves did not lie'). The Spanish draft followed the old singular reading and must be updated. The subject becomes 'ellos mismos' (αὐτοί) and the clause 'él quería' retains the singular for ἤθελεν (whose subject is Joseph, distinct from the plural αὐτοί). Footnote [a] defending the old singular is removed; footnote on ἔργα is retained.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: c067fc06cbaf7cd8e6cf0e673c120ef57996a9e64492cbcbf3cff8bb725ef168
+  timestamp: '2026-05-08T06:13:15Z'
+  output_hash: c067fc06cbaf7cd8e6cf0e673c120ef57996a9e64492cbcbf3cff8bb725ef168
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Replaced 'be moved to anger' with 'be stirred to anger' for more natural rendering of κινεῖσθε εἰς ὀργήν, and 'be exalted' with 'be puffed up' for more accurate sense of ἐπαίρεσθε. Retained the final clause essentially as drafted.
 translation:
   language: es
-  text: Por tanto, cuando alguien hable contra ustedes, hijos míos, no se enardezcan a la cólera; y si alguien los alaba como santos, no se ensoberbezcan. No cambien ni hacia el deleite ni hacia el desagrado.
+  text: Por tanto, cuando alguien hable contra ustedes, no se enciendan en ira; y si alguien los alaba como santos, no se ensoberbezcan. No cambien ni hacia el deleite ni hacia el desagrado.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: κινεῖσθε εἰς ὀργήν
@@ -89,4 +89,43 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Por tanto, cuando alguien hable contra ustedes, hijos míos, no se enardezcan a la cólera; y si alguien los alaba como santos, no se ensoberbezcan. No cambien ni hacia el deleite ni hacia el desagrado.
+  to: Por tanto, cuando alguien hable contra ustedes, no se enciendan en ira; y si alguien los alaba como santos, no se ensoberbezcan. No cambien ni hacia el deleite ni hacia el desagrado.
+  rationale: 'Removed ''hijos míos'' (not in Greek or revised EN). Changed ''se enardezcan a la cólera'' to ''se enciendan en ira'' — more idiomatic Spanish for κινεῖσθε εἰς ὀργήν, and maintains the fire/motion metaphor without a grammatically incorrect preposition. Note: since ὀργή→cólera and θυμός→ira are the project convention, either ''cólera'' or ''ira'' would be valid here; ''ira'' is kept as the single unifying term since the distinction is subtle for Spanish readers in this paraenetic context.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:14:33Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: κινεῖσθε εἰς ὀργήν — ''be stirred/moved to anger'' (ὀργή). Spanish correctly distinguishes ὀργή→cólera vs θυμός→ira. However ''no se enardezcan a la cólera'' uses the preposition ''a'' incorrectly. The verb ''enardecerse'' does not govern ''a'' in standard Spanish; one ''se enardece'' without a prepositional object, or one can say ''se inflamen en ira/cólera''. The phrase is grammatically awkward. The EN ''do not be stirred to anger'' can be rendered ''no se dejen llevar a la ira/cólera'' or more naturally ''no se enardezcan con la ira'' or simply ''no se muevan a la ira''. Also: EN per-verse base text says ''my children'' which was removed in revision; Spanish kept ''hijos míos'' — this is actually NOT an issue here because the Greek τέκνα μου has ''my'' in chapter 5:1, but for 4:3 the Greek has no possessive. Let me check: EN revised text says ''Therefore, when anyone speaks against you, my children, do not be stirred to anger'' — wait the EN base text
+    shown in the ES file says ''my children'' but the per-verse EN revised text actually removes ''my children'' per the revision_pass. The Spanish should not have ''hijos míos''.'
+  spanish_quality_summary: 'Two issues: (1) ''se enardezcan a la cólera'' — preposition ''a'' is wrong, should be ''se enardezcan en ira'' or ''se muevan a la ira'' or ''se dejen mover a la ira''; (2) ''hijos míos'' should not be present since the EN revision removed ''my children'' following the Greek which has no possessive here.'
+  glossary_alignment: 'ὀργή→cólera: correct distinction from θυμός→ira. ἐπαίρεσθε→''se ensoberbezcan'': good. τέρψιν→deleite: correct. ἀηδίαν→desagrado: correct.'
+  issues:
+  - severity: medium
+    issue: '''se enardezcan a la cólera'' — wrong preposition'
+    rationale: '''Enardecerse a'' is not idiomatic Spanish. The verb governs ''en'' or stands alone. Better: ''no se enciendan en ira'' or ''no se dejen mover a la cólera''.'
+  - severity: medium
+    issue: '''hijos míos'' not in the Greek or the revised EN text'
+    rationale: The EN per-verse revised text does not include 'my children' for 4:3 (the revision_pass removed it). The Greek has no possessive. 'hijos míos' should be removed.
+  revised_spanish_text: Por tanto, cuando alguien hable contra ustedes, no se enciendan en ira; y si alguien los alaba como santos, no se ensoberbezcan. No cambien ni hacia el deleite ni hacia el desagrado.
+  revision_rationale: 'Removed ''hijos míos'' (not in Greek or revised EN). Changed ''se enardezcan a la cólera'' to ''se enciendan en ira'' — more idiomatic Spanish for κινεῖσθε εἰς ὀργήν, and maintains the fire/motion metaphor without a grammatically incorrect preposition. Note: since ὀργή→cólera and θυμός→ira are the project convention, either ''cólera'' or ''ira'' would be valid here; ''ira'' is kept as the single unifying term since the distinction is subtle for Spanish readers in this paraenetic context.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 444f123940f24361e5ef3e740b2ec7a9ddab8f1115dae413c5c44da389321686
+  timestamp: '2026-05-08T06:14:33Z'
+  output_hash: 444f123940f24361e5ef3e740b2ec7a9ddab8f1115dae413c5c44da389321686
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

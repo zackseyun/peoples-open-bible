@@ -201,6 +201,31 @@ project-level decision for reader transparency.
 | GPT-5.4 | Primary drafter. Produces first-pass verse YAMLs via `tools/draft.py`. Most verses ship as drafted. |
 | Claude Opus 4.7 | Revision reviewer. Reads drafts, identifies revision-worthy issues per the criteria above, commits targeted polish. Does not redraft from scratch. |
 
+## Community suggestions and public credit
+
+Readers can suggest a revision from the public Bible reader after
+signing in with a Cartha account. The suggestion is treated as an
+input to the same revision process as model findings: it is checked
+against the source text, compared with the existing rendering, and
+resolved by the best available combination of human judgment and
+AI-assisted source reasoning.
+
+If a suggestion is approved, the public `revisions:` entry on that
+verse may include a `credit` block:
+
+```yaml
+credit:
+  source: community
+  display_name: "Contributor Name"
+  issue_url: "https://github.com/zackseyun/peoples-open-bible/issues/..."
+```
+
+That credit is intended to be durable. Once the approved revision is
+committed, the contributor's public credit travels with the verse's
+revision history and is surfaced by downstream public revision pages.
+Private account details should not be published unless the contributor
+explicitly chose that public credit string.
+
 ## What revisions are NOT
 
 - A redraft. Revisions take the drafter's rendering as the starting

@@ -41,7 +41,7 @@ Each row is a single user-facing surface. If you add or rename one, update both 
 | Connections / cross-reference sheet | `bible_connections_sheet.dart` | `HiddenConnectionsPanel.jsx` |
 | AI Study tool sheet (Simplify / Cross-ref / Original / Summarize) | `bible_study_overlay.dart` + `bible_tool_runner.dart` + `bible_tool_widgets.dart` | `StudyToolSheet.jsx` |
 | Note editor | `bible_note_editor_sheet.dart` | `NoteEditorSheet.jsx` |
-| Suggest revision | (not yet shipped on mobile) | `SuggestRevisionSheet.jsx` |
+| Suggest revision | (not yet shipped on mobile) | `SuggestRevisionSheet.jsx` (Cartha account-gated; public contributor credit included when approved) |
 | Insight / explanation panel | (inline in chapter view) | `InsightPanel.jsx` |
 | Commentary drawer | inside `bible_verse_detail_sheet.dart` | `CommentaryDrawer.jsx` |
 | Thread view (saved AI conversation) | `bible_thread_screen.dart` | `thread/page.jsx` |
@@ -114,8 +114,9 @@ This is the single source of truth that the moderation dashboard's `/_admin/metr
 | `cob_note_editor_open` | The note editor sheet opens | `book`, `chapter`, `verse` | `had_existing_note` (bool) |
 | `cob_note_saved` | A note is saved | `book`, `chapter`, `verse` | `length` |
 | `cob_bookmark_toggled` | A bookmark is added or removed | `book`, `chapter`, `verse_count`, `action` (`added`/`removed`) | |
+| `cob_suggest_revision_opened` | Signed-in user opens the public revision suggestion sheet | `verse_reference` | |
 | `cob_related_passage_open` | User taps a related/cross-referenced passage | `from_book`, `from_chapter`, `from_verse`, `to_book`, `to_chapter`, `to_verse` | `surface` (`detail_sheet`/`connections`/`tool_output`) |
-| `cob_auth_gate` | Sign-in is required to use a gated POB feature | `gate` (`tool`/`bookmark`/`note`/`library`), `tool` (when `gate=tool`) | |
+| `cob_auth_gate` | Sign-in is required to use a gated POB feature | `gate` (`tool`/`bookmark`/`note`/`library`/`suggest_revision`), `tool` (when `gate=tool`) | |
 | `cob_auth_success` | Sign-in completes and the gated action proceeds | `gate`, `method` (`apple`/`google`/`email`) | |
 | `cob_search_executed` | Reader runs a search | `query_length` | `result_count` |
 | `cob_concept_atlas_open` | Concept atlas surface opens | | `from`, `concept` |
@@ -163,6 +164,7 @@ The `trackScreen('bible_reader_chapter_view', …)` call also emits `cob_reader_
 | `cob_note_editor_open` | `BibleReader.jsx` — `openNoteForSelection` / `handleNoteVerse` |
 | `cob_note_saved` | `NoteEditorSheet.jsx` — `onSave` resolved branch |
 | `cob_bookmark_toggled` | `BibleReader.jsx` — `toggleBookmarkOnSelection`, `handleBookmarkVerse` |
+| `cob_suggest_revision_opened` | `BibleReader.jsx` — `openSuggestRevisionForSelection` after account gate succeeds |
 | `cob_related_passage_open` | `VerseDetailSheet.jsx` and `HiddenConnectionsPanel.jsx` — passage-tap handlers |
 | `cob_auth_gate` | `BibleReader.jsx` — `requireAuth` (the `setSignInOpen(true)` branch) |
 | `cob_auth_success` | `BibleReader.jsx` — `onSignInSuccess` |

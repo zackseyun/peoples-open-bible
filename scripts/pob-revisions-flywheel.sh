@@ -50,14 +50,14 @@ if [ -n "${recent_writes:-}" ]; then
   exit 0
 fi
 
-echo "$LOG_PREFIX regenerating revisions.json"
+echo "$LOG_PREFIX regenerating revisions.json + revisions-summary.json"
 if ! "$PYTHON" tools/build_revisions_index.py; then
   echo "$LOG_PREFIX build_revisions_index.py failed"
   exit 1
 fi
 
-if git diff --quiet revisions.json; then
-  echo "$LOG_PREFIX revisions.json unchanged — nothing to publish"
+if [ -z "$(git status --porcelain -- revisions.json revisions-summary.json)" ]; then
+  echo "$LOG_PREFIX revisions index unchanged — nothing to publish"
   exit 0
 fi
 
@@ -75,7 +75,7 @@ PY
 )
 echo "$LOG_PREFIX new totals: $new_summary"
 
-git add revisions.json
+git add revisions.json revisions-summary.json
 git commit -m "revisions: regenerate index ($new_summary) [skip ci]" || {
   echo "$LOG_PREFIX commit failed (working tree dirty?)"
   exit 1

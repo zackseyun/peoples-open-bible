@@ -3,7 +3,7 @@
 structured revisions index that the cartha.website frontend can fetch.
 
 Output: `revisions.json` at repo root, served via GitHub raw CDN just
-like `status.json`. Schema v1:
+like `status.json`. Schema v3:
 
 {
   "generated_at": "...",
@@ -15,7 +15,11 @@ like `status.json`. Schema v1:
     "by_category": {...},
     "by_tier": {...},
     "by_adjudicator": {...},
-    "by_reviewer_model": {...}
+    "by_reviewer_model": {...},
+    "by_credit_source": {...},
+    "credited_contributors": N,
+    "approved_credited_revisions": N,
+    "approved_community_revisions": N
   },
   "by_book": {
     "<slug>": {
@@ -41,7 +45,8 @@ like `status.json`. Schema v1:
       "from": "You will not surely die.",
       "to": "You will surely not die.",
       "rationale": "Hebrew לֹא מוֹת...",
-      "source_review": "state/reviews/gemini/..."
+      "source_review": "state/reviews/gemini/...",
+      "credit": {"source": "community", "display_name": "..."}
     },
     ...
   ]
@@ -78,7 +83,17 @@ OUT_PATH = REPO_ROOT / "revisions.json"
 # of verses had been touched. The frontend should treat the absence
 # of review_coverage as "old snapshot, only applied-edit counts
 # available" and fall back gracefully.
-SCHEMA_VERSION = 2
+#
+# Bumped to 3 when optional contributor-credit metadata was added.
+# A revision can now carry one of:
+#   credit: {source, display_name, account_id?, issue_url?}
+#   contributor: {source, display_name, account_id?, issue_url?}
+#   suggested_by: <string-or-dict>
+# The index passes that metadata through and aggregates it so public
+# clients can show "human/community suggestions approved" without
+# pretending older machine-only edits had a named contributor.
+SCHEMA_VERSION = 3
+SUMMARY_OUT_PATH = REPO_ROOT / "revisions-summary.json"
 
 # 3-letter codes (SBL / Paratext style) keyed by slug — drives the
 # canonical_id prefix (GEN, EXO, ...) and provides display names.
@@ -152,6 +167,57 @@ def display_name_for(book_slug: str, testament: str) -> tuple[str, str]:
     return book_slug.replace("_", " ").title(), book_slug.upper()[:3]
 
 
+def normalize_credit(rev: dict[str, Any]) -> dict[str, Any] | None:
+    """Return optional public contributor credit for a revision.
+
+    This is intentionally permissive because the approved-revision YAML
+    may be edited by humans during adjudication. The public website only
+    needs stable display metadata; private account details should be
+    omitted unless a maintainer deliberately chooses to expose them.
+    """
+    raw = (
+        rev.get("credit")
+        or rev.get("contributor")
+        or rev.get("suggested_by")
+    )
+    if not raw:
+        return None
+
+    if isinstance(raw, str):
+        display = raw.strip()
+        if not display:
+            return None
+        return {
+            "source": "community",
+            "display_name": display,
+        }
+
+    if not isinstance(raw, dict):
+        return None
+
+    display = (
+        raw.get("display_name")
+        or raw.get("name")
+        or raw.get("credit")
+        or raw.get("public_name")
+        or ""
+    )
+    display = str(display).strip()
+    if not display:
+        return None
+
+    source = str(raw.get("source") or "community").strip() or "community"
+    out: dict[str, Any] = {
+        "source": source,
+        "display_name": display,
+    }
+    for key in ("account_id", "issue_url", "submitted_at", "approved_at", "profile_url"):
+        value = raw.get(key)
+        if value:
+            out[key] = value
+    return out
+
+
 def walk_verses() -> list[dict[str, Any]]:
     out: list[dict[str, Any]] = []
     if not TRANSLATION_ROOT.exists():
@@ -189,7 +255,7 @@ def walk_verses() -> list[dict[str, Any]]:
                     for rev in revs:
                         if not isinstance(rev, dict):
                             continue
-                        out.append({
+                        item = {
                             "id": f"{sbl_code}.{chapter_num}.{verse_num}",
                             "testament": testament,
                             "book_slug": book_slug,
@@ -205,7 +271,11 @@ def walk_verses() -> list[dict[str, Any]]:
                             "to": rev.get("to"),
                             "rationale": rev.get("rationale"),
                             "source_review": rev.get("source_review"),
-                        })
+                        }
+                        credit = normalize_credit(rev)
+                        if credit:
+                            item["credit"] = credit
+                        out.append(item)
     return out
 
 
@@ -444,6 +514,8 @@ def build_index() -> dict[str, Any]:
     by_tier: Counter = Counter()
     by_adjudicator: Counter = Counter()
     by_reviewer: Counter = Counter()
+    by_credit_source: Counter = Counter()
+    credited_contributors: set[str] = set()
     by_book_slug: dict[str, dict[str, Any]] = {}
     verse_ids: set[str] = set()
 
@@ -454,6 +526,13 @@ def build_index() -> dict[str, Any]:
             by_tier[str(tier)] += 1
         by_adjudicator[rev.get("adjudicator") or "unknown"] += 1
         by_reviewer[rev.get("reviewer_model") or "unknown"] += 1
+        credit = rev.get("credit") if isinstance(rev.get("credit"), dict) else None
+        if credit:
+            source = credit.get("source") or "community"
+            by_credit_source[source] += 1
+            display_name = credit.get("display_name")
+            if display_name:
+                credited_contributors.add(str(display_name))
         slug = rev["book_slug"]
         info = by_book_slug.setdefault(slug, {
             "display": rev["book_display"],
@@ -505,10 +584,37 @@ def build_index() -> dict[str, Any]:
             "by_tier": dict(by_tier),
             "by_adjudicator": dict(by_adjudicator),
             "by_reviewer_model": dict(by_reviewer),
+            "by_credit_source": dict(by_credit_source),
+            "credited_contributors": len(credited_contributors),
+            "approved_credited_revisions": sum(by_credit_source.values()),
+            "approved_community_revisions": by_credit_source.get("community", 0),
         },
         "review_coverage": review_coverage,
         "by_book": by_book,
         "revisions": revisions,
+    }
+
+
+def build_summary(index: dict[str, Any]) -> dict[str, Any]:
+    """Small public summary for lightweight reader-page stats.
+
+    `revisions.json` is intentionally detailed and can be large. The
+    reader landing page only needs totals, so keep this file tiny and
+    safe to fetch during normal browsing.
+    """
+    rc = index.get("review_coverage") or {}
+    return {
+        "generated_at": index.get("generated_at"),
+        "commit_sha": index.get("commit_sha"),
+        "schema_version": index.get("schema_version"),
+        "totals": index.get("totals") or {},
+        "review_coverage": {
+            "verses_reviewed": rc.get("verses_reviewed", 0),
+            "review_passes_total": rc.get("review_passes_total", 0),
+            "by_verdict": rc.get("by_verdict") or {},
+            "by_reviewer_model": rc.get("by_reviewer_model") or {},
+            "preserved_from_prior_snapshot": rc.get("preserved_from_prior_snapshot", False),
+        },
     }
 
 
@@ -518,14 +624,20 @@ def main() -> int:
         json.dumps(index, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
+    SUMMARY_OUT_PATH.write_text(
+        json.dumps(build_summary(index), ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
     t = index["totals"]
     rc = index["review_coverage"]
     print(f"Wrote {OUT_PATH}")
+    print(f"Wrote {SUMMARY_OUT_PATH}")
     print(f"  applied edits: {t['total_revisions']} across {t['verses_with_revisions']} verses")
     print(f"  review passes: {rc['review_passes_total']} across {rc['verses_reviewed']} verses")
     print(f"  by_category: {t['by_category']}")
     print(f"  by_tier: {t['by_tier']}")
     print(f"  by_adjudicator: {t['by_adjudicator']}")
+    print(f"  by_credit_source: {t['by_credit_source']}")
     print(f"  by_verdict: {rc['by_verdict']}")
     print(f"  books touched (applied): {len(index['by_book'])}")
     print(f"  books touched (reviewed): {len(rc['by_book'])}")

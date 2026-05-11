@@ -66,39 +66,38 @@ See [LICENSE](LICENSE) and [DEDICATION.md](DEDICATION.md).
 
 Two verses that illustrate what POB does differently, and why.
 
-### Philippians 1:1
+### Ecclesiastes 1:2
 
 | | Rendering |
 |---|---|
-| **POB** | "Paul and Timothy, **slaves** of **Messiah** Jesus, to all the saints in Messiah Jesus who are in Philippi, together with the **overseers** and deacons:" |
-| NKJV | "Paul and Timothy, bondservants of Jesus Christ, To all the saints in Christ Jesus who are in Philippi, with the bishops and deacons:" |
-| NIV | "Paul and Timothy, servants of Christ Jesus, To all God's holy people in Christ Jesus at Philippi, together with the overseers and deacons:" |
+| **POB** | "**Breath of breaths**, says **Qoheleth**; breath of breaths, all is **mere breath**." |
+| NKJV | "**Vanity of vanities**, says the Preacher; Vanity of vanities, all is vanity." |
+| NIV | "**Meaningless! Meaningless!** says the Teacher. Utterly meaningless! Everything is meaningless." |
 
-- **δοῦλοι → "slaves"** (not "servants" or "bondservants"). In 1st-century Greco-Roman use, δοῦλος meant literal ownership of a person. "Servant" softens what Paul actually claimed; "bondservant" is a translator-invented neologism that avoids the weight. POB uses the accurate word and relies on the contextual layer to restore what the word meant to Paul's audience (not what it connotes in modern American English).
-- **Χριστοῦ → "Messiah"** (translated, not transliterated). "Christ" has become a name in English; Paul wrote a title. "Messiah" restores the Jewish messianic claim Paul was making.
-- **ἐπισκόποις → "overseers"** (not "bishops"). "Bishops" imports the later ecclesial office that didn't exist in 1st-century Philippi.
+- **הֶבֶל (*hevel*) → "breath" / "mere breath"** (not simply "vanity" or "meaninglessness"). The Hebrew image is concrete: breath, vapor, something real but fleeting, ungraspable, and gone almost as soon as it appears.
+- **"Vanity" is historically familiar but misleading now.** Modern readers often hear pride or self-obsession, which is not Qoheleth's point.
+- **"Meaninglessness" over-decides the theology.** It pushes the verse toward nihilism, while *hevel* is broader: transient, elusive, ironic, and frustrating. POB keeps the image in the main text and explains the range in the note layer.
+- **קֹהֶלֶת → "Qoheleth"** preserves the Hebrew title/name instead of narrowing it immediately to "Preacher" or "Teacher."
 
-### John 3:16
+### Genesis 6:6
 
 | | Rendering |
 |---|---|
-| **POB** | "For God loved the world **in this way**: he gave his **only Son**, so that everyone who believes in him should not perish but have eternal life." |
-| NKJV | "For God **so loved** the world that He gave His **only begotten Son**, that whoever believes in Him should not perish but have everlasting life." |
-| NIV | "For God **so loved** the world that he gave his **one and only Son**, that whoever believes in him shall not perish but have eternal life." |
+| **POB** | "And **Yahweh grieved over** having made man on the earth, and he was **pained in his heart**." |
+| NKJV | "And the LORD was **sorry** that He had made man on the earth, and He was **grieved in His heart**." |
+| NIV | "The LORD **regretted** that he had made human beings on the earth, and his heart was **deeply troubled**." |
 
-- **Οὕτως → "in this way"** (not primarily "so much"). The Greek points to the manner of God's love: he loved the world *by giving* the Son. The traditional wording is beautiful, but it can make the verse sound mainly like a statement about the *amount* of God's love.
-- **μονογενῆ → "only Son"** keeps the main text direct and uncluttered. POB preserves "only begotten" and "unique Son" in the note layer instead of forcing the reader into one theological paraphrase in the sentence itself.
-- **The familiar wording is preserved visibly, not silently baked in.** Readers can still see the traditional "For God so loved the world" reading in the verse notes, but the main text keeps the Greek logic front and center.
+- **וַיִּנָּחֶם → "grieved over"** preserves divine sorrow without making the English sound like God made a mistaken choice or lacked foresight. "Regretted" can imply that in modern English; "repented" would imply moral fault; "was sorry" is possible but softer.
+- **וַיִּתְעַצֵּב → "was pained"** carries the second verb's inward wound-like force. POB avoids flattening both Hebrew verbs into one general grief word.
+- **יהוה → "Yahweh"** makes the divine name visible rather than hiding it behind the typographic substitute "LORD."
 
 ### The philosophy behind these choices
 
-POB's choice is **lexical accuracy in the main text + contextual understanding in a companion layer** — not pastoral softening of the translation itself.
+POB's choice is **source-image accuracy in the main text + contextual understanding in a companion layer** — not traditional smoothing, theological over-resolution, or pastoral softening of the translation itself.
 
-"Slaves of Messiah Jesus" is harder on a modern reader's first pass than "servants of Christ Jesus," but it's what Paul actually wrote. Where a word's ancient meaning differs from modern English connotations, the responsibility is on the **reading experience** — the rationale recorded in each verse's YAML, footnotes, the in-app **Original context** AI tool, the public discussion forum — to restore the meaning. Not on the translation to quietly round it off.
+Ecclesiastes 1:2 shows why this matters: *hevel* is not just "vanity" and not simply "meaninglessness." It is breath — real, visible for a moment, impossible to hold. Genesis 6:6 shows the same principle with theology: the text really portrays Yahweh as grieving and inwardly pained, but the English should not accidentally imply that God was surprised, morally wrong, or wishing he could undo an uninformed mistake.
 
-That's why John 3:16 is a useful showcase: POB is willing to touch even the most familiar English wording when the Greek is more precise. The reader still gets the traditional reading in the visible notes, but the main text does not hide the choice. POB makes every such choice visible and defensible.
-
-**Is "slave" true to δοῦλος?** As close as a single English word can be. No single English word fully captures the ownership + submission + paradoxical honor + LXX "servant of YHWH" echo that Paul packed into δοῦλος. That's why one-tap context matters: the word is the foundation; the meaning lives in the layer you can read into.
+In both cases, familiar renderings preserve something valuable, but they also make hidden choices for the reader. POB keeps the core source-language pressure in the sentence itself, then uses footnotes, YAML rationale, the in-app **Original context** AI tool, and public discussion to make every choice visible and defensible.
 
 ## License
 

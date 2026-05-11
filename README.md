@@ -74,10 +74,10 @@ Two verses that illustrate what POB does differently, and why.
 | NKJV | "**Vanity of vanities**, says the Preacher; Vanity of vanities, all is vanity." |
 | NIV | "**Meaningless! Meaningless!** says the Teacher. Utterly meaningless! Everything is meaningless." |
 
-- **הֶבֶל (*hevel*) → "breath" / "mere breath"** (not simply "vanity" or "meaninglessness"). The Hebrew image is concrete: breath, vapor, something real but fleeting, ungraspable, and gone almost as soon as it appears.
-- **"Vanity" is historically familiar but misleading now.** Modern readers often hear pride or self-obsession, which is not Qoheleth's point.
-- **"Meaninglessness" over-decides the theology.** It pushes the verse toward nihilism, while *hevel* is broader: transient, elusive, ironic, and frustrating. POB keeps the image in the main text and explains the range in the note layer.
-- **קֹהֶלֶת → "Qoheleth"** preserves the Hebrew title/name instead of narrowing it immediately to "Preacher" or "Teacher."
+- **The key word, *hevel* (`הֶבֶל`) — "breath" / "mere breath."** Not simply "vanity" or "meaninglessness." The Hebrew image is concrete: breath, vapor, something real but fleeting, ungraspable, and gone almost as soon as it appears.
+- **Why not "vanity"?** It is historically familiar, but modern readers often hear pride or self-obsession, which is not Qoheleth's point.
+- **Why not "meaninglessness"?** It over-decides the theology and pushes the verse toward nihilism. *Hevel* is broader: transient, elusive, ironic, and frustrating.
+- **The speaker, *Qoheleth* (`קֹהֶלֶת`) — "Qoheleth."** This preserves the Hebrew title/name instead of narrowing it immediately to "Preacher" or "Teacher."
 
 ### Genesis 6:6
 
@@ -87,9 +87,9 @@ Two verses that illustrate what POB does differently, and why.
 | NKJV | "And the LORD was **sorry** that He had made man on the earth, and He was **grieved in His heart**." |
 | NIV | "The LORD **regretted** that he had made human beings on the earth, and his heart was **deeply troubled**." |
 
-- **וַיִּנָּחֶם → "grieved over"** preserves divine sorrow without making the English sound like God made a mistaken choice or lacked foresight. "Regretted" can imply that in modern English; "repented" would imply moral fault; "was sorry" is possible but softer.
-- **וַיִּתְעַצֵּב → "was pained"** carries the second verb's inward wound-like force. POB avoids flattening both Hebrew verbs into one general grief word.
-- **יהוה → "Yahweh"** makes the divine name visible rather than hiding it behind the typographic substitute "LORD."
+- **The first verb (`וַיִּנָּחֶם`) — "grieved over."** This preserves divine sorrow without making the English sound like God made a mistaken choice or lacked foresight. "Regretted" can imply that in modern English; "repented" would imply moral fault; "was sorry" is possible but softer.
+- **The second verb (`וַיִּתְעַצֵּב`) — "was pained."** This carries the inward wound-like force of the Hebrew. POB avoids flattening both verbs into one general grief word.
+- **The divine name (`יהוה`) — "Yahweh."** This makes the name visible rather than hiding it behind the typographic substitute "LORD."
 
 ### The philosophy behind these choices
 

@@ -84,17 +84,6 @@ books. Each language family forced a different OCR + parser stack.
 | Testaments of the Twelve Patriarchs (Greek, Sinker 1879) | Drafted across all 12 testaments. Greek normalization complete. |
 | Nag Hammadi (Coptic) — Gospel of Thomas, Gospel of Truth, Thunder Perfect Mind | OCR via Gemini 3.1 Pro (Coptic-aware). Gospel of Thomas redrafted using cross-family Coptic comparison (38/38 sayings). |
 
-A note on the Ge'ez story, because it is the OCR finding most often
-cited from this project: an earlier version of this document said
-"Gemini 2.5 Pro in plaintext mode (not JSON) succeeds." That was true
-in March 2026 and is documented in the commit history. It was
-superseded on 2026-04-22 by a three-engine bake-off which found
-Gemini 3.1 Pro at 80% page accuracy versus Azure GPT-5.4 at 46% on
-Charles 1906 Ge'ez. Gemini 3.1 Pro is now the primary OCR engine for
-all POB OCR (Ge'ez, Coptic, and Greek where Cambridge typography is
-not the easier choice). Azure GPT-5.4 remains a useful second-pass
-adjudicator.
-
 ### Chapter 4 — Standing review pipeline
 
 | Layer | What it does |

@@ -91,6 +91,13 @@ books. Each language family forced a different OCR + parser stack.
 | Stacked-review pass | Each verse gets a per-book author-intent context pass with **Gemini 3.1 Pro** (run on Vertex AI on the credit-funded `cartha-bible-vertex` project). Corrections auto-apply where evidence is strong; weaker findings escalate to a manually-adjudicated tier. The full negotiation history (`from`, `to`, rationale, reviewer model) is persisted in the verse YAML's `revisions` array. |
 | Flywheel | A revisions flywheel runs every 30 minutes, regenerating `revisions.json` and pushing if any counts changed. As of the most recent snapshot, ~22,000 applied edits across ~18,700 verses, with ~60,000 review-pass verdicts logged across ~41,000 verses (including "agree" verdicts where no edit was applied). |
 
+Public reader surfaces deliberately separate those numbers. The large
+`total_revisions` value means all accepted applied edits, including
+machine-assisted review-pass fixes. The small homepage badge uses
+`approved_human_proposed_revisions`: approved suggestions with public
+human/community credit. That is the more honest reader-facing metric
+for "people proposed this and it was accepted."
+
 The standing review pipeline is the project's current center of
 gravity. If you load a verse YAML at random today, the most likely
 thing you'll see beyond the original draft is a revision block from
@@ -418,6 +425,12 @@ specific verse using templates in `.github/ISSUE_TEMPLATE/`:
 
 The reader's "Suggest Revision" form on cartha.com prefills these
 templates from the verse YAML so the issue is self-contained.
+
+If one of those human proposals is approved and committed, it can carry
+public `credit` metadata in the verse's `revisions:` block. Those
+credited accepted suggestions are what the public homepage counts as
+approved human-proposed revisions; they are intentionally not mixed
+with the larger machine-assisted applied-edit total.
 
 The project commits to responding publicly to every substantive
 issue. Resolution may result in:

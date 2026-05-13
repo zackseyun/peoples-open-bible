@@ -19,6 +19,7 @@ like `status.json`. Schema v3:
     "by_credit_source": {...},
     "credited_contributors": N,
     "approved_credited_revisions": N,
+    "approved_human_proposed_revisions": N,
     "approved_community_revisions": N
   },
   "by_book": {
@@ -277,6 +278,17 @@ def walk_verses() -> list[dict[str, Any]]:
                             item["credit"] = credit
                         out.append(item)
     return out
+
+
+def approved_human_proposed_revisions(by_credit_source: Counter) -> int:
+    """Count approved revisions that began as public human proposals.
+
+    Public contributor credit is the durable signal that a change came
+    from a reader/community/human suggestion rather than from the bulk
+    machine-assisted review pipeline. Keep this as an explicit alias so
+    clients do not have to infer it from the broader applied-edit total.
+    """
+    return sum(by_credit_source.values())
 
 
 # Reviewer-model name prefixes that count as the original drafter
@@ -587,6 +599,9 @@ def build_index() -> dict[str, Any]:
             "by_credit_source": dict(by_credit_source),
             "credited_contributors": len(credited_contributors),
             "approved_credited_revisions": sum(by_credit_source.values()),
+            "approved_human_proposed_revisions": approved_human_proposed_revisions(
+                by_credit_source
+            ),
             "approved_community_revisions": by_credit_source.get("community", 0),
         },
         "review_coverage": review_coverage,

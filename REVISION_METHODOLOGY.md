@@ -226,6 +226,12 @@ revision history and is surfaced by downstream public revision pages.
 Private account details should not be published unless the contributor
 explicitly chose that public credit string.
 
+Public counters should keep this distinction clear: the complete
+revision index still reports every accepted applied edit from the
+machine-assisted and maintainer workflows, but the reader-facing
+"approved human-proposed revisions" metric counts only approved
+suggestions that carry public human/community credit.
+
 ## What revisions are NOT
 
 - A redraft. Revisions take the drafter's rendering as the starting

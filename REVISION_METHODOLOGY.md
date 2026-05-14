@@ -229,8 +229,9 @@ explicitly chose that public credit string.
 Public counters should keep this distinction clear: the complete
 revision index still reports every accepted applied edit from the
 machine-assisted and maintainer workflows, but the reader-facing
-"approved human-proposed revisions" metric counts only approved
-suggestions that carry public human/community credit.
+"approved revisions" metric counts approved reader, contributor, and
+maintainer proposals separately from the larger machine-assisted
+applied-edit total.
 
 ## What revisions are NOT
 

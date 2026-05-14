@@ -94,9 +94,9 @@ books. Each language family forced a different OCR + parser stack.
 Public reader surfaces deliberately separate those numbers. The large
 `total_revisions` value means all accepted applied edits, including
 machine-assisted review-pass fixes. The small homepage badge uses
-`approved_human_proposed_revisions`: approved suggestions with public
-human/community credit. That is the more honest reader-facing metric
-for "people proposed this and it was accepted."
+`approved_proposed_revisions`: approved suggestions that came from a
+reader, contributor, or maintainer proposal. That is the more honest
+reader-facing metric for "people proposed this and it was accepted."
 
 The standing review pipeline is the project's current center of
 gravity. If you load a verse YAML at random today, the most likely
@@ -426,11 +426,12 @@ specific verse using templates in `.github/ISSUE_TEMPLATE/`:
 The reader's "Suggest Revision" form on cartha.com prefills these
 templates from the verse YAML so the issue is self-contained.
 
-If one of those human proposals is approved and committed, it can carry
-public `credit` metadata in the verse's `revisions:` block. Those
-credited accepted suggestions are what the public homepage counts as
-approved human-proposed revisions; they are intentionally not mixed
-with the larger machine-assisted applied-edit total.
+If one of those proposals is approved and committed, it can carry
+public `credit` metadata in the verse's `revisions:` block. Maintainer
+proposals are also marked through their adjudicator metadata. Together,
+those accepted proposals are what the public homepage counts as
+approved revisions; they are intentionally kept distinct from the
+larger machine-assisted applied-edit total.
 
 The project commits to responding publicly to every substantive
 issue. Resolution may result in:

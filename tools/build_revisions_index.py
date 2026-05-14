@@ -17,9 +17,10 @@ like `status.json`. Schema v3:
     "by_adjudicator": {...},
     "by_reviewer_model": {...},
     "by_credit_source": {...},
+    "by_proposal_source": {...},
     "credited_contributors": N,
     "approved_credited_revisions": N,
-    "approved_human_proposed_revisions": N,
+    "approved_proposed_revisions": N,
     "approved_community_revisions": N
   },
   "by_book": {
@@ -91,10 +92,16 @@ OUT_PATH = REPO_ROOT / "revisions.json"
 #   contributor: {source, display_name, account_id?, issue_url?}
 #   suggested_by: <string-or-dict>
 # The index passes that metadata through and aggregates it so public
-# clients can show "human/community suggestions approved" without
-# pretending older machine-only edits had a named contributor.
+# clients can distinguish reader/maintainer proposals from the larger
+# machine-assisted applied-edit log.
 SCHEMA_VERSION = 3
 SUMMARY_OUT_PATH = REPO_ROOT / "revisions-summary.json"
+
+PROPOSAL_ADJUDICATORS = {
+    "human",
+    "human-maintainer",
+    "maintainer",
+}
 
 # 3-letter codes (SBL / Paratext style) keyed by slug — drives the
 # canonical_id prefix (GEN, EXO, ...) and provides display names.
@@ -219,6 +226,17 @@ def normalize_credit(rev: dict[str, Any]) -> dict[str, Any] | None:
     return out
 
 
+def proposal_source_for(rev: dict[str, Any], credit: dict[str, Any] | None) -> str | None:
+    """Classify approved revisions that began as reader/maintainer proposals."""
+    if credit:
+        return str(credit.get("source") or "community").strip() or "community"
+
+    adjudicator = str(rev.get("adjudicator") or "").strip().lower()
+    if adjudicator in PROPOSAL_ADJUDICATORS or "maintainer" in adjudicator:
+        return "maintainer"
+    return None
+
+
 def walk_verses() -> list[dict[str, Any]]:
     out: list[dict[str, Any]] = []
     if not TRANSLATION_ROOT.exists():
@@ -276,19 +294,12 @@ def walk_verses() -> list[dict[str, Any]]:
                         credit = normalize_credit(rev)
                         if credit:
                             item["credit"] = credit
+                        proposal_source = proposal_source_for(rev, credit)
+                        if proposal_source:
+                            item["approved_proposal"] = True
+                            item["proposal_source"] = proposal_source
                         out.append(item)
     return out
-
-
-def approved_human_proposed_revisions(by_credit_source: Counter) -> int:
-    """Count approved revisions that began as public human proposals.
-
-    Public contributor credit is the durable signal that a change came
-    from a reader/community/human suggestion rather than from the bulk
-    machine-assisted review pipeline. Keep this as an explicit alias so
-    clients do not have to infer it from the broader applied-edit total.
-    """
-    return sum(by_credit_source.values())
 
 
 # Reviewer-model name prefixes that count as the original drafter
@@ -527,6 +538,7 @@ def build_index() -> dict[str, Any]:
     by_adjudicator: Counter = Counter()
     by_reviewer: Counter = Counter()
     by_credit_source: Counter = Counter()
+    by_proposal_source: Counter = Counter()
     credited_contributors: set[str] = set()
     by_book_slug: dict[str, dict[str, Any]] = {}
     verse_ids: set[str] = set()
@@ -545,6 +557,9 @@ def build_index() -> dict[str, Any]:
             display_name = credit.get("display_name")
             if display_name:
                 credited_contributors.add(str(display_name))
+        proposal_source = rev.get("proposal_source")
+        if proposal_source:
+            by_proposal_source[str(proposal_source)] += 1
         slug = rev["book_slug"]
         info = by_book_slug.setdefault(slug, {
             "display": rev["book_display"],
@@ -597,11 +612,13 @@ def build_index() -> dict[str, Any]:
             "by_adjudicator": dict(by_adjudicator),
             "by_reviewer_model": dict(by_reviewer),
             "by_credit_source": dict(by_credit_source),
+            "by_proposal_source": dict(by_proposal_source),
             "credited_contributors": len(credited_contributors),
             "approved_credited_revisions": sum(by_credit_source.values()),
-            "approved_human_proposed_revisions": approved_human_proposed_revisions(
-                by_credit_source
-            ),
+            "approved_proposed_revisions": sum(by_proposal_source.values()),
+            # Backwards-compatible alias for older frontend builds. New UI copy
+            # should use approved_proposed_revisions and avoid this label.
+            "approved_human_proposed_revisions": sum(by_proposal_source.values()),
             "approved_community_revisions": by_credit_source.get("community", 0),
         },
         "review_coverage": review_coverage,

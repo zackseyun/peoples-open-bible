@@ -37,7 +37,9 @@ TRANSLATION_ROOT = REPO_ROOT / "translation" / "extra_canonical"
 MIRROR_TARGETS: list[tuple[str, str, int]] = [
     ("didache", "Didache", 16),
     ("1_clement", "1 Clement", 65),
-    ("2_baruch", "2 Baruch", 87),
+    # 2 Baruch used to be mirrored as synthetic verse-1 chapter blocks, but
+    # it now has real reader-facing verse YAMLs under 2_baruch/NNN/VVV.yaml.
+    # Do not mirror it here, or publishing will collapse multi-verse chapters.
 ]
 
 

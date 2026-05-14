@@ -152,8 +152,9 @@ EXTRA_CANONICAL_BOOK_SLUGS: dict[str, str] = {
 #
 # Left in place so future books drafted as pure chapter-level prose
 # can be added here for single-synthetic-verse emission without
-# invoking the verse splitter.
-EXTRA_CANONICAL_CHAPTER_LEVEL: set[str] = {"2BAR"}
+# invoking the verse splitter. 2 Baruch is intentionally not listed:
+# it now has reader-facing per-verse YAMLs under 2_baruch/NNN/VVV.yaml.
+EXTRA_CANONICAL_CHAPTER_LEVEL: set[str] = set()
 
 
 def book_title(book_code: str) -> str:

@@ -95,6 +95,49 @@ def split_text(text: str, chapter: int = 0) -> list[tuple[int, str]]:
         verse_dict[int(m.group(1))] = text[start:end].strip()
 
     return sorted(verse_dict.items())
+
+
+def _paragraphs(text: str) -> list[str]:
+    return [part.strip() for part in re.split(r"\n\s*\n+", text.strip()) if part.strip()]
+
+
+def _split_with_flat_numbered_fallback(
+    text: str,
+    chapter: int,
+    book_dir: pathlib.Path,
+) -> list[tuple[int, str]]:
+    """Split a mirror text, falling back to the flat chapter's numbering.
+
+    A few reader-facing mirror files were later revised after the inline verse
+    numerals were removed. If the mirror is now plain paragraphs, but the flat
+    chapter YAML still carries the standard numbered divisions and the paragraph
+    count matches that numbered split, keep the revised mirror wording and attach
+    those paragraphs to the flat chapter's verse numbers.
+    """
+    verses = split_text(text, chapter=chapter)
+    if len(verses) != 1:
+        return verses
+
+    flat_path = book_dir / f"{chapter:03d}.yaml"
+    if not flat_path.exists():
+        return verses
+
+    yaml_safe = YAML(typ="safe")
+    try:
+        flat_record = yaml_safe.load(flat_path.read_text(encoding="utf-8")) or {}
+    except Exception:
+        return verses
+
+    flat_text = ((flat_record.get("translation") or {}).get("text") or "").strip()
+    flat_verses = split_text(flat_text, chapter=chapter)
+    mirror_paragraphs = _paragraphs(text)
+
+    if len(flat_verses) > 1 and len(flat_verses) == len(mirror_paragraphs):
+        return [
+            (verse_num, mirror_paragraphs[i])
+            for i, (verse_num, _flat_text) in enumerate(flat_verses)
+        ]
+
     return verses
 
 
@@ -163,7 +206,7 @@ def process_chapter(
         return 0
 
     text = (record.get("translation") or {}).get("text") or ""
-    verses = split_text(text.strip(), chapter=ch)
+    verses = _split_with_flat_numbered_fallback(text.strip(), chapter=ch, book_dir=book_dir)
 
     if dry_run:
         print(f"  ch{ch:03d}: {len(verses)} verses → " +

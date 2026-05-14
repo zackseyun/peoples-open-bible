@@ -97,6 +97,26 @@ A revision that overrides a documented `lexical_decisions` entry
 without engaging with its rationale is not a revision — it's a
 regression.
 
+### When the current state IS a regression
+
+The framework's default outcome is to preserve the drafter's
+documented choice — NOT to preserve whatever happens to be in
+`translation.text` right now. If your Q3 analysis concludes a
+prior revision pass overrode the drafter without engaging the
+rationale, the framework-aligned action is **REVISE back to the
+drafter's choice**, not UNCHANGED. "Default UNCHANGED" means
+*don't change anything when the current state already matches the
+drafter's reasoned choice* — it does not mean *leave a regressed
+state in place*.
+
+Operationally: when Q3 identifies a documented-rationale override
+that wasn't refuted on the evidence, REVISE is the correct
+terminal action, and `revised_text` should restore the drafter's
+original rendering (visible in the relevant `revisions[]` entry's
+`from:` field). The rationale should cite the framework
+(override-without-engagement) and the drafter's documented
+reasoning.
+
 ---
 
 ## Override authority — what you can and cannot do

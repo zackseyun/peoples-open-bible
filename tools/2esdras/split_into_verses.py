@@ -38,6 +38,40 @@ def marker_matches(marker: Any, chapter: int, verse: int) -> bool:
     return s == str(verse) or s == f'{chapter}:{verse}'
 
 
+def footnote_matches_verse(fn: dict[str, Any], chapter: int, verse: int, verse_text: str) -> bool:
+    """Return whether a chapter-level footnote belongs on this verse.
+
+    Older 2 Esdras drafts used the destination verse reference as the marker
+    itself (for example ``[7:28]``). Newer normalized drafts use reader-safe
+    labels like ``[a]`` / ``[b]``. Support both so rerunning the splitter does
+    not reintroduce raw verse-reference markers or drop normalized notes.
+    """
+    marker = str(fn.get('marker') or '').strip()
+    anchor_ref = str(fn.get('anchor_ref') or '').strip()
+    return bool(marker) and (
+        marker_matches(anchor_ref, chapter, verse)
+        or marker_matches(marker, chapter, verse)
+        or f'[{marker}]' in verse_text
+    )
+
+
+def ensure_footnote_markers(text: str, footnotes: list[dict[str, Any]]) -> str:
+    """Add missing inline markers for verse-level reader exports."""
+    out = text
+    for fn in footnotes:
+        marker = str(fn.get('marker') or '').strip()
+        if not marker or f'[{marker}]' in out:
+            continue
+        for terminator in [', ', '. ', '; ']:
+            idx = out.find(terminator)
+            if idx > 0:
+                out = out[:idx] + f'[{marker}]' + out[idx:]
+                break
+        else:
+            out = out[:-1] + f'[{marker}].' if out.endswith('.') else out + f'[{marker}]'
+    return out
+
+
 def split_chapter(path: pathlib.Path) -> int:
     doc = yaml.safe_load(path.read_text(encoding='utf-8'))
     chapter = int(doc['source']['chapter'])
@@ -55,7 +89,12 @@ def split_chapter(path: pathlib.Path) -> int:
     footnotes = doc['translation'].get('footnotes', []) or []
     written = 0
     for verse in expected_set:
-        verse_footnotes = [fn for fn in footnotes if marker_matches(fn.get('marker'), chapter, verse)]
+        verse_text = translation_verses[verse]
+        verse_footnotes = [
+            fn for fn in footnotes
+            if isinstance(fn, dict) and footnote_matches_verse(fn, chapter, verse, verse_text)
+        ]
+        verse_text = ensure_footnote_markers(verse_text, verse_footnotes)
         record: dict[str, Any] = {
             'id': f'{BOOK_CODE}.{chapter}.{verse}',
             'reference': f'{BOOK_NAME} {chapter}:{verse}',
@@ -69,7 +108,7 @@ def split_chapter(path: pathlib.Path) -> int:
                 'language': doc['source'].get('language'),
             },
             'translation': {
-                'text': translation_verses[verse],
+                'text': verse_text,
                 'philosophy': doc['translation'].get('philosophy'),
             },
             'note': (

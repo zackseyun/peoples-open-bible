@@ -1,0 +1,606 @@
+#!/usr/bin/env python3
+"""agentic_revise.py — per-verse agentic revision pass for POB.
+
+A multi-turn reviewer agent that applies the framework in
+tools/prompts/revision_policy.md. Each verse gets its own agent loop
+with information-gathering tools (lookup_doctrine, lookup_occurrences,
+lookup_book_context, read_drafter_reasoning) and one of two terminal
+actions (submit_revision, submit_unchanged).
+
+The harness is deliberately minimal in this first cut:
+- One reviewer per verse, no sub-agents yet.
+- Dry-run by default — writes a JSON manifest of proposed changes for
+  human review before any YAML is touched.
+- Audit-only mode finds candidate verses without calling the model.
+
+Design rationale and rollout plan: tools/AGENTIC_REVISION.md.
+
+Usage:
+    # 1. Find candidate verses with contested terms or non-trivial
+    #    lexical_decisions — no LLM calls.
+    python3 tools/agentic_revise.py --audit-only --out /tmp/audit.json
+
+    # 2. Dry-run reviewer over the audit set — produces a manifest of
+    #    proposed changes; does NOT modify YAML.
+    python3 tools/agentic_revise.py --from-audit /tmp/audit.json \\
+        --limit 20 --out /tmp/proposals.json
+
+    # 3. Single-verse dry-run (debugging the framework on one case).
+    python3 tools/agentic_revise.py --verse \\
+        translation/nt/1_peter/005/008.yaml --out /tmp/one.json
+
+    # 4. Apply approved proposals (writes YAMLs + revisions[] entries).
+    python3 tools/agentic_revise.py --apply /tmp/proposals.json
+
+Env:
+    ANTHROPIC_API_KEY    — required for reviewer calls.
+    ANTHROPIC_MODEL      — default claude-sonnet-4-6 (override for opus).
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import pathlib
+import re
+import sys
+import time
+import urllib.error
+import urllib.request
+from collections import defaultdict
+from datetime import datetime, timezone
+from typing import Any
+
+import yaml
+
+REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
+TRANSLATION_ROOT = REPO_ROOT / "translation"
+DOCTRINE_FILE = REPO_ROOT / "DOCTRINE.md"
+POLICY_FILE = REPO_ROOT / "tools" / "prompts" / "revision_policy.md"
+INDEX_CACHE = pathlib.Path("/tmp/pob_lemma_index.json")
+
+ANTHROPIC_API = "https://api.anthropic.com/v1/messages"
+DEFAULT_MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-4-6")
+MAX_ITERATIONS = 6  # per-verse hard cap on tool-call rounds
+
+
+# ──────────────────────────────────────────────────────────────────
+# DOCTRINE.md contested-terms parser
+# ──────────────────────────────────────────────────────────────────
+
+def parse_doctrine_contested_terms() -> dict[str, dict[str, str]]:
+    """Parse the contested-terms table in DOCTRINE.md.
+
+    Returns: { source_word_normalized: {greek, default, alternatives, rationale} }
+    Keyed by both the Greek/Hebrew form and the transliterated form
+    (so `lookup_doctrine("νήφω")` and `lookup_doctrine("nepho")` both hit).
+    """
+    if not DOCTRINE_FILE.exists():
+        return {}
+    text = DOCTRINE_FILE.read_text(encoding="utf-8")
+
+    # Find the contested-terms table: a markdown table after the
+    # "## Contested terms" header.
+    m = re.search(r"## Contested terms\s*\n(.*?)(?=\n## )", text, re.DOTALL)
+    if not m:
+        return {}
+    section = m.group(1)
+
+    out: dict[str, dict[str, str]] = {}
+    for line in section.splitlines():
+        if not line.startswith("| "):
+            continue
+        # Skip header and separator
+        cells = [c.strip() for c in line.strip("|").split("|")]
+        if len(cells) < 4:
+            continue
+        if cells[0].lower().startswith("greek") or set(cells[0]) <= {"-", " "}:
+            continue
+
+        # cells[0] looks like "Χριστός *Christos*" — split into Greek + translit
+        head = cells[0]
+        greek_match = re.match(r"([^\s\*]+)", head)
+        translit_match = re.search(r"\*([^*]+)\*", head)
+        greek = greek_match.group(1) if greek_match else head
+        translit = translit_match.group(1) if translit_match else ""
+
+        entry = {
+            "source_word": greek,
+            "transliteration": translit,
+            "default": cells[1],
+            "alternatives_considered": cells[2],
+            "rationale": cells[3] if len(cells) > 3 else "",
+        }
+        out[greek] = entry
+        if translit:
+            out[translit.lower()] = entry
+
+    return out
+
+
+# ──────────────────────────────────────────────────────────────────
+# Lemma occurrence index (built from translation/ YAMLs)
+# ──────────────────────────────────────────────────────────────────
+
+def build_lemma_index(force: bool = False) -> dict[str, list[dict]]:
+    """Walk translation/ and index every source_word from lexical_decisions.
+
+    Returns: { source_word: [ {verse_id, reference, chosen, rationale_short}, ... ] }
+    Cached at /tmp/pob_lemma_index.json to avoid full re-walks.
+    """
+    if INDEX_CACHE.exists() and not force:
+        try:
+            return json.loads(INDEX_CACHE.read_text())
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    index: dict[str, list[dict]] = defaultdict(list)
+    for path in TRANSLATION_ROOT.rglob("*.yaml"):
+        try:
+            data = yaml.safe_load(path.read_text(encoding="utf-8"))
+        except (yaml.YAMLError, UnicodeDecodeError):
+            continue
+        if not isinstance(data, dict):
+            continue
+        verse_id = data.get("id") or path.stem
+        reference = data.get("reference") or verse_id
+        for ld in (data.get("lexical_decisions") or []):
+            sw = ld.get("source_word")
+            if not sw:
+                continue
+            index[sw].append({
+                "verse_id": verse_id,
+                "reference": reference,
+                "chosen": ld.get("chosen", ""),
+                "rationale_short": str(ld.get("rationale") or "")[:200],
+            })
+
+    INDEX_CACHE.write_text(json.dumps(index))
+    return index
+
+
+# ──────────────────────────────────────────────────────────────────
+# Tool implementations (the four lookup tools + two terminals)
+# ──────────────────────────────────────────────────────────────────
+
+_DOCTRINE_CACHE: dict | None = None
+_INDEX_CACHE: dict | None = None
+
+
+def tool_lookup_doctrine(source_word: str) -> dict:
+    global _DOCTRINE_CACHE
+    if _DOCTRINE_CACHE is None:
+        _DOCTRINE_CACHE = parse_doctrine_contested_terms()
+    key = source_word.strip()
+    entry = _DOCTRINE_CACHE.get(key) or _DOCTRINE_CACHE.get(key.lower())
+    if entry:
+        return {"found": True, **entry}
+    return {"found": False, "source_word": source_word,
+            "note": "No DOCTRINE.md contested-terms entry. You have full latitude on this word."}
+
+
+def tool_lookup_occurrences(source_word: str, limit: int = 20) -> dict:
+    global _INDEX_CACHE
+    if _INDEX_CACHE is None:
+        _INDEX_CACHE = build_lemma_index()
+    hits = _INDEX_CACHE.get(source_word, [])
+    # Aggregate distribution of `chosen` renderings to help spot patterns.
+    distribution: dict[str, int] = defaultdict(int)
+    for h in hits:
+        distribution[h["chosen"]] += 1
+    return {
+        "source_word": source_word,
+        "total_occurrences": len(hits),
+        "distribution": dict(distribution),
+        "sample_occurrences": hits[:limit],
+    }
+
+
+def tool_lookup_book_context(book: str) -> dict:
+    """Stub for now — book-level translation notes aren't yet structured.
+    Returns a deterministic empty-but-honest response.
+    """
+    return {
+        "book": book,
+        "note": "Book-level translation notes are not yet indexed. Rely on "
+                "lookup_occurrences within the book and the verse's own "
+                "lexical_decisions for author-pattern evidence.",
+    }
+
+
+def tool_read_drafter_reasoning(verse_yaml_path: str) -> dict:
+    p = pathlib.Path(verse_yaml_path)
+    if not p.is_absolute():
+        p = REPO_ROOT / p
+    if not p.exists():
+        return {"error": f"verse not found: {verse_yaml_path}"}
+    data = yaml.safe_load(p.read_text(encoding="utf-8"))
+    return {
+        "verse_id": data.get("id"),
+        "reference": data.get("reference"),
+        "current_text": (data.get("translation") or {}).get("text", ""),
+        "lexical_decisions": data.get("lexical_decisions") or [],
+        "theological_decisions": data.get("theological_decisions") or [],
+        "footnotes": (data.get("translation") or {}).get("footnotes") or [],
+        "revisions": data.get("revisions") or [],
+    }
+
+
+TOOL_SCHEMAS = [
+    {
+        "name": "lookup_doctrine",
+        "description": "Look up DOCTRINE.md's contested-terms entry for a Greek/Hebrew word. Returns the project-binding default rendering if one exists, or {found: false} if you have latitude. ALWAYS call this for any word you are considering changing.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "source_word": {"type": "string", "description": "Greek or Hebrew word in original script (e.g. 'νήφω') OR transliteration (e.g. 'nepho')."},
+            },
+            "required": ["source_word"],
+        },
+    },
+    {
+        "name": "lookup_occurrences",
+        "description": "Return every POB verse where this source_word appears in lexical_decisions, with current renderings. Use to test 'is this figurative throughout?' against actual usage in the corpus.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "source_word": {"type": "string"},
+                "limit": {"type": "integer", "default": 20, "description": "Max sample occurrences to return (distribution counts always full)."},
+            },
+            "required": ["source_word"],
+        },
+    },
+    {
+        "name": "lookup_book_context",
+        "description": "Return book-level translation notes for a given book (e.g. '1_peter', 'romans'). Currently returns a stub — book-level notes are not yet indexed.",
+        "input_schema": {
+            "type": "object",
+            "properties": {"book": {"type": "string"}},
+            "required": ["book"],
+        },
+    },
+    {
+        "name": "read_drafter_reasoning",
+        "description": "Return the verse's full lexical_decisions, theological_decisions, footnotes, and revision history. Required reading before any submit_revision call.",
+        "input_schema": {
+            "type": "object",
+            "properties": {"verse_yaml_path": {"type": "string"}},
+            "required": ["verse_yaml_path"],
+        },
+    },
+    {
+        "name": "submit_revision",
+        "description": "Terminal: propose a change to the verse. The rationale field MUST address Q1 (what the author is doing with the word in context), Q2 (why the current English misses that), and Q3 (how this engages with — not bypasses — the drafter's lexical_decisions). A rationale that names only a lexicon preference will be rejected.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "revised_text": {"type": "string"},
+                "rationale": {"type": "string", "description": "Must address Q1/Q2/Q3 explicitly. Lexicon-preference-only rationales are invalid."},
+            },
+            "required": ["revised_text", "rationale"],
+        },
+    },
+    {
+        "name": "submit_unchanged",
+        "description": "Terminal: the draft stands. This is the default outcome — every verse you leave alone is a verse you have validated.",
+        "input_schema": {
+            "type": "object",
+            "properties": {"brief_reason": {"type": "string"}},
+            "required": ["brief_reason"],
+        },
+    },
+]
+
+
+TOOL_DISPATCH = {
+    "lookup_doctrine": lambda i: tool_lookup_doctrine(i["source_word"]),
+    "lookup_occurrences": lambda i: tool_lookup_occurrences(i["source_word"], i.get("limit", 20)),
+    "lookup_book_context": lambda i: tool_lookup_book_context(i["book"]),
+    "read_drafter_reasoning": lambda i: tool_read_drafter_reasoning(i["verse_yaml_path"]),
+}
+
+
+# ──────────────────────────────────────────────────────────────────
+# Reviewer agent loop
+# ──────────────────────────────────────────────────────────────────
+
+def load_system_prompt() -> str:
+    base = """You are an agentic revision reviewer for the People's Open Bible.
+
+You have information-gathering tools (lookup_doctrine, lookup_occurrences, \
+lookup_book_context, read_drafter_reasoning) and two terminal actions \
+(submit_revision, submit_unchanged). Use the lookup tools to gather evidence, \
+then call exactly one terminal action.
+
+The framework that governs your job is in the POLICY block below. Apply it. \
+The default outcome is submit_unchanged. Every verse you leave alone is a verse \
+you have validated. Submit a revision only when you can name a specific defect \
+AND show the drafter's documented reasoning either does not address it or is \
+wrong on the evidence.
+
+You have at most """ + str(MAX_ITERATIONS) + """ tool-call rounds per verse. \
+Use them to gather evidence first; do not propose a change without checking \
+lookup_doctrine and (where the word has a documented decision) \
+read_drafter_reasoning.
+"""
+    if POLICY_FILE.exists():
+        return base + "\n\n---\n\n" + POLICY_FILE.read_text(encoding="utf-8")
+    return base
+
+
+def anthropic_call(messages: list[dict], system: str, model: str) -> dict:
+    api_key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
+    if not api_key:
+        raise RuntimeError("ANTHROPIC_API_KEY not set")
+    payload = {
+        "model": model,
+        "max_tokens": 4096,
+        "system": system,
+        "tools": TOOL_SCHEMAS,
+        "messages": messages,
+    }
+    req = urllib.request.Request(
+        ANTHROPIC_API,
+        data=json.dumps(payload).encode("utf-8"),
+        headers={
+            "x-api-key": api_key,
+            "anthropic-version": "2023-06-01",
+            "content-type": "application/json",
+        },
+        method="POST",
+    )
+    for attempt in range(5):
+        try:
+            with urllib.request.urlopen(req, timeout=180) as resp:
+                return json.loads(resp.read())
+        except urllib.error.HTTPError as e:
+            body = e.read().decode("utf-8", "ignore")
+            if e.code in (429, 500, 503) and attempt < 4:
+                time.sleep(15 + attempt * 15)
+                continue
+            raise RuntimeError(f"Anthropic HTTP {e.code}: {body[:300]}")
+    raise RuntimeError("exhausted retries")
+
+
+def review_verse(verse_path: pathlib.Path, model: str = DEFAULT_MODEL) -> dict:
+    """Run the agentic reviewer on one verse. Returns a proposal dict."""
+    data = yaml.safe_load(verse_path.read_text(encoding="utf-8"))
+    source_text = (data.get("source") or {}).get("text", "")
+    source_lang = (data.get("source") or {}).get("language", "Greek")
+    current = (data.get("translation") or {}).get("text", "")
+    reference = data.get("reference") or str(verse_path)
+
+    user_msg = (
+        f"Reference: {reference}\n"
+        f"Verse YAML path: {verse_path.relative_to(REPO_ROOT)}\n"
+        f"Source ({source_lang}):\n{source_text}\n\n"
+        f"Current draft:\n{current}\n\n"
+        f"Apply the framework. Gather evidence via tools, then call exactly one "
+        f"terminal action."
+    )
+    messages: list[dict] = [{"role": "user", "content": user_msg}]
+    system = load_system_prompt()
+
+    trace: list[dict] = []
+    for iteration in range(MAX_ITERATIONS):
+        resp = anthropic_call(messages, system, model)
+        content = resp.get("content", [])
+        stop_reason = resp.get("stop_reason")
+
+        # Record the assistant turn verbatim for replay/audit
+        messages.append({"role": "assistant", "content": content})
+        trace.append({"iteration": iteration, "stop_reason": stop_reason, "blocks": [b.get("type") for b in content]})
+
+        # Dispatch any tool_use blocks
+        tool_results: list[dict] = []
+        terminal: dict | None = None
+        for block in content:
+            if block.get("type") != "tool_use":
+                continue
+            tname = block["name"]
+            tin = block.get("input") or {}
+            if tname == "submit_revision":
+                terminal = {"kind": "revision", "revised_text": tin.get("revised_text", ""), "rationale": tin.get("rationale", "")}
+                break
+            if tname == "submit_unchanged":
+                terminal = {"kind": "unchanged", "brief_reason": tin.get("brief_reason", "")}
+                break
+            handler = TOOL_DISPATCH.get(tname)
+            if handler is None:
+                tool_results.append({"type": "tool_result", "tool_use_id": block["id"], "content": json.dumps({"error": f"unknown tool {tname}"}), "is_error": True})
+                continue
+            try:
+                result = handler(tin)
+                tool_results.append({"type": "tool_result", "tool_use_id": block["id"], "content": json.dumps(result)[:8000]})
+            except Exception as exc:
+                tool_results.append({"type": "tool_result", "tool_use_id": block["id"], "content": json.dumps({"error": str(exc)}), "is_error": True})
+
+        if terminal is not None:
+            return {
+                "verse_path": str(verse_path.relative_to(REPO_ROOT)),
+                "reference": reference,
+                "current_text": current,
+                "decision": terminal,
+                "iterations_used": iteration + 1,
+                "trace": trace,
+                "model": model,
+            }
+
+        if not tool_results:
+            # Model emitted text without tools and without terminal — re-prompt once.
+            messages.append({"role": "user", "content": "You did not call a tool. Use a lookup tool to gather evidence, or call submit_unchanged / submit_revision."})
+            continue
+
+        messages.append({"role": "user", "content": tool_results})
+
+    # Cap reached without terminal — fail safe to unchanged + flag for human.
+    return {
+        "verse_path": str(verse_path.relative_to(REPO_ROOT)),
+        "reference": reference,
+        "current_text": current,
+        "decision": {"kind": "cap_reached_unchanged", "brief_reason": f"Max {MAX_ITERATIONS} iterations exhausted without a terminal call. Flagged for human review."},
+        "iterations_used": MAX_ITERATIONS,
+        "trace": trace,
+        "model": model,
+    }
+
+
+# ──────────────────────────────────────────────────────────────────
+# Audit (deterministic, no LLM) — finds candidate verses
+# ──────────────────────────────────────────────────────────────────
+
+def audit_corpus(testaments: list[str] | None = None) -> list[dict]:
+    """Find verses where a contested term in DOCTRINE.md appears AND the
+    current rendering may diverge from doctrine. No LLM calls.
+
+    Heuristic: a verse is flagged if any of its lexical_decisions source_words
+    matches a DOCTRINE.md contested term. Triage of which need actual revision
+    is left to the agentic reviewer.
+    """
+    doctrine = parse_doctrine_contested_terms()
+    contested_keys = {k for k in doctrine if not k.islower()}  # original-script only
+    testaments = testaments or ["nt", "ot", "extra_canonical", "deuterocanon"]
+
+    flagged: list[dict] = []
+    for testament in testaments:
+        t_dir = TRANSLATION_ROOT / testament
+        if not t_dir.exists():
+            continue
+        for path in t_dir.rglob("*.yaml"):
+            try:
+                data = yaml.safe_load(path.read_text(encoding="utf-8"))
+            except (yaml.YAMLError, UnicodeDecodeError):
+                continue
+            if not isinstance(data, dict):
+                continue
+            lex = data.get("lexical_decisions") or []
+            hits = [ld.get("source_word") for ld in lex if ld.get("source_word") in contested_keys]
+            if hits:
+                flagged.append({
+                    "verse_path": str(path.relative_to(REPO_ROOT)),
+                    "reference": data.get("reference"),
+                    "contested_terms": hits,
+                    "has_revisions": bool(data.get("revisions")),
+                })
+    return flagged
+
+
+# ──────────────────────────────────────────────────────────────────
+# Apply: take an approved proposals manifest and write the YAMLs
+# ──────────────────────────────────────────────────────────────────
+
+def apply_proposals(manifest_path: pathlib.Path) -> None:
+    manifest = json.loads(manifest_path.read_text())
+    proposals = manifest.get("proposals") or manifest  # accept either shape
+    applied = 0
+    skipped = 0
+    for prop in proposals:
+        decision = prop.get("decision", {})
+        if decision.get("kind") != "revision":
+            skipped += 1
+            continue
+        if not prop.get("approved"):
+            skipped += 1
+            continue
+        path = REPO_ROOT / prop["verse_path"]
+        data = yaml.safe_load(path.read_text(encoding="utf-8"))
+        new_text = decision["revised_text"]
+        old_text = data["translation"]["text"]
+        if new_text == old_text:
+            skipped += 1
+            continue
+        revisions = data.setdefault("revisions", [])
+        revisions.append({
+            "timestamp": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+            "adjudicator": "agentic-revision-pass",
+            "reviewer_model": prop.get("model", DEFAULT_MODEL),
+            "category": "agentic_revision",
+            "from": old_text,
+            "to": new_text,
+            "rationale": decision.get("rationale", ""),
+        })
+        data["translation"]["text"] = new_text
+        data["revision_pass"] = {
+            "model": "agentic-" + prop.get("model", DEFAULT_MODEL),
+            "timestamp": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+            "unchanged": False,
+            "changes_summary": decision.get("rationale", "")[:500],
+        }
+        path.write_text(yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8")
+        applied += 1
+    print(f"applied={applied} skipped={skipped}")
+
+
+# ──────────────────────────────────────────────────────────────────
+# CLI
+# ──────────────────────────────────────────────────────────────────
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--audit-only", action="store_true", help="Find candidate verses; no LLM calls.")
+    parser.add_argument("--from-audit", type=str, help="Run reviewer on verses listed in an audit JSON.")
+    parser.add_argument("--verse", type=str, help="Run reviewer on a single verse YAML.")
+    parser.add_argument("--apply", type=str, help="Apply an approved proposals manifest.")
+    parser.add_argument("--out", type=str, default="/tmp/agentic_revise_out.json", help="Output JSON path.")
+    parser.add_argument("--limit", type=int, default=0, help="Max verses to process (0 = no limit).")
+    parser.add_argument("--testament", nargs="*", default=None, help="Testaments to audit.")
+    parser.add_argument("--model", default=DEFAULT_MODEL, help="Anthropic model.")
+    parser.add_argument("--rebuild-index", action="store_true", help="Force rebuild of /tmp lemma index.")
+    args = parser.parse_args()
+
+    if args.rebuild_index:
+        build_lemma_index(force=True)
+        print(f"index rebuilt at {INDEX_CACHE}")
+        return
+
+    if args.audit_only:
+        flagged = audit_corpus(args.testament)
+        out = {"generated_at": datetime.now(timezone.utc).isoformat(), "count": len(flagged), "verses": flagged}
+        pathlib.Path(args.out).write_text(json.dumps(out, indent=2, ensure_ascii=False))
+        print(f"audit: {len(flagged)} verses flagged → {args.out}")
+        return
+
+    if args.apply:
+        apply_proposals(pathlib.Path(args.apply))
+        return
+
+    # Reviewer mode: --verse or --from-audit
+    verse_paths: list[pathlib.Path] = []
+    if args.verse:
+        verse_paths = [REPO_ROOT / args.verse if not pathlib.Path(args.verse).is_absolute() else pathlib.Path(args.verse)]
+    elif args.from_audit:
+        audit = json.loads(pathlib.Path(args.from_audit).read_text())
+        verses = audit.get("verses") or audit
+        verse_paths = [REPO_ROOT / v["verse_path"] for v in verses]
+        if args.limit:
+            verse_paths = verse_paths[:args.limit]
+    else:
+        parser.error("specify --audit-only, --verse, --from-audit, or --apply")
+
+    proposals: list[dict] = []
+    for i, path in enumerate(verse_paths, 1):
+        print(f"[{i}/{len(verse_paths)}] {path.relative_to(REPO_ROOT)}", flush=True)
+        try:
+            result = review_verse(path, model=args.model)
+            proposals.append(result)
+        except Exception as exc:
+            proposals.append({"verse_path": str(path.relative_to(REPO_ROOT)), "error": str(exc)})
+
+    out = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "model": args.model,
+        "count": len(proposals),
+        "proposals": proposals,
+    }
+    pathlib.Path(args.out).write_text(json.dumps(out, indent=2, ensure_ascii=False))
+    n_revise = sum(1 for p in proposals if p.get("decision", {}).get("kind") == "revision")
+    n_unchanged = sum(1 for p in proposals if p.get("decision", {}).get("kind") == "unchanged")
+    n_cap = sum(1 for p in proposals if p.get("decision", {}).get("kind") == "cap_reached_unchanged")
+    n_err = sum(1 for p in proposals if p.get("error"))
+    print(f"\nproposals: revise={n_revise} unchanged={n_unchanged} cap={n_cap} err={n_err} → {args.out}")
+    print("\nReview the proposals manifest. To apply approved ones, set 'approved': true on each\n"
+          "and run:  python3 tools/agentic_revise.py --apply " + args.out)
+
+
+if __name__ == "__main__":
+    main()

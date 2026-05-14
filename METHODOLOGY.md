@@ -88,7 +88,7 @@ books. Each language family forced a different OCR + parser stack.
 
 | Layer | What it does |
 |---|---|
-| Stacked-review pass | Each verse gets a per-book author-intent context pass with **Gemini 3.1 Pro** (run on Vertex AI on the credit-funded `cartha-bible-vertex` project). Corrections auto-apply where evidence is strong; weaker findings escalate to a manually-adjudicated tier. The full negotiation history (`from`, `to`, rationale, reviewer model) is persisted in the verse YAML's `revisions` array. |
+| Stacked-review pass | Each verse gets a per-book author-intent context pass with **Gemini 3.1 Pro**. Corrections auto-apply where evidence is strong; weaker findings escalate to a manually-adjudicated tier. The full negotiation history (`from`, `to`, rationale, reviewer model) is persisted in the verse YAML's `revisions` array. |
 | Flywheel | A revisions flywheel runs every 30 minutes, regenerating `revisions.json` and pushing if any counts changed. As of the most recent snapshot, ~22,000 applied edits across ~18,700 verses, with ~60,000 review-pass verdicts logged across ~41,000 verses (including "agree" verdicts where no edit was applied). |
 
 Public reader surfaces deliberately separate those numbers. The large
@@ -144,7 +144,7 @@ preserved in the phase docs for historical completeness.
 | Jubilees | Charles 1895 (critical, 4 MSS) | Gemini 3.1 Pro | Same Ge'ez constraint as 1 Enoch |
 | Didache | Hitchcock & Brown 1884 | Azure GPT-5.4 + Gemini 3.1 Pro reviewer | Polytonic Greek; Gemini spot-checks Azure's drafts |
 | 1 Clement | Funk 1901 (critical with notes) | Azure GPT-5.4 | Polytonic + interleaved Latin handled cleanly |
-| Shepherd of Hermas | Lightfoot 1891 | Gemini 3.1 Pro (with Vertex fallback) | Page layout defeated Azure; Gemini Pro succeeds |
+| Shepherd of Hermas | Lightfoot 1891 | Gemini 3.1 Pro | Page layout defeated Azure; Gemini Pro succeeds |
 | Testaments of the Twelve Patriarchs | Sinker 1879 | Azure GPT-5.4 | Polytonic Greek; layout straightforward |
 | Nag Hammadi (Thomas, Truth, Thunder) | NHC II,2 / NHC I,3 / NHC VI,2 facsimiles + Mattison/Zinner ecosystem | Gemini 3.1 Pro (Coptic-aware) | Coptic script; no Azure baseline |
 
@@ -245,8 +245,8 @@ per-verse path. The honest description is:
    passages, processed 2026-04-23). Claude Opus 4.7 has been used
    for occasional spot fixes on individual verses needing targeted
    rework or another independent model-family pass.
-2. **Revision pass.** Gemini 3.1 Pro running on Vertex AI
-   reads each draft against the source text, identifies lexical
+2. **Revision pass.** Gemini 3.1 Pro reads each draft against
+   the source text, identifies lexical
    disagreements, awkward English, and category-1 grammar issues,
    and adjudicates whether to apply a change or mark the verse
    `unchanged`. Every verdict is logged. Every applied edit is

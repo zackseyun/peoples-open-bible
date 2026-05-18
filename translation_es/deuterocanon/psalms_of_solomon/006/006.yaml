@@ -38,7 +38,7 @@ base_translation:
     changes_summary: Changed 'woke' to 'rose' to more closely reflect ἐξανέστη while keeping natural formal English. The rest is accurate and complete.
 translation:
   language: es
-  text: Se levantó de su sueño[a], y bendijo el nombre del Señor.
+  text: Despertó de su sueño[a], y bendijo el nombre del Señor.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -112,34 +112,46 @@ ai_draft:
     total_tokens: 2921
     reasoning_tokens: 0
     estimated_cost_usd: 0.005285
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: Se levantó de su sueño[a], y bendijo el nombre del Señor.
+  to: Despertó de su sueño[a], y bendijo el nombre del Señor.
+  rationale: Se actualiza el texto principal a 'Despertó de su sueño' para alinearse con la revisión inglesa final (ἐξανέστη='woke'='despertó') y ofrecer 'se levantó' como alternativa en nota.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:48:39Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'La traducción española refleja bien el sentido del griego: ἐξανέστη ἐξ ὕπνου αὐτοῦ se capta naturalmente como «se levantó de su sueño» y ἐυλόγησεν τῷ ὀνόματι Κυρίου como «bendijo el nombre del Señor». No hay omisiones sustanciales ni añadidos interpretativos. Sin embargo, la nota al pie actual no preserva una alternativa real, porque repite exactamente la misma redacción del texto principal.'
-  spanish_quality_summary: 'El español es claro, natural y con registro bíblico digno. «Se levantó de su sueño, y bendijo el nombre del Señor» lee bien en español eclesial general. El único problema de calidad es formal/editorial: la nota [a] es redundante y por tanto defectuosa.'
-  glossary_alignment: La elección de «bendijo» para ἐυλόγησεν es acertada. «Señor» para Κυρίου es defendible aquí por tratarse de fuente griega con κύριος y por el audit trail inglés, aunque se aparta del valor por defecto de «Yahvé»; la justificación teológica dada es suficiente en este caso. No hay conflicto serio de glosario, pero sí debe corregirse la nota alternativa para que sea genuina.
+  source_alignment_summary: ἐξανέστη ἐξ ὕπνου puede ser 'levantarse' o 'despertar'. El POB inglés fue revisado finalmente a 'He woke from his sleep'. El ES dice 'Se levantó de su sueño' (correspondiente a 'rose', versión anterior). La nota [a] repite el texto principal.
+  spanish_quality_summary: El texto ES debe actualizarse para alinearse con la revisión inglesa final ('woke'='despertó'). La nota [a] repite exactamente el texto principal. Se debe actualizar la nota para ofrecer 'se levantó' como alternativa.
+  glossary_alignment: Señor para Κυρίου correcto. bendijo para ἐυλόγησεν correcto. Sin conflictos.
   issues:
   - severity: medium
-    issue: La nota al pie [a] repite exactamente el texto principal.
-    rationale: 'La nota dice «O: “se levantó de su sueño”», que no ofrece alternativa léxica ni ayuda al lector. Si se conserva una nota por correspondencia con el inglés, debe dar una opción real como «despertó de su sueño» o similar.'
-  revised_spanish_text: Se levantó de su sueño[a], y bendijo el nombre del Señor.
+    issue: La nota [a] repite exactamente el texto principal
+    rationale: No ofrece alternativa léxica real. Debe dar opción como 'se levantó de su sueño'.
+  - severity: low
+    issue: El texto ES no está alineado con la revisión inglesa final ('woke'='despertó')
+    rationale: El POB inglés fue revisado a 'He woke from his sleep' pero el ES dice 'Se levantó' (versión anterior).
+  revised_spanish_text: Despertó de su sueño[a], y bendijo el nombre del Señor.
   revised_footnotes:
   - marker: a
-    text: 'O: «despertó de su sueño».'
+    text: 'O: «se levantó de su sueño».'
     reason: lexical_alternative
-  revision_rationale: Se mantiene el texto principal porque es fiel, natural y bien justificado. Solo se corrige la nota [a] para que preserve una alternativa real en español en lugar de duplicar la misma frase del cuerpo del texto.
+  revision_rationale: Se actualiza el texto principal a 'Despertó de su sueño' para alinearse con la revisión inglesa final (ἐξανέστη='woke'='despertó') y ofrecer 'se levantó' como alternativa en nota.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: c0dad9668393aa05586eb0f9877465b15c465337c50513ab48d5eda83d2f5d1f
-  timestamp: '2026-05-07T23:20:06Z'
-  output_hash: 0c324ee63bcac676599c4c42e674106d5d900be2dd52416f8be938178715ea02
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 7e1038271877fdfecb6920107d6e4bb88a50a33ed7c9292f0a79c4f54ecf8b4a
+  timestamp: '2026-05-18T12:48:39Z'
+  output_hash: 7e1038271877fdfecb6920107d6e4bb88a50a33ed7c9292f0a79c4f54ecf8b4a
   usage:
-    prompt_tokens: 2575
-    completion_tokens: 506
-    total_tokens: 3081
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.014028
-  applied_revision: false
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

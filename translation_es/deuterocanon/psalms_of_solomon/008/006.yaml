@@ -51,10 +51,10 @@ translation:
     text: 'O: «mi corazón temió».'
     reason: lexical_alternative
   - marker: b
-    text: 'O: «mis huesos fueron turbados/agitados».'
+    text: 'O: «mis huesos fueron agitados» o «fueron turbados».'
     reason: lexical_alternative
   - marker: c
-    text: 'O: «como flax». El griego dice con más literalidad «como lino»; la imagen es difícil, pero se conserva la comparación material.'
+    text: 'El griego puede referirse al lino como fibra o material. La imagen es difícil; aquí se conserva la comparación más literal: «como lino».'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐφοβήθη
@@ -139,22 +139,19 @@ ai_draft:
     total_tokens: 3424
     reasoning_tokens: 0
     estimated_cost_usd: 0.006273
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador refleja bien el sentido básico del griego: ἐφοβήθη ἡ καρδία μου = «mi corazón tuvo miedo»/«temió» y ἐταράχθη τὰ ὀστᾶ μου = «mis huesos fueron sacudidos». También conserva la comparación ὡς λίνον con «como lino». Sin embargo, una nota introduce el anglicismo «flax», impropio en español, y la nota sobre λίνον es internamente confusa porque dice «como flax» pero luego «con más literalidad “como lino”», cuando el texto principal ya usa «lino».'
-  spanish_quality_summary: 'El español principal es natural y digno. «Mi corazón tuvo miedo; mis huesos fueron sacudidos como lino» es legible y fiel. La principal deficiencia está en las notas: «flax» no pertenece al español meta, y conviene explicar mejor la ambigüedad de λίνον en español entre la fibra/planta y el lino como material. También es preferible armonizar la nota de ἐταράχθη con la revisión inglesa, dejando «agitados» o «turbados» como alternativas a «sacudidos».'
-  glossary_alignment: No hay conflictos con la terminología base del proyecto. No aparecen términos sensibles como Yahvé, Mesías, esclavo, etc. La elección de «corazón», «huesos» y «lino» está alineada con el razonamiento léxico documentado. La excepción necesaria es evitar el préstamo inglés «flax» en notas españolas; debe explicarse como «fibra de lino» o equivalente.
+  source_alignment_summary: ἐφοβήθη ἡ καρδία μου=Mi corazón tuvo miedo, ἐταράχθη τὰ ὀστᾶ μου=mis huesos fueron sacudidos, ὡς λίνον=como lino. Todo correcto. Las notas contienen el anglicismo 'flax' y explicación confusa de λίνον.
+  spanish_quality_summary: 'Texto principal fiel y natural. Las notas necesitan: eliminar ''flax'' (anglicismo), aclarar mejor el valor de λίνον en español, y mejorar nota [b] con mejor formulación.'
+  glossary_alignment: corazón para καρδία correcto. huesos para ὀστᾶ correcto. lino para λίνον correcto. Sin conflictos.
   issues:
   - severity: medium
-    issue: La nota [c] usa el anglicismo «flax».
-    rationale: El proyecto exige español natural y legible. «Flax» no es español y rompe la calidad del aparato crítico.
+    issue: La nota [c] usa el anglicismo «flax»
+    rationale: «flax» no es español. Debe explicarse como 'fibra de lino' o equivalente en español natural.
   - severity: medium
-    issue: La nota [c] explica de manera confusa la literalidad de λίνον.
-    rationale: Dice «como flax» y luego «el griego dice con más literalidad “como lino”», aunque el texto principal ya dice «como lino». La nota debe aclarar que el término puede referirse a la planta/fibra de lino o al material.
-  - severity: low
-    issue: La nota [b] podría expresarse con mejor español.
-    rationale: «Turbados/agitados» con barra es aceptable, pero una formulación más cuidada mejora la legibilidad del aparato sin cambiar el sentido.
+    issue: La nota [c] es internamente confusa
+    rationale: Dice «como flax» luego «el griego dice... como lino» cuando el texto ya usa «lino». Se debe clarificar qué significa λίνον.
   revised_spanish_text: Mi corazón tuvo miedo[a]; mis huesos fueron sacudidos como lino[b][c].
   revised_footnotes:
   - marker: a
@@ -166,19 +163,22 @@ review_pass:
   - marker: c
     text: 'El griego puede referirse al lino como fibra o material. La imagen es difícil; aquí se conserva la comparación más literal: «como lino».'
     reason: lexical_alternative
-  revision_rationale: Se conserva el texto principal, que es fiel y natural, y se corrigen únicamente las notas para eliminar el anglicismo «flax» y aclarar mejor el valor de λίνον en español.
+  revision_rationale: Se mantiene el texto principal. Se corrigen las notas para eliminar el anglicismo 'flax' y clarificar el valor de λίνον en español natural.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 134945dfbc9c3048abb7dbd0b1880b2ab36e884fc5fee5b50d853c2eaa654df7
-  timestamp: '2026-05-07T23:33:20Z'
-  output_hash: e17ba38bd532679d6b2090b7ee66056a975736367a3bec78c7decce7812ab553
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: a7c6aa6198ef49352c64364c784f38176af3ed871d97fcc77c2951f0cffe55d1
+  timestamp: '2026-05-18T12:49:07Z'
+  output_hash: a7c6aa6198ef49352c64364c784f38176af3ed871d97fcc77c2951f0cffe55d1
   usage:
-    prompt_tokens: 2989
-    completion_tokens: 750
-    total_tokens: 3739
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.018722
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
   applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

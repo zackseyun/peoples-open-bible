@@ -276,6 +276,16 @@ def _truthy(value: Any) -> bool:
     return False
 
 
+def _explicit_false(value: Any) -> bool:
+    if isinstance(value, bool):
+        return value is False
+    if isinstance(value, (int, float)):
+        return value == 0
+    if isinstance(value, str):
+        return value.strip().lower() in {"0", "false", "no", "n", "hidden"}
+    return False
+
+
 def proposal_source_for(rev: dict[str, Any], credit: dict[str, Any] | None) -> tuple[str | None, str | None]:
     """Classify significant approved revisions for the public badge.
 
@@ -288,6 +298,9 @@ def proposal_source_for(rev: dict[str, Any], credit: dict[str, Any] | None) -> t
 
     Returns: (source, reason) or (None, None).
     """
+    if _explicit_false(rev.get("public_proposal")):
+        return None, None
+
     if credit:
         return str(credit.get("source") or "community").strip() or "community", "explicit_credit"
 

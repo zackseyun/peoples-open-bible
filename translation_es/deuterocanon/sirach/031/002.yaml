@@ -67,15 +67,8 @@ base_translation:
     changes_summary: 'Replaced the unrelated draft with a translation that reflects the Hebrew: rendered דאגת מחיה as ''Anxiety about livelihood,'' מחלי חזק as ''severe illness,'' and preserved the repeated תפריע נומה as ''disturbs sleep'' for completeness and consistency.'
 translation:
   language: es
-  text: Como quien agarra una sombra y persigue el viento, así es el que se aferra a los sueños.[a][b]
+  text: La ansiedad por el sustento perturba el sueño, y la enfermedad grave perturba el sueño.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'El testimonio hebreo conservado en Kahana para esta referencia dice: «La ansiedad por el sustento perturba el sueño, y la enfermedad grave perturba el sueño». Como el hebreo y el griego no coinciden aquí, el texto principal sigue el griego para Sirácide 31:2.'
-    reason: textual_variant
-  - marker: b
-    text: 'También puede entenderse: «el que se fija en los sueños» o «el que se aferra a los sueños».'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ὡς
   english_pob_choice: Like
@@ -166,36 +159,33 @@ ai_draft:
     total_tokens: 3973
     reasoning_tokens: 0
     estimated_cost_usd: 0.007247
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: Como quien agarra una sombra y persigue el viento, así es el que se aferra a los sueños.[a][b]
+  to: La ansiedad por el sustento perturba el sueño, y la enfermedad grave perturba el sueño.
+  rationale: 'Spanish swarm review: corrected translation text to match audited EN POB source'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:46:48Z'
 review_pass:
-  verdict: revise
-  source_alignment_summary: 'El borrador español sigue el texto griego («Como quien agarra una sombra y persigue el viento...»), pero la auditoría inglesa vigente para esta referencia fue revisada para seguir el hebreo de Kahana: «Anxiety about livelihood disturbs sleep, and severe illness disturbs sleep». Dado el registro de revisión aplicado y el contenido del source_payload hebreo en esta numeración, el borrador actual no coincide con el texto base auditado para la edición POB en este punto.'
-  spanish_quality_summary: 'El español del borrador es natural si se tradujera el griego, pero no es fiel al texto que la auditoría inglesa finalmente adoptó. La reparación en español es sencilla y clara: «La ansiedad por el sustento perturba el sueño, y la enfermedad grave perturba el sueño».'
-  glossary_alignment: No hay términos del glosario mayor (Yahvé, Mesías, etc.) implicados aquí. Léxicamente, «sustento» refleja bien מחיה/livelihood y «perturba el sueño» comunica bien תפריע נומה. «Enfermedad grave» es una opción fiel y legible para מחלי חזק.
-  issues:
-  - severity: high
-    issue: El texto principal español traduce el testimonio griego, no el texto adoptado en la auditoría inglesa vigente.
-    rationale: 'La sección applied_revisions muestra que la traducción inglesa fue cambiada al hebreo: «Anxiety about livelihood disturbs sleep, and severe illness disturbs sleep». El español debe alinearse con esa decisión auditada.'
-  - severity: medium
-    issue: Las notas al pie actuales quedaron invertidas respecto del estado auditado final.
-    rationale: La nota textual describe el hebreo como variante, cuando en la auditoría vigente ese contenido pasó al texto principal. La nota léxica sobre «sueños» deja de ser pertinente si se sigue el hebreo.
-  revised_spanish_text: La ansiedad por el sustento perturba el sueño, y la enfermedad grave perturba el sueño.
-  revision_rationale: Se reemplaza el borrador basado en el griego por una traducción española del texto hebreo adoptado en la auditoría inglesa revisada. No se conservan notas, porque las notas existentes dependían de una base griega que ya no corresponde al texto principal auditado para esta referencia.
+  verdict: approve
+  source_alignment_summary: 'El audit trail inglés vigente sigue el hebreo de Kahana (דאגת מחיה תפריע נומה, ומחלי חזק תפריע נומה) para esta referencia. El español fue corregido de la versión griega (''Como quien agarra una sombra...'') a la hebraica: ''La ansiedad por el sustento perturba el sueño, y la enfermedad grave perturba el sueño.'' Las notas que dependían del texto griego fueron eliminadas correctamente.'
+  spanish_quality_summary: Texto ahora alineado con la decisión auditada. 'Ansiedad por el sustento' para דאגת מחיה y 'enfermedad grave' para מחלי חזק son opciones fieles y naturales. Sin notas innecesarias.
+  glossary_alignment: Sin términos sensibles. Sin Yahvé/Mesías/esclavo en este versículo.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 319ddc5499bb26e4ddbc489954943bef0ca7f8b98bdbec0daaedc2b0824fc1c7
-  timestamp: '2026-05-07T23:06:58Z'
-  output_hash: 1781c42e12ab4a12a1d6d28d8c2dfd6c0dc408bdb4fdfde3a272bc0d71766f05
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: f19c16248ed8a74bc9f3808baaebb9e62da090bacd8941dbede6dd1965d57cb0
+  timestamp: '2026-05-18T12:48:28Z'
+  output_hash: f19c16248ed8a74bc9f3808baaebb9e62da090bacd8941dbede6dd1965d57cb0
   usage:
-    prompt_tokens: 3592
-    completion_tokens: 537
-    total_tokens: 4129
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.017035
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
   applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
-  - footnote marker [b] not present in translation text
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

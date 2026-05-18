@@ -30,7 +30,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Y él dijo[a]: «He guardado todas estas cosas desde mi juventud».'
+  text: 'Y él dijo: «He guardado todas estas cosas[a] desde mi juventud».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -97,26 +97,22 @@ ai_draft:
     estimated_cost_usd: 0.004432
 status: spanish_reviewed
 review_pass:
-  verdict: approve
-  source_alignment_summary: 'El borrador español refleja fielmente el griego y el rastro de auditoría inglés: «Y él dijo» corresponde bien a ὁ δὲ εἶπεν; «todas estas cosas» preserva la no explicitación de «mandamientos» en Ταῦτα πάντα; «He guardado» transmite adecuadamente ἐφύλαξα en este contexto; y «desde mi juventud» expresa de forma natural ἐκ νεότητος μου.'
-  spanish_quality_summary: El español es claro, natural y digno. La sintaxis y puntuación son idiomáticas. «Y él dijo» suena un poco más explícito de lo necesario, pero sigue siendo plenamente aceptable y legible. La nota al pie está bien formulada y ayuda a preservar la alternativa contextual sin introducirla en el texto principal.
-  glossary_alignment: No hay términos de glosario mayor en juego. La decisión de mantener «todas estas cosas» en vez de «mandamientos» sigue correctamente la política de no sobretraducir lo implícito. «He guardado» es una elección apropiada para φυλάσσω en contexto de mandamientos.
+  verdict: revise
+  source_alignment_summary: 'El texto refleja fielmente el griego: ὁ δὲ εἶπεν → «Y él dijo»; Ταῦτα πάντα → «todas estas cosas» sin importar «mandamientos» que solo está implícito; ἐφύλαξα → «he guardado» (perfectivo, en línea con la elección inglesa); ἐκ νεότητος μου → «desde mi juventud».'
+  spanish_quality_summary: 'El español es claro, natural y preciso. Se detectó un error de anclaje: el marcador [a] estaba sobre «dijo» pero la nota léxica comenta Ταῦτα πάντα («todas estas cosas» vs «todos estos mandamientos»). Se corrige el marcador para que se ancle en «estas cosas».'
+  glossary_alignment: 'No hay términos de glosario en conflicto. «Todas estas cosas» preserva correctamente Ταῦτα πάντα sin expansión interpretativa. «He guardado» es adecuado para φυλάσσω en contexto de cumplimiento de mandamientos.'
   issues:
-  - severity: low
-    issue: Uso explícito de «él» en «Y él dijo»
-    rationale: El sujeto no necesita expresarse en español, y «Y dijo» sería un poco más fluido. Sin embargo, «Y él dijo» no distorsiona el sentido ni perjudica seriamente la naturalidad, por lo que no exige revisión.
+  - severity: medium
+    issue: El marcador [a] estaba anclado en «dijo» en lugar de en «estas cosas».
+    rationale: La nota léxica explica la alternativa contextual de «estas cosas» como «estos mandamientos» (Ταῦτα πάντα → mandamientos implícitos por contexto). El marcador debe aparecer en «estas cosas», no en el verbo introductorio.
+  revised_spanish_text: 'Y él dijo: «He guardado todas estas cosas[a] desde mi juventud».'
+  revised_footnotes:
+  - marker: a
+    text: 'O, más explícitamente por el contexto: «todos estos mandamientos». El griego dice simplemente «todas estas cosas».'
+    reason: lexical_alternative
+  revision_rationale: Se corrige el anclaje del marcador [a] desde «dijo» hasta «estas cosas», que es el término al que corresponde la nota sobre Ταῦτα πάντα vs «mandamientos». Sin otros cambios.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 272ff5b8548463f3434d9f525c2b22924dc4467442e865756bb3f23a250be022
-  timestamp: '2026-05-07T21:02:04Z'
-  output_hash: 17b460ef8169289e1b20a02eab2476f414d8b3fe2e370bcbb3b108fba9a745c7
-  usage:
-    prompt_tokens: 2526
-    completion_tokens: 373
-    total_tokens: 2899
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.01191
-  applied_revision: false
+  applied_revision: true
+  model_id: claude-sonnet-4-6
+  prompt_id: spanish_jesus_sayings_v1
+  timestamp: '2026-05-16T00:00:00Z'

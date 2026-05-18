@@ -174,16 +174,13 @@ ai_draft:
 status: spanish_needs_revision
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador sigue bien el griego principal: βαδίσαντες como exhortación de partida, οὖν como conector, φάγετε λιπάσματα como comer comida selecta/rica, y ἀποστείλατε ἀποστολάς τοῖς μὴ ἔχουσιν como enviar porciones a quienes carecen. Sin embargo, la nota b en español está mal formulada y no preserva fielmente el sentido del paralelo hebreo/nota inglesa.'
-  spanish_quality_summary: 'El texto español es claro y natural. «Así pues» y «vayan» son legibles, aunque «Entonces» fluye algo mejor con el imperativo. «Alimentos ricos» funciona, pero «comidas selectas» o «manjares» sonarían más idiomáticos en registro bíblico. El problema principal es la redacción defectuosa de la nota b: «a quien no esté preparado nada para él» es gramaticalmente incorrecto y poco inteligible.'
-  glossary_alignment: 'No hay términos del glosario mayor en juego. Las decisiones léxicas principales concuerdan con el rastro POB: λιπάσματα no se literaliza torpemente; ἀποστολάς se conserva como «porciones»; τοῖς μὴ ἔχουσιν se mantiene según el griego primario, con aclaración del paralelo en nota.'
+  source_alignment_summary: 'El borrador refleja bien el griego: βαδίσαντες → ''vayan''; οὖν → ''Así pues''; φάγετε λιπάσματα → ''coman alimentos ricos''; ἀποστείλατε ἀποστολάς → ''envíen porciones''; τοῖς μὴ ἔχουσιν → ''a los que no tienen nada''. La nota [b] tiene una formulación gramaticalmente deficiente: ''a quien no esté preparado nada para él'' es sintácticamente incorrecto.'
+  spanish_quality_summary: 'El texto principal es claro y natural. La reparación necesaria es en la nota [b]: debe corregirse para expresar fielmente en buen español la alternativa del paralelo hebreo ''send portions to anyone for whom nothing is prepared''.'
+  glossary_alignment: Sin conflictos terminológicos. 'Porciones' para ἀποστολάς correcto. 'Alimentos ricos' para λιπάσματα aceptable.
   issues:
   - severity: medium
-    issue: La nota b traduce mal el paralelo hebreo/nota inglesa.
-    rationale: El inglés dice «send portions to anyone for whom nothing is prepared». El español dado («a quien no esté preparado nada para él») es sintácticamente defectuoso y puede confundir el referente.
-  - severity: low
-    issue: «Alimentos ricos» es comprensible pero algo calcado.
-    rationale: En español bíblico natural, «comidas selectas» o «manjares» suena más idiomático para comida festiva; aun así, no es un error de fidelidad.
+    issue: La nota [b] tiene una formulación gramaticalmente incorrecta en español.
+    rationale: '''a quien no esté preparado nada para él'' es sintácticamente incorrecto y confuso. Debe decir algo como ''a cualquiera para quien no haya nada preparado''.'
   revised_spanish_text: Así pues, vayan[a], coman alimentos ricos y envíen porciones a los que no tienen nada[b].
   revised_footnotes:
   - marker: a
@@ -192,19 +189,22 @@ review_pass:
   - marker: b
     text: 'El paralelo hebreo en Nehemías 8:10 dice más específicamente: «envíen porciones a cualquiera para quien no haya nada preparado».'
     reason: alternative_reading
-  revision_rationale: Se conserva el texto principal porque es fiel y claro, pero se corrige la nota b para reflejar con buen español y con precisión la alternativa documentada en el POB inglés.
+  revision_rationale: Se conserva el texto principal porque es fiel y claro. Se corrige la nota [b] para reflejar con buen español y con precisión la alternativa documentada en el POB inglés.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 3536baee4438f0ec1f0a331f28c383b7e19bcb6ac96585f57fad3b96dfc4c468
-  timestamp: '2026-05-07T23:19:12Z'
-  output_hash: cabb5635484ed12973aef4c356a6d769ba126203a04cd251516e1e95d0cd241c
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: e3f0bb2a0cb4620cf59ae20b640a91e48069e95f88fe808617cc61088a679027
+  timestamp: '2026-05-18T12:11:39Z'
+  output_hash: e3f0bb2a0cb4620cf59ae20b640a91e48069e95f88fe808617cc61088a679027
   usage:
-    prompt_tokens: 3648
-    completion_tokens: 626
-    total_tokens: 4274
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.01851
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
   applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

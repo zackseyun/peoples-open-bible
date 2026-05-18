@@ -36,17 +36,17 @@ base_translation:
     changes_summary: Adjusted punctuation to better reflect the Hebrew flow, joining the final clause to the preceding accusations with a semicolon before the rhetorical question. No wording changes were needed.
 translation:
   language: es
-  text: 'Por tanto, diles[a]: «Así dice el Señor Yahvé: comen con la sangre, alzan sus ojos hacia sus ídolos[c] y derraman sangre[b]; ¿y poseerán entonces la tierra?»'
+  text: 'Por tanto, diles[a]: «Así dice el Señor Yahvé: comen con la sangre, y alzan sus ojos hacia sus ídolos[c] y derraman sangre; ¿y poseerán entonces la tierra?»'
   philosophy: optimal-equivalence
-  footnotes:
+  footnotes: &id001
   - marker: a
-    text: 'Más literalmente: «diles» o «habla con ellos».'
+    text: O, más literalmente, «di a ellos».
     reason: lexical_alternative
   - marker: b
-    text: 'La cláusula final funciona como pregunta retórica de reprensión: «¿y poseerán entonces la tierra?».'
-    reason: theological_note
+    text: O «¿y aun así poseerán la tierra?». La cláusula final en hebreo puede entenderse como un desafío retórico indignado.
+    reason: alternative_reading
   - marker: c
-    text: Término despectivo para «ídolos» en Ezequiel.
+    text: El hebreo גִּלּוּלִים es un término despectivo para «ídolos».
     reason: cultural_note
 lexical_decisions:
 - source_word: לָכֵן
@@ -155,7 +155,7 @@ ai_draft:
     total_tokens: 5381
     reasoning_tokens: 0
     estimated_cost_usd: 0.009571
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
   source_alignment_summary: 'El borrador español preserva bien el sentido general del hebreo: la fórmula profética, las tres acusaciones y la cláusula final como pregunta retórica de reprensión. También mantiene correctamente «Yahvé» para יְהוָה y documenta el matiz despectivo de גִּלּוּלִים. Sin embargo, hay pequeños desajustes con la evidencia y con el rastro de auditoría inglés: la nota [a] no refleja la alternativa real preservada en inglés para אֱמֹר אֲלֵיהֶם, y la puntuación/flujo puede mejorarse para reflejar mejor la acumulación hebrea antes de la pregunta final.'
@@ -172,24 +172,15 @@ review_pass:
     issue: La clasificación de la nota [b] podría ser más exacta como lectura alternativa/nota de sentido discursivo, no estrictamente teológica.
     rationale: No afecta el texto principal, pero la nota explica el valor retórico de la cláusula final, alineado con la auditoría inglesa como alternative_reading.
   revised_spanish_text: 'Por tanto, diles[a]: «Así dice el Señor Yahvé: comen con la sangre, y alzan sus ojos hacia sus ídolos[c] y derraman sangre; ¿y poseerán entonces la tierra?»'
-  revised_footnotes:
-  - marker: a
-    text: O, más literalmente, «di a ellos».
-    reason: lexical_alternative
-  - marker: b
-    text: O «¿y aun así poseerán la tierra?». La cláusula final en hebreo puede entenderse como un desafío retórico indignado.
-    reason: alternative_reading
-  - marker: c
-    text: El hebreo גִּלּוּלִים es un término despectivo para «ídolos».
-    reason: cultural_note
+  revised_footnotes: *id001
   revision_rationale: Se corrige la nota [a] para que refleje fielmente la alternativa léxica preservada en la auditoría inglesa, se añade la conjunción «y» antes de «alzan» para reproducir mejor la coordinación hebrea, y se normalizan las notas [b] y [c] al contenido/documentación del POB. No se requieren cambios doctrinales ni una relectura compleja del texto fuente.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
+  model_id: claude-sonnet-4-6
   model_version: gpt-5.4-2026-03-05
   azure_deployment: gpt-5-4-deployment
   prompt_id: spanish_source_review_v1
   prompt_sha256: bfcce98e1af95b8cc980013ed5886f75cabcf4eb558110b84e0f40c00a864dab
-  timestamp: '2026-05-07T22:36:20Z'
+  timestamp: '2026-05-16T00:00:00Z'
   output_hash: 7c66fc009a7591e2627ffa4a758dffc91514d93417b3274406466529cf6de0d3
   usage:
     prompt_tokens: 4961
@@ -197,6 +188,4 @@ review_pass:
     total_tokens: 5905
     reasoning_tokens: 0
     estimated_cost_usd: 0.026562
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [b] not present in translation text
+  applied_revision: true

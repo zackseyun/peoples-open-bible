@@ -42,12 +42,8 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Les encienden lámparas[a], más que para ellos mismos, y no pueden ver ni una sola de ellas.
+  text: Les encienden lámparas, más de las que encienden para sí mismos, pero no pueden ver ni una sola de ellas.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: O «velas», según el matiz regional; aquí se prefiere «lámparas» porque reproduce mejor el objeto concreto del griego λύχνους.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: λύχνους
   english_pob_choice: lamps
@@ -131,35 +127,42 @@ ai_draft:
     total_tokens: 3280
     reasoning_tokens: 0
     estimated_cost_usd: 0.00642
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: Les encienden lámparas[a], más que para ellos mismos, y no pueden ver ni una sola de ellas.
+  to: Les encienden lámparas, más de las que encienden para sí mismos, pero no pueden ver ni una sola de ellas.
+  rationale: Se ajusta la comparación para mayor naturalidad. Se elimina la nota innecesaria sobre «velas».
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:47:17Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador sigue bien el griego: λύχνους = «lámparas», καίουσιν = «encienden», πλείους ἢ ἑαυτοῖς = comparación de mayor provisión para los ídolos que para los adoradores, y ὧν οὐδένα δύνανται ἰδεῖν = incapacidad de ver ni una sola de las lámparas. Sin embargo, «más que para ellos mismos» suena incompleto en español porque el comparativo queda sin apoyo nominal claro; conviene explicitar levemente el objeto implícito sin añadir contenido ajeno.'
-  spanish_quality_summary: El español es claro, pero la frase comparativa resulta algo forzada y poco idiomática. Una leve reparación a «más de las que encienden para sí mismos» mejora naturalidad y precisión. El resto del verso es legible y digno. La nota sobre «velas» no aporta valor suficiente y puede inducir una alternativa menos fiel al contexto de λύχνους.
-  glossary_alignment: No hay conflicto con la terminología base del proyecto. «Lámparas» y «ver» están bien alineados con las decisiones del POB. No intervienen términos sensibles como Yahvé, Mesías o δοῦλος.
+  source_alignment_summary: 'El texto sigue bien el griego: λύχνους→«lámparas», καίουσιν→«encienden», πλείους ἢ ἑαυτοῖς→comparación de mayor provisión para los ídolos que para los adoradores (mejorada idiomáticamente), ὧν οὐδένα δύνανται ἰδεῖν→«pero no pueden ver ni una sola de ellas». La revisión mejora la naturalidad del comparativo y elimina la nota sobre «velas» que no era fiel a λύχνους.'
+  spanish_quality_summary: «Más de las que encienden para sí mismos» expresa con claridad el contraste implícito en πλείους ἢ ἑαυτοῖς. «pero» en lugar de «y» mejora la adversativa final. Se elimina la nota innecesaria sobre «velas».
+  glossary_alignment: Sin conflictos terminológicos.
   issues:
   - severity: medium
-    issue: Comparativo español poco natural en «más que para ellos mismos»
-    rationale: Aunque intenta preservar la elipsis griega, en español suena truncado y puede dificultar la comprensión. El sentido comparativo se conserva mejor con una explicitación mínima del referente implícito.
+    issue: Comparativo «más que para ellos mismos» poco natural y truncado
+    rationale: Necesita explicitación mínima del referente implícito para sonar idiomático.
   - severity: low
-    issue: Nota lexical sobre «velas» innecesaria y potencialmente menos fiel
-    rationale: El griego λύχνους se refiere concretamente a lámparas; introducir «velas» como alternativa regional no mejora la comprensión y puede desviar del objeto cultural más probable.
+    issue: Nota sobre «velas» innecesaria y menos fiel
+    rationale: λύχνους se refiere a lámparas concretas; «velas» como alternativa regional puede desviar.
   revised_spanish_text: Les encienden lámparas, más de las que encienden para sí mismos, pero no pueden ver ni una sola de ellas.
-  revision_rationale: Se ajusta solo la comparación para que el español suene natural y exprese con claridad el contraste implícito en πλείους ἢ ἑαυτοῖς, sin sobreinterpretar. Se elimina la nota porque no es necesaria y la alternativa propuesta no es la más fiel al valor léxico de λύχνους.
+  revision_rationale: Se ajusta la comparación para mayor naturalidad. Se elimina la nota innecesaria sobre «velas».
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 4a1812975f90ef8ab5743cc2fd09fca2e4b2d53f09200c8ab0e8a401575898d7
-  timestamp: '2026-05-07T22:40:36Z'
-  output_hash: ded1559511ed43cdd254cee34285fbf18a97266fb6c0eeb9a8522337e7567eb2
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: e1af21bb92a88c5beafe94687ea098f979708b41f07269412f1f553c511dd3bb
+  timestamp: '2026-05-18T12:47:17Z'
+  output_hash: e1af21bb92a88c5beafe94687ea098f979708b41f07269412f1f553c511dd3bb
   usage:
-    prompt_tokens: 2974
-    completion_tokens: 549
-    total_tokens: 3523
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.01567
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

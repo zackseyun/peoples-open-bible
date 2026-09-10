@@ -59,7 +59,9 @@ class SpanishPriorityReaderTextTest(unittest.TestCase):
                     }
                     self.assertFalse(ending_hits, f"{path}: {sorted(ending_hits)}")
                     translation_block = raw.split("\ntranslation:\n", 1)[1]
-                    translation_block = re.split(r"\n(?=[A-Za-z_][A-Za-z0-9_]*:)", translation_block, 1)[0]
+                    translation_block = re.split(
+                        r"\n(?=[A-Za-z_][A-Za-z0-9_]*:)", translation_block, maxsplit=1
+                    )[0]
                     self.assertIsNone(
                         re.search(r"(?m)^    \[[A-Za-z0-9]+\]\s", translation_block),
                         f"{path}: footnote prose embedded in translation.text",

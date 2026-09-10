@@ -25,7 +25,8 @@ class SpanishPriorityReaderTextTest(unittest.TestCase):
         for testament, books in PRIORITY_BOOKS.items():
             for book in books:
                 for path in (ROOT / "translation_es" / testament / book).rglob("*.yaml"):
-                    lines = path.read_text().splitlines()
+                    raw = path.read_text()
+                    lines = raw.splitlines()
                     in_translation = False
                     text = None
                     for line in lines:
@@ -47,12 +48,22 @@ class SpanishPriorityReaderTextTest(unittest.TestCase):
                         str(path),
                     )
                     self.assertIsNone(PENINSULAR_FORMS.search(text), str(path))
+                    self.assertIsNone(
+                        re.search(r"\b(?:Yosef|Yaakov|Yeshua)\b", text),
+                        f"{path}: use established Spanish biblical names",
+                    )
                     ending_hits = {
                         token.lower()
                         for token in PENINSULAR_VERB_ENDING.findall(text)
                         if token.lower() not in ENDING_EXCEPTIONS
                     }
                     self.assertFalse(ending_hits, f"{path}: {sorted(ending_hits)}")
+                    translation_block = raw.split("\ntranslation:\n", 1)[1]
+                    translation_block = re.split(r"\n(?=[A-Za-z_][A-Za-z0-9_]*:)", translation_block, 1)[0]
+                    self.assertIsNone(
+                        re.search(r"(?m)^    \[[A-Za-z0-9]+\]\s", translation_block),
+                        f"{path}: footnote prose embedded in translation.text",
+                    )
                     checked += 1
         self.assertEqual(checked, 13910)
 

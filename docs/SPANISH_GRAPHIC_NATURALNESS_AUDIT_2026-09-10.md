@@ -5,7 +5,7 @@
 This pass covers 13,910 canonical verses in Matthew, Mark, Luke, John, Acts,
 Revelation, Genesis, Exodus, Leviticus, Numbers, Deuteronomy, Joshua, Judges,
 Ruth, 1 Samuel, and 2 Samuel. It also inventories every verse referenced by the
-live Graphic Bible catalog: 9,036 unique verses across 266 stories.
+live Graphic Bible catalog: 9,072 unique verses across 267 stories.
 
 The English POB and original-language record remain controlling context. NBLA
 is used as a modern Latin-American Spanish comparison, not copied as a source
@@ -32,7 +32,7 @@ natural neutral Latin-American Spanish.
 ## Remaining review queue
 
 `analysis/spanish_graphic_naturalness_priority.json` is the reproducible
-editorial queue. It records 1,239 Graphic Bible verses whose stored Spanish base
+editorial queue. It records 1,241 Graphic Bible verses whose stored Spanish base
 predates the current English POB. This is a priority signal, not proof that all
 1,239 require revision: some English changes are punctuation, register, or
 source-detail refinements already expressed adequately in Spanish.

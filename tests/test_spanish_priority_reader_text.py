@@ -56,6 +56,17 @@ class SpanishPriorityReaderTextTest(unittest.TestCase):
                     checked += 1
         self.assertEqual(checked, 13910)
 
+    def test_additional_graphic_books_have_no_parentheses(self):
+        checked = 0
+        for testament, book in (("ot", "isaiah"), ("nt", "hebrews"), ("nt", "romans")):
+            for path in (ROOT / "translation_es" / testament / book).rglob("*.yaml"):
+                record = yaml.safe_load(path.read_text())
+                text = str(record["translation"]["text"])
+                self.assertNotIn("(", text, str(path))
+                self.assertNotIn(")", text, str(path))
+                checked += 1
+        self.assertEqual(checked, 2027)
+
     def test_spot_checked_accuracy_and_naturalness_repairs(self):
         acts = yaml.safe_load((ROOT / "translation_es/nt/acts/009/003.yaml").read_text())
         john = yaml.safe_load((ROOT / "translation_es/nt/john/001/041.yaml").read_text())
@@ -69,11 +80,13 @@ class SpanishPriorityReaderTextTest(unittest.TestCase):
         acts_20 = yaml.safe_load((ROOT / "translation_es/nt/acts/020/025.yaml").read_text())
         genesis_31 = yaml.safe_load((ROOT / "translation_es/ot/genesis/031/010.yaml").read_text())
         genesis_39 = yaml.safe_load((ROOT / "translation_es/ot/genesis/039/011.yaml").read_text())
+        matthew_1 = yaml.safe_load((ROOT / "translation_es/nt/matthew/001/006.yaml").read_text())
         self.assertIsNone(
             re.search(r"ninguno de ustedes.*\bno volverá", acts_20["translation"]["text"]),
         )
         self.assertNotIn("en la casa, en la casa", genesis_39["translation"]["text"])
         self.assertIn("cuando el rebaño estaba en celo", genesis_31["translation"]["text"])
+        self.assertNotIn("Griego literalmente", matthew_1["translation"]["text"])
 
 if __name__ == "__main__":
     unittest.main()

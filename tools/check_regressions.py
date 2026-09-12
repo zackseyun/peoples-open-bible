@@ -33,16 +33,15 @@ REGRESSIONS_FILE = REPO_ROOT / "tools" / "known_regressions.yaml"
 # We check translation.text only — not footnotes or rationale fields.
 RULES = [
     {
-        "id": "christos-as-christ",
-        "check": lambda text: "\bChrist\b" in text or _word_in(text, "Christ"),
-        "description": 'δοῦλος Χριστός rendered as "Christ" instead of "Messiah"',
+        "id": "christos-name-form",
+        "description": 'name-like Χριστός rendered with "Messiah" instead of "Christ"',
         "details": (
-            'Found "Christ" in translation.text. '
-            "POB policy: Χριστός → Messiah. "
-            'Never use "Christ" in translation.text. '
+            'Found "Jesus the Messiah" or "Messiah Jesus" in translation.text. '
+            'POB policy uses "Jesus Christ" or "Christ Jesus" for name-like '
+            'constructions, while retaining "Messiah" as an independent title. '
             "See DOCTRINE.md §Contested Terms."
         ),
-        "nt_only": True,  # Χριστός only occurs in NT + deuterocanon
+        "nt_only": True,
     },
     {
         "id": "slave-as-servant",
@@ -119,15 +118,18 @@ def check_file(path: pathlib.Path) -> list[dict]:
                                "rule": "john21-approved-love-distinction", "details": error})
     nt = is_nt(path)
 
-    # Rule 1: Χριστός → "Christ" regression (NT only)
-    if nt and _word_in(text, "Christ"):
+    # Rule 1: use conventional personal-name forms while preserving the title
+    # in constructions such as "Jesus is the Messiah."
+    if nt and ("Jesus the Messiah" in text or "Messiah Jesus" in text):
         violations.append({
             "file": str(path.relative_to(REPO_ROOT)),
-            "rule": "christos-as-christ",
+            "rule": "christos-name-form",
             "translation_text": text[:120],
             "details": (
-                'Forbidden: "Christ" found in NT translation text. '
-                "POB policy requires Χριστός → Messiah. "
+                'Found a name-like "Jesus the Messiah" or "Messiah Jesus" form. '
+                'Use "Jesus Christ" or "Christ Jesus" for personal-name '
+                'constructions; retain "Messiah" when it functions independently '
+                'as a title (for example, "Jesus is the Messiah"). '
                 "See DOCTRINE.md §Contested Terms and tools/known_regressions.yaml."
             ),
         })

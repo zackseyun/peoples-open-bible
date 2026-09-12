@@ -50,11 +50,14 @@ Specifically:
    trail preserve bonded-status, ownership, and total-allegiance nuance
    where it is historically or theologically salient (Rom 1:1, Phil 1:1).
 
-2. **Translate titles; transliterate names.** Christological
+2. **Translate titles; use conventional name forms.** Christological
    titles are translated to preserve meaning (*Christos* →
-   "Messiah", not "Christ" where context supports; *Kyrios* →
-   "Lord"). Personal names are transliterated by standard
-   conventions.
+   "Messiah" when it functions independently as a title; *Kyrios* →
+   "Lord"). In name-like constructions, use the familiar English forms
+   "Jesus Christ" and "Christ Jesus." Personal names are otherwise
+   transliterated by standard conventions. Thus "Jesus is the Messiah"
+   retains the title, while Greek *Iēsous Christos* used as a personal-name
+   construction is rendered "Jesus Christ."
 
 3. **Preserve theological tension rather than resolve it.** Where
    the source is genuinely ambiguous on a contested interpretive
@@ -102,7 +105,7 @@ Per-verse variance is documented in the individual YAML files.
 
 | Greek / Hebrew | Default English | Alternatives considered | Rationale |
 |---|---|---|---|
-| Χριστός *Christos* | Messiah (where title; Christ where name-like) | Christ | Preserves Hebraic messianic context |
+| Χριστός *Christos* | Messiah where independently titular; Christ in the name forms "Jesus Christ" / "Christ Jesus" | Christ, Messiah | Preserves the title's Hebraic messianic meaning while using the recognizable conventional English personal name |
 | κύριος *Kyrios* | Lord | LORD, Master | Matches covenantal and NT usage |
 | δοῦλος *doulos* | servant | bondservant, slave | Uses reader-facing "servant" consistently; documents bonded-status and ownership nuance in notes/audit metadata |
 | πίστις *pistis* | faith | faithfulness, trust | Main text: faith; footnote alternatives where contested |

@@ -27,23 +27,20 @@
 
 regressions:
 
-  - id: christos-as-christ
-    discovered: "2026-04-23"
-    fixed: "2026-04-23"
+  - id: christos-name-form
+    discovered: "2026-09-12"
+    fixed: "2026-09-12"
     category: lexical_substitution
     source_term: Χριστός (Greek)
-    wrong_rendering: Christ
-    correct_rendering: Messiah
+    wrong_rendering: Jesus the Messiah / Messiah Jesus in name-like constructions
+    correct_rendering: Jesus Christ / Christ Jesus
     policy_ref: "DOCTRINE.md §Contested Terms — Χριστός"
     rationale: |
       Χριστός is the Greek translation of the Hebrew מָשִׁיחַ (Mashiach / Messiah),
-      meaning "the anointed one." Rendering it as "Christ" treats a descriptive title
-      as an opaque proper name, erasing the word's semantic content for modern readers
-      who do not know Greek. POB policy renders Χριστός as "Messiah" throughout,
-      except where it has already frozen as part of an established proper name that
-      the author intended as a name (no such exceptions exist in the NT corpus).
-      "Christ" is conventional but imports a 2,000-year tradition of treating the
-      word as a surname — the opposite of POB's transparent-translation philosophy.
+      meaning "the anointed one." POB preserves "Messiah" when the word functions
+      independently as a title, including "Jesus is the Messiah." When Χριστός is
+      joined directly to Jesus in a personal-name construction, POB uses the familiar
+      and recognizable conventional English name "Jesus Christ" or "Christ Jesus."
     affected_verses:
       - ROM.1.1
       - GAL.1.1
@@ -55,16 +52,16 @@ regressions:
       - EPH.3.1
       - 1CO.1.1
       # ... 405 total across all NT books
-    scale: 405 occurrences across NT
-    fix_script: tools/fix_regressions.py (run 2026-04-23)
+    scale: all name-like constructions across the NT
+    fix_script: corpus migration (run 2026-09-12)
     prompt_injection: |
-      CRITICAL — POB POLICY: Render Χριστός as "Messiah", NEVER as "Christ".
-      "Christ" is explicitly forbidden in the People's Open Bible translation.
-      If the current draft has "Messiah", do NOT change it to "Christ".
+      POB POLICY: Use "Jesus Christ" and "Christ Jesus" when Χριστός is part
+      of a personal-name construction. Use "Messiah" when it functions independently
+      as a title, including predicative expressions such as "Jesus is the Messiah."
       Examples of CORRECT POB rendering:
-        "Paul, a servant of Messiah Jesus" (NOT "Christ Jesus")
-        "the grace of our Lord Jesus Messiah" (NOT "Jesus Christ")
-        "prisoner of Messiah Jesus" (NOT "Christ Jesus")
+        "Paul, a servant of Christ Jesus"
+        "the grace of our Lord Jesus Christ"
+        "Peter answered, 'You are the Messiah.'"
 
   - id: slave-as-servant
     discovered: "2026-07-14"
@@ -99,7 +96,7 @@ regressions:
       Preserve bonded-status, ownership, and total-allegiance nuance in notes and
       audit metadata instead of the main wording.
       Examples of CORRECT POB rendering:
-        "Paul, a servant of Messiah Jesus"
+        "Paul, a servant of Christ Jesus"
         "to his servants" in Rev 1:1
         "releasing your servant" in Luke 2:29
 

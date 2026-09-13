@@ -24,7 +24,8 @@ novelty does not prove improvement.
 | **ko** | 표준어, 합쇼체 | 개역 endings, 이르되, 대저, 하옵 | 46 verses | **fixed** — one deliberate carve-out |
 | **ru** | modern literary Russian | Church Slavonic forms | 0 | clean, no change |
 | **de** | modern standard German | pre-1996 orthography, archaic forms | 0 | clean, no change |
-| **fr, hi** | — | not yet audited | — | outstanding |
+| **fr** | modern international French | icelui, ains, moult, estre, vostre | 0 | clean, no change |
+| **hi** | modern standard Hindi in Devanagari | non-Devanagari leakage | 1 verse | **fixed** |
 
 The Korean carve-out is Matthew 6:9. Its `하옵소서` is the received wording of
 the Lord's Prayer in Korean and is recognised far beyond this translation;
@@ -57,6 +58,20 @@ into the system Python, so the check uses a curated verified pair list.
 **German — `Thron` is not archaic.** A pattern reaching for 19th-century `Th-`
 spellings matched 231 verses, every one of them the ordinary modern word for
 throne. Check `daß`, `muß`, `läßt`, `gewiß`, `ward`, `daselbst` instead.
+
+**French — the imperfect-ending pattern is useless.** `\w+(oit|oient)` matches
+`soit`, `doit`, `droit`, `endroit`, `voient`, `croient` — 2,313 hits, every one
+ordinary modern French. `-issiez` is imperfect *indicative* (`vous agissiez`),
+not a rare subjunctive, and `çà et là` is current idiom. Check `icelui`, `ains`,
+`moult`, `oncques`, `estre`, `estoit`, `vostre`, `nostre` instead; there are
+none.
+
+**Hindi — the useful check is script, not vocabulary.** Judging Sanskritised vs
+Perso-Arabic register is a matter of taste and does not contradict the declared
+variant. What does is non-Devanagari text in the reader line. That scan found 7
+verses; six were scholarly transliterations inside footnotes and are correct,
+and one was a real defect — Luke 8:24 carried the model's own self-correction
+note, `corrected complete text:`, in the middle of the verse.
 
 **Russian — elevated is not archaic.** `устами`, `ибо`, `сего дня`, `доколе`
 are ordinary literary Russian and do not contradict the declared variant. The

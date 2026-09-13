@@ -177,10 +177,13 @@ What the comparison framing above was built to catch, found by direct audit:
   `main`; its residual 10 are localised markers too, and `spanish_pipeline.py
   validate` reports `failed=0` for Isaiah and John.
 
-  Two real defects remain in `translation_simplified`
-  (`dialogue_of_the_savior/007`, `testaments_twelve_patriarchs/benjamin/010/008`):
-  the declared marker is a single space, which cannot be anchored at all. That
-  is a marker-key defect, not an anchoring one.
+  Three real defects remain in `translation_simplified`
+  (`dialogue_of_the_savior/007`, `exegesis_on_the_soul/004`,
+  `testaments_twelve_patriarchs/benjamin/010/008`): the declared marker is a
+  single space, which cannot be anchored at all. That is a marker-key defect,
+  not an anchoring one. (The third surfaced once `tools/audit_footnotes.py`
+  learned to report blank marker keys as their own status rather than folding
+  them in with the orphans.)
 
   The English POB was genuinely affected and has been fixed. Canonical OT+NT is
   at **0** orphans (375 records repaired), and the deuterocanon and
@@ -195,13 +198,38 @@ What the comparison framing above was built to catch, found by direct audit:
   when `[b]` discusses "Rephah" and `[c]` discusses "Eleasah". Anchor from the
   note's own content, cross-checked against the verse's `lexical_decisions`.
 
-  Four records declare the same marker key twice and must be repaired before
-  they can be anchored: jubilees 20:2, 21:13, 37:14 and
-  `thunder_perfect_mind/093`.
+  Records that declare the same marker key twice must have the keys repaired
+  before they can be anchored, since anchoring them emits the same inline
+  marker twice. Four were blocking an anchor pass — jubilees 20:2, 21:13,
+  37:14 and `thunder_perfect_mind/093` — and `audit_footnotes.py` reports the
+  full set: 43 records, 8 of them also carrying an unanchored marker. The
+  other 35 are already anchored but still hold the duplicate key.
 
   Phrase-keyed footnotes (Gospel of Thomas, Gospel of Philip, and others) are
   anchored by the phrase appearing in the text rather than by a bracketed
   token. They are not orphans and must not be "fixed".
+
+  **The measurement now lives in `tools/audit_footnotes.py`.** It matches only
+  markers the record itself declares in `translation.footnotes[].marker`, so
+  localised and hyphenated markers are seen; it reports `phrase_keyed`,
+  `duplicate_marker` and `blank_marker` as separate statuses rather than as
+  orphans; and its `--anchor-plan` places each marker from the note's own
+  quoted alternative, matched against the verse's `lexical_decisions`, never
+  from clause position. Run it per edition with `--root`:
+
+  ```
+  python3 tools/audit_footnotes.py translation/ot translation/nt   # 0 orphans
+  python3 tools/audit_footnotes.py                                 # 603 markers
+  python3 tools/audit_footnotes.py --root translation_ko           # 0 orphans
+  ```
+
+  Checked against the 375 records repaired by `cca2bd6603`: replayed on the
+  pre-repair text, `--anchor-plan` places 339 markers, every one at the same
+  position the manual repair chose, and declines the rest rather than guessing.
+  Of the eight it puts elsewhere, six are places where the earlier pass
+  clustered the marker at a clause start (for example 2 Kings 20:10, where
+  `[a]` discusses "ten steps" but sits after "said") and two are the records
+  whose prose was also repaired in that commit.
 
   Worth a dedicated pass: for records blocked *only* on `unanchored footnote`,
   the fix is usually to anchor a marker the reviewer already wrote. That is

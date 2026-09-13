@@ -722,12 +722,32 @@ def normalize_usage(usage: dict[str, Any], model_id: str) -> dict[str, Any]:
     return normalized
 
 
+ENGLISH_RESIDUE_CHECK = "possible untranslated English residue in Spanish text"
+
+
+def waived_checks(record: dict[str, Any]) -> set[str]:
+    """Checks a record explicitly, auditably waives.
+
+    `validation_exceptions` is a list of {check, reason} entries. It exists so a
+    genuine false positive can be silenced on one record without loosening the
+    check for the other 43,000 — for example a bibliographic citation whose
+    English work titles must NOT be translated. Every waiver carries a reason
+    and is visible in the record's own diff.
+    """
+    waived: set[str] = set()
+    for entry in record.get("validation_exceptions") or []:
+        if isinstance(entry, dict) and entry.get("check") and entry.get("reason"):
+            waived.add(str(entry["check"]).strip())
+    return waived
+
+
 def validate_spanish_record(path: pathlib.Path) -> list[str]:
     errors: list[str] = []
     try:
         record = safe_load_yaml(path)
     except Exception as exc:
         return [f"{type(exc).__name__}: {exc}"]
+    waived = waived_checks(record)
     text = str(((record.get("translation") or record.get("spanish_translation") or {}).get("text") or "")).strip()
     if not text:
         errors.append("translation.text missing")
@@ -747,8 +767,11 @@ def validate_spanish_record(path: pathlib.Path) -> list[str]:
             errors.append(f"footnote marker [{marker}] not present in translation text")
     if not (record.get("ai_draft") or {}).get("prompt_sha256") and not legacy_reviewable:
         errors.append("ai_draft.prompt_sha256 missing")
-    if re.search(r"\b(the|and|of|with|shall|Messiah Jesus)\b", text, re.IGNORECASE):
-        errors.append("possible untranslated English residue in Spanish text")
+    if (
+        ENGLISH_RESIDUE_CHECK not in waived
+        and re.search(r"\b(the|and|of|with|shall|Messiah Jesus)\b", text, re.IGNORECASE)
+    ):
+        errors.append(ENGLISH_RESIDUE_CHECK)
     return errors
 
 

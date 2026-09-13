@@ -105,6 +105,37 @@ for running cheap objective checks even when the corpus is believed clean:
   `חֵרֵשׁ` means *deaf*; Numbers 25:3 read `בַּעַל פְּעוֹר` as a place name,
   losing the idolatry that is the verse's point.
 
+## A separate defect the audit uncovered: shifted Psalms verses
+
+Not a variant problem, but found while checking one and worth recording here
+because the scoping method is the same.
+
+Korean and Spanish Psalms contain chapters where a verse is duplicated
+mid-chapter and everything after it is shifted by one, so a reader sees one
+verse twice and the chapter's last verse sits in a stray trailing record.
+
+Scope, measured from three independent angles that agree:
+
+- **Verse counts.** Korean and Spanish each have 63 Psalms chapters with one
+  record more than the English tree. The other seven editions have none.
+- **Source text.** 987 of 2,578 Korean Psalms records carry a `source.text`
+  belonging to a different verse (977 off by one, 10 by two). A scan of the
+  whole Korean Old Testament finds offsets in **Psalms and nowhere else**.
+- **Provenance.** 431 of those were demonstrably drafted from the offset verse:
+  their pre-correction `base_translation` matched the English at the offset
+  path. Recover it with `git show 9a2addab19^:<path>`.
+
+The affected chapters are the ones carrying a superscription, which POB stores
+as verse 0, and Korean and Spanish are the two editions drafted before the
+Psalms renumbering — the same two that showed `base_translation` offsets.
+
+**Do not repair this by deleting the extra trailing record.** It holds the only
+rendering of the chapter's final verse; deleting it loses content.
+`tools/realign_by_source.py` detects and plans the moves, and its `apply`
+refuses any chapter that is not a closed permutation. These shifts are refused
+by that guard, correctly. The guard should not be loosened to let a repair
+through — the per-chapter shape varies and needs adjudication.
+
 ## Re-running
 
 ```bash

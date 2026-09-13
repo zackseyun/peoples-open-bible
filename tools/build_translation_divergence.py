@@ -30,7 +30,18 @@ SPOB_ROOT = ROOT / "translation_simplified"
 OUTPUT_ROOT = ROOT / "analysis" / "translation_divergence"
 SUMMARY_PATH = ROOT / "translation-divergence-summary.json"
 CONSENSUS_PANELS = ("bsb", "web", "asv", "kjv")
+# Licensed comparison targets for the ENGLISH divergence build: POB is scored
+# against nkjv/niv, SPOB against nlt. This tuple gates that build and must stay
+# English-only — every consumer here compares against English POB text.
 LICENSED_TARGETS = ("nkjv", "niv", "nlt")
+# Korean comparison targets for POB-ko, declared here as the single source of
+# truth for the fetcher. See docs/internationalization/KOREAN_COMPARISON_PANEL.md
+# for why these three and not others. All are copyrighted: they are diagnostics
+# fetched into a private, gitignored path, never committed and never displayed.
+# There is no Korean divergence builder yet, so these are deliberately NOT part
+# of LICENSED_TARGETS — feeding them to this module would score Korean text
+# against English POB and emit meaningless similarity metrics.
+LICENSED_TARGETS_KO = ("saebeonyeok", "urimal", "gongdong")
 MIN_RANKING_TOKENS = 8
 
 ARCHAIC_NORMALIZATION = {

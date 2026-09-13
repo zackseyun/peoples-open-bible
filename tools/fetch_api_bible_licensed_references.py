@@ -35,8 +35,12 @@ def load_config(path: pathlib.Path) -> dict:
     if not isinstance(translations, dict) or not translations:
         raise ValueError("config must contain a non-empty translations object")
     for name, entry in translations.items():
-        if name.lower() not in divergence.LICENSED_TARGETS:
-            raise ValueError(f"unsupported translation {name}; use NKJV, NIV, or NLT")
+        allowed = divergence.LICENSED_TARGETS + divergence.LICENSED_TARGETS_KO
+        if name.lower() not in allowed:
+            raise ValueError(
+                f"unsupported translation {name}; use one of "
+                + ", ".join(sorted(allowed))
+            )
         if not isinstance(entry, dict) or not entry.get("bible_id") or not entry.get("license_reference"):
             raise ValueError(f"{name} requires bible_id and license_reference")
     return payload

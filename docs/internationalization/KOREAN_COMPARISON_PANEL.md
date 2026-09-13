@@ -91,27 +91,60 @@ where POB-ko's defects have actually been found.
 
 ## Wiring it in
 
-Nothing is committed. Follow the English precedent exactly:
+The plumbing is in place. What is missing is the licence, which is the only
+step that cannot be done in code.
+
+`tools/fetch_api_bible_licensed_references.py` now accepts the three Korean
+target names — `saebeonyeok`, `urimal`, `gongdong` — declared as
+`LICENSED_TARGETS_KO` in `tools/build_translation_divergence.py`. Point it at a
+config naming a `bible_id` and `license_reference` per target and it will fetch.
+
+Note the deliberate split: `LICENSED_TARGETS_KO` is **not** part of
+`LICENSED_TARGETS`. That tuple gates the English divergence build, and every
+consumer in that module scores against English POB text, so feeding it Korean
+rows would emit meaningless `pob_saebeonyeok_similarity`-style metrics. A
+Korean divergence builder needs writing before these targets can be scored;
+until then the fetcher stores the text and an editor consults it by hand.
+
+Remaining steps, following the English precedent:
 
 1. Obtain a licence expressly covering commercial and AI-assisted evaluation
    use. API.Bible is the likely route; confirm Korean availability and rights
    on the specific plan before fetching anything.
 2. Store retrieved text only under `state/licensed_references/` (gitignored).
-3. Extend `tools/fetch_api_bible_licensed_references.py`, whose
-   `load_config` currently hard-rejects anything outside
-   `divergence.LICENSED_TARGETS` (NKJV/NIV/NLT). Korean targets must be added
-   there before the fetcher will accept them.
-4. Pass every reference through the versification map, as the English path
+3. Pass every reference through the versification map, as the English path
    does. Korean editions follow English chapter/verse numbering, while POB
-   follows Hebrew numbering in the OT — the Psalms offsets are real and will
-   silently misalign rows if skipped.
-5. Commit only numeric scores and non-sensitive metadata.
+   follows Hebrew numbering in the OT. These offsets are real and measured: 149
+   Korean and 141 Spanish Psalms records had cached the *neighbouring* verse's
+   English before the 2026-09-13 correction.
+4. Commit only numeric scores and non-sensitive metadata.
 
-The 1910 negative control is the exception: it is public domain and *can* be
-vendored into `sources/references/` via `build_reference_panel.py`, which needs
-a Korean corpus path added to `fetch_corpora()`. Doing so is cheap and gives an
-immediate, licence-free archaism detector: high similarity to 1910 is a
-readability smell.
+### The 1910 negative control is already wired
+
+Being public domain, it needs no licence and is committed. Use
+`tools/korean_archaism_panel.py`:
+
+```bash
+python3 tools/korean_archaism_panel.py vendor          # -> sources/references_ko/kor1910.json
+python3 tools/korean_archaism_panel.py scan --min-similarity 0.45
+```
+
+`scan` reports two independent signals: character-trigram similarity to the
+1910 counterpart, and direct hits on Gaeyeok-line forms. Two calibration
+lessons are baked in:
+
+- **Gate the similarity signal on length.** Genealogies and name lists converge
+  in any faithful translation — 1 Chronicles 1:1 scores a perfect 1.000 — and
+  produced 280 false positives before `--min-length` cut the flagged set from
+  309 to 62.
+- **Keep both signals.** Similarity catches archaisms the marker list misses:
+  Joshua 10:3 scores 0.824 on `보내어 이르기를`, a form no marker covers.
+
+Used as a regression check, it confirms the repairs move the text away from the
+archaic baseline: Numbers 22:3 fell from 0.219 to 0.063 and Judges 18:5 from
+0.194 to 0.079. Judges 4:9 barely moved (0.180 to 0.172) because POB-ko and the
+1910 independently agree on `파실` for מָכַר — a reminder that the score measures
+resemblance, not error.
 
 ## Findings from the 2026-09-12 readability pass
 

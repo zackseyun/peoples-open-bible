@@ -79,6 +79,45 @@ class ServantTerminologyRegressionTests(unittest.TestCase):
         self.assertNotIn("slave-as-servant", [item["rule"] for item in violations])
 
 
+class ChristosRenderingRegressionTests(unittest.TestCase):
+    def check_record(self, translation_text: str) -> list[dict]:
+        with tempfile.TemporaryDirectory() as directory:
+            root = pathlib.Path(directory)
+            path = root / "translation" / "nt" / "test" / "001" / "001.yaml"
+            path.parent.mkdir(parents=True)
+            path.write_text(
+                yaml.safe_dump({
+                    "source": {"text": "Ἰησοῦς Χριστός"},
+                    "translation": {"text": translation_text},
+                }, allow_unicode=True),
+                encoding="utf-8",
+            )
+            original_root = REGRESSIONS.REPO_ROOT
+            REGRESSIONS.REPO_ROOT = root
+            try:
+                return REGRESSIONS.check_file(path)
+            finally:
+                REGRESSIONS.REPO_ROOT = original_root
+
+    def test_rejects_messiah_in_name_like_constructions(self):
+        for text in ("Jesus the Messiah spoke.", "Paul serves Messiah Jesus."):
+            with self.subTest(text=text):
+                violations = self.check_record(text)
+                self.assertIn("christos-name-form", [item["rule"] for item in violations])
+
+    def test_accepts_conventional_name_forms(self):
+        for text in ("Jesus Christ spoke.", "Paul serves Christ Jesus."):
+            with self.subTest(text=text):
+                violations = self.check_record(text)
+                self.assertNotIn("christos-name-form", [item["rule"] for item in violations])
+
+    def test_retains_messiah_as_independent_title(self):
+        for text in ("Jesus is the Messiah.", "You are the Messiah."):
+            with self.subTest(text=text):
+                violations = self.check_record(text)
+                self.assertNotIn("christos-name-form", [item["rule"] for item in violations])
+
+
 class EnglishPersonalNameRegressionTests(unittest.TestCase):
     def check_record(self, translation_text: str) -> list[dict]:
         with tempfile.TemporaryDirectory() as directory:

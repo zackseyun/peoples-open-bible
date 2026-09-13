@@ -17,6 +17,26 @@ The [66-book map](HEBREW_AND_NT_VARIANT_MAP.md) and
 [priority casebook](TEXTUAL_VARIANT_CASEBOOK.md) are the initial research queue.
 They do not authorize silent source replacement.
 
+### Supplementary reader records
+
+An absent base-edition verse is not a missing row to invent. Where POB already
+has a secondary-witness translation, verify the cited edition/version, exact
+wording and source-to-reader reference mapping before setting
+`reader_supplement: true`. Preserve the secondary status and disclose editorial
+placement in an anchored textual note. The mobile exporter requires those
+structural safeguards; the boolean records a scoped editorial inclusion decision,
+not an automated provenance check, earliest-text judgment or whole-verse approval.
+Unreviewed supplementary records stay excluded. Check both base-edition and POB
+record coverage so a successful export cannot be mistaken for complete coverage.
+The [batch attribution audit](NT_SUPPLEMENT_ATTRIBUTION_AUDIT_2026-09-06.md)
+found 13 unresolved source labels among the 27 remaining supplements. Preserve
+their Greek with `unverified-supplementary-greek` attribution and the prior claim
+in an archival field; do not substitute an edition to obtain a passing check.
+The exporter rejects that unresolved label even with an accidental inclusion flag.
+The [Romans pilot](ROMANS_5_1_SOURCE_COMPARISON_2026-09-06.md#supplementary-doxology-delivery--2026-09-06)
+has 433/433 IDs with three disclosed supplements; its missing legacy generation
+hashes remain explicit schema debt, not reconstructed evidence.
+
 The [2026-09-04 source coverage audit](BIBLICAL_SOURCE_COVERAGE_AUDIT_2026-09-04.md)
 adds the catalogue-backed discovery requirements, including minuscules,
 lectionaries, commentary manuscripts, versions and quotations. UBS6 is an
@@ -67,6 +87,12 @@ transmission, not an automatic count of manuscripts or proof of an autograph.
 - Source-text selection and translation ambiguity are separate. For example,
   Acts 20:28's God/Lord wording is not the same question as how to understand
   the following blood/own construction.
+- Written spelling and intended grammatical mood can also separate. The
+  [Romans 5:1 comparison](ROMANS_5_1_SOURCE_COMPARISON_2026-09-06.md) records
+  omicron/omega interchange and competing interpretations. Keep the attested
+  letters, their regular morphological analysis, any proposed spelling variation
+  and contextual interpretation distinct. Do not silently normalize a witness
+  or let a fluent English rendering certify its earliest Greek spelling.
 - Do not select a variant to make the text more orthodox, less supernatural,
   more familiar, or more dramatic. Record arguments on both sides.
 
@@ -89,6 +115,12 @@ compassion, while retaining anger and its strongest argument. It is not an
 image-verified or cross-model-reviewed result, and POB's wording is unchanged.
 The other examples remain queued; no result is decided by which printed
 edition has more supporters.
+
+The [Romans 5:1 comparison](ROMANS_5_1_SOURCE_COMPARISON_2026-09-06.md) now
+adds actually consulted THGNT manuscript/hand reports and opposing scholarly
+arguments. It retains indicative meaning provisionally while leaving earliest
+spelling unresolved; its qualified note and repaired anchors were applied.
+Neither it nor the initial Mark dossier constitutes full NT manuscript coverage.
 
 ## A deliberate completeness check: Revelation 13:18
 

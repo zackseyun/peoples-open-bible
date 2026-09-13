@@ -3510,6 +3510,1071 @@ schema decision. This pass does not repin old reviews or claim the note-only
 transaction can already apply Isaiah. Next implement the explicitly reviewed
 source-changing successor while preserving the prior completed-note checks.
 
+### 2026-09-06 — Efficiency reset and actual Isaiah 53:11 application
+
+The user asked whether this work was proportionate to its cost. A read-only
+audit found valuable source decisions and real defects caught by review, but
+also diminishing returns from successive validation layers while Isaiah was
+still unapplied. The goal tracker reported approximately 18.37 million cumulative
+tokens; that is not a billing figure. This pass therefore finishes the existing
+case without new manuscript research or another general framework.
+
+Working rule going forward: prioritize comparisons that can change a source
+reading, English wording or explanatory note; reuse the existing source and
+application contracts. Use one independent review per bounded deliverable and
+repeat it only for concrete repairs. Record concise decisions and link evidence;
+do not duplicate prior dossiers or count infrastructure as textual progress.
+The previous status-only exchange supplied evidence for this change of course,
+not a new textual result. ImageGen remains inadmissible as manuscript evidence.
+
+Applied the exact [integrated Isaiah candidate](../sources/textual_restoration/applications/isaiah53_11_full_record.v1.yaml)
+to [the canonical verse](../translation/ot/isaiah/053/011.yaml). English now reads
+"he will see light"; the Hebrew composite adds אור to the declared retained base.
+The shorter Masoretic alternative, partial third-scroll support, Greek syntax
+difference and uncertainty remain disclosed. No fresh parchment inspection,
+lexicon consultation or new witness claim was made in this implementation pass.
+Earlier source-priority and full-record editorial approval remain provisional.
+
+The [source-changing verifier](../tools/textual_restoration/verify_critical_successor.py)
+checks all 23,264 current OT YAML files against checkpoint
+`783e61ec70c5a152468f5cbe619656e0857182d4`, accepting only the whole baseline
+or the exact reviewed replacement. It validates the trusted source/English
+integration and real ISA, JOB and 2SA exports. Original Job/Samuel packages and
+all 83 earlier-note protected files stay fixed. Old note-only tests were migrated
+to an explicit historical replay: the migration agent ran all 19 original tests,
+zero skips/expected failures; both wrappers passed in 56.087 seconds. That run
+was reused, not repeated. Current source-changing tests are separate.
+
+Independent `/root/isaiah_application_review` passed the bounded application,
+not publication. It inspected the exact plan/candidate, validation chain and
+historical migration, and independently checked the actual baseline and prior
+notes. Twenty-six focused tests passed in 33.772 seconds; the added receipt
+regression passed separately in 0.002 seconds. The reviewer inspected that
+test-only addition and reaffirmed its verdict. No general re-review was needed.
+
+Actual [preflight](../sources/textual_restoration/applications/isaiah53_11_successor_preflight.v1.json)
+was saved before the canonical edit; the
+[application receipt](../sources/textual_restoration/applications/isaiah53_11_successor_application.v1.json)
+records the successful real postflight. All other canonical OT files are byte-
+identical to the fixed baseline. Isaiah's actual export contains 66 chapters and
+1,291 verse records; its digest changed from
+`5fb07a70ce313fa729b77378f6dfce179e01038db5b066bf62a9bfa9d7b85cb1`
+to `c4fc4c4e7b33b7a744f2ff1f63c44aa1274f982bef25a416439e1915715a450b`.
+Job and Samuel exports remain unchanged. Application review SHA256:
+`66d8f2fee1d76aa2b0285659d347b1738af6bde8ef620f60c5961638bcb4d34d`;
+application receipt SHA256:
+`0b486ef4d070e9b9d24307ff3c1480b325cb50bb47addd0f154fa40a16543b96`.
+The [source README](../sources/ot/pob_critical/README.md) gives the verification command.
+The separate applied-receipt check then passed against the real current corpus,
+returning `application_record_verified: true`; `git diff --check` also passed.
+
+This supersedes earlier log statements that canonical Isaiah application was
+pending; it does not rewrite historical draft-stage flags or reviews. No reader
+asset synchronization or manual deployment was performed. The public repository
+and existing raw-YAML provenance route can expose this adoption, but deployed
+reader behavior is not verified. The next useful follow-through is to verify
+that reader presentation preserves these disclosures, then apply the same
+bounded process to the next substantive textual decision. Comprehensive OT/NT
+comparison and a recovered autograph are not claimed.
+
+#### Integration outcome: local application verified; remote publication withheld
+
+Implementation commit `b6c87caad0` was merged with the then-current remote's
+status-only update as `3779bf013912949e7cdf5868bb49ddc19343cc1a`.
+The push was rejected because remote main advanced concurrently to
+`d5a458706f9984276e7787e4a62d125bcd2f0b59`. A subsequent fetch and inspection
+found substantive changes to `DOCTRINE.md`, `METHODOLOGY.md`, drafting/review
+tools and a new source-distinction policy. That second update is not merged
+locally and this application has not been pushed.
+
+The new doctrine prioritizes source-transparent English comparisons and explicitly
+preserves approved John 21 agape-love/phileo-love distinctions. This pass does not
+reverse or adjudicate those unrelated changes. The Isaiah editorial review pins
+the earlier doctrine bytes, and the source validator checks that pin against the
+live file. Therefore the successful local receipts do not establish compatibility
+with the newly advanced remote. Do not silently repin the old review, weaken the
+check, or present this local result as published. Next reconcile the historical
+policy evidence and current policy in one bounded compatibility review before
+merging/pushing; no repeat manuscript research is needed. This is also concrete
+evidence that global live-document pins are imposing maintenance cost and should
+not be multiplied in future casework.
+
+### 2026-09-06 — Current-policy compatibility resolved without another validator layer
+
+The previous turn made real progress: exact Isaiah adoption and verification,
+followed by discovery of a concurrent policy update. This pass fetched and
+inspected that update, then merged it as
+`4b42db932de29181e76ad17ac76d620f8cf8d208`. It changes no OT verse files.
+Four historical protected paths changed upstream: `DOCTRINE.md`,
+`METHODOLOGY.md`, `tools/draft.py`, `tools/prompts/revision_policy.md`.
+No unrelated policy or John 21 rendering was reverted.
+
+Independent `/root/isaiah_current_policy_review` read the new policies, Isaiah
+53:10–12, the frozen source report, earlier editorial judgment and recorded
+A/B/C English alternatives. It approved public repository adoption of the exact
+provisional Isaiah record, without bundled-reader/deployment approval. The
+[compatibility record](../sources/textual_restoration/applications/isaiah53_11_policy_compatibility.v1.json)
+preserves the policy hashes, actual full-sentence comparisons and limitations.
+It is a new judgment, not a silent replacement of old review inputs.
+
+The reviewer compared explicit "he himself" with "he"; "light of life" and
+"by knowledge of him" with the current wording; and "declare many righteous"
+with "justify many" to make the צדק root repetition visible. It retained the
+current sentence provisionally. The last comparison exposes a real tradeoff:
+"declare ... righteous" preserves the English root repetition but narrows the
+action toward a declarative mechanism; "justify" does not reproduce that root
+pattern in English. This remains open to stronger linguistic evidence, not an
+assertion that the present wording is uniquely optimal. No new manuscript or
+lexicon retrieval was performed. The incoming heuristic scanner returned no
+Isaiah candidates; the model-noticed root pattern demonstrates why that result
+is not evidence of exhaustive coverage.
+
+Direct current-state checks compared every one of 23,264 actual OT YAML blobs
+to the verified application commit `b6c87caad0b9c737dc670b89912af2e4d9e966f5`.
+All match exactly. The current Isaiah bytes equal the approved candidate and
+pass the full critical-verse schema. All application-review implementation pins
+remain unchanged. Actual ISA/JOB/2SA exports match the application receipt;
+the corpus was inventoried again afterward to detect concurrent mutation.
+The union of historical note-protection and Job input pins differs only in the
+four upstream paths above. All these results are in the compatibility record.
+
+The incoming source-distinction suite passed all 27 tests in 0.230 seconds using
+its native unittest runner. An initial pytest invocation failed because pytest
+is unavailable; no installation was needed. The old applied-receipt verifier
+was also actually tried and rejects `Prior protected input drift: DOCTRINE.md`.
+This expected historical-policy mismatch is explicitly documented, not hidden
+with skips, repins or a green full-suite claim. The older 27 source/application
+test passes remain evidence for their original checkpoint, not the new policy.
+
+To avoid compounding maintenance cost, no new validation framework or replay
+layer was added. Frozen tools and receipts remain unchanged; their current
+scope limitation is stated in the source README. A concrete source change,
+separately reviewed policy compatibility, exact whole-corpus preservation and
+real export checks justify repository integration here. They do not establish
+deployed disclosure, a complete OT/NT comparison or recovered autographs. The
+earlier remote-publication blocker is resolved editorially; the Git push result
+must still be checked before claiming the result is on remote main.
+
+### 2026-09-06 — Deuteronomy 32:8 evidence triage and explicit stop condition
+
+The preceding Isaiah work was pushed to main as `a90a1d9954`. Returned to
+textual evidence rather than extending its validation machinery. Read the
+current Deuteronomy verse, existing candidate and successive Greek, Fouad,
+Hebrew-image, numbering and OHB records. Independent triage separated genuinely
+discriminating evidence from partly stale acquisition instructions.
+
+The [new bounded report](DEUT32_8_EVIDENCE_TRIAGE_2026-09-06.md) records actual
+consultation of Bar-On/Paz pp. 29–31, especially the complete note 5, with PDF
+hash and locators. The PDF skill prompted rendered-page verification after web
+screenshots timed out; the institutional download and local rendering succeeded.
+The independent agent confirmed the interpretation of the relevant printed
+note. Neither model consultation counts as a new manuscript or modern apparatus
+inspection. Temporary source PDF/renderings were not committed.
+
+Wevers's ordinary p. 513 preview explicitly refused viewing; no bypass or
+purchase followed. Dayfani's institutional abstract was read, not the full
+reconstruction. Second-hand apparatus transcriptions were search leads only.
+The report records remaining complement/hand and excerpt-adaptation questions,
+without treating every unfinished archival task as an automatic editorial veto.
+
+Decision: no canonical change, no confidence increase; preserve the moderate
+divine-referent working proposal and contrary readings. Do not repeatedly chase
+the same unavailable pages or repeat the completed Fouad/IAA consultations.
+The priorities page now reflects this stop/reopening condition and Isaiah's
+completed repository adoption. Canonical Deut 32:8 SHA256 remains
+`1caf32ddf68b552d662a94cff90970e5eacd9028ac0a4b8c89228634b14702af`;
+candidate SHA256 remains
+`7f7ee48c97c0d8ef54419ba653f075f5a7b40baa784bf9e2d96231dda02f6797`.
+This documentation-only pass adds no code, new restoration or publication claim.
+
+### 2026-09-06 — Live Isaiah reader check and misleading review-count repair
+
+The previous Deuteronomy report was pushed as `4c3e0c8910`. This pass verified
+whether the completed Isaiah source work reaches actual readers. In ordinary
+Chrome, the legacy source URL redirected to
+`https://peoplesbible.com/verse/?ref=ISA.53.11`. Its loaded UI displayed “he will
+see light,” the POB-critical Hebrew, the provisional composite-source note,
+all apparatus entries and both note bodies. Clicking footnote a navigated to
+`#footnote-a`; a screenshot confirmed the disclosure was readable. No mock
+server, repository-only rendering or new manuscript evidence is claimed here.
+
+The live chapter route, `https://peoplesbible.com/bible?book=Isaiah&chapter=53&verse=11`,
+still displayed the old “he will see and be satisfied.” Opened settings confirmed
+POB, not another translation. Read-only HTTP checks found both
+`https://bible.cartha.com/manifest.json` and
+`https://peoplesbible.com/bibles/pob_manifest.json` identify commit
+`b6717921daaa86c38c599a4b294bd792626b2631`, timestamp
+`2026-09-07T00:07:45.773Z`, 135 books, 2,651 chapters, 45,109 verses. Git ancestry
+and the bounded OT diff establish that this precedes the Isaiah application.
+The website manifest's content-derived version is
+`ee8d08e331ee2eca51eb810e85899516b860af5954522c573de9cd7f5ed1596f`;
+its upstream version and CDN version are `b6717921daaa`.
+
+Independent asset tracing confirmed local preview and Isaiah book assets also
+contain the older wording. The existing single-book exporter returns light
+and both notes correctly. Website `sync:pob` fetches the upstream bundle and
+rewrites all lazy books, not one selected verse. `scripts/publish_pob.sh` runs
+corpus validation, invokes the publisher and triggers a website rebuild.
+Neither command was run. The user was asked whether to authorize that broader
+publication; no approval was assumed. Runtime removal of POB main-reader notes
+was not changed; the verified provenance route remains the disclosure path.
+
+The live source page also exposed a real display defect: `cross_check` containing
+only `status: needs_review` was shown as one completed pass, zero concerns, a
+success checkmark and generic passed-review prose. In `cartha.website`, repaired
+only `src/app/(main)/peoples-open-bible/verse/page.jsx` and added
+`test/pob-provenance-review-status.test.mjs`. Missing/malformed counters now stay
+unknown; pending/recheck status cannot imply current approval; valid populated
+records retain their actual counts. Generic explanatory copy no longer claims
+that merely having a cross-check section proves review happened or passed.
+
+Independent `/root/provenance_count_fix_judge` passed the bounded repair and
+independently ran its eight new tests. Root's combined actual-component/source
+tests reported 13 passes, zero failures/skips, in about 0.43 seconds; diff-check
+passed. Implementation commit `80eafe75` was merged with unrelated upstream
+changes and pushed as `d7831fca58b3db5f284764c429d3b00022d31b8d`. Reviewed page SHA256:
+`abcc61460cbd4b85752c0e7f2c4d9a53514eed19bc2dc21e794a5d27e6e2b2bf`;
+new test SHA256:
+`b09a5727451ec815e73b039cccb6fe9765298bbca6bb53a895e75ad6c4d62a7f`.
+No source/candidate YAML or reader asset changed. Website main is picked up by
+its documented scheduled deployment; no manual deployment was triggered and
+the new count repair is not yet claimed verified live. The canonical record
+also carries old preparation-era pending language in a rationale; this check
+does not relabel those historical statements as a new source decision.
+
+### 2026-09-06 — Efficiency check and Habakkuk 1:12 preservation decision
+
+The user requested an efficiency check. The goal tracker reported 18,767,479
+cumulative tokens at that check (not a dollar-cost estimate); no subagents
+were then running. Retain useful source decisions and tested repairs, but
+stop repetitive acquisition, overgrown audit scaffolding and open-ended
+judge loops. The priorities page now records that operating constraint.
+
+The next bounded [Habakkuk comparison](HABAKKUK_1_12_SOURCE_COMPARISON_2026-09-06.md)
+consulted the actual versioned 1QpHab IV.17/V.3 and Mur. 88 XVIII.10
+transcriptions and Rashi's verse-12 commentary. The disputed biblical clause
+is supplied in 1QpHab; Mur. 88 supplies the distinguishing prefix. The pesher
+commentary is indirect interpretation evidence. The report therefore retains
+the current wording provisionally and proposes a footnote identifying the
+scribal-correction tradition accurately. It does not claim recovered letters,
+all-witness comparison, increased historical confidence or application approval.
+Access failures and the unconsulted Greek/critical-apparatus step are explicit.
+No canonical verse, frozen screening inventory, image, software or publication
+asset was changed. The casebook links the new decision without rewriting its
+historical screening snapshot.
+
+Independent `habakkuk_preservation_check` reviewed the three published passages
+and the report and passed the bounded preservation/tradition distinction; it
+did not approve canonical application or establish earliest wording. Root
+rechecked the canonical SHA256 against the report, unchanged, and checked the
+documentation diff for whitespace errors. No software test or deployment
+claim follows from these documentation checks.
+
+### 2026-09-06 — Habakkuk disclosure applied without new infrastructure
+
+Applied the [Habakkuk report's scoped disclosure](HABAKKUK_1_12_SOURCE_COMPARISON_2026-09-06.md)
+after one independent unblinded editorial/application review. The
+[application record](../sources/textual_restoration/applications/habakkuk1_12_disclosure_application.v1.json)
+records exact baseline/candidate hashes, judgment, actual complete-book export
+comparison and field checks. Only the footnote, two rationales and review-state
+handling change. Old cross-check contents are preserved separately; no old
+agreement score certifies the revised note. No new tool, image acquisition,
+source selection, historical receipt rewrite or whole-corpus publication.
+
+The initial exact-byte comparison caught a missing final blank line and passed
+after correction. The schema/field/canonical-target checks passed; the complete
+56-verse export differs only at the intended footnote. The whitespace check
+reports the retained terminal blank line, not a clean result. Historical
+whole-corpus policy-pin verifiers remain outside this scoped validation claim.
+
+### 2026-09-06 — Repair a demonstrated image-consensus annotation leak
+
+Reviewed the saved dual-vision pilot, its actual outputs, response protocol and
+comparison code to test restoration readiness. The historical second-provider
+run remains a saved access failure, not current inference; no retry or new
+model call occurred. Broad calibration remains unexecuted. A separate protocol
+limitation prevents successful empty observations on blank controls and is now
+explicit in the method; the frozen pilot artifacts remain unchanged.
+
+Reproduced a concrete comparator defect before editing: matching clear tokens
+containing a parenthesized Latin restoration comment, a generic combining
+underdot, or angle-bracket supplied text each yielded one accepted token.
+Changed only `tools/dss/pilot.py` to restrict automatic eligibility to Hebrew
+letters and Hebrew combining marks. Punctuation, mixed prose and editorial
+annotations stay available in the comparison report but require adjudication.
+Added regression tests in `tests/test_dss_pilot.py` for these cases and retained
+eligibility of matching pointed Hebrew. The actual pilot/project test command
+reported 21 passes in 0.007 seconds, including validation of the saved crops
+and unchanged comparison. This is not an accuracy benchmark, new manuscript
+reading, historical-confidence increase or translation change.
+
+Independent `dss_annotation_guard_review` passed the two-file repair and reran
+all 21 focused tests successfully. Documentation/code diff-check passed. The
+review was scoped to this concrete safeguard, not the full restoration system.
+
+### 2026-09-06 — Explicit image abstentions for future calibration
+
+Closed the response-format defect identified in the preceding pass by adding
+opt-in [observation protocol 2.0](../sources/dead_sea_scrolls/protocols/README.md).
+The existing validator/comparator now distinguishes text-present, no-visible-text
+and unassessable regions; empty observations require an explicit version/status
+and explanation. Matching no-text observations never create accepted letters;
+unassessable and conflicting observations remain unresolved. The old protocol
+and saved pilot outputs remain unchanged and validate normally.
+
+Added a versioned schema/prompt and ten regression tests, not a new runner or
+model call. The existing runner and saved-pilot validator now enforce the
+frozen response schema locally as well as semantic observation rules; the
+review identified why relying on schema alone or semantic checks alone was
+insufficient. Actual final focused validation reported 31 passes in 0.019 seconds.
+These tests prove response handling, not calibration accuracy. A frozen labelled
+control set and legitimate second-provider inference are still needed; the user
+was asked whether access has changed, without requesting credentials. No new
+attempt was inferred from the historical failure or launched without a new
+access lead. No manuscript image, source reading, or translation was changed.
+
+Independent `dss_abstention_review` passed the bounded protocol change and the
+specific schema-enforcement correction, independently rerunning all 31 tests.
+Diff-check passed; the historical pilot directory and canonical translation
+tree have no changes in this pass. Provider compatibility remains untested.
+
+### 2026-09-06 — Freeze actual observation development controls
+
+Prepared [four exact-image controls](../sources/dead_sea_scrolls/pilots/2026-09-06-observation-development/README.md)
+instead of another framework. Rehydrated only the needed registered 1QM TIFF,
+whose full-resolution local copy was absent, and verified its existing SHA256.
+The existing preparation script made exact RGB crops; root inspected all four.
+The repository virtualenv lacked Pillow, so the bundled runtime was used without
+installation. The LOC item page returned 403; the source download matched the
+prior registered bytes and prior rights classification, not a new rights audit.
+
+Two positive text-presence and two negative observation labels were independently
+checked by `observation_control_labels`, which saw only the images and no expected
+labels. This was label review, not a provider run or a different-family accuracy
+test. One crop repeats the earlier development pilot and all four share one
+manuscript: no held-out, independent-witness or character-ground-truth claim.
+
+The freeze pins images, labels, prompt/schema and pre-run criteria; failed or
+abstaining outputs cannot count as correct blanks, and negative-crop text claims
+remain errors even when two models agree. Input/crop validation passed. No model
+call, generated image, restoration, Hebrew selection or English change occurred.
+Legitimate second-model access and the later varied held-out evaluation remain
+separate unfinished requirements.
+
+All 32 focused tests passed, including the new frozen-input hash/label-coverage
+check. The existing pilot validator verified all four new crop hashes, and
+diff-check passed. These checks establish input integrity, not model accuracy.
+
+### 2026-09-06 — First actual frozen-control provider result
+
+Executed one OpenAI low-effort pass against the frozen four-region development
+set, using the existing read-only/no-tool runner and installed Codex CLI 0.153.4.
+OpenAI Docs required official documentation and local invocation checks first;
+the [result report](../sources/dead_sea_scrolls/pilots/2026-09-06-observation-development/RESULTS.md)
+links the actual official source and records observed invocation evidence.
+No labels, other readings or repository context were supplied to the isolated
+model. No second-provider retry or new configuration followed the result.
+
+The run succeeded in 41.58 seconds: 4/4 observation classes matched, with zero
+negative-crop tokens, region abstentions or missing/invalid regions. However,
+the writing regions yielded only 43 unreadable and two gap placeholders, no
+Hebrew letters. This passes only the predefined observation smoke test, not
+transcription, restoration, two-family comparison or held-out calibration.
+The score records actual CLI token counters and hashes. Frozen files remain
+unchanged, raw envelopes remain ignored, and no canonical text changed.
+
+Independent `observation_run_score_check` verified all nine frozen input hashes
+and the score against the actual response, passing the observation-only claim.
+All 32 focused tests, four-crop validation and diff-check passed. No repeat
+inference was needed to verify these counts.
+
+### 2026-09-06 — Sharper Leningrad image; control label withheld
+
+After the blurred-photo run produced no letters, acquired one sharper Leningrad
+Codex photograph through the public file linked in its Commons description.
+The original download matched the publisher's SHA-1; local SHA256, dimensions,
+provenance/rights qualifications and final crop are in the
+[control candidate](../sources/textual_restoration/controls/2026-09-06-leningrad-clear/README.md).
+The web image fetch timed out; the direct original download succeeded. No archive
+bulk download or new custodian-provenance certification occurred.
+
+Root inspected the page/crop, then checked the corresponding local WLC substring.
+The expected words were withheld from `leningrad_control_letters`, which reported
+a different tentative reading and ambiguity. Both readings remain recorded.
+This is not a manuscript variant, second-family consensus or a usable frozen
+glyph answer key. No additional vote was sought to turn the disagreement into
+a pass. The next step requires explicit glyph-label resolution, not assuming
+that a high-resolution file guarantees accurate model reading. No canonical
+source/English or earlier frozen evaluation inputs changed.
+
+Direct checks passed for source/crop hashes, source dimensions and exact pixel
+correspondence between the saved crop and its declared rectangle. Diff-check
+passed. These checks verify the image preparation, not the disputed label.
+
+### 2026-09-06 — Efficiency action: finish Proverbs 8:16 disclosure
+
+The preceding user-requested audit verified disproportionate cumulative effort
+and changed the next action: pause image calibration and finish a consequential
+pending disclosure using existing evidence. The broad source-comparison goal
+remains open; unresolved Leningrad labels are not a prerequisite for reporting
+published readings. The priorities document now states that pause explicitly.
+
+Reused the Proverbs comparison and saved Minchat Shai source, and freshly opened
+[NET Proverbs 8:14–17, note 5](https://classic.net.bible.org/passage.php?passage=Pro+8:14-17).
+It reports both Hebrew readings and Greek earth wording, while favoring justice
+as the harder reading. No new PDF, manuscript image or broad acquisition was
+needed. The evidence warrants disclosing the alternative, not selecting its
+historical priority. No added witness count or confidence claim follows.
+
+One independent, nonblind `proverbs_disclosure_review` approved the exact
+footnote/review-state edits conditionally; all conditions passed. Applied the
+expanded note while retaining its lexical alternatives and unchanged Hebrew,
+main English and rationales. Preserved the former cross-check verbatim under a
+historical key and reset active status to draft/needs_review. The
+[receipt](../sources/textual_restoration/applications/proverbs8_16_disclosure_application.v1.json)
+pins before/after bytes and review scope. Schema and exact-record checks passed;
+actual full-book exports covered 31 chapters/915 verses with only the note text
+and reason changed. Eight reader-footnote tests and diff-check passed. No new
+framework, provider run, repeat judge loop or deployment occurred. Source choice
+still requires the specific witness/hand and versional evidence identified in
+the existing report, not further copies of the same published argument.
+
+### 2026-09-06 — Mark 1:41 direct-apparatus attempt; no new reading
+
+The preceding Proverbs application was completed progress. Selected the
+existing NT pilot's consequential anger/compassion question instead of more
+image calibration. Read its current SBLGNT-based verse and prior published-report
+review. The official INTF directory links Mark Phase 3.5; direct application
+metadata confirmed public read access. Web retrieval of that application timed
+out, while direct HTTP and browser access loaded its shell. The NTVMR ECM page
+also supplied navigation but no usable apparatus in the inspected browser state.
+
+Read the public app configuration and bounded code excerpts to identify its
+read-only lookup route. Requests to `api/mark/ph35/passage.json/0` with
+`siglum=Mc&chapter=1&verse=41&word=4`, then the same with `button=Go`, both
+returned HTTP 500. No successful navigator response established those parameter
+values; the failure is not proof of a service outage or absent evidence.
+Stopped without further endpoint probing. No manuscript readings, stemma,
+apparatus support counts or ECM preference were obtained, so source selection,
+confidence and canonical text remain unchanged. The
+[pilot update](NT_PILOT_ADJUDICATION.md#direct-ecm-access-check--2026-09-06)
+records this precise limitation and no-repeat condition. No inference run,
+subagent, PDF/image acquisition or new comparison infrastructure was used.
+Only these two documentation files changed; diff-check is the relevant local
+check, not a claim to have validated a new textual result.
+
+### 2026-09-06 — Saul's regnal numbers: separate evidence from conjecture
+
+Did not retry the failed ECM lookup. The previous pass documented an access
+limit, not a textual advance. This pass used the existing Samuel target,
+local WLC and Acts source, and directly consulted NET textual notes to resolve
+an actionable disclosure ambiguity. The
+[comparison and application record](SAMUEL_13_1_NUMBERS_REVIEW_2026-09-06.md)
+distinguishes published readings from proposed restoration without promoting
+new Hebrew or English wording. Sefaria returned no usable verse body.
+
+One independent scoped reviewer approved the exact note and review-state
+correction, conditional on local checks. Preserved historical cross-check data;
+active draft/needs_review does not borrow its scores. The first export check
+failed my assumed 810-verse count: POB's actual Hebrew source map and export
+both contain 811 records. Replaced that assumption with an exact chapter/verse
+map comparison. The receipt records the final result and hashes, not an
+unqualified first-attempt pass. No image work, apparatus acquisition loop,
+new validation framework or reader deployment was undertaken.
+
+### 2026-09-06 — Goliath: directly checked Greek four/five/six apparatus
+
+The preceding Saul disclosure was completed progress. Returned to an open
+source-selection question instead of another calibration run. Used the PDF
+skill to inspect the already-downloaded Cambridge Samuel edition, printed55 /
+PDF71, its Samuel prefacev and the general 1906 conventionsi–ii. Extraction
+missed Greek search strings; bounded page-header inspection located the target,
+then the complete page was rendered and read at original resolution. Private
+PDF hash matches the recorded source; no new PDF or manuscript was acquired.
+
+The [Samuel supplement](SAMUEL_SOURCE_COMPARISON_PASS_1.md#greek-numeral-apparatus-directly-checked--2026-09-06)
+records the decisive new evidence and limits: B-based main text four, explicit
+N five and A six in the apparatus, plus a separate bottom attribution. This
+resolves the earlier conflicting Alexandrinus summaries at edition-report
+level and advances the formerly uncollated five lead. It does not resolve
+earliest priority. The primary Qumran URL failed; earlier Hebrew evidence was
+reused without claiming a fresh consultation. NET's actual note was read but
+its height-plausibility argument was not used to decide the source.
+
+One independent apparatus check confirmed the finding, then approved the exact
+connected note correction in a single scoped follow-up. Changed the Greek
+attribution to “some Greek witnesses” and removed the outdated universal
+image-reading prerequisite; no source promotion was authorized. Preserved
+historical cross-check, reset active review state, and left Hebrew/main English
+and other rationales unchanged. Schema, exact-record and full source-mapped
+31-chapter/811-verse export comparisons passed with only note b changed; eight
+footnote tests and diff-check passed. The
+[receipt](../sources/textual_restoration/applications/goliath17_4_apparatus_disclosure.v1.json)
+pins the evidence and application. No corpus publication or deployment occurred.
+
+### 2026-09-06 — Goliath four-cubit source applied after DJD and editorial review
+
+Completed the previous pass's named Hebrew reading-note gate using the existing
+DJD XVII consultation copy, pp78–80, not another acquisition. The PDF skill
+required complete-page visual inspection after locating the poorly OCRed text.
+The [Samuel report](SAMUEL_SOURCE_COMPARISON_PASS_1.md#djd-reading-notes-and-provisional-critical-source-application--2026-09-06)
+records qualified numeral preservation, limited longer-form17:41 evidence,
+the contrary reduction explanation and the rejection of assumed scribal piety
+as a decisive criterion. One independent agent separately approved the source
+unit and exact full verse/application, with actual evidence limits retained.
+
+Applied a disclosed POB-critical Hebrew source and corresponding four-cubit
+English, preserving WLC exactly in history, six/five alternatives, uncertainty,
+and the existing draft/needs_review state. Repaired the champion-note anchor.
+Reused existing composition/source/full-verse validators and separate receipts;
+no executor, schema or image-model change. An unsupported in-memory clone helper
+failed before writes and was replaced without repeating research.
+
+The exact candidate integration, explicit externally recorded trusted hashes,
+schema, historical preservation and complete31-chapter/811-record reader export
+passed. Export differences are confined to the target sentence and note.
+Eight reader-footnote tests passed. The additional18-test regression invocation
+returned11 errors: the Isaiah-based reviewed-source/full-verse fixtures reject
+their older pinned inputs. It is not an all-green suite; the actual new Goliath
+record passes the same validators with its separately reviewed current pins.
+No frozen Isaiah receipts are repinned or overridden. The
+[application receipt](../sources/textual_restoration/applications/goliath17_4_source_application.v1.json)
+separates these results. No deployment or exhaustive critical-edition claim.
+
+### 2026-09-06 — Exodus 12:40 source adjudication and Greek hand distinctions
+
+Previous goal turn classified as progress: Goliath's reviewed source and
+English application reached canonical Git state. This pass reused the
+Pentateuch dossier to test whether Canaan belongs in Exodus 12:40's source.
+The [new report](EXODUS_12_40_SOURCE_ADJUDICATION_2026-09-06.md) records actual
+Cambridge1909 page inspection, exact locators/hashes, separate Greek variation
+units, competing loss/expansion explanations and a low-confidence retention
+decision. It preserves the edition's uncertainty about the corrector and the
+limits of the existing Hebrew fragments. One independent agent checked the
+new evidence and decision; no judge-until-agreement loop occurred.
+
+The publisher-directory open failed, but search provided a working PDF link;
+the PDF downloaded successfully. No repeated failed acquisition, image
+calibration, model inference experiment or new validation infrastructure.
+The canonical verse, source, English and old review fields remain unchanged.
+The report flags narrower disclosure/metadata repairs for a separate scoped
+application; no claim that those repairs or corpus-wide collation are complete.
+Documentation checks cover baseline hash, local links and diff integrity only.
+No deployment. The full OT/NT source-comparison goal remains open.
+
+### 2026-09-06 — Apply the reviewed Exodus 12:40 disclosure
+
+Previous goal turn classified as progress: new Greek apparatus evidence and
+a reasoned source hold were committed. This pass finishes its concrete reader
+disclosure correction using the existing dossier, without new acquisition.
+The [application receipt](../sources/textual_restoration/applications/exodus12_40_disclosure.v1.json)
+pins baseline/applied verse bytes, research checkpoint, policy and exporter.
+It records actual independent scoped review, including confirmation of the
+exact written metadata, not a new historical witness or a blinded comparison.
+
+Canonical changes: qualified source note; separate Samaritan/Greek theological
+alternatives; provisional-retention rationale recognizing Samaritan Hebrew;
+relative-clause metadata accurately describing current English; old review
+objects archived verbatim with live draft/needs-review status. No Hebrew,
+main-English, anchor, other lexical-entry, ai_draft or revision-history change.
+The source-priority and full-verse rendering questions remain open.
+
+Actual checks passed: verse schema, exact record delta, complete before/after
+EXO export against every source identifier (40 chapters, 1,213 verses), sole
+export difference at the target note, eight reader-footnote tests, diff check.
+No validation infrastructure added or frozen comparison receipts repinned;
+known unrelated Isaiah fixture drift was not rerun. No new access failure or
+image experiment. No deployed-reader or exhaustive-corpus claim.
+
+### 2026-09-06 — Exodus 1:5: test genealogical histories before numeral promotion
+
+Previous turn was progress: Exodus 12:40's reviewed disclosure was applied and
+export-verified. This pass addressed the consequential seventy/seventy-five
+source question rather than continuing disclosure cleanup. The
+[adjudication report](EXODUS_1_5_COUNT_ADJUDICATION_2026-09-06.md) records new
+Cambridge Exodus/Genesis apparatus consultation, contextual Hebrew and Greek
+controls, full-line published DSS preservation checks, and actual opposing
+arguments by Kislev, Tov and Longacre. Numeral and Joseph-clause decisions stay
+separate. Root's tentative inclination toward seventy-five and the independent
+agent's unresolved-priority verdict are retained, with the substantive reason
+for the final hold. No historical witness count is increased by model review.
+
+The source remains provisionally seventy; no canonical file or note changed.
+The new evidence removes an overly rigid literary-splice concern but does not
+settle direction of genealogy revision. DJD XII pp. 19 and 85 are the precise
+next source discussions, not newly consulted sources. Shell-only IAA responses,
+a corrected out-of-range PDF locator scan and a corrected source-label lookup
+are documented without treating access failures as textual absence. Existing
+local PDFs were reused; no restoration experiment or new validation code.
+Checks cover baseline preservation, links and diff integrity; no export or
+whole-corpus test is claimed for this documentation-only pass. Not deployed.
+
+### 2026-09-06 — Close the Exodus count follow-up; enforce the efficiency stop
+
+The preceding user-requested efficiency check was progress in choosing the next
+action: it verified that no other agent was running and identified repeated
+Exodus reasoning as diminishing-return work. It made no repository changes.
+This pass preserves the previously obtained DJD/thesis findings in the
+[existing report](EXODUS_1_5_COUNT_ADJUDICATION_2026-09-06.md#djd-follow-up-and-stopping-decision--2026-09-06)
+and replaces the obsolete unread-DJD next step in the priority queue.
+The report distinguishes English DJD OCR, visually inspected thesis pages and
+the single independent agent's narrower review. No fresh agent was launched.
+
+New local check: Greek Exod 39:2,5 and WLC Exodus 38:25,28 reverse the seventy/five
+order, limiting mechanical retroversion without settling Exodus 1:5 priority.
+The report records the thesis table-extraction omission corrected by visual
+inspection. No new acquisition, restoration claim, canonical edit or infrastructure.
+The numeral and Joseph questions remain unresolved and are parked behind a
+discriminating-evidence condition, not another opinion-gathering cycle.
+
+Verification: existing Greek and thesis SHA256 values and the unchanged Exodus
+1:5 baseline were checked. Local links and Git diff checks cover documentation
+integrity only; no corpus export, exhaustive collation or deployment is claimed.
+The existing coverage audit still distinguishes all-book screening from actual
+passage collation; broader OT/NT work remains unfinished. Next selection must
+use an underexamined source/reading with a consequential test, not reopen this
+case simply because its scholarly disagreement persists.
+
+### 2026-09-06 — Ruth 3:15: distinguish gender evidence and apply disclosure
+
+Previous goal turn was progress: the Exodus follow-up was committed and parked
+behind a discriminating-evidence condition. This pass chose an unexamined Ruth
+lead from the existing local-note inventory rather than reopening that case.
+The [Ruth report](RUTH_3_15_SOURCE_COMPARISON_2026-09-06.md) records the actually
+read versioned 2Q17 transcription, CATSS Greek target apparatus, local Greek
+and Hebrew context, and SIL's attributed versional report. 2Q17's disputed verb
+is supplied; the Greek base verb is gender-neutral, but published variants
+explicitly add either Ruth or Boaz. Neither modern translations nor separate
+editions of the same fragment count as additional ancient witnesses.
+
+Retained masculine Hebrew and “he” provisionally, preserving the competing
+narrative explanation. Applied qualified note `b`, two anchor corrections,
+and connected rationale updates; historical reviews preserved and current
+record marked draft/needs-review. One independent local comparison and its
+bounded candidate review supported this scope; external-source observations
+were root's, not independently reread by the agent. Access failures and the
+precise reopening condition are in the report. No image work or new validator.
+
+Schema, exact record delta, source/plain-English preservation, archived-review
+equality, all 85 Ruth source/export identifiers, exact full-book output delta,
+eight reader-footnote tests and diff checks passed. The report holds actual
+input/output hashes. No other verse was changed and no deployment occurred.
+Context inspection also exposed misplaced notes in Ruth 3:16 and 4:1; those
+are separate preexisting defects, not silently included in this application.
+This adds one actual passage comparison, not full Ruth or all-source coverage.
+
+### 2026-09-06 — Whole-set Ruth DSS screen and a source-faithful English repair
+
+Previous turn was progress: Ruth 3:15's reviewed disclosure was applied and
+pushed. This pass expanded from one disputed verse to all four Ruth records
+in the pinned QDR dataset. The [report](RUTH_DSS_COMPARISON_2026-09-06.md) and
+[receipt](../sources/textual_restoration/comparisons/ruth_dss_screen.v1.json)
+record full published-line context, input hashes, all 42 tagged anchors and
+72 line records, with supplied text, unresolved brackets and unassigned traces
+excluded from preserved-reading claims. Root compared Cave 2; one agent
+compared Cave 4. The older bracket-syntax counters were not mistaken for
+automatic preservation assessments. No new collation engine was built.
+
+Identified lexical, prepositional and grammatical candidates alongside spelling
+differences, without promoting supplied words or declaring all witnesses
+collated. A concrete result at 2:21 changes “young women” to “young men,”
+preserving the source contrast while disclosing potentially generic reference.
+The reviewer compared full-verse men/workers/current-women alternatives under
+the source-distinction contract. Its note-preservation correction was accepted.
+The prior historical review/revision records are retained, with live review
+status reset rather than inherited. Hebrew is unchanged.
+
+Exact application/schema checks, all 85 Ruth source/export identifiers, sole
+target export delta, eight reader-footnote tests and diff checks passed; hashes
+and scope reside in the receipt. No access failure, new image claim, judge loop,
+new validation infrastructure or deployment. The untracked Geniza file was
+left untouched. Next textual priority is the consequential source candidates,
+not reopening the completed 3:15 gender test or polishing spelling-only variants.
+
+### 2026-09-06 — Adjudicate five Ruth leads using local Greek controls
+
+Previous turn was progress: whole-set Ruth screening and the 2:21 English
+correction were pushed. This pass tested five consequential leads together,
+reusing published fragment evidence and consulting actual CATSS target units.
+The [follow-up](RUTH_DSS_COMPARISON_2026-09-06.md#consequential-candidate-adjudication-follow-up--2026-09-06)
+records the local Greek being/residence discriminator at 1:2, exact birth-clause
+position of uncertain “again” at 1:12, separate 3:14 omission and 3:15 locative
+questions, and Hebrew/Greek interrogative variation at 3:16. A published
+handbook's generalized Greek-omission claim is narrowed to the inspected
+witness report. One agent handled chapter 1 alongside root's chapter 3 work;
+its additional objection/note checks used disclosed root observations.
+
+No Hebrew changes selected. Applied 3:16 note/anchor/rationale correction with
+source and marker-free English unchanged. Retained interpretive alternatives,
+historical reviews and the uncertain priority; current draft/needs-review does
+not inherit old approval. The report gives actual target/export hashes and
+the passing schema, exact-delta, whole-Ruth identifier/output and eight-test
+checks. No new infrastructure, acquisition failure, image work or deployment.
+The five source leads now have explicit stopping/reopening conditions. Full
+Ruth and broader OT/NT comparison remain incomplete.
+
+### 2026-09-06 — Preserve completed Lamentations screen after efficiency audit
+
+The preceding efficiency audit verified recent results and stopped further
+expansion, but did not advance the textual comparison itself: conservatively
+classified as no progress toward corpus completion. This pass rechecked the
+current repository and preserved previously completed, uncommitted research
+rather than repeating acquisition. The [report](LAMENTATIONS_DSS_COMPARISON_2026-09-06.md)
+and [receipt](../sources/textual_restoration/comparisons/lamentations_dss_screen.v1.json)
+record four pinned QDR records, 103 physical line records and 62 tagged anchors.
+Root's 4Q111 work and one agent's other-three-record screen were complementary,
+not independent replication. No additional agent or judge loop was launched.
+
+The consequential result is a linked literary-form comparison in 4Q111 and
+specific 5Q6 candidates; no historical-priority or restoration claim follows.
+Local Greek controls expose an adjacent-row boundary that must not be called
+an omission. Reference-only diffing also misses a cross-verse short junction.
+Published supply, uncertain brackets and unassigned traces remain distinguished
+from preserved readings. The article abstract/bibliography, not its PDF body
+or cited DJD edition, were consulted. No acquisition was retried this pass.
+
+Input hashes and the 154-record canonical manifest were revalidated against
+the earlier screen. No canonical source, English, note, application approval
+or reader deployment changed. JSON, both input pins, all line/unit/reference
+and untagged inventories, 103/939/62 totals, the unchanged canonical manifest,
+Greek adjacent-row anchors, report local links and `git diff --check` passed.
+These checks establish record consistency, not historical priority. The
+unrelated untracked Geniza file remains untouched.
+Next work requires evidence addressing a named source-choice question, not
+more scaffolding or repetition of this screen.
+
+### 2026-09-06 — Lamentations 1:7: test historical directions and apply disclosure
+
+Previous turn was progress: completed Lamentations screening was committed and
+pushed. This pass read the previously unconsulted Kotzé PDF argument, printed
+pp.596–607, with critical Hebrew/argument pages checked visually under the PDF
+skill. The [follow-up report](LAMENTATIONS_DSS_COMPARISON_2026-09-06.md#lamentations-17-argument-and-disclosure-follow-up--2026-09-06)
+records the PDF pin, actually read scope, opposing historical explanations,
+source-distinction full-verse alternatives and the limit of the independent
+review. Cited editions were not silently promoted into directly consulted sources.
+The earlier abstract-only status is superseded for this article, not for DJD.
+
+Retained the opening provisionally; no restoration or historical certainty claimed.
+Applied source disclosure and lexical-note/anchor corrections, with Hebrew and
+marker-free English unchanged. Historical reviews preserved; current status is
+draft/needs-review. One bounded independent objection review and exact-application
+check passed; no consensus loop. Current/local Greek context was inspected by root.
+Schema, exact record delta, preservation/history checks, all 154 source/export
+IDs, sole target output delta and eight footnote tests passed; hashes are in the
+report. No new infrastructure, failed acquisition or deployment. The unrelated
+untracked Geniza file remains untouched. Park the opening unless new evidence
+discriminates the recorded historical directions; no repeat article acquisition.
+
+### 2026-09-06 — Ecclesiastes: published/QDR scope reconciliation and noun comparison
+
+Previous turn was progress: the reviewed Lamentations 1:7 disclosure was pushed.
+The [Ecclesiastes report](ECCLESIASTES_DSS_COMPARISON_2026-09-06.md) broadens
+actual witness comparison to both pinned records. Root compared all 36 published
+4Q109 lines against current source fields; one bounded agent compared all eight
+published 4Q110 lines and eleven older QDR lines. Complementary labor is not
+independent replication. The 44/47 line-count difference and final unidentified
+4Q110 traces expose a concrete limit on the older contextual reconstruction.
+No new fragment identity or pixel reading was asserted.
+
+Ten local Greek selected-text contexts were read. The 7:2 noun comparison
+provisionally favors retaining the feasting/joy distinction, while preserving
+the reverse-development explanation. A full-verse check is recorded without
+claiming the noun-only alternative translates the complete scroll form. Remaining
+lexical, conditional and correction candidates are screened, not adjudicated.
+The earlier WLC-based wisdom audit does not certify this new witness coverage.
+One Brill preview attempt returned 403; its body was not read or retried.
+No canonical source, English, notes, historical review, infrastructure or deployment
+changed. Both input pins, QDR counts, the unchanged 222-record canonical manifest,
+exact full-verse check, Greek noun anchors, report links and diff checks passed.
+The unrelated untracked Geniza file remains untouched. Do not reopen 7:2 or
+repair its incidental note anchor merely to prolong this comparison.
+
+### 2026-09-06 — Romans 5:1: manuscript reports, spelling/mood and disclosure
+
+Previous turn was progress: Ecclesiastes comparison was committed and pushed.
+This pass advanced an NT priority beyond edition comparison. The
+[report](ROMANS_5_1_SOURCE_COMPARISON_2026-09-06.md) records the licensed THGNT
+apparatus with original/corrected hands and 0220 vid, Wallace's article, the
+Head/Williams/Holmes/Heide discussion, Hsieh's locator excerpt and institutional
+Wyman-fragment information. No manuscript pixels, complete ECM apparatus or
+new versional collation were obtained. Older publication and correction stories
+were not treated as observed history; a future-ECM prediction is not evidence.
+
+Root and one bounded agent read Romans 4:23–5:11. The agent independently
+assessed the contextual objection and then passed the exact scoped application.
+Two full-verse alternatives are recorded. Greek and marker-free English remain
+unchanged; qualified note a, repaired a/b anchors and connected rationale were
+applied, preserving b/c notes and historical review/revision objects. Current
+status is draft/needs-review, not inherited full approval. The NT method now
+explicitly separates attested spelling from regular morphology and intended mood.
+Validation results and an unresolved export limitation are recorded in the report. No new validator,
+PDF/image workflow, repeated acquisition, judge loop or deployment. The unrelated
+untracked Geniza file remains untouched; the source question is parked unless
+specified discriminating evidence appears.
+
+### 2026-09-06 — Efficiency check and bounded Romans closeout
+
+The user's quick efficiency check confirmed excessive cumulative expenditure
+relative to applied translation changes. The goal tracker reported approximately
+21 million tokens (not a dollar-cost measure); no subagents were doing additional
+research. Stop open-ended expansion and repeated unresolved-case debate; the
+existing proportional-documentation and bounded-review rules remain controlling.
+The preceding check changed the next action to closing the pending work rather
+than opening another comparison case.
+
+The full Romans ID check exposed 433 canonical records versus 430 exported
+verses. Read the parser, source iterator, exporter and supplementary drafting
+records; verified the vendored Romans file against the upstream MorphGNT file
+byte-for-byte. Its verse list ends at 16:24; the three supplementary doxology
+records are outside the export's source-driven list. This is an open coverage
+limitation, not a parser failure or a newly adjudicated textual omission.
+The scoped 5:1 preservation/export checks and eight footnote tests pass; no
+full-Romans coverage pass is claimed. The report records hashes and the next
+delivery gate. No new agent, restoration experiment, exporter change or
+deployment was used in this closeout. Keep the unrelated Geniza file untouched.
+
+### 2026-09-06 — Verified doxology source placement and restored reader coverage
+
+Resolved the prior Romans coverage limitation with three explicit supplementary
+export opt-ins, not fabricated SBLGNT rows or a global inclusion of unreviewed
+material. Official byztxt v2.0.3 Greek matches the three existing source strings
+apart from case; its references are 14:24–26, unlike POB's 16:25–27. Corrected
+the placement disclosures and restored missing note anchors. The [existing report](ROMANS_5_1_SOURCE_COMPARISON_2026-09-06.md#supplementary-doxology-delivery--2026-09-06)
+records evidence, independent review, hashes, 433/433-ID validation and 15 passing
+tests. Two missing historical draft hashes per record remain schema errors;
+no provenance values were invented. The 27 other source-absent NT records remain
+outside the opt-in gate. No manuscript-priority debate, source replacement,
+main-English rewrite, generated reader bundle or deployment occurred.
+
+### 2026-09-07 — Closeout of the September 6 supplementary attribution batch
+
+The preceding Romans pass made verified progress; this pass tested the remaining
+27 records together rather than opening 27 research cases. Compared seven pinned
+byztxt v2.0.3 CSV files, preserving URLs, hashes and primary rows in one
+[inventory](../sources/textual_restoration/inventory/nt_supplement_attribution.v1.json).
+Found 14 word-level matches and 13 unresolved attributions (including changed
+reference order and Greek wording, not merely punctuation). Changed only the
+13 active attribution labels and review status, preserved original labels and
+historical review objects, and blocked unresolved sources from supplementary
+export. Greek and English remain unchanged; no new reader inclusions or deployment.
+One independent check corroborated John 8:5 and the three absent references.
+The [report](NT_SUPPLEMENT_ATTRIBUTION_AUDIT_2026-09-06.md) records scope, contrary
+possibilities, linked-passage hazards, checks and exact reopening conditions.
+The old generation script is labeled as a historical attribution list, not a
+verified registry; its paid drafting workflow was not executed.
+
+### 2026-09-07 — Whole-OT base screen exposed dropped inline Hebrew letters
+
+Returned to the Hebrew corpus after the NT batch. Reused existing parsers to
+screen all 23,264 canonical OT records; separated paragraph/heading representation
+from meaningful source letters. Found production `.text` extraction dropped 11
+inline-annotated words across ten verses, including Deuteronomy 6:4. Fixed the
+parser and ten WLC source strings; preserved critical-source adoptions and main
+English. One independent XML/context check confirmed the defect and identified
+the already-existing Moses/Manasseh choice in Judges, which was not re-adjudicated.
+Corrected four connected lexical citations and Isaiah's truncated Hebrew note
+quotation. The [report and receipt](HEBREW_INLINE_LETTER_REPAIR_2026-09-07.md)
+record exact inputs, repairs, normalization limits, tests and preexisting snapshot
+drift. No manuscript restoration claim, fresh acquisition, image generation,
+canonical punctuation rewrite or deployment. Psalms' source-context/heading
+mapping remains a separate limitation, not a license to delete repeated context.
+
+### 2026-09-07 — Judges 18:30 source/English divergence remains unresolved
+
+Checked the name-choice issue exposed by the parser repair. NET's editorial
+note supports Moses; a 2025 primary research abstract challenges that consensus,
+but its full argument was inaccessible. No historical-priority decision or Hebrew
+emendation follows. Corrected the misleading “Hebrew: Moses” reader note and
+added explicit unresolved source/English readings while preserving both texts.
+The [bounded report](JUDGES_18_30_SOURCE_SELECTION_2026-09-07.md) distinguishes
+actually inspected evidence from inaccessible pages and unconsulted manuscript
+claims, with a concrete reopening gate. No extra agent, paid access, image work,
+repeated failed acquisition, source replacement or deployment.
+
+### 2026-09-07 — Mapped all Psalms source contexts without renumbering readers
+
+Resolved the preceding Hebrew-screen mapping gap in one batch: 2,564 unique
+exact matches, 13 repeated-string matches resolved by neighboring references,
+and Psalm 60's combined two-verse heading. The [map and report](PSALMS_SOURCE_CONTEXT_MAP_2026-09-07.md)
+cover all 2,578 POB records and 2,527 vendored WLC references; 52 source verses
+are shared as heading/body context. Verified every current source
+string and coverage set rather than assuming matching chapter totals suffice.
+Found 36 body IDs differing from explicit XML KJV-reference notes, chiefly the
+two-part headings in Psalms 51/52/54. No text, note, ID or reader migration was
+performed. No new acquisition, agent, reconstruction or deployment; Judges 18:30
+remains parked. Source-context completeness does not certify English span or
+versification alignment, manuscript coverage or historical priority.
+
+### 2026-09-07 — Efficiency constraint and Lamentations 5:3 follow-up
+
+The preceding efficiency check supplied measured usage and changed the next
+action: defer Psalm 107 wording polish and bound subsequent source questions.
+Recorded that constraint in the priorities. Followed the existing Lamentations
+lead with current 5:1–7 context, 5Q6 column iv line 7 and van Rooy's published
+2012 discussion of 5:3. The [follow-up](LAMENTATIONS_DSS_COMPARISON_2026-09-06.md#lamentations-53-targeted-follow-up--2026-09-07)
+records the daughter-loss interpretation, expansion/simplification alternatives,
+source uncertainties, full-verse comparison and a precise reopening condition.
+Provisional retention, no canonical change or new manuscript-priority claim.
+Initial broad search results were unhelpful; a siglum-specific follow-up found
+the relevant discussion. Other search hits were not treated as consulted
+arguments. No paid acquisition, agent loop, new infrastructure or deployment.
+Checked the retained verse/hash and new JSON against the unchanged record,
+local links and Git whitespace; no runtime-test claim for documentation-only work.
+
+### 2026-09-07 — Added the 4Q176 Lamentations excerpt target
+
+The prior 5:3 pass made documented progress and remains parked. Checked a
+separate source-coverage lead: 4Q176 was a label-only Psalms-context target,
+not a registered Lamentations excerpt. Consulted the 2019 primary publisher
+abstract and relevant current QDR transcription lines. Added one registry
+entry for partial 4:21–22 coverage, recording linked fragment presentations,
+possible secondary addition, access limits and unverified physical placement.
+The [report](LAMENTATIONS_DSS_COMPARISON_2026-09-06.md#excerpt-coverage-follow-up--2026-09-07)
+distinguishes the original four-copy screen from this excerpt target. No
+canonical changes, new manuscript votes, image generation, frozen-receipt
+rewrites or deployment. Checked registry validity and exact preservation of
+all earlier entries and canonical records. No new validator or agent loop.
+
+### 2026-09-07 — Restored three missing OT textual-note anchors
+
+The preceding 4Q176 registration was progress. Shifted from acquisition to
+delivery: an OT scan found three unlinked textual-variant notes. Attached them
+at the relevant dates/counts in 2 Kings 15:30 and 1 Chronicles 18:4; 25:3,
+preserving Hebrew, marker-free English, note bodies and archived reviews.
+One bounded independent review passed. The [application report](OT_TEXTUAL_NOTE_DELIVERY_2026-09-07.md)
+records local evidence, exact hashes, schema checks, eight passing tests and
+full-book export comparisons (719/943 verse keys, only three changed objects).
+No manuscript-priority claim, unrelated lexical-note repair, new infrastructure,
+image work or deployment.
+
+### 2026-09-07 — Haggai source comparison and 2:1 disclosure
+
+The preceding OT note-delivery repair was progress. Compared the Haggai portions
+of the three existing QDR book-map records, with 87 indexed lines and 36 reference
+tags distinguished from surviving verse coverage. Root read the canonical book
+and Mur88; one agent handled 4Q77/4Q80. Found Mur88 22:15's recipient formula
+against WLC's explicit agency formula at 2:1; consulted selected local Greek
+controls without treating them as manuscript votes. Added qualified disclosure
+and repaired its existing agency-note anchor after one independent locus check.
+The [report and receipt](HAGGAI_DSS_COMPARISON_2026-09-07.md) record preservation
+limits, contrary transmission explanations, unchanged source/main English,
+38-verse export verification and the stop condition. No new image reading,
+all-source completeness claim, validator, frozen-receipt rewrite or deployment.
+
+### 2026-09-07 — Haggai 2:22 English number corrected
+
+The prior Haggai source comparison made progress but did not certify all its
+English. Tested the existing singular “rider” against both Hebrew plural rider
+forms and the rationale that had deliberately smoothed the first one. One
+independent comparison favored “the chariot and its riders”; applied that
+one-word correction, preserving Hebrew and all other words/notes. The
+[follow-up](HAGGAI_DSS_COMPARISON_2026-09-07.md#english-consequence-plural-riders-at-222--2026-09-07)
+records the strongest collective alternative, old-rationale correction,
+archived history, exact hashes, source controls and successful 38-verse export
+and eight-test checks. No new manuscript attestation, restoration image,
+judge loop, frozen-manifest rewrite or deployment.
+
+### 2026-09-07 — Checked the plural-rider error family across the OT
+
+The prior Haggai English correction was progress. A follow-up checked the 17
+matching WLC participles across 16 verses against POB, finding no further
+explicit singular-rider rendering. Recorded the exact verse set, matching
+limits and no-repeat stop in the Haggai report. No canonical changes or new
+review loop; this is a bounded negative result, not corpus-wide translation
+approval. Documentation-only validation used Git whitespace checks.
+
+### 2026-09-07 — Corrected 4Q176's source-specific license attribution
+
+The preceding related-form scan was a bounded negative result. Verified a
+separate practical access issue against the versioned transcription's copyright
+notice, linked Creative Commons terms and pinned local QDR README. The general
+registry distinction was already correct, but the recently added 4Q176 entry
+incorrectly inherited the dataset's NC restriction. Corrected that access entry
+to the page's displayed BY-SA license; preserved all other witness data, JSON
+dataset restrictions and image-rights limits. The Lamentations report records
+the correction and per-artifact rule. Registry validation passed; no new
+infrastructure, corpus import, canonical edit or deployment.
+
+### 2026-09-07 — Advanced the 1 Samuel 14:41 identification review
+
+The efficiency audit narrowed the next action to an existing consequential
+case. The [Samuel follow-up](SAMUEL_SOURCE_COMPARISON_PASS_2.md#1-samuel-1441-later-argument-accessed--2026-09-07)
+records newly accessible author-hosted argument text, the still-uninspected
+figures, failed PDF routes, and precise remaining checks. Updated the comparison
+and coverage access notes without promoting the disputed fragment or changing
+Hebrew, English, or reader notes. Interrupted closeout turns made no edits;
+this entry preserves the actual research result, not a new research pass.
+
+Validation: both edited JSON documents pass their schemas; before/after
+comparison and coverage validation errors are identical. Eight reader-footnote
+tests and Git whitespace checks pass; no canonical files changed. The aggregate
+registry validator remains non-green on existing Genesis 4:8, Exodus 12:40,
+and 1 Samuel 17:4 baseline drift and unchanged registry schema mismatches
+(`identification_review`, `license_url`, `abstract-only-consulted`). These were
+not repaired or silently repinned in this research update.
+
+### 2026-09-07 — Repair source-registry validation without rewriting history
+
+The preceding Samuel follow-up was progress and exposed three schema errors
+in the recently registered 4Q176 entry. A separate read-only agent reviewed the
+contract while root traced the baseline warnings. Added closed, typed schema
+definitions for the existing identification-review object and HTTPS license
+link. Unknown fields and unsupported physical-verification status still fail.
+Corrected the Peeters access item to open publisher **metadata**, not a claim
+of full-text access: consultation extent stays explicit in its note. Access,
+rights, consultation, and physical verification are different facts; no new
+source consultation or license determination occurred in this repair.
+
+The existing unit check called the procedural validator but skipped the JSON
+Schema checks used by the CLI. Added direct current-registry schema coverage
+and nine invalid-input cases. The first run exposed that URI format checking
+in this environment did not reject whitespace; the license pattern now also
+rejects it explicitly. Final registry suite: 49/50 tests pass, with only the
+existing Samuel baseline assertion failing. The aggregate validator now reports
+only three baseline drifts and no schema errors. Git whitespace checks pass.
+
+All three comparison pins match exact historical verse bytes at Git commit
+`574f204de77e89c8abba04c72209bdf5efb317f9`:
+
+- Genesis 4:8: subsequent disclosure/metadata changes; source and main English
+  unchanged (application commit `d1ad333fc6`).
+- Exodus 12:40: subsequent disclosure/metadata changes; source and main English
+  unchanged (application commit `6fc394300e`).
+- 1 Samuel 17:4: subsequent critical Hebrew and English selection changed the
+  baseline (application commit `657b2b9ffd`).
+
+No historical hash, comparison, canonical verse, or validator drift rule was
+changed to silence these warnings. They still prevent treating old comparisons
+as certification of current files. Future reconciliation must preserve that
+lineage rather than blindly repin. No new manuscript evidence, restoration,
+translation improvement, or deployment is claimed for this contract repair.
+
+### 2026-09-07 — Compared the Nahash transition and added reader disclosure
+
+After the source-registry repair, returned to a consequential Samuel queue
+item. Root checked the published 4Q51 transition and current WLC/Greek controls;
+one agent checked Josephus and then reviewed the proposed note and anchors.
+The [Nahash report](SAMUEL_NAHASH_COMPARISON_2026-09-07.md) distinguishes the
+long paragraph, month transition, supplied wording and partial narrative
+overlap. Added a qualified 11:1 note and moved two misplaced existing note
+anchors. Hebrew and marker-free English are unchanged; source priority remains
+open. Archived old review objects rather than reusing their scores. Both verse
+schemas, exact preservation checks, 811-verse export comparison and eight
+footnote tests pass. No new validator, image work, or deployment.
+
+### 2026-09-07 — Tested competing Nahash literary explanations
+
+The preceding Nahash disclosure was progress. Read and visually inspected
+Seppänen's complete relevant argument pages, recorded in the
+[follow-up](SAMUEL_NAHASH_COMPARISON_2026-09-07.md#literary-priority-follow-up--2026-09-07).
+This yields a weak working preference for the shorter narrative, not blanket
+endorsement of the Masoretic transition or proof of expansion. The source's
+arguments, root's assessment, contrary explanation, actual page scope and
+remaining apparatus gates are separated. The PDF skill governed local page
+inspection after web screenshots failed. No agents, new tests, manuscript
+readings, or canonical edits were needed. Both verse hashes remain unchanged;
+Git whitespace checks pass. No deployment.
+
 Append a dated entry for every substantive research pass: question; actually
 consulted sources and locators/versions; observations versus hypotheses;
 decision and contrary explanation; changed files and source/English effect;

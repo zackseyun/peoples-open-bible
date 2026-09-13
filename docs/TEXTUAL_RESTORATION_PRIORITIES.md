@@ -64,6 +64,16 @@ outweigh age. The method is applied in the [three-passage report](HEBREW_PILOT_A
 
 ### Priority 0 — Resolve consequential differences using the existing system
 
+Romans export coverage is now 433/433 canonical IDs: three explicitly reviewed
+supplements disclose RP2005-era wording relocated from 14:24–26. No SBLGNT rows
+were invented. This does not approve the whole translation, cure missing legacy
+draft hashes, or establish original placement. The NT inventory still has 27
+excluded supplementary records: the [batch audit](NT_SUPPLEMENT_ATTRIBUTION_AUDIT_2026-09-06.md)
+found 14 digital wording matches needing disclosure/context checks and 13
+unresolved attributions, now explicitly flagged. Do not insert individual
+verses from a linked passage or silently relabel mixed wording as RP/TR.
+See also the [Romans delivery result](ROMANS_5_1_SOURCE_COMPARISON_2026-09-06.md#supplementary-doxology-delivery--2026-09-06).
+
 The registry, coverage map, comparison records and application pilots already
 exist. Do not rebuild them as prerequisites for each case. Choose one question
 whose answer could affect source selection, English meaning or necessary reader
@@ -73,6 +83,30 @@ propose change, or unresolved with a precise reopening condition. A research
 decision is not application approval. Image-workflow calibration remains required
 for new machine-transcription claims, not for accurately reporting a published
 edition's reading.
+
+Efficiency constraint reaffirmed 2026-09-06: reuse existing evidence, record one
+consequential decision per pass, and keep documentation proportional to the
+finding. Use one bounded independent review for a substantive change; repeat
+only to check concrete corrections, not until agreement can be manufactured.
+Do not rerun settled acquisition or build new validation infrastructure without
+a specific unresolved defect. Model agreement is neither a new witness nor a
+reason to raise historical confidence.
+
+Efficiency audit, 2026-09-07: the goal tracker reported about 21.3 million
+cumulative tokens and 30 hours of tracked execution, excessive for the demonstrated
+results. These are tracker totals, not a monetary invoice or measured human
+labor. Prioritize consequential source/meaning defects over marginal wording
+polish; Psalm 107 refrain normalization is deferred. Before each batch, name
+the question, evidence that could change the decision, and stopping point.
+End with the actual source/English effect, including a no-change result; do not
+expand a hold into recurring searches. Existing scope and promotion gates remain.
+
+Following the user's efficiency audit, image calibration is paused unless a
+specific translation-relevant question requires a new image reading. The
+unfinished Leningrad label check is retained, not a prerequisite for using
+published editions. Finish actionable disclosures from existing comparisons
+before opening another acquisition or calibration cycle. This does not waive
+calibration for future machine-transcription claims or narrow the OT/NT scope.
 
 Current bounded results: the [1 Samuel 1:24–25 comparison](SAMUEL_SOURCE_COMPARISON_PASS_3.md)
 tested the singular-bull argument against a published grammatical control and
@@ -91,9 +125,86 @@ main English are unchanged. Existing promotion gates remain in force. Select
 the next case by its discriminating evidence and translation consequence, not
 by an obsolete blocker or the availability of another infrastructure task.
 
+Isaiah 53:11's provisional “light” source and English have now been adopted in
+the canonical repository and integrated with the updated source-distinction
+policy at `a90a1d9954`; see the research log and
+[policy compatibility record](../sources/textual_restoration/applications/isaiah53_11_policy_compatibility.v1.json).
+Do not restart its completed source/schema/application work. Reader deployment
+is a separate, still-unverified claim.
+
+The [Deuteronomy 32:8 triage](DEUT32_8_EVIDENCE_TRIAGE_2026-09-06.md) retains
+the current canonical text for now and keeps the divine-referent proposal
+provisional. It identifies the precise remaining Greek/4Q37 evidence questions,
+distinguishes completed image/Fouad consultations from uncompleted claims, and
+sets a no-repeat acquisition stop until a new resource is available. Other
+consequential cases need not wait for its inaccessible apparatus.
+
 First working demonstration: [three Hebrew variants and their English
 effects](HEBREW_COMPARISON_SAMPLE.md), with a machine-readable source snapshot.
 It compares published readings; it does not claim new image restoration.
+
+The [Exodus 1:5 count adjudication](EXODUS_1_5_COUNT_ADJUDICATION_2026-09-06.md)
+now tests opposing genealogical histories and actual Greek clause-order
+evidence. Priority remains unresolved; seventy-five is a serious candidate,
+not confined to omission/preposition of the Joseph clause. Its bounded follow-up
+has now consulted the DJD English discussions and relevant thesis pages and
+checked a local Greek/Hebrew numeral-order control. **Park the case** unless
+identified new evidence can discriminate the histories or test a decisive
+locus-specific reconstruction. Do not repeat the now-completed DJD argument
+acquisition or make a cosmetic note correction. Source and English remain unchanged.
+
+The [Exodus 12:40 adjudication](EXODUS_12_40_SOURCE_ADJUDICATION_2026-09-06.md)
+now provisionally retains the base with low confidence in priority, after
+checking distinct Greek fathers positions and first-hand/corrected numerals.
+Do not repeat this apparatus acquisition. Its source reopening conditions are
+recorded in that report. The identified note/metadata correction is now
+[applied and export-verified](../sources/textual_restoration/applications/exodus12_40_disclosure.v1.json);
+do not repeat that completed disclosure. The source and main English remain
+unchanged, and full-verse rendering review is a separate open question.
+
+A newly examined local-note lead,
+[Ruth 3:15](RUTH_3_15_SOURCE_COMPARISON_2026-09-06.md), provisionally retains
+the masculine subject after published DSS preservation and Greek variant
+comparison. Its qualified disclosure and two anchor repairs are applied and
+full-book export-checked; do not repeat the completed bare-Greek gender check.
+The subsequent [whole-set Ruth DSS screen](RUTH_DSS_COMPARISON_2026-09-06.md)
+compares all four pinned Ruth records and 72 published line records, distinguishes
+supplied/unassigned coverage, and identifies lexical candidates for adjudication.
+It also applies the reviewed 2:21 young-men correction with a generic-reference
+qualification. Its subsequent five-candidate adjudication prefers the current
+1:2 verb using a local Greek contrast and records four more cautious source
+holds; the 3:16 disclosure is applied without changing Hebrew or main English.
+Those five leads now have reopening conditions, not an automatic repeat queue.
+This is bounded source comparison, not complete Ruth collation.
+
+The [Lamentations DSS screen](LAMENTATIONS_DSS_COMPARISON_2026-09-06.md)
+now records all 103 published line records in four pinned scroll records.
+4Q111's voice, short junction and order require linked-form adjudication,
+not word-by-word adoption; 5Q6 adds specific lexical/grammatical candidates.
+Local Greek controls are not an apparatus or independent manuscript census.
+The subsequent 1:7 follow-up read Kotzé's actual argument and opposing proposals,
+provisionally retained the WLC opening, and applied qualified disclosure with
+Hebrew and marker-free English unchanged. The opening is parked behind a
+discriminating-evidence condition; do not reacquire that article or repeat its
+disclosure. Other candidates remain open, not an instruction to rescreen these
+records or restart image calibration. Supplied 5Q7 wording and a Greek row-boundary
+mismatch must not become false manuscript variants.
+
+The [Ecclesiastes screen](ECCLESIASTES_DSS_COMPARISON_2026-09-06.md) compares
+44 published lines across two records, not the 47 older QDR lines. 4Q110's
+supplied contexts exceed current published coverage and cannot support a
+“mighty” reading at 1:15. The 7:2 feasting/joy comparison provisionally favors
+the distinct WLC noun using a local Greek contrast and an explicit contrary
+explanation; it is parked. Other 4Q109 candidates have named evidence needs,
+not blanket source adoption. No canonical change or new image work followed.
+
+The NT [Romans 5:1 comparison](ROMANS_5_1_SOURCE_COMPARISON_2026-09-06.md)
+consults a manuscript/hand apparatus rather than only counting modern editions.
+The 0220 reading remains qualified; spelling is not automatically intended mood.
+Indicative meaning is retained provisionally, with qualified disclosure and
+anchor repairs applied but no Greek or marker-free English change. Park the
+case under its named evidence conditions; do not repeat the old argument or
+infer an ECM result from speculation about a future edition.
 
 The [corpus-wide Hebrew and NT map](HEBREW_AND_NT_VARIANT_MAP.md) now indexes
 all 66 canonical books, WLC written/read variants, and the official 27-book

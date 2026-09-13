@@ -228,6 +228,41 @@ accepted readings. Stratify results by script and damage; uncertain published
 labels remain uncertain. Record actual outputs and measured performance.
 Benchmark execution is pending; no current result is certified by this plan.
 
+Implementation check, 2026-09-06: the existing DSS pilot comparator now excludes
+editorial annotations from automatic clear-token agreement using a conservative
+Hebrew-character filter. Before the repair, matching angle-bracket supplies,
+Latin restoration comments and generic combining uncertainty dots could be
+counted as accepted. Annotated tokens remain in the report for adjudication;
+valid Hebrew points remain eligible. This is a tested software safeguard, not
+measured image-reading accuracy or proof that a model's clear label is correct.
+
+The frozen two-crop pilot still has only one successful provider response; its
+saved second-provider access failure is not a live process or a second reading.
+Do not repeat inference without a legitimate new access route. Before adding
+blank controls, use the new opt-in [observation protocol 2.0](../sources/dead_sea_scrolls/protocols/README.md)
+to distinguish no visible text from failure to assess. The legacy protocol
+requires a nonempty token row for every region and cannot represent a successful
+empty observation. The new schema, prompt and tested validator support that
+distinction, but provider execution and benchmark evaluation remain pending.
+The old prompts, schemas and receipts are preserved, not retroactively upgraded.
+
+A [four-region development control set](../sources/dead_sea_scrolls/pilots/2026-09-06-observation-development/README.md)
+now freezes actual image crops, observation-only labels, prompt/schema and
+pre-run criteria. It has two writing regions and two negative regions from one
+already-used manuscript photograph. Inputs were visually checked and labels
+independently reviewed without expected labels. The [first OpenAI run](../sources/dead_sea_scrolls/pilots/2026-09-06-observation-development/RESULTS.md)
+matched all four observation classes but produced no Hebrew letters: all text
+tokens were unreadable/gap placeholders. No character-accuracy result exists.
+The set is not held out and does not replace the varied,
+manuscript-disjoint evaluation required before broad acceptance.
+
+The [Leningrad clear-image candidate](../sources/textual_restoration/controls/2026-09-06-leningrad-clear/README.md)
+illustrates the next limit: sharper images alone do not certify reference labels.
+Root's reading agrees with local WLC, but the independent image-only label review
+disagreed. The answer key remains provisional, not a scored character control
+or evidence of a manuscript variant. Preserve this disagreement when resolving
+the glyphs; do not count contextual agreement as independent historical support.
+
 Published-text comparisons may proceed without freshly transcribing every
 image. Require image checks where the proposed claim depends on disputed marks,
 corrections, joins, or a fresh decipherment. Existing case-specific pending

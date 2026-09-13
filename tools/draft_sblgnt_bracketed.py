@@ -57,6 +57,10 @@ SLUG_TO_DISPLAY = {
 }
 
 # The 30 verses, with Robinson-Pierpont 2005 Byzantine Greek readings.
+# Historical attribution claim, not a verified source registry: the 2026-09-06
+# audit found 13 unresolved attributions in the stored supplements. Consult
+# sources/textual_restoration/inventory/nt_supplement_attribution.v1.json before
+# reusing these entries; do not infer an edition from this legacy header.
 # Where multiple major Byzantine witnesses agree, RP2005 is preferred;
 # Stephanus 1550 TR is a fallback cited in the footnote when relevant.
 BRACKETED_VERSES: list[dict] = [
@@ -149,8 +153,9 @@ BRACKETED_VERSES: list[dict] = [
      "note": "Verse omitted by p74, א, A, B, E, Ψ, 048, 33, 81, 1175, 1739, 2464, copsa, copbo. Present in 36, 307, 453, 614, 945, 1241, 1505, 1611, 2412, the Majority Text, the Latin and Syriac traditions. Likely a scribal expansion of the prior Jewish-leadership scene."},
     # Romans 16:25-27 — the doxology, which floats around in
     # different manuscript positions (after 14:23, after 15:33,
-    # at the end of 16, or omitted). Included here at 16:25-27 per
-    # the Byzantine / KJV / NA28-bracketed position.
+    # at the end of 16, or omitted). POB presents the RP2005-era digital
+    # wording at 16:25-27; byztxt v2.0.3 places it at 14:24-26.
+    # Do not describe POB's chapter-16 placement as the RP placement.
     {"slug": "romans", "ch": 16, "v": 25,
      "greek": "Τῷ δὲ δυναμένῳ ὑμᾶς στηρίξαι κατὰ τὸ εὐαγγέλιόν μου καὶ τὸ κήρυγμα Ἰησοῦ Χριστοῦ, κατὰ ἀποκάλυψιν μυστηρίου χρόνοις αἰωνίοις σεσιγημένου,",
      "note": "First verse of the closing doxology (Romans 16:25–27). The doxology appears in different positions across manuscripts — after 14:23 (L, Ψ, the Majority Text); after 15:33 (p46); at the end of 16 (א, B, C, D, the Latin tradition); both at 14:23 and at the end of 16 (A, P, 33, 104); or omitted entirely (F, G, 629). Most modern critical editions place it at 16:25–27. Authenticity contested in 19th-century scholarship; widely retained in modern translations as Pauline."},

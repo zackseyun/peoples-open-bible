@@ -13,7 +13,7 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch14.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 14, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And your petition on their behalf will not be granted; nor on your own behalf; and you yourselves, while you weep and make supplication, will not speak a single word from the book that I wrote.
+  text: And your petition on their behalf will not be granted[a]; nor on your own behalf[c]; and you yourselves, while you weep and make supplication[b], will not speak a single word from the book that I wrote.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -170,6 +170,14 @@ revisions:
   from: 'And your petition on their behalf will not be granted[a]; nor on your own behalf; and you yourselves, while you weep and make supplication[c][b], will not speak even a word from the book that I wrote.'
   to: 'And your petition on their behalf will not be granted; nor on your own behalf; and you yourselves, while you weep and make supplication, will not speak a single word from the book that I wrote.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a single word''].'
+- timestamp: '2026-09-13T05:24:47Z'
+  adjudicator: claude-opus-5-footnote-marker-cleanup
+  reviewer_model: claude-opus-5
+  category: footnote_marker_cleanup
+  tier: 1
+  from: And your petition on their behalf will not be granted; nor on your own behalf; and you yourselves, while you weep and make supplication, will not speak a single word from the book that I wrote.
+  to: And your petition on their behalf will not be granted[a]; nor on your own behalf[c]; and you yourselves, while you weep and make supplication[b], will not speak a single word from the book that I wrote.
+  rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('will not be granted') because the note names that rendering; [b] restored to the position it held before an earlier revision pass dropped it; [c] anchored to ('on your own behalf') because the note names that rendering. Rendering and footnote text unchanged.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:10:44Z'

@@ -30,7 +30,7 @@ base_translation:
     changes_summary: Revised the speech verbs from past to present ('says,' 'say') to reflect Mark’s historical present more closely; otherwise retained the draft’s accurate and natural wording.
 translation:
   language: es
-  text: 'Pero él les dijo: «¿Cuántos panes tienen? Vayan y vean». Después de averiguarlo, dijeron: «Cinco, y dos peces».'
+  text: 'Pero él les dijo: «¿Cuántos panes tienen? Vayan y vean». Después de averiguarlo, dijeron: «Cinco, y dos peces[a]».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -120,6 +120,14 @@ ai_draft:
     estimated_cost_usd: 0.006403
 status: spanish_reviewed
 revisions:
+- from: 'Pero él les dijo: «¿Cuántos panes tienen? Vayan y vean». Después de averiguarlo, dijeron: «Cinco, y dos peces».'
+  to: 'Pero él les dijo: «¿Cuántos panes tienen? Vayan y vean». Después de averiguarlo, dijeron: «Cinco, y dos peces[a]».'
+  category: footnote_marker_cleanup
+  rationale: 'Restauración del anclaje de notas: los marcadores declarados en translation.footnotes no aparecían en translation.text, por lo que el validador los reportaba como huérfanos. Se reinsertan sobre el segmento que cada nota comenta, tomando como referencia el anclaje del POB inglés. No se modifica ni una palabra de la redacción española ni el texto de las notas. El inglés ancla estos marcadores en otro punto de la frase (o los agrupa al final de una cláusula), pero sus notas comentan los mismos segmentos que las notas españolas; se sigue el contenido de cada nota para que el marcador quede sobre el término anotado.'
+  adjudicator: claude-opus-5-footnote-anchor-pass
+  reviewer_model: claude-opus-5
+  tier: '1'
+  timestamp: '2026-09-12T00:00:00Z'
 - from: 'Pero él les dice: «¿Cuántos panes[a] tienen? Vayan y vean». Y cuando lo averiguan, dicen: «Cinco, y dos peces».'
   to: 'Pero él les dice: «¿Cuántos panes[a] tienen? Vayan y vean». Y después de averiguarlo, dicen: «Cinco, y dos peces».'
   rationale: Se mantiene la fidelidad al griego y al audit trail inglés, pero se mejora la naturalidad del español en la cláusula que traduce γνόντες. «Después de averiguarlo» expresa con más claridad la anterioridad del participio aoristo y suena mejor en español narrativo, sin abandonar el presente histórico en «dice/dicen».

@@ -136,6 +136,23 @@ What the comparison framing above was built to catch, found by direct audit:
   mechanical block — there, the reviewer's own `revised_text` simply forgot to
   place the `[a]` marker it also supplied in `revised_footnotes`.
 
+- **Orphaned footnote markers are a cross-edition defect, not a Korean one.**
+  A YAML-parsing scan of all 629,992 records found **2,146** whose
+  `translation.footnotes` contain a marker that never appears in
+  `translation.text`, leaving the note unreachable. Korean holds 64 of them;
+  the English POB holds **1,605**, of which 375 are canonical OT/NT and 927 are
+  extra-canonical (635 in Jubilees alone). Spanish holds 233, Hindi 131.
+
+  Some losses are substantive rather than cosmetic. `translation/nt/mark/007/016.yaml`
+  carries a footnote recording that the verse is absent from the earliest Greek
+  manuscripts, but its marker is orphaned — so the reader sees a disputed verse
+  with no textual-critical disclosure at all. Orphaned `textual_variant` and
+  manuscript-absence notes should be audited ahead of the rest.
+
+  Measure this with a YAML parse, not a line scan. `translation.text` is often a
+  multi-line scalar, and a scan that reads only the first `  text:` line
+  over-reports by roughly six times.
+
   Worth a dedicated pass: for records blocked *only* on `unanchored footnote`,
   the fix is usually to anchor a marker the reviewer already wrote. That is
   mechanical enough to script with review, and would unblock several hundred

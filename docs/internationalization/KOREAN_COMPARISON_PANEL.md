@@ -153,6 +153,56 @@ What the comparison framing above was built to catch, found by direct audit:
   multi-line scalar, and a scan that reads only the first `  text:` line
   over-reports by roughly six times.
 
+  **Update (2026-09-13) — measured again, fixed, and the count revised down.**
+  The 2,146 figure counts inline markers with `\[([A-Za-z0-9]+)\]`, and that
+  regex is wrong in two ways. It cannot see a marker that is not ASCII, and it
+  cannot see one containing a hyphen. Re-measured with a marker pattern that
+  accepts any declared marker, the derived editions hold **2** genuine orphans,
+  not the ~550 first reported:
+
+  | edition | ASCII-only regex | script-aware |
+  |---|---|---|
+  | hi | 131 | 0 |
+  | ko | 64 | 0 |
+  | simplified | 32 | 2 |
+  | ar | 32 | 0 |
+  | ru | 18 | 0 |
+  | am | 12 | 0 |
+  | te / ta / de / ja / ml / yo | 8 / 6 / 2 / 1 / 1 / 1 | 0 |
+  | es | 10 | 0 |
+
+  The editions localise the marker itself: Hindi uses `[क]`, Arabic `[أ]`,
+  Russian `[а]`, Korean `[주1]`. Those markers are correctly anchored. Spanish
+  was genuinely affected and was fixed by the three anchor passes already on
+  `main`; its residual 10 are localised markers too, and `spanish_pipeline.py
+  validate` reports `failed=0` for Isaiah and John.
+
+  Two real defects remain in `translation_simplified`
+  (`dialogue_of_the_savior/007`, `testaments_twelve_patriarchs/benjamin/010/008`):
+  the declared marker is a single space, which cannot be anchored at all. That
+  is a marker-key defect, not an anchoring one.
+
+  The English POB was genuinely affected and has been fixed. Canonical OT+NT is
+  at **0** orphans (375 records repaired), and the deuterocanon and
+  extra-canonical books at **603** (821 records repaired). What remains is
+  concentrated in Jubilees (456), 2 Baruch (98) and 1 Clement (32), almost all
+  `previous_rendering` notes whose quoted alternative shares too little wording
+  with the current text to locate mechanically.
+
+  **Do not anchor these from prior revision history alone.** Earlier passes
+  clustered markers at clause starts regardless of what the note discusses —
+  `translation/ot/1_chronicles/008/037.yaml` records `Eleasah his son[c][b]`
+  when `[b]` discusses "Rephah" and `[c]` discusses "Eleasah". Anchor from the
+  note's own content, cross-checked against the verse's `lexical_decisions`.
+
+  Four records declare the same marker key twice and must be repaired before
+  they can be anchored: jubilees 20:2, 21:13, 37:14 and
+  `thunder_perfect_mind/093`.
+
+  Phrase-keyed footnotes (Gospel of Thomas, Gospel of Philip, and others) are
+  anchored by the phrase appearing in the text rather than by a bracketed
+  token. They are not orphans and must not be "fixed".
+
   Worth a dedicated pass: for records blocked *only* on `unanchored footnote`,
   the fix is usually to anchor a marker the reviewer already wrote. That is
   mechanical enough to script with review, and would unblock several hundred

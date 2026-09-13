@@ -64,6 +64,16 @@ MARKERS: dict[str, re.Pattern[str]] = {
 CODE_BY_SLUG = refs.BOOK_USFM_CODES
 
 
+# Leading verse numbers in chapter-level aggregates, e.g. "12. " or "1[a]. ".
+VERSE_SEGMENT = re.compile(r"(?m)(?=^\s*\d+(?:\[[0-9a-z]{1,2}\])?\.\s)")
+
+
+def verse_segments(text: str) -> list[str]:
+    """Split a chapter-level aggregate into its numbered verse segments."""
+    parts = [part.strip() for part in VERSE_SEGMENT.split(text) if part.strip()]
+    return parts or [text]
+
+
 def trigrams(text: str) -> set[str]:
     squished = re.sub(r"[\s\W_]+", "", text)
     if len(squished) < 3:
@@ -145,31 +155,46 @@ def pob_text(path: pathlib.Path) -> str | None:
 def scan(args: argparse.Namespace) -> int:
     panel = load_panel()
     rows = []
-    areas = [args.area] if args.area else ["ot", "nt"]
+    areas = [args.area] if args.area else ["ot", "nt", "extra_canonical"]
     for area in areas:
         root = REPO_ROOT / "translation_ko" / area
         if not root.exists():
             continue
         for path in sorted(root.rglob("*.yaml")):
             parts = path.relative_to(root).parts
-            if len(parts) != 3:
-                continue
-            slug, chapter_dir, verse_file = parts
+            slug = parts[0]
             code = CODE_BY_SLUG.get(slug)
-            if not code:
-                continue
-            try:
-                chapter, verse = int(chapter_dir), int(verse_file.split(".")[0])
-            except ValueError:
+            # ot/nt are always <book>/<chapter>/<verse>.yaml and always have a
+            # 1910 counterpart. extra_canonical is looser: chapter-level
+            # aggregates (<book>/<NNN>.yaml), an extra grouping level for the
+            # Testaments (<book>/<tribe>/<NNN>/<VVV>.yaml), and no 1910 panel
+            # entry at all. Keep the strict shape where it holds, and fall back
+            # to markers-only elsewhere rather than skipping the file.
+            chapter = verse = None
+            if len(parts) == 3:
+                try:
+                    chapter, verse = int(parts[1]), int(parts[2].split(".")[0])
+                except ValueError:
+                    chapter = verse = None
+            if area in ("ot", "nt") and (code is None or chapter is None):
                 continue
             text = pob_text(path)
             if not text:
                 continue
 
             hits = sorted(name for name, pattern in MARKERS.items() if pattern.search(text))
+            # Chapter-level aggregates hold many verses in one string, so a
+            # form that is only archaic in final position (-니라, -더라, -러라)
+            # sits mid-string and the anchored patterns never fire. Re-test each
+            # numbered verse segment so those files are not silently clean.
+            for segment in verse_segments(text):
+                hits = sorted(
+                    set(hits)
+                    | {name for name, pattern in MARKERS.items() if pattern.search(segment)}
+                )
 
             score = 0.0
-            if not args.markers_only:
+            if not args.markers_only and code is not None and chapter is not None:
                 try:
                     mapped_chapter, mapped_verse = refs.panel_reference(slug, "kjv", chapter, verse)
                 except Exception:
@@ -216,7 +241,7 @@ def main() -> int:
     scan_parser.add_argument("--min-length", type=int, default=45,
                              help="ignore the similarity signal below this many non-space characters")
     scan_parser.add_argument("--markers-only", action="store_true")
-    scan_parser.add_argument("--area", choices=["ot", "nt"])
+    scan_parser.add_argument("--area", choices=["ot", "nt", "extra_canonical"])
     scan_parser.add_argument("--limit", type=int, default=60)
     scan_parser.add_argument("--json-out")
 

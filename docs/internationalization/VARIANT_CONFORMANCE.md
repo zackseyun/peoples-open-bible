@@ -105,14 +105,17 @@ for running cheap objective checks even when the corpus is believed clean:
   `חֵרֵשׁ` means *deaf*; Numbers 25:3 read `בַּעַל פְּעוֹר` as a place name,
   losing the idolatry that is the verse's point.
 
-## A separate defect the audit uncovered: shifted Psalms verses
+## A separate defect the audit uncovered: shifted Psalms verses (repaired)
 
 Not a variant problem, but found while checking one and worth recording here
-because the scoping method is the same.
+because the scoping method is the same. Repaired in
+`Repair the Psalms superscription verse offset in ko and es`; kept here
+because the scoping is reusable and because the first reading of the defect
+was wrong in a way worth remembering.
 
-Korean and Spanish Psalms contain chapters where a verse is duplicated
-mid-chapter and everything after it is shifted by one, so a reader sees one
-verse twice and the chapter's last verse sits in a stray trailing record.
+Korean and Spanish Psalms had chapters where a verse was duplicated and
+everything after it shifted by one, so a reader saw one verse twice and the
+chapter's last verse sat in a stray trailing record.
 
 Scope, measured from three independent angles that agree:
 
@@ -129,12 +132,56 @@ The affected chapters are the ones carrying a superscription, which POB stores
 as verse 0, and Korean and Spanish are the two editions drafted before the
 Psalms renumbering — the same two that showed `base_translation` offsets.
 
-**Do not repair this by deleting the extra trailing record.** It holds the only
-rendering of the chapter's final verse; deleting it loses content.
-`tools/realign_by_source.py` detects and plans the moves, and its `apply`
-refuses any chapter that is not a closed permutation. These shifts are refused
-by that guard, correctly. The guard should not be loosened to let a repair
-through — the per-chapter shape varies and needs adjudication.
+### What the first reading got wrong
+
+The cause is narrower than "a verse duplicated at a varying position". Both
+editions were drafted while the English tree was midway through moving the
+superscription to verse 0, so it then carried the superscription at both `000`
+and `001`. Every chapter with a superscription came out one record too long,
+with the duplicate always at `001` and the body one slot late. That is why the
+count is exactly 63 in exactly these two editions.
+
+Two corrections to what was recorded above:
+
+- **"Do not delete the trailing record, it holds the only rendering of the
+  final verse."** True of Spanish, and false of Korean by the time it was
+  written. A `gpt-5.6-terra` pass on 2026-07-13 had already re-translated most
+  Korean records against their own path, pushing the offset draft into
+  `revisions[].from`, so in 43 Korean chapters the trailing record was a
+  redundant *second* rendering of a verse already correct at its own path.
+- **`source.text` as the evidence of where a record belongs.** Sound for
+  Spanish, inverted for Korean: the July pass moved the rendering onto the
+  right verse and left `source.text` stale, so following the source would have
+  moved corrected renderings back off their verse. This is why
+  `realign_by_source.py` was the wrong instrument, not merely a blocked one —
+  its `apply` guard was right to refuse, and was left untouched.
+
+The real cost was the opposite of the one feared. Deleting trailing records
+would have lost little; what had actually gone missing was 32 Korean verses
+and 1 Spanish verse with no live rendering anywhere, overwritten where the
+July pass skipped the record that should have moved. Ps 84:4, "Blessed are
+those who dwell in your house", existed nowhere in `translation_ko`. All were
+recovered from the revision history of the record that replaced them.
+
+### Method worth reusing
+
+Three signals, each checkable, that between them fix every record:
+
+- **Position.** Untouched editions carry the offset in their positions, and
+  `source.text` agrees with position on 1116 of 1118 records — so either can
+  check the other, and the disagreements are worth reading individually.
+- **Revision shape.** A revision that replaced a verse and one that copy-edited
+  it separate cleanly on `from`/`to` similarity (replacements at <=0.5, copy
+  edits at >=0.6), which is what distinguishes a Korean record the July pass
+  re-aimed from a Spanish record it never touched.
+- **Coverage, not moves.** Ask which English verses have a live rendering
+  rather than which records look misfiled. That is what surfaced the 33
+  missing verses, which no move-based view showed at all.
+
+Repairs run through `tools/repair_psalms_verse_offset.py`, which refuses any
+chapter that does not resolve to exactly the English verse set, and preserves
+every dropped rendering in the revisions entry of the record that keeps its
+verse before removing it.
 
 ## Re-running
 

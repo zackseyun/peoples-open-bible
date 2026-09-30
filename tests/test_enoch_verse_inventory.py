@@ -9,7 +9,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-from tools.enoch import build_translation_prompt, verse_parser
+from tools.enoch import build_translation_prompt, draft_source_corrections, verse_parser
 
 
 EXPECTED = {
@@ -19,6 +19,12 @@ EXPECTED = {
 
 
 class EnochVerseInventoryTest(unittest.TestCase):
+    def test_correction_targets_are_unique_and_validated(self):
+        self.assertEqual(draft_source_corrections.parse_refs("5:9, 6:6,5:9"),
+                         [(5, 9), (6, 6)])
+        with self.assertRaises(ValueError):
+            draft_source_corrections.parse_refs("0:1")
+
     def test_unsafe_oracle_patcher_is_retired(self):
         script = Path(__file__).resolve().parents[1] / "tools/enoch/gap_audit.py"
         result = subprocess.run([sys.executable, str(script), "--dry-run"],

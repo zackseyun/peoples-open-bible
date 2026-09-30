@@ -136,8 +136,49 @@ def parse_chapter(chapter: int) -> tuple[list[EnochVerseRow], list[str]]:
     if not path.exists():
         raise FileNotFoundError(f"Missing Charles 1906 chapter file: {path}")
 
-    segment, warnings = extract_chapter_segment(chapter, path.read_text(encoding="utf-8"))
+    raw = path.read_text(encoding="utf-8")
+    segment, warnings = extract_chapter_segment(chapter, raw)
+    source_files = [str(path.relative_to(REPO_ROOT))]
+    current_segment_end = len(segment)
+
+    # Chapter OCR files are page-window snapshots, not chapter isolates. A
+    # chapter can end midway through a verse while its remaining text sits at
+    # the start of the *next* file, before that chapter's Roman header. Read
+    # that primary-edition continuation rather than mistaking the cutoff for
+    # a shorter scriptural chapter.
+    if chapter < 108:
+        cleaned = _normalize_text(raw)
+        current_header = _header_pattern(chapter).search(cleaned) if chapter > 1 else None
+        search_from = current_header.end() if current_header else 0
+        next_header = _header_pattern(chapter + 1).search(cleaned, pos=search_from)
+        if next_header is None:
+            next_path = chapter_path(chapter + 1)
+            if next_path.exists():
+                next_cleaned = _normalize_text(next_path.read_text(encoding="utf-8"))
+                continuation_end = _header_pattern(chapter + 1).search(next_cleaned)
+                if continuation_end is None:
+                    warnings.append(
+                        f"Next OCR file lacks chapter {chapter + 1} header; chapter {chapter} continuation needs review."
+                    )
+                else:
+                    continuation = next_cleaned[: continuation_end.start()].strip()
+                    if continuation:
+                        segment = f"{segment} {continuation}".strip()
+                        source_files.append(str(next_path.relative_to(REPO_ROOT)))
+                        warnings.append(
+                            f"Continued chapter {chapter} from {source_files[-1]} before its next chapter header."
+                        )
+            else:
+                warnings.append(f"Next OCR file missing; chapter {chapter} may be truncated.")
+
     matches = list(_EXPLICIT_VERSE_RE.finditer(segment))
+
+    def source_label(start: int, end: int) -> str:
+        if len(source_files) == 1 or end <= current_segment_end:
+            return source_files[0]
+        if start >= current_segment_end:
+            return source_files[1]
+        return " + ".join(source_files)
 
     rows: list[EnochVerseRow] = []
     if not matches:
@@ -148,7 +189,7 @@ def parse_chapter(chapter: int) -> tuple[list[EnochVerseRow], list[str]]:
                     verse=1,
                     text=segment,
                     marker_raw="",
-                    chapter_file=str(path.relative_to(REPO_ROOT)),
+                    chapter_file=source_label(0, len(segment)),
                 )
             )
         else:
@@ -163,7 +204,7 @@ def parse_chapter(chapter: int) -> tuple[list[EnochVerseRow], list[str]]:
                 verse=1,
                 text=leading,
                 marker_raw="",
-                chapter_file=str(path.relative_to(REPO_ROOT)),
+                chapter_file=source_label(0, matches[0].start()),
             )
         )
 
@@ -180,9 +221,28 @@ def parse_chapter(chapter: int) -> tuple[list[EnochVerseRow], list[str]]:
                 verse=verse_num,
                 text=text,
                 marker_raw=match.group(0).strip(),
-                chapter_file=str(path.relative_to(REPO_ROOT)),
+                chapter_file=source_label(match.start(), next_start),
             )
         )
+
+    # The OCR preserves the words closing chapter 6, but Charles 1906's
+    # chapter-file transcription omits the printed boundary before the final
+    # "chiefs of tens" sentence. Keep the source words intact while restoring
+    # the verse 8 boundary used by the project's Enoch versification.
+    if chapter == 6 and [row.verse for row in rows] == list(range(1, 8)):
+        boundary = "እሉ፡ እሙንቱ፡"
+        last = rows[-1]
+        split_at = last.text.rfind(boundary)
+        if split_at > 0:
+            rows[-1] = EnochVerseRow(
+                chapter=chapter, verse=7, text=last.text[:split_at].strip(),
+                marker_raw=last.marker_raw, chapter_file=last.chapter_file,
+            )
+            rows.append(EnochVerseRow(
+                chapter=chapter, verse=8, text=last.text[split_at:].strip(),
+                marker_raw="editorial boundary", chapter_file=last.chapter_file,
+            ))
+            warnings.append("Restored chapter 6 verse 8 boundary before the chiefs-of-tens sentence.")
 
     verse_numbers = [row.verse for row in rows]
     if verse_numbers and verse_numbers[0] != 1:

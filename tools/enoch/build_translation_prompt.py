@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import json
 import pathlib
+import re
 import subprocess
 import sys
 from dataclasses import asdict, dataclass
@@ -169,7 +170,13 @@ def build_enoch_prompt(chapter: int, verse: int) -> EnochPromptBundle:
     else:
         warnings.append(f"No Dillmann 1851 chapter OCR file found for chapter {chapter}.")
 
-    pages = _chapter_pages(chapter, edition="charles_1906")
+    # The primary Ge'ez line may continue on the next chapter's scanned page.
+    # Record every page-window file actually used by the recovered verse.
+    source_chapters = [int(value) for value in re.findall(r"/ch(\d+)\.txt", charles.note)]
+    pages = list(dict.fromkeys(
+        page for source_chapter in (source_chapters or [chapter])
+        for page in _chapter_pages(source_chapter, edition="charles_1906")
+    ))
     witness_set = EnochVerseWitnessSet(chapter=chapter, verse=verse, geez_charles=charles)
     reference = f"1 Enoch {chapter}:{verse}"
     zone1_sources_at_draft = [_snapshot_label("Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser)")]

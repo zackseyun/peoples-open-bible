@@ -3,48 +3,57 @@ reference: 1 Enoch 17:7
 book: 1 Enoch
 source:
   edition: charles-1906-enoch
-  text: ወርኢኩ፡ አድባረ፡
-  language: Geez
-  pages:
+  language: Geʿez
+  text: ወርኢኩ፡ አድባረ፡ ቀበሬት፡ እለ፡ ክረምት፡ ወምክዐወ፡ ማይ፡ ዘኵሉ፡ ቀላይ።
+  pages: &id001
   - 84
+  - 86
   confidence: medium
-  validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch17.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 17, but verse-aligned extraction is not yet implemented in this prompt builder.
+  validation: cross_page_primary_ocr_verified_against_scan
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch17.txt + sources/enoch/ethiopic/transcribed/charles_1906/ch18.txt via tools/enoch/verse_parser.py | Charles 1906 scan pages visually checked on 2026-09-29.
+  section: Book of the Watchers
 translation:
-  text: And I saw the mountains of the darkness of winter and the place where all the waters of the deep flow[a][b].
+  text: And I saw the mountains of winter darkness[a] and the outpouring of all the waters of the deep[b].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'The surviving OCR for this verse is very short and may preserve only part of the line. The translation follows the extant Ge''ez words provided: ''And I saw mountains.'''
+    text: Charles’s printed Geʿez has ቀበሬት with a manuscript variant; “darkness” follows the traditional reading.
     reason: textual_variant
   - marker: b
-    text: Or 'And I saw mountains.'.
-    reason: previous_rendering
+    text: Or “outflow”; the source depicts the waters pouring out.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: ወርኢኩ
   chosen: And I saw
+  rationale: Preserves the first-person visionary report and its opening conjunction.
+- source_word: አድባረ፡ ቀበሬት፡ እለ፡ ክረምት
+  chosen: the mountains of winter darkness
   alternatives:
-  - and I looked
-  - and I beheld
-  lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb introduces Enoch’s visionary report in first person. 'And I saw' is the most natural modern English rendering while preserving the simple narrative force of the Ge'ez conjunction plus verb.
-- source_word: አድባረ
-  chosen: mountains
+  - the mountains of winter
+  rationale: Retains the mountain and winter imagery, but the OCR form ቀበሬት is uncertain; ‘darkness’ is provisional, not a secure lexical identification.
+- source_word: ምክዐወ
+  chosen: outpouring
   alternatives:
-  - mounts
-  - highlands
-  lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The plural noun denotes mountains. 'Mountains' preserves the concrete apocalyptic landscape without archaizing or narrowing the image.
+  - outlet
+  - place of outflow
+  rationale: Preserves the movement of the source noun without adding an explicit place.
+- source_word: ማይ፡ ዘኵሉ፡ ቀላይ
+  chosen: all the waters of the deep
+  alternatives:
+  - the water of every sea
+  - the waters of all the seas
+  rationale: Preserves the singular deep-water image instead of multiplying separate seas.
 ai_draft:
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
+  model_id: gpt-6-sol
+  model_version: gpt-6-sol
   prompt_id: enoch_verse_draft_v1
-  prompt_sha256: 8d70a2a0277423ce0cbc33afe4933b6f3ecec6c916a2f330a55a3d1cfcc526da
-  timestamp: '2026-04-22T09:08:54Z'
-  output_hash: 2bd76708d7d59dadbef37835eb1d44d091c8cb59ba721d75793f5e8429230153
+  prompt_sha256: 4ea0b642a2c87104ffc39083f37b4ab39f214391cc9185d7a36d9f2275b2f675
+  timestamp: '2026-09-30T02:22:00Z'
+  output_hash: 54c7a60a2ca02e0890137f51876bc65e1d1d62865d7c17fd441c56d6036408b0
+  backend: codex-cli
   zone1_sources_at_draft:
-  - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @2ace96ea8
-  - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @2ace96ea8
+  - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @ed7f777ec5
+  - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @ed7f777ec5
   zone2_consults_known:
   - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
   - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
@@ -52,30 +61,18 @@ ai_draft:
   - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
   - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
   - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
-  temperature: 0.2
 status: revised
 enoch_witnesses:
+  chapter: 17
+  verse: 7
   section: Book of the Watchers
-  loaded_witnesses_by_language:
-    geez:
-    - charles_1906
   available_witnesses:
   - language: geez
     witness: charles_1906
-    text: ወርኢኩ፡ አድባረ፡
+    text: ወርኢኩ፡ አድባረ፡ ቀበሬት፡ እለ፡ ክረምት፡ ወምክዐወ፡ ማይ፡ ዘኵሉ፡ ቀላይ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch17.txt via tools/enoch/verse_parser.py
-  attestation_expectations:
-    greek:
-      attested: true
-      status: Panopolitanus Greek witness survives for this chapter range
-    aramaic:
-      zone2_consult_possible: true
-      status: Qumran Aramaic fragments exist for at least part of this chapter range
-  geez_only_zone1: false
-  source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 17, but verse-aligned extraction is not yet implemented in this prompt builder.
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch17.txt + sources/enoch/ethiopic/transcribed/charles_1906/ch18.txt via tools/enoch/verse_parser.py
 revisions:
 - timestamp: '2026-04-22T18:46:22Z'
   adjudicator: auto_apply_tier2_source_grounded
@@ -99,28 +96,70 @@ revisions:
   from: And I saw the mountains.
   to: And I saw the mountains of the darkness of winter and the place where all the waters of the deep flow.
   rationale: Revision pass truncated verse from 102 chars to 24 chars. Restored pre-revision text.
-revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:35:51Z'
-  unchanged: true
-  changes_summary: 'Revised to match the extant Geez phrase only: ወርኢኩ፡ አድባረ፡ means ''And I saw the mountains.'' Removed material not present in the provided source text. [TRUNCATION DETECTED — revision reverted]'
-
+- timestamp: '2026-09-29T20:00:00-07:00'
+  adjudicator: Codex source-recovery candidate
+  category: source_completion
+  from: And I saw the mountains of the darkness of winter and the place where all the waters of the deep flow[a][b].
+  to: And I saw the mountains of winter darkness[a] and the outpouring of all the waters of the deep[b].
+  rationale: Restores Geʿez text spanning adjacent Charles 1906 OCR page-window files. Translation is source-bound and separately reviewed; old approval metadata is archived.
+source_warnings:
+- Continued chapter 17 from sources/enoch/ethiopic/transcribed/charles_1906/ch18.txt before its next chapter header.
+- Dillmann 1851 chapter OCR exists for chapter 17, but verse-aligned extraction is not yet implemented in this prompt builder.
+theological_decisions: []
+review_history:
+- field: status
+  value: revised
+  archived_from_baseline_sha256: 30612536c73fd774cdc4eaadaa7296cdd473a3a6d2cf8764911ef57b0b54088d
+  certifies_this_candidate: false
+- field: revision_pass
+  value:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:35:51Z'
+    unchanged: true
+    changes_summary: 'Revised to match the extant Geez phrase only: ወርኢኩ፡ አድባረ፡ means ''And I saw the mountains.'' Removed material not present in the provided source text. [TRUNCATION DETECTED — revision reverted]'
+  archived_from_baseline_sha256: 30612536c73fd774cdc4eaadaa7296cdd473a3a6d2cf8764911ef57b0b54088d
+  certifies_this_candidate: false
+- field: cross_check
+  value:
+    status: needs_review
+    agreement: 0.4
+    agreement_score: 0.4
+    agreement_min: 0.4
+    agreement_max: 0.4
+    verdict: major-issues
+    reviewed_at: '2026-04-22T18:45:06Z'
+    reviewer_model: gemini-3.1-pro-preview
+    strategy: phase10_ethiopic_pseudepigrapha
+    pass_count: 1
+    passes_with_issues: 1
+    models:
+    - gemini-3.1-pro-preview
+    strategies:
+    - phase10_ethiopic_pseudepigrapha
+    verdict_counts:
+      major-issues: 1
+    source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/017/007.job-72250.json
+  archived_from_baseline_sha256: 30612536c73fd774cdc4eaadaa7296cdd473a3a6d2cf8764911ef57b0b54088d
+  certifies_this_candidate: false
 cross_check:
-  status: needs_review
-  agreement: 0.4
-  agreement_score: 0.4
-  agreement_min: 0.4
-  agreement_max: 0.4
-  verdict: major-issues
-  reviewed_at: '2026-04-22T18:45:06Z'
-  reviewer_model: gemini-3.1-pro-preview
-  strategy: phase10_ethiopic_pseudepigrapha
+  status: high_agreement
+  verdict: accept
+  reviewed_at: '2026-09-30T04:34:32Z'
+  reviewer_model: gpt-6-astra
   pass_count: 1
-  passes_with_issues: 1
-  models:
-  - gemini-3.1-pro-preview
-  strategies:
-  - phase10_ethiopic_pseudepigrapha
-  verdict_counts:
-    major-issues: 1
-  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/017/007.job-72250.json
+  source_review: sources/textual_restoration/applications/enoch_5_9_17_7_8_20260929/final-source-review.json
+  scope: source/translation wording and notes for this candidate; not full-book certification
+source_correction:
+  scope: 1 Enoch source-gap repair candidate
+  primary_edition: Charles 1906 Ethiopic
+  source_files: sources/enoch/ethiopic/transcribed/charles_1906/ch17.txt + sources/enoch/ethiopic/transcribed/charles_1906/ch18.txt
+  scan_pages: *id001
+  current_main_baseline_sha256: 30612536c73fd774cdc4eaadaa7296cdd473a3a6d2cf8764911ef57b0b54088d
+  publication_approval: true
+  review_basis: public-domain Charles 1906 scanned Geʿez + independent gpt-6-astra review; uncertainty disclosed in footnotes
+revision_pass:
+  model: gpt-6-astra
+  timestamp: '2026-09-30T04:34:32Z'
+  unchanged: false
+  changes_summary: Source-bound translation reviewed against the Charles 1906 scanned Geʿez continuation; final text accepted with transparent notes.
+  source_review: sources/textual_restoration/applications/enoch_5_9_17_7_8_20260929/final-source-review.json

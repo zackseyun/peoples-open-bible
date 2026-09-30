@@ -2,8 +2,9 @@
 
 The Graphic Reader candidates for chapters 6–17 had exact coverage of the
 **current POB files**, but those files omitted verse units. Compared with the
-public-domain Charles 1917 chapter/verse inventory, 42 verse files are absent
-across chapters 6–10 and 12–17; chapter 11's two verse files are present.
+public-domain Charles 1917 chapter/verse inventory, 42 verse files were absent
+at audit time across chapters 6–10 and 12–17; chapter 11's two verse files
+were present.
 Several existing last-verse files also stop mid-sentence. Verse count alone
 therefore cannot certify a complete chapter.
 

@@ -5,6 +5,9 @@ versification only, not for the POB translation text.
 """
 
 import unittest
+import subprocess
+import sys
+from pathlib import Path
 
 from tools.enoch import build_translation_prompt, verse_parser
 
@@ -16,6 +19,13 @@ EXPECTED = {
 
 
 class EnochVerseInventoryTest(unittest.TestCase):
+    def test_unsafe_oracle_patcher_is_retired(self):
+        script = Path(__file__).resolve().parents[1] / "tools/enoch/gap_audit.py"
+        result = subprocess.run([sys.executable, str(script), "--dry-run"],
+                                capture_output=True, text=True)
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("oracle-derived patcher is retired", result.stderr)
+
     def test_every_primary_ocr_verse_is_present_in_order(self):
         for chapter, count in EXPECTED.items():
             with self.subTest(chapter=chapter):

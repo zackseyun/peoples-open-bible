@@ -35,7 +35,7 @@ phases:
         fi
         python3 tools/extra_texts/validate_catalog.py --all
         python3 tools/lint_psalm_numbering.py --strict
-        python3 tools/validate_reader_corpus.py --skip-yaml-syntax --quiet --malformed-yaml warn
+        python3 tools/validate_reader_corpus.py --quiet --malformed-yaml error
         export TARGET_SHA="${CODEBUILD_RESOLVED_SOURCE_VERSION:-$(git rev-parse HEAD)}"
         aws lambda invoke \
           --region "$AWS_REGION" \

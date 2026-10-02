@@ -243,10 +243,10 @@ Draft metadata recorded per verse:
 - `timestamp` — ISO 8601 UTC
 - `output_hash` — sha256 of the model's raw output
 
-The drafting script is `tools/draft.py`. Reproducibility is
-enforced: given the same model, prompt hash, and source text,
-re-running the script produces the same draft within model
-non-determinism bounds, which are documented per draft.
+The drafting script is `tools/draft.py`. Source text, model metadata, and
+prompt/output hashes are recorded for inspection. A prompt hash alone is not
+the prompt, and rerunning a hosted model is not guaranteed to produce an
+identical draft; there is no enforced byte-for-byte AI reproducibility check.
 
 ## Stage 3 — Revision pass
 
@@ -354,10 +354,11 @@ revision pass that runs in three layers
 ([REVISION_METHODOLOGY.md](REVISION_METHODOLOGY.md),
 [docs/REVISION_PROCESS.md](docs/REVISION_PROCESS.md)):
 
-- **Layer 1 (during drafting).** `tools/consistency_lint.py` runs
-  per commit, flagging same-lemma-different-gloss without rationale,
-  contradictions of DOCTRINE.md defaults, missing source citations,
-  and malformed YAML. Lint failures block merge to main.
+- **Layer 1 (during drafting).** `tools/consistency_lint.py` can be run
+  on drafted records to flag same-lemma-different-gloss without rationale,
+  contested-term policy gaps or overrides, and empty source text. This
+  editorial lint is not yet a required merge check. Reader-corpus and
+  catalog validators provide separate structural checks.
 - **Layer 2 (per-phase revision).** After a phase draft is complete,
   the corpus is revised in thematic batches. The Pauline runbook
   ([docs/PHASE1_REVISION_RUNBOOK.md](docs/PHASE1_REVISION_RUNBOOK.md))
@@ -409,34 +410,35 @@ change and a documented set of carve-outs.
 
 ## Reproducibility verification
 
-`tools/verify.py <verse_id>` takes a published verse and re-runs the
-LLM pipeline using the documented inputs. It reports:
+There is not yet a one-command, end-to-end verifier that re-runs the
+LLM drafts, revision passes, and source-image transcription. The per-verse
+records expose the cited source text, model and prompt identifiers, hashes,
+and revision history for inspection, but a hash alone does not preserve the
+exact prompt or guarantee that a hosted model will produce the same output
+later. Re-running an AI pass is a comparison, not a byte-for-byte proof.
 
-- Whether the first draft reproduces (modulo model non-determinism)
-- Whether the revision pass reproduces
-- Whether the OCR for the cited source page reproduces (for
-  scan-grounded verses)
-
-Any third party can run this verification with no access to Cartha
-infrastructure — only the public repository, the cited Zone-1
-sources from archive.org, and the named LLM APIs.
+The checks that can currently be repeated locally without model access are
+the catalog, Psalm-numbering, and reader-corpus validators described below.
+For an exact published edition, verify its release asset against the SHA-256
+checksum in that edition's release notes and the associated source commit.
 
 ## Consistency linting
 
-`tools/consistency_lint.py` runs across the entire translation and
-flags:
+`tools/consistency_lint.py` scans drafted verse records and flags:
 
 - Same Greek / Hebrew word translated with different English glosses
   without a documented rationale
 - Lexical decisions that contradict `DOCTRINE.md`'s default
   renderings without explicit override
-- Missing source-text citations
-- Empty or malformed verse records
-- YAML schema violations against `schema/verse.schema.json`
+- Empty source text
 
-Lint failures block merge to main. The lint output is also
-consumed by the revision Layer-2 batching — same-lemma-different-gloss
-clusters become revision targets.
+This editorial lint is not currently a required merge check. The reader
+corpus validator (`python3 tools/validate_reader_corpus.py --malformed-yaml
+error`) checks YAML syntax and known reader-facing duplication regressions.
+`python3 tools/lint_psalm_numbering.py --strict` and
+`python3 tools/extra_texts/validate_catalog.py --all` check their respective
+corpus contracts. None of these checks establishes textual accuracy or
+scholarly approval.
 
 ## Public disagreement workflow
 

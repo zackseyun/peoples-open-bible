@@ -29,10 +29,10 @@ methods, and code are published as openly as possible.
   readings with alternatives preserved. Every change is traceable in
   git, and every disagreement can have a permanent URL. See
   [John 1:1’s source record](translation/nt/john/001/001.yaml).
-- **Every verse is reproducible.** Given the source text, prompt hash,
-  and model identifier, any third party can re-run the pipeline and
-  verify the documented draft. No other English Bible in history has
-  offered this level of public reproducibility. Read the
+- **Every verse is inspectable.** Source text, draft and revision metadata,
+  and decisions are published for independent review. A prompt hash and
+  model identifier do not guarantee that a hosted AI draft can be reproduced
+  byte-for-byte; see the present verification limits in the
   [methodology](METHODOLOGY.md).
 
 ## Why we built this
@@ -126,7 +126,7 @@ output against our stated commitments rather than guessing at hidden biases.
 ## Methodology
 
 See [METHODOLOGY.md](METHODOLOGY.md) for the drafting pipeline, cross-check
-protocol, and reproducibility verification. For the deuterocanonical
+protocol, and current verification limits. For the deuterocanonical
 source-text rescue work specifically — how the Swete corpus was improved,
 rescued, and confidence-promoted from direct scan inspection — see
 [docs/PHASE8_CORPUS_QUALITY_RESCUE.md](docs/PHASE8_CORPUS_QUALITY_RESCUE.md).
@@ -505,7 +505,7 @@ peoples-open-bible/
 │   └── verse.schema.json    JSON Schema for per-verse YAML
 ├── sources/             Vendored source texts (see sources/README.md)
 ├── translation/         Per-verse YAML (translation/nt/<book>/<chap>/<verse>.yaml)
-├── tools/               draft.py, cross_check.py, verify.py, consistency_lint.py, …
+├── tools/               draft.py, consistency_lint.py, validate_reader_corpus.py, …
 ├── docs/                Phase runbooks, cross-reference notes, design docs
 ├── outreach/            Correspondence with publishers (ESV, NLT, etc.)
 └── .github/

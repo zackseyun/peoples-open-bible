@@ -1,4 +1,4 @@
-# GitHub Actions intentionally disabled
+# Operational GitHub Actions intentionally disabled
 
 This repository now uses AWS CodeBuild for the automated POB operational jobs that used to live in GitHub Actions:
 
@@ -7,6 +7,6 @@ This repository now uses AWS CodeBuild for the automated POB operational jobs th
 - `cartha-open-bible-regen-summary-cache`
 - `cartha-open-bible-regen-embeddings`
 
-The old workflows are preserved under `.github/workflows/disabled/*.disabled` for audit/rollback, but GitHub will not execute them.
+The old operational workflows are preserved under `.github/workflows/disabled/*.disabled` for audit/rollback, but GitHub will not execute them. The read-only `corpus-integrity.yml` workflow is deliberately enabled for pull requests and `main` pushes; it has no AWS credentials or publishing permissions.
 
 See `docs/CODEBUILD_OPERATIONS.md` and `scripts/setup_codebuild_deploys.sh`.

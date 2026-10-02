@@ -1,6 +1,6 @@
 # Tools
 
-Python scripts for drafting, cross-checking, verifying, and linting the
+Python scripts for drafting, cross-checking, validating, and linting the
 People's Open Bible.
 
 ## Scripts
@@ -12,7 +12,6 @@ People's Open Bible.
 | `build_translation_prompt.py` | implemented | Builds the Phase 9 deuterocanon prompt block from the adjudicated Swete corpus, Hebrew/MT parallels, Zone 2 consult registry, and doctrine/philosophy excerpts. Supports `--json` for prompt + metadata inspection. |
 | `draft.py` | implemented | Produces an AI-drafted verse YAML for a single verse. Reads source text, extracts relevant DOCTRINE.md sections, calls a frontier LLM with a tool definition enforcing structured output, writes a schema-valid YAML to `translation/<testament>/<book>/<chapter>/<verse>.yaml`. Supports `--dry-run` for prompt inspection without an API call, and now supports deuterocanonical books through the dedicated prompt builder. |
 | `cross_check.py` | stub | Runs draft against Claude + GPT + Gemini in parallel, scores agreement, surfaces divergences. Spec in METHODOLOGY.md Stage 3. |
-| `verify.py` | not yet written | Re-runs the documented pipeline for a published verse. Confirms AI draft reproduces and cross-check reproduces. |
 | `consistency_lint.py` | implemented | Checks internal consistency across drafted YAMLs. Flags undocumented lexical variance, contested-term doctrine gaps/overrides, and empty source text; writes Markdown reports to `lint_reports/`. |
 | `run_phase.py` | implemented | Drives a full phase (e.g., Phase 0 = Philippians) end to end: drafting, linting, commits, and CHANGELOG updates. |
 | `chapter_queue.py` | implemented | Maintains a SQLite-backed chapter queue/ledger for whole-Bible drafting. |

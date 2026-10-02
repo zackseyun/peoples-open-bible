@@ -28,14 +28,15 @@ Three things are true now that were not true a decade ago:
    drafts of biblical Greek and Hebrew translation with full lexical
    reasoning, exposing every decision they make.
 
-3. **Modern reproducibility standards** — "same input, same output" applied
-   to translation means any third party with the source text, the prompt,
-   and the model identifier can regenerate the draft and verify it matches.
-   Nothing like this exists in the history of Bible translation.
+3. **Modern provenance standards** — versioned source text, prompts where
+   preserved, model metadata, decisions, and published editions let third
+   parties audit what was done. Hosted AI models are not guaranteed to return
+   identical text when rerun, so provenance is not a claim of byte-for-byte
+   AI reproducibility.
 
 Together, these make something new possible: a translation where every
 decision is documented, every disagreement is public, every verse is
-reproducible, and every word can be traced back to the Greek or Hebrew it
+inspectable, and every word can be traced back to the Greek or Hebrew it
 came from — in under 60 seconds, from a phone, anywhere in the world.
 
 That is the People's Open Bible.
@@ -242,8 +243,8 @@ Several things it helps to say explicitly:
 We commit to:
 
 - **Never paywall scripture.** The text will always be free to read.
-- **Never hide decisions.** Every translation choice remains documented,
-  publicly inspectable, and reproducible.
+- **Never hide decisions.** Translation choices remain documented and
+  publicly inspectable; stable edition artifacts can be verified by checksum.
 - **Never silence disagreement.** Public issues remain open; responses are
   public; revisions are public.
 - **Never claim authority the text doesn't have.** This translation is an

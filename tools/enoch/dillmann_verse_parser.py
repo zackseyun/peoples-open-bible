@@ -162,9 +162,19 @@ def parse_chapter(chapter: int) -> tuple[list[EnochVerseRow], list[str]]:
 
     raw = path.read_text(encoding="utf-8")
     section, warnings = extract_section(chapter, raw)
+    if any("Could not locate" in warning for warning in warnings):
+        warnings.append("Unverified Dillmann verse alignment; no verse witness exposed.")
+        return [], warnings
     text = _join_lines(section)
 
     matches = list(_VERSE_MARKER_RE.finditer(text))
+    # OCR can insert marginal numerals inside broken words: chapter 7 has
+    # `ሥ / ፪ ርው`. Do not expose those truncated rows as verse witnesses.
+    # The chapter OCR remains available for manual scan alignment.
+    if any(match.start() and not text[:match.start()].rstrip().endswith(("፡፡", "።"))
+           for match in matches):
+        warnings.append("Unverified Dillmann verse alignment: numeral falls inside a sentence or broken word; no verse witness exposed.")
+        return [], warnings
 
     rows: list[EnochVerseRow] = []
     rel_path = str(path.relative_to(REPO_ROOT))

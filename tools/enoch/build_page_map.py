@@ -11,6 +11,8 @@ Rules:
   - continuation: appended to the most recently started chapter.
   - non-geez: skipped.
   - error: warns + breaks continuation (current chapter resets).
+  - verified chapter-boundary continuations also share the first page of
+    the next chapter; the detection cache does not always name both chapters.
 """
 from __future__ import annotations
 
@@ -28,6 +30,14 @@ PROPOSED = REPO_ROOT / "sources" / "enoch" / "ethiopic" / "page_map.proposed.jso
 
 GEEZ_UNITS = {1: "፩", 2: "፪", 3: "፫", 4: "፬", 5: "፭", 6: "፮", 7: "፯", 8: "፰", 9: "፱"}
 GEEZ_TENS = {1: "፲", 2: "፳", 3: "፴", 4: "፵", 5: "፶", 6: "፷", 7: "፸", 8: "፹", 9: "፺"}
+
+# Confirmed by the Charles 1906 page-window transcriptions and the scanned
+# chapter-transition pages; these pages contain the preceding chapter's tail
+# before the next Roman chapter header. Do not generalize this to every
+# transition: many next chapters begin at the top of their page.
+VERIFIED_TRANSITION_OVERLAPS = {
+    "charles_1906": {77: 186, 79: 190, 80: 191, 86: 204},
+}
 
 
 def geez_numeral(n: int) -> str:
@@ -93,6 +103,10 @@ def assemble_chapters(classifications: dict[int, dict[str, Any]], *, edition: st
             warnings.append(f"{edition} p{page}: classification error ({(entry.get('error') or '?')[:80]}); breaks continuation for chapter {current_chapter}")
             current_chapter = None
         # non-geez: skip
+    for chapter, page in VERIFIED_TRANSITION_OVERLAPS.get(edition, {}).items():
+        if chapter in chapter_pages and page not in chapter_pages[chapter]:
+            chapter_pages[chapter].append(page)
+            chapter_pages[chapter].sort()
     return chapter_pages, warnings
 
 

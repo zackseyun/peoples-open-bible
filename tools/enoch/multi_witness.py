@@ -17,7 +17,7 @@ Witness layers (ordered by language authority):
       wrapper / NC inner — kept local only)
 
   Zone 2 (consult, not reproduced):
-    - Milik 1976 DJD XXXVI — Qumran 4Q201-212 Aramaic reconstructions
+    - Milik 1976, The Books of Enoch — Qumran Aramaic reconstructions
     - Nickelsburg 2001 Hermeneia
     - Nickelsburg & VanderKam 2012 Hermeneia
     - Knibb 1978 modern critical Ethiopic
@@ -101,7 +101,7 @@ class EnochVerseWitnessSet:
 
 CONSULT_REGISTRY: list[dict] = [
     {
-        "name": "Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)",
+        "name": "Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (Oxford)",
         "year": 1976,
         "coverage_chapters": "1-36, 72-108 (partial, depending on fragment)",
         "role": "Qumran Aramaic 4Q201-212 reconstructions. Consult for pre-Christian Aramaic witness to chapters outside the Parables. Footnote fact-level ('4Q204 attests the Greek reading here'); do NOT reproduce Milik's reconstructed Aramaic.",

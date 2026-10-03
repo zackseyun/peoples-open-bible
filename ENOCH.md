@@ -8,10 +8,19 @@ the Book of Enoch (1 Enoch / Ethiopic Enoch / Mashafa Henok /
 applies the three-zone scholarly-source policy from
 [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md).
 
-> **Status: source-acquisition phase.** PDFs vendored, Ge'ez OCR
-> validated (Gemini 2.5 Pro in plaintext mode handles Ethiopic script;
-> GPT-5 and Gemini 2.5 Flash do not).
-> Translation drafting begins after Phase 10 (2 Esdras) completes.
+> **Status (2026-10-02): translated corpus is incomplete.** The read-only
+> primary-source inventory finds 53 absent verse files in chapters 1–35,
+> and 209 recovered-primary missing-unit leads across all 108 chapters.
+> Counts beyond chapter 35 are parser-derived leads, not a certified
+> versification inventory. Existing clipped source/translation records also
+> need repair. Do not infer completeness from the presence of 108 chapter
+> entries or from generated Graphic Reader panels.
+>
+> Run `python3 tools/enoch/audit_pob_source_coverage.py --chapters 1-108`.
+> See `sources/enoch/coverage/pob-primary-inventory-20261002.json` for exact
+> missing verse numbers and source-review leads. These checks do not approve
+> translations; source-complete candidates belong outside `translation/`
+> until their bounded source/review/application gates pass.
 
 ## Why Enoch
 
@@ -125,7 +134,7 @@ commands.
 
 Per [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md):
 
-- **Milik, *The Books of Enoch: Aramaic Fragments of Qumrân Cave 4*** (DJD XXXVI, 1976) — Qumran 4Q201–212 Aramaic reconstructions for chs 1–36, 72–108
+- **Milik, *The Books of Enoch: Aramaic Fragments of Qumrân Cave 4*** (Oxford, 1976) — Qumran Aramaic fragment reconstructions; coverage must be established passage by passage
 - **Nickelsburg, *1 Enoch 1: A Commentary*** (Hermeneia, 2001) — chs 1–36, 81–108
 - **Nickelsburg & VanderKam, *1 Enoch 2*** (Hermeneia, 2012) — chs 37–71
 - **Knibb, *The Ethiopic Book of Enoch*** (Oxford, 1978, 2 vols) — modern critical Ethiopic edition

@@ -222,6 +222,14 @@ inspiration or a universal canon. Any later canon proposal must name the
 community/tradition, its reception criteria and the proposed editorial action.
 No book-list change is made here.
 
+For the early Christian comparison track, the
+[Codex Sinaiticus project](https://www.codexsinaiticus.org/en/codex/content.aspx)
+identifies Barnabas and the Shepherd of Hermas alongside its New Testament.
+Their inclusion makes them concrete reception-history comparanda; it does not
+by itself settle how the codex's producers ranked them or authorize adding them
+to POB's NT canon. This pass consulted the project's content description,
+not the texts' manuscript pages or complete textual histories.
+
 ## Sirach poem comparison and delivery findings
 
 The next bounded unit is Sirach 51:13–30. Root and a separate agent inspected

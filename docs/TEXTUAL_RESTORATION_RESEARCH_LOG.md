@@ -4742,6 +4742,10 @@ That review identified two residual source-guide overclaims: categorical
 modern-edition exclusion and wording that implied completed AI transcription.
 Both were corrected to rights-aware inclusion and a planned, gated workflow.
 The reviewer explicitly did not independently certify the external readings.
+The later primary Codex Sinaiticus content-page consultation identifies
+Barnabas and Hermas as early Christian comparanda; the assessment records
+inclusion separately from inferred canonical authority. No manuscript pages
+or complete reception histories of those works were examined.
 
 Append a dated entry for every substantive research pass: question; actually
 consulted sources and locators/versions; observations versus hypotheses;

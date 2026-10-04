@@ -4663,6 +4663,42 @@ and renders stay outside Git. The unrelated untracked Genizah record is preserve
 Reopen only for specified glyph, physical-line or discriminating transmission
 evidence; continue other OT source units while those questions remain unresolved.
 
+### 2026-10-04 — Completed Nahash DJD reading-note consultation
+
+The preceding Proverbs pass changed authoritative state: PR #4 merged to
+`b5dad7ad62a94cb996dd33cab0de5ae250e086a7` after both required checks passed.
+Revalidated the live checkout and unchanged Nahash verse hashes. Preserved the
+unrelated untracked Genizah follow-up. No completion of the full OT goal claimed.
+
+Read complete DJD XVII printed pp.65-67 / PDF88-90 in the hash-matched existing
+private PDF. Initial repository-relative lookup failed; the copy was located in
+the chat workspace and reused. Text extraction located pages only; PDF skill
+required rendering and inspection. No fresh manuscript reading or acquisition.
+A bibliographic web search supplied no additional passage evidence; the actual
+claims below rely on the consulted edition, not search snippets.
+
+The [Nahash follow-up](SAMUEL_NAHASH_COMPARISON_2026-09-07.md#djd-reading-notes-follow-up-2026-10-04)
+distinguishes the reported local repaired skip from the editors' hypothetical
+whole-paragraph deletion account. Root's small-rendering reading and the agent's
+first PASS incorrectly said days to days. Higher-resolution p.66 establishes
+Jabesh to Jabesh; both corrected the reading. The [scoped review record](../sources/textual_restoration/discovery/nahash_djd_review.2026-10-04.v1.json)
+preserves this error and correction, without labeling agreement historical
+corroboration or blind validation. The substantive two-omission distinction holds.
+
+Edition restoration of the royal title and repositioning for alignment remain
+qualified; neither is our observation of complete original ink. Josephus-related
+inferences do not create an extra extant Greek Bible manuscript. Retain existing
+source, English, notes and weak priority preference without confidence increase.
+The named consultation is completed; reopen only for discriminating evidence,
+not another repeat reading of these pages. The documentation skill keeps the
+update in the existing case record and central log rather than another framework.
+
+Review JSON parsing, private-PDF and both verse hashes, 218 local link targets,
+new heading and Git whitespace checks pass. Only documentation and the new
+review record change; no local full-corpus tests or new calibration claim.
+Fetched main remains aligned with origin/main; separate Enoch branches and the
+unrelated Genizah record remain untouched.
+
 Append a dated entry for every substantive research pass: question; actually
 consulted sources and locators/versions; observations versus hypotheses;
 decision and contrary explanation; changed files and source/English effect;

@@ -229,3 +229,68 @@ Root's local link check additionally found that the claimed licensing-request
 file is absent. Corrected both source guides rather than imply a request had
 been drafted, sent or answered. A text assertion in an older guide is not
 evidence of an external permission process.
+
+## Remaining poem assessment
+
+Assessed 51:18–30 against main `33f588a9f97a4249ff425d675e7ebdbe6fbbea88`.
+The [frozen initial candidates](../sources/textual_restoration/decisions/sirach51_remaining_initial.2026-10-04.v1.json)
+record all 13 current records, source hashes, alternatives and objections.
+Their six retain, five change and two hold labels describe one agent's initial
+assessment, not approved edits. Current POB was visible; this was not blind
+translation evaluation. No verse source, English, reader bundle or canon changed.
+
+The clearest meaning-affecting candidate is 28: pointed `תִּקְנוּ` addresses
+second-person plural “you,” whereas POB says “they acquired.” A promissory
+“you will acquire” and an exhortative “acquire” remain competing renderings;
+neither supports the present third-person past. This is fidelity to the declared
+pointed digital source, not discovery of a previously unknown ancient reading.
+At 19, “I will not turn” is a reasonable continuing-resolve reading, but a
+retrospective poetic imperfect remains an objection: Hebrew verbal forms do
+not mechanically determine English tense. “Clung” remains defensible; changing
+it to “longed” is not necessary to correct the second clause.
+
+Other candidates repair reader disclosure: 18's bracketed “my way” is an
+editorial supply; 24's stored Swete Greek does not say “how long”; 25's Greek
+speaking clause does not share Hebrew's feminine suffix. Notes and rationale
+fields at 22–30 also contain misplaced anchors or choices inconsistent with
+the actual English. Small/young at 27 remains interpretive. Records 19–20 lack
+legacy generation metadata and translation philosophy; no original generation
+receipt may be invented to make a future application pass its schema.
+
+Root inspected the complete Swete printed p.754 / PDF p.772, including
+apparatus, in the previously identified volume-II PDF, SHA-256
+`945c5b15bf0f9dfc93890b28ee5b66a388acbf4597f1f2be5430ac6cba9c30b0`.
+Root also inspected complete Muraoka printed pp.787–797 / PDF pp.802–812,
+using the same publisher PDF/hash recorded earlier in this case. That modern
+commentary was consulted after root's 19/28 hypotheses and the agent's
+source-only drafting; its English was not copied into a POB candidate. Its
+reported Syriac readings remain indirect, not a new Syriac collation. Neither
+printed edition inspection is a fresh reading of manuscript pixels.
+
+Published [B](https://lexicon.qumran-digital.org/transcriptions/SirB/2026-05-21/index.html)
+21r14–18 interleaves content assigned to 19 and 20 in the digital base.
+B21v1 places acquisition of a good possession at 21; B21v2 has tongue-praise
+at 22, corresponding broadly to the separate Greek units. The Kahana-labelled
+digital base instead places non-abandonment at 21 and acquisition at 22.
+B's oven verb also differs in a consonant from the digital base. At 29,
+B's `בישיבתי` and the digital base's old-age `בשיבתי` differ in consonants,
+not merely pointing. These substantive source-form questions must not be
+hidden behind an English polish pass. The earlier statement that Kahana
+himself rearranged the endings is unverified: we have not checked his print.
+
+The [NLI full-book record](https://www.nli.org.il/he/books/NNL_ALEPH990019647020205171/NLI)
+identifies the Warsaw Tushiyah 1912 edition, distinct from the earlier Odessa
+offprint. Its archive resolver led to an invalid, blocked destination; no
+workaround or printed poem consultation followed. Bounded searches did not
+locate a verifiable Lévi 1901 part-II scan. Neither failed access proves the
+absence of an edition or an ancient reading. Reopen this specific attribution
+question for an accessible printed poem/editorial note, not repeated broad
+searches. The dated [11Q5 transcription](https://lexicon.qumran-digital.org/transcriptions/11Q5/2026-05-21/index.html)
+does not supply usable 21–29: its physical gap cannot count as an omission or
+decide these later units. Masada does not preserve chapter 51.
+
+Decision: preserve this assessment as pending work. Complete one full-record
+application review of the clear fidelity/disclosure repairs as a passage batch;
+separately decide the target literary form and the B/digital-base discrepancies.
+Do not relabel a B/Greek hybrid as Kahana or call it the earliest Hebrew poem.
+No new decipherment, exhaustive comparison or publication approval is claimed.

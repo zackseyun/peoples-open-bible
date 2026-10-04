@@ -423,3 +423,61 @@ are not the remedy for missing evidence. Track completed consequential decisions
 source/English applications and unresolved gates, separating fidelity repairs
 from adjudication of known variants and novel findings. Do not count repeated
 negative access checks, passing judges or documentation volume as discoveries.
+
+## Renewed assessment of the two research aims
+
+Reviewed at `33f588a9f97a4249ff425d675e7ebdbe6fbbea88`. The
+[remaining Sirach assessment](SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md#remaining-poem-assessment)
+now supplies a concrete pending meaning correction at 51:28 and identifies
+substantive B/digital-base differences at 21–22 and 29. No remaining-poem
+candidate has been applied. The previously applied four/light choices and
+opening-poem fidelity repairs remain the demonstrated contribution examples;
+they are not novel scholarly discoveries.
+
+The practical answer is yes: comparison can improve POB's source choices and
+English, sometimes altering interpretation. It need not change doctrine to
+be valuable. Enough tokens alone cannot guarantee discovery, establish a
+uniquely optimal translation, or supply absent evidence. There is no defensible
+discovery deadline. The next measurable milestone is an exact passage decision
+and verified English/reader effect, not another inventory or judge loop.
+
+The source classes are appropriate, but all discovered witnesses have not
+been collated. Continue OT Hebrew/Aramaic, Samaritan, Greek, relevant versions
+and quotations, and NT Greek manuscripts/hands, critical apparatuses, versions
+and quotations. Distinguish a dated coverage map from complete comparison.
+The [INTF method](https://www.uni-muenster.de/INTF/ECM.html) supports the need
+for full collation and genealogical evidence, not manuscript majority voting.
+Reconciliation may preserve parallel literary forms rather than collapse
+everything into one supposedly original Hebrew or Greek text.
+
+### Additional works worth comparing
+
+This is a preliminary evidence-and-usefulness screen, not a completed textual
+or canonical history. The proposed comparison uses the named textual form,
+not every work sharing a title. Manuscript survival justifies investigation;
+canonical authority additionally involves a community's reception and criteria.
+
+| Work and textual form | Verified evidence in this review | Proposed comparison value and limit |
+|---|---|---|
+| Sirach / Ben Sira | The [Ben Sira project](https://bensira.org/introduction.html) identifies ancient and medieval Hebrew witnesses; the Catholic list includes Sirach | Compare overlapping Hebrew and Greek units; do not treat a composite edition as one manuscript |
+| Tobit | [IAA identifies 4Q198 as Tobit](https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q198-1?locale=ar_EG); Sinaiticus includes Tobit; the Catholic list includes it | Compare the relevant Semitic fragments with the Greek forms passage by passage; this review has not read those fragment images or settled their local readings |
+| 1 Enoch, not every Enoch-related work | [Library of Congress](https://www.loc.gov/exhibits/scrolls/libr.html) describes surviving Aramaic portions and Greek translation evidence; the Ethiopian list names Enoch | Compare actual overlapping units with Ge'ez; Aramaic fragments cannot certify the complete later collection, and the local coverage record still has gaps |
+| Jubilees / Kufale | [IAA identifies 4Q221 as Jubilees](https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q221-1?locale=en_US); the Ethiopian list names the work | Compare published early-language units with the Ge'ez tradition; a catalogue title is not a full transcription or a certified local reading |
+| Epistle of Barnabas | The [Sinaiticus project](https://www.codexsinaiticus.org/en/codex/content.aspx) identifies the work alongside its NT | Study scriptural interpretation and reception; codex inclusion does not prove authorship or equal canonical rank; the local bridge still awaits direct source-language review |
+| Shepherd of Hermas | The same Sinaiticus content description identifies Hermas | Study early Christian ethical instruction and reception, controlling the surviving extent of each witness; no complete Hermas collation was performed here |
+
+The [Catholic canon list](https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_two/article_3/iv_the_canon_of_scripture.html)
+and [Ethiopian church list](https://www.ethiopianorthodox.org/english/canonical/books.html?lang=en)
+show that several proposed comparanda are already Scripture in named traditions,
+not newly eligible because of AI. Those sources do not establish one universal
+canon. The IAA pages retrieved here expose composition titles, not detailed
+passage metadata or visible ink. Historical library inclusion, a comparison
+supplement and a tradition-specific canon proposal remain distinct decisions.
+No book-list, canonical-status or reader-release change follows from this review.
+
+Usefulness is not measured by producing a sensational reading or a canon
+expansion. A supported correction, a genuinely discriminating no-change
+decision, or a clearly identified unresolved form is valuable. Repeating an
+unchanged hold is not a new contribution. Finish the pending Sirach passage
+batch before opening another large research track; no fresh image claim bypasses
+the uncompleted calibration gate.

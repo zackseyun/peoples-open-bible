@@ -118,3 +118,52 @@ verse hashes. Further source adjudication requires the named DJD reading notes
 and Greek transition apparatus, not another general Nahash search or model
 agreement round. This completes the present literary-argument check; no
 independent adjudication or canonical change occurred in this follow-up.
+
+## Greek transition apparatus follow-up — 2026-10-04
+
+Visually inspected the complete printed p. 32 / PDF p. 48 and Samuel preface
+p. v / PDF p. 11 in Brooke, McLean and Thackeray, *The Old Testament in Greek*,
+II.1 (1927), [institutionally hosted scan](https://tmcdaniel.palmerseminary.edu/Brooke%26McLean/LXX_Brooke%26McLean_2-1.pdf).
+The existing local PDF was reused after its SHA256 was verified:
+`327bd0dcb8135ddc2d11cf109c77abcbe60e337e1ee017c69c6bd14a37061756`.
+Poppler page renderings were inspected; no OCR was used to settle the sigla.
+The web fetch failed because the PDF exceeded the tool's size limit; the
+verified local copy remained accessible. No new download or access bypass.
+
+The Vaticanus-based main text ends 10:27 with the gifts and starts 11:1 with
+the approximately-month transition. The 10:27 apparatus separately reports
+the added clause `καὶ ἐγενήθη ὡς κωφεύων`, with siglum **b** among its supporters.
+The 11:1 apparatus also reports b's verb variant and omission of `ὡς`, without
+assigning b omission of the month wording. Thus the apparatus supports
+coexistence of silence and month wording in b, not verbatim preservation of
+the complete printed base transition. Do not reconstruct an exact continuous
+b text from this description or claim a fresh reading of its manuscript image.
+
+Preface p. v identifies b as Rahlfs 108, Rome, Vatican, Greek 330; b-prime is
+separately Rahlfs 19. These are Septuagint identifiers, not New Testament
+Gregory–Aland numbers. The preface notes reused and reassigned cursive symbols
+between volumes, so a bare letter must remain edition-specific. No other
+apparatus supporter is expanded into a verified object in this bounded pass.
+
+**Decision:** preserve the three questions separately: the longer Nahash
+paragraph, the silence clause, and the month transition. A binary model in
+which every Greek copy exchanges silence for month wording is insufficient.
+The strongest caution is possible secondary combination or harmonization:
+coexistence does not prove that both clauses belonged to the earliest Hebrew.
+This apparatus comparison neither settles priority nor raises the existing
+weak preference for the shorter background narrative.
+
+The current 11:1 note specifically attributes its comparison to Rahlfs' text,
+not all Greek manuscripts, and therefore needs no correction for this finding.
+Hebrew, main English, footnotes and review metadata remain unchanged. The
+Cambridge transition-apparatus consultation is now performed; the named
+DJD XVII pp. 65–67 reading-note consultation remains unfinished. Future
+priority work should address that gate or specific new evidence, not repeat
+this edition check or an unrestricted Nahash search. No restored Hebrew,
+ImageGen output, full Greek collation, source promotion or deployment is claimed.
+
+One separate agent visually checked the edition and reviewed the saved report;
+its scoped PASS and the material b-variant precision are preserved in the
+[review record](../sources/textual_restoration/discovery/continuation_nahash_review.2026-10-04.v1.json).
+Root supplied the locations and proposed interpretation. This was not blind
+transcription, a two-family accuracy test or independent historical corroboration.

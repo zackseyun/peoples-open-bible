@@ -7,7 +7,8 @@ evidence, alternatives, concise rationales, changes, failures and open questions
 Detailed transcriptions and hashes remain in the linked artifacts. Do not put
 credentials, private account envelopes or restricted source images here.
 
-Start here: [current assessment and improvements](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md#current-reassessment--2026-09-05),
+Start here: [current continuation assessment](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md),
+[earlier assessment and improvements](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md#current-reassessment--2026-09-05),
 [which OT/NT sources to compare](BIBLICAL_SOURCE_COVERAGE_AUDIT_2026-09-04.md),
 [controlling method](TEXTUAL_ADJUDICATION_METHOD.md),
 [dated history](#evidence-linked-research-history),
@@ -4574,6 +4575,46 @@ remaining apparatus gates are separated. The PDF skill governed local page
 inspection after web screenshots failed. No agents, new tests, manuscript
 readings, or canonical edits were needed. Both verse hashes remain unchanged;
 Git whitespace checks pass. No deployment.
+
+### 2026-10-04 — Reviewed continuation and compared Greek transition evidence
+
+The preceding review yielded evidence that changed the next action: published
+edition comparisons can proceed, while uncalibrated damaged-ink discovery and
+held acquisitions should not restart. Revalidated the live main branch and
+provisional 1 Samuel 17:4 / Isaiah 53:11 records; no public deployment claim.
+Recorded the [continuation method](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md),
+covering full OT source discovery, preservation, relationships, selection,
+English application, ImageGen limits, efficiency and the separate canon question.
+It supplements the controlling method, not a replacement of the full objective.
+
+Returned to the unfinished [Nahash transition apparatus](SAMUEL_NAHASH_COMPARISON_2026-09-07.md#greek-transition-apparatus-follow-up--2026-10-04).
+Reused the hash-verified Cambridge 1927 PDF and inspected complete printed p. 32
+and preface p. v. The web fetch exceeded the size limit; local access succeeded.
+The edition reports b's silence addition alongside month wording, with its own
+verb/particle variants. This rejects a universal either-silence-or-month model,
+not the accuracy of the current Rahlfs-specific reader note. Combination or
+harmonization remains a counter-explanation; no oldest-Hebrew selection follows.
+
+Source and English effect: no canonical change. The available Greek apparatus
+gate is advanced; the DJD reading notes remain unconsulted. No new image reading,
+ImageGen illustration, entire-book collation or deployment. The PDF skill caused
+visual page inspection; the documentation skill kept this update in the existing
+repository record. The unrelated untracked Genizah follow-up was not changed.
+
+One separate agent inspected the Greek edition and reviewed the saved documents;
+the [actual scoped verdict](../sources/textual_restoration/discovery/continuation_nahash_review.2026-10-04.v1.json)
+is PASS, with b's verb/particle precision retained. It is not blind transcription,
+different-family agreement or historical corroboration. Both Samuel verse hashes
+still exactly match the prior application record. Final Git whitespace checks,
+312 local link-target checks and review-record JSON parsing passed. The link
+check verifies file targets, not every heading anchor or external site. No code
+or canonical file was edited, so no new full-corpus test claim is made.
+
+Fetched and fast-forwarded main through 17 upstream commits to
+`1feeba98354a1093055d5fe01d37ef80531581db`; none overlapped these edits. The
+separate Enoch repair/inventory work was preserved, not independently certified.
+The first local link-check attempt found no Node executable on PATH; using the
+reported bundled executable succeeded. No runtime installation was needed.
 
 Append a dated entry for every substantive research pass: question; actually
 consulted sources and locators/versions; observations versus hypotheses;

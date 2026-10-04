@@ -4616,6 +4616,53 @@ separate Enoch repair/inventory work was preserved, not independently certified.
 The first local link-check attempt found no Node executable on PATH; using the
 reported bundled executable succeeded. No runtime installation was needed.
 
+### 2026-10-04 — Proverbs DSS screen and qualified 14:34 disclosure
+
+Revalidated PR #3's actual required corpus-integrity jobs: both passed, then
+merged through the protected-branch workflow. Local main fast-forwarded to
+`ed2ac2fcb73d68aa6ae852faa3f98b9d42b83a24`, aligned with origin/main.
+No bypass or deployment. The previous method/Nahash pass is completed progress,
+not a reason to repeat its source acquisition.
+
+The [Proverbs screen](PROVERBS_DSS_COMPARISON_2026-10-04.md) records all eight
+published 4Q102 line records read by root and 38 4Q103 line records read by one
+bounded agent, compared with 47 POB contexts. These are published line counts,
+not completely surviving verses. Existing 4Q103a identity/access hold remains.
+Root and agent inspected Fox's complete printed pp.19,92,229,242–243 using PDF
+renderings. Published transcription, editorial supply and manuscript ink remain
+distinct. The PDF skill required visual page inspection; the documentation
+skill kept findings in the repository's established Markdown record.
+
+Three consequential candidates remain provisionally retained: 1:32's alternative
+word has a mechanical-error explanation; 14:34's lack/diminution reading depends
+on a disputed resh/dalet; 15:28's omission of the meditation verb is uncertain.
+Fox's 1:32 witness-label discrepancy is recorded, not counted as another witness.
+Greek/Syriac controls reported by Fox are not fresh versional manuscript collation.
+The agent corrected its initial unmarked-resh certainty after inspecting Fox.
+
+Applied only the agent-approved qualified 14:34 note append, preserving the
+existing explanation/anchor and all source/main English. Old cross-check,
+revision-pass and source-audit objects are archived verbatim; active record is
+draft/needs_review. The [application receipt](../sources/textual_restoration/applications/proverbs14_34_disclosure_2026-10-04.v1.json)
+pins actual approval scope, exact record and export hashes, and reopening gates.
+This separate-agent proposal review is not blind/different-family transcription
+or historical corroboration; root verified the applied record independently.
+
+Actual checks: full parsed record equals baseline plus exact permitted edits;
+verse schema passes; eight reader-footnote tests pass. Before/after actual book
+export retains 31 chapters/915 verses, with exactly two deltas: one footnote's
+reason and appended text. Candidate 1:32 and 15:28 bytes remain unchanged.
+These checks do not establish earliest wording or whole-corpus translation quality.
+No new infrastructure, generated reconstruction, main-source change or deployment.
+
+Access/runtime results: web PDF fetch returned 403; ordinary publisher download
+succeeded, matching the previously consulted PDF hash. Guessed 4Q103a page was
+inaccessible; no inference of absence follows. System/bundled Python lacked
+PyYAML; existing repository .venv supplied it without installation. Private PDF
+and renders stay outside Git. The unrelated untracked Genizah record is preserved.
+Reopen only for specified glyph, physical-line or discriminating transmission
+evidence; continue other OT source units while those questions remain unresolved.
+
 Append a dated entry for every substantive research pass: question; actually
 consulted sources and locators/versions; observations versus hypotheses;
 decision and contrary explanation; changed files and source/English effect;

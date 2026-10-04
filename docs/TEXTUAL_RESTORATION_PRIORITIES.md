@@ -12,6 +12,12 @@ The [2026-10-04 continuation review](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-0
 clarifies full-corpus execution and records an available-evidence Nahash follow-up;
 existing case-specific holds and promotion gates remain in force.
 
+The [Proverbs DSS screen](PROVERBS_DSS_COMPARISON_2026-10-04.md) compares 46
+published line records with 47 POB contexts, excluding the unresolved 4Q103a
+identity. It retains source/main English at 1:32, 14:34 and 15:28; the qualified
+14:34 disclosure is applied and export-checked. Reopen these cases only for
+their specified missing evidence, not another acquisition or agreement loop.
+
 The People's Open Bible will attempt this work independently with **Codex as
 the transcription, collation, and textual-reasoning system**. The project will
 not depend on commissioning new human diplomatic transcriptions or

@@ -35,30 +35,32 @@ reasons for expanding beyond the deuterocanon:
    with Jude benefits from having a readable, auditable 1 Enoch.
 
 2. **Other Christian traditions receive some of these as canonical.**
-   The Ethiopian and Eritrean Orthodox Tewahedo Churches treat 1
-   Enoch and Jubilees as Scripture. A Bible that silently excludes
-   what these communities confess is a Bible shaped by Western
-   printing economics, not by the historical breadth of Christian
-   reception.
+   The [Ethiopian Orthodox Church's list](https://www.ethiopianorthodox.org/english/canonical/books.html?lang=en)
+   includes Enoch and Jubilees. This is evidence of that community's
+   reception, not a universal Christian canon or a conclusion derived
+   from finding a manuscript. Other communities' lists require their
+   own references and identification of the work or recension.
 
 3. **Early Christian writings shaped the formation of the NT canon
-   itself.** The Didache, 1 Clement, and the Shepherd of Hermas
-   were included in early NT codices (e.g. Codex Sinaiticus
-   includes Hermas; Codex Alexandrinus includes 1 Clement).
-   Understanding the process by which the canon formed requires
-   access to the texts that were considered alongside the canonical
-   books at the time.
+   itself.** The [Codex Sinaiticus project](https://www.codexsinaiticus.org/en/codex/content.aspx)
+   identifies Barnabas and the Shepherd of Hermas alongside its NT.
+   The [British Library's Alexandrinus record](https://searcharchives.bl.uk/catalog/040-002353500)
+   identifies 1 Clement at ff. 134r–143r and part of 2 Clement at
+   ff. 143r–144v. Inclusion establishes a manuscript's contents,
+   not necessarily equal canonical rank. The Didache merits separate
+   reception study; the preceding examples do not attest its inclusion.
 
 ## Terminology: "Extra-canonical"
 
 We use "extra-canonical" as a deliberately neutral umbrella:
 *extra* meaning *beyond / outside of*, **not** *extra as in
 additional Scripture authorized to modify doctrine*. These texts
-have varying canonical status across Christian traditions — some
-fully canonical (1 Enoch, Jubilees in Ethiopian tradition), some
-quasi-canonical historically (2 Esdras in KJV 1611), some never
-canonical anywhere (Thunder, Perfect Mind). Every text carries an
-explicit canonical-status label at release.
+have varying reception across Christian traditions: some appear on a
+named church's canon list, some in historical Apocrypha sections or
+appendices, and others are presented here only as historical writings.
+Printing or binding a work with a Bible does not itself establish
+canonical acceptance. Every release needs a tradition-specific reception
+label distinct from POB's decision to include it in a historical library.
 
 For a scholar-facing label, "pseudepigrapha" is often used for the
 Jewish apocalyptic/testamentary works, "Apostolic Fathers" for the
@@ -69,14 +71,17 @@ readers who won't know those conventions.
 
 ## Scope
 
-We have three tiers, not by quality but by **reception status** —
-which gives a natural labeling order for readers.
+The three tiers below organize the existing library roadmap, not quality,
+inspiration or a universal ranking of canonical status. Reception must be
+recorded for each work and community; a tier cannot supply that evidence.
 
-### Tier 1 — Extra-canonical with historical canonical status somewhere
+### Tier 1 — Canonical reception or inclusion in historical Bible editions
 
-These texts have been received as Scripture by at least one
-historical Christian tradition (Ethiopian Orthodox, KJV 1611
-Apocrypha, Vulgate appendix).
+This group combines different kinds of reception. Enoch and Jubilees
+are named on the Ethiopian list above. An Apocrypha section, appendix
+or table-of-contents entry is a different claim and does not prove that
+every work in this tier was received as Scripture. Keep the exact title,
+textual form, community and evidence separate.
 
 | Text | Original lang | Primary surviving witness | Scope | PD source edition |
 |---|---|---|---|---|
@@ -87,11 +92,12 @@ Apocrypha, Vulgate appendix).
 
 ### Tier 2 — Apostolic Fathers, Jewish apocalyptic, and pseudepigrapha
 
-These texts circulated widely in the early Church and Second Temple
-Jewish communities. Some were included in early NT codices
-(Sinaiticus, Alexandrinus); none are canonical in any current
-Christian canon, but they are uniformly treated as essential
-historical-context reading by scholars.
+These works warrant study of early Christian or Second Temple Jewish
+literature. Some have the specific codex inclusion described above;
+that does not apply to every row. POB presents this group as historical
+comparanda, not additional NT books. Claims about current canonical
+reception require community-specific evidence and recension checks;
+neither universal exclusion nor scholarly unanimity is established here.
 
 | Text | Original lang | Primary witness | Scope | PD source edition |
 |---|---|---|---|---|

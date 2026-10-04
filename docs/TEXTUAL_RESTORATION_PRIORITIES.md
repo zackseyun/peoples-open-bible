@@ -16,9 +16,13 @@ The [readiness and Sirach reassessment](OT_SOURCE_COMPARISON_CONTINUATION_2026-1
 identified the next concrete translation milestone: align 51:13–16 by actual
 content and declared literary form before replacing wording. The subsequent
 [opening application](SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md)
-repairs that bounded passage as a disclosed Greek working form; earliest Hebrew
-and the rest of the poem remain unresolved. The note exporter
-is repaired separately; delivery does not approve the current Sirach notes.
+repairs that bounded passage as a disclosed Greek working form; the subsequent
+51:17 repair aligns English with the retained pointed Hebrew. Earliest whole-poem
+Hebrew remains unresolved. The note exporter is repaired separately; delivery
+does not approve the current Sirach notes. The
+[current readiness audit](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md#current-readiness-and-contribution-audit)
+sets the next bounded OT, NT and reception tasks without reopening these
+applied records for another preference vote.
 More tokens are not a discovery guarantee, and canonical reception remains a
 separate question from textual reconstruction.
 

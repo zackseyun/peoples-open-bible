@@ -4849,6 +4849,38 @@ delete/add targeted the same path; no partial edits occurred. A link check
 failed on the absent request file before the guides were corrected. None of
 these failures means absence of ancient wording. The full goal stays active.
 
+### 2026-10-04 — Current contribution and canon readiness audit
+
+Reviewed main `434f368bd4ba8a73b506f99d521da50df6efa198` in response to
+the user's two aims. Two fresh-context, read-only agents audited textual
+contributions and reception evidence; neither performed new manuscript collation.
+Root checked current four/light/Mark/Sirach records, critical-source status,
+application documentation, the NT supplement audit and Enoch coverage limits.
+The [current assessment](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md#current-readiness-and-contribution-audit)
+distinguishes actual provisional POB improvements from an unestablished novel
+discovery, with approximately 24.18 million cumulative tracker tokens and a
+bounded OT/NT/reception queue. No source or translation record changes here.
+
+Actually consulted the Vatican canon list, Ethiopian church list, Sinaiticus
+content description, British Library Royal MS 1 D VIII contents (entries 32–33,
+ff.134r–144v) and INTF's ECM method. These verify scoped reception/contents
+and methodological facts, not new readings or complete canonical histories.
+Corrected the library roadmap's appendix-to-canon inference, grouped Didache
+codex claim and unsupported universal reception statements. No book-list or
+reader release change. Church of England Article VI retrieval failed in the
+web reader and returned HTTP403 through ordinary HTTP; its search snippet was
+not used to settle a claim. No repeated acquisition after those attempts.
+
+The documentation skill keeps this assessment in existing Git records rather
+than a new framework. One scoped independent review passed the four-document
+diff, checking current four/light publication flags and the stored Sirach25
+Greek; it did not independently verify the administrative token total or all
+external manuscript readings. Root checked 267 local link targets, current
+source/status consistency and Git whitespace. Only these four documentation
+files change; the unrelated Genizah record remains untouched. No local
+full-corpus regression run was warranted by this prose-only change. Required
+remote CI still governs merge; software checks cannot establish historical truth.
+
 Append a dated entry for every substantive research pass: question; actually
 consulted sources and locators/versions; observations versus hypotheses;
 decision and contrary explanation; changed files and source/English effect;

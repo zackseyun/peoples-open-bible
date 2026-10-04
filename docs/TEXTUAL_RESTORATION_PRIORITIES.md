@@ -12,6 +12,13 @@ The [2026-10-04 continuation review](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-0
 clarifies full-corpus execution and records an available-evidence Nahash follow-up;
 existing case-specific holds and promotion gates remain in force.
 
+The [readiness and Sirach reassessment](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md#readiness-for-meaningful-contributions)
+identifies the next concrete translation milestone: align 51:13–16 by actual
+content and declared literary form before replacing wording. The note exporter
+is repaired separately; delivery does not approve the current Sirach notes.
+More tokens are not a discovery guarantee, and canonical reception remains a
+separate question from textual reconstruction.
+
 The [Proverbs DSS screen](PROVERBS_DSS_COMPARISON_2026-10-04.md) compares 46
 published line records with 47 POB contexts, excluding the unresolved 4Q103a
 identity. It retains source/main English at 1:32, 14:34 and 15:28; the qualified

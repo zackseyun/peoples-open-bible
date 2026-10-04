@@ -811,7 +811,7 @@ def export_apocrypha_book(book_code: str) -> dict[str, Any] | None:
     if not book_dir.exists():
         return None
 
-    by_chapter: dict[int, dict[int, str]] = defaultdict(dict)
+    by_chapter: dict[int, dict[int, dict[str, Any]]] = defaultdict(dict)
     for chapter_dir in sorted(book_dir.iterdir()):
         if not chapter_dir.is_dir():
             continue
@@ -828,7 +828,11 @@ def export_apocrypha_book(book_code: str) -> dict[str, Any] | None:
             text = str(((record.get("translation") or {}).get("text", "")) or "").strip()
             if not text:
                 continue
-            by_chapter[chapter_num][verse_num] = text
+            verse_out: dict[str, Any] = {"verse": verse_num, "text": text}
+            notes = reader_footnotes(record, text)
+            if notes:
+                verse_out["footnotes"] = notes
+            by_chapter[chapter_num][verse_num] = verse_out
 
     chapters_out: list[dict[str, Any]] = []
     for chapter in sorted(by_chapter):
@@ -844,7 +848,7 @@ def export_apocrypha_book(book_code: str) -> dict[str, Any] | None:
         chapters_out.append({
             "chapter": chapter,
             "verses": [
-                {"verse": verse_num, "text": verses[verse_num]}
+                verses[verse_num]
                 for verse_num in verse_nums
             ],
         })

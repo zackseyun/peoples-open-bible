@@ -3,7 +3,10 @@
 Reviewed 2026-10-04 against repository revision
 `fff3aabab3f993bdeaf66c4bc8c8d1278def8dc9`. This records the continuation
 decision, not a new complete manuscript census or approval of every POB verse.
-The existing [adjudication method](TEXTUAL_ADJUDICATION_METHOD.md) remains
+Later sections record subsequent passes; the
+[current audit](#current-readiness-and-contribution-audit) uses revision
+`434f368bd4ba8a73b506f99d521da50df6efa198`. The existing
+[adjudication method](TEXTUAL_ADJUDICATION_METHOD.md) remains
 controlling; this document makes its execution and success criteria explicit.
 
 The full objective remains to find relevant surviving Old Testament sources,
@@ -337,3 +340,86 @@ distinction and recommended finishing the 13–16 overlap before expanding the
 poem. It did not approve a translation replacement. No judge-until-agreement
 loop or confidence increase followed. Software and actual export checks are
 recorded in the central research log; they test delivery, not ancient priority.
+
+## Current readiness and contribution audit
+
+Reviewed 2026-10-04 at `434f368bd4ba8a73b506f99d521da50df6efa198`,
+after the opening and verse 17 repairs merged. Two fresh-context agents
+audited source results and canonical reception separately. This is a bounded
+repository/evidence review, not a new manuscript collation, blind translation
+evaluation or approval of the whole corpus.
+
+**Continue published-source comparison; do not claim validated fresh
+decipherment or an optimal complete Bible.** The distinctions below answer
+when a contribution is real rather than merely an appealing possibility.
+
+| Outcome | Current evidence | What may be claimed |
+|---|---|---|
+| Meaning-affecting source choice | Current 1 Samuel 17:4 selects four cubits; Isaiah 53:11 includes light, with contrary readings disclosed | Real provisional changes to POB using known variants; both are drafts, with publication approval false |
+| Source and English fidelity | Sirach 51:13–16 removes cross-form repetition; 17 now renders its declared pointed Hebrew instead of the Greek parallel | Applied, export-checked local repairs; not a recovered earliest Hebrew poem |
+| Novel reading or restoration | No demonstrated previously unknown reading; the observation pilot has no measured character accuracy | No novel decipherment or newly recovered ink claim |
+| Additional books | Named church lists and codex contents support reception study | Evidence for a specific tradition or manuscript, not inspiration or automatic canon expansion |
+
+The first two outcomes already make valid local contributions. Their effects
+can alter a passage's portrayal or interpretation without proving a doctrine:
+four changes Goliath's reported height; light makes an object explicit; Sirach's
+repair distinguishes a yoke and teachers from progress and a giver of wisdom.
+Actual earlier wording can remain uncertain after a defensible working change.
+No calendar date or token quantity can guarantee another such result, much
+less a scholarly discovery. A novelty claim additionally needs a literature
+check and evidence or analysis not already represented in published work.
+
+The source classes in the existing coverage audit are appropriate, but the
+project has not compared all discovered witnesses. For NT Greek, use actual
+manuscript/hand evidence, critical apparatuses, relevant versions and quotations,
+not only agreement among printed editions. The
+[INTF's ECM method](https://www.uni-muenster.de/INTF/ECM.html) explains why
+genealogical relationships, versions and quotations matter even when the
+selected wording stays unchanged. It does not certify our present NT ledger
+or supply a retrieved Mark 1:41 apparatus. Source-language reconciliation must
+not erase distinct literary forms or turn a Greek translation into attested Hebrew.
+
+For canon exploration, prioritize Sirach/Tobit and Enoch/Jubilees, with the
+Catholic and Ethiopian references already linked above, then Barnabas/Hermas
+for their documented Sinaiticus inclusion. Antiquity and quotation can justify
+comparison; neither endorses every part of a work. The Ethiopian list's
+“Clement” and “Didascalia” titles must not be equated with our catalog works
+without identifying their recensions. The correction to
+[the library roadmap](../EXTRA_CANONICAL.md) removes the unsupported equation
+of appendix inclusion with canonical acceptance and the grouped Didache-codex
+claim. No library order, book list or canonical status is changed.
+
+The current Enoch coverage record still reports absent units and parser-derived
+leads, not a complete approved translation; early-Christian catalog entries
+also retain pending source-language review. A published bridge is not evidence
+of a direct ancient-language translation. These gaps should constrain claims,
+not become reasons to repeat completed source acquisition.
+
+### Next bounded evidence tasks
+
+1. Review remaining Sirach 51:18–30 together, beginning with supplied wording
+   and content alignment. At 25 the stored Greek does not support the current
+   note's shared feminine-pronoun claim. Verify the actual edition page before
+   applying a full-record repair; this audit leaves the verse unchanged.
+2. For the NT track, compare Acts 24:6–8 as one unit using the pinned
+   [supplement audit](NT_SUPPLEMENT_ATTRIBUTION_AUDIT_2026-09-06.md).
+   Do not insert the isolated Lysias verse into a different surrounding form;
+   its effect on “from him” is a source/context question, not just a missing ID.
+3. For reception, complete a six-work comparison for Sirach, Tobit, Enoch,
+   Jubilees, Barnabas and Hermas: exact text/recension, surviving witness,
+   named community's reception and practical comparison value. Use existing
+   catalog records; hold missing identifications rather than rank inspiration.
+
+These are a queue, not three simultaneous open-ended projects. Start each pass
+with a discriminating question, available evidence and a stopping condition.
+Use one proportional independent review and repeat only to check a concrete
+correction. Stop at retain, change or unresolved with a specific reopening
+condition. Batch related records and run checks affected by the actual change.
+
+The goal tracker was approximately 24.18 million cumulative tokens at this
+audit. It is not a monetary invoice or a reliable per-case cost allocation.
+The expenditure is excessive relative to demonstrated discoveries; more tokens
+are not the remedy for missing evidence. Track completed consequential decisions,
+source/English applications and unresolved gates, separating fidelity repairs
+from adjudication of known variants and novel findings. Do not count repeated
+negative access checks, passing judges or documentation volume as discoveries.

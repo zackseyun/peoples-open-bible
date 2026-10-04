@@ -190,3 +190,104 @@ Its [coverage record](../sources/enoch/coverage/README.md) explicitly distinguis
 missing or clipped verse records from source-image and translation approval.
 This pass inspected that record, not all of the upstream Enoch evidence; syncing
 those changes is not a new certification of their wording or completeness.
+
+## Readiness for meaningful contributions
+
+Reassessed at repository revision `ca49a23869064b58fc266c11a7838290a5d2cfdb`
+in response to the user's two questions about changed understanding and
+additional books. Published-source comparison is ready to continue; novel
+damaged-ink decipherment is not yet validated. The four-cubit and light choices
+described above are already real, provisional source/English contributions to
+POB. They apply known evidence rather than discover previously unknown readings.
+There is no defensible date by which another meaning-changing result or new
+scholarly discovery must occur.
+
+More tokens can help locate, align and evaluate evidence. They cannot create
+missing evidence or make one source selection uniquely correct. The next
+milestone should therefore be one complete, independently checked comparison
+with an exact source/English decision and verified reader disclosure, not a
+token threshold. Document a no-change result when justified. Measure progress
+by consequential decisions and completed applications, not document volume,
+model agreement or dramatic claims. The tracker now reports approximately
+23.2 million cumulative tokens; this does not overturn the earlier finding of
+excessive expenditure relative to demonstrated results. It is not a cost invoice.
+
+For the second question, surviving manuscripts can support the age, wording,
+transmission and use of another work. They can make that work worth studying
+and change how we understand related biblical passages. Inclusion in POB's
+historical library is not the same as declaring it canonical. Sirach and Tobit
+are already canonical in the Catholic list linked above; Enoch and Jubilees
+are in the Ethiopian Orthodox list. No manuscript comparison alone establishes
+inspiration or a universal canon. Any later canon proposal must name the
+community/tradition, its reception criteria and the proposed editorial action.
+No book-list change is made here.
+
+For the early Christian comparison track, the
+[Codex Sinaiticus project](https://www.codexsinaiticus.org/en/codex/content.aspx)
+identifies Barnabas and the Shepherd of Hermas alongside its New Testament.
+Their inclusion makes them concrete reception-history comparanda; it does not
+by itself settle how the codex's producers ranked them or authorize adding them
+to POB's NT canon. This pass consulted the project's content description,
+not the texts' manuscript pages or complete textual histories.
+
+## Sirach poem comparison and delivery findings
+
+The next bounded unit is Sirach 51:13–30. Root and a separate agent inspected
+all 18 current English records and their declared Hebrew/Greek sources.
+Sixteen declare Sefaria/Kahana composite Hebrew; 15–16 declare Swete Greek.
+Historical agreement labels do not identify a physical witness or establish
+source priority. HTML remains in four Hebrew fields, and brackets mark supplied
+wording at 13 and 18. These are editorial data, not fresh observations of ink.
+
+Actually consulted published transcriptions, both dated 2026-05-21:
+[11Q5](https://lexicon.qumran-digital.org/transcriptions/11Q5/2026-05-21/index.html),
+column 21 lines 11–18 and column 22 line 1; and
+[Sirach manuscript B](https://lexicon.qumran-digital.org/transcriptions/SirB/2026-05-21/index.html),
+51:13–30, folio 21 recto lines 10–18 and verso lines 1–15.
+These are two physical witnesses represented by one modern transcription
+project, not independent modern confirmations of the same object. Uncertain
+letters, supplies and editorial cross-references retain their distinct roles.
+No manuscript pixels were newly examined in this pass.
+
+| Current POB record | Content alignment and implication |
+|---|---|
+| 51:13 | The Kahana field combines B's youth/seeking unit and its walking/learning unit labelled 15 in the consulted edition. POB then also renders related Greek content in 15. The bracketed loving-wisdom clause is not printed as complete wording in B's 13 line. |
+| 51:14 | The Kahana field combines B's prayer unit and knowledge unit labelled 16. POB imports “for her” from Greek and then renders related Greek instruction content in 16. |
+| 51:17 | The Hebrew-declared record supports a yoke/honor and teachers/thanks reading; English instead follows the stored Greek's progress and giver-of-wisdom/glory. The Greek wording does not by itself identify that giver as God. |
+
+11Q5's opening includes the before-straying motif, aligning with the Greek
+rather than Kahana's supplied loving-wisdom clause. Its published 17 unit also
+has a teachers expression. Its damaged continuation and final reward phrase
+do not provide complete attestation for every missing verse of the poem.
+These observations expose consequential source-form differences; they do not
+decide a complete earliest Hebrew poem or justify silently merging its forms.
+
+The [Ben Sira project B viewer](https://bensira.org/navigator.php?Manuscript=B&PageNum=41)
+identifies T-S 16.315 for 51:12–20. Its
+[E viewer](https://bensira.org/navigator.php?Manuscript=E&PageNum=1)
+identifies a different chapter 32–33 fragment. The source README's assignment
+of this poem to E was wrong; the comparison uses B and 11Q5 instead. The
+Qumran viewer initially returned an interstitial to the web reader; ordinary
+public HTML retrieval exposed its caption. PDF/image links were identified,
+not consulted. No access failure was treated as proof of textual absence.
+
+Decision: retain source and English bytes for this assessment, record the
+fidelity defects, and correct the source guide. The next translation milestone
+is content-level alignment of 13–16, with supplied wording disclosed and an
+explicit target form. Then adjudicate exact candidates, including 17, without
+equating clearer Greek or older Hebrew with automatic priority. The audit also
+found an incorrect Greek-pronoun claim at 25 and misleading note anchors; these
+are queued, not represented as applied corrections or full-verse approval.
+
+The actual apocrypha exporter previously emitted note markers but discarded
+note bodies. The scoped fix reuses the existing referenced-note filter without
+changing text, numbering, titles, chapter eligibility or superscription flags.
+It preserves existing notes, including those now known to need correction;
+delivery is not certification of their historical claims. No public deployment
+or regenerated reader bundle is asserted.
+
+One separate-agent readiness critique agreed with the published-source/fresh-ink
+distinction and recommended finishing the 13–16 overlap before expanding the
+poem. It did not approve a translation replacement. No judge-until-agreement
+loop or confidence increase followed. Software and actual export checks are
+recorded in the central research log; they test delivery, not ancient priority.

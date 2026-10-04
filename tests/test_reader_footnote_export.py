@@ -78,6 +78,90 @@ class ReaderFootnoteExportTests(unittest.TestCase):
             self.assertTrue(verses[0]['is_superscription'])
             self.assertTrue(all(v['footnotes'] for v in verses))
 
+    def write_apocrypha_fixture(self, root, chapter, verse, record):
+        directory = root / exporter.APOCRYPHA_BOOK_SLUGS['SIR'] / f'{chapter:03}'
+        directory.mkdir(parents=True, exist_ok=True)
+        path = directory / f'{verse:03}.yaml'
+        path.write_text(yaml.safe_dump(record), encoding='utf-8')
+        return path
+
+    def test_apocrypha_referenced_notes_normalize_and_background_notes_stay_hidden(self):
+        record = self.record()
+        record['translation']['text'] = '  A disputed reading[a] and a supplied [word].  '
+        record['translation']['footnotes'][0] = {
+            'marker': ' [a] ', 'text': '  A contrary witness.  ',
+            'reason': ' textual_variant ', 'archival_detail': 'not a reader field',
+        }
+        record['translation']['footnotes'].extend([
+            None, {'marker': 'word', 'text': '  '}, {'marker': 'a', 'text': None},
+        ])
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.write_apocrypha_fixture(root, 1, 1, record)
+            with patch.object(exporter, 'APOCRYPHA_ROOT', root):
+                book = exporter.export_apocrypha_book('SIR')
+        self.assertEqual(book, {
+            'name': exporter.APOCRYPHA_BOOK_TITLES['SIR'],
+            'chapters': [{'chapter': 1, 'verses': [{
+                'verse': 1, 'text': record['translation']['text'].strip(),
+                'footnotes': [{'marker': 'a', 'text': 'A contrary witness.',
+                              'reason': 'textual_variant'}],
+            }]}],
+        })
+
+    def test_apocrypha_no_note_records_keep_original_shape_without_superscription(self):
+        records = [
+            {'translation': {'text': ' Text with [supplied words]. '}},
+            {'translation': {'text': 'Another text.', 'footnotes': [
+                {'marker': 'a', 'text': 'Not referenced.'}]}},
+        ]
+        records[0]['is_superscription'] = True
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for number, record in enumerate(records, 1):
+                self.write_apocrypha_fixture(root, 1, number, record)
+            with patch.object(exporter, 'APOCRYPHA_ROOT', root):
+                book = exporter.export_apocrypha_book('SIR')
+        self.assertEqual(book, {
+            'name': exporter.APOCRYPHA_BOOK_TITLES['SIR'],
+            'chapters': [{'chapter': 1, 'verses': [
+                {'verse': number, 'text': record['translation']['text'].strip()}
+                for number, record in enumerate(records, 1)
+            ]}],
+        })
+
+    def test_apocrypha_incomplete_chapters_do_not_withhold_later_complete_chapter(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for number in (1, 3):
+                self.write_apocrypha_fixture(root, 1, number, self.record())
+            self.write_apocrypha_fixture(root, 2, 1, self.record())
+            self.write_apocrypha_fixture(root, 2, 2, {'translation': {'text': '  '}})
+            self.write_apocrypha_fixture(root, 2, 3, self.record())
+            for number in (1, 2):
+                self.write_apocrypha_fixture(root, 3, number, self.record())
+            with patch.object(exporter, 'APOCRYPHA_ROOT', root):
+                book = exporter.export_apocrypha_book('SIR')
+        self.assertEqual([chapter['chapter'] for chapter in book['chapters']], [3])
+        verses = book['chapters'][0]['verses']
+        self.assertEqual([verse['verse'] for verse in verses], [1, 2])
+        self.assertTrue(all(verse['footnotes'] for verse in verses))
+
+    def test_apocrypha_export_does_not_mutate_record_or_fixture(self):
+        record = self.record()
+        before = copy.deepcopy(record)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = self.write_apocrypha_fixture(root, 1, 1, record)
+            original_bytes = path.read_bytes()
+            with patch.object(exporter, 'APOCRYPHA_ROOT', root), \
+                 patch.object(exporter.yaml, 'safe_load', return_value=record):
+                book = exporter.export_apocrypha_book('SIR')
+            self.assertEqual(record, before)
+            book['chapters'][0]['verses'][0]['footnotes'][0]['text'] = 'output-only change'
+            self.assertEqual(record, before)
+            self.assertEqual(path.read_bytes(), original_bytes)
+
     def test_thirteen_actual_comparison_baselines_preserve_reader_notes(self):
         comparisons = ROOT / 'sources/textual_restoration/comparisons'
         cases = []

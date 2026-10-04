@@ -4699,6 +4699,54 @@ review record change; no local full-corpus tests or new calibration claim.
 Fetched main remains aligned with origin/main; separate Enoch branches and the
 unrelated Genizah record remain untouched.
 
+### 2026-10-04 — Readiness reassessment and Sirach source comparison
+
+At `ca49a23869064b58fc266c11a7838290a5d2cfdb`, reassessed the user's two
+questions: defensible changes to meaning, and additional books worth considering.
+The [continuation assessment](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md#readiness-for-meaningful-contributions)
+distinguishes already applied provisional four/light choices from new scholarly
+discovery, which remains undemonstrated. Published comparisons can continue;
+fresh machine decipherment remains uncalibrated. Approximately 23.2 million
+tracker tokens reinforce the existing efficiency concern, not a promise that
+further expenditure will produce a discovery. No canon change or public deployment.
+
+Root and a separate agent inspected all 18 Sirach 51:13–30 records. Root
+consulted the complete published B poem and 11Q5's overlapping units in
+Qumran-Digital's 2026-05-21 HTML transcriptions, plus the Ben Sira project's
+B/E/Qumran viewer captions. The [comparison findings](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md#sirach-poem-comparison-and-delivery-findings)
+record actual content overlap across 13–16, editorial supplies, and 17's
+Greek-following English under a Hebrew source declaration. All verse files
+remain unchanged; target-form adjudication and exact English application are
+next, not completed. Corrected the source guide's E/11QPsa mappings and
+unsupported superiority claims. No new pixels, PDF consultation or ImageGen.
+
+A delegated, narrowly scoped export repair changes only the existing apocrypha
+exporter and four regression fixtures. Root independently reran all 12 affected
+tests successfully and compared every current apocrypha book with the actual
+baseline function extracted from Git. All 17 outputs retain identical text,
+titles, chapter/verse membership and all non-note fields: 176 exported chapters,
+5,547 verses. The sole output addition is 7,875 referenced note bodies; Sirach
+retains 48 chapters/1,348 verses and gains 1,992 note bodies. These are actual
+export counts, not proof that all expected chapters/verses exist or that every
+note is accurate. No bundles were written or deployed.
+
+Local checks: complete reader-corpus validator passed; catalog validator passed
+29 entries and published artifacts; strict Psalm numbering passed all 150;
+Git whitespace passed. Direct footnote-test invocation initially failed because
+the repository was absent from Python's import path; the configured CI-style
+`PYTHONPATH=.` invocation then passed all 18 tests. No package installation or unrelated
+Genizah-file edit. One independent readiness critique recommended completing the
+13–16 alignment before expanding the poem. Model agreement is not manuscript
+corroboration; the documentation review is not verse-application approval.
+That review identified two residual source-guide overclaims: categorical
+modern-edition exclusion and wording that implied completed AI transcription.
+Both were corrected to rights-aware inclusion and a planned, gated workflow.
+The reviewer explicitly did not independently certify the external readings.
+The later primary Codex Sinaiticus content-page consultation identifies
+Barnabas and Hermas as early Christian comparanda; the assessment records
+inclusion separately from inferred canonical authority. No manuscript pages
+or complete reception histories of those works were examined.
+
 Append a dated entry for every substantive research pass: question; actually
 consulted sources and locators/versions; observations versus hypotheses;
 decision and contrary explanation; changed files and source/English effect;

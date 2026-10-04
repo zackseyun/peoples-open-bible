@@ -1,79 +1,47 @@
-# Masada Ben Sira Scroll (Mas1h)
+# Masada Ben Sira source status
 
-The Masada Ben Sira scroll, discovered in the 1964 excavation of
-Masada, contains approximately **Sirach 39:27–43:30** in
-pre-medieval Hebrew (c. 100 BC). It is the oldest Hebrew witness to
-Ben Sira by roughly a millennium and the most important single
-source for Hebrew Sirach outside the Cairo Genizah.
+The ancient Masada Hebrew witness preserves portions within Sirach
+39:27–44:17, not this entire uninterrupted passage. The Ben Sira project's
+[Masada I caption](https://bensira.org/navigator.php?Manuscript=Masada&PageNum=1)
+identifies 39:27–32 and 40:10; its
+[Masada VII caption](https://bensira.org/navigator.php?Manuscript=Masada&PageNum=7)
+identifies 44:1–15 and 44:17. Those captions were checked on 2026-10-04;
+the photographs and every intervening unit were not freshly collated.
+The former 43:30 endpoint was incomplete. Sirach 51's Qumran poem is
+11Q5, not a Masada fragment.
 
-## Current source status
+## Available comparison route
 
-The surviving high-resolution photographs of the Masada scroll are
-held under restrictive license terms that are not compatible with
-direct CC-BY inclusion. Our current working source for this passage
-is **Swete's LXX Greek** (`../../lxx/swete/`), which for Sirach is the
-grandson's c. 132 BC translation and is the operative text for every
-major modern translation that includes the Apocrypha.
+Yadin's 1965 edition is consulted under the repository's
+[Zone 2 policy](../../../REFERENCE_SOURCES.md), not a separate physical
+witness. More recent editions and competing Hebrew/Greek forms also require
+passage-level assessment. Earlier manuscript date matters; it does not mean
+Masada automatically wins or that an edition is definitive.
 
-Where Cairo Genizah **MS B** covers Masada content (much of the
-39:27–43:30 range), the Hebrew Genizah text remains available to us
-as Phase 2 primary source via Schechter 1899 and later
-public-domain publications.
+`tools/yadin_masada.py` can expose local edition notes for requests within
+the outer 39:27–44:17 span. The local reference directory was absent at the
+2026-10-04 check. This pass therefore cannot verify the old 413-verse figure,
+historical consultation, bracket preservation or those unavailable notes'
+accuracy. The static reference registry is not proof that a volume was
+actually consulted for a particular verse.
 
-If cleaner access to the pre-medieval Hebrew becomes available
-later, the Sirach 39:27–43:30 source layer will be upgraded
-transparently, with every per-verse YAML updated in place and
-attributed to its new primary source.
+The page-reference index can associate wider discussion ranges with a verse.
+An index hit or its `available` flag is a consultation lead, not verified
+physical-word coverage. Establish the exact witness and preserved/supplied
+words before citing a Masada reading. The live lookup already excludes
+Sirach 4, 49 and 51; the static guidance has now been corrected to agree.
 
-Until then, the front-matter of Sirach in POB flags this passage as
-"primary source: Greek (Swete LXX); pre-medieval Hebrew witness
-exists but is not in our current source pipeline" so readers are
-not misled about what text underlies the translation.
+## Rights and reader disclosure
 
-## Yadin 1965 — editio princeps consulted as Zone 2
+Do not vendor edition content or archival images without an appropriate
+rights basis. The old guide mentioned a draft IAA request, but the claimed
+`IAA_LICENSING_REQUEST.md` is absent here; no sent request or grant is verified.
+Restrictions on image redistribution
+do not themselves prohibit citation-based comparison of published readings.
+No new permission, edition import or manuscript-image transcription is claimed.
 
-Yigael Yadin's *The Ben Sira Scroll from Masada* (Jerusalem: Israel
-Exploration Society, 1965) is the editio princeps of this scroll.
-It remains copyrighted (Yadin died 1984; IL copyright runs to 2054)
-and is not vendored into this repository.
-
-Per [REFERENCE_SOURCES.md](../../../REFERENCE_SOURCES.md) Zone 2
-policy, we treat Yadin as **consulted reference only**:
-
-- A local-only extraction of the book lives outside the repo at
-  `~/cartha-reference-local/yadin_1965/` on machines with legitimate
-  access. The scaffold in `tools/yadin_masada.py` silently reports
-  unavailable on clean checkouts.
-- `tools/hebrew_parallels.lookup_with_consult('SIR', ch, vs)`
-  surfaces Masada-scroll Hebrew + Yadin's column-level apparatus in
-  the translator prompt for verses in Sir 39:27–44:17 (and Sir
-  51:13–30, the acrostic poem fragment).
-- Yadin's **Hebrew transcription** of the physical letters on the
-  scroll is reference data the translator sees. Bracketed
-  reconstructions `[...]` are preserved as-marked so the translator
-  distinguishes what Yadin read directly from what he reconstructed.
-- Yadin's **English translation** is deliberately excluded from the
-  translator prompt context. We do not track his English word-for-
-  word; our output must be our own fresh rendering.
-- Where Masada and Cairo Genizah MS B disagree on a reading,
-  Masada typically wins on textual-critical grounds (1st c. BC vs.
-  10th c. AD). Such divergences are noted in POB footnotes at
-  fact level — *"Masada scroll reads X where MS B reads Y"* — which
-  is uncopyrightable fact citation under *Feist v. Rural* (1991),
-  not reproduction of Yadin's creative apparatus.
-
-Yadin's edition is dated (1965); more recent scholarly editions
-(Ben-Ḥayyim 1973, Beentjes 1997) incorporate later re-examinations
-of the scroll and reconcile it against the growing Geniza corpus.
-Those later works are also Zone 2. For the core editio-princeps
-task of reading what the scroll says, Yadin remains canonical and
-is what every subsequent edition cites.
-
-## Revision when IAA access opens
-
-If direct IAA photographic access to the Masada scroll is granted
-later (see `REVISION_LATER.md`), the ~150 affected Sirach verses
-will be re-drafted with the scroll images as Zone 1 (vendored,
-derivable). At that point Yadin demotes from "our only Masada
-witness" to "one among several" — but his scholarly apparatus
-remains useful as Zone 2 consult indefinitely.
+Existing verse records use disclosed working Hebrew or Greek sources; inspect
+each record rather than assume all Masada-overlap verses are Greek. The former
+claims of a universal modern-translation source, verified front-matter
+disclosure and automatic future source promotion were not established.
+Later source changes need the [adjudication and application gates](../../../docs/TEXTUAL_ADJUDICATION_METHOD.md).

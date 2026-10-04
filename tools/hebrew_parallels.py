@@ -72,14 +72,14 @@ ESDRAS_ALIGNMENT = PARALLELS_DIR / "1esdras_mt_alignment.json"
 CONSULT_REGISTRY: dict[str, list[dict]] = {
     "SIR": [
         {"name": "Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)",
-         "verse_range": "Sir 39:27-44:17 and 51:13-30",
-         "guidance": "Editio princeps of the Masada scroll (1st c. BC Hebrew). When a local extraction is present, tools/yadin_masada.py surfaces the Masada Hebrew + Yadin's apparatus per verse via live_zone2_entries. For Sir 39:27-44:17 and the 51 acrostic: compare Masada against the Kahana Zone 1 Hebrew; where they disagree, Masada usually wins on textual-critical grounds (older witness). Do NOT reproduce Yadin's English translation. Footnote fact-level: 'Masada scroll reads X where Cairo Geniza MS B reads Y'."},
+         "verse_range": "Surviving portions within Sir 39:27-44:17; not Sir 51",
+         "guidance": "Editio princeps of the Masada Hebrew scroll. When local consultation notes exist, tools/yadin_masada.py supplies edition reference material for requests within the outer Sir 39:27-44:17 span. Page-index associations do not prove that a requested verse or reading survives. Sir 51 belongs to other witnesses, not Masada. Earlier physical date is important evidence, not automatic priority: assess local preservation, supplies and transmission against the competing Hebrew forms. Do NOT reproduce Yadin's English translation; cite only verified reading facts."},
         {"name": "Beentjes 1997, The Book of Ben Sira in Hebrew",
          "guidance": "Critical edition of all recovered Hebrew Sirach MSS (A-F). Consult when the Kahana reading seems wrong or when the verse falls in a Kahana gap (common: ch 17, 22-24, 26-29, 36). Do not reproduce its text."},
         {"name": "Skehan & Di Lella 1987, Anchor Bible 39",
          "guidance": "English Sirach with full critical apparatus. Consult for argued interpretive cruxes. Do NOT track their English phrasing -- we are producing our own English."},
         {"name": "Ben-Hayyim 1973, Academy of the Hebrew Language",
-         "guidance": "Scholarly diplomatic edition. Consult for Masada-scroll portions (39:27-43:30) where our PD Hebrew access is blocked."},
+         "guidance": "Scholarly diplomatic edition. Consult for surviving Masada-scroll portions within Sir 39:27-44:17, with source rights and exact passage preservation checked separately."},
     ],
     "TOB": [
         {"name": "Fitzmyer 1995, Discoveries in the Judaean Desert XIX",

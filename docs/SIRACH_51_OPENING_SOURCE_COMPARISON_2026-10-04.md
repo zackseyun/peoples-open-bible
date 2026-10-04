@@ -1,7 +1,7 @@
 # Sirach 51 opening source comparison
 
 Compared 51:13–16 against repository revision
-`a986dad2ef5c0bd25f1ab6349d355b8490edffb2`. The current mixed-source
+`a986dad2ef5c0bd25f1ab6349d355b8490edffb2`. The baseline mixed-source
 passage repeats walking/youth and knowledge/instruction material because its
 Hebrew and Greek units were joined by verse number rather than content.
 The applied remedy is a disclosed Greek working reader form and separately
@@ -134,3 +134,98 @@ artifacts, and strict numbering for 150 Psalms. These establish data/software
 integrity, not historical priority. No new source framework,
 ImageGen evidence, fresh decipherment, canon change or public deployment is
 part of this pass. The full OT/NT comparison objective remains incomplete.
+
+## Verse 17 Hebrew comparison and working repair
+
+Follow-up baseline: `684dd216476ce37145d1fb24c90af4ecc177e710`;
+17 YAML SHA256 `ab0e0bd7ea55af093323d59702eedfe725203ed34c19305a252098785af68d86`.
+Its main English follows Greek progress and a singular giver of wisdom while
+the declared pointed Kahana source has her yoke, honor and plural teachers.
+This is a source/rendering mismatch, not evidence that the Hebrew is worthless.
+
+Root and a separate agent consulted complete QDR surrounding units: B folio
+21 recto line 13 and 11Q5 column 21 lines 14–15. B reports the honor phrase
+and final thanksgiving noun; Q has a shorter first clause, a feminine verb
+against B's masculine verb, and a final word with a displayed alternative.
+No supplied-letter brackets appear in the relevant published Q unit, but that
+does not establish fresh ink verification or settle the displayed alternative.
+Neither Kahana's pointing nor a grammatical interpretation is a third ancient
+witness. Masada does not preserve this chapter.
+
+The shared unpointed opening does not establish one meaning. Greek's progress
+can motivate a Hebrew interpretation or emendation, not prove recovered Hebrew
+letters. Kahana's pointing supports yoke; B's neck/yoke language at 51:26
+provides real intratextual support. Kahana's teacher pointing is plural, but
+the same unpointed spelling can receive a singular analysis. Do not claim that
+ancient Hebrew ink independently proves several human teachers or names God.
+
+The agent drafted “Her yoke was an honor to me, and I will give thanks to my
+teachers” from Kahana before consulting comparison material, and did not read
+scholarly English translations. Root later visually inspected complete Muraoka
+printed pp.786–787 / PDF801–802, with the same PDF hash cited above. Muraoka
+examines emended ascent and yoke analyses, reports Syriac yoke wording, and
+allows human-teacher or divine interpretations. These are consultation reports,
+not our direct Syriac collation or readings of the older studies he cites.
+The source's English is not a drafting input.
+
+Root also inspected the complete Swete p.753 scan at higher resolution. Its
+main Greek matches the existing parallel and its apparatus reports a plural
+giver participle alongside the main singular form. This is an edition report,
+not new examination of that Greek manuscript or an independent Hebrew witness.
+The singular main Greek does not explicitly identify its giver as God.
+
+The strongest argument for Q's shorter first clause is early Hebrew attestation
+and related Greek lacking B's first-clause honor phrase: B could clarify an
+opaque unit. The strongest objection is that the common opening remains
+semantically disputed and the gender/final-word differences complicate the
+transmission account. Greek has honor/glory language in its second clause, so
+absence in the first is not absence of honor from the whole verse. B might
+preserve older yoke wording despite its later physical copy. Removing chronology
+weakens Q's priority argument; neither age nor brevity settles the verse.
+
+Decision: earliest whole-verse Hebrew remains unresolved. Retain the exact
+pointed Kahana as a disclosed working source and apply the agent's close
+English rather than silently override it with Greek. Retain the exact Greek
+parallel, acknowledge the change from the Greek working form at 13–16, and
+disclose other Hebrew forms. This is not a coherent reconstructed earliest
+poem, a lost-letter restoration or priority assigned for licensing convenience.
+Independent full-record review passed the exact candidate hash
+`4771fb138fac8919afa0189b597d3aabcaaf6119680c5175cd9a4dd9a2a0bae6`.
+Root verified schema, exact Hebrew/Greek/source metadata preservation, historical
+review preservation and note markers. Actual Sirach export still has 48 chapters
+and 1,348 verses; only 51:17's text and notes differ from this follow-up baseline.
+The [17 application receipt](../sources/textual_restoration/applications/sirach51_17_hebrew_fidelity.2026-10-04.v1.json)
+binds the exact inputs, result and review limits. Four policy fixtures, 12 export
+tests, 18 footnote tests, complete reader validation, catalog and Psalm checks
+passed locally. The policy fixtures are also included in the existing CI job.
+No bundle, public deployment or multilingual synchronization is asserted.
+
+Reopen earliest-wording adjudication for directly collated version evidence or
+discriminating local transmission evidence, not another preference vote or
+reacquisition of these same pages. Wider poem form and other source classes
+remain unfinished parts of the full Hebrew corpus objective.
+
+## Masada provenance correction
+
+Root and a separate agent inspected the Ben Sira project's complete Masada I
+and VII viewer captions, not the manuscript photographs. Those captions identify
+39:27–32/40:10 and 44:1–15/44:17 respectively. They correct this project's
+former 43:30 endpoint; the outer envelope is 39:27–44:17 with gaps, not complete
+word attestation. The prior general guide correction did not catch this error.
+
+`REFERENCE_SOURCES.md` wrongly treated 413 references across chapters 4,
+39–44, 49 and 51 as physical Masada coverage. The static consultation registry
+also wrongly included the 51 poem and instructed that Masada usually wins.
+The live lookup correctly excluded 4/49/51 already. Local edition notes are
+absent on this machine, so the 413 figure and historical consultations cannot
+be verified; page-index expansion is not a manuscript census. Corrected the
+guides/static guidance, retained the correct runtime 44:17 endpoint, and
+replaced automatic age-based priority with local preservation/transmission
+assessment. Four fixture tests guard those distinctions without inventing
+private source material. This advances source attribution beyond this verse;
+it does not certify the unavailable notes or settle permissions.
+
+Root's local link check additionally found that the claimed licensing-request
+file is absent. Corrected both source guides rather than imply a request had
+been drafted, sent or answered. A text assertion in an older guide is not
+evidence of an external permission process.

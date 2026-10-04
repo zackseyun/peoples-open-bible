@@ -4747,6 +4747,59 @@ Barnabas and Hermas as early Christian comparanda; the assessment records
 inclusion separately from inferred canonical authority. No manuscript pages
 or complete reception histories of those works were examined.
 
+### 2026-10-04 — Sirach 51:13–16 working-form application
+
+Pinned baseline `a986dad2ef5c0bd25f1ab6349d355b8490edffb2`. The
+[opening comparison](SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md) records
+B's 13→15→14→16 content order against 11Q5's local 13→14→15→16 order.
+Reused published QDR transcriptions, not newly read manuscript pixels. Two
+physical witnesses are not two independent modern editions. Provisional Q-based
+Hebrew research choices at 13/16 stay separate from the Greek reader form.
+
+Using the PDF skill, root visually inspected complete Muraoka 2023 printed
+pp.782–786 / PDF797–801 from the publisher PDF. It supplies locus-level
+linguistic arguments and replaces the prior commentary-acquisition hold, not
+earliest-text uncertainty. The case records locators/hash, beauty-versus-temple
+interpretation and other arguments without using the author's English as a
+drafting input. A separate agent and root inspected actual Swete printed p.753
+/ PDF771, confirming the existing 15 opening against a different commentary
+Greek form. That is an edition difference, not an OCR correction. No newly
+verified 1909 imprint or Masada attestation for this chapter is asserted.
+
+Applied four records: 13/14 promote exact existing Greek parallels, retain
+exact composite Kahana Hebrew and change English to remove duplicated motifs;
+15/16 retain marker-free English/source/rationales and improve anchors and
+disclosure. Historical metadata remains archived; active status is draft with
+needs_review. Full-record independent review passed 13/14/16 and held 15; one
+specific source-page check resolved that hold without text changes. This scoped
+PASS is not earliest-Hebrew or deployment approval. The
+[receipt](../sources/textual_restoration/applications/sirach51_opening_working_form.2026-10-04.v1.json)
+binds exact before/after hashes, actual review and application limits.
+
+Root checks pass: four schemas, preserved sources/history, note references,
+actual complete current Sirach export with only four affected verse outputs,
+48 chapters/1,348 verses unchanged in membership; 12 export tests, 18 footnote
+tests, complete reader validator, 29 catalog entries/artifacts and 150 Psalms.
+No reader bundle, public deployment or multilingual synchronization. Other poem
+records remain unchanged; 17 and full-poem priority are open. The documentation
+skill keeps the case, decision and reopening conditions in Git rather than
+creating another methodology framework.
+
+Unsuccessful checks: web PDF search returned an internal error; ordinary
+publisher retrieval succeeded. `pdftotext` was unavailable; existing bundled
+PDF extraction located pages and `pdftoppm` rendered them without installation.
+Two initial root assertion scripts assumed optional YAML fields were present
+and stopped with KeyError; presence-aware checks then passed. An initial
+multi-file patch failed context verification and made no changes; corrected
+scoped patches applied. These are tooling failures, not absent ancient evidence.
+
+The renewed [two-aim assessment](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md#two-research-aims-and-a-practical-contribution-threshold)
+answers readiness, contribution thresholds and canon criteria, rechecking the
+primary Ben Sira, Catholic/Ethiopian reception and Sinaiticus content sources.
+No complete source census, fresh decipherment, novel discovery or canon change.
+The full goal remains incomplete; further work must be evidence-driven and
+bounded, not an unlimited agreement loop.
+
 Append a dated entry for every substantive research pass: question; actually
 consulted sources and locators/versions; observations versus hypotheses;
 decision and contrary explanation; changed files and source/English effect;

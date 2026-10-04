@@ -4881,6 +4881,46 @@ files change; the unrelated Genizah record remains untouched. No local
 full-corpus regression run was warranted by this prose-only change. Required
 remote CI still governs merge; software checks cannot establish historical truth.
 
+### 2026-10-04 — Remaining Sirach evidence and renewed two-aim assessment
+
+Reviewed main `33f588a9f97a4249ff425d675e7ebdbe6fbbea88`. Two bounded agents
+completed source-only candidates and source alignment/acquisition, not a
+judge-until-agreement loop. Saved the initial 13-record candidate batch and
+appended the [remaining-poem case](SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md#remaining-poem-assessment).
+The second-person verb at 28 supplies a meaning-affecting pending English
+repair; 19's future preference remains interpretive. B's content allocation
+at 21–22 and consonants at 29 expose larger source-form questions. Corrected
+the attribution limit: differences are verified against the Kahana-labelled
+digital source, not yet against Kahana's printed poem. No verse edits.
+
+Actual consultations and limits: Swete754/PDF772 complete page and apparatus;
+Muraoka787–797/PDF802–812 complete pages; dated QDR B and 11Q5 published
+units; NLI full-book identity. Failed/blocked archive resolver and unsuccessful
+bounded Lévi scan search remain access limits, not negative textual evidence.
+No manuscript pixels newly read, new Syriac collation, missing ink restored,
+novel discovery or generation metadata fabricated. The frozen candidate's
+source-only drafting is distinct from root's later commentary consultation.
+
+The [renewed assessment](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md#renewed-assessment-of-the-two-research-aims)
+adds a six-work preliminary comparison screen, rechecking named church lists,
+Sinaiticus contents, Ben Sira introduction, Library of Congress Enoch description,
+IAA composition titles and INTF method. IAA pages did not expose detailed
+passage data; no full reception histories or new fragment readings claimed.
+The goal tracker read 24,754,317 cumulative tokens at this review's start,
+not a bill or per-case cost. Spend remains disproportionate to demonstrated
+novel findings; finish a consequential passage application, not another framework.
+Documentation skill keeps the evidence and pending status in existing Git
+records. One bounded independent review found a summary-label overstatement:
+19 is an interpretive tense preference, whereas 28 has a demonstrable person
+mismatch. Corrected only the JSON summary classification, preserving original
+candidates and counterarguments. The reviewer found the remaining scoped
+claims sound; this is not whole-passage application approval. Root verified
+all 13 baseline record hashes/current English, both source hashes, existing
+19/20 metadata debt, both PDF hashes, 236 local link targets and whitespace.
+No full local corpus regression was warranted by research/prose-only changes;
+required remote corpus CI still governs merge. The unrelated Genizah file is
+preserved.
+
 Append a dated entry for every substantive research pass: question; actually
 consulted sources and locators/versions; observations versus hypotheses;
 decision and contrary explanation; changed files and source/English effect;

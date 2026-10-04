@@ -6,6 +6,9 @@ fresh scholarly adjudication of every case or a linguistic audit of all 31,221
 canonical verse files. The review is a continuation by Codex with access to the
 earlier work; it must not be described as an independent blind review.
 
+For the current continuation assessment, see the [2026-10-04 review](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md).
+The dated analysis below remains historical rather than a newly performed review.
+
 ## Assessment
 
 Keep the project and most of its infrastructure. The strongest achievement is

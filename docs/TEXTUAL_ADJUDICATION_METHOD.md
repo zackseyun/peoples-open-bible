@@ -14,6 +14,10 @@ defines the required source classes, dated catalogue checks, edition-status
 checks, and inclusion/exclusion criteria. A family registry or edition index
 does not certify that all known manuscripts have been compared.
 
+The [October continuation review](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md)
+records current readiness, full-corpus execution, restoration limits and stopping
+rules. It supplements this method without changing historical decision versions.
+
 ## Objective and operating constraint
 
 Reconstruct the earliest attainable wording justified by the surviving

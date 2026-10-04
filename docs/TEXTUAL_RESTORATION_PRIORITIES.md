@@ -13,8 +13,11 @@ clarifies full-corpus execution and records an available-evidence Nahash follow-
 existing case-specific holds and promotion gates remain in force.
 
 The [readiness and Sirach reassessment](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md#readiness-for-meaningful-contributions)
-identifies the next concrete translation milestone: align 51:13–16 by actual
-content and declared literary form before replacing wording. The note exporter
+identified the next concrete translation milestone: align 51:13–16 by actual
+content and declared literary form before replacing wording. The subsequent
+[opening application](SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md)
+repairs that bounded passage as a disclosed Greek working form; earliest Hebrew
+and the rest of the poem remain unresolved. The note exporter
 is repaired separately; delivery does not approve the current Sirach notes.
 More tokens are not a discovery guarantee, and canonical reception remains a
 separate question from textual reconstruction.

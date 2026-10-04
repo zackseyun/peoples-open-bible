@@ -230,6 +230,48 @@ by itself settle how the codex's producers ranked them or authorize adding them
 to POB's NT canon. This pass consulted the project's content description,
 not the texts' manuscript pages or complete textual histories.
 
+### Two research aims and a practical contribution threshold
+
+The user's renewed question is whether sufficient computation can produce
+meaning-changing source/translation decisions and identify additional works
+worth considering. Yes to evidence-backed comparison and possible improvement;
+no guarantee of a novel discovery or a date when one must occur. The source
+coverage audit still says relevant sources, not all known witnesses collated.
+The [NT method](NT_TEXTUAL_WITNESS_METHOD.md) likewise distinguishes an
+all-book edition index from manuscript-level comparison. We should not advertise
+either as a finished critical edition.
+
+Distinguish three outcomes: correcting a demonstrable POB source/rendering
+mismatch; adjudicating an already published ancient variant; and discovering a
+previously unrecognized reading. The first two can be valid contributions now.
+The third requires genuinely new evidence or a novel, defensible analysis,
+literature checks and scrutiny beyond model agreement. No such discovery is
+established by the current record. There is no reason to assume that more
+inference alone will overturn modern scholarship.
+
+The next deliverable should settle one defined passage where available sources
+can discriminate a consequential question, preserving disagreements and verifying
+the actual English/export effect. Stop when the result is retain, change or
+unresolved; reopen only for specified evidence. Complete Sirach 51:17's declared
+source/English mismatch next, rather than repeatedly reviewing 13–16. The
+[opening repair](SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md) is now applied
+and locally verified as a Greek working form, not a recovered earliest Hebrew
+poem. Meaningful OT/NT variant cases in the existing casebook remain the broader
+queue; image enhancement is warranted only for a specific disputed reading.
+
+For additional works, first compare Sirach and Tobit as books with existing
+canonical reception, then the textual histories and reception of Enoch and
+Jubilees. Barnabas and Hermas provide a separate early Christian comparison.
+These recommendations follow the linked primary manuscript/reception sources;
+they are not completed collations or a ranking of divine authority. Keep three
+editorial actions distinct: a historical-text library, a comparison supplement,
+and a tradition-specific canon proposal. Only the first two can follow directly
+from a usefulness judgment; any canon proposal additionally needs explicit
+community/reception criteria. No book is added to the canon by this review.
+
+Success means a reproducible consequential result, including an honest no-change
+decision, not elapsed time, token spend, document volume or repeated judge passes.
+
 ## Sirach poem comparison and delivery findings
 
 The next bounded unit is Sirach 51:13–30. Root and a separate agent inspected

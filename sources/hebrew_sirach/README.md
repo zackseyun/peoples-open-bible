@@ -85,7 +85,10 @@ transcription gap where it does not.
 Where usable Hebrew is absent, the Greek working source must be clearly
 marked. The current Sefaria/Kahana data are a composite edition, not a
 single surviving manuscript. The [2026-10-04 comparison](../../docs/OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md#sirach-poem-comparison-and-delivery-findings)
-documents the poem's source alignment and attribution defects. The
+documents the poem's source alignment and attribution defects. The subsequent
+[opening application](../../docs/SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md)
+uses a disclosed Greek working form at 51:13–16 while retaining the exact former
+composite Hebrew as a parallel; it does not resolve Hebrew priority. The
 [B viewer](https://bensira.org/navigator.php?Manuscript=B&PageNum=41)
 identifies T-S 16.315 at 51:12–20; the
 [E viewer](https://bensira.org/navigator.php?Manuscript=E&PageNum=1)

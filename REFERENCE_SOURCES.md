@@ -84,7 +84,7 @@ English translation and MAY influence specific word choices.
 Copyrighted or restricted-license scholarly sources that inform our
 judgment without appearing in the output. Examples:
 
-- **Yadin 1965, *The Ben Sira Scroll from Masada* (editio princeps)** — Hebrew transcription of the 1st-century BC Masada scroll (Sir 39:27–44:17). A copy of this work is consulted during Sirach drafting for the 413 verses across Sir 4, 39–44, 49, 51 that fall within the scroll's scope; its content is surfaced per verse to the translator through `tools/yadin_masada.py::lookup(chapter, verse)` and `tools/hebrew_parallels.py::lookup_with_consult`. Nothing from this work is committed to the repository or appears in POB output; consultation is kept local to the drafter's workspace, per standard Zone 2 policy.
+- **Yadin 1965, *The Ben Sira Scroll from Masada* (editio princeps)** — Edition of the Masada Hebrew witness, preserving portions within Sir 39:27–44:17. When local notes are available, `tools/yadin_masada.py::lookup(chapter, verse)` supplies edition reference material for requests within this outer span. Page-index associations do not establish that a requested verse or reading survives. Sirach 4, 49 and 51 are not Masada coverage; the previously stated 413-verse figure is not verified manuscript attestation. Local notes were unavailable at the 2026-10-04 check. Nothing from this consulted edition is vendored; the Zone 2 policy remains in force.
 - **Fitzmyer, *Discoveries in the Judaean Desert* Vol. XIX (Qumran Tobit)** — reconstructed Aramaic of 4Q196-200
 - **Beentjes 1997, *The Book of Ben Sira in Hebrew*** — critical edition of all recovered Hebrew Sirach
 - **Skehan & Di Lella 1987, Anchor Bible 39** — English Sirach with critical apparatus
@@ -150,7 +150,7 @@ zone_1_primary:
     source: "Sefaria Ben Sira / Kahana (CC0)"
     kind: "direct_hebrew"
     text: "כָּל חָכְמָה מֵיהֹוָה, וִעמּוֹ הִיא לְעוֹלָמִים."
-    note: "Kahana composite of Cairo Geniza MSS. This is a real Hebrew witness -- treat as primary Vorlage for Sirach."
+    note: "Kahana composite edition of Cairo Geniza Hebrew. This is a working source, not one physical manuscript or an adjudicated earliest Hebrew text."
 zone_1_secondary:
   - "First1KGreek (CC-BY-SA): <Greek variant, if any>"
   - "Rahlfs-Hanhart (NC, consultation only): <Greek reading>"

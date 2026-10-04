@@ -11,7 +11,7 @@ from:
 
 - **Cairo Genizah manuscripts A, B, C, D, E, F** (10th–12th century
   copies of earlier Hebrew), discovered by Schechter in 1896 onwards
-- **Masada scroll** (c. 100 BC, covers Sirach 39:27–43:30)
+- **Masada scroll** (ancient Hebrew, surviving portions within Sirach 39:27–44:17)
 - **Qumran fragments** (2Q18, 11QPsa — small)
 
 Our goal is to translate Sirach *primarily from the Hebrew* where we
@@ -56,15 +56,12 @@ This is not a claim of completed, calibrated transcription. Fresh readings
 remain subject to the [image-reading calibration and review gates](../../docs/TEXTUAL_ADJUDICATION_METHOD.md#calibration-and-review).
 
 ### 3. Masada scroll (deferred)
-See [`masada/`](masada/). The Masada Ben Sira scroll photographs are
-currently hosted by the **Israel Antiquities Authority Leon Levy Dead
-Sea Scrolls Digital Library** under a restrictive license
-(`© 2026 IAA — reproduction prohibited without written permission`).
-
-We have drafted a formal licensing request to the IAA (see
-`masada/IAA_LICENSING_REQUEST.md`). Pending their response, Masada
-Sirach remains **blocked for direct inclusion** in POB. This affects
-approximately Sirach 39:27–43:30.
+See [`masada/`](masada/). The manuscript viewer credits the Israel
+Antiquities Authority for its photographs. Image redistribution remains
+deferred pending an item-specific rights basis. The earlier guide claimed a
+draft at `masada/IAA_LICENSING_REQUEST.md`, but that file is absent here;
+no sent request or grant was verified. This does not prevent citation-based
+comparison of published readings from surviving portions within 39:27–44:17.
 
 In the interim we use Schechter-era transcription for sections where
 MS B overlaps with the Masada scroll, and clearly annotate the
@@ -78,7 +75,7 @@ transcription gap where it does not.
 | 30:11 – 33:3, 35:11 – 38:27, 39:15 – 51:30 | MS B (Schechter 1899 + later publications) | Public domain, vendored where 1899 covers |
 | 4:23 – 5:13, 6:5 – 37, 18:31 – 19:3, 20:5 – 7, 25:8 – 26:2 | MS C | Via later PD publications — to verify |
 | 51:13 – 30 | MS B, folio 21 recto/verso | Published transcription consulted; not an image-verified POB transcription |
-| 39:27 – 43:30 | Masada scroll | **Blocked on IAA licensing** |
+| Portions within 39:27 – 44:17 | Masada scroll | Image redistribution deferred; published comparison remains possible |
 | 6:14–15, 6:20–31 | Qumran 2Q18 | Image redistribution/access to be checked separately from published comparison |
 | 51:13–20 and final 51:30 phrase | Qumran 11QPsa / 11Q5, columns 21–22 | Published transcription consulted; damaged and missing content is not supplied as attestation |
 
@@ -94,7 +91,10 @@ identifies T-S 16.315 at 51:12–20; the
 [E viewer](https://bensira.org/navigator.php?Manuscript=E&PageNum=1)
 identifies chapter 32–33 material, not this poem. The table's earlier
 assignment of 51:13–30 to E and grouping of 11QPsa with chapter 6
-were incorrect. Other table ranges are not newly verified by this pass.
+were incorrect. The [Masada VII viewer](https://bensira.org/navigator.php?Manuscript=Masada&PageNum=7)
+identifies 44:1–15 and 44:17, correcting this guide's former 43:30 endpoint.
+This is catalogue-caption verification, not a new collation of chapter 44.
+Other table ranges are not newly verified by this pass.
 
 ## Methodology
 

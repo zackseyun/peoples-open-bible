@@ -40,7 +40,7 @@ from typing import Optional
 LOCAL_ROOT = pathlib.Path.home() / "cartha-reference-local" / "yadin_1965"
 PAGES_DIR = LOCAL_ROOT / "pages"
 
-# Sirach chapter/verse range covered by the Masada scroll
+# Outer passage envelope, not uninterrupted verse or visible-word coverage.
 MASADA_COVERAGE = (39, 27, 44, 17)  # (start_ch, start_vs, end_ch, end_vs)
 
 _INDEX_CACHE: Optional[dict[tuple[int, int], dict]] = None
@@ -192,6 +192,7 @@ def _ensure_index() -> dict[tuple[int, int], dict]:
 
 
 def in_coverage(chapter: int, verse: int) -> bool:
+    """Whether a request lies within the outer manuscript span, not attestation."""
     sc, sv, ec, ev = MASADA_COVERAGE
     if (chapter, verse) < (sc, sv):
         return False
@@ -243,11 +244,12 @@ def lookup(chapter: int, verse: int) -> Optional[dict]:
         "also_on_pages": entry["also_on"],
         "extraction_confidence": entry["confidence"],
         "guidance": (
-            "Masada scroll is older than the Cairo Geniza MSS. Compare "
-            "the Masada Hebrew above against the Kahana/Schechter Zone 1 "
-            "Hebrew for this verse. Where they disagree, Masada typically "
-            "wins on textual-critical grounds. Footnote fact-level "
-            "(e.g. 'Masada reads X where MS B reads Y'). Do NOT reproduce "
+            "Masada's earlier physical date is important evidence, not automatic "
+            "priority. Compare local preservation, editorial supplies and "
+            "transmission against the Kahana/Schechter working Hebrew. "
+            "Page-index associations are consultation leads, not proof that "
+            "a verse or reading survives. Footnote only verified reading facts. "
+            "Do NOT reproduce "
             "Yadin's English translation -- we have deliberately excluded "
             "it from this context block to protect our CC-BY output."
         ),

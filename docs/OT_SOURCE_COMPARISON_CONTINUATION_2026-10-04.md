@@ -252,8 +252,12 @@ inference alone will overturn modern scholarship.
 The next deliverable should settle one defined passage where available sources
 can discriminate a consequential question, preserving disagreements and verifying
 the actual English/export effect. Stop when the result is retain, change or
-unresolved; reopen only for specified evidence. Complete Sirach 51:17's declared
-source/English mismatch next, rather than repeatedly reviewing 13–16. The
+unresolved; reopen only for specified evidence. The subsequent
+[verse 17 follow-up](SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md#verse-17-hebrew-comparison-and-working-repair)
+repairs its declared Hebrew/English mismatch while leaving earliest wording
+unresolved; it also corrects Masada source attribution and automatic age-based
+priority in the consultation helper. Do not repeatedly review these same
+opening records without new discriminating evidence. The
 [opening repair](SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md) is now applied
 and locally verified as a Greek working form, not a recovered earliest Hebrew
 poem. Meaningful OT/NT variant cases in the existing casebook remain the broader

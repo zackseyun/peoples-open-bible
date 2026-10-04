@@ -26,9 +26,10 @@ jobs:
           python tools/lint_psalm_numbering.py --strict
       - name: Validate the complete reader corpus
         run: python tools/validate_reader_corpus.py --quiet --malformed-yaml error
-      - name: Test footnote contracts
+      - name: Test reader notes and consultation policy
         env:
           PYTHONPATH: .
         run: |
           python tests/test_audit_footnotes.py
           python -m unittest discover -s tests -p 'test_reader_footnote_export.py'
+          python -m unittest discover -s tests -p 'test_yadin_masada_policy.py'

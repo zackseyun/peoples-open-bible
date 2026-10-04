@@ -4800,6 +4800,55 @@ No complete source census, fresh decipherment, novel discovery or canon change.
 The full goal remains incomplete; further work must be evidence-driven and
 bounded, not an unlimited agreement loop.
 
+### 2026-10-04 — Sirach 51:17 Hebrew fidelity and Masada provenance
+
+Previous goal turn is progress: PR7 merged the actual 13–16 repair. Rechecked
+main `684dd216476ce37145d1fb24c90af4ecc177e710`; preserved the unrelated
+untracked Genizah follow-up. This pass advances the wider Hebrew/source-English
+objective through 17's documented mismatch and actual consultation guidance.
+
+The [case follow-up](SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md#verse-17-hebrew-comparison-and-working-repair)
+compares the published B21r13 and 11Q5 col21 lines14–15 in surrounding context.
+Agent drafted from exact pointed Zone1 Kahana before consultation; no scholarly
+English translation entered its drafting context. Root used the PDF skill to
+inspect complete Muraoka printed786–787/PDF801–802 and the complete Swete753
+scan, including apparatus at higher resolution. Reported Syriac and older
+studies remain indirect consultation, not independently collated witnesses.
+The case separates unpointed Hebrew from Kahana's vowels, Q's shorter form
+and disputed final word from B's honor/thanks wording, and a possible teacher
+referent from an asserted divine identity. Earliest whole-verse priority stays
+unresolved, with counterarguments and chronology's limited effect recorded.
+
+Applied source-faithful Hebrew English at17, preserving exact primary and Greek
+parallel; archived old review/source flags rather than certifying edited text.
+Independent full-record review passed the exact hash; the
+[receipt](../sources/textual_restoration/applications/sirach51_17_hebrew_fidelity.2026-10-04.v1.json)
+binds sources, English and actual before/after book export. Only17 changes in
+the Sirach export;48chapters/1348verses and all other content remain. No lost
+letters restored, fresh ink, earliest source promotion, canon change, bundle,
+public deployment or multilingual synchronization.
+
+Root and an independent agent checked actual Masada I/VII viewer captions.
+The prior43:30endpoint was wrong;44:17 is within the surviving witness, with
+gaps. REFERENCE_SOURCES and static registry had wrongly counted chapter51 and
+413 references as Masada coverage. Live lookup already excluded4/49/51;
+its correct44:17envelope remains. Repaired guides and static/live priority
+guidance; page-index leads do not certify physical words, and older date does
+not automatically win. Private Yadin notes are absent, so413's provenance and
+historical consultation cannot be verified. A root link check also found the
+claimed IAA request file absent; corrected the earlier unsupported claim of a
+draft/request process. No new rights grant asserted.
+
+Checks: four policy fixtures,12export tests,18footnote tests, verse schema,
+source/history/marker preservation, actual book export, complete reader
+validator,29catalog entries/artifacts and150Psalm numbering all pass. New
+policy fixtures are added to existing CI. Documentation skill keeps decisions
+and corrections in the existing case/log. Initial guessed Masada URLs failed;
+the actual Masada viewer URLs succeeded. One initial patch failed because
+delete/add targeted the same path; no partial edits occurred. A link check
+failed on the absent request file before the guides were corrected. None of
+these failures means absence of ancient wording. The full goal stays active.
+
 Append a dated entry for every substantive research pass: question; actually
 consulted sources and locators/versions; observations versus hypotheses;
 decision and contrary explanation; changed files and source/English effect;

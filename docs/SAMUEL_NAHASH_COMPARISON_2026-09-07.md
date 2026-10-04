@@ -167,3 +167,64 @@ its scoped PASS and the material b-variant precision are preserved in the
 [review record](../sources/textual_restoration/discovery/continuation_nahash_review.2026-10-04.v1.json).
 Root supplied the locations and proposed interpretation. This was not blind
 transcription, a two-family accuracy test or independent historical corroboration.
+
+## DJD reading notes follow-up 2026-10-04
+
+The named consultation gate is now completed. Root and one separate agent
+inspected complete DJD XVII (2005) printed pp.65-67 / PDF pp.88-90, including
+the transcription, commentary, reading notes and reconstructed variants. The
+existing private PDF has SHA256
+`6866ffbfa230c44dc439dfaef8f229cd41219acfe31d6d9478d4e6002a70604d`,
+matching the earlier [Samuel consultation](SAMUEL_SOURCE_COMPARISON_PASS_3.md).
+The locus is col. X, frg. a, 1 Samuel 10:24-11:2, Plate X; p.66 gives
+Mus. Inv.1096 / PAM43.114*. These are edition locators, not newly accessed
+manuscript images. The scan was found in the chat workspace rather than the
+Git repository; no acquisition or redistribution was needed.
+
+Two omissions must be distinguished. On p.66 the editors describe a local
+line-9 skip from **יבש to יבש** (Jabesh to Jabesh), repaired above the line.
+They attribute the repair to the original hand, *manu prima*. We have read
+their printed assessment, not independently established hand or ink. Separately,
+they propose that repeated month wording at two transitions could have caused
+loss of the whole background paragraph. That textual state is hypothetical;
+the reported local correction does not prove the proposed larger deletion.
+The editors also propose a corruption of month wording into the Masoretic
+silence wording. This is a transmission argument, not a directly attested
+intermediate Hebrew copy.
+
+At first root read the small page rendering as days to days and supplied that
+reading to the agent; its first scoped PASS repeated it. A higher-resolution
+rendering corrected both readings to Jabesh to Jabesh. The agent returned a
+corrected scoped PASS. This concrete defect justified one correction round;
+the initial agreement did not validate the words. The [review record](../sources/textual_restoration/discovery/nahash_djd_review.2026-10-04.v1.json)
+preserves the error, correction, review scope and unchanged verse hashes.
+
+The edition treats Josephus as support for the longer account and infers an
+underlying Greek text, with possible Hebrew transmission explanations. It
+does not supply another extant Greek biblical manuscript carrying that account.
+Its table compares the month transition with MT's silence clause; the previously
+consulted Cambridge apparatus additionally reports their coexistence in b.
+Those are distinct evidential levels, not mutually reinforcing manuscript votes.
+
+Two preservation limits matter for literary arguments. P.66 says a distorted
+leather piece was repositioned to obtain vertical alignment; no independent
+join verification occurred here. After Nahash's name the editors prefer a
+restoration of king over the Ammonite, despite the former lacking support in
+the compared textual witnesses. Their reported ink trace is not an observed
+complete royal title. P.67 explicitly identifies context-based supplies in
+the reconstructed variants. A royal-title argument must carry that completion
+limit rather than treat the word as fully preserved ink.
+
+**Decision:** retain the shorter background narrative provisionally and keep
+the existing weak preference, without increasing confidence. The edition offers
+a concrete contrary deletion account, but its whole-paragraph explanation still
+requires an unattested intermediate state. Explanatory expansion remains credible;
+neither is established. Month, silence and longer narrative remain separate
+questions. Source, main English, existing reader notes and review state are
+unchanged; no new reconstruction or source promotion follows.
+
+Do not repeat the now-completed DJD or Cambridge consultations. Reopen for
+specific evidence discriminating the larger deletion from expansion, or a
+translation-relevant manuscript check of the repair, title or alignment under
+the existing image gate. Until then proceed with other source units. A fresh
+image reading, complete source selection and public deployment are not claimed.

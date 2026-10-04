@@ -149,6 +149,12 @@ must not be treated as mutually exclusive across Greek transmission. Neither
 source nor main English is changed. The remaining Hebrew reading-note gate
 stays explicit; no broad Nahash reacquisition is justified by this result.
 
+The subsequent [DJD reading-note follow-up](SAMUEL_NAHASH_COMPARISON_2026-09-07.md#djd-reading-notes-follow-up-2026-10-04)
+completes that named consultation. It distinguishes the edition's reported local
+Jabesh-to-Jabesh correction from its hypothetical whole-paragraph deletion
+account. Source priority remains unresolved; the new hold is discriminating
+transmission or image evidence, not another acquisition of these same pages.
+
 ## Additional books and canonical reception
 
 Textual recovery and canonicity are different questions. Antiquity, quotation,

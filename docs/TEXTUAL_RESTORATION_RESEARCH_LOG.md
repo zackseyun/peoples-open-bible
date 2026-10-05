@@ -5618,6 +5618,33 @@ change. All Ecclesiastes hashes and the protected Genizah hash remain unchanged;
 local links and whitespace pass without a repeated corpus/export test run.
 The case uses a separate branch so PR 27's confirmed live checks are not restarted.
 
+### 2026-10-05 — Ecclesiastes verbs retained and grammatical rationale repaired
+
+Completed the [7:7 and 7:19 verb comparison](ECCLESIASTES_DSS_COMPARISON_2026-09-06.md#ecclesiastes-7-7-and-7-19-verbs-2026-10-05)
+against main `62e4822f79cbdeb8f351258211859737c2b26264`, after PR 28's
+two exact-head corpus-integrity checks passed and it merged. Published 4Q109
+gives distortion versus MT destruction at 7:7, and helping versus strength at
+7:19; supplied context and uncertain letters stay identified. Greek forms
+inform meaning but do not uniquely recover Hebrew letters or the complete
+scroll wording. A bounded source assessment recommends provisional retention.
+
+The PDF skill required native page checks of Swete, NETS, official NET notes
+and BDB. Direct BDB entry inspection proves a narrow rationale defect: 7:19
+is Qal imperfect 3fs, not Hifil. Two active rationales are corrected, with
+unchanged source, English and notes. Historic revisions and original AI
+provenance remain; four old metadata values are archived verbatim and active
+status is draft/needs_review. `/root/zech12_10_application_judge` returned
+PASS for this frozen metadata-only candidate, not English optimality or priority.
+
+Actual scoped checks pass: schema, baseline-field/archive preservation, two
+regression tests and 12-chapter/222-verse reader export. Only one book record
+changes; the case records before/after pins and new manifest. Existing aggregate
+validation debt remains disclosed, and the protected unrelated Genizah file is
+unchanged. The documentation skill keeps the contribution, historical hold and
+unimplemented reader disclosures distinct. No novel decipherment, ImageGen
+evidence, publication approval or canon change. Reopen only for named
+discriminating evidence, not another agreement loop or readiness audit.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

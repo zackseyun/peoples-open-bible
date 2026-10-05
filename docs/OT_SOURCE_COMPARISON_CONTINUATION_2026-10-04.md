@@ -168,6 +168,17 @@ do not mistake that hold for an unfinished meaning comparison. Other screened
 Ecclesiastes leads remain open and need discriminating evidence, not repetition
 of either completed unit. Stop each at retain, change or a precise evidence hold.
 
+The subsequent [7:7 and 7:19 verb comparison](ECCLESIASTES_DSS_COMPARISON_2026-09-06.md#ecclesiastes-7-7-and-7-19-verbs-2026-10-05)
+also provisionally retains source/main English, while actually correcting two
+7:19 rationales that incorrectly invoked causative morphology. Direct BDB
+inspection identifies Qal; gives strength is an English interpretation, not
+a Hifil stem. The scroll's distortion/helping alternatives remain qualified
+by preservation and transmission limits. Reader-note application is not done.
+One full-record critique passed this metadata-only repair; source/English,
+original provenance and historical revisions are unchanged, with old approvals
+archived rather than renewed. This is a concrete correction, not a new ancient
+reading or proof that unchanged English is universally optimal.
+
 For the separate reception aim, prioritize one defined work and passage rather
 than another six-book inventory: an overlapping Enoch unit, such as 1 Enoch 1:9
 and Jude 14–15, is a proposed bounded comparison. Establish the surviving

@@ -5965,6 +5965,23 @@ passed both exact-head checks and merged at `520c3bb4f3adcb440c16d102836c5260d1f
 main was synchronized and pushed. The next distinct comparison is Enoch/Jude,
 not another readiness audit or repeated model vote on this held lexical question.
 
+### 2026-10-05 — Enoch 1 9 and Jude 14 15 comparison
+
+The [completed bounded comparison](ENOCH_1_9_JUDE_14_15_COMPARISON_2026-10-05.md)
+finds partial published Aramaic at 4Q204 fragment 1 i lines 15–17, not an intact
+verse. Native Greek and Geʿez pages expose clipped local Greek OCR and Charles's
+explicit use of Jude/Greek in editorial choices. ENOCH.md's anachronistic
+Chester Beatty attribution to older editions is corrected, and the shared
+method now requires a concrete edition-dependency check. The literary relation
+supports comparison and labelled access, not universal canonical inclusion.
+Current verse source/English/notes/metadata remain unchanged. Jude 15's
+all-ungodly/every-soul edition contrast is the next consequential source question;
+its manuscript/hand and transmission adjudication remains unfinished.
+The bounded final documentation critique passed with the surviving-column
+clarification incorporated; technical checks do not confer scholarly approval.
+Job PR 41 passed both exact-head checks and merged at
+`4fb3ec25175349c992bdfa00d002c5039ec17a16`.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

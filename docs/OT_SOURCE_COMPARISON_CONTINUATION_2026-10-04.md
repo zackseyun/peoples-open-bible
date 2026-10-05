@@ -14,8 +14,14 @@ merged at `520c3bb4f3adcb440c16d102836c5260d1fe2f01`; main was pushed.
 The [Job 24:21 comparison](JOB_24_21_SOURCE_COMPARISON_2026-10-05.md)
 now retains source and English: the uncertain segol/tsere contrast does not
 require a meaning change. It qualifies the earlier feeding-image certainty
-without applying reader notes or transferring old model approval. The next
-distinct task is the Enoch/Jude reception comparison. The older next-task statements below
+without applying reader notes or transferring old model approval. PR 41
+passed both exact-head checks and merged at
+`4fb3ec25175349c992bdfa00d002c5039ec17a16`. The next
+distinct task is now Jude 15's source variant: the
+[Enoch/Jude comparison](ENOCH_1_9_JUDE_14_15_COMPARISON_2026-10-05.md)
+establishes partial Aramaic survival, edition dependencies and actual Greek
+differences without changing the canon or harmonizing the two works.
+The older next-task statements below
 describe earlier checkpoints, not an instruction to repeat this application.
 
 ## Current answers and next evidence tasks

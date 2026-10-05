@@ -165,6 +165,14 @@ not two independent ancient Hebrew branches. An Old Latin rendering derived
 from Greek is not a second independent Hebrew attestation. A historian may
 depend on the same Greek textual form as an extant translation tradition.
 
+The [Enoch 1:9 and Jude example](ENOCH_1_9_JUDE_14_15_COMPARISON_2026-10-05.md)
+adds a concrete edition-dependency control: inspect the apparatus before
+counting daughter-version agreement. A modern Geʿez text emended using Jude
+is not independent manuscript confirmation of Jude. Preserve its received
+readings and editorial supplies separately; a clipped OCR output is not an
+ancient omission. These checks apply before original-language reconstruction
+or English promotion, not merely in a later explanatory note.
+
 The number of supporting witnesses may be reported descriptively, but it must
 not select the reading. Modern English translations are not manuscript votes.
 

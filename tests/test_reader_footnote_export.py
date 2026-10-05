@@ -14,6 +14,43 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReaderFootnoteExportTests(unittest.TestCase):
+    def test_ecclesiastes_scroll_verb_disclosures_preserve_source_and_main_wording(self):
+        expected = {
+            7: ('3eefe19504ce3082b4c67a91ff52b5cfce85aac6586322c621578d4a35e3cf2c',
+                'For oppression makes a wise man foolish, and a bribe destroys the heart.'),
+            19: ('2695e9b80ec012307e2d62782fd7abf34f7f8e21e49ff5036f50397a5987f3a8',
+                 'Wisdom gives a wise man more strength than ten rulers in the city.'),
+        }
+        book = exporter.export_book('ECC')
+        self.assertEqual(len(book['chapters']), 12)
+        self.assertEqual(sum(len(c['verses']) for c in book['chapters']), 222)
+        for number, (sha, plain) in expected.items():
+            raw = (ROOT / f'translation/ot/ecclesiastes/007/{number:03}.yaml').read_bytes()
+            self.assertEqual(hashlib.sha256(raw).hexdigest(), sha)
+            record = yaml.safe_load(raw)
+            verse = next(v for c in book['chapters'] if c['chapter'] == 7
+                         for v in c['verses'] if v['verse'] == number)
+            self.assertEqual(verse['text'], record['translation']['text'])
+            self.assertEqual(verse['footnotes'], record['translation']['footnotes'])
+            text = verse['text']
+            for note in verse['footnotes']:
+                self.assertEqual(text.count(f"[{note['marker']}]"), 1)
+                text = text.replace(f"[{note['marker']}]", '')
+            self.assertEqual(text, plain)
+            self.assertEqual(record['cross_check'], {'status': 'needs_review'})
+            self.assertEqual(record['status'], 'draft')
+        seven = next(v for c in book['chapters'] if c['chapter'] == 7
+                     for v in c['verses'] if v['verse'] == 7)
+        self.assertIn('destroys[c] the heart[b].', seven['text'])
+        self.assertIn('final letter doubtful', seven['footnotes'][2]['text'])
+        self.assertIn('not surviving words', seven['footnotes'][2]['text'])
+        nineteen = next(v for c in book['chapters'] if c['chapter'] == 7
+                        for v in c['verses'] if v['verse'] == 19)
+        self.assertIn('strength[a]', nineteen['text'])
+        self.assertIn('reported as preserved', nineteen['footnotes'][0]['text'])
+        self.assertIn('partly supplied or damaged', nineteen['footnotes'][0]['text'])
+        self.assertIn('earliest wording remains unresolved', nineteen['footnotes'][0]['text'])
+
     def test_malachi_2_16_discloses_conditional_interpretation_and_preserves_hebrew(self):
         candidate = ROOT / 'sources/textual_restoration/applications/mal2_16_candidate.2026-10-05.v1.yaml'
         canonical = ROOT / 'translation/ot/malachi/002/016.yaml'

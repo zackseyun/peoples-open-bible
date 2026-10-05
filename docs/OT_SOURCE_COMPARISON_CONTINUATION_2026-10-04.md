@@ -173,7 +173,11 @@ also provisionally retains source/main English, while actually correcting two
 7:19 rationales that incorrectly invoked causative morphology. Direct BDB
 inspection identifies Qal; gives strength is an English interpretation, not
 a Hifil stem. The scroll's distortion/helping alternatives remain qualified
-by preservation and transmission limits. Reader-note application is not done.
+by preservation and transmission limits. Their subsequent
+[reader-note application](ECCLESIASTES_DSS_COMPARISON_2026-09-06.md#subsequent-reader-disclosure-application)
+is now locally applied and independently verified, with unchanged source and
+marker-free main English. The record of the initial metadata-only scope below
+remains historical.
 One full-record critique passed this metadata-only repair; source/English,
 original provenance and historical revisions are unchanged, with old approvals
 archived rather than renewed. This is a concrete correction, not a new ancient

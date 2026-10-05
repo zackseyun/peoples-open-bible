@@ -76,9 +76,12 @@ For the source track, prioritize the already consequential
 The [direct CBGM acquisition](NT_PILOT_ADJUDICATION.md#mark-1-41-direct-cbgm-evidence-2026-10-05)
 now resolves the locator and obtains the exact grouped Greek table and editorial
 stemma. It does not complete correction-hand, versional or patristic coverage.
-Canonical replacement is held while the next comparison tests Ephrem's exact
-commentary/context and the proposed Latin-to-Greek transmission, rather than
-repeating the failed API route or counting witnesses. The subsequent
+The [Ephrem page comparison](NT_PILOT_ADJUDICATION.md#ephrem-commentary-quotation-and-interpretation-2026-10-05)
+now finds anger in transmitted exposition, not a direct quotation of the
+disputed Greek participle. Canonical replacement remains held while the next
+comparison tests the proposed Latin-to-Greek transmission or obtains specialist
+analysis of the commentary's language and transmission. Do not repeat the
+completed acquisition or count editions as independent witnesses. The subsequent
 [Ecclesiastes 5:14 and 6:8 comparison](ECCLESIASTES_DSS_COMPARISON_2026-09-06.md#ecclesiastes-5-14-and-6-8-particles-2026-10-05)
 now completes those bounded meaning questions with provisional retention.
 The subsequent [reader disclosure application](ECCLESIASTES_DSS_COMPARISON_2026-09-06.md#ecclesiastes-particle-reader-disclosures-2026-10-05)

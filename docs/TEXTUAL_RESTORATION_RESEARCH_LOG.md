@@ -5828,6 +5828,42 @@ scope after reproducing the offline checks and consulting software/publisher
 controls. Its live API check failed; saved-response validation must not be
 described as independent live HTTP confirmation or historical-priority approval.
 
+### 2026-10-05 — Ephrem quotation and interpretation distinguished
+
+The preceding Greek acquisition PR 35 passed both exact-head corpus-integrity
+checks and merged at `bde4dc6417fd81b9be93be71150c5218d287e252`.
+Main was synchronized and pushed. This pass completes the named next evidence
+unit rather than repeating a readiness audit.
+
+The [exact-page dossier](NT_PILOT_ADJUDICATION.md#ephrem-commentary-quotation-and-interpretation-2026-10-05)
+compares Leloir 1963 XII.21–24, printed 95–101, with Moesinger 1876 printed
+143–145. Official Chester Beatty and Oxford scan downloads succeeded despite
+web-tool access failures. PDF hashes, exact page offsets and transmission layers
+are recorded. Root inspected all relevant native pages and preface controls;
+one bounded source assessor independently acquired and inspected Leloir.
+Latin editions control the semantic analysis; no fresh Syriac/Armenian
+translation, manuscript-photo adjudication or Greek retroversion is claimed.
+
+Anger occurs in explanation of the leper's request and the healing. It is not
+a direct quotation of Mark's disputed emotion participle. Moesinger's rebuke
+footnote points to Mark 1:43; that editorial reference identifies a plausible
+alternative explanation, not proof of the ancient source's wording. His
+proposed Syriac wording elsewhere is explicitly conjectural. Agreement between
+the translated editions does not establish independent attestation.
+
+This materially improves the classification of evidence while holding historical
+priority. Mark source/English and the version-1 decision dataset remain unchanged.
+The next useful evidence is the actual Greek/Old Latin copying comparison or
+specialist analysis of commentary transmission, not more witness-counting or
+repeated model votes. No canon change, new decipherment or scholarly approval
+is claimed. The documentation skill keeps observations separate from inferences;
+the PDF skill required native-page verification rather than OCR-only claims.
+
+One independent bounded critique passed the frozen documentation claims after
+native-page/preface inspection and hash checks, not historical-priority approval.
+Scoped local link/anchor and whitespace checks passed. Protected Genizah remains
+unchanged and unstaged; no corpus/export rerun was needed for three prose files.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

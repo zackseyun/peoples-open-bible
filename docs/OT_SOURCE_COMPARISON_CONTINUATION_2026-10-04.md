@@ -1,5 +1,48 @@
 # Old Testament source comparison method and continuation review
 
+## Current answer to the two research questions
+
+Review of October 5, 2026: **continue bounded published-source comparisons;
+do not promise new decipherment, a universally optimal translation or an
+expanded canon.** Meaning-affecting provisional POB contributions already
+exist in [1 Samuel 17:4](../translation/ot/1_samuel/017/004.yaml), selecting
+four rather than six cubits, and
+[Isaiah 53:11](../translation/ot/isaiah/053/011.yaml), including light.
+These apply known evidence, not newly discovered ancient readings. More
+tokens can support acquisition, alignment and testing; they cannot create
+missing ink, guarantee novelty or establish inspiration.
+
+The right source classes are in scope: Hebrew/Aramaic manuscripts, Samaritan
+witnesses and relevant ancient versions for OT; Greek manuscripts and their
+hands, early versions and quotations for NT. The
+[coverage audit](BIBLICAL_SOURCE_COVERAGE_AUDIT_2026-09-04.md) still records
+incomplete collation. Editions and related copies must not become independent
+votes, and different literary forms must not be silently merged into an
+unattested original. This is a useful critical-comparison project, not yet
+an all-witness critical edition.
+
+Additional texts deserve historical and textual comparison. Sirach and Tobit
+are already in the [Catholic canon](https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_two/article_3/iv_the_canon_of_scripture.html);
+Enoch and Jubilees are named in the
+[Ethiopian Orthodox list](https://www.ethiopianorthodox.org/english/canonical/books.html?lang=en).
+Barnabas and Hermas occur in
+[Sinaiticus](https://www.codexsinaiticus.org/en/codex/content.aspx).
+These facts justify labelled comparison and a reception study; antiquity,
+survival, quotation or codex inclusion alone does not decide a universal canon.
+A recommendation about canonical inclusion needs a named community and explicit
+authority criteria, separate from reconstructing wording.
+
+The next concrete unit is Jude 15: all the ungodly versus every soul. The
+[Enoch/Jude report](ENOCH_1_9_JUDE_14_15_COMPARISON_2026-10-05.md#jude-15-manuscript-follow-up)
+now records a directly checked institutional Sinaiticus transcription and a
+published counterargument. Greek source selection and application to POB's
+Jude text and English remain held pending the transmission comparison.
+Complete one case with change,
+retain or hold and its English consequence, using one proportional critique.
+Reopen only for named new evidence. Repeated readiness audits and judge-until-
+agreement loops are not research progress; this short answer supersedes older
+next-task instructions below without erasing their history.
+
 The [whole-OT pointing follow-up](UXLC_POINTING_TRIAGE_2026-10-05.md) now makes
 all 374 frozen pointing-first rows reproducible as a review queue. Proverbs
 7:22's published qamats-to-segol correction has no demonstrated effect on
@@ -14,8 +57,14 @@ merged at `520c3bb4f3adcb440c16d102836c5260d1fe2f01`; main was pushed.
 The [Job 24:21 comparison](JOB_24_21_SOURCE_COMPARISON_2026-10-05.md)
 now retains source and English: the uncertain segol/tsere contrast does not
 require a meaning change. It qualifies the earlier feeding-image certainty
-without applying reader notes or transferring old model approval. The next
-distinct task is the Enoch/Jude reception comparison. The older next-task statements below
+without applying reader notes or transferring old model approval. PR 41
+passed both exact-head checks and merged at
+`4fb3ec25175349c992bdfa00d002c5039ec17a16`. The next
+distinct task is now Jude 15's source variant: the
+[Enoch/Jude comparison](ENOCH_1_9_JUDE_14_15_COMPARISON_2026-10-05.md)
+establishes partial Aramaic survival, edition dependencies and actual Greek
+differences without changing the canon or harmonizing the two works.
+The older next-task statements below
 describe earlier checkpoints, not an instruction to repeat this application.
 
 ## Current answers and next evidence tasks

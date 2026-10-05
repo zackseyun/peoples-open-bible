@@ -87,6 +87,15 @@ canonical context when published.
 
 ## Source editions — vendored
 
+Source-control clarification, 2026-10-05: critical editions are edited texts,
+not independent manuscript witnesses. The
+[Enoch 1:9 and Jude comparison](docs/ENOCH_1_9_JUDE_14_15_COMPARISON_2026-10-05.md)
+checks actual survival, editorial supplies and edition dependencies. Charles
+1906 explicitly uses Greek and Jude in its apparatus at this unit; its agreement
+with Jude cannot automatically count as independent Ge'ez attestation. Local
+Greek OCR also clips the end of this complete printed verse. The older pipeline
+plans below are not evidence that these controls have passed for every verse.
+
 ### Ethiopic (primary)
 
 | Edition | Year | Role | SHA-256 | License |
@@ -98,8 +107,14 @@ canonical context when published.
 
 | Edition | Year | Coverage | License |
 |---|---|---|---|
-| Bouriant, *Fragments grecs du livre d'Hénoch* (Akhmim / Codex Panopolitanus) | 1892 | chs 1–32 + 19:3–21:9 + 97-107 (partial) | Public Domain |
-| Flemming & Radermacher, *Das Buch Henoch* (GCS 5, Leipzig) | 1901 | Full Greek — Panopolitanus, Syncellus fragments, Chester Beatty chs 97-107 with German translation | Public Domain |
+| Bouriant, *Fragments grecs du livre d'Hénoch* (Akhmim / Codex Panopolitanus) | 1892 | Akhmim material through 32:6, including overlapping forms; exact units require passage checks. No Chester Beatty attribution. | Public Domain |
+| Flemming & Radermacher, *Das Buch Henoch* (GCS 5, Leipzig) | 1901 | Partial Greek: Akhmim / Panopolitanus, Syncellus quotations and Vatican fragment; facing German rendering of the Ethiopic. Not a complete Greek Enoch or the later Chester Beatty–Michigan edition. | Public Domain |
+
+The coverage descriptions above follow Flemming–Radermacher's actual
+introduction, printed pages 13–14. Do not route chapters 97–107 to that 1901
+volume as Chester Beatty evidence. A verified edition of the later
+Chester Beatty–Michigan material is a separate acquisition and comparison task;
+its chapter labels do not establish every surviving word.
 
 ### English reference (not reproduced; verse numbering + cross-check only)
 
@@ -152,12 +167,16 @@ Enoch's situation:
 
 1. **Primary source**: our own fresh OCR of Charles 1906 Ge'ez,
    cross-validated against Beta maṣāḥǝft digital text (oracle) and
-   Dillmann 1851 as second witness. This OCR, once validated, becomes
+   Dillmann 1851 as a second edition control, not another manuscript vote.
+   Preserve Charles's apparatus and supplied/emended wording separately from
+   manuscript attestations. OCR agreement checks transcription of editions,
+   not automatically their earliest-source priority. This OCR, once validated, becomes
    the Zone 1 Ge'ez Vorlage for English translation.
 2. **Secondary textual apparatus** for chapters 1–32: Bouriant 1892
    Greek (Panopolitanus) provides an additional witness to the lost
-   Aramaic. For chapters 97–107: Chester Beatty Greek via Flemming
-   1901 provides another witness.
+   Aramaic. For chapters 97–107, a separately verified Chester Beatty–Michigan
+   edition is required; Flemming
+   1901 cannot supply that later acquisition.
 3. **Parables (chs 37–71)**: Ethiopic-only at Zone 1. No Greek,
    no Qumran. Our output disclose this in the per-verse YAML.
 4. **Qumran Aramaic parallels** where they exist: Zone 2 consult via

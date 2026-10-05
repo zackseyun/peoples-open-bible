@@ -5965,6 +5965,57 @@ passed both exact-head checks and merged at `520c3bb4f3adcb440c16d102836c5260d1f
 main was synchronized and pushed. The next distinct comparison is Enoch/Jude,
 not another readiness audit or repeated model vote on this held lexical question.
 
+### 2026-10-05 — Enoch 1 9 and Jude 14 15 comparison
+
+The [completed bounded comparison](ENOCH_1_9_JUDE_14_15_COMPARISON_2026-10-05.md)
+finds partial published Aramaic at 4Q204 fragment 1 i lines 15–17, not an intact
+verse. Native Greek and Geʿez pages expose clipped local Greek OCR and Charles's
+explicit use of Jude/Greek in editorial choices. ENOCH.md's anachronistic
+Chester Beatty attribution to older editions is corrected, and the shared
+method now requires a concrete edition-dependency check. The literary relation
+supports comparison and labelled access, not universal canonical inclusion.
+Current verse source/English/notes/metadata remain unchanged. Jude 15's
+all-ungodly/every-soul edition contrast is the next consequential source question;
+its manuscript/hand and transmission adjudication remains unfinished.
+The bounded final documentation critique passed with the surviving-column
+clarification incorporated; technical checks do not confer scholarly approval.
+Job PR 41 passed both exact-head checks and merged at
+`4fb3ec25175349c992bdfa00d002c5039ec17a16`.
+
+### 2026-10-05 — Requested two aim review and Jude attestation follow up
+
+Answered the user's readiness and contribution questions in the
+[current concise summary](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md#current-answer-to-the-two-research-questions),
+using actual current Samuel and Isaiah records. Known-evidence applications
+already affect meaning; a novel ancient reading, complete coverage and a
+universal canon recommendation remain unproved. Rechecked INTF's source classes,
+named Catholic/Ethiopian lists and Sinaiticus contents. More tokens are not a
+discovery guarantee; repeated readiness audits are not substantive progress.
+
+The bounded Jude assessor supplied institutional attestation and original
+opposing arguments. Root directly retrieved Sinaiticus's observed transcription
+endpoint, checked the exact object spans and pinned the response hash in the
+[comparison receipt](../sources/textual_restoration/comparisons/enoch1_9_jude14_15.2026-10-05.v1.json).
+Root also read Flink's original page 117. Mink's response, direct P72/Vaticanus
+collation and official passage-specific ECM assessment remain named next
+evidence, not accomplished work. All three canonical target records remain
+unchanged; no new canon or source-priority decision follows.
+
+PR 42's integrity failure was reproduced: the additive shared-method paragraph
+changed a pinned input used by the pointing queue and Psalm 145 checks. Root
+withdrew only that newly added paragraph and retained the concrete dependency
+lesson in the case report, without repinning reviews or relaxing tests. The
+documentation skill kept the current answer, attestation and incomplete
+adjudication distinct. One final bounded critique passed the new sections'
+substantive claims; root clarified that the hold concerns Jude's wording, not
+its canonical status, and added the exact Flink distribution/conclusion pages.
+No repeated agreement loop or specialist approval is claimed. Check results
+and delivery are recorded only when observed. The affected pointing queue
+tests (10), Psalm 145 application tests (6) and Psalms source-context test (1)
+now pass. JSON, local links, whitespace, unchanged canonical/protected hashes
+and exact preservation of the shared method against main also pass. No fresh
+full-book export or broad clean-suite claim follows.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -74,6 +74,14 @@ describe earlier checkpoints, not an instruction to repeat this application.
 
 ## Contribution milestones and efficient continuation
 
+The [Samaritan parallel batch](SAMARITAN_PARALLEL_BLOCKS_2026-10-05.md) now
+advances all twenty frozen large leads beyond verse-label comparison and
+applies a qualified Numbers 20:13 narrative-variant note. This is reproducible
+discovery plus reader disclosure, not twenty completed adjudications or new
+decipherment. The next structural case is Exodus 20:21; the separate Jubilees
+task first needs an actually surviving Hebrew and checkable Geʿez overlap.
+These concrete evidence tasks supersede earlier next-case instructions below.
+
 The requested reassessment distinguishes three achievable contributions:
 applying a known variant to POB, provisionally revising the interpretation of
 unchanged wording, and accurately disclosing an unresolved alternative. The four-cubit

@@ -3,6 +3,11 @@
 Follow-up: the [September 5 incense-altar alignment](EXODUS_INCENSE_ALIGNMENT_2026-09-05.md)
 maps the relocated block explicitly and separates order from local wording.
 
+The [October 5 parallel discovery](SAMARITAN_PARALLEL_BLOCKS_2026-10-05.md)
+searches all twenty frozen large leads against both entire Torah controls,
+retains alternatives and unmatched spans, and applies a qualified Numbers
+20:13 reader note. Discovery coverage is not completed historical adjudication.
+
 Checked 2026-09-04. This extends comparison beyond the six selected Torah cases
 to every verse node in the pinned DT-UCPH Samaritan dataset. It is a discovery
 screen of two digital controls, **not a completed critical apparatus**.

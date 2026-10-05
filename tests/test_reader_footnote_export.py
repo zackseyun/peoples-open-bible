@@ -14,6 +14,43 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReaderFootnoteExportTests(unittest.TestCase):
+    def test_malachi_2_16_discloses_conditional_interpretation_and_preserves_hebrew(self):
+        candidate = ROOT / 'sources/textual_restoration/applications/mal2_16_candidate.2026-10-05.v1.yaml'
+        canonical = ROOT / 'translation/ot/malachi/002/016.yaml'
+        raw = candidate.read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(),
+                         '92d227e38138412ac8354a0fd45053780af06f0101de09dc8711cf4cc220df14')
+        self.assertEqual(canonical.read_bytes(), raw)
+        record = yaml.safe_load(raw)
+        history = record['textual_comparison_history'][-1]
+        self.assertEqual(record['source'], history['source'])
+        self.assertEqual(record['ai_draft']['output_hash'],
+                         '62c9ce007a90dd4dde0c0a084e33dd899974ed1ee6dde98d821ec05d40aca277')
+        self.assertEqual(record['cross_check'], {'status': 'needs_review'})
+        self.assertEqual(record['status'], 'draft')
+        self.assertTrue(record['textual_adjudication']['source_interpretation_changed'])
+        packet = json.loads((ROOT / 'sources/textual_restoration/applications/mal2_16_english_comparison.2026-10-05.v1.json').read_text())
+        text = record['translation']['text']
+        for marker in ('a', 'b', 'c', 'd'):
+            text = text.replace(f'[{marker}]', '')
+        self.assertEqual(text, packet['candidates']['A'])
+        book = exporter.export_book('MAL')
+        self.assertEqual(len(book['chapters']), 3)
+        self.assertEqual(sum(len(c['verses']) for c in book['chapters']), 55)
+        verse = next(v for c in book['chapters'] if c['chapter'] == 2
+                     for v in c['verses'] if v['verse'] == 16)
+        self.assertEqual(verse['text'], record['translation']['text'])
+        self.assertEqual(verse['footnotes'], record['translation']['footnotes'])
+        notes = {n['marker']: n for n in verse['footnotes']}
+        self.assertEqual(notes['b'], history['translation']['footnotes'][1])
+        self.assertIn('faithlessly[b]', verse['text'])
+        self.assertNotIn('spirit[b]', verse['text'])
+        self.assertIn('construction is disputed', notes['a']['text'])
+        self.assertIn("'Her' is supplied", notes['a']['text'])
+        self.assertIn('ending is doubtful', notes['c']['text'])
+        self.assertIn('not newly deciphered letters', notes['c']['text'])
+        self.assertIn('another interpretation makes divorce', notes['d']['text'])
+
     def test_zechariah_12_10_preserves_person_shift_and_disputed_syntax(self):
         candidate = ROOT / 'sources/textual_restoration/applications/zech12_10_candidate.2026-10-04.v1.yaml'
         canonical = ROOT / 'translation/ot/zechariah/012/010.yaml'

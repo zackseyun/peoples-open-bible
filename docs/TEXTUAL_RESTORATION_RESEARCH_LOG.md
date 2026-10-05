@@ -5488,6 +5488,50 @@ defects. Whitespace, local documentation targets, exact changed-file scope and
 the Malachi/Zechariah/protected-file hashes pass; no new corpus test run is
 claimed for documentation-only edits. Required remote checks still govern merge.
 
+### 2026-10-05 — Malachi 2 16 interpretation and English applied as draft
+
+PR 24 merged at `d98f0a8f970c13091702e9652637a233ff85f8cf` after both
+exact-head corpus-integrity checks passed; local main fast-forwarded and its
+push was up to date. Against that baseline, the [Malachi decision](MALACHI_2_16_SOURCE_COMPARISON_2026-10-05.md)
+retains pointed WLC but provisionally reads a human subject conditionally:
+if he hates and divorces her, he covers his garment with violence. This changes
+agency, not Hebrew consonants or vowels. The finite use of the sending-away
+form is disputed; her is supplied. God-hates, first-person and command
+alternatives are disclosed. No universal divorce policy follows from the choice.
+
+Root checked Hugenberger's grammatical argument and the direct Branch/Watson
+counterarguments, distinguishing Watson's initial divine-subject analysis from
+his final human options. Exact inspected pages and the retained source PDF hash
+are recorded in the dossier/receipt. Published 4Q76 conditional wording is not
+newly deciphered ink or verbatim MT syntax; Swete and NETS are distinct edition
+controls. DJD/BHQ/Göttingen full apparatuses and other named originals remain
+unconsulted. No fresh letters, earliest-wording certification or canon change.
+
+Separate source and identity-withheld English assessments served different
+questions. A was a qualified English preference, not demonstrated fidelity
+superiority over the coherent divine-subject candidate. One application judge
+passed frozen candidate SHA256
+`92d227e38138412ac8354a0fd45053780af06f0101de09dc8711cf4cc220df14`.
+Root applied exact bytes as draft, preserving original generation and archived
+reasoning, resetting old agreement flags, and correcting the faithlessness
+anchor. The [receipt](../sources/textual_restoration/applications/mal2_16_application.2026-10-05.v1.json)
+records actual schema/history/packet checks, 24 reader-note tests, 18 footnote
+tests and full-reader guardrail passes. Actual export retains three chapters
+and 55 IDs; only MAL.2.16 changes. Initial footnote-audit invocation lacked
+PYTHONPATH and failed import; its corrected invocation passed and is the counted
+run. Five preexisting aggregate registry drifts were reproduced, not repinned;
+other historical validation debt was not rerun. Protected unrelated Genizah
+JSON remains untracked with its recorded hash unchanged.
+
+The PDF skill required native print checks; the documentation skill distinguishes
+applied outcomes from proposals and does not turn model review into scholarly
+certification. Public deployment and publication remain unapproved. The broader
+OT/NT comparison and damaged-ink calibration are unfinished. Canon research
+remains separate: textual attestation can justify study and a historical
+supplement, but cannot alone establish inspiration or universal inclusion.
+More tokens do not guarantee novelty. Continue with a bounded consequential
+case or a named work/recension reception study, not another agreement loop.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

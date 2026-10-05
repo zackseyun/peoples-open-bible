@@ -5149,6 +5149,31 @@ consequential passage before any new inventory, judge loop or infrastructure.
 PDF/documentation skills governed complete relevant-page inspection and
 targeted existing Git documentation; no new framework or reacquisition.
 
+### 2026-10-04 — Acts 24:6–8 connected forms and a digital pronoun loss
+
+The [connected-unit comparison](NT_SUPPLEMENT_ATTRIBUTION_AUDIT_2026-09-06.md#acts-24-6-through-8-connected-reading-comparison)
+supersedes the pending Acts queue. Reused the pinned SBL apparatus, checked
+actual byztxt v2.0.3 CCT originals and both CSV representations, and read
+surrounding Greek/POB. The main Byzantine source is shorter; the longer unit
+is separate. Its no-variants conversion drops both pronoun alternatives in a
+curly-braced block. The actual converter and local regex reproduce the loss;
+do not present it as an ancient omission or silently supply a pronoun.
+CSNTM's P74 date contradicts the historical third-century assertion; the full
+manuscript/version witness list is not newly certified.
+
+One counterargument review tested explanatory expansion against purposeful
+shortening. Retain source/main English provisionally, repair connected reader
+disclosures at 6/8, identify 7's supplemental role and keep it unexported.
+Archive historical review/source-claim objects; source strings and original
+generation objects remain unchanged. Earliest wording and Paul/Lysias choice
+in a longer translation remain unresolved. Exact evidence, schema debt,
+whole-book verification and reopening conditions are in the
+[receipt](../sources/textual_restoration/applications/acts24_6_8_connected.2026-10-04.v1.json).
+No blind English claim, fresh decipherment, canon expansion or deployment.
+Documentation skill guided surgical existing-document updates, not a new
+framework. Wider OT source comparison remains unfinished; this NT case does
+not shrink that objective or substitute for the incomplete image calibration.
+
 Append a dated entry for every substantive research pass: question; actually
 consulted sources and locators/versions; observations versus hypotheses;
 decision and contrary explanation; changed files and source/English effect;

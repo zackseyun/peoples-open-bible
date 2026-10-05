@@ -416,10 +416,11 @@ not become reasons to repeat completed source acquisition.
 1. Sirach 51:18–30's fidelity/disclosure batch is now
    [completed](SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md#remaining-poem-application).
    Do not reopen it as pending; earliest-form questions remain distinct.
-2. Next, for the NT track, compare Acts 24:6–8 as one unit using the pinned
-   [supplement audit](NT_SUPPLEMENT_ATTRIBUTION_AUDIT_2026-09-06.md).
-   Do not insert the isolated Lysias verse into a different surrounding form;
-   its effect on “from him” is a source/context question, not just a missing ID.
+2. The [Acts 24:6–8 connected comparison](NT_SUPPLEMENT_ATTRIBUTION_AUDIT_2026-09-06.md#acts-24-6-through-8-connected-reading-comparison)
+   is now completed at the edition/context level. Retain the shorter reader
+   provisionally; do not insert isolated Lysias wording. The underlying CCT
+   exposes a pronoun block lost in the convenience CSV, and the checked
+   Byzantine main text also retains the shorter unit. Priority remains open.
 3. For reception, complete a six-work comparison for Sirach, Tobit, Enoch,
    Jubilees, Barnabas and Hermas: exact text/recension, surviving witness,
    named community's reception and practical comparison value. Use existing
@@ -495,8 +496,8 @@ No book-list, canonical-status or reader-release change follows from this review
 Usefulness is not measured by producing a sensational reading or a canon
 expansion. A supported correction, a genuinely discriminating no-change
 decision, or a clearly identified unresolved form is valuable. Repeating an
-unchanged hold is not a new contribution. Continue with the linked Acts 24:6–8
-unit before opening another large research track; no fresh image claim bypasses
+unchanged hold is not a new contribution. The linked Acts 24:6–8 edition/context
+pass is finished; do not repeat it as a pending comparison. No fresh image claim bypasses
 the uncompleted calibration gate.
 
 ## Bounded continuation: what counts as a contribution
@@ -514,9 +515,10 @@ can continue now; damaged-ink recovery cannot yet be advertised as validated.
 Actual meaning-affecting provisional contributions already exist at 1 Samuel
 17:4 and Isaiah 53:11. Wider witness coverage, publication approval and public
 deployment are separate unfinished claims. No guaranteed discovery date or
-token threshold can be inferred from these cases. The next efficient milestone
-is the already identified Acts 24:6–8 unit, not a fresh global audit or the
-already finished Sirach batch.
+token threshold can be inferred from these cases. The later Acts 24:6–8
+edition/context pass is also finished, correcting source claims and a digital
+conversion loss without changing main English. Neither it nor Sirach should
+be reopened as unfinished delivery merely because earliest-form questions remain.
 
 For canon, use the six-work screen above as a queue for textual/reception
 study, not an automatic inclusion rule. Sirach and Tobit are already canonical

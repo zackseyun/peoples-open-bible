@@ -11,6 +11,21 @@ from tools import export_mobile_bible as exporter
 
 
 class ReaderSupplementTests(unittest.TestCase):
+    def test_actual_acts_24_does_not_insert_isolated_longer_verse(self):
+        actual_root = Path(__file__).resolve().parents[1] / 'translation'
+        record = yaml.safe_load((actual_root / 'nt/acts/024/007.yaml').read_text())
+        self.assertIs(record['reader_supplement'], False)
+        self.assertEqual(record['textual_status'], 'secondary_witness')
+        self.assertIn('not the checked RP main text', record['source']['note'])
+        self.assertIn('seventh century', record['critical_text_note'])
+        self.assertEqual(record['cross_check'], {'status': 'needs_review'})
+        with patch.object(exporter, 'TRANSLATION_ROOT', actual_root):
+            book = exporter.export_book('ACT')
+        chapter = next(c for c in book['chapters'] if c['chapter'] == 24)
+        self.assertNotIn(7, [v['verse'] for v in chapter['verses']])
+        self.assertIn(6, [v['verse'] for v in chapter['verses']])
+        self.assertIn(8, [v['verse'] for v in chapter['verses']])
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)

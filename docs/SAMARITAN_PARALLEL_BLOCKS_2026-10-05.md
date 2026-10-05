@@ -146,11 +146,11 @@ include Barnabas and Hermas. A labelled historical comparison library is a
 defensible outcome without changing POB's canon. A canonical recommendation
 requires a named tradition and its authority criteria.
 
-Next: compare the complete Exodus 20:21 expansion, including its prophet and
-obedience material, against its Deuteronomy parallels and the relevant critical
-apparatus. Stop at change, retain or hold; do not infer priority from this
-discovery receipt. Separately, identify an actually surviving Hebrew Jubilees
-passage overlapping a checkable Geʿez text before interpreting its relation to
-Genesis or canonical reception. Neither task requires another readiness audit
-or a judge-until-agreement loop. Reopen Numbers only for named discriminating
-manuscript, edition or transmission evidence.
+The subsequent [Exodus 20:21 comparison](EXODUS_20_21_SOURCE_COMPARISON_2026-10-05.md)
+now maps the complete expansion and adds a qualified draft note; its historical
+priority and disputed supplied verb remain held. The
+[Jubilees 1:27 overlap](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md#contribution-milestones-and-efficient-continuation)
+is located but still needs primary Hebrew and modern Geʿez apparatus checks.
+Neither task requires another readiness audit or judge-until-agreement loop.
+Reopen Numbers only for named discriminating manuscript, edition or transmission
+evidence; do not infer priority from this discovery receipt.

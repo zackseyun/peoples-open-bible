@@ -6098,6 +6098,52 @@ can matter without changing English. The verse, frozen queue, controlling
 method and protected Genizah file retain their exact bytes; no broad clean-
 suite or scholarly-publication claim follows.
 
+### 2026-10-05 — Samaritan parallels and Numbers 20 reader contribution
+
+The [new structural comparison](SAMARITAN_PARALLEL_BLOCKS_2026-10-05.md)
+searches all twenty frozen large leads against all 5,853 WLC verses and 5,841
+Samaritan nodes, excluding each target's own Samaritan node. Sixty-eight target
+spans have 502 control/reference alternatives; repeated formulas explain much
+of that count. The engine preserves all alternatives and complete raw partitions
+without exporting the private source strings. The old frozen screen is reproduced
+exactly, not repinned. This is discovery, not twenty historical adjudications.
+
+Root read Numbers 20:13–14 and the relevant Deuteronomy ranges in both controls,
+and the complete published 4Q27 fragment 13 i–14, lines 24–30. The latter has
+substantial supplied text; embedded comparisons are not preserved manuscript
+words. It does not attest the entire Samaritan extension or Edom commands.
+No fresh image reading, DJD plate collation or recovered letters is claimed.
+Dayfani's full publisher article/PDF remained inaccessible; bounded extracted
+passages support only the stated methodological caution, not a passage-specific
+priority decision. Private inputs and the QDR response are hash-bound.
+
+The longer narrative relocates Moses' plea, refusal and viewing/succession
+instructions to Meribah before the Edom episode. Harmonistic expansion is
+plausible, but an inherited fuller form shortened elsewhere remains possible.
+The [applied candidate](../sources/textual_restoration/candidates/numbers20_13.2026-10-05.v1.json)
+retains WLC and marker-free English, adds a qualified reader note and repairs
+the old holy-clause note anchor. Old review objects are archived exactly;
+draft/needs_review does not imply scholarly approval. The complete Numbers
+export retains 36 chapters/1,289 verses; only 20:13 differs.
+
+One engine agent and one bounded source assessor supplied distinct work; one
+fresh independent judge then checked the complete candidate, actual QDR block,
+receipt reproduction and focused tests. No blocking defect was found. The
+optional viewing-land detail was not required for the accurate note summary;
+no repeated judge loop followed. Thirteen engine tests, five application tests,
+28 reader regressions, complete reader validation, JSON, local links,
+protected input hashes and whitespace pass. The documentation skill kept the
+discovery, narrative consequence, reader contribution and canonical question
+separate. Neither model agreement nor additional tokens creates ancient evidence.
+
+The next source case is the complete Exodus 20:21 expansion and its critical
+apparatus; the separate Jubilees task first needs a surviving Hebrew/checkable
+Geʿez overlap. Stop each at change, retain or hold, not another readiness audit.
+PR 44 passed exact-head checks 111779061491 and 111778831145 and merged at
+`ecda5dafa7a928d83bd53f96b7b8dea06de4c847`. This new batch is separate work;
+its delivery is recorded only when observed. The controlling method and the
+unrelated untracked Genizah file retain their exact hashes.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

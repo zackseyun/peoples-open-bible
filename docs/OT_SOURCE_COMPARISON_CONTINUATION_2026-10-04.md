@@ -53,9 +53,12 @@ reception evidence and criteria for authority.
 
 ### Efficient next milestones
 
-Finish one consequential OT passage decision, including the Habakkuk 2:4
-comparison already in progress, before expanding the queue. Separately, the
-next additional-book comparison should be one Tobit passage whose surviving
+The subsequent [Habakkuk 2:4 comparison](HABAKKUK_2_4_SOURCE_COMPARISON_2026-10-04.md)
+now completes that named OT unit: retain WLC and main English provisionally,
+apply qualified suffix and lexical notes, and hold earlier wording for specific
+missing evidence. Supplied Desert clauses do not settle the suffix. This is
+not a meaning-changing source adoption or fresh decipherment. The next
+additional-book comparison should be one Tobit passage whose surviving
 Hebrew/Aramaic wording actually overlaps the relevant Greek forms. This is
 a proposed next task, not a completed fragment collation. Do not reopen the
 finished Sirach or Acts applications merely to obtain agreement.

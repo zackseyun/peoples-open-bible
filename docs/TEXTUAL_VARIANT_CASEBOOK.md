@@ -56,7 +56,10 @@ The [Amos 9:12 comparison](AMOS_9_12_SOURCE_COMPARISON_2026-09-06.md) separates
 Mur. 88's unbracketed Edom from its restored verb opening and distinguishes
 Swete's Greek main text, its reported Alexandrinus addition and Acts 15:17.
 It identifies a consequential apparatus-transcription error, but retains both
-current main translations. No Hebrew reconstruction is promoted from the quotation.
+current main translations. Its later [reader note application](AMOS_9_12_SOURCE_COMPARISON_2026-09-06.md#reader-note-application)
+now applies those distinctions and repairs the actual Amos/Acts note anchors,
+with source and marker-free English retained. No Hebrew reconstruction is
+promoted from the quotation.
 
 | Passage / issue | Evidence question | Existing POB source-note signals | Edition entries at anchor | Sources to collate |
 |---|---|---:|---:|---|

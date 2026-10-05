@@ -5023,6 +5023,61 @@ documentation or a public release.
 The defined batch is finished; the full all-book source objective remains
 active and incomplete.
 
+### 2026-10-04 — Amos and Acts comparison applied to reader notes
+
+Baseline `bcf4ea64258680133c67b32dbad1f15354646775`. The preceding bounded
+readiness review restated verified status but changed no authoritative state;
+this pass instead completes an existing OT comparison's reader application.
+See the [case report](AMOS_9_12_SOURCE_COMPARISON_2026-09-06.md#reader-note-application)
+and [exact application receipt](../sources/textual_restoration/applications/amos9_12_acts15_17_disclosure.2026-10-04.v1.json).
+
+Question: can readers distinguish Hebrew possessing Edom, Greek humanity
+seeking without an explicit object in Swete's main text, the apparatus's
+reported Alexandrinus Lord-object addition, and the explicit Lord in Acts?
+Decision: retain both declared source objects and marker-free English; apply
+the comparative notes and correct their actual phrase anchors. The original
+Amos note correctly identified the Acts form, not one uniform Greek tradition.
+The refinement supplies distinctions, not a newly discovered variant.
+
+Root rendered and inspected the complete existing Swete PDF page 51, printed
+p. 27, including verse 12 and its apparatus. The Lord-object addition confirms
+the earlier scoped OCR erratum. No Alexandrinus manuscript leaf was read and
+the raw AI output remains archival. The versioned Mur. 88 HTML again failed
+in the web reader; direct public HTTP retrieval succeeded and matched its
+previous hash. Its Edom is unbracketed, but the verb's distinguishing beginning
+is supplied. The published transcription is not new observation of ink.
+
+The Amos idiom note now follows the name clause and the variant note follows
+Edom. In Acts, notes follow Gentiles, the name clause and seeking the Lord as
+appropriate. Active Amos rationales now match Yahweh and preserve competing
+source explanations. Old review/revision objects and changed rationale arrays
+are archived with exact baseline file hashes, without inventing their original
+review input bindings. Both current records are draft/needs-review. Generation
+metadata, source objects and marker-free English are intact; both schemas pass.
+
+Actual before/after whole-book exports retain all 146 Amos and 1,002 Acts
+base-edition IDs. Only the two targeted records' text/notes change; source
+wording, verse numbering and all other exported content remain unchanged.
+Fourteen reader-note tests, eighteen footnote tests and complete reader-corpus
+validation pass. Source/generation blocks are byte-exact; new local link
+targets and Git whitespace checks pass. A direct test
+invocation initially lacked the repository import path; rerunning with the
+CI's PYTHONPATH setting passed. The receipt separates software validation,
+the exact independent application review and publication status. One bounded
+independent full-record review passed the two candidate hashes, schemas and
+preservation checks, independently reran the same 32 focused tests, and
+reproduced both actual whole-book export hashes/ID coverage. No further review
+loop or historical-priority approval followed. Required remote CI governs merge.
+
+The documentation skill keeps the evidence and decision in the existing case
+and log; the PDF skill governs the print check. No new framework, generated
+illustration, inferred ancient letters, external source acquisition campaign,
+reader bundle, public deployment, multilingual synchronization or canon change.
+The prior historical-selection reopening condition remains discriminating
+Greek transmission or additional direct Hebrew evidence. Missing evidence is
+not repaired by forcing the quotation and its source into the same words.
+The wider all-book goal remains active and incomplete.
+
 Append a dated entry for every substantive research pass: question; actually
 consulted sources and locators/versions; observations versus hypotheses;
 decision and contrary explanation; changed files and source/English effect;

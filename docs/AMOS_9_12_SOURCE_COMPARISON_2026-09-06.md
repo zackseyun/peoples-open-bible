@@ -4,7 +4,9 @@ Checked against repository baseline `0ab1c8cd75`. **Retain current Hebrew Amos
 and both POB main translations.** The comparison adds manuscript-transcription
 support for Edom, but not for the distinguishing letters of “possess.” It also
 corrects a consequential error in our machine transcription of Greek apparatus.
-No canonical change or new manuscript decipherment is made.
+No canonical change or new manuscript decipherment was made in that initial
+comparison. The later [reader note application](#reader-note-application)
+retains both source texts and main translations while applying its disclosure.
 
 ## Distinguish the actual evidence
 
@@ -88,6 +90,66 @@ generated letters cannot resolve a lacuna or validate an apparatus reading.
 - Canonical Amos YAML SHA256: `558d10b077e7b02fd8957db2ae92ea33eb74eaa036a39309c737fbc68428212c`.
 - Canonical Acts YAML SHA256: `3b51ec8b118d229af773bd3947b18b973feb8f6a16131125107bbfa7c4788154`.
 - Secondary digital Greek: [pinned Amos JSON](https://github.com/OpenScriptorium/lxx-morph/blob/c91f6b1e8fb3ba37df701e6ae31f675ace71a2b2/db/seeds/lxx_morph/amos.json), `ref == 'Amos 9:12'`, concatenate only `words[].surface`.
+
+## Reader note application
+
+At baseline `bcf4ea64258680133c67b32dbad1f15354646775`, the completed comparison
+still had not reached the verse notes. The initial Amos note was not a false
+claim that all Greek witnesses include the Lord: it explicitly described the
+Acts quotation. Its refinement makes the distinct Greek forms visible, and
+the Acts cross-reference now explains the change of participants and action
+rather than only the shared name idiom.
+
+Both declared source objects and marker-free English remain unchanged. This
+is a consequential disclosure application, not renewed historical selection:
+Hebrew Amos still describes possessing Edom; Acts still describes humanity
+seeking the Lord. No Greek retroversion becomes attested Hebrew, no quotation
+becomes an independent Hebrew witness, and no direction of Greek influence is
+asserted. The earlier retain decision and its reopening conditions stand.
+
+| Record | Applied reader change |
+|---|---|
+| Amos 9:12 | The variant note distinguishes Swete's Greek main text, its reported Alexandrinus Lord-object addition and Acts. It also distinguishes Mur. 88's preserved Edom from its supplied verb beginning. The idiom note moves to the name clause, and the variant note to Edom. |
+| Acts 15:17 | The comparison note moves to seeking the Lord; the nations alternative moves to Gentiles; the name-idiom alternative moves to its actual clause. The comparison states the differing Hebrew action and Greek forms without forcing either main translation into the other. |
+
+Active Amos rationales now match the retained Yahweh rendering and the
+comparison's actual evidence. Historical status, review/revision objects and
+the changed rationale arrays are preserved with the baseline file hashes;
+their old agreement scores do not certify these edits. Original generation
+metadata remains intact. Both records are draft/needs-review, not publication
+approved. Legacy lexicon labels are retained provenance, not claims of a new
+HALOT or BDAG consultation.
+
+Evidence was reused rather than expanded. The local Swete volume III PDF
+SHA-256 is `5f0bfffabf0e588fd32e15bdb24b027872616da219e7f02da3dbdc115cf97d85`.
+Complete PDF page 51, printed p. 27, was rendered and visually inspected:
+verse 12 lacks an explicit seek-object in the main text, and its apparatus
+has `ανθρωπων] + τον κν A`. This confirms the existing scoped erratum, not the
+rest of the machine transcription or a new reading of Alexandrinus's leaf.
+The dated Mur. 88 HTML was retrieved again for application verification and
+matches the existing hash above; the edition's reconstructed verb beginning
+remains inside square brackets. The current WLC and SBLGNT verse records
+provide the unchanged base-language controls.
+
+The raw AI apparatus text remains archival and erroneous at this unit. The
+application follows the inspected print instead. The existing Swete source
+helper strips apparatus and covers deuterocanonical books; neither verse here
+uses that raw apparatus as its declared source. No unused correction-overlay
+framework, new inference request, ImageGen image or source-language harmonization
+was added.
+
+The [application receipt](../sources/textual_restoration/applications/amos9_12_acts15_17_disclosure.2026-10-04.v1.json)
+records exact before/after bindings, review and actual book-export results.
+Export verification compares whole Amos and Acts against the pinned Git
+baseline, including ID coverage and note bodies, rather than treating a
+single-verse fixture as complete delivery evidence. Repository application,
+software checks and public deployment remain distinct claims. One independent
+full-record disclosure review passed the exact two candidate hashes and
+reproduced both full-book export hashes and ID coverage. Both schemas, fourteen
+reader-note tests and eighteen footnote tests pass; root's complete reader
+corpus validation also passes. This is not earliest-wording or whole-verse
+publication approval. Required remote CI governs merge. No reader bundle,
+public release, multilingual synchronization or canon change is asserted.
 
 The versioned Mur. 88 page required direct HTTP retrieval after the web reader
 failed. NET's Amos page was unavailable and contributes no evidence. An HTML

@@ -13,6 +13,50 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReaderFootnoteExportTests(unittest.TestCase):
+    def test_amos_acts_comparison_notes_are_anchored_to_their_actual_phrases(self):
+        cases = [
+            ('translation/ot/amos/009/012.yaml', {
+                'a': 'who are called by my name[a]',
+                'b': 'possess the remnant of Edom[b]',
+            }),
+            ('translation/nt/acts/015/017.yaml', {
+                'a': 'all the Gentiles[a]',
+                'b': 'on whom my name has been called[b]',
+                'c': 'may seek the Lord[c]',
+            }),
+        ]
+        for relative, anchors in cases:
+            with self.subTest(record=relative):
+                record = yaml.safe_load((ROOT / relative).read_text())
+                text = record['translation']['text']
+                for marker, phrase in anchors.items():
+                    self.assertIn(phrase, text)
+                    self.assertEqual(text.count(f'[{marker}]'), 1)
+                out = exporter._export_record_verse(int(record['id'].split('.')[-1]), record)
+                self.assertEqual(out['text'], text)
+                self.assertEqual(out['footnotes'], record['translation']['footnotes'])
+                marker = 'b' if record['id'] == 'AMO.9.12' else 'c'
+                note = next(n['text'] for n in out['footnotes'] if n['marker'] == marker)
+                for detail in ('Swete', 'without an explicit object', 'apparatus',
+                               'Codex Alexandrinus', 'Acts'):
+                    self.assertIn(detail, note)
+
+    def test_amos_acts_disclosure_preserves_distinct_source_forms_and_limits(self):
+        amos = yaml.safe_load((ROOT / 'translation/ot/amos/009/012.yaml').read_text())
+        acts = yaml.safe_load((ROOT / 'translation/nt/acts/015/017.yaml').read_text())
+        self.assertEqual(amos['source']['edition'], 'WLC')
+        self.assertIn('אֱדוֹם', amos['source']['text'])
+        self.assertIn('possess the remnant of Edom', amos['translation']['text'])
+        self.assertEqual(acts['source']['edition'], 'SBLGNT')
+        self.assertIn('τὸν κύριον', acts['source']['text'])
+        self.assertIn('remnant of mankind may seek the Lord', acts['translation']['text'])
+        note = next(n['text'] for n in amos['translation']['footnotes'] if n['marker'] == 'b')
+        self.assertIn('beginning of the verb is restored', note)
+        self.assertIn('earlier remains unresolved', note)
+        note = next(n['text'] for n in acts['translation']['footnotes'] if n['marker'] == 'c')
+        self.assertIn('not another Hebrew manuscript', note)
+        self.assertIn('proof of which Greek form influenced the other', note)
+
     def record(self):
         return {'translation': {'text': 'A disputed reading[a] and a supplied [word].',
                 'footnotes': [{'marker': 'a', 'text': 'A contrary witness.', 'reason': 'textual_variant'},

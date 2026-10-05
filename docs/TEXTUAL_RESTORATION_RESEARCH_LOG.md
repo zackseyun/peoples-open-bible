@@ -5896,6 +5896,49 @@ fresh decipherment, ImageGen evidence, canon decision or public deployment
 follows. Protected Genizah stays unchanged and unstaged; broader validation
 debt is not repinned away.
 
+### 2026-10-05 — Whole OT pointing queue and Proverbs 7 22
+
+The previous goal turn was a readiness reassessment, not new comparison progress.
+This pass instead completes a specific published-source unit and adds a
+[reproducible queue](UXLC_POINTING_TRIAGE_2026-10-05.md) for all 374 pointing-first
+rows in the existing two-input OT screen. PR 37 passed both exact-head checks
+and merged at `069dbad2bb72fc65ea05effb050ed67e94fda87f`; main was synchronized
+and pushed before the new branch was created.
+
+The reacquired, hash-identical UXLC archive reproduces all raw book data,
+differences and summary counts. The new operational categories retain 3
+alignment holds, 37 qere-involved holds, 225 dagesh/rafe-only rows, 2 shin/sin-dot
+rows and 107 other pointing rows. None is automatically dismissed as
+meaningless. Decalogue chapter context is a navigation flag only. This is
+post-hoc triage, not a blind benchmark, manuscript census or improvement rate.
+
+Root checked the actual Proverbs XML correction entry and publisher history;
+root and a bounded source assessor inspected complete Fox pages 17 and 146.
+UXLC reports qamats-to-segol at Proverbs 7:22. WLC already tags its form as a
+noun, and current English already gives slaughter. Fox's Leningrad siglum is
+explicitly BHS-mediated, not fresh codex attestation. The result is a documented
+source-correction lead with no demonstrated English change. Source, English,
+notes and review metadata stay byte-identical; the separate difficult final
+clause is not silently adjudicated.
+
+The documentation and PDF skills enforce separate claims and native-page
+checks. Fresh ink, new discovery, ImageGen evidence and publication approval
+are not claimed. The next discriminating OT question is Judges 20:48's vowel
+contrast, subject to actual publisher and grammar controls. Broader coverage,
+calibration and representative evaluation remain unfinished.
+
+Root's ten new focused tests and complete raw-archive reproduction pass; the
+ten tests are included in remote CI. Local link targets, whitespace and the
+unchanged Proverbs/Genizah hashes pass. The older comparator suite remains
+13 passes and one historical canonical-join pin failure at 2 Samuel 13:37,
+independently reproduced and not repinned. No clean full-suite or current
+historical-approval result is claimed.
+
+One bounded independent critique passed the new artifacts and CI addition,
+including native Fox source checks and actual raw reproduction. That pass is
+not approval of historical priority, fresh decipherment, the complete remote
+workflow or publication. Protected Genizah remains unchanged and unstaged.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

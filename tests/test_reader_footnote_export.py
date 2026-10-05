@@ -13,6 +13,43 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReaderFootnoteExportTests(unittest.TestCase):
+    def test_lamentations_junction_disclosure_and_phrase_anchors_reach_reader(self):
+        cases = [
+            (10, {'a': 'precious things[a]', 'b': 'nations[b]',
+                  'c': 'your assembly[c]', 'd': 'your assembly[c][d]'}),
+            (11, {'a': 'their precious things[a]', 'b': 'restore life[b]',
+                  'c': 'become despised[c]', 'd': 'restore life[b][d]'}),
+        ]
+        for verse, anchors in cases:
+            with self.subTest(verse=verse):
+                record = yaml.safe_load((ROOT / f'translation/ot/lamentations/001/{verse:03}.yaml').read_text())
+                text = record['translation']['text']
+                for marker, phrase in anchors.items():
+                    self.assertIn(phrase, text)
+                    self.assertEqual(text.count(f'[{marker}]'), 1)
+                out = exporter._export_record_verse(verse, record)
+                self.assertEqual(out['text'], text)
+                self.assertEqual(out['footnotes'], record['translation']['footnotes'])
+                note = next(n for n in out['footnotes'] if n['marker'] == 'd')
+                self.assertEqual(note['reason'], 'textual_variant')
+                for detail in ('Published 4Q111', 'retains the longer form',
+                               'historical priority remains unresolved'):
+                    self.assertIn(detail, note['text'])
+
+    def test_lamentations_junction_retains_declared_longer_source_and_english(self):
+        ten = yaml.safe_load((ROOT / 'translation/ot/lamentations/001/010.yaml').read_text())
+        eleven = yaml.safe_load((ROOT / 'translation/ot/lamentations/001/011.yaml').read_text())
+        self.assertEqual(ten['source']['edition'], 'WLC')
+        self.assertEqual(eleven['source']['edition'], 'WLC')
+        self.assertIn('your assembly', ten['translation']['text'])
+        self.assertIn('All her people groan, seeking bread; they have given', eleven['translation']['text'])
+        self.assertIn('their precious things', eleven['translation']['text'])
+        note = next(n['text'] for n in ten['translation']['footnotes'] if n['marker'] == 'd')
+        self.assertIn('eight Masoretic words', note)
+        self.assertIn('not merely a physical gap', note)
+        note = next(n['text'] for n in eleven['translation']['footnotes'] if n['marker'] == 'd')
+        self.assertIn('copying loss is plausible but not proven', note)
+
     def test_amos_acts_comparison_notes_are_anchored_to_their_actual_phrases(self):
         cases = [
             ('translation/ot/amos/009/012.yaml', {

@@ -38,6 +38,12 @@ identity. It retains source/main English at 1:32, 14:34 and 15:28; the qualified
 14:34 disclosure is applied and export-checked. Reopen these cases only for
 their specified missing evidence, not another acquisition or agreement loop.
 
+The [Lamentations 1:10–11 junction comparison](LAMENTATIONS_DSS_COMPARISON_2026-09-06.md#lamentations-1-10-and-1-11-junction-comparison)
+now tests the eight-word minus with a published argument and actual Greek
+print. Source/main English are retained provisionally, with the shorter form
+disclosed and note anchors repaired. Reopen for the case's discriminating
+evidence, not another whole-book screen or copying-error preference vote.
+
 The People's Open Bible will attempt this work independently with **Codex as
 the transcription, collation, and textual-reasoning system**. The project will
 not depend on commissioning new human diplomatic transcriptions or

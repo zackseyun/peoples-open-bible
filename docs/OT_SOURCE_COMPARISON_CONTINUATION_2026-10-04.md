@@ -2,6 +2,14 @@
 
 ## Latest assessment of the two research aims
 
+The subsequent [Malachi 2:16 decision](MALACHI_2_16_SOURCE_COMPARISON_2026-10-05.md)
+now applies a human-subject conditional as a draft against unchanged pointed
+Hebrew. This changes agency and the English meaning, not ancient letters.
+Disputed finite-infinitive syntax, supplied her, competing interpretations and
+incomplete apparatus coverage remain explicit. The receipt records actual
+scoped validation and five preexisting registry drifts. The October 4 Malachi
+lead below describes the earlier, unapplied stage, not the current result.
+
 The subsequent [Zechariah 12:10 comparison](ZECHARIAH_12_10_SOURCE_COMPARISON_2026-10-04.md)
 tests a consequential syntactic alternative against unchanged Hebrew, compares
 Greek forms and applies a compact English candidate with qualified disclosures.

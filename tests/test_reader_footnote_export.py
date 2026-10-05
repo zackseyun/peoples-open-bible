@@ -14,6 +14,53 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReaderFootnoteExportTests(unittest.TestCase):
+    def test_ecclesiastes_particle_notes_preserve_main_wording_and_disclose_limits(self):
+        expected = {
+            (5, 14): (
+                '8baaa514de9d861b2853a71eafa4ec956af336494dc541079f4fdc40b037416d',
+                'As he came from his mother’s womb, naked he will return, going as he came; and he will carry away nothing from his labor that he can take in his hand.',
+                'As[b] he',
+                ('editorially supplied', 'earlier wording and function remain uncertain'),
+            ),
+            (6, 8): (
+                '7b460d17c6704354252a91a966a5157f69edcca8cb961adeed2882b5d569777d',
+                'For what advantage does the wise man have over the fool? What advantage does the poor man have who knows how to conduct himself before the living?',
+                'the fool[b]?',
+                ('supplied or unidentified', 'admits an assertion', 'added question word',
+                 'Neither construction uniquely recovers Hebrew', 'earlier wording and function remain unresolved'),
+            ),
+        }
+        book = exporter.export_book('ECC')
+        self.assertEqual(len(book['chapters']), 12)
+        self.assertEqual(sum(len(c['verses']) for c in book['chapters']), 222)
+        for (chapter, number), (sha, plain, anchor, limits) in expected.items():
+            with self.subTest(chapter=chapter, verse=number):
+                raw = (ROOT / f'translation/ot/ecclesiastes/{chapter:03}/{number:03}.yaml').read_bytes()
+                self.assertEqual(hashlib.sha256(raw).hexdigest(), sha)
+                record = yaml.safe_load(raw)
+                verse = next(v for c in book['chapters'] if c['chapter'] == chapter
+                             for v in c['verses'] if v['verse'] == number)
+                self.assertEqual(verse['text'], record['translation']['text'])
+                self.assertEqual(verse['footnotes'], record['translation']['footnotes'])
+                self.assertEqual(verse['text'].replace('[a]', '').replace('[b]', ''), plain)
+                self.assertIn(anchor, verse['text'])
+                notes = {n['marker']: n for n in verse['footnotes']}
+                self.assertEqual(set(notes), {'a', 'b'})
+                self.assertEqual(notes['b']['reason'], 'textual_variant')
+                for phrase in limits:
+                    self.assertIn(phrase, notes['b']['text'])
+                for marker in notes:
+                    self.assertEqual(verse['text'].count(f'[{marker}]'), 1)
+                self.assertEqual(record['status'], 'draft')
+                self.assertEqual(record['cross_check'], {'status': 'needs_review'})
+                self.assertNotIn('source_audit', record)
+                archives = {h['field']: h for h in record['review_history']}
+                self.assertEqual(archives['status']['value'], 'revised')
+                self.assertEqual(archives['cross_check']['value']['status'], 'high_agreement')
+                self.assertFalse(archives['cross_check']['historical_review_inputs_verified'])
+                self.assertEqual(len(record['revisions']), 4)
+                self.assertEqual(record['revisions'][-1]['category'], 'footnotes')
+
     def test_ecclesiastes_7_5_preserves_explicit_generic_listener_and_qualified_scroll_note(self):
         raw = (ROOT / 'translation/ot/ecclesiastes/007/005.yaml').read_bytes()
         self.assertEqual(hashlib.sha256(raw).hexdigest(),

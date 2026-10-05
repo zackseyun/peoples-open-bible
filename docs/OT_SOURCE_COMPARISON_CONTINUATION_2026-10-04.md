@@ -77,8 +77,10 @@ Obtain a working ECM passage locator and exact witness/hand evidence before
 repeating the failed access route; then test the strongest contrary account and
 record change, retain or a precise hold. The subsequent
 [Ecclesiastes 5:14 and 6:8 comparison](ECCLESIASTES_DSS_COMPARISON_2026-09-06.md#ecclesiastes-5-14-and-6-8-particles-2026-10-05)
-now completes those bounded meaning questions with provisional retention;
-historical function/priority and unapplied reader disclosures remain open.
+now completes those bounded meaning questions with provisional retention.
+The subsequent [reader disclosure application](ECCLESIASTES_DSS_COMPARISON_2026-09-06.md#ecclesiastes-particle-reader-disclosures-2026-10-05)
+is locally verified with unchanged source/main English; historical
+function/priority and publication remain open.
 The initial requested assessment did not itself perform that comparison.
 
 For the reception track, compare one defined unit, provisionally 1 Enoch 1:9
@@ -291,8 +293,10 @@ connected context. Native Greek print materially strengthens the positive 6:8
 countercase: Swete's selected text lacks the interrogative reported in other
 witnesses, while NETS presents a different connected construction. Source/main
 English remain provisionally retained. Modern apparatus, translation-practice
-and supplied-clause limits remain named historical holds; reader disclosures
-are justified but unapplied. This is a completed bounded meaning comparison,
+and supplied-clause limits remain named historical holds. The later
+[reader-note application](../sources/textual_restoration/applications/ecclesiastes_particles_disclosures.2026-10-05.v1.json)
+is locally verified; it changes neither source nor marker-free main English.
+This is a completed bounded meaning comparison,
 not novel restoration, a canon inference or another readiness assessment.
 
 For the separate reception aim, prioritize one defined work and passage rather

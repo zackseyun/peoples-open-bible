@@ -114,7 +114,10 @@ def _parallel_source_payload(zone1_parallel: dict | None) -> tuple[list[dict[str
                 "note": "Greek fallback / consistency check alongside the Hebrew Vorlage.",
             }
         )
-        labels.append(_snapshot_label("Sefaria Ben Sira Kahana (Zone 1 Hebrew)"))
+        label = ("POB scoped Kahana 1912 print collation (Zone 1 Hebrew)"
+                 if zone1_parallel.get("edition") == "pob-kahana-1912-collated"
+                 else "Sefaria Ben Sira Kahana (Zone 1 Hebrew)")
+        labels.append(_snapshot_label(label))
     elif kind == "indirect_hebrew":
         parallel_sources.append(
             {
@@ -169,7 +172,7 @@ def _build_source_payload(
     if kind == "direct_hebrew":
         source_payload.update(
             {
-                "edition": "sefaria-ben-sira-kahana",
+                "edition": zone1_parallel.get("edition", "sefaria-ben-sira-kahana"),
                 "text": zone1_parallel.get("hebrew", ""),
                 "language": "Hebrew",
                 "note": zone1_parallel.get("note", ""),
@@ -177,6 +180,12 @@ def _build_source_payload(
         )
         parallel_sources[0]["text"] = verse.greek_text
         parallel_sources[0]["reference"] = verse.reference
+        if zone1_parallel.get("collation"):
+            source_payload["collation"] = zone1_parallel["collation"]
+            source_payload["pages"] = zone1_parallel["pages"]
+            # Swete scan flags do not validate the corrected Hebrew primary.
+            source_payload.pop("confidence", None)
+            source_payload.pop("validation", None)
     elif kind in {"indirect_hebrew", "mt_parallel"}:
         source_payload["note"] = (
             "Primary translation anchor remains the Greek; see parallel_sources for the Semitic / MT witness."
@@ -328,9 +337,10 @@ def build_deuterocanon_prompt(
 
 Reference: {verse.reference}
 ID: {verse.canonical_id}
-Source pages: {verse.source_pages or '(none recorded)'}
-Source confidence: {verse.source_confidence or 'unspecified'}
-Source validation: {verse.source_validation or 'unspecified'}
+Primary source pages: {source_payload.get('pages') or '(none recorded)'}
+Primary source confidence: {source_payload.get('confidence') or 'unspecified'}
+Primary source validation: {source_payload.get('validation') or 'unspecified'}
+Greek parallel scan pages: {verse.source_pages or '(none recorded)'}
 
 # Zone 1 primary source
 

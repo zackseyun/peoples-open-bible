@@ -26,6 +26,12 @@ applied records for another preference vote.
 More tokens are not a discovery guarantee, and canonical reception remains a
 separate question from textual reconstruction.
 
+The [remaining Sirach application](SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md#remaining-poem-application)
+finishes the 51:18–30 working-fidelity batch. Two print corrections now reach
+the source lookup and draft prompt; the person repair and notes reach the
+actual export. Earliest whole-poem selection remains unresolved. Do not
+repeat this completed batch or treat its scoped review as publication approval.
+
 The [Proverbs DSS screen](PROVERBS_DSS_COMPARISON_2026-10-04.md) compares 46
 published line records with 47 POB contexts, excluding the unresolved 4Q103a
 identity. It retains source/main English at 1:32, 14:34 and 15:28; the qualified

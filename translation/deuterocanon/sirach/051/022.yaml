@@ -15,8 +15,6 @@ source:
   - 769
   - 770
   - 771
-  confidence: high
-  validation: minor_mismatch
   note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced in sources/hebrew_sirach/README.md.
   parallel_sources:
   - edition: lxx-swete-1909
@@ -25,65 +23,22 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 51:22
 translation:
-  text: Yahweh has given me the reward of my lips[b][a]; therefore I acquired her as a good possession.
+  text: Yahweh has given me the reward of my lips[a]; therefore I acquired her[b] as a good possession[c].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Greek reads, 'The Lord gave me a tongue as my reward, and with it I will praise him.'
-    reason: alternative_reading
+    text: "'The reward of my lips' preserves the Hebrew relation without specifying whether it concerns speech, praise, or their reward."
+    reason: lexical_alternative
   - marker: b
-    text: '''Her'' refers to Wisdom in the surrounding context.'
+    text: "'Her' refers contextually to Wisdom; the feminine suffix alone does not independently establish personification."
     reason: cross_reference
+  - marker: c
+    text: Kahana print and digital text place acquisition here. Greek verse 21 has the good-possession clause; Greek verse 22 gives a tongue as reward and future praise. The consulted B transcription follows a different allocation.
+    reason: textual_variant
 lexical_decisions:
-- source_word: יְהֹוָה
-  chosen: the LORD
-  alternatives:
-  - Yahweh
-  - Jehovah
-  - the Lord
-  lexicon: HALOT
-  rationale: Follows project default for the divine name, preserving the Hebrew referent while matching established English convention.
-- source_word: שְׂכַר
-  chosen: reward
-  alternatives:
-  - wages
-  - recompense
-  lexicon: HALOT
-  rationale: '''Reward'' best fits the positive sense here and reads naturally in English; ''wages'' is possible but sounds overly transactional.'
-- source_word: שִׂפְתוֹתָי
-  chosen: my lips
-  alternatives:
-  - my speech
-  - my praise
-  lexicon: HALOT
-  rationale: A formally close rendering preserves the Hebrew idiom. In context it likely refers to praise or confession voiced by the speaker, but the concrete image 'lips' should be retained in the main text.
-- source_word: בַּעֲבוּר כֵּן
-  chosen: therefore
-  alternatives:
-  - for that reason
-  - because of this
-  lexicon: HALOT
-  rationale: This compactly conveys the causal/resultative force of the Hebrew phrase in readable English.
-- source_word: קְנִיתִיהָ
-  chosen: I acquired her
-  alternatives:
-  - I gained her
-  - I bought her
-  lexicon: HALOT
-  rationale: The verb commonly means acquire/buy. 'Acquired' preserves the broad sense without forcing a commercial nuance. The feminine suffix points back to Wisdom in the surrounding context.
-- source_word: קִנְיָן טוֹב
-  chosen: a good possession
-  alternatives:
-  - a good acquisition
-  - a precious possession
-  lexicon: HALOT
-  rationale: This keeps the wordplay with קנה ('acquire') and קנין ('possession/acquisition'). 'Good possession' is slightly formal but preserves the Hebrew linkage better than a looser paraphrase.
-- source_word: αἰνέσω αὐτόν
-  chosen: not adopted in main text
-  alternatives:
-  - and with it I will praise him
-  lexicon: BDAG
-  rationale: The Greek parallel diverges notably from the extant Hebrew, reading about praising God with the given tongue. Because the Hebrew witness is primary where extant, the main text follows Hebrew, while the Greek alternative is preserved in a footnote.
+- source_word: נָתַן יְהֹוָה לִי שְׂכַר שִׂפְתוֹתָי, בַּעֲבוּר כֵּן קְנִיתִיהָ קִנְיָן טוֹב.
+  chosen: Yahweh has given me the reward of my lips; therefore I acquired her as a good possession.
+  rationale: נָתַן Qal qatal 3ms; שְׂכַר construct with שִׂפְתוֹתָי 'my lips'; קְנִיתִיהָ Qal qatal 1cs with 3fs object; קִנְיָן טוֹב noun/adjective phrase. Yahweh matches the explicit Hebrew divine name and actual English. The reward-of-lips idiom remains open, and acquisition preserves the verb/noun linkage and feminine object. Content alignment with Greek verse 21 does not justify relocating the Kahana clause.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -103,36 +58,100 @@ ai_draft:
   - Skehan & Di Lella 1987, Anchor Bible 39
   - Ben-Hayyim 1973, Academy of the Hebrew Language
   revision_candidates: []
-status: revised
+status: draft
 theological_decisions:
-- issue: Primary source selection in a Hebrew/Greek divergence
-  chosen_reading: 'Follow the extant Hebrew text as the main line: the LORD gives reward, and the speaker acquires Wisdom as a good possession.'
-  alternative_readings:
-  - 'Follow the Greek: ''The Lord gave me a tongue as my reward, and with it I will praise him.'''
-  rationale: Per project philosophy for Sirach, Hebrew is primary where it survives. The Greek is still a real translation input and shows a substantially different line, so its reading should be preserved as an alternative rather than ignored.
-  doctrine_reference: 'PHILOSOPHY.md: translate Sirach from Hebrew where it survives; use Greek in view as parallel input.'
-revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:46:35Z'
-  unchanged: true
-  changes_summary: No changes needed.
-
+- issue: Interpretation of the Kahana Hebrew working form
+  chosen_reading: Retain the Hebrew working form with the stated interpretation and alternatives.
+  rationale: Yahweh matches the explicit Hebrew divine name and actual English. The reward-of-lips idiom remains open, and acquisition preserves the verb/noun linkage and feminine object. Content alignment with Greek verse 21 does not justify relocating the Kahana clause. This is source-fidelity application, not earliest-Hebrew priority or publication approval.
 cross_check:
-  status: high_agreement
-  agreement: 1.0
-  agreement_score: 1.0
-  agreement_min: 1.0
-  agreement_max: 1.0
-  verdict: agree
-  reviewed_at: '2026-04-21T23:14:02Z'
-  reviewer_model: gemini-3.1-pro-preview
-  strategy: v31_full_coverage
-  pass_count: 1
-  passes_with_issues: 0
-  models:
-  - gemini-3.1-pro-preview
-  strategies:
-  - v31_full_coverage
-  verdict_counts:
-    agree: 1
-  source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/051/022.job-52409.json
+  status: needs_review
+review_history:
+- baseline_commit: 3e81ddca9c5d02faec918083eba755b67c8eb9b7
+  baseline_sha256: 77552116bdac8158a782909eb20ecde4d3408370b55e4c672aa6061683a44192
+  candidate_prepared_at: '2026-10-05T00:09:39Z'
+  certifies_this_candidate: false
+  status: revised
+  source_confidence: high
+  source_validation: minor_mismatch
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T15:46:35Z'
+    unchanged: true
+    changes_summary: No changes needed.
+
+  cross_check:
+    status: high_agreement
+    agreement: 1.0
+    agreement_score: 1.0
+    agreement_min: 1.0
+    agreement_max: 1.0
+    verdict: agree
+    reviewed_at: '2026-04-21T23:14:02Z'
+    reviewer_model: gemini-3.1-pro-preview
+    strategy: v31_full_coverage
+    pass_count: 1
+    passes_with_issues: 0
+    models:
+    - gemini-3.1-pro-preview
+    strategies:
+    - v31_full_coverage
+    verdict_counts:
+      agree: 1
+    source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/051/022.job-52409.json
+  lexical_decisions:
+  - source_word: יְהֹוָה
+    chosen: the LORD
+    alternatives:
+    - Yahweh
+    - Jehovah
+    - the Lord
+    lexicon: HALOT
+    rationale: Follows project default for the divine name, preserving the Hebrew referent while matching established English convention.
+  - source_word: שְׂכַר
+    chosen: reward
+    alternatives:
+    - wages
+    - recompense
+    lexicon: HALOT
+    rationale: '''Reward'' best fits the positive sense here and reads naturally in English; ''wages'' is possible but sounds overly transactional.'
+  - source_word: שִׂפְתוֹתָי
+    chosen: my lips
+    alternatives:
+    - my speech
+    - my praise
+    lexicon: HALOT
+    rationale: A formally close rendering preserves the Hebrew idiom. In context it likely refers to praise or confession voiced by the speaker, but the concrete image 'lips' should be retained in the main text.
+  - source_word: בַּעֲבוּר כֵּן
+    chosen: therefore
+    alternatives:
+    - for that reason
+    - because of this
+    lexicon: HALOT
+    rationale: This compactly conveys the causal/resultative force of the Hebrew phrase in readable English.
+  - source_word: קְנִיתִיהָ
+    chosen: I acquired her
+    alternatives:
+    - I gained her
+    - I bought her
+    lexicon: HALOT
+    rationale: The verb commonly means acquire/buy. 'Acquired' preserves the broad sense without forcing a commercial nuance. The feminine suffix points back to Wisdom in the surrounding context.
+  - source_word: קִנְיָן טוֹב
+    chosen: a good possession
+    alternatives:
+    - a good acquisition
+    - a precious possession
+    lexicon: HALOT
+    rationale: This keeps the wordplay with קנה ('acquire') and קנין ('possession/acquisition'). 'Good possession' is slightly formal but preserves the Hebrew linkage better than a looser paraphrase.
+  - source_word: αἰνέσω αὐτόν
+    chosen: not adopted in main text
+    alternatives:
+    - and with it I will praise him
+    lexicon: BDAG
+    rationale: The Greek parallel diverges notably from the extant Hebrew, reading about praising God with the given tongue. Because the Hebrew witness is primary where extant, the main text follows Hebrew, while the Greek alternative is preserved in a footnote.
+  theological_decisions:
+  - issue: Primary source selection in a Hebrew/Greek divergence
+    chosen_reading: 'Follow the extant Hebrew text as the main line: the LORD gives reward, and the speaker acquires Wisdom as a good possession.'
+    alternative_readings:
+    - 'Follow the Greek: ''The Lord gave me a tongue as my reward, and with it I will praise him.'''
+    rationale: Per project philosophy for Sirach, Hebrew is primary where it survives. The Greek is still a real translation input and shows a substantially different line, so its reading should be preserved as an alternative rather than ignored.
+    doctrine_reference: 'PHILOSOPHY.md: translate Sirach from Hebrew where it survives; use Greek in view as parallel input.'

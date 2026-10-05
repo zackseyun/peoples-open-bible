@@ -82,6 +82,66 @@ verification, not another model vote. The final clause is a distinct question.
 
 ## Reproduction and acquisition
 
+### Proverbs 24 25 does not establish a different lexeme
+
+The next completed pointing comparison retains the
+[current verse](../translation/ot/proverbs/024/025.yaml) and its English,
+a blessing of good things. The frozen row contrasts `טוֹב` with `טֹוּב`,
+not ordinary `טוּב`. Removing the retained holam would silently substitute a
+different input. These are two transcriptions of the same Leningrad tradition,
+not two independent ancient witnesses.
+
+The complete matching correction in the pinned Proverbs XML says to move
+holam from waw to tet and add dagesh to waw. The
+[publisher entry](https://www.tanach.us/Changes/2023.10.19%20-%20Changes/2023.10.19%20-%20Changes.html#2023.06.09-25)
+locates word 6 at folio 418A, column 2, line 2. It describes a connected
+holam at the tet and a poorly shaped but dark, positioned waw dot. It reports
+BHL body text without the dot and BHLA with the dot but holam still on waw;
+neither edition was directly consulted. This confirms the intended published
+encoding, not our own manuscript-pixel reading or earliest pronunciation.
+
+The vendored OSHB/WLC marks the current last word as lemma 2896 b,
+`HAamsa`, following construct `בִרְכַּת`. Its adjective/substantive analysis
+fits good in context; it is not independent adjudication of UXLC. The
+[published GKC grammar](https://en.wikisource.org/wiki/Gesenius%27_Hebrew_Grammar/12),
+section 12 footnote 2, distinguishes the identical printed waw-dot shapes
+for dagesh and shureq. The retained preceding vowel prevents automatically
+reading the dot as ordinary shureq and changing the lexeme to goodness.
+An anomalous manuscript mark, overlapping correction or transcription issue
+remains a possible explanation, not an established physical finding.
+
+Root inspected Fox's complete native pages, printed 328–329 / PDF 350–351.
+The selected Hebrew displays the ordinary holam word. The verse-specific
+apparatus discusses Syriac poor versus rebukers in the first clause, not a
+good/goodness variant at the last word. That scope does not establish agreement
+of every witness or defeat the later publisher correction. Fox's Syriac
+edition-error diagnosis was read but its underlying editions were not newly
+collated. No new HALOT or BDB consultation is claimed.
+
+**Outcome:** retain source, English and existing notes provisionally. Hold
+acceptance of an exact new diplomatic transcription; do not infer a new lexeme
+or historical source preference from the digital contrast. Discriminating
+codex or apparatus evidence can reopen transcription even without an English
+change. Even independently
+established goodness would still require demonstrating an English consequence
+against the existing good-things wording. Reopen for discriminating codex or
+apparatus evidence, not another model vote. This deliberately selected case
+does not estimate the yield of the remaining queue.
+
+The [comparison receipt](../sources/textual_restoration/comparisons/proverbs24_25_pointing.2026-10-05.v1.json)
+pins the row, source controls and unchanged verse. No frozen queue entry is
+rewritten as adjudicated; its original status describes the generated screen.
+The bounded assessor's grammatical countercase and root's publisher/native-
+page inspection are distinct checks, not blinded image corroboration.
+The PDF skill required complete native pages; the documentation skill keeps
+reported marks, lexical inference and actual English effects separate.
+Ten focused queue tests, exact receipt-input/row checks, local link targets and
+whitespace pass. The verse, shared method, frozen queue and protected Genizah
+file remain unchanged. One final bounded critique prompted clearer separation
+of transcription reopening from English consequences and of undemonstrated
+novelty from a claim that novelty is impossible. It did not independently
+verify private sources or confer scholarly publication approval.
+
 The frozen screen SHA-256 is
 `f893ce50894b4f6890e218a3bd1ea44c3166e44abe4efba59e6d9fba66dca4e6`.
 The triage receipt pins that screen, its original comparator, protocol and book

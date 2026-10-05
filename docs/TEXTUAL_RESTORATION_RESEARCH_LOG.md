@@ -5759,6 +5759,33 @@ Genizah remain unchanged; scoped link/whitespace checks suffice without another
 corpus/export run. No fresh ink, ImageGen evidence, canon change, new ancient
 discovery, publication approval or renewed legacy review scores are claimed.
 
+### 2026-10-05 — Ecclesiastes particle disclosures applied
+
+The preceding user-facing readiness answer changed no authoritative state.
+This continuation completes the pending two-record reader application rather
+than repeating that audit. Comparison PR 33 passed both required exact-head
+checks and merged at `9b0b58c60b5dd5c096dc2890f86e0c3e92a14993`.
+
+The [case application](ECCLESIASTES_DSS_COMPARISON_2026-09-06.md#ecclesiastes-particle-reader-disclosures-2026-10-05)
+and [receipt](../sources/textual_restoration/applications/ecclesiastes_particles_disclosures.2026-10-05.v1.json)
+record two qualified notes: 5:14's published alternative opening particle and
+supplied surrounding clause, and 6:8's question/exclamation alternatives plus
+the affirmative-capable Greek and interrogative apparatus distinction. Hebrew
+and marker-free main English remain unchanged. Existing notes/anchors, lexical
+decisions, generation and old revisions are preserved; review values are
+archived exactly, not reused as current approval. Both records are draft and
+needs_review. Earlier wording/function and target modern apparatus remain held.
+
+One independent full-record application critique passed the frozen candidates,
+preservation/archives, note qualifications and actual targeted export test.
+Root's complete schema and old/new actual export comparison passed: 12 chapters,
+222 IDs, exactly two reader entries changed and 220 verse files byte-identical.
+All 27 reader-footnote and two rationale tests passed. The protected untracked
+Genizah file remains unchanged and unstaged. No global registry repin, fresh ink,
+new discovery, ImageGen evidence, scholarly approval, canon change or deployed
+reader verification is claimed. The documentation skill separates completed
+application from historical uncertainty; required remote CI still governs merge.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

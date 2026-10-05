@@ -589,8 +589,9 @@ choosing a positive whole-verse reading. DJD and the modern target apparatus
 remain unconsulted. These are specific historical holds, not a request for
 another general readiness or consensus review.
 
-The scoped comparison is complete; qualified reader disclosures are justified
-but not applied or export-verified here. Published attestation and source-priority
+At this comparison checkpoint, qualified reader disclosures were justified
+but not yet applied or export-verified. The later application is recorded below.
+Published attestation and source-priority
 confidence remain separate. One independent source-document critique passed
 the frozen factual/scope claims, including the Greek apparatus distinction;
 it did not certify historical priority, fresh ink or the root's hash checks.
@@ -611,3 +612,39 @@ protected unrelated Genizah hash, local file links, documentation-only diff
 scope and whitespace. No corpus/export rerun is needed when every verse byte
 remains unchanged.
 Existing broader registry debt is neither repaired nor silently repinned.
+
+## Ecclesiastes particle reader disclosures 2026 10 05
+
+The completed comparison now has two locally applied reader notes, with
+**Hebrew and marker-free main English unchanged**. The
+[application receipt](../sources/textual_restoration/applications/ecclesiastes_particles_disclosures.2026-10-05.v1.json)
+pins the complete records and actual checks against comparison commit
+`4e3074cb759e5032c6bed1c67c7661115ce9234f`. The comparison PR passed both
+required exact-head checks and merged at `9b0b58c60b5dd5c096dc2890f86e0c3e92a14993`;
+that delivery is distinct from this subsequent reader application.
+
+At 5:14, the new note on As distinguishes the published alternative particle
+from the editorially supplied birth/departure clause. At 6:8, the note on the
+first question explains question/exclamation possibilities and the selected
+Greek assertion versus its interrogative apparatus variation. It warns that
+neither construction uniquely recovers Hebrew wording. Both notes retain the
+Masoretic rendering provisionally and name unresolved earlier wording/function.
+No new source-priority judgment or fresh manuscript reading is made here.
+
+Existing notes, anchors, lexical decisions, generation provenance and every
+historical revision remain. Old review values are archived exactly; historical
+review inputs are not claimed verified. One new revision records each actual
+note change. Active records are draft/needs_review, not approved by inherited
+agreement scores. The independent full-record application critique passed both
+frozen candidates and the targeted export test; it is not human, blinded English
+or historical-priority certification.
+
+Complete-record schema, direct baseline/archive comparisons and marker checks
+pass. Actual old/new book exports retain 12 chapters and 222 verse IDs; only the
+two intended reader entries differ, with 220 verse files byte-identical. All
+27 reader-footnote tests and two rationale tests pass. The receipt records both
+book manifests and target hashes. The unrelated Genizah file is preserved.
+Broader registry debt remains disclosed and unrepinned. Publication, deployed
+reader behavior, modern-apparatus coverage and novel-reading calibration remain
+unproved; no ImageGen evidence or canon change follows. Reopen the source
+questions only for the discriminating evidence named above.

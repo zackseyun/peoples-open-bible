@@ -339,3 +339,59 @@ mismatch, with tense/mood alternatives disclosed. A new edition label without
 an actual source artifact and retrieval integration would not be a source
 repair. This print check alone approves neither a reconstructed earliest poem
 nor the whole remaining passage.
+
+## Remaining poem application
+
+Applied 51:18–30 against baseline
+`3e81ddca9c5d02faec918083eba755b67c8eb9b7`. The
+[application receipt](../sources/textual_restoration/applications/sirach51_remaining_application.2026-10-04.v1.json)
+binds all thirteen before/after records, the actual export and one independent
+review. The [scoped source collation](../sources/hebrew_sirach/kahana_1912/scoped_collation.v1.json)
+preserves the pinned digital base and restores only the printed hand/gates
+unit at 19 and extra yod at 29. It does not silently replace the digital base
+with manuscript B or an eclectic earliest poem.
+
+The new primary edition label at 19/29 is `pob-kahana-1912-collated`.
+Its pages identify the consulted PDF, not Swete's inherited scan metadata.
+The source lookup and real draft prompt receive the corrected text, artifact
+hash and explicit limits. Greek scan agreement flags are not reused to
+validate the corrected Hebrew. Comparing every usable pinned Hebrew lookup
+shows that only these two units change; the old vendored base is untouched.
+Both full former source objects remain in history and their digital wording
+remains a separate parallel. All thirteen existing Greek objects are retained.
+
+English 19 restores “My hand opened her gates, and I will make my way to her
+and gaze upon her.” Its entry/passage image and to/for-her preposition are
+preserved without claiming an explicitly printed “into her.” The same verse
+adopts continuing “I will not turn,” with retrospective poetic alternatives
+disclosed; “clung” remains. Verse 20's opening becomes devoted pursuit, an
+idiomatic rendering rather than a source change. Verse 28 now addresses
+“you will acquire,” correcting person while disclosing exhortative force.
+Other marker-free English is retained, including 29's old-age interpretation.
+The print's actual interleaved order is disclosed, not represented as the
+grouped digital verse order.
+
+The remaining notes now disclose 18's supply, 21–22's allocation, 24's
+different Greek question, 25's absent Greek speaking-clause pronoun, 26's
+burden/instruction difference, 27's small/young ambiguity and 30's gap versus
+omission distinction. Actual choices replace stale rationale fields; their
+historical objects, original generation metadata where present and revision
+records are preserved. Active status remains draft/needs-review. Missing
+original `ai_draft` at 19/20 is recorded, not invented: eleven schema checks
+pass, while these two retain only that known preexisting required-field debt.
+
+One bounded independent full-record review passed the exact thirteen record
+hashes and source-artifact hash in the receipt. Six source-integration tests,
+12 note-export tests, 18 footnote tests, four Masada-policy tests, complete
+reader validation, 29 catalog entries/artifacts and 150 Psalm checks pass.
+Actual Sirach export still has 48 chapters and 1,348 verses; only this batch's
+text and notes change. This verifies delivery behavior, not complete Sirach
+coverage or historical priority. No reader bundle, public deployment,
+multilingual synchronization, ancient pointing or publication approval is
+claimed. Existing printed/transcription evidence was reused; no fresh image
+decipherment or ImageGen evidence entered the source decisions.
+
+The fidelity/disclosure batch is finished. Reopen earliest-form decisions for
+discriminating transmission evidence or directly collated additional versions,
+not another preference vote on these same records. Wider source comparison
+and the complete Hebrew/Aramaic corpus remain unfinished.

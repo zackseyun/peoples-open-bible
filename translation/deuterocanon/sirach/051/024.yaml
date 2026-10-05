@@ -15,8 +15,6 @@ source:
   - 769
   - 770
   - 771
-  confidence: high
-  validation: minor_mismatch
   note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced in sources/hebrew_sirach/README.md.
   parallel_sources:
   - edition: lxx-swete-1909
@@ -25,47 +23,19 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 51:24
 translation:
-  text: How long will you lack these things[a], while your soul is very thirsty?
+  text: How long will you lack these things[a], while your soul is very thirsty[b]?
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'Hebrew: ''How long will you lack from these and these, and your soul will be very thirsty?'' The Greek parallel reads more idiomatically, ''How long do you say that you are lacking in these things, while your souls thirst greatly?'' The main text follows the Hebrew as primary while using the Greek to clarify the sense.'
-    reason: alternative_reading
+    text: Hebrew repeats 'these and these'; 'these things' leaves the exact objects of deprivation open.
+    reason: lexical_alternative
+  - marker: b
+    text: Hebrew asks 'How long' and has 'your soul will be very thirsty'. Stored Swete lacks the temporal question; it mentions speaking of deprivation and plural souls thirsting. Its opening may mean 'why' or 'because/that', rather than Hebrew's 'How long'.
+    reason: textual_variant
 lexical_decisions:
-- source_word: עַד מָתַי
-  chosen: How long
-  alternatives:
-  - Until when
-  lexicon: HALOT
-  rationale: Idiomatic temporal question introducing rebuke or exhortation; 'How long' is natural modern English and preserves the force.
-- source_word: תַחְסְרוּן
-  chosen: will you keep lacking
-  alternatives:
-  - will you be deprived of
-  - do you fall short of
-  lexicon: HALOT
-  rationale: From חסר, 'to lack, be without.' The imperfect in this interrogative context suggests ongoing condition, so 'will you keep lacking' captures the durative force better than a simple present.
-- source_word: מִן אֵלּוּ וְאֵלּוּ
-  chosen: these things
-  alternatives:
-  - these
-  - such things
-  lexicon: HALOT
-  rationale: The Hebrew phrase is somewhat awkward in isolation, and the Greek ἐν τούτοις supports reference to the matters just discussed. 'These things' gives a clear English object without over-specifying.
-- source_word: וְנַפְשְׁכֶם
-  chosen: your soul
-  alternatives:
-  - your life
-  - you yourselves
-  lexicon: HALOT
-  rationale: נפש can mean soul, life, or self. Here, with the predicate 'thirsty,' the idiom points to the inner person in longing. 'Your soul' preserves the anthropological weight and matches wisdom-style diction.
-- source_word: צְמֵאָה מְאֹד תִּהְיֶה
-  chosen: is very thirsty
-  alternatives:
-  - will be very thirsty
-  - thirsts greatly
-  lexicon: HALOT
-  rationale: The Hebrew has a future form 'will be,' while the Greek has present διψῶσι, 'are thirsty.' Given the parallel source and the likely rhetorical sense describing their current needy state, present English reads best while preserving the strong adverb 'very' from מְאֹד / σφόδρα.
+- source_word: עַד מָתַי תַחְסְרוּן מִן אֵלּוּ וְאֵלּוּ, וְנַפְשְׁכֶם צְמֵאָה מְאֹד תִּהְיֶה.
+  chosen: How long will you lack these things, while your soul is very thirsty?
+  rationale: עַד מָתַי 'until when/how long'; תַחְסְרוּן Qal yiqtol 2mp with extended ending; אֵלּוּ וְאֵלּוּ repeated plural demonstratives; נַפְשְׁכֶם singular noun with 2mp suffix; תִּהְיֶה Qal yiqtol 3fs agreeing with soul. The temporal question is explicit Hebrew, not stored Swete wording. Present English expresses the continuing rhetorical condition of the singular collective soul; Hebrew's imperfect 'will be' and Greek's differing number and opening are disclosed.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -85,20 +55,11 @@ ai_draft:
   - Skehan & Di Lella 1987, Anchor Bible 39
   - Ben-Hayyim 1973, Academy of the Hebrew Language
   revision_candidates: []
-status: revised
+status: draft
 theological_decisions:
-- issue: Anthropological sense of נֶפֶשׁ in wisdom exhortation
-  chosen_reading: your soul
-  alternative_readings:
-  - your life
-  - you yourselves
-  rationale: The verse speaks of deep desire and lack in a wisdom-instruction setting. Rendering נֶפֶשׁ as 'soul' preserves the text's existential and spiritual resonance without importing a technical doctrine of the soul. Alternatives are possible but flatten the register.
-  doctrine_reference: Translation philosophy §4, gender-accurate over gender-neutral; preserve source intent and theological tension rather than flattening.
-revision_pass:
-  model: doctrine-realignment
-  timestamp: '2026-05-18T02:58:17Z'
-  unchanged: false
-  changes_summary: 'doctrine_realignment: Sirach 51:24 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will you keep lacking''].'
+- issue: Interpretation of the Kahana Hebrew working form
+  chosen_reading: Retain the Hebrew working form with the stated interpretation and alternatives.
+  rationale: The temporal question is explicit Hebrew, not stored Swete wording. Present English expresses the continuing rhetorical condition of the singular collective soul; Hebrew's imperfect 'will be' and Greek's differing number and opening are disclosed. This is source-fidelity application, not earliest-Hebrew priority or publication approval.
 revisions:
 - timestamp: '2026-04-23T15:46:36Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -116,21 +77,79 @@ revisions:
   to: 'How long will you lack these things[a], while your soul is very thirsty?'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will you keep lacking''].'
 cross_check:
-  status: high_agreement
-  agreement: 0.9
-  agreement_score: 0.9
-  agreement_min: 0.9
-  agreement_max: 0.9
-  verdict: minor-issues
-  reviewed_at: '2026-04-21T23:14:03Z'
-  reviewer_model: gemini-3.1-pro-preview
-  strategy: v31_full_coverage
-  pass_count: 1
-  passes_with_issues: 1
-  models:
-  - gemini-3.1-pro-preview
-  strategies:
-  - v31_full_coverage
-  verdict_counts:
-    minor-issues: 1
-  source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/051/024.job-52411.json
+  status: needs_review
+review_history:
+- baseline_commit: 3e81ddca9c5d02faec918083eba755b67c8eb9b7
+  baseline_sha256: 27f960910d9bbafddcdac69145907ee42b57b35c86b30b3d31afdf50e0af461d
+  candidate_prepared_at: '2026-10-05T00:09:39Z'
+  certifies_this_candidate: false
+  status: revised
+  source_confidence: high
+  source_validation: minor_mismatch
+  revision_pass:
+    model: doctrine-realignment
+    timestamp: '2026-05-18T02:58:17Z'
+    unchanged: false
+    changes_summary: 'doctrine_realignment: Sirach 51:24 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will you keep lacking''].'
+  cross_check:
+    status: high_agreement
+    agreement: 0.9
+    agreement_score: 0.9
+    agreement_min: 0.9
+    agreement_max: 0.9
+    verdict: minor-issues
+    reviewed_at: '2026-04-21T23:14:03Z'
+    reviewer_model: gemini-3.1-pro-preview
+    strategy: v31_full_coverage
+    pass_count: 1
+    passes_with_issues: 1
+    models:
+    - gemini-3.1-pro-preview
+    strategies:
+    - v31_full_coverage
+    verdict_counts:
+      minor-issues: 1
+    source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/051/024.job-52411.json
+  lexical_decisions:
+  - source_word: עַד מָתַי
+    chosen: How long
+    alternatives:
+    - Until when
+    lexicon: HALOT
+    rationale: Idiomatic temporal question introducing rebuke or exhortation; 'How long' is natural modern English and preserves the force.
+  - source_word: תַחְסְרוּן
+    chosen: will you keep lacking
+    alternatives:
+    - will you be deprived of
+    - do you fall short of
+    lexicon: HALOT
+    rationale: From חסר, 'to lack, be without.' The imperfect in this interrogative context suggests ongoing condition, so 'will you keep lacking' captures the durative force better than a simple present.
+  - source_word: מִן אֵלּוּ וְאֵלּוּ
+    chosen: these things
+    alternatives:
+    - these
+    - such things
+    lexicon: HALOT
+    rationale: The Hebrew phrase is somewhat awkward in isolation, and the Greek ἐν τούτοις supports reference to the matters just discussed. 'These things' gives a clear English object without over-specifying.
+  - source_word: וְנַפְשְׁכֶם
+    chosen: your soul
+    alternatives:
+    - your life
+    - you yourselves
+    lexicon: HALOT
+    rationale: נפש can mean soul, life, or self. Here, with the predicate 'thirsty,' the idiom points to the inner person in longing. 'Your soul' preserves the anthropological weight and matches wisdom-style diction.
+  - source_word: צְמֵאָה מְאֹד תִּהְיֶה
+    chosen: is very thirsty
+    alternatives:
+    - will be very thirsty
+    - thirsts greatly
+    lexicon: HALOT
+    rationale: The Hebrew has a future form 'will be,' while the Greek has present διψῶσι, 'are thirsty.' Given the parallel source and the likely rhetorical sense describing their current needy state, present English reads best while preserving the strong adverb 'very' from מְאֹד / σφόδρα.
+  theological_decisions:
+  - issue: Anthropological sense of נֶפֶשׁ in wisdom exhortation
+    chosen_reading: your soul
+    alternative_readings:
+    - your life
+    - you yourselves
+    rationale: The verse speaks of deep desire and lack in a wisdom-instruction setting. Rendering נֶפֶשׁ as 'soul' preserves the text's existential and spiritual resonance without importing a technical doctrine of the soul. Alternatives are possible but flatten the register.
+    doctrine_reference: Translation philosophy §4, gender-accurate over gender-neutral; preserve source intent and theological tension rather than flattening.

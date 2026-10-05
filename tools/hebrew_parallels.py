@@ -7,7 +7,10 @@ the Hebrew/Aramaic witness must be consulted alongside the Greek:
   - **SIR (Sirach / Ben Sira)**: composed in Hebrew ~180 BC. ~2/3 of
     the Hebrew has been recovered (Cairo Geniza, Masada, Qumran).
     This module exposes Sefaria's CC0 Kahana-edition Hebrew text
-    (sources/lxx/hebrew_parallels/sefaria_ben_sira.json). The more
+    (sources/lxx/hebrew_parallels/sefaria_ben_sira.json), with two
+    explicitly labelled print corrections at 51:19 and 29. Those
+    corrections are a scoped digital collation, not an ancient witness.
+    The more
     direct scholarly editions live in sources/hebrew_sirach/ and are
     processed separately by the Sirach-specific pipeline.
 
@@ -48,6 +51,7 @@ Usage:
 from __future__ import annotations
 
 import json
+import hashlib
 import pathlib
 import re
 from dataclasses import dataclass
@@ -58,6 +62,7 @@ PARALLELS_DIR = REPO_ROOT / "sources" / "lxx" / "hebrew_parallels"
 WLC_DIR = REPO_ROOT / "sources" / "ot" / "wlc"
 
 SEFARIA_BEN_SIRA = PARALLELS_DIR / "sefaria_ben_sira.json"
+KAHANA_PRINT_COLLATION = REPO_ROOT / "sources" / "hebrew_sirach" / "kahana_1912" / "scoped_collation.v1.json"
 SEFARIA_TOBIT = PARALLELS_DIR / "sefaria_tobit.json"
 ESDRAS_ALIGNMENT = PARALLELS_DIR / "1esdras_mt_alignment.json"
 
@@ -217,6 +222,7 @@ def live_zone2_entries(book_code: str, chapter: int, verse: int) -> list[dict]:
 # ---- caches -----------------------------------------------------------------
 
 _SIR_CACHE: Optional[dict] = None
+_SIR_COLLATION_CACHE: Optional[dict] = None
 _TOB_CACHE: Optional[dict] = None
 _ESD_CACHE: Optional[dict] = None
 
@@ -226,6 +232,28 @@ def _load_sir() -> dict:
     if _SIR_CACHE is None:
         _SIR_CACHE = json.loads(SEFARIA_BEN_SIRA.read_text())
     return _SIR_CACHE
+
+
+def _load_sir_collation() -> dict:
+    """Fail closed if a scoped print correction no longer matches its base."""
+    global _SIR_COLLATION_CACHE
+    if _SIR_COLLATION_CACHE is None:
+        raw = KAHANA_PRINT_COLLATION.read_bytes()
+        data = json.loads(raw)
+        if hashlib.sha256(SEFARIA_BEN_SIRA.read_bytes()).hexdigest() != data["base"]["sha256"]:
+            raise ValueError("Kahana print collation base hash mismatch")
+        if set(data["records"]) != {"SIR.51.19", "SIR.51.29"}:
+            raise ValueError("Unexpected Kahana print collation scope")
+        base = _load_sir()
+        for ref, record in data["records"].items():
+            _, chapter, verse = ref.split(".")
+            original = next(v for v in base["chapters"][chapter]["verses"]
+                            if v["verse"] == int(verse))
+            if original["hebrew"] != record["base_text"]:
+                raise ValueError(f"Kahana print collation unit mismatch: {ref}")
+        data["artifact_sha256"] = hashlib.sha256(raw).hexdigest()
+        _SIR_COLLATION_CACHE = data
+    return _SIR_COLLATION_CACHE
 
 
 def _load_tob() -> dict:
@@ -251,6 +279,31 @@ def _lookup_sir(chapter: int, verse: int) -> Optional[dict]:
         return None
     for v in ch["verses"]:
         if v["verse"] == verse and v.get("hebrew"):
+            collation = (_load_sir_collation()
+                         if chapter == 51 and verse in (19, 29) else None)
+            corrected = collation["records"].get(f"SIR.{chapter}.{verse}") if collation else None
+            if corrected:
+                return {
+                    "kind": "direct_hebrew",
+                    "book_code": "SIR", "chapter": chapter, "verse": verse,
+                    "edition": collation["edition"],
+                    "hebrew": corrected["text"],
+                    "english_witness": "",
+                    "source": "POB scoped Kahana 1912 print collation",
+                    "license": "CC0 base; historical print text in project PD lane",
+                    "note": collation["note"],
+                    "pages": [collation["print"]["pdf_page_one_based"]],
+                    "collation": {
+                        "path": str(KAHANA_PRINT_COLLATION.relative_to(REPO_ROOT)),
+                        "sha256": collation["artifact_sha256"],
+                        "base_sha256": collation["base"]["sha256"],
+                        "printed_page": collation["print"]["printed_page"],
+                        "pdf_page_one_based": collation["print"]["pdf_page_one_based"],
+                        "source_type": collation["source_type"],
+                        "physical_print_order": collation["physical_print_order"],
+                        "earliest_hebrew_adjudicated": False,
+                    },
+                }
             return {
                 "kind": "direct_hebrew",
                 "book_code": "SIR",

@@ -10,8 +10,9 @@ Later sections record subsequent passes; the
 controlling; this document makes its execution and success criteria explicit.
 The later [Kahana print check](SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md#kahana-print-check-and-source-repair-opportunities)
 resolves the printed-edition access hold and identifies missing digital content;
-the remaining-poem application is still pending. Earlier dated assessments
-below retain their original scope.
+the subsequent [remaining-poem application](SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md#remaining-poem-application)
+now applies the scoped source corrections and fidelity/disclosure batch.
+Earlier dated assessments below retain their original scope.
 
 The full objective remains to find relevant surviving Old Testament sources,
 investigate recoverable wording, compare witnesses, establish the best-supported

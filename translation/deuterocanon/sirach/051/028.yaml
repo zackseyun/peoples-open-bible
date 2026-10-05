@@ -15,8 +15,6 @@ source:
   - 769
   - 770
   - 771
-  confidence: high
-  validation: agree
   note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced in sources/hebrew_sirach/README.md.
   parallel_sources:
   - edition: lxx-swete-1909
@@ -25,66 +23,22 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 51:28
 translation:
-  text: Many heard my instruction in my youth[b][a], and they acquired silver and gold by me.
+  text: Many heard my instruction in my youth[a], and you will acquire silver and gold[b] through me[c].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'Greek parallel: ''Receive instruction for a great amount of silver, and acquire much gold by it.'' The Hebrew witness here is declarative rather than imperative.'
-    reason: alternative_reading
+    text: Greek opens with a plural command to receive instruction for a large amount of silver, rather than Hebrew's retrospective report of many hearing the speaker in his youth.
+    reason: textual_variant
   - marker: b
-    text: Or 'by me' / 'in me.' The Hebrew phrase is compact; the rendering 'through me' takes the speaker's instruction as the means by which others gained wealth.
+    text: Pointed Hebrew addresses plural 'you', not 'they'. The imperfect permits promissory 'you will acquire' or exhortative 'acquire'; an English injunction would not mean Hebrew is pointed as an imperative. Greek has a plural imperative.
+    reason: lexical_alternative
+  - marker: c
+    text: Hebrew בִי may mean 'through me', 'by me' or 'in me'. The chosen wording interprets the speaker as the means; Greek instead has feminine 'in/by it', referring contextually to instruction.
     reason: lexical_alternative
 lexical_decisions:
-- source_word: רַבִּים
-  chosen: Many
-  alternatives:
-  - Many people
-  - Multitudes
-  lexicon: HALOT
-  rationale: Straightforward quantitative adjective/pronoun; 'Many' is concise and natural English.
-- source_word: שָׁמְעוּ
-  chosen: heard
-  alternatives:
-  - listened to
-  - obeyed
-  lexicon: HALOT
-  rationale: The basic sense is auditory reception. 'Obeyed' would overread the verb; 'heard' preserves the Hebrew while allowing the instructional context to imply attentive hearing.
-- source_word: לִמּוּדִי
-  chosen: my instruction
-  alternatives:
-  - my teaching
-  - what I taught
-  lexicon: HALOT
-  rationale: From למד in a noun form referring to teaching/instruction. 'My instruction' keeps the didactic tone and aligns well with the wisdom context; 'my teaching' is possible but slightly less formal.
-- source_word: בִּנְעֻרוֹתָי
-  chosen: in my youth
-  alternatives:
-  - in my younger years
-  - when I was young
-  lexicon: HALOT
-  rationale: The plural abstract noun denotes the period of youth. 'In my youth' is idiomatic and compact.
-- source_word: וְכֶסֶף וְזָהָב
-  chosen: silver and gold
-  alternatives:
-  - money and gold
-  lexicon: HALOT
-  rationale: The Hebrew names the precious metals directly; retaining 'silver and gold' preserves the concrete imagery and matches the Greek parallel's ἀργύριον and χρυσός.
-- source_word: תִּקְנוּ
-  chosen: acquired
-  alternatives:
-  - obtained
-  - bought
-  - gained
-  lexicon: HALOT
-  rationale: The verb קנה commonly means acquire/get. Because the object is 'silver and gold,' 'acquired' fits the Hebrew syntax better than importing the Greek imperative sense ('acquire') as a command. 'Bought' would require an explicit object purchased, which the Hebrew does not supply.
-- source_word: בִּי
-  chosen: through me
-  alternatives:
-  - by me
-  - in me
-  - because of me
-  lexicon: HALOT
-  rationale: 'The preposition with first-person suffix is difficult in context. The Hebrew most naturally indicates instrumentality or mediation: people gained wealth by means of the speaker''s instruction. The Greek parallel has ἐν αὐτῇ (''in it,'' i.e., in instruction/wisdom), which supports a mediating sense rather than a strictly locative one. ''Through me'' best captures the Hebrew wording while remaining intelligible.'
+- source_word: רַבִּים שָׁמְעוּ לִמּוּדִי בִּנְעֻרוֹתָי, וְכֶסֶף וְזָהָב תִּקְנוּ בִי.
+  chosen: Many heard my instruction in my youth, and you will acquire silver and gold through me.
+  rationale: שָׁמְעוּ Qal qatal 3cp with רַבִּים subject; לִמּוּדִי noun with 1cs suffix; בִּנְעֻרוֹתָי youth noun with 1cs suffix; תִּקְנוּ Qal yiqtol 2mp of קנה, not qatal 3cp; בִי preposition with 1cs suffix. The completed third-person hearing clause is followed by Qal imperfect second-person plural תִּקְנוּ, not 'they acquired'. Future English is a promissory preference; exhortative force remains open without repointing. 'Through me' is an instrumental interpretation matching the actual English and note.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -104,20 +58,11 @@ ai_draft:
   - Skehan & Di Lella 1987, Anchor Bible 39
   - Ben-Hayyim 1973, Academy of the Hebrew Language
   revision_candidates: []
-status: revised
+status: draft
 theological_decisions:
-- issue: Relation between the Hebrew wording and the Greek parallel in the second colon
-  chosen_reading: Translate the Hebrew as a statement about others gaining wealth through the speaker's instruction, while allowing the Greek to inform the mediating sense.
-  alternative_readings:
-  - 'Take the line imperatively from the Greek: ''Receive instruction for a great sum of silver, and acquire much gold by it.'''
-  - Render בִּי more literally as 'in me' and leave the sense more opaque.
-  rationale: Zone 1 gives a high-confidence Hebrew witness, which is primary for extant Hebrew Sirach. The Hebrew syntax is declarative ('Many heard... and they acquired...'), unlike the Greek imperative. Since the task requires keeping the Greek in view, the Greek parallel is used to clarify that the final prepositional phrase likely expresses means connected with instruction/wisdom. The main text therefore follows the Hebrew witness while preserving the notable Greek alternative in a footnote.
-  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; use Greek parallel as actual input without displacing the more original extant witness.'
-revision_pass:
-  model: doctrine-realignment
-  timestamp: '2026-05-18T02:58:50Z'
-  unchanged: false
-  changes_summary: 'doctrine_realignment: Sirach 51:28 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''through me''].'
+- issue: Interpretation of the Kahana Hebrew working form
+  chosen_reading: Retain the Hebrew working form with the stated interpretation and alternatives.
+  rationale: The completed third-person hearing clause is followed by Qal imperfect second-person plural תִּקְנוּ, not 'they acquired'. Future English is a promissory preference; exhortative force remains open without repointing. 'Through me' is an instrumental interpretation matching the actual English and note. This is source-fidelity application, not earliest-Hebrew priority or publication approval.
 revisions:
 - timestamp: '2026-04-23T15:46:38Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -135,21 +80,95 @@ revisions:
   to: 'Many heard my instruction in my youth[b][a], and they acquired silver and gold by me.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''through me''].'
 cross_check:
-  status: moderate_agreement
-  agreement: 0.8
-  agreement_score: 0.8
-  agreement_min: 0.8
-  agreement_max: 0.8
-  verdict: major-issues
-  reviewed_at: '2026-04-21T23:14:37Z'
-  reviewer_model: gemini-3.1-pro-preview
-  strategy: v31_full_coverage
-  pass_count: 1
-  passes_with_issues: 1
-  models:
-  - gemini-3.1-pro-preview
-  strategies:
-  - v31_full_coverage
-  verdict_counts:
-    major-issues: 1
-  source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/051/028.job-52415.json
+  status: needs_review
+review_history:
+- baseline_commit: 3e81ddca9c5d02faec918083eba755b67c8eb9b7
+  baseline_sha256: beadaa6b1b6f1d81deb437a0f42bc713e20f5acdbcd1af19229e7782fefdb80e
+  candidate_prepared_at: '2026-10-05T00:09:39Z'
+  certifies_this_candidate: false
+  status: revised
+  source_confidence: high
+  source_validation: agree
+  revision_pass:
+    model: doctrine-realignment
+    timestamp: '2026-05-18T02:58:50Z'
+    unchanged: false
+    changes_summary: 'doctrine_realignment: Sirach 51:28 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''through me''].'
+  cross_check:
+    status: moderate_agreement
+    agreement: 0.8
+    agreement_score: 0.8
+    agreement_min: 0.8
+    agreement_max: 0.8
+    verdict: major-issues
+    reviewed_at: '2026-04-21T23:14:37Z'
+    reviewer_model: gemini-3.1-pro-preview
+    strategy: v31_full_coverage
+    pass_count: 1
+    passes_with_issues: 1
+    models:
+    - gemini-3.1-pro-preview
+    strategies:
+    - v31_full_coverage
+    verdict_counts:
+      major-issues: 1
+    source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/051/028.job-52415.json
+  lexical_decisions:
+  - source_word: רַבִּים
+    chosen: Many
+    alternatives:
+    - Many people
+    - Multitudes
+    lexicon: HALOT
+    rationale: Straightforward quantitative adjective/pronoun; 'Many' is concise and natural English.
+  - source_word: שָׁמְעוּ
+    chosen: heard
+    alternatives:
+    - listened to
+    - obeyed
+    lexicon: HALOT
+    rationale: The basic sense is auditory reception. 'Obeyed' would overread the verb; 'heard' preserves the Hebrew while allowing the instructional context to imply attentive hearing.
+  - source_word: לִמּוּדִי
+    chosen: my instruction
+    alternatives:
+    - my teaching
+    - what I taught
+    lexicon: HALOT
+    rationale: From למד in a noun form referring to teaching/instruction. 'My instruction' keeps the didactic tone and aligns well with the wisdom context; 'my teaching' is possible but slightly less formal.
+  - source_word: בִּנְעֻרוֹתָי
+    chosen: in my youth
+    alternatives:
+    - in my younger years
+    - when I was young
+    lexicon: HALOT
+    rationale: The plural abstract noun denotes the period of youth. 'In my youth' is idiomatic and compact.
+  - source_word: וְכֶסֶף וְזָהָב
+    chosen: silver and gold
+    alternatives:
+    - money and gold
+    lexicon: HALOT
+    rationale: The Hebrew names the precious metals directly; retaining 'silver and gold' preserves the concrete imagery and matches the Greek parallel's ἀργύριον and χρυσός.
+  - source_word: תִּקְנוּ
+    chosen: acquired
+    alternatives:
+    - obtained
+    - bought
+    - gained
+    lexicon: HALOT
+    rationale: The verb קנה commonly means acquire/get. Because the object is 'silver and gold,' 'acquired' fits the Hebrew syntax better than importing the Greek imperative sense ('acquire') as a command. 'Bought' would require an explicit object purchased, which the Hebrew does not supply.
+  - source_word: בִּי
+    chosen: through me
+    alternatives:
+    - by me
+    - in me
+    - because of me
+    lexicon: HALOT
+    rationale: 'The preposition with first-person suffix is difficult in context. The Hebrew most naturally indicates instrumentality or mediation: people gained wealth by means of the speaker''s instruction. The Greek parallel has ἐν αὐτῇ (''in it,'' i.e., in instruction/wisdom), which supports a mediating sense rather than a strictly locative one. ''Through me'' best captures the Hebrew wording while remaining intelligible.'
+  theological_decisions:
+  - issue: Relation between the Hebrew wording and the Greek parallel in the second colon
+    chosen_reading: Translate the Hebrew as a statement about others gaining wealth through the speaker's instruction, while allowing the Greek to inform the mediating sense.
+    alternative_readings:
+    - 'Take the line imperatively from the Greek: ''Receive instruction for a great sum of silver, and acquire much gold by it.'''
+    - Render בִּי more literally as 'in me' and leave the sense more opaque.
+    rationale: Zone 1 gives a high-confidence Hebrew witness, which is primary for extant Hebrew Sirach. The Hebrew syntax is declarative ('Many heard... and they acquired...'), unlike the Greek imperative. Since the task requires keeping the Greek in view, the Greek parallel is used to clarify that the final prepositional phrase likely expresses means connected with instruction/wisdom. The main text therefore follows the Hebrew witness while preserving the notable Greek alternative in a footnote.
+    doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; use Greek parallel as actual input without displacing the more original extant witness.'

@@ -4968,6 +4968,61 @@ baseline consistency, not an approved translation or earliest source text.
 No local full-corpus rerun was needed for this prose-only change; required
 remote CI still governs merge. The unrelated Genizah file remains untouched.
 
+### 2026-10-04 — Remaining Sirach source and English application
+
+The preceding turn was progress: it resolved the print access hold with
+evidence changing the next source action. This pass applies the actual
+51:18–30 fidelity/disclosure batch against main
+`3e81ddca9c5d02faec918083eba755b67c8eb9b7`, rather than another readiness
+assessment. A source-only candidate agent edited the thirteen working records;
+root integrated the two-unit historical-print collation and actual prompt
+retrieval. The [case](SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md#remaining-poem-application)
+and [receipt](../sources/textual_restoration/applications/sirach51_remaining_application.2026-10-04.v1.json)
+record exact changes and bounds. No new methodology framework or corpus
+acquisition was needed.
+
+Restored the missing printed 19-star hand/gates unit and 29's additional yod
+under an honest scoped source ID, retaining original source objects and
+digital parallels. Corrected 28's person mismatch; 19's future preference is
+separately marked interpretive; 20 receives idiomatic devoted pursuit. Other
+marker-free English remains unchanged. Notes and active rationales correct
+source-form claims and anchors; historical reviews and generation/revision
+objects remain intact. Original generation metadata at 19/20 is absent and
+not fabricated. Eleven schema checks pass; those two retain only that known
+required-field debt, with current philosophy supplied truthfully.
+
+Evidence reuse: the already verified printed Kahana page, published QDR units
+and Swete control remain the comparison basis. Root re-inspected the existing
+hand-verb detail for the normalized print insertion. No newly read ancient
+pixels, absent ink restoration, copied scholarly English, new Syriac collation
+or canon change. PDF skill governs visual reading; documentation skill keeps
+the actual decisions and objections in the existing case/log. The print
+collation distinguishes editorial vowels and punctuation from manuscript
+attestation and does not assert an earliest poem.
+
+One independent full-record application review passed the exact thirteen
+candidate hashes and source-artifact hash. Root's real prompt checks receive
+the corrected text/identity without Greek agreement flags; complete pinned
+Hebrew lookup comparison changes only19/29. Actual Sirach export preserves
+48 chapters, 1,348 verses and all other content; only18–30 text/notes differ.
+Six new integration tests, 12 export tests, 18 footnote tests, four policy
+tests, complete reader validation, catalog and Psalm checks pass locally.
+Tests establish software/provenance consistency, not historical truth or
+publication approval. Required remote CI still governs merge.
+
+Preparation failures were corrected before final verification: oversized
+patch output, relative path/hunk syntax, mock-cache setup, the actual prompt
+builder function name and the direct test import path. Failed patch attempts
+made no partial edits. A completed read-only export check whose output was
+not retained was rerun after confirming the process had terminated; the
+receipt uses the captured successful run. The unrelated Genizah record is
+untouched. No bundle, deployment or multilingual synchronization is asserted.
+Final receipt/reviewer hash bindings, 281 local linked file targets and Git
+whitespace checks pass; the independent review did not certify unwritten
+documentation or a public release.
+The defined batch is finished; the full all-book source objective remains
+active and incomplete.
+
 Append a dated entry for every substantive research pass: question; actually
 consulted sources and locators/versions; observations versus hypotheses;
 decision and contrary explanation; changed files and source/English effect;

@@ -98,6 +98,15 @@ Other table ranges are not newly verified by this pass.
 
 ## Methodology
 
+The [scoped Kahana print collation](kahana_1912/scoped_collation.v1.json)
+corrects two digital units at 51:19 and 29 against printed p.100 / PDF p.118.
+It retains the pinned digital base, restores the missing 19-star hand/gates
+unit and the extra yod at 29, and records editorial pointing and normalization.
+The source lookup and draft prompt use `pob-kahana-1912-collated` for these
+two units only. This is not a whole-print diplomatic transcription or the
+earliest Hebrew poem; the [case](../../docs/SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md#kahana-print-check-and-source-repair-opportunities)
+explains the differing forms and actual observations. The scan is not vendored.
+
 Every verse of Sirach in POB will declare its primary-source witness
 in the per-verse YAML:
 

@@ -71,6 +71,7 @@ as primary input for translation. Output is free to derive from these.
 |---|---|---|
 | Our Swete OCR | CC-BY 4.0 (ours) / source PD | `sources/lxx/swete/final_corpus_adjudicated/` |
 | Sefaria Ben Sira (Kahana) | CC0 | `sources/lxx/hebrew_parallels/sefaria_ben_sira.json` |
+| Scoped Kahana 1912 print collation | CC0 digital base plus historical printed Hebrew in the PD lane; scan not vendored | `sources/hebrew_sirach/kahana_1912/scoped_collation.v1.json` |
 | Sefaria Tobit (Neubauer 1878) | Public Domain | `sources/lxx/hebrew_parallels/sefaria_tobit.json` |
 | WLC (Westminster Leningrad Codex) | Public Domain | `sources/ot/wlc/` |
 | Schechter 1899 *Wisdom of Ben Sira* | Public Domain | `sources/hebrew_sirach/schechter_1899/` |

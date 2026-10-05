@@ -17,6 +17,14 @@ subsequently delivers an already completed OT comparison without harmonizing
 the two books or changing their main wording.
 Earlier dated assessments below retain their original scope.
 
+The [Lamentations 1:10–11 junction comparison](LAMENTATIONS_DSS_COMPARISON_2026-09-06.md#lamentations-1-10-and-1-11-junction-comparison)
+subsequently tests a consequential eight-word minus against the published
+argument and actual Greek print. It retains source/main English provisionally
+and applies qualified reader disclosures; this is not a fresh decipherment.
+The same pass corrects the obsolete source-quality and Masada claims in
+[DEUTEROCANONICAL.md](../DEUTEROCANONICAL.md#position-assessment--where-we-stand-per-book)
+to match the existing operational policy. No canon change follows.
+
 The full objective remains to find relevant surviving Old Testament sources,
 investigate recoverable wording, compare witnesses, establish the best-supported
 attainable Hebrew/Aramaic corpus, and assess the effect on POB English. A bounded

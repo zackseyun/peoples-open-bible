@@ -8,7 +8,9 @@ The four Lamentations records in the pinned QDR snapshot contain consequential
 differences, including linked changes in voice, wording and order. Preserve
 these as comparison candidates, not isolated words to insert into POB.
 No canonical Hebrew, English or notes changed in the initial screen. The
-follow-up below subsequently applies a disclosure to 1:7. This is not a complete census
+follow-up below subsequently applies a disclosure to 1:7, and the
+[junction comparison](#lamentations-1-10-and-1-11-junction-comparison) adds
+disclosures at 1:10–11. This is not a complete census
 of discovered witnesses or a completed Lamentations critical text.
 
 The [excerpt follow-up](#excerpt-coverage-follow-up--2026-09-07) adds 4Q176
@@ -309,3 +311,99 @@ No corpus was imported or relicensed, no image rights changed, and no translatio
 changed. Record rights per actual artifact/provider/version, not merely by the
 shared manuscript name or the similar project names. This corrects a metadata
 error; it is not a legal clearance of every downstream use.
+
+## Lamentations 1 10 and 1 11 junction comparison
+
+Compared 2026-10-04 against main `3ca139c18007bafda7d12018904e77db93015345`.
+Decision: retain the longer WLC source and marker-free English provisionally;
+disclose the shorter 4Q111 form. Its omission is attested in the published
+transcription, but historical priority and the exact copying mechanism remain
+unresolved. This completes the bounded junction comparison, not the linked
+voice variants or the whole Lamentations critical text.
+
+### Evidence actually consulted
+
+The [versioned Qumran-Digital transcription](https://lexicon.qumran-digital.org/transcriptions/4Q111/2026-05-21/index.html?v=2026-05-21)
+has `לוא יבואו` followed directly by `מחמדיה` in unit 3, line 1. No supply
+bracket interrupts that junction. Compared with the WLC sequence, eight words
+are absent: `בקהל לך כל עמה נאנחים מבקשים לחם נתנו`. Most preceding material
+in unit 2, line 11 is supplied; it must not become independent preserved
+context. Uncertainty within the food word and the editorial yod annotation
+later in line 1 do not create a gap at the junction. The linked 3Q3 parallel
+is not 4Q111's own text or an independently verified supporting reading.
+The page displays CC BY-SA 4.0 with DFG project 465277421 attribution; no full
+transcription or photograph is imported or relicensed by this comparison.
+
+Root read Kotzé, [*Lamentations 1:8a in the Wordings of the Masoretic Text and
+4QLam*](https://scriptura.journals.ac.za/pub/article/download/110/118),
+*Scriptura* 110 (2012), printed pp.192, 198–201; pp.192 and 201 were inspected
+as complete rendered pages, including footnotes and appendix conventions.
+Page 192 note 12 calls this a repeated-ending copying loss; p.198 distinguishes
+it from damaged material, while p.201 labels it an error. These are the
+author's evaluations, not observed ancient copying events. The paper focuses
+on 1:8, not a full adjudication of this junction. Its omission row lists MT,
+Syriac and Latin but not Greek; silence there does not establish Greek absence.
+
+The former temporary digital Greek control is no longer present. Instead,
+root inspected the complete existing Swete volume III (1905) PDF page 386,
+printed p.362, including the apparatus. Its selected Greek has `εἰς ἐκκλησίαν
+σου`, the people groaning and seeking bread, and the giving verb before the
+possessions/food phrase. It also has **her** possessions, agreeing with 4Q111
+on that pronoun while retaining the longer sequence. The apparatus reports
+local variation, including omission of bread in Sinaiticus; this is not the
+whole eight-word minus. This control supports the longer structure, not Greek
+unanimity or a uniquely reconstructable Hebrew exemplar. Input hashes and
+exact application checks are in the
+[receipt](../sources/textual_restoration/applications/lamentations1_10_11_junction.2026-10-04.v1.json).
+
+### Competing explanations and English consequence
+
+Our working inference favors accidental loss. Deleting the eight words removes
+the expected כ opening of the Masoretic verse-11 acrostic unit and the explicit
+giving predicate. The surviving possessions/food phrase could be elliptical;
+it is not intrinsically ungrammatical. But choosing a shorter literary form
+must explain that ellipsis, the acrostic difference and the longer form's
+development. Neither a shorter reading nor an older manuscript wins by rule.
+
+The strongest contrary account is deliberate reshaping, possibly related to
+the adjacent changes to **her** possessions, **her** life and a masculine
+speaker form. A damaged, partly preserved scroll cannot certify one uniform
+acrostic or speaker pattern. These linked differences keep that alternative
+open; they do not justify inserting isolated pronouns into WLC.
+Kotzé's exact eye-skip trigger is not demonstrated at this junction: the nearby
+boundary words `יבואו` and `נתנו` share final vav, but an exemplar's line
+arrangement is unknown. Accidental loss is therefore a preference, not a proven
+mechanism or a declaration that every longer word is original.
+
+Adopting the shorter form would remove “your assembly” and the explicit account
+of people groaning, searching for bread and exchanging possessions for food.
+Do not translate an omitted giving verb as if it survived. POB keeps that
+longer account and discloses the shorter one, rather than claiming a discovery
+or creating a fluent hybrid. The alternative remains useful for studying the
+scroll's literary presentation even if a copying loss is preferred.
+
+### Application and stopping condition
+
+Both verse records add note d. Existing lexical/cross-reference notes now
+follow their actual phrases instead of accumulating after unrelated words.
+The 1:10 rationale no longer asserts an unsupported mixed-gender address.
+Original generation metadata and source objects are unchanged; old status,
+revision and cross-check objects, plus 1:10's former theological rationale,
+are archived with baseline hashes. Active status is draft/needs-review.
+No inherited agreement score approves these changed records.
+
+The receipt records actual whole-book export, schemas, preservation and one
+bounded independent application review. These checks verify the applied scope,
+not earliest wording, full-verse publication approval or public deployment.
+All 154 base-edition IDs and five chapters survive; only 1:10–11's exported
+text markers and notes change. Sixteen reader-note tests, eighteen footnote
+tests and complete reader-corpus validation pass. The independent review
+reproduced both whole-book hashes and ID coverage and reran the sixteen
+reader tests against the exact candidate hashes. Required remote CI governs
+merge; no additional agreement loop is needed.
+Reopen source selection for independent attestation of the same shorter
+junction or a discriminating textual argument explaining both its syntax and
+acrostic structure and the longer form's development. A better eye-skip model
+alone would refine the copying diagnosis. The inaccessible thesis and DJD/BHQ
+discussions were not consulted; their search snippets are not verdicts. Do not
+reacquire the same article or reopen this application for another preference vote.

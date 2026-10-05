@@ -8,9 +8,9 @@ complements [DOCTRINE.md](DOCTRINE.md) (theological stance),
 [METHODOLOGY.md](METHODOLOGY.md) (pipeline), and
 [REVISION_METHODOLOGY.md](REVISION_METHODOLOGY.md) (revision process).
 
-> **Status: first draft, strategy phase.** Translation work for these
-> books has not yet begun. This document is published first so the
-> approach can be scrutinized before any verse is drafted.
+> **Status: working translations and ongoing source comparison.** The former
+> strategy-only status is obsolete. Existing drafts and bounded applications
+> do not establish publication approval or a completed critical text for each book.
 
 > **See also:**
 > - [APOCRYPHA_PROVENANCE.md](APOCRYPHA_PROVENANCE.md) — public-facing
@@ -34,20 +34,27 @@ complements [DOCTRINE.md](DOCTRINE.md) (theological stance),
 
 ## Position assessment — where we stand per book
 
-As of **2026-04-20**, our source position across the deuterocanonical
-corpus is at optimal — or within a hair of it — for every book. This
-is a strong position to enter the translation phase from.
+Corrected **2026-10-04** to agree with the earlier reassessment in
+[REFERENCE_SOURCES.md](REFERENCE_SOURCES.md#position-assessment--where-we-stand-per-book).
+The former April assessment's “optimal,” “definitive” and “sole surviving
+witness” claims were not demonstrated. Its prediction that a specialist would
+notice only 5–10 Tobit differences was untested. Available working inputs do
+not certify the best attainable source or a uniquely optimal translation.
 
-| Book | Original language | Position | Rationale |
-|---|---|---|---|
-| **Sirach** | Hebrew | Strongest | Schechter 1899 Cairo Geniza (PD) covers ~½ directly. Sefaria/Kahana composite covers ~⅔ vendored today. Yadin 1965 Masada scroll (Zone 2 consult, local-only) adds pre-medieval Hebrew for Sir 39:27–44:17 and 51:13–30 (~168 verses). Translate from Hebrew for most of it, LXX (Swete) for the rest — exactly what NRSV does. |
-| **Tobit** | Aramaic | Near-optimal | LXX Long Recension (Codex Sinaiticus via Swete, PD) tracks the same textual tradition as Qumran 4Q196-200. Neubauer 1878 Hebrew back-translation (PD) supplies Semitic phrasing. Fitzmyer DJD XIX consulted as Zone 2 reference for the ~20% Qumran overlap. Result is nearly indistinguishable from a Qumran-first translation — a specialist would notice maybe 5-10 verses. |
-| **1 Esdras** | Greek | Optimal | Greek composition. Swete LXX (PD) primary. Our MT alignment table maps each 1ES verse to its WLC Hebrew parallel (2 Chr / Ezra / Neh) for name-spelling and idiom locks. The Three Youths block (3:1-5:6) is Greek-only; no Hebrew parallel exists. |
-| **Wisdom, Judith, Baruch, LJE, 1-2-3-4 Maccabees, Additions to Esther/Daniel** | Greek (or Hebrew lost) | Optimal | Greek is either the original language or the sole surviving witness. Swete LXX (PD) is definitive. No older source exists. |
+| Book or group | Working evidence and remaining comparison |
+|---|---|
+| **Sirach** | Keep Genizah manuscripts, composite editions, Masada and Qumran witnesses separate. Masada preserves portions within 39:27–44:17, not chapter 51. The 51 poem has manuscript B and fragmentary 11Q5 evidence; its [applied comparison](docs/SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md) discloses the chosen working forms without claiming the earliest whole Hebrew poem. |
+| **Tobit** | Compare the Greek recensions and the extant Hebrew/Aramaic units of 4Q196–200. A Hebrew back-translation is not direct Aramaic attestation; neither Greek-long-form fidelity nor a near-equivalence rate is established by the resource list alone. |
+| **1 Esdras** | Compare Greek manuscript readings and the literary relationship to Hebrew parallels. A mapped Hebrew parallel does not automatically supply the source of every Greek sentence. |
+| **Wisdom; 2–4 Maccabees** | Greek working texts remain subject to manuscript and critical-edition comparison; Greek composition does not make Swete definitive. |
+| **Judith; Baruch; Letter of Jeremiah; 1 Maccabees** | Establish each book's textual history and relevant language hypotheses; neither one universal original language nor a sole surviving witness is certified here. |
+| **Esther and Daniel additions** | Declare the Greek textual form and compare relevant alternatives. Keep Old Greek and Theodotion-associated Daniel forms distinct rather than silently hybridizing them. |
 
-Only meaningful original-language gap: Tobit's ~20% Qumran coverage,
-and the consulted-reference approach in REFERENCE_SOURCES.md closes
-most of that gap in practice without any licensing risk.
+The [Sirach witness guide](sources/hebrew_sirach/README.md) records survival and
+access limits. The [IOSCS edition guide](https://septuaginta.uni-goettingen.de/ioscs/editions/)
+distinguishes Swete's diplomatic edition from wider critical work. Consultation
+does not recover absent material or settle redistribution rights. No book list,
+canonical status, verse wording or public release is changed by this correction.
 
 ## Why include these books
 
@@ -152,14 +159,15 @@ major Christian tradition with a stable textual history:
 | 3 Maccabees | — | ✓ | — | LXX |
 | 4 Maccabees | — | appendix | — | LXX |
 
-### Source editions — per-book, most-original extant text
+### Source editions and declared working forms
 
-We translate each book from the **most-original surviving text we can
-lawfully access**, not uniformly from one edition. This is more
-faithful to the composition history of these books — and for 12 of
-14 books, the Greek LXX *is* the original or the sole surviving
-witness, so LXX is the right answer on textual grounds, not as a
-compromise.
+Declare the working form and edition for each book or passage, then compare
+the relevant witnesses before claiming historical priority. The former
+12-of-14 “original or sole surviving witness” assertion is withdrawn.
+A Greek translation, Greek composition and Greek manuscript are different
+things; one available edition cannot certify all three or an optimal corpus.
+The [adjudication method](docs/TEXTUAL_ADJUDICATION_METHOD.md) governs source
+selection, with parallel forms preserved where appropriate.
 
 Field research (2026-04-18) confirmed that the commonly-referenced
 **Rahlfs LXX 1935** has no CC-BY-compatible digital transcription
@@ -223,27 +231,26 @@ corpus even though the Greek remains primary.
 | 3 Maccabees | Greek | Swete LXX vol. III (PD, our OCR) | Emmet 1913 (PD) | ✓ Swete transcribed |
 | 4 Maccabees | Greek | Swete LXX vol. III (PD, our OCR) | Hadas 1953; deSilva 2006 | ✓ Swete transcribed |
 | **Sirach** | **Hebrew** (≈ ⅔ recovered) | **Sefaria/Kahana composite Hebrew** (CC0, 1018/1019 verses); Schechter 1899 (PD, MSS A & B direct from facsimiles); Swete LXX for lost portions | Beentjes 1997; Skehan & Di Lella 1987; Ben-Ḥayyim 1973; Göttingen | ✓ Zone 1 Hebrew vendored (Kahana); Swete transcribed; Schechter facsimile pipeline in progress |
-| **Tobit** | **Aramaic** | **Swete LXX Long Recension (Codex Sinaiticus, `TOB_S`) — primary**; Neubauer 1878 Hebrew back-translation (PD via Sefaria) — indirect reference only | Fitzmyer 1995 DJD XIX (4Q196-200 Aramaic reconstruction); Moore 1996 | ⚠ Ancient Aramaic blocked; Long Recension + Neubauer + Fitzmyer consult is the near-optimal substitute |
+| **Tobit** | Aramaic/Hebrew witness comparison required | **Swete LXX Long Recension (Codex Sinaiticus, `TOB_S`) — working primary**; Neubauer 1878 Hebrew back-translation — indirect reference only | Fitzmyer 1995 DJD XIX; Moore 1996 | Working route, not demonstrated equivalence to a fragment-based text; passage survival and access must be checked separately |
 
 Legend: ✓ = clean path, material vendored and Swete transcribed. ⚠ = partial block, documented workaround in place.
 
-**Masada Ben Sira scroll** (Mas1h) covers Sirach 39:27–43:30 and is
-the only pre-medieval Hebrew Sirach witness. Its surviving
-photographs are held under restrictive license terms (IAA Leon Levy
-DSS library, re-verified 2026-04-20); until direct access is
-available, we translate that passage from the Greek (Swete) with
-consultation of Ben-Ḥayyim 1973 (Zone 2), and note transparently in
-the front-matter that the pre-medieval Hebrew witness is not in our
-current source pipeline.
+**Masada Ben Sira scroll** (Mas1h) preserves portions within Sirach
+39:27–44:17 with gaps. It is not the only ancient Hebrew Sirach witness:
+Qumran fragments also survive. Photograph redistribution, published reading
+consultation and source selection are separate decisions. The
+[witness guide](sources/hebrew_sirach/README.md) and
+[applied comparison](docs/SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md)
+supersede the former 43:30 endpoint and chapter-51 attribution. No automatic
+replacement of Greek by older Hebrew follows from acquisition alone.
 
-**Qumran Tobit fragments** (4Q196–4Q200) cover approximately 20% of
-the book in Aramaic/Hebrew. Same licensing block (IAA + DJD XIX
-commercial). We do not vendor. Our working pipeline uses the LXX
-Long Recension (which tracks the Qumran textual tradition) anchored
-by Neubauer 1878 Hebrew back-translation for Semitic phrasing, with
-Fitzmyer 1995 DJD XIX available to the translator as Zone 2
-consultation. This produces output nearly indistinguishable from a
-Qumran-first translation for ~95% of Tobit verses.
+**Qumran Tobit fragments** (4Q196–4Q200) preserve parts of the book in
+Aramaic/Hebrew, not a complete source corpus. Compare those actual units with
+the Greek recensions before choosing a reading. The former ~95% equivalence
+claim was untested and is withdrawn. An indirect Hebrew back-translation
+cannot supply missing direct Aramaic evidence. Access and redistribution
+terms must be recorded for each photograph, transcription and edition, not
+collapsed into one blanket block.
 
 Scholarly editions (Beentjes 1997, Skehan & Di Lella 1987, Fitzmyer
 1995 DJD XIX, etc.) are Zone 2 per REFERENCE_SOURCES.md — consulted
@@ -252,9 +259,11 @@ textual-critical claims, never reproduced.
 
 ## Source acquisition status
 
-The following table tracks every source of interest and its current
-state in the repository. This is the single reference for what we
-have, what we're waiting on, and what the next action is per source.
+The following table preserves an acquisition-planning snapshot, not a current
+complete source census or proof of every listed consultation. Consult the
+dated [coverage audit](docs/BIBLICAL_SOURCE_COVERAGE_AUDIT_2026-09-04.md),
+source-specific guides and research log for actual inspected evidence,
+access outcomes and completed applications.
 
 | # | Source | What it is | License | Vendored? | Blocker | Next action |
 |---|---|---|---|---|---|---|
@@ -267,7 +276,7 @@ have, what we're waiting on, and what the next action is per source.
 | 7 | **Marcus 1931** — *The Newly Discovered Original Hebrew of Ecclesiasticus* | Hebrew Sirach MS E | Public Domain (US, pre-1964 non-renewed); verify outside US | Not yet | Identify clean archive source | Search HathiTrust |
 | 8 | **Cambridge Digital Library** (Taylor-Schechter) | High-res photos of Cairo Genizah Ben Sira fragments | Per-item terms (mostly research-permissive) | Not yet | Per-shelfmark license review | Fetch IIIF manifests by shelfmark |
 | 9 | **Oxford Bodleian** digital collections | Additional Genizah Ben Sira photos | Per-item terms | Not yet | Per-item license review | Manual per-item fetch |
-| 10 | **Masada Ben Sira scroll** (Mas1h) | Only pre-medieval Hebrew Sirach witness (Sir 39:27–43:30) | Restrictive | Acquisition in progress | Direct access | Integrate when available; use Swete Greek in interim |
+| 10 | **Masada Ben Sira scroll** (Mas1h) | Ancient Hebrew witness, portions within Sir 39:27–44:17 | Item-specific photograph/edition terms | See current witness guide | Image redistribution remains separate from published comparison | Compare actual surviving units; source promotion requires adjudication |
 | 11 | **Qumran Tobit fragments** (4Q196–4Q200) | Only Aramaic/Hebrew Tobit witnesses (≈20% of Tobit) | Restrictive | Acquisition in progress | Direct access | Integrate when available; use Swete Greek in interim |
 | 12 | **Qumran Sirach fragments** (2Q18, 11QPsa) | Small DSS Sirach fragments | Restrictive | Acquisition in progress | Direct access | Integrate when available |
 | 13 | **Sefaria Ben Sira (Kahana ed.)** | Composite Hebrew Ben Sira from Wikisource | CC0 | ✓ `sources/lxx/hebrew_parallels/sefaria_ben_sira.json` (1018/1019 verses) | — | Use as Zone 1 Hebrew primary for SIR; upgrade with Schechter 1899 pipeline |
@@ -548,6 +557,10 @@ which traditions receive it as Scripture.
 ## Phasing
 
 **Phase A — Source acquisition (in flight, 2026-04-18).**
+
+The phases and estimates below are historical planning, not current readiness
+certificates or delivery promises. Completed Sirach applications are linked
+above; fresh manuscript readings still require the method's calibration gates.
 - ✓ Swete LXX vendored: DjVu OCR text in repo, full PDFs manifested
   at `sources/lxx/swete/MANIFEST.md` with SHA-256 hashes.
 - ✓ Schechter 1899 *Wisdom of Ben Sira* vendored in repo
@@ -577,10 +590,10 @@ which traditions receive it as Scripture.
 - Mobile bundle integration, tagged release.
 
 **Phase D — Pre-medieval Hebrew & Aramaic enrichment (when available).**
-- Fresh Aramaic transcription of Qumran Tobit fragments; integrate
-  as Tobit primary source for the ~20% of verses they cover.
-- Fresh Hebrew transcription of Masada Ben Sira; integrate as Sirach
-  primary source for 39:27–43:30.
+- Compare published readings or calibrated fresh transcriptions of Qumran
+  Tobit fragments; promote only adjudicated, actually surviving units.
+- Compare Masada Ben Sira within 39:27–44:17, retaining gaps; a transcription
+  or older copy does not automatically become the primary source.
 - Republish tagged release including Phase D sources.
 
 **2 Esdras / 4 Ezra and the Ethiopian wider canon** (1 Enoch,

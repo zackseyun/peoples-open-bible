@@ -5078,6 +5078,47 @@ Greek transmission or additional direct Hebrew evidence. Missing evidence is
 not repaired by forcing the quotation and its source into the same words.
 The wider all-book goal remains active and incomplete.
 
+## Lamentations junction and source assessment correction 2026 10 04
+
+The prior review found a material contradiction in the strategy document;
+it did not apply a translation change. This continuation corrects
+[DEUTEROCANONICAL.md](../DEUTEROCANONICAL.md#position-assessment--where-we-stand-per-book):
+working drafts exist, Swete is not certified definitive, the Tobit equivalence
+prediction was untested, and Masada does not preserve Sirach 51. It reuses the
+existing witness guide, applied Sirach case and operational source policy,
+with the Ben Sira Masada VII viewer and IOSCS edition guide as primary checks.
+No book list or canonical status changes.
+
+The substantive source question is [Lamentations 1:10–11's shorter junction](LAMENTATIONS_DSS_COMPARISON_2026-09-06.md#lamentations-1-10-and-1-11-junction-comparison).
+The published 4Q111 omission removes eight WLC words, including the people
+seeking bread and the giving predicate. Root consulted Kotzé's actual article
+and Swete's complete printed p.362 with apparatus; the temporary Greek JSON
+was absent. Greek retains the longer structure but agrees with the scroll on
+**her** possessions. That is not support for a uniform all-or-nothing form.
+One bounded counterargument review tested accidental loss against deliberate
+reshaping; exact copying history remains unproved. The inaccessible thesis
+was not retried, and search snippets were not used as evidence.
+
+Decision: keep the longer source and marker-free English provisionally, add
+qualified disclosures and repair phrase anchors at both verses. Historical
+review metadata is archived; generation/source blocks remain exact. The
+[application receipt](../sources/textual_restoration/applications/lamentations1_10_11_junction.2026-10-04.v1.json)
+binds the candidate records, evidence, actual whole-book export and scoped
+review/checks. These checks do not establish historical priority, publication
+approval, new ink recovery or public deployment.
+
+One scoped independent review passed the exact two full-record hashes and
+independently reproduced the actual five-chapter/154-ID book export and sixteen
+reader tests. Root also passed eighteen footnote tests, both schemas, exact
+source/generation/history preservation, complete reader validation, new local
+link targets and whitespace checks. Required remote CI governs merge.
+
+The documentation and PDF skills governed targeted existing-document edits
+and complete-page inspection;
+no new framework, image generation or broad reacquisition was performed.
+The case records its precise reopening evidence. Wider all-book comparison
+remains incomplete and the full goal stays active.
+
 Append a dated entry for every substantive research pass: question; actually
 consulted sources and locators/versions; observations versus hypotheses;
 decision and contrary explanation; changed files and source/English effect;

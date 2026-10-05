@@ -160,12 +160,13 @@ apply qualified suffix and lexical notes, and hold earlier wording for specific
 missing evidence. Supplied Desert clauses do not settle the suffix. The Tobit
 pass proposed in the older review is now completed below; do not repeat it as
 pending. [Ecclesiastes 6:3–4](ECCLESIASTES_DSS_COMPARISON_2026-09-06.md#ecclesiastes-6-3-and-6-4-correction-stages-2026-10-05)
-now has a qualified retain decision, merged through PR 26; its separate 6:6
-conditional-orthography question remains open. The next textual deliverable
-should decide whether that reported particle difference changes meaning, with
-connected Hebrew/Greek context and the strongest contrary interpretation.
-Preliminary grammar checks are not a completed adjudication or permission to
-change the verse. Stop at retain, change or a precise evidence hold.
+now has a qualified retain decision, merged through PR 26. The subsequent
+[6:6 conditional-spelling comparison](ECCLESIASTES_DSS_COMPARISON_2026-09-06.md#ecclesiastes-6-6-conditional-spelling-2026-10-05)
+also provisionally retains WLC and positive-life English after testing the
+negative alternative. Exact earlier particle spelling remains unresolved;
+do not mistake that hold for an unfinished meaning comparison. Other screened
+Ecclesiastes leads remain open and need discriminating evidence, not repetition
+of either completed unit. Stop each at retain, change or a precise evidence hold.
 
 For the separate reception aim, prioritize one defined work and passage rather
 than another six-book inventory: an overlapping Enoch unit, such as 1 Enoch 1:9

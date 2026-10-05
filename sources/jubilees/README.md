@@ -1,14 +1,25 @@
 # Jubilees (Mashafa Kufale) source materials
 
-Public-domain source editions for the People's Open Bible's forthcoming
+Public-domain source editions for the People's Open Bible's working
 Jubilees translation. **Scope and strategy: [`../../JUBILEES.md`](../../JUBILEES.md).**
+
+Current qualification (2026-10-05): source and reader drafts exist, but
+manuscript-specific collation is incomplete. The
+[1:27 case](../../docs/JUBILEES_1_27_SOURCE_COMPARISON_2026-10-05.md)
+records the actual consulted context, source/English retention, recording-role
+hold and missing primary apparatus. The historical chapter-range table below
+is not verified coverage
+of every manuscript; related compositions must not be counted as copies of
+the same work. OCR agreement is not a character-accuracy measurement.
 
 ## Textual situation
 
 Jubilees was composed in Hebrew c. 160-150 BC as a retelling of
 Genesis 1 through Exodus 14 organized around the 49-year "jubilee"
-cycle. The Hebrew original survived in fragments at Qumran (4Q216-228,
-recovered in DJD XIII, 1994 — Zone 2). A Greek translation once
+cycle. Hebrew witnesses survive at Qumran, including 4Q216 (DJD XIII,
+1994 — Zone 2). The former blanket 4Q216–228 equivalence was inaccurate;
+for example, 4Q225 is discussed as Pseudo-Jubilees in the linked case.
+A Greek translation once
 existed (cited by Syncellus and Byzantine chronographers) but is
 lost. A Latin translation of roughly half the book (chs 13-49)
 survives in a single 5th/6th-century palimpsest and was critically

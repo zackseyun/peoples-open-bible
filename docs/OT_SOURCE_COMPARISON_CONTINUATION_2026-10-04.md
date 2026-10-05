@@ -83,7 +83,15 @@ now accounts for the complete longer speech and adds a qualified draft reader
 note while retaining WLC and marker-free English. Ancient related forms are
 fragmentary; the disputed supplied speech verb needs primary edition/plate
 checking. Do not count that hold as a completed restoration or repeat the same
-acquisitions. The Jubilees overlap below is now located, not adjudicated.
+acquisitions. The [Jubilees 1:27 follow-up](JUBILEES_1_27_SOURCE_COMPARISON_2026-10-05.md)
+now retains source/English and holds the Hebrew-priority/different-writer claim:
+the causative alone cannot identify the physical recorder, and the primary
+apparatus remains unavailable. Root checked native Charles context and the
+actual QDR-owned rows; the chapter/reader versification and revision drift is
+documented without bulk regeneration. A separate exporter repair now delivers
+existing extra-text footnotes, with complete Jubilees/Gospel of Truth comparisons
+showing only note-body additions. Neither this delivery nor a retain/hold result
+is newly recovered source text or canon expansion.
 These concrete evidence tasks supersede earlier next-case instructions below.
 
 The requested reassessment distinguishes three achievable contributions:

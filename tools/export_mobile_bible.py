@@ -930,6 +930,10 @@ def export_extra_canonical_book(book_code: str) -> dict[str, Any] | None:
                 reader_verses,
                 allow_lord_title=book_code in _JESUS_LORD_TITLE_BOOKS,
             )
+            for reader_verse in reader_verses:
+                notes = reader_footnotes(record, reader_verse["text"])
+                if notes:
+                    reader_verse["footnotes"] = notes
             chapter_payload = {
                 "chapter": chapter_num,
                 "verses": reader_verses,
@@ -938,7 +942,7 @@ def export_extra_canonical_book(book_code: str) -> dict[str, Any] | None:
             chapters_out.append(chapter_payload)
     else:
         # Verse-level nested layout: translation/extra_canonical/<slug>/<NNN>/<VVV>.yaml
-        by_chapter: dict[int, dict[int, str]] = defaultdict(dict)
+        by_chapter: dict[int, dict[int, dict[str, Any]]] = defaultdict(dict)
         for chapter_dir in sorted(book_dir.iterdir()):
             if not chapter_dir.is_dir():
                 continue
@@ -956,7 +960,11 @@ def export_extra_canonical_book(book_code: str) -> dict[str, Any] | None:
                 text = str(((record.get("translation") or {}).get("text", "")) or "").strip()
                 if not text:
                     continue
-                by_chapter[chapter_num][verse_num] = text
+                verse_out: dict[str, Any] = {"verse": verse_num, "text": text}
+                notes = reader_footnotes(record, text)
+                if notes:
+                    verse_out["footnotes"] = notes
+                by_chapter[chapter_num][verse_num] = verse_out
 
         enoch_expected = _enoch_expected_verse_map() if book_code == "ENO" else None
         for chapter in sorted(by_chapter):
@@ -979,7 +987,7 @@ def export_extra_canonical_book(book_code: str) -> dict[str, Any] | None:
             # the verse numbers so the reader sees the scholarly numbering
             # even when it skips.
             chapter_verses = [
-                {"verse": verse_num, "text": verses[verse_num]}
+                verses[verse_num]
                 for verse_num in verse_nums
             ]
             _annotate_jesus_words(

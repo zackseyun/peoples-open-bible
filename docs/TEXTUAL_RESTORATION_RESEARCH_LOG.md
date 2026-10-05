@@ -6192,6 +6192,46 @@ PR 45's merge is now observed at
 pushed before this separate Exodus branch. Unrelated Genizah work and the
 controlling method retain their exact hashes.
 
+### 2026-10-05 — Jubilees recording-role hold and extra-text note delivery
+
+The [Jubilees 1:27 follow-up](JUBILEES_1_27_SOURCE_COMPARISON_2026-10-05.md)
+tests the Hebrew causative against native Charles pages and POB's actual
+chapter/verse records. Root read the relevant QDR-owned context, not its
+embedded controls. Cause to write need not prove a different physical writer;
+the earlier categorical interpretation is qualified. Retain source/English,
+hold historical priority, and apply no new verse note. Charles's printed
+verse boundary differs from POB's; chapter regeneration could also overwrite
+later per-verse revisions. Neither was silently harmonized.
+
+A bounded source assessor could not obtain the primary DJD/CSCO apparatus
+lawfully through the checked routes. The separate Exodus verb follow-up also
+did not obtain its primary pages. Named reopening inputs and actual access
+failures are recorded once; neither hold is project-wide blockage. Root's
+source-strategy correction removes the inaccurate blanket Qumran siglum
+equivalence and the claim that OCR agreement certifies accuracy. No canon
+change or complete witness-coverage claim follows.
+
+One engineering task repairs the shared exporter for both extra-text layouts.
+Complete Jubilees and Gospel of Truth comparisons add 541 and 28 existing
+anchored note bodies respectively; removing them reproduces the old parsed
+exports exactly. All source/translation YAML bytes are unchanged. Nine new
+tests, 28 existing footnote regressions and seven directly invoked extra-text
+tests pass. Root independently reproduced both complete export comparisons
+and ran the reader-corpus guard. One fresh bounded critique checked actual
+source context and both export paths, independently passing the 37 tests;
+no substantive blocker was found. Its precision correction distinguishes
+source/English retention from the recording-role hold. This delivery is not
+approval of existing note content or anchors.
+The documentation skill separates observation, interpretation, delivery and
+canonical authority; the PDF skill required native printed context. No
+generated image is used as evidence and no agreement-until-pass loop is run.
+
+PR 46's exact-head checks 111810857296 and 111810448036 passed; its merge is
+observed at `1505a6179adc31f2144ca797aea4de2d44171b85`. Local main was
+synchronized and pushed before this separate branch. This batch's delivery
+is recorded only when observed. The controlling method and unrelated Genizah
+file remain protected and unchanged.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

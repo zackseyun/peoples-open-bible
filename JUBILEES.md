@@ -7,12 +7,16 @@ pipeline (see [DEUTEROCANONICAL.md](DEUTEROCANONICAL.md)'s
 Pseudepigrapha section), and applies the three-zone scholarly-source
 policy in [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md).
 
-> **Status: transcription-unblocked phase.** PDFs vendored. Ge'ez OCR
-> pipeline is **Gemini 3.1 Pro preview** in plaintext mode. Jubilees
-> chapter 1 benchmark is closed (2026-04-22): three independent runs
-> were byte-identical and semantically correct against Charles 1902.
-> Full-body OCR + chapter mapping are the remaining input-build steps
-> before broad translation drafting.
+> **Current qualification, 2026-10-05:** chapter and reader drafts exist;
+> manuscript-specific source review is incomplete. Three byte-identical OCR
+> runs are not a measured character-accuracy benchmark, and an English
+> cross-check cannot certify a Geʿez transcription. Source PDFs are hash-bound
+> in the [manifest](sources/jubilees/MANIFEST.md), not committed to Git.
+> The [Jubilees 1:27 comparison](docs/JUBILEES_1_27_SOURCE_COMPARISON_2026-10-05.md)
+> retains the working source/English and holds the recording-role claim until
+> primary apparatus/plate evidence is available. Do not bulk regenerate reader
+> verses from chapter drafts: later per-verse revisions can be overwritten.
+> The historical plan below is not a completed all-witness collation.
 
 ## Why Jubilees
 
@@ -24,10 +28,13 @@ policy in [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md).
    Christianity.** Jubilees is quoted in the Damascus Document, by
    Tertullian, Syncellus, and indirectly by Epiphanius. Its
    calendrical theology shaped Qumran sectarian thought.
-3. **Hebrew original partially recovered at Qumran** (4Q216-228 = the
-   Jubilees manuscripts in Hebrew), confirming that Jubilees was
-   composed in Hebrew (c. 160-150 BC) and making it an extremely old
-   witness to Jewish interpretation of Genesis-Exodus.
+3. **Hebrew witnesses survive at Qumran**, including 4Q216. Identify the
+   composition and surviving content of each siglum before comparison;
+   the former blanket 4Q216–228 equivalence was inaccurate. In particular,
+   [4Q225 is discussed as Pseudo-Jubilees](https://www.bsw.org/biblica/vol-83-2002/the-sacrifice-of-isaac-in-qumran-literature/233/article-p215.html),
+   not automatically another copy of the same work. Early attestation makes
+   these valuable evidence for Jewish interpretation of Genesis–Exodus,
+   without by itself fixing a composition date or the earliest local wording.
 4. **Textual situation parallels Enoch.** Hebrew original → Greek
    translation (now largely lost, preserved in citations) → Ethiopic
    (complete, only full witness). Latin fragments survive for

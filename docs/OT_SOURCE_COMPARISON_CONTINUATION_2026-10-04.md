@@ -2,6 +2,12 @@
 
 ## Latest assessment of the two research aims
 
+The subsequent [Zechariah 12:10 comparison](ZECHARIAH_12_10_SOURCE_COMPARISON_2026-10-04.md)
+tests a consequential syntactic alternative against unchanged Hebrew, compares
+Greek forms and applies a compact English candidate with qualified disclosures.
+The linked receipt records actual scoped checks and broader validation debt; neither a
+rendering preference nor published partial preservation establishes earliest syntax.
+
 Subsequent concrete delivery: the [Tobit fish unit](TOBIT_FISH_SOURCE_COMPARISON_2026-10-04.md)
 has been applied as a connected provisional source/English choice. The
 [Deuteronomy 32:43 pass](DEUTERONOMY_32_43_SOURCE_COMPARISON_2026-10-04.md#repository-application)
@@ -118,9 +124,9 @@ but its fish noun is `[נו]ן֯`, with only a doubtful final letter surviving.
 This is an assessment of published transcription, not newly observed ink.
 The modern version date is not a manuscript date or evidence of a new discovery.
 
-Current [POB Tobit 6:3](../translation/deuterocanon/tobit/006/003.yaml) says a
-fish tried to swallow the young man and stores Greek with the youth, not his
-foot, as object. Changing that object would be a source-selection decision,
+At the pre-application baseline, [POB Tobit 6:3](../translation/deuterocanon/tobit/006/003.yaml) said a
+fish tried to swallow the young man and stored Greek with the youth, not his
+foot, as object. Changing that object was a source-selection decision,
 not simply better English for the stored Greek. The Aramaic body-part wording
 can change the scene's interpretation, but it does not yet prove earliest
 wording: an explanatory expansion remains a serious alternative. A separate
@@ -155,8 +161,8 @@ passages before claiming general translation improvement. The cumulative goal
 tracker is approximately 29.17 million tokens, not a billing statement; that
 expenditure is excessive relative to demonstrated discoveries. Evidence and
 completed consequential decisions, not more computation, are the success measures.
-Further repeated readiness reviews are not the next milestone. Finish the
-defined Tobit question, then choose another consequential OT or NT unit from
+Further repeated readiness reviews are not the next milestone. The defined
+Tobit question is now delivered; choose another consequential OT or NT unit from
 the existing queue. Stop a case when it has a reasoned change, retain or
 unresolved outcome, and reopen only for named new evidence. Claims of general
 translation superiority require the existing unflagged-passage evaluation;

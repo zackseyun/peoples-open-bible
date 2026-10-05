@@ -268,3 +268,92 @@ from old reviews. Swete retains the preceding section's recorded hash; NETS is
 `883474c8b532e6523f217284c9ba77e75d428db4c7e710b82692b613ae04bd25`.
 The protected unrelated Genizah file remains unchanged. This is documentation
 only; no new whole-corpus test, reader export or public deployment is claimed.
+
+## Ecclesiastes 7 7 and 7 19 verbs 2026 10 05
+
+Against main `62e4822f79cbdeb8f351258211859737c2b26264`, retain WLC and
+main English provisionally at both verses. Correct two active grammatical
+rationales at 7:19; do not amend ancient letters to manufacture a contribution.
+The published scroll alternatives deserve disclosure, but no new reader notes
+are applied in this metadata-only repair. Their exact wording and export review
+remain a separate implementation step.
+
+Root and one bounded source assessment read the complete
+[published 4Q109 context](https://lexicon.qumran-digital.org/transcriptions/4Q109/2026-05-21/index.html),
+frg. 1 iii+6 ii–7. At 7:7, line 2 prints `חכם ויעוה֯`, with the final he
+doubtful; the following heart and gift words are supplied. The preceding
+oppression clause is also supplied. MT's destruction verb contrasts with
+the reported distortion verb, not with a wholly preserved alternative saying.
+Diagnostic second clauses are a gift destroys the heart and, assuming the
+supplied continuation, a gift perverts the heart. Neither is new POB wording.
+
+The directly inspected official [NET notes](https://bible.org/download/netbible/ondemand/bybook/ecc.pdf),
+PDF 26 / printed 1208, identify MT's Piel destruction verb and the scroll's
+Piel distortion verb, noting overlapping moral-corruption meanings. Their
+Muilenburg citation was not independently consulted. Earlier direct Hebrew
+supports taking the alternative seriously; it could clarify an opaque idiom,
+or MT could intensify earlier distortion. These are competing inferences,
+not demonstrated scribal motives or a secure transmission direction.
+
+Root visually checked Swete II, printed 494–495 / PDF 512–513, including
+apparatus. The 7:7 content aligns to its numbered 7:8: Greek `ἀπόλλυσι`
+supports destruction, but the following nobility phrase differs from MT's
+gift/bribe clause. Its whole wording must not become corroboration of every
+MT word. NETS, printed 653 / PDF 6, uses a Rahlfs-based courage phrase;
+different Greek edition controls are not one uniform witness.
+
+At 7:19, published line 18 has `ה֯[חכמה] תעזר א֯[ת …]` with damaged
+alternative object reconstruction; the comparison is supplied. The helping
+verb is printed without an uncertainty mark. Wisdom and its wise recipient
+do not survive completely, nor do ten rulers. Greek `βοηθήσει τῷ σοφῷ`
+in Swete's numbered 7:20 and NETS's helping interpretation are compatible
+with the scroll, but can also interpret MT's strength-for-beneficiary syntax.
+They do not uniquely recover a Hebrew resh. Clarification toward a common
+helping verb competes with loss of resh and complement adjustment; the damaged
+complement prevents securely establishing that complete transition.
+
+Root acquired and visually read the [Hebrew College enhanced BDB](https://hebrewcollege.edu/wp-content/uploads/2018/10/BDB.pdf),
+PDF 1781–1782, the complete עזז entry. It explicitly assigns `תָּעֹז`,
+Ecclesiastes 7:19, to Qal imperfect 3fs and explains wisdom as strong for
+the wise. The Hiphil section is separate. The current YAML's two causative
+rationales are therefore repaired. Gives strength remains a defensible English
+interpretation of Qal predication with a beneficiary, not preservation of a
+causative stem. This is not a blinded English preference result or certification
+that the unchanged whole verse is optimal. Historical claims remain in history.
+
+The source assessor `/root/malachi2_16_source_assessment` independently read
+YAML, context, the published transcription and NET notes. Its assessment supports
+qualified retention and the grammatical repair; it did not independently read
+BDB or root's Greek scans. A separate full-record application critique checks
+the frozen metadata candidate, not historical priority. It returned PASS for
+metadata repair only after checking schema, exact archives and preservation.
+No specialist approval,
+fresh ink reading, ImageGen evidence, novel decipherment or canon inference.
+Reopen source priority for consulted DJD discussion, discriminating local
+transmission evidence or the modern Greek target apparatus; the available
+Göttingen preview does not contain that apparatus.
+
+### Metadata repair scope
+
+Only `translation/ot/ecclesiastes/007/019.yaml` changes among the 222 book
+records. Before: `013fb552fce4435ec604263539c540a00bbb9e17d1e54a07c9dc25fb74429056`.
+Frozen after: `8b5de07e231d0f0d2a3ad525ab68a3b52f0a91e5acce51d127d275f641588f91`.
+Source, main English, notes, original AI provenance and historical revisions
+remain equal to baseline. Old status, revision-pass, cross-check and source-audit
+values are archived verbatim; old scores do not approve edited rationales.
+The active record is draft and needs review, not publication-approved.
+
+PDF pins: BDB `9784a8d3b14dd7d4d8bcde138185f1dac86c896c59d32533868b03feab165ce3`;
+NET notes `b0f6dfc69819e0954c3945de8ac7ae1b99ffb96e3c28584300c8885c450c2ef8`.
+Swete and NETS retain the preceding section's recorded pins. The BDB PDF page
+numbers refer to this enhanced digital layout, not original printed pagination.
+
+Actual verification: the verse schema passes; two focused regression tests pass,
+including the 12-chapter, 222-verse Ecclesiastes reader export with unchanged
+7:19 wording and notes. A baseline comparison verifies all preserved fields,
+both affected lexical entries and all four archived values. All other 221 book
+records remain byte-identical. The new book manifest is
+`44c90f01db68addca5c0a3a40093ddb62f235a96d7ccfe0905b67313cca240eb`.
+The protected unrelated Genizah file remains byte-identical. These scoped checks
+do not rerun or erase the five previously recorded aggregate registry drifts,
+nor certify a deployed reader or a published critical edition.

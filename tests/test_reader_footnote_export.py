@@ -1,4 +1,5 @@
 import copy
+import hashlib
 import json
 from pathlib import Path
 import tempfile
@@ -13,6 +14,39 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReaderFootnoteExportTests(unittest.TestCase):
+    def test_habakkuk_2_4_discloses_suffix_and_lexical_choices_separately(self):
+        path = ROOT / 'translation/ot/habakkuk/002/004.yaml'
+        candidate_path = ROOT / 'sources/textual_restoration/applications/habakkuk2_4_disclosure_candidate.2026-10-04.v1.yaml'
+        candidate_bytes = candidate_path.read_bytes()
+        self.assertEqual(hashlib.sha256(candidate_bytes).hexdigest(),
+                         '81940940f5823cc6c6e4aa515bd3d025e32c702d71c445f169c070f2ca8d2776')
+        self.assertEqual(path.read_bytes(), candidate_bytes)
+        record = yaml.safe_load(path.read_text())
+        self.assertEqual(record['source'], {
+            'edition': 'WLC',
+            'text': 'הִנֵּ֣ה עֻפְּלָ֔ה לֹא יָשְׁרָ֥ה נַפְשׁ֖/וֹ בּ֑/וֹ וְ/צַדִּ֖יק בֶּ/אֱמוּנָת֥/וֹ יִחְיֶֽה־׃',
+        })
+        text = record['translation']['text']
+        self.assertEqual(text.replace('[a]', '').replace('[b]', ''),
+                         'Look: his soul is puffed up; it is not upright within him, but the righteous will live by his faithfulness.')
+        self.assertIn('his[a] faithfulness[b]', text)
+        self.assertEqual(text.count('[a]'), 1)
+        self.assertEqual(text.count('[b]'), 1)
+        out = exporter._export_record_verse(4, record)
+        self.assertEqual(out['text'], text)
+        self.assertEqual(out['footnotes'], record['translation']['footnotes'])
+        notes = {note['marker']: note for note in out['footnotes']}
+        self.assertEqual(notes['a']['reason'], 'textual_variant')
+        for detail in ('Masoretic Hebrew', 'my faith/faithfulness', '1QpHab',
+                       'Mur 88', '4Q82', 'editorially restored, not preserved',
+                       'earliest wording is unresolved'):
+            self.assertIn(detail, notes['a']['text'])
+        self.assertEqual(notes['b']['reason'], 'lexical_alternative')
+        for detail in ('his faith', 'his trust', 'steadfast fidelity'):
+            self.assertIn(detail, notes['b']['text'])
+        self.assertEqual(record['status'], 'draft')
+        self.assertEqual(record['cross_check'], {'status': 'needs_review'})
+
     def test_psalm145_nun_line_and_repeated_colon_disclosures_reach_reader(self):
         thirteen = yaml.safe_load((ROOT / 'translation/ot/psalms/145/013.yaml').read_text())
         seventeen = yaml.safe_load((ROOT / 'translation/ot/psalms/145/017.yaml').read_text())

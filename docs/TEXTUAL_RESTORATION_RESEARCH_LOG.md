@@ -5247,6 +5247,37 @@ Relative document targets and whitespace checks pass. No corpus tests are rerun
 locally for this documentation-only change; required remote checks still govern
 merge. The unrelated Genizah JSON retains its previously recorded SHA256.
 
+### 2026-10-04 — Habakkuk 2 4 source comparison and disclosure applied
+
+Completed the [Habakkuk comparison](HABAKKUK_2_4_SOURCE_COMPARISON_2026-10-04.md)
+started before the readiness review. Own complete Qumran-Digital line context
+shows the disputed colon supplied in 1QpHab, Mur 88 and 4Q82; surviving pesher
+commentary is interpretation, not suffix ink. Root public HTML retrieval resolved
+two web-reader failures. Swete III's verse 4 apparatus reports an addition after
+righteous, not a complete relocation by itself; a higher-resolution inspection
+corrected the initial overreading before drafting. Meiser's full table/footnotes
+were then inspected, superseding the agent's paper-access403. Its 8Hev third person
+remains a report pending actual DJD preservation/hand/photo verification. Lim's
+restoration and transmission arguments remain hypotheses, not extra witnesses.
+The dossier records actual pages, relationships, strongest objections and
+specific reopening resources; no fresh manuscript pixels or ImageGen.
+
+Retained WLC and marker-free English provisionally. One separate contextual
+review passed the exact frozen two-note candidate and independently reproduced
+source/main/history and whole-book invariants; no blinded or whole-verse approval.
+Applied those bytes and added one regression test. All three Habakkuk chapters
+and 56 expected IDs remain; only 2:4 markers/notes change. NT controls and original
+historical objects are unchanged. Twenty reader-note tests, 18 footnote tests,
+new-property schema checks and full-reader validation pass. Initial audit-test
+import failure was corrected with PYTHONPATH. Missing historical ai_draft remains
+the only full-schema error; no provenance is invented. Actual pins/results/review
+are in the [receipt](../sources/textual_restoration/applications/habakkuk2_4_disclosure_application.2026-10-04.v1.json).
+The PDF skill required complete-page inspection; the documentation skill kept
+the decision and application limits explicit. This is a discriminating no-change
+source decision with better reader disclosure, not a novel discovery, canon
+change or public deployment. Required exact-head checks govern merge; wider
+all-book comparison and fresh-reading calibration remain unfinished.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

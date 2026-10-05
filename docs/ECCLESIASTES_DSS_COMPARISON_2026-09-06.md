@@ -40,7 +40,7 @@ From the [versioned published transcription](https://lexicon.qumran-digital.org/
 | Verse; unit/line | Published target against WLC; disposition |
 |---|---|
 | 5:14; f1i:1 | כיא / כאשר: conjunction interpretation open. |
-| 6:3–4; f1ii+3_6i:1–2 | Reordered stillborn comparison; raised corrections and deleted שמו; corrected הלך / ילך. Preserve editorial stages. |
+| 6:3–4; f1ii+3_6i:1–2 | Reordered stillborn comparison; raised corrections and deleted שמו; corrected הלך / ילך. The [bounded follow-up](#ecclesiastes-6-3-and-6-4-correction-stages-2026-10-05) retains source/English and separates correction stages. |
 | 6:6; same:3 | ואם לוא / ואלו: conditional/spelling analysis needed; do not infer negation mechanically. |
 | 6:8; same:6–7 | כמה / כי מה; following traces unresolved. |
 | 7:2; same:15–16 | [ש]מחה / משתה; כול סוף / סוף כל. Noun preference below; remainder not silently normalized. |
@@ -120,3 +120,77 @@ and 36 unique tags; all 222 canonical file hashes unchanged; exact current
 full-verse comparison text; selected Greek noun anchors; local report links;
 `git diff --check`. Published 36+8 line coverage was read directly, not inferred
 from those QDR counts. No reader export was needed for this documentation-only pass.
+
+## Ecclesiastes 6 3 and 6 4 correction stages 2026 10 05
+
+Against main `bddf986a5cc965618892372b518c250c709ecff3`, retain current
+pointed WLC and POB English provisionally for this unit. This completes an
+unfinished screen candidate with a reasoned retain decision, not a novel
+reading or proof of earliest wording. The [comparison record](../sources/textual_restoration/comparisons/ecclesiastes6_3_4_followup.2026-10-05.v1.json)
+pins the actual inputs, stage assemblies, review and limits.
+
+Root read current source/English 6:1–8 and full records 6:3–4. In the complete
+[published 4Q109 context](https://lexicon.qumran-digital.org/transcriptions/4Q109/2026-05-21/index.html),
+fragment 1 ii+3–6 i lines 1–2 report the closing comparison and correction;
+adjacent lines 3–5 were also inspected. Raised additions are not supplied gap
+letters. The deleted name-word has a doubtful mem; its raised replacement is
+printed without that uncertainty. These are published readings, not root's
+new observation of manuscript marks. Attribution: DFG Qumran-Digital project
+465277421, CC BY-SA 4.0; the release date does not date the ancient copy.
+
+| State or control | Connected target wording | What it establishes |
+|---|---|---|
+| WLC 6:3 close | אמרתי טוב ממנו הנפל | Stillborn child better off than the man |
+| Reported 4Q109 6:3 close | אמרתי טוב הנפל ממנו | Changed order, same comparison |
+| Reported base-line 6:4 before correction | כי בהבל בה ובחושך שמ֯ו יכסה | Shorter arrival/name sequence; doubtful mem retained |
+| Reported corrected 6:4 | כי בהבל בה ובחושך הלך ובחושך שמו יכסה | Raised הלך ובחושך שמו, with base-line שמ֯ו deleted; one name-word, not two |
+
+The last two rows analytically assemble the published stages; they are not
+new manuscript transcriptions or separate ancient witnesses. Earlier clauses
+of 6:3 lie outside this surviving segment, not in an attested omission. Do not
+delete the man's children, long life, unsatisfied appetite or burial clause.
+Final-he בה can represent the arrival verb's spelling. Raised הלך, unlike
+WLC ילך, permits a plausible perfect went, but an unpointed participial
+analysis remains possible. The consonants do not certify manuscript vowels.
+This aspect question is not resolved by calling the whole verse identical.
+
+Connected diagnostic English, not replacement POB: WLC, I said: better than
+he is the stillborn child. For it came in futility, goes in darkness, and in
+darkness its name is covered. Corrected scroll, assuming perfect departure:
+I said: the stillborn child is better than he. For it came in futility, went
+in darkness, and in darkness its name is covered. The shorter pre-correction
+stage lacks the departure clause. Current generic-present POB remains a
+defensible rendering of the general comparison; no necessary English correction
+or doctrinal implication follows from this bounded contrast.
+
+Root visually inspected Swete II's complete printed 492, PDF 510, including
+apparatus, and preface viii, PDF 10; sigla PDF 18 was read textually. The
+[public scan](https://archive.org/download/theoldtestamenti03swetuoft_202003/oldtestamentingr02swet.pdf)
+has SHA256 `945c5b15bf0f9dfc93890b28ee5b66a388acbf4597f1f2be5430ac6cba9c30b0`.
+Its Vaticanus-oriented main text retains arrival, departure and name-covering:
+ἦλθεν is aorist, πορεύεται present, καλυφθήσεται future passive. Departure is
+not Greek future. No 6:4 variant entry occurs on the inspected page; that is
+not proof of Greek unanimity or a complete modern apparatus consultation.
+The Greek's present departure does not establish the scroll's vocalization.
+
+Inference: repeated darkness phrases make a copying skip and later repair a
+plausible account of the shorter state. Contrary inference: a coherent shorter
+exemplar could have received expansion or assimilation through correction.
+Published additions/deletions establish stages, not the corrector's hand,
+exemplar or motive. Neither older wording, shorter wording nor correction
+automatically wins. DJD/BHQ/Göttingen full apparatus and direct hand analysis
+remain unconsulted; source priority remains unresolved.
+
+One bounded same-model independent assessment supports qualified retention
+and the aspect/correction limits, not scholarly approval. Its adjacent longer
+mouth-suffix claim was excluded: לפיהו matches segmented WLC ל/פי/הו.
+The separate 6:6 conditional wording was not adjudicated. Reopen this unit
+only for passage-specific edition/hand evidence or an argument discriminating
+skip-and-repair from expansion, not another digital copy or preference vote.
+
+All 222 Ecclesiastes records retain the earlier manifest
+`fd2097c18575f3fd7f6afcee9abeb933b57872e57e48ec46dd554de9225faa06`.
+The two target hashes and protected unrelated Genizah hash are recorded and
+unchanged. This is documentation-only work; no new corpus-test run, export
+change, publication, ImageGen evidence, fresh decipherment or canon change.
+Existing aggregate validation debt is not erased by this comparison.

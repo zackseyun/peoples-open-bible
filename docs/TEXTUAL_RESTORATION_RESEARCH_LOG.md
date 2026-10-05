@@ -5532,6 +5532,43 @@ supplement, but cannot alone establish inspiration or universal inclusion.
 More tokens do not guarantee novelty. Continue with a bounded consequential
 case or a named work/recension reception study, not another agreement loop.
 
+### 2026-10-05 — Malachi merge and Ecclesiastes correction-stage decision
+
+PR 25 merged at `bddf986a5cc965618892372b518c250c709ecff3` after both
+exact-head corpus-integrity checks passed. Local main fast-forwarded and its
+push was up to date. This delivers the Malachi draft, not publication or
+historical-priority certification; the older registry debt remains.
+
+The [Ecclesiastes 6:3–4 follow-up](ECCLESIASTES_DSS_COMPARISON_2026-09-06.md#ecclesiastes-6-3-and-6-4-correction-stages-2026-10-05)
+completes a previously screened target. Root read published 4Q109's complete
+local context and current POB 6:1–8. The comparison-order change preserves the
+same relationship; raised departure/darkness/name words and the deleted
+doubtful base-line name-word distinguish a shorter stage from corrected text.
+It is not a final omission, two name-words, or missing earlier 6:3 clauses.
+Source/English are retained provisionally; aspect and historical priority
+remain unresolved. Repeated darkness supports a skip-and-repair explanation;
+expansion or assimilation remains the strongest alternative.
+
+Root checked native Swete II printed 492/PDF510 with apparatus, complete
+preface viii/PDF10 and textual sigla PDF18. The departure verb is present,
+not future; OCR omitted Greek letters and was not used to settle the forms.
+The PDF skill required visual verification. One bounded independent assessment
+supports qualified retention, not scholarly approval. An adjacent longer-suffix
+claim was excluded after exact comparison; 6:6 remains outside this decision.
+The [record](../sources/textual_restoration/comparisons/ecclesiastes6_3_4_followup.2026-10-05.v1.json)
+pins stage assemblies, source/context hashes, actual review and reopening evidence.
+No pirated search-result mirror or unread full apparatus was used as a control.
+
+All 222 Ecclesiastes YAML records retain the prior manifest; target records,
+Swete PDF and protected untracked Genizah JSON retain their verified hashes.
+This documentation-only pass changes no canonical text or reader export and
+claims no new corpus-test result. Documentation checks cover JSON consistency,
+local targets, exact file scope and whitespace, not scholarly truth or global
+validation. The documentation skill keeps the no-change result distinct from
+fresh recovery or application. No ImageGen, novel ink, canon change or public
+deployment. Reopen only for discriminating edition/hand or transmission evidence;
+other unfinished OT source comparisons remain active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

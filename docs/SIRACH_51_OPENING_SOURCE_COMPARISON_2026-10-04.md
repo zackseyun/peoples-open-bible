@@ -294,3 +294,48 @@ application review of the clear fidelity/disclosure repairs as a passage batch;
 separately decide the target literary form and the B/digital-base discrepancies.
 Do not relabel a B/Greek hybrid as Kahana or call it the earliest Hebrew poem.
 No new decipherment, exhaustive comparison or publication approval is claimed.
+
+## Kahana print check and source repair opportunities
+
+The accessible print resolves the preceding acquisition hold. The NLI record's
+separate [HebrewBooks item 31044](https://www.hebrewbooks.org/31044) provided
+an ordinary PDF download of David Kahana's Warsaw Tushiyah 1912 edition.
+The previously blocked archive resolver was not bypassed. The downloaded PDF
+has SHA-256 `72774ff5931c7008f796e0d306d195f9f4ae6de26acd98e2d2e617e2d17487e8`.
+A separate agent inspected the title pages and printed pp.99–101 / PDF
+pp.117–119. Root inspected the complete printed p.100 / PDF p.118 and enlarged
+details of the hand verb, verse 29 and its footnote. These are printed-edition
+observations, not newly read manuscript pixels.
+
+Three findings change the remaining-poem task:
+
+1. The print already has non-abandonment at 21 and acquisition of a good
+   possession at 22. The discrepancy with the consulted B transcription is
+   therefore not merely introduced by our digital base. The print does not
+   settle the earliest form or explain this allocation's editorial rationale.
+2. The printed 19-star unit reads, with pointing and terminal punctuation
+   omitted and a slash representing the two printed columns,
+   `ידי פתחה שעריה / ולה אחדר ואביט בה`. Neither current Hebrew record 19 nor
+   20 contains this hand-opening/gates unit. The inspected verb is pointed
+   `אֶחֱדַר`; `לָהּ` means to/for her, not an explicitly printed “into her.”
+   This exposes missing digital-source content and a corresponding English
+   omission relative to this edition, not previously unknown ancient wording.
+   The physical printed order is 19, 20, 19-star, 20-star; grouping by modern
+   verse numbers must disclose that order rather than silently flatten it.
+3. At 29, the print has an additional yod in `בְּישֵׂיבָתִי`, absent from
+   digital `בְּשֵׂיבָתִי`. Kahana's footnote explicitly explains the intended
+   sense as rejoicing in old age and identifies the song with this book.
+   The spelling difference does not by itself compel “teaching session” in
+   English. An unpointed B reading and Kahana's editorial interpretation remain
+   distinct evidence.
+
+These findings supersede the preceding “not checked his print” access limit,
+not the frozen initial candidates or their historical dates. No source or
+translation record changes in this review. The next application must preserve
+the pinned digital base, identify any scoped print corrections honestly in
+both the source corpus and verse provenance, retain the Greek parallel and
+archive stale review metadata. It must also correct 28's demonstrable person
+mismatch, with tense/mood alternatives disclosed. A new edition label without
+an actual source artifact and retrieval integration would not be a source
+repair. This print check alone approves neither a reconstructed earliest poem
+nor the whole remaining passage.

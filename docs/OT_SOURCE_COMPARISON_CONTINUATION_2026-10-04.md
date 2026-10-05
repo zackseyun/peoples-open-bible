@@ -8,6 +8,10 @@ Later sections record subsequent passes; the
 `434f368bd4ba8a73b506f99d521da50df6efa198`. The existing
 [adjudication method](TEXTUAL_ADJUDICATION_METHOD.md) remains
 controlling; this document makes its execution and success criteria explicit.
+The later [Kahana print check](SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md#kahana-print-check-and-source-repair-opportunities)
+resolves the printed-edition access hold and identifies missing digital content;
+the remaining-poem application is still pending. Earlier dated assessments
+below retain their original scope.
 
 The full objective remains to find relevant surviving Old Testament sources,
 investigate recoverable wording, compare witnesses, establish the best-supported

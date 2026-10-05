@@ -4921,6 +4921,53 @@ No full local corpus regression was warranted by research/prose-only changes;
 required remote corpus CI still governs merge. The unrelated Genizah file is
 preserved.
 
+### 2026-10-04 — Kahana print evidence and continuation review
+
+Reviewed `f666a934c9a7a836a257d1209a10258061b081de` for the user's renewed
+readiness and two-aim questions. The source/English examples remain applied
+but provisional: four cubits at 1 Samuel 17:4 and light at Isaiah 53:11 are
+known-variant choices, not novel discoveries or publication approvals. One
+bounded independent audit verified their current records and application
+receipts, 28's pending second-person repair and the reception distinctions.
+It recommended finishing the defined application rather than another broad
+readiness audit. The tracker reported 25,665,027 cumulative tokens, not a bill;
+expenditure remains excessive relative to demonstrated results.
+
+The bounded NLI-to-HebrewBooks route succeeded without bypassing the blocked
+archive resolver. The [print case](SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md#kahana-print-check-and-source-repair-opportunities)
+records the PDF identity/hash, actually inspected pages and normalized extracts.
+Print confirms the 21–22 allocation, exposes the omitted 19-star hand/gates
+unit and retains 29's additional yod while interpreting the word as old age.
+The last finding prevents turning a real spelling discrepancy into an
+unsupported compulsory English change. Root inspected the complete printed
+page and enlarged details; the separate source agent inspected the title
+pages and the three-page poem. No new ancient image reading, absent ink
+recovery or ImageGen evidence is claimed.
+
+Root rechecked the Vatican and Ethiopian lists, Sinaiticus contents and INTF
+method pages through ordinary web reads. These support the already documented
+six-work reception screen and source classes, not an exhaustive witness
+census or a canon addition. Manuscript survival can justify comparison and
+support textual/reception history; inspiration and a tradition's canonical
+judgment do not follow from age, copy count or model agreement. No new
+comparison of those six works' manuscript wording was performed here.
+
+The documentation skill keeps new evidence in the existing case and log,
+without another methodology framework or repeated comparison table. Only
+documentation changes; source/English application, reader release and canon
+changes remain separate tasks. The next useful milestone is the existing
+remaining-Sirach batch, incorporating these print findings with honest source
+provenance and an exact English/export check. Do not repeat this readiness
+review absent changed evidence. The full corpus objective remains unfinished.
+
+One scoped independent review passed the new print claims after checking the
+complete page, enlarged details, PDF hash and current verse records. Root
+verified 238 local linked file targets, documentation-only scope, byte-unchanged
+51:13–30 records and whitespace. These checks establish documentation and
+baseline consistency, not an approved translation or earliest source text.
+No local full-corpus rerun was needed for this prose-only change; required
+remote CI still governs merge. The unrelated Genizah file remains untouched.
+
 Append a dated entry for every substantive research pass: question; actually
 consulted sources and locators/versions; observations versus hypotheses;
 decision and contrary explanation; changed files and source/English effect;

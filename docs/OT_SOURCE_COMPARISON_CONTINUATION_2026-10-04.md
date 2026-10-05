@@ -32,12 +32,17 @@ survival, quotation or codex inclusion alone does not decide a universal canon.
 A recommendation about canonical inclusion needs a named community and explicit
 authority criteria, separate from reconstructing wording.
 
-The next concrete unit is Jude 15: all the ungodly versus every soul. The
+The subsequent concrete unit is Jude 15: all the ungodly versus every soul. The
 [Enoch/Jude report](ENOCH_1_9_JUDE_14_15_COMPARISON_2026-10-05.md#jude-15-manuscript-follow-up)
 now records a directly checked institutional Sinaiticus transcription and a
 published counterargument. Greek source selection and application to POB's
-Jude text and English remain held pending the transmission comparison.
-Complete one case with change,
+Jude source and main English remain provisionally retained. The subsequent
+[Jude application](JUDE_1_15_SOURCE_COMPARISON_2026-10-05.md) completes the
+bounded transmission comparison and reader disclosure: actual opposing Greek
+attestations, native Mink discussion and official local stemma are checked;
+the live attestation table fails with a missing-table error. The variant note
+and repaired anchors are applied as a draft, not a new source-selection victory.
+Complete each next case with change,
 retain or hold and its English consequence, using one proportional critique.
 Reopen only for named new evidence. Repeated readiness audits and judge-until-
 agreement loops are not research progress; this short answer supersedes older

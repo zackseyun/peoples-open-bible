@@ -6016,6 +6016,39 @@ now pass. JSON, local links, whitespace, unchanged canonical/protected hashes
 and exact preservation of the shared method against main also pass. No fresh
 full-book export or broad clean-suite claim follows.
 
+### 2026-10-05 — Jude 15 transmission comparison and reader application
+
+Completed the next consequential unit rather than another readiness review.
+Root checked original CNTR P72 and Vaticanus transcriptions, including P72's
+adjacent omission/correction; all native Mink pages 181–188; and the official
+Catholic Letters local stemma and its guide. Flink's original countercase stays
+in the argument. The live attestation request and Show Table link fail with
+explicit missing-table errors, so no complete live table or fresh genealogical
+recomputation is claimed. Modern PDFs, HTML and diagrams are retained privately,
+not vendored as new ancient evidence.
+
+The [Jude decision](JUDE_1_15_SOURCE_COMPARISON_2026-10-05.md) retains SBLGNT
+and marker-free English provisionally, adds the every-soul alternative at its
+object phrase, and repairs a/b/c anchors. Prior review objects are archived
+exactly and current status is draft/needs_review. One fresh report-aware judge
+passed the frozen full record except for an approved clarity correction;
+root applied the corrected candidate, not a second model-consensus vote.
+
+The [receipt](../sources/textual_restoration/applications/jude1_15.2026-10-05.v1.json)
+pins inputs, parameters, candidate/application/export hashes and actual review.
+Focused checks and 28 reader regressions pass; the complete Jude export has
+one chapter and 25 verses, only 1:15 differs, and the other 24 files retain
+their baseline bytes. No source promotion, novel decipherment, canon change,
+blind English superiority, scholarly approval or public deployment follows.
+The PDF skill required native-page context; the documentation skill separates
+provisional source retention from reader disclosure and technical verification.
+
+PR 42 passed both exact-head checks 111761905326 and 111761885444 and merged
+at `a79a39329739ef28d7a3f020303db44b063b2282`; local main was synchronized
+and pushed. The new Jude application is separate work. Broad OT/NT comparison
+and damaged-ink calibration remain active; reopen this unit only for named
+discriminating evidence, not another readiness audit or repeated acquisition.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -194,3 +194,77 @@ The two target hashes and protected unrelated Genizah hash are recorded and
 unchanged. This is documentation-only work; no new corpus-test run, export
 change, publication, ImageGen evidence, fresh decipherment or canon change.
 Existing aggregate validation debt is not erased by this comparison.
+
+## Ecclesiastes 6 6 conditional spelling 2026 10 05
+
+Against `a8283d5071172476c7f5eebb4c4a45bff7356fbf`, retain pointed WLC
+and current positive-life English provisionally. The reported scroll spelling
+does not require changing Even if he should live to If he did not live.
+This completes the conditional-orthography question left open above, not
+the whole-book comparison or earliest-spelling adjudication.
+
+The complete [published 4Q109 context](https://lexicon.qumran-digital.org/transcriptions/4Q109/2026-05-21/index.html),
+fragment 1 ii+3–6 i lines 3–4, gives the opening `ואם לוא חיה` against
+WLC `ואלו חיה`. No restoration, uncertainty or correction mark is displayed
+on these opening words. The separate negative before seeing good remains.
+This is an attributed published reading from DFG Qumran-Digital, project
+465277421, CC BY-SA 4.0, not a fresh observation of manuscript ink or vowels.
+
+| Interpretation of the opening | Connected diagnostic English | Strongest local consideration |
+|---|---|---|
+| Positive conditional, full אם לו(א) corresponding to contracted אלו | Even if he lived a thousand years twice over and experienced no good, do not all go to one place? | Escalates the many-years hypothesis in 6:3 despite the stillborn child's greater rest in 6:4–5 |
+| Conditional אם followed by negative לוא | And if he did not live a thousand years twice over, and experienced no good, do not all go to one place? | Adjacent לוא tokens are negative; denial of that duration remains grammatically and contextually possible |
+
+These are diagnostic renderings, not new ancient transcriptions or replacement
+POB. The negative reading need not deny all life: it can deny the stated extreme
+duration, or continue attention to the child. Its contextual weakness is that
+denying such longevity makes an unexpectedly unremarkable condition. The
+positive reading's weakness is that the unpointed spelling does not uniquely
+identify the particle. Root provisionally prefers the positive escalation;
+neither possibility is decided by counting repeated negative spellings.
+
+[GKC 159l, m, x](https://en.wikisource.org/wiki/Gesenius%27_Hebrew_Grammar/159)
+recognizes positive לו/לוא, derives אלו from אם לו, and discusses this verse's
+hypothetical clause with a question as consequence. It cautions against a
+mechanical distinction between conditional particles. Current pointed Hebrew
+at Isaiah 63:19 has positive לוּא; Esther 7:4 has positive אִלּוּ. These controls
+make the full positive analysis plausible; they do not establish the scroll's
+pronunciation, exact meaning or spelling priority. This grammar was read as
+the public-domain web transcription, not checked against a native printed page.
+
+Root visually checked Swete II's complete printed 492–493, PDF 510–511.
+Its B-based opening has καὶ εἰ ἔζησεν, positive conditional life, followed by
+negated goodness. Its καθόδους is not a simple Greek numeral twice. The B main
+text lacks an explicit all in the final question; the second page's apparatus
+reports a plural departure verb in א and τα παντα in א/A/C. These controls
+must not become a uniform Greek text or unique Hebrew retroversion. They support
+the positive interpretation without selecting the exact Hebrew particle spelling.
+
+Root acquired the official [NETS Ecclesiast PDF](https://ccat.sas.upenn.edu/nets/edition/26-eccles-nets.pdf)
+after reading its actual index link, and visually checked PDF 1–2 and 6,
+printed 648–649 and 653. Gentry's Rahlfs-based translation gives positive life
+and renders the duration as recurrences, not twice. Its introduction's statement
+that no fully critical edition existed belongs to that older publication:
+the [Göttingen project](https://septuaginta.uni-goettingen.de/publications/septuaginta/)
+lists Gentry's Ecclesiastes XI/2 in 2019 and Text History in 2022. A lawful
+26-page publisher preview was acquired, but the modern 6:6 critical text and
+apparatus were not consulted. No modern-edition agreement is claimed.
+
+One bounded read-only same-model assessment by
+`/root/malachi2_16_source_assessment` supports qualified retention and tests
+the negative alternative. It read Hebrew context, the published transcription
+and grammar; the Greek page inspection is root's, not a duplicated agent scan
+claim. This is not blinded English testing, specialist approval or full-verse
+optimality certification. No source, main English, notes or prior review flags
+change. Reopen for consulted DJD discussion, discriminating comparative usage
+of full אם לו/לוא, or local version/transmission evidence; exact earlier spelling
+remains unresolved. No ImageGen, fresh decipherment or canon implication.
+
+Verification: all 222 Ecclesiastes files retain manifest
+`fd2097c18575f3fd7f6afcee9abeb933b57872e57e48ec46dd554de9225faa06`;
+6:6 remains `392ad64cfd2367caf5b5586bd40f9d4b468db37346a8045e0d72273b3af5eaed`.
+Context 6:3–7 and Isaiah/Esther controls were read from current YAML, not inferred
+from old reviews. Swete retains the preceding section's recorded hash; NETS is
+`883474c8b532e6523f217284c9ba77e75d428db4c7e710b82692b613ae04bd25`.
+The protected unrelated Genizah file remains unchanged. This is documentation
+only; no new whole-corpus test, reader export or public deployment is claimed.

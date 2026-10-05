@@ -5597,6 +5597,27 @@ are proportional, not new corpus-validation or publication claims. The protected
 untracked Genizah file remains unchanged. Repeated readiness audits and agreement
 loops must not be counted as future research progress.
 
+### 2026-10-05 — Ecclesiastes 6 6 conditional interpretation retained
+
+Completed the [6:6 comparison](ECCLESIASTES_DSS_COMPARISON_2026-09-06.md#ecclesiastes-6-6-conditional-spelling-2026-10-05)
+against `a8283d5071172476c7f5eebb4c4a45bff7356fbf`. Published 4Q109's
+אם לוא permits a negative analysis but also a full positive conditional
+corresponding to WLC אלו. Root and one read-only assessment tested both in
+6:3–7; grammar and local Isaiah/Esther controls support positive plausibility,
+not certified scroll vowels. Retain WLC and current English provisionally;
+earliest spelling remains unresolved with explicit reopening evidence.
+
+The PDF skill required native Swete 492–493/PDF510–511 and NETS 648–649/653
+checks. Greek positive life is useful, but duration and final all differ across
+controls. NETS's older no-critical-edition claim is not current: the actual
+Göttingen publication list confirms 2019 Ecclesiastes. The modern target
+apparatus remains unconsulted; a publisher preview is not full acquisition.
+The documentation skill distinguishes this completed meaning comparison from
+its remaining historical hold. No verse, ImageGen evidence, fresh ink or canon
+change. All Ecclesiastes hashes and the protected Genizah hash remain unchanged;
+local links and whitespace pass without a repeated corpus/export test run.
+The case uses a separate branch so PR 27's confirmed live checks are not restarted.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

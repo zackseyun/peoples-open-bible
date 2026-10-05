@@ -5729,6 +5729,36 @@ Existing aggregate debt remains, with no ImageGen evidence, fresh decipherment,
 canon expansion or publication claim. The 6:8 particle remains an open screen;
 the assessor's short comment is not a completed second adjudication.
 
+### 2026-10-05 — Ecclesiastes particles and differing Greek constructions
+
+Previous turn was progress: the requested two-aim documentation assessment and
+canon-reception correction were committed/pushed as PR 32. Its two exact-head
+corpus-integrity handles were verified live at this turn's start. This pass
+finishes the [5:14 and 6:8 meaning comparison](ECCLESIASTES_DSS_COMPARISON_2026-09-06.md#ecclesiastes-5-14-and-6-8-particles-2026-10-05),
+against main `050ebd6a8329617f765c394073ccfc6a02e0f9ba`, without restarting
+that PR's checks or another readiness loop.
+
+PR 32 subsequently passed both checks and merged at
+`c4ffdce259fe83b0467e9653d6d8d9a329ffc38c`.
+
+Published preserved particles remain distinct from supplied clauses and
+unidentified traces. Root inspected complete Swete, NETS and NET pages following
+the PDF skill, and primary grammar/lexicon entries. Swete's affirmative 6:8
+construction and interrogative apparatus variation materially strengthen the
+positive countercase; NETS is not a uniform duplicate. The single source assessor
+revised its argument for that new evidence, not to achieve model consensus.
+Both Hebrew/main-English choices remain provisionally retained, with named
+DJD/modern-apparatus and translation-practice reopening evidence.
+
+One independent source-document critique returned PASS for the frozen claims,
+not scholarly-priority certification, corpus validation or a new reading.
+
+The documentation skill keeps completed comparison, historical priority and
+unapplied reader disclosure separate. All 222 verse hashes and protected
+Genizah remain unchanged; scoped link/whitespace checks suffice without another
+corpus/export run. No fresh ink, ImageGen evidence, canon change, new ancient
+discovery, publication approval or renewed legacy review scores are claimed.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

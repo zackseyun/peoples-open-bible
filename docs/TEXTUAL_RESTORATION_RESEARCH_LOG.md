@@ -5367,6 +5367,48 @@ exact-head remote checks govern merge, not historical truth. The wider source
 comparison and fresh-reading calibration remain unfinished. The unrelated
 Genizah JSON retains its recorded SHA256 and remains untracked.
 
+### 2026-10-04 — Deuteronomy 32:43 native check and qualified disclosures
+
+Completed the bounded [Deuteronomy comparison](DEUTERONOMY_32_43_SOURCE_COMPARISON_2026-10-04.md)
+against main `98f5a5c234b717d12a7e6df5c14b66dce3b1ad63`. Root read the
+published Qumran fragment context, pinned Samaritan control, Swete I's full
+adjacent print/apparatus and identifying preface, and Tov's and Skehan's complete
+arguments. Greek bow-down wording differs locally across B/A/F; Hebrews 1:6
+does not decide the Hebrew source. The Samaritan shorter form shares Qumran's
+closing noun phrase, not MT's exact ending. Concrete adaptation from Psalm 97:7
+and Deuteronomy 32:41, and Skehan's verbal-syntax objection, counter a simple
+older/longer-is-original decision. Six-colon priority remains a serious hypothesis,
+not an established original; WLC and marker-free main English remain provisional.
+
+Root acquired and inspected six unmodified native IAA tiles, with measured
+6204 by 4445 plate geometry and fragment rectangle [2048,1536,3072,3072]. The
+source assessor caught clipped lower strokes in the initial four-tile rectangle;
+two original lower tiles resolved the defect. Both contextual inspections knew
+the published reading. This advances the earlier image gate, not blind decipherment,
+newly restored letters or validated damaged-ink calibration. DJD XIV's material
+reconstruction remains unconsulted, not waived. Access limits, bibliographic
+leads, rights, hashes and correction are recorded; private images remain outside
+Git under IAA private-use terms, with no ImageGen evidence or redistribution.
+
+One scoped disclosure reviewer caught a punctuation-sensitive test assertion;
+root corrected it without changing the frozen candidate, and the same reviewer
+passed the concrete recheck. Exact candidate bytes were applied as a draft,
+with original provenance retained and stale agreement flags reset. Reader notes
+separate six/eight/shorter forms, disclose expansion alternatives and explain
+the supplied English and at the ending. Full verse schema, source/main/history
+invariants, 22 reader-export tests, 18 footnote tests and full-reader validation
+pass. Actual Deuteronomy export retains 34 chapters and 959 IDs and changes only
+32:43. Current coverage/schema/private hashes pass. The aggregate registry guard
+fails with four preexisting whole-file drifts and the expected Deuteronomy drift;
+historical controls were not silently repinned. The
+[receipt](../sources/textual_restoration/applications/deut32_43_disclosure_application.2026-10-04.v1.json)
+records the scoped results and aggregate limitation. The PDF skill required visual
+print checks; the documentation skill distinguished actual outcomes from proposals.
+This is evidence-backed transparency and a meaningful held decision, not another
+main-text adoption, novelty, canon change or verified deployment. The wider goal
+remains unfinished; reopen only for discriminating evidence, not agreement loops.
+The unrelated Genizah JSON remains untracked with its recorded SHA256 unchanged.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -63,7 +63,33 @@ Hebrew/Aramaic wording actually overlaps the relevant Greek forms. This is
 a proposed next task, not a completed fragment collation. Do not reopen the
 finished Sirach or Acts applications merely to obtain agreement.
 
-### What further computation can establish
+### Subsequent completed Tobit comparison
+
+At baseline `17176d2b9c7e5b20e858753c005a70e88e01b335`, the defined
+[Tobit fish comparison](TOBIT_FISH_SOURCE_COMPARISON_2026-10-04.md)
+has now produced a provisional source/main-English application at 6:3–6,
+not another readiness review. The complete local Greek II attack-through-meal
+unit replaces Greek I, with the alternate form disclosed. Published 4Q197
+preserves foot/leg, large and singular eating; 4Q196 gives only conditional
+partial eating corroboration. English now has the young man's foot and he ate,
+along with the actual selected Greek's connected commands, preparation and
+travel endpoint. Early expansion/harmonization remains a serious objection;
+earliest wording is unresolved and not every Greek detail survives in Aramaic.
+
+Tobit 6:1–2 retains source/main English but corrects misleading numbering notes.
+Independent source, identity-withheld English and scoped application assessments
+served different purposes; a caught Greek spelling error was corrected before
+application. Actual export checks preserve 13 eligible chapters and 244 IDs,
+including the already withheld chapter 9. All six applied bytes, note bodies,
+provenance preservation and regression results are recorded in the
+[receipt](../sources/textual_restoration/applications/tobit6_fish_application.2026-10-04.v1.json).
+This is a consequential application of known readings, not novel decipherment,
+whole-book Greek II reconstruction, publication or canon expansion. The next
+substantive pass should choose a different consequential OT/NT unit or an exact
+work-and-recension reception case, not rerun this finished decision without
+named new evidence. The proposed Tobit lead below records the earlier stage.
+
+### Contribution thresholds and historical Tobit lead
 
 There are three different contribution thresholds. A demonstrated mismatch
 between POB and its declared source can be repaired now. A previously published

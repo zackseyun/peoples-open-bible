@@ -29,15 +29,16 @@ class EcclesiastesRationaleRepairTests(unittest.TestCase):
         self.assertIn('causative force', history['revision_pass']['value']['changes_summary'])
         self.assertIn('causative force', record['revisions'][1]['rationale'])
 
-    def test_reader_wording_and_notes_remain_unchanged(self):
+    def test_reader_wording_is_retained_with_later_variant_disclosure(self):
         book = exporter.export_book('ECC')
         self.assertEqual(len(book['chapters']), 12)
         self.assertEqual(sum(len(c['verses']) for c in book['chapters']), 222)
         verse = next(v for c in book['chapters'] if c['chapter'] == 7
                      for v in c['verses'] if v['verse'] == 19)
-        self.assertEqual(verse['text'],
+        self.assertEqual(verse['text'].replace('[a]', ''),
                          'Wisdom gives a wise man more strength than ten rulers in the city.')
-        self.assertEqual(verse.get('footnotes', []), [])
+        self.assertEqual([n['marker'] for n in verse['footnotes']], ['a'])
+        self.assertIn('partly supplied or damaged', verse['footnotes'][0]['text'])
 
 
 if __name__ == '__main__':

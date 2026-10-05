@@ -5645,6 +5645,31 @@ unimplemented reader disclosures distinct. No novel decipherment, ImageGen
 evidence, publication approval or canon change. Reopen only for named
 discriminating evidence, not another agreement loop or readiness audit.
 
+### 2026-10-05 — Ecclesiastes verb alternatives disclosed to readers
+
+The previous turn was progress: it completed the two-verse comparison and
+corrected 7:19's grammar rationale. Its PR 29 checks were verified live at this
+turn's start, then both succeeded; PR 29 merged at
+`2f50163c9cf5c750d282bb28c067602220e20a00`. This turn completes the separate
+[reader disclosure application](ECCLESIASTES_DSS_COMPARISON_2026-09-06.md#subsequent-reader-disclosure-application),
+not another source-priority or readiness audit.
+
+Rechecked complete published 4Q109 context. New 7:7 and 7:19 notes retain
+doubtful/supplied distinctions for distortion/helping alternatives, with earliest
+wording unresolved. The heart anchor is repaired, existing note bodies preserved,
+and source/marker-free English unchanged. Historical metadata remains exact;
+active records are draft/needs_review. One full-record independent critique
+passed the frozen candidates without certifying optimality or publication.
+
+The [receipt](../sources/textual_restoration/applications/ecclesiastes7_verb_disclosures.2026-10-05.v1.json)
+records exact pins, actual schema/archive/marker and full-book export checks,
+two rationale tests and 25 reader-footnote tests. All 222 records were compared
+against Git: exactly two change, 220 remain identical. The protected unrelated
+Genizah file is untouched. Earlier aggregate registry drifts remain disclosed,
+not repinned. The documentation skill keeps this application separate from the
+earlier metadata-only pass and from unresolved historical priority. No fresh
+decipherment, ImageGen evidence, canon change or deployed-reader verification.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

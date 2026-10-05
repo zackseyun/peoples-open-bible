@@ -357,3 +357,43 @@ records remain byte-identical. The new book manifest is
 The protected unrelated Genizah file remains byte-identical. These scoped checks
 do not rerun or erase the five previously recorded aggregate registry drifts,
 nor certify a deployed reader or a published critical edition.
+
+### Subsequent reader disclosure application
+
+The preceding metadata-only comparison is now followed by a separately reviewed
+note application against `5322b57039d54736c05be223a97314f378aae357`.
+PR 29 merged at `2f50163c9cf5c750d282bb28c067602220e20a00` after both
+exact-head corpus-integrity checks succeeded; that merge delivered the rationale
+repair, not these later notes. The [application receipt](../sources/textual_restoration/applications/ecclesiastes7_verb_disclosures.2026-10-05.v1.json)
+records the exact two new candidates, evidence and actual scoped verification.
+
+At 7:7, a new note after destroys discloses the reported distortion verb,
+doubtful final letter and supplied heart/gift wording. The existing gift and
+heart note bodies are unchanged; the heart marker moves before punctuation.
+At 7:19, a note after strength distinguishes the retained strength predication
+from the reported helping verb and the scroll's damaged or supplied context.
+Neither note treats a reconstructed whole clause as surviving ink or selects
+earliest wording. Main English with markers removed and the complete pointed
+source stay unchanged. No new blinded main-English comparison is claimed.
+
+One independent full-record application critique returned PASS for both exact
+note candidates, checking the complete published context, schema, archival
+values and actual export. It is a same-model critique, not specialist review.
+At 7:7, old review metadata is archived verbatim and active status becomes
+draft/needs_review. At 7:19, those states and the earlier history remain, with
+the preceding metadata revision pass archived separately. Original generation,
+lexical decisions and historical revisions are preserved in both records.
+
+Actual checks pass: source/main-wording and archive preservation against Git,
+note-marker matching, both full schemas, two rationale regressions and 25 reader
+footnote tests. The real export retains 12 chapters and 222 verses with exact
+note bodies and anchors. Exactly two book records change and 220 remain identical;
+the receipt gives before/after hashes and book manifests. The protected unrelated
+Genizah file is unchanged and excluded from staging. Existing aggregate guard
+debt is recorded, not silently repinned or claimed clean. No public deployment,
+novel decipherment, ImageGen evidence, source-priority victory or canon change.
+
+This completes the rationale and reader-disclosure application for these two
+verb comparisons. Historical priority remains held for the specific evidence
+named above. Continue with a different unresolved substantive comparison rather
+than revisiting this completed application without new evidence.

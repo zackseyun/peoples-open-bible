@@ -5695,6 +5695,40 @@ not repinned. The documentation skill keeps this application separate from the
 earlier metadata-only pass and from unresolved historical priority. No fresh
 decipherment, ImageGen evidence, canon change or deployed-reader verification.
 
+### 2026-10-05 — Ecclesiastes 7 5 explicit listener restored in English
+
+The previous turn was progress: actual 7:7/7:19 note application and export
+verification. PR 30's exact-head checks were confirmed live at this turn's start;
+both later passed and it merged at `80d425ab32cf89767be2c312029a0af8c941adfd`.
+Moved to the [unfinished 7:5 construction](ECCLESIASTES_DSS_COMPARISON_2026-09-06.md#ecclesiastes-7-5-hearing-construction-2026-10-05),
+not another review of those completed verb disclosures.
+
+Complete published context distinguishes plural rebukes, supplied wise-man/mem,
+raised-shin correction and unidentified deletion. Native Swete and NET page
+checks followed the PDF skill; selected Greek supports an explicit listener,
+not unique retroversion or full apparatus coverage. Retain pointed Hebrew;
+earliest construction remains held with explicit reopening evidence.
+
+An independent source assessor favored a C-type construction provisionally; a fresh-context,
+identity-withheld English review narrowly preferred B over smoother A and
+more conspicuous being-language C. Root selects B: than for a man to hear.
+This preserves a source pattern, not a new doctrine or major meaning correction.
+The exact [receipt](../sources/textual_restoration/applications/ecclesiastes7_5_listener.2026-10-05.v1.json)
+stores actual English assessment and disagreement, qualified reader notes,
+archives and scoped full-record PASS. Old identical restoration history stays
+historical; actual current change is appended. No model-family or human review
+is invented, and active status is draft/needs_review.
+
+Actual schema, archives, source/generation preservation, markers and full-book
+export pass, along with 26 reader-footnote tests and two rationale regressions.
+Receipt manifest pins, local links and whitespace pass. Exactly one of 222
+Ecclesiastes records changes; protected unrelated
+Genizah is unchanged. The documentation skill preserves historical/current
+distinctions and the tradeoff rather than converting preference into priority.
+Existing aggregate debt remains, with no ImageGen evidence, fresh decipherment,
+canon expansion or publication claim. The 6:8 particle remains an open screen;
+the assessor's short comment is not a completed second adjudication.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

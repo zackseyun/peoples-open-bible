@@ -272,6 +272,17 @@ original provenance and historical revisions are unchanged, with old approvals
 archived rather than renewed. This is a concrete correction, not a new ancient
 reading or proof that unchanged English is universally optimal.
 
+The subsequent [7:5 hearing-construction comparison](ECCLESIASTES_DSS_COMPARISON_2026-09-06.md#ecclesiastes-7-5-hearing-construction-2026-10-05)
+retains Hebrew but selects explicit generic-listener English after a fixed-source,
+identity-withheld comparison. It distinguishes the scroll's reported plural and
+corrected infinitive from supplied words and unidentified deletion. One source
+assessment, one English assessment and one full-record application critique serve
+separate roles; the source assessor's C-type construction and the English
+reviewer's B preference are not erased as consensus or presented as identical
+candidate comparisons.
+This is a scoped source-pattern improvement with qualified notes, not a major
+meaning correction, new ancient reading or earliest-construction victory.
+
 For the separate reception aim, prioritize one defined work and passage rather
 than another six-book inventory: an overlapping Enoch unit, such as 1 Enoch 1:9
 and Jude 14–15, is a proposed bounded comparison. Establish the surviving

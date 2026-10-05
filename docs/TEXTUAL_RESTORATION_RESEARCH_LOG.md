@@ -6144,6 +6144,54 @@ PR 44 passed exact-head checks 111779061491 and 111778831145 and merged at
 its delivery is recorded only when observed. The controlling method and the
 unrelated untracked Genizah file retain their exact hashes.
 
+### 2026-10-05 — Complete Exodus Sinai comparison and Jubilees locator
+
+The [Exodus 20:21 case](EXODUS_20_21_SOURCE_COMPARISON_2026-10-05.md)
+completes the longer speech rather than another readiness audit. A bounded
+engine task and root's direct control reading account for all 720 characters
+in eleven declared blocks and eleven spaces. Internal parallels are validated,
+not counted as independent ancient manuscripts or proof of direction.
+Root checked complete relevant QDR-owned blocks, native Anderson–Giles pages
+61–63, Kratz pages 514–518 and Brooke–McLean pages 220–221. The Greek apparatus
+explicitly reports the Samaritan extension in Latin, not as Greek continuous
+text. Private published sources remain hash-bound, not vendored as ancient ink.
+
+4Q22's consulted rows preserve the preceding expanded speech, not the complete
+prophet extension; 4Q158 is fragmentary and 4Q175 is an anthology. Kratz and QDR
+differ on the supplied speech verb. Actual IAA B358486 pixels were viewed, but
+the literary-fragment crosswalk and disputed verb were not secured. The next
+discriminating inputs are DJD V pages 1–6/plate I and Strugnell's RQ7 pages
+168–175, not another download of the same controls. No fresh decipherment,
+restored original, canonical addition or historical-priority victory follows.
+
+The draft application retains WLC and marker-free English, adds a qualified
+longer-form note and moves the unchanged darkness note to its proper phrase.
+Old review objects are archived exactly. Sixteen focused tests and 28 reader
+regressions pass; the complete export retains 40 chapters/1,213 verses with
+only 20:21 differing. Full reader validation, private-input reproduction, JSON,
+local links, Exodus batch isolation, protected hashes and whitespace pass.
+One fresh bounded critique passed this scoped draft and independently reproduced
+the alignment/application tests and private-input verification. Its precision
+correction preserves Kratz's actual supplied-letter brackets; the candidate
+was unchanged. No repeat agreement loop or specialist approval is claimed.
+Delivery is recorded only when observed. The PDF skill required native context; the
+documentation skill kept observation, literary history and reader outcome apart.
+
+A separate read-only task locates the
+[Jubilees 1:27 Hebrew/Geʿez overlap](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md#contribution-milestones-and-efficient-continuation).
+The agent inspected Charles's complete native page; root inspected POB's
+actual verse and retained the Hebrew causative's semantic countercase. The
+locator is useful, not an adjudication: DJD XIII IV.6/plate and a modern
+Geʿez apparatus are next. No Jubilees source or English changes, and no new
+canon declaration. The requested two-question answer remains yes to evidence-
+driven improvements and serious additional-text comparison, but no token
+threshold, guaranteed novel discovery or manuscript-only rule for canon.
+
+PR 45's merge is now observed at
+`31628ad7d7291d0205a547aecae1d75cb2f17953`; local main was synchronized and
+pushed before this separate Exodus branch. Unrelated Genizah work and the
+controlling method retain their exact hashes.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

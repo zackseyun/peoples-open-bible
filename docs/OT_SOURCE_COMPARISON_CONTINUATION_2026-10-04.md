@@ -78,8 +78,12 @@ The [Samaritan parallel batch](SAMARITAN_PARALLEL_BLOCKS_2026-10-05.md) now
 advances all twenty frozen large leads beyond verse-label comparison and
 applies a qualified Numbers 20:13 narrative-variant note. This is reproducible
 discovery plus reader disclosure, not twenty completed adjudications or new
-decipherment. The next structural case is Exodus 20:21; the separate Jubilees
-task first needs an actually surviving Hebrew and checkable Geʿez overlap.
+decipherment. The [Exodus 20:21 comparison](EXODUS_20_21_SOURCE_COMPARISON_2026-10-05.md)
+now accounts for the complete longer speech and adds a qualified draft reader
+note while retaining WLC and marker-free English. Ancient related forms are
+fragmentary; the disputed supplied speech verb needs primary edition/plate
+checking. Do not count that hold as a completed restoration or repeat the same
+acquisitions. The Jubilees overlap below is now located, not adjudicated.
 These concrete evidence tasks supersede earlier next-case instructions below.
 
 The requested reassessment distinguishes three achievable contributions:
@@ -111,10 +115,26 @@ leave the source decision held and move to another consequential passage.
 The unresolved Proverbs 24:25 pointing lead is not a demonstrated English
 change and should not displace a better-supported meaning question.
 
-The separate additional-text milestone is one surviving Hebrew passage of
-Jubilees aligned with its Geʿez edition, after confirming actual coverage and
-separating preserved letters from editorial supplies. This extends comparison
-beyond the completed Enoch/Jude overlap. Compare the work's content and
+The separate additional-text milestone now has a bounded locator: Jubilees
+1:27, [4Q216 column IV line 6](https://lexicon.qumran-digital.org/transcriptions/4Q216/2026-05-21/index.html),
+reports לה֯כתיב outside supply brackets, with one uncertain letter, alongside
+Charles's Geʿez write at printed page 4. A read-only agent checked the complete
+[native Charles page](https://ia801900.us.archive.org/BookReader/BookReaderImages.php?zip=%2F28%2Fitems%2FCharlesEthiopicJubilees%2FThe_Ethiopic_version_of_the_Hebrew_Book_jp2.zip&file=The_Ethiopic_version_of_the_Hebrew_Book_jp2%2FThe_Ethiopic_version_of_the_Hebrew_Book_0039.jp2&id=CharlesEthiopicJubilees&scale=2&rotate=0);
+root checked the actual [POB record](../translation/extra_canonical/jubilees/001/027.yaml),
+which currently says Write for Moses. Dictate versus write is a potentially
+consequential interpretation, not an established change of writer: the Hebrew
+causative can require analysis of cause to write and its context. Much of the
+preceding Hebrew clause and Moses on the next line are supplied. No source or
+translation change is made, and no fresh ancient photograph was deciphered.
+
+Next inputs are DJD XIII pages 11–12, especially the note on IV.6 and its plate,
+and a modern manuscript-specific Geʿez apparatus. POB 1:27 includes material
+printed under Charles 1:28, so preserve a content-based verse map. The agent's
+QDR response is hash-bound as `287414dbc053bc15397c1da0dc75dc568050338fddd52fa21ccd988181d75431`;
+the single Charles image as `0cf991e3c1b1faa3d46d3cffd08fe00fc95602ff75420be8d3c717e697b2a351`.
+Root's web-reader request failed; the agent's actual reading is not a second
+independent root collation. This extends comparison beyond the completed
+Enoch/Jude overlap. Compare the work's content and
 documented reception; do not treat it as another Genesis manuscript or merge
 its expansions into Genesis. The
 [Ethiopian Church's list](https://www.ethiopianorthodox.org/english/canonical/books.html?lang=en)

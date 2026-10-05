@@ -9,6 +9,25 @@ is the next named grammatical lead, not an already selected source change.
 
 ## Current answers and next evidence tasks
 
+Latest bounded check, 2026-10-05, against merged main
+`a206266d112a7dee7d9b26ba59798415b578e093`: the readiness conclusion below
+still holds. Root inspected the current verse records; two read-only agents
+checked contribution readiness and the existing six-work reception screen.
+No new decipherment, source selection, translation or canon change was made.
+The 374-row pointing queue is now merged after both exact-head CI checks passed;
+its entries remain unadjudicated, not 374 meaning-changing discoveries.
+
+**When to expect a contribution:** useful provisional POB changes already
+exist. A further case is ready when its surviving evidence distinguishes the
+alternatives, the strongest contrary explanation is addressed, and the chosen
+source, English and reader disclosures pass their scoped checks. A newly
+discovered reading needs additional evidence of novelty and qualified scrutiny;
+there is no honest date or token threshold for it. The immediate source task
+is Judges 20:48, not another readiness audit. The separate reception task is a
+bounded Enoch/Jude comparison, checking actual surviving language coverage first.
+Keep Mark 1:41's unresolved transmission question held. Additional-library
+inclusion is possible without making a new theological canon declaration.
+
 Requested reassessment, 2026-10-05: reviewed main
 `80d425ab32cf89767be2c312029a0af8c941adfd` and the pending Ecclesiastes 7:5
 branch at `4991c662e02e3030aeb0554606d72d5556fb10d6`.
@@ -985,9 +1004,15 @@ before any recommendation. Ancient attestation can alter historical judgments;
 it cannot by itself determine inspiration or a universal canon. No canon or
 reader book-list change is made here.
 
-Efficiency stop: the cumulative goal tracker is now approximately 27.10 million
-tokens, not a billing statement. That expenditure is excessive relative to
-the demonstrated contributions. This pass reuses acquired evidence and one
-counterargument reviewer, stops at a concrete unresolved/retain decision and
-does not repeat calibration, acquisition or agreement loops. Do not equate
-more notes, documentation, passing judges or tokens with recovered source text.
+Efficiency check, 2026-10-05: the cumulative goal tracker reported approximately
+35.5 million tokens at the start of the latest review, versus approximately
+27.10 million at the earlier checkpoint. These are tracking figures, not a
+billing statement. The expenditure is excessive relative to the demonstrated
+contributions; useful results do not make repeated readiness audits efficient.
+Use one bounded passage, one explicit evidence question and one proportional
+critique. Stop with change, retain or hold, recording what new evidence would
+reopen it. More model deliberation is worthwhile only when it acquires relevant
+evidence, tests a competing explanation or verifies an actual application.
+Do not run judges until they agree, force a sensational change, or count
+documentation volume as recovered source text. The latest review changed only
+this existing document and used no corpus-wide rerun or fresh-image claim.

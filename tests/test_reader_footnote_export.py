@@ -14,6 +14,43 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReaderFootnoteExportTests(unittest.TestCase):
+    def test_zechariah_12_10_preserves_person_shift_and_disputed_syntax(self):
+        candidate = ROOT / 'sources/textual_restoration/applications/zech12_10_candidate.2026-10-04.v1.yaml'
+        canonical = ROOT / 'translation/ot/zechariah/012/010.yaml'
+        raw = candidate.read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(),
+                         '7a463ed5ad57c1159db46ae1fd94221a4514968eb51e3bf23563f4d4673e7128')
+        self.assertEqual(canonical.read_bytes(), raw)
+        record = yaml.safe_load(raw)
+        historical = record['textual_comparison_history'][-1]
+        self.assertEqual(record['source'], historical['source'])
+        self.assertEqual(record['status'], 'draft')
+        self.assertEqual(record['cross_check'], {'status': 'needs_review'})
+        packet = json.loads((ROOT / 'sources/textual_restoration/applications/zech12_10_english_comparison.2026-10-04.v1.json').read_text())
+        marker_free = record['translation']['text']
+        for marker in ('a', 'b', 'c', 'd', 'e'):
+            marker_free = marker_free.replace(f'[{marker}]', '')
+        self.assertEqual(marker_free, packet['candidates']['B'])
+        self.assertNotIn('the one whom', marker_free)
+        book = exporter.export_book('ZEC')
+        self.assertEqual([c['chapter'] for c in book['chapters']], list(range(1, 15)))
+        self.assertEqual(sum(len(c['verses']) for c in book['chapters']), 211)
+        verse = next(v for c in book['chapters'] if c['chapter'] == 12
+                     for v in c['verses'] if v['verse'] == 10)
+        self.assertEqual(verse['text'], record['translation']['text'])
+        self.assertEqual(verse['footnotes'], record['translation']['footnotes'])
+        for phrase in ('pleas for mercy[c]', 'look to me[a]',
+                       'whom they pierced[d][e]', 'mourn for him[b]'):
+            self.assertIn(phrase, verse['text'])
+        notes = {n['marker']: n for n in verse['footnotes']}
+        for original in historical['translation']['footnotes']:
+            self.assertEqual(notes[original['marker']], original)
+        self.assertIn('concerning the one they pierced', notes['d']['text'])
+        self.assertIn('construction is disputed', notes['d']['text'])
+        self.assertIn("only the ending 'רו'", notes['e']['text'])
+        self.assertIn('are supplied', notes['e']['text'])
+        self.assertIn('not newly deciphered letters', notes['e']['text'])
+
     def test_deuteronomy_32_43_distinguishes_forms_and_samaritan_closing(self):
         candidate = ROOT / 'sources/textual_restoration/applications/deut32_43_disclosure_candidate.2026-10-04.v1.yaml'
         canonical = ROOT / 'translation/ot/deuteronomy/032/043.yaml'

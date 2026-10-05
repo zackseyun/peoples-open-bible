@@ -5409,6 +5409,45 @@ main-text adoption, novelty, canon change or verified deployment. The wider goal
 remains unfinished; reopen only for discriminating evidence, not agreement loops.
 The unrelated Genizah JSON remains untracked with its recorded SHA256 unchanged.
 
+### 2026-10-04 — Zechariah 12 10 source and English comparison applied
+
+Completed the [Zechariah comparison](ZECHARIAH_12_10_SOURCE_COMPARISON_2026-10-04.md)
+against main `f8ad8874d89c8b3eaae0342f84df094559b3aa5c`. Root and the source
+assessor checked complete published 4Q80 bracket context; only the relevant
+verb ending survives, not the whole disputed clause. Swete's complete text and
+apparatus distinguish B's dancing, Γ's added piercing phrase and A/Q mourning
+pronouns. Preface/sigla identify Γ as Cryptoferratensis, not Taurinensis. Root's
+complete original Barberinus article reading remains an author report, not own
+folio collation. NETS's correct public PDF succeeded after the web fetch failed;
+visual pages and introduction support the dancing gloss and retroversion caveat.
+Greek 13:3 is feet-binding, not a matching piercing translation. GKC's generic
+respect accusative is not an exact target parallel; its conjectural deletion
+does not become attested Hebrew. The assessor's 118 locator was corrected to q.
+
+Retain pointed WLC provisionally. A separate same-model identity-withheld English
+assessment modestly preferred B, compact apposition, while retaining substantive
+A, concerning the one. Root accepts B, not exclusive syntax or universal optimality.
+The reader gains the real interpretive alternative and qualified partial-source
+disclosure, and three misplaced note anchors are corrected. This is a small
+rendering refinement plus meaningful comparison, not novel decipherment, a Hebrew
+amendment, theological identity determination or canon change. ImageGen was not used.
+
+One scoped full-record judge passed the frozen candidate; exact bytes were applied
+as a draft. Original generation/revisions and replaced reasoning are preserved,
+old agreement flags reset. Actual Zechariah export retains 14 chapters and 211 IDs,
+changing only 12:10. Full verse schema, 23 reader-export tests, 18 footnote tests
+and full-reader guardrails pass. Five existing aggregate registry drifts remain.
+Additional historical suites expose preexisting report/hash-binding failures;
+the [receipt](../sources/textual_restoration/applications/zech12_10_application.2026-10-04.v1.json)
+records actual counts, pins, review scope and reproduction, without repinning
+historical controls. An incorrect test discovery pattern ran zero tests and was
+not counted as a pass. The unrelated Genizah JSON retains its recorded hash.
+The PDF skill required visual print verification; the documentation skill kept
+decisions distinct from claims and corrected obsolete current-Tobit wording.
+Required exact-head CI governs merge, not scholarly truth. Full all-book comparison,
+novel-reading calibration and public deployment remain unproved; reopen this case
+only for specific discriminating evidence, not an agreement loop.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

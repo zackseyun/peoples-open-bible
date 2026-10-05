@@ -13,6 +13,21 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReaderFootnoteExportTests(unittest.TestCase):
+    def test_acts_24_disclosure_preserves_connected_shorter_form(self):
+        six = yaml.safe_load((ROOT / 'translation/nt/acts/024/006.yaml').read_text())
+        eight = yaml.safe_load((ROOT / 'translation/nt/acts/024/008.yaml').read_text())
+        self.assertEqual(six['source']['edition'], 'SBLGNT')
+        self.assertEqual(eight['source']['edition'], 'SBLGNT')
+        self.assertIn('we seized him[a]', six['translation']['text'])
+        self.assertIn('From him[a][b]', eight['translation']['text'])
+        for v, record in [(6, six), (8, eight)]:
+            out = exporter._export_record_verse(v, record)
+            self.assertEqual(out['footnotes'], record['translation']['footnotes'])
+            self.assertEqual(record['cross_check'], {'status': 'needs_review'})
+        self.assertIn('Byzantine main texts retain the shorter unit', six['translation']['footnotes'][0]['text'])
+        self.assertIn('Paul remains possible', eight['translation']['footnotes'][1]['text'])
+        self.assertIn('beginning of verse 8', eight['translation']['footnotes'][1]['text'])
+
     def test_lamentations_1_8_discloses_source_and_interpretation_separately(self):
         record = yaml.safe_load((ROOT / 'translation/ot/lamentations/001/008.yaml').read_text())
         self.assertEqual(record['source']['edition'], 'WLC')

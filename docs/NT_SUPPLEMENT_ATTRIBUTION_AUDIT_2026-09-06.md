@@ -92,3 +92,102 @@ matching the stored text, or an explicit source-selection decision with its
 English consequences reviewed. Do not relabel the text as TR merely because
 it resembles a familiar reading. The 14 digital matches still need proportional
 disclosure and linked-context checks; they are not automatic publication approvals.
+
+## Acts 24 6 through 8 connected reading comparison
+
+Compared against main `1138c56b6c4dc60cd8dea7b567d771e4222f5bac` on
+2026-10-04 local date. Retain the connected shorter source and marker-free
+English provisionally; keep verse 7 outside the reader. This completes the
+bounded edition/context comparison, not historical priority or publication.
+The [receipt](../sources/textual_restoration/applications/acts24_6_8_connected.2026-10-04.v1.json)
+pins source versions/hashes, exact record changes and verification.
+
+### Actual controls and the digital omission
+
+The pinned [SBL apparatus](../sources/nt/sblgnt_apparatus/xml/Acts.xml),
+Acts 24:6, labels the shorter unit WH, Treg, NA28 and RP and the longer unit
+TR. These are edited-text comparisons, not independent manuscript votes.
+Official byztxt v2.0.3 [AC.CCT](https://raw.githubusercontent.com/byztxt/byzantine-majority-text/v2.0.3/textonly-beta-code/AC.CCT)
+24:06–08 has short 6, blank 7 and short 8; AC.csv agrees at the word level.
+Its distinct [AC24.CCT](https://raw.githubusercontent.com/byztxt/byzantine-majority-text/v2.0.3/textonly-beta-code/AC24.CCT)
+contains the longer alternative. That file alone cannot substantiate the
+record's blanket “Byzantine majority” claim.
+
+| Unit | SBL / checked Byzantine main | Separate AC24 CCT | TR reported in SBL apparatus |
+|---|---|---|---|
+| End of 6 | Seizure, directly to 8 | Intended judgment under their law; `κρῖναι` | Similar addition; `κρίνειν` |
+| 7 | Not present | Lysias's force; `ἀπήγαγεν` | Similar account; `ἀπήγαγε` |
+| Start of 8 | `παρ’ οὗ` directly | Command to accusers; `σοῦ` / `σέ` alternatives | Command with `ἐπὶ σέ` |
+
+Do not combine these local differences into an allegedly verbatim longer
+source. The [no-variants AC24 CSV](https://raw.githubusercontent.com/byztxt/byzantine-majority-text/v2.0.3/csv-unicode/accents/no-variants/AC24.csv)
+prints `ἔρχεσθαι ἐπὶ παρ’ οὗ`, lacking both pronoun alternatives.
+The [with-variants CSV](https://raw.githubusercontent.com/byztxt/byzantine-majority-text/v2.0.3/csv-unicode/accents/with-variants/AC24.csv)
+retains them; CCT has `{B sou^: > se/: }`. The consulted
+[conversion helper](https://raw.githubusercontent.com/byztxt/byzantine-majority-text/v2.0.3/scripts/beta_to_unicode_custom/beta_to_unicode_custom.py)
+removes every curly-braced block when dropping variants; local regex
+reproduction removes exactly this one. This establishes digital conversion
+loss, not ancient omission. No pronoun is silently supplied and no upstream
+file is edited. CCT/ASC are the ultimate digital sources per the project's
+README; the repository declares public domain. The separately attributed
+SBL apparatus remains CC BY 4.0, not relicensed by this comparison.
+
+The [CSNTM P74 catalogue](https://manuscripts.csntm.org/manuscript/Group/GA_P74)
+dates it to the seventh century, contradicting the third-century note.
+This controls the catalogue date, not local attestation: no P74 ink, complete
+manuscript apparatus, Latin or Coptic witnesses were collated. The old witness
+list and categorical expansion verdict are archived, not certified. INTF's
+workspace exposed interface headings only; browser GitHub directory access
+failed while shell access succeeded. One wrong publisher XML path failed;
+the existing pinned manifest supplied the correct path. No repeated broad
+acquisition, generated image or new manuscript decipherment.
+
+### Meaning and contrary transmission account
+
+Root read Greek and POB at Acts 21:30–36, 23:27–30 and 24:5–6,8–9,22.
+In the shorter unit, the seized person leads directly to “from whom”; Paul
+is the natural referent. Greek leaves the object of “examining” implicit;
+POB supplies “him” accordingly. The close gloss and current POB both have
+Felix obtain information from that person by personal examination. No new
+blinded English comparison or full-verse approval is claimed.
+
+The longer account presents intended lawful judgment, forcible Roman
+intervention and instructions to the accusers. That is the prosecution's
+presentation, not independent corroboration of lawful conduct. Lysias becomes
+a plausible “from whom” referent, not a necessary one: Paul remains the person
+removed, the one with accusers and the person accused at the sentence's end.
+A longer translation must first restore the three linked clauses, then
+disclose whether Felix should examine Paul or Lysias. Verse 7 alone cannot
+represent this unit.
+
+Our working preference retains the shorter form. Explanatory expansion could
+connect seizure with 23:30's instructions and 24:22's anticipated Lysias
+appearance. The strongest contrary account preserves a pointed prosecution
+narrative, with shortening motivated by criticism of Roman intervention or
+its harder antecedent. These are hypotheses, not observed editing events.
+No whole-unit eye-skip trigger is demonstrated; length or edition agreement
+does not prove origin. One independent counterargument review also favors
+provisional retention, but is not manuscript attestation.
+
+### Application and stopping condition
+
+Notes at 6/8 now disclose the connected unit and source-dependent antecedent.
+Record 7 identifies its supplemental role, removes unsupported date/majority
+claims and remains `reader_supplement: false`. Greek, marker-free English and
+original generation metadata remain unchanged. Historical translation/review
+objects are preserved; active status is draft/needs-review. Missing original
+prompt/output hashes at 7 remain recorded schema debt, not invented history.
+
+Reopen priority for verified connected manuscript evidence and a discriminating
+transmission argument. A longer reader proposal needs an exact declared source
+unit, pronoun/antecedent choices, matching 6/8 context and verified disclosure.
+Another model vote or numbered-verse match is insufficient. Application checks
+do not establish earliest text, fresh decipherment or public deployment.
+
+One independent exact-candidate check reproduced both whole-Acts hashes and
+all 28 chapters/1,002 base-edition IDs, with verse 7 still excluded. Only 6/8's
+reader markers and notes change. Eighteen reader-note and nine supplement
+tests pass independently; root also passed eighteen footnote tests, complete
+reader validation, preservation, schema/debt checks, local links and whitespace.
+Required remote CI governs merge. This scoped PASS is not a publication verdict;
+no further preference loop is required.

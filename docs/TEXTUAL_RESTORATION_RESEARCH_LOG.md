@@ -5950,6 +5950,21 @@ including native Fox source checks and actual raw reproduction. That pass is
 not approval of historical priority, fresh decipherment, the complete remote
 workflow or publication. Protected Genizah remains unchanged and unstaged.
 
+### 2026-10-05 — Job 24 21 lexical hold
+
+The [bounded comparison](JOB_24_21_SOURCE_COMPARISON_2026-10-05.md) extracts
+the actual UXLC correction history and its current uncertain-transcription flag.
+The vowel contrast can change participial state, not by itself root or meaning.
+Complete BDB native pages and the actual Greek chapter qualify the August
+audit's confidence in a uniquely straightforward feeding image. Source and
+English remain provisionally retained; all 1,070 Job files and its full export
+are unchanged. Reader disclosure and audit-metadata correction remain unapplied.
+One read-only source assessor supplies the strongest countercase; no blind
+English test, fresh ink, new discovery or canon change is claimed. Judges PR 40
+passed both exact-head checks and merged at `520c3bb4f3adcb440c16d102836c5260d1fe2f01`;
+main was synchronized and pushed. The next distinct comparison is Enoch/Jude,
+not another readiness audit or repeated model vote on this held lexical question.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

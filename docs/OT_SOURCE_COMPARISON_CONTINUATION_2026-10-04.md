@@ -9,7 +9,13 @@ queue does not count semantic errors or waive fresh-image gates. The
 clarifies the inhabited-city interpretation and notes while preserving the
 diplomatic WLC text and recording its alternative working vowel separately.
 Physical pointing and historical priority remain unresolved; this is not
-a newly discovered source reading. The older next-task statements below
+a newly discovered source reading. PR 40 passed both exact-head checks and
+merged at `520c3bb4f3adcb440c16d102836c5260d1fe2f01`; main was pushed.
+The [Job 24:21 comparison](JOB_24_21_SOURCE_COMPARISON_2026-10-05.md)
+now retains source and English: the uncertain segol/tsere contrast does not
+require a meaning change. It qualifies the earlier feeding-image certainty
+without applying reader notes or transferring old model approval. The next
+distinct task is the Enoch/Jude reception comparison. The older next-task statements below
 describe earlier checkpoints, not an instruction to repeat this application.
 
 ## Current answers and next evidence tasks

@@ -397,3 +397,87 @@ This completes the rationale and reader-disclosure application for these two
 verb comparisons. Historical priority remains held for the specific evidence
 named above. Continue with a different unresolved substantive comparison rather
 than revisiting this completed application without new evidence.
+
+## Ecclesiastes 7 5 hearing construction 2026 10 05
+
+Retain pointed WLC provisionally, but make its explicit generic listener visible
+in English: It is better to hear the rebuke of a wise man than for a man to hear
+the song of fools. This is a narrow source-pattern rendering preference, not
+a new doctrine, a different ancient reading or proof that the previous English
+misstated the general listening preference. The [comparison and receipt](../sources/textual_restoration/applications/ecclesiastes7_5_listener.2026-10-05.v1.json)
+records the candidates, actual assessment, disagreement, frozen application and
+verification against `d64ab5dececfc8822346fae83812b57355f9aa28`.
+
+In complete [published 4Q109 context](https://lexicon.qumran-digital.org/transcriptions/4Q109/2026-05-21/index.html),
+frg. 1 ii+3–6 i, line 18 prints `טוב לשמוע גערות`. Line 19 has
+`[חכם מ]ל` followed by raised shin and `מוע`, unidentified crossed-out signs,
+then `שיר כסילים`. Both the wise-man wording and comparative mem are supplied.
+The raised shin is a reported correction, not a bracketed restoration. The
+deleted signs cannot establish an erased man, an earlier complete sentence,
+a corrector's hand, exemplar or motive. Attribution remains DFG Qumran-Digital,
+project 465277421, CC BY-SA 4.0; publication date does not date the ancient copy.
+
+The natural plural analysis rebukes differs from pointed MT's singular rebuke;
+the unpointed scroll does not certify ancient vowels. Assuming the supplied
+words, the final scroll comparison has two hearing infinitives, whereas MT
+moves from to hear to a man hearing. Connected diagnostic scroll English is
+It is better to hear a wise man's rebukes than to hear the song of fools. It
+does not claim that every word of that sentence survives. A pre-correction
+sentence remains unassembled rather than filled from familiar MT.
+
+The strongest scroll argument is early direct Hebrew reporting a coherent
+balanced comparison. Contrary inference: an uneven infinitive/person comparison
+could be smoothed and the rebuke pluralized. In the opposite direction, MT
+could elaborate an earlier balanced saying by making the listener explicit,
+or transmit a different formulation. Context 7:4–6 accommodates both. Chronology
+gives the scroll serious attention, not automatic priority. Neither copying
+direction is demonstrated; retain the base while earliest construction remains
+held. Reopen for consulted DJD correction/hand discussion or discriminating
+transmission/version evidence, not another copy of this transcription.
+
+Root visually read Swete II's complete printed 494 / PDF 512, including apparatus.
+Greek numbered 7:6 aligns to Hebrew 7:5. Its singular rebuke and
+`ὑπὲρ ἄνδρα ἀκούοντα` preserve the explicit listener construction. No unit-6
+variant entry appears on that page; this is not Greek unanimity or consultation
+of the modern Göttingen apparatus. Greek wording supports the construction,
+not uniquely recoverable Hebrew spelling or historical victory for every MT word.
+Root also visually inspected official NET notes, printed 1207 / PDF 25: hearing,
+wise rebuke and song/praise/entertainment interpretation. These are translator
+arguments, not a new ancient witness or proof of different source letters.
+
+The source assessor provisionally favored a C-type construction, which makes a
+man listening explicit through English being-language; its diagnostic sentence
+uses the song of fools rather than C's shorter fools' song. A fresh-context reviewer,
+without tools or candidate identities, compared A, B and C against fixed Hebrew,
+context, policy and rubric. It narrowly preferred B, than for a man to hear.
+A, the previous balanced infinitives, preserves practical meaning and is crisper,
+but smooths a real structural feature. B makes the participant visible while
+still recasting the participle; its asymmetry can briefly suggest a subject
+change. C makes being that kind of person more conspicuous and is cumbersome.
+Root selects B under source-pattern priority and explains the generic listener
+in a note. This is one identity-withheld review with fixed order, not randomized
+testing, cross-family confirmation or universally optimal-English certification.
+
+### Application and limits
+
+A new note after rebuke discloses the qualified plural and corrected hearing
+construction; another after man explains the MT participle and generic listener.
+Old translation, note, lexical and review metadata are archived exactly. Original
+generation and both historical revisions remain, including the old identical
+before/after entry that claimed restoration; a new append records the actual
+change. Two active rationales now describe what the English really expresses.
+The active record is draft/needs_review, not approved by old agreement scores.
+One full-record independent critique passed the exact candidate only; it does
+not decide source priority or confer specialist/publication approval.
+
+Before verse hash: `c55c978f1f7b1aea0d7323a0693d9286b1e9ff8f9b258d1bb994f765e31179b5`.
+After: `04251412b26caea560bfff6576f1f7060764412727b0009fb53c3405ec8252f0`.
+Actual schema, complete archival equality, source/generation preservation and
+marker checks pass. The real export retains 12 chapters and 222 IDs with exact
+target English and notes; only 7:5 changes, with 221 book records byte-identical.
+All 26 reader-footnote tests and two rationale regression tests pass, including
+the new exact-candidate reader check; receipt manifests, local links and whitespace
+also pass. These are scoped verification, not new whole-registry certification.
+The receipt records both book manifests and the preserved unrelated Genizah pin.
+Existing aggregate registry debt remains disclosed, not repinned. No fresh ink,
+ImageGen evidence, novel discovery, canon change or deployed-reader verification.

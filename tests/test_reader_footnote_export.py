@@ -14,6 +14,34 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReaderFootnoteExportTests(unittest.TestCase):
+    def test_ecclesiastes_7_5_preserves_explicit_generic_listener_and_qualified_scroll_note(self):
+        raw = (ROOT / 'translation/ot/ecclesiastes/007/005.yaml').read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(),
+                         '04251412b26caea560bfff6576f1f7060764412727b0009fb53c3405ec8252f0')
+        record = yaml.safe_load(raw)
+        history = record['textual_comparison_history'][0]
+        self.assertEqual(record['source'], history['source'])
+        self.assertEqual(record['status'], 'draft')
+        self.assertEqual(record['cross_check'], {'status': 'needs_review'})
+        self.assertEqual(record['revisions'][-2]['from'], record['revisions'][-2]['to'])
+        packet = json.loads((ROOT / 'sources/textual_restoration/applications/ecclesiastes7_5_listener.2026-10-05.v1.json').read_text())
+        self.assertEqual(record['translation']['text'].replace('[a]', '').replace('[b]', ''),
+                         packet['english_comparison']['candidates']['B'])
+        self.assertTrue(packet['english_comparison']['candidate_identity_withheld'])
+        self.assertFalse(packet['english_comparison']['randomized_order'])
+        book = exporter.export_book('ECC')
+        self.assertEqual(len(book['chapters']), 12)
+        self.assertEqual(sum(len(c['verses']) for c in book['chapters']), 222)
+        verse = next(v for c in book['chapters'] if c['chapter'] == 7
+                     for v in c['verses'] if v['verse'] == 5)
+        self.assertEqual(verse['text'], record['translation']['text'])
+        self.assertEqual(verse['footnotes'], record['translation']['footnotes'])
+        self.assertIn('rebuke[a]', verse['text'])
+        self.assertIn('for a man[b] to hear', verse['text'])
+        self.assertIn('comparative prefix', verse['footnotes'][0]['text'])
+        self.assertIn('crossed-out characters are unidentified', verse['footnotes'][0]['text'])
+        self.assertIn('not necessarily a different person', verse['footnotes'][1]['text'])
+
     def test_ecclesiastes_scroll_verb_disclosures_preserve_source_and_main_wording(self):
         expected = {
             7: ('3eefe19504ce3082b4c67a91ff52b5cfce85aac6586322c621578d4a35e3cf2c',

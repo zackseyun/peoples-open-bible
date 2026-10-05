@@ -72,6 +72,58 @@ differences without changing the canon or harmonizing the two works.
 The older next-task statements below
 describe earlier checkpoints, not an instruction to repeat this application.
 
+## Contribution milestones and efficient continuation
+
+The requested reassessment distinguishes three achievable contributions:
+applying a known variant to POB, provisionally revising the interpretation of
+unchanged wording, and accurately disclosing an unresolved alternative. The four-cubit
+Goliath and Isaiah's light are examples of the first; the disputed
+[Malachi conditional](MALACHI_2_16_SOURCE_COMPARISON_2026-10-05.md) is an
+example of the second; Jude's every-person note is an example of the third.
+Verified application means that the intended repository change was checked,
+not that its historical priority or scholarly publication was approved.
+None of these cases establishes a newly deciphered ancient reading.
+
+More computation is worthwhile when it obtains an input that can distinguish
+the live alternatives or tests an actual translation consequence. It is not
+a discovery guarantee. Before a new unit, name the competing readings, the
+missing evidence, and what result would change the decision. Finish with
+change, retain or hold, recording source and English outcomes separately.
+Use one bounded counterargument review; reopen only for named new evidence.
+Do not spend another cycle summarizing readiness or seeking model agreement.
+For claims of novel scholarship, additionally check relevant literature and
+seek qualified scrutiny. For claims of general translation improvement,
+complete evaluation on unflagged passages as well as selected difficult cases.
+
+The next source-selection opportunity is a bounded acquisition of Jude 15's
+missing stable ECM apparatus evidence, especially hands and early versions.
+The existing Greek transcriptions, published arguments and stemma need not be
+retrieved again. If the missing evidence is unavailable or nondiscriminating,
+leave the source decision held and move to another consequential passage.
+The unresolved Proverbs 24:25 pointing lead is not a demonstrated English
+change and should not displace a better-supported meaning question.
+
+The separate additional-text milestone is one surviving Hebrew passage of
+Jubilees aligned with its Geʿez edition, after confirming actual coverage and
+separating preserved letters from editorial supplies. This extends comparison
+beyond the completed Enoch/Jude overlap. Compare the work's content and
+documented reception; do not treat it as another Genesis manuscript or merge
+its expansions into Genesis. The
+[Ethiopian Church's list](https://www.ethiopianorthodox.org/english/canonical/books.html?lang=en)
+already names Jubilees and Enoch. An additional POB library can represent that
+tradition without declaring a new universal canon. A recommendation to change
+a particular canon must first identify the community and its authority
+criteria; antiquity, quotation and codex inclusion are evidence, not a complete
+decision rule.
+
+Delivery is a separate gate. PR 43's original push check failed because the
+shallow CI checkout lacked the pinned Jude baseline commit. The workflow now
+fetches that exact baseline, without changing the test, verse, candidate or
+receipt. Remote checks on the new head must pass before merge. This is a
+technical repair, not new support for either Greek reading. Broader historical
+pin debt, fresh damaged-image calibration and incomplete witness coverage
+remain open.
+
 ## Current answers and next evidence tasks
 
 Latest bounded check, 2026-10-05, against merged main

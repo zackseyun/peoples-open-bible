@@ -6049,6 +6049,33 @@ and pushed. The new Jude application is separate work. Broad OT/NT comparison
 and damaged-ink calibration remain active; reopen this unit only for named
 discriminating evidence, not another readiness audit or repeated acquisition.
 
+### 2026-10-05 — Requested contribution and canon reassessment
+
+The [contribution milestones](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md#contribution-milestones-and-efficient-continuation)
+answer the two requested questions without counting a review as a discovery.
+Two bounded read-only assessments checked actual applied records and the
+limits of canonical inference. Root checked INTF's method and the IAA,
+Catholic, Ethiopian and Sinaiticus institutional pages. The documentation
+skill kept application, historical priority, novelty and canonical authority
+separate. No verse, source selection or canon changes in this reassessment.
+
+Useful provisional POB contributions already exist; no token threshold or
+discovery date is defensible. Next work must specify a discriminating input
+and end in change, retain or hold. Missing stable Jude apparatus evidence and
+a defined Hebrew/Geʿez Jubilees overlap are separate evidence tasks, not more
+readiness or reception inventories. Neither model consensus nor generated
+manuscript imagery supplies historical evidence.
+
+Observed remote failure: PR 43 push job 111769827807 could not read the pinned
+Jude baseline in its shallow checkout. Root inspected the actual log and added
+an exact fetch of commit `812b40b4583513af6d7832f24f85ec93a7f7666a` to the
+existing workflow. The baseline, tests and frozen evidence are not repinned or
+weakened. Merge and publication remain distinct; neither is claimed before its
+own checks. Six focused Jude tests, local documentation targets, workflow YAML
+parsing and whitespace checks pass. One final bounded critique prompted the
+wording provisionally revising interpretation rather than implying demonstrated
+superiority. The shared method and unrelated Genizah file retain their hashes.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

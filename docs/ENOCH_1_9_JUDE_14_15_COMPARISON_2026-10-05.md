@@ -106,6 +106,46 @@ differences. Misplaced note anchors and stale lexical metadata observed in the
 three records are application debt, not silently repaired or newly approved
 by this documentation-only pass.
 
+## Jude 15 manuscript follow up
+
+The bounded follow-up moves beyond edition votes. The
+[institutional Sinaiticus page](https://www.codexsinaiticus.org/en/manuscript.aspx?book=58&chapter=1&verse=15)
+locates Jude on British Library folio 325, quire 90, folio 1 recto.
+Root retrieved its
+[published transcription](https://www.codexsinaiticus.org/handler/transcription.ashx?q=90&f=1&s=r&type=1)
+and checked Jude 15 words 6–8: `ελεγξαι παϲαν ψυχην`.
+The two object words are plain spans, with no correction tooltip or supply
+marker there. This establishes the project's reading of Sinaiticus, not our
+own photograph collation, exhaustive hand analysis or independent verification
+of P72 and Vaticanus. The response was 30,678 bytes, SHA-256
+`6aabc4f234688b1a0e5dd637ec4bd9dba7f5920c1d799defefb46566c125c999`.
+
+Timo Flink's original
+[2007 discussion, page 117](https://www.bsw.org/filologia-neotestamentaria/vol-20-2007/reconsidering-the-text-of-jude-5-13-15-and-18/224/article-p117.html),
+with [distribution on page 116](https://www.bsw.org/filologia-neotestamentaria/vol-20-2007/reconsidering-the-text-of-jude-5-13-15-and-18/224/article-p116.html)
+and [conclusion on page 118](https://www.bsw.org/filologia-neotestamentaria/vol-20-2007/reconsidering-the-text-of-jude-5-13-15-and-18/224/article-p118.html),
+tests both directions: harmonization toward Enoch or Jude 4 could produce
+all the ungodly; influence from Romans 2:9 or avoidance of repeated ungodly
+vocabulary could produce every soul. He ultimately favors all the ungodly,
+also arguing from distribution and Jude's triadic style. These are competing
+historical explanations, not additional manuscript witnesses. A read-only
+agent located Gerd Mink's response in the SBL-hosted Wachtel–Holmes volume;
+root has not independently inspected those pages or acquired the official
+passage-specific ECM data, so that lead is not a completed adjudication here.
+
+The difference changes the explicit conviction object; the verse already
+speaks of judgment against all. Neither variant alone proves a new doctrine
+of universal salvation or a broader canon. Retain POB provisionally until
+the Greek attestations and transmission arguments are assessed together.
+The follow-up adds actual attestation and a counterargument, not new ancient
+letters or a completed source/English application.
+
+The edition-dependency safeguard above remains in this case report. An
+attempt to add its example to the shared method changed a historically pinned
+input and broke integrity tests. The additive method paragraph is withdrawn
+without changing the old review hashes or weakening those tests; this report
+preserves the lesson without invalidating existing evidence bindings.
+
 ## Canon and comparison policy
 
 Jude gives this prophecy positive authority in its argument. That is more

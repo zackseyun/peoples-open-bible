@@ -21,6 +21,31 @@ an exhaustive transcript. Record concise decision rationales and alternatives,
 not a claimed reconstruction of undocumented deliberation. The linked method
 controls current work; dated entries preserve what was known at the time.
 
+## Requested review of the two research aims 2026 10 05
+
+The [current answers](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md#current-answers-and-next-evidence-tasks)
+distinguish demonstrated provisional source/meaning applications from an
+undemonstrated new ancient discovery. Root inspected actual Goliath and Isaiah
+records, the source coverage and NT methods, and primary INTF, IAA, Catholic,
+Ethiopian and Sinaiticus pages. Two bounded read-only agents assessed the
+contribution and reception questions separately, not as a consensus loop.
+The documentation skill kept this requested reassessment separate from new
+research progress and preserved dated history.
+
+Corrected DEUTEROCANONICAL.md's blanket claim that all named traditions receive
+the entire POB collection canonically. No verse, source selection, canonical
+status or publication approval changes. The next discriminating tasks are
+Mark 1:41's exact witness/hand comparison, conditional on a working apparatus
+route, and a defined Enoch/Jude overlap with actual language coverage established
+first. No discovery date or token threshold is promised. The Ecclesiastes
+particle leads and prior validation/calibration debt remain open. Only scoped
+documentation checks are appropriate here; unrelated Genizah work is preserved.
+
+Actual checks passed: whitespace, local file-link existence, documentation-only
+diff scope and the protected Genizah byte hash. No corpus tests or fresh
+transcriptions were claimed. The earlier Ecclesiastes PR 31 subsequently passed
+both exact-head checks and merged at `050ebd6a8329617f765c394073ccfc6a02e0f9ba`.
+
 ## Objective and current assessment
 
 Discover the relevant surviving Old Testament sources, investigate whether

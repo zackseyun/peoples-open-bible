@@ -74,11 +74,15 @@ Concretely:
   Bibles is a 19th-century development driven primarily by printing
   economics at the British and Foreign Bible Society, not theological
   consensus.
-- **Ecumenical reach.** Roman Catholic (Trent, 1546), Eastern Orthodox
-  (Synod of Jerusalem, 1672), and Oriental Orthodox canons include
-  these books as fully canonical. Excluding them makes POB useful only
-  to a subset of Christian readers. Including them, clearly labeled,
-  serves the whole church without pronouncing on canonicity.
+- **Ecumenical reach.** These traditions do not receive POB's entire
+  collection identically. The [Catholic canon list](https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_two/article_3/iv_the_canon_of_scripture.html)
+  includes Tobit and Sirach, but not every work in the scope table below.
+  The [Ethiopian Orthodox list](https://www.ethiopianorthodox.org/english/canonical/books.html?lang=en)
+  names a different collection, including Enoch and Jubilees. Identify
+  reception by named community and exact work; do not generalize one
+  list to every Eastern or Oriental Orthodox church. Clearly labeled
+  inclusion serves readers across traditions without declaring all
+  these works equally canonical.
 - **Intertestamental witness.** These books describe the world Jesus
   was born into — the Hasmonean revolt (1-2 Maccabees), Second Temple
   wisdom traditions (Sirach, Wisdom of Solomon), and Jewish devotional

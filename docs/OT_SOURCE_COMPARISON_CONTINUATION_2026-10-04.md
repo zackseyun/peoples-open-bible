@@ -2,6 +2,15 @@
 
 ## Latest assessment of the two research aims
 
+Subsequent concrete delivery: the [Tobit fish unit](TOBIT_FISH_SOURCE_COMPARISON_2026-10-04.md)
+has been applied as a connected provisional source/English choice. The
+[Deuteronomy 32:43 pass](DEUTERONOMY_32_43_SOURCE_COMPARISON_2026-10-04.md#repository-application)
+now adds measured native-image verification, competing transmission arguments
+and qualified reader disclosures. Its source/main English remains provisional
+and unchanged; six-colon priority and DJD material reconstruction remain held.
+This is substantive evidence work, not a new readiness audit or a novel reading.
+The dossier and receipt disclose the aggregate frozen-control guard failures.
+
 Reviewed at `a8718b42e7d7dfa26a4ae1487f25b88f56b67391`, after the Habakkuk
 disclosure application merged. **Ready to continue published-source comparison now;
 not ready to advertise validated fresh decipherment.** The older dated audits

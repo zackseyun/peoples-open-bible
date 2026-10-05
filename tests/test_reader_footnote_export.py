@@ -14,6 +14,38 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReaderFootnoteExportTests(unittest.TestCase):
+    def test_deuteronomy_32_43_distinguishes_forms_and_samaritan_closing(self):
+        candidate = ROOT / 'sources/textual_restoration/applications/deut32_43_disclosure_candidate.2026-10-04.v1.yaml'
+        canonical = ROOT / 'translation/ot/deuteronomy/032/043.yaml'
+        raw = candidate.read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(),
+                         '83bb71136c7e5cf16f6624b9d304f216dedf3cd63261ac2ad6b79afb58cb69c4')
+        self.assertEqual(canonical.read_bytes(), raw)
+        record = yaml.safe_load(raw)
+        historical = record['textual_comparison_history'][-1]
+        self.assertEqual(record['source'], historical['source'])
+        self.assertEqual(record['translation']['text'].replace('[e]', ''),
+                         historical['translation']['text'])
+        self.assertEqual(record['status'], 'draft')
+        self.assertEqual(record['cross_check'], {'status': 'needs_review'})
+        book = exporter.export_book('DEU')
+        chapter = next(c for c in book['chapters'] if c['chapter'] == 32)
+        verse = next(v for v in chapter['verses'] if v['verse'] == 43)
+        self.assertEqual(verse['text'], record['translation']['text'])
+        self.assertEqual(verse['footnotes'], record['translation']['footnotes'])
+        notes = {n['marker']: n for n in verse['footnotes']}
+        for phrase in ('six poetic lines', 'eight-line form', 'Psalm 97:7',
+                       'Deuteronomy 32:41', 'earliest wording is unresolved',
+                       'not newly restored letters'):
+            self.assertIn(phrase, notes['c']['text'])
+        for phrase in ('“and” is supplied', 'Samaritan Pentateuch',
+                       'the land of his people', 'different verbal form',
+                       'does not establish priority for the entire verse'):
+            self.assertIn(phrase, notes['e']['text'])
+        for note in historical['translation']['footnotes']:
+            if note['marker'] != 'c':
+                self.assertEqual(notes[note['marker']], note)
+
     def test_tobit_fish_connected_greek_form_and_disclosures_reach_reader(self):
         pins = {
             1: 'e5e4a2116e2d72eac276f7c4fc6387465660198134cf599fea6b73484facf12e',

@@ -2,6 +2,12 @@
 
 Checked: 2026-09-04
 
+The subsequent [Deuteronomy 32 43 assessment](DEUTERONOMY_32_43_SOURCE_COMPARISON_2026-10-04.md)
+advances the plate-locator hold to a measured contextual native-image check,
+evaluates concrete expansion and grammatical-updating accounts, and holds
+whole-form priority while retaining WLC/main English provisionally. DJD XIV
+remains unconsulted. The original pass below records its earlier scope.
+
 ## Outcome
 
 The direct-Hebrew pass now reaches Deuteronomy 27:4 and 32:43. It also adds an

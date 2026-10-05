@@ -13,6 +13,21 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReaderFootnoteExportTests(unittest.TestCase):
+    def test_psalm145_nun_line_and_repeated_colon_disclosures_reach_reader(self):
+        thirteen = yaml.safe_load((ROOT / 'translation/ot/psalms/145/013.yaml').read_text())
+        seventeen = yaml.safe_load((ROOT / 'translation/ot/psalms/145/017.yaml').read_text())
+        self.assertEqual(thirteen['source']['edition'], 'POB-critical')
+        self.assertEqual(seventeen['source']['edition'], 'WLC')
+        self.assertIn('God is faithful in his words and loyal[c] in all his deeds[b]', thirteen['translation']['text'])
+        self.assertIn('loyal in all his deeds[a]', seventeen['translation']['text'])
+        for v, record in [(13, thirteen), (17, seventeen)]:
+            out = exporter._export_record_verse(v, record)
+            self.assertEqual(out['footnotes'], record['translation']['footnotes'])
+        source_note = next(n for n in thirteen['translation']['footnotes'] if n['marker'] == 'b')
+        self.assertIn('earliest wording is unresolved', source_note['text'])
+        self.assertIn('Masoretic Text lacks it', source_note['text'])
+        self.assertIn('does not establish a different Hebrew reading', seventeen['translation']['footnotes'][0]['text'])
+
     def test_acts_24_disclosure_preserves_connected_shorter_form(self):
         six = yaml.safe_load((ROOT / 'translation/nt/acts/024/006.yaml').read_text())
         eight = yaml.safe_load((ROOT / 'translation/nt/acts/024/008.yaml').read_text())

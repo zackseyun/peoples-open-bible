@@ -2,8 +2,8 @@
 
 ## Latest assessment of the two research aims
 
-Reviewed at `0d60a31b9157f52460f26a6e3c709540225224f5`, after the Psalm 145
-application merged. **Ready to continue published-source comparison now;
+Reviewed at `a8718b42e7d7dfa26a4ae1487f25b88f56b67391`, after the Habakkuk
+disclosure application merged. **Ready to continue published-source comparison now;
 not ready to advertise validated fresh decipherment.** The older dated audits
 below remain historical. This assessment changes no verse, source selection,
 canonical status or publication approval.
@@ -63,13 +63,71 @@ Hebrew/Aramaic wording actually overlaps the relevant Greek forms. This is
 a proposed next task, not a completed fragment collation. Do not reopen the
 finished Sirach or Acts applications merely to obtain agreement.
 
+### What further computation can establish
+
+There are three different contribution thresholds. A demonstrated mismatch
+between POB and its declared source can be repaired now. A previously published
+variant can support a consequential, provisional source choice now. A genuinely
+new reading requires new evidence or an original defensible analysis, a search
+of the relevant literature, and scrutiny beyond model agreement. The first two
+already have examples above; the third has not been demonstrated. A useful
+POB improvement need not be new to biblical scholarship, and a local wording
+change need not establish a new doctrine.
+
+The next additional-book question now has a discriminating published observation.
+In [Qumran-Digital's 4Q197 transcription](https://lexicon.qumran-digital.org/transcriptions/4Q197/2026-05-21/index.html),
+fragment 4 i, line 7 preserves unbracketed `רגל`, foot or leg, followed by
+`עלימ[א]`, youth with its last letter supplied. The preceding swallowing verb
+is only partly preserved: `[מיא למב]לע`. Line 6 preserves `חד רב`, one large,
+but its fish noun is `[נו]ן֯`, with only a doubtful final letter surviving.
+This is an assessment of published transcription, not newly observed ink.
+The modern version date is not a manuscript date or evidence of a new discovery.
+
+Current [POB Tobit 6:3](../translation/deuterocanon/tobit/006/003.yaml) says a
+fish tried to swallow the young man and stores Greek with the youth, not his
+foot, as object. Changing that object would be a source-selection decision,
+not simply better English for the stored Greek. The Aramaic body-part wording
+can change the scene's interpretation, but it does not yet prove earliest
+wording: an explanatory expansion remains a serious alternative. A separate
+contextual source assessment agrees on the preservation limits; this is not
+approval to replace the source or a blinded translation review. The checked
+4Q196 and 4Q200 contexts do not supply another local foot-versus-youth witness.
+
+Before application, inspect the actual Greek forms and apparatus, align the
+surrounding scene by content rather than verse number, declare the literary
+form or explicit critical composition, assess the strongest contrary account,
+and verify exact English and reader effects. Do not silently insert a preferred
+detail into another form or relabel it as a verbatim ancient manuscript.
+This review changes neither Tobit's verse nor its canonical status. It records
+a concrete comparison lead, not a completed adjudication.
+
+### Evidence and efficiency conditions for continuation
+
+The appropriate OT source classes include Masoretic witnesses, Judaean Desert
+Hebrew and Aramaic, Samaritan Pentateuch, and relevant Greek, Syriac, Latin and
+Aramaic versions. NT work needs Greek manuscript identities and hands, critical
+apparatuses, ancient versions and quotations, with relationships considered.
+The linked coverage audit supplies the detailed routes and omissions. These
+are the right classes, not a claim that every discovered witness has been
+collated. No single Hebrew or Greek witness, oldest copy or majority vote is
+automatically the best source for every passage. Reconciliation must sometimes
+preserve different literary forms instead of forcing one supposedly original text.
+
 Each pass should deliver a supported change, a discriminating retain decision,
 or an unresolved result with a specific missing resource. Use one proportional
 independent assessment, not judge-until-consensus loops. Include unflagged
 passages before claiming general translation improvement. The cumulative goal
-tracker is approximately 28.73 million tokens, not a billing statement; that
+tracker is approximately 29.17 million tokens, not a billing statement; that
 expenditure is excessive relative to demonstrated discoveries. Evidence and
 completed consequential decisions, not more computation, are the success measures.
+Further repeated readiness reviews are not the next milestone. Finish the
+defined Tobit question, then choose another consequential OT or NT unit from
+the existing queue. Stop a case when it has a reasoned change, retain or
+unresolved outcome, and reopen only for named new evidence. Claims of general
+translation superiority require the existing unflagged-passage evaluation;
+novel damaged-ink claims still require the unfinished calibration. Canon
+exploration should produce a tradition-specific reception assessment or a
+comparison supplement, not an AI verdict on inspiration.
 
 Reviewed 2026-10-04 against repository revision
 `fff3aabab3f993bdeaf66c4bc8c8d1278def8dc9`. This records the continuation

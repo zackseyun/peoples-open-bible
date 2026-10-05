@@ -5448,6 +5448,46 @@ Required exact-head CI governs merge, not scholarly truth. Full all-book compari
 novel-reading calibration and public deployment remain unproved; reopen this case
 only for specific discriminating evidence, not an agreement loop.
 
+### 2026-10-04 — Zechariah merge and Malachi discriminating lead
+
+PR 23 merged at `4873f25aec1b91256c60a7086476b9d7240610aa` after the two
+exact-head corpus-integrity jobs passed. Local main fast-forwarded and the
+main push reported up to date. Zechariah's applied candidate hash remains
+`7a463ed5ad57c1159db46ae1fd94221a4514968eb51e3bf23563f4d4673e7128`;
+the protected untracked Genizah JSON remains unchanged. Broader historical
+validation debt recorded above is not erased by this merge.
+
+The [Malachi lead](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md#malachi-2-16-gives-the-next-discriminating-question)
+adds new evidence for the project, not another readiness-only review. Root
+read the current verse and contextual source units, complete 4Q76 preservation
+context, Swete's full native print page/apparatus and NETS's full local page.
+The separate source assessment checked Mur88/4Q78 coverage and Hugenberger's
+argument. Root read his printed 63–64 and 69–73, visually checking 69.
+The assessor's Swete printed-page locator was corrected from 92 to 97;
+Q's imperative report prevents a claim of uniform Greek subjunctive syntax.
+Its exact hand attribution remains held. Fuller/Jones originals were not
+consulted; a later article was located/partly read, not used as a settled control.
+
+The preserved published conditional opening differs from MT. Doubtful garment
+letters, source-form differences and grammatical alternatives remain explicit.
+Current POB's grammatical rationale needs a connected source-interpretation
+review. Hebrew/main English remains unchanged; MAL.2.16 SHA256 is
+`dc20e8fd74433aa4b34ec6e2abd67428282bf856f42087ffebd02defcc9917a9`.
+No fresh ink, ImageGen evidence, source-priority verdict or canon change.
+Swete/NETS PDFs retain the earlier recorded hashes; the newly acquired
+Hugenberger PDF has SHA256
+`49ccbadb31b6a284cd178081130a62f2b15c0cc7d636c11582d4b9a3c48e8720`.
+Private source PDFs remain outside Git. Web retrieval of the large thesis
+failed, but direct public download succeeded. The PDF skill required native
+print inspection; the documentation skill kept findings distinct from planned
+application. Rechecked official canon lists and Sinaiticus contents without
+adding another canon inventory. The two research aims remain active, and the
+31.32-million cumulative tracker remains excessive relative to novelty.
+One scoped independent review passed this two-document addition without blocking
+defects. Whitespace, local documentation targets, exact changed-file scope and
+the Malachi/Zechariah/protected-file hashes pass; no new corpus test run is
+claimed for documentation-only edits. Required remote checks still govern merge.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

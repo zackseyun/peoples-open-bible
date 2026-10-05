@@ -7,6 +7,9 @@ tests a consequential syntactic alternative against unchanged Hebrew, compares
 Greek forms and applies a compact English candidate with qualified disclosures.
 The linked receipt records actual scoped checks and broader validation debt; neither a
 rendering preference nor published partial preservation establishes earliest syntax.
+PR 23 merged at `4873f25aec1b91256c60a7086476b9d7240610aa` after both
+exact-head corpus-integrity checks passed. This is repository delivery, not
+scholarly publication or proof that broader historical validation is clean.
 
 Subsequent concrete delivery: the [Tobit fish unit](TOBIT_FISH_SOURCE_COMPARISON_2026-10-04.md)
 has been applied as a connected provisional source/English choice. The
@@ -22,6 +25,66 @@ disclosure application merged. **Ready to continue published-source comparison n
 not ready to advertise validated fresh decipherment.** The older dated audits
 below remain historical. This assessment changes no verse, source selection,
 canonical status or publication approval.
+
+### Malachi 2 16 gives the next discriminating question
+
+At that merged revision, [MAL.2.16](../translation/ot/malachi/002/016.yaml)
+already has a major-issues review flag. Its main English says he hates divorce
+and then the one who covers his garment with violence. The rationale calls
+`שלח` an infinitive/participle and supplies a nominal subject for finite
+`וכסה`. Neither explanation adequately establishes the connected syntax.
+The question can change agency and the relation between divorce and violence;
+it is not merely a choice of smoother English.
+
+Root inspected complete surrounding published lines in
+[Qumran Digital 4Q76](https://lexicon.qumran-digital.org/transcriptions/4Q76/2026-05-21/index.html).
+Column 2 line 4 prints preserved `כי אם שנתה שלח`, unlike MT `כי שנא שלח`.
+Line 5 preserves `אל ישראל יכסו חמס על`; its preceding speech formula is
+supplied. Line 6 prints `[לבו]ש֯י֯`: most of the garment word is supplied and
+the remaining letters are doubtful. These are reported editorial readings,
+not new pixel observations. The transcription is attributed to the DFG
+Qumran-Digital project under CC BY-SA 4.0; the 2026 release date does not date
+the ancient copy. The source assessor checked Mur88's complete published
+table and 4Q78's relevant fragment: neither covers 2:16 in those controls.
+That is not evidence for an ancient omission or an exhaustive witness census.
+
+Swete III's complete page, PDF 121 / printed 97, has a B-based conditional
+sending clause with `ἐξαποστείλῃς`, a second-person subjunctive, and impiety
+covering your thoughts. Its apparatus also reports an imperative sending
+form in Q; the exact hand assignment remains unverified here. Do not say
+every Greek witness has the same syntax. NETS, PDF 45 / printed 821, instead
+renders the covering clause with his garments. Root visually checked both
+pages; different edition controls must not become one uniform Greek witness.
+Neither is a newly collated manuscript or a complete modern apparatus.
+
+[Hugenberger's thesis](https://eprints.glos.ac.uk/3339/1/292355.pdf), printed
+69–73, gives a substantive unchanged-MT alternative: conditional `כי`, a
+human subject who hates and sends away, followed by the violence consequence.
+His proposed finite use of an alternative-form Piel infinitive absolute does
+not require repointing `שלח`; recognizing that function here remains disputed.
+Repointing it as a perfect is a separate proposal. Printed 63–64 also discusses
+God as subject through indirect discourse and first-person participial analyses,
+with objections to the subject shift and implicit pronoun. These alternatives
+must receive comparison, not a claim that every I hate reading is consonantally
+impossible. A conditional command is another serious interpretation; neither
+the closing warning nor a preferred theological outcome can alone decide it.
+
+Outcome: retain the current Hebrew provisionally and open an explicit
+source-interpretation comparison; **no Malachi verse or reader text changes
+in this pass**. Do not insert 4Q76's if into MT and call the hybrid an ancient
+text. The next deliverable is a fixed-context comparison of complete readings,
+including the strongest contrary syntax, then exact English and reader-note
+verification if a candidate is approved. BHQ/DJD and full Greek/other-version
+apparatus checks remain incomplete. This is a consequential published lead,
+not a scholarly discovery or a final divorce interpretation.
+
+The existing six-work reception queue below remains separate. Rechecked
+Catholic/Ethiopian lists and Sinaiticus contents support named reception or
+codex inclusion, not automatic canon expansion. No canonical status changes.
+The cumulative goal tracker is now approximately 31.32 million tokens, not
+a billing statement. This remains excessive relative to demonstrated novelty:
+one bounded case outcome and one proportional review, not repeated readiness
+audits or judge-until-agreement loops, should govern continuation.
 
 ### Meaning changing source and translation contributions
 

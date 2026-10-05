@@ -5222,6 +5222,31 @@ reader text/notes differ. The receipt now records scoped canonical application
 approval, while publication remains false. Required exact-head remote CI
 governs merge; a passing software check does not decide historical priority.
 
+### 2026-10-04 — Current readiness and the two research aims
+
+Reviewed actual repository state at `0d60a31b9157` rather than treating earlier
+queues as current. One separate agent verified the four/light/Psalm applications
+and their limits; another checked the existing six-work reception screen against
+the Ben Sira project, Sinaiticus contents, Vatican canon list and Ethiopian
+church list. Root inspected the controlling method, actual source/English
+records, Psalm dossier/receipt documentation and coverage audit, and rechecked
+the INTF method and Ben Sira introduction. No new manuscript collation, blind
+translation evaluation, image claim or scholarly discovery resulted.
+
+The [latest assessment](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md#latest-assessment-of-the-two-research-aims)
+answers the user's questions: valid provisional contributions already exist;
+published-source comparison can continue; tokens cannot guarantee novelty or
+decide canonical authority. The next additional-book milestone is a bounded
+Tobit comparison with actual Semitic-fragment coverage, not another finished
+Sirach application. Habakkuk 2:4 remains in progress, not an approved source
+change. Two scoped audits found no blocking defect in these distinctions;
+neither approves untouched verses or canon expansion. The documentation skill
+guided a concise current entry within existing Git documentation. Only these
+two documents change; translation, source and reader behavior remain untouched.
+Relative document targets and whitespace checks pass. No corpus tests are rerun
+locally for this documentation-only change; required remote checks still govern
+merge. The unrelated Genizah JSON retains its previously recorded SHA256.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

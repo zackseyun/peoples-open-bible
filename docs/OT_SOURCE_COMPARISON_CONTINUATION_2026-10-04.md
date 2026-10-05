@@ -1,5 +1,73 @@
 # Old Testament source comparison method and continuation review
 
+## Latest assessment of the two research aims
+
+Reviewed at `0d60a31b9157f52460f26a6e3c709540225224f5`, after the Psalm 145
+application merged. **Ready to continue published-source comparison now;
+not ready to advertise validated fresh decipherment.** The older dated audits
+below remain historical. This assessment changes no verse, source selection,
+canonical status or publication approval.
+
+### Meaning changing source and translation contributions
+
+Actual contributions already exist in the repository, not merely in proposals:
+
+| Passage | Applied contribution | Remaining limit |
+|---|---|---|
+| 1 Samuel 17:4 | The working Hebrew and English select four rather than six cubits and a span | Contrary readings and qualified scroll preservation remain disclosed; historical height is not independently established |
+| Isaiah 53:11 | The working Hebrew includes light and English says see light | Earlier wording remains uncertain; the noun alone establishes neither resurrection nor the servant's identity |
+| Psalm 145:13 | The working composite includes the published 11Q5 nun line, translated God is faithful in his words and loyal in all his deeds | Early acrostic repair remains a serious alternative; repository application is approved, publication is not |
+
+These apply known manuscript readings. Sirach's completed repairs additionally
+show that comparing the declared source and English can correct meaning without
+discovering a new ancient variant. Neither category establishes a previously
+unknown reading. The [Psalm dossier](PSALM_145_SOURCE_COMPARISON_2026-09-05.md#provisional-critical-source-adoption)
+and linked receipts distinguish applied changes from unresolved historical claims.
+
+More tokens can extend coverage and test arguments; they cannot supply absent
+letters or guarantee novelty. There is no defensible discovery deadline or
+token threshold. The relevant OT/NT source classes are in the
+[coverage audit](BIBLICAL_SOURCE_COVERAGE_AUDIT_2026-09-04.md), but full collation
+has not been completed. For NT comparison, the [INTF method](https://www.uni-muenster.de/INTF/ECM.html)
+includes versions, quotations and manuscript relationships; it does not reduce
+reconstruction to majority voting. Preserve distinct literary forms where needed.
+
+### Additional texts and canonical authority
+
+The existing [six-work screen](#additional-works-worth-comparing) remains a
+useful comparison queue. Sirach and Tobit appear in the
+[Catholic canon list](https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_two/article_3/iv_the_canon_of_scripture.html);
+Enoch and Jubilees appear in the
+[Ethiopian church list](https://www.ethiopianorthodox.org/english/canonical/books.html?lang=en).
+They are not newly eligible because of AI. The
+[Sinaiticus project](https://www.codexsinaiticus.org/en/codex/content.aspx)
+identifies Barnabas and Hermas among that codex's contents, not necessarily
+as books of equal authority.
+
+Surviving wording can establish local textual history and inform judgments
+about a work's antiquity and transmission. It cannot alone establish inspiration,
+authorship or a universal canon. A historical library or comparison supplement
+can therefore be justified without recommending canon expansion. Any such
+recommendation must separately name the community, exact work/recension,
+reception evidence and criteria for authority.
+
+### Efficient next milestones
+
+Finish one consequential OT passage decision, including the Habakkuk 2:4
+comparison already in progress, before expanding the queue. Separately, the
+next additional-book comparison should be one Tobit passage whose surviving
+Hebrew/Aramaic wording actually overlaps the relevant Greek forms. This is
+a proposed next task, not a completed fragment collation. Do not reopen the
+finished Sirach or Acts applications merely to obtain agreement.
+
+Each pass should deliver a supported change, a discriminating retain decision,
+or an unresolved result with a specific missing resource. Use one proportional
+independent assessment, not judge-until-consensus loops. Include unflagged
+passages before claiming general translation improvement. The cumulative goal
+tracker is approximately 28.73 million tokens, not a billing statement; that
+expenditure is excessive relative to demonstrated discoveries. Evidence and
+completed consequential decisions, not more computation, are the success measures.
+
 Reviewed 2026-10-04 against repository revision
 `fff3aabab3f993bdeaf66c4bc8c8d1278def8dc9`. This records the continuation
 decision, not a new complete manuscript census or approval of every POB verse.

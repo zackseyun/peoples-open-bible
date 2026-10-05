@@ -14,6 +14,38 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReaderFootnoteExportTests(unittest.TestCase):
+    def test_proverbs_24_5_discloses_only_the_comparative_first_clause(self):
+        packet = json.loads((ROOT / 'sources/textual_restoration/applications/proverbs24_5_disclosure.2026-10-05.v1.json').read_text())
+        raw = (ROOT / packet['target']).read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), packet['application']['applied_yaml_sha256'])
+        record = yaml.safe_load(raw)
+        self.assertEqual(record['translation']['text'],
+                         'A wise man is strong[a], and a man of knowledge increases strength[b].')
+        notes = record['translation']['footnotes']
+        self.assertEqual([n['marker'] for n in notes], ['a', 'b'])
+        self.assertEqual(notes[0]['reason'], 'textual_variant')
+        self.assertTrue(notes[0]['text'].startswith('The Hebrew is compact, literally,'))
+        self.assertIn('In this clause, Greek and Syriac', notes[0]['text'])
+        self.assertIn('different Hebrew reading or interpretation', notes[0]['text'])
+        self.assertIn('which Hebrew wording came first remains uncertain', notes[0]['text'])
+        self.assertEqual(notes[1], {'marker': 'b', 'text': 'Or “makes power strong.”',
+                                  'reason': 'lexical_alternative'})
+        self.assertEqual(record['source']['edition'], 'WLC')
+        self.assertEqual(record['status'], 'draft')
+        self.assertEqual(record['cross_check'], {'status': 'needs_review'})
+        self.assertNotIn('source_audit', record)
+        archives = {h['field']: h for h in record['review_history']}
+        self.assertEqual(set(archives), {'status', 'revision_pass', 'cross_check', 'source_audit'})
+        self.assertEqual(archives['cross_check']['value']['agreement_score'], 0.95)
+        self.assertEqual(record['revisions'][-1]['from'], record['revisions'][-1]['to'])
+        book = exporter.export_book('PRO')
+        self.assertEqual(len(book['chapters']), 31)
+        self.assertEqual(sum(len(c['verses']) for c in book['chapters']), 915)
+        verse = next(v for c in book['chapters'] if c['chapter'] == 24
+                     for v in c['verses'] if v['verse'] == 5)
+        self.assertEqual(verse['text'], record['translation']['text'])
+        self.assertEqual(verse['footnotes'], notes)
+
     def test_ecclesiastes_particle_notes_preserve_main_wording_and_disclose_limits(self):
         expected = {
             (5, 14): (

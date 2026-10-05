@@ -5,6 +5,10 @@ whole-verse judgment, zero established semantic improvements**. No canonical
 translation changed. One local readability repair and two reader-note repairs
 are proposed below, separately from full-verse approval.
 
+That is the frozen first-pass result, not the current delivery status of every
+record. The subsequent [Proverbs source comparison and disclosure](#proverbs-24-5-and-6-versional-source-comparison-2026-10-05)
+below leaves its Hebrew/main-English retention judgment unchanged.
+
 This is one Codex assistant's unblinded first pass against existing pointed
 Hebrew, with paragraph context and actual published reference consultations.
 It is not a second independent review, publication approval, or a claim that
@@ -168,3 +172,74 @@ whole-verse changes accepted, no accepted candidate regressions observed;
 regressions were not independently measured. This is a small source-based
 assessment with useful negative results, not an OT error rate or improvement
 percentage. No inference about newly recovered earliest wording follows.
+
+## Proverbs 24 5 and 6 versional source comparison 2026 10 05
+
+**Retain pointed Hebrew and main English provisionally; disclose the comparative
+first clause.** This completes the published-version lead left by the frozen
+Proverbs draw, not a new sample or redraw. Source comparison is separate from
+the original rendering exercise; its denominator and outcome counts are unchanged.
+
+### Observed forms and exact controls
+
+Root read current chapter 24 Hebrew/POB, focusing on 24:3–7, plus Hebrew parallels
+11:14, 20:18 and 21:22. The WLC base makes a wise man strong and knowledge
+increase strength, followed by the war/counsel saying. Linked digital Hebrew
+representations are not independent manuscript votes.
+
+| Control | First clause of 24:5 | Second clause and 24:6 | Boundary |
+| --- | --- | --- | --- |
+| WLC/POB | Wise man is strong | Knowledge strengthens strength; addressed war-making and many counselors | Retained pointed Hebrew, not proof of earliest wording |
+| [Swete II scan](https://archive.org/download/theoldtestamenti03swetuoft_202003/oldtestamentingr02swet.pdf), printed 462 / PDF 480 | Explicit superiority, `κρείσσων σοφὸς ἰσχυροῦ` | Understanding compared with a large field; war is grammatical subject; help with a deliberative heart | Complete native page/apparatus inspected by root and assessor; limited silence is not unanimity |
+| [Rahlfs–Hanhart publisher chapter](https://www.die-bibel.de/bibel/LXX/PRO.24), identified as 2006 edition | Same comparative construction | Same continuous Greek wording at 24:5–6 | Edition presentation, not another freshly collated manuscript |
+| Syriac reported by Fox 2015, printed 321 / PDF 343 | Wise person better than strong person | Knowledgeable person compared with mighty person; passive war wording reported | Critical-edition report, not independently acquired Leiden chapter or manuscript |
+
+The Greek field comparison does not explicitly supply a rival man owning an
+estate, nor match Syriac's second comparison. Do not amalgamate their clauses.
+[NET's publisher notes](https://classic.net.bible.org/passage.php?passage=Pro+24:5-6)
+defend predicative Hebrew and its military application: a grammatical countercase,
+not a tally of modern translations.
+
+### Reconstruction and competing explanations
+
+Root visually inspected Fox's complete printed 320–321 / PDF 342–343, including
+apparatus and selected Hebrew. His proposal repoints `גבר` as a verb, changes
+the initial consonant of `בעוז` to produce `מעז`, and repoints `מאמץ` as a
+comparative phrase. It is editorial Hebrew reconstruction, not an ancient
+Hebrew reading acquired here. His Hexaplaric support is an apparatus report,
+not another continuous text we read. The proposed damaged/confused-letter
+explanation for Greek's field term is a hypothesis, not observed copying damage.
+
+Our strongest countercase to retention is literary: comparisons make wisdom's
+superiority to physical strength explicit and fit strategy in verse 6. But the
+retained Hebrew also fits 24:3–6's account of wisdom producing effective capacity;
+21:22 depicts success against military power. Theme alone settles neither
+direction. Comparative translation could clarify an implied contrast, or a
+different Hebrew source could underlie it. Versions do not uniquely recover
+the proposed spelling/vocalization; Greek's verse-6 reshaping cautions against
+wholesale retroversion.
+
+### Applied reader scope and limits
+
+Only note a at 24:5 is extended, retaining its literal gloss and anchor:
+
+> In this clause, Greek and Syriac read “A wise man is better than a strong one.” This may reflect a different Hebrew reading or interpretation; which Hebrew wording came first remains uncertain. POB provisionally retains the Masoretic text.
+
+The first-clause restriction is material. Note b, source, marker-bearing main
+English, lexical decisions, generation and older revisions are preserved. Old
+status/review objects are archived exactly; active state is draft/needs_review,
+not renewed approval. The [receipt](../sources/textual_restoration/applications/proverbs24_5_disclosure.2026-10-05.v1.json)
+records frozen inputs, actual checks and critique. No 24:6 change follows.
+
+Fox's [publisher PDF](https://www.sbl-site.org/wp-content/uploads/2024/11/Proverbs_Fox_SBL.pdf)
+has SHA256 `1953e00d7275c1bda5031378b347fba65348bc08855ec0f8757841ca6cdc1c39`;
+Swete II has `945c5b15bf0f9dfc93890b28ee5b66a388acbf4597f1f2be5430ac6cba9c30b0`.
+The earlier verified Fox download was reused with new target pages inspected;
+web-tool retrieval still returned 403. PDFs remain private controls, not Git
+assets. [Syriaca](https://syriaca.org/work/20) identifies P Prov, CAL 62029 and
+the Leiden electronic text; CAL returned an explicit anti-scraping notice and
+acquisition stopped. An edition-unverified Peshitta site is not promoted to a
+Leiden control. No full apparatus, new DSS survival, damaged-ink reading,
+ImageGen evidence or exhaustive literature search is claimed. Reopen for
+identified Hebrew evidence or discriminating transmission analysis, not another
+model vote. The original sample is not counted as a corpus improvement result.

@@ -99,6 +99,13 @@ questions; neither is human specialist review or a new manuscript witness.
 Existing frozen-control drifts and image-reading calibration remain unresolved.
 No corpus-wide tests are rerun for this documentation-only correction.
 
+Subsequent OT work completes the [Proverbs 24:5–6 versional lead](UNFLAGGED_ENGLISH_SAMPLE_2026-09-05.md#proverbs-24-5-and-6-versional-source-comparison-2026-10-05)
+from the existing unflagged sample. Comparative Greek/reported Syriac wording
+can change the explicit claim, but does not uniquely restore its Hebrew.
+Source and main English remain provisional; a first-clause reader disclosure
+is applied with historical metadata preserved. The original sample is not
+redrawn or counted as a corpus improvement result.
+
 ## Latest assessment of the two research aims
 
 Current review: 2026-10-05, against main

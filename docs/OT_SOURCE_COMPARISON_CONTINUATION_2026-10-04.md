@@ -4,8 +4,13 @@ The [whole-OT pointing follow-up](UXLC_POINTING_TRIAGE_2026-10-05.md) now makes
 all 374 frozen pointing-first rows reproducible as a review queue. Proverbs
 7:22's published qamats-to-segol correction has no demonstrated effect on
 the existing slaughter rendering; source and English remain unchanged. The
-queue does not count semantic errors or waive fresh-image gates. Judges 20:48
-is the next named grammatical lead, not an already selected source change.
+queue does not count semantic errors or waive fresh-image gates. The
+[Judges 20:48 application](JUDGES_20_48_SOURCE_COMPARISON_2026-10-05.md) now
+clarifies the inhabited-city interpretation and notes while preserving the
+diplomatic WLC text and recording its alternative working vowel separately.
+Physical pointing and historical priority remain unresolved; this is not
+a newly discovered source reading. The older next-task statements below
+describe earlier checkpoints, not an instruction to repeat this application.
 
 ## Current answers and next evidence tasks
 

@@ -15,8 +15,10 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - name: Fetch the reviewed Psalm 145 baseline
-        run: git fetch --no-tags --depth=1 origin 6b9337f796dedecd4794b09451f712b9cfb3f6f8
+      - name: Fetch the reviewed source baselines
+        run: |
+          git fetch --no-tags --depth=1 origin 6b9337f796dedecd4794b09451f712b9cfb3f6f8
+          git fetch --no-tags --depth=1 origin 015bdfa7dcec66acfc40217a3085b0e75b82c90e
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -40,3 +42,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_yadin_masada_policy.py'
           python -m unittest discover -s tests -p 'test_sirach_print_collation.py'
           python -m unittest discover -s tests -p 'test_uxlc_pointing_triage.py'
+          python -m unittest discover -s tests -p 'test_judges20_48_application.py'

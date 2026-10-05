@@ -23,6 +23,17 @@ controls current work; dated entries preserve what was known at the time.
 
 ## Requested review of the two research aims 2026 10 05
 
+Subsequent concrete source/English work: the
+[Judges 20:48 dossier](JUDGES_20_48_SOURCE_COMPARISON_2026-10-05.md) compares
+published pointing, lexical arguments and both NETS Greek forms, then applies
+a qualified inhabited-city rendering with corrected note anchors. Exact WLC
+remains diplomatic; a one-vowel working interpretation is stored separately.
+The frozen English contract preceded a fresh-context comparison; one full-record
+critique prompted the clearer transcription-correction wording. Actual scoped
+checks pass: six focused tests, 28 reader-note regressions and full Judges
+export with only 20:48 changed. No new ink, earlier-priority proof, complete
+witness census, corpus-wide improvement or deployed release is claimed.
+
 The [current answers](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md#current-answers-and-next-evidence-tasks)
 distinguish demonstrated provisional source/meaning applications from an
 undemonstrated new ancient discovery. Root inspected actual Goliath and Isaiah

@@ -39,10 +39,10 @@ From the [versioned published transcription](https://lexicon.qumran-digital.org/
 
 | Verse; unit/line | Published target against WLC; disposition |
 |---|---|
-| 5:14; f1i:1 | כיא / כאשר: conjunction interpretation open. |
+| 5:14; f1i:1 | כיא / כאשר: the [particle comparison](#ecclesiastes-5-14-and-6-8-particles-2026-10-05) retains source/main English provisionally; historical function/priority held. |
 | 6:3–4; f1ii+3_6i:1–2 | Reordered stillborn comparison; raised corrections and deleted שמו; corrected הלך / ילך. The [bounded follow-up](#ecclesiastes-6-3-and-6-4-correction-stages-2026-10-05) retains source/English and separates correction stages. |
 | 6:6; same:3 | ואם לוא / ואלו: conditional/spelling analysis needed; do not infer negation mechanically. |
-| 6:8; same:6–7 | כמה / כי מה; following traces unresolved. |
+| 6:8; same:6–7 | כמה / כי מה: the [particle comparison](#ecclesiastes-5-14-and-6-8-particles-2026-10-05) tests question/affirmation and differing Greek forms; retains source/main English provisionally. Following traces unresolved. |
 | 7:2; same:15–16 | [ש]מחה / משתה; כול סוף / סוף כל. Noun preference below; remainder not silently normalized. |
 | 7:4–5; same:17–19 | בית / בבית; גערות / גערת; corrected מלשמוע / מאיש שמע. Crossed-out material not recovered. |
 | 7:7; f1iii+6ii_7:2 | ויעוה֯ / ויאבד: verb candidate, uncertain final letter. |
@@ -481,3 +481,133 @@ also pass. These are scoped verification, not new whole-registry certification.
 The receipt records both book manifests and the preserved unrelated Genizah pin.
 Existing aggregate registry debt remains disclosed, not repinned. No fresh ink,
 ImageGen evidence, novel discovery, canon change or deployed-reader verification.
+
+## Ecclesiastes 5 14 and 6 8 particles 2026 10 05
+
+Completed a bounded meaning comparison against main
+`050ebd6a8329617f765c394073ccfc6a02e0f9ba`, not another readiness review.
+**Retain pointed Hebrew and current main English provisionally at both targets.**
+The particles admit alternatives worth disclosing, but neither a spelling
+difference nor a selected Greek form settles the earliest connected argument.
+This pass changes no verse, reader note, metadata or historical approval.
+
+Root inspected POB 5:13–16 and 6:7–9, the complete surrounding
+[published 4Q109 transcription](https://lexicon.qumran-digital.org/transcriptions/4Q109/2026-05-21/index.html),
+and native complete PDF pages below, including their apparatus/footnotes.
+The transcription is attributed to DFG Qumran-Digital, project 465277421,
+under CC BY-SA 4.0. Its 2026 release date is not the date of the ancient copy.
+No fresh scroll pixels, newly commissioned transcription or model-family
+replication is claimed.
+
+### The birth and departure comparison
+
+At 5:14, fragment 1 i line 1 reports unmarked `כיא` against MT `כאשר`.
+Line 2 supplies the entire birth/naked-return sequence before `כ֯שבא`;
+the latter's initial kaf is doubtful. Line 3 supplies most of the nothing-carried
+clause before surviving `דו`. Thus published particle attestation must not
+become a claim that the whole scroll sentence survives.
+
+Current English starts As he came from his mother's womb, naked he will return,
+going as he came. Assuming the published supplied clauses, a diagnostic
+For he came from his mother's womb; naked he will return, going as he came
+would make the transition explanatory rather than initially comparative.
+Indeed is another diagnostic. Neither is a verbatim translation of a fully
+preserved scroll sentence. The later arrival/departure comparison can remain
+under either construction, and 5:13–16 still describes lost wealth, empty hands
+and futile gain. Do not infer a new theology of death from the particle alone.
+
+Primary grammar permits causal `כי` in
+[Gesenius 158b](https://en.wikisource.org/wiki/Gesenius%27_Hebrew_Grammar/158._Causal_Clauses),
+corroborative use in [148d](https://en.wikisource.org/wiki/Gesenius%27_Hebrew_Grammar/148._Exclamations),
+and temporal use alongside `כאשר` in
+[164d](https://en.wikisource.org/wiki/Gesenius%27_Hebrew_Grammar/164._Temporal_Clauses).
+These establish possible functions, not the function of this particular `כיא`.
+Do not force causal English solely by substituting a dictionary gloss.
+
+Swete II, printed 491/PDF 509, selects comparative `καθὼς` at local 5:14,
+aligned by the mother's-womb clause; the inspected apparatus has no variant
+entry for that opener. This is an edition-level observation, not a claim of
+unanimous Greek manuscripts. NETS printed 652/PDF 5 and NET printed 1204/PDF 22
+(English 5:15) also render a comparison; those translations are not additional
+ancient votes. MT's comparative could be clarified into an explanatory particle,
+or MT could reinforce a comparison already expressed later. Both directions
+remain hypotheses. The early reported scroll form receives weight, not an
+automatic victory; without that chronological preference, retention still follows
+from the absence of a discriminating transmission argument. Current As faithfully
+renders the retained source; no necessary English correction follows.
+
+### The wise person's advantage
+
+At 6:8, fragment 1 ii+3–6 i line 6 preserves published `כמה יותר לחכם מן֯`.
+The comparative nun is doubtful; fool, poor-person question and knowing are
+supplied. Line 7 has unidentified traces and supplied the living, not a secure
+complete conduct clause. The unpointed `כמה` can invite a how-much question
+or an exclamation. [BDB, מה 4c](https://biblehub.com/bdb/4100.htm) documents
+interrogative and exclamatory uses, including Job 21:17's rhetorically minimal
+frequency. A positive amount is not entailed by the expression.
+
+There is consequential Greek variation. Swete II, printed 493/PDF 511, selects
+`ὅτι περισσεία τῷ σοφῷ ὑπὲρ τὸν ἄφρονα`, followed by `διότι ὁ πένης οἶδεν`
+and the walking-before-life clause. It lacks an explicit interrogative here
+and naturally admits a positive assertion plus an explanation. Its verse-8
+apparatus reports added `τίς` after `ὅτι`, with the printed corrected-Sinaiticus,
+A and C sigla; exact correction chronology and broader relationships are not
+adjudicated. The native sigla page, PDF 18, identifies A as Alexandrinus,
+C as Ephraemi and B as Vaticanus. NETS printed 653/PDF 6 renders a question for the wise-person
+clause but an explanatory poor-person clause. Do not collapse these controls
+into one uniform Greek witness supporting MT's two questions.
+
+The positive countercase is stronger than the particle alone: a Hebrew form
+capable of exclamation and an affirmative Greek form can converge in meaning.
+Diagnostic English for that interpretation is How much advantage the wise
+person has over the fool! The comparative target fool is supplied in the scroll;
+the complete explanatory poor-person clause is attested in Greek, not established
+as surviving Hebrew. This is no unique retroversion of Greek to `כמה`.
+In 6:7–9, practical wisdom can offer relative advantage while appetite remains
+unsatisfied and the passage ends in vapor. Conversely, the question can challenge
+lasting gain without denying every practical benefit. NET printed 1206/PDF 24,
+notes 12–14, supports that limited rather than absolute denial; its commentary
+is an interpretation, not another manuscript.
+
+Either an affirmative Greek construction could clarify difficult Hebrew questions,
+or an interrogative could be added in Greek to align with an interrogative Hebrew
+reading. A hypothetical yod omission between `כי מה` and `כמה` also needs local
+scribal parallels before it can explain priority. None of these directions is
+proved here. The source assessor initially recommended retention, then explicitly
+strengthened the positive countercase after root supplied the newly inspected
+Greek distinction. The revised conclusion remains provisional retention, not
+unanimity manufactured by a repeated preference vote. The early Hebrew evidence
+matters, but removing its chronological advantage would not resolve this hold.
+
+### Verification and reopening evidence
+
+At 5:14, reopen for consulted DJD spelling/spacing and clause-restoration arguments
+or discriminating versional/translation-practice evidence for the particle's
+function. At 6:8, prioritize the modern critical apparatus, exact Greek hand
+and relationship evidence, and local interrogative translation practice before
+choosing a positive whole-verse reading. DJD and the modern target apparatus
+remain unconsulted. These are specific historical holds, not a request for
+another general readiness or consensus review.
+
+The scoped comparison is complete; qualified reader disclosures are justified
+but not applied or export-verified here. Published attestation and source-priority
+confidence remain separate. One independent source-document critique passed
+the frozen factual/scope claims, including the Greek apparatus distinction;
+it did not certify historical priority, fresh ink or the root's hash checks.
+No ImageGen evidence, novel decipherment, canon
+expansion or scholarly publication follows.
+
+Inputs and unchanged outputs:
+
+- 5:14 YAML: `7421ba0e52477704551d30e2e6b86111643c88d9c367b58e42542c0719f4420b`.
+- 6:8 YAML: `a5fa117fa1066db2b176d230eaf15d16852d5f12122e0454e2ca36d5f197e1b9`.
+- All 222 Ecclesiastes files: manifest `d4f6b107d262cdfa8871dffd9ec6ebbe9ad76c90a117082b03d62ec4b2ad2ff5`, using the rule above.
+- [Swete II scan](https://archive.org/download/theoldtestamenti03swetuoft_202003/oldtestamentingr02swet.pdf): `945c5b15bf0f9dfc93890b28ee5b66a388acbf4597f1f2be5430ac6cba9c30b0`.
+- [NETS Ecclesiastes](https://ccat.sas.upenn.edu/nets/edition/26-eccles-nets.pdf): `883474c8b532e6523f217284c9ba77e75d428db4c7e710b82692b613ae04bd25`.
+- [Official NET notes](https://bible.org/download/netbible/ondemand/bybook/ecc.pdf): `b0f6dfc69819e0954c3945de8ac7ae1b99ffb96e3c28584300c8885c450c2ef8`.
+
+Actual scoped verification passed: all 222 verse hashes and both target pins,
+protected unrelated Genizah hash, local file links, documentation-only diff
+scope and whitespace. No corpus/export rerun is needed when every verse byte
+remains unchanged.
+Existing broader registry debt is neither repaired nor silently repinned.

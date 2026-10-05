@@ -194,6 +194,16 @@ candidate comparisons.
 This is a scoped source-pattern improvement with qualified notes, not a major
 meaning correction, new ancient reading or earliest-construction victory.
 
+The subsequent [5:14 and 6:8 particle comparison](ECCLESIASTES_DSS_COMPARISON_2026-09-06.md#ecclesiastes-5-14-and-6-8-particles-2026-10-05)
+now tests comparative/explanatory and interrogative/affirmative constructions in
+connected context. Native Greek print materially strengthens the positive 6:8
+countercase: Swete's selected text lacks the interrogative reported in other
+witnesses, while NETS presents a different connected construction. Source/main
+English remain provisionally retained. Modern apparatus, translation-practice
+and supplied-clause limits remain named historical holds; reader disclosures
+are justified but unapplied. This is a completed bounded meaning comparison,
+not novel restoration, a canon inference or another readiness assessment.
+
 For the separate reception aim, prioritize one defined work and passage rather
 than another six-book inventory: an overlapping Enoch unit, such as 1 Enoch 1:9
 and Jude 14–15, is a proposed bounded comparison. Establish the surviving

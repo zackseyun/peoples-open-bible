@@ -5786,6 +5786,48 @@ new discovery, ImageGen evidence, scholarly approval, canon change or deployed
 reader verification is claimed. The documentation skill separates completed
 application from historical uncertainty; required remote CI still governs merge.
 
+### 2026-10-05 — Mark 1 41 Greek apparatus acquired
+
+Previous turn was progress: the Ecclesiastes particle notes were committed and
+pushed as PR 34. Its two exact-head check handles were verified live, not
+restarted. This pass advances the user's additional NT scope without claiming
+completion of the broader OT objective.
+
+PR 34 subsequently passed both required checks and merged at
+`0b48f77dfad4834d41ef95e1adeea1c439779123`.
+
+The [Mark evidence continuation](NT_PILOT_ADJUDICATION.md#mark-1-41-direct-cbgm-evidence-2026-10-05)
+and [frozen responses](../sources/textual_restoration/controls/mark1_41_ph35.2026-10-05.v1.json)
+remove the previous access blocker: observed Mc siglum and grouped word 2–10
+resolve to passage 299. The Greek table distinguishes compassion and anger plus
+connected clause variants. Bezae has anger; the virtual A initial-text row is
+not Alexandrinus. Lacuna and ambiguous assignments remain explicit. The local
+stemma selects compassion but gives anger an unknown origin, not a proven
+compassion-to-anger genealogy. This is actual published-database evidence,
+not newly read ink or the full correction/version/patristic apparatus.
+
+One source assessor examined opposing accessible primary abstracts/author notes;
+root checked the Johnson and newer Bruehler publisher controls and API/source
+semantics. Complete article PDFs and Williams's full argument remain unread.
+The next discriminating unit is Ephrem 12.21–24 and its transmission/context,
+then the proposed Latin-to-Greek pathway. Compassion remains a defensible
+working preference; canonical replacement is held, not mechanically licensed
+by the database's editorial hypothesis. Greek, English and the historical
+version-1 decision record remain byte-identical.
+
+Actual offline checks pass for all five raw-response hashes, table counts,
+selected assignments, exact stemma edges and unchanged output pins. No corpus
+or export rerun is needed for this acquisition/documentation-only work. The
+protected Genizah file remains unchanged. The documentation skill preserves
+the distinction between acquired evidence, editorial preference and unfinished
+historical claims. No new canon decision, ImageGen evidence, novel reading,
+human/scholarly approval or publication follows.
+
+One independent acquisition/documentation critique passed the frozen facts and
+scope after reproducing the offline checks and consulting software/publisher
+controls. Its live API check failed; saved-response validation must not be
+described as independent live HTTP confirmation or historical-priority approval.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

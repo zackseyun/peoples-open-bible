@@ -2,6 +2,14 @@
 
 ## Latest assessment of the two research aims
 
+Current review: 2026-10-05, against main
+`861bbf69d134fad8bcbab3baea0506890c0e5cee`. Ready for bounded comparison of
+published sources, not for claims of validated new decipherment or a complete
+critical edition. Meaning-affecting provisional contributions already exist;
+there is no token threshold or defensible date for a previously unknown reading.
+This review reuses completed cases rather than treating another readiness
+assessment as research progress. The source and canon questions remain separate.
+
 The subsequent [Malachi 2:16 decision](MALACHI_2_16_SOURCE_COMPARISON_2026-10-05.md)
 now applies a human-subject conditional as a draft against unchanged pointed
 Hebrew. This changes agency and the English meaning, not ancient letters.
@@ -103,12 +111,19 @@ Actual contributions already exist in the repository, not merely in proposals:
 | 1 Samuel 17:4 | The working Hebrew and English select four rather than six cubits and a span | Contrary readings and qualified scroll preservation remain disclosed; historical height is not independently established |
 | Isaiah 53:11 | The working Hebrew includes light and English says see light | Earlier wording remains uncertain; the noun alone establishes neither resurrection nor the servant's identity |
 | Psalm 145:13 | The working composite includes the published 11Q5 nun line, translated God is faithful in his words and loyal in all his deeds | Early acrostic repair remains a serious alternative; repository application is approved, publication is not |
+| Malachi 2:16 | Unchanged pointed Hebrew receives a provisional human-subject conditional, If he hates and divorces her | This changes interpretation, not source letters; divine-subject and command alternatives remain disputed |
+| Tobit 6:3–6 | The selected connected Greek II form and English replace the Greek I unit, informed by partial Semitic overlap | Not every selected detail survives in Aramaic; earliest-form priority and canonical status are not settled |
 
-These apply known manuscript readings. Sirach's completed repairs additionally
+These apply known variants or grammatical interpretations. Sirach's completed repairs additionally
 show that comparing the declared source and English can correct meaning without
 discovering a new ancient variant. Neither category establishes a previously
 unknown reading. The [Psalm dossier](PSALM_145_SOURCE_COMPARISON_2026-09-05.md#provisional-critical-source-adoption)
 and linked receipts distinguish applied changes from unresolved historical claims.
+For Isaiah, the [initial comparison](ISAIAH_53_11_LIGHT_COMPARISON_2026-09-06.md)
+records the unchanged pre-application baseline; the later
+[application receipt](../sources/textual_restoration/applications/isaiah53_11_successor_application.v1.json)
+records applied-verified status, with publication approval false. Read the
+dated comparison as historical, not as a claim that the current verse is unchanged.
 
 More tokens can extend coverage and test arguments; they cannot supply absent
 letters or guarantee novelty. There is no defensible discovery deadline or
@@ -142,12 +157,48 @@ reception evidence and criteria for authority.
 The subsequent [Habakkuk 2:4 comparison](HABAKKUK_2_4_SOURCE_COMPARISON_2026-10-04.md)
 now completes that named OT unit: retain WLC and main English provisionally,
 apply qualified suffix and lexical notes, and hold earlier wording for specific
-missing evidence. Supplied Desert clauses do not settle the suffix. This is
-not a meaning-changing source adoption or fresh decipherment. The next
-additional-book comparison should be one Tobit passage whose surviving
-Hebrew/Aramaic wording actually overlaps the relevant Greek forms. This is
-a proposed next task, not a completed fragment collation. Do not reopen the
-finished Sirach or Acts applications merely to obtain agreement.
+missing evidence. Supplied Desert clauses do not settle the suffix. The Tobit
+pass proposed in the older review is now completed below; do not repeat it as
+pending. [Ecclesiastes 6:3–4](ECCLESIASTES_DSS_COMPARISON_2026-09-06.md#ecclesiastes-6-3-and-6-4-correction-stages-2026-10-05)
+now has a qualified retain decision, merged through PR 26; its separate 6:6
+conditional-orthography question remains open. The next textual deliverable
+should decide whether that reported particle difference changes meaning, with
+connected Hebrew/Greek context and the strongest contrary interpretation.
+Preliminary grammar checks are not a completed adjudication or permission to
+change the verse. Stop at retain, change or a precise evidence hold.
+
+For the separate reception aim, prioritize one defined work and passage rather
+than another six-book inventory: an overlapping Enoch unit, such as 1 Enoch 1:9
+and Jude 14–15, is a proposed bounded comparison. Establish the surviving
+Aramaic/Greek/Ge'ez extent and textual form before drawing a reception inference.
+Do not infer a whole collection's canonical authority from a quotation or one
+fragment. This is a research proposal, not a completed collation or canon vote.
+
+Keep the relevant OT Hebrew/Aramaic codices and Desert witnesses, Samaritan
+Pentateuch, Greek editions and manuscripts, and discriminating versions and
+quotations. For the NT, use INTF identifiers and modern critical apparatuses,
+distinguishing original hands, corrections, versions and quotations. These are
+appropriate source classes, not an assertion that all have been consulted.
+Published transcriptions, photographed marks and editorial restorations must
+remain separately labeled. Use an older public edition as a bounded control,
+not a substitute for an unconsulted modern apparatus; Greek retroversion does
+not uniquely recover Hebrew. Preserve parallel literary forms when reconciliation
+would otherwise manufacture a text no witness contains.
+
+The project's accumulated token expenditure is excessive relative to demonstrated
+novelty. Further work must acquire discriminating evidence or complete a defined
+passage decision, not repeatedly restate these answers. Use one proportional
+independent critique, repeat only for a concrete defect, and never treat agreement
+as manuscript evidence. Keep one concise case record, then link it from this
+summary. Missing access or uncertain ink is a hold, not an invitation to spend
+indefinitely; ImageGen remains display-only. Seek qualified human textual and
+language review before presenting disputed choices as a published critical edition.
+One read-only same-model independent critique confirmed the contribution
+distinctions and flagged the Isaiah historical/current navigation ambiguity
+addressed above. This was not new collation, human specialist review or fresh
+approval of the applied verses. No whole-corpus rerun is needed for this
+documentation-only update; existing
+validation debt and publication gates remain unchanged.
 
 ### Subsequent completed Tobit comparison
 

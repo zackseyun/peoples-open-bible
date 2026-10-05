@@ -73,9 +73,12 @@ is corrected: POB's entire collection is not canonical in every named tradition.
 
 For the source track, prioritize the already consequential
 [Mark 1:41 question](NT_PILOT_ADJUDICATION.md): anger versus compassion.
-Obtain a working ECM passage locator and exact witness/hand evidence before
-repeating the failed access route; then test the strongest contrary account and
-record change, retain or a precise hold. The subsequent
+The [direct CBGM acquisition](NT_PILOT_ADJUDICATION.md#mark-1-41-direct-cbgm-evidence-2026-10-05)
+now resolves the locator and obtains the exact grouped Greek table and editorial
+stemma. It does not complete correction-hand, versional or patristic coverage.
+Canonical replacement is held while the next comparison tests Ephrem's exact
+commentary/context and the proposed Latin-to-Greek transmission, rather than
+repeating the failed API route or counting witnesses. The subsequent
 [Ecclesiastes 5:14 and 6:8 comparison](ECCLESIASTES_DSS_COMPARISON_2026-09-06.md#ecclesiastes-5-14-and-6-8-particles-2026-10-05)
 now completes those bounded meaning questions with provisional retention.
 The subsequent [reader disclosure application](ECCLESIASTES_DSS_COMPARISON_2026-09-06.md#ecclesiastes-particle-reader-disclosures-2026-10-05)

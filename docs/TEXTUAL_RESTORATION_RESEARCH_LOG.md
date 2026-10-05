@@ -5119,6 +5119,36 @@ no new framework, image generation or broad reacquisition was performed.
 The case records its precise reopening evidence. Wider all-book comparison
 remains incomplete and the full goal stays active.
 
+### 2026-10-04 — Lamentations 1:8 spelling versus meaning
+
+Compared the preserved published 4Q111 `לנוד` with WLC `לנידה` using
+the already acquired Kotzé article, Swete III p.361 and local Hebrew controls.
+The [case analysis](LAMENTATIONS_DSS_COMPARISON_2026-09-06.md#lamentations-1-8-source-spelling-and-english-meaning)
+records actual locators, uncertainty and reported-but-unread primary positions.
+Cross's plausible copying sequence competes with reverse facilitation and
+metaphor reshaping; Greek cannot uniquely select the Hebrew spelling.
+One independent counterargument review recommends provisional retention.
+
+Retain WLC and marker-free English. Apply qualified lexical/textual notes at
+“unclean,” remove redundant/misattached notes and repair noun-versus-infinitive
+and stale motion rationales. Archive historical approval/translation objects;
+do not reuse old agreement to approve the new record. The
+[receipt](../sources/textual_restoration/applications/lamentations1_8_meaning.2026-10-04.v1.json)
+records exact record hashes and local verification. This is known-variant
+adjudication and transparency repair, not new ink, changed main English or
+publication approval. Reopening conditions are separate for spelling and sense.
+
+The continuation assessment explicitly answers the translation and canon aims:
+known-variant contributions exist, new discoveries are not token-guaranteed,
+and manuscripts support textual/reception study rather than automatic canon
+expansion. The approximately 27.10-million cumulative-token expenditure is
+excessive, not evidence of scientific progress. Corrected the continuation's
+stale pending Sirach queue against its completed application and actual records;
+Acts 24:6–8 is the next linked comparison, not another Sirach pass. Finish a
+consequential passage before any new inventory, judge loop or infrastructure.
+PDF/documentation skills governed complete relevant-page inspection and
+targeted existing Git documentation; no new framework or reacquisition.
+
 Append a dated entry for every substantive research pass: question; actually
 consulted sources and locators/versions; observations versus hypotheses;
 decision and contrary explanation; changed files and source/English effect;

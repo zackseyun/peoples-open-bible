@@ -407,3 +407,91 @@ acrostic structure and the longer form's development. A better eye-skip model
 alone would refine the copying diagnosis. The inaccessible thesis and DJD/BHQ
 discussions were not consulted; their search snippets are not verdicts. Do not
 reacquire the same article or reopen this application for another preference vote.
+
+## Lamentations 1 8 source spelling and English meaning
+
+Compared against main `05e8ab3ac7e9be31324dfea02eeb6aeb49a3975a` on
+2026-10-04. Retain WLC and “unclean” provisionally, but remove the claim that
+the word's exclusively ritual meaning is settled. This is adjudication of a
+known variant, not a new manuscript discovery or a proof that MT is earliest.
+
+### Evidence and competing explanations
+
+The same [versioned 4Q111 transcription](https://lexicon.qumran-digital.org/transcriptions/4Q111/2026-05-21/index.html?v=2026-05-21),
+unit 2 line 6, prints `לנוד` without supply brackets or letter-uncertainty
+marks. WLC instead has `לנידה`, pointed `לְנִידָה`. This is a published
+consonantal difference, not our reading of pixels. Surrounding words have
+supplies and uncertain letters; do not extend this preservation claim to the
+whole verse. Unit 2 line 8 preserves impurity language `טמאתה` in 1:9.
+
+Root read Kotzé's article pp.193–200 with the previously inspected context,
+and inspected complete pp.193–195 visually, including footnote 27. The
+counterargument reviewer read pp.193–200 and inspected pp.193–197 visually.
+Cross's proposed development is `לנוד היתה` → `לנודה היתה` → `לנידה היתה`:
+duplication of adjacent he, then waw/yod confusion, possibly reinforced by
+1:17. The intermediate form and copying events are reconstructed, not
+attested at this locus. Reverse facilitation of a difficult Masoretic form
+and deliberate metaphor reshaping are serious alternatives; neither has
+been demonstrated. Hobbins's third ancestral form is likewise unattested
+here. Cross, BHQ/Schäfer, Ilan and Hobbins are positions reported in Kotzé,
+not independently read originals in this pass.
+
+Root inspected Swete III (1905), complete PDF p.385 / printed p.361,
+including apparatus. Its selected opening clause has `εἰς σάλον`, shaking
+or unsteadiness. That could translate the scroll spelling or interpret the
+Masoretic spelling through נוד; it does not uniquely recover an exemplar's
+consonants. Reported Latin may depend on Greek/Old Latin. Reported Syriac,
+Targum and other Greek interpretations are not additional independently
+collated manuscript votes. No source was reacquired or generated image used.
+PDF and transcription hashes are pinned in the preceding junction receipt;
+the [1:8 receipt](../sources/textual_restoration/applications/lamentations1_8_meaning.2026-10-04.v1.json)
+binds this application and its inspected locators.
+
+### Source choice is not English choice
+
+| Interpretation | Meaning emphasized | Remaining limitation |
+|---|---|---|
+| Current “unclean” | Defilement and exclusion | Uncommon MT form; not necessarily normal menstrual impurity |
+| “Wanderer” / banished | Displacement | A personified city may stand for its inhabitants; still not the only נוד sense |
+| “Unsteady” | Instability | Greek supports an interpretation, not one Hebrew spelling |
+| “Object of derision” | Others' head-shaking/contempt | Context fits, but that does not establish the noun's intended meaning |
+
+Root checked local Hebrew controls Lamentations 1:9,17; Leviticus 18:19,
+20:21; Ezra 9:11; Zechariah 13:1; Jeremiah 18:16,48:27; Psalm 44:15 in
+local Hebrew numbering. These support comparison of impurity, moral defilement
+and head-shaking language, not a uniquely determined analysis of the uncommon
+1:8 form. Sin can cause moral/general defilement; the objection that sin does
+not cause ordinary menstruation therefore does not eliminate “unclean.”
+Nakedness and nearby impurity language favor retaining it provisionally.
+This contextual preference does not prove MT originality. A נוד-based
+interpretation is also possible without changing the retained consonants.
+
+The opening WLC `חֵטְא חָטְאָה` has a noun internal object; 4Q111's
+published `חטוא חטאה` has an infinitive absolute. Both can intensify the
+clause. Correcting the rationale does not change “has sinned grievously.”
+
+### Application and stop
+
+One record adds qualified source disclosure c and revises lexical note a,
+both attached to “unclean.” The redundant literal note b is removed; former
+note c merely repeated the current wording and is archived, not treated as
+a real alternative. Corrected grammatical and “turns backward” rationales
+match the retained source and actual English. Source, marker-free English,
+original generation metadata and revisions are unchanged. Former translation,
+status, revision-pass, cross-check and theological objects are preserved in
+history; active status is draft/needs-review. Inherited HALOT attribution is
+not claimed as a newly consulted lexicon.
+
+Reopen the spelling question for independent Hebrew attestation or a
+discriminating transmission/versional-technique argument. Reopen the English
+question independently for stronger lexical/contextual evidence favoring
+displacement, instability or derision. Another model preference vote or
+additional tokens alone is not reopening evidence. Application checks establish
+record/export fidelity, not full-verse publication approval or public deployment.
+
+The independent exact-candidate check reproduced both whole-book hashes,
+five chapters/154 base-edition IDs and seventeen reader-note tests. Root also
+passed eighteen footnote tests, standard verse schema, preservation checks,
+complete reader validation, local links and whitespace. Only 1:8's reader
+markers and notes change. Required remote CI governs merge; this scoped PASS
+does not settle textual priority. No additional preference loop is needed.

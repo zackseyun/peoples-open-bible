@@ -413,11 +413,10 @@ not become reasons to repeat completed source acquisition.
 
 ### Next bounded evidence tasks
 
-1. Review remaining Sirach 51:18–30 together, beginning with supplied wording
-   and content alignment. At 25 the stored Greek does not support the current
-   note's shared feminine-pronoun claim. Verify the actual edition page before
-   applying a full-record repair; this audit leaves the verse unchanged.
-2. For the NT track, compare Acts 24:6–8 as one unit using the pinned
+1. Sirach 51:18–30's fidelity/disclosure batch is now
+   [completed](SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md#remaining-poem-application).
+   Do not reopen it as pending; earliest-form questions remain distinct.
+2. Next, for the NT track, compare Acts 24:6–8 as one unit using the pinned
    [supplement audit](NT_SUPPLEMENT_ATTRIBUTION_AUDIT_2026-09-06.md).
    Do not insert the isolated Lysias verse into a different surrounding form;
    its effect on “from him” is a source/context question, not just a missing ID.
@@ -444,11 +443,13 @@ negative access checks, passing judges or documentation volume as discoveries.
 
 Reviewed at `33f588a9f97a4249ff425d675e7ebdbe6fbbea88`. The
 [remaining Sirach assessment](SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md#remaining-poem-assessment)
-now supplies a concrete pending meaning correction at 51:28 and identifies
-substantive B/digital-base differences at 21–22 and 29. No remaining-poem
-candidate has been applied. The previously applied four/light choices and
-opening-poem fidelity repairs remain the demonstrated contribution examples;
-they are not novel scholarly discoveries.
+identified a concrete meaning correction at 51:28 and substantive B/digital-base
+differences at 21–22 and 29. The later
+[remaining-poem application](SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md#remaining-poem-application)
+is complete: print fidelity repairs at 19/29, meaning repairs at 19/20/28 and
+qualified notes across the batch. The old pending statement is superseded,
+not a reason to repeat this work. These and the four/light choices are
+demonstrated provisional contributions, not novel scholarly discoveries.
 
 The practical answer is yes: comparison can improve POB's source choices and
 English, sometimes altering interpretation. It need not change doctrine to
@@ -494,6 +495,42 @@ No book-list, canonical-status or reader-release change follows from this review
 Usefulness is not measured by producing a sensational reading or a canon
 expansion. A supported correction, a genuinely discriminating no-change
 decision, or a clearly identified unresolved form is valuable. Repeating an
-unchanged hold is not a new contribution. Finish the pending Sirach passage
-batch before opening another large research track; no fresh image claim bypasses
+unchanged hold is not a new contribution. Continue with the linked Acts 24:6–8
+unit before opening another large research track; no fresh image claim bypasses
 the uncompleted calibration gate.
+
+## Bounded continuation: what counts as a contribution
+
+The [Lamentations 1:8 comparison](LAMENTATIONS_DSS_COMPARISON_2026-09-06.md#lamentations-1-8-source-spelling-and-english-meaning)
+now separates a genuine published Hebrew difference from its disputed English
+interpretation. WLC and “unclean” remain provisional; the reader gains a
+qualified disclosure and the grammatical rationale is corrected. Neither
+Greek “unsteadiness” nor the age of 4Q111 alone decides the Hebrew spelling.
+This is a useful negative adjudication plus transparency/fidelity repair,
+not another meaning-changing source application or novel discovery.
+
+The answer to readiness remains conditional: published-edition comparisons
+can continue now; damaged-ink recovery cannot yet be advertised as validated.
+Actual meaning-affecting provisional contributions already exist at 1 Samuel
+17:4 and Isaiah 53:11. Wider witness coverage, publication approval and public
+deployment are separate unfinished claims. No guaranteed discovery date or
+token threshold can be inferred from these cases. The next efficient milestone
+is the already identified Acts 24:6–8 unit, not a fresh global audit or the
+already finished Sirach batch.
+
+For canon, use the six-work screen above as a queue for textual/reception
+study, not an automatic inclusion rule. Sirach and Tobit are already canonical
+in the named Catholic tradition; Enoch and Jubilees have named Ethiopian
+reception. Barnabas and Hermas warrant historical comparison, but codex presence
+alone does not establish equal authority. Establish the exact work/recension,
+surviving extent, local textual reliability and named community's reception
+before any recommendation. Ancient attestation can alter historical judgments;
+it cannot by itself determine inspiration or a universal canon. No canon or
+reader book-list change is made here.
+
+Efficiency stop: the cumulative goal tracker is now approximately 27.10 million
+tokens, not a billing statement. That expenditure is excessive relative to
+the demonstrated contributions. This pass reuses acquired evidence and one
+counterargument reviewer, stops at a concrete unresolved/retain decision and
+does not repeat calibration, acquisition or agreement loops. Do not equate
+more notes, documentation, passing judges or tokens with recovered source text.

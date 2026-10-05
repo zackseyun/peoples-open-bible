@@ -13,6 +13,26 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReaderFootnoteExportTests(unittest.TestCase):
+    def test_lamentations_1_8_discloses_source_and_interpretation_separately(self):
+        record = yaml.safe_load((ROOT / 'translation/ot/lamentations/001/008.yaml').read_text())
+        self.assertEqual(record['source']['edition'], 'WLC')
+        self.assertIn('נִידָ', record['source']['text'])
+        text = record['translation']['text']
+        self.assertIn('unclean[a][c]', text)
+        self.assertNotIn('[b]', text)
+        self.assertEqual(text.count('[a]'), 1)
+        self.assertEqual(text.count('[c]'), 1)
+        out = exporter._export_record_verse(8, record)
+        self.assertEqual(out['footnotes'], record['translation']['footnotes'])
+        notes = {n['marker']: n for n in out['footnotes']}
+        self.assertIn('ritual impurity is not its only possible sense', notes['a']['text'])
+        self.assertEqual(notes['c']['reason'], 'textual_variant')
+        for detail in ('Published 4Q111', 'לנוד', 'לנידה', 'either Hebrew spelling',
+                       'historical priority remains unresolved'):
+            self.assertIn(detail, notes['c']['text'])
+        self.assertEqual(record['cross_check'], {'status': 'needs_review'})
+        self.assertEqual(record['status'], 'draft')
+
     def test_lamentations_junction_disclosure_and_phrase_anchors_reach_reader(self):
         cases = [
             (10, {'a': 'precious things[a]', 'b': 'nations[b]',

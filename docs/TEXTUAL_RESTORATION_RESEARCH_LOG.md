@@ -6016,6 +6016,66 @@ now pass. JSON, local links, whitespace, unchanged canonical/protected hashes
 and exact preservation of the shared method against main also pass. No fresh
 full-book export or broad clean-suite claim follows.
 
+### 2026-10-05 — Jude 15 transmission comparison and reader application
+
+Completed the next consequential unit rather than another readiness review.
+Root checked original CNTR P72 and Vaticanus transcriptions, including P72's
+adjacent omission/correction; all native Mink pages 181–188; and the official
+Catholic Letters local stemma and its guide. Flink's original countercase stays
+in the argument. The live attestation request and Show Table link fail with
+explicit missing-table errors, so no complete live table or fresh genealogical
+recomputation is claimed. Modern PDFs, HTML and diagrams are retained privately,
+not vendored as new ancient evidence.
+
+The [Jude decision](JUDE_1_15_SOURCE_COMPARISON_2026-10-05.md) retains SBLGNT
+and marker-free English provisionally, adds the every-soul alternative at its
+object phrase, and repairs a/b/c anchors. Prior review objects are archived
+exactly and current status is draft/needs_review. One fresh report-aware judge
+passed the frozen full record except for an approved clarity correction;
+root applied the corrected candidate, not a second model-consensus vote.
+
+The [receipt](../sources/textual_restoration/applications/jude1_15.2026-10-05.v1.json)
+pins inputs, parameters, candidate/application/export hashes and actual review.
+Focused checks and 28 reader regressions pass; the complete Jude export has
+one chapter and 25 verses, only 1:15 differs, and the other 24 files retain
+their baseline bytes. No source promotion, novel decipherment, canon change,
+blind English superiority, scholarly approval or public deployment follows.
+The PDF skill required native-page context; the documentation skill separates
+provisional source retention from reader disclosure and technical verification.
+
+PR 42 passed both exact-head checks 111761905326 and 111761885444 and merged
+at `a79a39329739ef28d7a3f020303db44b063b2282`; local main was synchronized
+and pushed. The new Jude application is separate work. Broad OT/NT comparison
+and damaged-ink calibration remain active; reopen this unit only for named
+discriminating evidence, not another readiness audit or repeated acquisition.
+
+### 2026-10-05 — Requested contribution and canon reassessment
+
+The [contribution milestones](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md#contribution-milestones-and-efficient-continuation)
+answer the two requested questions without counting a review as a discovery.
+Two bounded read-only assessments checked actual applied records and the
+limits of canonical inference. Root checked INTF's method and the IAA,
+Catholic, Ethiopian and Sinaiticus institutional pages. The documentation
+skill kept application, historical priority, novelty and canonical authority
+separate. No verse, source selection or canon changes in this reassessment.
+
+Useful provisional POB contributions already exist; no token threshold or
+discovery date is defensible. Next work must specify a discriminating input
+and end in change, retain or hold. Missing stable Jude apparatus evidence and
+a defined Hebrew/Geʿez Jubilees overlap are separate evidence tasks, not more
+readiness or reception inventories. Neither model consensus nor generated
+manuscript imagery supplies historical evidence.
+
+Observed remote failure: PR 43 push job 111769827807 could not read the pinned
+Jude baseline in its shallow checkout. Root inspected the actual log and added
+an exact fetch of commit `812b40b4583513af6d7832f24f85ec93a7f7666a` to the
+existing workflow. The baseline, tests and frozen evidence are not repinned or
+weakened. Merge and publication remain distinct; neither is claimed before its
+own checks. Six focused Jude tests, local documentation targets, workflow YAML
+parsing and whitespace checks pass. One final bounded critique prompted the
+wording provisionally revising interpretation rather than implying demonstrated
+superiority. The shared method and unrelated Genizah file retain their hashes.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

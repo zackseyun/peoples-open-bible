@@ -140,6 +140,13 @@ the Greek attestations and transmission arguments are assessed together.
 The follow-up adds actual attestation and a counterargument, not new ancient
 letters or a completed source/English application.
 
+Subsequent work is recorded in the [Jude 15 application](JUDE_1_15_SOURCE_COMPARISON_2026-10-05.md):
+root has now inspected the complete native Mink discussion, CNTR P72/Vaticanus
+transcriptions and the official local stemma. A qualified reader note and
+anchor repair are applied; Greek and main English remain provisional and
+unchanged. The initial-stage limits above remain historical, not a request to
+repeat those acquisitions. The live attestation table remains inaccessible.
+
 The edition-dependency safeguard above remains in this case report. An
 attempt to add its example to the shared method changed a historically pinned
 input and broke integrity tests. The additive method paragraph is withdrawn

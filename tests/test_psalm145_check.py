@@ -73,9 +73,16 @@ class Psalm145Tests(unittest.TestCase):
             self.assertFalse(witnesses[key]["archival_image_checked"])
         self.assertFalse(unit["decision"]["exact_wording_resolved"])
 
-    def test_note_preserves_witness_specific_gloss_and_unchanged_source(self):
+    def test_historical_note_preserves_gloss_without_source_change(self):
+        # Freeze the completed note-only stage; current source-changing behavior
+        # is checked separately in test_psalm145_critical_application.py.
+        import hashlib
+        import subprocess
         import yaml
-        verse = yaml.safe_load((ROOT / "translation/ot/psalms/145/013.yaml").read_text())
+        raw = subprocess.check_output(['git', '-C', str(ROOT), 'show',
+            '6b9337f796dedecd4794b09451f712b9cfb3f6f8:translation/ot/psalms/145/013.yaml'])
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), '8f2f951dcf0cc87c1aa4fb7af1fb024de06636664c4a222497dda0e17b7b00cc')
+        verse = yaml.safe_load(raw)
         note = next(n for n in verse["translation"]["footnotes"] if n["marker"] == "b")
         self.assertIn("God is faithful in his words", note["text"])
         self.assertNotIn("faithful in all his words", note["text"])

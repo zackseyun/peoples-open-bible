@@ -426,6 +426,17 @@ not become reasons to repeat completed source acquisition.
    named community's reception and practical comparison value. Use existing
    catalog records; hold missing identifications rather than rank inspiration.
 
+The subsequent [Psalm 145 adoption](PSALM_145_SOURCE_COMPARISON_2026-09-05.md#provisional-critical-source-adoption)
+now makes a consequential OT source/English choice: provisionally include the
+actual 11Q5 nun line in a declared critical composite, without harmonizing God
+to Yahweh or adding all before words. The earlier exact-wording hold is revised
+for this working source, not resolved as a historical-certainty claim. Verse 17
+retains Hebrew and uses the same English for its repeated colon. Reader
+disclosure preserves the omission and early-repair alternative; this is known
+evidence applied to POB, not a newly deciphered line. The full-source record,
+scoped reviews and application receipt are linked in that dossier. Do not
+reopen the same published evidence merely to obtain another agreeing review.
+
 These are a queue, not three simultaneous open-ended projects. Start each pass
 with a discriminating question, available evidence and a stopping condition.
 Use one proportional independent review and repeat only to check a concrete

@@ -5182,6 +5182,46 @@ Link machine evidence rather than duplicating corpora. Identify superseded
 claims when correcting them and propagate corrections to affected records.
 Never invent dates, independent reviews, completed experiments or commit IDs.
 
+### 2026-10-04 — Psalm 145 nun line provisionally selected
+
+The [Psalm 145 follow-up](PSALM_145_SOURCE_COMPARISON_2026-09-05.md#provisional-critical-source-adoption)
+revises the existing exact-wording hold for a declared working composite, not
+for proven earliest wording. Actual 11Q5 God/no-all-before-words is selected;
+Masoretic omission and early acrostic repair using verse 17 remain serious
+alternatives. Complete Swete II text/apparatus and relevant preface pages were
+visually inspected; all-before-words is reported in named Greek apparatus
+sources, without new manuscript collations or a Hebrew retroversion. Gentry's
+proposed physical loss remains hypothetical; his extracted text and footnote
+were read, not a usable visual table. PDF download403/screenshot failure and
+unread Brettler body are recorded. No broad source acquisition or ImageGen.
+
+A candidate-identity-withheld English assessment preferred faithful-in-words
+and loyal-in-all-deeds; the kindness nuance remains an alternative. One separate
+contextual source/full-record judgment approved the frozen candidates. Neither
+is human review or blind manuscript observation. The explicit source patch
+maps punctuation normalization as well as insertion. Applied the reviewed
+critical draft to 13 and the repeated-colon rendering to 17, with the latter's
+Hebrew unchanged; removed its unsupported holy-implies-other-Hebrew claim.
+Original generation/history and old review objects are preserved; active
+records remain draft/needs-review. Source bindings, schema, reader notes and
+actual whole-Psalms before/after results are in the
+[receipt](../sources/textual_restoration/applications/psalm145_nun_application.2026-10-04.v1.json).
+An initial verification compared header-inclusive IDs to a body-only list;
+the corrected check separates 2,463 body IDs and 115 headers. This was a test
+denominator mistake, not missing manuscript text or a reader regression.
+Automatic general drafting still uses the original book edition; explicit
+critical-source lookup/integration is verified without claiming that override.
+The PDF/documentation skills required complete-page inspection and concise
+existing-dossier updates. Wider all-book comparison and fresh-reading
+calibration remain incomplete; no canon change or public deployment follows.
+
+The independent technical application review passed: exact source/candidate
+bindings, all 14 Psalm tests and actual whole-book before/after export were
+reproduced, with all 150 chapters and 2,578 IDs preserved. Only 145:13/17
+reader text/notes differ. The receipt now records scoped canonical application
+approval, while publication remains false. Required exact-head remote CI
+governs merge; a passing software check does not decide historical priority.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

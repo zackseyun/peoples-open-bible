@@ -3,6 +3,11 @@
 Checked 2026-09-05. This upgrades the existing provisional pilot with directly
 consulted edition/transcription controls; it is not a newly discovered variant.
 
+The later [provisional critical-source adoption](#provisional-critical-source-adoption)
+revises the exact-wording hold for a working composite, not for a claim about
+the earliest wording. The dated observations and earlier decisions below remain
+historical.
+
 | Consulted control | Corresponding line | Designation | Words phrase | Second-colon adjective |
 |---|---|---|---|---|
 | WLC Hebrew | Absent | — | — | — |
@@ -136,3 +141,87 @@ region mapping and new paleographic review remain unverified, as recorded in
 the coverage ledger. [LOC captions](https://wwws.loc.gov/exhibits/scrolls/bib.html).
 ImageGen would illustrate known wording, not recover ancient letters. No
 generated image or fresh restoration was used; source promotion remains open.
+
+## Provisional critical source adoption
+
+Decision date: 2026-10-04, local time; machine records retain UTC timestamps.
+Baseline: `6b9337f796dedecd4794b09451f712b9cfb3f6f8`.
+The [decision and evidence record](../sources/textual_restoration/applications/psalm145_nun_decision.2026-10-04.v1.json)
+provisionally selects the actual 11Q5 nun line, not a harmonized Hebrew
+retroversion. This is a revised editorial decision on known evidence, not a
+newly deciphered or discovered line. The exact earliest wording remains open.
+
+The earlier `build_psalm145_check.py --verify-only` recipe belongs to the
+note-only baseline and deliberately rejects a changed current verse. Do not
+regenerate that frozen receipt to hide the source change. Its historical test
+now uses the exact Git baseline; current critical binding and preserved WLC
+context are checked by `test_psalm145_critical_application.py` and
+`test_psalms_source_context_map.py` respectively.
+
+Early direct Hebrew attestation, the missing alphabetic position and a
+corresponding Greek line without 11Q5's recurrent blessings support a modest
+inclusion preference. The strongest objection remains early acrostic repair:
+an editor could provide a nun opening and reuse verse 17's second colon.
+Repetition can also be poetic; neither borrowing direction nor a copying event
+is established. The refrain difference isolates a textual unit but cannot by
+itself prove priority. Without the modest age preference, inclusion is less
+persuasive, not certain. An attested wording can serve a provisional composite
+without being certified as the earliest wording.
+
+The new print check visually inspected complete Swete II pp. 408–409
+(PDF 426–427), with preface viii–x (PDF 10–12). Its Vaticanus-oriented selection
+has “Lord,” no “all” before words, and the corresponding couplet printed at
+Greek 14 before the support-the-fallen clause. Alignment follows content, not
+verse-number equality. The apparatus reports an added *pasi* before words in
+`א c.a R T`; the preface distinguishes the Sinaiticus correction, Verona and
+Zurich sources. These are edition reports, not fresh manuscript collations.
+This provides a concrete Greek variant behind the “all his words” question;
+it does not establish Latin dependence or reconstruct that qualifier in Hebrew.
+The reused scan has SHA256
+`945c5b15bf0f9dfc93890b28ee5b66a388acbf4597f1f2be5430ac6cba9c30b0`.
+
+Gentry's 2009 pp. 30–31 and footnote 47 were read through web text extraction.
+His preference for inclusion is an argument, not another witness; the proposed
+scroll-edge mutilation is not demonstrated by an extant exemplar or layout.
+The catena and other-interpreter evidence remains his report, not our new
+manuscript reading. The local PDF request returned 403 and screenshot access
+did not produce a usable table; no visual Gentry-page inspection is claimed.
+Brettler's full chapter remains unread after a bounded access/search attempt.
+The counterargument above is not falsely attributed to that chapter.
+
+The [reviewed source record](../sources/ot/pob_critical/psalms/145/013.json)
+adds `נאמן אלוהים בדבריו וחסיד בכול מעשיו` to the retained WLC mem stanza.
+The explicit composition patch also replaces the baseline's two terminal
+maqafs with stanza punctuation. The record is **POB-critical**, not verbatim
+WLC or the complete 11Q5 Psalm; the scroll's blessings are not imported.
+The original pointed base survives separately. Qumran-Digital's CC BY-SA 4.0
+attribution and the bounded-excerpt/publication limits are recorded; no full
+modern edition or apparatus is redistributed or relicensed here.
+
+The new English assertion is “God is faithful in his words and loyal in all
+his deeds.” Preserve God, not Yahweh, and do not add all before words or narrow
+words to promises. A [candidate-identity-withheld assessment](../sources/textual_restoration/applications/psalm145_english_review.2026-10-04.v1.json)
+preferred this rendering and the same second colon at verse 17. It noted that
+loyal emphasizes fidelity more than benevolent kindness; kind/gracious remain
+disclosed alternatives. A separate [contextual source and full-record review](../sources/textual_restoration/applications/psalm145_editorial_review.2026-10-04.v1.json)
+approved the exact candidates provisionally. Neither review was blinded
+manuscript observation, a human review or a measured improvement benchmark.
+
+Verse 17 keeps its Hebrew source and now renders the repeated phrase identically.
+Its earlier assertion that Greek *hosios* or English holy necessarily implies
+different Hebrew wording is removed. Greek can interpret Hebrew חסיד;
+translation glosses do not become consonantal variants. Both records preserve
+generation objects, prior revision history and archived old reviews, while
+active status remains draft/needs-review. No stale score approves the new text.
+
+The [application receipt](../sources/textual_restoration/applications/psalm145_nun_application.2026-10-04.v1.json)
+records exact source/review/composition bindings and actual reader verification.
+Historical preparation flags are not current selection/application status;
+the production source record itself supplies no publication authority.
+General automatic drafting still defaults to the original book edition; this
+pass verifies the explicit critical-source lookup/integration and affected
+reader, not an unimplemented corpus-wide drafting override. Earliest-form
+questions reopen only for discriminating witnesses, insertion evidence or
+actually consulted literary/transmission arguments. Genizah abbreviation,
+unverified late margins and dependent Latin are not extra inclusion/omission
+votes. ImageGen and fresh damaged-ink claims are unnecessary for this selection.

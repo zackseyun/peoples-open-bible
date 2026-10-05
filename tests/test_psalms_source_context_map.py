@@ -7,6 +7,7 @@ import unittest
 import yaml
 
 from tools import wlc
+from tools.textual_restoration import critical_verse
 from tools.textual_restoration.compare_uxlc_wlc import normalized
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,7 +15,7 @@ MAP = ROOT / 'sources/textual_restoration/inventory/psalms_source_context_map.v1
 
 
 class PsalmsSourceContextMapTests(unittest.TestCase):
-    def test_complete_current_mapping_and_coverage(self):
+    def test_complete_preserved_wlc_mapping_with_verified_critical_overlay(self):
         data = json.loads(MAP.read_text())
         self.assertEqual([r['chapter'] for r in data['chapters']], list(range(1, 151)))
         self.assertEqual(hashlib.sha256((ROOT / 'sources/ot/wlc/Ps.xml').read_bytes()).hexdigest(), data['source_xml_sha256'])
@@ -22,6 +23,7 @@ class PsalmsSourceContextMapTests(unittest.TestCase):
                 for v in wlc.iter_verses('PSA', ROOT / 'sources')}
         mapped = set()
         usage = collections.Counter()
+        critical_ids = set()
         for chapter in data['chapters']:
             ch = chapter['chapter']
             for segment in chapter['segments']:
@@ -31,8 +33,25 @@ class PsalmsSourceContextMapTests(unittest.TestCase):
                     mapped.add(key)
                     record = yaml.load((ROOT / f'translation/ot/psalms/{ch:03}/{v:03}.yaml').read_text(), Loader=yaml.CSafeLoader)
                     self.assertEqual(record['id'], f'PSA.{ch}.{v}')
-                    self.assertEqual(record['source']['edition'], 'WLC')
-                    text = record['source']['text']
+                    source = record['source']
+                    if source['edition'] != 'WLC':
+                        # The inventory maps the retained WLC base, not the added
+                        # nun line. Only the exact reviewed overlay is accepted.
+                        self.assertEqual(record['id'], 'PSA.145.13')
+                        pin = record['critical_source_integration']['record']
+                        self.assertEqual(pin['path'], 'sources/ot/pob_critical/psalms/145/013.json')
+                        raw = (ROOT / pin['path']).read_bytes()
+                        trusted = '2f27ded084a69914c12d65ced77e656d89bf8382e73dabb6501dc5ce3e48077d'
+                        self.assertEqual(hashlib.sha256(raw).hexdigest(), trusted)
+                        provenance = json.loads(raw)['provenance']
+                        critical_verse.validate(record,
+                            trusted_source_sha256=trusted,
+                            trusted_review_sha256=provenance['editorial_review']['sha256'],
+                            trusted_composition_sha256=provenance['composition']['sha256'])
+                        source = record['restoration_draft']['baseline']['source']
+                        critical_ids.add(record['id'])
+                    self.assertEqual(source['edition'], 'WLC')
+                    text = source['text']
                     if 'source_span' in segment:
                         self.assertEqual(key, (60, 0))
                         self.assertEqual(segment['source_span'], [1, 2])
@@ -65,6 +84,7 @@ class PsalmsSourceContextMapTests(unittest.TestCase):
         self.assertEqual(len(base), 2527)
         self.assertEqual(sum(n > 1 for n in usage.values()), 52)
         self.assertEqual(len(data['resolution_evidence']), 13)
+        self.assertEqual(critical_ids, {'PSA.145.13'})
 
 
 if __name__ == '__main__':

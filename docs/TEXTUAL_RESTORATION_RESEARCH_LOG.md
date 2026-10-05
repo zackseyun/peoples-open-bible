@@ -6076,6 +6076,28 @@ parsing and whitespace checks pass. One final bounded critique prompted the
 wording provisionally revising interpretation rather than implying demonstrated
 superiority. The shared method and unrelated Genizah file retain their hashes.
 
+### 2026-10-05 — Proverbs 24 25 pointing and meaning
+
+The [pointing comparison](UXLC_POINTING_TRIAGE_2026-10-05.md#proverbs-24-25-does-not-establish-a-different-lexeme)
+checks the exact publisher correction and Unicode contrast against OSHB/WLC,
+published grammar and Fox's complete native pages 328–329. UXLC retains holam
+while adding the waw dot; treating it as ordinary shureq would change the
+input rather than interpret it. Retain the source, English and notes, with
+the physical/diplomatic transcription held. No new lexeme, recovered ink,
+earliest-source victory or whole-queue success rate is demonstrated.
+
+The separate receipt pins the inputs and unchanged verse without repinning
+the frozen queue or old approvals. A bounded source assessor supplied the
+grammatical countercase; root checked the actual publisher record and native
+printed context. This is completed evidence work, not another readiness
+assessment. The underlying Syriac editions and codex photograph were not
+newly collated. ImageGen is not evidence and was not used.
+Ten focused queue tests, receipt input/row checks, local links and whitespace
+pass. One proportional final critique clarified that a diplomatic correction
+can matter without changing English. The verse, frozen queue, controlling
+method and protected Genizah file retain their exact bytes; no broad clean-
+suite or scholarly-publication claim follows.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

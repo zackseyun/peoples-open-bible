@@ -5569,6 +5569,34 @@ fresh recovery or application. No ImageGen, novel ink, canon change or public
 deployment. Reopen only for discriminating edition/hand or transmission evidence;
 other unfinished OT source comparisons remain active.
 
+### 2026-10-05 — Bounded review of contribution value and canon evidence
+
+At main `861bbf69d134fad8bcbab3baea0506890c0e5cee`, answered the renewed
+two-aim request using completed work, without new collation or another source
+inventory. PR 26 merged at that revision after both exact-head corpus-integrity
+checks succeeded; local main was fast-forwarded and its push was up to date.
+The [current summary](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md#latest-assessment-of-the-two-research-aims)
+now distinguishes meaning-affecting known-variant applications, unchanged-source
+interpretations and fidelity repairs from an unproved novel ancient reading.
+More tokens cannot guarantee discovery or a uniquely optimal translation.
+
+One read-only same-model critique, `/root/malachi2_16_source_assessment`, checked
+existing decisions and identified an Isaiah status-navigation hazard. The
+summary links its later applied-verified receipt without rewriting the historical
+comparison or claiming new verse approval. Root checked current Samuel, Isaiah,
+Psalm and Malachi source/English, and the actual Isaiah receipt. Rechecked INTF's
+method, Catholic and Ethiopian lists, and Sinaiticus contents support appropriate
+source classes and named reception, not complete coverage or automatic canon
+expansion. No new book list or canonical authority decision follows.
+
+Updated the obsolete pending-Tobit milestone and specified bounded prospective
+Ecclesiastes 6:6 and Enoch/Jude comparisons; neither is reported as completed.
+The documentation skill kept proposals, historical records and applied outcomes
+distinct. This update is documentation only; whitespace and local-link checks
+are proportional, not new corpus-validation or publication claims. The protected
+untracked Genizah file remains unchanged. Repeated readiness audits and agreement
+loops must not be counted as future research progress.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

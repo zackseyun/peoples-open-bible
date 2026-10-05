@@ -5318,6 +5318,55 @@ document-target checks pass. Only these two documents change; the unrelated
 Genizah JSON retains SHA256
 `130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50`.
 
+### 2026-10-04 — Tobit fish connected-form source and English applied
+
+Completed the bounded [Tobit comparison](TOBIT_FISH_SOURCE_COMPARISON_2026-10-04.md)
+against main `17176d2b9c7e5b20e858753c005a70e88e01b335`. Root inspected
+Swete II's complete adjacent pages, columns and apparatus, its preface, the
+published 4Q197/4Q196 context, Di Lella's NETS introduction and Jacobs's exact
+foot/meal discussion. Modern scholarly summaries do not become own manuscript
+collation. Access failures, successful alternate retrievals, unconsulted resources,
+PDF hashes and preservation boundaries are recorded. No fresh manuscript pixels,
+ImageGen evidence or complete modern apparatus was used.
+
+The source assessor extended the unit through the meal after preserved singular
+eating became discriminating. Provisionally selected the complete lower Greek
+II unit at 6:3–6, rather than a foot inserted into Greek I. Foot/leg, large and
+singular eating have early Aramaic support; 4Q196 supplies only conditional
+partial corroboration, not another full verb or foot witness. The strongest
+contrary account is early expansion/harmonization, predating surviving copies;
+earliest-original priority remains unresolved. English changes the threatened
+object to the foot and eater to singular, preserving the selected Greek's
+connected commands, partitives, salted state and Media approach. Dog duplication
+is avoided; 6:1–2 source/main English remains unchanged and numbering notes
+are repaired. The source guide's false global long-form claim is corrected.
+
+Separate source and anonymous-candidate English assessments did not certify
+historical originality. The full-record reviewer caught root's infinitive
+spelling error; a 600-dpi native print check confirmed καταπεῖν, the source and
+lexical field were corrected, and receipt/test pins rebound before approval.
+English was unaffected; its initial supplied-source spelling limitation remains
+recorded. A final recheck failed from model capacity, then the same reviewer
+resumed and passed the exact corrected six candidates. No judge-consensus loop.
+
+Root applied those exact bytes as drafts, reset stale agreement flags and
+preserved original generation, revisions, theological decisions and replaced
+records. Actual applied export matches the simulated hash; the same 13 eligible
+chapters and 244 IDs remain, with only 6:1–6 reader records changed. Chapter 9
+was already withheld. Twenty-one reader-export tests, 18 footnote tests,
+full-reader validation and whitespace checks pass. Full schema validation has
+only the disclosed preexisting 6:4 missing ai_draft; no event is fabricated.
+The [receipt](../sources/textual_restoration/applications/tobit6_fish_application.2026-10-04.v1.json)
+records actual results, pins, approval scope and evidence. Book-wide parsed
+Swete input remains unchanged; future redrafting must honor the local selection.
+The PDF skill required visual print inspection; the documentation skill kept
+the Git record qualified and actual outcomes separate from proposals. This is
+known-reading source/meaning improvement, not a scholarly discovery, general
+translation superiority, canon change or verified public deployment. Required
+exact-head remote checks govern merge, not historical truth. The wider source
+comparison and fresh-reading calibration remain unfinished. The unrelated
+Genizah JSON retains its recorded SHA256 and remains untracked.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

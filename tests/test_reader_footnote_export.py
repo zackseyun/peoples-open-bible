@@ -14,6 +14,53 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReaderFootnoteExportTests(unittest.TestCase):
+    def test_tobit_fish_connected_greek_form_and_disclosures_reach_reader(self):
+        pins = {
+            1: 'e5e4a2116e2d72eac276f7c4fc6387465660198134cf599fea6b73484facf12e',
+            2: 'c0ae9a43f43fb515df5b3eb04a13b173a1eb65a3c23ac4358328b558bf78a346',
+            3: '4abf3218d792b532ef67809195b4717e49c06a6a32e1156ef4ae52c41d0e5153',
+            4: 'f7e58c0168a7c328352bf2a4f8f56e02305fc2fbe0702b6535498b2666ca3b84',
+            5: '2b1c8ff4a309e2e11bcc8288ddd47cace0ae498fbcbcf1171d40eac82a022609',
+            6: '8f185387df336d12eb49b55d5e39cc28c0ee1689730e5d6e4f40dddf0bd055de',
+        }
+        book = exporter.export_apocrypha_book('TOB')
+        chapter = next(c for c in book['chapters'] if c['chapter'] == 6)
+        self.assertEqual([v['verse'] for v in chapter['verses']], list(range(1, 19)))
+        reader = {v['verse']: v for v in chapter['verses']}
+        records = {}
+        for verse, pin in pins.items():
+            candidate = ROOT / f'sources/textual_restoration/applications/tobit6_{verse}_candidate.2026-10-04.v1.yaml'
+            canonical = ROOT / f'translation/deuterocanon/tobit/006/{verse:03}.yaml'
+            raw = candidate.read_bytes()
+            self.assertEqual(hashlib.sha256(raw).hexdigest(), pin)
+            self.assertEqual(canonical.read_bytes(), raw)
+            record = yaml.safe_load(raw)
+            records[verse] = record
+            self.assertEqual(reader[verse]['text'], record['translation']['text'])
+            self.assertEqual(reader[verse]['footnotes'], record['translation']['footnotes'])
+            self.assertEqual(record['status'], 'draft')
+            self.assertEqual(record['cross_check'], {'status': 'needs_review'})
+            historical = record['textual_comparison_history'][-1]
+            if verse < 3:
+                self.assertEqual(record['source']['text'], historical['source']['text'])
+                self.assertEqual(record['translation']['text'], historical['translation']['text'])
+            else:
+                self.assertEqual(record['source']['literary_form'], 'Greek II, Swete lower Sinaiticus text')
+                self.assertIn('not restored Aramaic', record['source']['note'])
+        self.assertIn('wanted to swallow the young man’s foot[a]', reader[3]['text'])
+        self.assertIn('young man cried out', reader[3]['text'])
+        self.assertIn('swallowing verb is only partly preserved', reader[3]['footnotes'][0]['text'])
+        self.assertIn('earliest wording is unresolved', reader[3]['footnotes'][0]['text'])
+        self.assertIn('get a firm grip on it[a]', reader[4]['text'])
+        self.assertIn('brought it up onto the land', reader[4]['text'])
+        self.assertIn('gall[a]', reader[5]['text'])
+        self.assertIn('medicine[b]', reader[5]['text'])
+        self.assertIn('He roasted some of the fish and ate it[a]', reader[6]['text'])
+        self.assertIn('set aside some of it, salted', reader[6]['text'])
+        self.assertIn('came near Media[b]', reader[6]['text'])
+        self.assertIn('conditionally supporting the singular', reader[6]['footnotes'][0]['text'])
+        self.assertIn('not a continuous Sinaiticus edition', reader[2]['footnotes'][0]['text'])
+
     def test_habakkuk_2_4_discloses_suffix_and_lexical_choices_separately(self):
         path = ROOT / 'translation/ot/habakkuk/002/004.yaml'
         candidate_path = ROOT / 'sources/textual_restoration/applications/habakkuk2_4_disclosure_candidate.2026-10-04.v1.yaml'

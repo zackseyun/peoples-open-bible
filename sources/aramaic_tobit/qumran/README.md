@@ -1,81 +1,64 @@
-# Aramaic (and Hebrew) Tobit — Qumran Fragments
+# Tobit Aramaic and Hebrew witnesses
 
-Tobit was composed in Aramaic (with some scholars arguing Hebrew)
-sometime between 225–175 BC. The original Aramaic/Hebrew text was
-lost for nearly two millennia; the Greek LXX translation became the
-operative witness.
+Qumran Tobit includes four Aramaic manuscript labels (4Q196–199) and one
+Hebrew label (4Q200). Their surviving wording is fragmentary. Original
+composition language and date are research questions, not established by
+this guide. Do not confuse a manuscript's copy date, the work's composition
+date and a modern transcription release date.
 
-In 1952 the caves at Qumran yielded fragmentary Aramaic and Hebrew
-manuscripts of Tobit:
+## Available comparison sources
 
-- **4Q196** (papyrus, Aramaic) — 4QpapToba ar
-- **4Q197** (parchment, Aramaic) — 4QTobb ar
-- **4Q198** (parchment, Aramaic) — 4QTobc ar
-- **4Q199** (parchment, Aramaic) — 4QTobd ar
-- **4Q200** (parchment, Hebrew) — 4QTobe
+[Qumran-Digital](https://lexicon.qumran-digital.org/transcriptions/4Q197/2026-05-21/index.html)
+now provides attributed transcriptions with a CC BY-SA 4.0 notice:
+DFG project 465277421, Text und Lexikon, with the stated earlier
+Qumran-Wörterbuch/Abegg basis. The version consulted here is 2026-05-21.
+The April claim that no licensed Semitic transcription route exists is
+superseded. This does not establish permission to reuse every manuscript
+photograph, redistribute a commercial edition, or relicense modern
+transcriptions under POB's separate license. Record access and rights for
+the particular resource and intended use.
 
-Together these fragments cover approximately 20% of Tobit and
-decisively support the Long Recension (Codex Sinaiticus) Greek text
-over the Short Recension (Codex Vaticanus, Codex Alexandrinus).
+For each comparison, inspect the complete local bracket context. Preserve
+uncertain letters and editorial supplies. A supplied word is not observed
+ink; a passage-range hit is not a surviving-word inventory. Consult DJD XIX
+and relevant later scholarship where a disputed reading depends on them;
+access to one digital transcription does not certify their full apparatus
+or independent image collation.
 
-## Current source status
+## Actual Greek working form
 
-The surviving photographs of the Qumran Tobit fragments are held
-under restrictive license terms that are not compatible with direct
-CC-BY inclusion. Our current working source for Tobit is therefore
-**Swete's LXX Greek** (`../../lxx/swete/`), specifically the Long
-Recension preserved in Codex Sinaiticus. This is what NRSV, NABRE,
-and Orthodox Study Bible also use as their primary text for Tobit.
+The legacy source identifier `lxx-swete-1909` points to the local Swete
+corpus; it does not identify which of Swete's two Tobit forms is selected.
+Swete II prints Vaticanus above and Sinaiticus separately below, as explained
+in preface vii. The historical claim that all POB Tobit verses already
+translated the Sinaiticus long form was wrong: the checked 6:1–6 baseline
+stores the upper, shorter Greek.
 
-Where published scholarship has reached factual textual-critical
-conclusions about what the Qumran fragments attest, we cite those
-conclusions in footnotes — which is fact-level citation, not
-reproduction of creative expression (*Feist v. Rural*, 1991). A
-typical footnote form:
+The [fish comparison](../../../docs/TOBIT_FISH_SOURCE_COMPARISON_2026-10-04.md)
+records the declared local longer-form selection at 6:3–6 and its application
+status. The remainder of Tobit is not newly collated or converted into a
+continuous Sinaiticus edition. Preserve the alternative forms and do not
+silently insert individual preferred details into another form. Qumran's
+local agreements support particular readings, not every word of a global
+long recension. The manuscript corpus and versional evidence have not
+received complete passage-level collation.
 
-> *"Qumran 4Q196 supports the Long Recension reading here."*
+## Later indirect Hebrew
 
-We do not reproduce scholars' transcriptions of the fragments in
-our published output.
+Neubauer's 1878 Hebrew material remains available at
+`../../lxx/hebrew_parallels/sefaria_tobit.json`. It is later indirect
+material, not an ancient Hebrew witness or a reconstructed original Vorlage.
+Matching verse numbers across this material and POB does not establish
+content alignment: the checked 6:1–6 entries cover different narrative units.
+Keep source-local numbering and content alignment separate. The scoped
+application archives the old, mismatched parallel fields; it does not
+reclassify their words as Qumran evidence.
 
-If cleaner access to the Qumran Aramaic/Hebrew becomes available
-later, the ~20% of Tobit verses those fragments cover will be
-upgraded transparently. Until then, every verse is translated from
-the Greek with its provenance clearly marked.
+## Research and publication limits
 
-### Licensing confirmed blocked — 2026-04-20
-
-Re-checked the IAA Leon Levy Dead Sea Scrolls Digital Library
-terms: text and images "may not be reproduced, displayed, modified
-or distributed in any form" without written permission. Same
-situation as Masada Sirach. The principal scholarly transcription
-(Fitzmyer, DJD XIX, 1995) is likewise under commercial copyright.
-**No clean-licensed path to the Qumran Aramaic Tobit exists as of
-this date.** We continue with Swete Greek (Long Recension via
-TOB_S / Codex Sinaiticus) as the working source.
-
-### Fallback Hebrew witness now vendored
-
-Adolf Neubauer's *The Book of Tobit: A Chaldee Text...* (Oxford:
-Clarendon, 1878) includes a Hebrew back-translation from the
-Aramaic Munich MS he edited. It is Public Domain (Neubauer d.
-1907) and is hosted by Sefaria. We have vendored it at
-`../../lxx/hebrew_parallels/sefaria_tobit.json` (76 verses,
-100% Hebrew coverage). This is **not an ancient witness** — it is
-a 19th-century scholarly reconstruction — and it is marked
-accordingly by `tools/hebrew_parallels.py` as `kind:
-indirect_hebrew`. Use it for proper names, idiom checks, and
-Semitic-flavor phrasing during the translation phase; do NOT
-treat it as a Vorlage.
-
-## Reconstruction caveat
-
-The Qumran Tobit fragments are small and heavily reconstructed by
-specialist scholarship. Under *Qimron v. Shanks* (Israeli Supreme
-Court, 2000), creative scholarly reconstructions of damaged Dead
-Sea Scroll texts can carry copyright. Even if we had access to the
-photographs, our policy would be to transcribe only what is legibly
-present on the physical fragment and mark lacunae as lacunae — not
-to generate or reproduce reconstructions of missing letters. This
-keeps us clearly clear of reconstruction-copyright concerns and is
-also the more honest scholarly posture.
+Short attributed published readings can support research without a fresh
+machine transcription of every photograph. New letter, hand, join or
+damaged-ink claims still require the project's image evidence and calibration
+gates. ImageGen is display-only and cannot create textual evidence.
+Selecting a working Greek form does not recover a complete Aramaic or Hebrew
+original, decide a canon, or certify public deployment.

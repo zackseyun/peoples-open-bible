@@ -5864,6 +5864,38 @@ native-page/preface inspection and hash checks, not historical-priority approval
 Scoped local link/anchor and whitespace checks passed. Protected Genizah remains
 unchanged and unstaged; no corpus/export rerun was needed for three prose files.
 
+### 2026-10-05 — Proverbs comparative source lead completed
+
+PR 36 passed both exact-head checks and merged at
+`fdaedbaca9426a2283771a1523e136bd855e9570`. The preceding turn's Ephrem work
+was progress; this pass returns to the OT rather than repeating readiness.
+
+The [Proverbs 24:5–6 comparison](UNFLAGGED_ENGLISH_SAMPLE_2026-09-05.md#proverbs-24-5-and-6-versional-source-comparison-2026-10-05)
+completes the existing frozen unflagged sample's source lead. Root and a bounded
+assessor acquired/inspected Greek controls; root checked Fox's actual Hebrew
+proposal and reported Syriac. Greek/reported Syriac share a comparative first
+clause but differ in the second. Their agreement does not uniquely restore
+Hebrew spelling or pointing. CAL's explicit anti-scraping notice was respected;
+unidentified online Syriac was not promoted to Leiden evidence.
+
+Source/main English remain provisionally retained. One first-clause note gains
+a qualified disclosure, preserving its literal gloss, anchor and note b.
+Historical review values are archived exactly and active status is draft.
+The [receipt](../sources/textual_restoration/applications/proverbs24_5_disclosure.2026-10-05.v1.json)
+records actual schema/full-record/export checks: 31 chapters, 915 verses, exactly
+one reader-note change, 914 verse files unchanged. All 28 reader regressions
+passed. One bounded independent critique passed source qualifications and
+preservation; it did not certify root's later receipt/test results.
+The two existing historical-sample checks also passed, including immutable
+replay of the four original checks; this does not validate the current corpus.
+
+The documentation/PDF skills kept proposed Hebrew separate from observed
+versions and required native-page checks. The original sample is not redrawn,
+upgraded to a corpus improvement result or used to claim a new reading. No
+fresh decipherment, ImageGen evidence, canon decision or public deployment
+follows. Protected Genizah stays unchanged and unstaged; broader validation
+debt is not repinned away.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

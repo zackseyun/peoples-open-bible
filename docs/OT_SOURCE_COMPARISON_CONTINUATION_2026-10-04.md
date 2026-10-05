@@ -75,9 +75,11 @@ For the source track, prioritize the already consequential
 [Mark 1:41 question](NT_PILOT_ADJUDICATION.md): anger versus compassion.
 Obtain a working ECM passage locator and exact witness/hand evidence before
 repeating the failed access route; then test the strongest contrary account and
-record change, retain or a precise hold. Existing Ecclesiastes 5:14 and 6:8
-particle leads remain open, not completed by this assessment and not promised
-to produce major meaning changes.
+record change, retain or a precise hold. The subsequent
+[Ecclesiastes 5:14 and 6:8 comparison](ECCLESIASTES_DSS_COMPARISON_2026-09-06.md#ecclesiastes-5-14-and-6-8-particles-2026-10-05)
+now completes those bounded meaning questions with provisional retention;
+historical function/priority and unapplied reader disclosures remain open.
+The initial requested assessment did not itself perform that comparison.
 
 For the reception track, compare one defined unit, provisionally 1 Enoch 1:9
 and Jude 14–15. First establish actual Aramaic/Greek/Ge'ez survival and the

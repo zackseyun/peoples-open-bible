@@ -12,6 +12,9 @@ The later [Kahana print check](SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md
 resolves the printed-edition access hold and identifies missing digital content;
 the subsequent [remaining-poem application](SIRACH_51_OPENING_SOURCE_COMPARISON_2026-10-04.md#remaining-poem-application)
 now applies the scoped source corrections and fidelity/disclosure batch.
+The [Amos and Acts reader-note application](AMOS_9_12_SOURCE_COMPARISON_2026-09-06.md#reader-note-application)
+subsequently delivers an already completed OT comparison without harmonizing
+the two books or changing their main wording.
 Earlier dated assessments below retain their original scope.
 
 The full objective remains to find relevant surviving Old Testament sources,

@@ -5278,6 +5278,46 @@ source decision with better reader disclosure, not a novel discovery, canon
 change or public deployment. Required exact-head checks govern merge; wider
 all-book comparison and fresh-reading calibration remain unfinished.
 
+### 2026-10-04 — Renewed two aim review and a discriminating Tobit lead
+
+Reviewed main at `a8718b42e7d7dfa26a4ae1487f25b88f56b67391` in response to
+the user's renewed readiness, meaningful-contribution and canon questions.
+Updated the existing [latest assessment](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md#latest-assessment-of-the-two-research-aims),
+not another framework. Published-source comparison is ready; validated fresh
+decipherment and complete all-witness comparison are not established. Known
+variant applications and source/English fidelity repairs are real contributions
+now, distinct from an unproved novel discovery. There is no token threshold
+or calendar promise. The approximately 29.17-million cumulative goal count is
+not a billing statement and remains excessive relative to discoveries.
+
+Root checked current Tobit 6:3 and complete 4Q197 fragment 4 i context in
+Qumran-Digital's version dated 2026-05-21. Line 7's unbracketed `רגל` provides
+published foot/leg wording against POB's whole-youth object; the youth ending
+and most of the swallowing verb are supplied. Line 6's large descriptor is
+preserved, but most of its fish noun is supplied. A separate source assessment
+checked these boundaries and the non-discriminating 4Q196/4Q200 contexts.
+This is a real local comparison lead, not fresh pixels, DJD collation, Greek
+apparatus certification or source-priority approval. Explanatory expansion
+remains a competing account. Greek-form inspection, content alignment and a
+declared target form remain prerequisites for any source/English application.
+
+Rechecked the INTF ECM method, Ben Sira introduction, Vatican and Ethiopian
+canon lists, and Sinaiticus content description through their primary sites.
+These support relevant source classes and named reception histories, not
+inspiration, all-witness coverage or automatic canon expansion. The existing
+six-work screen remains the bounded reception queue. No verse, canon, reader
+bundle or About page changes in this review. The documentation skill required
+qualified claims and surgical existing-file updates. Local documentation checks
+and one scoped independent review govern this change; remote CI governs merge,
+not historical truth. Do not spend another pass re-answering readiness without
+new evidence; the next substantive deliverable is the defined Tobit decision.
+The scoped independent documentation review passed without blocking defects;
+it checked the Aramaic assessment and claim boundaries, not the external-site
+checks, token count or any proposed verse replacement. Whitespace and local
+document-target checks pass. Only these two documents change; the unrelated
+Genizah JSON retains SHA256
+`130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50`.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

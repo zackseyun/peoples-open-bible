@@ -1,5 +1,94 @@
 # Old Testament source comparison method and continuation review
 
+## Current answers and next evidence tasks
+
+Requested reassessment, 2026-10-05: reviewed main
+`80d425ab32cf89767be2c312029a0af8c941adfd` and the pending Ecclesiastes 7:5
+branch at `4991c662e02e3030aeb0554606d72d5556fb10d6`.
+**Ready for bounded published-source comparison and provisional applications;
+not ready to claim new decipherment, complete collation or general translation
+superiority.** This answers the user's two questions using existing evidence;
+it is not another manuscript discovery. Earlier assessments below are dated
+history, not the current delivery status of every case.
+
+Subsequent delivery: PR 31 passed both exact-head corpus-integrity checks and
+merged at `050ebd6a8329617f765c394073ccfc6a02e0f9ba`. That delivers the
+Ecclesiastes 7:5 draft, not scholarly publication or historical priority.
+
+### Changes to wording and understanding
+
+Useful contributions need not be new to scholarship. The actual
+[1 Samuel 17:4 record](../translation/ot/1_samuel/017/004.yaml) selects four
+rather than six cubits; [Isaiah 53:11](../translation/ot/isaiah/053/011.yaml)
+includes light. These change source wording and the described height or explicit
+object. [Malachi 2:16](../translation/ot/malachi/002/016.yaml) instead changes
+agency through a disputed human-subject conditional against unchanged pointed
+Hebrew. That is a consequential interpretation, not restored letters.
+The [Isaiah successor receipt](../sources/textual_restoration/applications/isaiah53_11_successor_application.v1.json)
+and [Malachi receipt](../sources/textual_restoration/applications/mal2_16_application.2026-10-05.v1.json)
+record scoped application and export checks, not scholarly publication approval.
+The Ecclesiastes 7:5 wording preference is smaller: it makes a generic
+listener explicit without demonstrating a change in the proverb's central meaning.
+
+These are valid provisional POB contributions now, not proof of the earliest
+wording or a newly discovered ancient reading. More tokens can help acquire and
+compare evidence, but cannot create missing ink or guarantee novelty. There is
+no defensible token threshold or date for a first genuinely new discovery.
+Such a claim needs discriminating evidence or an original defensible analysis,
+a relevant literature check and qualified scrutiny beyond model agreement.
+Whole-Bible superiority additionally needs the unfinished evaluation on
+unflagged passages; selected striking examples do not establish it.
+
+The [coverage audit](BIBLICAL_SOURCE_COVERAGE_AUDIT_2026-09-04.md) identifies
+appropriate OT and NT source classes, not complete coverage. Use Hebrew/Aramaic
+codices and Desert witnesses, Samaritan witnesses, relevant Greek textual forms
+and discriminating versions for OT; Greek manuscripts and hands, versions and
+quotations for NT. The [INTF ECM method](https://www.uni-muenster.de/INTF/ECM.html)
+explicitly combines these NT evidence types and transmission relationships.
+Older is not automatically better; related copies are not independent votes;
+different literary forms must not be silently reconciled into an unattested hybrid.
+
+### Additional works and canonical authority
+
+Yes, surviving texts justify comparing additional works and assessing reception.
+Sirach and Tobit are already in the
+[Catholic canon](https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_two/article_3/iv_the_canon_of_scripture.html);
+Enoch and Jubilees are named in the
+[Ethiopian Orthodox list](https://www.ethiopianorthodox.org/english/canonical/books.html?lang=en).
+The [IAA classification](https://www.deadseascrolls.org.il/learn-about-the-scrolls/scrolls-content?locale=en_US)
+distinguishes its navigation categories from ancient judgments about sacred texts.
+The [Sinaiticus contents](https://www.codexsinaiticus.org/en/codex/content.aspx)
+also identify Barnabas and Hermas alongside the NT. This makes all six sensible
+comparanda; neither finding a fragment nor binding a work in a codex establishes
+equal authority, apostolic authorship or universal inspiration.
+
+Keep four outcomes separate: reconstructing wording, explaining biblical
+parallels, documenting reception and recommending canonical inclusion for a
+named community. A historical comparison supplement can serve the first three
+without deciding the fourth. No canon change is made here. The blanket
+ecumenical claim in [DEUTEROCANONICAL.md](../DEUTEROCANONICAL.md#why-include-these-books)
+is corrected: POB's entire collection is not canonical in every named tradition.
+
+### Efficient continuation
+
+For the source track, prioritize the already consequential
+[Mark 1:41 question](NT_PILOT_ADJUDICATION.md): anger versus compassion.
+Obtain a working ECM passage locator and exact witness/hand evidence before
+repeating the failed access route; then test the strongest contrary account and
+record change, retain or a precise hold. Existing Ecclesiastes 5:14 and 6:8
+particle leads remain open, not completed by this assessment and not promised
+to produce major meaning changes.
+
+For the reception track, compare one defined unit, provisionally 1 Enoch 1:9
+and Jude 14–15. First establish actual Aramaic/Greek/Ge'ez survival and the
+selected textual forms. A quotation cannot certify the whole collection's canon.
+Stop each case at a reasoned outcome; reopen only for named new evidence.
+Use one proportional independent critique, not judge-until-agreement loops.
+This requested review used two bounded read-only assessments for the distinct
+questions; neither is human specialist review or a new manuscript witness.
+Existing frozen-control drifts and image-reading calibration remain unresolved.
+No corpus-wide tests are rerun for this documentation-only correction.
+
 ## Latest assessment of the two research aims
 
 Current review: 2026-10-05, against main

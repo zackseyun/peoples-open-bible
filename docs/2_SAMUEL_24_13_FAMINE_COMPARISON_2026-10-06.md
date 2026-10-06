@@ -66,14 +66,55 @@ distinguish preservation from assimilation. Identify copies and hands before
 dating or grouping them. Do not repeat these negative Qumran checks without
 changed data or obtain more model votes on the same symmetry argument.
 
+## Numeral apparatus and published arguments followup
+
+The subsequent [structured comparison](../sources/textual_restoration/comparisons/samuel24_13_famine.2026-10-06.v1.json)
+records a more precise Greek contrast. Cambridge printed 198 / PDF 214 has the
+third-apparatus entry `τρια] οι γ′ επτα j`. Its general preface, printed iv /
+PDF 12 in the 1906 Genesis volume, identifies that apparatus as marginal
+Hexaplaric material. The Samuel preface, printed v / PDF 11, identifies j as
+Rahlfs 243, Paris Bibliothèque nationale, Coislin 8. Thus the reported seven is
+a marginal attribution, not a demonstrated replacement in j's running text.
+
+The collective label names Aquila, Symmachus and Theodotion; this usage is
+confirmed in [Wevers's editorial introduction, section II](https://ccat.sas.upenn.edu/gopher/text/religion/biblical/lxxvar/1Pentateuch/01Gen-Wevers-Intro.html).
+One marginal report of the three is not three inspected copies or three
+independent Hebrew exemplars. No physical-copy or marginal-hand date is
+established here. Do not describe the contrast as all Greek against Hebrew,
+or give j the dates of the translators it cites. The limited numeral attribution
+is now recorded; complete Greek/versional collation is still not claimed.
+
+[Driver's 1913 second edition](https://archive.org/download/notesonhebrewtex00driv/notesonhebrewtex00driv.pdf),
+printed 376 / PDF 518, prefers three because of Greek Samuel, Chronicles and
+the following three months/days. His immediate context on printed 377 / PDF 519
+also proposes source changes elsewhere in the episode; those proposals are not
+silently adopted for this numeral decision. The native pages and edition title
+were checked. Driver offers a contextual priority argument, not another manuscript.
+
+[Keil's commentary at 24:10–13](https://en.wikisource.org/wiki/Biblical_commentary_the_Old_Testament/Volume_II._Historical_Books/2_Samuel)
+expressly argues the opposite: the agreement of the three options makes three
+suspect as intentional conformity. This is a published counterargument, not an
+observed copying event. The two arguments interpret the same contextual feature
+in opposite directions; adding them as votes would hide rather than resolve
+the problem. The reported seven in the later Greek versions further prevents
+a simple Greek-versus-Hebrew chronology argument. Earliest priority stays held.
+
+This followup completes the named acquisition of a precise numeral attribution
+and competing published arguments. It does not find a discriminating local
+copying pattern. Further work should target an exact dated hand/exemplar or a
+new transmission argument, not repeat these pages or obtain equivalent model
+preferences. A separate reader-disclosure application remains possible without
+claiming a source-wording victory.
+
 ## Reproducibility
 
 Baseline: `d056d57d2c0d2ec4410717a3fa23964221bfcec0`. Unchanged canonical
 `translation/ot/2_samuel/024/013.yaml` SHA256:
 `0ee83b08a296ab3943f37d7cfc6704ca3c45db0e4cce15a451c81eb095217627`.
 The complete native Cambridge page and DJD preservation page were visually
-inspected. This does not complete the manuscript-specific numeral attribution
-needed for priority. No full versional collation or fresh decipherment is claimed.
+inspected. At the initial cutoff the numeral attribution was incomplete; the
+subsequent section above adds its limited published marginal attribution.
+No full versional collation or fresh decipherment is claimed.
 
 Consultation files remain private; hashes identify inputs, not redistributed
 editions. Cambridge's [public scan](https://tmcdaniel.palmerseminary.edu/Brooke%26McLean/LXX_Brooke%26McLean_2-1.pdf)
@@ -87,3 +128,13 @@ DJD consultation PDF:
 | 4Q51 | `7460cc778d390185c93449d1799294d219c12cbeb71005cb0bf286e768016068` |
 | 4Q52 | `bd71da7c522eab8ad876d14246baa135e927e54019846da4ea222f4b06404c9f` |
 | 4Q53 | `d8f4f6482937050bdc98abfa8bd1fca7dff313fac11b9e10f53d46c239a5aba7` |
+
+Followup acquisition hashes: Driver PDF
+`72cab0b9e0998e89cd1a9f8221909b4ff0b14c1d4108c7be572b5cbfe9f37d97`;
+Wevers editorial HTML
+`1a3d30b335359fbe2fd463436a70af1287e894046007c240ff446af5d1b72177`;
+Cambridge Genesis 1906 PDF
+`c5031defb2e2f8de3e4db1f47244f0565ea001a529e3f924680e4f3c7ead1519`.
+Web-tool retrieval of Driver and Wevers failed; ordinary public archive/CCAT
+retrieval succeeded. No access restriction was bypassed. Consultation files
+and rendered pages remain private; only bounded evidence and provenance are versioned.

@@ -12,7 +12,7 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch01.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 1, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And behold[a], he comes with myriads of holy ones, to execute judgment upon them, and to destroy the wicked[c][b], and to rebuke all flesh for everything that the sinful and wicked have done and spoken against him.
+  text: And behold, he comes with myriads of holy ones[a], to execute judgment upon them, and to destroy the wicked, and to rebuke all flesh[b] for everything that the sinful and wicked have done and committed against him[c].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -22,7 +22,7 @@ translation:
     text: '''All flesh'' is a traditional idiom for all humanity; the translation keeps the concrete wording of the source.'
     reason: cultural_note
   - marker: c
-    text: This verse is echoed in Jude 14–15, but the wording here is translated from the Ge'ez witness itself rather than conformed to later New Testament phrasing.
+    text: This judgment oracle is echoed in Jude 14–15. The Greek Enoch edition explicitly includes harsh words and speaking against him; the edited Ge'ez text followed here has 'done and committed.' Charles's Ge'ez edition contains editorial proposals informed by Greek and Jude, not additional independent manuscript witnesses.
     reason: cross_reference
 lexical_decisions:
 - source_word: ወናሁ
@@ -78,9 +78,9 @@ lexical_decisions:
   chosen: everything that ... have done and committed
   alternatives:
   - all that ... have done and wrought
-  - everything that ... have done and spoken
+  - everything that ... have done and perpetrated
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The paired verbs intensify culpable action. Rendering both avoids flattening the parallelism.
+  rationale: Dillmann 1865, entry ረሰየ, sense D4 explicitly cites Enoch 1:9 under do/commit/perpetrate. The action sense fits the paired verbs in the supplied Ge'ez. The separate Greek speech clauses do not make this Ge'ez verb mean spoken; the previous English revision is corrected without changing the selected source.
 - source_word: ኃጥኣን ወረሲዓን
   chosen: the sinful and wicked
   alternatives:
@@ -113,7 +113,7 @@ ai_draft:
   - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
   - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
   temperature: 0.2
-status: revised
+status: draft
 enoch_witnesses:
   section: Book of the Watchers
   loaded_witnesses_by_language:
@@ -136,6 +136,11 @@ enoch_witnesses:
   geez_only_zone1: false
   source_warnings:
   - Dillmann 1851 chapter OCR exists for chapter 1, but verse-aligned extraction is not yet implemented in this prompt builder.
+  comparative_edition_controls:
+  - language: Greek
+    edition: Flemming–Radermacher 1901
+    record: sources/enoch/greek/verified/flemming_1901/001/009.json
+    basis: Published selected edition text; not a diplomatic papyrus or source promotion
 theological_decisions:
 - issue: Identity of the coming figure
   chosen_reading: Render the subject simply as 'he' without specifying 'the Lord' in the main text.
@@ -151,11 +156,6 @@ theological_decisions:
   - angels
   rationale: In apocalyptic context the phrase likely denotes the heavenly retinue, but 'holy ones' best preserves the source expression without prematurely narrowing it to either human saints or angels.
   doctrine_reference: Consistency of key terms, or documented exception; preserve ambiguity where the source is not fully explicit.
-revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:35:28Z'
-  unchanged: false
-  changes_summary: Replaced 'done and committed against him' with 'done and spoken against him' to reflect the final verb more accurately as speech rather than a second general action.
 revisions:
 - timestamp: '2026-04-23T11:35:28Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -164,23 +164,52 @@ revisions:
   from: And behold, he comes with myriads of holy ones, to execute judgment upon them, and to destroy the wicked, and to rebuke all flesh for everything that the sinful and wicked have done and committed against him.
   to: And behold, he comes with myriads of holy ones, to execute judgment upon them, and to destroy the wicked, and to rebuke all flesh for everything that the sinful and wicked have done and spoken against him.
   rationale: Replaced 'done and committed against him' with 'done and spoken against him' to reflect the final verb more accurately as speech rather than a second general action.
-
 cross_check:
-  status: high_agreement
-  agreement: 0.98
-  agreement_score: 0.98
-  agreement_min: 0.98
-  agreement_max: 0.98
-  verdict: agree
-  reviewed_at: '2026-04-22T18:32:21Z'
-  reviewer_model: gemini-3.1-pro-preview
-  strategy: phase10_ethiopic_pseudepigrapha
-  pass_count: 1
-  passes_with_issues: 1
-  models:
-  - gemini-3.1-pro-preview
-  strategies:
-  - phase10_ethiopic_pseudepigrapha
-  verdict_counts:
-    agree: 1
-  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/001/009.job-72160.json
+  status: needs_review
+review_history:
+- field: status
+  value: revised
+  archived_from_baseline_sha256: b4355fc951237bef86c3e4c2b50cda2e1009d0d66d66ed34dea7757f25ea5caf
+  certifies_this_candidate: false
+  reason: Edited source-to-English rendering and notes; historical review bindings not newly verified
+- field: revision_pass
+  value:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:35:28Z'
+    unchanged: false
+    changes_summary: Replaced 'done and committed against him' with 'done and spoken against him' to reflect the final verb more accurately as speech rather than a second general action.
+  archived_from_baseline_sha256: b4355fc951237bef86c3e4c2b50cda2e1009d0d66d66ed34dea7757f25ea5caf
+  certifies_this_candidate: false
+  reason: Edited source-to-English rendering and notes; historical review bindings not newly verified
+- field: cross_check
+  value:
+    status: high_agreement
+    agreement: 0.98
+    agreement_score: 0.98
+    agreement_min: 0.98
+    agreement_max: 0.98
+    verdict: agree
+    reviewed_at: '2026-04-22T18:32:21Z'
+    reviewer_model: gemini-3.1-pro-preview
+    strategy: phase10_ethiopic_pseudepigrapha
+    pass_count: 1
+    passes_with_issues: 1
+    models:
+    - gemini-3.1-pro-preview
+    strategies:
+    - phase10_ethiopic_pseudepigrapha
+    verdict_counts:
+      agree: 1
+    source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/001/009.job-72160.json
+  archived_from_baseline_sha256: b4355fc951237bef86c3e4c2b50cda2e1009d0d66d66ed34dea7757f25ea5caf
+  certifies_this_candidate: false
+  reason: Edited source-to-English rendering and notes; historical review bindings not newly verified
+textual_comparison:
+  report: docs/ENOCH_1_9_JUDE_14_15_COMPARISON_2026-10-05.md
+  source_outcome: Retain selected Charles Ge'ez text including editorial signs; no Greek speech restoration promoted
+  main_english_outcome: Correct unsupported spoken to committed against the same Ge'ez source
+  historical_priority: unresolved
+  fresh_manuscript_reading: false
+  publication_approved: false
+  blind_english_comparison: false
+  reopen_when: Passage-specific manuscript or critical-apparatus evidence justifies a different source or rendering

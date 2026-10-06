@@ -74,6 +74,18 @@ describe earlier checkpoints, not an instruction to repeat this application.
 
 ## Contribution milestones and efficient continuation
 
+The [Enoch 1:9 application](ENOCH_1_9_JUDE_14_15_COMPARISON_2026-10-05.md#verified-greek-control-and-geʿez-rendering-correction)
+now supplies a complete, separately labelled Greek edition control to the actual
+prompt and corrects done and spoken to done and committed against unchanged
+selected Geʿez. The full Dillmann entry explicitly cites this verse for the
+action sense; Charles's Greek/Jude-informed restoration remains a countercase
+requiring a different source decision. This is an actual meaning-affecting POB
+correction and extraction repair, not novel ancient decipherment. Only 1:9
+changes in the current partial ENO export; the draft is not publication-approved.
+One bounded independent critique supports the correction, without deciding
+historical priority or canonical authority. Do not reopen the same lexical
+question for additional model votes.
+
 The [Numbers 13:33 comparison](NUMBERS_13_33_SOURCE_COMPARISON_2026-10-05.md)
 maps the complete longer Samaritan narrative to seven Deuteronomy units and
 distinguishes a related Hexaplaric marginal report from continuous-text support.

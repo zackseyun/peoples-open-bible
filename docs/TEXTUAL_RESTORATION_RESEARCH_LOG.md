@@ -6994,6 +6994,65 @@ consulted texts, images, manifest and dissertation remain private; only bounded
 facts/provenance are versioned. The broader source coverage, damaged-ink
 calibration and English-quality objective remains active.
 
+### 2026-10-06 — Deuteronomy mountain Greek and Latin controls acquired
+
+Previous goal turn: progress. PR65's exact head
+`89dad7366f18b4fb6549808217b0e7289a0c98ea` passes both corpus-integrity
+checks `112262645900` and `112262109094` and merges at
+`8622a0b6ea81dfc61df74dc918fca290884aece2`. This turn extends the existing
+Deuteronomy 27:4 comparison rather than repeating its Hebrew controls.
+
+Root acquires the actual 1911 Glaue/Rahlfs edition through Giessen's public
+digital library, after the NAWG linked repository returns403. Native printed
+37 [173]/PDF13, conventions34 [170]/PDF10, dating33 [169]/PDF9 and discussion
+47–48 [183–184]/PDF23–24 are checked alongside the complete historical
+Vorderseite plate/PDF4. The Greek iota is supplied, not newly recovered ink.
+The plate locates the published fragment; no calibrated fresh decipherment is
+claimed. Papyrusportal returns a security-verification page, not an actual
+object catalogue, so current condition is not asserted or access bypassed.
+
+One narrowly briefed read-only acquisition agent obtains Tov's actual author
+uploaded argument and a named Old Latin manuscript/edition. Root reads the
+revised argument itself and the complete Latin leaf image. Tov's LXX-revision
+classification leaves Samaritan adaptation as an explicit alternative. The
+Latin has Garzin in continuous main text; the library and Wevers disagree on
+object date. The requested original-width Latin endpoint returns a smaller
+complete-page derivative, recorded accurately rather than called native.
+Browser Tov-body snapshots are not PDF binaries or inspected Tov plates.
+
+The [existing report](PENTATEUCH_SOURCE_COMPARISON_PASS_3.md#deuteronomy-27-4-greek-and-latin-followup-on-october-6)
+and [new bounded record](../sources/textual_restoration/comparisons/deuteronomy27_4_greek_latin.2026-10-06.v1.json)
+distinguish real Gerizim attestation from unresolved earliest priority. Greek
+and Latin inheritance, Samaritan revision and harmonization remain live;
+these are not three independent Hebrew votes. Twenty selected-source/English
+context units in Deuteronomy and Joshua inform interpretation, not additional
+manuscript support. 4Q33's supplied mountain remains neutral and private-market
+fragments stay excluded. Hebrew, English, note and canon labels are unchanged.
+
+The documentation skill keeps the source gap, inference and hold in the existing
+Git reports; the PDF skill requires native layout and convention checks.
+The bundled runtime handles the scanned PDF; its text layer is empty, so the
+library's OCR only locates pages and does not determine their Greek. A hash
+helper initially imported unavailable PIL in repository Python; the corrected
+standard-library helper succeeds without installing anything. Source PDFs,
+full modern arguments and manuscript images remain private consultation inputs.
+The two user questions remain distinct: known evidence already supports useful
+provisional contributions, but tokens cannot guarantee a new decipherment;
+historical circulation and named canonical reception warrant study without
+establishing universal authority. No new readiness essay, broad survey,
+transcription inference or judge-until-agreement loop is undertaken.
+
+One fresh, narrowly briefed reporting critic checks the frozen comparison,
+complete native pages, Latin image, actual Tov argument, input hashes and
+unchanged YAML; no substantive blocker is found. Its pre-verdict JSON hash
+and actual conclusion are recorded separately from the later verdict fields.
+This is a report-aware evidence check, not blind transcription, source-priority
+voting or specialist approval. JSON syntax, complete reader-corpus guard and
+Git whitespace checks pass; target, controlling-method and unrelated Genizah
+file hashes remain unchanged. Only this four-file comparison/documentation
+package changes. Broader source coverage, damaged-ink calibration and English
+quality remain unfinished.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

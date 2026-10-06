@@ -211,3 +211,10 @@ are distinguished from priority and witness independence. The designated
 mountain is consequential, but inheritance and later adjustment remain live;
 POB's source, main English and note remain unchanged. This is useful comparison
 of known evidence, not another discovered reading or a canon inclusion result.
+
+The [subsequent Deuteronomy note application](PENTATEUCH_SOURCE_COMPARISON_PASS_3.md#subsequent-mountain-name-disclosure-application)
+now discloses those Greek/Latin controls to readers and qualifies the connected
+base-text rationale. Source and main English stay unchanged. The exact frozen
+candidate, archived prior inputs, bounded critique and 959-verse export check
+are recorded separately from the earlier comparison, not counted as a second
+source-priority decision or a recovered Hebrew reading.

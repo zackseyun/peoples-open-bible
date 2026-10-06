@@ -6447,6 +6447,39 @@ historical-pin debt remains outside this scoped correction. The user's renewed
 questions are answered by this concrete contribution and the existing coverage
 and canon distinctions, not another general readiness essay.
 
+### 2026-10-06 — Contribution questions and second predeclared sample
+
+PR 52 passed both exact-head corpus-integrity checks 112147317177 and
+112147145585 at `01e5f552089e1054dea4b4bfe02f3f9534bb34ce`, merged at
+`17ff129db70e7d53066f1368825801027dbf0fec`, and main was synchronized/pushed.
+The current review confirms the actual meaning-affecting Goliath, Isaiah and
+Enoch applications while distinguishing them from novel ancient discoveries.
+Two bounded read-only reviewers checked current contribution readiness and
+additional-text reception. No source or canon mutation follows from that review.
+
+The second sample was predeclared and committed before drawing; the three winners
+were then committed before semantic assessment. The inherited selector screened
+23,264 files and admitted 16,410 across three strata. Complete chapter context
+was read for Exodus 6:18, Ezekiel 48:28 and 1 Chronicles 19:1. Three assessors
+recorded retain/ties with concrete candidates and countercases. There is no
+established selected main-English semantic improvement, redraw, blind review or
+OT-wide quality percentage. Egyptian geographic identification remains a
+defensible inference; a qualified note and misplaced anchor repair are proposed
+but unapplied. Exodus’s year-word morphology warning concerns annotation, not
+ancient ink; an incidental LORD/Yahweh mismatch is outside the sample denominator.
+
+One report-aware critic found the ties defensible and requested reference-evidence
+pins, the Ezekiel parallel hash and a stronger final-retention objection. Root
+applied all three record repairs without another judging round. Bounded dated
+excerpts are preserved; shell HTTP failures are distinguished from successful
+web-reader checks. Four mechanics/record tests, full draw reproduction and the
+full reader guard passed. None measures philological accuracy or approves canon.
+
+The documentation skill kept the findings and reasoning in the repository,
+separating exact assessment provenance from the readable two-question answer.
+The protected method, first experiment and unrelated Genizah input are unchanged.
+About integration remains deferred.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

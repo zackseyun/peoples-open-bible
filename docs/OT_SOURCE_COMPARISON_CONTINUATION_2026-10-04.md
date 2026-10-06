@@ -2,6 +2,12 @@
 
 ## Current answer to the two research questions
 
+The [October 6 contribution and canon review](CONTRIBUTIONS_AND_CANON_REVIEW_2026-10-06.md)
+checks current applications and names the next discriminating evidence tasks.
+The [second predeclared sample](UNFLAGGED_ENGLISH_SAMPLE_2026-10-06.md) finds
+three main-English retain/ties, not a general superiority result. These are the
+latest checkpoints; older next-task statements below remain dated history.
+
 Review of October 5, 2026: **continue bounded published-source comparisons;
 do not promise new decipherment, a universally optimal translation or an
 expanded canon.** Meaning-affecting provisional POB contributions already

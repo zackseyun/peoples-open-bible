@@ -123,3 +123,64 @@ Machine-readable records are in
 [`../sources/textual_restoration/coverage/pentateuch_pilot.v1.json`](../sources/textual_restoration/coverage/pentateuch_pilot.v1.json)
 and
 [`../sources/textual_restoration/comparisons/pentateuch_controls.v1.json`](../sources/textual_restoration/comparisons/pentateuch_controls.v1.json).
+
+## Deuteronomy 27 4 Greek and Latin followup on October 6
+
+Gerizim has Greek and Latin attestation beyond the Samaritan Hebrew control.
+This closes a real coverage gap in the September comparison, but does not
+resolve which mountain name is earlier. The original selected Rahlfs text is
+an Ebal control, not evidence that every Greek witness reads Ebal. POB retains
+its declared Hebrew and main English provisionally; no canonical file changes.
+
+The [Giessen library's 1911 edition](https://digisam.ub.uni-giessen.de/ubg-ihd-adr/content/titleinfo/4820718)
+provides Glaue and Rahlfs's actual transcription, conventions and historical
+photographic plate. Printed 37 [journal 173], PDF page 13, column I lines 3–4,
+prints the mountain form across the line break, with the iota supplied:
+`αργαρ[ι] / ζιμ`. Printed 34 [170], PDF page 10 distinguishes full supplies,
+uncertain partial letters and unidentified traces; modern word separation is
+editorial. The complete Vorderseite plate, PDF page 4, locates the matching
+upper-right half. This is a report-aware check of a published reading and
+historical plate, not a new calibrated damaged-letter transcription. Printed
+33 [169], PDF page 9 dates the parchment to V–VI CE, with the two editors
+favoring different centuries; that is not the date of its underlying revision.
+
+[Tov's revised author-uploaded argument](https://www.academia.edu/29064242/2_Pap_Giessen_13_19_22_26_A_Revision_of_the_LXX_RB_78_1971_355_83_and_plates_X_XI_Revised_version_Emanuel_Tov_The_Greek_and_Hebrew_Bible_1999_459_75),
+especially printed 462–463 and 473–475, retains uncertainty in the opening
+`ar(?)` and supplies `[i]`; one-word versus two-word writing is undetermined.
+His lexical, syntactic and Hebrew-oriented revision comparisons support LXX
+ancestry. He prefers a non-Samaritan revision preserving an older alternative,
+but explicitly retains Samaritan adaptation of the LXX as a competing account.
+LXX ancestry therefore does not establish independent Gerizim Hebrew priority.
+The body text was consulted; its original PDF and plates were not acquired.
+
+The [Lyon library's MS 1964 f.18r](https://florus.bm-lyon.fr/visualisation.php?cote=MS1964&folio=18),
+column III lines 2–3, visibly reads `HODIE IN MONTE / GARZIN ET DEALBA…` in
+continuous main text. The inspected complete-page JPEG is a 3000 × 3470
+derivative, not the advertised 6328 × 7320 original. The applicable
+[Robert 1900 edition, printed 30](https://books.google.com/books?id=MrLmAAAAMAAJ&pg=PA30)
+likewise reads Garzin. Wevers identifies the Latin witness as 100, Lyon
+403 + 1964, and dates it VII; the
+[holding library catalogue](https://florus.bm-lyon.fr/description.php?cn=MS1964&saisie=florus)
+normally dates it VI, with V entertained. Preserve this disagreement rather
+than giving the object the date of the Old Latin translation.
+
+Our inference is limited: VL100 attests Latin Gerizim compatible with a
+Gerizim-bearing Greek lineage. Adjustment within Greek or Latin transmission,
+including harmonization with 27:12, remains possible. Samaritan Hebrew,
+Giessen Greek and this Latin copy are not three independent Hebrew votes.
+4Q33's wholly supplied mountain remains neutral; private-market fragments stay
+excluded. The existing Joshua Ebal altar parallel is literary context, not
+another manuscript of Deuteronomy.
+
+Gerizim would change the designated location of the stones and, in the following
+verse, the altar. That is a consequential geography and worship-history question,
+not a demonstrated mandate to change doctrine. Both earlier-Gerizim alteration
+and later-Gerizim adjustment remain live explanations. Reopen priority for a
+discriminating transmission argument or fuller local apparatus, not repeated
+model agreement. A reader-note extension could disclose these controls separately
+after an exact-record application review; none is applied here.
+
+The [bounded evidence record](../sources/textual_restoration/comparisons/deuteronomy27_4_greek_latin.2026-10-06.v1.json)
+pins the acquisitions and unchanged target. Full consulted materials remain
+private. This is expanded comparison of known evidence, not a novel reading,
+exhaustive Greek/Latin collation or a canon recommendation.

@@ -203,3 +203,11 @@ the complete 695-verse Samuel export. This is an applied disclosure contribution
 not a new source reading or a resolved priority decision. Its exact candidate,
 archived prior reviews, one bounded critique and pre/postflight are recorded in
 the [receipt](../sources/textual_restoration/applications/samuel24_13_disclosure.2026-10-06.v1.json).
+
+The [Deuteronomy 27:4 Greek and Latin followup](PENTATEUCH_SOURCE_COMPARISON_PASS_3.md#deuteronomy-27-4-greek-and-latin-followup-on-october-6)
+now closes another named source gap: Gerizim occurs beyond the selected Samaritan
+Hebrew control. Actual published Greek supplies and a named Latin manuscript
+are distinguished from priority and witness independence. The designated
+mountain is consequential, but inheritance and later adjustment remain live;
+POB's source, main English and note remain unchanged. This is useful comparison
+of known evidence, not another discovered reading or a canon inclusion result.

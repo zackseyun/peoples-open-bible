@@ -6309,6 +6309,49 @@ All six repaired Exodus 20:21 tests and all five new Exodus 18:24–25 tests
 pass locally; Git whitespace checks pass. The repair does not change the
 approved candidates or the bounded scholarly critique.
 
+PR 49's final head `7f7b9de609bd2ac60f105c88173f05a43dd8c167`
+passed both exact-head checks 112124208047 and 112124195493. Its observed merge
+is `d8475036b0d2abb6382c9acb4a78b42abad68143`; main was synchronized and
+pushed. The earlier failure describes the initial head, not final delivery.
+
+### 2026-10-05 — Incense attestation and efficiency review
+
+The [incense follow-up](EXODUS_INCENSE_ALIGNMENT_2026-09-05.md#direct-attestation-follow-up)
+partly closes a named direct-attestation gate. Two read-only subtasks reused
+pinned private inputs for the full Hebrew alignment and QDR-owned rows. Root
+checked the physical-line context, native Dayfani material discussion and the
+complete Greek apparatus page. Alternative order is attested in a published
+reconstruction of the ancient manuscript's arrangement; 30:6 does not survive
+in the checked 4Q22 rows. The
+Greek apparatus records longer forms, so selected-text absence is not Greek
+unanimity. The source and main English remain unchanged. A prose correction
+changes two trailing spaces to one without repinning the frozen receipt.
+
+One independent bounded review of the user's two questions confirmed existing
+draft source/English applications, not novel discoveries or automatic canonical
+authority. It also identified the continuation document's repeated readiness
+reviews and superseded next-task directions as avoidable overhead. Preserve
+the dated history; use its opening answer as the current general assessment,
+link substantive case results, and do not append another general reassessment
+unless the conclusion changes. No token threshold promises novelty. A valid
+next case names the competing readings, the discriminating evidence and the
+possible English consequence before acquisition. Canon evaluation remains
+separate and requires a named community and explicit authority criteria.
+
+The documentation skill kept the update in existing repository records; the
+PDF skill required complete apparatus/material context and visual inspection.
+No reader application, fresh image transcription, generated-image evidence,
+canon change or About integration is made. Broader coverage and calibration
+remain incomplete. This is progress on a held evidence question, not completion
+of the whole research goal.
+
+The combined Samaritan/OT-registry check ran 65 tests: 63 passed and two failed
+on historical canonical-baseline drift for 1 Samuel 17:4 and Psalm 145:13.
+The changed files are documentation only; the failed tests' code and comparison
+inputs are unchanged from the reviewed main. These existing failures are not
+resolved or repinned by this pass. Git whitespace checks pass. Report the
+broader validation debt separately from the bounded evidence result.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

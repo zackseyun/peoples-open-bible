@@ -6709,6 +6709,37 @@ ordinary public download, not an access bypass. No ImageGen, new ink reading,
 generated reconstruction or source-priority certainty follows. Modern target
 apparatus remains a specific reopening condition; the broader goal stays active.
 
+### 2026-10-06 — Jeremiah delivery and bounded 5Q6 access result
+
+PR58 passed both exact-head corpus-integrity checks112218990665 and112218920596
+at`e8966be0a564cf726bdf3a1790757758137472d1`, merged at
+`5fceffe9d80435868b453ab06633fb2d8d92f545`, and main was synchronized/pushed.
+The preceding continuation was a verified wait on the live second job, not
+research progress. Delivery then completed. A fast-forward initially collided
+with the still-running branch switch's index lock; after both sessions became
+terminal, root checked state and successfully retried ff-only. No lock or user
+file was removed; protected method/Genizah hashes remain unchanged.
+
+This pass selected the unresolved5Q6 Lamentations4:14–15 question, with4:18 as
+a secondary acquisition lead. The [specific access result](LAMENTATIONS_DSS_COMPARISON_2026-09-06.md#5q6-argument-acquisition-limit-on-october-6)
+records that the cached2012 article concerns1:8a/4QLam, not those variants.
+One bounded acquisition agent checked native introduction/appendix/bibliography
+pages; root verified the title page and hash. An institutional dissertation
+request returned403 and the browser route was inaccessible; no bypass or mirror
+was attempted. No useful argument on the target readings was acquired.
+Root checked the complete current chapter4 source/English and full4:14–15
+records, plus published fragment context. Damaged/supplied words remain so;
+this context check is not a newly deciphered reading. Existing source/English
+and priority holds remain unchanged. Do not repeat these two access routes
+without a legitimate new resource or changed availability.
+
+The documentation skill kept the failed route and inference limits in existing
+Git records; the PDF skill required native page verification. No new comparison
+engine, validator, image calibration, ImageGen, application or canon change.
+This is a bounded negative acquisition, not an independent adjudication pass
+or a valid translation contribution. The broader goal remains active; another
+consequential case need not wait for this specific missing apparatus.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

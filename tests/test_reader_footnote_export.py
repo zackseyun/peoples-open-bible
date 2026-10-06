@@ -14,6 +14,46 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReaderFootnoteExportTests(unittest.TestCase):
+    def test_deuteronomy_27_4_discloses_versional_gerizim_without_priority_claim(self):
+        packet = json.loads((ROOT / 'sources/textual_restoration/applications/deuteronomy27_4_disclosure.2026-10-06.v1.json').read_text())
+        raw = (ROOT / packet['target']).read_bytes()
+        record = yaml.safe_load(raw)
+        candidate = json.loads((ROOT / packet['candidate']).read_bytes())
+        self.assertEqual(record, candidate)
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), packet['application']['yaml_sha256'])
+        self.assertEqual(record['status'], 'draft')
+        self.assertEqual(record['cross_check'], {'status': 'needs_review'})
+        self.assertNotIn('revision_pass', record)
+        history = {item['field']: item for item in record['review_history']}
+        self.assertEqual(set(history), {'status', 'revision_pass', 'cross_check',
+                                       'translation.footnotes', 'theological_decisions'})
+        self.assertTrue(all(not item['certifies_this_candidate'] for item in history.values()))
+        self.assertTrue(all(item['archived_from_baseline_sha256'] == packet['baseline_sha256']
+                            for item in history.values()))
+        self.assertTrue(all(history[field]['historical_review_inputs_verified'] is False
+                            for field in ('status', 'revision_pass', 'cross_check')))
+        self.assertEqual(record['source'], packet['baseline_source'])
+        self.assertEqual(record['ai_draft'], packet['baseline_generation'])
+        self.assertEqual(record['translation']['text'], packet['baseline_english'])
+        self.assertIn('Mount Ebal[a]', record['translation']['text'])
+        self.assertEqual(record['translation']['text'].count('[a]'), 1)
+        notes = record['translation']['footnotes']
+        self.assertEqual([note['marker'] for note in notes], ['a'])
+        self.assertEqual(notes[0]['reason'], 'textual_variant')
+        for detail in ('selected Rahlfs', 'Samaritan Pentateuch', 'Giessen Greek',
+                       'supplied letter', 'uncertainty in the opening', 'VL100', 'Garzin',
+                       'relationships', 'came first remain uncertain', '4Q33',
+                       'wholly reconstructed', 'supporting neither reading'):
+            self.assertIn(detail, notes[0]['text'])
+        out = exporter._export_record_verse(4, record)
+        self.assertEqual(out['text'], record['translation']['text'])
+        self.assertEqual(out['footnotes'], notes)
+        self.assertFalse(packet['decision']['source_changed'])
+        self.assertFalse(packet['decision']['main_english_changed'])
+        self.assertFalse(packet['decision']['historical_priority_settled'])
+        self.assertFalse(packet['decision']['novel_reading_demonstrated'])
+        self.assertFalse(packet['decision']['publication_approved'])
+
     def test_samuel_24_13_discloses_greek_numeral_without_settling_priority(self):
         packet = json.loads((ROOT / 'sources/textual_restoration/applications/samuel24_13_disclosure.2026-10-06.v1.json').read_text())
         raw = (ROOT / packet['target']).read_bytes()

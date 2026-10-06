@@ -184,3 +184,21 @@ The [bounded evidence record](../sources/textual_restoration/comparisons/deutero
 pins the acquisitions and unchanged target. Full consulted materials remain
 private. This is expanded comparison of known evidence, not a novel reading,
 exhaustive Greek/Latin collation or a canon recommendation.
+
+### Subsequent mountain name disclosure application
+
+POB's note now names the selected Rahlfs Ebal control, Samaritan Gerizim,
+published Giessen Greek reading with its supply/uncertainty, and Old Latin
+VL100 Garzin. It preserves the wholly reconstructed 4Q33 mountain and states
+that witness relationships and earliest priority remain uncertain. Hebrew and
+main English are unchanged. The connected rationale describes Ebal as provisional
+base retention rather than a demonstrated historical preference.
+
+The [exact application receipt](../sources/textual_restoration/applications/deuteronomy27_4_disclosure.2026-10-06.v1.json)
+pins the complete candidate and archives five prior inputs, without attributing
+new approval to historical model scores. One bounded application critique found
+no blocker. Schema preflight and the actual complete Deuteronomy exporter cover
+34 chapters and 959 verses; only 27:4 differs. The installed YAML and complete
+export match the frozen candidate and preflight hashes, and the footnote audit
+is ok. Active status remains draft/needs_review; no source-priority vote,
+specialist certification, novel reading or deployed-reader verification follows.

@@ -7053,6 +7053,42 @@ file hashes remain unchanged. Only this four-file comparison/documentation
 package changes. Broader source coverage, damaged-ink calibration and English
 quality remain unfinished.
 
+### 2026-10-06 — Deuteronomy mountain alternative disclosed to readers
+
+Previous goal turn: progress. The Greek/Latin comparison is committed and
+pushed as PR66. Live exact-head checks remain in progress at this turn's
+recheck; no CI gate is bypassed and its head is not modified. The next action
+applies its established evidence to a reader note rather than repeating source
+acquisition or seeking a priority vote.
+
+The [subsequent note application](PENTATEUCH_SOURCE_COMPARISON_PASS_3.md#subsequent-mountain-name-disclosure-application)
+distinguishes selected Rahlfs Ebal, Samaritan Gerizim, the supplied/uncertain
+published Giessen Greek reading and named Latin VL100 Garzin. It retains
+4Q33's neutral lacuna and unresolved relationships/priority. The connected
+rationale now describes provisional base retention explicitly. Complete Hebrew,
+main English, philosophy, lexical decisions and generation metadata are unchanged.
+
+Five old inputs are archived exactly from the pinned baseline; historical model
+scores do not certify the candidate. Active draft/needs_review and false
+publication/specialist flags preserve the scope. One fresh, narrowly briefed
+read-only critic finds no application blocker in the frozen full-record candidate,
+independently verifies the archives, and confirms restoring them reproduces the
+baseline object. Its actual output and candidate hash are recorded in the
+[receipt](../sources/textual_restoration/applications/deuteronomy27_4_disclosure.2026-10-06.v1.json).
+This is a report-aware application check, not blind transcription or another
+source-priority decision.
+
+Root executes existing-schema preflight and the real complete-book exporter
+with one in-memory overlay: 34 chapters/959 verses, only 27:4 changed. The
+exact YAML is installed through apply_patch afterward. Postflight schema,
+footnote audit and complete export match the frozen candidate and preflight
+digests. All 30 reader-footnote regression tests, the complete reader-corpus
+guard and Git whitespace checks pass. Controlling-method and unrelated Genizah
+file hashes remain unchanged. The documentation skill preserves the comparison,
+application and historical inputs as separate stages; no new engine, generated
+manuscript evidence, novel reading, canon change or deployment claim. Broader
+witness coverage, damaged-ink calibration and English-quality work remain active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

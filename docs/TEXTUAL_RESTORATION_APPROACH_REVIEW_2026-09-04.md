@@ -70,6 +70,24 @@ The already reviewed Samuel disclosure is now applied as described below.
 Do not treat its bespoke transaction machinery as the default for every verse;
 subsequent work should reuse checks and prioritize discriminating source evidence.
 
+### Contribution gate for further comparisons
+
+Begin each case with competing readings, the possible consequence for POB and
+the specific accessible evidence that could distinguish them. Report four
+outcomes separately: corrected transcription, source selection, English
+rendering and reader disclosure. Known variants can yield valid POB improvements
+without becoming new discoveries. A larger token allowance is not a discovery
+deadline or evidence for absent letters.
+
+Keep the full OT/NT objective, but prioritize cases where available evidence
+could change meaning or resolve a material uncertainty. Stop when the relevant
+evidence has been checked; reopen only for named new evidence or a substantive
+defect. A judge tests claims and objections, not whether to approve a desired
+result. Publication and corpus-wide superiority still require their separate
+review and measured evaluation gates. Additional works receive textual and
+reception assessments; canonical inclusion also requires a named community
+and explicit authority criteria. A useful comparison library is not a new canon.
+
 ### Samuel disclosure applied; architecture must not dominate research — 2026-09-06
 
 Later operational update: the [historical-test migration](HISTORICAL_TEST_MIGRATION_2026-09-06.md)

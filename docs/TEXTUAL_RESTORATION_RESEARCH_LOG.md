@@ -6352,6 +6352,60 @@ inputs are unchanged from the reviewed main. These existing failures are not
 resolved or repinned by this pass. Git whitespace checks pass. Report the
 broader validation debt separately from the bounded evidence result.
 
+### 2026-10-05 — Numbers 13 33 longer narrative and contribution gate
+
+The [bounded case](NUMBERS_13_33_SOURCE_COMPARISON_2026-10-05.md) compares the
+whole pinned Samaritan node, not just the five exact matches in the earlier
+screen. Eight lossless units map the local report and seven ordered Deuteronomy
+parallels; adapted introductions and spelling differences remain explicit.
+Published Nablus 6 pages confirm the long sequence while differing locally from
+Chester Beatty 751. The edition's oral-tradition interpretation is not ancient
+English evidence or a substitute for its consonantal layer.
+
+The complete QDR-owned 4Q27 rows do not preserve 13:33 or the transition into
+chapter 14: no omission vote follows. Native Cambridge text and apparatus
+separate the selected short Greek text, other ancestry readings and the bottom
+Hexaplaric marginal quotation attached at 14:2. That quotation is reported
+reception, not automatically a continuous independent Hebrew witness. An
+initial preposition/pronoun conflation was corrected before delivery; no Greek
+reflexive-pronoun attestation is claimed. Hjelm's lawful preview supports a
+methodological caution, not an unseen complete local literary argument.
+
+Working expansion is plausible; inherited fuller material subsequently shortened
+remains a countercase. POB provisionally retains WLC and marker-free English,
+repairs the lexical anchor and adds two qualified notes. Old review objects are
+archived verbatim without transferring approval; the edited record is draft and
+needs review. No fresh decipherment, historical-priority victory, new lexical
+meaning, canon change or deployment is claimed. The next discriminating input
+is manuscript-specific evidence, including the underlying Syriac marginal note
+and its continuous-text relationship, not another model vote.
+
+The user renewed the two contribution questions. The approach review now names
+four separate outcomes and an evidence-based stopping gate; this is not another
+general readiness report. Existing source/English draft contributions and
+extra-text comparisons remain real but are principally applications of known
+variants. More tokens cannot guarantee novelty or establish canonical authority.
+The documentation skill kept the case, method clarification and history in the
+repository. No About integration is made.
+
+One independent report-aware judge found no methodological blocker to qualified
+draft disclosure; it did not inspect native PDFs, reproduce transcriptions or
+certify historical priority. A separate bounded extra-text audit verified current
+Tobit/Sirach applications and completed Jude disclosure, while preserving the
+Jubilees hold. Its actionable next lead is Enoch 1:9's clipped Greek extraction
+against the already acquired native edition page; this is a source-control task,
+not a promised new meaning or canon determination. No extra-text edit is made.
+
+Local validation passed: seven alignment tests, six Numbers 13:33 application
+tests, six Numbers 20:13 historical/current checks, 28 reader-footnote tests,
+nine extra-text note tests, thirteen Samaritan-parallel tests and the full reader
+guard. The old Numbers 20:13 cumulative diff assumption now checks its actual
+historical baseline plus frozen candidate; both original export digests remain
+unchanged, with current target isolation tested separately. CI fetches the new
+baseline and runs the new checks. Protected method and unrelated Genizah input
+hashes are unchanged. Previously recorded broader registry drift is not repaired
+or repinned by this scoped delivery.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

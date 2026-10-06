@@ -6296,6 +6296,19 @@ Its selection-line wording clarification was incorporated; candidates remained
 unchanged. No blocker or repeat agreement loop. The controlling method and
 unrelated Genizah file retain their protected hashes.
 
+PR 49's first exact-head checks 112121138931 and 112121070435 failed on
+`4734b3b4c009e12edaa7d92559c3bce88cf42ed0`; it was not merged. Catalog,
+numbering and the full corpus guard passed. The older Exodus 20:21 regression
+incorrectly compared a frozen historical whole-book digest with today's book,
+which now legitimately includes the chapter 18 notes. Its current verse-isolation
+check passed. The repair retains that current check and separately rebuilds
+the historical export from its exact Git baseline plus approved candidate.
+Both original historical digests and the frozen receipt remain unchanged;
+no source or reader wording is repinned to make the check pass.
+All six repaired Exodus 20:21 tests and all five new Exodus 18:24–25 tests
+pass locally; Git whitespace checks pass. The repair does not change the
+approved candidates or the bounded scholarly critique.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

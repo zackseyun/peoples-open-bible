@@ -1,9 +1,11 @@
 """Scoped reader application checks, not proof of historical priority."""
 import hashlib
+import io
 import json
 from pathlib import Path
 import re
 import subprocess
+import tarfile
 import unittest
 from unittest.mock import patch
 
@@ -78,6 +80,32 @@ class ExodusDisclosureTests(unittest.TestCase):
         self.assertEqual(a.keys(), b.keys())
         self.assertEqual([key for key in a if a[key] != b[key]], [(20, 21)])
         self.assertEqual(a[(20, 21)]['footnotes'], self.current['translation']['footnotes'])
+
+    def test_historical_delivery_digests_remain_bound_to_original_snapshot(self):
+        # Later, unrelated Exodus applications must not rewrite this receipt.
+        # Rebuild its actual historical book, while the test above separately
+        # checks current-book isolation of this verse's application.
+        archive = subprocess.check_output(
+            ['git', 'archive', BASE, 'translation/ot/exodus'], cwd=ROOT)
+        historical = {}
+        with tarfile.open(fileobj=io.BytesIO(archive)) as snapshot:
+            for member in snapshot.getmembers():
+                if member.isfile() and member.name.endswith('.yaml'):
+                    path = Path(member.name)
+                    historical[(int(path.parent.name), int(path.stem))] = yaml.safe_load(
+                        snapshot.extractfile(member).read())
+        loader = exporter.load_translation_record
+        def snapshot_record(code, chapter, verse, candidate=False):
+            if code != 'EXO':
+                return loader(code, chapter, verse)
+            if candidate and (chapter, verse) == (20, 21):
+                return self.candidate
+            return historical.get((chapter, verse))
+        with patch.object(exporter, 'load_translation_record', side_effect=snapshot_record):
+            before = exporter.export_book('EXO')
+        with patch.object(exporter, 'load_translation_record', side_effect=lambda c, ch, v:
+                          snapshot_record(c, ch, v, candidate=True)):
+            after = exporter.export_book('EXO')
         receipt = json.loads((ROOT / RECEIPT).read_text())['application']
         for key, book in (('export_after_sha256', after), ('export_before_sha256', before)):
             self.assertEqual(receipt[key], hashlib.sha256(

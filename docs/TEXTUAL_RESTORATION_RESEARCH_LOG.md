@@ -7210,6 +7210,37 @@ Meanwhile both exact-head checks for PR68 succeed. Root SHA-pinned merges it as
 research branch, and pushes main. The consequential Hosea interpretation is now
 on repository main; this does not establish deployment or publication approval.
 
+### 2026-10-06 — Proverbs 30:3 negative-scope lead tested
+
+Previous goal turn: progress, with the completed 30:1 comparison and Hosea
+application merged. PR69 is checked at its frozen head; both corpus-integrity
+jobs are live. Root leaves that head untouched and investigates the adjacent
+30:3 lead, not another readiness essay or model-agreement round.
+
+POB negates the second knowledge clause although Hebrew does not repeat לֹא.
+The [bounded comparison](PROVERBS_30_3_NEGATION_COMPARISON_2026-10-06.md)
+finds actual support for inherited negation: GKC152z and Hebrew controls in
+Psalms 9/44 and Isaiah38 defeat automatic positive readings based on the clause
+divider or changed verb form. Proverbs9:10 supports synonymous knowledge/wisdom
+parallelism. The positive oracle/revelation argument remains serious, with
+Numbers24:16 as an actual lexical comparison. Greek positively recasts both
+clauses, so it is not a clean vote for positive polarity in unchanged Hebrew.
+
+Root reuses the private pinned article and Greek, with no broad download or
+QDR cache reacquisition under disk pressure. The PDF skill leads to native
+printed12–14 and complete note28 inspection. The documentation skill keeps
+the outcome and provenance in Git. A read-only Hebrew analyst independently
+tests polarity; its working negative preference is not a manuscript vote.
+No new English draft, canonical edit, note, old-score approval, son-identity
+decision, generated image evidence or canon change is made. Reopen only for
+the specified discourse/version discriminator, not absence of a second negative.
+One independent bounded critic checks the actual source parallels, primary
+grammar, Greek, article argument/note28 and all seven bound-file hashes; it
+reports PASS for this report/record, not grammatical certainty or application
+approval. Root's JSON, target and four source-control hashes, two private-input
+hashes, local links, protected method/Genizah hashes and whitespace pass. No
+full-corpus semantic certification is inferred from documentation checks.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

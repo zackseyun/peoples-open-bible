@@ -80,6 +80,15 @@ describe earlier checkpoints, not an instruction to repeat this application.
 
 ## Contribution milestones and efficient continuation
 
+October 6 follow-on: the [Psalm 100:3 comparison](PSALM_100_3_SOURCE_COMPARISON_2026-10-06.md)
+checks written/read Hebrew, actual Greek print/apparatus and distinct Latin
+controls. Source and main English remain provisional; applied disclosure removes
+the mistaken inference from original-language primacy to written-form priority.
+Complete Psalms export is verified, not a new ancient reading or superiority
+result. The [Deuteronomy Greek locator](DEUT32_8_EVIDENCE_TRIAGE_2026-09-06.md#october-6-greek-acquisition-metadata)
+now identifies 106’s institutional shelfmark and the revised 2006 edition;
+neither supplies the disputed passage/hand. That bounded access route is stopped.
+
 October 6: the [Ezekiel 48:28 application](EZEKIEL_48_28_DISCLOSURE_APPLICATION_2026-10-06.md)
 now installs qualified geographic disclosure and correct anchors without
 changing Hebrew or main English words. Complete Ezekiel export is verified;

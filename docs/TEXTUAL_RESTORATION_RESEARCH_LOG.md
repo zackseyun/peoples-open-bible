@@ -6254,6 +6254,61 @@ hands with narrative recording roles on this basis. This changes the next
 acquisition target, not the source/English retention or canonical status.
 No repeat agreement loop or fresh-ink restoration is claimed.
 
+### 2026-10-05 — Connected Exodus appointment comparison
+
+The previous turn was progress: PR 48's exact-head checks 112114743121 and
+112114690131 passed on `278929753bf91f7eb4bce4e86680b053923e8539`;
+the observed merge is `af0ea438fb651254843ef519ba0afdc70c2b89e8`, synchronized
+and pushed. Exodus 12:40 was already adjudicated, so it was not repeated.
+The next [bounded comparison](EXODUS_18_24_25_SOURCE_COMPARISON_2026-10-05.md)
+completes the connected Exodus 18:24–25 longer narrative instead.
+
+Two read-only subtasks separately checked private pinned control alignment and
+ancient attestation. Root directly read both complete control contexts, QDR's
+own manuscript rows and the native published table/Greek apparatus pages.
+All 658 raw characters are mapped without discarding adapted wording; the
+appointment crosses the node boundary and recasts, not simply supplements,
+WLC 18:25. Parts survive positively in 4Q22; the wholly supplied line and
+missing rows remain non-evidence for exact wording. 4Q11's damage is not an
+omission vote. Ancient attestation does not establish earlier priority.
+
+One connected reader note and three marker repairs preserve source and main
+English. Old review objects are archived exactly, not carried forward as
+approval. The documentation skill keeps these outcomes separate from novelty
+and canonical authority; the PDF skill required native complete page context.
+No new general engine, full inventory, blind English test or ImageGen evidence.
+Local patch-format/path failures were corrected before application; no partial
+verse edit resulted from those failures. Independent critique and validation
+are recorded in the application receipt; technical integrity does not certify
+historical priority or scholarly publication.
+
+Longacre's native speech/table context was also checked; its narrower parallel
+range is recorded rather than silently substituted for the full alignment.
+The source assessor's Tov article timeout and Emory download failure supplied
+no substantive evidence; the consulted controls were sufficient for scoped
+disclosure, not a reason to repeat acquisition or claim full apparatus access.
+
+Five focused application/schema/provenance/export tests, 28 existing reader-note
+regressions and the full reader-corpus guard passed. One fresh bounded judge
+independently passed the five tests, reproduced all node/segment hashes and
+equality flags, and checked QDR's own rows plus native table/apparatus pages.
+Its selection-line wording clarification was incorporated; candidates remained
+unchanged. No blocker or repeat agreement loop. The controlling method and
+unrelated Genizah file retain their protected hashes.
+
+PR 49's first exact-head checks 112121138931 and 112121070435 failed on
+`4734b3b4c009e12edaa7d92559c3bce88cf42ed0`; it was not merged. Catalog,
+numbering and the full corpus guard passed. The older Exodus 20:21 regression
+incorrectly compared a frozen historical whole-book digest with today's book,
+which now legitimately includes the chapter 18 notes. Its current verse-isolation
+check passed. The repair retains that current check and separately rebuilds
+the historical export from its exact Git baseline plus approved candidate.
+Both original historical digests and the frozen receipt remain unchanged;
+no source or reader wording is repinned to make the check pass.
+All six repaired Exodus 20:21 tests and all five new Exodus 18:24–25 tests
+pass locally; Git whitespace checks pass. The repair does not change the
+approved candidates or the bounded scholarly critique.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

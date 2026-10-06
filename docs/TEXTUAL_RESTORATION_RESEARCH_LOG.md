@@ -6938,6 +6938,62 @@ source letters or claim of whole-verse optimality. Controlling-method and
 unrelated Genizah-file hashes remain protected. Broader corpus coverage, fresh
 damaged-ink calibration and English-quality goals remain active.
 
+### 2026-10-06 — Jubilees modern selected text and named Ethiopic copy acquired
+
+Previous goal turn: progress. Samuel's numeral disclosure is committed and
+pushed as PR64; its exact head remains gated by remote checks. This turn verifies
+PR63's checks `112251964310` and `112251729921` succeeded, merges its pinned
+head `63c03a193c4ab66d15cde4c6c2a23097564a43e9` at
+`c75d11a78c1b4471b3c6d5a8743985837a1af47a`, and synchronizes/pushes local
+main before starting the next evidence acquisition. No CI gate is bypassed.
+
+The [Jubilees followup](JUBILEES_1_27_SOURCE_COMPARISON_2026-10-05.md#modern-ethiopic-text-and-named-manuscript-control-on-october-6)
+acquires new controls rather than repeating failed preliminary-publication
+routes. One narrowly briefed acquisition agent locates TAU's university-hosted
+digital VanderKam text, explicitly without apparatus/notes, and BL Or 485's
+public manifest and intact complete-page image. Root verifies the actual
+provenance/command, full f.3v image, preserved target hashes and Monger's complete
+native printed64/PDF70 note184. The published limited section comparison is
+separate from the dissertation's absent article bodies previously recorded.
+
+The same Ethiopic verb occurs in the modern selected text and named medieval
+copy, while the modern English says dictate. This establishes a real
+interpretation contrast, not a different Ethiopic source word or the reason for
+the translator's choice. Related editions and their named manuscript are not
+three ancient votes. Full apparatus coverage and recording-role/source priority
+remain held; no source, English, note, canon label or chapter regeneration follows.
+
+Root's new IAA catalogue query retrieves 45 plate/fragment image metadata
+records over four pages, not 45 witnesses. Exact IV.6 image correspondence is
+unestablished; no Hebrew photograph is deciphered. The published 4Q216
+transcription is retrieved only to seek that missing correspondence and has
+its old hash. Bounded title/ISBN/institutional searches do not acquire DJD XIII;
+an Internet Archive hit is a different book, not the target edition. The actual
+DJD note/plate and CSCO apparatus/translation note remain the reopening inputs.
+
+The PDF skill requires complete native layout inspection; the documentation
+skill keeps new facts and the held interpretation in the existing Git dossier
+and [bounded comparison](../sources/textual_restoration/comparisons/jubilees1_27_ethiopic_controls.2026-10-06.v1.json).
+An unquoted URL first triggered local zsh glob rejection; quoting corrected it.
+Repository Python lacks PDF libraries; the bundled runtime and Poppler work
+without installs. IAA JavaScript arrived gzip-compressed and was inspected with
+decompression, not misreported as absent. BL full-resolution transfers were
+incomplete; only the intact derivative supports the narrow check. None of these
+transport/runtime issues is scholarly evidence or a restricted-access bypass.
+
+One bounded new-control critic checks the actual command, manuscript image,
+manifest mapping, native Monger page, hashes and unchanged POB inputs; no
+substantive blocker is found. Four IAA response pins were added during that
+review, and the same critic verifies only that addition afterward. The actual
+input hashes and outputs distinguish this narrow continuation from two
+independent reviews. No source-priority vote or judge-until-agreement loop.
+Root independently verifies the pins and45 unique image records. JSON syntax,
+full reader-corpus guard and Git whitespace pass. Jubilees chapter/verse,
+controlling-method and unrelated Genizah-file hashes remain unchanged. Full
+consulted texts, images, manifest and dissertation remain private; only bounded
+facts/provenance are versioned. The broader source coverage, damaged-ink
+calibration and English-quality objective remains active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

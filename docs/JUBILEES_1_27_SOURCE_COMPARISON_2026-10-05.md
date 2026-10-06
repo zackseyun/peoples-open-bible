@@ -185,6 +185,68 @@ a missing earlier temporary output directory; a fresh `mktemp` directory and
 the provided public alias succeeded. Do not misreport that local write failure
 as denial of scholarly access or repeat acquisition of the verified file.
 
+## Modern Ethiopic text and named manuscript control on October 6
+
+The [new bounded control record](../sources/textual_restoration/comparisons/jubilees1_27_ethiopic_controls.2026-10-06.v1.json)
+acquires a modern selected-text control and a named manuscript photograph. The
+[TAU provenance page](https://www.tau.ac.il/~hacohen/Jubil/InformationVdK.html)
+identifies its digital text as following VanderKam's 1989 edition and translation,
+with his blessing, but explicitly omits apparatus and notes. Its
+[chapter 1](https://www.tau.ac.il/~hacohen/Jubil/Jubil%201.html) selects `ጸሐፍ`
+at 1:27, the same local word as Charles and POB; its English uses *Dictate*.
+The English contrast therefore does not require a different Ethiopic word.
+The translator's reason for that rendering is not available here; do not infer
+his motive or treat the selected digital text as complete manuscript agreement.
+
+The [British Library catalogue](https://searcharchives.bl.uk/catalog/032-003358960)
+dates Or 485 to 1500–1599 and links its public IIIF manifest. The recording
+command is located at f.3v, column a, lines 7–10, counting the first text line
+as 1. Root and the acquisition agent inspect the complete-page derivative;
+line 8 visibly matches the local `ጸሐፍ`, with Moses on the next line. This is
+a report-aware image check with the selected word already known, not a blinded
+transcription, newly recovered word or calibrated character-accuracy result.
+The intact 2063×2500 image is private consultation input, hash
+`689a5be70c28ea7f3e900109a672b3a37859fbe048845700f481c4d0f08aec9a`.
+Native full-resolution transfers were incomplete; their failed outputs do not
+support the reading. The complete-page derivative does, within this narrow scope.
+
+Monger printed page 64 / PDF 70, note 184, identifies Or 485 as Charles B /
+VanderKam 25. His limited Jubilees 1–2 comparison reports no textual differences
+among the selected Charles/VanderKam texts and that manuscript, only spacing
+and alignment. The surrounding paragraph acknowledges wider manuscript
+variation. Root and the acquisition agent inspect the complete native page;
+this is not the absent article material discussed above. Related editions plus
+one manuscript cannot be counted as three ancient copies.
+
+Modern digital 1:27 includes the temple clause; modern 1:28 starts the Lord's
+appearance. Charles places the temple clause at 1:28, while POB reader 1:27
+includes both clauses. Align the command and content, not verse labels. No
+chapter regeneration or synchronization is performed.
+
+The IAA's public 4Q216 search supplies 45 image metadata records over four
+pages, including repeated plate/fragment exposures. These are not 45 witnesses.
+The correspondence of its plate/fragment labels to published IV.6 is not yet
+established; no Hebrew photograph is deciphered. The published transcription
+retrieved for that correspondence has the same historical hash, not new
+variant evidence. Bounded catalogue searches did not acquire DJD XIII's target
+pages. Previously failed preliminary-publication routes were not retried.
+
+Outcome: retain the Geʿez source and English provisionally; hold the physical
+writer and source-priority decision. The modern control strengthens the known
+word's attestation but leaves a real interpretive contrast. The published Hebrew
+causative still deserves testing: a daughter version could obscure it. Neither
+that possibility nor the modern English rendering substitutes for DJD XIII's
+IV.6 note/plate, the actual CSCO apparatus and the translator's corresponding
+note. No source, English, reader note or canon status changes follow here.
+
+All new full texts, images and manifest remain private; the structured record
+pins their hashes and separates selected editions, the named copy, reported
+comparison, image limitations and the unresolved interpretation.
+One bounded reporting critic finds no substantive blocker and verifies the new
+controls; a continuation checks only four metadata-response hashes added during
+review. Neither supplies a source-priority vote or specialist approval. The
+unchanged canonical inputs, JSON syntax and reader-corpus guard are verified.
+
 ## Source selection and canon remain separate
 
 Jubilees merits Hebrew/Geʿez comparison as a work with distinct literary and

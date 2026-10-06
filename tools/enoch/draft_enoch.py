@@ -34,6 +34,7 @@ import sys
 import tempfile
 import urllib.error
 import urllib.request
+import urllib.parse
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from typing import Any, Iterable
@@ -598,8 +599,26 @@ def call_azure_openai(
 
     if not endpoint:
         raise RuntimeError("AZURE_OPENAI_ENDPOINT not set")
-    if not api_key:
-        raise RuntimeError("AZURE_OPENAI_API_KEY not set")
+    auth_mode = os.environ.get("AZURE_OPENAI_AUTH_MODE", "api-key")
+    headers = {"Content-Type": "application/json"}
+    if auth_mode == "azure-cli":
+        parsed = urllib.parse.urlparse(endpoint)
+        if parsed.scheme != "https" or not parsed.hostname or not parsed.hostname.endswith(".openai.azure.com") or parsed.path or parsed.username or parsed.password or parsed.query or parsed.fragment or parsed.port:
+            raise RuntimeError("Azure CLI authentication requires an HTTPS Azure OpenAI account endpoint")
+        result = subprocess.run(
+            ["az", "account", "get-access-token", "--resource", "https://cognitiveservices.azure.com/",
+             "--query", "accessToken", "--output", "tsv"],
+            capture_output=True, text=True, timeout=60,
+        )
+        if result.returncode or not result.stdout.strip():
+            raise RuntimeError("Azure CLI token acquisition failed; use an existing authenticated session")
+        headers["Authorization"] = "Bearer " + result.stdout.strip()
+    elif auth_mode == "api-key":
+        if not api_key:
+            raise RuntimeError("AZURE_OPENAI_API_KEY not set")
+        headers["api-key"] = api_key
+    else:
+        raise RuntimeError("Unknown AZURE_OPENAI_AUTH_MODE")
 
     url = f"{endpoint}/openai/deployments/{deployment}/chat/completions?api-version={api_version}"
     payload = {
@@ -613,10 +632,12 @@ def call_azure_openai(
         "tool_choice": {"type": "function", "function": {"name": TOOL_NAME}},
         "tools": [openrouter_submit_tool()],
     }
+    if os.environ.get("AZURE_OPENAI_OMIT_TEMPERATURE") == "1":
+        payload.pop("temperature")
     request = urllib.request.Request(
         url,
         data=json.dumps(payload).encode("utf-8"),
-        headers={"api-key": api_key, "Content-Type": "application/json"},
+        headers=headers,
         method="POST",
     )
 
@@ -757,7 +778,8 @@ def call_model(
             model=model,
             temperature=temperature,
         )
-        return tool_input, model_version, raw, temperature
+        recorded = None if os.environ.get("AZURE_OPENAI_OMIT_TEMPERATURE") == "1" else temperature
+        return tool_input, model_version, raw, recorded
 
     if backend == BACKEND_CODEX:
         tool_input, model_version, raw = call_codex_cli(

@@ -16,6 +16,7 @@ below rechecks the three contribution examples at
 | [1 Samuel 17:4](../translation/ot/1_samuel/017/004.yaml) | Selected Hebrew and English change six cubits to four. | Current file matches the applied receipt. Known competing evidence; priority uncertainty and historical fixture failures remain disclosed. |
 | [Isaiah 53:11](../translation/ot/isaiah/053/011.yaml) | Selected Hebrew includes אור and English includes light. | Current file matches the successor candidate/application; publication approval remains false. Known evidence, not a novel discovery. |
 | [1 Enoch 1:9](../translation/extra_canonical/1_enoch/001/009.yaml) | Done and spoken becomes done and committed against unchanged Geʿez; clipped Greek comparison control is repaired. | Current file matches the applied receipt. Meaning-affecting translation correction, not new source letters or established earliest wording. |
+| [Isaiah 7:14 temporal review](ISAIAH_7_14_TEMPORAL_TRANSLATION_REVIEW_2026-10-06.md) | Is bearing becomes will bear; the note qualifies present pregnancy rather than calling already pregnant a grammatical fact. | Subsequent scoped application/export verified against unchanged Hebrew. Pregnancy chronology remains disputable; no naming, virginity or source-priority decision. |
 
 Receipts distinguish actual adoption from historical preparation flags:
 [Goliath](../sources/textual_restoration/applications/goliath17_4_source_application.v1.json),
@@ -137,25 +138,27 @@ Hebrew original. The subsequent
 acquired no discriminating argument; repeating those routes is not a useful
 next step.
 
-The in-progress Isaiah 7:14 temporal review offers a concrete English-only lead.
-Current POB says *is pregnant and is bearing a son*, and its note presents
-*already pregnant* as more literal. The selected Hebrew has a pregnancy adjective
+The subsequent [Isaiah 7:14 temporal review](ISAIAH_7_14_TEMPORAL_TRANSLATION_REVIEW_2026-10-06.md)
+completes that English-only lead. The former POB said *is pregnant and is bearing
+a son*, and its note presented *already pregnant* as more literal. The selected Hebrew has a pregnancy adjective
 and a birth participle, not an explicitly tensed English progressive. The primary
 grammar treats participial time as contextual and permits present and prospective
 uses ([Gesenius section 116](https://en.wikisource.org/wiki/Gesenius%27_Hebrew_Grammar/116._The_Participles));
 adjectival clauses likewise require contextual time assignment
 ([section 141](https://en.wikisource.org/wiki/Gesenius%27_Hebrew_Grammar/141._The_Noun-clause)).
 
-Our preliminary inference is that the note overstates chronological certainty.
+The comparison finds that the old note overstated chronological certainty.
 Genesis 16:4 explicitly narrates conception before 16:11, supporting present
 pregnancy there; Judges 13:2–7 supplies a prospective announcement comparison.
 Neither parallel alone determines Isaiah's timeline. *Is pregnant and will bear
-a son* is a candidate, not an adopted correction; present pregnancy remains a
-serious reading, while present-progressive childbirth is not required. The
-frozen candidate comparison, opposing interpretation and exact-record application
-checks remain to be completed. This unit does not decide virginity, child identity,
-naming variants or manuscript priority. No Isaiah 7:14 source or English is
-changed by this readiness review.
+a son* is now provisionally applied with a prospective-pregnancy alternative
+in the note. A candidate-identity-blinded assessment, followed by one bounded
+report-aware application check, supports the change; exact-record and complete
+Isaiah export checks match preflight. Present pregnancy remains a serious reading,
+while present-progressive childbirth is not required. This unit does not decide
+virginity, child identity, naming variants or manuscript priority. The
+[receipt](../sources/textual_restoration/applications/isaiah7_14.2026-10-06.v1.json)
+records this later application separately from the preceding readiness review.
 
 More compute is useful when it acquires a decisive apparatus entry, tests an
 alignment or interpretation, or checks a reproducible application. It cannot

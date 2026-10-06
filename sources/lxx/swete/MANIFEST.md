@@ -28,6 +28,15 @@ specific to this exact PDF, not a guessed Archive image-service page index.
 The [bounded receipt](../../textual_restoration/discovery/isaiah54_swete_review.v1.json)
 records visually consulted pages and limits. Full source PDFs stay outside Git.
 
+Volume II was reacquired and its exact manifest hash verified on 2026-10-06:
+910 PDF pages. Psalm 151 is printed p. 415, one-based PDF p. 433, zero-based
+archive leaf 432. The existing `vol2_p0432` receipt is a scan-leaf locator,
+not printed p. 432. Native poem/title/apparatus and preface viii–x were checked;
+the inspected front matter did not establish the legacy 1909 edition date.
+The [bounded comparison](../../textual_restoration/comparisons/psalm151_literary_forms.2026-10-06.v1.json)
+records the literary-form and apparatus limits. Historical corpus/YAML metadata
+is not silently rewritten by this locator clarification.
+
 ## Fetch instructions
 
 To obtain local copies of the source PDFs, run from this directory:

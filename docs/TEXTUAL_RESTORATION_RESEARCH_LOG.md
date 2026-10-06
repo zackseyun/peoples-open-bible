@@ -6740,6 +6740,45 @@ This is a bounded negative acquisition, not an independent adjudication pass
 or a valid translation contribution. The broader goal remains active; another
 consequential case need not wait for this specific missing apparatus.
 
+### 2026-10-06 — Contribution readiness and canon questions rechecked
+
+PR59 passed both exact-head corpus-integrity checks112227748179 and112227692959
+at`637eedec7c66029ffc772a4e50748a4d954fd2fe`, merged at
+`e3cdcaeff35574b4096219a0a829fd44ce7769f7`, and main was synchronized/pushed.
+The user's new request asks whether to continue and distinguishes meaningful
+source/translation contributions from additional works worth considering.
+The [existing contribution review](CONTRIBUTIONS_AND_CANON_REVIEW_2026-10-06.md#continuation-readiness-and-the-next-useful-contribution)
+is updated rather than starting another broad source survey.
+
+One bounded read-only audit verifies the three existing Goliath/Isaiah/Enoch
+canonical-file hashes against application records; a separate audit checks four
+institutional reception pages. Actual provisional changes exist, but neither
+novel decipherment nor universal canonical authority follows. Published-source
+work is ready to continue; complete collation and fresh-ink calibration are not
+certified. No new verse application or canon label is authorized by this review.
+
+The preceding Isaiah7:14 grammar acquisition now has its final report. An
+initial finite-verb classification based on Judges's digital tag was corrected:
+Gesenius80d treats its birth form as a contracted feminine participle. Identical
+pointed forms have inconsistent digital tags; tags alone cannot decide time.
+Root checks116's present countercase and future use,141's contextual time rule,
+the current verse and Genesis16:4. The present-pregnancy interpretation remains
+serious; the inherited already-pregnant certainty and English progressive birth
+are review leads, not approved changes. No frozen candidate comparison or
+full-record application has yet occurred. Swete navigation previously selected
+the wrong pages and produced excessive OCR output; corrected page locators are
+not actual Greek-page verification. That unfinished Greek control is not used
+as evidence here. Do not repeat broad PDF extraction.
+
+The documentation skill keeps the new checkpoint and preliminary argument
+separate from historical receipts. One report-aware critic found no substantive
+blocker in the update; this is not specialist or publication approval. Full
+reader-corpus validation and Git whitespace checks pass. Only these two Git
+documents change; the controlling method and unrelated Genizah input retain
+their protected hashes. No corpus regeneration or deployment is implied.
+No judge-until-agreement loop, new comparison engine or ImageGen evidence.
+The broader goal remains active; About integration remains deferred.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

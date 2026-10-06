@@ -4,8 +4,10 @@ POB is ready to continue passage-level comparison and provisional applications.
 It is not yet a comprehensive critical edition, and no current result establishes
 a novel ancient reading. More compute can help acquire and compare evidence;
 it cannot guarantee a discovery, supply missing ink or determine inspiration.
-This review answers the two contribution questions against the current verse
-files and application receipts at `d8e6264a833075b13ec73f37508947b364d25695`.
+The initial review checked verse files and application receipts at
+`d8e6264a833075b13ec73f37508947b364d25695`. The continuation-readiness audit
+below rechecks the three contribution examples at
+`e3cdcaeff35574b4096219a0a829fd44ce7769f7` without replacing that history.
 
 ## Meaning changing contributions already exist
 
@@ -116,3 +118,65 @@ evidence is unavailable. Repeated readiness essays, equivalent-English rewrites
 and judge-until-agreement loops do not advance the questions. The work is worth
 continuing under this discipline, not under a promise that sufficient compute
 must produce a different Bible.
+
+## Continuation readiness and the next useful contribution
+
+The October 6 recheck confirms that all three examples above still match their
+recorded canonical-file hashes. Goliath and Isaiah also match their selected
+critical-source records. These are actual provisional repository changes, not
+just proposed candidates, but their current records remain draft or need review.
+They do not certify deployment, final publication or previously unknown readings.
+
+The [Jeremiah order comparison](JEREMIAH_ORACLES_ORDER_COMPARISON_2026-10-06.md)
+adds another consequential result: the compared Greek and Hebrew forms arrange
+the national oracles differently and differ at their boundaries. This affects
+literary interpretation, but earlier-form priority remains unresolved. Neither
+moving chapters nor combining their preferred clauses establishes a recovered
+Hebrew original. The subsequent
+[5Q6 access attempt](LAMENTATIONS_DSS_COMPARISON_2026-09-06.md#5q6-argument-acquisition-limit-on-october-6)
+acquired no discriminating argument; repeating those routes is not a useful
+next step.
+
+The in-progress Isaiah 7:14 temporal review offers a concrete English-only lead.
+Current POB says *is pregnant and is bearing a son*, and its note presents
+*already pregnant* as more literal. The selected Hebrew has a pregnancy adjective
+and a birth participle, not an explicitly tensed English progressive. The primary
+grammar treats participial time as contextual and permits present and prospective
+uses ([Gesenius section 116](https://en.wikisource.org/wiki/Gesenius%27_Hebrew_Grammar/116._The_Participles));
+adjectival clauses likewise require contextual time assignment
+([section 141](https://en.wikisource.org/wiki/Gesenius%27_Hebrew_Grammar/141._The_Noun-clause)).
+
+Our preliminary inference is that the note overstates chronological certainty.
+Genesis 16:4 explicitly narrates conception before 16:11, supporting present
+pregnancy there; Judges 13:2–7 supplies a prospective announcement comparison.
+Neither parallel alone determines Isaiah's timeline. *Is pregnant and will bear
+a son* is a candidate, not an adopted correction; present pregnancy remains a
+serious reading, while present-progressive childbirth is not required. The
+frozen candidate comparison, opposing interpretation and exact-record application
+checks remain to be completed. This unit does not decide virginity, child identity,
+naming variants or manuscript priority. No Isaiah 7:14 source or English is
+changed by this readiness review.
+
+More compute is useful when it acquires a decisive apparatus entry, tests an
+alignment or interpretation, or checks a reproducible application. It cannot
+guarantee new surviving letters or an optimal translation. Our next milestone
+is a completed passage-level change, retain or hold with its English consequence,
+not a token count or a promised discovery date. Distinguish source-wording
+selection, translation correction, reader disclosure and novel decipherment
+when reporting results. Existing known variants can yield valuable contributions
+without being discoveries by POB.
+
+The bounded reception recheck confirms the institutional lists for Ethiopian
+Enoch/Jubilees and Catholic Sirach/Tobit, Sinaiticus's Barnabas/Hermas contents,
+and the IAA's Hebrew Jubilees attestation at the links above. These warrant
+comparison and historically labelled publication. Ancient circulation, a quoted
+passage, physical codex inclusion and a named church's canon are different claims.
+A recommendation to add a work to a particular Bible additionally needs the
+intended community and its authority criteria. No canon labels are changed.
+
+Continue with the existing source classes and passage-level method. Do not
+re-screen completed inputs, turn supplied letters into observations or seek
+model agreement until a preferred answer wins. Use one bounded critique, retain
+substantive disagreement, and park an acquisition when its named evidence is
+unavailable. Corpus-wide completeness, fresh damaged-ink accuracy and general
+English superiority remain unestablished.

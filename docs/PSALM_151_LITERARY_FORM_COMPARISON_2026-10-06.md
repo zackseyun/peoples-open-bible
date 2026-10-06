@@ -127,3 +127,60 @@ reader export and the full reader-corpus guard. The comparison JSON parses and
 Git whitespace checks pass. The shared adjudication method and unrelated
 Genizah input retain their protected hashes. These checks validate bindings
 and export behavior, not the historical correctness of a reading.
+
+## October 6 manuscript specific follow up
+
+The [new control record](../sources/textual_restoration/comparisons/psalm151_4_followup.2026-10-06.v1.json)
+adds evidence that the form-comparison pass did not consult. The
+[Codex Sinaiticus Project’s offered XML](https://codexsinaiticus.org/en/project/transcription_download.aspx),
+version1.04 dated March25,2014, places the mercy word in ordinary running text
+at quire64, folio1 recto, column2, line21, word19. The encoded verse has no
+apparatus tag at that word. The heading does have an S1 correction tag; that
+must not be transferred to the anointing word. This establishes the published
+edition’s representation, not a new inspection of ink or proof that no
+unrecognized correction exists. The header reports a fourth-century object;
+its date range does not decide priority against other early Greek copies.
+
+The adjacent anointing expression crosses into line22. The XML also lacks the
+preposition present in Swete’s selected text. Thus the mercy word is confirmed,
+but the entire phrase cannot be assembled by replacing one word in Swete and
+claiming an exact Sinaiticus transcription. Full XML and passage extracts stay
+private under the project’s CC BY-NC-SA3.0 terms; source identifiers, hashes
+and manuscript-attestation facts are recorded, not a relicensed corpus.
+
+[Robert A. Kraft’s UPenn course page](https://ccat.sas.upenn.edu/rak/courses/735/textcrit/Ps151.html)
+reports the Rahlfs separate-edition mercy support as `S' R'' Ga L\pau A`.
+Its wider list strengthens the countercase, but remains mediated. The actual
+edition’s conventions were not reached, so primes/groups are not decoded into
+new hand or version claims. Its adapted English is not a drafting source.
+The [official Göttingen list](https://septuaginta.uni-goettingen.de/publications/septuaginta/)
+confirms the already-recorded supplemented fourth edition of 2025. The
+[project description](https://septuaginta.uni-goettingen.de/) still distinguishes
+that reissue from the future new critical Psalter edition. A publisher403 ended
+that route; no2025 passage apparatus was consulted. Web-reader failures were
+not treated as absent text: ordinary public downloads succeeded for Kraft and
+the explicitly offered Sinaiticus zip, without authentication or bypass.
+
+Oil remains the provisional selected source. The meaningful new result is
+better attestation of mercy, not a demonstrated earliest reading. A
+[complete disclosure candidate](../sources/textual_restoration/candidates/psalm151_4.2026-10-06.v1.json)
+adds a source-variant note at oil, corrects the duplicate messenger alternative
+and aligns its lexical/theological rationale with POB’s existing messenger.
+No Samuel name or mercy replacement enters the main text. The old unanchored
+note and review flags are archived intact; they do not approve the new notes.
+Main English words, source and generation/revision history are preserved.
+Exact-target preflight passes schema and full seven-verse export; only verse4
+changes, through its note marker and two visible notes. One report-aware critic
+checked the frozen candidate, baseline and actual controls, finding no blocking
+error and retaining the strongest mercy countercase. The
+[application receipt](../sources/textual_restoration/applications/psalm151_4.2026-10-06.v1.json)
+records installation through apply_patch after preflight. Actual YAML equals
+the frozen candidate and its full export matches the projected digest exactly;
+the footnote audit passes. This is not fresh-ink, whole-verse or historical-
+priority certification. No deployed-reader or publication approval is claimed.
+
+Four scoped evidence/application integrity tests, 28 reader-note export tests
+and the full reader-corpus guard pass. CI includes the scoped test and its
+frozen baseline. Only verse4 changes among translation files; the protected
+shared method and unrelated Genizah input remain intact. These checks verify
+record bindings and reader behavior, not historical priority.

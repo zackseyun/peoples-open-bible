@@ -6828,6 +6828,39 @@ The documentation skill keeps the actual English contribution distinct from
 source selection and novelty. The broader goal remains active; manuscript
 coverage, damaged-ink calibration and corpus-wide English quality remain open.
 
+### 2026-10-06 — Samuel famine numeral comparison held
+
+The [new Samuel24:13 comparison](2_SAMUEL_24_13_FAMINE_COMPARISON_2026-10-06.md)
+tests a consequential source question not adjudicated in the prior Samuel passes.
+Root checked the current verse and16 source/English context units. Native
+Cambridge1927 printed198/PDF214 selects Greek three years; the publisher's
+Rahlfs–Hanhart control agrees, while selected Weber–Gryson Latin has seven.
+These are edition/version controls, not independent Hebrew votes or new ink.
+
+One read-only acquisition agent bounded the four dated Qumran Samuel controls.
+None covers the decisive numeral. Root also inspected the complete native DJD
+preservation page192/PDF215: 4Q51 fragments164–165 begin at24:16. The dossier
+records acquisition hashes and competing histories. Symmetry plus Chronicles
+is compatible with both preservation and assimilation; source priority remains
+held, and current Hebrew/English/notes are unchanged. Disclosure and misplaced
+note-anchor leads are recorded without applying a cosmetic substitute for the
+source decision. Reopening conditions target exact Greek attribution and a
+local transmission argument, not repeated negative fragment acquisition.
+
+The PDF skill required native layout verification; the documentation skill
+kept the outcome in Git and separate from a contribution or canon claim.
+Initial acquisition-agent navigation was truncated and an HTML label regex
+missed known verses; corrected bounded extraction and the native page support
+the result, not those failed outputs. No new engine, image inference, source
+application, canon-label change or judge-until-agreement loop.
+
+One fresh, report-aware critic checked the actual verses, complete native pages,
+dated coverage labels and hashes. No blocking error was found in this bounded
+hold; the review does not certify earliest wording or publication. Full reader
+corpus validation and Git whitespace checks pass. The canonical Samuel file,
+controlling method and unrelated Genizah input retain their protected hashes.
+Only the new dossier and two existing Git documents change.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

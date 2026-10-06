@@ -49,3 +49,80 @@ preserve source, main English, lexical decisions and all existing historical
 objects; the corrected note reaches the reader verse object. This is not a new
 whole-book export or historical-reading approval. Current record SHA-256:
 `a49a22cae6396f2f0a3c3989b0fec01cb9c00284a61d7930bbe45ab3715fbc88`.
+
+## October 6 precise Greek and Latin attestation follow up
+
+Newly consulted print evidence prevents equating a modern Greek A-text with
+Codex Alexandrinus. Root and one read-only acquisition agent visually inspect
+Swete, volume I (Cambridge 1887), printed page 527, Archive leaf 559. The
+B-based main text has Μανασσή; the verse-30 apparatus has Μαννασση A.
+Both are Manasseh; the extra nu is orthographic, not Moses. The latter entry
+has no corrector superscript. These are edition-mediated codex attestations,
+not newly inspected manuscript ink or proof of agreement among every hand.
+
+The [institutional catalogue](https://commons.ptsem.edu/id/oldtestamentingr01swet)
+identifies the volume. The complete [native page](https://ia800605.us.archive.org/BookReader/BookReaderImages.php?zip=/34/items/oldtestamentingr01swet/oldtestamentingr01swet_jp2.zip&file=oldtestamentingr01swet_jp2/oldtestamentingr01swet_0559.jp2&id=oldtestamentingr01swet&scale=2&rotate=0)
+is retained privately at `/tmp/jud1830-greek.HXfJab/swete1-p527.jpg`, SHA-256
+`dee4370b3fea84de899c96ce449e2f75ba6ce690bea2edca0399405b3786bc6b`.
+Native introduction pages xii, xvi and xxiii are also inspected. They limit
+the manual edition's witnesses and qualify discrimination of Alexandrinus's
+hands; an apparatus entry without a superscript is not universal hand coverage.
+
+The introduction images in that same private directory are hash-bound:
+
+| Image | SHA-256 |
+| --- | --- |
+| swete1-intro-xii.jpg | b8ebef2ea42fff2d2cb77671a0a0125753927b15946bbc4ad77dede04937a543 |
+| swete1-intro-xvi.jpg | 62b4cf4b96cc42402ef97b31b5b051bb31bda7b92361be82d69b3dd71e512dc4 |
+| swete1-intro-xxiii.jpg | 6face3a234057c2ad6727460f92af2aa537707a9fa5115d5b79439696e8b04b0 |
+
+The agent also reads a [derivative Rahlfs A-text presentation](https://www.thekoinebible.com/text/rahlfs/judges-alexandrinus-a-text/18.html)
+with Moses. Its provenance footer identifies Rahlfs 1935 and Wong/CATSS-related
+data. That presentation is not a diplomatic transcription of A and does not
+identify the ancient witness furnishing Moses. Root does not newly collate its
+underlying edition. This distinction narrows the earlier generic Greek-support
+claim without refuting every reported Greek Moses witness.
+
+Root directly reads the [publisher's Latin body](https://www.die-bibel.de/bibel/VUL/JDG.18),
+including verses 29–31 and the edition attribution. It gives `filii Mosi` at
+18:30: Moses. The footer identifies Weber/Gryson's fifth edition, 2007.
+This verifies that edition's selected Latin, not a complete Latin apparatus or
+an independent Hebrew manuscript. The web body is consulted; a private shell
+download returns 403, so no local HTML hash or manuscript-image check is claimed.
+
+Rodriguez's full contrary article remains unconsulted. The reached
+[ResearchGate record](https://www.researchgate.net/publication/401262903_Manasseh_not_Moses_A_Case_for_the_Masoretic_Reading_in_Judges_1830)
+explicitly has no full text; a request to the author would be external
+coordination, not an acquisition already performed. A bibliographic lead for
+Weitzman's 1999 discussion likewise supplies no directly consulted argument.
+Search snippets and abstract conclusions are not attributed as transmission
+explanations. No purchase, pirate source, authentication or TLS bypass is used.
+
+Outcome: stronger Manasseh attestation, verified Latin Moses, but historical
+priority and the existing Hebrew/English reconciliation remain unresolved.
+Protective substitution and genealogical harmonization remain live explanations;
+the suspended nun and agreement among edition-derived controls cannot establish
+their direction. Obtain an expanded apparatus identifying the actual Greek
+Moses witnesses and correction layers, or the substantive contrary argument,
+before reopening source adoption. No source, English, note, status, canon or
+deployment is changed. This follow-up is not a full-record candidate review.
+
+Disk exhaustion stops additional acquisition: partial NETS PDF/HTML attempts
+are not consulted and are removed by the agent; complete native images remain.
+It also interrupts local Git synchronization. Root verifies that two large
+temporary Swete caches differ in bytes and leaves both untouched; no repository
+or unrelated files are removed. No successful commit or local merge is claimed
+solely from the earlier remote PR69 merge.
+
+Free space subsequently recovers without deleting either cache. Delivery resumes
+only after rechecking state; the failure history is retained, not proof that
+the Git operation is still running. The canonical verse remains hash-identical
+to the September7 value above; the vendored Judges XML remains
+`3b3a909f04041dbd52dc6b7293a96ce75d94db8a90fdeda878943db7b8fac57f`.
+
+One independent bounded critic visually verifies all four print images, the
+derivative Greek presentation and publisher Latin, and checks the six related
+file hashes. It reports PASS for the new section, not source priority or English
+approval. Root additionally checks the protected method and Genizah hashes,
+local links and whitespace. After space recovery, local research/main
+synchronization and main push succeed for PR69; no cache deletion is needed.

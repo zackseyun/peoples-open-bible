@@ -7089,6 +7089,75 @@ application and historical inputs as separate stages; no new engine, generated
 manuscript evidence, novel reading, canon change or deployment claim. Broader
 witness coverage, damaged-ink calibration and English-quality work remain active.
 
+### 2026-10-06 — Hosea rescue promise or refusal examined and provisionally applied
+
+Previous goal turn: progress. Both exact-head checks pass for PR66; it is
+SHA-pinned merged as 66d4661440527901bf6f20cede8544606381d8e1 and local main
+is fast-forwarded/pushed. PR67 later also passes both exact-head checks and is
+SHA-pinned merged as c60da070a9473ba30698ffa3bceb7693b1013020. The research
+branch incorporates that main revision; no check or pending head is modified.
+
+Root screens the existing Genesis 46/Exodus 1 count and Saul 14 prayer work,
+finds substantive prior comparisons, and does not repeat them. Hosea 13:14 has
+no existing source dossier in the checked repository paths and offers a real
+main-English question. Current POB's declarative rescue opening partly invokes
+Paul and overstates what first-person imperfect morphology establishes.
+
+The PDF skill routes consultation toward native pages. Institutional/publisher
+shell downloads return 403; the legitimate publisher PDF parsed body exposes
+the relevant Popko argument but screenshots provide no inspectable image.
+Native layout is unverified; no authentication/TLS bypass, pirate host,
+purchase, complete-paper or plate consultation is claimed. This limited
+scholarly control does not determine the outcome. Root independently inspects
+25 selected-source/English context units and syntax controls. The documentation
+skill keeps the decision, opposing interpretation and limits in Git rather
+than creating a Page or publishing an About summary.
+
+Two narrowly scoped agents perform distinct tasks: a read-only Hebrew syntax
+and context investigation, and one fresh candidate-identity-blinded comparison
+followed by an exact-record application check. Neither spawns more agents.
+Questions fit judgment better, but assertions remain grammatically possible
+and Hosea 11 supplies a real mercy-reversal control. The [frozen contract and
+assessment](HOSEA_13_14_TRANSLATION_REVIEW_2026-10-06.md) preserve these arguments
+and the assessor's actual S/N/R outcomes. This is not a loop until agreement.
+
+The absent local QDR path is corrected by legitimately fetching the pinned
+upstream snapshot privately and verifying its known hash. Correct abbreviated
+Hos tags yield no 13:14 hit; neighboring 4Q82/4Q78 records include supplies.
+No target ink or universal manuscript absence is inferred. A guessed Greek
+filename 404 is corrected by reading the upstream file list, pinning its commit
+and fetching only the Hosea control. CATSS/Rahlfs provenance and restrictions
+remain explicit. Root reads the actual target and neighboring Greek lines,
+distinguishing Hosea's penalty/sting wording from selected Paul's victory/sting.
+The token file lacks punctuation; its futures do not mechanically prove assertions.
+
+The selected candidate provisionally changes the opening to questions, with
+the affirmative promise in a reader note. It inserts no negative Hebrew word,
+imperative or lost letter. The connected rationale is contextual, the later
+Greek/Paul reception note is separated, and alternate I-will-be/word-plague
+questions remain unadjudicated. Seven prior fields are archived exactly with
+false certification and unverified historical input bindings. Active status
+is draft/needs_review, not inherited high agreement. Source and generation
+metadata remain unchanged; canon and deployed publication are unaffected.
+
+Root's existing-schema preflight uses a single in-memory overlay in the real
+exporter: 14 chapters/197 units, only 13:14 changes. The exact-record application
+check passes without another preference vote. Root then installs the frozen
+candidate with apply_patch. A guessed footnote-audit helper import fails before
+postflight runs; reading the actual API and rerunning succeeds. YAML, candidate,
+full export and footnote audit match preflight. All 31 reader-footnote tests,
+the complete reader-corpus guard, JSON/hash bindings and Git whitespace checks
+pass; controlling-method and unrelated Genizah hashes remain unchanged.
+The [receipt](../sources/textual_restoration/applications/hosea13_14.2026-10-06.v1.json)
+records the hashes and actual checks. Source files and full restricted texts
+stay private; bounded facts/provenance and original POB records enter Git.
+
+This is a consequential applied interpretation of known Hebrew, not evidence
+that compute found a novel manuscript reading. Reopen for discriminating
+apparatus/witness or a stronger local discourse explanation, not additional
+model agreement. Broader coverage, damaged-ink calibration and corpus-wide
+English quality remain unfinished.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

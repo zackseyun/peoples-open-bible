@@ -218,3 +218,14 @@ base-text rationale. Source and main English stay unchanged. The exact frozen
 candidate, archived prior inputs, bounded critique and 959-verse export check
 are recorded separately from the earlier comparison, not counted as a second
 source-priority decision or a recovered Hebrew reading.
+
+The [Hosea 13:14 comparison and application](HOSEA_13_14_TRANSLATION_REVIEW_2026-10-06.md)
+now makes a consequential main-English contribution against unchanged Hebrew:
+the opening rescue promises become deliberative questions implying refusal in
+the immediate judgment context. The promise remains a serious reader-visible
+alternative. Hebrew morphology does not require questions; Paul's later
+resurrection use does not decide Hosea's original speech act. The former blended
+Greek/Paul note is corrected. A frozen, candidate-identity-blinded comparison,
+one exact-record check and matching 197-unit book export support this provisional
+application. This is interpretive translation work on known text, not newly
+discovered letters or an additional-canon result.

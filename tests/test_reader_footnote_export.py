@@ -14,6 +14,54 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReaderFootnoteExportTests(unittest.TestCase):
+    def test_hosea_13_14_questions_preserve_promise_and_separate_reception(self):
+        packet = json.loads((ROOT / 'sources/textual_restoration/applications/hosea13_14.2026-10-06.v1.json').read_text())
+        raw = (ROOT / packet['target']).read_bytes()
+        record = yaml.safe_load(raw)
+        candidate = json.loads((ROOT / packet['candidate']).read_bytes())
+        self.assertEqual(record, candidate)
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), packet['application']['yaml_sha256'])
+        self.assertEqual(hashlib.sha256((ROOT / packet['candidate']).read_bytes()).hexdigest(), packet['candidate_sha256'])
+        self.assertEqual(record['source'], packet['baseline_source'])
+        self.assertEqual(record['ai_draft'], packet['baseline_generation'])
+        self.assertEqual(record['status'], 'draft')
+        self.assertEqual(record['cross_check'], {'status': 'needs_review'})
+        self.assertNotIn('revision_pass', record)
+        archives = {item['field']: item for item in record['review_history']}
+        self.assertEqual(set(archives), {'status', 'revision_pass', 'cross_check',
+                                       'translation.text', 'translation.footnotes',
+                                       'lexical_decisions', 'theological_decisions'})
+        self.assertTrue(all(not item['certifies_this_candidate'] for item in archives.values()))
+        self.assertTrue(all(not item['historical_review_inputs_verified'] for item in archives.values()))
+        self.assertTrue(all(item['archived_from_baseline_sha256'] == packet['baseline_sha256']
+                            for item in archives.values()))
+        text = record['translation']['text']
+        self.assertTrue(text.startswith('Shall I ransom them from the hand of Sheol[a]? Shall I redeem them from death?'))
+        self.assertIn('destruction[b][c]?', text)
+        for marker in 'abc':
+            self.assertEqual(text.count(f'[{marker}]'), 1)
+        notes = record['translation']['footnotes']
+        self.assertEqual(notes[1], archives['translation.footnotes']['value'][1])
+        for detail in ('I will ransom', 'I will redeem', 'allow statements or questions',
+                       'rescue-promise reading remains possible'):
+            self.assertIn(detail, notes[0]['text'])
+        for detail in ('Rahlfs-based', 'penalty', 'Hades', 'victory',
+                       'addressing Death twice', 'does not by itself decide'):
+            self.assertIn(detail, notes[2]['text'])
+        book = exporter.export_book('HOS')
+        self.assertEqual(len(book['chapters']), 14)
+        self.assertEqual(sum(len(ch['verses']) for ch in book['chapters']), 197)
+        exported = next(v for ch in book['chapters'] if ch['chapter'] == 13
+                        for v in ch['verses'] if v['verse'] == 14)
+        self.assertEqual(exported['text'], text)
+        self.assertEqual(exported['footnotes'], notes)
+        self.assertFalse(packet['decision']['source_changed'])
+        self.assertTrue(packet['decision']['main_english_changed'])
+        self.assertFalse(packet['decision']['ambiguity_settled'])
+        self.assertFalse(packet['decision']['publication_approved'])
+        self.assertFalse(packet['decision']['novel_reading_demonstrated'])
+        self.assertFalse(packet['decision']['canon_changed'])
+
     def test_deuteronomy_27_4_discloses_versional_gerizim_without_priority_claim(self):
         packet = json.loads((ROOT / 'sources/textual_restoration/applications/deuteronomy27_4_disclosure.2026-10-06.v1.json').read_text())
         raw = (ROOT / packet['target']).read_bytes()

@@ -6523,6 +6523,59 @@ and the full reader guard. Only the Ezekiel target changes among translation
 files. Protected shared method and unrelated Genizah input hashes remain
 unchanged; historical registry drift is outside this scoped work.
 
+### 2026-10-06 — Psalm 100 written/read comparison and Greek acquisition limit
+
+Previous turn is progress: PR 54 passed both exact-head checks 112168871061 and
+112168719970 at `5b0b1f77a7a4643cd8dd11058271ddd066e91729`, merged at
+`52792dc1d808476debbb975c5e223c0f92608a9e`, and main was synchronized/pushed.
+Root inspected that authoritative main and its unchanged unrelated Genizah file.
+
+A bounded read-only agent found new institutional metadata for Deuteronomy
+32:8’s manuscript106 and the revised 2006 Göttingen edition. Root checked the
+actual acquired public description and Academy entry and reproduced the hashes.
+The general marginal-hand description is not a local corrector attribution;
+image access is false, no verse folio is identified, and no modern apparatus
+page was acquired. The [Deuteronomy dossier](DEUT32_8_EVIDENCE_TRIAGE_2026-09-06.md#october-6-greek-acquisition-metadata)
+records the exact holder/edition lead and bounded failures. The route stops
+without bypass. Root also confirmed the previously reached Dayfani prefix;
+this confirmation adds no passage-critical argument and does not close its hold.
+
+The distinct [Psalm 100:3 case](PSALM_100_3_SOURCE_COMPARISON_2026-10-06.md)
+advances the existing written/read queue beyond an English-note screen. Root
+read the complete poem, nested OSHB qere, pinned Greek surface text, actual
+Swete1896 decisive pages/title/preface and both Weber–Gryson2007 Latin displays.
+Greek and its dependent Latin are negative; Hebrew-based Latin is possessive.
+Both Hebrew forms remain serious alternatives. Their transmission and earliest
+priority are unresolved; original-language primacy cannot settle the choice.
+
+CAL’s two HTTP200 responses contained the same access notice, not passage text.
+No further route or contact was attempted. Latin web-reader controls succeeded
+where ordinary downloads returned403; no raw Latin-page pin is invented.
+PDF extraction helpers were unavailable, so native Poppler page rendering
+supplied the actual visual inspection. No dependency installation or ImageGen
+was needed. Full remote text/pages stay temporary; bounded excerpts and pins
+are versioned, with OSHB attribution and edition/relationship limits.
+
+One independent report-aware critic checked the exact disclosure candidate and
+actual source controls. Its nonblocking result preserves the strongest qere
+countercase, not whole-verse, specialist or historical-priority approval. Root’s
+first generic-loader preflight failed because Psalms walks normalized files
+directly; the corrected exact-target preflight passed before apply_patch
+installation. Actual postflight matches the projected complete150-chapter,
+2,578-unit export; only100:3’s note changes. Hebrew/main English, generation and
+historical revisions stay intact; four old approval objects are archived.
+
+The documentation skill separates source evidence, held priority and actual
+application; the PDF skill requires native-page rather than OCR-only inspection.
+Neither broad source coverage nor damaged-ink calibration is complete. The
+all-OT goal remains active and About integration remains deferred.
+
+Local validation passed five scoped application/evidence integrity tests,
+28 reader-footnote export tests, the Psalms source-context check and the full
+reader-corpus guard. Git diff check is clean; only Psalm100:3 changes among
+translation files. The shared method and unrelated Genizah input retain their
+protected hashes. These checks certify bindings/export behavior, not philology.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

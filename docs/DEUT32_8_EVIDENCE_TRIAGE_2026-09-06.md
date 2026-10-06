@@ -146,3 +146,26 @@ passage-critical section 4. Root did not independently read those body pages;
 ordinary full acquisition returned HTTP 403 and the advertised download failed.
 No bypass followed. The local-adaptation, Greek-hand, DJD/IAA and damaged-mark
 gates remain open; this partial access does not close them.
+
+## October 6 Greek acquisition metadata
+
+A bounded new search identifies manuscript 106 as Ferrara, Biblioteca Comunale
+Ariostea, Cl. II.187(1–3), Diktyon 15673, through the
+[Göttingen catalogue](https://septuaginta.uni-goettingen.de/catalogue/Ra_106/).
+Its Octateuch is within volume 187(1), ff.1–178r, grouped with Kings/Chronicles;
+the catalogue gives no Deuteronomy 32:8 folio. A general description mentions
+Greek marginal corrections by another hand, not the disputed local wording or
+its specific corrector. Public metadata reports image access false and zero
+published transcription pages. No restricted viewer or sample image was used.
+The mixed physical dating includes a Latin insertion; it must not date Greek
+Deuteronomy. Credit Margherita Matera’s catalogue description under its stated
+CC BY-NC-SA 4.0 terms; no full metadata corpus or images are redistributed.
+
+The [Academy publication list](https://adw-goe.de/en/research/completed-research-projects/academies-programme/septuaginta/publications/septuaginta-vetus-testamentum-graecum/)
+also identifies Wevers/Quast’s revised second edition of volume III,2 as 2006,
+after the 1977 edition. Its linked eBook route did not yield an apparatus page;
+Pinakes and NTVMR likewise supplied no passage image. The
+[new acquisition record](../sources/textual_restoration/discovery/deut32_8_new_primary_routes.2026-10-06.v1.json)
+binds actual institutional responses, root inspection and bounded failures.
+This narrows the holder/edition target, not the reading. Stop this access route;
+the complete-phrase, corrector and Hebrew-priority decisions remain held.

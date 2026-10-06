@@ -495,3 +495,32 @@ passed eighteen footnote tests, standard verse schema, preservation checks,
 complete reader validation, local links and whitespace. Only 1:8's reader
 markers and notes change. Required remote CI governs merge; this scoped PASS
 does not settle textual priority. No additional preference loop is needed.
+
+## 5Q6 argument acquisition limit on October 6
+
+The 4:14–15 verb/impurity questions and 4:18 day/days question remain parked.
+The cached [Kotzé 2012 article](https://scriptura.journals.ac.za/pub/article/download/110/118)
+is about 1:8a and 4QLam. Its introduction locates 5QLam material, but its
+appendix concerns 4QLam, not the requested 5Q6 variants. It cannot resolve
+the damaged `יבג[ ]`, `טמ֯א֯ו` or `היום` readings. A broad cache filename was
+an inadequate reason to select this source for the question.
+
+A bounded acquisition agent checked complete native PDF pages 1, 12, 13 and
+16, corresponding to printed 190, 201, 202 and 205; root verified the cover
+and exact file hash. Consult-only SHA256:
+`13c4424c60c4f38351bc0000c7082e7e864ad9008c69b0c37da3d583410ace33`.
+No PDF or scholarly reconstruction was imported into the repository.
+The [Stellenbosch dissertation route](https://scholar.sun.ac.za/handle/10019.1/6713)
+returned HTTP 403 to the agent's ordinary public request; the browser route
+was also inaccessible. The relevant argument pages remain unread. No alternate
+headers, access workaround or mirror was used; no dissertation date is resolved
+from inconsistent search/citation metadata.
+
+Root checked current POB source/English throughout chapter 4, complete 4:14–15
+records and published 5Q6 lines 1 ii.5–7 through iii.1 in context. That is a
+context check, not new reading evidence or a substitute for the missing
+argument. No source, English, notes or historical-priority decision changed.
+Reopen only for accessible, locus-specific critical apparatus or a decisive
+published clarification of these readings, not this article or another copy
+of the same transcription. This is a negative acquisition result, not a
+completed adjudication or another readiness audit.

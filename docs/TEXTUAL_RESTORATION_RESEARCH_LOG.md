@@ -6576,6 +6576,52 @@ reader-corpus guard. Git diff check is clean; only Psalm100:3 changes among
 translation files. The shared method and unrelated Genizah input retain their
 protected hashes. These checks certify bindings/export behavior, not philology.
 
+### 2026-10-06 — Psalm 151 literary forms and consequential Greek variant
+
+The previous turn was a read-only status review, not corpus progress. This pass
+advanced the existing Priority1 Psalm151 unit rather than repeating readiness
+or generic source recommendations. Baseline main is PR55 merge
+`542dfafde7aebd33c8c05a2deea440812b8e2386`; both exact-head checks succeeded.
+
+The [form comparison](PSALM_151_LITERARY_FORM_COMPARISON_2026-10-06.md)
+aligns all seven Greek verses with published 11Q5 XXVIII3–14, recording the
+separate Hebrew151A ending, fragmentary151B and nonmonotonic ordering. One
+bounded Hebrew-acquisition agent located the complete published segment and
+an author-uploaded expansion argument; root read the actual passage, edition
+limits and argument. Samuel is explicit in Hebrew, not Greek; covenant
+leadership and Greek victory are different endings. No hybrid original,
+newly deciphered letters or canon extension follows.
+
+Root reacquired the exact manifest SweteII PDF, reproduced its hash and read
+native poem/title/apparatus and preface pages. Printed415 equals PDF433 and
+archive leaf432, correcting the legacy printed-page assumption. The imprint
+date remains unverified. Initial navigation in the separate1896 PDF reached
+Proverbs, then was corrected; those wrong pages supplied no reading evidence.
+An initial no-follow curl yielded an empty redirect response; the ordinary
+public redirected download then yielded exact manifest bytes. Native Poppler
+renders are the visual control; a raw pdftotext executable outside PATH was
+found for navigation. No new install, access bypass or ImageGen was used.
+
+Greek151:4 has a material oil/mercy apparatus variant, not merely a stylistic
+English alternative. Retain declared oil provisionally while preserving the
+mercy countercase; the related Hebrew holy-oil clause cannot alone settle
+Greek priority. Verona’s Psalm151 is a later-hand addition according to the
+consulted preface, not an original-sixth-century vote. Literary histories remain
+unresolved, with expansion, abbreviation and shared-predecessor development
+kept live. Full remote controls stay temporary; bounded excerpt, attribution,
+hashes and reasoning are versioned. No full QDR corpus is relicensed.
+
+The documentation skill kept this in established Git records; the PDF skill
+required native-page verification. One report-aware critic reproduced all13
+source/file pins and checked the actual controls, finding no blocking error;
+it retained the mercy countercase rather than certifying literary priority.
+Local checks passed 11repository pins, both acquired controls, seven Greek/YAML
+bindings, unchanged one-chapter/seven-unit export and the full reader guard.
+Comparison JSON and Git whitespace checks pass; protected method/Genizah hashes
+remain unchanged. No source/English/YAML, approval history, canon,
+About page or deployment changes. The broader all-OT goal remains active;
+this closes neither comprehensive source coverage nor damaged-ink calibration.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

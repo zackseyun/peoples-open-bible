@@ -275,7 +275,7 @@ Maintain and extend these existing capabilities only when the active case needs 
 | **4QSam-a** | Fragmentary Hebrew that sometimes represents an older or different textual form. | Qumran image/transcription layer; WLC/UHB; Septuagint/Old Greek; relevant Masoretic codices. | Samuel variation units classified as spelling, copying, expansion, omission, or literary edition. |
 | **4QJer-b and 4QJer-d** | Fragmentation plus shorter/longer textual forms and different ordering. | Qumran Hebrew; WLC/UHB; Old Greek Jeremiah; later Hebrew controls. | Jeremiah literary-form alignment without forcing every witness into MT order. |
 | **4QDeut-q/n and 4QpaleoExod-m** | Fragmentation, paleo-Hebrew script, harmonization, and overlap with Samaritan/Greek readings. | Qumran witnesses; WLC/UHB; Samaritan Pentateuch; Old Greek; Targum/Peshitta controls where useful. | Pentateuchal variant apparatus with textual-family classification. |
-| **11QPs-a / Hebrew Psalm 151** | Fragment order, different psalm sequence, lacunae, and non-Masoretic composition evidence. | Scroll text; WLC Psalms; Swete/Old Greek; other Qumran Psalms witnesses. | Psalms order/composition map and direct Hebrew Psalm 151 comparison. |
+| **11QPs-a / Hebrew Psalm 151** | Fragment order, different psalm sequence, lacunae, and non-Masoretic composition evidence. | Scroll text; WLC Psalms; Swete/Old Greek; other Qumran Psalms witnesses. | [Bounded Hebrew/Greek form comparison](PSALM_151_LITERARY_FORM_COMPARISON_2026-10-06.md) completed; retain separate forms. Greek 151:4 oil/mercy priority and broader Psalms order map remain open. |
 
 ### Priority 2 — High-value Greek palimpsest and papyrus restoration
 

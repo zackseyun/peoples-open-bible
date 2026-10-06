@@ -94,6 +94,19 @@ showing only note-body additions. Neither this delivery nor a retain/hold result
 is newly recovered source text or canon expansion.
 These concrete evidence tasks supersede earlier next-case instructions below.
 
+The [Exodus 18 appointment comparison](EXODUS_18_24_25_SOURCE_COMPARISON_2026-10-05.md)
+now completes two connected large Samaritan leads. The whole longer form
+parallels Deuteronomy 1:9–18 with narrative adaptations; 4Q22 positively
+preserves portions, not the complete contemporary Samaritan wording. POB
+retains its source and main English provisionally and adds one qualified draft
+reader note with three repaired anchors. This is a meaningful alternative
+disclosure, not a newly deciphered reading or canon criterion. Historical
+priority reopens only for the named primary apparatus/image or another
+discriminating witness, not further model agreement. The distinct additional-text
+question remains the held Jubilees material/apparatus comparison; ancient
+literary alternatives within Exodus do not resolve another work's canonical
+authority.
+
 The requested reassessment distinguishes three achievable contributions:
 applying a known variant to POB, provisionally revising the interpretation of
 unchanged wording, and accurately disclosing an unresolved alternative. The four-cubit

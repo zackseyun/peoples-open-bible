@@ -7241,6 +7241,44 @@ approval. Root's JSON, target and four source-control hashes, two private-input
 hashes, local links, protected method/Genizah hashes and whitespace pass. No
 full-corpus semantic certification is inferred from documentation checks.
 
+### 2026-10-06 — Judges 18:30 precise attestation and disk limit
+
+Previous turn: progress, completing the Proverbs30:3 polarity comparison.
+Both exact-head checks for PR69 subsequently pass; root SHA-pinned merges it
+as 30aaf2839bd4b912a29c9b629da290cde361b03e and retargets PR70 to main without
+changing its head. Local main fast-forwards, but subsequent research-branch
+merge/index writes fail for disk exhaustion. PR70's checks remain live at the
+last observation; no gate bypass or PR70 merge is claimed.
+
+Root skips Psalm151's already-completed follow-up and reopens only the named
+Judges18:30 attestation gap. One read-only Greek acquisition agent and root
+inspect Swete's actual page527 and introduction controls. Swete reports Manasseh
+for both B and A; a modern Rahlfs A-text Moses is not an exact Alexandrinus
+attestation. Root reads the publisher's actual Weber/Gryson Latin Moses body.
+The [updated dossier](JUDGES_18_30_SOURCE_SELECTION_2026-09-07.md#october-6-precise-greek-and-latin-attestation-follow-up)
+records these new facts without deciding priority or changing the verse.
+Rodriguez and Weitzman full arguments are not acquired; no specifics are
+inferred from abstracts or secondary snippets. The PDF/documentation skills
+keep native source reports distinct from hypotheses and failed acquisition.
+
+Disk exhaustion interrupts tiny remaining downloads and Git index/ref writes.
+The agent removes only its partial new controls; root's complete evidence and
+unrelated files remain. Two checked large private Swete caches have different
+hashes, so root does not delete them as duplicates. This is a new operational
+blocker, not an exhausted textual research program or a three-turn blocked
+audit. Broader source coverage, restoration calibration and English evaluation
+remain unfinished; no completion, deployment or new ancient reading is claimed.
+
+Free space subsequently recovers to about1.2GB without root deleting either
+cache. The stopped merge is safely retried after state inspection and succeeds;
+main push is then clean. PR69's local delivery is complete. One independent
+bounded critic checks the native print/intro pages, derivative Greek, publisher
+Latin and six source/file hashes, reporting PASS for the added dossier section,
+not historical priority or translation approval. Root checks all eight image,
+target, XML and protected-file pins, links and whitespace. The dossier is a
+documentation-only attestation advance; full-corpus semantic validation and
+complete Greek apparatus acquisition are not claimed.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

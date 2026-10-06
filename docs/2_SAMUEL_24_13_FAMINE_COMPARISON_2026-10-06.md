@@ -2,8 +2,9 @@
 
 The selected Hebrew has seven years of famine; the consulted Greek editions
 have three. This is a consequential source comparison, not merely a discrepancy
-with Chronicles. Earliest-wording priority remains unresolved. POB's Hebrew,
-English and notes are unchanged in this bounded pass.
+with Chronicles. Earliest-wording priority remains unresolved. The initial
+source comparison changed no canonical record. The subsequent reader-disclosure
+application below changes the note and anchors, not Hebrew or main English words.
 
 ## Readings and preservation
 
@@ -106,11 +107,47 @@ new transmission argument, not repeat these pages or obtain equivalent model
 preferences. A separate reader-disclosure application remains possible without
 claiming a source-wording victory.
 
+## Subsequent reader-disclosure application
+
+The [exact frozen candidate](../sources/textual_restoration/candidates/samuel24_13_disclosure.2026-10-06.v1.json)
+adds the consulted Cambridge and Rahlfs–Hanhart Greek reading to note a. It says
+which reading came first remains uncertain. The note is attached to *seven years
+of famine*, rather than the earlier *told him*. The unchanged lexical notes b/c
+now attach to *adversaries* and *pestilence*. Marker-free English and Hebrew are
+identical to the source-comparison input; seven remains provisional.
+
+Connected numeral rationales now acknowledge same-passage Greek evidence and
+the competing transmission explanations. Original draft-generation metadata is
+preserved. Seven historical inputs, including the inherited agreement/revision
+flags and old notes, are archived exactly with their baseline hash and explicitly
+do not certify this candidate. Active status is draft/needs_review, not inherited
+high agreement. Unrelated lexical decisions are retained, not newly approved.
+
+One fresh, report-aware application critic found no substantive blocker in the
+exact frozen record. It was not another source-priority vote or a blind English
+preference comparison: no main English words change. Root independently checked
+the existing verse schema and complete Samuel export before application, then
+installed the record through apply_patch and verified the same candidate/export
+digests afterward. All 24 chapters and 695 verses remain present; only 24:13
+changes, and all three notes survive export. The
+[application receipt](../sources/textual_restoration/applications/samuel24_13_disclosure.2026-10-06.v1.json)
+pins the exact inputs and results. These checks establish bounded repository
+application, not specialist, whole-verse or deployed publication approval.
+
+This contribution makes the real source alternative visible to the reader. It
+does not recover a lost Hebrew word, resolve the numeral's history or add a text
+to any canon. Reopening source priority still requires discriminating evidence;
+repeating the existing arguments or increasing model agreement is not enough.
+
 ## Reproducibility
 
-Baseline: `d056d57d2c0d2ec4410717a3fa23964221bfcec0`. Unchanged canonical
+Initial source-comparison baseline: `d056d57d2c0d2ec4410717a3fa23964221bfcec0`. Its canonical
 `translation/ot/2_samuel/024/013.yaml` SHA256:
 `0ee83b08a296ab3943f37d7cfc6704ca3c45db0e4cce15a451c81eb095217627`.
+The structured comparison retains that historical input pin. Later application
+at baseline `63c03a193c4ab66d15cde4c6c2a23097564a43e9` produces YAML hash
+`27aee6c4691e5ab3a8cbf57809928212151e0318f0b27514f557596db26b48cb`;
+its receipt records the unchanged source and marker-free English separately.
 The complete native Cambridge page and DJD preservation page were visually
 inspected. At the initial cutoff the numeral attribution was incomplete; the
 subsequent section above adds its limited published marginal attribution.

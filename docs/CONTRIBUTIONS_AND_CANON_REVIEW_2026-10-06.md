@@ -1,5 +1,11 @@
 # Biblical text contributions and canon review
 
+Latest bounded comparison: [Proverbs 30:1](PROVERBS_30_1_SOURCE_COMPARISON_2026-10-06.md)
+provisionally retains its named recipients. A repeated weariness reading can
+preserve consonants while changing word division and vowels; the Greek is not
+its literal equivalent. This is a meaningful tested question, not another
+applied correction or proof of earliest wording. No canon decision follows.
+
 POB is ready to continue passage-level comparison and provisional applications.
 It is not yet a comprehensive critical edition, and no current result establishes
 a novel ancient reading. More compute can help acquire and compare evidence;

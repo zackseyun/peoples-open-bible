@@ -7158,6 +7158,58 @@ apparatus/witness or a stronger local discourse explanation, not additional
 model agreement. Broader coverage, damaged-ink calibration and corpus-wide
 English quality remain unfinished.
 
+### 2026-10-06 — Proverbs 30:1 source interpretation compared and provisionally retained
+
+The previous Hosea application remains frozen while its exact-head checks run.
+Root checks the paused clear-image calibration: its reference reading remains
+disputed, and writing-region agreement is not Hebrew character accuracy. No
+repeat calibration or generated manuscript evidence is promoted. Habakkuk 1:12
+and Zechariah 12:10 already have substantive comparisons; without new
+discriminating inputs, root skips them and selects the previously unadjudicated
+final clause of Proverbs 30:1. Opening names, Massa and verse 4 identity are
+outside scope.
+
+The [bounded comparison](PROVERBS_30_1_SOURCE_COMPARISON_2026-10-06.md)
+tests names against verbal weariness/ability analyses. Root reads the selected
+YAML, Hebrew/English 30:1–9, the actual Nehemiah genealogy, adjacent pinned Greek
+lines and GKC 75. A read-only Hebrew agent independently analyzes word division,
+vowels and the shortened final verb. Repointing/redivision can preserve all
+consonants without preserving the same selected source interpretation. The
+Greek does not literally express repeated weariness addressed to God. Neither
+contextual appeal nor modern morphology tags resolve priority.
+
+The PDF skill requires actual body and target footnotes. Root reads the
+McKenzie/Shelton argument and later visually verifies native printed pages
+11–12. An embedded modern translation quotation is encountered; no new English
+draft is made. Cited Fox/Krantz works are not independently consulted. The Latin
+publisher route exposes no usable body. Existing pinned QDR queries yield no
+indexed hit for 30:1–3, without establishing manuscript absence.
+
+Downloads/rendering encounter disk exhaustion. Root stops broad acquisition,
+verifies and removes only its own reproducible private QDR cache, then succeeds
+with one target-page native render. No repository evidence or unrelated files
+are removed. The documentation skill preserves bounded facts and provenance in
+Git; complete restricted texts remain private. No Page/About publication occurs.
+
+Outcome: provisionally retain selected names, current English and existing note;
+verbal priority remains unresolved. This is useful comparison, not an applied
+correction or a novel discovery. The adjacent verse 3 interpretation is only a
+possible separate lead. Reopen for discriminating apparatus/version arguments,
+not repeated model agreement. One subsequent bounded critic checks the actual
+report/record; this is not a blind translation vote or judge-until-agreement
+loop. A fresh critic spawn reaches the agent-thread limit, so an existing agent
+not previously involved in this unit performs the independent check. Its result
+is PASS for the bounded documentation, not an earliest-reading endorsement or
+independent verification of the removed QDR cache. Record syntax, all three
+bound repository inputs, private Greek/article hashes, local links, protected
+files and whitespace pass. Canonical Proverbs remains hash-identical; full
+corpus semantic validation is not claimed for this documentation-only change.
+
+Meanwhile both exact-head checks for PR68 succeed. Root SHA-pinned merges it as
+400e01670f7bf91d601d6b0d94a3270851f3b6bc, fast-forwards local main and the
+research branch, and pushes main. The consequential Hosea interpretation is now
+on repository main; this does not establish deployment or publication approval.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

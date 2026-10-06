@@ -4,9 +4,11 @@ The surviving evidence makes Enoch a worthwhile comparison text and supports
 a close relationship between its judgment oracle and Jude's quotation.
 It does not establish word-for-word identity, an intact Aramaic source verse,
 historical authorship by the patriarch or universal canonical authority.
-This comparison corrects POB's source-routing documentation and identifies
-Jude 15's conviction object as a consequential next adjudication. No canonical
-source, English, note or review metadata is changed here.
+The initial comparison corrected source routing without changing reader text.
+Jude's subsequent comparison and disclosure are completed below. The later
+Enoch correction completes the Greek control and repairs one unsupported English
+speech rendering against the unchanged selected Geʿez source; it is a draft,
+not a new ancient reading or a historical-priority decision.
 
 ## Actual Aramaic coverage
 
@@ -153,6 +155,56 @@ input and broke integrity tests. The additive method paragraph is withdrawn
 without changing the old review hashes or weakening those tests; this report
 preserves the lesson without invalidating existing evidence bindings.
 
+## Verified Greek control and Geʿez rendering correction
+
+The [complete selected Greek control](../sources/enoch/greek/verified/flemming_1901/001/009.json)
+now contains the entire printed 1:9, ending with sinners and ungodly. The raw
+Gemini page extraction and its metadata remain unchanged. Root checked complete
+native pages 34–35 again, including the Greek apparatus and facing German;
+the prior PDF hash reproduces. Line numbers and line breaks are removed in
+the verse control, with NFC and an ASCII apostrophe declared. The separate
+Jude quotation in the page's apparatus is not inserted into Enoch's body.
+This repairs a digital edition extraction, not an ancient manuscript gap.
+
+The actual aggregator and translation prompt now load this separately labelled
+edited comparison control, while preserving the primary Geʿez payload. Missing
+controls do not imply omission; malformed records and mismatched input hashes
+fail closed. Neither a directory containing OCR files nor this one verified
+verse establishes a complete Greek corpus. The older Chester Beatty attribution
+is also removed from the source README and aggregator description.
+
+The comparison exposed a source-to-English defect in POB's ending. Its April
+revision replaced done and committed with done and spoken, despite retaining
+the action rendering in its lexical object. The primary
+[Dillmann entry for ረሰየ](https://raw.githubusercontent.com/BetaMasaheft/DillmannData/4b1cf257e7a51e72f509d8cb2d61d7d823e4ed3e/1/L3acd9dd9408d440bbddf1ff5d0f62130.xml)
+explicitly cites Enoch 1:9 under sense D4, doing or committing. Declare occurs
+in a different predicative construction, illustrated by Job 32:3; it does not
+substantiate speaking against him here. Root and the bounded lexical assessor
+read the full pinned entry. Its digital TEI declares noncommercial share-alike
+conditions; the XML is not imported or relicensed. The facing German's action
+rendering is corroborative interpretation, not an independent ancient witness.
+
+Root also reread complete Charles page 4, PDF 42. Notes 24–25 describe defective
+wording and Greek/Jude-informed emendation or proposed restoration. The Greek
+control has explicit harsh-word and speaking clauses, but these must not be
+silently translated as though supplied in POB's selected Geʿez. The strongest
+countercase is that a different critical source could restore this fuller
+speech material. That requires an explicit source decision, not relabelling
+the existing action verb. This pass retains the selected Geʿez, including its
+editorial signs, without claiming it is earliest or fully collated.
+
+The [applied draft](../translation/extra_canonical/1_enoch/001/009.yaml) restores
+done and committed, repairs the holy-host and all-flesh anchors, and qualifies
+the Jude cross-reference to disclose the edition differences and dependencies.
+The first two note bodies, original AI provenance, source and prior revision
+history remain intact. Old approval objects are archived verbatim and do not
+certify the edited record. Current status is draft and needs review; a blind
+English comparison and publication approval are not claimed.
+The [application receipt](../sources/textual_restoration/applications/enoch1_9.2026-10-05.v1.json)
+records the exact candidate and available-reader export: only 1:9 changes among
+219 emitted units in 39 chapters at this baseline. Those counts describe the
+current partial export, not complete Enoch. No NT source or canon changes.
+
 ## Canon and comparison policy
 
 Jude gives this prophecy positive authority in its argument. That is more
@@ -169,15 +221,18 @@ and links from Jude, not a newly discovered universal canon requirement.
 The [comparison receipt](../sources/textual_restoration/comparisons/enoch1_9_jude14_15.2026-10-05.v1.json)
 pins the inspected inputs, unchanged target hashes and the assessor's actual
 output. No source text or manuscript photograph is generated with ImageGen.
-No new meaning-changing translation, scholarly publication approval, full
-book completeness or all-witness coverage is claimed.
+The later application makes a meaning-changing English correction against the
+same selected source, not a newly discovered ancient reading. Scholarly
+publication approval, full-book completeness and all-witness coverage are not
+claimed. The earlier comparison receipt records its own unchanged-text stage,
+not the current application.
 
-The next consequential source unit is Jude 15's all-ungodly/every-soul contrast
-with actual Greek attestations and Enoch-related harmonization arguments.
-The separate Enoch repair requires completing the clipped Greek transcription
-from its native page and separating Charles's editorial supplies from manuscript
-attestations before any source promotion. Do not repeat this reception inventory
-or use another model vote as new historical evidence.
+Jude 15's bounded comparison and the Enoch extraction repair are now completed
+in the linked applications. Earlier-form priority and broader critical-edition
+coverage remain open. Reopen for named manuscript or apparatus evidence that
+can justify a different source selection, not to repeat this reception inventory
+or obtain another model vote. No Greek or Aramaic source promotion follows from
+the digital repair or the English correction.
 
 The PDF skill required native-page inspection. The documentation skill kept
 published Aramaic survival, edited language controls, textual inference and

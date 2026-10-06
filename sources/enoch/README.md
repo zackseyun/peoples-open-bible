@@ -47,7 +47,7 @@ sources/enoch/
 | 37–71 (Parables) | ✓ complete | **none** | **none** |
 | 72–82 | ✓ complete | fragments | 4Q208–211 |
 | 83–90 | ✓ complete | — | 4Q204–207 |
-| 91–108 | ✓ complete | Chester Beatty chs 97-107 (Flemming 1901) | 4Q204, 4Q212 |
+| 91–108 | ✓ complete | Chester Beatty chs 97–107 require a separately verified later edition; not Flemming 1901 | 4Q204, 4Q212 |
 
 Parables (chs 37-71) are Ge'ez-only. This is a known feature of the
 textual tradition, not a gap in our pipeline.
@@ -84,6 +84,16 @@ These are named in `tools/enoch/multi_witness.py` (to be written) as
 the Zone 2 registry for the Phase 11 translator prompt.
 
 ## OCR note
+
+The original status and coverage table above are historical acquisition claims,
+not certification of current verse alignment, complete reader delivery or
+manuscript collation. The [Enoch comparison](../../docs/ENOCH_1_9_JUDE_14_15_COMPARISON_2026-10-05.md)
+records current passage-specific checks. Its
+[verified Greek 1:9 control](greek/verified/flemming_1901/001/009.json)
+completes a clipped edition extraction while preserving the raw OCR. The
+aggregator and prompt label it an edited comparison control, not a diplomatic
+papyrus transcription or a replacement for the primary Geʿez. No other Greek
+verse is certified by this repair.
 
 Critical validation result (2026-04-21): **Azure GPT-5 fails on
 Ge'ez script** despite handling Greek, Hebrew, and Latin at 98%+

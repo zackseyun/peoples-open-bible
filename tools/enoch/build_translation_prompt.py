@@ -10,6 +10,8 @@ AI drafting. The prompt is intentionally conservative:
   verse-aligned here, so this builder surfaces that as a warning rather than
   pretending the secondary witness is ready.
 - Zone 2 consult: registry from tools/enoch/multi_witness.py
+- Checked Greek edition controls, when present: comparison only, not a
+  diplomatic manuscript transcription or replacement for the primary Ge'ez.
 """
 from __future__ import annotations
 
@@ -31,7 +33,10 @@ DILLMANN_ROOT = REPO_ROOT / "sources" / "enoch" / "ethiopic" / "transcribed" / "
 
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 import verse_parser  # noqa: E402
-from multi_witness import CONSULT_REGISTRY, EnochVerseWitnessSet, EnochWitnessReading  # noqa: E402
+from multi_witness import (  # noqa: E402
+    CONSULT_REGISTRY, EnochVerseWitnessSet, EnochWitnessReading,
+    load_greek_edition_control,
+)
 
 
 @dataclass
@@ -143,6 +148,7 @@ def _zone2_registry() -> list[dict[str, Any]]:
 
 ENOCH_GUARDRAILS = """\
 - Translate from the Ge'ez witness provided here; do not silently replace it with a later English tradition.
+- Any Greek edition control is edited comparative evidence, not a diplomatic manuscript reading or primary Ge'ez/source promotion. Discuss consequential differences explicitly; do not silently substitute or harmonize its wording.
 - Preserve apocalyptic imagery, angelic speech, and repeated judgment formulas rather than smoothing them away.
 - Do not import New Testament phrasing just because Jude or later Christian texts echo the passage.
 - In the Parables (chs. 37-71), be especially transparent about uncertainty because the section is effectively Ge'ez-only for this workflow.
@@ -178,10 +184,15 @@ def build_enoch_prompt(chapter: int, verse: int) -> EnochPromptBundle:
         for page in _chapter_pages(source_chapter, edition="charles_1906")
     ))
     witness_set = EnochVerseWitnessSet(chapter=chapter, verse=verse, geez_charles=charles)
+    witness_set.greek_edition_control = load_greek_edition_control(chapter, verse)
+    greek = witness_set.greek_edition_control
     reference = f"1 Enoch {chapter}:{verse}"
     zone1_sources_at_draft = [_snapshot_label("Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser)")]
     if _dillmann_available(chapter):
         zone1_sources_at_draft.append(_snapshot_label("Dillmann 1851 Ethiopic Enoch (chapter OCR only)"))
+    if greek is not None:
+        zone1_sources_at_draft.append(_snapshot_label(f"{greek.source_edition} (edited Greek comparative control only)"))
+        warnings.append("Greek edition control is comparative only; primary Ge'ez source payload is unchanged. No diplomatic Greek or corpus-wide completeness claim.")
     zone2_consults_known = [entry["name"] for entry in _zone2_registry()]
 
     source_payload = {
@@ -194,6 +205,13 @@ def build_enoch_prompt(chapter: int, verse: int) -> EnochPromptBundle:
         "note": charles.note,
         "section": _section_name(chapter),
     }
+
+    greek_section = (
+        f"Greek edition comparative control (edited text; not a diplomatic manuscript reading):\n"
+        f"{greek.text}\n\nControl metadata and limits:\n{greek.note}"
+        if greek is not None else
+        "Greek edition comparative control: no checked local record for this verse. Raw OCR presence is not a usable verse reading."
+    )
 
     prompt = f"""Reference: {reference}
 Section: {_section_name(chapter)}
@@ -213,6 +231,8 @@ Source metadata:
 Additional witness state:
 - Dillmann 1851 chapter OCR exists: {'yes' if _dillmann_available(chapter) else 'no'}
 - Greek fragment coverage for this section: {'possible/partial' if chapter <= 36 or chapter >= 72 else 'none or effectively none'}
+
+{greek_section}
 
 Translation guardrails:
 {ENOCH_GUARDRAILS}
@@ -246,6 +266,7 @@ Do not copy from modern copyrighted English Enoch translations.
             "verse": witness_set.verse,
             "section": witness_set.section(),
             "available_witnesses": [asdict(w) for w in witness_set.available_witnesses()],
+            "greek_edition_control": asdict(greek) if greek is not None else None,
         },
     )
 

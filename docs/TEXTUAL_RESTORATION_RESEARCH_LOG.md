@@ -6406,6 +6406,47 @@ baseline and runs the new checks. Protected method and unrelated Genizah input
 hashes are unchanged. Previously recorded broader registry drift is not repaired
 or repinned by this scoped delivery.
 
+### 2026-10-05 — Complete Enoch Greek control and action-verb correction
+
+Prior delivery: PR 51 passed both exact-head corpus-integrity checks
+112137779629 and 112137647319 at head
+`805e75dda98f6e03d0ccbfa9d921d9d7fb630696` and merged at
+`ac3e51bd2580ab433502f65b2d46414b6a8c312b`. Local main was fetched and
+fast-forwarded to that observed remote merge. Two redundant subsequent pushes
+timed out; this does not undo the independently observed remote merge.
+
+The [Enoch application](ENOCH_1_9_JUDE_14_15_COMPARISON_2026-10-05.md#verified-greek-control-and-geʿez-rendering-correction)
+repairs the clipped 1901 Greek edition extraction through a separately verified
+control, preserving raw OCR and the primary Geʿez source. Complete native Greek,
+German and Charles pages were checked with apparatus context. The control now
+reaches the actual aggregator and prompt; it is not a diplomatic papyrus or
+complete Greek corpus. False Chester Beatty attribution is removed locally.
+
+The comparison exposed an unsupported English speech rendering. Root and the
+lexical assessor read the complete pinned Dillmann entry, whose action sense
+explicitly cites Enoch 1:9. Done and committed replaces done and spoken against
+the same selected Geʿez. Greek speech material and Charles's proposed restoration
+remain explicit counterevidence, not silently imported words or independent
+corroboration. The lexical XML's noncommercial share-alike terms are recorded;
+the full source is not vendored or relicensed. Source priority remains unresolved.
+
+One independent read-only judge checked native pages, lexical evidence, pins
+and integration. Its sole requested documentation correction distinguishes the
+actual English change from a novel ancient reading; that correction is applied.
+No judge-until-agreement loop, blind-English approval, human specialist approval,
+newly recovered letters, canon change or deployed-reader verification is claimed.
+Historical approvals are archived, not inherited; the record is draft/needs_review.
+
+Validation passed: 30 Enoch integration/regression tests, six application tests,
+nine extra-text note tests, 28 reader-footnote tests and the full reader guard.
+Only 1:9 changes in the complete currently available ENO export of 219 units
+across 39 emitted chapters, not the complete ancient work. The independent
+judge did not rerun Git-baseline preservation; root's actual checks cover it.
+The protected method and unrelated Genizah input remain unchanged. Broader
+historical-pin debt remains outside this scoped correction. The user's renewed
+questions are answered by this concrete contribution and the existing coverage
+and canon distinctions, not another general readiness essay.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

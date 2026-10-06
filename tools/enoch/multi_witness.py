@@ -10,7 +10,11 @@ Witness layers (ordered by language authority):
     - Ge'ez: Charles 1906 critical edition (primary)
     - Ge'ez: Dillmann 1851 (secondary, cross-check)
     - Greek: Bouriant 1892 (Codex Panopolitanus, chs 1-32)
-    - Greek: Flemming 1901 (Syncellus + Chester Beatty chs 97-107)
+    - Greek: Flemming–Radermacher 1901 (edited Greek material, including
+      Panopolitanus and Syncellus; not the subsequently discovered Chester Beatty)
+
+  Verified edition controls (not diplomatic manuscript transcriptions):
+    - Explicitly checked local per-verse Greek edition records, comparative only
 
   Zone 1 validation oracle (not vendored, cross-check only):
     - Ge'ez: Beta maṣāḥǝft LIT1340EnochE.xml (Jerabek 1995 / CC-BY-SA
@@ -29,7 +33,10 @@ that Phase 11c will consume.
 """
 from __future__ import annotations
 
+import hashlib
+import json
 import pathlib
+import re
 from dataclasses import dataclass
 from typing import Optional
 
@@ -69,17 +76,21 @@ class EnochVerseWitnessSet:
     greek_panopolitanus: Optional[EnochWitnessReading] = None  # chs 1-32
     greek_syncellus: Optional[EnochWitnessReading] = None      # scattered
     greek_chester_beatty: Optional[EnochWitnessReading] = None # chs 97-107
+    # Edited comparative text, never silently placed in a manuscript slot.
+    greek_edition_control: Optional[EnochWitnessReading] = None
 
     def available_witnesses(self) -> list[EnochWitnessReading]:
         out = []
         for w in [self.geez_charles, self.geez_dillmann, self.geez_betamasaheft_oracle,
-                  self.greek_panopolitanus, self.greek_syncellus, self.greek_chester_beatty]:
+                  self.greek_panopolitanus, self.greek_syncellus, self.greek_chester_beatty,
+                  self.greek_edition_control]:
             if w is not None:
                 out.append(w)
         return out
 
     def has_greek(self) -> bool:
-        return any([self.greek_panopolitanus, self.greek_syncellus, self.greek_chester_beatty])
+        return any([self.greek_panopolitanus, self.greek_syncellus, self.greek_chester_beatty,
+                    self.greek_edition_control])
 
     def section(self) -> str:
         """The compositional section this verse belongs to."""
@@ -168,6 +179,77 @@ def dillmann_is_available() -> bool:
     return dillmann_dir.exists() and any(dillmann_dir.glob("ch*.txt"))
 
 
+def load_greek_edition_control(chapter: int, verse: int) -> Optional[EnochWitnessReading]:
+    """Load only an explicit checked edition record; never infer text from OCR.
+
+    Absence is normal. A present but invalid record is an error, not an excuse
+    to silently drop the control or recalculate a missing provenance pin. The
+    PDF hash identifies the checked private source; only the vendored raw OCR
+    and text hashes can be revalidated by this loader.
+    """
+    record_path = SOURCES_ROOT / "greek/verified/flemming_1901" / f"{chapter:03d}" / f"{verse:03d}.json"
+    if not record_path.exists():
+        return None
+    try:
+        record = json.loads(record_path.read_text(encoding="utf-8"))
+        if not isinstance(record, dict):
+            raise ValueError("record must be an object")
+        if type(record.get("schema_version")) is not int or record["schema_version"] != 1:
+            raise ValueError("unsupported schema_version")
+        for key, expected in (("chapter", chapter), ("verse", verse)):
+            if type(record.get(key)) is not int or record[key] != expected:
+                raise ValueError(f"mismatched {key}")
+        if record.get("reference") != f"1 Enoch {chapter}:{verse}":
+            raise ValueError("mismatched reference")
+        if record.get("reading_basis") != "published-edition-selected-text":
+            raise ValueError("control is not a published-edition selected text")
+        edition = record.get("edition")
+        text = record.get("text")
+        if edition != "Flemming–Radermacher 1901":
+            raise ValueError("edition must identify the Flemming–Radermacher 1901 control")
+        if not isinstance(text, str) or not text.strip() or not re.search(r"[\u0370-\u03ff\u1f00-\u1fff]", text):
+            raise ValueError("nonempty Greek text is required")
+        for digest in (record["text_sha256"], record["raw_ocr"]["sha256"], record["pdf"]["sha256"]):
+            if not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest):
+                raise ValueError("explicit SHA-256 pins are required")
+        if hashlib.sha256(text.encode("utf-8")).hexdigest() != record["text_sha256"]:
+            raise ValueError("Greek text hash mismatch")
+        raw_relative = pathlib.Path(record["raw_ocr"]["repo_path"])
+        raw_path = (REPO_ROOT / raw_relative).resolve()
+        raw_root = (SOURCES_ROOT / "greek/transcribed").resolve()
+        if raw_relative.is_absolute() or not raw_path.is_relative_to(raw_root) or raw_path.suffix != ".txt":
+            raise ValueError("raw OCR path must be inside the Greek transcription directory")
+        if hashlib.sha256(raw_path.read_bytes()).hexdigest() != record["raw_ocr"]["sha256"]:
+            raise ValueError("raw OCR hash mismatch")
+        pdf = record["pdf"]
+        if not isinstance(pdf["url"], str) or not pdf["url"].startswith("https://"):
+            raise ValueError("PDF source URL is required")
+        for page_key in ("page", "printed_page"):
+            if type(pdf[page_key]) is not int or pdf[page_key] < 1:
+                raise ValueError("positive PDF and printed page locators are required")
+        limits = record["limits"]
+        if not isinstance(limits, list) or not limits or any(not isinstance(item, str) or not item.strip() for item in limits):
+            raise ValueError("explicit control limits are required")
+    except (OSError, ValueError, KeyError, TypeError, AttributeError) as exc:
+        raise ValueError(f"Invalid Greek edition control {record_path}: {exc}") from exc
+
+    return EnochWitnessReading(
+        language="greek",
+        witness="flemming_1901_edition_control",
+        text=text,
+        source_edition=edition,
+        confidence="medium",
+        note=(
+            "Edited comparative control, not a diplomatic manuscript reading or primary Ge'ez/source promotion. "
+            f"Record: {record_path.relative_to(REPO_ROOT)}; reading basis: {record['reading_basis']}; "
+            f"text SHA-256: {record['text_sha256']}; raw OCR: {record['raw_ocr']['repo_path']} "
+            f"(SHA-256 {record['raw_ocr']['sha256']}); PDF {pdf['url']} "
+            f"(SHA-256 {pdf['sha256']}), PDF page {pdf['page']}, printed page {pdf['printed_page']}. "
+            + " ".join(limits)
+        ),
+    )
+
+
 def load_verse(chapter: int, verse: int) -> Optional[EnochVerseWitnessSet]:
     """Return the currently available witness bundle for one verse.
 
@@ -210,6 +292,7 @@ def load_verse(chapter: int, verse: int) -> Optional[EnochVerseWitnessSet]:
                 ),
             )
 
+    witness_set.greek_edition_control = load_greek_edition_control(chapter, verse)
     return witness_set
 
 
@@ -221,8 +304,9 @@ def summary() -> dict:
         "geez_ocr_complete": is_available(),
         "dillmann_ocr_available": dillmann_is_available(),
         "betamasaheft_oracle_available_locally": oracle_available(),
-        "greek_ocr_complete": (SOURCES_ROOT / "greek" / "transcribed").exists() and
-                              any((SOURCES_ROOT / "greek" / "transcribed").iterdir()) if (SOURCES_ROOT / "greek" / "transcribed").exists() else False,
+        "greek_ocr_present": any((SOURCES_ROOT / "greek/transcribed").rglob("*.txt")),
+        "greek_ocr_complete": None,  # Presence is not verified coverage/completeness.
+        "greek_edition_controls_present": any((SOURCES_ROOT / "greek/verified").rglob("*.json")),
         "zone_2_consult_count": len(CONSULT_REGISTRY),
     }
     return out

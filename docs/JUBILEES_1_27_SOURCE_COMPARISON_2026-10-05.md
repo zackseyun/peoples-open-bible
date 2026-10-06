@@ -151,6 +151,40 @@ was found. Its wording correction distinguishes retained source/English from
 the recording-role hold. No repeat agreement loop or approval of existing
 note content followed.
 
+## Additional institutional control
+
+Monger's 2018 dissertation is now available for private consultation through
+its migrated [institutional record](https://hdl.handle.net/11250/2491963).
+The publication API requires `Accept: application/json`; it identifies
+`Monger_4Q216Free.pdf` as an OpenFile permitting download. Its public file-link
+response provides an ordinary download alias. The retrieved PDF has 130 pages,
+19,752,136 bytes and SHA-256
+`22d9d733524631305b5b7316c2a7b63c517460cd18d290bb7889fc214f34b5e8`.
+It remains a scholarly consultation, not a vendored ancient source or a
+permissively licensed corpus input.
+
+In printed pages 90–92 (PDF 96–98), Monger proposes a two-sheet reconstruction
+containing shorter forms of Jubilees 1–2, lacking 1:15b–25 and likely 2:25–33.
+This follows material/scribal reconstruction, not an independently verified
+omission across an intact join. Ancient copying hands are not the narrative's
+angel/Moses recording roles. The consulted outline does not adjudicate 1:27.
+
+Root and one bounded source assessor inspected complete native TOC/context
+pages and the transition after them. PDF pages 99–102 contain only the four
+article title pages; page 103 resumes at printed page 219. The article bodies
+named in the TOC are absent from this public version. Their measurements,
+joins and alternative reconstructions were not directly consulted. Before
+adopting the shorter form, obtain the actual material-analysis article and
+photographic/geometry controls; test whether both shorter and fuller layouts
+fit. For 1:27, the existing DJD/Geʿez controls remain necessary. No POB source,
+English or canonical status changes follow from this additional control.
+
+The original PDF URL redirected to a JavaScript landing page. The public JSON
+record recovered the legitimate download route. A failed download also exposed
+a missing earlier temporary output directory; a fresh `mktemp` directory and
+the provided public alias succeeded. Do not misreport that local write failure
+as denial of scholarly access or repeat acquisition of the verified file.
+
 ## Source selection and canon remain separate
 
 Jubilees merits Hebrew/Geʿez comparison as a work with distinct literary and

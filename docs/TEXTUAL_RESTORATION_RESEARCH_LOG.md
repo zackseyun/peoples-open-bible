@@ -6228,9 +6228,31 @@ generated image is used as evidence and no agreement-until-pass loop is run.
 
 PR 46's exact-head checks 111810857296 and 111810448036 passed; its merge is
 observed at `1505a6179adc31f2144ca797aea4de2d44171b85`. Local main was
-synchronized and pushed before this separate branch. This batch's delivery
-is recorded only when observed. The controlling method and unrelated Genizah
-file remain protected and unchanged.
+synchronized and pushed before this separate branch. PR 47's checks
+111824723631 and 111823827469 passed on head
+`44691747bc0ac17cbe9befa948cb075d989c3f65`; the merge is observed at
+`90ba4041122a6d8efaefe894cfdb4d35e76f91b4`, and main was synchronized and
+pushed. The controlling method and unrelated Genizah file remain unchanged.
+
+### 2026-10-05 — Institutional Jubilees material control
+
+The previous pass was progress: the retained/held source case and extra-text
+delivery repair were merged, not merely planned. The
+[additional control](JUBILEES_1_27_SOURCE_COMPARISON_2026-10-05.md#additional-institutional-control)
+now pins a lawfully retrieved institutional dissertation. The public JSON
+interface recovered its download route after a repository migration; an
+initial local write failure was corrected with a verified temporary directory.
+The PDF skill required native context, and the documentation skill keeps the
+author's reconstruction hypothesis separate from observed ancient wording.
+
+Root and one bounded read-only source assessor checked the outline and the
+article-title/conclusion transition. The proposed shorter Jubilees 1–2 is
+a consequential literary-form lead, not an observed intact omission. The
+public PDF omits the four article bodies, so their material arguments were
+not audited. Do not delete POB text, promote a Hebrew form or conflate copying
+hands with narrative recording roles on this basis. This changes the next
+acquisition target, not the source/English retention or canonical status.
+No repeat agreement loop or fresh-ink restoration is claimed.
 
 ## Later About-page summary — proposed, not published
 

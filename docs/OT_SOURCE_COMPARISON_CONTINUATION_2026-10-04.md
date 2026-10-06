@@ -74,6 +74,14 @@ describe earlier checkpoints, not an instruction to repeat this application.
 
 ## Contribution milestones and efficient continuation
 
+The [incense follow-up](EXODUS_INCENSE_ALIGNMENT_2026-09-05.md#direct-attestation-follow-up)
+now checks direct published 4Q22 rows and material reconstruction: the alternative
+order has ancient support, but the disputed 30:6 clause does not survive there.
+The Greek apparatus also prevents treating one selected short text as unanimous
+Greek evidence. Source and English remain unchanged; the named priority gates
+remain held. This closes part of an evidence question, not another readiness
+audit, fresh decipherment or canon recommendation.
+
 The [Samaritan parallel batch](SAMARITAN_PARALLEL_BLOCKS_2026-10-05.md) now
 advances all twenty frozen large leads beyond verse-label comparison and
 applies a qualified Numbers 20:13 narrative-variant note. This is reproducible

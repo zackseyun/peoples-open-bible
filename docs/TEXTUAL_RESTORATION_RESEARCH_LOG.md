@@ -6666,6 +6666,49 @@ the scoped test and required frozen baseline fetch, without a new job. Only
 Psalm151:4 differs among translation files. Shared method and unrelated Genizah
 input retain protected hashes; no historical fixture drift is rewritten.
 
+### 2026-10-06 — Jeremiah national-oracle boundaries and order
+
+Previous turn made progress: PR57 passed both exact-head checks112206856955
+and112206647946 at`8bc831f16645fe47462b204e1ff9631443f889ff`, merged at
+`81e76a3641e50a7ef870ea2836c984ae8fc0209b`, and main was synchronized/pushed.
+This pass addresses the unfinished Jeremiah order case rather than repeating
+readiness checks or claiming novel decipherment.
+
+The [comparison](JEREMIAH_ORACLES_ORDER_COMPARISON_2026-10-06.md) aligns nine
+national-oracle block boundaries and the25:13 bridge. A bounded acquisition
+agent checked native Swete pages; root inspected the bridge, cup, preface,
+66 selected POB units, published Sinaiticus units and complete four-line4Q72b
+segment. Native page verification followed the PDF skill; the documentation
+skill kept evidence, inferences and held applications in established Git files.
+Greek placement, internal order, title/date splits and wording differ; moving
+Hebrew chapters alone would not reproduce that form. Published Hebrew fragment
+wording does not establish the whole collection's position. Peels2018's actual
+argument and counterarguments were read; cited scholars remain mediated.
+Historical priority remains unresolved. Hebrew/source, main English, notes,
+reader order and canon are unchanged; no hybrid original is proposed.
+
+One report-aware independent critic found a real error: Swete's Elam oracle
+ends at25:19, not Sinaiticus's25:20. Root verified the native page, corrected
+both table and record, and the critic confirmed the correction with no remaining
+bounded blocker. This is not specialist, whole-book or publication approval.
+Local checks reproduce three repository pins, four private-source pins,
+the identical persistent PDF,66/1,364-file manifests, nine block names and five
+XML IDs/coordinates. The full reader guard and Git whitespace checks pass;
+protected method and unrelated Genizah input remain unchanged.
+
+Efficiency limits: Swete was redundantly downloaded before its existing
+research_sources copy was located; reuse that cache on the next pass. Official
+Sinaiticus XML was reused, not downloaded again. An absent morphology checkout
+was not reacquired; no new loader or comparison engine was built. An initial
+oversized PDF text extraction was navigation only, not letter evidence.
+An initial XML navigator flattened correction alternatives; raw units supplied
+the observations instead. The ephemeral coordinate check initially assumed
+xml:id rather than the actual id/corres attributes; correcting that check
+required no evidence change. QDR web-reader cache failure was resolved by an
+ordinary public download, not an access bypass. No ImageGen, new ink reading,
+generated reconstruction or source-priority certainty follows. Modern target
+apparatus remains a specific reopening condition; the broader goal stays active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

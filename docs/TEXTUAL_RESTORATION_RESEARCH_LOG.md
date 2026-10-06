@@ -6480,6 +6480,49 @@ separating exact assessment provenance from the readable two-question answer.
 The protected method, first experiment and unrelated Genizah input are unchanged.
 About integration remains deferred.
 
+### 2026-10-06 — Ezekiel application and direct Armenian control
+
+Previous turn is progress: PR 53 passed both exact-head corpus-integrity checks
+112158825615 and 112158627458 at `d912c509445a24844aa3b3a7dcccaf1008d353bf`,
+merged at `35c3b3307055ba55212b3f201662b2322df8c75b`, and main was pushed.
+This continuation starts from that inspected main, not an inferred running job.
+
+The [Ezekiel application](EZEKIEL_48_28_DISCLOSURE_APPLICATION_2026-10-06.md)
+turns the prior qualified note proposal into an actual candidate/preflight,
+bounded critique, apply_patch installation and postflight. Hebrew and marker-free
+English remain unchanged; only the target differs in the complete 48-chapter,
+1,273-unit export. Both notes survive export exactly and old agreement objects
+remain historical. Root’s receipt records the October repair without rewriting
+April/May revisions. The critic supports the narrow repair, not optimality or
+whole-verse reapproval. The original sample inputs/outcomes remain frozen.
+
+The separate OT acquisition agent obtained four actual Armenian Cathedral
+controls: main chapter, edition metadata, Zohrap alternative data and note484.
+Root checked downloaded bytes, Armenian word links, distinct KJV text and local
+POB32:7–14. The [Deuteronomy follow-up](DEUT32_8_EVIDENCE_TRIAGE_2026-09-06.md#october-6-armenian-control-acquisition)
+replaces second-hand-only Armenian support with observed digital sons-of-God
+wording. The printed editions/manuscripts, independent transmission and unique
+Hebrew/Greek retroversions are not verified. No Deuteronomy verse changes.
+
+One distinct bounded acquisition critique reproduced the file, extraction and
+context hashes and requested explicit extraction boundaries, now included.
+Dayfani pp213–218 were newly reached by the agent’s web extraction, not root’s
+body reading, and stop before section4. The ordinary403/download failure is
+logged without bypass or repeated routes. Existing decisive evidence holds
+remain open. Full downloaded controls stay private/temporary; bounded metadata
+and decisive wording are in Git, not a relicensed Armenian corpus.
+
+The documentation skill kept applied disclosure separate from source-priority
+research and preserved dated reasoning. ImageGen is unused and supplies no
+textual evidence. The broader all-OT goal, coverage/calibration gaps and
+unresolved source decisions remain active; no About integration is made.
+
+Local validation passed five Ezekiel application checks, three Armenian control
+integrity checks, four frozen-sample checks, 28 reader-footnote export checks
+and the full reader guard. Only the Ezekiel target changes among translation
+files. Protected shared method and unrelated Genizah input hashes remain
+unchanged; historical registry drift is outside this scoped work.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

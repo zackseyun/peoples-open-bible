@@ -7279,6 +7279,37 @@ target, XML and protected-file pins, links and whitespace. The dossier is a
 documentation-only attestation advance; full-corpus semantic validation and
 complete Greek apparatus acquisition are not claimed.
 
+### 2026-10-06 — Genesis 49 10 personal name and tribute tested
+
+Previous turn: progress, committing Judges18:30's checked attestation update as
+PR71 and merging PR70 after both exact-head checks. PR71's two checks are live
+at this pass's latest observation; its head remains untouched.
+
+Root initially selects an Ecclesiastes screen lead, then finds its later
+completed comparison/application. The duplicate agent task is interrupted;
+no repeated analysis or canonical edit follows. Current Genesis49:10 instead
+has an unreviewed consequential name/segmentation question and two misplaced
+reader notes. The [bounded comparison](GENESIS_49_10_SHILOH_COMPARISON_2026-10-06.md)
+tests actual WLC written/read forms, five Hebrew diagnostic parallels, publisher
+Greek, published 4Q252 interpretive context and Steiner's substantive tribute
+argument. Root visually checks its native pages using the PDF skill; the
+documentation skill separates inspected evidence, interpretation and application.
+
+One read-only Hebrew analyst independently identifies the circular morphology
+rationale and tests contrary analyses. The poetic tribute proposal can preserve
+vowels but remains a philological reanalysis, not recovered ink. Greek and the
+Davidic commentary do not uniquely establish the underlying Hebrew. Source/main
+English remain provisional; a full-record rationale/anchor/disclosure candidate
+is the next actionable application, not a forced novel translation. No new
+validator, image-transcription run, corpus-wide audit or canon recommendation.
+
+One bounded critic verifies the native article pages, Hebrew controls and two
+published contexts. Its precision correction preserves the author's deferred
+proof for assigning עד to the prior hemistich. After that correction it reports
+PASS for factual/scope claims, not source adoption or English approval. Root
+checks target/XML/article and protected method/Genizah hashes, local link targets
+and whitespace. All canonical records remain unchanged in this pass.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

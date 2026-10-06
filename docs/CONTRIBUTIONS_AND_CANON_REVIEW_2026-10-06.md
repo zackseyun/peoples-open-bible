@@ -183,3 +183,15 @@ model agreement until a preferred answer wins. Use one bounded critique, retain
 substantive disagreement, and park an acquisition when its named evidence is
 unavailable. Corpus-wide completeness, fresh damaged-ink accuracy and general
 English superiority remain unestablished.
+
+### A further source question with a bounded hold
+
+The [2 Samuel 24:13 famine comparison](2_SAMUEL_24_13_FAMINE_COMPARISON_2026-10-06.md)
+adds a previously unadjudicated consequential question. The consulted Greek
+Samuel editions select three years against the current Hebrew's seven; the
+selected Vulgate has seven. The four checked Qumran Samuel controls do not
+preserve the decisive numeral. Symmetry and agreement with Chronicles support
+considering three, but also supply a serious assimilation explanation. The
+Hebrew base remains provisionally retained; no source or English change is
+applied. Next work needs manuscript/versional and transmission evidence, not
+more model agreement presented as recovery of missing Hebrew.

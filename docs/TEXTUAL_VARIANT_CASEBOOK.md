@@ -35,6 +35,14 @@ Three Hebrew cases have the earlier [provisional adjudication](HEBREW_PILOT_ADJU
 | [Amos 9:12](../translation/ot/amos/009/012.yaml) — Edom / humanity and verbs; quotation in Acts 15 | versional-comparison | 1 | not applicable | MT; Old Greek; Acts quotation is reception, not another Hebrew manuscript |
 | [Habakkuk 1:12](../translation/ot/habakkuk/001/012.yaml) — We shall not die / proposed divine-subject wording | conjecture-control | 1 | not applicable | MT; versions; scribal-correction traditions distinguished from extant variants |
 
+The [Jeremiah national-oracle comparison](JEREMIAH_ORACLES_ORDER_COMPARISON_2026-10-06.md)
+now compares all nine collection boundaries and the 25:13 bridge in the selected
+Greek and Hebrew forms. Source/main English/order are retained provisionally;
+Swete, Sinaiticus XML and MT numbering are not interchangeable. Partial Hebrew
+Babylon material does not establish the collection's position. The table's
+zero signal at the single anchor remains a historical screening count, not
+unexamined book-order evidence.
+
 The [Habakkuk 1:12 comparison](HABAKKUK_1_12_SOURCE_COMPARISON_2026-09-06.md)
 provisionally retains the current source/main English; its clearer disclosure
 has now been applied after scoped review and complete-book export checks. In the

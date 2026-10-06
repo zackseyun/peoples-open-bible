@@ -1,9 +1,11 @@
 """Scoped application integrity; not proof of narrative historical priority."""
 import hashlib
+import io
 import json
 from pathlib import Path
 import re
 import subprocess
+import tarfile
 import unittest
 from unittest.mock import patch
 
@@ -73,8 +75,39 @@ class NumbersDisclosureTests(unittest.TestCase):
         self.assertEqual(a.keys(), b.keys())
         self.assertEqual([key for key in a if a[key] != b[key]], [(20, 13)])
         self.assertEqual(a[(20, 13)]['footnotes'], self.current['translation']['footnotes'])
-        paths = subprocess.check_output(['git', 'diff', '--name-only', BASE, '--', 'translation/ot/numbers'], cwd=ROOT).decode().splitlines()
-        self.assertEqual(paths, [TARGET])
+
+    def test_historical_book_digests_remain_bound_to_original_snapshot(self):
+        # Later Numbers applications are not changes to this historical receipt.
+        # Current-book isolation is checked separately in the preceding test.
+        archive = subprocess.check_output(['git', 'archive', BASE, 'translation/ot/numbers'], cwd=ROOT)
+        historical = {}
+        with tarfile.open(fileobj=io.BytesIO(archive)) as snapshot:
+            for member in snapshot.getmembers():
+                if member.isfile() and member.name.endswith('.yaml'):
+                    path = Path(member.name)
+                    historical[(int(path.parent.name), int(path.stem))] = yaml.safe_load(
+                        snapshot.extractfile(member).read())
+        loader = exporter.load_translation_record
+        def snapshot_record(code, chapter, verse, candidate=False):
+            if code != 'NUM':
+                return loader(code, chapter, verse)
+            if candidate and (chapter, verse) == (20, 13):
+                return self.candidate
+            return historical.get((chapter, verse))
+        with patch.object(exporter, 'load_translation_record', side_effect=snapshot_record):
+            before = exporter.export_book('NUM')
+        with patch.object(exporter, 'load_translation_record', side_effect=lambda c, ch, v:
+                          snapshot_record(c, ch, v, candidate=True)):
+            after = exporter.export_book('NUM')
+        application = json.loads((ROOT / RECEIPT).read_text())['application']
+        expected = {
+            'export_before_sha256': '49aee56142c6c10083e64bea17c32f6c051e07b5a35f1681f0f51ecb31845e9c',
+            'export_after_sha256': '47469f0dc6dd390cb38525d0cfe0baaef347cde8981f01934f4d2c47e9dfce5a',
+        }
+        for key, book in (('export_before_sha256', before), ('export_after_sha256', after)):
+            digest = hashlib.sha256(json.dumps(book, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+            self.assertEqual(digest, expected[key])
+            self.assertEqual(application[key], expected[key])
 
     def test_receipt_binds_application_and_uncertainty(self):
         receipt = json.loads((ROOT / RECEIPT).read_text())

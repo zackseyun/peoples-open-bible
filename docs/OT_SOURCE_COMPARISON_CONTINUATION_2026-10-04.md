@@ -74,6 +74,12 @@ describe earlier checkpoints, not an instruction to repeat this application.
 
 ## Contribution milestones and efficient continuation
 
+The [Numbers 13:33 comparison](NUMBERS_13_33_SOURCE_COMPARISON_2026-10-05.md)
+maps the complete longer Samaritan narrative to seven Deuteronomy units and
+distinguishes a related Hexaplaric marginal report from continuous-text support.
+4Q27 does not preserve this locus. Qualified reader notes disclose the alternatives;
+source and main English remain unchanged, and earlier-form priority is held.
+
 The [incense follow-up](EXODUS_INCENSE_ALIGNMENT_2026-09-05.md#direct-attestation-follow-up)
 now checks direct published 4Q22 rows and material reconstruction: the alternative
 order has ancient support, but the disputed 30:6 clause does not survive there.

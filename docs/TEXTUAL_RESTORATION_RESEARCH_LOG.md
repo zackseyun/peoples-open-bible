@@ -6861,6 +6861,40 @@ corpus validation and Git whitespace checks pass. The canonical Samuel file,
 controlling method and unrelated Genizah input retain their protected hashes.
 Only the new dossier and two existing Git documents change.
 
+### 2026-10-06 — Samuel numeral apparatus and opposing arguments acquired
+
+Previous goal turn: progress. PR62 committed the bounded famine comparison;
+both exact-head checks are live at`6c8e2876527c4fc5553cdeca4fb43a623e631508`.
+This turn verified PR61's two checks112242895494 and112242777756 succeeded,
+merged its exact head at`ca87db9c70e02ab2d98b2e957b11c34e5da75a5b`, and
+synchronized/pushed local main before returning to research. No pending check
+was bypassed or restarted.
+
+The [Samuel followup](2_SAMUEL_24_13_FAMINE_COMPARISON_2026-10-06.md#numeral-apparatus-and-published-arguments-followup)
+fulfills the named acquisition step rather than repeating Qumran coverage.
+Native Cambridge conventions identify the third-apparatus seven as a marginal
+collective attribution in j/Coislin8/Rahlfs243. Root read Wevers's actual sectionII
+to verify the collective label and Driver1913 native376–377/PDF518–519 plus
+the edition title. Keil's actual24:10–13 paragraph supplies the opposing
+harmonization argument. Both use the same symmetry feature in opposite ways;
+no discriminating copying pattern is acquired. A collective marginal report is
+not three inspected copies or another preserved Hebrew numeral. Priority stays
+held; no canonical source, English, note or canon label changes.
+
+The PDF skill required native layout/convention checks; the documentation skill
+adds the precise findings to the existing dossier and a structured comparison.
+Web-tool access to Driver and Wevers failed, but ordinary legitimate public
+retrieval succeeded; no restricted route was bypassed. A combined tool output
+truncated preliminary preface extraction; subsequent native page inspection
+establishes the conventions. No broad corpus download, new engine, fresh image
+inference, negative-fragment reacquisition or agreement loop.
+
+One report-aware continuation by the earlier critic checks only the newly
+acquired attribution and opposing arguments. No substantive blocker is found;
+this is not another independent priority vote. JSON syntax, actual input hashes,
+unchanged canonical target/protected inputs, full reader-corpus guard and Git
+whitespace pass. Only the structured comparison, existing dossier and log change.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

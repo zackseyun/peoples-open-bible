@@ -6779,6 +6779,55 @@ their protected hashes. No corpus regeneration or deployment is implied.
 No judge-until-agreement loop, new comparison engine or ImageGen evidence.
 The broader goal remains active; About integration remains deferred.
 
+### 2026-10-06 — Isaiah 7 14 temporal English correction applied
+
+Previous turn progress: the contribution-readiness record was committed/pushed
+as PR60. This turn verified both live exact-head checks112236501666 and
+112236448227 succeeded at`b5d4e0c35692bab498fa9e8ed95ac169d725b373`, merged
+PR60 at`8046b46d4471a816e3d9f38773f8bacc220ca3b0`, and fetched/fast-forwarded
+the active research branch. Local main synchronization follows final delivery;
+no protected check was bypassed.
+
+The [Isaiah7:14 comparison](ISAIAH_7_14_TEMPORAL_TRANSLATION_REVIEW_2026-10-06.md)
+advances the concrete translation lead rather than repeating readiness work.
+Root inspected 27 source/English context units and the actual Swete Greek page
+and adjacent context. The PDF skill required full native-page verification;
+printed113/PDF137 selects future pregnancy/birth and reports a future pregnancy
+alternative. This is an edition control, not new Vaticanus ink or recovered
+Hebrew. Primary GKC controls correct the initial digital-tag analysis and keep
+both pregnancy timelines serious. An additional raw-Wikisource query returned
+no matching usable lines; it supplies no extra grammatical evidence.
+
+Root froze the context pins, source, rubric and three alternatives before
+evaluation. One fresh task, without the parent history or candidate-identity
+mapping, read only source fields in the contexts and verified the grammar.
+Its actual assessment prefers present pregnancy plus future birth, with
+prospective pregnancy disclosed. Root stored that assessment before revealing
+the identities. The exact full-record candidate was then checked once by the
+same reviewer in report-aware mode; no blocking defect was found. These are
+two different stages, not two independent votes or a two-family ink check.
+
+Root installed the frozen candidate through apply_patch after schema/full-ISA
+preflight. The [receipt](../sources/textual_restoration/applications/isaiah7_14.2026-10-06.v1.json)
+binds the before/candidate/actual YAML and book export. All66 chapters/1291
+exported units are checked, with only7:14 differing and all four notes visible.
+The sole marker-free main-English delta is is bearing to will bear. Hebrew,
+young-woman and naming wording remain unchanged; the naming rationale is retained
+without adjudication. The temporal note no longer claims already-pregnant certainty;
+three unrelated note anchors are repaired. Seven superseded input records are
+archived; active draft/needs_review does not transfer historical approval.
+
+Local schema, exact application/archive checks, footnote audit, full-book digest,
+28 reader-export tests,9 extra-text-note tests, full reader-corpus guard and Git
+whitespace checks pass. Receipt hashes and all27 historical context pins are
+reproduced, with26 non-target current contexts unchanged. The controlling method
+and unrelated Genizah input retain their protected hashes. No new comparison
+engine, validator, ImageGen evidence,
+historical-fixture rewrite, source letters, canon change or publication approval.
+The documentation skill keeps the actual English contribution distinct from
+source selection and novelty. The broader goal remains active; manuscript
+coverage, damaged-ink calibration and corpus-wide English quality remain open.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

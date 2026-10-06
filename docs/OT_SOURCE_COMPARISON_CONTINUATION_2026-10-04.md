@@ -80,6 +80,17 @@ describe earlier checkpoints, not an instruction to repeat this application.
 
 ## Contribution milestones and efficient continuation
 
+October 6: the [Ezekiel 48:28 application](EZEKIEL_48_28_DISCLOSURE_APPLICATION_2026-10-06.md)
+now installs qualified geographic disclosure and correct anchors without
+changing Hebrew or main English words. Complete Ezekiel export is verified;
+the historical three-verse sample remains three ties. The
+[Deuteronomy Armenian follow-up](DEUT32_8_EVIDENCE_TRIAGE_2026-09-06.md#october-6-armenian-control-acquisition)
+adds actually inspected digital sons-of-God wording and distinguishes it from
+the site’s KJV parallel. This reduces a versional verification gap, not a new
+ancient reading, unique Hebrew retroversion or priority approval. Greek-hand,
+DJD/IAA and passage-critical 4Q37 adaptation evidence remain the discriminating
+targets; the newly reached Dayfani prefix does not close them.
+
 The [Enoch 1:9 application](ENOCH_1_9_JUDE_14_15_COMPARISON_2026-10-05.md#verified-greek-control-and-geʿez-rendering-correction)
 now supplies a complete, separately labelled Greek edition control to the actual
 prompt and corrects done and spoken to done and committed against unchanged

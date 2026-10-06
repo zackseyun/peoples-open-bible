@@ -5,6 +5,10 @@ Checked 2026-09-06. **Retain the canonical WLC/“sons of Israel” for now; kee
 does not approve or reject its eventual adoption, raise confidence, restore
 letters, or rewrite frozen candidate/preflight records.
 
+The October 6 follow-up below adds directly inspected digital Armenian wording.
+The original September consultation limits remain dated history, not a claim
+that the Armenian control is still wholly second-hand.
+
 ## The question that matters
 
 The [earlier comparison](DEUT32_8_ADJUDICATION_FOLLOWUP_2026-09-05.md) and
@@ -105,3 +109,40 @@ from the available evidence while recording these limits; it must be a new
 source/full-sentence decision, not a silent checkmark on an old acquisition gate.
 Do not repeat failed preview searches or the completed image/Fouad work without
 a new access lead. Other consequential cases can proceed in parallel.
+
+## October 6 Armenian control acquisition
+
+The [Armenian Cathedral page](https://www.bible.armeniancathedral.org/book/tDeut_32.htm?wid=10523)
+actually displays որդւոց Աստուծոյ, “sons of God,” in the Armenian verse, while
+its separate KJV parallel displays Israel. Root inspected the acquired source
+cell and web display; Adam, nations and boundaries in 32:8 and Jacob/inheritance
+in 32:9 establish the local alignment. Root also read POB Hebrew/English 32:7–14.
+The [homepage](https://bible.armeniancathedral.org/) identifies its main text as
+Classical Armenian, 1895 Bagratuni. The linked
+[Zohrap data](https://www.bible.armeniancathedral.org/_addon/zohrap/tDeut_32.js)
+prints the same decisive wording and registers its label as Zohrap 1805.
+Its `arm_1994` software slot is not an edition date. The linked note 484 reports
+Hebrew: Israel; that editorial comparison is not another Hebrew witness.
+
+The [acquisition record](../sources/textual_restoration/discovery/deut32_8_armenian_controls.2026-10-06.v1.json)
+pins four actual ordinary-HTTPS responses, precise extraction hashes, the
+bounded decisive wording and inspected POB context. Whole downloaded controls
+remain temporary/private; hashes identify acquired bytes, not vendored replay
+artifacts. One bounded critic reproduced the pins and requested explicit
+extraction boundaries, now recorded. Web-reader access to the small footnote
+failed; ordinary downloaded HTML supplied its actual reading.
+
+This replaces second-hand-only Armenian support with observed digital wording.
+It does not verify the underlying printed pages or manuscripts, count two
+independent ancient branches, establish Armenian unanimity, or recover a complete
+Greek phrase. The strongest countercase is a translation choice or later
+revision within a daughter-version tradition, including interpreting Greek
+angels as sons of God. Armenian does not uniquely choose Hebrew אל or אלוהים.
+No Hebrew-source, English or priority change follows from this acquisition.
+
+Separately, the agent accessed Dayfani’s author-hosted web extraction for
+pp. 213–218, beyond the previously consulted abstract. It stops before the
+passage-critical section 4. Root did not independently read those body pages;
+ordinary full acquisition returned HTTP 403 and the advertised download failed.
+No bypass followed. The local-adaptation, Greek-hand, DJD/IAA and damaged-mark
+gates remain open; this partial access does not close them.

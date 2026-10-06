@@ -65,6 +65,10 @@ this three-verse assessment.
 
 ## Review and continuation
 
+Subsequent October 6 [Ezekiel application](EZEKIEL_48_28_DISCLOSURE_APPLICATION_2026-10-06.md)
+installs the qualified note and anchor repair. The frozen draw and assessment
+remain historical evidence with three main-English ties, not revised outcomes.
+
 One bounded critic found the three ties defensible and requested three record
 repairs: pin consulted reference evidence, bind the Ezekiel parallel, and state
 the strongest objection to final retention. Root applied those repairs, preserving

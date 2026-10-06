@@ -195,3 +195,11 @@ considering three, but also supply a serious assimilation explanation. The
 Hebrew base remains provisionally retained; no source or English change is
 applied. Next work needs manuscript/versional and transmission evidence, not
 more model agreement presented as recovery of missing Hebrew.
+
+The subsequent [Samuel reader-disclosure application](2_SAMUEL_24_13_FAMINE_COMPARISON_2026-10-06.md#subsequent-reader-disclosure-application)
+now makes that Greek alternative visible and repairs the three misplaced note
+anchors. Hebrew and main English words remain unchanged; only 24:13 changes in
+the complete 695-verse Samuel export. This is an applied disclosure contribution,
+not a new source reading or a resolved priority decision. Its exact candidate,
+archived prior reviews, one bounded critique and pre/postflight are recorded in
+the [receipt](../sources/textual_restoration/applications/samuel24_13_disclosure.2026-10-06.v1.json).

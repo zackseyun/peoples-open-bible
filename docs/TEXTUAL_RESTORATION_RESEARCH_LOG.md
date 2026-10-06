@@ -6895,6 +6895,49 @@ this is not another independent priority vote. JSON syntax, actual input hashes,
 unchanged canonical target/protected inputs, full reader-corpus guard and Git
 whitespace pass. Only the structured comparison, existing dossier and log change.
 
+### 2026-10-06 — Samuel numeral disclosure applied, priority still held
+
+PR62's exact head `6c8e2876527c4fc5553cdeca4fb43a623e631508` passed both
+corpus-integrity checks `112247487171` and `112247281653` and merged at
+`70f375732f8072c53ae1846621359f6d27152964`. Local main was fast-forwarded
+and pushed successfully. PR63's apparatus followup remains subject to its own
+exact-head checks; no dependency check was bypassed.
+
+The [subsequent Samuel application](2_SAMUEL_24_13_FAMINE_COMPARISON_2026-10-06.md#subsequent-reader-disclosure-application)
+implements the already-verified source alternative as reader disclosure. The
+full candidate explicitly identifies selected Cambridge/Rahlfs–Hanhart Greek
+three alongside Hebrew seven and retains historical uncertainty. All three
+misplaced note anchors move to their actual phrases; b/c note wording, Hebrew,
+main English words, generation metadata and unrelated lexical decisions remain
+unchanged. Connected numeral rationales no longer make base-text choice decisive.
+
+One fresh, narrowly briefed critic checks the frozen candidate against its
+baseline and the existing comparison; no substantive blocker is found. This is
+one report-aware application check, not another priority vote, blind preference
+test or judge-until-agreement loop. Old review flags and changed inputs are
+archived exactly and do not certify the candidate. Active draft/needs_review
+and false publication/specialist flags retain the open review limits.
+
+Root's existing-schema/full-book preflight includes all 24 chapters/695 units,
+with only 24:13 changed and all 3 notes exported. Exact application through
+apply_patch matches the frozen candidate and preflight YAML/export hashes;
+the footnote audit is ok. The
+[receipt](../sources/textual_restoration/applications/samuel24_13_disclosure.2026-10-06.v1.json)
+records the executed checks, not deployment approval. A preparation attempt used
+an unavailable JavaScript structuredClone helper and stopped before file edits;
+the corrected clone completed normally. No source acquisition was repeated.
+The first added regression assertion mistakenly required punctuation outside the
+quotation; it was corrected to test the numeral wording, without changing the
+frozen candidate. All 29 reader-footnote regression tests, the full reader-corpus
+guard and Git whitespace checks pass. Frozen candidate and installed YAML hashes
+remain identical to their pre/postflight pins.
+
+The documentation skill keeps source priority, reader disclosure and historical
+inputs separate. No new engine/schema, image-generated evidence, canon labels,
+source letters or claim of whole-verse optimality. Controlling-method and
+unrelated Genizah-file hashes remain protected. Broader corpus coverage, fresh
+damaged-ink calibration and English-quality goals remain active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

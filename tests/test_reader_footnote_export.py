@@ -14,6 +14,38 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReaderFootnoteExportTests(unittest.TestCase):
+    def test_samuel_24_13_discloses_greek_numeral_without_settling_priority(self):
+        packet = json.loads((ROOT / 'sources/textual_restoration/applications/samuel24_13_disclosure.2026-10-06.v1.json').read_text())
+        raw = (ROOT / packet['target']).read_bytes()
+        record = yaml.safe_load(raw)
+        candidate = json.loads((ROOT / packet['candidate']).read_bytes())
+        self.assertEqual(record, candidate)
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), packet['application']['yaml_sha256'])
+        self.assertEqual(record['status'], 'draft')
+        self.assertEqual(record['cross_check'], {'status': 'needs_review'})
+        self.assertNotIn('revision_pass', record)
+        history = {item['field']: item for item in record['review_history']}
+        self.assertTrue(all(item['certifies_this_candidate'] is False for item in history.values()))
+        strip_markers = lambda text: text.replace('[a]', '').replace('[b]', '').replace('[c]', '')
+        text = record['translation']['text']
+        self.assertEqual(strip_markers(text), strip_markers(history['translation.text']['value']))
+        for phrase in ('seven years of famine[a]', 'your adversaries[b]', 'pestilence[c]'):
+            self.assertIn(phrase, text)
+        for marker in 'abc':
+            self.assertEqual(text.count(f'[{marker}]'), 1)
+        notes = record['translation']['footnotes']
+        self.assertEqual(notes[1:], history['translation.footnotes']['value'][1:])
+        for detail in ('seven years', 'Cambridge', 'Rahlfs–Hanhart', 'three years',
+                       '1 Chronicles 21:12', 'remains uncertain'):
+            self.assertIn(detail, notes[0]['text'])
+        out = exporter._export_record_verse(13, record)
+        self.assertEqual(out['text'], text)
+        self.assertEqual(out['footnotes'], notes)
+        self.assertFalse(packet['decision']['historical_priority_settled'])
+        self.assertFalse(packet['decision']['source_changed'])
+        self.assertFalse(packet['decision']['main_english_words_changed'])
+        self.assertFalse(packet['decision']['publication_approved'])
+
     def test_proverbs_24_5_discloses_only_the_comparative_first_clause(self):
         packet = json.loads((ROOT / 'sources/textual_restoration/applications/proverbs24_5_disclosure.2026-10-05.v1.json').read_text())
         raw = (ROOT / packet['target']).read_bytes()

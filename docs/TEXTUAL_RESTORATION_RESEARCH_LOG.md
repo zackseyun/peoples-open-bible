@@ -6622,6 +6622,50 @@ remain unchanged. No source/English/YAML, approval history, canon,
 About page or deployment changes. The broader all-OT goal remains active;
 this closes neither comprehensive source coverage nor damaged-ink calibration.
 
+### 2026-10-06 — Psalm 151 mercy attestation and disclosure preparation
+
+Previous turn made progress: PR56 passed both exact-head checks112196730083
+and112196633442 at`4bce89554debb9c39c14d6526e0e5a5cfe6d8989`, merged at
+`7cf29b67bd9f13d088b2935e27910f78b440d1fe`, and main was synchronized/pushed.
+Root verified current Git state and preserved the unrelated Genizah input.
+
+This pass followed the specific oil/mercy hold. A bounded acquisition agent
+read Kraft’s complete author-owned teaching page and official Göttingen status;
+root checked both controls and hashes. The2025 reissue was already in the
+coverage audit, so this is institutional confirmation, not a new-edition finding.
+The publisher403 ended access; Kraft’s Rahlfs list remains mediated and its
+primes/groups unexpanded. Root acquired the official Sinaiticus project zip,
+verified the XML header, full published Psalm151 context and verse4 tags.
+Mercy appears as ordinary running text without a local correction tag; a
+heading correction is separate. The adjacent preposition differs from selected
+Swete, so no hybrid whole-phrase attribution follows. Source priority stays open.
+
+The [follow-up](PSALM_151_LITERARY_FORM_COMPARISON_2026-10-06.md#october-6-manuscript-specific-follow-up)
+records those attestation facts and failed routes. Full NC-SA XML and remote
+HTML remain temporary/consult-only, not vendored or relicensed. Native Swete
+page and exact hash were rechecked under the PDF skill. The documentation
+skill kept new evidence separate from the historical form-comparison result.
+No new pixel reading, ImageGen evidence or canon claim is made.
+
+A frozen full-record disclosure candidate preserves Greek/main English words
+and generation/revision history, while adding the substantive mercy note and
+repairing contradictory messenger metadata. Old notes/approvals are archived,
+not transferred. Schema and exact-target full-book preflight passed before any
+canonical installation; only verse4’s notes/marker differ across seven units.
+One report-aware critic checked the exact frozen candidate and source controls,
+finding no blocking defect; the mercy-normalization countercase remains.
+Root installed that candidate through apply_patch. Actual YAML, seven-unit
+export digest and visible notes match preflight exactly, and footnote audit
+passes. No whole-verse, specialist or publication approval is inferred.
+The broader goal and source-priority hold remain active; About integration
+is deferred.
+
+Local validation passed four scoped evidence/application tests, 28 reader-note
+export tests, full reader guard and Git whitespace check. The CI workflow adds
+the scoped test and required frozen baseline fetch, without a new job. Only
+Psalm151:4 differs among translation files. Shared method and unrelated Genizah
+input retain protected hashes; no historical fixture drift is rewritten.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

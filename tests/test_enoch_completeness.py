@@ -40,6 +40,20 @@ class EnochCompletenessTest(unittest.TestCase):
         self.assertTrue(any('Unverified Dillmann verse alignment' in warning for warning in warnings))
         self.assertIsNone(multi_witness.load_verse(7, 2).geez_dillmann)
 
+    def test_chapter_thirteen_scan_cleanup_is_bounded_and_raw_ocr_preserved(self):
+        raw = verse_parser.chapter_path(13).read_bytes()
+        rows, warnings = verse_parser.parse_chapter(13)
+        texts = {row.verse: row.text for row in rows}
+        self.assertIn('*ትዝካረ፡', texts[4])
+        self.assertTrue(texts[6].endswith('ወአስተ።'))
+        self.assertIn('ዐረብ፡ አርሞን፡', texts[7])
+        self.assertIn('በ*አበልስያኤል፡', texts[9])
+        self.assertEqual(raw, verse_parser.chapter_path(13).read_bytes())
+        self.assertTrue(any('scan OCR cleanup' in warning for warning in warnings))
+        with patch.dict(verse_parser.SCAN_OCR_CLEANUPS, {(13,4): (('missing baseline','bad'),)}):
+            with self.assertRaises(ValueError):
+                verse_parser.parse_chapter(13)
+
     def test_missing_dillmann_header_is_not_full_file_witness(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

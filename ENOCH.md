@@ -22,6 +22,21 @@ applies the three-zone scholarly-source policy from
 > translations; source-complete candidates belong outside `translation/`
 > until their bounded source/review/application gates pass.
 
+## Current source-review route (2026-10-07)
+
+Vertex is not required. `tools/enoch/review_source_candidates.py` runs a
+fresh, read-only, ephemeral scan-review pass through the existing
+ChatGPT-signed-in Codex CLI, using its configured model. It does not read or
+extract authentication tokens and never installs or approves translations.
+The bounded transaction remains the separate application gate. Review inputs,
+actual source images, output and provenance hashes are preserved.
+
+Chapters 7–8 were restored by the October 6 bounded application. Chapter 13's
+October 7 package restores clipped 13:4 and absent 13:5–10; it explicitly
+discloses the selected critical edition's uncertain/editorially restored
+readings. Neither that work nor the older inventory constitutes complete-book
+or human-specialist certification. Recompute the audit for current counts.
+
 ## Why Enoch
 
 Four reasons this book warrants a dedicated phase:

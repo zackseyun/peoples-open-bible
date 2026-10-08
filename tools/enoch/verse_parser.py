@@ -43,14 +43,15 @@ _SUPERSCRIPT_TRANSLATION = str.maketrans("", "", "⁰¹²³⁴⁵⁶⁷⁸⁹")
 _MULTI_SPACE_RE = re.compile(r"\s+")
 _EXPLICIT_VERSE_RE = re.compile(r"(?<![0-9])(?P<verse>\d{1,3})\.\s*")
 
-# Bounded OCR cleanups against Charles1906 scan PDF70/72 (printed32/34).
+# Bounded OCR cleanups against Charles1906 scan PDF70/72 and PDF78.
 # Original transcriptions remain untouched. See the enoch_13_20261007 source
-# application package for images, review and before/after provenance.
+# and enoch_14_20261008 packages for images, review and before/after provenance.
 SCAN_OCR_CLEANUPS = {
     (13, 4): (("*ተዝካረ፡", "*ትዝካረ፡"),),
     (13, 6): (("ወእሱተ።", "ወአስተ።"),),
     (13, 7): (("ዐረበ፡", "ዐረብ፡"),),
     (13, 9): (("ወነቂህየ፡", "ወነቂሕየ፡"), ("በ*አብልስያኤል፡", "በ*አበልስያኤል፡")),
+    (14, 24): (("†ግልበቤ†", "†ገልበብት†"),),
 }
 
 

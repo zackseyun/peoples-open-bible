@@ -28,7 +28,7 @@ import argparse
 import json
 import pathlib
 import re
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from typing import Iterable
 
 
@@ -42,6 +42,17 @@ _HEADING_PREFIXES = (
 _SUPERSCRIPT_TRANSLATION = str.maketrans("", "", "⁰¹²³⁴⁵⁶⁷⁸⁹")
 _MULTI_SPACE_RE = re.compile(r"\s+")
 _EXPLICIT_VERSE_RE = re.compile(r"(?<![0-9])(?P<verse>\d{1,3})\.\s*")
+
+# Bounded OCR cleanups against Charles1906 scan PDF70/72 and PDF78.
+# Original transcriptions remain untouched. See the enoch_13_20261007 source
+# and enoch_14_20261008 packages for images, review and before/after provenance.
+SCAN_OCR_CLEANUPS = {
+    (13, 4): (("*ተዝካረ፡", "*ትዝካረ፡"),),
+    (13, 6): (("ወእሱተ።", "ወአስተ።"),),
+    (13, 7): (("ዐረበ፡", "ዐረብ፡"),),
+    (13, 9): (("ወነቂህየ፡", "ወነቂሕየ፡"), ("በ*አብልስያኤል፡", "በ*አበልስያኤል፡")),
+    (14, 24): (("†ግልበቤ†", "†ገልበብት†"),),
+}
 
 
 @dataclass(frozen=True)
@@ -243,6 +254,15 @@ def parse_chapter(chapter: int) -> tuple[list[EnochVerseRow], list[str]]:
                 marker_raw="editorial boundary", chapter_file=last.chapter_file,
             ))
             warnings.append("Restored chapter 6 verse 8 boundary before the chiefs-of-tens sentence.")
+
+    for index, row in enumerate(rows):
+        cleanups = SCAN_OCR_CLEANUPS.get((chapter, row.verse), ())
+        for before, after in cleanups:
+            if row.text.count(before) != 1:
+                raise ValueError(f"Scan-cleanup baseline drift at {chapter}:{row.verse}: {before}")
+            row = replace(row, text=row.text.replace(before, after, 1))
+            warnings.append(f"Applied bounded Charles1906 scan OCR cleanup at {chapter}:{row.verse}: {before} -> {after}")
+        rows[index] = row
 
     verse_numbers = [row.verse for row in rows]
     if verse_numbers and verse_numbers[0] != 1:

@@ -14,6 +14,51 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReaderFootnoteExportTests(unittest.TestCase):
+    def test_genesis_49_10_disclosure_keeps_source_and_repairs_anchors(self):
+        packet = json.loads((ROOT / 'sources/textual_restoration/applications/genesis49_10_disclosure.2026-10-06.v1.json').read_text())
+        raw = (ROOT / packet['target']).read_bytes()
+        record = yaml.safe_load(raw)
+        candidate_raw = (ROOT / packet['candidate']).read_bytes()
+        self.assertEqual(record, json.loads(candidate_raw))
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), packet['application']['yaml_sha256'])
+        self.assertEqual(hashlib.sha256(candidate_raw).hexdigest(), packet['candidate_sha256'])
+        self.assertEqual(record['source'], packet['baseline_source'])
+        self.assertEqual(record['ai_draft'], packet['baseline_generation'])
+        self.assertEqual(record['status'], 'draft')
+        self.assertEqual(record['cross_check'], {'status': 'needs_review'})
+        self.assertNotIn('revision_pass', record)
+        text = record['translation']['text']
+        self.assertIn('Shiloh comes[a]', text)
+        self.assertIn('obedience of the peoples[b].', text)
+        self.assertNotIn('Judah[a]', text)
+        self.assertEqual(text.count('[a]'), 1)
+        self.assertEqual(text.count('[b]'), 1)
+        self.assertEqual(text.replace('[a]', '').replace('[b]', ''),
+                         packet['baseline_english'].replace('[a]', '').replace('[b]', ''))
+        notes = record['translation']['footnotes']
+        self.assertEqual(notes[1], packet['baseline_second_note'])
+        for detail in ('whose right it is', 'tribute comes to him', 'comes to Shiloh',
+                       'not a newly recovered spelling', 'provisionally', 'unresolved'):
+            self.assertIn(detail, notes[0]['text'])
+        archives = {item['field']: item for item in record['review_history']}
+        self.assertEqual(set(archives), {'status', 'revision_pass', 'cross_check',
+                         'translation.text', 'translation.footnotes',
+                         'lexical_decisions', 'theological_decisions'})
+        self.assertTrue(all(not h['certifies_this_candidate'] for h in archives.values()))
+        self.assertTrue(all(not h['historical_review_inputs_verified'] for h in archives.values()))
+        self.assertEqual(archives['translation.text']['value'], packet['baseline_english'])
+        book = exporter.export_book('GEN')
+        self.assertEqual(len(book['chapters']), 50)
+        self.assertEqual(sum(len(ch['verses']) for ch in book['chapters']), 1533)
+        exported = next(v for ch in book['chapters'] if ch['chapter'] == 49
+                        for v in ch['verses'] if v['verse'] == 10)
+        self.assertEqual(exported['text'], text)
+        self.assertEqual(exported['footnotes'], notes)
+        self.assertFalse(packet['decision']['source_changed'])
+        self.assertFalse(packet['decision']['marker_free_main_english_changed'])
+        self.assertFalse(packet['decision']['source_interpretation_settled'])
+        self.assertFalse(packet['decision']['publication_approved'])
+
     def test_hosea_13_14_questions_preserve_promise_and_separate_reception(self):
         packet = json.loads((ROOT / 'sources/textual_restoration/applications/hosea13_14.2026-10-06.v1.json').read_text())
         raw = (ROOT / packet['target']).read_bytes()

@@ -7310,6 +7310,31 @@ PASS for factual/scope claims, not source adoption or English approval. Root
 checks target/XML/article and protected method/Genizah hashes, local link targets
 and whitespace. All canonical records remain unchanged in this pass.
 
+### 2026-10-06 — Genesis 49 10 reader correction applied
+
+Previous goal turn: progress, completing the checked Shiloh/tribute comparison
+and pushing PR72. Root applies its necessary disclosure/rationale correction,
+not a repeated source-preference review. One independent exact-record reviewer
+passes the frozen candidate. Source, generation and marker-free English remain;
+both anchors and the circular personal-name/pronoun rationales are repaired.
+The [application result](GENESIS_49_10_SHILOH_COMPARISON_2026-10-06.md#reader-disclosure-application)
+records seven exact historical archives, active draft/needs_review and unresolved
+source interpretation. No new manuscript reading, deferred עד reanalysis or
+canon change is adopted.
+
+Root's schema and old/candidate/applied full-GEN exports pass: 50 chapters,
+1,533 IDs, one changed reader entry, 1,532 other verse files byte-identical.
+Actual export digest matches preflight and the marker audit is ok. The
+reader-footnote and rationale suites pass all 34 tests, including the new
+targeted regression; protected-file hashes, local links and whitespace pass.
+The documentation skill keeps historical comparison and later application distinct.
+Both PR71 checks succeed; root SHA-pinned merges it as
+cd3ea87e80c40a35d102d222da7c386778d5240e and retargets PR72 to main with its
+head unchanged. Local merge initially fails for disk exhaustion; after state
+inspection and free-space recovery it succeeds and main push is clean. No
+unrelated files or private evidence are deleted. PR72 remains pending at this
+checkpoint; no check bypass or deployed-reader approval is claimed.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

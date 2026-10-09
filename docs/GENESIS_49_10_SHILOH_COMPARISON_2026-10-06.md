@@ -95,3 +95,28 @@ Hebrew controls, Greek and 4Q252 contexts, anchors and three input hashes. Its
 single clarification about the deferred עד proposal is incorporated; it reports
 PASS for the report, not earliest-reading or application approval. Root's five
 input/protected-file pins, local link targets and whitespace checks pass.
+
+## Reader disclosure application
+
+The [application receipt](../sources/textual_restoration/applications/genesis49_10_disclosure.2026-10-06.v1.json)
+now records the separate reviewed correction. Source, original generation and
+marker-free English are unchanged. Note a follows Shiloh comes; note b follows
+obedience of the peoples. The expanded first note names the competing readings
+and their unresolved status, without presenting tribute as recovered spelling.
+The connected personal-name and pronoun rationales no longer use a morphology
+tag or suffix as independent proof. No alternative treatment of עד is adopted.
+
+One exact-record application reviewer passes the frozen
+[candidate](../sources/textual_restoration/candidates/genesis49_10_disclosure.2026-10-06.v1.json),
+not historical priority or a preferred interpretation. Seven old fields are
+archived with exact parsed values and non-certification flags. Active status is
+draft/needs_review; prior model scores do not approve this revision.
+
+Schema, direct preservation/archive checks and phrase anchors pass. Actual
+old/candidate/applied Genesis exports retain 50 chapters and 1,533 verse IDs;
+only 49:10's reader entry changes. The applied export digest matches preflight,
+and all other 1,532 verse files are byte-identical. Footnote audit is ok; receipt
+pins include both book manifests. These are local repository/export checks,
+not deployed-reader verification, whole-verse approval or a settled source form.
+The reader-footnote and rationale suites pass all 34 tests, including the new
+Genesis regression. Protected-file hashes, local links and whitespace also pass.

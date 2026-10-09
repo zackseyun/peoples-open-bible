@@ -1,0 +1,83 @@
+# Publish the POB CDN after Bible text or the public revisions feed changes.
+#
+# Pushes to main touching translation/** or revisions.json invoke the publisher
+# Lambda (cartha-cob-publisher) which rebuilds the compiled POB payload and
+# updates bible.cartha.com/manifest.json; once the manifest reports this
+# commit, the cartha.website rebuild is requested so the same-origin
+# /bibles/pob/* bundle matches. This is content publishing, not an app deploy:
+# it replaces the push-webhook CodeBuild project cartha-open-bible-publish-pob
+# (buildspecs/codebuild-publish-pob.yml) retired in October 2026.
+#
+# Runs on GitHub-hosted runners (free for this public repo) with the
+# cartha-ci-open-bible AWS role over OIDC (CarthaCdkService
+# docs/CI_MIGRATION.md). The role's trust policy is pinned to main.
+name: Publish POB CDN
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'translation/**'
+      - 'revisions.json'
+      - '.github/workflows/publish-pob.yml'
+  workflow_dispatch:
+    inputs:
+      skip_website_sync:
+        description: 'Do not request a cartha.website rebuild afterwards'
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: publish-pob
+  cancel-in-progress: false
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: us-west-2
+  LAMBDA_NAME: cartha-cob-publisher
+  CDN_MANIFEST_URL: https://bible.cartha.com/manifest.json
+
+jobs:
+  publish:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate catalog, numbering and reader corpus
+        run: |
+          python3 -m pip install --quiet pyyaml jsonschema
+          python3 tools/extra_texts/validate_catalog.py --all
+          python3 tools/lint_psalm_numbering.py --strict
+          python3 tools/validate_reader_corpus.py --quiet --malformed-yaml error
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::320447260467:role/cartha-ci-open-bible
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Invoke publisher Lambda (async)
+        run: |
+          set -euo pipefail
+          aws lambda invoke --region "$AWS_REGION" --function-name "$LAMBDA_NAME" \
+            --invocation-type Event --cli-binary-format raw-in-base64-out \
+            --payload '{"force":true}' publish-response.json
+          cat publish-response.json
+
+      - name: Wait for the CDN manifest, then request the website rebuild
+        env:
+          TARGET_SHA: ${{ github.sha }}
+          POB_SKIP_WEBSITE_SYNC: ${{ inputs.skip_website_sync == true && '1' || '0' }}
+        run: scripts/trigger_website_pob_sync.sh

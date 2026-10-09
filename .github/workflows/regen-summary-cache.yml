@@ -1,0 +1,74 @@
+# Fill any missing chapter- and book-level summaries in the
+# BibleSummaryCache-alpha DynamoDB table (tools/gemini_summary_prewarm.py,
+# Gemini on Vertex AI). Re-runs are cheap: when every expected key is present
+# the script exits within seconds.
+#
+# Replaces the daily CodeBuild project cartha-open-bible-regen-summary-cache
+# (buildspecs/codebuild-regen-summary-cache.yml, retired October 2026). Runs
+# on GitHub-hosted runners (free for this public repo) with the
+# cartha-ci-open-bible AWS role over OIDC; the schedule matches the old
+# EventBridge cron (09:37 UTC daily).
+name: Regenerate BibleSummaryCache
+
+on:
+  schedule:
+    - cron: '37 9 * * *'
+  workflow_dispatch:
+    inputs:
+      workers:
+        description: Parallel worker count (Vertex)
+        default: '10'
+        required: false
+      dry_run:
+        description: Count gaps without generating
+        default: 'false'
+        required: false
+
+concurrency:
+  group: regen-summary-cache
+  cancel-in-progress: false
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: us-west-2
+  PREWARM_SECRET_IDS: /cartha/openclaw/gemini_api_key_2
+  VERTEX_SECRET_ID: /cartha/vertex/gemini-sa-3
+
+jobs:
+  regen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install boto3 pyyaml google-auth requests
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::320447260467:role/cartha-ci-open-bible
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Count gaps (dry run)
+        run: |
+          python3 tools/gemini_summary_prewarm.py --dry-run --secret-ids "$PREWARM_SECRET_IDS" | tee gap-report.txt
+
+      - name: Fill missing summaries
+        if: ${{ (inputs.dry_run || 'false') != 'true' }}
+        run: |
+          python3 tools/gemini_summary_prewarm.py \
+            --backend vertex \
+            --workers "${{ inputs.workers || '10' }}" \
+            --secret-ids "$PREWARM_SECRET_IDS" \
+            --vertex-secret-id "$VERTEX_SECRET_ID"

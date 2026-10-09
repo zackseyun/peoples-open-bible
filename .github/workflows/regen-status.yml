@@ -1,0 +1,53 @@
+# Regenerate status.json (tools/build_status.py) and commit it to main.
+#
+# Replaces the 6-hourly CodeBuild project cartha-open-bible-regen-status, which
+# failed 78 of its last 100 runs: build_status.py raises
+#   ValueError: 1_enoch: verses_drafted (880) exceeds verses_total (843);
+#   update the catalog denominator
+# so no snapshot has been committed since 2026-09-28. The schedule stays off
+# until that catalog denominator is corrected; run it by hand after the fix
+# and then re-enable the cron below. Commits use the workflow token (no deploy
+# key) and carry [skip ci] so they trigger nothing else.
+name: Regenerate status.json
+
+on:
+  workflow_dispatch: {}
+  # schedule:
+  #   - cron: '17 */6 * * *'
+
+concurrency:
+  group: regen-status
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  regen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build status.json
+        run: python3 tools/build_status.py
+
+      - name: Commit when changed
+        run: |
+          set -euo pipefail
+          if git diff --quiet status.json; then
+            echo "status.json unchanged — nothing to commit."
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add status.json
+          git commit -m 'status: regenerate snapshot [skip ci]'
+          git push origin HEAD:main

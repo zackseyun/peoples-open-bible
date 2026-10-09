@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 # trigger_website_pob_sync.sh — after bible.cartha.com publishes a new POB
-# manifest, start the cartha.website pipeline so the same-origin static
+# manifest, ask for a cartha.website rebuild so the same-origin static
 # /bibles/pob/* bundle is rebuilt from that exact upstream version.
+#
+# The rebuild is the GitHub Actions workflow zackseyun/cartha.website deploy.yml
+# (Azure CI runner). It is dispatched through the AWS Lambda
+# cartha-ci-website-deploy-if-changed with {"force": true}, which keeps the
+# GitHub token in AWS Secrets Manager (CarthaCdkService docs/CI_MIGRATION.md).
+# The retired CodePipeline cartha-website-pipeline was started here before
+# October 2026.
 
 set -euo pipefail
 
@@ -10,13 +17,11 @@ if [[ "${POB_SKIP_WEBSITE_SYNC:-0}" == "1" ]]; then
   exit 0
 fi
 
-WEBSITE_PIPELINE_NAME="${WEBSITE_PIPELINE_NAME:-cartha-website-pipeline}"
-WEBSITE_PIPELINE_REGION="${WEBSITE_PIPELINE_REGION:-us-west-2}"
+WEBSITE_DISPATCH_LAMBDA="${WEBSITE_DISPATCH_LAMBDA:-cartha-ci-website-deploy-if-changed}"
+WEBSITE_DISPATCH_REGION="${WEBSITE_DISPATCH_REGION:-us-west-2}"
 CDN_MANIFEST_URL="${CDN_MANIFEST_URL:-https://bible.cartha.com/manifest.json}"
 MANIFEST_WAIT_ATTEMPTS="${POB_MANIFEST_WAIT_ATTEMPTS:-30}"
 MANIFEST_WAIT_SECONDS="${POB_MANIFEST_WAIT_SECONDS:-10}"
-PIPELINE_IDLE_ATTEMPTS="${POB_WEBSITE_PIPELINE_IDLE_ATTEMPTS:-60}"
-PIPELINE_IDLE_SECONDS="${POB_WEBSITE_PIPELINE_IDLE_SECONDS:-10}"
 
 say() { printf '[website-sync] %s\n' "$*"; }
 
@@ -81,31 +86,13 @@ else
   say "target SHA unavailable; triggering website pipeline without manifest SHA gate"
 fi
 
-pipeline_busy() {
-  aws codepipeline get-pipeline-state \
-    --region "$WEBSITE_PIPELINE_REGION" \
-    --name "$WEBSITE_PIPELINE_NAME" \
-    --query 'stageStates[].latestExecution.status' \
-    --output text 2>/dev/null | grep -qw InProgress
-}
-
-for i in $(seq 1 "$PIPELINE_IDLE_ATTEMPTS"); do
-  if ! pipeline_busy; then
-    break
-  fi
-  say "website pipeline already in progress; waiting before starting a fresh post-POB run ($i/$PIPELINE_IDLE_ATTEMPTS)"
-  sleep "$PIPELINE_IDLE_SECONDS"
-done
-
-if pipeline_busy; then
-  echo "[website-sync] website pipeline is still busy; refusing to claim the POB website bundle is refreshed" >&2
-  exit 1
-fi
-
-EXECUTION_ID="$(aws codepipeline start-pipeline-execution \
-  --region "$WEBSITE_PIPELINE_REGION" \
-  --name "$WEBSITE_PIPELINE_NAME" \
-  --query 'pipelineExecutionId' \
-  --output text)"
-
-say "started $WEBSITE_PIPELINE_NAME in $WEBSITE_PIPELINE_REGION (execution $EXECUTION_ID)"
+RESPONSE_FILE="$(mktemp)"
+aws lambda invoke \
+  --region "$WEBSITE_DISPATCH_REGION" \
+  --function-name "$WEBSITE_DISPATCH_LAMBDA" \
+  --cli-binary-format raw-in-base64-out \
+  --payload "{\"force\": true, \"reason\": \"pob ${TARGET_SHA_RESOLVED:-unknown}\"}" \
+  "$RESPONSE_FILE" >/dev/null
+say "requested cartha.website rebuild via $WEBSITE_DISPATCH_LAMBDA: $(cat "$RESPONSE_FILE")"
+grep -q '"dispatched": true' "$RESPONSE_FILE" || { echo "[website-sync] website rebuild was not dispatched" >&2; exit 1; }
+rm -f "$RESPONSE_FILE"

@@ -2,6 +2,12 @@
 
 ## Current answer to the two research questions
 
+October10 breadth follow-up: [eight critical-edition routes](OT_EDITION_REGISTRY_RECONCILIATION_2026-10-10.md)
+are reconciled into the central registry. This closes named discovery gaps and
+corrects the stale OHB access history, not source priority or a new text finding.
+The40 mixed registry records are not40 ancient witnesses; full collation and
+remaining source-family reconciliation are still incomplete.
+
 October10 next distinct unit: [Daniel7:13–14](DANIEL_7_SOURCE_FORMS_COMPARISON_2026-10-10.md)
 retains the Aramaic provisionally and holds priority. Actual publisher OG has
 a comparison clause where Aramaic has a destination; NETS's OG English has

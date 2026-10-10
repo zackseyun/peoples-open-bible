@@ -8064,6 +8064,34 @@ origin/main and the normal main push succeeds without rewriting history.
 The subsequent reader head requires its own exact-head checks; it inherits
 no approval from these preceding merges.
 
+### 2026-10-10 — Eight edition routes reconciled without witness-count inflation
+
+The [registry packet](OT_EDITION_REGISTRY_RECONCILIATION_2026-10-10.md) follows
+the Daniel application with a breadth task from the coverage plan. One local
+reconciliation lane and a separate bounded critic identify/register BHQ, BHS,
+HUBP, HBCE Proverbs2015, Göttingen, Schorch Samaritan, publisher RH2006 and
+WG2007 beyond Psalter. Eight modern routes raise the mixed registry32→40,
+not a physical witness count. Thirty-one existing rows remain unchanged; the
+sole old-row correction recognizes the already recorded OHB Deuteronomy browser
+consultation with no invented local PDF/hash or other-sample reading. NETS stays
+an English companion. Canonical/source/method/doctrine/schema bytes are unchanged.
+
+Primary project/publisher metadata is actually read; full editions/apparatuses
+are not. The critic passes the exact candidate, preserving the nonblocking
+HBCE notice-February/current-catalogue-April2015 distinction. Root confirms
+the catalogue; no exact month or ancient chronological advantage is claimed.
+Fourteen focused/guard tests pass in0.222s. The broader validator has six
+existing comparison-baseline drifts;50registry tests produce48passes/two
+historic Samuel/Ps145 failures. These do not consume the changed registry and
+old/new coverage checks agree. No unrelated fixture or source changes hide them.
+
+The documentation skill preserves limits and failures in Git. Metadata route
+errors, truncated/syntax-error reads and an unnecessarily expanded initial
+serialization are corrected as described in the report. No restricted source
+import, new decipherment, ImageGen evidence, canon change or About publication
+occurs. All-citation reconciliation and object-level coverage remain open.
+Daniel PR99's exact-head checks remain separate from this successor packet.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

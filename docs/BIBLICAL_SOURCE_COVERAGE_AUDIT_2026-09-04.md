@@ -1,5 +1,12 @@
 # OT and NT source coverage: audit and comparison plan
 
+October10 bounded follow-up: the
+[critical-edition registry reconciliation](OT_EDITION_REGISTRY_RECONCILIATION_2026-10-10.md)
+adds eight edition routes and corrects the previously consulted OHB sample's
+stale access label. Current registry:40 mixed records, not a manuscript count.
+All-citation reconciliation and complete object/passage collation remain open;
+the dated counts below describe their original snapshots.
+
 Initial audit: 2026-09-04; Latin and Leviticus follow-ups: 2026-09-05. Companion to [method 2.0](TEXTUAL_ADJUDICATION_METHOD.md)
 and the [approach review](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md).
 
@@ -551,6 +558,7 @@ means the source has been adjudicated or the English approved.
   larger pointing/qere queue without treating normalization as source change.
 - [ ] Reconcile the OT registry with sources already cited in comparisons;
   add missing critical-edition/version families without counting them as objects.
+  The October10 eight-route packet completes a bounded part, not all citations.
 - [ ] Create a catalogue-backed NT object/coverage ledger. No such completed
   ledger was produced by this documentation audit.
 - [ ] Save dated catalogue discovery results and publication/access gaps for

@@ -7505,6 +7505,12 @@ message mistakenly says fourteen inputs; counting the actual mapping confirms
 thirteen, without changing any pin. No corpus tests are rerun for this
 comparison-only documentation, and no application is certified by those checks.
 
+During this comparison, both PR83 exact-head corpus-integrity checks complete
+successfully. Its SHA-pinned remote merge succeeds at
+c91da6e9d27c66ea2ce7a1793fd4bfe218c7da34; local main is fetched and integrated
+into the comparison branch. PR84's disclosure head remains unchanged and its
+own two checks are still running at the next observation.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

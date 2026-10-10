@@ -7735,6 +7735,27 @@ code digest; restoring that line returns exactly to the judged digest rather
 than transferring its approval to different bytes. One documentation patch
 fails harmlessly on an unnecessary context hunk; the corrected patch succeeds.
 
+### 2026-10-10 — integrate the reviewed Isaiah application and safeguard
+
+The safeguard is committed/pushed at df50e9cf52b7c06de48f05a748ed38670bfbea93
+and opened as PR90 stacked on PR89. Both PR88 corpus checks finish successfully,
+but a SHA-pinned merge returns HTTP405. A bounded read-only state inspection
+then confirms mergeable=false/dirty; the exact-head retry's response explicitly
+says “Pull Request has merge conflicts.” PR88 is not merged and PR89 is not
+retargeted. A branch-protection lookup returns404, so no protection configuration
+is inferred from that unavailable route. No parent check approves a later head.
+
+Current main e90972ace0f143fc3c1119a677d7242ce7885736 is merged locally into
+the combined descendant at 5e40e621ff73fe19fbdf04dc0bf8b0ad0e94f61e. Git completes
+the merge without conflicts and the entire tree is byte-identical to the reviewed
+guard head df50e9cf52b7c06de48f05a748ed38670bfbea93. No qere candidate, application
+receipt, reviewer-bound code/test or protected file changes. A new integration
+branch carries that merge plus this delivery log, preserving the remote frozen
+heads of PR88/89/90. The intended replacement consolidates all three in one PR
+against current main, with fresh exact-head corpus checks rather than inherited
+CI approval. Superseded proposals may be closed only after that replacement is
+confirmed open. This is a delivery reconciliation, not another textual vote.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

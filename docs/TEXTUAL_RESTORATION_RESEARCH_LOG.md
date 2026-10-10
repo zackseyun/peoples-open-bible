@@ -8686,6 +8686,69 @@ its own checks and predecessor-order delivery; pending jobs are not failed
 jobs or a reason to alter a frozen head. Local main remains the verified
 PR108 merge. The protected unrelated Genizah file is unchanged and excluded.
 
+### 2026-10-10 — Samaritan Exodus target apparatus access and delivery
+
+The previous feature packet is committed at
+`7711a60aefa0ccd2423c13a6d10dd49bcb1314fe` in PR111. Its required attachment
+attempt fails with `thread attachment identity count exceeds 100`; no old
+research attachments are removed. The PR URL remains available directly:
+https://github.com/zackseyun/peoples-open-bible/pull/111 . This product limit
+does not invalidate the evidence or authorize deleting the research history.
+
+PR109's exact reviewed head `c4b5f637e53cc93a695c9b3f6c00d5b7f59b2c7e`
+passes both own corpus-integrity checks114311320990/114310939040. With PR108
+already merged, the SHA-pinned merge succeeds at
+`76f0beb09c6ddcd9b938074f7a613111d45d20a4`. Root fetches and verifies its
+tree equals the approved head, verifies ancestry and that main is not checked
+out elsewhere, then performs a guarded local-main fast-forward and normal
+push (already up to date). This delivers the Genesis2:2 reader application,
+not a sixth-day source adoption or deployed publication certification.
+PR110/111 remain pending their own checks at this acquisition's start.
+
+A stale priority inventory suggests Jeremiah's book-order case is queued;
+the actual October6 report shows it completed. Root corrects that assumption
+and does not repeat the comparison. This is a navigation correction, not new
+textual evidence. The next bounded task follows the feature report's actual
+gap: Exodus19:24 manuscript/apparatus access.
+
+One acquisition agent checks the official project, series and Exodus volume,
+then the complete dataset-paper page3 and its rendering. Root separately
+reads the institutional body and fetches the two publisher HTML responses.
+The [access report](SAMARITAN_EXODUS_APPARATUS_ACCESS_2026-10-10.md) and
+[receipt](../sources/textual_restoration/discovery/samaritan_exodus_apparatus_access.2026-10-10.v1.json)
+record ahead-of-publication status and a planned November2 date, not target
+apparatus access. Search leads from retailers are not used to establish the
+publisher status. Web-reader failures do not establish a paywall: ordinary
+HTTP succeeds. No guessed PDF endpoint, purchase or account action is taken.
+The paper explains supplied main text but does not call Exodus unpublished.
+
+The documentation skill keeps access metadata distinct from observed letters,
+interpretation and application. Only the existing Schorch edition-family row
+is qualified; it remains metadata, with40 mixed records and no added ancient
+witness. The two digital spellings, lexical interpretations, physical marks,
+historical edits and priority remain distinct. POB source/English/notes and
+canon labels stay unchanged. Park this lane until the named new target access;
+no scheduled task or repeated preference vote is created.
+
+Root's five edition-registry tests pass in0.101s, including schema and evidence
+boundaries. Whitespace, local report links, receipt flags, unchanged translation
+diff, the one-row registry scope and protected Genizah hash pass. These scoped
+checks do not repair the six previously recorded historical-baseline errors or
+certify the whole corpus. No reader export is needed for this metadata-only pass.
+
+One independent bounded critic passes the report at SHA256
+`96ca8970f58efb447bb8f5b6a6f0e5c8b1c95dc3e2c2863fe29698718dd9c2ee`
+and access receipt at
+`93889fb755dcf8674d7f8611e69f8f699505719f3b659e12bf37830759982723`.
+It independently reads both publisher bodies and the institutional scope,
+visually checks complete paper page3, verifies registry isolation, links,
+unchanged YAML and PR109's merge tree, and runs the same five tests in0.094s.
+No substantive correction or repeat vote is required. At21:21UTC PR110's
+check114312900718 succeeds while114312842163 remains running; both PR111
+checks114314866393/114314791643 remain running. Each frozen head retains
+its own gates and predecessor-order delivery; no pending package is claimed
+merged or published.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

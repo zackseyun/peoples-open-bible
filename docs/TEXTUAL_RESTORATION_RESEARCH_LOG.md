@@ -7465,6 +7465,26 @@ All36 reader-footnote and rationale tests pass. The new regression binds the
 reader notes to the saved candidate/application and verifies preserved source,
 main English, generation/history and historical non-certification.
 
+### 2026-10-10 — Samuel disclosure integration after completed checks
+
+Both PR84 exact-head corpus-integrity checks succeed, but GitHub rejects the
+SHA-pinned merge with HTTP405 and reports mergeable=false/dirty against main.
+The reviewed8ce7bb1413cb71b0f17e8e67c24398e1b3bc3070 head is preserved.
+Root creates a separate integration branch from that head and merges current
+main locally; Git's ort strategy completes without manual conflict resolution
+or any file-content change. An early merge command reaches the prior branch
+while checkout is still yielding; after the checkout handle completes, the
+intended integration-branch merge is run and verified. No checkout is restarted.
+
+The exact candidate, applied YAML, complete1SA application manifest and protected
+method/Genizah hashes remain unchanged. Prior36-test results apply to the same
+content; they are not presented as a new test run. The integration merge needs
+new exact-head CI checks and replaces the unmergeable delivery route, not the
+source argument or full-record reviewer. The Psalm comparison's published head
+also remains frozen; it will target the integration dependency until main
+contains the disclosure. No source/English reinterpretation occurs in this
+integration repair.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -1999,3 +1999,73 @@ discriminating source relationships/earlier version states, fuller apparatus,
 independently evidenced gap geometry, or a stronger tested transmission argument.
 The result is a useful known-variant comparison and corrected preservation
 assessment, not newly discovered source text or a basis for canon expansion.
+
+
+## Plate feasibility and historical validation on October 10
+
+PR119 is delivered after both own exact-head checks114337934876/114337858950
+complete-success and PR118's merge is reverified. SHA-pinned merge produces
+`abbcd33ab504a9356e5dab48a095ca0f2801a4a0`. Approved119-head and merge trees
+both equal `6bc9478a84a496354d2aff68e3d869aabaa2ed0b`;118 ancestry is verified.
+No other worktree has main checked out. Guarded local main advances from
+1ef2dc05 to abbcd33a, and a normal push reports already up to date. This
+publishes the held Genesis10:4 comparison, not its unapplied R proposal.
+
+PR120 is committed/pushed at `ce758861ad14610f3ff0c8db3627b5a7a52e8967`
+([PR120](https://github.com/zackseyun/peoples-open-bible/pull/120)). Its five
+final focused tests pass in0.018s;11 task-only files add1065lines. Attachment
+is attempted but rejected at the thread's100-identity cap; no old attachments
+are removed. Its own checks114341052172/114341024150 remain in progress at
+23:51UTC. The frozen head is not amended to record delivery events.
+
+Two bounded agents audit coverage and restoration readiness. Existing all-book
+mapping already contains39 books and318 book/source pairs, all marked
+reading-support not assessed in that historical screen. Separate later dossiers
+supply case evidence; these are not an all-source collation of all39 books.
+The formal pilot coverage count is corrected:13 comparison cases,20 coverage
+records but12 distinct references; Exodus30:6 lacks a formal coverage record.
+No new all-book inventory is built. The existing machine observation pilot
+produced zero Hebrew letters; unchanged En-Gedi experiments are not repeated.
+
+Root performs the genuinely new [Samuel plate feasibility check](SAMUEL_15_7_PLATE_FEASIBILITY_2026-10-10.md),
+visually reading complete DJD plates XIX/XXVI and printed154/264/265. Preliminary
+page estimates reached other plates/bibliography; actual labels correct the
+navigation. Publication montages and608x800 principal embedded rasters cannot
+establish the continuous missing interval. Rendering at1825x2400 adds no
+manuscript resolution. No calibrated fit experiment, coordinates or width
+intervals are fabricated. The9/8-letter counts are not geometry; the edition's
+15:14 line-length argument is not15:7 evidence. This acquired-scan lane stops;
+HOLD remains unchanged, without asserting that both forms fit or that future
+geometry is impossible. No ImageGen, new ink recovery or canonical change.
+
+The coverage agent repairs historical/live test semantics in two authorized
+files. The strict validator stays unchanged and still reports six live baseline
+drifts:GEN4:8,EXO12:40,DEU27:4,DEU32:43,1SA17:4,PSA145:13. No receipt is
+repinned and no current reading is approved by replay. The two original
+Samuel/Psalms assertions run with original code/data at immutable7637f998;
+all six relevant baseline hashes are verified before extraction. The bounded
+archive is84.67MiB. An initial missing module-load catalog dependency fails
+closed before tests; adding that exact immutable dependency resolves it.
+Historical replay validates the original Samuel receipt, not its later revised
+metadata. Separate synthetic live fixtures check current metadata and unknown
+byte rejection without saving any synthetic hashes. Agent validation:54 registry
+tests pass8.669s,7 isolation tests pass0.005s, original2 historical tests pass
+with zero skips or expected failures. CI fetches7637f998 and registers the live
+suite, isolation suite and3 cheap plate-receipt guards. Root independently
+passes3 plate guards0.001s and7 isolation tests0.006s; the live CLI's six-drift
+exit1 is explicitly retained, not reported as a passing current-corpus check.
+Root independently runs all54 registry tests successfully in15.573s; workflow
+YAML parses. These tests establish validation behavior, not textual priority.
+
+The protected unrelated Genizah discovery remains untouched and untracked.
+This milestone is an evidence-limited comparison and validation repair, not a
+novel source-text discovery, optimal whole-corpus translation or canon expansion.
+
+One [bounded independent review](../sources/textual_restoration/comparisons/coverage_plate_review.2026-10-10.v1.json)
+passes the seven exact inputs and their limits. The judge independently reads
+the five relevant PDF pages, checks original replay inputs and unsafe paths,
+and passes3 plate,7 isolation and3 focused negative/live tests. It does not
+duplicate the54-test archive run or approve textual priority. An incidental
+EOF blank line outside the seven inputs is caught and removed before commit.
+Root also passes the unchanged Samuel5-test suite0.020s. No unchanged-input
+preference loop is performed.

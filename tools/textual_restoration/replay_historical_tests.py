@@ -6,6 +6,7 @@ history, Python's current installed dependencies, and temporary disk space.
 """
 from __future__ import annotations
 
+import hashlib
 import json
 from pathlib import Path
 import subprocess
@@ -27,6 +28,10 @@ SUITES = {
         "test_historical_comparison_does_not_hide_unrelated_canonical_drift",
         "test_historical_control_comparison_detects_specific_mutated_baseline_hash",
     )], 5),
+    "registry_samuel_psalms": ([_REGISTRY + name for name in (
+        "test_current_registry_coverage_and_selections",
+        "test_psalms_case_and_coverage_validate",
+    )], 2),
 }
 ARCHIVE_ROOTS = (
     "tools", "tests", "docs", "schema", "schemas", "translation/ot",
@@ -62,6 +67,46 @@ def _archive_paths(repo):
     return [*ARCHIVE_ROOTS, *sorted(extra)]
 
 
+def _registry_controls_archive_paths(repo):
+    """Exact original assertions and their inputs, not a whole-corpus archive.
+
+    The Samuel receipt subsequently gained evidence metadata. This replay uses
+    its original immutable version, not current receipts or current code.
+    """
+    prefix = "sources/textual_restoration/"
+    comparisons = ("pentateuch_controls", "samuel_controls", "psalms_controls")
+    paths = ["tools", "tests/test_ot_witness_registry.py",
+             "sources/ot/wlc", "sources/ot/uwhb", "sources/lxx/swete",
+             "sources/early_christian_texts/catalog.json"]
+    paths += [prefix + "ot_witness_registry.v1.json",
+              prefix + "selections/ot_critical_source_pilot.v1.json",
+              prefix + "decisions/hebrew_pilot.v1.json"]
+    paths += [prefix + "coverage/" + name + "_pilot.v1.json"
+              for name in ("pentateuch", "samuel", "psalms")]
+    targets = set()
+    checked = 0
+    for name in comparisons:
+        rel = prefix + "comparisons/" + name + ".v1.json"
+        paths.append(rel)
+        data = json.loads(git(repo, "show", f"{COMMIT}:{rel}"))
+        for case in data["cases"]:
+            baseline = case["baseline"]
+            target = baseline["repo_path"]
+            if (not target.startswith("translation/ot/")
+                    or ".." in Path(target).parts
+                    or any(c in target for c in "*?[:\\")):
+                raise ValueError("Invalid historical control baseline path")
+            targets.add(target)
+            if name != "pentateuch_controls":
+                raw = git(repo, "show", f"{COMMIT}:{target}")
+                if hashlib.sha256(raw).hexdigest() != baseline["sha256"]:
+                    raise ValueError(f"Historical control baseline drift: {case['id']}")
+                checked += 1
+    if checked != 6:
+        raise ValueError("Historical Samuel/Psalms baseline coverage mismatch")
+    return [*paths, *sorted(targets)]
+
+
 def run_suite(name: str, *, repo: Path = ROOT):
     """A nonzero child, missing test, skipped check or wrong count is a failure."""
     if name not in SUITES:
@@ -72,7 +117,9 @@ def run_suite(name: str, *, repo: Path = ROOT):
     if resolved != COMMIT:
         raise ValueError("Historical commit resolution mismatch")
     names, count = SUITES[name]
-    archive = git(repo, "archive", "--format=tar", COMMIT, "--", *_archive_paths(repo))
+    paths = (_registry_controls_archive_paths(repo)
+             if name == "registry_samuel_psalms" else _archive_paths(repo))
+    archive = git(repo, "archive", "--format=tar", COMMIT, "--", *paths)
     with tempfile.TemporaryDirectory(prefix="pob-historical-tests-") as directory:
         extract_regular(archive, Path(directory))
         del archive

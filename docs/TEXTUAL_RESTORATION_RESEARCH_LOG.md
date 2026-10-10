@@ -7465,6 +7465,46 @@ All36 reader-footnote and rationale tests pass. The new regression binds the
 reader notes to the saved candidate/application and verifies preserved source,
 main English, generation/history and historical non-certification.
 
+### 2026-10-10 — Psalm 8 5 Hebrew referent comparison
+
+The previous turn makes concrete progress through Samuel6:19's separately
+reviewed disclosure application, commit/push8ce7bb1413cb71b0f17e8e67c24398e1b3bc3070
+and PR84. This turn confirms PR83/84's exact-head checks remain live, leaving
+both reviewed heads frozen, and starts a distinct Psalm comparison branch.
+
+The [Psalm8 report](PSALM_8_5_REFERENT_COMPARISON_2026-10-10.md) compares God and
+heavenly beings against unchanged Hebrew, the whole Psalm, Genesis/Psalms usage,
+selected Greek and the related Hebrews quotation. Actual OSHB and BDB controls
+identify Piel, contradicting inherited Hiphil metadata. The noun's formal shape
+does not compel God. A predeclared contract pins the inputs, rubric and outcomes.
+One separate reviewer receives alternatives without their POB identities, in
+the opposite order to root, and finds a tie with modest contextual advantage
+for God. Root provisionally retains current English; neither assessment excludes
+the divine-being interpretation or makes an ancient manuscript vote.
+
+Published5/6Hev1b frg1i24 supplies the disputed comparison inside brackets; its
+pointed Psalm parallel is not surviving ink. A third-party search lead suggesting
+4Q83 is not adopted; the queried primary transcription has no Psalm8 reference.
+This is a bounded coverage check, not a Psalms manuscript census. The publisher
+SBLGNT route is unavailable, so actual pinned local MorphGNT/SBLGNT controls are
+used. A GreekPsalm96 follow-up supplies no usable body and contributes no claim.
+An overbroad morphology search truncates; explicit-reference XML extraction
+supplies the actual evidence. No ImageGen or fresh transcription is needed for
+this lexical comparison, and no supplied word is promoted into visible ink.
+
+The documentation skill keeps the evidentiary comparison separate from a future
+full-record application. Source, English and canonical record remain unchanged.
+Piel and false compulsory-God rationale correction with qualified reader
+disclosure is the next useful application; discriminating evidence or a specific
+stronger usage argument is required to reopen main-English choice. No newly
+recovered Hebrew, general translation-superiority result or canon recommendation.
+
+JSON structure, all 13 pinned inputs, unchanged canonical Psalm, protected
+method/Genizah hashes, local links and whitespace pass. An initial validation
+message mistakenly says fourteen inputs; counting the actual mapping confirms
+thirteen, without changing any pin. No corpus tests are rerun for this
+comparison-only documentation, and no application is certified by those checks.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

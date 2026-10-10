@@ -2,6 +2,13 @@
 
 ## Current answer to the two research questions
 
+October10 separate reader application: [Proverbs30:3](PROVERBS_30_3_NEGATION_COMPARISON_2026-10-06.md#october10-publisher-versions-and-separate-reader-disclosure)
+now has an independently reviewed polarity disclosure applied as draft. Source and main English
+stay unchanged; selected Latin is both-negative, Greek both-positive, neither
+settles Hebrew scope. Actual full-book overlay changes only this unit and keeps
+both notes. Seven focused and45shared tests pass; publication and original
+priority are not approved by this application or the earlier source comparison.
+
 October10 actual version follow-up: [Proverbs30:1 Greek/Latin controls](PROVERBS_30_1_SOURCE_COMPARISON_2026-10-06.md#october10-publisher-greek-and-latin-controls)
 are inspected on the identified publisher parallel page. Latin presence/
 strengthening differs from Greek trust/ceasing; neither simply attests repeated

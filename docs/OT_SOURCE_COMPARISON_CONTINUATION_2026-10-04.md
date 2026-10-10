@@ -1668,3 +1668,137 @@ seconds. The actual baseline diff contains no translation-file changes,
 whitespace checks pass and the protected unrelated Genizah hash remains exact.
 PR116's two own checks are still running; this physical-control supplement
 must also pass its own exact-head checks and follow predecessor order.
+
+## Psalm 73 10 written and read forms on 2026 10 10
+
+The preceding physical-control supplement was committed and pushed at
+`0dd2177731960ad1e4fa324865b91c4366204807` and opened as
+[PR117](https://github.com/zackseyun/peoples-open-bible/pull/117).
+The required attachment attempt failed with the existing 100-identity cap;
+no earlier attachment was removed. Its own checks114332011467/114331975216
+were still running at the start of this continuation. Frozen PR117 and prior
+receipts are not amended to pretend later delivery events were already known.
+
+Root starts a genuinely new comparison, rather than repeating the held Jeremiah
+choice. Psalm73:10 currently selects written ישיב and causative English.
+One bounded Hebrew/Syriac agent verifies the actual WLC XML and an already
+available pinned UXLC archive. One Greek/Latin agent reads complete publisher
+chapters, edition footers and actual Swete II pages with its own conventions.
+Root reads the full29-record Psalm73 context and independently verifies the
+actual XML operation and a correctly controlled QDR screen. Their acquired
+results and limitations are frozen in the
+[comparison](PSALM_73_10_WRITTEN_READ_COMPARISON_2026-10-10.md).
+
+The actual qere יָשׁ֣וּב is Qal, while the written form is unpointed and tagged
+Hiphil. “His people return” changes the grammatical agency from an unnamed
+causative subject bringing the people back to the people themselves returning.
+This is an already published Hebrew reading, not a recovered autograph.
+Selected Greek, Syriac and Latin broadly support returning people, but their
+possessive and second-clause differences do not establish exact retroverted
+Hebrew. Greek-dependent Latin is not another independent Hebrew vote.
+The proposed source does not combine Greek “my” or “days” with Hebrew wording.
+
+The strongest contrary argument is retained: the qere could regularize a
+difficult earlier written form. No discriminating chronological Hebrew contrast
+is acquired, so original priority remains unresolved even if the reading is
+adopted provisionally. “His,” “here,” the water clause and note b are preserved;
+their interpretation is not newly settled. Local QDR has no indexed73:9–12
+hit but correctly returns22:17 positive controls. No local hit is neither an
+attested omission nor a complete census of the discovered scrolls.
+
+The first preflight rejects an unsupported custom edition label. The candidate
+is corrected to schema-supported WLC with an explicit selected-reading note,
+without changing schema or claiming the raw source is unchanged. A second
+preflight catches that the generic-loader overlay exercises no Psalms change:
+the real exporter directly reads normalized files. That assertion fails rather
+than passing a false simulation. The corrected exact Path.read_text target
+overlay runs the actual whole-book exporter. It has150chapters2578units,
+only73:10 changes, and2577 non-target file hashes remain exact.
+The29 chapter-context pins, source/contract/candidate hashes and export digests
+are retained. Three initial source/schema/history/claim-boundary tests pass
+in0.075seconds.
+
+One independent exact-candidate critic `/root/psalm73_10_exact_judge` passes
+candidate SHA256
+`b922a3163e92208793e59852956f11a0607e3539a41c4e3e87deecfb92270dd5`.
+It independently checks WLC/UXLC, all29 context records, schema, eight exact
+archives and original generation/three-revision prefix; reproduces both complete
+export digests and the2577-file manifest; and reopens actual Greek, both Latin
+Psalters and CAL bodies/metadata/G-stem analysis. It does not independently
+reinspect Swete pixels, conduct a blind English preference experiment or
+approve earliest wording/publication. Its inherited “by them” versus later
+“for them” lexical-metadata observation is retained as out of scope, not
+quietly turned into a second-clause adjudication.
+
+The exact reviewed candidate is applied as draft/needs_review. It selects one
+recorded qere word and changes only corresponding first-clause English, with
+the written causative explicitly retained in a note. Eight old fields are
+archived without conferring approval on the new source; original generation
+and existing revision entries remain intact. Actual applied-export checks and
+the separate pinned receipt must complete before source-loader registration.
+A bounded integration agent generalizes only the explicit ISA9:2 and PSA73:10
+code-trusted registrations, with distinct actual qere morphology. No global
+qere policy or automatic canonical regeneration is introduced.
+
+This continuation also delivers PR116. Both exact-head checks114330330049/
+114330291404 complete-success. With predecessor115 merged and headfe6d312
+verified, SHA-pinned merge succeeds at
+`3c85a98160fd4ecc45a3c4c098f27824348faa2c`.
+Root fetches, confirms approved-tree equality and predecessor ancestry, verifies
+main is not checked out elsewhere, guard-advances local main from2df8476 and
+pushes normally, already up to date. This verifies repository delivery, not
+a deployed reader. PR117 still requires its own two successful checks.
+
+The documentation skill preserves current decisions and the actual failure/
+correction trail in Git. The productive contribution here is a bounded Hebrew
+source-choice correction affecting meaning, not more agreement scores.
+Additional effort should target discriminating evidence or a genuinely new
+passage. Novel decipherment, a proven optimal corpus, exhaustive OT/NT coverage
+and religious canon expansion are not demonstrated by this application.
+The protected unrelated Genizah file remains excluded and byte-identical.
+
+## Psalm 73 10 applied verification and drafting safeguards
+
+The actual saved YAML matches the independently reviewed candidate exactly:
+SHA256 `9eebb599865befa85a1caf2a5add5a7ad29c749e68cc31e2fe199c3674aa4df8`.
+Actual complete Psalms export matches the candidate preflight digest, with
+150chapters2578units and2577 byte-identical non-target verse files. Schema,
+both reader notes, footnote audit, immutable upstream and protected pins pass.
+The [application receipt](../sources/textual_restoration/applications/psalm73_10_written_read.2026-10-10.v1.json)
+binds the exact candidate, contract, review and actual applied checks.
+
+The v2 selected-source registry preserves ISA9:2's entry exactly and adds only
+PSA73:10 with pinned candidate/receipt/schema/WLC inputs. Its actual digest
+`f2969236b50e7717d2bef9b9450ce07cfde469e3e5d3298373af8c3418fc1374`
+is bound in code. WLC written base remains immutable. The copied selected Word
+retains actual lemma7725, Qal morphologyHVqi3ms and ID19h5B in prompting,
+validation and provenance. Arbitrary index changes, source-disclosure drift,
+raw-word/morphology drift and post-generation input changes fail closed.
+Selected redrafting emits an unapproved candidate only; it cannot automatically
+write canonical YAML or silently revert to the causative.
+
+Forty-one focused resolver/drafting/raw-guard tests pass in3.219seconds.
+Five exact application tests, including the full historical Psalms exporter,
+pass in26.614seconds. The independent critic makes a separate bounded software
+check of the newly implemented integration, preserves the earlier source verdict
+without repeating preference votes, and reports no blocker. It independently
+reruns41tests in3.101seconds and three cheap application checks in0.079seconds.
+
+The whole reader-corpus validator exits0 with malformed YAML treated as error.
+A broader61-test attempt has60passes and one actual failure in55.439seconds:
+the frozen Psalms source map assumes every WLC-labeled source equals the ketiv
+string and therefore rejects this explicitly selected qere. This failure is
+not hidden as an all-green suite. The corrected mapping test accepts only
+PSA73:10's exact code-pinned reviewed selection through the fail-closed resolver,
+then maps its immutable written base. All other source mappings and the existing
+Psalm145 critical validation stay strict; the frozen inventory is not rewritten.
+The corrected full mapping test passes in1.919seconds. No general license to
+ignore source-text mismatches is introduced.
+
+The main text now says “Therefore his people return here,” with the written
+“he brings his people back” preserved at the affected clause's note. This is
+a valid scoped contribution to POB's working source/translation, using an
+already attested Hebrew reading. It neither settles earliest wording nor proves
+a new discovery, global optimum, canon expansion or deployed reader update.
+Task-only Git delivery remains subject to predecessor117 and this package's own
+exact-head checks. The unrelated Genizah file stays untracked and untouched.

@@ -22,9 +22,27 @@ except ModuleNotFoundError:
     from tools import wlc
 
 ROOT = Path(__file__).resolve().parents[2]
-INDEX = "sources/textual_restoration/selections/drafting_sources.2026-10-10.v1.json"
-INDEX_SHA256 = "e4308ce3c076bb075a33d2c9e2eca8592cf6172677b796c5467a1d6008f0773e"
-REGISTERED_IDS = frozenset({"ISA.9.2"})
+INDEX = "sources/textual_restoration/selections/drafting_sources.2026-10-10.v2.json"
+INDEX_SHA256 = "f2969236b50e7717d2bef9b9450ce07cfde469e3e5d3298373af8c3418fc1374"
+# These identities and analyses are code-trusted, not supplied by the index.
+# The v2 digest binds the exact reviewed candidates and application receipts.
+REGISTERED_SOURCES = {
+    "ISA.9.2": {
+        "target": "translation/ot/isaiah/009/002.yaml",
+        "wlc": "sources/ot/wlc/Isa.xml",
+        "osis_id": "Isa.9.2",
+        "qere_lemma": "l",
+        "qere_morph": "HR/Sp3ms",
+    },
+    "PSA.73.10": {
+        "target": "translation/ot/psalms/073/010.yaml",
+        "wlc": "sources/ot/wlc/Ps.xml",
+        "osis_id": "Ps.73.10",
+        "qere_lemma": "7725",
+        "qere_morph": "HVqi3ms",
+    },
+}
+REGISTERED_IDS = frozenset(REGISTERED_SOURCES)
 
 
 class SelectedSourceError(ValueError):
@@ -93,9 +111,10 @@ def _resolve(verse: wlc.Verse, root: Path, verse_id: str) -> SelectedOTSource:
              and index["publication_approved"] is False
              and set(index["entries"]) == REGISTERED_IDS, "Invalid pinned selection index")
     entry = index["entries"][verse_id]
+    expected = REGISTERED_SOURCES[verse_id]
     _require(entry["id"] == verse_id
-             and entry["target"] == "translation/ot/isaiah/009/002.yaml"
-             and entry["wlc"] == "sources/ot/wlc/Isa.xml", "Selected source identity mismatch")
+             and entry["target"] == expected["target"]
+             and entry["wlc"] == expected["wlc"], "Selected source identity mismatch")
     candidate = json.loads(_read(root, entry["candidate"], entry["candidate_sha256"]))
     receipt = json.loads(_read(root, entry["receipt"], entry["receipt_sha256"]))
     schema = json.loads(_read(root, entry["schema"], entry["schema_sha256"]))
@@ -127,6 +146,8 @@ def _resolve(verse: wlc.Verse, root: Path, verse_id: str) -> SelectedOTSource:
     xml_raw = _read(root, entry["wlc"], entry["wlc_sha256"])
     xml_root = ET.fromstring(xml_raw)
     operation = entry["operation"]
+    _require(operation["osis_id"] == expected["osis_id"],
+             "Selected source verse identity mismatch")
     nodes = xml_root.findall(f".//o:verse[@osisID='{operation['osis_id']}']", wlc.OSIS_NS)
     _require(len(nodes) == 1, "Expected one pinned WLC verse")
     node = nodes[0]
@@ -161,7 +182,8 @@ def _resolve(verse: wlc.Verse, root: Path, verse_id: str) -> SelectedOTSource:
              "Qere is not the recorded adjacent written-word variant")
     qere = qere_nodes[0]
     qere_text, qere_annotations = wlc.word_text(qere)
-    _require(qere.attrib.get("lemma") == "l" and qere.attrib.get("morph") == "HR/Sp3ms",
+    _require(qere.attrib.get("lemma") == expected["qere_lemma"]
+             and qere.attrib.get("morph") == expected["qere_morph"],
              "Qere morphology mismatch")
     selected = copy.deepcopy(verse)
     positions = [i for i, word in enumerate(selected.words)

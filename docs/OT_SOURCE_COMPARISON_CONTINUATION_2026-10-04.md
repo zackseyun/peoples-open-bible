@@ -2,6 +2,16 @@
 
 ## Current answer to the two research questions
 
+October10 separate [Genesis2:2 reader comparison](GENESIS_2_2_READER_COMPARISON_2026-10-10.md)
+modestly prefers on/finished in one identity-masked comparison, with by/had-finished
+still plausible and explicitly noted. The exact full-record critic passes and
+the reviewed draft is applied with qualified sixth-source disclosure. Actual
+full-Genesis export changes only2:2, keeps both notes and preserves1,532 other
+verse files. Source is unchanged and historical priority/deployed publication
+remain unapproved. A useful next breadth task is checking whether other
+Samaritan screen leads intersect the dataset's29 declared editorial issues,
+before treating the edited digital control as diplomatic manuscript evidence.
+
 October10 distinct [Genesis2:2 source comparison](GENESIS_2_2_SIXTH_SEVENTH_COMPARISON_2026-10-10.md)
 verifies sixth-day completion in the pinned edited Samaritan Hebrew control
 and selected Greek, against seventh in WLC and selected Latin. Both target

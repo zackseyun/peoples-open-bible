@@ -1421,3 +1421,102 @@ controls, one preference assessment and one proportional exact-record critique.
 Do not repeat this case without new evidence. This possible English improvement
 is separate from replacing Hebrew letters and from the already documented
 canon/reception queue; tokens alone cannot make either a discovery certain.
+
+## Zephaniah honor and versional controls October 10
+
+The [3:19–20 comparison](ZEPHANIAH_3_19_20_SOURCE_COMPARISON_2026-10-10.md)
+retains the complete pointed Hebrew provisionally. The local published Hebrew
+screen finds 4Q77 and Mur88; all available fragment context was read. Their
+reported oppressors wording has damaged letters, and 4Q77's geographic/shame
+tail is supplied whereas Mur88 reports its shame noun unbracketed/unmarked.
+Normalized reference rows are not surviving letters. This is a bounded local
+screen, not an all-discovered-witness census or a fresh damaged-image reading.
+
+Selected Greek instead acts “in you, for your sake” and has a plural future
+passive shame clause. RH numbers it 3:20; Swete prints it 3:19. Swete and RH
+also differ in the honor-clause make/set verb; the editions are not identical
+whole-verse votes. Latin's explicit killing is stronger than neutral Hebrew
+do/deal with. Jerome supplies a coherent ancient interpretation of vindication
+and adversaries' shame, not an exact restored Hebrew source. A genuinely
+different Greek Vorlage remains possible; historical priority is held.
+
+Root visually inspected complete BDB printed 240 and 1028 scans. The one masked
+English assessment favors “praised and renowned” in 19 and “renowned and praised”
+in 20 moderately, preserving the reversal. Its reversed display is a diagnostic,
+not a second vote. Public honor is clearer, but actual-acclaim narrowing and
+loss of the Hebrew noun imagery are real costs. No new Hebrew morphology is
+claimed. Shared shame, geography, gathering-time and fortunes wording is not
+newly certified. Existing theological decisions remain exact and unreviewed.
+
+Five pre-application tests passed in 2.920 seconds. Both complete candidates
+preserve source/generation, seven archives per verse and prior revisions;
+only 19–20 change among 53 historical export units, with 51 other files exact.
+The frozen complete-record contract requests one proportional critique, not
+another preference vote. Application and delivery observations belong in the
+subsequent receipt. The 3:18 current-export test now isolates its own delta,
+as 3:17 already did; its historical full-book hashes remain unchanged and exact.
+This permits later independently reviewed verses without weakening that gate.
+CI adds the exact 08930ce baseline and focused two-verse tests.
+
+Observed predecessor delivery: PR113's own exact-head checks 114320628340 and
+114320580160 completed-success. Its approved head cfbc9d9 was SHA-pinned merged
+at `d02d029c3426c4058a33414eb3f3551e53799e73`. Fetch, approved-tree equality,
+predecessor ancestry, main-worktree availability and guarded main advancement
+were verified; normal main push reported already up to date. PR114 was committed
+and pushed at `08930ce8b20e54896f153537bfd8d636eef21248` and opened as
+[PR114](https://github.com/zackseyun/peoples-open-bible/pull/114).
+Its required attachment failed with “thread attachment identity count exceeds100”;
+no existing attachments were removed. Both own checks 114323349573 and
+114323305830 remained running at the next observed check. No frozen pushed head
+or receipt is amended to pretend later events were already known.
+
+The documentation skill keeps evidence, interpretation and actual application
+separate. Acquisition/validation hiccups were corrected, not counted as source
+findings: an initial extractor filename guess was resolved with file search;
+wrong BDB page guesses led to the correct printed/djvu mapping; a schemeless
+image URL and tool warning prefix required normal URL joining/output parsing;
+an overescaped marker regex failed preflight before correction. Both BDB scans
+then rendered and the corrected preflight passed. A tool-state store rejected
+an absent session ID after a fast completion; the bounded preflight was rerun
+to capture its result. No source record was altered by these failures and no
+user file was deleted. QDR stayed private; the compact Swete derivative was
+reused. The unrelated Genizah file remains excluded with its recorded SHA.
+
+This is a same-source translation improvement trial and a substantive versional
+hold, not a newly discovered reading or a canon contribution. The existing
+six-work canon/reception queue is not reopened without new local evidence.
+Efficiency means finishing this bounded packet and reopening its priority
+question only for discriminating manuscript, apparatus or translation evidence.
+
+The exact-record critic found that v1's generic next-verse-boundary note could
+misrepresent Swete's numbering, and held that point while passing the remaining
+integrity checks (five tests in 2.994 seconds). The [numbering erratum](ZEPHANIAH_3_19_20_NUMBERING_ERRATUM_2026-10-10.md)
+records the visible superscript boundary. V2 changes only note f and lexical
+entry 12 in 3:19; its entire 3:20 record, main English and source remain exact.
+Frozen v1 files are retained as unapplied history. Five v2 pretests pass in
+0.953 seconds, including the precise two-field delta. The same critique checks
+this newly observed factual correction, without another preference vote.
+A JavaScript clone helper unavailable in the tool runtime failed before edits;
+ordinary JSON cloning worked. The critic's initial interpreter lacked YAML;
+the existing repository environment resolved that without installation.
+
+The same critic passes exact v2 after inspecting the factual delta; five v2
+tests independently pass in 4.227 seconds. No additional English or priority
+vote occurred. Both complete records were applied with exact serialized hashes.
+Current export matches the frozen overlay; all 51 other files, including 3:17
+and 3:18, remain byte-identical. Both note audits pass. Six new and twelve
+predecessor tests pass together: 18 tests in 6.368 seconds. The
+[application receipt](../sources/textual_restoration/applications/zephaniah3_19_20_reader.2026-10-10.v1.json)
+records observed application, not human approval or public deployment.
+
+PR114's own checks 114323349573 and 114323305830 both completed-success; its
+exact approved head was SHA-pinned merged at
+`e3c6d89f533d66fa43fa4c3aba7173452e2912ea`. The new packet must pass its own
+exact-head checks; predecessor success does not transfer approval.
+
+After that merge, fetched origin/main was verified at the returned SHA and its
+tree matched approved head 08930ce exactly. Predecessor ancestry and absence of
+another main worktree were verified, local main was guard-advanced from d02d029,
+and normal main push reported already up to date. The frozen receipts remain
+observed pre-commit records; subsequent commit/PR events will be appended to
+this Git chronology without retroactively amending a pushed head.

@@ -8020,6 +8020,50 @@ generated restoration, canon expansion or About integration is performed.
 PR96's two exact-head checks succeed and SHA-pinned merge9399e617d1 lands;
 local main is synchronized and pushed. PR97 remains a separately gated delivery.
 
+### 2026-10-10 — Daniel7 separate English comparison and reader application
+
+The [Daniel case](DANIEL_7_SOURCE_FORMS_COMPARISON_2026-10-10.md#separate-reader-application)
+now completes one bounded source-stable English comparison and its separate
+exact-record application. Frozen14 candidates differ only in “that/and” and
+“should/will.” Root A→B and independent B→A moderately prefer coordination/
+future, while explicitly retaining purpose/modal B as defensible. No unique
+optimum is claimed; no source-priority adjudication is repeated.13's main
+English is unchanged. Seven qualified notes repair anchors and distinguish
+selected Greek forms, human idiom and service alternatives. Actual Aramaic
+הוה replaces an erroneous Hebrew auxiliary rationale.
+
+The application judge finds one substantive defect: categorical other-Daniel
+God/gods usage overlooks7:27's ambiguous recipient. Frozen14 v1 remains in
+Git and is not applied. New14 v2 narrows that note and matching two rationales
+to chapters3/6; a targeted exact-diff/hash/export review passes. This is one
+defect correction, not a judge-until-agreement loop. The documentation skill
+keeps the reasoning, countercase and correction in Git; no cloud Page or About
+change is made. Schema/source/generation/archive/approval checks pass. Exact
+judged YAML is applied as draft with old approvals archived, not transferred.
+
+Actual full-book export reproduces12chapters/357units, only13/14 changes and
+seven notes;355other YAML files and protected pins remain byte-identical.
+Seven focused tests pass in5.483s and45shared reader/guard regressions pass
+in50.153s:52total. The initial system interpreter fails import with missing
+yaml before running tests; the repository environment succeeds without fixes.
+Read-path mistakes and one rejected documentation patch are corrected, not
+counted as evidence. All hashes, original candidate and separate before/after
+export receipts are preserved. No new ink, ImageGen, novel reading, canon,
+publication approval or deployed-reader verification is claimed.
+
+PR97's two exact-head checks succeed and SHA-pinned merge lands at
+`33294956c990282ca2975a3e40cc7980c66e9787`; local main is synchronized and
+pushed. Both PR98 checks114287500499/114287396436 then succeed at exact head
+`9e4ca5ad3da4ae569e5042fe462c7ac10998440b`; SHA-pinned merge lands at
+`130b5b530f8cff2ae335dce8bb322e0575f31cf3`. Its tree equals that baseline;
+the research branch fast-forwards safely. Switching to the still-older local
+main is correctly blocked by uncommitted documentation; an attempted push is
+rejected as non-fast-forward, with no remote mutation. After verifying ancestry
+and that main is not checked out elsewhere, its local ref fast-forwards to
+origin/main and the normal main push succeeds without rewriting history.
+The subsequent reader head requires its own exact-head checks; it inherits
+no approval from these preceding merges.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

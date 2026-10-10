@@ -7,6 +7,9 @@ priority. No source, main English, reader note or publication status changes
 in this pass. The important finding is a known consequential Greek alternative
 and an editorial disagreement that prevents a blanket “the Septuagint says”
 claim. This is not a new decipherment or a resolved identification of the figure.
+The source-only result below remains historical; the subsequent separate
+[reader application](#separate-reader-application) changes14's English clause
+and adds qualified notes without changing Aramaic or settling priority.
 
 The [contract](../sources/textual_restoration/comparisons/daniel7_13_14_source_contract.2026-10-10.v1.json)
 was frozen after acquisition and before recorded preference assessment at
@@ -149,3 +152,73 @@ During this pass, both PR96 frozen-head checks succeeded and SHA-pinned merge
 landed at `9399e617d1a2f8017415a99f5c4dd88c282398ea`; local main was
 fast-forwarded and pushed. PR97 has separate checks and receives no inferred
 approval from that merge. New delivery status must be checked at its exact head.
+
+## Separate reader application
+
+Baseline `9e4ca5ad3da4ae569e5042fe462c7ac10998440b`. The
+[reader contract](../sources/textual_restoration/comparisons/daniel7_13_14_reader_contract.2026-10-10.v1.json)
+was frozen before a bounded14 comparison. A is coordinate/future “and all …
+will serve him”; B is baseline purpose “that all … should serve him.”
+Root assessed A→B; one independent comparator assessed B→A without canonical
+English YAML or the parent assessment. Both moderately prefer A, while B
+remains defensible. Complete knowledge blinding is not claimed; a broad search
+surfaced unused modern/Greek snippets. Neither is uniquely compelled by the
+Aramaic imperfect. The [assessment](../sources/textual_restoration/comparisons/daniel7_14_english_assessment.2026-10-10.v1.json)
+preserves the countercases, rather than counting agreement as ancient evidence.
+
+Observable coordination and the predicted universal/everlasting dominion favor
+coordinate future contextually;7:27 repeats service/obedience. Against A, the
+imperfect can express future, durative or modal force, and7:10 cautions against
+automatic future translation. Against B, explicit purpose subordination is
+not overtly marked, and modern “should” can suggest obligation. Against that
+objection, a purpose/intended-result relation after the grant is natural.
+Primary [Aramaic imperfect](https://uag.readthedocs.io/en/latest/verb_imperfect.html)
+and [conjunction](https://uag.readthedocs.io/en/latest/conjunction.html)
+controls permit this range; they do not select English by mechanical rule.
+Shared passive grant, singular recipient and service vocabulary are not
+comparative wins.13's alternative main wording was not compared.
+
+Applied marker-free14 changes exactly `that → and` and `should → will`;13's
+main words are unchanged. Seven correctly anchored notes distinguish selected
+OG, Theodotion and NETS, disclose human idiom and purpose/service alternatives,
+and preserve unresolved subject, priority and recipient questions. Connected
+rationale corrects Hebrew היה to actual Aramaic הוה and qualifies plural
+agency. Source/pointing and original generation metadata are exactly preserved.
+Seven old fields per verse are archived with baseline pins, including historic
+approval; these cannot certify the new drafts. Active approval is removed and
+`needs_review` remains. No fresh HALOT or manuscript-image reading is claimed.
+
+The separate exact-record application judge found one substantive defect:
+14 v1 categorically described Daniel's other uses as service to God/gods,
+overlooking7:27's ambiguous recipient after singular collective “people.”
+Frozen v1 is preserved, not edited or applied. New14 v2 scopes the note and
+its two connected rationales to chapters3/6. A targeted recheck verifies
+exactly those three strings and the revised hashes/export, retaining complete
+checks for unchanged fields. This is defect repair, not repeated preference
+voting.13 v1 passes unchanged. The [application receipt](../sources/textual_restoration/applications/daniel7_13_14_reader.2026-10-10.v1.json)
+records both the rejected application version and the narrow passing judgment.
+
+Root applies the exact judged serialized YAML and independently reproduces
+schema, source/generation/archive, note-anchor and full reader checks. Daniel
+has12chapters/357units; only7:13–14 change, all seven notes survive, and355other
+files remain byte-identical. Original candidate export `cd89c27d…` becomes
+`4b8de4d1…` after the qualified note correction; complete pins are in the receipt.
+Historical Git-archive tests are separated from current-book isolation, so
+later legitimate changes elsewhere cannot falsify the historic snapshot.
+Seven focused tests pass in5.483s;36reader-note and nine source/redraft guard
+regressions also pass:52total. A system-Python attempt failed on missing yaml
+before any tests ran; the repository environment succeeded without code fixes.
+Guessed read paths and one documentation-patch context mismatch were corrected;
+neither is counted as evidence or test success.
+
+This is a modest source-stable English contribution and honest disclosure of
+known alternatives, not recovered original wording, newly discovered evidence,
+settled figure identity, publication approval or a deployed-reader claim.
+Source priority reopens only for the named new evidence above. Canon and NT
+remain separate; no About-page change occurs.
+
+Both source-comparison PR98 exact-head checks114287500499/114287396436
+succeed at `9e4ca5ad3da4ae569e5042fe462c7ac10998440b`. SHA-pinned merge
+lands at `130b5b530f8cff2ae335dce8bb322e0575f31cf3`, whose tree is identical
+to that baseline. Research branch and local main fast-forward safely; main
+is pushed. The reader change still requires its own frozen-head remote checks.

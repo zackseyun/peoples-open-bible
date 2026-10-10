@@ -7,8 +7,13 @@ retains the Aramaic provisionally and holds priority. Actual publisher OG has
 a comparison clause where Aramaic has a destination; NETS's OG English has
 endpoint wording, so blanket Greek-version claims are unsafe. P967 coverage
 is verified, not its ink/supplies. One independent comparison preserves this
-uncertainty; a separate reader disclosure/anchor repair remains unapplied.
-No new decipherment, canon or best-English claim follows.
+uncertainty. A separate exact-record reader application now repairs anchors,
+qualifies Greek/service alternatives and changes14's clause from “that …
+should serve him” to “and … will serve him,” preferred moderately in a
+predeclared two-candidate comparison. The former remains a defensible noted
+alternative. A substantive review correction scopes religious-service
+evidence to Daniel3/6 rather than deciding7:27's recipient. Source is unchanged;
+records remain drafts. No new decipherment, unique optimum or canon claim follows.
 
 October 10 distinct comparison: [Ezekiel 28:14–16](EZEKIEL_28_CHERUB_COMPARISON_2026-10-10.md)
 checks the connected Hebrew/Greek king–cherub difference, contrary Latin,

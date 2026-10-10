@@ -7941,6 +7941,63 @@ to the frozen parent; the Deuteronomy branch is safely fast-forwarded without
 altering reviewed or protected inputs. This parent delivery does not approve
 the new Deuteronomy commit's separate remote checks or deployment.
 
+### 2026-10-10 — Exodus4:24–26 connected encounter comparison
+
+Deuteronomy33:2 is committed/pushed in
+[PR94](https://github.com/zackseyun/peoples-open-bible/pull/94), frozen at
+b4fdc5b8ae007e9771907e9be692ae6208442b89. Both exact-head checks remain
+live at this turn's boundary check. Its descendant Exodus branch makes no
+inferred merge/deployment claim and does not amend that frozen head.
+
+The [Exodus report](EXODUS_4_24_26_ENCOUNTER_COMPARISON_2026-10-10.md)
+records a bounded comparison of connected agency, contact/speech, release-object,
+temporal and number questions. Two read-only source lanes control actual Hebrew,
+Samaritan/DSS and Aramaic/versional evidence; root reads whole Hebrew narrative
+context, selected Greek, lexical/editorial countercases and relevant actual
+scholarly PDF sections. The documentation skill keeps this audit in Git; the
+PDF skill governs source-acquisition limits without claiming unavailable pixels.
+
+Published4Q1 has preserved final nun-vav favoring the masculine-form release
+object against the consulted Samaritan feminine form. Its entire following
+bridegroom/circumcisions line is supplied. Adjacent4:27 divine-name wording is
+not4:24 attestation. The new transcription edition date is not a newly found
+ancient reading. Greek and Onkelos angelic agency are genuine alternatives with
+connected changes; they are not silently blended into a reconstructed Hebrew.
+Exact QDR target-tag counts remain bounded, not proof of full witness coverage.
+
+A contract freezes source pins, separate candidates, reversed review order and
+countercases before recorded assessment. One identity-withheld independent
+comparator provisionally retains the Hebrew form and masculine object and
+prefers At-that-time over Then modestly, allowing both. Original priority,
+participant identities, motive and speech/rite meaning remain open. Agreement
+does not become manuscript evidence. The OSHB first-person-plural tag is flagged,
+not promoted over narrative context or hidden.
+
+Three full candidates repair note anchors and erroneous/inadequate connected
+rationale while preserving exact source/generation and seven old-field archives
+each. Active historic100% agreement is not transferred. Actual Exodus overlay
+preflight has40chapters/1,213units, only4:24–26 changed and ten notes retained;
+1,210other files keep their byte manifest. Separate exact-record review is
+commissioned, not a repeated preference vote. Six focused regression tests and
+baseline fetch are added to CI. One patch separator error is corrected after
+atomic rejection; the failed PDF download and excessive screenshot-metadata
+output are recorded honestly as acquisition/serialization failures, not evidence.
+No novel ink, ImageGen restoration, canon change or About-page publication is
+claimed. Applied and delivery outcomes follow actual verification below.
+
+Separate exact-record review passes all three frozen candidates and assessment.
+Root applies canonical YAML at the judged digests, validates schema and note
+anchors, and reproduces the full-book preflight export. All1,210other records
+and protected pins remain unchanged. One same-path delete/add patch attempt is
+rejected before writing; the proper update applies exact judged bytes. No
+candidate or assessment changes. All six new tests pass without repairs,
+alongside six Genesis, six Deuteronomy,36reader-note and nine guard regressions:
+63total. Both PR94 frozen-head checks then succeed. Its SHA-pinned merge lands
+atd091c094d44bb1e5d6adbec6b7803d1c8417027d, with a byte-identical parent
+tree. The research branch fast-forwards safely; local main is synchronized and
+pushed. This approves neither the new Exodus head's separate remote checks nor
+deployment, original wording or publication.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

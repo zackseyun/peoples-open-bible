@@ -8395,6 +8395,80 @@ approved head; after worktree/ancestry guards local main is safely fast-forwarde
 and normal push succeeds. PR106 and this reader application retain their own
 independent delivery gates.
 
+### 2026-10-10 — Genesis2:2 completion-day source comparison
+
+The distinct [Genesis2:2 comparison](GENESIS_2_2_SIXTH_SEVENTH_COMPARISON_2026-10-10.md)
+asks whether completion belongs to the sixth or seventh day, keeping cessation
+on seventh separate. Actual WLC XML and connected Genesis/Exodus controls are
+read. Root independently reproduces pinned Samaritan sign-slot sixth/seventh
+and reads its complete README plus29 textual-issues entries. The latter include
+editorial harmonizations elsewhere but no2:2 entry: this is an edited digital
+control, not an unaltered diplomatic CBL751 or newly inspected image. No
+physical date is inferred from digital releases.
+
+Pinned QDR is lawfully reacquired after old private inputs are unavailable;
+its hash matches the prior receipt. An exact word-tag query across266 records
+finds4Q10 fragment4 lines1–3, not an exhaustive manuscript denominator.
+Root reads all four published main lines and relevant FAQ sigla. Both2:2
+numerals are fully supplied: apparent seventh is not surviving target support.
+Actual separate publisher Greek/Latin2:1–3 and footers establish selected
+sixth/seventh and seventh/seventh respectively, not full apparatus or exact
+Hebrew Vorlagen. Complete Tov target body/footnotes are consulted; reported
+Peshitta and reception material remain reported, not new direct consultation.
+
+Seventh has a modest local working preference from the connected pattern and
+possible sixth-day smoothing. Original sixth assimilated to nearby seventh
+is an explicit contrary explanation; historical priority stays held, also
+without a modest chronological preference. Current POB by/had-finished
+rationales contain harmonizing certainty that is not renewed by this source
+comparison. Actual GKC111 and119h support general grammatical controls, not
+an exclusive deadline or proven target pluperfect. A separate on/finished
+versus by/had-finished comparison against the same source, plus qualified
+sixth disclosure and whole-record/export review, is the next reader task.
+
+Two bounded read-only agents divide Hebrew provenance and version/literature
+work; root reproduces decisive controls. One independent frozen-packet critic
+is assigned, not a repeat-until-agreement source or English vote. Its exact
+scope and outcome belong in the machine receipt. No full apparatus, fresh
+HALOT, original pixels, canon inference or ImageGen evidence is claimed.
+The documentation skill preserves the established Git audit and separates
+source observation, historical hypothesis and English interpretation.
+
+Bounded combined publisher access fails, followed by successful separate
+bodies; CAL attempts fail and guessed route identifiers are not established
+from an inventory. An oversized SP web display is replaced by already pinned
+private sign-slot data, without a new full-corpus download. Minor extraction
+syntax/path misses are corrected read-only; no source or canonical file is
+written. Private licensed inputs are not vendored or relicensed.
+
+Nine OT selected-source redraft guard tests pass in0.127s. Current/Git-baseline
+pins, JSON, report hash, unchanged canonical/source directories, protected
+unrelated Genizah hash and whitespace checks pass. This is focused validation,
+not fresh full-corpus validation or approval of a Genesis English candidate.
+
+PR106's two own exact-head checks114303522941/114303469171 succeed; SHA-pinned
+merge lands atcf39652ccc12b3fd41c77811333646bb68550126 with tree equal to
+approved head151161c934519009ab3d51e73d027c4c6734fb96. After ancestry/worktree
+guards local main fast-forwards; normal push succeeds. PR107's exact head
+c6c50aeb017482417ed6b552ead839ed3580df7a and this distinct source packet keep
+their own checks and predecessor-order delivery gates; no frozen head is amended.
+
+One independent bounded source review passes the frozen report at SHA256
+`c9a11bcd80fb11cbf8cb11a5f68d52b602c95f769ce3d0f7c33e494efbd5e89b`
+and pre-status receipt at
+`ad079ca143681a2007806191854696b11c26772001765ff64647d2a8366e6e7d`.
+Actual reinspection covers the complete method/doctrine, SP extraction and
+issues, QDR query,4Q10 preservation, Greek body/footer, Tov and grammar controls,
+all declared pins and local links. Latin publisher access fails for the critic:
+root/versions-agent consultation remains their evidence, not an independently
+reinspected Latin body. Only the receipt gains substantive review/validation
+status. The staged whitespace check subsequently catches one extra final blank
+line in each new file, invisible to the earlier unstaged check of untracked
+files. Those lines are removed; root byte comparison verifies the report's
+only post-review change is that final newline, and the receipt retains the
+reviewed pre-trim hash plus the final report hash. Source priority, reader choice and application
+remain unapproved; no repeat judge is sought to erase the access limitation.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

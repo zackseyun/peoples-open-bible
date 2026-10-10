@@ -8749,6 +8749,194 @@ checks114314866393/114314791643 remain running. Each frozen head retains
 its own gates and predecessor-order delivery; no pending package is claimed
 merged or published.
 
+### 2026-10-10 — Zephaniah silence and renewal evidence and disclosure
+
+PR110 subsequently passes both own checks114312900718/114312842163 at its
+frozen head `bcbda863048f2b45f15c19703d38ddd14b12ddce`, and its pinned merge
+is `2647113acc42c5742e8a39dfd1edbf809ff77867`. Root verifies approved-tree
+equality, ancestry and no other main checkout, fast-forwards local main with
+an old-value guard and pushes normally. PR112 is committed at
+`330d06e9eed7c301dde580f51338e786daa5ffac`. Its required attachment attempt
+also fails with `thread attachment identity count exceeds 100`; historic
+attachments are preserved and the direct URL remains
+https://github.com/zackseyun/peoples-open-bible/pull/112 .
+
+The new branch starts from that frozen PR112 head. A bounded search finds no
+completed Zephaniah3:17 dossier, only the older annotation inventory. Two
+acquisition agents separate direct Hebrew/grammar from Greek controls. The
+[comparison](ZEPHANIAH_3_17_SILENCE_RENEWAL_COMPARISON_2026-10-10.md)
+records published Mur88 יחריש, selected-Greek renewal and Latin silence with
+a different possessive. Root reads the actual Hebrew context3:14–20, four
+grammar controls, publisher Greek/Latin bodies and Göttingen’s embedded
+8Hev coverage inventory. These controls do not establish earliest priority.
+
+The Hebrew agent and root check all available Mur88 fragment21 lines so an
+unclosed supply bracket cannot turn reconstructed letters into surviving-word
+evidence. The complete יחריש is unbracketed and unmarked in the published
+transcription; the love ending is supplied. QDR and Qumran-Digital share a
+publication stream rather than supplying extra manuscript votes. The bounded
+four-label search is not an exhaustive DSS census. Actual Ra943 coverage does
+not report3:17. A precise-copy-date author PDF lead fails ordinary access;
+no certificate bypass or chronology-based adoption follows.
+
+The Greek agent visually checks Swete’s title, edition, complete preface and
+complete printed68–69. Root separately checks those complete passage pages
+and apparatus. The verb is καινιεῖ, not ἀνακαινιεῖ, with an explicit object.
+Swete’s reported Sinaiticus first-hand joy versus corrected love qualifies
+whole-phrase uniformity. Absence of a separate verb entry in this limited
+apparatus is not unanimity. The publisher Latin actually has tua, not sua.
+No current Göttingen target apparatus or physical Greek leaves are acquired.
+
+The executed local Hiphil search finds39 wordforms in35 verses, excluding
+the plough/devise homonym. Root reads Exodus14:14, Isaiah42:14, Psalm50:21
+and the strongest causative objection Job11:3. “Quiet you” remains possible,
+not grammatically forbidden, but supplies an object and soothing interpretation.
+BDB is unproofread OCR only; no lexicon scan or fresh HALOT is certified.
+Neither coherent Greek renewal nor difficult Hebrew silence alone resolves
+priority. Conjectured Hebrew renewal spellings stay hypothetical.
+
+The first candidate write fails because disk is nearly full; read-only checks
+confirm no partial candidate file. Only this task’s acquired57MB Swete PDF is
+removed after extraction of the nine consulted pages into a417,630-byte private
+PDF. The original full scan is recoverable at its recorded URL and hash;
+the derivative hash is
+`e5d09ca17008b85c8a0e82b1ff93f9f3ea3c3e0e3f7bd9bc59b1ab3e23c27822`.
+Agent-generated render derivatives alone are removed; no user data is cleaned.
+Subsequent rendering is memory-only. The retry writes the complete candidate
+successfully. A missing BeautifulSoup import during the coverage check is
+handled with the standard-library HTML parser, not an installation.
+
+The documentation skill separates published observations, interpretation,
+source priority and application in existing Git documentation. The proposed
+application preserves the pointed source and marker-free main English.
+It replaces the misplaced blended note with two properly anchored notes:
+possible same-Hebrew causative quieting and selected-Greek versional renewal.
+Only lexical index7 and one connected theological rationale change; nine
+other lexical entries stay exact. Seven baseline archives retain old reviews
+without lending their scores to this draft.
+
+The frozen candidate hash is
+`43364ca24e70a712cde601ad94f7f9a1c72d98bc453c19f85597b110056096b9`;
+its YAML serialization is
+`e9ec7dba61c2053d043368478ebc27a42c1fdabab2a5e6361031f0242819841c`.
+Report/source-comparison hashes are
+`d0d2a59e98a81e9aefe73193ff9921cb4ed8581a605231908183ec49c0b066d6` /
+`efa7d68db7ba1540d0a518a3dd6f6a7dbd5185553cf85c30f2c45dd1d1cd4b15`.
+The [reader contract](../sources/textual_restoration/comparisons/zephaniah3_17_reader_contract.2026-10-10.v1.json)
+at `d84dba0cd4932feb2097365bfee4ef54761e41393b4ae2abcfcce365eaf6092f`
+freezes actual schema, seven archives and the full historical book overlay:
+three chapters53units, only3:17 changed, two notes and52 non-target byte hashes.
+Five pre-application focused tests pass in2.935s. One independent exact-record
+critic is requested; no main-English blind vote, source-priority vote,
+canon change or repeated preference loop is claimed.
+
+At21:37UTC PR111’s two exact-head checks114314866393/114314791643 pass.
+With PR110 merged, the guarded SHA-pinned merge succeeds at
+`e07eb8c6d82fcd0c13529743c81b03dde5bcd98b`. Root fetches and verifies its
+tree equals the approved head and main ancestry, confirms no other main
+checkout, and advances local main with an old-value guard. PR112 still has
+one own check pending at that observation. A first status-call attempt uses
+the helper’s arguments in the wrong order and returns HTTP400; the corrected
+read obtains actual statuses. This is an orchestration error, not source data.
+
+Final critique, application checks and delivery are recorded in the separate
+[application receipt](../sources/textual_restoration/applications/zephaniah3_17_reader.2026-10-10.v1.json)
+and the following completion entry. The protected unrelated Genizah file
+remains SHA256
+`130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50`
+and excluded. This packet produces a concrete disclosure correction, not
+newly discovered Hebrew, full-corpus approval or deployed publication.
+
+### 2026-10-10 — Zephaniah exact review and application completed
+
+The one independent critic `/root/zephaniah_reader_judge` passes the frozen
+report, comparison, candidate and contract without blockers or substantive
+disagreement. It independently reads all QDR fragment21 lines, publisher
+Greek/Latin context and footer, Qumran-Digital/Ra943 bodies and matching hashes,
+four Hebrew controls, full Zephaniah3:14–20 and BDB unproofread OCR. It visually
+checks complete Swete printed68–69 and apparatus, reproduces39forms35verses,
+and independently reproduces schema, seven archives and the complete historical
+export/52-file manifest. This is one exact-record/source critic, not another
+English-preference vote or historical-priority approval.
+
+An initial two-operation delete/add YAML patch is rejected atomically by the
+patch tool, leaving the baseline intact. A single full-record update then
+applies precisely the reviewed candidate serialization. The actual YAML hash
+matches the frozen `e9ec7dba61c2053d043368478ebc27a42c1fdabab2a5e6361031f0242819841c`.
+Six focused tests pass in1.419s. Current whole-book export and52 non-target
+byte hashes match the historical contract, both notes export and the target
+footnote audit passes. All authored JSON and report-local links resolve;
+the protected Genizah hash is unchanged.
+
+The broader local attempt executes63 passing tests but cannot load
+`tests.test_reader_localization_contract` because `pytest` is missing.
+Its overall result is failed with one loader error in52.476s, not all-green.
+No dependency installation is attempted on the nearly full disk. This unrelated
+module is not introduced into the unittest-only CI workflow; the new focused
+test and its actual baseline fetch are added. Previously recorded historical
+registry errors remain outside this scope. No whole-corpus pass is inferred.
+
+The separate application receipt records pass, actual applied verification
+and these limitations without modifying the frozen source comparison.
+The two acquisition agents and critic do not run an agreement loop. The new
+finding is useful provenance and reader disclosure, not a newly discovered
+reading. Source adoption stays held until genuinely discriminating evidence;
+canon labels and public About content remain unchanged.
+
+### 2026-10-10 — Zephaniah delivery needs local disk space
+
+A second focused run passes all six tests in3.413s after final receipt updates.
+Task-only staging then fails atomically: Git cannot write its index.lock on
+the nearly full local volume. The original index is68MiB. A bounded safe
+attempt to rewrite it in Git index version4 also fails with the same diskspace
+error. Neither attempt stages any change or creates a commit. The stage-entry
+manifest before and after is identical:
+`b14eb01faad03f9a8d8220e13663a56ff18796f3458db3aadbb493115c637e65`.
+No stale index.lock remains and the original index is preserved.
+
+The reviewed YAML, research files and test are intact as local working changes.
+The protected unrelated Genizah file remains untouched. Only previously
+described task-owned temporary scan/render cleanup occurred; no broad user
+cleanup is authorized. Git delivery pauses for local disk space, not further
+judging or source-preference spending. The application receipt explicitly
+records no new commit, push or PR. PR111’s normal main push was confirmed
+already up to date. Later delivery must use the exact reviewed files and its
+own exact-head checks; it must not claim this new contribution is on main yet.
+
+### 2026-10-10 — Prior apparatus access package delivered
+
+PR112’s exact head `330d06e9eed7c301dde580f51338e786daa5ffac` subsequently
+passes both own checks114316733021/114316690397. With PR111 already merged,
+its SHA-pinned merge succeeds at `1ccc7fa82c46cefa3fa858820c507a2312c1a622`.
+Root fetches, verifies approved-tree equality and main ancestry, confirms
+main is not checked out elsewhere, advances local main with an old-value guard
+and pushes normally (already up to date). This delivers the previously
+committed access report; it does not deliver the uncommitted Zephaniah packet.
+
+The final Zephaniah focused run still passes six tests in4.205s, whitespace
+passes and protected Genizah hash remains exact. The new application and Git
+documentation remain local, pending enough disk space to write the index.
+No new PR or deployed reader is claimed.
+
+### 2026-10-10 — Zephaniah staging recovers after space increases
+
+The preceding goal turn made progress: it applied the independently reviewed
+reader correction and delivered prior PR111/112. The automatic continuation
+checks actual disk and Git state rather than repeating source research.
+Available local space rises from the last148MiB observation to233MiB.
+No cleanup is performed in this continuation. The protected Genizah file and
+reviewed YAML retain their exact hashes, HEAD is still the declared330d baseline,
+and main/origin/main equal the verified PR112 merge.
+
+With that changed external state, one task-only staging retry succeeds.
+The application receipt preserves the earlier atomic disk failures as history
+and records recovered staging, not an already completed push or merge.
+The frozen comparison, candidate and critic verdict are unchanged; no extra
+agent or preference vote is needed. The documentation skill keeps historical
+failure separate from current delivery state. Nine files are prepared for
+commit, with the unrelated Genizah file excluded. Delivery still requires the
+new package's own exact-head checks, not those of PR112.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

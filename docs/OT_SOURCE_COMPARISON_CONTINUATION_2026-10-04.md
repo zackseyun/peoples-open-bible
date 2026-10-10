@@ -1802,3 +1802,98 @@ already attested Hebrew reading. It neither settles earliest wording nor proves
 a new discovery, global optimum, canon expansion or deployed reader update.
 Task-only Git delivery remains subject to predecessor117 and this package's own
 exact-head checks. The unrelated Genizah file stays untracked and untouched.
+
+## Delivery and Genesis 10 4 comparison continuation on 2026-10-10
+
+The Psalm73:10 package is committed and pushed at
+`82a9ba9d310518870d5fdd52996b8b8aeb26548c` as
+[PR118](https://github.com/zackseyun/peoples-open-bible/pull/118).
+Its own exact-head checks114334897618 and114334821834 are still in progress
+at the current observation; no successful check from another head is borrowed.
+The required artifact-attachment attempt fails because the thread already
+exceeds100 attachment identities. Existing attachments are not removed.
+
+[PR117](https://github.com/zackseyun/peoples-open-bible/pull/117) is delivered
+after its exact-head checks114332011467 and114331975216 complete-success and
+predecessor116 is confirmed merged. SHA-pinned merge produces
+`07871fe0bb16aae2b1adcbb86c2b39501aeeadae`.
+The fetched merge tree equals the approved117 head tree, predecessor ancestry
+is verified, and no other worktree has main checked out. Local main advances
+with the old-ref guard from3c85a981 to07871fe0. A normal main push reports
+already up to date. These are repository-delivery facts, not a reader deployment.
+
+The next untreated comparison is Genesis10:4 Dodanim/Rodanim, not another
+round of scoring a previously resolved case. Root consults all32 Genesis10
+records and Chronicles1:1–23, rereading clipped context separately. Two bounded
+acquisition agents verify direct Hebrew and selected versions, then finish.
+The comparison preserves the actual Genesis D-form, Chronicles/Samaritan
+R-controls, selected Greek Rhodians, Latin D-form in both passages and Syriac
+dwrnym. These cannot be tallied as independent votes.
+
+A full unpointed R-source/English proposal and a separate Chronicles
+reader-note proposal are prepared without changing canonical files.
+The source-first decision is explicitly provisional and can be held by the
+independent critic. No fresh ink, early target witness, proven Rhodes referent
+or canon recommendation is claimed. The privately licensed Samaritan full
+verse/corpus is not redistributed; the public Chronicles consonantal form
+expresses the proposed patch, without treating the parallel as another Genesis
+manuscript or declaring legal clearance for private data.
+
+An initial patch to add55 context pins fails atomically because continuation
+lines lack patch prefixes; the corrected patch succeeds. A GitHub status
+request initially repeats the repository prefix already provided by the helper
+and returns404; the corrected relative endpoint returns the actual118 checks.
+Neither failure changes canonical data or supplies a false pass.
+The proposal-shape check uses an explicit in-memory schema extension only;
+the canonical source schema and its trust gates remain unchanged.
+Whole-book export and base-plus-patch preflight run before the exact review.
+One independent judge is requested, with permission to HOLD rather than a
+loop requiring agreement. The protected unrelated Genizah artifact stays out
+of the task's staged paths.
+
+The complete proposal export actually runs: Genesis has50 chapters1533 units,
+with only10:4 changed; Chronicles has29 chapters943 units, with only1:7
+changed. All1532 and942 non-target files are pinned in the respective manifest
+digests. This is an in-memory proposal overlay, not an applied-reader claim.
+The production base-plus-patch verifier passes for the one declared change
+ודדנים to ורודנים and explicitly reports editorial approval/application false.
+The review contract records the full export and schema digests.
+
+Four focused proposal tests finally pass in0.013seconds. They cover all55
+context pins and frozen inputs, exact composition, proposal-only schema shape,
+noncertifying original-field archives, unchanged generation metadata and
+reader markers. Initial test-fixture assumptions fail: the comparison's
+parallel value is a verse ID rather than a filesystem path; the companion
+does not contain a restoration_draft object; and reference is a string rather
+than a verse-number mapping. The fixture is corrected without changing frozen
+evidence or candidates. A combined run's existing historical source-composition
+test passes, while that combined run is still correctly reported as failed
+because it captured the first bad fixture. The corrected four-test run is
+separate. No full-book exporter is rerun merely to accumulate agreement.
+The new cheap checks are registered in corpus-integrity.
+
+The [one independent exact-source review](GENESIS_10_4_EXACT_REVIEW_2026-10-10.md)
+returns HOLD on promoting Genesis R, while passing the accurately disclosed
+research packet, conditional rendering and companion note proposal. It actually
+reopens the Hebrew/private-transcription and selected Greek/Latin/Syriac
+controls, reads all55 context units, matches frozen pins, verifies exact
+archives/composition and reruns the four focused checks. It does not repeat
+root's full-book export, QDR or the acquisition agent's Swete visual inspection.
+Its signed-by-agent record is not blinded human review or a measured accuracy
+result.
+
+Root accepts this specific evidential HOLD. Genesis keeps its declared D-base;
+no historical priority for D is inferred and no Hebrew/English word is changed
+in this package. The coherent R-alternative and the independently acceptable
+but unapplied Chronicles note remain available. A fifth cheap regression check
+binds the exact HOLD so the package cannot relabel it as source approval.
+A new note-only application is not smuggled into this source-comparison result.
+
+The next meaningful gate is target-specific apparatus or a local transmission/
+translation-practice argument that distinguishes preserved R from harmonization
+or geographic normalization. A dated direct-language target could also help.
+Another model preference vote on the same controls cannot fill that gap.
+This is a completed bounded comparison milestone, not completion of the whole
+OT/NT project, an optimal-corpus claim, recovered autograph or canon expansion.
+The documentation skill keeps the frozen proposal separate from this actual
+decision and preserves the failures rather than retroactively rewriting them.

@@ -86,3 +86,40 @@ the actual source controls, Greek, grammar, article argument and all seven
 recorded file hashes. This is not earliest-text or whole-verse approval.
 JSON, bound target/source hashes, local links, protected-method/Genizah hashes
 and whitespace pass; no full-corpus semantic certification is claimed.
+
+## October10 publisher versions and separate reader disclosure
+
+The [actual publisher page](https://www.die-bibel.de/en/bible/LXX,VUL/PRO.30)
+identifies Rahlfs–Hanhart2006 Greek and Weber–Gryson2007 Latin in separate
+footers. Its30:3 Greek positively attributes wisdom instruction to God and
+knowing to the speaker. Latin has `non` in each clause: learning and knowing
+are negative. This closes the Latin-control gap without resolving Hebrew scope.
+Latin may explicate an inherited negative; its second `non` does not prove a
+lost Hebrew לֹא. Greek changes the first claim too, so it is not simply the
+positive second-clause interpretation of unchanged Hebrew. Context30:1–9 is
+checked; no whole-chapter or manuscript/apparatus collation follows.
+
+The [separate reader contract](../sources/textual_restoration/comparisons/proverbs30_3_reader_contract.2026-10-10.v1.json)
+freezes the current source and marker-free English. Its complete candidate adds
+one polarity note at `nor[a]`, retaining the Holy One note's content and moving
+only that marker to `[b]`. The note distinguishes the positive interpretation,
+possible negative inheritance and these different version solutions. The ידע
+rationale explicitly labels negative scope as interpretation rather than a
+repeated Hebrew word. No fresh HALOT consultation, singular/plural decision or
+main-English preference comparison is claimed. Eight historical fields,
+including the source audit, are archived exactly; generation and prior revisions
+are preserved. Old scores are not active approval of this new note.
+
+Full-book candidate overlay exports31chapters/915units, changing only30:3 and
+preserving914other files; both notes survive. The [application receipt](../sources/textual_restoration/applications/proverbs30_3_reader.2026-10-10.v1.json)
+records exact hashes and the bounded review preceding canonical application.
+One independent exact-record reviewer passes the publisher controls, selected
+Hebrew/GKC, full schema, eight archives, anchors and independently reproduced
+historical full-book export. The exact reviewed YAML is applied as draft with
+needs_review, not publication approval. Applied export matches candidate digest;
+seven focused tests and45shared reader/source guards pass:52total. Both notes
+survive;914other files remain byte-identical. The October6 machine comparison
+stays a frozen historical record, not approval of this application. Initial XML
+inspection returns no context because the namespace/ID query is wrong; the
+correct OSIS query verifies all nine selected verses. One guessed exporter
+filename fails to read; the actual mobile-export module is used for preflight.

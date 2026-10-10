@@ -8148,6 +8148,45 @@ JSON/input/local-link/scope/unrelated-file and whitespace checks pass. No full
 corpus or priority certification follows. Reviewed candidate hashes are recorded
 before the non-substantive review-status append; no second preference vote occurs.
 
+### 2026-10-10 — Proverbs30:3 separate polarity disclosure application
+
+The [existing negation comparison](PROVERBS_30_3_NEGATION_COMPARISON_2026-10-06.md#october10-publisher-versions-and-separate-reader-disclosure)
+already analyzes Hebrew scope; it is not repeated. Newly inspected publisher
+Latin has explicit negatives in both clauses; Greek has positive God-taught
+wisdom and knowing. These are distinct version interpretations, not an extra
+Hebrew negative or a clean Greek vote for unchanged-Hebrew contrast. Source
+priority remains held. The old machine record stays byte-identical.
+
+The separate frozen full-record candidate adds a polarity note at nor[a], moves
+the existing Holy One note to[b] without changing its content, and makes the
+ידע rationale explicit about inherited negative scope. Eight old fields are
+archived exactly, including source audit; source, generation, marker-free English
+and previous revisions are preserved. Historical scores are reset to draft/
+needs_review, not inherited. No fresh HALOT reading or Holy One/plural decision
+is made. Real Proverbs candidate overlay produces31chapters/915units with only
+30:3 changing, two target notes and914other byte-identical YAMLs. One independent
+exact-record reviewer passes actual publisher controls, selected Hebrew/GKC,
+method/doctrine, complete record/schema/archives/anchors and independently
+reproduced historical full-book/candidate export. No source-priority or blind
+main-English preference vote is repeated. Root applies exact reviewed YAML;
+actual applied export and914manifest equal judged digests, with draft/
+needs_review and no publication approval. Seven focused tests pass in15.679s,
+and45shared reader/source guards pass in51.691s:52total. The test agent's earlier
+four baseline-independent checks pass in6.446s; they are not added again to the
+52test total. JSON, local links, protected pins, sole canonical-target diff and
+whitespace checks pass. No full-reader-corpus pass or deployment is inferred.
+
+The documentation skill preserves this distinction between source assessment
+and reader disclosure. The initial wrong XML namespace/ID returns no context;
+correct OSIS querying verifies30:1–9. A guessed exporter filename fails; the
+actual mobile-export module supplies the full-book check. No generated image,
+new ink, novel reading, canon change, About integration or deployment approval.
+PR100's two exact-head checks114292810789/114292757876 succeed; SHA-pinned merge
+lands at `d72e2c3bbbaf23cc0f88357bd3b25b3d3b9e7c3f`. The two successor evidence
+packets retain separate gates; this reader application cannot bypass them.
+The merge tree equals frozen approved registry head; local main safely
+fast-forwards after ancestry/worktree checks and normal main push succeeds.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -8,6 +8,7 @@ import yaml
 
 from tools import wlc
 from tools.textual_restoration import critical_verse
+from tools.textual_restoration import selected_draft_source
 from tools.textual_restoration.compare_uxlc_wlc import normalized
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,7 +16,7 @@ MAP = ROOT / 'sources/textual_restoration/inventory/psalms_source_context_map.v1
 
 
 class PsalmsSourceContextMapTests(unittest.TestCase):
-    def test_complete_preserved_wlc_mapping_with_verified_critical_overlay(self):
+    def test_complete_preserved_wlc_mapping_with_verified_source_overlays(self):
         data = json.loads(MAP.read_text())
         self.assertEqual([r['chapter'] for r in data['chapters']], list(range(1, 151)))
         self.assertEqual(hashlib.sha256((ROOT / 'sources/ot/wlc/Ps.xml').read_bytes()).hexdigest(), data['source_xml_sha256'])
@@ -24,6 +25,7 @@ class PsalmsSourceContextMapTests(unittest.TestCase):
         mapped = set()
         usage = collections.Counter()
         critical_ids = set()
+        selected_ids = set()
         for chapter in data['chapters']:
             ch = chapter['chapter']
             for segment in chapter['segments']:
@@ -34,6 +36,14 @@ class PsalmsSourceContextMapTests(unittest.TestCase):
                     record = yaml.load((ROOT / f'translation/ot/psalms/{ch:03}/{v:03}.yaml').read_text(), Loader=yaml.CSafeLoader)
                     self.assertEqual(record['id'], f'PSA.{ch}.{v}')
                     source = record['source']
+                    if record['id'] == 'PSA.73.10':
+                        # The frozen inventory maps the immutable written base,
+                        # not the separately reviewed reading-form selection.
+                        raw_verse = wlc.load_verse('PSA', 73, 10, ROOT / 'sources')
+                        selection = selected_draft_source.resolve_selected_ot_source(raw_verse)
+                        self.assertEqual(record['source'], selection.source_payload)
+                        source = {'edition': 'WLC', 'text': raw_verse.hebrew_text}
+                        selected_ids.add(record['id'])
                     if source['edition'] != 'WLC':
                         # The inventory maps the retained WLC base, not the added
                         # nun line. Only the exact reviewed overlay is accepted.
@@ -85,6 +95,7 @@ class PsalmsSourceContextMapTests(unittest.TestCase):
         self.assertEqual(sum(n > 1 for n in usage.values()), 52)
         self.assertEqual(len(data['resolution_evidence']), 13)
         self.assertEqual(critical_ids, {'PSA.145.13'})
+        self.assertEqual(selected_ids, {'PSA.73.10'})
 
 
 if __name__ == '__main__':

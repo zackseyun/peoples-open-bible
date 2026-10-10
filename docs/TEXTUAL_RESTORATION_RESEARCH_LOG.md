@@ -8286,6 +8286,58 @@ preservation and links. The report remains at reviewed SHA256
 the receipt records its pre-status digest and receives only this review-status
 append. No repeated agreement loop or new source-priority approval follows.
 
+### 2026-10-10 — Isaiah45:7 direct good and supplied peace
+
+The [distinct comparison](ISAIAH_45_7_GOOD_PEACE_COMPARISON_2026-10-10.md)
+executes the queued preview lead against actual sources. The Great Isaiah
+Scroll main text has unqualified טוב in column38 line13. Root follows the
+synoptic links to bounded complete1Q8/4Q57 downloads, then reads their own
+main rows and full supply boundaries. Their apparent שלום is supplied and
+cannot count as surviving support. Actual publisher Greek/Latin retain peace;
+these are selected version controls, not extra Hebrew manuscripts or full
+apparatus collation. One read-only agent checks versions and the official HUBP
+description; root independently reads the actual bodies and preview pixels.
+The preview's Is-a legend is not acquired, so direct named transcription—not
+an inferred siglum—establishes the scroll reading. Original-language Berakhot
+11b segment4 explicitly distinguishes written רע from liturgical הכל.
+This prevents conflating later euphemistic reception with biblical source.
+
+Both antithesis simplification and semantic specification remain hypotheses.
+Early direct evidence receives the method's modest preference, not automatic
+victory; removing it leaves this comparison held. POB source/main English and
+historical reviews remain unchanged. The separate next reader task must compare
+peace/well-being, avoid a theological veto on the adverse term, disclose the
+source alternative and repair the note currently attached to darkness. No
+fresh HALOT, original image, novel letter, full-corpus optimum, canon expansion
+or About integration is claimed. The PDF and documentation skills preserve
+actual page identity, supplied-vs-observed wording and Git audit scope.
+
+An initial verse-number search finds no main-row match because physical lines
+use column/line IDs; main-row wording resolves the actual locus. The first
+Sefaria web page is inaccessible; its bounded API response succeeds. A literal
+Hebrew substring search misses vocalized words; a separate normalized search
+locates the paragraph while the original-language text remains intact.
+These navigation failures are not source evidence. All private source files,
+rights notices and unchanged canonical/method inputs are pinned in the receipt.
+
+Nine current selected-source redraft guards pass in0.132s; JSON, all declared
+private source sizes/digests and current/Git-baseline pins, local links,
+unchanged canonical/source directories, protected unrelated-file hash and
+whitespace pass. No historical fixture repin or full-corpus claim occurs.
+PR104's two exact-head checks114299795362/114299757278 succeed; SHA-pinned
+merge lands at `66a193af53710223032296181cbc4b0d7b5dee21` with a tree equal
+to frozen head aab119bccfee5792da2ba8b177ae608f6eab5961. After tree, ancestry
+and worktree guards, local main safely fast-forwards and normal push succeeds.
+PR105 and this distinct comparison retain their own delivery gates.
+
+One independent bounded source review passes actual complete target bodies,
+preservation ranges, complete PDF page and footnotes, version identities,
+reception distinctions, competing hypotheses and all declared private/current/
+Git-baseline pins and links. The report stays at reviewed SHA256
+`04e0c2a039f4959afbc6fbe24ed7f3b31392e5289f0f9ddf4871257614b40113`;
+the receipt records its pre-status hash and receives only this review append.
+No repeat preference vote, source-priority or reader-application approval follows.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

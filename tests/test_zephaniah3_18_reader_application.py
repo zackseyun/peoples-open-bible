@@ -166,13 +166,19 @@ class Zephaniah318ReaderTests(unittest.TestCase):
         self.assertFalse(receipt["review"]["source_priority_approved"])
         self.assertFalse(receipt["review"]["additional_english_preference_vote"])
         self.assertFalse(receipt["application"]["deployed_reader_verified"])
-        self.assertEqual(compact_sha(exporter.export_book("ZEP")),
-                         self.preflight["export_candidate_sha256"])
-        other = {str(p.relative_to(ROOT)): sha(p.read_bytes())
-                 for p in (ROOT / "translation/ot/zephaniah").rglob("*.yaml")
-                 if str(p.relative_to(ROOT)) != TARGET}
-        self.assertEqual(len(other), 52)
-        self.assertEqual(compact_sha(other), self.preflight["other_verse_manifest_sha256"])
+        # Historical hashes above stay exact; later reviewed verses may change.
+        # Isolate this verse's effect in the current book, as the 3:17 test does.
+        after = exporter.export_book("ZEP")
+        loader = exporter.load_translation_record
+        with patch.object(exporter, "load_translation_record", side_effect=lambda code, ch, v:
+                          self.before if code == "ZEP" and (ch, v) == (3, 18)
+                          else loader(code, ch, v)):
+            before = exporter.export_book("ZEP")
+        a, b = index(before), index(after)
+        self.assertEqual(len(after["chapters"]), 3)
+        self.assertEqual(len(a), 53)
+        self.assertEqual([list(k) for k in a if a[k] != b[k]], [[3, 18]])
+        self.assertEqual(b[(3, 18)]["footnotes"], self.candidate["translation"]["footnotes"])
         self.assertEqual(audit_footnotes.audit_one(ROOT / TARGET)["status"], "ok")
 
 

@@ -2,6 +2,13 @@
 
 ## Current answer to the two research questions
 
+October 10 [Samaritan Exodus apparatus access](SAMARITAN_EXODUS_APPARATUS_ACCESS_2026-10-10.md)
+checks the actual publisher volume and series: Exodus is ahead of publication,
+planned November 2. No target apparatus or manuscript page is acquired.
+The digital feature result stands, but source priority remains unresolved;
+park this acquisition until actual target access rather than repeat metadata
+searches. Genesis2:2 reader PR109 has now merged after both own checks passed.
+
 October 10 actual [Samaritan feature-layer check](SAMARITAN_FEATURE_LAYERS_2026-10-10.md)
 reads four pinned word features and all 29 annotation locators. Current Hebrew
 surface values agree with sign-slot consonants; at Exodus19:24 unusual spellings

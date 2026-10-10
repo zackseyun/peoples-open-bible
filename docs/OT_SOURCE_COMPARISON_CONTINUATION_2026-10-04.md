@@ -2,6 +2,14 @@
 
 ## Current answer to the two research questions
 
+October 10 actual [Samaritan feature-layer check](SAMARITAN_FEATURE_LAYERS_2026-10-10.md)
+reads four pinned word features and all 29 annotation locators. Current Hebrew
+surface values agree with sign-slot consonants; at Exodus19:24 unusual spellings
+remain while lexical labels interpret them. The authored dataset paper explains
+surface/annotation separation and possible Masoretic bias. This narrows the
+digital-layer question, not historical manuscript priority. The relevant
+apparatus/image and the existing reader-note anchor are separate next tasks.
+
 October 10 breadth check: the [Samaritan editorial audit](SAMARITAN_EDITORIAL_SOURCE_AUDIT_2026-10-10.md)
 maps all 29 declared annotations to 27 sections, including 16 reported
 harmonizations with an unverified affected feature layer. None intersect the

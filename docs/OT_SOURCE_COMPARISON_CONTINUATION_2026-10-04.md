@@ -2,6 +2,12 @@
 
 ## Current answer to the two research questions
 
+October10 actual version follow-up: [Proverbs30:1 Greek/Latin controls](PROVERBS_30_1_SOURCE_COMPARISON_2026-10-06.md#october10-publisher-greek-and-latin-controls)
+are inspected on the identified publisher parallel page. Latin presence/
+strengthening differs from Greek trust/ceasing; neither simply attests repeated
+weariness or establishes exact Hebrew. Names remain provisionally retained and
+priority held. The earlier Latin-access gap is closed, not the source decision.
+
 October10 targeted acquisition: the [Fox publisher preview](PROVERBS_FOX_PREVIEW_ACQUISITION_2026-10-10.md)
 is actually downloaded and its editorial target checked. It does not include
 Proverbs30:1; names/weariness priority remains unresolved. The preview lane ends

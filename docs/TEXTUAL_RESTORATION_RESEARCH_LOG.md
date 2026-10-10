@@ -8121,6 +8121,33 @@ reader heade4d22d5. Local main fast-forwards after ancestry/tree/worktree checks
 normal push succeeds. PR100 remains separately gated, and this successor packet
 does not bypass its checks or transfer the reader approval to it.
 
+### 2026-10-10 — Proverbs30 actual publisher Greek and Latin controls
+
+The [version follow-up](PROVERBS_30_1_SOURCE_COMPARISON_2026-10-06.md#october10-publisher-greek-and-latin-controls)
+closes the October6 Latin-body gap with the actual publisher parallel page,
+reading each identified edition's30:1 and context2–9. Relative clauses, ablative
+absolute and passive participle distinguish Latin presence/strengthening from
+Greek trusting addressees/first-person ceasing. Neither is silently retroverted
+into weary Hebrew, nor taken as a literal names rendering. The second Greek
+edition control is not an extra ancient witness. Names remain provisional;
+priority held. The original machine record stays a historical, byte-identical
+record; only the report gains a dated follow-up and a new receipt.
+
+The announced PDF route fails (web403/CLI404); one inferred archive path404
+also fails. German-route single-version web/CLI access fails; the actual indexed
+parallel HTML body and English-route individual pages work, with edition footers.
+A mistaken initial local
+receipt filename is corrected through the report. No private PDF is acquired or
+claimed as read. PDF authoring is unnecessary; the documentation skill retains
+the source distinctions, access failures and reasoning in Git. No source,
+English, historical approval, doctrine, method, schema, canon or About changes.
+One independent bounded review passes the actual publisher bodies and footers,
+target syntax, seven current/baseline hashes and linked summaries; failed access
+commands are not independently rerun. Nine source-redraft guards pass in0.124s;
+JSON/input/local-link/scope/unrelated-file and whitespace checks pass. No full
+corpus or priority certification follows. Reviewed candidate hashes are recorded
+before the non-substantive review-status append; no second preference vote occurs.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

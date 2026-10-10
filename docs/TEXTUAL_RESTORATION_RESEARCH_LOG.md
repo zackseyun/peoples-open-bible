@@ -7807,6 +7807,73 @@ historical pin drift, Spanish prompting, comprehensive source coverage and canon
 questions remain open. This is an engineering fidelity step toward the source
 corpus, not a newly attested reading or completion of the whole objective.
 
+### 2026-10-10 — Genesis6:3 consequential interpretation comparison
+
+The selected-source candidate engine is committed/pushed in
+[PR92](https://github.com/zackseyun/peoples-open-bible/pull/92) at frozen
+71b6568dd6862883aa71c0dab87c3ff037a451e0. This turn returns to actual textual
+comparison on a separate descendant branch. A Samuel14:41 lead already has a
+hold and is not rereviewed; no whole-corpus rebuild or repetitive source vote is
+commissioned. The prior integrated Isaiah work in PR91 passes both exact-head
+checks and is SHA-pinned merged at 78d91db379d0b3163b96d6b7f0de6d94873142e6.
+Local main is synchronized and pushed; PR92 is retargeted to main without a head
+change. PR92 has one successful and one live check at the latest boundary check.
+
+The [Genesis6:3 report](GENESIS_6_3_SPIRIT_COMPARISON_2026-10-10.md) records an
+actual source-to-English comparison: contending versus remaining. One agent
+controls actual WLC morphology and published Hebrew quotation/coverage; root
+reads selected Greek/Latin, actual reproduced BDB and NET editorial notes and
+Hebrew narrative controls. The WLC lemma is analysis, not proof of verb meaning.
+No continuous target copy is inferred from inventory gaps, and a reworked Hebrew
+quotation is neither excluded by genre nor automatically promoted to original.
+
+Actual published 4Q252 has preserved resh in its dwelling verb, not merely a
+versional retroversion. Its altered surrounding quotation and flood deadline
+are recorded. This is known published evidence, not a newly discovered reading.
+Root and the source agent also read complete relevant Brooke pp8–10. An initial
+download timeout, premature partial-PDF extraction and textless scan require a
+successful resumed download and rendered-page reading. The scan corrects an
+erroneous snippet title and, importantly, its apparent original-resh claim:
+Brooke allows original nun while favoring an inherited secondary resh variant.
+This strengthens the distinction between early attestation and original priority.
+No fresh manuscript pixels or generated restoration are used.
+
+A pinned contract precedes recorded assessment, not exploratory acquisition.
+Root assesses current contending first; one identity-withheld/reversed-order
+independent comparator assesses remaining first and independently prefers it
+provisionally with contending disclosed. Complete knowledge blinding is not
+claimed, and one agreement is not evidence of historical priority. The later
+Brooke argument is not attributed to that review. Original spelling remains
+unresolved, with exact WLC preserved in the proposed full candidate.
+
+The separate full-record candidate adds five anchored uncertainty notes, repairs
+connected rationale, preserves seven exact old-field archives, generation and
+all three revisions, and resets active certification to draft/needs_review.
+Removal of therefore is explicitly outside the shared A/B comparison and gets
+separate application review. Spirit/breath and 120-year interpretations are not
+silently settled. Actual Genesis preflight validates schema and all 50/1,533 reader
+entries: only 6:3 changes and all five notes export. A second independent judge
+checks exact full-record application rather than rerunning preference. Six new
+focused tests and their baseline fetch are added to CI. The exact candidate
+passes independent application review, including the separate connector
+decision. Its canonical YAML is applied, schema/note-audited and actually
+exported; the complete digest matches preflight and all other 1,532 Genesis
+files are byte-identical. No original-priority or publication approval is
+inferred. Protected unrelated Genizah and method files retain their hashes;
+the untracked Genizah file remains unstaged. No canon or About-page publication
+is inferred.
+
+Post-write verification matches the exact judged YAML digest and preflight
+Genesis export; all six new application tests, 36 reader-note regressions and
+nine raw-redraft guard tests pass (51 total, six new). Later documentation
+patches fail harmlessly on context mismatches and
+is reapplied correctly; no reviewed candidate bytes change. Both frozen PR92
+checks then complete successfully. Its SHA-pinned merge lands at
+1702a4e8485945c961a84e106a971a873a5306dc. Fetching and fast-forwarding the new
+research branch to that main changes no file bytes; protected and judged inputs
+remain intact. Local main is synchronized and pushed. This delivery state
+does not approve the new Genesis head's own checks or deployment.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

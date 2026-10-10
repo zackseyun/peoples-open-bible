@@ -7397,6 +7397,37 @@ succeeds as c0a09f4ed623601b21eb5a8b097e8f0a2e119f6b; local main/research
 synchronization and main push complete. Already-merged unrelated Enoch work
 arrives with main and is preserved, not attributed to this Genesis application.
 
+### 2026-10-10 — First Samuel 6 19 casualty count comparison
+
+The previous goal turn makes progress by committing/pushing Genesis4:13 as
+95af6b17710e5fa3c06346f4baa08566d92d59eb and opening PR82. Both exact-head
+checks remain live at this pass's opening observation; its branch stays frozen.
+Root starts a separate Samuel research branch, preserving the unrelated Genizah
+file, and selects an unadjudicated local-note lead rather than repeating Nahash.
+
+The [bounded count comparison](SAMUEL_6_19_COUNT_COMPARISON_2026-10-10.md)
+reads actual WLC context/number controls, Rahlfs/Hanhart publisher body, Josephus
+Greek/translation at6.16, and NET author's note. A namespace/reference extraction
+first fails on nonexistent num attributes; the corrected osisID lookup supplies
+the actual verses. Chicago's Josephus body times out; GreekDoc's body and edition
+attribution are consulted instead. The former private QDR file is absent, leaving
+locus coverage unverified, not a zero-hit or omission conclusion.
+
+One read-only Hebrew analyst confirms both source number phrases and supplied
+relationships in additive/out-of interpretations. Source/main English remain
+provisional: selected Greek also has both figures, while Josephus's seventy is a
+retelling with a different offense explanation. Numerical plausibility does not
+establish source priority. Qualified reader attribution and connected metadata
+are the next application; actual numeral apparatus/identified manuscript evidence
+is the reopening condition for source change. No new Hebrew or canon claim.
+The documentation skill separates actual bodies, editorial reports and inference.
+
+One separate factual/scope reviewer passes the Samuel comparison without
+corrections after checking the actual linked bodies and bound local inputs.
+Root verifies comparison JSON, unchanged canonical verse, both XML hashes,
+local report links and whitespace. No corpus tests are rerun for this prose-only
+comparison; no application or source preference is certified by the critic.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

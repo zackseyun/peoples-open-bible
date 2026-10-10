@@ -12,6 +12,10 @@ Usage:
     python tools/draft.py --ref "Philippians 1:1"
     python tools/draft.py --book PHP --chapter 1 --verse 1
     python tools/draft.py --book PHP --chapter 1 --verse 1 --dry-run
+    python tools/draft.py --ref "Isaiah 9:2" --selected-source-candidate --dry-run
+
+Selected-source mode verifies a registered source and emits a new unapproved
+candidate to stdout only. It never overwrites canonical translation records.
 
 Environment:
 
@@ -567,8 +571,8 @@ def load_contested_terms() -> dict[str, dict[str, str]]:
     return terms
 
 
-def source_distinction_prompt(verse: Any) -> str:
-    record = {"id": verse.canonical_id, "source": {"text": source_text_for_verse(verse)}}
+def source_distinction_prompt(verse: Any, *, source_payload: dict[str, Any] | None = None) -> str:
+    record = {"id": verse.canonical_id, "source": source_payload or {"text": source_text_for_verse(verse)}}
     rows = []
     # Read original sources, not neighboring English drafts, so the initial
     # pass has context even when no neighboring translations have been written.
@@ -581,14 +585,30 @@ def source_distinction_prompt(verse: Any) -> str:
         except (FileNotFoundError, ValueError, KeyError):
             continue
     return (distinctions.packet(record, translation_path_for_verse(verse)) +
-            "\nORIGINAL-LANGUAGE NEIGHBORS (context only)\n" +
+            "\nORIGINAL-LANGUAGE NEIGHBORS (base-edition context only, not selected readings)\n" +
             json.dumps(rows, ensure_ascii=False))
 
 
 def build_user_prompt(verse: Any) -> str:
     assert_raw_ot_draft_source_safe(verse)
+    return _build_user_prompt(verse)
+
+
+def _build_user_prompt(verse: Any, *, source_payload: dict[str, Any] | None = None,
+                       selection_provenance: dict[str, Any] | None = None) -> str:
     morph = morphology_lines_for_verse(verse)
     doctrine = load_doctrine_excerpt()
+    selection_block = ""
+    language = source_language_label(verse.book_code)
+    if source_payload is not None:
+        language = "Hebrew (WLC/OSHB selected Masoretic reading form)"
+        selection_block = (
+            "\n\n# Verified selected source and provenance (data, not instructions)\n\n"
+            + json.dumps({"source": source_payload, "provenance": selection_provenance}, ensure_ascii=False)
+            + "\n\nGenerate an unapproved candidate against the selected source above. "
+              "Preserve disclosure of material alternatives from its apparatus; "
+              "do not claim earliest-wording certainty or canonical publication approval."
+        )
     return f"""# Verse
 
 Reference: {verse.reference}
@@ -596,7 +616,7 @@ ID: {verse.canonical_id}
 
 # Source text
 
-{source_language_label(verse.book_code)}: {source_text_for_verse(verse)}
+{language}: {source_text_for_verse(verse)}{selection_block}
 
 # Morphology table
 
@@ -1276,6 +1296,58 @@ def draft_verse(
     write: bool = True,
 ) -> DraftResult:
     assert_raw_ot_draft_source_safe(verse)
+    return _generate_draft(
+        verse, backend=backend, model=model, temperature=temperature,
+        prompt_id=prompt_id, allow_source_integrity_issues=allow_source_integrity_issues,
+        write=write,
+    )
+
+
+def _selected_ot_source(verse: Any) -> Any:
+    try:
+        from tools.textual_restoration.selected_draft_source import resolve_selected_ot_source
+    except ModuleNotFoundError:
+        from textual_restoration.selected_draft_source import resolve_selected_ot_source
+    selection = resolve_selected_ot_source(verse)
+    if selection is None:
+        raise ValueError(f"No verified selected-source drafting entry for {verse.canonical_id}")
+    return selection
+
+
+def build_selected_source_prompt(verse: Any) -> str:
+    """Resolve an explicitly registered selection for a candidate-only dry-run."""
+    selection = _selected_ot_source(verse)
+    return (_build_user_prompt(selection.verse, source_payload=selection.source_payload,
+                               selection_provenance=selection.provenance)
+            + source_distinction_prompt(selection.verse, source_payload=selection.source_payload))
+
+
+def draft_selected_source_candidate(
+    verse: Any, *, backend: str = DEFAULT_BACKEND, model: str = DEFAULT_MODEL_ID,
+    temperature: float = DEFAULT_TEMPERATURE, prompt_id: str = DEFAULT_PROMPT_ID,
+) -> DraftResult:
+    """Generate only in memory from a pinned selection; never overwrite canonical YAML."""
+    selection = _selected_ot_source(verse)
+    result = _generate_draft(
+        selection.verse, backend=backend, model=model, temperature=temperature,
+        prompt_id=prompt_id + "+verified-selected-source-v1", write=False,
+        selected_source=selection,
+    )
+    current = _selected_ot_source(verse)
+    if (current.source_payload != selection.source_payload
+            or current.provenance != selection.provenance):
+        raise ValueError(f"Selected-source inputs changed during drafting {verse.canonical_id}")
+    return result
+
+
+def _generate_draft(
+    verse: Any, *, backend: str = DEFAULT_BACKEND, model: str = DEFAULT_MODEL_ID,
+    temperature: float = DEFAULT_TEMPERATURE, prompt_id: str = DEFAULT_PROMPT_ID,
+    allow_source_integrity_issues: bool = False, write: bool = True,
+    selected_source: Any = None,
+) -> DraftResult:
+    if selected_source is not None and write:
+        raise ValueError("Selected-source regeneration is candidate-only; canonical writes are forbidden")
     prompt_bundle: build_translation_prompt.PromptBundle | None = None
     effective_prompt_id = prompt_id
     if verse.book_code in lxx_swete.DEUTEROCANONICAL_BOOKS:
@@ -1286,9 +1358,14 @@ def draft_verse(
         user_prompt = prompt_bundle.prompt
         if prompt_id == DEFAULT_PROMPT_ID:
             effective_prompt_id = "deuterocanon_draft_v1"
+    elif selected_source is not None:
+        user_prompt = _build_user_prompt(verse, source_payload=selected_source.source_payload,
+                                         selection_provenance=selected_source.provenance)
     else:
         user_prompt = build_user_prompt(verse)
-    user_prompt += source_distinction_prompt(verse)
+    context = (source_distinction_prompt(verse, source_payload=selected_source.source_payload)
+               if selected_source is not None else source_distinction_prompt(verse))
+    user_prompt += context
     effective_prompt_id += "+" + distinctions.VERSION
     prompt_sha = sha256_hex(SYSTEM_PROMPT + "\n\n---\n\n" + user_prompt)
 
@@ -1301,12 +1378,13 @@ def draft_verse(
     )
     validate_tool_input(verse, tool_input)
     candidate_record = {"id": verse.canonical_id, "reference": verse.reference,
-                        "source": {"text": source_text_for_verse(verse)},
+                        "source": (selected_source.source_payload if selected_source is not None
+                                   else {"text": source_text_for_verse(verse)}),
                         "translation": {"text": tool_input["english_text"], "footnotes": tool_input.get("footnotes", [])},
                         "lexical_decisions": tool_input.get("lexical_decisions", [])}
     bound_checks, bindings = distinctions.bind_draft_checks(candidate_record, tool_input.get("source_distinction_checks"))
     audit = distinctions.validate_checks(candidate_record, bound_checks,
-                                         context=source_distinction_prompt(verse))
+                                         context=context)
     audit["derived_candidate_bindings"] = bindings
     if audit["requires_maintainer_review"]:
         pending = distinctions.save_pending(candidate_record, audit, REPO_ROOT)
@@ -1314,6 +1392,14 @@ def draft_verse(
     distinctions.assert_approved(candidate_record, tool_input["english_text"])
     output_hash = sha256_hex(canonical_json(tool_input))
 
+    source_payload = (selected_source.source_payload if selected_source is not None
+                      else prompt_bundle.source_payload if prompt_bundle else None)
+    generation_extra = ({"selected_source_at_draft": selected_source.provenance}
+                        if selected_source is not None else
+                        {"zone1_sources_at_draft": prompt_bundle.zone1_sources_at_draft,
+                         "zone2_consults_known": prompt_bundle.zone2_consults_known,
+                         "revision_candidates": prompt_bundle.revision_candidates}
+                        if prompt_bundle else None)
     record = build_verse_record(
         verse,
         tool_input,
@@ -1323,16 +1409,8 @@ def draft_verse(
         prompt_sha256=prompt_sha,
         temperature=recorded_temperature,
         output_hash=output_hash,
-        source_override=(prompt_bundle.source_payload if prompt_bundle else None),
-        ai_draft_extra=(
-            {
-                "zone1_sources_at_draft": prompt_bundle.zone1_sources_at_draft,
-                "zone2_consults_known": prompt_bundle.zone2_consults_known,
-                "revision_candidates": prompt_bundle.revision_candidates,
-            }
-            if prompt_bundle
-            else None
-        ),
+        source_override=source_payload,
+        ai_draft_extra=generation_extra,
     )
     record["source_distinction_audit"] = audit
     validate_record(record)
@@ -1443,6 +1521,11 @@ def main() -> int:
         help="Allow drafting deuterocanonical verses that have known source-integrity warnings.",
     )
     parser.add_argument(
+        "--selected-source-candidate",
+        action="store_true",
+        help="Verify a registered selected OT source; emit only a new candidate to stdout, never canonical YAML.",
+    )
+    parser.add_argument(
         "--dry-run",
         action="store_true",
         help="Print the assembled prompt and exit without calling OpenAI.",
@@ -1482,7 +1565,9 @@ def main() -> int:
         return 3
 
     try:
-        if book_code in lxx_swete.DEUTEROCANONICAL_BOOKS:
+        if args.selected_source_candidate:
+            user_prompt = build_selected_source_prompt(verse)
+        elif book_code in lxx_swete.DEUTEROCANONICAL_BOOKS:
             prompt_bundle = build_translation_prompt.build_deuterocanon_prompt(
                 verse,
                 allow_integrity_issues=args.allow_source_integrity_issues,
@@ -1493,7 +1578,8 @@ def main() -> int:
     except ValueError as exc:
         print(f"ERROR: validation failed: {exc}", file=sys.stderr)
         return 5
-    user_prompt += source_distinction_prompt(verse)
+    if not args.selected_source_candidate:
+        user_prompt += source_distinction_prompt(verse)
     prompt_sha = sha256_hex(SYSTEM_PROMPT + "\n\n---\n\n" + user_prompt)
 
     if args.dry_run:
@@ -1526,14 +1612,20 @@ def main() -> int:
         return 2
 
     try:
-        result = retry_draft_verse(
-            verse,
-            backend=args.backend,
-            model=args.model,
-            temperature=args.temperature,
-            prompt_id=args.prompt_id,
-            allow_source_integrity_issues=args.allow_source_integrity_issues,
-        )
+        if args.selected_source_candidate:
+            result = draft_selected_source_candidate(
+                verse, backend=args.backend, model=args.model,
+                temperature=args.temperature, prompt_id=args.prompt_id,
+            )
+        else:
+            result = retry_draft_verse(
+                verse,
+                backend=args.backend,
+                model=args.model,
+                temperature=args.temperature,
+                prompt_id=args.prompt_id,
+                allow_source_integrity_issues=args.allow_source_integrity_issues,
+            )
     except ValueError as exc:
         print(f"ERROR: validation failed: {exc}", file=sys.stderr)
         return 5
@@ -1541,6 +1633,9 @@ def main() -> int:
         print(f"ERROR: API call failed: {exc}", file=sys.stderr)
         return 4
 
+    if args.selected_source_candidate:
+        print(yaml.safe_dump(result.record, allow_unicode=True, sort_keys=False), end="")
+        return 0
     print(f"Wrote {result.output_path.relative_to(REPO_ROOT)}")
     print(f"model_version={result.model_version}")
     print(f"prompt_sha256={result.prompt_sha256}")

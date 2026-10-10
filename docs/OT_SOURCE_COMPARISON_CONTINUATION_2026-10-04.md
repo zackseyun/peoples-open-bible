@@ -2,6 +2,14 @@
 
 ## Current answer to the two research questions
 
+October10 distinct [Isaiah45:7 comparison](ISAIAH_45_7_GOOD_PEACE_COMPARISON_2026-10-10.md)
+verifies direct published good against Masoretic peace. Apparent peace in1Q8
+and4Q57 is supplied, not preserved support; selected Greek/Latin retain peace.
+Later liturgical all is explicitly distinguished from written bad in the
+actual Berakhot discussion. Priority remains held. A separate reader comparison
+is needed for peace/well-being, adverse-term explanation and the misplaced note;
+no canonical change, fresh ink or canon decision occurs in this comparison.
+
 October10 [Isaiah21:8 priority follow-up](ISAIAH_21_8_LION_LOOKOUT_COMPARISON_2026-10-10.md#october10-commentary-and-greek-priority-followup)
 checks Clements's lookout preference and Ottley's lion-form explanation of
 Greek Uriah. Neither establishes direction of transmission. The actual HUBP

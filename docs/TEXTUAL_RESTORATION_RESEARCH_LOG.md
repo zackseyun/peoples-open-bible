@@ -8092,6 +8092,35 @@ import, new decipherment, ImageGen evidence, canon change or About publication
 occurs. All-citation reconciliation and object-level coverage remain open.
 Daniel PR99's exact-head checks remain separate from this successor packet.
 
+### 2026-10-10 — Proverbs Fox publisher preview: acquired, target absent
+
+The [bounded acquisition](PROVERBS_FOX_PREVIEW_ACQUISITION_2026-10-10.md)
+follows the newly registered edition route for the existing Proverbs30:1
+question. Product/sample web requests return403; the actual legacy sample's
+normal publisher redirect works with CLI200. Disk is checked before a bounded
+1.38MB private download; PDF signature,34pages and SHA are verified. The initial
+broad extraction truncates; targeted complete pages replace it. Every page is
+inventoried, and printed xi/2–5 are read and visually checked with footnotes;
+printed6 completes the carried-over note7.
+Fox's stated reconstruction target is distinguished from POB's existing target
+rule. No target30:1 apparatus is present, so the earlier decision is not reopened.
+
+PDF verification and the documentation skill keep access, scope and reasoning
+auditable in Git. The acquired PDF is not vendored or relicensed. Registry and
+old case/source/English/method inputs remain byte-identical; no About or canon
+change is made. The preview lane stops instead of repeating access or preference
+loops. One independent bounded review passes the actual argument, complete page
+inventory, PDF and seven input hashes, documentation-only diff and links. It does
+not replay historical HTTP statuses or approve target apparatus/reading. Nine
+source-redraft guards pass in0.166s; JSON/PDF/input/link/unrelated-file guards and
+whitespace pass. No full-corpus pass is inferred from these focused checks.
+
+PR99's two exact-head checks114290626837/114290579203 succeed; SHA-pinned merge
+lands at `7400e3d2e57ee21b0363e3d0b6b2bc1a7c616ea5`. Its tree equals frozen
+reader heade4d22d5. Local main fast-forwards after ancestry/tree/worktree checks;
+normal push succeeds. PR100 remains separately gated, and this successor packet
+does not bypass its checks or transfer the reader approval to it.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

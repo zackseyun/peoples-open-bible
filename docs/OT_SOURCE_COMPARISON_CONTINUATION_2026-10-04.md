@@ -2,6 +2,14 @@
 
 ## Current answer to the two research questions
 
+October 10 distinct comparison: [Ezekiel 28:14–16](EZEKIEL_28_CHERUB_COMPARISON_2026-10-10.md)
+checks the connected Hebrew/Greek king–cherub difference, contrary Latin,
+Aramaic paraphrase and actual short-pronoun controls. Pointed WLC is retained
+provisionally; historical priority is held. No canonical or reader change is
+made. This is a consequential known alternative, not recovered Hebrew or a
+Satan/Adam identification. A separate reader-note application is recommended;
+repeat source adjudication only for the named discriminating new evidence.
+
 The [October 6 contribution and canon review](CONTRIBUTIONS_AND_CANON_REVIEW_2026-10-06.md)
 checks current applications and names the next discriminating evidence tasks.
 The [second predeclared sample](UNFLAGGED_ENGLISH_SAMPLE_2026-10-06.md) finds

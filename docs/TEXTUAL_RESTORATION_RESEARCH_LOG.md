@@ -7335,6 +7335,68 @@ inspection and free-space recovery it succeeds and main push is clean. No
 unrelated files or private evidence are deleted. PR72 remains pending at this
 checkpoint; no check bypass or deployed-reader approval is claimed.
 
+### 2026-10-06 — Genesis 4 13 meaning comparison
+
+Root proceeds from the held Genesis49:10 source decision to a new consequential
+question. Genesis4:13 main English says iniquity, whereas its lexical/theological
+choices prefer punishment. The [bounded comparison](GENESIS_4_13_MEANING_COMPARISON_2026-10-06.md)
+uses actual pinned WLC narrative and diagnostic controls, publisher Greek and
+NET author-note bodies. Direct NET endpoints time out; the alternate licensed
+presentation provides the inspected body. No new lexicon-body consultation,
+manuscript discovery, image reconstruction or canon judgment is claimed.
+
+A contract is frozen before one candidate-identity-blinded assessor tests the
+three English choices without reading the canonical target. Its qualified
+preference is punishment/bearing, with guilt/forgiveness the strongest contrary
+reading. The supplied bearer and resolved polysemy remain explicit costs.
+Canonical English/source are unchanged; exact-record application review and
+export verification remain necessary before adoption. The documentation skill
+keeps comparison separate from application and records unsuccessful access.
+
+PR72's two exact-head checks pass and its SHA-pinned remote merge succeeds as
+21faf461feba9970d651bb70fa8d88aabeab43fe. PR73 is retargeted to main without
+changing its head. Local synchronization initially fails for insufficient disk
+space; root inspects state before retrying and deletes no unrelated evidence.
+
+One separate factual/scope critic passes the comparison after a documented
+post-assessment correction to the contract's scope wording. Frozen contract
+bytes remain unchanged; interpretations vary, letters/pointing do not. Root
+checks JSON, bound-file hashes, unchanged canonical target, local links and
+whitespace. The 34-test run first encounters a disk-space temporary-directory
+error; its retry passes all 34 tests. Local PR72 synchronization and main push
+complete. PR73's two exact-head checks remain in progress at this checkpoint.
+
+### 2026-10-09 — Genesis 4 13 contextual English applied
+
+The preceding continuation cannot save its computed candidate, commit the
+comparison or initialize a new reviewer because disk writes fail. No canonical
+edit or cleanup follows. This continuation revalidates the blocker and finds
+about 15 GiB free, enabling the actual application workflow. The documentation
+skill keeps the original comparison and later application separate.
+
+Root saves a new dated exact-record candidate against the unchanged bound verse.
+One independent full-record reviewer passes candidate SHA256
+04d6cb07c44e44d6269a8ff1c6c122635743a1909c0a56ef2b7ba70ee8743596.
+The [application section](GENESIS_4_13_MEANING_COMPARISON_2026-10-06.md#reader-application-on-october-9)
+records the qualified punishment/bearing English, clause-anchored note, serious
+guilt/forgiveness alternative and supplied bearer. Source and generation stay
+unchanged; old revisions remain, seven actual old values are archived without
+certification, and active draft/needs_review replaces stale approval metadata.
+This is an interpretation/English contribution, not new Hebrew or canon evidence.
+
+Actual preflight and applied full-Genesis exports retain 50 chapters and 1,533
+IDs; only 4:13 changes, and all 1,532 other verse files remain byte-identical.
+The applied export matches the proposed digest; schema, note audit and protected
+method/Genizah hashes pass. The new regression checks reader text, note, preserved
+generation/history and non-certification. All 35 reader-footnote and rationale
+tests pass. Source XML/contract hashes, report links and whitespace also pass.
+No deployed-reader approval is claimed.
+
+Both PR73 exact-head corpus-integrity checks pass. Its SHA-pinned remote merge
+succeeds as c0a09f4ed623601b21eb5a8b097e8f0a2e119f6b; local main/research
+synchronization and main push complete. Already-merged unrelated Enoch work
+arrives with main and is preserved, not attributed to this Genesis application.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

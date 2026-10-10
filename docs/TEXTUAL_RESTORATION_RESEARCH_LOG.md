@@ -7756,6 +7756,57 @@ against current main, with fresh exact-head corpus checks rather than inherited
 CI approval. Superseded proposals may be closed only after that replacement is
 confirmed open. This is a delivery reconciliation, not another textual vote.
 
+### 2026-10-10 — verified selected Hebrew candidate generation
+
+The previous turn makes authoritative progress: provisional Isaiah9:2 source/
+English application and a reviewed raw-redraft safeguard, consolidated in
+[PR91](https://github.com/zackseyun/peoples-open-bible/pull/91) at frozen head
+11b38ce7c2f1fd4e6735b292cc721374b880434b. PR88/89/90 are confirmed closed,
+unmerged superseded proposals with their heads preserved. Current Git state
+matches that delivery; two PR91 corpus checks are live at this observation.
+This new work starts on a separate descendant branch and does not amend PR91.
+
+One agent implements only the new resolver, code-pinned index and focused tests;
+root owns drafting integration, CLI, workflow and documentation. The
+[selected drafting report](VERIFIED_SELECTED_HEBREW_DRAFTING_2026-10-10.md)
+describes the actual trusted inputs and source-consumer paths. Thirteen resolver
+tests pass, including byte drift/forgery, source and morphology mismatch,
+symlinks and no-cache checks. Root catches missing YAML-error conversion while
+reading the implementation; the agent adds it with a malformed-YAML test before
+independent review. No upstream/source/English file is changed.
+
+The new explicit candidate-only route resolves actual written23qch to qere23VmY,
+with lemma `l` and morphology `HR/Sp3ms`; raw parsers remain written-base loaders.
+Prompt, lexical validation, distinction binding and emitted source use that same
+selected verse/payload. Generation gets fresh source provenance; source/index/
+candidate/receipt/schema/canonical drift is checked before and after the call.
+Selected canonical writes are forbidden, and ordinary raw drafting still refuses
+selected records. CLI selected dry-run and fixture-driven candidate stdout pass;
+no live model call or speculative source reconstruction is made.
+
+Root's initial integration run passes 51 tests; the final resolver/integration/
+guard/distinction/WLC run passes 64, including twenty-two new tests. Independent
+judge runs pass twenty-two new tests and a 58-test combined subset. These counts
+overlap. One exact-hash read-only judge passes the bounded source-loading scope
+without another translation preference vote. Its
+[review record](../sources/textual_restoration/reviews/selected_source_drafting.2026-10-10.v1.json)
+preserves a consequential adversarial observation: negative English and no
+footnotes can still pass structural schema/distinction checks as an unapproved
+candidate. Canonical bytes remain unchanged, but this proves the need for actual
+source-to-English meaning and reader-disclosure review before application.
+Source coherence is not semantic certification. Pending distinction proposals
+may write noncanonical review state before final revalidation; this is disclosed.
+
+Script-style selected dry-run exits successfully with no inference. Actual full
+Isaiah export is unchanged at 66 chapters/1,291 entries and the prior application
+digest. New suites are wired into CI, without inferring remote/deployed approval.
+The documentation skill separates source-loading verification from textual
+priority, generated translation quality and publication. One registered qere
+selection is now usable for candidate comparison; unsupported composites,
+historical pin drift, Spanish prompting, comprehensive source coverage and canon
+questions remain open. This is an engineering fidelity step toward the source
+corpus, not a newly attested reading or completion of the whole objective.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -2,6 +2,16 @@
 
 ## Current answer to the two research questions
 
+October10 distinct [Genesis2:2 source comparison](GENESIS_2_2_SIXTH_SEVENTH_COMPARISON_2026-10-10.md)
+verifies sixth-day completion in the pinned edited Samaritan Hebrew control
+and selected Greek, against seventh in WLC and selected Latin. Both target
+4Q10 numerals are supplied and cannot serve as surviving seventh support.
+Seventh is retained provisionally; smoothing and reverse assimilation remain
+live, so historical priority is held. Current POB by/had-finished is an English
+interpretation, not a sixth-source selection or fresh grammar certification.
+A separate frozen English comparison and qualified source disclosure are next;
+no canonical change, new decipherment or canon inference occurs in this packet.
+
 October10 separate [Isaiah45:7 English and reader review](ISAIAH_45_7_GOOD_PEACE_COMPARISON_2026-10-10.md#october10-english-comparison-and-reader-application)
 modestly prefers well-being against retained Masoretic shalom, with peace still
 viable. The full draft candidate adds the good source alternative, qualifies

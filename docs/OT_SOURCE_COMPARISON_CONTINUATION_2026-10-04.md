@@ -2,6 +2,13 @@
 
 ## Current answer to the two research questions
 
+October10 [Isaiah21:8 priority follow-up](ISAIAH_21_8_LION_LOOKOUT_COMPARISON_2026-10-10.md#october10-commentary-and-greek-priority-followup)
+checks Clements's lookout preference and Ottley's lion-form explanation of
+Greek Uriah. Neither establishes direction of transmission. The actual HUBP
+preview covers Isaiah45, not21:8; its catalogue identity cannot supply missing
+target apparatus. Priority remains held and the reviewed reader record is
+unchanged. Isaiah45:7 is a distinct queued comparison, not an approved variant.
+
 October10 distinct source case: [Isaiah21:8](ISAIAH_21_8_LION_LOOKOUT_COMPARISON_2026-10-10.md)
 checks the published Great Isaiah Scroll's lookout against Masoretic lion,
 Greek Uriah and Latin lion-subject. The displayed 4Q55 lion is supplied, not

@@ -1597,3 +1597,74 @@ exceeds100”; no older attachment was removed. Own checks 114327332120 and
 114327275253 were still running at the latest observation. The Jeremiah
 packet requires predecessor delivery and its own exact-head checks; it cannot
 borrow those checks or claim that a pending PR is already on main.
+
+## Reuchlin 3 physical page check on 2026 10 10
+
+The preceding turn made progress: the corrected heading comparison was
+committed and pushed at `fe6d312279cd5d124a7469477e5c36609f62f978` and opened
+as [PR116](https://github.com/zackseyun/peoples-open-bible/pull/116).
+Its attachment attempt encountered the same 100-identity cap; no older
+attachment was removed. Own checks 114330330049 and 114330291404 were confirmed
+live. The next continuation checks those actual handles rather than treating
+a remembered pending state as a stopped process.
+
+One bounded acquisition agent pursues the reported Kennicott154/Reuchlin3
+earlier state. Root independently reads the holding-library catalogue and
+manifest and inspects the complete actual page and ordinary crops. The
+[physical image check](JEREMIAH_27_1_REUCHLIN3_IMAGE_CHECK_2026-10-10.md)
+records folio264r/image3396662 and preserves the unmodified 3,984,046-byte
+JPEG. It is a direct holding-library capture under the catalogue's Public
+Domain Mark1.0, credited to Badische Landesbibliothek Karlsruhe. The current
+royal identity appears Jehoiakim; the exact consonant spelling remains disputed
+between two tentative same-family observations. No earlier Zedekiah name,
+correcting hand or correction date is recovered from this ordinary image.
+That limits, but does not refute, the separate published initial-state report.
+
+The acquired manifest has 795 canvases; its own license field is absent,
+while the current holding titleinfo explicitly provides the rights statement.
+Root does not substitute a different aggregator license. The title year1105,
+catalogue twelfth-century date and digitization2016 remain distinct, and none
+dates an individual correction. A modern MAM-based locator is navigation only.
+The search tool cannot open that locator or the individual holding page, but
+actual HTTP access obtains the specified primary image. No inaccessible-page
+error is interpreted as missing evidence. No full manuscript PDF is downloaded.
+
+Root initially misreads the second heading row as Aramaic and raises a
+possible missing middle Hebrew phrase. One targeted follow-up on existing
+pixels distinguishes the final nun in בן and confirms the phrase is visible.
+The absence hypothesis is withdrawn, not turned into a textual omission.
+Following Targum material stays Aramaic. The exact royal spelling disagreement
+is not forced into agreement. These unblinded observations do not satisfy the
+two-family calibration lane and do not become accepted diplomatic text.
+ImageGen is unused; ordinary resampling adds no lost information.
+
+Three new provenance/claim-boundary tests pass in0.021 seconds. The previously
+frozen five heading-comparison tests also pass in3.131 seconds. Root verifies
+the retained raw image's JPEG format, 4049×4559 dimensions and actual hash.
+Software tests certify byte identity and record boundaries, not erased-letter
+readability, hand chronology or historical priority. The documentation skill
+keeps the physical current state separate from a published earlier-state claim.
+The prior source-choice hold remains unchanged; canonical Jeremiah is untouched.
+
+This continuation also delivers the prior Zephaniah packet. PR115's own
+checks114327332120/114327275253 complete-success at22:39:44/22:39:13 UTC.
+After confirming predecessor114 merged and exact head30ae032, SHA-pinned
+merge succeeds at `2df8476016e15c25eed244bdedbd7955be8ed844`.
+Root fetches and verifies that merge tree equals the approved head, predecessor
+ancestry and absence of another main checkout, then guard-advances local main
+from e3c6d89 and pushes normally, reporting already up to date. This is verified
+repository delivery, not a public reader deployment check. Frozen PR115/116
+heads and prior receipts are not amended to pretend these later events were
+already known. PR116 still requires its own successful checks before merge.
+
+The retained image is one bounded new primary control. No fresh original,
+canon expansion or complete OT comparison is declared. The unrelated Genizah
+file remains excluded. Further priority work needs genuinely discriminating
+state/hand or apparatus evidence, not repeated restoration by ordinary RGB
+enlargement.
+
+Final combined verification passes all eight heading/image checks in4.066
+seconds. The actual baseline diff contains no translation-file changes,
+whitespace checks pass and the protected unrelated Genizah hash remains exact.
+PR116's two own checks are still running; this physical-control supplement
+must also pass its own exact-head checks and follow predecessor order.

@@ -14,6 +14,54 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReaderFootnoteExportTests(unittest.TestCase):
+    def test_genesis_4_13_contextual_english_preserves_forgiveness_alternative(self):
+        packet = json.loads((ROOT / 'sources/textual_restoration/applications/genesis4_13_meaning.2026-10-09.v1.json').read_text())
+        raw = (ROOT / packet['target']).read_bytes()
+        record = yaml.safe_load(raw)
+        candidate_raw = (ROOT / packet['candidate']).read_bytes()
+        self.assertEqual(record, json.loads(candidate_raw))
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), packet['application']['yaml_sha256'])
+        self.assertEqual(hashlib.sha256(candidate_raw).hexdigest(), packet['candidate_sha256'])
+        self.assertEqual(record['source'], packet['baseline_source'])
+        self.assertEqual(record['ai_draft'], packet['baseline_generation'])
+        self.assertEqual(record['revisions'][:-1], packet['baseline_revisions'])
+        self.assertEqual(record['revisions'][-1]['from'], packet['baseline_english'])
+        self.assertEqual(record['revisions'][-1]['to'], record['translation']['text'])
+        self.assertEqual(record['status'], 'draft')
+        self.assertEqual(record['cross_check'], {'status': 'needs_review'})
+        self.assertNotIn('revision_pass', record)
+        text = record['translation']['text']
+        self.assertEqual(text, 'And Cain said to Yahweh, “My punishment is greater than I can bear[a].”')
+        self.assertNotIn('Yahweh[a]', text)
+        self.assertEqual(text.count('[a]'), 1)
+        notes = record['translation']['footnotes']
+        self.assertEqual(len(notes), 1)
+        self.assertEqual(notes[0]['marker'], 'a')
+        for detail in ('guilt/iniquity', 'too great to forgive', 'Greek',
+                       "supplies 'I can'", 'whether Cain repents'):
+            self.assertIn(detail, notes[0]['text'])
+        archives = {item['field']: item for item in record['review_history']}
+        self.assertEqual(set(archives), {'status', 'revision_pass', 'cross_check',
+                         'translation.text', 'translation.footnotes',
+                         'lexical_decisions', 'theological_decisions'})
+        for item in archives.values():
+            self.assertFalse(item['certifies_this_candidate'])
+            self.assertFalse(item['historical_review_inputs_verified'])
+            self.assertEqual(item['archived_from_baseline_sha256'], packet['baseline_sha256'])
+        self.assertEqual(archives['translation.text']['value'], packet['baseline_english'])
+        book = exporter.export_book('GEN')
+        self.assertEqual(len(book['chapters']), 50)
+        self.assertEqual(sum(len(ch['verses']) for ch in book['chapters']), 1533)
+        exported = next(v for ch in book['chapters'] if ch['chapter'] == 4
+                        for v in ch['verses'] if v['verse'] == 13)
+        self.assertEqual(exported['text'], text)
+        self.assertEqual(exported['footnotes'], notes)
+        self.assertFalse(packet['decision']['source_changed'])
+        self.assertTrue(packet['decision']['marker_free_main_english_changed'])
+        self.assertFalse(packet['decision']['source_interpretation_settled'])
+        self.assertFalse(packet['decision']['novel_reading_demonstrated'])
+        self.assertFalse(packet['decision']['publication_approved'])
+
     def test_genesis_49_10_disclosure_keeps_source_and_repairs_anchors(self):
         packet = json.loads((ROOT / 'sources/textual_restoration/applications/genesis49_10_disclosure.2026-10-06.v1.json').read_text())
         raw = (ROOT / packet['target']).read_bytes()

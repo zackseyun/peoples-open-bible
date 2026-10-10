@@ -2,6 +2,15 @@
 
 ## Current answer to the two research questions
 
+October10 distinct source case: [Isaiah21:8](ISAIAH_21_8_LION_LOOKOUT_COMPARISON_2026-10-10.md)
+checks the published Great Isaiah Scroll's lookout against Masoretic lion,
+Greek Uriah and Latin lion-subject. The displayed 4Q55 lion is supplied, not
+surviving support. Historical priority remains held; a separately reviewed
+reader application discloses the alternative, fixes both anchors and aligns
+lexical metadata with actual retained English. Source and main wording stay
+unchanged. Actual full Isaiah export changes only21:8; no fresh ink, novel
+reading, whole-verse certification or canon change is claimed.
+
 October10 separate reader application: [Proverbs30:3](PROVERBS_30_3_NEGATION_COMPARISON_2026-10-06.md#october10-publisher-versions-and-separate-reader-disclosure)
 now has an independently reviewed polarity disclosure applied as draft. Source and main English
 stay unchanged; selected Latin is both-negative, Greek both-positive, neither

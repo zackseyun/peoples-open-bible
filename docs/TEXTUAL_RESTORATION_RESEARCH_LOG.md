@@ -8187,6 +8187,58 @@ packets retain separate gates; this reader application cannot bypass them.
 The merge tree equals frozen approved registry head; local main safely
 fast-forwards after ancestry/worktree checks and normal main push succeeds.
 
+### 2026-10-10 — Isaiah21:8 lion and lookout with reader disclosure
+
+The [distinct comparison](ISAIAH_21_8_LION_LOOKOUT_COMPARISON_2026-10-10.md)
+verifies actual published1QIsaᵃ column16 lines19–26 and4Q55 fragments10–11 i+
+12–14 lines26–30. The former's third-person verb and lookout noun are
+unqualified in the main transcription; the latter's apparent lion is inside
+an open restoration range and cannot count as extant support. Actual publisher
+Greek instead calls Uriah; Latin has a lion subject. Actual IbnEzraAPI Hebrew
+supplies comparative kaf, unlike the displayed English's bet. Source priority
+is held; contextual clarity and antiquity do not alone certify the original.
+Target modern apparatus and a discriminating transmission explanation are the
+next evidence requirement, not a repeated preference vote.
+
+The documentation skill keeps reasoning and actions in Git. One read-only
+source agent supplies bounded privateHTML and precise main-row IDs; root reads
+complete local context, copyright and target spans itself. Search finds an old
+QD route whose web body exceeds4MB; bounded current downloads succeed. Museum
+routes fail or return502 and an indexed chronologyPDF is not acquired/read;
+no exact manuscript-date claim is made from that snippet. Two attempted BeautifulSoup
+parsers lack the module; standard-library extraction replaces them. An initial
+word-span slice uses the wrong string offset and is corrected against actual
+target DOM. Two guessed local Amos filenames/globs fail; the actual case path
+is resolved. These failures do not become source evidence. No huge QDR corpus
+download, modern apparatus acquisition, fresh image, generated letters or
+novel decipherment is claimed.
+
+The frozen complete candidate keeps source, generation and marker-free main
+English unchanged, adds qualified lookout disclosure and fixes both anchors.
+The night note retains exact wording/reason; the sole lion lexical entry's
+chosen/alternatives/rationale now match the actual provisional main. Six
+existing fields are archived exactly and prior contradictory revisions remain;
+absent history is not invented. Divine-address analysis is outside scope.
+One independent exact-record reviewer passes actual source bodies and
+preservation qualifications, schema, archives and independently reproduced
+historical fullIsaiah export66chapters/1291units, only21:8 changing, with1290other
+files byte-identical. Root applies exactly judged YAML and verifies actual
+export/manifest against frozen digests; draft/needs_review remains, not
+whole-verse or publication approval. Seven focused tests pass in21.462s and
+45shared guards in57.731s:52total. Four earlier candidate-only test-agent checks
+are not counted again; its initial punctuation assertion error is corrected
+without changing candidate wording. JSON, links, protected hashes, sole canonical
+diff, unrelated-file hash and whitespace pass. Full-reader-corpus/deployment
+approval, canon change and About integration are not inferred.
+
+PR101's exact-head checks114294469007/114294424944 succeed; SHA-pinned merge
+lands at `93dd9834c0d8454a03524f2d42b0df66c653d18e`. PR102's separate checks
+114295565950/114295513525 succeed; its SHA-pinned merge lands at
+`6b9d6ae3c3c41c8f83a0fccd93838420daac6052`. Each merge tree equals its frozen
+approved head; localmain safely fast-forwards after tree/ancestry/worktree
+checks and normal main pushes succeed. PR103 remains separately gated; this
+successor cannot bypass it or borrow its check results.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

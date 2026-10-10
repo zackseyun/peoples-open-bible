@@ -7874,6 +7874,73 @@ research branch to that main changes no file bytes; protected and judged inputs
 remain intact. Local main is synchronized and pushed. This delivery state
 does not approve the new Genesis head's own checks or deployment.
 
+### 2026-10-10 — Deuteronomy33:2 source and rendering comparison
+
+The Genesis6:3 application is committed/pushed in
+[PR93](https://github.com/zackseyun/peoples-open-bible/pull/93), frozen at
+ebeca4504e0887e8985be4fb5fda70b8fc98414e. Both exact-head checks remain live
+at this pass's boundary check; no approval is transferred to its descendant
+Deuteronomy research branch. No frozen head is amended.
+
+The [Deuteronomy33:2 report](DEUTERONOMY_33_2_SINAI_COMPARISON_2026-10-10.md)
+separates the holy-myriad English rendering from final-clause source analysis.
+Root uses the documentation skill for auditable Git records and the PDF skill
+to read the actual scholarly countercase. One source agent controls real WLC
+qere/morphology, pinned Samaritan and DSS preservation; another bounded lane
+tries two routes for the original fire-verb study and records acquisition
+failure honestly. Root reads the complete relevant Greek/Latin bodies, actual
+BDB sections, local Hebrew context and all five Gilhooly article pages, checking
+the first two rendered pages for script. This does not confer consultation of
+all cited studies. A broad NET PDF search initially returns excessive truncated
+context; exact page418/PDF55 is then read. Both PDF and HTML print the eshhat
+Samaritan report, so the tentative HTML-only glitch explanation is rejected.
+
+The actual4Q45 tail is supplied, not surviving ashdat or holiness ink.4Q39 has
+only beginning coverage, and4Q175 quotes from33:8 onward rather than being
+excluded by genre. The pinned Samaritan Garizim1-based segment has ash-dot
+with vav, unlike Qumran-Digital's printed SP parallel. Exact-reference screen
+counts are bounded to pinned bytes, not a census. Rights/attribution and
+non-preservation remain explicit; no full restricted corpus is vendored.
+
+The contract freezes source/context/policy and alternatives before recorded
+assessment. Root assesses the current abstract calque first, then concrete and
+quality renderings. One independent identity-withheld/reversed-order comparator
+assesses quality first and also prefers holy myriads provisionally, with the
+close abstract gloss and holy-ones interpretation disclosed. Both hold final
+source priority: qere fire/law is retained conditionally, not as an original
+victory; Greek angels and fire-flew analysis are distinct source interpretations.
+Neither readability alone, traditional familiarity nor model agreement selects
+historical Hebrew. Complete knowledge blinding is not claimed.
+
+The full candidate repairs both note anchors, explicitly discloses competing
+source interpretations and corrects connected metadata while preserving exact
+source/generation, seven archived old fields and two prior revisions. An initial
+draft's future timestamp is corrected to the actual clock before exact-byte
+review. Active status resets to draft/needs_review;95% historic agreement is not
+transferred. Actual whole-book preflight is34chapters/959units, only33:2 changed
+and both notes exported. Six focused regression tests and exact baseline fetch
+are added to CI. Separate full-record review, canonical application and delivery
+must be recorded by their actual outcomes; none is inferred from source review.
+The separate exact-hash application judge passes the full candidate and
+independently parses the pinned Samaritan sign/slot node. Canonical33:2 is then
+applied at the judged YAML digest, schema/note-audited and actually exported;
+the full-book digest matches preflight, and the other958 verse files retain
+their byte manifest. Protected files keep their hashes. No new manuscript
+reading, ImageGen evidence, canon or About-page change is claimed. Reopening
+requires discriminating evidence, not repeated votes.
+
+Post-application verification matches the exact judged YAML and whole-book
+preflight export digests. One new test initially expects the word supplied in
+a summary that uses supply; it is repaired to inspect the explicit supplied
+tail field and lack of discriminating support. No reviewed candidate or
+assessment bytes change. All six new case tests then pass, alongside six
+Genesis application,36reader-note and nine raw-redraft guard tests:57 total.
+Both PR93 exact-head checks complete successfully, and SHA-pinned merge lands
+at80adea51bf778b958555205fc83d82735f148736. Its main tree is byte-identical
+to the frozen parent; the Deuteronomy branch is safely fast-forwarded without
+altering reviewed or protected inputs. This parent delivery does not approve
+the new Deuteronomy commit's separate remote checks or deployment.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

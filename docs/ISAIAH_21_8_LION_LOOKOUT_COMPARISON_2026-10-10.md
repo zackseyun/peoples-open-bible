@@ -7,6 +7,10 @@ new decipherment. **Retain the Masoretic source provisionally and hold historica
 priority.** A separate reader disclosure and anchor repair is now applied; neither
 better contextual fit nor manuscript age alone establishes the earliest reading.
 
+The [October 10 priority follow-up](#october10-commentary-and-greek-priority-followup)
+now checks two target commentaries and the actual HUBP preview. It does not
+resolve priority or reopen the already reviewed reader application.
+
 ## Exact evidence and preservation
 
 | Control and locus | Short observed reading | Meaning and limit |
@@ -109,3 +113,56 @@ original analysis enter Git. The publisher edition footers were read from the
 actual Greek/Latin body; no raw publisher-HTML digest is invented. No DJD or
 modern critical apparatus was acquired, nor an original manuscript image read.
 No generated image, novel letter, canon change or About-page integration follows.
+
+## October10 commentary and Greek priority followup
+
+[Clements, *Isaiah 1–39* (1980)](https://biblicalstudies.gospelstudies.org.uk/pdf/e-books/clements_r-e/isaiah-1-39_new-century-bible_clements.pdf),
+printed p.179 (native PDF p.195), prefers the lookout supported by 1QIsaᵃ
+and calls the Masoretic expression a corruption. His paragraph integrates
+the watchman's voice into the prophet's poetic presentation, but does not
+demonstrate how the competing consonantal forms arose or exclude contextual
+clarification in the scroll. This is a scholarly judgment about the witness
+already counted, not another independent ancient witness. Adjacent discussion
+at 21:7 even finds adequate sense in MT without the proposed alteration.
+
+[Ottley, *The Book of Isaiah According to the Septuagint*, II (1906)](https://juchre.org/septuagint/ottleyisaiah.pdf),
+printed pp.206–207 (native pp.588–589), explains Greek `καὶ κάλεσον Οὐρείαν`
+through the lion-form Hebrew: a vav after initial aleph and a different
+vocalization can yield the name Uriah; he suggests association with Isaiah 8:2.
+This is a translator hypothesis, not an observed Hebrew exemplar or a
+demonstrated copying history between `הראה` and `אריה`. It supplies a reason
+not to treat Greek Uriah as simple support for Hebrew lookout. Ottley predates
+the Dead Sea Scroll discoveries and therefore cannot adjudicate the new direct
+Hebrew witness against MT. His contextual preference for the lion comparison
+is not evidence of a written comparison prefix.
+
+Ottley also reports Aquila `λέοντα`, Symmachus `λέαιναν`, Theodotion `ἀριήλ`
+and Vulgate `leo`. These reports distinguish lion, lioness and Ariel forms;
+they are not four freshly inspected ancient manuscripts or uniform votes for
+one Hebrew spelling. His Greek apparatus distinguishes Lord's lookout followed
+by “and he said” from “the Lord said,” with B and Lucianic support for the latter;
+the Lucianic attribution is qualified *e sil.* (from silence). Thus even the
+Greek treatment of the speaker varies. These additional reports receive no
+direct-image verification or certification of POB's “my lord.”
+
+The [Magnes listing](https://www.magnespress.co.il/book/%D7%A1%D7%A4%D7%A8_%D7%99%D7%A9%D7%A2%D7%99%D7%94%D7%95-3285)
+identifies a 1965 sample volume, but its [linked four-page preview](https://www.magnespress.co.il/api/magnes/book/3285/preview)
+contains volume III's prefaces dated 9.6.1993 and Isaiah 45:1–9, not 21:8.
+The downloaded pages, not the catalogue title, determine usable coverage.
+This closes that preview route for 21:8; no HUBP apparatus decision about
+21:8 is claimed. Isaiah 45:7 is queued as a distinct possible comparison,
+requiring the preview's sigla and actual witness text to be checked first;
+its apparatus is not yet an adjudicated source change.
+
+**Decision remains hold.** The commentaries sharpen competing explanations,
+but neither establishes direction of transmission. Next useful evidence is
+target modern apparatus with its cited witnesses, a discriminating explanation
+of these consonantal forms, or relevant local scribal clarification controls.
+Do not repeat this decision without such evidence. No source, main English,
+reader note, historical application receipt or canon changes in this follow-up.
+
+The [new evidence receipt](../sources/textual_restoration/comparisons/isaiah21_8_priority_followup.2026-10-10.v1.json)
+pins the three private PDFs, their inspected pages and the unchanged canonical
+record. Root read the complete relevant paragraphs and visually checked both
+commentary target pages and all four preview pages. The PDFs are not vendored
+or relicensed; only limited excerpts, metadata and analysis enter Git.

@@ -8239,6 +8239,53 @@ approved head; localmain safely fast-forwards after tree/ancestry/worktree
 checks and normal main pushes succeed. PR103 remains separately gated; this
 successor cannot bypass it or borrow its check results.
 
+### 2026-10-10 — Isaiah21:8 target commentary and Greek priority followup
+
+The [priority follow-up](ISAIAH_21_8_LION_LOOKOUT_COMPARISON_2026-10-10.md#october10-commentary-and-greek-priority-followup)
+acquires and checks Clements's 1980 target paragraph, Ottley's 1906 Greek
+commentary and the actual Magnes-linked HUBP preview. Root reads complete
+target context and visually inspects both commentary target pairs and all
+four preview pages. Clements favors lookout but supplies no demonstrated
+direction-of-transmission mechanism here. Ottley's Uriah explanation derives
+from lion-form Hebrew, not lookout, and predates DSS. Reported Greek revisions
+and speaker-syntax variants stay editorial reports, not fresh manuscript votes.
+The 1965 catalogue link actually supplies volume III material with a 1993
+preface and Isaiah45:1–9; it cannot certify target21:8 apparatus. This is useful
+acquisition and hypothesis testing, not a new decipherment or settled priority.
+The source/main English and already reviewed application remain byte-identical.
+Isaiah45:7 is queued for distinct witness/sigla checks, not adjudicated here.
+
+One read-only source agent checks two bounded routes; the main agent acquires
+Clements and reads all relevant sources itself. An initial Ottley web timeout
+and too-small download cap lead to a verified-size bounded download. Repeated
+BeautifulSoup unavailability is resolved with standard-library extraction.
+A guessed test filename is absent; actual guard filenames are resolved before
+validation. The documentation skill keeps the evidence limits and actions in
+the established Git audit, with private PDF digests and page identities.
+PR103's two exact-head checks114297311046/114297269158 succeed; SHA-pinned
+merge lands at `89199ae056cfc19d11e2b3937932a7b2b470554a`, with a tree equal
+to approved head61c8af3011b9501ab05ff6a0ffa829e980ffd6f7. Local main safely
+fast-forwards after worktree/ancestry guards and normal main push succeeds.
+PR104 remains separately gated; this follow-up cannot inherit its approval.
+
+The first receipt hash for the canonical unit contains a transcription error;
+the byte-derived check catches it and the receipt is corrected before review.
+Nine current OT selected-source redraft guards pass in0.122s. An extra direct
+run of the older reviewed-critical-source suite has six passes and three
+errors: its method/doctrine pins already differ at the frozen baseline.
+Those historical fixtures are not repinned or counted as passing here.
+JSON, private PDF signatures/sizes/digests, seven current and frozen input
+pins, unchanged historical application, local links, documentation-only tracked
+scope, protected unrelated-file hash and whitespace checks pass. No fresh
+full-corpus or historical52-test pass is claimed for this documentation change.
+
+One independent bounded review passes actual source bodies, visual page checks,
+factual qualifiers, all PDF and unchanged-input pins, historical application
+preservation and links. The report remains at reviewed SHA256
+`52d875cf4a7c8d83b8b6070e1ef46fc7accad0a1bab19a992f057d53489a40bb`;
+the receipt records its pre-status digest and receives only this review-status
+append. No repeated agreement loop or new source-priority approval follows.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

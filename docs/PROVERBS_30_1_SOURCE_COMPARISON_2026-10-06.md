@@ -13,6 +13,11 @@ The [controlling method](TEXTUAL_ADJUDICATION_METHOD.md) is unchanged.
 
 ## What would change in the source interpretation?
 
+The [October10 publisher-version follow-up](#october10-publisher-greek-and-latin-controls)
+below supersedes only the earlier Latin access limit. The October6 machine
+record remains a frozen account of that earlier consultation, not a statement
+that Latin is still unread.
+
 The inspected OSHB/WLC 4.20 text has two lamed-prefixed occurrences of Ithiel,
 followed by Ucal. The XML's modern proper-name tags describe an interpretation;
 they are not additional manuscript evidence. The current POB English addresses
@@ -144,3 +149,67 @@ model score, canon label or deployment is changed. Historical high-agreement
 scores do not certify this new comparison. Validation for this documentation
 change checks record syntax, bound file hashes, protected files, local links
 and whitespace; it is not a new full-corpus semantic certification.
+
+## October10 publisher Greek and Latin controls
+
+The [publisher's parallel page](https://www.die-bibel.de/en/bible/LXX,VUL/PRO.30)
+provides actual Rahlfs–Hanhart2006 Greek and Weber–Gryson2007 Latin, with each
+edition identified in its own footer. Target30:1 and context30:2–9 are inspected
+in both languages. These are selected edition texts, not manuscript images or
+critical apparatuses. The [new follow-up receipt](../sources/textual_restoration/comparisons/proverbs30_1_versions.2026-10-10.v1.json)
+preserves the unchanged Hebrew/canonical inputs and separates version wording,
+interpretive discrimination and unproved source reconstruction.
+
+The publisher's [English-route Latin page](https://www.die-bibel.de/en/bible/VUL/PRO.30)
+and [Greek page](https://www.die-bibel.de/en/bible/LXX/PRO.30) also supply the
+same target clauses and edition labels. These are route checks, not additional
+ancient witnesses; unrelated chapter variants are not compared here.
+
+The Latin tail has “cum quo est Deus et qui Deo secum morante confortatus ait.”
+Its relative clauses describe the speaker: God is with him, and he speaks as
+one strengthened while God remains with him. `Deo … morante` is an ablative
+absolute; `confortatus` is a passive participle, not an assertion of weariness.
+This reading does not explicitly address two named recipients, either. It is
+a distinct interpretation rather than a literal match for POB's names or its
+repeated weary vocatives. Associations with the name's meaning and an ability
+reading are possible explanations, not proved word-for-word Hebrew alignment.
+Latin strengthening does not establish Hebrew vowels, missing consonants or
+the exact final-verb derivation. [Weber–Gryson2007 selected text](https://www.die-bibel.de/en/bible/VUL/PRO.30),
+30:1; surrounding first-person speech begins in30:2.
+
+The publisher Greek has “τοῖς πιστεύουσιν θεῷ, καὶ παύομαι.” Article plus dative
+plural participle addresses those trusting God; the last verb is first-person
+present middle, describing ceasing/stopping. This independently checks the
+earlier edition-derived digital observation against an identified publisher
+edition. It does not create a second independent ancient witness: the editions
+are related controls. Greek trust and ceasing do not equal repeated weariness
+vocatives, and Latin presence and strengthening do not equal Greek trust and
+ceasing. Their exact Hebrew sources remain unproved. [Rahlfs–Hanhart2006 selected text](https://www.die-bibel.de/en/bible/LXX/PRO.30),
+30:1.
+
+Consequently, retain selected names provisionally and hold earliest-interpretation
+priority. The new Latin control is meaningful contrary evidence to a claim that
+the ancient versions simply attest the weary proposal; it does not prove names
+original or eliminate weariness as a Hebrew analysis. No source/English change
+follows. The unresolved discriminator is still the actual critical target
+commentary/apparatus and a transmission account explaining these different
+solutions. The [Fox preview](PROVERBS_FOX_PREVIEW_ACQUISITION_2026-10-10.md)
+does not contain this target. Verse3's Greek/Latin difference is observed as
+context only, not adjudicated or treated as a result of this comparison.
+
+Access is bounded: the German-route single-version web page is inaccessible and
+CLI returns403. The SBL full-Vulgate PDF web request returns403 and CLI HEAD404;
+one inferred archive route also returns404 and is not cited as evidence. The
+actual indexed publisher parallel page supplies both bodies, so no private PDF,
+full source import, membership login or mirror acquisition is needed. The earlier
+announced PDF plan is superseded by this HTML consultation. One mistaken local
+receipt filename fails the initial search; the existing report supplies the
+correct version route. No unavailable PDF content is counted as inspected.
+
+One bounded independent reviewer passes the actual publisher bodies, edition
+labels, target grammar, seven current/baseline hashes and linked summaries.
+The failed historical access commands are not independently rerun. Nine
+source-redraft guards pass in0.124s; JSON/input/local-link/scope/unrelated-file
+checks and whitespace pass. No full-corpus result is inferred.
+This is not a new blind English preference assessment, a source-reading vote
+loop, new ink, ImageGen evidence, canon expansion or publication approval.

@@ -2,6 +2,15 @@
 
 ## Current answer to the two research questions
 
+October10 separate [Isaiah45:7 English and reader review](ISAIAH_45_7_GOOD_PEACE_COMPARISON_2026-10-10.md#october10-english-comparison-and-reader-application)
+modestly prefers well-being against retained Masoretic shalom, with peace still
+viable. The full draft candidate adds the good source alternative, qualifies
+the adversity explanation and fixes the misplaced anchor. One identity-masked
+comparison is not two votes or proof of an optimum. The frozen historical
+full-Isaiah overlay changes only45:7 and keeps both notes. One independent
+exact-record review passes and the exact reviewed draft is applied and locally
+export-verified. Source priority and deployed publication remain unapproved.
+
 October10 distinct [Isaiah45:7 comparison](ISAIAH_45_7_GOOD_PEACE_COMPARISON_2026-10-10.md)
 verifies direct published good against Masoretic peace. Apparent peace in1Q8
 and4Q57 is supplied, not preserved support; selected Greek/Latin retain peace.

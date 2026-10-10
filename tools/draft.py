@@ -54,6 +54,7 @@ from typing import Any, Iterable
 
 from dotenv import load_dotenv
 from jsonschema import Draft202012Validator
+import yaml
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import sblgnt  # noqa: E402
@@ -415,6 +416,46 @@ def load_source_verse(book_code: str, chapter: int, verse: int) -> Any:
     raise ValueError(f"Unknown book code: {book_code}")
 
 
+def assert_raw_ot_draft_source_safe(verse: Any) -> None:
+    """Refuse to redraft a saved OT source selection from the raw WLC base.
+
+    This is a stop gate, not a selected-source resolver or approval of mutable
+    YAML. Exact comparison deliberately avoids normalizing away a meaningful
+    written/read difference. Raw parsers and first drafts remain unchanged.
+    """
+    if verse.book_code not in wlc.OT_BOOKS:
+        return
+    path = translation_path_for_verse(verse)
+    try:
+        raw = path.read_text(encoding="utf-8")
+    except FileNotFoundError:
+        return
+    except (OSError, UnicodeError) as exc:
+        raise ValueError(f"Cannot verify saved OT source before redrafting {verse.canonical_id}: {path}") from exc
+    try:
+        saved = yaml.safe_load(raw)
+    except yaml.YAMLError as exc:
+        raise ValueError(f"Cannot parse saved OT source before redrafting {verse.canonical_id}: {path}") from exc
+    if not isinstance(saved, dict) or saved.get("id") != verse.canonical_id:
+        raise ValueError(f"Saved OT verse identity mismatch before redrafting {verse.canonical_id}: {path}")
+    source = saved.get("source")
+    if (not isinstance(source, dict)
+            or not isinstance(source.get("text"), str)
+            or not source["text"].strip()
+            or not isinstance(source.get("edition"), str)
+            or not source["edition"].strip()):
+        raise ValueError(f"Saved OT source is missing or malformed before redrafting {verse.canonical_id}: {path}")
+    if (source["edition"] != source_edition_for_book(verse.book_code)
+            or source["text"] != source_text_for_verse(verse)
+            or "critical_source_integration" in saved):
+        raise ValueError(
+            f"Selected-source regeneration required for {verse.canonical_id}: saved source differs "
+            f"from the raw WLC drafting input or has critical-source integration ({path}). "
+            "Refusing a base-only redraft. Use a provenance-verified selected-source candidate "
+            "and separate reviewed application; do not overwrite the selected record."
+        )
+
+
 def iter_source_verses(book_code: str) -> Iterable[Any]:
     if book_code in sblgnt.NT_BOOKS:
         return sblgnt.iter_verses(book_code, SOURCES_ROOT)
@@ -545,6 +586,7 @@ def source_distinction_prompt(verse: Any) -> str:
 
 
 def build_user_prompt(verse: Any) -> str:
+    assert_raw_ot_draft_source_safe(verse)
     morph = morphology_lines_for_verse(verse)
     doctrine = load_doctrine_excerpt()
     return f"""# Verse
@@ -769,7 +811,6 @@ def validate_record(record: dict[str, Any]) -> None:
 
 
 def write_verse_yaml(record: dict[str, Any], verse: Any) -> pathlib.Path:
-    import yaml
 
     out_path = translation_path_for_verse(verse)
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -1234,6 +1275,7 @@ def draft_verse(
     allow_source_integrity_issues: bool = False,
     write: bool = True,
 ) -> DraftResult:
+    assert_raw_ot_draft_source_safe(verse)
     prompt_bundle: build_translation_prompt.PromptBundle | None = None
     effective_prompt_id = prompt_id
     if verse.book_code in lxx_swete.DEUTEROCANONICAL_BOOKS:
@@ -1297,6 +1339,9 @@ def draft_verse(
 
     output_path = translation_path_for_verse(verse)
     if write:
+        # Recheck if the saved source changed while the model was running.
+        # This narrows the overwrite window; it is not an atomic write lock.
+        assert_raw_ot_draft_source_safe(verse)
         output_path = write_verse_yaml(record, verse)
 
     return DraftResult(

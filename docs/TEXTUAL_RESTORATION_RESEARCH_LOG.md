@@ -7576,6 +7576,186 @@ the successful patch uses the actual closing line. The report now distinguishes
 its historical comparison-only result from this separate canonical application.
 The wider source census and earliest-text/canon questions remain unfinished.
 
+### 2026-10-10 — Isaiah 9 2 source choice and joy meaning
+
+The previous turn applies and export-checks Psalm8:5's grammar/disclosure
+correction, commits/pushes 2ccdc49f885e1194911a6dd29a15cd21869fd1c2 and opens
+PR87. This is verified progress, not a new source decipherment. This turn
+inspects authoritative Git and PR state, preserves the unrelated Genizah file,
+and selects an unadjudicated consequential case from the existing casebook.
+No new readiness essay, inventory rebuild or image-calibration run is needed.
+
+The [Isaiah9:2 comparison](ISAIAH_9_2_JOY_SOURCE_COMPARISON_2026-10-10.md)
+proposes the recorded qere לו and “you have increased its joy,” rather than
+POB's written-negative clause. Whole paragraph context supports this working
+preference, while written לא and actual selected Latin negative wording remain
+serious contrary evidence. The ancient published scroll spelling לוא is
+unbracketed but semantically nondiscriminating; same-scroll controls use it
+both ways. Nearby4Q57 starts the following verse, not the disputed word.
+Selected Greek is positive but has a different opening and “your joy”; it does
+not prove exact Hebrew לו. No conjectural first-colon wording is adopted.
+
+A contract pins fifteen local inputs before recorded candidate assessment.
+Root considers negative then affirmative; a separate reviewer receives the
+opposite order with POB identities/metadata withheld and supports a provisional
+affirmative preference, not earliest-wording certainty. Another read-only agent
+checks direct published Hebrew preservation/orthography and records its
+Parry2020 consultation, including contrary categorization within that article.
+Root verifies the actual Qumran-Digital bodies/controls but does not claim to
+have independently read Parry's PDF. Their outputs and limits are preserved
+in the assessment; agreement is not an extra manuscript. No canonical/source
+or English file changes in this comparison. The next action is an exact
+full-record qere-based candidate/application with honest source labeling,
+negative-alternative disclosure, archived approvals and actual export checks.
+
+An initial XML extraction uses the wrong unnamespaced chapter structure and
+returns no text; corrected OSIS namespace/reference extraction supplies actual
+paragraph and qere data. Tanach/Sefaria web routes and an incorrect QDR URL
+yield no usable body; the identified versioned QDR paths do. Some navigation
+finds and an assessment patch fail harmlessly; corrected anchors preserve
+the real evidence and reviewer assessment. No unavailable route is presented
+as inspected evidence. No fresh lexicon or pixel reading is claimed.
+
+During independent comparison, both PR86 exact-head corpus-integrity checks
+finish successfully. Its frozen head is SHA-pinned merged at
+1913e42086957a204ba3488514a76493b4684338; local main is fetched and pushed
+(remote already up-to-date). PR87 is
+retargeted to main without changing its reviewed head; its two checks remain
+live at that observation. No CI approval transfers to this new research branch.
+
+The documentation skill separates evidence, source proposal and eventual
+application/delivery. Earliest wording, comprehensive OT/NT witness comparison,
+new decipherment and corpus-wide superiority remain unproved; no canon change
+is inferred from this biblical variation unit.
+
+All fifteen pinned local inputs, unchanged canonical/source/protected files,
+JSON structure, local links and whitespace pass. This comparison-only change
+does not need a new corpus-test run; no application or deployed-reader approval
+is inferred from those integrity checks.
+
+### 2026-10-10 — Isaiah 9 2 full-record source and English application
+
+PR87's two exact-head corpus checks succeed; its frozen head
+2ccdc49f885e1194911a6dd29a15cd21869fd1c2 is SHA-pinned merged at
+e90972ace0f143fc3c1119a677d7242ce7885736. Local main is fetched and pushed
+(remote already up-to-date). PR88 is retargeted to main without changing its
+42adff57af47e9f138c9af063448758dbd0b32f3 head; its checks remain live at that
+observation. This application starts from that frozen comparison head; old CI
+approval is not transferred to its new changes.
+
+The [candidate](../sources/textual_restoration/candidates/isaiah9_2_joy.2026-10-10.v1.json)
+and [application receipt](../sources/textual_restoration/applications/isaiah9_2_joy.2026-10-10.v1.json)
+record a real selected-source and marker-free English change: recorded qere
+ל֖/וֹ replaces written לא, and “not increased the joy” becomes “increased its
+joy.” The source explicitly identifies a WLC/OSHB Masoretic reading form, not
+a ketiv-only transcription or recovered scroll text. Source apparatus and
+clause-anchored note retain written-negative/Latin counterevidence, semantically
+nondiscriminating 1QIsa-a spelling and Greek divergence. Earliest wording is
+unresolved; source priority is provisional, not compulsory contextual smoothing.
+
+Eight old fields are exactly archived with false certification flags. Original
+generation metadata, seven unrelated lexical decisions, marker b and its note
+remain unchanged. Stale revision approval is removed; active draft/needs_review
+remains. There were no baseline revisions; one actual from/to event is added.
+One independent exact-SHA application reviewer passes schema, source operation,
+English, archives and full-export integrity using local records and saved prior
+consultations. No source reacquisition or repeat preference vote is claimed.
+
+Candidate preflight and actual full Isaiah export agree: 66 chapters and 1,291
+entries, only 9:2 changed, 1,290 other verse files byte-identical. Schema,
+footnote audit and protected method/Genizah hashes pass. Local verification is
+not remote CI, deployed-reader verification, novel wording or canon approval.
+
+A concrete pipeline gap is detected during application: generic draft loading
+still uses raw WLC written לא, not the canonical selected qere. No upstream
+file or draft-source override is changed here. The saved record and reader
+export are coherent, but future regeneration is not verified. The next necessary
+engineering task is explicit selected-source loading with provenance and tests
+before this verse is redrafted; do not claim all consumers are synchronized.
+
+The documentation skill keeps comparison, application and delivery distinct.
+This advances a consequential known-reading correction instead of another
+readiness essay, speculative decipherment or unbounded reviewer loop. The wider
+OT/NT comparison and canon/reception inquiry remain unfinished and separate.
+
+All 38 targeted reader-export/rationale tests pass in the actual run. The first
+non-target pin check mistakes the contract's verse ID for a filesystem path and
+incorrectly includes the intentionally changed target; it fails without writing.
+The corrected exact-path exclusion verifies all fourteen non-target pins. Both
+new JSON records, local documentation links and whitespace pass. The frozen
+comparison contract retains its original target hash; the receipt preserves that
+baseline rather than retroactively changing the comparison inputs.
+
+### 2026-10-10 — stop raw OT redrafting from undoing source selections
+
+The Isaiah9:2 application is committed/pushed at
+94db145dc10ecb4f29848c5884dc138590e34b55 and opened as
+[PR89](https://github.com/zackseyun/peoples-open-bible/pull/89), stacked on
+frozen PR88. PR88 has one successful and one live corpus check at the latest
+observation; PR89's checks remain live. Neither is treated as merged or as
+publication-approved. The safeguard is on a new descendant branch, not an
+amendment to either reviewed head.
+
+A read-only engineering agent confirms that raw OT loading bypasses selected
+sources in prompts, checks and final record construction, including earlier
+Isaiah53:11. Root inspects those paths and implements the bounded
+[redraft safeguard](OT_SELECTED_SOURCE_REDRAFT_GUARD_2026-10-10.md): refuse before
+model work when saved source text/edition differs from the ordinary incoming
+base, or critical integration is present. Missing/exact-base drafts retain
+behavior. Malformed identities, source fields, YAML and read errors fail closed
+as nonretryable validation errors. CLI dry-run is protected and a pre-write
+recheck catches a changed selection during the call, without claiming atomicity.
+No raw loader, source/English record or selected-source resolver is changed.
+
+One exact-file independent engineering review passes the narrow safeguard and
+records residual limits. Root and reviewer separately pass all 36 focused tests,
+including nine new tests; the new suite is wired into corpus CI. This is not a
+repeated source preference vote or a broad model-quality benchmark. A mistaken
+initial `tools/sources/wlc.py` lookup finds no file; the actual parser is
+`tools/wlc.py`. No destructive chapter-worker operation or generation is run.
+
+The guard does not preserve all historical metadata on matching-source redrafts,
+cover direct low-level writers or resolve the selected source. The assessor
+also detects contradictory raw/selected Spanish prompt inputs; that remains a
+specific separate follow-up. The next substantive integration requires trusted
+selection provenance, coherent morphology and separate candidate application,
+not accepting mutable YAML approval fields. This repair conserves inference
+tokens and protects prior work without claiming novel letters or canon changes.
+
+An expanded safeguard/distinction/WLC suite passes 42 tests. A wider exploratory
+73-test run yields eleven errors in historical critical-source/critical-verse
+replays and one failure reproducing Deuteronomy's old preflight. Inspection
+locates old critical-review method/doctrine hashes that already drift on parent
+94db145dc10ecb4f29848c5884dc138590e34b55. Preflight differences are exporter/schema
+hashes and candidate schema errors; those files and the builder are byte-identical
+to the parent. No historical hashes/approvals are repinned. This limits any claim
+that existing critical composition is currently reusable without a new versioned
+review. An incidental blank-line cleanup after the judge's review changes the
+code digest; restoring that line returns exactly to the judged digest rather
+than transferring its approval to different bytes. One documentation patch
+fails harmlessly on an unnecessary context hunk; the corrected patch succeeds.
+
+### 2026-10-10 — integrate the reviewed Isaiah application and safeguard
+
+The safeguard is committed/pushed at df50e9cf52b7c06de48f05a748ed38670bfbea93
+and opened as PR90 stacked on PR89. Both PR88 corpus checks finish successfully,
+but a SHA-pinned merge returns HTTP405. A bounded read-only state inspection
+then confirms mergeable=false/dirty; the exact-head retry's response explicitly
+says “Pull Request has merge conflicts.” PR88 is not merged and PR89 is not
+retargeted. A branch-protection lookup returns404, so no protection configuration
+is inferred from that unavailable route. No parent check approves a later head.
+
+Current main e90972ace0f143fc3c1119a677d7242ce7885736 is merged locally into
+the combined descendant at 5e40e621ff73fe19fbdf04dc0bf8b0ad0e94f61e. Git completes
+the merge without conflicts and the entire tree is byte-identical to the reviewed
+guard head df50e9cf52b7c06de48f05a748ed38670bfbea93. No qere candidate, application
+receipt, reviewer-bound code/test or protected file changes. A new integration
+branch carries that merge plus this delivery log, preserving the remote frozen
+heads of PR88/89/90. The intended replacement consolidates all three in one PR
+against current main, with fresh exact-head corpus checks rather than inherited
+CI approval. Superseded proposals may be closed only after that replacement is
+confirmed open. This is a delivery reconciliation, not another textual vote.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

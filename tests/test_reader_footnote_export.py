@@ -14,6 +14,64 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReaderFootnoteExportTests(unittest.TestCase):
+    def test_isaiah_9_2_selects_recorded_qere_with_negative_disclosure(self):
+        import xml.etree.ElementTree as ET
+
+        packet = json.loads((ROOT / 'sources/textual_restoration/applications/isaiah9_2_joy.2026-10-10.v1.json').read_text())
+        raw = (ROOT / packet['target']).read_bytes()
+        record = yaml.safe_load(raw)
+        candidate_raw = (ROOT / packet['candidate']).read_bytes()
+        self.assertEqual(record, json.loads(candidate_raw))
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), packet['application']['yaml_sha256'])
+        self.assertEqual(hashlib.sha256(candidate_raw).hexdigest(), packet['candidate_sha256'])
+        ns = {'o': 'http://www.bibletechnologies.net/2003/OSIS/namespace'}
+        verse = ET.parse(ROOT / 'sources/ot/wlc/Isa.xml').find(".//o:verse[@osisID='Isa.9.2']", ns)
+        self.assertEqual(verse.find("o:w[@type='x-ketiv']", ns).text, 'לא')
+        qere = verse.find("o:note[@type='variant']/o:rdg[@type='x-qere']/o:w", ns)
+        self.assertEqual(qere.text, 'ל֖/וֹ')
+        self.assertEqual(record['source']['text'], packet['baseline_source']['text'].replace(' לא ', ' ' + qere.text + ' '))
+        self.assertEqual(record['source']['edition'], 'WLC')
+        self.assertIn('Masoretic reading form', record['source']['note'])
+        self.assertIn('not the ketiv-only string', record['source']['note'])
+        self.assertEqual(record['source']['apparatus'][0]['reading'], 'לא')
+        self.assertEqual(record['source']['apparatus'][1]['reading'], qere.text)
+        self.assertEqual(record['ai_draft'], packet['baseline_generation'])
+        self.assertFalse(packet['baseline_revisions_present'])
+        self.assertEqual(record['revisions'][:-1], packet['baseline_revisions'])
+        self.assertEqual(record['revisions'][-1]['from'], packet['baseline_english'])
+        self.assertEqual(record['revisions'][-1]['to'], record['translation']['text'])
+        self.assertEqual(record['status'], 'draft')
+        self.assertEqual(record['cross_check'], {'status': 'needs_review'})
+        self.assertNotIn('revision_pass', record)
+        archives = {item['field']: item for item in record['review_history']}
+        self.assertEqual(set(archives), {'source', 'status', 'revision_pass', 'cross_check',
+                         'translation.text', 'translation.footnotes', 'lexical_decisions', 'theological_decisions'})
+        self.assertEqual(archives['source']['value'], packet['baseline_source'])
+        for item in archives.values():
+            self.assertFalse(item['certifies_this_candidate'])
+            self.assertFalse(item['historical_review_inputs_verified'])
+            self.assertEqual(item['archived_from_baseline_sha256'], packet['baseline_sha256'])
+        text = record['translation']['text']
+        self.assertEqual(text, 'You have multiplied the nation; you have increased its joy[a]. They rejoice before you as with the joy at harvest[b], as men exult when they divide spoil.')
+        self.assertEqual(text.count('[a]'), 1)
+        notes = record['translation']['footnotes']
+        self.assertEqual(notes[1], packet['baseline_second_note'])
+        for detail in ('Masoretic qere', 'written Hebrew', 'not increased', 'Weber/Gryson',
+                       '1QIsa-a', 'either sense', 'different construction', 'remains unresolved'):
+            self.assertIn(detail, notes[0]['text'])
+        book = exporter.export_book('ISA')
+        self.assertEqual(len(book['chapters']), 66)
+        self.assertEqual(sum(len(ch['verses']) for ch in book['chapters']), 1291)
+        exported = next(v for ch in book['chapters'] if ch['chapter'] == 9
+                        for v in ch['verses'] if v['verse'] == 2)
+        self.assertEqual(exported['text'], text)
+        self.assertEqual(exported['footnotes'], notes)
+        self.assertTrue(packet['decision']['source_changed'])
+        self.assertTrue(packet['decision']['marker_free_main_english_changed'])
+        for flag in ('source_interpretation_settled', 'novel_reading_demonstrated',
+                     'canon_changed', 'publication_approved', 'upstream_wlc_changed'):
+            self.assertFalse(packet['decision'][flag])
+
     def test_psalm_8_5_discloses_same_hebrew_referents_and_corrects_stem(self):
         packet = json.loads((ROOT / 'sources/textual_restoration/applications/psalm8_5_disclosure.2026-10-10.v1.json').read_text())
         raw = (ROOT / packet['target']).read_bytes()

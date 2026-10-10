@@ -1,0 +1,134 @@
+# Isaiah 9 2 negative and increased joy comparison
+
+## Outcome
+
+Propose the recorded Masoretic reading לו, “to it,” as the provisional working
+source for “you have increased its joy.” This would reverse POB's current
+negative clause, not merely polish its English. The written לא, “not,” remains
+a substantial alternative. Earliest wording is unresolved. The comparison itself
+changes no canonical record; the separately reviewed application below now
+selects this reading provisionally in the saved draft and reader export.
+
+The [contract](../sources/textual_restoration/comparisons/isaiah9_2_joy_contract.2026-10-10.v1.json)
+pins source, context and candidates before their recorded assessment. Acquisition
+is exploratory, not a held-out experiment. The
+[assessment](../sources/textual_restoration/comparisons/isaiah9_2_joy_assessment.2026-10-10.v1.json)
+stores the actual evidence, counterarguments, independent reviews and reopening
+conditions. POB/WLC and the selected Greek label this verse 9:2; the selected
+Latin and many English Bibles label the same clause 9:3.
+
+## Written and read Hebrew
+
+Pinned OSHB/WLC has written לא, tagged as a negative particle, and explicitly
+records qere ל֖/וֹ, a preposition with third-person masculine singular suffix.
+The immediately preceding singular nation supplies a coherent beneficiary:
+“for it you increased joy,” naturally “you increased its joy.” Both are Hebrew
+tradition, not Hebrew versus a modern English invention. Original-language
+priority does not make written form automatically superior to reading tradition.
+
+The paragraph moves from hunger/darkness at 8:19–22 toward relief and light at
+8:23–9:1. Positive growth and joy then fit the harvest/spoil celebration and
+the following explanations about broken oppression, destroyed war gear and
+the given child. That contextual coherence is the affirmative reading's
+strongest case. Its strongest objection is that the qere could repair an older,
+difficult negative. Difficulty alone cannot establish either corruption or priority.
+
+The negative has real written support, with versional support below. A contrast
+between earlier growth without joy and later celebration is possible. But the
+current unqualified clause supplies no “formerly,” “not yet,” relative connector
+or referent change. Those interpretations require additional argument; the
+negative is grammatically possible, not self-evidently nonsense. Root does not
+adopt the [NET editors' assertion](https://classic.net.bible.org/passage.php?passage=Isa+9%3A3)
+that it is obviously incorrect. Their separate first-colon conjecture replacing
+nation/to-it with rejoicing is not the recorded qere and is not proposed here.
+
+## Ancient Hebrew spelling and versional controls
+
+The actual [1QIsaᵃ published transcription](https://lexicon.qumran-digital.org/transcriptions/1QIsa%5Ea%5E/2022-10-14/index.html)
+spans VIII19–21. At VIII20 it has הגוי לוא הגדלתה השמחה, with the disputed
+word outside supply brackets and without uncertainty or correction marks.
+This is published attestation, not a new reading of pixels. The same scroll
+uses לוא negatively at VIII3 and as a beneficiary at V15 and XXXIII10. Its
+spelling therefore does not settle the target meaning. An early but
+nondiscriminating form cannot decide the choice through chronological preference.
+
+The actual [4Q57 transcription](https://lexicon.qumran-digital.org/transcriptions/4Q57/2025-08-25/index.html?v=2025-08-25)
+begins fragment 1–2+49:1 within the following verse, WLC9:3. Neither its partial
+letters nor its supplied context reaches the disputed clause. This is no target
+coverage, not an attested omission. Qumran-Digital's published texts are
+attributed to DFG465277421, based on Göttingen's Qumran-Wörterbuch and a Martin
+Abegg predecessor, under [CC BY-SA4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
+The selected [Rahlfs/Hanhart2006 Greek](https://www.die-bibel.de/bibel/LXX/ISA.9)
+portrays joy positively, but its opening diverges and has ἐν εὐφροσύνῃ σου,
+“in your joy.” It is not the same beneficiary or complete syntax as the qere;
+it cannot recover exact Hebrew לו. The selected
+[Weber/Gryson2007 Latin](https://www.die-bibel.de/bibel/VUL/ISA.9) explicitly
+has non magnificasti laetitiam, the negative interpretation. This is genuine
+contrary evidence, not uniform versional support for the affirmative. Neither
+selected edition is a single dated physical copy or full manuscript apparatus.
+
+The Hebrew evidence assessor also read
+[Parry2020](https://cdn.interpreterfoundation.org/jnlpdf/parry-v41-2020-pp55-74-PDF.pdf),
+reporting that printed page65 treats this as pronoun orthography while page61
+groups the scroll's spelling with the written negative and reports a conjecture.
+Both observations are preserved; root did not independently consult that PDF.
+The article supplies no unambiguous different target spelling in this check.
+
+## Independent assessment and next application
+
+Root compares negative then affirmative. One separate reviewer compares
+affirmative then negative, with POB identities and canonical metadata withheld,
+and supports a provisional affirmative source preference while retaining the
+negative countercase. Familiar-verse knowledge is not fully blinded. A separate
+Hebrew assessor verifies preservation, spelling controls and nearby coverage.
+Their agreement does not constitute another manuscript or publication approval.
+
+The comparison called for a separate full-record candidate selecting the qere,
+with an honest source description, written/read apparatus, negative alternative
+at the clause's own note anchor, archived stale approvals and actual reader-export
+verification. Source and English must move together; silently deleting “not”
+against the current source would conceal the change. No whole-corpus superiority,
+new decipherment or canon recommendation follows. Reopen priority for
+discriminating direct Hebrew, locus-specific apparatus/versional arguments or
+a stronger specific syntax/context explanation, not more preference votes.
+
+## Separate canonical application
+
+The [full-record candidate](../sources/textual_restoration/candidates/isaiah9_2_joy.2026-10-10.v1.json)
+selects the actual WLC/OSHB qere ל֖/וֹ in place of written לא. Its source label
+explicitly identifies a Masoretic reading form, not the ketiv-only string or a
+1QIsa-a transcription. The upstream WLC file remains unchanged. Its English is:
+
+> You have multiplied the nation; you have increased its joy[a]. They rejoice
+> before you as with the joy at harvest[b], as men exult when they divide spoil.
+
+Marker a moves from nation to the affected joy clause. Its note discloses the
+written negative, selected Latin counterevidence, ambiguous scroll spelling and
+divergent Greek; it does not settle earliest wording. Marker b, its note,
+original generation metadata and seven unrelated lexical decisions are retained.
+Eight old fields are exactly archived with false certification flags. Stale
+revision approval is removed; draft/needs_review is active. The baseline had no
+revision list; one actual from/to revision is added without invented history.
+
+One independent exact-candidate application review passes. It checks local
+WLC/qere data, schema, exporter and saved comparison evidence, not a newly
+reacquired independent source body. This is application-integrity review, not
+another source-preference vote or publication approval. The
+[receipt](../sources/textual_restoration/applications/isaiah9_2_joy.2026-10-10.v1.json)
+pins candidate SHA256 7e98df26480c5bbcc3a3d9e1dcddc22685ed5a91758a8db4ddc5fd958afe2ece
+and records the baseline, archives, actual application and export checks.
+
+The full actual Isaiah export matches candidate preflight: 66 chapters and
+1,291 verse entries, with only 9:2's English/notes changing. All 1,290 other
+Isaiah verse files are byte-identical. Schema, footnote audit and protected
+method/Genizah hashes pass. These checks do not verify a deployed reader.
+
+There is a specific regeneration limitation: the generic draft loader still
+returns the raw WLC written-negative source. This application verifies the saved
+record and reader export, not future generation or every source consumer.
+Before redrafting this verse, explicit selected-source loading needs integration,
+provenance and tests; otherwise redrafting could silently restore the old source.
+This limitation does not turn the qere into newly discovered letters. The change
+is a consequential provisional POB correction using an already attested reading,
+not a demonstrated novel reconstruction or a reason to change the canon.

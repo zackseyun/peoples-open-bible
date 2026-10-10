@@ -2,6 +2,12 @@
 
 ## Current answer to the two research questions
 
+October10 targeted acquisition: the [Fox publisher preview](PROVERBS_FOX_PREVIEW_ACQUISITION_2026-10-10.md)
+is actually downloaded and its editorial target checked. It does not include
+Proverbs30:1; names/weariness priority remains unresolved. The preview lane ends
+without a source or English change. Full target commentary or discriminating
+version evidence, not another same-evidence preference vote, is required next.
+
 October10 breadth follow-up: [eight critical-edition routes](OT_EDITION_REGISTRY_RECONCILIATION_2026-10-10.md)
 are reconciled into the central registry. This closes named discovery gaps and
 corrects the stale OHB access history, not source priority or a new text finding.

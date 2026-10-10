@@ -7576,6 +7576,63 @@ the successful patch uses the actual closing line. The report now distinguishes
 its historical comparison-only result from this separate canonical application.
 The wider source census and earliest-text/canon questions remain unfinished.
 
+### 2026-10-10 — Isaiah 9 2 source choice and joy meaning
+
+The previous turn applies and export-checks Psalm8:5's grammar/disclosure
+correction, commits/pushes 2ccdc49f885e1194911a6dd29a15cd21869fd1c2 and opens
+PR87. This is verified progress, not a new source decipherment. This turn
+inspects authoritative Git and PR state, preserves the unrelated Genizah file,
+and selects an unadjudicated consequential case from the existing casebook.
+No new readiness essay, inventory rebuild or image-calibration run is needed.
+
+The [Isaiah9:2 comparison](ISAIAH_9_2_JOY_SOURCE_COMPARISON_2026-10-10.md)
+proposes the recorded qere לו and “you have increased its joy,” rather than
+POB's written-negative clause. Whole paragraph context supports this working
+preference, while written לא and actual selected Latin negative wording remain
+serious contrary evidence. The ancient published scroll spelling לוא is
+unbracketed but semantically nondiscriminating; same-scroll controls use it
+both ways. Nearby4Q57 starts the following verse, not the disputed word.
+Selected Greek is positive but has a different opening and “your joy”; it does
+not prove exact Hebrew לו. No conjectural first-colon wording is adopted.
+
+A contract pins fifteen local inputs before recorded candidate assessment.
+Root considers negative then affirmative; a separate reviewer receives the
+opposite order with POB identities/metadata withheld and supports a provisional
+affirmative preference, not earliest-wording certainty. Another read-only agent
+checks direct published Hebrew preservation/orthography and records its
+Parry2020 consultation, including contrary categorization within that article.
+Root verifies the actual Qumran-Digital bodies/controls but does not claim to
+have independently read Parry's PDF. Their outputs and limits are preserved
+in the assessment; agreement is not an extra manuscript. No canonical/source
+or English file changes in this comparison. The next action is an exact
+full-record qere-based candidate/application with honest source labeling,
+negative-alternative disclosure, archived approvals and actual export checks.
+
+An initial XML extraction uses the wrong unnamespaced chapter structure and
+returns no text; corrected OSIS namespace/reference extraction supplies actual
+paragraph and qere data. Tanach/Sefaria web routes and an incorrect QDR URL
+yield no usable body; the identified versioned QDR paths do. Some navigation
+finds and an assessment patch fail harmlessly; corrected anchors preserve
+the real evidence and reviewer assessment. No unavailable route is presented
+as inspected evidence. No fresh lexicon or pixel reading is claimed.
+
+During independent comparison, both PR86 exact-head corpus-integrity checks
+finish successfully. Its frozen head is SHA-pinned merged at
+1913e42086957a204ba3488514a76493b4684338; local main is fetched and pushed
+(remote already up-to-date). PR87 is
+retargeted to main without changing its reviewed head; its two checks remain
+live at that observation. No CI approval transfers to this new research branch.
+
+The documentation skill separates evidence, source proposal and eventual
+application/delivery. Earliest wording, comprehensive OT/NT witness comparison,
+new decipherment and corpus-wide superiority remain unproved; no canon change
+is inferred from this biblical variation unit.
+
+All fifteen pinned local inputs, unchanged canonical/source/protected files,
+JSON structure, local links and whitespace pass. This comparison-only change
+does not need a new corpus-test run; no application or deployed-reader approval
+is inferred from those integrity checks.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

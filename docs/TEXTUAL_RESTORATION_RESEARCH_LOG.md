@@ -7998,6 +7998,28 @@ tree. The research branch fast-forwards safely; local main is synchronized and
 pushed. This approves neither the new Exodus head's separate remote checks nor
 deployment, original wording or publication.
 
+### 2026-10-10 — Daniel7 source forms, bounded retain/hold
+
+The [Daniel7:13–14 comparison](DANIEL_7_SOURCE_FORMS_COMPARISON_2026-10-10.md)
+follows completed Zechariah work rather than repeating it. Two source lanes
+acquire Aramaic/DSS and distinct Greek controls; one independent comparator
+reviews the frozen contract in reversed order without canonical English.
+Aramaic is retained provisionally; historical priority remains held. The
+publisher OG comparison clause, contrary NETS OG English endpoint and actual
+Theodotion control are separately labelled; none certifies a retroverted
+Aramaic source. Catalogue coverage of P967 does not certify surviving ink.
+The independent critique preserves Greek subject/referent ambiguity.
+
+The documentation skill keeps the evidence and public rationale in Git; the
+PDF skill prompted rendered NETS column/footnote verification. Failed access,
+extraction/test commands and incomplete apparatus/ink controls are disclosed,
+not counted as evidence or successful checks. Nine source/redraft guard tests
+and exact contract/input/node checks pass. Canonical records remain unchanged;
+a separate qualified reader application is identified, not approved. No
+generated restoration, canon expansion or About integration is performed.
+PR96's two exact-head checks succeed and SHA-pinned merge9399e617d1 lands;
+local main is synchronized and pushed. PR97 remains a separately gated delivery.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

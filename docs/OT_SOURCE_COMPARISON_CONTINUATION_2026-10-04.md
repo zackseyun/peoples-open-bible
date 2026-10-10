@@ -2,6 +2,14 @@
 
 ## Current answer to the two research questions
 
+October10 next distinct unit: [Daniel7:13–14](DANIEL_7_SOURCE_FORMS_COMPARISON_2026-10-10.md)
+retains the Aramaic provisionally and holds priority. Actual publisher OG has
+a comparison clause where Aramaic has a destination; NETS's OG English has
+endpoint wording, so blanket Greek-version claims are unsafe. P967 coverage
+is verified, not its ink/supplies. One independent comparison preserves this
+uncertainty; a separate reader disclosure/anchor repair remains unapplied.
+No new decipherment, canon or best-English claim follows.
+
 October 10 distinct comparison: [Ezekiel 28:14–16](EZEKIEL_28_CHERUB_COMPARISON_2026-10-10.md)
 checks the connected Hebrew/Greek king–cherub difference, contrary Latin,
 Aramaic paraphrase and actual short-pronoun controls. Pointed WLC is retained

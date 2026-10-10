@@ -72,3 +72,35 @@ if another model vote could settle that missing evidence.
 One separate factual/scope reviewer passes this report and its bound record
 against the inspected bodies and local inputs. That is documentation review,
 not a second source-preference vote, earliest-text finding or canonical approval.
+
+## Separate disclosure application — 2026-10-10
+
+The [full-record candidate](../sources/textual_restoration/candidates/samuel6_19_disclosure.2026-10-10.v1.json)
+and [application receipt](../sources/textual_restoration/applications/samuel6_19_disclosure.2026-10-10.v1.json)
+implement the next step above, without changing Hebrew, main English or marker
+positions. Note a now matches Yahweh and holds the at/into question open. Note b
+identifies the selected Greek edition and Josephus's differently framed retelling
+instead of unnamed ancient witnesses; both figures remain provisional. The NET
+report stays qualified in metadata and this report, not misrepresented as an
+independently collated early Hebrew witness.
+
+Connected lexical/numerical metadata is repaired. The current relocation of
+“among the people” is acknowledged but not certified as optimal or changed.
+Existing HALOT labels remain historical metadata; no fresh lexicon consultation
+is claimed. Generation, unrelated fields and actual historical revisions survive
+unchanged, including their inconsistent from/to rationales. Seven exact baseline
+values are archived with explicit non-certification flags; active status is
+draft/needs_review, and stale revision_pass is removed.
+
+One separate full-record reviewer passes saved candidate SHA
+ae3cf6e686d36de79ec1b0dea2a9af44654132e139c73a3cbc1fb94aa45c525e without corrections.
+The earlier in-memory serialization hash was different; the saved-byte hash is
+the review and application target. Proposed and actual full-book reader exports
+both contain 31 chapters and 811 verses, with only 6:19 changed. All 810 other
+verse files are byte-identical, and the applied export matches the proposed
+digest. Schema, note audit and protected method/Genizah pins pass. This is a
+bounded accuracy/disclosure contribution, not a recovered numeral, comprehensive
+manuscript collation, deployed-reader verification or canon recommendation.
+
+All 36 reader-footnote and rationale regression tests pass, including the new
+evidence-attribution and unchanged-source/main-English regression.

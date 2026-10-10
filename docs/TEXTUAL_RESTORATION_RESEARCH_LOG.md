@@ -7428,6 +7428,43 @@ Root verifies comparison JSON, unchanged canonical verse, both XML hashes,
 local report links and whitespace. No corpus tests are rerun for this prose-only
 comparison; no application or source preference is certified by the critic.
 
+### 2026-10-10 — First Samuel 6 19 disclosure application
+
+Root applies the separately reviewed full-record candidate linked from the
+[Samuel count report](SAMUEL_6_19_COUNT_COMPARISON_2026-10-10.md). Hebrew, main
+English and marker placement remain unchanged. Notes replace unnamed ancient
+witnesses with qualified selected Greek/Josephus attribution, distinguish
+retelling from exact Hebrew testimony, and correct LORD/Yahweh inconsistency.
+Connected numeral metadata holds historical priority open; existing English
+placement of “among the people” is not approved as optimal by this narrow pass.
+
+The candidate preserves generation, actual historical revisions and unrelated
+fields; seven exact old values have explicit non-certification flags. Active
+draft/needs_review replaces stale approval metadata. One bounded independent
+full-record reviewer passes the actual saved-byte candidate hash without
+corrections, independently confirming the full 1SA export. No agreement loop or
+new source-preference vote is used. The documentation skill keeps the comparison
+and later application separate, preserving the original comparison's scope.
+
+Root verifies 31 chapters/811 exported units, only6:19 changed, and all810 other
+verse files byte-identical. Applied export equals proposed export; schema, note
+audit and protected method/Genizah pins pass. Initial tool output parsing fails
+on exporter warnings and then truncation; a smaller structured output succeeds.
+The saved JSON formatting differs from the in-memory serialization, so its actual
+byte hash—not the earlier hash—is communicated to the reviewer and recorded.
+No substantive candidate re-vote is needed. No new source text or canon claim.
+
+PR82's two exact-head corpus-integrity checks succeed; SHA-pinned remote merge
+096dc2fa4307a284979abfc6b8722fd403aa6ba5 is fetched to local main and merged
+into this research branch, and main push completes. Unrelated already-merged
+Enoch/workflow work arriving with main is preserved, not attributed here. PR83
+is retargeted to main with its reviewed head unchanged; it remains subject to
+its own exact-head checks before merge.
+
+All36 reader-footnote and rationale tests pass. The new regression binds the
+reader notes to the saved candidate/application and verifies preserved source,
+main English, generation/history and historical non-certification.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

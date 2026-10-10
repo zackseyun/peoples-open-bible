@@ -1357,3 +1357,67 @@ evidence, tests a competing explanation or verifies an actual application.
 Do not run judges until they agree, force a sensational change, or count
 documentation volume as recovered source text. The latest review changed only
 this existing document and used no corpus-wide rerun or fresh-image claim.
+
+## Zephaniah clause interpretation continuation October 10
+
+The [3:18 comparison](ZEPHANIAH_3_18_CLAUSE_COMPARISON_2026-10-10.md)
+tests a potential meaning-affecting contribution on the same pointed Hebrew:
+“they were from you; reproach was a burden upon her,” rather than gathered
+“from you” with the people described as reproach/burden. Received accent
+grouping and nominal syntax favor the proposal moderately, not conclusively.
+Current POB remains a serious poetic alternative. Source priority stays on hold.
+
+Three bounded roles covered Hebrew controls, Greek/Latin/Jerome controls and
+one identity-masked English assessment. The assessment favored the proposed
+parse moderately in both displayed orders; this is one vote, not replicated
+evidence. The same reviewer then receives the frozen complete record for
+application critique, not another English preference vote. No judge-until-agreement
+loop is authorized by this workflow.
+
+The new acquisition is precise published Mur88 letter coverage and uncertainty,
+actual BDB scan consultation by the Hebrew agent, the limited Swete apparatus,
+and Jerome's ancient interpretation of “woe” versus “they were.” These constrain
+a lost-Hebrew hypothesis but do not settle it. Related transcription streams
+and selected editions are not independent manuscript votes. No fresh damaged
+image reconstruction, HALOT access, exhaustive census or canon decision follows.
+
+Five pre-application checks pass in2.970 seconds: schema/pins, exact source and
+generation, seven archives, two preserved historical revisions, note anchors,
+and historical whole-book overlay. Only3:18 changes among53 units;52 other
+verse files are exact, including the already corrected3:17. This measures
+application fidelity, not recovered original text or human scholarly approval.
+The exact-record critique passed without a blocking defect. The candidate was
+then applied exactly; the six new tests and six predecessor tests passed
+together in4.627 seconds. The current export matches the frozen overlay,
+all52 non-target files remain exact, and all five notes pass the anchor audit.
+The [application receipt](../sources/textual_restoration/applications/zephaniah3_18_reader.2026-10-10.v1.json)
+records this later state. CI now fetches the exact3:18 baseline and runs its
+focused tests. Public deployment and historical priority remain unverified.
+
+Delivery history: the preceding3:17 packet was committed and pushed as
+`cfbc9d9b5fba46a3d08558ef35b38410b1244b0e` and opened as
+[PR113](https://github.com/zackseyun/peoples-open-bible/pull/113).
+Its attachment call failed with “thread attachment identity count exceeds100”;
+existing attachments were not removed. Its frozen receipt describes observed
+pre-commit state; this entry records the later actual events without amending
+that pushed head. Predecessor112 is merged at
+`1ccc7fa82c46cefa3fa858820c507a2312c1a622`.
+At21:55UTC both own113 checks114320628340/114320580160 were still running;
+no success or merge is inferred. The new branch starts at113's exact head.
+
+The documentation and PDF skills preserve distinctions between evidence,
+interpretation and application. Existing compact Swete pages were reused;
+no full scan was downloaded. Publisher direct-byte requests returned403
+although browser-rendered primary text was inspected; historical grammar
+revision requests failed, so served page controls are distinguished from
+byte-pinned resources. An unavailable local pypdf import was handled with
+the bundled runtime rather than an installation. An initial wrong grammar
+section URL was corrected. No user files were deleted. The unrelated Genizah
+follow-up remains excluded, SHA
+`130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50`.
+
+Efficiency remains a constraint: one local question, acquired discriminating
+controls, one preference assessment and one proportional exact-record critique.
+Do not repeat this case without new evidence. This possible English improvement
+is separate from replacing Hebrew letters and from the already documented
+canon/reception queue; tokens alone cannot make either a discovery certain.

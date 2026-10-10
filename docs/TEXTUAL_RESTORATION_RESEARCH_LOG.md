@@ -8534,6 +8534,79 @@ whitespace checks pass. This is focused/shared validation, not a fresh
 complete-corpus result. No historical fixture repin or whole-verse/canon
 certification is introduced to make a test pass.
 
+### 2026-10-10 — Samaritan editorial annotation breadth audit
+
+The preceding delivery turn made progress: Genesis2:2 reader head
+`c4b5f637e53cc93a695c9b3f6c00d5b7f59b2c7e` was committed, pushed and attached
+as PR109. This separate package starts from that frozen head; it does not
+amend the source or reader comparisons. The documentation skill keeps the
+audit in the established Git destination and distinguishes annotations,
+digital signs and physical manuscript claims.
+
+The [editorial audit](SAMARITAN_EDITORIAL_SOURCE_AUDIT_2026-10-10.md) consumes
+the complete pinned README and issue file, verifies all existing SP/WLC input
+pins, and reproduces the full frozen whole-Torah screen. It maps 29 annotations
+to27 sections:13 label version4.1 and16 label6.3. Fourteen report MT
+harmonization and two core-SP harmonization. These are annotation counts,
+not16 verified raw-sign edits. All27 current whole verses differ consonantally
+from WLC; that cannot locate the affected feature. Linguistic feature files,
+revision history, fresh manuscript pixels and full apparatus are not acquired.
+
+There are zero issue-section intersections in six distinct-label pools:
+20 large-length targets,15 numbering/repetition targets,46 exact WLC
+alternatives,20 parallel targets,124 SP alternatives and92 WLC alternatives.
+The pools overlap and are not additive witness counts. The issue inventory is
+not certified complete, so zero overlap cannot certify diplomatic accuracy.
+One read-only inventory agent independently reproduces these findings and
+checks current node/section consistency. All29 historical IDs happen to resolve
+to current word nodes at their declared sections; no stable token identity
+or historical node remapping follows. The report preserves that distinction.
+
+Only the DT-UCPH row changes in the40-record registry;39 other entries and
+non-witness fields remain unchanged. Its modern-transcription class,
+release-not-manuscript dating, relationship group, rights and manuscript
+boundary are retained. The issue route and affected-layer qualification are
+added. No biblical YAML, source baseline, doctrine, schema, frozen screen or
+parallel receipt is changed. A next discriminating unit is Exodus19:24's
+interpretation/harmonization layer, not another same-evidence preference vote.
+
+One independent read-only judge passes the frozen report at SHA256
+`8d7df7a067de3a3035a3b5857b7a90b64af5b66de75503e67b9db07f2207bc93`,
+tool at`0d0359c97168798ff71983b9dccc56d6651d2fbf662c55dac3085121cfda648f`,
+tests at`fe0f90fbd40836adfa53a4b14c3310f5dd933146ad5431d52978a1f4aaabf836`
+and final audit at
+`77eef0003c68dcf83a240cb8e5176d5b946b4ee2323522dfb1f92068f4391d09`.
+It independently reproduces the private-input verifier, counts/intersections,
+current node diagnostic and nine tests. An extra final blank line in the
+initial JSON is removed; the judge verifies adding exactly one newline
+recovers the earlier hash. No substantive post-review edits or repeat-until-
+agreement review occur. The judge does not independently rerun the global
+registry validator and its PASS is not manuscript/source/English certification.
+
+Root's final verifier passes and42 targeted tests pass in0.138s:9 new audit
+tests plus33 existing screen/parallel/edition-registry tests. The broader OT
+validator reports six canonical-baseline drift errors at GEN4:8, EXO12:40,
+DEU27:4, DEU32:43,1SA17:4 and PSA145:13. Root substitutes the exact pre-change
+registry in memory and verifies identical errors and exit1, while historical
+comparison/selection files, validator code, canonical records and schemas
+remain unchanged. No old fixture is repinned to conceal these failures.
+The changed registry itself passes schema/evidence-boundary tests.
+
+The primary pinned issue file and README are consulted online as well as
+locally. A guessed textual_issues README route returns404; the authoritative
+pinned directory listing confirms only issues.json. A nonexistent local
+textual_issues subdirectory is corrected to the retained standalone issue
+file. Neither miss is an absence claim about manuscript evidence.
+
+PR108's own exact-head checks114308786189/114308699272 succeed. Its SHA-pinned
+merge lands at`1903859e3602368f1c24ca7d6b53ebe25e564db9`, with tree equal to
+approved head`a4a37ccad1cccdf05a9d330b221f31232c834e41`. After ancestry and
+worktree guards, local main fast-forwards and normal push succeeds. PR109 and
+this package retain their own exact-head checks and predecessor-order gates.
+The protected unrelated Genizah file remains unmodified and excluded. No
+restored ink, novel reading, all-known-source completion, deployment or canon
+change is claimed.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

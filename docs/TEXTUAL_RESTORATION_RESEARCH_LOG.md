@@ -7633,6 +7633,59 @@ JSON structure, local links and whitespace pass. This comparison-only change
 does not need a new corpus-test run; no application or deployed-reader approval
 is inferred from those integrity checks.
 
+### 2026-10-10 — Isaiah 9 2 full-record source and English application
+
+PR87's two exact-head corpus checks succeed; its frozen head
+2ccdc49f885e1194911a6dd29a15cd21869fd1c2 is SHA-pinned merged at
+e90972ace0f143fc3c1119a677d7242ce7885736. Local main is fetched and pushed
+(remote already up-to-date). PR88 is retargeted to main without changing its
+42adff57af47e9f138c9af063448758dbd0b32f3 head; its checks remain live at that
+observation. This application starts from that frozen comparison head; old CI
+approval is not transferred to its new changes.
+
+The [candidate](../sources/textual_restoration/candidates/isaiah9_2_joy.2026-10-10.v1.json)
+and [application receipt](../sources/textual_restoration/applications/isaiah9_2_joy.2026-10-10.v1.json)
+record a real selected-source and marker-free English change: recorded qere
+ל֖/וֹ replaces written לא, and “not increased the joy” becomes “increased its
+joy.” The source explicitly identifies a WLC/OSHB Masoretic reading form, not
+a ketiv-only transcription or recovered scroll text. Source apparatus and
+clause-anchored note retain written-negative/Latin counterevidence, semantically
+nondiscriminating 1QIsa-a spelling and Greek divergence. Earliest wording is
+unresolved; source priority is provisional, not compulsory contextual smoothing.
+
+Eight old fields are exactly archived with false certification flags. Original
+generation metadata, seven unrelated lexical decisions, marker b and its note
+remain unchanged. Stale revision approval is removed; active draft/needs_review
+remains. There were no baseline revisions; one actual from/to event is added.
+One independent exact-SHA application reviewer passes schema, source operation,
+English, archives and full-export integrity using local records and saved prior
+consultations. No source reacquisition or repeat preference vote is claimed.
+
+Candidate preflight and actual full Isaiah export agree: 66 chapters and 1,291
+entries, only 9:2 changed, 1,290 other verse files byte-identical. Schema,
+footnote audit and protected method/Genizah hashes pass. Local verification is
+not remote CI, deployed-reader verification, novel wording or canon approval.
+
+A concrete pipeline gap is detected during application: generic draft loading
+still uses raw WLC written לא, not the canonical selected qere. No upstream
+file or draft-source override is changed here. The saved record and reader
+export are coherent, but future regeneration is not verified. The next necessary
+engineering task is explicit selected-source loading with provenance and tests
+before this verse is redrafted; do not claim all consumers are synchronized.
+
+The documentation skill keeps comparison, application and delivery distinct.
+This advances a consequential known-reading correction instead of another
+readiness essay, speculative decipherment or unbounded reviewer loop. The wider
+OT/NT comparison and canon/reception inquiry remain unfinished and separate.
+
+All 38 targeted reader-export/rationale tests pass in the actual run. The first
+non-target pin check mistakes the contract's verse ID for a filesystem path and
+incorrectly includes the intentionally changed target; it fails without writing.
+The corrected exact-path exclusion verifies all fourteen non-target pins. Both
+new JSON records, local documentation links and whitespace pass. The frozen
+comparison contract retains its original target hash; the receipt preserves that
+baseline rather than retroactively changing the comparison inputs.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

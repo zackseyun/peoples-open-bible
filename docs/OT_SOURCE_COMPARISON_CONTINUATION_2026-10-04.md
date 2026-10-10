@@ -2,15 +2,23 @@
 
 ## Current answer to the two research questions
 
+October 10 breadth check: the [Samaritan editorial audit](SAMARITAN_EDITORIAL_SOURCE_AUDIT_2026-10-10.md)
+maps all 29 declared annotations to 27 sections, including 16 reported
+harmonizations with an unverified affected feature layer. None intersect the
+existing large-length, numbering/repetition or parallel reference pools.
+This qualifies the central registry without rewriting frozen screens or
+claiming raw sign edits. The next discriminating task is a flagged unit's
+feature/manuscript check, not another same-evidence preference vote.
+
 October10 separate [Genesis2:2 reader comparison](GENESIS_2_2_READER_COMPARISON_2026-10-10.md)
 modestly prefers on/finished in one identity-masked comparison, with by/had-finished
 still plausible and explicitly noted. The exact full-record critic passes and
 the reviewed draft is applied with qualified sixth-source disclosure. Actual
 full-Genesis export changes only2:2, keeps both notes and preserves1,532 other
 verse files. Source is unchanged and historical priority/deployed publication
-remain unapproved. A useful next breadth task is checking whether other
-Samaritan screen leads intersect the dataset's29 declared editorial issues,
-before treating the edited digital control as diplomatic manuscript evidence.
+remain unapproved. The separate editorial audit above now checks the Samaritan
+screen's relationship to its declared issue sections without certifying
+diplomatic manuscript readings.
 
 October10 distinct [Genesis2:2 source comparison](GENESIS_2_2_SIXTH_SEVENTH_COMPARISON_2026-10-10.md)
 verifies sixth-day completion in the pinned edited Samaritan Hebrew control

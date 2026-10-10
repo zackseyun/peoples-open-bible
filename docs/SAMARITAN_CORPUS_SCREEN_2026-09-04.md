@@ -1,5 +1,11 @@
 # Whole-Torah Samaritan/WLC screen
 
+Current provenance qualification: the [October 10 editorial audit](SAMARITAN_EDITORIAL_SOURCE_AUDIT_2026-10-10.md)
+maps all 29 upstream issue annotations to 27 sections. None intersect the
+existing large-length or parallel lead reference pools. The affected feature
+layer remains unverified; absence from the issue list does not certify an
+unaltered diplomatic reading. The historical screen below is unchanged.
+
 Follow-up: the [September 5 incense-altar alignment](EXODUS_INCENSE_ALIGNMENT_2026-09-05.md)
 maps the relocated block explicitly and separates order from local wording.
 

@@ -14,6 +14,52 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReaderFootnoteExportTests(unittest.TestCase):
+    def test_samuel_6_19_attributes_evidence_without_settling_count(self):
+        packet = json.loads((ROOT / 'sources/textual_restoration/applications/samuel6_19_disclosure.2026-10-10.v1.json').read_text())
+        raw = (ROOT / packet['target']).read_bytes()
+        record = yaml.safe_load(raw)
+        candidate_raw = (ROOT / packet['candidate']).read_bytes()
+        self.assertEqual(record, json.loads(candidate_raw))
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), packet['application']['yaml_sha256'])
+        self.assertEqual(hashlib.sha256(candidate_raw).hexdigest(), packet['candidate_sha256'])
+        self.assertEqual(record['source'], packet['baseline_source'])
+        self.assertEqual(record['ai_draft'], packet['baseline_generation'])
+        self.assertEqual(record['translation']['text'], packet['baseline_english'])
+        self.assertEqual(record['revisions'][:-1], packet['baseline_revisions'])
+        self.assertEqual(record['status'], 'draft')
+        self.assertEqual(record['cross_check'], {'status': 'needs_review'})
+        self.assertNotIn('revision_pass', record)
+        archives = {item['field']: item for item in record['review_history']}
+        self.assertEqual(set(archives), {'status', 'revision_pass', 'cross_check',
+                         'translation.text', 'translation.footnotes',
+                         'lexical_decisions', 'theological_decisions'})
+        for item in archives.values():
+            self.assertFalse(item['certifies_this_candidate'])
+            self.assertFalse(item['historical_review_inputs_verified'])
+            self.assertEqual(item['archived_from_baseline_sha256'], packet['baseline_sha256'])
+        notes = record['translation']['footnotes']
+        self.assertEqual([n['marker'] for n in notes], ['a', 'b'])
+        self.assertIn('ark of Yahweh', notes[0]['text'])
+        self.assertIn('retained provisionally', notes[0]['text'])
+        for detail in ('without a conjunction', 'Rahlfs/Hanhart',
+                       'Josephus (Antiquities 6.16)', 'different explanation',
+                       'does not establish the exact Hebrew wording', 'remains unresolved'):
+            self.assertIn(detail, notes[1]['text'])
+        self.assertNotIn('some ancient witnesses', notes[1]['text'])
+        for index in (2, 3):
+            self.assertIn('Yahweh', record['lexical_decisions'][index]['chosen'])
+        book = exporter.export_book('1SA')
+        self.assertEqual(len(book['chapters']), 31)
+        self.assertEqual(sum(len(ch['verses']) for ch in book['chapters']), 811)
+        exported = next(v for ch in book['chapters'] if ch['chapter'] == 6
+                        for v in ch['verses'] if v['verse'] == 19)
+        self.assertEqual(exported['text'], packet['baseline_english'])
+        self.assertEqual(exported['footnotes'], notes)
+        for flag in ('source_changed', 'marker_free_main_english_changed',
+                     'source_interpretation_settled', 'novel_reading_demonstrated',
+                     'canon_changed', 'publication_approved'):
+            self.assertFalse(packet['decision'][flag])
+
     def test_genesis_4_13_contextual_english_preserves_forgiveness_alternative(self):
         packet = json.loads((ROOT / 'sources/textual_restoration/applications/genesis4_13_meaning.2026-10-09.v1.json').read_text())
         raw = (ROOT / packet['target']).read_bytes()

@@ -14,6 +14,59 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReaderFootnoteExportTests(unittest.TestCase):
+    def test_psalm_8_5_discloses_same_hebrew_referents_and_corrects_stem(self):
+        packet = json.loads((ROOT / 'sources/textual_restoration/applications/psalm8_5_disclosure.2026-10-10.v1.json').read_text())
+        raw = (ROOT / packet['target']).read_bytes()
+        record = yaml.safe_load(raw)
+        candidate_raw = (ROOT / packet['candidate']).read_bytes()
+        self.assertEqual(record, json.loads(candidate_raw))
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), packet['application']['yaml_sha256'])
+        self.assertEqual(hashlib.sha256(candidate_raw).hexdigest(), packet['candidate_sha256'])
+        self.assertEqual(record['source'], packet['baseline_source'])
+        self.assertEqual(record['ai_draft'], packet['baseline_generation'])
+        self.assertEqual(record['translation']['text'], packet['baseline_english'])
+        self.assertFalse(packet['baseline_revisions_present'])
+        self.assertEqual(record['revisions'][:-1], packet['baseline_revisions'])
+        self.assertEqual(record['revisions'][-1]['from'], packet['baseline_english'])
+        self.assertEqual(record['revisions'][-1]['to'], packet['baseline_english'])
+        self.assertEqual(record['status'], 'draft')
+        self.assertEqual(record['cross_check'], {'status': 'needs_review'})
+        self.assertNotIn('revision_pass', record)
+        self.assertNotIn('source_audit', record)
+        archives = {item['field']: item for item in record['review_history']}
+        self.assertEqual(set(archives), {'status', 'revision_pass', 'cross_check',
+                         'source_audit', 'translation.text', 'translation.footnotes',
+                         'lexical_decisions', 'theological_decisions'})
+        for item in archives.values():
+            self.assertFalse(item['certifies_this_candidate'])
+            self.assertFalse(item['historical_review_inputs_verified'])
+            self.assertEqual(item['archived_from_baseline_sha256'], packet['baseline_sha256'])
+        self.assertIn('Hiphil', archives['lexical_decisions']['value'][0]['rationale'])
+        self.assertIn('Piel, not Hiphil', record['lexical_decisions'][0]['rationale'])
+        self.assertEqual(record['lexical_decisions'][0]['lexicon'], 'BDB (electronic reproduction)')
+        self.assertIn('do not settle this referent', record['lexical_decisions'][2]['rationale'])
+        text = record['translation']['text']
+        self.assertEqual(text.count('[a]'), 1)
+        self.assertIn('God[a]', text)
+        notes = record['translation']['footnotes']
+        self.assertEqual([n['marker'] for n in notes], ['a'])
+        for detail in ('divine/heavenly beings', 'form alone does not choose',
+                       'retained provisionally', 'Rahlfs/Hanhart', 'Hebrews 2:7',
+                       'does not by itself establish different Hebrew letters',
+                       'referent remains open'):
+            self.assertIn(detail, notes[0]['text'])
+        book = exporter.export_book('PSA')
+        self.assertEqual(len(book['chapters']), packet['application']['chapters'])
+        self.assertEqual(sum(len(ch['verses']) for ch in book['chapters']), packet['application']['units'])
+        exported = next(v for ch in book['chapters'] if ch['chapter'] == 8
+                        for v in ch['verses'] if v['verse'] == 5)
+        self.assertEqual(exported['text'], text)
+        self.assertEqual(exported['footnotes'], notes)
+        for flag in ('source_changed', 'marker_free_main_english_changed',
+                     'source_interpretation_settled', 'novel_reading_demonstrated',
+                     'canon_changed', 'publication_approved'):
+            self.assertFalse(packet['decision'][flag])
+
     def test_samuel_6_19_attributes_evidence_without_settling_count(self):
         packet = json.loads((ROOT / 'sources/textual_restoration/applications/samuel6_19_disclosure.2026-10-10.v1.json').read_text())
         raw = (ROOT / packet['target']).read_bytes()

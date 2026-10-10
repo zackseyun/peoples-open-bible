@@ -5,9 +5,11 @@
 **Retain the pointed WLC form provisionally; hold historical priority.** The
 selected Greek distinguishes the king from the cherub, whereas the pointed
 Hebrew identifies/addresses him as a cherub. This is a consequential, known
-textual/interpretive difference, not newly recovered Hebrew. No canonical
-source, English, reader note, revision history or approval status is changed
-in this pass. A disclosure recommendation is recorded, not applied.
+textual/interpretive difference, not newly recovered Hebrew. The source-only
+comparison made no canonical change. The subsequent
+[reader application](#separate-reader-disclosure-application) applies qualified
+notes and repaired anchors while preserving source and marker-free English;
+its records remain drafts without publication approval.
 
 The comparison contract was frozen before the recorded assessment at SHA256
 `409c11b241f73f0b1678ac08722fd185befc10168b5a2f596ef28d643f358522`.
@@ -184,3 +186,68 @@ unrelated current verses. The jointly run Exodus4 test separately checks all
 1,210 non-target Exodus YAML blobs, including chapter18. Both classes passed
 12 tests in 28.834 seconds. Remote exact-head checks still gate delivery;
 local checks do not imply merge or deployment.
+
+## Separate reader disclosure application
+
+The source-priority hold is not reopened by the subsequent reader work.
+The [reader contract](../sources/textual_restoration/comparisons/ezekiel28_14_16_reader_contract.2026-10-10.v1.json)
+was frozen at `07e5bfeac1c5499147533f9d58d51eea735851e19f8ad27c49fe538bdc00d0e2`
+before drafting. The complete [application receipt](../sources/textual_restoration/applications/ezekiel28_14_16_reader.2026-10-10.v1.json)
+pins both full-record candidates to baseline
+`c74fa8fb0d5a1fdc18face8b35cc195a91f1a936`, the prior source contract and
+assessment, and the unchanged verse schema. This section records a distinct
+application stage; earlier statements describe the completed source-only pass.
+
+The applied eight notes separate short “you,” the disputed adjective and
+covering imagery, then disclose the connected selected-Greek contrast in both
+verses. The misplaced pronoun and profaning anchors move to their referents.
+The source text and marker-free English remain exactly unchanged. Greek
+wounded/cherub-led removal is not presented as another synonym for Hebrew
+profaning/divine destruction. Rare-adjective uncertainty does not decide
+king–cherub identity, and neither choice names Satan or Adam.
+
+The close Hebrew gloss has placing followed by the king's mountain-location
+clause in 14, and profaning followed by destruction in 16. Current English
+combines the location clauses and contextualizes profaning as expulsion.
+Those joins are acknowledged in the contract, not certified as a uniquely
+optimal rendering. This scope improves disclosure and record consistency;
+it is not a new blinded main-English superiority comparison. Corrected
+lexical rationale aligns 16's profaning gloss with actual current English,
+retains its pointed first-person agency, removes the unsupported “anointed
+covering” lexical alternative from 16, and replaces 14's corruption inference
+with the inspected masculine-pronoun controls. Unrelated lexical decisions
+remain unchanged; no fresh HALOT claim is made.
+
+Each candidate archives all seven baseline fields exactly: status,
+translation, lexical and theological decisions, revision pass, cross-check
+and generation. The generation/source records are also preserved actively;
+old approval is not. The record returns to draft/needs-review, drops the
+active old revision pass, and appends one explicit revision without modifying
+any prior revisions—none in 14, two in 16. A narrow application review does not
+certify original wording or grant publication approval.
+
+Actual preflight exported all 48 chapters and 1,273 units through the real reader
+loader with both complete candidates overlaid. Only 28:14/16 changed; all
+1,271 other YAML files matched baseline Git blobs and the recorded manifest.
+Both draft note audits passed. Tests separately check current-book target
+isolation and immutable historical before/after digests, so legitimate future
+applications elsewhere cannot invalidate this historical receipt.
+
+The separate application judge passed both exact candidates and serialized
+YAML hashes, all seven archives, the previous revision counts, eight correctly
+anchored notes and the actual full-book overlay. It independently inspected
+publisher Greek/Latin, BDB, actual masculine-pronoun controls and paragraph
+context; it did not claim a new source-priority verdict. Root applied those
+same hashes and verified the actual complete export against preflight:
+`a31ea0a55ea53171b5128ba2e61dd3e6bfe0493ef768690dd149cf4f2496741c`.
+Only the two target units changed, and all 1,271 other YAML files still match
+the baseline byte-for-byte. Local reader export is verified, not deployed
+reader behavior or scholarly publication.
+
+Applied validation passed 52 tests in 71.108 seconds: seven new application
+tests, 36 reader-export regressions and nine selected-source guards. The
+workflow fetches the exact historical baseline and runs the new tests. JSON,
+links and whitespace checks passed; method, doctrine and protected unrelated
+Genizah file hashes remain unchanged. This is a verified local disclosure and
+fidelity repair, not a new source-selection or main-English meaning change.
+Remote exact-head checks remain a separate merge gate.

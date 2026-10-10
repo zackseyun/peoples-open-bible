@@ -7536,6 +7536,46 @@ replace their delivery routes, avoiding a second pending dependency chain.
 Candidate/source files are not changed by that resolution; no new source or
 English interpretation is introduced.
 
+### 2026-10-10 — Psalm 8 5 disclosure and grammar-metadata application
+
+PR86 consolidates the reviewed Samuel disclosure and Psalm comparison at frozen
+head c109f336d2a097b59847554bd6b42738963d3ada. Superseded PR84/85 are closed,
+not merged, with their original commits preserved. This turn confirms PR86
+is mergeable but both exact-head corpus-integrity checks are still running;
+no old CI approval is transferred or pending head mutated.
+
+The separate Psalm application branches from that integration head. Its
+[candidate](../sources/textual_restoration/candidates/psalm8_5_disclosure.2026-10-10.v1.json)
+corrects Hiphil to Piel and unsupported compulsory-God reasoning, with qualified
+same-Hebrew alternatives in the existing reader note. Hebrew, main English,
+marker position and generation stay unchanged. Eight old values are exactly
+archived, including source audit and revision approval, with false certification
+flags; draft/needs_review is active. No old revisions exist in the baseline,
+so only the actual application revision is added. No fresh HALOT claim is made.
+
+One independent exact-candidate reviewer passes integrity, preservation,
+morphology and evidentiary-boundary checks. The independent publisher Greek
+refetch times out twice; the saved prior consultation supports the attribution,
+not a newly fetched independent body. No source/English preference vote is
+repeated and no exclusive referent, novel letters or canon change is certified.
+
+An initial preflight incorrectly mocks the generic record loader and finds no
+changed export entry: Psalms uses direct YAML parsing. The corrected mock
+substitutes the exact target input once; all other parses remain real. Actual
+applied full export matches that candidate simulation. There are 150 chapters,
+2,578 reader units (115 headers, 2,463 body units); only 8:5 disclosure differs.
+All 2,577 other Psalms YAML files remain byte-identical. The
+[receipt](../sources/textual_restoration/applications/psalm8_5_disclosure.2026-10-10.v1.json)
+records exact hashes, review limits and preservation checks. Schema, footnote
+audit and protected method/Genizah pins pass. All 37 targeted tests pass in the
+actual run; these are not GitHub CI or deployed-reader verification.
+
+Documentation skill keeps comparison, application and delivery distinct.
+Several documentation patches fail on mismatched context without editing files;
+the successful patch uses the actual closing line. The report now distinguishes
+its historical comparison-only result from this separate canonical application.
+The wider source census and earliest-text/canon questions remain unfinished.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

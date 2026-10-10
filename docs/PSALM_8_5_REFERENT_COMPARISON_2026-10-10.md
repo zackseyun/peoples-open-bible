@@ -6,7 +6,9 @@ Retain POB's “a little lower than God” provisionally. “Heavenly beings” 
 serious interpretation of the same Hebrew, not merely a replacement imported
 from the New Testament. One comparison with candidate identities withheld
 finds a tie with a modest contextual advantage for God, not demonstrated
-superiority or an exclusive lexical meaning. No canonical record changes here.
+superiority or an exclusive lexical meaning. The comparison itself changes no
+canonical record; the separately reviewed application below corrects metadata
+and reader disclosure without changing the source or main English.
 
 The [predeclared contract](../sources/textual_restoration/comparisons/psalm8_5_contract.2026-10-10.v1.json)
 pins the complete local Psalm, Hebrew usage controls and Greek Hebrews input.
@@ -65,7 +67,7 @@ lacuna neither confirms a referent nor attests an omission. The excerpt retains
 the project's bracket/uncertainty notation and [CC BY-SA attribution](https://creativecommons.org/licenses/by-sa/4.0/).
 No new pixels, dating judgment or exhaustive manuscript census is added.
 
-## Review and next action
+## Comparison-stage review and next action
 
 Root compares God then heavenly beings; the separate reviewer sees alternatives
 A then B without their POB identities or canonical metadata. Both assessments
@@ -75,10 +77,42 @@ evidence and the wholly supplied fragment phrase. Identity blinding is not
 complete knowledge blinding for a familiar biblical verse. One bounded critique
 is sufficient here; agreement is not ancient evidence.
 
-The next application can correct the Piel label and the unsupported compulsory
+At comparison completion, the next application can correct the Piel label and the unsupported compulsory
 God rationale, and explicitly present both Hebrew referents in reader disclosure.
 That requires a separate full-record candidate, historical-review archiving and
 reader export check. Do not treat this comparison as approval of the old scores
 or source audit. No new source, universally optimal English or canon change is
 demonstrated. Reopen the referent choice for a specific stronger usage/context
 argument or genuinely discriminating surviving evidence, not more model votes.
+
+## Separate full-record application
+
+The [exact candidate](../sources/textual_restoration/candidates/psalm8_5_disclosure.2026-10-10.v1.json)
+and [application receipt](../sources/textual_restoration/applications/psalm8_5_disclosure.2026-10-10.v1.json)
+bind the baseline, review and applied YAML hashes. The source, main English,
+marker position, generation record and unrelated lexical/theological decisions
+remain unchanged. The verb rationale now identifies Piel, and the noun rationale
+no longer treats formal plurality or original-language priority as compelling
+“God.” The note retains God provisionally and explains the same-Hebrew
+divine/heavenly-being alternative and the limits of selected Greek/Hebrews evidence.
+The distinct degree/duration question remains unadjudicated.
+
+Eight exact old values, including source audit and revision approval, are
+archived without certifying the new record. Active status is draft/needs_review.
+The baseline had no revisions; one actual same-English application revision is
+added, not a fabricated historical sequence. BDB electronic-reproduction labels
+identify the entries actually consulted; no fresh HALOT consultation is claimed.
+
+One independent exact-candidate review passes the application-integrity checks.
+Its publisher Greek refetch times out twice, so that attribution is checked
+against the saved prior consultation rather than claimed as a fresh independent
+retrieval. This review does not establish an exclusive referent or approve publication.
+
+The first generic-loader preflight fails to substitute the target: Psalms export
+reads YAML directly. A corrected simulation substitutes that exact YAML input
+once, with all other parses real. Actual applied export matches that simulation:
+150 chapters and 2,578 reader units (115 headers and 2,463 body units), only 8:5's
+note changed. All 2,577 other YAML files remain byte-identical. Schema, footnote
+audit and protected-file hashes pass. All 37 targeted reader-footnote and
+Ecclesiastes rationale regression tests pass; deployed-reader verification is
+not claimed.

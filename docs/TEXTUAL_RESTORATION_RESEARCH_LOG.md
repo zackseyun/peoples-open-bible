@@ -8338,6 +8338,63 @@ Git-baseline pins and links. The report stays at reviewed SHA256
 the receipt records its pre-status hash and receives only this review append.
 No repeat preference vote, source-priority or reader-application approval follows.
 
+### 2026-10-10 — Isaiah45:7 local English and reader review
+
+The separate [English and reader comparison](ISAIAH_45_7_GOOD_PEACE_COMPARISON_2026-10-10.md#october10-english-comparison-and-reader-application)
+tests peace against well-being without substituting the scroll's good for
+Masoretic shalom. Actual hosted BDB entries and Isaiah/Jeremiah controls support
+a broad favorable/adverse contrast. One identity-masked reviewer modestly
+prefers well-being in both assessed orders; peace has stronger idiom and
+relational resonance and remains viable. The inventory exposed the proposed
+candidate first, so this is not randomized first-exposure blinding or two votes.
+Root independently agrees moderately and checks three other POB units for
+limited consistency, leaving them unchanged. No full-corpus normalization or
+unique-optimum inference follows.
+
+The complete draft moves the adverse note from darkness to calamity, adds a
+positive-term note distinguishing the different scroll reading, and retains
+disaster/evil plus peace/welfare alternatives. Three lexical entries change;
+the divine-name label now matches existing Yahweh main wording. Two theological
+rationales are qualified to remove exclusion by theology and an unsupported
+historical-origin assertion, not to newly adjudicate name history. Seven exact
+baseline fields archive translation, generation and former reviews; old scores
+do not transfer. Source and six other lexical entries remain unchanged.
+
+The frozen reader contract pins the actual candidate, English contract/result,
+source comparison and controlling inputs. Root independently reconstructs the
+Git baseline and actual full-Isaiah overlay:66 chapters,1291 units, only45:7
+changed, two exported notes and1290 byte-identical non-target files. One separate
+exact-record judge checks implementation and evidence scope; a test agent adds
+bounded regression checks. This is not another vote on source priority or a
+repeat-until-agreement loop. The independent exact-record review passes the
+frozen candidate and report at pre-status SHA256
+`7c83189d469e3b80935eb64ba649b77d787aebd04bf25d19106ad884971db539`.
+Its actual checks include source bodies and contexts, archives, pins and an
+independent historical export, but PDF/reception acquisitions are hash checks
+only. Exact reviewed YAML is applied as draft and current full-Isaiah export
+matches the frozen candidate digest. The application receipt keeps this pass
+distinct from the earlier positive-phrase assessment and source review.
+
+Seven focused application tests pass in21.551s;45 shared reader/source guards
+pass in57.314s. Exact reviewed YAML, declared pins, local links, JSON, scope,
+protected unrelated-file hash and whitespace checks pass. CI gains only the
+new focused test and exact historical baseline fetch, without weakening the
+complete corpus gate. No fresh full-corpus validation is claimed locally.
+
+The documentation skill keeps evidence limits and historical decisions in the
+established Git audit. An extraneous JavaScript chaining error occurs after
+successful file creation; reading actual files and recomputing hashes confirms
+the saved state instead of replaying writes. A supplemental XML query initially
+uses the wrong unnamespaced tags and returns no rows; correcting OSIS selection
+does not alter source text. No fresh HALOT, pixels, canon or About integration
+is claimed. The unrelated Genizah discovery file is preserved and excluded.
+
+PR105's two exact-head checks114302027607/114301994228 succeed. Its SHA-pinned
+merge lands at129b3d32f0385575862939da7c659cc9b3b4954e. Merge tree matches the
+approved head; after worktree/ancestry guards local main is safely fast-forwarded
+and normal push succeeds. PR106 and this reader application retain their own
+independent delivery gates.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

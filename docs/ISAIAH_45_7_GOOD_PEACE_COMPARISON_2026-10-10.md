@@ -6,7 +6,8 @@ side of the verse's contrast, not its attribution of the adverse side to
 Yahweh. **Retain the declared Masoretic base provisionally and hold historical
 priority.** The known variant warrants reader disclosure, but neither the
 scroll's age nor a preferred theological interpretation establishes priority.
-This comparison does not change the canonical record.
+This source comparison does not change the canonical record. The separate
+reader review below tests a local English change against the retained source.
 
 ## Attested wording and preservation
 
@@ -71,7 +72,7 @@ follows from these reception controls.
 
 ## Consequence for POB English
 
-[Current POB](../translation/ot/isaiah/045/007.yaml) says “making peace and
+[POB at the source-comparison baseline](../translation/ot/isaiah/045/007.yaml) says “making peace and
 creating calamity.” The scroll alternative would broaden the positive side
 to “making good.” It does not remove רע. The selected Greek and Latin adverse
 terms likewise do not alone settle moral evil versus calamity in English.
@@ -104,3 +105,59 @@ CC BY-SA4.0 text to DFG project465277421, Qumran Wörterbuch and Abegg's precurs
 The Berakhot API identifies the William Davidson vocalized Aramaic/English
 editions under CC BY-NC; only a limited original-language excerpt, metadata
 and original analysis enter Git. Publisher material retains its own rights.
+
+## October10 English comparison and reader application
+
+The [frozen English contract](../sources/textual_restoration/comparisons/isaiah45_7_english_contract.2026-10-10.v1.json)
+compares only “making peace” and “making well-being” against retained שָׁלוֹם.
+The [actual assessment](../sources/textual_restoration/comparisons/isaiah45_7_english_result.2026-10-10.v1.json)
+modestly prefers well-being for the broad favorable condition opposite
+calamity. Peace remains viable and is more idiomatic; well-being can sound
+abstract and foregrounds relational peace less clearly. This is a local
+tradeoff, not a uniquely optimal gloss or a reason to replace peace everywhere.
+
+The actual hosted [BDB shalom entry](https://biblehub.com/bdb/7965.htm) includes
+welfare as well as peace. The [adverse-term entry](https://biblehub.com/bdb/7451.htm),
+noun II.1, places this verse under adversity while separately documenting
+ethical evil in II.3. Isaiah45:1–13, 47:10–11 and48:18, and Jeremiah18:8–11
+and29:11 supply contextual controls: favorable conditions, release and
+rebuilding contrast with threatened harm, without erasing human wrongdoing.
+These lexical and contextual categories support an interpretation, not a
+mechanical dictionary winner or a theological veto on evil.
+
+One reviewer assessed both orders before candidate-origin labels were
+revealed. The contract inventory nevertheless displayed the proposed candidate
+first, and familiar biblical wording is recognizable. This is identity masking,
+not controlled first-exposure randomization; the two orders are one review,
+not two independent votes. Root agrees moderately and separately checks current
+English in Isaiah48:18, Isaiah47:11 andJeremiah29:11. Those units are unchanged;
+the check does not certify corpus-wide consistency.
+
+The [full reader candidate](../sources/textual_restoration/candidates/isaiah45_7_reader.2026-10-10.v1.json)
+places note[a] at well-being and note[b] at calamity, preserving peace/welfare
+and disaster/evil alternatives. It discloses the scroll's different good
+reading without selecting its historical priority. Only three lexical entries
+change: the positive term, the qualified adverse rationale and the stale LORD
+label, now aligned with the already-existing Yahweh wording. Two theological
+rationales lose categorical exclusion and an unsupported origin claim; this
+does not newly adjudicate divine-name etymology or revelation history.
+
+Seven baseline fields are archived exactly, including theological metadata,
+old translation, generation and reviews. The candidate is draft with a new
+review required; old high-agreement scores do not transfer. The
+[separate reader contract](../sources/textual_restoration/comparisons/isaiah45_7_reader_contract.2026-10-10.v1.json)
+pins exact JSON/YAML and an actual historical full-Isaiah overlay:66 chapters,
+1291 units, only45:7 changed, two notes exported and1290 non-target files
+unchanged. One independent exact-record review passes this frozen candidate
+and reproduces those exports and hashes. The exact reviewed YAML is now
+applied as draft; the [application receipt](../sources/textual_restoration/applications/isaiah45_7_reader.2026-10-10.v1.json)
+records review separately from actual application and local export verification.
+The source-comparison receipt above remains unchanged historical evidence.
+Source priority, fresh ink, novelty, canon and deployed-reader publication are
+not approved by either reader review or English comparison.
+
+Seven focused application tests pass in21.551s and45 shared reader/source
+guards pass in57.314s. Exact candidate bytes, declared pins, local links,
+JSON and whitespace checks pass. This is local scoped validation, not a new
+complete reader-corpus run. The delivery commit requires its own exact-head
+CI results before merge; no old review or predecessor check can certify it.

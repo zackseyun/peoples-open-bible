@@ -1520,3 +1520,80 @@ another main worktree were verified, local main was guard-advanced from d02d029,
 and normal main push reported already up to date. The frozen receipts remain
 observed pre-commit records; subsequent commit/PR events will be appended to
 this Git chronology without retroactively amending a pushed head.
+
+## Jeremiah 27 heading comparison on 2026 10 10
+
+The next untreated source question is Jeremiah 27:1: whether Jehoiakim should
+remain in the longer Hebrew heading, whether Zedekiah is preferable there,
+and whether the separate shorter Greek form should contain a heading at all.
+The [current disposition](JEREMIAH_27_1_HEADING_DISPOSITION_2026-10-10.md)
+holds source selection and canonical application. This is new discriminating
+evidence acquisition and comparison, not another readiness audit or an
+annotation-only substitute for the source question.
+
+Two acquisition agents inspect complementary Hebrew/Syriac and Greek/Latin
+controls. Root reads the complete chapter 27 source and English, pins eight
+context records, and checks the correct QDR reference namespace with a positive
+control. De Rossi's printed pages report a Zedekiah alternative in Hebrew;
+CAL selects Zedekiah in Syriac. The selected Greek boundary lacks the heading,
+but Swete's apparatus positively reports a Jehoiakim heading in Qmg. Four
+available 4Q72 fragment 31 rows contain limited lead-in material and neither
+king. These findings make both a ruler-name question and a separate
+literary-form question real, without settling their historical priority.
+
+The root freezes a v1 proposal with moderate working preference for Zedekiah
+within the longer form, not an earliest-reading claim. One independent critic
+then reads actual de Rossi pages, Swete apparatus and pertinent preface,
+QDR rows, complete CAL chapter and metadata, and complete canonical context.
+It finds de Rossi prints צדקיה, not the v1 expansion צדקיהו, and holds ranking
+and promotion because later contextual harmonization remains a serious rival
+explanation. Root accepts both findings. The v1 proposal, report and contract
+remain exact history; v2 corrects the spelling and withdraws the moderate
+ranking. The [review result](../sources/textual_restoration/comparisons/jeremiah27_1_heading_review.2026-10-10.v1.json)
+preserves the disagreement. There is no repeat-until-agreement loop and no
+English preference vote for an unresolved source choice.
+
+Five initial tests passed despite locking the unsupported spelling. Five
+corrected focused tests pass in 0.955 seconds; six predecessor Zephaniah
+19–20 tests pass in 3.560 seconds. This distinction is important: hash and
+software checks protect provenance and serialization, not scholarly truth.
+Historical whole-Jeremiah and chapter-27 manifests are verified, and an actual
+local baseline diff confirms no canonical Jeremiah change. The test does not
+perpetually forbid later intentional Jeremiah work. CI adds the focused test
+and exact 30ae032 baseline fetch. No full-corpus local validation is claimed.
+
+Acquisition failures are excluded from source evidence: the first query used
+the wrong full book name; `Jer` plus `Jer 42:7 → 2Q13` resolves it. A missing
+HTML parsing dependency and an overly broad table match are replaced with a
+bounded standard-library extraction of the actual f31 table. A generic archive
+route initially found the wrong volume and is excluded; inaccessible cards,
+apparatus and oversized images do not become readings. Compact image views
+and existing prefatory material avoid full-scan downloads. In this delivery
+continuation, one guessed receipt filename fails read-only and is resolved
+with file search. The web tool cannot open the Syriac chapter URL, while the
+independent critic's actual HTTP inspection succeeds. No source is inferred
+from those failures and no user file is removed.
+
+The documentation skill keeps the current decision readable while retaining
+the audited original proposal. The methodological improvement is exact
+attestation first: do not silently expand a reported spelling or use successful
+integrity tests as evidence of historical priority. Reopen this case only for
+manuscript-state/hand verification or local apparatus/versional evidence that
+can distinguish an inherited reading from later harmonization. Additional
+tokens and agents cannot manufacture that distinction.
+
+The unrelated Genizah discovery file remains excluded with SHA256
+`130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50`.
+No fresh ink reading, novel discovery, canon change, comprehensive OT/NT
+coverage or public deployment is asserted. The broader source program remains
+active; this case is explicitly held rather than falsely marked as restored.
+
+Predecessor delivery is recorded without amending frozen PR115: Zephaniah
+19–20 was committed and pushed at
+`30ae03236b118ec2c5640827e8535ca30d7aadaf` and opened as
+[PR115](https://github.com/zackseyun/peoples-open-bible/pull/115).
+Its attachment attempt failed with “thread attachment identity count
+exceeds100”; no older attachment was removed. Own checks 114327332120 and
+114327275253 were still running at the latest observation. The Jeremiah
+packet requires predecessor delivery and its own exact-head checks; it cannot
+borrow those checks or claim that a pending PR is already on main.

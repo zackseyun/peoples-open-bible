@@ -8607,6 +8607,85 @@ The protected unrelated Genizah file remains unmodified and excluded. No
 restored ink, novel reading, all-known-source completion, deployment or canon
 change is claimed.
 
+### 2026-10-10 — Current Samaritan surface and lexical features
+
+The preceding turn made progress by committing the editorial audit at
+`bcbda863048f2b45f15c19703d38ddd14b12ddce` and attaching PR110. This distinct
+[feature-layer packet](SAMARITAN_FEATURE_LAYERS_2026-10-10.md) begins from that
+frozen head, not a rewritten audit. The documentation skill keeps the new
+observations, analysis and remaining manuscript question separate in Git.
+
+Four actual word-feature bodies at pinned SP7.1.3 are fetched in memory,
+hashed and parsed with explicit/implicit node numbering. Each has the same
+114,889 word-node keys as the pinned sign graph. The diagnostic inspects all
+29 historical issue-node numbers only after current word type and declared
+section agree. All29 Hebrew-script values match their sign-slot consonants;
+all29 g_cons/g_cons_raw pairs are identical at those locators. Whole-feature
+structural coverage is not a semantic check of all114,889 words. Original
+hashes preserve spaces and presentation forms; normalized agreement does not
+claim byte equality, historical token identity or diplomatic certification.
+
+At Exodus19:24, current surface K/final-kaf and JXRSW/het-spelling remain;
+lexical labels HLK[ and HRS[ interpret them. Only those two bounded token
+excerpts are exported, with metadata elsewhere; full features stay external
+under the dataset's attribution and CC BY-NC4.0 terms. This answers the
+current surface-versus-lexical question without demonstrating a historical
+edit or reconstructing physical letters. The prior global affected-layer
+qualification remains necessary. WLC and POB's main English stay unchanged.
+The existing note's “said to him” anchor is not its relevant lexical clause;
+that reader defect is queued for its own review, not silently fixed here.
+
+One bounded publication agent acquires and reads the complete authored
+13-page dataset paper from the journal-hosted PDF after publisher access403.
+The PDF skill prompts primary-page inspection rather than reliance on an
+abstract. Root reads complete pages3–5 and10–11 with the bundled PDF reader
+and visually checks3–4; the agent also checks relevant renderings. PDF bytes
+are34,508,965 with SHA256
+`9e03964b03999d0c807294b014c22f06b46a4a5a67bb49d218b9559fbca13fb0`.
+The public acquisition route is linked in the report; the private PDF is not
+vendored. Its main-text/annotation explanation is kept within its2024 scope,
+not used as later-version history or physical manuscript dating.
+
+The pinned feature docs identify version5.0.2, unlike actual7.1.3 headers;
+the report keeps those scopes separate. A guessed docs/features route404 is
+corrected by the authoritative recursive tree to docs/g_cons.md and siblings.
+A first explicit-ID-only navigation query yields no target rows because most
+IDs are implicit; the complete strict parser resolves them. System pdftotext
+is unavailable, so the bundled PDF reader and existing page renderings are
+used. These tool limitations do not become missing-text claims.
+
+The online verifier reproduces the saved diagnostic from the pinned graph,
+issue file and four exact feature URLs. Offline tests never fetch implicitly
+and reject changed pins, unsupported formats, missing coverage and mismatched
+current sections; they retain disagreements without correcting source text.
+Fifty targeted tests pass in0.141s:8 new layer tests and42 existing
+editorial/screen/parallel/edition-registry tests. Registry schema and evidence
+boundaries pass; only its intended next_action changes, with39 other rows
+and the40-record denominator unchanged. The earlier six historical-baseline
+validator errors are not repaired, repinned or claimed green by this pass.
+No complete reader validation or deployed-source certification is asserted.
+
+One independent bounded judge passes the exact report at SHA256
+`7a602568a659c6afea2070d8bd4a3b66c4a4319811f6f8285cdd51315e8a9c98`,
+tool at`d42f2e5d899611dbc96cc7b0d581d77f939f88a85f47a2fe5953c4720586671f`,
+tests at`ca59b006479ee67031d924ec3888f7e49eff59f09817d16b4fe0d7e1d22fe6e8`
+and diagnostic at
+`852baf694792d65e3db1afac365a649e6f74da30b807a613741634706b82e81a`.
+It independently reproduces the diagnostic and8 focused tests, checks all
+relevant complete publication pages/renderings and the feature definition,
+and preserves the historical/manuscript/English limits. No corrections or
+repeat-until-agreement review are required. The report and evidence remain
+frozen; only this separate log records the review and delivery state.
+
+The current API confirms PR109's exact head
+`c4b5f637e53cc93a695c9b3f6c00d5b7f59b2c7e` with own checks
+114311320990/114310939040 and PR110's exact head
+`bcbda863048f2b45f15c19703d38ddd14b12ddce` with own checks
+114312900718/114312842163 still running at21:11UTC. This package retains
+its own checks and predecessor-order delivery; pending jobs are not failed
+jobs or a reason to alter a frozen head. Local main remains the verified
+PR108 merge. The protected unrelated Genizah file is unchanged and excluded.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

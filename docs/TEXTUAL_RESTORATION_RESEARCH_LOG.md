@@ -7686,6 +7686,55 @@ new JSON records, local documentation links and whitespace pass. The frozen
 comparison contract retains its original target hash; the receipt preserves that
 baseline rather than retroactively changing the comparison inputs.
 
+### 2026-10-10 — stop raw OT redrafting from undoing source selections
+
+The Isaiah9:2 application is committed/pushed at
+94db145dc10ecb4f29848c5884dc138590e34b55 and opened as
+[PR89](https://github.com/zackseyun/peoples-open-bible/pull/89), stacked on
+frozen PR88. PR88 has one successful and one live corpus check at the latest
+observation; PR89's checks remain live. Neither is treated as merged or as
+publication-approved. The safeguard is on a new descendant branch, not an
+amendment to either reviewed head.
+
+A read-only engineering agent confirms that raw OT loading bypasses selected
+sources in prompts, checks and final record construction, including earlier
+Isaiah53:11. Root inspects those paths and implements the bounded
+[redraft safeguard](OT_SELECTED_SOURCE_REDRAFT_GUARD_2026-10-10.md): refuse before
+model work when saved source text/edition differs from the ordinary incoming
+base, or critical integration is present. Missing/exact-base drafts retain
+behavior. Malformed identities, source fields, YAML and read errors fail closed
+as nonretryable validation errors. CLI dry-run is protected and a pre-write
+recheck catches a changed selection during the call, without claiming atomicity.
+No raw loader, source/English record or selected-source resolver is changed.
+
+One exact-file independent engineering review passes the narrow safeguard and
+records residual limits. Root and reviewer separately pass all 36 focused tests,
+including nine new tests; the new suite is wired into corpus CI. This is not a
+repeated source preference vote or a broad model-quality benchmark. A mistaken
+initial `tools/sources/wlc.py` lookup finds no file; the actual parser is
+`tools/wlc.py`. No destructive chapter-worker operation or generation is run.
+
+The guard does not preserve all historical metadata on matching-source redrafts,
+cover direct low-level writers or resolve the selected source. The assessor
+also detects contradictory raw/selected Spanish prompt inputs; that remains a
+specific separate follow-up. The next substantive integration requires trusted
+selection provenance, coherent morphology and separate candidate application,
+not accepting mutable YAML approval fields. This repair conserves inference
+tokens and protects prior work without claiming novel letters or canon changes.
+
+An expanded safeguard/distinction/WLC suite passes 42 tests. A wider exploratory
+73-test run yields eleven errors in historical critical-source/critical-verse
+replays and one failure reproducing Deuteronomy's old preflight. Inspection
+locates old critical-review method/doctrine hashes that already drift on parent
+94db145dc10ecb4f29848c5884dc138590e34b55. Preflight differences are exporter/schema
+hashes and candidate schema errors; those files and the builder are byte-identical
+to the parent. No historical hashes/approvals are repinned. This limits any claim
+that existing critical composition is currently reusable without a new versioned
+review. An incidental blank-line cleanup after the judge's review changes the
+code digest; restoring that line returns exactly to the judged digest rather
+than transferring its approval to different bytes. One documentation patch
+fails harmlessly on an unnecessary context hunk; the corrected patch succeeds.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

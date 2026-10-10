@@ -8469,6 +8469,71 @@ only post-review change is that final newline, and the receipt retains the
 reviewed pre-trim hash plus the final report hash. Source priority, reader choice and application
 remain unapproved; no repeat judge is sought to erase the access limitation.
 
+### 2026-10-10 — Genesis2:2 separate English and reader application
+
+The separate [reader comparison](GENESIS_2_2_READER_COMPARISON_2026-10-10.md)
+freezes the retained pointed source and connected1:31–2:3 before testing
+on/finished against by/had-finished. One fresh-context reviewer sees K then M
+without origin labels and rechecks reversed order: M, the proposed on/finished,
+is modestly preferred both times. This is one vote and order sensitivity,
+not randomized independent replication. The strongest contrary case is the
+retrospective clarity of by/had-finished after2:1's completed-state summary.
+Actual GKC controls do not impose an exclusive tense/deadline rule. Root's
+moderate preference preserves the repeated day phrase without a theological
+contradiction veto; both readings remain plausible. Adjacent2:3 supplies
+limited consistency context, not new certification of its records or notes.
+
+The exact complete candidate changes only the completion clause in marker-free
+English, preserves a retrospective alternative, and distinguishes sixth as a
+different source reading. Source note[a] attaches to completion day; English
+note[b] to the first clause. Edited Samaritan/selected Greek scope and supplied
+4Q10 numerals are explicit. Source priority is held; novelty and canon are not claimed.
+Two lexical entries and one theological decision are calibrated; five lexical
+entries and generation metadata are unchanged. Seven exact baseline fields
+archive prior translation/reviews. Draft/needs-review status does not inherit
+old agreement scores, and no fresh HALOT consultation is invented.
+
+The frozen reader contract pins the complete candidate and actual historical
+Genesis overlay:50 chapters,1,533 units, only2:2 changed, two exported notes and
+1,532 byte-identical other files. One separate exact-record critic passes the
+candidate/schema/archives/pins, actual private SP extraction and editorial
+issues,4Q10 supplies, publisher Greek, grammar and an independently reproduced
+full-book overlay. This is not another English-preference or source-priority
+vote. Latin is not independently reconsulted in this reader review; the earlier
+critic's access limitation remains preserved. No fresh pixels/PDF, complete
+apparatus, independent Syriac, physical dating or deployment is claimed.
+
+The exact frozen report is reviewed at SHA256
+`a3b968bfe14d2c8a3b5beb05a07f404e360638700e831c807ca759ea3ad344d3`.
+Reviewed JSON/YAML and reader-contract hashes are retained in the application
+receipt. After PASS, root applies the exact YAML via apply_patch and verifies
+actual current full-Genesis export equals the frozen candidate digest
+`dc8c9fc676513a5b8534548768c6ad76f0416f4e4d8d3e25f10e419148181c3e`.
+Both notes survive and the non-target manifest remains unchanged. Note audit
+passes; the receipt is applied-verified, not deployed/publication-approved.
+
+A bounded test agent owns only the new regression file; root reads its whole
+implementation. CI adds the focused test and exact historical baseline fetch,
+without weakening the complete reader gate. The documentation skill keeps
+observations, hypotheses, English tradeoffs and applied state separate in Git.
+An attempted poll of an already-closed merge session yields no new evidence;
+authoritative fetch/API state is used instead. Mislocated example filenames
+and clipped reads are corrected before writes. No frozen predecessor head,
+source comparison or protected unrelated Genizah file is modified.
+
+PR107's two own exact-head checks114305966018/114305890868 succeed. Its
+SHA-pinned merge lands at9bb1d84a55bc8cf4a07557b1747631417fa2c11a; tree equals
+approved headc6c50aeb017482417ed6b552ead839ed3580df7a. After worktree/ancestry
+guards local main fast-forwards and normal push succeeds. PR108 and this reader
+application retain independent own-head checks and predecessor-order gates.
+
+Seven focused application tests pass in21.564s;67 shared reader/source safety
+tests pass in54.031s,74 total. Exact reviewed YAML, declared pins, current export,
+JSON, local links, task-only scope, protected unrelated-file hash and staged
+whitespace checks pass. This is focused/shared validation, not a fresh
+complete-corpus result. No historical fixture repin or whole-verse/canon
+certification is introduced to make a test pass.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

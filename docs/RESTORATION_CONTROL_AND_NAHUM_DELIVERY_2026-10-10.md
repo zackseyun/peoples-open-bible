@@ -78,3 +78,55 @@ the character label. The receipt retains the reviewed input hashes. Six focused
 Nahum application checks pass in 1.297 seconds; diff checks pass. No new bespoke
 test framework or corpus-wide local run is added for this three-file record.
 The unrelated Genizah file remains unstaged and unchanged.
+
+## Pixel preserving context continuation
+
+The [new context view](../sources/textual_restoration/controls/2026-10-10-native-context/README.md)
+uses a frozen 900 × 640 rectangle from the same photograph. The existing crop
+is pixel-identical to its overlap. The repository Python lacked Pillow; the
+bundled runtime successfully runs the existing crop generator. No dependencies
+are installed and no source pixels are enhanced or generated.
+
+A single fresh, history-withheld image reviewer returns the tentative consonants
+`לד[ר?]וש חמלה [ה/ח]י[ח/ה]דכר`. Its exact response is preserved, not normalized
+to the known verse. The new view produces no resize notice, but actual model
+input dimensions remain independently unverified. The character reference is
+still unresolved. Stop this case rather than commission further same-evidence
+votes. A defensible diplomatic reference or an independent calibrated reading
+route is required to reopen it. This negative result does not block published
+source comparison or establish ancient-script restoration performance.
+
+The approach remains ready for bounded meaning-changing comparisons, not an
+all-witness critical edition or a discovery guarantee. More compute is useful
+only when it acquires discriminating evidence, tests an interpretation or
+verifies an application. Canonical inclusion remains a separate community and
+authority question. The existing
+[contribution and canon review](CONTRIBUTIONS_AND_CANON_REVIEW_2026-10-06.md)
+records that distinction and the provisional meaning-changing contributions.
+
+Before this continuation, the three-file context record was committed as
+`aaf613308c776d677fce22108bb4da5d696df52a`, tree
+`ce7e0da011aa3181e21d99ef6d677e6ac84fbb66`, parent
+`b902b366eae19ff32ce4cddea3c3d903ae447dd7`, and normally pushed to PR138.
+Remote head, tree, parent and three-path scope were verified. Attachment failed
+at the 100-identity cap; report opening was queued, not preview-verified.
+At 04:34 UTC October11, both own jobs for PR137 and PR138 remained in progress;
+remote main remained `b902b366eae19ff32ce4cddea3c3d903ae447dd7`.
+Neither pending PR is represented as merged, and earlier-head CI cannot certify
+this follow-up. The broad goal remains active, with no source, main-English,
+canon or deployed-reader change from this image experiment.
+
+The later PR137 checks 114386401564 and 114386393561 both pass. A SHA-pinned
+ordinary merge produces `49a6a9a4767c8df9228061b62b8da7711c25784f`, tree
+`d2993084e88a74268ac6217fcf39e9b5a006c5e8`, with parents the preceding main
+and reviewed `50b23ee8c0fd0d294d7e7df72d3501c61ebafd5c`. Exact remote
+readback, normal fetch, ancestry and a fresh worktree inventory pass. A guarded
+local-main advance and normal push synchronize that merge. Micah's known
+lexical/version comparison is delivered without a source or English change.
+
+One bounded factual audit passes the frozen context inputs, response, local
+links and conservative claims; it does not reread letters or approve the label.
+Local checks pass for hashes, bounds, exact PNG reproduction, pixel overlap
+and unchanged four original files. Six focused Nahum application tests pass in
+1.265 seconds; they are regression checks, not image-reading measurements.
+The unrelated Genizah file retains its previous hash and remains unstaged.

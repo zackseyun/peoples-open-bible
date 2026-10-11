@@ -122,6 +122,14 @@ transcription before treating an unbracketed excerpt as preserved. The
 4Q69a. The extractor's optional line context is a navigation safeguard, not
 an automatic preservation assessment.
 
+For a whole-book publication screen, declare the exact witness records,
+version, physical rows and boundary exclusions. Compare the current book's
+source and English, but count neither supplied verse labels nor repeated
+digital editions as preserved text or independent witnesses. Completion of
+that screen is narrower than complete witness coverage or source adjudication;
+the [Jonah screen](JONAH_PUBLISHED_WITNESS_SCREEN_2026-10-10.md) records this
+distinction and carries forward only meaning-relevant or unresolved candidates.
+
 Check whether the preserved portion actually distinguishes the alternatives.
 A word-prefix or verse-range hit may locate a candidate while leaving the
 decisive ending missing. Record a shared-prefix fit as inconclusive for that

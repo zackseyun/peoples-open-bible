@@ -1,5 +1,12 @@
 # OT and NT source coverage: audit and comparison plan
 
+October10 Jonah follow-up: the [published Hebrew witness screen](JONAH_PUBLISHED_WITNESS_SCREEN_2026-10-10.md)
+compares the four mapped records' Jonah portions with all48 current POB source
+and main-English records. Three published differences merit adjudication;
+supplied wording, doubtful readings and spelling controls remain separate.
+This completes that four-record screen, not all Jonah witness coverage or
+historical source selection. No source or translation is changed.
+
 October10 bounded follow-up: the
 [critical-edition registry reconciliation](OT_EDITION_REGISTRY_RECONCILIATION_2026-10-10.md)
 adds eight edition routes and corrects the previously consulted OHB sample's

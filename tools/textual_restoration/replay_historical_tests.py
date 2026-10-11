@@ -107,6 +107,65 @@ def _registry_controls_archive_paths(repo):
     return [*paths, *sorted(targets)]
 
 
+def _registry_genesis_archive_paths(repo):
+    """Dependency-complete archive for the five original Genesis controls.
+
+    Only the parent archive selection changes. Child code, original assertions,
+    and every input still come from COMMIT; no current records are substituted.
+    These tests do not need a full-Genesis export or whole-corpus extraction.
+    """
+    prefix = "sources/textual_restoration/"
+
+    def read_json(path):
+        return json.loads(git(repo, "show", f"{COMMIT}:{path}"))
+
+    inputs = read_json(prefix + "applications/genesis4_8_newtransaction_inputs.v1.json")
+    preflight = read_json(prefix + "applications/genesis_4_8_note_preflight.v1.json")
+    paths = {
+        "tools", "tests/test_ot_witness_registry.py",
+        "sources/early_christian_texts/catalog.json",
+        "tests/test_genesis_note_transaction.py",
+        "tests/test_unflagged_english_sample.py",
+        "docs/GENESIS_4_8_NOTE_APPLICATION_2026-09-06.md",
+        "METHODOLOGY.md", "REVISION_METHODOLOGY.md",
+    }
+    paths.update(preflight["input_pins"])
+    paths.update(inputs["prior_package_input_pins"])
+    paths.update(inputs["unchanged_derivative_context_pins"])
+    paths.update(prefix + "applications/" + name for name in (
+        "genesis_4_8_note_baseline.v1.yaml",
+        "genesis_4_8_note_candidate.v1.yaml",
+        "genesis_4_8_note_preflight.v1.json",
+        "genesis_4_8_note_judgment.v1.json",
+        "genesis4_8_newtransaction_inputs.v1.json",
+        "genesis4_8_newtransaction_review.v1.json",
+        "genesis4_8_newtransaction_intent.v1.json",
+        "genesis_4_8_note_application.v1.json",
+        "genesis4_8_newtransaction_test_migration.v1.json",
+    ))
+    paths.update(prefix + path for path in (
+        "ot_witness_registry.v1.json",
+        "coverage/pentateuch_pilot.v1.json",
+        "coverage/samuel_pilot.v1.json",
+        "comparisons/pentateuch_controls.v1.json",
+        "comparisons/samuel_controls.v1.json",
+        "selections/ot_critical_source_pilot.v1.json",
+        "decisions/hebrew_pilot.v1.json",
+    ))
+    comparison = read_json(prefix + "comparisons/pentateuch_controls.v1.json")
+    paths.update(case["baseline"]["repo_path"] for case in comparison["cases"])
+    paths.update(("translation/ot/numbers/022/019.yaml",
+                  "translation/ot/jeremiah/010/010.yaml"))
+    allowed = ("tools/", "tests/", "docs/", "schema/", "schemas/",
+               "sources/", "translation/ot/", "translation_")
+    for path in paths:
+        if (not isinstance(path, str) or Path(path).is_absolute()
+                or ".." in Path(path).parts or any(c in path for c in "*?[:\\")
+                or not (path == "tools" or path in ("METHODOLOGY.md", "REVISION_METHODOLOGY.md", "DOCTRINE.md")
+                        or path.startswith(allowed))):
+            raise ValueError(f"Invalid historical Genesis dependency path: {path}")
+    return sorted(paths)
+
 def run_suite(name: str, *, repo: Path = ROOT):
     """A nonzero child, missing test, skipped check or wrong count is a failure."""
     if name not in SUITES:
@@ -117,8 +176,12 @@ def run_suite(name: str, *, repo: Path = ROOT):
     if resolved != COMMIT:
         raise ValueError("Historical commit resolution mismatch")
     names, count = SUITES[name]
-    paths = (_registry_controls_archive_paths(repo)
-             if name == "registry_samuel_psalms" else _archive_paths(repo))
+    if name == "registry_samuel_psalms":
+        paths = _registry_controls_archive_paths(repo)
+    elif name == "registry_genesis":
+        paths = _registry_genesis_archive_paths(repo)
+    else:
+        paths = _archive_paths(repo)
     archive = git(repo, "archive", "--format=tar", COMMIT, "--", *paths)
     with tempfile.TemporaryDirectory(prefix="pob-historical-tests-") as directory:
         extract_regular(archive, Path(directory))

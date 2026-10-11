@@ -2,6 +2,16 @@
 
 ## Current answer to the two research questions
 
+October10 [Nahum quotation follow-up](NAHUM_PESHER_AND_GREEK_FOLLOWUP_2026-10-10.md)
+checks two meaningful Hebrew alternatives: repulsiveness against spectacle,
+and refuge with a city setting. Mur.88's decisive endings/clause are supplied,
+not preserved shorter-reading votes. Actual primary lexical analysis and limited
+Greek controls deepen the comparison; adaptation/inheritance priority remains
+held. The41-entry source registry now includes the omitted2023 publication and
+2025 reassessment under the existing Greek catalogue umbrella, not new physical
+votes. Recent target figures remain inaccessible. No new source/main-English,
+canon or About change is approved by this research.
+
 October 10 local-time [John 1:18 comparison](JOHN_1_18_GOD_SON_COMPARISON_2026-10-10.md)
 adds actual institutional God/Son attestations and distinct Sinaiticus correction
 states. Provisional source/main-English retention and historical-priority HOLD
@@ -3172,3 +3182,109 @@ current record pins against the frozen three candidate hashes and44unchanged
 baseline bytes; local document links and candidate JSON parse checks pass.
 The protected unrelated Genizah hash still matches. The receipt records these
 observed results, not a full-reader corpus validation or deployment.
+
+## October 10 Nahum quotation and recent-publication follow-up
+
+The preceding goal turn is progress: the exact independently reviewed Nahum
+reader candidates are applied, tested and committed as
+782af1664ab2b646719cfb9b5c8ef69f3466e170, tree
+52b7872616e2e1e8f1e6913bf7bd885c3cefafd3, parent f38b774ed4fbec0e9a6b740481b5dd1106cad538.
+Normal push and remote exact head/tree/eleven task-only parent paths are verified.
+PR134 depends on133. Its mandatory attachment fails at the100-identity cap
+without removing older artifacts; opening returns queued. The final four focused
+tests rerun successfully in1.736seconds, not four additional distinct tests.
+PR134's own jobs114377047337 and114376972923 remain live at initial readback.
+
+The continuation reads the current worktree, method, registry, relevant coverage
+requirements and actual external state before relying on prior context. The PDF
+and documentation skills are read fully. Two bounded read-only subtasks pursue
+the recent Greek target pages and the specific4Q169quotation alternatives.
+One publisher/ordinary author-download route attempt returns403 with zero bytes;
+no login/challenge bypass, duplicate PDF acquisition or figure inspection occurs.
+JSTOR's actual chapter metadata confirms291–316 and CC BY-NC4.0. Root asks for
+a lawful target attachment asynchronously while continuing with accessible sources.
+The Greek visual-check gate remains open; equivalent automated retries are parked.
+
+Root reads primary4Q169quotation/commentary boundaries, the lexicon's actual
+Forms/SemanticsA–B and the Mur.88surrounding primary rows. The lexicon establishes
+a real repulsiveness analysis, not a light segmentation or spelling-only variant.
+The shared initial kaf in Mur.88does not decide3:6'sending; its entire3:11refuge
+clause is supplied and cannot vote for city absence. Commentary echoes permit
+adaptation and inheritance directions without proving either. Root reads current
+POB3:1–13source/main/notes and complete target lexical metadata, then the selected
+Greek target units. Swete's already-local PDF is hash-verified and its complete
+printedp56/PDFp80render visually read. That non-generative derivative adds no ink
+and no independent ancient vote.
+
+A separate research branch preserves live134. Only the existing8Hevregistry
+entry changes: two omitted publication routes and a qualified fragment assignment
+review are added while all41IDs and40other rows are preserved. No physical merger,
+new count, fresh join confirmation, survival-map completion or rights expansion
+to uninspected individual figures is claimed. Frozen discovery maps remain their
+dated snapshots; their historical inputs are not rewritten to fabricate new
+collation coverage.
+
+The [new comparison](NAHUM_PESHER_AND_GREEK_FOLLOWUP_2026-10-10.md) and
+[receipt](../sources/textual_restoration/comparisons/nahum3_6_11_pesher.2026-10-10.v1.json)
+pin the actual two records and registry before/after bytes, including its exact
+updated entry for historical reproduction. The new tests check historical inputs
+rather than requiring future canonical/registry records to match these hashes
+forever. Source/mainEnglishpriority staysHOLD; no canonical, note, canon or About
+change is applied. One scoped factual critique is requested on the saved packet.
+
+The81registry/catalogue/map checks run in9.822seconds:80pass and one historical
+registry_genesis replay errors with ENOSPC while extracting its frozen archive.
+The child assertions do not run on that failed extraction. Root reports this
+resource error rather than a green suite, inspects the actual archive helper,
+and requests one bounded dependency audit: can exactly the same original tests
+and frozen input bytes run from a smaller dependency-complete archive? No child
+code, input values, skipped tests or placeholder fixtures are substituted.
+
+At03:23:51UTC, PR133's own jobs114374777788 and114374690067 both finish success.
+Its SHA-pinned merge d42bef7cb9699ba0c615dde0af3722ca4bf20f3b matches approved
+tree f0df5b175b805b9a9d0b81195ad0138ce613d336 and actual parents
+67049c995c930dbd463ad5470f3acc357843a79c and f38b774ed4fbec0e9a6b740481b5dd1106cad538.
+Server PR/main readback, normal fetch, ancestry check, guarded local-main advance
+with main not checked out, normal main push and remote readback all succeed.
+This publishes research on main, not the reader application or a deployed reader.
+
+The first chronology patch fails atomically because its proposed tail anchor
+does not exist; root reads the actual tail and applies the documented addition.
+No partial edit or canonical change results.
+
+The independent factual review passes textual/provenance/preservation checks
+but catches one concrete rights omission: the2025 author-body first page
+explicitly declares article-level CC BY4.0. Root reopens and reads that actual
+declaration, corrects registry/report/frozen entry/test and preserves the
+uninspected individual-figure and failed-PDF gates. A bounded correction-only
+verification passes. Original and corrected reviewed hashes and initial issue
+are recorded; this is not repeated source-priority voting until agreement.
+
+The dependency audit runs exactly the five original frozen registry_genesis
+tests successfully with no skips or expected failures. Its archive measures
+6,932,480bytes (490 regular files;6,493,253payloadbytes;9,895,936 estimated
+extraction-block bytes), SHA256
+3f1c187c6a74f7b9bf219b2d9e59e6fde369ffc1e0fa536159e2847c2dc18f73.
+Root implements that exact parent path selection with safe-path checks.
+The first runner test attempt finds a legitimate DOCTRINE.md manifest pin
+omitted from the allowed-root list; root corrects the whitelist and reruns.
+Nine runner tests pass in2.672seconds. The same81 registry/catalogue/map checks
+plus6 new comparison checks now pass in3.832seconds:87 total, including the
+actual five frozen child assertions. Those nested assertions and reruns are not
+extra distinct parent checks. A separate bounded implementation critique passes
+the two exact files, confirming immutable COMMIT/SUITES/CHILD/ARCHIVE_ROOTS and
+other suite behavior are unchanged. No child/input substitution or deletion of
+user assets is used to overcome disk pressure.96 distinct parent tests pass;
+full-corpus validation is not claimed.
+
+At approximately03:34UTC, PR134's own jobs114377047337 and114376972923 both
+finish success. Its SHA-pinned merge
+27e9cdfefcda8e4292c0dbcc068da73dd332365d matches approved tree
+52b7872616e2e1e8f1e6913bf7bd885c3cefafd3 and actual parents
+d42bef7cb9699ba0c615dde0af3722ca4bf20f3b and782af1664ab2b646719cfb9b5c8ef69f3466e170.
+Server PR/main/tree/parents readback, normal fetch, ancestry check, fresh worktree
+inventory, guarded local-main advance, normal main push and remote readback all
+succeed. This publishes the three earlier Nahum reader disclosures on main,
+not a deployed-reader preview or a new preferred source/main English.
+The new research remains on its own branch for publication. Canon and About
+remain unchanged; recent figures and comprehensive target apparatus remain open.

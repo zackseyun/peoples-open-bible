@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 RECORD = "sources/textual_restoration/comparisons/ecclesiastes8_10_ctat.2026-10-10.v1.json"
 REGISTRY = "sources/textual_restoration/ot_witness_registry.v1.json"
 BASE = "73978a840df59022c248c423673c8d3c5c12b97d"
+REGISTERED = "26ef853ffc6702ee5f3986818c3d3c8ffbd379ef"
 
 
 class CTATComparisonTests(unittest.TestCase):
@@ -53,7 +54,11 @@ class CTATComparisonTests(unittest.TestCase):
         old_raw = subprocess.check_output(["git", "show", BASE + ":" + REGISTRY], cwd=ROOT)
         self.assertEqual(hashlib.sha256(old_raw).hexdigest(), "4cc204ff10a0431556934522497a8db538042349890e0263a8ba5cc7809a35a2")
         old = json.loads(old_raw)
-        current = json.loads((ROOT / REGISTRY).read_text())
+        # This assertion describes the original registration transaction. Later
+        # independently reviewed registry updates are not historical corruption.
+        registered_raw = subprocess.check_output(["git", "show", REGISTERED + ":" + REGISTRY], cwd=ROOT)
+        self.assertEqual(hashlib.sha256(registered_raw).hexdigest(), "5d7b59587bc57b348900c424405cd89ae2be622f5ae1efd38f0ca1e3b36ad244")
+        current = json.loads(registered_raw)
         old_entries = {w["id"]: w for w in old["witnesses"]}
         current_entries = {w["id"]: w for w in current["witnesses"]}
         self.assertEqual((len(old_entries), len(current_entries)), (40, 41))
@@ -65,6 +70,12 @@ class CTATComparisonTests(unittest.TestCase):
         self.assertEqual(added["coverage_status"], "partial-map")
         self.assertEqual(added["restoration_suitability"], "none")
         self.assertEqual(added["access"][0]["rights_status"], "study-only")
+        schema = json.loads((ROOT / "schemas/ot-witness-registry.schema.json").read_text())
+        Draft202012Validator(schema, format_checker=FormatChecker()).validate(current)
+        self.assertEqual(validate(current), [])
+
+    def test_current_registry_remains_valid_without_freezing_future_research(self):
+        current = json.loads((ROOT / REGISTRY).read_text())
         schema = json.loads((ROOT / "schemas/ot-witness-registry.schema.json").read_text())
         Draft202012Validator(schema, format_checker=FormatChecker()).validate(current)
         self.assertEqual(validate(current), [])

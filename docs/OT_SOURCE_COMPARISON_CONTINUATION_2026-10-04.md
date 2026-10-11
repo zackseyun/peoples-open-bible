@@ -2069,3 +2069,150 @@ duplicate the54-test archive run or approve textual priority. An incidental
 EOF blank line outside the seven inputs is caught and removed before commit.
 Root also passes the unchanged Samuel5-test suite0.020s. No unchanged-input
 preference loop is performed.
+
+
+## Ecclesiastes 8:10 primary comparison on October 10
+
+PR120's two own exact-head checks114341052172/114341024150 complete-success
+at00:01:43UTC. Root rechecks119 merged,120 open at its frozen ce758861 head,
+and GitHub main at abbcd33a, then merges with the approved SHA. Result
+`ba30fa79ec7383b26948a295c8379d5a5712cdd4` has the same tree as the reviewed
+head, `e3ee47cdfbdc89f1fe373045a1b5b5fd71def1eb`;119 ancestry is verified.
+No other worktree has main checked out. Guarded local main advances abbcd33a
+to ba30fa79; normal push reports already up to date. The Samuel four-year
+candidate stays unapplied under its accepted HOLD.
+
+PR121 is committed/pushed at
+`d6ffb4c4919da9d6f67e6737927442b8775113b0`, nine task-only files,
+353insertions/8deletions, staged diff-check clean. [PR121](https://github.com/zackseyun/peoples-open-bible/pull/121)
+is against main with predecessor120 and BOTH own exact-head checks as gates.
+Its mandatory attachment fails the100-identity cap; no old attachments are
+removed. At00:09UTC check114343720399 is completed-success and114343759345
+remains in progress. The frozen121 head is not amended. After its commit root
+reads the existing complete pointing-triage document and concise107
+other-pointing pairs for orientation only, not new semantic adjudication.
+A guessed filename fails and is corrected to the actual existing filename.
+
+The new branch starts from frozen121 head. Root chooses the existing high-impact
+Ecclesiastes8:10 forgetting/praise question rather than repeating Samuel's
+unchanged plate experiment or starting another all-book inventory. Three
+bounded read-only agents acquire Hebrew apparatus, Greek/Latin controls and
+Syriac/Targum controls in parallel; all complete without repository edits.
+
+Root reads the complete canonical8:10 record, all17 Ecclesiastes8 records and
+five book/lexical controls, preserving22 exact context hashes. Actual WLC
+XML identifies the target's kaf, lemma7911, Hitpael3mp and no target qere.
+An initial namespace-blind XML query fails; the actual namespace/osisID query
+succeeds. QDR returns no8:10 hit while1:7 and5:13 positive controls return4Q110
+and4Q109. Complete book-reference records are inspected. This bounds dataset
+coverage only; it does not prove absence from all discovered fragments.
+
+The Hebrew agent acquires De Rossi III1786 printed257–258 and IXXI/XLVI
+conventions. Root independently visually reads all four complete2550x3301
+pages. Published bet attestation is real, not conjecture-only; copy dates,
+modern shelfmarks and independence remain unverified. Collection numbering,
+earlier/corrected states and uncertain reports are preserved. Kennicott553 and
+De Rossi331 have bet text but kaf marginal qere. Their text and margin are not
+flattened into uniform votes. Target BHQ/BHS and original Kennicott entries
+remain unconsulted. De Rossi's Talmudic-contamination explanation is an
+argument, not proven causation.
+
+Root independently reads complete publisher Greek and Latin chapter8 and
+complete Swete target page497/PDF515. Passive Greek praise and Latin's
+interpretive righteous-works clause are distinguished from Hebrew reflexive
+boasting. The Greek agent verifies sigla, four book controls, complete NETS
+intro648–649 and Gentry preview's copy dates. Root does not pretend to have
+read those prefaces. Aquila attribution remains uncertain; no Pentateuch
+translation date is assigned to Ecclesiastes. Raw publisher fetch403 yields
+no fabricated HTML hash; NETS502 is handled using the existing pinned PDF.
+The26-page Gentry preview lacks the target apparatus, not the edition itself.
+
+The versions agent reads CAL8:9–13, local metadata and target analyses:
+Peshitta and Targum express forgetting. These are corrected electronic selected
+texts, not diplomatic7a1 or unchanged Paris110. The Targum adds Gehinnom and
+righteous-place interpretation. Actual BnF catalogue access in the browser
+succeeds after web fetch failure and dates the Qohelet section colophon1455,
+not its composition or CAL's editorial wordforms. Exact excerpt hashes are
+not raw HTML hashes. No manuscript pixels are newly read.
+
+Root reads identified BDB transcriptions, not generic topical glosses or a
+fresh HALOT entry. Hebrew forgetting, Aramaic finding, Hebrew Piel praise and
+Hitpael boast remain distinct. Root also reads actual complete Gittin56b.11
+through the ordinary Sefaria API after an empty page body and an initially
+vowel-sensitive query. The quoted kaf and al-tiqre bet formula are reception
+evidence, not a continuous Bible-copy bet reading.
+
+The [comparison](ECCLESIASTES_8_10_COMPARISON_2026-10-10.md) and machine record
+retain both strongest cases: postmortem forgetting elsewhere in Ecclesiastes,
+and praise/injustice in8:11–14. Possible late reception contamination,
+versional interpretation and nearby8:15 assimilation are not asserted causes.
+No new ink, exact ancient retroversion, broad improvement rate or canon change
+is claimed. This materially strengthens the evidence for considering the known
+alternative without predetermining its earliest priority.
+
+Root materializes a complete normalized bet/boast candidate with honest
+POB-critical-draft attribution. The only source patch is וישתכחו→וישתבחו.
+English “had boasted” retains the baseline's prior-activity interpretation;
+this timing and the surrounding subject/burial syntax require independent
+review. Old revisions stay exact; old source, translation, generation and review
+metadata are archived by reference to the pinned immutable Git baseline.
+Root verifies the actual git-show bytes. New generation metadata records
+unknown deployed version, actual00:06:50UTC, the instruction hash and exact
+source/translation output hash, not invented historical approval.
+
+An initial preflight assuming baseline schema validity fails on existing
+status=revised versus the schema's draft-only enum. The corrected diagnostic
+records this failure explicitly and does not broaden production schema or
+rewrite the baseline. The candidate validates using a proposal-only in-memory
+edition extension. Base-plus-patch accounting passes but editorial approval
+remains false. One actual full Ecclesiastes export simulation has12chapters,
+222units, only8:10 changed and221 non-target canonical hashes bound in a
+manifest digest; all three target notes survive. No reader file is written.
+Four cheap tests pass0.022s. CI registers the suite. The controlling method gains
+concrete published-collation, homiletic-reception and reflexive/passive examples.
+
+One exact-input judge receives the seven frozen inputs and22 context pins with
+explicit permission to HOLD or reject the full candidate. It must separate source
+priority, whole-English fidelity and research integrity. The protected unrelated
+Genizah discovery remains unchanged and untracked at its original130d509a hash.
+
+
+The judge independently verifies all seven frozen inputs, all22 context pins,
+the full chapter/controls, WLC target, immutable baseline archive, all four
+complete De Rossi pages, Greek chapter, BDB transcriptions and Gittin segment.
+Four tests pass0.020s. It does not claim to repeat the full-book export,
+Latin/CAL, QDR or Greek prefaces. The [exact review](ECCLESIASTES_8_10_EXACT_REVIEW_2026-10-10.md)
+accepts qualified bet attestation and bounded research integrity, but HOLDs
+earliest source selection and full-record application. Conditional “had boasted”
+is plausible, not uniquely justified: בעיר can be locative, but voice, prior
+time and the plural subject remain distinct interpretation questions. Root
+accepts HOLD with no canonical or substitute note-only change and no repeated
+unchanged-input judge.
+
+The reviewer actually reads GKC54g's passive Hitpael examples and identifies
+NET's reported Aquila/Theodotion boast versus Symmachus praise with a HOTTP
+III584–585 citation. Root independently reads complete GKC54 through Wikisource
+and adds its caution to the controlling method outside the frozen seven inputs.
+The NET reviser attributions remain a bibliographic lead, not independently
+verified apparatus readings or new votes. No full-candidate receipt is revised
+to claim passive grammar is impossible. One fifth test binds the exact HOLD;
+root passes all five in0.026s. The14 combined Ecclesiastes/Samuel/Genesis tests
+previously pass0.065s. An initially guessed composition-test module is absent;
+the corrected actual suite test_source_composition passes its one test33.010s.
+Workflow YAML parses. An EOF blank line in the continuation log is removed.
+
+At00:15:46UTC both121 own checks114343759345/114343720399 are complete-success.
+Root rechecks120 merged at ba30fa79,121 open at its exact d6ffb4c head and main
+at ba30fa79, then merges with the approved SHA. Result
+`eeb6777ddbee7abaf958a7a3aa7a82fddadb1bda` and approved121 head both have tree
+`21296f98b2aa6aa84973d70c87bbc070d35676d4`;120 ancestry is verified. No other
+worktree has main checked out. Guarded local main advances ba30fa79 to eeb6777d;
+normal push reports already up to date. The current research branch advances
+fast-forward to that identical-tree predecessor without disturbing task changes.
+
+Final combined15 focused tests pass0.067s. Staging contains only13 task files;
+the unrelated discovery is excluded. Staged whitespace checking identifies
+EOF blank lines in the new test and frozen comparison report. The unpinned
+test blank is removed. The report's single harmless EOF blank is retained
+to preserve the exact reviewed input and all dependent hashes; it is an
+explicit whitespace warning, not a clean diff-check claim or a textual blocker.

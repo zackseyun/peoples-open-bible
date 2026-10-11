@@ -1,10 +1,13 @@
 # Biblical text contributions and canon review
 
-Latest bounded comparison: [Proverbs 30:1](PROVERBS_30_1_SOURCE_COMPARISON_2026-10-06.md)
-provisionally retains its named recipients. A repeated weariness reading can
-preserve consonants while changing word division and vowels; the Greek is not
-its literal equivalent. This is a meaningful tested question, not another
-applied correction or proof of earliest wording. No canon decision follows.
+Latest bounded comparison: [Ecclesiastes 8:10](ECCLESIASTES_8_10_COMPARISON_2026-10-10.md)
+verifies published Hebrew bet attestation alongside forgetting and praise
+traditions. One [independent review](ECCLESIASTES_8_10_EXACT_REVIEW_2026-10-10.md)
+holds both earliest source selection and the full “had boasted” candidate.
+This clarifies a known meaning-changing variant without discovering new ink,
+applying a canonical correction or deciding another work's canonical status.
+The preceding [Proverbs 30:1](PROVERBS_30_1_SOURCE_COMPARISON_2026-10-06.md)
+comparison remains a qualified retention, not an applied weariness reading.
 
 POB is ready to continue passage-level comparison and provisional applications.
 It is not yet a comprehensive critical edition, and no current result establishes

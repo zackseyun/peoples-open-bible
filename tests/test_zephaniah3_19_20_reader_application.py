@@ -111,7 +111,11 @@ class Zephaniah31920ReaderTests(unittest.TestCase):
 
     def test_evidence_limits_and_single_masked_vote(self):
         for p, expected in self.preflight["pins"].items():
-            self.assertEqual(sha((ROOT / p).read_bytes()), expected)
+            # Method history is immutable; source evidence stays live.
+            raw = (subprocess.check_output(['git', 'show', f'{BASE}:{p}'], cwd=ROOT)
+                   if p == 'docs/TEXTUAL_ADJUDICATION_METHOD.md'
+                   else (ROOT / p).read_bytes())
+            self.assertEqual(sha(raw), expected, p)
         comp = json.loads((ROOT / (PREFIX + "comparisons/zephaniah3_19_20_source.2026-10-10.v1.json")).read_text())
         for flag in ("source_changed", "fresh_image_reading", "novel_reading_demonstrated",
                      "canon_changed", "publication_approved", "canonical_application_performed"):

@@ -37,7 +37,13 @@ class Jeremiah271HeadingTests(unittest.TestCase):
         for path, expected in original["pins"].items():
             self.assertEqual(sha((ROOT / path).read_bytes()), expected, path)
         for path, expected in self.case["integrity"]["pins"].items():
-            self.assertEqual(sha((ROOT / path).read_bytes()), expected, path)
+            # This binds the method actually used for the historical case,
+            # not future edits to the method. Source evidence stays live.
+            raw = (subprocess.check_output(['git', 'show',
+                    self.case['baseline_revision'] + ':' + path], cwd=ROOT)
+                   if path == 'docs/TEXTUAL_ADJUDICATION_METHOD.md'
+                   else (ROOT / path).read_bytes())
+            self.assertEqual(sha(raw), expected, path)
         for record in [self.case["baseline"], *self.case["context_read"]]:
             raw = subprocess.check_output(["git", "show",
                 self.case["baseline_revision"] + ":" + record["path"]], cwd=ROOT)

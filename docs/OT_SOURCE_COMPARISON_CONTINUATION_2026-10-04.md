@@ -1897,3 +1897,105 @@ This is a completed bounded comparison milestone, not completion of the whole
 OT/NT project, an optimal-corpus claim, recovered autograph or canon expansion.
 The documentation skill keeps the frozen proposal separate from this actual
 decision and preserves the failures rather than retroactively rewriting them.
+
+## Psalm delivery and Samuel numeral continuation on 2026-10-10
+
+The preceding Genesis10:4 milestone is committed/pushed at
+`8c4f9a434566ba3cd18f571f2285d5893d55c19a` as
+[PR119](https://github.com/zackseyun/peoples-open-bible/pull/119).
+Five final focused tests pass; its own checks114337934876/114337858950 are
+still in progress at23:34UTC. Artifact attachment is attempted and fails at
+the thread's100-identity limit; old attachments are not removed.
+
+[PR118](https://github.com/zackseyun/peoples-open-bible/pull/118) is delivered
+after both exact-head checks114334897618/114334821834 complete-success and
+117's merge is reverified. SHA-pinned merge produces
+`1ef2dc050344acd1108aa61c5ac35be9e49e26fe`.
+Fetched approved-head and merge trees equal
+`63a63baf421d872851fbfa3ba813ee963c1996b2`;117 ancestry is verified.
+No other worktree has main checked out. Local main advances with an old-ref
+guard from07871fe0 to1ef2dc05; a normal push reports already up to date.
+This delivers the previously documented Psalm73:10 selected-qere change,
+not a reader deployment or completion of the entire source-comparison goal.
+
+The next untreated target is2Samuel15:7, four/forty years. Root checks existing
+comparisons before choosing it; existing Genesis49:10 and1Samuel13:1 holds are
+not reopened merely to get another preference vote. Two bounded acquisition
+agents handle actual Greek apparatus and versions/retelling, then finish.
+Root reads WLC,76 context records and complete QDR target fragments, and
+visually checks the actual DJD edition/transcription/apparatus pages.
+
+The initial QDR query uses OSIS-dot labels and misses both target and known
+positive control. Actual dataset references correct the query; both return.
+A verse-only4Q53 excerpt appears unbracketed, but the full line opens its
+supply bracket in15:6. Both target numeral/year words are wholly supplied in
+both4Q51 and4Q53. DJD's reconstructed-variants sections confirm that status.
+No fresh manuscript numeral, geometry proof or validated ImageGen restoration
+is claimed. Published DJD preference for four is not two direct Hebrew votes.
+
+Actual Greek is divided: selected Rahlfs–Hanhart/Cambridge/Swete read forty;
+Cambridge alternatives read four, with p corrected from forty. Adjacent
+apparatus units show c/x forty days, not four years. The blackletter siglum
+is Armenian, not Syriac; the upper Vaticanus correction is orthographic, not
+numerical. Actual preface/conventions and grouped manuscript IDs are checked.
+SweteII is the wrong volume for Samuel; acquired volumeI is correct.
+No independent dates for all Greek manuscripts are fabricated.
+
+Selected critical Latin reads four, but the Clementine control reads forty.
+CAL62009 is Samuel, not initially suggested62007 (Judges); actual agent HTTP
+works when root's web access fails. CAL's selected text is not a diplomatic
+7a1 copy; an empty target apparatus display is not unanimity. Actual Niese
+Josephus7.196 reads four **since reconciliation**, an added epoch absent in
+Hebrew15:7. XML header is Niese, not a Loeb scan despite inconsistent series
+metadata. Work-date and physical manuscript-copy date stay distinct.
+Perseus guessed grc1 paths and an unauthenticated API lookup fail; actual
+directory inspection reveals accessible grc2. These are access facts, not
+absence evidence.
+
+Root creates a full unpointed critical-source/four-year English alternative,
+with a visible contrary-reading note and explicit false approval flags.
+The two-word Hebrew patch changes numeral and year noun, not a proven
+single-glyph confusion. LORD, vow verb and unstated chronological epoch remain
+unchanged. Original missing generation/review fields are recorded as missing;
+new candidate metadata belongs only to this proposal and explicitly reports
+that precise deployed model/build is unavailable. Actual old revisions remain
+exact, and archived prior fields do not approve the candidate.
+
+One initial V8 patch-builder fails to parse before any file write; the corrected
+builder succeeds. A guessed future proposal timestamp is corrected to actual
+23:33:05UTC before final review. Root's independent complete Latin reread also
+catches wrong quoted noun case in the initial comparison draft: actual phrases
+use annos, not annorum. Numerals are unchanged. The comparison and dependent
+composition/contract pins are corrected **before the judge's final verdict**,
+with immediate notification; this is one continuing review, not another model
+vote. Frozen source/English candidate and export payload are unchanged.
+
+Production schema/allowlist stay unchanged. A disclosed proposal-only in-memory
+edition extension validates record shape. Base-plus-patch verification passes
+with editorial/application approval explicitly false. One whole-book in-memory
+export has24 chapters695 units, changing only15:7;694 non-target record hashes
+are bound in the manifest digest. Four focused tests initially pass in0.018s,
+then0.008s after corrected evidence pins. Tests check76 context pins, exact
+composition, unchanged old revisions and truthful new metadata, supplied-letter
+status, non-target English and reader marker/note. CI registers the cheap tests.
+A single independent exact-input judge is asked to distinguish historical
+source choice from implementation correctness, with explicit permission to HOLD.
+The protected unrelated Genizah discovery stays untouched and untracked.
+
+The [one exact review](SAMUEL_15_7_EXACT_REVIEW_2026-10-10.md) returns HOLD
+historical promotion of four, while passing conditional source/English coherence
+and the honestly unapplied research packet. The judge independently reads all76
+context records and WLC, verifies seven final pins, visually inspects complete
+DJD154–155/264–265 and Cambridge155, and passes four cheap tests in0.009s.
+It does not repeat acquisition-agent version chapters or Greek prefaces, or
+root's full-book export. Its strongest countercase is actual chronological
+smoothing as instantiated in p, without claiming all four forms are corrections.
+Root accepts HOLD: no Hebrew, English or substitute note-only change is applied.
+This is not a historical victory for forty or an automatic direct-Hebrew rule.
+One fifth regression binds the exact final HOLD. The existing historical
+composition test passes in33.640s and the Genesis five tests pass in0.020s.
+No unchanged-input judge loop is continued. The meaningful next gate is
+discriminating source relationships/earlier version states, fuller apparatus,
+independently evidenced gap geometry, or a stronger tested transmission argument.
+The result is a useful known-variant comparison and corrected preservation
+assessment, not newly discovered source text or a basis for canon expansion.

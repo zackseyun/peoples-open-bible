@@ -204,3 +204,14 @@ Git's temporary index snapshot ran out of disk space. HEAD and the canonical
 candidate remained intact; the temporary lock was absent on inspection. No
 user files were deleted. Integration and remote CI must be rechecked before
 claiming this follow-up merged or published.
+
+After the validation record was committed, the clean tracked worktree normally
+integrated main `df8f03a19ef821b92ce5bd08ddb76b7bb67d448c` as
+`8af066613d39ef829f71521d257f8c17b799451c`, which was normally pushed in
+PR141. The three Jonah, four Haggai and ten book-map checks passed after that
+integration. Chronicles PR140 then passed both required checks and merged as
+`4a3f2a95d1cc6a623e7cfc833f7598f990332219`; remote state and normal local main
+advance/push were verified. The resulting Jonah/Chronicles coverage-index
+insertion conflict is resolved by retaining both entries, not choosing one
+report over the other. Neither integration changes the bound Jonah candidate;
+PR141's final head must pass its own CI before merge.

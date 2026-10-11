@@ -11,6 +11,11 @@ Lange's editorial-change argument, then a qualified reader note. Source and
 marker-free main English remain unchanged; note application is distinct from
 the initial screen and from unresolved historical selection.
 
+October10 Chronicles follow-up: the [Ahaziah age comparison](CHRONICLES_22_2_AGE_COMPARISON_2026-10-10.md)
+directly checks selected Hebrew forty-two, Greek twenty and Syriac twenty-two
+at 2 Chronicles22:2. It adds a bounded passage comparison, not a manuscript
+census or resolved source selection; canonical wording remains unchanged.
+
 October10 bounded follow-up: the
 [critical-edition registry reconciliation](OT_EDITION_REGISTRY_RECONCILIATION_2026-10-10.md)
 adds eight edition routes and corrects the previously consulted OHB sample's

@@ -2982,3 +2982,50 @@ and c86ecd99a5. Server PR/main readback, normal fetch, both ancestry checks,
 not-checked-out-main guarded local ref advance, normal main push and remote
 readback succeed. PR130 still has live checks at this observation; it is not
 merged or restarted. John source priority and English HOLD are unchanged.
+
+## October 10 Obadiah reader application
+
+The preceding research report is normally committed as
+abbdeca3a38846bcc7bb1741476d480961fffa48, tree
+b62643d033342f90ad0651957fdecaf14d5a4c9a, parent e503fd7cb6.
+The normal push, exact remote head/tree and two task-only parent paths are
+verified. PR131 opens against main ba93ba8dab and depends on130. Attachment
+fails at the 100-identity cap without removing older artifacts; opening the file
+returns queued, not a verified preview. Both131 own checks are confirmed live.
+
+On a separate application branch, root reads the complete adjudication method,
+binding translation constraints, actual canonical records, schema, prior
+application structure and reader export implementation. The documentation skill
+keeps [application decisions](OBADIAH_READER_DISCLOSURE_2026-10-10.md) distinct
+from the earlier source comparison. Complete candidates archive present baseline
+review, translation and rationale fields using deep copies; absent historical
+fields are not invented. The proposed revision timestamp is corrected to the
+actual creation clock before freezing or dispatching any review; candidate
+content and review inputs are not changed after dispatch.
+
+The [frozen contract](../sources/textual_restoration/comparisons/obadiah1_7_21_reader_contract.2026-10-10.v1.json)
+at02:43:23UTC October11 pins both baseline and candidate records. Root preflight
+checks schemas, preserved source/main English/generation and exact archives,
+then overlays candidates on the complete21-unit reader export. Only7/21 differ;
+19other units and all six exported notes are checked. The independent
+amos_note_application_review assessment returns PASS on these exact candidates,
+with no material defects. It is not a blinded English preference vote, source
+priority vote, novel reading, scholarly review or whole-record certification.
+
+The first generated unified-context patch fails without changing either
+canonical hash. Root verifies both unchanged baselines, then applies the exact
+frozen serialized records through a full-context patch. No candidate is revised
+to accommodate the patch failure. All four focused post-application tests pass:
+schemas, archived fields, exact applied bytes, semantic anchors, qualified note,
+historical/current complete export and the scoped receipt. The new
+[receipt](../sources/textual_restoration/applications/obadiah1_7_21_reader.2026-10-10.v1.json)
+preserves the assessor's substantive result and exact hashes. Shared reader-note
+regression tests are actually running, not assumed successful. The protected
+unrelated Genizah hash still matches; source priority, main English, canon and
+About remain unchanged. No generated image is used as evidence.
+
+The live shared test session finishes successfully:37tests in61.511seconds;
+combined with4focused tests,41post-application tests pass. The exact Obadiah
+application is verified locally, not described as deployed. Links and JSON parse
+checks pass. Historical source priority and best main-English choice remain
+held; a scoped reader disclosure does not settle either question.

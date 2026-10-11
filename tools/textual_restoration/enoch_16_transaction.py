@@ -133,12 +133,29 @@ def verify_export_delta() -> dict:
 
 def verify_applied() -> dict:
     manifest = json.loads((PACKAGE / 'manifest.json').read_text())
+    review_bytes = (PACKAGE / 'final-source-review.json').read_bytes()
+    review = json.loads(review_bytes)
+    if digest(review_bytes) != manifest['final_source_review_sha256'] or \
+            digest((PACKAGE / 'source-cleanup.json').read_bytes()) != manifest['scan_cleanup_sha256']:
+        raise ValueError('Applied review/cleanup binding differs')
     for chapter, verse in REFS:
         name = package_name(chapter, verse)
         if not file_for(chapter, verse).is_file() or \
                 digest(file_for(chapter, verse).read_bytes()) != manifest['files'][f'{name}.candidate.yaml']:
             raise ValueError(f'Applied source differs: {name}')
     receipt = json.loads((PACKAGE / 'application.json').read_text())
+    if receipt.get('manifest_sha256') != digest((PACKAGE / 'manifest.json').read_bytes()):
+        raise ValueError('Applied manifest binding differs')
+    for chapter, verse in REFS:
+        name = package_name(chapter, verse)
+        candidate = yaml.safe_load(file_for(chapter, verse).read_text())
+        source, _warnings = verse_parser.load_verse(chapter, verse)
+        core = {'reference':candidate['reference'], 'source_text':candidate['source']['text'],
+                'additional_translation_input':candidate['source'].get('additional_translation_input'),
+                'translation':candidate['translation']}
+        if candidate['source']['text'] != source.text or review['reviews'][name]['verdict'] != 'accept' or \
+                digest(json.dumps(core, sort_keys=True, ensure_ascii=False).encode()) != review['reviewed_content_sha256'][name]:
+            raise ValueError(f'Applied reviewed content differs: {name}')
     if receipt.get('status') != 'applied_verified' or receipt.get('refs') != [f'{c}:{v}' for c, v in REFS]:
         raise ValueError('Application receipt differs')
     return receipt

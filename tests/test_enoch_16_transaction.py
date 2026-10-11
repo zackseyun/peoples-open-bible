@@ -1,5 +1,7 @@
 """Allfour source units, exactacceptance and preserved rawOCR."""
-import json,unittest
+import json,unittest,shutil,tempfile
+from pathlib import Path
+from unittest.mock import patch
 from tools.textual_restoration import enoch_16_transaction as release
 from tools.enoch import verse_parser
 class EnochSixteenTransaction(unittest.TestCase):
@@ -9,6 +11,12 @@ class EnochSixteenTransaction(unittest.TestCase):
   r=json.loads((release.PACKAGE/'final-source-review.json').read_text());self.assertEqual(len(r['reviewed_content_sha256']),4);self.assertTrue(all(x['verdict']=='accept' for x in r['reviews'].values()))
  def test_clipped_tail_and_watchers_recovered(self):
   r,_=verse_parser.load_verse(16,1);self.assertIn('[እምትጉሃን፡',r.text);self.assertIn('ወረሰዓነ፡]',r.text);self.assertTrue(r.text.endswith('*ኵሉ፡ ይትፈጸም።'));self.assertIn('ዘይኩን፡',r.text)
+ def test_applied_review_drift_fails_closed(self):
+  with tempfile.TemporaryDirectory() as directory:
+   copied=Path(directory)/'package';shutil.copytree(release.PACKAGE,copied)
+   p=copied/'final-source-review.json';data=json.loads(p.read_text());data['reviews']['016-001']['verdict']='hold';p.write_text(json.dumps(data))
+   with patch.object(release,'PACKAGE',copied):
+    with self.assertRaisesRegex(ValueError,'review/cleanup'):release.verify_applied()
  def test_raw_ocr_is_not_overwritten(self):
   raw=(verse_parser.CHARLES_ROOT/'ch16.txt').read_text();self.assertIn('[እምኀኄን፡',raw);self.assertIn('ሲይኩን፡',raw)
 if __name__=='__main__':unittest.main()

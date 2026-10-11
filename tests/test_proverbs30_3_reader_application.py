@@ -225,7 +225,12 @@ class Proverbs303ReaderApplicationTests(unittest.TestCase):
         self.assertEqual(r['preflight']['pins'], c['pins'])
         self.assertEqual(c['preflight']['pins'], c['pins'])
         for path, digest in c['pins'].items():
-            self.assertEqual(sha((ROOT / path).read_bytes()), digest)
+            # The frozen review used the baseline method, not future edits.
+            # All non-method evidence and current application stay live.
+            raw = (subprocess.check_output(['git', 'show', f'{BASE}:{path}'], cwd=ROOT)
+                   if path == 'docs/TEXTUAL_ADJUDICATION_METHOD.md'
+                   else (ROOT / path).read_bytes())
+            self.assertEqual(sha(raw), digest, path)
         self.assertEqual(c['source_record_sha256'], c['pins'][c['source_record']])
         for review in (r['review'], c['review']):
             self.assertIs(review['source_priority_reopened'], False)

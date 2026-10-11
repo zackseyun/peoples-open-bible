@@ -185,6 +185,17 @@ depend on the same Greek textual form as an extant translation tradition.
 The number of supporting witnesses may be reported descriptively, but it must
 not select the reading. Modern English translations are not manuscript votes.
 
+Trace reports through intermediate languages and editorial reconstruction.
+A Greek phrase reconstructed from a Syriac marginal report is not newly read
+Greek manuscript ink; an apparatus presenting that report in Latin does not
+add a Latin witness. Combined reviser sigla can express agreement in sense
+without identical wording. The [Ecclesiastes reviser followup](ECCLESIASTES_8_10_REVISER_FOLLOWUP_2026-10-10.md)
+separates Field's presentation, its Syro-hexaplaric basis and Gentry's critical
+inference. Consulting a modern author's quotation of BHQ does not mean the
+BHQ target entry itself was consulted. Reopen a held decision for genuinely
+new evidence, while preserving its original review and independently checking
+whether the new evidence settles source priority or only lexical plausibility.
+
 ### 4. Test competing explanations
 
 For every serious candidate, record both the strongest supporting evidence and

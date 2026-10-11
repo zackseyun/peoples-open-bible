@@ -2216,3 +2216,73 @@ EOF blank lines in the new test and frozen comparison report. The unpinned
 test blank is removed. The report's single harmless EOF blank is retained
 to preserve the exact reviewed input and all dependent hashes; it is an
 explicit whitespace warning, not a clean diff-check claim or a textual blocker.
+
+## Ecclesiastes reviser followup and delivery diagnosis
+
+PR122 was committed and pushed at `c2040166e057328ae1706141ecb46c5149cbadab`
+with 13 task files and created against merged121. Attachment was attempted but
+the chat's 100-identity cap rejected it; no old attachments were removed. The
+two own-head checks114347789123 and114347724718 both fail. The actual first job
+log identifies the earlier Psalm73 frozen-method test, not Ecclesiastes source
+evidence: its expected historical method hash70ead1 differs from the evolved
+live method33a602. No merge occurs and no failed check is described as passing.
+A first signed-log request403 is resolved by obtaining a fresh normal redirect
+and reading its public signed target without forwarding repository credentials.
+
+Continuation uses branch research/ecclesiastes-8-10-reviser-followup-2026-10-10
+from the exact122 head. Two bounded source agents acquire actual new evidence,
+not repeated opinions on the old packet. Root independently reads Field's
+complete II396 with notes, title1875, II3 source history and Ixcv conventions.
+The apparatus presents Aquila/Theodotion boasting via Syriac reporting; combined
+sigla are not two identical extant Greek copies. Symmachus's presentation mixes
+Nobilius and Syro-hexapla with preceding-clause uncertainty. No new codex ink,
+physical date or Hebrew attestation is claimed.
+
+The second source agent downloads the actual Gentry2013 article through the
+ordinary browser after raw403; root reads complete printed94–96/PDF22–24.
+The file is478387bytes, SHA99795a1ad37551078c910ab0423e3af9c5de815247d0920c11953758bd3dc584.
+Its target sample has both apparatuses and a genuine argument favoring Hebrew
+bet while rejecting Goldman's larger reconstruction. The argument is not
+direct Hebrew glyph evidence or direct consultation of BHQ/final2019 apparatus.
+The unchanged full candidate and original independent HOLD remain frozen.
+
+The public ZORA CTATV record is accessible and lists a7.53MB file. Agent
+20/30-second and one root45-second download attempts time out; no valid PDF
+or target entry is obtained. Its header2014 conflicts with publication field
+and citation2015; no title page resolves this. HOTTP preliminaryIII584–585
+remains unread and is not CTATIII. Marshall2007 institutional metadata identifies
+restricted full text. No authentication, CAPTCHA or security controls are bypassed.
+Repeated download/search attempts stop at this specific acquisition gate.
+
+The [followup report](ECCLESIASTES_8_10_REVISER_FOLLOWUP_2026-10-10.md) and source
+record preserve the dependency chain, target uncertainty and strongest countercase.
+One new-evidence judge is commissioned, allowed to HOLD/reject; a separate
+mechanical agent repairs historical method pins without changing their expected
+hashes or weakening live candidate/source/application checks. No canonical,
+reader, source-schema or canon mutation is authorized by these research results.
+
+The one [new-evidence review](../sources/textual_restoration/comparisons/ecclesiastes8_10_reviser_followup_review.2026-10-10.v1.json)
+returns research PASS_WITH_SCOPE_LIMITS, source-selection HOLD and full-record
+HOLD. It verifies the exact followup report/record, old candidate/review,
+canonical verse, complete Field pages and actual34-page Gentry PDF target.
+It does not repeat all22 historical context reads or translate all Syriac.
+Five original Ecclesiastes tests pass0.028s. Root accepts both HOLDs.
+The review's nonblocking clarification is retained separately from its frozen
+inputs: Field's Symmachus participleἐπαινούμενοι is passive, but Gentry prints
+Latin laudentes, active. Neither is silently substituted for the other.
+
+Ten earlier suites are repaired to read only their frozen methodological
+document from their original Git baselines, already fetched by CI. No expected
+hash, source evidence, applied YAML or original review receipt changes. Two
+negative tests prove that corrupt historical method bytes and changed live
+Ps.xml still fail. Agent12 focused tests pass1.201s; root independently runs19
+focused historical/Ecclesiastes tests in0.688s. New followup checks are registered
+in CI. Workflow YAML parses and the current followup diff whitespace check is
+clean; this does not erase122's disclosed frozen-report EOF warning.
+
+Delivery will use one replacement PR against merged121/main containing the
+unchanged122 packet, its CI repair and this followup. The failed122 head remains
+in history; no amendment, forced merge or borrowed green check is used. Both
+replacement own-head checks, SHA-pinned merge and tree/ancestry validation remain
+required. Commit/PR/merge events occurring after this frozen record are reported
+in chat and can enter a later log without rewriting this review's inputs.

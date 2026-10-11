@@ -188,7 +188,8 @@ The4:6 baseline record SHA256 is
 `78d065f148b9da3219ad7a9dc37a190b8f091602f307f58fdd5e1bbfd88fa056`;
 the applied record is
 `305c1a962937f96bcf214dee9d2e337e52ab4adb6c901514778441a8b54c1e72`.
-Three focused application tests passed in0.431s and ten book-map tests in0.014s.
+Three focused application tests passed in0.431s, ten book-map tests in0.014s,
+and37 existing reader-footnote export tests in59.002s.
 One independent critic passed that exact applied record, the published Hebrew
 comparison, archives, scope, full-book export and Greek controls. Syriac chapter
 wording and Lange's interpretation were outside that critic's independent
@@ -197,3 +198,9 @@ The critic's fresh CAL chapter request was denied and was not retried or
 bypassed. Its pass is not historical source selection, whole-verse reapproval
 or deployed-reader verification. All47 other Jonah files and the protected
 unrelated Genizah file retain their baseline bytes.
+
+A normal local main integration attempt exited128 before integration because
+Git's temporary index snapshot ran out of disk space. HEAD and the canonical
+candidate remained intact; the temporary lock was absent on inspection. No
+user files were deleted. Integration and remote CI must be rechecked before
+claiming this follow-up merged or published.

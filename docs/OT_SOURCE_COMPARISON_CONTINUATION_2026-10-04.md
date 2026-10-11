@@ -2926,3 +2926,59 @@ Root's JSON/hash/context/pair-delta/four-control/local-link checks and Git
 diff-check pass; canonical/source diffs are empty and the protected unrelated
 Genizah hash remains130d509a. No new validator, reader regression suite or
 full-corpus superiority score is added for this research-only comparison.
+
+## October 10 Obadiah source comparison
+
+The preceding English HOLD packet is committed as
+e503fd7cb628eed18ebd7d35cb3706520f34c1c4, tree
+a034243388c60c4307021f7911b131705ef22f14, parent c86ecd99a5.
+Normal push and remote verification succeeded; PR130 depends on PR129.
+The mandatory PR attachment attempt reached the 100-identity cap; no older
+attachment was removed. PR128's two own checks succeeded and its SHA-pinned
+merge is 3cd06b785e6ec9d1dfeac7a42b3adf9e05dd8f07, matching approved tree
+f2dc14a74e91181107dcf24c4b39eea5975c6469 and actual parents 5aa5e7cc and
+4d26991c. Normal fetch, ancestry checks, guarded local main advance, normal
+main push and remote readback succeeded. This does not verify a deployed reader.
+
+A new Obadiah branch preserves both live John heads. The discovery map identifies
+two Hebrew labels but is not treated as an all-manuscript catalogue. Root selects
+verse 7; the bounded read-only comparison agent identifies verse 21 and supplies
+the actual Swete printed page 47 image. Root consults the versioned Qumran Digital
+primary rows, the publisher's complete selected Greek Obadiah, NET's own target
+notes, both canonical YAML records, and the Swete image. The
+[two-unit report](OBADIAH_1_7_21_SOURCE_COMPARISON_2026-10-10.md)
+contains the observations, competing explanations, limitations and unchanged
+baseline hashes. A separate record critique is requested once; it is not an
+English preference vote or a loop until agreement.
+
+The initial Mur88 route is corrected to the publisher's actual Mur._88 route.
+Ordinary publisher Greek HTTP and the attempted Latin routes return 403; the
+Greek web interface works, but no Latin body is counted. An inaccessible guessed
+Brenton page and unlocated Syriac text are not evidence. An official publisher
+PDF preview found by search is not consulted or counted as a critical apparatus.
+No access challenge is bypassed. No new independent ink transcription is claimed.
+The documentation skill guides the concise findings and this requested chronology.
+
+A first GitHub-status shell invocation fails to parse because the stored helper
+is Python rather than a shell heredoc. The corrected Python invocation succeeds:
+PR129 has one successful own check and one live check; PR130 has two live checks;
+actual remote main is 3cd06b785e6ec9d1dfeac7a42b3adf9e05dd8f07.
+No failure, restart, merge or success is inferred for a live check. Source priority
+and English replacement remain HOLD. Notes, markers, metadata, canon and About
+are unchanged; a subsequent exact-note application has its own review boundary.
+
+The bounded Obadiah audit confirms both baseline hashes, actual target primary
+rows, selected Greek differences, Swete page and hash, and the note-anchor
+problems. It identifies one avoidable claim: “early” was used without a verified
+manuscript date in this packet. Root removes that adjective; the argument depends
+on unpointed spelling, not an asserted date. This is a material wording correction
+from the single critique, not a new source-choice vote. Local documentation links,
+Git diff-check, both canonical hashes and the protected Genizah hash pass.
+
+PR129 subsequently passes both own checks 114367639482 and 114367578667.
+Its SHA-pinned merge ba93ba8dabdbf76b754e83f95d342f627d5e482b matches approved
+tree f405f274f02b5b83e0cc50c6afd19629652288b5 and actual parents 3cd06b785e
+and c86ecd99a5. Server PR/main readback, normal fetch, both ancestry checks,
+not-checked-out-main guarded local ref advance, normal main push and remote
+readback succeed. PR130 still has live checks at this observation; it is not
+merged or restarted. John source priority and English HOLD are unchanged.

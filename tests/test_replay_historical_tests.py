@@ -13,7 +13,7 @@ class HistoricalTestRunnerTests(unittest.TestCase):
         payload = result or {"passed": True, "tests_run": 5, "skipped": 0, "expected_failures": 0}
         reply = subprocess.CompletedProcess([], returncode, json.dumps(payload), "child diagnostic")
         with patch.object(module, "git", side_effect=[module.COMMIT.encode(), b"archive"]), \
-             patch.object(module, "_archive_paths", return_value=["tests"]), \
+             patch.object(module, "_registry_genesis_archive_paths", return_value=["tests"]), \
              patch.object(module, "extract_regular") as extract, \
              patch.object(module.subprocess, "run", return_value=reply, side_effect=side_effect) as child:
             try:
@@ -63,6 +63,31 @@ class HistoricalTestRunnerTests(unittest.TestCase):
             with self.subTest(path=path), patch.object(module, "git", return_value=json.dumps(manifest).encode()):
                 with self.assertRaisesRegex(ValueError, "derivative path"):
                     module._archive_paths(module.ROOT)
+
+
+    def test_genesis_dependency_paths_use_only_frozen_manifests(self):
+        paths = module._registry_genesis_archive_paths(module.ROOT)
+        self.assertEqual(paths, sorted(set(paths)))
+        self.assertIn("tools", paths)
+        self.assertIn("translation/ot/numbers/022/019.yaml", paths)
+        self.assertIn("translation/ot/jeremiah/010/010.yaml", paths)
+        self.assertNotIn("translation/ot", paths)
+        archive = module.git(module.ROOT, "archive", "--format=tar", module.COMMIT, "--", *paths)
+        self.assertEqual(len(archive), 6932480)
+        import hashlib
+        self.assertEqual(hashlib.sha256(archive).hexdigest(),
+                         "3f1c187c6a74f7b9bf219b2d9e59e6fde369ffc1e0fa536159e2847c2dc18f73")
+
+    def test_genesis_dependency_paths_reject_escape_and_pathspec(self):
+        for path in ("../outside", "sources/../outside", "sources/[ab]", "/sources/a", "unrelated/a"):
+            replies = [
+                {"prior_package_input_pins": {path: "0" * 64},
+                 "unchanged_derivative_context_pins": {}},
+                {"input_pins": {}}, {"cases": []},
+            ]
+            with self.subTest(path=path), patch.object(module, "git", side_effect=[json.dumps(x).encode() for x in replies]):
+                with self.assertRaisesRegex(ValueError, "Genesis dependency path"):
+                    module._registry_genesis_archive_paths(module.ROOT)
 
 
 if __name__ == "__main__":

@@ -1,6 +1,18 @@
 # Biblical text contributions and canon review
 
-Latest bounded followup: [Proverbs30:1 CTAT interpretation](PROVERBS_30_1_CTAT_REVIEW_2026-10-10.md)
+Latest bounded NT comparison: [John 1:18](JOHN_1_18_GOD_SON_COMPARISON_2026-10-10.md)
+checks actual God and Son attestations, article differences and separate
+Sinaiticus correction states. Retain the source and main English provisionally;
+priority and full English optimality remain held. This is known-text comparison,
+not newly recovered letters or a canon inclusion result. No John change is applied.
+
+The preceding [Isaiah 49:24–25 contribution](ISAIAH_49_24_CAPTIVITY_COMPARISON_2026-10-10.md)
+applies precise disclosure and note anchors while preserving Hebrew and main
+English. Its attempted critical-edition followup reaches metadata, not the
+target argument; repeated access attempts are parked. These limited outcomes
+illustrate the passage-level stopping rule rather than a discovery guarantee.
+
+Earlier bounded followup: [Proverbs30:1 CTAT interpretation](PROVERBS_30_1_CTAT_REVIEW_2026-10-10.md)
 distinguishes an ability ending from POB's alternate exhaustion clause. The
 published argument strengthens a live alternative without settling source
 priority or authorizing an application. No fresh ink or canon result follows.

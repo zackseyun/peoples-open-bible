@@ -163,3 +163,22 @@ and excluded from staging. Git diff-check and four frozen Proverbs CTAT tests
 pass. All 37 reader-footnote regression tests pass in 57.701 seconds, including
 the new guard for these candidates. Together these are 41 scoped tests, not
 another complete local corpus replay. Publication remains a separate gate.
+
+## Critical edition acquisition limit
+
+The next bounded acquisition identifies Barthélemy's 1986 CTAT II,
+*Isaïe, Jérémie, Lamentations*, at the
+[official ZORA record](https://www.zora.uzh.ch/handle/20.500.14742/140890),
+DOI 10.5167/uzh-150248. Root independently verifies title, year and identifiers
+through the [public institutional metadata API](https://www.zora.uzh.ch/server/api/core/items/ca214a00-be52-4fc3-96c1-843a3d0261bb).
+The bounded assessor follows the linked PDF bitstream and ordinary
+[download](https://www.zora.uzh.ch/bitstreams/f65a6c70-833e-4638-b08d-1febc4627583/download).
+Both ordinary content routes return Anubis HTML, not the expected 27,144,119-byte
+PDF. Repository MD5 `399a0aa9be149083d5656bc484eb4453` identifies the intended
+file, not an acquired copy. The permitted local filename check finds only
+CTAT V, which does not supply this Isaiah argument.
+
+No target page or entry is read and no new transmission argument follows.
+Park this acquisition until the authorized volume becomes accessible; do not
+retry the challenge or substitute catalogue metadata for the entry. Source
+priority and the current main English remain on hold.

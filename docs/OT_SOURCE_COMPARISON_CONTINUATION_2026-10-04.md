@@ -3462,3 +3462,57 @@ Diffchecks pass. The protectedGenizahhash remains
 130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50.
 The broad goal remains active, with no new damage-restoration benchmark or
 fullBible source-priority/translation certification.
+
+
+## October10 Micah6:8: new printed argument and lexical controls
+
+Root commits the six Micah task paths as ead08d027e44b6f8bf56e0035c46f4d042a1c155, tree a899dcd89da814b23e646aee26ed3b37c5576cd5, parent055d6b3c814f762c48cd5585393d264f7ed574c1. The workflow adds the new five-test selector and its exact historical f2bf baseline fetch. Normal push and remote head/tree/parent are verified. PR137 targets main27e9cdfefcda8e4292c0dbcc068da73dd332365d and depends on135/136; its22-path main-relative diff is exactly those dependencies plus the six scoped Micah task paths (three are shared paths). Final five focused checks rerun PASS0.079seconds and cached diffcheck passes after removal of an extra EOF blankline; no extra distinct tests counted. Mandatory artifact attach fails100identitycap; no oldattachmentremoved. Openingreportqueued, notpreviewverified. Actual04:01:21UTC readback finds own137checks114384030871/114383987749 live/inprogress and mergedfalse; main remains27e9. Worktree clean exceptprotected unrelatedGenizah whose hash remains130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50. No merge/mainpush/deployment claimed; goal staysactive.
+
+The next pass creates research/micah6-8-version-followup-2026-10-10 from
+that exact137head. Initial Git status has no trackedchanges and retains the
+protected unrelatedGenizah file. PDF and documentation skills govern visual
+source checks and repository prose; no cloudPage is created.
+
+An ordinary browser visit to the oldUtrechtPDF route initially displays a
+security-verification waiting page, then redirects naturally to the actual
+institutionalbitstream c5c9afc9-ec95-45ba-81e4-4774376f515a. Root does not solve
+or bypass a challenge. A bounded ordinary download acquires156204bytes,
+17pages,SHA949a57497a822d6f390b1e3cb60442be677160eb0b9c396ff9180b2a871efae5.
+Root reads the complete extractedchapter and visually checks printed205–207.
+One independent grammatical critique confirms the repeated printed labels
+are reversed against retained pointing, not an extraction-order accident.
+It distinguishes probable labelerror from the still-relevant lexical argument.
+Publisher/deGruyter routes remain unavailable; no third-party mirror is used.
+
+Two other agents obtain actualSyriac andLatin controls and actualSirach
+comparanda. Root independently readsCALchapter06:08, itscritical-edition
+provenance and lexicalentry, Vatican target/edition/preface/date controls,
+and visuallychecks both completeAbeggtranscriptions plus Muraoka targetpages
+and numberingheading. A first shellread fails for missingrequests; a standard
+library HTTPread succeeds, without installation. The publisherPDF titlepages
+correct an initial guessed bibliographicidentity toMuraoka2023. Medieval
+lexicalparallels, a marginalgloss and modernNovaVulgata cannot be promoted to
+ancientMicahwitnesses. The initialpacket/403accessrecord remains unchanged.
+
+The focused contribution is a checkedcounterargument and qualified source
+comparison, not a source-letter or Englishchange. The next new-evidence gate
+remains targetBHQ/comprehensiveGreekapparatus; unchanged modelvotes are stopped.
+The user-facing canon question remains separate: lexicalusefulness alone
+cannot authorize canonmembership. Newreport/receipt/test plus oneCIselector
+and a methodclarification are prepared. ElevenMicahchecks pass in0.114seconds
+(sixnew,fiveprior), with no scientific-priority or full-corpus certification.
+At04:11:35UTC readback,135/136/137 remain unmerged with their ownhead checks
+inprogress; no merge/mainpush/deployment is claimed. Diffcheck passes and the
+protectedGenizahhash still matches130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50.
+
+The bounded factualcritic raises one attribution question. Root points to the
+actual printedpace, narrows the report to that explicit signal and retains the
+unconsultedDCHentry limitation; no dictionarysense is inferred. Actualviewer
+HTML supplies the direct A/BtranscriptionURLs. The critic passes those precise
+revisions, visually checks allfourPDFcontrols and independently reproduces the
+sixnewtests and historicalinputpreservation. Originalquestion/inputhashes and
+correctedreviewhashes remain recorded; no repeated agreementloop is used.
+The five relatedCTATchecks pass in0.058seconds, while workflowYAML and its new
+ead08d predecessor fetch/testselector are verified. ElevenMicahchecks rerun
+PASS0.123seconds, not eleven additional distinctchecks. No protectedfile edit,
+source/English/note/prompt/canon/About application or PDFredistribution occurs.

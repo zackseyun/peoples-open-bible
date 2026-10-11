@@ -1,5 +1,7 @@
 import copy
 import json
+from pathlib import Path
+import subprocess
 import unittest
 from unittest.mock import patch
 
@@ -60,8 +62,51 @@ class PointingTriageTests(unittest.TestCase):
     def test_removed_marks_are_renormalized(self):
         self.assertEqual(triage.without("בָ\u05bcִ", "\u05bc"), triage.without("בִָ", ""))
 
+    def reproduce_frozen_queue(self):
+        # Only the original review method is historical. The queue, generator,
+        # screen controls and all WLC inputs must still match their live pins.
+        frozen = json.loads(triage.OUTPUT.read_text())
+        revision = "31a979f92629d06aab9002a9a4d0c92e47236fe3"
+        method_path = "docs/TEXTUAL_ADJUDICATION_METHOD.md"
+        method_raw = subprocess.check_output(
+            ["git", "show", f"{revision}:{method_path}"], cwd=triage.ROOT)
+        self.assertEqual(screen.digest(method_raw), frozen["inputs"][method_path],
+                         "Historical review method drift")
+        original = Path.read_bytes
+        with patch.object(Path, "read_bytes",
+                          new=lambda path: method_raw if path == triage.METHOD else original(path)):
+            return triage.build()
+
+    def test_corrupt_historical_method_cannot_reproduce_queue(self):
+        original = subprocess.check_output
+
+        def corrupt_method(args, **kwargs):
+            raw = original(args, **kwargs)
+            target = ("31a979f92629d06aab9002a9a4d0c92e47236fe3:"
+                      "docs/TEXTUAL_ADJUDICATION_METHOD.md")
+            return raw + b"corrupt" if args[-1] == target else raw
+
+        with patch.object(subprocess, "check_output", side_effect=corrupt_method):
+            with self.assertRaisesRegex(AssertionError, "Historical review method drift"):
+                self.reproduce_frozen_queue()
+
+    def test_changed_live_wlc_or_screen_cannot_hide_behind_historical_method(self):
+        frozen = json.loads(triage.OUTPUT.read_text())
+        wlc_path = next(name for name in sorted(frozen["inputs"])
+                        if name.startswith("sources/ot/wlc/"))
+        original = Path.read_bytes
+        for target, message in ((triage.ROOT / wlc_path, "screen input drift"),
+                                (screen.OUTPUT, "frozen screen pin mismatch")):
+            def corrupt_live(path):
+                raw = original(path)
+                return raw + b"corrupt" if path == target else raw
+
+            with self.subTest(path=str(target)), patch.object(Path, "read_bytes", new=corrupt_live):
+                with self.assertRaisesRegex(ValueError, message):
+                    self.reproduce_frozen_queue()
+
     def test_actual_complete_queue_reproduces(self):
-        actual = triage.build()
+        actual = self.reproduce_frozen_queue()
         self.assertEqual(actual, json.loads(triage.OUTPUT.read_text()))
         self.assertEqual(actual["summary"]["verse_rows"], 374)
         self.assertEqual(actual["summary"]["categories"], {

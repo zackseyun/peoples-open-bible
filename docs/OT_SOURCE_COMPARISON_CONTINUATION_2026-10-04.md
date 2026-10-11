@@ -2462,3 +2462,99 @@ git config user.name has no configured value. No commit or branch ref is
 created by that attempt. Existing commits record Git's normal inferred author;
 the next request preserves the actual parent commit's author identity rather
 than inventing attribution. The unreferenced first tree is not a delivery.
+
+## Full Fox target access and CTAT Proverbs8:16 — October10 continuation
+
+The API retry creates commit789bc0ff5538a9430fd50c86f2093511ed23c075,
+treec5ff568e9db47e41d4a71f10065c820026fc6c94, parent26ef853f.
+Full compare verifies exactly the nine declared files (473 additions/3 deletions),
+their100644 modes and every Git blob hash against local bytes. The remote
+research/proverbs-30-1-ctat-api-2026-10-10 ref reads back that exact head.
+PR125 replaces123/124; both old PRs are commented and closed, not merged.
+Attachment is attempted but fails the100-identity cap; no old artifact is removed.
+Ordinary local fetch then fails opening FETCH_HEAD with ENOSPC. A resulting
+bad-object local diff is not a pass. Local HEAD/index/main remain unchanged.
+
+At01:04UTC October11 both125 own checks are running; they progress from checkout
+to reader-note/policy tests by01:12. At01:14 one own check114355096323 is failed
+and114355090621 remains live. No merge or remote-main advance is made. The
+existing runtime agent is resumed for one bounded actual-log diagnosis; no
+failure remedy is assumed from the status alone. These are125 checks, not
+borrowed predecessor green results.
+
+The already acquired CTAT volume yields the full Proverbs8:16 entry.
+Root visually reads native552–554/printed523–525 using Poppler stdout images,
+without file creation. It supplies a named Paris BN hébreu3 earth-to-justice
+correction report and an opposite Hilleli direction reported through ibnNahmias.
+Neither physical hand nor date is verified. A bounded institutional search
+does not locate the exact Paris3 object/leaf. A requested locator-agent launch
+fails ENOSPC in the thread store; no agent is represented as having run.
+Root retains the locator as a lead, with no manuscript-image claim.
+
+Earlier project records already cite the full Fox publisher edition, so the
+recent preview-only gate warrants checking. The full2015 edition is accessible
+through an ordinary identified research request and matches the previously
+recorded hash. Initial page-range navigation misses the target; a later search
+finds native400. Saving a local study copy fails ENOSPC; inspection confirms
+the intended Downloads path does not exist. PDF bytes and three complete
+native400–402 renders are instead read in process memory. A Node kernel and
+new temporary-directory creation also fail for lack of space; no broad cleanup
+or source deletion is undertaken.
+
+The existing Proverbs30:1 judge is resumed for genuinely new complete Fox target
+evidence. Its default/web fetch fails403; the exact normal POB-research
+User-Agent request succeeds without auth/cookies. It independently verifies
+the full source hash/bytes/page count and visually reads the complete target
+from memory. It confirms the apparatus/prose repetition tension and the
+Fox/CTAT Aquila-form discrepancy. Research observations pass with scope limits;
+source priority and full English stay HOLD. The frozen CTAT inputs remain
+hash-identical. This is not an exact-hash authored-follow-up approval, a
+Proverbs8:16 judgment, registry review, CI approval or candidate application.
+No same-input authority-vote loop is run.
+
+The [follow-up report](PROVERBS_SOURCE_FOLLOWUP_2026-10-10.md) documents the
+access correction, source arguments and next discriminators. Its
+[source-observation receipt](../sources/textual_restoration/comparisons/proverbs_source_followup_review.2026-10-10.v1.json)
+states that limited judgment honestly. It does not backdate full Fox access
+into the earlier preview record, modify its frozen CTAT review, or add a
+registry row claiming whole-edition collation. No source, English, reader note,
+generated restoration or canon status changes.
+
+Local writes remain blocked even though df reports roughly120MiB available.
+The next documentation delivery uses the already verified remote Git data
+route, preserving125 as parent and all unrelated local work. Server commit/ref/
+compare/CI events will be recorded only after they occur. Both own exact-head
+checks and tree/ancestry verification still govern publication; local main
+synchronization and a normal local push cannot be claimed while disk writes fail.
+
+Both125 logs are now actually read: job114355096323 fails at01:13:29UTC
+and114355090621 at01:17:57UTC, each in UXLC pointing triage line65.
+Only the method-input hash changes (old70ead1b1… vs current89c6be…);
+all374 rows, summaries and other input pins match. The second failure is
+verified from its own log, not inferred from the first. Remote main remains
+eeb6777ddbee7abaf958a7a3aa7a82fddadb1bda at01:18:29UTC;125 is not merged.
+
+The minimal test-only repair reads the method bytes from exact receipt-creation
+baseline31a979f92629d06aab9002a9a4d0c92e47236fe3, checks their original frozen
+hash, and scopes that substitution to METHOD. The self-hashed generator and
+frozen receipt remain untouched. All WLC and screen controls stay live; new
+negative tests reject corrupt historical policy and changed live WLC/screen
+bytes. This is historical provenance reproduction, not approval under current
+policy. CI fetches that immutable baseline explicitly.
+
+The repair agent's in-memory updated12 tests pass1.162s. Root independently
+executes the exact updated test bytes:12 tests pass1.169s, SHA256
+0b1d275e5972a0bbbfeb7cdba78d395dfabf9caed3c358509d6ac3241fda7463.
+Workflow parsing passes. The agent executes each of the27 remaining workflow
+suites once in order:153 tests pass, exit0. The combined bounded verification
+is165 tests across those executions, not full-workflow or corpus success.
+No repository file or index is written by those checks.
+
+The successor combines this repair with the three documentation files, exactly
+five changes over frozen125. Git/API edits use125's server bytes as their base,
+not an unavailable local fetched object. No repeated local staging attempt is
+made. Source-observation receipt explicitly disclaims exact authored-report,
+8:16, CI and English application approval. Root qualifies τελέσω as a
+first-person form interpreted there as future, not an exclusive morphological
+claim. The completed task-owned RAM PDF process is closed; no source/page
+files are deleted. Protected Genizah SHA256 remains130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50.

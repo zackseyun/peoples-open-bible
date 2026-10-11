@@ -39,3 +39,26 @@ Next resolve the label with larger native-scale context or an independently
 established diplomatic control, preserving the distinction between published
 wording and visible marks. Even successful clear medieval-square-script reading
 would not establish performance on ancient scripts or damaged manuscript ink.
+
+## Full photograph context followup October 10
+
+The [dated context check](context-followup.2026-10-10.v1.json) does not resolve
+the reference label. A fresh reviewer received only the full photograph and
+existing crop, without the expected text, passage or earlier responses. Its
+tentative reading differs from the earlier root candidate in a medial letter
+and an additional claimed consonant. The response is preserved as given, not
+corrected to the edition or promoted into a manuscript variant.
+
+The full photograph was **downsized in the model display**: the reviewer reports
+1485 × 1664 rather than the stored 3756 × 4208, even when requesting original
+detail. Root received a different resized display, 2999 × 3359. Neither full-page
+view establishes a native-resolution context check. The existing 830 × 245 crop
+remains byte-identical; its review produced no resize notice. This display
+distinction changes the next step: obtain actual native-pixel context or a
+defensible diplomatic reference, not more votes on the resized page.
+
+No character score, accepted answer key, two-family calibration, damaged-letter
+restoration or source change follows. The original reference disagreement and
+all frozen images remain intact. The [continuation record](../../../../docs/RESTORATION_CONTROL_AND_NAHUM_DELIVERY_2026-10-10.md)
+separates this unresolved calibration result from the reviewed reader-note
+changes now merged into main.

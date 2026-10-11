@@ -1,6 +1,11 @@
 # Biblical text contributions and canon review
 
-Latest primary-source followup: the actual [CTAT V target entry](ECCLESIASTES_8_10_CTAT_REVIEW_2026-10-10.md)
+Latest bounded followup: [Proverbs30:1 CTAT interpretation](PROVERBS_30_1_CTAT_REVIEW_2026-10-10.md)
+distinguishes an ability ending from POB's alternate exhaustion clause. The
+published argument strengthens a live alternative without settling source
+priority or authorizing an application. No fresh ink or canon result follows.
+
+Earlier primary-source followup: the actual [CTAT V target entry](ECCLESIASTES_8_10_CTAT_REVIEW_2026-10-10.md)
 adds a concrete contrary transmission account and a different interpretation
 of who is forgotten. One independent new-evidence review accepts the evidence
 record but holds both source selection and full English application. A known

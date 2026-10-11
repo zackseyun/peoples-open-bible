@@ -3,6 +3,8 @@
 External trusted review and composition hashes are mandatory: a mutable source
 record cannot approve itself or substitute its own patch/evidence history. The original base is read
 from Git so later canonical application need not destroy source provenance.
+Historical policy pins describe that original review, not compliance with later
+translation policy. Schemas and all non-policy review/evidence inputs stay live.
 """
 import argparse
 import hashlib
@@ -19,6 +21,9 @@ from tools.textual_restoration.verify_source_composition import (
 )
 
 SCHEMA = 'schemas/ot-reviewed-critical-source.schema.json'
+HISTORICAL_REVIEW_POLICIES = frozenset({
+    'docs/TEXTUAL_ADJUDICATION_METHOD.md', 'DOCTRINE.md',
+})
 NOTE = ('Provisional editorial composite, not a transcription of one manuscript '
         'or a recovered autograph. The unpointed text retains the declared base '
         'except for the recorded changes; interpretive vocalization outside '
@@ -52,7 +57,16 @@ def validate(record, trusted_review_sha256, trusted_composition_sha256, *, root=
     require(candidate['source']['edition'] == 'POB-critical-draft', 'Reviewed input must be the declared candidate')
     require(review.get('input_pins', {}).get(path.as_posix()) == p['base']['sha256'], 'Review baseline binding missing')
     for name, digest in review['input_pins'].items():
-        if name != path.as_posix():
+        if name in HISTORICAL_REVIEW_POLICIES:
+            # These exact policy paths record the original review context.
+            # Later policy documents are not replacement source evidence.
+            # Keep the original digest; every other non-baseline input is live.
+            policy_raw = subprocess.run(
+                ['git', '-C', str(root), 'show', f"{p['base_revision']}:{name}"],
+                check=True, capture_output=True).stdout
+            require(hashlib.sha256(policy_raw).hexdigest() == digest,
+                    f'Historical review policy drift: {name}')
+        elif name != path.as_posix():
             pinned(root, {'path': name, 'sha256': digest})
     for pin in entry['evidence']:
         pinned(root, pin)

@@ -2353,3 +2353,112 @@ entries. A reversible Git metadata operation, update-index --index-version=4,
 succeeds, retaining all643144 entries and reducing index storage without deleting
 source files or changing tracked content. This addresses delivery overhead,
 not the larger historical archive-replay space requirement.
+
+## Proverbs30 1 CTAT followup and delivery repair
+
+The prior turn made progress by obtaining and independently reviewing CTAT's
+Ecclesiastes entry. Eight task files commit at26ef853ffc6702ee5f3986818c3d3c8ffbd379ef,
+normal branch push succeeds and PR124 is created against main, dependent on123.
+Mandatory attachment fails the100-identity cap; no older attachment is removed.
+The successful index-version4 change preserves643144 tracked entries and reduces
+68MiB to44MiB; it does not resolve archive-replay storage needs. The protected
+untracked Genizah file stays unchanged and excluded. No124 merge is claimed.
+
+This continuation branches from the frozen124 head, reusing the actual volume
+instead of reacquiring it or opening another broad source screen. Root reads
+the complete Proverbs30:1 entry, printed773–775/PDF802–804, and visually rechecks
+confidence convention xv. The top of773 completes Proverbs29:18; the target
+entry begins later on that page. Broken ancient-language extraction is not used
+as glyph evidence. The target supports weariness plus ability as a distinct
+interpretation, not automatic promotion of POB's exhausted-speaker note.
+The [new report](PROVERBS_30_1_CTAT_REVIEW_2026-10-10.md) and
+[source record](../sources/textual_restoration/comparisons/proverbs30_1_ctat.2026-10-10.v1.json)
+preserve exact final-verb, grade, intermediary and source-interpretation limits.
+One bounded source analyst reads all Proverbs30 and four controls; root checks
+30:1–9 and the controls. A separate exact-input critic reviews genuinely new
+evidence, not another opinion loop on an unchanged candidate. Source priority
+and application stay held; no canonical or reader change is made.
+
+PR123's own checks114350652244/114350623870 both fail after the complete reader
+corpus passes. Actual job114350652244 reaches the54-test registry suite, which
+passes remotely, then Psalm145's application validator raises Pinned file drift.
+This supersedes the inference that the earlier ten test-only method repairs
+were sufficient; it does not turn the previous local disk errors into passes.
+The first log request mistakenly omits the Basic authorization prefix and
+returns403; corrected normal authentication obtains the fresh signed redirect,
+whose target is read without forwarding repository credentials.
+
+The runtime validator's old approval binds methodological and doctrinal policy
+to its original review. Both exact policy paths now read the immutable recorded
+base revision with their original digests retained. All source/review/candidate/
+composition/evidence pins and schemas remain live. This proves original-review
+provenance, not compatibility with later policy or new publication authority.
+The bounded repair agent initially observes11 Isaiah errors from old DOCTRINE
+after fixing method alone. Root approves the exact two-policy allowlist, not
+general historicalization of documents. Negative tests reject corruption in
+either old policy and changes to live inputs/current schema. Frozen evidence,
+reviews and verse files remain unchanged.
+
+The repair agent passes35 focused tests in5.644s; root independently passes
+the same35 in3.737s. CI explicitly fetches the two additional actual source
+baselines and registers the runtime validator suites. No full local archive
+replay is repeated on the nearly full disk and no full-workflow pass is claimed.
+Delivery needs a replacement package containing the frozen123/124 work plus
+these new reviewed findings and repair. It must pass both own exact-head checks
+before SHA-pinned merge, approved-tree/ancestry verification and guarded main
+advance. Failed or still-pending predecessors cannot supply borrowed green checks.
+
+The independent [exact-input critic](../sources/textual_restoration/comparisons/proverbs30_1_ctat_review.2026-10-10.v1.json)
+passes research with scope limits and holds source priority/full English.
+It verifies both frozen authored inputs, all10 prior-file pins, actual PDF
+metadata/hash and three render hashes; complete target and confidence pages
+are visually read, and Hebrew context/controls independently checked. A scope
+question about material preceding the target on773 is resolved against772's
+Proverbs29:18 continuation; no correction is necessary. No further same-input
+critic is run. The source critic does not approve the separate runtime repair.
+
+Root's16 combined Proverbs/Ecclesiastes checks pass0.066s after the separate
+review receipt is added. Together with the35 runtime checks,51 focused tests
+pass across the two executions, not a full-corpus semantic assessment. JSON,
+report-local links, workflow structure, whitespace and protected-file hash
+checks pass. At00:57:24UTC both124 own checks114352600333/114352583615 remain
+in progress, while123 is failed. Neither is merged. The new replacement uses
+the already merged121 predecessor; commit/push/PR and later exact-head delivery
+events are recorded after they actually occur, without amending frozen evidence.
+
+Task-only staging of the nine new/modified files then fails writing index.lock
+with Out of diskspace. No commit, branch push or replacement PR is created.
+Read-only checks confirm no stale lock, no staged diff, the44MiB index remains,
+and all nine task files are intact. The reported127MiB available is insufficient
+for this actual operation. No broad cleanup, source deletion or alternate
+commit procedure is attempted. The four inspected temporary render/source
+directories total about7MiB and do not provide a meaningful remedy. Delivery
+pauses for more local space; frozen evidence and the independent HOLDs remain
+unchanged. The protected Genizah file remains excluded.
+
+## Reviewed package delivery without a local index rewrite
+
+The preceding turn is progress: it completes the source comparison, independent
+review and bounded runtime repair, while actual local staging fails. At the
+next continuation the volume has126MiB available, HEAD remains26ef853f, all nine
+task files are intact, the index has no staged diff and no stale lock exists.
+PR123 remains failed; one124 own check has failed and the other is still live.
+Repeating the same index write on unchanged space is not useful.
+
+The configured repository's normal Git data API provides an alternative within
+the standing commit authorization: build a tree from exact26ef853f with only
+the nine declared UTF-8 task files, then create a single-parent commit and a
+new remote branch. Verify its compare file set, modes and Git blob hashes
+against the local bytes before requesting CI. No unrelated discovery, source
+PDF, credential or rendered page enters the tree. The local HEAD/index remain
+at the original baseline with working files preserved; remote delivery does
+not falsely claim local index synchronization. A later safe fast-forward must
+wait for enough disk space. No commit/ref/PR success is claimed before actual
+API responses and read-back verification. Both new exact-head checks and the
+ordinary merge/tree/ancestry/main-push gates remain required.
+
+The first API tree request succeeds, but execution stops before commit creation:
+git config user.name has no configured value. No commit or branch ref is
+created by that attempt. Existing commits record Git's normal inferred author;
+the next request preserves the actual parent commit's author identity rather
+than inventing attribution. The unreferenced first tree is not a delivery.

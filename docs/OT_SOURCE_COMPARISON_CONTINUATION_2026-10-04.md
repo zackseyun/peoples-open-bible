@@ -2632,3 +2632,43 @@ Test reader notes and consultation policy. No timeout, restart or completion
 is inferred from the earlier checkout observation. A separate local follow-up
 commit preserves126's exact live head. Its publication waits for126's own CI;
 it will not amend that head or borrow its checks for a different tree.
+
+## PR126 publication and Field follow-up delivery
+
+The preceding turn is progress: normal local commit29c669608400f8632959a77edefcbe8a7f40412e,
+tree8ce29e9e57d8dd49c938169bd4d9ea734844772c, parentbfbdcb2d92, contains only
+the three Field provenance/report/log files (288 additions). The tracked index
+is clean; the protected Genizah file remains the only untracked item. The report
+view is requested in Codex and returns queued, not confirmed rendered. No
+publication of that local follow-up is claimed in the preceding turn.
+
+This continuation checks the live126 handles rather than restarting them.
+One succeeds while the other is still running; both are confirmed completed
+success at01:42:47UTC October11. The source/method review preserves the existing
+case-triggered pause on fresh image calibration. The Samuel plates still lack
+verified physical numeral anchors, and the Leningrad character answer key
+still has an unresolved label disagreement. ImageGen guidance is inspected,
+but no generated restoration is requested or presented as evidence. Neither
+the benchmark nor its independent-provider gate is falsely marked complete.
+
+The two successful own checks114358195561/114358187118 belong to exact126 head
+bfbdcb2d92fa4902520b4adcd29b5bb35f979b00. With actual base/main eeb6777d and
+the approved tree rechecked, a SHA-pinned normal merge produces
+5013fa82fddb0bf1e25a6b46afa05b060c1f9196. Its server tree is exactly
+6b4c19c92ade49e98e5bd05d7bbc68e15a81483c; its actual parents are eeb6777d
+and bfbdcb2d92. PR merged status and remote-main readback agree. No bypass,
+borrowed predecessor green result or unchecked source application occurs.
+
+Normal fetch then obtains that merge. Local tree/ancestry are independently
+verified; main is not checked out in any of the three current worktrees.
+Guarded local-main advancement eeb->5013 preserves current Field HEAD29c6696
+and its clean tracked index. Normal push main succeeds (Everything up-to-date),
+and ls-remote confirms5013. The published package spans41 changed files, not
+41 manuscript witnesses. Direct diff of translation and OT/NT source directories
+is empty against the prior main. Workflow success is software/provenance
+validation, not a corpus-wide semantic score or fresh-decipherment certificate.
+
+The separate Field packet now proceeds against the actually merged main,
+without modifying126's finished head. Its source observations and frozen
+inputs remain unchanged. This operational log addition is a separate normal
+commit; push/ref/PR/own-check events are reported only after they occur.

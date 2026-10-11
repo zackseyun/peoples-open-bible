@@ -2558,3 +2558,117 @@ made. Source-observation receipt explicitly disclaims exact authored-report,
 first-person form interpreted there as future, not an exclusive morphological
 claim. The completed task-owned RAM PDF process is closed; no source/page
 files are deleted. Protected Genizah SHA256 remains130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50.
+
+## Field provenance and successful local synchronization
+
+The preceding turn is progress: remote commitbfbdcb2d92fa4902520b4adcd29b5bb35f979b00,
+tree6b4c19c92ade49e98e5bd05d7bbc68e15a81483c, parent789bc, contains exactly
+five new changes. Compare verifies every Git blob; nested server tree reads
+also verify all five100644 modes. The new remote branch reads back its exact
+head and PR126 is created. PR125 is commented and closed, not merged. Mandatory
+126attachment fails the100-identity cap; no older artifact is removed.
+Both126 own checks114358195561/114358187118 are confirmed live, still in checkout
+at01:26:11UTC October11. Main remains eeb6777d; no green/merge is borrowed.
+
+The next investigation is the genuinely unresolved Aquila form, not another
+same-input translation judge. A targeted search supplies FieldII370 as a
+locator; no search snippet becomes glyph evidence. The first root acquisition
+wrapper returns unparseable Warning-prefixed output; no image inspection or
+pass is claimed from it. A bounded repeat retains the actual JPEG in memory.
+Complete top/bottom inspection views cover the whole page and its notes.
+No source/page file is created.
+
+Field prints Aquila's imperative ending and Theodotion's ability ending under
+target note3 Nobil. Adjacent Syro-hexaplaric citations and the previous chapter's
+Cod252 note do not attach to this unit. An opening-preface locator then yields
+the actual FieldI image0011, fully visually read. It connects Nobilius to
+Morin's annotations and reports Field's Cod248=Vat346 dependency inference
+from Bodleian collations. No physical codex leaf, copy date, or independent
+vote count follows. A normal Vatican catalogue request is not accessible
+through the web tool; it establishes no target metadata.
+
+The existing judge independently obtains and reads both actual leaves. Its
+first new stage checks FieldII370; its second adds the genuinely new preface.
+Both pass source observations with scope limits; source priority and English
+application stay HOLD. A technical wrapper loses the first preface acquisition's
+output; one bounded repeat recovers it. No further request, same-input judge
+loop, authored-report/hash approval or CI approval is claimed.
+
+Root also reads the actual unchanged30:1 YAML and identifies a future metadata
+precision target: its final-word I-am-weary explanation does not distinguish
+the earlier redivided weariness clause from the separately disputed final verb.
+Even if weary is a loose exhaustion paraphrase, that analysis needs naming. The
+[new report](PROVERBS_30_1_FIELD_PROVENANCE_2026-10-10.md) keeps this root mapping
+finding separate from the judge's source-leaf approval. No candidate is applied.
+
+At01:27:19UTC available disk space rises to923MiB, an actual external-state
+change. Ordinary fetch of the126 branch succeeds. All nine previously dirty
+task-file Git blobs match remote789 exactly, with no pre-existing staged diff.
+Task-only staging produces index treec5ff568e9db47e41d4a71f10065c820026fc6c94;
+only after that whole-tree equality is proved does a guarded research ref
+advance26ef->789. Normal fast-forward then brings the checkout tobfbdcb2d92,
+index tree6b4c19c92ade49e98e5bd05d7bbc68e15a81483c. Both staged and tracked
+working diffs are empty. The unrelated Genizah file is the only untracked file
+and its original130d509a… digest is reverified. Local main remains eeb6777d.
+No reset, checkout overwrite, broad cleanup or source deletion occurs.
+
+Normal local Git delivery is now available again. A new research branch starts
+from exact126 head, without changing126's live CI inputs. Source-observation
+documentation preserves the frozen earlier report/receipts and states the new
+judge's limited scope. Delivery events and validation are recorded after they
+actually occur; own CI, exact-head merge/tree/ancestry and normal main-push gates
+remain required before publication.
+
+The new source record parses; its authored-report hash and all three previous
+input hashes match actual files. Report-relative links and new-file whitespace
+checks pass. Git diff-check passes. The actual synchronized UXLC test file now
+runs12 tests in1.155s; all four frozen Proverbs CTAT guards pass0.006s. These are
+16 focused tests, not another full local archive/corpus replay or independent
+metadata-candidate approval. Both task-owned facsimile RAM processes close;
+no source/page file was created or deleted.
+
+At01:34:40UTC both126 own handles remain confirmed live and have progressed to
+Test reader notes and consultation policy. No timeout, restart or completion
+is inferred from the earlier checkout observation. A separate local follow-up
+commit preserves126's exact live head. Its publication waits for126's own CI;
+it will not amend that head or borrow its checks for a different tree.
+
+## PR126 publication and Field follow-up delivery
+
+The preceding turn is progress: normal local commit29c669608400f8632959a77edefcbe8a7f40412e,
+tree8ce29e9e57d8dd49c938169bd4d9ea734844772c, parentbfbdcb2d92, contains only
+the three Field provenance/report/log files (288 additions). The tracked index
+is clean; the protected Genizah file remains the only untracked item. The report
+view is requested in Codex and returns queued, not confirmed rendered. No
+publication of that local follow-up is claimed in the preceding turn.
+
+This continuation checks the live126 handles rather than restarting them.
+One succeeds while the other is still running; both are confirmed completed
+success at01:42:47UTC October11. The source/method review preserves the existing
+case-triggered pause on fresh image calibration. The Samuel plates still lack
+verified physical numeral anchors, and the Leningrad character answer key
+still has an unresolved label disagreement. ImageGen guidance is inspected,
+but no generated restoration is requested or presented as evidence. Neither
+the benchmark nor its independent-provider gate is falsely marked complete.
+
+The two successful own checks114358195561/114358187118 belong to exact126 head
+bfbdcb2d92fa4902520b4adcd29b5bb35f979b00. With actual base/main eeb6777d and
+the approved tree rechecked, a SHA-pinned normal merge produces
+5013fa82fddb0bf1e25a6b46afa05b060c1f9196. Its server tree is exactly
+6b4c19c92ade49e98e5bd05d7bbc68e15a81483c; its actual parents are eeb6777d
+and bfbdcb2d92. PR merged status and remote-main readback agree. No bypass,
+borrowed predecessor green result or unchecked source application occurs.
+
+Normal fetch then obtains that merge. Local tree/ancestry are independently
+verified; main is not checked out in any of the three current worktrees.
+Guarded local-main advancement eeb->5013 preserves current Field HEAD29c6696
+and its clean tracked index. Normal push main succeeds (Everything up-to-date),
+and ls-remote confirms5013. The published package spans41 changed files, not
+41 manuscript witnesses. Direct diff of translation and OT/NT source directories
+is empty against the prior main. Workflow success is software/provenance
+validation, not a corpus-wide semantic score or fresh-decipherment certificate.
+
+The separate Field packet now proceeds against the actually merged main,
+without modifying126's finished head. Its source observations and frozen
+inputs remain unchanged. This operational log addition is a separate normal
+commit; push/ref/PR/own-check events are reported only after they occur.

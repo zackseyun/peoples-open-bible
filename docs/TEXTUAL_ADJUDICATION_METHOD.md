@@ -130,6 +130,13 @@ space or other surviving features only with their own evidence. Keep illustrativ
 linguistic contrasts distinct from attested apparatus variants; see the
 [4Q120 preservation review](4Q120_LEVITICUS_PRESERVATION_REVIEW_2026-09-05.md).
 
+Describe supplies at their exact word-span scope. At Nahum3:11 Mur.88 preserves
+the seeking verb but supplies the following refuge/enemy words; a city omission
+cannot be established from that supplied expression. Calling the whole clause
+missing would erase the surviving verb. The
+[Nahum reader disclosure](NAHUM_3_6_11_READER_DISCLOSURE_2026-10-10.md)
+keeps that distinction while disclosing the separate4Q169 city expression.
+
 For an ancient translation, record three separate claims: **the attested
 wording in that language**, **which competing source interpretations it can
 distinguish**, and **any proposed Hebrew/Aramaic or Greek back-translation**.

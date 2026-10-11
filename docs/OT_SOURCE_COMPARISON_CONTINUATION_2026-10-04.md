@@ -2,6 +2,14 @@
 
 ## Current answer to the two research questions
 
+October10 [Nahum3:6 and3:11 reader disclosure](NAHUM_3_6_11_READER_DISCLOSURE_2026-10-10.md)
+applies two reviewed complete candidates that preserve source/main English while
+disclosing the repulsiveness and city alternatives and repairing note anchors.
+Full-book actual export changes only those2of47units;45 other records remain
+unchanged. All62 post-application checks pass; delivery remains pending.
+This does not settle historical priority,
+prove a fresh decipherment or justify a canon change.
+
 October10 [Nahum quotation follow-up](NAHUM_PESHER_AND_GREEK_FOLLOWUP_2026-10-10.md)
 checks two meaningful Hebrew alternatives: repulsiveness against spectacle,
 and refuge with a city setting. Mur.88's decisive endings/clause are supplied,
@@ -3288,3 +3296,82 @@ succeed. This publishes the three earlier Nahum reader disclosures on main,
 not a deployed-reader preview or a new preferred source/main English.
 The new research remains on its own branch for publication. Canon and About
 remain unchanged; recent figures and comprehensive target apparatus remain open.
+
+Root commits the seven task-only files as8f63b40ff486daa2641160acf5ddb7daa775466f,
+treecbcbc7317bc77041baaf931655e3d5786f716dd9,
+parent782af1664ab2b646719cfb9b5c8ef69f3466e170.
+Normal push and remote exact head/tree/seven PR paths are verified.
+PR135 targets main27e9cdfefcda8e4292c0dbcc068da73dd332365d.
+The mandatory attachment returns the100-identity-cap error; no old artifact
+is removed. Opening the report is queued, not a verified preview.
+Final six focused tests rerun in0.077seconds, not six additional distinct checks.
+Report local links resolve. The protected unrelated Genizah hash remains
+130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50.
+Own CI is live, not assumed successful; merged status is not yet claimed.
+
+## October10 Nahum3:6 and3:11 reader disclosure
+
+The preceding goal turn is progress: two meaningful published Hebrew
+alternatives are collated, recent source routes corrected, and the reviewed
+seven-file research packet is committed/pushed asPR135. Actual readback of its
+specific own jobs114380240888 and114380185503 confirms both live/in progress,
+not a missing handle, failure or completed merge.
+
+The continuation inspects authoritative worktree/current records and rereads
+the controlling source/English method and documentation skill. Root reopens
+the actual4Q169 quotations, lexicon Forms/Semantics and Mur.88 physical rows,
+including supply brackets and commentary boundaries. It reads adjacent POB
+paragraph context and materializes two complete candidate records on a separate
+branch preserving live135. This is a disclosure application, not another
+same-evidence historical-priority vote or a fresh transcription.
+
+At3:6 the spectacle note moves from contempt to spectacle and gains the
+repulsiveness alternative. At3:11 existing refuge and drunkenness notes move
+to their actual phrases, and a new city-source note qualifies the supplied
+opening verb and unpointed definite/indefinite distinction. Both notes preserve
+adaptation/inheritance alternatives and the Mur.88 supply limits. The retained
+source, vowels, marker-free main English, generation metadata and philosophy
+remain exact. Only two dependent lexical entries change, within the declared
+field scope; historical reviews and original fields are archived, not transferred.
+
+The contract freezes all47 Nahum record pins, exact complete candidates and
+rubric before the one independent exact-record critique. Root's actual
+preflight schema/archive/export checks pass:3chapters47units, only3:6 and3:11
+changed,45other units unchanged,5target notes exported. The candidate export
+hash is e7cf53e0b6b6086833dabfeb8f697aae4120bfb5448950598e31672dfd42e9cc
+against prior f0074c5e9ba789df93c4619d5221129c69e4682c801f7638f4901cd76912c3e2.
+No canonical candidate bytes are written at this stage. One separate agent
+implements only the focused tests while the critic evaluates the frozen notes.
+
+The exact-record critic passes all structural/export checks but holds one
+preservation phrase: Mur.88 preserves the seeking verb, whereas its following
+refuge/enemy expression is supplied. Root corrects only that3:11 sentence,
+the corresponding application-document claim and contract rubric. The3:6
+candidate remains unchanged. Updated candidate/doc/contract bindings and
+proposed export are recalculated; four nonapplication tests pass in0.876seconds.
+A correction-only critique verifies the precise repair and independently
+reproduces corrected export
+ac9e2701c4f2a8994f1955af761c3a54676e21423daad9250349e391e3b07000.
+This PASS closes only the scoped disclosure application, not source priority
+or an optimum-English claim. The initial HOLD and original hashes remain in
+the receipt, not erased by the passing correction.
+
+Root applies the exact reviewed YAML bytes after that PASS and verifies all47
+record pins,45 unchanged records, five notes and the actual complete export
+against the corrected candidate hash. Historical scores are archived without
+verified input bindings; current records stay draft/needs review. The controlling
+method adds the exact word-span lesson, distinguishing the surviving Mur.88
+verb from supplied following words. No source, marker-free main English, canon,
+About, fresh pixels or ImageGen evidence changes.
+
+The six new application tests plus four prior Nahum application, six source
+follow-up and nine historical-runner checks all pass:25tests in5.569seconds.
+The separately launched37-test shared reader suite is live in session2170;
+its completion is not assumed. The protected unrelated Genizah hash still
+matches. Old preflight checks and their reruns are not counted as additional
+distinct post-application tests.
+
+The actual shared reader suite completes successfully:37tests in59.750seconds.
+Combined with25 focused/related tests,62 distinct post-application checks pass.
+The receipt and application report now record the observed result, not a
+full-corpus source or deployed-reader validation. Delivery is still separate.

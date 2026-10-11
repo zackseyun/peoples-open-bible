@@ -2,6 +2,15 @@
 
 ## Current answer to the two research questions
 
+October 10 local-time [John 1:18 comparison](JOHN_1_18_GOD_SON_COMPARISON_2026-10-10.md)
+adds actual institutional God/Son attestations and distinct Sinaiticus correction
+states. Provisional source/main-English retention and historical-priority HOLD
+remain separate from a possible anchor repair or appositional English proposal.
+No John source or reader record changes. The preceding
+[Isaiah captivity disclosure](ISAIAH_49_24_CAPTIVITY_COMPARISON_2026-10-10.md)
+is locally applied and export-verified; source priority stays held. Its attempted
+CTAT II acquisition supplies a verified volume identity but no target argument.
+
 October10 actual [CTAT V Ecclesiastes8:10 entry](ECCLESIASTES_8_10_CTAT_REVIEW_2026-10-10.md)
 is now acquired and read in full, closing its preceding access gate. A contrary
 transmission account and a different subject interpretation strengthen the
@@ -2757,3 +2766,97 @@ protected unrelated hash pass. A log's extra EOF blank line is caught by
 diff-check and repaired before staging; the check is not inferred from a later
 command's successful exit. The package is ready for task-only commit and its
 own CI; no publication is claimed from these local results.
+
+## John God and Son comparison after Isaiah delivery
+
+The preceding turn makes a normal task-only commit4d26991c9cdf3a164ebd64aa8c78948c4168db01,
+treef2dc14a74e91181107dcf24c4b39eea5975c6469, parenta52f2fe20b7. It includes
+exactly eight Isaiah candidate/application/YAML/test/report/log files. Normal
+push and remote head/tree/eight-file parent comparison succeed. PR128 opens
+against then-main5013fa82 and explicitly depends on127. Its own handles
+114365389601/114365317867 are live; its mandatory attachment fails the
+100-identity cap without removing an older attachment. No merge or deployed
+reader is claimed from that preceding turn.
+
+At02:05:12UTC October11,127's second own check is still live while its first
+has passed. A later actual read confirms both114362532491/114362361245 completed
+success for exacta52f2fe20b700e07f37a453d2249b222e91f7f87. Root rechecks actual
+main5013fa82 and approvedtree624c0db15bb9c86a1f2663929c39609d8c441e85, then
+SHA-pinned normal merge produces5aa5e7cc4c0a7bb3dc594c811add01e6f70ecb87.
+Actual server tree matches; actual parents are5013fa82 and a52f2fe20b7.
+Normal fetch, both predecessor-ancestry checks and local tree verification pass.
+Main is not checked out in any listed worktree; guarded advancement5013->5aa
+preserves the current Isaiah head and clean tracked index. Normal main push
+and remote readback verify5aa. These are delivery checks, not textual votes.
+PR128 still requires both of its own exact-head successes and its own
+tree/ancestry/publication checks;127's successful checks are not borrowed.
+
+One bounded agent seeks the actual Isaiah49:24–25 CTAT II argument through
+three targeted catalogue rounds and the returned institutional routes. Its
+official item metadata identifies the1986 volume and intended PDF; ordinary
+content requests return Anubis HTML. The one permitted local filename search
+finds volume5, not volume2. Root independently reads the successful institutional
+metadata API; the web handle request times out. No target page or argument
+is acquired. The case's source-priority hold remains; acquisition is parked
+behind actual authorized PDF access, with no challenge bypass or repeat search.
+
+Root then opens the genuinely queued John1:18 case, reading current POB and
+the pinned SBLGNT edition entry before requesting a bounded independent source
+check. A distinct research branch preserves128's live head. Root reads the
+complete NET translators' own target note and Brian Wright's target argument
+and relevant footnotes, distinguishing actual authorship from mediated opponent,
+version and quotation reports. Existing reader anchors are identified but
+not applied; source selection and retained-Greek English syntax stay separate.
+
+The agent supplies actual four CNTR target locators. Root's web requests fail
+technically, while ordinary raw HTTP reads the target contexts and supplies
+actual hashes. P66/01/03 have no preceding article; P75 has one; all use the
+God abbreviation. Root reads CNTR's legend and01 metadata, including its
+omitted later-corrector coverage. No narrow project dates or four independent
+early branches are inferred. A later raw tool output clips unrelated material;
+it is not silently treated as complete target XML inspection.
+
+Root obtains the actual institutional IGNTP2013 XML apparatus after a web
+timeout and reads complete targetunit/header/conventions. It positively
+reports fully spelled Son for02/036/038 and God for named competing codices;
+NA is not a codex and05's lacuna is not a Son vote. Root also obtains the
+actual Sinaiticus1.95 XML, corrects an overbroad verse18 locator, and reads
+the complete book-specific unit. Its ca article addition and S1 subsequent
+participle insertion remain distinct from unchanged God. The actual file
+header, not the stale README, supplies version/date. Repeated tool retrievals
+needed to expose the clipped target do not add witnesses; no complete XML is
+imported into Git.
+
+The independent new-evidence check matches both actual XML hashes and reads
+the complete units/headers. Positive Son support and precise correction states
+pass observation review; earliest source priority remains HOLD. Article history
+does not prove the proposed God-to-article-God-to-Son universal sequence, and
+an early branch change remains live even if Wright's pre-fourth-century dating
+argument is accepted; root has not independently adjudicated the papyrus dates.
+The [concise comparison](JOHN_1_18_GOD_SON_COMPARISON_2026-10-10.md)
+records these discriminating consultations and named next evidence, not a new
+Bible-wide superiority score, ink recovery or canon result.
+
+One bounded critique of the actual John report passes without material defects;
+it confirms the unchanged canonical YAML hash, separated interpretations and
+source-priority hold. No full English candidate or application is approved.
+The documentation skill keeps those claims distinct and preserves this requested
+research chronology. All four document link sets are parsed and local file
+targets exist. An initially overescaped check is corrected before claiming that
+result. Git diff-check passes; John and protected Genizah hashes match, and
+the translation/OT-source/NT-source diff against4d26991c9c is empty. No unrelated
+file or earlier staged work is included. Documentation-only checks are used
+here; the preceding41 Isaiah regressions are not redundantly rerun.
+
+At02:16:32UTC both128 jobs have passed catalogue/numbering and complete-reader
+validation and are actually running reader-note/consultation tests. They are
+not called timed out or restarted. The John research packet proceeds on its
+separate branch and must pass its own CI before eventual publication after128.
+
+Normal task-only local commit ec01963dff is prepared before push. Final root
+readback identifies an overstrong chronological clause despite the scoped
+report PASS: papyrus dates have not been independently adjudicated. The report
+and log qualify the pre-fourth-century argument as Wright's argument, conditional
+on accepting that dating. The untouched source/English and priority HOLD remain.
+This actual prose correction is checked before amending the unpublished packet;
+it is not another vote on source choice or a modified live CI head.

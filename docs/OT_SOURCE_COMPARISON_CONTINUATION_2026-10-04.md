@@ -3105,3 +3105,70 @@ and abbdeca3a3. Server main/PR readback, normal fetch, ancestry check, guarded
 local main advance with main not checked out, normal main push and remote
 readback succeed. PR132 still has live checks at that observation; the
 Obadiah reader application is not yet described as published on main or deployed.
+
+## October 10 Nahum grammar and exact reader application
+
+The earlier Nahum screen is committed as f38b774ed4fbec0e9a6b740481b5dd1106cad538,
+tree f0df5b175b805b9a9d0b81195ad0138ce613d336, parent 680a147c4e4a676efef843e3e9d62482c6d6999b.
+Normal push, remote head/tree and four exact task-only parent paths are verified.
+PR133 depends on132. Its mandatory attachment fails at the100-identity cap;
+no older artifacts are removed. Opening the report returns queued, not a
+verified preview. Its own checks remain live at the first continuation readback.
+
+Two bounded read-only subtasks examine grammar and actual apparatus, while root
+prepares a strictly scoped reader-note application. Root rereads the controlling
+method, doctrine, schema, earlier Nahum report and application/export patterns.
+The documentation skill preserves the distinction between current findings and
+this chronology. The PDF skill governs direct page inspection. The grammar
+subtask's one Lange PDF acquisition is reused by the apparatus subtask and root,
+not downloaded again. Root inspects its title/relevant discussion and actual p.10
+render; both subtasks and root distinguish its final-he circellus from the
+unmarked2026transcription without assuming the siglum's unverified conventions.
+
+Davidson's actual scan supplies a temporal suffixed form with the same five
+consonants; root directly verifies the named local biblical controls. GKC's
+pronoun discussion is read but not used as proof of missing Nahum syntax.
+Lange's contrary explanation is treated as a scholarly argument, not a
+certified Greek error. Root visually checks the already-local Swete target page.
+It does not count the edition again as an ancient witness or infer unanimity
+from limited apparatus silence. The Greek masculine following pronoun prevents
+asserting an unqualified waters-as-fleeing-subject reading. The legitimate BHQ
+sample lacks the target; BHS, BHQ and DJD target-page access remains open.
+No new manuscript pixels, lexicon entry, generated-image evidence, canon change
+or optimal-English decision is claimed.
+
+The first candidate preflight fails because its marker-stripping regular
+expression is over-escaped. No candidate or canonical file is written before
+that failure. Root corrects the validator, not the English or source to satisfy
+it, and reruns the exact preservation/export checks successfully. Three complete
+candidate records are then written and frozen with their baseline bytes and
+review rubric. Canonical records remain unchanged throughout assessment.
+
+One independent note-application assessment returns PASS on the frozen packet:
+schemas, exact archived historical fields, preservation, eight semantic note
+anchors, qualified days/waters disclosure and two dependent lexical rationales.
+The assessor independently reproduces the three-chapter47-unit export with
+44unchanged units and no source/main-English preference decision. The actual
+assessment and original contract/document/candidate hashes are retained in the
+[receipt](../sources/textual_restoration/applications/nahum1_5_2_9_3_18_reader.2026-10-10.v1.json).
+Root applies the exact reviewed candidate bytes, verifies the current complete
+export hash, and runs four focused tests successfully in1.279seconds. The shared
+reader suite is running, not yet assumed successful. Historical approval is
+archived, not transferred; current records are draft/needs review.
+
+On October11 at approximately03:10UTC, PR132's exact head passes own checks
+114372477042 and114372438553. Its SHA-pinned merge
+67049c995c930dbd463ad5470f3acc357843a79c matches approved tree
+296dbdf009391cfdac0f87c2fa6883fe5ded0663 and actual parents
+7cacd2e5107525b695ce41394a61f1fd3571496c and680a147c4e4a676efef843e3e9d62482c6d6999b.
+Server PR/main readback, normal fetch, ancestry check, guarded local-main advance
+with main not checked out, normal main push and remote readback all succeed.
+This publishes Obadiah's earlier disclosure on main; it is not deployed-reader
+verification or source-priority approval. PR133 is still not reported merged.
+
+The actual shared reader suite finishes successfully:37tests in59.197seconds,
+combined with4focused tests for41post-application tests. Root verifies all47
+current record pins against the frozen three candidate hashes and44unchanged
+baseline bytes; local document links and candidate JSON parse checks pass.
+The protected unrelated Genizah hash still matches. The receipt records these
+observed results, not a full-reader corpus validation or deployment.

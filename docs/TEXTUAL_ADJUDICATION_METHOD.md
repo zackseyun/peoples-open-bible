@@ -198,6 +198,23 @@ depend on the same Greek textual form as an extant translation tradition.
 The number of supporting witnesses may be reported descriptively, but it must
 not select the reading. Modern English translations are not manuscript votes.
 
+Treat drafting preferences and embedded lexicon names as separate from source
+consultation. An instruction to preserve a traditional rendering is not another
+lexical argument; a YAML label naming HALOT does not mean its entry was freshly
+read. The [Micah 6:8 comparison](MICAH_6_8_LEXICAL_COMPARISON_2026-10-10.md)
+tests humble conduct against selected Greek readiness without converting either
+editorial morphology or drafting policy into an independent ancient witness.
+Withhold such preferences in a later masked English comparison.
+
+Check the identity and age of version controls before invoking antiquity:
+Nova Vulgata is a modern revision, not fresh ancient Latin attestation.
+Related-language lexical parallels are not extra manuscripts of the target
+book. Map edition numbering to the actual folio, distinguish a marginal gloss
+from base text, and test modesty as well as prudence where both remain viable.
+The [Micah version/Sirach follow-up](MICAH_6_8_VERSION_AND_SIRACH_FOLLOWUP_2026-10-10.md)
+also separates a printed grammatical-label error from a surviving lexical
+argument. Correct one without dismissing or endorsing the other wholesale.
+
 Trace reports through intermediate languages and editorial reconstruction.
 A Greek phrase reconstructed from a Syriac marginal report is not newly read
 Greek manuscript ink; an apparatus presenting that report in Latin does not

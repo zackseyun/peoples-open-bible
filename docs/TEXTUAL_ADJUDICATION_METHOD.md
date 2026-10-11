@@ -109,6 +109,12 @@ corrections, and the witness's local copying or translation behavior. Reputation
 or antiquity of the manuscript as a whole does not replace passage-level work.
 A supplied word cannot become visible ink through model agreement.
 
+A positive consonant difference need not choose a unique grammatical meaning.
+The [Nahum comparison](NAHUM_SOURCE_COMPARISON_2026-10-10.md) separates 4Q82's
+additional he from the supplied following context and the competing days/waters
+analyses. Keep attestation, segmentation and vocalization as separate claims;
+do not turn a real spelling contrast into automatic translation priority.
+
 Reference filtering must not erase preservation context. A supply bracket can
 open in another verse or physical line; inspect the complete surrounding
 transcription before treating an unbracketed excerpt as preserved. The

@@ -3029,3 +3029,79 @@ combined with4focused tests,41post-application tests pass. The exact Obadiah
 application is verified locally, not described as deployed. Links and JSON parse
 checks pass. Historical source priority and best main-English choice remain
 held; a scoped reader disclosure does not settle either question.
+
+## October 10 Nahum comparison and new-fragment follow-up
+
+The Obadiah reader application is committed as
+680a147c4e4a676efef843e3e9d62482c6d6999b, tree
+296dbdf009391cfdac0f87c2fa6883fe5ded0663, parent abbdeca3a3.
+Normal push and remote exact head/tree/nine task-only paths are verified;
+PR132 depends on131. Its attachment attempt reaches the100-identity cap,
+without removing older artifacts; opening the document returns queued.
+The final four focused tests also pass on rerun. These events publish the
+application branch, not main or a deployed reader.
+
+On October11 at02:53–02:56UTC, PR130's own checks114369444497 and114369337209
+both finish successfully. Its SHA-pinned merge
+bc0070f812ebb1448739c84d0975f02e9629f352 matches approved tree
+a034243388c60c4307021f7911b131705ef22f14 and actual parents ba93ba8dab and
+e503fd7cb6. Server main/PR readback, normal fetch, ancestry check, guarded local
+main advance with main not checked out, normal main push and remote readback
+succeed. The English/source HOLD is unchanged. At02:55:57UTC131 has one
+successful check and one live check;132 has two live checks. Neither is merged
+or restarted on that observation.
+
+A separate Nahum research branch preserves live132. Root reads all47local
+source/English/note records, detailed target rationales, the map and its actual
+Nahum accounting, primary Mur.88 rows with context and all three publisher
+selected Greek chapters. The4Q82 read-only subtask checks all12physical Nahum
+rows and reports an additional-he lead at2:9. Root directly resolves the
+publisher's97R+99 heading and target primary row after an initial fragment-URL
+open fails and the actual Mur crosslink succeeds. No guessed fragment label
+is adopted. The comparison agent's one HTML acquisition is hashed; raw HTML
+is not imported.
+
+The recent-publication subtask locates the2023IAA chapter and2025Riestra
+reassessment. Root reads the actual2023author body, then the2025introduction,
+Table3 and target discussion via the agent's successful web references after
+fresh URL opens fail. The2023extraction drops Greek/table cells. Brill XML
+returns403 in the subtask; download routes yield metadata or internal errors.
+No access challenge is bypassed, PDF acquired or figure inspected. The PDF
+skill is read in preparation, but no visual verification is claimed.
+
+Root also checks primary4Q169 lemmas at1:5,3:6,3:11, rather than counting
+parallel quotes as Mur.88 ink. Published additional Hebrew material and newly
+identified Greek comparison units improve source coverage, not all-witness
+completeness. The extra he at2:9 does not uniquely decide waters versus days.
+Mur's nested brackets prevent secure complete temporal counter-attestation;
+3:18's surviving final letters do not recover its supplied first verb.
+An unsourced hypothetical competing people-verb is not promoted into an
+attested variant. Greek prepositions and verbs do not uniquely recover Hebrew.
+
+The [bounded report](NAHUM_SOURCE_COMPARISON_2026-10-10.md) records three
+comparison units, two directly consulted pesher follow-up lemmas, remaining
+source queues and actual reader-anchor defects. The [receipt](../sources/textual_restoration/comparisons/nahum_source_screen.2026-10-10.v1.json)
+pins all47baseline records, manifest serialization and discovery-map bytes.
+The documentation skill separates findings from this requested chronology.
+One read-only factual critique is requested on the actual saved packet; it is
+not an English preference vote or a loop until agreement. Source/English
+priority remains HOLD; notes, metadata, canon and About are unchanged.
+No new benchmark, full-corpus evaluation or generated-image evidence is added.
+
+The single bounded critique returns PASS with no material correction, covering
+the actual report, receipt and six-line controlling-method addition. It checks
+all47baseline bytes/hashes, preservation boundaries, Greek agency, anchor
+findings, rights and the distinction between attested consonants and grammatical
+meaning. The receipt stores the substantive result and original reviewed hashes;
+only its review metadata is updated after assessment. This is not a source
+choice, main-English preference or application approval. Root's independent
+pin/manifest/map/accounting/link/HOLD/canonical-unchanged/protected-file checks
+pass. No full-reader suite is rerun for these research-only files.
+
+PR131 subsequently passes both own checks114371361676 and114371327471.
+Its SHA-pinned merge7cacd2e5107525b695ce41394a61f1fd3571496c matches approved
+treeb62643d033342f90ad0651957fdecaf14d5a4c9a and actual parents bc0070f812
+and abbdeca3a3. Server main/PR readback, normal fetch, ancestry check, guarded
+local main advance with main not checked out, normal main push and remote
+readback succeed. PR132 still has live checks at that observation; the
+Obadiah reader application is not yet described as published on main or deployed.

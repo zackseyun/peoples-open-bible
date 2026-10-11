@@ -198,6 +198,14 @@ depend on the same Greek textual form as an extant translation tradition.
 The number of supporting witnesses may be reported descriptively, but it must
 not select the reading. Modern English translations are not manuscript votes.
 
+Treat drafting preferences and embedded lexicon names as separate from source
+consultation. An instruction to preserve a traditional rendering is not another
+lexical argument; a YAML label naming HALOT does not mean its entry was freshly
+read. The [Micah 6:8 comparison](MICAH_6_8_LEXICAL_COMPARISON_2026-10-10.md)
+tests humble conduct against selected Greek readiness without converting either
+editorial morphology or drafting policy into an independent ancient witness.
+Withhold such preferences in a later masked English comparison.
+
 Trace reports through intermediate languages and editorial reconstruction.
 A Greek phrase reconstructed from a Syriac marginal report is not newly read
 Greek manuscript ink; an apparatus presenting that report in Latin does not

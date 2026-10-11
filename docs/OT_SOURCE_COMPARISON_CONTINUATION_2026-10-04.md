@@ -3375,3 +3375,90 @@ The actual shared reader suite completes successfully:37tests in59.750seconds.
 Combined with25 focused/related tests,62 distinct post-application checks pass.
 The receipt and application report now record the observed result, not a
 full-corpus source or deployed-reader validation. Delivery is still separate.
+
+Root commits exactly the ten task-only parent paths as
+f2bf9309d57de228782f2e5f989220aa6cc371fe,
+tree e6334423b9d08d37bbd171baae4d802a7ef82f56,
+parent8f63b40ff486daa2641160acf5ddb7daa775466f.
+Normal push and remote exact head/tree/parent/ten path set are verified.
+PR136 targetsmain and depends on135; while135 is unmerged, its actual
+main-relative16-path diff includes the preceding reviewed research packet.
+No unrelated Genizah file is staged. Mandatory attachment again fails at the
+100-identity cap, with no older artifact removed; opening the report is queued,
+not a verified preview. A final affected-receipt test reruns successfully in
+0.037seconds, not an additional distinct post-application test.
+At03:46:48UTC, own135jobs114380240888/114380185503 and own136jobs
+114381831151/114381702835 are all observed live/in progress. Neither PR is
+reported merged, failed, restarted or deployed. The full goal remains active:
+critical-apparatus/image gates, broader collation and the independent damaged
+image benchmark have not been satisfied by this scoped reader application.
+
+## October10 Micah6:8 lexical comparison and historical CI repair
+
+The continuation reads the current records, source-selection method and Micah
+prompt, then limits new scientific work to the unusual expression at6:8.
+A separate agent verifies the exact pinned QDR dataset and reports zero target
+word tags in4Q81,4Q82 andMur88. Root reproduces those counts. Published Mur.88
+resumes after partial6:7 at6:11; the interval is not an omission or target-word
+support. No fresh manuscript pixels or global census result is claimed.
+
+Root inspects the full selected Greek page, SweteIII thirdedition1905 printed35
+/PDF59, and the enhancedBDB target entry PDF2080. The latter's title identifies
+an enhanced edition based on1906, not the originalfacsimile; printed857 is not
+an inspected locator. Greek readiness and Hebrew humble/modest conduct are
+separate actual controls. A morphology agent verifies pinnedOSHB HC/Vha and
+HVqc and the official code definitions. Those editorial labels are not another
+ancient witness or a lexical-sense decision. Gesenius53a/f/k and113h/k provide
+additional grammar context with their limits kept explicit.
+
+The Becking2017 institutional metadata is consulted; the ordinaryPDF attempt
+returns403 and acquires noPDF. The DOI route also fails. No authentication or
+challenge is bypassed and equivalent requests are parked. Search snippets are
+not promoted to a full prudence argument or an author-error verdict. TargetBHQ,
+comprehensiveGreek and Latin/Syriac controls remain open. Root also identifies
+the drafter's command to retainhumbly as policy, not independent evidence. The
+method now adds that distinction and a masked-English bias safeguard.
+
+Five focused historical-binding checks pass in0.082seconds. One independent
+bounded factual critique passes the exact frozenreport/receipt, visually checks
+bothtargetpages and verifies OSHB/coverage/access limits. Originalreviewedhashes
+remain in the receipt, with the added review result distinguished from the
+reviewed body. No Micahsource, English, note or prompt is changed, and no canon
+or About decision follows. A separate marker-placement defect is noted, not
+silently folded into source adjudication. The next useful source contribution
+needs the modernprintedargument and targetapparatus, not another unchanged
+model vote.
+
+During this work, PR135's two prior own jobs114380240888/114380185503 finish
+failure at the historicalCTAT registration assertion. An independent read-only
+log diagnosis identifies the exact stale comparison of forty historical entries
+with the live registry. Catalog and complete reader-corpus validation passed;
+later tests were not reached. Root reproduces4tests/1failure locally, preserves
+alloriginal transaction assertions, pins its actual after-commit26ef853ffc6702ee5f3986818c3d3c8ffbd379ef/hash,
+adds a separate live-registry validation and the corresponding shallowCI fetch.
+Twenty-five related checks pass in2.961seconds. A bounded code critique confirms
+the exact two files, remotecommitavailability and fiveCTAT checks. No skipping,
+input substitution or manualjobrestart is used.
+
+The three-file repair is committed/pushed on135 as
+4e76820bb1f4fc3d40d4a9a5f3b5f1c1470609f0,
+tree05f8711d32060db2bf81ce93575774b82059bc13,
+parent8f63b40ff486daa2641160acf5ddb7daa775466f.
+A local routine merge attempt into136 cannot write its index and does not create
+a mergecommit. Read-only status checks confirm no MERGE_HEAD or trackedchanges.
+The reviewed three-file repair is then successfully cherry-picked onto136 as
+055d6b3c814f762c48cd5585393d264f7ed574c1,
+tree1c0c2f160567326c3e0ae1e450c61f84ac1fec5a,
+parentf2bf9309d57de228782f2e5f989220aa6cc371fe, and normallypushed.
+The newMicah branch fast-forwards to that corrected136head.
+
+Actual remote readback verifies both exact updatedheads/trees/parents and the
+scoped main-relativefile sets (135:10paths;136:19paths including its dependency).
+New head-triggered ownjobs135:114383564044/114383556169 and
+136:114383738192/114383731888 are live/inprogress. These are new-codechecks,
+not a restarted unchanged failedrun. NeitherPR is reported merged or deployed.
+The related25tests rerun successfully in2.772seconds, not25extra distinctchecks.
+Diffchecks pass. The protectedGenizahhash remains
+130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50.
+The broad goal remains active, with no new damage-restoration benchmark or
+fullBible source-priority/translation certification.

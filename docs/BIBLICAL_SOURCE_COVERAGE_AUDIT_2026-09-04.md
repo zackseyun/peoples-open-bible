@@ -1,5 +1,16 @@
 # OT and NT source coverage: audit and comparison plan
 
+October10 Jonah follow-up: the [published Hebrew witness screen](JONAH_PUBLISHED_WITNESS_SCREEN_2026-10-10.md)
+compares the four mapped records' Jonah portions with all48 current POB source
+and main-English records. Three published differences merit adjudication;
+supplied wording, doubtful readings and spelling controls remain separate.
+This completes that four-record screen, not all Jonah witness coverage or
+historical source selection. The initial screen changed no source or translation.
+The later Jonah4:6 follow-up adds selected Greek/Syriac title controls and
+Lange's editorial-change argument, then a qualified reader note. Source and
+marker-free main English remain unchanged; note application is distinct from
+the initial screen and from unresolved historical selection.
+
 October10 Chronicles follow-up: the [Ahaziah age comparison](CHRONICLES_22_2_AGE_COMPARISON_2026-10-10.md)
 directly checks selected Hebrew forty-two, Greek twenty and Syriac twenty-two
 at 2 Chronicles22:2. It adds a bounded passage comparison, not a manuscript

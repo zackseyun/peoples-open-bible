@@ -5,7 +5,11 @@ compares the four mapped records' Jonah portions with all48 current POB source
 and main-English records. Three published differences merit adjudication;
 supplied wording, doubtful readings and spelling controls remain separate.
 This completes that four-record screen, not all Jonah witness coverage or
-historical source selection. No source or translation is changed.
+historical source selection. The initial screen changed no source or translation.
+The later Jonah4:6 follow-up adds selected Greek/Syriac title controls and
+Lange's editorial-change argument, then a qualified reader note. Source and
+marker-free main English remain unchanged; note application is distinct from
+the initial screen and from unresolved historical selection.
 
 October10 bounded follow-up: the
 [critical-edition registry reconciliation](OT_EDITION_REGISTRY_RECONCILIATION_2026-10-10.md)

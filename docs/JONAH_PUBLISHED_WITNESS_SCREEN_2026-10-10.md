@@ -4,7 +4,9 @@ The four Hebrew records in the existing Jonah discovery map contain several
 published differences worth adjudicating, but this screen does not establish a
 replacement for POB's source text. The clearest candidates concern Jonah2:7,
 3:2 and4:6. All48 current POB source and main-English verse records were
-inspected; none is changed here. References follow POB's Hebrew numbering,
+inspected. The initial screen changed none; the later4:6 follow-up below adds
+a reader note without changing the source or marker-free main English.
+References follow POB's Hebrew numbering,
 including the fish narrative at2:1 rather than English1:17.
 
 ## Sources and scope
@@ -24,7 +26,8 @@ surviving words. The map's48 biblical reference labels include supplied text;
 they do not establish preservation of every verse. This completes this bounded
 four-record publication screen, not a census of all Jonah witnesses or a full
 critical collation. Masoretic apparatuses, other Hebrew material, Greek and
-other versions remain outside the completed scope.
+other versions remain outside that initial completed scope. The later versional
+comparison below concerns4:6 and nearby divine-title controls only.
 
 The pages credit DFG project465277421, Qumran-Digital, using the earlier
 Qumran-Wörterbuch text based on a predecessor text by Martin Abegg. They display
@@ -83,6 +86,64 @@ image becomes available. This work bears on wording, not the authority or canon
 status of Jonah or another book. Source attestation alone cannot decide which
 books a religious community should regard as canonical.
 
+## Jonah4:6 versional comparison and reader disclosure
+
+The [Rahlfs–Hanhart2006 selected Greek](https://www.die-bibel.de/bibel/LXX/JON.4)
+has κύριος ὁ θεὸς, “Lord God,” at4:6. This broadly fits the retained Hebrew
+title, but does not establish a unique Hebrew back-translation. At4:3 the
+same selected Greek has δέσποτα κύριε where current WLC has only Yahweh:
+additional Greek title wording need not imply an additional Hebrew title.
+No full Greek apparatus or unanimity is claimed.
+
+The [CAL Peshitta Jonah text](https://cal.huc.edu/get_a_chapter.php?cset=S&file=62019&sub=04)
+has ܡܪܝܐ ܐܠܗܐ, “Lord God,” at4:6. Its
+[edition metadata](https://cal.huc.edu/get_file_info.php?coord=62019)
+identifies the Leiden critical edition with some corrections based on7a1.
+That does not assign this particular phrase to7a1. The selected Syriac repeats
+the combined title at4:7–9 where current WLC has only God. This additional
+title wording relative to WLC limits its ability to distinguish the exact competing Hebrew titles;
+it does not by itself prove where in transmission the extra title arose, and
+it is not an independent Hebrew manuscript vote. The named text and neighboring
+controls were read, not CAL's optional AI passage explanations.
+
+[Armin Lange's institutional manuscript version](https://openscholar.huji.ac.il/sites/default/files/he_bible_project/files/a._lange.pdf)
+of “4QXIIg (4Q82) as an Editorial Text,” Textus26(2016), argues on PDFpage26
+that Jonah4:6 belongs with4Q82's divine-name changes in Amos7:8,17.
+Pages21–22 explain the Amos changes as adjustment to a prominent title formula,
+while acknowledging preservation limits. Page25 interprets Jonah2:7's extra
+נפשי as influenced by2:8. Pages27–29 allow earlier readings elsewhere and
+limit generalizations from this fragmentary witness. These are scholarly
+direction-of-change arguments, not independent proof that every4Q82 difference
+is secondary. They strengthen the objection to adopting either Jonah reading
+just because its physical witness is older.
+
+The acquired PDF has33 pages,788,786 bytes and SHA256
+`0fef3eaa0d201119db6bb8cb21828d70c613c4f39138578d1d5da65573feeb16`.
+The relevant discussion and conclusions were read; complete PDFpages25–26 were
+also rendered and inspected by the parent. The institutional version uses its
+own pagination. Current Göttingen catalogue/publisher metadata identifies the
+updated Ziegler–Albrecht2024 edition in the
+[Göttingen Vaticanus catalogue](https://septuaginta.uni-goettingen.de/catalogue/Ra_B/),
+but no actual Jonah apparatus unit was
+acquired. Its local readings and witness assignments remain unclaimed.
+
+The4:6 reader contribution is a note after “Yahweh God,” disclosing the
+conventional rendering “Lord Yahweh” in4Q82, uncertain letters, Mur.88's
+supplied final letter, and unresolved earliest wording. No historical preference
+is declared. The existing plant-identification note is unchanged. The connected
+title metadata now describes the already-existing “Yahweh God” English, rather
+than the stale “the LORD God” choice. Old status, cross-check and revision-pass
+flags are archived with their actual baseline record hash, not treated as
+approval of the new note. Current status is draft and needs review; the
+historical draft and review payloads have not been reverified.
+
+Local application is checked by `tests/test_jonah4_6_reader_disclosure.py`:
+schema acceptance, exact bounded field changes, historical-value archives,
+unique note anchors, and the actual complete48-verse Jonah export. Only4:6
+changes in the export, with unchanged marker-free main English. These checks
+approve neither an earliest source reading nor a deployed reader. No generated
+image supplied evidence. The2:7 and3:2 source-selection holds remain intact.
+
 ## Verification and delivery record
 
 Baseline: main `efc4fdbae664ebbd54db9ed126c1114f49d0e212`. The48-file Jonah
@@ -111,3 +172,28 @@ the primary publications, counts, locators and hashes. Its uncertainty-mark
 correction at2:9 is incorporated above. This is a factual-screen review, not
 approval of an earlier reading, English change or canon decision. Repository
 integrity CI and merge are separate delivery gates.
+
+The initial screen's three documentation paths were committed and pushed as
+`65af2445c13e3ec1b22e7d455e40fe5a4857b0fb`, tree
+`6ee9029022181ba9a9c83404110d62c48f668fc0`, in
+[PR141](https://github.com/zackseyun/peoples-open-bible/pull/141).
+Remote head, tree, parent and three paths were read back. The app's attachment
+limit prevented attachment; opening the document returned queued, not a rendered
+preview. PR139 subsequently passed both required checks and merged as
+`df8f03a19ef821b92ce5bd08ddb76b7bb67d448c`; remote merge/main/parents and the
+normal local main advance and push were verified. PR140 and141 were still
+running checks at this follow-up's initial observation.
+
+The4:6 baseline record SHA256 is
+`78d065f148b9da3219ad7a9dc37a190b8f091602f307f58fdd5e1bbfd88fa056`;
+the applied record is
+`305c1a962937f96bcf214dee9d2e337e52ab4adb6c901514778441a8b54c1e72`.
+Three focused application tests passed in0.431s and ten book-map tests in0.014s.
+One independent critic passed that exact applied record, the published Hebrew
+comparison, archives, scope, full-book export and Greek controls. Syriac chapter
+wording and Lange's interpretation were outside that critic's independent
+check; the parent's cited observations above remain separately attributed.
+The critic's fresh CAL chapter request was denied and was not retried or
+bypassed. Its pass is not historical source selection, whole-verse reapproval
+or deployed-reader verification. All47 other Jonah files and the protected
+unrelated Genizah file retain their baseline bytes.

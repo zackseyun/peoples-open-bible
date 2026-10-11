@@ -2860,3 +2860,69 @@ and log qualify the pre-fourth-century argument as Wright's argument, conditiona
 on accepting that dating. The untouched source/English and priority HOLD remain.
 This actual prose correction is checked before amending the unpublished packet;
 it is not another vote on source choice or a modified live CI head.
+
+## October 10 John English comparison
+
+The corrected preceding John packet is normally committed as c86ecd99a58834855a9f84758261fe0ccec8edd9,
+tree f405f274f02b5b83e0cc50c6afd19629652288b5, parent4d26991c9c, then pushed.
+Actual remote ref, tree and four-document parent comparison match. PR129 opens
+against main5aa5e7cc and depends on128; its mandatory attachment attempt returns
+the100-identity cap without removing an older attachment. Opening the report
+returns queued, not a verified rendered preview. At02:19UTC October11,128 has
+one own exact-head success and one live job;129's two own checks are live.
+No premature merge or deployed reader verification is claimed.
+
+This continuation preserves both live heads on a new English-comparison branch.
+Root reads all eighteen John prologue source/English records and the controlling
+translation contract. The separate
+[frozen pair](../sources/textual_restoration/comparisons/john1_18_english_contract.2026-10-10.v1.json)
+pins their hashes and fixes scope, policy, rubric and acceptance before a fresh
+assessor receives candidates without ownership labels. A is appositional English;
+B is current marker-free POB, shown in reverse of root's first order. Greek
+context is dispatched first and marker-free English1–17 in one follow-up.
+This is limited identity blinding, not random sampling or two-family validation.
+
+An initially mistyped future freeze timestamp is corrected to the surrounding
+actual clock bounds after dispatch. Only time metadata changes; the source,
+context, candidates and rubric do not. The initial c4fa6ff1c150a0a23e9f5a1a766fc23dfe79c4175da6dda0c35ce812096c054c
+and authoritative a4eac34a65c3256e4857b787ad143537ee7afaf4ceb6cc6be7ea41fdf0cb2f63
+hashes and reason remain in the actual review record rather than inventing an
+exact creation time or silently changing review inputs.
+
+Root reads Wallace's actual full argument and footnotes, then the actual local
+SBLGNT Greek for Romans1:30, Galatians3:9,1Timothy1:9 and2Peter2:5. List syntax,
+an article/proper-name phrase and an ordinal-plus-Noah construction do not compel
+John's particular apposition. Root records its HOLD before the independent
+result arrives. The fresh assessor independently returns HOLD, preserving both
+candidate tradeoffs and the strongest objection to that outcome. It discloses
+familiar phraseology but no confident recognition of exact candidate origins,
+and consults actual general Smyth adjective/apposition sections. Root subsequently
+reads those same target sections; their predominantly classical scope is retained.
+The [actual review](../sources/textual_restoration/comparisons/john1_18_english_review.2026-10-10.v1.json)
+stores the assessor's substantive response, root analysis and control pins.
+
+Smarius2022 is identified as a relevant opposing primary argument. Publisher
+PDF/download/XML routes return403; ResearchGate's author-uploaded returned text
+is a promotional summary, not the actual paper. No snippets or mediated summaries
+are promoted into body consultation, and no challenge bypass is attempted.
+The English choice stays held; current wording is not thereby certified optimal.
+Source priority, Greek, English, notes, metadata, canon and About remain unchanged.
+The documentation skill keeps this bounded negative result and its named
+reopening evidence separate from the requested chronological audit trail.
+
+At02:24:34UTC the remaining128 job has passed catalogue and complete-reader
+validation and is running reader-note/consultation tests. Both129 jobs have
+finished checkout and are fetching historical baselines. No failure, restart
+or success is inferred from an unchanged live status. Publication still requires
+each packet's own checks and dependency order; this comparison does not rerun
+the prior Isaiah reader regressions or acquire the same John witnesses again.
+
+The one bounded record audit returns PASS with no material defect. It directly
+compares the forwarded original assessor response, all eighteen context/YAML
+pins and unchanged baseline records. Reconstructing initial bytes in memory
+matches c4fa exactly, proving the recorded metadata-only timestamp correction.
+The PASS does not approve source priority, English replacement or application.
+Root's JSON/hash/context/pair-delta/four-control/local-link checks and Git
+diff-check pass; canonical/source diffs are empty and the protected unrelated
+Genizah hash remains130d509a. No new validator, reader regression suite or
+full-corpus superiority score is added for this research-only comparison.

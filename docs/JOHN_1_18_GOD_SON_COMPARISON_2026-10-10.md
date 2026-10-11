@@ -105,8 +105,68 @@ John export. No candidate or canonical change is applied in this report.
 Reopen historical priority for passage-specific transmission, correction-hand,
 versional or quotation evidence that distinguishes these histories. Compare
 an appositional English candidate separately using the retained Greek and
-actual grammatical controls. Do not reacquire the same four transcriptions
+actual grammatical controls, as in the bounded English comparison below. Do not reacquire the same four transcriptions
 or call further agreement a new witness. No extra-canonical work is implicated.
+
+## Retained Greek English comparison
+
+Replacement remains held after a separate, frozen comparison in John 1:1–18.
+The [contract](../sources/textual_restoration/comparisons/john1_18_english_contract.2026-10-10.v1.json)
+pins all eighteen source/English records, policy, rubric and acceptance criteria.
+Its [actual assessment](../sources/textual_restoration/comparisons/john1_18_english_review.2026-10-10.v1.json)
+preserves the fresh assessor's response and root's independently recorded analysis.
+This local pair does not establish an optimal Bible-wide translation.
+
+| Phrase | Interpretation and possible gain | Material cost |
+| --- | --- | --- |
+| A: the one and only, himself God | Unique person followed by an appositional God description; avoids the immediate English sense of sole God | Commits to apposition and introduces potentially emphatic himself without a separate Greek equivalent |
+| B: the one and only God | Compact adjective–noun description, currently used by POB | English can suggest sole God and obscure the revealer's relationship to the Father |
+
+[Daniel Wallace's original grammatical argument](https://bible.org/article/text-and-grammar-john-118)
+defends apposition and emphasizes the substantival use of monogenes in 1:14.
+Root reads the full argument and footnotes; its Ehrman quotations remain mediated.
+Our inference is that defeating an absolute grammatical prohibition would not,
+by itself, establish apposition as the best reading of this particular phrase.
+
+Direct examination of the retained SBLGNT controls adds an important limitation.
+Romans 1:30 and 1 Timothy 1:9 are lists rather than one adjective–noun phrase.
+Galatians 3:9 permits a faithful/believing Abraham interpretation as well as a
+substantival analysis; its article and proper name also differ from John 1:18.
+Second Peter 2:5 places an ordinal with Noah, not monogenes with God. These
+examples show why matching inflection need not decide every construction;
+they do not compel the proposed John apposition. John 1:14 has no immediately
+following concord noun, and 1:1 has an explicit copula. Their literary relevance
+therefore does not make either an exact syntactic parallel.
+
+The fresh assessor consults Smyth's rules for
+[adjective agreement and substantival use, 1020–1022](https://grammars.alpheios.net/smyth/xhtml/body.1_div1.4_div2.14.html)
+and [apposition, 976 and 986–988](https://grammars.alpheios.net/smyth/xhtml/body.1_div1.4_div2.10.html).
+Root subsequently reads the same target sections. These general, predominantly
+classical rules establish available constructions, not verse-specific priority.
+The assessor recommends HOLD: A's contextual clarity is plausible, but B's
+compactness is not proof that its English uniqueness scope is fully faithful.
+Their shared contextual object him in made him known does not distinguish them.
+
+Candidate ownership is withheld from the assessor, who receives A before B,
+reversing root's initial order. The assessor reports familiar phraseology but
+does not confidently recognize the exact origins. This is limited identity
+blinding, not full knowledge blinding, random sampling, two-family validation
+or specialist certification. Root's analysis is recorded before the assessor's
+result; agreement is not an additional manuscript witness.
+
+Alexander Smarius's 2022 article
+[Another God in the Gospel of John](https://doi.org/10.1163/18712207-12341451)
+is a relevant opposing argument to consult, not a result adopted here.
+Ordinary publisher PDF/download/XML requests return 403; the author's returned
+ResearchGate text is a promotional summary, not the article body. Search excerpts
+do not count as actual argument consultation. No access bypass is attempted.
+
+The source, main English, notes and review metadata remain unchanged. Reopen
+this specific English choice for directly consulted linguistic arguments and
+examples that distinguish its two construals, or for a separately frozen candidate
+that improves clarity without forcing an unsupported interpretation. Do not
+repeat preference votes until a favored candidate wins. Son inferred from the
+Father context must remain distinct from literal Greek huios and source selection.
 
 ## Acquisition pins
 

@@ -325,6 +325,16 @@ disagreed. The answer key remains provisional, not a scored character control
 or evidence of a manuscript variant. Preserve this disagreement when resolving
 the glyphs; do not count contextual agreement as independent historical support.
 
+The [pixel-preserving context check](../sources/textual_restoration/controls/2026-10-10-native-context/README.md)
+adds a larger exact crop, yet its single blinded development reading remains
+unresolved. Record stored dimensions, requested detail and reported display
+resizing separately: requesting original detail does not verify actual model
+input dimensions. Preserve hashes and prove overlap pixel equality for a new
+context crop. Do not infer a manuscript variant from disagreement with an
+unapproved label or promote a context-aware reading to a blind reference.
+This case now stops for a defensible diplomatic reference or a genuinely
+independent, calibrated reading route, not another same-evidence vote.
+
 Published-text comparisons may proceed without freshly transcribing every
 image. Require image checks where the proposed claim depends on disputed marks,
 corrections, joins, or a fresh decipherment. Existing case-specific pending

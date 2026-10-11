@@ -2,6 +2,15 @@
 
 ## Current answer to the two research questions
 
+October10 actual [CTAT V Ecclesiastes8:10 entry](ECCLESIASTES_8_10_CTAT_REVIEW_2026-10-10.md)
+is now acquired and read in full, closing its preceding access gate. A contrary
+transmission account and a different subject interpretation strengthen the
+comparison without approving source or English changes. One new-evidence judge
+preserves both HOLDs. The central registry gains one critical-apparatus route
+for four wisdom books, with only this target collated;41 mixed source records
+are not41 ancient witnesses or complete OT coverage. Earlier access failures
+and reviews remain frozen historical records.
+
 October 10 [Samaritan Exodus apparatus access](SAMARITAN_EXODUS_APPARATUS_ACCESS_2026-10-10.md)
 checks the actual publisher volume and series: Exodus is ahead of publication,
 planned November 2. No target apparatus or manuscript page is acquired.
@@ -2286,3 +2295,61 @@ in history; no amendment, forced merge or borrowed green check is used. Both
 replacement own-head checks, SHA-pinned merge and tree/ancestry validation remain
 required. Commit/PR/merge events occurring after this frozen record are reported
 in chat and can enter a later log without rewriting this review's inputs.
+
+## CTAT acquisition and exact target review
+
+The preceding goal turn is progress: PR123 commits73978a840df59022c248c423673c8d3c5c12b97d,
+17 followup task files, and normal branch push succeeds. Replacement PR123 is
+created against main and PR122 closed as superseded, without amending its frozen
+head or describing failures as success. Mandatory123 attachment again fails the
+100-identity cap; no old attachments removed. Own checks114350652244 and114350623870
+are reverified live at00:36:39 and00:40:36UTC on the exact73978 head; no merge yet.
+Root final eight Ecclesiastes tests pass0.032s and protected Genizah hash remains
+130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50.
+
+Continuation branches from that exact head to research/ecclesiastes-8-10-ctat-2026-10-10.
+One genuinely different acquisition uses the ZORA page's unique visible link
+with a normal click and download event, rather than repeating downloadMedia.
+It succeeds: actual PDF8114592bytes1009pages, SHA
+cb868ca3225e2eb90980947265d18e8e3ce42756b0baa32e57d79e56ccc2fd79.
+No authentication/security challenge is manually solved or bypassed. Earlier
+timeouts remain true history. Root reads complete printed841–844/PDF870–873,
+title/copyright, preface x and required confidence/sigla conventions visually.
+Font-mangled extraction and hidden copyright-layer text are not taken as
+ancient letters or visible publication data. Visible copyright2015 differs
+from the preface's appearance2016; the preface specifies an older research horizon.
+
+The new [source record](../sources/textual_restoration/comparisons/ecclesiastes8_10_ctat.2026-10-10.v1.json)
+and report freeze both target argument and limitations. One
+[independent exact-input review](../sources/textual_restoration/comparisons/ecclesiastes8_10_ctat_review.2026-10-10.v1.json)
+verifies the new complete pages, inputs, grade/vote distinction and eight
+pin/render checks. Research passes within scope; priority and full-English
+application remain HOLD. Root accepts this, preserving the stronger countercase,
+the concrete Greek place-word disagreement and the warning that returning
+wicked is not a literal-resurrection finding. No unchanged-input judgment loop,
+canonical/note-only substitute or new decipherment is claimed.
+
+The central registry adds only ctat-wisdom-volume5, a French critical apparatus
+with quoted ancient-language evidence, private copyrighted PDF access and
+target-only consultation. All40 existing records are preserved exactly
+as parsed objects; the new41 count is not a physical-copy count. Regression binds
+the exact73978 baseline and CI explicitly fetches it. Eleven initial combined
+Ecclesiastes tests pass0.064s; five edition-registry tests pass0.099s. The source
+judge did not review this separate registry mutation; no such receipt is invented.
+Full HOTTP/BHQ/final2019 apparatus gates and independent ink calibration remain open.
+
+Final twelve combined Ecclesiastes checks pass0.056s. The full local registry
+suite runs54 tests but has two historical archive-replay errors caused by
+OSError28/no space; it is not described as passing. After automatic temporary
+cleanup the volume has only199MiB available. A separately scoped52-test run,
+excluding exactly those two replay tests, passes0.206s. No source assertions
+are removed, no user files deleted and no broad archive replay repeated.
+Remote PR123 remains live on both own checks at00:44UTC. This is an environment
+limitation on local validation, not a scholarly result or a passed full suite.
+
+Initial task-only git add and commit both fail writing index.lock because of
+disk space; no commit is claimed. The existing index is68MB for643144 tracked
+entries. A reversible Git metadata operation, update-index --index-version=4,
+succeeds, retaining all643144 entries and reducing index storage without deleting
+source files or changing tracked content. This addresses delivery overhead,
+not the larger historical archive-replay space requirement.

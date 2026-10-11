@@ -1,6 +1,14 @@
 # Biblical text contributions and canon review
 
-Latest bounded comparison: [Ecclesiastes 8:10](ECCLESIASTES_8_10_COMPARISON_2026-10-10.md)
+Latest primary-source followup: the actual [CTAT V target entry](ECCLESIASTES_8_10_CTAT_REVIEW_2026-10-10.md)
+adds a concrete contrary transmission account and a different interpretation
+of who is forgotten. One independent new-evidence review accepts the evidence
+record but holds both source selection and full English application. A known
+variant and a changed syntactic interpretation can affect meaning differently;
+neither is a new decipherment or a canon result. The actual wisdom-volume
+apparatus is now registered with target-only consultation, not full collation.
+
+Earlier bounded comparison: [Ecclesiastes 8:10](ECCLESIASTES_8_10_COMPARISON_2026-10-10.md)
 verifies published Hebrew bet attestation alongside forgetting and praise
 traditions. One [independent review](ECCLESIASTES_8_10_EXACT_REVIEW_2026-10-10.md)
 holds both earliest source selection and the full “had boasted” candidate.

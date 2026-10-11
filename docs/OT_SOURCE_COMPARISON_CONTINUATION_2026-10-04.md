@@ -2672,3 +2672,88 @@ The separate Field packet now proceeds against the actually merged main,
 without modifying126's finished head. Its source observations and frozen
 inputs remain unchanged. This operational log addition is a separate normal
 commit; push/ref/PR/own-check events are reported only after they occur.
+
+## Isaiah captivity comparison and precise reader correction
+
+At01:50:57UTC October11, the tracked Field branch remains clean and the
+protected unrelated Genizah file is its only untracked item. PR127's exact
+a52f2fe head has both own checks live; remote main remains5013fa82. Previous
+normal local commit/push/ref/three-file PR comparison events have actually
+completed, and the mandatory attachment failed the100-identity cap without
+removing any older attachment. No predecessor green result is borrowed.
+
+Current queue inspection distinguishes old screen entries from later dossiers.
+Samuel14:41 already has a qualified disclosure and a later argument hold;
+Lamentations5Q6's targeted acquisition is parked; Ecclesiastes candidates have
+later follow-ups and applications. One bounded read-only agent identifies
+Isaiah49:24–25 as a genuinely untreated consequence, rather than reopening
+those cases or building another coverage engine.
+
+Separately, the prior Proverbs30:1 metadata mapping finding receives one
+new candidate-wording assessment. The initial proposed theological wording is
+too narrow: ability can retain Ithiel, not every verbal interpretation requires
+earlier-word redivision. The judge returns HOLD for that wording and PASS for
+qualified labels distinguishing ability/success from exhaustion with alternative
+vocalization and proposed כלה analysis. Repeated weariness belongs to the earlier
+redivided words. This remains a reviewed but unapplied wording proposal;
+the live Proverbs YAML and all frozen receipts stay unchanged. No new source
+priority vote or fresh source acquisition occurs for that metadata review.
+
+Root makes a bounded attempt at the actual Holmes–Parsons entry behind the
+Aquila discrepancy. The IRHT route and one Google Books PDF link are403;
+catalogue metadata is readable, but no target apparatus body is read. No
+alternate headers, access bypass or further retry is attempted. These locators
+do not resolve the printed-form discrepancy or become new witness votes.
+
+The [new Isaiah comparison](ISAIAH_49_24_CAPTIVITY_COMPARISON_2026-10-10.md)
+reads current WLC/POB49:22–26 and complete target records. The publisher Greek
+describes unjust capture rather than directly attesting tyrant. A distinct,
+working2022 Qumran-Digital release supplies actual column41 context, after the
+agent's2026-route attempt failed. The target noun is printed without supplies
+or uncertainty; adjacent noun swaps make harmonization a specific countercase.
+This is new consultation for POB, not new decipherment or a novel published
+reading. Root's ordinary raw QDR acquisition is hashed; raw publisher Greek
+HTTP is403 while the web tool body is readable, so no raw Greek-page hash is
+invented.
+
+The PDF-reading skill requires complete relevant-page inspection. The official
+NETS web route fails technically, but ordinary public curl obtains the actual
+54-page PDF. Root visually/textually reads native1/41, printed823/863 and all
+page footnotes. NETS supports the active capture interpretation and identifies
+its selected-text basis; no full modern Greek apparatus or new manuscript is
+claimed. The consult-only PDF and render aids remain outside Git.
+
+One independent source assessment reads the successful QDR release and target
+Greek context; it supports provisional retention/disclosure and holds historical
+priority. Root prepares full normalized49:24 note/metadata and49:25 existing-note
+anchor candidates on a separate branch, preserving127's live head. The first
+application critique catches shared-reference mutation in three49:24 archives.
+Root fixes this actual defect with independent deep copies before canonical
+application. All seven archives per record then match baseline, and the
+corrected full-candidate critique passes both schemas, source/main-English/
+generation/prior-revision preservation and proposal-only full Isaiah export.
+This new review checks changed evidence, not another source preference loop.
+
+Only then does root apply the exact frozen candidates. Actual schemas, candidate
+equality, all archives and retained fields pass. Full Isaiah export preserves
+66 chapters/1,291 IDs and changes only49:24–25, with four intended notes.
+All other1,289 Isaiah files are unchanged. Source and marker-free main English
+stay equal; active old agreement scores are archived, not carried forward.
+The unrelated Genizah hash remains130d509a… and is excluded from staging.
+No OT/NT source corpus, fresh-letter benchmark, ImageGen or canon change occurs.
+
+At02:01UTC127 push-job114362532491 has reached reader-note/consultation tests;
+PR-job114362361245 completes success. Both successes are still required before
+its exact-head merge. Main still reads5013fa82. Four frozen Proverbs CTAT tests
+pass and the full existing reader-footnote regression module is running with
+the new Isaiah guard. Validation completion and delivery events are added
+after they occur, not inferred from progress dots.
+
+The actual reader-footnote module completes37 tests in57.701s, all passing;
+the frozen Proverbs CTAT module passes4 in0.009s. This is41 scoped tests,
+not a repeated full local corpus replay. Both target schemas and every archive,
+candidate/source/main-English preservation, exact full-book export delta and
+protected unrelated hash pass. A log's extra EOF blank line is caught by
+diff-check and repaired before staging; the check is not inferred from a later
+command's successful exit. The package is ready for task-only commit and its
+own CI; no publication is claimed from these local results.

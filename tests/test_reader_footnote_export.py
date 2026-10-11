@@ -14,6 +14,64 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReaderFootnoteExportTests(unittest.TestCase):
+    def test_isaiah_49_captivity_disclosure_and_anchors_preserve_source(self):
+        packet = json.loads((ROOT / 'sources/textual_restoration/applications/isaiah49_24_25_disclosure.2026-10-10.v1.json').read_text())
+        records = {}
+        for item in packet['records']:
+            raw = (ROOT / item['path']).read_bytes()
+            record = yaml.safe_load(raw)
+            candidate_raw = (ROOT / item['candidate']).read_bytes()
+            self.assertEqual(hashlib.sha256(raw).hexdigest(), item['after_sha256'])
+            self.assertEqual(hashlib.sha256(candidate_raw).hexdigest(), item['candidate_sha256'])
+            self.assertEqual(record, json.loads(candidate_raw))
+            history = {h['field']: h for h in record['review_history']}
+            self.assertEqual(set(history), {'status', 'revision_pass', 'cross_check',
+                             'translation.text', 'translation.footnotes',
+                             'lexical_decisions', 'theological_decisions'})
+            for h in history.values():
+                self.assertEqual(h['archived_from_baseline_sha256'], item['before_sha256'])
+                self.assertFalse(h['certifies_this_candidate'])
+                self.assertFalse(h['historical_review_inputs_verified'])
+            self.assertEqual(record['source']['edition'], 'WLC')
+            self.assertEqual(record['status'], 'draft')
+            self.assertEqual(record['cross_check'], {'status': 'needs_review'})
+            self.assertNotIn('revision_pass', record)
+            old_text = history['translation.text']['value']
+            for marker in ('[a]', '[b]'):
+                old_text = old_text.replace(marker, '')
+            new_text = record['translation']['text'].replace('[a]', '').replace('[b]', '')
+            self.assertEqual(new_text, old_text)
+            self.assertEqual(record['revisions'][-1]['from'], history['translation.text']['value'])
+            records[record['id']] = record
+        first, second = records['ISA.49.24'], records['ISA.49.25']
+        self.assertIn('plunder[a]', first['translation']['text'])
+        self.assertIn('righteous one[b]', first['translation']['text'])
+        note = first['translation']['footnotes'][1]['text']
+        for detail in ('published Great Isaiah Scroll', 'ruthless one',
+                       'harmonization remains possible', 'taking someone captive unjustly'):
+            self.assertIn(detail, note)
+        self.assertIn('does not establish that same Hebrew noun', note)
+        self.assertIn('Earlier Hebrew wording remains uncertain', note)
+        self.assertIn('ruthless[a]', second['translation']['text'])
+        self.assertIn('children[b]', second['translation']['text'])
+        self.assertEqual(second['translation']['footnotes'],
+                         next(h['value'] for h in second['review_history']
+                              if h['field'] == 'translation.footnotes'))
+        book = exporter.export_book('ISA')
+        self.assertEqual(len(book['chapters']), 66)
+        self.assertEqual(sum(len(c['verses']) for c in book['chapters']), 1291)
+        for c in book['chapters']:
+            if c['chapter'] == 49:
+                for verse in c['verses']:
+                    if verse['verse'] in (24, 25):
+                        r = records['ISA.49.' + str(verse['verse'])]
+                        self.assertEqual(verse['text'], r['translation']['text'])
+                        self.assertEqual(verse['footnotes'], r['translation']['footnotes'])
+        for flag in ('source_changed', 'marker_free_main_english_changed',
+                     'full_verse_optimality_certified', 'novel_reading_demonstrated',
+                     'fresh_manuscript_transcription', 'canon_changed', 'publication_approved'):
+            self.assertFalse(packet['decisions'][flag])
+
     def test_isaiah_9_2_selects_recorded_qere_with_negative_disclosure(self):
         import xml.etree.ElementTree as ET
 

@@ -38,7 +38,6 @@ class OtWitnessRegistryTests(unittest.TestCase):
         self.assertEqual(MODULE.validate(self.data), [])
         self.assertEqual(MODULE.validate_coverage(self.coverage, self.data), [])
         self.assertEqual(MODULE.validate_coverage(self.samuel_coverage, self.data), [])
-        self.assertEqual(MODULE.validate_comparison(self.samuel_comparison), [])
         self.assertEqual(
             MODULE.validate_selections(self.selections, self.comparison, self.adjudication), []
         )
@@ -98,12 +97,60 @@ class OtWitnessRegistryTests(unittest.TestCase):
             self.assertEqual(MODULE.validate_comparison(data),
                              [f"{case['id']}: canonical baseline drift"])
 
-    def test_psalms_case_and_coverage_validate(self):
-        comparison = json.loads(MODULE.PSALMS_COMPARISON.read_text())
+    def test_current_psalms_coverage_validate(self):
         coverage = json.loads(MODULE.PSALMS_COVERAGE.read_text())
-        self.assertEqual(MODULE.validate_comparison(comparison), [])
         self.assertEqual(MODULE.validate_coverage(coverage, self.data), [])
         self.assertEqual(len(coverage["records"]), 3)
+
+    def test_two_frozen_samuel_psalms_assertions_in_historical_snapshot(self):
+        from tools.textual_restoration.replay_historical_tests import run_suite
+
+        # Original test code and original baseline bytes run unchanged together.
+        # This does not certify revised receipts, current readings or approval.
+        result = run_suite("registry_samuel_psalms")
+        self.assertTrue(result["passed"])
+        self.assertEqual(result["tests_run"], 2)
+        self.assertFalse(result["current_corpus_validated"])
+        self.assertFalse(result["application_approved"])
+
+    def test_current_samuel_psalms_comparisons_reject_unknown_canonical_bytes(self):
+        for packet in (self.samuel_comparison,
+                       json.loads(MODULE.PSALMS_COMPARISON.read_text())):
+            # Synthetic live fixtures only: do not repin any stored receipt.
+            data = copy.deepcopy(packet)
+            for case in data["cases"]:
+                target = ROOT / case["baseline"]["repo_path"]
+                case["baseline"]["sha256"] = MODULE.hashlib.sha256(target.read_bytes()).hexdigest()
+            self.assertEqual(MODULE.validate_comparison(data), [])
+            for case in data["cases"]:
+                with self.subTest(case=case["id"]):
+                    target = ROOT / case["baseline"]["repo_path"]
+                    reader = Path.read_bytes
+                    unknown = reader(target) + b"\n"
+                    with patch.object(Path, "read_bytes",
+                                      lambda p: unknown if p == target else reader(p)):
+                        self.assertEqual(MODULE.validate_comparison(data),
+                                         [f"{case['id']}: canonical baseline drift"])
+
+    def test_historical_samuel_psalms_archive_rejects_wrong_baseline_bytes(self):
+        from tools.textual_restoration import replay_historical_tests as replay
+
+        def source(repo, operation, locator):
+            path = locator.split(":", 1)[1]
+            if path.endswith("_controls.v1.json"):
+                return (ROOT / path).read_bytes()
+            return b"unknown historical canonical bytes"
+
+        with patch.object(replay, "git", side_effect=source):
+            with self.assertRaisesRegex(ValueError, "Historical control baseline drift"):
+                replay._registry_controls_archive_paths(ROOT)
+
+    def test_historical_samuel_psalms_archive_rejects_missing_cases(self):
+        from tools.textual_restoration import replay_historical_tests as replay
+
+        with patch.object(replay, "git", return_value=b'{"cases": []}'):
+            with self.assertRaisesRegex(ValueError, "baseline coverage mismatch"):
+                replay._registry_controls_archive_paths(ROOT)
 
     def test_psalm_22_4q88_supplied_waw_cannot_be_promoted(self):
         comparison = json.loads(MODULE.PSALMS_COMPARISON.read_text())

@@ -180,9 +180,12 @@ as covered. A newly digitized copy is not necessarily a newly discovered text.
   supplied ending from reported surviving letters. It supports retaining
   Hebrew עם and “my people” without resolving earliest-Greek priority; no
   physical coverage record or full manuscript collation is added.
-- Thirteen Pentateuch/Samuel/Psalms cases have 20 coverage records, including three
-  Rylands image-canvas mappings and disputed/unassigned fragment entries.
-  These are not twenty complete collations. The [second Samuel pass](SAMUEL_SOURCE_COMPARISON_PASS_2.md)
+- The three formal Pentateuch/Samuel/Psalms comparison packets contain thirteen
+  cases. Their separate coverage files contain 20 records across twelve distinct
+  reference values, including three Rylands image-canvas mappings and
+  disputed/unassigned fragment entries. Exodus 30:6 has a comparison but no
+  formal coverage record. These counts do not inventory later case dossiers,
+  and the records are not twenty complete collations. The [second Samuel pass](SAMUEL_SOURCE_COMPARISON_PASS_2.md)
   explains why 4Q52 and 1Q7 cannot currently supply positive support in its cases.
   The [third Samuel pass](SAMUEL_SOURCE_COMPARISON_PASS_3.md) identifies genuine
   published Hebrew support for the age-related animal reading and bread in

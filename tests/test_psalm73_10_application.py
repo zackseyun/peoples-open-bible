@@ -87,7 +87,12 @@ class Psalm7310ApplicationTests(unittest.TestCase):
         for path, expected in self.contract['preflight']['pins'].items():
             if path.endswith('genizah_genesis_b7_14_followup.v1.json'):
                 continue  # User-owned untracked local file is deliberately not shipped.
-            self.assertEqual(sha((ROOT / path).read_bytes()), expected, path)
+            # This is the method used at review time, not a claim that the
+            # evolving live method has never changed. Evidence stays live.
+            raw = (subprocess.check_output(['git', 'show', f'{BASE}:{path}'], cwd=ROOT)
+                   if path == 'docs/TEXTUAL_ADJUDICATION_METHOD.md'
+                   else (ROOT / path).read_bytes())
+            self.assertEqual(sha(raw), expected, path)
         comparison = json.loads((ROOT / 'sources/textual_restoration/comparisons/psalm73_10_written_read.2026-10-10.v1.json').read_text())
         self.assertEqual(comparison['DSS_screen']['target_hits'], 0)
         self.assertIn('not attested omission', comparison['DSS_screen']['inference'])
@@ -96,6 +101,28 @@ class Psalm7310ApplicationTests(unittest.TestCase):
             self.assertFalse(comparison['decision'][flag])
         self.assertFalse(comparison['decision']['second_clause_changed'])
         self.assertIn('regularize', comparison['arguments']['qere_objection'])
+
+    def test_corrupt_historical_method_cannot_satisfy_frozen_pin(self):
+        original = subprocess.check_output
+
+        def corrupt_method(args, **kwargs):
+            raw = original(args, **kwargs)
+            return raw + b'corrupt' if args[-1] == f'{BASE}:docs/TEXTUAL_ADJUDICATION_METHOD.md' else raw
+
+        with patch.object(subprocess, 'check_output', side_effect=corrupt_method):
+            with self.assertRaisesRegex(AssertionError, 'docs/TEXTUAL_ADJUDICATION_METHOD.md'):
+                self.test_evidence_limits_and_frozen_inputs()
+
+    def test_changed_live_evidence_cannot_hide_behind_historical_method(self):
+        original = Path.read_bytes
+
+        def corrupt_source(path):
+            raw = original(path)
+            return raw + b'corrupt' if path == ROOT / 'sources/ot/wlc/Ps.xml' else raw
+
+        with patch.object(Path, 'read_bytes', new=corrupt_source):
+            with self.assertRaisesRegex(AssertionError, 'sources/ot/wlc/Ps.xml'):
+                self.test_evidence_limits_and_frozen_inputs()
 
     def test_historical_complete_normalized_psalms_export(self):
         archive = subprocess.check_output(['git', 'archive', BASE, 'translation/ot/psalms'], cwd=ROOT)

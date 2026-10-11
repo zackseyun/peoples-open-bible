@@ -5,12 +5,14 @@ import json
 from pathlib import Path
 import subprocess
 import unittest
+from unittest.mock import patch
 
 import yaml
-from jsonschema import Draft202012Validator
+from jsonschema import Draft202012Validator, ValidationError
 
 from tools import export_mobile_bible as exporter
 from tools.textual_restoration import critical_verse
+from tools.textual_restoration import reviewed_critical_source
 from tools.textual_restoration.verify_source_composition import normalized
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,6 +42,70 @@ class Psalm145CriticalApplicationTests(unittest.TestCase):
         self.assertTrue(result['full_critical_verse_verified'])
         self.assertFalse(result['publication_approved'])
         self.assertEqual(self.thirteen['source']['edition'], 'POB-critical')
+
+    def test_original_review_policies_are_historical_not_live(self):
+        original = Path.read_bytes
+
+        def reject_live_policy(path):
+            if path in {ROOT / 'docs/TEXTUAL_ADJUDICATION_METHOD.md', ROOT / 'DOCTRINE.md'}:
+                raise AssertionError('Must use the original Git review policy')
+            return original(path)
+
+        with patch.object(Path, 'read_bytes', new=reject_live_policy):
+            self.assertTrue(critical_verse.validate(self.thirteen, **TRUST)
+                            ['full_critical_verse_verified'])
+
+    def test_corrupt_either_historical_policy_cannot_satisfy_original_review(self):
+        original = subprocess.run
+
+        for name in ('docs/TEXTUAL_ADJUDICATION_METHOD.md', 'DOCTRINE.md'):
+            def corrupt_policy(args, **kwargs):
+                result = original(args, **kwargs)
+                if args[-1] == f'{BASE}:{name}':
+                    return subprocess.CompletedProcess(
+                        result.args, result.returncode, result.stdout + b'corrupt', result.stderr)
+                return result
+
+            with self.subTest(path=name), patch.object(subprocess, 'run', side_effect=corrupt_policy):
+                with self.assertRaisesRegex(ValueError, 'Historical review policy drift'):
+                    critical_verse.validate(self.thirteen, **TRUST)
+
+    def test_current_source_schema_is_still_enforced(self):
+        original = Path.read_text
+
+        def changed_schema(path, *args, **kwargs):
+            raw = original(path, *args, **kwargs)
+            if path == ROOT / reviewed_critical_source.SCHEMA:
+                schema = json.loads(raw)
+                schema['required'].append('new_live_schema_requirement')
+                return json.dumps(schema)
+            return raw
+
+        with patch.object(Path, 'read_text', new=changed_schema):
+            with self.assertRaises(ValidationError):
+                critical_verse.validate(self.thirteen, **TRUST)
+
+    def test_changed_live_review_candidate_and_evidence_still_fail(self):
+        source_pin = self.thirteen['critical_source_integration']['record']
+        source = json.loads((ROOT / source_pin['path']).read_text())
+        provenance = source['provenance']
+        review = json.loads((ROOT / provenance['editorial_review']['path']).read_text())
+        composition = json.loads((ROOT / provenance['composition']['path']).read_text())
+        live_paths = {source_pin['path'], provenance['editorial_review']['path'],
+                      provenance['candidate']['path'], provenance['composition']['path']}
+        live_paths.update(name for name in review['input_pins']
+                          if name not in {PATH13, 'docs/TEXTUAL_ADJUDICATION_METHOD.md', 'DOCTRINE.md'})
+        live_paths.update(pin['path'] for pin in composition['entries'][0]['evidence'])
+        original = Path.read_bytes
+
+        for name in sorted(live_paths):
+            def corrupt_live(path):
+                raw = original(path)
+                return raw + b'corrupt' if path == ROOT / name else raw
+
+            with self.subTest(path=name), patch.object(Path, 'read_bytes', new=corrupt_live):
+                with self.assertRaisesRegex(ValueError, 'Pinned file drift'):
+                    critical_verse.validate(self.thirteen, **TRUST)
 
     def test_exact_attested_line_and_explicit_punctuation_patch(self):
         baseline, _ = old_record(PATH13)

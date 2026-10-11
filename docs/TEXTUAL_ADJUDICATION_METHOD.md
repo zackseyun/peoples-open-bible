@@ -1,6 +1,6 @@
 # POB source-wording adjudication method
 
-Version: 2.0.0 · Revised: 2026-09-05 (identity/provenance and evaluation clarification)
+Version: 2.0.0 · Revised: 2026-10-10 (published collation and grammatical voice examples)
 
 This is the controlling method for source selection and English impact. The
 [approach review](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md) records the
@@ -71,6 +71,13 @@ claim a second blinded model pass occurred unless its actual output is stored.
   [4Q24 identity review](LEVITICUS_WITNESS_IDENTITY_REVIEW_2026-09-05.md).
 - Identify direct-language manuscripts, ancient translations, quotations or
   retellings, and later reception evidence separately.
+- A published Hebrew collation can establish attestation without newly read
+  manuscript pixels. Keep collection numbering, correction qualifiers and
+  text-versus-marginal-qere evidence separate; a homiletic “do not read … but
+  read” formula is not a continuous-text manuscript vote. The
+  [Ecclesiastes 8:10 comparison](ECCLESIASTES_8_10_COMPARISON_2026-10-10.md)
+  illustrates why reported bet support is neither conjecture-only nor a secure
+  count of independent early witnesses.
 - Distinguish language from textual function: a Hebrew excerpt collection is
   direct Hebrew evidence but not automatically a continuous book copy. Test
   adaptation and excerpt boundaries locally; do not exclude or privilege it
@@ -126,6 +133,16 @@ dependence on another version. Shared broad meaning is not necessarily shared
 source spelling. An interpretive addition is evidence about the version, not
 automatically a lost source word. Keep the strongest counter-explanation.
 
+Test grammatical voice as well as broad meaning. At Ecclesiastes 8:10 the
+consulted Greek says passive “were praised,” whereas a proposed Hebrew Hitpael
+analysis yields reflexive “boasted.” That difference requires its own English
+argument, including subject and time sequence; versional praise cannot by itself
+approve the complete Hebrew-based sentence.
+Conversely, the stem label alone does not exclude passive meaning: the
+[Gesenius grammar section 54g](https://en.wikisource.org/wiki/Gesenius%27_Hebrew_Grammar/54._Hithpa%CA%BF%C4%93l)
+explicitly permits passive Hitpael. Decide the target verb's use from lexical,
+syntactic and contextual evidence, not an absolute reflexive rule.
+
 Language is not script: Targum Psalms in Hebrew letters is Aramaic. Identify
 the actual edition and its manuscript basis; a modern electronic compilation
 is not one ancient copy. An empty local variant display does not establish
@@ -167,6 +184,17 @@ depend on the same Greek textual form as an extant translation tradition.
 
 The number of supporting witnesses may be reported descriptively, but it must
 not select the reading. Modern English translations are not manuscript votes.
+
+Trace reports through intermediate languages and editorial reconstruction.
+A Greek phrase reconstructed from a Syriac marginal report is not newly read
+Greek manuscript ink; an apparatus presenting that report in Latin does not
+add a Latin witness. Combined reviser sigla can express agreement in sense
+without identical wording. The [Ecclesiastes reviser followup](ECCLESIASTES_8_10_REVISER_FOLLOWUP_2026-10-10.md)
+separates Field's presentation, its Syro-hexaplaric basis and Gentry's critical
+inference. Consulting a modern author's quotation of BHQ does not mean the
+BHQ target entry itself was consulted. Reopen a held decision for genuinely
+new evidence, while preserving its original review and independently checking
+whether the new evidence settles source priority or only lexical plausibility.
 
 ### 4. Test competing explanations
 

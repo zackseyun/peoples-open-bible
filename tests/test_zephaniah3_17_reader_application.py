@@ -108,7 +108,11 @@ class Zephaniah317ReaderTests(unittest.TestCase):
 
     def test_pinned_source_comparison_limits_not_manuscript_votes(self):
         for p, expected in self.contract['preflight']['pins'].items():
-            self.assertEqual(sha((ROOT / p).read_bytes()), expected, p)
+            # Method history is immutable; source evidence stays live.
+            raw = (subprocess.check_output(['git', 'show', f'{BASE}:{p}'], cwd=ROOT)
+                   if p == 'docs/TEXTUAL_ADJUDICATION_METHOD.md'
+                   else (ROOT / p).read_bytes())
+            self.assertEqual(sha(raw), expected, p)
         p = 'sources/textual_restoration/comparisons/zephaniah3_17_silence_renewal.2026-10-10.v1.json'
         comparison = json.loads((ROOT / p).read_text())
         for flag in ('source_changed', 'marker_free_english_changed', 'fresh_image_reading',

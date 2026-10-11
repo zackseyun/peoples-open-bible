@@ -2,6 +2,15 @@
 
 ## Current answer to the two research questions
 
+October10 actual [CTAT V Ecclesiastes8:10 entry](ECCLESIASTES_8_10_CTAT_REVIEW_2026-10-10.md)
+is now acquired and read in full, closing its preceding access gate. A contrary
+transmission account and a different subject interpretation strengthen the
+comparison without approving source or English changes. One new-evidence judge
+preserves both HOLDs. The central registry gains one critical-apparatus route
+for four wisdom books, with only this target collated;41 mixed source records
+are not41 ancient witnesses or complete OT coverage. Earlier access failures
+and reviews remain frozen historical records.
+
 October 10 [Samaritan Exodus apparatus access](SAMARITAN_EXODUS_APPARATUS_ACCESS_2026-10-10.md)
 checks the actual publisher volume and series: Exodus is ahead of publication,
 planned November 2. No target apparatus or manuscript page is acquired.
@@ -2069,3 +2078,483 @@ duplicate the54-test archive run or approve textual priority. An incidental
 EOF blank line outside the seven inputs is caught and removed before commit.
 Root also passes the unchanged Samuel5-test suite0.020s. No unchanged-input
 preference loop is performed.
+
+
+## Ecclesiastes 8:10 primary comparison on October 10
+
+PR120's two own exact-head checks114341052172/114341024150 complete-success
+at00:01:43UTC. Root rechecks119 merged,120 open at its frozen ce758861 head,
+and GitHub main at abbcd33a, then merges with the approved SHA. Result
+`ba30fa79ec7383b26948a295c8379d5a5712cdd4` has the same tree as the reviewed
+head, `e3ee47cdfbdc89f1fe373045a1b5b5fd71def1eb`;119 ancestry is verified.
+No other worktree has main checked out. Guarded local main advances abbcd33a
+to ba30fa79; normal push reports already up to date. The Samuel four-year
+candidate stays unapplied under its accepted HOLD.
+
+PR121 is committed/pushed at
+`d6ffb4c4919da9d6f67e6737927442b8775113b0`, nine task-only files,
+353insertions/8deletions, staged diff-check clean. [PR121](https://github.com/zackseyun/peoples-open-bible/pull/121)
+is against main with predecessor120 and BOTH own exact-head checks as gates.
+Its mandatory attachment fails the100-identity cap; no old attachments are
+removed. At00:09UTC check114343720399 is completed-success and114343759345
+remains in progress. The frozen121 head is not amended. After its commit root
+reads the existing complete pointing-triage document and concise107
+other-pointing pairs for orientation only, not new semantic adjudication.
+A guessed filename fails and is corrected to the actual existing filename.
+
+The new branch starts from frozen121 head. Root chooses the existing high-impact
+Ecclesiastes8:10 forgetting/praise question rather than repeating Samuel's
+unchanged plate experiment or starting another all-book inventory. Three
+bounded read-only agents acquire Hebrew apparatus, Greek/Latin controls and
+Syriac/Targum controls in parallel; all complete without repository edits.
+
+Root reads the complete canonical8:10 record, all17 Ecclesiastes8 records and
+five book/lexical controls, preserving22 exact context hashes. Actual WLC
+XML identifies the target's kaf, lemma7911, Hitpael3mp and no target qere.
+An initial namespace-blind XML query fails; the actual namespace/osisID query
+succeeds. QDR returns no8:10 hit while1:7 and5:13 positive controls return4Q110
+and4Q109. Complete book-reference records are inspected. This bounds dataset
+coverage only; it does not prove absence from all discovered fragments.
+
+The Hebrew agent acquires De Rossi III1786 printed257–258 and IXXI/XLVI
+conventions. Root independently visually reads all four complete2550x3301
+pages. Published bet attestation is real, not conjecture-only; copy dates,
+modern shelfmarks and independence remain unverified. Collection numbering,
+earlier/corrected states and uncertain reports are preserved. Kennicott553 and
+De Rossi331 have bet text but kaf marginal qere. Their text and margin are not
+flattened into uniform votes. Target BHQ/BHS and original Kennicott entries
+remain unconsulted. De Rossi's Talmudic-contamination explanation is an
+argument, not proven causation.
+
+Root independently reads complete publisher Greek and Latin chapter8 and
+complete Swete target page497/PDF515. Passive Greek praise and Latin's
+interpretive righteous-works clause are distinguished from Hebrew reflexive
+boasting. The Greek agent verifies sigla, four book controls, complete NETS
+intro648–649 and Gentry preview's copy dates. Root does not pretend to have
+read those prefaces. Aquila attribution remains uncertain; no Pentateuch
+translation date is assigned to Ecclesiastes. Raw publisher fetch403 yields
+no fabricated HTML hash; NETS502 is handled using the existing pinned PDF.
+The26-page Gentry preview lacks the target apparatus, not the edition itself.
+
+The versions agent reads CAL8:9–13, local metadata and target analyses:
+Peshitta and Targum express forgetting. These are corrected electronic selected
+texts, not diplomatic7a1 or unchanged Paris110. The Targum adds Gehinnom and
+righteous-place interpretation. Actual BnF catalogue access in the browser
+succeeds after web fetch failure and dates the Qohelet section colophon1455,
+not its composition or CAL's editorial wordforms. Exact excerpt hashes are
+not raw HTML hashes. No manuscript pixels are newly read.
+
+Root reads identified BDB transcriptions, not generic topical glosses or a
+fresh HALOT entry. Hebrew forgetting, Aramaic finding, Hebrew Piel praise and
+Hitpael boast remain distinct. Root also reads actual complete Gittin56b.11
+through the ordinary Sefaria API after an empty page body and an initially
+vowel-sensitive query. The quoted kaf and al-tiqre bet formula are reception
+evidence, not a continuous Bible-copy bet reading.
+
+The [comparison](ECCLESIASTES_8_10_COMPARISON_2026-10-10.md) and machine record
+retain both strongest cases: postmortem forgetting elsewhere in Ecclesiastes,
+and praise/injustice in8:11–14. Possible late reception contamination,
+versional interpretation and nearby8:15 assimilation are not asserted causes.
+No new ink, exact ancient retroversion, broad improvement rate or canon change
+is claimed. This materially strengthens the evidence for considering the known
+alternative without predetermining its earliest priority.
+
+Root materializes a complete normalized bet/boast candidate with honest
+POB-critical-draft attribution. The only source patch is וישתכחו→וישתבחו.
+English “had boasted” retains the baseline's prior-activity interpretation;
+this timing and the surrounding subject/burial syntax require independent
+review. Old revisions stay exact; old source, translation, generation and review
+metadata are archived by reference to the pinned immutable Git baseline.
+Root verifies the actual git-show bytes. New generation metadata records
+unknown deployed version, actual00:06:50UTC, the instruction hash and exact
+source/translation output hash, not invented historical approval.
+
+An initial preflight assuming baseline schema validity fails on existing
+status=revised versus the schema's draft-only enum. The corrected diagnostic
+records this failure explicitly and does not broaden production schema or
+rewrite the baseline. The candidate validates using a proposal-only in-memory
+edition extension. Base-plus-patch accounting passes but editorial approval
+remains false. One actual full Ecclesiastes export simulation has12chapters,
+222units, only8:10 changed and221 non-target canonical hashes bound in a
+manifest digest; all three target notes survive. No reader file is written.
+Four cheap tests pass0.022s. CI registers the suite. The controlling method gains
+concrete published-collation, homiletic-reception and reflexive/passive examples.
+
+One exact-input judge receives the seven frozen inputs and22 context pins with
+explicit permission to HOLD or reject the full candidate. It must separate source
+priority, whole-English fidelity and research integrity. The protected unrelated
+Genizah discovery remains unchanged and untracked at its original130d509a hash.
+
+
+The judge independently verifies all seven frozen inputs, all22 context pins,
+the full chapter/controls, WLC target, immutable baseline archive, all four
+complete De Rossi pages, Greek chapter, BDB transcriptions and Gittin segment.
+Four tests pass0.020s. It does not claim to repeat the full-book export,
+Latin/CAL, QDR or Greek prefaces. The [exact review](ECCLESIASTES_8_10_EXACT_REVIEW_2026-10-10.md)
+accepts qualified bet attestation and bounded research integrity, but HOLDs
+earliest source selection and full-record application. Conditional “had boasted”
+is plausible, not uniquely justified: בעיר can be locative, but voice, prior
+time and the plural subject remain distinct interpretation questions. Root
+accepts HOLD with no canonical or substitute note-only change and no repeated
+unchanged-input judge.
+
+The reviewer actually reads GKC54g's passive Hitpael examples and identifies
+NET's reported Aquila/Theodotion boast versus Symmachus praise with a HOTTP
+III584–585 citation. Root independently reads complete GKC54 through Wikisource
+and adds its caution to the controlling method outside the frozen seven inputs.
+The NET reviser attributions remain a bibliographic lead, not independently
+verified apparatus readings or new votes. No full-candidate receipt is revised
+to claim passive grammar is impossible. One fifth test binds the exact HOLD;
+root passes all five in0.026s. The14 combined Ecclesiastes/Samuel/Genesis tests
+previously pass0.065s. An initially guessed composition-test module is absent;
+the corrected actual suite test_source_composition passes its one test33.010s.
+Workflow YAML parses. An EOF blank line in the continuation log is removed.
+
+At00:15:46UTC both121 own checks114343759345/114343720399 are complete-success.
+Root rechecks120 merged at ba30fa79,121 open at its exact d6ffb4c head and main
+at ba30fa79, then merges with the approved SHA. Result
+`eeb6777ddbee7abaf958a7a3aa7a82fddadb1bda` and approved121 head both have tree
+`21296f98b2aa6aa84973d70c87bbc070d35676d4`;120 ancestry is verified. No other
+worktree has main checked out. Guarded local main advances ba30fa79 to eeb6777d;
+normal push reports already up to date. The current research branch advances
+fast-forward to that identical-tree predecessor without disturbing task changes.
+
+Final combined15 focused tests pass0.067s. Staging contains only13 task files;
+the unrelated discovery is excluded. Staged whitespace checking identifies
+EOF blank lines in the new test and frozen comparison report. The unpinned
+test blank is removed. The report's single harmless EOF blank is retained
+to preserve the exact reviewed input and all dependent hashes; it is an
+explicit whitespace warning, not a clean diff-check claim or a textual blocker.
+
+## Ecclesiastes reviser followup and delivery diagnosis
+
+PR122 was committed and pushed at `c2040166e057328ae1706141ecb46c5149cbadab`
+with 13 task files and created against merged121. Attachment was attempted but
+the chat's 100-identity cap rejected it; no old attachments were removed. The
+two own-head checks114347789123 and114347724718 both fail. The actual first job
+log identifies the earlier Psalm73 frozen-method test, not Ecclesiastes source
+evidence: its expected historical method hash70ead1 differs from the evolved
+live method33a602. No merge occurs and no failed check is described as passing.
+A first signed-log request403 is resolved by obtaining a fresh normal redirect
+and reading its public signed target without forwarding repository credentials.
+
+Continuation uses branch research/ecclesiastes-8-10-reviser-followup-2026-10-10
+from the exact122 head. Two bounded source agents acquire actual new evidence,
+not repeated opinions on the old packet. Root independently reads Field's
+complete II396 with notes, title1875, II3 source history and Ixcv conventions.
+The apparatus presents Aquila/Theodotion boasting via Syriac reporting; combined
+sigla are not two identical extant Greek copies. Symmachus's presentation mixes
+Nobilius and Syro-hexapla with preceding-clause uncertainty. No new codex ink,
+physical date or Hebrew attestation is claimed.
+
+The second source agent downloads the actual Gentry2013 article through the
+ordinary browser after raw403; root reads complete printed94–96/PDF22–24.
+The file is478387bytes, SHA99795a1ad37551078c910ab0423e3af9c5de815247d0920c11953758bd3dc584.
+Its target sample has both apparatuses and a genuine argument favoring Hebrew
+bet while rejecting Goldman's larger reconstruction. The argument is not
+direct Hebrew glyph evidence or direct consultation of BHQ/final2019 apparatus.
+The unchanged full candidate and original independent HOLD remain frozen.
+
+The public ZORA CTATV record is accessible and lists a7.53MB file. Agent
+20/30-second and one root45-second download attempts time out; no valid PDF
+or target entry is obtained. Its header2014 conflicts with publication field
+and citation2015; no title page resolves this. HOTTP preliminaryIII584–585
+remains unread and is not CTATIII. Marshall2007 institutional metadata identifies
+restricted full text. No authentication, CAPTCHA or security controls are bypassed.
+Repeated download/search attempts stop at this specific acquisition gate.
+
+The [followup report](ECCLESIASTES_8_10_REVISER_FOLLOWUP_2026-10-10.md) and source
+record preserve the dependency chain, target uncertainty and strongest countercase.
+One new-evidence judge is commissioned, allowed to HOLD/reject; a separate
+mechanical agent repairs historical method pins without changing their expected
+hashes or weakening live candidate/source/application checks. No canonical,
+reader, source-schema or canon mutation is authorized by these research results.
+
+The one [new-evidence review](../sources/textual_restoration/comparisons/ecclesiastes8_10_reviser_followup_review.2026-10-10.v1.json)
+returns research PASS_WITH_SCOPE_LIMITS, source-selection HOLD and full-record
+HOLD. It verifies the exact followup report/record, old candidate/review,
+canonical verse, complete Field pages and actual34-page Gentry PDF target.
+It does not repeat all22 historical context reads or translate all Syriac.
+Five original Ecclesiastes tests pass0.028s. Root accepts both HOLDs.
+The review's nonblocking clarification is retained separately from its frozen
+inputs: Field's Symmachus participleἐπαινούμενοι is passive, but Gentry prints
+Latin laudentes, active. Neither is silently substituted for the other.
+
+Ten earlier suites are repaired to read only their frozen methodological
+document from their original Git baselines, already fetched by CI. No expected
+hash, source evidence, applied YAML or original review receipt changes. Two
+negative tests prove that corrupt historical method bytes and changed live
+Ps.xml still fail. Agent12 focused tests pass1.201s; root independently runs19
+focused historical/Ecclesiastes tests in0.688s. New followup checks are registered
+in CI. Workflow YAML parses and the current followup diff whitespace check is
+clean; this does not erase122's disclosed frozen-report EOF warning.
+
+Delivery will use one replacement PR against merged121/main containing the
+unchanged122 packet, its CI repair and this followup. The failed122 head remains
+in history; no amendment, forced merge or borrowed green check is used. Both
+replacement own-head checks, SHA-pinned merge and tree/ancestry validation remain
+required. Commit/PR/merge events occurring after this frozen record are reported
+in chat and can enter a later log without rewriting this review's inputs.
+
+## CTAT acquisition and exact target review
+
+The preceding goal turn is progress: PR123 commits73978a840df59022c248c423673c8d3c5c12b97d,
+17 followup task files, and normal branch push succeeds. Replacement PR123 is
+created against main and PR122 closed as superseded, without amending its frozen
+head or describing failures as success. Mandatory123 attachment again fails the
+100-identity cap; no old attachments removed. Own checks114350652244 and114350623870
+are reverified live at00:36:39 and00:40:36UTC on the exact73978 head; no merge yet.
+Root final eight Ecclesiastes tests pass0.032s and protected Genizah hash remains
+130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50.
+
+Continuation branches from that exact head to research/ecclesiastes-8-10-ctat-2026-10-10.
+One genuinely different acquisition uses the ZORA page's unique visible link
+with a normal click and download event, rather than repeating downloadMedia.
+It succeeds: actual PDF8114592bytes1009pages, SHA
+cb868ca3225e2eb90980947265d18e8e3ce42756b0baa32e57d79e56ccc2fd79.
+No authentication/security challenge is manually solved or bypassed. Earlier
+timeouts remain true history. Root reads complete printed841–844/PDF870–873,
+title/copyright, preface x and required confidence/sigla conventions visually.
+Font-mangled extraction and hidden copyright-layer text are not taken as
+ancient letters or visible publication data. Visible copyright2015 differs
+from the preface's appearance2016; the preface specifies an older research horizon.
+
+The new [source record](../sources/textual_restoration/comparisons/ecclesiastes8_10_ctat.2026-10-10.v1.json)
+and report freeze both target argument and limitations. One
+[independent exact-input review](../sources/textual_restoration/comparisons/ecclesiastes8_10_ctat_review.2026-10-10.v1.json)
+verifies the new complete pages, inputs, grade/vote distinction and eight
+pin/render checks. Research passes within scope; priority and full-English
+application remain HOLD. Root accepts this, preserving the stronger countercase,
+the concrete Greek place-word disagreement and the warning that returning
+wicked is not a literal-resurrection finding. No unchanged-input judgment loop,
+canonical/note-only substitute or new decipherment is claimed.
+
+The central registry adds only ctat-wisdom-volume5, a French critical apparatus
+with quoted ancient-language evidence, private copyrighted PDF access and
+target-only consultation. All40 existing records are preserved exactly
+as parsed objects; the new41 count is not a physical-copy count. Regression binds
+the exact73978 baseline and CI explicitly fetches it. Eleven initial combined
+Ecclesiastes tests pass0.064s; five edition-registry tests pass0.099s. The source
+judge did not review this separate registry mutation; no such receipt is invented.
+Full HOTTP/BHQ/final2019 apparatus gates and independent ink calibration remain open.
+
+Final twelve combined Ecclesiastes checks pass0.056s. The full local registry
+suite runs54 tests but has two historical archive-replay errors caused by
+OSError28/no space; it is not described as passing. After automatic temporary
+cleanup the volume has only199MiB available. A separately scoped52-test run,
+excluding exactly those two replay tests, passes0.206s. No source assertions
+are removed, no user files deleted and no broad archive replay repeated.
+Remote PR123 remains live on both own checks at00:44UTC. This is an environment
+limitation on local validation, not a scholarly result or a passed full suite.
+
+Initial task-only git add and commit both fail writing index.lock because of
+disk space; no commit is claimed. The existing index is68MB for643144 tracked
+entries. A reversible Git metadata operation, update-index --index-version=4,
+succeeds, retaining all643144 entries and reducing index storage without deleting
+source files or changing tracked content. This addresses delivery overhead,
+not the larger historical archive-replay space requirement.
+
+## Proverbs30 1 CTAT followup and delivery repair
+
+The prior turn made progress by obtaining and independently reviewing CTAT's
+Ecclesiastes entry. Eight task files commit at26ef853ffc6702ee5f3986818c3d3c8ffbd379ef,
+normal branch push succeeds and PR124 is created against main, dependent on123.
+Mandatory attachment fails the100-identity cap; no older attachment is removed.
+The successful index-version4 change preserves643144 tracked entries and reduces
+68MiB to44MiB; it does not resolve archive-replay storage needs. The protected
+untracked Genizah file stays unchanged and excluded. No124 merge is claimed.
+
+This continuation branches from the frozen124 head, reusing the actual volume
+instead of reacquiring it or opening another broad source screen. Root reads
+the complete Proverbs30:1 entry, printed773–775/PDF802–804, and visually rechecks
+confidence convention xv. The top of773 completes Proverbs29:18; the target
+entry begins later on that page. Broken ancient-language extraction is not used
+as glyph evidence. The target supports weariness plus ability as a distinct
+interpretation, not automatic promotion of POB's exhausted-speaker note.
+The [new report](PROVERBS_30_1_CTAT_REVIEW_2026-10-10.md) and
+[source record](../sources/textual_restoration/comparisons/proverbs30_1_ctat.2026-10-10.v1.json)
+preserve exact final-verb, grade, intermediary and source-interpretation limits.
+One bounded source analyst reads all Proverbs30 and four controls; root checks
+30:1–9 and the controls. A separate exact-input critic reviews genuinely new
+evidence, not another opinion loop on an unchanged candidate. Source priority
+and application stay held; no canonical or reader change is made.
+
+PR123's own checks114350652244/114350623870 both fail after the complete reader
+corpus passes. Actual job114350652244 reaches the54-test registry suite, which
+passes remotely, then Psalm145's application validator raises Pinned file drift.
+This supersedes the inference that the earlier ten test-only method repairs
+were sufficient; it does not turn the previous local disk errors into passes.
+The first log request mistakenly omits the Basic authorization prefix and
+returns403; corrected normal authentication obtains the fresh signed redirect,
+whose target is read without forwarding repository credentials.
+
+The runtime validator's old approval binds methodological and doctrinal policy
+to its original review. Both exact policy paths now read the immutable recorded
+base revision with their original digests retained. All source/review/candidate/
+composition/evidence pins and schemas remain live. This proves original-review
+provenance, not compatibility with later policy or new publication authority.
+The bounded repair agent initially observes11 Isaiah errors from old DOCTRINE
+after fixing method alone. Root approves the exact two-policy allowlist, not
+general historicalization of documents. Negative tests reject corruption in
+either old policy and changes to live inputs/current schema. Frozen evidence,
+reviews and verse files remain unchanged.
+
+The repair agent passes35 focused tests in5.644s; root independently passes
+the same35 in3.737s. CI explicitly fetches the two additional actual source
+baselines and registers the runtime validator suites. No full local archive
+replay is repeated on the nearly full disk and no full-workflow pass is claimed.
+Delivery needs a replacement package containing the frozen123/124 work plus
+these new reviewed findings and repair. It must pass both own exact-head checks
+before SHA-pinned merge, approved-tree/ancestry verification and guarded main
+advance. Failed or still-pending predecessors cannot supply borrowed green checks.
+
+The independent [exact-input critic](../sources/textual_restoration/comparisons/proverbs30_1_ctat_review.2026-10-10.v1.json)
+passes research with scope limits and holds source priority/full English.
+It verifies both frozen authored inputs, all10 prior-file pins, actual PDF
+metadata/hash and three render hashes; complete target and confidence pages
+are visually read, and Hebrew context/controls independently checked. A scope
+question about material preceding the target on773 is resolved against772's
+Proverbs29:18 continuation; no correction is necessary. No further same-input
+critic is run. The source critic does not approve the separate runtime repair.
+
+Root's16 combined Proverbs/Ecclesiastes checks pass0.066s after the separate
+review receipt is added. Together with the35 runtime checks,51 focused tests
+pass across the two executions, not a full-corpus semantic assessment. JSON,
+report-local links, workflow structure, whitespace and protected-file hash
+checks pass. At00:57:24UTC both124 own checks114352600333/114352583615 remain
+in progress, while123 is failed. Neither is merged. The new replacement uses
+the already merged121 predecessor; commit/push/PR and later exact-head delivery
+events are recorded after they actually occur, without amending frozen evidence.
+
+Task-only staging of the nine new/modified files then fails writing index.lock
+with Out of diskspace. No commit, branch push or replacement PR is created.
+Read-only checks confirm no stale lock, no staged diff, the44MiB index remains,
+and all nine task files are intact. The reported127MiB available is insufficient
+for this actual operation. No broad cleanup, source deletion or alternate
+commit procedure is attempted. The four inspected temporary render/source
+directories total about7MiB and do not provide a meaningful remedy. Delivery
+pauses for more local space; frozen evidence and the independent HOLDs remain
+unchanged. The protected Genizah file remains excluded.
+
+## Reviewed package delivery without a local index rewrite
+
+The preceding turn is progress: it completes the source comparison, independent
+review and bounded runtime repair, while actual local staging fails. At the
+next continuation the volume has126MiB available, HEAD remains26ef853f, all nine
+task files are intact, the index has no staged diff and no stale lock exists.
+PR123 remains failed; one124 own check has failed and the other is still live.
+Repeating the same index write on unchanged space is not useful.
+
+The configured repository's normal Git data API provides an alternative within
+the standing commit authorization: build a tree from exact26ef853f with only
+the nine declared UTF-8 task files, then create a single-parent commit and a
+new remote branch. Verify its compare file set, modes and Git blob hashes
+against the local bytes before requesting CI. No unrelated discovery, source
+PDF, credential or rendered page enters the tree. The local HEAD/index remain
+at the original baseline with working files preserved; remote delivery does
+not falsely claim local index synchronization. A later safe fast-forward must
+wait for enough disk space. No commit/ref/PR success is claimed before actual
+API responses and read-back verification. Both new exact-head checks and the
+ordinary merge/tree/ancestry/main-push gates remain required.
+
+The first API tree request succeeds, but execution stops before commit creation:
+git config user.name has no configured value. No commit or branch ref is
+created by that attempt. Existing commits record Git's normal inferred author;
+the next request preserves the actual parent commit's author identity rather
+than inventing attribution. The unreferenced first tree is not a delivery.
+
+## Full Fox target access and CTAT Proverbs8:16 — October10 continuation
+
+The API retry creates commit789bc0ff5538a9430fd50c86f2093511ed23c075,
+treec5ff568e9db47e41d4a71f10065c820026fc6c94, parent26ef853f.
+Full compare verifies exactly the nine declared files (473 additions/3 deletions),
+their100644 modes and every Git blob hash against local bytes. The remote
+research/proverbs-30-1-ctat-api-2026-10-10 ref reads back that exact head.
+PR125 replaces123/124; both old PRs are commented and closed, not merged.
+Attachment is attempted but fails the100-identity cap; no old artifact is removed.
+Ordinary local fetch then fails opening FETCH_HEAD with ENOSPC. A resulting
+bad-object local diff is not a pass. Local HEAD/index/main remain unchanged.
+
+At01:04UTC October11 both125 own checks are running; they progress from checkout
+to reader-note/policy tests by01:12. At01:14 one own check114355096323 is failed
+and114355090621 remains live. No merge or remote-main advance is made. The
+existing runtime agent is resumed for one bounded actual-log diagnosis; no
+failure remedy is assumed from the status alone. These are125 checks, not
+borrowed predecessor green results.
+
+The already acquired CTAT volume yields the full Proverbs8:16 entry.
+Root visually reads native552–554/printed523–525 using Poppler stdout images,
+without file creation. It supplies a named Paris BN hébreu3 earth-to-justice
+correction report and an opposite Hilleli direction reported through ibnNahmias.
+Neither physical hand nor date is verified. A bounded institutional search
+does not locate the exact Paris3 object/leaf. A requested locator-agent launch
+fails ENOSPC in the thread store; no agent is represented as having run.
+Root retains the locator as a lead, with no manuscript-image claim.
+
+Earlier project records already cite the full Fox publisher edition, so the
+recent preview-only gate warrants checking. The full2015 edition is accessible
+through an ordinary identified research request and matches the previously
+recorded hash. Initial page-range navigation misses the target; a later search
+finds native400. Saving a local study copy fails ENOSPC; inspection confirms
+the intended Downloads path does not exist. PDF bytes and three complete
+native400–402 renders are instead read in process memory. A Node kernel and
+new temporary-directory creation also fail for lack of space; no broad cleanup
+or source deletion is undertaken.
+
+The existing Proverbs30:1 judge is resumed for genuinely new complete Fox target
+evidence. Its default/web fetch fails403; the exact normal POB-research
+User-Agent request succeeds without auth/cookies. It independently verifies
+the full source hash/bytes/page count and visually reads the complete target
+from memory. It confirms the apparatus/prose repetition tension and the
+Fox/CTAT Aquila-form discrepancy. Research observations pass with scope limits;
+source priority and full English stay HOLD. The frozen CTAT inputs remain
+hash-identical. This is not an exact-hash authored-follow-up approval, a
+Proverbs8:16 judgment, registry review, CI approval or candidate application.
+No same-input authority-vote loop is run.
+
+The [follow-up report](PROVERBS_SOURCE_FOLLOWUP_2026-10-10.md) documents the
+access correction, source arguments and next discriminators. Its
+[source-observation receipt](../sources/textual_restoration/comparisons/proverbs_source_followup_review.2026-10-10.v1.json)
+states that limited judgment honestly. It does not backdate full Fox access
+into the earlier preview record, modify its frozen CTAT review, or add a
+registry row claiming whole-edition collation. No source, English, reader note,
+generated restoration or canon status changes.
+
+Local writes remain blocked even though df reports roughly120MiB available.
+The next documentation delivery uses the already verified remote Git data
+route, preserving125 as parent and all unrelated local work. Server commit/ref/
+compare/CI events will be recorded only after they occur. Both own exact-head
+checks and tree/ancestry verification still govern publication; local main
+synchronization and a normal local push cannot be claimed while disk writes fail.
+
+Both125 logs are now actually read: job114355096323 fails at01:13:29UTC
+and114355090621 at01:17:57UTC, each in UXLC pointing triage line65.
+Only the method-input hash changes (old70ead1b1… vs current89c6be…);
+all374 rows, summaries and other input pins match. The second failure is
+verified from its own log, not inferred from the first. Remote main remains
+eeb6777ddbee7abaf958a7a3aa7a82fddadb1bda at01:18:29UTC;125 is not merged.
+
+The minimal test-only repair reads the method bytes from exact receipt-creation
+baseline31a979f92629d06aab9002a9a4d0c92e47236fe3, checks their original frozen
+hash, and scopes that substitution to METHOD. The self-hashed generator and
+frozen receipt remain untouched. All WLC and screen controls stay live; new
+negative tests reject corrupt historical policy and changed live WLC/screen
+bytes. This is historical provenance reproduction, not approval under current
+policy. CI fetches that immutable baseline explicitly.
+
+The repair agent's in-memory updated12 tests pass1.162s. Root independently
+executes the exact updated test bytes:12 tests pass1.169s, SHA256
+0b1d275e5972a0bbbfeb7cdba78d395dfabf9caed3c358509d6ac3241fda7463.
+Workflow parsing passes. The agent executes each of the27 remaining workflow
+suites once in order:153 tests pass, exit0. The combined bounded verification
+is165 tests across those executions, not full-workflow or corpus success.
+No repository file or index is written by those checks.
+
+The successor combines this repair with the three documentation files, exactly
+five changes over frozen125. Git/API edits use125's server bytes as their base,
+not an unavailable local fetched object. No repeated local staging attempt is
+made. Source-observation receipt explicitly disclaims exact authored-report,
+8:16, CI and English application approval. Root qualifies τελέσω as a
+first-person form interpreted there as future, not an exclusive morphological
+claim. The completed task-owned RAM PDF process is closed; no source/page
+files are deleted. Protected Genizah SHA256 remains130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50.

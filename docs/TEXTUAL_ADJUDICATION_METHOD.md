@@ -1,6 +1,6 @@
 # POB source-wording adjudication method
 
-Version: 2.0.2 · Revised: 2026-10-12 (ordered edition layers and accurate access queues)
+Version: 2.0.3 · Revised: 2026-10-12 (reference capabilities and synopsis preservation)
 
 This is the controlling method for source selection and English impact. The
 [approach review](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md) records the
@@ -62,6 +62,14 @@ claim a second blinded model pass occurred unless its actual output is stored.
 - Declare the target literary form and whether the output is diplomatic,
   eclectic, or parallel-edition text. Use a pinned base plus explicit changes;
   justify combinations across literary forms at passage level.
+- Check whether an input actually contains passage-reference annotations before
+  using verse searches as coverage evidence. The pinned nonbiblical QDR file
+  has 282,778 empty reference slots; its zero matches cannot establish absent
+  quotations. The [Habakkuk coverage followup](HABAKKUK_COVERAGE_AND_GREEK_PRESERVATION_2026-10-12.md)
+  distinguishes that indexing limit from the biblical file's partial annotations.
+  The extractor rejects unindexed snapshots and reports annotation capability;
+  even a fully annotated index does not establish preserved letters or all
+  identifiable witnesses. Build quotation maps from actual lemma boundaries.
 - Give the book, passage, fragment, language, and edition an unambiguous ID.
 - Preserve upstream IDs separately from proposed object identities. Record
   fragment joins/splits, hand assignments, dates, authority and review status
@@ -225,6 +233,16 @@ OT and NT versional evidence alike.
 ### 3. Assess relationships before counting support
 
 Keep an edition's **selected text** separate from its **attested readings**.
+
+For a synoptic edition, consult its source and display conventions before
+counting a reading. Biblia Qumranica combines DJD VIII diplomatic capitals
+with reconstructed Greek, transforms damaged-character signs and aligns
+columns for comparison rather than physical gap measurement. At Habakkuk 1:5
+its surviving reporting-verb ending does not make the reconstructed full verb
+or lost address visible. A shaded comparison box is not by itself a scribal
+omission. Preserve dependency on the underlying edition; two presentations of
+one scroll are not two witnesses.
+
 A conjecture may explain the surviving alternatives without itself occurring
 in a manuscript. Label it explicitly, identify the evidence and competing
 explanation, and do not convert scholarly adoption into a new witness or an

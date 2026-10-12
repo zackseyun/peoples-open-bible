@@ -2,11 +2,16 @@
 
 All source texts the People's Open Bible translates from are vendored in
 this directory with their original licenses preserved. Every vendored
-source here is freely redistributable under its own terms. None impose
-a fee or restrict downstream use. The repo's output (the English translation in
+source here is redistributable under its own terms, including applicable
+attribution and ShareAlike conditions. The repo's output (the English translation in
 `translation/`) is CC-BY 4.0 — but the upstream sources beneath it
 carry their own licenses and are **not** relicensed by including them
 here, but again are free to distribute.
+
+The four **Pseudo-Clementine** Greek sources are registered for future checked
+translation, not published as English reader books. Their raw XML and derived
+Greek sections retain **CC BY-SA 4.0**; the Homilies snapshot is incomplete after
+19.14. See [provenance, licensing, coverage, and required source checks](../docs/PSEUDO_CLEMENTINE_SOURCES.md).
 
 Each per-verse YAML in `translation/` records which source(s) it drew
 from via the `edition` enum on its `source` block (see

@@ -24,9 +24,10 @@ class EarlyChristianMetadataTest(unittest.TestCase):
                 "apostolic_fathers_completion_order",
             )
             for entry in cls.catalog[group]
+            if entry.get("publish") is True
         ]
 
-    def test_all_catalog_titles_have_complete_english_and_spanish_metadata(self):
+    def test_all_published_titles_have_complete_english_and_spanish_metadata(self):
         for entry in self.entries:
             with self.subTest(title=entry["title"]):
                 record = self.metadata[entry["title"]]

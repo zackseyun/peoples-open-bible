@@ -18,9 +18,9 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 
 
 class EarlyChristianTextsCatalogTests(unittest.TestCase):
-    def test_catalog_contains_all_29_ordered_works_with_stable_codes(self):
+    def test_catalog_contains_all_33_ordered_works_with_stable_codes(self):
         entries = load_entries()
-        self.assertEqual(len(entries), 29)
+        self.assertEqual(len(entries), 33)
         self.assertEqual(
             {entry["id"]: entry["code"] for entry in entries},
             {
@@ -53,6 +53,10 @@ class EarlyChristianTextsCatalogTests(unittest.TestCase):
                 "apostolic_tradition": "APTR",
                 "apostolic_church_order": "ACHO",
                 "apostolic_constitutions": "ACON",
+                "pseudo_clementine_peter_to_james": "PCPET",
+                "pseudo_clementine_contestation": "PCDIA",
+                "pseudo_clementine_clement_to_james": "PCCLE",
+                "pseudo_clementine_homilies": "PCHOM",
             },
         )
         for entry in entries:

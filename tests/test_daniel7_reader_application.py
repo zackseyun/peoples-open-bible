@@ -250,10 +250,11 @@ class Daniel7ReaderApplicationTests(unittest.TestCase):
                             ('sources/ot/wlc/Dan.xml', 'source_xml_sha256'),
                             ('docs/TEXTUAL_ADJUDICATION_METHOD.md', 'method_sha256'),
                             ('DOCTRINE.md', 'doctrine_sha256')):
-            # Bind historical method use to the reviewed baseline; source,
-            # schema and doctrine checks remain checks of the live files.
+            # Bind historical method and doctrine use to the reviewed baseline.
+            # A later terminology policy must not rewrite old review evidence.
+            # Source, schema and the applied Daniel verses remain live checks.
             raw = (subprocess.check_output(['git', 'show', f'{BASE}:{path}'], cwd=ROOT)
-                   if path == 'docs/TEXTUAL_ADJUDICATION_METHOD.md'
+                   if path in {'docs/TEXTUAL_ADJUDICATION_METHOD.md', 'DOCTRINE.md'}
                    else (ROOT / path).read_bytes())
             self.assertEqual(sha(raw), self.contract[field])
         self.assertEqual(r['schema_sha256'], self.contract['schema_sha256'])

@@ -113,7 +113,7 @@ class Zephaniah31920ReaderTests(unittest.TestCase):
         for p, expected in self.preflight["pins"].items():
             # Method history is immutable; source evidence stays live.
             raw = (subprocess.check_output(['git', 'show', f'{BASE}:{p}'], cwd=ROOT)
-                   if p == 'docs/TEXTUAL_ADJUDICATION_METHOD.md'
+                   if p in {'docs/TEXTUAL_ADJUDICATION_METHOD.md', 'DOCTRINE.md'}
                    else (ROOT / p).read_bytes())
             self.assertEqual(sha(raw), expected, p)
         comp = json.loads((ROOT / (PREFIX + "comparisons/zephaniah3_19_20_source.2026-10-10.v1.json")).read_text())

@@ -90,7 +90,7 @@ class Psalm7310ApplicationTests(unittest.TestCase):
             # This is the method used at review time, not a claim that the
             # evolving live method has never changed. Evidence stays live.
             raw = (subprocess.check_output(['git', 'show', f'{BASE}:{path}'], cwd=ROOT)
-                   if path == 'docs/TEXTUAL_ADJUDICATION_METHOD.md'
+                   if path in {'docs/TEXTUAL_ADJUDICATION_METHOD.md', 'DOCTRINE.md'}
                    else (ROOT / path).read_bytes())
             self.assertEqual(sha(raw), expected, path)
         comparison = json.loads((ROOT / 'sources/textual_restoration/comparisons/psalm73_10_written_read.2026-10-10.v1.json').read_text())

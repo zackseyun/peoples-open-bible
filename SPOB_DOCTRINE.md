@@ -172,3 +172,15 @@ useful evidence about clarity, not proof of correctness. High-risk verses—thos
 with interpretive expansions, textual variants, doctrinal disputes, or named
 external witnesses—require explicit human review before moving beyond
 `simplified_draft`.
+
+## Shared reorientation terminology (2026-10-11)
+
+The maintainer explicitly extended the reorient/reorientation policy to SPOB,
+including its extra-canonical reader material. Follow DOCTRINE.md's contextual
+exceptions and no-added-intensifiers rule. Because "reorient" is less common
+English, include a short anchored explanation of changed disposition and direction.
+Do not replace already accurate words for divine regret, sorrow, or turning with
+an indiscriminate Godward formula. This approved vocabulary does not authorize
+new interpretive expansion elsewhere. Prior base_translation/source_grounding
+snapshots remain historical evidence, not claims of having freshly generated this
+revision from their old commit.

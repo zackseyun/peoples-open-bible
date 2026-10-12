@@ -31,11 +31,14 @@ base_translation:
     changes_summary: 'doctrine_realignment: Acts 8:22 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that, if possible,''].'
 translation:
   language: en
-  text: So repent of this wickedness of yours, and pray to the Lord. Perhaps he will forgive you for the intent in your heart.[a]
+  text: So reorient[r1] away from this wickedness of yours, and pray to the Lord. Perhaps he will forgive you for the intent in your heart.[a]
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: Or “the thought in your heart.”
+    reason: lexical_alternative
+  - marker: r1
+    text: Traditionally "repent" or "repentance." "Reorient" and "reorientation" describe a change of disposition and direction. The surrounding passage supplies the direction; this wording does not erase named wrongdoing, distinct turning expressions, or sorrow, and does not by itself assert a completed moral transformation.
     reason: lexical_alternative
 simplification_decisions:
 - pob_phrase: Therefore
@@ -70,6 +73,8 @@ translation_notes:
     mitigation: The word marks contingency without assigning any degree of likelihood.
   - risk: Making “the Lord” the explicit forgiver expands the Greek passive.
     mitigation: The immediate prayer context clearly supplies the Lord as the implied agent.
+  - risk: Reorient is less common English and explicit Godward wording is a contextual expansion.
+    mitigation: Explain it in the reader note; preserve source-specific exceptions and avoid added intensifiers.
 source_grounding:
   pob_role: primary_derivative_base
   source_payload_role: audit_guardrail
@@ -90,8 +95,10 @@ ai_draft:
     total_tokens: 4639
     reasoning_tokens: 337
     estimated_cost_usd: 0.0
-status: simplified_draft
-retained_terms: []
+status: draft
+retained_terms:
+- term: reorient / reorientation
+  reason: Maintainer-approved shared English terminology. The anchored reader note explains changed disposition and direction; context-specific exceptions are preserved.
 spob_revision_history:
 - timestamp: '2026-07-12T07:09:13Z'
   previous_text: So repent of this wickedness of yours, and pray to the Lord that the intent in your heart[a] might be forgiven.
@@ -102,3 +109,104 @@ spob_revision_history:
   review_summary: The draft improves everyday readability through “So” and “in your heart,” and these changes are warranted. However, its single “might” does not reliably carry the explicit conditional force of εἰ ἄρα, especially because it follows “pray that.” State the guarded hope directly. Making the Lord the explicit forgiver is warranted by the immediate prayer context and makes the Greek divine passive understandable without turning the outcome into a guarantee.
   schema_repairs:
   - restored retained_terms as an array from the prior draft
+review_history:
+- field: status
+  value: simplified_draft
+  archived_by: reorientation-english-2026-10-11
+  archived_from_baseline_sha256: c1d56c754d6e9e53c0485106a5274b5ff335294f86fd19fbd332d8647f53f994
+  certifies_this_candidate: false
+  historical_review_inputs_verified: false
+- field: simplification_decisions
+  value:
+  - pob_phrase: Therefore
+    simplified_phrase: So
+    preserved_meaning: Peter’s command follows directly from his previous rebuke.
+    reasoning_layer_used: Lexical decision for οὖν
+    rationale: “So” expresses the same conclusion in common English.
+  - pob_phrase: pray to the Lord, if perhaps ... may be forgiven you
+    simplified_phrase: pray to the Lord. Perhaps he will forgive you
+    preserved_meaning: Simon must pray in hope, without any guarantee of forgiveness.
+    reasoning_layer_used: Theological decision on guarded forgiveness
+    rationale: A separate sentence gives the guarded possibility clear force.
+  - pob_phrase: the intent of your heart
+    simplified_phrase: the intent in your heart
+    preserved_meaning: The inward intention behind Simon’s request remains in view.
+    reasoning_layer_used: Lexical decisions for ἐπίνοια and τῆς καρδίας σου
+    rationale: “In your heart” is natural English and keeps the biblical heart image.
+  archived_by: reorientation-english-2026-10-11
+  archived_from_baseline_sha256: c1d56c754d6e9e53c0485106a5274b5ff335294f86fd19fbd332d8647f53f994
+  certifies_this_candidate: false
+  historical_review_inputs_verified: false
+- field: interpretive_expansions
+  value:
+  - pob_phrase: the intent of your heart may be forgiven you
+    rendering: he will forgive you for the intent in your heart
+    claim: The Lord is the implied forgiver, and Simon needs forgiveness for his inward intent.
+    evidence:
+    - The command to pray to the Lord supplies the implied agent of the passive verb.
+    - The POB reasoning identifies this as divine forgiveness for Simon’s intent.
+    confidence: high
+    alternatives_preserved:
+    - The title “Lord” is not further identified in the translation.
+    - Forgiveness remains possible rather than guaranteed.
+  archived_by: reorientation-english-2026-10-11
+  archived_from_baseline_sha256: c1d56c754d6e9e53c0485106a5274b5ff335294f86fd19fbd332d8647f53f994
+  certifies_this_candidate: false
+  historical_review_inputs_verified: false
+- field: translation_notes
+  value:
+    risk_flags:
+    - risk: “Perhaps” may sound as though Peter judges forgiveness unlikely.
+      mitigation: The word marks contingency without assigning any degree of likelihood.
+    - risk: Making “the Lord” the explicit forgiver expands the Greek passive.
+      mitigation: The immediate prayer context clearly supplies the Lord as the implied agent.
+  archived_by: reorientation-english-2026-10-11
+  archived_from_baseline_sha256: c1d56c754d6e9e53c0485106a5274b5ff335294f86fd19fbd332d8647f53f994
+  certifies_this_candidate: false
+  historical_review_inputs_verified: false
+- field: retained_terms
+  value: []
+  archived_by: reorientation-english-2026-10-11
+  archived_from_baseline_sha256: c1d56c754d6e9e53c0485106a5274b5ff335294f86fd19fbd332d8647f53f994
+  certifies_this_candidate: false
+  historical_review_inputs_verified: false
+- field: translation
+  baseline_commit: b35230ab344fa58da4a034f6d598ea85db74590f
+  baseline_path: translation_simplified/nt/acts/008/022.yaml
+  sha256: fde2324be7ae242ad1c6d410e8f0d9bf0e4a31db999093cd97db030c6492e5fe
+  archived_by: reorientation-english-2026-10-11
+  certifies_this_candidate: false
+cross_check:
+  status: needs_review
+lexical_decisions: []
+theological_decisions:
+- issue: Context-sensitive reorientation terminology
+  chosen_reading: So reorient away from this wickedness of yours, and pray to the Lord. Perhaps he will forgive you for the intent in your heart.[a]
+  alternative_readings:
+  - Traditional repent/repentance wording, preserved at the baseline commit.
+  rationale: Use reorient/reorientation without automatically inserting God. The sentence supplies a departure, destination, interpersonal setting, or the work's own conceptual framework. Preserve distinct turning verbs and named wrongdoing.
+  doctrine_reference: 'DOCTRINE.md: Reorientation terminology (2026-10-11)'
+terminology_revision:
+  policy_id: reorientation-english-2026-10-11
+  timestamp: '2026-10-12T07:01:08.784068+00:00'
+  baseline_commit: b35230ab344fa58da4a034f6d598ea85db74590f
+  baseline_file_sha256: c1d56c754d6e9e53c0485106a5274b5ff335294f86fd19fbd332d8647f53f994
+  mode: neutral
+  reader_note_marker: r1
+  source_changed: false
+  english_witness_adaptation: false
+  independent_scholar_review: false
+  maintainer_approval_scope: English terminology policy and POB/SPOB/extra-canonical scope; not a claim of human review of every proposed line.
+  after_text_sha256: 3012b191b56bac030eabfb4aebe6e94da1812eb2825d441fb5fe2fba3dbeda9e
+revisions:
+- timestamp: '2026-10-12T07:01:08.784068+00:00'
+  adjudicator: 'Codex: maintainer-authorized terminology application'
+  category: terminology
+  policy_id: reorientation-english-2026-10-11
+  rationale: Use reorient/reorientation without automatically inserting God. The sentence supplies a departure, destination, interpersonal setting, or the work's own conceptual framework. Preserve distinct turning verbs and named wrongdoing.
+  from_sha256: 56757f2d8a141296c023d5e21809c8720017735ba7e8ed046b2f8977dafc9f06
+  to_sha256: 3012b191b56bac030eabfb4aebe6e94da1812eb2825d441fb5fe2fba3dbeda9e
+  baseline_commit: b35230ab344fa58da4a034f6d598ea85db74590f
+  baseline_path: translation_simplified/nt/acts/008/022.yaml
+  from: So repent of this wickedness of yours, and pray to the Lord. Perhaps he will forgive you for the intent in your heart.[a]
+  to: So reorient[r1] away from this wickedness of yours, and pray to the Lord. Perhaps he will forgive you for the intent in your heart.[a]

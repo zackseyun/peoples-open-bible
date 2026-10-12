@@ -225,10 +225,10 @@ class Proverbs303ReaderApplicationTests(unittest.TestCase):
         self.assertEqual(r['preflight']['pins'], c['pins'])
         self.assertEqual(c['preflight']['pins'], c['pins'])
         for path, digest in c['pins'].items():
-            # The frozen review used the baseline method, not future edits.
-            # All non-method evidence and current application stay live.
+            # The frozen review used the baseline method and doctrine, not future edits.
+            # Source evidence and the current Scripture application stay live.
             raw = (subprocess.check_output(['git', 'show', f'{BASE}:{path}'], cwd=ROOT)
-                   if path == 'docs/TEXTUAL_ADJUDICATION_METHOD.md'
+                   if path in {'docs/TEXTUAL_ADJUDICATION_METHOD.md', 'DOCTRINE.md'}
                    else (ROOT / path).read_bytes())
             self.assertEqual(sha(raw), digest, path)
         self.assertEqual(c['source_record_sha256'], c['pins'][c['source_record']])

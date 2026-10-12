@@ -116,6 +116,14 @@ def check_file(path: pathlib.Path) -> list[dict]:
         for error in distinctions.approved_errors(data, text):
             violations.append({"file": str(path.relative_to(REPO_ROOT)),
                                "rule": "john21-approved-love-distinction", "details": error})
+    if path.relative_to(REPO_ROOT).parts[0] in {"translation", "translation_simplified"}:
+        try:
+            from tools import reorientation_policy
+        except ModuleNotFoundError:
+            import reorientation_policy
+        for error in reorientation_policy.approved_errors(path, data):
+            violations.append({"file": str(path.relative_to(REPO_ROOT)),
+                               "rule": "approved-reorientation-terminology", "details": error})
     nt = is_nt(path)
 
     # Rule 1: use conventional personal-name forms while preserving the title

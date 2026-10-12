@@ -41,7 +41,7 @@ class Jeremiah271HeadingTests(unittest.TestCase):
             # not future edits to the method. Source evidence stays live.
             raw = (subprocess.check_output(['git', 'show',
                     self.case['baseline_revision'] + ':' + path], cwd=ROOT)
-                   if path == 'docs/TEXTUAL_ADJUDICATION_METHOD.md'
+                   if path in {'docs/TEXTUAL_ADJUDICATION_METHOD.md', 'DOCTRINE.md'}
                    else (ROOT / path).read_bytes())
             self.assertEqual(sha(raw), expected, path)
         for record in [self.case["baseline"], *self.case["context_read"]]:

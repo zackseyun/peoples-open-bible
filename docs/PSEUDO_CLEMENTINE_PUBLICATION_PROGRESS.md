@@ -126,16 +126,32 @@ response. A complete three-section selected Greek source is now assembled at
 The assembler preserves the closing farewell, excludes the following Contestation,
 and documents dehyphenation, whitespace and pagination-bar normalization.
 
-Fresh English from that selected source is in the `lagarde-v2` workflow files.
-Its separate Sol 6.1 review remains a release requirement. The visibly printed
-repetition `ἐφοδιάζειν ἐφοδιάζωσιν` is retained and explicitly distinguished
-from an OCR error; its English interpretation/disclosure still needs review.
-Earlier candidates remain historical evidence and must not be exported.
+The `lagarde-v2` English was separately reviewed by Sol 6.1, which requested
+connective-word repairs and fuller uncertainty disclosures. The visibly printed
+repetition `ἐφοδιάζειν ἐφοδιάζωσιν` was retained and distinguished from an OCR
+error. Earlier candidates remain historical evidence and must not be exported.
+
+The subsequent **`lagarde-v3` English revision passed Sol 6.1 review for all
+three Peter-letter sections**. It restores connective words and carries the
+required lexical/attachment alternatives. The review expressly accepts the
+disclosed uncertainties, not a claim that their interpretation is settled.
+`reviewed-english-candidate.json` binds the source, final English and review
+hashes; `reader_candidate/pseudo-clementine-peter-to-james.txt` preserves the
+accepted English plus mandatory notes. This is ready for archive integration,
+not a claim of live publication. Other three works remain incomplete.
 
 The next source batch covers PDF pp.47–54 and 225–241 using the blind protocol,
 two workers, and bounded revision attempts. Page-level `needs_manual_source_read`
 or `review_limit_reached` outcomes require actual follow-up rather than approval.
 The entire edition and all four English works are still incomplete.
+
+Follow-ups identified so far: p.47 has an obscured initial letter in the scan;
+an alternate publicly accessible 1865 copy is being inspected. P.50 passed a
+fourth image check after its third-pass correction. P.53 reached the initial
+review limit. P.227 produced a truncated model response; retain it and retry
+only that terminal request with an adequate bounded output budget, not by
+restarting the live batch. The current batch remains a real running process;
+check its handle before taking further action.
 
 ## Actual historical-library integration target
 

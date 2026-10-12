@@ -8962,6 +8962,28 @@ tests pass. No model-agreement loop or generated letters add evidence.
 The broader OT census, image calibration and corpus-wide English assessment
 remain unfinished. Repository publication is a separate milestone.
 
+### 2026-10-12 — Habakkuk 1 17 reviewed reader disclosure
+
+The [reader application](HABAKKUK_1_17_READER_DISCLOSURE_2026-10-12.md)
+adds the verified Hebrew sword alternative after net, repairs the existing
+dragnet anchor and preserves the mercy note. Source, pointing, segmentation
+and marker-free main English remain unchanged. Only the connected net
+rationale changes; five exact prior-field archives preserve metadata without
+transferring earlier scores. A full-record candidate and hash-bound contract
+receive one bounded independent application review before exact-byte application.
+
+The actual three-chapter/56-unit export matches the frozen proposed result;
+55 non-target records remain identical and all three target notes export.
+Full candidate schema and note audit pass. Eight new and 24 related checks
+plus 55 shared note/export checks pass: 87 distinct post-application tests,
+excluding preflight and independent reruns. The previous 2:5/2:16 whole-book
+assertions are pinned to their actual application commit, while current exact
+target checks and all historical inputs remain intact. The
+[receipt](../sources/textual_restoration/applications/habakkuk1_17_reader.2026-10-12.v1.json)
+separates applied verification from unresolved source priority and Git delivery.
+No generated letters, Hebrew replacement, main-English preference vote,
+canon change or About publication occurs. The full goal remains unfinished.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

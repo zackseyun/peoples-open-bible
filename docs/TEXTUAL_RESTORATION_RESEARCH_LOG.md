@@ -9039,6 +9039,69 @@ or agreement loop occurs. Sword existence no longer needs reacquisition;
 transmission/dependence, not unresolved letter dots alone, keeps priority held.
 Only validation/publication metadata appends after the substantive review.
 
+### 2026-10-12 — Complete catalogue list and bounded Greek detail census
+
+The previous turn made progress through primary Greek-edition reading and
+registry reconciliation; this continuation broadens source discovery rather
+than repeats a verse decision. The
+[catalogue screen](GREEK_CATALOGUE_CENSUS_SCREEN_2026-10-12.md)
+accounts for all1,687 public Göttingen list IDs across nine actual pages, and
+reads the structured public detail fields for53 upstream date-overlap Greek
+candidates. The containment mode yields32, a subset; mixed dates and fifth/sixth
+century descriptions prevent an independently ancient-dated count. Thirty-three
+records share the placeholder display name, so names cannot deduplicate objects.
+
+The [offline verifier and tests](../tools/textual_restoration/greek_catalogue_screen.py)
+check page completeness, stable IDs, explicit access flags and conservative
+book navigation. Of198 structured rows,125 are assigned to explicitly named
+books and73 remain held. All39 POB book rows are emitted;31 have assigned
+navigation, while eight zeros are not witness-absence findings. Root separately
+reads general content fields for the seven empty-overview records. Existing
+Ra801/802/803/819/805 controls are absent from the entire public list, not just
+the date filter; they remain registered and relevant. Ra801's public detail
+has canReadfalse, not proof of no witness.
+
+Raw descriptions stay private under their statedCCBYNCSA4.0 terms. The
+[receipt](../sources/textual_restoration/discovery/greek_catalogue_screen.2026-10-12.v1.json)
+records input hashes and metadata navigation, not a redistributed corpus or
+letter-preservation assessment. No source, English, registry identity, canon
+or ImageGen evidence changes. Ten new and four existing annotation tests pass
+in0.004s after URL/prefix boundary fixes; initial failures remain recorded.
+The new ten-test module is added to CI, without removing existing checks.
+
+PR163's actual jobs115002296642/115002063217 finish with failure in the
+reader-test step on exact47b4b216df8dcb060f9b52593f0e6dd003c795c2; they did
+not time out. The API log route returns403, and no equivalent access bypass
+is attempted. A local reproduction of the exact committed CI step is started
+to identify the first failing command. PR163 stays unmerged, with no restart
+of a live job or false publication claim. New census work is on a separate
+branch. The broader OT census/calibration/English objective remains active.
+
+A bounded diagnostic independently reproduces the existing registry guard's
+exact no-reacquisition phrase failure. The phrase is restored without weakening
+the test; six reconciliation tests pass in0.141s. Separate three-file repair
+commit5a27fc4c7adaac425ea388f70bf478ec2f2ac207 is pushed to PR163; both new
+exact-head jobs are required. The census branch then fast-forwards to that fix,
+preserving its uncommitted work. A test launched before the asynchronous merge
+finished fails on the old phrase; after completion/head verification, all20
+focused tests pass in0.103s. No old failed job is relabeled successful.
+
+The census critic reproduces all65 input hashes and generated fields and reads
+all198 overview rows plus seven general descriptions, but rejects a reusable
+parser guard that could classify bibliographic cf./e.g. mentions as coverage.
+The repaired parser requires an initial explicit book prefix and numeric-range
+separators for additional books; negative regressions pass and125/73 snapshot
+counts remain unchanged. This is a concrete code correction, not a source
+preference vote. The corrected guard returns to the same bounded reviewer.
+
+The corrected census packet passes that review: all65 source pins, all198
+overview rows, seven general fields and generated output verify; the independent
+14-test rerun is not counted again. The separate local reader-step diagnostic
+completes84 captured CI commands successfully after the registry phrase repair.
+Because that repair happened during the run, this is a diagnostic, not immutable
+exact-head CI certification. New own checks remain the publication requirement.
+No source finding or manuscript count is manufactured from these test results.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -1,11 +1,16 @@
 # Ezekiel 40 49 width and source comparison
 
-POB currently gives a width of **twelve cubits**, but its declared WLC source
+At the research baseline, POB gave a width of **twelve cubits**, but its declared WLC source
 has **עַשְׁתֵּי עֶשְׂרֵה**, eleven. Twelve is a serious Greek reading, not a
 lexical translation of that Hebrew compound. The working recommendation is
 eleven under provisionally retained WLC, with the Greek alternative disclosed.
 This does not establish eleven as the earliest attainable reading, and this
 research makes no canonical change.
+
+The subsequent [reviewed application](ELEVEN_COMPOUND_READER_CORRECTIONS_2026-10-12.md)
+now renders eleven with the Greek twelve note, retaining the exact Hebrew
+source. The comparison and pre-application history below retain their original
+scope; their earlier pending application is no longer the current local status.
 
 ## Selected texts and separate differences
 

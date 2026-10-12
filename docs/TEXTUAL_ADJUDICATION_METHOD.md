@@ -1,6 +1,6 @@
 # POB source-wording adjudication method
 
-Version: 2.0.0 · Revised: 2026-10-11 (published collation, grammatical voice and source provenance)
+Version: 2.0.1 · Revised: 2026-10-12 (numeral fidelity and positioned source annotations)
 
 This is the controlling method for source selection and English impact. The
 [approach review](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md) records the
@@ -94,6 +94,15 @@ claim a second blinded model pass occurred unless its actual output is stored.
   does not cover the passage. No coverage contributes no evidence either way.
 - Preserve spelling, vowels, accents, scribal hands, and corrections in the
   diplomatic layer; normalize only in a separately mapped comparison layer.
+
+An importer's rendering convention is not automatically diplomatic fidelity.
+The [eleven compound comparison](ELEVEN_COMPOUND_READER_CORRECTIONS_2026-10-12.md)
+identified internal paragraph markers that the legacy WLC renderer moves to
+verse ends. Its earlier whole-corpus provenance pass establishes agreement
+with that rendering recipe, not original XML segment positioning. Use the
+preserved XML and typed, positioned annotations for diplomatic analysis; keep
+paragraph symbols out of lexical/consonantal word streams. Do not rewrite
+canonical sources until the consumer and numbering effects are reviewed.
 
 ### 2. Assess each witness in this passage
 
@@ -373,6 +382,14 @@ Assess meaning, ambiguity, unsupported additions, literary effect, readability,
 and justified consistency. Blind candidate identity and vary candidate order.
 Record translation-policy effects explicitly, including where grammatical
 form and referential meaning differ. Unchanged POB is a valid outcome.
+
+For a demonstrable numeral mismatch or misplaced semantic note under an
+unchanged source, an exact factual/application review can establish the local
+correction without a repeated stylistic preference vote. Preserve legitimate
+neighboring numbers and disclose consequential versional alternatives. This
+does not settle historical source priority or approve the whole verse; the
+[eleven compound application](ELEVEN_COMPOUND_READER_CORRECTIONS_2026-10-12.md)
+separates those judgments and also preserves recoverable Git provenance.
 
 Unchanged consonants do not necessarily mean an English-only decision. A new
 vocalization or morphological analysis requires an explicit source-interpretation

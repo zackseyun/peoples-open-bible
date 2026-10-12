@@ -14,6 +14,7 @@ from tools import export_mobile_bible as exporter
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'f38b774ed4fbec0e9a6b740481b5dd1106cad538'
+APPLIED = '782af1664ab2b646719cfb9b5c8ef69f3466e170'
 CONTRACT = 'sources/textual_restoration/comparisons/nahum1_5_2_9_3_18_reader_contract.2026-10-10.v1.json'
 RECEIPT = 'sources/textual_restoration/applications/nahum1_5_2_9_3_18_reader.2026-10-10.v1.json'
 
@@ -110,23 +111,36 @@ class NahumReaderApplicationTests(unittest.TestCase):
                     self.assertEqual(changed, {'rationale', 'alternatives'} if i == 2
                                      else {'rationale'} if i == 3 else set())
 
-    def test_exact_applied_bytes_and_complete_current_export(self):
-        after = exporter.export_book('NAM')
+    def test_exact_published_application_bytes_and_complete_export(self):
+        # This transaction is historical; a later reviewed English application
+        # has its own current-record/export checks and cannot rewrite these pins.
+        published = {}
+        for path in sorted((ROOT / 'translation/ot/nahum').glob('*/*.yaml')):
+            relative = path.relative_to(ROOT).as_posix()
+            key = (int(path.parent.name), int(path.stem))
+            published[key] = yaml.safe_load(subprocess.check_output(
+                ['git', 'show', f'{APPLIED}:{relative}'], cwd=ROOT))
         loader = exporter.load_translation_record
+        def load(code, ch, v):
+            return published[(ch, v)] if code == 'NAM' else loader(code, ch, v)
+        with patch.object(exporter, 'load_translation_record', side_effect=load):
+            after = exporter.export_book('NAM')
         with patch.object(exporter, 'load_translation_record', side_effect=lambda code, ch, v:
                           self.before[(ch, v)] if code == 'NAM' and (ch, v) in self.before
-                          else loader(code, ch, v)):
+                          else load(code, ch, v)):
             before = exporter.export_book('NAM')
         a, b = index(after), index(before)
         self.assertEqual(len(after['chapters']), 3)
         self.assertEqual(len(a), 47)
         self.assertEqual([list(k) for k in a if a[k] != b[k]], [[1, 5], [2, 9], [3, 18]])
+        self.assertEqual(digest(before), self.contract['preflight']['before_export_sha256'])
+        self.assertEqual(digest(after), self.contract['preflight']['candidate_export_sha256'])
         for key, pin in self.pins.items():
-            raw = (ROOT / pin['path']).read_bytes()
+            raw = subprocess.check_output(['git', 'show', f"{APPLIED}:{pin['path']}"], cwd=ROOT)
             self.assertEqual(sha(raw), pin['candidate_yaml_sha256'])
             self.assertEqual(yaml.safe_load(raw), self.candidates[key])
             self.assertEqual(a[key]['footnotes'], self.candidates[key]['translation']['footnotes'])
-            self.assertEqual(audit_footnotes.audit_one(ROOT / pin['path'])['status'], 'ok')
+            self.assertEqual(audit_footnotes.audit_one(ROOT / pin['candidate'])['status'], 'ok')
         self.assertEqual(sum(len(a[k]['footnotes']) for k in self.pins), 8)
 
     def test_historical_export_and_scoped_receipt(self):

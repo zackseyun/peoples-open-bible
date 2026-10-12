@@ -23,7 +23,7 @@ class PseudoClementineTests(unittest.TestCase):
         for text_id in pc.WORKS:
             manifest = json.loads((pc.SOURCE_ROOT / text_id / "manifest.json").read_text())
             counts.append(manifest["expected_units"])
-            self.assertEqual(manifest["translation_policy"]["status"], "not_generated")
+            self.assertEqual(manifest["translation_policy"]["status"], "not_reader_published")
             self.assertEqual(manifest["review"]["philological"], "not_started")
         self.assertEqual(counts, [3, 5, 20, 505])
         gap = manifest["coverage"]

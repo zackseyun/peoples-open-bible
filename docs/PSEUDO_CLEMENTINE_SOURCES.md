@@ -4,7 +4,11 @@
 
 Added at Zack's request on 2026-10-11: **sources only for now, with checked
 translations required**. No English translation was generated, approved, or
-published by this addition. These four records are in the shared historical
+published by that initial addition. On 2026-10-12 Zack authorized continuing
+through historical-library publication and deploying Azure GPT-6.1 Sol for
+the separate source-review pass. Work is now in progress; see
+[publication progress](PSEUDO_CLEMENTINE_PUBLICATION_PROGRESS.md).
+These four records remain in the shared historical
 catalog with `publish: false`. The existing 29 published catalog works are
 unchanged. This is not an addition to the biblical canon.
 
@@ -21,7 +25,8 @@ belong in historical early-Christian literature, with their claims preserved
 rather than harmonized into canonical Scripture.
 
 **The Homilies source is incomplete.** The collection has 20 homilies, but
-this supplied file ends at 19.14. Do not infer completeness from a successful
+this supplied file ends **inside** 19.14, after the unfinished `ὁπότε*`.
+Do not infer completeness from a successful
 XML parse or 505 extracted sections. Acquire and review the missing ending
 from a documented, rights-cleared source before describing the work as complete.
 Do not use AI generation to fill absent Greek or invent an English ending.
@@ -92,7 +97,7 @@ python3 tools/extra_texts/validate_catalog.py --all
 python3 -m unittest discover -s tests -p 'test_pseudo_clementines.py'
 ```
 
-`prompt` prepares an auditable input; it does not call a model or claim a
+The source-tool `prompt` prepares an auditable input; it does not call a model or claim a
 translation exists. `acquire` is a first-acquisition command and refuses to
 overwrite an existing snapshot. All verification is offline after acquisition.
 Structural validation is not a claim that the Greek is free of transcription

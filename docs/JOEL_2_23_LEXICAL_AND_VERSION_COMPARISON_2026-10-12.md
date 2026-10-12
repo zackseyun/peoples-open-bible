@@ -121,3 +121,74 @@ independently certified. Root's checks validated JSON, 34 local documentation
 links, the source PDF hash, unchanged bytes of every Joel canonical file and
 the protected unrelated Genizah file. Diff checks pass. These checks establish
 reproducibility and scope, not the historical truth of a proposed emendation.
+
+## Timing arguments checked on October 12
+
+The bounded follow-up establishes a retained-form argument for an initial
+stage, not a clear defense of POB's “as before.” Three alternatives remain
+distinct: restoration of a former state, an initial stage before the subsequent
+Spirit promise, and a calendar month. They do not merely restyle one meaning.
+
+[Keil's commentary transcription](https://en.wikisource.org/wiki/Biblical_commentary_the_Old_Testament/Volume_VI._Lesser_Prophets/Joel#Verses_21-23)
+retains בראשון and argues for first of all, contrasting אחרי־כן in the Spirit
+promise. His parallels are Genesis 33:2, Leviticus 9:15 and Numbers 10:13,
+which use related but different forms. This supplies an actual non-calendrical
+argument, not an exact parallel meaning formerly. His broader teacher and
+theological interpretation is not automatically adopted with this timing claim.
+The cited Spirit passage is Joel 2:28 in his English numbering and **Joel 3:1
+in POB's Hebrew numbering**; local source words confirm the correspondence.
+
+[Driver's Cambridge author section](https://biblehub.com/commentaries/joel/2-23.htm)
+considers a Nisan reference compatible with latter rain but rhetorically
+unbalanced and redundant. He regards an initial-stage sense as intelligible
+yet requiring בראשונה; his contextually attractive former-state reading also
+requires a different form. This disagrees with Keil's retained-form analysis.
+The reproduction was read, not a verified printed target page. The agent's
+observed Princeton-linked scan download failed with HTTP500 and was not retried.
+
+[Crispin H. T. Fletcher-Louis](https://jpcatholic.edu/NCUpdf/Fletcher-Louis_Jesus_The_Temple_and_the_Dissolution_of_Heaven_and_Earth.pdf),
+printed pages 136–138, instead defends a calendrical reading through restored
+rain, offerings and a proposed New Year context. He favors Tishri, while note
+41 reports Targum Jonathan's Nisan. His proposed ecological and cultic relation
+also explains Greek food as interpretation rather than requiring different
+Hebrew. These are his arguments, not fresh Targum collation, an attested
+bet/kaf exchange or proof that Joel's first month means Tishri. The connection
+between the last timing word and both seasonal rains still needs explanation;
+a cultic hypothesis cannot replace syntax. His own discussion qualifies the
+festival connection, and his opening textual alternatives remain hypotheses.
+
+Root's bounded form search covered 23,264 current OT YAML records. Exact
+unpointed בראשון occurs at Joel and six other loci; allowing defective
+בראשן adds Exodus 12:18. The seven non-Joel loci all have an explicit
+day-of-month setting: Genesis 8:13; Exodus 12:18; Numbers 9:5; Ezekiel 29:17,
+30:20, 45:18 and 45:21. That is strong local usage evidence for month ellipsis,
+but not seven independent manuscripts. The search removes combining marks and
+joins slash-separated word segments; it does not change the diplomatic source.
+Joel's absence of a date formula is the important counter-limit. No exact
+formerly use was found by this query, which does not prove poetic use impossible.
+
+**Decision:** source priority remains HOLD. POB's source-stable “as before”
+rationale has not been established by this consultation; an initial-stage or
+month rendering deserves an explicit comparison, with the former-state
+versional evidence retained. Neither reject month solely because it seems
+redundant nor infer chronology solely from the later promise. Current main
+English is provisional, not newly certified. The next application can correct
+misanchored notes and disclose this distinction without silently emending Hebrew.
+Stop equivalent grammar searches here; reopen for an actual target apparatus,
+a new retained-form grammatical argument or a substantive defect.
+
+The [timing receipt](../sources/textual_restoration/comparisons/joel2_23_timing.2026-10-12.v1.json)
+preserves the new inputs and scope separately from the earlier reviewed hashes.
+The earlier packet was published by PR 147 as
+`1ddeb5138b27b9b896ddbdeac516f1387dc9b7a2`, with both required jobs successful,
+the unrelated Pseudo-Clementine main additions preserved, and normal main push
+verified. This appended follow-up has its own review and delivery gate.
+
+One bounded independent critique passed this new factual comparison and
+reproduced its search, source hashes and numbering map. It did not vote on
+historical priority or certify a timing interpretation. Root also used the
+existing full-book exporter with an in-memory anchor-only draft: teacher note
+a follows the first early-rain phrase, righteousness note b stays there, and
+timing note c follows as before. All other exported book content remained
+unchanged. This preparation keeps the old note bodies and is not a complete
+reviewed candidate, canonical application or deployment check.

@@ -52,6 +52,17 @@ class ReorientationPolicyTests(unittest.TestCase):
                 self.assertEqual(policy.approved_errors(ROOT/item['path'],d,True),[])
                 self.assertTrue(any(n['marker']==marker and n['text'] for n in d['translation']['footnotes']))
 
+    def test_note_labels_work_with_existing_publishers(self):
+        for item in self.items:
+            d=self.current[item['path']];m=d['terminology_revision']['reader_note_marker']
+            self.assertRegex(m,r'^[a-z]$')
+            self.assertEqual(d['translation']['text'].count('['+m+']'),1)
+            # Existing publisher strips ordinary ASCII-letter labels, not r1.
+            self.assertNotIn('['+m+']',re.sub(r'\[[a-z]\]','',d['translation']['text']))
+            if 'marker_compatibility' in d['terminology_revision']:
+                self.assertFalse(d['terminology_revision']['marker_compatibility']['semantic_text_changed'])
+                self.assertEqual(d['revisions'][-1]['from_sha256'],d['revisions'][-2]['to_sha256'])
+
     def test_sources_generation_and_existing_history_preserved(self):
         for item in self.items:
             with self.subTest(path=item['path']):
@@ -61,7 +72,8 @@ class ReorientationPolicyTests(unittest.TestCase):
                 self.assertEqual(old.get('ai_draft'),new.get('ai_draft'))
                 self.assertEqual(old.get('base_translation'),new.get('base_translation'))
                 self.assertEqual(old.get('source_grounding'),new.get('source_grounding'))
-                self.assertEqual(new['revisions'][:-1],old.get('revisions',[]))
+                self.assertEqual(new['revisions'][:len(old.get('revisions',[]))],old.get('revisions',[]))
+                self.assertEqual(new['revisions'][-1]['to_sha256'],new['terminology_revision']['after_text_sha256'])
                 self.assertEqual(new['status'],'draft')
                 self.assertEqual(new['cross_check'],{'status':'needs_review'})
                 self.assertNotIn('revision_pass',new)

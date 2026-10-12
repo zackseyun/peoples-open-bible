@@ -1,6 +1,6 @@
 # POB source-wording adjudication method
 
-Version: 2.0.3 · Revised: 2026-10-12 (reference capabilities and synopsis preservation)
+Version: 2.0.4 · Revised: 2026-10-12 (quotation boundaries and displayed reading branches)
 
 This is the controlling method for source selection and English impact. The
 [approach review](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md) records the
@@ -70,6 +70,15 @@ claim a second blinded model pass occurred unless its actual output is stored.
   The extractor rejects unindexed snapshots and reports annotation capability;
   even a fully annotated index does not establish preserved letters or all
   identifiable witnesses. Build quotation maps from actual lemma boundaries.
+- Where an edition displays parallel references, preserve their primary-row
+  and word-ID joins as navigation metadata, then read the quotation/commentary
+  transitions separately. A reference can occur in commentary, and a wholly
+  supplied quotation can lack a reference link. Neither all links nor all
+  unlinked rows define the quotation inventory. The
+  [complete 1QpHab map](HABAKKUK_PESHER_QUOTATION_MAP_2026-10-12.md)
+  records 46 bounded segments after reading all 206 primary rows; its 37
+  passage labels do not imply 37 preserved verses. Treat embedded repetitions
+  and adapted excerpts as dependent evidence within the same object.
 - Give the book, passage, fragment, language, and edition an unambiguous ID.
 - Preserve upstream IDs separately from proposed object identities. Record
   fragment joins/splits, hand assignments, dates, authority and review status
@@ -163,6 +172,13 @@ transcription before treating an unbracketed excerpt as preserved. The
 [Isaiah 54 check](ISAIAH_54_PESHER_REVIEW_2026-09-05.md) demonstrates this with
 4Q69a. The extractor's optional line context is a navigation safeguard, not
 an automatic preservation assessment.
+
+Digital HTML can display alternative readings with repeated word IDs, deleted
+letters, supralinear insertions and modern editorial additions. Keep those
+branches separate; flattening a cell can create a word that the edition never
+prints as one reading. A primary digital word slot can itself be a gap or an
+editorial reconstruction. Metadata-only navigation does not establish ink,
+and any HTML repairs used for parsing must be bounded and disclosed.
 
 For a whole-book publication screen, declare the exact witness records,
 version, physical rows and boundary exclusions. Compare the current book's

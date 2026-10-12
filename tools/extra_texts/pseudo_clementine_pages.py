@@ -102,7 +102,7 @@ def verify_checked(directory: Path, image: Path | None, tiles: list[Path] | None
     if not str(record.get("model", "")).startswith("gpt-6.1-sol-") or record["review"]["verdict"] != "accept":
         raise ValueError("Missing accepted GPT-6.1 Sol image review")
     matched = False
-    for response_path in directory.glob(review_path.stem + ".response.attempt*.json"):
+    for response_path in directory.glob(review_path.stem + ".response*.json"):
         receipt = json.loads(response_path.read_text())
         if receipt.get("status") != "success" or receipt.get("request_sha256") != record["request_sha256"]:
             continue
@@ -126,7 +126,19 @@ def verify_checked(directory: Path, image: Path | None, tiles: list[Path] | None
     return checked
 
 
-def invoke(body: dict, cache: Path, evidence: Path) -> dict:
+def classify_cli_failure(stderr: str) -> str:
+    """Return only an allowlisted category; never persist raw CLI credentials."""
+    categories = [
+        ("authorization", ("Unauthorized", "Forbidden", "AuthorizationFailed", "401", "403")),
+        ("content_filter", ("content_filter", "ResponsibleAIPolicyViolation")),
+        ("read_timeout", ("ReadTimeout", "Read timed out", "read timeout")),
+        ("connection_error", ("ConnectionError", "Connection aborted", "RemoteDisconnected", "Connection reset")),
+        ("transient_service_error", ("Internal Server Error", "server_error", "Too Many Requests", "429", "503", "502", "504")),
+    ]
+    return next((kind for kind, terms in categories if any(term in stderr for term in terms)), "terminal_cli_error")
+
+
+def _invoke_attempts(body: dict, cache: Path, evidence: Path) -> dict:
     """A completed HTTP error may be retried. A timeout is never restarted here."""
     request_hash = sha(canonical(body))
     request_file = cache / f"{request_hash}.request.json"
@@ -141,7 +153,21 @@ def invoke(body: dict, cache: Path, evidence: Path) -> dict:
             if saved["status"] == "success":
                 return saved["response"]
             if not saved.get("retryable"):
-                raise RuntimeError("Prior terminal request failure requires inspection")
+                # An explicit diagnostic retry can classify an older generic
+                # failure. Keep both old and diagnostic receipts unchanged.
+                recovered = False
+                for recovery in sorted(evidence.parent.glob(evidence.name + ".recovery*.json")):
+                    diagnostic = json.loads(recovery.read_text())
+                    if diagnostic.get("request_sha256") != request_hash:
+                        continue
+                    if diagnostic.get("status") == "success":
+                        return diagnostic["response"]
+                    if diagnostic.get("error_kind") in {"connection_error", "read_timeout", "transient_service_error"}:
+                        recovered = True
+                    else:
+                        raise RuntimeError("Diagnostic failure still requires inspection")
+                if not recovered:
+                    raise RuntimeError("Prior terminal request failure requires inspection")
             continue
         command = ["az", "rest", "--method", "post", "--url",
                    f"{ENDPOINT}/openai/deployments/{body['model']}/chat/completions?api-version=2025-04-01-preview",
@@ -154,9 +180,9 @@ def invoke(body: dict, cache: Path, evidence: Path) -> dict:
                    "finished_at": datetime.now(timezone.utc).isoformat(), "attempt": attempt}
         if result.returncode:
             # Persist only the service failure text, never verbose CLI/debug output.
-            retryable = any(token in result.stderr for token in ["Internal Server Error", "server_error", "Too Many Requests", "429", "503", "502", "504"])
-            receipt.update(status="error", retryable=retryable,
-                           error_kind="transient_service_error" if retryable else "terminal_cli_error")
+            kind = classify_cli_failure(result.stderr)
+            retryable = kind in {"connection_error", "read_timeout", "transient_service_error"}
+            receipt.update(status="error", retryable=retryable, error_kind=kind)
             save(path, receipt)
             if not retryable:
                 raise RuntimeError("Azure request failed; inspect access/service state without exposing credentials")
@@ -167,6 +193,22 @@ def invoke(body: dict, cache: Path, evidence: Path) -> dict:
         save(path, receipt)
         return response
     raise RuntimeError("Three service-error attempts exhausted")
+
+
+def invoke(body: dict, cache: Path, evidence: Path) -> dict:
+    """Retry only an observed terminal truncation, with bounded new evidence.
+
+    Updating body ensures the caller records the actual successful parameters.
+    A cached short response is retained, not overwritten or mistaken for a wait.
+    """
+    response = _invoke_attempts(body, cache, evidence)
+    for limit in (24000, 32000):
+        choices = response.get("choices", [])
+        if len(choices) != 1 or choices[0].get("finish_reason") != "length":
+            return response
+        body["max_completion_tokens"] = limit
+        response = _invoke_attempts(body, cache, evidence.with_name(evidence.name + f".tokens{limit}"))
+    return response  # parse_response still rejects truncation at the hard ceiling.
 
 
 def request_for(image: Path, page: int, lines: list[str] | None, tiles: list[Path] | None = None) -> dict:

@@ -30,6 +30,28 @@ class SelectedGreekTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "source changed"):
             translation.prepare(original["work"], original["references"], "review", old_draft, source_variant="lagarde1865")
 
+    def test_intro_work_inventory_and_undotted_section(self):
+        for work, count in (("pseudo_clementine_contestation", 5), ("pseudo_clementine_clement_to_james", 20)):
+            result = selected.load_selected(work)
+            self.assertEqual([r["reference"] for r in result["passages"]], [str(n) for n in range(1, count+1)])
+        self.assertIsNotNone(selected.SECTION_MARKER.match("11 διὸ"))
+        self.assertIsNone(selected.SECTION_MARKER.search("λόγος 11 διὸ"))
+
+    def test_homilies_preserve_page_continuation_and_numbering(self):
+        lines = [(54, "Α"), (54, "1. λόγος προ-"), (55, "φητῶν [.....]. 2. ἀλήθεια."),
+                 (56, "Β"), (56, "θεὸς. 2. εἰρήνη.")]
+        rows = selected.extract_homilies(lines, expected_homilies=2)
+        self.assertEqual([r["reference"] for r in rows], ["1.1", "1.2", "2.1", "2.2"])
+        self.assertEqual(rows[0]["source_text"], "λόγος προφητῶν [.....].")
+        self.assertEqual(rows[0]["printed_pages"], [12, 13])
+        for malformed in (
+            [(54, "Α"), (54, "λόγος. 3. κείμενον.")],
+            [(54, "Α"), (54, "λόγος."), (55, "Γ"), (55, "κείμενον.")],
+            [(54, "λόγος.")],
+        ):
+            with self.assertRaises(ValueError):
+                selected.extract_homilies(malformed, expected_homilies=2)
+
     def test_boundary_shift_fails_closed(self):
         first, proof1 = selected.load_page(45)
         second, proof2 = selected.load_page(46)

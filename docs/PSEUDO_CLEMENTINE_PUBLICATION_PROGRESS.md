@@ -198,3 +198,29 @@ python3 -m unittest discover -s tests -p 'test_pseudo_clementine*.py'
 An automated review is not human scholarly approval or a stable-edition claim.
 Full publication and source completeness remain unproven until the remaining
 requirements above are evidenced and checked.
+
+## Organized reader and remaining-work checkpoint
+
+- The website staging branch now contains the accepted Peter letter, a source-bound
+  proof verifier, a full work introduction, editorial section titles and numbered
+  display paragraphs. Tests reconstruct the approved English exactly once, with
+  all wording and uncertainty notes preserved. The numbers are explicitly modern
+  navigation aids, not ancient verses. Browser verification is local, not live
+  publication. Website checkpoint: fd96a0c5.
+- The complete selected print source is now assembled for the Contestation (5
+  sections) and Clement's letter (20 sections), including Clement's undotted
+  printed section 11. The page-47 reading is tied to the separately verified
+  alternate scan. Actual Azure English generation and independent Sol 6.1 review
+  batches are running; no acceptance/publication is implied by starting them.
+- The Homilies assembler now preserves homily/section hierarchy, page
+  continuations, printed gaps and exact normalized word coverage. It requires all
+  checked pages, twenty sequential homilies, and the verified final 20.23 ending.
+  It cannot produce a complete source while any required page is unaccepted.
+- An exact-request diagnostic retry of a previously terminal page-56 CLI failure
+  identified a connection error. The transport now records only allowlisted error
+  categories (not raw CLI output), and bounds retries of observed terminal network
+  failures. Authorization and content-filter failures still stop. Original
+  failure and diagnostic receipts remain intact.
+- Scope remains all four works. Other works, complete Homilies evidence, final
+  production build, main integration and authorized live deployment are pending.
+  No goal-completion or public-availability claim is made.

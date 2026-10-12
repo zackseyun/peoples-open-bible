@@ -32,12 +32,31 @@ class PageReviewTests(unittest.TestCase):
         result["corrected_lines"] = [self.lines[0] + "καὶ"]
         pages.validate_review(result, self.lines)
 
+    def test_cli_error_classification_does_not_retry_denials(self):
+        self.assertEqual(pages.classify_cli_failure("ConnectionError: request terminated"), "connection_error")
+        self.assertEqual(pages.classify_cli_failure("403 Forbidden"), "authorization")
+        self.assertEqual(pages.classify_cli_failure("content_filter"), "content_filter")
+        self.assertEqual(pages.classify_cli_failure("unknown error"), "terminal_cli_error")
+
     def test_refuses_truncated_response(self):
         with self.assertRaises(ValueError):
             pages.parse_response({"choices": [{"finish_reason": "length", "message": {"content": "{}"}}]})
 
+    def test_terminal_truncation_gets_bounded_distinct_requests(self):
+        short = {"choices": [{"finish_reason": "length"}]}
+        complete = {"choices": [{"finish_reason": "stop"}]}
+        body = {"max_completion_tokens": 16000}
+        with patch.object(pages, "_invoke_attempts", side_effect=[short, short, complete]) as call:
+            self.assertEqual(pages.invoke(body, Path('/tmp'), Path('review-1.response')), complete)
+            self.assertEqual(call.call_count, 3)
+            self.assertEqual([str(x.args[2]) for x in call.call_args_list], ['review-1.response', 'review-1.response.tokens24000', 'review-1.response.tokens32000'])
+            self.assertEqual(body['max_completion_tokens'], 32000)
+        with patch.object(pages, "_invoke_attempts", return_value={"choices": [{"finish_reason": "content_filter"}]}) as call:
+            pages.invoke({"max_completion_tokens":16000}, Path('/tmp'), Path('filtered'))
+            self.assertEqual(call.call_count, 1)
+
     def test_checked_artifact_binds_text_image_review_and_model(self):
-        with tempfile.TemporaryDirectory() as tmp:
+        with tempfile.TemporaryDirectory() as tmp, patch.object(pages, "SOURCE", Path(tmp)):
             root = Path(tmp)
             image = root / "page.png"
             image.write_bytes(b"test pixels")

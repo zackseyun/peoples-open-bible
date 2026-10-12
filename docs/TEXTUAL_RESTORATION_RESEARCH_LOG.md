@@ -9102,6 +9102,63 @@ Because that repair happened during the run, this is a diagnostic, not immutable
 exact-head CI certification. New own checks remain the publication requirement.
 No source finding or manuscript count is manufactured from these test results.
 
+### 2026-10-12 — Papyrus 967 identity and primary edition follow-up
+
+The preceding turn pushed the reviewed catalogue census as PR164 at
+fc59aca6d5db555f83a986ebf184f98e4602675c and confirmed both own integrity jobs
+live. PR163's corrected-head jobs remain live; neither head is mutated while
+awaiting its own checks. This continuation resolves a real discovery-queue gap,
+not a repeat of the completed Nahum review.
+
+The [Papyrus967 follow-up](PAPYRUS_967_IDENTITY_AND_EDITION_2026-10-12.md)
+reconciles Göttingen record1490/Ra_0967, the legacy967/968 routes and four
+holdings as one Greek codex. One read-only source subtask obtains Cologne's
+complete custodial account and Kenyon1938 plate-preface. Root acquires the
+institutional1937 text PDF, reads its full introduction and visually checks
+the two title pages, complete introductions/preface and printed27–28 target.
+Fourteen deterministic page renders are read; no manuscript pixels or
+ImageGen letters are claimed.
+
+Kenyon1938 corrects Princeton26 to21 leaves and reports five missing leaves
+within Ezekiel19:12–39:29. Root catches a source OCR label7:13 that is actually
+7:15 in the printed introduction and local apparatus. Beatty's printed codex153
+stops in7:11;154 begins within7:14. Published service wording outside supply
+brackets strengthens one Greek attestation, not the missing7:13 comparison or
+14's royal-authority opening. All earlier Daniel source/application contracts
+and canonical bytes remain unchanged, and source priority stays HOLD.
+
+The [receipt](../sources/textual_restoration/discovery/papyrus967_identity_and_edition.2026-10-12.v1.json)
+pins private inputs,14 renders and prior records. The registry adds one object
+while all41 prior mixed rows remain byte-equivalent as records;42 is not a
+physical-manuscript total. Empty structured content does not establish absence.
+Greek forms, chapter order and appended works require their own comparison;
+binding and antiquity confer no canon authority.
+
+Web-fetch timeout/403 does not prevent ordinary public institutional download;
+no credentials or access-control bypass are used. A premature PNG read occurs
+before the same renderer finishes, then succeeds after completion. The
+Princeton item verification challenge is left untouched, and the identical
+previously failed Cologne target image is not retried. Raw PDFs/descriptions
+remain private. The next consequential evidence is the original Cologne target
+transcription/apparatus and Princeton Ezekiel36–39 edition/continuity, not
+another preference vote. Broad census/calibration/English requirements remain open.
+
+The independent bounded critic passes all18 private pins and14 renders, both
+PDF page counts, eight frozen inputs and the single registry addition with41
+unchanged records. Its three added tests pass independently; they are not extra
+ancient evidence or an additional preference vote. Root's73 scoped tests pass
+in5.776s, subsuming the earlier19-test run. After this substantive PASS only
+validation/publication history appends; source, English and canonical changes
+remain absent. No all-known-source or restored-letter claim follows.
+
+PR163's own jobs115015293999/115015269954 succeed at exact
+5a27fc4c7adaac425ea388f70bf478ec2f2ac207. Fresh main and four approved paths
+match the predicted union tree24f4188f60da662766addb90cd8850e5b6d07f03.
+SHA-pinned merge lands at ac829a2e24dd77a744ec6c625e54b3b3a647a18d;
+parents/tree verify. With no other worktree onmain and ancestry checked, local
+main advances under an old-value guard; normal push reports up to date.
+PR164 and the new Papyrus967 packet require their own exact-head checks.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -1,6 +1,6 @@
 # POB source-wording adjudication method
 
-Version: 2.0.0 · Revised: 2026-10-10 (published collation and grammatical voice examples)
+Version: 2.0.0 · Revised: 2026-10-11 (published collation, grammatical voice and source provenance)
 
 This is the controlling method for source selection and English impact. The
 [approach review](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md) records the
@@ -114,6 +114,14 @@ The [Nahum comparison](NAHUM_SOURCE_COMPARISON_2026-10-10.md) separates 4Q82's
 additional he from the supplied following context and the competing days/waters
 analyses. Keep attestation, segmentation and vocalization as separate claims;
 do not turn a real spelling contrast into automatic translation priority.
+
+A full scholarly argument can change an interpretation assessment without
+establishing replacement source letters. The
+[Nahum full-article review](NAHUM_SOURCE_COMPARISON_2026-10-10.md#full-article-review-on-october-11)
+checks the article's figures, supplies, grammar and counter-explanations before
+preferring a less restrictive English earth clause. It retains source priority
+on hold and treats the missing article in הָרִים as a separate rationale issue,
+not as authorization to change English or insert Hebrew letters automatically.
 
 Reference filtering must not erase preservation context. A supply bracket can
 open in another verse or physical line; inspect the complete surrounding
@@ -427,3 +435,62 @@ python3 -m unittest discover -s tests -p 'test_textual_adjudication.py'
 The validator checks the record's integrity, provenance references, and
 disclosure gates. It cannot validate scholarly truth. Disagreements remain in
 the record and can change the working preference as better evidence arrives.
+
+## Source provenance checkpoint
+
+At repository baseline `0cceffea6f48ac694679aac01faa7b67b44f3263`, the
+October 10 check covered all 23,264 current OT YAML records in 39 book folders.
+Outside Psalms, 20,682 of 20,686 source texts exactly matched the local WLC XML
+rendered by `tools/wlc.py`. Ecclesiastes 1:2 differed only in Unicode combining
+mark order: both NFC and NFD comparison were equal, with no different Hebrew
+letters or vowels. Isaiah 9:2 passed the existing pinned reading-form selection
+resolver. The remaining two records, 1 Samuel 17:4 and Isaiah 53:11, explicitly
+use `POB-critical`, not an unchanged WLC edition label. This check did not
+readjudicate their historical source choices.
+
+The existing Psalm mapping test passed for all 2,578 Psalm records, including
+the verified Psalm 73:10 selection, Psalm 145:13 critical overlay, and the
+combined Psalm 60 heading. It maps those records to 2,527 WLC verse contexts;
+52 contexts are shared by more than one POB record. Comparing chapter and verse
+labels without that map produces apparent wording differences and missing
+verse-zero headings. Those are not additional ancient variants or independent
+witnesses. The test also checks the source XML hash and resolves repeated text
+using the recorded neighboring contexts.
+
+The non-Psalm scan parsed each XML book once, assembled direct word children
+with `word_text` and the existing punctuation rule, and compared each YAML
+source block. Registered selections used `resolve_selected_ot_source` rather
+than accepting a difference silently. The Psalm verification command was
+`.venv/bin/python -m unittest tests.test_psalms_source_context_map`
+(one test passed in 2.054 seconds). No unexplained Hebrew wording change remained;
+no source, English, or canon change was made by this checkpoint. Preserved
+upstream bytes were not normalized or rewritten.
+
+One independent, read-only reviewer reproduced the non-Psalm counts and four
+exceptions, verified the registered selection, and passed the existing Psalm
+mapping test in 2.031 seconds. Its pass covers these provenance facts and claim
+limits, not historical source selection or publication approval. The unrelated
+untracked Genizah follow-up retained its original bytes.
+
+Source fidelity establishes that a record represents its declared base or
+explicit selection, not that the base is the earliest attainable wording.
+This is neither an all-manuscript collation nor new decipherment. Repeat this
+whole-corpus check when source, selection, import or numbering inputs change,
+not on every continuation. Further textual work should address a consequential
+unresolved reading with evidence capable of distinguishing its alternatives.
+
+Initial staging and an attempted commit both exited 128 because Git could not
+write its index with the volume out of space. No user files were deleted. A
+Git API alternative created a documentation blob and subtree, but full-root
+creation returned HTTP 422/time-out; the expected root was absent on readback.
+No documentation commit or branch was published by that alternative. Jonah
+PR141 subsequently passed both integrity jobs and merged as
+`a95a0a5546f9f1d0b2ca0f11bca2789323d212b5`, with remote tree and parents
+verified; normal local fetch still failed at that time. On October 11, space
+was available and normal fetch succeeded, reaching main
+`e2778b4ae4da5794edf7c08d9d4ba3ad9b2e4efb`. This preserved checkpoint and
+the Nahum full-article follow-up can now use normal Git delivery. After an
+ancestry check and confirming that no worktree had main checked out, local
+main was advanced to that verified remote commit; a normal main push returned
+“Everything up-to-date.” The audit's
+historical corpus baseline remains `0cceffea`, not a fresh all-source census.

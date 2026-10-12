@@ -8984,6 +8984,61 @@ separates applied verification from unresolved source priority and Git delivery.
 No generated letters, Hebrew replacement, main-English preference vote,
 canon change or About publication occurs. The full goal remains unfinished.
 
+### 2026-10-12 — Original Greek edition upgrades the sword comparison
+
+The preceding Nahum reread confirmed an existing documented decision but added
+no new source evidence; it is classified as no progress toward the broad goal.
+This continuation takes the next available evidence step. The
+[Greek-edition follow-up](HABAKKUK_1_17_GREEK_EDITION_FOLLOWUP_2026-10-12.md)
+reads the public DJD VIII paired transcription pages52–53 alongside conventions
+on27 and comparative context151–153. Sword in XVII.18 is represented outside
+supply brackets; the full verb is partly supplied and exact doubtful-letter
+qualifications remain unresolved. B suppresses C's uncertainty dots; underlining
+also applies to supplied differences. The comparison table's Hebrew sword is
+a reconstructed Vorlage, not another direct Hebrew manuscript. The scan's
+actual imprint/corrected-reprint status and target plate remain unverified.
+
+This upgrades a secondary scholarly report to directly inspected published
+Greek attestation, not fresh decipherment or settled source priority. The Greek
+opening includes Εἰ, unlike the pesher's written opening; complete-clause identity
+and independent exemplars do not follow. Chronology and the usual sword/verb
+pairing favor serious scrutiny, while fishing context and both transmission
+directions keep priority on HOLD. No canonical source, English or note changes.
+The [new receipt](../sources/textual_restoration/comparisons/habakkuk1_17_greek_edition.2026-10-12.v1.json)
+pins seven private page assets and all56 unchanged current records, preserving
+the frozen prior source/application inputs. No ImageGen letters supply evidence.
+
+PR162's two own integrity jobs114980816343/114978270599 complete successfully
+on exact89a67003f5fc0b86c99ecc7458e5fbaa00ef1dbc. Fresh remote/local comparison
+confirms nine application paths and the predicted union treecad06f1796ca7d8bd3c5c9b0bc174594c7014236.
+The SHA-pinned merge succeeds at e9a50f6440b44928df1c67fb68830f01be0c7ace;
+fetched parents and tree match. With no worktree onmain and ancestry verified,
+localmain advances under an old-value guard and a normal push confirms it is
+up to date. This delivers the earlier reader disclosure, not the new source
+supplement or a deployed reader. The broad census, calibrated restoration and
+corpus-wide English work remain open.
+
+Twenty-six scoped reader and reference-annotation tests pass in7.710s after
+correcting an initially mistyped nonexistent module; that failed command's
+22 passing tests are not counted again. Byte-signature checking rejects an
+initial PNG assumption and identifies all seven assets as JPEGs; receipt format
+and dimensions are corrected, with no image transformation. This verification
+does not prove historical priority. Independent packet review follows.
+
+The existing 8Ḥev registry entry gains the bounded edition-access record and
+updated next action, with its identity/relationship unchanged and complete
+survival mapping still unmapped. All41 mixed IDs remain, with no additional
+witness vote. Only that entry's coverage description, access list and next
+action change. The schema test passes separately (one test,0.008s).
+
+One bounded independent review passes the final substantive packet, all seven
+complete page images, eight frozen-input pins and56 current/baseline records.
+Its registry module passes54 tests in5.795s; the root schema selector overlaps
+that module and is not an additional distinct case. No source-preference vote
+or agreement loop occurs. Sword existence no longer needs reacquisition;
+transmission/dependence, not unresolved letter dots alone, keeps priority held.
+Only validation/publication metadata appends after the substantive review.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

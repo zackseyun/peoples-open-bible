@@ -83,10 +83,11 @@ def validate_review(review: dict, lines: list[str]) -> None:
             raise ValueError("Revision did not change transcription")
 
 
-def verify_checked(directory: Path, image: Path, tiles: list[Path] | None = None, artifact: str = "checked.json") -> dict:
+def verify_checked(directory: Path, image: Path | None, tiles: list[Path] | None = None, artifact: str = "checked.json") -> dict:
+    """Verify stored receipts; supplying pixels additionally verifies image bytes."""
     checked = json.loads((directory / artifact).read_text())
     valid_lines(checked["body_lines"])
-    if checked["body_lines_sha256"] != sha(canonical(checked["body_lines"])) or checked["image_sha256"] != sha(image.read_bytes()):
+    if checked["body_lines_sha256"] != sha(canonical(checked["body_lines"])) or (image is not None and checked["image_sha256"] != sha(image.read_bytes())):
         raise ValueError("Checked text or source image changed")
     review_path = directory / checked["review_record"]
     if review_path.parent != directory or not review_path.name.startswith("review-"):
@@ -96,7 +97,7 @@ def verify_checked(directory: Path, image: Path, tiles: list[Path] | None = None
         raise ValueError("Review evidence changed")
     if record["input_lines"] != checked["body_lines"] or record["image_sha256"] != checked["image_sha256"] or record["pdf_page"] != checked["pdf_page"]:
         raise ValueError("Review is not bound to this text/image")
-    if record.get("zoom_sha256") != ([sha(p.read_bytes()) for p in tiles] if tiles else None):
+    if image is not None and record.get("zoom_sha256") != ([sha(p.read_bytes()) for p in tiles] if tiles else None):
         raise ValueError("Zoom evidence changed or was not supplied")
     if not str(record.get("model", "")).startswith("gpt-6.1-sol-") or record["review"]["verdict"] != "accept":
         raise ValueError("Missing accepted GPT-6.1 Sol image review")

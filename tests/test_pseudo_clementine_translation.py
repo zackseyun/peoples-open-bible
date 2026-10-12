@@ -67,6 +67,17 @@ class TranslationWorkflowTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "separate source evidence"):
             pipeline.validate_response(request, self.response(review))
 
+    def test_citation_fix_is_disclosed_and_cannot_change_english(self):
+        output = copy.deepcopy(self.output)
+        output["passages"][0]["lexical_decisions"][0]["source_quote"] = "Πετρος"
+        fix = [{"reference": "1", "index": 0, "field": "source_quote", "before": "Πετρος", "after": "Πέτρος", "reason": "Use exact supplied source spelling"}]
+        record = pipeline.validate_response(self.request, self.response(output), fix)
+        self.assertEqual(record["output"]["passages"][0]["text"], output["passages"][0]["text"])
+        self.assertNotEqual(record["raw_model_output_hash"], record["output_hash"])
+        fix[0]["field"] = "text"
+        with self.assertRaisesRegex(ValueError, "Only documented"):
+            pipeline.validate_response(self.request, self.response(output), fix)
+
 
 if __name__ == "__main__":
     unittest.main()

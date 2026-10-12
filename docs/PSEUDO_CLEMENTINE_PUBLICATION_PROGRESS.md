@@ -117,6 +117,26 @@ all evidence and visual controls pass. A separate deterministic Tesseract
 Ancient Greek probe was also tested as a diagnostic; it is not an approved
 source or an automatic replacement for image review.
 
+The blind pilot completed pp.45–46, passed the stored-response and independent
+visual-control checks, and then received focused crop adjudications for two
+remaining glyph readings in Peter's letter: `ἐνέγκωσιν` and `γίνηται`.
+Corrections are separately recorded, not silently written over either model's
+response. A complete three-section selected Greek source is now assembled at
+`sources/pseudo_clementines/lagarde1865/selected/pseudo_clementine_peter_to_james.json`.
+The assembler preserves the closing farewell, excludes the following Contestation,
+and documents dehyphenation, whitespace and pagination-bar normalization.
+
+Fresh English from that selected source is in the `lagarde-v2` workflow files.
+Its separate Sol 6.1 review remains a release requirement. The visibly printed
+repetition `ἐφοδιάζειν ἐφοδιάζωσιν` is retained and explicitly distinguished
+from an OCR error; its English interpretation/disclosure still needs review.
+Earlier candidates remain historical evidence and must not be exported.
+
+The next source batch covers PDF pp.47–54 and 225–241 using the blind protocol,
+two workers, and bounded revision attempts. Page-level `needs_manual_source_read`
+or `review_limit_reached` outcomes require actual follow-up rather than approval.
+The entire edition and all four English works are still incomplete.
+
 ## Actual historical-library integration target
 
 Fresh GitHub `cartha.website` main inspected at

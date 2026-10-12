@@ -58,6 +58,11 @@ missing letters cannot decide the expressions. Any later reader application
 must freeze complete candidates, archive earlier approvals and verify the
 export separately from source selection.
 
+The subsequent [lexical and version comparison](JOEL_2_23_LEXICAL_AND_VERSION_COMPARISON_2026-10-12.md)
+checks the Latin teacher, Syriac food, actual BDB entries and reception argument.
+It distinguishes a contextual timing interpretation from an explicit emendation;
+the source and main English remain unchanged.
+
 ## Provenance and limits
 
 The [acquisition record](../sources/textual_restoration/discovery/joel2_23_source_survival.2026-10-11.v1.json)

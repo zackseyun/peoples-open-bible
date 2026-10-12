@@ -1,5 +1,12 @@
 # OT and NT source coverage: audit and comparison plan
 
+October 12 Habakkuk follow-up: the [1:5 comparison](HABAKKUK_1_5_SOURCE_COMPARISON_2026-10-12.md)
+distinguishes Mur88's preserved nations noun from the entirely supplied
+traitors address in 1QpHab, with separate Greek wording and Acts reception
+controls. Source priority remains held; no canonical change follows here.
+The registry now contains 41 distinct mixed IDs, not 41 independent manuscripts.
+The dated 40-record reconciliation below remains its historical snapshot.
+
 October10 Jonah follow-up: the [published Hebrew witness screen](JONAH_PUBLISHED_WITNESS_SCREEN_2026-10-10.md)
 compares the four mapped records' Jonah portions with all48 current POB source
 and main-English records. Three published differences merit adjudication;

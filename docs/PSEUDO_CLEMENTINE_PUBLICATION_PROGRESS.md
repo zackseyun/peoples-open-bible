@@ -76,6 +76,72 @@ repository already documents its existing identity approval in
    and verify all four works in the live historical library. Inspect actual
    rendered reader text, source disclosures, license labels and ending coverage.
 
+## Page-image preparation and pilot findings
+
+The 1865 edition contains all four requested works on PDF pages 45–241
+(printed pp.3–199). The first three documents are followed by the Homilies;
+Homily 19 ends at section 25 and Homily 20 at section 23. The final counts
+still require extraction from the checked transcription, not inference alone.
+
+An independent image-derived source is being prepared under
+`sources/pseudo_clementines/lagarde1865/`. This keeps the original OGL XML and
+its license intact rather than silently correcting or relicensing it. New
+Greek transcription does not assert copyright in the ancient wording; original
+notes follow the repository license. Scan access/redistribution rights remain
+separate, and image pixels are not committed.
+
+The full-page pilot exposed an important failure: GPT-6.1 Sol accepted PDF
+page 45 even though its text retained `παρᾷ` where zoomed print shows `ναρκᾷ`.
+The draft/review also misread other words on pp.45–46. This acceptance is
+**not release evidence**. The exact pilot output is retained, and
+`visual_controls.json` plus `pilot-evaluation.json` record the contradiction.
+
+The next evidence series, `pages-zoom`, supplies the full page plus six
+overlapping 300dpi PDF-rendered views. Every correction receives a fresh
+Sol 6.1 comparison. Acceptance must also satisfy independent visual controls,
+source-image hashes, the actual saved model response, and complete line coverage.
+Do not scale the entire edition or publish a candidate merely because a model
+returns `accept`. Genuinely unreadable ink and print lacunae are distinct.
+
+That zoom pilot also missed a substantive word: `ὁμόφρονοι` was retained where
+the print reads `ὁμό|εθνοι`. A separate **blind, focused** Sol 6.1 crop reading
+correctly returned the latter. False `checked.json` claims for page 45 were
+quarantined as `rejected-model-acceptance.json`; no underlying response was erased.
+
+The current pilot, `pages-blind`, therefore adds an independent Sol 6.1 image
+transcription made **without seeing the proposed text**, before adjudicating
+differences and doing another image review. Crops are now sized from each PDF
+page's actual dimensions: the scanned text pages are 404×635 points, unlike
+the first PDF page's letter-size canvas. New acceptance is written only after
+all evidence and visual controls pass. A separate deterministic Tesseract
+Ancient Greek probe was also tested as a diagnostic; it is not an approved
+source or an automatic replacement for image review.
+
+## Actual historical-library integration target
+
+Fresh GitHub `cartha.website` main inspected at
+`558ba3dc22ec4ba851846855ff4ae3f53e5acc13` contains a separate historical archive,
+not just the Bible reader's extra-canonical list:
+
+- `public/historical-library/catalog.json` and `texts/*.txt` drive it.
+- `src/app/(main)/peoples-open-bible/historical-library/HistoricalArchive.jsx`
+  verifies the fetched text and displays source/rights information.
+- `archiveVisibility.mjs` currently defaults to three LDS works. The four
+  requested Christian historical works must not remain accidentally hidden.
+- `EditionCard` currently says **“No AI rewriting or translation.”** That must
+  become origin-aware; it would be false for these generated translations.
+- `archiveStructure.mjs` needs correct Homily/section navigation rather than
+  invented verse numbers or undifferentiated pagination.
+- Validate with the actual archive tests and live rendered reader, including
+  first and final units, no omissions/duplication, source/review disclosures,
+  exact download hashes and noncanonical labeling. Keep native/hosted parity.
+
+The old shared-drive checkout has a broken `refs/stash` and could not fetch;
+do not repair/delete unrelated state. `cartha.website-ci` fetched the matching
+current main successfully and is the verified repository to derive an isolated
+website worktree from when implementation is ready. No website files were
+changed during this discovery.
+
 ## Workflow tooling
 
 `tools/extra_texts/pseudo_clementine_translation.py` prepares requests and checks

@@ -135,3 +135,16 @@ run passes 54 tests in 5.795 seconds; the root's schema selector overlaps that
 run and is not another distinct case. The review confirms that priority is
 unresolved because of transmission/dependence, not an absent sword reading.
 It does not certify earliest wording or broad corpus completion.
+
+## Publication guard repair
+
+Both first exact-head publication jobs failed in the reader-test step, not by
+timeout. A focused local reproduction identified the existing registry test's
+required Nahum no-reacquisition phrase, which the new next-action wording had
+omitted. Restoring that phrase keeps the intended stop rule alongside the new
+Habakkuk steps without weakening the test. All six edition-registry reconciliation
+tests pass in 0.141 seconds after the repair. Unavailable remote logs prevent
+claiming this was the only remote failure; new exact-head publication checks
+are still required. No source finding, canonical text or witness identity changes.
+The original reviewed registry-result hash remains a historical pin; the
+receipt separately records the repaired result.

@@ -80,7 +80,14 @@ def entry_by_id(text_id: str) -> dict[str, Any]:
 
 
 def published_entries() -> list[dict[str, Any]]:
-    return [entry for entry in load_entries() if entry.get("publish") is True]
+    entries = load_entries()
+    for entry in entries:
+        if entry.get("publish") is True and entry["source"]["strategy"].endswith("_source_only"):
+            raise CatalogError(
+                f"{entry['id']}: source-only registration cannot be published; "
+                "generate and source-check translations and implement their reviewed export first"
+            )
+    return [entry for entry in entries if entry.get("publish") is True]
 
 
 def flat_export_entries() -> list[dict[str, Any]]:

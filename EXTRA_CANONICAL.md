@@ -22,6 +22,19 @@ Apostolic Tradition → Apostolic Church Order → Apostolic Constitutions**.
 Their sources, cautions, and direct-review plan are recorded in
 [`docs/church_orders_source_plan.md`](docs/church_orders_source_plan.md).
 
+## Pseudo-Clementine source-only addition (2026-10-11)
+
+The shared catalog additionally registers four **unpublished Greek-source
+works**: the Letter of Peter to James, Contestation, Letter of Clement to James,
+and Homilies. This brings the registry to 33 works while retaining 29 published
+catalog entries. These are historical literature, not additional canonical
+Scripture. English must be freshly generated from Greek and separately checked
+against the source before reader publication. The imported sources retain
+**CC BY-SA 4.0**, an exception to the general CC BY output goal above; output
+rights must be resolved before translation publication. The supplied Homilies
+stop at 19.14 and must not be presented as complete. See the
+[source inventory and mandatory checks](docs/PSEUDO_CLEMENTINE_SOURCES.md).
+
 ## Why we include these
 
 The People's Open Bible's mission is transparent translation of the

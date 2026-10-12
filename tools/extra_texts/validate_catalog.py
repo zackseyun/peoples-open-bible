@@ -25,6 +25,7 @@ from catalog import (  # noqa: E402
     load_manifest,
     manifest_path,
 )
+from pseudo_clementines import STRATEGY, WORKS, validate_source  # noqa: E402
 
 CATALOG_SCHEMA = REPO_ROOT / "schema" / "early_christian_texts_catalog.schema.json"
 SECTION_SCHEMA = REPO_ROOT / "schema" / "extra_canonical_section.schema.json"
@@ -110,8 +111,8 @@ def validate_catalog(catalog_path: pathlib.Path = CATALOG_PATH) -> list[str]:
     except Exception as exc:
         return errors + [str(exc)]
 
-    if len(entries) != 29:
-        errors.append(f"catalog must contain 29 works; found {len(entries)}")
+    if not entries:
+        errors.append("catalog must not be empty")
     for entry in entries:
         if entry.get("summary_corpus") not in SUMMARY_CORPORA:
             errors.append(f"{entry['id']}: unsupported summary_corpus")
@@ -122,6 +123,12 @@ def validate_catalog(catalog_path: pathlib.Path = CATALOG_PATH) -> list[str]:
         )
         if entry.get("source_manifest") != expected_manifest:
             errors.append(f"{entry['id']}: source_manifest must be {expected_manifest}")
+        if entry["id"] in WORKS:
+            if entry.get("publish") is not False or entry["source"]["strategy"] != STRATEGY:
+                errors.append(f"{entry['id']}: source-only work requires generated, source-checked translations and a reviewed export implementation before publication")
+            errors.extend(validate_source(entry["id"]))
+        elif entry["source"]["strategy"] == STRATEGY:
+            errors.append(f"{entry['id']}: unregistered Greek source-only work")
 
     section_validator = _validator(SECTION_SCHEMA)
     for entry in entries:
@@ -145,7 +152,7 @@ def main() -> int:
         for error in errors:
             print(f"ERROR: {error}", file=sys.stderr)
         return 1
-    print("Validated 29 catalog entries and all published catalog artifacts.")
+    print(f"Validated {len(load_entries(args.catalog))} catalog entries and all published catalog artifacts.")
     return 0
 
 

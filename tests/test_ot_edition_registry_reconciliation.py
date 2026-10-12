@@ -82,6 +82,22 @@ class EditionRegistryReconciliationTests(unittest.TestCase):
         self.assertEqual(self.entries['rahlfs-hanhart-2006-publisher']['languages'], ['Greek'])
         self.assertEqual(self.entries['weber-gryson-vulgate-2007']['languages'], ['Latin'])
 
+    def test_nahum_complete_viewer_does_not_erase_partial_access_history(self):
+        row = self.entries['8hev-greek-minor-prophets']
+        routes = [a for a in row['access'] if 'Riestra' in a['provider']]
+        current = next(a for a in routes if 'complete publisher HTML' in a['provider'])
+        historical = next(a for a in routes if 'historical author extraction' in a['provider'])
+        self.assertEqual(current['availability'], 'open')
+        self.assertEqual(current['machine_access'], 'web-viewer')
+        self.assertEqual(historical['availability'], 'partial')
+        self.assertIn('63 notes', current['rights_note'])
+        self.assertIn('third-party image rights', current['rights_note'])
+        self.assertIn('October 10', historical['rights_note'])
+        self.assertEqual(row['coverage_status'], 'unmapped')
+        self.assertEqual(row['identification_review']['status'],
+                         'published-proposal-not-independent-physical-verification')
+        self.assertIn('not reacquire the already-read article', row['next_action'])
+
 
 if __name__ == '__main__':
     unittest.main()

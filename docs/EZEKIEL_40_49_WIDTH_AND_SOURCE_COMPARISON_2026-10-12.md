@@ -105,3 +105,30 @@ QDR query. It approves this research account, not a canonical application or
 historical source selection. Root's subsequent direct lexical reread confirmed
 the reported compound sense and digital citation defect; no extra manuscript
 or preference vote is counted.
+
+## Critical edition access on October 12
+
+The [BHQ publisher table](https://www.die-bibel.de/en/home/scholarly-editions/vulgate/scholarly-bible-editions/biblia-hebraica-quinta-bhq)
+still lists Ezekiel in preparation with a 2026 label, under Johan Lust,
+Siegfried Kreuzer and Matthieu Richelle. This is not an available or consulted
+target apparatus. The [Göttingen project catalogue](https://septuaginta.uni-goettingen.de/publications/septuaginta/)
+identifies Ezechiel XVI/1, fourth edition, 2015, Joseph Ziegler with Detlef
+Fraenkel's supplement. That is the exact Greek critical edition to seek;
+Rahlfs Hanhart selected wording does not substitute for its apparatus.
+
+The bounded acquisition agent read the [publisher record](https://www.degruyterbrill.com/document/isbn/9783666534355/html)
+in the browser, including eBook ISBN 9783666534355. Its authorized eBook link
+stopped at security verification; no bypass or target reading occurred. The
+[SBL download description](https://www.sbl-site.org/resources/digital-texts/biblica-hebraica-stuttgartensia/)
+explicitly excludes the critical apparatus from its BHS PDFs. That route
+cannot supply the missing evidence; its direct PDF fetch also failed, and no
+PDF target page was read.
+
+Four targeted search batches acquired no actual 40:49 apparatus entry. The
+next discriminating input is lawful access to the 2015 Göttingen target page,
+both apparatus entries, any relevant supplement entry and the introduction's
+sigla and coverage conventions; the printed BHS target is complementary.
+Edition metadata supplies neither manuscript support nor Hebrew retroversion.
+Root verified the primary BHQ and Göttingen catalogue rows; its web-fetch routes
+for SBL and the eBook record failed. Source priority stays held, with no further
+canonical or English change from this access follow-up.

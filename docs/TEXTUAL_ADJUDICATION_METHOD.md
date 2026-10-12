@@ -1,6 +1,6 @@
 # POB source-wording adjudication method
 
-Version: 2.0.1 · Revised: 2026-10-12 (numeral fidelity and positioned source annotations)
+Version: 2.0.2 · Revised: 2026-10-12 (ordered edition layers and accurate access queues)
 
 This is the controlling method for source selection and English impact. The
 [approach review](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md) records the
@@ -103,6 +103,14 @@ with that rendering recipe, not original XML segment positioning. Use the
 preserved XML and typed, positioned annotations for diplomatic analysis; keep
 paragraph symbols out of lexical/consonantal word streams. Do not rewrite
 canonical sources until the consumer and numbering effects are reviewed.
+
+The opt-in [ordered WLC source view](WLC_ORDERED_SOURCE_LAYERS_2026-10-12.md)
+now preserves direct word/segment order, written wording, positioned notes and
+separate qere groups for all vendored XML books. Its source IDs and output
+digests describe that digital edition, not manuscript pixels or an earliest
+text. Compare the written layer rather than treating paragraph symbols as
+lexical letters. Research export and canonical source-field migration remain
+separate actions.
 
 ### 2. Assess each witness in this passage
 

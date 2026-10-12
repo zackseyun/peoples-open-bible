@@ -8937,6 +8937,31 @@ failure separate from current delivery state. Nine files are prepared for
 commit, with the unrelated Genizah file excluded. Delivery still requires the
 new package's own exact-head checks, not those of PR112.
 
+### 2026-10-12 — Habakkuk 1 17 net sword and Greek dependence
+
+The [source comparison](HABAKKUK_1_17_SOURCE_COMPARISON_2026-10-12.md)
+verifies an unqualified published Hebrew sword reading in 1QpHab VI.8–9,
+alongside opening and conjunction differences. Earlier nets survive in the
+same witness; Mur88 supplies no decisive 1:17 noun. Selected Greek and Latin
+use nets but differ in action from POB's emptying expression. Newly consulted
+Hartog2018 confirms a substantive report of Greek sword in 8ḤevXIIgr and
+presents competing dependence and independent-interpretation explanations.
+The original Greek edition and plate remain unread; reported agreement is
+not converted into verified letter preservation or independent Hebrew votes.
+
+Source priority remains HOLD after weighing sword's attestation and usual
+verbal pairing against net's context and both transmission directions. A
+textual disclosure and repair of the current net-note anchor are recommended
+as a separate reviewed application. No Hebrew, English, note, canon or About
+change occurs here. All 56 Habakkuk records remain identical to baseline
+7f4381b74becaae410273b245abab71aba009e9d. The
+[receipt](../sources/textual_restoration/comparisons/habakkuk1_17_source.2026-10-12.v1.json)
+preserves input hashes, actual scopes, rights and unconsulted gates. One bounded
+independent critique passes the research; 24 existing application/navigation
+tests pass. No model-agreement loop or generated letters add evidence.
+The broader OT census, image calibration and corpus-wide English assessment
+remain unfinished. Repository publication is a separate milestone.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -15,6 +15,7 @@ from tools import export_mobile_bible as exporter
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = '324d1a56295e84cc5976be0501702adcbd16a13c'
+APPLIED_COMMIT = '7f4381b74becaae410273b245abab71aba009e9d'
 CONTRACT = 'sources/textual_restoration/comparisons/habakkuk2_reader_contract.2026-10-12.v1.json'
 CONTRACT_SHA = '1fe49fe05f72f2fc8cc54e07b271ad515e53f1239c23a875e411a3bffb6669c3'
 RECEIPT = 'sources/textual_restoration/applications/habakkuk2_reader.2026-10-12.v1.json'
@@ -64,6 +65,18 @@ class Habakkuk2ReaderDisclosureTests(unittest.TestCase):
             location = Path(path)
             cls.historical[(int(location.parent.name), int(location.stem))] = yaml.safe_load(raw)
         cls.schema = json.loads((ROOT / 'schema/verse.schema.json').read_text())
+        # The whole-book receipt belongs to its actual application transaction.
+        # Later scoped changes must not rewrite its frozen evidence or digest.
+        cls.applied = {}
+        for path in cls.contract['book_baseline_pins']:
+            raw = subprocess.check_output(['git', 'show', f'{APPLIED_COMMIT}:{path}'], cwd=ROOT)
+            location = Path(path)
+            key = (int(location.parent.name), int(location.stem))
+            if key in TARGETS:
+                assert raw == cls.candidate_raw[key], path
+            else:
+                assert sha(raw) == cls.contract['book_baseline_pins'][path], path
+            cls.applied[key] = yaml.safe_load(raw)
 
     def test_frozen_inputs_and_exact_candidate_digests(self):
         self.assertEqual(sha(self.contract_raw), CONTRACT_SHA)
@@ -215,7 +228,7 @@ class Habakkuk2ReaderDisclosureTests(unittest.TestCase):
             self.assertEqual(len(a[key]['footnotes']), preflight['footnote_counts'][f'{key[0]}.{key[1]}'])
             self.assertNotIn('review_history', a[key])
 
-    def test_exact_canonical_current_complete_export_and_application_receipt(self):
+    def test_exact_current_targets_historical_complete_export_and_application_receipt(self):
         expected_hashes = {number: target['candidate_yaml_sha256']
                            for number, target in self.contract['targets'].items()}
         paths = {target['canonical_target'] for target in self.contract['targets'].values()}
@@ -225,12 +238,18 @@ class Habakkuk2ReaderDisclosureTests(unittest.TestCase):
             self.assertEqual(audit_footnotes.audit_one(ROOT / target['canonical_target'])['status'], 'ok')
         for path, pin in self.contract['book_baseline_pins'].items():
             if path not in paths:
-                self.assertEqual(sha((ROOT / path).read_bytes()), pin, path)
-        after = exporter.export_book('HAB')
+                applied_raw = subprocess.check_output(['git', 'show', f'{APPLIED_COMMIT}:{path}'], cwd=ROOT)
+                self.assertEqual(sha(applied_raw), pin, path)
+        with patch.object(exporter, 'load_translation_record',
+                          side_effect=lambda code, ch, v: self.applied[(ch, v)]):
+            after = exporter.export_book('HAB')
         self.assertEqual(digest(after), self.contract['preflight']['candidate_export_sha256'])
         self.assertEqual(len(index(after)), 56)
         for key in TARGETS:
             self.assertEqual(index(after)[key]['footnotes'], self.candidates[key]['translation']['footnotes'])
+        current = index(exporter.export_book('HAB'))
+        for key in TARGETS:
+            self.assertEqual(current[key], index(after)[key])
         receipt = json.loads((ROOT / RECEIPT).read_text())
         self.assertEqual(receipt['contract'], CONTRACT)
         self.assertEqual(receipt['contract_sha256'], CONTRACT_SHA)

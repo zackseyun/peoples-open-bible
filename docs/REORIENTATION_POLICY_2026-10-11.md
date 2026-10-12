@@ -44,12 +44,13 @@ entry. This is not a runtime global replacement.
 | Context | Treatment | Reason |
 |---|---|---|
 | Hebrews 12:17 | change of mind | Does not decide who changes or whether the issue is reversal of the blessing; existing alternatives remain. |
-| Job 42:6; Jeremiah 8:6; 31:19 | regret | Preserve Hebrew nacham rather than erase contrition or confuse it with shuv. Job's alternatives remain. |
+| Job 42:6; Jeremiah 8:6 | regret | Preserve Hebrew nacham rather than erase contrition or confuse it with shuv. Job's alternatives remain. |
 | Ezekiel 18:30 | turn back | Preserve the Hebrew turning expression. |
 | Psalms of Solomon 9:15 | regret | The recorded Greek is metameleia, not metanoia; no automatic Godward expansion. |
 | Psalms of Solomon 16:11; Sirach 18:21 | turning back | The recorded Greek has epistrophe. |
 | Wisdom 5:3 | reconsidering | A judgment-scene recognition is not expanded into an assertion of saving conversion. |
-| Luke 17:3-4 | reorient himself / I am reorienting myself | Retains the interpersonal setting without inserting an explicit God object. |
+| Jeremiah 31:19 | after I turned away, I was sorry for what I had done | Contextual sorrow over wrongdoing; turning back remains a footnote alternative. |
+| Luke 17:3-4 | reorient himself / I am changing my ways | Natural first-person dialogue in v. 4; no explicit God object or added requirement to prove completed reform. |
 | 1 Clement 54:4 | unregretted | The negative adjective means without regret, not refusal to change. |
 | Martyrdom of Polycarp 8, 10, 12 | regret / reconsider / change of mind | Do not turn regret over an arrest or demands for apostasy into Godward conversion. |
 | Hermas reader chapter 15:3; 40 | change their minds | The context concerns backing away or vacillation, not movement toward God. |
@@ -116,3 +117,38 @@ extra-canonical chapters also have per-unit reader records.
 The active content publication path is `.github/workflows/publish-pob.yml`
 on main, not the retired CodeBuild project. Public readback must be checked
 after that workflow completes; local validation alone is not deployment proof.
+
+## Approved contextual follow-up (2026-10-12)
+
+The maintainer explicitly approved the following refinements after reviewing
+actual reader examples. They affect only Jeremiah 31:19 and Luke 17:4 in POB
+and Simplified POB (four records). Mark 1:15 and 2 Corinthians 7:10 remain
+unchanged. No new intensifiers are added.
+
+- Jeremiah: "For after I turned away, I was sorry for what I had done ..."
+  The selected turning-away reading is interpretive, not a newly discovered
+  manuscript reading. The note retains "after I turned back" as an alternative.
+  "For what I had done" makes the contextual object of sorrow explicit; it is
+  not a separate Hebrew phrase. This preserves contrition without defining
+  every occurrence of metanoia as sadness.
+- Luke: "I am changing my ways" replaces "I am reorienting myself" in direct
+  speech. The offender states a change of disposition and conduct; this does
+  not introduce a requirement that completed reform be demonstrated before
+  forgiveness. The separate return-to-you expression remains intact.
+
+Evidence rechecked during the discussion: [BDB nacham](https://biblehub.com/hebrew/5162.htm)
+and [NET Jeremiah 31:19 and notes](https://classic.net.bible.org/verse.php?book=jer&chapter=31&verse=19).
+The earlier explanation that Jeremiah necessarily describes returning to God
+*before* sorrow was too certain; translations differ on the direction of shuv.
+
+`config/terminology/reorientation-dialogue-2026-10-12.json` records the exact
+before/after texts and pins the already-published input to commit
+`31fb6d430dde2b77899ef4c5365258d2d6836973`. The original 397-record plan is
+unchanged. Previous decisions and note bodies are archived, revisions append
+to the hash chain, and ancient source/generation metadata is untouched.
+Current decisions describe this wording, not a fresh scholar certification.
+
+Tests check the four exact follow-ups, preserved prior history and sources,
+anchored notes, retained alternatives, reader export parity and unchanged
+Mark/2 Corinthians examples in both editions. Consistent meaning does not
+require identical English phrasing in every context.

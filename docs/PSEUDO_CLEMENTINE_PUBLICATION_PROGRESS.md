@@ -40,8 +40,13 @@ repository already documents its existing identity approval in
 - The full three-section English/Greek review request is preserved as
   `azure-v1.review.request.json`. Its first call received an Azure HTTP 500;
   the same request was retried once, with a separate attempt-2 response file.
-  A running request is not an accepted review. Do not restart one merely because
-  an observation wait expires; inspect its process and eventual response first.
+  **The retry completed successfully on GPT-6.1 Sol.** Sections 1 and 2 are
+  `blocked` by unresolved source defects; section 3 is `revise` for lexical
+  wording and uncertainty disclosure. All three passed coverage, added-claims,
+  names and negations checks, but none is approved for publication. Findings
+  include defective Greek verbs, the syntactic attachment of the seventy,
+  “received” versus “inherited” the seat, and the range of plural `πίστεις`.
+  The request, raw attempt-2 response, and hash-bound review record are retained.
 - GPT-6.1 Sol independently confirmed that the supplied Homilies 19.14 ends
   mid-sentence. This is a successful actual model call, not just deployment
   availability. Request and response are under the Homilies' workflow directory.

@@ -46,8 +46,9 @@ _EXPLICIT_VERSE_RE = re.compile(r"(?<![0-9])(?P<verse>\d{1,3})\.\s*")
 # Bounded OCR cleanups against Charles1906 scan PDF70/72 and PDF78.
 # Original transcriptions remain untouched. See the enoch_13_20261007 source
 # enoch_14_20261008 and enoch_15_20261010 packages for images and review.
-# Chapter15 exact-unit replacements preserve raw OCR and fail closed on drift.
+# Chapters15–16 exact-unit replacements preserve raw OCR and fail closed on drift.
 SCAN_OCR_CLEANUPS = {
+    (16, 1): (('እመዋዕለ፡ ቀትል፡ ወሙስና፡ ወሞተ፡ ረዓይትኒ፡ *እንተ፡ ኀበ፡ ወፅአ፡ መናፍስት፡ እምነፍሳት፡ ሥጋሆሙ፡ ሲይኩን፡ ዘ*ያማስን፡ ዘእንበለ፡ ኵነኔ፤ ከማሁ፡ ያማስኑ፡ እስከ፡ ዕለተ፡ ተፍጻሜት፡ ኵነኔ፡ ዐቢይ፡ አመ፡ ዓለም፡ ዐቢይ፡ ይትፌጸም። [እምኀኄን፡ ወረሰዓነ፡] *ኵሉ፡ ይትፈጸም።', 'እመዋዕለ፡ ቀትል፡ ወሙስና፡ ወሞተ፡ ረዓይትኒ፡ *እንተ፡ ኀበ፡ ወፅአ፡ መናፍስት፡ እምነፍሳት፡ ሥጋሆሙ፡ ዘይኩን፡ ዘ*ያማስን፡ ዘእንበለ፡ ኵነኔ፤ ከማሁ፡ ያማስኑ፡ እስከ፡ ዕለተ፡ ተፍጻሜት፡ ኵነኔ፡ ዐቢይ፡ አመ፡ ዓለም፡ ዐቢይ፡ ይትፌጸም። [እምትጉሃን፡ ወረሰዓነ፡] *ኵሉ፡ ይትፈጸም።'),),
     (13, 4): (("*ተዝካረ፡", "*ትዝካረ፡"),),
     (13, 6): (("ወእሱተ።", "ወአስተ።"),),
     (13, 7): (("ዐረበ፡", "ዐረብ፡"),),

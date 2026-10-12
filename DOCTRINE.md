@@ -113,10 +113,45 @@ Per-verse variance is documented in the individual YAML files.
 | ἱλαστήριον *hilastērion* | atoning sacrifice | propitiation, mercy seat | Dynamic rendering for accessibility; alternatives footnoted |
 | ἀγάπη *agapē* | love | charity (archaic) | Lexical cognates in source kept |
 | σάρξ *sarx* | flesh (literal) / sinful nature (metaphorical) | — | Context-dependent; per-verse documented |
-| μετανοέω *metanoeō* | change of mind / change your thinking (cognitive contexts); repent (specific-sin contexts) | repent (traditional) | See REVISION_METHODOLOGY.md §"μετανοέω → change of mind" for the per-context rule |
+| μετανοέω / μετάνοια *metanoeō / metanoia* | reorient / reorientation; toward God where the context warrants making the destination explicit | repent / repentance (traditional); reconsider / change of mind in documented exceptions | See "Reorientation terminology (2026-10-11)" below; do not homogenize regret, divine relenting, or distinct turning words |
 | νήφω *nēphō* | clear-minded (most contexts); sober (where Paul explicitly runs the drunk/sober metaphor) | sober-minded | See revision notes in 1 Pet 5:8, 1 Thess 5:6 |
 | יְהוָה YHWH | Yahweh | the LORD, Jehovah | Renders the divine name as a name. Where the NT quotes an OT YHWH passage using *Kyrios*, the NT verse retains "Lord" to preserve the Greek; the OT source verse uses "Yahweh". |
 | אָדָם *adam* | man / humankind (context) | — | Context-dependent per usage |
+
+## Reorientation terminology (2026-10-11)
+
+Maintainer-approved English POB and SPOB reader wording uses **reorient /
+reorientation** in place of the repent family for moral-spiritual redirection.
+Use **toward God** when the context warrants making that direction explicit;
+use **toward you** in direct prayer, and omit the extra destination when the
+sentence already names it, supplies a departure from wrongdoing, or concerns
+interpersonal reconsideration. Acts 20:21 explicitly supplies the Godward
+phrase. The word *metanoia* by itself does not lexically contain "God."
+
+This is an English editorial policy, not a claim that remorse is irrelevant or
+that Greek word parts establish the full meaning. Preserve sorrow, named sins,
+faith, forgiveness, and the distinction between a response and its fruit.
+Keep separate turning expressions in Acts 3:19 and 26:20. Baptism's relationship
+to reorientation must not be rewritten as "only symbolizes" or "causes."
+
+**Context controls exceptions.** Retain regret, relenting, reconsideration,
+change of mind, or turning back where that is the supported sense. Do not make
+God reorient toward God; do not make a persecutor's demand for apostasy a call
+toward God. Preserve contested interpretations in Job 42:6 and Hebrews 12:17.
+Extra-canonical authors retain their own conceptual frameworks. Adapting a
+historical English witness is not a new ancient-language translation, and must
+be disclosed while its source transcription remains untouched.
+
+**No invented intensifiers.** Do not add "fully," "completely," "radically,"
+"truly," "wholeheartedly," or a superlative simply to strengthen reorientation.
+Preserve such force only where the source supplies it. Hermas V.3.xiii.4
+(reader chapter 21:4) has *holotelōs* and *ex holēs kardias*; its existing
+"completely" and "from their whole heart" are not new additions.
+
+Traditional terminology remains in alternative notes, original sources, and
+historical revision records. Do not rewrite those layers to manufacture a
+history of agreement. See [the application report](docs/REORIENTATION_POLICY_2026-10-11.md)
+and the hash-bound plan in `config/terminology/`.
 
 ## What the translation is not
 

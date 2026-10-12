@@ -34,12 +34,15 @@ base_translation:
     changes_summary: 'doctrine_realignment: Luke 15:10 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who has a change of mind''].'
 translation:
   language: en
-  text: 'The same is true, I tell you: there is joy in the presence of God’s angels when one sinner repents.[a]'
+  text: 'The same is true, I tell you: there is joy in the presence of God’s angels when one sinner reorients toward God[r1].[a]'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: The wording does not explicitly say that the angels themselves are rejoicing.
     reason: alternative_reading
+  - marker: r1
+    text: Traditionally "repent" or "repentance." Reorientation means a change of disposition and direction, not merely feeling sorry. The direction toward God is explicit in Acts 20:21 and is made explicit from the context here; it is not a separate meaning-component of the Greek word. No added degree of completeness is intended.
+    reason: lexical_alternative
 simplification_decisions:
 - pob_phrase: In the same way, I tell you
   simplified_phrase: The same is true, I tell you
@@ -51,15 +54,12 @@ simplification_decisions:
   preserved_meaning: The joy occurs before the heavenly angels without naming them as its agents.
   reasoning_layer_used: Theological decision on the location and agent of the joy.
   rationale: The fuller phrase is clearer while preserving the documented ambiguity.
-- pob_phrase: over one sinner who repents
-  simplified_phrase: when one sinner repents
-  preserved_meaning: A single sinner’s repentance is the occasion for joy.
-  reasoning_layer_used: Lexical decisions for ἐπί and μετανοοῦντι.
-  rationale: The time-and-occasion clause is easier to follow without defining repentance more narrowly.
 translation_notes:
   risk_flags:
   - risk: Readers may still assume that the angels are the ones rejoicing.
     mitigation: The main text uses “in the presence of,” and the footnote preserves the ambiguity.
+  - risk: Reorient is less common English and explicit Godward wording is a contextual expansion.
+    mitigation: Explain it in the reader note; preserve source-specific exceptions and avoid added intensifiers.
 source_grounding:
   pob_role: primary_derivative_base
   source_payload_role: audit_guardrail
@@ -80,10 +80,99 @@ ai_draft:
     total_tokens: 3676
     reasoning_tokens: 290
     estimated_cost_usd: 0.0
-status: simplified_draft
+status: draft
 spob_revision_history:
 - timestamp: '2026-07-11T06:12:25Z'
   previous_text: In the same way, I tell you, there is joy in the presence of God's angels over one sinner who repents.
   previous_model: gemini-3.5-flash
   previous_prompt_id: simplified_pob_draft_v1
   reason: forced doctrine-calibrated redraft
+review_history:
+- field: status
+  value: simplified_draft
+  archived_by: reorientation-english-2026-10-11
+  archived_from_baseline_sha256: a268b804b4396c66825ecacc86f6c62651f96f0b386ce5cd968684155bfc3d85
+  certifies_this_candidate: false
+  historical_review_inputs_verified: false
+- field: simplification_decisions
+  value:
+  - pob_phrase: In the same way, I tell you
+    simplified_phrase: The same is true, I tell you
+    preserved_meaning: Jesus applies the preceding parable directly to his hearers.
+    reasoning_layer_used: Lexical decision for οὕτως and its comparative force.
+    rationale: The revised transition states the comparison in more natural English.
+  - pob_phrase: before the angels of God
+    simplified_phrase: in the presence of God’s angels
+    preserved_meaning: The joy occurs before the heavenly angels without naming them as its agents.
+    reasoning_layer_used: Theological decision on the location and agent of the joy.
+    rationale: The fuller phrase is clearer while preserving the documented ambiguity.
+  - pob_phrase: over one sinner who repents
+    simplified_phrase: when one sinner repents
+    preserved_meaning: A single sinner’s repentance is the occasion for joy.
+    reasoning_layer_used: Lexical decisions for ἐπί and μετανοοῦντι.
+    rationale: The time-and-occasion clause is easier to follow without defining repentance more narrowly.
+  archived_by: reorientation-english-2026-10-11
+  archived_from_baseline_sha256: a268b804b4396c66825ecacc86f6c62651f96f0b386ce5cd968684155bfc3d85
+  certifies_this_candidate: false
+  historical_review_inputs_verified: false
+- field: translation_notes
+  value:
+    risk_flags:
+    - risk: Readers may still assume that the angels are the ones rejoicing.
+      mitigation: The main text uses “in the presence of,” and the footnote preserves the ambiguity.
+  archived_by: reorientation-english-2026-10-11
+  archived_from_baseline_sha256: a268b804b4396c66825ecacc86f6c62651f96f0b386ce5cd968684155bfc3d85
+  certifies_this_candidate: false
+  historical_review_inputs_verified: false
+- field: translation
+  baseline_commit: b35230ab344fa58da4a034f6d598ea85db74590f
+  baseline_path: translation_simplified/nt/luke/015/010.yaml
+  sha256: 912c226d849d8f111c8b9c17b5514cd206a0213500c0bf0aa723fddcdb09f33b
+  archived_by: reorientation-english-2026-10-11
+  certifies_this_candidate: false
+cross_check:
+  status: needs_review
+lexical_decisions: []
+theological_decisions:
+- issue: Context-sensitive reorientation terminology
+  chosen_reading: 'The same is true, I tell you: there is joy in the presence of God’s angels when one sinner reorients toward God.[a]'
+  alternative_readings:
+  - Traditional repent/repentance wording, preserved at the baseline commit.
+  rationale: Use the approved reorientation vocabulary for a moral response to God. The direction toward God is supplied from this religious context, not claimed to be contained in the Greek word by itself. No degree of completeness, achievement or emotional intensity is added.
+  doctrine_reference: 'DOCTRINE.md: Reorientation terminology (2026-10-11)'
+retained_terms:
+- term: reorient / reorientation
+  reason: Maintainer-approved shared English terminology. The anchored reader note explains changed disposition and direction; context-specific exceptions are preserved.
+interpretive_expansions:
+- pob_phrase: reorient / reorientation
+  rendering: toward God
+  claim: Make the destination supplied by the religious context explicit, without claiming it is lexical content of metanoia.
+  evidence:
+  - Use the approved reorientation vocabulary for a moral response to God. The direction toward God is supplied from this religious context, not claimed to be contained in the Greek word by itself. No degree of completeness, achievement or emotional intensity is added.
+  confidence: moderate
+  alternatives_preserved:
+  - reorient / reorientation without an expressed destination
+terminology_revision:
+  policy_id: reorientation-english-2026-10-11
+  timestamp: '2026-10-12T07:01:08.784068+00:00'
+  baseline_commit: b35230ab344fa58da4a034f6d598ea85db74590f
+  baseline_file_sha256: a268b804b4396c66825ecacc86f6c62651f96f0b386ce5cd968684155bfc3d85
+  mode: godward
+  reader_note_marker: r1
+  source_changed: false
+  english_witness_adaptation: false
+  independent_scholar_review: false
+  maintainer_approval_scope: English terminology policy and POB/SPOB/extra-canonical scope; not a claim of human review of every proposed line.
+  after_text_sha256: 38358483487d314b7af62080c27d7257ac913aff25ecaf88ed9acb6c624f7d2c
+revisions:
+- timestamp: '2026-10-12T07:01:08.784068+00:00'
+  adjudicator: 'Codex: maintainer-authorized terminology application'
+  category: terminology
+  policy_id: reorientation-english-2026-10-11
+  rationale: Use the approved reorientation vocabulary for a moral response to God. The direction toward God is supplied from this religious context, not claimed to be contained in the Greek word by itself. No degree of completeness, achievement or emotional intensity is added.
+  from_sha256: 53771978b7f23ca340710189f030c53cfc0badea8289bd9a19802aa291ffd6fa
+  to_sha256: 38358483487d314b7af62080c27d7257ac913aff25ecaf88ed9acb6c624f7d2c
+  baseline_commit: b35230ab344fa58da4a034f6d598ea85db74590f
+  baseline_path: translation_simplified/nt/luke/015/010.yaml
+  from: 'The same is true, I tell you: there is joy in the presence of God’s angels when one sinner repents.[a]'
+  to: 'The same is true, I tell you: there is joy in the presence of God’s angels when one sinner reorients toward God[r1].[a]'

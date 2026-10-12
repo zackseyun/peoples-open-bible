@@ -123,6 +123,15 @@ preferring a less restrictive English earth clause. It retains source priority
 on hold and treats the missing article in הָרִים as a separate rationale issue,
 not as authorization to change English or insert Hebrew letters automatically.
 
+Separate lexical interpretation from emendation even when both produce the
+same English. In the [Joel comparison](JOEL_2_23_LEXICAL_AND_VERSION_COMPARISON_2026-10-12.md),
+BDB's target timing discussion proposes a different Hebrew form for a former-state
+reading; it is not straightforward lexical support under unchanged WLC. Record
+which form a lexicon interprets, distinguish selected version wording from
+independent Hebrew attestation, and keep reception history separate from
+earliest wording. Neither preserving theological vocabulary nor avoiding a
+teacher interpretation can substitute for passage-level grammatical evidence.
+
 Reference filtering must not erase preservation context. A supply bracket can
 open in another verse or physical line; inspect the complete surrounding
 transcription before treating an unbracketed excerpt as preserved. The

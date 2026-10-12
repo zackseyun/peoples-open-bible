@@ -13,6 +13,7 @@ import json
 import pathlib
 import re
 import subprocess
+import string
 from datetime import datetime, timezone
 import yaml
 
@@ -105,6 +106,44 @@ def new_lexical(decision, item, text):
     return d
 
 
+def available_marker(notes, text):
+    used={str(n.get('marker')) for n in notes}
+    for marker in string.ascii_lowercase:
+        if marker not in used and '['+marker+']' not in text:return marker
+    raise ValueError('No renderer-compatible single-letter note label available')
+
+
+def upgrade_note_marker(doc, item, timestamp):
+    """Annotation-only follow-up; preserve the published semantic revision."""
+    meta=doc.get('terminology_revision')or{}
+    old_marker=meta.get('reader_note_marker','')
+    if re.fullmatch(r'[a-z]',old_marker):return None
+    if meta.get('policy_id')!=POLICY:raise ValueError('Policy not applied')
+    if approved_errors(ROOT/item['path'],doc,True):raise ValueError('Unexpected reader changes')
+    new=copy.deepcopy(doc);before=doc['translation']['text'];notes=new['translation']['footnotes']
+    marker=available_marker(notes,before)
+    if before.count('['+old_marker+']')!=1:raise ValueError('Policy anchor is not unique')
+    matched=[n for n in notes if n.get('marker')==old_marker]
+    if len(matched)!=1:raise ValueError('Policy note is not unique')
+    matched[0]['marker']=marker
+    after=before.replace('['+old_marker+']','['+marker+']')
+    new['translation']['text']=after
+    new['terminology_revision']['reader_note_marker']=marker
+    new['terminology_revision']['after_text_sha256']=hashlib.sha256(after.encode()).hexdigest()
+    new['terminology_revision']['marker_compatibility']={'timestamp':timestamp,'from':old_marker,'to':marker,'semantic_text_changed':False}
+    new.setdefault('review_history',[]).append({'field':'translation.footnotes','value':copy.deepcopy(doc['translation']['footnotes']),
+          'archived_by':'reorientation-marker-compatibility','baseline_commit':'bc3bd9abae9a191a71fedf601ebfcb72f8c38936',
+          'baseline_path':item['path'],'certifies_this_candidate':False})
+    revision={'timestamp':timestamp,'adjudicator':'Codex: reader annotation compatibility',
+          'category':'footnote_marker','policy_id':POLICY,
+          'from_sha256':hashlib.sha256(before.encode()).hexdigest(),'to_sha256':hashlib.sha256(after.encode()).hexdigest(),
+          'baseline_commit':'bc3bd9abae9a191a71fedf601ebfcb72f8c38936','baseline_path':item['path'],
+          'rationale':'Replace the new alphanumeric policy anchor with an unused conventional letter so existing publisher and website scrubbers remove it. The policy wording, note body, source and prior revision history are unchanged.'}
+    if len(before)<10000:revision.update({'from':before,'to':after})
+    new.setdefault('revisions',[]).append(revision)
+    return new
+
+
 def build_record(doc,item,timestamp):
     result=copy.deepcopy(doc)
     old=doc['translation']['text']
@@ -124,10 +163,7 @@ def build_record(doc,item,timestamp):
             n['text']='Or "show your return." Greek epistrophe denotes a turning back; the immediate reference to sins gives this movement its moral context.'
         if item['id']=='WIS.12.10' and 'literally' in body:
             n['text']='Or "you were giving an opportunity for reorientation." Greek topos supplies the image of room/place; metanoia is traditionally rendered "repentance."'
-    marker='r1'
-    used={str(n.get('marker')) for n in notes}
-    while marker in used or '['+marker+']' in text:
-        marker='r'+str(int(marker[1:])+1)
+    marker=available_marker(notes,text)
     match=re.search(r'\breorient\w*(?: toward (?:God|you))?|\bunregretted\b|\b(?:feel |felt )?regret\w*|\breconsider\w*|\ba change of mind\b|\bchange their minds\b|\bchanged my attitude\b|\bturn(?:ing|ed)? back\b|\bsorrow\b|\bgrief\b|\bbroken spirit\b',text,re.I)
     if not match:raise ValueError('Cannot anchor policy note: '+item['path'])
     text=text[:match.end()]+'['+marker+']'+text[match.end():]
@@ -153,7 +189,7 @@ def build_record(doc,item,timestamp):
     # retain unrelated judgments and all originals in review_history.
     result['theological_decisions']=[d for d in doc.get('theological_decisions')or[] if not relevant(d)]
     result['theological_decisions'].append({'issue':'Context-sensitive reorientation terminology',
-         'chosen_reading':re.sub(r'\[r\d+\]','',text) if len(text)<1500 else 'The exact reader wording is recorded in the hash-bound terminology plan.',
+         'chosen_reading':text.replace('['+marker+']','') if len(text)<1500 else 'The exact reader wording is recorded in the hash-bound terminology plan.',
          'alternative_readings':['Traditional repent/repentance wording, preserved at the baseline commit.'],
          'rationale':item['rationale'], 'doctrine_reference':'DOCTRINE.md: Reorientation terminology (2026-10-11)'})
     for field in ('simplification_decisions','interpretive_expansions','retained_terms'):
@@ -217,12 +253,17 @@ def approved_errors(path, doc, require_exact=False):
 
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--apply',action='store_true');ap.add_argument('--check',action='store_true')
+    ap.add_argument('--apply',action='store_true');ap.add_argument('--check',action='store_true');ap.add_argument('--upgrade-markers',action='store_true')
     args=ap.parse_args();plan=json.loads(PLAN.read_text());timestamp=datetime.now(timezone.utc).isoformat()
     prepared=[];errors=[];skipped=0
     # Preflight all targets before writing any file.
     for raw_item in plan['records']:
         item=dict(raw_item,baseline_commit=plan['baseline_commit']);path=ROOT/item['path'];raw=path.read_bytes();doc=yaml.load(raw,Loader=yaml.CSafeLoader)
+        if args.upgrade_markers:
+            new=upgrade_note_marker(doc,item,timestamp)
+            if new is not None:prepared.append((path,patch_top_level(raw.decode(),doc,new)))
+            else:skipped+=1
+            continue
         if (doc.get('terminology_revision')or{}).get('policy_id')==POLICY:
             errors.extend(item['path']+': '+e for e in approved_errors(path,doc,True));skipped+=1;continue
         if args.check:errors.append(item['path']+': policy not applied');continue
@@ -230,7 +271,7 @@ def main():
         new=build_record(doc,item,timestamp)
         prepared.append((path,patch_top_level(raw.decode(),doc,new)))
     if errors:raise SystemExit('\n'.join(errors))
-    if args.apply:
+    if args.apply or args.upgrade_markers:
         for path,raw in prepared:path.write_text(raw,encoding='utf-8')
-    print(json.dumps({'planned':len(prepared),'already_applied':skipped,'written':len(prepared) if args.apply else 0,'check':args.check}))
+    print(json.dumps({'planned':len(prepared),'already_applied':skipped,'written':len(prepared) if args.apply or args.upgrade_markers else 0,'check':args.check}))
 if __name__=='__main__':main()

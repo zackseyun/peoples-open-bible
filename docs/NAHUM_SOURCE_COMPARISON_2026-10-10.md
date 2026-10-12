@@ -7,6 +7,59 @@ additional Hebrew he, but the missing context prevents a unique interpretation.
 A newer Greek fragment at 1:5 and Hebrew commentary quotations also show why the
 two-label biblical discovery index is not a complete source list.
 
+## Current Nahum 1 5 verdict on October 12
+
+The complete publisher HTML article was reread against today's Nahum 1:5
+record: sections 1–6, all 63 notes, acknowledgments and bibliography, with both
+figures and all three tables opened in the full-size viewer. The public browser
+viewer works despite the web-fetch route returning 403. No PDF, new manuscript
+transcription or independently consulted cited lexicon is claimed.
+
+**No further source-text or English change is warranted by this comparison.**
+The earlier review led to the scoped application of **“the earth heaves before
+him”**, replacing the more directional “the earth rises up before his face.”
+That application is already merged in [PR 145](https://github.com/zackseyun/peoples-open-bible/pull/145),
+commit `819989b7d447790baf80484954efc3453ac3b3bd`, and present on the main
+branch checked at `e8791d444be8f298857dbb6145164d52b0a47b9b`.
+Its [application report](NAHUM_1_5_EARTH_ENGLISH_APPLICATION_2026-10-11.md)
+records the actual English, notes, corrected mountains rationale and archived
+review history. The October 10 screen and October 11 pre-application findings
+below describe their historical baselines, not outstanding defects in today's
+record.
+
+The article strengthens the need to distinguish the retained consonants from
+their interpretation. Section 3 makes a devastation reading through alternative
+pointing a serious proposal; section 5.1 also argues that early Greek supports
+an MT-like lifting interpretation. Neither supplies ancient Hebrew vowel
+points. Our source remains exactly WLC, including pointing and segmentation;
+earliest-wording priority remains unresolved. The current note preserves both
+movement alternatives and the unadopted devastation proposal.
+
+The partly surviving Greek verb and preposition support a real Greek revision,
+not a uniquely recoverable Hebrew replacement. The author's preference for a
+simple verb is specific to this reconstruction: note 43 reports predominantly
+compound forms in other kaige material. That broader distribution is a reason
+not to turn the preferred reconstruction into certainty. The Pentateuchal
+resonance proposed in section 5.3 remains an interpretation, not observed
+scribal intention. Note 49 explicitly withholds a shared Hebrew exemplar for
+the pesher and the Greek scroll.
+
+A bounded independent current-record check found no mismatch: canonical SHA256
+`cd10a2cd212aa395279d1b4fefe003b4f7b4bae2f9fe601cc3b8dba11838aa1a`
+matches the reviewed candidate, and the complete 47-unit export matches
+`aea1885a7e857b9515fb8f7239ef0679b5f3d95dc05536528e56d5b6f3517872`.
+All 46 non-target records retain their application-baseline hashes. The eight
+Nahum 1:5 application tests passed again in 1.338 seconds. This verifies the
+existing implementation, not a new source-priority vote or deployment.
+
+Further work should target evidence that could discriminate the alternatives:
+the actual grammatical and lexical arguments cited for unusual poetic נשׂא
+versus shortened Niphal שׁאה, and critical apparatus at this locus. Repeating
+the same article review or adding model votes cannot settle that question.
+This article supplies no argument for adding a book to the biblical canon.
+
+## Historical scope
+
 This is a bounded published-reading comparison following the
 [adjudication method](TEXTUAL_ADJUDICATION_METHOD.md), not fresh decipherment,
 an exhaustive Nahum apparatus or a preference vote. Source selection and main

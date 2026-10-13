@@ -88,4 +88,94 @@ class HistoricalSourceReviewTests(unittest.TestCase):
         self.assertEqual(text,'Original words.')
         with self.assertRaises(ValueError):parse_jsp_page(b'<html>error page</html>')
 
+    def test_blank_pages_are_retained_only_with_explicit_inventory_mode(self):
+        from tools.historical_archive_review import parse_jsp_page
+        raw=('<script id="__NEXT_DATA__" type="application/json">'+json.dumps({'props':{'pageProps':{'summary':{'clearText':'<div class="anonymous-block-p">Blank page</div>'}}}})+'</script>').encode()
+        with self.assertRaises(ValueError):parse_jsp_page(raw)
+        self.assertEqual(parse_jsp_page(raw,allow_empty=True)[0],'')
+
+    def test_live_style_popup_keeps_printed_name_not_modern_biography(self):
+        from tools.historical_archive_review import parse_jsp_page
+        page={'clearText':'<div class="wasptag">Printed by <aside class="popup-wrapper"><a class="reference staticPopup">F. G. WILLIAMS &amp; CO.</a><div class="popup-content"><div class="note-data"><p>Modern biography.</p><a>View Glossary</a></div></div></aside> [p. [iii]]</div>', 'editorialPageNumber':'iii'}
+        raw=('<script id="__NEXT_DATA__" type="application/json">'+json.dumps({'props':{'pageProps':{'summary':page}}})+'</script>').encode()
+        self.assertEqual(parse_jsp_page(raw)[0],'Printed by F. G. WILLIAMS & CO.')
+
+    def test_a_page_locator_alone_is_not_nonempty_source_text(self):
+        from tools.historical_archive_review import parse_jsp_page
+        page={'clearText':'<div class="wasptag">[p. [0]]</div>', 'editorialPageNumber':'0'}
+        raw=('<script id="__NEXT_DATA__" type="application/json">'+json.dumps({'props':{'pageProps':{'summary':page}}})+'</script>').encode()
+        with self.assertRaises(ValueError):parse_jsp_page(raw)
+        self.assertEqual(parse_jsp_page(raw,allow_empty=True)[0],'')
+
+    def test_printed_table_rows_are_not_lost_or_concatenated(self):
+        from tools.historical_archive_review import parse_jsp_page
+        page={'clearText':'<table><tbody><tr><th>Section</th><th>Page</th></tr><tr><td>26</td><td>do on stewardships November 1831</td><td><a>152</a></td></tr></tbody></table><div class="wasptag">[p. ii]</div>', 'editorialPageNumber':'ii'}
+        raw=('<script id="__NEXT_DATA__" type="application/json">'+json.dumps({'props':{'pageProps':{'summary':page}}})+'</script>').encode()
+        self.assertEqual(parse_jsp_page(raw)[0].strip(),'Section Page\n\n26 do on stewardships November 1831 152')
+
+    def test_printed_table_names_survive_but_annotation_tables_do_not(self):
+        from tools.historical_archive_review import parse_jsp_page
+        page={'clearText':'<table><tr><td><aside class="popup-wrapper"><a>Missouri</a><div class="popup-content"><table><tr><td>Modern note</td></tr></table></div></aside></td><td>192</td></tr></table>'}
+        raw=('<script id="__NEXT_DATA__" type="application/json">'+json.dumps({'props':{'pageProps':{'summary':page}}})+'</script>').encode()
+        self.assertEqual(parse_jsp_page(raw)[0],'Missouri 192')
+
+class WholeEditionInventoryTests(unittest.TestCase):
+    def test_offline_snapshot_audit_never_repairs_or_fetches(self):
+        from tools.historical_dc_whole_edition import read_snapshot
+        with tempfile.TemporaryDirectory() as directory:
+            path=Path(directory)/'page.html';path.write_bytes(b'original')
+            record=path.with_name(path.name+'.receipt.json')
+            with self.assertRaises(FileNotFoundError):read_snapshot(path,'https://example.org/page')
+            record.write_text(json.dumps({'url':'https://example.org/page','sha256':digest(b'original'),'bytes':8}))
+            self.assertEqual(read_snapshot(path,'https://example.org/page'),b'original')
+            with self.assertRaises(ValueError):read_snapshot(path,'https://example.org/other-copy')
+            path.write_bytes(b'tampered')
+            with self.assertRaises(ValueError):read_snapshot(path,'https://example.org/page')
+    def ia_fixture(self):
+        scan=b'<book><bookData><bookId>GR_711</bookId><leafCount>2</leafCount></bookData><pageData><page leafNum="0"><pageType>Normal</pageType></page><page leafNum="1"><pageNumber>i</pageNumber></page></pageData></book>'
+        djvu=b'<DjVuXML><BODY><OBJECT usemap="GR_711_0000.djvu"></OBJECT><OBJECT usemap="GR_711_0001.djvu"><LINE><WORD coords="1,2,3,4">Printed</WORD><WORD>words</WORD></LINE></OBJECT></BODY></DjVuXML>'
+        return scan,djvu
+    def jsp_fixture(self):
+        data={'props':{'pageProps':{'statusCode':200,'is404':False,
+          'summary':{'uri':'doctrine-and-covenants-1835','numberOfPages':2},
+          'gallery':[{'page':'1','label':'[0]','href':'/paper-summary/doctrine-and-covenants-1835/1'},
+                     {'page':'2','label':'[i]','href':'/paper-summary/doctrine-and-covenants-1835/2'}]}}}
+        return data
+    def encode_jsp(self,data):
+        return ('<script id="__NEXT_DATA__" type="application/json">'+json.dumps(data)+'</script>').encode()
+    def test_every_leaf_including_empty_ocr_is_in_scope(self):
+        from tools.historical_dc_whole_edition import ia_inventory
+        rows=ia_inventory(*self.ia_fixture())
+        self.assertEqual(len(rows),2)
+        self.assertEqual(rows[0]['ocr']['text'],'')
+        self.assertEqual(rows[0]['review_status'],'not_started')
+        self.assertFalse(rows[0]['publication_allowed'])
+        self.assertEqual(rows[1]['ocr']['text'],'Printed words')
+        self.assertEqual(rows[1]['ocr']['lines'][0][0]['coords'],'1,2,3,4')
+    def test_archive_missing_reordered_or_different_copy_fails_closed(self):
+        from tools.historical_dc_whole_edition import ia_inventory
+        scan,djvu=self.ia_fixture()
+        for changed in [scan.replace(b'leafNum="1"',b'leafNum="0"'),
+                        scan.replace(b'leafCount>2',b'leafCount>3'),
+                        scan.replace(b'GR_711',b'other-copy')]:
+            with self.assertRaises(ValueError):ia_inventory(changed,djvu)
+        with self.assertRaises(ValueError):ia_inventory(scan,djvu.replace(b'GR_711_0001',b'GR_711_0000'))
+    def test_jsp_inventory_does_not_assume_shared_binding_offsets(self):
+        from tools.historical_dc_whole_edition import jsp_inventory
+        rows=jsp_inventory(self.encode_jsp(self.jsp_fixture()))
+        self.assertEqual([row['page'] for row in rows],[1,2])
+        self.assertNotIn('newberry_leaf',rows[1])
+        self.assertFalse(rows[1]['publication_allowed'])
+    def test_jsp_errors_wrong_identity_and_incomplete_gallery_fail_closed(self):
+        from tools.historical_dc_whole_edition import jsp_inventory
+        for field,value in [('is404',True),('statusCode',404)]:
+            data=self.jsp_fixture();data['props']['pageProps'][field]=value
+            with self.assertRaises(ValueError):jsp_inventory(self.encode_jsp(data))
+        data=self.jsp_fixture();data['props']['pageProps']['summary']['uri']='other-work'
+        with self.assertRaises(ValueError):jsp_inventory(self.encode_jsp(data))
+        data=self.jsp_fixture();data['props']['pageProps']['gallery'].pop()
+        with self.assertRaises(ValueError):jsp_inventory(self.encode_jsp(data))
+        data=self.jsp_fixture();data['props']['pageProps']['gallery'][1]['href']='/different-copy/2'
+        with self.assertRaises(ValueError):jsp_inventory(self.encode_jsp(data))
+
 if __name__=='__main__':unittest.main()

@@ -152,10 +152,16 @@ class PrintedTextParser(HTMLParser):
         self.stack=[];self.current=None;self.paragraphs=[]
     def handle_starttag(self, tag, attrs):
         classes=set(dict(attrs).get('class','').split())
-        blocked=bool(classes & {'footnote','footnote-ref','page-number','pageNumber','anonymous-block-p'}) or tag in {'script','style'}
+        # A popup wrapper contains both printed anchor words and modern notes.
+        # Keep the anchor, suppress only its annotation content (not the aside).
+        blocked=bool(classes & {'footnote','footnote-ref','page-number','pageNumber',
+                               'anonymous-block-p','popup-content','note-data'}) or tag in {'script','style'}
         skip=blocked or (self.stack[-1][2] if self.stack else False)
-        root=tag=='div' and 'wasptag' in classes and self.current is None and not skip
+        # Printed indexes, contents and some body material are table rows,
+        # not wasptag divs. Keep their cells in row-major source order.
+        root=((tag=='div' and 'wasptag' in classes) or tag=='tr') and self.current is None and not skip
         if root:self.current=[]
+        if tag in {'td','th'} and self.current is not None and not skip:self.current.append(' ')
         if tag in {'br','img','hr','meta','link','input'}:
             if tag=='br' and self.current is not None and not skip:self.current.append(' ')
             return
@@ -173,7 +179,7 @@ class PrintedTextParser(HTMLParser):
     def handle_data(self, data):
         if self.current is not None and not (self.stack[-1][2] if self.stack else False):self.current.append(data)
 
-def parse_jsp_page(raw: bytes) -> tuple[str,dict]:
+def parse_jsp_page(raw: bytes, *, allow_empty: bool = False) -> tuple[str,dict]:
     html=raw.decode('utf-8')
     match=re.search(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>',html,re.S)
     if not match: raise ValueError('JSP page schema changed')
@@ -182,10 +188,16 @@ def parse_jsp_page(raw: bytes) -> tuple[str,dict]:
     if parser.current is not None:raise ValueError('Unclosed printed-text container')
     paragraphs=parser.paragraphs
     # JSP inserts a locator after the historical text. It is not on the scan.
-    marker=f"[p. {page.get('editorialPageNumber')}]"
-    if paragraphs and page.get('editorialPageNumber') and paragraphs[-1].endswith(marker):
-        paragraphs[-1]=paragraphs[-1][:-len(marker)].rstrip()
-    if not paragraphs: raise ValueError('Missing source transcription body')
+    number=page.get('editorialPageNumber')
+    if paragraphs and number:
+        # Live pages label the summary `iii` but append `[p. [iii]]` when
+        # the number is inferred; some pages already include brackets in metadata.
+        number=str(number).strip('[]')
+        for marker in [f'[p. {number}]',f'[p. [{number}]]']:
+            if paragraphs[-1].endswith(marker):
+                paragraphs[-1]=paragraphs[-1][:-len(marker)].rstrip()
+                break
+    if not any(value.strip() for value in paragraphs) and not allow_empty: raise ValueError('Missing source transcription body')
     return '\n\n'.join(paragraphs),page
 
 def acquire_dc_opening(out: Path, archive_root: Path) -> dict:

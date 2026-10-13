@@ -100,6 +100,87 @@ def fetch_retry(url: str, path: Path) -> bytes:
     raise AssertionError('unreachable')
 
 
+def read_snapshot(path: Path, url: str) -> bytes:
+    """Verify a previously acquired file without any network or repair fallback."""
+    raw = path.read_bytes()
+    receipt = json.loads(path.with_name(path.name + '.receipt.json').read_text())
+    if receipt.get('url') != url or receipt.get('sha256') != digest(raw) or receipt.get('bytes') != len(raw):
+        raise ValueError(f'Snapshot provenance mismatch: {path}')
+    return raw
+
+
+def audit(out: Path) -> dict:
+    """Verify every acquired source/job against receipts and the current parser.
+
+    Successful acquisition audit is NOT independent scan review or publication.
+    Stale extracted comparisons require explicit regeneration after the live
+    acquisition has terminated; this function never silently rewrites sources.
+    """
+    raw_dir = out / 'raw/archive'
+    scandata = read_snapshot(raw_dir / 'GR_711_scandata.xml', f'{IA}/download/GR_711/GR_711_scandata.xml')
+    djvu = read_snapshot(raw_dir / 'GR_711_djvu.xml', f'{IA}/download/GR_711/GR_711_djvu.xml')
+    ocr = read_snapshot(raw_dir / 'GR_711_djvu.txt', f'{IA}/download/GR_711/GR_711_djvu.txt')
+    if digest(ocr) != ARCHIVE_SHA256:
+        raise ValueError('Archived reader witness mismatch')
+    seed = read_snapshot(out / 'raw/jsp/preface-iii.html', f'{JSP}/paper-summary/doctrine-and-covenants-1835/11')
+    primary, comparison = ia_inventory(scandata, djvu), jsp_inventory(seed)
+    target = out / 'doctrine-and-covenants/whole-edition'
+    ledger = json.loads((target / 'acquisition.json').read_text())
+    if not ledger.get('acquisition_complete') or ledger.get('failures'):
+        raise ValueError('Full source acquisition is not complete')
+    errors = []
+    expected = {'primary': primary, 'comparison': comparison}
+    completed = {}
+    for kind, rows in expected.items():
+        records = ledger['completed'][kind]
+        if [record['reference'] for record in records] != sorted(row['reference'] for row in rows):
+            raise ValueError(f'{kind} ledger coverage mismatch')
+        completed[kind] = {record['reference']: record for record in records}
+    for row in primary:
+        scan = read_snapshot(target / 'scans' / f"n{row['leaf']:04d}.jpg", row['scan_url'])
+        job_path = target / 'jobs' / (row['reference'] + '.json')
+        job = json.loads(job_path.read_text())
+        record = completed['primary'][row['reference']]
+        if job['reference'] != row['reference'] or job['source']['leaf'] != row['leaf']:
+            errors.append(f"Primary job identity: {row['reference']}")
+        if job['source']['url'] != row['scan_url'] or job['source']['path'] != str((target / 'scans' / f"n{row['leaf']:04d}.jpg").resolve()):
+            errors.append(f"Primary scan locator: {row['reference']}")
+        if job['source']['kind'] != 'facsimile' or job['source']['language'] != 'en' or job['mode'] != 'english_edition_scan_review':
+            errors.append(f"Primary scan mode: {row['reference']}")
+        if digest(scan) != job['source']['sha256'] or digest(scan) != record['source_sha256']:
+            errors.append(f"Primary scan binding: {row['reference']}")
+        if digest(job_path.read_bytes()) != record['job_sha256']:
+            errors.append(f"Primary job binding: {row['reference']}")
+        if job['english_comparisons'] != [row['ocr']]:
+            errors.append(f"Primary OCR identity/coordinates: {row['reference']}")
+    for row in comparison:
+        raw = read_snapshot(target / 'jsp' / f"page-{row['page']:04d}.html", row['url'])
+        identity = next_data(raw)
+        if int(identity['summary']['numberOfPages']) != len(comparison):
+            errors.append(f"Comparison copy page count: {row['reference']}")
+        page = json.loads((target / 'jsp' / f"page-{row['page']:04d}.json").read_text())
+        text, summary = parse_jsp_page(raw, allow_empty=True)
+        record = completed['comparison'][row['reference']]
+        if page['reference'] != row['reference'] or int(summary['requestedPageNumber']) != row['page']:
+            errors.append(f"Comparison identity: {row['reference']}")
+        if page['url'] != row['url'] or page['page'] != row['page']:
+            errors.append(f"Comparison locator: {row['reference']}")
+        if digest(raw) != page['webpage_sha256'] or digest(raw) != record['source_sha256']:
+            errors.append(f"Comparison snapshot binding: {row['reference']}")
+        if page['printed_text'] != text or digest(text.encode()) != page['printed_text_sha256'] or digest(text.encode()) != record['printed_text_sha256']:
+            errors.append(f"Stale comparison extraction: {row['reference']}")
+    report = {'expected_primary_leaves': len(primary), 'expected_comparison_pages': len(comparison),
+              'all_source_artifacts_valid': not errors, 'errors': errors,
+              'checked_source_artifacts': len(primary) + len(comparison),
+              'source_facing_model_reviews': 0, 'independent_model_reviews': 0,
+              'whole_work_verified': False, 'publication_allowed': False,
+              'verification_limit': 'Full snapshot/job integrity only; no scan-reading verdicts or full-book approval.'}
+    dump(target / 'artifact-audit.json', report)
+    if errors:
+        raise ValueError(f'{len(errors)} artifact failures; see artifact-audit.json')
+    return report
+
+
 def acquire(out: Path, workers: int = 2) -> dict:
     raw_dir = out / 'raw/archive'
     metadata = fetch_retry(f'{IA}/metadata/GR_711', raw_dir / 'metadata.json')
@@ -215,8 +296,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--workers', type=int, choices=range(1, 5), default=2)
+    parser.add_argument('--audit-only', action='store_true', help='Verify every cached artifact offline; never fetch or rewrite it')
     args = parser.parse_args()
-    acquire(args.output.resolve(), args.workers)
+    if args.audit_only:
+        print(json.dumps(audit(args.output.resolve()), indent=2))
+    else:
+        acquire(args.output.resolve(), args.workers)
 
 
 if __name__ == '__main__':

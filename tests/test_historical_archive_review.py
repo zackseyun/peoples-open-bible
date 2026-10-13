@@ -100,7 +100,25 @@ class HistoricalSourceReviewTests(unittest.TestCase):
         raw=('<script id="__NEXT_DATA__" type="application/json">'+json.dumps({'props':{'pageProps':{'summary':page}}})+'</script>').encode()
         self.assertEqual(parse_jsp_page(raw)[0],'Printed by F. G. WILLIAMS & CO.')
 
+    def test_a_page_locator_alone_is_not_nonempty_source_text(self):
+        from tools.historical_archive_review import parse_jsp_page
+        page={'clearText':'<div class="wasptag">[p. [0]]</div>', 'editorialPageNumber':'0'}
+        raw=('<script id="__NEXT_DATA__" type="application/json">'+json.dumps({'props':{'pageProps':{'summary':page}}})+'</script>').encode()
+        with self.assertRaises(ValueError):parse_jsp_page(raw)
+        self.assertEqual(parse_jsp_page(raw,allow_empty=True)[0],'')
+
 class WholeEditionInventoryTests(unittest.TestCase):
+    def test_offline_snapshot_audit_never_repairs_or_fetches(self):
+        from tools.historical_dc_whole_edition import read_snapshot
+        with tempfile.TemporaryDirectory() as directory:
+            path=Path(directory)/'page.html';path.write_bytes(b'original')
+            record=path.with_name(path.name+'.receipt.json')
+            with self.assertRaises(FileNotFoundError):read_snapshot(path,'https://example.org/page')
+            record.write_text(json.dumps({'url':'https://example.org/page','sha256':digest(b'original'),'bytes':8}))
+            self.assertEqual(read_snapshot(path,'https://example.org/page'),b'original')
+            with self.assertRaises(ValueError):read_snapshot(path,'https://example.org/other-copy')
+            path.write_bytes(b'tampered')
+            with self.assertRaises(ValueError):read_snapshot(path,'https://example.org/page')
     def ia_fixture(self):
         scan=b'<book><bookData><bookId>GR_711</bookId><leafCount>2</leafCount></bookData><pageData><page leafNum="0"><pageType>Normal</pageType></page><page leafNum="1"><pageNumber>i</pageNumber></page></pageData></book>'
         djvu=b'<DjVuXML><BODY><OBJECT usemap="GR_711_0000.djvu"></OBJECT><OBJECT usemap="GR_711_0001.djvu"><LINE><WORD coords="1,2,3,4">Printed</WORD><WORD>words</WORD></LINE></OBJECT></BODY></DjVuXML>'

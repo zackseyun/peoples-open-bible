@@ -194,7 +194,7 @@ def parse_jsp_page(raw: bytes, *, allow_empty: bool = False) -> tuple[str,dict]:
             if paragraphs[-1].endswith(marker):
                 paragraphs[-1]=paragraphs[-1][:-len(marker)].rstrip()
                 break
-    if not paragraphs and not allow_empty: raise ValueError('Missing source transcription body')
+    if not any(value.strip() for value in paragraphs) and not allow_empty: raise ValueError('Missing source transcription body')
     return '\n\n'.join(paragraphs),page
 
 def acquire_dc_opening(out: Path, archive_root: Path) -> dict:

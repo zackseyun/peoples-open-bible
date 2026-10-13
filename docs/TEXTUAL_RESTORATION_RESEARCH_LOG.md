@@ -9852,6 +9852,53 @@ separately by root. Root verifies417 local file links, whitespace and unchanged
 canonical39:29/protected Genizah hashes. This prose/method-only delta adds no
 new corpus test suite; its publication still requires its own integrity checks.
 
+### 2026-10-13 — Historical method pins repaired without changing evidence
+
+The preceding turn is progress: the Wevers body and complete relevant pages
+support an explicit method refinement, PR178 reaches main, and PR180's own
+checks start. Authoritative job polls now confirm terminal failure for
+push115531059239 at21:14:07UTC and PR115532667337 at21:06:33UTC on
+ae0f5c86519b3e0dca78dadf6cf48ab2c21a2e9c. Their actual logs show the same
+current-method-versus-historical-hash assertion in the Habakkuk2 module,
+not a source-text defect. Local reproduction yields the same failure among
+eight tests in3.412s; the complete remote reader corpus had already passed.
+
+A bounded static audit identifies the same defect in the Habakkuk1:17 module,
+avoiding a second remote discovery cycle. Both historical method hashes remain
+d977ce6cc4967af022e9758ed5c47ab3b4e84b8952ced4728d54b9719a266772 at their
+original baselines324d1a56295e84cc5976be0501702adcbd16a13c and
+6017ffa06c1fc8eee2247ce01308df131fcfc557. Every input still checks baseline
+bytes; only the current method file is exempted from that historical equality.
+All other live pins and application assertions remain binding. Each module
+adds corruption regressions for the historical method and live schema/source
+inputs, using the same helper as its original assertion. The resulting20 tests
+pass in8.712s. The independent code critique passes and reruns the same20,
+not20 additional distinct tests. CI already fetches the required immutable
+commits, so no workflow or deadline adjustment is needed.
+
+Concurrent PR179 is unrelated historical-archive work. Its merged main
+d1ffdafed0432322a2b56e0e6df8c58b5562963a is fetched and merged normally into
+this branch without altering its five paths or the protected Genizah file.
+The documentation skill keeps validation repair separate from the source
+finding; no scholarly judgment is changed to make tests pass.
+
+The Sylloge primary repository page and public PDF link are verified in the
+ordinary browser. A prior55-second transfer timeout has no durable file or
+returned live handle; the ordinary link click also produces no readable PDF
+viewer. Direct HTTP stops at site protection. No full body or hash is claimed,
+and no transfer is restarted solely because observation timed out. Source
+acquisition remains open alongside the renewed publication checks; it is not
+an overall project blocker or an assertion that the corpus goal is complete.
+
+The repair-account fidelity check passes separately from the code review,
+excluding acquisition and remote CI chronology. After the main merge, root
+reruns the same20 checks successfully in7.035s, verifies417 local file links
+and whitespace, and confirms the protected Genizah hash. The two repaired
+module hashes are6723a1f99d3cb7410fc736f3bab53232df19348e91f9cba5d58a070039d08626
+and684679077aa04b482f7423a79510a70cb78b8753a201ad9344b308e4fce09ed4.
+This is repair verification, not additional scholarly evidence or new distinct
+tests. The new publication head requires both of its own remote integrity jobs.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -710,3 +710,15 @@ The repository's ordinary browser completed automatic site verification and
 offered its public PDF link. Direct web/shell fetches returned403; no security
 challenge was solved or bypassed. The PDF and ten renders remain outside Git.
 The study's public availability does not transfer its copyright to POB.
+
+### Historical method checks after later revisions
+
+The first method2.0.5 publication checks fail because two Habakkuk application
+tests compare the current method with their frozen2.0.4 method hash. The
+historical method remains checked at each actual review baseline; only its
+current-file equality is removed. Every other live input pin, candidate,
+canonical target, receipt and export assertion remains. Four fault regressions
+check corrupt historical methods and live schema/source data. All20 scoped
+tests pass and one bounded code critique confirms the exact boundary. The
+scholarly method and all frozen evidence stay unchanged; renewed remote checks
+must pass before publication.

@@ -189,3 +189,124 @@ checking the original target images and notation, four private Thurn hashes,
 20 retained repository inputs and the protected Genizah hash. Root independently
 verifies those inputs and clean whitespace. No new corpus-test claim is needed
 for this two-document append; its own exact-head publication checks are separate.
+
+## Contemporary omission criticism and Latin ordering limits
+
+Irwin's1943 *The Problem of Ezekiel*, complete printed62–65, supplies a
+contemporary argument against simple eye-skip. On62 note3 he estimates the
+missing passage as roughly1¾ pages of967 using Swete. This is Irwin's estimate,
+not a newly verified Filson calculation or a measurement of the lost exemplar.
+His claim that no comparable omission was known, including his report of a
+conversation with Filson, is an attributed historical assessment, not a measured
+error probability. Its force depends partly on an exemplar resembling967;
+Spottorno's different hypothetical format is not excluded by that condition.
+
+The same note continues on63 and reports36:23a immediately followed by38:1.
+Preserve his clause label rather than harmonizing it silently with later b/c
+labels. This is original scholarly testimony, not inspection of the Greek
+transition's letters or supply brackets. Irwin treats the endpoint as natural
+and combines the minus with distinctive Greek to infer a late Hebrew addition.
+Our conclusion is narrower: Greek distinctiveness does not uniquely distinguish
+Hebrew expansion from Greek revision or ancestral loss. His63–65 dating and
+canon-closure inferences depend on that unresolved step and are not adopted.
+The [surviving Masada longer-form words](EZEKIEL_36_LONGER_FORM_EVIDENCE_2026-10-12.md#surviving-hebrew-and-supplies)
+remain the direct Hebrew control; literary priority stays HOLD.
+
+The [Ranke118–119 print sequence](https://books.google.com/books?id=9bNCAQAAMAAJ&pg=PA119)
+also limits an easy equation of the witnesses. Printed118 labels42:11–14 and
+14–18;119 labels38:8–11 and12–14, explicitly referring back to108A5. These
+separate printed pages are not a same-column42→38 transition or a verified
+original folio map. They confirm the edition's later compensation discussion,
+not the full P96736→38→39→37 arrangement. Common ancestry and local Latin
+rearrangement still require discrimination. No source, English, note or canon
+change follows.
+
+### Sources and bounded consultation
+
+[UChicago's institutional edition](https://isac.uchicago.edu/publications/problem-ezekiel-inductive-study)
+identifies Irwin's1943 book and [public PDF](https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/problem_ezekiel.pdf).
+Root read all four target pages and notes in text and images, not the entire
+364-page file. The institutional page declares CC BY-NC-ND4.0; private PDF and
+renders are not imported or relicensed as POB text. Directory:
+/tmp/filson-primary-z4YoYy/.
+
+|Input|SHA256|
+|---|---|
+|irwin1943.pdf|5d32edf713d745bdf9c1b7dd6bfc05c18d953b3eb2b27fea50e6613e3f5f872d|
+|irwin-082.png printed62|b421fab54f46e0cf62b153910586282d60f021d5ec0e9a6a196a72674177acad|
+|irwin-083.png printed63|a2f88c15d6e05506520e7b20ed496f28b18f0489127589ec3c3d47458b1192a8|
+|irwin-084.png printed64|2f2430cbf4b711044ebb7825b5b26e95495c21cee27ed375b5a02e6c898d25a5|
+|irwin-085.png printed65|c5c9a79d5e01d5e27164e58dab4ddebe42cea0ababebab1a4c029a92af78f3cb|
+
+Filson's own six-page JBL62(1943),27–32 article, DOI10.2307/3262380,
+remains unacquired. The [original JSTOR record](https://www.jstor.org/stable/3262380)
+returned a client challenge, the publisher's issue returned403, and the checked
+bibliography supplied no body. Irwin's account cannot substitute for reading
+Filson's argument. These distinct routes stop here unless new access appears.
+Ranke118–119 were visually read through the same public copy as the preceding
+check; browser-only images receive no invented file hash or fresh-ink claim.
+
+One bounded independent critique passes this follow-up at full-report SHA256
+d51565149cb1cd2083d8ef8ba01696574ea2909b25834dd7e8bd0bf25c55ea9a,
+reading all four Irwin pages/notes and the Ranke labels/reference. Five private
+hashes,20 retained inputs and protected Genizah bytes match. Root reproduces
+those checks, resolves363 local documentation links and verifies whitespace.
+This validation append changes no argument; no corpus rerun or historical
+priority/application approval is claimed. PR170's frozen head is unchanged;
+these successor edits still require their own commit and publication checks.
+
+## Same codex omission control
+
+Papyrus967's12:26–28 minus is positively attested within a surviving column,
+not inferred from a present physical gap. Kenyon1937, complete printed2–3/PDF20–21,
+continues fol.11v from12:23 through13:6. At12:25→13:1 it prints unbracketed,
+undotted `λογον και ποιησω λεγει κ̅ς̅` followed by
+`Και εγενετο λογος κ̅υ̅ προς με`. The apparatus explicitly reports26–28 omitted,
+but qualifies the proposed cause: “per homoioteleuton ?” retains a question mark.
+The endpoint is a declaration formula, not the recognition formula invoked
+in the36 discussion. Do not use the shorter minus as a proven instance of the
+same recognition-formula copying mechanism.
+
+Kenyon1938, plate PDF15, labeled f.11.v. and captioned12:23–13:6, reproduces
+the same column's continuous join. Root inspected the complete plate for
+layout, using the published text for endpoint words; no fresh glyph recovery
+or calibrated transcription is claimed. The text edition marks a different
+gap after13:6 before the13:11 material on fol.11r. These two kinds of absence
+must remain distinct. No original codex-page numeral was read at the target;
+fol.11v is the observed publication locator.
+
+This is a positive control for attested omission versus physical loss, not
+for its historical cause. A continuous ancient copy can inherit an ancestral
+loss, a different literary form or versional revision. The same-codex link
+does not establish that12 and36 underwent the same process, and these two
+publications do not count as two witnesses. The chapter36 Greek transition,
+its exact clause endpoints and the versional relationships remain the
+discriminating targets. Source/English selection and historical priority remain
+unchanged; ImageGen supplies no evidence.
+
+### Control inputs and consultation
+
+The source PDFs are the existing [1937 text](https://chesterbeatty.ie/assets/uploads/2018/11/The-Chester-Beatty-Biblical-Papyti-Descriptions-and-Texts-of-Twelve-Manuscripts-on-Payprus-of-the-Greek-Bible.pdf)
+and [1938 plates](https://chesterbeatty.ie/assets/uploads/2018/11/The-Chester-Beatty-Biblical-Papyri-Descriptions-and-Texts-of-Twelve-Manuscripts-on-Papyrus-of-The-Greek-Bible-Fasciculus-VII.pdf),
+not new whole-book acquisitions. Root and a source agent visually read the
+two complete text pages with apparatus and the complete plate. The actual
+printed brackets and dots are reported without inventing a comprehensive
+editorial-sign legend. Source PDFs/renders stay outside Git; access is not
+permission to redistribute images. Private inputs under /private/tmp/:
+
+|Input|SHA256|
+|---|---|
+|pob-ra967-kenyon-vii-text.pdf|06d31bd662d388df0cc07c8f3dea6da562951c2c5b11ebd83ea46fa76791b233|
+|pob-ra967-kenyon-vii.pdf|8efe4b11bbeb3b32ae556946e98daf956c14754f8ae1fff4fa15ac4b56feb4d7|
+|pob-ra967-ezek12-control-text-20.png 150dpi|0dec6664ea1b8c7885a824e7a808d664bc03a20bde7d3d85b7842579903cb5b5|
+|pob-ra967-ezek12-control-text-21.png 150dpi|7925fda4264a8aa99a4eba4947312c690d6c7c93fe2a9d4995dd7dda740275e3|
+|pob-ra967-ezek12-control-plate-15.png 200dpi|c0b5cfda7ff4463a1997830ea0a78eaf8c8a26ef574097612bc95285ec1d4fc1|
+
+One independent critique passes this new control at full-report SHA256
+210f1c00c01dadec1d4e7bbcccb7386b4274e4092c9eb5097d04d598713dd9d2,
+reading both complete text pages and the whole plate, with five private hashes,
+20 retained inputs and protected Genizah bytes verified. Root reproduces those
+checks, resolves364 local links and checks whitespace. This is not a repeat
+of the earlier Irwin/Latin judgments; no causal or source-priority approval
+or new corpus-suite claim is implied. The successor requires its own exact-head
+publication checks.

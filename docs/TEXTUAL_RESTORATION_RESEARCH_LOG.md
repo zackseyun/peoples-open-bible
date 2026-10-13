@@ -9506,6 +9506,43 @@ The normal main push reports up to date, and the completed branch switch
 preserves exactly the two reviewed documentation changes and unrelated Genizah
 file. No historical source judgment is broadened by this delivery.
 
+### 2026-10-12 — New exhibit routes do not expose the Ezekiel transitions
+
+The [new route check](PAPYRUS_967_IDENTITY_AND_EDITION_2026-10-12.md#new-exhibit-routes-and-target-access)
+distinguishes public exhibition access from identifiable target-page access.
+Princeton's Scheide M97 exhibit links to item c247f1340, which reaches a
+verification gate. The BNE acquisition subtask finds a panoramic reunion display
+but a failed iframe for the same partial Madrid object 0000230543, not a verified
+complete facsimile. Neither 36→38 nor 39→37 was inspected. Source, English and
+historical-priority HOLD are unchanged; no fresh transcription is claimed.
+
+The latest Nahum reply verifies its already completed full article/application
+record and eight focused tests, not a new finding. At the access checkpoint,
+the successor Ezekiel PR 171 had both own jobs authoritatively in progress on
+head `45d4ad5a32e9ad7cc702deb798270b7a118abfed`. This access record was a separate
+uncommitted successor, not part of that frozen head. A bounded Deuteronomy 32
+reserve search finds only [Dayfani's institutional metadata/abstract](https://cris.huji.ac.il/en/publications/4q37-and-excerpted-texts-of-deuteronomy-from-qumran/) and a
+ResearchGate no-full-text notice, not passage-critical section 4 or new Greek
+apparatus. No repeated gated downloads, preference votes or corpus rerun follow.
+
+Crane's [publisher preview of chapter 7](https://brill.com/previewpdf/book/9789047442714/Bej.9789004169623.i-304_008.xml)
+yields extracted printed pages 207–208, not the whole argument.
+The screenshot fetch returns 403 and the browser cannot
+open the PDF. No visual-page or full-chapter reading is credited, and its
+stronger introductory Latin/ancestor claim does not supersede the directly
+checked Ranke preservation limits. This distinct route stops here.
+
+Both PR 171 jobs subsequently complete successfully: push `115128122083` and
+PR `115128592873`, each on the reviewed `45d4` head. Fresh main, two-path scope and
+merge-tree checks precede the SHA-pinned merge
+`1f231dce37fd2e32223c2477f08fcbb6ffe79fdb`. API and completed fetch verify its
+parents `192ba0d153456de511ad282295d50b653df34c9c` / `45d4ad5a32e9ad7cc702deb798270b7a118abfed`
+and reviewed tree `045519328106fd71b58e789512f591d6673be7f5`. With no main worktree
+checked out, local main advances under an old-value guard; the normal main push
+confirms up to date. This delivers the existing Irwin/Latin and Greek 12 control,
+not a new historical-priority decision. The access-only successor stays separate
+and requires its own checks; protected Genizah bytes remain unchanged.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

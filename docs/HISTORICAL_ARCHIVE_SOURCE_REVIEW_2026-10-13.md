@@ -86,3 +86,41 @@ Primary evidence: Joseph Smith Papers 1835 pages 9 and 11; Newberry GR_711 leave
 n4 and n6; Bilara pinned root/translation/publication files; Tanzil's original
 text license; the 1913 PGP Wikisource index. Discovered source candidates are
 not presented as exhaustively acquired, collated, or publication-cleared.
+
+## Whole-edition follow-up, 2026-10-13
+
+The full D&C inventory is now derived from both upstream page inventories,
+not from the reader's 87 approximate reading chunks. Newberry GR_711 contains
+298 scanned leaves, and JSP's copy contains 305 gallery pages. The different
+bindings are not assumed to share leaf numbers. Covers, apparent blanks,
+copyright pages, index/contents, and the printed errata remain in the declared
+scope. Empty OCR does not prove a blank page. The archived OCR matches the
+upstream `GR_711_djvu.txt` SHA-256 pin exactly.
+
+`tools/historical_dc_whole_edition.py` prepares every primary facsimile job
+and every comparison page in a private research directory. It preserves OCR
+word coordinates and source snapshot receipts. Its acquisition ledger records
+every success/failure and requires both complete inventories before it can
+report **acquisition** complete. It always reports whole-work verification and
+publication as false; acquiring a scan is not reading/reviewing it. No model
+calls, keys, source-language invention, translation writes or deployment occur.
+
+Live checks also exposed two defects in the earlier JSP extraction: modern
+popup biographies/glossaries were included after printed anchor words, and
+inferred locators such as `[p. [iii]]` survived when the metadata said `iii`.
+The parser now preserves the printed anchor words, excludes popup annotation
+contents, and strips only the exact terminal locator for that page. The
+opening jobs were regenerated: title-page mechanical difference groups are
+now 5, and first-preface-page groups are 12. Previously extracted text hashes
+are superseded, not accepted review evidence. These corrections affect only
+private research comparisons, not the historical reader text or its preserved
+raw downloads. The separate-review/full-scope gates remain open.
+
+```
+python3 tools/historical_dc_whole_edition.py \
+  --output /private/research/historical-review --workers 2
+```
+
+Seventeen focused tests now cover the original review gates plus whole-copy
+leaf coverage, empty OCR, reordered/missing pages, wrong-copy/error responses,
+independent binding inventories, and the live-style popup/locator regressions.

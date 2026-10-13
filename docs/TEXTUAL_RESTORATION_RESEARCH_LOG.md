@@ -9899,6 +9899,58 @@ and684679077aa04b482f7423a79510a70cb78b8753a201ad9344b308e4fce09ed4.
 This is repair verification, not additional scholarly evidence or new distinct
 tests. The new publication head requires both of its own remote integrity jobs.
 
+### 2026-10-13 — Official data coverage and a separate Ezekiel fragment
+
+The intervening Nahum reply is not new goal progress: it verifies the already
+delivered full-article/application record and eight existing focused tests.
+The next action therefore advances source acquisition rather than another
+same-article review. PR180's repaired head
+2128584405664d874df9fe77994448a6d4b60d38 now has both own checks successful:
+push115557695525 completes22:14:13UTC and PR115557713893 completes22:11:23UTC.
+Fresh main/scope checks preserve PR179 and the five-path217-addition/9-deletion
+delta. The local union tree is befe24f0e41e779c205ac4fa0fcfa6460f8b37aa.
+The SHA-pinned merge39076a0cece2a630c8f9ea8d1793fa74ba68ea8b has parents
+d1ffdafed0432322a2b56e0e6df8c58b5562963a and2128584405664d874df9fe77994448a6d4b60d38.
+API and completed fetch verify the parents/tree; ancestry and no-main-worktree
+checks precede guarded local-main advancement. Normal push confirms up to date.
+
+The [source access follow-up](PAPYRUS_967_IDENTITY_AND_EDITION_2026-10-12.md#official-raw-data-and-a-separate-ezekiel-witness)
+uses Papyri.info's explicitly published GitHub data, without bypassing its
+front-end gate. Root reads the whole DCLP61933 XML and verifies its upstream
+blob and SHA256. Its Greek edition division is empty: this route has metadata
+and bibliography, not a target transcription. Do not recast raw-data access
+as manuscript-text access or repeat the gated front-end for the same file.
+
+A bounded acquisition agent reads Papathomas's complete Tyche30 edition91–97
+and Tafel14; root independently reads the same eight PDF pages visually and
+the complete extracted article. P.Vindob. G31289 is a separate fourth/fifth-
+century parchment witness, but ink survives only at12:16,19,23–25. The supplied
+intervening verses are not manuscript attestation. The author reports no local
+departure from the standard Greek, and his comparison with P967 concerns
+other leaves. No target36–39 evidence, fresh decipherment or English change
+follows. His reported ultraviolet recovery illustrates optical observation
+rather than generated replacement of missing material. Note5 identifies
+four target-relevant LDAB acquisition leads whose exact coverage remains open.
+
+The newly acquired Chester Beatty2023 volume is a public publisher download,
+not a recovered Sylloge transfer. Root reads printed147–148 and the rights page
+visually, with wider143–149 text extraction explicitly distinguished. Its P967
+photograph covers13:20–14:3; reported paragraph comparisons and bibliography do
+not expose our target transitions or noun. The PDF skill requires visual
+checking; the documentation skill keeps actual preservation and supply,
+publication dates, reading extent and image rights separate. Both PDFs and
+the XML remain outside Git. Source/English/priority HOLD and the full corpus
+goal remain unchanged; the target-specific new witness queue is the next
+substantive acquisition, not another catalogue-label confirmation.
+
+One bounded independent factual critique passes the two-document delta at
+case SHA2564e757fe52c08ffc5eb5a8055a222c1987bec6a517d6b584025963621c86115d8
+and pre-verification-log SHA256ac794c0ca44ffbf2136b6414d5760eef007ceb0c4d10440930bafc499fc686cd.
+The reviewer reads the complete XML, Tyche article/plate and the two Wasserman
+pages/rights notice and verifies their hashes. Publication chronology, remote
+CI and census completeness are excluded from that factual verdict. No repeated
+priority vote, new framework or corpus-specific test suite is added.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

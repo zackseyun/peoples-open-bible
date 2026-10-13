@@ -110,3 +110,92 @@ the previously identified partial Madrid object; that iframe visibly failed.
 An exhibition of reunited photographs is not verified access to a complete,
 page-by-page facsimile. These routes supply no new transcription or priority
 evidence. Retain HOLD and do not repeat the gates without new access.
+
+## Official raw data and a separate Ezekiel witness
+
+The [official Papyri.info data repository](https://github.com/papyri/idp.data)
+provides a lawful alternative to its gated front-end. DCLP's own
+[documentation](https://github.com/papyri/site-docs/blob/master/dclp.md)
+distinguishes its metadata backbone from subsequently added transcriptions.
+The complete [DCLP 61933 XML](https://github.com/papyri/idp.data/blob/d9387868bbe30de24f4674805b28ae1070029e1b/DCLP/61/61933.xml)
+was read: **its single Greek edition division is empty**. The file supplies
+codex identity, dispersed holdings and bibliography, not a P967 transcription.
+Neither the declared Greek language nor the reported chapter span demonstrates
+survival of the word at 39:29 or continuity across the chapter transitions.
+
+The 8,676-byte XML is retained outside Git at
+`/private/tmp/pob-dclp-ezekiel.podDgn/61933.xml`, SHA256
+`ce5492c33e1ec86041822f165fc7c16a0d78afe559d804f9135d73fcea11da41`.
+Its Git blob is `59b1a51e97ee4a39eba4587c6c7e3fbcb40fd52e`; the file's latest
+upstream commit is `d9387868bbe30de24f4674805b28ae1070029e1b`, dated
+2026-10-04. DCLP and LDAB/Trismegistos attribution and CC BY 3.0 remain with
+that source. This acquisition resolves the route's content limit; do not
+repeat the front-end verification gate looking for text absent from this file.
+
+[Amphilochios Papathomas's primary edition](https://doi.org/10.15661/tyche.2015.030.11),
+*Ezechiel 12, 16–19 und 23–25 in einem griechischen Pergament aus Ägypten*,
+Tyche 30 (2015), printed 91–97 and Tafel 14, editions a **separate** object:
+P.Vindob. G 31289. The journal's online publication date is 2016-04-02;
+neither date dates the parchment. The surviving fragment measures 5.4 × 4.8 cm.
+The author favors fourth-century palaeography but does not exclude the fifth;
+the edition labels it fourth/fifth century. A precise Egyptian findspot and
+acquisition history are not established by the fragment or inventory.
+
+| Physical portion | Ink assigned to | Edition lines |
+|---|---|---|
+| Hair side, column I | 12:16 | 1–11; two preceding lines are wholly supplied |
+| Hair side, column II | 12:19 | 33–35 |
+| Flesh side, column I | 12:23 | Remnants in 58–60 and 62; 61 is wholly supplied |
+| Flesh side, column II | 12:24–25 | 73–84, with partial survival and supplied text |
+
+Verses 12:17–18 and 12:20–22 are wholly reconstructed, not additional surviving
+attestation. Square brackets mark missing supplied letters; underdots mark
+uncertain surviving readings. The divine-name abbreviation in line 75 is
+expanded editorially. The author explicitly calls lost line breaks and column
+boundaries unrecoverable; reconstructed original leaf dimensions are estimates.
+At printed 91 he reports no departure from the standard Greek text for this
+fragment's material. That report neither certifies earliest Greek nor applies
+to chapters 36–39. His P967 comparison at printed 93 concerns leaves 10r and
+11v, not our target transitions. No POB source or English change follows.
+
+The restoration distinction is concrete: printed 91 reports that ultraviolet
+illumination helped recover very faint writing on the hair side. That is a
+reported optical observation by the editor, not a newly performed POB experiment.
+It does not license generated completion of torn-away areas. For fresh work,
+retain capture conditions, original pixels and uncertain-letter boundaries;
+evaluate machine readings separately from editorial supply. ImageGen remains
+illustrative, never a source of letters.
+
+The complete article, all notes and both plate photographs were independently
+read by root and the acquisition agent. Root inspected PDF 7–14 in full.
+The 14-page publisher PDF remains private at
+`/tmp/ezekiel-tyche-cyghHj/tyche5000.pdf`, SHA256
+`e9fcc49a26d9436697093a6fa0178d30e1fbbc132f6a47ab1003d7158e27ab8c`.
+No full edition or photograph is imported or relicensed in Git.
+
+Printed 93 note 5 supplies a more consequential acquisition queue: LDAB 3341
+reports chapter 36–37 material; 3435 reports 1–48; 9227 and 10659 report material
+including chapter 39. These remain bibliographic leads, not verified target
+letters. Identify each physical object and its aliases, then inspect exact
+locus coverage, corrections and reading-level relationships. A chapter-39
+label alone cannot establish 39:29. Existing versional and literary-form
+comparisons remain separate from this queue.
+
+## Newer paratext study and its target limit
+
+Tommy Wasserman's *Beyond Palaeography: Text, Paratext and Dating of Early
+Christian Papyri*, in the openly available
+[Chester Beatty volume](https://eprints.gla.ac.uk/274555/), printed 147–148,
+discusses earlier work by Revell, Olley and Hill on paragraph divisions shared
+across Greek and Hebrew witnesses. These are reported comparisons, not a newly
+collated genealogy or a warrant to give every P967 reading priority. Figure 1
+shows folio 12v, Ezekiel 13:20–14:3, not a target chapter junction or 39:29.
+The acquisition therefore supplies no target pixels or noun reading.
+
+Root visually inspected those two complete pages and the rights page; text
+extraction was also checked at printed 143–149. Neither the whole chapter nor
+the whole book was read. The 204-page PDF is at
+`/Users/zack/Downloads/10.1515_9783110781304.pdf`, SHA256
+`f881d4926634fe1d91e503d1ad0884d8fa6070cd42645b142f0f22da0a1d55cb`.
+The book's CC BY-NC-ND 4.0 notice explicitly excludes third-party material from
+automatic reuse permission. No book pages or manuscript photographs enter Git.

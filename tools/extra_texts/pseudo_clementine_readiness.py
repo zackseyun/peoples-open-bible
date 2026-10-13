@@ -1,6 +1,5 @@
 """Audit current evidence for all four works without changing acceptance or publication."""
 import argparse
-from collections import Counter
 from datetime import datetime, timezone
 import json
 from pathlib import Path
@@ -53,10 +52,12 @@ def work_status(work: str) -> dict:
                 raise ValueError("Peter review is not accepted current-source evidence")
             result["accepted_references"] = draft["references"]
         else:
-            selections_path = directory / "translation_workflow/lagarde-batch-v1/accepted-sections-partial.selections.json"
+            complete_path = directory / "translation_workflow/accepted-complete.selections.json"
+            partial_path = directory / "translation_workflow/lagarde-batch-v1/accepted-sections-partial.selections.json"
+            selections_path = complete_path if complete_path.exists() else partial_path
             if selections_path.exists():
                 selections = json.loads(selections_path.read_text())
-                checked = acceptance.collect(work, selections, complete=False)
+                checked = acceptance.collect(work, selections, complete=selections_path == complete_path)
                 result["accepted_references"] = [row["reference"] for row in checked["passages"]]
             else:
                 result["acceptance_note"] = "No consolidated selection has passed the acceptance collector"

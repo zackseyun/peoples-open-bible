@@ -9429,6 +9429,83 @@ the20-input check and verifies clean whitespace. Only this validation history
 appends after review. No corpus suite rerun, source-priority vote or application
 approval is claimed; the new commit requires its own publication checks.
 
+### 2026-10-12 — Irwin omission criticism and Latin print sequence
+
+The prior goal turn made progress by obtaining and checking Ranke's original
+transition, pushing PR170 and delivering PR168. This continuation keeps PR170's
+exact8064f057 head unchanged while its own jobs115115271966/115115410134 are
+verified live. A bounded new Filson acquisition pass encounters the original
+JSTOR3262380 challenge, publisher issue403 and a bibliography without a body.
+No failed route is credited as a reading or restarted without new access.
+
+A distinct institutional Irwin1943 PDF supplies actual contemporary criticism.
+Root reads complete printed62–65/PDF82–85 and all notes in text and four images.
+The [existing mechanism dossier](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#contemporary-omission-criticism-and-latin-ordering-limits)
+attributes the1¾-page Swete-based estimate to Irwin, preserves his36:23a→38:1
+label and separates his strong Hebrew-insertion/canon dating conclusions from
+our unresolved judgment. It is not Filson's original body or Greek ink.
+Root also reads complete Ranke118–119:42 material precedes38 fragments in the
+edition and119 refers back to108A5. Separate-page adjacency cannot prove an
+original continuous transition or equate the full Latin and P967 arrangements.
+
+This is new project-level source argument and ordering context, not discovery,
+restoration or historical-priority approval. Five private source hashes are
+recorded; raw assets stay outside Git under their stated rights. The PDF skill
+requires full target pages/notes; the documentation skill keeps attribution,
+print sequence and historical inference separate. Current source, English,
+notes, canon and ImageGen evidence stay unchanged. These local follow-up edits
+are not in PR170's frozen commit; publication must wait for that live transaction
+to finish before a new head is created.
+
+One independent bounded critique passes the new follow-up at full-report SHA256
+d51565149cb1cd2083d8ef8ba01696574ea2909b25834dd7e8bd0bf25c55ea9a,
+visually reading all four Irwin pages/notes and Ranke's target labels/reference.
+Five private hashes,20 retained inputs and the protected Genizah hash match.
+Root reproduces those checks, resolves363 local links and verifies whitespace.
+Only validation history appends after review; no new corpus-test or historical
+priority claim follows. These local edits remain outside PR170's exact reviewed
+head and require a separate successor transaction after its own live jobs finish.
+
+### 2026-10-12 — Papyrus967 same codex omission control
+
+The prior goal turn made progress by reading the original Irwin target pages
+and Ranke's later print sequence, documenting a reviewed successor and waiting
+on PR170's real live job. Current bytes match that successor's final hashes,
+and the protected Genizah bytes remain unchanged. PR170's own PR job subsequently
+joins its push in succeeding at exact8064f057744d73b45357afd21626c965fe855aa3.
+The fresh main comparison has its two approved paths and predicted union
+bb2414920a121396b71c01be98659d026d3efc46; the uncommitted successor is excluded
+from that comparison and is not silently part of PR170's reviewed head.
+
+A bounded source control now checks actual96712:25→13:1 in Kenyon's existing
+1937 text and1938 plate. Root reads complete printed2–3/PDF20–21 with apparatus
+and plate PDF15. The same surviving column on fol.11v has the reported minus;
+the different13:6→11 gap remains physical absence. The apparatus's proposed
+homoioteleuton retains its question mark, and the declaration endpoint must
+not be called the recognition formula. The [control](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#same-codex-omission-control)
+therefore supports transmitted omission versus present loss, not a proven
+copying cause or historical-priority transfer to chapter36. No new whole-book
+download, source/English application, calibrated glyph recovery or ImageGen
+evidence is introduced. The PDF and documentation skills keep full target
+reading, the observed layout and the inferred history separate.
+
+The single new-control critic passes exact full-report SHA256
+210f1c00c01dadec1d4e7bbcccb7386b4274e4092c9eb5097d04d598713dd9d2,
+reading both complete text pages and the whole plate, verifying five private
+hashes,20 retained inputs and protected Genizah bytes. Root reproduces those
+checks, resolves364 local links and checks whitespace. Only validation history
+appends. The earlier Irwin/Latin judgments are not repeated or broadened.
+
+PR170's SHA-pinned merge lands192ba0d153456de511ad282295d50b653df34c9c.
+Authoritative API and completed fetch confirm the expected parents and union
+bb2414920a121396b71c01be98659d026d3efc46. No main worktree is checked out;
+ancestry verifies and local main advances under an old-value guard. The reviewed
+local successor remains separate from the merged tree and is preserved on a
+new research branch, with its own exact-head checks required before publication.
+The normal main push reports up to date, and the completed branch switch
+preserves exactly the two reviewed documentation changes and unrelated Genizah
+file. No historical source judgment is broadened by this delivery.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

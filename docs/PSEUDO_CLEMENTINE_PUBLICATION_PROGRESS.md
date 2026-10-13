@@ -224,3 +224,34 @@ requirements above are evidenced and checked.
 - Scope remains all four works. Other works, complete Homilies evidence, final
   production build, main integration and authorized live deployment are pending.
   No goal-completion or public-availability claim is made.
+
+## Post-restart source recovery and substantive review findings
+
+The host restarted and cleared the temporary directory. Both registered PDFs
+were re-downloaded from Internet Archive's official mirrors and matched their
+original SHA-256 hashes. Source images, request caches and logs now use the
+ignored persistent .cache/pseudo-clementine directory. Only stopped jobs were
+resumed; successful receipt files were reused.
+
+- Primary PDF page 64 / printed page 22 now has a separately accepted review
+  against alternate-copy PDF page 58. Its obscured line reads ἡμῖν. The selected
+  page map points to this supplemented evidence, with both scan identities.
+- Page 68's exact diagnostic request succeeded after its earlier terminal CLI
+  failure. The ordinary complete source review subsequently accepted that page.
+- Contestation English sections 1–5 completed the bounded v0–v2 workflow but did
+  NOT pass overall. Section 3's opening remains syntactically unresolved.
+  A separate targeted Sol 6.1 investigation tested contextual ellipsis and
+  genitive/postposition analyses without changing the Greek; it returned no
+  defensible complete reading. This is a meaning block, not a demonstrated OCR
+  error. Do not erase it, force acceptance, or present the investigation as
+  scholarly sign-off. Exact additional evidence requested is preserved in
+  syntax-investigation.response.json under that work's batch-001 workflow.
+- Historical English consultation:
+  https://www.ecatholic2000.com/fathers/untitled-371.shtml
+  This supports only a comparison of a prior translator's interpretation, not
+  the grammar of the selected Greek. No older English wording was adopted into
+  the generated draft as a shortcut.
+- Clement's first five sections also reached editorial-attention status after
+  bounded revisions. Its remaining batches and the Homilies source job continue.
+- The website staging code now handles the separate 5-section Contestation and
+  20-section Clement inventories. Neither is made visible before acceptance.

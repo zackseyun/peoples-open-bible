@@ -9543,6 +9543,62 @@ confirms up to date. This delivers the existing Irwin/Latin and Greek 12 control
 not a new historical-priority decision. The access-only successor stays separate
 and requires its own checks; protected Genizah bytes remain unchanged.
 
+### 2026-10-12 — Direct control for the Ezekiel renewal parallel
+
+The [renewal comparison](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#renewal-promise-comparison-in-the-declared-hebrew-form)
+reads current source/English fields at 11:17–21 and 36:26–28, WLC XML and the
+identified publisher Greek passages. It distinguishes one/another/new heart,
+mixed/regular recipients, new spirit versus explicit my Spirit, and the location
+of the covenant formula. This tests the earlier dependence attribution without
+deciding its direction. The longer passage is not semantically identical
+repetition; historical priority remains HOLD and source/English stay unchanged.
+
+POB's 11:19 within-them choice differs from the declared WLC's within-you form.
+NET reports manuscript/version support, but the actual unnamed witnesses and
+critical apparatus remain uncollated. The current 36:26 parallel alone cannot
+justify them. This is a source/English accounting issue, not an approved repair.
+The six pinned Qumran pages return no displayed target-reference rows, not proof
+of an exhaustive absence or a surviving heart-reading vote.
+
+The bounded Lust acquisition identifies *CBQ*43(1981),517–533, target518 note8,
+but obtains no original body; tool lookup failures are not labeled a verified
+paywall. Its ancestry argument remains unverified. PR172's frozen7deaaa head
+is unchanged while its own jobs run; this comparison is a separate successor.
+
+The independent critique passes the new section at report02d8af1e and log80fcbb5c,
+checking the exact five current-record pins, XML, publisher Greek, NET note and
+reference limits. Root reproduces those checks and all eight canonical
+consonantal word streams. The enablement description concerns the whole clause,
+not a causative stem. Verification appends without source/English application;
+the unchanged protected Genizah hash and clean whitespace are checked.
+
+The [original De Rossi entry](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#original-hebrew-collation-at-ezekiel-11-19)
+now supplies actual published Hebrew new-heart and within-them reports, narrowing
+the preceding NET-only limit. Root and the acquisition subtask read complete
+III135–136, IXLV–XLVI conventions and the III1786 title page. Earlier/corrected,
+doubtful and text/margin states stay separate; the Greek another-heart reading
+does not become Hebrew other-heart attestation. De Rossi's quoted Norzi argument
+raises possible chapter36 assimilation and records a change in Norzi's own
+autograph, not an independently dated ancient change. Genealogy and priority
+remain held, and no canonical fields are edited. Six private hashes reproduce;
+the existing reviewed parallel comparison is preserved, not voted on again.
+
+The original-collation critic passes report6d40b000 and log2b9f74b3, inspecting
+all target/convention pages and the title, reproducing six private hashes and
+five canonical pins, and preserving the previous12,835-byte reviewed prefix.
+The new support narrows the attestation gap, not historical-priority uncertainty.
+Source/English remain unchanged; only verification history appends afterward.
+
+PR172 subsequently passes both own exact-head jobs115137327073/115137450680.
+Fresh main, exact two-path scope, run-head checks and the predicted merge tree
+precede its SHA-pinned merge e732b7e9fadb8389f34072bd16536a72274b1517.
+API and completed fetch verify parents1f231dce37fd2e32223c2477f08fcbb6ffe79fdb
+and7deaaa1d449e40bca47871bfef79af2aa8fcb686, with reviewed union
+d24d2c057c139605af8d1bf60de758b350bff305. No main worktree is checked out;
+ancestry and an old-value guard precede local main advancement, and its normal
+push confirms up to date. The separately reviewed renewal/collation successor
+is preserved on a new branch, not covered by those earlier checks.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

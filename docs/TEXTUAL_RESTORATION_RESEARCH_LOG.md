@@ -9599,6 +9599,51 @@ ancestry and an old-value guard precede local main advancement, and its normal
 push confirms up to date. The separately reviewed renewal/collation successor
 is preserved on a new branch, not covered by those earlier checks.
 
+### 2026-10-12 — Greek apparatus and the Spirit wrath contrast
+
+The preceding Nahum reply repeated an already completed current-state check;
+it added no source evidence. The next consequential action returns to the
+Ezekiel lead rather than re-reading that article or retrying parked access gates.
+The [original Greek apparatus](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#original-greek-apparatus-at-ezekiel-11-19)
+now distinguishes the two printed 11:19 variants from its another-heart and
+third-person base. Γ omits the preposition, not the pronoun; A adds their after
+the second heart noun. Original/revised hands and apparatus silence are not
+converted into additional independent readings.
+
+The [39:29 comparison](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#spirit-and-wrath-at-ezekiel-39-29)
+checks actual WLC my-spirit against RH2006 and Swete B-based my-wrath. The latter's
+target apparatus changes only the relative pronoun in AΓ. Direct enhanced BDB
+consultation establishes an anger-related sense for רוח but specifically places
+39:29 in its revival category: same-consonant interpretation is possible, not
+the established cause of the Greek difference. LSJ also preserves the Greek
+word's broader spirit/disposition range; the actual 36:18 outpouring expression
+paired with Hebrew חמה supports the contextual wrath gloss without proving that
+Hebrew at 39:29. Greek causal wording and Hebrew
+causal/temporal possibilities remain separate; current when has a published NET
+parallel, not an argument from ancient witness counts. No canonical fields change.
+The next English step is bounded reader disclosure and argument comparison,
+not an automatic wrath replacement or a claim that the shorter form lacked all
+Spirit theology. The PDF and documentation skills preserve complete relevant
+pages, publication identity and source-versus-inference distinctions.
+
+PR173 passes both own exact-head jobs115148531154/115148915412 on3643269.
+Fresh main, two-path scope and merge-tree checks precede its SHA-pinned merge
+`3b2f9a008cf4122f51cfbc87e73dcadd826233db`. API and completed fetch verify parents
+e732b7e9fadb8389f34072bd16536a72274b1517 and3643269cc3b03fff95105a30e4e5cca1ab981013,
+with reviewed union0445794d54cd28f33e4060331cbe70762396ddf8. No main worktree is
+checked out; ancestry and an old-value guard precede local main advancement.
+The normal main push confirms up to date, and the successor stays separate on
+research/ezekiel-spirit-wrath-2026-10-12. Those checks do not cover this new append.
+
+The new-evidence critic passes report23e75891/logaaa72b2a, visually checking
+the complete targets and notation, nine private pins and current canonical
+fields. After the Greek lexical qualification is added, a narrow check passes
+report28d23f2c/log51350bd7, using primary Perseus LSJ and the actual 36:18
+publisher/current text; reversing only that addition preserves the earlier
+reviewed bytes. Root checks the unchanged report prefix, protected Genizah
+bytes, whitespace and 368 local file links. No corpus rerun or application
+approval follows; the successor requires its own exact-head publication checks.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

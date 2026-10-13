@@ -301,3 +301,134 @@ This is a separate new-evidence check, not another source-priority vote.
 Root reproduces the hashes, retains unchanged source/English and protected
 Genizah bytes, and checks whitespace and the new local anchor. No corpus rerun
 or application approval is claimed. Own publication checks remain separate.
+
+## Original Greek apparatus at Ezekiel 11 19
+
+Swete's [volume III](https://archive.org/details/theoldtestamenti03swetuoft),
+third edition 1905, printed 402–403 / PDF 426–427, supplies a more precise
+Greek control. The exterior text siglum B identifies the Vaticanus-based text;
+it prints `καρδίαν ἑτέραν`, another/different heart, with third-person
+recipients. The verse-19 apparatus reports two different variants:
+
+| Witness | Printed variant | Effect |
+|---|---|---|
+| Γ, Cryptoferratensis | Omission of `ἐν` | Removes the preposition before the third-person recipient, not a change to you |
+| A, Alexandrinus | Addition of `αὐτῶν` after the second `καρδίαν` | Adds their to the stone-heart expression, not to the first heart adjective |
+
+No one/new-heart substitution, second-person replacement, Q reading, named
+reviser or qualified correcting hand is printed in this target entry. That is
+a limit of the inspected apparatus, not unanimity among all Greek manuscripts.
+Swete's volume I conventions, printed XV–XVII / PDF 19–21 in the fourth
+edition 1909 reprinted 1925, distinguish the exterior base-text siglum from
+the witnesses collated for a page or part of it. They also distinguish the
+original scribe, contemporary corrections, later hands and doubtful assignments.
+Neither target variant carries such a hand qualifier; none should be invented.
+Volume III's complete preface V–X and sigla page / PDF 24 identify the witnesses
+and warn that the partly deciphered palimpsest Γ can be silent without agreeing.
+These are published readings, not new manuscript autopsies or P967 attestation.
+
+## Spirit and wrath at Ezekiel 39 29
+
+The end of the restoration passage contains a consequential versional contrast:
+POB's declared WLC has `רוּחִ/י`, my spirit, whereas the selected
+[Rahlfs Hanhart 2006 Greek](https://www.die-bibel.de/bibel/LXX/EZK.39)
+has `τὸν θυμόν μου`, my wrath. Swete III printed 472 / PDF 496 reproduces
+wrath in its B-based text. Its entire verse-29 entry is `ου] ων AΓ`, a change
+from singular to plural in the relative construction, not a Spirit/wrath
+substitution. Γ resumes at 39:23 after its earlier break at 39:9, as the
+surrounding printed 470–471 / PDF 494–495 show. No πνεῦμα alternative, Q
+reading or correcting-hand label appears in the verse-29 entry. This selective
+apparatus cannot establish all-Greek agreement, and neither printed edition
+supplies a newly inspected reading of P967 here.
+
+Under these construals the contrast changes the passage's emphasis: spirit
+outpouring supplies a renewal promise, while wrath outpouring recalls judgment.
+[LSJ's θυμός entry](https://logeion.uchicago.edu/θυμός), read in the browser,
+includes spirit/disposition as well as anger; wrath is a contextual gloss, not
+its only dictionary meaning. A local control supports that gloss: at
+[Greek 36:18](https://www.die-bibel.de/bibel/LXX/EZK.36), the same outpouring
+expression has θυμόν where current WLC/POB has `חֲמָתִ/י`, my wrath. This
+parallel is not proof of a Hebrew חמה reading at 39:29. The interpretive
+difference is worth displaying and investigating, but it does not by itself
+recover different Hebrew consonants. The directly read enhanced BDB entry
+for רוח, PDF 2247–2250, includes an anger sense in §3c and cites Zechariah 6:8
+with a divine first-person suffix. Yet §9e specifically classifies Ezekiel
+39:29 as reviving Israel, not anger. A lexical explanation of Greek wrath
+from רוחי is therefore possible, not demonstrated; a different Hebrew
+exemplar or Greek revision remains possible too. BDB's wider sense range is
+not evidence that its own target interpretation is wrath.
+
+The connecting clause requires a separate judgment. Greek `ἀνθ᾽ οὗ` links
+the outpouring causally; AΓ's plural relative does not turn it into a temporal
+expression. [LSJ's ἀντί entry on Logeion](https://logeion.uchicago.edu/ἀντί),
+read in the browser, documents causal `ἀνθ᾽ ὧν` in §A.III.3. BDB's אשר §8c–d
+on PDF 257 distinguishes causal from rare conditional/temporal uses, including
+a passage it considers interpretable either way. This establishes grammatical
+possibilities, not the preferred sense at 39:29. OSHB labels word 26hXM,
+`שָׁפַכְתִּי`, Qal perfect first-person singular; that annotation alone cannot
+decide a future-context English tense or the clause's causal/temporal relation.
+
+Current POB says **“when I have poured out my Spirit”** and has no explanatory
+note at 39:29. [NET's own rendering](https://classic.net.bible.org/verse.php?book=Eze&chapter=39&verse=29)
+also uses when, while its sole note points to 11:19 and 37:14 without giving
+an argument about this construction. Thus when is an attested published
+interpretation, not an error established by the Greek causal wording. POB's
+May 18 revision records a wholesale reversion to its drafter; that provenance
+is not a fresh grammatical defense of the choice.
+
+**Decision:** retain WLC and the current English provisionally. Open a bounded
+reader-disclosure comparison for Spirit/wrath and causal/temporal alternatives;
+do not replace Spirit with wrath or when with because without a separately
+reviewed application. Compare actual modern target apparatus and P967's
+preserved text before attributing the contrast to the shorter literary form.
+The 36:26–27 my-Spirit/agency difference remains meaningful, but a Greek reading
+at 39:29 cannot prove that a whole earlier form lacked Spirit theology.
+No source-priority, canon or fresh-restoration claim follows.
+
+## Greek and lexical input record
+
+Baseline is main `3b2f9a008cf4122f51cfbc87e73dcadd826233db`. Current source and
+English at 39:25–29 were read; 39:29 remains SHA256
+`d768b8615338f43b9512bf8be890f45afcb0bc9114e353842d666ad4bb8c69ab`.
+The WLC XML and five earlier core record pins are unchanged. Swete's main text
+and apparatus were visually read on complete target pages, with the relevant
+preface, sigla and conventions. BDB's title, enhanced-edition preface and
+notation pages 50–52 distinguish this electronic layout from original print
+pagination. Root read the complete רוח entry and the relevant אשר page;
+the lexical subtask also inspected the complete אשר entry, PDF 253–258.
+No whole-volume reading, new glyph recovery or fresh HALOT consultation is claimed.
+
+Private source inputs remain outside Git:
+
+| Input | SHA256 |
+|---|---|
+|`research_sources/swete-vol3-1905.pdf`|`5f0bfffabf0e588fd32e15bdb24b027872616da219e7f02da3dbdc115cf97d85`|
+|`research_sources/swete-volume-i.pdf` — 1909 edition, 1925 reprint|`f2ac358a60bf8cc53e4cdc2dd18b9fba12185479ab46d97a19d20505bd4b8fea`|
+|`research_sources/bdb-hebrew-college.pdf` — enhanced, reflowed 3132-page file|`9784a8d3b14dd7d4d8bcde138185f1dac86c896c59d32533868b03feab165ce3`|
+|Swete PDF 426 render|`484114beddcd9928ca3ab74517c9f3b40f86443a8d6f36efec4200296058d8ac`|
+|Swete PDF 427 render|`c5819b4ace468beae56fe4760e88b265312e19c93e5337b8d8b45b05681baad2`|
+|Swete PDF 496 render|`c1c516a58421b8a6a5117348f67333de7baa0318fa03e3c4611aee0d6b99d407`|
+|BDB PDF 2248 render|`e982673febb13d8edaae5983b6bf6730fd577929af3a5a447b3c795b45ab2ad0`|
+|BDB PDF 2250 render|`0d6679a9b95425b8a6028af8de3dbb4456a87f3ee83daaaa4faa856480d59568`|
+|BDB PDF 257 render|`664c32a97a7a7f0c430085a15af9acd4757269044bb81e3c483714ab5cceb59a`|
+
+Source directory is `/Users/zack/Documents/Codex/2026-09-03/can-you-also-take-a-look/`.
+Swete renders are in `/private/tmp/pob-ezekiel11-swete.cYuvMf/`; lexical renders
+are in `/tmp/ezekiel39-bdb-L8nFhz/`. The volume-I scan is identified by its own
+hash, not silently substituted for another registered scan. These checks pin
+the inspected publication bytes, not manuscript authenticity or originality.
+
+The bounded new-evidence critique passes report SHA256
+`23e758913aeca4bc0d7a0f2c6f4be9e24363b2a724ddc9e1744de65d0a2f2012`
+and log `aaa72b2a461ac4098f22fee62857b76287cf42537618b2ab8cefbd971a2686d0`.
+A separate narrow check of the subsequently added Greek lexical range and
+36:18 control passes report `28d23f2c0541ee048d76e9fb32825de2ebd892b187c610e195e5eaf476453526`
+and log `51350bd7da9956f8b7c9d1e5e37d402a3dd2fffebb251b631737e2bccdf7e203`;
+reversing only that delta reproduces the earlier reviewed bytes. The critic
+uses Perseus's primary LSJ transcription for this added control, not a claimed
+new Logeion browser visit. The 36:18 current record remains SHA256
+`fb7106258c1a1d950e52aec09137c714814f1c10fc6379c09c94ed647e15a7c6`.
+Root reproduces all nine new source/render pins, the canonical pins and the
+unchanged protected Genizah hash; the prior 19,006-byte report is an unchanged
+prefix. Whitespace and 368 local file links pass. No corpus test rerun, English
+application or source-priority approval is claimed for this two-document scope.

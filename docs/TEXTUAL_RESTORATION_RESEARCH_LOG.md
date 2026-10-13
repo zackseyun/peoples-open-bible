@@ -9644,6 +9644,53 @@ reviewed bytes. Root checks the unchanged report prefix, protected Genizah
 bytes, whitespace and 368 local file links. No corpus rerun or application
 approval follows; the successor requires its own exact-head publication checks.
 
+### 2026-10-13 — Ezekiel 39 29 reader candidate and provenance recovery
+
+The preceding goal continuation made progress with original Greek apparatus,
+actual lexical controls, a reviewed documentary successor and PR173 delivery.
+PR174 then passes both own exact-head jobs115166407859/115166992292 on d9f16e24.
+Fresh main includes concurrent PR175's source-first archive work; the approved
+two-path scope has predicted union88efb00fe735506360f4bd621d07aa52f1755804.
+Its SHA-pinned mergee1724eaed82b1e0e655825ecd11519bd06271fa8 preserves that work.
+API and completed fetch verify parents12ef4cbdffe0a047175192217885661fb1e58c25
+andd9f16e24b498427f54953b49de6429b206bd89bd and the expected tree. With no main
+worktree checked out, ancestry and an old-value guard precede local main
+advancement; the normal push confirms up to date. The next draft is separate.
+
+The [reader draft](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#ezekiel-39-29-reader-draft-on-october-13)
+now exposes causal/temporal and qualified Greek wrath alternatives without
+changing the main sentence or WLC. Its legacy record failed two schema
+requirements; Git's actual original draft recovers the missing ai_draft and
+philosophy with exact source/English matches. No new model provenance or
+historical approval is invented. The actual full proposed book export changes
+only39:29, retains both notes and1272 other units, and passes schema/marker
+checks. A generic probe's absent lightweight source object stays an explicit
+limit, not a reason to claim source-display or deployment success.
+
+The Kenyon control inspects complete source prefaces and publication boundaries;
+these cached Beatty volumes exclude39:29. The Princeton span is metadata, not
+the decisive noun's surviving letters or a physical-gap claim. The PDF skill
+preserves those boundaries, and the documentation skill keeps historical
+generation provenance separate from a new note's approval. Source and canon
+judgments remain held; the frozen draft still requires independent review.
+
+The factual/application critic subsequently passes exact candidatedfda0b8d
+and final contractc2d4df57, reportd7b0d153 and log2aa72fe9. The initial6037883d
+contract binding remains in the receipt. Export/YAML hash comparisons initially
+used different formatting recipes in review; the explicit compact UTF8/no-newline
+export recipe and width1000 YAML recipe resolve that identification question,
+with no source or note-text correction. This is not another priority vote.
+
+Root [applies the reviewed notes](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#applied-ezekiel-39-29-notes)
+at exact canonical8d4d3343 and verifies actual export312d4eae, both notes and
+1272 unchanged other raw records/exported units. Six new checks pass in13.683s
+and64 shared reader checks in59.870s:70 distinct post-application checks.
+CI adds the new module and two immutable baseline fetches, preserving the
+existing suite. The old generation metadata is historical, not approval;
+source priority, whole-verse optimality, divine-name policy, deployment and
+canon remain unapproved. Protected Genizah bytes and unrelated work remain
+unchanged. Commit/merge delivery is separate from this local application.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

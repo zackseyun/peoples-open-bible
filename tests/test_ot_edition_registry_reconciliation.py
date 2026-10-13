@@ -99,5 +99,121 @@ class EditionRegistryReconciliationTests(unittest.TestCase):
         self.assertIn('not reacquire the already-read article', row['next_action'])
 
 
+class Papyrus967IdentityTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        path = ROOT / 'sources/textual_restoration/discovery/papyrus967_identity_and_edition.2026-10-12.v1.json'
+        cls.receipt = json.loads(path.read_text())
+        cls.registry = json.loads((ROOT / cls.receipt['registry']).read_text())
+
+    def test_one_codex_not_two_legacy_route_votes(self):
+        r = self.receipt
+        rows = [w for w in self.registry['witnesses'] if w['id'] == 'papyrus-967']
+        self.assertEqual(len(rows), 1)
+        row = rows[0]
+        self.assertEqual(row['relationship_group'], r['identity']['relationship_group'])
+        self.assertEqual(row['witness_class'], 'ancient-daughter-version')
+        self.assertEqual(row['languages'], ['Greek'])
+        self.assertEqual(row['date_basis']['kind'], 'physical-object')
+        self.assertEqual(r['added_ids'], ['papyrus-967'])
+        self.assertEqual(r['changed_existing_ids'], [])
+        self.assertEqual(r['unchanged_existing_records'], r['before_mixed_records'])
+        self.assertEqual(r['after_mixed_records'], r['before_mixed_records'] + 1)
+        self.assertEqual(r['identity']['legacy_aliases'][:2], ['967', '968'])
+        self.assertFalse(any(w['id'] == 'papyrus-968' for w in self.registry['witnesses']))
+
+    def test_actual_edition_coverage_is_not_missing_verse_ink(self):
+        r = self.receipt
+        sources = {s['id']: s for s in r['sources']}
+        self.assertEqual(sources['kenyon1937']['pdf_pages'], 70)
+        self.assertEqual(sources['kenyon1938']['pdf_pages'], 72)
+        self.assertEqual(sources['kenyon1937']['publication_year'], 1937)
+        self.assertEqual(sources['kenyon1938']['publication_year'], 1938)
+        t = r['target']
+        self.assertEqual(t['verse13_support_status'], 'not-covered-in-consulted-Beatty-portion')
+        self.assertFalse(t['verse13_attested_omission'])
+        self.assertEqual(t['verse14_service_support_status'], 'published-reading-outside-supply-brackets')
+        self.assertEqual(t['verse14_service_letter_sequence'], 'λατρευουσα αυτω')
+        self.assertFalse(t['full_verse14_transcribed'])
+        self.assertEqual(t['source_priority'], 'HOLD')
+        self.assertFalse(t['canonical_source_or_english_changed'])
+        self.assertFalse(t['reader_note_changed'])
+        self.assertFalse(r['identity']['manuscript_pixels_newly_read'])
+        self.assertFalse(sources['kenyon1938']['manuscript_plates_read'])
+
+    def test_corrections_and_private_pins_are_explicit_not_truth_votes(self):
+        r = self.receipt
+        c = r['corrections']
+        self.assertEqual((c['princeton_leaves_1937'], c['princeton_leaves_1938']), (26, 21))
+        self.assertFalse(c['complete_continuous_span'])
+        self.assertEqual(c['visual_intro_and_local_apparatus_label'], 'Daniel7:15')
+        self.assertTrue(c['ocr_not_used_for_decisive_claims'])
+        self.assertEqual(len(r['private_sources']), r['validation']['private_input_count'])
+        self.assertEqual(len({p['path'] for p in r['private_sources']}), len(r['private_sources']))
+        for source in r['private_sources']:
+            self.assertRegex(source['sha256'], r'^[0-9a-f]{64}$')
+        for flag in r['flags'].values():
+            self.assertIs(flag, False)
+        self.assertIs(r['validation']['repeat_until_agreement'], False)
+
+
+class Ezekiel36LongerFormEvidenceTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        path = ROOT / 'sources/textual_restoration/comparisons/ezekiel36_longer_form.2026-10-12.v1.json'
+        cls.receipt = json.loads(path.read_text())
+
+    def test_heart_attestation_does_not_promote_supplied_spirit_words(self):
+        r = self.receipt
+        words = {w['word_id']: w for w in r['target_words']}
+        self.assertEqual([words[w]['published_word_text'] for w in ['394780', '394781']],
+                         ['לב', 'חדש'])
+        self.assertEqual(words['394784']['supply_depth_before'], 1)
+        self.assertEqual(words['394784']['supply_depth_after'], 0)
+        self.assertEqual(words['394796']['published_word_text'], '[רוחי]')
+        self.assertEqual(words['394773']['superscript_text'], ['מ'])
+        self.assertTrue(words['394773']['insertion_present'])
+        self.assertEqual(r['sources']['mas1d']['no_sup_elements_in_lines'], [19, 20, 21, 22])
+        self.assertFalse(r['sources']['mas1d']['verse36_36_38_attested_omission'])
+        self.assertFalse(r['sources']['mas1d']['verse36_36_38_preservation_demonstrated'])
+
+    def test_author_fallback_and_copy_dates_cannot_select_original_text(self):
+        r = self.receipt
+        self.assertFalse(r['sources']['patmore']['journal_body_read'])
+        self.assertFalse(r['sources']['patmore']['full_thesis_read'])
+        self.assertEqual(r['sources']['patmore']['chapter_rendered_pages'], 15)
+        self.assertFalse(r['sources']['Greek_primary']['original_Scheide_transition_read'])
+        self.assertEqual(r['comparison']['historical_priority'], 'HOLD')
+        for flag in ('older_physical_copy_proves_earlier_literary_layer',
+                     'coexistence_excludes_prior_expansion',
+                     'Greek_witness_is_second_direct_Hebrew_copy',
+                     'Old_Latin_independence_from_codex_proves_Hebrew_lineage',
+                     'source_or_English_change_approved'):
+            self.assertIs(r['comparison'][flag], False)
+        for flag in r['policy'].values():
+            self.assertIs(flag, False)
+        self.assertFalse(r['pob_scope']['canonical_changed'])
+
+    def test_index_holds_and_registry_identity_do_not_manufacture_votes(self):
+        r = self.receipt
+        repair = r['index_repair']
+        self.assertEqual((repair['valid_pages'], repair['valid_displayed_rows']), (6, 230))
+        self.assertEqual((repair['held_page'], repair['held_displayed_rows']), ('11Q4', 28))
+        self.assertFalse(repair['hold_is_witness_absence'])
+        self.assertTrue(repair['prior_output_exactly_reproduced'])
+        self.assertEqual(r['added_ids'], ['mas1d-ezekiel'])
+        self.assertEqual(r['changed_existing_ids'], [])
+        self.assertEqual(r['unchanged_existing_records'], r['before_mixed_records'])
+        self.assertEqual(r['after_mixed_records'], r['before_mixed_records'] + 1)
+        registry = json.loads((ROOT / r['registry']).read_text())
+        row = next(w for w in registry['witnesses'] if w['id'] == 'mas1d-ezekiel')
+        self.assertEqual(row['witness_class'], 'direct-hebrew-aramaic-manuscript')
+        self.assertEqual(row['languages'], ['Hebrew'])
+        self.assertEqual(row['date_basis']['kind'], 'physical-object')
+        self.assertEqual(len(r['private_inputs']), r['validation']['private_input_count'])
+        for pin in r['private_inputs']:
+            self.assertRegex(pin['sha256'], r'^[0-9a-f]{64}$')
+
+
 if __name__ == '__main__':
     unittest.main()

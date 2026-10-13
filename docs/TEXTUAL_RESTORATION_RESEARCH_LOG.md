@@ -9386,6 +9386,49 @@ and no-main-checkout checks; normal push reports up to date. This does not
 approve the new language-control head. Root executes the literal documented
 reproduction snippet and obtains the same counts and eight noun rows.
 
+### 2026-10-12 — Old Latin original edition and preservation boundary
+
+The previous Nahum goal turn repeated a completed finding; it is no progress
+toward the broader goal. Current evidence checks returned to the active Ezekiel
+lead rather than another same-article review. Thurn's complete printed48–49
+catalogue supplies a survival boundary, not proof of a36 minus. A distinct
+public UC copy of Ranke1871 now exposes actual107–108 and155 images. The
+[existing mechanism dossier](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#old-latin-preservation-and-original-edition-check)
+records the positive diplomatic37:28→40:1 transition within108A, the preface's
+conjecture typography and the commentary's scribal explanation. Thurn's40:3
+label is too narrow for the edition's40:1–2 evidence. Ranke's inconsistent
+chapter numerals in155 are preserved, not silently corrected.
+
+This advances the actual ordering evidence, not the36 reconstruction or Hebrew
+priority. Latin is not a second direct Hebrew vote; physical folio labels and
+versional genealogy are not newly certified. Root read complete target pages
+and the accessible preface batch, not the whole432-page edition or fresh ink.
+Browser images worked after OCR lost blocks; the different UC PDF returned429
+and was not retried. A bounded agent identified Bogaert1978's exact original
+article but found only bibliographic records and access gates, not its body.
+Those searches stop here. No source, English, note, canon or ImageGen evidence
+changes. The documentation skill keeps that narrower positive result separate
+from unresolved reconstruction; no new registry or bespoke validator is needed.
+
+PR168's two own jobs115101912080/115102693022 pass at exact
+9585ee837584e75cee05b25b439ea2aa94b63527. Fresh main comparison has its two
+approved paths and predicted union893b93c3071aa6900bd0aa55779ed58bcec94881.
+SHA-pinned merge lands87ece78fa8c3669de6b18368b05bf4ccbe4f6c59;
+parents/tree verify. A normal main push is rejected because another task's PR169
+advanced main, not because of a source/check failure. Completed fetch confirms
+560c55fa2e6545ab7439859e0016a958e2a13768 descends from our merge; local main
+advances under an old-value guard and a normal push succeeds. The new research
+branch fast-forwards to that shared main, preserving the other task's workflow
+and metadata changes. The protected Genizah hash remains130d509a as before.
+
+The bounded source critic passes the original-edition append at report SHA256
+8b3982cbdb312a9829c8b9ce754c1f3178d93874e0a67775b70aca9602efcdfe,
+independently checking its actual target images, notation, four private hashes,
+20 retained inputs, protected Genizah bytes and two-path scope. Root reproduces
+the20-input check and verifies clean whitespace. Only this validation history
+appends after review. No corpus suite rerun, source-priority vote or application
+approval is claimed; the new commit requires its own publication checks.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -1,9 +1,11 @@
 """Six unchanged-source numeral/anchor corrections, not source-priority proof."""
 import hashlib
+import io
 import json
 from pathlib import Path
 import re
 import subprocess
+import tarfile
 import unittest
 from unittest.mock import patch
 
@@ -53,18 +55,45 @@ class ElevenCompoundReaderApplicationTests(unittest.TestCase):
         raw = subprocess.check_output(['git', 'show', f"{h['commit']}:{h['path']}"], cwd=ROOT)
         assert sha(raw) == h['sha256']
         cls.historical = yaml.safe_load(raw)
-        cls.exports = {}
+        # Receipt hashes describe this transaction's immutable baseline, not
+        # every later legitimate application to an unrelated verse.
+        raw = subprocess.check_output([
+            'git', 'archive', cls.k['baseline_commit'],
+            *(book['folder'] for book in cls.k['books'])
+        ], cwd=ROOT)
+        cls.book_records = {book['code']: {} for book in cls.k['books']}
+        cls.non_target_pins = {book['code']: [] for book in cls.k['books']}
+        targets = {row['canonical_target'] for row in cls.k['targets']}
+        with tarfile.open(fileobj=io.BytesIO(raw)) as snapshot:
+            for member in snapshot.getmembers():
+                if not member.isfile() or not member.name.endswith('.yaml'):
+                    continue
+                for book in cls.k['books']:
+                    if member.name.startswith(book['folder'] + '/'):
+                        code, p = book['code'], Path(member.name)
+                        content = snapshot.extractfile(member).read()
+                        cls.book_records[code][(int(p.parent.name), int(p.stem))] = yaml.safe_load(content)
+                        if member.name not in targets:
+                            cls.non_target_pins[code].append({'path': member.name, 'sha256': sha(content)})
+                        break
+        for pins in cls.non_target_pins.values():
+            pins.sort(key=lambda pin: pin['path'])
+        cls.exports, cls.current_before = {}, {}
         loader = ex.load_translation_record
 
-        def load(code, ch, verse, proposed=False):
+        def load(code, ch, verse, proposed=False, current=False):
             key = f'{code}.{ch}.{verse}'
             if key in cls.candidates:
                 return cls.candidates[key] if proposed else cls.before[key]
+            if not current and code in cls.book_records:
+                return cls.book_records[code].get((ch, verse))
             return loader(code, ch, verse)
 
         for book in cls.k['books']:
             code = book['code']
             current = ex.export_book(code)
+            with patch.object(ex, 'load_translation_record', side_effect=lambda c, ch, v: load(c, ch, v, current=True)):
+                cls.current_before[code] = ex.export_book(code)
             with patch.object(ex, 'load_translation_record', side_effect=load):
                 before = ex.export_book(code)
             with patch.object(ex, 'load_translation_record', side_effect=lambda c, ch, v: load(c, ch, v, True)):
@@ -211,18 +240,19 @@ class ElevenCompoundReaderApplicationTests(unittest.TestCase):
             changed_count += len(changed)
         self.assertEqual(changed_count, 6)
 
-    def test_current_application_state_and_non_target_aggregates(self):
+    def test_current_application_state_and_historical_non_target_aggregates(self):
         receipt = json.loads((ROOT / self.k['application_receipt']).read_text())
         self.assertEqual(receipt['contract'], CONTRACT)
         self.assertEqual(receipt['contract_sha256'], sha((ROOT / CONTRACT).read_bytes()))
-        targets = {r['canonical_target'] for r in self.k['targets']}
         for book in self.k['books']:
-            pins = [{'path': str(p.relative_to(ROOT)), 'sha256': sha(p.read_bytes())} for p in sorted((ROOT / book['folder']).glob('*/*.yaml')) if str(p.relative_to(ROOT)) not in targets]
+            pins = self.non_target_pins[book['code']]
             self.assertEqual(len(pins), book['non_target_file_count'])
             self.assertEqual(digest(pins), book['non_target_path_and_sha256_aggregate'])
-            current = self.exports[book['code']][0]
+            # The proposed historical export remains pinned, while current
+            # target bytes are independently checked below.
             key = 'proposed_sha256' if receipt['canonical_change_applied'] else 'before_sha256'
-            self.assertEqual(digest(current), book['export'][key])
+            historical_export = self.exports[book['code']][2 if receipt['canonical_change_applied'] else 1]
+            self.assertEqual(digest(historical_export), book['export'][key])
         for key, pin in self.pins.items():
             raw = (ROOT / pin['canonical_target']).read_bytes()
             expected = pin['candidate_yaml_sha256'] if receipt['canonical_change_applied'] else pin['baseline_yaml_sha256']
@@ -231,6 +261,40 @@ class ElevenCompoundReaderApplicationTests(unittest.TestCase):
                 self.assertEqual(yaml.safe_load(raw), self.candidates[key])
         if receipt['canonical_change_applied']:
             self.assertIs(receipt['independent_application_critique']['passed'], True)
+
+    def test_current_reader_isolates_six_targets_without_freezing_other_verses(self):
+        receipt = json.loads((ROOT / self.k['application_receipt']).read_text())
+        current = {code: exports[0] for code, exports in self.exports.items()}
+        self._assert_current_reader_scope(receipt['canonical_change_applied'], current)
+
+    def test_unapplied_reader_scope_accepts_baseline_without_ezekiel_notes(self):
+        # Preflight has no six-record application yet; EZK40:49's baseline
+        # has no footnotes key. Exercise the same assertions without exports
+        # or disk writes, using the real baseline-target reader payloads.
+        self.assertNotIn('footnotes', self.before['EZK.40.49']['translation'])
+        self._assert_current_reader_scope(False, self.current_before)
+
+    def _assert_current_reader_scope(self, applied, current_exports):
+        changed_count = 0
+        for book in self.k['books']:
+            code, spec = book['code'], book['export']
+            before = self.current_before[code]
+            current = current_exports[code]
+            bi, ci = index(before), index(current)
+            self.assertEqual(bi.keys(), ci.keys())
+            self.assertEqual(len(current['chapters']), spec['chapter_count'])
+            self.assertEqual(len(ci), spec['unit_count'])
+            changed = [list(key) for key in bi if bi[key] != ci[key]]
+            self.assertEqual(changed, spec['changed_loci'] if applied else [])
+            changed_count += len(changed)
+            for key, candidate in self.candidates.items():
+                target_code, ch, verse = key.split('.')
+                if target_code == code:
+                    unit = ci[(int(ch), int(verse))]
+                    expected = candidate if applied else self.before[key]
+                    self.assertEqual(unit['text'], expected['translation']['text'])
+                    self.assertEqual(unit.get('footnotes', []), expected['translation'].get('footnotes', []))
+        self.assertEqual(changed_count, 6 if applied else 0)
 
 
 if __name__ == '__main__':

@@ -501,3 +501,39 @@ evaluation. The four earlier preflight checks are not counted again. CI adds
 this module and its two immutable Git baselines without removing existing checks.
 Protected Genizah bytes remain unchanged, whitespace passes, and repository
 publication still requires this successor's own exact-head checks.
+
+## Original Scheide comparison articles
+
+Two original studies are now accessible through the public Internet Archive
+journal scans, independently of the previously restricted Scheide book:
+Henry Snyder Gehman's [Hebrew comparison, JAOS 58 (1938), 92–102](https://archive.org/download/sim_journal-of-the-american-oriental-society_1938-03_58_1/sim_journal-of-the-american-oriental-society_1938-03_58_1.pdf)
+and [Greek manuscript comparison, JBL 57 (1938), 281–287](https://archive.org/download/sim_journal-of-biblical-literature_1938-09_57_3/sim_journal-of-biblical-literature_1938-09_57_3.pdf).
+The source agent reads every article page visually; root inspects JAOS92,
+98–101 and JBL282–283, including their notation. Neither article supplies
+the decisive Greek noun at39:29. JAOS92's19:12–39:29 coverage statement
+expressly excludes lost pages and other omissions; it is not a target-word
+transcription or a physical-preservation verdict.
+
+JAOS98–101 considers both different or faulty Hebrew exemplars and translator
+misreading in other verses. JBL282–283 allows inherited early Greek readings
+as well as revision toward Hebrew, without a definite general decision between
+them. These are the author's historical arguments, not newly proved mechanisms
+or a diagnosis of39:29. Our inference remains locus-specific: neither Greek
+agreement with Hebrew nor manuscript antiquity alone licenses a Hebrew
+replacement. The spirit/wrath question still requires the actual target
+transcription or critical apparatus; no P967 noun enters the reader note.
+
+The private JAOS issue scan has SHA256
+`a7dc0687ca078e22124e02a3c49e0b2d0116945008ec859b3975be1e5a0b1069`;
+printed92–102 are PDF96–106. The JBL issue scan has SHA256
+`03a6599b94bd531950d6714144ca9536a366e53e6c9faae8866869426d6f7c3e`;
+printed281–287 are PDF45–51. Scans remain outside Git; no scholarly image,
+transcription or publication rights are transferred to POB. This is new
+access to known scholarship, not a new manuscript discovery.
+
+PR176's original push and PR jobs subsequently fail an older six-unit test's
+historical whole-book assertions, after corpus validation succeeds. The
+[historical test repair](ELEVEN_COMPOUND_READER_CORRECTIONS_2026-10-12.md#historical-checks-after-later-applications)
+preserves all frozen evidence and the exact39:29 candidate while distinguishing
+historical exports from today's reader. Sixteen scoped checks pass; renewed
+remote integrity checks and merge remain separate from those local results.

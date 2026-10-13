@@ -9691,6 +9691,46 @@ source priority, whole-verse optimality, divine-name policy, deployment and
 canon remain unapproved. Protected Genizah bytes and unrelated work remain
 unchanged. Commit/merge delivery is separate from this local application.
 
+### 2026-10-13 — Original Scheide studies and historical test repair
+
+The preceding Nahum reread confirms its already-published decision, without
+new source evidence or a duplicate documentation commit. Authoritative
+observations also show that PR176's own jobs115291178735/115293971048 are
+terminal failures, not continuing waits. Both fail the older six-unit module's
+historical Ezekiel export/non-target aggregate, while corpus validation passes.
+A local eight-test run reproduces exactly those two failures. No merge follows.
+
+The [repair](ELEVEN_COMPOUND_READER_CORRECTIONS_2026-10-12.md#historical-checks-after-later-applications)
+reconstructs historical books from their immutable Git baseline and separately
+checks today's six reader units. It changes no frozen contract, receipt,
+candidate, source or English. One bounded code review identifies unapplied
+preflight assumptions, including the absent40:49 notes field; root corrects
+them and adds a shared-assertion preflight regression. The final file at
+60827a93f5660edce9d0edb5b3b1095483154049c84ccd5aa8e29bcd95347493 passes
+the narrow follow-up review. Final ten repaired tests plus six39:29 checks pass
+in46.372seconds; superseded repair runs are not counted again. Both original
+own CI jobs are terminal before the successor changes; its renewed exact-head
+remote checks still govern publication. Protected Genizah bytes are unchanged.
+
+A separate bounded acquisition task finds both original Gehman1938 articles
+through lawful public journal scans, not a bypass of the restricted Scheide
+book. The [source result](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#original-scheide-comparison-articles)
+records full agent reading, root's inspected pages, actual scan hashes and
+printed/PDF page mapping. These papers give historical interpretive/revisional
+arguments at other verses, not39:29's decisive noun. The PDF skill preserves
+the coverage qualification and printed notation; the documentation skill keeps
+acquisition, scholarly inference and software repair distinct. The actual
+target transcription/apparatus remains the discriminating evidence task.
+No earliest-source, fresh decipherment, ImageGen evidence or canon claim changes.
+
+The bounded documentary check passes the preceding three appended sections,
+including seven complete source pages and both PDF hashes. Its reviewed log
+SHA256 isaa113c9f36721320d401d4e1f8fdfe5dd47d4d099cddbabf256d048badbc2768;
+this verification sentence is a subsequent root append, not part of that pin.
+Root verifies382 local file links and whitespace, with only the historical
+test and these three reports changed from the failed head. No frozen source
+receipt or scholarly conclusion is rewritten to obtain a passing check.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

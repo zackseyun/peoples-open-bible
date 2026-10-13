@@ -622,3 +622,53 @@ its hash does not identify Syriac source text. No raw-download hash is invented
 for either the successfully viewed CAL chapter or Lust's rendered HTML. Source files stay
 outside Git; rights are not reassigned to POB. The exact frozen reader candidate
 remains8d4d3343e5325ac09bc2252df7967624ccb88934f4aecb34959598425fb3589f.
+
+## Field edition and the transmitted Spirit reading
+
+Field's actual1875 volumeII now supplies the previously missing source entry.
+The [University of Toronto scan](https://archive.org/details/origenhexapla02unknuoft)
+has1136 PDF pages. Root visually reads its title, complete printed873 / PDF889,
+Ezekiel introduction765–767 / PDF781–783, and the linked Jeremiah introduction
+571–572 / PDF587–588. This is selective primary-edition consultation, not a
+complete volume reading or manuscript autopsy.
+
+At39:29, Field prints the selected Greek with θυμόν and attributes to Symmachus
+`καὶ ἐκχεῶ τὸ πνεῦμά μου ἐπὶ τὸν οἶκον Ἰσραήλ`, provisionally “and I will pour
+out my spirit upon the house of Israel.” Its note22 explicitly cites
+`Syro-hex.` and gives Syriac. This confirms the source provenance behind
+Lust's report: the printed Greek must not be counted as another independently
+inspected Greek manuscript. The Syriac-mediated Symmachus attribution is
+distinct from the previously consulted Peshitta edition; two Syriac forms of
+transmission do not become two independent votes for an original Hebrew form.
+
+Field's linked introduction572 describes Norberg's1787 edition of Jeremiah
+and Ezekiel from the Ambrosian Syrohexaplaric codex, and corrections supplied
+by Ceriani. It distinguishes the marginal readings included in Field from
+many corrections to the main Greek-translation text that Field deliberately
+does not reproduce. The Ezekiel introduction767 identifies copied Greek
+marginal material and disrupted coverage; the volume is not a transparent
+list of equally independent surviving witnesses. No global typographical
+key or actual Ambrosian target manuscript has been newly read in this pass.
+
+Note21 at the target also quotes Jerome's objection: he treats the Hebrew
+Spirit expression as a blessing and contrasts it with the Greek anger
+rendering. This is Field's printed quotation, not a new consultation of
+Jerome's complete commentary. It documents an older interpretive objection
+than the modern debate without proving an earlier Hebrew exemplar or its
+priority. The causal connection in that quotation also cannot independently
+settle POB's causal-versus-temporal choice.
+
+**Consequence:** the reported Spirit reading now has a directly inspected
+edition basis. Source priority, retained Hebrew and current main English
+remain unchanged; no P967 target noun or new Hebrew letters were obtained.
+The discriminating next inputs remain the actual P96739:29 reading with
+preserved/supplied letters distinguished, and the target critical apparatus.
+
+The PDF SHA256 is
+`85eaddcd38ac4bd35e7ee96409d9abdea3dab1b0513fe8c97cb67b72c8fcc1ff`.
+The title confirms Oxford1875, volumeII. Archive metadata identifies Trinity
+College, University of Toronto and public-domain status. A bounded parallel
+lookup also finds the [MDZ primary scan](https://www.digitale-sammlungen.de/en/details/bsb11340410),
+whose public OCR places the same printed873 at canvas885. That OCR helps locate
+the entry; the conclusions above use root's visual reading of the Toronto scan.
+Neither scan nor rendered pages are imported into Git or relicensed as POB.

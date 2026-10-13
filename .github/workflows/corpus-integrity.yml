@@ -12,7 +12,9 @@ jobs:
   validate:
     name: corpus-integrity
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # Full source checkout plus corpus-wide checks can exceed 30 minutes.
+    # Preserve every integrity check; allow the complete suite to finish.
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - name: Fetch the reviewed source baselines

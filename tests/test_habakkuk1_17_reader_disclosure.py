@@ -19,6 +19,7 @@ CONTRACT = 'sources/textual_restoration/comparisons/habakkuk1_17_reader_contract
 CONTRACT_SHA = 'bb82167b173cda694658212ee458d2d1d6e5bf83c695234b41b22b0e6a63b534'
 RECEIPT = 'sources/textual_restoration/applications/habakkuk1_17_reader.2026-10-12.v1.json'
 KEY = (1, 17)
+METHOD_PATH = 'docs/TEXTUAL_ADJUDICATION_METHOD.md'
 
 
 def sha(raw):
@@ -56,16 +57,45 @@ class Habakkuk117ReaderDisclosureTests(unittest.TestCase):
         cls.before = cls.historical[KEY]
         cls.schema = json.loads((ROOT / 'schema/verse.schema.json').read_text())
 
+    def assert_frozen_input_pins(self):
+        for path, pin in self.contract['input_pins'].items():
+            historical = subprocess.check_output(['git', 'show', f'{BASE}:{path}'], cwd=ROOT)
+            self.assertEqual(sha(historical), pin, path)
+            # A later method revision does not rewrite the method that was
+            # actually reviewed here. All other live input pins remain binding.
+            if path != METHOD_PATH:
+                self.assertEqual(sha((ROOT / path).read_bytes()), pin, path)
+
+    def test_corrupt_historical_method_still_fails(self):
+        original = subprocess.check_output
+
+        def corrupt_method(args, **kwargs):
+            raw = original(args, **kwargs)
+            return raw + b'corrupt' if args[-1] == f'{BASE}:{METHOD_PATH}' else raw
+
+        with patch.object(subprocess, 'check_output', side_effect=corrupt_method):
+            with self.assertRaisesRegex(AssertionError, METHOD_PATH):
+                self.assert_frozen_input_pins()
+
+    def test_live_schema_and_source_pins_still_fail_on_drift(self):
+        source_path = next(p for p in self.contract['input_pins'] if p.startswith('sources/'))
+        original = Path.read_bytes
+        for target in ('schema/verse.schema.json', source_path):
+            def corrupt_live(path):
+                raw = original(path)
+                return raw + b'corrupt' if path == ROOT / target else raw
+
+            with self.subTest(path=target), patch.object(Path, 'read_bytes', new=corrupt_live):
+                with self.assertRaisesRegex(AssertionError, re.escape(target)):
+                    self.assert_frozen_input_pins()
+
     def test_frozen_inputs_and_exact_candidate(self):
         self.assertEqual(sha(self.contract_raw), CONTRACT_SHA)
         self.assertEqual(self.contract['baseline_commit'], BASE)
         self.assertEqual(sha(self.candidate_raw), self.target['candidate_yaml_sha256'])
         self.assertEqual(self.target['baseline_yaml_sha256'],
                          self.contract['book_baseline_pins'][self.target['canonical_target']])
-        for path, pin in self.contract['input_pins'].items():
-            historical = subprocess.check_output(['git', 'show', f'{BASE}:{path}'], cwd=ROOT)
-            self.assertEqual(sha(historical), pin, path)
-            self.assertEqual(sha((ROOT / path).read_bytes()), pin, path)
+        self.assert_frozen_input_pins()
         self.assertEqual(digest(self.contract['book_baseline_pins']),
                          self.contract['book_baseline_manifest_sha256'])
 

@@ -9813,6 +9813,92 @@ and publication boundaries,379 local file links, whitespace and unchanged
 canonical39:29/protected Genizah hashes. No new corpus test suite is necessary
 for this prose-only delta, and existing remote integrity gates remain in force.
 
+### 2026-10-13 — Greek reading affiliation rather than manuscript votes
+
+The preceding goal turn is progress: actual Field sources were acquired,
+checked and committed, while the previous target comparison reached main.
+PR178's own push115485217768 and PR115486579042 subsequently pass at19:36:56UTC
+and19:39:48UTC. Fresh main, exact two-file/88-addition scope and predicted union
+precede SHA-pinned merged75f2e434dc01ae8e922eb1164d0a8c5b2336638. API and
+completed fetch verify parents59701d74e0a21c25987ec4b08d59e291de27f7a8 and
+466f7adc09419b405712a36846985574408b8be8, treed86498d81f0c9bf11976fece37c318ac2386d5ba.
+No main worktree and ancestry checks precede guarded local advancement; normal
+push confirms up to date. The new source/method work starts separately.
+
+A bounded modern-apparatus search obtains a lawful26-page2015 preview but
+not39:29. The existing full-access gate remains parked. Original Ziegler article
+queries yield no body. Rather than promote metadata into evidence, root follows
+the academy's public Wevers2003 source: ordinary browser verification completes
+automatically and the advertised PDF downloads successfully. Root verifies
+the actual PDF and complete relevant pages; the acquisition agent reads all49
+Ezekiel-study pages, with a narrower visual scope recorded in the
+[source case](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#reading-level-affiliation-in-ezekiel).
+
+The findings make the method more explicit about reading-level affiliation,
+edition-local sigla, constituent witnesses and textual versus marginal evidence.
+Local dependence arguments are compared with convergent interpretation and
+different supplementation; the proposed ancestor remains conjectural.
+The PDF and documentation skills keep those distinctions with the actual
+source claims. No new variant discovery, P96739:29 noun, Hebrew/English change,
+ImageGen evidence or canon approval follows. The full corpus goal remains
+active; this passage-specific refinement does not certify universal comparison.
+
+Two critique attempts disconnect without a verdict. A fresh bounded factual
+review then passes the complete relevant pages, method paragraph and case
+account, at method SHA256b8f39293c3ac87b2e6cb7fd7d6ca6ceb6e22c32b0edd423a068000368382ff0c
+and case SHA2566e4da2aec76e943de8215b027b035a49a2b71462bf27443f78541963c7af118d.
+That review excludes acquisition history and publication status, checked
+separately by root. Root verifies417 local file links, whitespace and unchanged
+canonical39:29/protected Genizah hashes. This prose/method-only delta adds no
+new corpus test suite; its publication still requires its own integrity checks.
+
+### 2026-10-13 — Historical method pins repaired without changing evidence
+
+The preceding turn is progress: the Wevers body and complete relevant pages
+support an explicit method refinement, PR178 reaches main, and PR180's own
+checks start. Authoritative job polls now confirm terminal failure for
+push115531059239 at21:14:07UTC and PR115532667337 at21:06:33UTC on
+ae0f5c86519b3e0dca78dadf6cf48ab2c21a2e9c. Their actual logs show the same
+current-method-versus-historical-hash assertion in the Habakkuk2 module,
+not a source-text defect. Local reproduction yields the same failure among
+eight tests in3.412s; the complete remote reader corpus had already passed.
+
+A bounded static audit identifies the same defect in the Habakkuk1:17 module,
+avoiding a second remote discovery cycle. Both historical method hashes remain
+d977ce6cc4967af022e9758ed5c47ab3b4e84b8952ced4728d54b9719a266772 at their
+original baselines324d1a56295e84cc5976be0501702adcbd16a13c and
+6017ffa06c1fc8eee2247ce01308df131fcfc557. Every input still checks baseline
+bytes; only the current method file is exempted from that historical equality.
+All other live pins and application assertions remain binding. Each module
+adds corruption regressions for the historical method and live schema/source
+inputs, using the same helper as its original assertion. The resulting20 tests
+pass in8.712s. The independent code critique passes and reruns the same20,
+not20 additional distinct tests. CI already fetches the required immutable
+commits, so no workflow or deadline adjustment is needed.
+
+Concurrent PR179 is unrelated historical-archive work. Its merged main
+d1ffdafed0432322a2b56e0e6df8c58b5562963a is fetched and merged normally into
+this branch without altering its five paths or the protected Genizah file.
+The documentation skill keeps validation repair separate from the source
+finding; no scholarly judgment is changed to make tests pass.
+
+The Sylloge primary repository page and public PDF link are verified in the
+ordinary browser. A prior55-second transfer timeout has no durable file or
+returned live handle; the ordinary link click also produces no readable PDF
+viewer. Direct HTTP stops at site protection. No full body or hash is claimed,
+and no transfer is restarted solely because observation timed out. Source
+acquisition remains open alongside the renewed publication checks; it is not
+an overall project blocker or an assertion that the corpus goal is complete.
+
+The repair-account fidelity check passes separately from the code review,
+excluding acquisition and remote CI chronology. After the main merge, root
+reruns the same20 checks successfully in7.035s, verifies417 local file links
+and whitespace, and confirms the protected Genizah hash. The two repaired
+module hashes are6723a1f99d3cb7410fc736f3bab53232df19348e91f9cba5d58a070039d08626
+and684679077aa04b482f7423a79510a70cb78b8753a201ad9344b308e4fce09ed4.
+This is repair verification, not additional scholarly evidence or new distinct
+tests. The new publication head requires both of its own remote integrity jobs.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -147,3 +147,157 @@ Root also checks48 chapters/1273 verses, local file links, whitespace and the
 unchanged protected Genizah hash. This append records verification, not new
 source evidence or historical-priority approval. No new corpus tests are claimed
 for the two-path documentation scope; own exact-head CI still gates publication.
+
+## Renewal promise comparison in the declared Hebrew form
+
+The proposed dependence on 11:19–20 now has an explicit wording control, not
+only a scholarly attribution. POB's WLC XML and current records distinguish
+the following features. These edited Hebrew passages demonstrate a close
+relationship; they do not establish which was composed or revised first.
+
+| Feature | Ezekiel 11:19–20 | Ezekiel 36:26–28 |
+|---|---|---|
+| Heart | `לב אחד`, one heart; stone heart replaced with flesh heart | `לב חדש`, new heart; the same stone/flesh contrast |
+| Recipient | Third-person recipients surround `בקרבכם`, within you, in 11:19 | Second-person recipients throughout 36:26 |
+| Spirit and obedience | New spirit in 11:19; obedience is the purpose in 11:20 | New spirit in 36:26; **my Spirit** and explicit divine enablement in 36:27 |
+| Covenant formula | People/God formula in 11:20, with `אני` | Formula follows the land promise in 36:28, with `אנכי` |
+
+The [selected Rahlfs Hanhart Greek 11:19](https://www.die-bibel.de/bibel/LXX/EZK.11)
+instead has `καρδίαν ἑτέραν`, another/different heart, and third-person recipients
+throughout the verse. [Greek 36:26–28](https://www.die-bibel.de/bibel/LXX/EZK.36)
+retains the new-heart and explicit my-Spirit distinction. These are readings
+of the identified 2006 edition, not newly collated manuscript hands or an
+attestation of 11:19 in P967. Do not retrovert the Greek adjective into uniquely
+recovered Hebrew or equate selected Greek with every Greek witness.
+
+Our inference: treating 36:26–28 as mere repetition loses its explicit divine
+Spirit/agency emphasis. The alignment is compatible with literary expansion,
+but also earlier related formulations or reuse in the reverse direction. Loss
+of an already distinctive passage remains possible. Neither the recipient
+regularity nor the heart adjective alone resolves the transmission history.
+No source or English replacement follows.
+
+POB currently renders 11:19's inner grant as “within them,” rather than the
+declared WLC's second-person expression. [NET's own textual note](https://classic.net.bible.org/verse.php?book=Eze&chapter=11&verse=19)
+reports Hebrew manuscripts and ancient versions supporting them; those unnamed
+manuscripts have not been independently collated here. The choice must remain
+an explicit regularization or variant choice, not an exact account of the
+retained surface. Its current note invokes 36:26, whose recipient is you;
+that parallel alone cannot establish them in 11:19. This is a source/English
+accounting question, not approval of an anchor repair or new translation.
+
+Current source and translation fields at 11:17–21 and 36:26–28 were read.
+WLC XML retains the hash above. The five core current-record pins are:
+
+| Repository path | SHA256 |
+|---|---|
+|`translation/ot/ezekiel/011/019.yaml`|`38713a93ddcd540159588dbd310e87723d290480ee133acc40f4eae82ff01f4d`|
+|`translation/ot/ezekiel/011/020.yaml`|`e651bb1959bcf81b8609cc536d6d92f704d316c062aa9083feba6c08a61b9189`|
+|`translation/ot/ezekiel/036/026.yaml`|`0066d01096605d65789232dcadc77ac7461c64fac2a176d61c2fd9d28e44ce05`|
+|`translation/ot/ezekiel/036/027.yaml`|`8040088e2cf8ab907cf477cafdd555fc3acc0debf16392af88476386a22a3f2a`|
+|`translation/ot/ezekiel/036/028.yaml`|`1404ca4cefda32b253a039da5b32b3b26a32c06a35c4e76c698999b6dc0ce40c`|
+
+The six already pinned Qumran presentations have no displayed reference rows
+for 11:19–21 in this navigation check. That is not an exhaustive absence claim
+or evidence for either heart reading; unidentified, unlinked and supplied
+material still requires edition-level assessment. No old receipt is rewritten,
+new manuscript letters supplied, or optimum-English assessment claimed.
+
+One bounded independent critique passes this new section at full-report SHA256
+`02d8af1e4013266c679413b44b4ea2a8a98c0599ca3d6bfb516d7ebe31dee48d`,
+with log SHA256 `80fcbb5ce9045b6669ffb0b5c80d05f3c0c25be09bde3e9af11811de25ebfe08`.
+It checks the five pins, WLC, publisher Greek, NET note and displayed-reference
+limits. Enablement describes the whole clause; OSHB word 26J3e is annotated
+`HC/Vqq1cs` (Qal), not a causative stem. Root reproduces the pins and confirms
+all eight current canonical consonantal word streams match the declared XML.
+Whitespace and the new local document anchor pass; protected Genizah bytes
+remain unchanged. No corpus test run, source-priority approval or application
+is claimed. This successor is still separate from PR172's frozen head.
+
+## Original Hebrew collation at Ezekiel 11 19
+
+The preceding NET-only attestation limit is now narrowed. Root and the
+acquisition subtask visually read De Rossi's complete original
+[volume III entry, printed 135–136](https://archive.org/details/VariaeLectiones/Variae%20Lectiones%203/page/n149/mode/2up),
+Parma 1786, including all five XI.19 subentries and their continuation.
+These are PDF pages 150–151; title page 6 identifies the volume and date.
+The same work's volume I, printed XLV–XLVI / PDF 60–61, supplies the notation.
+This is a directly inspected published collation, not new manuscript glyphs.
+
+| XI.19 expression | Reported contrast | Qualifications that affect its use |
+|---|---|---|
+| First grant | Them → you | Kennicott 1,114,150,253; earlier 91,155; doubtful 93. De Rossi 3,512,554; earlier 211,409. |
+| Heart | One → new | Kennicott 150,158,160; Venice 1518 margin; Syriac. De Rossi 20 reports other books reading new, not necessarily its own running text. |
+| Inner grant | Within you → within them | Numerous current, earlier and corrected reports are distinguished below; De Rossi 187 separately has `בקרבהם`. |
+| Flesh recipient | Their → your | Includes Kennicott 1,72,96,115,150,155,158,180,224,253,602, with additional earlier/doubtful reports. |
+| Second grant | Them → you | Includes Kennicott 1,93,150,155,224,253; earlier 28,72; corrected 3. De Rossi earlier 2,20,409; manuscript 319's margin reports other books reading them. |
+
+The heart contrast is **`לב חדש`**, new heart, not Hebrew `לב אחר`, another
+heart. No latter Hebrew attestation is supplied by this entry. Its reported
+Syriac agreement and ancient Ambrosian copy are versional reports, not another
+direct Hebrew manuscript or a newly verified shelfmark/date. The overlap of
+identifiers across pronoun and heart loci does not prove five independent
+readings, a uniform whole-verse form or historical priority.
+
+For `בקרבם`, the unqualified Kennicott reports are 23,30,82,101,154,160,175,
+225,228,246,601,602. Later corrected states are 150,158,172,176,198; possible
+earlier states are 72,139. The Halle report adds a later state of 375, labeled
+Erfurtensis 5; De Rossi's own collation adds Kennicott 420. His own unqualified
+reports are 4,26,196,295,341,346,440,518,576,663; earlier 23; later states
+2,174,211,304,409,413,596,789. External 103 and a later state of external 1
+are separate source groups. Printed editions and ancient versions are also
+reported; both 1518 editions place the alternative in the margin.
+
+Volume I defines **primo** as an earlier reading subsequently changed, and
+**nunc** as a later hand's change into the reported variant. Possible earlier
+states and doubtful readings must retain those qualifications. Source groups
+and text/margin annotations cannot be merged into an independent-manuscript
+count. These XI.19 entries do not explicitly label the variants as formal qere.
+The conventions also qualify inference from unlisted witnesses: incomplete
+preservation, other readings and selective collation can prevent agreement.
+
+The argument on 135–136 is especially relevant to the proposed 11/36 relation.
+De Rossi reports Hillelian ancestry for you through Kennicott 82's margin and
+his manuscript 413, whose second hand he says changed the reading. His Norzi
+quotation describes Norzi first writing you in his autograph, then choosing
+them after comparing copies and context, with possible influence from chapter
+36 proposed for you. De Rossi endorses them. These are reported states,
+ancestry claims and editorial reasoning, not proof of the ancient direction;
+reading Norzi's quotation is not independent consultation of his original work.
+
+**Effect:** within them now has an inspected primary Hebrew collation report,
+and new heart has distinct reported Hebrew support. POB's current them choice
+is not merely an unsupported English preference, but still differs from its
+declared WLC surface. The new-heart reports could reflect assimilation to 36:26;
+the pronoun reports explicitly keep that kind of contact in play. Retain the
+current source/English provisionally, keep historical priority HOLD, and seek
+modern target apparatus plus identifiable manuscript/hand evidence before a
+critical-source application. No new decipherment, canon or optimum claim follows.
+
+Private source directory: `/tmp/pob-ezekiel11-derossi.Ewsxue/`. The public
+edition PDFs and deterministic page renders remain outside Git; no full
+transcription or image is imported or relicensed. Root checks these six hashes:
+
+| Private input | SHA256 |
+|---|---|
+|`derossi-vol3.pdf` — 289 pages|`9f59faefd7f26bc43cb9223091e78bf373288291d9e2fbef079f4071eea16187`|
+|`derossi-vol1.pdf`|`a099c051a45c234e53b3fdb3092e9e043b4ef70fd9a29ff4691b38bb555d39e9`|
+|`page-150.png` — III135|`77269d14ac1e4be208af631c2a577699b23b77438aaa0da4093e0dee59d1cea8`|
+|`page-151.png` — III136|`8313580aac23ca6b857549d780a5181bf2e24c81cee7fae17a876fded236e4c0`|
+|`convention-060.png` — IXLV|`c2b2524ab9e7d1e5b87cb34b8733bdc70cdf27eec62da9c4a854377350a45f20`|
+|`convention-061.png` — IXLVI|`a49c0908b9e70b2ae6e58d221707de4f66afaf1a945d03723ef912d981a539c2`|
+
+Only the declared target, surrounding entries, conventions and III title page
+were read; neither volume is claimed as fully read. OCR located the entry;
+the complete page images supplied the Hebrew, sigla and notation checks.
+
+One bounded critique of this new collation evidence passes the full report at
+SHA256 `6d40b0001ebf6f277af5727530bdf5027236237aaf12b2528cc31ad7e34e4cb4`
+and log at `2b9f74b3e95dc59e4a72cfc7ad2711b96e8dd2894f00fc4d0ab7cf5cc170e3e8`.
+The reviewer visually checks all four complete target/convention pages and
+the title, reproduces six private hashes and five canonical pins, and confirms
+the earlier reviewed parallel section as an unchanged 12,835-byte prefix.
+This is a separate new-evidence check, not another source-priority vote.
+Root reproduces the hashes, retains unchanged source/English and protected
+Genizah bytes, and checks whitespace and the new local anchor. No corpus rerun
+or application approval is claimed. Own publication checks remain separate.

@@ -52,6 +52,15 @@ class SelectedGreekTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 selected.extract_homilies(malformed, expected_homilies=2)
 
+    def test_clement_fifteen_uses_blindly_read_tau_not_a_conjectural_hyphen(self):
+        source = selected.load_selected("pseudo_clementine_clement_to_james")
+        row = next(r for r in source["passages"] if r["reference"] == "15")
+        self.assertIn("τὰ χρῄζοντα", row["source_text"])
+        self.assertNotIn("-ὰ χρῄζοντα", row["source_text"])
+        evidence = next(p for p in source["page_evidence"] if p["pdf_page"] == 53)
+        self.assertEqual(evidence["adjudications"][0]["scope"], "single_word")
+        self.assertEqual(evidence["adjudications"][0]["after_word"], "τὰ")
+
     def test_boundary_shift_fails_closed(self):
         first, proof1 = selected.load_page(45)
         second, proof2 = selected.load_page(46)

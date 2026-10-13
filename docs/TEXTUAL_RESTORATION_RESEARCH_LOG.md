@@ -9731,6 +9731,50 @@ Root verifies382 local file links and whitespace, with only the historical
 test and these three reports changed from the failed head. No frozen source
 receipt or scholarly conclusion is rewritten to obtain a passing check.
 
+### 2026-10-13 — Direct spirit and wrath argument and Syriac evidence
+
+The preceding continuation is progress: it repairs historical verification,
+obtains two original studies, documents their limited relevance and pushes
+the corrected application. PR176's own push115316302860 and PR115316333331
+subsequently pass on076859ab15d18eebedea8230bfc9ced7268c4cb9, at13:40:57UTC
+and13:33:14UTC respectively. Fresh main, exact ten-path scope and local union
+checks precede the pinned mergebf809a261359981edda8f7faae3c464e9733c63d.
+API and completed fetch confirm parentse1724eaed82b1e0e655825ecd11519bd06271fa8
+and076859ab15d18eebedea8230bfc9ced7268c4cb9, with tree2b83c9630d6c941628b3de0503259c895dc5a2ae.
+No worktree has main checked out; ancestry and an old-value guard precede
+local main advancement and the normal push confirms up to date. The new
+source prose is separate from that delivered reader-note application.
+
+The [direct target comparison](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#direct-target-argument-and-syriac-control)
+adds a complete primary argument, rather than repeating the Nahum verdict or
+the Scheide acquisition gate. Root and the acquisition task read Lust's
+actual2002 body and22notes. Wong's exact publisher metadata is obtained, not
+his article body; that argument remains mediated. Root separately reads the
+CAL Syriac target, its edition metadata and lexical entries, and the actual
+Rahlfs Hanhart3:14 control. No site AI responses are used. The WLC query
+reproduces52 רוח occurrences in44verses, without converting that count into
+a verified census of Greek equivalents or independent manuscript votes.
+
+The article supplies a stronger translation-pattern objection to a same-Hebrew
+anger interpretation, but its proposed Hebrew forms and literary priority
+remain inferences. Direct11/36 source comparison qualifies its compressed
+reuse premise. The Syriac's r-w-ḥ and different clause connection are actual
+edition evidence, not proof of an independent Hebrew original. Complete modern
+source-introduction pages distinguish versional dependence and normalized
+synoptic presentation from an exhaustive apparatus or target ink. The PDF skill
+preserves those page and supply limits; the documentation skill keeps the
+new argument, counterevidence and acquisition status in the existing case.
+
+One bounded new-evidence review identifies a raw-download receipt error:
+HTTP success had returned CAL's anti-scraping notice, not chapter text. Root
+inspects the saved response and relabels its hash; ordinary public-reader and
+independent normal-browser consultations of the target are separate. No notice
+becomes source letters and no chapter-body hash is invented. The narrow
+correction passes at case SHA256aa5cc8975c112babde675716eb0e7731d76e30e0ccb914252b93a4e4232b29c4.
+This is factual review, not another earliest-priority vote. No source, main
+English, note or canonical metadata changes; the full corpus goal remains
+incomplete. Protected Genizah work and the other worktrees are preserved.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

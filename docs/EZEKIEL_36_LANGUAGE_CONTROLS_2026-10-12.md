@@ -537,3 +537,88 @@ historical whole-book assertions, after corpus validation succeeds. The
 preserves all frozen evidence and the exact39:29 candidate while distinguishing
 historical exports from today's reader. Sixteen scoped checks pass; renewed
 remote integrity checks and merge remain separate from those local results.
+
+## Direct target argument and Syriac control
+
+The full [Lust2002 article](https://www.academia.edu/83340142/The_Spirit_of_the_Lord_or_the_Wrath_of_the_Lord)
+is now readable in author-uploaded HTML, including printed148–155 and all22
+notes. [Publisher metadata](https://poj.peeters-leuven.be/content.php?id=589&url=article)
+confirms ETL78/1,148–155 and DOI10.2143/ETL.78.1.589. This is an actual target
+argument, not an inferred reading from a manuscript coverage range.
+
+Lust accepts the lexical possibility of anger from רוח, but argues that the
+collocation and Ezekiel's Greek translation habits disfavor it here. He proposes
+חמה and יען אשר behind the Greek and treats39:28–29 as reworking in MT.
+His reasoning uses the chapter order and an earlier-form priority premise;
+it does not directly recover Hebrew ink. Symmachus's Spirit reading is reported
+through Field's Greek retroversion of Syrohexaplaric material, not a newly read
+Greek manuscript. Wong's contrary argument remains mediated through Lust:
+the [Wong publisher record](https://poj.peeters-leuven.be/content.php?id=588&url=article)
+confirms ETL78/1,130–147 and DOI10.2143/ETL.78.1.588, but its body was not acquired.
+
+Two source controls sharpen this argument without deciding it. A direct query
+of OSHB/WLC Ezek.xml selects word elements whose slash-separated lemma contains
+7307:52 occurrences in44 verses, including two in3:14 and four in37:9. This
+reproduces the Hebrew total; it does not verify every Greek equivalent.
+[Rahlfs Hanhart3:14](https://www.die-bibel.de/bibel/LXX/EZK.3) does have
+πνεύματός μου for the anger-compatible personal-spirit expression. That is a
+real local translation-pattern control, not a law excluding an exceptional
+choice at39:29.
+
+Conversely, the article's near-literal reuse account is too compressed at the
+source-string level. The [earlier direct comparison](#renewal-promise-comparison-in-the-declared-hebrew-form)
+and today's WLC query distinguish one heart from new heart, third-person from
+second-person recipients, a new spirit followed by an additional my-Spirit
+clause, explicit divine enablement, and the land promise. These differences
+qualify that particular dependence argument; they do not disprove literary
+reuse or settle its direction.
+
+The directly consulted [CAL Peshitta39:29](https://cal.huc.edu/get_a_chapter.php?cset=U&file=62014&sub=39)
+has `ܐܠܐ ܐܫܘܕ ܪܘܚܝ`, provisionally rendered “but I will pour out my spirit.”
+The target noun is r-w-ḥ, not a displayed anger noun. Its lexical entry includes
+intellectual or emotional spirit; the positive rendering here is contextual,
+not guaranteed by consonants alone. The clause connection differs from both
+the retained POB temporal rendering and the selected Greek causal one. CAL's
+[file information](https://cal.huc.edu/get_file_info.php?coord=6201439)
+identifies the Leiden critical edition with some corrections based on7a1;
+middle/lower-apparatus variants have separate numbered notation. No variant
+is displayed on the target noun. This is an edition control, not Syriac
+unanimity, a fresh7a1 autopsy or automatically independent Hebrew attestation.
+The page's AI links supply no evidence and were not used.
+
+[Van Rooy2018](https://www.scielo.org.za/pdf/at/v38s26/12.pdf), printed170–173 /
+PDF1–4, surveys the contested independence of the Peshitta and uses of better
+manuscript/edition evidence. Root visually reads these complete pages, not
+all fifteen case studies. Its method supports testing agreement case by case;
+it is not a target39:29 diagnosis. The newly read Syriac does not select between
+the proposed earlier Hebrew forms or prove that the Greek merely misinterprets
+the retained one.
+
+The [Finsterbusch and Jacoby2023 publisher preview](https://www.vandenhoeck-ruprecht-verlage.com/media/pdf/b0/dd/46/9783647560830_sample.pdf)
+offers another modern acquisition route. Root reads complete introduction1–4 /
+PDF10–13 and the final sample page, printed17 / PDF26, ending at14:23. It supplies
+no39:29 text. Its conventions distinguish supplied letters, expanded
+abbreviations and editorial accents; its selected contrasts with B do not
+replace the complete Göttingen apparatus. The full synoptic edition, actual
+target apparatus and Field's source entry remain worthwhile comparison inputs,
+not readings already inspected here.
+
+**Decision:** retain the source and current English provisionally. The new
+article strengthens the need for a locus-specific translation-pattern test,
+while its conditional literary argument and the Syriac control leave priority
+unresolved. No new note application, recovered letters, corpus-wide quality
+claim or canon judgment is authorized by this source continuation.
+
+Private input hashes: van Rooy PDF
+`facea65f6d82eb3f777693c712d9325e414c93c64444e65b17f2388bdc1ed689`;
+2023 preview PDF
+`c6d07369476b391008bce20571a9d3a2cae13955cfedaf6c811b5380283f2c9f`;
+failed CAL raw-download notice, not chapter HTML
+`728141c317757ef6dac7618d6916810311b91ca6dfa5c52f58ce2cfb650e01b1`;
+WLC XML `90bf8adfa66b2f6695c702263fe668755c99c6afc386202c12de4f704f5d4e46`.
+The chapter was successfully consulted through the public reader, independently
+confirmed in a normal browser. Direct HTTP returned an anti-scraping notice;
+its hash does not identify Syriac source text. No raw-download hash is invented
+for either the successfully viewed CAL chapter or Lust's rendered HTML. Source files stay
+outside Git; rights are not reassigned to POB. The exact frozen reader candidate
+remains8d4d3343e5325ac09bc2252df7967624ccb88934f4aecb34959598425fb3589f.

@@ -1,5 +1,21 @@
 # Old Testament source comparison method and continuation review
 
+## Current continuation direction
+
+The 2026-10-12 [objective reset](TEXTUAL_RESTORATION_RESEARCH_LOG.md#objective-and-current-assessment)
+and [three-question portfolio](TEXTUAL_RESTORATION_PRIORITIES.md#active-research-portfolio)
+supersede older next-task language below. Lead with Ezekiel36–39/Papyrus967
+literary history, preserve completed applications and finish reviewed publication
+transactions safely. Jeremiah and Deuteronomy32 are conditional reserves, not
+parallel acquisition loops. More minor wording/anchor changes are secondary.
+
+The full Riestra Nahum1:5 article has already been read and its qualified English
+recommendation applied as “the earth heaves before him.” The Hebrew is retained
+and earliest-wording priority remains HOLD. Rechecking the current canonical
+hash confirms the applied candidate; another same-article reread supplies no
+new discriminating evidence. See the [full reading](NAHUM_SOURCE_COMPARISON_2026-10-10.md#full-article-review-on-october-11)
+and [actual application](NAHUM_1_5_EARTH_ENGLISH_APPLICATION_2026-10-11.md#applied-result-and-verification).
+
 ## Current answer to the two research questions
 
 October10 [Nahum3:6 and3:11 reader disclosure](NAHUM_3_6_11_READER_DISCLOSURE_2026-10-10.md)

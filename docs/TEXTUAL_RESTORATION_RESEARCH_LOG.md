@@ -9775,6 +9775,44 @@ This is factual review, not another earliest-priority vote. No source, main
 English, note or canonical metadata changes; the full corpus goal remains
 incomplete. Protected Genizah work and the other worktrees are preserved.
 
+### 2026-10-13 — Field source entry behind the Spirit reading
+
+The prior Nahum user turn is a current-state verification, not a new source
+finding: the already applied candidate and eight scoped tests still agree.
+This continuation takes the next available discriminating action rather than
+repeating that article. During source acquisition PR177 remains frozen at
+a774052767ffb3e47bf56dd8413602a2a24ace9d. Its own push115338472953 and
+PR115339779561 subsequently pass at14:32:24UTC and14:34:38UTC. Fresh main,
+two-path scope and predicted union precede the SHA-pinned merge
+59701d74e0a21c25987ec4b08d59e291de27f7a8. API and completed fetch verify
+parentsbf809a261359981edda8f7faae3c464e9733c63d and
+a774052767ffb3e47bf56dd8413602a2a24ace9d, tree3a0cc7d615c666767e32bc54bdbb21e7bc6054de.
+After no-main-checkout and ancestry checks, guarded local main advances and
+normal push confirms up to date. New Field prose stays separate from that
+already delivered transaction.
+
+The [Field source comparison](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#field-edition-and-the-transmitted-spirit-reading)
+directly inspects the1875 target entry and linked introductions. The attached
+Syrohexaplaric note confirms the transmission basis for the reported Symmachus
+Spirit reading; the printed Greek is not counted as a new surviving Greek
+manuscript. Jerome's objection is consulted through Field's quotation only.
+A parallel task locates an alternative primary scan and target OCR; root's
+complete visual pages control the interpretation. The PDF and documentation
+skills preserve page scope, edition mediation and the unchanged source judgment.
+No P967 noun, recovered Hebrew letters, source/English change or canon argument
+results. This is new project access to known evidence, not a novel variant.
+Private scan hashes and exact page mapping are in the case report; the full
+corpus objective remains active and incomplete.
+
+One bounded factual critique passes the Field entry, its linked introductions
+and the source summary. The case SHA256 is
+bf40fd0db081c2a568ccb3f803498ed31890d4c7194e27058bd45c976c0058c3.
+The reviewer checks the complete relevant pages and scan hash, not Archive
+rights metadata, alternate OCR or CI. Root separately verifies those acquisition
+and publication boundaries,379 local file links, whitespace and unchanged
+canonical39:29/protected Genizah hashes. No new corpus test suite is necessary
+for this prose-only delta, and existing remote integrity gates remain in force.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

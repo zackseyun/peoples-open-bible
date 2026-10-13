@@ -432,3 +432,108 @@ Root reproduces all nine new source/render pins, the canonical pins and the
 unchanged protected Genizah hash; the prior 19,006-byte report is an unchanged
 prefix. Whitespace and 368 local file links pass. No corpus test rerun, English
 application or source-priority approval is claimed for this two-document scope.
+
+## Ezekiel 39 29 reader draft on October 13
+
+The [frozen reader candidate](../sources/textual_restoration/candidates/ezekiel39_29_reader.2026-10-13.v1.json)
+adds two explanatory notes while retaining exact WLC and marker-free main
+English. Note a belongs to when and gives the causal alternative without
+declaring the temporal interpretation wrong. Note b belongs to my Spirit;
+it discloses the consulted Greek editions' contextual wrath interpretation,
+their word's broader range and the unresolved Hebrew transmission question.
+The [contract](../sources/textual_restoration/comparisons/ezekiel39_29_reader_contract.2026-10-13.v1.json)
+pins the complete candidate, source report, current doctrine/schema/exporter,
+immutable whole-book Git manifest and the actual before/proposed exports.
+This is an unapproved draft, not a main-English preference result or application.
+
+The original metadata needed for the verse schema is recoverable, not invented.
+Draft commit bb6ecf093ec3eef60e6958c73c10890139505dfd has exactly the current
+source and main English, plus original ai_draft and optimal-equivalence fields.
+Its full-record SHA256 is672e5693169ec219385114b13d4a6de23bcdfe4206e3de294b1d28059629a20e.
+The May18 wholesale-reversion commit7e149b9c0845bf072717dfa5cf789b66809e6aa9
+removed those fields, along with other rationale and review data. Only the two
+required historical fields return in this candidate. The original provider
+payload is not newly verified, and old HALOT labels, theological rationales
+and approval scores are not restored as current authority. The candidate
+archives today's revision-pass and English fields exactly, remains draft/needs
+review, and preserves today's revision history. The unrelated divine-name
+policy is not reapproved by retaining the existing sentence.
+
+The P967 target is outside the cached Kenyon publications. Root and the source
+subtask read 1937 printed VI/VIII / PDF10/12 and 1938 printed V–VI / PDF9–10.
+The text's printed16→17 / PDF34→35 ends Ezekiel17:21 and begins Daniel3:72;
+the plates' PDF28→29 likewise pass from fol.17r to71r. The separate Princeton
+publication is *Princeton University Studies in Papyrology*3 (1938). Its broad
+19:12–39:29 span, five missing leaves and page-number list are holding metadata,
+not target letters or a demonstrated physical lacuna at39:29. These files
+cannot add a P967 noun to the note. No gated acquisition is repeated.
+
+The full proposed local export has48 chapters/1273 units; only39:29 differs,
+both notes survive, and1272 other units remain identical. Its SHA256 is
+312d4eae05c2f55bc63cf0c5e8fbb703aee656ce73586fd1d019e61616617565,
+against baseline69bc676500f41cecef253c0f40069e5008718d4dee1371ab31a4cd5a3a865ca9.
+Schema and marker checks pass with canonical bytes still unchanged. The generic
+draft probe reports no source object in the lightweight payload; this is not
+converted into a source-display or deployment success. Exact retained source
+is separately bound in the candidate and Git evidence. Independent factual/
+application review is still required; no new corpus-wide quality claim follows.
+
+## Applied Ezekiel 39 29 notes
+
+The independent factual/application critique passes the exact candidate at
+dfda0b8dd51504f96b4974466006e31f407dc9da8be81368398c120be75b2cee and final
+contractc2d4df57020a03d24d8336f4174a86924ba115efcc73315c80c87a4cf6ecab0e.
+The [application receipt](../sources/textual_restoration/applications/ezekiel39_29_reader.2026-10-13.v1.json)
+preserves the earlier review binding and the explicit serialization clarification;
+the candidate's words did not change during review. The critic also reproduces
+the exact metadata recovery, archives, complete proposed export and Kenyon
+publication limit. This approves only these two notes and historical fields,
+not source priority, divine-name policy, deployment or whole-verse optimality.
+
+Root applies exactly the reviewed YAML bytes, SHA256
+8d4d3343e5325ac09bc2252df7967624ccb88934f4aecb34959598425fb3589f.
+The actual full-book export matches the proposed312d4eae hash above; both notes
+survive and all1272 other raw canonical files and exported units are unchanged.
+The six [new scoped tests](../tests/test_ezekiel39_reader_application.py) pass
+in13.683seconds;64 shared reader/marker/source-guard tests pass in59.870seconds.
+These are70 distinct post-application checks, not a new corpus-wide translation
+evaluation. The four earlier preflight checks are not counted again. CI adds
+this module and its two immutable Git baselines without removing existing checks.
+Protected Genizah bytes remain unchanged, whitespace passes, and repository
+publication still requires this successor's own exact-head checks.
+
+## Original Scheide comparison articles
+
+Two original studies are now accessible through the public Internet Archive
+journal scans, independently of the previously restricted Scheide book:
+Henry Snyder Gehman's [Hebrew comparison, JAOS 58 (1938), 92–102](https://archive.org/download/sim_journal-of-the-american-oriental-society_1938-03_58_1/sim_journal-of-the-american-oriental-society_1938-03_58_1.pdf)
+and [Greek manuscript comparison, JBL 57 (1938), 281–287](https://archive.org/download/sim_journal-of-biblical-literature_1938-09_57_3/sim_journal-of-biblical-literature_1938-09_57_3.pdf).
+The source agent reads every article page visually; root inspects JAOS92,
+98–101 and JBL282–283, including their notation. Neither article supplies
+the decisive Greek noun at39:29. JAOS92's19:12–39:29 coverage statement
+expressly excludes lost pages and other omissions; it is not a target-word
+transcription or a physical-preservation verdict.
+
+JAOS98–101 considers both different or faulty Hebrew exemplars and translator
+misreading in other verses. JBL282–283 allows inherited early Greek readings
+as well as revision toward Hebrew, without a definite general decision between
+them. These are the author's historical arguments, not newly proved mechanisms
+or a diagnosis of39:29. Our inference remains locus-specific: neither Greek
+agreement with Hebrew nor manuscript antiquity alone licenses a Hebrew
+replacement. The spirit/wrath question still requires the actual target
+transcription or critical apparatus; no P967 noun enters the reader note.
+
+The private JAOS issue scan has SHA256
+`a7dc0687ca078e22124e02a3c49e0b2d0116945008ec859b3975be1e5a0b1069`;
+printed92–102 are PDF96–106. The JBL issue scan has SHA256
+`03a6599b94bd531950d6714144ca9536a366e53e6c9faae8866869426d6f7c3e`;
+printed281–287 are PDF45–51. Scans remain outside Git; no scholarly image,
+transcription or publication rights are transferred to POB. This is new
+access to known scholarship, not a new manuscript discovery.
+
+PR176's original push and PR jobs subsequently fail an older six-unit test's
+historical whole-book assertions, after corpus validation succeeds. The
+[historical test repair](ELEVEN_COMPOUND_READER_CORRECTIONS_2026-10-12.md#historical-checks-after-later-applications)
+preserves all frozen evidence and the exact39:29 candidate while distinguishing
+historical exports from today's reader. Sixteen scoped checks pass; renewed
+remote integrity checks and merge remain separate from those local results.

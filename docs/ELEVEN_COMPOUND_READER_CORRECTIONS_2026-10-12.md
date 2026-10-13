@@ -145,3 +145,28 @@ is explained after Gad; vestibule, house and jambs notes are attached to other
 phrases. They remain outside this frozen package. Their wording and source
 interpretations still require their own scoped review, rather than extending
 this application into a whole-book approval.
+
+## Historical checks after later applications
+
+Ezekiel 39:29's subsequent reader-note application exposed two test defects:
+historical export hashes and non-target aggregates were being reconstructed
+from today's unrelated verses. Both PR176 jobs failed these assertions on
+`96fd10ee6fae55ec2f3c26b2a4ab205fd61e2db6`; a local run reproduced the same
+two failures. The original receipt remains a statement about its transaction,
+not a permanent freeze of every other Ezekiel verse.
+
+The repaired tests read both complete books from immutable baseline
+`ed0deaaff86368400e6ce9e50fbe21d97e40e06f`. All original expected hashes,
+candidates and receipts remain unchanged. Separate actual-reader comparisons
+substitute only the six baseline targets into today's books, verify the six
+applied texts and notes, and preserve all other current units. An unapplied
+preflight regression also checks the original no-footnotes Ezekiel 40:49
+baseline rather than assuming that a notes key exists.
+
+One bounded independent code review passes final test-file SHA256
+`60827a93f5660edce9d0edb5b3b1095483154049c84ccd5aa8e29bcd95347493`
+after those two preflight qualifications. The ten repaired application tests
+and six Ezekiel 39:29 tests pass together in 46.372 seconds. Earlier repair
+runs are superseded, not added to this count. This repairs verification of
+the historical transaction; it changes no source, English or scholarly
+judgment. A new exact-head remote check is still required before publication.

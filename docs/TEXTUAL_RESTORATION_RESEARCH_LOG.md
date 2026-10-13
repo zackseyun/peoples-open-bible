@@ -9644,6 +9644,93 @@ reviewed bytes. Root checks the unchanged report prefix, protected Genizah
 bytes, whitespace and 368 local file links. No corpus rerun or application
 approval follows; the successor requires its own exact-head publication checks.
 
+### 2026-10-13 — Ezekiel 39 29 reader candidate and provenance recovery
+
+The preceding goal continuation made progress with original Greek apparatus,
+actual lexical controls, a reviewed documentary successor and PR173 delivery.
+PR174 then passes both own exact-head jobs115166407859/115166992292 on d9f16e24.
+Fresh main includes concurrent PR175's source-first archive work; the approved
+two-path scope has predicted union88efb00fe735506360f4bd621d07aa52f1755804.
+Its SHA-pinned mergee1724eaed82b1e0e655825ecd11519bd06271fa8 preserves that work.
+API and completed fetch verify parents12ef4cbdffe0a047175192217885661fb1e58c25
+andd9f16e24b498427f54953b49de6429b206bd89bd and the expected tree. With no main
+worktree checked out, ancestry and an old-value guard precede local main
+advancement; the normal push confirms up to date. The next draft is separate.
+
+The [reader draft](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#ezekiel-39-29-reader-draft-on-october-13)
+now exposes causal/temporal and qualified Greek wrath alternatives without
+changing the main sentence or WLC. Its legacy record failed two schema
+requirements; Git's actual original draft recovers the missing ai_draft and
+philosophy with exact source/English matches. No new model provenance or
+historical approval is invented. The actual full proposed book export changes
+only39:29, retains both notes and1272 other units, and passes schema/marker
+checks. A generic probe's absent lightweight source object stays an explicit
+limit, not a reason to claim source-display or deployment success.
+
+The Kenyon control inspects complete source prefaces and publication boundaries;
+these cached Beatty volumes exclude39:29. The Princeton span is metadata, not
+the decisive noun's surviving letters or a physical-gap claim. The PDF skill
+preserves those boundaries, and the documentation skill keeps historical
+generation provenance separate from a new note's approval. Source and canon
+judgments remain held; the frozen draft still requires independent review.
+
+The factual/application critic subsequently passes exact candidatedfda0b8d
+and final contractc2d4df57, reportd7b0d153 and log2aa72fe9. The initial6037883d
+contract binding remains in the receipt. Export/YAML hash comparisons initially
+used different formatting recipes in review; the explicit compact UTF8/no-newline
+export recipe and width1000 YAML recipe resolve that identification question,
+with no source or note-text correction. This is not another priority vote.
+
+Root [applies the reviewed notes](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#applied-ezekiel-39-29-notes)
+at exact canonical8d4d3343 and verifies actual export312d4eae, both notes and
+1272 unchanged other raw records/exported units. Six new checks pass in13.683s
+and64 shared reader checks in59.870s:70 distinct post-application checks.
+CI adds the new module and two immutable baseline fetches, preserving the
+existing suite. The old generation metadata is historical, not approval;
+source priority, whole-verse optimality, divine-name policy, deployment and
+canon remain unapproved. Protected Genizah bytes and unrelated work remain
+unchanged. Commit/merge delivery is separate from this local application.
+
+### 2026-10-13 — Original Scheide studies and historical test repair
+
+The preceding Nahum reread confirms its already-published decision, without
+new source evidence or a duplicate documentation commit. Authoritative
+observations also show that PR176's own jobs115291178735/115293971048 are
+terminal failures, not continuing waits. Both fail the older six-unit module's
+historical Ezekiel export/non-target aggregate, while corpus validation passes.
+A local eight-test run reproduces exactly those two failures. No merge follows.
+
+The [repair](ELEVEN_COMPOUND_READER_CORRECTIONS_2026-10-12.md#historical-checks-after-later-applications)
+reconstructs historical books from their immutable Git baseline and separately
+checks today's six reader units. It changes no frozen contract, receipt,
+candidate, source or English. One bounded code review identifies unapplied
+preflight assumptions, including the absent40:49 notes field; root corrects
+them and adds a shared-assertion preflight regression. The final file at
+60827a93f5660edce9d0edb5b3b1095483154049c84ccd5aa8e29bcd95347493 passes
+the narrow follow-up review. Final ten repaired tests plus six39:29 checks pass
+in46.372seconds; superseded repair runs are not counted again. Both original
+own CI jobs are terminal before the successor changes; its renewed exact-head
+remote checks still govern publication. Protected Genizah bytes are unchanged.
+
+A separate bounded acquisition task finds both original Gehman1938 articles
+through lawful public journal scans, not a bypass of the restricted Scheide
+book. The [source result](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#original-scheide-comparison-articles)
+records full agent reading, root's inspected pages, actual scan hashes and
+printed/PDF page mapping. These papers give historical interpretive/revisional
+arguments at other verses, not39:29's decisive noun. The PDF skill preserves
+the coverage qualification and printed notation; the documentation skill keeps
+acquisition, scholarly inference and software repair distinct. The actual
+target transcription/apparatus remains the discriminating evidence task.
+No earliest-source, fresh decipherment, ImageGen evidence or canon claim changes.
+
+The bounded documentary check passes the preceding three appended sections,
+including seven complete source pages and both PDF hashes. Its reviewed log
+SHA256 isaa113c9f36721320d401d4e1f8fdfe5dd47d4d099cddbabf256d048badbc2768;
+this verification sentence is a subsequent root append, not part of that pin.
+Root verifies382 local file links and whitespace, with only the historical
+test and these three reports changed from the failed head. No frozen source
+receipt or scholarly conclusion is rewritten to obtain a passing check.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

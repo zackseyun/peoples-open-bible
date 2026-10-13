@@ -80,6 +80,31 @@ class SelectedGreekTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Missing"):
             translation.prepare("pseudo_clementine_homilies", ["2.1"], "test", source_variant="lagarde1865-homily-1")
 
+    def test_partial_homily_two_keeps_original_reference_prefix(self):
+        rows = selected.extract_homilies([(63, "Β"), (63, "λόγος. 2. κείμενον.")],
+                                        expected_homilies=2, first_homily=2)
+        self.assertEqual([r["reference"] for r in rows], ["2.1", "2.2"])
+        with self.assertRaises(ValueError):
+            selected.extract_homilies([(63, "Β"), (63, "λόγος.")], expected_homilies=2)
+
+    def test_second_homily_variant_uses_same_source_at_preparation_and_ingestion(self):
+        import copy
+        fixture = copy.deepcopy(selected.load_first_homily())
+        fixture["passages"] = [dict(fixture["passages"][0], reference="2.1", homily=2)]
+        fixture["coverage"]["homilies"] = [2]
+        fixture["coverage"]["sections"] = ["2.1"]
+        with patch.object(selected, "load_second_homily", return_value=fixture):
+            packet = translation.prepare("pseudo_clementine_homilies", ["2.1"], "test", source_variant="lagarde1865-homily-2")
+            response = {"model":"test", "choices":[{"finish_reason":"stop", "message":{"content":json.dumps({"passages":[
+                {"reference":"2.1", "text":"Test only.", "lexical_decisions":[], "source_issues":[]}]})}}]}
+            result = translation.validate_response(packet, response)
+            self.assertEqual(result["source_hash"], packet["source_hash"])
+            self.assertEqual(packet["context"]["source_coverage"]["status"], "complete_homily_partial_work")
+
+    def test_unknown_print_variant_is_not_silently_registered_xml(self):
+        with self.assertRaisesRegex(ValueError, "Unknown"):
+            translation.prepare("pseudo_clementine_homilies", ["1.1"], "test", source_variant="lagarde1865-unknown")
+
     def test_boundary_shift_fails_closed(self):
         first, proof1 = selected.load_page(45)
         second, proof2 = selected.load_page(46)

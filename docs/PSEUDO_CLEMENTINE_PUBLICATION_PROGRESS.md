@@ -255,3 +255,26 @@ resumed; successful receipt files were reused.
   bounded revisions. Its remaining batches and the Homilies source job continue.
 - The website staging code now handles the separate 5-section Contestation and
   20-section Clement inventories. Neither is made visible before acceptance.
+
+## Review-standard alignment
+
+DOCTRINE.md explicitly permits a defensible main rendering with material
+alternatives preserved in notes; it does not require a uniquely settled
+interpretation. The earlier prompt's example `blocks_publication: true` and its
+undifferentiated treatment of source/meaning questions sometimes caused ordinary
+disclosed ambiguity to become an automatic hold. The prompt now distinguishes
+that from an unreadable source, missing meaning, invented restoration, or a
+rendering that is not defensible from the Greek. Those actual defects still block.
+
+No acceptance flag in an existing record was changed. Held Clement passages are
+being freshly generated/revised and independently reviewed under the explicit
+existing policy. All uncertainty notes and lexical rationales must survive reader
+export. A proposed alternative is still not an approval, and no model response is
+treated as human scholarly sign-off. The specialist-review packet remains useful
+where no defensible rendering can be established.
+
+Preparation and ingestion now use one shared print-source variant loader, with
+tests for both Homily 1 and Homily 2 and rejection of unknown variants. Homily 2
+cannot be prepared until every required page has accepted evidence. These partial
+source variants remain incomplete-work drafting inputs; complete-work source and
+review coverage are still mandatory for export and publication.

@@ -15,7 +15,7 @@ from pathlib import Path
 
 from tools.extra_texts import pseudo_clementine_pages as transport
 from tools.extra_texts import pseudo_clementine_translation as translation
-from tools.extra_texts.pseudo_clementine_selected import load_selected, load_first_homily
+from tools.extra_texts.pseudo_clementine_selected import load_selected, load_first_homily, load_print_variant
 
 
 def rehash(request: dict) -> None:
@@ -130,7 +130,7 @@ def main() -> int:
     parser.add_argument("--work", required=True)
     parser.add_argument("--run", required=True)
     parser.add_argument("--cache", type=Path, required=True)
-    parser.add_argument("--source-variant", choices=["lagarde1865", "lagarde1865-homily-1"], default="lagarde1865")
+    parser.add_argument("--source-variant", choices=["lagarde1865", "lagarde1865-homily-1", "lagarde1865-homily-2"], default="lagarde1865")
     parser.add_argument("--batch-size", type=int, default=5)
     parser.add_argument("--workers", type=int, default=1)
     parser.add_argument("--max-revisions", type=int, default=2)
@@ -140,9 +140,9 @@ def main() -> int:
     import re
     if not re.fullmatch(r"[a-z0-9-]+", args.run):
         parser.error("Invalid run name")
-    if args.source_variant == "lagarde1865-homily-1" and args.work != "pseudo_clementine_homilies":
+    if args.source_variant != "lagarde1865" and args.work != "pseudo_clementine_homilies":
         parser.error("Partial Homily source belongs to another work")
-    rows = (load_first_homily() if args.source_variant == "lagarde1865-homily-1" else load_selected(args.work))["passages"]
+    rows = load_print_variant(args.work, args.source_variant)["passages"]
     refs = [r["reference"] for r in rows]
     batches = [refs[i:i + args.batch_size] for i in range(0, len(refs), args.batch_size)]
     directory = translation.source.SOURCE_ROOT / args.work / "translation_workflow" / args.run

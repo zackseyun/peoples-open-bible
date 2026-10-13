@@ -58,6 +58,15 @@ class TranslationWorkflowTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Draft text changed"):
             pipeline.prepare(draft["work"], ["1"], "review-model", draft)
 
+    def test_review_standard_preserves_disclosed_ambiguity_without_waiving_actual_defects(self):
+        request = pipeline.prepare("pseudo_clementine_peter_to_james", ["1"], "test")
+        standard = request["context"]["ambiguity_review_standard"]
+        self.assertIn("DOCTRINE.md", standard)
+        self.assertIn("unique or uncontested interpretation is not required", standard)
+        self.assertIn("main rendering must itself be defensible", standard)
+        self.assertIn("unreadable", standard)
+        self.assertIn("invented restoration", standard)
+
     def test_unresolved_source_issue_cannot_be_certified_away(self):
         output = copy.deepcopy(self.output)
         output["passages"][0]["source_issues"] = [{"source_quote": "Πέτρος", "issue": "TEST SOURCE ISSUE", "blocks_publication": True}]

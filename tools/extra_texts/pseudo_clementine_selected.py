@@ -139,7 +139,7 @@ HOMILY_NUMERALS = {
 }
 
 
-def extract_homilies(all_lines: list[tuple[int, str]], expected_homilies: int = 20) -> list[dict]:
+def extract_homilies(all_lines: list[tuple[int, str]], expected_homilies: int = 20, first_homily: int = 1) -> list[dict]:
     """Separate exact printed homily/section markers without dropping prose."""
     rows, fragments, cited_pages, body_lines = [], [], set(), []
     homily, section = 0, 1
@@ -157,7 +157,7 @@ def extract_homilies(all_lines: list[tuple[int, str]], expected_homilies: int = 
         label = line.strip()
         chapter = HOMILY_NUMERALS.get(label)
         if chapter is not None:
-            if chapter != homily + 1:
+            if chapter != (homily + 1 if homily else first_homily):
                 raise ValueError("Homily numbering is not contiguous")
             if homily:
                 finish()
@@ -228,6 +228,54 @@ def load_first_homily() -> dict:
     if not path.exists() or json.loads(path.read_text()) != actual:
         raise ValueError("Partial checked Homily 1 snapshot is missing or stale")
     return actual
+
+
+def assemble_second_homily() -> dict:
+    all_lines, proofs = [], []
+    for number in range(63, 79):
+        lines, proof = load_page(number)
+        all_lines.extend((number, line) for line in lines)
+        proofs.append(proof)
+    starts = [i for i, (_, line) in enumerate(all_lines) if line.strip() == "Β"]
+    ends = [i for i, (_, line) in enumerate(all_lines) if line.strip() == "Γ"]
+    if len(starts) != 1 or len(ends) != 1 or starts[0] >= ends[0]:
+        raise ValueError("Complete second-homily boundaries are not verified")
+    rows = extract_homilies(all_lines[starts[0]:ends[0]], expected_homilies=2, first_homily=2)
+    if [r["reference"] for r in rows] != [f"2.{i}" for i in range(1,54)]:
+        raise ValueError("Second Homily section inventory is incomplete")
+    manifest = json.loads((pages.SOURCE / "manifest.json").read_text())
+    return {
+        "work": "pseudo_clementine_homilies", "edition": manifest["edition"],
+        "source_snapshot": {"url": manifest["pdf_url"], "sha256": manifest["pdf_sha256"],
+                            "kind": "independent_image_checked_print_transcription"},
+        "source_license": "Public-domain ancient Greek and 1865 edition; original POB notes/contributions CC BY 4.0",
+        "coverage": {"status": "complete_homily_partial_work", "homilies": [2], "required_homilies": list(range(1,21)),
+                     "sections": [r["reference"] for r in rows],
+                     "basis": "Checked pages from the Homily 2 heading through the start of Homily 3; NOT a complete-work source"},
+        "normalization": "NFC; join physical end-line hyphens; collapse layout whitespace; remove old-edition pagination bars and section numerals; preserve printed wording, punctuation, spelling and gaps",
+        "page_evidence": proofs, "passages": rows,
+        "status": "checked_partial_print_source_for_drafting_not_reader_release",
+    }
+
+
+def load_second_homily() -> dict:
+    actual = assemble_second_homily()
+    path = pages.SOURCE / "selected/pseudo_clementine_homilies.homily-02.json"
+    if not path.exists() or json.loads(path.read_text()) != actual:
+        raise ValueError("Partial checked Homily 2 snapshot is missing or stale")
+    return actual
+
+
+def load_print_variant(work: str, variant: str) -> dict:
+    if variant == "lagarde1865":
+        return load_selected(work)
+    if work != "pseudo_clementine_homilies":
+        raise ValueError("Partial Homily source belongs to another work")
+    if variant == "lagarde1865-homily-1":
+        return load_first_homily()
+    if variant == "lagarde1865-homily-2":
+        return load_second_homily()
+    raise ValueError("Unknown source variant")
 
 
 def assemble_homilies() -> dict:

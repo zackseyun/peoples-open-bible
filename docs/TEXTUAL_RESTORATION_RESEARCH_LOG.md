@@ -9294,6 +9294,41 @@ with local file links, JSON parsing, whitespace and the protected Genizah hash
 verified. The rerun is not counted as92 further distinct tests. Fresh PR165
 jobs115079992019/115080009651 remain live, not passed or cancelled.
 
+### 2026-10-12 — Direct literary and copying loss arguments for Ezekiel36
+
+The prior goal turn made progress: committed/pushed PR166's nine-path evidence
+and objective reset, plus a distinct CSNTM coverage exclusion. Fresh own checks
+for PR165/166 remain live; heads are not mutated or treated as approved. The
+strategic-direction critic subsequently returns bounded PASS, separately from
+the source packet and without certifying priority/CI. Its result is recorded in
+PR166's comment6136091604 rather than rewriting the live head.
+
+The [new argument comparison](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md)
+directly reads Tov's revised1999 essay397–410 through author-uploaded public HTML
+and Spottorno's complete1982 publisher PDF93–98 with all six renders/notes.
+The original Tov1986 and Lust1981 bodies remain unacquired. Tov's Hebrew-expansion
+case is substantive but conditional; its order discussion concerns chapter7.
+Spottorno offers linked ancestral page loss/reordering, explicitly requiring an
+unsupported53-letter omission in one variant. The1512-letter page unit is an
+assumption, not measured ancient loss. Root checks the arithmetic, not an
+independent manuscript letter count.
+
+The counterargument qualifies the reported Old Latin minus/order and identifies
+the Madrid edition as a necessary acquisition route beyond Princeton. This is
+new project-level argumentative evidence, not a new manuscript discovery or
+decipherment. Historical priority remains HOLD, with no source/English/notes/
+canon change. Frozen prior records and unrelated Genizah work are preserved.
+The PDF and documentation skills keep actual visual reading, author argument,
+our inference and restricted reuse distinct; no new infrastructure is required.
+
+One bounded independent critique passes the exact new report at
+e09b3d66538d475f31aa814640ec1cb68d7011572831c65398a4ce0de7c21f3f,
+reading all target source pages/notes and checking seven private hashes plus20
+retained pins. Root verifies local file links, arithmetic, whitespace and the
+protected Genizah hash. Only validation history is appended after critique.
+No new corpus-test claim or priority/application approval follows; the two-path
+documentation commit still needs its own exact-head publication checks.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

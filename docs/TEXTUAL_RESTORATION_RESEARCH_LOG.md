@@ -9329,6 +9329,63 @@ protected Genizah hash. Only validation history is appended after critique.
 No new corpus-test claim or priority/application approval follows; the two-path
 documentation commit still needs its own exact-head publication checks.
 
+### 2026-10-12 — Ezekiel language controls and exact Greek witness identity
+
+The prior goal turn made progress by directly comparing Tov/Spottorno, committing
+and pushing PR167's two-path report, and delivering PR165. This continuation
+tests the cited language rather than repeats a source-priority preference vote.
+The [new controls](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md) scan the actual
+1273-verse WLC XML:169 אני components, one אנכי at36:28, and impurity noun2932
+with six singular/two plural tokens; the plurals are36:25,29. Verb/adjective
+string hits and nested alternative words are not mixed into this count.
+Rarity supports a distinction, not its date or the direction of literary change.
+
+Actual publisher Rahlfs-Hanhart36:33,37 prints κύριος without Adonai. The newly
+acquired original Thackeray1903 article identifies B/Vaticanus and separates
+the correction at32. Root reads extracted405–411 and three complete target
+renders; the source agent extracts all14 pages and reads the targeted discussion.
+This reconciles a specific published witness report with a different selected
+edition, not disproves it or verifies fresh Vaticanus ink. The24–28 lectionary
+does not attest the later Adonai words. No P967 boundary is derived from1903.
+
+The custodial Madrid route identifies BNE/BDPI bdh0000230543. Root reads the
+complete detailed record's65–66,75–78,91–104 ranges; mixed unrelated edition
+fields and session-specific URL are not transferred into Git. Its broad28–43
+coverage does not preserve either target transition. The viewer403 is a real
+access limit, no target plate acquired. The prior Madrid edition lead remains
+useful for adjacent order but is no longer a transition-image priority.
+
+PR166's own exact-head jobs115082795697/115082986135 both succeed at
+bd506434018a2f72989556c756f6c72d5948eeed. Fresh main comparison matches the
+nine approved paths and predicted union04f473e1a78a96d425db8460d8cb77ff34e61c8d.
+SHA-pinned merge lands5b23271f26911030f2c2c7d8478d1df711dcb833; parents/tree
+verify. With no other main checkout and ancestry checked, guarded local main
+advances and normal push reports up to date. PR167's own push has passed;
+its own PR remains live at this checkpoint, not approved or restarted.
+
+The PDF and documentation skills preserve publication reading versus fresh
+transcription and concise controls versus historical priority. No source,
+English, note, canon, registry or ImageGen evidence change occurs. Earlier
+receipts and unrelated Genizah bytes remain protected. The lead remains
+Ezekiel literary/transmission history, not isolated English maintenance.
+
+The bounded independent critic passes exact new report
+7ab62bf278782e7030f2f5012544a857b61d0409e7e7edae1911a9f6b12c0778,
+independently reproducing counts and reading the three target pages, actual
+publisher text and complete BDPI record. All20 retained pins, four private
+hashes, prior reportd43 and protected Genizah130 match. Root verifies local
+links, whitespace and chapter/verse counts. Only verification history appends;
+no new corpus tests or source/English/priority approval is claimed.
+
+Subsequently PR167's own PR job115089617826 joins push115088286293 in passing
+at exacte7b9b3765b94058e12a7bebcf4110db6c026ba11. Fresh main comparison has
+exactly its two approved documentation paths and unionce8fd8fac25ea1078d3854a6e9475d807a9fecfb.
+SHA-pinned merge lands3bb33db5e4c4dcac00440b7d5afeb3f7391c3317;
+parents/tree verify. Local main advances under an old-value guard after ancestry
+and no-main-checkout checks; normal push reports up to date. This does not
+approve the new language-control head. Root executes the literal documented
+reproduction snippet and obtains the same counts and eight noun rows.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

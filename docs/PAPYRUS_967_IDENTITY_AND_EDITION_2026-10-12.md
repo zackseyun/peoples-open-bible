@@ -90,3 +90,23 @@ the historical superiority of a reading. Only validation metadata is appended
 after the substantive review. Own exact-head CI remains required for publication. The
 all-OT witness census, damaged-image calibration and corpus-wide English work
 remain incomplete.
+
+## New exhibit routes and target access
+
+The [Princeton book forms exhibit](https://dpul.princeton.edu/global-book-forms/feature/from-papyrus-scroll-to-codex)
+identifies its Ezekiel item as Scheide M97 and links to
+[item c247f1340](https://dpul.princeton.edu/global-book-forms/catalog/c247f1340).
+The exhibit was readable in the public browser, but opening that item reached
+Princeton's connection-verification gate. Neither target transition was inspected;
+the exhibit caption cannot establish surviving wording or physical continuity.
+
+The read-only acquisition subtask checked BNE's newer
+[virtual exhibition](https://www.bne.es/es/visitanos/visitas-virtuales/papiro-ezequiel/visita.html).
+Its Code 967 station displays a panoramic strip of papyrus photographs, without
+an identifiable target leaf or a verse/page selector. The resource hotspot is
+labeled “BNE. Profecías de Ezequiel. Fragmento” and embeds
+[BNE Digital object 0000230543](https://bnedigital.bne.es/bd/en/card?oid=0000230543&site=bdh),
+the previously identified partial Madrid object; that iframe visibly failed.
+An exhibition of reunited photographs is not verified access to a complete,
+page-by-page facsimile. These routes supply no new transcription or priority
+evidence. Retain HOLD and do not repeat the gates without new access.

@@ -15,7 +15,7 @@ from pathlib import Path
 
 from tools.extra_texts import pseudo_clementine_pages as transport
 from tools.extra_texts import pseudo_clementine_translation as translation
-from tools.extra_texts.pseudo_clementine_selected import load_selected
+from tools.extra_texts.pseudo_clementine_selected import load_selected, load_first_homily
 
 
 def rehash(request: dict) -> None:
@@ -72,7 +72,7 @@ def accepted(draft: dict, review: dict) -> bool:
     )
 
 
-def run_batch(work: str, refs: list[str], directory: Path, cache: Path, max_revisions: int) -> dict:
+def run_batch(work: str, refs: list[str], directory: Path, cache: Path, max_revisions: int, source_variant: str = "lagarde1865") -> dict:
     directory.mkdir(parents=True, exist_ok=True)
     with (directory / ".lock").open("w") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
@@ -82,20 +82,20 @@ def run_batch(work: str, refs: list[str], directory: Path, cache: Path, max_revi
             draft = json.loads((directory / result["draft"]).read_text())
             review = json.loads((directory / result["review"]).read_text())
             # Source changes invalidate a cached English acceptance.
-            translation.prepare(work, refs, transport.REVIEWER, draft, source_variant="lagarde1865")
+            translation.prepare(work, refs, transport.REVIEWER, draft, source_variant=source_variant)
             if not accepted(draft, review):
                 raise ValueError("Cached batch no longer has accepted current English")
             return {"references": refs, "status": "already_accepted"}
         previous_draft = previous_review = None
         for revision in range(max_revisions + 1):
-            packet = translation.prepare(work, refs, transport.DRAFTER, source_variant="lagarde1865")
+            packet = translation.prepare(work, refs, transport.DRAFTER, source_variant=source_variant)
             if previous_draft is not None:
                 packet["context"]["revision_of"] = previous_draft["output_hash"]
                 packet["context"]["review_findings"] = previous_review["output"]
                 packet["params"]["messages"].append({"role": "user", "content": "Revise the preceding draft to address the independent review below, then return the same complete draft JSON schema. Keep the supplied Greek unchanged. Preserve uncertainty and interpretive alternatives for readers; do not erase a source problem merely to pass review. Confirmed printed oddities are not necessarily OCR defects, but their interpretation must remain explicitly provisional. Any actual unresolved source corruption still blocks publication. Return fresh exact source quotations; no approval is implied by a suggested replacement.\nPREVIOUS DRAFT:\n" + json.dumps(previous_draft["output"], ensure_ascii=False) + "\nINDEPENDENT REVIEW:\n" + json.dumps(previous_review["output"], ensure_ascii=False)})
                 rehash(packet)
             draft = execute(packet, directory, f"v{revision}.draft", cache)
-            review_packet = translation.prepare(work, refs, transport.REVIEWER, draft, source_variant="lagarde1865")
+            review_packet = translation.prepare(work, refs, transport.REVIEWER, draft, source_variant=source_variant)
             review = execute(review_packet, directory, f"v{revision}.review", cache)
             if accepted(draft, review):
                 result = {"references": refs, "status": "accepted", "source_hash": draft["source_hash"], "draft_output_hash": draft["output_hash"], "review_output_hash": review["output_hash"], "draft": f"v{revision}.draft.record.json", "review": f"v{revision}.review.record.json", "revision": revision, "publication_status": "not_published"}
@@ -112,6 +112,7 @@ def main() -> int:
     parser.add_argument("--work", required=True)
     parser.add_argument("--run", required=True)
     parser.add_argument("--cache", type=Path, required=True)
+    parser.add_argument("--source-variant", choices=["lagarde1865", "lagarde1865-homily-1"], default="lagarde1865")
     parser.add_argument("--batch-size", type=int, default=5)
     parser.add_argument("--workers", type=int, default=1)
     parser.add_argument("--max-revisions", type=int, default=2)
@@ -121,14 +122,16 @@ def main() -> int:
     import re
     if not re.fullmatch(r"[a-z0-9-]+", args.run):
         parser.error("Invalid run name")
-    rows = load_selected(args.work)["passages"]
+    if args.source_variant == "lagarde1865-homily-1" and args.work != "pseudo_clementine_homilies":
+        parser.error("Partial Homily source belongs to another work")
+    rows = (load_first_homily() if args.source_variant == "lagarde1865-homily-1" else load_selected(args.work))["passages"]
     refs = [r["reference"] for r in rows]
     batches = [refs[i:i + args.batch_size] for i in range(0, len(refs), args.batch_size)]
     directory = translation.source.SOURCE_ROOT / args.work / "translation_workflow" / args.run
     args.cache.mkdir(parents=True, exist_ok=True)
     results = []
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
-        jobs = {pool.submit(run_batch, args.work, batch, directory / f"batch-{i+1:03d}", args.cache, args.max_revisions): batch for i, batch in enumerate(batches)}
+        jobs = {pool.submit(run_batch, args.work, batch, directory / f"batch-{i+1:03d}", args.cache, args.max_revisions, args.source_variant): batch for i, batch in enumerate(batches)}
         for future in as_completed(jobs):
             try:
                 result = future.result()

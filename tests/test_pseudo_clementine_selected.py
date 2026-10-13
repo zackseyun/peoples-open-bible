@@ -61,6 +61,18 @@ class SelectedGreekTests(unittest.TestCase):
         self.assertEqual(evidence["adjudications"][0]["scope"], "single_word")
         self.assertEqual(evidence["adjudications"][0]["after_word"], "τὰ")
 
+    def test_first_homily_can_be_drafted_but_is_not_a_complete_work(self):
+        result = selected.load_first_homily()
+        self.assertEqual(result["coverage"]["status"], "complete_homily_partial_work")
+        self.assertEqual(len(result["passages"]), 22)
+        self.assertEqual(result["passages"][0]["reference"], "1.1")
+        self.assertEqual(result["passages"][-1]["reference"], "1.22")
+        packet = translation.prepare("pseudo_clementine_homilies", ["1.1", "1.2"], "test", source_variant="lagarde1865-homily-1")
+        self.assertEqual(packet["context"]["source_coverage"]["status"], "complete_homily_partial_work")
+        self.assertEqual(packet["context"]["source_coverage"]["required_homilies"], list(range(1,21)))
+        with self.assertRaisesRegex(ValueError, "Missing"):
+            translation.prepare("pseudo_clementine_homilies", ["2.1"], "test", source_variant="lagarde1865-homily-1")
+
     def test_boundary_shift_fails_closed(self):
         first, proof1 = selected.load_page(45)
         second, proof2 = selected.load_page(46)

@@ -192,6 +192,44 @@ def extract_homilies(all_lines: list[tuple[int, str]], expected_homilies: int = 
     return rows
 
 
+def assemble_first_homily() -> dict:
+    """Checked Homily 1 only: permits draft work, never whole-work publication."""
+    all_lines, proofs = [], []
+    for number in range(54, 64):
+        lines, proof = load_page(number)
+        all_lines.extend((number, line) for line in lines)
+        proofs.append(proof)
+    title = "Κλήμεντος τῶν Πέτρου ἐπιδημίων κηρυγμάτων ἐπιτομή."
+    starts = [i for i, (_, line) in enumerate(all_lines) if line == title]
+    ends = [i for i, (_, line) in enumerate(all_lines) if line.strip() == "Β"]
+    if len(starts) != 1 or len(ends) != 1 or starts[0] >= ends[0]:
+        raise ValueError("Complete first-homily boundaries are not verified")
+    rows = extract_homilies(all_lines[starts[0]+1:ends[0]], expected_homilies=1)
+    if [r["reference"] for r in rows] != [f"1.{i}" for i in range(1,23)]:
+        raise ValueError("First Homily section inventory is incomplete")
+    manifest = json.loads((pages.SOURCE / "manifest.json").read_text())
+    return {
+        "work": "pseudo_clementine_homilies", "edition": manifest["edition"],
+        "source_snapshot": {"url": manifest["pdf_url"], "sha256": manifest["pdf_sha256"],
+                            "kind": "independent_image_checked_print_transcription"},
+        "source_license": "Public-domain ancient Greek and 1865 edition; original POB notes/contributions CC BY 4.0",
+        "coverage": {"status": "complete_homily_partial_work", "homilies": [1], "required_homilies": list(range(1,21)),
+                     "sections": [r["reference"] for r in rows],
+                     "basis": "Checked pages from the Homilies heading through the start of Homily 2; NOT a complete-work source"},
+        "normalization": "NFC; join physical end-line hyphens; collapse layout whitespace; remove old-edition pagination bars and section numerals; preserve printed wording, punctuation, spelling and gaps",
+        "page_evidence": proofs, "passages": rows,
+        "status": "checked_partial_print_source_for_drafting_not_reader_release",
+    }
+
+
+def load_first_homily() -> dict:
+    actual = assemble_first_homily()
+    path = pages.SOURCE / "selected/pseudo_clementine_homilies.homily-01.json"
+    if not path.exists() or json.loads(path.read_text()) != actual:
+        raise ValueError("Partial checked Homily 1 snapshot is missing or stale")
+    return actual
+
+
 def assemble_homilies() -> dict:
     all_lines, proofs = [], []
     for number in range(54, 242):

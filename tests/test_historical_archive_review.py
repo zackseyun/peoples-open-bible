@@ -107,6 +107,18 @@ class HistoricalSourceReviewTests(unittest.TestCase):
         with self.assertRaises(ValueError):parse_jsp_page(raw)
         self.assertEqual(parse_jsp_page(raw,allow_empty=True)[0],'')
 
+    def test_printed_table_rows_are_not_lost_or_concatenated(self):
+        from tools.historical_archive_review import parse_jsp_page
+        page={'clearText':'<table><tbody><tr><th>Section</th><th>Page</th></tr><tr><td>26</td><td>do on stewardships November 1831</td><td><a>152</a></td></tr></tbody></table><div class="wasptag">[p. ii]</div>', 'editorialPageNumber':'ii'}
+        raw=('<script id="__NEXT_DATA__" type="application/json">'+json.dumps({'props':{'pageProps':{'summary':page}}})+'</script>').encode()
+        self.assertEqual(parse_jsp_page(raw)[0].strip(),'Section Page\n\n26 do on stewardships November 1831 152')
+
+    def test_printed_table_names_survive_but_annotation_tables_do_not(self):
+        from tools.historical_archive_review import parse_jsp_page
+        page={'clearText':'<table><tr><td><aside class="popup-wrapper"><a>Missouri</a><div class="popup-content"><table><tr><td>Modern note</td></tr></table></div></aside></td><td>192</td></tr></table>'}
+        raw=('<script id="__NEXT_DATA__" type="application/json">'+json.dumps({'props':{'pageProps':{'summary':page}}})+'</script>').encode()
+        self.assertEqual(parse_jsp_page(raw)[0],'Missouri 192')
+
 class WholeEditionInventoryTests(unittest.TestCase):
     def test_offline_snapshot_audit_never_repairs_or_fetches(self):
         from tools.historical_dc_whole_edition import read_snapshot

@@ -157,8 +157,11 @@ class PrintedTextParser(HTMLParser):
         blocked=bool(classes & {'footnote','footnote-ref','page-number','pageNumber',
                                'anonymous-block-p','popup-content','note-data'}) or tag in {'script','style'}
         skip=blocked or (self.stack[-1][2] if self.stack else False)
-        root=tag=='div' and 'wasptag' in classes and self.current is None and not skip
+        # Printed indexes, contents and some body material are table rows,
+        # not wasptag divs. Keep their cells in row-major source order.
+        root=((tag=='div' and 'wasptag' in classes) or tag=='tr') and self.current is None and not skip
         if root:self.current=[]
+        if tag in {'td','th'} and self.current is not None and not skip:self.current.append(' ')
         if tag in {'br','img','hr','meta','link','input'}:
             if tag=='br' and self.current is not None and not skip:self.current.append(' ')
             return

@@ -121,7 +121,7 @@ python3 tools/historical_dc_whole_edition.py \
   --output /private/research/historical-review --workers 2
 ```
 
-Nineteen focused tests now cover the original review gates plus whole-copy
+Twenty-one focused tests now cover the original review gates plus whole-copy
 leaf coverage, empty OCR, reordered/missing pages, wrong-copy/error responses,
 independent binding inventories, and the live-style popup/locator regressions.
 
@@ -151,3 +151,26 @@ approved model execution lane, whole-page reading/review, source-based
 adjudication, comparison-copy alignment, and the appropriate output-rights
 decision. The full source inventory is now ready; it is not a substitute for
 those substantive reviews.
+
+### Printed tables and original errata are in scope
+
+A content-level follow-up found that the earlier printed-text parser retained
+ordinary paragraphs but omitted table rows. That affected 27 comparison pages,
+including body tables, signatures, the index/contents, and errata signatures.
+The parser now includes table cells in row-major order, while still excluding
+modern popup-note tables. All affected comparison records were regenerated
+offline and re-audited. This illustrates why the earlier clean artifact hash
+audit could not prove textual completeness or full-book correctness.
+
+Direct Codex image probes of Newberry leaves n262, n266 and n286 confirmed
+foreground tables in the index/contents and the printed `Notes to the Reader`.
+The latter gives original-edition corrections affecting pages 251, 255 and
+257. Those errata must remain distinct evidence; an edition's own printing
+errors are not automatically scan-OCR errors, and corrections must not be
+silently harmonized with a later edition. Raw comparisons, scan hashes and
+limited visual observations remain private research artifacts.
+
+These three image probes were single-model preliminary observations; their
+exact runtime model ID was not recorded. They do not replace the required
+recorded source-first pass and independent reviewer. The zero-review counters
+refer to the API-backed, hash-bound review protocol, not to these visual leads.

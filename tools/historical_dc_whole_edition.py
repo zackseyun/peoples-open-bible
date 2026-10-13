@@ -245,7 +245,7 @@ def acquire(out: Path, workers: int = 2) -> dict:
                   'printed_text_sha256': digest(text.encode()),
                   'editorial_page_number': page.get('editorialPageNumber'),
                   'role': 'published_reading_of_other_copy_same_edition',
-                  'empty_text_status': 'requires_scan_check_not_automatically_blank' if not text else None,
+                  'empty_text_status': 'no_lexical_text_requires_scan_check_not_automatically_blank' if not re.search(r'\w', text) else None,
                   'rights': 'private_research_only; modern annotations not republished'}
         dump(target / 'jsp' / f"page-{row['page']:04d}.json", record)
         return {'reference': row['reference'], 'source_sha256': digest(raw),

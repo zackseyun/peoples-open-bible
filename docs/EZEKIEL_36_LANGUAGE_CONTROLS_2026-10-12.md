@@ -672,3 +672,41 @@ lookup also finds the [MDZ primary scan](https://www.digitale-sammlungen.de/en/d
 whose public OCR places the same printed873 at canvas885. That OCR helps locate
 the entry; the conclusions above use root's visual reading of the Toronto scan.
 Neither scan nor rendered pages are imported into Git or relicensed as POB.
+
+## Reading level affiliation in Ezekiel
+
+[Wevers's2003 study](https://doi.org/10.26015/adwdocs-382), *The L Text of
+Ezekiel*, supplies local evidence for assessing revised Greek readings.
+The acquisition agent reads complete printed/PDF68–116 through extraction,
+visually checking five key pages; root visually reads complete68–69,75–76,88,
+92,107 and114–116. The study's O denotes a Hexaplaric group and L a Lucianic
+group, not Field's Ο′ selected Greek text. Its group statements generally
+express majority support, with exceptions and margins requiring their own
+entry-level checks.
+
+|Locus and printed page|Published comparison or argument|Effect on source assessment|
+|---|---|---|
+|36:27,75 and92|O and L add αὐτά. Wevers explains it as inherited misanalysis of the Hebrew verbal ending.|His dependence argument is substantive, but contextual object clarification is a competing explanation for this single addition.|
+|37:26,88|Wevers proposes another Greek reconstruction from Syriac instead of Field's preferred verb.|A Syriac report need not recover a unique Greek lexeme. Neither proposal is newly inspected Greek ink.|
+|38:21,88|Wevers assigns Syh's corrective doublet to L rather than the Hexaplaric reading, using Q–88 as a control.|The witness's overall class cannot substitute for the affiliation of this particular reading.|
+|39:14,76|O minus Syh and Syh L have different supplements. Wevers proposes separate origins.|Similar supplementation is not identical wording or demonstrated common descent. His reviser-source explanation is tentative.|
+|39:11,107|L's wording specifies an eastern orientation and agrees with Symmachus, but does not adopt the longer surrounding rewrite.|Agreement in one expression does not establish access to the entire reviser's text or independent Hebrew support.|
+
+The conclusion115–116 argues for an O-type parent with access to selected
+Symmachus readings, while conceding that the precise parent is not extant and
+no definitive identification was reached. We retain the distinction between
+the published comparisons and that proposed transmission history. This study
+does not supply the missing P96739:29 noun or resolve the earliest Hebrew form.
+
+The [method](TEXTUAL_ADJUDICATION_METHOD.md) now explicitly requires
+edition-local sigla and reading-level affiliation before treating agreement
+as independent evidence. This refines the existing dependence check without
+assigning automatic numerical weights. No canonical source, English or notes
+change;39:11 is a contextual comparison lead, not a newly approved replacement.
+
+The116-page PDF SHA256 is
+`4fa3b9449c39f22f8b614a31a6d357102f7e4c7ce95b5cba33a8d3cacfb17989`.
+The repository's ordinary browser completed automatic site verification and
+offered its public PDF link. Direct web/shell fetches returned403; no security
+challenge was solved or bypassed. The PDF and ten renders remain outside Git.
+The study's public availability does not transfer its copyright to POB.

@@ -1,6 +1,6 @@
 # POB source-wording adjudication method
 
-Version: 2.0.4 · Revised: 2026-10-12 (quotation boundaries and displayed reading branches)
+Version: 2.0.5 · Revised: 2026-10-13 (reading-level affiliation and edition-local sigla)
 
 This is the controlling method for source selection and English impact. The
 [approach review](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md) records the
@@ -273,6 +273,18 @@ depend on the same Greek textual form as an extant translation tradition.
 
 The number of supporting witnesses may be reported descriptively, but it must
 not select the reading. Modern English translations are not manuscript votes.
+
+Namespace sigla by edition and verify their constituents and exceptions.
+For example, Field's Ο′ denotes the Septuagint text, whereas Wevers's O denotes
+a Hexaplaric witness group; neither is an additional physical manuscript.
+A manuscript's usual textual affiliation does not determine every reading in
+its text or margin. Inspect the exact apparatus entry, hand, signs and
+body-versus-margin placement before asserting independent agreement or
+dependence. Shared readings can reflect copying, a common source or convergent
+interpretation; test those explanations rather than assigning a fixed weight
+to the whole manuscript. The [Ezekiel recension controls](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#reading-level-affiliation-in-ezekiel)
+provide positive and contrary local examples. An author's proposed genealogy
+remains an inference, not a recovered ancestor.
 
 Treat drafting preferences and embedded lexicon names as separate from source
 consultation. An instruction to preserve a traditional rendering is not another

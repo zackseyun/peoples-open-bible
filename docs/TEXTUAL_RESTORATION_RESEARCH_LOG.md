@@ -9813,6 +9813,45 @@ and publication boundaries,379 local file links, whitespace and unchanged
 canonical39:29/protected Genizah hashes. No new corpus test suite is necessary
 for this prose-only delta, and existing remote integrity gates remain in force.
 
+### 2026-10-13 — Greek reading affiliation rather than manuscript votes
+
+The preceding goal turn is progress: actual Field sources were acquired,
+checked and committed, while the previous target comparison reached main.
+PR178's own push115485217768 and PR115486579042 subsequently pass at19:36:56UTC
+and19:39:48UTC. Fresh main, exact two-file/88-addition scope and predicted union
+precede SHA-pinned merged75f2e434dc01ae8e922eb1164d0a8c5b2336638. API and
+completed fetch verify parents59701d74e0a21c25987ec4b08d59e291de27f7a8 and
+466f7adc09419b405712a36846985574408b8be8, treed86498d81f0c9bf11976fece37c318ac2386d5ba.
+No main worktree and ancestry checks precede guarded local advancement; normal
+push confirms up to date. The new source/method work starts separately.
+
+A bounded modern-apparatus search obtains a lawful26-page2015 preview but
+not39:29. The existing full-access gate remains parked. Original Ziegler article
+queries yield no body. Rather than promote metadata into evidence, root follows
+the academy's public Wevers2003 source: ordinary browser verification completes
+automatically and the advertised PDF downloads successfully. Root verifies
+the actual PDF and complete relevant pages; the acquisition agent reads all49
+Ezekiel-study pages, with a narrower visual scope recorded in the
+[source case](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#reading-level-affiliation-in-ezekiel).
+
+The findings make the method more explicit about reading-level affiliation,
+edition-local sigla, constituent witnesses and textual versus marginal evidence.
+Local dependence arguments are compared with convergent interpretation and
+different supplementation; the proposed ancestor remains conjectural.
+The PDF and documentation skills keep those distinctions with the actual
+source claims. No new variant discovery, P96739:29 noun, Hebrew/English change,
+ImageGen evidence or canon approval follows. The full corpus goal remains
+active; this passage-specific refinement does not certify universal comparison.
+
+Two critique attempts disconnect without a verdict. A fresh bounded factual
+review then passes the complete relevant pages, method paragraph and case
+account, at method SHA256b8f39293c3ac87b2e6cb7fd7d6ca6ceb6e22c32b0edd423a068000368382ff0c
+and case SHA2566e4da2aec76e943de8215b027b035a49a2b71462bf27443f78541963c7af118d.
+That review excludes acquisition history and publication status, checked
+separately by root. Root verifies417 local file links, whitespace and unchanged
+canonical39:29/protected Genizah hashes. This prose/method-only delta adds no
+new corpus test suite; its publication still requires its own integrity checks.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

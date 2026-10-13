@@ -56,6 +56,50 @@ class PublishedParallelIndexTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "outside current"):
             index_document(fixture().replace(b'data-parallel-id="10"', b'data-parallel-id="99"'))
 
+    def test_separate_dom_and_stable_word_ids_resolve_to_stable_ids(self):
+        primary = ('<span id="395445" class="word" data-word-id="394780">x</span>'
+                   '<span id="395446" class="word" data-word-id="394781">y</span>')
+        parallel = ('<a href="/transcriptions/Ez/2026-05-21/index.html#v26">(Ez 36,26)</a>'
+                    '<span class="word" data-parallel-id="395445">parallel</span>'
+                    '<span class="word" data-parallel-id="395446">parallel</span>')
+        row = index_document(fixture(primary, parallel))["rows"][0]
+        self.assertEqual(row["primary_word_ids"], ["394780", "394781"])
+        self.assertEqual(row["parallel_groups"][0]["primary_word_ids"],
+                         ["394780", "394781"])
+
+    def test_document_can_use_stable_id_despite_separate_dom_id(self):
+        primary = '<span id="100" class="word" data-word-id="10">x</span>'
+        row = index_document(fixture(primary=primary))["rows"][0]
+        self.assertEqual(row["parallel_groups"][0]["primary_word_ids"], ["10"])
+
+    def test_ambiguous_namespace_fails_instead_of_choosing_a_word(self):
+        primary = ('<span id="11" class="word" data-word-id="10">x</span>'
+                   '<span id="10" class="word" data-word-id="11">y</span>')
+        with self.assertRaisesRegex(ValueError, "ambiguous parallel join"):
+            index_document(fixture(primary=primary))
+
+    def test_mixed_namespace_links_fail_instead_of_per_word_fallback(self):
+        primary = ('<span id="100" class="word" data-word-id="10">x</span>'
+                   '<span id="101" class="word" data-word-id="11">y</span>')
+        parallel = ('<a href="/transcriptions/Ez/2026-05-21/index.html#v26">(Ez 36,26)</a>'
+                    '<span class="word" data-parallel-id="100">parallel</span>'
+                    '<span class="word" data-parallel-id="11">parallel</span>')
+        with self.assertRaisesRegex(ValueError, "mixed join namespaces"):
+            index_document(fixture(primary, parallel))
+
+    def test_duplicate_dom_join_id_fails_even_with_distinct_stable_ids(self):
+        primary = ('<span id="100" class="word" data-word-id="10">x</span>'
+                   '<span id="100" class="word" data-word-id="11">y</span>')
+        with self.assertRaisesRegex(ValueError, "duplicate primary DOM"):
+            index_document(fixture(primary=primary))
+
+    def test_foreign_dom_word_join_fails(self):
+        primary = '<span id="100" class="word" data-word-id="10">x</span>'
+        parallel = ('<a href="/transcriptions/Ez/2026-05-21/index.html#v26">(Ez 36,26)</a>'
+                    '<span class="word" data-parallel-id="101">parallel</span>')
+        with self.assertRaisesRegex(ValueError, "outside current"):
+            index_document(fixture(primary, parallel))
+
     def test_duplicate_primary_id_fails(self):
         with self.assertRaisesRegex(ValueError, "duplicate primary word"):
             index_document(fixture(primary='<span class="word" data-word-id="10">a</span>' * 2))

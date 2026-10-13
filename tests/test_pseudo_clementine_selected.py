@@ -70,6 +70,13 @@ class SelectedGreekTests(unittest.TestCase):
         packet = translation.prepare("pseudo_clementine_homilies", ["1.1", "1.2"], "test", source_variant="lagarde1865-homily-1")
         self.assertEqual(packet["context"]["source_coverage"]["status"], "complete_homily_partial_work")
         self.assertEqual(packet["context"]["source_coverage"]["required_homilies"], list(range(1,21)))
+        response = {"model": "test", "choices": [{"finish_reason": "stop", "message": {"content": json.dumps({"passages": [
+            {"reference": ref, "text": "Test draft, not approved.", "lexical_decisions": [], "source_issues": []}
+            for ref in ["1.1", "1.2"]]})}}]}
+        record = translation.validate_response(packet, response)
+        self.assertEqual(record["source_hash"], packet["source_hash"])
+        self.assertEqual(record["source_variant"], "lagarde1865-homily-1")
+
         with self.assertRaisesRegex(ValueError, "Missing"):
             translation.prepare("pseudo_clementine_homilies", ["2.1"], "test", source_variant="lagarde1865-homily-1")
 

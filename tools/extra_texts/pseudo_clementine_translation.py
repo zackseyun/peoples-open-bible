@@ -125,11 +125,15 @@ def validate_response(request: dict, response: dict, audit_corrections: list[dic
     if request["request_hash"] != digest(request["params"]):
         raise ValueError("Request changed")
     variant = request["context"].get("source_variant", "registered")
-    if variant == "lagarde1865":
-        from tools.extra_texts.pseudo_clementine_selected import load_selected
-        current = load_selected(request["work"])["passages"]
-    else:
+    if variant in {"lagarde1865", "lagarde1865-homily-1"}:
+        from tools.extra_texts.pseudo_clementine_selected import load_selected, load_first_homily
+        if variant == "lagarde1865-homily-1" and request["work"] != "pseudo_clementine_homilies":
+            raise ValueError("Partial Homily source belongs to another work")
+        current = (load_first_homily() if variant == "lagarde1865-homily-1" else load_selected(request["work"]))["passages"]
+    elif variant == "registered":
         current = json.loads((source.SOURCE_ROOT / request["work"] / "sections.json").read_text())
+    else:
+        raise ValueError("Unknown source variant")
     current = [row for row in current if row["reference"] in request["references"]]
     if digest(current) != request["source_hash"]:
         raise ValueError("Source changed after request preparation")

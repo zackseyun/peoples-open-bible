@@ -23,11 +23,27 @@ def rehash(request: dict) -> None:
     request["packet_hash"] = translation.digest({k: v for k, v in request.items() if k != "packet_hash"})
 
 
+def format_repairable(error: Exception) -> bool:
+    """Model output repair must never repair away a source/evidence invariant."""
+    return isinstance(error, json.JSONDecodeError) or str(error).startswith((
+        "Audit quotation is not present", "Output passage coverage/order mismatch",
+        "Empty English draft", "Missing lexical/source audit fields",
+        "Incomplete lexical decision", "Incomplete source issue",
+        "Missing review verdict", "Missing or non-boolean source checks",
+        "Missing review findings", "Incomplete review finding", "Malformed fenced output",
+    ))
+
+
 def execute(request: dict, directory: Path, stem: str, cache: Path) -> dict:
     """Preserve malformed results; bounded format repair is not an approval."""
     request = copy.deepcopy(request)
     for attempt in range(1, 4):
         label = stem if attempt == 1 else f"{stem}.format-{attempt}"
+        existing = directory / f"{label}.request.initial.json"
+        if existing.exists() and json.loads(existing.read_text()) != request:
+            # Keep prior repair attempts intact after a validator fix changes
+            # the repair explanation. Never rewrite their request evidence.
+            label += ".request-" + request["packet_hash"][:12]
         transport.save(directory / f"{label}.request.initial.json", request)
         response = transport.invoke(request["params"], cache, directory / f"{label}.rpc")
         rehash(request)  # transport may increase max tokens after actual truncation.
@@ -36,7 +52,9 @@ def execute(request: dict, directory: Path, stem: str, cache: Path) -> dict:
         try:
             record = translation.validate_response(request, response)
         except (ValueError, KeyError, TypeError, StopIteration) as exc:
-            transport.save(directory / f"{label}.validation-error.json", {"error": str(exc), "publication_status": "not_approved"})
+            transport.save(directory / f"{label}.validation-error.{translation.digest(str(exc))[:12]}.json", {"error": str(exc), "publication_status": "not_approved"})
+            if not format_repairable(exc):
+                raise
             choices = response.get("choices", [])
             if len(choices) != 1 or choices[0].get("finish_reason") != "stop":
                 raise

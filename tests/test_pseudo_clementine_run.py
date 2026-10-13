@@ -11,6 +11,12 @@ class BatchReviewTests(unittest.TestCase):
         self.draft = json.loads((root / "lagarde-v3.draft.record.json").read_text())
         self.review = json.loads((root / "lagarde-v3.review.record.json").read_text())
 
+    def test_source_and_evidence_failures_are_not_model_format_repairs(self):
+        for message in ("Source changed after request preparation", "Request context changed",
+                        "Unresolved blocking source issue requires separate source evidence"):
+            self.assertFalse(runner.format_repairable(ValueError(message)))
+        self.assertTrue(runner.format_repairable(ValueError("Audit quotation is not present in the supplied Greek")))
+
     def test_actual_review_is_accepted(self):
         self.assertTrue(runner.accepted(self.draft, self.review))
 

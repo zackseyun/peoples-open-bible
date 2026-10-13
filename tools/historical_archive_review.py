@@ -29,13 +29,21 @@ def dump(path: Path, data: object) -> None:
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
 
 def fetch(url: str, cache: Path) -> bytes:
+    record_path=cache.with_name(cache.name+'.receipt.json')
+    record=json.loads(record_path.read_text()) if record_path.exists() else None
     if cache.exists():
-        return cache.read_bytes()
+        raw=cache.read_bytes()
+        if not record or record.get('url')!=url or record.get('sha256')!=digest(raw) or record.get('bytes')!=len(raw):
+            raise ValueError(f'Cached source has missing or mismatched provenance: {cache}')
+        return raw
     request = urllib.request.Request(url, headers={'User-Agent':'POB-SourceReview/1.0 (research-only)'})
     with urllib.request.urlopen(request, timeout=90) as response:
         raw = response.read()
+    if record and (record.get('url')!=url or record.get('sha256')!=digest(raw)):
+        raise ValueError('Rehydrated upstream source differs from the recorded snapshot; review a new version')
     cache.parent.mkdir(parents=True, exist_ok=True)
     cache.write_bytes(raw)
+    dump(record_path,{'url':url,'sha256':digest(raw),'bytes':len(raw)})
     return raw
 
 def receipt(url: str, raw: bytes, role: str) -> dict:

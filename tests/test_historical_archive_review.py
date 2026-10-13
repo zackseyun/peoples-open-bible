@@ -2,12 +2,23 @@ import hashlib
 import json
 from pathlib import Path
 import sys
+import tempfile
 import unittest
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 from tools.historical_archive_review import (digest, group_bilara, parse_muller, source_job, validate_review)
 
 class HistoricalSourceReviewTests(unittest.TestCase):
+    def test_cached_source_tampering_or_lost_receipts_fail_closed(self):
+        from tools.historical_archive_review import fetch
+        with tempfile.TemporaryDirectory() as directory:
+            path=Path(directory)/'source.json';path.write_bytes(b'original')
+            with self.assertRaises(ValueError):fetch('https://example.org/source',path)
+            record=path.with_name(path.name+'.receipt.json')
+            record.write_text(json.dumps({'url':'https://example.org/source','sha256':digest(b'original'),'bytes':8}))
+            self.assertEqual(fetch('https://example.org/source',path),b'original')
+            path.write_bytes(b'changed')
+            with self.assertRaises(ValueError):fetch('https://example.org/source',path)
     def test_source_headers_never_enter_verse_text(self):
         data={'dhp1:0.1':'Heading','dhp1:1':'Pali one','dhp1:2':'Pali two','dhp2:1':'Next verse'}
         result=group_bilara(data,1,2)

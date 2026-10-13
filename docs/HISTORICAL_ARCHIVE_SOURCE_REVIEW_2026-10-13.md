@@ -66,8 +66,8 @@ The output includes archived integrity evidence, the four church-order draft
 language audit, 423 hash-bound Pali review jobs, source/comparison snapshot
 receipts, two D&C scan jobs, and mechanical difference reports. It never reads
 credentials, generates models, marks a book verified, writes translation YAML,
-or promotes content. Ten focused tests cover missing/duplicate verses, combined
-English spans, non-source headers/page locators, hash drift, separate-review
+or promotes content. Eleven focused tests cover missing/duplicate verses, combined
+English spans, non-source headers/page locators, hash drift and cached-snapshot tampering, separate-review
 identity, incomplete coverage, rights gaps, and direct scan review requirements.
 
 ## Gates still open

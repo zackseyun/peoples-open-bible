@@ -16,7 +16,7 @@ from pathlib import Path
 import sys
 import time
 import threading
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor, wait, FIRST_COMPLETED
 from urllib.parse import urlsplit
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -56,9 +56,13 @@ def keyless_client(profile, approved):
         logging.getLogger(name).setLevel(logging.CRITICAL + 1)
     # Azure CLI accepts subscription OR tenant for token acquisition, not both.
     # The subscription/tenant relationship is checked in the saved ARM profile.
-    credential = AzureCliCredential(subscription=profile['subscription'])
+    credential = AzureCliCredential(subscription=profile['subscription'], process_timeout=120)
     provider = get_bearer_token_provider(credential, 'https://ai.azure.com/.default')
-    return OpenAI(base_url=base, api_key=provider, max_retries=0, timeout=1200)
+    credential_lock = threading.Lock()
+    def serialized_provider():
+        with credential_lock:
+            return provider()
+    return OpenAI(base_url=base, api_key=serialized_provider, max_retries=0, timeout=1200)
 
 
 def obj(properties):
@@ -103,24 +107,30 @@ REVIEW = BOUNDARY + (' You are an independent source-facing reviewer. Read the a
 
 _POST_LOCK = threading.Lock()
 _WRITER_RESERVATIONS = []
+_REVIEWER_RESERVATIONS = []
 
 
-def pace_writer(payload, stage):
-    if stage == 'review':
-        return
+def pace_writer(payload, stage, profile=None):
+    role = 'reviewer' if stage == 'review' else 'writer'
+    default_quota = 4000000 if role == 'reviewer' else 100000
+    quota = (profile or {}).get(role, {}).get('quota_tpm', default_quota)
+    if not isinstance(quota, int) or quota <= 0:
+        raise ValueError('Invalid verified deployment token quota')
+    limit = int(quota * .8)
+    reservations = _REVIEWER_RESERVATIONS if role == 'reviewer' else _WRITER_RESERVATIONS
     texts = [item['text'] for message in payload['input'] for item in message['content'] if item['type'] == 'input_text']
     images = sum(item['type'] == 'input_image' for message in payload['input'] for item in message['content'])
-    # Conservative reservations against the verified 100k TPM writer deployment;
-    # leave capacity for other work rather than changing quotas or resource state.
+    # Conservative per-role reservations: the isolated reviewer has less quota
+    # than the old shared reviewer. Never assume its previous 4M TPM allocation.
     estimate = payload['max_output_tokens'] + len(payload['instructions']) // 3 + sum(len(text) // 3 for text in texts) + images * 3000
-    if estimate > 80000:
-        raise ValueError('A request exceeds the conservative writer token window')
+    if estimate > limit:
+        raise ValueError('A request exceeds the conservative model token window')
     while True:
         with _POST_LOCK:
             now = time.monotonic()
-            _WRITER_RESERVATIONS[:] = [(at, amount) for at, amount in _WRITER_RESERVATIONS if now - at < 65]
-            if sum(amount for _, amount in _WRITER_RESERVATIONS) + estimate <= 80000:
-                _WRITER_RESERVATIONS.append((now, estimate))
+            reservations[:] = [(at, amount) for at, amount in reservations if now - at < 65]
+            if sum(amount for _, amount in reservations) + estimate <= limit:
+                reservations.append((now, estimate))
                 return
         time.sleep(5)
 
@@ -258,7 +268,7 @@ def invoke(client, profile, job, raw, stage, directory, draft=None, review=None,
         response = None
     try:
         if response is None:
-            pace_writer(payload, stage)
+            pace_writer(payload, stage, profile)
             response = client.responses.create(**payload)
     except Exception as exc:
         status = getattr(exc, 'status_code', None)
@@ -342,6 +352,25 @@ def adjudicate_page(client, profile, job, raw, source, directory, draft, review,
     return summary
 
 
+def dispatch_leaves(process, leaves, workers, stop_path):
+    """Bound dispatch and drain active units without losing response handles."""
+    remaining = iter(leaves)
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        active = {}
+        def replenish():
+            while len(active) < workers and not stop_path.exists():
+                leaf = next(remaining, None)
+                if leaf is None:
+                    break
+                active[executor.submit(process, leaf)] = leaf
+        replenish()
+        while active:
+            done, _ = wait(active, return_when=FIRST_COMPLETED)
+            for future in done:
+                yield active.pop(future), future
+            replenish()
+
+
 def run(args):
     profile = json.loads(args.profile.read_text())
     if profile['writer']['model'] == profile['reviewer']['model']:
@@ -373,18 +402,21 @@ def run(args):
         return row
     report['execution_failures'] = []
     write(args.output / 'run-status.json', report)
-    with ThreadPoolExecutor(max_workers=args.workers) as executor:
-        futures = {executor.submit(process, leaf): leaf for leaf in leaves}
-        for future in as_completed(futures):
-            leaf = futures[future]
-            try:
-                report['processed'].append(future.result())
-            except Exception as exc:
-                report['execution_failures'].append({'leaf': leaf, 'error_type': type(exc).__name__,
-                    'note': 'Inspect the per-stage journal. Unknown outcomes are not automatically retried.'})
-                print(json.dumps({'leaf': leaf, 'status': 'execution_failure', 'error_type': type(exc).__name__}), flush=True)
-            report['processed'].sort(key=lambda row: row['reference'])
-            write(args.output / 'run-status.json', report)
+    stop_path = args.stop_file or args.output / 'STOP'
+    dispatched = []
+    for leaf, future in dispatch_leaves(process, leaves, args.workers, stop_path):
+        dispatched.append(leaf)
+        try:
+            report['processed'].append(future.result())
+        except Exception as exc:
+            report['execution_failures'].append({'leaf': leaf, 'error_type': type(exc).__name__,
+                'note': 'Inspect the per-stage journal. Unknown outcomes are not automatically retried.'})
+            print(json.dumps({'leaf': leaf, 'status': 'execution_failure', 'error_type': type(exc).__name__}), flush=True)
+        report['processed'].sort(key=lambda row: row['reference'])
+        write(args.output / 'run-status.json', report)
+    report['not_dispatched'] = [leaf for leaf in leaves if leaf not in dispatched]
+    report['dispatch_stopped'] = stop_path.exists()
+    write(args.output / 'run-status.json', report)
 
 
 def main():
@@ -397,6 +429,7 @@ def main():
     parser.add_argument('--background', action='store_true', help='Persist API response IDs and poll, never recreate on observation timeout')
     parser.add_argument('--adjudicate', action='store_true', help='Compare older English after source passes, adjudicate, and re-review')
     parser.add_argument('--workers', type=int, choices=range(1, 5), default=1)
+    parser.add_argument('--stop-file', type=Path, help='Stop new units, drain active units; defaults to OUTPUT/STOP')
     run(parser.parse_args())
 
 

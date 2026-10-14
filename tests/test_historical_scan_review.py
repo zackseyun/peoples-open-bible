@@ -9,10 +9,54 @@ from types import SimpleNamespace
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from tools.historical_scan_review import (digest, encoded, endpoint_url, invoke, keyless_client,
-                                        observe, request_payload, review_errors, validate_draft, write)
+                                        observe, request_payload, review_errors, validate_draft, write, dispatch_leaves, pace_writer)
 
 
 class ScanReviewTests(unittest.TestCase):
+    def test_isolated_reviewer_quota_is_not_shared_reviewer_quota(self):
+        raw, job, draft, _ = self.fixture()
+        payload = request_payload(job, raw, 'reviewer', 'review', draft)
+        with self.assertRaisesRegex(ValueError, 'token window'):
+            pace_writer(payload, 'review', {'reviewer': {'quota_tpm': 1000}})
+        with self.assertRaisesRegex(ValueError, 'quota'):
+            pace_writer(payload, 'review', {'reviewer': {'quota_tpm': -1}})
+
+    def test_stop_marker_drains_active_unit_and_prevents_new_dispatch(self):
+        with tempfile.TemporaryDirectory() as directory:
+            stop = Path(directory) / 'STOP'
+            def process(leaf):
+                stop.touch()
+                return leaf
+            results = [(leaf, future.result()) for leaf, future in dispatch_leaves(process, range(10), 1, stop)]
+            self.assertEqual(results, [(0, 0)])
+            self.assertEqual(list(dispatch_leaves(process, range(10), 4, stop)), [])
+
+    def test_isolated_arm_payload_preserves_other_filters(self):
+        root = Path(__file__).resolve().parents[1] / 'infrastructure' / 'historical-review'
+        policy = json.loads((root / 'pob-dc-1835-policy.json').read_text())['properties']
+        self.assertEqual(policy['basePolicyName'], 'Microsoft.DefaultV2')
+        self.assertEqual(policy['mode'], 'Blocking')
+        filters = {(f['name'], f['source']): f for f in policy['contentFilters']}
+        self.assertEqual(len(filters), 11)
+        for name in ['Hate', 'Sexual', 'Violence', 'Selfharm']:
+            for source in ['Prompt', 'Completion']:
+                self.assertEqual(filters[name,source], {'name':name,'source':source,'blocking':True,
+                    'enabled':True,'severityThreshold':'Medium'})
+        self.assertTrue(filters['Jailbreak','Prompt']['blocking'])
+        self.assertTrue(filters['Jailbreak','Prompt']['enabled'])
+        # Preserve actual DefaultV2 code annotation behavior, not an invented default.
+        for name in ['Protected Material Text','Protected Material Code']:
+            self.assertTrue(filters[name,'Completion']['enabled'])
+            self.assertFalse(filters[name,'Completion']['blocking'])
+        models = []
+        for role in ['writer','reviewer']:
+            deployment = json.loads((root / f'pob-dc-1835-{role}.json').read_text())
+            self.assertEqual(deployment['sku'], {'name':'GlobalStandard','capacity':100})
+            self.assertEqual(deployment['properties']['raiPolicyName'], 'pob-dc-1835-public-domain-review')
+            self.assertEqual(deployment['properties']['versionUpgradeOption'], 'NoAutoUpgrade')
+            models.append(deployment['properties']['model']['name'])
+        self.assertEqual(models, ['gpt-6.1-sol','gpt-5.6-terra'])
+
     def fixture(self):
         raw=b'scan'
         job={'work':'D&C 1835','reference':'newberry-leaf-0004','source':{'sha256':digest(raw),'edition':'1835'},
@@ -43,8 +87,9 @@ class ScanReviewTests(unittest.TestCase):
         with patch.dict(sys.modules,{'azure.identity':SimpleNamespace(AzureCliCredential=credential,get_bearer_token_provider=provider),
                                       'openai':SimpleNamespace(OpenAI=client)}):
             keyless_client({'endpoint':'https://example.openai.azure.com','subscription':'verified-sub','tenant':'verified-tenant'},True)
-        credential.assert_called_once_with(subscription='verified-sub')
-        self.assertIs(client.call_args.kwargs['api_key'],provider.return_value)
+        credential.assert_called_once_with(subscription='verified-sub',process_timeout=120)
+        self.assertTrue(callable(client.call_args.kwargs['api_key']))
+        self.assertIs(client.call_args.kwargs['api_key'](),provider.return_value.return_value)
         self.assertEqual(client.call_args.kwargs['max_retries'],0)
 
     def test_primary_cannot_receive_prior_english_or_ocr(self):

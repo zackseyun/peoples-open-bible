@@ -35,6 +35,8 @@ def render_text(title: str, source: dict, accepted: dict) -> str:
         "Source scan: " + source["source_snapshot"]["url"],
         "The ancient Greek and 1865 edition are public domain. Original POB English contributions and notes are offered under CC BY 4.0; no upstream XML is relicensed by this edition.",
     ]
+    if any(row.get("source_curations") for row in source["passages"]):
+        blocks.append("The Greek base includes explicitly documented, independently image-checked print corrections and public-domain edition variants. These are editorial source choices, not recovery of an autograph or a claim of manuscript collation. The former readings, primary sources, and interpretive uncertainty are preserved in the section notes and provenance.")
     if any(tr.printed_gap_lengths(row["source_text"]) for row in source["passages"]):
         blocks.append("Coverage follows all surviving wording of the selected edition. Printed lacunae remain explicit gaps and are explained in the translator's notes. Lost wording has not been reconstructed; this is not a claim that the original survives unbroken.")
     homily = None
@@ -75,6 +77,13 @@ def export(work: str, selections_path: Path, commit: str, destination: Path) -> 
     pin(selections_path.resolve())
     pin(pages.SOURCE / "selected" / (work + ".json"))
     pin(pages.SOURCE / "manifest.json")
+    if any(row.get("source_curations") for row in source["passages"]):
+        pin(pages.SOURCE / "source-curations.json")
+        for row in source["passages"]:
+            for curation in row.get("source_curations", []):
+                for evidence in curation["evidence"]:
+                    for key in ("request", "response", "receipt"):
+                        pin(evidence[key])
     for evidence in source["page_evidence"]:
         checked_path = acceptance.safe_path(evidence["checked_path"])
         for path in checked_path.parent.glob("*.json"):
@@ -90,6 +99,8 @@ def export(work: str, selections_path: Path, commit: str, destination: Path) -> 
             draft, review = acceptance.validate_bundle(work, source["passages"], *pair)
             for path in (*pair, review["evidence_files"]["request"], review["evidence_files"]["response"]):
                 pin(path)
+            for path in draft.get("evidence_files", {}).values():
+                pin(path)  # Preserve actual generation provenance, including authorized Codex drafts.
             request = json.loads(acceptance.safe_path(review["evidence_files"]["request"]).read_text())
             response = json.loads(acceptance.safe_path(review["evidence_files"]["response"]).read_text())
             bundle_indices[pair] = len(records)

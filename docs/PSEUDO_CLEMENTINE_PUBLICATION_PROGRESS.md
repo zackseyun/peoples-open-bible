@@ -373,3 +373,99 @@ occur and refuses to hide or fill them. Lost wording is never represented as
 recovered. The current release still requires all539 reviewed English sections,
 all four full archive artifacts, source/proof/download pins, final reader and
 build checks, main integration, authorized deployment, and direct live verification.
+
+
+## Codex generation and explicit source-curation checkpoint (2026-10-14)
+
+The human explicitly approved Codex translators for filtered and remaining
+unstarted Homilies passages, preserving live Azure requests and independent
+Sol 6.1 review. Honest Codex generation records retain the actual agent task,
+original packet/output hashes and the fact that the exact inherited model
+version is unavailable; they are not fabricated Azure responses. Smaller
+review batches select unchanged rows from the original generation evidence.
+
+The latest complete source-bound collection reached 487/539 accepted sections;
+this is a partial automated-check candidate, not a reader release. Remaining
+revisions are undergoing actual independent review. Current web preparation
+passed the focused reader tests and isolated Next static build, but this is not
+final all-four exact-SHA release evidence. No Homilies catalog entry, main
+integration or deployment is claimed.
+
+The human separately approved documented corrections supported by independently
+checked public-domain Greek editions, preserving former readings in notes and
+requiring fresh Sol 6.1 review. Primary Dressel 1853 Greek has been located for
+3.12,5.21,6.6,8.15,9.15,9.18; blind independent image receipts are still pending
+recovery of unclassified terminal CLI failures. These are not yet adopted or
+approved source corrections. The original 1865 page transcriptions remain
+immutable. The new curation validator requires matching actual Sol response,
+request, receipt, hashes, exact old target and verified primary readback.
+
+Printed135 (Homily13.5) has parallel manuscript readings, not one horizontally
+interleaved sentence. Printed174 (18.15) has a physical word split and a
+missing-letter transcription issue. Focused print evidence is retained; both
+require new bound source/English review, not a forced acceptance label.
+
+A review call was initially described as filtered in an optional question, but
+its receipt only established terminal_cli_error. This was immediately corrected;
+a single unchanged-request diagnostic subsequently succeeded. No reviewer
+model substitution or filter modification occurred.
+
+New processes use the installed CLI identity with HTTP connect/read deadlines
+30/600seconds; existing live requests were preserved. Suspended future queue
+shells are removed only after their current worker is authoritatively terminal.
+Acceptance audit now uses one verified source snapshot per collection, retains
+all later-adverse gates, and rejects source changes during collection.
+
+
+### Verified corrections and final lexical evidence (2026-10-14)
+
+Nine explicit source curations are bound to actual blind Sol6.1 image
+request/response/receipt hashes. Original page transcriptions are unchanged.
+The corrected selected source still contains all539 references and ends20.23
+withἔσπευσεν. Former readings are mandatory reader-facing source notes in both
+the Python collector and website proof validator. All current critical outputs
+preserve those exact former readings.
+
+Image-request failures were not provider filters: new requests selected
+json_object but omitted an explicitJSON instruction in message text. Corrected
+plans, preserving failed plans/receipts, succeeded. Local preflight now rejects
+this format error before calling the API. Model, identity and filters unchanged.
+
+Changed-source batches invalidate old combined hashes even for unchanged
+neighbors. Exact unchangedGreek/English draft subsets retain original genuine
+generation evidence and receive fresh independent review; no old approval is
+reused. The latest audit reached527/539 accepted sections before remaining
+small revisions. All79 focused source/tooling tests pass.
+
+20.13’sὑπολῆσαι is explicitly cited by Sophocles1900, printed1121, under
+ὑπολανθάνω, ‘forget’; actual blindSolimage response verifies this primary
+lexical evidence, with uncertainty about the lexicon accent. No substitution
+toὑπολῆξαι is justified or applied. Additional20.13 syntax issues remain held:
+Wieseler1859 printed326–327 has specific editorial proposals; blind verification
+is pending before further source choice. No complete Homilies export, main
+integration, deployment or complete publication is claimed.
+
+
+## Complete539 source-review checkpoint (2026-10-14)
+
+The complete collector passed539/539 Homilies references with no missing
+sections, actual independent Sol6.1 request/response bindings, exact printed
+gaps, current-source hashes and later-adverse gates. The three introductions
+remain independently checked. Eleven explicit Greek source curations preserve
+former readings in reader notes; Sophocles's directlexical evidence resolves
+20.13withoutchangingitsprintedὑπολῆσαι. This remains an automated preview,
+not human scholarly sign-off or recovery of lost original wording.
+
+Finalintegration discovered a newer maintainer DOCTRINE revision onmain:
+October13's contextualrepent/repentance policy supersedes reorientationdefault.
+Affected Homilies passages require a targetedpolicy audit and freshreview
+before export; old generation/review history is retained. No blanket lexical
+replacement or new Godward formula isauthorized. Introductoryreadertexts have
+no reorientationmaintexthits.
+
+Deploymentreadiness: live AWS MCP defaultprofile verifiedaccount320447260467.
+The documentedcartha-website-pipeline is retired/notfound; allenabledregions
+were checked. DO NOTstartTonydevpipelines orcreateinfrastructure. Actualcurrent
+GitHub workflow deploy.yml buildsandpromotes through existing320447260467
+OIDCrole, withstagingandproductionrevisionmarkers. Manualdeployment remains
+authorizedonlyafterallfourworksandfinalreader/buildcheckspass.

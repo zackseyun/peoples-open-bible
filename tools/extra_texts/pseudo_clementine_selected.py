@@ -7,6 +7,7 @@ import re
 import unicodedata
 
 from tools.extra_texts import pseudo_clementine_pages as pages
+from tools.extra_texts.pseudo_clementine_curation import apply_curations
 
 
 def normalized_lines(lines: list[str]) -> str:
@@ -211,7 +212,7 @@ def assemble_first_homily() -> dict:
     return {
         "work": "pseudo_clementine_homilies", "edition": manifest["edition"],
         "source_snapshot": {"url": manifest["pdf_url"], "sha256": manifest["pdf_sha256"],
-                            "kind": "independent_image_checked_print_transcription"},
+                            "kind": "primary_image_checked_text_with_explicit_curations" if any(row.get("source_curations") for row in rows) else "independent_image_checked_print_transcription"},
         "source_license": "Public-domain ancient Greek and 1865 edition; original POB notes/contributions CC BY 4.0",
         "coverage": {"status": "complete_homily_partial_work", "homilies": [1], "required_homilies": list(range(1,21)),
                      "sections": [r["reference"] for r in rows],
@@ -247,7 +248,7 @@ def assemble_second_homily() -> dict:
     return {
         "work": "pseudo_clementine_homilies", "edition": manifest["edition"],
         "source_snapshot": {"url": manifest["pdf_url"], "sha256": manifest["pdf_sha256"],
-                            "kind": "independent_image_checked_print_transcription"},
+                            "kind": "primary_image_checked_text_with_explicit_curations" if any(row.get("source_curations") for row in rows) else "independent_image_checked_print_transcription"},
         "source_license": "Public-domain ancient Greek and 1865 edition; original POB notes/contributions CC BY 4.0",
         "coverage": {"status": "complete_homily_partial_work", "homilies": [2], "required_homilies": list(range(1,21)),
                      "sections": [r["reference"] for r in rows],
@@ -317,14 +318,14 @@ def assemble_homily(number: int) -> dict:
         lower = start[1] if page == start[0] else 0
         upper = end[1] if page == end[0] else None
         all_lines.extend((page, line) for line in lines[lower:upper])
-    rows = extract_homilies(all_lines, expected_homilies=number, first_homily=number)
+    rows = apply_curations(extract_homilies(all_lines, expected_homilies=number, first_homily=number))
     if number == 20 and (rows[-1]["reference"] != "20.23" or not rows[-1]["source_text"].endswith("ἔσπευσεν.")):
         raise ValueError("Final homily ending is not verified")
     manifest = json.loads((pages.SOURCE / "manifest.json").read_text())
     return {
         "work": "pseudo_clementine_homilies", "edition": manifest["edition"],
         "source_snapshot": {"url": manifest["pdf_url"], "sha256": manifest["pdf_sha256"],
-                            "kind": "independent_image_checked_print_transcription"},
+                            "kind": "primary_image_checked_text_with_explicit_curations" if any(row.get("source_curations") for row in rows) else "independent_image_checked_print_transcription"},
         "source_license": "Public-domain ancient Greek and 1865 edition; original POB notes/contributions CC BY 4.0",
         "coverage": {"status": "complete_homily_partial_work", "homilies": [number],
                      "required_homilies": list(range(1, 21)), "sections": [r["reference"] for r in rows],
@@ -345,7 +346,7 @@ def assemble_homilies() -> dict:
     starts = [i for i, (_, line) in enumerate(all_lines) if line == title]
     if len(starts) != 1:
         raise ValueError("Homilies printed opening is missing or duplicated")
-    rows = extract_homilies(all_lines[starts[0] + 1:])
+    rows = apply_curations(extract_homilies(all_lines[starts[0] + 1:]))
     if rows[-1]["reference"] != "20.23" or not rows[-1]["source_text"].endswith("ἔσπευσεν."):
         raise ValueError("Homilies final section and ending are not verified")
     if rows[-1]["printed_pages"][-1] != 199:
@@ -354,7 +355,7 @@ def assemble_homilies() -> dict:
     return {
         "work": "pseudo_clementine_homilies", "edition": manifest["edition"],
         "source_snapshot": {"url": manifest["pdf_url"], "sha256": manifest["pdf_sha256"],
-                            "kind": "independent_image_checked_print_transcription"},
+                            "kind": "primary_image_checked_text_with_explicit_curations" if any(row.get("source_curations") for row in rows) else "independent_image_checked_print_transcription"},
         "source_license": "Public-domain ancient Greek and 1865 edition; original POB notes/contributions CC BY 4.0",
         "coverage": {"status": "complete_work", "sections": [r["reference"] for r in rows],
                      "homilies": list(range(1, 21)),

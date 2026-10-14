@@ -37,6 +37,22 @@ def format_repairable(error: Exception) -> bool:
 def execute(request: dict, directory: Path, stem: str, cache: Path) -> dict:
     """Preserve malformed results; bounded format repair is not an approval."""
     request = copy.deepcopy(request)
+    record_path = directory / f"{stem}.record.json"
+    if record_path.exists():
+        cached = json.loads(record_path.read_text())
+        initial = directory / f"{stem}.request.initial.json"
+        if not initial.exists() or json.loads(initial.read_text()) != request:
+            raise ValueError("Existing record belongs to a different request plan; use a new run name")
+        evidence = cached["evidence_files"]
+        saved_request = json.loads((transport.ROOT / evidence["request"]).read_text())
+        saved_response = json.loads((transport.ROOT / evidence["response"]).read_text())
+        actual = translation.validate_response(saved_request, saved_response)
+        ignored = {"recorded_at", "evidence_files"}
+        if any(cached.get(key) != actual.get(key) for key in (set(cached) | set(actual)) - ignored):
+            raise ValueError("Cached record no longer matches actual current-source evidence")
+        # Replaying a validated receipt must not make an old verdict appear
+        # newer than a subsequent adverse review or overwrite its chronology.
+        return cached
     for attempt in range(1, 4):
         label = stem if attempt == 1 else f"{stem}.format-{attempt}"
         existing = directory / f"{label}.request.initial.json"
@@ -67,7 +83,9 @@ def execute(request: dict, directory: Path, stem: str, cache: Path) -> dict:
             rehash(request)
             continue
         record["evidence_files"] = {"request": str((directory / f"{label}.request.json").relative_to(transport.ROOT)), "response": str((directory / f"{label}.response.json").relative_to(transport.ROOT))}
-        transport.save(directory / f"{stem}.record.json", record)
+        if record_path.exists():
+            raise ValueError("Refusing to overwrite an existing draft/review record")
+        transport.save(record_path, record)
         return record
     raise RuntimeError("Format repair limit exhausted")
 

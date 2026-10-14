@@ -51,7 +51,7 @@ def validate_bundle(work: str, source_rows: list[dict], draft_path: str, review_
         raise ValueError("Reviewer did not receive the selected Greek and English")
     if request["request_hash"] != tr.digest(request["params"]) or review["request_hash"] != request["request_hash"]:
         raise ValueError("Review request changed")
-    actual = tr.validate_response(request, response)
+    actual = tr.validate_response(request, response, verified_source_rows=source_rows)
     if (actual["output_hash"] != review["output_hash"]
             or actual["response_hash"] != review["response_hash"]
             or actual["model"] != review["model"]
@@ -66,7 +66,10 @@ def collect(work: str, selections: list[dict], *, complete: bool = True) -> dict
     expected = [row["reference"] for row in source_rows]
     chosen = {}
     workflow = tr.source.SOURCE_ROOT / work / "translation_workflow"
-    review_files = list(workflow.rglob("*.review.record.json"))
+    # One immutable snapshot per collection, rather than rereading every large
+    # review hundreds of times. All later-adverse checks below remain mandatory.
+    later_reviews = [json.loads(path.read_text()) for path in workflow.rglob("*.review.record.json")]
+    later_packets = {}
     for selection in selections:
         draft, review = validate_bundle(work, source_rows, selection["draft"], selection["review"])
         drafts = {row["reference"]: row for row in draft["output"]["passages"]}
@@ -79,10 +82,10 @@ def collect(work: str, selections: list[dict], *, complete: bool = True) -> dict
             row = drafts[ref]
             if any(issue["blocks_publication"] for issue in row["source_issues"]):
                 raise ValueError("Selected section has an unresolved source issue")
+            tr.validate_curation_disclosures(next(p for p in source_rows if p["reference"] == ref), row)
             # Do not select an older favorable verdict over a later adverse one.
             # Metadata-only edits do not erase a later concern about identical text.
-            for later_path in review_files:
-                later = json.loads(later_path.read_text())
+            for later in later_reviews:
                 if later.get("recorded_at", "") <= review["recorded_at"]:
                     continue
                 findings = [p for p in later["output"]["passages"] if p["reference"] == ref and not accepted_passage(p)]
@@ -91,7 +94,9 @@ def collect(work: str, selections: list[dict], *, complete: bool = True) -> dict
                 files = later.get("evidence_files")
                 if not files:
                     raise ValueError("Later adverse finding lacks evidence and requires inspection")
-                packet = json.loads(safe_path(files["request"]).read_text())
+                if files["request"] not in later_packets:
+                    later_packets[files["request"]] = json.loads(safe_path(files["request"]).read_text())
+                packet = later_packets[files["request"]]
                 later_rows = [p for p in packet["context"]["draft"]["passages"] if p["reference"] == ref]
                 if later_rows and later_rows[0]["text"] == row["text"]:
                     raise ValueError("Later unresolved review finding must be reconciled")
@@ -103,6 +108,8 @@ def collect(work: str, selections: list[dict], *, complete: bool = True) -> dict
                 "source_text_sha256": next(p["source_text_sha256"] for p in source_rows if p["reference"] == ref),
             }
     missing = [ref for ref in expected if ref not in chosen]
+    if load_selected(work) != source:
+        raise ValueError("Selected source changed during acceptance collection")
     if complete and missing:
         raise ValueError("Complete work still lacks accepted sections: " + ", ".join(missing))
     return {"work": work, "source_hash": tr.digest(source_rows),

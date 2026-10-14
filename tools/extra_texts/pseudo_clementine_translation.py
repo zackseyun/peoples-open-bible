@@ -132,6 +132,11 @@ def prepare(work: str, references: list[str], model: str, draft: dict | None = N
         context["selected_edition_coverage_standard"] = SELECTED_EDITION_STANDARD
         system += " This selected Greek is an independently image-checked transcription of Lagarde 1865, with page/crop review evidence. This verifies the print, not an autograph. Do not equate unfamiliar grammar or confirmed editorial punctuation with an OCR error. Preserve the selected edition, disclose interpretive uncertainty, and do not import wording from another edition. Use source_issues to distinguish genuine unresolved source/meaning problems from disclosed orthographic or editorial features."
         system += " " + SELECTED_EDITION_STANDARD
+        curations = [item for row in selected for item in row.get("source_curations", [])]
+        if curations:
+            context["explicit_source_curations"] = curations
+            system += " These requested passages include explicitly authorized, primary-image-verified source curations. The source_text is the selected Greek after those documented changes, not an unchanged Lagarde transcription. Independently check each curation and the complete translation. Preserve the former Lagarde reading, the selected primary variant or corrected layout, and its uncertainty in reader-facing source notes. Do not claim manuscript collation, a recovered autograph, or uniqueness of the choice. Any curation-specific translation_requirement remains mandatory; unsupported English or source meaning still blocks publication."
+
     if draft is None:
         task = """Generate English directly from each supplied Greek passage. Return {"passages":[{"reference":"exact source reference","text":"complete fresh English translation","lexical_decisions":[{"source_quote":"exact Greek","chosen":"English rendering","rationale":"brief explanation"}],"source_issues":[{"source_quote":"exact Greek","issue":"source uncertainty or suspected error","proposed_reading":"explicit conjecture, or empty string","blocks_publication":true}]}]}. Include every requested passage exactly once in source order. Empty source_issues is allowed only if none are found. Set blocks_publication true for the actual blocking conditions in the ambiguity standard, not simply because more than one supported reading exists. For a defensible disclosed interpretive choice, use false and preserve the alternatives and rationale. Use paragraph breaks for source paragraphs/headings. Do not place editorial explanations in the translation text."""
     else:
@@ -168,13 +173,25 @@ def prepare(work: str, references: list[str], model: str, draft: dict | None = N
     return packet
 
 
-def validate_response(request: dict, response: dict, audit_corrections: list[dict] | None = None) -> dict:
+def validate_curation_disclosures(source_row: dict, passage: dict) -> None:
+    notes = "\n".join(str(item.get("issue", "")) for item in passage.get("source_issues", []))
+    for curation in source_row.get("source_curations", []):
+        if curation["before"] not in notes:
+            raise ValueError("Curated source's former reading must remain in reader-facing source notes")
+
+
+def validate_response(request: dict, response: dict, audit_corrections: list[dict] | None = None, *, verified_source_rows: list[dict] | None = None) -> dict:
     if request.get("packet_hash") != digest({k: v for k, v in request.items() if k != "packet_hash"}):
         raise ValueError("Request context changed")
     if request["request_hash"] != digest(request["params"]):
         raise ValueError("Request changed")
     variant = request["context"].get("source_variant", "registered")
-    if variant.startswith("lagarde1865"):
+    if verified_source_rows is not None:
+        # Acceptance has already independently verified the complete selected
+        # source snapshot. Bind this response to that same snapshot, not a
+        # thousands-fold reread of identical page receipts within one audit.
+        current = verified_source_rows
+    elif variant.startswith("lagarde1865"):
         from tools.extra_texts.pseudo_clementine_selected import load_print_variant
         current = load_print_variant(request["work"], variant)["passages"]
     elif variant == "registered":

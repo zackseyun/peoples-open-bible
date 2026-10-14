@@ -18,6 +18,7 @@ import json
 import math
 import os
 import re
+import shutil
 from pathlib import Path
 import subprocess
 import time
@@ -138,6 +139,26 @@ def classify_cli_failure(stderr: str) -> str:
     return next((kind for kind, terms in categories if any(term in stderr for term in terms)), "terminal_cli_error")
 
 
+def cli_http_command(arguments: list[str]) -> tuple[list[str], dict]:
+    """Use the actual installed CLI runtime when its launcher identifies it.
+
+    This leaves already-running processes alone. Unknown launcher layouts use
+    ordinary `az` without pretending an HTTP deadline was installed.
+    """
+    executable = shutil.which("az")
+    if executable:
+        try:
+            launcher = Path(executable).read_text()[:8192]
+        except (UnicodeError, OSError):
+            launcher = ""
+        runtime = re.search(r"(/[^\s\"']+/bin/python(?:3(?:\.\d+)?)?)\s+-Im\s+azure\.cli", launcher)
+        if runtime and Path(runtime[1]).is_file():
+            return [runtime[1], str(ROOT / "tools/extra_texts/azure_cli_bounded_http.py"), *arguments], {
+                "http_connect_timeout_seconds": 30, "http_read_timeout_seconds": 600,
+                "identity": "unchanged_installed_azure_cli_session"}
+    return ["az", *arguments], {"identity": "unchanged_installed_azure_cli_session", "http_deadline_installed": False}
+
+
 def _invoke_attempts(body: dict, cache: Path, evidence: Path) -> dict:
     """A completed HTTP error may be retried. A timeout is never restarted here."""
     request_hash = sha(canonical(body))
@@ -169,15 +190,16 @@ def _invoke_attempts(body: dict, cache: Path, evidence: Path) -> dict:
                 if not recovered:
                     raise RuntimeError("Prior terminal request failure requires inspection")
             continue
-        command = ["az", "rest", "--method", "post", "--url",
+        command, transport_metadata = cli_http_command(["rest", "--method", "post", "--url",
                    f"{ENDPOINT}/openai/deployments/{body['model']}/chat/completions?api-version=2025-04-01-preview",
                    "--resource", "https://cognitiveservices.azure.com/", "--headers", "Content-Type=application/json",
-                   "--body", "@" + str(request_file), "-o", "json"]
+                   "--body", "@" + str(request_file), "-o", "json"])
         started = datetime.now(timezone.utc).isoformat()
         # The runner is the live process handle. No observation timeout/restart.
         result = subprocess.run(command, capture_output=True, text=True)
         receipt = {"request_sha256": request_hash, "started_at": started,
-                   "finished_at": datetime.now(timezone.utc).isoformat(), "attempt": attempt}
+                   "finished_at": datetime.now(timezone.utc).isoformat(), "attempt": attempt,
+                   "transport": transport_metadata}
         if result.returncode:
             # Persist only the service failure text, never verbose CLI/debug output.
             kind = classify_cli_failure(result.stderr)
@@ -201,6 +223,16 @@ def invoke(body: dict, cache: Path, evidence: Path) -> dict:
     Updating body ensures the caller records the actual successful parameters.
     A cached short response is retained, not overwritten or mistaken for a wait.
     """
+    if body.get("response_format", {}).get("type") == "json_object":
+        instructions = []
+        for message in body.get("messages", []):
+            content = message.get("content", "")
+            if isinstance(content, str):
+                instructions.append(content)
+            elif isinstance(content, list):
+                instructions.extend(block.get("text", "") for block in content if block.get("type") == "text")
+        if not any("json" in text.lower() for text in instructions):
+            raise ValueError("JSON-object response format requires an explicit JSON instruction before any API call")
     response = _invoke_attempts(body, cache, evidence)
     for limit in (24000, 32000):
         choices = response.get("choices", [])

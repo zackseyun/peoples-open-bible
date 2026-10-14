@@ -75,11 +75,12 @@ Relationship to POB:
 - Prefer explaining difficult terms through clearer wording, but retain a term
   when replacing it would hide a key biblical concept.
 
-Approved terminology exception (2026-10-11):
-- Preserve reorient/reorientation from the current POB policy, explaining changed
-  disposition and direction in a note. Do not restore repent/repentance merely
-  for familiarity. Preserve contextual regret/relenting/reconsideration exceptions
-  and do not add Godward destinations or intensifiers indiscriminately.
+Approved contextual terminology (2026-10-13):
+- Retain repent/repentance where the current POB decision uses it; explain changed
+  disposition and conduct in the note, not merely sadness or changed opinion.
+- Do not regenerate the superseded reorient/reorientation default. Keep source-
+  sensitive regret, relenting, reconsideration and turning exceptions. Preserve
+  separate turn/return verbs and do not add destinations or intensifiers.
 
 Default simplification rules:
 - Replace academic or archaic phrasing with common wording.

@@ -15,6 +15,7 @@ from tools import export_mobile_bible as exporter
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'c769c858a85a6140c6b7a551855c4db1b734d0a7'
+APPLIED = 'c62b1903963cfafce58b9a87770994e4d0a1df4b'
 CONTRACT = 'sources/textual_restoration/comparisons/habakkuk1_5_reader_contract.2026-10-12.v1.json'
 RECEIPT = 'sources/textual_restoration/applications/habakkuk1_5_reader.2026-10-12.v1.json'
 TARGET = (1, 5)
@@ -159,13 +160,24 @@ class HabakkukReaderApplicationTests(unittest.TestCase):
         self.assertEqual(digest(after), preflight['candidate_export_sha256'])
         self.assertNotIn('review_history', a[TARGET])
 
-    def test_exact_applied_candidate_current_export_and_receipt(self):
+    def test_exact_current_target_historical_applied_export_and_receipt(self):
+        # Later reviewed applications may change other verses. This receipt
+        # certifies the book as published by this transaction, not all future books.
         raw = (ROOT / self.contract['canonical_target']).read_bytes()
         self.assertEqual(raw, self.candidate_raw)
+        applied = {}
         for pin in self.contract['book_baseline_pins']:
-            if pin['path'] != self.contract['canonical_target']:
-                self.assertEqual(sha((ROOT / pin['path']).read_bytes()), pin['sha256'], pin['path'])
-        after = exporter.export_book('HAB')
+            historical_raw = subprocess.check_output(
+                ['git', 'show', f"{APPLIED}:{pin['path']}"], cwd=ROOT)
+            if pin['path'] == self.contract['canonical_target']:
+                self.assertEqual(historical_raw, self.candidate_raw)
+            else:
+                self.assertEqual(sha(historical_raw), pin['sha256'], pin['path'])
+            path = Path(pin['path'])
+            applied[(int(path.parent.name), int(path.stem))] = yaml.safe_load(historical_raw)
+        with patch.object(exporter, 'load_translation_record',
+                          side_effect=lambda code, ch, v: applied[(ch, v)]):
+            after = exporter.export_book('HAB')
         self.assertEqual(digest(after), self.contract['preflight']['candidate_export_sha256'])
         self.assertEqual(index(after)[TARGET]['footnotes'], self.candidate['translation']['footnotes'])
         self.assertEqual(audit_footnotes.audit_one(ROOT / self.contract['canonical_target'])['status'], 'ok')

@@ -59,17 +59,40 @@ both exact-head checks and merged at `050ebd6a8329617f765c394073ccfc6a02e0f9ba`.
 
 ## Objective and current assessment
 
-Discover the relevant surviving Old Testament sources, investigate whether
-measured imaging data can reveal unread text, compare witnesses, establish the
-best-supported attainable Hebrew/Aramaic source, and test whether that changes
-or improves POB English. Extend the same principles to NT Greek. ImageGen can
-illustrate a documented reconstruction; it cannot supply evidentiary ancient
-strokes or increase confidence in a reading.
+Current objective, reset 2026-10-12: investigate consequential unresolved questions
+about the Bible's earliest attainable texts and literary development, prioritizing
+the OT and extending to the NT where evidence warrants. Seek overlooked, unread
+or inadequately indexed evidence, or a genuinely discriminating analysis of known
+evidence, that could change a passage's meaning or a book's textual history.
+Establish what scholarship already knows before claiming novelty. Preserve
+contrary evidence, survival limits and historical uncertainty; apply justified
+POB improvements downstream, with ordinary translation maintenance secondary.
+A new discovery is an aspiration, not a required outcome. A consequential
+exclusion or well-supported unresolved result can be valuable.
+
+The [current three-question portfolio](TEXTUAL_RESTORATION_PRIORITIES.md#active-research-portfolio)
+replaces routine small-case accumulation as the operating priority. Its lead is
+Ezekiel36–39 and Papyrus967: different literary form or secondary transmission?
+Already-reviewed publication transactions remain in scope; note-anchor polishing
+and equivalent-English rewrites are not the next research milestone. Historical
+receipts and completed findings are not rewritten by this reset.
+
+The app's active-goal tool supports status changes, not editing objective text.
+Its original broad objective remains active; this section and the linked priority
+instructions persist the replacement research direction without falsely marking
+the unfinished program complete. More compute cannot guarantee missing ink,
+an autograph, a theological breakthrough or canon expansion. ImageGen is display
+only and cannot supply evidentiary ancient strokes.
 
 The foundation is useful but incomplete. The program has not established a
 complete restored critical Bible, a newly deciphered biblical variant, or a
 measured improvement rate over existing editions. A newer model reviewing
-earlier work is not independent blind corroboration.
+earlier work is not independent blind corroboration. Current concrete progress
+includes applied Goliath four-cubit and Isaiah53:11 light readings and the Nahum1:5
+English application; these are known published variants or interpretations new
+to POB, not discoveries new to scholarship. Papyrus967 identity/edition work
+and Mas1d's published new-heart attestation add useful source controls, not a
+new decipherment or proof of shorter/longer literary priority.
 
 Snapshot, 2026-09-05: 27 mixed OT witness/edition/family registry entries,
 13 formal comparison cases, 20 physical passage-coverage records and one
@@ -8936,6 +8959,1227 @@ agent or preference vote is needed. The documentation skill keeps historical
 failure separate from current delivery state. Nine files are prepared for
 commit, with the unrelated Genizah file excluded. Delivery still requires the
 new package's own exact-head checks, not those of PR112.
+
+### 2026-10-12 — Habakkuk 1 17 net sword and Greek dependence
+
+The [source comparison](HABAKKUK_1_17_SOURCE_COMPARISON_2026-10-12.md)
+verifies an unqualified published Hebrew sword reading in 1QpHab VI.8–9,
+alongside opening and conjunction differences. Earlier nets survive in the
+same witness; Mur88 supplies no decisive 1:17 noun. Selected Greek and Latin
+use nets but differ in action from POB's emptying expression. Newly consulted
+Hartog2018 confirms a substantive report of Greek sword in 8ḤevXIIgr and
+presents competing dependence and independent-interpretation explanations.
+The original Greek edition and plate remain unread; reported agreement is
+not converted into verified letter preservation or independent Hebrew votes.
+
+Source priority remains HOLD after weighing sword's attestation and usual
+verbal pairing against net's context and both transmission directions. A
+textual disclosure and repair of the current net-note anchor are recommended
+as a separate reviewed application. No Hebrew, English, note, canon or About
+change occurs here. All 56 Habakkuk records remain identical to baseline
+7f4381b74becaae410273b245abab71aba009e9d. The
+[receipt](../sources/textual_restoration/comparisons/habakkuk1_17_source.2026-10-12.v1.json)
+preserves input hashes, actual scopes, rights and unconsulted gates. One bounded
+independent critique passes the research; 24 existing application/navigation
+tests pass. No model-agreement loop or generated letters add evidence.
+The broader OT census, image calibration and corpus-wide English assessment
+remain unfinished. Repository publication is a separate milestone.
+
+### 2026-10-12 — Habakkuk 1 17 reviewed reader disclosure
+
+The [reader application](HABAKKUK_1_17_READER_DISCLOSURE_2026-10-12.md)
+adds the verified Hebrew sword alternative after net, repairs the existing
+dragnet anchor and preserves the mercy note. Source, pointing, segmentation
+and marker-free main English remain unchanged. Only the connected net
+rationale changes; five exact prior-field archives preserve metadata without
+transferring earlier scores. A full-record candidate and hash-bound contract
+receive one bounded independent application review before exact-byte application.
+
+The actual three-chapter/56-unit export matches the frozen proposed result;
+55 non-target records remain identical and all three target notes export.
+Full candidate schema and note audit pass. Eight new and 24 related checks
+plus 55 shared note/export checks pass: 87 distinct post-application tests,
+excluding preflight and independent reruns. The previous 2:5/2:16 whole-book
+assertions are pinned to their actual application commit, while current exact
+target checks and all historical inputs remain intact. The
+[receipt](../sources/textual_restoration/applications/habakkuk1_17_reader.2026-10-12.v1.json)
+separates applied verification from unresolved source priority and Git delivery.
+No generated letters, Hebrew replacement, main-English preference vote,
+canon change or About publication occurs. The full goal remains unfinished.
+
+### 2026-10-12 — Original Greek edition upgrades the sword comparison
+
+The preceding Nahum reread confirmed an existing documented decision but added
+no new source evidence; it is classified as no progress toward the broad goal.
+This continuation takes the next available evidence step. The
+[Greek-edition follow-up](HABAKKUK_1_17_GREEK_EDITION_FOLLOWUP_2026-10-12.md)
+reads the public DJD VIII paired transcription pages52–53 alongside conventions
+on27 and comparative context151–153. Sword in XVII.18 is represented outside
+supply brackets; the full verb is partly supplied and exact doubtful-letter
+qualifications remain unresolved. B suppresses C's uncertainty dots; underlining
+also applies to supplied differences. The comparison table's Hebrew sword is
+a reconstructed Vorlage, not another direct Hebrew manuscript. The scan's
+actual imprint/corrected-reprint status and target plate remain unverified.
+
+This upgrades a secondary scholarly report to directly inspected published
+Greek attestation, not fresh decipherment or settled source priority. The Greek
+opening includes Εἰ, unlike the pesher's written opening; complete-clause identity
+and independent exemplars do not follow. Chronology and the usual sword/verb
+pairing favor serious scrutiny, while fishing context and both transmission
+directions keep priority on HOLD. No canonical source, English or note changes.
+The [new receipt](../sources/textual_restoration/comparisons/habakkuk1_17_greek_edition.2026-10-12.v1.json)
+pins seven private page assets and all56 unchanged current records, preserving
+the frozen prior source/application inputs. No ImageGen letters supply evidence.
+
+PR162's two own integrity jobs114980816343/114978270599 complete successfully
+on exact89a67003f5fc0b86c99ecc7458e5fbaa00ef1dbc. Fresh remote/local comparison
+confirms nine application paths and the predicted union treecad06f1796ca7d8bd3c5c9b0bc174594c7014236.
+The SHA-pinned merge succeeds at e9a50f6440b44928df1c67fb68830f01be0c7ace;
+fetched parents and tree match. With no worktree onmain and ancestry verified,
+localmain advances under an old-value guard and a normal push confirms it is
+up to date. This delivers the earlier reader disclosure, not the new source
+supplement or a deployed reader. The broad census, calibrated restoration and
+corpus-wide English work remain open.
+
+Twenty-six scoped reader and reference-annotation tests pass in7.710s after
+correcting an initially mistyped nonexistent module; that failed command's
+22 passing tests are not counted again. Byte-signature checking rejects an
+initial PNG assumption and identifies all seven assets as JPEGs; receipt format
+and dimensions are corrected, with no image transformation. This verification
+does not prove historical priority. Independent packet review follows.
+
+The existing 8Ḥev registry entry gains the bounded edition-access record and
+updated next action, with its identity/relationship unchanged and complete
+survival mapping still unmapped. All41 mixed IDs remain, with no additional
+witness vote. Only that entry's coverage description, access list and next
+action change. The schema test passes separately (one test,0.008s).
+
+One bounded independent review passes the final substantive packet, all seven
+complete page images, eight frozen-input pins and56 current/baseline records.
+Its registry module passes54 tests in5.795s; the root schema selector overlaps
+that module and is not an additional distinct case. No source-preference vote
+or agreement loop occurs. Sword existence no longer needs reacquisition;
+transmission/dependence, not unresolved letter dots alone, keeps priority held.
+Only validation/publication metadata appends after the substantive review.
+
+### 2026-10-12 — Complete catalogue list and bounded Greek detail census
+
+The previous turn made progress through primary Greek-edition reading and
+registry reconciliation; this continuation broadens source discovery rather
+than repeats a verse decision. The
+[catalogue screen](GREEK_CATALOGUE_CENSUS_SCREEN_2026-10-12.md)
+accounts for all1,687 public Göttingen list IDs across nine actual pages, and
+reads the structured public detail fields for53 upstream date-overlap Greek
+candidates. The containment mode yields32, a subset; mixed dates and fifth/sixth
+century descriptions prevent an independently ancient-dated count. Thirty-three
+records share the placeholder display name, so names cannot deduplicate objects.
+
+The [offline verifier and tests](../tools/textual_restoration/greek_catalogue_screen.py)
+check page completeness, stable IDs, explicit access flags and conservative
+book navigation. Of198 structured rows,125 are assigned to explicitly named
+books and73 remain held. All39 POB book rows are emitted;31 have assigned
+navigation, while eight zeros are not witness-absence findings. Root separately
+reads general content fields for the seven empty-overview records. Existing
+Ra801/802/803/819/805 controls are absent from the entire public list, not just
+the date filter; they remain registered and relevant. Ra801's public detail
+has canReadfalse, not proof of no witness.
+
+Raw descriptions stay private under their statedCCBYNCSA4.0 terms. The
+[receipt](../sources/textual_restoration/discovery/greek_catalogue_screen.2026-10-12.v1.json)
+records input hashes and metadata navigation, not a redistributed corpus or
+letter-preservation assessment. No source, English, registry identity, canon
+or ImageGen evidence changes. Ten new and four existing annotation tests pass
+in0.004s after URL/prefix boundary fixes; initial failures remain recorded.
+The new ten-test module is added to CI, without removing existing checks.
+
+PR163's actual jobs115002296642/115002063217 finish with failure in the
+reader-test step on exact47b4b216df8dcb060f9b52593f0e6dd003c795c2; they did
+not time out. The API log route returns403, and no equivalent access bypass
+is attempted. A local reproduction of the exact committed CI step is started
+to identify the first failing command. PR163 stays unmerged, with no restart
+of a live job or false publication claim. New census work is on a separate
+branch. The broader OT census/calibration/English objective remains active.
+
+A bounded diagnostic independently reproduces the existing registry guard's
+exact no-reacquisition phrase failure. The phrase is restored without weakening
+the test; six reconciliation tests pass in0.141s. Separate three-file repair
+commit5a27fc4c7adaac425ea388f70bf478ec2f2ac207 is pushed to PR163; both new
+exact-head jobs are required. The census branch then fast-forwards to that fix,
+preserving its uncommitted work. A test launched before the asynchronous merge
+finished fails on the old phrase; after completion/head verification, all20
+focused tests pass in0.103s. No old failed job is relabeled successful.
+
+The census critic reproduces all65 input hashes and generated fields and reads
+all198 overview rows plus seven general descriptions, but rejects a reusable
+parser guard that could classify bibliographic cf./e.g. mentions as coverage.
+The repaired parser requires an initial explicit book prefix and numeric-range
+separators for additional books; negative regressions pass and125/73 snapshot
+counts remain unchanged. This is a concrete code correction, not a source
+preference vote. The corrected guard returns to the same bounded reviewer.
+
+The corrected census packet passes that review: all65 source pins, all198
+overview rows, seven general fields and generated output verify; the independent
+14-test rerun is not counted again. The separate local reader-step diagnostic
+completes84 captured CI commands successfully after the registry phrase repair.
+Because that repair happened during the run, this is a diagnostic, not immutable
+exact-head CI certification. New own checks remain the publication requirement.
+No source finding or manuscript count is manufactured from these test results.
+
+### 2026-10-12 — Papyrus 967 identity and primary edition follow-up
+
+The preceding turn pushed the reviewed catalogue census as PR164 at
+fc59aca6d5db555f83a986ebf184f98e4602675c and confirmed both own integrity jobs
+live. PR163's corrected-head jobs remain live; neither head is mutated while
+awaiting its own checks. This continuation resolves a real discovery-queue gap,
+not a repeat of the completed Nahum review.
+
+The [Papyrus967 follow-up](PAPYRUS_967_IDENTITY_AND_EDITION_2026-10-12.md)
+reconciles Göttingen record1490/Ra_0967, the legacy967/968 routes and four
+holdings as one Greek codex. One read-only source subtask obtains Cologne's
+complete custodial account and Kenyon1938 plate-preface. Root acquires the
+institutional1937 text PDF, reads its full introduction and visually checks
+the two title pages, complete introductions/preface and printed27–28 target.
+Fourteen deterministic page renders are read; no manuscript pixels or
+ImageGen letters are claimed.
+
+Kenyon1938 corrects Princeton26 to21 leaves and reports five missing leaves
+within Ezekiel19:12–39:29. Root catches a source OCR label7:13 that is actually
+7:15 in the printed introduction and local apparatus. Beatty's printed codex153
+stops in7:11;154 begins within7:14. Published service wording outside supply
+brackets strengthens one Greek attestation, not the missing7:13 comparison or
+14's royal-authority opening. All earlier Daniel source/application contracts
+and canonical bytes remain unchanged, and source priority stays HOLD.
+
+The [receipt](../sources/textual_restoration/discovery/papyrus967_identity_and_edition.2026-10-12.v1.json)
+pins private inputs,14 renders and prior records. The registry adds one object
+while all41 prior mixed rows remain byte-equivalent as records;42 is not a
+physical-manuscript total. Empty structured content does not establish absence.
+Greek forms, chapter order and appended works require their own comparison;
+binding and antiquity confer no canon authority.
+
+Web-fetch timeout/403 does not prevent ordinary public institutional download;
+no credentials or access-control bypass are used. A premature PNG read occurs
+before the same renderer finishes, then succeeds after completion. The
+Princeton item verification challenge is left untouched, and the identical
+previously failed Cologne target image is not retried. Raw PDFs/descriptions
+remain private. The next consequential evidence is the original Cologne target
+transcription/apparatus and Princeton Ezekiel36–39 edition/continuity, not
+another preference vote. Broad census/calibration/English requirements remain open.
+
+The independent bounded critic passes all18 private pins and14 renders, both
+PDF page counts, eight frozen inputs and the single registry addition with41
+unchanged records. Its three added tests pass independently; they are not extra
+ancient evidence or an additional preference vote. Root's73 scoped tests pass
+in5.776s, subsuming the earlier19-test run. After this substantive PASS only
+validation/publication history appends; source, English and canonical changes
+remain absent. No all-known-source or restored-letter claim follows.
+
+PR163's own jobs115015293999/115015269954 succeed at exact
+5a27fc4c7adaac425ea388f70bf478ec2f2ac207. Fresh main and four approved paths
+match the predicted union tree24f4188f60da662766addb90cd8850e5b6d07f03.
+SHA-pinned merge lands at ac829a2e24dd77a744ec6c625e54b3b3a647a18d;
+parents/tree verify. With no other worktree onmain and ancestry checked, local
+main advances under an old-value guard; normal push reports up to date.
+PR164 and the new Papyrus967 packet require their own exact-head checks.
+
+### 2026-10-12 — Ezekiel longer-form Hebrew attestation and namespace repair
+
+The prior turn made progress by adding Papyrus967's unified identity and actual
+published Greek coverage, with73 scoped tests and bounded PASS, committed/pushed
+as PR165. This continuation targets the consequential longer/shorter Ezekiel36
+question and preserves those earlier frozen inputs rather than rereads them.
+Two read-only subtasks cover actual Hebrew transcription and an author's
+critical argument; root verifies the decisive primary rows and complete argument.
+
+The [Ezekiel36 report](EZEKIEL_36_LONGER_FORM_EVIDENCE_2026-10-12.md)
+records Mas1d's published new-heart and stone-heart words outside supply brackets,
+while keeping partly supplied new-spirit wording and wholly supplied my-spirit
+noun separate. Root reads the complete36-row second column and its boundaries;
+all seven primary source presentations are checked in the combined source pass.
+The claim thatlines18–22 have no corrections is rejected: word394773 has a
+supralinear mem insertion. The corrected scope islines19–22, without inferring
+a hand/date. No source photographs or ImageGen letters are evidence here.
+
+The2007 journal article remains inaccessible: publisher403, Cardiff no fulltext
+and an unrelated official link, Leuven public catalogue shell. The author's
+Durham2008 thesis is obtained by ordinary public download after one incomplete
+transfer retry. Root and source agent read all15 chapter1 pages and notes76–112;
+root also checks the two front pages' title/date and conflicting rights notices.
+This is the full substantive author chapter, not the full journal body or thesis.
+An older long-form physical copy cannot by itself settle literary precedence;
+the actual Greek transition, original Masada edition and Latin dependence remain
+unread. Broad skepticism does not prove all locus reconstruction futile.
+
+The original Scheide edition's Archive metadata expressly marks itsPDF/TXT
+private and item restricted, despite WorldCat's generic free-access label.
+The advertised papyri.info route presents a verification gate. No restricted
+file retrieval or gate bypass occurs. Raw sources remain private; rights are
+not expanded to POB's corpus license.
+
+The navigation tool initially rejects all seven pages because their DOM span
+IDs differ from stable word IDs. A DOM-only repair passes14 synthetic tests
+but regresses the actual prior206-row Habakkuk output. Root corrects that
+assumption with whole-document namespace inference, preserving strict mixed/
+ambiguous rejection and adding six regressions. All16 index tests pass in0.003s;
+the old Habakkuk output digest reproduces exactly. Six pages now index230
+displayed rows;11Q4's28-row alternate/repeated presentation remains held, not
+silently flattened or counted as absent. No metadata parser decides ink survival.
+
+The [receipt](../sources/textual_restoration/comparisons/ezekiel36_longer_form.2026-10-12.v1.json)
+pins28 private inputs,17 renders and20 retained repository inputs. Mas1d was
+already indexed; one individual registry row is added with all42 existing mixed
+rows unchanged. Sixteen current36:23–38 records and full26–27 rationale are read;
+source/English/notes remain unchanged and no preference assessment is claimed.
+Three misplaced reader anchors form a separate application queue. Canon,
+corpus-wide comparison and calibrated damaged-image requirements remain open.
+
+PR164's own push job115017340823 and actual PR rerun job115038742737 succeed
+at exactfc59aca6d5db555f83a986ebf184f98e4602675c. The original PR job's
+authoritative annotation reports the30-minute limit; one rerun followed only
+that confirmed terminal state. Fresh main and six scope paths match union
+tree1264a7c15b2a09a02677dd5ac592861def86e56a. SHA-pinned merge lands at
+b59c5ba67e2b03187648caa02bf432ed7a3b4e0b, parents/tree verify; guarded local
+main advances after no-other-main-checkout and ancestry checks. Normal push
+reports up to date. PR165's own PR job115038762423 succeeds, but its push
+job115036529530 reaches the confirmed30-minute limit. One failed-job rerun is
+requested only after terminal confirmation; the head remains unchanged.
+
+### 2026-10-12 — Research objective reset and current evidence boundary
+
+The user authorized a significant strategic reset through the review chat:
+reassess the research baseline and priorities, not rewrite Git history. The
+replacement objective is now prominent above and in the existing priorities
+and continuation records. The supported active-goal interface cannot edit its
+objective text; no false completion or duplicate goal is used. Preserve known
+findings, frozen receipts, unrelated work and exact-head publication gates.
+
+The active portfolio has one lead—Ezekiel36–39 literary/transmission history—and
+two conditional reserves, Jeremiah forms/order and Deuteronomy32 divine-world
+language. Each records contrary explanations, missing discriminating evidence,
+access conditions and a stopping point. Ordinary anchor/wording maintenance is
+secondary. No new framework or bespoke validation suite is introduced for the
+reset; the parser repair addresses an actual source-navigation defect.
+
+The independent Ezekiel critic passes all28 private pins,17 renders,20 retained
+inputs,42 unchanged prior records and the old206-row Habakkuk output. Root's92
+scoped checks pass; the independent19 are overlapping checks, not new distinct
+tests. Priority remains HOLD. The new public CSNTM route's complete descriptor
+excludes the target transition, covering only fragmentary Ezekiel11–17; root
+checks the extracted description, not target pixels. This is an access exclusion,
+not a source discovery. The original Princeton target remains unacquired.
+
+A bounded Nahum current-state audit confirms that the full Riestra article had
+already been read through public HTML, with all63 notes, two figures and three
+tables. The canonical1:5 SHA256 is still
+cd10a2cd212aa395279d1b4fefe003b4f7b4bae2f9fe601cc3b8dba11838aa1a,
+matching the applied candidate. “The earth heaves before him” is already applied;
+Hebrew consonants, pointing and segmentation remain unchanged, with earliest
+wording held. This pass audits that full-read record and current bytes, not a
+new article acquisition or fresh scholarly finding. Further same-article rereads
+are not the next discriminating task.
+
+PR165's push retry115060047990 also terminates at the authoritative30-minute
+limit. Instead of another blind rerun, commit
+3c66e0c63d7fb99053c62162bfe7021a8ae1913a changes only the existing job deadline
+from30 to45 minutes; all validation commands remain unchanged. The new head
+is pushed and requires new own push/PR checks, runs38330850034/38330855772.
+During the preceding live branch switch, a premature staging attempt failed on
+the index lock and the unstaged commit failed; no successful change was credited
+to either attempt. After actual completion, explicit one-path staging and commit
+succeed, and the Ezekiel branch fast-forwards to that CI-only commit. All source
+changes remain separate and the protected unrelated Genizah file is preserved.
+Neither a deadline extension nor the earlier PR check approves this new head.
+After the objective/validation append, the same92 checks pass in7.860s,
+with local file links, JSON parsing, whitespace and the protected Genizah hash
+verified. The rerun is not counted as92 further distinct tests. Fresh PR165
+jobs115079992019/115080009651 remain live, not passed or cancelled.
+
+### 2026-10-12 — Direct literary and copying loss arguments for Ezekiel36
+
+The prior goal turn made progress: committed/pushed PR166's nine-path evidence
+and objective reset, plus a distinct CSNTM coverage exclusion. Fresh own checks
+for PR165/166 remain live; heads are not mutated or treated as approved. The
+strategic-direction critic subsequently returns bounded PASS, separately from
+the source packet and without certifying priority/CI. Its result is recorded in
+PR166's comment6136091604 rather than rewriting the live head.
+
+The [new argument comparison](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md)
+directly reads Tov's revised1999 essay397–410 through author-uploaded public HTML
+and Spottorno's complete1982 publisher PDF93–98 with all six renders/notes.
+The original Tov1986 and Lust1981 bodies remain unacquired. Tov's Hebrew-expansion
+case is substantive but conditional; its order discussion concerns chapter7.
+Spottorno offers linked ancestral page loss/reordering, explicitly requiring an
+unsupported53-letter omission in one variant. The1512-letter page unit is an
+assumption, not measured ancient loss. Root checks the arithmetic, not an
+independent manuscript letter count.
+
+The counterargument qualifies the reported Old Latin minus/order and identifies
+the Madrid edition as a necessary acquisition route beyond Princeton. This is
+new project-level argumentative evidence, not a new manuscript discovery or
+decipherment. Historical priority remains HOLD, with no source/English/notes/
+canon change. Frozen prior records and unrelated Genizah work are preserved.
+The PDF and documentation skills keep actual visual reading, author argument,
+our inference and restricted reuse distinct; no new infrastructure is required.
+
+One bounded independent critique passes the exact new report at
+e09b3d66538d475f31aa814640ec1cb68d7011572831c65398a4ce0de7c21f3f,
+reading all target source pages/notes and checking seven private hashes plus20
+retained pins. Root verifies local file links, arithmetic, whitespace and the
+protected Genizah hash. Only validation history is appended after critique.
+No new corpus-test claim or priority/application approval follows; the two-path
+documentation commit still needs its own exact-head publication checks.
+
+### 2026-10-12 — Ezekiel language controls and exact Greek witness identity
+
+The prior goal turn made progress by directly comparing Tov/Spottorno, committing
+and pushing PR167's two-path report, and delivering PR165. This continuation
+tests the cited language rather than repeats a source-priority preference vote.
+The [new controls](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md) scan the actual
+1273-verse WLC XML:169 אני components, one אנכי at36:28, and impurity noun2932
+with six singular/two plural tokens; the plurals are36:25,29. Verb/adjective
+string hits and nested alternative words are not mixed into this count.
+Rarity supports a distinction, not its date or the direction of literary change.
+
+Actual publisher Rahlfs-Hanhart36:33,37 prints κύριος without Adonai. The newly
+acquired original Thackeray1903 article identifies B/Vaticanus and separates
+the correction at32. Root reads extracted405–411 and three complete target
+renders; the source agent extracts all14 pages and reads the targeted discussion.
+This reconciles a specific published witness report with a different selected
+edition, not disproves it or verifies fresh Vaticanus ink. The24–28 lectionary
+does not attest the later Adonai words. No P967 boundary is derived from1903.
+
+The custodial Madrid route identifies BNE/BDPI bdh0000230543. Root reads the
+complete detailed record's65–66,75–78,91–104 ranges; mixed unrelated edition
+fields and session-specific URL are not transferred into Git. Its broad28–43
+coverage does not preserve either target transition. The viewer403 is a real
+access limit, no target plate acquired. The prior Madrid edition lead remains
+useful for adjacent order but is no longer a transition-image priority.
+
+PR166's own exact-head jobs115082795697/115082986135 both succeed at
+bd506434018a2f72989556c756f6c72d5948eeed. Fresh main comparison matches the
+nine approved paths and predicted union04f473e1a78a96d425db8460d8cb77ff34e61c8d.
+SHA-pinned merge lands5b23271f26911030f2c2c7d8478d1df711dcb833; parents/tree
+verify. With no other main checkout and ancestry checked, guarded local main
+advances and normal push reports up to date. PR167's own push has passed;
+its own PR remains live at this checkpoint, not approved or restarted.
+
+The PDF and documentation skills preserve publication reading versus fresh
+transcription and concise controls versus historical priority. No source,
+English, note, canon, registry or ImageGen evidence change occurs. Earlier
+receipts and unrelated Genizah bytes remain protected. The lead remains
+Ezekiel literary/transmission history, not isolated English maintenance.
+
+The bounded independent critic passes exact new report
+7ab62bf278782e7030f2f5012544a857b61d0409e7e7edae1911a9f6b12c0778,
+independently reproducing counts and reading the three target pages, actual
+publisher text and complete BDPI record. All20 retained pins, four private
+hashes, prior reportd43 and protected Genizah130 match. Root verifies local
+links, whitespace and chapter/verse counts. Only verification history appends;
+no new corpus tests or source/English/priority approval is claimed.
+
+Subsequently PR167's own PR job115089617826 joins push115088286293 in passing
+at exacte7b9b3765b94058e12a7bebcf4110db6c026ba11. Fresh main comparison has
+exactly its two approved documentation paths and unionce8fd8fac25ea1078d3854a6e9475d807a9fecfb.
+SHA-pinned merge lands3bb33db5e4c4dcac00440b7d5afeb3f7391c3317;
+parents/tree verify. Local main advances under an old-value guard after ancestry
+and no-main-checkout checks; normal push reports up to date. This does not
+approve the new language-control head. Root executes the literal documented
+reproduction snippet and obtains the same counts and eight noun rows.
+
+### 2026-10-12 — Old Latin original edition and preservation boundary
+
+The previous Nahum goal turn repeated a completed finding; it is no progress
+toward the broader goal. Current evidence checks returned to the active Ezekiel
+lead rather than another same-article review. Thurn's complete printed48–49
+catalogue supplies a survival boundary, not proof of a36 minus. A distinct
+public UC copy of Ranke1871 now exposes actual107–108 and155 images. The
+[existing mechanism dossier](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#old-latin-preservation-and-original-edition-check)
+records the positive diplomatic37:28→40:1 transition within108A, the preface's
+conjecture typography and the commentary's scribal explanation. Thurn's40:3
+label is too narrow for the edition's40:1–2 evidence. Ranke's inconsistent
+chapter numerals in155 are preserved, not silently corrected.
+
+This advances the actual ordering evidence, not the36 reconstruction or Hebrew
+priority. Latin is not a second direct Hebrew vote; physical folio labels and
+versional genealogy are not newly certified. Root read complete target pages
+and the accessible preface batch, not the whole432-page edition or fresh ink.
+Browser images worked after OCR lost blocks; the different UC PDF returned429
+and was not retried. A bounded agent identified Bogaert1978's exact original
+article but found only bibliographic records and access gates, not its body.
+Those searches stop here. No source, English, note, canon or ImageGen evidence
+changes. The documentation skill keeps that narrower positive result separate
+from unresolved reconstruction; no new registry or bespoke validator is needed.
+
+PR168's two own jobs115101912080/115102693022 pass at exact
+9585ee837584e75cee05b25b439ea2aa94b63527. Fresh main comparison has its two
+approved paths and predicted union893b93c3071aa6900bd0aa55779ed58bcec94881.
+SHA-pinned merge lands87ece78fa8c3669de6b18368b05bf4ccbe4f6c59;
+parents/tree verify. A normal main push is rejected because another task's PR169
+advanced main, not because of a source/check failure. Completed fetch confirms
+560c55fa2e6545ab7439859e0016a958e2a13768 descends from our merge; local main
+advances under an old-value guard and a normal push succeeds. The new research
+branch fast-forwards to that shared main, preserving the other task's workflow
+and metadata changes. The protected Genizah hash remains130d509a as before.
+
+The bounded source critic passes the original-edition append at report SHA256
+8b3982cbdb312a9829c8b9ce754c1f3178d93874e0a67775b70aca9602efcdfe,
+independently checking its actual target images, notation, four private hashes,
+20 retained inputs, protected Genizah bytes and two-path scope. Root reproduces
+the20-input check and verifies clean whitespace. Only this validation history
+appends after review. No corpus suite rerun, source-priority vote or application
+approval is claimed; the new commit requires its own publication checks.
+
+### 2026-10-12 — Irwin omission criticism and Latin print sequence
+
+The prior goal turn made progress by obtaining and checking Ranke's original
+transition, pushing PR170 and delivering PR168. This continuation keeps PR170's
+exact8064f057 head unchanged while its own jobs115115271966/115115410134 are
+verified live. A bounded new Filson acquisition pass encounters the original
+JSTOR3262380 challenge, publisher issue403 and a bibliography without a body.
+No failed route is credited as a reading or restarted without new access.
+
+A distinct institutional Irwin1943 PDF supplies actual contemporary criticism.
+Root reads complete printed62–65/PDF82–85 and all notes in text and four images.
+The [existing mechanism dossier](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#contemporary-omission-criticism-and-latin-ordering-limits)
+attributes the1¾-page Swete-based estimate to Irwin, preserves his36:23a→38:1
+label and separates his strong Hebrew-insertion/canon dating conclusions from
+our unresolved judgment. It is not Filson's original body or Greek ink.
+Root also reads complete Ranke118–119:42 material precedes38 fragments in the
+edition and119 refers back to108A5. Separate-page adjacency cannot prove an
+original continuous transition or equate the full Latin and P967 arrangements.
+
+This is new project-level source argument and ordering context, not discovery,
+restoration or historical-priority approval. Five private source hashes are
+recorded; raw assets stay outside Git under their stated rights. The PDF skill
+requires full target pages/notes; the documentation skill keeps attribution,
+print sequence and historical inference separate. Current source, English,
+notes, canon and ImageGen evidence stay unchanged. These local follow-up edits
+are not in PR170's frozen commit; publication must wait for that live transaction
+to finish before a new head is created.
+
+One independent bounded critique passes the new follow-up at full-report SHA256
+d51565149cb1cd2083d8ef8ba01696574ea2909b25834dd7e8bd0bf25c55ea9a,
+visually reading all four Irwin pages/notes and Ranke's target labels/reference.
+Five private hashes,20 retained inputs and the protected Genizah hash match.
+Root reproduces those checks, resolves363 local links and verifies whitespace.
+Only validation history appends after review; no new corpus-test or historical
+priority claim follows. These local edits remain outside PR170's exact reviewed
+head and require a separate successor transaction after its own live jobs finish.
+
+### 2026-10-12 — Papyrus967 same codex omission control
+
+The prior goal turn made progress by reading the original Irwin target pages
+and Ranke's later print sequence, documenting a reviewed successor and waiting
+on PR170's real live job. Current bytes match that successor's final hashes,
+and the protected Genizah bytes remain unchanged. PR170's own PR job subsequently
+joins its push in succeeding at exact8064f057744d73b45357afd21626c965fe855aa3.
+The fresh main comparison has its two approved paths and predicted union
+bb2414920a121396b71c01be98659d026d3efc46; the uncommitted successor is excluded
+from that comparison and is not silently part of PR170's reviewed head.
+
+A bounded source control now checks actual96712:25→13:1 in Kenyon's existing
+1937 text and1938 plate. Root reads complete printed2–3/PDF20–21 with apparatus
+and plate PDF15. The same surviving column on fol.11v has the reported minus;
+the different13:6→11 gap remains physical absence. The apparatus's proposed
+homoioteleuton retains its question mark, and the declaration endpoint must
+not be called the recognition formula. The [control](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#same-codex-omission-control)
+therefore supports transmitted omission versus present loss, not a proven
+copying cause or historical-priority transfer to chapter36. No new whole-book
+download, source/English application, calibrated glyph recovery or ImageGen
+evidence is introduced. The PDF and documentation skills keep full target
+reading, the observed layout and the inferred history separate.
+
+The single new-control critic passes exact full-report SHA256
+210f1c00c01dadec1d4e7bbcccb7386b4274e4092c9eb5097d04d598713dd9d2,
+reading both complete text pages and the whole plate, verifying five private
+hashes,20 retained inputs and protected Genizah bytes. Root reproduces those
+checks, resolves364 local links and checks whitespace. Only validation history
+appends. The earlier Irwin/Latin judgments are not repeated or broadened.
+
+PR170's SHA-pinned merge lands192ba0d153456de511ad282295d50b653df34c9c.
+Authoritative API and completed fetch confirm the expected parents and union
+bb2414920a121396b71c01be98659d026d3efc46. No main worktree is checked out;
+ancestry verifies and local main advances under an old-value guard. The reviewed
+local successor remains separate from the merged tree and is preserved on a
+new research branch, with its own exact-head checks required before publication.
+The normal main push reports up to date, and the completed branch switch
+preserves exactly the two reviewed documentation changes and unrelated Genizah
+file. No historical source judgment is broadened by this delivery.
+
+### 2026-10-12 — New exhibit routes do not expose the Ezekiel transitions
+
+The [new route check](PAPYRUS_967_IDENTITY_AND_EDITION_2026-10-12.md#new-exhibit-routes-and-target-access)
+distinguishes public exhibition access from identifiable target-page access.
+Princeton's Scheide M97 exhibit links to item c247f1340, which reaches a
+verification gate. The BNE acquisition subtask finds a panoramic reunion display
+but a failed iframe for the same partial Madrid object 0000230543, not a verified
+complete facsimile. Neither 36→38 nor 39→37 was inspected. Source, English and
+historical-priority HOLD are unchanged; no fresh transcription is claimed.
+
+The latest Nahum reply verifies its already completed full article/application
+record and eight focused tests, not a new finding. At the access checkpoint,
+the successor Ezekiel PR 171 had both own jobs authoritatively in progress on
+head `45d4ad5a32e9ad7cc702deb798270b7a118abfed`. This access record was a separate
+uncommitted successor, not part of that frozen head. A bounded Deuteronomy 32
+reserve search finds only [Dayfani's institutional metadata/abstract](https://cris.huji.ac.il/en/publications/4q37-and-excerpted-texts-of-deuteronomy-from-qumran/) and a
+ResearchGate no-full-text notice, not passage-critical section 4 or new Greek
+apparatus. No repeated gated downloads, preference votes or corpus rerun follow.
+
+Crane's [publisher preview of chapter 7](https://brill.com/previewpdf/book/9789047442714/Bej.9789004169623.i-304_008.xml)
+yields extracted printed pages 207–208, not the whole argument.
+The screenshot fetch returns 403 and the browser cannot
+open the PDF. No visual-page or full-chapter reading is credited, and its
+stronger introductory Latin/ancestor claim does not supersede the directly
+checked Ranke preservation limits. This distinct route stops here.
+
+Both PR 171 jobs subsequently complete successfully: push `115128122083` and
+PR `115128592873`, each on the reviewed `45d4` head. Fresh main, two-path scope and
+merge-tree checks precede the SHA-pinned merge
+`1f231dce37fd2e32223c2477f08fcbb6ffe79fdb`. API and completed fetch verify its
+parents `192ba0d153456de511ad282295d50b653df34c9c` / `45d4ad5a32e9ad7cc702deb798270b7a118abfed`
+and reviewed tree `045519328106fd71b58e789512f591d6673be7f5`. With no main worktree
+checked out, local main advances under an old-value guard; the normal main push
+confirms up to date. This delivers the existing Irwin/Latin and Greek 12 control,
+not a new historical-priority decision. The access-only successor stays separate
+and requires its own checks; protected Genizah bytes remain unchanged.
+
+### 2026-10-12 — Direct control for the Ezekiel renewal parallel
+
+The [renewal comparison](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#renewal-promise-comparison-in-the-declared-hebrew-form)
+reads current source/English fields at 11:17–21 and 36:26–28, WLC XML and the
+identified publisher Greek passages. It distinguishes one/another/new heart,
+mixed/regular recipients, new spirit versus explicit my Spirit, and the location
+of the covenant formula. This tests the earlier dependence attribution without
+deciding its direction. The longer passage is not semantically identical
+repetition; historical priority remains HOLD and source/English stay unchanged.
+
+POB's 11:19 within-them choice differs from the declared WLC's within-you form.
+NET reports manuscript/version support, but the actual unnamed witnesses and
+critical apparatus remain uncollated. The current 36:26 parallel alone cannot
+justify them. This is a source/English accounting issue, not an approved repair.
+The six pinned Qumran pages return no displayed target-reference rows, not proof
+of an exhaustive absence or a surviving heart-reading vote.
+
+The bounded Lust acquisition identifies *CBQ*43(1981),517–533, target518 note8,
+but obtains no original body; tool lookup failures are not labeled a verified
+paywall. Its ancestry argument remains unverified. PR172's frozen7deaaa head
+is unchanged while its own jobs run; this comparison is a separate successor.
+
+The independent critique passes the new section at report02d8af1e and log80fcbb5c,
+checking the exact five current-record pins, XML, publisher Greek, NET note and
+reference limits. Root reproduces those checks and all eight canonical
+consonantal word streams. The enablement description concerns the whole clause,
+not a causative stem. Verification appends without source/English application;
+the unchanged protected Genizah hash and clean whitespace are checked.
+
+The [original De Rossi entry](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#original-hebrew-collation-at-ezekiel-11-19)
+now supplies actual published Hebrew new-heart and within-them reports, narrowing
+the preceding NET-only limit. Root and the acquisition subtask read complete
+III135–136, IXLV–XLVI conventions and the III1786 title page. Earlier/corrected,
+doubtful and text/margin states stay separate; the Greek another-heart reading
+does not become Hebrew other-heart attestation. De Rossi's quoted Norzi argument
+raises possible chapter36 assimilation and records a change in Norzi's own
+autograph, not an independently dated ancient change. Genealogy and priority
+remain held, and no canonical fields are edited. Six private hashes reproduce;
+the existing reviewed parallel comparison is preserved, not voted on again.
+
+The original-collation critic passes report6d40b000 and log2b9f74b3, inspecting
+all target/convention pages and the title, reproducing six private hashes and
+five canonical pins, and preserving the previous12,835-byte reviewed prefix.
+The new support narrows the attestation gap, not historical-priority uncertainty.
+Source/English remain unchanged; only verification history appends afterward.
+
+PR172 subsequently passes both own exact-head jobs115137327073/115137450680.
+Fresh main, exact two-path scope, run-head checks and the predicted merge tree
+precede its SHA-pinned merge e732b7e9fadb8389f34072bd16536a72274b1517.
+API and completed fetch verify parents1f231dce37fd2e32223c2477f08fcbb6ffe79fdb
+and7deaaa1d449e40bca47871bfef79af2aa8fcb686, with reviewed union
+d24d2c057c139605af8d1bf60de758b350bff305. No main worktree is checked out;
+ancestry and an old-value guard precede local main advancement, and its normal
+push confirms up to date. The separately reviewed renewal/collation successor
+is preserved on a new branch, not covered by those earlier checks.
+
+### 2026-10-12 — Greek apparatus and the Spirit wrath contrast
+
+The preceding Nahum reply repeated an already completed current-state check;
+it added no source evidence. The next consequential action returns to the
+Ezekiel lead rather than re-reading that article or retrying parked access gates.
+The [original Greek apparatus](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#original-greek-apparatus-at-ezekiel-11-19)
+now distinguishes the two printed 11:19 variants from its another-heart and
+third-person base. Γ omits the preposition, not the pronoun; A adds their after
+the second heart noun. Original/revised hands and apparatus silence are not
+converted into additional independent readings.
+
+The [39:29 comparison](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#spirit-and-wrath-at-ezekiel-39-29)
+checks actual WLC my-spirit against RH2006 and Swete B-based my-wrath. The latter's
+target apparatus changes only the relative pronoun in AΓ. Direct enhanced BDB
+consultation establishes an anger-related sense for רוח but specifically places
+39:29 in its revival category: same-consonant interpretation is possible, not
+the established cause of the Greek difference. LSJ also preserves the Greek
+word's broader spirit/disposition range; the actual 36:18 outpouring expression
+paired with Hebrew חמה supports the contextual wrath gloss without proving that
+Hebrew at 39:29. Greek causal wording and Hebrew
+causal/temporal possibilities remain separate; current when has a published NET
+parallel, not an argument from ancient witness counts. No canonical fields change.
+The next English step is bounded reader disclosure and argument comparison,
+not an automatic wrath replacement or a claim that the shorter form lacked all
+Spirit theology. The PDF and documentation skills preserve complete relevant
+pages, publication identity and source-versus-inference distinctions.
+
+PR173 passes both own exact-head jobs115148531154/115148915412 on3643269.
+Fresh main, two-path scope and merge-tree checks precede its SHA-pinned merge
+`3b2f9a008cf4122f51cfbc87e73dcadd826233db`. API and completed fetch verify parents
+e732b7e9fadb8389f34072bd16536a72274b1517 and3643269cc3b03fff95105a30e4e5cca1ab981013,
+with reviewed union0445794d54cd28f33e4060331cbe70762396ddf8. No main worktree is
+checked out; ancestry and an old-value guard precede local main advancement.
+The normal main push confirms up to date, and the successor stays separate on
+research/ezekiel-spirit-wrath-2026-10-12. Those checks do not cover this new append.
+
+The new-evidence critic passes report23e75891/logaaa72b2a, visually checking
+the complete targets and notation, nine private pins and current canonical
+fields. After the Greek lexical qualification is added, a narrow check passes
+report28d23f2c/log51350bd7, using primary Perseus LSJ and the actual 36:18
+publisher/current text; reversing only that addition preserves the earlier
+reviewed bytes. Root checks the unchanged report prefix, protected Genizah
+bytes, whitespace and 368 local file links. No corpus rerun or application
+approval follows; the successor requires its own exact-head publication checks.
+
+### 2026-10-13 — Ezekiel 39 29 reader candidate and provenance recovery
+
+The preceding goal continuation made progress with original Greek apparatus,
+actual lexical controls, a reviewed documentary successor and PR173 delivery.
+PR174 then passes both own exact-head jobs115166407859/115166992292 on d9f16e24.
+Fresh main includes concurrent PR175's source-first archive work; the approved
+two-path scope has predicted union88efb00fe735506360f4bd621d07aa52f1755804.
+Its SHA-pinned mergee1724eaed82b1e0e655825ecd11519bd06271fa8 preserves that work.
+API and completed fetch verify parents12ef4cbdffe0a047175192217885661fb1e58c25
+andd9f16e24b498427f54953b49de6429b206bd89bd and the expected tree. With no main
+worktree checked out, ancestry and an old-value guard precede local main
+advancement; the normal push confirms up to date. The next draft is separate.
+
+The [reader draft](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#ezekiel-39-29-reader-draft-on-october-13)
+now exposes causal/temporal and qualified Greek wrath alternatives without
+changing the main sentence or WLC. Its legacy record failed two schema
+requirements; Git's actual original draft recovers the missing ai_draft and
+philosophy with exact source/English matches. No new model provenance or
+historical approval is invented. The actual full proposed book export changes
+only39:29, retains both notes and1272 other units, and passes schema/marker
+checks. A generic probe's absent lightweight source object stays an explicit
+limit, not a reason to claim source-display or deployment success.
+
+The Kenyon control inspects complete source prefaces and publication boundaries;
+these cached Beatty volumes exclude39:29. The Princeton span is metadata, not
+the decisive noun's surviving letters or a physical-gap claim. The PDF skill
+preserves those boundaries, and the documentation skill keeps historical
+generation provenance separate from a new note's approval. Source and canon
+judgments remain held; the frozen draft still requires independent review.
+
+The factual/application critic subsequently passes exact candidatedfda0b8d
+and final contractc2d4df57, reportd7b0d153 and log2aa72fe9. The initial6037883d
+contract binding remains in the receipt. Export/YAML hash comparisons initially
+used different formatting recipes in review; the explicit compact UTF8/no-newline
+export recipe and width1000 YAML recipe resolve that identification question,
+with no source or note-text correction. This is not another priority vote.
+
+Root [applies the reviewed notes](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#applied-ezekiel-39-29-notes)
+at exact canonical8d4d3343 and verifies actual export312d4eae, both notes and
+1272 unchanged other raw records/exported units. Six new checks pass in13.683s
+and64 shared reader checks in59.870s:70 distinct post-application checks.
+CI adds the new module and two immutable baseline fetches, preserving the
+existing suite. The old generation metadata is historical, not approval;
+source priority, whole-verse optimality, divine-name policy, deployment and
+canon remain unapproved. Protected Genizah bytes and unrelated work remain
+unchanged. Commit/merge delivery is separate from this local application.
+
+### 2026-10-13 — Original Scheide studies and historical test repair
+
+The preceding Nahum reread confirms its already-published decision, without
+new source evidence or a duplicate documentation commit. Authoritative
+observations also show that PR176's own jobs115291178735/115293971048 are
+terminal failures, not continuing waits. Both fail the older six-unit module's
+historical Ezekiel export/non-target aggregate, while corpus validation passes.
+A local eight-test run reproduces exactly those two failures. No merge follows.
+
+The [repair](ELEVEN_COMPOUND_READER_CORRECTIONS_2026-10-12.md#historical-checks-after-later-applications)
+reconstructs historical books from their immutable Git baseline and separately
+checks today's six reader units. It changes no frozen contract, receipt,
+candidate, source or English. One bounded code review identifies unapplied
+preflight assumptions, including the absent40:49 notes field; root corrects
+them and adds a shared-assertion preflight regression. The final file at
+60827a93f5660edce9d0edb5b3b1095483154049c84ccd5aa8e29bcd95347493 passes
+the narrow follow-up review. Final ten repaired tests plus six39:29 checks pass
+in46.372seconds; superseded repair runs are not counted again. Both original
+own CI jobs are terminal before the successor changes; its renewed exact-head
+remote checks still govern publication. Protected Genizah bytes are unchanged.
+
+A separate bounded acquisition task finds both original Gehman1938 articles
+through lawful public journal scans, not a bypass of the restricted Scheide
+book. The [source result](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#original-scheide-comparison-articles)
+records full agent reading, root's inspected pages, actual scan hashes and
+printed/PDF page mapping. These papers give historical interpretive/revisional
+arguments at other verses, not39:29's decisive noun. The PDF skill preserves
+the coverage qualification and printed notation; the documentation skill keeps
+acquisition, scholarly inference and software repair distinct. The actual
+target transcription/apparatus remains the discriminating evidence task.
+No earliest-source, fresh decipherment, ImageGen evidence or canon claim changes.
+
+The bounded documentary check passes the preceding three appended sections,
+including seven complete source pages and both PDF hashes. Its reviewed log
+SHA256 isaa113c9f36721320d401d4e1f8fdfe5dd47d4d099cddbabf256d048badbc2768;
+this verification sentence is a subsequent root append, not part of that pin.
+Root verifies382 local file links and whitespace, with only the historical
+test and these three reports changed from the failed head. No frozen source
+receipt or scholarly conclusion is rewritten to obtain a passing check.
+
+### 2026-10-13 — Direct spirit and wrath argument and Syriac evidence
+
+The preceding continuation is progress: it repairs historical verification,
+obtains two original studies, documents their limited relevance and pushes
+the corrected application. PR176's own push115316302860 and PR115316333331
+subsequently pass on076859ab15d18eebedea8230bfc9ced7268c4cb9, at13:40:57UTC
+and13:33:14UTC respectively. Fresh main, exact ten-path scope and local union
+checks precede the pinned mergebf809a261359981edda8f7faae3c464e9733c63d.
+API and completed fetch confirm parentse1724eaed82b1e0e655825ecd11519bd06271fa8
+and076859ab15d18eebedea8230bfc9ced7268c4cb9, with tree2b83c9630d6c941628b3de0503259c895dc5a2ae.
+No worktree has main checked out; ancestry and an old-value guard precede
+local main advancement and the normal push confirms up to date. The new
+source prose is separate from that delivered reader-note application.
+
+The [direct target comparison](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#direct-target-argument-and-syriac-control)
+adds a complete primary argument, rather than repeating the Nahum verdict or
+the Scheide acquisition gate. Root and the acquisition task read Lust's
+actual2002 body and22notes. Wong's exact publisher metadata is obtained, not
+his article body; that argument remains mediated. Root separately reads the
+CAL Syriac target, its edition metadata and lexical entries, and the actual
+Rahlfs Hanhart3:14 control. No site AI responses are used. The WLC query
+reproduces52 רוח occurrences in44verses, without converting that count into
+a verified census of Greek equivalents or independent manuscript votes.
+
+The article supplies a stronger translation-pattern objection to a same-Hebrew
+anger interpretation, but its proposed Hebrew forms and literary priority
+remain inferences. Direct11/36 source comparison qualifies its compressed
+reuse premise. The Syriac's r-w-ḥ and different clause connection are actual
+edition evidence, not proof of an independent Hebrew original. Complete modern
+source-introduction pages distinguish versional dependence and normalized
+synoptic presentation from an exhaustive apparatus or target ink. The PDF skill
+preserves those page and supply limits; the documentation skill keeps the
+new argument, counterevidence and acquisition status in the existing case.
+
+One bounded new-evidence review identifies a raw-download receipt error:
+HTTP success had returned CAL's anti-scraping notice, not chapter text. Root
+inspects the saved response and relabels its hash; ordinary public-reader and
+independent normal-browser consultations of the target are separate. No notice
+becomes source letters and no chapter-body hash is invented. The narrow
+correction passes at case SHA256aa5cc8975c112babde675716eb0e7731d76e30e0ccb914252b93a4e4232b29c4.
+This is factual review, not another earliest-priority vote. No source, main
+English, note or canonical metadata changes; the full corpus goal remains
+incomplete. Protected Genizah work and the other worktrees are preserved.
+
+### 2026-10-13 — Field source entry behind the Spirit reading
+
+The prior Nahum user turn is a current-state verification, not a new source
+finding: the already applied candidate and eight scoped tests still agree.
+This continuation takes the next available discriminating action rather than
+repeating that article. During source acquisition PR177 remains frozen at
+a774052767ffb3e47bf56dd8413602a2a24ace9d. Its own push115338472953 and
+PR115339779561 subsequently pass at14:32:24UTC and14:34:38UTC. Fresh main,
+two-path scope and predicted union precede the SHA-pinned merge
+59701d74e0a21c25987ec4b08d59e291de27f7a8. API and completed fetch verify
+parentsbf809a261359981edda8f7faae3c464e9733c63d and
+a774052767ffb3e47bf56dd8413602a2a24ace9d, tree3a0cc7d615c666767e32bc54bdbb21e7bc6054de.
+After no-main-checkout and ancestry checks, guarded local main advances and
+normal push confirms up to date. New Field prose stays separate from that
+already delivered transaction.
+
+The [Field source comparison](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#field-edition-and-the-transmitted-spirit-reading)
+directly inspects the1875 target entry and linked introductions. The attached
+Syrohexaplaric note confirms the transmission basis for the reported Symmachus
+Spirit reading; the printed Greek is not counted as a new surviving Greek
+manuscript. Jerome's objection is consulted through Field's quotation only.
+A parallel task locates an alternative primary scan and target OCR; root's
+complete visual pages control the interpretation. The PDF and documentation
+skills preserve page scope, edition mediation and the unchanged source judgment.
+No P967 noun, recovered Hebrew letters, source/English change or canon argument
+results. This is new project access to known evidence, not a novel variant.
+Private scan hashes and exact page mapping are in the case report; the full
+corpus objective remains active and incomplete.
+
+One bounded factual critique passes the Field entry, its linked introductions
+and the source summary. The case SHA256 is
+bf40fd0db081c2a568ccb3f803498ed31890d4c7194e27058bd45c976c0058c3.
+The reviewer checks the complete relevant pages and scan hash, not Archive
+rights metadata, alternate OCR or CI. Root separately verifies those acquisition
+and publication boundaries,379 local file links, whitespace and unchanged
+canonical39:29/protected Genizah hashes. No new corpus test suite is necessary
+for this prose-only delta, and existing remote integrity gates remain in force.
+
+### 2026-10-13 — Greek reading affiliation rather than manuscript votes
+
+The preceding goal turn is progress: actual Field sources were acquired,
+checked and committed, while the previous target comparison reached main.
+PR178's own push115485217768 and PR115486579042 subsequently pass at19:36:56UTC
+and19:39:48UTC. Fresh main, exact two-file/88-addition scope and predicted union
+precede SHA-pinned merged75f2e434dc01ae8e922eb1164d0a8c5b2336638. API and
+completed fetch verify parents59701d74e0a21c25987ec4b08d59e291de27f7a8 and
+466f7adc09419b405712a36846985574408b8be8, treed86498d81f0c9bf11976fece37c318ac2386d5ba.
+No main worktree and ancestry checks precede guarded local advancement; normal
+push confirms up to date. The new source/method work starts separately.
+
+A bounded modern-apparatus search obtains a lawful26-page2015 preview but
+not39:29. The existing full-access gate remains parked. Original Ziegler article
+queries yield no body. Rather than promote metadata into evidence, root follows
+the academy's public Wevers2003 source: ordinary browser verification completes
+automatically and the advertised PDF downloads successfully. Root verifies
+the actual PDF and complete relevant pages; the acquisition agent reads all49
+Ezekiel-study pages, with a narrower visual scope recorded in the
+[source case](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#reading-level-affiliation-in-ezekiel).
+
+The findings make the method more explicit about reading-level affiliation,
+edition-local sigla, constituent witnesses and textual versus marginal evidence.
+Local dependence arguments are compared with convergent interpretation and
+different supplementation; the proposed ancestor remains conjectural.
+The PDF and documentation skills keep those distinctions with the actual
+source claims. No new variant discovery, P96739:29 noun, Hebrew/English change,
+ImageGen evidence or canon approval follows. The full corpus goal remains
+active; this passage-specific refinement does not certify universal comparison.
+
+Two critique attempts disconnect without a verdict. A fresh bounded factual
+review then passes the complete relevant pages, method paragraph and case
+account, at method SHA256b8f39293c3ac87b2e6cb7fd7d6ca6ceb6e22c32b0edd423a068000368382ff0c
+and case SHA2566e4da2aec76e943de8215b027b035a49a2b71462bf27443f78541963c7af118d.
+That review excludes acquisition history and publication status, checked
+separately by root. Root verifies417 local file links, whitespace and unchanged
+canonical39:29/protected Genizah hashes. This prose/method-only delta adds no
+new corpus test suite; its publication still requires its own integrity checks.
+
+### 2026-10-13 — Historical method pins repaired without changing evidence
+
+The preceding turn is progress: the Wevers body and complete relevant pages
+support an explicit method refinement, PR178 reaches main, and PR180's own
+checks start. Authoritative job polls now confirm terminal failure for
+push115531059239 at21:14:07UTC and PR115532667337 at21:06:33UTC on
+ae0f5c86519b3e0dca78dadf6cf48ab2c21a2e9c. Their actual logs show the same
+current-method-versus-historical-hash assertion in the Habakkuk2 module,
+not a source-text defect. Local reproduction yields the same failure among
+eight tests in3.412s; the complete remote reader corpus had already passed.
+
+A bounded static audit identifies the same defect in the Habakkuk1:17 module,
+avoiding a second remote discovery cycle. Both historical method hashes remain
+d977ce6cc4967af022e9758ed5c47ab3b4e84b8952ced4728d54b9719a266772 at their
+original baselines324d1a56295e84cc5976be0501702adcbd16a13c and
+6017ffa06c1fc8eee2247ce01308df131fcfc557. Every input still checks baseline
+bytes; only the current method file is exempted from that historical equality.
+All other live pins and application assertions remain binding. Each module
+adds corruption regressions for the historical method and live schema/source
+inputs, using the same helper as its original assertion. The resulting20 tests
+pass in8.712s. The independent code critique passes and reruns the same20,
+not20 additional distinct tests. CI already fetches the required immutable
+commits, so no workflow or deadline adjustment is needed.
+
+Concurrent PR179 is unrelated historical-archive work. Its merged main
+d1ffdafed0432322a2b56e0e6df8c58b5562963a is fetched and merged normally into
+this branch without altering its five paths or the protected Genizah file.
+The documentation skill keeps validation repair separate from the source
+finding; no scholarly judgment is changed to make tests pass.
+
+The Sylloge primary repository page and public PDF link are verified in the
+ordinary browser. A prior55-second transfer timeout has no durable file or
+returned live handle; the ordinary link click also produces no readable PDF
+viewer. Direct HTTP stops at site protection. No full body or hash is claimed,
+and no transfer is restarted solely because observation timed out. Source
+acquisition remains open alongside the renewed publication checks; it is not
+an overall project blocker or an assertion that the corpus goal is complete.
+
+The repair-account fidelity check passes separately from the code review,
+excluding acquisition and remote CI chronology. After the main merge, root
+reruns the same20 checks successfully in7.035s, verifies417 local file links
+and whitespace, and confirms the protected Genizah hash. The two repaired
+module hashes are6723a1f99d3cb7410fc736f3bab53232df19348e91f9cba5d58a070039d08626
+and684679077aa04b482f7423a79510a70cb78b8753a201ad9344b308e4fce09ed4.
+This is repair verification, not additional scholarly evidence or new distinct
+tests. The new publication head requires both of its own remote integrity jobs.
+
+### 2026-10-13 — Official data coverage and a separate Ezekiel fragment
+
+The intervening Nahum reply is not new goal progress: it verifies the already
+delivered full-article/application record and eight existing focused tests.
+The next action therefore advances source acquisition rather than another
+same-article review. PR180's repaired head
+2128584405664d874df9fe77994448a6d4b60d38 now has both own checks successful:
+push115557695525 completes22:14:13UTC and PR115557713893 completes22:11:23UTC.
+Fresh main/scope checks preserve PR179 and the five-path217-addition/9-deletion
+delta. The local union tree is befe24f0e41e779c205ac4fa0fcfa6460f8b37aa.
+The SHA-pinned merge39076a0cece2a630c8f9ea8d1793fa74ba68ea8b has parents
+d1ffdafed0432322a2b56e0e6df8c58b5562963a and2128584405664d874df9fe77994448a6d4b60d38.
+API and completed fetch verify the parents/tree; ancestry and no-main-worktree
+checks precede guarded local-main advancement. Normal push confirms up to date.
+
+The [source access follow-up](PAPYRUS_967_IDENTITY_AND_EDITION_2026-10-12.md#official-raw-data-and-a-separate-ezekiel-witness)
+uses Papyri.info's explicitly published GitHub data, without bypassing its
+front-end gate. Root reads the whole DCLP61933 XML and verifies its upstream
+blob and SHA256. Its Greek edition division is empty: this route has metadata
+and bibliography, not a target transcription. Do not recast raw-data access
+as manuscript-text access or repeat the gated front-end for the same file.
+
+A bounded acquisition agent reads Papathomas's complete Tyche30 edition91–97
+and Tafel14; root independently reads the same eight PDF pages visually and
+the complete extracted article. P.Vindob. G31289 is a separate fourth/fifth-
+century parchment witness, but ink survives only at12:16,19,23–25. The supplied
+intervening verses are not manuscript attestation. The author reports no local
+departure from the standard Greek, and his comparison with P967 concerns
+other leaves. No target36–39 evidence, fresh decipherment or English change
+follows. His reported ultraviolet recovery illustrates optical observation
+rather than generated replacement of missing material. Note5 identifies
+four target-relevant LDAB acquisition leads whose exact coverage remains open.
+
+The newly acquired Chester Beatty2023 volume is a public publisher download,
+not a recovered Sylloge transfer. Root reads printed147–148 and the rights page
+visually, with wider143–149 text extraction explicitly distinguished. Its P967
+photograph covers13:20–14:3; reported paragraph comparisons and bibliography do
+not expose our target transitions or noun. The PDF skill requires visual
+checking; the documentation skill keeps actual preservation and supply,
+publication dates, reading extent and image rights separate. Both PDFs and
+the XML remain outside Git. Source/English/priority HOLD and the full corpus
+goal remain unchanged; the target-specific new witness queue is the next
+substantive acquisition, not another catalogue-label confirmation.
+
+One bounded independent factual critique passes the two-document delta at
+case SHA2564e757fe52c08ffc5eb5a8055a222c1987bec6a517d6b584025963621c86115d8
+and pre-verification-log SHA256ac794c0ca44ffbf2136b6414d5760eef007ceb0c4d10440930bafc499fc686cd.
+The reviewer reads the complete XML, Tyche article/plate and the two Wasserman
+pages/rights notice and verifies their hashes. Publication chronology, remote
+CI and census completeness are excluded from that factual verdict. No repeated
+priority vote, new framework or corpus-specific test suite is added.
+
+### 2026-10-13 — Actual Zuqnin Greek renewal text acquired
+
+The preceding official-data/source-coverage delta is committed and pushed as
+b894b389dc519a474d3b4aa22a33c284387173a1, PR181, with two documentation paths
+and141 additions. Root verifies378 local file links, the empty XML division,
+whitespace and retained39:29/protected Genizah hashes. Its own PR job115574468885
+completes successfully22:55:16UTC; push115574031340 remains authoritatively live.
+The revision is not treated as merged or approved by the earlier PR180 checks.
+A separate successor branch preserves the frozen PR181 head while source work
+continues. The mandatory PR attachment attempt returns the existing100-item cap;
+no repeated attempt or attachment removal evades that cap.
+
+Papathomas's note5 leads to a new custodial Vatican entry for ZVI's Greek
+undertext and the original Tisserant edition. The bounded acquisition agent
+obtains an unrestricted Robarts PDF; root independently reads the target,
+group introduction, conventions, title/reprint imprint and concordance.
+The [new comparison](EZEKIEL_36_ZUQNIN_GREEK_RENEWAL_2026-10-13.md)
+records actual published new-heart/new-spirit text and unbracketed36:27,
+including the spirit abbreviation, within-you wording, agency and αὐτά.
+36:28 survives only through the beginning of the people clause. Edition and
+current bound-codex faces differ; the original concordance prevents a wrong-face
+image lookup. The1911 edition's scanned physical copy is a1977 facsimile reprint.
+
+The original ZV body also excludes39:29 from this readable coverage. A malformed
+custodial39:25–24 label must not become invented25–29 attestation. Root reads
+complete printed220–221 and the274 concordance: fragments23–24 precede the
+next40:17–21 page; the first column is explicitly unreadable. No new noun or
+preposition is supplied for the target. TheGreek26–28 comparison retains all
+three current POB source/English records; source priority and the full goal
+remain open. This is new inspected evidence, not a new variant discovery.
+
+The PDF skill guides visual verification; the documentation skill preserves
+supplied-letter boundaries and both locator systems. ImageGen is considered
+but not used for textual restoration: generating pixels cannot establish
+missing letters. No external catalogue correction, image redistribution or
+canonical/source-registry change is made. The successor evidence remains
+separate from the live publication revision and requires its own bounded
+factual critique and checks before publication.
+
+One independent bounded factual critique passes the new Zuqnin evidence at
+case SHA25657d311fa04e19cb4c3b476dec3ed7b34bc9bc4a307aed1dd09fd2ccae9c9c035
+and pre-verification-log SHA256befb8b525cc1cd2804244199cb4542fb5b3cd5a5be61d118adc85ff645add6cd.
+The reviewer independently reads the complete decisive pages, key, preface,
+title/reprint imprint, concordance and public custodial HTML. Source/document
+hashes match. This is a new-source factual check, not another vote for historical
+priority; census completeness and publication/CI status remain outside its scope.
+
+Root verifies377 local file links, whitespace and the five retained target/
+protected-file hashes without adding a new corpus suite. PR181's push job then
+completes successfully23:00:27UTC on the sameb894 head. Fresh main/two-path
+scope and local union precede the SHA-pinned merge
+2324702c79e5295e7a657cf72bd5559f79811fda, parents39076a0cece2a630c8f9ea8d1793fa74ba68ea8b
+andb894b389dc519a474d3b4aa22a33c284387173a1, treede35076cec72520c15e325c07fdb41559e494e76.
+API and completed fetch verify those values. Guarded local main and normal push
+preserve unrelated work; the source successor remains a separate two-path delta
+with its own exact-head checks required, not approved by its parent's success.
+
+Root separately resolves current78r in the official
+[IIIF manifest](https://digi.vatlib.it/iiif/MSS_Vat.sir.162/manifest.json):
+canvasesp0164/p0165 identify78r–77v and its02.wl.0000 capture. The527,024-byte
+private metadata snapshot has SHA256
+5274d5385f8879dc64e7b913030926a1ce528da37875e78233b6810e6490e140,
+at/private/tmp/pob-dclp-ezekiel.podDgn/manifest.json. Both ordinary viewer URLs
+0164/0165 visibly load the identified pair. A DOM role lookup does not match
+the native thumbnail link; focused manifest-derived navigation succeeds.
+This verifies image access/identity, not whole-leaf glyph collation or a fresh
+restoration. No remote image is downloaded to evade display limits. The viewer's
+study-use/publication-permission distinction is retained, and the paired view
+is handed off in browser tab15 for the next comparison. This acquisition
+receipt is root-verified separately from the source-text factual critique.
+
+### 2026-10-13 — Zuqnin inventory promotion and bounded image check
+
+The latest Nahum reply rechecked a completed article/application decision and
+eight passing tests; it supplied no new source judgment and is not counted as
+new goal progress. The broader source goal resumes with actual inventory work
+and a different primary-source acquisition, not another same-article vote.
+
+PR182's exact1095f8004272a4f5420aa61c82393efec359fc34 push job115592771661 and
+PR job115593842413 both complete successfully, at23:49:10 and23:56:49UTC.
+Concurrent PR183 advances main through an unrelated historical-English scan
+workflow. Root verifies disjoint paths and local union tree
+c7a117888ac665dbc7819ba5f669684b05c8c11a before the SHA-pinned PR182 merge
+88f7c3db82eafb91d3ac7776ccef563295552d93. API and completed fetch confirm parents
+40a19cbc23f046b6ca17c7eacc10189ddb2e8fb2 and1095f8004272a4f5420aa61c82393efec359fc34,
+plus that tree. Guarded local-main advancement and normal push preserve the
+concurrent work and protected Genizah file. Publication is now verified, not
+an extension of the source critic's factual verdict.
+
+The [OT witness registry](../sources/textual_restoration/ot_witness_registry.v1.json)
+now adds the actually consulted ZVI Greek undertext, separately from ZV and the
+later Syriac overtext. Its preservation, supplied letters, edition/reprint dates,
+two folio systems, relationships, access/rights and remaining image gate are
+explicit. All43 previous row objects and the policy remain unchanged;
+only the update date and one new row differ. The row is a partial map,
+not an exhaustive source census or a new vote for an original Hebrew form.
+
+Root checks the whole rendered78r–77v spread and then magnifies the identified
+leaf through the ordinary viewer's explicit zoom control. This bounded rendered
+view does not support a defensible new glyph transcription or image-only gold
+label here. It does not show that the manuscript itself is unreadable at every
+resolution or exposure. The edition-informed reader is not an independent blind
+reference. The view returns to Fit View and is handed off; no master image,
+saved screenshot hash, generated letters or spectral reconstruction is claimed.
+ImageGen is considered but not invoked to manufacture evidence.
+
+The registry schema and semantic checks pass, as do all54 existing registry
+tests in5.133s. The old aggregate command reports six canonical-baseline drifts
+in unchanged Genesis/Exodus/Deuteronomy/Samuel/Psalms comparison packets. A
+baseline/current check confirms both registry versions pass and the six errors
+are independent of the added row. No old receipts are repinned and no whole
+aggregate-validator success is claimed. These tests check record integrity,
+not Greek decipherment, textual priority or translation optimality.
+
+The next primary acquisition seeks the actual Ambrosian Syrohexaplaric39:29
+page and marginal attribution behind Field's Spirit report. It is distinct
+from the already consulted Peshitta and does not multiply those dependencies
+into independent Hebrew witnesses. The PDF skill guides visual consultation;
+the documentation skill preserves partial attestation and publication limits.
+No source consonants, pointing, canonical English or canon decision changes.
+The all-OT comparison and calibrated damaged-image goals remain incomplete.
+
+The bounded independent factual review passes the new registry row at SHA256
+194c1483d4a4e2f5a20334acfc30be37772e3616cd0ead894aec636749758508,
+including schema, preserved previous rows, manuscript grouping, dates,
+preservation and folio mapping. It independently checks the live manifest but
+does not independently verify root's past viewer execution. Aggregate baseline
+drifts, historical priority, census completeness and publication are outside
+this PASS. No repeated source-priority vote is added.
+
+### 2026-10-13 — AI image recovery investigation and measured spectral tests
+
+At the maintainer's explicit request, the
+[AI recovery report](AI_MANUSCRIPT_RECOVERY_2026-10-13.md) develops the imaging,
+fragment-joining and constrained-completion route with a consequential biblical
+target queue. It documents current primary research, generative image/video
+limits, contamination controls and the evidence needed for a discovery claim.
+The active priorities now link to this bounded track.
+
+A pinned Qumran Segmentation Dataset check verifies 100 released masks and
+reproduces the published MTEM ink/parchment and Otsu parchment metrics. A fresh
+two-band random-forest experiment then trains on one fragment and evaluates
+the other 19 using actual 16-bit spectral data. Compared with its single-band
+baseline, it reduces false ink by 60.1%, but underperforms published MTEM and
+fails the difficult region and two empty-reference controls. This is useful
+negative development evidence, not a deployable recovery model or a new reading.
+Two scripts, full numeric results and four focused metric tests preserve the
+experiment without importing custodial images into Git.
+
+One actual built-in ImageGen edit sharpens a Leningrad control's appearance but
+changes framing at the lower writing. Its prompt, source/output hashes and
+limits are recorded; the labeled diagnostic remains local and is excluded from
+transcription and source selection. The existing character-label disagreement
+is not reopened. The write-page and imagegen skills support documentation and
+this explicitly non-evidentiary test.
+
+The actual Zuqnin 107r-106v study JPEG is also acquired and inspected as an
+overview. Its 5000 by 3976 received pixels are fewer than the manifest's
+8168 by 6495, and the display resizes it further. No new Greek glyph, spectral
+exposure, Hebrew restoration or English revision is claimed. The next source
+attempt requires column registration and better measured views of surviving
+undertext; absent parchment and the unattested 39:29 slot remain absent.
+
+### 2026-10-13 - Native recovery target acquisition and correspondence
+
+The [native-image follow-up](NATIVE_MANUSCRIPT_RECOVERY_2026-10-13.md) acquires
+the alternate Zuqnin 107r capture and 1400-square IIIF regions. The examined
+regions do not yield a secure Greek sequence or column registration; a separate
+visual observer identifies watermark contamination and abstains from reading.
+Indexed historical-microfilm records and later bibliography provide better
+acquisition/novelty leads, not newly consulted photographs or editions.
+
+For 4Q122, the public viewer's native level now supplies four 512-square tiles
+per color/infrared exposure, resolving the earlier 1200-pixel-preview limit for
+the target region. Two tools and complete receipts preserve acquisition and
+numeric correspondence. An affine fit on the left tile column places 129 of
+139 held-out matches in the right column within three native pixels. Large
+outliers are retained; the regional pass is not character recognition.
+
+All eight tiles were visually inspected. No new biblical letter or change to
+the conventional identification is accepted. The unusual word-internal space
+was already published; exact DJD consultation and historical/associated-scrap
+comparison are the next priority. Four focused pyramid tests pass locally.
+The PDF and documentation skills support source consultation and reporting.
+The breakthrough objective remains active and unachieved; no canonical text,
+witness inventory count or English wording changes.
+
+### 2026-10-14 - 4Q122 historical photographs and associated scraps
+
+The [historical-state report](4Q122_HISTORICAL_STATES_2026-10-14.md) records actual
+acquisition of PAM 41.933 (January 1956) and 43.291 (February 1960) infrared
+negatives as previews and ten native-level tiles. Reading the public catalogue's
+second API page located the earlier photograph; all 13 returned image records
+are preserved. The institutional photographic inventory was directly consulted.
+Four further catalogue scraps were inspected in modern color/infrared previews.
+
+A bounded image-only observer supplied explicit shape candidates and abstentions
+for fragments 35 and 37 without a proposed passage. Infrared clarifies existing
+strokes but supplies no securely new letter in this pass. Historical placement
+of fragment 25 beside the main fragment is not a new join. Mixed plates contain
+multiple manuscripts. A 46-asset hash receipt preserves acquisition, not custody
+or independent textual attestation; copyrighted photographs remain uncommitted.
+
+The attempted new-letter recovery remains unsuccessful. Exact DJD IX readings
+and fragment mapping are still unconsulted, so novelty and reassignment claims
+remain unavailable. No source text, English, accepted transcription, or witness
+count changes. The next attempt should obtain that discriminating edition input
+or move to a target with a consultable edition and measured imagery. The overall
+breakthrough goal is not complete.
+
+### 2026-10-14 - Codex Ephraemi Job leaf feasibility
+
+The [Job image report](EPHRAEMI_JOB_IMAGE_FEASIBILITY_2026-10-14.md) maps folio 33
+to the directly consulted 1845 edition, printed pages 7 and 8, and Gallica
+views 78 and 79. Twelve original responses and three edition renders have
+hashes and acquisition records. Actual photographs include two full-page
+viewer exports and four half-scale recto regions, not a spectral dataset.
+
+The lower verso has faint undertext-like marks, but no secure new letter or
+mapping to the edition's wholly missing line. The root reader was not blind;
+the separate image-only observer could not access the tab and abstained
+without an observation. No consensus or decipherment is claimed.
+
+Later fluorescence and multispectral work makes better imaging a concrete
+lead, while also preventing novelty claims against Tischendorf alone. The
+target-specific modern Job apparatus and spectral captures remain unacquired.
+The next experiment requires one of those inputs, not generative completion
+of the expected verse. No source, English or accepted witness count changes.
+The breakthrough objective is still unachieved.
 
 ## Later About-page summary — proposed, not published
 

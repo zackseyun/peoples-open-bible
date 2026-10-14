@@ -2,6 +2,122 @@
 
 ## Decision
 
+Session addition, 2026-10-13: pursue the bounded
+[AI manuscript recovery investigation](AI_MANUSCRIPT_RECOVERY_2026-10-13.md).
+It adds an executable spectral-image feasibility track and explicit completion
+methods alongside the source questions below. Prioritize measured ink recovery,
+especially the Zuqnin undertext, and test generative outputs as hypotheses or
+display artifacts. Existing failed controls and source/application gates remain
+in force; this track does not claim a newly deciphered biblical reading.
+
+Measured follow-up in the same session: [native target acquisition](NATIVE_MANUSCRIPT_RECOVERY_2026-10-13.md)
+now supplies 4Q122 color/infrared target tiles with a passing regional
+correspondence check. Within this imaging track, prioritize historical plates
+and associated-scrap identification next. Zuqnin's inspected regions yielded
+no secure Greek sequence; seek better captures or a column locator before
+investing in model training. Neither result is a new accepted reading.
+
+The [historical-state follow-up](4Q122_HISTORICAL_STATES_2026-10-14.md) has now
+acquired 1956/1960 infrared plate regions and inspected four additional 4Q122
+catalogued scraps. No extra letter or join is accepted. The next discriminating
+input is the consulted DJD IX fragment map and apparatus, not another preview
+reading. If that remains unavailable, prefer a target with measured images and
+an accessible critical edition; do not present catalogue grouping as a join.
+
+The [Ephraemi Job feasibility pass](EPHRAEMI_JOB_IMAGE_FEASIBILITY_2026-10-14.md)
+locates folio 33 in Tischendorf's actual edition and acquires Gallica photographs.
+No new reading is accepted. The historical gaps now have concrete locators, but
+the modern Job apparatus and target-specific spectral images remain the inputs
+that could change the result. Do not repeatedly reread the same export or treat
+an old edition's blank as proof of present-day novelty.
+
+The subsequent Ephraemi access check found a material limit: a consulted 2021
+study describes the then-existing multispectral set as NT-only. Current Job
+coverage must be established, not assumed. The alternate Gallica substitute
+scan of 33v was also acquired and inspected without a new accepted letter;
+repeat enlargements of these two exports are not the next experiment.
+
+Current direction, reset 2026-10-12: prioritize consequential unresolved textual
+history and meaning questions, not the number of edited sentences, registry
+entries, tests or commits. The [replacement objective](TEXTUAL_RESTORATION_RESEARCH_LOG.md#objective-and-current-assessment)
+controls continuation. The dated queues below remain evidence-linked history
+and a source inventory, not instructions to resume every old small-case task.
+Preserve existing manuscript, application and publication safeguards.
+
+## Active research portfolio
+
+Keep at most these three questions active; pursue Ezekiel first. Other cases,
+including NT questions, remain parked unless new evidence is more discriminating.
+
+### Lead Ezekiel 36 to 39 and Papyrus 967
+
+Does the reported36:23b/c–38 minus and36→38→39→37 order represent a shorter
+Hebrew literary form, Greek-stage editing, or copying loss/rearrangement? The
+answer matters to the relationship between renewal, resurrection and national
+restoration, not merely a word choice. These differences are already known in
+scholarship. The [current comparison](EZEKIEL_36_LONGER_FORM_EVIDENCE_2026-10-12.md)
+adds project-level checks: Mas1d publishes surviving new-heart words in the longer
+passage, while parts of adjacent spirit wording are supplied. The complete
+Patmore author chapter challenges automatic shorter-text priority; copy age
+and coexistence alone do not decide earlier literary development.
+
+Next acquire the exact original Greek transition, its physical continuity and
+clause endpoints, then test the proposed omission mechanism and versional
+relationships against the original arguments. Institutional P967 holdings and
+ordinary accessible editions are realistic routes, not guaranteed access.
+The Scheide Archive copy is restricted and the papyri.info route gated; do not
+repeat or bypass them. A discriminating result would constrain whether the
+minus is physically continuous, explain a concrete loss/reordering mechanism,
+or identify genuinely independent early support for a literary form. Continuity
+alone would exclude a modern physical lacuna, not an ancient copying omission.
+Stop the acquisition pass at a verified target or distinct access blocker;
+retain HOLD if the evidence cannot distinguish the histories. Do not spend the
+next pass on the three known note anchors.
+
+### Reserve Jeremiah literary forms and oracle order
+
+Which bridge, title and ordering differences support literary revision rather
+than translation or later rearrangement? Resolving that could change how a
+critical edition presents the book's competing forms. The
+[existing comparison](JEREMIAH_ORACLES_ORDER_COMPARISON_2026-10-06.md)
+already maps nine blocks and25:13; Qumran fragments do not attest the whole
+oracle order. Greek-priority and later Greek-reordering explanations remain live.
+Missing evidence is the passage-specific Göttingen/Hebrew University apparatus
+and an independently testable early ordering or title witness. The editions
+are identified, but target access is not established. Activate only on a new
+target-access lead; stop without one. A decisive hand, bridge or ordering
+attestation must distinguish the directions, not merely show thematic coherence.
+
+### Reserve Deuteronomy 32 divine world language
+
+Can early independent readings distinguish a divine referent from Israel,
+and inherited wording from adaptation at32:8 and related song passages? This
+could affect the poem's portrayal of divine allocation and its literary setting,
+without settling theology or later canon. The
+[existing triage](DEUT32_8_EVIDENCE_TRIAGE_2026-09-06.md)
+already weighs the divine-referent proposal; complete-phrase preservation and
+some correction states remain qualified. Missing evidence is adjacent modern
+Greek apparatus with hand distinctions and a passage-specific4Q37 adaptation
+argument. Access is conditional on a genuinely new apparatus/image route.
+Inherited divine wording, harmonization and excerpt adaptation must all be
+tested. Activate only for that evidence; stop with a precise HOLD otherwise.
+Do not repeat completed Fouad/image work or failed previews.
+
+### Evidence and efficiency rules for this portfolio
+
+Obtain actual target wording, an edition/plate, verified survival, a neglected
+witness alignment, or a test separating transmission explanations before more
+infrastructure. Catalogue metadata is only an access milestone. Use one bounded
+critic for substantive results, not an agreement loop. Fresh-image discovery
+gets a bounded feasibility track only with real pixels and frozen defensible
+controls; measure accuracy and abstention before claiming recovery. Independent
+model agreement is insufficient. Unresolved calibration must not block useful
+published-source research. Textual history, maintenance and novel discoveries
+are reported separately. Ancient preservation or collection placement cannot
+by itself decide inclusion in a community's canon.
+
+## Earlier decisions and long range queue
+
 Revised 2026-09-06 under [method 2.0](TEXTUAL_ADJUDICATION_METHOD.md).
 The [approach review](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md) gives
 the current assessment and immediate delivery order. The source lists below

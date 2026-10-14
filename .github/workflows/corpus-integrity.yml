@@ -12,7 +12,9 @@ jobs:
   validate:
     name: corpus-integrity
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # Full source checkout plus corpus-wide checks can exceed 30 minutes.
+    # Preserve every integrity check; allow the complete suite to finish.
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - name: Fetch the reviewed source baselines
@@ -61,12 +63,20 @@ jobs:
           git fetch --no-tags --depth=1 origin ed0deaaff86368400e6ce9e50fbe21d97e40e06f
           git fetch --no-tags --depth=1 origin ace233821e3d699de03a8ccd68137a8f0f208021
           git fetch --no-tags --depth=1 origin b35230ab344fa58da4a034f6d598ea85db74590f
+          git fetch --no-tags --depth=1 origin 31fb6d430dde2b77899ef4c5365258d2d6836973
           git fetch --no-tags --depth=1 origin c769c858a85a6140c6b7a551855c4db1b734d0a7
+          git fetch --no-tags --depth=1 origin c62b1903963cfafce58b9a87770994e4d0a1df4b
+          git fetch --no-tags --depth=1 origin 324d1a56295e84cc5976be0501702adcbd16a13c
+          git fetch --no-tags --depth=1 origin 7f4381b74becaae410273b245abab71aba009e9d
+          git fetch --no-tags --depth=1 origin 6017ffa06c1fc8eee2247ce01308df131fcfc557
+          git fetch --no-tags --depth=1 origin e1724eaed82b1e0e655825ecd11519bd06271fa8
+          git fetch --no-tags --depth=1 origin bb6ecf093ec3eef60e6958c73c10890139505dfd
+          git fetch --no-tags --depth=1 origin 1c388ebf7b81430b6dbf56575de3b3604ba77804
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: Install validator dependencies
-        run: python -m pip install 'PyYAML>=6,<7' 'jsonschema>=4,<5' 'python-dotenv>=1,<2'
+        run: python -m pip install 'PyYAML>=6,<7' 'jsonschema>=4,<5' 'python-dotenv>=1,<2' 'Pillow>=11,<13'
       - name: Validate catalog and numbering
         run: |
           python tools/extra_texts/validate_catalog.py --all
@@ -81,11 +91,19 @@ jobs:
           python tools/lint_psalm_numbering.py --strict
       - name: Validate the complete reader corpus
         run: python tools/validate_reader_corpus.py --quiet --malformed-yaml error
+      - name: Test historical source-review boundaries
+        env:
+          PYTHONPATH: .
+        run: |
+          python -m unittest discover -s tests -p 'test_historical_archive_review.py'
+          python -m unittest discover -s tests -p 'test_historical_scan_review.py'
       - name: Test reader notes and consultation policy
         env:
           PYTHONPATH: .
         run: |
           python -m unittest discover -s tests -p 'test_reorientation_policy.py'
+          python -m unittest discover -s tests -p 'test_repentance_reassessment.py'
+          python tools/repentance_reassessment.py --check
           python tests/test_audit_footnotes.py
           python -m unittest discover -s tests -p 'test_reader_footnote_export.py'
           python -m unittest discover -s tests -p 'test_ot_selected_source_redraft_guard.py'
@@ -97,6 +115,7 @@ jobs:
           python -m unittest discover -s tests -p 'test_deuteronomy33_2_application.py'
           python -m unittest discover -s tests -p 'test_exodus4_24_26_application.py'
           python -m unittest discover -s tests -p 'test_ezekiel28_reader_application.py'
+          python -m unittest discover -s tests -p 'test_ezekiel39_reader_application.py'
           python -m unittest discover -s tests -p 'test_daniel7_reader_application.py'
           python -m unittest discover -s tests -p 'test_proverbs30_3_reader_application.py'
           python -m unittest discover -s tests -p 'test_isaiah21_8_reader_application.py'
@@ -112,11 +131,14 @@ jobs:
           python -m unittest discover -s tests -p 'test_nahum_reader_application.py'
           python -m unittest discover -s tests -p 'test_nahum1_5_earth_reader_application.py'
           python -m unittest discover -s tests -p 'test_habakkuk1_5_reader_application.py'
+          python -m unittest discover -s tests -p 'test_habakkuk2_reader_disclosures.py'
+          python -m unittest discover -s tests -p 'test_habakkuk1_17_reader_disclosure.py'
           python -m unittest discover -s tests -p 'test_joel2_23_reader_application.py'
           python -m unittest discover -s tests -p 'test_eleven_compound_reader_application.py'
           python -m unittest discover -s tests -p 'test_wlc_paragraph_positions.py'
           python -m unittest discover -s tests -p 'test_export_wlc_layers.py'
           python -m unittest discover -s tests -p 'test_qdr_reference_annotations.py'
+          python -m unittest discover -s tests -p 'test_greek_catalogue_screen.py'
           python -m unittest discover -s tests -p 'test_published_parallel_index.py'
           python -m unittest discover -s tests -p 'test_haggai_book_context.py'
           python -m unittest discover -s tests -p 'test_proverbs30_1_ctat.py'

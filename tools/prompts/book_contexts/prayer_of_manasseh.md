@@ -38,4 +38,4 @@
 - **τὸ ἔλεος** (v.7, v.14) — "mercy" consistently; God's covenant-loyalty dimension should be felt.
 - **φρίξει** / τρέμει (v.4 "trembles") — cosmic fear before God, not human fright.
 - **κλίνω γόνυ καρδίας μου** (v.11) — literally "I bend the knee of my heart." Preserve the metaphor verbatim; do not paraphrase to "I humble myself."
-- **ἔθηκας μετάνοιαν** (v.8) — Under the 2026-10-11 policy, render with reorientation toward you in this direct prayer. Preserve the negation: the verse says God did NOT appoint it for the righteous patriarchs, but did appoint it for the speaker. Do not add a paradox by dropping the negative.
+- **ἔθηκας μετάνοιαν** (v.8) — Under the 2026-10-13 reassessment, use repentance without adding toward you to the noun in this direct prayer. Preserve the negation: the verse says God did NOT appoint it for the righteous patriarchs, but did appoint it for the speaker. Do not add a paradox by dropping the negative.

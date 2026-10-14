@@ -1,0 +1,312 @@
+# Ezekiel 36 omission and chapter order arguments
+
+Direct reading of Tov and Spottorno makes the shorter/longer-form question more
+testable, not settled. Literary expansion has substantive linguistic support;
+ancestral copying loss has a concrete, assumption-dependent reconstruction.
+Retain POB's Hebrew form provisionally, keep historical priority on HOLD, and
+make no source, English, note or canon change. These are published arguments
+newly consulted by POB, not new discoveries or recovered ink.
+
+## Literary expansion argument
+
+Tov's complete [author-uploaded revised essay](https://www.academia.edu/29064229/54_Recensional_Differences_between_the_MT_and_LXX_of_Ezekiel_ETL_62_1986_89_101_Revised_version_Emanuel_Tov_The_Greek_and_Hebrew_Bible_1999_397_410),
+*The Greek and Hebrew Bible* (1999),397–410, was read directly by root and a
+read-only source agent. The original1986 printing was not acquired. The HTML
+degrades Hebrew typography; no clean diplomatic glyph verification is claimed.
+
+Tov argues that a relatively literal translator is unlikely to explain the
+general shortening. His36:23c–38 discussion,408–409, combines pre-Hexaplaric
+P967, the reported Old Latin minus, Jeremiah-like vocabulary, unusual Hebrew
+forms and dependence on surrounding material/11:19. Note17 proposes comparing
+revision vocabulary, including the treatment of Adonai at36:33,37. His conclusion
+is conditional on the witnesses and textual interpretation. The essay's ordering
+discussion concerns chapter7, not the36→38→39→37 sequence. It supplies neither
+transition pixels nor an ancestral page-loss reconstruction. Our inference:
+general literalness makes expansion serious, but does not exclude local loss
+or a later Greek editor; literary forms should not be flattened into a composite.
+
+## Copying loss counterargument
+
+Spottorno's [original publisher PDF](https://emerita.revistas.csic.es/index.php/emerita/article/download/780/822/842),
+*Emerita*50(1982),93–98, was acquired and all six pages/notes visually read.
+The printed title ends23b–38; catalogue titles ending23b–28 must not silently
+replace it. Her argument requires more than one scribal eye-skip:
+
+| Printed pages | Proposed evidence or mechanism | Material limitation |
+|---|---|---|
+|94–95|The Latin material preserves37 before40; the36 minus and wider arrangement are inferred through reconstruction.|This is her assessment, not a fresh collation or proof that later scholarship found no further evidence.|
+|95–97|An ancestor could lose one page containing the36 ending and relocate two pages of37 after the four pages of38–39.|The ancestor's format is hypothetical, not P967's observed page layout.|
+|96–97|A second proposal skips three pages and reinserts37 in the wrong place.|It needs an unsupported53-letter omission at37's end; the author explicitly acknowledges that assumption.|
+|98|Linguistic lateness of the passage need not explain the order change; accident remains possible.|She does not claim to prove the accident happened.|
+
+Her capacity calculation averages1572 letters in Ziegler's text and1451 in B:
+1511.5, rounded1512. It is an assumed page unit, not a measured lost leaf.
+Alternative one-/two-column layouts and abbreviations allow flexibility. Root
+checked the arithmetic, not the underlying independent letter counts.
+
+## What changes in the source judgment
+
+Neither an older long-form copy nor a long minus decides literary precedence.
+A loss theory must explain order and omission together, while an expansion
+theory must establish direction rather than merely identify lexical difference.
+The53-letter assumption is a concrete weakness in one loss model, not a
+refutation of every possible loss mechanism. Likewise, the Old Latin claim must
+be checked against its actual preserved leaves, reconstruction and Greek ancestry;
+do not count a reported reconstructed minus as a second direct Hebrew witness.
+
+Spottorno93 distinguishes the Princeton1938 evidence from the Madrid publication
+confirming the gap. Her note2 identifies Fernández-Galiano, *Studia Papyrologica*
+10(1971),7–64, P.Matr.bibl.1, with reported coverage28:19–43:9, although her body
+says publication1972. Preserve that bibliographic discrepancy. Extend the prior
+[Princeton-only next action](PAPYRUS_967_IDENTITY_AND_EDITION_2026-10-12.md#literary-form-and-the-next-consequential-comparison)
+to this exact Madrid edition; target leaf/page mapping remains unverified.
+
+Next test clean Hebrew/Greek vocabulary against controls, inspect the original
+Latin transition/reconstruction, and acquire the exact Madrid/Princeton target
+edition pages. Physical continuity would exclude a present-day lacuna, not loss
+in an ancestor. Stop repeated access searches without a new route. The earlier
+[Mas1d result](EZEKIEL_36_LONGER_FORM_EVIDENCE_2026-10-12.md) remains direct
+published longer-form Hebrew support, not a priority vote.
+
+## Source controls and verification
+
+Baseline is bd506434018a2f72989556c756f6c72d5948eeed. Previous receipts and the
+16 current36:23–38 source/English files remain unchanged. No new parser, registry
+row, bespoke validator or application is needed for this argument comparison.
+The PDF skill required visual reading because text extraction contains only
+rights overlays; the documentation skill keeps source arguments distinct from
+our inference and historical receipts.
+
+Publisher PDF:1155022 bytes, six pages, unencrypted, SHA256
+3b19f849657af6bd5f15a6d1b9b82f1d73954b913cd8bba261736512b7308729.
+Private path:/private/tmp/pob-ezekiel-omission.KtT7de/spottorno-1982.pdf.
+All six120-dpi renders were read, not newly restored manuscript pixels:
+
+|PDF page|SHA256 of spottorno-page-N.png|
+|---|---|
+|1|264c30f6ffb8fd450637bd50b2255a8f4bf352abcbfa29eea5deec52a83bdae3|
+|2|d115887599fc3ce6ec68510d70487d33f1612deec5d617ce434ecf1e86016102|
+|3|4a43561e1ead630cc127259291d2d64c2c6f69d11e2592a75b97c9f7716399f4|
+|4|b81cc00e085cec6645c57b7575d8416dd52a34d86604bfcc4b8a543214e1b4f4|
+|5|1fa774e7e2deda626011cfa2ef1a1b7d9463c19779a164d6c48afc845d158689|
+|6|146d72d35508ab57ddaa61696722fa2bdad4488d1cdd88c4af91eca146356ea2|
+
+The publisher supplies a CC BY-NC3.0 Spain notice; ResearchGate's differing
+license label is not used to expand rights. Raw PDF/renders stay outside Git.
+Tov is read through public author-uploaded HTML, not a downloaded PDF; no
+invented download hash, full1986-reading claim or license expansion is made.
+Publisher/JSTOR routes that do not expose article bodies are not full readings.
+The initially attempted pdftotext path and BeautifulSoup imports were unavailable;
+standard-library parsing and bundled pypdf located sources, and actual renders
+supplied the Spottorno reading. No unsuccessful extraction is credited as evidence.
+
+One bounded comparison critique passes the report at SHA256
+e09b3d66538d475f31aa814640ec1cb68d7011572831c65398a4ce0de7c21f3f,
+independently reading the full Tov HTML and all six Spottorno pages/notes and
+verifying seven private hashes plus20 retained pins. Root verifies local file
+links, arithmetic, whitespace and the unchanged protected Genizah hash. This
+paragraph appends verification, not changed argument or source evidence.
+No new corpus tests are needed or claimed for the two-path documentation scope;
+own exact-head publication checks remain required. No exhaustive witness,
+historical-priority or optimum-English approval is implied.
+
+## Old Latin preservation and original edition check
+
+The Old Latin evidence is now more specific: Ranke's diplomatic edition
+positively reports a37:28→40:1 transition within one transcribed column. It does
+not directly attest the36 minus or establish the complete P967 chapter order.
+This strengthens the edition-level basis for one ordering difference, without
+settling Hebrew literary priority or changing POB's source or English.
+
+The [Würzburg custodial record](https://www.franconica.online/o/s/en/item/68684)
+identifies M.p.th.f.64a. Its linked Thurn catalogue,1984, printed48–49, lists
+Ezekiel24:4–21;26:10–27:4;34:16–35:5;37:19–28;40:3–42:18;38:8–20;
+45:1–46:9;48:28–35. Neither36 nor39 appears in that survival list. Listing37
+before40 alone would not demonstrate a preserved transition.
+
+The [original Ranke edition,107–108](https://books.google.com/books?id=9bNCAQAAMAAJ&pg=PA108)
+supplies stronger evidence. Printed107 labels37:19–23 and23–28. Printed108A
+continues37:28 and then the dated opening of40; its footer explicitly labels
+“XXXVII,28; XL,1–3.” The opening is in the same full-size uncial transcription,
+not merely a parallel modern text. Ranke's [preface,§5, xiii–xiv](https://books.google.com/books?id=9bNCAQAAMAAJ&pg=PR13)
+explains that conjectures in this first part use smaller characters; conjectures
+in the later comparison use oblique type. Accordingly, Thurn's starting label
+40:3 must not truncate the positive40:1–2 evidence in this edition.
+
+Ranke's [diplomatic commentary,155](https://books.google.com/books?id=9bNCAQAAMAAJ&pg=PA155),
+note108A5, attributes an omission and later compensation to the scribe. The
+note actually prints “XXXVII. et XXXVIII.”, inconsistent with the37→40 boundary;
+preserve that numbering inconsistency rather than silently substituting38–39.
+The preceding107–108 discussion explains that Ranke initially suspected a
+different scribe because of the longer lines, but abandoned that opinion after
+comparison with other pages. These are his published assessments, not a new
+hand attribution or proof of the history that produced the arrangement.
+
+The consequence is to separate three claims: a directly checked diplomatic
+37→40 transition; a36 minus requiring reconstruction; and a complete order or
+genealogy requiring additional argument. No36 words in a fragmentary survival
+list is not evidence that the intact manuscript lacked36. Nor is Latin a second
+direct Hebrew witness. Shared Greek ancestry, Greek-stage rearrangement and
+local Latin copying remain alternatives. The exact relationship to P967 and
+the reconstruction's capacity constraints remain open.
+
+Thurn points to Bogaert's1978 *Biblica*59,384–395 study. Its identity is confirmed
+by the [author's institutional bibliography,1978b](https://www.maredsous.com/the-research/pierre-maurice-bogaert/?lang=en)
+and [JSTOR42706730](https://www.jstor.org/stable/42706730), but its body remains
+unacquired. Those records cannot supply his leaf arithmetic or ancestry argument.
+Reopen for that actual argument or the original P967 transition; do not repeat
+the gated download searches without a new route. Historical priority stays HOLD.
+
+### Consultation and preservation record
+
+Root and a read-only independent checker inspected the printed target pages,
+notation and commentary through the public Google Books reader, copy9bNCAQAAMAAJ.
+Root read the complete accessible preface batchx–xiv and visually checked its
+notation passage, complete107–108 and155. Accessible OCR loses column blocks;
+the printed images, not that loss, support the transition. This is a bounded
+original-edition reading, not a full432-page reading or fresh palimpsest collation.
+The rotated marginal numerals are not assigned to manuscript folios here.
+No Ranke PDF was acquired: the different UC copy's ordinary download returned429;
+the earlier Leuven copy's403 remains a separate failed acquisition.
+
+The complete Thurn48–49 scans and their custodial sources remain outside Git in
+/private/tmp/pob-old-latin-ranke.jYqYD2/. Root verified their four SHA256 values:
+
+|Input|SHA256|
+|---|---|
+|thurn-1984-p48.jpg|90b9553fec08576c70aaebeff01dd9c95c101b2479802f3f544e0e17e8264242|
+|thurn-1984-p49.jpg|35e635f55cd7d20d7542d9f110f3b4942adb0dae6bbe200b21c03254ad0ac947|
+|thurn-manifest.json|a7106d0a5da2007e2084bb217c067ed9ceb29870aea2e5052700034bec7ca49a|
+|custodial-description.html|ed4702f9f48c8338cc9442f7946cec1dc78121eb45f5012013ef254556e0e5a8|
+
+The [institutional catalogue manifest](https://iiif.ub.uni-leipzig.de/0000034864/manifest.json)
+states CC BY-SA4.0 attribution to Otto Harrassowitz. No raw image or article is
+relicensed as POB text. No download hash is invented for browser-only Ranke pages.
+
+One bounded independent source critique passes this append at full-report SHA256
+8b3982cbdb312a9829c8b9ce754c1f3178d93874e0a67775b70aca9602efcdfe,
+checking the original target images and notation, four private Thurn hashes,
+20 retained repository inputs and the protected Genizah hash. Root independently
+verifies those inputs and clean whitespace. No new corpus-test claim is needed
+for this two-document append; its own exact-head publication checks are separate.
+
+## Contemporary omission criticism and Latin ordering limits
+
+Irwin's1943 *The Problem of Ezekiel*, complete printed62–65, supplies a
+contemporary argument against simple eye-skip. On62 note3 he estimates the
+missing passage as roughly1¾ pages of967 using Swete. This is Irwin's estimate,
+not a newly verified Filson calculation or a measurement of the lost exemplar.
+His claim that no comparable omission was known, including his report of a
+conversation with Filson, is an attributed historical assessment, not a measured
+error probability. Its force depends partly on an exemplar resembling967;
+Spottorno's different hypothetical format is not excluded by that condition.
+
+The same note continues on63 and reports36:23a immediately followed by38:1.
+Preserve his clause label rather than harmonizing it silently with later b/c
+labels. This is original scholarly testimony, not inspection of the Greek
+transition's letters or supply brackets. Irwin treats the endpoint as natural
+and combines the minus with distinctive Greek to infer a late Hebrew addition.
+Our conclusion is narrower: Greek distinctiveness does not uniquely distinguish
+Hebrew expansion from Greek revision or ancestral loss. His63–65 dating and
+canon-closure inferences depend on that unresolved step and are not adopted.
+The [surviving Masada longer-form words](EZEKIEL_36_LONGER_FORM_EVIDENCE_2026-10-12.md#surviving-hebrew-and-supplies)
+remain the direct Hebrew control; literary priority stays HOLD.
+
+The [Ranke118–119 print sequence](https://books.google.com/books?id=9bNCAQAAMAAJ&pg=PA119)
+also limits an easy equation of the witnesses. Printed118 labels42:11–14 and
+14–18;119 labels38:8–11 and12–14, explicitly referring back to108A5. These
+separate printed pages are not a same-column42→38 transition or a verified
+original folio map. They confirm the edition's later compensation discussion,
+not the full P96736→38→39→37 arrangement. Common ancestry and local Latin
+rearrangement still require discrimination. No source, English, note or canon
+change follows.
+
+### Sources and bounded consultation
+
+[UChicago's institutional edition](https://isac.uchicago.edu/publications/problem-ezekiel-inductive-study)
+identifies Irwin's1943 book and [public PDF](https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/problem_ezekiel.pdf).
+Root read all four target pages and notes in text and images, not the entire
+364-page file. The institutional page declares CC BY-NC-ND4.0; private PDF and
+renders are not imported or relicensed as POB text. Directory:
+/tmp/filson-primary-z4YoYy/.
+
+|Input|SHA256|
+|---|---|
+|irwin1943.pdf|5d32edf713d745bdf9c1b7dd6bfc05c18d953b3eb2b27fea50e6613e3f5f872d|
+|irwin-082.png printed62|b421fab54f46e0cf62b153910586282d60f021d5ec0e9a6a196a72674177acad|
+|irwin-083.png printed63|a2f88c15d6e05506520e7b20ed496f28b18f0489127589ec3c3d47458b1192a8|
+|irwin-084.png printed64|2f2430cbf4b711044ebb7825b5b26e95495c21cee27ed375b5a02e6c898d25a5|
+|irwin-085.png printed65|c5c9a79d5e01d5e27164e58dab4ddebe42cea0ababebab1a4c029a92af78f3cb|
+
+Filson's own six-page JBL62(1943),27–32 article, DOI10.2307/3262380,
+remains unacquired. The [original JSTOR record](https://www.jstor.org/stable/3262380)
+returned a client challenge, the publisher's issue returned403, and the checked
+bibliography supplied no body. Irwin's account cannot substitute for reading
+Filson's argument. These distinct routes stop here unless new access appears.
+Ranke118–119 were visually read through the same public copy as the preceding
+check; browser-only images receive no invented file hash or fresh-ink claim.
+
+One bounded independent critique passes this follow-up at full-report SHA256
+d51565149cb1cd2083d8ef8ba01696574ea2909b25834dd7e8bd0bf25c55ea9a,
+reading all four Irwin pages/notes and the Ranke labels/reference. Five private
+hashes,20 retained inputs and protected Genizah bytes match. Root reproduces
+those checks, resolves363 local documentation links and verifies whitespace.
+This validation append changes no argument; no corpus rerun or historical
+priority/application approval is claimed. PR170's frozen head is unchanged;
+these successor edits still require their own commit and publication checks.
+
+## Same codex omission control
+
+Papyrus967's12:26–28 minus is positively attested within a surviving column,
+not inferred from a present physical gap. Kenyon1937, complete printed2–3/PDF20–21,
+continues fol.11v from12:23 through13:6. At12:25→13:1 it prints unbracketed,
+undotted `λογον και ποιησω λεγει κ̅ς̅` followed by
+`Και εγενετο λογος κ̅υ̅ προς με`. The apparatus explicitly reports26–28 omitted,
+but qualifies the proposed cause: “per homoioteleuton ?” retains a question mark.
+The endpoint is a declaration formula, not the recognition formula invoked
+in the36 discussion. Do not use the shorter minus as a proven instance of the
+same recognition-formula copying mechanism.
+
+Kenyon1938, plate PDF15, labeled f.11.v. and captioned12:23–13:6, reproduces
+the same column's continuous join. Root inspected the complete plate for
+layout, using the published text for endpoint words; no fresh glyph recovery
+or calibrated transcription is claimed. The text edition marks a different
+gap after13:6 before the13:11 material on fol.11r. These two kinds of absence
+must remain distinct. No original codex-page numeral was read at the target;
+fol.11v is the observed publication locator.
+
+This is a positive control for attested omission versus physical loss, not
+for its historical cause. A continuous ancient copy can inherit an ancestral
+loss, a different literary form or versional revision. The same-codex link
+does not establish that12 and36 underwent the same process, and these two
+publications do not count as two witnesses. The chapter36 Greek transition,
+its exact clause endpoints and the versional relationships remain the
+discriminating targets. Source/English selection and historical priority remain
+unchanged; ImageGen supplies no evidence.
+
+### Control inputs and consultation
+
+The source PDFs are the existing [1937 text](https://chesterbeatty.ie/assets/uploads/2018/11/The-Chester-Beatty-Biblical-Papyti-Descriptions-and-Texts-of-Twelve-Manuscripts-on-Payprus-of-the-Greek-Bible.pdf)
+and [1938 plates](https://chesterbeatty.ie/assets/uploads/2018/11/The-Chester-Beatty-Biblical-Papyri-Descriptions-and-Texts-of-Twelve-Manuscripts-on-Papyrus-of-The-Greek-Bible-Fasciculus-VII.pdf),
+not new whole-book acquisitions. Root and a source agent visually read the
+two complete text pages with apparatus and the complete plate. The actual
+printed brackets and dots are reported without inventing a comprehensive
+editorial-sign legend. Source PDFs/renders stay outside Git; access is not
+permission to redistribute images. Private inputs under /private/tmp/:
+
+|Input|SHA256|
+|---|---|
+|pob-ra967-kenyon-vii-text.pdf|06d31bd662d388df0cc07c8f3dea6da562951c2c5b11ebd83ea46fa76791b233|
+|pob-ra967-kenyon-vii.pdf|8efe4b11bbeb3b32ae556946e98daf956c14754f8ae1fff4fa15ac4b56feb4d7|
+|pob-ra967-ezek12-control-text-20.png 150dpi|0dec6664ea1b8c7885a824e7a808d664bc03a20bde7d3d85b7842579903cb5b5|
+|pob-ra967-ezek12-control-text-21.png 150dpi|7925fda4264a8aa99a4eba4947312c690d6c7c93fe2a9d4995dd7dda740275e3|
+|pob-ra967-ezek12-control-plate-15.png 200dpi|c0b5cfda7ff4463a1997830ea0a78eaf8c8a26ef574097612bc95285ec1d4fc1|
+
+One independent critique passes this new control at full-report SHA256
+210f1c00c01dadec1d4e7bbcccb7386b4274e4092c9eb5097d04d598713dd9d2,
+reading both complete text pages and the whole plate, with five private hashes,
+20 retained inputs and protected Genizah bytes verified. Root reproduces those
+checks, resolves364 local links and checks whitespace. This is not a repeat
+of the earlier Irwin/Latin judgments; no causal or source-priority approval
+or new corpus-suite claim is implied. The successor requires its own exact-head
+publication checks.

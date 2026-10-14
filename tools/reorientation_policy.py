@@ -242,6 +242,12 @@ def patch_top_level(raw, old, new):
 
 def approved_errors(path, doc, require_exact=False):
     meta=doc.get('terminology_revision')or{}
+    if meta.get('current_policy_id') == 'repentance-contextual-2026-10-13':
+        try:
+            from tools import repentance_reassessment
+        except ImportError:
+            import repentance_reassessment
+        return repentance_reassessment.approved_errors(path, doc)
     if meta.get('policy_id')!=POLICY:return []
     text=(doc.get('translation')or{}).get('text','')
     errors=[]

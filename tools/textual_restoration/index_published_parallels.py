@@ -139,19 +139,32 @@ def index_document(raw):
     result = []
     seen_rows = set()
     seen_words = set()
+    seen_join_ids = set()
+    pending_joins = []
     for table, row in primary_rows(root):
         row_id = row.attrs.get("id", "")
         if not row_id or row_id in seen_rows:
             raise ValueError("missing or duplicate primary row ID")
         seen_rows.add(row_id)
-        word_ids = [n.attrs.get("data-word-id", "") for n in direct_text_cell(row).walk(exclude_alternatives=True)
-                    if n.has_class("word")]
+        words = [n for n in direct_text_cell(row).walk(exclude_alternatives=True)
+                 if n.has_class("word")]
+        word_ids = [n.attrs.get("data-word-id", "") for n in words]
         alternate_ids = [n.attrs.get("data-word-id", "")
                          for a in direct_text_cell(row).walk() if a.has_class("alternative-reading")
                          for n in a.walk() if n.has_class("word")]
         if any(not w or w in seen_words for w in word_ids) or len(word_ids) != len(set(word_ids)):
             raise ValueError("missing or duplicate primary word ID")
         seen_words.update(word_ids)
+        # Published pages use either stable data-word-id joins (1QpHab) or DOM
+        # span-id joins (Mas1d). Infer one consistent namespace from the whole
+        # document's actual links; do not try both independently at every word.
+        joins = {}
+        for node, word_id in zip(words, word_ids):
+            join_id = node.attrs.get("id") or word_id
+            if join_id in seen_join_ids:
+                raise ValueError("duplicate primary DOM join ID")
+            joins[join_id] = word_id
+            seen_join_ids.add(join_id)
         # The observed schema places one optional parallel row immediately after
         # its primary row. Do not infer a quotation from its links or word joins.
         body = next(c for c in table.children if isinstance(c, Element)
@@ -184,10 +197,7 @@ def index_document(raw):
                             raise ValueError("parallel word before reference label")
                         linked = node.attrs.get("data-parallel-id")
                         if linked is not None:
-                            if linked not in word_ids:
-                                raise ValueError("parallel word links outside current primary row")
-                            if linked not in group["primary_word_ids"]:
-                                group["primary_word_ids"].append(linked)
+                            pending_joins.append((group, linked, joins, word_ids))
         result.append({"column": table.attrs.get("data-name", ""),
                        "line": row.attrs.get("data-name", ""), "row_id": row_id,
                        "primary_word_ids": word_ids,
@@ -195,6 +205,17 @@ def index_document(raw):
                        "parallel_groups": groups})
     if not result:
         raise ValueError("no primary rows")
+    dom_valid = all(link in joins for _, link, joins, _ in pending_joins)
+    stable_valid = all(link in word_ids for _, link, _, word_ids in pending_joins)
+    if not dom_valid and not stable_valid:
+        raise ValueError("parallel word links outside current primary row or mixed join namespaces")
+    if dom_valid and stable_valid and any(joins[link] != link
+                                         for _, link, joins, _ in pending_joins):
+        raise ValueError("ambiguous parallel join namespace")
+    for group, linked, joins, _ in pending_joins:
+        stable_id = joins[linked] if dom_valid else linked
+        if stable_id not in group["primary_word_ids"]:
+            group["primary_word_ids"].append(stable_id)
     return {"html_sha256": hashlib.sha256(raw).hexdigest(),
             "manuscript_html_id": manuscript_id,
             "release": times[0].attrs.get("datetime", ""),

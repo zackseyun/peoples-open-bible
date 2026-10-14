@@ -440,3 +440,109 @@ thesis reading, new Filson or Lust 1981 consultation, ancestor reconstruction,
 or new P967 photograph is claimed. Crane's 266 note 415 reports a small space
 at the 39→37 transition through Johnson; that remains a reported feature,
 not an independently measured gap or proof of scribal intention.
+
+## Sahidic reading boundary and the shorter text argument
+
+The newly consulted Coptic evidence establishes a liturgical reading ending
+within Ezekiel 36:23, not another continuous Bible lacking 36:23c–38. It does
+not independently establish shorter Hebrew ancestry. Retain source/English
+and historical-priority HOLD.
+
+Crane's printed 274 note 427 cites Lust 1981 page 525 for a Sahidic manuscript
+with three Ezekiel oracles, the last listed as 36:16–23b. Crane explicitly says
+he could not obtain the manuscript, but treats its endpoint as support for
+the shorter original. The corresponding published excerpts are now directly
+accessible in [Erman's 1880 edition](https://archive.org/details/bruchstckederob00ermagoog),
+*Bruchstücke der oberaegyptischen Uebersetzung des alten Testamentes*, offprint
+pages 3–4 and 36–37. Lust's original article remains unconsulted; his precise
+claim is still mediated through Crane, not newly verified or corrected here.
+
+### Object and actual sequence
+
+Erman's manuscript D is **Oxford, Bodleian Library, Huntington 5**. His page 3
+identifies eight fragments of a liturgy, not a continuous Ezekiel codex. The
+March 31, 2021 [List of Coptic Biblical Manuscripts](https://copt-ot.adw-goe.de/documents/10231/23535/LCBM_1.0_2021.pdf/dec4f073-dbfa-4af6-9971-3b2bace5b3eb),
+page 18, maps Huntington 5 to LCBM/SMR **sa 292L** and Schüssler's Biblia
+Coptica **sa 211L**. These are two numbering schemes for one witness, not two
+independent manuscripts. The catalogue row lists NT contents; its silence
+about Ezekiel cannot negate the OT excerpts in the edition.
+
+Erman's page 4 supplies the manuscript-content map:
+
+| Manuscript pages as reported by Erman | Selected contents relevant here |
+|---|---|
+| 239–240 | Ezekiel 36:16–23, then Psalm 108:1–3 |
+| 251–252 | Jeremiah 9:7–11, then Ezekiel 21:14–17 |
+| 266–281 | Several readings, including Ezekiel 28:1–19 |
+
+Thus the three Ezekiel excerpts are not arranged in the manuscript's canonical
+chapter order. The word “last” in the mediated report must not become evidence
+for the physical sequence. Erman's printed page 37 places Amos 3 immediately
+after the Ezekiel excerpt, but this is editorial arrangement: his contents map
+identifies Psalm 108 as the following manuscript reading. Neither sequence is
+a preserved Ezekiel 36→37 or 36→38 transition. Psalm numbering is retained as
+printed, without silently converting it to MT numbering.
+
+[Bąk 2023](https://doi.org/10.31743/biban.13804), complete pages 11–12, identifies
+the same object as Cod. XX/Huntington 5 and a paper Holy Week lectionary. His
+probable twelfth/thirteenth-century dating is attributed to Schüssler, not a
+fresh palaeographic finding here. His note 56 clarifies the Holy Week setting
+of Erman's term *Osterwoche*. The precise conversion of the night-hour rubric
+to a modern civil weekday is unnecessary to the textual judgment. Bąk also
+warns that Erman's volume includes four manuscripts; not every excerpt in it
+belongs to Huntington 5.
+
+### What the endpoint can and cannot support
+
+Erman's complete printed pages 36–37 publish 36:16–23. The final line retains
+the declaration naming Adonai and the Lord after the recognition formula.
+Crane's own page 274 says P967 stops **before** that declaration. Therefore,
+their clause endpoints cannot be called identical merely because a secondary
+description uses “23b.” This comparison uses a historical printed Coptic text
+and Crane's report of P967, not a new autopsy of either manuscript.
+
+There is additional wording within the printed Coptic verse 23 whose full
+collation remains unperformed. No exact equivalence to the whole Greek or
+Hebrew verse, complete Coptic translation, or retroverted Hebrew is claimed.
+The narrowly checked endpoint and the liturgical contents map suffice for the
+present distinction: an excerpt stopping here is compatible both with selection
+from a longer Bible and with inheritance from a shorter form. It cannot decide
+between them without evidence about the parent text and the excerpt's history.
+
+The positive contribution is evidence that a reading could be treated as a
+unit ending near this point. It weakens a categorical claim that such an ending
+could never function independently, but does not prove literary completeness
+in the original book, the absence of the renewal promise from an ancestor,
+or independence from P967's Greek transmission. A medieval copy may preserve
+older material; its later date alone does not settle that question either.
+
+Crane's linguistic discussion at 270–278 remains a substantive expansion
+argument, not a new Hebrew witness. Its Greek title distinctions and Hebrew
+features overlap the [completed controls](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md).
+The Coptic lead does not turn that cluster into proof of Hebrew priority.
+Further progress requires discriminating evidence about the actual Greek
+transition, versional ancestry or direction of revision. Repeating this
+lectionary's endpoint or adding model votes will not supply it.
+
+### Consultation and reproducibility
+
+Root visually inspected the complete Erman offprint pages 3–4 and 36–37
+(PDF pages 19, 20, 84 and 87), Bąk pages 11–12, Crane printed 274/PDF277,
+and the LCBM page 18 row and headers. A source agent independently identified and inspected the Erman
+pages. The edition transmits Schwartze's nineteenth-century copies; no new
+manuscript pixels, restored letters or ImageGen evidence enter the result.
+Native extraction of the scanned Erman PDF returned blank pages, so it was
+not treated as a readable transcription. The actual page images control.
+
+| Private source | SHA256 |
+|---|---|
+| `/tmp/pob-erman-coptic.PlKLTQ/erman1880.pdf`, 1,599,015 bytes, 118 PDF pages | `17d4f34cb77adb76a4e22f1e3cac8aae14447edb861eeee7bc9707c5103388ef` |
+| `/tmp/pob-erman-coptic.PlKLTQ/bak2023.pdf` | `4e879882f65e598b40bdee894e1f8e2b9630c9d17dbc1e664eba50f08ca299bf` |
+| `/tmp/pob-sahidic-ezekiel-wrdqbq/lcbm2021.pdf` | `74ee9713b712a1a5afc34e8ad9aabdfc9a957e2e3c083b82dfdc2d6b4f1bacde` |
+
+Erman's ordinary [download](https://archive.org/download/bruchstckederob00ermagoog/bruchstckederob00ermagoog.pdf)
+and Bąk's [alternative repository copy](https://theo-logos.pl/bitstreams/6d49c910-b8b0-4668-9175-9af719aba04a/download)
+were acquired successfully; Bąk's KUL repository route returned 403. No access
+controls were bypassed. PDFs and renders remain outside Git and are not
+relicensed with POB. These checks establish a published-source comparison,
+not all-Coptic coverage or completion of the wider restoration goal.

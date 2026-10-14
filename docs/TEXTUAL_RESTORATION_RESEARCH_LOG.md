@@ -10468,6 +10468,39 @@ The next experiment requires one of those inputs, not generative completion
 of the expected verse. No source, English or accepted witness count changes.
 The breakthrough objective is still unachieved.
 
+### 2026-10-14 - Sahidic excerpt versus a shorter continuous Ezekiel
+
+The preceding Nahum reply verified an already completed application and added
+no new source evidence. This continuation returns to the active Ezekiel lead.
+PR199's exact own push/PR runs 38569359032 and 38569523767 were confirmed live;
+its reviewed head 00265405572b6ad735014dfd13fd0ce9440ede7d is not mutated.
+
+The [Sahidic comparison](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#sahidic-reading-boundary-and-the-shorter-text-argument)
+follows Crane 274 note 427 to directly consulted Erman pages 3–4 and 36–37.
+Huntington 5 is a liturgical collection: manuscript pages 239–240 pair
+Ezekiel 36:16–23 with Psalm 108:1–3. It does not preserve a continuous
+Ezekiel transition to 37 or 38. Its printed final declaration also differs
+from Crane's reported P967 endpoint. LCBM/SMR sa 292L and Biblia Coptica
+sa 211L identify the same object, not extra witnesses. Bąk 2023 pages 11–12
+provide a separate codicological description and attributed medieval dating.
+
+This yields a useful boundary attestation, not independent proof of shorter
+Hebrew ancestry. Source and English remain unchanged; earliest-form priority
+stays HOLD. The whole Coptic verse's extra wording is not silently equated
+with the Greek or Hebrew. Lust 1981 remains indirectly reported. One source
+subtask acquired the edition; one separate critic checks the resulting
+argument. No image restoration, canon claim or broad-corpus test follows.
+The three PDFs and checked renders stay outside Git, with source hashes and
+consultation limits in the existing report. No duplicate witness registry or
+new validation framework is introduced.
+
+Both PR199 own runs subsequently pass, and merge
+3e7eaa023c885e57b472c73e82aef711088820ef has the verified parents and expected
+tree. Main is updated and pushed normally. The Sahidic successor remains
+separate. Its 393 local documentation links and whitespace checks pass;
+source/translation files and the protected Genizah bytes remain unchanged.
+No new corpus-suite result is claimed for these documentation changes.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

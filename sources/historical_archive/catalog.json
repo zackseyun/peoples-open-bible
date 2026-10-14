@@ -3,7 +3,7 @@
   "collection": "historical_source_review",
   "canon_effect": "none",
   "publication_allowed": false,
-  "checked_on": "2026-10-13",
+  "checked_on": "2026-10-14",
   "works": [
     {
       "id": "book-of-mormon",
@@ -35,11 +35,12 @@
       "source_candidates": [
         "https://archive.org/details/GR_711",
         "https://www.josephsmithpapers.org/paper-summary/doctrine-and-covenants-1835/9",
-        "https://www.josephsmithpapers.org/paper-summary/doctrine-and-covenants-1835/11"
+        "https://www.josephsmithpapers.org/paper-summary/doctrine-and-covenants-1835/11",
+        "https://cdm16998.contentdm.oclc.org/digital/collection/p16998coll18/id/10166/"
       ],
-      "source_candidate_status": "Whole Newberry scan inventory and whole JSP comparison-copy inventory acquired; source-facing API review running",
+      "source_candidate_status": "All 298 Newberry leaves have actual source-only drafts and separate-model source reviews. The initial full-scope audit finished with unresolved readings and one blocked comparison stage; not an edition approval.",
       "publication_allowed": false,
-      "source_first_review": "Actual source-only Azure drafts and separate-model reviews started; full-scope adjudication and publication not complete",
+      "source_first_review": "Initial whole-copy source pass executed, not fully verified: 109 pages passed the complete source/comparison/re-review sequence without model flags, 188 retain unresolved readings, and one post-comparison stage is blocked. A source-backed spelling correction on that last page exposed a two-model false negative.",
       "opening_probe": [
         {
           "reference": "title",
@@ -61,7 +62,19 @@
         }
       ],
       "opening_probe_limit": "Two pages only; mechanical differences include OCR errors, typesetting/line joins, and possible copy differences. Not a whole-edition approval.",
-      "comparison_extraction_policy": "Printed anchors only; modern popup contents excluded; exact terminal printed-page locator excluded. Earlier comparison hashes superseded."
+      "comparison_extraction_policy": "Printed anchors only; modern popup contents excluded; exact terminal printed-page locator excluded. Earlier comparison hashes superseded.",
+      "whole_copy_audit": {
+        "physical_leaves": 298,
+        "initial_source_only_draft_and_independent_review_pairs": 298,
+        "complete_protocol_no_model_flags": 109,
+        "complete_protocol_unresolved_readings": 188,
+        "blocked_post_comparison_pages": 1,
+        "whole_work_verified": false,
+        "publication_allowed": false,
+        "local_editorial_observations": "Printed page 239 has hearken at two locations; both initial Azure models returned harken. Original model outputs retained; no false re-review approval.",
+        "report": "docs/HISTORICAL_ARCHIVE_AZURE_REVIEW_2026-10-13.md"
+      },
+      "additional_candidate_limit": "Cincinnati-hosted 1835 PDF inspected as a potential supplementary witness. Its 150-PPI monochrome text images use JBIG2; source independence and physical alignment are not automatically inferred. No new source approval or confidence promotion."
     },
     {
       "id": "pearl-of-great-price",
@@ -584,10 +597,14 @@
     }
   ],
   "model_execution": {
-    "generation_calls": 0,
-    "independent_reviewer_calls": 0,
-    "azure_deployment_configuration": "Existing review model deployments verified via Azure management plane; inference not tested",
-    "execution_blocker": "Approved AWS secret runtime helper/skill unavailable. Existing Azure keyless sign-in requires the separately requested user authorization; no credential material retrieved."
+    "generation_calls": 1051,
+    "independent_reviewer_calls": 1038,
+    "count_basis": "Lower-bound observed unique API response IDs, deduplicated across copied execution traces. Includes terminal failed/filtered responses; is not a successful-reading count, exact request total or billing proof. Unknown creation outcomes have no response ID.",
+    "unobserved_creation_outcome_attempts": 34,
+    "azure_deployment_configuration": "User-approved isolated D&C 1835 lane provisioned and verified; only optional protected-text completion blocking changed. All other filters and every preexisting deployment unchanged.",
+    "authentication": "User-approved existing Azure CLI Entra authentication, keyless; no AWS secrets or API keys retrieved.",
+    "execution_blocker": "Initial source-only reading and separate-model review cover all 298 Newberry leaves. Final comparison/adjudication remains incomplete for one page blocked by the unchanged violence filter; 188 final pages retain unresolved readings.",
+    "scope": "D&C 1835 only; other historical works do not acquire an original-source review claim from these counts."
   },
   "method": "tools/prompts/historical_source_first_review.md",
   "verification_limit": "Preparation and structural coverage do not certify translation fidelity."

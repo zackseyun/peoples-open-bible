@@ -135,3 +135,60 @@ remain a separate responsibility. JSP's linked website terms restrict reuse;
 no permission to redistribute its modern editorial material or facsimiles is
 claimed, and no new JSP image is added to the model lane. The primary remains
 the independently acquired Newberry scan of the 1835 English edition.
+
+## Initial whole-copy audit outcome - 2026-10-14
+
+The full-scope execution and bounded replacement monitor have finished. All
+**298 Newberry scan leaves (page images, including covers and blank faces)**
+have actual source-only drafts and hash-bound separate-model source reviews.
+Two recovered source-only drafts were paired with their initial reviews across
+execution-version directories by exact draft-record SHA-256, not folder names.
+
+Final source/comparison/re-review outcomes are **109 page images without model
+flags, 188 with unresolved readings, and one blocked comparison/adjudication
+stage**. These are model-assessment outcomes, not a claim that 109 pages are
+infallible or that the full book is verified. The private issue ledger contains
+856 entries across 189 pages; repeated draft/reviewer descriptions remain, so
+this is not a count of 856 distinct errors. There is no corrected whole-book
+reader publication or rights/editorial sign-off.
+
+Observed API execution is real: 313 unique draft response IDs, 738 adjudication
+response IDs, and 1,038 review response IDs were recorded, deduplicated across
+copied caches. This lower bound includes terminal failed/filtered responses;
+it is not an exact request total, a completed-reading count or billing proof.
+34 distinct creation-outcome attempts lack a response ID and remain preserved.
+The explicitly approved bounded-replacement ledger contains 30 completed
+replacement stages. Later-stage first failures were separately budgeted; an
+already failed replacement stage was not automatically posted again.
+
+The remaining Azure block is Newberry scan leaf 242, printed page 239. Its
+source-only draft and separate-model source review both completed, but the
+completion violence classifier blocked post-comparison generation at Medium.
+Protected-text matching was not the blocker here. All other filters remained
+unchanged. This stage was **not** repeatedly posted, fragmented, paraphrased,
+sent through a hidden alternate route or counted as completed.
+
+A non-generative lexical diff followed by direct full-page/native-crop
+inspection found a concrete false negative on that page: lines L005 and L010
+both contain printed **hearken**, while both initial Azure models accepted
+**harken**. The two earlier English comparisons retain the e. These are
+recorded source-backed correction observations, not altered original model
+responses, a named third-model execution or a human-editor sign-off. This
+example demonstrates why agreement between two models is not enough.
+
+A Cincinnati-hosted candidate was also inspected:
+https://cdm16998.contentdm.oclc.org/digital/collection/p16998coll18/id/10166/ .
+Its metadata and printed title indicate 1835; metadata describes No Copyright -
+United States, not a worldwide license. The acquired PDF contains 285 pages;
+its monochrome text images are 150 PPI and JBIG2-encoded, while the cover is
+color. Native image extraction did not add resolution or perform restoration.
+The candidate must not be silently treated as an independent physical witness,
+a superior scan, or a confidence promotion without physical-copy/alignment
+review. No new JSP image was brought into the inference lane.
+
+The current raw OCR edition therefore stays `ocr_unproofread`, the source-pass
+verified flag stays false, and publication stays false. A source-collated reading
+edition using documented witness readings is a different deliverable from an
+exact damaged-copy diplomatic transcript; the choice has been requested before
+changing that target. The author/audience/date/summary work is separate from
+this unfinished source-verification and corrected-reader-publication decision.

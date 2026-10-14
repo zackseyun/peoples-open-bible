@@ -10,6 +10,13 @@ especially the Zuqnin undertext, and test generative outputs as hypotheses or
 display artifacts. Existing failed controls and source/application gates remain
 in force; this track does not claim a newly deciphered biblical reading.
 
+Measured follow-up in the same session: [native target acquisition](NATIVE_MANUSCRIPT_RECOVERY_2026-10-13.md)
+now supplies 4Q122 color/infrared target tiles with a passing regional
+correspondence check. Within this imaging track, prioritize historical plates
+and associated-scrap identification next. Zuqnin's inspected regions yielded
+no secure Greek sequence; seek better captures or a column locator before
+investing in model training. Neither result is a new accepted reading.
+
 Current direction, reset 2026-10-12: prioritize consequential unresolved textual
 history and meaning questions, not the number of edited sentences, registry
 entries, tests or commits. The [replacement objective](TEXTUAL_RESTORATION_RESEARCH_LOG.md#objective-and-current-assessment)

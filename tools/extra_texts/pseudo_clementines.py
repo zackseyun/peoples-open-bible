@@ -28,7 +28,7 @@ WORKS = {
     "pseudo_clementine_homilies": ("006", "PCHOM", "Pseudo-Clementine Homilies", [22, 53, 73, 25, 30, 26, 12, 24, 23, 26, 36, 33, 21, 12, 11, 21, 20, 23, 14]),
 }
 TRANSLATION_POLICY = {
-    "status": "not_generated",
+    "status": "not_reader_published",
     "draft_basis": "Greek source text, not an existing English translation",
     "source_check": "required_before_reader_publication",
     "review_status": "not_started",
@@ -121,7 +121,7 @@ def coverage(text_id: str) -> dict:
         "last_supplied_reference": "19.14" if incomplete else str(WORKS[text_id][3][0]),
         "expected_homilies": 20 if incomplete else None,
         "supplied_homilies": 19 if incomplete else None,
-        "missing": ["remainder after Homily 19.14, including Homily 20"] if incomplete else [],
+        "missing": ["continuation within Homily 19.14 and the remaining Homilies, including Homily 20"] if incomplete else [],
         "note": "Coverage is of the supplied 1847 edition file, not a claim of manuscript collation or philological accuracy. Never generate missing Greek or English to fill this source gap.",
     }
 
@@ -212,7 +212,7 @@ def main() -> int:
     if errors:
         print("\n".join(errors))
         return 1
-    print("Greek source hashes, section inventories, licensing and translation gates validated. No English translation generated or approved.")
+    print("Greek source hashes, section inventories, licensing and translation gates validated. This source check does not generate or approve English.")
     return 0
 
 

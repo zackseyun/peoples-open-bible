@@ -10081,6 +10081,39 @@ does not independently verify root's past viewer execution. Aggregate baseline
 drifts, historical priority, census completeness and publication are outside
 this PASS. No repeated source-priority vote is added.
 
+### 2026-10-13 — AI image recovery investigation and measured spectral tests
+
+At the maintainer's explicit request, the
+[AI recovery report](AI_MANUSCRIPT_RECOVERY_2026-10-13.md) develops the imaging,
+fragment-joining and constrained-completion route with a consequential biblical
+target queue. It documents current primary research, generative image/video
+limits, contamination controls and the evidence needed for a discovery claim.
+The active priorities now link to this bounded track.
+
+A pinned Qumran Segmentation Dataset check verifies 100 released masks and
+reproduces the published MTEM ink/parchment and Otsu parchment metrics. A fresh
+two-band random-forest experiment then trains on one fragment and evaluates
+the other 19 using actual 16-bit spectral data. Compared with its single-band
+baseline, it reduces false ink by 60.1%, but underperforms published MTEM and
+fails the difficult region and two empty-reference controls. This is useful
+negative development evidence, not a deployable recovery model or a new reading.
+Two scripts, full numeric results and four focused metric tests preserve the
+experiment without importing custodial images into Git.
+
+One actual built-in ImageGen edit sharpens a Leningrad control's appearance but
+changes framing at the lower writing. Its prompt, source/output hashes and
+limits are recorded; the labeled diagnostic remains local and is excluded from
+transcription and source selection. The existing character-label disagreement
+is not reopened. The write-page and imagegen skills support documentation and
+this explicitly non-evidentiary test.
+
+The actual Zuqnin 107r-106v study JPEG is also acquired and inspected as an
+overview. Its 5000 by 3976 received pixels are fewer than the manifest's
+8168 by 6495, and the display resizes it further. No new Greek glyph, spectral
+exposure, Hebrew restoration or English revision is claimed. The next source
+attempt requires column registration and better measured views of surviving
+undertext; absent parchment and the unattested 39:29 slot remain absent.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

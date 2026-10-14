@@ -10081,6 +10081,175 @@ does not independently verify root's past viewer execution. Aggregate baseline
 drifts, historical priority, census completeness and publication are outside
 this PASS. No repeated source-priority vote is added.
 
+### 2026-10-13 — Actual Syrohexaplaric Spirit margin and its erasure
+
+The preceding goal turn made progress: PR182 was delivered, the verified ZVI
+source was added to the inventory, and PR185 was committed/pushed with its own
+checks live. The new Ceriani primary route changed the next acquisition action;
+it did not yet supply a target reading. The full goal remained active.
+
+The Ceriani1874 CPART facsimile download initially stopped with a local write
+failure after241,582,080bytes. The acquisition agent continued the same public
+object rather than treating the failure as a live process or starting a source
+search loop. Root now verifies388,371,233bytes,550PDFpages and SHA256
+9cded8247b1ec569f0cac9c728ff905ab4cdaac496f14c37a061b6fec0d5f1a2.
+The file remains/private/tmp/ceriani-syrohexapla-VilB3s/ceriani1874.pdf;
+misrecognized archive OCR supplies no reading. Public CPART metadata labels
+the scanCCBY-NC-ND3.0; no image/PDF/transcription is imported or relicensed.
+
+Root independently locates39:29 on photographed168v/PDF207, right column,
+followed on the left by40:1–16. Photographed169r/PDF206 supplies context.
+The PDF's nonascending manuscript-folio order defeats a simple assumed page
+progression; the provisional arithmetic locator is not certified. Earlier
+navigation samples and unrelated commentary pages are not target evidence.
+Title, full preface1–2, complete target/context, actual commentary111/PDF125
+and Field873 are visually read, with deterministic details retained privately.
+No whole-book collation, original-manuscript autopsy or blind recovery is claimed.
+
+The [new source comparison](EZEKIEL_39_SYROHEXAPLARIC_MARGIN_2026-10-13.md)
+distinguishes mainSyriacwrath from attributed marginalSpirit. Ceriani's39:29
+entry flags the named Spirit noun's letters on an erasure by an uncertain hand;
+it does not declare the entire main verse erased. One bounded independent
+factual reader verifies the two nouns, siglum/Field attribution and exact scope
+of that note. This changes the source-provenance precision and attestation
+qualification, not historical-Hebrew priority. Field's printed Greek and this
+Syriac source remain linked, not additional independent Greek/Hebrew votes.
+
+The [registry](../sources/textual_restoration/ot_witness_registry.v1.json)
+adds the individual AmbrosianC313 transmission with partial locus coverage,
+translation-date versus physical-copy distinction, relationships and rights.
+All44 prior row objects and the policy remain unchanged. Registry schema and
+semantic checks pass; all54 existing registry tests pass in7.841s. This is one
+current-delta run, not54 new tests or a damage benchmark. Canonical39:29 and
+protected Genizah hashes remain unchanged; source/English/priority HOLD remains.
+The PDF skill guides visual checking; the documentation skill keeps main text,
+margin, printed notes and reconstruction distinct. ImageGen supplies no evidence.
+
+PR185's exact41932ef1b66547a6e5b6d7bdae4b9576760ffc25 push job115617330693 and
+PR job115617583102 complete successfully00:59:28 and01:11:39UTC onOctober14.
+Concurrent PR184 advances main through unrelated historical-English review
+files. Fresh two-path82-addition/1-deletion scope and disjoint local union tree
+00ecce5694bad1c1488f2ce2a4e386dfdd6b6573 precede the SHA-pinned merge
+1c388ebf7b81430b6dbf56575de3b3604ba77804, parents456bf90c1f658b5a361a89085b00e1909177a94a
+and41932ef1b66547a6e5b6d7bdae4b9576760ffc25. API and completed fetch verify
+parents/tree. Guarded local main, normal push and successor fast-forward
+preserve the concurrent work and new unstaged source comparison. This successor
+still needs its own bounded document-delta check and publication validation.
+The all-OT census, calibrated recovery and best-supported corpus remain unfinished.
+
+The bounded independent written-delta review passes case SHA256
+199221de7789c950fd71ae0530325aab4cf10325bdf850b05f6b766f8860e108,
+registry115ee8dace001ee36a1ed5290fc00fe4c19dd00dc6081c2506a3d7a944491bdc,
+and pre-verification-loge1df77451eab5cf4b16dd0d71b3993857e82dee478de8284870ef1dda7c34241.
+It verifies source distinctions, the erasure qualification, rights and all44
+preserved registry rows; Git/CI chronology and reported test execution remain
+outside that source verdict. Root's local links, whitespace and retained39:29/
+protected-file checks pass. No second historical-priority vote is taken.
+
+### 2026-10-14 — Syrohexapla publication reconciliation
+
+The preceding Nahum recheck confirmed an already delivered result and added no
+new source evidence. The next action resumes publication of the actual
+Syrohexaplaric comparison. PR189's original push run38518159969 succeeded at
+head1625ab6a87a68c3be4aa1c3aa8ac5895f8a310b3, but no pull-request run was
+created while the research-log conflict prevented a merge. A current API check
+confirms the conflict and no live check on that head. Merging the updated main
+preserves both the Syrohexapla chronology and the independently added AI image
+experiments, alongside all concurrent corpus work. The resulting head requires
+its own push and pull-request validation before publication.
+
+The completed Ceriani acquisition receipt also confirms a successful ordinary
+resume of the same public object after the initial local-write failure. Its
+MD5 is ffc4106d70db8e779381338680a5ea75, matching the archive metadata; the
+full-file SHA256 and source judgment above are unchanged. This acquisition
+detail supplies reproducibility, not another textual witness.
+
+All54 existing registry tests pass in5.888seconds after reconciliation. The
+three-path delta against updated main passes whitespace checks; the older
+branch-to-merge check also reports pre-existing Markdown hard-break whitespace
+in main's unrelated repentance report, which is preserved. The reviewed source
+case and registry retain their exact hashes, as do canonical39:29 and the
+protected untracked Genizah file. No new source judgment is inferred from these
+implementation checks.
+
+### 2026-10-14 — Cryptoferratensis Greek target edition
+
+The preceding Nahum audit repeated an already completed article/application
+result and is classified as no new research progress. A distinct primary
+acquisition now advances the Greek witness comparison: Cozza1867, printed147 /
+PDF243, publishes Ezekiel39:29 with `εξεχεα τον θυμον / μου` undotted in the
+decisive noun. Its explicit notation marks unreadable or doubtful text with
+dots, and the surrounding verse remains incomplete. The
+[source report](EZEKIEL_39_CRYPTOFERRATENSIS_2026-10-14.md) records the complete
+target, notation, relevant annotation page, shelfmark and acquisition receipt.
+The printed footer corrects an initial OCR-derived locator; this is an
+edition reading, not new palimpsest decipherment or restored Hebrew.
+
+The Greek noun supplies individual-witness provenance beyond the previously
+consulted selected Greek editions and Syriac-mediated attribution. Agreement
+does not establish genealogical independence or distinguish Hebrew revision
+from Greek interpretation. POB39:29 retains exactly its Hebrew, Spirit English,
+temporal connection and qualified alternative notes. The registry adds one
+bounded Greek witness, preserving all45 prior rows and policy;46 registry
+entries are not a census of every surviving OT manuscript. All54 existing
+registry tests pass in5.970seconds, and source/PDF metadata checks and protected
+file hashes pass. No new validator or canonical test is needed for this
+published-source addition.
+
+The PDF skill governs complete-page visual checks; the writing skill keeps
+claims tied to exact sources and limits. A single factual critique checks the
+new result, not historical priority by repeated model vote. PR189's earlier
+head8b19659 remains frozen while its confirmed live push job115800365484 runs;
+this new result is still uncommitted pending that job and publication
+reconciliation. The source contribution and repository delivery are separate.
+
+A bounded image-target check also reads Albrecht and Faraggiana di Sarzana's
+[Taurinensis C.V.25 study](https://austriaca.at/0xc1aa5576%200x003e8cc1.pdf),
+printed355–372. The source agent reads all18 pages; root visually checks356,
+359 and366. The incomplete Sirach3:1 heading `Περὶ π[…]σαν` on366 belongs
+to photograph33 in the coverage table, not an automatically reconstructed
+title about honoring parents. Page356 lists eight public before/after image
+pairs, none numbered33. The cited ICCU album failed to load; no target image
+or spectral channels were acquired. This is an acquisition-gated lead, not
+an active computational experiment or a newly recovered reading. Keep it
+parked until a distinct target-image route is available. The private article
+SHA256 is e223dcfefb19b66c0e7b1c30e5daa5186850e45afec04c2f0b5dd05850d32a30.
+
+Root subsequently reads complete361–362, including notes50–59, against the
+current POB Ecclesiastes2:26 record. The authors print Ra3010's
+`σοφίαν καὶ γνῶσιν καὶ ἐπιστήμην`, replacing the usual third gift,
+`εὐφροσύνην`, with understanding. They report six other copies with related
+marginal or combined readings and, following Gentry, associate the variant
+with Symmachus and Hexaplaric transmission. These reported copies are not six
+newly collated independent Hebrew witnesses; Gentry's actual apparatus remains
+unconsulted. The coverage table maps2:26 to photograph13, outside the eight
+listed public pairs, although356 reports its earlier publication in2002.
+POB's declared WLC has חָכְמָה, דַעַת and שִׂמְחָה and renders wisdom, knowledge
+and joy. This is a substantive Greek difference, but the available evidence
+does not warrant replacing the Hebrew joy expression or POB's English.
+The canonical file remains SHA256
+f51ac6dc3cca7e4fa84bae94fd274dfd74aa009f69e18f15bfcab0828d52e6b9.
+Reopen for the actual target apparatus and manuscript context, not another
+vote on the same reported variant. No canonical edit or new test is added.
+
+The bounded independent Cozza critique passes the report and registry row,
+including all six source pages, exact locators, notation and target reading.
+It independently verifies all45 preserved rows, schema and semantic checks,
+and the PDF hashes. It supplies no historical-priority or publication approval.
+The report remains SHA256
+d75b61a8996a96cbcb1ca774da44b28cbeb001bef340a666159fdc3a0d867ce6;
+the registry remains fbd2b5a809c3f7d013dae7b895a673bfecd0c29f0491198c28def50c8157ecf2.
+
+Run38548487970 subsequently completes successfully at frozen head8b19659.
+Only then is the new source work committed as1468eecf411b4387ec124c7cdb68b92a1d263ab2.
+Reconciliation with main51c0cf943dff0e55e4614007ed43e3765b9eb24a preserves
+both research chronologies and moves this branch's publication history beside
+its source entry, avoiding competing additions immediately before the About
+placeholder. All54 registry tests pass again in5.369seconds. The four-path
+delta against main passes whitespace checks; the source reports, canonical
+Ezekiel/Ecclesiastes records and protected Genizah file retain their hashes.
+The combined head still requires its own push and PR checks before merge.
+
 ### 2026-10-13 — AI image recovery investigation and measured spectral tests
 
 At the maintainer's explicit request, the

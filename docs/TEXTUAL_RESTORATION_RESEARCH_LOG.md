@@ -10073,6 +10073,14 @@ the documentation skill preserves partial attestation and publication limits.
 No source consonants, pointing, canonical English or canon decision changes.
 The all-OT comparison and calibrated damaged-image goals remain incomplete.
 
+The bounded independent factual review passes the new registry row at SHA256
+194c1483d4a4e2f5a20334acfc30be37772e3616cd0ead894aec636749758508,
+including schema, preserved previous rows, manuscript grouping, dates,
+preservation and folio mapping. It independently checks the live manifest but
+does not independently verify root's past viewer execution. Aggregate baseline
+drifts, historical priority, census completeness and publication are outside
+this PASS. No repeated source-priority vote is added.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

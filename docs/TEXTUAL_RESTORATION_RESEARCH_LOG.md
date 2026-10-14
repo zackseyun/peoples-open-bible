@@ -9951,6 +9951,77 @@ pages/rights notice and verifies their hashes. Publication chronology, remote
 CI and census completeness are excluded from that factual verdict. No repeated
 priority vote, new framework or corpus-specific test suite is added.
 
+### 2026-10-13 — Actual Zuqnin Greek renewal text acquired
+
+The preceding official-data/source-coverage delta is committed and pushed as
+b894b389dc519a474d3b4aa22a33c284387173a1, PR181, with two documentation paths
+and141 additions. Root verifies378 local file links, the empty XML division,
+whitespace and retained39:29/protected Genizah hashes. Its own PR job115574468885
+completes successfully22:55:16UTC; push115574031340 remains authoritatively live.
+The revision is not treated as merged or approved by the earlier PR180 checks.
+A separate successor branch preserves the frozen PR181 head while source work
+continues. The mandatory PR attachment attempt returns the existing100-item cap;
+no repeated attempt or attachment removal evades that cap.
+
+Papathomas's note5 leads to a new custodial Vatican entry for ZVI's Greek
+undertext and the original Tisserant edition. The bounded acquisition agent
+obtains an unrestricted Robarts PDF; root independently reads the target,
+group introduction, conventions, title/reprint imprint and concordance.
+The [new comparison](EZEKIEL_36_ZUQNIN_GREEK_RENEWAL_2026-10-13.md)
+records actual published new-heart/new-spirit text and unbracketed36:27,
+including the spirit abbreviation, within-you wording, agency and αὐτά.
+36:28 survives only through the beginning of the people clause. Edition and
+current bound-codex faces differ; the original concordance prevents a wrong-face
+image lookup. The1911 edition's scanned physical copy is a1977 facsimile reprint.
+
+The original ZV body also excludes39:29 from this readable coverage. A malformed
+custodial39:25–24 label must not become invented25–29 attestation. Root reads
+complete printed220–221 and the274 concordance: fragments23–24 precede the
+next40:17–21 page; the first column is explicitly unreadable. No new noun or
+preposition is supplied for the target. TheGreek26–28 comparison retains all
+three current POB source/English records; source priority and the full goal
+remain open. This is new inspected evidence, not a new variant discovery.
+
+The PDF skill guides visual verification; the documentation skill preserves
+supplied-letter boundaries and both locator systems. ImageGen is considered
+but not used for textual restoration: generating pixels cannot establish
+missing letters. No external catalogue correction, image redistribution or
+canonical/source-registry change is made. The successor evidence remains
+separate from the live publication revision and requires its own bounded
+factual critique and checks before publication.
+
+One independent bounded factual critique passes the new Zuqnin evidence at
+case SHA25657d311fa04e19cb4c3b476dec3ed7b34bc9bc4a307aed1dd09fd2ccae9c9c035
+and pre-verification-log SHA256befb8b525cc1cd2804244199cb4542fb5b3cd5a5be61d118adc85ff645add6cd.
+The reviewer independently reads the complete decisive pages, key, preface,
+title/reprint imprint, concordance and public custodial HTML. Source/document
+hashes match. This is a new-source factual check, not another vote for historical
+priority; census completeness and publication/CI status remain outside its scope.
+
+Root verifies377 local file links, whitespace and the five retained target/
+protected-file hashes without adding a new corpus suite. PR181's push job then
+completes successfully23:00:27UTC on the sameb894 head. Fresh main/two-path
+scope and local union precede the SHA-pinned merge
+2324702c79e5295e7a657cf72bd5559f79811fda, parents39076a0cece2a630c8f9ea8d1793fa74ba68ea8b
+andb894b389dc519a474d3b4aa22a33c284387173a1, treede35076cec72520c15e325c07fdb41559e494e76.
+API and completed fetch verify those values. Guarded local main and normal push
+preserve unrelated work; the source successor remains a separate two-path delta
+with its own exact-head checks required, not approved by its parent's success.
+
+Root separately resolves current78r in the official
+[IIIF manifest](https://digi.vatlib.it/iiif/MSS_Vat.sir.162/manifest.json):
+canvasesp0164/p0165 identify78r–77v and its02.wl.0000 capture. The527,024-byte
+private metadata snapshot has SHA256
+5274d5385f8879dc64e7b913030926a1ce528da37875e78233b6810e6490e140,
+at/private/tmp/pob-dclp-ezekiel.podDgn/manifest.json. Both ordinary viewer URLs
+0164/0165 visibly load the identified pair. A DOM role lookup does not match
+the native thumbnail link; focused manifest-derived navigation succeeds.
+This verifies image access/identity, not whole-leaf glyph collation or a fresh
+restoration. No remote image is downloaded to evade display limits. The viewer's
+study-use/publication-permission distinction is retained, and the paired view
+is handed off in browser tab15 for the next comparison. This acquisition
+receipt is root-verified separately from the source-text factual critique.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

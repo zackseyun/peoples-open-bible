@@ -10161,6 +10161,26 @@ count changes. The next attempt should obtain that discriminating edition input
 or move to a target with a consultable edition and measured imagery. The overall
 breakthrough goal is not complete.
 
+### 2026-10-14 - Codex Ephraemi Job leaf feasibility
+
+The [Job image report](EPHRAEMI_JOB_IMAGE_FEASIBILITY_2026-10-14.md) maps folio 33
+to the directly consulted 1845 edition, printed pages 7 and 8, and Gallica
+views 78 and 79. Twelve original responses and three edition renders have
+hashes and acquisition records. Actual photographs include two full-page
+viewer exports and four half-scale recto regions, not a spectral dataset.
+
+The lower verso has faint undertext-like marks, but no secure new letter or
+mapping to the edition's wholly missing line. The root reader was not blind;
+the separate image-only observer could not access the tab and abstained
+without an observation. No consensus or decipherment is claimed.
+
+Later fluorescence and multispectral work makes better imaging a concrete
+lead, while also preventing novelty claims against Tischendorf alone. The
+target-specific modern Job apparatus and spectral captures remain unacquired.
+The next experiment requires one of those inputs, not generative completion
+of the expected verse. No source, English or accepted witness count changes.
+The breakthrough objective is still unachieved.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -10669,6 +10669,123 @@ and expected merge trees. The Nahum successor integrates those published log
 sections without dropping their content. Its earlier push head remains
 unmodified; the integrated head requires its own publication checks.
 
+### 2026-10-14 — Nahum shortened-Niphal inventory control
+
+The preceding user-facing article turn was a verified wait on the exact live
+PR206 CI handles, not new textual progress. This continuation followed the
+remaining grammatical question. PR206's frozen head was not changed; this
+successor also incorporates main's separately published PR205 changes without
+altering their scope.
+
+The [new control](NAHUM_SOURCE_COMPARISON_2026-10-10.md#short-form-grammar-control-on-october-14)
+and [receipt](../sources/textual_restoration/comparisons/nahum1_5_niphal_control.2026-10-14.v1.json)
+record independent root/agent enumerations of the written WLC/OSHB layer:
+25 selected singular Niphal forms, 24 short and one long. The 295 candidate
+words and 79 numeric lemma groups were screened by lexical root, not surface
+ending; the receipt pins all inputs and selected rows. The lone long form
+belongs to Ezekiel 16:36, correcting the 16:3 reference in Riestra's note.
+Crucially, there is no short 3fs example in this selected inventory. This
+supports a weak-verb shortening comparison without establishing the exact
+Nahum analysis or a probability of original wording.
+
+Geiger's publicly indexed relevant discussion/table is now consulted, with
+its extraction and access limits disclosed. No full PDF or visual table
+verification is claimed. The signup/purchase routes were not pursued, and no
+article text or images were imported into Git. The reproducible local count
+agrees with the indexed table, but the reason for Riestra's different total
+remains unresolved. No source/English change follows. The next priority is
+discriminating apparatus/lexical evidence, not repeating this inventory.
+The full OT comparison/restoration objective remains incomplete.
+
+One bounded independent review passed the 25 rows, 40 source hashes at the
+pinned commit, 295/79 candidate counts, zero matching nested-note words,
+root exclusions and reproduction snippet. It did not certify the inaccessible
+PDF or publication state. Root additionally checked 401 relative documentation
+file targets and whitespace; all eight Nahum application tests passed in
+1.351 seconds. The canonical verse and unrelated Genizah file retain their
+previous hashes. These checks do not establish original wording.
+
+### 2026-10-14 — Ezekiel punitive-sequence parallel test
+
+The preceding user-facing Nahum turn was a verified wait on four live CI runs
+for PR206/207 and a current-record check, not new source evidence. This pass
+returns to the lead Ezekiel question without modifying either frozen head.
+
+The [punitive-wording comparison](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#punitive-wording-a-bounded-parallel-test-on-october-14)
+tests Hunt5's scattering/few/power sequence against Deuteronomy 4:27 and
+Ezekiel 12:15–16, 5:12 and 36:19. Actual Hebrew, selected Greek and available
+Sahidic wording yield partial parallels but no identified donor for the whole
+sequence. Two manuscript-specific Deuteronomy TEIs use a different expression
+for few; the Ezekiel 12 Sahidic comparator has no declared local manuscript
+dependency and cannot be counted as an independent witness.
+
+This narrows a concrete adaptation hypothesis without deciding between an
+ancient inherited reading and later versional/lectionary change. It neither
+licenses a Hebrew retroversion nor settles P967's independent shorter-text
+question. Source and English stay unchanged. The next discriminating evidence
+is exact distinctive wording or textual relationship, not another endpoint
+or another model preference. The full OT comparison/restoration goal remains
+incomplete; no generated image has supplied manuscript evidence.
+
+Root checked all three new TEI hashes, the retained Hunt5 input, both WLC
+hashes, 401 relative documentation file targets and whitespace. Source and
+translation files are unchanged; the unrelated Genizah file retains its prior
+hash. No corpus-wide test run is claimed for this documentation-only addition.
+The bounded independent review did not return a verdict within this pass;
+further review work was explicitly interrupted and a report of already
+verified findings requested. This is not a review pass or source-priority
+approval. The new packet remains draft pending that result and its own CI.
+
+Meanwhile PR206's exact push and PR runs succeeded. It merged as
+`9ec587a5ca7c2fa489d937200f2d9aa892b3bed7`; root verified its expected parents
+and tree and synchronized/pushed main. The current successor integrates that
+merge without changing the earlier frozen PR207 head or this comparison's
+content. Publication progress is not additional textual evidence.
+
+### 2026-10-14 — Sahidic phrase-search coverage audit
+
+The preceding turn completed PR206 publication and pushed draft PR208; it
+added no new textual-priority judgment. PR207/208 remain on their exact frozen
+heads while this successor follows a more discriminating wording search.
+
+The [new coverage control](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#sahidic-phrase-search-and-coverage-control)
+acquires all 48 indexed Ezekiel chapter records for the Sahidic editorial
+basetext. Both distinctive normalized expressions occur only in the disputed
+36:23 itself. Crucially, 432 of 1,275 verse-labeled elements have no word text;
+113 contain supplements. Thus neither the chapter count nor the negative
+phrase search establishes exhaustive manuscript coverage. The receipt records
+all input hashes, missing word-text references and matches without importing
+the transcriptions. No Hebrew/English change or new restored letter follows.
+
+The earlier broad judge returned incomplete, having read the framing but not
+verified the source clauses. No PASS is inferred from it. The original Coptic
+source agent subsequently checked the preceding four-context appendix against
+its already verified TEIs and passed Coptic accuracy only, expressly excluding
+Hebrew/Greek, relative ranking, historical priority, fresh hashes and CI.
+
+A separate image-access lead was closed after visual inspection:
+[Nongbri's reproduced Scheide plate](https://brentnongbri.com/2018/07/14/a-model-of-nag-hammadi-codex-iii/)
+is labeled Plate XXXII, page 80, Ezekiel 34:14–25. The public browser image is
+355 × 1000 pixels. It is not the needed 36→38 or 39→37 transition, and no new
+glyph reading or complete-edition access is claimed. Do not repeat this route
+as if its mere accessibility resolves the transition.
+
+The full OT source/restoration objective remains incomplete. This pass changes
+the next action by exposing actual basetext coverage limits and exhausting an
+exact-phrase query over its encoded words, not by multiplying model votes.
+
+The source agent independently reproduced the 48-page index mapping, all 49
+input hashes, per-file and aggregate coverage counts, all phrase-match lists,
+supplied-source counts and the sole non-word Coptic note. Its verification is
+offline and limited to this incomplete editorial dataset; it does not establish
+donor nonexistence, manuscript ancestry or original Hebrew priority. The earlier
+four-context Coptic accuracy review and this reproducibility check are distinct
+scoped checks, not a retroactive broad PASS from the interrupted judge.
+
+Root additionally verified 403 relative documentation targets, the unchanged
+protected Genizah hash, whitespace and the printed reproduction snippet.
+No source/translation file changed and no corpus-wide test run is claimed.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

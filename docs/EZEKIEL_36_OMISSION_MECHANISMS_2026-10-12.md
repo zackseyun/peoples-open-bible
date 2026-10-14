@@ -801,3 +801,172 @@ export, privately under
 |---|---|
 | `f5b8064998e7bee0.highres` (view 187) | `771e5a69ba29cc21594b85bb8670cb75423dcfa14d3affcaa6701bdbe46e6cd8` |
 | `97670035ac9fd66c.highres` (view 188) | `b972f182a424f7b438b26a6a5d3c7a5c42f89c3ccb19da723d33bd78f159cdeb` |
+
+### Punitive wording: a bounded parallel test on October 14
+
+**Result: partial parallels, not an identified donor or a Hebrew restoration.**
+The preceding endpoint controls cannot establish Hunt5's textual ancestry.
+This pass instead compares its distinctive internal sequence with four
+candidate biblical contexts: Deuteronomy 4:27 and Ezekiel 12:15–16, 5:12 and
+36:19. These were selected for scattering, numerical reduction and recognition
+language, not as an exhaustive search of potential sources.
+
+Hunt5's [credited TEI](https://coptot.manuscriptroom.com/community/vmr/api/transcript/get/?docID=620292&pageID=2400&format=teiraw)
+at B51K36V23 has first-person future scattering of a second-person plural
+object, then the addressees becoming small/few, then an exercise-of-power
+clause, followed by recognition by all nations. Its distinctive few expression
+is `ⲧⲉⲧ︤ⲛ︥ⲛⲁⲣ̄ⲕⲟⲩⲓ̈`; the power expression is
+`ϩ︤ⲙ︥ ⲡⲧⲣⲁⲉⲓ̈ⲣⲉ ⲛ̄ⲧⲁϭⲟⲙ`.
+The earlier working English “I will scatter you, and you will become few/small,
+when I exercise my power” remains a bounded interpretation, not a certified
+translation of the entire verse. This is a new comparison of previously read
+wording, not newly discovered ink.
+
+| Candidate | Actual comparison | Limit on the ancestry claim |
+|---|---|---|
+| Deuteronomy 4:27 | WLC has the Lord scattering the addressees and their remaining few in number. The selected Greek likewise combines scattering with being left few. Two manuscript-specific Sahidic transcriptions have the same scatter lexical family as Hunt5. | The Lord is third-person subject, and the Sahidic few expression uses `ⲥⲟⲃⲕ` with a numerical expression, not Hunt5's `ⲣⲕⲟⲩⲓ`. There is no exercise-of-power clause in this verse. This is the closest checked thematic sequence, not a verbatim donor. |
+| Ezekiel 12:15–16 | WLC and selected Greek combine scattering, a surviving numbered group, and recognition of the Lord. The available Sahidic basetext also has scatter/recognition vocabulary. | The scattered people are third-person objects; verse 16 speaks of sparing people rather than telling the addressees they will become few. The Sahidic wording lacks Hunt5's `ⲣⲕⲟⲩⲓ` and power clause. The basetext does not identify its manuscript/edition dependency here. |
+| Ezekiel 5:12 | WLC and selected Greek describe punitive scattering of a portion of the people. | This does not reproduce Hunt5's few/power sequence. The Hebrew has thirds whereas the selected Greek has quarters; those are distinct readings, not interchangeable wording. This pass does not adjudicate that separate variant. |
+| Ezekiel 36:19 | In the immediate context, WLC and selected Greek describe God scattering them among nations and judging them. | This is retrospective first-person narration with third-person objects, not Hunt5's future address. Neither selected text has the few/power sequence here. Proximity alone does not prove adaptation. |
+
+The Greek controls are the publisher's Rahlfs–Hanhart 2006 text at
+[Deuteronomy 4](https://www.die-bibel.de/bibel/LXX/DEU.4),
+[Ezekiel 12](https://www.die-bibel.de/bibel/LXX/EZK.12),
+[Ezekiel 5](https://www.die-bibel.de/bibel/LXX/EZK.5) and
+[Ezekiel 36](https://www.die-bibel.de/bibel/LXX/EZK.36).
+They are selected edition readings, not an apparatus census or independent
+manuscript votes. The private Ezekiel JSON was used only to locate ordered
+surface words, then checked against the publisher; its generated analyses
+are not linguistic evidence. The local WLC controls use direct verse-word
+elements, not nested variant readings or POB's English.
+
+The two Deuteronomy transcriptions are
+[sa2001, Papyrus Bodmer XVIII, p.42](https://coptot.manuscriptroom.com/community/vmr/api/transcript/get/?docID=622001&pageID=420&format=teiraw)
+and [sa2006, Morgan M566, f.110v](https://coptot.manuscriptroom.com/community/vmr/api/transcript/get/?docID=622006&pageID=2200&format=teiraw).
+The first credits Diliana Atanassova and reviser Uwe-Karsten Plisch; the second
+credits Suzana Hodak for Deuteronomy and reviser Diliana Atanassova.
+The sa2001 header lists both joined holdings; its page is assigned to Bodmer.
+Its transcription marks supplied and unclear letters, including parts of
+the outward, leaving and number expressions. Those supplements are not
+additional surviving letters. Morgan's transcription provides the comparison
+without silently treating Bodmer's supplied letters as observed ink.
+
+The [Ezekiel 12 Sahidic basetext](https://coptot.manuscriptroom.com/community/vmr/api/transcript/get/?docID=1620025&pageID=1051012000&format=teiraw)
+has `ⲛⲧⲁϣⲱⲭⲡ` for the reserving/sparing construction and
+`ⲛϩⲉⲛⲣⲱⲙⲉ ϩⲛ ⲟⲩⲏⲡⲉ` for people in number. It is an editorial
+baseline, not an identified ancient witness. Its 2016 header supplies no local
+source dependency. The index's separate physical sa2099 lead has not been
+read at this locus and is not used to assign ancestry to this basetext.
+
+**Decision:** neither a direct quotation nor a specific conflation is established.
+Thematic resemblance is compatible with adaptation but does not prove it;
+wording differences also do not exclude loose adaptation. No checked candidate
+accounts for the complete distinctive sequence. Do not assemble disconnected
+phrases into a hypothetical donor and then count that construction as evidence.
+An unlocated donor is not positive evidence for an ancient Hebrew plus.
+Conversely, a possible liturgical adaptation would not by itself disprove
+P967's independent evidence for a shorter Greek passage.
+
+Retain POB's source and English and keep historical priority unresolved.
+Further work needs an independently located occurrence of the distinctive
+few/power wording, a demonstrated relationship between textual witnesses, or
+the missing continuous-text/critical-apparatus evidence. This finite comparison
+does not justify repeating these same four contexts, extending the endpoint
+sample, or claiming that no biblical parallel exists anywhere. No ImageGen
+output enters the evidence and no new source letters are accepted.
+
+Root read the target TEI clauses and headers and the Hebrew/Greek controls;
+one source agent separately read the Coptic comparators. Private inputs under
+`/tmp/pob-coptic-ancestry.jd3jkT/`, not imported or relicensed in Git:
+
+| File | SHA256 |
+|---|---|
+| `sa2001-p42.xml` | `fbd4ca42ba19631949033a47d095112c65a886713c1a652b208a0252ff531f12` |
+| `sa2006-f110v.xml` | `1c86b21993f034db58a854a41c61c15f6fec2f7ee27078cf05cc102ac6b86ae2` |
+| `sahidic-basetext-ezek12.xml` | `14e4ac82685adbd42631161c23b04a13687c40d743910a4447574a4842eb0b8e` |
+
+The manuscript TEIs declare CC BY-SA 4.0; the basetext declares CC BY-SA 3.0.
+Hunt5's existing hash remains unchanged. At input commit
+`59da2218dedb424b76698c9d05bed3fe9e30ee02`, WLC Deut.xml has SHA256
+`04f8087442a1e67a631cd70f2ac4e42fe0a780ae132edb165a3a29f3f290358f`
+and Ezek.xml has
+`90bf8adfa66b2f6695c702263fe668755c99c6afc386202c12de4f704f5d4e46`.
+
+### Sahidic phrase search and coverage control
+
+**The available basetext has no second exact match, but its gaps prevent an
+exhaustive Sahidic-Ezekiel absence claim.** The official
+[filtered index](https://coptot.manuscriptroom.com/community/vmr/api/metadata/liste/search/?docID=1620025&indexContent=Ezek.1.1-Ezek.48.35&detail=page&includeFeatures=Extant&format=xml)
+returns one editorial document with 48 chapter records. All 48 linked chapter
+transcriptions were acquired through ordinary public requests, using the
+already supported `teiraw` format. The
+[receipt](../sources/textual_restoration/comparisons/ezekiel_sahidic_phrase_screen.2026-10-14.v1.json)
+pins the index, every chapter URL/hash, the actual empty-reference lists and
+all query matches. No full third-party chapter text is imported into Git.
+
+Coverage matters more than the chapter count:
+
+| Measured property | Result | Meaning |
+|---|---:|---|
+| Verse-labeled `ab` elements | 1,275 | Editorial labels, not 1,275 fully preserved verses |
+| Elements with no word text | 432 | No searchable wording; inspected examples contain lacuna markers |
+| Elements with some word text | 843 | Includes partial passages and supplements, not necessarily complete verses |
+| Elements containing `supplied` | 113 | Includes material attributed to other literature |
+| `supplied` / `gap` elements | 1,176 / 515 | XML elements, not counts of lost letters or independent witnesses |
+
+For example, 36:1 and 36:30 contain only a lacuna marker within a word element;
+36:24 supplies words attributed to Shenoute. The supplied-source labels across
+the collection include transcriber, homily, Shenoute, Besa, Paul of Tammah,
+Scala and New Testament material. These labels require passage-specific
+verification before witness use; the data cannot be treated as one continuous
+ancient codex. Chapter 2 has labels through 13, whereas chapter 27 lacks a
+27:31 label. No direct WLC verse-count equivalence is assumed.
+
+The search casefolds word text, applies Unicode NFD and removes combining
+marks and whitespace. It concatenates descendant `w` text within each `ab`,
+including editorial supplements. It is substring retrieval, not morphological
+analysis. Both `ⲣⲕⲟⲩⲓ` and the exact normalized
+`ⲡⲧⲣⲁⲉⲓⲣⲉⲛⲧⲁϭⲟⲙ` occur only at **Ezek.36.23**, the disputed text
+itself. That match is not independent corroboration of Hunt5. Broader controls
+find `ⲕⲟⲩⲓ` in 12 verse elements, `ⲥⲟⲃⲕ` in one and `ϭⲟⲙ` in 30.
+These are verse-hit counts, not token counts or 30 occurrences of one lexical
+sense. Root inspected the returned contexts; none supplies the complete
+scattering/few/power sequence outside the target.
+
+The broader search adds Ezekiel 5:3 as a numerical-smallness comparator, not
+an identified donor. Its construction is taking a small number and binding
+them in the garment, not Hunt5's prediction that the addressees will become
+few. Other smallness hits include youth and relative size; those cannot be
+silently grouped as numerical reduction. Coptic text outside word elements
+was also screened: the sole flagged verse, B51K48V28, has an editorial `sic`
+correction in a note, not missed continuous text. There are no `app` elements
+in these inputs, so alternative apparatus readings are not silently counted.
+
+**Consequence:** retire a search for another identical occurrence within these
+same encoded words. Do not infer that the complete book, all orthographic
+variants or all Sahidic witnesses lack a donor. The useful next evidence is
+independently sourced missing text, a distinctive parallel in another work,
+or continuous manuscript/apparatus evidence. Source and POB English stay
+unchanged. This coverage audit is part of the all-source method: a successful
+download of every indexed chapter is not a successful comparison of every
+surviving manuscript reading.
+
+Private inputs are under `/tmp/pob-sahidic-ezekiel-search.tFdL3k/` and the
+basetext declares CC BY-SA 3.0. The exact core query can be reproduced against
+those pinned files without a parser dependency beyond Python's standard library:
+
+```python
+from pathlib import Path
+import unicodedata as U
+import xml.etree.ElementTree as E
+ns = {"t": "http://www.tei-c.org/ns/1.0"}
+terms = ("ⲣⲕⲟⲩⲓ", "ⲡⲧⲣⲁⲉⲓⲣⲉⲛⲧⲁϭⲟⲙ")
+for p in sorted(Path("/tmp/pob-sahidic-ezekiel-search.tFdL3k").glob("105*.xml")):
+    for v in E.parse(p).findall(".//t:ab", ns):
+        raw = "".join("".join(w.itertext()) for w in v.findall(".//t:w", ns))
+        s = "".join(c for c in U.normalize("NFD", raw.casefold())
+                    if U.category(c) not in ("Mn", "Mc", "Me") and not c.isspace())
+        for term in terms:
+            if term in s:
+                print(term, v.get("n"))
+```

@@ -10669,6 +10669,42 @@ and expected merge trees. The Nahum successor integrates those published log
 sections without dropping their content. Its earlier push head remains
 unmodified; the integrated head requires its own publication checks.
 
+### 2026-10-14 — Nahum shortened-Niphal inventory control
+
+The preceding user-facing article turn was a verified wait on the exact live
+PR206 CI handles, not new textual progress. This continuation followed the
+remaining grammatical question. PR206's frozen head was not changed; this
+successor also incorporates main's separately published PR205 changes without
+altering their scope.
+
+The [new control](NAHUM_SOURCE_COMPARISON_2026-10-10.md#short-form-grammar-control-on-october-14)
+and [receipt](../sources/textual_restoration/comparisons/nahum1_5_niphal_control.2026-10-14.v1.json)
+record independent root/agent enumerations of the written WLC/OSHB layer:
+25 selected singular Niphal forms, 24 short and one long. The 295 candidate
+words and 79 numeric lemma groups were screened by lexical root, not surface
+ending; the receipt pins all inputs and selected rows. The lone long form
+belongs to Ezekiel 16:36, correcting the 16:3 reference in Riestra's note.
+Crucially, there is no short 3fs example in this selected inventory. This
+supports a weak-verb shortening comparison without establishing the exact
+Nahum analysis or a probability of original wording.
+
+Geiger's publicly indexed relevant discussion/table is now consulted, with
+its extraction and access limits disclosed. No full PDF or visual table
+verification is claimed. The signup/purchase routes were not pursued, and no
+article text or images were imported into Git. The reproducible local count
+agrees with the indexed table, but the reason for Riestra's different total
+remains unresolved. No source/English change follows. The next priority is
+discriminating apparatus/lexical evidence, not repeating this inventory.
+The full OT comparison/restoration objective remains incomplete.
+
+One bounded independent review passed the 25 rows, 40 source hashes at the
+pinned commit, 295/79 candidate counts, zero matching nested-note words,
+root exclusions and reproduction snippet. It did not certify the inaccessible
+PDF or publication state. Root additionally checked 401 relative documentation
+file targets and whitespace; all eight Nahum application tests passed in
+1.351 seconds. The canonical verse and unrelated Genizah file retain their
+previous hashes. These checks do not establish original wording.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

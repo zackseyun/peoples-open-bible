@@ -166,6 +166,102 @@ application tests passed in 1.328 seconds; all 396 relative documentation
 targets resolve and `git diff --check` passes. These checks establish the
 documented scope and unchanged application, not historical priority.
 
+## Short-form grammar control on October 14
+
+**Result: the shortened Niphal proposal remains grammatically plausible, not
+established as the original reading.** A reproducible local comparison now
+replaces reliance on the reported frequency alone. No Hebrew or English is
+changed.
+
+Riestra's note 10 reports 22 singular III-y(w) Niphal wayyiqtols with one long
+form, citing Ezekiel 16:3. The actual cited word is at **Ezekiel 16:36**:
+וַ/תִּגָּלֶ֣ה, lemma `c/1540`, morphology `HC/VNw3fs`. This is a reference
+correction, not evidence against the entire grammatical proposal.
+
+Root and one independent agent separately enumerated the vendored WLC/OSHB
+written layer. Among 295 annotated singular Niphal wayyiqtols, the 79 numeric
+lemma groups yield four III-he roots. The [evidence receipt](../sources/textual_restoration/comparisons/nahum1_5_niphal_control.2026-10-14.v1.json)
+preserves every selected word, source reference, word ID, raw lemma and
+morphology, all scanned XML hashes, and the complete lemma-group audit.
+
+| Root | Short 3ms | Short 1cs | Long 3fs | Total |
+|---|---:|---:|---:|---:|
+| ראה | 20 | 1 | 0 | 21 |
+| קרה | 2 | 0 | 0 | 2 |
+| פתה | 0 | 1 | 0 | 1 |
+| גלה | 0 | 0 | 1 | 1 |
+| **Total** | **22** | **2** | **1** | **25** |
+
+The 24 short forms therefore do not supply a short **3fs** example. Their
+frequency supports the availability of shortening within this weak-verb class;
+it does not supply an exact same-person/gender/stem comparator for the proposed
+Nahum analysis. Nor is 24/25 a probability that Nahum originally had שׁאה.
+The roots and contexts differ, and the inventory inherits editorial analyses.
+Nahum's retained Qal נשׂא annotation is not reclassified to make it evidence
+for the proposed alternative.
+
+### Cited study and access limits
+
+The publicly indexed text of [Geiger's author-uploaded study](https://www.academia.edu/30216510/Wayyiqtol_Langformen_der_Verben_III_h),
+*Liber Annuus* 66 (2016), 37–67, was consulted at the relevant discussion and
+tables on pp.37–47 and summary. Its p.46 extraction gives 24 short Niphal forms
+and one long form, matching this local result; p.40 locates the long form at
+Ezekiel 16:36. The study restricts its primary inventory to the Masoretic text
+and does not adjudicate ancient textual variants. It finds tendencies, not
+a rule explaining every long form. Thus the reported 22-total figure is not
+reproduced here; the cause of the discrepancy is not established.
+
+This is **indexed-text consultation, not visual verification of Geiger's PDF**.
+The Academia full-PDF control opened a signup screen; the publisher offered
+purchase, not accessible full text. No signup, purchase or access bypass was
+attempted. Hebrew font extraction is damaged, so no Hebrew reading is taken
+from that extraction. The Brepols abstract also reverses the overall short/long
+labels relative to the author abstract and indexed body; do not import its
+headline counts as verified data. Van Pelt's dissertation remains unconsulted.
+
+### Reproduction and decision boundary
+
+The receipt pins input commit `2429ca3be526fb1d2c29455fbfa7f2233ae2dfea`.
+It scans the 39 book XML files and `VerseMap.xml`; the latter has no matching
+OSIS nodes. Root checked all 79 headwords using
+[OpenScriptures HebrewStrong.xml](https://raw.githubusercontent.com/openscriptures/HebrewLexicon/master/HebrewStrong.xml)
+(hash in receipt), for numeric-lemma identity only. Surface-final-he matching
+is not the root-selection rule. In particular, הום, חלל, חרר, מסס and שחח,
+and III-aleph roots, are excluded. The selected length classification was
+checked against the actual written forms. Homonym suffixes remain preserved.
+
+From the repository root, this read-only extraction reproduces the 25 selected
+rows without a network dependency (root identification is the separate audit):
+
+```python
+from pathlib import Path
+import re
+import xml.etree.ElementTree as ET
+
+ns = {"o": "http://www.bibletechnologies.net/2003/OSIS/namespace"}
+selected = {"c/1540", "c/6601 b", "c/7136 a", "c/7200"}
+rows = []
+for path in sorted(Path("sources/ot/wlc").glob("*.xml")):
+    for verse in ET.parse(path).findall(".//o:verse", ns):
+        for word in verse.findall("o:w", ns):
+            if (re.search(r"(?:^H|/)VNw[123][mfc]s(?:$|/)",
+                          word.get("morph", ""))
+                    and word.get("lemma") in selected):
+                rows.append([verse.get("osisID"), word.get("id"),
+                             word.get("lemma"), word.get("morph"),
+                             "".join(word.itertext())])
+assert len(rows) == 25
+for row in rows:
+    print(*row, sep="\t")
+```
+
+This closes the narrow inventory check, not the textual decision. The next
+useful input is the target critical apparatus or evidence discriminating the
+two root analyses—not another tally of these same 25 forms. The current
+pointing and “heaves” remain provisional; “is devastated” remains disclosed
+but unadopted. No new ink, ancient vowels, canon claim or ImageGen evidence
+results from the grammatical control.
+
 ## Historical scope
 
 This is a bounded published-reading comparison following the

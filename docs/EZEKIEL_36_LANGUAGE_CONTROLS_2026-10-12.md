@@ -806,3 +806,43 @@ The publisher's download endpoint returned HTTP 200 HTML with access machinery,
 not a PDF; ResearchGate explicitly reports no full text, and title/DOI/author
 searches found no lawful full copy. Stop repeating those routes. Wong's argument
 remains mediated through Lust until a distinct lawful copy becomes available.
+
+### Outpouring collocation and the limit of Hebrew retroversion
+
+A complementary check tests whether the Greek outpouring expression uniquely
+identifies Hebrew חמה. It does not. Select direct WLC verse words whose
+slash-separated lemma contains `8210`: 33 occurrences in 32 verses. Read their
+ordered Greek surfaces from the same pinned input; do not use generated Greek
+lemma labels. The Hebrew references are 4:2; 7:8; 9:8; 14:19; 16:15,36,38;
+17:17; 18:10; 20:8,13,21,33,34; 21:27,36; 22:3,4,6,9,12,22,27,31;
+23:8,45; 24:7; 26:8; 30:15; 33:25; 36:18; 39:29. The two tokens at 36:18
+concern wrath and blood; they must not become two wrath examples.
+
+| Hebrew location and noun | Greek correspondence in the pouring clause | Implication |
+|---|---|---|
+| 22:22, חמתי | τὸν θυμόν μου | The ordinary wrath correspondence supports the proposed חמה alternative. |
+| 22:31, זעמי | θυμόν μου | The same Greek noun also corresponds to a different Hebrew anger noun in an outpouring clause. |
+| 21:36, זעמי | ὀργήν μου | The same Hebrew noun has a different Greek equivalent in another outpouring clause. |
+| 7:8, חמתי followed by אפי | Greek 7:5 has ὀργήν μου in the pouring clause and θυμόν μου in the following completion clause. | Content alignment, not identical verse numbering or nearby noun presence, determines the comparison. |
+
+The publisher's Rahlfs–Hanhart text independently confirms the displayed Greek
+at [22:22 and 22:31](https://www.die-bibel.de/bibel/LXX/EZK.22) and
+[21:36](https://www.die-bibel.de/bibel/LXX/EZK.21). The chapter 7 publisher route
+was unavailable; that comparison is limited to the pinned digital text, whose
+complete 7:1–12 rows were read to locate the clause. Related printed editions
+are not independent ancient witnesses. These comparisons establish relations
+between the selected Hebrew and Greek texts, not the translator's actual exemplar.
+
+This qualifies, rather than overturns, the earlier unusual-spirit result.
+Greek wrath at 39:29 remains exceptional among the selected רוח contexts;
+חמה remains a plausible retroversion, but the outpouring formula cannot select
+that noun uniquely. Interpretation, formulaic assimilation and different
+Hebrew wording remain possible explanations, not demonstrated events. No
+Hebrew or English change follows. Further lexical counting alone is unlikely
+to decide the literary history; reopen for reading-level apparatus or a
+directly accessible argument that distinguishes those mechanisms. This
+follow-up is separate from the comparison merged in PR 196. One bounded
+independent check reproduces all 33 tokens in 32 verses and the four displayed
+alignments, including the two distinct tokens at 36:18 and the 7:8 → 7:5
+mapping. It passes without factual correction; no historical-priority approval
+is implied.

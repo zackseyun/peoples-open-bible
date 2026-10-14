@@ -10114,6 +10114,30 @@ exposure, Hebrew restoration or English revision is claimed. The next source
 attempt requires column registration and better measured views of surviving
 undertext; absent parchment and the unattested 39:29 slot remain absent.
 
+### 2026-10-13 - Native recovery target acquisition and correspondence
+
+The [native-image follow-up](NATIVE_MANUSCRIPT_RECOVERY_2026-10-13.md) acquires
+the alternate Zuqnin 107r capture and 1400-square IIIF regions. The examined
+regions do not yield a secure Greek sequence or column registration; a separate
+visual observer identifies watermark contamination and abstains from reading.
+Indexed historical-microfilm records and later bibliography provide better
+acquisition/novelty leads, not newly consulted photographs or editions.
+
+For 4Q122, the public viewer's native level now supplies four 512-square tiles
+per color/infrared exposure, resolving the earlier 1200-pixel-preview limit for
+the target region. Two tools and complete receipts preserve acquisition and
+numeric correspondence. An affine fit on the left tile column places 129 of
+139 held-out matches in the right column within three native pixels. Large
+outliers are retained; the regional pass is not character recognition.
+
+All eight tiles were visually inspected. No new biblical letter or change to
+the conventional identification is accepted. The unusual word-internal space
+was already published; exact DJD consultation and historical/associated-scrap
+comparison are the next priority. Four focused pyramid tests pass locally.
+The PDF and documentation skills support source consultation and reporting.
+The breakthrough objective remains active and unachieved; no canonical text,
+witness inventory count or English wording changes.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

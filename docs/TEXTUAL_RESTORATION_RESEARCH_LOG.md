@@ -10250,6 +10250,36 @@ delta against main passes whitespace checks; the source reports, canonical
 Ezekiel/Ecclesiastes records and protected Genizah file retain their hashes.
 The combined head still requires its own push and PR checks before merge.
 
+### 2026-10-14 — Ezekiel spirit and wind alignment control
+
+The [new translation-pattern section](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#hebrew-spirit-and-wind-translation-pattern-on-october-14)
+compares all 52 WLC lemma 7307 occurrences in 44 verses with actual contexts in
+the pinned Rahlfs digital control. Greek morphology/confidence fields do not
+supply the evidence. Root checked selected windows and complete exceptional
+rows; 35 pneuma, six anemos, one pnoe and four thymos surface matches are
+navigation counts, not automatically aligned translations. At 13:13 and 19:12,
+the three non-target thymos forms correspond to Hebrew anger expressions,
+while wind has separate wording. 39:29 remains the Spirit/wrath clause contrast.
+Multiplicity, absent clauses and the 42:18–19 directional swap prevent a
+mechanical word-by-word rule. The result strengthens the exceptional-wording
+argument without selecting different original Hebrew; current POB is retained.
+
+The comparison was prepared while the earlier source-review head stayed frozen.
+Its exact-head checks, push 38552969107 and PR 38552973983, subsequently both
+completed successfully on `104114ef1086d449bbea341f4f207e30111943d3`.
+[PR 189](https://github.com/zackseyun/peoples-open-bible/pull/189) merged as
+`9fa7d79d12745ea71cf5c52eea46ad6baa379890`; a completed fetch verifies both
+parents and an identical tree to the reviewed head. Local main was advanced
+with a guarded ref update and its normal push reports up to date. The present
+language-pattern analysis is separate successor work, not part of that merge.
+
+The full Greek input and navigation outputs stay private, with hashes, source
+URL, selection rule and complete 44-reference list in the report. One bounded factual critique is
+requested. No new validator, canonical application or full-corpus test run is
+added. A separate bounded Wong 2002 full-text search failed at the documented
+access limit; repeated publisher/ResearchGate/title searches are now stopped
+until a distinct lawful copy becomes available.
+
 ### 2026-10-13 — AI image recovery investigation and measured spectral tests
 
 At the maintainer's explicit request, the

@@ -10836,6 +10836,42 @@ for this documentation/receipt change. A separate bounded method reviewer
 did not return a verdict within this pass; further investigation was stopped
 and only already-verified findings requested. This is not an independent PASS.
 
+### 2026-10-14 — Ezekiel 5:12 quarter witness and mixed agreement
+
+The preceding Nahum turn was a current-record verification, not new source
+progress. This pass follows a distinct available edition lead within Ezekiel,
+without claiming to resolve the still-open36–39 question. The
+[comparison](EZEKIEL_5_12_QUARTERS_COMPARISON_2026-10-14.md) records newly read
+Grenfell1896 and Schironi2015 evidence for P.Grenf.I5/Rahlfs922/TM61986.
+Schironi's recto3 quarter-form is partly legible; recto1 is largely supplied.
+The papyrus combines Greek quarters with Hebrew-like sword-before-scattering
+order. Its opening punishment clauses do not survive. Actual asterisks concern
+5:14/16, not the5:12fractions; Marchalianus's inversion sign is not transferred
+to this papyrus. Earlier fuller readings reflect another observation history
+of the same deteriorating object, not an independent manuscript vote.
+
+Root used the PDF skill for complete relevant page renders and checked the
+actual WLC5:2/12rows and publisher Rahlfs–Hanhart control. One bounded independent
+source review confirmed preservation, order and sign-location boundaries.
+The report records exact consultation scopes, hashes, counterarguments and
+missing apparatus. Registry adds the object once; method2.0.7 makes feature-level
+agreement and historical observation states explicit. No source/English/note,
+canon, fresh decipherment or ImageGen evidence changes. The next discriminating
+input is target apparatus/Olley's cited argument, not another reread or vote.
+
+The source reviewer also passes the actual report/registry within that limited
+scope. Root's66 existing registry/reconciliation tests pass in5.718s; registry
+validation,439 local link targets and whitespace pass. The protected unrelated
+Genizah file retains SHA256130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50.
+No new corpus-wide test or source-priority certification is claimed.
+
+Separately, PR209's own push38599723834 and PR38599796572 checks both succeed.
+Its SHA-pinned merge produces d22656dc27d51515444836799d3b53c16a765df4,
+with verified parents9ec587a5ca7c2fa489d937200f2d9aa892b3bed7 and
+d2110e218c5f73fd822175442413ec510be072ff and expected tree
+21824f9d558473957d4a4dd21175caa254d3f5a2. The new quarter-witness work is
+separate from that completed publication and does not mutate any frozen PR head.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

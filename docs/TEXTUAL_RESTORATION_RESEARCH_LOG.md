@@ -10332,6 +10332,42 @@ up to date. The reviewed outpouring result and access limits are a separate
 documentation-only successor. They change neither canonical text nor the
 source-priority decision and require their own publication checks.
 
+### 2026-10-14 — Chapter order and limits on resurrection inferences
+
+The preceding Nahum current-state response added no new evidence. This pass
+returns to the active Ezekiel question and acquires the complete institutional
+2008 introduction identified in PDF metadata as Johan Lust's. The
+[argument comparison](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#chapter-order-and-resurrection-interpretations)
+records the source, hash, full-text reading, four-page visual check and five
+Hebrew/Greek control loci. It separates historical source preference from
+theological interpretation and corrects a printed reference without changing
+the biblical text. Source, English, notes and priority HOLD are unchanged.
+
+The ordinary JSTOR route for Lust's 1981 article still exposes no article body.
+Schwagmeier's official UZH biography identifies the dissertation but does not
+supply it; the 2008 introduction is not substituted for either missing original.
+The later study's arguments now have a direct source. Following its reference
+also locates and downloads Crane's original thesis through Murdoch's open
+repository. Direct reading of printed 305–315 reveals qualifications that an
+exclusive physical-versus-metaphorical summary would lose. The report records
+those qualifications, two full-page visual checks and the separate PDF hash;
+it does not claim to have read the full thesis. Schwagmeier remains mediated.
+Crane's actual omission/order argument at 254–270 is now an accessible next
+input. No repeat access loop, new validator, generated manuscript image or
+model-agreement campaign is warranted.
+
+The subsequent [copying-loss assessment](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#crane-on-copying-loss-and-the-latin-witness)
+directly reads Crane 254–270 and checks five complete page images. Comparison
+with original Spottorno 94–95 identifies a limit in his criticism of her Latin
+witness treatment; his own note records that he lacked her article. The report
+also separates independence from P967 from independence of a shared ancestor,
+and identifies assumptions about scribal familiarity and exemplar capacity.
+These weaknesses prevent treating copying loss as excluded; they do not prove
+it or refute the remaining expansion arguments. A separate bounded source
+critic checks this new assessment, while the earlier critic's scope remains
+the interpretation subsection. Both belong to one documentation publication
+batch, avoiding duplicate CI for adjacent results. No canonical edit follows.
+
 ### 2026-10-13 — AI image recovery investigation and measured spectral tests
 
 At the maintainer's explicit request, the

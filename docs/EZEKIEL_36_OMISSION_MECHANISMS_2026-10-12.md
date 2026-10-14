@@ -310,3 +310,133 @@ checks, resolves364 local links and checks whitespace. This is not a repeat
 of the earlier Irwin/Latin judgments; no causal or source-priority approval
 or new corpus-suite claim is implied. The successor requires its own exact-head
 publication checks.
+
+## Chapter order and resurrection interpretations
+
+The [KU Leuven introduction](https://theo.kuleuven.be/uploads/file/ezekiel/Septuagint_Ezekiel_Intro.pdf)
+provides a directly accessible later argument, not the still-unacquired Lust
+1981 article or Schwagmeier dissertation. PDF metadata names Johan Lust and
+dates creation December 10, 2008; the pages display 10-12-2008. No final
+publication venue is assigned to this institutional file.
+
+On pages 11–15 Lust contrasts Schwagmeier's physical-resurrection reading of
+MT with Crane's corresponding reading of the Greek order. He rejects the
+necessity of either inference. Pages 19–20 nevertheless favor development of
+the longer form from the shorter. These are distinct judgments: his objection
+to the resurrection arguments is not a reversal of his textual-history view.
+Schwagmeier's argument remains mediated. Crane's relevant original discussion
+was subsequently acquired and checked directly, as follows.
+
+The [Murdoch repository](https://researchportal.murdoch.edu.au/esploro/outputs/doctoral/The-restoration-of-Israel-Ezekiel-36-39/991005542291607891)
+supplies Crane's 2006 thesis. Printed 307, including note 480, explicitly allows
+metaphorical regathering in P967's order and acknowledges uncertainty about
+early interpretation, while preferring a physical reading. Printed 310 uses
+stronger necessity language; 311 again permits overlapping interpretations and
+concedes that Israel's participation in the Gog battle is not explicit. Thus
+Lust's objection addresses a real claim, but an exclusive physical-versus-
+metaphorical binary would misrepresent Crane's own qualifications. His section
+7.5 begins on 306 with P967's Hebrew priority as a premise established by his
+preceding argument, not as something this interpretive section independently
+demonstrates. That preceding argument still requires direct assessment.
+
+Our bounded check of the current WLC-based records and the previously pinned
+[Greek surface-text control](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#hebrew-spirit-and-wind-translation-pattern-on-october-14)
+finds that 39:11 names Gog and his multitude as the buried group; 39:12 makes
+Israel the burial agent. Both forms of 37:11 identify the bones with Israel.
+Consequently, simply placing 37 after 39 does not explicitly identify its
+bones as Israelite battle casualties. That identification needs an additional
+interpretive argument. This does not prove that no Israelites died, disprove
+physical resurrection, or decide every meaning of the vision. The selected
+Greek control is not a new collation of P967.
+
+There is also a citation slip in the PDF's page 12: its shepherd-appointment
+discussion prints 37:23. The wording occurs at 34:23 in the checked Hebrew and
+Greek controls; 37:23 instead concerns cleansing and the people/God relation.
+Preserve the printed reference when describing the source, but use 34:23 for
+the actual comparison. This is a reference correction, not a manuscript variant.
+
+The project-level consequence is to keep three decisions separate: the attested
+order, the historical direction of change, and the interpretation within each
+form. A theological consequence cannot be used to select a source order and
+then be presented as independently proven by that selection. POB's source,
+English and notes remain unchanged; earliest-form priority stays HOLD. The
+physical transition and independently supported direction of revision remain
+the discriminating evidence, not another preference vote about chapter order.
+
+### Consultation record for October 14
+
+Root read the complete 20-page text, including all 56 notes, and visually
+checked complete pages 12–15. The original failed pdftotext command added no
+evidence; web extraction supplied the text and rendered pages supplied the
+layout/reference checks. PDF: 151663 bytes, SHA256
+`6adf59ae9b6e82be288d98c74b4226f4dc6a9bdb23746da1fc46ac514edd5742`,
+private path `/tmp/ezekiel-lust-intro-sqkpw4/intro.pdf`. No PDF or render is
+imported into Git or relicensed. The five bounded control loci are 34:23,
+37:11, 37:23 and 39:11–12; only ordered Greek surface strings were used, not
+generated morphology. No new image restoration or whole-corpus audit follows.
+
+Crane's PDF was downloaded through the institutional record's ordinary whole-
+thesis link after web-fetch timed out. It has 368 pages and 1476400 bytes,
+SHA256 `d8946b57d346bdd2bf8764659b8eb8444c48732e44ff3e8fbb8a24f3f8f17842`,
+private path `/tmp/ezekiel-lust-intro-sqkpw4/crane2006.pdf`. The title page says
+2006; PDF creation metadata says 2007. Root read printed 305–315 with notes
+and visually checked complete 307/PDF310 and 311/PDF314, not the entire thesis
+or its full historical-priority argument. The original flags permit printing
+but disable copying; no permissions were altered and the PDF was not modified
+or redistributed.
+The following assessment addresses chapter 7's actual omission/order argument,
+printed 254–270, rather than another secondhand interpretation.
+
+## Crane on copying loss and the Latin witness
+
+Crane's original argument does not eliminate ancestral copying loss. This
+assessment concerns printed 254–270 of the same thesis, not the later linguistic,
+liturgical and reception arguments or the whole case for Hebrew priority.
+The substantial expansion hypothesis remains live; POB's source and English
+remain unchanged.
+
+On 265–266 Crane objects that Spottorno's accident proposal does not account
+for the Latin witness. His note 413 explicitly says her work was unavailable
+to him. Spottorno's actual 94–95 discusses that witness, distinguishing the
+preserved 37-before-40 order from the reconstructed 36 minus and wider layout.
+Thus Crane's objection cannot serve as a direct assessment of her complete
+proposal. This does not establish that her hypothetical page arrangement is
+correct: its capacity assumptions and the extra 53-letter assumption in one
+model remain qualified in the earlier comparison.
+
+Crane 255 acknowledges related ancestry for the Greek and Latin traditions,
+while 265 uses the separate Latin witness against accidental loss. Our inference
+is that independence from the extant P967 copy is not independence from every
+earlier Greek ancestor. If an accident preceded the split, two descendants
+would not require two identical accidents. Nor does a reconstructed Latin
+minus carry the same weight as preserved words at an actual boundary. The
+[Ranke check above](#old-latin-preservation-and-original-edition-check) supplies
+positive evidence for 37→40, not the complete P967 arrangement. This is a
+limit on the exclusion argument, not proof of common ancestry or of an accident.
+
+On 259 and note 404, Crane's expectation that a scribe would notice and repair
+the absent passage explicitly assumes familiarity with it. That is not measured
+evidence of this scribe's knowledge. On 261 and 264, page-capacity objections
+also depend on an exemplar's format. An estimate based on surviving P967 pages
+cannot by itself exclude an earlier exemplar with different dimensions, lines
+or columns. None of this makes any particular alternative format probable;
+the original ancestor remains unobserved.
+
+The useful constraint is still to explain omission and order together, while
+testing proposed causes at the appropriate transmission stage. A careful scribe
+can accurately copy an already shortened or rearranged exemplar. Literary
+coherence makes a form interpretable; it does not alone establish its priority.
+Consequently, these pages do not justify removing 36:23c–38, reordering the
+book, or retroverting a new Hebrew source corpus. The next substantive input
+is the remaining linguistic argument at 270–277, compared with the already
+completed language controls, or the missing original Greek transition.
+
+### Bounded source checks
+
+Root read complete printed 254–270 and their notes; visually checked complete
+255/PDF258, 259/PDF262 and 264–266/PDF267–269. Spottorno 94–95 were rechecked
+in the original page images against their earlier recorded hashes. No full
+thesis reading, new Filson or Lust 1981 consultation, ancestor reconstruction,
+or new P967 photograph is claimed. Crane's 266 note 415 reports a small space
+at the 39→37 transition through Johnson; that remains a reported feature,
+not an independently measured gap or proof of scribal intention.

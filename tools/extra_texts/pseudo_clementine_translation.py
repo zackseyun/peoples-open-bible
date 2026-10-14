@@ -173,6 +173,10 @@ def prepare(work: str, references: list[str], model: str, draft: dict | None = N
     return packet
 
 
+def digest_policy() -> str:
+    return source.sha256((source.ROOT / "DOCTRINE.md").read_bytes())
+
+
 def validate_curation_disclosures(source_row: dict, passage: dict) -> None:
     notes = "\n".join(str(item.get("issue", "")) for item in passage.get("source_issues", []))
     for curation in source_row.get("source_curations", []):

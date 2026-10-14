@@ -65,3 +65,28 @@ class AcceptanceTests(unittest.TestCase):
     def test_paths_cannot_escape_repository(self):
         with self.assertRaises(ValueError):
             acceptance.safe_path("../../outside.json")
+
+    def test_current_policy_requirement_rejects_old_review_and_invented_ref(self):
+        rule = {"references": ["1"], "policy_sha256": translation.digest_policy()}
+        with patch.object(acceptance, "publication_requirements", return_value=rule):
+            with self.assertRaisesRegex(ValueError, "current-policy"):
+                acceptance.collect(WORK, [self.selection(["1"])], complete=False)
+        rule["references"] = ["999"]
+        with patch.object(acceptance, "publication_requirements", return_value=rule):
+            with self.assertRaisesRegex(ValueError, "invented section"):
+                acceptance.collect(WORK, [], complete=False)
+
+    def test_policy_requirement_itself_is_validated_against_current_file(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            workflow = Path(tmp)
+            path = workflow / "publication-requirements.json"
+            self.assertEqual(acceptance.publication_requirements(workflow), {})
+            rule = {"kind": "required_current_policy_review", "references": ["1"],
+                    "policy_sha256": translation.digest_policy()}
+            path.write_text(json.dumps(rule))
+            self.assertEqual(acceptance.publication_requirements(workflow), rule)
+            for invalid in [dict(rule, policy_sha256="stale"), dict(rule, references=["1", "1"]),
+                            dict(rule, references=[]), dict(rule, kind="invented")]:
+                path.write_text(json.dumps(invalid))
+                with self.assertRaises(ValueError):
+                    acceptance.publication_requirements(workflow)

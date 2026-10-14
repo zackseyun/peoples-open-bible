@@ -1,5 +1,15 @@
 # Pseudo-Clementine historical-library publication
 
+## Latest status: 2026-10-14
+
+All three introductory works and all 539 Homilies sections have actual independent source-bound Sol 6.1 comparison records. The final collection also requires fresh review for all 16 passages affected by the current contextual repentance policy; older favorable reviews cannot substitute for this check. The final policy pass corrected a participial relationship, the direction of predication, and a negative-reading disclosure/main rendering. No source reading was changed in this policy pass.
+
+Eleven documented Greek source curations preserve the former readings, checked public-domain print evidence, and editorial uncertainty in reader notes. Original 1865 page transcriptions remain unchanged. Printed lacunae remain exact gaps; no lost original wording is claimed to have been recovered. Original POB English and notes are CC BY 4.0; upstream licensed XML and scan rights remain separate. These are AI-assisted, automated-source-checked drafts, not human scholarly sign-off or stable editions.
+
+Focused source/tooling tests: 82 passed. All 33 source catalog entries and published catalog artifacts validate. Reader proof guards enforce source curations and the required current-policy review. The source catalog remains `publish: false`: publication is in the separate historical archive, not the Bible canon. Final export, web main landing, terminal authorized deployment, and live verification are recorded below when actually complete.
+
+Native parity inspection found no dedicated historical-library route/catalog in the current Flutter Bible surfaces. This work is intentionally web-only for that separate archive; it does not change the native or hosted Bible canon, shared Bible navigation, or native app behavior. Unrelated mobile privacy and source Enoch work is preserved.
+
 ## Goal and release boundary
 
 Zack authorized proceeding through actual historical-library publication with

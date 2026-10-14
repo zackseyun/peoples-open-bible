@@ -30,6 +30,21 @@ class ConsolidationTests(unittest.TestCase):
         self.assertEqual(chosen[0]["references"], ["1.1", "1.2"])
         self.assertEqual(chosen[1]["references"], ["1.3"])
 
+    def test_required_policy_review_cannot_fall_back_to_older_positive(self):
+        rule = {"references": ["1.1"], "policy_sha256": "current"}
+        old = candidate("1")
+        old["policy_sha256"] = "old"
+        self.assertEqual(choose_selections([old], ["1.1"], rule), [])
+        failed = candidate("2", text="Revised.", verdict="revise")
+        failed["policy_sha256"] = "current"
+        self.assertEqual(choose_selections([old, failed], ["1.1"], rule), [])
+        passed = candidate("3", text="Corrected.")
+        passed["policy_sha256"] = "current"
+        self.assertEqual(choose_selections([old, failed, passed], ["1.1"], rule)[0]["review"], "review-3.json")
+        # Unaffected sections retain their original valid review.
+        unaffected = candidate("1", refs=("1.2",))
+        self.assertEqual(choose_selections([unaffected], ["1.2"], rule)[0]["references"], ["1.2"])
+
 
 if __name__ == "__main__":
     unittest.main()

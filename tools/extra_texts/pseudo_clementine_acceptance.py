@@ -60,18 +60,35 @@ def validate_bundle(work: str, source_rows: list[dict], draft_path: str, review_
     return draft, review
 
 
+def publication_requirements(workflow: Path) -> dict:
+    path = workflow / "publication-requirements.json"
+    if not path.exists():
+        return {}
+    rule = json.loads(path.read_text())
+    if rule.get("kind") != "required_current_policy_review" or rule.get("policy_sha256") != tr.digest_policy():
+        raise ValueError("Publication policy requirement is invalid or stale")
+    refs = rule.get("references", [])
+    if not refs or len(set(refs)) != len(refs):
+        raise ValueError("Invalid required policy-review references")
+    return rule
+
+
 def collect(work: str, selections: list[dict], *, complete: bool = True) -> dict:
     source = load_selected(work)
     source_rows = source["passages"]
     expected = [row["reference"] for row in source_rows]
     chosen = {}
     workflow = tr.source.SOURCE_ROOT / work / "translation_workflow"
+    policy_rule = publication_requirements(workflow)
+    if any(ref not in expected for ref in policy_rule.get("references", [])):
+        raise ValueError("Publication policy requirement contains an invented section")
     # One immutable snapshot per collection, rather than rereading every large
     # review hundreds of times. All later-adverse checks below remain mandatory.
     later_reviews = [json.loads(path.read_text()) for path in workflow.rglob("*.review.record.json")]
     later_packets = {}
     for selection in selections:
         draft, review = validate_bundle(work, source_rows, selection["draft"], selection["review"])
+        review_packet = json.loads(safe_path(review["evidence_files"]["request"]).read_text())
         drafts = {row["reference"]: row for row in draft["output"]["passages"]}
         reviews = {row["reference"]: row for row in review["output"]["passages"]}
         for ref in selection["references"]:
@@ -79,6 +96,11 @@ def collect(work: str, selections: list[dict], *, complete: bool = True) -> dict
                 raise ValueError("Duplicate or invented selected section")
             if not accepted_passage(reviews[ref]):
                 raise ValueError("Selected section has not passed independent review")
+            if ref in policy_rule.get("references", []):
+                context = review_packet["context"]
+                if (context.get("policy_sha256") != policy_rule["policy_sha256"]
+                        or tr.source.sha256(context.get("translation_policy_text", "").encode()) != policy_rule["policy_sha256"]):
+                    raise ValueError("Selected passage lacks required current-policy source review")
             row = drafts[ref]
             if any(issue["blocks_publication"] for issue in row["source_issues"]):
                 raise ValueError("Selected section has an unresolved source issue")

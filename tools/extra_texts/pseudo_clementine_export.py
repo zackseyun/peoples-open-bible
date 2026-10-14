@@ -77,6 +77,10 @@ def export(work: str, selections_path: Path, commit: str, destination: Path) -> 
     pin(selections_path.resolve())
     pin(pages.SOURCE / "selected" / (work + ".json"))
     pin(pages.SOURCE / "manifest.json")
+    requirement = tr.source.SOURCE_ROOT / work / "translation_workflow/publication-requirements.json"
+    if requirement.exists():
+        pin(requirement)
+        pin(tr.source.ROOT / "DOCTRINE.md")
     if any(row.get("source_curations") for row in source["passages"]):
         pin(pages.SOURCE / "source-curations.json")
         for row in source["passages"]:
@@ -119,6 +123,7 @@ def export(work: str, selections_path: Path, commit: str, destination: Path) -> 
         "canonical_commit": commit, "source": source, "review_bundles": records,
         "selections": references, "raw_review_path": f"/historical-library/provenance/{identity}.review-response.json",
         "raw_review_sha256": pages.sha(raw_bytes), "pinned_evidence_paths": sorted(evidence_paths),
+        "publication_requirements": acceptance.publication_requirements(tr.source.SOURCE_ROOT / work / "translation_workflow"),
     }
     proof_bytes = (json.dumps(proof, ensure_ascii=False, indent=2) + "\n").encode()
     manifest = {

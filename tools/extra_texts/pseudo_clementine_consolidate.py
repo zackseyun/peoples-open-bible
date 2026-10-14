@@ -17,7 +17,7 @@ from tools.extra_texts.pseudo_clementine_selected import load_selected
 WORK = "pseudo_clementine_homilies"
 
 
-def choose_selections(candidates: list[dict], references: list[str]) -> list[dict]:
+def choose_selections(candidates: list[dict], references: list[str], policy_rule: dict | None = None) -> list[dict]:
     """Choose only validated acceptances, not an older favorable identical text.
 
     This function supplies no approval itself. Its caller must validate every
@@ -32,6 +32,8 @@ def choose_selections(candidates: list[dict], references: list[str]) -> list[dic
             key = (ref, row["text"])
             if not acceptance.accepted_passage(reviewed) or any(i["blocks_publication"] for i in row["source_issues"]):
                 adverse.add(key)
+                continue
+            if policy_rule and ref in policy_rule["references"] and candidate.get("policy_sha256") != policy_rule["policy_sha256"]:
                 continue
             if ref in references and ref not in chosen and key not in adverse:
                 chosen[ref] = (candidate["draft_path"], candidate["review_path"])
@@ -66,14 +68,15 @@ def consolidate(*, complete: bool = False) -> dict:
             except (ValueError, KeyError, FileNotFoundError) as exc:
                 rejected.append({"draft": draft_relative, "review": review_relative, "reason": str(exc)})
                 continue
-            candidates.append({"draft": draft, "review": checked_review,
+            request = json.loads(acceptance.safe_path(checked_review["evidence_files"]["request"]).read_text())
+            candidates.append({"draft": draft, "review": checked_review, "policy_sha256": request["context"].get("policy_sha256"),
                                "draft_path": draft_relative, "review_path": review_relative})
             matched = True
             break
         if not matched and review.get("draft_output_hash") not in draft_index:
             rejected.append({"review": str(review_path.relative_to(translation.source.ROOT)), "reason": "No matching draft record"})
     references = [row["reference"] for row in source["passages"]]
-    selections = choose_selections(candidates, references)
+    selections = choose_selections(candidates, references, acceptance.publication_requirements(workflow))
     # Rechecks actual responses, all hash bindings, source issues and every
     # later adverse record. No fabricated acceptance can enter the output.
     result = acceptance.collect(WORK, selections, complete=complete)

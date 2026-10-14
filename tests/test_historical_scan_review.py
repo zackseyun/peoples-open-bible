@@ -9,10 +9,18 @@ from types import SimpleNamespace
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from tools.historical_scan_review import (digest, encoded, endpoint_url, invoke, keyless_client,
-                                        observe, request_payload, review_errors, validate_draft, write, dispatch_leaves)
+                                        observe, request_payload, review_errors, validate_draft, write, dispatch_leaves, pace_writer)
 
 
 class ScanReviewTests(unittest.TestCase):
+    def test_isolated_reviewer_quota_is_not_shared_reviewer_quota(self):
+        raw, job, draft, _ = self.fixture()
+        payload = request_payload(job, raw, 'reviewer', 'review', draft)
+        with self.assertRaisesRegex(ValueError, 'token window'):
+            pace_writer(payload, 'review', {'reviewer': {'quota_tpm': 1000}})
+        with self.assertRaisesRegex(ValueError, 'quota'):
+            pace_writer(payload, 'review', {'reviewer': {'quota_tpm': -1}})
+
     def test_stop_marker_drains_active_unit_and_prevents_new_dispatch(self):
         with tempfile.TemporaryDirectory() as directory:
             stop = Path(directory) / 'STOP'

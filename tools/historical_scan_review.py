@@ -107,24 +107,30 @@ REVIEW = BOUNDARY + (' You are an independent source-facing reviewer. Read the a
 
 _POST_LOCK = threading.Lock()
 _WRITER_RESERVATIONS = []
+_REVIEWER_RESERVATIONS = []
 
 
-def pace_writer(payload, stage):
-    if stage == 'review':
-        return
+def pace_writer(payload, stage, profile=None):
+    role = 'reviewer' if stage == 'review' else 'writer'
+    default_quota = 4000000 if role == 'reviewer' else 100000
+    quota = (profile or {}).get(role, {}).get('quota_tpm', default_quota)
+    if not isinstance(quota, int) or quota <= 0:
+        raise ValueError('Invalid verified deployment token quota')
+    limit = int(quota * .8)
+    reservations = _REVIEWER_RESERVATIONS if role == 'reviewer' else _WRITER_RESERVATIONS
     texts = [item['text'] for message in payload['input'] for item in message['content'] if item['type'] == 'input_text']
     images = sum(item['type'] == 'input_image' for message in payload['input'] for item in message['content'])
-    # Conservative reservations against the verified 100k TPM writer deployment;
-    # leave capacity for other work rather than changing quotas or resource state.
+    # Conservative per-role reservations: the isolated reviewer has less quota
+    # than the old shared reviewer. Never assume its previous 4M TPM allocation.
     estimate = payload['max_output_tokens'] + len(payload['instructions']) // 3 + sum(len(text) // 3 for text in texts) + images * 3000
-    if estimate > 80000:
-        raise ValueError('A request exceeds the conservative writer token window')
+    if estimate > limit:
+        raise ValueError('A request exceeds the conservative model token window')
     while True:
         with _POST_LOCK:
             now = time.monotonic()
-            _WRITER_RESERVATIONS[:] = [(at, amount) for at, amount in _WRITER_RESERVATIONS if now - at < 65]
-            if sum(amount for _, amount in _WRITER_RESERVATIONS) + estimate <= 80000:
-                _WRITER_RESERVATIONS.append((now, estimate))
+            reservations[:] = [(at, amount) for at, amount in reservations if now - at < 65]
+            if sum(amount for _, amount in reservations) + estimate <= limit:
+                reservations.append((now, estimate))
                 return
         time.sleep(5)
 
@@ -262,7 +268,7 @@ def invoke(client, profile, job, raw, stage, directory, draft=None, review=None,
         response = None
     try:
         if response is None:
-            pace_writer(payload, stage)
+            pace_writer(payload, stage, profile)
             response = client.responses.create(**payload)
     except Exception as exc:
         status = getattr(exc, 'status_code', None)

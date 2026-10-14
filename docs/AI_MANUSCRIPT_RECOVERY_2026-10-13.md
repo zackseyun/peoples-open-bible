@@ -10,6 +10,11 @@ possible contributions; none requires changing the English to count as useful.
 
 ## Results from this session
 
+Public-source follow-up: the [Codex Zacynthius probe](ZACYNTHIUS_PUBLIC_RECOVERY_2026-10-14.md)
+acquired published spectral composites and a pinned TEI edition, produced a
+reproducible uncertainty inventory, and inspected three source-scale regions.
+No new letter was accepted; the raw exposure stack remains unacquired.
+
 ### Published segmentation is reproducible but uneven
 
 The [released-mask evaluation](../sources/textual_restoration/discovery/qsd_release_evaluation.2026-10-13.v1.json)

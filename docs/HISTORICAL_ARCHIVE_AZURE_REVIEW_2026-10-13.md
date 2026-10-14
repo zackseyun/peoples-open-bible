@@ -73,3 +73,36 @@ Official implementation references:
 
 Structured formatting and two model labels do not prove source fidelity or
 approve a book; the actual source-bound outputs and full-scope audit are required.
+
+## Approved isolated public-domain review configuration
+
+On 2026-10-13 the user explicitly approved a scoped, isolated configuration for
+D&C 1835. The default policy's optional protected-text matcher returned
+`content_filter` on original-source transcriptions while the harm categories
+were safe. Those refused outputs were never accepted as source readings.
+
+The subscription and tenant were reverified. The live policy-list response
+exposed `Microsoft.DefaultV2`; direct GET for that built-in name returned 404.
+New policy `pob-dc-1835-public-domain-review` clones the live baseline, changing
+only completion Protected Material Text `blocking` true to false, while keeping
+its detector enabled. All other settings remain identical, including the
+baseline's annotation-only Protected Material Code. The harm-category filters
+remain enabled/blocking at Medium; the direct prompt shield remains blocking.
+
+Separate `pob-dc-1835-writer` and `pob-dc-1835-reviewer` deployments provisioned
+successfully, each GlobalStandard capacity 100, using the same two verified
+model versions and no automatic version upgrades. Available regional quota was
+checked first. ARM before/after snapshots confirm every preexisting deployment
+is unchanged. No reader/production route or source text was changed.
+Checked-in ARM payloads and operational boundaries are in
+`infrastructure/historical-review/`. No credentials or private execution
+traces are checked in. Keyless runtime acquisition now serializes token-provider
+access and allows 120 seconds for the Azure CLI subprocess; no keys are read.
+
+The runner now bounds dispatch to active worker capacity. Creating its `STOP`
+marker stops new units and drains existing ones, preserving API handles.
+A GET-only recovery retrieved the four earlier credential-interrupted response
+IDs to terminal completion without any new POST. Unknown creation outcomes with
+no response ID remain untouched. A newly versioned, previously terminal-filtered
+leaf 10 is the isolated lane's end-to-end probe, not an observation-timeout retry.
+Configuration/test success is not a whole-book source or rights approval.

@@ -16,7 +16,7 @@ from pathlib import Path
 import sys
 import time
 import threading
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor, wait, FIRST_COMPLETED
 from urllib.parse import urlsplit
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -56,9 +56,13 @@ def keyless_client(profile, approved):
         logging.getLogger(name).setLevel(logging.CRITICAL + 1)
     # Azure CLI accepts subscription OR tenant for token acquisition, not both.
     # The subscription/tenant relationship is checked in the saved ARM profile.
-    credential = AzureCliCredential(subscription=profile['subscription'])
+    credential = AzureCliCredential(subscription=profile['subscription'], process_timeout=120)
     provider = get_bearer_token_provider(credential, 'https://ai.azure.com/.default')
-    return OpenAI(base_url=base, api_key=provider, max_retries=0, timeout=1200)
+    credential_lock = threading.Lock()
+    def serialized_provider():
+        with credential_lock:
+            return provider()
+    return OpenAI(base_url=base, api_key=serialized_provider, max_retries=0, timeout=1200)
 
 
 def obj(properties):
@@ -342,6 +346,25 @@ def adjudicate_page(client, profile, job, raw, source, directory, draft, review,
     return summary
 
 
+def dispatch_leaves(process, leaves, workers, stop_path):
+    """Bound dispatch and drain active units without losing response handles."""
+    remaining = iter(leaves)
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        active = {}
+        def replenish():
+            while len(active) < workers and not stop_path.exists():
+                leaf = next(remaining, None)
+                if leaf is None:
+                    break
+                active[executor.submit(process, leaf)] = leaf
+        replenish()
+        while active:
+            done, _ = wait(active, return_when=FIRST_COMPLETED)
+            for future in done:
+                yield active.pop(future), future
+            replenish()
+
+
 def run(args):
     profile = json.loads(args.profile.read_text())
     if profile['writer']['model'] == profile['reviewer']['model']:
@@ -373,18 +396,21 @@ def run(args):
         return row
     report['execution_failures'] = []
     write(args.output / 'run-status.json', report)
-    with ThreadPoolExecutor(max_workers=args.workers) as executor:
-        futures = {executor.submit(process, leaf): leaf for leaf in leaves}
-        for future in as_completed(futures):
-            leaf = futures[future]
-            try:
-                report['processed'].append(future.result())
-            except Exception as exc:
-                report['execution_failures'].append({'leaf': leaf, 'error_type': type(exc).__name__,
-                    'note': 'Inspect the per-stage journal. Unknown outcomes are not automatically retried.'})
-                print(json.dumps({'leaf': leaf, 'status': 'execution_failure', 'error_type': type(exc).__name__}), flush=True)
-            report['processed'].sort(key=lambda row: row['reference'])
-            write(args.output / 'run-status.json', report)
+    stop_path = args.stop_file or args.output / 'STOP'
+    dispatched = []
+    for leaf, future in dispatch_leaves(process, leaves, args.workers, stop_path):
+        dispatched.append(leaf)
+        try:
+            report['processed'].append(future.result())
+        except Exception as exc:
+            report['execution_failures'].append({'leaf': leaf, 'error_type': type(exc).__name__,
+                'note': 'Inspect the per-stage journal. Unknown outcomes are not automatically retried.'})
+            print(json.dumps({'leaf': leaf, 'status': 'execution_failure', 'error_type': type(exc).__name__}), flush=True)
+        report['processed'].sort(key=lambda row: row['reference'])
+        write(args.output / 'run-status.json', report)
+    report['not_dispatched'] = [leaf for leaf in leaves if leaf not in dispatched]
+    report['dispatch_stopped'] = stop_path.exists()
+    write(args.output / 'run-status.json', report)
 
 
 def main():
@@ -397,6 +423,7 @@ def main():
     parser.add_argument('--background', action='store_true', help='Persist API response IDs and poll, never recreate on observation timeout')
     parser.add_argument('--adjudicate', action='store_true', help='Compare older English after source passes, adjudicate, and re-review')
     parser.add_argument('--workers', type=int, choices=range(1, 5), default=1)
+    parser.add_argument('--stop-file', type=Path, help='Stop new units, drain active units; defaults to OUTPUT/STOP')
     run(parser.parse_args())
 
 

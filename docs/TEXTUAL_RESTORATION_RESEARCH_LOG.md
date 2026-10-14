@@ -10022,6 +10022,57 @@ study-use/publication-permission distinction is retained, and the paired view
 is handed off in browser tab15 for the next comparison. This acquisition
 receipt is root-verified separately from the source-text factual critique.
 
+### 2026-10-13 — Zuqnin inventory promotion and bounded image check
+
+The latest Nahum reply rechecked a completed article/application decision and
+eight passing tests; it supplied no new source judgment and is not counted as
+new goal progress. The broader source goal resumes with actual inventory work
+and a different primary-source acquisition, not another same-article vote.
+
+PR182's exact1095f8004272a4f5420aa61c82393efec359fc34 push job115592771661 and
+PR job115593842413 both complete successfully, at23:49:10 and23:56:49UTC.
+Concurrent PR183 advances main through an unrelated historical-English scan
+workflow. Root verifies disjoint paths and local union tree
+c7a117888ac665dbc7819ba5f669684b05c8c11a before the SHA-pinned PR182 merge
+88f7c3db82eafb91d3ac7776ccef563295552d93. API and completed fetch confirm parents
+40a19cbc23f046b6ca17c7eacc10189ddb2e8fb2 and1095f8004272a4f5420aa61c82393efec359fc34,
+plus that tree. Guarded local-main advancement and normal push preserve the
+concurrent work and protected Genizah file. Publication is now verified, not
+an extension of the source critic's factual verdict.
+
+The [OT witness registry](../sources/textual_restoration/ot_witness_registry.v1.json)
+now adds the actually consulted ZVI Greek undertext, separately from ZV and the
+later Syriac overtext. Its preservation, supplied letters, edition/reprint dates,
+two folio systems, relationships, access/rights and remaining image gate are
+explicit. All43 previous row objects and the policy remain unchanged;
+only the update date and one new row differ. The row is a partial map,
+not an exhaustive source census or a new vote for an original Hebrew form.
+
+Root checks the whole rendered78r–77v spread and then magnifies the identified
+leaf through the ordinary viewer's explicit zoom control. This bounded rendered
+view does not support a defensible new glyph transcription or image-only gold
+label here. It does not show that the manuscript itself is unreadable at every
+resolution or exposure. The edition-informed reader is not an independent blind
+reference. The view returns to Fit View and is handed off; no master image,
+saved screenshot hash, generated letters or spectral reconstruction is claimed.
+ImageGen is considered but not invoked to manufacture evidence.
+
+The registry schema and semantic checks pass, as do all54 existing registry
+tests in5.133s. The old aggregate command reports six canonical-baseline drifts
+in unchanged Genesis/Exodus/Deuteronomy/Samuel/Psalms comparison packets. A
+baseline/current check confirms both registry versions pass and the six errors
+are independent of the added row. No old receipts are repinned and no whole
+aggregate-validator success is claimed. These tests check record integrity,
+not Greek decipherment, textual priority or translation optimality.
+
+The next primary acquisition seeks the actual Ambrosian Syrohexaplaric39:29
+page and marginal attribution behind Field's Spirit report. It is distinct
+from the already consulted Peshitta and does not multiply those dependencies
+into independent Hebrew witnesses. The PDF skill guides visual consultation;
+the documentation skill preserves partial attestation and publication limits.
+No source consonants, pointing, canonical English or canon decision changes.
+The all-OT comparison and calibrated damaged-image goals remain incomplete.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

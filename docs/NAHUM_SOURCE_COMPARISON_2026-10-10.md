@@ -329,6 +329,72 @@ The checker confirmed the entry, category definitions and current-record limits,
 not historical originality. The institutional final CTAT volume route reached
 an Anubis verification screen; no bypass or final-volume consultation is claimed.
 
+## Testing the implicit-voice construction on October 14
+
+**The construction is attested as a defensible lexical analysis elsewhere;
+its selection at Nahum remains unproved.** This pass tests the particular
+HOTTP proposal rather than repeating its recommendation or counting model
+agreement. Root and one independent source checker inspected actual WLC/OSHB
+verses and visually read the voice category in
+[BDB printed 670b, Qal 1b(5)](https://en.wikisource.org/wiki/Page:A_Hebrew_and_English_Lexicon_(Brown-Driver-Briggs).djvu/694).
+That category explicitly includes omitted קול in Isaiah and voice attributed
+to floods. It is separate from the textually questioned intransitive category
+continuing onto p.671; the earlier qualification must not be indiscriminately
+transferred to every voice-idiom example. BDB is lexical interpretation, not
+another ancient copy of Nahum.
+
+| Control | Actual construction, accents and segmentation omitted here | Support and limit |
+|---|---|---|
+| Isaiah 3:7 | יִשָּׂא … לֵאמֹר; no קול in the verse | Understood voice fits an explicit speech frame. Human subject and a different verb form from Nahum. |
+| Isaiah 42:11 | יִשְׂאוּ מִדְבָּר וְעָרָיו; no קול in the verse; later יָרֹנּוּ and יִצְוָחוּ | Strongest combined landscape/ellipsis control. Cities, settlements and named inhabitants allow place-for-community language, not necessarily a physically sounding landscape. |
+| Isaiah 24:14 | יִשְׂאוּ קוֹלָם יָרֹנּוּ | Explicit voice object establishes the idiom, not ellipsis. |
+| Psalm 93:3 | נָשְׂאוּ נְהָרוֹת, then נָשְׂאוּ נְהָרוֹת קוֹלָם | Nonhuman flood/voice language, but the repeated clause supplies the object explicitly. Not a stand-alone objectless construction. |
+| Numbers 14:1 | וַתִּשָּׂא כָּל־הָעֵדָה וַיִּתְּנוּ אֶת־קוֹלָם | Same unaccented written verb and annotated Qal wayyiqtol 3fs as Nahum; voice occurs under the coordinated verb. Human collective subject, not an exact constructional parallel. |
+
+These controls rule out the restrictive inference that accepting Qal נשׂא
+requires either unusual intransitivity or textual corruption. An understood
+object is a real third analysis. They do not prove that an ancient Nahum
+copy contained an additional word, that the original vocalization is known,
+or that all five passages are objectless in the same way. No neighboring
+POB English or note is approved by using its Hebrew as a comparator.
+
+Nahum 1:5 contains no explicit voice noun or saying/singing/shouting verb.
+Its quaking mountains and melting hills make movement contextually available;
+earth, world and inhabitants can also sustain personification. Those observations
+leave more than one interpretation viable. They do not yield a preference for
+resounding, or refute the distinct devastation proposal. The current “heaves”
+and exact Hebrew remain provisional and unchanged; no new note is applied.
+
+The useful next test is a passage-specific argument for supplying voice in
+Nahum's context, with the final apparatus/commentary or closer independently
+interpreted evidence. A new tally of generic lifting/voice occurrences would
+not decide it. This closes the bounded construction-feasibility check, not
+the source-priority question; return to discriminating portfolio evidence
+rather than scheduling another comparison of these same controls.
+
+### Reproducible inputs and review boundary
+
+The source XML was read at repository commit
+`425aaae1c233b3d0d96e6674d7301475fb0a3816`. Word IDs for the tested נשׂא forms
+are Isaiah `232GY`, `23DcM`, `23BCd`; Psalm `19Jz7`, `19dSD`, `192aG`;
+Numbers `04oA4`; and Nahum `34hh7`. The latter two both carry editorial
+`HC/Vqw3fs`; annotation agreement is not independent ancient evidence.
+
+```text
+Isa.xml  0807678de609bdef284bed5400b94ddab570d101b593c7f59ae1939015572fa2
+Ps.xml   fe55eef316a65fb0f46d833d526ca2fd722e86ff7339f1a39f0c5b7f9062ced2
+Num.xml  02e4febfcc027d10b3e35e4f091eae67a40d26f37b6254faac6b4af053fe4896
+Nah.xml  5993b28bdbee3c922e3e93002d343a655493e8bd45e3472f3b62d77beadcb62c
+```
+
+The reused BDB scan SHA256 is
+`0cc9356f7b349222f9fddadc5d469d5fb1aa33a377d1ecc2a8777a8739484bf9`.
+This is new consultation of the voice subsection against five actual contexts,
+not a new image acquisition or restoration. Both readers checked the original
+scan, not the damaged web OCR. The bounded independent source check confirms
+the distinctions among ellipsis, explicit/shared object and personification;
+it supplies no English-preference vote or certification of historical priority.
+
 ## Historical scope
 
 This is a bounded published-reading comparison following the

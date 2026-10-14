@@ -1,4 +1,6 @@
 import copy
+import io
+import zipfile
 import json
 from pathlib import Path
 import sys
@@ -13,6 +15,32 @@ from tools.historical_scan_review import (digest, encoded, endpoint_url, invoke,
 
 
 class ScanReviewTests(unittest.TestCase):
+    def test_archival_encoding_bound_to_pinned_zip_member_and_exact_pixels(self):
+        from PIL import Image
+        raw, job, draft, review = self.fixture()
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); member = 'GR_711_jp2/GR_711_0004.jp2'
+            native = Image.new('RGB', (12, 10), (20, 40, 70)); buf = io.BytesIO()
+            native.save(buf, format='JPEG2000'); jp2 = buf.getvalue()
+            archive = root / 'archive.zip'
+            with zipfile.ZipFile(archive, 'w') as container: container.writestr(member, jp2)
+            png = root / 'scan.png'; Image.open(io.BytesIO(jp2)).save(png)
+            descriptor = {'path':str(png), 'archive_zip_path':str(archive), 'archive_item':'GR_711',
+                'physical_leaf':4, 'parent_jpeg_sha256':digest(raw), 'archive_member':member,
+                'archive_zip_sha256':digest(archive.read_bytes()), 'archive_jp2_sha256':digest(jp2),
+                'sha256':digest(png.read_bytes())}
+            job['alternate_facsimiles'] = [descriptor]
+            with patch('tools.historical_scan_review.NEWBERRY_JP2_ARCHIVE_SHA256', descriptor['archive_zip_sha256']):
+                content = request_payload(job,raw,'writer','draft')['input'][0]['content']
+                self.assertEqual(sum(x['type']=='input_image' for x in content), 2)
+                self.assertNotIn('FORBIDDEN OCR ANCHOR', json.dumps(content))
+                descriptor['physical_leaf'] = 5
+                with self.assertRaisesRegex(ValueError, 'provenance'): request_payload(job,raw,'writer','draft')
+                descriptor['physical_leaf'] = 4
+                Image.new('RGB',(12,10),'white').save(png);descriptor['sha256']=digest(png.read_bytes())
+                with self.assertRaisesRegex(ValueError, 'pixels'): request_payload(job,raw,'writer','draft')
+            with self.assertRaisesRegex(ValueError, 'provenance'): request_payload(job,raw,'writer','draft')
+
     def test_isolated_reviewer_quota_is_not_shared_reviewer_quota(self):
         raw, job, draft, _ = self.fixture()
         payload = request_payload(job, raw, 'reviewer', 'review', draft)

@@ -125,6 +125,14 @@ class SelectedGreekTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "boundaries"):
                 selected.assemble_homily(3)
 
+    def test_homily_seventeen_marker_is_restored_only_from_independent_crop_evidence(self):
+        lines, proof = selected.load_page(206)
+        self.assertIn("11. τινὲς", lines[2])
+        self.assertEqual(proof["adjudications"][0]["scope"], "single_word")
+        self.assertEqual(proof["adjudications"][0]["after_word"], "11.")
+        source = selected.assemble_homily(17)
+        self.assertEqual([row["reference"] for row in source["passages"]], [f"17.{n}" for n in range(1,21)])
+
     def test_boundary_shift_fails_closed(self):
         first, proof1 = selected.load_page(45)
         second, proof2 = selected.load_page(46)

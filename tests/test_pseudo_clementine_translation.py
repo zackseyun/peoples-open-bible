@@ -76,6 +76,28 @@ class TranslationWorkflowTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "separate source evidence"):
             pipeline.validate_response(request, self.response(review))
 
+    def test_selected_edition_gaps_cannot_be_filled_or_hidden(self):
+        greek = "λόγος....... ἀλήθεια . . . . τέλος"
+        passage = {"text": "Word....... truth . . . . end", "source_issues": [
+            {"source_quote": "λόγος.......", "issue": "The checked edition has a gap; lost content is not restored."},
+            {"source_quote": "ἀλήθεια . . . .", "issue": "A second printed lacuna is retained, not reconstructed."},
+        ]}
+        pipeline.validate_printed_gaps(greek, passage)
+        self.assertEqual(pipeline.printed_gap_lengths(greek), [7,4])
+        for text in ["Word restored truth end", "Word... truth . . . . end", "Word....... truth end"]:
+            with self.assertRaisesRegex(ValueError, "explicit and unfilled"):
+                pipeline.validate_printed_gaps(greek, dict(passage, text=text))
+        with self.assertRaisesRegex(ValueError, "disclosure"):
+            pipeline.validate_printed_gaps(greek, dict(passage, source_issues=[]))
+        self.assertIn("ALL SURVIVING WORDING", pipeline.SELECTED_EDITION_STANDARD)
+        self.assertIn("those remain blocking", pipeline.SELECTED_EDITION_STANDARD)
+
+    def test_content_filter_is_a_terminal_provider_rejection_not_truncation(self):
+        response = self.response(self.output)
+        response["choices"][0]["finish_reason"] = "content_filter"
+        with self.assertRaisesRegex(ValueError, "content-filter rejection"):
+            pipeline.validate_response(self.request, response)
+
     def test_citation_fix_is_disclosed_and_cannot_change_english(self):
         output = copy.deepcopy(self.output)
         output["passages"][0]["lexical_decisions"][0]["source_quote"] = "Πετρος"

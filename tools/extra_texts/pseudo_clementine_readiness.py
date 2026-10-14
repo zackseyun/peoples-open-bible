@@ -53,7 +53,9 @@ def work_status(work: str) -> dict:
             result["accepted_references"] = draft["references"]
         else:
             complete_path = directory / "translation_workflow/accepted-complete.selections.json"
-            partial_path = directory / "translation_workflow/lagarde-batch-v1/accepted-sections-partial.selections.json"
+            partial_path = directory / "translation_workflow/accepted-partial.selections.json"
+            if not partial_path.exists():
+                partial_path = directory / "translation_workflow/lagarde-batch-v1/accepted-sections-partial.selections.json"
             selections_path = complete_path if complete_path.exists() else partial_path
             if selections_path.exists():
                 selections = json.loads(selections_path.read_text())

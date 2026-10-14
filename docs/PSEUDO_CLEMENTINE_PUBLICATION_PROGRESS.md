@@ -278,3 +278,72 @@ tests for both Homily 1 and Homily 2 and rejection of unknown variants. Homily 2
 cannot be prepared until every required page has accepted evidence. These partial
 source variants remain incomplete-work drafting inputs; complete-work source and
 review coverage are still mandatory for export and publication.
+
+## Completion resumed in the owning chat (2026-10-13)
+
+The current owner is chat `01a137cb-59aa-7583-bcbd-c19c83155be5`; a brief
+coordination handoff has ended. The objective still includes **all four works**,
+complete reviewed English, correctly organized historical reader entries,
+verified main integration, and authorized live publication. The three
+introductory works alone are not completion.
+
+- All three introductory works have complete source-bound accepted reviews:
+  Peter (3 sections), Contestation (5), and Clement (20). Their local archive
+  integration has full metadata, editorial titles, explicitly modern paragraph
+  references, separate notes, honest model-review disclosures and provenance.
+- Fresh generation plus independent Sol 6.1 comparison resolved the held
+  editorial findings at Homilies 1.17, 2.38 and 2.44. Earlier adverse responses
+  remain unchanged. Per-homily source-bound selection snapshots now cover all
+  sections of Homilies 1, 2 and 7, but are explicitly **not whole-work release**.
+- The selected-edition coverage scope is now explicit: all surviving Greek and
+  every printed lacuna must be represented. A verified printed gap is not an
+  omitted supplied clause or a recovered lost sentence. Its exact dot count and
+  source-quoted explanatory note must survive the English; lost wording must
+  never be invented or an unbroken original claimed. Missing scan pages,
+  unverified ink, unsupported completions and omitted surviving words still
+  block. This clarification does not change DOCTRINE.md or clear any existing
+  verdict by hand. Fresh drafts and independent reviews of 2.6 and 7.7 accepted
+  their faithful surviving wording **with their gaps and uncertainty notes**.
+- Python ingestion and the website proof verifier now deterministically reject
+  filled, shortened, removed or undisclosed printed gaps. The source tests also
+  distinguish an actual provider `content_filter` rejection from truncation;
+  no filtered result is ingested or automatically retried/substituted.
+- Alternate-copy and focused-crop evidence resolved source pages 105, 148, 156
+  and 177. Page156's final accent is supported by a separate blind900dpi reading
+  of both scans and a fresh complete-page comparison. The missing section11
+  delimiter in Homily17 was an earlier transcription omission, not a reason to
+  loosen the parser: the printed period on PDF206 / printed164 is independently
+  confirmed by a900dpi crop, retained in a scoped adjudication, and protected by
+  a regression test. Homily17 now retains20 sequential source sections.
+- Source checking currently validates196/197 required pages; PDF239 remains in
+  a bounded new comparison with a visually verified second copy. Exact-request
+  diagnostic recoveries resolved old terminal transport failures at239/240
+  without changing endpoint, model, permissions or prompts. Page240 passed its
+  ordinary independent image comparison. Re-run the audit before quoting counts.
+- Translation runs continue in two nonduplicated queues: 7/8/9/12/16 and
+  3/4/5/10/11/13/14/15/17/18. Terminal findings remain real follow-up work. The
+  whole-work source/acceptance/export gates still prohibit partial publication.
+  `pseudo_clementine_consolidate.py` validates actual current-source review
+  bundles, avoids older favorable identical wording after a later adverse
+  review, and re-runs the original acceptance collector. Its default output is
+  partial; `--complete` requires every source section.
+- Actual Azure content-filter rejections affect Homily6 sections1-5 and a later
+  Homily8 batch. They were not truncation and were not bypassed. A question about
+  an authorized alternative translation/human route remains unanswered; no
+  Codex subagents or alternate provider were used.
+- The focused source/workflow suite passes62 tests and the focused website
+  archive/reader suite passes33 tests; the archive validator verifies11 current
+  local editions without changing the canon. Production static-build validation
+  is running after hydrating missing tracked inputs in the sparse worktree;
+  earlier missing-input failures were not represented as a passing build.
+- Zack explicitly approved **deploy web after all four works pass all checks**
+  in the coordination chat; that does not authorize deploying the three-work
+  subset or unchecked Homilies. Nothing has been manually deployed, and neither
+  working branch has yet been merged to main for this unfinished goal.
+
+Current process journals and stdout logs are under the ignored persistent
+`.cache/pseudo-clementine/` directory. Inspect live process handles and their
+specific journals before resuming anything; a quiet call or observation timeout
+is not a terminal failure. Source PDFs, crops and base64 request caches stay
+local and must not enter Git. Review requests/responses and hash-bound evidence
+are retained for the eventual pinned export.

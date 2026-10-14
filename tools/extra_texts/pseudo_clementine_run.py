@@ -130,7 +130,7 @@ def main() -> int:
     parser.add_argument("--work", required=True)
     parser.add_argument("--run", required=True)
     parser.add_argument("--cache", type=Path, required=True)
-    parser.add_argument("--source-variant", choices=["lagarde1865", "lagarde1865-homily-1", "lagarde1865-homily-2"], default="lagarde1865")
+    parser.add_argument("--source-variant", choices=["lagarde1865", *[f"lagarde1865-homily-{n}" for n in range(1,21)]], default="lagarde1865")
     parser.add_argument("--batch-size", type=int, default=5)
     parser.add_argument("--workers", type=int, default=1)
     parser.add_argument("--max-revisions", type=int, default=2)

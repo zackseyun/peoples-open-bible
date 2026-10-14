@@ -246,7 +246,41 @@ def render_tiles(pdf: Path, page: int, cache: Path) -> list[Path]:
     return result
 
 
-def process_page(page: int, pdf: Path, cache: Path, max_reviews: int, series: str = "pages", zoom: bool = False, blind_review: bool = False) -> dict:
+def review_window(directory: Path, original_lines: list[str], max_reviews: int, continue_reviews: bool = False) -> tuple[list[str], range]:
+    """Continue an exhausted correction series without overwriting its evidence.
+
+    Only a recorded, validated revision can seed further comparison. A blocked
+    page requires source investigation, not another request to approve it.
+    Ten comparisons per page is the absolute automated ceiling.
+    """
+    if not 1 <= max_reviews <= 5:
+        raise ValueError("Review window must contain 1-5 comparisons")
+    if not continue_reviews:
+        return original_lines, range(1, max_reviews + 1)
+    records = sorted((int(p.stem.split("-")[1]), p) for p in directory.glob("review-*.json")
+                     if re.fullmatch(r"review-\d+", p.stem))
+    if not records:
+        raise ValueError("No prior source review to continue")
+    number, path = records[-1]
+    record = json.loads(path.read_text())
+    review = record["review"]
+    if not str(record.get("model", "")).startswith("gpt-6.1-sol-"):
+        raise ValueError("Prior correction lacks the required review model")
+    validate_review(review, record["input_lines"])
+    if review["verdict"] != "revise":
+        raise ValueError("Only an explicit source correction can be continued")
+    # Bind the correction to the actual saved reviewer response, not a summary.
+    if not any(r.get("status") == "success" and r.get("request_sha256") == record["request_sha256"]
+               and r.get("response", {}).get("model") == record["model"]
+               and parse_response(r["response"]) == review
+               for r in (json.loads(p.read_text()) for p in directory.glob(path.stem + ".response*.json"))):
+        raise ValueError("Prior correction has no actual model response")
+    if number >= 10:
+        raise ValueError("Absolute source-review ceiling reached; inspect the print")
+    return review["corrected_lines"], range(number + 1, min(number + max_reviews, 10) + 1)
+
+
+def process_page(page: int, pdf: Path, cache: Path, max_reviews: int, series: str = "pages", zoom: bool = False, blind_review: bool = False, continue_reviews: bool = False) -> dict:
     directory = SOURCE / series / f"{page:03d}"
     directory.mkdir(parents=True, exist_ok=True)
     with (directory / ".lock").open("w") as lock:
@@ -281,7 +315,8 @@ def process_page(page: int, pdf: Path, cache: Path, max_reviews: int, series: st
             blind_lines = blind.get("body_lines")
             valid_lines(blind_lines)
             save(directory / "blind.json", {"output": blind, "model": response["model"], "image_sha256": sha(image.read_bytes()), "request_sha256": sha(canonical(blind_request)), "initial_draft_was_not_supplied": True})
-        for iteration in range(1, max_reviews + 1):
+        lines, iterations = review_window(directory, lines, max_reviews, continue_reviews)
+        for iteration in iterations:
             body = request_for(image, page, lines, tiles)
             if blind_lines is not None:
                 body["messages"][1]["content"][0]["text"] += "\n\nA separate blind transcription of these same images (made WITHOUT seeing the proposed draft) follows. Neither candidate has authority over the ink. Investigate every disagreement against the zoomed image, especially plausible substitutions of different Greek words. Do not prefer the proposed draft just because it was presented first. Independent blind lines:\n" + json.dumps(blind_lines, ensure_ascii=False)
@@ -331,6 +366,7 @@ def main() -> int:
     parser.add_argument("--series", default="pages")
     parser.add_argument("--zoom", action="store_true")
     parser.add_argument("--blind-review", action="store_true")
+    parser.add_argument("--continue-reviews", action="store_true", help="New bounded comparisons of a previously recorded correction; never clears a blocked verdict")
     args = parser.parse_args()
     if not 1 <= args.workers <= 4 or not 1 <= args.max_reviews <= 5:
         parser.error("workers must be 1-4; max-reviews must be 1-5")
@@ -346,11 +382,11 @@ def main() -> int:
     if len(set(pages)) != len(pages) or not set(pages) <= set(manifest["transcription_pdf_pages"]):
         parser.error("Duplicate or out-of-scope pages")
     args.cache.mkdir(parents=True, exist_ok=True)
-    run = {"pid": os.getpid(), "started_at": datetime.now(timezone.utc).isoformat(), "pipeline_sha256": sha(Path(__file__).read_bytes()), "pages": pages, "series": args.series, "zoom": args.zoom, "blind_review": args.blind_review, "results": []}
+    run = {"pid": os.getpid(), "started_at": datetime.now(timezone.utc).isoformat(), "pipeline_sha256": sha(Path(__file__).read_bytes()), "pages": pages, "series": args.series, "zoom": args.zoom, "blind_review": args.blind_review, "continue_reviews": args.continue_reviews, "results": []}
     receipt = args.cache / f"run-{os.getpid()}.json"
     save(receipt, run)
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
-        jobs = {pool.submit(process_page, p, args.pdf, args.cache, args.max_reviews, args.series, args.zoom, args.blind_review): p for p in pages}
+        jobs = {pool.submit(process_page, p, args.pdf, args.cache, args.max_reviews, args.series, args.zoom, args.blind_review, args.continue_reviews): p for p in pages}
         for future in as_completed(jobs):
             try:
                 result = future.result()

@@ -42,6 +42,42 @@ class PageReviewTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             pages.parse_response({"choices": [{"finish_reason": "length", "message": {"content": "{}"}}]})
 
+    def test_continuation_preserves_prior_evidence_and_remains_bounded(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            corrected = [self.lines[0] + "καὶ"]
+            review = dict(self.accept, verdict="revise", corrected_lines=corrected)
+            record = {"input_lines": self.lines, "review": review,
+                      "request_sha256": "exact-request", "model": "gpt-6.1-sol-2026-09-29"}
+            pages.save(root / "review-5.json", record)
+            receipt = {"status": "success", "request_sha256": record["request_sha256"],
+                       "response": {"model": record["model"], "choices": [{"finish_reason": "stop", "message": {"content": json.dumps(review)}}]}}
+            pages.save(root / "review-5.response.attempt1.json", receipt)
+            before = (root / "review-5.json").read_bytes()
+            lines, iterations = pages.review_window(root, self.lines, 5, True)
+            self.assertEqual(lines, corrected)
+            self.assertEqual(list(iterations), [6, 7, 8, 9, 10])
+            self.assertEqual((root / "review-5.json").read_bytes(), before)
+            pages.save(root / "review-10.json", record)
+            pages.save(root / "review-10.response.attempt1.json", receipt)
+            with self.assertRaisesRegex(ValueError, "ceiling"):
+                pages.review_window(root, self.lines, 1, True)
+
+    def test_continuation_rejects_blocked_or_unsubstantiated_corrections(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            with self.assertRaisesRegex(ValueError, "No prior"):
+                pages.review_window(root, self.lines, 1, True)
+            record = {"input_lines": self.lines, "review": dict(self.accept, verdict="blocked"),
+                      "request_sha256": "exact-request", "model": "gpt-6.1-sol-2026-09-29"}
+            pages.save(root / "review-5.json", record)
+            with self.assertRaisesRegex(ValueError, "explicit source correction"):
+                pages.review_window(root, self.lines, 1, True)
+            record["review"] = dict(self.accept, verdict="revise", corrected_lines=[self.lines[0] + "καὶ"])
+            pages.save(root / "review-5.json", record)
+            with self.assertRaisesRegex(ValueError, "actual model response"):
+                pages.review_window(root, self.lines, 1, True)
+
     def test_terminal_truncation_gets_bounded_distinct_requests(self):
         short = {"choices": [{"finish_reason": "length"}]}
         complete = {"choices": [{"finish_reason": "stop"}]}

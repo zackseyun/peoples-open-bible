@@ -105,6 +105,26 @@ class SelectedGreekTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Unknown"):
             translation.prepare("pseudo_clementine_homilies", ["1.1"], "test", source_variant="lagarde1865-unknown")
 
+    def test_generic_partial_homily_requires_both_boundaries_and_every_page(self):
+        fixture = {100: ["Previous text.", "Γ", "1. λόγος προ-"],
+                   101: ["φητῶν. 2. ἀλήθεια."], 102: ["Δ", "Next text."]}
+        def load(number):
+            if number not in fixture:
+                raise FileNotFoundError(number)
+            return fixture[number], {"pdf_page": number}
+        with patch.object(selected, "load_page", side_effect=load):
+            result = selected.assemble_homily(3)
+            self.assertEqual(result["coverage"]["status"], "complete_homily_partial_work")
+            self.assertEqual(result["coverage"]["homilies"], [3])
+            self.assertEqual([r["reference"] for r in result["passages"]], ["3.1", "3.2"])
+            self.assertEqual(result["passages"][0]["source_text"], "λόγος προφητῶν.")
+            del fixture[101]
+            with self.assertRaises(FileNotFoundError):
+                selected.assemble_homily(3)
+            del fixture[102]
+            with self.assertRaisesRegex(ValueError, "boundaries"):
+                selected.assemble_homily(3)
+
     def test_boundary_shift_fails_closed(self):
         first, proof1 = selected.load_page(45)
         second, proof2 = selected.load_page(46)

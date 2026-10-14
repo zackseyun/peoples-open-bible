@@ -275,7 +275,64 @@ def load_print_variant(work: str, variant: str) -> dict:
         return load_first_homily()
     if variant == "lagarde1865-homily-2":
         return load_second_homily()
+    match = re.fullmatch(r"lagarde1865-homily-(\d{1,2})", variant)
+    if match and 3 <= int(match[1]) <= 20:
+        number = int(match[1])
+        actual = assemble_homily(number)
+        path = pages.SOURCE / "selected" / f"pseudo_clementine_homilies.homily-{number:02d}.json"
+        if not path.exists() or json.loads(path.read_text()) != actual:
+            raise ValueError("Partial checked Homily snapshot is missing or stale")
+        return actual
     raise ValueError("Unknown source variant")
+
+
+def assemble_homily(number: int) -> dict:
+    """Draft from one complete checked print unit while other pages are pending.
+
+    Both headings must be observed, and every intervening page must validate.
+    This never supplies a complete-work source to the publication collector.
+    """
+    if not 3 <= number <= 20:
+        raise ValueError("Use the existing pinned assemblers for Homilies 1-2")
+    headings = {number: [], number + 1: []}
+    for page in range(54, 242):
+        try:
+            lines, _ = load_page(page)
+        except (FileNotFoundError, ValueError, KeyError):
+            continue  # Only locate headings here; the entire chosen span is checked below.
+        for index, line in enumerate(lines):
+            heading = HOMILY_NUMERALS.get(line.strip())
+            if heading in headings:
+                headings[heading].append((page, index))
+    if len(headings[number]) != 1 or (number < 20 and len(headings[number + 1]) != 1):
+        raise ValueError("Complete checked homily boundaries are not available")
+    start = headings[number][0]
+    end = headings[number + 1][0] if number < 20 else (241, None)
+    if start[0] > end[0] or (start[0] == end[0] and start[1] >= end[1]):
+        raise ValueError("Homily boundaries are reversed")
+    all_lines, proofs = [], []
+    for page in range(start[0], end[0] + 1):
+        lines, proof = load_page(page)  # Any missing or invalid page blocks this unit.
+        proofs.append(proof)
+        lower = start[1] if page == start[0] else 0
+        upper = end[1] if page == end[0] else None
+        all_lines.extend((page, line) for line in lines[lower:upper])
+    rows = extract_homilies(all_lines, expected_homilies=number, first_homily=number)
+    if number == 20 and (rows[-1]["reference"] != "20.23" or not rows[-1]["source_text"].endswith("ἔσπευσεν.")):
+        raise ValueError("Final homily ending is not verified")
+    manifest = json.loads((pages.SOURCE / "manifest.json").read_text())
+    return {
+        "work": "pseudo_clementine_homilies", "edition": manifest["edition"],
+        "source_snapshot": {"url": manifest["pdf_url"], "sha256": manifest["pdf_sha256"],
+                            "kind": "independent_image_checked_print_transcription"},
+        "source_license": "Public-domain ancient Greek and 1865 edition; original POB notes/contributions CC BY 4.0",
+        "coverage": {"status": "complete_homily_partial_work", "homilies": [number],
+                     "required_homilies": list(range(1, 21)), "sections": [r["reference"] for r in rows],
+                     "basis": "Every checked page between observed consecutive homily headings; NOT a complete-work source"},
+        "normalization": "NFC; join physical end-line hyphens; collapse layout whitespace; remove old-edition pagination bars and section numerals; preserve printed wording, punctuation, spelling and gaps",
+        "page_evidence": proofs, "passages": rows,
+        "status": "checked_partial_print_source_for_drafting_not_reader_release",
+    }
 
 
 def assemble_homilies() -> dict:
@@ -355,7 +412,15 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--work", choices=["pseudo_clementine_peter_to_james", "pseudo_clementine_homilies", *DOCUMENTS], default="pseudo_clementine_peter_to_james")
+    parser.add_argument("--homily", type=int, help="Prepare one checked Homily 3-20 for drafting, not complete-work release")
     args = parser.parse_args()
+    if args.homily is not None:
+        if args.work != "pseudo_clementine_homilies":
+            parser.error("--homily belongs only to Homilies")
+        result = assemble_homily(args.homily)
+        pages.save(pages.SOURCE / "selected" / f"pseudo_clementine_homilies.homily-{args.homily:02d}.json", result)
+        print(f"Selected checked Homily {args.homily} ({len(result['passages'])} sections); incomplete work, not reader release.")
+        raise SystemExit(0)
     result = (assemble_peter() if args.work == "pseudo_clementine_peter_to_james" else
               assemble_homilies() if args.work == "pseudo_clementine_homilies" else assemble_document(args.work))
     pages.save(pages.SOURCE / "selected" / f"{result['work']}.json", result)

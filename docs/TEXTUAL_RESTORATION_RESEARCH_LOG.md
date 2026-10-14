@@ -10786,6 +10786,56 @@ Root additionally verified 403 relative documentation targets, the unchanged
 protected Genizah hash, whitespace and the printed reproduction snippet.
 No source/translation file changed and no corpus-wide test run is claimed.
 
+### 2026-10-14 — External Coptic controls and searchable-layer discipline
+
+The preceding Nahum reply revalidated an already completed article review and
+eight existing application tests; it added no new textual evidence. This goal
+turn therefore advances a different open question rather than rereading Riestra.
+
+One bounded source agent searched a pinned Coptic Scriptorium selection outside
+Ezekiel. The [new appendix](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#external-coptic-phrase-controls)
+records 374 selected OT archive members and 211 monastic files, with two query
+layers and two actual retrieved contexts. One describes faintheartedness; the
+other is a word-boundary false positive in “little foxes.” Neither establishes
+a donor for Hunt5. A zero exact power-phrase result is limited to this selection
+and normalization, not all texts, spelling variants or historical transmission.
+
+The first parser missed OT original-spelling attributes because they occur on
+different tags from the monastic representation. Root and the source agent
+identified that coverage defect; the agent corrected it and reran only cached
+inputs. Root independently reproduced all 585 input hashes, 404,209 tokens in
+each layer, and both loci in both layers. Root also reproduced the selection
+from the pinned tree/metadata and checked the archive, metadata and all 211
+monastic files against upstream Git blob IDs. Eleven aggregate metadata keys
+are absent; all actual selected monastic headers were checked as nonredundant.
+The [compact receipt](../sources/textual_restoration/comparisons/ezekiel_external_coptic_phrase_screen.2026-10-14.v1.json)
+pins the recipe and decisive inputs without importing full third-party text.
+
+Method version 2.0.6 now explicitly requires per-layer searchable coverage,
+normalization and duplicate/dependency disclosure before interpreting phrase
+matches or absences. This implements the prior Sahidic coverage finding and
+the present format/boundary controls. No canonical source, English, reader note,
+canon decision or ImageGen evidence changes. Further exact queries of these
+same strings on these bytes are retired; seek discriminating manuscript or
+apparatus evidence instead. The full OT objective remains incomplete.
+
+Publication is separate. Both PR207 exact-head runs succeeded, but its
+SHA-pinned merge was rejected with HTTP405; a subsequent authoritative read
+reports `mergeable=false`, `mergeable_state=dirty`. Its frozen head is preserved.
+PR209 already contains that work and the main integration; its clean local
+merge-tree is `21824f9d558473957d4a4dd21175caa254d3f5a2`, and GitHub reports
+it mergeable. Its own push run `38599723834` and PR run `38599796572` remain
+live at the latest observation, so no merge is claimed. The required PR209
+attachment attempt again fails at the app's 100-attachment limit. This new
+work uses a separate successor branch, without changing PR207/208/209 heads.
+
+Root checked all 443 relative file targets in the three edited documents,
+compact-receipt consistency, whitespace and the protected Genizah hash; no
+translation or Hebrew-source file differs. No corpus-wide test run is claimed
+for this documentation/receipt change. A separate bounded method reviewer
+did not return a verdict within this pass; further investigation was stopped
+and only already-verified findings requested. This is not an independent PASS.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

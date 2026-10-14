@@ -192,3 +192,35 @@ edition using documented witness readings is a different deliverable from an
 exact damaged-copy diplomatic transcript; the choice has been requested before
 changing that target. The author/audience/date/summary work is separate from
 this unfinished source-verification and corrected-reader-publication decision.
+
+## Additional comparison-input finding
+
+A deterministic post-run lexical spot-check found differences even among the
+109 no-model-flag outcomes. Some are genuine spelling/copy/typography questions;
+others exposed **publisher square-bracket clarifications** (for example an
+expanded pseudonym) that remained inside the earlier comparison's printed-text
+container. Modern popup biographies had already been excluded, but that alone
+was insufficient. The source-only primary and first independent review never
+received those comparison annotations; their execution coverage is unchanged.
+
+The parser now distinguishes publisher-marked original brackets from editorial
+square brackets, preserves original bracket conventions, excludes editorial
+clarifications, and records the exclusions separately. In-word supplied letters
+produce an explicit comparison lacuna rather than a fabricated complete word.
+A source surname at a page break, such as `Page`, is retained; it is not blindly
+removed as UI furniture. Future comparisons reparse only their receipt-verified
+cached markup, bind the derived comparison hash and extraction version, and
+never silently replay an old cached adjudication under changed comparison data.
+
+An initial bracket-only extraction changed 70 pages and retained its diagnostic
+version. A follow-up schema probe found that `clearText` itself flattens some
+editorial expansions (Oliver [Cowdery] becomes Oliver Cowdery). The parser now
+uses `expandedText` to retain the boundaries before excluding editorial material.
+The final versioned offline extraction covered all 305 cached comparison pages,
+changed 101 pages, and recorded 203 excluded bracket items with no parse failures
+and no new network fetches. The original snapshots, original extraction
+files and all actual model requests/results remain intact. Prior no-model-flag
+outcomes are **not** automatically promoted into approvals under the corrected
+comparison-input policy. All source-verification and publication gates remain
+closed pending the source-collated versus exact-copy target decision and the
+required resolution work.

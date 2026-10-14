@@ -11,10 +11,30 @@ from types import SimpleNamespace
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from tools.historical_scan_review import (digest, encoded, endpoint_url, invoke, keyless_client,
-                                        observe, request_payload, review_errors, validate_draft, write, dispatch_leaves, pace_writer)
+                                        observe, request_payload, review_errors, validate_draft, write, dispatch_leaves, pace_writer, english_comparisons)
 
 
 class ScanReviewTests(unittest.TestCase):
+    def test_secondary_comparison_reparses_pinned_markup_without_publisher_glosses(self):
+        raw, job, _, _ = self.fixture()
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); (root/'jsp').mkdir()
+            html = ('<script id="__NEXT_DATA__" type="application/json">'+json.dumps({'props':{'pageProps':{'summary':{
+                'clearText':'<div class="wasptag">Ahashdah [Sidney Rigdon]</div>'}}}})+'</script>').encode()
+            url='https://www.josephsmithpapers.org/paper-summary/doctrine-and-covenants-1835/1'
+            path=root/'jsp/page-0001.html';path.write_bytes(html)
+            write(path.with_name(path.name+'.receipt.json'),{'url':url,'sha256':digest(html),'bytes':len(html)})
+            write(root/'jsp/page-0001.json',{'printed_text':'Ahashdah [Sidney Rigdon]','url':url,'webpage_sha256':digest(html)})
+            write(root/'comparison-alignment.candidates.json',{'pages':[{'reference':job['reference'],
+                'scan_sha256':digest(raw),'strong_location_lead':True,'candidates':[{'jsp_page':1,
+                'comparison_text_sha256':digest(b'Ahashdah [Sidney Rigdon]')}]}]})
+            comparison=english_comparisons(root,job)[-1]
+            self.assertEqual(comparison['text'],'Ahashdah')
+            self.assertEqual(comparison['excluded_editorial_bracket_items'],1)
+            self.assertEqual(comparison['raw_markup_sha256'],digest(html))
+            path.write_bytes(html+b'changed')
+            with self.assertRaisesRegex(ValueError,'provenance'):english_comparisons(root,job)
+
     def test_archival_encoding_bound_to_pinned_zip_member_and_exact_pixels(self):
         from PIL import Image
         raw, job, draft, review = self.fixture()

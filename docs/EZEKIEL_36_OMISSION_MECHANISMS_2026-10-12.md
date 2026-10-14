@@ -720,3 +720,84 @@ Public TEI and metadata were fetched through the publisher's API; the generic
 web-fetch tool could not open the target transcription URL. The TEI carries
 CC BY-SA notices; the image has its separate institutional attribution.
 These inputs remain outside Git and are not relicensed under POB's license.
+
+### Further Bohairic and Arabic wording controls
+
+The next comparison reads actual page images, not additional index votes.
+Root and a source agent independently inspected the complete CoptOT images
+for **BnF Copte 70 / bo 3004L**, docID 613004, pages 3670–3680:
+[recto](https://coptot.manuscriptroom.com/images/webfriendly/Paris_BnF/Copte70/PBN_Copte70.f.184r_lib.jpeg)
+and [verso](https://coptot.manuscriptroom.com/images/webfriendly/Paris_BnF/Copte70/PBN_Copte70.f.184v_lib.jpeg).
+The indexed shelf/image labels are f.184r/v, whereas the separate folio fields
+say 195r/v. Those labels are retained rather than silently equated.
+
+Verse 23 crosses the page break. The first five main-text lines of the verso
+finish the name/profanation material, recognition by all nations, and the
+Adonai/Lord formula. A divider and Psalm heading follow immediately. The
+readable main-text span lacks Hunt5's scatter/few/power sequence, and there
+is no final sanctification clause after the formula before the Psalm. The
+opening verb at the bottom of the recto is not confidently resolved. A faint
+two-line addition above the verso's first main line also remains incompletely
+read: the absence finding must not be expanded into certification of every
+marginal glyph. The Arabic parallel is not used to supply missing Coptic.
+
+**BnF Arabe 113 / ar 1L**, docID 900001, page 2230, supplies a different
+language control. Its [complete indexed page image](https://coptot.manuscriptroom.com/images/webfriendly/Paris_BnF/Arabe113/PBN_Arabe113.f.112a_lib.jpg)
+was inspected by root and the source agent. The final two lines include
+**وستعلم جميع الأمم**, “and all the nations will know,” and
+**أني أنا هو الرب القوي**, “that I am the mighty/strong Lord.” These are
+bounded readings, not a complete diplomatic transcription. The right edge
+limits the opening sanctification/name expression. No Hunt5 punitive sequence
+is visible in the final four–five lines. The adjective “mighty/strong” is not
+Hunt5's separate exercise-of-power clause, and this Arabic ending must not be
+silently labeled the Coptic Adonai formula. A terminal dot and blank space
+follow; this image does not show a subsequent Psalm heading. The shelf/image
+label f.112a and index folio 111r are preserved separately.
+
+The separate Arabic codex and the Arabic column within Copte 70 are not one
+object. Nor do different objects establish independent textual ancestry.
+These controls document local versional wording, not recoverable Hebrew
+letters or a uniquely identifiable Greek exemplar.
+
+**Consequence and stopping rule:** retain the POB source and English. The
+comparison now has sufficient endpoint controls to stop treating another
+matching liturgical cutoff as a consequential priority test by itself.
+Hunt5's unusual internal wording remains a real versional question; resolving
+its ancestry requires a discriminating reading, manuscript relationship or
+continuous-text evidence. A fresh image with additional legible marks could
+also reopen the local transcription. Repeated endpoint checks or model votes
+cannot establish a continuous Ezekiel 36:23c–38 omission. No generated image
+has been used to fill the unclear verb or marginal addition.
+
+Private image inputs under `/tmp/pob-sahidic-ezekiel-wrdqbq/`:
+
+| File | Dimensions | SHA256 |
+|---|---|---|
+| `copte70-f184r.jpeg` | 675 × 1053 | `940310a560216f0f9671a607597a33b822bedd665648537dda16822dc0aeff9f` |
+| `copte70-f184v.jpeg` | 663 × 1054 | `25fefa1e2a9990ccfaf609cc6b018033738a53dfaa867c1a3fd1cb1cff402389` |
+| `arabe113-f112a.jpg` | 653 × 997 | `17a57074157af8cea434deb485cf3ed5405eeb04e4200b78760cc8ebaaeb0363` |
+
+All three images are attributed by the CoptOT index to Gallica/BnF and were
+acquired October 14. No image is imported into Git or relicensed here.
+
+The library's original digitization was also located and visually matched:
+[Gallica view 187](https://gallica.bnf.fr/ark:/12148/btv1b100872043/f187.item)
+has the recto target on the right (visible handwritten number 183), and
+[view 188](https://gallica.bnf.fr/ark:/12148/btv1b100872043/f188.item)
+has its verso on the left. The full-spread `highres` assets are only
+1342 × 1054 and 1345 × 1054 pixels; the filename is not proof of sufficient
+resolution. They confirm page identity/context but do not resolve the faint
+verb and marginal addition. The viewer's zoom additionally exposes IIIF
+tiles, while direct manifest/full-image command-line requests returned 403.
+The public browser viewer opened after its automatic security check; no
+challenge was bypassed. No complete native-resolution image was acquired,
+and no claim that better capture detail is unavailable follows.
+
+The two observed full-spread assets were retained through the browser's asset
+export, privately under
+`/var/folders/r7/29mcf1yj3z18g5c_t2h779jh0000gn/T/browser-use/assets/204e79cd-7ebd-4bef-9aa4-5f79a9273ff4/`:
+
+| Asset | SHA256 |
+|---|---|
+| `f5b8064998e7bee0.highres` (view 187) | `771e5a69ba29cc21594b85bb8670cb75423dcfa14d3affcaa6701bdbe46e6cd8` |
+| `97670035ac9fd66c.highres` (view 188) | `b972f182a424f7b438b26a6a5d3c7a5c42f89c3ccb19da723d33bd78f159cdeb` |

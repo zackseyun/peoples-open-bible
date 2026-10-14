@@ -10591,6 +10591,44 @@ confirm the input hashes, relative documentation links and whitespace;
 tracked source/translation files and the protected unrelated Genizah file
 remain unchanged. No new corpus-wide test result is claimed.
 
+### 2026-10-14 — Additional lectionary wording, not endpoint votes
+
+The previous goal turn made progress by publishing the reviewed modern
+transcription comparison as 4522ae82f9, PR203. This turn confirms its own push
+38586273781 and PR38586337179 runs are still active on that head, then uses a
+successor branch without changing or restarting those runs.
+
+The [Ezekiel report](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#further-bohairic-and-arabic-wording-controls)
+now records direct image checks of Copte70's two target pages and Arabe113's
+target page. Neither readable ending supplies Hunt5's punitive sequence.
+Copte70 has a faint marginal addition that remains incompletely read; its
+main-text ending proceeds to a Psalm. Arabe113 ends with the mighty/strong
+Lord, not a visibly identical Adonai formula, and shows no subsequent Psalm
+on this image. Root and one source agent inspected the full images; no
+Arabic parallel or generated image supplies uncertain Coptic letters.
+
+The Gallica original spread mapping is now verified by visual content, not
+assumed from inconsistent folio labels. Its public viewer works even though
+direct API requests returned 403. Two observed full-spread assets were
+retained, but their dimensions do not improve the unresolved small marks;
+the zoom view offers additional tile-based capture detail, not a complete
+native-resolution download or a certified new reading. Five image hashes
+and explicit reading limits are recorded outside the canonical source data.
+
+The consequential next-action change is to stop endpoint-only sampling as a
+priority test. Further work on this question must discriminate internal
+wording, relationships or continuous textual survival; another matching
+lectionary cutoff alone is insufficient. Source and POB English remain
+unchanged, and the all-OT comparison/restoration goal remains incomplete.
+
+One bounded source-consistency review passes the new report/log against the
+three page images and two full-spread images. It excludes browser/API history,
+view-number URLs, hash/dimension checks and repository/publication state;
+those are root's separately observed checks. All 397 relative documentation
+links resolve, `git diff --check` passes, tracked source/translation files
+remain unchanged, and the unrelated Genizah file retains its protected hash.
+No corpus-wide test run or original-wording certification is claimed.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

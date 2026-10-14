@@ -10872,6 +10872,42 @@ d2110e218c5f73fd822175442413ec510be072ff and expected tree
 21824f9d558473957d4a4dd21175caa254d3f5a2. The new quarter-witness work is
 separate from that completed publication and does not mutate any frozen PR head.
 
+### 2026-10-14 — HOTTP source acquisition and scope control
+
+The previous turn revalidated the existing Nahum article/application result
+and added no new evidence. This pass instead acquired the official UBS
+preliminary/interim textual report, pinned its five inputs, and checked target
+coverage. The [Nahum addition](NAHUM_SOURCE_COMPARISON_2026-10-10.md#hottp-interim-report-control-on-october-14)
+directly consults entry 04316: it offers a particular elliptical-voice analysis
+alongside arising under retained pointing. This supplies a published proposal
+to test, not a new attestation or proof of that analysis. The entry's alternative
+pointing and consonant-changing conjecture remain distinct; its B rating is
+not a numerical probability or a substitute for the newer fragment evidence.
+
+The [Ezekiel access update](EZEKIEL_5_12_QUARTERS_COMPARISON_2026-10-14.md#target-access-and-interim-report-check-on-october-14)
+records the exact Olley chapter's two-page preview limit and the acquired XML's
+absence of the needed fraction/omission entries. The final CTAT route reaches
+an Anubis gate. No purchase, account creation, bypass, full-volume reading or
+new manuscript recovery is claimed. Root and one source checker consulted the
+complete ratings/factors explanations; the checker also read the nine adjacent
+Ezekiel entries and verified the Nahum comparison. Root reproduced the XML
+coverage and hashes. No canonical source, English or note is changed.
+
+This new branch preserves PR211's frozen head while its own PR CI remains live;
+its push check has succeeded. Publication is separate from textual evidence.
+The broad OT comparison/restoration objective remains incomplete. Next work
+requires the specified final apparatus or a genuine grammatical comparator,
+not another review of the same article, preview or database counts.
+
+One bounded consistency review passes the new prose against the actual XML,
+definitions, hashes and coverage; browser/access and publication facts remain
+root-only checks. All eight existing Nahum application tests pass in 4.028s,
+411 relative documentation file targets resolve, and whitespace checks pass.
+No tracked source/translation file differs; the unrelated Genizah file retains
+SHA256 `130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50`.
+These are documentation and unchanged-application checks, not a new vote on
+the earliest Hebrew or a corpus-wide validation.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

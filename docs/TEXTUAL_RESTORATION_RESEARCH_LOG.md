@@ -10146,6 +10146,66 @@ preserved registry rows; Git/CI chronology and reported test execution remain
 outside that source verdict. Root's local links, whitespace and retained39:29/
 protected-file checks pass. No second historical-priority vote is taken.
 
+### 2026-10-14 — Cryptoferratensis Greek target edition
+
+The preceding Nahum audit repeated an already completed article/application
+result and is classified as no new research progress. A distinct primary
+acquisition now advances the Greek witness comparison: Cozza1867, printed147 /
+PDF243, publishes Ezekiel39:29 with `εξεχεα τον θυμον / μου` undotted in the
+decisive noun. Its explicit notation marks unreadable or doubtful text with
+dots, and the surrounding verse remains incomplete. The
+[source report](EZEKIEL_39_CRYPTOFERRATENSIS_2026-10-14.md) records the complete
+target, notation, relevant annotation page, shelfmark and acquisition receipt.
+The printed footer corrects an initial OCR-derived locator; this is an
+edition reading, not new palimpsest decipherment or restored Hebrew.
+
+The Greek noun supplies individual-witness provenance beyond the previously
+consulted selected Greek editions and Syriac-mediated attribution. Agreement
+does not establish genealogical independence or distinguish Hebrew revision
+from Greek interpretation. POB39:29 retains exactly its Hebrew, Spirit English,
+temporal connection and qualified alternative notes. The registry adds one
+bounded Greek witness, preserving all45 prior rows and policy;46 registry
+entries are not a census of every surviving OT manuscript. All54 existing
+registry tests pass in5.970seconds, and source/PDF metadata checks and protected
+file hashes pass. No new validator or canonical test is needed for this
+published-source addition.
+
+The PDF skill governs complete-page visual checks; the writing skill keeps
+claims tied to exact sources and limits. A single factual critique checks the
+new result, not historical priority by repeated model vote. PR189's earlier
+head8b19659 remains frozen while its confirmed live push job115800365484 runs;
+this new result is still uncommitted pending that job and publication
+reconciliation. The source contribution and repository delivery are separate.
+
+A bounded image-target check also reads Albrecht and Faraggiana di Sarzana's
+[Taurinensis C.V.25 study](https://austriaca.at/0xc1aa5576%200x003e8cc1.pdf),
+printed355–372. The source agent reads all18 pages; root visually checks356,
+359 and366. The incomplete Sirach3:1 heading `Περὶ π[…]σαν` on366 belongs
+to photograph33 in the coverage table, not an automatically reconstructed
+title about honoring parents. Page356 lists eight public before/after image
+pairs, none numbered33. The cited ICCU album failed to load; no target image
+or spectral channels were acquired. This is an acquisition-gated lead, not
+an active computational experiment or a newly recovered reading. Keep it
+parked until a distinct target-image route is available. The private article
+SHA256 is e223dcfefb19b66c0e7b1c30e5daa5186850e45afec04c2f0b5dd05850d32a30.
+
+Root subsequently reads complete361–362, including notes50–59, against the
+current POB Ecclesiastes2:26 record. The authors print Ra3010's
+`σοφίαν καὶ γνῶσιν καὶ ἐπιστήμην`, replacing the usual third gift,
+`εὐφροσύνην`, with understanding. They report six other copies with related
+marginal or combined readings and, following Gentry, associate the variant
+with Symmachus and Hexaplaric transmission. These reported copies are not six
+newly collated independent Hebrew witnesses; Gentry's actual apparatus remains
+unconsulted. The coverage table maps2:26 to photograph13, outside the eight
+listed public pairs, although356 reports its earlier publication in2002.
+POB's declared WLC has חָכְמָה, דַעַת and שִׂמְחָה and renders wisdom, knowledge
+and joy. This is a substantive Greek difference, but the available evidence
+does not warrant replacing the Hebrew joy expression or POB's English.
+The canonical file remains SHA256
+f51ac6dc3cca7e4fa84bae94fd274dfd74aa009f69e18f15bfcab0828d52e6b9.
+Reopen for the actual target apparatus and manuscript context, not another
+vote on the same reported variant. No canonical edit or new test is added.
+
 ### 2026-10-13 — AI image recovery investigation and measured spectral tests
 
 At the maintainer's explicit request, the

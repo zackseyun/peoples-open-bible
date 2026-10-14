@@ -21,6 +21,7 @@ CONTRACT_SHA = '1fe49fe05f72f2fc8cc54e07b271ad515e53f1239c23a875e411a3bffb6669c3
 RECEIPT = 'sources/textual_restoration/applications/habakkuk2_reader.2026-10-12.v1.json'
 TARGETS = {(2, 5), (2, 16)}
 METHOD_PATH = 'docs/TEXTUAL_ADJUDICATION_METHOD.md'
+HISTORICAL_POLICY_PATHS = {METHOD_PATH, 'DOCTRINE.md'}
 
 
 def sha(raw):
@@ -83,9 +84,10 @@ class Habakkuk2ReaderDisclosureTests(unittest.TestCase):
         for path, pin in self.contract['input_pins'].items():
             raw = subprocess.check_output(['git', 'show', f'{BASE}:{path}'], cwd=ROOT)
             self.assertEqual(sha(raw), pin, path)
-            # The review method belongs to this historical transaction. Every
-            # other live input still has to match its frozen pin exactly.
-            if path != METHOD_PATH:
+            # Review-method and doctrine documents belong to this historical
+            # transaction. A later terminology decision does not rewrite them.
+            # Live schemas, source evidence and all other pins remain binding.
+            if path not in HISTORICAL_POLICY_PATHS:
                 self.assertEqual(sha((ROOT / path).read_bytes()), pin, path)
 
     def test_corrupt_historical_method_still_fails(self):
@@ -97,6 +99,17 @@ class Habakkuk2ReaderDisclosureTests(unittest.TestCase):
 
         with patch.object(subprocess, 'check_output', side_effect=corrupt_method):
             with self.assertRaisesRegex(AssertionError, METHOD_PATH):
+                self.assert_frozen_input_pins()
+
+    def test_corrupt_historical_doctrine_still_fails(self):
+        original = subprocess.check_output
+
+        def corrupt_doctrine(args, **kwargs):
+            raw = original(args, **kwargs)
+            return raw + b'corrupt' if args[-1] == f'{BASE}:DOCTRINE.md' else raw
+
+        with patch.object(subprocess, 'check_output', side_effect=corrupt_doctrine):
+            with self.assertRaisesRegex(AssertionError, 'DOCTRINE.md'):
                 self.assert_frozen_input_pins()
 
     def test_live_schema_and_source_pins_still_fail_on_drift(self):

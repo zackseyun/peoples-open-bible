@@ -16,6 +16,7 @@ from pathlib import Path
 import sys
 import time
 import threading
+import zipfile
 from concurrent.futures import ThreadPoolExecutor, wait, FIRST_COMPLETED
 from urllib.parse import urlsplit
 
@@ -70,6 +71,7 @@ def obj(properties):
 
 
 STRING = {'type': 'string'}
+NEWBERRY_JP2_ARCHIVE_SHA256 = '2c3f38b3a209f9d471e6c3bea7aac5d20b3b7ef929467e722b8bbf1b508e8f52'
 STRINGS = {'type': 'array', 'items': STRING}
 LINE = obj({'line_id': STRING, 'region': STRING, 'text': STRING, 'uncertainties': STRINGS})
 GRAPHIC = obj({'region': STRING, 'description': STRING})
@@ -191,6 +193,32 @@ def request_payload(job, raw, deployment, stage, draft=None, review=None, compar
     # Deliberately do not serialize the job's english_comparisons or OCR.
     content = [{'type': 'input_text', 'text': text},
                {'type': 'input_image', 'image_url': 'data:image/jpeg;base64,' + base64.b64encode(raw).decode(), 'detail': 'high'}]
+    for alternate in job.get('alternate_facsimiles', []):
+        png = Path(alternate['path']).read_bytes()
+        archive = Path(alternate['archive_zip_path']).read_bytes()
+        leaf = int(job['reference'].rsplit('-', 1)[1])
+        member = f'GR_711_jp2/GR_711_{leaf:04d}.jp2'
+        if (alternate['archive_item'] != 'GR_711' or alternate['physical_leaf'] != leaf or
+            alternate['parent_jpeg_sha256'] != job['source']['sha256'] or
+            digest(archive) != NEWBERRY_JP2_ARCHIVE_SHA256 or
+            digest(archive) != alternate['archive_zip_sha256'] or digest(png) != alternate['sha256'] or
+            alternate['archive_member'] != member):
+            raise ValueError('Alternate archival facsimile provenance mismatch')
+        import io
+        from PIL import Image
+        with zipfile.ZipFile(io.BytesIO(archive)) as container:
+            jp2 = container.read(member)
+        if digest(jp2) != alternate['archive_jp2_sha256']:
+            raise ValueError('Archive member hash mismatch')
+        with Image.open(io.BytesIO(jp2)) as native, Image.open(io.BytesIO(png)) as represented:
+            native.load(); represented.load()
+            if native.mode != represented.mode or native.size != represented.size or native.tobytes() != represented.tobytes():
+                raise ValueError('Alternate representation changed decoded archival pixels')
+        content.extend([{'type': 'input_text', 'text': 'Additional full-page encoding of the SAME physical Newberry GR_711 leaf: ' +
+            json.dumps({key: alternate[key] for key in ['archive_member', 'archive_jp2_sha256', 'sha256', 'physical_leaf']}) +
+            '. Lossless PNG of decoded archival JPEG2000, independently hash-checked against the downloaded archive. '
+            'This is not a different copy, not generated restoration, and not the JPEG crop. Original JPEG also remains attached.'},
+            {'type': 'input_image', 'image_url': 'data:image/png;base64,' + base64.b64encode(png).decode(), 'detail': 'high'}])
     for focus in job.get('focus_images', []):
         pixels = Path(focus['path']).read_bytes()
         if focus['parent_sha256'] != job['source']['sha256'] or digest(pixels) != focus['sha256']:
@@ -298,6 +326,10 @@ def invoke(client, profile, job, raw, stage, directory, draft=None, review=None,
               'request_sha256': request_hash, 'result': json.loads(response.output_text),
               'usage': response.usage.model_dump(mode='json') if response.usage else None,
               'recorded_at': dt.datetime.now(dt.timezone.utc).isoformat(), 'publication_allowed': False}
+    if job.get('alternate_facsimiles'):
+        record['alternate_facsimiles'] = [{key: item[key] for key in
+            ['sha256', 'archive_zip_sha256', 'archive_member', 'archive_jp2_sha256', 'physical_leaf']}
+            for item in job['alternate_facsimiles']]
     if draft is not None:
         record['draft_sha256'] = digest(encoded(draft))
     write(result_path, record)

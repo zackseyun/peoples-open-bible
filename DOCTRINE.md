@@ -113,45 +113,47 @@ Per-verse variance is documented in the individual YAML files.
 | ἱλαστήριον *hilastērion* | atoning sacrifice | propitiation, mercy seat | Dynamic rendering for accessibility; alternatives footnoted |
 | ἀγάπη *agapē* | love | charity (archaic) | Lexical cognates in source kept |
 | σάρξ *sarx* | flesh (literal) / sinful nature (metaphorical) | — | Context-dependent; per-verse documented |
-| μετανοέω / μετάνοια *metanoeō / metanoia* | reorient / reorientation; toward God where the context warrants making the destination explicit | repent / repentance (traditional); reconsider / change of mind in documented exceptions | See "Reorientation terminology (2026-10-11)" below; do not homogenize regret, divine relenting, or distinct turning words |
+| μετανοέω / μετάνοια *metanoeō / metanoia* | repent / repentance where context supports moral-spiritual change | change of mind, reconsider, regret and other contextual renderings | See "Repentance terminology (2026-10-13)"; explain the meaning without homogenizing distinct source expressions |
 | νήφω *nēphō* | clear-minded (most contexts); sober (where Paul explicitly runs the drunk/sober metaphor) | sober-minded | See revision notes in 1 Pet 5:8, 1 Thess 5:6 |
 | יְהוָה YHWH | Yahweh | the LORD, Jehovah | Renders the divine name as a name. Where the NT quotes an OT YHWH passage using *Kyrios*, the NT verse retains "Lord" to preserve the Greek; the OT source verse uses "Yahweh". |
 | אָדָם *adam* | man / humankind (context) | — | Context-dependent per usage |
 
-## Reorientation terminology (2026-10-11)
+## Repentance terminology (2026-10-13)
 
-Maintainer-approved English POB and SPOB reader wording uses **reorient /
-reorientation** in place of the repent family for moral-spiritual redirection.
-Use **toward God** when the context warrants making that direction explicit;
-use **toward you** in direct prayer, and omit the extra destination when the
-sentence already names it, supplies a departure from wrongdoing, or concerns
-interpersonal reconsideration. Acts 20:21 explicitly supplies the Godward
-phrase. The word *metanoia* by itself does not lexically contain "God."
+The contextual reassessment supersedes the October 11 reorientation default.
+Use **repent / repentance** for the moral-spiritual response where the passage
+supports it. Familiarity alone is not evidence of accuracy; explain the intended
+change of disposition and conduct rather than reducing repentance to sadness
+or a change of opinion. Reorientation can explain the concept but is not a
+mandatory replacement in reader text. No claim about measured reader reception
+or independent scholarly approval is made.
 
-This is an English editorial policy, not a claim that remorse is irrelevant or
-that Greek word parts establish the full meaning. Preserve sorrow, named sins,
-faith, forgiveness, and the distinction between a response and its fruit.
-Keep separate turning expressions in Acts 3:19 and 26:20. Baptism's relationship
-to reorientation must not be rewritten as "only symbolizes" or "causes."
+**Context still controls.** Retain regret, remorse, relenting, reconsideration,
+change of mind, or turning back where those fit the source and local direction.
+Preserve contested readings in Job 42:6 and Hebrews 12:17, the alternate turning
+reading in Jeremiah 31:19, and distinct turn/return verbs in Acts 3:19 and 26:20.
+Use "repentance toward God" in Acts 20:21 because the sentence explicitly gives
+that direction; do not insert it into every occurrence of metanoia.
 
-**Context controls exceptions.** Retain regret, relenting, reconsideration,
-change of mind, or turning back where that is the supported sense. Do not make
-God reorient toward God; do not make a persecutor's demand for apostasy a call
-toward God. Preserve contested interpretations in Job 42:6 and Hebrews 12:17.
-Extra-canonical authors retain their own conceptual frameworks. Adapting a
-historical English witness is not a new ancient-language translation, and must
-be disclosed while its source transcription remains untouched.
+Keep sorrow and repentance distinct in 2 Corinthians 7:9-10. Retain the
+relationship between repentance and its fruits, rather than equating the two.
+Use "I repent" in Luke 17:4 without requiring proof of completed reform before
+forgiveness. Preserve baptismal grammar without deciding symbolic versus causal
+interpretations by a vocabulary substitution.
 
-**No invented intensifiers.** Do not add "fully," "completely," "radically,"
-"truly," "wholeheartedly," or a superlative simply to strengthen reorientation.
-Preserve such force only where the source supplies it. Hermas V.3.xiii.4
-(reader chapter 21:4) has *holotelōs* and *ex holēs kardias*; its existing
-"completely" and "from their whole heart" are not new additions.
+Do not add intensifiers. Keep source-backed emphasis such as the existing
+"completely" and "from their whole heart" in Hermas 21:4. Keep the corrected
+"more joy ... than" in Luke 15:7. Extra-canonical writers retain their own
+conceptual frameworks, including adverse changes of mind; do not harmonize
+them to a canonical Godward formula. Historical English witnesses and source
+transcriptions remain untouched; reader adaptations retain their disclosure.
 
-Traditional terminology remains in alternative notes, original sources, and
-historical revision records. Do not rewrite those layers to manufacture a
-history of agreement. See [the application report](docs/REORIENTATION_POLICY_2026-10-11.md)
-and the hash-bound plan in `config/terminology/`.
+All **397** previously changed records have an explicit new decision, including
+retained exceptions and the four October 12 follow-up records. Earlier wording,
+notes, plans, and review history are preserved rather than erased. See the
+[full decision ledger](docs/REPENTANCE_REASSESSMENT_2026-10-13.md) and exact,
+hash-bound plan in `config/terminology/repentance-contextual-2026-10-13.json`.
+These remain editorial drafts, not independent scholarly certifications.
 
 ## What the translation is not
 

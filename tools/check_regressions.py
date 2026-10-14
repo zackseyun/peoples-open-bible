@@ -124,6 +124,14 @@ def check_file(path: pathlib.Path) -> list[dict]:
         for error in reorientation_policy.approved_errors(path, data):
             violations.append({"file": str(path.relative_to(REPO_ROOT)),
                                "rule": "approved-reorientation-terminology", "details": error})
+    if path.relative_to(REPO_ROOT).parts[0] in {"translation", "translation_simplified"}:
+        try:
+            from tools import repentance_reassessment
+        except ModuleNotFoundError:
+            import repentance_reassessment
+        for error in repentance_reassessment.approved_errors(path, data):
+            violations.append({"file": str(path.relative_to(REPO_ROOT)),
+                               "rule": "contextual-repentance-decision", "details": error})
     nt = is_nt(path)
 
     # Rule 1: use conventional personal-name forms while preserving the title

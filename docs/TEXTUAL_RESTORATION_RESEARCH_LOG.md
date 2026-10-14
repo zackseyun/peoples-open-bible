@@ -10146,6 +10146,65 @@ preserved registry rows; Git/CI chronology and reported test execution remain
 outside that source verdict. Root's local links, whitespace and retained39:29/
 protected-file checks pass. No second historical-priority vote is taken.
 
+### 2026-10-13 — AI image recovery investigation and measured spectral tests
+
+At the maintainer's explicit request, the
+[AI recovery report](AI_MANUSCRIPT_RECOVERY_2026-10-13.md) develops the imaging,
+fragment-joining and constrained-completion route with a consequential biblical
+target queue. It documents current primary research, generative image/video
+limits, contamination controls and the evidence needed for a discovery claim.
+The active priorities now link to this bounded track.
+
+A pinned Qumran Segmentation Dataset check verifies 100 released masks and
+reproduces the published MTEM ink/parchment and Otsu parchment metrics. A fresh
+two-band random-forest experiment then trains on one fragment and evaluates
+the other 19 using actual 16-bit spectral data. Compared with its single-band
+baseline, it reduces false ink by 60.1%, but underperforms published MTEM and
+fails the difficult region and two empty-reference controls. This is useful
+negative development evidence, not a deployable recovery model or a new reading.
+Two scripts, full numeric results and four focused metric tests preserve the
+experiment without importing custodial images into Git.
+
+One actual built-in ImageGen edit sharpens a Leningrad control's appearance but
+changes framing at the lower writing. Its prompt, source/output hashes and
+limits are recorded; the labeled diagnostic remains local and is excluded from
+transcription and source selection. The existing character-label disagreement
+is not reopened. The write-page and imagegen skills support documentation and
+this explicitly non-evidentiary test.
+
+The actual Zuqnin 107r-106v study JPEG is also acquired and inspected as an
+overview. Its 5000 by 3976 received pixels are fewer than the manifest's
+8168 by 6495, and the display resizes it further. No new Greek glyph, spectral
+exposure, Hebrew restoration or English revision is claimed. The next source
+attempt requires column registration and better measured views of surviving
+undertext; absent parchment and the unattested 39:29 slot remain absent.
+
+### 2026-10-14 — Syrohexapla publication reconciliation
+
+The preceding Nahum recheck confirmed an already delivered result and added no
+new source evidence. The next action resumes publication of the actual
+Syrohexaplaric comparison. PR189's original push run38518159969 succeeded at
+head1625ab6a87a68c3be4aa1c3aa8ac5895f8a310b3, but no pull-request run was
+created while the research-log conflict prevented a merge. A current API check
+confirms the conflict and no live check on that head. Merging the updated main
+preserves both the Syrohexapla chronology and the independently added AI image
+experiments, alongside all concurrent corpus work. The resulting head requires
+its own push and pull-request validation before publication.
+
+The completed Ceriani acquisition receipt also confirms a successful ordinary
+resume of the same public object after the initial local-write failure. Its
+MD5 is ffc4106d70db8e779381338680a5ea75, matching the archive metadata; the
+full-file SHA256 and source judgment above are unchanged. This acquisition
+detail supplies reproducibility, not another textual witness.
+
+All54 existing registry tests pass in5.888seconds after reconciliation. The
+three-path delta against updated main passes whitespace checks; the older
+branch-to-merge check also reports pre-existing Markdown hard-break whitespace
+in main's unrelated repentance report, which is preserved. The reviewed source
+case and registry retain their exact hashes, as do canonical39:29 and the
+protected untracked Genizah file. No new source judgment is inferred from these
+implementation checks.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

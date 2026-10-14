@@ -106,3 +106,32 @@ IDs to terminal completion without any new POST. Unknown creation outcomes with
 no response ID remain untouched. A newly versioned, previously terminal-filtered
 leaf 10 is the isolated lane's end-to-end probe, not an observation-timeout retry.
 Configuration/test success is not a whole-book source or rights approval.
+
+## Alternative encoding, not visual restoration
+
+Native JPEG close-ups resolved at least one punctuation question while several
+other readings remain ambiguous. The archived `GR_711_jp2.zip` was acquired and
+checked against its published Internet Archive metadata SHA-1 and file size.
+Its SHA-256 is
+`2c3f38b3a209f9d471e6c3bea7aac5d20b3b7ef929467e722b8bbf1b508e8f52`.
+The archive is described as Single Page Processed JP2 ZIP; do not call it a
+pristine scanner original or a newly discovered physical copy.
+
+For selected problematic leaves, a lossless PNG representation of the decoded
+archival JPEG2000 is available alongside the prior JPEG. No interpolation,
+upscaling, contrast filtering, restoration, or generated glyphs are used. The
+runner pins the complete archive, checks the exact leaf/member and its hash,
+and verifies that the supplied PNG has exactly the decoded JPEG2000's mode,
+dimensions, and pixel bytes. Both full-page representations stay attached.
+The model record includes the alternate representation's provenance, and the
+request hash includes its pixels. A changed pixel, leaf, member, archive, or
+parent JPEG fails closed. This is source evidence, not an automatic confidence
+promotion. Genuine unresolved readings remain flagged.
+
+The Newberry's current open-access policy permits collection-image use for
+lawful purposes without library licensing or permission fees:
+https://www.newberry.org/collection/order-digital-files . Underlying-work rights
+remain a separate responsibility. JSP's linked website terms restrict reuse;
+no permission to redistribute its modern editorial material or facsimiles is
+claimed, and no new JSP image is added to the model lane. The primary remains
+the independently acquired Newberry scan of the 1835 English edition.

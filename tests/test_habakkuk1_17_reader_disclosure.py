@@ -20,6 +20,7 @@ CONTRACT_SHA = 'bb82167b173cda694658212ee458d2d1d6e5bf83c695234b41b22b0e6a63b534
 RECEIPT = 'sources/textual_restoration/applications/habakkuk1_17_reader.2026-10-12.v1.json'
 KEY = (1, 17)
 METHOD_PATH = 'docs/TEXTUAL_ADJUDICATION_METHOD.md'
+HISTORICAL_POLICY_PATHS = {METHOD_PATH, 'DOCTRINE.md'}
 
 
 def sha(raw):
@@ -61,9 +62,9 @@ class Habakkuk117ReaderDisclosureTests(unittest.TestCase):
         for path, pin in self.contract['input_pins'].items():
             historical = subprocess.check_output(['git', 'show', f'{BASE}:{path}'], cwd=ROOT)
             self.assertEqual(sha(historical), pin, path)
-            # A later method revision does not rewrite the method that was
-            # actually reviewed here. All other live input pins remain binding.
-            if path != METHOD_PATH:
+            # Later method or terminology policy revisions do not rewrite the
+            # documents actually reviewed here. Other live pins remain binding.
+            if path not in HISTORICAL_POLICY_PATHS:
                 self.assertEqual(sha((ROOT / path).read_bytes()), pin, path)
 
     def test_corrupt_historical_method_still_fails(self):
@@ -75,6 +76,17 @@ class Habakkuk117ReaderDisclosureTests(unittest.TestCase):
 
         with patch.object(subprocess, 'check_output', side_effect=corrupt_method):
             with self.assertRaisesRegex(AssertionError, METHOD_PATH):
+                self.assert_frozen_input_pins()
+
+    def test_corrupt_historical_doctrine_still_fails(self):
+        original = subprocess.check_output
+
+        def corrupt_doctrine(args, **kwargs):
+            raw = original(args, **kwargs)
+            return raw + b'corrupt' if args[-1] == f'{BASE}:DOCTRINE.md' else raw
+
+        with patch.object(subprocess, 'check_output', side_effect=corrupt_doctrine):
+            with self.assertRaisesRegex(AssertionError, 'DOCTRINE.md'):
                 self.assert_frozen_input_pins()
 
     def test_live_schema_and_source_pins_still_fail_on_drift(self):

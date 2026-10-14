@@ -1,4 +1,8 @@
-"""Deterministic application checks, not certification of a translation's theology."""
+"""Historical October 11-12 contract replay plus current export compatibility.
+
+The source-wording assertions deliberately load the October 13 input snapshot,
+not the newly reassessed corpus. Current decisions have a separate complete suite.
+"""
 import copy
 import hashlib
 import json
@@ -21,7 +25,15 @@ class ReorientationPolicyTests(unittest.TestCase):
         cls.by_path={r['path']:r for r in cls.items}
         cls.followup=json.loads((ROOT/'config/terminology/reorientation-dialogue-2026-10-12.json').read_text())
         cls.followups={r['path']:r for r in cls.followup['records']}
-        cls.current={r['path']:policy.load(ROOT/r['path']) for r in cls.items}
+        review=json.loads((ROOT/'config/terminology/repentance-contextual-2026-10-13.json').read_text())
+        names=[review['baseline_commit']+':'+r['path'] for r in cls.items]
+        raw=subprocess.check_output(['git','cat-file','--batch'],input=('\n'.join(names)+'\n').encode(),cwd=ROOT)
+        cls.current={};cls.historical_bytes={};offset=0
+        for r in cls.items:
+            end=raw.index(b'\n',offset);size=int(raw[offset:end].split()[2])
+            blob=raw[end+1:end+1+size];offset=end+size+2
+            cls.current[r['path']]=yaml.load(blob,Loader=yaml.CSafeLoader)
+            cls.historical_bytes[r['path']]=blob
         # One git process; preserve object byte counts rather than line-splitting YAML.
         names=[cls.plan['baseline_commit']+':'+r['path'] for r in cls.items]
         raw=subprocess.check_output(['git','cat-file','--batch'],input=('\n'.join(names)+'\n').encode(),cwd=ROOT)
@@ -34,7 +46,7 @@ class ReorientationPolicyTests(unittest.TestCase):
             cls.baseline[r['path']]=yaml.load(blob,Loader=yaml.CSafeLoader)
 
     def read(self,tail,simplified=False):
-        return policy.load(ROOT/('translation_simplified' if simplified else 'translation')/tail)
+        return self.current[('translation_simplified' if simplified else 'translation')+'/'+tail]
 
     def plain(self,tail,simplified=False):
         doc=self.read(tail,simplified)
@@ -86,7 +98,7 @@ class ReorientationPolicyTests(unittest.TestCase):
         for root in ('translation','translation_simplified'):
             for tail in ('nt/mark/001/015.yaml','nt/2_corinthians/007/010.yaml'):
                 name=root+'/'+tail
-                self.assertEqual((ROOT/name).read_bytes(),subprocess.check_output(
+                self.assertEqual(self.historical_bytes[name],subprocess.check_output(
                     ['git','show',self.followup['baseline_commit']+':'+name],cwd=ROOT))
 
     def test_note_labels_work_with_existing_publishers(self):
@@ -129,16 +141,10 @@ class ReorientationPolicyTests(unittest.TestCase):
         self.assertIn('reoriented completely',herm);self.assertIn('from their whole heart',herm)
         self.assertIn('ὁλοτελῶς',self.read('extra_canonical/shepherd_of_hermas/021/004.yaml')['source']['text'])
 
-    def test_all_main_english_reader_text_free_of_legacy_terms(self):
-        files=subprocess.check_output(['git','ls-files','translation','translation_simplified'],cwd=ROOT,text=True).splitlines()
-        failures=[]
-        for name in files:
-            if not name.endswith('.yaml'):continue
-            raw=(ROOT/name).read_text()
-            if not policy.TERM.search(raw):continue
-            doc=yaml.load(raw,Loader=yaml.CSafeLoader)
-            if isinstance(doc,dict) and policy.TERM.search((doc.get('translation')or{}).get('text','')):failures.append(name)
-        self.assertEqual(failures,[])
+    def test_historical_planned_text_free_of_legacy_terms(self):
+        # Historical claim only. The current corpus intentionally restores these terms.
+        self.assertEqual([name for name,d in self.current.items()
+                          if policy.TERM.search(d['translation']['text'])], [])
 
     def test_godward_and_separate_turning_expressions(self):
         for simple in (False,True):
@@ -193,7 +199,7 @@ class ReorientationPolicyTests(unittest.TestCase):
         from tools import export_mobile_bible as e
         for simple in (False,True):
             root=ROOT/('translation_simplified' if simple else 'translation')
-            with patch.object(e.draft,'TRANSLATION_ROOT',root),patch.object(e,'TRANSLATION_ROOT',root),patch.object(e,'APOCRYPHA_ROOT',root/'deuterocanon'),patch.object(e,'EXTRA_CANONICAL_ROOT',root/'extra_canonical'):
+            with patch.object(e.yaml,'safe_load',side_effect=lambda raw: yaml.load(raw,Loader=getattr(yaml,'CSafeLoader',yaml.SafeLoader))), patch.object(e.draft,'TRANSLATION_ROOT',root),patch.object(e,'TRANSLATION_ROOT',root),patch.object(e,'APOCRYPHA_ROOT',root/'deuterocanon'),patch.object(e,'EXTRA_CANONICAL_ROOT',root/'extra_canonical'):
                 for code,ch,v,tail in [('MRK',1,15,'nt/mark/001/015.yaml'),('ACT',26,20,'nt/acts/026/020.yaml'),('JOB',42,6,'ot/job/042/006.yaml'),('JER',31,19,'ot/jeremiah/031/019.yaml'),('LUK',17,4,'nt/luke/017/004.yaml')]:
                     book=e.export_book(code)
                     actual=next(vr for cr in book['chapters'] if cr['chapter']==ch for vr in cr['verses'] if vr['verse']==v)

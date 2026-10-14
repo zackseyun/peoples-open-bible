@@ -119,6 +119,38 @@ class HistoricalSourceReviewTests(unittest.TestCase):
         raw=('<script id="__NEXT_DATA__" type="application/json">'+json.dumps({'props':{'pageProps':{'summary':page}}})+'</script>').encode()
         self.assertEqual(parse_jsp_page(raw)[0],'Missouri 192')
 
+    def test_editorial_aliases_are_not_printed_words_but_original_brackets_survive(self):
+        from tools.historical_archive_review import parse_jsp_page
+        page={'clearText':'<div class="wasptag">Ahashdah [Sidney Rigdon], Tahhanes [the tannery]. '
+              '<span class="original-bracket">-[</span>Presiding Elders<span class="original-bracket">]-</span></div>'}
+        raw=('<script id="__NEXT_DATA__" type="application/json">'+json.dumps({'props':{'pageProps':{'summary':page}}})+'</script>').encode()
+        text,summary=parse_jsp_page(raw)
+        self.assertEqual(text,'Ahashdah , Tahhanes . -[Presiding Elders]-')
+        self.assertEqual([x['text'] for x in summary['pob_extraction']['excluded_editorial_brackets']],
+                         ['[Sidney Rigdon]','[the tannery]'])
+
+    def test_editorial_supplied_letters_remain_comparison_gaps_not_fake_print(self):
+        from tools.historical_archive_review import parse_jsp_page
+        page={'clearText':'<div class="wasptag">s[upplied]ource [editorial [nested] annotation].</div>'}
+        raw=('<script id="__NEXT_DATA__" type="application/json">'+json.dumps({'props':{'pageProps':{'summary':page}}})+'</script>').encode()
+        text,summary=parse_jsp_page(raw)
+        self.assertEqual(text,'s□ource .')
+        self.assertTrue(summary['pob_extraction']['excluded_editorial_brackets'][0]['in_word_supply'])
+        self.assertFalse(summary['pob_extraction']['excluded_editorial_brackets'][1]['in_word_supply'])
+
+    def test_unclosed_comparison_editorial_bracket_fails_closed(self):
+        from tools.historical_archive_review import exclude_editorial_brackets
+        with self.assertRaises(ValueError):exclude_editorial_brackets('Printed [unfinished annotation')
+
+    def test_expanded_markup_preserves_editorial_boundaries_that_clear_text_flattens(self):
+        from tools.historical_archive_review import parse_jsp_page
+        page={'clearText':'<div class="wasptag">your brother Oliver Cowdery</div>',
+              'expandedText':'<div class="wasptag">your brother Oliver [Cowdery]</div>'}
+        raw=('<script id="__NEXT_DATA__" type="application/json">'+json.dumps({'props':{'pageProps':{'summary':page}}})+'</script>').encode()
+        text,summary=parse_jsp_page(raw)
+        self.assertEqual(text,'your brother Oliver')
+        self.assertEqual(summary['pob_extraction']['markup_field'],'expandedText')
+
 class WholeEditionInventoryTests(unittest.TestCase):
     def test_offline_snapshot_audit_never_repairs_or_fetches(self):
         from tools.historical_dc_whole_edition import read_snapshot

@@ -10,6 +10,33 @@ especially the Zuqnin undertext, and test generative outputs as hypotheses or
 display artifacts. Existing failed controls and source/application gates remain
 in force; this track does not claim a newly deciphered biblical reading.
 
+Measured follow-up in the same session: [native target acquisition](NATIVE_MANUSCRIPT_RECOVERY_2026-10-13.md)
+now supplies 4Q122 color/infrared target tiles with a passing regional
+correspondence check. Within this imaging track, prioritize historical plates
+and associated-scrap identification next. Zuqnin's inspected regions yielded
+no secure Greek sequence; seek better captures or a column locator before
+investing in model training. Neither result is a new accepted reading.
+
+The [historical-state follow-up](4Q122_HISTORICAL_STATES_2026-10-14.md) has now
+acquired 1956/1960 infrared plate regions and inspected four additional 4Q122
+catalogued scraps. No extra letter or join is accepted. The next discriminating
+input is the consulted DJD IX fragment map and apparatus, not another preview
+reading. If that remains unavailable, prefer a target with measured images and
+an accessible critical edition; do not present catalogue grouping as a join.
+
+The [Ephraemi Job feasibility pass](EPHRAEMI_JOB_IMAGE_FEASIBILITY_2026-10-14.md)
+locates folio 33 in Tischendorf's actual edition and acquires Gallica photographs.
+No new reading is accepted. The historical gaps now have concrete locators, but
+the modern Job apparatus and target-specific spectral images remain the inputs
+that could change the result. Do not repeatedly reread the same export or treat
+an old edition's blank as proof of present-day novelty.
+
+The subsequent Ephraemi access check found a material limit: a consulted 2021
+study describes the then-existing multispectral set as NT-only. Current Job
+coverage must be established, not assumed. The alternate Gallica substitute
+scan of 33v was also acquired and inspected without a new accepted letter;
+repeat enlargements of these two exports are not the next experiment.
+
 Current direction, reset 2026-10-12: prioritize consequential unresolved textual
 history and meaning questions, not the number of edited sentences, registry
 entries, tests or commits. The [replacement objective](TEXTUAL_RESTORATION_RESEARCH_LOG.md#objective-and-current-assessment)

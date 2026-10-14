@@ -10146,6 +10146,32 @@ preserved registry rows; Git/CI chronology and reported test execution remain
 outside that source verdict. Root's local links, whitespace and retained39:29/
 protected-file checks pass. No second historical-priority vote is taken.
 
+### 2026-10-14 — Syrohexapla publication reconciliation
+
+The preceding Nahum recheck confirmed an already delivered result and added no
+new source evidence. The next action resumes publication of the actual
+Syrohexaplaric comparison. PR189's original push run38518159969 succeeded at
+head1625ab6a87a68c3be4aa1c3aa8ac5895f8a310b3, but no pull-request run was
+created while the research-log conflict prevented a merge. A current API check
+confirms the conflict and no live check on that head. Merging the updated main
+preserves both the Syrohexapla chronology and the independently added AI image
+experiments, alongside all concurrent corpus work. The resulting head requires
+its own push and pull-request validation before publication.
+
+The completed Ceriani acquisition receipt also confirms a successful ordinary
+resume of the same public object after the initial local-write failure. Its
+MD5 is ffc4106d70db8e779381338680a5ea75, matching the archive metadata; the
+full-file SHA256 and source judgment above are unchanged. This acquisition
+detail supplies reproducibility, not another textual witness.
+
+All54 existing registry tests pass in5.888seconds after reconciliation. The
+three-path delta against updated main passes whitespace checks; the older
+branch-to-merge check also reports pre-existing Markdown hard-break whitespace
+in main's unrelated repentance report, which is preserved. The reviewed source
+case and registry retain their exact hashes, as do canonical39:29 and the
+protected untracked Genizah file. No new source judgment is inferred from these
+implementation checks.
+
 ### 2026-10-14 — Cryptoferratensis Greek target edition
 
 The preceding Nahum audit repeated an already completed article/application
@@ -10206,6 +10232,24 @@ f51ac6dc3cca7e4fa84bae94fd274dfd74aa009f69e18f15bfcab0828d52e6b9.
 Reopen for the actual target apparatus and manuscript context, not another
 vote on the same reported variant. No canonical edit or new test is added.
 
+The bounded independent Cozza critique passes the report and registry row,
+including all six source pages, exact locators, notation and target reading.
+It independently verifies all45 preserved rows, schema and semantic checks,
+and the PDF hashes. It supplies no historical-priority or publication approval.
+The report remains SHA256
+d75b61a8996a96cbcb1ca774da44b28cbeb001bef340a666159fdc3a0d867ce6;
+the registry remains fbd2b5a809c3f7d013dae7b895a673bfecd0c29f0491198c28def50c8157ecf2.
+
+Run38548487970 subsequently completes successfully at frozen head8b19659.
+Only then is the new source work committed as1468eecf411b4387ec124c7cdb68b92a1d263ab2.
+Reconciliation with main51c0cf943dff0e55e4614007ed43e3765b9eb24a preserves
+both research chronologies and moves this branch's publication history beside
+its source entry, avoiding competing additions immediately before the About
+placeholder. All54 registry tests pass again in5.369seconds. The four-path
+delta against main passes whitespace checks; the source reports, canonical
+Ezekiel/Ecclesiastes records and protected Genizah file retain their hashes.
+The combined head still requires its own push and PR checks before merge.
+
 ### 2026-10-13 — AI image recovery investigation and measured spectral tests
 
 At the maintainer's explicit request, the
@@ -10239,31 +10283,72 @@ exposure, Hebrew restoration or English revision is claimed. The next source
 attempt requires column registration and better measured views of surviving
 undertext; absent parchment and the unattested 39:29 slot remain absent.
 
-### 2026-10-14 — Syrohexapla publication reconciliation
+### 2026-10-13 - Native recovery target acquisition and correspondence
 
-The preceding Nahum recheck confirmed an already delivered result and added no
-new source evidence. The next action resumes publication of the actual
-Syrohexaplaric comparison. PR189's original push run38518159969 succeeded at
-head1625ab6a87a68c3be4aa1c3aa8ac5895f8a310b3, but no pull-request run was
-created while the research-log conflict prevented a merge. A current API check
-confirms the conflict and no live check on that head. Merging the updated main
-preserves both the Syrohexapla chronology and the independently added AI image
-experiments, alongside all concurrent corpus work. The resulting head requires
-its own push and pull-request validation before publication.
+The [native-image follow-up](NATIVE_MANUSCRIPT_RECOVERY_2026-10-13.md) acquires
+the alternate Zuqnin 107r capture and 1400-square IIIF regions. The examined
+regions do not yield a secure Greek sequence or column registration; a separate
+visual observer identifies watermark contamination and abstains from reading.
+Indexed historical-microfilm records and later bibliography provide better
+acquisition/novelty leads, not newly consulted photographs or editions.
 
-The completed Ceriani acquisition receipt also confirms a successful ordinary
-resume of the same public object after the initial local-write failure. Its
-MD5 is ffc4106d70db8e779381338680a5ea75, matching the archive metadata; the
-full-file SHA256 and source judgment above are unchanged. This acquisition
-detail supplies reproducibility, not another textual witness.
+For 4Q122, the public viewer's native level now supplies four 512-square tiles
+per color/infrared exposure, resolving the earlier 1200-pixel-preview limit for
+the target region. Two tools and complete receipts preserve acquisition and
+numeric correspondence. An affine fit on the left tile column places 129 of
+139 held-out matches in the right column within three native pixels. Large
+outliers are retained; the regional pass is not character recognition.
 
-All54 existing registry tests pass in5.888seconds after reconciliation. The
-three-path delta against updated main passes whitespace checks; the older
-branch-to-merge check also reports pre-existing Markdown hard-break whitespace
-in main's unrelated repentance report, which is preserved. The reviewed source
-case and registry retain their exact hashes, as do canonical39:29 and the
-protected untracked Genizah file. No new source judgment is inferred from these
-implementation checks.
+All eight tiles were visually inspected. No new biblical letter or change to
+the conventional identification is accepted. The unusual word-internal space
+was already published; exact DJD consultation and historical/associated-scrap
+comparison are the next priority. Four focused pyramid tests pass locally.
+The PDF and documentation skills support source consultation and reporting.
+The breakthrough objective remains active and unachieved; no canonical text,
+witness inventory count or English wording changes.
+
+### 2026-10-14 - 4Q122 historical photographs and associated scraps
+
+The [historical-state report](4Q122_HISTORICAL_STATES_2026-10-14.md) records actual
+acquisition of PAM 41.933 (January 1956) and 43.291 (February 1960) infrared
+negatives as previews and ten native-level tiles. Reading the public catalogue's
+second API page located the earlier photograph; all 13 returned image records
+are preserved. The institutional photographic inventory was directly consulted.
+Four further catalogue scraps were inspected in modern color/infrared previews.
+
+A bounded image-only observer supplied explicit shape candidates and abstentions
+for fragments 35 and 37 without a proposed passage. Infrared clarifies existing
+strokes but supplies no securely new letter in this pass. Historical placement
+of fragment 25 beside the main fragment is not a new join. Mixed plates contain
+multiple manuscripts. A 46-asset hash receipt preserves acquisition, not custody
+or independent textual attestation; copyrighted photographs remain uncommitted.
+
+The attempted new-letter recovery remains unsuccessful. Exact DJD IX readings
+and fragment mapping are still unconsulted, so novelty and reassignment claims
+remain unavailable. No source text, English, accepted transcription, or witness
+count changes. The next attempt should obtain that discriminating edition input
+or move to a target with a consultable edition and measured imagery. The overall
+breakthrough goal is not complete.
+
+### 2026-10-14 - Codex Ephraemi Job leaf feasibility
+
+The [Job image report](EPHRAEMI_JOB_IMAGE_FEASIBILITY_2026-10-14.md) maps folio 33
+to the directly consulted 1845 edition, printed pages 7 and 8, and Gallica
+views 78 and 79. Twelve original responses and three edition renders have
+hashes and acquisition records. Actual photographs include two full-page
+viewer exports and four half-scale recto regions, not a spectral dataset.
+
+The lower verso has faint undertext-like marks, but no secure new letter or
+mapping to the edition's wholly missing line. The root reader was not blind;
+the separate image-only observer could not access the tab and abstained
+without an observation. No consensus or decipherment is claimed.
+
+Later fluorescence and multispectral work makes better imaging a concrete
+lead, while also preventing novelty claims against Tischendorf alone. The
+target-specific modern Job apparatus and spectral captures remain unacquired.
+The next experiment requires one of those inputs, not generative completion
+of the expected verse. No source, English or accepted witness count changes.
+The breakthrough objective is still unachieved.
 
 ## Later About-page summary — proposed, not published
 

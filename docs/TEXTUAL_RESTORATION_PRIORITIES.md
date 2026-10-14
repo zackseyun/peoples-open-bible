@@ -24,6 +24,13 @@ input is the consulted DJD IX fragment map and apparatus, not another preview
 reading. If that remains unavailable, prefer a target with measured images and
 an accessible critical edition; do not present catalogue grouping as a join.
 
+The [Ephraemi Job feasibility pass](EPHRAEMI_JOB_IMAGE_FEASIBILITY_2026-10-14.md)
+locates folio 33 in Tischendorf's actual edition and acquires Gallica photographs.
+No new reading is accepted. The historical gaps now have concrete locators, but
+the modern Job apparatus and target-specific spectral images remain the inputs
+that could change the result. Do not repeatedly reread the same export or treat
+an old edition's blank as proof of present-day novelty.
+
 Current direction, reset 2026-10-12: prioritize consequential unresolved textual
 history and meaning questions, not the number of edited sentences, registry
 entries, tests or commits. The [replacement objective](TEXTUAL_RESTORATION_RESEARCH_LOG.md#objective-and-current-assessment)

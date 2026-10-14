@@ -501,8 +501,9 @@ their clause endpoints cannot be called identical merely because a secondary
 description uses “23b.” This comparison uses a historical printed Coptic text
 and Crane's report of P967, not a new autopsy of either manuscript.
 
-There is additional wording within the printed Coptic verse 23 whose full
-collation remains unperformed. No exact equivalence to the whole Greek or
+There is additional wording within the printed Coptic verse 23; the bounded
+two-clause comparison below now identifies part of it, while full collation
+remains unperformed. No exact equivalence to the whole Greek or
 Hebrew verse, complete Coptic translation, or retroverted Hebrew is claimed.
 The narrowly checked endpoint and the liturgical contents map suffice for the
 present distinction: an excerpt stopping here is compatible both with selection
@@ -546,3 +547,85 @@ were acquired successfully; Bąk's KUL repository route returned 403. No access
 controls were bypassed. PDFs and renders remain outside Git and are not
 relicensed with POB. These checks establish a published-source comparison,
 not all-Coptic coverage or completion of the wider restoration goal.
+
+### The scattering clauses within the printed verse 23
+
+A further visual reading of Erman's complete printed page 37 (PDF page 87)
+identifies two clauses before the nations' recognition formula. With word
+spacing and supralinear marks normalized, the working transcription is:
+
+> ϯⲛⲁϫⲟⲟⲣ ⲙ̄ⲙⲱⲧⲛ̄ ⲉⲃⲟⲗ. ⲁⲩⲱ ⲧⲉⲧⲛⲛⲁⲣⲕⲟⲩⲓ.
+
+Working translation: **“I will scatter/disperse you, and you will become
+few/small.”** This is a reading of the nineteenth-century printed edition,
+not a diplomatic transcription of Huntington 5 or recovered manuscript ink.
+The following phrase is not transcribed here: handwritten reader marks in
+this scanned copy must not be silently incorporated into the printed text.
+No complete translation of verse 23 is certified by this two-clause check.
+
+The lexical controls are explicit. The electronic transcription of
+[Crum, 782a–783a, ϫⲱⲱⲣⲉ](https://remnqymi.com/crum/2447.html)
+includes the Sahidic form ϫⲟⲟⲣ⸗ and the scattering/dispersal sense with
+ⲉⲃⲟⲗ; it also records broader destructive senses. The subsection ⲣ ⲕ. in
+[Crum, 94a, ⲕⲟⲩⲓ](https://remnqymi.com/crum/61.html) gives being small/few
+and, separately, being young. Numerical diminution is the contextual working
+interpretation here, not the only dictionary sense. These are consulted
+electronic transcriptions, not freshly checked images of Crum's original pages.
+The current Coptic Dictionary Online identifies the compound as **C1056**,
+form CF3471, with references CD 94a and ChLCS 16a in its public
+[entry data](https://coptic-dictionary.org/details/C1056.json).
+Its C7328 entry identifies the scattering verb and links the ⲉⲃⲟⲗ compound.
+The lexical resources are related tools, not independent manuscript witnesses.
+
+Neither the local WLC Hebrew at 36:23 nor the selected Greek at that verse
+contains these scattering/diminution clauses. The Greek control is the
+[pinned digital edition](https://raw.githubusercontent.com/OpenScriptorium/lxx-morph/c91f6b1e8fb3ba37df701e6ae31f675ace71a2b2/db/seeds/lxx_morph/ezekiel.json)
+already documented in the [language controls](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md):
+only the ordered surface text was used, not generated morphology or reasoning.
+This comparison is with a selected text, not every Greek manuscript or the
+unacquired target apparatus. Hebrew and Greek 36:25 were also checked: their
+clean-water/cleansing promise does not explain these two clauses as a simple
+quotation of that promise. No donor passage is established.
+
+**Consequence:** this is not merely the familiar 36:23 wording with a shorter
+endpoint. Its distinctive internal wording must be explained before the
+lectionary is used to reconstruct a continuous shorter Ezekiel. Liturgical
+adaptation, inherited versional variation and copying/editorial transmission
+remain possibilities; this check does not establish which occurred, when,
+or in which direction. It neither disproves an older shorter form nor supplies
+a uniquely retrovertible Greek or Hebrew parent. POB source and English remain
+unchanged, with historical priority on HOLD.
+
+A second accessible primary publication supplies an important dependency
+check: [Ciasca 1889, volume II](https://archive.org/details/sacrorumbiblioru02cias),
+printed pages 299–300 (PDF pages 383–384). Root inspected both complete pages.
+The page 299 note explicitly says the surviving 36:16–23 material was copied
+from Erman's edition. It prints the same two clauses and observes that the
+span beginning with the scattering clause and ending at the following power
+expression is not recognized by the other witnesses he compared. That is
+Ciasca's historical apparatus judgment, not our exhaustive search of all
+known witnesses. The difference is therefore not a new scholarly discovery,
+and Ciasca's printing is **not a second independent manuscript attestation**.
+Page 300 finishes the excerpt, then introduces 36:25–29 with a separately
+marked fragment and a note identifying a liturgical opening. The edition's
+juxtaposition does not establish a continuous manuscript transition or settle
+the ancestry of the 36:23 reading. No full collation of 36:25–29 is claimed.
+
+The next discriminating comparison is a manuscript image or independent
+edition of this precise reading, followed by related Holy Week lectionary
+witnesses and further critical discussion of these clauses. Repeating an endpoint-only
+comparison would miss the newly identified difference. The lexical check also
+rejected an incorrect preliminary C111 headword citation: that entry concerns
+ⲁⲙⲁϩⲧⲉ (ⲉϫⲛ-), not ⲣⲕⲟⲩⲓ. It was not published as supporting evidence.
+Public entry JSON was fetched through routes used by the dictionary's own
+application; the older CGI URLs returned an application shell, not entry text.
+No generated image or OCR supplied letters. The Erman and Greek file hashes
+were reverified against the earlier records; no source files were imported
+into Git or relicensed.
+
+The additional Ciasca PDF is retained privately at
+`/tmp/pob-sahidic-ezekiel-wrdqbq/ciasca1889-vol2.pdf`, 32,719,842 bytes,
+470 pages, SHA256
+`42f8bb76e8d003225ce3b12ec253cfb08a5166701a679327d876c0e6ff444897`.
+Its machine extraction misrecognizes Latin and Coptic as Greek; it served
+only to locate pages, not as the source of quoted letters or apparatus claims.

@@ -10545,6 +10545,90 @@ One bounded independent source review is requested; its outcome is recorded
 with publication rather than presumed here. No whole-corpus test run is
 claimed for this documentation-only change.
 
+### 2026-10-14 — Modern CoptOT transcription and a different manuscript
+
+The previous turn made progress: the Erman/Ciasca clause comparison was
+committed as a590c54561 in PR201, and PR200 merged to main as
+f25ccaba253b8d05488157bb3e97ed5dcdc78db9 after both own CI runs passed.
+PR201's own runs 38578714374/38578954596 were live when this successor began.
+Both subsequently completed successfully on the frozen head. Its merge
+29087dbfcd689b516f0f0401db5b9aeac2cc918b has the verified parents and expected
+tree; main was updated and pushed normally. No checks were restarted.
+
+The [Ezekiel report](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#modern-transcription-and-a-separate-bohairic-image-comparator)
+now cites the official public transcription of Hunt5 manuscript page 240.
+Its named modern transcriber/reviser, two distinctive clauses, power phrase,
+Adonai formula and explicit following Psalm heading are directly checked.
+The image is protected: neither fresh manuscript autopsy nor independence
+from earlier editions is asserted. A CoptOT baseline repeating the reading
+is an editorial text, not another witness; its verse 24 explicitly comes
+from Shenoute. The verse-index results are classified before comparison.
+
+A separate public image, BnF Copte 7/bo 3003L pageID3470, is inspected by root
+and the source agent. Its compact verse 23 span lacks Hunt5's distinctive
+sequence but shares the move to a Psalm reading. The initial verb remains
+less secure at this resolution; no complete diplomatic transcription is
+certified. In sa16L's actual f113v transcription, the corresponding service
+location goes from John to the hour rubric, Psalm and Matthew without an
+intervening Ezekiel excerpt. Neither local observation is a global absence
+claim or proof of independent ancestry. Atanassova's study also qualifies
+the earlier dating report with a later proposed date for Hunt5.
+
+The new evidence improves witness separation and access to the actual reading;
+it does not authorize a Hebrew or POB English change. Seven private input
+hashes, access restrictions and institutional credits are recorded. No
+generated image supplies letters. The bounded independent factual review
+passed after checking the complete Hunt5 and sa16L TEIs, the baseline header
+and verses 23–24, index classes/counts, image-access metadata and the complete
+Copte 7 image. Its scope excludes the dating paragraph and hash recomputation;
+root separately checked the study pages and all seven input hashes. This is
+not an independent judgment of original Hebrew wording.
+
+The intervening Nahum recheck confirmed an existing result without adding new
+source evidence. This continuation completes publication of the already
+reviewed Ezekiel follow-up rather than repeating its comparison. Local checks
+confirm the input hashes, relative documentation links and whitespace;
+tracked source/translation files and the protected unrelated Genizah file
+remain unchanged. No new corpus-wide test result is claimed.
+
+### 2026-10-14 — Additional lectionary wording, not endpoint votes
+
+The previous goal turn made progress by publishing the reviewed modern
+transcription comparison as 4522ae82f9, PR203. This turn confirms its own push
+38586273781 and PR38586337179 runs are still active on that head, then uses a
+successor branch without changing or restarting those runs.
+
+The [Ezekiel report](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#further-bohairic-and-arabic-wording-controls)
+now records direct image checks of Copte70's two target pages and Arabe113's
+target page. Neither readable ending supplies Hunt5's punitive sequence.
+Copte70 has a faint marginal addition that remains incompletely read; its
+main-text ending proceeds to a Psalm. Arabe113 ends with the mighty/strong
+Lord, not a visibly identical Adonai formula, and shows no subsequent Psalm
+on this image. Root and one source agent inspected the full images; no
+Arabic parallel or generated image supplies uncertain Coptic letters.
+
+The Gallica original spread mapping is now verified by visual content, not
+assumed from inconsistent folio labels. Its public viewer works even though
+direct API requests returned 403. Two observed full-spread assets were
+retained, but their dimensions do not improve the unresolved small marks;
+the zoom view offers additional tile-based capture detail, not a complete
+native-resolution download or a certified new reading. Five image hashes
+and explicit reading limits are recorded outside the canonical source data.
+
+The consequential next-action change is to stop endpoint-only sampling as a
+priority test. Further work on this question must discriminate internal
+wording, relationships or continuous textual survival; another matching
+lectionary cutoff alone is insufficient. Source and POB English remain
+unchanged, and the all-OT comparison/restoration goal remains incomplete.
+
+One bounded source-consistency review passes the new report/log against the
+three page images and two full-spread images. It excludes browser/API history,
+view-number URLs, hash/dimension checks and repository/publication state;
+those are root's separately observed checks. All 397 relative documentation
+links resolve, `git diff --check` passes, tracked source/translation files
+remain unchanged, and the unrelated Genizah file retains its protected hash.
+No corpus-wide test run or original-wording certification is claimed.
+
 ### 2026-10-14 — Nahum lexical counterargument and primary lexicon check
 
 The preceding user-requested article recheck confirmed an existing result; it
@@ -10577,6 +10661,13 @@ four XML controls and Psalm mapping. Root separately checked input hashes,
 application tests passed. Source/translation files and the unrelated Genizah
 file remain unchanged. These are documentation/application checks, not proof
 that the retained Hebrew is original.
+
+Both frozen Ezekiel heads subsequently passed their own push and PR checks.
+PR203 merged as `d3fa86dd92abb0446089a8ca655753c3e886ccb0`, followed by PR204
+as `25f6c3cc8fcf1bc53fe88b679d5a99e8bf6df027`; root verified both parent pairs
+and expected merge trees. The Nahum successor integrates those published log
+sections without dropping their content. Its earlier push head remains
+unmodified; the integrated head requires its own publication checks.
 
 ## Later About-page summary — proposed, not published
 

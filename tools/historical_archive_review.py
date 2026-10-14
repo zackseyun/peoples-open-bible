@@ -165,26 +165,59 @@ class PrintedTextParser(HTMLParser):
         if tag in {'br','img','hr','meta','link','input'}:
             if tag=='br' and self.current is not None and not skip:self.current.append(' ')
             return
-        self.stack.append((tag,root,skip))
+        original_bracket='original-bracket' in classes or (self.stack[-1][3] if self.stack else False)
+        self.stack.append((tag,root,skip,original_bracket))
     def handle_endtag(self, tag):
         matches=[i for i,item in enumerate(self.stack) if item[0]==tag]
         if not matches:return
         index=matches[-1]
-        for _,root,_ in self.stack[index:]:
+        for _,root,_,_ in self.stack[index:]:
             if root:
                 text=re.sub(r'\s+',' ',''.join(self.current or [])).strip()
                 if text:self.paragraphs.append(text)
                 self.current=None
         self.stack=self.stack[:index]
     def handle_data(self, data):
-        if self.current is not None and not (self.stack[-1][2] if self.stack else False):self.current.append(data)
+        if self.current is not None and not (self.stack[-1][2] if self.stack else False):
+            if self.stack[-1][3]:
+                # Publisher marks literal source brackets separately from its
+                # own square-bracket clarifications. Keep that distinction.
+                data=data.replace('-[','\ue000').replace(']-','\ue001').replace('[','\ue000').replace(']','\ue001')
+            self.current.append(data)
+
+def exclude_editorial_brackets(text: str) -> tuple[str,list[dict]]:
+    """Remove publisher clarifications, never original marked brackets.
+
+    In-word supplied letters remain explicit comparison gaps, not silently
+    joined into a falsely complete printed word. This is not a source reading.
+    """
+    out=[];excluded=[];index=0
+    while index<len(text):
+        if text[index]!='[':
+            out.append(text[index]);index+=1;continue
+        end=index+1;depth=1
+        while end<len(text) and depth:
+            if text[end]=='[':depth+=1
+            elif text[end]==']':depth-=1
+            end+=1
+        if depth:raise ValueError('Unclosed editorial bracket in comparison')
+        supplied_in_word=index>0 and end<len(text) and text[index-1].isalpha() and text[end].isalpha()
+        excluded.append({'text':text[index:end],'role':'publisher_editorial_square_bracket_not_original_print',
+                         'in_word_supply':supplied_in_word})
+        if supplied_in_word:out.append('□')
+        index=end
+    cleaned=re.sub(r'[ \t]+',' ',''.join(out)).strip()
+    return cleaned.replace('\ue000','-[').replace('\ue001',']-'),excluded
 
 def parse_jsp_page(raw: bytes, *, allow_empty: bool = False) -> tuple[str,dict]:
     html=raw.decode('utf-8')
     match=re.search(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>',html,re.S)
     if not match: raise ValueError('JSP page schema changed')
     page=json.loads(match[1])['props']['pageProps']['summary']
-    parser=PrintedTextParser();parser.feed(page['clearText']);parser.close()
+    # clearText can flatten editorial expansions into apparently printed words
+    # (e.g. Oliver [Cowdery] -> Oliver Cowdery). expandedText retains brackets.
+    markup_field='expandedText' if isinstance(page.get('expandedText'),str) else 'clearText'
+    parser=PrintedTextParser();parser.feed(page[markup_field]);parser.close()
     if parser.current is not None:raise ValueError('Unclosed printed-text container')
     paragraphs=parser.paragraphs
     # JSP inserts a locator after the historical text. It is not on the scan.
@@ -197,8 +230,15 @@ def parse_jsp_page(raw: bytes, *, allow_empty: bool = False) -> tuple[str,dict]:
             if paragraphs[-1].endswith(marker):
                 paragraphs[-1]=paragraphs[-1][:-len(marker)].rstrip()
                 break
-    if not any(value.strip() for value in paragraphs) and not allow_empty: raise ValueError('Missing source transcription body')
-    return '\n\n'.join(paragraphs),page
+    cleaned=[];excluded=[]
+    for paragraph in paragraphs:
+        text,notes=exclude_editorial_brackets(paragraph)
+        if text:cleaned.append(text)
+        excluded.extend(notes)
+    if not any(value.strip() for value in cleaned) and not allow_empty: raise ValueError('Missing source transcription body')
+    page={**page,'pob_extraction':{'version':'expanded-printed-no-editorial-brackets-v3','markup_field':markup_field,'excluded_editorial_brackets':excluded,
+                                'comparison_gap_marker':'□; a comparison lacuna marker, never a printed source glyph'}}
+    return '\n\n'.join(cleaned),page
 
 def acquire_dc_opening(out: Path, archive_root: Path) -> dict:
     catalog=json.loads((archive_root/'catalog.json').read_text())

@@ -21,7 +21,7 @@ from concurrent.futures import ThreadPoolExecutor, wait, FIRST_COMPLETED
 from urllib.parse import urlsplit
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from tools.historical_archive_review import digest
+from tools.historical_archive_review import digest, parse_jsp_page
 from tools.historical_dc_whole_edition import read_snapshot
 
 
@@ -352,9 +352,17 @@ def english_comparisons(source, job):
             page = json.loads((source / 'jsp' / f"page-{candidate['jsp_page']:04d}.json").read_text())
             if digest(page['printed_text'].encode()) != candidate['comparison_text_sha256']:
                 raise ValueError('Comparison text has changed')
-            rows.append({'text': page['printed_text'], 'source_url': page['url'],
+            raw_page = read_snapshot(source / 'jsp' / f"page-{candidate['jsp_page']:04d}.html", page['url'])
+            if digest(raw_page) != page['webpage_sha256']:
+                raise ValueError('Comparison markup snapshot changed')
+            clean, summary = parse_jsp_page(raw_page, allow_empty=True)
+            rows.append({'text': clean, 'source_url': page['url'],
+                         'comparison_text_sha256': digest(clean.encode()),
+                         'raw_markup_sha256': digest(raw_page),
+                         'extraction_version': summary['pob_extraction']['version'],
+                         'excluded_editorial_bracket_items': len(summary['pob_extraction']['excluded_editorial_brackets']),
                          'role': 'published_reading_of_other_copy; candidate_location_not_approved_scan_equivalence',
-                         'transcription_conventions': 'JSP original bracket encoding may not preserve literal bracket shape; image controls'})
+                         'transcription_conventions': 'Publisher bracket clarifications excluded. □ marks an in-word comparison gap, never a printed source character. JSP original bracket encoding may not preserve literal bracket shape; image controls'})
     return rows
 
 

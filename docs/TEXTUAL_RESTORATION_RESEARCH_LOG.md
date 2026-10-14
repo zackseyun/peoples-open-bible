@@ -10742,6 +10742,50 @@ and tree and synchronized/pushed main. The current successor integrates that
 merge without changing the earlier frozen PR207 head or this comparison's
 content. Publication progress is not additional textual evidence.
 
+### 2026-10-14 — Sahidic phrase-search coverage audit
+
+The preceding turn completed PR206 publication and pushed draft PR208; it
+added no new textual-priority judgment. PR207/208 remain on their exact frozen
+heads while this successor follows a more discriminating wording search.
+
+The [new coverage control](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#sahidic-phrase-search-and-coverage-control)
+acquires all 48 indexed Ezekiel chapter records for the Sahidic editorial
+basetext. Both distinctive normalized expressions occur only in the disputed
+36:23 itself. Crucially, 432 of 1,275 verse-labeled elements have no word text;
+113 contain supplements. Thus neither the chapter count nor the negative
+phrase search establishes exhaustive manuscript coverage. The receipt records
+all input hashes, missing word-text references and matches without importing
+the transcriptions. No Hebrew/English change or new restored letter follows.
+
+The earlier broad judge returned incomplete, having read the framing but not
+verified the source clauses. No PASS is inferred from it. The original Coptic
+source agent subsequently checked the preceding four-context appendix against
+its already verified TEIs and passed Coptic accuracy only, expressly excluding
+Hebrew/Greek, relative ranking, historical priority, fresh hashes and CI.
+
+A separate image-access lead was closed after visual inspection:
+[Nongbri's reproduced Scheide plate](https://brentnongbri.com/2018/07/14/a-model-of-nag-hammadi-codex-iii/)
+is labeled Plate XXXII, page 80, Ezekiel 34:14–25. The public browser image is
+355 × 1000 pixels. It is not the needed 36→38 or 39→37 transition, and no new
+glyph reading or complete-edition access is claimed. Do not repeat this route
+as if its mere accessibility resolves the transition.
+
+The full OT source/restoration objective remains incomplete. This pass changes
+the next action by exposing actual basetext coverage limits and exhausting an
+exact-phrase query over its encoded words, not by multiplying model votes.
+
+The source agent independently reproduced the 48-page index mapping, all 49
+input hashes, per-file and aggregate coverage counts, all phrase-match lists,
+supplied-source counts and the sole non-word Coptic note. Its verification is
+offline and limited to this incomplete editorial dataset; it does not establish
+donor nonexistence, manuscript ancestry or original Hebrew priority. The earlier
+four-context Coptic accuracy review and this reproducibility check are distinct
+scoped checks, not a retroactive broad PASS from the interrupted judge.
+
+Root additionally verified 403 relative documentation targets, the unchanged
+protected Genizah hash, whitespace and the printed reproduction snippet.
+No source/translation file changed and no corpus-wide test run is claimed.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

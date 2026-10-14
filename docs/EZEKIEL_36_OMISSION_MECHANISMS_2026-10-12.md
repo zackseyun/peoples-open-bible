@@ -891,3 +891,82 @@ Hunt5's existing hash remains unchanged. At input commit
 `04f8087442a1e67a631cd70f2ac4e42fe0a780ae132edb165a3a29f3f290358f`
 and Ezek.xml has
 `90bf8adfa66b2f6695c702263fe668755c99c6afc386202c12de4f704f5d4e46`.
+
+### Sahidic phrase search and coverage control
+
+**The available basetext has no second exact match, but its gaps prevent an
+exhaustive Sahidic-Ezekiel absence claim.** The official
+[filtered index](https://coptot.manuscriptroom.com/community/vmr/api/metadata/liste/search/?docID=1620025&indexContent=Ezek.1.1-Ezek.48.35&detail=page&includeFeatures=Extant&format=xml)
+returns one editorial document with 48 chapter records. All 48 linked chapter
+transcriptions were acquired through ordinary public requests, using the
+already supported `teiraw` format. The
+[receipt](../sources/textual_restoration/comparisons/ezekiel_sahidic_phrase_screen.2026-10-14.v1.json)
+pins the index, every chapter URL/hash, the actual empty-reference lists and
+all query matches. No full third-party chapter text is imported into Git.
+
+Coverage matters more than the chapter count:
+
+| Measured property | Result | Meaning |
+|---|---:|---|
+| Verse-labeled `ab` elements | 1,275 | Editorial labels, not 1,275 fully preserved verses |
+| Elements with no word text | 432 | No searchable wording; inspected examples contain lacuna markers |
+| Elements with some word text | 843 | Includes partial passages and supplements, not necessarily complete verses |
+| Elements containing `supplied` | 113 | Includes material attributed to other literature |
+| `supplied` / `gap` elements | 1,176 / 515 | XML elements, not counts of lost letters or independent witnesses |
+
+For example, 36:1 and 36:30 contain only a lacuna marker within a word element;
+36:24 supplies words attributed to Shenoute. The supplied-source labels across
+the collection include transcriber, homily, Shenoute, Besa, Paul of Tammah,
+Scala and New Testament material. These labels require passage-specific
+verification before witness use; the data cannot be treated as one continuous
+ancient codex. Chapter 2 has labels through 13, whereas chapter 27 lacks a
+27:31 label. No direct WLC verse-count equivalence is assumed.
+
+The search casefolds word text, applies Unicode NFD and removes combining
+marks and whitespace. It concatenates descendant `w` text within each `ab`,
+including editorial supplements. It is substring retrieval, not morphological
+analysis. Both `ⲣⲕⲟⲩⲓ` and the exact normalized
+`ⲡⲧⲣⲁⲉⲓⲣⲉⲛⲧⲁϭⲟⲙ` occur only at **Ezek.36.23**, the disputed text
+itself. That match is not independent corroboration of Hunt5. Broader controls
+find `ⲕⲟⲩⲓ` in 12 verse elements, `ⲥⲟⲃⲕ` in one and `ϭⲟⲙ` in 30.
+These are verse-hit counts, not token counts or 30 occurrences of one lexical
+sense. Root inspected the returned contexts; none supplies the complete
+scattering/few/power sequence outside the target.
+
+The broader search adds Ezekiel 5:3 as a numerical-smallness comparator, not
+an identified donor. Its construction is taking a small number and binding
+them in the garment, not Hunt5's prediction that the addressees will become
+few. Other smallness hits include youth and relative size; those cannot be
+silently grouped as numerical reduction. Coptic text outside word elements
+was also screened: the sole flagged verse, B51K48V28, has an editorial `sic`
+correction in a note, not missed continuous text. There are no `app` elements
+in these inputs, so alternative apparatus readings are not silently counted.
+
+**Consequence:** retire a search for another identical occurrence within these
+same encoded words. Do not infer that the complete book, all orthographic
+variants or all Sahidic witnesses lack a donor. The useful next evidence is
+independently sourced missing text, a distinctive parallel in another work,
+or continuous manuscript/apparatus evidence. Source and POB English stay
+unchanged. This coverage audit is part of the all-source method: a successful
+download of every indexed chapter is not a successful comparison of every
+surviving manuscript reading.
+
+Private inputs are under `/tmp/pob-sahidic-ezekiel-search.tFdL3k/` and the
+basetext declares CC BY-SA 3.0. The exact core query can be reproduced against
+those pinned files without a parser dependency beyond Python's standard library:
+
+```python
+from pathlib import Path
+import unicodedata as U
+import xml.etree.ElementTree as E
+ns = {"t": "http://www.tei-c.org/ns/1.0"}
+terms = ("ⲣⲕⲟⲩⲓ", "ⲡⲧⲣⲁⲉⲓⲣⲉⲛⲧⲁϭⲟⲙ")
+for p in sorted(Path("/tmp/pob-sahidic-ezekiel-search.tFdL3k").glob("105*.xml")):
+    for v in E.parse(p).findall(".//t:ab", ns):
+        raw = "".join("".join(w.itertext()) for w in v.findall(".//t:w", ns))
+        s = "".join(c for c in U.normalize("NFD", raw.casefold())
+                    if U.category(c) not in ("Mn", "Mc", "Me") and not c.isspace())
+        for term in terms:
+            if term in s:
+                print(term, v.get("n"))
+```

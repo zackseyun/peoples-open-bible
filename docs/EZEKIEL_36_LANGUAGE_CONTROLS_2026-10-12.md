@@ -722,3 +722,87 @@ check corrupt historical methods and live schema/source data. All20 scoped
 tests pass and one bounded code critique confirms the exact boundary. The
 scholarly method and all frozen evidence stay unchanged; renewed remote checks
 must pass before publication.
+
+## Hebrew spirit and wind translation pattern on October 14
+
+A bounded comparison now checks the translation-pattern argument against
+actual Greek contexts, beyond the earlier Hebrew-only count. Among the 44
+WLC verses containing lemma 7307, the pinned Rahlfs digital control has a
+clause-level Spirit/wrath correspondence at 39:29. The other three occurrences
+of Greek θυμός in those rows belong to Hebrew anger expressions, not רוח.
+This supports treating 39:29 as unusual within this selected Greek text. It
+does not establish a different Hebrew exemplar or authorize replacing Spirit.
+
+### Inputs and reproducible screen
+
+The Hebrew input is the vendored OSHB/WLC `Ezek.xml`, SHA256
+`90bf8adfa66b2f6695c702263fe668755c99c6afc386202c12de4f704f5d4e46`.
+Select direct `w` children of each OSIS verse whose slash-separated `lemma`
+contains exactly `7307`; exclude words inside notes/qere. This gives 52 word
+occurrences in 44 verses. The Greek control is
+[OpenScriptorium's pinned Ezekiel file](https://raw.githubusercontent.com/OpenScriptorium/lxx-morph/c91f6b1e8fb3ba37df701e6ae31f675ace71a2b2/db/seeds/lxx_morph/ezekiel.json),
+commit `c91f6b1e8fb3ba37df701e6ae31f675ace71a2b2`, SHA256
+`06f1b82b9c95fc5c2c1735c928cdb44299fea2f8d9b9fc68eda0e14118920a1f`.
+Its 1,267 uniquely labeled rows are an edition representation, not a count of
+extant manuscript verses. Use only ordered `surface` strings, not generated
+morphology, confidence or reasoning fields. All 44 same-number rows exist;
+same-number navigation does not itself establish word alignment.
+
+The complete selected references, in WLC numbering, are:
+
+```text
+1:4,12,20,21; 2:2; 3:12,14,24; 5:2,10,12; 8:3; 10:17;
+11:1,5,19,24; 12:14; 13:3,11,13; 17:10,21; 18:31; 19:12;
+20:32; 21:12; 27:26; 36:26,27; 37:1,5,6,8,9,10,14; 39:29;
+42:16,17,18,19,20; 43:5.
+```
+
+Removing Greek combining accents for navigation and selecting surface prefixes
+`πνευμα`, `ανεμ`, `πνο`, `θυμ` returns 35 pneuma forms, six anemos forms,
+one pnoe form and four thymos forms in these rows. These are Greek surface
+counts, not 52 automatically aligned translations. Root read all selected
+local contexts and the complete rows requiring broader alignment, with the
+following consequential distinctions:
+
+| Passage | Observed comparison | Consequence |
+|---|---|---|
+| 13:13 | רוח סערות corresponds to πνοὴν ἐξαίρουσαν; the two θυμός forms accompany the Hebrew חמה expressions. | Neither anger word is another רוח-to-θυμός instance. |
+| 19:12 | רוח הקדים corresponds to ἄνεμος ὁ καύσων; ἐν θυμῷ accompanies בחמה. | Mere presence of wind and wrath in one verse would give a false match. The [publisher's Rahlfs–Hanhart text](https://www.die-bibel.de/bibel/LXX/EZK.19) confirms these Greek phrases. |
+| 3:14 | The personal רוחי expression has πνεύματός μου even in the emotional context. | A direct counterexample to treating anger-compatible Hebrew spirit as routinely rendered θυμός. |
+| 1:20 | Three Hebrew רוח tokens occur in a differently structured row with νεφέλη and two πνεῦμα tokens. | No one-to-one correspondence follows from word order or counts alone. |
+| 13:3 and 20:32 | Greek has the heart expression ἀπὸ καρδίας at 13:3 and no separately expressed spirit clause at 20:32. | A mechanical rule that רוח always becomes πνεῦμα is false; the history of each difference remains separate. |
+| 37:9 | Four Hebrew tokens meet three πνεῦμα forms; the final Hebrew vocative has no separately expressed Greek counterpart. | Preserve the difference rather than inventing a fourth Greek token. |
+| 42:16–20 | Directional constructions culminate in τὰ τέσσαρα μέρη; west and south occur in reversed verse order at 18–19. | Same-number matching cannot be treated as final clause alignment. |
+| 39:29 | The matched pouring-out clause has Hebrew רוחי and Greek τὸν θυμόν μου. | This is the target contrast, not a parallel anger noun elsewhere in the verse. |
+
+### Judgment and limits
+
+The comparison strengthens the translation-pattern objection to explaining
+39:29 as a routine lexical choice. It does not rule out an exceptional
+interpretation, a different Hebrew source, or change during Greek transmission.
+A selected edition's whole-book pattern also does not prove one translator or
+one textual stage. The unusual collocation remains evidence to explain, not
+a numerical probability of Hebrew חמה. Retain the present Hebrew and English;
+the existing qualified reader note still fits the evidence.
+
+The private Greek input is 9,841,961 bytes at
+`/tmp/ezekiel-ruah-control-vpePQq/ezekiel.json`; the navigation script and
+44-row output are alongside it. The script SHA256 is
+`f359a9fdfba3c607511b97ffd58cbf3dd2a4a571870a42ffa651ae09df37244d`;
+the output SHA256 is
+`394ead4d76d68f341bec806dd24aea00d93b106df30588f5083f116e68324d05`.
+These identify the local screen, not independently established alignments.
+The source project's pinned README identifies
+the Rahlfs 1935/Eliran Wong digital text and licenses morphology data CC BY 4.0
+with attribution to Seth Kushniryk. No full Greek corpus is imported into Git.
+The publisher's chapter 13 page was unavailable in this pass; its wording is not claimed
+as a second check. The chapter 19 check is a related edition control, not an independent
+ancient witness. No new image, manuscript reading or source restoration follows.
+
+A separate bounded search did not acquire Ka Leung Wong's 2002 article,
+[*The Masoretic and Septuagint Texts of Ezekiel 39,21–29*](https://poj.peeters-leuven.be/content.php?id=588&url=article),
+ETL 78, 130–147, DOI 10.2143/ETL.78.1.588.
+The publisher's download endpoint returned HTTP 200 HTML with access machinery,
+not a PDF; ResearchGate explicitly reports no full text, and title/DOI/author
+searches found no lawful full copy. Stop repeating those routes. Wong's argument
+remains mediated through Lust until a distinct lawful copy becomes available.

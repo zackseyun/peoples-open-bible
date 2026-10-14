@@ -10727,6 +10727,21 @@ is exact distinctive wording or textual relationship, not another endpoint
 or another model preference. The full OT comparison/restoration goal remains
 incomplete; no generated image has supplied manuscript evidence.
 
+Root checked all three new TEI hashes, the retained Hunt5 input, both WLC
+hashes, 401 relative documentation file targets and whitespace. Source and
+translation files are unchanged; the unrelated Genizah file retains its prior
+hash. No corpus-wide test run is claimed for this documentation-only addition.
+The bounded independent review did not return a verdict within this pass;
+further review work was explicitly interrupted and a report of already
+verified findings requested. This is not a review pass or source-priority
+approval. The new packet remains draft pending that result and its own CI.
+
+Meanwhile PR206's exact push and PR runs succeeded. It merged as
+`9ec587a5ca7c2fa489d937200f2d9aa892b3bed7`; root verified its expected parents
+and tree and synchronized/pushed main. The current successor integrates that
+merge without changing the earlier frozen PR207 head or this comparison's
+content. Publication progress is not additional textual evidence.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

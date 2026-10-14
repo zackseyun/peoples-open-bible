@@ -17,6 +17,13 @@ and associated-scrap identification next. Zuqnin's inspected regions yielded
 no secure Greek sequence; seek better captures or a column locator before
 investing in model training. Neither result is a new accepted reading.
 
+The [historical-state follow-up](4Q122_HISTORICAL_STATES_2026-10-14.md) has now
+acquired 1956/1960 infrared plate regions and inspected four additional 4Q122
+catalogued scraps. No extra letter or join is accepted. The next discriminating
+input is the consulted DJD IX fragment map and apparatus, not another preview
+reading. If that remains unavailable, prefer a target with measured images and
+an accessible critical edition; do not present catalogue grouping as a join.
+
 Current direction, reset 2026-10-12: prioritize consequential unresolved textual
 history and meaning questions, not the number of edited sentences, registry
 entries, tests or commits. The [replacement objective](TEXTUAL_RESTORATION_RESEARCH_LOG.md#objective-and-current-assessment)

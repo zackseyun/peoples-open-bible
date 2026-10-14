@@ -10138,6 +10138,29 @@ The PDF and documentation skills support source consultation and reporting.
 The breakthrough objective remains active and unachieved; no canonical text,
 witness inventory count or English wording changes.
 
+### 2026-10-14 - 4Q122 historical photographs and associated scraps
+
+The [historical-state report](4Q122_HISTORICAL_STATES_2026-10-14.md) records actual
+acquisition of PAM 41.933 (January 1956) and 43.291 (February 1960) infrared
+negatives as previews and ten native-level tiles. Reading the public catalogue's
+second API page located the earlier photograph; all 13 returned image records
+are preserved. The institutional photographic inventory was directly consulted.
+Four further catalogue scraps were inspected in modern color/infrared previews.
+
+A bounded image-only observer supplied explicit shape candidates and abstentions
+for fragments 35 and 37 without a proposed passage. Infrared clarifies existing
+strokes but supplies no securely new letter in this pass. Historical placement
+of fragment 25 beside the main fragment is not a new join. Mixed plates contain
+multiple manuscripts. A 46-asset hash receipt preserves acquisition, not custody
+or independent textual attestation; copyrighted photographs remain uncommitted.
+
+The attempted new-letter recovery remains unsuccessful. Exact DJD IX readings
+and fragment mapping are still unconsulted, so novelty and reassignment claims
+remain unavailable. No source text, English, accepted transcription, or witness
+count changes. The next attempt should obtain that discriminating edition input
+or move to a target with a consultable edition and measured imagery. The overall
+breakthrough goal is not complete.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

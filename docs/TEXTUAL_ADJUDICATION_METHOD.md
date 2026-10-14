@@ -1,6 +1,6 @@
 # POB source-wording adjudication method
 
-Version: 2.0.6 · Revised: 2026-10-14 (searchable coverage and phrase-search limits)
+Version: 2.0.7 · Revised: 2026-10-14 (feature-level agreement and observation history)
 
 This is the controlling method for source selection and English impact. The
 [approach review](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md) records the
@@ -111,6 +111,12 @@ claim a second blinded model pass occurred unless its actual output is stored.
   does not cover the passage. No coverage contributes no evidence either way.
 - Preserve spelling, vowels, accents, scribal hands, and corrections in the
   diplomatic layer; normalize only in a separately mapped comparison layer.
+- Evaluate agreement and dependence by feature, not by a whole-witness label.
+  In the [Ezekiel 5:12 papyrus comparison](EZEKIEL_5_12_QUARTERS_COMPARISON_2026-10-14.md),
+  the fraction agrees with Greek while clause order agrees with Hebrew.
+  Critical signs at adjacent loci do not prove that this fraction was revised.
+  Record older editions' observations separately when later deterioration
+  changes legibility; two editions of one object are not two witness votes.
 
 For electronic phrase searches, audit searchable text rather than file or
 chapter counts. The [Sahidic Ezekiel control](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#sahidic-phrase-search-and-coverage-control)

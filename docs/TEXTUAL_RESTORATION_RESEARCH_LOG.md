@@ -10705,6 +10705,28 @@ file targets and whitespace; all eight Nahum application tests passed in
 1.351 seconds. The canonical verse and unrelated Genizah file retain their
 previous hashes. These checks do not establish original wording.
 
+### 2026-10-14 — Ezekiel punitive-sequence parallel test
+
+The preceding user-facing Nahum turn was a verified wait on four live CI runs
+for PR206/207 and a current-record check, not new source evidence. This pass
+returns to the lead Ezekiel question without modifying either frozen head.
+
+The [punitive-wording comparison](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#punitive-wording-a-bounded-parallel-test-on-october-14)
+tests Hunt5's scattering/few/power sequence against Deuteronomy 4:27 and
+Ezekiel 12:15–16, 5:12 and 36:19. Actual Hebrew, selected Greek and available
+Sahidic wording yield partial parallels but no identified donor for the whole
+sequence. Two manuscript-specific Deuteronomy TEIs use a different expression
+for few; the Ezekiel 12 Sahidic comparator has no declared local manuscript
+dependency and cannot be counted as an independent witness.
+
+This narrows a concrete adaptation hypothesis without deciding between an
+ancient inherited reading and later versional/lectionary change. It neither
+licenses a Hebrew retroversion nor settles P967's independent shorter-text
+question. Source and English stay unchanged. The next discriminating evidence
+is exact distinctive wording or textual relationship, not another endpoint
+or another model preference. The full OT comparison/restoration goal remains
+incomplete; no generated image has supplied manuscript evidence.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -2,6 +2,14 @@
 
 ## Decision
 
+Session addition, 2026-10-13: pursue the bounded
+[AI manuscript recovery investigation](AI_MANUSCRIPT_RECOVERY_2026-10-13.md).
+It adds an executable spectral-image feasibility track and explicit completion
+methods alongside the source questions below. Prioritize measured ink recovery,
+especially the Zuqnin undertext, and test generative outputs as hypotheses or
+display artifacts. Existing failed controls and source/application gates remain
+in force; this track does not claim a newly deciphered biblical reading.
+
 Current direction, reset 2026-10-12: prioritize consequential unresolved textual
 history and meaning questions, not the number of edited sentences, registry
 entries, tests or commits. The [replacement objective](TEXTUAL_RESTORATION_RESEARCH_LOG.md#objective-and-current-assessment)

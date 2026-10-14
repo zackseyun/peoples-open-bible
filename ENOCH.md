@@ -37,6 +37,25 @@ discloses the selected critical edition's uncertain/editorially restored
 readings. Neither that work nor the older inventory constitutes complete-book
 or human-specialist certification. Recompute the audit for current counts.
 
+## Chapter 83 bounded repair (2026-10-14)
+
+The authorized read-only Codex scan-review workflow accepted all eleven units of
+chapter83 against Charles1906printed159-161, including the4/11cross-page
+continuations. The bounded transaction restores clipped83:11, repairs source
+glyphs and note anchors, removes the unsupported83:7 reveals assertion, uses the
+printed future disclosure at83:10, and retains provisional83:6 Malalyal rather
+than normalizing the different name forms. Corrupt83:11 readings and the final
+passive-clause interpretation remain disclosed. Original OCR and old model
+claims are preserved as unverified history. See
+`sources/textual_restoration/applications/enoch_83_20261013/` and run
+`tools/textual_restoration/enoch_83_transaction.py verify-applied`.
+
+Chapter83 now has an explicit scan-bound unit inventory; other counts beyond35
+remain parser leads unless separately certified. This work is selected-edition
+editorial approval, not human specialist, independent manuscript, full-book or
+Graphic Reader publication certification. Artwork continuity/publication QA is
+still separate.
+
 ## Why Enoch
 
 Four reasons this book warrants a dedicated phase:

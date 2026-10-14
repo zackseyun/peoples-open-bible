@@ -486,7 +486,8 @@ printed, without silently converting it to MT numbering.
 [Bąk 2023](https://doi.org/10.31743/biban.13804), complete pages 11–12, identifies
 the same object as Cod. XX/Huntington 5 and a paper Holy Week lectionary. His
 probable twelfth/thirteenth-century dating is attributed to Schüssler, not a
-fresh palaeographic finding here. His note 56 clarifies the Holy Week setting
+fresh palaeographic finding here; the modern-study qualification below records
+competing later datings. His note 56 clarifies the Holy Week setting
 of Erman's term *Osterwoche*. The precise conversion of the night-hour rubric
 to a modern civil weekday is unnecessary to the textual judgment. Bąk also
 warns that Erman's volume includes four manuscripts; not every excerpt in it
@@ -629,3 +630,93 @@ The additional Ciasca PDF is retained privately at
 `42f8bb76e8d003225ce3b12ec253cfb08a5166701a679327d876c0e6ff444897`.
 Its machine extraction misrecognizes Latin and Coptic as Greek; it served
 only to locate pages, not as the source of quoted letters or apparatus claims.
+
+### Modern transcription and a separate Bohairic image comparator
+
+The official CoptOT edition now supplies the exact Huntington 5 target:
+[public TEI, docID 620292, pageID 2400](https://coptot.manuscriptroom.com/community/vmr/api/transcript/get/?docID=620292&pageID=2400&format=teiraw).
+Root read the entire returned TEI, including its header. It identifies the
+Bodleian manuscript, credits Lina Elhage-Mensching as transcriber and Diliana
+Atanassova as reviser, and carries the 2022 DFG Coptic Holy Week Lectionary
+Project credit alongside the platform's 2026 notice. This is a separately
+credited modern transcription of the same witness, not another manuscript.
+The header does not establish its independence from earlier printed editions
+or certify a fresh image collation by us.
+
+The two scattering/diminution clauses agree with the bounded Erman reading.
+The following phrase is explicitly transcribed as
+**ϩ︤ⲙ︥ ⲡⲧⲣⲁⲉⲓ̈ⲣⲉ ⲛ̄ⲧⲁϭⲟⲙ**, provisionally “when I exercise my power.”
+This is now a published reading, not our reconstruction from the reader-marked
+print. After the nations' recognition and Adonai formula, the TEI records the
+Psalm heading and number 108, then Psalm 108:1–3 and Matthew 26:30–31 (ending
+mid-verse on this page). It thus corroborates the liturgical transition, not a
+continuous Ezekiel 36→37/38 transition. Psalm numbering follows the edition.
+The [page metadata](https://coptot.manuscriptroom.com/community/vmr/api/metadata/liste/search/?docID=620292&detail=page&includeFeatures=Extant&format=xml)
+maps page 240 to shelf folio “f. 3” and explicitly marks its image protected,
+access level 2. No protected image was acquired or inferred from a placeholder.
+
+The [official Ezekiel 36:23 index query](https://coptot.manuscriptroom.com/community/vmr/api/metadata/liste/search/?indexContent=Ezek.36.23&detail=page&includeFeatures=Extant&format=xml)
+returns 14 records/19 pages: seven Bohairic lectionaries, Huntington 5, one
+Arabic lectionary and five non-manuscript baseline records. This is a bounded
+index result, not a complete census of surviving verse 23. In particular,
+[“Sahidic Bible Basetext”](https://coptot.manuscriptroom.com/community/vmr/api/transcript/get/?docID=1620025&pageID=1051036000&format=teiraw)
+repeats the distinctive verse 23 wording but is not independent attestation.
+Its verse 24 is explicitly marked as supplied from Shenoute; that composite
+sequence is not the contents of a continuous codex. The precise source of
+its verse 23 is not stated in the consulted header.
+
+A genuinely different physical witness is **BnF Copte 7 / bo 3003L**, docID
+613003, pageID 3470. Root and a source agent inspected the complete
+[public manuscript image](https://coptot.manuscriptroom.com/images/webfriendly/Paris_BnF/Copte7/PBN_Copte7.f.174r_lib.jpeg),
+attributed by CoptOT to Gallica/BnF. The image filename and shelf metadata use
+f.174r/f.174, while the index's separate folio field says 183r; these labels
+are not silently harmonized. In the compact verse 23 span, the name/profanation
+material leads directly to the nations' recognition and Adonai formula, then
+a separated Psalm heading. The Hunt5 scattering/few/power sequence is not
+present in that observed span. The initial verb phrase is less secure at the
+available 697-pixel width, so no complete diplomatic verse transcription or
+character-perfect agreement with Greek is claimed. This comparison separates
+**a shared liturgical stopping point from agreement in internal wording**.
+Different manuscripts and dialects do not by themselves prove independent
+ancestry or the direction of adaptation.
+
+The related Sahidic lectionary **sa 16L / Z99**, Vatican Borg. copt. 109,
+cass. XXIII, fasc. 99, is not a second verse 23 witness in this index result.
+Its complete [f.113v TEI](https://coptot.manuscriptroom.com/community/vmr/api/transcript/get/?docID=620016&pageID=2135&format=teiraw),
+read with its header, goes from John 17:25–26 to a third-night-hour rubric,
+Psalm 108 and Matthew 26. No Ezekiel excerpt intervenes at that location.
+That observation concerns this page, not absence from every unindexed or lost
+leaf. The Holy Week rubric is not converted into a modern civil-night date.
+
+Dating also needs qualification. [Atanassova 2018, printed 9–10](https://coptot.manuscriptroom.com/images/webfriendly/PDF/KUAYISU2.pdf),
+complete pages read and visually checked, presents a probable thirteenth-century
+date for Hunt5 but also reports Suciu's suggestion of the second half of the
+fourteenth century, based on comparison with later manuscripts. This is a
+reported alternative, not a newly established date. Her treatment confirms
+the fragmentary Holy Week lectionary context. Neither date determines the
+age of its underlying text, and neither changes our Hebrew priority judgment.
+
+**Decision:** retain POB source and English. The modern transcription strengthens
+confidence in what the published Hunt5 reading says; the separate Bohairic
+image shows why the endpoint alone cannot carry a claim of common shorter
+biblical ancestry. Next compare higher-resolution Copte 7 or another indexed
+public Bohairic/Arabic page, with its actual verse wording and source provenance.
+Index coverage, baseline texts, editions and manuscripts remain separate
+evidence classes. No ImageGen output supplies letters or a source amendment.
+
+Private reproducibility inputs, acquired October 14:
+
+| Input under `/tmp/pob-sahidic-ezekiel-wrdqbq/` | SHA256 |
+|---|---|
+| `hunt5-p240.xml` | `afffbb59fe590a8c2775f924274687e42848fac0ccd5458db3c30dee3aa8940a` |
+| `hunt5-metadata.xml` | `c16ae950f5675c231035aa32613b177bb4c0666231bb32c41759315b426f1d90` |
+| `ezk36-23-index.xml` | `0ea0be09846ea8777f5923afe4e4f74cf6eab287d96a53aedaff0cc32cb685bd` |
+| `sahidic-basetext-ezk36.xml` | `fb819feab98a0e869b3d37cb63881a7af14f2220106a82eaab88a23fb6b152cf` |
+| `sa16L-f113v.xml` | `e247629bc2efdc0985594f15e9de56f8178af1c33775d497e2a37738e89e2a7d` |
+| `copte7-f174r.jpeg` | `048899b3f0d7c0040b51d34c2beeaa300d9ed3210803a7d13039a9b4d90a31b2` |
+| `atanassova-pascha.pdf` | `8157a9f90a6ccd9a705dcff1d709fb61033506aaf16b418d2e7200ec093064f5` |
+
+Public TEI and metadata were fetched through the publisher's API; the generic
+web-fetch tool could not open the target transcription URL. The TEI carries
+CC BY-SA notices; the image has its separate institutional attribution.
+These inputs remain outside Git and are not relicensed under POB's license.

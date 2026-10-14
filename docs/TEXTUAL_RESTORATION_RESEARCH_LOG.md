@@ -10545,6 +10545,52 @@ One bounded independent source review is requested; its outcome is recorded
 with publication rather than presumed here. No whole-corpus test run is
 claimed for this documentation-only change.
 
+### 2026-10-14 — Modern CoptOT transcription and a different manuscript
+
+The previous turn made progress: the Erman/Ciasca clause comparison was
+committed as a590c54561 in PR201, and PR200 merged to main as
+f25ccaba253b8d05488157bb3e97ed5dcdc78db9 after both own CI runs passed.
+PR201's own runs 38578714374/38578954596 were live when this successor began.
+Both subsequently completed successfully on the frozen head. Its merge
+29087dbfcd689b516f0f0401db5b9aeac2cc918b has the verified parents and expected
+tree; main was updated and pushed normally. No checks were restarted.
+
+The [Ezekiel report](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#modern-transcription-and-a-separate-bohairic-image-comparator)
+now cites the official public transcription of Hunt5 manuscript page 240.
+Its named modern transcriber/reviser, two distinctive clauses, power phrase,
+Adonai formula and explicit following Psalm heading are directly checked.
+The image is protected: neither fresh manuscript autopsy nor independence
+from earlier editions is asserted. A CoptOT baseline repeating the reading
+is an editorial text, not another witness; its verse 24 explicitly comes
+from Shenoute. The verse-index results are classified before comparison.
+
+A separate public image, BnF Copte 7/bo 3003L pageID3470, is inspected by root
+and the source agent. Its compact verse 23 span lacks Hunt5's distinctive
+sequence but shares the move to a Psalm reading. The initial verb remains
+less secure at this resolution; no complete diplomatic transcription is
+certified. In sa16L's actual f113v transcription, the corresponding service
+location goes from John to the hour rubric, Psalm and Matthew without an
+intervening Ezekiel excerpt. Neither local observation is a global absence
+claim or proof of independent ancestry. Atanassova's study also qualifies
+the earlier dating report with a later proposed date for Hunt5.
+
+The new evidence improves witness separation and access to the actual reading;
+it does not authorize a Hebrew or POB English change. Seven private input
+hashes, access restrictions and institutional credits are recorded. No
+generated image supplies letters. The bounded independent factual review
+passed after checking the complete Hunt5 and sa16L TEIs, the baseline header
+and verses 23–24, index classes/counts, image-access metadata and the complete
+Copte 7 image. Its scope excludes the dating paragraph and hash recomputation;
+root separately checked the study pages and all seven input hashes. This is
+not an independent judgment of original Hebrew wording.
+
+The intervening Nahum recheck confirmed an existing result without adding new
+source evidence. This continuation completes publication of the already
+reviewed Ezekiel follow-up rather than repeating its comparison. Local checks
+confirm the input hashes, relative documentation links and whitespace;
+tracked source/translation files and the protected unrelated Genizah file
+remain unchanged. No new corpus-wide test result is claimed.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

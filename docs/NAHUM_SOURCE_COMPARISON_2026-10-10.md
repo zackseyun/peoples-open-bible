@@ -58,6 +58,114 @@ versus shortened Niphal שׁאה, and critical apparatus at this locus. Repeatin
 the same article review or adding model votes cannot settle that question.
 This article supplies no argument for adding a book to the biblical canon.
 
+## Lexical counterargument checked on October 14
+
+**Outcome: retain the current Hebrew and English provisionally; narrow the
+claimed support for retention.** Direct BDB consultation now replaces the
+earlier second-hand report for the specific lexical points below. It does not
+replace the missing modern apparatus or certify the original vocalization.
+
+### A separate published retention argument
+
+Philip Suciadi Chia's [2025 article](https://doi.org/10.2478/perc-2025-0007),
+*Perichoresis* 23.2, 4–14, argues for נשׂא using versional chronology,
+the harder-reading principle and poetic parallelism. Its final interpretation
+is reflexive withdrawal, not simply upward movement. Root read the complete
+eleven-page PDF, including references, and visually checked printed pages
+5–11 and all four tables. This is a different argument, not another manuscript.
+
+Our assessment does not accept its proposed source priority. Table 1 places
+codex dates alongside dates assigned to translations; these are not comparable
+dates for individual readings. Its version-to-Hebrew-root assignments require
+independent justification. Nor does grammatical difficulty alone establish
+earlier wording. The poetic argument is worth testing, but does not uniquely
+exclude devastation. The current English should not be expanded to explicit
+flight on that basis. The BHS/BHQ discussion remains Chia's report: we have not
+newly read those apparatus entries. The PDF also prints a contradictory root
+attribution below Table 1 on p.8; it must not become imported witness data.
+
+### What BDB actually says
+
+Root and one independent source agent inspected original printed BDB pages
+[669](https://en.wikisource.org/wiki/Page:A_Hebrew_and_English_Lexicon_(Brown-Driver-Briggs).djvu/693),
+[670](https://en.wikisource.org/wiki/Page:A_Hebrew_and_English_Lexicon_(Brown-Driver-Briggs).djvu/694),
+[671](https://en.wikisource.org/wiki/Page:A_Hebrew_and_English_Lexicon_(Brown-Driver-Briggs).djvu/695)
+and [980](https://en.wikisource.org/wiki/Page:A_Hebrew_and_English_Lexicon_(Brown-Driver-Briggs).djvu/1004).
+The scan images, not their unproofread OCR or a Strong-number lookup, control
+this comparison. The apparent intransitive/reflexive Qal category begins at
+670b and continues at 671a. Its express qualification is **“text dub. in all”**.
+Omitting the page continuation loses both that qualification and the examples.
+
+| Passage | Retained digital Hebrew control, with accents/segmentation omitted here | BDB's qualification and its consequence |
+|---|---|---|
+| Hosea 13:1 | נָשָׂא הוּא בְּיִשְׂרָאֵל | BDB reports a possible נָשִׂיא reading. The finite Qal analysis is viable under the transmitted text, not an uncontested parallel. |
+| Nahum 1:5 | וַתִּשָּׂא הָאָרֶץ | BDB entertains שׁאה as an alternative. The target cannot independently prove the grammatical category used to defend itself. |
+| Psalm 89:10, POB 89:9 | בְּשׂוֹא גַלָּיו | BDB records a possible שָׁאוֹן reading. The transmitted infinitive is a contextual analogue, not the same finite form as Nahum. |
+| Habakkuk 1:3 | וּמָדוֹן יִשָּׂא | BDB reports that the verb is questioned. Its apparent intransitive use is not a secure external control on Nahum's textual history. |
+
+The vendored WLC/OSHB XML was checked at all four actual source references;
+its editorial morphology labels the forms Qal perfect, wayyiqtol, infinitive
+construct and imperfect respectively. These are edition annotations, not
+independent ancient votes. The Psalm reference is mapped by its actual words,
+not assumed to share the POB verse number. No neighboring POB translation or
+note is approved by using its source as a comparator.
+
+OSHB assigns the Psalm's word lemma 7721, unlike 5375 in the other three
+passages. Its Qal label must not be mistaken for a shared lexical assignment
+across all four examples.
+
+BDB p.980 tentatively includes Nahum under the **Qal** of I.שׁאה and refers back
+to 671a. That is not direct attestation of Riestra's particular shortened
+**Niphal** analysis. Both the root and the proposed stem must therefore remain
+explicit; “BDB supports devastation” is too coarse to settle the morphology.
+The related-language material at 669 supports lexical comparison, not a new
+Hebrew witness.
+
+This makes two overstatements untenable: “Qal cannot be intransitive, therefore
+emend” and “BDB supplies secure parallels, therefore retain as original.”
+The strongest surviving case for retention remains cumulative: an intelligible
+poetic reading and an early Greek interpretation compatible with it. The
+alternative root still offers a possible grammatical/contextual explanation;
+neither explanation has become certain. The current reader's explicit
+provisionality and alternative-pointing disclosure remain appropriate.
+
+### Provenance, limits and next discriminating input
+
+The privately retained [publisher PDF](https://reference-global.com/2/v2/download/article/10.2478/perc-2025-0007.pdf)
+has SHA256 `f69e9e515d2994ab559a49703d66a79403077b99e8b56262c43a0474fa1e677b`.
+The publisher states CC BY-NC-ND 3.0. No PDF, page image or full article text is
+imported into Git or relicensed as POB content. The four BDB scan-image hashes,
+in printed-page order 669/670/671/980, are:
+
+```text
+265509210f921b08cac38b880bc98a62a7290490d7c6576cdbd81bbacdb31484
+0cc9356f7b349222f9fddadc5d469d5fb1aa33a377d1ecc2a8777a8739484bf9
+c47425547f8e53ff0528fd96f467e0c762b414e133d8bfce7fc585155bcd5112
+43a33968383a19411e6fc3df9531580b1f1fd00427dff346e3e78bc2618aee46
+```
+
+At input commit `e8cab9f9ab`, the XML SHA256 values are Hos
+`f38ae44a3a97d142768bd5f4d40e77b69265184f9a5aec9e6af1b9b226e8daae`,
+Hab `2592b212d816775adc8dac46bd0c46263982c308a186dde64dfb8239c57bd2d1`,
+Ps `fe55eef316a65fb0f46d833d526ca2fd722e86ff7339f1a39f0c5b7f9062ced2`
+and Nah `5993b28bdbee3c922e3e93002d343a655493e8bd45e3472f3b62d77beadcb62c`.
+The canonical Nahum 1:5 hash remains
+`cd10a2cd212aa395279d1b4fefe003b4f7b4bae2f9fe601cc3b8dba11838aa1a`.
+
+Next seek the actual BHQ apparatus/commentary and the cited weak-verb
+short-form analysis, or a securely analyzed comparable poetic construction.
+Do not reread these same four BDB pages as new support. A deeper disputed-parallel
+investigation needs its own apparatus, rather than borrowing confidence from
+POB's English. No new manuscript letter, Hebrew replacement, source-priority
+decision or corpus-wide optimum is claimed; ImageGen played no evidentiary role.
+
+One bounded independent factual review passed the new article assessment,
+BDB qualifications and actual XML forms/mapping. Root independently verified
+the five private source hashes and four XML hashes. All eight targeted Nahum
+application tests passed in 1.328 seconds; all 396 relative documentation
+targets resolve and `git diff --check` passes. These checks establish the
+documented scope and unchanged application, not historical priority.
+
 ## Historical scope
 
 This is a bounded published-reading comparison following the

@@ -10545,6 +10545,39 @@ One bounded independent source review is requested; its outcome is recorded
 with publication rather than presumed here. No whole-corpus test run is
 claimed for this documentation-only change.
 
+### 2026-10-14 — Nahum lexical counterargument and primary lexicon check
+
+The preceding user-requested article recheck confirmed an existing result; it
+added no new source evidence. This continuation therefore follows the specific
+missing lexical evidence rather than repeating the Riestra review. The four
+pending Ezekiel CI runs were confirmed live on their frozen heads; none was
+restarted. This documentation branch starts from updated main `e8cab9f9ab`
+and does not alter those heads or the separately merged D&C work.
+
+The [Nahum report](NAHUM_SOURCE_COMPARISON_2026-10-10.md#lexical-counterargument-checked-on-october-14)
+now compares a separate 2025 retention argument with directly inspected BDB
+scans and the four exact WLC contexts. The decisive new qualification crosses
+BDB's page boundary: all four putative intransitive/reflexive examples are
+textually questioned. Its tentative alternative-root entry is also not the
+same stem claim as Riestra's shortened Niphal. This constrains the support
+we may claim for either analysis; it is not another vote for the unchanged
+English. The source and reader remain provisionally retained, with existing
+alternative-pointing disclosure.
+
+One source agent independently inspected the BDB pages; root inspected them
+as well and read the complete new article, visually checking its tables and
+the decisive printed pages. Actual BHQ/HALOT target entries remain unconsulted
+in this pass. The next discriminating inputs are now narrower: the actual
+modern apparatus and weak-verb analysis, not another article-summary loop.
+The all-OT comparison and restoration goal remains incomplete.
+
+The bounded factual review passed the new article assessment, BDB distinctions,
+four XML controls and Psalm mapping. Root separately checked input hashes,
+396 relative documentation targets and whitespace; the eight targeted Nahum
+application tests passed. Source/translation files and the unrelated Genizah
+file remain unchanged. These are documentation/application checks, not proof
+that the retained Hebrew is original.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -1,3 +1,5 @@
+> **Historical policy, superseded 2026-10-13.** See [the complete contextual reassessment](REPENTANCE_REASSESSMENT_2026-10-13.md). This report records the earlier application; it is not the current reader-wording requirement.
+
 # English reorientation terminology: authorized application
 
 ## Decision and scope

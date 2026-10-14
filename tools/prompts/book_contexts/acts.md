@@ -12,7 +12,7 @@
 3. **πνεῦμα / Πνεῦμα Ἅγιον** ("spirit / Holy Spirit"): The Spirit's activity is the driving force of Acts. Always "Holy Spirit" (not "Holy Ghost") — consistent with Luke.
 4. **ἐκκλησία** ("church / assembly"): "Church" is the established English rendering. Do not substitute "congregation" inconsistently. Note: in 7:38, ἐκκλησία refers to Israel in the wilderness — "assembly" may be preferable in that verse.
 5. **Geographical and ethnic terms**: Proper names of cities, regions, peoples must be rendered accurately. "Judea and Samaria and to the ends of the earth" (1:8) — the geographic sequence is programmatic; render exactly.
-6. **μετάνοια / μετανοέω** ("repentance / to repent"): Prominent throughout Peter's and Paul's preaching. Use the approved reorient/reorientation terminology (DOCTRINE.md, 2026-10-11). Acts 20:21 explicitly names the Godward direction; Acts 3:19 and 26:20 retain a separate turn/return verb. Do not duplicate the destination, reduce the change to an opinion, or add intensifiers.
+6. **μετάνοια / μετανοέω** ("repentance / to repent"): Prominent throughout Peter's and Paul's preaching. Use repent/repentance with contextual explanations (DOCTRINE.md, 2026-10-13), not the superseded reorientation default. Acts 20:21 explicitly names the Godward direction; Acts 3:19 and 26:20 retain a separate turn/return verb. Do not duplicate the destination, reduce the change to an opinion, or add intensifiers.
 7. **The name "the Way" (ἡ ὁδός)**: The early Christian community's self-designation (9:2; 19:9, 23; 22:4; 24:14, 22). Always "the Way" with capital W.
 
 ## Style / register

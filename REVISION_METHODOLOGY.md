@@ -138,30 +138,22 @@ applied three phrase-level reverts across the 10 verses above.
 Footnotes and `lexical_decisions.alternatives` continue to preserve
 "Messiah" as the alternative rendering.
 
-### Reorient / reorientation (approved 2026-10-11)
+### Repentance: contextual reassessment (2026-10-13)
 
-The 2026-10-11 maintainer decision supersedes the 2026-04-19 cognitive/specific-sin/
-baptism buckets. The active policy is now [DOCTRINE.md: Reorientation terminology](DOCTRINE.md).
-The earlier policy and its execution history remain available in Git; their
-etymological explanation and occurrence count are not independent lexical evidence.
+The October 13 maintainer request reopens every October 11-12 terminology
+change. The new [decision ledger](docs/REPENTANCE_REASSESSMENT_2026-10-13.md)
+covers exactly the same 397 English POB, Simplified POB and extra-canonical
+records. It restores recognizable repent-family language where appropriate,
+retains contextual exceptions, and repairs specific errors from the earlier
+application. This is neither a blind Git revert nor a runtime thesaurus filter.
 
-Use the reorient family with source-sensitive destinations and explicit exceptions,
-not a global string replacement. A direction toward God is not built into the Greek
-lemma. A word may describe regret, reconsideration or reversal in one passage and
-religious reorientation in another; do not impose a binary division between
-metanoeo and metamelomai or erase other turning words.
-
-The maintainer explicitly included Simplified POB and the separately labeled
-extra-canonical writings. Source transcriptions and historical English witnesses
-remain unchanged. Reader adaptations disclose their status. English alternatives
-in notes and prior revision records remain available.
-
-The [application report](docs/REORIENTATION_POLICY_2026-10-11.md) records the exact
-scope, exceptions, limitations and validation. The checked-in plan binds proposed
-reader text to input file and source hashes. `tools/reorientation_policy.py` checks
-all inputs before applying any change and is idempotent on the recorded output.
-It is not a runtime replacement filter. Earlier model checks are archived and do
-not certify the new wording; current records remain drafts needing review.
+The earlier plans and their pinned historical test fixtures remain evidence of
+what was done, not the active terminology rule. The controlling policy is
+[DOCTRINE.md: Repentance terminology](DOCTRINE.md). The new plan records a decision,
+reason, input hash, source hash and exact output for every affected record.
+`tools/repentance_reassessment.py` preflights all inputs and rejects drift before
+writing. Existing source/generation layers and revision histories are preserved;
+new editorial choices remain drafts needing independent review.
 
 ## Roles
 

@@ -10501,6 +10501,50 @@ separate. Its 393 local documentation links and whitespace checks pass;
 source/translation files and the protected Genizah bytes remain unchanged.
 No new corpus-suite result is claimed for these documentation changes.
 
+### 2026-10-14 — Sahidic Ezekiel 36:23 scattering clauses
+
+The preceding Nahum response reverified an already applied finding and added
+no new source evidence. This continuation instead follows the open internal
+wording question in the Sahidic excerpt. PR200's own push/PR handles
+38574851299 and 38574926081 are confirmed live on unchanged head
+4c09946b6b207c430e4d20fedc751c0c63434530; the new work uses a successor branch.
+
+The [Ezekiel report](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#the-scattering-clauses-within-the-printed-verse-23)
+now records two clauses from Erman's printed page 37, provisionally rendered
+“I will scatter/disperse you, and you will become few/small.” Root visually
+checks the complete page and verifies the lexical controls, including Crum's
+electronic transcription and the correct CDO compound entry C1056. A source
+agent's preliminary C111 headword citation is rejected before publication;
+an example containing a word does not identify that word's headword entry.
+No complete Coptic verse translation, manuscript transcription or restored
+letters are claimed.
+
+The clauses have no counterpart in the checked WLC/selected Greek 36:23.
+The 36:25 cleansing promise is not their simple source. Internal textual
+variation must therefore be explained alongside the excerpt boundary before
+using this witness to reconstruct a shorter continuous Ezekiel. Adaptation,
+inherited versional variation and copying/editorial transmission remain open;
+no unique Greek/Hebrew ancestry or direction follows. POB text stays unchanged.
+The next evidence target is this precise reading in manuscript/another edition
+or related lectionaries, not another endpoint-only vote. Source and dictionary
+files stay outside Git; no generated image supplies textual evidence.
+
+A further primary-publication check acquires Ciasca 1889 volume II and reads
+complete printed pages 299–300. Ciasca explicitly copied 36:16–23 from Erman
+and already noted the distinctive span in his apparatus. This is not a newly
+discovered variant or an independent second witness. The following 36:25–29
+fragment has its own liturgical opening; juxtaposition in a composite edition
+must not become a claimed continuous manuscript transition. The report pins
+the PDF and distinguishes page-image inspection from unreliable machine text.
+
+Local validation resolves all 395 relative file links in the two changed
+documents and passes `git diff --check`. Tracked source/translation files are
+unchanged, and the unrelated Genizah file retains its protected hash. These
+are documentation-integrity checks, not tests of the historical inference.
+One bounded independent source review is requested; its outcome is recorded
+with publication rather than presumed here. No whole-corpus test run is
+claimed for this documentation-only change.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

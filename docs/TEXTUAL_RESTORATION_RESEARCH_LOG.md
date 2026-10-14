@@ -10280,6 +10280,58 @@ added. A separate bounded Wong 2002 full-text search failed at the documented
 access limit; repeated publisher/ResearchGate/title searches are now stopped
 until a distinct lawful copy becomes available.
 
+### 2026-10-14 — Outpouring control limits the proposed Hebrew retroversion
+
+The spirit/wind comparison is committed as `8d5eeee87b5eb85d6d649626c3102e89a5bba06a`
+and pushed in [PR 196](https://github.com/zackseyun/peoples-open-bible/pull/196).
+Its own push 38557437166 and PR 38557522185 both complete successfully on that
+unchanged head. Its independent factual review passes: all 44
+contexts and the 52/44 and 35/6/1/4 counts reproduce, with no factual correction.
+The PASS is recorded in the PR body without changing its head. The app could
+not attach the PR because this chat reached its 100-attachment limit.
+
+The [separate outpouring control](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#outpouring-collocation-and-the-limit-of-hebrew-retroversion)
+queries 33 Hebrew tokens in 32 verses and identifies a consequential limit:
+Greek θυμός corresponds to Hebrew זעם at 22:31 as well as חמה at 22:22.
+The publisher text confirms these Greek clauses and the alternative ὀργή at
+21:36; 7:8 aligns to the pinned Greek 7:5 rather than the same-number row.
+Thus the wrath outpouring formula does not uniquely recover חמה. It also does
+not refute that proposal or explain how the 39:29 difference arose. Source and
+English stay unchanged; one bounded independent check reproduces the 33/32
+count and all four alignments, passing without factual correction. This
+follow-up is not included in PR 196. Further lexical-count expansion
+is parked pending evidence that can distinguish transmission mechanisms.
+
+A bounded alternative journal-route search did not locate the full 1971 Madrid
+edition or a new target plate. It surfaced a related Antinoopolis study, but
+[4CARE's complete object record 560](https://4care-skos.mf.no/4care-artefacts/560/)
+identifies P.Ant. I 10 / Rahlfs 988 / TM 62021 as parchment fragments covering
+33:27–31 and 34:1–5,18–30. That catalogue coverage does not include the 36–39
+targets. No target reading is inferred, and the related article is not acquired
+merely because its title mentions 967. The restricted P967 image routes remain
+parked; this pass supplies no new transition or 39:29 manuscript evidence.
+
+A separate bounded primary-route search checks HUBP Ezekiel target access.
+The source agent reads the [official Ezekiel page](https://bibleproject.huji.ac.il/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C),
+which offers introductions, chapter 1 samples and a source index, not the
+requested 39:29 or 36:23–38 apparatus. The institution-linked
+[Magnes reader](https://www.magnespress.co.il/book/5187/read) returns an ASP.NET
+runtime/server error, not a confirmed paywall denial. The indexed 14-page
+preview supplies introductory material; legacy sample/index endpoints return
+502. Root's subsequent web fetch times out or fails, so it adds no independent
+page-reading claim. No target apparatus or files are acquired. Stop this route
+pending a restored reader or a distinct lawful target copy; bibliographic
+registration and introductory previews remain separate from consultation.
+
+PR 196 merges as `5791e72636a4985d6059b6313f42a6f4e4420e5b`. Main had advanced
+with Enoch and Zacynthius changes, but neither of the two review documents
+overlapped. A clean merge-tree calculation and the fetched merge agree on tree
+`7f698255b5dd8781d21367db6a4b0fe334b1aa6c`; both expected parents are verified.
+Local main advances through a guarded ref update and a normal push reports
+up to date. The reviewed outpouring result and access limits are a separate
+documentation-only successor. They change neither canonical text nor the
+source-priority decision and require their own publication checks.
+
 ### 2026-10-13 — AI image recovery investigation and measured spectral tests
 
 At the maintainer's explicit request, the

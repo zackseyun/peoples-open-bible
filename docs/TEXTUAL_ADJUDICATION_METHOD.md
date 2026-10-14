@@ -1,6 +1,6 @@
 # POB source-wording adjudication method
 
-Version: 2.0.5 · Revised: 2026-10-13 (reading-level affiliation and edition-local sigla)
+Version: 2.0.6 · Revised: 2026-10-14 (searchable coverage and phrase-search limits)
 
 This is the controlling method for source selection and English impact. The
 [approach review](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md) records the
@@ -111,6 +111,25 @@ claim a second blinded model pass occurred unless its actual output is stored.
   does not cover the passage. No coverage contributes no evidence either way.
 - Preserve spelling, vowels, accents, scribal hands, and corrections in the
   diplomatic layer; normalize only in a separately mapped comparison layer.
+
+For electronic phrase searches, audit searchable text rather than file or
+chapter counts. The [Sahidic Ezekiel control](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#sahidic-phrase-search-and-coverage-control)
+acquired all 48 indexed chapter files, but 432 of their 1,275 verse-labeled
+elements contained no word text. Record empty and partially supplied units,
+source-local numbering, text outside the queried elements, and whether
+apparatus branches are present. A complete download is not a complete witness.
+
+Pin the corpus release and exact query layer (written text, normalized tokens,
+or editorial lemmas). State which marks, punctuation and boundaries the query
+removes. Read candidate matches in their original context and distinguish
+substring hits from lexical or grammatical equivalence. A zero result supports
+only absence of that expression under that transformation in the searched
+data, not absence from the language, manuscript tradition or lost text.
+Deduplicate parallel export formats and derivative editions before counting
+support; retain genuinely different witnesses with explicit relationships.
+An external corpus that imports the same basetext is a retrieval aid, not an
+independent attestation. Do not combine disconnected matches into a claimed
+donor passage without a separate, testable argument for adaptation.
 
 An importer's rendering convention is not automatically diplomatic fidelity.
 The [eleven compound comparison](ELEVEN_COMPOUND_READER_CORRECTIONS_2026-10-12.md)

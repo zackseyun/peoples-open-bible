@@ -970,3 +970,65 @@ for p in sorted(Path("/tmp/pob-sahidic-ezekiel-search.tFdL3k").glob("105*.xml"))
             if term in s:
                 print(term, v.get("n"))
 ```
+
+### External Coptic phrase controls
+
+**Neither of the two returned external contexts supplies Hunt5's distinctive
+sequence.** This bounded search uses the official
+[Coptic Scriptorium corpus at a fixed commit](https://github.com/CopticScriptorium/corpora/tree/3ac067f1709a0012daf39ea8da2fac79980176a5),
+not another pass over the preceding Ezekiel files. The
+[compact receipt](../sources/textual_restoration/comparisons/ezekiel_external_coptic_phrase_screen.2026-10-14.v1.json)
+records the exact selection recipe, query layers, counts, hashes and limits.
+
+The selection comprises 374 TT archive members from Pentateuch and selected
+prophetic collections, excluding Ezekiel, plus 211 monastic TT documents from
+Shenoute, Abraham, Besa, Johannes, Pachomius and the Apophthegmata corpora.
+Thirteen files flagged redundant were excluded; treebank and individual-book
+duplicate exports were not added. This is not all OT or all monastic literature:
+Malachi and other unselected books remain outside the screen. File counts do
+not establish complete chapters or complete works. OT metadata declares
+Crosswire/CoptOT sources and automatic annotations, not independent manuscript
+confirmation; it also warns of possible verse/English misalignment.
+
+Both the editorial normalized-token and original-spelling attribute layers
+were searched: 585 documents and 404,209 tokens per layer. These are two
+representations of the same inputs, not two witnesses. Casefolding, NFD and
+removal of combining marks and whitespace precede within-document substring
+retrieval; punctuation remains. The two distinctive queries are the same
+`ⲣⲕⲟⲩⲓ` and `ⲡⲧⲣⲁⲉⲓⲣⲉⲛⲧⲁϭⲟⲙ` used above.
+
+| Retrieved locus, in both layers | Actual contextual reading | Consequence |
+|---|---|---|
+| Apophthegmata 045, MONB.EG80 line 13, token u29 | `ⲣⲕⲟⲩⲓ ⲛϩⲏⲧ`, becoming fainthearted/cowardly amid trials, followed by grumbling | A different contextual sense, not numerical reduction through scattering |
+| Shenoute, Uncertain Canons, XR470, chapter 1407 verse 3, tokens u1994–u1995 | `ⲃⲁϣⲟⲣ | ⲕⲟⲩⲓ`, little foxes | Removing the boundary creates the substring; this is not the verb `ⲣⲕⲟⲩⲓ` |
+
+There are no exact power-phrase hits in either queried layer. This does not
+exclude different spellings, formulations, missing text or unsearched works.
+The AP metadata identifies Chaîne 1960 section 45 and BL Or.3581A(44) f.2r;
+its supplied English agrees with the contextual distinction above. Shenoute's
+metadata identifies Emmel's typed transcription of Amélineau, including the
+latter's errata, and explicitly says the manuscript was not consulted for
+chapter/verse division. These are published digital readings, not fresh pixels.
+
+A parser defect was caught before final conclusions: monastic files put `orig`
+on separate elements, whereas OT files put it on `norm` elements. The initial
+original-layer pass therefore missed all 374 OT inputs. After correction,
+the same cached inputs were rerun offline; root independently reproduced both
+complete query layers and the unchanged two loci. This is why per-layer text
+coverage is now explicit in the controlling method. Eleven monastic filename
+stems also lack exact keys in aggregate metadata; their actual file headers
+were checked, and all 211 selected monastic headers say `redundant="no"`.
+
+Root verified all 585 input hashes, the exact selection recipe, and the pinned
+Git object IDs for the metadata, archive and 211 monastic files. The two source
+contexts and headers were read directly. The detailed acquisition receipt and
+full texts remain private; the compact Git receipt preserves reproducible
+upstream selection without importing the corpus. The OT archive declares
+CC BY-SA 4.0 and the two hit files CC BY 4.0; other file-specific terms remain.
+
+No donor or ancestral wording is established. Retain Hebrew and English; do
+not turn this negative exact-string result into positive support for a lost
+Hebrew plus. Retire these same queries on these same bytes. The next useful
+input remains a distinctively matching passage with a demonstrated relationship,
+or the missing continuous Greek transition/critical apparatus. ImageGen has
+no evidentiary role in this text-only comparison.

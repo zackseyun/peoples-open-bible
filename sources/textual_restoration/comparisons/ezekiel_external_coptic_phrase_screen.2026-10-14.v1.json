@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "purpose": "Bounded retrieval of possible external parallels for Huntington 5 Ezekiel 36:23; not source-priority adjudication",
+  "pob_input_commit": "d2110e218c5f73fd822175442413ec510be072ff",
+  "upstream_repository": "https://github.com/CopticScriptorium/corpora",
+  "upstream_commit": "3ac067f1709a0012daf39ea8da2fac79980176a5",
+  "upstream_raw_prefix": "https://raw.githubusercontent.com/CopticScriptorium/corpora/3ac067f1709a0012daf39ea8da2fac79980176a5/",
+  "selection": {
+    "ot_archive": "sahidic.ot/sahidic.ot_TT.zip",
+    "ot_member_rule": "Members ending .tt whose first two filename characters, parsed as an integer, are in the explicit prefix list; no second export format",
+    "ot_prefixes": [1, 2, 3, 4, 5, 23, 24, 25, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 72, 73],
+    "ot_member_count": 374,
+    "monastic_rule": "Recursive tree paths ending .tt with top-level directory starting shenoute- or in monastic_directories; exclude meta.json[filename stem].redundant == yes, defaulting missing metadata to empty; then inspect each actual header",
+    "monastic_directories": ["abraham", "besa-letters", "johannes-canons", "pachomius-instructions", "AP"],
+    "monastic_candidates": 224,
+    "excluded_redundant_yes": 13,
+    "selected_monastic_files": 211,
+    "selected_stems_missing_from_meta": 11,
+    "actual_selected_monastic_header_redundant_values": ["no"],
+    "scope_limit": "Selected Pentateuch/prophetic collections and monastic corpora only. Ezekiel, Malachi, other unselected OT books, NT and other literature are outside this screen. Document counts do not imply complete chapters or complete works."
+  },
+  "query": {
+    "terms": ["ⲣⲕⲟⲩⲓ", "ⲡⲧⲣⲁⲉⲓⲣⲉⲛⲧⲁϭⲟⲙ"],
+    "norm_layer": "norm attributes on norm elements, in document order",
+    "orig_layer": "orig attributes on orig elements in monastic inputs; orig attributes on norm elements in OT inputs, in document order",
+    "transformation": "HTML character-reference decoding; casefold; Unicode NFD; remove Mn/Mc/Me and whitespace; concatenate within each document, retaining punctuation; exact substring retrieval",
+    "documents_per_layer": 585,
+    "tokens_per_layer": 404209,
+    "empty_layer_documents": 0,
+    "fetch_failures": 0,
+    "rkoui_loci_per_layer": 2,
+    "exact_power_phrase_loci_per_layer": 0,
+    "initial_parser_correction": "The first pass omitted OT norm@orig attributes. Corrected before final conclusions; the same cached inputs were rerun and both layers independently reproduced."
+  },
+  "retrieved_loci": [
+    {
+      "path": "AP/apophthegmata.patrum_TT/AP.045.n192.temptation.tt",
+      "sha256": "bc8019a8bd981da9b9f08de1ce3f4dca078caacf36d6c6efb45cedc1d16ff727",
+      "locator": "MONB.EG80, line 13, norm token u29; urn:cts:copticLit:ap.45.monbeg",
+      "construction": "ⲣⲕⲟⲩⲓ ⲛϩⲏⲧ",
+      "assessment": "Fainthearted/cowardly in a temptation context, not numerical reduction through scattering; not the target sequence",
+      "edition_metadata": "Chaîne (1960), section 45; British Library Or. 3581A (44) f. 2r"
+    },
+    {
+      "path": "shenoute-uncertain-xr/shenoute.uncertain.xr_TT/shenoute.uncertain.XR461-476.tt",
+      "sha256": "fb3879f2ab8f8801094224485079022148c446f134c472eeaf66025370dbd8fc",
+      "locator": "XR470, chapter 1407 verse 3, norm tokens u1994-u1995",
+      "construction": "ⲃⲁϣⲟⲣ | ⲕⲟⲩⲓ",
+      "assessment": "Little foxes; the searched substring crosses a token boundary and is not the verb rkoui",
+      "edition_metadata": "Stephen Emmel's typed transcription of Amélineau, with that edition's errata; editorial divisions not based on new manuscript consultation"
+    }
+  ],
+  "pins_sha256": {
+    "recursive_tree_json": "56f0f2c96f263bdb6c5cdbd157a05e6068547742dcee7bfd27ff92dadb4967f1",
+    "meta_json": "6a07edb1b871e9e311ef43723b9ce400e74ffc4b163dc8aefff9353bf5505b41",
+    "ot_tt_archive": "1a59a0b1e07149718c9feb0ba1d6ea45f3883a3ed5b0afb4408c13d0b5bd0f21",
+    "private_full_retrieval_receipt": "74eaa974afa2213e6d18125a3807b3b345f0d4479580350b48bdf9dc6612d8f3"
+  },
+  "private_inputs": "/tmp/pob-scriptorium-screen.51vYKL/",
+  "validation": "Root independently reproduced all 585 input SHA256 hashes, both token totals and four layer hits. Exact selection, archive and metadata plus all 211 monastic file Git blob IDs match the complete pinned upstream tree. Actual hit contexts inspected.",
+  "rights": "OT files declare CC BY-SA 4.0; both hit files declare CC BY 4.0. Other source-specific licenses remain applicable. No full third-party text or archive imported into POB.",
+  "decision": "No identified donor in returned contexts; no Hebrew, English, note or canon change. No proof of donor nonexistence, independent OT attestation or historical priority. OT metadata declares Crosswire/CoptOT dependence."
+}

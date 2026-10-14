@@ -35,9 +35,12 @@ def render_text(title: str, source: dict, accepted: dict) -> str:
         "Source scan: " + source["source_snapshot"]["url"],
         "The ancient Greek and 1865 edition are public domain. Original POB English contributions and notes are offered under CC BY 4.0; no upstream XML is relicensed by this edition.",
     ]
+    if any(tr.printed_gap_lengths(row["source_text"]) for row in source["passages"]):
+        blocks.append("Coverage follows all surviving wording of the selected edition. Printed lacunae remain explicit gaps and are explained in the translator's notes. Lost wording has not been reconstructed; this is not a claim that the original survives unbroken.")
     homily = None
     for row in accepted["passages"]:
         reference = row["reference"]
+        tr.validate_printed_gaps(next(p["source_text"] for p in source["passages"] if p["reference"] == reference), row)
         if "." in reference:
             current = int(reference.split(".")[0])
             if current != homily:

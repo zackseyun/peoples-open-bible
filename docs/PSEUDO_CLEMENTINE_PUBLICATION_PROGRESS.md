@@ -347,3 +347,29 @@ specific journals before resuming anything; a quiet call or observation timeout
 is not a terminal failure. Source PDFs, crops and base64 request caches stay
 local and must not enter Git. Review requests/responses and hash-bound evidence
 are retained for the eventual pinned export.
+
+### Complete Greek-source milestone (2026-10-13)
+
+The final PDF239 dispute passed a fresh complete comparison using the independently
+scanned, visually mapped alternate PDF233 / printed197. All **197 required pages**
+now pass the stored-response/source-image evidence verifier. The full selected
+source assembles **539 sections in20 sequential Homilies** and verifies the
+20.23 ending `ἔσπευσεν.` on printed199. Section counts are:
+`22,53,73,25,30,26,12,24,23,26,36,33,21,12,11,21,20,23,25,23`.
+This supersedes the earlier196/197 source checkpoint; it is not English or
+publication completion, nor a claim that printed internal lacunae are restored.
+
+The first complete-source consolidation validated actual review evidence for
+**151/539 English sections**, with388 still missing accepted selection at that
+snapshot. Every selected bundle passed the existing current-source/raw-response
+and later-adverse-review gates. `accepted-partial.json` and its selections are
+explicitly not reader publication. Re-run consolidation as live jobs advance.
+Homilies19/20 have now been added to a third, single-worker translation queue;
+the existing two queues remain unduplicated. Homily17's now-correct source
+snapshot is ready for its already queued run.
+
+The export renderer adds an explicit selected-edition/lacuna notice when gaps
+occur and refuses to hide or fill them. Lost wording is never represented as
+recovered. The current release still requires all539 reviewed English sections,
+all four full archive artifacts, source/proof/download pins, final reader and
+build checks, main integration, authorized deployment, and direct live verification.

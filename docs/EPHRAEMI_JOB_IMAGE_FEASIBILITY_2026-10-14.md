@@ -123,14 +123,56 @@ of better measured images is therefore real, but their availability for
 this target has not been established. Modern photographs must also be
 compared with already published recoveries before any novelty claim.
 
+### Spectral coverage correction
+
+A subsequent primary-source check materially narrows that lead. Michael
+Dormandy, [*A Proposed Change to the NA28 and IGNTP Readings of 04 at John
+1:38a*](https://www.jbtc.org/v26/TC-2021-Dormandy.pdf), *TC* 26 (2021),
+187-191, states on page 187 that the multispectral images then existed only
+for the New Testament portion. Page 191 calls for imaging the Septuagint
+portion. His footnote directs researchers to the Kirchliche Hochschule in
+Wuppertal for access. The complete five-page article was acquired from the
+[Oxford repository](https://ora.ox.ac.uk/objects/uuid%3Ab7b582de-7123-471f-913d-89dc020241be);
+pages 187 and 191 were visually consulted.
+
+This is a dated 2021 coverage statement, not proof that no Old Testament
+captures exist in 2026. It does mean the public project description cannot
+justify assuming a ready-made Job spectral stack. Verify current OT coverage
+before investing in a spectral pipeline. The article's John result is prior
+scholarship, not a new POB discovery.
+
+### Alternate substitute scan
+
+The separate [Gallica item btv1b10867899x](https://gallica.bnf.fr/ark:/12148/btv1b10867899x)
+has 426 viewer images and identifies its source as substitute document
+`R 49168`. Its displayed online date is January 22, 2023; this is not the
+photograph's capture date. The record does not establish a spectral technique
+or the date and photographic independence of the underlying substitute.
+
+Selecting the viewer's `33v` thumbnail locates the target at **f76**, unlike
+f79 in the color image set. Its ordinary export supplied an unchanged
+2146 x 2719 JPEG, 774,576 bytes. The middle and lower writing were inspected
+at one display pixel per received export pixel. The lower viewport covered
+approximately x=432.5 to 1712.5 and y=1719.5 to 2439.5 in export coordinates.
+These are display coordinates, not a registered undertext-line map.
+
+The grayscale substitute shows the same damaged lower writing. No additional
+letter, erased word or resolved edition gap is accepted from it. Its contrast
+cannot be treated as a measured spectral response. This closes the bounded
+alternate-scan check; do not repeatedly enlarge it as though enlargement
+supplied new optical information. The receipt's follow-up section preserves
+this image and the article separately from the initial 12-response total.
+
 ## Next discriminating experiment
 
 1. Obtain the lawful target-specific Ziegler apparatus and any later Job
    revision. Determine whether the two historical gaps remain unresolved.
    A reading absent from Tischendorf alone is not a discovery.
-2. Obtain native-resolution or actual fluorescence/multispectral captures of
-   the relevant surface, with wavelength and capture metadata where available.
-   Another enlargement of this export does not satisfy that input.
+2. Establish whether actual fluorescence/multispectral captures exist for this
+   Old Testament surface; the verified 2021 project coverage was NT-only.
+   Obtain any usable captures with wavelength and capture metadata where
+   available, or materially better native imagery. Another enlargement of the
+   inspected color or substitute export does not satisfy that input.
 3. Register securely legible neighboring undertext to the edition before
    assigning a gap. Freeze image regions and an image-only shape pass before
    introducing the expected wording.

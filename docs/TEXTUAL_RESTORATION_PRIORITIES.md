@@ -31,6 +31,12 @@ the modern Job apparatus and target-specific spectral images remain the inputs
 that could change the result. Do not repeatedly reread the same export or treat
 an old edition's blank as proof of present-day novelty.
 
+The subsequent Ephraemi access check found a material limit: a consulted 2021
+study describes the then-existing multispectral set as NT-only. Current Job
+coverage must be established, not assumed. The alternate Gallica substitute
+scan of 33v was also acquired and inspected without a new accepted letter;
+repeat enlargements of these two exports are not the next experiment.
+
 Current direction, reset 2026-10-12: prioritize consequential unresolved textual
 history and meaning questions, not the number of edited sentences, registry
 entries, tests or commits. The [replacement objective](TEXTUAL_RESTORATION_RESEARCH_LOG.md#objective-and-current-assessment)

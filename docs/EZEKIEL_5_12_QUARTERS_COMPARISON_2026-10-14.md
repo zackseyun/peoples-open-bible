@@ -116,6 +116,30 @@ generated completion would not answer which letters remain on the papyrus.
 This case implements feature-level agreement/dependence in the
 [adjudication method](TEXTUAL_ADJUDICATION_METHOD.md), not another model vote.
 
+## Target-access and interim-report check on October 14
+
+The [publisher's exact Olley chapter](https://brill.com/display/book/9789047430575/Bej.9789004177130.i-590_004.xml)
+is identified as pp.229–299, but its public preview contains only two pages:
+a commentary divider and the chapter opening. Page 264 is not supplied.
+Institutional login or purchase is offered; neither was attempted. Do not
+repeat this preview as an acquired discussion of quarters.
+
+A distinct official [UBS interim-report resource](https://translation.bible/tools-resources/preliminary-and-interim-report-for-the-hebrew-old-testament-text-project/)
+was acquired. The pinned XML contains 4,515 entries, 413 with Ezekiel references,
+but none indexed to 5:2, 5:12 or 36:23–38. Chapter 5 entries concern 5:7/11/15/16;
+chapter 36 entries concern 36:5/13/14/15/20. Root reproduced this coverage check;
+one source agent read all nine entries and searched all Ezekiel entries for
+the target fraction, omission and ordering discussion without locating it.
+This limited database's silence does not support either textual form or
+establish what the final CTAT volume discusses. The
+[Nahum control](NAHUM_SOURCE_COMPARISON_2026-10-10.md#hottp-interim-report-control-on-october-14)
+records the actual pinned inputs, rights and a relevant entry found there.
+
+Olley's target commentary, the final critical discussion and original
+P967 transitions remain missing inputs. The final CTAT institutional route
+reached an Anubis verification screen and was not bypassed. These access
+results retire particular unproductive routes, not the unresolved questions.
+
 ## Reproducibility and review scope
 
 Input repository commit: `02286082994ba0ad79366a284cce3d4c8671d372`.

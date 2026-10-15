@@ -262,6 +262,73 @@ pointing and “heaves” remain provisional; “is devastated” remains disclo
 but unadopted. No new ink, ancient vowels, canon claim or ImageGen evidence
 results from the grammatical control.
 
+## HOTTP interim-report control on October 14
+
+**Outcome: no source or English change; the elliptical-object alternative now
+has a directly consulted published formulation.** The official
+[United Bible Societies resource page](https://translation.bible/tools-resources/preliminary-and-interim-report-for-the-hebrew-old-testament-text-project/)
+links a downloadable preliminary/interim report. This is not the final CTAT
+volume, the BHQ apparatus, or a new manuscript witness. Its older analysis
+must not be presented as an assessment of the 2023/2025 fragment publications.
+
+Root and one independent source checker read complete XML entry `04316`,
+references `03400100500016` and `03400100500018`, at upstream commit
+`33dcc8c671511151551804e073f1d461bc5d5b1a`. The
+[pinned entry source](https://github.com/ubsicap/ubs-open-license/blob/33dcc8c671511151551804e073f1d461bc5d5b1a/HOTTP/HOTTP.XML)
+distinguishes three alternatives:
+
+- Retained `וַתִּשָּׂא`, rated B. The English and French remarks allow arising
+  or an understood voice being lifted: the earth resounding. The latter is a
+  concrete elliptical-object proposal, not a demonstration of that analysis
+  or a preference over arising. No additional Hebrew word is thereby attested.
+- Bracketed `[וַתִּשָּׁא]`, attributed to Brockington, with a devastation sense
+  and factors 1 and 6. The difference is pointing, not consonantal skeleton.
+  The entry does not specify a stem: do not attribute Riestra's particular
+  shortened-Niphal argument to HOTTP.
+- Bracketed `[וַתָּשָׂה]`, with final aleph changed to he and different vowels,
+  marked with factor 14. This is a distinct conjecture, not merely repointing.
+
+The complete accompanying ratings/factors explanations were read. Their B is
+a qualitative committee judgment about the earliest attested form, with doubt,
+not a calibrated percentage or proof of original vowels. Factors 1, 6 and 14
+refer respectively to narrow support, translation-related adjustments and
+conjecture; they are category identifiers, not numerical scores. The source
+uses brackets for reconstruction lacking direct Hebrew attestation and expressly
+does not provide a complete witness apparatus. Majority and unanimous decisions
+use the same notation. Modern translation listings are not extra ancient votes.
+
+This qualifies the next grammatical test: compare the unusual intransitive
+analysis with **actual usage supporting an implicit voice**, rather than
+treating grammatical transitivity as a binary choice between corruption and
+intransitive נשׂא. The earlier article review already acknowledged an elliptical
+possibility; HOTTP supplies an explicit proposal and provenance, not its proof.
+Its short remark provides no supporting parallels. The actual final apparatus
+and comparable constructions remain needed. The current draft's provisional
+intransitive analysis is not contradicted, and HOTTP does not independently
+validate “heaves.” No automatic note expansion or source-priority vote follows.
+
+### Acquisition and verification
+
+The private XML has SHA256
+`209246ad04bb2c982495f5e45562f2bb752e0dc4a0e708919d238a5a95918c39`
+and Git blob `fe8beb7b52fdc8d4af0b39ed3143baa1479a5824`.
+Companion file SHA256 values are:
+
+```text
+HOTTP-RATINGS-EN.HTML  8798347d15657f26af02018abf126082527cdd9cef038220e539c7c0dab96591
+HOTTP-FACTORS-EN.HTML  e4ff0924e99b7e051a930b3745b30fb468776d665b1cea8f4f4e4385307e8e0c
+README.md             16270318286bd75d7177a4e794f32d55b20adc792c9159508f30493ce76c2daa
+LICENSE.md            7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297
+```
+
+UBS identifies this resource as CC BY-SA 4.0, copyright United Bible Societies
+1973–1980, 2003–2023. The five full files remain outside Git; they are not
+relicensed as POB content. Root reproduced all five hashes and the XML blob;
+the source checker verified all five blobs against the pinned upstream listing.
+The checker confirmed the entry, category definitions and current-record limits,
+not historical originality. The institutional final CTAT volume route reached
+an Anubis verification screen; no bypass or final-volume consultation is claimed.
+
 ## Historical scope
 
 This is a bounded published-reading comparison following the

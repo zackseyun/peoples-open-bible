@@ -1,6 +1,7 @@
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -30,7 +31,7 @@ class DeuteronomyOHBReviewTests(unittest.TestCase):
         self.assertEqual(self.data['editorial_proposal']['greek_manuscript_ids_specified_in_32_8_commentary'], [])
         self.assertFalse(self.data['pob_assessment']['greek_106_conflict_resolved'])
 
-    def test_selection_and_canonical_baseline_remain_unpromoted(self):
+    def test_historical_selection_and_baseline_remain_preserved(self):
         assessment = self.data['pob_assessment']
         for field in ('exact_wording_resolved', 'full_verse_source_gate_completed',
                       'independent_pob_review_completed', 'newly_recovered_letters',
@@ -41,7 +42,9 @@ class DeuteronomyOHBReviewTests(unittest.TestCase):
         self.assertTrue(all(v == 'pending' for v in selection['review_gates'].values()))
         self.assertTrue(any('OHB' in q for q in selection['open_questions']))
         control = self.data['pob_control']
-        self.assertEqual(hashlib.sha256((ROOT / control['path']).read_bytes()).hexdigest(), control['sha256'])
+        raw = subprocess.check_output(['git', '-C', str(ROOT), 'show',
+            f"3d0cab4d35b356e052417df5cb009a3137f614c4:{control['path']}"])
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), control['sha256'])
 
 
 if __name__ == '__main__':

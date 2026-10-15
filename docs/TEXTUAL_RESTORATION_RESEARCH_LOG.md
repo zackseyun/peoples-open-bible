@@ -10979,6 +10979,38 @@ e89e1942fbf7587502d141ccf97792e5327d2938. Local main was updated by compare-and-
 the normal main push reported up-to-date. Other live PR heads were not changed.
 This publication closes no new ancient-reading question or broader OT goal.
 
+### 2026-10-15 — Deuteronomy 32:8 reviewed source and English applied
+
+The [full-record application](DEUT32_8_CRITICAL_SOURCE_APPLICATION_2026-10-15.md)
+turns the provisional source decision into an actual local canonical change:
+בני ישראל becomes בני אלוהים, honestly labeled POB-critical rather than WLC.
+The rest retains the normalized Masoretic base; it is not represented as a
+complete surviving 4Q37 verse. English now reads “humankind” and “sons of God,”
+with the lost main-text sons parallel explicitly disclosed in a note. This
+is an application of a known attested variant, not newly recovered letters.
+
+A contract-masked English assessment and a separate full-record review support
+the exact candidate. Strongest alternatives and material/apparatus limitations
+remain recorded; none of the old candidate's pending gates was silently passed.
+Seven changed fields are archived, generation provenance preserved, and active
+status remains draft/needs_review. Obsolete policy and root rationales are
+corrected without claiming fresh HALOT consultation.
+
+The final 40-test suite passes, including actual full-book export and external
+review bindings. The historical preflight's separate 15 tests pass using an
+authentic pinned builder/exporter/schema replay. Three additional old controls
+now compare their unchanged pins with the original Git bytes rather than the
+intentionally revised live verse. The independent implementation review caught
+and resolved a provenance-scope detail: root's method-document pin was not a
+reviewer-read input. Final dependent hashes and six lightweight checks pass;
+the unchanged candidate did not need a new source-priority vote.
+
+The intervening Nahum response only reconfirmed completed work and did not
+advance the goal. This application is substantive progress; publication is
+pending, and deployment has not been checked. The complete OT witness census,
+discriminating restoration tests and corpus-wide comparison remain incomplete.
+ImageGen is not evidence, and no canon change follows from this variant.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

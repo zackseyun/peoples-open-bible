@@ -3,6 +3,8 @@ from contextlib import redirect_stdout
 import io
 import json
 from pathlib import Path
+import subprocess
+import sys
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -10,21 +12,70 @@ from unittest.mock import patch
 import yaml
 
 from tools.textual_restoration import build_application_draft as module
+from tools.textual_restoration.replay_unflagged_sample import extract_regular, git
 
 ROOT = Path(__file__).resolve().parents[1]
 ARTIFACTS = ROOT / 'sources/textual_restoration/applications'
+HISTORICAL_REVISION = '574f204de77e89c8abba04c72209bdf5efb317f9'
+PREFLIGHT_PATH = 'sources/textual_restoration/applications/deut32_8_preflight.v2.json'
+
+
+def historical_bytes(path):
+    return git(ROOT, 'show', f'{HISTORICAL_REVISION}:{path}')
+
+
+def historical_build():
+    """Replay original code and full Deuteronomy inputs, not today's corpus.
+
+    This checkpoint contains the original v2 receipt and all its exact input
+    hashes. No saved candidate/receipt is substituted for the builder's output.
+    The current exporter is exercised separately below.
+    """
+    expected = json.loads(historical_bytes(PREFLIGHT_PATH))
+    inputs = expected['inputs']
+    pins = [inputs[key] for key in ('baseline', 'selection', 'plan')]
+    pins += inputs['evidence']
+    pins += [
+        {'path': 'schema/verse.schema.json', 'sha256': inputs['verse_schema_sha256']},
+        {'path': 'tools/export_mobile_bible.py', 'sha256': inputs['exporter_sha256']},
+        {'path': 'tools/textual_restoration/build_application_draft.py',
+         'sha256': inputs['builder_sha256']},
+    ]
+    for pin in pins:
+        if module.sha(historical_bytes(pin['path'])) != pin['sha256']:
+            raise ValueError(f"Historical preflight input mismatch: {pin['path']}")
+    paths = sorted({'tools', 'translation/ot/deuteronomy',
+                    'sources/ot/wlc/Deut.xml',
+                    'sources/early_christian_texts/catalog.json',
+                    *(pin['path'] for pin in pins)})
+    archive = git(ROOT, 'archive', '--format=tar', HISTORICAL_REVISION, '--', *paths)
+    child_code = '''
+import json, pathlib, sys
+sys.path.insert(0, str(pathlib.Path.cwd()))
+from tools.textual_restoration import build_application_draft
+candidate, receipt = build_application_draft.build()
+print(json.dumps({'candidate': candidate, 'receipt': receipt}))
+'''
+    with tempfile.TemporaryDirectory(prefix='pob-deut32-original-preflight-') as directory:
+        extract_regular(archive, Path(directory))
+        child = subprocess.run([sys.executable, '-I', '-B', '-c', child_code],
+                               cwd=directory, capture_output=True, text=True, timeout=240)
+    if child.returncode:
+        raise RuntimeError('Historical Deuteronomy preflight failed:\n' + child.stderr)
+    result = json.loads(child.stdout)
+    return result['candidate'], result['receipt']
 
 
 class ApplicationDraftTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.selection = json.loads(module.SELECTION.read_text())['selections'][0]
-        cls.raw = (ROOT / cls.selection['baseline']['repo_path']).read_bytes()
+        cls.selection = json.loads(historical_bytes(module.SELECTION.relative_to(ROOT)))['selections'][0]
+        cls.raw = historical_bytes(cls.selection['baseline']['repo_path'])
         cls.before = yaml.safe_load(cls.raw)
-        cls.plan = json.loads(module.PLAN.read_text())
-        cls.candidate, cls.receipt = module.build()
+        cls.plan = json.loads(historical_bytes(module.PLAN.relative_to(ROOT)))
+        cls.candidate, cls.receipt = historical_build()
 
-    def test_checked_outputs_reproduce_from_current_inputs(self):
+    def test_checked_outputs_reproduce_from_original_pinned_inputs(self):
         self.assertEqual(self.raw, (ROOT / self.receipt['baseline_snapshot_path']).read_bytes())
         self.assertEqual(module.json_bytes(self.candidate),
                          (ARTIFACTS / 'deut32_8_candidate.v1.json').read_bytes())
@@ -92,8 +143,18 @@ class ApplicationDraftTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'unpromoted research'):
             module.draft_record(self.raw, selection, self.plan)
 
-    def test_actual_mobile_export_preserves_notes_but_not_full_source(self):
+    def test_historical_mobile_export_preserves_notes_but_not_full_source(self):
         result = self.receipt['mobile_probe']
+        self.assertTrue(result['all_other_exported_book_content_unchanged'])
+        self.assertTrue(result['draft_english_preserved'])
+        self.assertTrue(result['draft_note_bodies_preserved'])
+        self.assertFalse(result['draft_source_preserved'])
+        self.assertFalse(result['deployed_reader_checked'])
+
+    def test_current_mobile_export_preserves_notes_but_not_full_source(self):
+        # A real current full-book export with only the historical candidate
+        # overlaid. This neither requires nor certifies today's DEU.32.8 source.
+        result = module.mobile_probe(self.before, self.candidate)
         self.assertTrue(result['all_other_exported_book_content_unchanged'])
         self.assertTrue(result['draft_english_preserved'])
         self.assertTrue(result['draft_note_bodies_preserved'])
@@ -108,7 +169,7 @@ class ApplicationDraftTests(unittest.TestCase):
         self.assertFalse(result['publication_ready'])
         self.assertFalse(result['canonical_change_applied'])
         self.assertFalse(result['applier_implemented'])
-        self.assertEqual(self.raw, (ROOT / self.selection['baseline']['repo_path']).read_bytes())
+        self.assertEqual(self.raw, historical_bytes(self.selection['baseline']['repo_path']))
 
     def exercise_write_guard(self, symlink):
         with tempfile.TemporaryDirectory() as directory:

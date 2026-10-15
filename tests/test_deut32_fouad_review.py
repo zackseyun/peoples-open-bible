@@ -1,6 +1,7 @@
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -41,13 +42,15 @@ class DeuteronomyFouadReviewTests(unittest.TestCase):
                     'secondary_attribution_conflict_fully_resolved'):
             self.assertFalse(report[key])
 
-    def test_no_promotion_or_canonical_change(self):
+    def test_historical_receipt_did_not_promote_or_change_canonical_text(self):
         assessment = self.data['assessment']
         for key in ('newly_recovered_letters', 'hebrew_exact_wording_resolved',
                     'canonical_change_applied', 'english_change_applied', 'selection_gate_completed'):
             self.assertFalse(assessment[key])
         control = self.data['pob_control']
-        self.assertEqual(hashlib.sha256((ROOT / control['path']).read_bytes()).hexdigest(), control['sha256'])
+        raw = subprocess.check_output(['git', '-C', str(ROOT), 'show',
+            f"3d0cab4d35b356e052417df5cb009a3137f614c4:{control['path']}"])
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), control['sha256'])
         selection = json.loads((ROOT / 'sources/textual_restoration/selections/ot_critical_source_pilot.v1.json').read_text())['selections'][0]
         self.assertTrue(all(value == 'pending' for value in selection['review_gates'].values()))
 

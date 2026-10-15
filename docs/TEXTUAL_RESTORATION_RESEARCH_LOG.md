@@ -11191,6 +11191,42 @@ historical Hebrew priority. Publication still requires the successor head's
 own push and PR checks; passing local tests does not authorize a failed-head
 merge.
 
+## Samuel narrative countercase — 2026-10-15
+
+The preceding Nahum response verified an already completed result; it added
+no new evidence. This continuation moves to the open Samuel source proposal.
+The [new comparison](SAMUEL_1_24_NARRATIVE_COUNTERCASE_2026-10-15.md) directly
+consults Seppänen's institutional dissertation at the relevant complete pages
+and Talshir's target chapter section. Their local arguments disagree about
+the longer narrative despite supporting the animal alternative. Root checks
+the competing Leviticus parallels, the actual published 4Q51 brackets, and
+the Greek scene, then demonstrates the distinction between an ordinary
+same-end skip and recopying the catchword. No missing Hebrew is invented.
+
+The consequence is substantive but limited: the exact animal-only candidate
+remains a research comparator, not an approved original whole scene. Its
+base narrative needs its own connected transition argument. No canonical
+source/English change, confidence increase, canon decision or ImageGen
+evidence follows. The report records acquisition limits, one corrected
+parallel locator, exact input hashes and the next discriminating comparison.
+
+PR221's exact push 38818309851 and PR 38818400957 runs were confirmed live;
+this work uses a successor branch without changing or restarting that head.
+The previously running local 19-check historical source replay completed
+successfully in 749.396s, and the full seven current Deuteronomy application
+tests completed in 352.137s. These are validation results, not textual-priority
+evidence, and do not substitute for the exact head's own CI.
+
+One bounded independent factual review passes the complete new report,
+SHA256 `94a41702d77f242f47a9728864d295d0eee53b3875ac94c8b8f44a3616ab7b3a`.
+The reviewer separately checked the target scholarly pages, Greek sequence,
+QDR preservation boundaries and input hashes; this is not source-priority
+approval. All six existing proposal tests pass in 1.958s. Both illustrative
+string-join assertions, all six proposal baseline/evidence pins, 414 relative
+file links and `git diff --check` pass. The unrelated protected Genizah file
+retains its recorded SHA256. No new testing framework was added for a prose
+research result, and no repeat model vote was used to raise confidence.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

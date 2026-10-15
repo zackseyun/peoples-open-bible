@@ -1,5 +1,11 @@
 # Greek catalogue coverage screen and book navigation
 
+October 15 follow-up: the [complete held-row reconciliation](GREEK_CATALOGUE_HELD_ROW_RECONCILIATION_2026-10-15.md)
+classifies all 73 held rows, adds 45 book–catalogue navigation pairs, and
+distinguishes component dates and excerpt settings. The original 125/73 parser
+snapshot below is unchanged; all 39 books now have navigation in the reviewed
+overlay, not completed collation or global witness coverage.
+
 The current public Göttingen catalogue list contains **1,687 distinct stable
 IDs**. All nine pages were acquired and checked, rather than extrapolating
 from a search sample. A bounded Greek date-overlap query supplies 53 readable

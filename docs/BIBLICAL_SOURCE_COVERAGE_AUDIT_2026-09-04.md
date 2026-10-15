@@ -1,5 +1,12 @@
 # OT and NT source coverage: audit and comparison plan
 
+October 15 Greek breadth follow-up: the [73-row reconciliation](GREEK_CATALOGUE_HELD_ROW_RECONCILIATION_2026-10-15.md)
+adds context-checked catalogue navigation for all 39 OT books in the bounded
+53-detail cohort. It separately classifies excerpts, expanded-corpus works,
+NT material, paratext and unresolved labels, and prevents transfer of a
+composite object's early date to its later Greek Psalter. Navigation is not
+passage collation; the complete witness census remains unfinished.
+
 October 12 Habakkuk follow-up: the [1:5 comparison](HABAKKUK_1_5_SOURCE_COMPARISON_2026-10-12.md)
 distinguishes Mur88's preserved nations noun from the entirely supplied
 traitors address in 1QpHab, with separate Greek wording and Acts reception

@@ -11079,6 +11079,48 @@ against remote main. The application branch integrates that published state;
 its research-log conflict preserves both historical entries. PR218's running
 head remains unchanged. Publication is delivery, not additional ancient evidence.
 
+### 2026-10-15 — Greek catalogue held rows fully classified
+
+The preceding turn made substantive progress by committing and pushing the
+reviewed Deuteronomy application and merging three earlier checked research
+PRs. Its new-head CI remains a separate delivery gate. This successor branch
+does not alter the running application head.
+
+The [73-row reconciliation](GREEK_CATALOGUE_HELD_ROW_RECONCILIATION_2026-10-15.md)
+reads every previously held row in the pinned 53-detail Greek catalogue cohort.
+It adds 45 book–catalogue navigation pairs; all 39 OT books now have a route
+within that bounded cohort. This is neither 45 new manuscripts nor complete
+passage coverage. All 73 exact row hashes and 11 original HTML input hashes
+verify; the original strict parser and snapshot stay unchanged.
+
+New useful distinctions include explicit Twelve-Prophets sublists, Greek-order
+Joel–Malachi navigation, a publisher-checked Greek II Esdras/Ezra–Nehemiah
+crosswalk, and numeric-only Genesis/Psalms rows with individually read context.
+Odes are excerpt leads, not additional continuous-book witnesses. Composite
+dates do not make Ra1054's tenth-century Greek-Latin Psalter early, or turn
+Vaticanus's later Revelation supplement into fourth-century text. Two malformed
+or ambiguous labels and one miscellaneous-fragment row remain held.
+
+Root and one independent agent read the source rows/context and checked their
+pins. The agent independently read the publisher's Esdras introduction; the
+corroborating WiBiLex passage is root-only because the agent's fetch timed out.
+The local 30-test suite passes in 0.257 seconds. Private-input verification
+checks the actual retained HTML; ordinary CI checks committed-artifact
+consistency and does not pretend to reread that private material.
+
+Catalogue prose/images remain outside Git under their original rights. No
+canonical source, English, physical-witness count, ImageGen evidence or canon
+decision changes. Wider detail acquisition, cross-catalogue identity checks,
+passage-level collation and restoration calibration remain unfinished.
+
+The [bounded implementation review](../sources/textual_restoration/discovery/greek_catalogue_held_rows_review.2026-10-15.v1.json)
+passes the exact overlay, verifier, tests and report, with no blocking findings.
+Its 18-test rerun and private-input verification are not additional scholarly
+votes. Root checks 472 relative documentation links and the unchanged protected
+Genizah file. PR218's original push and PR runs now both pass; its decision is
+also included in PR219, whose own exact-head runs are still live. Neither head
+is changed during those checks.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

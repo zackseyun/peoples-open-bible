@@ -11169,6 +11169,28 @@ application. This is not a reason to undo that reviewed source application
 or silently rewrite the old selection; the historical/current validation
 boundary needs repair. No live run was restarted and no failed head merged.
 
+The successor repair changes only `tests/test_ot_witness_registry.py`, not
+the production validator, historical selection, canonical record or source
+receipt. Current registry/coverage checks remain live. The old selection must
+be byte-identical to its immutable pre-application version and is checked
+against independently pinned WLC bytes; mutations of its hash, edition,
+Hebrew and English must still fail. A separate live assertion requires the
+old bundle to fail against today's critical record with those four exact
+mismatches. Existing critical-application tests retain responsibility for the
+new record, its review binding, rejected mutations and complete book export.
+
+All 57 registry tests pass in 147.972s, including the original five Genesis
+and two Samuel/Psalms historical checks. Two separate current critical-record
+and unauthorized-mutation checks pass in 6.486s. Root reviews the complete
+test diff; SHA256 is
+`d4c8cf88ed7b701ec54b87664efc341a0ebf503f0a1b0bd24f3376474999f19d`.
+The full seven-test current critical-application suite and 19-check shared
+source-predecessor replay were also started; neither is counted as passed
+while still running. These checks establish validation boundaries, not
+historical Hebrew priority. Publication still requires the successor head's
+own push and PR checks; passing local tests does not authorize a failed-head
+merge.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

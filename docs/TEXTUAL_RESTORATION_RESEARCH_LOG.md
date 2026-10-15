@@ -10945,6 +10945,40 @@ Nahum1:5 retains SHA256
 tracked source/translation files do not differ, and the unrelated Genizah file
 retains its protected hash. No corpus-wide validation is claimed.
 
+### 2026-10-15 — Deuteronomy 32:8 full-source editorial proposal
+
+The preceding turn only revalidated the already-delivered Nahum result: no
+new evidence or state change. This turn takes the available next source action.
+The [Deuteronomy adjudication](DEUT32_8_PROVISIONAL_SOURCE_ADJUDICATION_2026-10-15.md)
+selects attested בני אלוהים provisionally and explicitly retains the remaining
+unpointed WLC units, including בהנחל. It completes a proposal-level full-source
+choice, not canonical promotion or recovered original wording. Confidence stays
+moderate; MT/SP Israel, possible excerpt adaptation and conjectural El remain
+serious alternatives. The record corrects the old matrix's complete-phrase
+Fouad support and registers Tov's reported 1QHa allusion without turning it
+into a newly collated Deuteronomy witness.
+
+The named image/DJD gates are not silently closed. A published-source proposal
+can be assessed with those limits; next is a freshly bound complete candidate,
+source/English review, honest critical-source labeling and synchronized export,
+not another acquisition-only cycle. No canonical Hebrew, English, notes or old
+frozen candidate/preflight changed. ImageGen supplies no evidence.
+
+An independent report-aware assessment supports the same provisional choice.
+Its bounded draft critique passes after narrowing a sensitivity-check label
+to Armenian and later Latin (not all daughter versions). Root verifies the
+historical base, exact one-unit composition and result hash, earlier candidate
+and five evidence pins. All 16 existing Greek/Fouad/OHB/Armenian tests pass in
+0.223s; this is provenance/control validation, not evidence of textual priority.
+
+Separately PR215's exact head 5ce79a6185a210681ca5b9252b18fca13ed314f0 passed
+both push38806098525 and PR38806140880. The SHA-pinned merge is
+e9e65aba53e527f1a8bbadae8a6332af8e863b75, with fetched parents
+c6c7d93ea4d24ec9ad7fc22d2df6b34d83c25ac1 and that exact head, and verified tree
+e89e1942fbf7587502d141ccf97792e5327d2938. Local main was updated by compare-and-swap;
+the normal main push reported up-to-date. Other live PR heads were not changed.
+This publication closes no new ancient-reading question or broader OT goal.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

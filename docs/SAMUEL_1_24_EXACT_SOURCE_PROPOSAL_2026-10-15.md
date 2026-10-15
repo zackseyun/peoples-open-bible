@@ -2,6 +2,11 @@
 
 ## Result
 
+Follow-up: the [passage-specific narrative countercase](SAMUEL_1_24_NARRATIVE_COUNTERCASE_2026-10-15.md)
+now tests competing literary arguments and their sacrificial parallels.
+It leaves this frozen candidate unchanged, but bars treating its inherited
+short narrative as settled merely because the animal alternative is favored.
+
 The age-related bull remains the preferred **reading to investigate**, with
 moderate confidence at the semantic level. This pass makes the previously
 unspecified alternative testable: an unpointed WLC-based verse with only

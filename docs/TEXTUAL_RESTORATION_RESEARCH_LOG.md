@@ -10908,6 +10908,36 @@ SHA256 `130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50`.
 These are documentation and unchanged-application checks, not a new vote on
 the earliest Hebrew or a corpus-wide validation.
 
+### 2026-10-15 — Original 7Q1 edition and rival-restoration test
+
+The previous turn repeated the completed Nahum result and was no new research
+progress. This pass pursued a different available primary source. The
+[7Q1 reconstruction control](7Q1_EXODUS_28_RECONSTRUCTION_CONTROL_2026-10-15.md)
+records direct consultation of DJD III pp.142–143, the bounded Wevers collation,
+and the publisher's selected Greek text against unchanged POB Exodus28:7.
+It turns a catalogue lead into an edition-grounded, competing-restoration
+experiment. The manuscript plate and measured geometric discrimination remain
+outstanding; no new letter, Hebrew reading or English revision is claimed.
+
+The 4Q122 DJD IX gap is not closed by this different edition. Search-index
+Kraft material did not add to its earlier consulted dossier. No repeated
+preview reading or generative completion was counted as progress. One bounded
+acquisition agent found the lawful edition preview; root inspected the actual
+pages. The PDF skill required whole relevant-page visual checks rather than
+relying on extracted Greek or a search snippet.
+
+PR213's exact head `cd3a62a69ae6b5d9af31c0503d9ad6df4f0d92b8` remains
+untouched: its push `38803478305` and PR `38803486554` runs were both confirmed
+live this turn. This new work branches from main independently. No merge or
+publication is inferred from those running checks.
+
+The acquisition agent's bounded source-consistency review passed; it is not
+a new independent reading of manuscript ink. Local validation checked 404
+relative file links, the unchanged Exodus28:7 and unrelated Genizah hashes,
+and whitespace. These documentation checks do not validate reconstruction
+accuracy. The next substantive work is the actual plate/image alignment test,
+not another model vote on the completed prose.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

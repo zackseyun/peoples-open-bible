@@ -1,6 +1,6 @@
 # POB source-wording adjudication method
 
-Version: 2.0.7 · Revised: 2026-10-14 (feature-level agreement and observation history)
+Version: 2.0.8 · Revised: 2026-10-15 (quotation provenance and independence)
 
 This is the controlling method for source selection and English impact. The
 [approach review](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md) records the
@@ -88,6 +88,12 @@ claim a second blinded model pass occurred unless its actual output is stored.
   [4Q24 identity review](LEVITICUS_WITNESS_IDENTITY_REVIEW_2026-09-05.md).
 - Identify direct-language manuscripts, ancient translations, quotations or
   retellings, and later reception evidence separately.
+- For later quotations, verify the original-language quotation and immediate
+  context, its edition/report history, and whether an alternate reading or
+  named version is specified at that locus. A version named elsewhere does not
+  prove a personally consulted exemplar here; differences in quotation wording
+  do not establish independence. The [Deuteronomy Latin control](DEUT32_8_EVIDENCE_TRIAGE_2026-09-06.md#october-15-latin-quotation-control)
+  verifies Aquinas's alternate reading without inventing its Greek ancestor.
 - A published Hebrew collation can establish attestation without newly read
   manuscript pixels. Keep collection numbering, correction qualifiers and
   text-versus-marginal-qere evidence separate; a homiletic “do not read … but

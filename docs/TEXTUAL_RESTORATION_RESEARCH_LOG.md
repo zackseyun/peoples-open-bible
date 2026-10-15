@@ -10945,6 +10945,31 @@ Nahum1:5 retains SHA256
 tracked source/translation files do not differ, and the unrelated Genizah file
 retains its protected hash. No corpus-wide validation is claimed.
 
+### 2026-10-15 — Deuteronomy 32:8 Latin quotation evidence
+
+The preceding Nahum reply revalidated an existing result, so it counts as no
+new research progress. The next bounded acquisition succeeded: Hansen's full
+nine-page 2025 article, previously abstract-only, was obtained through its
+ordinary public publisher route. Root read the full text and 26 notes and
+visually inspected all pages under the PDF skill. The
+[case addition](DEUT32_8_EVIDENCE_TRIAGE_2026-09-06.md#october-15-latin-quotation-control)
+records evidence, acquisition hashes, rights and unresolved inferences.
+
+A source checker and root independently confirmed Aquinas's edited Latin
+alternate reading, while separating it from proof of a Greek exemplar.
+Root's Anselm I.18 control does not verify the alleged divine-son quotation;
+no exhaustive negative claim follows. Method 2.0.8 makes the quotation-provenance
+and independence safeguards explicit. No Hebrew, English, confidence score,
+generated restoration, canon decision or About text is changed. The next
+discriminating target is Albertus's actual Septuagint attribution, not another
+author tally. Sixteen existing Deuteronomy evidence tests pass in 0.153 seconds;
+they check retained records, not the historical truth of a lost Greek exemplar.
+
+PR214 and PR215 were checked by exact head and their own push/PR workflow
+handles; all four were live. Their heads remain untouched. The unrelated
+Genizah discovery file retains its protected hash. The all-OT-source objective
+remains active and incomplete.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -10908,6 +10908,43 @@ SHA256 `130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50`.
 These are documentation and unchanged-application checks, not a new vote on
 the earliest Hebrew or a corpus-wide validation.
 
+### 2026-10-14 — Nahum implicit-voice construction tested
+
+The preceding HOTTP turn was substantive progress: it acquired a primary
+interim-report entry and narrowed the remaining test. The
+[construction check](NAHUM_SOURCE_COMPARISON_2026-10-10.md#testing-the-implicit-voice-construction-on-october-14)
+now compares five actual Hebrew contexts with BDB's voice category. Isaiah
+3:7 and 42:11 provide omitted-voice analyses; Numbers 14:1 and Psalm 93:3 instead
+contain explicit voice wording in their coordinated/repeated clauses. The
+landscape example can refer to inhabitants, preventing an automatic equation
+with Nahum's earth. This establishes feasibility of a third grammatical analysis,
+not historical priority or a reason to replace “heaves.” No source, English,
+note, manuscript recovery, ImageGen evidence or canon decision changes.
+
+Root and one independent source checker read all five complete source verses
+plus Nahum 1:5 and visually inspected BDB 670b. XML/scan hashes and word IDs are
+recorded; these are linguistic controls, not independent Nahum witnesses.
+Further generic counts of these constructions are retired. Resume a case only
+for discriminating apparatus, passage-specific argument or genuinely new source
+evidence; the full OT objective remains incomplete.
+
+Separately, PR211's own push 38607020786 and PR 38607145301 checks both pass.
+Its SHA-pinned merge is `0fac4506e5e221bb1d715e26acdacf0ee8f2d8c7`, with
+verified parents `9232cf4ff0999e6852802c9b4ea947b2597a6bd2` and
+`564c570d33d5a30f6a5159e41b064f4cae93296f`, and expected tree
+`5e8834c25f20df5e794de40e46703ed79b3c7d2c`. PR212's own two runs remain live
+on its unchanged head. This successor preserves that frozen head and integrates
+published main without treating publication as new textual evidence.
+
+The bounded prose review passes the five controls, lexical category and scope,
+excluding root-only publication and validation claims. Root verifies all four
+XML hashes, the reused scan hash, 409 relative documentation file targets and
+whitespace. Eight existing Nahum application tests pass in 1.987s. Canonical
+Nahum1:5 retains SHA256
+`cd10a2cd212aa395279d1b4fefe003b4f7b4bae2f9fe601cc3b8dba11838aa1a`;
+tracked source/translation files do not differ, and the unrelated Genizah file
+retains its protected hash. No corpus-wide validation is claimed.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

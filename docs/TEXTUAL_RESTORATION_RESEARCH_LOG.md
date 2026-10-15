@@ -10975,6 +10975,72 @@ Nahum1:5 retains SHA256
 tracked source/translation files do not differ, and the unrelated Genizah file
 retains its protected hash. No corpus-wide validation is claimed.
 
+### 2026-10-15 — Deuteronomy 32:8 full-source editorial proposal
+
+The preceding turn only revalidated the already-delivered Nahum result: no
+new evidence or state change. This turn takes the available next source action.
+The [Deuteronomy adjudication](DEUT32_8_PROVISIONAL_SOURCE_ADJUDICATION_2026-10-15.md)
+selects attested בני אלוהים provisionally and explicitly retains the remaining
+unpointed WLC units, including בהנחל. It completes a proposal-level full-source
+choice, not canonical promotion or recovered original wording. Confidence stays
+moderate; MT/SP Israel, possible excerpt adaptation and conjectural El remain
+serious alternatives. The record corrects the old matrix's complete-phrase
+Fouad support and registers Tov's reported 1QHa allusion without turning it
+into a newly collated Deuteronomy witness.
+
+The named image/DJD gates are not silently closed. A published-source proposal
+can be assessed with those limits; next is a freshly bound complete candidate,
+source/English review, honest critical-source labeling and synchronized export,
+not another acquisition-only cycle. No canonical Hebrew, English, notes or old
+frozen candidate/preflight changed. ImageGen supplies no evidence.
+
+An independent report-aware assessment supports the same provisional choice.
+Its bounded draft critique passes after narrowing a sensitivity-check label
+to Armenian and later Latin (not all daughter versions). Root verifies the
+historical base, exact one-unit composition and result hash, earlier candidate
+and five evidence pins. All 16 existing Greek/Fouad/OHB/Armenian tests pass in
+0.223s; this is provenance/control validation, not evidence of textual priority.
+
+Separately PR215's exact head 5ce79a6185a210681ca5b9252b18fca13ed314f0 passed
+both push38806098525 and PR38806140880. The SHA-pinned merge is
+e9e65aba53e527f1a8bbadae8a6332af8e863b75, with fetched parents
+c6c7d93ea4d24ec9ad7fc22d2df6b34d83c25ac1 and that exact head, and verified tree
+e89e1942fbf7587502d141ccf97792e5327d2938. Local main was updated by compare-and-swap;
+the normal main push reported up-to-date. Other live PR heads were not changed.
+This publication closes no new ancient-reading question or broader OT goal.
+
+### 2026-10-15 — Deuteronomy 32:8 reviewed source and English applied
+
+The [full-record application](DEUT32_8_CRITICAL_SOURCE_APPLICATION_2026-10-15.md)
+turns the provisional source decision into an actual local canonical change:
+בני ישראל becomes בני אלוהים, honestly labeled POB-critical rather than WLC.
+The rest retains the normalized Masoretic base; it is not represented as a
+complete surviving 4Q37 verse. English now reads “humankind” and “sons of God,”
+with the lost main-text sons parallel explicitly disclosed in a note. This
+is an application of a known attested variant, not newly recovered letters.
+
+A contract-masked English assessment and a separate full-record review support
+the exact candidate. Strongest alternatives and material/apparatus limitations
+remain recorded; none of the old candidate's pending gates was silently passed.
+Seven changed fields are archived, generation provenance preserved, and active
+status remains draft/needs_review. Obsolete policy and root rationales are
+corrected without claiming fresh HALOT consultation.
+
+The final 40-test suite passes, including actual full-book export and external
+review bindings. The historical preflight's separate 15 tests pass using an
+authentic pinned builder/exporter/schema replay. Three additional old controls
+now compare their unchanged pins with the original Git bytes rather than the
+intentionally revised live verse. The independent implementation review caught
+and resolved a provenance-scope detail: root's method-document pin was not a
+reviewer-read input. Final dependent hashes and six lightweight checks pass;
+the unchanged candidate did not need a new source-priority vote.
+
+The intervening Nahum response only reconfirmed completed work and did not
+advance the goal. This application is substantive progress; publication is
+pending, and deployment has not been checked. The complete OT witness census,
+discriminating restoration tests and corpus-wide comparison remain incomplete.
+ImageGen is not evidence, and no canon change follows from this variant.
+
 ### 2026-10-15 — Deuteronomy 32:8 Latin quotation evidence
 
 The preceding Nahum reply revalidated an existing result, so it counts as no
@@ -10999,6 +11065,131 @@ PR214 and PR215 were checked by exact head and their own push/PR workflow
 handles; all four were live. Their heads remain untouched. The unrelated
 Genizah discovery file retains its protected hash. The all-OT-source objective
 remains active and incomplete.
+
+### 2026-10-15 — Checked research publication and application integration
+
+PR216, PR217 and PR214 each passed their own exact-head push and PR checks.
+Their SHA-pinned merges are respectively
+`71a5e11295d4a0130f0d2d3b105d194261bc53e7`,
+`0c97bf5f6d6b74d240a7f41d626907c793742137` and
+`0f6f2a36243809db5f8fcb5197c00d5f24321be5`.
+Root verified fetched parents and trees against local merge-tree results,
+updated local main by compare-and-swap, and verified the normal main push
+against remote main. The application branch integrates that published state;
+its research-log conflict preserves both historical entries. PR218's running
+head remains unchanged. Publication is delivery, not additional ancient evidence.
+
+### 2026-10-15 — Greek catalogue held rows fully classified
+
+The preceding turn made substantive progress by committing and pushing the
+reviewed Deuteronomy application and merging three earlier checked research
+PRs. Its new-head CI remains a separate delivery gate. This successor branch
+does not alter the running application head.
+
+The [73-row reconciliation](GREEK_CATALOGUE_HELD_ROW_RECONCILIATION_2026-10-15.md)
+reads every previously held row in the pinned 53-detail Greek catalogue cohort.
+It adds 45 book–catalogue navigation pairs; all 39 OT books now have a route
+within that bounded cohort. This is neither 45 new manuscripts nor complete
+passage coverage. All 73 exact row hashes and 11 original HTML input hashes
+verify; the original strict parser and snapshot stay unchanged.
+
+New useful distinctions include explicit Twelve-Prophets sublists, Greek-order
+Joel–Malachi navigation, a publisher-checked Greek II Esdras/Ezra–Nehemiah
+crosswalk, and numeric-only Genesis/Psalms rows with individually read context.
+Odes are excerpt leads, not additional continuous-book witnesses. Composite
+dates do not make Ra1054's tenth-century Greek-Latin Psalter early, or turn
+Vaticanus's later Revelation supplement into fourth-century text. Two malformed
+or ambiguous labels and one miscellaneous-fragment row remain held.
+
+Root and one independent agent read the source rows/context and checked their
+pins. The agent independently read the publisher's Esdras introduction; the
+corroborating WiBiLex passage is root-only because the agent's fetch timed out.
+The local 30-test suite passes in 0.257 seconds. Private-input verification
+checks the actual retained HTML; ordinary CI checks committed-artifact
+consistency and does not pretend to reread that private material.
+
+Catalogue prose/images remain outside Git under their original rights. No
+canonical source, English, physical-witness count, ImageGen evidence or canon
+decision changes. Wider detail acquisition, cross-catalogue identity checks,
+passage-level collation and restoration calibration remain unfinished.
+
+The [bounded implementation review](../sources/textual_restoration/discovery/greek_catalogue_held_rows_review.2026-10-15.v1.json)
+passes the exact overlay, verifier, tests and report, with no blocking findings.
+Its 18-test rerun and private-input verification are not additional scholarly
+votes. Root checks 472 relative documentation links and the unchanged protected
+Genizah file. PR218's original push and PR runs now both pass; its decision is
+also included in PR219, whose own exact-head runs are still live. Neither head
+is changed during those checks.
+
+### 2026-10-15 — Samuel animal, bread and narrative decisions separated
+
+The preceding turn verified the already completed Nahum article/application
+and added no research evidence. This pass instead directly consulted UBS
+interim-report entries 00985/00986 and the authorized handbook at 1 Samuel
+1:24–25. The [exact research proposal](SAMUEL_1_24_EXACT_SOURCE_PROPOSAL_2026-10-15.md)
+turns the prior age-related preference into a reproducible full-verse candidate
+without promoting it to recovered wording or a canonical source decision.
+
+The committee's B animal and C bread judgments remain distinct. Its brackets
+mark reconstruction; its factors 12/13 do not demonstrate a local word-division
+or conflation mechanism. Published 4Q51's surviving herd word cannot disappear
+from the explanation when the shorter candidate is tested. The exact-form
+judgment remains unresolved; no added witness or historical confidence is
+created by committee agreement. The earlier three-bull/collective countercase
+is retained. A bounded Ratner search rediscovered the already consulted Yale
+excerpt, not new evidence or the original article.
+
+One independent report-aware assessment supports constructing the candidate,
+not canonical promotion. The record pins the unchanged 1:22–25 baseline,
+old comparison/coverage inputs, private committee files and exact patch. It
+supplies prospective English in the complete paragraph and identifies the
+verse-25 metadata dependency for any later application. Old gates and frozen
+receipts remain unchanged. No ImageGen evidence or canon decision is involved.
+
+PR219 and PR220's own push/PR runs were confirmed live at the start of this
+turn; their exact heads remain untouched. This work is on a successor branch. The wider OT
+objective remains active, with source-form adjudication and full-record
+application still separate from a specified research candidate.
+
+The bounded factual review passes the report
+`58705cbb48cd576cf772e39d085eb1707e47c19f8c12353aae07f990b34d0115`,
+proposal JSON `15018fcf93d221582824825098f7b909a32efcca4c9ca1dc1f39bb56d2b07435`
+and six-test module `fc67d936408aabf4c4623fda76d196765b5c827716d4c6895ad256bb75410383`.
+Root reproduces the private XML extraction, all three private hashes and all
+six current baseline/evidence pins; the reviewer separately verifies the XML
+reference coverage and hashes. Six proposal tests pass locally in 0.178s;
+the independent six-test rerun is not an additional historical-priority vote.
+All 414 relative file targets in the three touched documents resolve.
+
+Publication follow-up: PR219 push run 38814114995 subsequently failed in
+`test_current_registry_coverage_and_selections`, after the complete reader
+corpus check passed. Its job 116694359572 log identifies four stale-baseline
+errors for the historical Deuteronomy 32:8 selection after the new critical
+application. This is not a reason to undo that reviewed source application
+or silently rewrite the old selection; the historical/current validation
+boundary needs repair. No live run was restarted and no failed head merged.
+
+The successor repair changes only `tests/test_ot_witness_registry.py`, not
+the production validator, historical selection, canonical record or source
+receipt. Current registry/coverage checks remain live. The old selection must
+be byte-identical to its immutable pre-application version and is checked
+against independently pinned WLC bytes; mutations of its hash, edition,
+Hebrew and English must still fail. A separate live assertion requires the
+old bundle to fail against today's critical record with those four exact
+mismatches. Existing critical-application tests retain responsibility for the
+new record, its review binding, rejected mutations and complete book export.
+
+All 57 registry tests pass in 147.972s, including the original five Genesis
+and two Samuel/Psalms historical checks. Two separate current critical-record
+and unauthorized-mutation checks pass in 6.486s. Root reviews the complete
+test diff; SHA256 is
+`d4c8cf88ed7b701ec54b87664efc341a0ebf503f0a1b0bd24f3376474999f19d`.
+The full seven-test current critical-application suite and 19-check shared
+source-predecessor replay were also started; neither is counted as passed
+while still running. These checks establish validation boundaries, not
+historical Hebrew priority. Publication still requires the successor head's
+own push and PR checks; passing local tests does not authorize a failed-head
+merge.
 
 ## Later About-page summary — proposed, not published
 

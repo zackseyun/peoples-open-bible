@@ -1,12 +1,16 @@
 import copy
 import importlib.util
 import json
+import subprocess
 import unittest
 import tempfile
 from pathlib import Path
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
+SELECTION_BASE = "3d0cab4d35b356e052417df5cb009a3137f614c4"
+SELECTION_TARGET = ROOT / "translation/ot/deuteronomy/032/008.yaml"
+SELECTION_BASE_SHA256 = "1caf32ddf68b552d662a94cff90970e5eacd9028ac0a4b8c89228634b14702af"
 SPEC = importlib.util.spec_from_file_location(
     "validate_ot_witness_registry",
     ROOT / "tools/textual_restoration/validate_ot_witness_registry.py",
@@ -25,6 +29,13 @@ EXTRACT_SPEC.loader.exec_module(EXTRACT_MODULE)
 
 
 class OtWitnessRegistryTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.selection_base_raw = subprocess.check_output([
+            "git", "-C", str(ROOT), "show",
+            f"{SELECTION_BASE}:{SELECTION_TARGET.relative_to(ROOT)}",
+        ])
+
     def setUp(self):
         self.data = json.loads(MODULE.REGISTRY.read_text())
         self.coverage = json.loads(MODULE.COVERAGE.read_text())
@@ -34,16 +45,37 @@ class OtWitnessRegistryTests(unittest.TestCase):
         self.selections = json.loads(MODULE.SELECTIONS.read_text())
         self.adjudication = json.loads(MODULE.ADJUDICATION.read_text())
 
-    def test_current_registry_coverage_and_selections(self):
+    def test_current_registry_and_coverage(self):
         self.assertEqual(MODULE.validate(self.data), [])
         self.assertEqual(MODULE.validate_coverage(self.coverage, self.data), [])
         self.assertEqual(MODULE.validate_coverage(self.samuel_coverage, self.data), [])
-        self.assertEqual(
-            MODULE.validate_selections(self.selections, self.comparison, self.adjudication), []
-        )
         summary = MODULE.summarize(self.data)
         self.assertGreaterEqual(summary["registered_witnesses_or_families"], 10)
         self.assertGreater(summary["restoration_candidates"], 0)
+
+    def test_frozen_selection_matches_original_bytes_and_historical_baseline(self):
+        # This is the pre-application WLC proposal, not the current critical
+        # source. Never repin its baseline to make a live validation pass.
+        original = subprocess.check_output([
+            "git", "-C", str(ROOT), "show",
+            f"{SELECTION_BASE}:{MODULE.SELECTIONS.relative_to(ROOT)}",
+        ])
+        self.assertEqual(MODULE.SELECTIONS.read_bytes(), original)
+        self.assertEqual(self.selection_errors(self.selections), [])
+
+    def test_live_selection_validator_rejects_historical_wlc_bundle(self):
+        # No automatic successor allowance in the production validator.
+        # Current POB-critical content/review is separately checked by
+        # test_deut32_8_critical_application, including mutation rejection.
+        self.assertEqual(
+            MODULE.validate_selections(self.selections, self.comparison, self.adjudication),
+            ["DEU.32.8.referent: " + message for message in (
+                "canonical baseline drift",
+                "declared source edition is not present in the baseline",
+                "declared source text is not present in the baseline",
+                "baseline English is not present in the canonical record",
+            )],
+        )
 
     def test_current_registry_matches_json_schema(self):
         schema = json.loads((ROOT / "schemas/ot-witness-registry.schema.json").read_text())
@@ -402,8 +434,19 @@ class OtWitnessRegistryTests(unittest.TestCase):
             self.assertEqual(len(errors), 2)
             self.assertTrue(all("private image missing" in e for e in errors))
 
-    def selection_errors(self, data):
-        return MODULE.validate_selections(data, self.comparison, self.adjudication)
+    def selection_errors(self, data, comparison=None):
+        # Explicit test-only historical view; all other paths remain live.
+        # Pin trusted original bytes independently of a mutated input record.
+        raw = self.selection_base_raw
+        self.assertEqual(MODULE.hashlib.sha256(raw).hexdigest(), SELECTION_BASE_SHA256)
+        read_bytes, read_text = Path.read_bytes, Path.read_text
+        with patch.object(Path, "read_bytes", lambda p, *a, **kw:
+                          raw if p == SELECTION_TARGET else read_bytes(p, *a, **kw)), \
+             patch.object(Path, "read_text", lambda p, *a, **kw:
+                          raw.decode("utf-8") if p == SELECTION_TARGET else read_text(p, *a, **kw)):
+            return MODULE.validate_selections(
+                data, self.comparison if comparison is None else comparison, self.adjudication
+            )
 
     def test_private_image_hash_match_and_mismatch(self):
         data = copy.deepcopy(self.samuel_coverage)
@@ -443,7 +486,20 @@ class OtWitnessRegistryTests(unittest.TestCase):
     def test_selection_detects_baseline_drift(self):
         data = copy.deepcopy(self.selections)
         data["selections"][0]["baseline"]["sha256"] = "0" * 64
-        self.assertTrue(any("baseline drift" in e for e in self.selection_errors(data)))
+        self.assertEqual(self.selection_errors(data),
+                         ["DEU.32.8.referent: canonical baseline drift"])
+
+    def test_historical_selection_rejects_each_declared_baseline_field_mutation(self):
+        for field, message in (
+            ("declared_source_edition", "declared source edition is not present in the baseline"),
+            ("declared_source_text", "declared source text is not present in the baseline"),
+            ("english_text", "baseline English is not present in the canonical record"),
+        ):
+            with self.subTest(field=field):
+                data = copy.deepcopy(self.selections)
+                data["selections"][0]["baseline"][field] = "unknown altered field"
+                self.assertEqual(self.selection_errors(data),
+                                 ["DEU.32.8.referent: " + message])
 
     def test_selection_requires_direct_supported_reading(self):
         data = copy.deepcopy(self.selections)
@@ -482,7 +538,7 @@ class OtWitnessRegistryTests(unittest.TestCase):
         case = next(c for c in comparison["cases"] if c["id"] == "DEU.32.8.referent")
         reading = next(r for r in case["readings"] if r.get("witness_id") == "4q37")
         reading["text"] = "[בני אלוהים]"
-        errors = MODULE.validate_selections(self.selections, comparison, self.adjudication)
+        errors = self.selection_errors(self.selections, comparison)
         self.assertTrue(any("outside editorial reconstruction" in e for e in errors))
 
     def test_selection_cannot_promote_without_full_hebrew_source(self):

@@ -1,6 +1,7 @@
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 import unicodedata
 import unittest
 
@@ -42,9 +43,13 @@ class DeuteronomyGreekReviewTests(unittest.TestCase):
             self.assertRegex(source['sha256'], r'^[0-9a-f]{64}$')
             self.assertTrue(source['pdf_pages_visually_inspected'])
 
-    def test_baseline_and_formal_comparison_agree(self):
+    def test_historical_baseline_and_formal_comparison_agree(self):
         control = self.data['pob_control']
-        self.assertEqual(hashlib.sha256((ROOT / control['path']).read_bytes()).hexdigest(), control['sha256'])
+        # This receipt predates critical-source application. Keep its actual
+        # baseline; the current verse is checked by the application test.
+        raw = subprocess.check_output(['git', '-C', str(ROOT), 'show',
+            f"3d0cab4d35b356e052417df5cb009a3137f614c4:{control['path']}"])
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), control['sha256'])
         comparison = json.loads((ROOT / 'sources/textual_restoration/comparisons/pentateuch_controls.v1.json').read_text())
         case = next(c for c in comparison['cases'] if c['id'] == 'DEU.32.8.referent')
         reading = next(r for r in case['readings'] if r.get('witness_id') == 'amherst-192')

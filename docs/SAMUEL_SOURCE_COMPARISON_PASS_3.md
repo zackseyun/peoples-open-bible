@@ -3,6 +3,12 @@
 Checked: 2026-09-04; grammatical counter-control added 2026-09-06.
 Target: 1 Samuel 1:24, in its 1:22-25 context.
 
+October 15 follow-up: the [exact research proposal](SAMUEL_1_24_EXACT_SOURCE_PROPOSAL_2026-10-15.md)
+adds direct UBS interim-committee consultation and a fully specified short
+age-phrase candidate. It separates animal, bread and narrative decisions;
+canonical wording and the unresolved source-priority/image/apparatus gates
+remain unchanged. The historical assessment below is not a new approval.
+
 ## Assessment
 
 The age-related alternative deserves more weight than the previous POB

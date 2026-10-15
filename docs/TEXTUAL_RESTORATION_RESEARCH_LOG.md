@@ -11369,6 +11369,52 @@ and exit1. These existing failures are disclosed, not hidden by a claim of
 full-project success. No historical baseline, source selection or unrelated
 canonical file was changed to suppress them.
 
+### 2026-10-15 — Testing a mechanism for Ezekiel's thirds and quarters
+
+The preceding Nahum response verified an existing result and passed eight
+targeted tests, but supplied no new research evidence. This continuation
+resumes the unfinished Ezekiel fraction-history investigation rather than
+repeating that article or treating a restatement as goal progress.
+
+The [fraction comparison](EZEKIEL_5_12_QUARTERS_COMPARISON_2026-10-14.md#a-proposed-transmission-mechanism-checked-on-october-15)
+now directly examines Cornill1886's proposed sequence: an emphatic ימותו
+addition separates the first group's predicates, encouraging quarters at5:12
+and an additional burning portion at5:2. His reconstructed Hebrew deletes the
+verb, not the pestilence noun. Limited Greek support is his report, not our
+new Hebrew attestation. His own qualifications, the actual source controls,
+and a possible reverse consolidation prevent promotion of this mechanism to
+established history. The selected Greek6:12 itself varies its rendering of
+מות between death and famine clauses. This strengthens the need to test local
+translation practice before accepting a retroverted omission.
+
+Root's PDF-skill workflow visually checked Cornill's title and complete
+printed202,204–206, plus Schironi188–191 with the split footnote26. One
+independent checker read Cornill202–206 and confirmed the deletion, mechanism
+and priority limits. This is a bounded source check, not a vote establishing
+historical originality. The acquired PDF is hashed in the report and remains
+outside Git; no whole-volume reading, new manuscript, recovered ink or ImageGen
+evidence is claimed. Hebrew, English, notes and source-priority HOLD remain.
+
+A separate bounded modern-source pass acquired no target Olley discussion:
+his public author profile exposes abstracts, and the Oxford thesis landing
+returned403. Known Brillpreview/CTAT/Archive gates were not retried by that
+agent. The Cornill model is new argumentative evidence for this project, not
+a substitute for claiming that inaccessible modern scholarship was read.
+
+PR223's own PR run38822868729 passed at its unchanged head; its push38822839160
+was still live. PR224's own push38824787878 and PR38824815815 were still live.
+These are verified waits, not failed jobs or permission to restart them. The
+new documentation is a successor to7fcc088462 with its own publication gate.
+
+The subsequent check confirms PR223's own push also passed. The SHA-pinned
+merge produced62c82ba78a59229da7d4ed33ff6d75d3c183fe76, with verified tree
+99fc20c8ede46b4dd33541aebdbb75d9f8df377a and parentsb33cbf2495/3876e733b5.
+PR224 remains unmerged while its exact-head checks run. The bounded independent
+review passes this new mechanism section. All418 local documentation targets
+resolve and whitespace checks pass; source XML, both target verses and the
+protected unrelated Genizah file retain their pinned hashes. This prose-only
+change does not warrant another full-corpus test run or historical-priority vote.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

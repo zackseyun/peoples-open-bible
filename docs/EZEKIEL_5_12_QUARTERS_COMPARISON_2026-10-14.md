@@ -126,6 +126,108 @@ records exact preserved/supplied boundaries and the edition's local apparatus.
 It does not turn agreement on fractions into agreement on the entire verse,
 settle transmission direction, or authorize a Hebrew/English replacement.
 
+## A proposed transmission mechanism checked on October 15
+
+**Result: an explanatory hypothesis is now directly consulted, but neither
+Cornill's Hebrew deletion nor historical priority is adopted.** Carl Heinrich
+Cornill's *Das Buch des Propheten Ezechiel* (Leipzig, 1886), printed pp.202–205,
+offers more than a list of thirds/quarters variants. The
+[public-domain edition scan](https://archive.org/download/dasbuchdesprophe00corn/dasbuchdesprophe00corn.pdf)
+is a modern critical reconstruction, not an additional ancient witness.
+
+### His proposed sequence
+
+At printed p.204 (PDF222), Cornill prints `בדבר וברעב יכלו`: pestilence and
+famine share one predicate and one third. He removes **ימותו**, not the
+pestilence noun. At p.205 (PDF223), he treats that verb as an old emphatic
+addition. Two distinct predicates then encouraged treating pestilence and
+famine as separate punishments, hence four affected groups and quarters.
+At p.202 (PDF220), he regards the second burning portion in Greek 5:2 as a
+slightly altered repetition and refers to 5:12 for the underlying explanation.
+The proposed relationship is therefore a linked development across both
+passages, not an isolated numerical copying error.
+
+His deletion has reported limited Greek support (the printed siglum G with
+superscript f), but is not directly attested Hebrew in the consulted evidence.
+He expressly says that Greek evidence alone would not make him change the
+text. He also invokes an analogy with v.13 and questions the rendering of
+מות by ἀναλίσκεσθαι, comparing 6:12. We have read his argument, not independently
+collated the manuscript behind that siglum or verified his corpus-wide claim
+that this verb correspondence occurs nowhere else.
+
+His order argument is separate: he regards the Hebrew sequence as more natural
+and preserving the juxtaposition of “within you” and “around you,” while the
+Greek brings its two sword references together. Those are literary motivations,
+not observed stages of copying. His book predates Grenfell's 1896 edition and
+Vaccari's 1918 publication; it is not a response to our combined witness packet.
+
+### Testing the explanation against the actual controls
+
+The retained WLC at 5:12 explicitly numbers three groups despite two predicates
+in the first group. Thus two predicates **permit**, but do not require, a
+four-group interpretation. The Greek split could be an interpretive development
+without first accepting Cornill's hypothesized shorter Hebrew. Retaining thirds
+does not authorize silently dropping “will die” from POB.
+
+The [publisher's Greek 6:12](https://www.die-bibel.de/en/bible/LXX/EZK.6)
+confirms the cited death/τελευτήσει contrast, but also renders the famine
+clause with συντελεσθήσεται where WLC again has ימות. This nearby variation
+warns against requiring a mechanical one-to-one verb correspondence. It does
+not by itself refute Cornill's narrower claim about ἀναλίσκεσθαι. At 5:13,
+WLC does contain additional predicates, but identifying their alleged age or
+direction of addition is another textual argument, not a verified premise
+available merely because Cornill appeals to it.
+
+Cornill acknowledges the attraction of fourfold judgment in Ezekiel and cites
+14:21. The actual WLC list there is sword, famine, wild beast and pestilence:
+it does not reproduce 5:12's four Greek groups, which include scattering.
+A shared count alone cannot establish the earlier form of either passage.
+
+Our counter-test is directional: the repeated burning at 5:2 makes expansion
+plausible, but a reduction/consolidation of that repetition followed by
+coordination of 5:12 is also a possible explanation to test. We have no newly
+acquired dated intermediate text establishing either sequence. This is our
+analytical alternative, not an attributed scholarly conclusion or a claim that
+both histories have equal probability. The already documented P.Grenf. I 5
+mix of quarters and Hebrew-like order independently requires fraction and
+order to remain separate features; neither transfers priority to the other.
+
+Schironi's complete note26, spanning printed pp.189–190, describes the split
+of pestilence/famine and refers to Olley p.264. It does not supply Cornill's
+deletion argument or replace the still-unread Olley discussion. The new
+comparison therefore improves the reasons we can examine, not the number of
+independent witnesses or the certainty of an original Hebrew reconstruction.
+
+### Input, limits and next discriminating evidence
+
+The Cornill PDF has 540 pages, 45,517,535 bytes, SHA256
+`0054a7782f3ebaa514e67d71c4d4dce01a8d4a6e60fc798723a2a50b615b37b6`.
+Root visually checked the title (PDF7), complete printed202,204–206 and the
+complete Schironi188–191 spreads; an independent source checker visually read
+Cornill202–206. OCR corrupts Hebrew/Greek and does not control the reading.
+This is not a whole-volume consultation. No PDF or render is imported into Git.
+
+The actual WLC rows 5:2/12/13, 6:12 and 14:21 were read in the already pinned
+`Ezek.xml`; the publisher's selected Greek 5:2/12/13 and 6:12 were checked.
+No neighboring translation is approved by using its source as a control.
+Source text, English and notes remain unchanged. No ImageGen evidence or
+newly recovered ink is involved.
+
+The next useful input is an independent apparatus evaluation of the alleged
+ימותו omission and Greek translation equivalents, including an argument
+against expansion or against consolidation. Recounting quarters in the same
+witnesses cannot settle that issue. A bounded modern-source search found only
+abstracts on Olley's public author profile and a 403 at an Oxford thesis
+landing; it acquired no target discussion. Do not repeat those routes or
+present the inaccessible modern commentary as endorsing Cornill.
+
+The bounded independent review passed the drafted mechanism and limits.
+All 418 local file targets across this report and the research log resolve;
+`git diff --check` passes. Both target verse hashes, the source XML hash and
+the protected unrelated Genizah file hash remain identical. These are
+documentation/integrity checks, not evidence of historical priority. No
+full-corpus test rerun was needed for this two-document change.
+
 ## Target-access and interim-report check on October 14
 
 The [publisher's exact Olley chapter](https://brill.com/display/book/9789047430575/Bej.9789004177130.i-590_004.xml)

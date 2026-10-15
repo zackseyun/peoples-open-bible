@@ -169,3 +169,94 @@ Pinakes and NTVMR likewise supplied no passage image. The
 binds actual institutional responses, root inspection and bounded failures.
 This narrows the holder/edition target, not the reading. Stop this access route;
 the complete-phrase, corrector and Hebrew-priority decisions remain held.
+
+## October 15 Latin quotation control
+
+**New evidence: an explicitly alternate Latin quotation is directly verified;
+no Hebrew or English replacement follows.** Chrissy M. Hansen's
+[2025 study](https://doi.org/10.15699/tc.30.2025.06), *TC* 30, 127–135,
+is now consulted in full, not merely through its abstract. Root read all nine
+PDF pages and all 26 notes, then visually inspected every rendered page.
+The ordinary publisher browser route exposed the freely available PDF after
+direct fetches failed. No account, purchase or security bypass was used.
+
+### What the new material contributes
+
+Hansen gathers medieval and early modern Latin quotations/paraphrases of
+Deuteronomy 32:8 and argues that their divine-son wording reflects lost Greek
+exemplars. The discussion supplies specific edition locators for Albertus,
+Martin of Leon, Gerhoh and Aquinas, with additional early modern evidence.
+It also expressly limits the Haimo claim to early printed editions without
+manuscript confirmation. Its discussion of Fouad 848's missing complement
+agrees with our already completed preservation check; this is not new ink.
+Note 5 leaves Codex 85 uninspected by the author. Neither that note nor the
+article closes our modern Greek apparatus gap.
+
+The useful addition is a quotation-tradition inquiry, not five new ancient
+manuscripts. In particular, lexical differences between quotations do not
+exclude borrowing, paraphrase or shared Latin intermediaries. Citing the
+Septuagint elsewhere establishes knowledge of readings, not by itself access
+to a Greek codex at this locus. The argument that a Greek exemplar is required
+therefore remains an inference to test rather than an imported observation.
+
+### Direct primary-text controls
+
+Root and one source checker independently consulted the edited Latin of
+[Aquinas, *Super Hebraeos*, chapter 2, lectio 2, unit 87935](https://www.corpusthomisticum.org/che01.html).
+It quotes **filiorum Dei** and explicitly qualifies the reading with
+**secundum aliam litteram**. Daniel 10 and the distinction between Christ's
+lordship and angelic ministry supply its immediate context. The passage does
+not name the Septuagint or identify a manuscript. This verifies a real alternate
+Latin-text citation; its Greek ancestor remains unspecified.
+
+The [editorial notice](https://www.corpusthomisticum.org/che00n.html) identifies
+a text combining two lecture reports, following Nanni's 1562 edition and Cai's
+modern edition; the text page identifies Turin 1953. This is edited testimony
+attributed to a medieval author, not a newly inspected medieval manuscript.
+The source checker's additional Septuagint-naming control at chapter 4,
+lectio 2 concerns Jeremiah 17:9, not Deuteronomy. Root did not independently
+check that additional locus or the other two passages cited in Hansen's note 19.
+
+Root also read the Deuteronomy discussion within
+[Anselm, *Cur Deus homo* I.18, Bibliotheca Augustana](https://www.tha.de/homes/harsch/Chronologia/Lspost11/Anselmus/ans_cur1.html).
+It contrasts **filiorum Israel** with **angelorum dei** and explores their
+interpretation; it does not supply the claimed divine-son quotation there.
+Hansen p.131/n.16 points to a modern discussion without identifying a primary
+Anselm locus. Thus Anselm remains **unverified for this reading**, not disproved
+throughout his works. The other authors' quoted editions remain reported
+evidence until directly checked. No five-witness independence count is assigned.
+
+### Decision and next discriminating work
+
+The canonical WLC/English remains unchanged, including its existing note that
+the divine-being reading is likely earlier while its exact Hebrew is debated.
+The acquired Latin evidence does not select Hebrew אל against אלהים, settle
+4Q37 adaptation, or supply the missing Greek letters. It does broaden the
+evidence inventory beyond continuous-text manuscripts and modern editions.
+No confidence percentage, canon addition or ImageGen restoration follows.
+
+Next inspect Albertus's cited *II Sententiarum*, distinction 1, article 13
+(Borgnet 1894, p.38), including the actual Septuagint attribution and surrounding
+argument. Identify Anselm's exact alleged quotation before admitting it as
+reading support. These checks can discriminate an inherited alternate reading
+from interpretation or dependence; another author-count tally cannot.
+
+### Reproducibility and rights
+
+Input main commit: `c6c7d93ea4d24ec9ad7fc22d2df6b34d83c25ac1`.
+The unchanged canonical Deuteronomy 32:8 SHA256 is
+`1caf32ddf68b552d662a94cff90970e5eacd9028ac0a4b8c89228634b14702af`.
+Private acquired files, not redistributed in Git:
+
+| Input | SHA256 |
+|---|---|
+| Hansen publisher PDF, 581986 bytes, 9 pages | `832144aa4525c88ad543601891eeab0f6f1343890adad2d389a5dabb2db928c1` |
+| Corpus Thomisticum `che01.html` | `fe64bbf3270ac90daef91e9306b3e2afef8900b1199af19bb8b55b5eb5b66807` |
+| Corpus Thomisticum `che00n.html` | `90a7672111ee41fe84b22bc26899632163d9a55f66acafbe4531381e38308f17` |
+| Bibliotheca Augustana `ans_cur1.html` | `86db83895cbf4cd097f0949fb75c1b9f1209e4729208050a0b5188c16cabd33e` |
+
+The publisher states free access with redistribution/alteration prohibited;
+Corpus Thomisticum also reserves rights. Neither full text, PDF nor page image
+is imported or relicensed. Hashes identify acquired bytes, not original wording.
+This closes a bounded article/quotation comparison, not all Latin transmission,
+all discovered OT witnesses, or the source-priority decision.

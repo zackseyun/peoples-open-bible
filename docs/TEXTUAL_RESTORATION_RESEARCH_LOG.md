@@ -10908,6 +10908,36 @@ SHA256 `130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50`.
 These are documentation and unchanged-application checks, not a new vote on
 the earliest Hebrew or a corpus-wide validation.
 
+### 2026-10-15 — Original 7Q1 edition and rival-restoration test
+
+The previous turn repeated the completed Nahum result and was no new research
+progress. This pass pursued a different available primary source. The
+[7Q1 reconstruction control](7Q1_EXODUS_28_RECONSTRUCTION_CONTROL_2026-10-15.md)
+records direct consultation of DJD III pp.142–143, the bounded Wevers collation,
+and the publisher's selected Greek text against unchanged POB Exodus28:7.
+It turns a catalogue lead into an edition-grounded, competing-restoration
+experiment. The manuscript plate and measured geometric discrimination remain
+outstanding; no new letter, Hebrew reading or English revision is claimed.
+
+The 4Q122 DJD IX gap is not closed by this different edition. Search-index
+Kraft material did not add to its earlier consulted dossier. No repeated
+preview reading or generative completion was counted as progress. One bounded
+acquisition agent found the lawful edition preview; root inspected the actual
+pages. The PDF skill required whole relevant-page visual checks rather than
+relying on extracted Greek or a search snippet.
+
+PR213's exact head `cd3a62a69ae6b5d9af31c0503d9ad6df4f0d92b8` remains
+untouched: its push `38803478305` and PR `38803486554` runs were both confirmed
+live this turn. This new work branches from main independently. No merge or
+publication is inferred from those running checks.
+
+The acquisition agent's bounded source-consistency review passed; it is not
+a new independent reading of manuscript ink. Local validation checked 404
+relative file links, the unchanged Exodus28:7 and unrelated Genizah hashes,
+and whitespace. These documentation checks do not validate reconstruction
+accuracy. The next substantive work is the actual plate/image alignment test,
+not another model vote on the completed prose.
+
 ### 2026-10-14 — Nahum implicit-voice construction tested
 
 The preceding HOTTP turn was substantive progress: it acquired a primary
@@ -11010,6 +11040,44 @@ advance the goal. This application is substantive progress; publication is
 pending, and deployment has not been checked. The complete OT witness census,
 discriminating restoration tests and corpus-wide comparison remain incomplete.
 ImageGen is not evidence, and no canon change follows from this variant.
+
+### 2026-10-15 — Deuteronomy 32:8 Latin quotation evidence
+
+The preceding Nahum reply revalidated an existing result, so it counts as no
+new research progress. The next bounded acquisition succeeded: Hansen's full
+nine-page 2025 article, previously abstract-only, was obtained through its
+ordinary public publisher route. Root read the full text and 26 notes and
+visually inspected all pages under the PDF skill. The
+[case addition](DEUT32_8_EVIDENCE_TRIAGE_2026-09-06.md#october-15-latin-quotation-control)
+records evidence, acquisition hashes, rights and unresolved inferences.
+
+A source checker and root independently confirmed Aquinas's edited Latin
+alternate reading, while separating it from proof of a Greek exemplar.
+Root's Anselm I.18 control does not verify the alleged divine-son quotation;
+no exhaustive negative claim follows. Method 2.0.8 makes the quotation-provenance
+and independence safeguards explicit. No Hebrew, English, confidence score,
+generated restoration, canon decision or About text is changed. The next
+discriminating target is Albertus's actual Septuagint attribution, not another
+author tally. Sixteen existing Deuteronomy evidence tests pass in 0.153 seconds;
+they check retained records, not the historical truth of a lost Greek exemplar.
+
+PR214 and PR215 were checked by exact head and their own push/PR workflow
+handles; all four were live. Their heads remain untouched. The unrelated
+Genizah discovery file retains its protected hash. The all-OT-source objective
+remains active and incomplete.
+
+### 2026-10-15 — Checked research publication and application integration
+
+PR216, PR217 and PR214 each passed their own exact-head push and PR checks.
+Their SHA-pinned merges are respectively
+`71a5e11295d4a0130f0d2d3b105d194261bc53e7`,
+`0c97bf5f6d6b74d240a7f41d626907c793742137` and
+`0f6f2a36243809db5f8fcb5197c00d5f24321be5`.
+Root verified fetched parents and trees against local merge-tree results,
+updated local main by compare-and-swap, and verified the normal main push
+against remote main. The application branch integrates that published state;
+its research-log conflict preserves both historical entries. PR218's running
+head remains unchanged. Publication is delivery, not additional ancient evidence.
 
 ## Later About-page summary — proposed, not published
 

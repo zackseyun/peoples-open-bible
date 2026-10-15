@@ -11121,6 +11121,54 @@ Genizah file. PR218's original push and PR runs now both pass; its decision is
 also included in PR219, whose own exact-head runs are still live. Neither head
 is changed during those checks.
 
+### 2026-10-15 — Samuel animal, bread and narrative decisions separated
+
+The preceding turn verified the already completed Nahum article/application
+and added no research evidence. This pass instead directly consulted UBS
+interim-report entries 00985/00986 and the authorized handbook at 1 Samuel
+1:24–25. The [exact research proposal](SAMUEL_1_24_EXACT_SOURCE_PROPOSAL_2026-10-15.md)
+turns the prior age-related preference into a reproducible full-verse candidate
+without promoting it to recovered wording or a canonical source decision.
+
+The committee's B animal and C bread judgments remain distinct. Its brackets
+mark reconstruction; its factors 12/13 do not demonstrate a local word-division
+or conflation mechanism. Published 4Q51's surviving herd word cannot disappear
+from the explanation when the shorter candidate is tested. The exact-form
+judgment remains unresolved; no added witness or historical confidence is
+created by committee agreement. The earlier three-bull/collective countercase
+is retained. A bounded Ratner search rediscovered the already consulted Yale
+excerpt, not new evidence or the original article.
+
+One independent report-aware assessment supports constructing the candidate,
+not canonical promotion. The record pins the unchanged 1:22–25 baseline,
+old comparison/coverage inputs, private committee files and exact patch. It
+supplies prospective English in the complete paragraph and identifies the
+verse-25 metadata dependency for any later application. Old gates and frozen
+receipts remain unchanged. No ImageGen evidence or canon decision is involved.
+
+PR219 and PR220's own push/PR runs were confirmed live at the start of this
+turn; their exact heads remain untouched. This work is on a successor branch. The wider OT
+objective remains active, with source-form adjudication and full-record
+application still separate from a specified research candidate.
+
+The bounded factual review passes the report
+`58705cbb48cd576cf772e39d085eb1707e47c19f8c12353aae07f990b34d0115`,
+proposal JSON `15018fcf93d221582824825098f7b909a32efcca4c9ca1dc1f39bb56d2b07435`
+and six-test module `fc67d936408aabf4c4623fda76d196765b5c827716d4c6895ad256bb75410383`.
+Root reproduces the private XML extraction, all three private hashes and all
+six current baseline/evidence pins; the reviewer separately verifies the XML
+reference coverage and hashes. Six proposal tests pass locally in 0.178s;
+the independent six-test rerun is not an additional historical-priority vote.
+All 414 relative file targets in the three touched documents resolve.
+
+Publication follow-up: PR219 push run 38814114995 subsequently failed in
+`test_current_registry_coverage_and_selections`, after the complete reader
+corpus check passed. Its job 116694359572 log identifies four stale-baseline
+errors for the historical Deuteronomy 32:8 selection after the new critical
+application. This is not a reason to undo that reviewed source application
+or silently rewrite the old selection; the historical/current validation
+boundary needs repair. No live run was restarted and no failed head merged.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

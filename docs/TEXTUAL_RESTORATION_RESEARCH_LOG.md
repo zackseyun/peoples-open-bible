@@ -11227,6 +11227,88 @@ file links and `git diff --check` pass. The unrelated protected Genizah file
 retains its recorded SHA256. No new testing framework was added for a prose
 research result, and no repeat model vote was used to raise confidence.
 
+## Samuel whole-scene comparison and reader application — 2026-10-15
+
+The preceding Nahum response verified an already completed article review and
+application; it was not new research progress. This continuation completes the
+pending [Samuel 1:24–25 comparison](SAMUEL_1_24_25_SCENE_AND_READER_2026-10-15.md)
+and its consequential reader disclosure. Root visually consulted complete
+DJD XVII pp.31–35 and Cambridge II.1 p.4, and compared the selected Greek and
+versioned 4Q51 transcription. The scans match previously consulted bytes;
+this is a new connected-scene comparison, not a new manuscript discovery.
+
+The crucial distinction is between the selected longer Greek scene and DJD's
+reconstructed Hebrew scene. The Greek includes an additional presentation of
+the boy before slaughter; DJD supplies a blank there and discusses alignment
+and repetition. Its confidence in reconstructing 4Q51 does not decide earliest
+wording. Many named participants and narrative links are supplied, not surviving
+Hebrew. The exact animal-only research proposal remains unapproved: the new
+comparison does not resolve the histories of the complete scenes.
+
+Two new notes disclose that distinction and the unresolved shorter/longer
+relationship. Two existing notes at 1:25 now attach to slaughtering and the boy,
+not both to Eli. Three dependent lexical rationales become qualified. Source
+consonants, pointing, segmentation and marker-free main English are unchanged.
+Six exact old-field archives per verse preserve earlier review state without
+transferring approval; active full-record status remains draft/needs review.
+Neither a new Hebrew ancestor nor a uniquely optimal translation is claimed.
+
+One bounded independent review passed the substantive candidates and reproduced
+the 811-unit proposed export. Root then identified candidate-only status labels
+that would become misleading after application. Exactly two metadata values and
+one receipt link per candidate were corrected. The same reviewer reversed those
+three edits to reproduce the prior JSON hashes byte-for-byte, verified the new
+YAML pins and contract, and explicitly passed the corrected candidates. This
+was a correction check, not an additional source-priority vote. The separate
+[receipt](../sources/textual_restoration/applications/samuel1_24_25_scene_reader.2026-10-15.v1.json)
+preserves prior pins, final review bindings and actual assessment.
+
+Root applied the exact reviewed bytes and verified both canonical hashes,
+all 809 non-target record hashes, and the complete 31-chapter/811-unit reader
+export. Its SHA256 is
+`43236821fbcf4c8743decc1f9dd1c0b283c8037da128fe6ec1de870d0ccf1221`;
+only 1:24 and 1:25 differ, with five target notes exported. The frozen report
+and contract remain unchanged. Historical preflight still records no canonical
+write; the separate application records the later verified write. No deployed
+reader is claimed. Tests retain immutable historical comparisons while checking
+the live application without perpetually freezing the other 809 current records.
+
+PR221's push run 38818309851 completed successfully; its PR run 38818400957
+and PR222's two own runs were still live at the current check. No live head was
+changed or restarted. This application uses a successor branch; local success
+does not substitute for its own push and PR checks before merge.
+
+The independent post-application implementation review passes: exact canonical
+candidate equality, accurate review provenance, separate historical/live tests,
+and no historical-priority or deployment overclaim. It did not repeat the full
+export. Root verified all 418 relative documentation targets and the unchanged
+protected Genizah hash. The final receipt additionally names the superseded
+initial contract hash, preserving the metadata-correction chronology.
+
+Publication follow-up: PR221's own PR run subsequently passed too. Root
+rechecked both successful exact-head runs, clean mergeability and remote main,
+computed the merge tree, and performed a SHA-pinned merge. Remote merge
+`8729314a82d8c31f35aa744ba66fe7755d924b15` has expected tree
+`49ecaab62fd719c27a71d36e18f1aa0915cd2df3` and parents main
+`0f6f2a36243809db5f8fcb5197c00d5f24321be5` and reviewed head
+`bae5fab6763eb19dd9385be5198bd998a466cfbf`. Local main was advanced using
+compare-and-swap; normal push reported everything up to date. This publishes
+the preceding research/validation work, not the current reader application.
+
+Final local validation passes all 50 tests in 493.841 seconds: seven new
+scene/application checks, six existing exact-source-proposal checks and 37
+shared reader-footnote checks. Earlier preflight and reviewer runs are not
+counted as additional distinct tests. Staged diff checks pass; the task stages
+only its ten explicit files. These results verify the scoped application and
+reader behavior, not historical source priority or corpus-wide optimality.
+
+Close this bounded scene investigation after application validation. Reopen
+source selection only for evidence that discriminates the competing histories,
+not another reading of the same articles or another model vote. The wider OT
+source inventory, image-observation evaluation and unresolved source comparisons
+remain active. Generated images supply no evidence; no canon or About-page
+change follows from this case.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -11631,6 +11631,36 @@ lemma-group spellings, resolved all 430 relative file-link targets in the two
 edited documents, and verified unchanged Ezekiel XML, POB 36:26-27 and protected
 Genizah bytes. No new source-priority approval is inferred from these checks.
 
+## October 15: distinguish Greek translation history from Hebrew expansion
+
+The previous turn made substantive progress on Hebrew reuse. This continuation
+tested a different explanatory layer: the longer passage's Greek translation
+profile. A source agent acquired the original Thackeray 1903 discussion from
+the public-domain article archive after a failed Zenodo route. Root read the
+relevant pages and independently checked the Hebrew/Greek word contexts and
+Swete's printed text/apparatus. The [comparison and reproducible retrieval](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#greek-translation-technique-controls-checked-on-october-15)
+record exact consultation scope and source hashes.
+
+Several distinctive Greek forms are confirmed, but the Adonai example is
+manuscript/edition-dependent: Swete's B-based text differs from the modern
+comparison text. The Hebrew קבץ control also exposes an additional rendering
+at 29:5 and neighboring gathering verbs that require actual alignment. The
+article itself considers replacement of an older Greek translation; it cannot
+be reduced to proof that new Hebrew was added. Historical priority remains
+unresolved, with no POB source/English/note changes and no generated restoration.
+
+The PDF skill prompted complete-page visual inspection, especially of the
+apparatus rather than OCR. No complete critical apparatus, fresh manuscript
+decipherment or full-article reading is claimed. Pending PR229,231,232 runs
+were inspected as live processes; none was restarted to manufacture progress.
+
+The bounded independent check reproduced the Greek retrieval and verified the
+two Swete apparatus pages and the article's alternatives, without rechecking
+the separate Hebrew alignments. Root verified 433 relative file-link targets,
+unchanged Hebrew XML/seven target POB records and the protected Genizah hash.
+The executable recipe and whitespace checks pass. These checks verify a
+documented comparison, not a newly established original Hebrew reading.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

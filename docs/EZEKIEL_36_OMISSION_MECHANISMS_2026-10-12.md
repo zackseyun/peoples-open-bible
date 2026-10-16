@@ -444,6 +444,125 @@ Her capacity calculation averages1572 letters in Ziegler's text and1451 in B:
 Alternative one-/two-column layouts and abbreviations allow flexibility. Root
 checked the arithmetic, not the underlying independent letter counts.
 
+## Testing the page-capacity argument on October 15
+
+**A roughly compatible size is not a demonstrated copying event.** The earlier
+arithmetic check did not test the role of the additional chapter-37 omission
+or compare an independently counted text. Root and a separate source reader
+now checked complete Spottorno pp.95–97, including notes 11–14, for that purpose.
+This is a new control on the model, not another acquisition or reading counted
+as a new manuscript. No POB source, English or note changes.
+
+Three distinctions matter:
+
+1. **The table combines text bases.** Note 13 uses the mean of Ziegler and B
+   for page 1, but says the other page counts and adopted wording use 967.
+   It therefore does not independently reproduce the layout of a single
+   witnessed exemplar. Note 12 expressly allows abbreviations and small
+   textual differences; those freedoms affect how discriminating the fit is.
+2. **The proposed extra deletion supplies an endpoint, not a capacity necessity.**
+   Her displayed chapter-37 tail contains 54 alphabetic Greek letters:
+   `ο αγιαζων αυτους εν τω ειναι τα αγια μου εν μεσω αυτων εις τον αιωνα`.
+   She labels it 53; excluding the initial ο gives 53, but the displayed omission
+   includes it. This one-letter discrepancy is minor, not a refutation. More
+   importantly, her two chapter-37 pages total 1,507 + 1,473 = 2,980. Restoring
+   all 54 letters gives 3,034, or 1,517 per page, close to her nominal 1,512.
+   The second page would contain 1,527 rather than 1,473. Her permitted layout
+   flexibility does not show that this text must be deleted to fit. Removing it
+   instead creates the matching recognition-formula ending needed by her
+   particular three-page eye-skip proposal. She explicitly acknowledges the
+   absence of manuscript support for that deletion on p.97.
+3. **The exact recognition formula is itself text-dependent.** Note 11 and the
+   diagram distinguish readings with and without εἰμι at 36:38. The pinned
+   Greek control below lacks it there, while 36:23 has it. The model's displayed
+   exact match is a selected variant, not invariant Greek wording. Similar
+   endings could still prompt a copying error; lack of exact identity does
+   not exclude every possible eye-skip.
+
+### Independent size sensitivity, not replication of 967
+
+The already pinned [Greek surface-text input](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#inputs-and-reproducible-screen)
+provides a reproducible modern-edition control. We count alphabetic characters
+after NFD decomposition, excluding spaces, punctuation, accents and combining
+iota subscripts; words remain expanded, without hypothetical sacred-name
+contractions. Only ordered `surface` strings are used. No generated morphology,
+confidence, reconstructed letters or manuscript-line boundaries enter the count.
+
+| Block in this input | Expanded letters | Letters per proposed page |
+|---|---:|---:|
+| 36:23 after κύριος through 36:38 | 1,589 | 1,589 for one page |
+| All of chapter 37 | 3,143 | 1,571.5 for two pages |
+| Chapter 37 with the proposed 54-letter tail removed | 3,089 | 1,544.5 for two pages |
+| Chapters 38–39 | 5,945 | 1,486.25 for four pages |
+
+The untrimmed block ratio is approximately 1:1.98:3.74, not exactly 1:2:4.
+These sizes are broadly compatible with flexible page capacities, with or
+without the proposed chapter-37 deletion. They neither reproduce Spottorno's
+Ziegler/B/967 counts nor falsify them: the text base and abbreviation conventions
+differ. A model fitted using flexible dimensions and textual choices requires
+independent physical or genealogical evidence before it can distinguish loss
+from a shorter literary form. These numbers are not a probability of loss.
+
+The following reproduces the count from the separately cached input; it makes
+no network request and deliberately does not import the third-party text into Git.
+Its public pinned source and acquisition hash are recorded in the linked input
+section. Set `p` to that downloaded file when reproducing on another machine.
+
+```python
+from pathlib import Path
+import hashlib, json, unicodedata
+p = Path('/tmp/ezekiel-ruah-control-vpePQq/ezekiel.json')
+assert hashlib.sha256(p.read_bytes()).hexdigest() == '06f1b82b9c95fc5c2c1735c928cdb44299fea2f8d9b9fc68eda0e14118920a1f'
+rows = json.loads(p.read_text())
+g = {r['ref']: ' '.join(w['surface'] for w in r['words']) for r in rows}
+assert len(rows) == len(g) == 1267
+def count(text):
+    return sum(c.isalpha() for c in unicodedata.normalize('NFD', text))
+def chapter(c, last):
+    return sum(count(g[f'Ezek {c}:{v}']) for v in range(1, last + 1))
+assert g['Ezek 36:23'].count('κύριος') == 1
+a = count(g['Ezek 36:23'].split('κύριος', 1)[1])
+a += sum(count(g[f'Ezek 36:{v}']) for v in range(24, 39))
+tail = count('ο αγιαζων αυτους εν τω ειναι τα αγια μου εν μεσω αυτων εις τον αιωνα')
+b, c = chapter(37, 28), chapter(38, 23) + chapter(39, 29)
+assert (a, b, tail, b-tail, c) == (1589, 3143, 54, 3089, 5945)
+print(a, b, tail, b-tail, c)
+```
+
+Spottorno p.97 also allows the longer ending to have entered textual history
+at some point before its subsequent loss. Literary expansion and later copying
+loss are therefore not necessarily mutually exclusive events. The current
+evidence still cannot select one historical sequence or justify deleting the
+renewal promise from POB. The useful next evidence must constrain transmission
+history, not improve the numerical fit through additional free adjustments.
+
+### Target-apparatus access boundary
+
+A parallel bounded access check found that the
+[Göttingen publisher record](https://www.vr-elibrary.de/doi/book/10.13109/9783666534355)
+marks the [text/apparatus pp.91–330](https://www.vr-elibrary.de/doi/10.13109/9783666534355.91)
+and [supplement pp.331–355](https://www.vr-elibrary.de/doi/10.13109/9783666534355.331)
+as requiring access; only preliminaries pp.1–6 are free. The
+[HUB publisher preview](https://www.magnespress.co.il/api/magnes/book/5187/preview)
+has 14 pages, with a sample of Ezekiel 1:1–7, not the target chapter-36 apparatus;
+its full reader requests sign-in. The source agent checked the publisher pages
+and preview, not the missing apparatus. No authentication, purchase or bypass
+was attempted. Repeating these same public previews is not a research step.
+Do not treat the introductory mention of 36:23–38 note 1 as consultation of
+the note itself. Authorized target-page access remains a separate requirement.
+
+One independent source/count check reproduced the 54-letter tail, all five
+displayed block counts and the distinction between capacity and endpoint.
+Root separately reproduced them. The Spottorno source hash remains the recorded
+six-page input below. No new whole-volume reading, physical leaf reconstruction
+or historical-priority approval follows from this sensitivity test.
+
+The bounded final review passed the actual documented recipe and its stated
+limits. Root also executed that recipe, verified 482 relative file-link targets,
+unchanged private-source and protected Genizah hashes, and the three-document
+change boundary. `git diff --check` passes. No corpus tests are newly claimed
+for this documentation-only result; exact-head publication checks remain separate.
+
 ## What changes in the source judgment
 
 Neither an older long-form copy nor a long minus decides literary precedence.

@@ -94,6 +94,17 @@ and competing transmission mechanisms; another dependent margin or repeated
 edition check is useful only if it can distinguish them. No Hebrew or English
 change follows from this lexical control alone.
 
+**October 15 loss-model control completed:** the
+[independent size check](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#testing-the-page-capacity-argument-on-october-15)
+finds that the model's extra chapter-37 deletion creates a matching ending;
+page capacity does not compel it. Broad size compatibility remains, not proof
+of a loss event. Public Göttingen/HUB routes do not expose the target apparatus.
+Do not repeat these counts or previews. An accessible next lead is the actual
+early citation tradition (for example [Irenaeus IV.33.14](https://ccel.org/ccel/irenaeus/against_heresies_iv/anf01.ix.vi.xxxiv.html)), distinguishing an
+allusion's attested wording from modern verse labels and any inferred date of
+the complete Greek passage. Acquire its source-language text before using it
+to constrain transmission history; it is not yet adjudicated witness evidence.
+
 The Scheide Archive copy is restricted and the papyri.info route gated; do not
 repeat or bypass them. A discriminating result would constrain whether the
 minus is physically continuous, explain a concrete loss/reordering mechanism,

@@ -1,5 +1,13 @@
 # Deuteronomy 32:8: Albertus's Septuagint attribution
 
+Current-state clarification: the baseline WLC/Israel statements and hash below
+describe this check's original input, not today's canonical verse. The later
+[reviewed application](DEUT32_8_CRITICAL_SOURCE_APPLICATION_2026-10-15.md)
+provisionally adopted a POB-critical Hebrew composite and English “sons of God.”
+That application is on main; this quotation control did not independently
+authorize it. The current verse hash is
+`f815dcd72c3f4372cca011eb8824d4791ec94c3432b9d2c0756a3f4862a49755`.
+
 **Result: the cited printed edition really does attribute a Latin “sons of
 God” quotation to the Septuagint at this locus.** This upgrades the Albertus
 item from Hansen's report to directly consulted printed evidence. It does not
@@ -59,18 +67,61 @@ of Albertus's work is not the date of an inspected manuscript; the observed
 printed witness here is the nineteenth-century edition. Neither it nor its
 modern digital presentation should be counted as newly recovered Hebrew.
 
-The [existing Deuteronomy evidence triage](DEUT32_8_EVIDENCE_TRIAGE_2026-09-06.md)
-still governs: the retained canonical source is WLC/“sons of Israel,” with a
+At this check's historical baseline, the
+[Deuteronomy evidence triage](DEUT32_8_EVIDENCE_TRIAGE_2026-09-06.md)
+retained canonical WLC/“sons of Israel,” with a
 note acknowledging the likely earlier divine-being reading and debate over
 its precise Hebrew. This Latin control does not choose אל versus אלהים,
 resolve 4Q37's possible adaptation, or fill Fouad 848's missing complement.
 No current translation, note or confidence score changes.
 
+## Earlier edition control: Jammy 1651
+
+The [Waterloo catalogue](https://www.arts.uwaterloo.ca/~albertus/Downloading.html)
+also supplies [Jammy volume 15](https://www.arts.uwaterloo.ca/~albertus/PDFs/Jammy-volumen%2015.pdf).
+Its actual title page identifies *Commentarii in II. et III. lib. Sentent.*,
+Petrus Jammy, volume XV, Lyon, 1651. Root and one acquisition agent independently
+read the target article in that scan. Printed p.22, column a, continues
+argument 5 with:
+
+> secundum translationem. 70. Statuit terminos populorum iuxta numerum filiorum Dei.
+
+Long s and line breaks are normalized here. The preceding reference gives
+Deuteronomy chapter 32, without Borgnet's verse number. **Jammy prints the
+numeral 70, not the expanded word Septuaginta.** Both the divine-son wording
+and the local version attribution therefore predate Borgnet's 1894 edition.
+The scanned article contains no target-specific Greek text, manuscript siglum
+or variant apparatus. Its argumentative structure agrees with the later print:
+the final solution rejects the initial same-species inference.
+
+This excludes a narrowly defined possibility: introduction of both elements
+for the first time by Borgnet. It does not prove the quotation's medieval
+manuscript form, direct access to a Greek exemplar, or independence among Latin
+authors. Waterloo explicitly identifies Jammy as the basis/model of Borgnet;
+these editions must not count as two independent historical votes. The
+transmission through a Latin intermediary remains possible. POB's separately
+reviewed Hebrew/English selection is unchanged.
+
+The PDF has 493 pages/spreads and 131,481,891 bytes; SHA256
+`9cc496afed0a408c525173dab3ced41205d3fb5f480e206ee1fb49059d0e98fd`.
+The title is on PDF page 2. PDF pages 25 and 26 show printed pp.20-23;
+the complete article XIII occupies printed pp.21-22. Root inspected the full
+spreads, then separate page views for legibility; the agent inspected the title
+and complete target article independently. No whole-volume reading, manuscript
+image recovery or new ancient reading is claimed. The scan stays outside Git.
+
+The initial Borgnet recheck in this continuation was redundant: the older
+triage still named it as next work despite this completed report. That repeat
+is not new evidence. The triage, priorities and application-status links now
+distinguish completed checks, historical baselines and the actual current verse.
+Future work must first search the case reports and verify the canonical record
+before acquiring a source named in an old queue.
+
 ## Efficient stopping boundary
 
-The specific Albertus attribution check is complete. Do not reread it or tally
-more authors as independent votes. A further Latin investigation must test
-transmission: an actual pre-Borgnet witness/earlier edition, an identifiable
+The specific Albertus attribution and pre-Borgnet edition checks are complete.
+Do not reread them or tally more authors as independent votes. A further Latin
+investigation must test transmission: an actual medieval manuscript, an identifiable
 intermediary, or a primary locator for the still-unverified Anselm claim.
 Such work could change the weight of this quotation tradition; it is not a
 prerequisite for every future provisional Hebrew editorial decision.

@@ -11777,6 +11777,44 @@ and protected-file hashes, 484 relative documentation targets and the exact
 three-document change scope. Whitespace checks pass. These documentation
 checks do not constitute a new source-priority vote or a corpus-wide test.
 
+## October 15: earlier Albertus edition and stale queue correction
+
+The preceding turn added checked Ezekiel quotation evidence. This continuation
+reviewed the reserve Deuteronomy question, but initially followed a stale
+triage instruction: the Borgnet Albertus check was already complete in its
+separate report. That repeat is not counted as new research. Inspection of
+the actual canonical verse also exposed outdated WLC/Israel and publication
+statements in the older case documents. Current DEU32:8 is the separately
+reviewed POB-critical composite with “sons of God,” already on main. Its
+exact hash matches the application receipt; six lightweight current-record
+tests passed in 1.016 seconds. No new full-book export or deployment check is
+claimed, and no canonical bytes were changed.
+
+The genuinely new [earlier-edition control](DEUT32_8_ALBERTUS_QUOTATION_CONTROL_2026-10-15.md#earlier-edition-control-jammy-1651)
+checks the next transmission question. Jammy 1651 already prints both the
+divine-son clause and its attribution to “70.” This excludes a Borgnet-first
+innovation, not Latin mediation or a change in the medieval transmission.
+Root and the source agent inspected the actual article and title; the PDF
+skill required page context and readable page views, not OCR-only matching.
+The two related editions are not independent ancient witnesses. No recovered
+ink, added source confidence, new Hebrew/English choice or canon claim follows.
+
+The case, triage, application report and priority queue now distinguish dated
+baselines from the current record and mark both print checks completed. Future
+acquisition starts with cross-case completion and current-verse checks so that
+an obsolete handoff does not trigger another reread. PR236 passed both own-head
+Corpus integrity events and merged at `1d907a480fabc0cc88cacc230e0637f398d03308`,
+with expected tree and parents verified and main synchronized/pushed. PR237's
+running head was not amended or restarted. The unrelated Genizah file remains
+outside this task's edits.
+
+One bounded independent reviewer checked the Jammy title, complete article,
+inference limits and current-versus-main canonical hash/ancestry; no concrete
+defect remained. Root verified the source hashes, 492 relative file targets,
+five-document scope and unchanged protected-file hash. Whitespace checks pass.
+The earlier-edition finding and corrected handoff are new authoritative state;
+the repeated Borgnet reading and test successes are not new ancient evidence.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

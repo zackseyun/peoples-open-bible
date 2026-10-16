@@ -46,6 +46,9 @@ def editorially_accepted(result: dict) -> bool:
 def run(package: Path, images: list[Path], output_dir: Path, timeout: int = 900) -> dict:
     package = package.resolve(strict=True)
     images = [image.resolve(strict=True) for image in images]
+    # codex exec runs with cwd=package; a relative -o path would otherwise be
+    # interpreted beneath that directory rather than the caller's output_dir.
+    output_dir = output_dir.resolve()
     if not images:
         raise ValueError('At least one actual source scan image is required')
     inputs = json.loads((package / 'review-input.json').read_text())

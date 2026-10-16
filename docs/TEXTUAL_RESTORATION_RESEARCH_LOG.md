@@ -12036,6 +12036,43 @@ is those three documents only; the WLC Ezekiel XML and protected Genizah file
 retain their recorded hashes. No corpus-wide test rerun is presented as
 evidence for this historical argument.
 
+## October 16: Ezekiel 35 whole-unit comparison and a supplied-letter limit
+
+The preceding Nahum reread was no new goal progress: it confirmed an already
+documented application without changing evidence or the next action. This turn
+instead acquires and reads Finsterbusch's complete fourteen-page study and
+checks its consequential examples against P967 canvas 34 and versioned Mas1d.
+The [new report](EZEKIEL_35_VARIANT_EDITIONS_2026-10-16.md) distinguishes the
+actual Greek causal/person change and shorter judgment from inferred Hebrew.
+
+A bounded Hebrew control independently identifies that the tav in Masada's
+35:14 noun is restored, not surviving in the consulted edition. Substantial
+35:15a wording is preserved in that same witness. Root independently checks
+the primary rows and exact IDs; the original Talmon restoration rationale is
+still required before upgrading the claimed support. This changes our next
+source check and prevents a supplied character being counted as independent
+confirmation. It does not establish that the restoration is wrong.
+
+The PDF skill prompted visual checks of complete relevant pages. Root also
+inspects the actual Greek image and the consecutive 35:14-15 wording, not
+just the article's English appendix. No ImageGen evidence, new decipherment,
+canonical source replacement, English change or canon claim is made.
+POB's 35:14 main text and lexical fields disagree about tense; contextual
+adjudication under the retained Hebrew is a separate actionable follow-up.
+
+PR243 and PR244's exact-head push/PR runs were confirmed live, both pairs in
+the reader-note/consultation test step. They were not amended or restarted.
+The broad source-corpus goal remains active; this passage is not a substitute
+completion criterion for the all-source comparison program.
+
+The bounded final factual review passed the Masada distinctions and, after
+independent image inspection, the Greek target quotations and continuous
+transition. All 528 relative file-link targets in the four changed documents
+resolve; `git diff --check` passes. All 15 chapter-35 canonical files and
+the WLC Ezekiel XML match the input Git blobs. The unrelated Genizah file
+retains SHA256 `130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50`.
+No corpus test run is represented as validating the historical interpretation.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

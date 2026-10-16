@@ -12685,6 +12685,42 @@ or historical-priority certification is claimed. PR259's two exact-head CI runs
 were confirmed live and left running; publication of this successor remains
 separate from scholarly review and a pending run is not merge approval.
 
+## October 16 — Jeremiah boundary package and Babylon ending
+
+The preceding Nahum confirmation supplied no new evidence. This continuation
+returns to the unfinished [Jeremiah directional comparison](JEREMIAH_ORACLES_ORDER_COMPARISON_2026-10-06.md#linked-boundary-changes-and-historical-direction).
+Watts's primary argument links the chapter 25 transition, collection introduction
+and Moab/Babylon endings as coordinated editorial adjustments. Its force is the
+linked pattern, not the assumption that shorter is earlier. The report also
+preserves his concessions about shared interests and later transmission, the
+alternative explanation for the Moab notice, and the Qumran coverage limit.
+
+New Marchalianus page 442 captures show the Jeremiah-ending notice marginally
+while the central text continues from Babylon to Philistines. Swete 289 and 297
+attribute the ending, Moab and repayment supplements under distinct source
+labels. This prevents both a uniform Greek-absence claim and a false vote for
+MT order based on marginal supplements. The new next test is the complete
+boundary package with separate witness layers; Hebrew, English and order remain
+unchanged. The documentation skill kept the primary observation distinct from
+the historical inference. Images and article bytes remain outside Git.
+
+One independent reader passed the bounded image/argument comparison, with
+no correction required: both page 442 captures, Swete 289, Watts's decisive
+section and notes, and the saved report/receipt. Its Swete 297 attribution
+check was retained from the previous review, not a newly independent witness.
+Validation passed five input/render byte counts and hashes, the reused
+apparatus hash, seven current source/verse pins, 526 relative file-link targets
+and the diff check. Translation and OT source files are unchanged against
+`52e7b9082dad20f1b3010722fed99e590a6f8ca2`; the unrelated Genizah file retains
+its protected hash. No corpus-wide local test or original-text certification
+is claimed for this documentation-and-evidence update.
+
+PR260 then passed both exact-head workflow runs and merged as
+`a102c7609470b4e9ba8b7826370c1e4f016d923e`. The fetched tree
+`4d0f8e62748ba23a6ddba112c38ec54512e12933` and ordered parents matched the
+precomputed merge. That tree also matches this follow-up's research baseline,
+so its separate documentation changes do not include a biblical-text change.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

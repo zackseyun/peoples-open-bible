@@ -19,6 +19,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Fetch the reviewed source baselines
         run: |
+          git fetch --no-tags --depth=1 origin 34a9faf23d9cac3b2ddd4d6102acc50a2a84344f
           git fetch --no-tags --depth=1 origin e0bb485013cfbd6af50633b7b565877b03b3c897
           git fetch --no-tags --depth=1 origin 3d0cab4d35b356e052417df5cb009a3137f614c4
           git fetch --no-tags --depth=1 origin 574f204de77e89c8abba04c72209bdf5efb317f9
@@ -155,6 +156,7 @@ jobs:
           python -m unittest discover -s tests -p 'test_samuel15_7_plate_feasibility.py'
           python -m unittest discover -s tests -p 'test_samuel1_24_source_proposal.py'
           python -m unittest discover -s tests -p 'test_samuel1_24_25_scene_reader.py'
+          python -m unittest discover -s tests -p 'test_samuel1_23_word_reader.py'
           python -m unittest discover -s tests -p 'test_ot_witness_registry.py'
           python -m unittest discover -s tests -p 'test_replay_historical_tests.py'
           python -m unittest discover -s tests -p 'test_zephaniah3_17_reader_application.py'

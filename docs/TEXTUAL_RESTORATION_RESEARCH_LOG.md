@@ -12977,6 +12977,31 @@ Live API checks found PR266 and PR267 open, each with two corpus-integrity
 checks still in progress. No CI restart or merge bypass was attempted.
 The existing research branch remains the publication vehicle.
 
+## October 16 — Samuel word variant disclosed to readers
+
+The previous turn made progress through a committed source comparison. This
+continuation directly checks the Syriac reading and two translation controls
+through CAL, then applies the [1:23 reader note](SAMUEL_1_23_WORD_COMPARISON_2026-10-16.md#reader-application-boundary).
+The controls support treating the Syriac expression as distinct evidence;
+they do not establish an invariant translation rule or a lost Hebrew form.
+Root retrieved the target text; the delegated source reader checked all three
+loci and provenance, with root's failed additional fetches recorded in the case.
+
+One separate independent reader passed the exact full-record candidate and
+frozen contract. The application preserves the declared WLC and marker-free
+English, archives seven prior fields, revises the dependent lexical/theological
+explanations, and relocates the note marker. The full actual export matches the
+proposed output: one changed verse, 810 unchanged units, and the note exported.
+The candidate, contract and receipt preserve preflight versus applied status;
+the original review scores do not certify the new record. Documentation
+guidance kept this application in the existing case report. No generated image,
+source-priority decision, deployment or comprehensive OT completion is claimed.
+
+The pending combined regression run completed successfully: 54 tests in
+`tests.test_samuel1_23_word_reader`, `tests.test_samuel1_24_25_scene_reader`,
+`tests.test_samuel1_24_source_proposal` and `tests.test_reader_footnote_export`.
+This closes application validation without repeating the source adjudication.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

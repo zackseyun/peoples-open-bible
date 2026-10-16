@@ -77,10 +77,13 @@ edition-dependent identification. The complete 2019 chapter study has now been
 read: the same manuscript's short 1:13 and Nazirite 1:22 constrain a unified
 late-editing account. The [1:23 word comparison](SAMUEL_1_23_WORD_COMPARISON_2026-10-16.md)
 now checks the opposing Hornkohl argument against the local vow law and narrative.
-The alternative is attested Hebrew, not just retroversion. Next directly test
-the Peshitta wording and translation behavior; prepare a qualified reader note
-without claiming that source priority is settled. This accessible comparison
-proceeds while manuscript 845's line reconstruction remains unavailable.
+The alternative is attested Hebrew, not just retroversion. The direct CAL
+Peshitta checks now distinguish “your word” from the retained mouth idiom
+elsewhere; they do not recover Hebrew דברך or settle direction. A qualified
+reader note is applied locally, with source and main English retained. Do not
+repeat these controls: reopen historical selection with a broader same-book
+translation sample or new manuscript evidence. Manuscript 845's line
+reconstruction remains a separate uncompleted input.
 
 **October 16 access boundary:** a bounded independent audit found no verified,
 high-value unperformed test within this portfolio using its presently accessible

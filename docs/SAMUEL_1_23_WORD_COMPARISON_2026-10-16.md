@@ -8,10 +8,10 @@ different Hebrew reading, referring to Hannah's utterance, is published in
 back-translation. Its priority over the Masoretic reading remains unresolved;
 retain the current source and main English provisionally.
 
-The existing note discusses the meaning of “his word” but does not disclose
-the attested alternative. A source-variant note is warranted in a subsequent
-bounded application; it should not disguise different Hebrew wording as
-another translation of the same words. No canonical file changes in this pass.
+The reader note now discloses the attested alternative and distinguishes it
+from interpreting “his word.” Its marker follows that phrase rather than the
+opening speech introduction. Source and marker-free English remain unchanged;
+the application below changes disclosure and dependent explanations only.
 
 ## Attestation and preservation
 
@@ -20,7 +20,7 @@ another translation of the same words. No canonical file changes in this pass.
 | Current WLC | את דברו, “his word” | Directly checked in POB's declared source. |
 | 4Q51 | היוצא מפיך, “what comes out of your mouth” | DJD XVII p.31, column II line 5, prints the phrase outside supply brackets, with individual doubtful-letter marks. The preceding divine name is mostly supplied. This normalized quotation is not a diplomatic transcription. |
 | Greek | “what came out of your mouth” | Reported and discussed by both studies below; no new Greek-manuscript collation claimed here. |
-| Peshitta | “your word” | Reported by Hornkohl; its exact Syriac text and translation behavior require direct edition checking. Do not silently equate this with the longer Hebrew phrase. |
+| Peshitta | “your word” | Now directly checked in CAL's digital edition; see the controls below. Do not silently equate this with the longer Hebrew phrase. |
 
 The full relevant [DJD XVII](https://messianicessenes.wordpress.com/wp-content/uploads/2014/07/djd-17.pdf)
 pages 31–33 / PDF54–56 were visually inspected. Page 33 explicitly prefers
@@ -71,26 +71,72 @@ general reputation decides transmission direction. Both reconstructions must
 explain all three distinct expressions. A hypothetical Hebrew דברך behind
 Syriac is not a third surviving Hebrew witness.
 
-## Next discriminating work and application boundary
+## Syriac controls checked on October 16
 
-Directly check the Peshitta at 1:23, the nearby mouth-expression at 2:3,
-and the legal parallels, beginning with Numbers 30:3. This tests whether
-the reported Syriac wording is a plausible simplification or evidence for
-another Hebrew form; a parallel alone cannot certify that form. Do not
-replace this test with additional model votes or another chapter summary.
+CAL's [1 Samuel 1:23](https://cal.huc.edu/get_a_chapter.php?cset=S&file=62008&sub=01)
+reads `ܒܪܡ ܢܫܿܪ ܡܪܝܐ ܡܠܬܟܝ`, referring to Hannah's word.
+The same edition's [2:3](https://cal.huc.edu/get_a_chapter.php?cset=S&file=62008&sub=02)
+retains coming-out and mouth vocabulary: `ܘܠܐ ܢܦܘܩ ܛܠܘܡܝܐ ܡܢ ܦܘܡܟܘܢ`.
+[Numbers 30:3](https://cal.huc.edu/get_a_chapter.php?cset=S&file=62004&sub=30)
+(Hebrew numbering; commonly English 30:2) likewise retains the mouth phrase.
+Its preceding clause also uses “his word,” rather than collapsing both
+expressions. A displayed lower-apparatus variant substitutes “said” for
+“came out,” not for the entire mouth expression.
 
-A proposed reader note should identify the preserved Hebrew alternative,
-explain the shift from God's word to Hannah's utterance, and retain uncertainty
-over priority. Its application must preserve previous review history, attach
-the marker to the disputed phrase, and verify the actual export. The current
-marker follows the opening speech introduction, not “his word.” Main-text
-replacement requires further adjudication; improving disclosure does not.
+CAL's [Samuel](https://cal.huc.edu/get_file_info.php?coord=62008&return=/ot_peshitta.html)
+and [Numbers](https://cal.huc.edu/get_file_info.php?coord=62004&return=/ot_peshitta.html)
+information pages identify Leiden critical-edition text with some corrections
+from manuscript 7a1. A bounded second reader checked all three passages and
+provenance pages; root independently retrieved 1:23, while the other root
+fetches failed. These are digital-edition checks, not manuscript decipherment
+or a complete printed-apparatus inspection. No variant displayed at 1:23
+does not establish manuscript unanimity.
+
+The controls show that retaining the mouth idiom was possible, even within
+Samuel. They strengthen the objection to counting Syriac as identical support
+for the longer Hebrew wording. They do not establish an invariant translation
+rule, exclude contextual abbreviation, or recover Hebrew דברך. Numbers must
+not automatically be assigned Samuel's translator. The two historical
+directions remain open; further work needs a broader, explicitly sampled
+same-book translation comparison or new manuscript evidence, not repetition
+of these three controls.
+
+## Reader application boundary
+
+The applied note identifies the preserved Hebrew alternative, explains the
+shift to Hannah's utterance, and retains uncertainty over priority. It keeps
+the confirmation/fulfillment alternatives and identifies Eli's blessing only
+as a possible referent. It does not burden the note with an unproved Syriac
+retroversion. Main-text replacement requires further adjudication; improving
+disclosure does not settle that decision.
+
+The [full candidate](../sources/textual_restoration/candidates/samuel1_23_word_reader.2026-10-16.v1.json)
+and [frozen contract](../sources/textual_restoration/comparisons/samuel1_23_word_reader_contract.2026-10-16.v1.json)
+received one independent, context-aware review. It passed the exact record,
+seven archival entries, note anchor and complete proposed export. The
+[application receipt](../sources/textual_restoration/applications/samuel1_23_word_reader.2026-10-16.v1.json)
+keeps that review separate from the applied result. The actual 31-chapter,
+811-unit export matches the proposed output; only 1:23 changes and its note
+survives. The other 810 units remain identical. This verifies a local reader
+improvement, not a deployment or whole-verse scholarly approval. Historical
+review scores are archived, not transferred to this candidate.
+
+The combined application regression run passed all 54 tests across the new
+1:23 checks, the neighboring 1:24–25 reader application and source proposal,
+and shared reader-footnote export. These checks validate the implementation
+and preservation boundaries, not the historical priority of either reading.
 
 ## Reproducibility
 
 Working parent: `565a52b7f1232b8c5bda3b052f84feef5b68a363`.
-Unchanged canonical `translation/ot/1_samuel/001/023.yaml` SHA256:
+Pre-application canonical `translation/ot/1_samuel/001/023.yaml` SHA256:
 `2cca65e589f0174ffa4598c82511d473b4726dbcdc09aefdb02cbd44d1c3a9c1`.
+Applied canonical SHA256:
+`6e250a99fca02c5989e576d5ea75c1990669b568e71726823398a5cb10b8373b`.
+Application baseline: `34a9faf23d9cac3b2ddd4d6102acc50a2a84344f`.
+The contract pins the case report at that historical baseline rather than
+freezing this evolving report. Regression checks are in
+[`test_samuel1_23_word_reader.py`](../tests/test_samuel1_23_word_reader.py).
 DJD consultation PDF SHA256:
 `6866ffbfa230c44dc439dfaef8f229cd41219acfe31d6d9478d4e6002a70604d`.
 Controls: local WLC source fields at 1 Samuel 1:11,17,22,23,27 and

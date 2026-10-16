@@ -265,6 +265,43 @@ different witnesses. Direct apparatus targets remain Genesis 11:12–13 and
 The applied reader note and the declared Hebrew remain appropriate pending
 those discriminating checks. This comparison supplies no canon-expansion result.
 
+### The Bodleian text and its corrections
+
+The [Tischendorf follow-up](../sources/textual_restoration/comparisons/genesis11_bodleian_followup.2026-10-16.v1.json)
+now checks the cited 1857 edition directly. Its archive filename misleadingly
+says “v1”; the half-title identifies *Nova collectio*, volume two. Root visually
+read the relevant prolegomena and printed pp. 206–210. This is the edition used
+for the Oxford portion in Wevers's introduction, not the modern verse apparatus
+or a new collation of manuscript pixels.
+
+At printed p. 208 / PDF p. 273, the continuous text gives Arpachshad **35**,
+names **Cainan** as his son, and gives Arpachshad **330** subsequent years.
+The separate Cainan life paragraph is absent before Shelah's entry. These
+readings do not form the Masoretic genealogy: omitting a paragraph is not the
+same as omitting the person. Printed p. 206 also gives the Arpachshad–Cainan–Shelah
+sequence at Genesis 10:24.
+
+The prolegomena distinguish the changes. Printed XXXIX / PDF p. 44 explains
+that double asterisks flag corrections judged later; XXXX / PDF p. 45 marks
+the marginal **καὶ ἑκατόν**, “and a hundred,” at manuscript-page XIII.A.40 with
+that sign. It raises 35 to 135. The next note separately transcribes a
+lower-margin Cainan paragraph, giving **130 / 330**, in minuscule writing
+described as an old type. These are editorial hand assessments, not our dating
+of either addition or proof that both came from the same corrector. The
+edition's printed layout is adapted from the manuscript's two columns.
+Brooke–McLean's printed p. 27 / PDF p. 43 corroborates the local readings and
+labels the age addition **Eᵇᵐᵍ**, but the paragraph **Eᵃᵐᵍ**. These distinct
+correction sigla must not be flattened into a single undifferentiated addition.
+
+At printed p. 209 / PDF p. 274, Nahor has **79 / 129**; this local pair agrees
+with the selected Greek editions. Arpachshad's subsequent **330**, however,
+differs from their **430**. The original table remains explicitly a comparison
+of selected editions; this additional witness must not silently replace a row
+or be counted as another independent witness alongside its later apparatus
+citations. The result strengthens the need for passage-by-passage, hand-aware
+comparison. It does not settle the earliest Greek or Hebrew reading, and does
+not require changing the edition-qualified reader note.
+
 ## Syriac Cainan evidence and transmission
 
 The [follow-up record](../sources/textual_restoration/comparisons/genesis11_syriac_followup.2026-10-16.v1.json)

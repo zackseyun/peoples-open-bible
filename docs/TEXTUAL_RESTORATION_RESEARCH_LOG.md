@@ -13170,6 +13170,38 @@ the pinned baseline. Publication continues through PR267; its two existing
 required checks were still running when checked, so no protected merge was
 attempted. New-head checks must pass before main integration.
 
+## October 16 — Bodleian Cainan paragraph and correction boundaries
+
+The preceding turn made progress by committing the Syriac source check.
+This continuation acquired the exact [Tischendorf 1857 edition](GENESIS_11_AGE_SYSTEMS_2026-10-16.md#the-bodleian-text-and-its-corrections)
+cited for the Oxford part of Greek509, rather than repeating the unavailable
+modern-apparatus searches. The printed shorter state names Cainan as
+Arpachshad's son but lacks his separate life paragraph; it is not simply the
+Masoretic genealogy. Its Arpachshad age35 and subsequent330 are distinguished
+from the later marked addition of100 and separately reported marginal
+Cainan130/330 paragraph. Nahor79/129 was also checked in the printed text.
+
+The PDF workflow required visual inspection of complete target pages and the
+editorial conventions, not trust in the badly recognized OCR. The documentation
+guidance kept the new findings in the existing report; no additional narrative
+document or method-version bump was needed. This is published evidence, not
+new decipherment, a second independent manuscript, or proof of source priority.
+No biblical text or reader note changes in this step.
+
+The enlarged Brooke–McLean apparatus distinguishes the marginal age addition
+Eᵇᵐᵍ from the Cainan paragraph Eᵃᵐᵍ. Both concern the same manuscript, not two
+independent ancient witnesses. Validation passes both source PDF hashes, the
+new JSON, three unchanged verse/WLC/protected-file hashes, 531 relative link
+targets, four workflow YAML files and diff checks. At the preceding committed
+head, both live CI jobs had passed catalogue, complete-reader-corpus and
+historical-boundary validation and were running reader-note/policy tests.
+No restart or protection bypass was attempted.
+
+A delegated catalogue/image search and subsequent bounded review returned no
+usable result before being explicitly interrupted. No independent pass or
+custodial image access is claimed. Root's printed-page checks support the
+findings above; the unreturned review is not counted as confirming evidence.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

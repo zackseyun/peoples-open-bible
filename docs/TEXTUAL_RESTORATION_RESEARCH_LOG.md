@@ -11661,6 +11661,40 @@ unchanged Hebrew XML/seven target POB records and the protected Genizah hash.
 The executable recipe and whitespace checks pass. These checks verify a
 documented comparison, not a newly established original Hebrew reading.
 
+## October 15: verify and qualify the Hexaplaric parallels
+
+The last turn made substantive progress on the Greek translation profile.
+This continuation checked seven of its reported revision parallels in the
+already cached Field volume, not another modern summary or a new manuscript.
+The [source comparison](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#checking-the-reported-hexaplaric-parallels-in-field-on-october-15)
+records the printed readings, actual attribution labels, footnote provenance,
+page locators and consultation limits.
+
+The consequential qualification is Field20:34 note72: the cited codices have
+a different reported spelling and attach the reading to preceding "bring out,"
+although Field displays "gather" under קבץ. An enlarged inspection corrected
+an initial misreading of that small parenthesis. Other parallels are present,
+but mostly rely on the same Cod.86 report. Field's introduction also argues
+that Cod.88's marginal material derives from86; we record that dependency
+argument without claiming a new manuscript stemma. These distinctions narrow
+the strength of the gathering parallel without changing POB Hebrew or English.
+
+The PDF skill required original-page/footnote inspection; no ImageGen output
+or fresh erased-letter recovery is involved. An agent independently checked
+the two gathering/lands entries; root checked them and five additional entries.
+The cached source hash matches the prior acquisition. PR229's exact push and
+pull_request runs both succeeded; its pinned-head merge into current main
+was verified against the expected tree and parents, then main was synchronized
+and pushed. Other live heads were not amended or restarted.
+
+The bounded final review checked the remaining five entries and dependency
+discussion, correcting one description of a note boundary: the Syriac comment
+at 28:13 is part of note21 itself. The Greek attribution's Cod.86 provenance
+is unchanged. All477 relative file-link targets resolve, whitespace checks
+pass, and only the three intended reports differ from the input commit. The
+protected Genizah file retains its recorded hash. These are scope/provenance
+checks, not new ancient-text approvals.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

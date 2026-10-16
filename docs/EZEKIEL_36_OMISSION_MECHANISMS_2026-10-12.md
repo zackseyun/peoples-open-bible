@@ -249,6 +249,95 @@ and the research log, the unchanged Hebrew XML and seven target POB records,
 and the protected Genizah hash; `git diff --check` passes. No broad corpus or
 historical-priority certification follows from these scoped checks.
 
+## Checking the reported Hexaplaric parallels in Field on October 15
+
+**The affinities have a published basis, but the gathering parallel is less
+secure than a bare citation suggests.** The preceding section left Thackeray's
+Aquila/Symmachus/Theodotion comparisons as reported evidence. Root now inspected
+the corresponding entries and source notes in Field's 1875 volume II. This
+upgrades the consultation status to direct edition inspection, not manuscript
+autopsy or proof of attribution. It also uncovers an editorial qualification
+that must accompany the proposed Greek translation profile.
+
+The [same cached Toronto scan](https://archive.org/details/origenhexapla02unknuoft)
+used in the [earlier Spirit-reading work](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#field-edition-and-the-transmitted-spirit-reading)
+was rehashed: SHA256
+`85eaddcd38ac4bd35e7ee96409d9abdea3dab1b0513fe8c97cb67b72c8fcc1ff`,
+1,136 PDF pages. No new acquisition or independent witness is counted.
+
+| Ezekiel locus | Field's actual entry | Printed page / one-based PDF; note and source qualification |
+|---|---|---|
+| 20:34 | Under וקבצתי, Ο′ καὶ εἰσδέξομαι; Σ. Θ. καὶ ἀθροίσω. | 819 / 835, note 72: Codices 86,88 are reported with **ωρθρισω**, and attach the reading to preceding καὶ ἐξάξω / והוצאתי. Field's displayed spelling and alignment are not an unqualified transcription of those codices. |
+| 29:12 | Under בארצות, Ο′ εἰς τὰς χώρας; **Πάντες** ἐν ταῖς γαίαις. | 850 / 866, note 30: *Idem*, referring to note 29's Cod.86, *teste De Reg.* Preserve the collective attribution rather than manufacture three separately inspected witnesses. The other continuous-text details in note 29 concern its own entry. |
+| 7:5 | The title has Α. Σ. Θ. ἀδωναΐ κύριος. | 783 / 799, note 5: *Idem*, through note 4 to Cod.86, *teste De Reg.* |
+| 18:23 | Under אדני יהוה, Ο′ κύριος; **Πάντες** ἀδωναΐ κύριος. | 814 / 830, note 34: Cod.86, *teste De Reg.* |
+| 28:13 | Under גן, Ο′ τοῦ παραδείσου; Θ. τοῦ κήπου. | 847 / 863, note 21: Cod.86, *teste De Reg.* Note 21 also comments on Norberg's transcription of the Syro-Hexaplar text; the Greek Θ reading is sourced to Cod.86 through De Reg. |
+| 31:8 | Under בגן, Ο′ ἐν τῷ παραδείσῳ; Α. Θ. ἐν τῷ κήπῳ. | 854 / 870, note 19: Cod.86. |
+| 33:28 | Under ואין עובר, Ο′ διὰ τὸ μὴ εἶναι διαπορευόμενον; Σ. μηδενὸς παροδεύοντος. | 863 / 879, note 59: Cod.86, *teste De Reg.* |
+
+At 20:34, the main entry supports the existence of a published Σ/Θ attribution,
+but note 72 makes its exact form and attachment uncertain. It does not explain
+how Field resolved those difficulties. The first quick reading of the small
+parenthesis was corrected using an enlarged view: the note does **not** simply
+repeat ἀθροίσω. Do not silently repair ωρθρισω into the proposed form, or turn
+Field's placement under קבץ into independently verified manuscript alignment.
+This qualification narrows the support for that particular revision affinity;
+it does not erase ἀθροίσω in the actual longer Greek passage at 36:24.
+
+### Why these are not independent votes
+
+Root also reread Field's complete Ezekiel introduction, printed 765-767 /
+PDF 781-783. At 766 he identifies Cod.86 as the Barberini manuscript and
+describes De Regibus's published collation of its marginal readings. At 767
+he argues that the marginal material reported from Cod.88 derives from 86,
+appealing to corresponding gaps and the history of copying. This is Field's
+documented dependency argument, not a freshly established manuscript stemma.
+It is nevertheless a concrete reason not to treat the two cited numbers as
+two independent Greek votes. Several different lexical parallels also depend
+on the same Cod.86 report; lexical diversity and witness independence are
+different properties.
+
+The inspected source notes for these seven entries cite Greek codices or a
+collator's report, unlike Field's explicitly Syriac-mediated 39:29 Spirit
+entry. That distinction improves provenance, but does not establish that Field
+personally saw every letter, that the attribution labels are original, or that
+the readings date the longer Hebrew passage. Neither Πάντες nor Σ. Θ. is a
+license to infer three or two independent Hebrew exemplars.
+
+**Decision:** retain Hebrew and English; reduce the evidentiary weight assigned
+to the apparently exact 20:34 gathering parallel. The published garden,
+passing and title parallels remain real edition evidence. They do not uniquely
+identify the translator of 36:24-38 or establish whether expansion, revision,
+replacement or ancestral loss produced the observed forms. No automatic Hebrew
+retroversion, generated restoration or source-priority approval follows.
+
+Further work on this specific difficulty should inspect De Regibus's actual
+20:34 entry or the correctly identified Cod.86/88 margins, distinguishing the
+source spelling, attribution sign and attachment. Another citation of Field
+or Thackeray would not add independent evidence. The original chapter-36
+critical apparatus and independent evidence for Hebrew literary stages remain
+separate requirements; this bounded edition check does not complete them.
+
+### Scope and reproducibility
+
+Root visually inspected all seven complete target pages above, reading the target entries and footnotes,
+and the three introduction pages. A source agent independently read the complete
+20:34 and 29:12 pages and enlarged note 72. No complete Field volume, manuscript
+image, De Regibus edition or global sigla survey is claimed. Greek snippets
+reproduce the relevant printed words; they are not newly recovered ancient ink.
+The public-domain scan and rendered images remain outside Git. PDF hash plus
+the explicit printed/PDF locators identify the consulted source without making
+render counts into additional witnesses. The unused navigation render of PDF
+831 is not claimed as a target-page visual inspection.
+
+The final bounded review checked the five additional entries and the dependency
+discussion. It corrected the description of 28:13 note 21: its Syriac parenthesis
+belongs to that same note, not a separate neighboring note. The Greek attribution
+still cites Cod.86 through De Regibus. All 477 relative file-link targets in
+the three edited reports resolve; only those documents changed, the protected
+Genizah hash is unchanged, and `git diff --check` passes. These checks do not
+certify historical priority or the underlying manuscript readings.
+
 ## Copying loss counterargument
 
 Spottorno's [original publisher PDF](https://emerita.revistas.csic.es/index.php/emerita/article/download/780/822/842),

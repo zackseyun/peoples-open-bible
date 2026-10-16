@@ -11369,6 +11369,96 @@ and exit1. These existing failures are disclosed, not hidden by a claim of
 full-project success. No historical baseline, source selection or unrelated
 canonical file was changed to suppress them.
 
+### 2026-10-15 — Testing a mechanism for Ezekiel's thirds and quarters
+
+The preceding Nahum response verified an existing result and passed eight
+targeted tests, but supplied no new research evidence. This continuation
+resumes the unfinished Ezekiel fraction-history investigation rather than
+repeating that article or treating a restatement as goal progress.
+
+The [fraction comparison](EZEKIEL_5_12_QUARTERS_COMPARISON_2026-10-14.md#a-proposed-transmission-mechanism-checked-on-october-15)
+now directly examines Cornill1886's proposed sequence: an emphatic ימותו
+addition separates the first group's predicates, encouraging quarters at5:12
+and an additional burning portion at5:2. His reconstructed Hebrew deletes the
+verb, not the pestilence noun. This entry initially misidentified the supporting
+siglum as Greek; the following correction identifies younger Ethiopic evidence,
+not new Hebrew attestation. His own qualifications, the actual source controls,
+and a possible reverse consolidation prevent promotion of this mechanism to
+established history. The selected Greek6:12 itself varies its rendering of
+מות between death and famine clauses. This strengthens the need to test local
+translation practice before accepting a retroverted omission.
+
+Root's PDF-skill workflow visually checked Cornill's title and complete
+printed202,204–206, plus Schironi188–191 with the split footnote26. One
+independent checker read Cornill202–206 and confirmed the deletion, mechanism
+and priority limits. This is a bounded source check, not a vote establishing
+historical originality. The acquired PDF is hashed in the report and remains
+outside Git; no whole-volume reading, new manuscript, recovered ink or ImageGen
+evidence is claimed. Hebrew, English, notes and source-priority HOLD remain.
+
+A separate bounded modern-source pass acquired no target Olley discussion:
+his public author profile exposes abstracts, and the Oxford thesis landing
+returned403. Known Brillpreview/CTAT/Archive gates were not retried by that
+agent. The Cornill model is new argumentative evidence for this project, not
+a substitute for claiming that inaccessible modern scholarship was read.
+
+PR223's own PR run38822868729 passed at its unchanged head; its push38822839160
+was still live. PR224's own push38824787878 and PR38824815815 were still live.
+These are verified waits, not failed jobs or permission to restart them. The
+new documentation is a successor to7fcc088462 with its own publication gate.
+
+The subsequent check confirms PR223's own push also passed. The SHA-pinned
+merge produced62c82ba78a59229da7d4ed33ff6d75d3c183fe76, with verified tree
+99fc20c8ede46b4dd33541aebdbb75d9f8df377a and parentsb33cbf2495/3876e733b5.
+PR224 remains unmerged while its exact-head checks run. The bounded independent
+review passes this new mechanism section. All418 local documentation targets
+resolve and whitespace checks pass; source XML, both target verses and the
+protected unrelated Genizah file retain their pinned hashes. This prose-only
+change does not warrant another full-corpus test run or historical-priority vote.
+
+### 2026-10-15 — Correcting the siglum and acquiring the Ethiopic manuscript
+
+The previous turn made progress by consulting a specific transmission model,
+but its limited-Greek-support attribution was wrong. Root traced the symbol to
+Cornill's printed key: 𝔈ᶠ is the younger Ethiopic recension, not 𝔊/LXX.
+The independent reviewer confirms the correction and explicitly withdraws the
+prior PASS on that point. The [case report](EZEKIEL_5_12_QUARTERS_COMPARISON_2026-10-14.md#correction-ethiopic-evidence-and-its-custodial-source)
+corrects the current claim and preserves the error history. The method now
+explicitly requires checking each consequential siglum against its edition's
+key before assigning language or witness identity.
+
+Cornill42–43 identifies the Frankfurt Rüppell manuscript; his45 describes5:12
+as Hebrew-directed revision retaining Greek clause order. This changes the
+evidentiary attribution and dependence assessment. It does not authorize the
+Hebrew deletion, prove an original reading, or change POB's source/English.
+No new Greek omission is attested by this lookup.
+
+The official Frankfurt record, linked Goldschmidt1897 entry6 and scan cover
+connect this source to Ms.or.12/Rüpp.II,6. Root acquired its134-page institutional
+scan and114-page catalogue PDF, with hashes and exact visual scope recorded in
+the case report. This is new custodial image access for the project, not new
+decipherment. The conflicting leaf/page counts and chapter39–43 coverage
+descriptions remain unresolved; identity is not proof of passage survival.
+The target5:12 and relevant later-chapter folios are not yet independently read.
+The tentative18th-century catalogue date is retained with its question mark.
+No image is redistributed or generated, no new registry row is counted, and
+no catalogue silence becomes an ancient omission.
+
+PR225 received an explicit do-not-merge correction comment6204880353. Its live
+head is not amended or its CI restarted; a corrective successor will supersede
+it. Both own checks for PR224 and PR225 were verified live at this turn's
+opening. Their pending state is not a failure or approval. The protected
+unrelated Genizah file remains outside the task's changes.
+
+The bounded correction review passes the revised attribution, crosswalk,
+dating and unresolved coverage limits. All459 relative file targets in the
+three edited documents resolve and `git diff --check` passes. Both target
+verse hashes, the source XML and the unrelated Genizah file are unchanged.
+No code or canonical record changes; no full-corpus test claim. A later poll
+confirms both PR224 runs completed successfully at7fcc088462; its merge can
+proceed with the usual exact-head/tree checks, independently of corrected
+Cornill publication.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

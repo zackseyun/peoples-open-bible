@@ -277,6 +277,13 @@ Psalter itself. Preserve both controls and contrary apparatus reports; resolve
 the version's text before using it to infer Hebrew or Greek. This applies to
 OT and NT versional evidence alike.
 
+Resolve every consequential siglum against the **same edition's printed key**
+before assigning its language, recension or manuscript. Similar glyphs and
+superscripts are not identities. The [Cornill correction](EZEKIEL_5_12_QUARTERS_COMPARISON_2026-10-14.md#correction-ethiopic-evidence-and-its-custodial-source)
+withdraws an erroneous Greek attribution of younger-Ethiopic evidence that
+two readers had accepted. A review must check the key, not just agree on the
+apparatus line; record and supersede an erroneous prior approval explicitly.
+
 ### 3. Assess relationships before counting support
 
 Keep an edition's **selected text** separate from its **attested readings**.

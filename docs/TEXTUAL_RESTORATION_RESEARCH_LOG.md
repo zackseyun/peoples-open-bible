@@ -12508,6 +12508,53 @@ The seven retained input byte/hash pins and the next-locus pin match, all
 563 relative file links in the five affected reports resolve, and comparison
 against the baseline finds no translation or Hebrew-source file changes.
 
+## October 16 — Ezekiel 5 15 person and source interpretation
+
+The previous turn only reverified the already completed Nahum article result;
+it was no new research progress. This continuation therefore advanced the
+open Ezekiel 5:15 lead. The [comparison](EZEKIEL_5_15_PERSON_COMPARISON_2026-10-16.md)
+checks the exact Qumran spelling, Greek and two conflicting published
+assessments. Root visually read complete Swete393, Fabry12 and Patmore36.
+Patmore's report of Herbert is now directly verified, rather than an indexed
+search lead, but Herbert's original DJD page remains unconsulted.
+
+The four letters והית are published without local restoration/doubt marks;
+their grammatical interpretation remains disputed. A primary-span substring
+check found only the target and one wholly supplied comparator, not evidence
+of the scribe's normal spelling. GKC and the UBS verse discussion establish
+that a person shift is a legitimate competing explanation. This changes the
+next source-selection action: investigate orthography and Herbert's objection,
+not automatically adopt Fabry's second-feminine interpretation or repeat a
+model vote. Source priority stays unresolved.
+
+One bounded independent review passed the frozen reader correction: retain
+all source characters and marker-free English, add a qualified person note,
+move three existing notes to their semantic anchors and correct two lexical
+entries. Six historical fields are archived without transferring approval.
+The candidate remains draft/needs review. Three root preflight tests passed
+in 6.815 seconds; the independent rerun is verification, not three additional
+distinct tests or an independent manuscript witness. The proposed full export
+contains 48 chapters and 1,273 units, with only 5:15 changing and 1,272 unchanged.
+The reviewed bytes have now been applied locally; application verification
+and Git publication are separate milestones recorded in the case report.
+
+The PDF skill required complete-page checks, including footnotes. The writing
+skill kept the decision, counterargument and provenance in repository documents.
+No raw publication or generated reconstruction enters the evidence corpus.
+Seven input/render hash pins match. The unrelated Genizah file is unchanged.
+Earlier PR 254 has two successful checks but GitHub rejected a merge with 405;
+local merge-tree reports no content conflict. PR 255 and 256 still have live
+required runs, so none is reported merged. No force push or protection bypass
+was attempted.
+
+The correction is committed as `c519d9d96d1e535f5b820b94f8520c1be21c27f6`.
+All 56 regression checks passed in 143.733 seconds; one additional immutable
+application check passed in 8.792 seconds. That check verifies the target,
+all 1,272 non-target files, the full export and the original report freeze
+at the actual application commit. These 57 distinct tests verify the scoped
+implementation, not original-text priority or deployment. The case report
+and application receipt record the verified state; CI controls publication.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

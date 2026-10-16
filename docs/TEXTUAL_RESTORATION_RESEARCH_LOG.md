@@ -12952,6 +12952,31 @@ source and English remain unchanged. The article PDF download is terminally
 incomplete; no acquisition or PDF reading is claimed. This is progress through
 newly checked discriminating evidence, not a newly discovered manuscript.
 
+## October 16 — Hannah chapter controls and the competing word references
+
+The preceding Nahum confirmation added no evidence and is classified as no
+progress. This continuation advances the [1:23 source comparison](SAMUEL_1_23_WORD_COMPARISON_2026-10-16.md):
+the Qumran edition preserves the alternative referring to Hannah's utterance,
+while a complete reading of Hornkohl's opposing study supplies an argument
+for MT rather than treating the edition's preference as decisive. A local
+Numbers 30 and Samuel check weakens the alleged legal necessity of adding
+the phrase. One bounded independent reader checked that inference. Source
+priority remains unresolved; a qualified reader-note application is warranted,
+and direct Syriac comparison is the next historical test.
+
+The [1:13 report](SAMUEL_1_13_PRAYER_PLUS_2026-10-16.md#chapter-argument-and-the-mixed-qumran-witness)
+also now records the previously completed full 2019 article reading and the
+DJD dating/mixed-witness check. Its short junction coexists with Nazirite
+wording at 1:22; the wording at 1:11 remains reconstructed. This constrains
+chronology without selecting an original chapter-wide edition. PDF and
+documentation guidance keep these distinct claims explicit. No Hebrew,
+English, note or generated-image evidence is added to the biblical corpus.
+The canonical 1:23 hash and source PDF pin are in the new case report.
+
+Live API checks found PR266 and PR267 open, each with two corpus-integrity
+checks still in progress. No CI restart or merge bypass was attempted.
+The existing research branch remains the publication vehicle.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

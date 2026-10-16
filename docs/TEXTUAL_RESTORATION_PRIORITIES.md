@@ -73,9 +73,14 @@ the inference that differing Greek wording requires Hebrew-stage borrowing;
 they do not establish Greek expansion instead. No source or English change
 follows. DJD XVII and Qumran-Digital now provide qualified 4Q51 support for the
 short junction at the actual insertion site; the tiny ayin trace remains an
-edition-dependent identification. Seek the cited chapter-wide argument and
-test it against this evidence, not another vote on the same entry. This accessible
-test proceeds while manuscript 845's line reconstruction remains unavailable.
+edition-dependent identification. The complete 2019 chapter study has now been
+read: the same manuscript's short 1:13 and Nazirite 1:22 constrain a unified
+late-editing account. The [1:23 word comparison](SAMUEL_1_23_WORD_COMPARISON_2026-10-16.md)
+now checks the opposing Hornkohl argument against the local vow law and narrative.
+The alternative is attested Hebrew, not just retroversion. Next directly test
+the Peshitta wording and translation behavior; prepare a qualified reader note
+without claiming that source priority is settled. This accessible comparison
+proceeds while manuscript 845's line reconstruction remains unavailable.
 
 **October 16 access boundary:** a bounded independent audit found no verified,
 high-value unperformed test within this portfolio using its presently accessible

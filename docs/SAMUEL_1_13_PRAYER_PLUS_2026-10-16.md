@@ -46,8 +46,8 @@ that later Hebrew editing diminished Hannah's role. Her wider account treats
 some Vaticanus agreements with MT as revisions rather than original Greek.
 These are historical arguments, not an additional Hebrew manuscript.
 Root read the complete indexed article text and notes, pp.1–21. This is not
-a claim of full visual verification of its printed apparatus or consultation
-of the separate 2019 study it cites.
+a claim of full visual verification of its printed apparatus. The separate
+2019 study has subsequently been read as described below.
 
 The actual [Genesis apparatus](https://tmcdaniel.palmerseminary.edu/Brooke%26McLean/LXX_Brooke%26McLean_1-1.pdf),
 printed p.81 / PDF97, supplies two limited controls:
@@ -111,11 +111,33 @@ Neither widespread support nor narrative attractiveness alone selects a
 history. No Hebrew retroversion is promoted into the source corpus, and no
 English or footnote application is made in this pass.
 
-Next seek the cited 2019 chapter-wide argument and assess it against the now
-verified published Qumran junction. Early Hebrew coverage is no longer an
-unperformed check; fresh high-resolution verification of the trace is separate.
-Compare both explanations against local translation and transmission behavior.
-Do not repeat the completed apparatus entry as another independent vote.
+## Chapter argument and the mixed Qumran witness
+
+The complete indexed text of [Aejmelaeus 2019](https://www.academia.edu/62201820/Was_Samuel_Meant_to_Be_a_Nazirite_The_First_Chapter_of_Samuel_and_the_Paradigm_Shift_in_Textual_Study_of_the_Hebrew_Bible),
+*Textus* 28:1–20, including its 56 notes, has now been read. This is not a
+downloaded PDF or visual certification of its extracted tables. Her argument
+links changes surrounding Hannah's vow to legal concerns and proposes a
+first-century-CE-or-later reworking (pp.13–17). She acknowledges retained
+before-the-Lord expressions and the story's happy outcome. Her proposal is
+selective editing, not wholesale removal of Hannah's prayer.
+
+DJD XVII p.5 dates the script of 4Q51 to approximately 50–25 BCE. This is the
+edition's palaeographic estimate, not a new radiocarbon determination. Combined
+with the qualified short junction above, it rules against that junction first
+arising in the proposed later campaign. A later editor could have inherited
+an already short text; an independent earlier omission remains possible.
+
+The same manuscript preserves the Nazirite designation at 1:22 (DJD p.31,
+column II line 3). Short 1:13 and explicit Nazirite 1:22 therefore coexist:
+the features do not require one indivisible longer-versus-shorter edition.
+The designation at 1:11 is supplied in reconstruction, not surviving ink.
+Josephus's later knowledge of a longer form cannot by itself date the first
+existence of a shorter one. These are constraints on the proposed history,
+not disproof of all purposeful editing or proof of original short readings.
+
+The next local comparison is now [1:23's competing word references](SAMUEL_1_23_WORD_COMPARISON_2026-10-16.md).
+Fresh high-resolution verification of the 1:13 trace is separate. Do not count
+another reading of this apparatus or article as independent manuscript support.
 
 ## Reproducibility
 

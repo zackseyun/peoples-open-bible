@@ -15,6 +15,7 @@ from tests.test_ezekiel35_14_joy_reader_application import (
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = '277aad88b04dd5afb1a3604a9ec06d3a9d1b346f'
+APPLIED = 'a39c3bc597518ba3cce28321ea2bd57596df6f61'
 STEM = 'ezekiel4_4_9_reader.2026-10-16.v1.json'
 CONTRACT = ROOT / 'sources/textual_restoration/comparisons' / STEM
 ANCHORS = {
@@ -118,6 +119,21 @@ class Ezekiel4PreflightTests(unittest.TestCase):
 
 
 class Ezekiel4AppliedTests(unittest.TestCase):
+    def test_immutable_application_and_all_non_targets(self):
+        ct = json.loads(CONTRACT.read_text())
+        receipt = json.loads((ROOT / 'sources/textual_restoration/applications' / STEM).read_text())
+        self.assertEqual(receipt['application']['commit'], APPLIED)
+        before, applied = historical_book(BASE), historical_book(APPLIED)
+        self.assertEqual(before.keys(), applied.keys())
+        for p, raw in applied.items():
+            if p in ct['targets']:
+                self.assertEqual(sha(raw), ct['targets'][p]['candidate_yaml_sha256'])
+            else:
+                self.assertEqual(raw, before[p], p)
+        book = export_records({p: yaml.safe_load(raw) for p, raw in applied.items()})
+        self.assertEqual(len(index(book)), 1273)
+        self.assertEqual(digest(book), ct['preflight']['candidate_export_sha256'])
+
     def test_current_targets_actual_export_and_receipt(self):
         ct = json.loads(CONTRACT.read_text())
         candidates = json.loads((ROOT / ct['candidate']).read_text())

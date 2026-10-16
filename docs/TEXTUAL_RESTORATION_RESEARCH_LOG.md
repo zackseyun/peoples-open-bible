@@ -12468,6 +12468,13 @@ All 517 relative file links in the four updated reports resolve; diff checks
 pass and the unrelated Genizah file's SHA256 remains
 `130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50`.
 
+The six canonical changes were committed as
+`a39c3bc597518ba3cce28321ea2bd57596df6f61`; merging current main preserved
+the exact tree content. One additional immutable-transaction test passed in
+8.649 seconds and now checks all six targets, all 1,267 non-target records and
+the complete export at that commit. The two validation runs cover 75 distinct
+tests. CI explicitly fetches both the baseline and application commits.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

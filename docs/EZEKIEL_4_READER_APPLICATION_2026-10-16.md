@@ -78,6 +78,12 @@ footnote export. All 517 relative file links in the four updated reports resolve
 original hash. These are scoped implementation checks, not corpus-wide
 textual adjudication or proof of historical priority.
 
+The canonical application is pinned to commit
+`a39c3bc597518ba3cce28321ea2bd57596df6f61`. One additional test passed in
+8.649 seconds, reproducing the export and checking every target and all 1,267
+non-target records at that immutable commit. This makes 75 distinct tested
+cases, without requiring unrelated future Ezekiel applications to stay frozen.
+
 No fresh damaged-image transcription, generated-image evidence, canon change,
 whole-verse optimality approval or deployed-reader verification is claimed.
 The next source decision depends on the complete reconstruction evidence,

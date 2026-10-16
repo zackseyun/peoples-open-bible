@@ -12321,6 +12321,57 @@ PR247's old exact-head jobs have now succeeded, but its integration conflict
 still needs a preservation-only merge and new checks; its old green results
 will not certify that future head. PR250/251 jobs remain live and unchanged.
 
+## October 16 — 11Q4 display aliases separated from physical witness identity
+
+The preceding turn completed a preservation-only main integration on the Nahum
+confirmation branch, pushed `e758047e66d6e2ecbd78af7408797829cffaf23b`, and passed
+13 local tests. Its new exact-head CI remains separate from the old successful
+jobs. That publication progress is not another source discovery.
+
+This turn advances the held 11Q4 input. Root inspected all six relevant primary
+cells and the official FAQ sections on alternative references, variants and
+sigla; an independent reader identified the same three reciprocal display
+pairs. Eleven repeated IDs describe edited tokens, including six gap-boundary
+spans, not eleven recovered words. Shared IDs and reciprocal labels establish
+repeated editorial display, not a physical join or settled reassignment.
+
+The [release report](QUMRAN_RELEASE_COMPARISON_2026-10-16.md#follow-up-the-repeated-displays-are-now-explicitly-mapped)
+now links a pinned explicit alias specification and reproducible sidecar audit.
+The audit preserves both occurrences, checks complete token subtrees and exact
+reference/block boundaries, and rejects unexpected duplicate occurrences.
+Both real release files reproduce the same reviewed pairs and context hashes.
+The strict index still fails closed; the existing comparison receipt is frozen.
+No source, translation, recovered letter, canon or ImageGen-evidence claim is
+added. Physical identity needs edition commentary/plate evidence, and future
+coverage acceptance still requires row-local join validation.
+
+The first 39 focused tests pass, including 12 new alias-audit tests. Mutated
+fixtures are repinned deliberately to exercise semantic checks beyond the
+whole-file hash gate. Inspection of the real input exposed the actual
+body-text/word-space container layout, which was explicitly handled before
+verification; it is not generalized into permissive HTML traversal.
+
+The independent reviewer reproduced both complete saved audit objects and the
+FAQ hash, confirmed the strict HOLD, and rejected nine adversarial real-input
+changes: extra occurrence, unapproved stable/DOM duplicates, broken reference,
+nested markup, alternative-reading wrapper, missing gap token, hidden spacing
+text and inserted token. The review passed with no blocking issue. This is a
+data-boundary review, not another scholarly vote on physical identity.
+
+Separately, PR250 passed both exact-head CI events and merged at
+`bc2ac5a4672ed6dfa2a97074054eb7e790fd47c5`. Root verified tree
+`1732d389f9c88f98f97e5661aaaef646cdaece9c` and ordered parents
+`5c88c9a30a72a88409931c20672c966d14e262e8` /
+`dadef87943f7683962823d41af630796e8f5071f`, then advanced local main by
+compare-and-swap and completed a normal push. This publishes the earlier
+heart/spirit and circumcision control; it does not publish later stacked work.
+
+Final local validation reran all 39 tests successfully in 0.020 seconds,
+reproduced both real-input receipts, verified FAQ/protected-file hashes, parsed
+the workflow, and resolved 487 relative documentation targets. Canonical source
+and translation files are outside this change. Publication remains subject to
+the new branch's own CI; the global source-comparison goal remains incomplete.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

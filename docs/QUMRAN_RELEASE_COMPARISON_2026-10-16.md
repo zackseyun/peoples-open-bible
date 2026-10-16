@@ -86,6 +86,56 @@ these IDs for word joins or coverage. Do not silently deduplicate by stable ID,
 relax uniqueness to obtain a passing result, or count cross-displayed material
 as independent support. The broader OT inventory must retain unresolved cases.
 
+### Follow-up: the repeated displays are now explicitly mapped
+
+Root and a separate reader inspected the six primary cells in both pinned
+releases and the official FAQ. The repeats are three identical edited token
+blocks displayed under reciprocal fragment references, not alternative-reading
+wrappers. This resolves the **display relationship**, not the physical join or
+reassignment history between 11Q30 fragment 17 and 11Q4 fragment 2a.
+
+| First display | Repeated display | Shared reference | Repeated token IDs |
+|---|---|---|---|
+| 11Q4 frg. 2, line 2 | frg. 2a, line 0 | 11Q30 frg. 17, line 0 | 803932–803934 |
+| 11Q4 frg. 2, line 3 | frg. 2a, line 1 | 11Q30 frg. 17, line 1 | 200822–200825 |
+| 11Q4 frg. 3a, line 0 | frg. 2a, line 2 | 11Q30 frg. 17, line 2 | 200826–200829 |
+
+The FAQ's [alternative-reference explanation](https://lexicon.qumran-digital.org/faq/v1/en/index.html#nebeneintraege)
+includes older numbering, composite-text references in either direction and
+fragment reassignments. Its [reading-variant explanation](https://lexicon.qumran-digital.org/faq/v1/en/index.html#varianten-im-handschriften-text)
+describes another mechanism. A plus sign or repeated ID alone does not select
+which physical history applies here. The [sigla](https://lexicon.qumran-digital.org/faq/v1/en/index.html#sigla)
+also matter: six repeated spans are gap-boundary notation; the other five
+include fragmentary text and unreadable traces. Eleven token IDs are not eleven
+preserved manuscript words. The longer reconstructed context and appended
+fragment blocks must remain separate representations.
+
+The [explicit specification](../sources/textual_restoration/discovery/11q4_display_alias_specification.2026-10-16.v1.json)
+pins both HTML inputs and the consulted FAQ. The [sidecar audit](../sources/textual_restoration/discovery/11q4_display_alias_audit.2026-10-16.v1.json)
+records each occurrence by page hash, table, row and token position. It verifies
+the exact reviewed references, ordered blocks, stable and DOM IDs, and complete
+decoded token subtrees, including nested markup and supplied/uncertain marks.
+It scans all primary rows for unapproved duplicates; parallels are excluded.
+Row-structure hashes retain context without exporting transcriptions. These
+hashes are structural, not raw-byte hashes; attribute order/entity spelling is
+not compared by this sidecar. Whole input bytes remain pinned separately.
+
+Both releases reproduce the same three alias pairs and six contextual-row
+structures. **The strict index still returns HOLD**, and the accepted whole-page
+comparison is still absent. No join validation, independent-witness count,
+preserved-letter count, Hebrew replacement or English change follows. The
+original receipt and strict comparator are unchanged.
+
+```sh
+python -m tools.textual_restoration.audit_display_aliases INPUT.html sources/textual_restoration/discovery/11q4_display_alias_specification.2026-10-16.v1.json
+python -m unittest tests.test_display_alias_audit tests.test_transcription_release_comparison tests.test_published_parallel_index
+```
+
+The next discriminating source is edition commentary or plate evidence that
+explains the reassignment/composite placement, not another duplicate count or
+an AI-generated reconstruction. A future occurrence-aware comparison must
+validate row-local parallel joins before admitting this page to coverage.
+
 ## Reusable control and verification
 
 Run the comparator against ordinary publicly acquired release files:

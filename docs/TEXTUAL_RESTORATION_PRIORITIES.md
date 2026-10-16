@@ -66,6 +66,17 @@ collation next. DCLP's public XML has no transcription; do not repeat its access
 attempts or another same-image preview as the next evidence step.
 Do not repeat the completed height decision, junctions or 18:1 comparison.
 
+**Related historical control completed:** the
+[Hannah prayer clause at 1:13](SAMUEL_1_13_PRAYER_PLUS_2026-10-16.md)
+is now checked in the printed Samuel apparatus. The Genesis controls limit
+the inference that differing Greek wording requires Hebrew-stage borrowing;
+they do not establish Greek expansion instead. No source or English change
+follows. DJD XVII and Qumran-Digital now provide qualified 4Q51 support for the
+short junction at the actual insertion site; the tiny ayin trace remains an
+edition-dependent identification. Seek the cited chapter-wide argument and
+test it against this evidence, not another vote on the same entry. This accessible
+test proceeds while manuscript 845's line reconstruction remains unavailable.
+
 **October 16 access boundary:** a bounded independent audit found no verified,
 high-value unperformed test within this portfolio using its presently accessible
 evidence. This does not exhaust the wider OT program. Prioritize actual access

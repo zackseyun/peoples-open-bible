@@ -12917,6 +12917,41 @@ PR265 passed both exact-head corpus-integrity checks and merged as
 precomputed merge. This publishes the earlier Samuel comparison; the present
 image-access follow-up starts from that merged state.
 
+## October 16 — Hannah prayer clause and the language of expansion
+
+The previous continuation made progress through manuscript acquisition and a
+committed preservation assessment. An accessible modern study now motivates a
+different discriminating test, documented in the [1:13 comparison](SAMUEL_1_13_PRAYER_PLUS_2026-10-16.md).
+The printed Samuel apparatus confirms a qualified Greek plus; the Genesis
+apparatus prevents nonidentical selected wording from being treated as proof
+that borrowing must have happened in Hebrew. The two Genesis entries are not
+combined into an invented witness. Root checked the complete relevant pages;
+a second reader checked the entries, sigla qualifications and inference.
+Local WLC context distinguishes earlier narrative assurance from the presence
+of answered prayer elsewhere in the chapter. No source, English or note changes
+are accepted. The complete 2020 indexed article was read, but the separate
+2019 chapter-wide argument remains an input; the subsequent locus check below
+supersedes early Hebrew coverage as an unperformed task.
+The PDF and documentation skills kept published readings separate from the
+historical reconstruction. PR266 remains a separate publication dependency.
+
+## October 16 — Early Hebrew control on the Hannah addition
+
+The intervening Nahum recheck yielded no new evidence, so this continuation
+classified it as no progress and resumed the unfinished Hannah test. DJD XVII
+pp.29–30 and Qumran-Digital 4Q51 fragment 1b line 6 publish the short junction:
+the trace assigned to the end of the unheard-voice verb immediately precedes
+the beginning of Eli's judgment verb. This is qualified early Hebrew support
+at the Greek-plus insertion site, not merely chapter coverage. Root read the
+complete edition pages and inspected Plate I; the scan does not justify a fresh
+decipherment of the tiny ayin. A bounded second reader confirmed the published
+junction and its limits. The [case report](SAMUEL_1_13_PRAYER_PLUS_2026-10-16.md)
+records the consequence: the short form is not only late Masoretic evidence,
+but its originality and the origin of the Greek plus remain unsettled. POB
+source and English remain unchanged. The article PDF download is terminally
+incomplete; no acquisition or PDF reading is claimed. This is progress through
+newly checked discriminating evidence, not a newly discovered manuscript.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

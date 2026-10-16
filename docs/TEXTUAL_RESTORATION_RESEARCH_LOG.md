@@ -11490,6 +11490,20 @@ checks pass; both Ezekiel target verse hashes and the WLC XML hash remain
 unchanged. No code or canonical record changed, so no full-corpus test rerun
 or historical-priority certification is claimed.
 
+## October 15 — requested Nahum full-article recheck
+
+The user requested a full reading of Riestra's article and comparison with
+our Nahum 1:5 work. Root reread the complete publisher HTML, all 63 notes and
+bibliography, and visually checked both figures and all three full-size
+tables. The [current verdict](NAHUM_SOURCE_COMPARISON_2026-10-10.md#requested-full-article-recheck-on-october-15)
+distinguishes the already-applied English improvement from a new discovery:
+retain “the earth heaves before him,” preserve the exact WLC source, and keep
+original-pointing priority unresolved. The October 14 lexical and Niphal
+controls do not settle that choice. No translation, manuscript transcription,
+source selection, canon or About-page change is made. The eight targeted
+application tests pass; target/source hashes are unchanged. Further article
+rereading is not a research milestone without new discriminating evidence.
+
 ### 2026-10-15 — Reading the older Ethiopic control
 
 The preceding turn made progress by locating Frankfurt5:12 and merging the

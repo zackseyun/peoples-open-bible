@@ -76,6 +76,15 @@ critical apparatus and versional/ancestral-loss arguments against these fixed
 endpoints, not further retries for these images. The previous acquisition
 instruction above is retained as history and is no longer the next task.
 
+**October 15 translation-profile checkpoint:** the
+[Greek controls and Field source check](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#checking-the-reported-hexaplaric-parallels-in-field-on-october-15)
+verify several reported revision affinities, but Field's 20:34 gathering
+parallel has a different reported codex spelling and attachment. Do not count
+the same collator or copied marginal material as independent support. A bounded
+next source check is De Regibus's actual entry or the securely identified
+Cod.86/88 margin; repeated Field/Thackeray citations do not advance the question.
+Even resolving that parallel would not alone establish Hebrew literary priority.
+
 The Scheide Archive copy is restricted and the papyri.info route gated; do not
 repeat or bypass them. A discriminating result would constrain whether the
 minus is physically continuous, explain a concrete loss/reordering mechanism,

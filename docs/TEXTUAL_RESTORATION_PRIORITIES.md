@@ -46,6 +46,18 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 16 access boundary:** a bounded independent audit found no verified,
+high-value unperformed test within this portfolio using its presently accessible
+evidence. This does not exhaust the wider OT program. Prioritize actual access
+to the Göttingen Ezekiel apparatus at 36:23–38 and the minus/order discussion,
+including its sigla/source conventions; exact target pages remain unverified.
+The causal-pattern inventory below is completed, not a task to repeat. The
+WorldCat Scheide ebook link resolves to the same restricted Archive item and
+is not a new route. Finish pending publication work; reopen historical
+adjudication on a genuinely new source input or a specific discriminating
+test, not another same-evidence review. See the
+[access audit](TEXTUAL_RESTORATION_RESEARCH_LOG.md#october-16--evidence-access-boundary-and-publication).
+
 **October 15 bounded reopening completed:** newly available source material
 permitted the [Ezekiel 28 apparatus check](EZEKIEL_28_CHERUB_COMPARISON_2026-10-10.md#october-15-greek-apparatus-now-inspected).
 Swete records Theodotion-/asterisk-labelled cherub modifiers and a separately
@@ -130,6 +142,16 @@ or plate. Resolve the 11Q4 repeated-placement identity hold before using it in
 word-level coverage. These are discriminating follow-ups, not another review
 of the 36:23 join.
 The larger 36-39 historical question below remains open.
+
+**Causal-pattern control completed:** the
+[35:10 translation-pattern test](EZEKIEL_35_VARIANT_EDITIONS_2026-10-16.md#october-16-causal-construction-and-greek-transmission-control)
+finds a strong tendency with exceptions in the checked Greek text and verifies
+causal Greek alternatives to P967 at 35:10. Swete's apparatus also records
+variation at 28:6; the inspected P967 connective there is too abraded to decide.
+Do not promote inferred Hebrew לכן from the lexical pattern alone. Next test
+the specific Greek readings' transmission histories using the target critical
+collation, not another whole-book count or image enlargement. The source and
+English at 35:10 remain unchanged.
 
 **11Q4 attribution follow-up:** the
 [edition history and Ezekiel 4 numerical control](EZEKIEL_4_NUMBERS_AND_FRAGMENT_ATTRIBUTION_2026-10-16.md)

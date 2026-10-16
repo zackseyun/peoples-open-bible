@@ -166,6 +166,16 @@ The same report now verifies the wording and version attribution in Jammy
 exemplar. Repeating either print is not the next task; a further quotation
 study needs a medieval manuscript or an identifiable transmission link.
 
+**October 15 Codex 85 edition checkpoint completed:** the
+[Field/Cambridge comparison](DEUT32_8_EVIDENCE_TRIAGE_2026-09-06.md#october-15-codex-85-original-edition-and-attribution-control)
+verifies Aquila-attributed “sons of God” and an Israel variant under a different
+lemma in Cambridge's marginal-material apparatus. These are reports
+about the same witness, not two ancient votes or a directly observed conflation.
+The historical/current crosswalk identifies Vat. gr. 2058, but no passage image
+was found. Do not repeat these editions or catalogue routes; reopen only for a
+new target image/collation or modern apparatus. Current Hebrew/English and
+historical confidence remain unchanged.
+
 ### Evidence and efficiency rules for this portfolio
 
 Obtain actual target wording, an edition/plate, verified survival, a neglected

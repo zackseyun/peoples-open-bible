@@ -180,6 +180,75 @@ Do not repeat this completed boundary acquisition or infer an optimal book
 by moving chapters. A parallel-form presentation and qualified reader note
 remain possible separate applications, not changes installed here.
 
+## Linked boundary changes and historical direction
+
+**The boundary package gives a substantive argument for an earlier Greek-form
+arrangement, but does not yet justify replacing POB's Hebrew arrangement.**
+[James W. Watts, 1992](http://jameswwatts.net/Jer-oafn.htm), “Text and Redaction
+in Jeremiah's Oracles Against the Nations,” *CBQ* 54, 432–447, sections
+3.1–3.13, tests whether changes at both ends of the collection share the
+editorial interests of MT chapter 25. This is a stronger directional test
+than comparing length or literary coherence alone.
+
+| Boundary | Compared difference | Watts's proposed explanation |
+| --- | --- | --- |
+| MT 25:13–15 | The Greek-form national collection intervenes before the cup; MT has the repayment sentence at 25:14. | The repayment sentence repairs the transition after removal of the collection. |
+| MT 46:1 | MT supplies a general nations introduction at the collection's later location. | A relocated collection requires a new introduction. |
+| MT 48:47 | MT closes Moab with a restoration promise and a judgment-ending notice; Swete's selected Greek text ends at 31:44. | The notice may preserve a trace of Moab's former position at the collection's end. |
+| MT 51:64 | MT closes Babylon with a notice ending Jeremiah's words; Swete's selected Greek 28:64 lacks it. | Babylon's new final position receives a conclusion corresponding to the book's opening. |
+
+Watts also links the stronger Babylon emphasis in MT chapter 25 with Babylon's
+final position in MT 50–51. The combined explanation accounts for changes at
+the old and proposed new junctions, not just one convenient heading. But his
+term “additions” initially means material absent from the compared Greek
+form (§3.2); the term itself does not establish which wording is earlier.
+He acknowledges that the Greek form shares some editorial interests and that
+some MT differences may belong to subsequent transmission rather than one
+editor (§3.8). The Moab notice is especially equivocal: note 49 reports
+Carroll's alternative explanation based on the poem's length. Watts's
+argument favors one history; it does not supply a surviving Hebrew manuscript
+of that complete order. His note 4 explicitly limits the cited Qumran fragment's
+coverage, and §3.12 leaves the collection's earlier history unresolved.
+
+### Babylon ending in Marchalianus
+
+The additional [page 442 image](https://digi.vatlib.it/view/MSS_Vat.gr.2125/0892)
+shows Babylon's sinking/disaster ending followed centrally by the Philistine
+heading and oracle. The words corresponding to “thus far the words of
+Jeremiah” occur in the lower-left margin, not in that central sequence.
+The [paired image](https://digi.vatlib.it/view/MSS_Vat.gr.2125/0891) depicts
+the same page; these are not two independent witnesses. Swete III, printed
+289, assigns the ending supplement to Qmg under α′. On printed 297 the Moab
+ending supplement is labelled θ′, while the repayment supplement carries
+α′θ′. These are the edition's source attributions, not our identification
+or dating of marginal hands. The Moab supplement remains apparatus-mediated
+here; its complete manuscript wording has not been freshly collated.
+
+Our inference is that Marchalianus accommodates these Hebrew-like supplements
+alongside a Greek-order central text. Consequently, their presence in Greek
+transmission cannot be treated as evidence that this witness once placed the
+whole collection in MT order. Conversely, their marginal location does not
+prove that the Hebrew wording originated late. The two nations headings
+already checked in Q can likewise reflect transmission within a Greek branch;
+they do not by themselves refute an earlier Greek-form arrangement.
+
+**Decision:** historical priority remains on HOLD; source, English and book
+order are unchanged. The next discriminating comparison should track the
+25:13–15, 46:1, 48:47 and 51:64 package together with the Elam date, separating
+each manuscript's central text, corrections and source-labelled supplements.
+A modern target apparatus or independent early boundary witness must test
+whether the pattern is inherited, coordinated revision or later supplementation.
+Do not count another Q margin, a second photograph, or repeated scholarly
+agreement as another independent Hebrew-order witness.
+
+The [boundary evidence receipt](../sources/textual_restoration/comparisons/jeremiah_boundary_arguments.2026-10-16.v1.json)
+pins the new inputs and current POB clauses. Root read Watts's decisive
+argument and notes and inspected the complete page 442 captures and both
+apparatus pages; the acquisition agent had read the full Watts article.
+This is an extension of the published-source comparison, not fresh
+decipherment. Raw article and image files remain outside Git under their
+respective rights; no generative reconstruction supplies textual evidence.
+
 ## Verification and continuation
 
 Root inspected source/English for all 38 units of chapter 25 and 28 selected

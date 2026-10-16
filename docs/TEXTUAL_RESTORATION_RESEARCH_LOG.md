@@ -11918,6 +11918,41 @@ and the three-document change scope. The two canonical hashes and protected
 Genizah file hash are unchanged. No broad corpus rerun or source-priority vote
 was performed for this documentation-only addition.
 
+## October 15: check the early Ezekiel 28 witness in manuscript images
+
+The preceding turn added a verified apparatus comparison and was progress.
+This continuation acquired the actual Princeton Papyrus 967 target, using
+the previously verified manifest rather than repeating a catalogue survey.
+Canvas 20 located the chapter-27 context, 21 the next oracle, and 22 the
+target. Root inspected all three complete exports and a deterministic crop
+of 22; a bounded independent check confirmed the local readings and line
+numbers. No generated image or missing-letter reconstruction was involved.
+
+The [new evidence](EZEKIEL_28_CHERUB_COMPARISON_2026-10-10.md#october-15-papyrus-967-checked-at-the-actual-target)
+directly supports an early accompaniment/removal reading while preserving
+an unusual expression after the cherub. An access agent located Patmore's
+lawful thesis and its citation of Gehman p.106. Root visually read the
+relevant argument and distinguished the verified Greek from the proposed
+Hebrew explanation. The PDF skill required checking whole pages and notes;
+no full-thesis or original Scheide-edition consultation is claimed.
+
+The canonical source, English, notes and frozen receipts remain unchanged.
+The contribution is direct checking of already published ancient readings,
+not a discovery of a new variant. The full OT objective remains incomplete.
+
+One bounded factual review found no defect in the new report; the reviewer
+did not independently verify acquisition hashes, native dimensions, catalogue
+dating or the two navigation canvases. Root checked those separately. All
+486 relative documentation targets resolve, whitespace validation passes,
+and the change is confined to three research documents. Canonical and
+protected-file hashes remain unchanged; no full-corpus rerun was needed.
+
+PR240 passed both exact-head Corpus integrity events and merged at
+`cc69fd76304f202e06d3258e197d395692ade9c9`. The remote tree matched the computed
+merge of actual main and feature heads, with both ordered parents verified.
+Local main was then synchronized without altering this successor branch.
+PR241's live checks were not amended or restarted.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -58,6 +58,15 @@ Syriac next; do not repeat the same printed entries as progress.
 Keep at most these three questions active; pursue Ezekiel first. Other cases,
 including NT questions, remain parked unless new evidence is more discriminating.
 
+**Ezekiel 28 early-witness follow-up completed:** the
+[actual Papyrus 967 target](EZEKIEL_28_CHERUB_COMPARISON_2026-10-10.md#october-15-papyrus-967-checked-at-the-actual-target)
+now verifies accompaniment in 14, bringing-down in 16, and extra `ΤΟϹΕΧ`
+after the cherub in 16. The proposed connection to Hebrew covering language
+is an interpretation, not restored Hebrew. This supersedes the instruction
+to acquire an earlier witness at these units. Seek the cited original
+commentary/modern apparatus or an independently inspected Syriac control next;
+no repeat zoom or current-English adjustment is warranted by this alone.
+
 ### Lead Ezekiel 36 to 39 and Papyrus 967
 
 Does the reported36:23b/c–38 minus and36→38→39→37 order represent a shorter

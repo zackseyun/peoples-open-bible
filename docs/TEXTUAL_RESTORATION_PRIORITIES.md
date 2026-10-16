@@ -88,6 +88,16 @@ variants. Compare the actual target notes with Montfaucon/critical apparatus
 before using this manuscript to support a translation-history argument.
 Do not repeat its now-located renewal wording as new evidence of Hebrew priority.
 
+**Apparatus follow-up completed:** the
+[Montfaucon, Field and direct Theodoret check](COISLIN17_EZEKIEL36_WITNESS_2026-10-16.md#printed-apparatus-and-theodoret-checked-on-october-16)
+supersedes that acquisition instruction. Montfaucon gives no explicit target
+Coislin attribution; Field's asterisks mark local additions, not the whole
+renewal block. Theodoret directly attributes one 36:37 verb to Symmachus and
+quotes successive longer-passage lemmas, but neither his Christian exposition
+nor the edition chain establishes the passage's origin. Next seek the actual
+Syrohex target and modern apparatus; do not count these dependent editions as
+new independent witnesses or repeat their newly verified contents.
+
 **October 16 adjacent-unit control:** the newly read
 [Ezekiel 35 study and witness comparison](EZEKIEL_35_VARIANT_EDITIONS_2026-10-16.md)
 adds directly checked P967 differences at 35:10 and 35:14-15. Its alleged

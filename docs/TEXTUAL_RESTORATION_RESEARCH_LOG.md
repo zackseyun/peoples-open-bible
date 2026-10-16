@@ -12575,6 +12575,52 @@ at the actual application commit. These 57 distinct tests verify the scoped
 implementation, not original-text priority or deployment. The case report
 and application receipt record the verified state; CI controls publication.
 
+## October 16 — Ezekiel apparatus traced to its stated sources
+
+The previous turn repeated the completed Nahum judgment and supplied no new
+research evidence. This continuation returned to the open source-attribution
+question. The [Coislin apparatus follow-up](COISLIN17_EZEKIEL36_WITNESS_2026-10-16.md#printed-apparatus-and-theodoret-checked-on-october-16)
+now reads Montfaucon's actual Ezekiel source list and chapter-36 notes, Field's
+target apparatus, and Theodoret's original-language commentary in PG 81.
+The acquisition started before the intervening Nahum request; this entry
+records its completed comparison, not a second discovery of the same inputs.
+
+Book-level Coislin use does not supply target-specific version attribution.
+Field's signs mark local additions, not the entire renewal block; several
+versional readings are Syriac-mediated. Theodoret's directly verified
+Symmachus citation applies to one verb at 36:37. His successive longer-passage
+lemmas and Christian exposition establish reception, not Christian composition
+or Hebrew priority. POB's exact source and English remain unchanged. The
+next useful inputs are the actual Syrohex target labels and modern apparatus,
+not another Montfaucon lookup or a second count of Field's dependent report.
+
+Root inspected all eight pinned primary inputs at the declared page scope.
+The source agent independently read the Montfaucon and PG pages; a separate
+reader checked Field and the final report's 36:37 attribution. The latter
+caught a missing initial sigma in the report's 36:31 transcription, corrected
+to σμικρυνθήσεσθε against the image. Its scoped approval does not certify
+manuscript independence or a full critical edition. The source agent also
+consulted a modern electronic transcription before acquiring the PG print;
+the print controls this report, and the transcription is not another witness.
+The PDF skill supported complete-page inspection; the documentation skill
+kept provenance and decision limits in Git. No generated image supplied ink.
+
+PR257 passed both workflow runs and merged as
+`1344aab6aaa8a4184d77d17ddf423bd73f8981b1`. Its fetched tree
+`0de09d3304daf900812fa76896722a515e80c1cd` and ordered parents matched the
+precomputed merge. Local main was advanced by compare-and-swap and pushed
+normally. Merging main into this research branch produced a research-log
+append conflict; both complete entries were preserved, with no source-data
+conflict. The resulting baseline is
+`ba88e63c80be572f3d5621f2ce09ed1c6427089a`.
+
+Validation verified all eight input byte counts and hashes, all 519 relative
+file links in the three updated reports, JSON parsing and a clean diff check.
+Comparison with that baseline confirms no translation or OT source changes;
+the protected Genizah file retains its recorded hash. The independent reader
+verified the sigma correction and closed the scoped review. No full corpus
+test run was claimed for this documentation-and-evidence-only update.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

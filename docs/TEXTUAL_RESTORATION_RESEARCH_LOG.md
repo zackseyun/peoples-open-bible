@@ -12849,6 +12849,28 @@ precomputed merge; local main was advanced and a normal push confirmed sync.
 The Nahum branch integration preserves both log histories and all causal-pattern
 evidence. This is publication progress, not an additional textual discovery.
 
+## October 16 — Samuel narrative forms beyond the access blocked portfolio
+
+The preceding turn made publication progress and identified an access boundary
+for three historical questions. A broader-goal audit found an accessible,
+unfinished source comparison rather than treating that scoped limit as a
+whole-program impasse. The [Samuel narrative-form report](SAMUEL_17_18_NARRATIVE_FORMS_2026-10-16.md)
+now verifies four B-based Greek junctions, a changed 18:6 transition, tiny
+Hebrew portions assigned to 18:4–5, and the combined Greek reading at 18:28.
+The latter is an insertion of Michal before the retained Israel clause, not
+a Michal-only replacement. The nearby A siglum belongs to another entry.
+
+Root checked the complete relevant edition pages and conventions. A second
+reader confirmed the junctions, DJD preservation qualifications and exact
+18:28 entry. Trebolle's complete article was read by a research agent; root
+read its extracted text/notes and visually checked the decisive pages. The
+report distinguishes this from the failed Tov route and an abstract-only
+2020 lead. No Hebrew, English, note, canon or source-priority change follows.
+This is an extension of POB's comparison of known evidence, not fresh ink or
+a newly discovered ancient narrative. The next specific test is the 18:1
+doublet, not another tally of the same omissions. PDF and documentation skills
+kept the evidence layers and stated reading scope explicit.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

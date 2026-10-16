@@ -46,6 +46,17 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 16 broader-goal continuation:** the access boundary below applies
+to its three questions, not to all OT evidence. A wider bounded audit found
+an unperformed comparison with an already acquired critical edition:
+[the narrative forms of 1 Samuel 17–18](SAMUEL_17_18_NARRATIVE_FORMS_2026-10-16.md).
+The first pass now checks four Greek junctions, 18:6's transition, the tiny
+4Q51 portions at 18:4–5, and the 18:28 combined reading. While the three
+historical questions below await new inputs, use this as the single active
+accessible case. Next test the 18:1 arrival/conversation doublet against
+individual Greek readings and competing Hebrew-join/Greek-conflation accounts.
+Do not repeat the completed height decision or the four junction checks.
+
 **October 16 access boundary:** a bounded independent audit found no verified,
 high-value unperformed test within this portfolio using its presently accessible
 evidence. This does not exhaust the wider OT program. Prioritize actual access
@@ -67,8 +78,11 @@ The current source/English remains unchanged. Seek actual target manuscript
 layout, earlier Greek attestation, modern apparatus or independently checked
 Syriac next; do not repeat the same printed entries as progress.
 
-Keep at most these three questions active; pursue Ezekiel first. Other cases,
-including NT questions, remain parked unless new evidence is more discriminating.
+The three questions below remain the historical-priority portfolio; resume
+Ezekiel first when discriminating evidence becomes available. The dated Samuel
+continuation above supersedes an exclusive three-case limit while access is
+blocked. Other cases, including NT questions, remain parked unless new evidence
+is more discriminating.
 
 **Ezekiel 28 early-witness follow-up completed:** the
 [actual Papyrus 967 target](EZEKIEL_28_CHERUB_COMPARISON_2026-10-10.md#october-15-papyrus-967-checked-at-the-actual-target)

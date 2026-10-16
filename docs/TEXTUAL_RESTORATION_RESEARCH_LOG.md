@@ -11760,6 +11760,37 @@ the same recipe, 482 relative file targets, source/protected hashes and the
 three-document scope. No translation or source-corpus tests are represented
 as newly necessary or newly passed for this documentation-only change.
 
+## October 15: distinguish early quotation from complete passage coverage
+
+The preceding Nahum response was a current-state verification, not new source
+evidence. This continuation completed the early-citation lead instead. An
+acquisition agent found the source-language editions; root independently read
+the six complete relevant pages, margins and apparatus using the PDF skill.
+The [comparison](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#early-quotation-controls-checked-on-october-15)
+records exact quotation boundaries, different reference systems, variants,
+provenance hashes and the distinction between work and surviving-copy dates.
+
+Cyprian's explicit Ezekiel quotation joins cleansing and the first heart/spirit
+clauses. Irenaeus's shorter indirect reference is less specific and was verified
+in Latin, not surviving Greek. These give reception evidence without dating
+the entire longer ending or determining the earliest Hebrew form. The actual
+retained Hebrew parallels and current POB 36:25-26 were checked; no source,
+English, note or canon change follows. No ImageGen evidence or new manuscript
+decipherment is claimed. Repeating these references is not further progress;
+additional citation work requires a source that could distinguish the histories.
+
+PR235 passed both exact-head Corpus integrity events and was merged with its
+expected tree and parents verified; local main was synchronized and pushed.
+PR236 was still running its own checks at the publication checkpoint. Its head
+was not amended or restarted. Unrelated Genizah work remains untouched.
+
+One separate bounded reviewer inspected all six pages and found no concrete
+factual errors; it did not re-audit the external dating abstract or earlier
+Masada finding. Root checked all three acquisition hashes, the unchanged WLC
+and protected-file hashes, 484 relative documentation targets and the exact
+three-document change scope. Whitespace checks pass. These documentation
+checks do not constitute a new source-priority vote or a corpus-wide test.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

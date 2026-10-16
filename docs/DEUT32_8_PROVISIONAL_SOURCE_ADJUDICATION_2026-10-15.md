@@ -51,6 +51,14 @@ have not been independently collated here. It is not a continuous Deuteronomy
 copy or proof of the exact wording of 32:8. The missing locus-critical
 apparatus remains a real limitation, not evidence of absence.
 
+Later October 15 consultation: the
+[Hodayot digital-edition control](DEUT32_8_EVIDENCE_TRIAGE_2026-09-06.md#october-15-hodayot-allusion-wording-and-physical-context-limits)
+now verifies the reported wording with its fragment/line boundaries, gaps and
+doubt marks. It is not fresh manuscript collation and does not promote the
+literary parallel into direct Deuteronomy attestation. This supplements the
+dated consultation boundary above without changing this decision or its frozen
+machine-readable inputs.
+
 ## Why select this reading provisionally?
 
 Read 32:7–9 as a connected argument: remembrance of ancient generations,

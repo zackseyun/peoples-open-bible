@@ -11309,6 +11309,66 @@ source inventory, image-observation evaluation and unresolved source comparisons
 remain active. Generated images supply no evidence; no canon or About-page
 change follows from this case.
 
+## October 15 — Melphictensis exact coverage and fraction/order comparison
+
+The prior Nahum reply verified an already completed application rather than
+advancing the broader goal. This continuation resumes the open Ezekiel source
+queue. The [new case report](EZEKIEL_MELPHICTENSIS_COVERAGE_2026-10-15.md)
+records the acquired Vaccari1918 edition, an institutional shelfmark crosswalk,
+exact chapter39 exclusion, and actual5:2/5:12 fraction/order evidence. One
+Greek material witness is added to the registry; all47 prior rows are retained.
+The total48 is a mixed registry count, not48 independent ancient manuscripts.
+
+Pinakes identifies Rahlfs0927/Vat.gr.2591/former MolfettaMs09; the edition's
+older Molfetta number is5.7.VII. LDAB10659 remains unlinked. The actual index
+and transcription limit chapter39 to39:8–18, excluding this edition from39:29
+without inventing an ancient omission. At5:12 its first three quarter nouns
+are printed outside supply signs; the fourth has a supplied ending. Separate
+death/famine precede scattering then sword. This contrasts with the prior
+P.Grenf.I5 hybrid order. The paired5:2 has four portions and two burning clauses.
+Local apparatus and notation were read, including their different supply
+conventions. No fresh manuscript decipherment, Hebrew source replacement,
+English/note application, recovered original or canon decision is claimed.
+
+The PDF-reading skill required visual page checks because OCR was corrupt.
+Root inspected the title and complete printed1,18–19,22–23,25,27,34–35,46,48–49;
+the independent source checker also read the relevant pages and passed the
+bounded report/registry review with one locator refinement (include line8's
+conjunction). This is not a whole-volume reading or another priority vote.
+The original PDF remains outside Git with its exact hash in the report.
+Vatican's advertised manifest supplies118canvas records, not newly read images;
+publication permission remains required. Its private manifest SHA256 is
+`e38686c136cdb1810bda1389909a8d18c6d21b49cc2eca9b162d8d5009f4f5e1`.
+No restricted Göttingen or challenged Trismegistos route was bypassed.
+
+A separate bounded acquisition check by the source agent found no accessible
+DJDIX195–197/plateXLIII for4Q122. GoogleBooks `ml4FBeZ_ePMC` exposed contents
+but not readable target pages; its refusal was not bypassed. Archive item
+`qumrancave4ivpal0009unse` is access-restricted with private PDF; the HUJI
+record is bibliographic only. OpenDeadSea's license excludes DJD page images,
+commentary and apparatus. No target edition or letters were acquired. Park
+those particular routes; keep the original image/edition gate open and do not
+represent catalogue access as manuscript recovery. The source agent supplied
+this access check; root did not independently reread those endpoints here.
+
+Publication: PR222's own push38820054537 and PR38820085670 both passed at
+head`e0bb485013cfbd6af50633b7b565877b03b3c897`. A SHA-pinned merge produced
+`b33cbf2495231ce9c8533d8573e0dd09890d12f7`, verified tree
+`619e9962d481526f529354cd3702256117482233`, with parents
+`8729314a82d8c31f35aa744ba66fe7755d924b15` and that reviewed head. Local
+main advanced by compare-and-swap; normal push reported everything up to date.
+PR223's own runs remained live when checked; its head was not changed or
+restarted. This new research remains a successor change with its own CI gate.
+
+Validation:69 focused registry/reconciliation tests passed in15.425seconds.
+Registry validation and schema pass, all47 old rows are identical, and the
+three target verse hashes and protected unrelated Genizah hash are unchanged.
+The broad historical-record validator returns12 baseline/source mismatches;
+an in-memory old/new registry comparison reproduces exactly the same output
+and exit1. These existing failures are disclosed, not hidden by a claim of
+full-project success. No historical baseline, source selection or unrelated
+canonical file was changed to suppress them.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

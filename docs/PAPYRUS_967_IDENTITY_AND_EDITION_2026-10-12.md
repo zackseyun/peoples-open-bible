@@ -181,6 +181,12 @@ locus coverage, corrections and reading-level relationships. A chapter-39
 label alone cannot establish 39:29. Existing versional and literary-form
 comparisons remain separate from this queue.
 
+The [October 15 Melphictensis check](EZEKIEL_MELPHICTENSIS_COVERAGE_2026-10-15.md)
+establishes Rahlfs 927 = Vat. gr.2591 through Pinakes and excludes its published
+39:8–18 fragments from the 39:29 noun question. The proposed LDAB10659 crosswalk
+is still unverified, so that lead is not silently closed or merged. The edition
+instead supplies target evidence for the separate 5:2/5:12 quarters comparison.
+
 ## Newer paratext study and its target limit
 
 Tommy Wasserman's *Beyond Palaeography: Text, Paratext and Dating of Early

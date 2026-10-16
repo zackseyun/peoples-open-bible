@@ -116,6 +116,16 @@ generated completion would not answer which letters remain on the papyrus.
 This case implements feature-level agreement/dependence in the
 [adjudication method](TEXTUAL_ADJUDICATION_METHOD.md), not another model vote.
 
+## Subsequent individual Greek witness on October 15
+
+The [Melphictensis edition check](EZEKIEL_MELPHICTENSIS_COVERAGE_2026-10-15.md)
+adds published fraction and clause-order evidence from Rahlfs 927. It has
+quarters but scattering before sword at 5:12, unlike the P.Grenf. I 5 sequence
+documented above, and represents four portions at 5:2 too. The new report
+records exact preserved/supplied boundaries and the edition's local apparatus.
+It does not turn agreement on fractions into agreement on the entire verse,
+settle transmission direction, or authorize a Hebrew/English replacement.
+
 ## Target-access and interim-report check on October 14
 
 The [publisher's exact Olley chapter](https://brill.com/display/book/9789047430575/Bej.9789004177130.i-590_004.xml)

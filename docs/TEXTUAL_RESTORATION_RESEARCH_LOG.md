@@ -12685,6 +12685,25 @@ or historical-priority certification is claimed. PR259's two exact-head CI runs
 were confirmed live and left running; publication of this successor remains
 separate from scholarly review and a pending run is not merge approval.
 
+## October 16 — Nahum article decision clarification
+
+The requested comparison reconfirmed the existing outcome after reading the
+publisher HTML article's six sections, 63 notes, acknowledgments and complete
+bibliography. Figure 1, Figure 2 and Table 1 were also reopened visually;
+the existing full-asset review remains the record for Tables 2 and 3. Browser
+access succeeded where ordinary web fetching returned 403. No PDF acquisition,
+fresh decipherment or additional independent scholarly support is claimed.
+
+The [decision summary](NAHUM_SOURCE_COMPARISON_2026-10-10.md#nahum-1-5-decision-in-brief)
+now explicitly distinguishes Riestra's possible earlier שׁאה from her evidence
+for an ancient MT-like interpretation. It also identifies “heaves” as existing
+translation language, not a novel discovery. Neither the retained Hebrew nor
+the already applied English changes. All eight focused Nahum application tests
+passed with the repository virtual environment; the system Python attempt
+could not import PyYAML. This is a documentation clarification, not another
+source-priority vote. Further research should seek discriminating evidence
+rather than repeat this article review.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -24,6 +24,15 @@ change our understanding of ancient readers without proving a different
 original Hebrew text. “Heaves” remains a provisional contextual rendering;
 “is devastated” remains a serious but unadopted alternative analysis.
 
+Our retention decision is not a claim that Riestra endorses the Masoretic
+reading as original. Her conclusion entertains an earlier שׁאה reading while
+her Greek analysis supports the antiquity of an MT-like interpretation.
+Those propositions can both be true: an interpretation can be ancient without
+being original. Likewise, the article's Table 1 uses an adapted JPS rendering;
+our adoption of “heaves” is not a newly discovered English solution. The
+contribution to POB is a better-qualified local translation and evidence trail,
+not a demonstrated recovery of lost Hebrew.
+
 For further progress, compare the actual Nahum 1:5 critical apparatus and
 commentary with the grammatical controls below. In particular, seek evidence
 that distinguishes the unusual intransitive נשׂא reading from shortened

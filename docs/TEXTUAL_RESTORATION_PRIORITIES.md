@@ -174,10 +174,15 @@ separate her positive shorter-Hebrew argument from reception evidence.
 The resurrection annotation is compatible with her literary interpretation,
 not proof that this interpretation caused the order or originated in Hebrew.
 Retain HOLD and current POB. Do not reread the same margin as another witness.
-An accessible next test is her chapter-5 heart/spirit comparison: inspect the
-actual variant readings and contrary cases, not just her aggregate conclusion,
-to test the proposed relationship to the chapter-36 minus. This does not
-supersede the still-missing modern apparatus or count all chapter 5 as reviewed.
+The [heart/spirit follow-up](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#october-16-heart-spirit-control-and-the-circumcision-counterexample)
+now closes that bounded test: Lilly herself finds no coherent book-wide pattern.
+Direct P967 photographs confirm a flesh omission at 44:7 but retention at 44:9,
+contradicting the discussion's extension to the latter verse. Do not infer a
+heart-only temple rule or count Hebrew manuscript 93 as MT. Retain source and
+English; local chapter-36 expansion remains possible but unproved. The next
+discriminating input is wider witness/apparatus support for the 44:7 minus,
+not another thematic count. Any proposed disclosure must also mention 44:9.
+This does not count all chapter 5 or the modern apparatus as reviewed.
 
 The Scheide Archive copy is restricted and the papyri.info route gated; do not
 repeat or bypass them. A discriminating result would constrain whether the

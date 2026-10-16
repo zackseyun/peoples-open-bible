@@ -12190,6 +12190,49 @@ at `9aca1d1ffcb5814ed42f14bc52e981a3c91f9408`. Root verified expected tree
 `45b8803d2071d28ef01cd824a053816643823b4a`, fetched, advanced local main
 by compare-and-swap and completed a normal push. The broader goal remains active.
 
+## October 16 — heart-spirit hypothesis and a manuscript counterexample
+
+The immediately preceding Nahum response verified an already documented
+application and passed its eight focused tests; it was no new progress toward
+the broader goal. This continuation completes the pending thematic control
+instead of repeating that review.
+
+The [new source comparison](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#october-16-heart-spirit-control-and-the-circumcision-counterexample)
+reads Lilly's complete heart/spirit discussion and its contrary cases. Her
+own conclusion rejects a coherent book-wide distribution; the local chapter-11
+reworking argument remains distinct and possible. The record separates the
+manuscript-93 reading from MT and declines to turn inconsistent group totals
+into statistical evidence.
+
+Most importantly, root and a bounded independent source checker inspect the
+actual P967 pages 107–108. The flesh qualification is absent at 44:7 but present
+at 44:9. The latter positively contradicts extending the minus to both verses
+or inferring a consistent heart-only temple rule. This is a substantive
+project-level correction of an interpretation, not new decipherment or proof
+of the local variant's Hebrew ancestry. Hebrew, POB English, notes and prior
+application records remain unchanged. Wider witness support for 44:7 is the
+next discriminating input; repeated thematic tallying is retired.
+
+The PDF skill required visual checking of complete argument/apparatus pages
+against text extraction, and both original photographs were inspected without
+generated fills. The case report records exact locators, hashes, limitations
+and the unapplied reader-note implication. The full OT objective remains active.
+
+The bounded factual review passed the written section and its cross-references.
+The reviewer checked the argument and manuscript pair, not independently the
+publisher's selected Greek page or apparatus 89; root checked those separately.
+All 511 relative file-link targets resolve and whitespace validation passes.
+Only three research documents change; canonical and protected Genizah hashes
+remain unchanged. No full-corpus test or historical-priority approval is claimed.
+
+PR248's exact-head push and PR Corpus integrity runs both passed. Its pinned
+merge is `f999e609e258673937a952393092bf90c3187437`, with expected tree
+`5e969de5a8683c2b9063707ea5d33bee3d7d1b1e` and ordered parents
+`9aca1d1ffcb5814ed42f14bc52e981a3c91f9408` /
+`26113c42d1ca473f304a661e71ecef83229dd5b2`. Root verified these after fetch,
+advanced local main by compare-and-swap and completed a normal push. The
+current finding remains separate from that already delivered tooling change.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

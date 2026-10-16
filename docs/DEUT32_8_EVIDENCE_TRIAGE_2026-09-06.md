@@ -280,3 +280,113 @@ Corpus Thomisticum also reserves rights. Neither full text, PDF nor page image
 is imported or relicensed. Hashes identify acquired bytes, not original wording.
 This closes a bounded article/quotation comparison, not all Latin transmission,
 all discovered OT witnesses, or the source-priority decision.
+
+## October 15 Codex 85: original edition and attribution control
+
+**New result: published Greek support is verified at the level of an attributed
+Hexaplaric marginal reading, not a freshly inspected manuscript or a complete
+Old Greek main-text witness.** The current POB-critical source and “sons of God”
+English remain unchanged. This check refines the evidence classification;
+it does not increase the confidence assigned to the provisional source decision.
+
+Hansen's note 5, printed p.129, supplied the lead. Root compared its discussion
+against the original Field 1875 volume I, printed p.320 and complete note 12
+(PDF p.432), and Brooke–McLean 1911, printed p.661, including all three apparatus
+levels (PDF p.267). Root visually read the relevant whole pages and enlarged
+notes, not just OCR. The Cambridge page was previously consulted for manuscript
+106; the new finding here concerns its separate Hexaplaric entries for 85.
+
+### What the editions actually report
+
+| Location | Observed edition report | Consequence |
+|---|---|---|
+| Field's reconstructed Aquila entry in the main presentation | εἰς ψῆφον υἱῶν Ἰσραήλ | Field does not select the Codex 85 divine-son wording as his principal Aquila text. |
+| Field note 12, Cod. 85 | `Ἀ. εἰς ψῆφον υἱῶν θεοῦ (sic). υἱοὺς Ἰσραήλ.` | A genuine edition report of divine-son wording, followed by a period and a second phrase. Field prints accusative plural υἱούς, not genitive singular υἱοῦ. The punctuation and `(sic)` are editorial; neither reveals the manuscript's layout or a copying event. |
+| Cambridge third apparatus, lemma κατά—θεοῦ | α′ εἰς ψῆφον υἱῶν θεοῦ, witness z | Aquila-attributed divine-son wording is explicitly reported. |
+| Cambridge third apparatus, following lemma ἀγγέλων θεοῦ | An entry begins θ′ α′ and reports υἱῶν Ἰσραήλ for other sources; after a colon it gives υἱους Ἰσραήλ, witness z | The z variant is under a different lemma, without a fresh translator siglum immediately before it. Do not silently append it to the previous Aquila phrase as one continuous biblical reading or invent a separate Symmachus label. |
+
+The Cambridge Greek in this table expands its overlined Israel abbreviation;
+this is a normalized edition report, not a diplomatic manuscript transcription.
+The edition's printed translator labels are retained as reported attributions,
+not proof that either phrase goes back unchanged to a named translator.
+Its 1906 preface p.iv explicitly identifies the third apparatus as Hexaplaric
+material in manuscript margins. Preface p.vi maps **z (85) to Vat. gr. 2058**.
+Both complete preface pages were inspected (PDF pp.12 and 14).
+
+This supports Hansen's distinction between the divine-son Aquila attribution
+and the longer purported conflation, while identifying the separate lemma under
+which Cambridge records the Israel variant. Hansen's singular υἱοῦ in the
+discussion must not be imported as an exact transcription of the inspected
+Field 1875 page. We have not checked
+the 1964 reprint cited by Hansen or the Migne/Drusius transmission of the report;
+no cause for that discrepancy is assigned. Nor does Field's `(sic)` alone settle
+which wording or attribution is original. The two editions report the same
+manuscript, not two independent ancient witnesses.
+
+### Manuscript identity and access boundary
+
+The public [Göttingen catalogue](https://septuaginta.uni-goettingen.de/catalogue/Ra_85/)
+identifies Rahlfs 85, internal Ra_0085, as **Vatican, Vat. gr. 2058**, Diktyon
+68687, a tenth-century parchment Octateuch of 239 folios. Its collation field
+connects Holmes–Parsons, Field (Exodus–Judges) and Brooke–McLean “z.” The
+[Pinakes record](https://pinakes.irht.cnrs.fr/notices/cote/68687/) independently
+confirms the shelfmark and Rahlfs designation. Root checked the acquired public
+records after the access agent located them. The printed Cambridge mapping
+supplies a historical crosswalk; numbering is not assumed from modern labels.
+
+Göttingen's public metadata reports image access false, zero published
+transcription pages and no online sources. The guessed Vatican viewer route
+`https://digi.vatlib.it/view/MSS_Vat.gr.2058` returned 404 to the access agent.
+That failed route is not proof the codex is undigitized. No restricted viewer,
+sample-image bypass or account change was attempted. No target folio, actual
+letters, marginal attribution mark, hand date or manuscript punctuation has
+been observed. The catalogue's codex date cannot date the marginal reading.
+
+### Source judgment, reproducibility and stopping rule
+
+Record this as **edition-attested Greek marginal/Hexaplaric evidence**. Do not
+collapse it into either “no Greek evidence whatsoever” or “an independently
+verified early LXX manuscript reads the full phrase.” A late marginal report
+can transmit earlier material, but attribution, contamination and dependence
+remain live questions. Greek θεοῦ also does not uniquely choose Hebrew אלוהים
+over אל. Our direct published Hebrew 4Q37 anchor and the contrary MT/SP evidence
+retain their existing roles. There is no new source, English, note or canon edit,
+no restored letter and no ImageGen evidence.
+
+The original PDFs are public-domain editions acquired through ordinary HTTPS:
+[Field I](https://archive.org/download/origenhexapla01unknuoft/origenhexapla01unknuoft.pdf),
+[Cambridge I.3](https://tmcdaniel.palmerseminary.edu/Brooke%26McLean/LXX_Brooke%26McLean_1-3.pdf),
+and [Cambridge I.1](https://tmcdaniel.palmerseminary.edu/Brooke%26McLean/LXX_Brooke%26McLean_1-1.pdf).
+Full scans, rendered pages and catalogue responses stay outside Git. Credit
+Alfred Rahlfs for the Göttingen description under its stated CC BY-NC-SA 4.0
+terms; no metadata corpus is relicensed. Byte identities:
+
+| Input | SHA256 |
+|---|---|
+| Field I, 924 PDF pages, 100362680 bytes | `6358608a418782ce209d8a47e7d939541cb02633c4ac55c1dac5e7531ce5b355` |
+| Cambridge I.3, same bytes as the earlier 106 control | `f315ebf66f2bee331e3405e2ee6e7b80572a2d57b48f862bfeaacad4ad51866e` |
+| Cambridge I.1, same bytes as the earlier conventions control | `c5031defb2e2f8de3e4db1f47244f0565ea001a529e3f924680e4f3c7ead1519` |
+| Göttingen Ra 85 response | `09d305f90a9f64203abcc1b6a165cd591e13ad0deb73ee1d5867ca90eff14f7e` |
+| Pinakes 68687 response | `c8378add589c51d627a49309f2651af3d29c5c855d526e991a4b64a601c0afec` |
+
+The Hansen PDF identity remains the one recorded above; this continuation
+rechecked p.129, not the complete article again. Input repository head was
+`7b51d49b086e87942cf9999ebd0a62f2c43ad1dd`. Current verse SHA256 remains
+`f815dcd72c3f4372cca011eb8824d4791ec94c3432b9d2c0756a3f4862a49755`.
+
+The next discriminating input is a lawful image or fresh collation of this
+specific manuscript margin, or the modern locus-critical apparatus. Neither
+is now available. Do not repeat the same catalogues/editions as additional
+witnesses or infer a newly discovered reading. Move to another evidence target
+unless a genuinely new access route appears. Method lesson: the comparison
+unit must include text layer and attributed translator as well as manuscript,
+wording and hand; otherwise distinct marginal alternatives become a false
+conflated biblical text.
+
+A bounded independent source check caught root's preliminary misreading of the
+Cambridge layout as an explicit Symmachus label for z. The larger page detail
+does not support that claim; root corrected both the working report and the
+user-facing update before publication. The accepted finding is the narrower
+separate-lemma report above, not a definitive reconstruction of the two
+manuscript attributions. This disagreement changed the result; it is not
+counted as another ancient witness or resolved by majority vote.

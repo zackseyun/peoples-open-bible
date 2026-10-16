@@ -11829,6 +11829,42 @@ five-document scope and unchanged protected-file hash. Whitespace checks pass.
 The earlier-edition finding and corrected handoff are new authoritative state;
 the repeated Borgnet reading and test successes are not new ancient evidence.
 
+## October 15: separate Codex 85's attributed marginal readings
+
+The preceding Nahum turn verified completed work and passed eight scoped tests,
+but supplied no new textual evidence. This goal continuation therefore moved
+to Hansen's unresolved Codex 85 lead instead of repeating the full article.
+An access agent identified the manuscript; root read the actual Field and
+Cambridge pages, preface conventions and catalogue responses. The PDF skill
+required visual inspection of whole pages and readable attribution marks.
+
+The [new edition control](DEUT32_8_EVIDENCE_TRIAGE_2026-09-06.md#october-15-codex-85-original-edition-and-attribution-control)
+verifies a divine-son Aquila report while Cambridge records the Israel variant
+under a different lemma. Field's printed plural also differs from Hansen's
+singular quotation. One independent source checker caught root's initial
+misreading of the Israel entry as an explicit Symmachus attribution; root
+corrected the draft and user-facing update before publication. Neither editions
+nor model agreement establish the actual manuscript's layout, hand or original
+attribution. The manuscript passage is
+still unavailable; no source/English change or confidence increase follows.
+The new contribution is corrected evidence classification and a checked
+historical shelfmark mapping, not new ancient ink or a new Greek witness.
+
+The pending PR238 head was checked and found live; it was not amended or
+restarted. Work proceeds on a successor branch. Only the three research
+documents are in scope, with the unrelated Genizah file preserved. No broad
+corpus tests or additional translation votes are needed for this source-report
+correction. The next acquisition must offer a new passage image, collation
+or modern apparatus; the completed edition search is not a reusable progress
+loop. The full OT comparison/restoration goal remains incomplete.
+
+Root checked 484 relative documentation file targets, the three-document scope,
+all five acquisition hashes and unchanged canonical/protected-file hashes.
+Whitespace validation passed. The independent checker inspected the complete
+edition pages, conventions and Hansen's relevant page; the narrower corrected
+reading agrees with root's final visual check. These checks establish the
+recorded consultation and documentation integrity, not historical priority.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

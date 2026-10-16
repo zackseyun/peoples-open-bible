@@ -79,6 +79,15 @@ by this control alone.
 
 ### Lead Ezekiel 36 to 39 and Papyrus 967
 
+**October 16 Coislin 17 image checkpoint:** the
+[Ra 533 target inspection](COISLIN17_EZEKIEL36_WITNESS_2026-10-16.md)
+locates selected longer-passage lemmas at Gallica views 249–251 and the local
+36→37 lemma sequence at view 252. This is a late catena, not another early
+continuous-text witness; its ἄλλως labels are not securely attributed versional
+variants. Compare the actual target notes with Montfaucon/critical apparatus
+before using this manuscript to support a translation-history argument.
+Do not repeat its now-located renewal wording as new evidence of Hebrew priority.
+
 **October 16 adjacent-unit control:** the newly read
 [Ezekiel 35 study and witness comparison](EZEKIEL_35_VARIANT_EDITIONS_2026-10-16.md)
 adds directly checked P967 differences at 35:10 and 35:14-15. Its alleged

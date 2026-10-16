@@ -12508,6 +12508,26 @@ The seven retained input byte/hash pins and the next-locus pin match, all
 563 relative file links in the five affected reports resolve, and comparison
 against the baseline finds no translation or Hebrew-source file changes.
 
+## October 16 — Coislin 17 renewal passage located
+
+The [new manuscript report](COISLIN17_EZEKIEL36_WITNESS_2026-10-16.md) closes
+the Ra 533 passage-location gap: selected Ezekiel 36 renewal lemmas and the
+local 36→37 sequence were read in BnF's actual scans. The catena's commentary
+labels are not automatically versional readings, and its named ancient authors
+do not date the physical copy or establish the ancestry of each lemma. One
+bounded independent image check confirmed the central clauses and transition.
+No new letter, Hebrew selection or English revision follows. The next step is
+passage-specific apparatus/source attribution, not another scan of these pages.
+The documentation skill kept the observations, limits and acquisition record
+in Git without importing the images or turning this sample into corpus coverage.
+
+PR256 passed both required workflow runs and merged as
+`585ba2870b28598b9e56a65368bfaa3daa5a30c2`. Root verified its ordered parents
+and merge tree, advanced local main by compare-and-swap and pushed normally.
+This publishes the independently constrained reconstruction method, not a new
+reconstructed biblical reading. PR257 and PR258 were still running at the
+opening status check and were not bypassed.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

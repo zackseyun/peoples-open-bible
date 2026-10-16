@@ -11953,6 +11953,47 @@ merge of actual main and feature heads, with both ordered parents verified.
 Local main was then synchronized without altering this successor branch.
 PR241's live checks were not amended or restarted.
 
+## October 16: Syriac control changes the Ezekiel evidence classification
+
+The preceding Nahum reread answered the user's request but repeated an already
+documented result; it was no new progress toward the broader goal. This turn
+therefore resumed the unfinished Syriac control rather than rerunning that
+article or commissioning another agreement vote.
+
+The [Ezekiel 28 follow-up](EZEKIEL_28_CHERUB_COMPARISON_2026-10-10.md#october-16-syriac-wording-and-agency)
+acquired the actual Syriac chapter with its stated 2020 edition provenance,
+then a Walton printed target with adjacent Latin. A bounded independent agent
+tested the disputed verb against Nöldeke's paradigms; root inspected the same
+complete grammar pages and the printed target. The result changes how the
+evidence is classified: accompaniment and destruction vocabulary are directly
+checked, but divine destruction/vocative remains an interpretation rather than
+uniquely encoded agency. Neither print agreement nor editorial Latin creates
+additional independent ancient witnesses.
+
+This is substantive source evaluation, not a newly deciphered variant or an
+excuse to change POB. Canonical source/English/notes and frozen applications
+remain unchanged. The PDF skill required whole-page and mark inspection;
+ImageGen was neither needed for these legible prints nor used as evidence.
+The full OT coverage, restoration and comparative-source objective remains
+incomplete. The next input is the actual Syriac apparatus or discriminating
+syntax/translation-practice evidence, not another vote on the same form.
+
+PR241 passed both exact-head Corpus integrity events and merged at
+`d58f189dda16ffed2218d668cc038583fe6fdcb4`. Root verified the expected merge
+tree `8fe686e8c12b351641fda4ac23074d2868b30b21` and ordered main/feature
+parents, fetched the merge, advanced local main by compare-and-swap, and
+completed a normal main push. PR242's two exact-head jobs were checked live
+and left running without amending or restarting its head. This addition is
+on a separate successor branch.
+
+The bounded final factual review passed the Syriac section and its two
+cross-references without required corrections; that reviewer checked the
+grammar, not Walton, root's hashes or publication operations. Root's checks
+confirmed unchanged canonical Nahum/Ezekiel and protected Genizah hashes.
+The eight focused Nahum 1:5 application tests passed in 2.505 seconds,
+confirming the already applied article-based wording rather than a new
+translation change.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

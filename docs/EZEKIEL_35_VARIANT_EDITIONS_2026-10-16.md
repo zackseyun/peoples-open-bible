@@ -105,7 +105,7 @@ allow temporal כ with an infinitive and contextual determination of time.
 This grammatical control does not identify the translator's actual Vorlage,
 but keeps a temporal interpretation of the retained Hebrew available.
 
-POB currently says **"As the whole earth rejoiced, I will make you desolate."**
+At this report's input baseline, POB says **"As the whole earth rejoiced, I will make you desolate."**
 Its lexical fields instead select "rejoices," and its note offers
 "When the whole earth rejoices." These are not equivalent accounts of
 whether the joy precedes or accompanies the announced devastation. The
@@ -118,6 +118,11 @@ what, and at what time? Keep three questions separate: English tense and
 syntax, the noun/infinitive textual hypothesis, and the longer clause's
 historical priority. Do not remove 35:15a simply because the Greek is shorter,
 or add "their God" to a Hebrew-labelled text without a justified source decision.
+
+The subsequent [joy-clause comparison and application record](EZEKIEL_35_14_JOY_ENGLISH_APPLICATION_2026-10-16.md)
+addresses this follow-up. It distinguishes its English decision from this
+report's unresolved literary-edition priority and records implementation status
+separately. The quotations and hashes above remain historical baseline evidence.
 
 ## Reproducibility, rights and review
 

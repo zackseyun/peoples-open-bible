@@ -123,6 +123,16 @@ word-level coverage. These are discriminating follow-ups, not another review
 of the 36:23 join.
 The larger 36-39 historical question below remains open.
 
+**Causal-pattern control completed:** the
+[35:10 translation-pattern test](EZEKIEL_35_VARIANT_EDITIONS_2026-10-16.md#october-16-causal-construction-and-greek-transmission-control)
+finds a strong tendency with exceptions in the checked Greek text and verifies
+causal Greek alternatives to P967 at 35:10. Swete's apparatus also records
+variation at 28:6; the inspected P967 connective there is too abraded to decide.
+Do not promote inferred Hebrew לכן from the lexical pattern alone. Next test
+the specific Greek readings' transmission histories using the target critical
+collation, not another whole-book count or image enlargement. The source and
+English at 35:10 remain unchanged.
+
 **11Q4 attribution follow-up:** the
 [edition history and Ezekiel 4 numerical control](EZEKIEL_4_NUMBERS_AND_FRAGMENT_ATTRIBUTION_2026-10-16.md)
 now identifies DJD XXIII p. 442 and Puech 2019 p. 229 as the precise sources.

@@ -8,11 +8,16 @@ addressee of its recognition formula must be compared together. Direct
 Papyrus 967 inspection confirms consequential Greek differences. It does not
 recover their exact Hebrew antecedent or establish which edition is earlier.
 
-A specific evidential qualification changes the next research step:
+Two evidential qualifications change the next research step:
 **Masada's supposed corroborating noun at 35:14 has its distinguishing tav
 restored, not preserved, in the consulted digital edition.** The same witness
 preserves substantial wording of the longer 35:15a. Do not use it as an
 unqualified Hebrew witness to the shorter Greek unit.
+
+**The causal-translation rule at 35:10 is a tendency, not an exceptionless
+rule in the checked Greek texts.** The October 16 control below also verifies
+causal Greek alternatives at the target itself. Neither finding disproves a
+different Hebrew edition, but the rule alone cannot establish one.
 
 No canonical source, English, notes, chapter order or canon is changed here.
 Source priority remains unresolved. The existing English of 35:14 needs a
@@ -90,12 +95,10 @@ This is a local witness profile, not an automatic vote for either whole edition.
 ## Competing explanations and the current POB English
 
 At 35:10 the study argues that the translator's normal rendering of Hebrew
-יען ... לכן makes the Greek's repeated "therefore" evidence for another
-Hebrew arrangement. This is a useful testable argument, stronger than merely
-preferring smoother Greek. It still needs an actual local translation-pattern
-inventory and Greek transmission controls before the inferred Hebrew לכן
-is promoted into the corpus. General literalness does not exclude a local
-Greek change, and literary coherence alone does not establish priority.
+יען ... לכן makes P967's repeated "therefore" evidence for another Hebrew
+arrangement. The control below now tests that argument against an explicit
+inventory and printed Greek readings. General literalness does not exclude a
+local Greek change, and literary coherence alone does not establish priority.
 
 At 35:14 the proposed contrast is less exclusive than the study suggests.
 The retained WLC form is כ/שמח, annotated Qal infinitive construct in the
@@ -123,6 +126,88 @@ The subsequent [joy-clause comparison and application record](EZEKIEL_35_14_JOY_
 addresses this follow-up. It distinguishes its English decision from this
 report's unresolved literary-edition priority and records implementation status
 separately. The quotations and hashes above remain historical baseline evidence.
+
+## October 16 causal construction and Greek transmission control
+
+Finsterbusch 342-343 argues from the expected rendering of יען plus infinitive,
+followed by לכן, to a different Hebrew opening at 35:10. Her note 16 explicitly
+acknowledges variation among the oldest Greek manuscripts; the argument is
+that none uses the expected ἀντί or ἀνθ᾽ ὧν. We must test that inference, not
+attribute to her the claim that all Greek copies have P967's wording.
+
+The [bounded evidence receipt](../sources/textual_restoration/comparisons/ezekiel35_10_causal_control.2026-10-16.v1.json)
+records all **40 יען tokens in 37 verses** of the vendored WLC/OSHB written
+layer. Selection uses exact lemma `3282` among direct verse-child words,
+excluding nested qere and note words. A pinned digital Greek text supplies
+same-number navigation; only its ordered surface words are used, never its
+generated grammatical analyses. Manual clause alignment gives 27 verse groups
+with ἀνθ᾽ ὧν and five with ἀντὶ τοῦ. The other five are 5:9, 12:12, 28:6,
+34:21 and 35:10. These are not five equivalent infinitive constructions:
+5:9 is nominal, 12:12 is restructured, and 34:21 has finite Hebrew verbs.
+The receipt retains these qualifications and exact zero-based word positions.
+
+Repeated יען occurs in 13:10, 21:29 and 36:3; 21:29 also has two separate
+Greek causal phrases. Thus 40 Hebrew tokens, 37 verse groups and the Greek
+phrases are different counting units. No percentage here estimates original
+wording or identifies a single translator across the book.
+
+### The decisive comparisons
+
+Root inspected complete printed Swete III pages 444 and 461, including their
+apparatus, and the publisher's [28:6-7](https://www.die-bibel.de/en/bible/LXX/EZK.28)
+and [35:5-11](https://www.die-bibel.de/bibel/LXX/EZK.35) Rahlfs-Hanhart text.
+The two editions corroborate the following readings; they are not two
+independent ancient manuscripts.
+
+| Unit | Hebrew construction | Greek control and implication |
+|---|---|---|
+| 28:6-7 | יען תתך ... לכן | ἐπειδὴ δέδωκας ... ἀντὶ τούτου. The causal Hebrew contains an infinitive construct with a second-person suffix, as at 35:10. This is a genuine alternative to the claimed lexical pattern in these Greek texts. |
+| 35:5-6 | יען היות ... לכן | ἀντὶ τοῦ γενέσθαι ... διὰ τοῦτο. The nearby expected pattern is confirmed, not dismissed. |
+| 35:10-11 | יען אמרך ... לכן | διὰ τὸ εἰπεῖν σε ... διὰ τοῦτο in both checked editions: "because you said ... therefore." This preserves the causal structure without using ἀντί. |
+
+The opening διὰ τοῦτο in 28:6 corresponds to that verse's initial לכן,
+not its later יען. The following 28:7 begins ἀντὶ τούτου, not διὰ τοῦτο.
+This prevents a superficially matching but false alignment. OSHB marks both
+תתך and אמרך `HVqc/Sp2ms`; those labels describe the selected Hebrew edition,
+not independent evidence for its historical priority.
+
+Swete's apparatus at 28:6 reports **ἀνθ᾽ ὧν in A** in place of main-text
+ἐπειδή. At 35:10 it reports **διότι εἶπας in A**, another causal expression,
+against main-text διὰ τὸ εἰπεῖν σε. These are inspected apparatus reports,
+not newly inspected Alexandrinus photographs. The checked Greek tradition is
+therefore variable both at the comparator and at the target.
+
+P967's previously verified **ΔΙΑΤΟΥΤΟΕΙΠΕΝϹΟΙ** at 35:10 remains different:
+"therefore he said to you" changes both the connective and the person structure.
+Neither ἐπειδή nor causal διά explains that complete change by itself.
+Conversely, absence of the usual ἀντί cannot by itself establish Hebrew לכן,
+because other Greek causal constructions are available and actually printed
+at this target. A different Hebrew base, Greek-stage rewriting, and copying
+change remain competing explanations. This control does not choose their
+direction or refute the broader literary-edition hypothesis.
+
+### Early witness limit and next test
+
+The previously acquired Princeton canvas 21 and a new service crop of its lower
+region locate 28:6-7. Root and a second reader could not securely distinguish
+the causal connective in the abraded 28:6 line. No complete ἐπειδή or ἀνθ᾽ ὧν
+reading is accepted there. The clearer ἀντὶ τούτου context at 28:7 does not
+restore its preceding line. The crop is the same capture, not another witness;
+no generated reconstruction was used.
+
+The next discriminating work is a critical collation of these specific Greek
+forms and their proposed copying/revision histories, including the original
+Princeton transcription or modern apparatus at 28:6 and 35:10. Repeating the
+same abraded image or counting modern editions will not settle the issue.
+POB's **"Because you said"** and its exact declared Hebrew remain unchanged;
+this is not approval of the verse's other wording, notes or metadata.
+
+For reproduction, the receipt pins both machine-readable inputs, the 37
+selected references, Hebrew word IDs, manual Greek spans, printed-page
+locators and private image hashes. A separate reader enumerated and aligned
+the clauses; root reran the pinned check and verified the decisive printed
+controls. Selection and span checks establish reproducibility, not historical
+truth. Full source texts and images remain outside Git.
 
 ## Reproducibility, rights and review
 

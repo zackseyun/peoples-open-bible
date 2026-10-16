@@ -110,7 +110,7 @@ Field's 1875 volume II, [printed p.868](https://archive.org/details/origenhexapl
 | Locus | Printed reading or mark | Actual source and scope |
 |---|---|---|
 | 36:23 | Asterisked λέγει ἀδωναὶ κύριος | Note 17 lists witnesses with and without the asterisk. The marked unit is the divine-speech formula, not 23c–38. |
-| 36:27 and 30 | Asterisked αὐτά and ἔτι respectively | Notes 18 and 21 distinguish marked and unmarked witnesses. Each is a local addition with its own closing sign. |
+| 36:27 and 30 | Asterisked αὐτά and ἔτι respectively | Notes 18 and 21 distinguish marked and unmarked witnesses. Field presents each as a local marked span with a closing sign; these are editorially normalized delimiters, not independently verified facsimile endpoints. |
 | 36:30 | Σ. καὶ τὰς ὀπώρας | Note 20 cites *Syro-hex.*: a Syriac-mediated attribution, not newly inspected Greek manuscript ink. |
 | 36:31 | Σ. καὶ σμικρυνθήσεσθε ἐνώπιον αὐτῶν | Note 22 likewise cites *Syro-hex.* and cross-references 20:43. Its following pronoun observation is separate. |
 | 36:33,37 | ἀδωναὶ (alia exempl. κύριος) κύριος | The parenthetic alternative replaces the first term, producing κύριος κύριος, not single κύριος. Note 23 distinguishes the Syrohex margin at 33 from its text at 37. |
@@ -169,7 +169,7 @@ generation, new restored letter, new Hebrew selection or English change follows.
 
 The [apparatus receipt](../sources/textual_restoration/comparisons/coislin17_ezekiel36_apparatus.2026-10-16.v1.json)
 pins the eight primary inputs and the consultation/review scope. A separate
-reader checked Field's target page, confirming local sign boundaries and
+reader checked Field's target page, confirming its printed local sign boundaries and
 source distinctions; the acquisition reader and root both read the Montfaucon
 and PG page images. These checks are reading controls, not independent ancient
 witnesses. Raw scans remain outside Git. The prior image receipt remains an
@@ -205,7 +205,7 @@ not constitute a complete collation of chapters 36–39.
 | 36:30–31 | Separate Syriac marginal entries; near 30 a Greek marginal annotation reads ΤΑ ΓΕΝΗΜΑΤΑ across two lines | The locations are visible, but the full Syriac wording and named-version attribution at these two entries are not certified in this pass. |
 | 36:33 | Main title ܐܕܘܢܝ ܡܪܝܐ; marginal ܡܪܝܐ | Supports Field's distinction between the main title and the marginal substitute for its first term. |
 | 36:37 | Main title ܡܪܝܐ ܡܪܝܐ | Supports the doubled title reported in Field; not a single-title reading. |
-| 36:37 margin | Three dotted labels, read provisionally as ܐ / ܣ / ܬ; two-line phrase read as ܒܥܬܐ ܣܐܡ ܐܢܐ, approximately “a request/inquiry I place” | Consistent with Field's noun-plus-“place” rendering ζήτημα θήσομαι. The small-letter reading has moderate confidence. Expansion of the sigla into Aquila, Symmachus and Theodotion still relies on the edition's identification, not a newly checked manuscript abbreviation key. |
+| 36:37 margin | Three dotted labels, read provisionally as ܐ / ܣ / ܬ; two-line phrase read as ܒܥܬܐ ܣܐܡ ܐܢܐ, approximately “a request/inquiry I place” | Consistent with Field's noun-plus-“place” rendering ζήτημα θήσομαι. The small-letter reading has moderate confidence. Field's general abbreviation key, checked below, supports expansion into Aquila, Symmachus and Theodotion, but grouped labels do not by themselves prove identical Greek wording in all three. |
 
 These are selected normalized readings, without supplied vowels or restored
 letters, not a diplomatic edition. Root and a separate reader agree on the
@@ -247,3 +247,51 @@ pins eight primary/catalogue inputs and two derived crops, with their exact
 consultation scope. The hosting record states CC BY-NC-ND 3.0. Images and crops
 remain outside Git; no redistribution or relicensing is claimed. This update
 adds evidence and narrows the next task without changing translation records.
+
+## Field notation key and editorial conventions
+
+**The abbreviation-key lookup is now closed; exact manuscript sign endpoints
+remain unresolved.** Field's own introduction supplies both the key and limits
+on what his printed apparatus can establish. This changes our use of that
+apparatus, not the Hebrew or English of Ezekiel 36.
+
+In [volume I, printed xcv](https://archive.org/download/origenhexapla01unknuoft/origenhexapla01unknuoft.pdf#page=103),
+the Syriac initials ܐ, ܣ and ܬ are explicitly associated with Aquila,
+Symmachus and Theodotion. This supports expanding the provisionally read
+three labels at 36:37. It is a general editorial key, not a new manuscript
+colophon, and it cannot make a blurred letter certain.
+
+The same page warns that combined labels, including Α. Σ. Θ., often indicate
+agreement in sense while the wording belongs to only one translator,
+especially in longer readings. Field illustrates the distinction with several
+passages, including Ezekiel 23:34. His warning does not establish that this
+happened at 36:37 or identify the owner of its exact wording. It does rule out
+treating the grouped attribution alone as three independently verified,
+word-for-word Greek witnesses. The separately checked Theodoret attribution
+of εὑρεθήσομαι to Symmachus must remain a separate report; the general warning
+does not reconcile the two reports automatically.
+
+In [printed lv–lvii](https://archive.org/download/origenhexapla01unknuoft/origenhexapla01unknuoft.pdf#page=63),
+Field discusses the forms and transmission of critical signs. On lvii he
+explicitly describes his editorial normalization: instead of repeating the
+asterisk or obelus at successive line beginnings, he prints it at the start
+of a marked span, extending its force to the closing metobelus. He also adopts
+the Syriac wedge-shaped closing sign for his Greek edition. Note 23 records
+an earlier editorial omission of some closing signs in Job. Consequently,
+his printed sign count, shape and placement are not a diplomatic reproduction
+of a particular source manuscript.
+
+At Ezekiel 36:23,27,30 the printed spans therefore remain evidence of Field's
+presentation and source report, not independently established pairs of marks
+in the Ambrosian facsimile. A second native-crop check could not securely pair
+both endpoints at those loci. This is neither proof that signs are absent nor
+evidence of a whole-block addition. The longer passage's origin and P967's
+different form remain open.
+
+The next discriminating input is a target-specific critical transcription or
+adequate reproduction of the unresolved marks, plus the modern Greek
+apparatus—not another search for the abbreviation key. The
+[notation receipt](../sources/textual_restoration/comparisons/syrohex_notation.2026-10-16.v1.json)
+pins the volume and four rendered pages. Root read the complete pages and
+compared the existing native facsimile crop; no generated strokes, new ancient
+witness or restored Hebrew letter entered the evidence.

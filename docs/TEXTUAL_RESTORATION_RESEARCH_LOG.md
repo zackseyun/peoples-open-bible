@@ -12721,6 +12721,36 @@ PR260 then passed both exact-head workflow runs and merged as
 precomputed merge. That tree also matches this follow-up's research baseline,
 so its separate documentation changes do not include a biblical-text change.
 
+## October 16 — Syrohex translator key and normalized critical signs
+
+The preceding requested Nahum reread confirmed the current result but supplied
+no new evidence. This continuation returns to the lead Ezekiel comparison.
+Field I printed xcv supplies the precise Syriac abbreviation key, closing a
+named acquisition gap. Its adjacent warning about grouped translator labels
+also constrains how the 36:37 attribution may be counted: agreement in sense
+is not necessarily identical wording. Field's printed lv–lvii disclose
+normalization of critical signs, so his local printed spans cannot substitute
+for independently legible manuscript endpoints.
+
+The [updated comparison](COISLIN17_EZEKIEL36_WITNESS_2026-10-16.md#field-notation-key-and-editorial-conventions)
+records the complete-page visual reading, retains uncertainty about small
+facsimile letters and signs, and redirects the next task to target-specific
+transcription/reproduction and the modern apparatus. The documentation skill
+kept general editorial conventions separate from passage-specific claims.
+Hebrew, English, book order and canon are unchanged; no image generation or
+newly recovered ancient letters are claimed. The original receipts remain
+historical records; a separate notation receipt pins the new consultation.
+
+One independent reader passed the four-page reading and the saved claims,
+without treating that agreement as another ancient witness. Root verified the
+five input/render byte counts and hashes, JSON parsing, relative document-link
+targets and the diff check. Tracked changes are confined to this documentation;
+the new receipt is the only task addition. All translation/source files and the
+protected unrelated Genizah file remain unchanged against `2097d1a745`.
+No corpus-wide local test or historical-priority certification is claimed.
+PR261's exact-head checks were confirmed running, including its reader-note
+test step; they were not restarted. Publication remains subject to CI.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

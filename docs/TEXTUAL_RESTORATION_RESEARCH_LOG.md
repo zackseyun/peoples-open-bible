@@ -12127,6 +12127,19 @@ PR245's exact-head push and PR runs were confirmed live and left unchanged.
 The new application is committed on a successor branch; branch publication,
 main-branch merge and deployed-reader verification remain distinct milestones.
 
+## October 16 — requested Nahum article confirmation
+
+At the user's explicit request, root reread the complete Riestra article,
+including all notes and the five full-size figure/table views. The
+[confirmation](NAHUM_SOURCE_COMPARISON_2026-10-10.md#requested-full-article-confirmation-on-october-16)
+distinguishes the earlier applied English improvement from today's unchanged
+verdict. Hebrew historical priority remains unresolved; current English and
+disclosures remain appropriate. The current/main canonical hashes agree and
+all eight focused application tests pass. Only documentation changes in this
+transaction; unrelated release-comparison work and the Genizah file are left
+untouched. This repeated reading is not a new discovery, independent vote,
+newly recovered Hebrew, or canon-expansion result.
+
 ## October 16 — release-state evidence and repeated-placement hold
 
 The [Ezekiel release comparison](QUMRAN_RELEASE_COMPARISON_2026-10-16.md)

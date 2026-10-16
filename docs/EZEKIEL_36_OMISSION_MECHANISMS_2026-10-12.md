@@ -1262,6 +1262,102 @@ preserve witness dependencies and distinguish a thematic relationship from
 the direction or date of change. The missing modern apparatus remains a
 separate limitation. No Hebrew, English, reader note or recovered letter changes.
 
+## October 16: heart-spirit control and the circumcision counterexample
+
+**The pending thematic test is complete at this bounded scope: no coherent
+book-wide heart/spirit revision is established, and the photographs contradict
+extending the flesh omission from 44:7 to 44:9.** Retain the declared Hebrew
+and POB English. This corrects the project's assessment of a published claim;
+it is not a discovery of previously unknown manuscript wording.
+
+### What the thematic argument actually concludes
+
+Lilly's section 5.4.2, printed 254–262 / PDF 266–274, does not argue that
+the heart/spirit variants establish a coordinated book-wide revision around
+36:23c–38. Her opening and conclusion explicitly find no coherent distribution.
+She instead interprets the longer passage as a localized reworking of chapter
+11. That positive local argument remains possible: failure to find a wider
+pattern neither disproves an insertion nor establishes borrowing direction.
+Our previously queued test must not assume the very pattern her discussion
+rejects. The earlier [language controls](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md)
+remain the separate record for chapter 11/36 comparisons.
+
+Two attribution controls prevent treating the introductory totals as evidence:
+
+- The sixth item under the MT heading, 36:5bγ, is actually Hebrew manuscript
+  93's heart reading, distinguished from MT in her prose, note 521 and apparatus
+  at printed 89. The retained WLC ending is `למען מגרשה לבז`, not that heart
+  variant. This does not erase the earlier `כל לבב` in the same verse. The
+  manuscript-93 claim remains mediated through Lilly, not a newly read codex.
+- The introductory six-plus-four-plus-one count does not match the subsequent
+  subsection's two shared-reading cases, 21:12(7) and 29:16. Her fourth P967
+  item starts as 44:7 and later includes 44:9. We do not convert this uneven
+  grouping into a corrected statistical sample or a historical probability.
+
+These controls constrain an inference from selected variants; they do not
+invalidate the dissertation's entire literary argument. Nor does the word
+"heart" identify a Hebrew-stage change by itself: translation vocabulary,
+inner-Greek variation and local transmission must be tested separately.
+
+### Direct manuscript control: Ezekiel 44:7 and 44:9
+
+The [Cologne catalogue](https://papyri.uni-koeln.de/features/rahlfs) identifies
+P. Köln Theol. 11 verso as codex page 107, Ezekiel 43:26–44:7, and recto as
+page 108, 44:7–15. Root checked those catalogue rows and both complete official
+photographs; a separate source checker independently inspected the same pages.
+This is a targeted reading of legible text, not a full diplomatic transcription.
+
+| Target | P967 photograph | Consequence |
+|---|---|---|
+| 44:7 | Near the bottom of [page 107, PT11v](https://papyri.uni-koeln.de/stueck/DS_d1e78916/img/theol_03_13_15_16_8_16_9_40_42_a_b_c_43_u_ohne_inv_nr/orig/PT11v.jpg), `καρδια του γεινεϲθαι` follows the uncircumcised-heart wording continuously, without the flesh qualification. | A genuine shorter Greek reading, not a modern hole at the decisive transition. |
+| 44:9 | On [page 108, PT11r](https://papyri.uni-koeln.de/stueck/DS_d1e78916/img/theol_03_13_15_16_8_16_9_40_42_a_b_c_43_u_ohne_inv_nr/orig/PT11r.jpg), body lines 8–9 read `καρ/δια και απεριτμητοϲ ϲαρκι`; line 10 continues the sanctuary exclusion. | Bodily uncircumcision is explicitly retained in this manuscript's admission rule. The slash marks the line break, not missing letters. |
+
+The cited snippets insert word spaces but do not supply missing letters.
+Line numbers for page 108 count the first body line as 1. P967 is one witness
+at two adjacent loci, not two independent votes. The retained WLC has both
+heart and flesh qualifications in both verses; the publisher's selected
+[Rahlfs–Hanhart 2006 Greek](https://www.die-bibel.de/bibel/LXX/EZK.44) also has
+both. The selected edition must not be substituted for P967 at 44:7.
+
+Lilly printed 259 / PDF 271 extends the MT flesh plus to 44:9. That specific
+extension is contradicted by the photograph. Her appendix at printed 402 /
+PDF 414 records only `δια τουτο` for 44:9; its silence on circumcision is not
+our proof of retention. The manuscript itself supplies the positive evidence.
+
+Accordingly, P967's 44:7 minus cannot establish a consistent heart-only
+admission policy or a Hebrew-stage theological revision. Conversely, retention
+at 44:9 does not prove the origin of 44:7. Repeated circumcision wording makes
+copying omission a plausible alternative to deliberate editing, not a demonstrated
+cause. Greek copying, translation, editing and a differing Hebrew antecedent
+remain distinguishable possibilities. No Hebrew deletion is approved.
+
+### POB impact, provenance and next discriminating action
+
+Current 44:7 and 44:9 already include both qualifications. Their Hebrew,
+English and notes remain unchanged. A future 44:7 disclosure note should state
+both the local P967 omission and its retention at 44:9; a note claiming a
+heart-only temple rule would mislead. No such note is applied by this report.
+The next useful work is to establish the wider witness support and apparatus
+for the local 44:7 minus before assessing its history or drafting that note,
+not to tally this thematic sample again. This result changes no canon judgment.
+
+The full PDF remains the institutional Lilly input pinned in the preceding
+section. Root read complete printed 254–262 with notes and visually checked
+the decisive printed 254, 256, 259 and 262, plus complete apparatus pages 89
+and 402. The source checker independently verified printed 259/402 and both
+manuscript photographs. This is not a full dissertation or modern apparatus
+collation. The PDF skill prevented relying on corrupted Greek extraction.
+No generated fill, restored letter, new image enhancement or ImageGen evidence
+was used; all source images and the PDF remain outside Git.
+
+```text
+PT11v.jpg (148644 bytes)  ebfae5246f18f9e060820062dd1b08d4cf29f5dcfe1b6abb6b28ec51d63f8951
+PT11r.jpg (145896 bytes)  4e30a44f52ca4f85b01bfb808d3b2118ba28eeedb4c89ea019bd3eb3f7a639b7
+sources/ot/wlc/Ezek.xml  90bf8adfa66b2f6695c702263fe668755c99c6afc386202c12de4f704f5d4e46
+translation/ot/ezekiel/044/007.yaml  9b6f99250aa122497a577fb140c4efc24dd650bb53786774cfa65d1fdc600919
+translation/ot/ezekiel/044/009.yaml  9c991a19290e57435c21b35f686a1a33b631c29c0b12181d9273d06b38b6e0bf
+```
+
 ## Sahidic reading boundary and the shorter text argument
 
 The newly consulted Coptic evidence establishes a liturgical reading ending

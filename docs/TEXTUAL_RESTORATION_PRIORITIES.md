@@ -98,6 +98,15 @@ nor the edition chain establishes the passage's origin. Next seek the actual
 Syrohex target and modern apparatus; do not count these dependent editions as
 new independent witnesses or repeat their newly verified contents.
 
+**Syrohex target now located:** the
+[Ambrosian facsimile comparison](COISLIN17_EZEKIEL36_WITNESS_2026-10-16.md#ambrosian-syriac-facsimile-checked-on-october-16)
+locates the longer passage on folio 167r and verifies selected title/marginal
+features behind Field's report. Do not reacquire its passage location. Exact
+small sigla and critical-sign endpoints remain qualified; check the abbreviation
+conventions and adequate reproduction/critical transcription, alongside the
+still-unavailable modern Greek target apparatus. The historical photolithograph
+does not support a new restored letter or a Hebrew/English change.
+
 **October 16 adjacent-unit control:** the newly read
 [Ezekiel 35 study and witness comparison](EZEKIEL_35_VARIANT_EDITIONS_2026-10-16.md)
 adds directly checked P967 differences at 35:10 and 35:14-15. Its alleged

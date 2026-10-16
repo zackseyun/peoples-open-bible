@@ -12621,6 +12621,36 @@ the protected Genizah file retains its recorded hash. The independent reader
 verified the sigma correction and closed the scoped review. No full corpus
 test run was claimed for this documentation-and-evidence-only update.
 
+## October 16 — Ambrosian Syriac target and reproduction limits
+
+The intervening Nahum confirmation added no new evidence toward the broader
+goal. This continuation completes the pending Syrohex facsimile comparison:
+[C 313 inf., folio 167r](COISLIN17_EZEKIEL36_WITNESS_2026-10-16.md#ambrosian-syriac-facsimile-checked-on-october-16)
+contains the longer Ezekiel 36 passage and the local 36→37 transition. Selected
+title and marginal observations support Field's layout and noun-plus-place
+report at 36:37, with moderate confidence for the small-letter transcription.
+Exact version-siglum expansion and all critical-sign endpoints are not newly
+certified. Ceriani's own preface limits what this monochrome photolithograph
+can establish about colors, small marks and hands. No restored letter, Hebrew
+replacement or English change is accepted.
+
+Root and one independent reader inspected the target. Native-pixel crops
+resolved the title contrast better than the initial full-page display; no
+generative enhancement or supplied strokes were used. The documentation skill
+kept source access, observation, interpretation and unresolved tasks separate.
+The generic target-acquisition task is retired; the remaining work needs an
+abbreviation key, better sign evidence or the actual modern target apparatus,
+not another count of these dependent editions. Raw images remain outside Git.
+
+Validation passed for the eight primary/catalogue inputs and two crop hashes
+and byte counts, receipt JSON, 523 relative document links and the diff check.
+The independent reader passed the saved claims at the stated scope; catalogue,
+adjoining folios and preface were root checks, not part of that second reading.
+Against baseline `23105d0cb6a001298ce4d725fd2f5fc9c9d27840`, translation and OT
+source files are unchanged, as is the protected unrelated Genizah file. No
+corpus-wide local test or historical-priority certification is claimed for this
+documentation-and-evidence update. Exact-head CI remains the publication gate.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

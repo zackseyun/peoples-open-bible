@@ -12897,6 +12897,26 @@ precomputed merge. Local main was advanced, a normal push confirmed sync,
 and main was integrated into the Samuel branch without content conflicts.
 The pending Samuel PR265 remains the publication vehicle for this follow-up.
 
+## October 16 — Manuscript 845 acquired with preservation limits
+
+The interrupted continuation made evidence-access progress: both Vienna
+original scans completed download, and the open DCLP XML proved to contain
+metadata but no transcription. The [Samuel case record](SAMUEL_17_18_NARRATIVE_FORMS_2026-10-16.md#manuscript-845-images-and-preservation)
+now preserves the catalogue identity, manifest, image hashes and native viewing
+regions. A context-informed second reader checked the preservation assessment.
+The right-column 18:17–18 locator is plausible; the left-column damage prevents
+our inspection from verifying an uninterrupted omission junction at 18:9–12.
+No new transcription, recovered letter, Hebrew or English change is accepted.
+The next useful input is the published line reconstruction, not repeated image
+acquisition or model votes. Documentation guidance keeps the evidence boundary
+beside the claim; ImageGen supplied no evidence.
+
+PR265 passed both exact-head corpus-integrity checks and merged as
+`c4666d167deec7289988b0ec3a3e25c27b2330c8`. Its fetched tree
+`6ab783a23315cc7b40dacfaf71fabf7181d0fd65` and ordered parents matched the
+precomputed merge. This publishes the earlier Samuel comparison; the present
+image-access follow-up starts from that merged state.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

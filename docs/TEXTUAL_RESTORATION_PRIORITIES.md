@@ -58,6 +58,12 @@ accessible case. The follow-up now checks individual 18:1 readings, c/x's
 Merab marriage ending. The full 2020 study has been read as indexed text.
 Next verify manuscript 845's actual coverage at 18:10–11 and 18:17 before
 using its reported mixed pattern to adjudicate growth versus omission.
+Both Vienna scans are now acquired and the preservation check is
+[documented](SAMUEL_17_18_NARRATIVE_FORMS_2026-10-16.md#manuscript-845-images-and-preservation).
+The right-column locator is provisional; damage prevents this inspection from
+establishing the omission junction. Seek Hunger's transcription or a successor
+collation next. DCLP's public XML has no transcription; do not repeat its access
+attempts or another same-image preview as the next evidence step.
 Do not repeat the completed height decision, junctions or 18:1 comparison.
 
 **October 16 access boundary:** a bounded independent audit found no verified,

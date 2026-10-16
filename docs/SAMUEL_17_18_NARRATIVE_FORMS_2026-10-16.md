@@ -193,13 +193,82 @@ Greek and local Hebrew controls without claiming to have checked the cited
 Akkadian legal evidence. Root inspected the full BMT pages and enlarged entries;
 an independent reader confirmed the 18:1/2 distinctions and 18:26/27 grammar.
 
+## Manuscript 845 images and preservation
+
+The Austrian National Library's [catalogue record](https://data.onb.ac.at/rec/AC14451727)
+and [digitization](https://data.onb.ac.at/rep/10020234) now provide direct access
+to **Cod. Suppl. gr. 187**, rather than only a report about manuscript 845.
+The [4CARE catalogue](https://4care-skos.mf.no/4care-artefacts/848/) connects
+the Vienna fragment with Florence PL III 957 under TM 62037 / LDAB 3196 and
+Rahlfs–Fraenkel 845. Its own artefact number **848** is a different identifier.
+It assigns Vienna's hair side to 18:8–19 and flesh side to 18:19–25, with two
+columns and a fourth-century palaeographic date. These ranges describe the
+fragment's placement, not complete survival of every intervening verse.
+
+Root inspected both complete scans and two native-resolution regions of
+scan 2. Its right-column lower-middle remains plausibly locate **18:17–18**;
+this is a context-informed locator for collation, not an accepted diplomatic
+transcription or verification of the whole verses. The left column has major
+physical losses, a split and indistinct writing. This inspection did **not**
+establish an uninterrupted 18:9-to-12 junction. The reported omission of
+18:10–11 therefore remains a published claim, not our own verified omission.
+This does not refute the claim: a published line reconstruction may establish
+more than this visual inspection alone, but its reasoning must be consulted.
+
+One second reader inspected the same full scan and native regions and confirmed
+these limited locator/preservation judgments. Both readers knew the proposed
+passages. This was not a blinded or different-model-family transcription test;
+no missing letters, new readings or confidence scores were accepted. No POB
+Hebrew, English or note change follows.
+
+### Reusable image access
+
+The complete [IIIF manifest](https://api.onb.ac.at/iiif/presentation/v3/manifest/10020234)
+identifies two 2456 × 3917 canvases, attributed to the Austrian National Library.
+Both full JPEG transfers completed successfully. Earlier partial transfers
+were excluded. The full images are retained outside Git in the task's
+`research_sources/onb-samuel845/` directory; no source-image licence is inferred
+from public access or from the manifest's attribution statement.
+
+| Manifest canvas | Image service suffix under `https://api.onb.ac.at/iiif/image/v3/10020234/` | Bytes | SHA256 |
+| --- | --- | --- | --- |
+| 1 | `uk4nGb4kQHe3msbC/full/max/0/default.jpg` | 1,105,547 | `d881e855a4d4fced07b8103ad78e22407984e191e3c9cff6a3f2408878b60d3f` |
+| 2 | `uk4nGb4kQHkbJhjU/full/max/0/default.jpg` | 1,137,416 | `287d03c7fa0103e49c683370f9c40e81d38ed025d9d907d4ee5a20d6c1f44e44` |
+
+The server-rendered scan-2 regions use native pixel rectangles
+`620,750,700,1250` and `1250,740,650,1200` in place of `full`, retaining
+`max/0/default.jpg`. Their SHA256 values are respectively
+`356b4227fc9cd574d81296c7e8fe9610341fc3631c7be2c7ce4874bb8e6cac9d` and
+`9dced57cb14153261f13a873f34950f1dc91139524ec01d83badfbc3746cc91a`.
+They are viewing regions, not generative restorations or enhanced evidence.
+The displayed whole images were automatically reduced; these regions were
+inspected at native resolution. Viewer scan numbers are not claimed to be
+original folio numbers or an independently verified hair/flesh designation.
+
+### Missing edition rather than missing image access
+
+The complete public [DCLP XML](https://raw.githubusercontent.com/papyri/idp.data/master/DCLP/62/62037.xml)
+has an **empty Greek edition element**. It supplies bibliography and metadata,
+not the transcription needed here. Its citation identifies Hunger's
+*Anzeiger* 93 (1956), pp. 188–199. The web interface's bot challenge need not
+be revisited to retrieve a transcription from this record. The full Hunger
+edition was not acquired in the bounded search.
+
+An [institutional record](https://researchportal.helsinki.fi/en/activities/society-of-biblical-literature-annual-meeting-2014textual-critici/)
+also identifies Aejmelaeus's 2014 SBL paper specifically on manuscript 845's
+position in Samuel's Greek textual history. The research agent read that
+record; it contains no paper or transcription and supplies no additional vote
+for a reading. Locate Hunger's edition or an accessible successor collation
+before resolving the omission or using the mixed pattern to date growth stages.
+
 ## Next discriminating comparison
 
-The 18:1 test and full 2020 reading are now completed controls. Next seek
-direct verification of **Greek manuscript 845 at 18:10–11 and 18:17**. The
-2020 paper reports different presence/absence at these units (p. 569), but
-that report is not yet our own collation. Verify identity, actual coverage,
-damage and reading order before using it to test successive growth stages;
+The 18:1 test and full 2020 reading are completed controls. Manuscript 845's
+images and identity are now accessible, but its **18:10–11 omission and 18:17
+presence** still need edition-guided collation. The 2020 paper reports the
+mixed pattern (p. 569); do not promote the image locators above into a complete
+verification. Check the published line reconstruction and surviving boundaries
+before using the pattern to test successive growth stages;
 presence/absence alone must still be tested against omission as an alternative.
 Do not repeat the completed junctions or height review. This case concerns
 literary forms within Samuel and supplies no canon-expansion argument.

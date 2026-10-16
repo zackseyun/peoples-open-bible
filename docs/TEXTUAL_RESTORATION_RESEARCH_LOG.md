@@ -13020,6 +13020,30 @@ canonical application and its full-record/export checks remain pending. The
 PDF skill guided page inspection, and documentation guidance kept the numerical
 evidence and qualifications together. No ImageGen output supplied evidence.
 
+## October 16 — Kenan age variant disclosed to readers
+
+The preceding Nahum reread confirmed an existing result but supplied no new
+evidence. This continuation applies the [Genesis 5:12 age note](GENESIS_5_AGE_SYSTEMS_2026-10-16.md#reader-application)
+after one independent full-candidate review. The note contrasts the linked
+70/840 and 170/740 readings, both totaling 910, and names the consulted Greek
+and Samaritan editions. It does not turn arithmetic agreement into historical
+priority or count supplied Qumran numerals as surviving text.
+
+The source and main English are unchanged. The existing lexical note is
+preserved; five prior fields are archived without carrying their review
+approval forward. A frozen full-book comparison and the actual export agree:
+only 5:12 changes among 1,533 verses. The candidate, contract and application
+receipt distinguish proposed from applied status. Documentation guidance kept
+this application in the existing case report rather than adding another
+parallel narrative. Wider chapter disclosure, modern apparatus comparison
+and linked Genesis 11 work remain open. No generated image supplies evidence,
+and neither deployment nor comprehensive OT comparison is claimed.
+
+Four application tests and 47 existing comparison/export/Genesis 6:3 tests
+passed. The WLC and protected unrelated file hashes, documentation links,
+workflow parsing and diff check also passed. Publication uses the existing
+research branch and remains subject to the required CI checks.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

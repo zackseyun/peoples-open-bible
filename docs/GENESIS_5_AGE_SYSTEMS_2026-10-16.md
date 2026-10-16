@@ -3,11 +3,12 @@
 ## Decision
 
 Genesis 5 contains consequential differences in the ages assigned to its
-genealogical figures. POB accurately translates its declared Masoretic numbers,
-but its current notes do not disclose the competing age systems. A reader note
-is warranted; replacing the Hebrew numbers is not yet justified by this
-comparison. These are established published variants newly compared for POB,
-not newly deciphered manuscript text.
+genealogical figures. POB accurately translates its declared Masoretic numbers.
+A reader note at 5:12 now discloses the linked Kenan variant; replacing the
+Hebrew numbers is not yet justified by this comparison. The wider chapter
+patterns remain documented here rather than fully annotated in the reader.
+These are established published variants newly compared for POB, not newly
+deciphered manuscript text.
 
 The comparison treats each person's three numbers as one linked unit: age at
 the named son's birth, years afterward, and total years. It keeps the selected
@@ -123,18 +124,45 @@ Greek 170 at 5:12 while retaining WLC's 840 at 5:13 and 910 at 5:14 yields
 unit, not permission to silently repair an attested witness to fit an expected
 sum.
 
-A proposed note at 5:12 could disclose the well-bounded comparison:
+## Reader application
 
-> The Masoretic and Samaritan texts give Kenan 70 years before Mahalalel's
-> birth and 840 afterward (verse 13). The Greek text printed by
-> Rahlfs–Hanhart gives 170 and 740. Both total 910 years (verse 14).
+The applied note at 5:12 reads:
 
-This wording is a proposal, not an applied or independently approved reader
-record. It should be reviewed in its full verse context and exported with a
-marker on the age, preserving prior review history. A chapter-level summary
-can then disclose the wider pattern without adding repetitive notes at all
-27 loci. No canonical Hebrew, English, note or review status changes in this
-research packet.
+> The Masoretic text, followed here, gives Kenan 70 years before Mahalalel's
+> birth and 840 afterward (verse 13); the Greek text printed by Rahlfs–Hanhart
+> gives 170 and 740. Both total 910 years (verse 14). The Samaritan text
+> printed by Tal and Florentin agrees with the Masoretic numbers here.
+
+The note names the selected editions rather than implying unanimity among
+Greek or Samaritan manuscripts. It does not decide which age system is earlier.
+The new marker **b** follows “seventy years”; the existing lexical note **a**
+and its marker are unchanged. Hebrew, marker-free main English, lexical
+decisions and original draft provenance are unchanged. Five prior fields are
+archived exactly: status, revision pass, cross-check, main English and notes.
+The current record is draft/needs-review rather than inheriting approval of
+the older record.
+
+One independent delegated reader checked the exact complete candidate,
+verses 5:11–15, the comparison report and numerical record. The review passed
+the edition attribution, age relationships, note placement and archival
+boundaries. It is not a fresh manuscript collation or source-priority decision.
+The [contract](../sources/textual_restoration/comparisons/genesis5_12_age_reader_contract.2026-10-16.v1.json)
+pins the baseline and candidate; the [application receipt](../sources/textual_restoration/applications/genesis5_12_age_reader.2026-10-16.v1.json)
+records the review and actual export check. All 1,533 Genesis verses were
+exported: only 5:12 changed, its two notes are present, and the other 1,532
+units remain identical. The applied export matches the preflight digest.
+This verifies the export data, not deployment or mobile visual rendering.
+
+All four application tests pass, alongside 47 existing numerical, shared
+reader-export and Genesis 6:3 application tests. The WLC source and unrelated
+working file retain their hashes; documentation links, workflow parsing and
+the diff check pass. These checks validate implementation and preservation,
+not which ancient age system is original.
+
+The original numerical record remains a historical pre-application receipt;
+its no-application flags are not rewritten. A chapter-level reader summary
+remains a useful next step for disclosing the wider pattern without repeating
+notes at all 27 age loci.
 
 ## Verification and next evidence
 

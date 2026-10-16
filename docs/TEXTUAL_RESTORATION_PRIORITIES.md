@@ -248,6 +248,15 @@ next pass on the three known note anchors.
 
 ### Reserve Jeremiah literary forms and oracle order
 
+**October 16 conditional reopening completed:** a new Vatican image route
+enabled the [Marchalianus layout check](JEREMIAH_ORACLES_ORDER_COMPARISON_2026-10-06.md#marchalianus-manuscript-layout-checked-on-october-16).
+Pages 423–424 confirm the Elam junction and following central date; 452–453
+show a second central nations heading before the cup and separate marginal
+repayment material. The latter supports Swete's Qmg distinction, not a single
+flattened Greek text. This closes that image-acquisition task without deciding
+Hebrew priority or changing POB. Seek target hand/source identification or
+independent early attestation; do not repeat the now-inspected layouts.
+
 Which bridge, title and ordering differences support literary revision rather
 than translation or later rearrangement? Resolving that could change how a
 critical edition presents the book's competing forms. The

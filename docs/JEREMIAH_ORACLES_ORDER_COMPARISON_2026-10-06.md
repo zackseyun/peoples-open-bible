@@ -80,6 +80,60 @@ facts about the published encoding, not fresh ink or correction-date judgments.
 Do not join all XML word descendants into a single reading: correction branches
 would duplicate alternatives. Full NC-SA XML remains private.
 
+## Marchalianus manuscript layout checked on October 16
+
+The newly accessible Vatican images confirm the previously apparatus-mediated
+distinction between Marchalianus's central text and marginal repayment material.
+**POB's Hebrew, English and book order remain unchanged.** This is a check of
+published readings against manuscript layout, not newly restored wording or
+proof of the earliest Hebrew arrangement. The
+[image receipt](../sources/textual_restoration/comparisons/jeremiah_marchalianus.2026-10-16.v1.json)
+records exact URLs, private input hashes and consultation limits.
+
+| Manuscript page and image | Inspected feature | Consequence for comparison |
+| --- | --- | --- |
+| [423, image 0853](https://digi.vatlib.it/view/MSS_Vat.gr.2125/0853) | The central book clause is followed by a separate prophetic-nations heading and Elam designation. | Confirms the local 25:13-to-Elam junction in this witness, not merely in Swete's selected text. |
+| [424, image 0855](https://digi.vatlib.it/view/MSS_Vat.gr.2125/0855) | The central Elam oracle precedes the Zedekiah dating clause, then Egypt. Related dating wording also occurs in the top margin. | The central date is after Elam, unlike POB 49:34. Keep the marginal occurrence separate; its presence does not date a rearrangement. |
+| [452, image 0911](https://digi.vatlib.it/view/MSS_Vat.gr.2125/0911) | A prophetic-nations heading follows Moab in the lower central text; it includes πάντα, “all.” | This witness also has a nations heading before the cup. Its two headings cannot be represented as a simple relocation of one title. |
+| [453, image 0913](https://digi.vatlib.it/view/MSS_Vat.gr.2125/0913) | The central text opens with the cup command. Repayment material corresponding to MT 25:14 is separately written in the upper-right margin. | Supports Swete's Qmg attribution. Flattening margin and body would create an unqualified continuous text the image does not present. |
+
+Swete III, printed 297, was reacquired through its volume-specific scan and
+visually checked. Its apparatus assigns the title before the cup to A and Q,
+and the repayment material to Qmg. The inspected Q layout supports that
+distinction; A was not independently inspected here. The Q heading before Elam
+and the heading before the cup differ in wording, including the latter's
+explicit “all.” These observations qualify any shorthand claim about a single
+uniform Greek arrangement or a title merely moved from one location to another.
+
+The strongest historical limitation is that placement in a margin establishes
+a distinct textual location in this codex, not the date or source of those
+words. The repayment sentence could preserve older material or reflect later
+supplementation relative to this central text. These images alone do not choose
+between those histories, identify the annotator, or recover an exact Hebrew
+exemplar. Likewise, a duplicated title can result from transmission without
+settling which arrangement preceded the other. Retain the competing histories
+and the provisional POB arrangement.
+
+Root and one independent reader inspected all four complete target images and
+the printed apparatus page. The review passed the bounded placement claims,
+with the top-margin date explicitly distinguished from the central date. It
+was not a blinded diplomatic transcription, a full marginal collation or a
+new reading accepted under the restoration protocol. The Vatican manifest
+dates the manuscript “c. 700”; that is catalogue metadata, not our independent
+dating of either the central text or a marginal hand. Page numbers above are
+not folio numbers or IIIF canvas numbers.
+
+The [custodian's use notice](https://digi.vatlib.it/view/MSS_Vat.gr.2125)
+permits personal study and requires permission for image publication. Raw
+images remain outside Git; neither public access nor our receipt expands their
+rights. No generative image or enhancement supplied evidence.
+
+This closes the target-image acquisition task. The next useful evidence is an
+edition or palaeographical study that identifies the target marginal hands,
+their source labels and relationships, or genuinely independent early title
+attestation. Rechecking these same four layouts cannot establish historical
+priority. Modern passage-specific apparatus remains unconsulted here.
+
 ## Hebrew fragments do not settle collection placement
 
 The complete [published 4Q72b segment](https://lexicon.qumran-digital.org/transcriptions/4Q72b/2026-05-21/index.html?v=2026-05-21)

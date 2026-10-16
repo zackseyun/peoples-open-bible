@@ -12651,6 +12651,40 @@ source files are unchanged, as is the protected unrelated Genizah file. No
 corpus-wide local test or historical-priority certification is claimed for this
 documentation-and-evidence update. Exact-head CI remains the publication gate.
 
+## October 16 — Marchalianus Jeremiah headings and marginal repayment
+
+The preceding Nahum turn confirmed existing work but added no new evidence.
+The conditional Jeremiah reserve now has a genuine new input: the
+[Marchalianus target images](JEREMIAH_ORACLES_ORDER_COMPARISON_2026-10-06.md#marchalianus-manuscript-layout-checked-on-october-16).
+An acquisition agent located pages 423–424 and 452–453; root inspected all four
+and reacquired Swete III printed 297. A separate reader passed the bounded
+layout comparison, explicitly distinguishing the duplicated top-margin date
+from the central date after Elam. This is verification of published placement
+claims, not fresh decipherment or an independent vote for Hebrew priority.
+
+The evidence record now distinguishes two central nations headings in Q from
+the repayment block in its margin. A continuous transcription made by combining
+all these layers would misrepresent the witness. The modern apparatus and
+target hand/source identifications remain open; Hebrew, English and book order
+are unchanged. The documentation skill kept this evidentiary improvement
+separate from historical conclusions. Original images remain private under
+the custodian's study-use terms; ImageGen was not used as evidence.
+
+The receipt records a rejected generic Internet Archive page route, which
+returned Numbers rather than Jeremiah. The volume-specific JP2 supplied the
+correct printed page, verified visually. Existing source pins and the protected
+unrelated Genizah file were checked before editing. A bounded follow-up in the
+Marchalianus Isaiah commentary's scribes/correctors subsections did not supply
+Jeremiah-specific hand identification; its Isaiah assignments were not transferred.
+
+Validation passed all six primary input hashes/byte counts, the deterministic
+render, four current source/verse pins, JSON parsing, 523 relative file-link
+targets and the diff check. All translation and OT source files remain unchanged
+against `81bac35ecb8b79a914fa7a1a6902a398221cfe1a`; no corpus-wide local test
+or historical-priority certification is claimed. PR259's two exact-head CI runs
+were confirmed live and left running; publication of this successor remains
+separate from scholarly review and a pending run is not merge approval.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

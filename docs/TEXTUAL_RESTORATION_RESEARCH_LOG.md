@@ -11600,6 +11600,37 @@ canonical/source files and the protected Genizah bytes remain unchanged.
 All475 relative links in the four edited reports resolve. Tests validate the
 registry/update boundary, not the truth of a reconstruction or Hebrew priority.
 
+## October 15: test Ezekiel's proposed literary reuse against Hebrew
+
+The preceding Nahum response reconfirmed an already-applied result rather than
+adding textual evidence. Work resumed the unfinished Ezekiel comparison instead
+of repeating that review. McKenzie 2025 pp.69-73 supplies specific reuse claims;
+the [bounded Hebrew control](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#hebrew-reuse-controls-checked-on-october-15)
+now records reproducible inputs, results, an article-summary correction and
+the limits of the historical inference. Root and a separate source reader
+independently found only 36:24 and 37:21 combining the three verbal lemmas.
+
+The relevant contrast is one/new heart, not one/new spirit; both passages say
+new spirit. The person shifts in 11:19 are mixed, not uniformly third-person.
+These corrections improve the evidence record without dismissing the verified
+literary correspondences. They do not discriminate later expansion from loss
+of an already-integrated passage, establish borrowing direction, or authorize
+a Hebrew/English change. The PDF reading skill prompted visual checks of the
+complete relevant pages; no AI-generated image or new manuscript reading is
+involved. The full article and its cited literature are not claimed as read.
+
+PR230's exact head passed both its push and pull_request Corpus integrity runs.
+It was merged with a pinned head after checking the main/base and expected
+merge tree; returned tree and parents matched. PR229 and PR231 were still
+running their own checks at this inspection and were not restarted or merged.
+No frozen application receipts or unrelated Genizah data were changed.
+
+The bounded factual review found one lemma-normalization edge case, corrected
+without changing either hit. Root reran the documented recipe, checked both
+lemma-group spellings, resolved all 430 relative file-link targets in the two
+edited documents, and verified unchanged Ezekiel XML, POB 36:26-27 and protected
+Genizah bytes. No new source-priority approval is inferred from these checks.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

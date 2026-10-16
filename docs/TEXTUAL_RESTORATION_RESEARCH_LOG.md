@@ -13075,6 +13075,36 @@ research documentation and the method; no biblical source or translation record
 changes. The documentation guidance kept the source limits beside the claims
 they qualify. No generated image supplied evidence.
 
+## October 16 — Cainan genealogy disclosed to Genesis readers
+
+The previous goal turn made progress by committing the Genesis 11 source
+comparison. This continuation applies the [11:12 reader note](GENESIS_11_AGE_SYSTEMS_2026-10-16.md#reader-application):
+the selected Greek text places Cainan between Arpachshad and Shelah, whereas
+the declared WLC and specified Samaritan edition connect them directly, with
+different Arpachshad ages. The note identifies its editions and Greek verse
+number rather than implying unanimity or a recovered Hebrew generation.
+
+An independent delegated reader passed the exact full candidate and frozen
+contract, including Genesis 11:10–15 context, source report, numerical record,
+archival boundaries and reproduced complete preflight export. The review was
+context-aware, not blinded or a new external collation. Root then applied the
+unchanged candidate and verified the actual complete export: one changed verse,
+1,532 unchanged units and all four target notes present. The existing number-order
+note marker also moves to the number phrase; all three old note bodies remain.
+
+The Hebrew, marker-free English, lexical data and original draft provenance are
+unchanged. Five prior fields are archived without carrying approval forward.
+The original research receipt remains intact, and a separate application receipt
+binds the reviewed candidate and actual export. All 41 shared reader-footnote
+and existing Kenan application tests passed. The protected unrelated Genizah
+file retains its hash. Documentation guidance kept research and application
+status together in the existing case report. No source-priority result, canon
+change, deployment or generated-image evidence is claimed.
+
+Final validation passed the frozen candidate/contract and applied receipt
+bindings, WLC and protected-file hashes, 524 relative link targets, workflow
+YAML parsing and diff checks. Only Genesis 11:12 changed among biblical records.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

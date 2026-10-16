@@ -11,9 +11,10 @@ texts. These patterns cannot be represented by a single Hebrew-versus-Greek
 contrast or the uniform hundred-year adjustment seen in part of Genesis 5.
 
 POB's numbers and direct Arpachshad-to-Shelah link accurately represent its
-declared WLC source. They remain provisionally unchanged. Reader disclosure
-of the additional generation and competing ages is warranted; this comparison
-does not yet establish which complete textual history best explains the others.
+declared WLC source. They remain provisionally unchanged. An applied reader
+note now discloses the additional generation and competing Arpachshad ages;
+this comparison does not yet establish which complete textual history best
+explains the others.
 These are established published readings, not newly deciphered letters.
 
 ## Compared ages
@@ -139,10 +140,11 @@ because it agrees with a selected Greek text.
 The present comparison establishes consequential differences: an additional
 generation, altered age relationships, explicit-versus-computed lifetimes and
 a different Terah lifespan. POB's current Genesis 11 notes largely discuss
-wording and name forms rather than these differences. A qualified note at
-11:12–13 and a linked chapter summary are warranted, but not yet applied.
+wording and name forms rather than these differences. The note now applied at
+11:12 discloses the Cainan structure and Arpachshad ages. A wider chapter
+summary remains useful for the other age relationships and Terah's lifespan.
 
-A concrete note for 11:12 is:
+The applied note at 11:12 reads:
 
 > The Masoretic text, followed here, makes Arpachshad father Shelah at 35.
 > The Greek text printed by Rahlfs–Hanhart instead gives Arpachshad 135 at
@@ -152,10 +154,8 @@ A concrete note for 11:12 is:
 > subsequent years and other ages in this genealogy.
 
 This note describes the structural difference without treating a figure's
-absence as a zero age. Its application still requires comparison of the full
-verse record, preservation of existing notes and review history, and a check
-of the reader export. A link should be added only when the comparison has a
-verified reader-accessible destination.
+absence as a zero age. The application below preserves the three existing
+note bodies and review history. No unverified reader link is inserted.
 
 The strongest reopening argument is the agreement of the selected Samaritan
 and Greek begetting ages, combined with the Cainan parallel in Jubilees. The
@@ -168,11 +168,43 @@ more coherent or more numerous witnesses cannot choose the original system.
 Next, consult the modern critical apparatus at the Cainan clauses and the
 Arpachshad/Nahor numerals, and establish the earliest physical attestation of
 Jubilees 8:1–5. Those checks can discriminate histories more effectively than
-another arithmetic tally. A reader application should preserve the entire
-linked unit, archive prior review data and verify the exported notes. No Hebrew,
-English, reader note, canonical boundary or generated-image evidence changes
-in this research packet. ImageGen cannot recover an unattested numeral or
+another arithmetic tally. The original numerical record remains the historical
+research receipt with its no-application flags; the separate application below
+records the later reader change. Hebrew, marker-free main English and canonical
+boundaries are unchanged. ImageGen cannot recover an unattested numeral or
 generation by drawing plausible missing letters.
+
+## Reader application
+
+The [complete candidate](../sources/textual_restoration/candidates/genesis11_12_genealogy_reader.2026-10-16.v1.json)
+adds note **d** after the complete genealogy clause. Existing note **a**, which
+explains the Hebrew number order, moves from “Shelah” to “thirty-five years.”
+Notes **b** and **c** keep their anchors; all three previous note bodies,
+the source, main English, lexical decisions and original draft provenance
+remain unchanged. Five prior fields are archived exactly: status, revision
+pass, cross-check, main English and notes. Their historical scores do not
+certify the new record, which is draft/needs-review.
+
+One independent delegated reader checked the exact candidate and frozen
+[contract](../sources/textual_restoration/comparisons/genesis11_12_genealogy_reader_contract.2026-10-16.v1.json)
+against the baseline, Genesis 11:10–15, source report and numerical record.
+The edition attribution, genealogical links, ages, marker positions and archival
+boundaries passed. The reader also reproduced the complete preflight export;
+this was an application consistency review, not another external collation or
+a historical-priority decision.
+
+The [application receipt](../sources/textual_restoration/applications/genesis11_12_genealogy_reader.2026-10-16.v1.json)
+records root's subsequent actual-record and actual-export verification. All
+50 Genesis chapters and 1,533 verses exported. Only 11:12 changed; its four
+notes appear, and the other 1,532 units remain identical. The actual export
+matches the frozen preflight digest. The canonical record matches the reviewed
+candidate and passes the verse schema and note audit. Deployment and visual
+reader rendering are not established by this data-export check.
+
+All 41 existing shared reader-footnote and Kenan application tests passed.
+No additional arithmetic test or model preference vote was needed for this
+factual disclosure. The WLC source and protected unrelated working file retain
+their hashes; final documentation and diff validation are recorded in the log.
 
 ## Verification
 
@@ -192,5 +224,5 @@ pages supply the textual evidence.
 
 All four existing Genesis 5 numerical-comparison tests passed. Validation also
 checked 520 relative link targets across the four affected documents, JSON and
-workflow YAML parsing, and the diff. No biblical record changed against the
-pinned baseline.
+workflow YAML parsing, and the diff. At that research stage no biblical record
+changed against the pinned baseline; the later reader application is recorded above.

@@ -1,5 +1,12 @@
 # Ezekiel 36 language controls and Greek witness distinctions
 
+**October 15 evidence update:** the [original Princeton images](EZEKIEL_36_LONGER_FORM_EVIDENCE_2026-10-12.md#the-later-joins-and-the-3929-noun)
+now directly verify P967's `ΘΥΜΟΝ` at 39:29, canvas 42 line 39, as well as
+the 39→37 join. Earlier statements below that its target noun was uninspected
+describe those historical acquisition passes. This resolves that access gap,
+not the Hebrew-priority question; source, English and the frozen application
+record remain unchanged.
+
 Two Hebrew features cited for literary expansion reproduce in POB's declared
 WLC edition. The reported Greek Adonai feature is witness-specific: Thackeray
 describes Vaticanus, not the main text of every Greek edition. These findings

@@ -11558,6 +11558,34 @@ are preserved, and the canonical passage, WLC source and protected Genizah
 bytes are unchanged. This closes the targeted Berlin check, not the broader
 P967 research question.
 
+### 2026-10-15 — Actual Princeton P967 transitions and target noun
+
+The preceding turn was progress: it committed and pushed the Berlin manuscript
+check as PR230. At this turn's live check, both exact-head Corpus integrity
+events remained in progress for PR229 and PR230; neither head was amended or
+restarted. Publication is still gated on their own successful runs.
+
+Princeton's ordinary browser record now loaded and supplied a public official
+manifest, overcoming the earlier image-access limit without a CAPTCHA action
+or gate bypass. The [target-image report](EZEKIEL_36_LONGER_FORM_EVIDENCE_2026-10-12.md#papyrus-967-the-actual-36-to-38-join-acquired-on-october-15)
+records actual same-line36→38,38→39 and39→37 joins and the39:29 noun `ΘΥΜΟΝ`.
+These are project-level primary-source confirmations of known variants, not
+newly discovered readings. They rule out modern missing leaves at the joins,
+but do not decide shorter Hebrew versus Greek editing or ancestral copying loss.
+
+Two bounded image readers crosschecked the locators; the noun follow-up was
+not blind. No generated restoration, full-codex collation, historical-priority
+approval or canon conclusion is claimed. Existing P967 registry data are
+updated rather than counted as a new witness. No POB source, English or note
+changes; historical frozen application receipts remain untouched. Next work
+must test transmission explanations against the now-observed endpoints.
+
+All12 edition/registry checks pass after two schema-format corrections. The
+registry remains49 records with only P967 changed; all48 other rows,40 checked
+canonical/source files and the protected Genizah bytes remain unchanged.
+All475 relative links in the four edited reports resolve. Tests validate the
+registry/update boundary, not the truth of a reconstruction or Hebrew priority.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

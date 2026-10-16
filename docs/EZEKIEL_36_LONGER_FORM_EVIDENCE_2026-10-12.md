@@ -243,3 +243,139 @@ source remain byte-identical to baseline `be5a55bbc51949cf4664b3fc2c2098ecb0929a
 the protected unrelated Genizah file also retains its recorded hash. These
 checks validate this limited documentation/registry update, not historical
 priority or a new translation.
+
+## Papyrus 967: the actual 36 to 38 join acquired on October 15
+
+**The reported transition is now directly checked in the original manuscript
+image.** Princeton's [Scheide M 97 record](https://dpul.princeton.edu/scheide/catalog/c247f1340)
+loaded in the ordinary browser and exposed its
+[official 42-canvas manifest](https://figgy.princeton.edu/concern/scanned_resources/864c2b15-4caa-4950-ac4f-3d3335bbff46/manifest).
+The web-fetch route still presented connection verification, but the browser
+loaded without completing a CAPTCHA or bypassing a gate. The manifest and
+image services then accepted ordinary public HTTPS requests. This supersedes
+the earlier access limit for these Princeton images, not for the restricted
+1938 edition or every dispersed leaf of the codex.
+
+The record identifies 21 leaves/42 pages, Greek, catalogue date 200–299 and
+the shelfmark Scheide M 97. The date is reported physical-copy dating, not
+the date of its Hebrew source or each reading. Manifest labels 1–42 are viewer
+image numbers, not biblical chapters or ancient page numbers.
+
+### Direct image observation
+
+Root read the full 2000-pixel exports of canvases 32, 36, 37, 40 and 42. Canvas 32
+provided a chapter-34 shepherd-language navigation control; canvas 36 ends in
+the chapter-36 holy-name context. The decisive
+[canvas 37 image](https://iiif-cloud.princeton.edu/iiif/2/b1%2F3d%2F96%2Fb13d964ea6fb429baeb07b2d8038b1f3%2Fintermediate_file/full/2000,/0/default.jpg)
+has modern mount label `Scheide dept. 7972 #19`. Its first written row is
+counted as line 1; the top numeral is not used to establish the passage.
+
+| Canvas 37 locator | Visible content, with editorial word divisions | Consequence |
+|---|---|---|
+| Lines 3–4 | Sanctifying the great name, including `ΑΓΙΑϹΩ ΤΟ ΟΝΟΜΑ ΜΟΥ ΤΟ ΜΕΓΑ` across the line break | Identifies the 36:23 context, not an isolated generic recognition formula |
+| Line 8, left | `ΕΓΩ ΕΙΜΙ Κ̅Ϲ̅` | The retained clause reaches “I am the Lord” |
+| Line 8, right, into line 9 | A partly damaged opening, then the word-of-the-Lord formula; line 9 includes `ΛΟΓΟϹ Κ̅Υ̅ ΠΡΟϹ ΜΕ ΛΕΓΩΝ` | The new oracle begins within the same physical line as the retained recognition clause |
+| Lines 10–12 | Face-setting command toward Gog and the land of Magog | Identifies the ensuing oracle as 38:1–2, not 37:1 |
+
+Root also inspected an official-service region export at native coordinates
+`1800,1000,3000,2500`, output width 1800, rotation 0. This is deterministic
+cropping/resampling, not generated restoration or a second exposure. Small
+holes and faint letters remain uncertain, including the connective in line 8;
+no complete diplomatic transcription or supplied-letter recovery is claimed.
+An independent reader of the full image identified the same context and
+within-line-8 transition before seeing root's locators. This is a bounded
+crosscheck, not a calibrated blinded transcription benchmark.
+
+### Exact comparison and judgment
+
+The [Rahlfs–Hanhart Greek comparison text](https://www.die-bibel.de/bibel/LXX/EZK.36)
+continues after the Lord clause with sanctification in the addressees before
+the nations' eyes, then 36:24–38. Canvas 37 instead moves to 38:1. Thus the
+physical endpoint is now specified by words, avoiding ambiguous `23b`/`23c`
+labels. Chapter 37 is not between these units on this page. The separate
+canvas-42 observation below checks its later placement; the first join alone
+would not establish that.
+
+Both sides of the join are written on the same surviving line. **A modern
+missing leaf or missing block of lines does not explain this immediate
+transition.** The image confirms an ancient shorter sequence at this locus,
+not merely a modern edition's omission convention. It does not distinguish
+a shorter Hebrew literary form from Greek-stage editing or copying loss in
+an ancestor. The specific loss models already examined concern an ancestral
+exemplar, so this observation does not refute them.
+
+This strengthens the project's primary-source basis without discovering an
+unknown variant. Retain POB's declared longer Hebrew form provisionally;
+**no Hebrew, English, note, chapter-order or canon change is made.** Mas1d's
+longer-form Hebrew and Berlin's later Ge'ez evidence retain their distinct
+roles. Next compare the actual apparatus and versional relationships against
+these fixed endpoints; do not reacquire this join as another witness vote.
+
+### Source bytes and rights
+
+The manifest declares `http://rightsstatements.org/vocab/NKC/1.0/` (No Known
+Copyright), not a newly granted POB license. Images and manifest remain in
+private temporary storage; no third-party image or full transcription enters
+Git. The existing `papyrus-967` registry record is updated, not duplicated.
+
+| Private asset | SHA256 |
+|---|---|
+| manifest.json | `986fda5031b498ef791596f8eece63fa322b3b9aa78255befa09aaf0539d33f3` |
+| canvas-32.jpg | `039419c0205f3315c840bb6e3647ab530d965fe391e848baec49dae644f8a9dc` |
+| canvas-36.jpg | `38af6e527f724222318df25596513f13d3611ef9834e7692b7caeaba8abe055f` |
+| canvas-37.jpg | `c7a1142ae9a237c25dcbdca7de03b16f835e9bb5b2b908650470a3fcfe70cca1` |
+| canvas-37-top.jpg | `65ea50538bd8972c50c83043d148d8aacd1e39c0baac89ec8e23087964eb20d5` |
+| canvas-40.jpg | `8c19997ad8fcf2b9235a087b4d46a0532348fa1644701fbf375a27f981f92d9f` |
+| agent-41.jpg | `72e5f5e863028b38af9b68b1ff76c7da02cf71a2af27a710d1c95d14790d9ee5` |
+| agent-42.jpg | `59e37e807a9903a0cfdee68b079abdb8e257f1268e5eaf02e18ca2b8922a2457` |
+| canvas-42-lower.jpg | `25949fc9cc7ba3bd90089fd632c40a36190e156094cbbb7dcca1bcf7c74959c1` |
+
+### The later joins and the 39:29 noun
+
+The same official manifest provides two further decisive images:
+
+- [Canvas 40](https://iiif-cloud.princeton.edu/iiif/2/61%2Fc7%2Fd5%2F61c7d5348282422d861713d5eb6a514d%2Fintermediate_file/full/2000,/0/default.jpg)
+  has the magnifying/sanctifying/nations-recognition conclusion of 38:23,
+  followed within line 38 by the son-of-man address and command to prophesy
+  against Gog of 39:1. The actual sequence, not a chapter numeral, identifies it.
+- [Canvas 42](https://iiif-cloud.princeton.edu/iiif/2/71%2F07%2Fa3%2F7107a3a893d94b959f1cd195019f980f%2Fintermediate_file/full/2000,/0/default.jpg)
+  contains the end of 39:29 at line 41, then begins the hand-of-the-Lord
+  opening of 37:1 within that same line. Lines 42–45 proceed to the bone-filled
+  plain, and 50–53 to the son-of-man/bones question of 37:3. Both sides of this
+  join also occupy surviving writing on one page, not a modern physical gap.
+
+Together these three targeted joins directly verify the observed
+**36→38→39→37** sequence in this witness. This is not a complete collation of
+all intervening verses or the rest of chapter 37. The full supplied 42-canvas
+sequence was not downloaded or read. The second reader inspected canvases
+41–42 and independently identified the 39→37 join at line 41; root separately
+checked canvas 42 and a native-coordinate region `1800,6650,3200,2700`, width
+1800, rotation 0. Canvas 41 was a reader navigation control, not newly read by root.
+
+At **canvas 42, line 39**, root reads `ΤΟΝ ΘΥΜΟΝ ΜΟΥ` in the pouring-out
+clause of 39:29. This is now a directly inspected early manuscript noun, not
+merely an attribution from a modern Greek edition. The target has no physical
+hole supplying an invented noun. Word spacing is editorial; no complete
+verse transcription, correction-state study or multispectral recovery is claimed.
+The existing [Spirit/wrath comparison](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md)
+remains the framework for interpretation: this attests the Greek wording but
+does not uniquely recover the Hebrew behind it or require changing POB's
+retained `רוּחִי`/“my Spirit.” The published reader note still describes its
+consulted editions; neither that note nor its historical frozen audit is
+silently rewritten by this evidence update.
+
+The first reader also checked the canvas-40 join and passed the limited
+canvas-37/registry account, without certifying canvas 42 or historical priority.
+The second reader confirmed all five letters of `ΘΥΜΟΝ`, noting the lighter
+omicron. That noun follow-up was prompted with root's proposed reading and is
+explicitly not blind. Agreement is a crosscheck, not an additional ancient
+witness, calibrated recovery result or proof of original Hebrew meaning.
+
+Validation: all 12 existing edition/registry checks pass after correcting two
+registry-format errors (HTTPS rights link and the `images` enum); the schema
+was not weakened. All 48 non-P967 registry records are unchanged and the total
+remains 49. All 38 chapter-36 canonical files, 39:29 and the WLC Ezekiel XML
+match baseline `547ded257dd39d0c1e5bebe4eb0df3af29141e8f`; the protected
+Genizah hash remains unchanged. All 475 relative documentation targets in the
+four changed reports resolve. No full-corpus, complete-transcription or
+historical-priority certification follows from these checks.

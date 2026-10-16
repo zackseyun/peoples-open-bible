@@ -65,6 +65,17 @@ Next acquire the exact original Greek transition, its physical continuity and
 clause endpoints, then test the proposed omission mechanism and versional
 relationships against the original arguments. Institutional P967 holdings and
 ordinary accessible editions are realistic routes, not guaranteed access.
+
+**October 15 transition milestone completed:** the
+[Princeton target images](EZEKIEL_36_LONGER_FORM_EVIDENCE_2026-10-12.md#papyrus-967-the-actual-36-to-38-join-acquired-on-october-15)
+now directly show 36→38 at canvas 37 line 8, 38→39 at canvas 40 line 38,
+and 39→37 at canvas 42 line 41. Canvas 42 line 39 also has the Greek wrath
+noun. Same-line continuity excludes a modern missing leaf at these joins,
+not copying loss in an ancestor. The next substantive step is the actual
+critical apparatus and versional/ancestral-loss arguments against these fixed
+endpoints, not further retries for these images. The previous acquisition
+instruction above is retained as history and is no longer the next task.
+
 The Scheide Archive copy is restricted and the papyri.info route gated; do not
 repeat or bypass them. A discriminating result would constrain whether the
 minus is physically continuous, explain a concrete loss/reordering mechanism,

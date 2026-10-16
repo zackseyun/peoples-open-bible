@@ -25,6 +25,105 @@ transition pixels nor an ancestral page-loss reconstruction. Our inference:
 general literalness makes expansion serious, but does not exclude local loss
 or a later Greek editor; literary forms should not be flattened into a composite.
 
+## Hebrew reuse controls checked on October 15
+
+**Result: specific literary correspondences are verified; their direction and
+the cause of P967's shorter form are not.** Tracy J. McKenzie's
+[2025 article](https://reference-global.com/article/10.2478/perc-2025-0004),
+*Composition, Order, and Motivation in Ezekiel's Two Editions*, pp.69-73,
+argues that 36:24-27 integrates material from chapters 11 and 37. Its argument
+for 37:21 preceding 36:24 appeals to the taking of sticks and the nations/one
+nation context. It also contrasts the obedience formulations in 11:20 and
+36:27. These are literary arguments, not additional manuscript witnesses.
+
+The following controls come directly from our vendored WLC/OSHB
+[Ezekiel XML](../sources/ot/wlc/Ezek.xml), SHA256
+`90bf8adfa66b2f6695c702263fe668755c99c6afc386202c12de4f704f5d4e46`.
+Root and a separate read-only agent independently checked the verb combination
+and the 11:19/36:26 differences. Root also read the eight complete verse-word
+sequences at 11:17,19,20; 36:24,26,27; 37:14,21. This is a control on one
+digital Hebrew edition, not a new collation of ancient Hebrew witnesses.
+
+| Control | Observed source wording | Consequence |
+|---|---|---|
+| Three-verb combination | Only 36:24 and 37:21 contain verbal lemmas 3947, 6908 and 935, in that order: take, gather, bring. | Confirms a specific correspondence, stronger than a general shared restoration theme. The first verb is sequential-perfect 1cs in 36:24 but an active participle in 37:21; this is not an identical three-word quotation. |
+| Heart and spirit | 11:19 has לב אחד; 36:26 has לב חדש. Both have רוח חדשה. | Correct the article's p.71 opening contrast of new/one *spirit*: the difference concerns the heart. Later on that page its own rendering correctly distinguishes them. This local slip does not invalidate the larger literary argument. |
+| Persons and object marker | 11:19 has recipients "them," interior "your," flesh "their," then recipients "them." 36:26 uses "you/your" at all four positions and adds את before the stone heart. | Do not describe 11:19 as uniformly third-person or the passages as exact duplicates. Both have divine giving/removing and a heart of flesh. |
+| Gift of the spirit | 36:27 begins with the object רוחי before אתן and has בקרבכם; 37:14 has ונתתי רוחי בכם. 11:19 already has בקרבכם. | The proposed combination has actual lexical support. Word order and shared phrasing alone do not date the combination. |
+| Obedience | 11:20 begins למען; 36:27 has ועשיתי את אשר before walking in the statutes. | Preserve the purpose/causing distinction in interpretation. It does not independently prove a later theological stage. |
+
+### Reproducible boundary and historical inference
+
+The search covers all 1,273 verse elements, selecting only direct child `w`
+elements: nested qere/note readings are excluded. Lemmas are matched by exact
+slash-separated numeric component, allowing a trailing lemma-group letter;
+morphology must contain a verbal component. This excludes nominal לקח at
+17:5 and the proper name לבוא at 47:15,47:20,48:1. The annotated verbal counts
+are 64,16,186 respectively; only the two reported verses contain all three.
+Morphology is modern annotation, not independent historical evidence.
+
+From the repository root, this reproduces the decisive two-hit result:
+
+```python
+import re
+import xml.etree.ElementTree as E
+
+ns = {"o": "http://www.bibletechnologies.net/2003/OSIS/namespace"}
+verses = E.parse("sources/ot/wlc/Ezek.xml").findall(".//o:verse", ns)
+wanted = {"3947", "6908", "935"}
+assert len(verses) == 1273
+for verse in verses:
+    selected = []
+    for word in verse.findall("o:w", ns):
+        lemmas = {re.sub(r"\s*[a-z]$", "", x.strip())
+                  for x in word.get("lemma", "").split("/")}
+        verbal = any(x.lstrip("HA").startswith("V")
+                     for x in word.get("morph", "").split("/"))
+        if verbal and lemmas & wanted:
+            selected.extend(sorted(lemmas & wanted))
+    if wanted <= set(selected):
+        print(verse.get("osisID"), selected)
+# Ezek.36.24 ['3947', '6908', '935']
+# Ezek.37.21 ['3947', '6908', '935']
+```
+
+Our inference is narrower than historical priority: the longer passage is
+integrated with language elsewhere in Ezekiel. A later compiler could combine
+those passages, but an already-composed, similarly integrated passage could
+also be lost in a Greek ancestor. Shared authorship or a common formulation
+also requires consideration before assigning a unique borrowing direction.
+The short-form manuscript's existence and the longer form's internal
+coherence are therefore not independent proofs that expansion caused the
+difference. Nor does a literary relationship itself date the chapter-order
+change. The [now-observed P967 joins](EZEKIEL_36_LONGER_FORM_EVIDENCE_2026-10-12.md#papyrus-967-the-actual-36-to-38-join-acquired-on-october-15)
+confirm the surviving sequence, not the proposed ancestral event.
+
+POB 36:26-27 already retains new heart, new spirit, my Spirit and divine causing
+of obedience. This comparison warrants no source, English or note change and
+does not certify the remaining verse wording. Retire this exact lexical search
+on these bytes. Further work needs a discriminating translation-technique or
+critical-apparatus comparison at the disputed passage, not another tally of
+these same parallels. No generated image supplies evidence.
+
+### Consultation record
+
+The [publisher PDF](https://reference-global.com/2/v2/download/article/10.2478/perc-2025-0004.pdf)
+has SHA256 `559bcdb86e0ed28720b8a25f2db7a40ff382769f470b3aefb940b353a55928a1`.
+Printed pp.63-74 were read through extraction and pp.69-73 were inspected as
+complete rendered pages, including notes and Hebrew. This is not a claim to
+have read the complete article or independently consulted its cited works.
+The publisher states CC BY-NC-ND 3.0; the PDF and renders remain outside Git,
+with no relicensing or reproduction of the article. The independent Hebrew
+check is a factual control, not a vote certifying the historical reconstruction.
+
+The bounded documentation review caught a normalization edge case: a space
+before a lemma-group letter was not stripped by the first recipe. The corrected
+recipe handles both `3947a` and `3947 a`; rerunning it preserves the two-hit
+result. All 430 relative file-link targets in this report and the research log
+resolve, and `git diff --check` passes. The Ezekiel XML, both checked POB
+36:26-27 records and protected Genizah file retain their input bytes. These
+checks validate the documentation and unchanged-text boundary, not priority.
+
 ## Copying loss counterargument
 
 Spottorno's [original publisher PDF](https://emerita.revistas.csic.es/index.php/emerita/article/download/780/822/842),

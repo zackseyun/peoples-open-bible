@@ -12685,6 +12685,31 @@ or historical-priority certification is claimed. PR259's two exact-head CI runs
 were confirmed live and left running; publication of this successor remains
 separate from scholarly review and a pending run is not merge approval.
 
+## October 16 — Nahum article decision clarification
+
+The requested comparison reconfirmed the existing outcome after reading the
+publisher HTML article's six sections, 63 notes, acknowledgments and complete
+bibliography. Figure 1, Figure 2 and Table 1 were also reopened visually;
+the existing full-asset review remains the record for Tables 2 and 3. Browser
+access succeeded where ordinary web fetching returned 403. No PDF acquisition,
+fresh decipherment or additional independent scholarly support is claimed.
+
+The [decision summary](NAHUM_SOURCE_COMPARISON_2026-10-10.md#nahum-1-5-decision-in-brief)
+now explicitly distinguishes Riestra's possible earlier שׁאה from her evidence
+for an ancient MT-like interpretation. It also identifies “heaves” as existing
+translation language, not a novel discovery. Neither the retained Hebrew nor
+the already applied English changes. All eight focused Nahum application tests
+passed with the repository virtual environment; the system Python attempt
+could not import PyYAML. This is a documentation clarification, not another
+source-priority vote. Further research should seek discriminating evidence
+rather than repeat this article review.
+
+Publication follow-up: the branch's append-only log conflict with main was
+resolved by retaining both research entries below. Eight focused Nahum tests
+passed again in 1.440 seconds; the source, verse and protected Genizah hashes
+match the recorded values. This follow-up used the existing full-reading record:
+the publisher browser timed out, so no fresh complete reading is claimed.
+
 ## October 16 — Jeremiah boundary package and Babylon ending
 
 The preceding Nahum confirmation supplied no new evidence. This continuation
@@ -12793,6 +12818,36 @@ merged as `bf97933a0ddcfc62de601c48f9b70b4cacdfeced`. Its tree
 precomputed merge. Local main was advanced and pushed. Integrating that main
 into the causal-pattern branch preserved both research-log entries; the
 remaining conflict was documentation ordering, not biblical text or evidence.
+
+## October 16 — Scheide edition access route closed
+
+The WorldCat ebook record's “Access free” link resolves to the already known
+[Internet Archive item](https://archive.org/details/johnhscheidebibl0000unse),
+not another open copy. Its current metadata marks the item restricted and
+the PDF/OCR files private; Open Library offers a preview. A bounded acquisition
+check found no lawful full edition. No transcription of Ezekiel 28:6 or 35:10
+was obtained and no textual judgment changes. The next input is authorized
+library access or a targeted scan of Johnson, Gehman and Kase's 1938 edition
+(OCLC 639832), not another retry of this WorldCat/Archive route.
+
+## October 16 — Evidence access boundary and publication
+
+A bounded independent audit of the current three-question portfolio found no
+verified, high-value unperformed test using its presently accessible evidence.
+Root checked the active queue and completed controls against that assessment.
+This is a scoped efficiency judgment, not proof that all OT research is exhausted.
+The next priority input is the actual Göttingen Ezekiel apparatus for 36:23–38
+and the minus/order discussion with its source and sigla conventions. Exact
+target pages are not yet verified. The shorter/longer form and transmission
+questions remain open; repeating completed lexical counts, themes, joins or
+page-capacity tests will not supply the missing witness relationships.
+
+PR264 passed both exact-head checks and merged as
+`b813004e44a35427d89707589b92e63389dedb2a`. Its fetched tree
+`a70ad8a91338136a2956855a74f8a572f6d04afd` and ordered parents matched the
+precomputed merge; local main was advanced and a normal push confirmed sync.
+The Nahum branch integration preserves both log histories and all causal-pattern
+evidence. This is publication progress, not an additional textual discovery.
 
 ## Later About-page summary — proposed, not published
 

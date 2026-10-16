@@ -46,6 +46,18 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 16 access boundary:** a bounded independent audit found no verified,
+high-value unperformed test within this portfolio using its presently accessible
+evidence. This does not exhaust the wider OT program. Prioritize actual access
+to the Göttingen Ezekiel apparatus at 36:23–38 and the minus/order discussion,
+including its sigla/source conventions; exact target pages remain unverified.
+The causal-pattern inventory below is completed, not a task to repeat. The
+WorldCat Scheide ebook link resolves to the same restricted Archive item and
+is not a new route. Finish pending publication work; reopen historical
+adjudication on a genuinely new source input or a specific discriminating
+test, not another same-evidence review. See the
+[access audit](TEXTUAL_RESTORATION_RESEARCH_LOG.md#october-16--evidence-access-boundary-and-publication).
+
 **October 15 bounded reopening completed:** newly available source material
 permitted the [Ezekiel 28 apparatus check](EZEKIEL_28_CHERUB_COMPARISON_2026-10-10.md#october-15-greek-apparatus-now-inspected).
 Swete records Theodotion-/asterisk-labelled cherub modifiers and a separately

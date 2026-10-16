@@ -227,6 +227,106 @@ Frozen comparison/application receipts are not rewritten. One bounded
 independent source check agreed on the target readings, labels and inference
 limits; it was not an English preference vote or certification of originality.
 
+## October 15: Papyrus 967 checked at the actual target
+
+**An early Greek witness now directly supports accompaniment and cherub-led
+removal, but also contains an extra expression after the cherub in verse 16.**
+This is a newly completed POB image comparison of already published readings,
+not newly discovered letters. It strengthens the passage-level attestation
+record without uniquely determining the underlying Hebrew.
+
+The previously acquired [Princeton manifest](https://figgy.princeton.edu/concern/scanned_resources/864c2b15-4caa-4950-ac4f-3d3335bbff46/manifest)
+provides the exact target at **canvas 22**. Viewer numbers are not biblical
+chapters or ancient page numbers. The [Scheide M 97 record](https://dpul.princeton.edu/scheide/catalog/c247f1340)
+dates the physical copy to 200–299; that is catalogue dating, not the date of
+its Hebrew exemplar. The ordinary image service accepted public requests.
+The catalogue web-fetch route still showed connection verification; no gate
+was bypassed. No new catalogue-date assessment is claimed.
+
+Root inspected complete exports of canvases 20–22: 20's chapter-27 trade
+language and 21's transition into the Tyre oracle located the target.
+The [full canvas 22 image](https://iiif-cloud.princeton.edu/iiif/2/5d%2F9d%2Fd9%2F5d9dd962db1640c597e4203a144643e2%2Fintermediate_file/full/2400,/0/default.jpg)
+and a deterministic service crop were then inspected by root and one
+independent source checker. Written lines are counted from the first text
+row, excluding the numeral above it. Spaces below are editorial; `|` marks
+a physical line break, not a supplied letter.
+
+| Target | Visible sequence | What it establishes |
+|---|---|---|
+| 14, line 25 | `ϹΥ ΜΕΤΑ ΤΟΥ ΧΕΡΟΥΒ · ΕΘΗΚΑ` | Accompaniment and immediate transition to placing; no anointing/covering expression intervenes here. This local absence is not a physical lacuna. |
+| 16, lines 35–36 | `ΚΑ | ΤΗΓΑΓΕΝ ϹΕ` | The compound bringing-down verb, rather than `ΚΑΙ ΗΓΑΓΕΝ`. The discriminating letters are visible despite nearby damage. |
+| 16, lines 36–37 | `ΧΕΡΟΥΒ ΤΟ | ϹΕΧ ΕΚ` | The extra `ΤΟϹΕΧ` sequence follows the cherub and precedes the departure phrase. The letters are not supplied across a hole. Their interpretation/word division is a separate question. |
+
+The central vertical hole affects other material, including part of the article
+before the cherub in 16. Do not turn these clear local readings into a claim
+that the whole verse or clause is undamaged. The region export uses the same
+exposure, not an independent capture or generated reconstruction:
+`pct:25,40,55,29/2400,/0/default.jpg`, from an image service reporting native
+dimensions 6698 × 11030. No ImageGen output or inferred missing letter is used.
+
+### What the scholarly explanation adds, and what it does not
+
+Hector M. Patmore's [2008 Durham thesis](https://etheses.dur.ac.uk/2381/1/2381_391.pdf),
+*Adam, Satan, and the King of Tyre*, discusses the target at printed
+103, 109–112. Root read those complete pages visually, with nearby argument
+on 102, 104–106 also visually inspected; this is not a full-thesis review.
+The PDF skill governed the page/footnote inspection. The independent source
+checker located the lawful institutional copy and checked the decisive pages.
+
+Patmore reports the bringing-down verb at 109 and the additional expression
+at 111. He connects the latter with the Hebrew covering term, quoting Gehman's
+explanation in the Scheide edition's *Observationes Criticae*, p.106
+(footnote 192). That underlying page has not been independently acquired.
+The quotation and its later discussion are not two independent witnesses.
+Patmore's mention of verse 13 in the modifier discussion appears inconsistent
+with the verse-14 context; it is not imported as a new verse-13 reading.
+
+The image confirms the reported Greek sequence. It does **not** by itself
+establish whether it should be divided as an article plus a transliterated
+expression, treated as a name, or explained through another transmission
+history. A connection with הסכך is plausible evidence against assuming
+that every early Greek ancestor lacked corresponding material in 16. It is
+not surviving Hebrew spelling, nor does it prove the absence of those Hebrew
+modifiers behind 14. A translator or reviser need not treat the two contexts
+identically. Patmore's proposed Hebrew reconstruction and claims about
+translation motives remain arguments, not observations from the image.
+
+### Updated judgment and next discriminating work
+
+The older Greek witness makes the accompaniment/removal alternative concrete
+at both target units. Its extra verse-16 expression prevents a simple
+short-Greek-versus-full-Hebrew model. Together with the separate Marchalianus
+apparatus evidence above, it requires feature-level comparison rather than
+counting whole versions as votes. The papyrus and the edition/author reports
+of that same papyrus are one witness, not multiple independent attestations.
+
+**No canonical Hebrew, main English or reader-note change is made.** Current
+notes describe the selected Greek edition, not an exhaustive transcription of
+967. Historical Hebrew priority remains unresolved: early Greek attestation
+is stronger evidence for the age of an interpretation, not automatic proof of
+its Hebrew source or originality. No canon or named-Satan/Adam conclusion
+follows. The next substantive input is Gehman's actual p.106 and the modern
+apparatus/translation-behavior argument distinguishing transliteration,
+supplementation and Greek-stage change, or an independently checked Syriac
+control. Rephotographing these readable letters is not the next task.
+
+### Acquisition pins
+
+Input commit: `f823db992c0e82afc80e1b1b0a11f6aa01fbdb6b`. The two canonical
+record hashes remain those recorded in the preceding apparatus section.
+The existing manifest rehashes to
+`986fda5031b498ef791596f8eece63fa322b3b9aa78255befa09aaf0539d33f3`.
+The newly acquired full canvas 22 JPEG hashes to
+`ce738b49023b97365bd64d97b76cf69d2d239824319cd4c3fe6f73ec535c6564`;
+the region JPEG to
+`a73b62fbb196f1c79a7623a0878c96d55a378064817f263ccf997d1a544444d7`.
+The 264-page, 10,078,577-byte thesis PDF hashes to
+`9e321fccaead5974a5f21b33ed72d6842fca281e60114ad323044f636d1c75b3`.
+The manifest's No Known Copyright statement is not a new license grant;
+the thesis is not relicensed as POB content. All images/PDFs remain outside Git.
+The independent check confirmed line counts and the targeted visible letters,
+not a complete diplomatic transcription, new hand dating or Hebrew priority.
+
 ## Acquisition and audit limits
 
 The [Swete archive volume](https://archive.org/details/theoldtestamenti03swetuoft)

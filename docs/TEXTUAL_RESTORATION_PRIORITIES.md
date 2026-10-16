@@ -105,6 +105,16 @@ allusion's attested wording from modern verse labels and any inferred date of
 the complete Greek passage. Acquire its source-language text before using it
 to constrain transmission history; it is not yet adjudicated witness evidence.
 
+**October 15 early-citation checkpoint completed:** the
+[Latin editions of Cyprian and Irenaeus](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#early-quotation-controls-checked-on-october-15)
+now replace that unverified lead. Cyprian explicitly quotes the connected
+cleansing and first new-heart/spirit clauses; Irenaeus has a shorter indirect
+reference, verified here only in Latin. Neither attests the whole longer
+passage or decides Hebrew priority. These are now completed controls, not
+reasons to repeat the same acquisition. Retain HOLD and reopen this branch
+only with discriminating wording or apparatus; additional generic heart/spirit
+references are low yield. No source or English revision follows.
+
 The Scheide Archive copy is restricted and the papyri.info route gated; do not
 repeat or bypass them. A discriminating result would constrain whether the
 minus is physically continuous, explain a concrete loss/reordering mechanism,

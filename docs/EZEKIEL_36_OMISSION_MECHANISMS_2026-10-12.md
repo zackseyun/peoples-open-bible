@@ -563,6 +563,121 @@ unchanged private-source and protected Genizah hashes, and the three-document
 change boundary. `git diff --check` passes. No corpus tests are newly claimed
 for this documentation-only result; exact-head publication checks remain separate.
 
+## Early quotation controls checked on October 15
+
+**Result: selected renewal clauses circulated in early Latin Christianity;
+this does not decide the original Hebrew form or attest the whole longer
+passage.** A quotation must be mapped by its actual words, not expanded to
+the coverage implied by an editor's modern verse reference.
+
+### Cyprian: an explicit, connected quotation
+
+Cyprian's Letter to Magnus, **Epistula 69.12** in Hartel's numbering,
+explicitly introduces scripture speaking through Ezekiel the prophet. The
+[original edition scan](https://archive.org/details/corpusscriptor203cypruoft),
+*CSEL* 3.2 (1871), printed p.761 lines 12-15, then quotes sprinkling clean
+water, cleansing from all impurities and idols, and giving a new heart and
+spirit. Its conclusion is:
+
+> et dabo uobis cor nouum, et spiritum nouum dabo in uobis.
+
+That connected sequence identifies **36:25 and the first part of 36:26**,
+more specifically than a heart/spirit allusion alone. The text immediately
+switches to Numbers. It does **not** quote the removal of the stone heart,
+the heart of flesh, verse 27, or the entire 36:23b-38 passage. The Ezekiel
+chapter/verse numbers in the footnote are Hartel's editorial identification,
+not Cyprian's own citation form. His context is baptism administered to sick
+people by sprinkling/pouring, not a continuous copy of Ezekiel.
+
+The printed main text reads **mundamini**; its apparatus gives
+**mundabimini CPv**. Other variants and corrections also occur. In particular,
+line 15 records correction of holy-spirit wording to new-spirit wording in C.
+Do not silently normalize the main text or treat the critical edition as
+unanimous manuscript testimony. Printed p.760's apparatus also records differing
+letter divisions: the work/section reference here follows Hartel.
+
+The [abstract of Shuve's dating study](https://academic.oup.com/jts/article-abstract/61/2/627/1699877)
+reports the traditional 254 date and Burns's proposed placement after spring
+256; Shuve defends the traditional date. Only the abstract was consulted,
+not the full study. **Mid-third-century composition** is sufficient for this
+control; it is not the date of the surviving manuscripts or of every variant
+in Hartel's apparatus. No independent manuscript stemma or interpolation audit
+of the letter has been performed here.
+
+### Irenaeus: a shorter indirect reference
+
+The earlier English lead, *Against Heresies* IV.33.14, is now checked in
+[Harvey's 1857 edition, volume II](https://archive.org/details/sanctiirenaeili00irengoog),
+printed pp.267-269. Harvey numbers the relevant paragraph IV.LV.5; the margin
+on p.269 cross-references Massuet IV.XXXIII.14. The actual wording on p.268 is:
+
+> et cor novum, et spiritum novum dare hominibus
+
+This reports giving people a new heart and spirit in indirect speech. A
+new-covenant/Horeb clause precedes it, and Isaiah's new-things/desert-water
+imagery follows. There is no accompanying sprinkling/cleansing sequence,
+stone/flesh-heart clause, or verse 27 quotation in this unit. Harvey's margin
+identifies Ezekiel 36:26, but that label is not additional ancient wording.
+
+The new-heart/new-spirit pair also occurs in 18:31; the divine-giving formulation
+fits 36:26 more closely than 18:31's command to make them. The related divine
+promise at 11:19 has one heart in the retained Hebrew and a new spirit. Root
+checked all three complete Hebrew verses in the vendored XML. This is a
+comparison with our retained Hebrew edition, not a reconstruction of Irenaeus's
+Greek Bible or a collation of the ancient variants at 11:19.
+
+Harvey prints the target in Latin without a corresponding Greek fragment.
+Greek material in adjacent notes does not supply these words. Record **Greek
+wording not verified**, not an exhaustive claim that no Greek survives
+anywhere. The ancient work's composition date must not be substituted for
+the date of its surviving Latin-version manuscript evidence. This is useful
+reception evidence, less passage-specific than Cyprian's connected quotation;
+it does not independently establish all of 36:23b-38.
+
+### What this adds to the comparison
+
+The previously checked Masada Hebrew witness already prevents treating the
+renewal material as merely a late Christian invention. Cyprian adds a different
+kind of evidence: an explicit Latin Christian use of the connected cleansing
+and renewal clauses. It therefore prevents treating the shorter Old Latin
+witness discussed below as the only early Latin reception of this material.
+It does not establish that Cyprian's entire biblical exemplar had the present
+longer ending, its exact Greek translation profile, or the same chapter order.
+Nor is his quotation automatically genealogically independent of every Greek
+ancestor shared with other witnesses.
+
+For the immediate POB question, the current Hebrew and English at 36:25-26
+already contain the quoted sequence. No amendment follows. Keep the longer
+Hebrew text provisionally and historical priority on HOLD. This is a
+published-source comparison, not recovered manuscript ink, a newly discovered
+quotation, or evidence about adding another book to the canon. ImageGen has
+no evidentiary role.
+
+### Consultation and reproducibility
+
+Root and the acquisition agent each visually read complete printed pp.760-762
+(PDF pages 774-776), including the apparatus and quotation boundaries. Neither
+claims a whole-volume reading. The privately retained 862-page PDF has SHA256
+`28135c86a97c5946c522940cb0aabe5b236477fb6769cc63127e5a0cfcae8ea0`.
+The [pinned Leipzig transcription](https://raw.githubusercontent.com/OpenGreekAndLatin/csel-dev/6ad1353efaaea568024565a82cd13a253f0e53e0/data/stoa0104a/stoa012/stoa0104a.stoa012.opp-lat1.xml)
+was a navigation/control source, not a substitute for the printed page. Its
+header credits Hartel's edition, University of Leipzig (2014), and CC BY-SA
+4.0; SHA256
+`3ebc01f65faf2b8373310ddf843b4f645835fcabbe06ae81eb8d1d15ed982357`.
+No full edition, transcription or page image is imported into Git.
+
+For Irenaeus, root and the same source agent each visually read complete
+printed pp.267-269 (PDF pages 278-280), including margins and notes. The
+582-page Michigan/Google/Internet Archive PDF has SHA256
+`ede42f3fa6757bc7a51b5fbaec7dcd22493987ce820a607e7b3935b7cdbde10f`.
+This is not a full-volume reading or a newly verified Greek quotation.
+The WLC input hash remains the one recorded above. The two early references
+have now been checked; repeated citation of them is not a next research task.
+Reopen their textual-history implications only with a discriminating source,
+such as an actual earlier Greek quotation with relevant wording or the target
+modern critical apparatus. Do not grow an undirected patristic census merely
+to accumulate agreement.
+
 ## What changes in the source judgment
 
 Neither an older long-form copy nor a long minus decides literary precedence.

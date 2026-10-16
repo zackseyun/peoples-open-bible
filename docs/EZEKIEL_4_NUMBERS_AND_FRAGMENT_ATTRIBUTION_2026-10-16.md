@@ -1,7 +1,10 @@
 # Ezekiel 4 numbers and the attribution of 11Q30 fragment 17
 
-**Retain POB's 390 days provisionally; prepare a scoped reader note about the
-Greek difference.** Swete's main Greek text reads 190 days in Ezekiel 4:5 and
+**Retain POB's 390 days provisionally; disclose the Greek difference.** The
+[subsequent reader application](EZEKIEL_4_READER_APPLICATION_2026-10-16.md)
+adds qualified numerical notes at 4:4, 4:5 and 4:9 and corrects anchors across
+4:4–9. The source-research findings below remain unchanged.
+Swete's main Greek text reads 190 days in Ezekiel 4:5 and
 4:9. The proposed identification of 11Q30 fragment 17 with 11Q4 supplies an
 edition-history lead, not independently verified numeral evidence. Neither
 number's historical priority is established by this comparison.
@@ -77,23 +80,24 @@ context; a single numeral cannot settle which textual form came first.
 
 ## Consequence for POB and next decision
 
-The current [Ezekiel 4:5 record](../translation/ot/ezekiel/004/005.yaml) retains
-the WLC Hebrew and translates 390 days. Its one footnote concerns the meaning
+At this research pass's baseline, the [Ezekiel 4:5 record](../translation/ot/ezekiel/004/005.yaml) retained
+the WLC Hebrew and translated 390 days. Its one footnote concerned the meaning
 of iniquity, not the numerical difference. The existing model-agreement score
-does not constitute review of this manuscript question.
+did not constitute review of this manuscript question.
 
-A possible reader note, pending the normal application checks, is:
+The initial reader-note proposal was:
 
 > The Greek text represented by Codex Vaticanus in Swete's edition reads
 > “one hundred and ninety days.” The Hebrew text has “three hundred and
 > ninety days.”
 
-This note would disclose a verified edition difference without deciding
-historical priority or implying that 11Q30 preserves either numeral. A scoped
-application should check 4:4–9, place the number note at “ninety days,” move
+This note proposed disclosing a verified edition difference without deciding
+historical priority or implying that 11Q30 preserves either numeral. The scoped
+application was to check 4:4–9, place the number note at “ninety days,” move
 the existing lexical note from “days” to its actual iniquity phrase, archive
-prior review metadata, and verify the actual reader export. The full source
-and main English remain unchanged in this research pass. No ImageGen output
+prior review metadata, and verify the actual reader export. These checks and
+the resulting notes are now recorded in the linked application above. The full source
+and main English remain unchanged. No ImageGen output
 or canon claim supplies evidence.
 
 ## Evidence and review record

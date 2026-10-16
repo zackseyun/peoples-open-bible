@@ -12423,6 +12423,51 @@ relative links in the four affected reports resolve. The protected Genizah
 file and canonical Ezekiel 4:5 hash are unchanged. These are scoped checks,
 not completion of the OT witness census or proof of reconstructed Hebrew.
 
+## October 16 — Ezekiel 4 numerical disclosures and anchor application
+
+The preceding Nahum confirmation added no new research evidence. This turn
+therefore resumed the actionable Ezekiel 4 comparison rather than repeating
+the article reading. The context check expanded the 4:5 proposal to disclose
+Swete's 150 days at 4:4 and 190 at both 4:5 and 4:9. It also found misplaced
+semantic anchors in all six records from 4:4 through 4:9.
+
+The [application report](EZEKIEL_4_READER_APPLICATION_2026-10-16.md) records
+three new named-edition notes and seven corrected existing note anchors.
+The exact Hebrew and marker-free English remain unchanged. No numerical
+priority, physical fragment join, new restoration or canon inference follows.
+The complete Puech/DJD reconstruction remains the next discriminating
+source target; repeating a same-evidence model vote would not resolve it.
+
+Root froze the six full records against baseline
+`277aad88b04dd5afb1a3604a9ec06d3a9d1b346f`, with five archived fields per
+record, source/method pins and an actual-export preflight. An initial test
+assumed optional theological metadata existed at 4:9; it was corrected to
+check both field presence and exact value, preserving the absent field rather
+than fabricating one. All three preflight tests then passed.
+
+One independent factual/application review passed the frozen bundle, verified
+all 1,273 baseline records were still unchanged, and reproduced the full
+48-chapter export. Root applied the exact reviewed bytes and separately
+verified the actual export: six changed units, 1,267 unchanged, SHA256
+`089b07f76c5609e4a18e8fbe5894b6186c15b5c3c0787cb71834205ece52ce1f`.
+The [receipt](../sources/textual_restoration/applications/ezekiel4_4_9_reader.2026-10-16.v1.json)
+preserves the actual review separately from application verification.
+The documentation skill kept this scoped decision and its evidence in Git;
+no cloud Page or About integration was created.
+
+During this work, PR253's own push and pull-request checks completed
+successfully. It merged as `a4139b453d3edcba424ef9d765320ba89acc3d6c`;
+the fetched merge tree and ordered parents matched the precomputed result.
+Local main was advanced without resetting this worktree, and the normal main
+push confirmed it was up to date. The new reader application still needs its
+own publication checks; another branch's green checks cannot approve it.
+
+The final scoped suite passed all 74 tests in 195.986 seconds, including the
+four new tests and earlier Ezekiel/eleven-compound/reader-footnote controls.
+All 517 relative file links in the four updated reports resolve; diff checks
+pass and the unrelated Genizah file's SHA256 remains
+`130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50`.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

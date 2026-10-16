@@ -100,9 +100,11 @@ The larger 36-39 historical question below remains open.
 now identifies DJD XXIII p. 442 and Puech 2019 p. 229 as the precise sources.
 The physical placement and reconstructed-number argument still need the full
 pages and plates. Swete's main Greek 190 days versus current Hebrew 390 is
-directly verified and supports a scoped 4:5 reader-note candidate independently
-of that unresolved reconstruction. Apply only after the normal note/anchor,
-history and actual-export checks; do not infer earliest-number priority.
+directly verified. The [scoped 4:4–9 reader application](EZEKIEL_4_READER_APPLICATION_2026-10-16.md)
+now discloses 150 at 4:4 and 190 versus 390 at 4:5 and 4:9, with corrected
+semantic anchors, archived history and a verified complete export. Neither
+these notes nor the independent factual review establishes earliest-number
+priority; the remaining source task is the full reconstruction evidence.
 
 Does the reported36:23b/c–38 minus and36→38→39→37 order represent a shorter
 Hebrew literary form, Greek-stage editing, or copying loss/rearrangement? The

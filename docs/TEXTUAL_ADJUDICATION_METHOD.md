@@ -1,6 +1,6 @@
 # POB source-wording adjudication method
 
-Version: 2.0.11 · Revised: 2026-10-16 (independent constraints for reconstruction geometry)
+Version: 2.0.12 · Revised: 2026-10-16 (linked numerical comparisons)
 
 This is the controlling method for source selection and English impact. The
 [approach review](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md) records the
@@ -394,6 +394,17 @@ Ask which candidate best explains the others with the fewest unsupported
 steps. Neither **shorter** nor **more difficult** automatically means earlier.
 Do not invent an ancient scribe's motive. Grammar and context can rule against
 an implausible proposal, but should not manufacture unattested letters.
+
+For numerical passages, compare linked quantities within each identified
+witness or selected edition before choosing isolated readings. In a genealogy,
+keep the age at the named child's birth, subsequent years and total together;
+distinguish original hands, corrections and editorial selections. Calculate
+the consequences, but do not silently repair an attested inconsistency or
+treat a balanced sum as proof of antiquity. The [Genesis 5 comparison](GENESIS_5_AGE_SYSTEMS_2026-10-16.md)
+shows paired hundred-year differences, distinct Greek Methuselah profiles and
+a Qumran age wholly supplied by the editor. Reconstructed numbers cannot break
+a tie between internally coherent systems. Report chronological sums as
+conditional textual calculations, with their genealogical assumptions stated.
 
 ### 5. Apply the modest chronological preference
 

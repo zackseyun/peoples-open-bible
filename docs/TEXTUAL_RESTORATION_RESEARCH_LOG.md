@@ -13002,6 +13002,24 @@ The pending combined regression run completed successfully: 54 tests in
 `tests.test_samuel1_24_source_proposal` and `tests.test_reader_footnote_export`.
 This closes application validation without repeating the source adjudication.
 
+## October 16 — Genesis 5 linked age comparison
+
+The preceding turn verified that PR267 checks were still running but added no
+new textual evidence. The [Genesis 5 comparison](GENESIS_5_AGE_SYSTEMS_2026-10-16.md)
+now records nine linked age triads across WLC, a specified Samaritan edition
+and two selected Greek editions. All 36 triads balance, but they imply different
+conditional chronologies. The Greek Methuselah readings are kept separate;
+4Q2's supplied age is excluded from surviving-numeral support. An independent
+reader confirmed the Samaritan numbers and edition notation. No newly
+deciphered text or source-priority result is claimed.
+
+The method now requires linked numerical comparisons. POB's age translations
+agree with its declared source, but consequential alternative numbers merit
+reader disclosure. A concrete Kenan note is proposed in the case report;
+canonical application and its full-record/export checks remain pending. The
+PDF skill guided page inspection, and documentation guidance kept the numerical
+evidence and qualifications together. No ImageGen output supplied evidence.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

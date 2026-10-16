@@ -12475,6 +12475,39 @@ the exact tree content. One additional immutable-transaction test passed in
 the complete export at that commit. The two validation runs cover 75 distinct
 tests. CI explicitly fetches both the baseline and application commits.
 
+## October 16 — independent layout constraints for Ezekiel restoration
+
+The previous turn made progress with the committed Ezekiel 4 reader
+application. This continuation investigated the remaining reconstruction
+question instead of repeating its factual-note review. A bounded agent search
+found bibliographic alternatives but no Puech/DJD target page or plate; known
+blocked downloads were not retried.
+
+Root acquired a lawful 35-page Fabry preview and visually read the complete
+11Q4 section, printed 11–14, plus its chapter opening and copyright page.
+The [new evidence report](EZEKIEL_4_LAYOUT_EVIDENCE_2026-10-16.md) records the
+published argument and preservation boundary. A separate reader confirmed
+both findings against the complete pages and checked the PDF hash. Its
+qualification is retained: Fabry does not reject geometric reconstruction
+categorically, and our full comparison rule is a project inference.
+
+Method version 2.0.11 now requires independently supported layout parameters,
+equal constraints for competing restorations and sensitivity checks. A fit
+alone cannot supply missing letters or determine priority. The source, English
+and existing numeral notes remain unchanged. The next directly testable lead
+is 5:15's source-person/English-address relationship, separately from the
+unavailable numeral reconstruction. Its current record is pinned, not edited.
+
+The PDF skill required complete-page visual checks; the documentation skill
+kept the evidence and reasoning in Git. The first local extraction attempt
+lacked PyMuPDF; available Poppler rendering supplied the required page checks
+without installing software. No full chapter, original DJD/Puech target,
+fresh manuscript transcription, physical join or new numeral is claimed.
+All five existing Ezekiel 4 application tests passed in 20.559 seconds.
+The seven retained input byte/hash pins and the next-locus pin match, all
+563 relative file links in the five affected reports resolve, and comparison
+against the baseline finds no translation or Hebrew-source file changes.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

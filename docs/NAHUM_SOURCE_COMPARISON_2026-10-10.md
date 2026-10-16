@@ -7,6 +7,30 @@ additional Hebrew he, but the missing context prevents a unique interpretation.
 A newer Greek fragment at 1:5 and Hebrew commentary quotations also show why the
 two-label biblical discovery index is not a complete source list.
 
+## Nahum 1 5 decision in brief
+
+The full article changed our **English interpretation and explanatory notes**,
+not our declared Hebrew source. The earlier application replaced “the earth
+rises up before his face” with **“the earth heaves before him”** and corrected
+the mistaken claim that הָרִים contains a definite article. Those changes are
+already applied; the present full reading warrants no additional canonical edit.
+
+Riestra's [article](https://doi.org/10.1163/15685330-bja10229), especially
+sections 3–5 and Tables 1–3, distinguishes three levels of evidence. The new
+fragment preserves a real Greek variant. Its complete verb and surrounding
+context require reconstruction. The Hebrew root, pointing and meaning behind
+that Greek remain questions of interpretation. Thus, a Greek revision can
+change our understanding of ancient readers without proving a different
+original Hebrew text. “Heaves” remains a provisional contextual rendering;
+“is devastated” remains a serious but unadopted alternative analysis.
+
+For further progress, compare the actual Nahum 1:5 critical apparatus and
+commentary with the grammatical controls below. In particular, seek evidence
+that distinguishes the unusual intransitive נשׂא reading from shortened
+Niphal שׁאה, rather than counting repeated article reviews as support.
+This case concerns transmission of an existing biblical book, not evidence
+for adding another book to a canon.
+
 ## Requested full-article recheck on October 15
 
 **Result: no additional Hebrew or English change.** At the user's request,
@@ -88,6 +112,17 @@ All eight `tests.test_nahum1_5_earth_reader_application` tests passed in
 relevant qualifications; rereading the article does not add independent
 support to their evidence. Further adjudication should target the still-missing
 critical apparatus or genuinely discriminating linguistic/manuscript evidence.
+
+The subsequent requested recheck against repository base `e4709a7c26`
+reconfirmed this outcome after reading the complete article text and notes
+and inspecting the five full-size published image assets. Their SHA256 values
+match the October 11 asset table below. Eight focused application tests passed
+in 1.399 seconds before the documentation-only branch was created. A bounded
+independent consistency check found no mismatch between the current canonical
+record and this verdict; it did not independently reread the external sources.
+The decision summary above is the only substantive documentation addition:
+no new witness, recovered letter, source-priority vote or translation change
+is claimed.
 
 ## Current Nahum 1 5 verdict on October 12
 

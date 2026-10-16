@@ -12345,6 +12345,57 @@ the workflow, and resolved 487 relative documentation targets. Canonical source
 and translation files are outside this change. Publication remains subject to
 the new branch's own CI; the global source-comparison goal remains incomplete.
 
+## October 16 — 11Q30 edition trail and Ezekiel 4 numerical control
+
+The previous goal turn made progress by delivering the explicit display-alias
+audit in PR253, not by resolving physical manuscript identity. This turn
+followed the source trail instead of adding another duplicate-counting tool.
+
+Root and an independent researcher used the public Qumran-Digital API to locate
+DJD XXIII p. 442's cautious possible-quotation identification and Puech 2019
+p. 229's revised readings. Root acquired and read six complete responses;
+their hashes, URLs and selected findings are in the
+[receipt](../sources/textual_restoration/discovery/11q4_edition_attribution.2026-10-16.v1.json).
+The project warns that Puech's uncertainty comments are selectively represented
+and that his article uses no circelli. This makes source-specific annotation
+practice a necessary control, not grounds to call every unmarked letter certain.
+
+Search-indexed book prose links the reconstruction to Ezekiel 4:5's number,
+but the chapter remains inaccessible through the tested publisher route.
+Browser verification reached the actual chapter record and explicit NO ACCESS;
+its Figures tab was empty. The publisher's 26-page preview supplies metadata,
+not the target page/plate. Root visually checked its series and contents pages,
+correcting the API's 4a series label to the publisher's 8a. The mirror body
+returned 403. The word-detail URL's optional lang=en parameter returned 400;
+omitting it retrieved a valid response. No bypass, full chapter reading or
+fresh manuscript decipherment is claimed.
+
+Root then visually read Swete III (1905), printed 390–391 / PDF 414–415,
+including the full apparatus. The main Greek has 150 days at 4:4, 190 at 4:5,
+40 at 4:6 and 190 at 4:9. An independent visual review confirmed those readings
+and qualified the apparatus: the 390 report at 4:5 is Qmg about “the others,”
+not an independently inspected second continuous-text witness. Do not make
+the broader claim that all Greek evidence agrees on 190.
+
+The [new comparison](EZEKIEL_4_NUMBERS_AND_FRAGMENT_ATTRIBUTION_2026-10-16.md)
+keeps POB's 390 provisionally and proposes a reader disclosure without adopting
+either number as historically prior. The current lexical note is attached to
+days rather than its iniquity phrase; any later application must correct the
+anchor, archive prior review metadata, and verify the real export. No canonical
+record changes in this pass. The PDF skill required complete-page visual checks;
+the documentation skill kept this evidence and its limits in the existing Git
+documentation workflow rather than creating a separate cloud Page.
+
+The subsequent continuation completed the pending packet after the requested
+Nahum rereading added no new research evidence. Root rechecked the complete
+Greek pages and six saved API responses. The bounded final reviewer passed
+the report and receipt without correction; both checks reproduced all 13
+input byte/hash pins and three variant projections. The 39 focused alias,
+release-comparison and parallel-index tests passed in 0.020 seconds; all 512
+relative links in the four affected reports resolve. The protected Genizah
+file and canonical Ezekiel 4:5 hash are unchanged. These are scoped checks,
+not completion of the OT witness census or proof of reconstructed Hebrew.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

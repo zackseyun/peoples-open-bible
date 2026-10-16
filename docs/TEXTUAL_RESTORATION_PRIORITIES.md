@@ -95,6 +95,15 @@ word-level coverage. These are discriminating follow-ups, not another review
 of the 36:23 join.
 The larger 36-39 historical question below remains open.
 
+**11Q4 attribution follow-up:** the
+[edition history and Ezekiel 4 numerical control](EZEKIEL_4_NUMBERS_AND_FRAGMENT_ATTRIBUTION_2026-10-16.md)
+now identifies DJD XXIII p. 442 and Puech 2019 p. 229 as the precise sources.
+The physical placement and reconstructed-number argument still need the full
+pages and plates. Swete's main Greek 190 days versus current Hebrew 390 is
+directly verified and supports a scoped 4:5 reader-note candidate independently
+of that unresolved reconstruction. Apply only after the normal note/anchor,
+history and actual-export checks; do not infer earliest-number priority.
+
 Does the reported36:23b/c–38 minus and36→38→39→37 order represent a shorter
 Hebrew literary form, Greek-stage editing, or copying loss/rearrangement? The
 answer matters to the relationship between renewal, resurrection and national

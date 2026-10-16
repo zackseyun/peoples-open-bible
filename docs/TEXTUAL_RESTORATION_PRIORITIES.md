@@ -84,9 +84,15 @@ by this control alone.
 adds directly checked P967 differences at 35:10 and 35:14-15. Its alleged
 Masada noun support depends on a restored tav, while Mas1d preserves the
 longer clause. Do not treat either the whole-edition reconstruction or a
-blanket Greek-priority claim as established. Next test POB's 35:14 temporal
-interpretation within 14-15 and seek the exact Talmon restoration rationale;
-these are discriminating follow-ups, not another review of the 36:23 join.
+blanket Greek-priority claim as established. The
+[temporal English comparison and application](EZEKIEL_35_14_JOY_ENGLISH_APPLICATION_2026-10-16.md)
+is now completed locally and submitted in PR246; merge/deployment are separate
+milestones. The [release control](QUMRAN_RELEASE_COMPARISON_2026-10-16.md)
+finds the supplied Masada tav unchanged, not newly preserved. Seek the exact
+Talmon restoration rationale; the tested public routes did not supply its page
+or plate. Resolve the 11Q4 repeated-placement identity hold before using it in
+word-level coverage. These are discriminating follow-ups, not another review
+of the 36:23 join.
 The larger 36-39 historical question below remains open.
 
 Does the reported36:23b/c–38 minus and36→38→39→37 order represent a shorter

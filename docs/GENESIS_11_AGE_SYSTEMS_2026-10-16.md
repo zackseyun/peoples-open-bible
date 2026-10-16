@@ -129,6 +129,10 @@ Whether this particular clause survives in an ancient Hebrew fragment, and
 whether its wording is independent of Greek Genesis, remain unverified.
 The composition date of Jubilees cannot substitute for those missing checks.
 
+The [preservation and counting follow-up](#jubilees-counting-and-preservation)
+below tests the literary argument and two Hebrew controls. It leaves the
+chapter 8 clause's earliest physical attestation unresolved.
+
 Jubilees therefore merits comparison as a witness to a related genealogical
 tradition. That is a different question from recommending its inclusion in
 a biblical canon; this passage alone cannot settle that community-dependent
@@ -173,6 +177,92 @@ research receipt with its no-application flags; the separate application below
 records the later reader change. Hebrew, marker-free main English and canonical
 boundaries are unchanged. ImageGen cannot recover an unattested numeral or
 generation by drawing plausible missing letters.
+
+## Jubilees counting and preservation
+
+The new [evidence record](../sources/textual_restoration/comparisons/genesis11_jubilees_followup.2026-10-16.v1.json)
+compares opposing arguments for Jubilees 8:1–5 and checks what the relevant
+Hebrew fragments actually attest in the consulted editions. **Genesis source
+priority remains unresolved.** The added evidence makes an arithmetic argument
+against Cainan less decisive; it does not establish an earlier Hebrew Genesis
+with his name.
+
+[Steinmann (2017), pp. 708–710](https://etsjets.org/wp-content/uploads/2018/02/files_JETS-PDFs_60_60-4_JETS_60_4-697-711_Steinmann.pdf),
+uses Jubilees 2:23's 22 leaders with Jacob included to question Cainan's
+originality. [Smith and Udd (2019), pp. 134–141](https://dbts.edu/wp-content/uploads/2025/10/On-the-Authenticity-of-Kainan-Smith-and-Udd.pdf),
+answer that Jacob follows 22 predecessors as the Sabbath follows 22 works.
+The genealogical counts are:
+
+| Genealogy | Including Jacob | Excluding Jacob |
+| --- | ---: | ---: |
+| Without the additional Cainan | 22 | 21 |
+| With the additional Cainan | 23 | 22 |
+
+The dispute therefore depends on how the endpoint and “leaders” are understood.
+The Jacob/Sabbath parallel supports a plausible exclusive interpretation;
+arithmetic alone does not prove that interpretation or date the genealogy.
+Smith and Udd's p. 140 note 102 contains a numerical slip, assigning 22 without
+Cainan to exclusive reckoning. The correct figure is 21; their main argument
+uses the coherent exclusive count. This local error neither refutes nor
+certifies the paper's wider source history.
+
+**4Q216 supplies a narrower Hebrew control.** In the published
+[transcription](https://lexicon.qumran-digital.org/transcriptions/4Q216/2026-05-21/index.html?v=2026-05-21),
+displayed section 7, line 14 puts the first “22 leaders” expression wholly
+inside supply brackets. Line 15 prints “from Adam until him” outside those
+brackets. Root inspected lines 11–17 and the actual word/supply markup, not
+just a reconstructed translation. The preserved endpoint wording is relevant
+to interpretation, but does not name Cainan or supply a complete surviving
+generation count. A second 22 in line 15 belongs to the works comparison;
+its numeral has an editorial nun insertion, and its following context is partly
+supplied. It cannot replace the supplied leadership count. An independent
+reader checked both target Hebrew controls, preserving this distinction.
+The [2018 VanderKam translation](https://palimpsest.stmarytx.edu/thanneken/2018/VanderKam(2018)Jubilees-Translation.html)
+also distinguishes Scrolls evidence through underlining. Its unmarked chapter
+8 passage cannot substitute for a complete fragment census.
+
+**4Q180 requires its reconstruction history.** The current
+[fragment 1, lines 4–5](https://lexicon.qumran-digital.org/transcriptions/4Q180/2026-10-06/index.html?v=2026-10-06)
+does not print a complete Shem-to-Abraham ten-generation statement. Its number
+expression carries doubt and an alternative; endpoints and the completed noun
+are not supplied as secure surviving text in these rows. A fuller reconstructed
+summary must not be counted as an explicit Hebrew omission of Cainan. This
+does not disprove earlier reconstructions: the competing Allegro, Milik and
+Dimant treatments and the photographs remain to be checked directly.
+
+Smith and Udd also invoke Syriac wording and a proposed Hebrew confusion behind
+“build” and “possess.” These are reports through other scholars in the consulted
+section, not directly inspected Syriac testimony or recovered Hebrew letters.
+Narrative integration supports taking the Cainan passage seriously in Jubilees;
+even original wording in Jubilees would still require a separate argument for
+its relationship to Genesis. The known Latin palimpsest does not close the
+chapter 8 gap: [Hanneken's manuscript account](https://jubilees.stmarytx.edu/Hanneken(2018)BookJubileesLatin.html)
+places its extant content in chapters 13–49. Imaging erased writing on preserved
+leaves and locating lost leaves are different evidence tasks. ImageGen adds
+neither physical witness.
+
+## Modern Greek apparatus and manuscript identity
+
+Three bounded access routes did not yield Wevers's actual Genesis verse
+apparatus. The [official publication list](https://septuaginta.uni-goettingen.de/publications/septuaginta/)
+distinguishes the 1974 edition from its Notes and Text History; publisher access
+failed, while the [Internet Archive copy](https://archive.org/details/genesis0001unse_l7x3)
+is restricted. These access limits do not support any textual omission.
+
+The accessible [author-prepared English introduction](https://ccat.sas.upenn.edu/gopher/text/religion/biblical/lxxvar/1Pentateuch/01Gen-Wevers-Intro.html),
+prepared for the web in 2006, supplies a useful crosswalk in A.I, manuscript
+**509**. Its parts are Oxford Bodleian Auct. T. inf. 2.1, Cambridge Add. 1879.7,
+and the then-designated Leningrad Gr. 62. The majuscule portion corresponds to
+Brooke–McLean **E**, the minuscule remainder to **a²**. The introduction places
+Genesis 11 in the Oxford portion and reports collation from Tischendorf's 1857
+edition. It does not establish the original/corrector reading at 11:13.
+
+The next apparatus check must therefore track **509** and its local hand
+notation rather than search only for E or count those edition labels as
+different witnesses. Direct target checks remain Genesis 11:12–13 and 11:24–25;
+the next versional check is the cited Syriac edition and its manuscript/date.
+The applied reader note and the declared Hebrew remain appropriate pending
+those discriminating checks. This comparison supplies no canon-expansion result.
 
 ## Reader application
 

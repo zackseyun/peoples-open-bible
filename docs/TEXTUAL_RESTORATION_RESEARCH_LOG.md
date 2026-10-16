@@ -13105,6 +13105,42 @@ Final validation passed the frozen candidate/contract and applied receipt
 bindings, WLC and protected-file hashes, 524 relative link targets, workflow
 YAML parsing and diff checks. Only Genesis 11:12 changed among biblical records.
 
+## October 16 — Jubilees counting controls and the Cainan source history
+
+The preceding goal turn applied and pushed the Genesis 11 reader note. This
+continuation tests the [Jubilees argument and preservation](GENESIS_11_AGE_SYSTEMS_2026-10-16.md#jubilees-counting-and-preservation).
+A delegated reader compared the complete relevant Steinmann and Smith–Udd
+sections, with consultation limits in the evidence record. Root independently
+enumerated both pedigrees and visually checked Smith–Udd's p. 140 note 102.
+The inclusive/exclusive endpoint distinction changes the alleged 22-person
+contradiction; the note's local arithmetic slip is recorded without dismissing
+the paper's coherent main argument.
+
+Root also read the actual 4Q216 section 7 lines 11–17 and 4Q180 fragment 1
+lines 1–10 in the published editions. The former preserves endpoint wording
+but supplies the preceding 22-leaders clause; the latter does not provide a
+complete explicit Shem-to-Abraham ten-generation statement in the consulted
+rows. Neither becomes direct Cainan inclusion/omission evidence by expansion
+of missing text. Ancient Hebrew preservation of Jubilees 8 remains unverified.
+A separate reader checked the hash-verified primary rows and clarified that
+the second 22 in 4Q216's works comparison is distinct from the supplied first
+leadership count. The report and evidence record preserve that distinction.
+
+A separate bounded apparatus search acquired Wevers's own introduction, not
+the verse apparatus. Its 509/E/a² crosswalk identifies the Oxford target and
+prevents double-counting edition labels or transferring hand sigla blindly.
+The actual modern target apparatus and cited Syriac edition remain next sources.
+The method now requires preserved endpoints and explicit counting conventions.
+No biblical record or generated-image evidence changes in this research step.
+PR267's two required checks were confirmed still running at the existing head;
+no restart or protection bypass was attempted.
+
+Validation passed five raw source-file pins, both endpoint enumerations and
+the primary Hebrew preservation boundaries. Current verse, WLC and protected
+file hashes match; all biblical records are unchanged against the pinned base.
+The new JSON, workflow YAML, 527 relative link targets and diff checks pass.
+These checks validate the recorded evidence and calculations, not source priority.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

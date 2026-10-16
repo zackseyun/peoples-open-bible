@@ -1,6 +1,6 @@
 # POB source-wording adjudication method
 
-Version: 2.0.13 · Revised: 2026-10-16 (genealogy structure and explicit totals)
+Version: 2.0.14 · Revised: 2026-10-16 (generation counts and preserved endpoints)
 
 This is the controlling method for source selection and English impact. The
 [approach review](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md) records the
@@ -413,6 +413,14 @@ offspring lists. Do not infer an individual child's birth age from a group's
 position, or silently identify ordinal-year wording with an exact elapsed
 duration. The [Genesis 11 comparison](GENESIS_11_AGE_SYSTEMS_2026-10-16.md)
 shows why these distinctions affect both source adjudication and translation.
+
+For a stated generation count, identify whether each endpoint is included and
+whether the count, endpoints and generational noun survive or are supplied.
+Keep a literary category such as “leaders” distinct from an enumerated pedigree.
+The [Jubilees counting control](GENESIS_11_AGE_SYSTEMS_2026-10-16.md#jubilees-counting-and-preservation)
+shows how a correct sum can coexist with disputed interpretation and partly
+reconstructed wording. Neither arithmetic nor a translation of a reconstructed
+summary supplies an additional manuscript attestation.
 
 ### 5. Apply the modest chronological preference
 

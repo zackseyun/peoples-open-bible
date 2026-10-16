@@ -51,6 +51,44 @@ the Nahum source XML still hashes to
 All eight targeted application tests passed. This update changes documentation
 only; the earlier full review and subsequent evidence checks remain below.
 
+## Requested full-article confirmation on October 16
+
+**No additional Hebrew or English change is warranted.** The complete
+[publisher HTML article](https://brill.com/view/journals/vt/aop/article-10.1163-15685330-bja10229/article-10.1163-15685330-bja10229.xml)
+was read again at the user's request: sections 1–6, all 63 notes,
+acknowledgments and bibliography. Both figures and all three tables were
+opened in the full-size browser viewer, including the lower Latin rows of
+Table 2. Ordinary web fetching returned 403; the public browser reading
+worked. No PDF, fresh decipherment or new independent scholarly vote is claimed.
+
+This is confirmation of work already applied, not a new discovery:
+
+- **Source:** retain WLC consonants, pointing and segmentation provisionally.
+  Section 3's shortened Niphal of שׁאה is a serious devastation proposal,
+  but the Greek cannot establish original Hebrew vowels. Sections 4 and 5.1
+  also support an early interpretation compatible with נשׂא. Neither argument
+  establishes historical priority.
+- **Greek evidence:** the partly preserved verb supports a different Greek
+  rendering; the preferred simplex and possible compounds must remain distinct
+  from surviving letters. The reconstructed prepositional phrase does not
+  uniquely recover another Hebrew expression. Note 49 explicitly disclaims an
+  assumed common Hebrew base for the pesher and the Greek scroll.
+- **English:** keep the already applied “the earth heaves before him,” with
+  its movement alternatives and unadopted devastation interpretation in the
+  note. This is a qualified local preference, not a new translation mandated
+  by the fragment. The mountains/article rationale has already been corrected.
+- **Canon:** the article concerns an existing biblical passage and its
+  transmission; it supplies no new basis for adding a book to the canon.
+
+The current record and fetched main at
+`2cc0da5e8b4a6d04f81ba6a21a495d547e541e4e` both retain SHA256
+`cd10a2cd212aa395279d1b4fefe003b4f7b4bae2f9fe601cc3b8dba11838aa1a`.
+All eight `tests.test_nahum1_5_earth_reader_application` tests passed in
+1.210 seconds. The October 14 lexical and morphology controls below remain
+relevant qualifications; rereading the article does not add independent
+support to their evidence. Further adjudication should target the still-missing
+critical apparatus or genuinely discriminating linguistic/manuscript evidence.
+
 ## Current Nahum 1 5 verdict on October 12
 
 The complete publisher HTML article was reread against today's Nahum 1:5

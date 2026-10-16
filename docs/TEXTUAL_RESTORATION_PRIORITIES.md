@@ -106,6 +106,12 @@ semantic anchors, archived history and a verified complete export. Neither
 these notes nor the independent factual review establishes earliest-number
 priority; the remaining source task is the full reconstruction evidence.
 
+The [layout-evidence follow-up](EZEKIEL_4_LAYOUT_EVIDENCE_2026-10-16.md) now
+specifies the discriminating test: independently supported physical constraints
+and competing reconstructions under the same parameter ranges. Further
+acquisition awaits a genuinely new route to the missing editions/plates;
+repeat searches and adjustable-width fits are not new attestation.
+
 Does the reported36:23b/c–38 minus and36→38→39→37 order represent a shorter
 Hebrew literary form, Greek-stage editing, or copying loss/rearrangement? The
 answer matters to the relationship between renewal, resurrection and national

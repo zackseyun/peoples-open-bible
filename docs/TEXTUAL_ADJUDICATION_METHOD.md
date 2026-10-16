@@ -1,6 +1,6 @@
 # POB source-wording adjudication method
 
-Version: 2.0.10 · Revised: 2026-10-16 (display occurrences versus physical witnesses)
+Version: 2.0.11 · Revised: 2026-10-16 (independent constraints for reconstruction geometry)
 
 This is the controlling method for source selection and English impact. The
 [approach review](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md) records the
@@ -245,6 +245,18 @@ specific contrast, not universal irrelevance of the witness. Use reconstructed
 space or other surviving features only with their own evidence. Keep illustrative
 linguistic contrasts distinct from attested apparatus variants; see the
 [4Q120 preservation review](4Q120_LEVITICUS_PRESERVATION_REVIEW_2026-09-05.md).
+
+For reconstruction by available space, distinguish observed geometry from
+geometry inferred by fitting a proposed text. Record the independent basis and
+uncertainty for placements, margins, column width and letter/word spacing.
+Compare competing supplied texts under the same supported parameter ranges;
+report sensitivity rather than selecting a favorable single width. A fit
+establishes compatibility, not visible letters or historical priority. If the
+physical constraints are unavailable, do not invent measurements or numerical
+confidence. Keep neighboring textual questions separate: a fit concerning an
+addition in one verse does not directly attest a different numeral in another.
+The [Ezekiel 4 layout control](EZEKIEL_4_LAYOUT_EVIDENCE_2026-10-16.md)
+applies this distinction without promoting restored numerals to surviving ink.
 
 Describe supplies at their exact word-span scope. At Nahum3:11 Mur.88 preserves
 the seeking verb but supplies the following refuge/enemy words; a city omission

@@ -9,6 +9,10 @@ Swete's main Greek text reads 190 days in Ezekiel 4:5 and
 edition-history lead, not independently verified numeral evidence. Neither
 number's historical priority is established by this comparison.
 
+The [subsequent layout-evidence check](EZEKIEL_4_LAYOUT_EVIDENCE_2026-10-16.md)
+adds a directly consulted published criticism and preservation control. It
+sharpens the reconstruction test without changing either reader notes or text.
+
 ## Published readings and the proposed fragment placement
 
 The [display-alias audit](QUMRAN_RELEASE_COMPARISON_2026-10-16.md#follow-up-the-repeated-displays-are-now-explicitly-mapped)

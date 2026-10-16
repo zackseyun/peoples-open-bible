@@ -1,6 +1,6 @@
 # POB source-wording adjudication method
 
-Version: 2.0.8 · Revised: 2026-10-15 (quotation provenance and independence)
+Version: 2.0.9 · Revised: 2026-10-16 (release comparison and repeated placements)
 
 This is the controlling method for source selection and English impact. The
 [approach review](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md) records the
@@ -113,6 +113,16 @@ claim a second blinded model pass occurred unless its actual output is stored.
   earlier editorial claims have been revised. Record which arguments and
   images were actually inspected; an unresolved identification cannot count as
   secure reading support. See the [Samuel pass-2 example](SAMUEL_SOURCE_COMPARISON_PASS_2.md).
+- Compare edition releases at a declared layer with pinned bytes and explicit
+  changed/added/removed rows; a new index date alone is not new textual evidence.
+  Raw-row comparisons must use parser boundaries, not tag-like text inside
+  comments. Repeated stable IDs across displayed fragment placements require
+  occurrence-level attribution before word joins or independence claims. Keep
+  such failures held, not silently deduplicated or labelled unchanged. The
+  [Ezekiel release control](QUMRAN_RELEASE_COMPARISON_2026-10-16.md) demonstrates
+  six accepted comparisons and one held entry without altering original-text
+  confidence. Primary-row equality does not cover external apparatus or other
+  edition context.
 - Distinguish an attested omission from a physical lacuna or a witness that
   does not cover the passage. No coverage contributes no evidence either way.
 - Preserve spelling, vowels, accents, scribal hands, and corrections in the

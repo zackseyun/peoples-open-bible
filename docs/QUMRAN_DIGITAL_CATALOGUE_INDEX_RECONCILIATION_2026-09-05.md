@@ -1,5 +1,9 @@
 # Whole-index discovery reconciliation — 2026-09-05
 
+Historical snapshot: the [October 16 release follow-up](QUMRAN_RELEASE_COMPARISON_2026-10-16.md)
+checks the newer index and a bounded Ezekiel transcription cohort. It does not
+overwrite this frozen receipt or claim all indexed transcriptions were compared.
+
 This pass extends discovery beyond the earlier Leviticus and Isaiah samples.
 It parses the **entire current Qumran-Digital transcription index**, then
 reconciles its biblical-labelled entries and matches elsewhere against all

@@ -12113,6 +12113,36 @@ PR245's exact-head push and PR runs were confirmed live and left unchanged.
 The new application is committed on a successor branch; branch publication,
 main-branch merge and deployed-reader verification remain distinct milestones.
 
+## October 16 — release-state evidence and repeated-placement hold
+
+The [Ezekiel release comparison](QUMRAN_RELEASE_COMPARISON_2026-10-16.md)
+checks all seven labels in the pinned legacy cohort. Six yield 230 unchanged
+primary rows; 11Q4 remains held for eleven repeated word IDs across displayed
+fragment placements. Index-date normalization reproduces the old index hash,
+but does not establish unchanged contents for every catalogue entry. Masada's
+35:14 tav remains supplied. A bounded Talmon access search did not supply the
+decisive page/plate; the two publication targets are distinguished in the report.
+
+One independent code review caught a regex false-unchanged bug involving HTML
+comments. Parser-event source boundaries and adversarial tests replace it;
+27 comparison/index tests pass and root reproduces the receipt with the repaired
+tool. The same reviewer verified the repair and all six saved comparisons,
+retaining the seventh hold; this is not a second independent scholarly vote.
+Method 2.0.9 adds explicit edition-release and repeated-placement rules.
+This changes the comparison capability and next evidence-acquisition action,
+not Hebrew, English, historical priority or the global completion claim.
+
+PR245's already completed merge was verified as commit
+`2cc0da5e8b4a6d04f81ba6a21a495d547e541e4e`, tree
+`bcb82212b5ff9233bc76338c77982142e453007b`, with ordered parents
+`4e67983bffbbec1fd2990cface18ccaab8a472f9` and
+`4522efbfab0443723d9e8609718a913de54064a8`. Local main was advanced by
+compare-and-swap and a normal push completed. PR246 and PR247 exact-head
+push/PR jobs were confirmed live and left unchanged. The immediately previous
+turn published the requested Nahum documentation confirmation; it was a
+documentation delivery, not new ancient evidence. This turn resumes the
+unfinished broader method work rather than rereading that article again.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

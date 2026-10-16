@@ -1,6 +1,6 @@
 # POB source-wording adjudication method
 
-Version: 2.0.12 · Revised: 2026-10-16 (linked numerical comparisons)
+Version: 2.0.13 · Revised: 2026-10-16 (genealogy structure and explicit totals)
 
 This is the controlling method for source selection and English impact. The
 [approach review](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md) records the
@@ -405,6 +405,14 @@ shows paired hundred-year differences, distinct Greek Methuselah profiles and
 a Qumran age wholly supplied by the editor. Reconstructed numbers cannot break
 a tie between internally coherent systems. Report chronological sums as
 conditional textual calculations, with their genealogical assumptions stated.
+
+Record whether a lifetime total is explicitly written or computed from other
+numbers; a calculated sum is not an extra textual attestation. Compare the
+genealogical path before summing, including additional generations and grouped
+offspring lists. Do not infer an individual child's birth age from a group's
+position, or silently identify ordinal-year wording with an exact elapsed
+duration. The [Genesis 11 comparison](GENESIS_11_AGE_SYSTEMS_2026-10-16.md)
+shows why these distinctions affect both source adjudication and translation.
 
 ### 5. Apply the modest chronological preference
 

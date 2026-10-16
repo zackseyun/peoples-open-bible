@@ -187,10 +187,12 @@ report against the numerical record and reran the four tests without finding
 an inconsistency. This latter check is not an independent Greek collation or
 approval of the proposed reader-note candidate.
 
-Next evidence should be the exact modern Genesis Greek and Samaritan apparatus
-entries, followed by a linked Genesis 11 comparison and relevant ancient
-chronological quotations or retellings, each distinguished from a continuous
-Genesis manuscript. No Flood chronology or canon claim should be imported
+The linked [Genesis 11 comparison](GENESIS_11_AGE_SYSTEMS_2026-10-16.md) now
+extends this work to the extra Greek Cainan generation, explicit Samaritan
+lifetime totals and a Jubilees parallel. Next evidence should be the exact
+modern Genesis Greek and Samaritan apparatus entries and the earliest physical
+attestation of the relevant literary parallels, each distinguished from a
+continuous Genesis manuscript. No Flood chronology or canon claim should be imported
 without checking its own sources and assumptions. ImageGen could illustrate
 competing reconstructions but cannot recover these absent Qumran numerals;
 generated lettering would add no evidence.

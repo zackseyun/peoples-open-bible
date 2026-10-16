@@ -13044,6 +13044,37 @@ passed. The WLC and protected unrelated file hashes, documentation links,
 workflow parsing and diff check also passed. Publication uses the existing
 research branch and remains subject to the required CI checks.
 
+## October 16 — Genesis 11 genealogical structure and linked ages
+
+The preceding Nahum confirmation supplied no new textual evidence. This
+continuation completes the [Genesis 11 comparison](GENESIS_11_AGE_SYSTEMS_2026-10-16.md)
+already in progress. The selected Greek texts add Cainan; the consulted
+Samaritan text agrees with their shared begetting ages while omitting that
+generation and printing eight explicit lifetime totals. The report distinguishes
+those totals from calculated sums, and Terah's grouped offspring from an
+individual birth-age assertion. The method now requires those distinctions.
+
+Jubilees 8:1–5 supplies a relevant Kainan parallel in the consulted edition.
+Ancient Hebrew preservation of that particular clause and its independence
+from Greek Genesis remain unverified. This supports further literary comparison,
+without settling Genesis priority or recommending a canon change. The Greek
+apparatus records the bounded Cainan-paragraph omission in E* and its marginal
+presence in Eᵃ; the finding is not expanded into absence of the name everywhere.
+
+One delegated reader checked the report and numerical record against the
+completed Samaritan inspection and found no mismatch. Executable checks
+reproduced all 34 pairs' sums, eight explicit totals, five paired adjustments,
+four conditional chronology sums, four source-file hashes and the unchanged
+32-file chapter manifest. The protected unrelated Genizah file also retains
+its hash. These checks establish consistency, not historical priority.
+
+The report contains a concrete reader-note proposal for 11:12, identifying
+Greek verse 13 and the differing Arpachshad ages explicitly. Full-record review
+and export verification remain the application steps. This packet changes
+research documentation and the method; no biblical source or translation record
+changes. The documentation guidance kept the source limits beside the claims
+they qualify. No generated image supplied evidence.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

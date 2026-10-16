@@ -269,8 +269,8 @@ must not become a certain ancient date or the date of its translated reading.
 The complete [institutional PDF download](https://sammlungen.ub.uni-frankfurt.de/msorient/download/pdf/5411883)
 was acquired: 134 PDF pages, 37,533,929 bytes, SHA256
 `343da1a197a18da21305b9242263b3fa3ec064815240f25196971ca8830f9569`.
-Root inspected its cover and opening blank leaf only, not 5:12 or the entire
-codex. No fresh transcription, restored letters or ImageGen evidence is claimed.
+At acquisition, root inspected its cover and opening blank leaf only, not
+5:12 or the entire codex. The subsequent bounded target check is recorded below.
 
 Identity does not resolve coverage. Cornill reports64 leaves; Goldschmidt126
 pages; today's record65 leaves and replacement of old pagination by foliation.
@@ -297,6 +297,70 @@ The next task is to align the acquired target folio and distinguish the copy's
 hands/readings before retroversion; do not continue searching for a nonexistent
 Greek manuscript called “Gf.” No additional registry witness is counted by
 this correction/acquisition record.
+
+### Target located: a bounded image check on October 15
+
+**Result: the target is present, and the visible clause sequence is consistent
+with Cornill's report; the first fraction's apparent correction is unresolved.**
+This advances from catalogue access to a located image, not to an established
+earlier Hebrew reading or a complete diplomatic edition.
+
+In the pinned institutional PDF, page15 bears pencil folio number7. The target
+is in its left column, approximately lines5–10, counting complete written
+lines from the column top. The sanctuary reference at line1 and the new oracle
+to Israel's mountains at right-column lines8–11 independently anchor the
+identification as Ezekiel5:11–12 followed by chapter6. Page14 contains the
+preceding chapter opening. Do not use the old catalogue's page numbers as the
+PDF index: PDF7 is the first text-bearing recto inspected, numbered3, while
+PDF5–6 are blank. The target locator is **PDF15 / leaf numbered7 / left column**;
+the number is visible. The subsequently fetched official
+[IIIF manifest](https://sammlungen.ub.uni-frankfurt.de/i3f/v20/5411883/manifest)
+contains134 canvases and labels the fifteenth canvas **7r**, ID
+`https://sammlungen.ub.uni-frankfurt.de/i3f/v20/5411883/canvas/5411904`.
+It labels the adjacent canvases6v and7v. This supplies a custodial folio
+crosswalk, not just an inferred recto designation. The web-fetch route missed
+the manifest; an ordinary public HTTPS request returned its JSON successfully.
+
+| Image region | Bounded observation | Evidentiary limit |
+|---|---|---|
+| Left5, right portion | First fraction expression, with visibly crowded/overwritten strokes near its ending | Do not reconstruct an earlier fourth, identify a correcting hand, or date a correction. |
+| Left6–7 | Famine followed by a death verb and the phrase “in your midst” | The death verb remains visible in the combined punishment sequence; this is not a claim that the manuscript omits every equivalent of “die.” |
+| Left7–8 | A fraction provisionally read as a third, followed by scattering into winds | Consistent with the reported three-part division and scattering before the last punishment. |
+| Left8–10 | A matching fraction split across lines8–9, then falling and a weapon-related punishment around the addressee | Exact weapon vocabulary and a complete diplomatic transcription remain unverified. Cornill's “sword” description remains his published interpretation. |
+
+The independent reader was given only the scan images and the task of locating
+and reading visible clauses, without the project report, Cornill's hypothesis,
+or an expected variant. That reader separately identified the contextual
+anchors, the two clearer third expressions (tentatively `ሣልስትኪ`), scattering
+before the final punishment, and the crowded first fraction. Both readings
+are limited model-assisted image checks, not expert palaeographic certification.
+Root had already read Cornill, so this is not two blind transcriptions or a
+completed restoration benchmark. No uncertain spelling is promoted into a
+canonical witness transcription.
+The subsequent factual review of this section was no longer blind; it found
+no material mismatch in the reported image observations and requested explicit
+separation of image reading from PDF-index/provenance verification.
+
+Root's comparison finds Cornill45's description of Hebrew-directed revision
+with retained Greek clause order consistent with this copy's visible arrangement.
+The image does **not** demonstrate the historical direction of revision,
+the ancestry of its reading, or Cornill205's proposed Hebrew deletion.
+Cornill and this scan remain evidence about one manuscript, not independent
+manuscript votes. POB5:2/5:12, the WLC source, and historical-priority HOLD
+remain unchanged. Next obtain a specialist check of the crowded first fraction
+and a controlled comparison with the older Ethiopic witness before attributing
+a particular textual change to a particular hand or recension.
+
+Root inspected complete rendered PDF6–7,14–15 and Cornill45 in this check;
+the independent reader inspected the three supplied PNGs, identified by root
+as PDF14–16, without independently verifying those PDF indices. The target render was produced
+directly by `pdftoppm -f 15 -l 17 -scale-to 2800 -png`; its PDF15 PNG SHA256 is
+`d5448f66173790bcf68d2553210b555f8f6972f180ed2bcccd73ca11e23943df`.
+Rendering additional pages is not a claim to have read them. The PDF retains
+its acquisition hash above. No generated imagery, missing-letter completion,
+contrast manipulation or republished scan is involved. Credit: manuscript and
+digitization, Universitätsbibliothek J. C. Senckenberg, Frankfurt am Main;
+Ms.or.12, persistent identifier `urn:nbn:de:hebis:30:2-50699`.
 
 ## Target-access and interim-report check on October 14
 

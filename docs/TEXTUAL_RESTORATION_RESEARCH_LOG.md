@@ -11459,6 +11459,37 @@ confirms both PR224 runs completed successfully at7fcc088462; its merge can
 proceed with the usual exact-head/tree checks, independently of corrected
 Cornill publication.
 
+### 2026-10-15 — Locating the Frankfurt Ezekiel target in the scan
+
+The preceding Nahum reply revalidated an existing application with eight tests,
+but added no evidence; it is not counted as new research progress. This turn
+resumes the unfinished manuscript check. The [Ezekiel case](EZEKIEL_5_12_QUARTERS_COMPARISON_2026-10-14.md#target-located-a-bounded-image-check-on-october-15)
+now locates5:12 at PDF15, leaf numbered7, left column5–10, using sanctuary and
+next-oracle content anchors rather than old pagination alone.
+
+A fresh-context image reader, not shown Cornill or the expected variant,
+independently found two clearer third expressions, scattering before the
+final weapon-related punishment, and crowded/overwritten strokes in the first
+fraction. This is consistent with Cornill's published clause arrangement,
+not proof of his proposed transmission history or a deciphered earlier
+correction. Both readers' limits are recorded; no complete diplomatic
+transcription, expert certification, new Hebrew omission or independent
+manuscript vote is claimed. Source and English remain unchanged.
+
+The official custodial record was rechecked, and the pinned PDF and protected
+Genizah hashes match. The PDF skill required direct image inspection; ImageGen
+was not used as evidence. PR226's exact-head push38829303602 and
+pull-request38829601021 were confirmed live, so its merge remains gated and
+neither run was restarted. This successor work does not amend that live head.
+
+The official134-canvas IIIF manifest independently labels the target canvas
+`5411904` as7r, resolving the folio crosswalk. The bounded subsequent factual
+review passed the image-observation account, with exposure/provenance limits
+made explicit. All420 relative documentation targets resolve and whitespace
+checks pass; both Ezekiel target verse hashes and the WLC XML hash remain
+unchanged. No code or canonical record changed, so no full-corpus test rerun
+or historical-priority certification is claimed.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

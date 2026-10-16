@@ -124,6 +124,131 @@ resolve, and `git diff --check` passes. The Ezekiel XML, both checked POB
 36:26-27 records and protected Genizah file retain their input bytes. These
 checks validate the documentation and unchanged-text boundary, not priority.
 
+## Greek translation-technique controls checked on October 15
+
+**The longer passage has a distinctive Greek profile; this does not uniquely
+establish later Hebrew expansion.** The original
+[Thackeray article](https://www.gospelstudies.org.uk/biblicalstudies/pdf/jts/004_398.pdf),
+JTS 4 (1903),398-411, was acquired through the public-domain article archive
+after the Zenodo route failed. Root visually read complete printed 407-408
+and extracted 407-411; the source agent visually read 407-411. Neither claims
+a full-article reading or independent inspection of all its cited witnesses.
+
+Thackeray identifies distinctive Greek renderings in 36:24-38, comparing them
+with other translations. He proposes incorporation of an early Jewish
+lectionary version, but also considers Christian lectionary replacement of an
+older Greek translation. His directly discussed medieval lesson contains only
+36:24-28. Its extension to the larger passage and the proposed ancient history
+are conjectural, not observed in that manuscript. This is an argument about
+Greek transmission, not proof that Hebrew lacked the passage.
+
+### Actual edition and Hebrew controls
+
+Root separately checked the pinned OpenScriptorium surface text and the
+original printed Swete edition, rather than importing Thackeray's examples as
+manuscript data. The [digital input and its limitations](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#inputs-and-reproducible-screen)
+remain unchanged: 1,267 uniquely labeled rows, SHA256
+`06f1b82b9c95fc5c2c1735c928cdb44299fea2f8d9b9fc68eda0e14118920a1f`.
+Only ordered `surface` strings are used, not generated morphology or reasoning.
+The Hebrew input is the same hash-pinned WLC/OSHB Ezekiel XML used above.
+
+| Feature | Directly checked result | Boundary |
+|---|---|---|
+| Gathering at 36:24 | The sole surface prefix `αθρο` hit is ἀθροίσω. All 16 Hebrew verbal קבץ tokens in 15 verses were checked in complete Hebrew/Greek rows. The target is the only aligned use of this Greek form. | Other corresponding positions use συνάγω forms (9), εἰσδέχομαι forms (5), and περιστέλλω (1, 29:5). The Greek distribution is not simply a binary choice, and shared verse numbers alone are not alignment. |
+| Lands at 36:24 | γαιῶν is present in Swete and the digital text. Two further `γαι` prefix hits, 39:11 and 39:15, belong to the named burial-valley expression, not additional plural "lands" uses. | Prefix retrieval needs contextual classification; three hits do not mean three lexical parallels. |
+| Passing and garden | παροδεύοντος at 36:34 and κῆπος at 36:35 are the sole `παροδευ` and `κηπ` prefix hits in this digital book. Swete prints both. | This confirms a selected edition's distinctive vocabulary, not every manuscript or all Greek literature. |
+| Compound connection at 36:34 | The normalized three-token sequence ἀνθ' ὧν ὅτι occurs only here in the digital book and is printed in Swete. Hebrew has תחת אשר. | The article's verse-34 locator is correct; no automatic inference to a different Hebrew clause follows. |
+| Divine title at 36:33,37 | Swete's Vaticanus-based main text prints ἀδωναὶ Κύριος at both loci. Its apparatus records different A/Q readings. The digital control and the publisher's Rahlfs-Hanhart text instead have single κύριος. | "The Greek has Adonai" erases a consequential manuscript/edition distinction. Zero digital `αδων` hits does not refute its attestation in Swete's base witness. |
+| Divine title at 36:32 | Swete's main text has Κύριος Κύριος; its apparatus records an Adonai reading under the marginal B correction siglum. | Do not merge a correction into the base-hand text or count it as a third identical original B reading. No fresh dating of the correcting hand is claimed. |
+| Recognition at 36:38 | Swete and the digital text omit an explicit εἰμί; Swete's apparatus supplies it for A. At 37:6 Swete and the digital text include it. Hebrew has אני יהוה at both loci. | A demonstrable variation in Greek expression, not a recovered Hebrew omission. No whole-book formula-frequency claim is made here. |
+
+The 15 Hebrew קבץ verse references are 11:17; 16:37 (two tokens); 20:34,41;
+22:19,20; 28:25; 29:5,13; 34:13; 36:24; 37:21; 38:8; 39:17,27.
+Selection uses direct verse-child words with lemma component 6908 and a verbal
+morphology component; nested readings are excluded. Alignment was checked in
+context. At 11:17 the neighboring Hebrew אסף corresponds to συνάγω while קבץ
+corresponds to εἰσδέχομαι. At 29:5 the two negative clauses must likewise stay
+distinct: the second Greek verb is περισταλῇς. At 39:17 both gathering verbs
+are rendered with συνάχθητε. These controls prevent presence-only matching.
+
+This reproduces the Greek retrieval from the downloaded pinned `ezekiel.json`:
+
+```python
+import hashlib, json, unicodedata as U
+from pathlib import Path
+
+p = Path("ezekiel.json")  # Private copy from the pinned upstream URL above.
+assert hashlib.sha256(p.read_bytes()).hexdigest() == (
+    "06f1b82b9c95fc5c2c1735c928cdb44299fea2f8d9b9fc68eda0e14118920a1f")
+rows = json.loads(p.read_text())
+assert len(rows) == len({r["ref"] for r in rows}) == 1267
+def norm(s):
+    return "".join(c for c in U.normalize("NFD", s.casefold())
+                   if not U.combining(c)).strip("'\u2019\u1fbf")
+for prefix in ("αθρο", "γαι", "αδων", "παροδευ", "κηπ"):
+    hits = [(r["ref"], [w["surface"] for w in r["words"]
+                       if norm(w["surface"]).startswith(prefix)]) for r in rows]
+    print(prefix, [(ref, words) for ref, words in hits if words])
+for r in rows:
+    tokens = [norm(w["surface"]) for w in r["words"]]
+    if any(tokens[i:i+3] == ["ανθ", "ων", "οτι"]
+           for i in range(len(tokens)-2)):
+        print("compound", r["ref"])
+```
+
+### What changes in the historical judgment
+
+The observed Greek profile now needs an explanation in addition to the Hebrew
+literary correspondences. A simple claim that the *same* uninterrupted Greek
+translation was merely lost in one branch does not account for the profile;
+variation within a translator, revision, replacement or a separately translated
+section must also be assessed. But loss followed by a replacement translation
+in another branch can also produce a shorter witness alongside a distinctive
+longer Greek form. The observations alone do not establish that this happened,
+or choose it over Hebrew expansion followed by translation.
+
+The features are not seven independent ancient witnesses. The scholarly
+argument, Swete's edition and its digital comparators are related descriptions
+of a transmission history; neither an exact probability nor a unique translator
+is inferred. Thackeray's Hexaplaric comparisons remain his reported evidence:
+the corresponding Aquila/Symmachus/Theodotion apparatus was not newly consulted.
+Likewise, no fresh manuscript inspection of the medieval lectionary is claimed.
+
+Retain POB's source and English, with historical priority unresolved. The next
+discriminating input is the full critical apparatus and translation evidence
+behind the proposed revision affinities, not another search of these same
+surface strings. In particular, establish which Greek readings are earlier
+within each variant's transmission before assigning the profile to an original
+translator or using it to reconstruct a missing Hebrew edition. No ImageGen
+output is evidence and no missing manuscript letters were recovered here.
+
+### Acquisition and visual scope
+
+Thackeray PDF SHA256:
+`97172a9cfa2e92012df13207dd831e6f78966ae8d511dade90e96fedac259cca`.
+Printed 407-411 correspond to one-based PDF pages 11-15, after the archive's
+cover. The original article is public-domain material; no full scan is imported.
+
+The [Swete manifest's volume III](../sources/lxx/swete/MANIFEST.md) was
+reacquired and matched its SHA256
+`5f0bfffabf0e588fd32e15bdb24b027872616da219e7f02da3dbdc115cf97d85`
+and 932-page count. Root visually inspected complete printed 464-465,
+one-based PDF 488-489, including their apparatuses. The 150-dpi render hashes
+are `13bcfb1946169c595608e835e933d148c30813f32dc182e43a31cd6d6bf88df0`
+and `06dcf366a9bab3461debf971658d3725cdfac969eb319c8bb261252cdd7c3a32`.
+These are published edition readings, not fresh Vaticanus image transcription.
+The [publisher's modern chapter 36](https://www.die-bibel.de/bibel/LXX/EZK.36)
+was checked separately at the target clauses; it is not another manuscript.
+Full PDFs, renders and the digital Greek file remain private and unrelicensed.
+
+A bounded independent review reproduced the Greek recipe and checked both
+complete Swete pages and the article's stated alternatives, finding no concrete
+defects. It did not independently recheck the Hebrew alignments or modern
+publisher text. Root verified all 433 relative file-link targets in this report
+and the research log, the unchanged Hebrew XML and seven target POB records,
+and the protected Genizah hash; `git diff --check` passes. No broad corpus or
+historical-priority certification follows from these scoped checks.
+
 ## Copying loss counterargument
 
 Spottorno's [original publisher PDF](https://emerita.revistas.csic.es/index.php/emerita/article/download/780/822/842),

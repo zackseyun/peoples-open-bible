@@ -33,12 +33,30 @@ our adoption of “heaves” is not a newly discovered English solution. The
 contribution to POB is a better-qualified local translation and evidence trail,
 not a demonstrated recovery of lost Hebrew.
 
-For further progress, compare the actual Nahum 1:5 critical apparatus and
-commentary with the grammatical controls below. In particular, seek evidence
-that distinguishes the unusual intransitive נשׂא reading from shortened
-Niphal שׁאה, rather than counting repeated article reviews as support.
-This case concerns transmission of an existing biblical book, not evidence
-for adding another book to a canon.
+The decision should reopen only for evidence that discriminates the alternatives:
+
+- **Hebrew consonants:** a securely read witness or a stronger transmission
+  argument favoring another form. The incomplete Greek verb and reconstructed
+  context do not uniquely recover a Hebrew replacement.
+- **Hebrew analysis and English:** critical-apparatus and commentary arguments,
+  tested against the grammatical controls below, that favor unusual
+  intransitive נשׂא or shortened Niphal שׁאה. A better-supported devastation
+  analysis could change the English without changing the consonants; it would
+  still require an explicitly documented departure from the retained pointing.
+- **Greek interpretation:** additional translation-technique evidence that
+  distinguishes lexical consistency, stylistic variation and Pentateuchal
+  allusion. Stronger support for an allusion would illuminate the Greek
+  revision, not automatically establish different Hebrew wording.
+
+The requested comparison against repository base `34a9faf23d` confirmed the
+existing decision after a complete publisher-HTML reading, including all 63
+notes, bibliography, both figures and all three tables. The canonical file
+retains SHA256 `cd10a2cd212aa395279d1b4fefe003b4f7b4bae2f9fe601cc3b8dba11838aa1a`;
+all eight focused application tests passed. This documentation update clarifies
+the decision criteria; it adds no witness, independent scholarly endorsement,
+source-text change or translation change. Repeated consultation is not new
+evidence. This case concerns transmission of an existing biblical book, not
+evidence for adding another book to a canon.
 
 ## Requested full-article recheck on October 15
 

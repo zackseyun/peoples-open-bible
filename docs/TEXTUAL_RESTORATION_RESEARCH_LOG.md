@@ -11898,6 +11898,40 @@ and only four documentation files change. The canonical and protected Genizah
 hashes remain unchanged. No full-corpus test or source-priority certification
 is claimed for this documentation-only addition.
 
+## October 15: resolve Ezekiel 28's old apparatus access gap
+
+The preceding Nahum confirmation supplied no new evidence, so this continuation
+did not repeat that review. A bounded portfolio triage identified an actual
+change in availability: the Swete volume unsuccessfully sought for Ezekiel 28
+had since been acquired for another case. Root verified the existing file hash
+and inspected its target pages and conventions; one independent source checker
+read the same target entries without choosing English. The
+[new comparison](EZEKIEL_28_CHERUB_COMPARISON_2026-10-10.md#october-15-greek-apparatus-now-inspected)
+records the consequential revision layers and corrects the page locator.
+
+The added evidence concerns marked Greek modifiers and a distinct marginal
+removal reading. It does not uniquely recover Hebrew or justify changing POB's
+current text. Existing qualified notes remain adequate for this finding.
+This is a completed published-reading comparison, not fresh decipherment,
+ImageGen restoration or a source-priority certification. The PDF skill required
+visual inspection rather than trusting damaged OCR. No full third-party PDF
+or image was added to Git; frozen inputs and canonical records are unchanged.
+
+Exact-head publication checks for PR239 and PR240 were initially verified live;
+their heads were not amended or restarted. PR239 subsequently passed both
+events and merged at `ad85519d4afada5c8bd9ff5fda0c14ad7fc49dd5`.
+Root computed the expected tree from the actual main and feature parents,
+then verified the remote merge tree and ordered parents before synchronizing
+local main. PR240 remains subject to its running checks. Work continues on a
+successor branch. The full OT comparison/restoration objective remains incomplete.
+
+The bounded factual review found no defect in the new apparatus section; it
+does not cover root's separate volume-I consultation or canonical hashes.
+Root checked those controls, 484 relative documentation targets, whitespace
+and the three-document change scope. The two canonical hashes and protected
+Genizah file hash are unchanged. No broad corpus rerun or source-priority vote
+was performed for this documentation-only addition.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

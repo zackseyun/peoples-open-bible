@@ -134,6 +134,99 @@ a new local translation-behavior/transmission argument. Do not repeat the
 same comparison or commission judges until they agree. A separate bounded
 reader-note application can proceed without claiming original priority.
 
+## October 15: Greek apparatus now inspected
+
+**New evidence classification, not a Hebrew replacement.** The previously
+unavailable Swete volume is now locally available from another acquisition.
+Root and one independent source checker read complete printed **444–445**
+(one-based PDF **468–469**), including both target apparatus entries. The
+earlier 443–444 locator did not include verse 16. The title/imprint identifies
+volume III, third edition, 1905. This closes this case's historical Swete
+access gap; it does not supply the full modern Greek apparatus.
+
+The B-based main text has accompaniment in 14 and wounded/cherub-led removal
+in 16, consistent with the earlier selected-edition comparison. The newly
+consulted apparatus adds the following distinctions. Greek apparatus words
+below preserve the edition's unaccented spelling; superscript witness labels
+are rendered inline. `pr` means prefixed, `+` added, and `om` omitted.
+
+| Locus | Swete's published reading/report | What it contributes |
+|---|---|---|
+| 14, `συ` | `om συ Q` | Q differs from the B-based wording even before the accompaniment phrase. It is not a new direct Hebrew reading. |
+| 14, before `μετα του χερουβ` | `pr (sub θ′ ※) ητοιμασαν Q` | Preserve the actual reported word and its Theodotion/asterisk labels; do not silently substitute a more expected verb. |
+| 14, after the same lemma | `+ (sub θ′ ※) κεχρισμενου (-νους Qᵃ) του κατασκηνουντος και Q` | An anointed/dwelling description is reported in this Greek transmission. The corrected ending assigned to Qᵃ must not be flattened into the unqualified reading. |
+| 14, `εθηκα` | `εδωκα Q` | A further placing/giving distinction; no unique Hebrew retroversion follows. |
+| 16, `και ηγαγεν σε το χερουβ` | Q adds an expression beginning `το συσκιαζο`, with a terminal abbreviation mark, under `θ′` and an asterisk | This is an explicitly marked overshadowing addition, not a modifier absent from every Greek witness. The abbreviated printing is not silently expanded here. |
+| 16, same lemma | `κατηγαγεν σε χερουβ Qᵐᵍ` | The separately reported marginal alternative retains cherub-led removal, with a bringing-down verb; it is not first-person divine destruction. |
+
+There is no separate variant for the wounded verb in the inspected target
+entry. That is a statement about these pages' coverage, not all Greek witnesses.
+The existing report already restricted modifier absence to the selected
+Rahlfs–Hanhart text; the new inspection supplies actual contrasting evidence
+rather than correcting an alleged claim of universal Greek omission.
+
+### Read the apparatus labels before combining readings
+
+The volume III sigla page identifies Q as Marchalianus, and preface VII–IX
+(PDF 11–13) identifies its shelfmark as Vatican Greek 2125. It distinguishes
+contemporary corrections Q¹ from grouped uncial corrections/Hexaplaric
+annotations Qᵃ and later cursive work Qᵇ. The printed `θ′` denotes Theodotion.
+The preface distinguishes textual asterisks/obeli, assigned to the scribe or
+a contemporary, from marginal signs assigned to Qᵃ. It also warns of mistaken
+attachment of marginal material. These are the editor's classifications, not
+new palaeographical observations by POB.
+
+The target additions are labelled **Q**, whereas the alternative removal verb
+is expressly **Qᵐᵍ**. Do not call every addition a marginal reading, assign all
+of them to Qᵃ, or extend the nearby Theodotion label to the separately printed
+Qᵐᵍ alternative. Root also checked volume I's conventions, printed XV–XVII,
+which distinguish the exterior base-text siglum from witnesses collated for a
+page or part of it. Silence is not a complete census of agreement.
+
+### Consequence for the Hebrew and English decision
+
+The Greek tradition cannot be reduced to a single package in which
+accompaniment/removal and absence of all cherub modifiers necessarily travel
+together. Marked supplementation and the separately reported removal variant
+must be assessed feature by feature. This is compatible with revision toward
+a fuller Hebrew description, but the pages alone do not reconstruct the
+underlying Hebrew exemplar or establish the direction of the earlier
+king–cherub contrast. Nor should the scattered entries be assembled into a
+new continuous Q text without checking their actual placement and corrections.
+
+**Retain the current WLC source and English provisionally; historical priority
+remains unresolved.** Existing reader notes already qualify the selected Greek
+alternative, so no note-only application is necessary. The additions do not
+establish the Hebrew identity/vocative and divine-destruction combination as
+earliest. Nothing here identifies Satan or Adam by name or supports a canon
+change. This is published apparatus evidence, not restored manuscript ink;
+ImageGen was not used.
+
+The next discriminating acquisition is the actual Marchalianus target page
+with its marked text/corrections, an early Greek witness at these exact units,
+or the modern apparatus and independently read Syriac control. Repeating
+these Swete entries is not a new experiment. No new chronology for individual
+hands or exhaustive Greek collation is claimed.
+
+### Reproducibility and scope
+
+The existing [Swete source manifest](../sources/lxx/swete/MANIFEST.md) pins
+the 57,077,650-byte volume III PDF at SHA256
+`5f0bfffabf0e588fd32e15bdb24b027872616da219e7f02da3dbdc115cf97d85`;
+root rehashed it successfully. The PDF and rendered pages remain outside Git.
+The title/imprint, target pages, relevant preface and sigla were checked
+visually; corrupted OCR supplied navigation only. The PDF skill's visual
+inspection requirement governed this check. No modern edition or manuscript
+photograph is claimed as consulted by inspecting the old printed edition.
+
+Input commit: `422509c03e796f11bc66405c2cacd4728cd8e4d1`. The canonical
+28:14 and 28:16 hashes remain respectively
+`0dcdd4b94902ceb954d9c012a89f4b5277bf9a7300f7c40072f62a2b4cee8aa4`
+and `c9f5ffb4dc5cb409f60a019ccf034f52f74f4bbd2f36a3aca169d0e6387bd3ec`.
+Frozen comparison/application receipts are not rewritten. One bounded
+independent source check agreed on the target readings, labels and inference
+limits; it was not an English preference vote or certification of originality.
+
 ## Acquisition and audit limits
 
 The [Swete archive volume](https://archive.org/details/theoldtestamenti03swetuoft)

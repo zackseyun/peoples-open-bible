@@ -12704,6 +12704,89 @@ could not import PyYAML. This is a documentation clarification, not another
 source-priority vote. Further research should seek discriminating evidence
 rather than repeat this article review.
 
+Publication follow-up: the branch's append-only log conflict with main was
+resolved by retaining both research entries below. Eight focused Nahum tests
+passed again in 1.440 seconds; the source, verse and protected Genizah hashes
+match the recorded values. This follow-up used the existing full-reading record:
+the publisher browser timed out, so no fresh complete reading is claimed.
+
+## October 16 — Jeremiah boundary package and Babylon ending
+
+The preceding Nahum confirmation supplied no new evidence. This continuation
+returns to the unfinished [Jeremiah directional comparison](JEREMIAH_ORACLES_ORDER_COMPARISON_2026-10-06.md#linked-boundary-changes-and-historical-direction).
+Watts's primary argument links the chapter 25 transition, collection introduction
+and Moab/Babylon endings as coordinated editorial adjustments. Its force is the
+linked pattern, not the assumption that shorter is earlier. The report also
+preserves his concessions about shared interests and later transmission, the
+alternative explanation for the Moab notice, and the Qumran coverage limit.
+
+New Marchalianus page 442 captures show the Jeremiah-ending notice marginally
+while the central text continues from Babylon to Philistines. Swete 289 and 297
+attribute the ending, Moab and repayment supplements under distinct source
+labels. This prevents both a uniform Greek-absence claim and a false vote for
+MT order based on marginal supplements. The new next test is the complete
+boundary package with separate witness layers; Hebrew, English and order remain
+unchanged. The documentation skill kept the primary observation distinct from
+the historical inference. Images and article bytes remain outside Git.
+
+One independent reader passed the bounded image/argument comparison, with
+no correction required: both page 442 captures, Swete 289, Watts's decisive
+section and notes, and the saved report/receipt. Its Swete 297 attribution
+check was retained from the previous review, not a newly independent witness.
+Validation passed five input/render byte counts and hashes, the reused
+apparatus hash, seven current source/verse pins, 526 relative file-link targets
+and the diff check. Translation and OT source files are unchanged against
+`52e7b9082dad20f1b3010722fed99e590a6f8ca2`; the unrelated Genizah file retains
+its protected hash. No corpus-wide local test or original-text certification
+is claimed for this documentation-and-evidence update.
+
+PR260 then passed both exact-head workflow runs and merged as
+`a102c7609470b4e9ba8b7826370c1e4f016d923e`. The fetched tree
+`4d0f8e62748ba23a6ddba112c38ec54512e12933` and ordered parents matched the
+precomputed merge. That tree also matches this follow-up's research baseline,
+so its separate documentation changes do not include a biblical-text change.
+
+## October 16 — Syrohex translator key and normalized critical signs
+
+The preceding requested Nahum reread confirmed the current result but supplied
+no new evidence. This continuation returns to the lead Ezekiel comparison.
+Field I printed xcv supplies the precise Syriac abbreviation key, closing a
+named acquisition gap. Its adjacent warning about grouped translator labels
+also constrains how the 36:37 attribution may be counted: agreement in sense
+is not necessarily identical wording. Field's printed lv–lvii disclose
+normalization of critical signs, so his local printed spans cannot substitute
+for independently legible manuscript endpoints.
+
+The [updated comparison](COISLIN17_EZEKIEL36_WITNESS_2026-10-16.md#field-notation-key-and-editorial-conventions)
+records the complete-page visual reading, retains uncertainty about small
+facsimile letters and signs, and redirects the next task to target-specific
+transcription/reproduction and the modern apparatus. The documentation skill
+kept general editorial conventions separate from passage-specific claims.
+Hebrew, English, book order and canon are unchanged; no image generation or
+newly recovered ancient letters are claimed. The original receipts remain
+historical records; a separate notation receipt pins the new consultation.
+
+One independent reader passed the four-page reading and the saved claims,
+without treating that agreement as another ancient witness. Root verified the
+five input/render byte counts and hashes, JSON parsing, relative document-link
+targets and the diff check. Tracked changes are confined to this documentation;
+the new receipt is the only task addition. All translation/source files and the
+protected unrelated Genizah file remain unchanged against `2097d1a745`.
+No corpus-wide local test or historical-priority certification is claimed.
+PR261's exact-head checks were confirmed running, including its reader-note
+test step; they were not restarted. Publication remains subject to CI.
+
+## October 16 — Scheide edition access route closed
+
+The WorldCat ebook record's “Access free” link resolves to the already known
+[Internet Archive item](https://archive.org/details/johnhscheidebibl0000unse),
+not another open copy. Its current metadata marks the item restricted and
+the PDF/OCR files private; Open Library offers a preview. A bounded acquisition
+check found no lawful full edition. No transcription of Ezekiel 28:6 or 35:10
+was obtained and no textual judgment changes. The next input is authorized
+library access or a targeted scan of Johnson, Gehman and Kase's 1938 edition
+(OCLC 639832), not another retry of this WorldCat/Archive route.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

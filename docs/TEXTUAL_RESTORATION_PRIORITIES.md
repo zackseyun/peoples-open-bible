@@ -107,6 +107,14 @@ conventions and adequate reproduction/critical transcription, alongside the
 still-unavailable modern Greek target apparatus. The historical photolithograph
 does not support a new restored letter or a Hebrew/English change.
 
+**Notation-key follow-up completed:** [Field's introduction](COISLIN17_EZEKIEL36_WITNESS_2026-10-16.md#field-notation-key-and-editorial-conventions)
+supplies the Syriac translator initials, but warns that grouped labels can
+express agreement in sense rather than identical wording. His critical signs
+are editorially normalized. Retire the generic key lookup; seek target-specific
+transcription or better reproduction for the unresolved sign endpoints and
+the modern apparatus. Neither three labels nor printed sign positions supply
+independent manuscript votes or settle the longer passage's origin.
+
 **October 16 adjacent-unit control:** the newly read
 [Ezekiel 35 study and witness comparison](EZEKIEL_35_VARIANT_EDITIONS_2026-10-16.md)
 adds directly checked P967 differences at 35:10 and 35:14-15. Its alleged
@@ -256,6 +264,14 @@ repayment material. The latter supports Swete's Qmg distinction, not a single
 flattened Greek text. This closes that image-acquisition task without deciding
 Hebrew priority or changing POB. Seek target hand/source identification or
 independent early attestation; do not repeat the now-inspected layouts.
+
+The [linked-boundary argument](JEREMIAH_ORACLES_ORDER_COMPARISON_2026-10-06.md#linked-boundary-changes-and-historical-direction)
+now tests Watts's coordinated MT transition/heading/ending explanation.
+New page 442 confirms the Jeremiah-ending notice in Q's margin while the
+central text continues to Philistines. Swete's α′, θ′ and α′θ′ labels for
+different supplements must remain separate. Seek a witness-specific test of
+25:13–15, 46:1, 48:47, 51:64 and the Elam date together, not another isolated
+Q layout count. This improves the directional test but leaves priority held.
 
 Which bridge, title and ordering differences support literary revision rather
 than translation or later rearrangement? Resolving that could change how a

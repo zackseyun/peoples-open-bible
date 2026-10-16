@@ -11727,6 +11727,39 @@ One bounded final factual review found no defects; root's source-provenance,
 The completed merges were synchronized to local main and pushed; subsequent
 heads retain their own CI requirements rather than inheriting those successes.
 
+## October 15: test page size separately from the eye-skip endpoint
+
+The preceding turn made substantive progress on the manuscript margin; this
+continuation returned to the omission mechanism rather than repeating that
+reading. The [size-sensitivity control](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#testing-the-page-capacity-argument-on-october-15)
+compares Spottorno's actual model assumptions with independently counted Greek
+surface text. The PDF skill prompted complete-page inspection of pp.95–97
+and footnotes 11–14; a separate source reader and root reproduced the counts.
+
+Her displayed proposed chapter-37 deletion has 54 letters, although labeled
+53. That small discrepancy is less important than its purpose: it produces
+the matching recognition-formula endpoint, whereas restoring it still leaves
+the proposed pages near the model's nominal capacity. The diagram also combines
+text bases and selects a variant with εἰμι at 36:38. Our different pinned Greek
+control yields roughly 1:1.98:3.74 for the three blocks, compatible with flexible
+page sizes but not independently observed pages or a probability of accident.
+The model cannot by itself identify the earlier Hebrew form. No POB source,
+English or note changes, ImageGen evidence, or recovered manuscript letters.
+
+A parallel source-access pass confirmed exact publisher limits for Göttingen
+and HUB: the relevant apparatus is not in their public previews. No access
+barrier was bypassed. An early citation lead, Irenaeus IV.33.14, was identified
+through a public English edition; its original-language attestation and scope
+remain the next check, not an accepted chronological proof in this turn.
+PR234 passed both own-head CI events, was merged with verified tree/parents,
+and main synchronized. PR235's live head was not amended or restarted.
+
+The bounded final reviewer ran the documented recipe successfully and found
+no concrete factual errors in the model comparison. Root independently checked
+the same recipe, 482 relative file targets, source/protected hashes and the
+three-document scope. No translation or source-corpus tests are represented
+as newly necessary or newly passed for this documentation-only change.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

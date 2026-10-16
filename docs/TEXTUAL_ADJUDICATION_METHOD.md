@@ -385,6 +385,17 @@ per book or passage, retaining the other form in the apparatus. A versional
 reading may justify a source-language hypothesis, but not a claim that its
 exact retroverted Hebrew survives.
 
+Operational control from the [Ezekiel 35 comparison](EZEKIEL_35_VARIANT_EDITIONS_2026-10-16.md):
+map connected differences in speakers, person/number, causal links and passage
+extent before selecting individual readings. Test whether each alleged
+structural difference requires a different source text or can arise through
+translation, interpretation or subsequent copying. A coherent literary pattern
+is evidence to explain, not proof of its date or source language. For Hebrew
+corroboration of a retroversion, identify the exact discriminating character:
+Mas1d's restored tav at 35:14 must not become independently surviving support
+for a noun. Preserve mixed witness profiles rather than assigning a manuscript
+wholesale to an edition from one partly reconstructed word.
+
 ### 7. Record a calibrated outcome
 
 Use a reasoned working preference, a held decision, or an unresolved outcome.

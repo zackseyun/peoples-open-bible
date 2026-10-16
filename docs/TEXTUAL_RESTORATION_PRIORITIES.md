@@ -79,6 +79,16 @@ by this control alone.
 
 ### Lead Ezekiel 36 to 39 and Papyrus 967
 
+**October 16 adjacent-unit control:** the newly read
+[Ezekiel 35 study and witness comparison](EZEKIEL_35_VARIANT_EDITIONS_2026-10-16.md)
+adds directly checked P967 differences at 35:10 and 35:14-15. Its alleged
+Masada noun support depends on a restored tav, while Mas1d preserves the
+longer clause. Do not treat either the whole-edition reconstruction or a
+blanket Greek-priority claim as established. Next test POB's 35:14 temporal
+interpretation within 14-15 and seek the exact Talmon restoration rationale;
+these are discriminating follow-ups, not another review of the 36:23 join.
+The larger 36-39 historical question below remains open.
+
 Does the reported36:23b/c–38 minus and36→38→39→37 order represent a shorter
 Hebrew literary form, Greek-stage editing, or copying loss/rearrangement? The
 answer matters to the relationship between renewal, resurrection and national

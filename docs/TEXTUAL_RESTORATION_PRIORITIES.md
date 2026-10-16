@@ -168,6 +168,17 @@ account for the shorter branch and order. Keep Greek translation history,
 Hebrew composition and chapter order analytically separate; pursue evidence
 that connects them, not another tally of the same stylistic features.
 
+**October 16 literary/reception checkpoint:** the newly accessible
+[Lilly dissertation and page-90 margin check](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#october-16-lilly-on-literary-edition-and-resurrection-reception)
+separate her positive shorter-Hebrew argument from reception evidence.
+The resurrection annotation is compatible with her literary interpretation,
+not proof that this interpretation caused the order or originated in Hebrew.
+Retain HOLD and current POB. Do not reread the same margin as another witness.
+An accessible next test is her chapter-5 heart/spirit comparison: inspect the
+actual variant readings and contrary cases, not just her aggregate conclusion,
+to test the proposed relationship to the chapter-36 minus. This does not
+supersede the still-missing modern apparatus or count all chapter 5 as reviewed.
+
 The Scheide Archive copy is restricted and the papyri.info route gated; do not
 repeat or bypass them. A discriminating result would constrain whether the
 minus is physically continuous, explain a concrete loss/reordering mechanism,

@@ -12157,6 +12157,39 @@ turn published the requested Nahum documentation confirmation; it was a
 documentation delivery, not new ancient evidence. This turn resumes the
 unfinished broader method work rather than rereading that article again.
 
+## October 16 — literary edition and ancient reader reception distinguished
+
+The [new Lilly assessment](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#october-16-lilly-on-literary-edition-and-resurrection-reception)
+adds a directly consulted institutional dissertation and a bounded check of
+the page-90 cursive margin in Princeton's native photograph. Lilly argues
+positively for an earlier Hebrew edition and a literary arrangement more open
+to eschatological interpretation. She nevertheless distinguishes circumstantial
+Hebrew-priority arguments from Greek translation history, and explicitly limits
+text-critical deductions from the text's fit with reader annotations. A source
+critic and root checked the final synthesis to avoid citing her caution alone.
+
+This improves our evidence classification and identifies the next accessible
+test of the proposed heart/spirit revision pattern. It changes neither Hebrew
+nor POB English, and is not new decipherment, image restoration or comprehensive
+source coverage. The PDF skill required complete-page visual checks alongside
+text extraction; no generated image supplies evidence. Source hashes, locators,
+consultation limits and counterarguments are in the case report.
+
+The bounded source-factual review passed the written assessment. All 508
+relative file-link targets in the three changed reports resolve and
+`git diff --check` passes. Only those documentation files change; the protected
+unrelated Genizah file retains its recorded hash. These checks do not establish
+historical priority or replace a manuscript collation.
+
+The immediately previous goal turn verified live PR247 jobs and reran the
+Nahum application checks; it was a verified publication wait, not new textual
+evidence. PR246 now passed both exact-head Corpus integrity events and merged
+at `9aca1d1ffcb5814ed42f14bc52e981a3c91f9408`. Root verified expected tree
+`19a19906027f555c7d8b8ce6f1cdd33660f9cb0d` and ordered parents
+`2cc0da5e8b4a6d04f81ba6a21a495d547e541e4e` /
+`45b8803d2071d28ef01cd824a053816643823b4a`, fetched, advanced local main
+by compare-and-swap and completed a normal push. The broader goal remains active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

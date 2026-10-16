@@ -184,9 +184,12 @@ discriminating historical input remains wider witness/apparatus support for
 the 44:7 minus, not another thematic count. The [bounded wider control](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#october-16-wider-control-for-the-local-447-omission)
 now verifies Swete's B-based fuller text at both verses and separates its
 offered-food apparatus from the circumcision clause. No universal Greek
-agreement is claimed. A named P967 note can now proceed through full-record
-application/export review, retaining Hebrew and disclosing retention at 44:9.
-Do not await a complete manuscript census merely to state that narrow fact.
+agreement is claimed. The [named P967 note](EZEKIEL_44_7_READER_DISCLOSURE_2026-10-16.md)
+has now passed full-record review and is applied with actual export verification,
+retaining Hebrew and disclosing retention at 44:9. This closes the local reader
+delivery, not the historical selection question. Reopen that question only with
+discriminating apparatus/transmission evidence; do not repeat the same imagery,
+thematic tally or note review. Resume the broader source-comparison portfolio.
 This does not count all chapter 5 or the modern apparatus as reviewed.
 
 The Scheide Archive copy is restricted and the papyri.info route gated; do not

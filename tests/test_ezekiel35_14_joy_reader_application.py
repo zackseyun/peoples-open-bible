@@ -16,6 +16,7 @@ from tools import export_mobile_bible as exporter
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = '4522efbfab0443723d9e8609718a913de54064a8'
+APPLIED = '45b8803d2071d28ef01cd824a053816643823b4a'
 STEM = 'ezekiel35_14_joy_reader.2026-10-16.v1.json'
 CONTRACT = ROOT / 'sources/textual_restoration/comparisons' / STEM
 TARGET = 'translation/ot/ezekiel/035/014.yaml'
@@ -29,8 +30,8 @@ def digest(obj):
     return sha(json.dumps(obj, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode())
 
 
-def historical_book():
-    raw = subprocess.check_output(['git', 'archive', BASE, 'translation/ot/ezekiel'], cwd=ROOT)
+def historical_book(commit=BASE):
+    raw = subprocess.check_output(['git', 'archive', commit, 'translation/ot/ezekiel'], cwd=ROOT)
     with tarfile.open(fileobj=io.BytesIO(raw)) as archive:
         return {m.name: archive.extractfile(m).read() for m in archive.getmembers()
                 if m.isfile() and m.name.endswith('.yaml')}
@@ -139,21 +140,34 @@ class EzekielJoyApplicationTests(unittest.TestCase):
         self.assertEqual(digest(after), contract['preflight']['candidate_export_sha256'])
         self.assertIs(contract['preflight']['canonical_written'], False)
 
-    def test_actual_application_complete_export_and_non_targets(self):
+    def test_historical_application_complete_export_and_non_targets(self):
         receipt = json.loads((ROOT / 'sources/textual_restoration/applications' / STEM).read_text())
         self.assertEqual(sha(CONTRACT.read_bytes()), receipt['review']['reviewed_contract_sha256'])
         self.assertEqual(receipt['review']['status'], 'pass')
+        # Prove the actual transaction at its immutable application commit;
+        # later applications may legitimately change other current verses.
+        applied = historical_book(APPLIED)
+        self.assertEqual(applied.keys(), self.raw.keys())
+        self.assertEqual(sha(applied[TARGET]), self.contract['candidate_yaml_sha256'])
+        self.assertEqual(yaml.safe_load(applied[TARGET]), self.candidate)
+        for p, historical in self.raw.items():
+            if p != TARGET:
+                self.assertEqual(applied[p], historical, p)
+        after = export_records({p: yaml.safe_load(raw) for p, raw in applied.items()})
+        self.assertEqual(digest(after), self.contract['preflight']['candidate_export_sha256'])
+        self.assertEqual(digest(after), receipt['application']['after_export_sha256'])
+        self.assertEqual(len(index(after)), 1273)
+        self.assertEqual(receipt['application']['other_units_unchanged'], 1272)
+
+    def test_current_target_and_actual_reader_notes(self):
         raw = (ROOT / TARGET).read_bytes()
         self.assertEqual(sha(raw), self.contract['candidate_yaml_sha256'])
         self.assertEqual(yaml.safe_load(raw), self.candidate)
-        for p, historical in self.raw.items():
-            if p != TARGET:
-                self.assertEqual((ROOT / p).read_bytes(), historical, p)
         current = exporter.export_book('EZK')
-        self.assertEqual(digest(current), self.contract['preflight']['candidate_export_sha256'])
-        self.assertEqual(digest(current), receipt['application']['after_export_sha256'])
         self.assertEqual(len(index(current)), 1273)
-        self.assertEqual(receipt['application']['other_units_unchanged'], 1272)
+        target = index(current)[(35, 14)]
+        self.assertEqual(target['text'], self.candidate['translation']['text'])
+        self.assertEqual(target['footnotes'], self.candidate['translation']['footnotes'])
 
 
 if __name__ == '__main__':

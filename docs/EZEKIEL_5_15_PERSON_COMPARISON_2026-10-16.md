@@ -122,3 +122,25 @@ lead is now replaced by root's complete-page inspection. An application review
 is separate from that research assessment. ImageGen supplies no textual
 evidence; no damaged letter restoration, canon change or corpus-wide
 translation improvement is claimed.
+
+## Applied correction and verification
+
+The frozen candidate above passed one independent factual/application review
+and was applied in commit `c519d9d96d1e535f5b820b94f8520c1be21c27f6`.
+The [application receipt](../sources/textual_restoration/applications/ezekiel5_15_person_reader.2026-10-16.v1.json)
+binds the reviewed candidate and contract hashes. The source and marker-free
+English remain unchanged; the corrected rationale, four reader notes and
+archived review fields are now in the canonical record. The earlier candidate
+language describes the freeze, not an outstanding application.
+
+All 56 regression checks passed in 143.733 seconds. One additional immutable
+application test passed in 8.792 seconds, verifying the exact target bytes,
+all 1,272 non-target files and the complete 48-chapter, 1,273-unit export at
+that commit. These are 57 distinct post-application tests, not a count inflated
+by preflight reruns. The actual export matches the frozen proposed digest
+`4a990a1ecfe43e6c7f7540a1b6ece0565f43341606aaffce3c35ebea071b132e`.
+The original report freeze is also recoverable and hash-checked at the
+application commit. CI fetches both immutable commits explicitly.
+
+This verifies the scoped repository application, not a deployed reader or
+the original Hebrew. Publication to main remains subject to required CI.

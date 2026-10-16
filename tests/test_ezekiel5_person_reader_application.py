@@ -15,6 +15,7 @@ from tests.test_ezekiel35_14_joy_reader_application import (
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = '7739693711e70a2d941c30f657eefadfe1a2d42f'
+APPLIED = 'c519d9d96d1e535f5b820b94f8520c1be21c27f6'
 TARGET = 'translation/ot/ezekiel/005/015.yaml'
 STEM = 'ezekiel5_15_person_reader.2026-10-16.v1.json'
 CONTRACT = ROOT / 'sources/textual_restoration/comparisons' / STEM
@@ -110,7 +111,8 @@ class Ezekiel5PersonAppliedTests(unittest.TestCase):
         ct = json.loads(CONTRACT.read_text())
         receipt = json.loads(RECEIPT.read_text())
         applied = receipt['application']['commit']
-        self.assertRegex(applied, r'^[0-9a-f]{40}$')
+        self.assertEqual(applied, APPLIED)
+        self.assertEqual(sha(subprocess.check_output(['git', 'show', f'{APPLIED}:docs/EZEKIEL_5_15_PERSON_COMPARISON_2026-10-16.md'], cwd=ROOT)), ct['report_sha256_at_freeze'])
         before, after = historical_book(BASE), historical_book(applied)
         self.assertEqual(before.keys(), after.keys())
         for p, raw in after.items():

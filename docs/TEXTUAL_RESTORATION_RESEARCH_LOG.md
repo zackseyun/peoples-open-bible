@@ -12547,6 +12547,14 @@ local merge-tree reports no content conflict. PR 255 and 256 still have live
 required runs, so none is reported merged. No force push or protection bypass
 was attempted.
 
+The correction is committed as `c519d9d96d1e535f5b820b94f8520c1be21c27f6`.
+All 56 regression checks passed in 143.733 seconds; one additional immutable
+application check passed in 8.792 seconds. That check verifies the target,
+all 1,272 non-target files, the full export and the original report freeze
+at the actual application commit. These 57 distinct tests verify the scoped
+implementation, not original-text priority or deployment. The case report
+and application receipt record the verified state; CI controls publication.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

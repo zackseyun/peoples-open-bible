@@ -1,6 +1,6 @@
 # POB source-wording adjudication method
 
-Version: 2.0.9 · Revised: 2026-10-16 (release comparison and repeated placements)
+Version: 2.0.10 · Revised: 2026-10-16 (display occurrences versus physical witnesses)
 
 This is the controlling method for source selection and English impact. The
 [approach review](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md) records the
@@ -123,6 +123,15 @@ claim a second blinded model pass occurred unless its actual output is stored.
   six accepted comparisons and one held entry without altering original-text
   confidence. Primary-row equality does not cover external apparatus or other
   edition context.
+- Separate three identities: **display occurrence** (pinned page, table, row,
+  token position), **explicit editorial alias** (reviewed reciprocal references
+  and matching complete token structures), and **physical witness** (established
+  by edition history or material evidence). An alias audit must preserve both
+  occurrences and reject unexplained duplicates; it does not certify joins,
+  manuscript reassignment or independence. A publisher's `word` span may encode
+  gaps or unreadable traces, not a preserved word. The
+  [11Q4 sidecar audit](QUMRAN_RELEASE_COMPARISON_2026-10-16.md#follow-up-the-repeated-displays-are-now-explicitly-mapped)
+  demonstrates this separation without relaxing the strict comparison gate.
 - Distinguish an attested omission from a physical lacuna or a witness that
   does not cover the passage. No coverage contributes no evidence either way.
 - Preserve spelling, vowels, accents, scribal hands, and corrections in the

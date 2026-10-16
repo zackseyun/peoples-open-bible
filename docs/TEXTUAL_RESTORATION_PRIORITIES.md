@@ -176,6 +176,15 @@ was found. Do not repeat these editions or catalogue routes; reopen only for a
 new target image/collation or modern apparatus. Current Hebrew/English and
 historical confidence remain unchanged.
 
+**October 15 Hodayot control completed:** the
+[direct digital-edition check](DEUT32_8_EVIDENCE_TRIAGE_2026-09-06.md#october-15-hodayot-allusion-wording-and-physical-context-limits)
+records the sons/El phrase across separately identified fragments and the
+partly supplied boundaries wording. The linked 4Q428 overlap does not preserve
+the decisive phrase. The El proposal remains a conjectural Deuteronomy reading
+with a literary parallel, not another direct witness. Repeating this allusion
+is not further progress; a physical-reconstruction argument and plates or an
+independent passage witness would be new inputs. No canonical change follows.
+
 ### Evidence and efficiency rules for this portfolio
 
 Obtain actual target wording, an edition/plate, verified survival, a neglected

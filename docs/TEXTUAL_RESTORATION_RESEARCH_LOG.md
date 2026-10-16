@@ -11865,6 +11865,39 @@ edition pages, conventions and Hansen's relevant page; the narrower corrected
 reading agrees with root's final visual check. These checks establish the
 recorded consultation and documentation integrity, not historical priority.
 
+## October 15: test the Hodayot allusion against the published fragments
+
+The preceding turn added a checked Codex 85 edition report, so it was progress.
+This continuation followed a different unresolved Hebrew lead. Root consulted
+the actual Qumran-Digital rows for 1QHᵃ 24:29–37 and linked 4Q428 fragment 16,
+including HTML fragment labels and critical marks. The
+[new control](DEUT32_8_EVIDENCE_TRIAGE_2026-09-06.md#october-15-hodayot-allusion-wording-and-physical-context-limits)
+distinguishes individually unbracketed words from their reconstructed placement
+and a plausible literary allusion from direct Deuteronomy attestation. It adds
+no new letters, canonical change or confidence increase. No ImageGen output
+was used. Frozen adjudication/application inputs remain unchanged; a dated
+prose pointer records the newly completed consultation.
+
+PR238 passed both exact-head Corpus integrity events and merged at
+`ef64f6f6bb79aa8a6983cccebb216fda3baf7483`. The initial assertion that its merge
+tree should equal its head failed: main already contained separate Nahum
+documentation absent from that branch. Read-only comparison identified exactly
+those two documentation-file differences. Git's merge-tree computation for the
+actual two parents reproduced the remote tree
+`f4e51f7225c0dd09db452d43d754a7daf8fea3a3`; both parent SHAs were also verified.
+The merge preserved the existing work. Local main was updated by compare-and-swap
+and pushed normally. Future expected trees must be computed from both actual
+parents, not assumed equal to a feature head. PR239 remains subject to its own
+running checks; it was not amended or restarted.
+
+One bounded independent check reproduced the 1QHᵃ acquisition hash and confirmed
+the fragment labels, critical marks and restrained inference in the new report.
+It did not independently check 4Q428 or the canonical hash; root checked those.
+All 490 relative documentation file targets resolve, whitespace checks pass,
+and only four documentation files change. The canonical and protected Genizah
+hashes remain unchanged. No full-corpus test or source-priority certification
+is claimed for this documentation-only addition.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

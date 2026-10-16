@@ -390,3 +390,77 @@ user-facing update before publication. The accepted finding is the narrower
 separate-lemma report above, not a definitive reconstruction of the two
 manuscript attributions. This disagreement changed the result; it is not
 counted as another ancient witness or resolved by majority vote.
+
+## October 15 Hodayot allusion: wording and physical-context limits
+
+**Outcome: the previously second-hand allusion now has a directly consulted
+digital-edition control; it does not warrant replacing אלוהים with אל in
+Deuteronomy.** Root inspected Qumran-Digital's versioned
+[1QHᵃ column 24](https://lexicon.qumran-digital.org/transcriptions/1QH%5Ea%5E/2026-05-21/index.html?v=2026-05-21#c205643-i21572),
+especially lines 29–37, and the actual HTML word/fragment labels for 33–34.
+This is edition consultation, not fresh manuscript collation or confirmation
+of the underlying reconstruction. The same distinction applies to the older
+application record's statement that this allusion was not independently collated.
+
+The lead was [Tov's note 6](https://www.thetorah.com/article/the-sons-of-israel-or-god-deuteronomy-32-8),
+which proposes the allusion as possible support for an earlier בני אל in
+Deuteronomy. The published rows add preservation qualifications to that compact
+quotation:
+
+| Edition location | Bounded wording | What the edition does and does not preserve |
+|---|---|---|
+| 24:33, Suk. fragment 6 line 10; word 21575 | מבני | Printed outside brackets without a doubt mark, at the end of the reconstructed column line. |
+| 24:34, Suk. fragment 2 ii line 14; words 21576–21577 | אל שו֯[מעי | אל is outside brackets without a doubt mark; the following waw is marked uncertain and מעי supplied. The “sons” and “El” words are assigned to different fragments across a line boundary, not shown as one phrase on one scrap. |
+| 24:34, Suk. fragment 6 line 11; words 21579–21580 | ג]ב֯ולות עמים | Gimel belongs to supplied context, bet is doubtful, and the remaining wording is unbracketed. Tov's fuller supplied prefix must not be reported as observed ink. |
+| 24:36, Suk. fragment 2 ii line 16; word 21585 | בנחלתו, alternative בנחליו | A nearby inheritance-related reading is presented with an alternative, not a secure complete sentence that independently establishes the allusion's syntax. |
+
+The column arrangement makes the reported phrase intelligible. The labels do
+not prove that the arrangement is wrong, but they prevent us from claiming a
+new physical join or uninterrupted same-fragment attestation. The gap
+within line 34 leaves the grammatical connection to the peoples' boundaries
+incomplete. Reading an edited column continuously must not hide those gaps.
+
+Root also checked the linked
+[4Q428 fragment 16](https://lexicon.qumran-digital.org/transcriptions/4Q428/2026-05-21/index.html):
+its two rows overlap later 1QHᵃ 24:36–37, not the decisive 33–34 wording. Its
+line 1 has only the ending ם and ביד unbracketed; the preceding verb and
+following clause are supplied. It is **not a second attestation of בני אל or
+the boundaries expression**. The edition's parallel-text panel must not be
+mistaken for additional ink in that fragment.
+
+### Consequence for source selection
+
+The association of divine-son language and peoples' boundaries makes Tov's
+allusion proposal worth retaining. Even if the fragment arrangement and
+allusion are accepted, a hymn can reuse or adapt scriptural language; it does
+not necessarily copy the exact noun in its exemplar. Shared traditional
+language is another possible explanation. Neither direction of dependence nor
+an original Deuteronomy בני אל follows from lexical resemblance alone.
+
+The alternative therefore remains a **conjectural Deuteronomy reading with a
+qualified literary parallel**, not unattested Hebrew vocabulary, but also not
+a newly attested Deuteronomy variant. The current POB-critical בני אלוהים,
+its “sons of God” English and disclosure of the El alternative remain unchanged.
+The decision still rests on the published 4Q37 phrase plus the previously
+qualified contextual/versional case. No separate divine identity, new canon
+status, recovered letter or increased confidence is inferred from this hymn.
+
+Credit Qumran-Digital, DFG project 465277421, version 2026-05-21, CC BY-SA 4.0.
+Its copyright notice identifies the predecessor Qumran-Wörterbuch project and
+an earlier text by Martin Abegg. Short quotations above retain the edition's
+critical marks; no full transcription or image is imported or relicensed.
+Ordinary HTTPS acquisitions remain outside Git:
+
+| Input | SHA256 |
+|---|---|
+| 1QHᵃ HTML | `a9632821835a647fa7acb173c7847abcaf01a55c47df2eab216b0271076c2a76` |
+| 4Q428 HTML | `8581d22a2a576c1db0cd636e2680d07edcb38b72c9672440508d898fe65d0435` |
+
+Input worktree head: `4b165a17f8cd4370bb6606cba83df9dd011a19b8`.
+Current Deuteronomy record hash remains
+`f815dcd72c3f4372cca011eb8824d4791ec94c3432b9d2c0756a3f4862a49755`.
+No entire Hodayot corpus, DJD physical-reconstruction argument or manuscript
+photograph was newly inspected. Further work here requires that reconstruction
+and its supporting plates or a genuinely independent passage witness, not
+another paraphrase of the allusion. This completes the bounded digital check;
+it does not authorize a new corpus-wide certainty claim.

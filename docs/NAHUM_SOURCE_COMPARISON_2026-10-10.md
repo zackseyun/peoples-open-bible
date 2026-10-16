@@ -7,6 +7,50 @@ additional Hebrew he, but the missing context prevents a unique interpretation.
 A newer Greek fragment at 1:5 and Hebrew commentary quotations also show why the
 two-label biblical discovery index is not a complete source list.
 
+## Requested full-article recheck on October 15
+
+**Result: no additional Hebrew or English change.** At the user's request,
+root reread the complete [publisher HTML article](https://brill.com/view/journals/vt/aop/article-10.1163-15685330-bja10229/article-10.1163-15685330-bja10229.xml):
+sections 1–6, all 63 notes, acknowledgments and bibliography. Both figures and
+all three tables were reopened and visually checked in the full-size viewer,
+including Table 2's lower Syriac and Latin rows. The browser route succeeded;
+the web-fetch route still returned 403. This is a repeat consultation of the
+same publication, not a new discovery, PDF acquisition or fresh decipherment.
+
+The outcome must be compared with the **current** record, not the October 10
+baseline. The earlier full review already prompted the applied English
+**“the earth heaves before him”** and corrected the mountains' article
+rationale. This recheck leaves that application intact. “Heaves” is our
+provisional contextual choice, not wording uniquely proved by the fragment.
+
+The evidence still separates three questions:
+
+- **Greek text:** the surviving verb remains and preposition attest a revision
+  of the familiar Greek wording. The preferred simple verb and supplied
+  context remain reconstructions; compound possibilities are not excluded.
+- **Hebrew source:** the same consonants permit competing analyses. The
+  proposed shortened Niphal of שׁאה would give a devastation sense, while an
+  early MT-like understanding remains compatible with the Greek evidence.
+  Neither establishes the original vocalization. Retain the exact declared
+  WLC text provisionally, without claiming historical priority.
+- **Interpretation:** the proposed Pentateuchal resonance explains the Greek
+  reviser's choices plausibly but does not demonstrate intention or require
+  a different Hebrew preposition. It supplies no canon-expansion argument.
+
+The October 14 lexical and short-form controls below remain important: the
+rare-Qal parallels are disputed, and the 25-item digital inventory of singular
+III-he Niphal wayyiqtols contains no short 3fs comparator. Neither retention nor
+repointing has acquired decisive support. Further progress requires the
+actual critical apparatus and discriminating grammatical/translation-technique
+evidence, not repeated readings of this article or additional model votes.
+
+The current canonical file still hashes to
+`cd10a2cd212aa395279d1b4fefe003b4f7b4bae2f9fe601cc3b8dba11838aa1a`;
+the Nahum source XML still hashes to
+`5993b28bdbee3c922e3e93002d343a655493e8bd45e3472f3b62d77beadcb62c`.
+All eight targeted application tests passed. This update changes documentation
+only; the earlier full review and subsequent evidence checks remain below.
+
 ## Current Nahum 1 5 verdict on October 12
 
 The complete publisher HTML article was reread against today's Nahum 1:5

@@ -46,6 +46,15 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 15 bounded reopening completed:** newly available source material
+permitted the [Ezekiel 28 apparatus check](EZEKIEL_28_CHERUB_COMPARISON_2026-10-10.md#october-15-greek-apparatus-now-inspected).
+Swete records Theodotion-/asterisk-labelled cherub modifiers and a separately
+labelled Marchalianus marginal removal variant. This closes the old access
+gap and prevents whole-version voting; it does not decide Hebrew priority.
+The current source/English remains unchanged. Seek actual target manuscript
+layout, earlier Greek attestation, modern apparatus or independently checked
+Syriac next; do not repeat the same printed entries as progress.
+
 Keep at most these three questions active; pursue Ezekiel first. Other cases,
 including NT questions, remain parked unless new evidence is more discriminating.
 

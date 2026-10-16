@@ -135,3 +135,111 @@ This is a new project-level access exclusion, not new textual evidence. The
 Cologne account was already known to lack these target leaves; a root web fetch
 timed out and added no evidence. Princeton target edition/leaves remain the
 substantive acquisition requirement. No restricted route was repeated or bypassed.
+
+## Berlin Ethiopic passage and transitions checked on October 15
+
+**New project evidence:** original manuscript images show the new-heart/new-spirit
+passage and actual consecutive **36→37, 37→38 and 38→39** transitions in
+Staatsbibliothek zu Berlin, **Petermann II Nachtrag 42**. This is a directly
+checked medieval Ge'ez witness to the longer passage and familiar chapter
+sequence, not another early Hebrew manuscript or a newly discovered variant.
+It does not settle the competing explanations for Papyrus 967.
+
+### Identity and inspection method
+
+The [official manifest](https://content.staatsbibliothek-berlin.de/dc/791918785/manifest)
+identifies the shelfmark, language `gez`, 298 leaves and a fifteenth-century
+date range (1400–1499). The range is catalogue dating, not an exact colophon
+year. Its metadata declares Public Domain Mark 1.0. The
+[earlier identity check](EZEKIEL_5_12_QUARTERS_COMPARISON_2026-10-14.md#berlin-control-acquired-and-read-on-october-15)
+connects this object to Dillmann's catalogue no. 2 and Cornill's older Ethiopic
+witness. A recension label does not date each individual reading.
+
+Manifest labels were checked before acquisition. The library's working DMS
+image route supplies the photographed pages; catalogue rubrics only help
+navigation. Each column has 24 text lines at these targets. The locators below
+count from the top of the column, with `a` = left and `b` = right. Content
+identifications are not full diplomatic transcriptions. Worn strokes and
+covered inner margins remain unresolved, rather than being filled from a Bible.
+
+| Original-image locator | Content read from the page | What this establishes |
+|---|---|---|
+| [279v / image 564](https://content.staatsbibliothek-berlin.de/dms/PPN791918785/1200/0/00000564.jpg), a12–18 | New heart and new spirit, removal of the stone heart, and a flesh heart; corresponding to 36:26. Short working word groups, joined across lines: `ልበ፡ሐዲሰ` and `መንፈሰ፡ሐዲሰ`. | The renewal passage is actually represented in this Ge'ez manuscript. The short forms are context-informed readings, not recovered missing letters or a complete verse transcription. |
+| [280r / image 565](https://content.staatsbibliothek-berlin.de/dms/PPN791918785/1200/0/00000565.jpg), b13–24 | Holy-flock/Jerusalem-feasts/cities-filled language and recognition of the Lord, then the Lord's hand upon the speaker and bringing him out in the Lord's spirit. 37:1 begins within b21, after the conclusion of 36:38. | Actual 36:38→37:1 transition on one page. The former catalogue's lack of a chapter-36 rubric is not evidence that the passage is absent. |
+| [282r / image 569](https://content.staatsbibliothek-berlin.de/dms/PPN791918785/2400/0/00000569.jpg), b10–19 | Sanctifying/recognition and sanctuary-in-their-midst-forever language, followed at b15 by the red divine-speech opening, then the son-of-man command directed toward Gog/Magog. | Actual 37:28→38:1–2 transition, between b14 and b15. The worn geographical/title wording below does not warrant a complete transcription. |
+| [284r / image 573](https://content.staatsbibliothek-berlin.de/dms/PPN791918785/1200/0/00000573.jpg), a14–24 and b1–3 | Magnifying/sanctifying and nations' recognition, then the son-of-man command to prophesy against Gog and the declaration against him. 39:1 begins within a20, after 38:23's recognition formula. | Actual 38:23→39:1 transition. A marginal mark is not used as the primary chapter identifier; the consecutive wording controls it. |
+
+The first locator pass sampled 279r, 280r, 281r, 283r and 285r and could only
+identify scattered chapter content plus the 36→37 join. This follow-up acquired
+279v, 282r/282v and 284r and checked the actual remaining joins. Root inspected
+all four target images tabulated above. The independent locator agent found
+37→38 in 282rb before receiving root's reading of that page. These are targeted,
+context-informed readings, not an identity-blinded recovery benchmark.
+
+### Effect on the comparison and POB
+
+The manuscript cannot be classified as sharing Papyrus 967's reported omission
+of the renewal passage or its 36→38→39→37 sequence at these observed joins.
+That is a concrete source-level constraint. It is **not** proof that this
+medieval copy independently preserves the earliest Greek or Hebrew arrangement.
+Inherited translation, subsequent revision and cross-language correction must
+still be distinguished. In particular, our 5:12 comparison already warns that
+fraction choice and clause order can have different transmission histories.
+Agreement at the present loci cannot establish a whole-manuscript family tree.
+
+This pass does not certify every letter of 36:23–38, every intervening verse
+of chapters 37–39, a complete codex collation, or an absence of secondary
+correction. Nor does it fill Mas1d's physical gaps. The Masada evidence remains
+direct ancient Hebrew; the Berlin evidence remains a later versional witness.
+Neither copy age nor the number of agreeing versions alone selects priority.
+
+All 16 current POB source and English records at 36:23–38 were read again.
+**No Hebrew, English, notes or chapter order are changed.** Keep the longer
+declared Hebrew form provisionally and historical priority on HOLD. The next
+discriminating input remains the actual P967 transition and passage-specific
+critical apparatus, including the ancestry of versional readings. Do not
+reinspect these same Berlin joins as additional votes. If another witness is
+selected, justify how its date, relationship or divergent wording could
+distinguish the competing histories first.
+
+### Reproducibility
+
+One physical-witness entry, `berlin-petermann-ii-nachtrag-42`, is added to the
+[source registry](../sources/textual_restoration/ot_witness_registry.v1.json).
+Its partial coverage is explicitly narrower than the codex's catalogued extent;
+the other 48 mixed witness/family/edition records are unchanged. Registry count
+is not a count of independent ancient Hebrew witnesses.
+
+Private source-byte SHA256 values (images are not imported into Git):
+
+| Asset | SHA256 |
+|---|---|
+| Official manifest | `1b6c7f9e78e8fc1e16723572ee7d8617de00bcee39faab4e87c9215d51b2d05b` |
+| 279v, 1200-pixel export | `38f3fb0861d763cf7a0953e7c3247d747fb39afef503266a2bc0dcdae2f15e74` |
+| 280r, 1200-pixel export | `d880d6ee7e12a4c45a1745172758a8bd1e6c71b25f4bcd8ae1c4490ac35a462c` |
+| 282r, 2400-pixel export | `d0318c0d6a158f5c967d7400a47fda19f4a5aeb6213402ce7bb58c62adfaa863` |
+| 284r, 1200-pixel export | `89b0fe8e689f2de4fe802157efcf29ac436e72a8f5a37504684ecfd9d0d6109d` |
+
+These identify the inspected exports, not a spectral measurement or an
+independent dating result. No generated image, OCR completion or invented ink
+supports the observations. ImageGen remains a visualization/hypothesis tool,
+not a substitute for manuscript evidence.
+
+### Scoped review and checks
+
+Two bounded image crosschecks support the recorded identifications. One
+reviewer checked the 280r and 282r transitions, object identity, manifest
+mapping and the new registry entry. A second reader, given the two images
+without the expected exact anchors, independently identified the new-heart
+passage at 279va12–18 and the 38/39 transition within 284ra20. This is a
+targeted crosscheck, not an identity-blinded benchmark, full transcription,
+or certification of the earliest Hebrew reading. Fine word-level readings
+remain less certain than passage identification.
+
+All 12 existing edition/registry reconciliation tests pass. The 48 prior
+registry records are unchanged, 423 relative documentation targets resolve,
+and whitespace checks pass. The 16 canonical 36:23–38 records and WLC Ezekiel
+source remain byte-identical to baseline `be5a55bbc51949cf4664b3fc2c2098ecb0929a67`;
+the protected unrelated Genizah file also retains its recorded hash. These
+checks validate this limited documentation/registry update, not historical
+priority or a new translation.

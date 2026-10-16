@@ -11529,6 +11529,35 @@ two-document evidence update, not a new code/application change or full-corpus
 test run. No external specialist review is claimed or required for publication
 of these explicitly limited observations.
 
+## October 15 — Berlin longer passage and actual chapter joins
+
+The prior requested Nahum review completed documentation but supplied no new
+source reading. Work resumed the lead Ezekiel question. The
+[Berlin image comparison](EZEKIEL_36_LONGER_FORM_EVIDENCE_2026-10-12.md#berlin-ethiopic-passage-and-transitions-checked-on-october-15)
+now directly identifies the new-heart/new-spirit passage at279va and the
+consecutive36→37,37→38 and38→39 joins at280rb,282rb and284ra. Content controls
+these identifications, not absent catalogue rubrics. This is a later Ge'ez
+longer-form witness, not new ancient Hebrew evidence or proof of original order.
+One source-registry entry records the physical manuscript, with all48 earlier
+mixed records preserved. Current POB36:23–38 records were read; no canonical
+source, English, note or order is changed. No ImageGen output supplies letters.
+
+PR228's own push38836378905 and pull-request38836597698 runs both succeeded.
+The SHA-pinned merge produced`be5a55bbc51949cf4664b3fc2c2098ecb0929a67`,
+tree`b5e5f814186deb4551c51aee47a511e43445520e`, with the expected parents.
+Fetch, local-main compare-and-swap and a normal push confirmed synchronization.
+The new manuscript pass starts from that merge; the live Nahum PR229 head
+remains separate and unamended while its own CI runs.
+
+Two bounded image crosschecks support the four published locators; the second
+reader identified 279v's new-heart passage and the 284ra20 transition without
+being supplied the expected exact anchors. Neither review certifies a complete
+transcription or earliest-text priority. All 12 edition/registry reconciliation
+tests pass; 423 relative documentation targets resolve, prior registry rows
+are preserved, and the canonical passage, WLC source and protected Genizah
+bytes are unchanged. This closes the targeted Berlin check, not the broader
+P967 research question.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

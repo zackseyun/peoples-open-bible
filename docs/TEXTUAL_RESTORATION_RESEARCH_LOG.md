@@ -12721,6 +12721,42 @@ PR260 then passed both exact-head workflow runs and merged as
 precomputed merge. That tree also matches this follow-up's research baseline,
 so its separate documentation changes do not include a biblical-text change.
 
+## October 16 — Ezekiel causal pattern tested against Greek variation
+
+The preceding Nahum clarification changed documentation but added no manuscript
+evidence. This continuation tests an open argument in the lead Ezekiel project:
+whether expected Greek renderings require a different Hebrew opening at 35:10.
+The [comparison](EZEKIEL_35_VARIANT_EDITIONS_2026-10-16.md#october-16-causal-construction-and-greek-transmission-control)
+and [receipt](../sources/textual_restoration/comparisons/ezekiel35_10_causal_control.2026-10-16.v1.json)
+now record 40 Hebrew tokens in 37 verses, with explicit manual clause alignment
+against pinned Greek surface text. The expected construction is frequent, not
+exceptionless in this selection. Printed Swete 444/461 and the publisher's
+Rahlfs-Hanhart text verify the decisive 28:6-7 and 35:5-11 controls; apparatus
+variation prevents treating the selected digital text as all Greek witnesses.
+
+The inspected P967 28:6 connective is too abraded to certify, including in the
+new crop. That negative result limits the argument: we have not established
+that the exception was present in the earliest recoverable Greek. P967's
+previously checked different causal/person structure at 35:10 remains real.
+No Hebrew, English or note is changed. The next question is the transmission
+history of the specific competing Greek readings, not another tally or a
+forced image completion. ImageGen contributes no textual evidence.
+
+PR261's two exact-head CI runs passed. Its guarded merge was verified against
+the precomputed tree `31ac1556fc525a88b5d944f118de7e78f21af6aa` and ordered
+parents; local main advanced to `65f19063c29bc2aacca46a97b1a9ca4446dc34fe`
+and a normal push confirmed it synchronized. PR262 and PR263 checks were live
+and left running. This publication check does not certify source priority.
+
+One bounded independent critique inspected the article's argument and both
+complete Swete pages and found no substantive error. Root reproduced all 37
+receipt rows and 40 Hebrew selections, verified the 1,267 unique Greek rows
+and every saved surface span, checked both input hashes and the unchanged
+canonical 35:10 hash, and resolved all 526 relative file-link targets in the
+three edited reports. The protected unrelated Genizah file retains its prior
+hash. These documentation/data checks are not a corpus-wide translation test
+or a confidence score for original Hebrew; no canonical application was made.
+
 ## October 16 — Syrohex translator key and normalized critical signs
 
 The preceding requested Nahum reread confirmed the current result but supplied
@@ -12750,6 +12786,13 @@ protected unrelated Genizah file remain unchanged against `2097d1a745`.
 No corpus-wide local test or historical-priority certification is claimed.
 PR261's exact-head checks were confirmed running, including its reader-note
 test step; they were not restarted. Publication remains subject to CI.
+
+Publication follow-up: PR262 subsequently passed both exact-head checks and
+merged as `bf97933a0ddcfc62de601c48f9b70b4cacdfeced`. Its tree
+`26bc2804e42dd304c59955c2423c0f1502f72b0f` and ordered parents matched the
+precomputed merge. Local main was advanced and pushed. Integrating that main
+into the causal-pattern branch preserved both research-log entries; the
+remaining conflict was documentation ordering, not biblical text or evidence.
 
 ## Later About-page summary — proposed, not published
 

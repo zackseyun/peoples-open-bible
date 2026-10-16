@@ -12140,6 +12140,69 @@ transaction; unrelated release-comparison work and the Genizah file are left
 untouched. This repeated reading is not a new discovery, independent vote,
 newly recovered Hebrew, or canon-expansion result.
 
+## October 16 — release-state evidence and repeated-placement hold
+
+The [Ezekiel release comparison](QUMRAN_RELEASE_COMPARISON_2026-10-16.md)
+checks all seven labels in the pinned legacy cohort. Six yield 230 unchanged
+primary rows; 11Q4 remains held for eleven repeated word IDs across displayed
+fragment placements. Index-date normalization reproduces the old index hash,
+but does not establish unchanged contents for every catalogue entry. Masada's
+35:14 tav remains supplied. A bounded Talmon access search did not supply the
+decisive page/plate; the two publication targets are distinguished in the report.
+
+One independent code review caught a regex false-unchanged bug involving HTML
+comments. Parser-event source boundaries and adversarial tests replace it;
+27 comparison/index tests pass and root reproduces the receipt with the repaired
+tool. The same reviewer verified the repair and all six saved comparisons,
+retaining the seventh hold; this is not a second independent scholarly vote.
+Method 2.0.9 adds explicit edition-release and repeated-placement rules.
+This changes the comparison capability and next evidence-acquisition action,
+not Hebrew, English, historical priority or the global completion claim.
+
+PR245's already completed merge was verified as commit
+`2cc0da5e8b4a6d04f81ba6a21a495d547e541e4e`, tree
+`bcb82212b5ff9233bc76338c77982142e453007b`, with ordered parents
+`4e67983bffbbec1fd2990cface18ccaab8a472f9` and
+`4522efbfab0443723d9e8609718a913de54064a8`. Local main was advanced by
+compare-and-swap and a normal push completed. PR246 and PR247 exact-head
+push/PR jobs were confirmed live and left unchanged. The immediately previous
+turn published the requested Nahum documentation confirmation; it was a
+documentation delivery, not new ancient evidence. This turn resumes the
+unfinished broader method work rather than rereading that article again.
+
+## October 16 — literary edition and ancient reader reception distinguished
+
+The [new Lilly assessment](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#october-16-lilly-on-literary-edition-and-resurrection-reception)
+adds a directly consulted institutional dissertation and a bounded check of
+the page-90 cursive margin in Princeton's native photograph. Lilly argues
+positively for an earlier Hebrew edition and a literary arrangement more open
+to eschatological interpretation. She nevertheless distinguishes circumstantial
+Hebrew-priority arguments from Greek translation history, and explicitly limits
+text-critical deductions from the text's fit with reader annotations. A source
+critic and root checked the final synthesis to avoid citing her caution alone.
+
+This improves our evidence classification and identifies the next accessible
+test of the proposed heart/spirit revision pattern. It changes neither Hebrew
+nor POB English, and is not new decipherment, image restoration or comprehensive
+source coverage. The PDF skill required complete-page visual checks alongside
+text extraction; no generated image supplies evidence. Source hashes, locators,
+consultation limits and counterarguments are in the case report.
+
+The bounded source-factual review passed the written assessment. All 508
+relative file-link targets in the three changed reports resolve and
+`git diff --check` passes. Only those documentation files change; the protected
+unrelated Genizah file retains its recorded hash. These checks do not establish
+historical priority or replace a manuscript collation.
+
+The immediately previous goal turn verified live PR247 jobs and reran the
+Nahum application checks; it was a verified publication wait, not new textual
+evidence. PR246 now passed both exact-head Corpus integrity events and merged
+at `9aca1d1ffcb5814ed42f14bc52e981a3c91f9408`. Root verified expected tree
+`19a19906027f555c7d8b8ce6f1cdd33660f9cb0d` and ordered parents
+`2cc0da5e8b4a6d04f81ba6a21a495d547e541e4e` /
+`45b8803d2071d28ef01cd824a053816643823b4a`, fetched, advanced local main
+by compare-and-swap and completed a normal push. The broader goal remains active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

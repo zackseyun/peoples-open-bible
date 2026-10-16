@@ -84,9 +84,15 @@ by this control alone.
 adds directly checked P967 differences at 35:10 and 35:14-15. Its alleged
 Masada noun support depends on a restored tav, while Mas1d preserves the
 longer clause. Do not treat either the whole-edition reconstruction or a
-blanket Greek-priority claim as established. Next test POB's 35:14 temporal
-interpretation within 14-15 and seek the exact Talmon restoration rationale;
-these are discriminating follow-ups, not another review of the 36:23 join.
+blanket Greek-priority claim as established. The
+[temporal English comparison and application](EZEKIEL_35_14_JOY_ENGLISH_APPLICATION_2026-10-16.md)
+is now completed locally and submitted in PR246; merge/deployment are separate
+milestones. The [release control](QUMRAN_RELEASE_COMPARISON_2026-10-16.md)
+finds the supplied Masada tav unchanged, not newly preserved. Seek the exact
+Talmon restoration rationale; the tested public routes did not supply its page
+or plate. Resolve the 11Q4 repeated-placement identity hold before using it in
+word-level coverage. These are discriminating follow-ups, not another review
+of the 36:23 join.
 The larger 36-39 historical question below remains open.
 
 Does the reported36:23b/c–38 minus and36→38→39→37 order represent a shorter
@@ -161,6 +167,17 @@ already-existing Hebrew. Such replacement remains unproved and must still
 account for the shorter branch and order. Keep Greek translation history,
 Hebrew composition and chapter order analytically separate; pursue evidence
 that connects them, not another tally of the same stylistic features.
+
+**October 16 literary/reception checkpoint:** the newly accessible
+[Lilly dissertation and page-90 margin check](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#october-16-lilly-on-literary-edition-and-resurrection-reception)
+separate her positive shorter-Hebrew argument from reception evidence.
+The resurrection annotation is compatible with her literary interpretation,
+not proof that this interpretation caused the order or originated in Hebrew.
+Retain HOLD and current POB. Do not reread the same margin as another witness.
+An accessible next test is her chapter-5 heart/spirit comparison: inspect the
+actual variant readings and contrary cases, not just her aggregate conclusion,
+to test the proposed relationship to the chapter-36 minus. This does not
+supersede the still-missing modern apparatus or count all chapter 5 as reviewed.
 
 The Scheide Archive copy is restricted and the papyri.info route gated; do not
 repeat or bypass them. A discriminating result would constrain whether the

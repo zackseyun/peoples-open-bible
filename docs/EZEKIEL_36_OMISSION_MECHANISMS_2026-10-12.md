@@ -1142,6 +1142,126 @@ imported into Git. An accessible Klein 2010 article was screened as a related
 literary argument, but is not used here as an independently adjudicated witness
 or a claim of newly established borrowing direction.
 
+## October 16: Lilly on literary edition and resurrection reception
+
+**Retain Hebrew-priority HOLD and current POB.** Ingrid Esther Lilly's 2010
+Emory dissertation, [*Papyrus 967: A Variant Literary Edition of Ezekiel*](https://etd.library.emory.edu/concern/etds/th83kz55d),
+is now accessible through its institutional download. This closes a new
+consultation gap, not a new manuscript discovery. The important addition is
+her distinction between literary possibilities, actual reader reception and
+the history that produced the text. Her positive argument for an earlier
+Hebrew edition must not be omitted merely because this project retains HOLD.
+
+### Greek layer, Hebrew composition and selected evidence
+
+Section 4.4.4, printed 143–150 / PDF 155–162, argues cumulatively against
+mechanical omission and for a shorter Hebrew form. It combines Greek diction,
+Hebrew linguistic features, prophetic formulas, literary reuse and versional
+evidence. At printed 150 she expressly distinguishes the Greek insertion
+argument from the additional, circumstantial evidence for absence in Hebrew.
+A distinctive Greek rendering alone cannot decide whether its Hebrew passage
+was newly composed or already existed before Greek supplementation/replacement.
+
+Her conclusion at printed 150–155 / PDF 162–167 is not a random sample of
+Ezekiel variants. It concerns variants selected for coherent literary trends,
+with historical conclusions contingent on the literary analysis. Counting the
+same readings, their coherence and the manuscript's aggregate reliability as
+three independent votes would overstate the evidence. Printed 152–153 also
+explicitly allows that an Old Greek text-type can reflect Hebrew yet undergo
+Greek literary development. She judges that explanation less likely for
+Ezekiel; she does not make it logically impossible.
+
+The earlier project controls qualify several of her supporting claims:
+
+- Printed 145–146 uses Erman's Sahidic unit to rebut the claim that 36:16–23b
+  is too short to stand alone. Our [direct reading-boundary check](#sahidic-reading-boundary-and-the-shorter-text-argument)
+  establishes an excerpt with a differing endpoint, not an independently
+  surviving continuous Ezekiel edition without the longer passage.
+- Printed 149 acknowledges that the Latin minus is inferred from non-extant
+  material. Our [original-edition check](#old-latin-preservation-and-original-edition-check)
+  retains the actual 37→40 join separately from the reconstructed wider order.
+- Printed 144–145 challenges a particular loss reconstruction and its phrase
+  correspondence. Our [capacity test](#testing-the-page-capacity-argument-on-october-15)
+  likewise leaves ancestral loss possible without establishing that it occurred.
+
+These are qualifications of the cumulative case, not grounds to discard it.
+This pass does not independently verify every cited linguistic classification,
+all chapter-5 comparisons, or a modern critical apparatus. No new probability
+is assigned from her selected-variant counts.
+
+### The resurrection margin and its interpretive limit
+
+Printed 300–303 / PDF 312–315 describes the marginal hands. The published
+page-90 reading is `αναστασεως`, translated as concerning resurrection;
+“concerning” is supplied in interpreting the genitive, not a separately
+transcribed `περι` on this page. Her `Q` for page 90 represents the numerical
+koppa (note 640), not Codex Marchalianus. The note is contemporary with or
+later than the main text in her account; this pass does not independently date
+or identify its hand.
+
+Section 6.3.3.1.4, printed 330–332 / PDF 342–344, places the note over the
+page containing 39:23–29 and 37:1–4. She probably relates it to chapter 37;
+the proposed liturgical function is also qualified. It supports resurrection
+reception, but she says the marginalia do not establish special interpretive
+importance for the chapter order or a definite Gog–resurrection connection.
+
+The final synthesis, section 7.1.3, printed 374–379 / PDF 386–391, is essential
+context. Lilly positively argues that placing chapter 37 before the temple
+vision more readily permits an eschatological reading. The margin attests
+compatible reception. She then considers, but rejects as insufficient, the
+inference that resurrection-minded Greek editors created that order. Other
+reader interests do not consistently match the distinctive textual features;
+some align with MT's emphases. Her final methodological limit applies to this
+text/paratext comparison, not to her entire dissertation: it supports
+interpretive history rather than a text-critical conclusion.
+
+Our assessment preserves both sides. A sequence can facilitate an interpretation
+without that interpretation having caused the sequence. Conversely, the lack
+of a wider editing pattern does not exclude a localized rearrangement, and
+later annotators need not share an earlier editor's agenda. Neither the margin
+nor its fit with the literary form establishes Hebrew ancestry or eliminates
+Greek-stage development. The note and the chapter joins belong to the same
+manuscript, not independent source-priority votes. No new canon inference follows.
+
+### Photograph, consultation and next test
+
+Root checked the previously acquired full Princeton canvas 42 and a native
+upper-margin region from its [institutional image service](https://iiif-cloud.princeton.edu/iiif/2/71%2F07%2Fa3%2F7107a3a893d94b959f1cd195019f980f%2Fintermediate_file/1700,650,2100,700/full/0/default.jpg).
+The cursive annotation and page numeral are visible in the expected location.
+The photograph is compatible with the published reading; this is not a blind
+letter-by-letter decipherment or an independent certification of every cursive
+stroke. The transcription remains credited to Lilly and the earlier editors
+she cites. The region uses native coordinates x=1700, y=650, w=2100, h=700 on
+the manifest's 6679×11011 image. No generated fill or enhanced ink was used.
+
+Root read complete printed 143–155, 300–303, 330–332 and 373–379 with notes.
+The PDF skill prompted visual checking of complete 144–150, 330–332, 375–376
+and 378–379, avoiding the extraction's corrupted Greek font mapping. This is
+not a complete reading of the 443-page dissertation. One bounded independent
+critic checked the same principal sections and the final synthesis, confirming
+the distinction while requiring the positive literary argument remain visible.
+That critique is not a new scholarly witness or proof of source priority.
+
+The [institutional PDF download](https://etd.library.emory.edu/downloads/79407x487?locale=en)
+was obtained through the ordinary public browser after web-fetch returned 405.
+The 2,899,291-byte PDF remains private at
+`/Users/zack/Downloads/Lilly_-_Dissertation.pdf`, SHA256
+`b3c1d04d137a3195a584d26a5976e320b014a51ae93896afe347efbd697749a5`.
+The new native image region, retained outside Git, has SHA256
+`c93b64d9ebad1d8d7d4904a7a3fb9edd3b1d31e392c9bf43150e84a1b54d5d21`;
+the reused full canvas has SHA256
+`59e37e807a9903a0cfdee68b079abdb8e257f1268e5eaf02e18ca2b8922a2457`.
+No dissertation, page render or manuscript photograph is imported or relicensed.
+
+This retires another review of this margin as a source-priority test. An
+accessible next substantive test is Lilly's chapter-5 heart/spirit comparison:
+inspect the exact readings and contrary cases before assessing whether they
+link the chapter-36 minus to a coherent Hebrew revision. The conclusion's
+reported coherence is not itself a completed collation. Any such test must
+preserve witness dependencies and distinguish a thematic relationship from
+the direction or date of change. The missing modern apparatus remains a
+separate limitation. No Hebrew, English, reader note or recovered letter changes.
+
 ## Sahidic reading boundary and the shorter text argument
 
 The newly consulted Coptic evidence establishes a liturgical reading ending

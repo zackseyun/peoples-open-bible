@@ -12277,6 +12277,50 @@ exact-head checks were confirmed live; their running jobs were not restarted.
 PR247 also has a merge conflict after the preceding main update and will need
 a preservation-only integration before publication, with fresh checks then.
 
+## October 16 — P967 circumcision difference delivered to the reader
+
+The preceding turn added direct Swete evidence and a bounded note proposal;
+it was progress. This continuation implements that proposal through a pinned
+full-record candidate, source-factual review and actual export verification.
+The [application record](EZEKIEL_44_7_READER_DISCLOSURE_2026-10-16.md)
+links the baseline, contract, exact candidate and receipt. The note reports
+P967's local omission while explicitly retaining its 44:9 counterexample.
+The existing food note moves to its proper phrase. Five prior fields are
+archived without transferring old approval. Hebrew, marker-free English,
+lexical entries, prior revisions and generation provenance are unchanged.
+
+Root verifies the complete 48-chapter/1,273-verse actual export, all four target
+notes and byte equality of all 1,272 non-target records. This is a reader
+disclosure improvement, not new decipherment, a Hebrew replacement, a canon
+change or deployed-site verification. The broader source/restoration goal is
+still incomplete; this local delivery does not redefine its scope.
+
+A separate code reviewer identified one overbroad current-book freeze in the
+Ezekiel 35:14 tests. Its complete historical transaction proof now uses the
+actual immutable application commit; exact current target YAML and exported
+notes remain checked. The Ezekiel 28/39 and eleven-compound tests already
+separated these scopes and were unchanged. The reviewer passed 29 tests and
+confirmed with in-memory probes that an unrelated reader change is allowed
+while a target regression fails. No scholarly conclusion follows from tests.
+
+PR249 passed both exact-head Corpus integrity events and merged at
+`5c88c9a30a72a88409931c20672c966d14e262e8`. Root verified expected tree
+`8c0c07728a7115461a735bd6234c885eb21ce787` and ordered parents
+`f999e609e258673937a952393092bf90c3187437` /
+`adecce9a4e731ff517c6f314827676e49dc5ef6d`, advanced local main after fetch
+by compare-and-swap, and completed a normal push. The present application is
+a separate successor change requiring its own publication checks.
+
+Post-application validation passed all 70 focused and shared tests in 156.206
+seconds, including the repaired historical/current boundary and four new tests.
+Earlier preflight/reviewer checks overlap that count. All 522 relative file
+targets resolve; workflow/JSON parsing and whitespace checks pass. Source XML
+and protected Genizah bytes remain unchanged. These are local implementation
+checks, not full-corpus, historical-priority or deployed-site certification.
+PR247's old exact-head jobs have now succeeded, but its integration conflict
+still needs a preservation-only merge and new checks; its old green results
+will not certify that future head. PR250/251 jobs remain live and unchanged.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

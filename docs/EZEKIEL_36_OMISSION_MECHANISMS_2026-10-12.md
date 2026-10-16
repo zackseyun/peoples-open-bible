@@ -1420,6 +1420,16 @@ expressions. Swete remains an edited witness report, not a new direct Vaticanus
 photograph; source files/renders stay outside Git. Hebrew and canonical POB
 remain unchanged in this documentation packet.
 
+### Subsequent reader application
+
+The [full-record application](EZEKIEL_44_7_READER_DISCLOSURE_2026-10-16.md)
+has now implemented the named P967 note after exact preflight review. It also
+places the retained food note at its actual phrase. The declared Hebrew and
+marker-free English are unchanged; historical priority remains unresolved.
+The complete actual export and all 1,272 non-target records were checked.
+Earlier "unapplied" statements describe the evidence packet's freeze, not the
+current application status. No new source reading or scholarly vote is claimed.
+
 ## Sahidic reading boundary and the shorter text argument
 
 The newly consulted Coptic evidence establishes a liturgical reading ending

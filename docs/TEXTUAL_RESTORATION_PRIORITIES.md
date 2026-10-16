@@ -53,9 +53,12 @@ an unperformed comparison with an already acquired critical edition:
 The first pass now checks four Greek junctions, 18:6's transition, the tiny
 4Q51 portions at 18:4–5, and the 18:28 combined reading. While the three
 historical questions below await new inputs, use this as the single active
-accessible case. Next test the 18:1 arrival/conversation doublet against
-individual Greek readings and competing Hebrew-join/Greek-conflation accounts.
-Do not repeat the completed height decision or the four junction checks.
+accessible case. The follow-up now checks individual 18:1 readings, c/x's
+17:58 omission, g's relocation, and the Greek/Hebrew controls on a proposed
+Merab marriage ending. The full 2020 study has been read as indexed text.
+Next verify manuscript 845's actual coverage at 18:10–11 and 18:17 before
+using its reported mixed pattern to adjudicate growth versus omission.
+Do not repeat the completed height decision, junctions or 18:1 comparison.
 
 **October 16 access boundary:** a bounded independent audit found no verified,
 high-value unperformed test within this portfolio using its presently accessible

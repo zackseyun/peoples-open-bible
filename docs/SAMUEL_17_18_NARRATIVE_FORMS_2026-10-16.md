@@ -111,24 +111,107 @@ pp. 18–21 and 28–30; a research agent read and visually checked all pp. 16�
 An attempted Tov author-site route failed certificate validation; no bypass
 or full Tov reading is claimed. Trebolle's p. 28 prose and p. 29 table differ
 over the 17:48a/b label; use the actual clause wording and apparatus, not that
-label alone. The 2020 Chavel–DeGrado study was located only at abstract level,
-not consulted as a complete opposing reconstruction.
+label alone. At this initial pass the 2020 Chavel–DeGrado study was located
+only at abstract level. The subsequent full-text consultation below supersedes
+that access limit.
+
+## Individual readings at 18 1 and the surrounding sequence
+
+The next comparison, against BMT printed pp. 61–62 and 64, confirms a combined
+arrival/conversation construction but not a uniform surrounding narrative.
+The following are entries in the main apparatus, not words printed in B's
+continuous text. Greek is given without accents or name overbars; the sigla
+and entry boundaries remain distinct.
+
+| Location | Printed apparatus evidence | Consequence |
+| --- | --- | --- |
+| 18:1 after ως | Add `εισηλθεν ... δαδ προς σαουλ και`, supported by b g h i o z(mg) c₂ e₂; z's marginal verb is `ηλθε`. The same group replaces the later `προς σαουλ` with `αυτω`. | Arrival plus completion of conversation; z's marginal status must not become main-text support. |
+| 18:1 `συνετελεσεν λαλων προς` | Replace with `εστη δαδ ενωπιον`, c x. | David stands before Saul, rather than finishing speech. The same c/x witnesses omit the entire question-and-answer verse at 17:58. |
+| 18:1 second καί | Prefix `ειδεν αυτον ιωναθαν`, b g h o z c₂ e₂. By contrast i replaces the separate span `και 2°—ηγαπησεν` with `ειδεν`. | The Jonathan clauses do not have identical wording or support across the arrival group. |
+| 18:2 second καί through the specified 18:6 `αλλοφυλον` | `post (29) ετι g`. | g relocates this stretch after 18:29's ἔτι. Its support at 18:1 cannot be projected onto the standard surrounding order. |
+
+The retained Hebrew/POB sequence at 17:57–58 describes David's presentation
+and reply to Saul; 18:1 then completes their conversation, and 18:2 keeps David
+at court. The c/x omission and standing clause provide a different local
+connection. The arrival witnesses provide another, with g's additional order
+qualification. The weapons in 17:54 and 18:4 can motivate a literary link,
+but the apparatus does not itself give a Hebrew manuscript connecting those
+two verses directly through the reconstructed 18:1 clause.
+
+Trebolle's pp. 19–21 treat the double construction as a trace of a Hebrew
+editorial join. Our comparison establishes the construction and its internal
+variation, not the language or date of its formation. Greek supplementation
+or conflation remains a competing explanation; c/x and g show why a single
+collective recension label cannot resolve it. Source-priority HOLD remains.
+
+## A complete second story and the evidence it requires
+
+Root and a research agent read the complete indexed text of
+[Chavel and DeGrado 2020, pp. 553–580](https://www.academia.edu/44748809/Text_and_Source_Criticism_of_1_Samuel_17_18_A_Complete_Account),
+including notes, bibliography and three appendices. This is a full textual
+consultation, not a downloaded PDF or visual verification of its Hebrew tables.
+
+The authors start with MT's composite character (p. 556). Their independent
+second story links 18:19, 26b and 27* into a fulfilled Merab betrothal and
+proposes singular וימלאם at 27 (pp. 559–563, note 20). They classify 18:1, 3–4
+as later enrichment and 18:2, 5–6aα as harmonization (pp. 564–567). They also
+acknowledge that narrative coherence alone does not prove historical existence
+(p. 568). This challenges Trebolle's reluctance to reconstruct a complete
+second story, not his preference for an earlier shorter edition.
+
+### Direct controls on the proposed marriage ending
+
+BMT p. 64 places `και επληρωσεν αυτας` immediately before the first `τω`
+in 18:27, following the foreskins expression; A is explicitly among its
+supporters. The verb has a singular subject and a feminine plural object.
+At 18:26 the separate addition has `αι ημεραι`, the days, with a plural
+passive verb. Both Greek days and foreskins are feminine plural: the pronoun
+alone cannot choose between them. In the printed context the foreskins are
+the nearby antecedent. The addition does not name Merab or relocate itself
+after 18:19. A singular Greek agent therefore supports a possible analysis,
+not the exact proposed Hebrew spelling or the reconstructed marriage ending.
+
+The retained WLC at 18:27 has plural וַיְמַלְאוּם after David brings the
+foreskins, within a scene involving David and his men. A change to singular
+וימלאם would be a consonantal emendation, not just repointing. Choosing days
+as antecedent and joining the clause to 18:19 are further decisions, each
+requiring evidence. Neither the extant plural nor the Greek singular alone
+settles the history of the passage.
+
+The Genesis comparison also needs precision. In the checked local WLC,
+29:21 has Qal plural מָלְאוּ יָמָי; the Piel singular וַיְמַלֵּא שְׁבֻעַ זֹאת
+is at **29:28**, not 29:21 as cited in the article's note 20. The narrative
+distinguishes completion of the bridal week from the further seven years
+in 29:30. The article's seven-year interpretation of the Piel example should
+not be imported as an unexamined lexical control. A temporal-completion
+parallel remains relevant, but does not by itself recover Samuel's antecedent.
+
+**No POB source, English or note changes follow.** The proposed Merab ending
+would materially change the story, but remains a literary reconstruction
+rather than a newly attested continuous Hebrew text. This pass has tested its
+Greek and local Hebrew controls without claiming to have checked the cited
+Akkadian legal evidence. Root inspected the full BMT pages and enlarged entries;
+an independent reader confirmed the 18:1/2 distinctions and 18:26/27 grammar.
 
 ## Next discriminating comparison
 
-Test the **18:1 arrival/conversation doublet** against the actual individual
-Greek apparatus readings and the connected 17:54, 17:58 and 18:2 transitions.
-Compare inheritance of a Hebrew join with Greek-stage conflation; do not
-infer either from a collective recension label. A full reading of a later
-complete-story reconstruction would then test the proposed literary division.
-The four junctions and the Hebrew fragment above are completed controls,
-not reasons for another height review, a minor note-anchor task or a new
-claim that all OT evidence is exhausted. This case concerns literary forms
-within Samuel and supplies no canon-expansion argument.
+The 18:1 test and full 2020 reading are now completed controls. Next seek
+direct verification of **Greek manuscript 845 at 18:10–11 and 18:17**. The
+2020 paper reports different presence/absence at these units (p. 569), but
+that report is not yet our own collation. Verify identity, actual coverage,
+damage and reading order before using it to test successive growth stages;
+presence/absence alone must still be tested against omission as an alternative.
+Do not repeat the completed junctions or height review. This case concerns
+literary forms within Samuel and supplies no canon-expansion argument.
 
 ## Reproducibility and rights
 
 Input repository commit: `b24422c3b8bfe5112412c03a8e3c054f4cb28a8f`.
+The 18:1 and marriage-ending follow-up starts from
+`c83ca9d37bbe03a78bfdc64f8b7ecc3824dd0d36`; its changes are confined to this
+report, the priorities and research log. File links and `git diff --check`
+pass; the biblical corpus is unchanged. The additional checked Genesis XML
+SHA256 is `0526e5c9a5fb4d907847645f954ed3d1268fa69decbd872056cedd2668d86449`.
 
 | Input | SHA256 |
 | --- | --- |

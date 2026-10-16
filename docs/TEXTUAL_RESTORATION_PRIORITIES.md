@@ -143,6 +143,15 @@ reasons to repeat the same acquisition. Retain HOLD and reopen this branch
 only with discriminating wording or apparatus; additional generic heart/spirit
 references are low yield. No source or English revision follows.
 
+**October 16 linguistic-argument checkpoint:** the
+[direct Crane 270–278 review](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#october-16-greek-replacement-is-not-hebrew-composition)
+now closes that pending reading. His objection to Christian material entering
+Jewish Hebrew does not exclude replacement of an older Greek translation of
+already-existing Hebrew. Such replacement remains unproved and must still
+account for the shorter branch and order. Keep Greek translation history,
+Hebrew composition and chapter order analytically separate; pursue evidence
+that connects them, not another tally of the same stylistic features.
+
 The Scheide Archive copy is restricted and the papyri.info route gated; do not
 repeat or bypass them. A discriminating result would constrain whether the
 minus is physically continuous, explain a concrete loss/reordering mechanism,

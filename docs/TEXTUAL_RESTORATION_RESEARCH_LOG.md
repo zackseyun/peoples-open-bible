@@ -12008,6 +12008,34 @@ The eight focused Nahum 1:5 application tests passed in 2.505 seconds,
 confirming the already applied article-based wording rather than a new
 translation change.
 
+## October 16: distinguish Greek replacement from Hebrew composition
+
+The preceding turn made progress by committing the Syriac control and verifying
+the existing Nahum application. Current-state checks now show PR242's exact
+head passed both Corpus integrity events. Its SHA-pinned merge is
+`bc517acf703b0d139d893f4f7e9407c07dd5ef33`; root verified expected tree
+`d3a7fa9869c47eaf0eac7edec1967cc3473793cc` and ordered parents
+`d58f189dda16ffed2218d668cc038583fe6fdcb4` /
+`9b1b2dbbde444feb3479172d7f2d7f045ba2e327`, synchronized local main by
+compare-and-swap and completed a normal push. PR243's two exact-head jobs
+were confirmed running and were not amended or restarted.
+
+The [new bounded analysis](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#october-16-greek-replacement-is-not-hebrew-composition)
+reads the pending Crane 270–278 discussion, including its strongest cumulative
+case for expansion. It identifies a specific exclusion limit: Christian
+Greek-only replacement does not require Christian creation of Jewish Hebrew.
+That alternative still needs evidence for its timing, transmission and relation
+to the shorter branch and order. Root and one critic checked the argument;
+agreement does not establish which history happened. The PDF skill required
+complete relevant page inspection. Existing source and English remain unchanged.
+This is progress in evaluating an inference, not new ink or a solved corpus.
+
+Documentation validation: all 500 relative file-link targets across the three
+changed reports resolve, and `git diff --check` passes. The changed-file scope
+is those three documents only; the WLC Ezekiel XML and protected Genizah file
+retain their recorded hashes. No corpus-wide test rerun is presented as
+evidence for this historical argument.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

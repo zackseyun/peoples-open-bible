@@ -1075,6 +1075,73 @@ or new P967 photograph is claimed. Crane's 266 note 415 reports a small space
 at the 39→37 transition through Johnson; that remains a reported feature,
 not an independently measured gap or proof of scribal intention.
 
+## October 16: Greek replacement is not Hebrew composition
+
+The previously queued linguistic discussion in
+[Crane's 2006 thesis](https://researchportal.murdoch.edu.au/esploro/outputs/doctoral/The-restoration-of-Israel-Ezekiel-36-39/991005542291607891),
+printed 270–278, is now directly checked against the completed language controls.
+**The evidence supports distinguishing a Greek translation layer; it does not
+by itself exclude replacement of an older Greek translation of an already
+existing Hebrew passage.** Retain historical-priority HOLD and current POB.
+
+Crane 270–273 assembles Greek vocabulary and Hebrew stylistic differences.
+On 274 he expressly recognizes the need to distinguish original absence from
+replacement following omission. Pages 274–276 add junction wording, reported
+cross-language agreement, sense divisions, the human-bones clarification at
+37:1, and chapter-order/theological coherence. Page 276 proposes coordinated
+inclusion. Pages 277–278 discuss Thackeray's alternative of a Christian lesson
+replacing an older Greek translation, then object that Christian material
+would not plausibly have entered Jewish Hebrew. These are cumulative arguments,
+not a claim that style alone proves the entire history.
+
+Our inference concerns that last objection specifically. A Greek-only
+replacement model requires no Christian creation of Hebrew and no transfer
+from a Christian lesson into a Jewish Hebrew copy. It allows the Hebrew
+passage to predate the Greek revision. Therefore the objection on 278 does
+not exclude that model. This is a limitation of an exclusion argument, not
+evidence that Christian replacement actually happened. The earlier
+[Thackeray control](#greek-translation-technique-controls-checked-on-october-15)
+already records the distinction; Crane's treatment can now be evaluated
+directly rather than inferred through his citations.
+
+Keep three separate historical questions:
+
+| Question | Relevant evidence | What remains unproved |
+|---|---|---|
+| Why does the surviving longer Greek have a distinctive style? | The controlled vocabulary/title distributions and possible revision affinities | First translation of newly composed Hebrew versus replacement/revision of an existing translation |
+| Why does P967's branch lack the passage? | Actual continuous transition, longer Hebrew attestation, qualified Latin evidence and loss models | Ancestral absence, secondary loss or deliberate omission |
+| Why do the chapter orders differ? | Observed joins, literary connections and junction variants | Direction, motive and whether this change occurred together with either event above |
+
+The strongest counterargument to separating these events is explanatory
+economy: a single compositional revision may account for several correlated
+features. A replacement proposal must still explain the shorter branch,
+chapter order, Hebrew literary profile and lack of a securely identified older
+Greek translation of the passage; it cannot answer everything merely
+by being possible. Conversely, a coherent combined narrative does not prove
+that all the features arose together. Reported close Hebrew/Greek agreement
+can also fit a later translator revising toward an existing Hebrew text.
+No variation-rate measurement or synchronism is established in this pass.
+The actual Christian lesson cited at 277 note 433 is medieval and covers only
+36:24–28. It does not directly attest ancient replacement of the full block.
+
+The [existing controls](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md) retain their
+witness-specific qualifications; neither Crane's repeated examples nor his
+cited scholars become additional manuscripts. This closes the old instruction
+to read 270–278. The useful next evidence would distinguish translation revision
+from first translation, or independently establish the relationship of the
+short and long branches. Do not repeat these pages as a new source-priority vote.
+No source, English, note, restored letter or canon change follows.
+
+Root and a bounded independent critic read all nine complete pages with notes;
+root visually inspected PDF pages 273–281. The critic confirmed the logical
+distinction and required retaining the cumulative counterargument. The PDF
+hash remains `d8946b57d346bdd2bf8764659b8eb8444c48732e44ff3e8fbb8a24f3f8f17842`.
+This is not a complete-thesis review, a new consultation of Thackeray 1921,
+or fresh verification of every manuscript claim in Crane. No PDF/renders are
+imported into Git. An accessible Klein 2010 article was screened as a related
+literary argument, but is not used here as an independently adjudicated witness
+or a claim of newly established borrowing direction.
+
 ## Sahidic reading boundary and the shorter text argument
 
 The newly consulted Coptic evidence establishes a liturgical reading ending

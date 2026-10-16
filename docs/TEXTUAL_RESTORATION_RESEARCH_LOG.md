@@ -13141,6 +13141,35 @@ file hashes match; all biblical records are unchanged against the pinned base.
 The new JSON, workflow YAML, 527 relative link targets and diff checks pass.
 These checks validate the recorded evidence and calculations, not source priority.
 
+## October 16 — Syriac Cainan wording and disputed transmission
+
+The preceding packet tested Jubilees counting and Hebrew preservation. This
+[follow-up](GENESIS_11_AGE_SYSTEMS_2026-10-16.md#syriac-cainan-evidence-and-transmission)
+acquires and visually checks the cited printed Syriac building phrase. The
+complete Chabot scan is pinned by bytes and hash; its actual title dates this
+volume to 1920, not the archive's 1916 label. Printed p. 46 is PDF p. 307.
+An independent reader corrected root's tentative abbreviated phrase; root
+rechecked the enlarged target. No manuscript pixels or lost Hebrew letters
+were recovered. The Monitum's transcript limitation is recorded narrowly.
+
+The packet also distinguishes a published early Syriac genealogical list from
+the chronicle's narrative and records modern objections to assuming direct
+Hebrew transmission. Consultation scopes and access failures are explicit in
+the evidence record, including an incomplete thesis download excluded from
+verified inputs. This adds source evidence, not a repeated arithmetic exercise.
+It does not establish an earlier Hebrew Genesis, justify another reader-note
+change, or settle canon. The existing method's mediation rules were applied;
+no redundant methodology expansion or new factual unit test was needed.
+
+The final bounded independent review passed the exact phrase, edition identity,
+and evidence/inference boundaries; it did not independently verify the modern
+studies or Monitum. Validation passed the complete scan's byte/hash pin, JSON,
+all three unchanged verse/WLC/protected-file hashes, 529 relative link targets,
+four workflow YAML files and the diff check. No biblical record changed against
+the pinned baseline. Publication continues through PR267; its two existing
+required checks were still running when checked, so no protected merge was
+attempted. New-head checks must pass before main integration.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

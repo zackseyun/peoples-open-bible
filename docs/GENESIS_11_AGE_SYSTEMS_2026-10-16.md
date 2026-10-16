@@ -231,8 +231,9 @@ does not disprove earlier reconstructions: the competing Allegro, Milik and
 Dimant treatments and the photographs remain to be checked directly.
 
 Smith and Udd also invoke Syriac wording and a proposed Hebrew confusion behind
-“build” and “possess.” These are reports through other scholars in the consulted
-section, not directly inspected Syriac testimony or recovered Hebrew letters.
+“build” and “possess.” The initial counting packet consulted these through other
+scholars; the [Syriac follow-up](#syriac-cainan-evidence-and-transmission) below
+now checks the printed wording, without recovering its hypothetical Hebrew.
 Narrative integration supports taking the Cainan passage seriously in Jubilees;
 even original wording in Jubilees would still require a separate argument for
 its relationship to Genesis. The known Latin palimpsest does not close the
@@ -259,10 +260,51 @@ edition. It does not establish the original/corrector reading at 11:13.
 
 The next apparatus check must therefore track **509** and its local hand
 notation rather than search only for E or count those edition labels as
-different witnesses. Direct target checks remain Genesis 11:12–13 and 11:24–25;
-the next versional check is the cited Syriac edition and its manuscript/date.
+different witnesses. Direct apparatus targets remain Genesis 11:12–13 and
+11:24–25. The printed Syriac check is completed below; its ancestry remains open.
 The applied reader note and the declared Hebrew remain appropriate pending
 those discriminating checks. This comparison supplies no canon-expansion result.
+
+## Syriac Cainan evidence and transmission
+
+The [follow-up record](../sources/textual_restoration/comparisons/genesis11_syriac_followup.2026-10-16.v1.json)
+pins the complete [Chabot scan](https://archive.org/details/chroniconanonymi01chab).
+Its title page prints **1920**, despite the archive's 1916 label and our initial
+private filename. Root visually checked printed p. 46 / PDF p. 307, including
+the enlarged target; the volume's scanned body runs in descending page order.
+Line 6 reads **ܕܢܒܢܐ ܠܗ ܐܬܪܐ ܘܡܕܝܢܬܐ**, “to build for himself a place and a
+city,” in Qainan's narrative. An independent reader corrected root's tentative
+abbreviation by retaining the intervening words and the conjunction. This is
+confirmation of published Syriac, not newly deciphered manuscript ink.
+
+Chabot's unnumbered *Monitum* / PDF p. 9 describes preserving some doubtful
+readings from a transcript without always knowing their codex state. It does
+not mark this building phrase doubtful. We inspected the printed edition, not
+the manuscript or the whole critical apparatus. Syriac “build” does not uniquely
+recover a Hebrew verb or prove the proposed Hebrew *b-n-h/q-n-h* confusion.
+
+[Hilkens's thesis](https://biblio.ugent.be/publication/4381496), consulted in
+bounded sections through indexed text, questions arguments for direct Hebrew
+translation and even the existence of a complete Syriac Jubilees. Its account
+dates the lost Fehim 4 copy only tentatively to the fourteenth century; that is
+not the date of every tradition it contains. The local thesis download remained
+incomplete and is not a verified PDF input. These cautions weaken the inference
+of independent Hebrew ancestry; they do not disprove it.
+
+[Coogan (2022), “Genealogy” and note 14](https://journals.sagepub.com/doi/10.1177/09518207211059474),
+publishes a different Syriac list: BL Add MS 12154, ff. 180r–v, dated there to
+the eighth century. Its post-Noah sequence names Arpachshad, his son Cainan,
+then his son Shelah. Root read the published transcription/translation section,
+not manuscript pixels or the whole article. This is a concrete earlier Syriac
+parallel, not continuous Jubilees 8 prose. Coogan also reports VanderKam's case
+for Greek mediation, against Tisserant's direct-Hebrew proposal.
+
+**Decision:** retain the declared Hebrew, main English and applied reader note.
+The evidence makes Cainan's wider transmission better documented, but supplies
+neither an ancient Hebrew Jubilees 8 clause nor an independent Hebrew Genesis
+reading. Complete Tisserant consultation, the modern Greek verse apparatus,
+and a physical-witness census remain open. No new canonical recommendation
+follows from this textual comparison.
 
 ## Reader application
 

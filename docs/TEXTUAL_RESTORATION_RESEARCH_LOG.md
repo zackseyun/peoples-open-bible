@@ -12073,6 +12073,19 @@ the WLC Ezekiel XML match the input Git blobs. The unrelated Genizah file
 retains SHA256 `130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50`.
 No corpus test run is represented as validating the historical interpretation.
 
+## October 16 — requested Nahum article confirmation
+
+At the user's explicit request, root reread the complete Riestra article,
+including all notes and the five full-size figure/table views. The
+[confirmation](NAHUM_SOURCE_COMPARISON_2026-10-10.md#requested-full-article-confirmation-on-october-16)
+distinguishes the earlier applied English improvement from today's unchanged
+verdict. Hebrew historical priority remains unresolved; current English and
+disclosures remain appropriate. The current/main canonical hashes agree and
+all eight focused application tests pass. Only documentation changes in this
+transaction; unrelated release-comparison work and the Genizah file are left
+untouched. This repeated reading is not a new discovery, independent vote,
+newly recovered Hebrew, or canon-expansion result.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -79,6 +79,34 @@ by this control alone.
 
 ### Lead Ezekiel 36 to 39 and Papyrus 967
 
+**October 16 Coislin 17 image checkpoint:** the
+[Ra 533 target inspection](COISLIN17_EZEKIEL36_WITNESS_2026-10-16.md)
+locates selected longer-passage lemmas at Gallica views 249–251 and the local
+36→37 lemma sequence at view 252. This is a late catena, not another early
+continuous-text witness; its ἄλλως labels are not securely attributed versional
+variants. Compare the actual target notes with Montfaucon/critical apparatus
+before using this manuscript to support a translation-history argument.
+Do not repeat its now-located renewal wording as new evidence of Hebrew priority.
+
+**Apparatus follow-up completed:** the
+[Montfaucon, Field and direct Theodoret check](COISLIN17_EZEKIEL36_WITNESS_2026-10-16.md#printed-apparatus-and-theodoret-checked-on-october-16)
+supersedes that acquisition instruction. Montfaucon gives no explicit target
+Coislin attribution; Field's asterisks mark local additions, not the whole
+renewal block. Theodoret directly attributes one 36:37 verb to Symmachus and
+quotes successive longer-passage lemmas, but neither his Christian exposition
+nor the edition chain establishes the passage's origin. Next seek the actual
+Syrohex target and modern apparatus; do not count these dependent editions as
+new independent witnesses or repeat their newly verified contents.
+
+**Syrohex target now located:** the
+[Ambrosian facsimile comparison](COISLIN17_EZEKIEL36_WITNESS_2026-10-16.md#ambrosian-syriac-facsimile-checked-on-october-16)
+locates the longer passage on folio 167r and verifies selected title/marginal
+features behind Field's report. Do not reacquire its passage location. Exact
+small sigla and critical-sign endpoints remain qualified; check the abbreviation
+conventions and adequate reproduction/critical transcription, alongside the
+still-unavailable modern Greek target apparatus. The historical photolithograph
+does not support a new restored letter or a Hebrew/English change.
+
 **October 16 adjacent-unit control:** the newly read
 [Ezekiel 35 study and witness comparison](EZEKIEL_35_VARIANT_EDITIONS_2026-10-16.md)
 adds directly checked P967 differences at 35:10 and 35:14-15. Its alleged

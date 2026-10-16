@@ -12508,6 +12508,26 @@ The seven retained input byte/hash pins and the next-locus pin match, all
 563 relative file links in the five affected reports resolve, and comparison
 against the baseline finds no translation or Hebrew-source file changes.
 
+## October 16 — Coislin 17 renewal passage located
+
+The [new manuscript report](COISLIN17_EZEKIEL36_WITNESS_2026-10-16.md) closes
+the Ra 533 passage-location gap: selected Ezekiel 36 renewal lemmas and the
+local 36→37 sequence were read in BnF's actual scans. The catena's commentary
+labels are not automatically versional readings, and its named ancient authors
+do not date the physical copy or establish the ancestry of each lemma. One
+bounded independent image check confirmed the central clauses and transition.
+No new letter, Hebrew selection or English revision follows. The next step is
+passage-specific apparatus/source attribution, not another scan of these pages.
+The documentation skill kept the observations, limits and acquisition record
+in Git without importing the images or turning this sample into corpus coverage.
+
+PR256 passed both required workflow runs and merged as
+`585ba2870b28598b9e56a65368bfaa3daa5a30c2`. Root verified its ordered parents
+and merge tree, advanced local main by compare-and-swap and pushed normally.
+This publishes the independently constrained reconstruction method, not a new
+reconstructed biblical reading. PR257 and PR258 were still running at the
+opening status check and were not bypassed.
+
 ## October 16 — Ezekiel 5 15 person and source interpretation
 
 The previous turn only reverified the already completed Nahum article result;
@@ -12554,6 +12574,82 @@ all 1,272 non-target files, the full export and the original report freeze
 at the actual application commit. These 57 distinct tests verify the scoped
 implementation, not original-text priority or deployment. The case report
 and application receipt record the verified state; CI controls publication.
+
+## October 16 — Ezekiel apparatus traced to its stated sources
+
+The previous turn repeated the completed Nahum judgment and supplied no new
+research evidence. This continuation returned to the open source-attribution
+question. The [Coislin apparatus follow-up](COISLIN17_EZEKIEL36_WITNESS_2026-10-16.md#printed-apparatus-and-theodoret-checked-on-october-16)
+now reads Montfaucon's actual Ezekiel source list and chapter-36 notes, Field's
+target apparatus, and Theodoret's original-language commentary in PG 81.
+The acquisition started before the intervening Nahum request; this entry
+records its completed comparison, not a second discovery of the same inputs.
+
+Book-level Coislin use does not supply target-specific version attribution.
+Field's signs mark local additions, not the entire renewal block; several
+versional readings are Syriac-mediated. Theodoret's directly verified
+Symmachus citation applies to one verb at 36:37. His successive longer-passage
+lemmas and Christian exposition establish reception, not Christian composition
+or Hebrew priority. POB's exact source and English remain unchanged. The
+next useful inputs are the actual Syrohex target labels and modern apparatus,
+not another Montfaucon lookup or a second count of Field's dependent report.
+
+Root inspected all eight pinned primary inputs at the declared page scope.
+The source agent independently read the Montfaucon and PG pages; a separate
+reader checked Field and the final report's 36:37 attribution. The latter
+caught a missing initial sigma in the report's 36:31 transcription, corrected
+to σμικρυνθήσεσθε against the image. Its scoped approval does not certify
+manuscript independence or a full critical edition. The source agent also
+consulted a modern electronic transcription before acquiring the PG print;
+the print controls this report, and the transcription is not another witness.
+The PDF skill supported complete-page inspection; the documentation skill
+kept provenance and decision limits in Git. No generated image supplied ink.
+
+PR257 passed both workflow runs and merged as
+`1344aab6aaa8a4184d77d17ddf423bd73f8981b1`. Its fetched tree
+`0de09d3304daf900812fa76896722a515e80c1cd` and ordered parents matched the
+precomputed merge. Local main was advanced by compare-and-swap and pushed
+normally. Merging main into this research branch produced a research-log
+append conflict; both complete entries were preserved, with no source-data
+conflict. The resulting baseline is
+`ba88e63c80be572f3d5621f2ce09ed1c6427089a`.
+
+Validation verified all eight input byte counts and hashes, all 519 relative
+file links in the three updated reports, JSON parsing and a clean diff check.
+Comparison with that baseline confirms no translation or OT source changes;
+the protected Genizah file retains its recorded hash. The independent reader
+verified the sigma correction and closed the scoped review. No full corpus
+test run was claimed for this documentation-and-evidence-only update.
+
+## October 16 — Ambrosian Syriac target and reproduction limits
+
+The intervening Nahum confirmation added no new evidence toward the broader
+goal. This continuation completes the pending Syrohex facsimile comparison:
+[C 313 inf., folio 167r](COISLIN17_EZEKIEL36_WITNESS_2026-10-16.md#ambrosian-syriac-facsimile-checked-on-october-16)
+contains the longer Ezekiel 36 passage and the local 36→37 transition. Selected
+title and marginal observations support Field's layout and noun-plus-place
+report at 36:37, with moderate confidence for the small-letter transcription.
+Exact version-siglum expansion and all critical-sign endpoints are not newly
+certified. Ceriani's own preface limits what this monochrome photolithograph
+can establish about colors, small marks and hands. No restored letter, Hebrew
+replacement or English change is accepted.
+
+Root and one independent reader inspected the target. Native-pixel crops
+resolved the title contrast better than the initial full-page display; no
+generative enhancement or supplied strokes were used. The documentation skill
+kept source access, observation, interpretation and unresolved tasks separate.
+The generic target-acquisition task is retired; the remaining work needs an
+abbreviation key, better sign evidence or the actual modern target apparatus,
+not another count of these dependent editions. Raw images remain outside Git.
+
+Validation passed for the eight primary/catalogue inputs and two crop hashes
+and byte counts, receipt JSON, 523 relative document links and the diff check.
+The independent reader passed the saved claims at the stated scope; catalogue,
+adjoining folios and preface were root checks, not part of that second reading.
+Against baseline `23105d0cb6a001298ce4d725fd2f5fc9c9d27840`, translation and OT
+source files are unchanged, as is the protected unrelated Genizah file. No
+corpus-wide local test or historical-priority certification is claimed for this
+documentation-and-evidence update. Exact-head CI remains the publication gate.
 
 ## Later About-page summary — proposed, not published
 

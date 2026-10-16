@@ -136,6 +136,12 @@ explains the reassignment/composite placement, not another duplicate count or
 an AI-generated reconstruction. A future occurrence-aware comparison must
 validate row-local parallel joins before admitting this page to coverage.
 
+The subsequent [edition-attribution and Ezekiel 4 comparison](EZEKIEL_4_NUMBERS_AND_FRAGMENT_ATTRIBUTION_2026-10-16.md)
+locates the earlier DJD possible-quotation note and Puech's revised readings
+at p. 229. This advances the bibliographic question without proving the
+physical placement. It also documents a directly checked Greek numerical
+difference suitable for a separate reader-note candidate.
+
 ## Reusable control and verification
 
 Run the comparator against ordinary publicly acquired release files:

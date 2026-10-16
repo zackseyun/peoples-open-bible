@@ -12372,6 +12372,109 @@ the workflow, and resolved 487 relative documentation targets. Canonical source
 and translation files are outside this change. Publication remains subject to
 the new branch's own CI; the global source-comparison goal remains incomplete.
 
+## October 16 — 11Q30 edition trail and Ezekiel 4 numerical control
+
+The previous goal turn made progress by delivering the explicit display-alias
+audit in PR253, not by resolving physical manuscript identity. This turn
+followed the source trail instead of adding another duplicate-counting tool.
+
+Root and an independent researcher used the public Qumran-Digital API to locate
+DJD XXIII p. 442's cautious possible-quotation identification and Puech 2019
+p. 229's revised readings. Root acquired and read six complete responses;
+their hashes, URLs and selected findings are in the
+[receipt](../sources/textual_restoration/discovery/11q4_edition_attribution.2026-10-16.v1.json).
+The project warns that Puech's uncertainty comments are selectively represented
+and that his article uses no circelli. This makes source-specific annotation
+practice a necessary control, not grounds to call every unmarked letter certain.
+
+Search-indexed book prose links the reconstruction to Ezekiel 4:5's number,
+but the chapter remains inaccessible through the tested publisher route.
+Browser verification reached the actual chapter record and explicit NO ACCESS;
+its Figures tab was empty. The publisher's 26-page preview supplies metadata,
+not the target page/plate. Root visually checked its series and contents pages,
+correcting the API's 4a series label to the publisher's 8a. The mirror body
+returned 403. The word-detail URL's optional lang=en parameter returned 400;
+omitting it retrieved a valid response. No bypass, full chapter reading or
+fresh manuscript decipherment is claimed.
+
+Root then visually read Swete III (1905), printed 390–391 / PDF 414–415,
+including the full apparatus. The main Greek has 150 days at 4:4, 190 at 4:5,
+40 at 4:6 and 190 at 4:9. An independent visual review confirmed those readings
+and qualified the apparatus: the 390 report at 4:5 is Qmg about “the others,”
+not an independently inspected second continuous-text witness. Do not make
+the broader claim that all Greek evidence agrees on 190.
+
+The [new comparison](EZEKIEL_4_NUMBERS_AND_FRAGMENT_ATTRIBUTION_2026-10-16.md)
+keeps POB's 390 provisionally and proposes a reader disclosure without adopting
+either number as historically prior. The current lexical note is attached to
+days rather than its iniquity phrase; any later application must correct the
+anchor, archive prior review metadata, and verify the real export. No canonical
+record changes in this pass. The PDF skill required complete-page visual checks;
+the documentation skill kept this evidence and its limits in the existing Git
+documentation workflow rather than creating a separate cloud Page.
+
+The subsequent continuation completed the pending packet after the requested
+Nahum rereading added no new research evidence. Root rechecked the complete
+Greek pages and six saved API responses. The bounded final reviewer passed
+the report and receipt without correction; both checks reproduced all 13
+input byte/hash pins and three variant projections. The 39 focused alias,
+release-comparison and parallel-index tests passed in 0.020 seconds; all 512
+relative links in the four affected reports resolve. The protected Genizah
+file and canonical Ezekiel 4:5 hash are unchanged. These are scoped checks,
+not completion of the OT witness census or proof of reconstructed Hebrew.
+
+## October 16 — Ezekiel 4 numerical disclosures and anchor application
+
+The preceding Nahum confirmation added no new research evidence. This turn
+therefore resumed the actionable Ezekiel 4 comparison rather than repeating
+the article reading. The context check expanded the 4:5 proposal to disclose
+Swete's 150 days at 4:4 and 190 at both 4:5 and 4:9. It also found misplaced
+semantic anchors in all six records from 4:4 through 4:9.
+
+The [application report](EZEKIEL_4_READER_APPLICATION_2026-10-16.md) records
+three new named-edition notes and seven corrected existing note anchors.
+The exact Hebrew and marker-free English remain unchanged. No numerical
+priority, physical fragment join, new restoration or canon inference follows.
+The complete Puech/DJD reconstruction remains the next discriminating
+source target; repeating a same-evidence model vote would not resolve it.
+
+Root froze the six full records against baseline
+`277aad88b04dd5afb1a3604a9ec06d3a9d1b346f`, with five archived fields per
+record, source/method pins and an actual-export preflight. An initial test
+assumed optional theological metadata existed at 4:9; it was corrected to
+check both field presence and exact value, preserving the absent field rather
+than fabricating one. All three preflight tests then passed.
+
+One independent factual/application review passed the frozen bundle, verified
+all 1,273 baseline records were still unchanged, and reproduced the full
+48-chapter export. Root applied the exact reviewed bytes and separately
+verified the actual export: six changed units, 1,267 unchanged, SHA256
+`089b07f76c5609e4a18e8fbe5894b6186c15b5c3c0787cb71834205ece52ce1f`.
+The [receipt](../sources/textual_restoration/applications/ezekiel4_4_9_reader.2026-10-16.v1.json)
+preserves the actual review separately from application verification.
+The documentation skill kept this scoped decision and its evidence in Git;
+no cloud Page or About integration was created.
+
+During this work, PR253's own push and pull-request checks completed
+successfully. It merged as `a4139b453d3edcba424ef9d765320ba89acc3d6c`;
+the fetched merge tree and ordered parents matched the precomputed result.
+Local main was advanced without resetting this worktree, and the normal main
+push confirmed it was up to date. The new reader application still needs its
+own publication checks; another branch's green checks cannot approve it.
+
+The final scoped suite passed all 74 tests in 195.986 seconds, including the
+four new tests and earlier Ezekiel/eleven-compound/reader-footnote controls.
+All 517 relative file links in the four updated reports resolve; diff checks
+pass and the unrelated Genizah file's SHA256 remains
+`130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50`.
+
+The six canonical changes were committed as
+`a39c3bc597518ba3cce28321ea2bd57596df6f61`; merging current main preserved
+the exact tree content. One additional immutable-transaction test passed in
+8.649 seconds and now checks all six targets, all 1,267 non-target records and
+the complete export at that commit. The two validation runs cover 75 distinct
+tests. CI explicitly fetches both the baseline and application commits.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

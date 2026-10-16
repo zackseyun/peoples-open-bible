@@ -251,6 +251,12 @@ historical-priority certification follows from these scoped checks.
 
 ## Checking the reported Hexaplaric parallels in Field on October 15
 
+**Subsequent direct-source qualification:** the [1840 edition and photographed
+Barberini margin](#the-1840-edition-and-barberini-margin-checked-directly)
+below support the spelling αθροίσω, while retaining the attachment problem.
+The following section records what Field prints; its ωρθρισω report is not
+our current transcription of the Barberini image.
+
 **The affinities have a published basis, but the gathering parallel is less
 secure than a bare citation suggests.** The preceding section left Thackeray's
 Aquila/Symmachus/Theodotion comparisons as reported evidence. Root now inspected
@@ -337,6 +343,87 @@ still cites Cod.86 through De Regibus. All 477 relative file-link targets in
 the three edited reports resolve; only those documents changed, the protected
 Genizah hash is unchanged, and `git diff --check` passes. These checks do not
 certify historical priority or the underlying manuscript readings.
+
+## The 1840 edition and Barberini margin checked directly
+
+**Result: strengthen the spelling evidence, retain the alignment qualification.**
+The actual Barberini photograph appears to read αθροίσω. It does not reproduce
+the ωρθρισω sequence reported in Field's note. The 1840 edition already prints
+ἀθροίσω, so this printed form cannot be attributed to Field alone. Both the
+edition's alignment and the photograph's apparent reference sign attach it to
+the preceding "bring out" clause. Neither directly verifies it as a rendering
+of the following Hebrew קבץ. No POB Hebrew, English or reader note changes.
+
+### Edition, photograph and interpretation kept separate
+
+The public [1840 De Regibus scan](https://archive.org/details/bub_gb_mNtsGShyDM0C)
+is *Iezeciel secundum Septuaginta ex Tetraplis Origenis*, Rome, Salviucci.
+Root visually checked its title and complete printed pages 143 and 149
+(one-based PDF 7, 159 and 165), including the relevant apparatus. The acquisition
+agent independently checked these and the Monitum; neither read the full volume.
+
+| Evidence | Actual observation | Limit |
+|---|---|---|
+| De Regibus p.143, 20:34 | Main Greek has καὶ ἐξάξω … καὶ εἰσδέξομαι. Apparatus places Σ. Θ. Ο. καὶ ἀθροίσω under והוצאתי, followed by Ο. ἄλλως, καὶ ἐξάξω C. B. The Latin contrasts *et congregabo* with *et educam*. | Published alignment is "bring out," not "gather." Its three attribution labels are not three separately inspected ancient exemplars. |
+| De Regibus p.149, lower right | The Barb./Idem source chain expressly extends to readings in verses 32,34,35. | This is another report of Barberini, not an independent manuscript vote. No local explanation for Field's different spelling was found on these inspected pages. |
+| [Barb.gr.549 folio 266v](https://digi.vatlib.it/view/MSS_Barb.gr.549/0560), upper-left margin | Letters appear to read αθροίσω, without a preceding καί. Three overmarked signs resemble ϲ / θ / ο. A curved dotted sign above the word resembles the sign over main-text ἐξάξω. | Accents, the complete siglum convention and reference-sign system have not been exhaustively established. The apparent attachment is stronger than inference from vertical proximity alone, not a complete palaeographical edition. |
+
+Root inspected complete folios 266r and 266v, then the native-size 266v image
+and the source service's margin detail. The end of 266r and opening of 266v
+locate 20:33–34 by actual words: βασιλεύσω ἐφ' ὑμᾶς followed by ἐξάξω and
+εἰσδέξομαι. A second agent read the images before consulting our Field account
+or the proposed transcription. It independently obtained the same letter
+sequence and apparent attachment, while withholding a confident expansion of
+the third siglum. This is an independent check of the same pixels, not another
+textual witness. The edition's Ο./LXX expansion is not silently substituted
+for an independently established manuscript convention.
+
+The [Vatican manifest](https://digi.vatlib.it/iiif/MSS_Barb.gr.549/manifest.json)
+contains 614 canvases and labels p0559/p0560 as 266r/266v. An indexed scholarly
+[figure caption](https://zenodo.org/record/4282218/files/PV%20NG%20Transmission%20of%20the%20Tetragrammaton%20in%20Judeo-Greek%20and%20Christian%20Sources.pdf)
+provided the Barb.gr.549/Rahlfs86 and 266r/20:27 locator; that paper was not read
+in full. The verse locus here was checked against the image, not accepted from
+the search snippet. A trial at Chig.R.VII.45 folios 272r/v instead showed Tyre
+material, not the desired 20:34 margin, and contributes no target reading.
+Field's own pp.766–767 distinguish R.VII.45 from his Cod.88/R.VII.46: their
+historical numbering must not be flattened into an assumed shared shelfmark.
+The Cod.88 target remains uninspected; no explanation of the discrepancy with
+Field's note or new manuscript stemma is claimed.
+
+### Provenance and stopping point
+
+The De Regibus PDF has 387 pages, SHA256
+`81a87d151eb2227e541c8403038e4f0d5b6852b219cb0c7a8f3842538d2ad856`.
+The Vatican manifest and full 266r/266v JPEG hashes, respectively, are:
+
+```text
+400629931761100c8acbb658688623f0a60c7dfd161024758f69c8184f1ff173
+bf883eaec2f897d50dbbcd67709a7de63c605f2b0ef84e91ce8e64a45c28d591
+12e30dfd09af8abd76014e7dee849a23d6747ba4f4e13f9fa30ec2425e969994
+```
+
+The images came from the manifest's image services using `full/full/0/default.jpg`;
+the inspected margin detail uses region `450,500,400,150`, without image
+generation or pixel reconstruction. All source files remain outside Git.
+The Vatican viewer permits personal/study use and requires permission for
+publication of its images; no manuscript image is republished here.
+
+The methodological correction is consequential: an edition's caution can
+itself need correction against its source. We now have positive photographic
+support for the lexical form, but not for Field's Hebrew alignment or a unique
+translator of Ezekiel 36:24–38. This closes the bounded acquisition step; do
+not make further readings of these same pages into new progress. Return to
+the passage-specific chapter-36 apparatus and the competing literary/loss
+mechanisms. Resolve Cod.88's margin only if it can discriminate those arguments,
+not merely to accumulate another dependent citation. Historical Hebrew priority
+and any ensuing POB change remain unapproved.
+
+The bounded final review found no concrete factual defect in the new edition
+comparison or image qualifications. Root verified the PDF page count/hash,
+manifest count/folio labels, 479 relative documentation file targets and the
+unchanged protected Genizah hash. Only the three research documents changed;
+`git diff --check` passes. These checks do not certify the manuscript's siglum
+system, historical priority or a corpus-wide optimum.
 
 ## Copying loss counterargument
 

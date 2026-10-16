@@ -85,6 +85,15 @@ next source check is De Regibus's actual entry or the securely identified
 Cod.86/88 margin; repeated Field/Thackeray citations do not advance the question.
 Even resolving that parallel would not alone establish Hebrew literary priority.
 
+**October 15 direct-source follow-up completed:** the
+[1840 print and Barberini photograph](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#the-1840-edition-and-barberini-margin-checked-directly)
+support αθροίσω, qualifying the spelling concern derived from Field's note.
+Their attachment still points to "bring out," not the following קבץ clause.
+This acquisition is no longer the next task. Return to chapter-36 apparatus
+and competing transmission mechanisms; another dependent margin or repeated
+edition check is useful only if it can distinguish them. No Hebrew or English
+change follows from this lexical control alone.
+
 The Scheide Archive copy is restricted and the papyri.info route gated; do not
 repeat or bypass them. A discriminating result would constrain whether the
 minus is physically continuous, explain a concrete loss/reordering mechanism,

@@ -147,12 +147,14 @@ slightly altered repetition and refers to 5:12 for the underlying explanation.
 The proposed relationship is therefore a linked development across both
 passages, not an isolated numerical copying error.
 
-His deletion has reported limited Greek support (the printed siglum G with
-superscript f), but is not directly attested Hebrew in the consulted evidence.
-He expressly says that Greek evidence alone would not make him change the
-text. He also invokes an analogy with v.13 and questions the rendering of
+His deletion cites the younger Ethiopic recension, **𝔈ᶠ**, represented by
+his Frankfurt manuscript, not a Greek manuscript. The earlier version of this
+report misread the siglum; the correction and its consequences are recorded
+below. This is not directly attested Hebrew in the consulted evidence.
+He expressly says that this Ethiopic evidence alone would not make him change
+the text. He also invokes an analogy with v.13 and questions the rendering of
 מות by ἀναλίσκεσθαι, comparing 6:12. We have read his argument, not independently
-collated the manuscript behind that siglum or verified his corpus-wide claim
+collated its Ethiopic target verse or verified his corpus-wide claim
 that this verb correspondence occurs nowhere else.
 
 His order argument is separate: he regards the Hebrew sequence as more natural
@@ -213,20 +215,88 @@ No neighboring translation is approved by using its source as a control.
 Source text, English and notes remain unchanged. No ImageGen evidence or
 newly recovered ink is involved.
 
-The next useful input is an independent apparatus evaluation of the alleged
-ימותו omission and Greek translation equivalents, including an argument
+The next useful input is an independent evaluation of the reported Ethiopic
+wording and its revision history, alongside the Greek translation equivalents,
+including an argument
 against expansion or against consolidation. Recounting quarters in the same
 witnesses cannot settle that issue. A bounded modern-source search found only
 abstracts on Olley's public author profile and a 403 at an Oxford thesis
 landing; it acquired no target discussion. Do not repeat those routes or
 present the inaccessible modern commentary as endorsing Cornill.
 
-The bounded independent review passed the drafted mechanism and limits.
+The initial bounded independent review passed the drafted mechanism and limits,
+but missed the siglum error; its approval on that attribution is superseded
+by the correction below.
 All 418 local file targets across this report and the research log resolve;
 `git diff --check` passes. Both target verse hashes, the source XML hash and
 the protected unrelated Genizah file hash remain identical. These are
 documentation/integrity checks, not evidence of historical priority. No
 full-corpus test rerun was needed for this two-document change.
+
+## Correction: Ethiopic evidence and its custodial source
+
+Cornill's sigla table, printed XII (PDF18), explicitly distinguishes **𝔈ᶠ**,
+the younger Ethiopic recension, from **𝔊**, the LXX. The two occurrences at
+printed205 refer to the former. Root and the independent checker both missed
+this in the prior review; both now confirm the correction against the actual
+key and page. A shared model error is not independent attestation. The old
+claim of limited Greek manuscript support is withdrawn, not merely qualified.
+
+Printed42–43 (PDF60–61) identify Cornill's source as the Rüppell manuscript
+of the Frankfurt Stadtbibliothek. Printed45 (PDF63) explicitly discusses
+5:12 as an example of the younger recension's selective correction toward
+Hebrew, while retaining the Greek order of the last two punishments. This is
+Cornill's comparative report: we have not independently translated or collated
+the quoted Ethiopic words against the manuscript. It cannot supply a new
+Greek omission or independently prove Cornill's reconstructed Hebrew. His
+separate argument about Greek verb equivalents remains an argument to test.
+The correction changes the attribution and weight of the evidence, not POB's
+retained source or English.
+
+### Manuscript access acquired, target reading not yet verified
+
+The [current custodial record for Frankfurt Ms. or.12](https://sammlungen.ub.uni-frankfurt.de/msorient/content/titleinfo/5411883)
+names Rüppell as former owner and links its detailed description to
+[Goldschmidt1897](https://sammlungen.ub.uni-frankfurt.de/download/pdf/1551833.pdf),
+entry6, printed19–20 (PDF25–26): **MS. orient. Rüpp. II,6**. The manuscript
+scan's cover (PDF1) visibly carries both the old II,6 label and current
+Ms.or.12 label. Ezekiel, the two-column parchment format, corrections and red
+headings, disrupted later chapters, and the appended booklet corroborate the
+connection to Cornill42–43. This establishes a custodial access route, not
+new target-verse attestation. The catalogue's tentative **18th century?** date
+must not become a certain ancient date or the date of its translated reading.
+
+The complete [institutional PDF download](https://sammlungen.ub.uni-frankfurt.de/msorient/download/pdf/5411883)
+was acquired: 134 PDF pages, 37,533,929 bytes, SHA256
+`343da1a197a18da21305b9242263b3fa3ec064815240f25196971ca8830f9569`.
+Root inspected its cover and opening blank leaf only, not 5:12 or the entire
+codex. No fresh transcription, restored letters or ImageGen evidence is claimed.
+
+Identity does not resolve coverage. Cornill reports64 leaves; Goldschmidt126
+pages; today's record65 leaves and replacement of old pagination by foliation.
+Goldschmidt reports39–43:7 missing, while Cornill describes extensive misbinding
+in this part of the codex. These descriptions must not be flattened into a
+verified surviving or missing 39:29. A content-based folio/verse map and hand
+identification are required before using the scan at either research locus.
+
+Root visually checked complete Cornill XII,42–43,45 and205, and Goldschmidt19–20;
+the independent checker also inspected the relevant source descriptions. The
+Goldschmidt PDF is114 pages,31,139,638 bytes, SHA256
+`ef6876d35c9cf2fdca7a08e58c100575da83e64ccf4e4ca4d9fe3649b92512b5`.
+Both acquired PDFs remain outside Git. The manuscript's institutional record
+displays Public Domain Mark1.0; its
+[reuse guidance](https://sammlungen.ub.uni-frankfurt.de/wiki/wiki12525728)
+requests full attribution, naming the custodian/digitizer and a persistent link,
+and notification for website reuse. No manuscript image is republished here.
+Use permanent identifier `urn:nbn:de:hebis:30:2-50699` with the current shelfmark.
+
+The Beta maṣāḥǝft search result was a discovery lead, not the controlling
+crosswalk: its full page failed with502/cache miss. The linked institutional
+record, catalogue and visible cover provide the actual identity evidence.
+The next task is to align the acquired target folio and distinguish the copy's
+hands/readings before retroversion; do not continue searching for a nonexistent
+Greek manuscript called “Gf.” No additional registry witness is counted by
+this correction/acquisition record.
 
 ## Target-access and interim-report check on October 14
 

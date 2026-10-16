@@ -107,6 +107,14 @@ conventions and adequate reproduction/critical transcription, alongside the
 still-unavailable modern Greek target apparatus. The historical photolithograph
 does not support a new restored letter or a Hebrew/English change.
 
+**Notation-key follow-up completed:** [Field's introduction](COISLIN17_EZEKIEL36_WITNESS_2026-10-16.md#field-notation-key-and-editorial-conventions)
+supplies the Syriac translator initials, but warns that grouped labels can
+express agreement in sense rather than identical wording. His critical signs
+are editorially normalized. Retire the generic key lookup; seek target-specific
+transcription or better reproduction for the unresolved sign endpoints and
+the modern apparatus. Neither three labels nor printed sign positions supply
+independent manuscript votes or settle the longer passage's origin.
+
 **October 16 adjacent-unit control:** the newly read
 [Ezekiel 35 study and witness comparison](EZEKIEL_35_VARIANT_EDITIONS_2026-10-16.md)
 adds directly checked P967 differences at 35:10 and 35:14-15. Its alleged

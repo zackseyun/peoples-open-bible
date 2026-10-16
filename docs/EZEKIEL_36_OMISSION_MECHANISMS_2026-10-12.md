@@ -1358,6 +1358,68 @@ translation/ot/ezekiel/044/007.yaml  9b6f99250aa122497a577fb140c4efc24dd650bb537
 translation/ot/ezekiel/044/009.yaml  9c991a19290e57435c21b35f686a1a33b631c29c0b12181d9273d06b38b6e0bf
 ```
 
+## October 16: wider control for the local 44:7 omission
+
+**The directly checked evidence supports a named P967 disclosure, not a Hebrew
+deletion or a claim that every other Greek witness agrees.** Root and the
+source checker visually read complete Swete III printed 484 / PDF 508. Its
+Vaticanus-based main text includes the flesh qualification in both 44:7 and
+44:9. This adds a directly consulted historical edition control to the modern
+selected text and P967 photographs; those editions are not extra manuscripts.
+
+At 44:7 the apparatus reports variants in the subsequent infinitive, profaning
+verb and offered-food expression, but no omission of the circumcision
+qualification. In particular, `σαρκας] pr και A στεαρ Q` concerns the food
+offered with bread and blood, not the earlier `σαρκι` in the circumcision
+phrase. A keyword match on flesh must not merge these different units.
+There is no separate 44:9 apparatus entry on this page. Silence in a selected
+apparatus does not establish an exhaustive census of agreement, nor does this
+1905 edition collate the later-discovered P967. The prior [sigla control](EZEKIEL_28_CHERUB_COMPARISON_2026-10-10.md#read-the-apparatus-labels-before-combining-readings)
+distinguishes base text, collated witnesses, additions and marginal hands.
+
+Lilly's printed 199 note 412 reports agreement of the other Greek witnesses
+at 44:7. Root read that complete page, as well as printed 219 note 464, where
+the local difference is used in a broader inclusion hypothesis. The photographs
+already checked at 44:9 limit that interpretation. We have not independently
+verified the universal witness claim, and do not convert it into a new
+collation result. The absence at 44:7 remains positively attested in P967;
+whether it arose in Greek or reflects a Hebrew antecedent remains unresolved.
+
+The [Cologne bibliography](https://papyri.uni-koeln.de/features/rahlfs) names
+L. G. Jahn, *Der griechische Text des Buches Ezechiel*, PTA XV (Bonn, 1972),
+as the edition for this portion. Hamm's editions listed elsewhere on that
+page concern other books. Root verified the actual catalogue section. A
+bounded access search found no readable Jahn target; a bibliographic record
+is not consultation of its text. The modern comprehensive apparatus remains
+unconsulted. These limits do not erase the positive photographic reading or
+justify repeatedly searching the same unavailable routes.
+
+A narrowly scoped reader-note proposal is now:
+
+> Papyrus 967, an ancient Greek manuscript, omits 'and uncircumcised in flesh'
+> here, but includes the corresponding qualification in verse 9. The Hebrew
+> wording is retained; the omission's origin remains uncertain.
+
+This reports an actual textual difference without implying a heart-only temple
+rule, unanimous Greek support, or a recovered Hebrew text. It is a proposal,
+not an applied note. The next action is a pinned full-record note application
+and actual export check; a new manuscript census is not required merely to
+disclose this named witness accurately. Historical source selection remains
+held pending wider apparatus and transmission evidence. The existing food-note
+anchor should be corrected within that application, without endorsing unrelated
+interpretive metadata or changing marker-free English. No canon change follows.
+
+The [Swete manifest](../sources/lxx/swete/MANIFEST.md) identifies the reused
+57,077,650-byte PDF, third edition (1905), SHA256
+`5f0bfffabf0e588fd32e15bdb24b027872616da219e7f02da3dbdc115cf97d85`.
+Root reproduced that hash; the new full-page 484 render has SHA256
+`a3a0d4e377d90946e8ef7cee13a009f02b1087dd8d6856c024ea064b856ac15c`.
+The PDF skill required original-page inspection, not reliance on its corrupted
+OCR. The reviewer checked this page and the distinction between its two flesh
+expressions. Swete remains an edited witness report, not a new direct Vaticanus
+photograph; source files/renders stay outside Git. Hebrew and canonical POB
+remain unchanged in this documentation packet.
+
 ## Sahidic reading boundary and the shorter text argument
 
 The newly consulted Coptic evidence establishes a liturgical reading ending

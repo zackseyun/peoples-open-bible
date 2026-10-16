@@ -12233,6 +12233,37 @@ merge is `f999e609e258673937a952393092bf90c3187437`, with expected tree
 advanced local main by compare-and-swap and completed a normal push. The
 current finding remains separate from that already delivered tooling change.
 
+## October 16 — wider witness control and a bounded reader disclosure
+
+The previous turn made progress by committing and publishing the P967
+circumcision correction. This follow-up consults Swete's actual printed 484
+and apparatus, adding a B-based fuller-text control rather than another vote
+on the same photographs. It distinguishes the offered-food variant from the
+circumcision phrase and does not infer universal agreement from apparatus
+silence. Root and one bounded source checker read the complete target page.
+
+The [comparison and proposed note](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#october-16-wider-control-for-the-local-447-omission)
+also separate Lilly's universal witness assertion from directly verified
+readings. Cologne identifies Jahn, not Hamm, as the relevant original editor;
+the target edition remains unconsulted after a bounded access search. No
+restricted-access bypass or new restoration occurred. The PDF skill required
+visual apparatus inspection; the source PDF and render remain outside Git.
+
+The result supports a narrow named-witness note, with 44:9's retained phrase
+included, while keeping Hebrew priority unresolved. Full-record application
+and export verification are the next step; the note is not silently applied.
+No canonical text, note, review flag or frozen application receipt changes in
+this packet. Broader OT source coverage and restoration remain incomplete.
+
+The final bounded source-factual review passed the written section, proposed
+unapplied note and cross-references. Root's checks confirmed unchanged canonical
+44:7/9 and protected Genizah hashes; all 515 relative file-link targets resolve
+and whitespace validation passes. Only the three research documents change.
+No new corpus-test or deployed-reader claim is made. PR247, PR249 and PR250
+exact-head checks were confirmed live; their running jobs were not restarted.
+PR247 also has a merge conflict after the preceding main update and will need
+a preservation-only integration before publication, with fresh checks then.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

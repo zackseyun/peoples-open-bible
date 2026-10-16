@@ -180,8 +180,13 @@ Direct P967 photographs confirm a flesh omission at 44:7 but retention at 44:9,
 contradicting the discussion's extension to the latter verse. Do not infer a
 heart-only temple rule or count Hebrew manuscript 93 as MT. Retain source and
 English; local chapter-36 expansion remains possible but unproved. The next
-discriminating input is wider witness/apparatus support for the 44:7 minus,
-not another thematic count. Any proposed disclosure must also mention 44:9.
+discriminating historical input remains wider witness/apparatus support for
+the 44:7 minus, not another thematic count. The [bounded wider control](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#october-16-wider-control-for-the-local-447-omission)
+now verifies Swete's B-based fuller text at both verses and separates its
+offered-food apparatus from the circumcision clause. No universal Greek
+agreement is claimed. A named P967 note can now proceed through full-record
+application/export review, retaining Hebrew and disclosing retention at 44:9.
+Do not await a complete manuscript census merely to state that narrow fact.
 This does not count all chapter 5 or the modern apparatus as reviewed.
 
 The Scheide Archive copy is restricted and the papyri.info route gated; do not

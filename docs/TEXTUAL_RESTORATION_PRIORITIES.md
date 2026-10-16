@@ -46,6 +46,20 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 16 broader-goal continuation:** the access boundary below applies
+to its three questions, not to all OT evidence. A wider bounded audit found
+an unperformed comparison with an already acquired critical edition:
+[the narrative forms of 1 Samuel 17–18](SAMUEL_17_18_NARRATIVE_FORMS_2026-10-16.md).
+The first pass now checks four Greek junctions, 18:6's transition, the tiny
+4Q51 portions at 18:4–5, and the 18:28 combined reading. While the three
+historical questions below await new inputs, use this as the single active
+accessible case. The follow-up now checks individual 18:1 readings, c/x's
+17:58 omission, g's relocation, and the Greek/Hebrew controls on a proposed
+Merab marriage ending. The full 2020 study has been read as indexed text.
+Next verify manuscript 845's actual coverage at 18:10–11 and 18:17 before
+using its reported mixed pattern to adjudicate growth versus omission.
+Do not repeat the completed height decision, junctions or 18:1 comparison.
+
 **October 16 access boundary:** a bounded independent audit found no verified,
 high-value unperformed test within this portfolio using its presently accessible
 evidence. This does not exhaust the wider OT program. Prioritize actual access
@@ -67,8 +81,11 @@ The current source/English remains unchanged. Seek actual target manuscript
 layout, earlier Greek attestation, modern apparatus or independently checked
 Syriac next; do not repeat the same printed entries as progress.
 
-Keep at most these three questions active; pursue Ezekiel first. Other cases,
-including NT questions, remain parked unless new evidence is more discriminating.
+The three questions below remain the historical-priority portfolio; resume
+Ezekiel first when discriminating evidence becomes available. The dated Samuel
+continuation above supersedes an exclusive three-case limit while access is
+blocked. Other cases, including NT questions, remain parked unless new evidence
+is more discriminating.
 
 **Ezekiel 28 early-witness follow-up completed:** the
 [actual Papyrus 967 target](EZEKIEL_28_CHERUB_COMPARISON_2026-10-10.md#october-15-papyrus-967-checked-at-the-actual-target)

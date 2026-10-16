@@ -12849,6 +12849,54 @@ precomputed merge; local main was advanced and a normal push confirmed sync.
 The Nahum branch integration preserves both log histories and all causal-pattern
 evidence. This is publication progress, not an additional textual discovery.
 
+## October 16 — Samuel narrative forms beyond the access blocked portfolio
+
+The preceding turn made publication progress and identified an access boundary
+for three historical questions. A broader-goal audit found an accessible,
+unfinished source comparison rather than treating that scoped limit as a
+whole-program impasse. The [Samuel narrative-form report](SAMUEL_17_18_NARRATIVE_FORMS_2026-10-16.md)
+now verifies four B-based Greek junctions, a changed 18:6 transition, tiny
+Hebrew portions assigned to 18:4–5, and the combined Greek reading at 18:28.
+The latter is an insertion of Michal before the retained Israel clause, not
+a Michal-only replacement. The nearby A siglum belongs to another entry.
+
+Root checked the complete relevant edition pages and conventions. A second
+reader confirmed the junctions, DJD preservation qualifications and exact
+18:28 entry. Trebolle's complete article was read by a research agent; root
+read its extracted text/notes and visually checked the decisive pages. The
+report distinguishes this from the failed Tov route and an abstract-only
+2020 lead. No Hebrew, English, note, canon or source-priority change follows.
+This is an extension of POB's comparison of known evidence, not fresh ink or
+a newly discovered ancient narrative. The next specific test is the 18:1
+doublet, not another tally of the same omissions. PDF and documentation skills
+kept the evidence layers and stated reading scope explicit.
+
+## October 16 — Samuel transitions and a reconstructed marriage ending
+
+The previous goal turn made progress by committing and publishing the initial
+Samuel comparison. This continuation tests its next open question: the
+[18:1 construction and connected sequence](SAMUEL_17_18_NARRATIVE_FORMS_2026-10-16.md#individual-readings-at-18-1-and-the-surrounding-sequence).
+The printed apparatus distinguishes arrival plus conversation, c/x's standing
+clause with omission of 17:58, and g's relocation of a stretch beginning in
+18:2. Individual clauses and order cannot be recovered from one recension label.
+
+A lawful full indexed-text route supersedes the 2020 article's abstract-only
+status. Root read the whole text, notes, bibliography and appendices. The
+report tests the proposed marriage ending against the actual Greek insertion
+and retained Hebrew rather than adopting its historical reconstruction.
+It also distinguishes the Genesis Qal/day and Piel/week controls. One bounded
+independent reader confirmed the apparatus and local grammatical checks.
+No biblical corpus changes follow; manuscript 845's reported coverage is the
+next unverified physical-witness test. PDF inspection and documentation skills
+kept published readings, inferred history and application separate.
+
+The Nahum documentation PR263 passed both exact-head corpus-integrity checks
+and merged as `0501fddf21db00ca4e76f3d675bf8de73bc2a5bb`. The fetched tree
+`2f929f543a7ad041af66c22a6df3e39304ebc136` and ordered parents matched the
+precomputed merge. Local main was advanced, a normal push confirmed sync,
+and main was integrated into the Samuel branch without content conflicts.
+The pending Samuel PR265 remains the publication vehicle for this follow-up.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

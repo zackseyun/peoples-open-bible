@@ -11490,6 +11490,45 @@ checks pass; both Ezekiel target verse hashes and the WLC XML hash remain
 unchanged. No code or canonical record changed, so no full-corpus test rerun
 or historical-priority certification is claimed.
 
+### 2026-10-15 — Reading the older Ethiopic control
+
+The preceding turn made progress by locating Frankfurt5:12 and merging the
+corrected Ethiopic attribution in PR226. The verified merge is
+`bc65574a35c969c1cd25cf69043ce38e8c8ed718`, tree
+`7aafbebb82a7144bf609cbef146632d59b2eb2c3`, parents70af10f245/d2679b3861;
+local main was advanced and a normal push confirmed synchronization.
+PR227's own push38832623764 and PR38832738067 were confirmed live this turn;
+no amendment or restart was made.
+
+The [Berlin control](EZEKIEL_5_12_QUARTERS_COMPARISON_2026-10-14.md#berlin-control-acquired-and-read-on-october-15)
+connects Cornill's older witness and Dillmann2 to Petermann II Nachtrag42,
+then follows the library viewer's working image-download route. Root visually
+checked the original catalogue heading, Cornill38 and the actual manuscript
+target226ra. Four quarter clauses separate pestilence and famine and place
+scattering before the weapon clause. This verifies a reported versional
+contrast, not a newly discovered variant or an original Hebrew reading.
+
+The independent source reader located and read the target before seeing
+Cornill45/the drafted table; its limits remain explicit. Frankfurt's full-size
+image does not resolve the overwritten fraction's earlier state. The previous
+next-step wording is clarified: expert advice could help, but commissioning
+it is not a prerequisite to this independent project. No human was contacted,
+no generated restoration counted, and no source/English/canon decision changed.
+
+The new Berlin route will next be used for the consequential36–39 question.
+Its catalogue provides section beginnings, not a precise chapter-folio index;
+an absent rubric entry is not an omitted passage. Content anchors and
+consecutive-image transitions must control any order or omission claim.
+
+The bounded factual review passed after narrowing a genealogical claim:
+two Ethiopic witnesses do not establish their precise family relationship or
+two independently attested Hebrew readings. Root verified the target and
+manifest hashes, all421 relative documentation targets, whitespace, unchanged
+verse/source hashes and the protected unrelated Genizah hash. This is a
+two-document evidence update, not a new code/application change or full-corpus
+test run. No external specialist review is claimed or required for publication
+of these explicitly limited observations.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

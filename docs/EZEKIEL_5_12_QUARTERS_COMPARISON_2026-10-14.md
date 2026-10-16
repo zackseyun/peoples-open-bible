@@ -347,9 +347,11 @@ The image does **not** demonstrate the historical direction of revision,
 the ancestry of its reading, or Cornill205's proposed Hebrew deletion.
 Cornill and this scan remain evidence about one manuscript, not independent
 manuscript votes. POB5:2/5:12, the WLC source, and historical-priority HOLD
-remain unchanged. Next obtain a specialist check of the crowded first fraction
-and a controlled comparison with the older Ethiopic witness before attributing
-a particular textual change to a particular hand or recension.
+remain unchanged. Seek better hand/correction controls and a controlled
+comparison with the older Ethiopic witness before attributing a particular
+textual change to a particular hand or recension. Specialist review would be
+useful, but is not a required external commission or a blocker on the project's
+independent comparison work; unresolved strokes remain unresolved.
 
 Root inspected complete rendered PDF6–7,14–15 and Cornill45 in this check;
 the independent reader inspected the three supplied PNGs, identified by root
@@ -361,6 +363,85 @@ its acquisition hash above. No generated imagery, missing-letter completion,
 contrast manipulation or republished scan is involved. Credit: manuscript and
 digitization, Universitätsbibliothek J. C. Senckenberg, Frankfurt am Main;
 Ms.or.12, persistent identifier `urn:nbn:de:hebis:30:2-50699`.
+
+### Berlin control acquired and read on October 15
+
+**Result: the older witness's four-part reading is now checked in manuscript
+pixels, not solely in Cornill's report.** The control is Staatsbibliothek zu
+Berlin **Petermann II Nachtrag42**. Cornill38/PDF56 identifies Dillmann's
+catalogue no.2; the original [Dillmann1878 printed1/scan17](https://resolver.staatsbibliothek-berlin.de/SBB0000720B001A0017)
+visibly heads entry2 with that shelfmark. Root read both complete pages.
+The catalogue number is not itself a shelfmark. The
+[official digital manuscript](https://resolver.staatsbibliothek-berlin.de/SBB0001670700000000)
+and [613-canvas manifest](https://content.staatsbibliothek-berlin.de/dc/791918785/manifest)
+confirm the shelfmark and298 leaves. Their dating metadata spans1400–1499;
+the viewer's abbreviated1400 is not an exact dated colophon. Neither the copy's
+date nor Cornill's older-recension label dates the individual reading.
+
+The [Beta maṣāḥǝft TEI](https://raw.githubusercontent.com/BetaMasaheft/Manuscripts/master/Berlin/PetermannIINachtrag42.xml)
+provided the manifest lead even though its rendered catalogue offered no
+image. The manifest's direct image endpoint initially failed. Root then opened
+the ordinary library viewer, followed its Download panel and successfully
+acquired its advertised DMS JPEG route. These failures are superseded access
+observations, not proof that the manuscript is undigitized or inaccessible.
+
+**Target: folio226ra, lines7–17; manifest image457**, counting24 left-column
+lines from the top. The [2400-pixel image](https://content.staatsbibliothek-berlin.de/dms/PPN791918785/2400/0/00000457.jpg)
+shows the sanctuary clause above the target and the next divine-speech opening
+at the bottom of the right column. Root and the acquisition reader both
+inspected the complete leaf. Four repeated quarter expressions are visible:
+the first crosses lines7–8, the second starts9, the third11, and the fourth13.
+The fraction token is provisionally transcribed `ሩባዕትኪ`; a complete diplomatic
+edition of the passage, including every spelling and correction, is not claimed.
+
+| Feature at5:12 | Berlin226ra | Frankfurt7ra | Consequence |
+|---|---|---|---|
+| Division | Four explicit quarter clauses | Three fraction positions; two clearer thirds and a crowded first fraction | The contrast described by Cornill has observable manuscript support. |
+| First punishments | Pestilence/perishing, then separate famine/death in the midst | Combined sequence with famine/death in the midst | Do not summarize Frankfurt as lacking every death verb. |
+| Final clauses | Scattering to winds, then falling by a weapon around the addressee | Scattering before the final weapon-related punishment | Both agree in this order; neither supplies the Hebrew order merely by having thirds. |
+
+The acquisition reader's target reading preceded consultation of Cornill45
+or this comparison table, but was a directed source check, not a blinded
+restoration benchmark. Root knew the published hypothesis. Orthographic and
+hand details remain provisional; agreement between models is not the source
+of attestation. The two physical manuscripts are distinct; the catalogue,
+Cornill and their respective image exports are not extra witnesses. They are
+Ethiopic manuscript witnesses, not two independently attested Hebrew texts;
+this comparison does not establish their precise genealogical relationship.
+The observed states are compatible with selective
+revision, but do not establish the direction or Cornill's proposed Hebrew
+verb deletion. No POB source or English change follows.
+
+The library's [full-size Frankfurt7r JPEG](https://sammlungen.ub.uni-frankfurt.de/i3f/v20/5411904/full/full/0/default.jpg)
+was also acquired and inspected. It does not establish the earlier lettering
+under the crowded first fraction. Repeated enlargement of this same capture
+is not the next recovery experiment. No generative completion or synthetic
+stroke supplied evidence, and no third-party image is imported into Git.
+
+Private SHA256 controls:
+
+```text
+Berlin manifest: 1b6c7f9e78e8fc1e16723572ee7d8617de00bcee39faab4e87c9215d51b2d05b
+Berlin226r2400: e0e1017e823fd46b23bb3c651b7f61508afb2928808eeb2229685f224047776e
+Dillmann1 scan: 4b9410e449a2d26c70f44ce50046570e1cddc434f2c62ad57e8798a66a4f8cec
+Frankfurt7r full: 6274857c6ef4e234fdd86ca26e176b98f329075dcea81e3e2cb7c7aa9c4fd742
+```
+
+The Berlin metadata states Public Domain Mark1.0. Credit the manuscript and
+digitization to Staatsbibliothek zu Berlin – Preußischer Kulturbesitz,2014,
+with its persistent identifier and shelfmark. Root also inspected221r; the
+agent inspected226r,227r and228r as a bounded locator sample. Dillmann2's
+Ezekiel foliation was consulted in the official ALTO text, not its page image
+(that image request timed out). The root's visual catalogue claim is limited
+to printed1, sufficient for the identity crosswalk.
+
+**Next consequential use:** this working route opens a direct comparison at
+36:23–38 and the36–39 transitions. The TEI/catalogue list rubricated openings
+without chapter-to-folio coordinates; missing36:1/39:1 rubric entries do not
+prove missing chapters. Locate content with a small late-book sample, then
+trace actual consecutive leaves. Do not presume numerical chapter order when
+order is itself the question. A further rereading of these5:12 images alone
+will not resolve earlier Hebrew priority.
 
 ## Target-access and interim-report check on October 14
 

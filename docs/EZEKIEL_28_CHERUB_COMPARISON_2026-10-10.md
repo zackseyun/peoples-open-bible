@@ -103,6 +103,11 @@ votes. This pass did not independently acquire the Syriac or verify those
 recensional readings. Lee's translator-intention explanation remains an
 argument, not an observed ancient motive. The cited originals were not read.
 
+The [October 16 Syriac control](#october-16-syriac-wording-and-agency)
+below supersedes that acquisition limit and qualifies the agency claim:
+accompaniment is explicit, but the destruction verb does not uniquely encode
+a divine subject. Lee's rendering remains an attributed interpretation.
+
 The modest chronological preference gives early Greek evidence a reason to
 be investigated, but cannot make a source spelling uniquely recoverable
 through translation. Modern edition dates are not ancient copy dates; no
@@ -326,6 +331,106 @@ The manifest's No Known Copyright statement is not a new license grant;
 the thesis is not relicensed as POB content. All images/PDFs remain outside Git.
 The independent check confirmed line counts and the targeted visible letters,
 not a complete diplomatic transcription, new hand dating or Hebrew priority.
+
+## October 16: Syriac wording and agency
+
+**A real feature-level control, not a decisive source-priority vote.** The
+previously second-hand Syriac evidence has now been checked in Syriac. It
+confirms accompaniment in 14 together with anointing/covering language, and
+a destruction-root verb in 16. It does **not** independently prove the
+divine-destruction/vocative analysis previously reported from Lee. The
+distinction matters: an editor's translation cannot be counted as an extra
+grammatical mark in the witness.
+
+### Acquired text and exact scope
+
+The [digital chapter](https://www.peshitta.eu/ot/ezekiel/28.html) was read in
+the surrounding lament. Its [About page](https://www.peshitta.eu/about.html)
+attributes the OT text to the Syriac Orthodox Patriarchate's 2020 publication.
+It is not identified there as the Leiden critical edition; the two font
+buttons do not represent two witnesses. No manuscript genealogy for this
+electronic edition is asserted.
+
+Root also acquired the [Walton polyglot scan](https://archive.org/details/WaltPoly1PrologVariantReadings/WaltPoly7_Jeremiah-Ecclesiasticus%29).
+The download segment named `WaltPoly7_Jeremiah-Ecclesiasticus)_text.pdf`
+contains 300 PDF pages. PDF page 83 (zero-based leaf 82) contains printed
+pages 96–97; the Syriac and its Latin interpretation are on **97**. The
+running header names chapter XXIX, but verses 14–26 above the separate
+chapter-XXIX opening belong to chapter 28. Root inspected the full spread
+and a higher-resolution target crop; OCR was only the locator.
+
+| Feature | Actual control | What it can establish |
+|---|---|---|
+| 28:14 relationship | Both checked presentations have `ܥܡ` before the cherub | Explicit accompaniment, not merely an English translator's choice of “with” |
+| 28:14 modifiers | Both retain anointing and covering language; Walton's Latin has *uncto* and *obumbrante* | Accompaniment does not require the selected Greek edition's absence of these modifiers |
+| 28:16 action | The digital form is `ܘܰܐܘܒܕܳܟ`; Walton prints the corresponding `ܘܐܘܒܕܟ` sequence before the cherub | A destruction-root expression, not the selected Greek bringing/leading verb; this is not a claim of identical pointing throughout both editions |
+| 28:16 agency | Walton's accompanying Latin reads *perdam te O Cherubine* | The editor interprets first-person destruction plus vocative. This Latin is a translation of the adjacent Syriac, not another ancient Latin witness |
+
+### Why the verb does not uniquely choose its subject
+
+Root and one independent control inspected the original paradigms in
+[Nöldeke, *Compendious Syriac Grammar*, translated by Crichton (1904)](https://archive.org/details/CompendiousSyriacGrammar):
+§168, p.110 (PDF 149); §174E, p.118 (PDF 157); §175B/D, p.120 (PDF 159);
+and the suffix tables/discussion in §§185–188, pp.136–139 (PDF 175–178).
+The Aphʿel perfect third-person masculine singular and imperfect first-person
+singular share the relevant base pattern. Initial-aleph roots follow the
+initial-waw Aphʿel formation; attaching the second-person masculine singular
+object suffix does not supply a separate subject identifier.
+
+Applied to the target, two morphological possibilities remain:
+
+- First-person imperfect: “and I will destroy you,” with the following
+  cherub construed as a vocative.
+- Third-person masculine singular perfect: “and [the cherub] destroyed you,”
+  with the following cherub construed as the subject.
+
+These are grammatical analyses, not two separately attested spellings or a
+claim of equal contextual probability. The preceding first-person action
+supports continuity of divine agency, while verse 14's explicit accompaniment
+provides context for distinguishing the figures. Neither argument makes the
+target verb itself unambiguous. A contextual English past “I destroyed” must
+not be labelled a Syriac first-person perfect. Nor would simply supplying an
+unprinted initial vowel necessarily remove the formal ambiguity.
+
+### Consequence for source selection and English
+
+This narrows the earlier “mixed Peshitta” report: **the checked Syriac combines
+accompaniment with retained modifiers and destruction vocabulary; its final
+agency remains interpretive.** We have not shown that Lee's interpretation is
+wrong, only that this form does not independently compel it. Do not award an
+unqualified Syriac vote to either the full Hebrew or full Greek package.
+Likewise, agreement between these two printed/digital controls does not prove
+independent manuscript support or the original Syriac, much less original Hebrew.
+
+Retain the present WLC source and POB main English provisionally. The current
+notes describe the selected Greek, so they do not require a new application
+merely because another version is now better understood. No source letters,
+newly recovered reading, canon decision or named-Satan/Adam conclusion follows.
+The meaningful next Syriac input is the target critical apparatus/manuscript
+collation and a local syntactic/translation-practice argument. Another English
+translation of these same ambiguous forms will not settle agency or priority.
+
+### Provenance and review limits
+
+Input commit: `9b1b2dbbde444feb3479172d7f2d7f045ba2e327`. The two canonical
+record hashes remain those in the preceding apparatus section. Private
+acquisition SHA256 values are:
+
+| Input | SHA256 |
+|---|---|
+| Walton PDF, 88,593,068 bytes | `89ee7cc04da33d5ec4eddb8a1408f8c72ebdd1a58bbbaf123da85f452670314b` |
+| Nöldeke PDF | `8f81476bf2fe36e60d9a712271666d350abcd1d8acb33971ba691b2819e192d6` |
+| Digital Ezekiel 28 HTML | `1dd09253dfa95230ca43cb46ff156af5a886951e9ca5f24b624075c8f5bf0cfc` |
+| Digital edition About HTML | `5b02fa2d292510076e5acc14523bba895f27f5ce2ce0b9b9caa63ed2ee7abb70` |
+
+The independent agent checked the digital attribution/form and grammar;
+root separately checked the printed Syriac/Latin, all cited grammar pages
+and hashes. Neither read a modern Syriac apparatus or dated a manuscript.
+CAL's anti-scraping response was respected, and no inaccessible CAL text was
+credited. A failed image-service URL was superseded by the public PDF;
+neither that failure nor corrupt OCR supplied a reading. The PDF workflow
+required visual page checks. No PDF, HTML corpus, generated image or page
+scan is imported into Git or relicensed as POB content.
 
 ## Acquisition and audit limits
 

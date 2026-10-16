@@ -67,6 +67,16 @@ to acquire an earlier witness at these units. Seek the cited original
 commentary/modern apparatus or an independently inspected Syriac control next;
 no repeat zoom or current-English adjustment is warranted by this alone.
 
+**October 16 Syriac control completed:** the
+[printed/digital wording and grammar check](EZEKIEL_28_CHERUB_COMPARISON_2026-10-10.md#october-16-syriac-wording-and-agency)
+confirms accompaniment plus retained modifiers in 14 and destruction vocabulary
+in 16. It qualifies the reported divine agency: the latter verb permits both
+first-person imperfect and third-person perfect analyses. Walton's Latin
+chooses the former; it is not an extra ancient witness. Seek the actual Syriac
+apparatus/manuscript collation and local syntactic argument, not another
+translation of the same form. No Hebrew, English or note change is warranted
+by this control alone.
+
 ### Lead Ezekiel 36 to 39 and Papyrus 967
 
 Does the reported36:23b/c–38 minus and36→38→39→37 order represent a shorter

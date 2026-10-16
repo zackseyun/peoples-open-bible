@@ -11695,6 +11695,38 @@ pass, and only the three intended reports differ from the input commit. The
 protected Genizah file retains its recorded hash. These are scope/provenance
 checks, not new ancient-text approvals.
 
+## October 15: test the edition caution against the actual margin
+
+The preceding response confirmed the completed Nahum review rather than
+adding research evidence; this continuation therefore took the next source
+action. An acquisition agent found the public 1840 De Regibus edition. Root
+checked its title and complete relevant pages, and acquired the official
+Barb.gr.549 folios 266r/v. The PDF skill required visual apparatus inspection,
+not reliance on the scan's OCR. A separate image reader checked the margin
+before seeing our proposed reading or Field assessment.
+
+The [direct-source result](EZEKIEL_36_OMISSION_MECHANISMS_2026-10-12.md#the-1840-edition-and-barberini-margin-checked-directly)
+changes our evidence assessment: αθροίσω appears in the photographed margin
+and already printed in 1840. Field's reported ωρθρισω is not our transcription
+of that image. However, the edition places it under "bring out" and the image's
+apparent reference sign agrees. This supports the lexical form while withholding
+the supposed exact Hebrew gathering alignment. The sigla, dependency limits,
+failed Chigi folio locator, image rights and acquisition hashes are documented.
+No generated letters, newly recovered damaged text, POB change or resolution
+of Hebrew literary priority is claimed. This bounded check now gives way to
+the main chapter-36 apparatus/mechanism question, not another citation loop.
+
+PR232 and PR233 each passed their own exact-head push and pull_request Corpus
+integrity runs. Their pinned merges were checked against expected trees and
+parents. The separate Field qualification PR234 was opened without amending
+its live head; the task's attachment limit prevented another UI attachment,
+not the creation of the PR. Unrelated Genizah work remains untouched.
+
+One bounded final factual review found no defects; root's source-provenance,
+479-link and changed-path checks passed. Only these three documents changed.
+The completed merges were synchronized to local main and pushed; subsequent
+heads retain their own CI requirements rather than inheriting those successes.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

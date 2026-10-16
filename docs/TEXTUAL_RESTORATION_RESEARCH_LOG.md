@@ -12073,6 +12073,60 @@ the WLC Ezekiel XML match the input Git blobs. The unrelated Genizah file
 retains SHA256 `130d509aec78d28ad1729b57c4f482158024df80fb1581f5462de10e63e5ca50`.
 No corpus test run is represented as validating the historical interpretation.
 
+## October 16: Ezekiel 35:14 joy, agency and English time
+
+The preceding Nahum status reply was no new research progress. Revalidation
+confirmed an actionable Ezekiel follow-up, rather than a repeated access
+blocker. The [new comparison](EZEKIEL_35_14_JOY_ENGLISH_APPLICATION_2026-10-16.md)
+tests three readings against retained Hebrew in 35:10-15. A frozen contract
+preceded one fresh-context, identity-masked assessment. It prefers future-oriented
+"When the whole earth rejoices" over past worldwide joy, while identifying
+the comparative Edom-subject reading as the strongest rival. The new note
+preserves that rival. Reverse order was not counted as another independent vote.
+
+Root checked the full chapter's source/English and GKC 114/115. The infinitive
+permits contextual past time; the objection is the lack of support for past
+joy by the whole earth in this unit. Neither a following noun nor a Greek
+parallel mechanically determines the Hebrew analysis. The occasion of joy is
+left unstated, and earth/land ambiguity remains disclosed. This improves a
+meaning-bearing English interpretation without claiming recovered Hebrew.
+
+The full-record candidate archives six prior fields, preserves source and
+generation/revision provenance, and withdraws transfer of old approval scores.
+Its frozen preflight covers all 48 Ezekiel chapters and 1,273 records: only
+35:14 changes in the proposed export. Four local preflight tests passed in
+6.421 seconds. Canonical application and its verification are recorded in the
+linked case report; preflight alone is not publication or deployed-reader proof.
+
+PR243 passed both exact-head Corpus integrity events and merged at
+`ebb90a71831c79604118fce022bcacabf3ce1290`. Root verified expected tree
+`340537dfe401a75c61dc5389c3c253986dd91c86` and ordered parents
+`bc517acf703b0d139d893f4f7e9407c07dd5ef33` /
+`71c0c90740bd440e9e7639f58f345ab904f54746`, fetched, advanced local main
+by compare-and-swap and completed a normal push. Other live heads were left
+unchanged. This project's all-source comparison and restoration objective
+remains active; no ImageGen output supplied textual evidence.
+
+PR244 subsequently passed both exact-head events and merged at
+`4e67983bffbbec1fd2990cface18ccaab8a472f9`. The verified merge tree is
+`ecc6a31840408893eee4efb67f252a9eda1e52e4`, with ordered parents
+`ebb90a71831c79604118fce022bcacabf3ce1290` /
+`1a8a48e4e2807b639f6b3da158d2365456c04656`. Local main was advanced by
+compare-and-swap after fetch and pushed normally.
+
+The clause assessor's separate implementation review passed the exact candidate
+and contract; this was not an additional independent English vote. Root applied
+the reviewed bytes and verified the actual complete export and all 1,272
+non-target records. The application report records hashes and disclosure limits.
+
+Post-application validation passed all five new application tests and all 37
+shared reader-note tests (42 distinct tests, 73.142 seconds). All 441 relative
+file-link targets in the three changed reports resolve, and new JSON/workflow
+YAML parse. The WLC XML and protected Genizah file retain their recorded hashes.
+PR245's exact-head push and PR runs were confirmed live and left unchanged.
+The new application is committed on a successor branch; branch publication,
+main-branch merge and deployed-reader verification remain distinct milestones.
+
 ## October 16 — requested Nahum article confirmation
 
 At the user's explicit request, root reread the complete Riestra article,

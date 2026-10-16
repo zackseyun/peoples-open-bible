@@ -153,6 +153,19 @@ Inherited divine wording, harmonization and excerpt adaptation must all be
 tested. Activate only for that evidence; stop with a precise HOLD otherwise.
 Do not repeat completed Fouad/image work or failed previews.
 
+**October 15 current-state correction:** the separate
+[source adjudication and application](DEUT32_8_CRITICAL_SOURCE_APPLICATION_2026-10-15.md)
+already provisionally adopted בני אלוהים / “sons of God,” with an honest
+POB-critical composite label and retained contrary evidence. The unresolved
+historical questions above do not mean the canonical verse still reads Israel.
+The [Albertus edition check](DEUT32_8_ALBERTUS_QUOTATION_CONTROL_2026-10-15.md)
+also completed the old attribution-acquisition task. Inspect current case
+reports and the verse before treating an older queue entry as unfinished.
+The same report now verifies the wording and version attribution in Jammy
+1651, excluding a Borgnet-first innovation but not proving a lost Greek
+exemplar. Repeating either print is not the next task; a further quotation
+study needs a medieval manuscript or an identifiable transmission link.
+
 ### Evidence and efficiency rules for this portfolio
 
 Obtain actual target wording, an edition/plate, verified survival, a neglected

@@ -136,3 +136,10 @@ Repository publication remains pending its own push and PR checks. Earliest
 wording, new manuscript recovery and corpus-wide optimality are not certified.
 Image generation supplied no evidence; this textual variant supplies no
 argument for changing the biblical canon.
+
+Publication checkpoint, October 15: the pending statement above records the
+application-time status. Commit `cecb2f5f84` is now verified as an ancestor of
+main, and main's canonical verse has the exact applied SHA256 above. Six
+lightweight current-application checks were rerun in this continuation. This
+confirms the published Git state, not a newly checked deployment, full-book
+export or historical priority.

@@ -1,5 +1,25 @@
 # Deuteronomy 32:8: component-specific evidence and stopping decision
 
+## Current-state checkpoint on October 15
+
+The dated triage below is historical. The later
+[full-source adjudication](DEUT32_8_PROVISIONAL_SOURCE_ADJUDICATION_2026-10-15.md)
+and [reviewed application](DEUT32_8_CRITICAL_SOURCE_APPLICATION_2026-10-15.md)
+have provisionally selected בני אלוהים and English **“sons of God,”** labeled
+POB-critical rather than WLC. The rest of the verse retains the declared
+Masoretic base; the exact earliest Hebrew remains uncertain. Application commit
+`cecb2f5f84` is an ancestor of the main branch checked in this continuation.
+Current canonical SHA256 is
+`f815dcd72c3f4372cca011eb8824d4791ec94c3432b9d2c0756a3f4862a49755`.
+
+The [Albertus attribution check](DEUT32_8_ALBERTUS_QUOTATION_CONTROL_2026-10-15.md)
+also already completed the older next-step instruction below. Do not repeat it
+as a new discovery or interpret the older WLC/Israel statements as today's
+canonical status. These corrections preserve the earlier evidence and its
+limits; they do not reopen or change the reviewed source selection.
+
+## September 6 triage
+
 Checked 2026-09-06. **Retain the canonical WLC/“sons of Israel” for now; keep
 “sons of God” as the existing provisional source-change proposal.** This pass
 does not approve or reject its eventual adoption, raise confidence, restore

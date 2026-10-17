@@ -14334,6 +14334,86 @@ Its scope is not a complete independent article/volume reading or application
 approval. Historical Hebrew priority remains HOLD. The wider goal stays active;
 repeated same-page votes are not the next useful work.
 
+## 2026-10-17 — Jeroboam's participation and the expanded Greek narrative
+
+The [new comparison](KINGS_12_JEROBOAM_NARRATIVE_COMPARISON_2026-10-17.md)
+opens a consequential narrative-history question rather than repeating the
+temple poem. A quick alternative-target check found Jeremiah's date case was
+already completed and did not reopen it. Root and one reused Greek source
+reader read BM's eight complete printed 252–259 pages, regular junction through
+the whole expanded 12:24a–z. The existing own-edition keys were reused, not
+reported as a fresh witness acquisition or a modern census.
+
+The actual apparatus changes the comparison: 127 omits the illness/child-death
+span, 107/106 omit a wider ending, 554 substitutes regular-story material,
+and 56 adds the Adoram/coronation sequence. The source reader's preliminary
+b-attribution for the long substitutions/addition was corrected to z/z/i
+after complete-unit enlargements, before freezing. The mother description's
+widow reading belongs to h55's text, not b. The selected regular 12:20 B name
+is Roboam; two reported marginal correctors and other Greek witnesses support
+Jeroboam. A tentative local name preference does not settle narrative priority.
+
+Root completed source/main-English reading for 100 connected records in five
+bounded, untruncated batches. An earlier oversized output was truncated and
+was not counted as full reading. All 100 source fields exactly match the WLC
+written stream; six morphology contexts and twelve target note sets were
+separately inspected. The return verbs and prepositions in Kings and Chronicles
+really differ. Current source/main English and reader notes remain unchanged;
+the inspected notes do not yet explain the alternative narrative. No unrelated
+anchor repairs, source selection, candidate or export was undertaken.
+
+A second reused source reader read all Gooding's actual 1972 rejoinder. A
+discriminating discrepancy justified acquiring its original journal facsimile:
+the estate resetting reverses A/B in a table. Root read the full original
+article as extracted text and the decisive original/resetting visual pages.
+The corrected attribution, shared-work dependence, original reference typo and
+limits of the argument are documented. No new Latin evidence follows from
+that reader's historical task name. Darshan's 2024 abstract is accessible,
+but ordinary publisher/RG downloads returned 403 and malformed extraction was
+not adopted. Joosten's official route yielded HTML, not the 2020 chapter.
+Neither full modern argument is claimed as read or used to establish priority.
+
+The [packet](../sources/textual_restoration/comparisons/kings12_jeroboam.2026-10-17.v1.json)
+pins the report, governing files, five private PDFs, fifteen images and all
+100 canonical baselines. Root verified 127 pins, fifteen native dimensions,
+three exact non-generative crop derivatives, four relative report links,
+and unchanged baseline blobs. The first combined verification command found
+the repository Python lacks Pillow; the pin/image check was then successfully
+run with the bundled runtime. No dependency was installed. BM full-page display
+resizing and the narrow name-correction crop's resized display are disclosed.
+The unrelated Genesis file remains untouched and excluded.
+
+The single bounded independent frozen-artifact review passed at the exact
+report and packet hashes in its
+[receipt](../sources/textual_restoration/comparisons/kings12_jeroboam_review.2026-10-17.v1.json).
+The reviewer reproduced all checks, including 100 WLC/POB source equalities,
+and read the complete target Greek pages, key, decisive table images and
+specified Hebrew contexts. It did not independently read the full Gooding
+article, all 100 English records or the unavailable modern discussions.
+It approves no canonical application or deployment.
+Historical Hebrew priority remains HOLD; the evidence supports real
+meaning-bearing narrative alternatives, not recovered original Hebrew or an
+expanded canon. Park repeated same-page inspection and seek a discriminating
+modern transmission argument or separately review an accurate reader disclosure.
+The wider OT/NT comparison objective remains active.
+
+During this continuation, the previous comparative-formula PR 278 passed both
+required checks at its exact head and merged normally as
+`a6946db48d64f39f1c61f326cad7e866330489f5`. Main was verified absent from other
+worktrees, fast-forwarded and pushed normally (already up to date remotely).
+The separate temple-poem PR 280 subsequently passed both required
+`corpus-integrity` checks at `8d47206013ae9a776b2f5d12fa007a7b36483f75`
+and merged normally as `8cbceac4e8894e8c4431b69b8f515afbc42b8967`.
+The combined legacy status endpoint reported pending with zero legacy statuses;
+the fresh guard explicitly checked the complete successful check-run list,
+zero blocking legacy statuses, exact head and GitHub's clean/mergeable state.
+No protection was disabled. This publishes the earlier temple-poem dossier,
+not a Hebrew-source change or approval of the present Jeroboam case.
+The merged tree exactly matches the current study's original baseline tree;
+after another worktree check, local main and this research branch were safely
+fast-forwarded to the merge. Normal pushing of main confirmed it was already
+up to date remotely. Uncommitted current-case documentation was preserved.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

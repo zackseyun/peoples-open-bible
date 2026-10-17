@@ -13771,6 +13771,46 @@ not both complete studies or every QDR primary row. No full-corpus/export rerun
 is claimed for these documentation-only changes. Publication checks remain
 separate from historical priority and comprehensive corpus completion.
 
+## October 17 — Joshua duplication countermodel and stopping condition
+
+The preceding Joshua comparison passed both exact-head integrity jobs. A fresh
+open/clean/exact-head check preceded PR271's merge as
+8a901cc75c76860ce948759681cf4fc8f4e0749d. Main was synchronized and a normal
+push confirmed it up to date; no protection was bypassed.
+
+The [countermodel follow-up](JOSHUA_COUNTERMODEL_FOLLOWUP_2026-10-17.md)
+directly consults van der Meer's own 2018 retrospective, rather than relying
+only on another author's account of his position. Root read complete target
+pages and notes and visually checked printed 34–35. The specific new input is
+his duplication explanation for 4QJoshuaᵃ's early law-reading passage, alongside
+his translator-as-reviser model. This is not consultation of the detailed 2004
+book, an independent manuscript vote or a decisive explanation of Joshua 24.
+The proposed test now separates early occurrence from evidence that the same
+copy included or omitted the corresponding later passage. A lost later location
+cannot decide between duplication and relocation.
+
+Delegated access checks exhausted bounded new routes for Margolis Part V,
+DJD XIV and Puech's 2015 re-edition. Margolis's OCR and reconstructed-text
+conventions are available, but the visual PDF reaches an account/terms gate;
+Puech's apparent successful download is HTML requiring subscription/login.
+No authentication, terms acceptance, access bypass or author request was made.
+No target geometry, revised fragment placement, 4Q123 identification or exact
+apparatus distribution is approved from these routes. QDR's release date and
+missing bibliography string do not settle which reassessments it incorporates.
+
+The documentation workflow makes that stopping condition explicit. Retain the
+current Hebrew and English provisionally; no reader, order or canon change is
+applied. Resume this case only for actual discriminating source pages or a new
+lawful access route, not repeated same-evidence review. This bounded result
+does not block other consequential OT comparisons or complete the wider goal.
+The independent bounded review passes at the recorded report and review-input
+packet hashes after reading actual JSCS 31–36 and visually checking 34–35.
+Access-route reports were not independently retested. Nine file pins, two
+render bindings/dimensions, 572 relative links, the protected unrelated hash
+and unchanged source/English verify. No full-corpus/export rerun or historical
+priority approval is claimed. The new documentation's publication checks are
+separate from this source/report review.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

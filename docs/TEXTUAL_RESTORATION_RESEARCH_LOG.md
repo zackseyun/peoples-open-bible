@@ -15132,7 +15132,12 @@ a known published variant newly applied to POB, not newly deciphered ink or
 a settled claim about the earliest wording or historical conduct. No canon
 change follows. Ordinary CI/main integration and actual Samuel public-reader,
 navigation, manifest and publisher checks remain pending; local tests do not
-certify deployment. The broader source-comparison goal remains active.
+certify deployment. Latest main was merged normally into the application
+branch without conflicts. Its 36 incoming Enoch 25:7/26:6 source-application,
+test and translation files are preserved; this integration is not a fresh
+scholarly review of those separate tasks. The unused local main was advanced
+to the fetched remote main and its normal push was already up to date. The
+broader source-comparison goal remains active.
 
 ## Later About-page summary — proposed, not published
 

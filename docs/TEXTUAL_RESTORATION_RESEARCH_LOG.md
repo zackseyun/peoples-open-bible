@@ -13603,6 +13603,67 @@ Esther research packet and report remain frozen historical inputs; this
 separate receipt documents the later application. Main publication still
 requires the final exact committed head's checks and branch protection.
 
+## October 16 — Papyrus 967 calendar access and Jeremiah 33 forms
+
+The prior goal turn made progress: 66f11fefbb applied and verified the bounded
+Esther 3:7 clarification. Its two exact-head integrity checks were confirmed
+live at this continuation's start, then both completed successfully. PR267
+merged as 2798bcadee8d03ddb9cd225c6036ad6886eefb02 after a fresh eligibility
+check. No required check was cancelled, restarted or bypassed to publish it.
+
+The [new Esther papyrus dossier](ESTHER_P967_CALENDAR_2026-10-16.md)
+closes a real access gap rather than retrying the four failed derived image
+requests. Official Chester Beatty downloads yielded Kenyon's actual 1937 text
+and 1938 plates. The literal text URL was found through Nongbri's link list;
+ordinary downloads succeeded although the separate web reader returned 403.
+Root and a delegated source reader checked complete target text and apparatus
+and the two numeral-bearing photographic plates. Both Adar 14 numerals are
+visible away from missing edges, not merely restored by the editor. The
+intervening fragmentary 3:13 is not independent evidence that a day was absent.
+This confirms a specific early Greek witness, not recovered Hebrew or an
+earliest-form judgment. No fresh spectral capture or ImageGen evidence is used.
+
+The [Jeremiah 33 comparison](JEREMIAH_33_COVENANT_COMPARISON_2026-10-16.md)
+opens a consequential case outside the completed heading/order controls.
+Actual QDR primary rows and DJD XV target pages distinguish partial ancient
+Hebrew inclusion from supplied clauses. Swete's complete two-page junction
+and apparatus, with its own key, distinguish the short continuous Greek from
+the θ′/asterisk-labelled rendering concluded Qmg. Root read the full 21-page
+Erzberger article, notes and bibliography, then independently checked current
+Hebrew/POB and selected-Greek connected wording. The separate 4Q252 attribution
+test finds shared royal language, not another continuous Jeremiah copy.
+Dates, supplies, physical witnesses, versional renderings and literary history
+remain separate; no canonical replacement or optimal-English claim follows.
+
+The documentation workflow preserves attestation, interpretation and application
+as distinct decisions. Initial review found two documentation issues: the
+Esther report claimed derivative pins before the packet included them, and the
+Jeremiah report left the separate Grothe bibliographic lead ambiguous beside
+Erzberger's Groß discussion. The six render pins were added; Grothe's full
+1981 reference was identified and checked in Boda's actual note rather than
+silently changed to Groß. Both initial findings and resolutions are retained.
+Neither Grothe's original argument nor a full modern target apparatus is
+claimed as consulted.
+
+Independent bounded source/report reviews now pass at the exact recorded
+report and review-input packet hashes. These are context-aware checks, not
+blinded machine transcription, repeated preference voting, source-priority
+approval or all-OT validation. The Esther source reader's earlier factual
+verification is explicitly not called an independent judge. Final packet
+validation covers seven private primary-source files, thirteen retained
+renders and 47 pinned canonical controls across the two dossiers, with exact
+report/input hashes and unchanged protected unrelated data. No source or
+translation-corpus change is made by this research pass; no full corpus test
+or export rerun is warranted by these documentation-only changes.
+
+The next discriminating inputs are the modern Esther connected apparatus and
+actual Marchalianus marginal evidence/modern Jeremiah apparatus, together with
+4Q72 physical supply-endpoint reconciliation. Finished numeral, article,
+junction and attribution checks are not tasks to repeat. Comprehensive witness
+coverage and the varied held-out image benchmark remain unfinished. These
+results advance the full goal but do not prove its completion. Publication of
+this new documentation still requires its own exact-head checks.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

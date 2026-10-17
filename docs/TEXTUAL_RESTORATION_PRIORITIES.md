@@ -101,18 +101,35 @@ collective violence, without an explicit second day in its battle unit;
 edition-local chapter 8 aligns with modern AT chapter 7. Its agency variant
 and the connected calendar/letter check qualify a uniform Alpha account and
 date-based preemptive inference. Papyrus 967's catalogued calendar coverage is
-not yet a target reading; its listed fragments do not cover the chapter 9
-targets. Next obtain the modern connected apparatus or a new lawful route to
-967's actual calendar text. The separate [3:7 reader application](ESTHER_3_7_LOT_CASTING_READER_APPLICATION_2026-10-16.md)
+not a chapter 9 control. A [new institutional Kenyon route](ESTHER_P967_CALENDAR_2026-10-16.md)
+now verifies actual Adar 14 numerals at 3:7 and Addition B in both transcription
+and historical photographic plates. The target calendar-access hold is closed;
+this is one early Greek witness, not recovered Hebrew or earlier-form priority.
+Next obtain the modern connected apparatus, especially 9:10 and 9:16–17.
+The separate [3:7 reader application](ESTHER_3_7_LOT_CASTING_READER_APPLICATION_2026-10-16.md)
 now qualifies the elapsed-casting note and three rationales and relocates its
 anchor after a scoped independent pass. Hebrew and marker-free main English
 are retained; an optimal main-sentence recast is not certified. Do not repeat
 completed edition, calendar, article or note-application checks or the
 failed image routes; do not use standalone local ESG Additions numbering as
 continuous Esther.
-The earlier comparison's source-priority and 967 holds remain; no Hebrew or
+The earlier comparison's source-priority and chapter 9 coverage limits remain; no Hebrew or
 canon change follows. The held Samuel history does not block this distinct
 consequential comparison.
+
+**October 16 new consequential Hebrew/Greek comparison:**
+[Jeremiah 33:14–26](JEREMIAH_33_COVENANT_COMPARISON_2026-10-16.md)
+now has a bounded source dossier distinct from the prior Jeremiah 10, heading
+and oracle-order cases. Published 4Q72 material establishes partial ancient
+Hebrew inclusion, not thirteen intact verses or preserved Levitical-priest
+wording. Swete's short junction and its longer θ′/asterisk/Qmg supplement
+distinguish the continuous Greek form from later marginal transmission.
+Connected royal, priestly and cosmic-order controls constrain simple ideological
+omission stories. The full Erzberger article is read; source priority is not
+settled by its proposed redaction history. Next inspect the actual Marchalianus
+target margin and modern apparatus, and reconcile 4Q72 supply endpoints with
+physical evidence. Do not repeat the completed article, junction, printed
+supplement or 4Q252 attribution test; no source or reader change is applied.
 
 **Related historical control completed:** the
 [Hannah prayer clause at 1:13](SAMUEL_1_13_PRAYER_PLUS_2026-10-16.md)

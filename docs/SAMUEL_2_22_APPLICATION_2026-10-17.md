@@ -73,6 +73,15 @@ actual Samuel chapter, provenance page, selected-verse navigation, manifest
 revision and publisher run must be checked. Mobile/offline and the entire
 website are outside this verification scope.
 
+At 21:25–21:26 UTC on October 17, the actual Samuel chapter still displayed
+the longer English without note markers. Its selected-verse provenance action
+opened the correct [1 Samuel 2:22 source record](https://peoplesbible.com/verse/?ref=1SA.2.22)
+in a separate tab. That record still showed WLC, the longer English and its
+single older lexical note. This establishes the pre-publication navigation
+baseline, not delivery of the new critical source or its two notes. The user's
+concern about visual clutter does not authorize a new inline panel; the
+existing on-demand route remains the intended arrangement.
+
 ## Verification and release status
 
 Root checked the actual canonical candidate bytes and strict source/full-record
@@ -90,7 +99,19 @@ whole-book comparison, negative drift mutations and the raw-WLC overwrite
 guard. CI adds this module and its two Git baselines without removing existing
 checks. The [application receipt](../sources/textual_restoration/applications/samuel2_22_application_20261017/application.v1.json)
 records the remaining actual test results and repository/publication status.
-Local application is not a claim that CI, merge or deployed delivery has passed.
+That receipt is a frozen local observation, not a mutable release certificate.
+
+Both exact-head CI checks, `117500491120` and `117500483045`, subsequently
+completed successfully. [PR 299](https://github.com/zackseyun/peoples-open-bible/pull/299)
+merged normally at 21:26:56 UTC on October 17 as
+`ad19eac91823de70555b902eb8343bc475825b17`, from reviewed head
+`906681736833804915261ec0239b0f55160bafe7`. No check was restarted or bypassed.
+The exact-merge [publisher run](https://github.com/zackseyun/peoples-open-bible/actions/runs/39070983966)
+started automatically and was still checking out the repository at the first
+post-merge observation. The public manifest still identified `2bc5f7a10203`.
+Actual new-text, two-note and website-sync delivery therefore remain unverified;
+the pre-publication browser observations above must not be relabelled as a
+successful release check.
 
 This closes the exact local application step, not the broader comparison
 program. Further Samuel spatial work requires new independent constraints,

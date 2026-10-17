@@ -61,7 +61,7 @@ choices are feature-specific: Qumran's ninety-year component survives but its
 eight-year completion is supplied; the first כל omission is gap-dependent;
 the participial ending and לבני have stronger preserved-letter support.
 The [exact provisional application](SAMUEL_2_22_APPLICATION_2026-10-17.md)
-is now independently approved and applied locally. The actual full-book export
+is now independently approved, applied and merged in PR 299. The actual full-book export
 retains both notes and changes only this verse among 811, but carries no Hebrew-source
 identity. The [actual delivery follow-up](CRITICAL_SOURCE_READER_DELIVERY_2026-10-17.md)
 now confirms that the existing alternative critical-verse schema already
@@ -69,7 +69,8 @@ supports canonical integration; legacy enum rejection alone is not a blocker.
 The live CDN omits target notes, while the public chapter's Check Provenance
 action reaches the full source and notes. The fresh application judge accepts
 that existing on-demand arrangement; no new inline panel is required or
-implemented. Next complete ordinary CI/main integration and verify the actual
+implemented. Both exact-head CI checks passed and ordinary main integration
+completed; next verify the actual
 Samuel chapter, provenance, selected-verse navigation and publisher revision.
 Keep the reading view clean. Do not repeat a generic “LXX omits” claim,
 count QDR/DJD twice, turn supplied text into ink, or use ImageGen to decide
@@ -106,8 +107,16 @@ margin or add another witness alongside the edition. The user's brief
 publication hold was explicitly superseded by permission for evidence-led
 omission, then explicit approval of shorter main text with the full clause and
 uncertainty in the footnote; PR 299 was closed unmerged, then reopened. Its other wording choices
-retain separate feature-specific arguments and limits. CI and actual future
-delivery remain gates, not evidence of textual originality.
+retain separate feature-specific arguments and limits. Passed CI and merge
+do not settle textual originality; actual public delivery remains a gate.
+
+The [Alexandrinus countercheck](SAMUEL_2_22_ALEXANDRINUS_COUNTERCHECK_2026-10-17.md)
+now confirms the known longer body in a photographic facsimile, including
+A's distinctive ΕΚΟΜΙΖΟΝ and its mixed totalizer/recipient profile. Do not
+silently repair its verb, give every longer branch identical sexual wording,
+or count the facsimile and edition twice. The provisional selection is
+unchanged; further work needs discriminating transmission/layout evidence,
+not another same-reading vote.
 
 **October 17 new consequential comparison:** [2 Samuel 21:8](SAMUEL_21_8_MOTHER_COMPARISON_2026-10-17.md)
 now has a scoped mother-name dossier. Actual Kennicott 591 identifies

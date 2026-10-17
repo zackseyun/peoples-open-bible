@@ -46,6 +46,19 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 17 new consequential comparison:** [2 Samuel 21:8](SAMUEL_21_8_MOTHER_COMPARISON_2026-10-17.md)
+now has a scoped mother-name dossier. Actual Kennicott 591 identifies
+מירב198 and מרב250; 172 omits the name, not a third Merab witness. The DJD
+and QDR name in 4QSamᵃ fragment 152 is wholly supplied and cannot vote.
+The complete Hays article and McNaughton's concluding argument challenge a
+simple harmonizing change; Josephus's actual Greek names Michal/five children
+elsewhere but no husband there. Hebrew priority remains unresolved, with
+provisional Michal retention, not automatic WLC authority. No canonical edit
+is applied. Next identify and inspect Kennicott 198/250 and obtain a modern
+local Greek collation with a discriminating history-of-change argument.
+Do not repeat the supplied name, completed article reading or readiness audit
+as new evidence.
+
 **October 16 broader-goal continuation:** the access boundary below applies
 to its three questions, not to all OT evidence. A wider bounded audit found
 an unperformed comparison with an already acquired critical edition:

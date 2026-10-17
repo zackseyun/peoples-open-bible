@@ -73,6 +73,15 @@ actual Samuel chapter, provenance page, selected-verse navigation, manifest
 revision and publisher run must be checked. Mobile/offline and the entire
 website are outside this verification scope.
 
+At 21:25–21:26 UTC on October 17, the actual Samuel chapter still displayed
+the longer English without note markers. Its selected-verse provenance action
+opened the correct [1 Samuel 2:22 source record](https://peoplesbible.com/verse/?ref=1SA.2.22)
+in a separate tab. That record still showed WLC, the longer English and its
+single older lexical note. This establishes the pre-publication navigation
+baseline, not delivery of the new critical source or its two notes. The user's
+concern about visual clutter does not authorize a new inline panel; the
+existing on-demand route remains the intended arrangement.
+
 ## Verification and release status
 
 Root checked the actual canonical candidate bytes and strict source/full-record

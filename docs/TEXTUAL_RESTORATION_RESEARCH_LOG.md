@@ -15242,6 +15242,19 @@ suite was not rerun merely for these research additions.
 Public application and actual main-text/footnote/navigation verification
 remain pending; the full objective remains active.
 
+## October 17 — Verify the Samuel reader baseline
+
+While PR 299's same two checks continued, root inspected the actual Samuel
+chapter and selected-verse provenance action. The chapter displayed the older
+longer text without note markers; the action opened the correct 1 Samuel 2:22
+record, which still had WLC, the longer text and one older lexical note.
+The [application report](SAMUEL_2_22_APPLICATION_2026-10-17.md) records this
+pre-publication baseline. It is not evidence that the new source or two-note
+disclosure has deployed. The user's concern about clutter is addressed by
+the existing on-demand route; no external publisher or reader code was changed.
+The same checks were allowed to finish without a manual restart or another
+source-preference vote.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

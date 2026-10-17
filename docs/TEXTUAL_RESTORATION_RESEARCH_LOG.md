@@ -13664,6 +13664,56 @@ coverage and the varied held-out image benchmark remain unfinished. These
 results advance the full goal but do not prove its completion. Publication of
 this new documentation still requires its own exact-head checks.
 
+## October 16 — Jeremiah 33 actual margin and plate reconciliation
+
+The preceding Esther/Jeremiah documentation head 853d59bd8b passed both required
+integrity checks. A fresh open/exact-head/clean eligibility check preceded
+PR269's merge as cbb46e3e19f7521cc432c5a9116287dc659526d9. No check was
+cancelled, restarted or bypassed for publication.
+
+The [manuscript follow-up](JEREMIAH_33_MANUSCRIPT_FOLLOWUP_2026-10-16.md)
+closes two specific evidence gaps from the preceding comparison. Root located
+the actual Marchalianus page 484 through the custodian's manifest and text
+navigation. Both target captures show the same physical page: the main short
+junction and a smaller top/left long block. Phrase anchors corroborate the
+printed supplement report without certifying every contraction, sign, hand or
+date. Navigation pages and paired captures are not extra independent witnesses.
+Archival pixels remain private under the custodian's study-use terms.
+
+The actual DJD XV Plate XXXVI identifies fragment 55 ii, column XXV. Comparing
+its limits with the printed transcription and QDR resolves our apparent major
+boundary discrepancy: Hebrew brackets must be read right-to-left. This corrects
+our earlier display interpretation, not the scroll or either edition. The old
+report/packet remain frozen; the follow-up expressly supersedes that specific
+concern. Edge-trace uncertainty and supplied long clauses remain. No generated
+image, newly recovered letter, direct Hebrew retroversion or source-priority
+decision is claimed.
+
+A bounded delegated modern-apparatus search stopped after three new routes.
+Visual title inspection rejected an official preview whose indexed text
+misleadingly suggested Jeremiah: it is Hanhart's Ezra II. Root also checked
+the title and series list. A product listing and denied supporting-study
+download do not replace actual target apparatus pages. That access gap remains;
+do not rerun these same routes or count the rejected preview as Jeremiah.
+
+The documentation workflow keeps the correction visible and separates physical
+observation from source selection. Hebrew, main English, reader notes and canon
+are unchanged. The next discriminating evidence is the modern target/reviser
+apparatus and a hand/attribution assessment, not more same-image enlargement.
+This bounded progress does not close comprehensive OT coverage or the image
+benchmark. Independent review caught a locator overstatement: Benjamin belongs
+earlier in the same verse unit, not to page 484's opening. The new report now
+limits that anchor to Jerusalem environs and Judah; the core junction and
+supplement findings are unaffected. The independent bounded review now passes
+at the recorded corrected report and review-input packet hashes. Validation
+checks six private sources, eight derivatives, three frozen inputs, 35 unchanged
+canonical controls, two actual manifest bindings and 571 relative file links;
+the protected unrelated file is unchanged. Transform commands are documented,
+not independently rerun by the judge. No full corpus/export rerun is claimed
+for these documentation-only changes. Review history and scoped validation are
+recorded in the new evidence packet; publication remains subject to exact-head
+protection checks.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

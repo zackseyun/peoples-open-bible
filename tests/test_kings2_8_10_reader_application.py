@@ -16,6 +16,7 @@ from tools import export_mobile_bible as exporter
 
 
 ROOT = Path(__file__).resolve().parents[1]
+METHOD_PATH = 'docs/TEXTUAL_ADJUDICATION_METHOD.md'
 BASELINE = '12fa8aad57a9bb573177c4a5864c0e9ee62b369d'
 CONTRACT = 'sources/textual_restoration/comparisons/kings2_8_10_reader_contract.2026-10-17.v1.json'
 TARGET = 'translation/ot/2_kings/008/010.yaml'
@@ -142,6 +143,40 @@ class Kings2EightTenReaderApplicationTests(unittest.TestCase):
         cls.candidate_raw = (ROOT / cls.item['candidate']).read_bytes()
         cls.candidate = yaml.safe_load(cls.candidate_raw)
 
+    def assert_frozen_input_pins(self):
+        for path, expected in self.contract['input_pins'].items():
+            raw = subprocess.check_output(['git', 'show', f'{BASELINE}:{path}'], cwd=ROOT)
+            self.assertEqual(sha(raw), expected, path)
+            # Preserve the policy actually reviewed without freezing later
+            # method revisions. Every other live pin remains binding.
+            if path != METHOD_PATH:
+                self.assertEqual(sha((ROOT / path).read_bytes()), expected, path)
+
+    def test_corrupt_historical_method_still_fails(self):
+        original = subprocess.check_output
+
+        def corrupt_method(args, **kwargs):
+            raw = original(args, **kwargs)
+            return raw + b'corrupt' if args[-1] == f'{BASELINE}:{METHOD_PATH}' else raw
+
+        with patch.object(subprocess, 'check_output', side_effect=corrupt_method):
+            with self.assertRaisesRegex(AssertionError, METHOD_PATH):
+                self.assert_frozen_input_pins()
+
+    def test_live_nonpolicy_pins_still_fail_on_drift(self):
+        original = Path.read_bytes
+        for target in self.contract['input_pins']:
+            if target == METHOD_PATH:
+                continue
+
+            def corrupt_live(path):
+                raw = original(path)
+                return raw + b'corrupt' if path == ROOT / target else raw
+
+            with self.subTest(path=target), patch.object(Path, 'read_bytes', new=corrupt_live):
+                with self.assertRaisesRegex(AssertionError, re.escape(target)):
+                    self.assert_frozen_input_pins()
+
     def test_frozen_inputs_and_candidate(self):
         c = self.contract
         self.assertEqual(c['baseline_commit'], BASELINE)
@@ -155,10 +190,7 @@ class Kings2EightTenReaderApplicationTests(unittest.TestCase):
             'docs/TEXTUAL_ADJUDICATION_METHOD.md', 'REFERENCE_SOURCES.md',
             'schema/verse.schema.json', 'tools/export_mobile_bible.py',
             'sources/ot/wlc/2Kgs.xml'})
-        for path, expected in c['input_pins'].items():
-            raw = subprocess.check_output(['git', 'show', f'{BASELINE}:{path}'], cwd=ROOT)
-            self.assertEqual(sha(raw), expected, path)
-            self.assertEqual(sha((ROOT / path).read_bytes()), expected, path)
+        self.assert_frozen_input_pins()
         self.assertEqual(set(c['evidence_pins']), {EVIDENCE})
         for path, expected in c['evidence_pins'].items():
             self.assertEqual(sha((ROOT / path).read_bytes()), expected, path)

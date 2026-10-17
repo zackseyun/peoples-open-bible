@@ -14978,8 +14978,19 @@ eight live canonical/context pins, seven JSON parses, report links and
 whitespace checks. The source reader also confirmed the frozen report's
 Greek ἃ, withdrawing its own earlier working-table τί transcription error;
 no frozen report or source decision changed.
-PR 293's checks were still running at the latest bounded status check. The
-protected unrelated Genesis file remains byte-identical and unstaged.
+PR 293's two checks subsequently failed too; its actual job log identifies
+the same Job 42 historical-method comparison. Both old PR heads remain
+unchanged. The independent engineering check confirmed the Job correction
+preserves all original evidence and identified the same live-method assertion
+in the 2 Kings 8:10 sibling test. Root implemented the analogous correction
+and all six 2 Kings tests passed, including the complete 719-unit historical
+and live export checks and new historical/live corruption probes. That test
+keeps all five historical pins, all four nonpolicy live pins and its separate
+live evidence pin. Neither frozen contract changed. No further review cycle
+or broad-suite rerun followed. A final check reconfirmed all six preflight
+artifact hashes, eight canonical/context hashes and zero translation-file
+changes against the current main baseline. The protected unrelated Genesis
+file remains byte-identical and unstaged.
 
 ## Later About-page summary — proposed, not published
 

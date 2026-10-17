@@ -17,6 +17,7 @@ from tools import export_mobile_bible as exporter
 
 ROOT = Path(__file__).resolve().parents[1]
 BASELINE = '332a7f9b050acedcf99a5e99412c63980c901115'
+METHOD_PATH = 'docs/TEXTUAL_ADJUDICATION_METHOD.md'
 CONTRACT = 'sources/textual_restoration/comparisons/job42_reader_contract.2026-10-17.v1.json'
 TARGET = 'translation/ot/job/042/017.yaml'
 KEY = (42, 17)
@@ -128,6 +129,40 @@ class Job42ReaderApplicationTests(unittest.TestCase):
         cls.candidate_raw = (ROOT / cls.item['candidate']).read_bytes()
         cls.candidate = yaml.safe_load(cls.candidate_raw)
 
+    def assert_frozen_input_pins(self):
+        for path, expected in self.contract['input_pins'].items():
+            raw = subprocess.check_output(['git', 'show', f'{BASELINE}:{path}'], cwd=ROOT)
+            self.assertEqual(sha(raw), expected, path)
+            # The method belongs to the original review, not later revisions.
+            # All evidence, schema, exporter and other live pins remain binding.
+            if path != METHOD_PATH:
+                self.assertEqual(sha((ROOT / path).read_bytes()), expected, path)
+
+    def test_corrupt_historical_method_still_fails(self):
+        original = subprocess.check_output
+
+        def corrupt_method(args, **kwargs):
+            raw = original(args, **kwargs)
+            return raw + b'corrupt' if args[-1] == f'{BASELINE}:{METHOD_PATH}' else raw
+
+        with patch.object(subprocess, 'check_output', side_effect=corrupt_method):
+            with self.assertRaisesRegex(AssertionError, METHOD_PATH):
+                self.assert_frozen_input_pins()
+
+    def test_live_nonpolicy_pins_still_fail_on_drift(self):
+        original = Path.read_bytes
+        for target in self.contract['input_pins']:
+            if target == METHOD_PATH:
+                continue
+
+            def corrupt_live(path):
+                raw = original(path)
+                return raw + b'corrupt' if path == ROOT / target else raw
+
+            with self.subTest(path=target), patch.object(Path, 'read_bytes', new=corrupt_live):
+                with self.assertRaisesRegex(AssertionError, re.escape(target)):
+                    self.assert_frozen_input_pins()
+
     def test_frozen_inputs_and_candidate(self):
         c = self.contract
         self.assertEqual(c['baseline_commit'], BASELINE)
@@ -136,10 +171,7 @@ class Job42ReaderApplicationTests(unittest.TestCase):
         self.assertEqual(c['book_baseline']['yaml_count'], 1070)
         self.assertEqual(digest({p: sha(raw) for p, raw in self.raw.items()}),
                          c['book_baseline']['sha256'])
-        for path, expected in c['input_pins'].items():
-            raw = subprocess.check_output(['git', 'show', f'{BASELINE}:{path}'], cwd=ROOT)
-            self.assertEqual(sha(raw), expected, path)
-            self.assertEqual(sha((ROOT / path).read_bytes()), expected, path)
+        self.assert_frozen_input_pins()
         self.assertEqual(self.item['path'], TARGET)
         self.assertEqual(self.item['before_sha256'], sha(self.raw[TARGET]))
         self.assertEqual(self.item['candidate_sha256'], sha(self.candidate_raw))

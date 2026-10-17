@@ -14770,6 +14770,228 @@ checks safely advanced local main and the current research baseline; a normal
 main push again confirmed the configured remote was up to date. The follow-up's
 historical comparison baseline remains `2ea97c8a…`, not rewritten after merge.
 
+## October 17 — A conditional local layout test for 1 Samuel 2:22
+
+The preceding goal turn made progress: an explicit image-locator correction,
+matching historical-photo access and related source controls were committed
+and pushed as PR 291. This turn initially re-polled its same two live check IDs,
+117470715433 and 117470660366; neither was restarted. The next source experiment
+tests the actual spatial claim rather than rerunning that source-access work.
+
+Root read complete DJD printed 16–17 / PDF 39–40 in text and newly rendered
+images. The introduction positively reports preserved column-III margins and
+9 cm width, while warning of shrinkage and differing column widths. This is
+stronger, more specific published physical evidence than a generic average;
+it remains distinct from a measurement reproduced by this project. The
+[layout stress test](SAMUEL_2_22_LAYOUT_STRESS_TEST_2026-10-17.md) records its
+actual authority and full table-3 column-III sequence.
+
+The exact same-prefix/suffix comparison gives 39 letters + 9 spaces = 48 units
+short, or 74 + 18 = 92 with the previously specified MT long clause. Excluding
+the target and four dashes leaves 38 published counts ranging 44–54. Under an
+explicit equal-average-unit model, fitting 92 into the 54-unit comparison width
+requires about 0.587 times the average advance; even illustrative 50% widening
+only reaches 81 units. These are model scenarios, not measured shrinkage bounds,
+independent capacity limits or confidence scores. The table itself includes
+reconstructed wording. The 2026-05-21 QDR target primary rows were re-read
+locally and confirmed in the fresh public reader, without a full release-audit
+claim or counting its parallel MT row as scroll ink.
+
+The experiment supports the published short-line arrangement conditionally;
+it does not yet replace the provisional source judgment with independent
+physical proof. The next discriminating action is to validate transfer of the
+reported surviving margin to the target and measure the actual local mixture
+of letter/space advances. The method advances to 2.0.16 to prohibit using a
+reconstructed count table as an independent physical ceiling and require the
+same surrounding wording/anchors for competing count-based models. A manuscript
+omission would still not, by itself, establish the earliest Samuel wording.
+Canonical source, English, notes and approvals remain unchanged.
+
+One bounded quantitative reviewer checked the two complete new source pages,
+all 43 table entries and the arithmetic, returning PASS for report `047fe39f…`.
+The review does not certify image joins, margin transfer or actual glyph advances.
+Root separately checked seven existing source/repository pins, one canonical
+Git-baseline equality, two new render hashes and dimensions, report links, exact
+candidate strings and all calculation inputs. Frozen predecessor reports and
+receipts, plus the unrelated protected Genesis file, remain unchanged.
+The [bounded review receipt](../sources/textual_restoration/comparisons/samuel2_22_layout_review.2026-10-17.v1.json)
+pins its exact scope. Separately, the image reader observed rows 14–15 on the
+same photographed narrow tongue of fragment a, without a complete white gap
+between them: local vertical adjacency has photographic support, not only a
+supplied-text argument. The lower part of a shows an apparent intercolumn
+blank band, but transferring it upward crosses a narrow cracked/creased
+connection. The reader did not certify every join, shear or ruling, and did
+not establish a validated total width/transform. Actual local advances can be
+calibrated from upper extant spans in principle; this pass has not completed
+that measurement. This separate observation does not turn the count review
+into an independent physical-model pass.
+The separate reader used non-generative nearest-neighbor inspection derivatives
+and crops, not just native displays; their scope is retained in the receipt.
+Root then inspected the additional original lower-margin tile `a11483ce…`
+natively and pinned its bytes. No new acquisition, precise word boxes or
+accepted letters resulted from the enlarged views.
+
+## October 17 — Internal joins and measured writing spans
+
+The preceding goal turn made progress: it tested the published short/long
+line model and updated the general method, committed/pushed as PR 292. This
+turn confirmed the same live checks for PRs 291/292 without restart, then
+performed the announced next experiment on actual writing spans and join
+evidence. The broader goal remains active; this is not full-OT completion.
+
+Root and a source reader read complete DJD printed 40–41 / PDF 63–64 in text
+and complete-page images. The explicit line-14 note locates its waw trace at
+a meeting of two pieces within composite fragment a. The
+[new follow-up](SAMUEL_2_22_JOIN_AND_WRITING_MEASUREMENTS_2026-10-17.md)
+therefore distinguishes adjacency in the mounted photograph from independently
+validated uninterrupted skin. It does not claim that the published join is
+wrong. The older-photo notes concern lost traces at other loci: line 2's
+preassembly photograph remains unidentified, whereas PAM 41.766 is specifically
+named for line 29. No earlier photograph was silently assigned to line 2 or
+made into recovered 2:22 ink.
+
+The source reader's bounded three-PAM public search/observed-link navigation
+did not obtain early-photo pixels; reader shells and browser unavailability
+were stopped, not bypassed or treated as proof of absent photographs. The
+separate image reader selected five extant calibration spans on original
+native tile c7, with explicit approximate coordinates and endpoint tolerances.
+Root inspected the native tile and computed nominal widths, worst-case selection
+intervals and a character-count matrix without editing the image. A dark-pixel
+row-band probe was exploratory only: it did not validate letters or capacity
+and is not used as manuscript evidence. No software was installed.
+
+The five equations do not uniquely determine 23 glyph/space advances; five
+glyphs in the exact long clause have no calibration occurrence. Two deliberately
+assumed positive advance assignments fit the same selection tolerances while
+predicting 621 or 723 px for the clause. These numbers illustrate non-uniqueness,
+not physical bounds. A useful conservative bound is not ruled out mathematically;
+one has not been established from these inputs. This closes the bounded image
+experiment until an independent join/margin constraint or sufficient justified
+advance data changes. It does not block the broader critical-source/English
+adjudication or turn an unchanged WLC base into an automatic historical winner.
+
+The [packet](../sources/textual_restoration/comparisons/samuel2_22_join_measurements.2026-10-17.v1.json)
+pins the exact spans, model recipe, private PDF/renders and frozen inputs.
+The [single bounded review](../sources/textual_restoration/comparisons/samuel2_22_join_measurements_review.2026-10-17.v1.json)
+returned PASS for report `aedae862…` and packet `634a6da2…`. It directly checked
+the two complete source pages, five approximate native spans and exact rational
+rank/arithmetic, plus used pins. It did not independently obtain early images,
+validate joins/margins or approve a canonical change. No agreement loop followed.
+The shorter-source preference remains provisional; canonical source, English,
+notes, approvals and canon remain unchanged. Root's separate reproducibility
+checks passed the packet's **11 file pins**, **five image dimensions**, three
+frozen tracked baseline equalities (including the canonical target), exact
+rational rank/width/toy arithmetic, two review pins, relative links, JSON and
+whitespace. The protected unrelated Genesis file remains unchanged and unstaged.
+
+## October 17 — Complete provisional source and English for 1 Samuel 2:22
+
+The preceding goal turn made progress by identifying the internal join and
+testing five native writing spans. Those inputs cannot independently determine
+the missing clause's width. This turn moved to the announced complete-verse
+adjudication instead of repeating that stopped image experiment. The broad
+OT-source goal remains active; no newly deciphered letters, new ancient
+witness, whole-OT comparison or canon expansion is claimed.
+
+The [full source assessment](SAMUEL_2_22_FULL_SOURCE_AND_ENGLISH_2026-10-17.md)
+supersedes the earlier WLC-minus-clause example with this unpointed editorial
+composite:
+
+```text
+ועלי זקן מאד וישמע את אשר עושים בניו לבני ישראל׃
+```
+
+> Eli was very old, and he heard what his sons were doing to the people of Israel.
+
+This would remove the explicit sanctuary-women allegation from this verse's
+main English, while retaining its complete longer form in a reader note.
+Early longer reception in Josephus and positive Greek branches remains the
+strongest countercase. The selection is provisional, not proof that the
+allegation was absent from the earliest text or that the events did not occur.
+
+Root checked the complete DJD printed 43/PDF 66 discussion, the complete BM
+printed 8/PDF 24 body and apparatus, current source/English 2:21–26 and 4:15,18,
+and actual WLC XML words and punctuation. The published Qumran ninety-year
+component survives; the following eight-year completion is supplied. The
+absence of the first כל depends on a gap containing supplied את, whereas the
+participial ending שים and recipient לבני have stronger preserved-letter
+support. Greek's aorist ἤκουσεν does not uniquely recover a Hebrew verb form;
+its imperfect ἐποίουν does not uniquely prove the participle. The different
+positions of Greek totalizing additions and lowercase a*'s subject-changing
+loss remain explicit. QDR/DJD are one physical witness, not two votes.
+The XML loader's four displaced maqafs are a serialization artifact, not
+four ancient punctuation variants; their removal is disclosed in composition.
+
+One bounded [English comparison](../sources/textual_restoration/applications/samuel2_22_full_source_20261017/english_review.v1.json)
+preferred “people of Israel” narrowly to “Israelites” against a fixed proposed
+source. It did not approve that source's priority. The repeated kinship noun
+in “his sons … sons of Israel” was explicitly compared; the selected collective
+loses that overt pattern, which the note preserves. A separate fresh
+[full-record judge](../sources/textual_restoration/applications/samuel2_22_full_source_20261017/full_record_review.v1.json)
+approved the exact candidate and source selection **for provisional research
+only**, after checking the complete frozen records, controlling policies,
+connected reports, current context and five complete edition pages. It did
+not independently reread Josephus, the full modern article, all earlier context,
+photograph tiles or calibration measurements. These are task-agent reviews,
+not external human peer review. No agreement loop followed.
+
+The candidate archives earlier notes, rationales, scores and review flags with
+an explicit noncertification boundary. Historical AI metadata is not approval
+of this proposal. Five exact patches compose the selected Hebrew from the
+declared WLC baseline. Existing tools verified the composition, then bound the
+[reviewed source](../sources/textual_restoration/applications/samuel2_22_full_source_20261017/reviewed_source.v1.json)
+and [complete reviewed verse](../sources/textual_restoration/applications/samuel2_22_full_source_20261017/reviewed_verse.v1.json)
+without changing the legacy schema or canonical YAML. Trusted review,
+composition and source hashes are external inputs to verification. Separate
+negative probes rejected unreviewed source, English and note changes.
+
+The [preflight receipt](../sources/textual_restoration/applications/samuel2_22_full_source_20261017/preflight.v1.json)
+records an actual memory-only `export_book('1SA')` comparison: 31 chapters,
+811 verses, only 2:22 changed, all 810 others identical, both referenced note
+bodies and reasons preserved. No export was written to disk. The exporter
+does not carry the Hebrew source object; the legacy canonical schema rejects
+`POB-critical` as expected. Web/CDN/deployed routes remain unverified. Next
+address deliberate critical-source consumer integration and reader-visible
+identity/uncertainty, followed by separate application/publication review;
+adding an enum or calling the composite WLC is not sufficient. The canonical
+source, English, notes and canon remain unchanged.
+
+PR 291 passed both exact-head checks and merged normally as
+`5fae1212c4725f1bae775d114db3f07f02be9a12`. Main was advanced safely and pushed;
+51 incoming Enoch 25/26/48 files were preserved without claiming scholarship
+review. PR 292's two checks subsequently failed: the actual job log identifies
+an older Job 42 test comparing its frozen method-policy hash to the legitimately
+updated live method. No rerun, repin, protection bypass or merge was used to
+hide that failure. A separate test-only correction now follows the existing
+Habakkuk historical-policy pattern: all seven original pins remain checked at
+the exact baseline commit, and all six nonpolicy pins remain checked live.
+New negative tests corrupt the historical method and each live nonpolicy
+input; neither frozen scholarship nor the policy hash is rewritten. All six
+Job 42 tests passed, including unchanged complete historical/live Job export
+checks, and the correction was committed separately as `1edea76a8a`.
+The selected composition, reviewed-source, complete-verse and reader-footnote
+modules passed **55 tests**. Their source-composition wrapper includes a
+19-test historical replay; that replay is not a current whole-corpus audit.
+The new case separately passed exact five-patch composition, source/full-record
+verification, all six preflight artifact pins, three negative drift probes,
+eight live canonical/context pins, seven JSON parses, report links and
+whitespace checks. The source reader also confirmed the frozen report's
+Greek ἃ, withdrawing its own earlier working-table τί transcription error;
+no frozen report or source decision changed.
+PR 293's two checks subsequently failed too; its actual job log identifies
+the same Job 42 historical-method comparison. Both old PR heads remain
+unchanged. The independent engineering check confirmed the Job correction
+preserves all original evidence and identified the same live-method assertion
+in the 2 Kings 8:10 sibling test. Root implemented the analogous correction
+and all six 2 Kings tests passed, including the complete 719-unit historical
+and live export checks and new historical/live corruption probes. That test
+keeps all five historical pins, all four nonpolicy live pins and its separate
+live evidence pin. Neither frozen contract changed. No further review cycle
+or broad-suite rerun followed. A final check reconfirmed all six preflight
+artifact hashes, eight canonical/context hashes and zero translation-file
+changes against the current main baseline. The protected unrelated Genesis
+file remains byte-identical and unstaged.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

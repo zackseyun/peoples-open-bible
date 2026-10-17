@@ -1,6 +1,6 @@
 # POB source-wording adjudication method
 
-Version: 2.0.15 · Revised: 2026-10-16 (connected calendar and legal controls)
+Version: 2.0.16 · Revised: 2026-10-17 (conditional layout calculations)
 
 This is the controlling method for source selection and English impact. The
 [approach review](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md) records the
@@ -257,6 +257,14 @@ confidence. Keep neighboring textual questions separate: a fit concerning an
 addition in one verse does not directly attest a different numeral in another.
 The [Ezekiel 4 layout control](EZEKIEL_4_LAYOUT_EVIDENCE_2026-10-16.md)
 applies this distinction without promoting restored numerals to surviving ink.
+
+An edition's letter-count table may already include the disputed reconstruction;
+do not use it as an independent sample of preserved lines or a hard capacity
+ceiling. In a conditional count-based stress test, keep the surrounding wording
+and adjacent preserved anchors fixed for both candidates, state the assumptions
+about differing letter/space widths, and distinguish model sensitivity from
+measured physical uncertainty. The [Samuel 2:22 stress test](SAMUEL_2_22_LAYOUT_STRESS_TEST_2026-10-17.md)
+illustrates that calculation without claiming an independent image measurement.
 
 Describe supplies at their exact word-span scope. At Nahum3:11 Mur.88 preserves
 the seeking verb but supplies the following refuge/enemy words; a city omission

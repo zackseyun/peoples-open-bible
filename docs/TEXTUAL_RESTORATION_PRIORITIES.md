@@ -52,10 +52,19 @@ and QDR distinguish a space-based short junction from preserved omission ink;
 the Greek apparatus has both short and nonuniform long forms. Josephus's
 actual retelling positively establishes early longer reception. The shorter
 unit is provisionally preferred, not certified as the complete earliest verse.
-An explicit WLC-minus-clause research candidate records the possible main-English
-impact; no canonical edit is applied. Next test the strongest long-form
-counterargument and spatial inference, then review any complete critical-source,
-English and disclosure application. Do not repeat a generic “LXX omits” claim,
+The [complete source and English proposal](SAMUEL_2_22_FULL_SOURCE_AND_ENGLISH_2026-10-17.md)
+now supersedes the WLC-minus-clause example. It has separate bounded English
+and full-record reviews, plus verified reviewed-source and complete-verse
+records for provisional research use. The proposal reads “Eli was very old,
+and he heard what his sons were doing to the people of Israel.” Its source
+choices are feature-specific: Qumran's ninety-year component survives but its
+eight-year completion is supplied; the first כל omission is gap-dependent;
+the participial ending and לבני have stronger preserved-letter support.
+No canonical edit is applied. The memory-only actual mobile exporter retained
+both notes and changed only this verse among 811, but carries no Hebrew-source
+identity. Next address deliberate canonical critical-source integration and
+reader-visible source disclosure, then verify web/CDN/deployed routes and
+separate application/publication review. Do not repeat a generic “LXX omits” claim,
 count QDR/DJD twice, turn supplied text into ink, or use ImageGen to decide
 the missing area. The held 198/250 image routes do not block this different case.
 The [image/intertext follow-up](SAMUEL_2_22_IMAGE_AND_INTERTEXT_FOLLOWUP_2026-10-17.md)
@@ -63,9 +72,24 @@ explicitly corrects root's photo locator to **PAM 43.122**, identifies the
 matching IAA record and checks retained native historical-photo tiles. It also
 distinguishes the complete 2023 related article from the abstract-only 2020
 paper and checks actual Greek Exodus wording. None supplies new accepted
-letters or an independent missing-width measurement. Next build a common
-short/long layout test with independently constrained placements and report
-sensitivity to missing margins; do not infer the width from the preferred text.
+letters or an independent missing-width measurement. The subsequent local
+tests below qualify the published spatial argument; they do not independently
+reproduce the missing width.
+The [conditional layout stress test](SAMUEL_2_22_LAYOUT_STRESS_TEST_2026-10-17.md)
+now checks the actual published 9 cm margin report and same-line counts: 48
+units short versus 92 with the specified long clause. The table includes
+reconstructed text, so its 44–54 comparison range is not independent capacity
+evidence. Do not restart the search for a generic column width or treat these ratios as
+confidence percentages.
+The [join and writing measurements](SAMUEL_2_22_JOIN_AND_WRITING_MEASUREMENTS_2026-10-17.md)
+now add five native-image spans and the explicit edition note that fragment a
+is composite at the line-14 trace. Mounted adjacency is not validated original
+continuity. Sparse calibration cannot uniquely predict the clause's width;
+the toy fits are not physical bounds. Stop repeated previews on these inputs.
+Resume independent geometry only with a new join/margin constraint or sufficient
+representative advances/bounds. Keep the spatial qualification attached to
+the now-reviewed complete research proposal; provisional editorial review
+does not establish the exact earliest wording or authorize publication.
 
 **October 17 new consequential comparison:** [2 Samuel 21:8](SAMUEL_21_8_MOTHER_COMPARISON_2026-10-17.md)
 now has a scoped mother-name dossier. Actual Kennicott 591 identifies

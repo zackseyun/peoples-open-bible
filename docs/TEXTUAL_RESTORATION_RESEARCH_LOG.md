@@ -13202,6 +13202,37 @@ usable result before being explicitly interrupted. No independent pass or
 custodial image access is claimed. Root's printed-page checks support the
 findings above; the unreturned review is not counted as confirming evidence.
 
+## October 16 — Bodleian locator correction and Samuel source access
+
+The preceding turn made progress by committing the Bodleian comparison but
+did not complete its delegated review. A fresh, narrowly scoped reader now
+checked the report, JSON and six specified printed-page images. It caught
+a real error: the marginal age addition's locator is **XIII.A.34**, not
+XIII.A.40. Locators precede their entries; the latter belongs to Shelah's
+verb and the separate Cainan paragraph insertion context. Root rechecked the
+actual prolegomena and corrected both records. The same reader then confirmed
+that correction resolved its issue. Substantive readings passed; neither
+review certified manuscript pixels, earliest wording or source priority.
+The earlier interrupted review remains preserved as history, not rewritten
+into a successful one. No biblical text or reader note changed.
+
+The broader queue points next to manuscript845's published line reconstruction,
+not another preview of its acquired photographs. A bounded public edition search
+did not supply Hunger's article. The new [Yardney acquisition](SAMUEL_17_18_NARRATIVE_FORMS_2026-10-16.md#a-new-accessible-study-is-not-the-missing-transcription)
+closes a university URL-migration problem and pins the complete dissertation;
+its targeted search and inspected front matter do not supply that reconstruction.
+This source may serve a separate translation-profile study, not an omission
+vote. The PDF workflow preserved that consultation limit; documentation guidance
+kept the access result beside the existing case rather than creating another
+research narrative. The actual Samuel omission and Genesis priority remain open.
+
+Validation passed the corrected locator/review provenance, three complete
+source-file pins, four unchanged verse/source/protected-file hashes, 533
+relative file-link targets, four workflow YAML parses, JSON and diff checks.
+No biblical record changed against ef68337470. PR267's two exact-head checks
+were confirmed running at that commit; publication remains subject to the
+new head's required checks, without a restart or protection bypass.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -261,6 +261,28 @@ record; it contains no paper or transcription and supplies no additional vote
 for a reading. Locate Hunger's edition or an accessible successor collation
 before resolving the omission or using the mixed pattern to date growth stages.
 
+### A new accessible study is not the missing transcription
+
+The university copy of Sarah Shaw Yardney's 2017 dissertation,
+[*Interpretation in the Septuagint of Samuel*](https://knowledge.uchicago.edu/records/sn039-sg771),
+is now acquired completely. Its old `nanna/record/1335` file URL returned 404;
+the current record's ordinary download supplied the PDF. The publisher's
+displayed MD5 matches the downloaded bytes. This is an access correction,
+not a new manuscript witness.
+
+A targeted text search located **845** in the manuscript list on printed xii /
+PDF p. 12, but did not locate its needed line reconstruction. Root visually
+checked the title, contents and that list; no full-dissertation reading or
+independent 845 collation is claimed. The contents identify studies of 1:6,
+14:41 and 15:29, which may inform a separately scoped translation-profile
+test. They do not close the current 18:10–11 preservation question.
+Hunger's target edition remains unacquired after this bounded public search.
+
+The private file `research_sources/yardney-samuel-dissertation.pdf` has
+2,052,836 bytes, 323 PDF pages, MD5 `6a8b61410545747ac6a38686a0669b06` and
+SHA256 `1cefea4f022566cc4911f90dc318d57a2b7976d9413cd990d4c28adf5e3300a6`.
+Copyright remains with the author; the PDF is not reproduced in Git.
+
 ## Next discriminating comparison
 
 The 18:1 test and full 2020 reading are completed controls. Manuscript 845's

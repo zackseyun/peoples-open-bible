@@ -283,7 +283,7 @@ sequence at Genesis 10:24.
 
 The prolegomena distinguish the changes. Printed XXXIX / PDF p. 44 explains
 that double asterisks flag corrections judged later; XXXX / PDF p. 45 marks
-the marginal **καὶ ἑκατόν**, “and a hundred,” at manuscript-page XIII.A.40 with
+the marginal **καὶ ἑκατόν**, “and a hundred,” at manuscript-page XIII.A.34 with
 that sign. It raises 35 to 135. The next note separately transcribes a
 lower-margin Cainan paragraph, giving **130 / 330**, in minuscule writing
 described as an old type. These are editorial hand assessments, not our dating
@@ -292,6 +292,12 @@ edition's printed layout is adapted from the manuscript's two columns.
 Brooke–McLean's printed p. 27 / PDF p. 43 corroborates the local readings and
 labels the age addition **Eᵇᵐᵍ**, but the paragraph **Eᵃᵐᵍ**. These distinct
 correction sigla must not be flattened into a single undifferentiated addition.
+
+A subsequent independent printed-page audit corrected the age-addition locator
+from XIII.A.40 to **XIII.A.34**. The locators precede their entries: XIII.A.40
+introduces Shelah's ἔζησεν, before which the separately described Cainan
+supplement belongs. The audit confirmed the substantive readings above, not
+manuscript pixels or historical priority.
 
 At printed p. 209 / PDF p. 274, Nahor has **79 / 129**; this local pair agrees
 with the selected Greek editions. Arpachshad's subsequent **330**, however,

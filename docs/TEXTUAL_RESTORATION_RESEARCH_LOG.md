@@ -14274,6 +14274,66 @@ Stop this particular test absent a genuinely discriminating new input; the
 broader source-comparison goal remains active. The next useful work is not
 another pass over these same printed words.
 
+## 2026-10-17 — Temple poem broader Greek evidence and a competing restoration
+
+The [follow-up](KINGS_8_BROADER_GREEK_AND_COUNTERMODEL_2026-10-17.md) uses the
+newly acquired BM Kings volume to address an actual held input in the earlier
+temple-poem case. The historical broader apparatus is now consulted at both
+locations, not substituted for the still-unacquired modern Antiochene edition.
+Root and a bounded Greek source reader checked the complete target pages,
+the inherited own-edition conventions and a same-book lexical control.
+
+The explicit sun-verb report includes manuscript 56 alongside the core five.
+Greek μοι is positively reported for 127, so it is not merely a retroversion
+of the Latin in this investigation. But 127's complete profile also includes
+an altered surrounding phrase, subject omission and reported critical signs.
+The earlier full-phrase apparatus unit prevents inventing a continuous reading
+from a later generic `rell`. The infinitive in 93 and dative participle in
+19+108 also constrain a uniform-group description. Original-hand superscripts,
+later corrections, Hexaplaric signs, qualified visibility and H&P-derived
+reports remain distinct. No manuscript image has newly certified these marks.
+
+A second bounded source reader acquired and read all of Burkitt's actual
+1909 article, including notes, stopping at his signature before the following
+article. Root read the complete article as extracted text and decisive
+439–441 full-page images. Its Greek-only clarification mechanism is useful;
+its shine-forth/New-Moon restorations and broad two-stream restriction are
+not adopted. The actual Greek 1:27 and written WLC verb supply a positive
+γνωρίζω/ידע analogy, not an all-LXX lexical rule. That and the plausible
+clarification direction support a tentative working Greek-verb preference,
+without dating the whole poem or approving lost Hebrew words.
+
+Root also acquired Kató's institutional author copy and read all 15 pages,
+notes and abstracts as extracted text, with eight complete visual pages
+covering the synopsis, decisive argument, reconstruction and table. This
+adds a competing restoration to the previously read Pakkala/Richelle debate;
+it is not another independent ancient witness. Its supplied Hebrew remains
+supplied, and the actual parallelism evidence does not compel the addition.
+No full modern article or reconstructed complete poem is vendored.
+
+The [packet](../sources/textual_restoration/comparisons/kings8_broader_greek.2026-10-17.v1.json)
+records exact local units, complete read scopes, source/render pins and the
+current seven canonical baselines. Root reproduced all 60 pins and 35 native
+dimensions, six report links and three exact twofold display derivatives.
+For the four Kings full-page images, the tool explicitly reported resizing
+1453×1928 to 1374×1824; stored resolution is not claimed as verified model-input
+resolution. The higher-resolution apparatus detail is non-generative and
+subordinate to the previously read full page, not another witness.
+
+The earlier comparison and application remain frozen. The current Swete-scoped
+reader note remains accurate, and no source, English, note, candidate, canon,
+test or export change follows. The unrelated Genesis file remains untouched.
+The single bounded independent frozen-artifact review passed at the exact
+report and packet hashes in its
+[receipt](../sources/textual_restoration/comparisons/kings8_broader_greek_review.2026-10-17.v1.json).
+The reviewer reproduced all pins, dimensions, derivatives, links and unchanged
+inputs and checked the decisive primary apparatus, key, lexical context and
+bounded article pages. It regards the tentative Greek preference as defensible,
+not compelled, and explicitly retains the strongest contrary explanation.
+Its scope is not a complete independent article/volume reading or application
+approval. Historical Hebrew priority remains HOLD. The wider goal stays active;
+repeated same-page votes are not the next useful work.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

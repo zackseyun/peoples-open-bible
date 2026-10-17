@@ -15253,7 +15253,13 @@ pre-publication baseline. It is not evidence that the new source or two-note
 disclosure has deployed. The user's concern about clutter is addressed by
 the existing on-demand route; no external publisher or reader code was changed.
 The same checks were allowed to finish without a manual restart or another
-source-preference vote.
+source-preference vote. Both succeeded, and PR 299 merged normally at
+21:26:56 UTC as `ad19eac91823de70555b902eb8343bc475825b17`. The automatic
+publisher run started for that exact merge; its first observation was still
+in checkout and the public manifest still identified `2bc5f7a10203`.
+The [active application report](SAMUEL_2_22_APPLICATION_2026-10-17.md) now
+distinguishes completed CI/main integration from pending public delivery.
+Frozen reviews and the original local application receipt remain unchanged.
 
 ## Later About-page summary — proposed, not published
 

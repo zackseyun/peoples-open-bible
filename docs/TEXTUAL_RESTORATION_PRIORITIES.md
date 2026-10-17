@@ -250,6 +250,22 @@ royal formulas across the relevant translation/revision layers. Do not resume
 generic reliability counts, unrelated note-anchor polish or full-book exports
 as substitutes for this discriminating source comparison.
 
+**October 17 comparative-formula test completed:** the
+[follow-up](KINGS_COMPARATIVE_FORMULAS_2026-10-17.md) now checks the actual
+historical Greek apparatus and its inherited key, rather than relying on
+quoted L readings alone. Hoshea and Ahaziah have explicit παρά reports with
+different extra witnesses (700 versus 158); the b siglum is composite 19+108.
+Three wider controls retain significant omissions/additions, so no uniform
+all-witness translation rule is established. The actual Latin 16:25 positive
+control is verified, but the edition does not supply the needed negative
+controls. A whole-two-book written-layer search excludes noncomparative
+“from all sins” matches. Richelle's local 21:11 preposition discrepancy is
+recorded against the actual critical text. Earliest Hebrew remains HOLD;
+no canonical or English change. Park this bounded test until a discriminating
+modern apparatus/local transmission study, early quotation/version, or Hebrew
+coverage arrives. Continue a distinct consequential OT question; repeated
+same-page inspection or agreement counts are not the next experiment.
+
 **Related historical control completed:** the
 [Hannah prayer clause at 1:13](SAMUEL_1_13_PRAYER_PLUS_2026-10-16.md)
 is now checked in the printed Samuel apparatus. The Genesis controls limit

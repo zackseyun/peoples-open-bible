@@ -46,6 +46,15 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 17 new linked Hebrew comparison:**
+[Lamentations 1:15–18](LAMENTATIONS_1_15_18_LINKED_FORM_2026-10-17.md)
+now moves beyond the old screen to connected-form assessment, actual Greek
+target pages, appendix judgments and local acrostic/formula controls. Keep
+historical priority separate from an appropriate next reader disclosure;
+neither new source wording nor a canonical note is applied by this dossier.
+Its exact preservation and transmission limits govern continuation. Do not
+repeat the completed screen or same-evidence checks as the next experiment.
+
 **October 17 new consequential comparison:** [1 Samuel 2:22](SAMUEL_2_22_SANCTUARY_CLAUSE_2026-10-17.md)
 now tests the sexual-misconduct clause and women at the sanctuary. Actual DJD
 and QDR distinguish a space-based short junction from preserved omission ink;

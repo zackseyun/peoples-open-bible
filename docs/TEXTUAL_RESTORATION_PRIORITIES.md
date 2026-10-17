@@ -126,9 +126,16 @@ wording. Swete's short junction and its longer θ′/asterisk/Qmg supplement
 distinguish the continuous Greek form from later marginal transmission.
 Connected royal, priestly and cosmic-order controls constrain simple ideological
 omission stories. The full Erzberger article is read; source priority is not
-settled by its proposed redaction history. Next inspect the actual Marchalianus
-target margin and modern apparatus, and reconcile 4Q72 supply endpoints with
-physical evidence. Do not repeat the completed article, junction, printed
+settled by its proposed redaction history. The
+[physical follow-up](JEREMIAH_33_MANUSCRIPT_FOLLOWUP_2026-10-16.md) now locates
+Marchalianus page 484: its main short junction and smaller top/left long block
+are visually corroborated. DJD XV's actual plate also resolves the apparent
+major supply-endpoint discrepancy as a right-to-left bracket-reading issue;
+fine uncertain traces are not newly certified. The first dossier's contrary
+endpoint concern is superseded, not silently rewritten. Next obtain the actual
+modern target/reviser apparatus and hand/attribution assessment. A publisher
+preview indexed as Jeremiah proved to be Ezra II and is excluded. Do not repeat
+the completed target location, major-bracket check, article, junction, printed
 supplement or 4Q252 attribution test; no source or reader change is applied.
 
 **Related historical control completed:** the

@@ -46,6 +46,19 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 17 new consequential comparison:** [1 Samuel 2:22](SAMUEL_2_22_SANCTUARY_CLAUSE_2026-10-17.md)
+now tests the sexual-misconduct clause and women at the sanctuary. Actual DJD
+and QDR distinguish a space-based short junction from preserved omission ink;
+the Greek apparatus has both short and nonuniform long forms. Josephus's
+actual retelling positively establishes early longer reception. The shorter
+unit is provisionally preferred, not certified as the complete earliest verse.
+An explicit WLC-minus-clause research candidate records the possible main-English
+impact; no canonical edit is applied. Next test the strongest long-form
+counterargument and spatial inference, then review any complete critical-source,
+English and disclosure application. Do not repeat a generic “LXX omits” claim,
+count QDR/DJD twice, turn supplied text into ink, or use ImageGen to decide
+the missing area. The held 198/250 image routes do not block this different case.
+
 **October 17 new consequential comparison:** [2 Samuel 21:8](SAMUEL_21_8_MOTHER_COMPARISON_2026-10-17.md)
 now has a scoped mother-name dossier. Actual Kennicott 591 identifies
 מירב198 and מרב250; 172 omits the name, not a third Merab witness. The DJD
@@ -54,8 +67,15 @@ The complete Hays article and McNaughton's concluding argument challenge a
 simple harmonizing change; Josephus's actual Greek names Michal/five children
 elsewhere but no husband there. Hebrew priority remains unresolved, with
 provisional Michal retention, not automatic WLC authority. No canonical edit
-is applied. Next identify and inspect Kennicott 198/250 and obtain a modern
-local Greek collation with a discriminating history-of-change argument.
+is applied. The [Hebrew witness follow-up](SAMUEL_21_8_HEBREW_WITNESSES_2026-10-17.md)
+now identifies 198's Nuremberg collection and 250's Turin A.IV.3; the latter
+has 15 damaged surviving leaves, not complete loss, with target coverage unknown.
+Digital Kennicott supplies released 39-book metadata and a checked derivative
+mother-name entry, not a new witness or unrestricted corpus import. No target
+hand was read. Next obtain actual 198 Samuel imagery, a passage inventory of
+250's survivors, its relevant collation, or a discriminating modern Greek
+collation; do not repeat the seven failed owner routes or infer preservation
+from a catalogue's book range.
 Do not repeat the supplied name, completed article reading or readiness audit
 as new evidence.
 

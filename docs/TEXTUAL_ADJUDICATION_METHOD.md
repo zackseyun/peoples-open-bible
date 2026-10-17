@@ -1,6 +1,6 @@
 # POB source-wording adjudication method
 
-Version: 2.0.14 · Revised: 2026-10-16 (generation counts and preserved endpoints)
+Version: 2.0.15 · Revised: 2026-10-16 (connected calendar and legal controls)
 
 This is the controlling method for source selection and English impact. The
 [approach review](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md) records the
@@ -421,6 +421,15 @@ The [Jubilees counting control](GENESIS_11_AGE_SYSTEMS_2026-10-16.md#jubilees-co
 shows how a correct sum can coexist with disputed interpretation and partly
 reconstructed wording. Neither arithmetic nor a translation of a reconstructed
 summary supplies an additional manuscript attestation.
+
+For calendar differences, align letter-issue dates, intended execution dates,
+actual action and subsequent rest or festival separately within each selected
+form. Read countermanding instructions and new permissions before inferring
+that an earlier decree remained operative. A one-day difference alone does not
+establish first aggression or an editor's motive. The
+[Esther calendar comparison](ESTHER_8_9_SOURCE_COMPARISON_2026-10-16.md#connected-calendar-and-the-countermanding-letter)
+shows why connected legal and defensive language can qualify a date-based
+interpretation without erasing the attested difference or proving textual layers.
 
 ### 5. Apply the modest chronological preference
 

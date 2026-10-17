@@ -95,10 +95,18 @@ The complete Bezold article and actual RH chapters are checked; Swete's target,
 key and conventions confirm positive 9:10 plunder with A's killing prefix,
 not a negative at that entry. Neighboring 9:16–17 wording moves across verse
 boundaries and correction hands. Greek self-help, gathering and Addition E's
-resistance wording prevent a blanket absence-of-defense claim. Next consult
-the modern connected apparatus and direct Alpha text/numbering, and test the
-article's linked-calendar argument. Do not repeat the completed Swete check
-or use standalone local ESG Additions numbering as continuous Esther.
+resistance wording prevent a blanket absence-of-defense claim. The direct
+Lagarde Alpha ending now corroborates delegated punishment and subsequent
+collective violence, without an explicit second day in its battle unit;
+edition-local chapter 8 aligns with modern AT chapter 7. Its agency variant
+and the connected calendar/letter check qualify a uniform Alpha account and
+date-based preemptive inference. Papyrus 967's catalogued calendar coverage is
+not yet a target reading; its listed fragments do not cover the chapter 9
+targets. Next obtain the modern connected apparatus or a new lawful route to
+967's actual calendar text, and adjudicate the separate 3:7 English/rationale
+issue. Do not repeat completed edition, calendar or article checks or the
+failed image routes; do not use standalone local ESG Additions numbering as
+continuous Esther.
 Source, English, notes and canon remain unchanged; the held Samuel history
 does not block this distinct consequential comparison.
 

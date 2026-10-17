@@ -13506,6 +13506,58 @@ or source-corpus diff against dd44d9a9f9. No full corpus test or book export was
 needed for these research-only changes. Publication to main remains subject
 to the exact committed head's required checks and branch protection.
 
+## October 16 — Direct Alpha ending and connected calendar controls
+
+The previous goal turn made progress: it committed and pushed ea71ec2b26 with
+the Vatican image and initial Esther comparison. The exact-head required CI
+jobs were confirmed live during this continuation; observation delays were
+not treated as terminal failures, and no jobs were restarted. This pass used
+bounded source tasks and separate report checks rather than repeating the
+finished Swete or Bezold work.
+
+The [Esther case](ESTHER_8_9_SOURCE_COMPARISON_2026-10-16.md#direct-alpha-edition-and-its-numbering)
+now consults Lagarde's actual 1883 Alpha edition through BSB's public manifest
+and images. Root and the source reader checked the title, preface conventions
+and complete relevant pages. The chapter heading corrected an initial numbering
+assumption: Lagarde alpha 8 aligns with the article's modern AT 7. The ending
+really combines delegated punishment with later collective killing and plunder.
+However, its battle unit does not explicitly say “tomorrow” or “a second day,”
+and one reported plural verb qualifies an across-witness royal-agency claim.
+Printed spacing is not evidence for missing manuscript text or a literary layer.
+The images stay private under the recorded BSB rights statement.
+
+The connected RH/WLC calendar comparison confirms the selected Greek date
+contrast while reading the countermanding and defensive language with it.
+The inference of necessary preemptive action or a still-operative Haman order
+is not established by dates alone. Method version 2.0.15 now requires separate
+issue, intended execution, actual action and rest/festival controls, together
+with legal instructions. Current POB's 3:7 elapsed-casting explanation is a
+distinct English/rationale candidate, not a new Hebrew variant or an approved
+replacement. No source, English, note or canon change is applied.
+
+Papyrus 967 is not ignored because a later edition was easier to consult.
+The complete De Troyer chapter and institutional coverage descriptions now
+identify potential calendar controls but no target ink reading. Its quoted
+Hanhart reports do not supply the modern target apparatus. Four 2200-pixel
+IIIF requests derived from observed filenames/thumbnail patterns returned 500;
+the exact attempts and their provenance are preserved in the evidence packet.
+The listed Dublin pieces do not cover the chapter 9 targets; non-coverage is
+not an omission. The actual modern edition is published, but the licensed
+preview ends before the apparatus and the publisher route returned 403. Use
+new lawful routes, not the same failed requests or repeated article summaries.
+
+Three context-aware bounded reviews pass separately for the calendar/method,
+Alpha edition and 967 paragraphs at the exact recorded report hash. They do
+not certify the root-only modern-preview access check or the entire case.
+Validation passes the JSON packet, eighteen private-source byte/hash pins,
+seventeen unique unchanged canonical records, WLC and two local Greek-stream
+pins, exact reviewed report/method hashes and the protected unrelated file.
+All twelve acquired BSB images match manifest URL/dimension bindings, and 607
+relative file-link targets pass. No biblical-text or
+source-corpus diff exists against ea71ec2b26; no full corpus rerun or export
+was needed for these research-only changes. Main publication remains subject
+to the final exact-head checks and branch protection.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

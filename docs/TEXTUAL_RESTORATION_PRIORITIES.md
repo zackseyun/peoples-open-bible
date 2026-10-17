@@ -176,12 +176,22 @@ Hebrew remains distinct from attestation. The printed Greek sun is an object,
 not a speaking subject. Latin has a first-person building command but is
 Greek-derived marginal evidence. The checked Judean Desert records preserve
 no identified target or continuous junction; their gaps do not attest omission.
-Current source, main English, notes and canon are unchanged. Next obtain the
+At that comparison snapshot, source, main English, notes and canon were unchanged. Next obtain the
 broader Greek/Antiochene target collation and a modern Latin edition or manuscript
 context before deciding priority or a combined reconstruction. An eventual
 reader disclosure requires separate application/export review. Do not repeat
 the completed article, Swete, Latin-report or bounded coverage passes as new
 evidence. The Song-book citation is not a recovered book or a canon decision.
+
+**October 17 reader application:** the separate
+[temple-poem disclosure](KINGS_8_READER_DISCLOSURE_2026-10-17.md) now adds a
+factual Greek-variant note at 8:13 and corrects the lexical-note anchors at
+8:12–13. Hebrew and marker-free main English remain unchanged. One independent
+bounded review passes at the frozen candidate/contract hashes; the source
+priority hold is not relaxed. Broader Antiochene and modern Latin target pages
+remain unavailable after three new lawful routes for each. Stop those exhausted
+routes; the [application receipt](../sources/textual_restoration/applications/kings8_reader.2026-10-17.v1.json)
+separates local validation and publication status from historical priority.
 
 **Related historical control completed:** the
 [Hannah prayer clause at 1:13](SAMUEL_1_13_PRAYER_PLUS_2026-10-16.md)

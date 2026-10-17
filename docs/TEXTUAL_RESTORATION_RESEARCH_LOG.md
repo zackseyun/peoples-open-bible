@@ -14884,6 +14884,103 @@ frozen tracked baseline equalities (including the canonical target), exact
 rational rank/width/toy arithmetic, two review pins, relative links, JSON and
 whitespace. The protected unrelated Genesis file remains unchanged and unstaged.
 
+## October 17 — Complete provisional source and English for 1 Samuel 2:22
+
+The preceding goal turn made progress by identifying the internal join and
+testing five native writing spans. Those inputs cannot independently determine
+the missing clause's width. This turn moved to the announced complete-verse
+adjudication instead of repeating that stopped image experiment. The broad
+OT-source goal remains active; no newly deciphered letters, new ancient
+witness, whole-OT comparison or canon expansion is claimed.
+
+The [full source assessment](SAMUEL_2_22_FULL_SOURCE_AND_ENGLISH_2026-10-17.md)
+supersedes the earlier WLC-minus-clause example with this unpointed editorial
+composite:
+
+```text
+ועלי זקן מאד וישמע את אשר עושים בניו לבני ישראל׃
+```
+
+> Eli was very old, and he heard what his sons were doing to the people of Israel.
+
+This would remove the explicit sanctuary-women allegation from this verse's
+main English, while retaining its complete longer form in a reader note.
+Early longer reception in Josephus and positive Greek branches remains the
+strongest countercase. The selection is provisional, not proof that the
+allegation was absent from the earliest text or that the events did not occur.
+
+Root checked the complete DJD printed 43/PDF 66 discussion, the complete BM
+printed 8/PDF 24 body and apparatus, current source/English 2:21–26 and 4:15,18,
+and actual WLC XML words and punctuation. The published Qumran ninety-year
+component survives; the following eight-year completion is supplied. The
+absence of the first כל depends on a gap containing supplied את, whereas the
+participial ending שים and recipient לבני have stronger preserved-letter
+support. Greek's aorist ἤκουσεν does not uniquely recover a Hebrew verb form;
+its imperfect ἐποίουν does not uniquely prove the participle. The different
+positions of Greek totalizing additions and lowercase a*'s subject-changing
+loss remain explicit. QDR/DJD are one physical witness, not two votes.
+The XML loader's four displaced maqafs are a serialization artifact, not
+four ancient punctuation variants; their removal is disclosed in composition.
+
+One bounded [English comparison](../sources/textual_restoration/applications/samuel2_22_full_source_20261017/english_review.v1.json)
+preferred “people of Israel” narrowly to “Israelites” against a fixed proposed
+source. It did not approve that source's priority. The repeated kinship noun
+in “his sons … sons of Israel” was explicitly compared; the selected collective
+loses that overt pattern, which the note preserves. A separate fresh
+[full-record judge](../sources/textual_restoration/applications/samuel2_22_full_source_20261017/full_record_review.v1.json)
+approved the exact candidate and source selection **for provisional research
+only**, after checking the complete frozen records, controlling policies,
+connected reports, current context and five complete edition pages. It did
+not independently reread Josephus, the full modern article, all earlier context,
+photograph tiles or calibration measurements. These are task-agent reviews,
+not external human peer review. No agreement loop followed.
+
+The candidate archives earlier notes, rationales, scores and review flags with
+an explicit noncertification boundary. Historical AI metadata is not approval
+of this proposal. Five exact patches compose the selected Hebrew from the
+declared WLC baseline. Existing tools verified the composition, then bound the
+[reviewed source](../sources/textual_restoration/applications/samuel2_22_full_source_20261017/reviewed_source.v1.json)
+and [complete reviewed verse](../sources/textual_restoration/applications/samuel2_22_full_source_20261017/reviewed_verse.v1.json)
+without changing the legacy schema or canonical YAML. Trusted review,
+composition and source hashes are external inputs to verification. Separate
+negative probes rejected unreviewed source, English and note changes.
+
+The [preflight receipt](../sources/textual_restoration/applications/samuel2_22_full_source_20261017/preflight.v1.json)
+records an actual memory-only `export_book('1SA')` comparison: 31 chapters,
+811 verses, only 2:22 changed, all 810 others identical, both referenced note
+bodies and reasons preserved. No export was written to disk. The exporter
+does not carry the Hebrew source object; the legacy canonical schema rejects
+`POB-critical` as expected. Web/CDN/deployed routes remain unverified. Next
+address deliberate critical-source consumer integration and reader-visible
+identity/uncertainty, followed by separate application/publication review;
+adding an enum or calling the composite WLC is not sufficient. The canonical
+source, English, notes and canon remain unchanged.
+
+PR 291 passed both exact-head checks and merged normally as
+`5fae1212c4725f1bae775d114db3f07f02be9a12`. Main was advanced safely and pushed;
+51 incoming Enoch 25/26/48 files were preserved without claiming scholarship
+review. PR 292's two checks subsequently failed: the actual job log identifies
+an older Job 42 test comparing its frozen method-policy hash to the legitimately
+updated live method. No rerun, repin, protection bypass or merge was used to
+hide that failure. A separate test-only correction now follows the existing
+Habakkuk historical-policy pattern: all seven original pins remain checked at
+the exact baseline commit, and all six nonpolicy pins remain checked live.
+New negative tests corrupt the historical method and each live nonpolicy
+input; neither frozen scholarship nor the policy hash is rewritten. All six
+Job 42 tests passed, including unchanged complete historical/live Job export
+checks, and the correction was committed separately as `1edea76a8a`.
+The selected composition, reviewed-source, complete-verse and reader-footnote
+modules passed **55 tests**. Their source-composition wrapper includes a
+19-test historical replay; that replay is not a current whole-corpus audit.
+The new case separately passed exact five-patch composition, source/full-record
+verification, all six preflight artifact pins, three negative drift probes,
+eight live canonical/context pins, seven JSON parses, report links and
+whitespace checks. The source reader also confirmed the frozen report's
+Greek ἃ, withdrawing its own earlier working-table τί transcription error;
+no frozen report or source decision changed.
+PR 293's checks were still running at the latest bounded status check. The
+protected unrelated Genesis file remains byte-identical and unstaged.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

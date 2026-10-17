@@ -155,6 +155,17 @@ test the connected Hebrew evidence. Do not repeat the completed article,
 selected-text or QDR-preservation checks as new evidence. This distinct case
 advances the wider OT program while the prior portfolio's access limits remain.
 
+The [Joshua countermodel follow-up](JOSHUA_COUNTERMODEL_FOLLOWUP_2026-10-17.md)
+now consults van der Meer's own 2018 retrospective: he proposes duplication,
+not just relocation, of the early law-reading passage. It supplies a concrete
+competing mechanism, not the full 2004 demonstration or new fragment geometry.
+The alternative later location needs actual same-copy coverage before it can
+distinguish duplication from relocation. Margolis visual apparatus, DJD XIV
+and Puech's 2015 re-edition remain unconsulted at the required target scope
+after bounded access checks. Stop those exhausted routes; seek actual target
+pages through a genuinely new lawful route, or proceed with another consequential
+OT comparison. Source priority and application remain held.
+
 **Related historical control completed:** the
 [Hannah prayer clause at 1:13](SAMUEL_1_13_PRAYER_PLUS_2026-10-16.md)
 is now checked in the printed Samuel apparatus. The Genesis controls limit

@@ -14209,6 +14209,71 @@ ref was fast-forwarded to that merge; a normal push succeeded. The consulted
 method, rights, WLC and six canonical inputs are identical across the research
 baseline and this merged main.
 
+## 2026-10-17 — Comparative formulas: direct Greek apparatus and qualified controls
+
+The [bounded follow-up](KINGS_COMPARATIVE_FORMULAS_2026-10-17.md) acquires
+Brooke–McLean–Thackeray's actual Kings II.2 (1930) and the required Samuel
+II.1 (1927) key through Palmer Seminary's institutional collection. The
+inherited Genesis conventions were read from the retained copy. The historical
+edition is a selected witness apparatus, not the unavailable modern Antiochene
+edition or an exhaustive census. Kings' selected B text is not a reconstructed
+earliest Greek or a second independent ancient witness alongside Swete.
+
+Two bounded source readers supplied the Greek and Latin controls. Root checked
+the relevant full rendered pages and conventions, including all three extra
+wisdom/wealth/rivers controls. The explicit Hoshea and Ahaziah παρά reports
+are now actual apparatus observations; their extra witnesses differ. Manuscript
+93's wisdom omission and the Jordan prefix's qualified witness list prevent
+a uniform whole-group wording claim. Latin's positive 16:25 comparator is
+verified, while the absent requested negative controls remain coverage gaps,
+not attested omissions. An agent's “intentional change” attribution was caught:
+Fischer's note concerns **asafi**, not **zambri**. The report preserves that
+correction rather than converting the mistaken explanation into evidence.
+
+The complete two-book WLC direct-written-word layers were searched with three
+declared predicates. Full hit lists, normalization, counts and manual exclusions
+are recorded in the [packet](../sources/textual_restoration/comparisons/kings_comparative_formulas.2026-10-17.v1.json).
+Two apparent min-kol matches mean departure from all sins, not worse-than
+rankings; the four adjacent רק לא sequences are not syntactically identical.
+An exploratory wrong note-type counter was corrected before inference.
+Written words and qere were never merged. Programmatic coverage is not a
+manual reading of both entire books or an ancient-witness census.
+
+Richelle's footnote 33 calls the 21:11 B preposition ὑπέρ, but the article's
+own next-page discussion/table and the actual critical body have ἀπό. That
+local discrepancy is retained without guessing the intended reference or
+discarding the wider argument. Only printed 345–346 were reread this pass;
+the earlier full-article reading is not counted twice. Manasseh's substantive
+variant is not a neutral translation-style control. Josiah's favorable
+evaluation alongside continuing wrath supplies a plausible countermodel,
+not chronological proof about Hoshea.
+
+Attestation has improved; historical Hebrew priority remains HOLD. No Hebrew,
+English, reader-note, canon or generated-letter application follows. The
+initial dossier and receipt remain frozen. Root reproduced all 47 file pins,
+26 native image dimensions, complete query results, four relative links,
+six unchanged canonical baselines and the protected unrelated Genesis file.
+No unit test, candidate or full-book export is appropriate to this source-only
+change. The single frozen-artifact independent source review passed at the
+exact report and packet hashes recorded in its
+[receipt](../sources/textual_restoration/comparisons/kings_comparative_formulas_review.2026-10-17.v1.json).
+It independently reproduced the pins, dimensions, queries, links and unchanged
+inputs and checked the bounded full-page source/key controls. Its actual
+scope excludes whole books/articles and individual manuscript-image readings;
+it approves neither historical priority nor canonical application.
+
+During publication preparation, the earlier Hoshea PR 277 passed both required
+`corpus-integrity` checks at `8bdc6bd76e48b23cd4a0aa7fb99699c0dea42b46`.
+A fresh clean/mergeable exact-head guard allowed normal merge as
+`f0e7d7074950e6ae4a12bef2622372f15373776c`. The current source baseline and
+that merge have identical tree `df6b3ce8e84117b0a708c7f88dfd10194b61c214`;
+main was verified absent from other worktrees and fast-forwarded safely.
+This publishes the earlier source dossier, not an earliest-Hebrew verdict.
+
+Stop this particular test absent a genuinely discriminating new input; the
+broader source-comparison goal remains active. The next useful work is not
+another pass over these same printed words.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

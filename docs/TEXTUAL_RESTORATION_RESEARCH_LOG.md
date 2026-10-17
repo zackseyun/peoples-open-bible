@@ -14487,6 +14487,87 @@ uncommitted application. Normal pushing of main confirmed the remote was
 already up to date. The applied structural check passed again after that
 fast-forward without repeating the expensive full export.
 
+## October 17 — Michal and Merab in the actual source apparatus
+
+The preceding turn applied and verified the separate Kings 12 reader note.
+PR 282 began this turn with both required checks live. A later fresh exact-head
+check found both successful, no actual legacy-status blocker, and a clean,
+mergeable head; normal merge produced `33a11336aa4fc7061c32f2b4d6e491035f59e31a`.
+No protected-branch bypass, CI restart, cancellation or deployment claim follows.
+The present turn's wider portfolio check rejected already completed familiar cases and
+selected an unperformed question with potential to change a named mother in
+the main Hebrew/English: [2 Samuel 21:8](SAMUEL_21_8_MOTHER_COMPARISON_2026-10-17.md).
+The initial all-history search found no dedicated adjudication; the current
+unspecified alternative note was not a completed collation. No further
+readiness audit was treated as a contribution.
+
+Root read the target's complete YAML and 43 connected source/English fields,
+checking all 43 against the WLC renderer and immutable baseline Git blobs.
+The current rationale incorrectly equates original-language primacy with
+keeping this edition's Michal. That rationale does not decide the case.
+The new dossier changes the research assessment, not the canonical record,
+its approvals, or the existing note's anchor.
+
+Root acquired Kennicott's actual volume 1 and McNaughton's institutional
+thesis through ordinary public routes. Actual target pages and the Kennicott
+preface resolve the wrapped apparatus: omission in 172, מירב198 and מרב250.
+OCR/navigation alone was insufficient; root and a source reader checked the
+pixels and omission convention. The numbers now identify the two reported
+alternatives, not their present shelfmarks, dates or independence. The
+Cambridge Greek apparatus and Driver's argument were read at their complete
+target pages. Merab has real published support; it is not merely a modern
+conjecture or something that can be selected by an undifferentiated count.
+
+The old raw QDR JSON temporary path was absent. A filename inventory located
+the already retained dated HTML and DJD XVII, avoiding a new bulk acquisition.
+Fragment 152's mother-name is wholly supplied. The actual edition explains its
+uncertain Old Greek-based choice under reconstructed variants; that is not
+surviving Hebrew Merab. The parallel Masoretic row is not part of the scroll.
+An attempted whole-HTML index validation encountered duplicate/missing primary
+word IDs and was not patched or reported as a pass. Direct target-row/bracket
+inspection and the actual DJD page establish the bounded result independently.
+No fresh leather image, letter recovery or ImageGen result is asserted.
+
+A reused source reader found Hays's complete public author-linked article.
+Root and that reader read all 96 normalized lines, printed 220–233, notes 1–39
+and three abstracts. All 102 repeated line occurrences in three retained
+overlapping snapshots agree. This is not a PDF/HTML-byte or table-layout
+verification. Root also read McNaughton's complete concluding chapter and
+selected source discussions, not the full dissertation. The article's point
+that Old Greek Merab need not mean earliest Hebrew Merab materially affects
+the judgment. Its complete transmission chain is not adopted as proven.
+
+The actual Josephus control corrects a supporting detail: Antiquities 7.89
+names Michal and five children but not Palti there, despite Hays's note 28.
+The famine unit 7.294–297 does not name either mother or Adriel. Retelling is
+not an independent Hebrew vote. Familiar-name substitution, harmonization,
+and differing narrative forms remain live explanations. Earliest Hebrew
+priority is unresolved; Michal is retained provisionally rather than certified
+as the original. Raising/adoption and replacement of Adriel by Paltiel are
+not approved translations or source restorations.
+
+The report and [packet](../sources/textual_restoration/comparisons/samuel21_8_mother.2026-10-17.v1.json)
+were frozen before one bounded context-aware independent review. Root's
+scoped validation passed 32 file pins, 43 Git-blob equalities, 43 WLC source
+equalities and three relative report links; reader-overlap checks passed
+separately. Root also verified all 12 rendered image dimensions. No new test infrastructure, full-book export or
+full-corpus test run was added. The protected unrelated Genizah file remains
+unchanged and unstaged. Further work targets actual identities/readings of
+Kennicott 198/250 or a discriminating modern collation, not repeated model
+agreement or another same-evidence note polish. No canon inference is made.
+
+The [single bounded review](../sources/textual_restoration/comparisons/samuel21_8_mother_review.2026-10-17.v1.json)
+passed at frozen report `76a63189…` and packet `c0608e6a…`. It independently
+reproduced all 32 pins, 12 dimensions, 43 Git/43 WLC equalities, three links and
+102 reader overlaps. Its actual reading includes Cambridge, Kennicott/key,
+DJD, QDR, Josephus and selected Hays paragraphs; it did not independently
+reread Driver, McNaughton or the complete Hays article. Its pass approves
+bounded factual fidelity, not earliest Hebrew or a canonical application.
+Main and the research branch were safely fast-forwarded to the verified
+Kings merge after a fresh worktree, ancestry and identical-tree check;
+normal pushing of main confirmed synchronization. This does not change the
+frozen source dossier's earlier baseline or any of its canonical file hashes.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

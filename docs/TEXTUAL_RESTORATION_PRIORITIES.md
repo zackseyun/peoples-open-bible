@@ -73,6 +73,14 @@ reconstructed text, so its 44–54 comparison range is not independent capacity
 evidence. Next validate margin transfer and actual local writing advances;
 do not restart the search for a generic column width or treat these ratios as
 confidence percentages.
+The [join and writing measurements](SAMUEL_2_22_JOIN_AND_WRITING_MEASUREMENTS_2026-10-17.md)
+now add five native-image spans and the explicit edition note that fragment a
+is composite at the line-14 trace. Mounted adjacency is not validated original
+continuity. Sparse calibration cannot uniquely predict the clause's width;
+the toy fits are not physical bounds. Stop repeated previews on these inputs.
+Resume independent geometry only with a new join/margin constraint or sufficient
+representative advances/bounds. Continue the complete source/English adjudication
+using published witness evidence with the spatial qualification attached.
 
 **October 17 new consequential comparison:** [2 Samuel 21:8](SAMUEL_21_8_MOTHER_COMPARISON_2026-10-17.md)
 now has a scoped mother-name dossier. Actual Kennicott 591 identifies

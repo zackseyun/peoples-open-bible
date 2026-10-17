@@ -14831,6 +14831,59 @@ Root then inspected the additional original lower-margin tile `a11483ce…`
 natively and pinned its bytes. No new acquisition, precise word boxes or
 accepted letters resulted from the enlarged views.
 
+## October 17 — Internal joins and measured writing spans
+
+The preceding goal turn made progress: it tested the published short/long
+line model and updated the general method, committed/pushed as PR 292. This
+turn confirmed the same live checks for PRs 291/292 without restart, then
+performed the announced next experiment on actual writing spans and join
+evidence. The broader goal remains active; this is not full-OT completion.
+
+Root and a source reader read complete DJD printed 40–41 / PDF 63–64 in text
+and complete-page images. The explicit line-14 note locates its waw trace at
+a meeting of two pieces within composite fragment a. The
+[new follow-up](SAMUEL_2_22_JOIN_AND_WRITING_MEASUREMENTS_2026-10-17.md)
+therefore distinguishes adjacency in the mounted photograph from independently
+validated uninterrupted skin. It does not claim that the published join is
+wrong. The older-photo notes concern lost traces at other loci: line 2's
+preassembly photograph remains unidentified, whereas PAM 41.766 is specifically
+named for line 29. No earlier photograph was silently assigned to line 2 or
+made into recovered 2:22 ink.
+
+The source reader's bounded three-PAM public search/observed-link navigation
+did not obtain early-photo pixels; reader shells and browser unavailability
+were stopped, not bypassed or treated as proof of absent photographs. The
+separate image reader selected five extant calibration spans on original
+native tile c7, with explicit approximate coordinates and endpoint tolerances.
+Root inspected the native tile and computed nominal widths, worst-case selection
+intervals and a character-count matrix without editing the image. A dark-pixel
+row-band probe was exploratory only: it did not validate letters or capacity
+and is not used as manuscript evidence. No software was installed.
+
+The five equations do not uniquely determine 23 glyph/space advances; five
+glyphs in the exact long clause have no calibration occurrence. Two deliberately
+assumed positive advance assignments fit the same selection tolerances while
+predicting 621 or 723 px for the clause. These numbers illustrate non-uniqueness,
+not physical bounds. A useful conservative bound is not ruled out mathematically;
+one has not been established from these inputs. This closes the bounded image
+experiment until an independent join/margin constraint or sufficient justified
+advance data changes. It does not block the broader critical-source/English
+adjudication or turn an unchanged WLC base into an automatic historical winner.
+
+The [packet](../sources/textual_restoration/comparisons/samuel2_22_join_measurements.2026-10-17.v1.json)
+pins the exact spans, model recipe, private PDF/renders and frozen inputs.
+The [single bounded review](../sources/textual_restoration/comparisons/samuel2_22_join_measurements_review.2026-10-17.v1.json)
+returned PASS for report `aedae862…` and packet `634a6da2…`. It directly checked
+the two complete source pages, five approximate native spans and exact rational
+rank/arithmetic, plus used pins. It did not independently obtain early images,
+validate joins/margins or approve a canonical change. No agreement loop followed.
+The shorter-source preference remains provisional; canonical source, English,
+notes, approvals and canon remain unchanged. Root's separate reproducibility
+checks passed the packet's **11 file pins**, **five image dimensions**, three
+frozen tracked baseline equalities (including the canonical target), exact
+rational rank/width/toy arithmetic, two review pins, relative links, JSON and
+whitespace. The protected unrelated Genesis file remains unchanged and unstaged.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

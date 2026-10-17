@@ -13322,6 +13322,54 @@ is recorded, not presented as a test-suite pass. The narrower run avoids
 repeating unrelated corpus checks, while the actual 811-unit Samuel export
 above remains the application check. No new tests or export behavior were added.
 
+## October 16 — Samuel 15 29 Hebrew verb and Greek ending
+
+The previous turn made progress by applying and verifying the 14:41 disclosure
+and pushing45009a69ee. Both of its exact-head required checks were confirmed
+live here; no check was restarted because of an observation timeout. The
+broader queue then returned to consequential source history, not another note.
+
+A bounded delegated edition search checked new ÖAW, Messina and JSTOR routes
+without obtaining Hunger or a successor transcription. The
+[845 access update](SAMUEL_17_18_NARRATIVE_FORMS_2026-10-16.md#further-edition-routes-checked-on-october-16)
+preserves those specific results, the Pintaudi date discrepancy and the still
+unverified omission. Separately, a newly located university author manuscript
+of Aejmelaeus's2022 chapter was fully acquired/read. It contains no845 line
+reconstruction, but supplies a substantive new15:29 lead. One web open returned
+a transient500; the normal institutional download succeeded. The copy is an
+author manuscript with its own pagination, not freshly consulted final-volume
+typesetting or a current critical-edition publication-status check.
+
+The [new comparison](SAMUEL_15_29_SOURCE_COMPARISON_2026-10-16.md) separates
+the opening, negative verb and ending. Root read the complete target DJD pages,
+Greek edition/apparatus pages, versioned QDR group and selected publisher Greek,
+plus the named Hebrew and Numbers Greek controls. Published **ישוב** survives
+outside reconstruction brackets; the proposed division clause does not. The
+longer Greek ending has an actual apparatus entry, but its Hebrew ancestry
+cannot be inferred from Greek priority. Direct Numbers Greek comparison gives
+a concrete, nonverbatim literary parallel without proving borrowing or direction.
+
+The independent source reader completed Yardney's74-page chapter4 and its
+decisive visual checks. Root read the specified argument and limitation pages.
+She accepts the longer Greek ending and retains **ישוב**, while challenging
+the fragment placements and retroverted opening. Her proposed Greek mechanism
+does not eliminate every lost Hebrew alternative. Her width fits remain
+reconstructions, not new ink; no additional fit or image preview was commissioned.
+The reader's bounded report/JSON review passes, with root's other source checks
+explicitly outside that independent revalidation. No main English, Hebrew,
+reader note, canon or generated-evidence change follows. This adds a real
+Hebrew source candidate and changes the next discriminating research action;
+it does not certify a new original reading.
+
+Validation passes JSON, five private-source byte/hash pins, three WLC pins,
+the exact reviewed report hash, two unchanged canonical verse pins, the
+protected untracked-file pin, 556 relative file-link targets across the four
+case/queue/log documents, four workflow YAML parses and diff checks. There is
+no biblical diff against45009a69ee, so no new export or unrelated test-suite
+run is needed for this research-only packet. The previous note application
+and its verification remain preserved; publication still requires the new
+head's required checks, without a protection bypass.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -283,6 +283,24 @@ The private file `research_sources/yardney-samuel-dissertation.pdf` has
 SHA256 `1cefea4f022566cc4911f90dc318d57a2b7976d9413cd990d4c28adf5e3300a6`.
 Copyright remains with the author; the PDF is not reproduced in Git.
 
+### Further edition routes checked on October 16
+
+A bounded delegated search found no transcription at the new institutional
+routes. The [ÖAW online catalogue](https://austriaca.at/anzeiger_collection)
+lists volumes 135 (2000) through 160 (2025), not the target 93 (1956).
+The [Messina author record](https://iris.unime.it/handle/11570/2205237) has no
+associated Pintaudi file. The [JSTOR issue listing](https://www.jstor.org/stable/i24182923)
+identifies that article at stable 24182941, but ordinary advertised retrieval
+routes yielded no text. Its May 1988 issue date differs from the 1987 university
+and 4CARE dates; a title-page check remains necessary. This is a concrete
+library locator, not evidence for the chapter-18 omission.
+
+The newly acquired [Aejmelaeus 2022 author manuscript](https://researchportal.helsinki.fi/en/publications/challenges-in-preparing-the-critical-edition-of-1-samuel/)
+mentions 845 only in its witness list. Its complete reading therefore does not
+close this gap. It does open a distinct, consequential
+[15:29 source comparison](SAMUEL_15_29_SOURCE_COMPARISON_2026-10-16.md).
+Do not repeat these completed access checks without a genuinely new route.
+
 ## Next discriminating comparison
 
 The 18:1 test and full 2020 reading are completed controls. Manuscript 845's

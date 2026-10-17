@@ -66,6 +66,18 @@ collation next. DCLP's public XML has no transcription; do not repeat its access
 attempts or another same-image preview as the next evidence step.
 Do not repeat the completed height decision, junctions or 18:1 comparison.
 
+**October 16 separate accessible source question:** the completed full reading
+of Aejmelaeus's 2022 author manuscript supplies no 845 reconstruction, but opens
+[1 Samuel 15:29](SAMUEL_15_29_SOURCE_COMPARISON_2026-10-16.md). Direct DJD/QDR
+checks establish Hebrew **ישוב** against WLC **ישקר**, while the division clause
+remains wholly supplied and disputed. The longer Greek ending is a third unit,
+not proof of a longer Hebrew original. Next test its identified Greek readings
+and the actual Josephus retelling, alongside the cited Hebrew-corruption and
+euphemism arguments. The initial Numbers comparison is complete; do not repeat
+its lexical overlap as new proof of borrowing. No source or reader change is
+applied by this case. The 845 edition-access hold does not block this distinct
+published-evidence route or imply exhaustion of the wider OT program.
+
 **Related historical control completed:** the
 [Hannah prayer clause at 1:13](SAMUEL_1_13_PRAYER_PLUS_2026-10-16.md)
 is now checked in the printed Samuel apparatus. The Genesis controls limit

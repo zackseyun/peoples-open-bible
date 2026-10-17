@@ -103,12 +103,16 @@ and the connected calendar/letter check qualify a uniform Alpha account and
 date-based preemptive inference. Papyrus 967's catalogued calendar coverage is
 not yet a target reading; its listed fragments do not cover the chapter 9
 targets. Next obtain the modern connected apparatus or a new lawful route to
-967's actual calendar text, and adjudicate the separate 3:7 English/rationale
-issue. Do not repeat completed edition, calendar or article checks or the
+967's actual calendar text. The separate [3:7 reader application](ESTHER_3_7_LOT_CASTING_READER_APPLICATION_2026-10-16.md)
+now qualifies the elapsed-casting note and three rationales and relocates its
+anchor after a scoped independent pass. Hebrew and marker-free main English
+are retained; an optimal main-sentence recast is not certified. Do not repeat
+completed edition, calendar, article or note-application checks or the
 failed image routes; do not use standalone local ESG Additions numbering as
 continuous Esther.
-Source, English, notes and canon remain unchanged; the held Samuel history
-does not block this distinct consequential comparison.
+The earlier comparison's source-priority and 967 holds remain; no Hebrew or
+canon change follows. The held Samuel history does not block this distinct
+consequential comparison.
 
 **Related historical control completed:** the
 [Hannah prayer clause at 1:13](SAMUEL_1_13_PRAYER_PLUS_2026-10-16.md)

@@ -13558,6 +13558,51 @@ source-corpus diff exists against ea71ec2b26; no full corpus rerun or export
 was needed for these research-only changes. Main publication remains subject
 to the final exact-head checks and branch protection.
 
+## October 16 — Esther 3:7 reader clarification applied
+
+The prior continuation made progress with 1f18f14032: direct Alpha ending and
+connected calendar controls, plus accurately bounded 967 access findings.
+This continuation follows the already identified 3:7 English/rationale issue
+instead of repeating those source checks or treating inaccessible ink as read.
+
+The [application report](ESTHER_3_7_LOT_CASTING_READER_APPLICATION_2026-10-16.md)
+separates candidate-date testing from months of elapsed casting. Root and a
+delegated source reader checked actual WLC 3:6–13, current POB 3:7, and complete
+target pages in Streane (1907) and Keil's English commentary (1873), including
+visual footnote checks. Root also checked title/imprint text and the NET
+translators' own notes. The commentaries supply scholarly arguments, not new
+ancient witnesses. Their proposed missing-clause explanations are not adopted;
+their date interpretation can be considered independently. No fresh HALOT
+consultation or modern-translation majority vote is claimed.
+
+After the exact candidate and contract were frozen, one independent bounded
+judge passed the note, anchor and three-rationale application. It reproduced
+the schema, allowed delta, six exact archives, 167 baseline file pins, five
+input pins, two private-source pins, and complete Esther exports. It checked
+the local source/context but did not reread the four commentary pages in that
+judge pass. This is not a blind stylistic vote or a repeat-until-agreement loop.
+The retained main sentence's “until” can still imply elapsed time; that strongest
+objection is recorded and whole-sentence optimality remains unresolved.
+
+The applied note now qualifies the elapsed-time inference and sits beside
+“until the twelfth month.” Three dependent rationales are qualified together;
+their unverified HALOT labels are removed and archived, not retroactively
+certified. Hebrew, marker-free main English, other lexical entries and original
+AI provenance remain unchanged. The former active agreement/revision flags
+are archived with their exact baseline and explicitly do not approve this
+candidate; the active record is draft and needs review. No lost Hebrew clause,
+Greek day numeral, historical source priority or canon change is adopted.
+
+Post-application verification matches the frozen candidate and exact YAML
+hash. The actual ten-chapter Esther export has 167 units: only 3:7 changes,
+with its note body, reason and new anchor visible; 166 other export units and
+record files are unchanged. All 24 targeted existing audit/export tests pass,
+as do schema, archives, source/input pins and the protected unrelated-file
+check. No full-corpus rerun or deployment certification is claimed. The older
+Esther research packet and report remain frozen historical inputs; this
+separate receipt documents the later application. Main publication still
+requires the final exact committed head's checks and branch protection.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

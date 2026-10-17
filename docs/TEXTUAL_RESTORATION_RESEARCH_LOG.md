@@ -15365,6 +15365,39 @@ No full-corpus or application-suite rerun is claimed for documentation only.
 Both exact checks on PR 303 succeeded; normal merge completed as
 `2aeb82969388858df8da191c514cfba8618dc257`, without a restart or protection bypass.
 
+## October 17 — Apply the qualified Lamentations disclosure
+
+The previous goal turn made progress by completing the linked-form comparison,
+merging PR 303 normally and publishing the separate research PR 305. Its same
+two required check handles remain in progress; the application uses a child
+branch so those checks are not restarted.
+
+The [reader application](LAMENTATIONS_1_17_READER_DISCLOSURE_2026-10-17.md)
+adds a qualified factual note and moves the existing impurity note to its
+actual phrase. The complete candidate, contract, report, checker and minimal
+CI addition were committed before review; canonical bytes remained baseline
+at that freeze. One independent context-aware judge then checked the published
+Hebrew, complete record, archives and actual exporter controls and passed the
+exact hashes without corrections. This was not a blind English preference
+vote, another source-selection vote or a whole-verse approval.
+
+Root applied the exact reviewed candidate. The
+[receipt](../sources/textual_restoration/applications/lamentations1_17_reader.2026-10-17.v1.json)
+records six root preflight tests in 6.324 seconds, the reviewer's six tests in
+14.565 seconds, one post-application live-book test in 11.608 seconds and 55
+existing reader/export and footnote tests in 203.932 seconds. The actual
+five-chapter/154-unit export matches the candidate; other 153 raw records,
+exported units and metadata remain unchanged. The source and marker-free
+English stay fixed, five old fields remain archived, and the active record
+is draft/needs-review rather than inheriting an old agreement score.
+
+No new source acquisition or broad local corpus rerun was needed for this
+application. The frozen source comparison and pre-application report are
+unchanged. Required CI, main integration, publication revision and actual
+public reader behavior remain separate gates. Existing on-demand provenance,
+not an added inline panel, is the delivery design. The original Hebrew and
+canon questions remain unresolved; the full objective remains active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

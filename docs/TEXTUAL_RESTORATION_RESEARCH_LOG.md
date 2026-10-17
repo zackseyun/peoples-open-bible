@@ -15078,6 +15078,126 @@ verifier and the protected Genesis hash. No broad suite was rerun for these
 research/documentation additions. Canonical source/English/notes and canon are
 unchanged; the full goal remains active.
 
+## October 17 — Apply the provisional 1 Samuel 2:22 source and English
+
+The preceding turn made progress by placing the reviewed source in the partial
+corpus, testing the real chapter-to-provenance route and correcting the false
+schema-blocker assumption. Its [PR 298](https://github.com/zackseyun/peoples-open-bible/pull/298)
+remains a separate research/preparation record. During this continuation,
+[PR 296](https://github.com/zackseyun/peoples-open-bible/pull/296) passed both
+existing checks, 117485724162 and 117485649090, and merged normally as
+`629422a66a23d68591df4ce3c1893de50c61a01f`. No job was restarted or protection
+bypassed. This is research integration, not the later canonical application.
+
+The [application report](SAMUEL_2_22_APPLICATION_2026-10-17.md) records a real
+local source and English change, not another preference vote. Preparation
+exposed one metadata defect: the active description of the longer reading
+would falsely say it remained canonical after adoption. A v2 candidate corrects
+only that description; Hebrew, English, both notes and five patches are
+identical to v1. The source wrapper now binds the v2 candidate, composition
+and actual new review. All frozen research/preparation artifacts and their
+historical flags remain unchanged. Their previous corpus-source pin is
+reproduced from Git `032c4620d5e8d8faa1c5bf9cb56fa16327be47d5`, not silently
+replaced with the new live wrapper.
+
+A fresh independent task-agent judge read the full connected dossier, exact
+plan/delta, policies and delivery/integration evidence. It approved the
+provisional source/full record, exact canonical application and repository
+publication readiness, conditional on the actual postchecks. It did not
+repeat browser observations, source-image reading, exports, tests or network
+checks, and did not certify the deployed reader. Its review accepts the
+existing selected-verse Check Provenance arrangement. The user's concern about
+messy inline disclosure therefore does not require a new panel or external
+publisher/reader code changes. None were implemented. This is bounded
+task-agent review, not external scholarly peer review or unanimity evidence.
+
+Root applied the exact candidate bytes to 1 Samuel 2:22 and independently
+verified strict source/full-record validation with literal trusted hashes,
+all 811 raw book paths and the actual 31-chapter export. Only 2:22 changes;
+all other 810 raw/exported verses, including 17:4, are preserved. Both notes
+survive the local export; it still does not carry Hebrew source JSON.
+The new case module passed nine tests in 53.205 seconds, executed once by the
+test agent and completely read by root. Root's three existing Samuel/footnote
+modules passed 48 tests in 326.461 seconds. Tests cover historical replay,
+exact application, rejected source/English/note/review drift, old-score
+nontransfer and the raw-source overwrite guard. CI adds the module and two
+baseline fetches without removing other checks. The unrelated untracked
+Genesis draft retains its original hash and is not staged.
+
+The [actual application receipt](../sources/textual_restoration/applications/samuel2_22_application_20261017/application.v1.json)
+separates adoption from source-stage false flags. The repository now locally
+selects the shorter main text, while retaining the full longer allegation,
+age uncertainty and other contrary evidence in the notes/apparatus. This is
+a known published variant newly applied to POB, not newly deciphered ink or
+a settled claim about the earliest wording or historical conduct. No canon
+change follows. Ordinary CI/main integration and actual Samuel public-reader,
+navigation, manifest and publisher checks remain pending; local tests do not
+certify deployment. Latest main was merged normally into the application
+branch without conflicts. Its 36 incoming Enoch 25:7/26:6 source-application,
+test and translation files are preserved; this integration is not a fresh
+scholarly review of those separate tasks. The unused local main was advanced
+to the fetched remote main and its normal push was already up to date. The
+broader source-comparison goal remains active.
+
+## October 17 — Direct Vaticanus observation and superseded publication hold
+
+The preceding turn made progress by committing the exact provisional Samuel
+application, adding nine case tests and passing 48 existing Samuel/footnote
+tests. It submitted [PR 299](https://github.com/zackseyun/peoples-open-bible/pull/299),
+head `16a25b296789181719872efbace05d4f6d5abc37`, rather than claiming deployed
+delivery. This continuation confirmed both PR 298 checks successful and merged
+that research/preparation PR normally as
+`2bc5f7a102037aa6d7ca54936c0080165c2e4fe8`. The incoming separate Enoch 26:5
+work was preserved, not newly adjudicated here. The unused local main was
+fast-forwarded after an ancestry/worktree check; normal push was up to date.
+PR 299's existing jobs were verified live and not manually restarted.
+
+While those jobs ran, one bounded agent located the actual Vaticanus page.
+The [direct image follow-up](SAMUEL_2_22_VATICANUS_IMAGE_CHECK_2026-10-17.md)
+confirms the known shorter visible main-column junction on manuscript page
+311, column III, rather than another edition alone. Root independently viewed
+the retained full page and two regions, read the official manifest metadata
+and recomputed hashes. The margin remains unread; ordinary images do not
+certify the original hand separately from retracing. Both readers knew the
+published wording. No blinded benchmark, new letter, extra witness or changed
+source priority is claimed. Rotated margin attempts stopped without a reading.
+
+The related progress chat then transmitted a human publication hold. Root
+verified the actual human reply, closed PR 299 unmerged and preserved its
+branch. The user promptly superseded that instruction with permission for
+evidence-led omission. Root verified that actual message too and reopened the
+same unchanged head at 20:37:55 UTC. The PR body and
+[user-decision record](../sources/textual_restoration/applications/samuel2_22_user_instructions.2026-10-17.v1.json)
+state that the blanket hold and its extra approval gate are no longer active.
+The intervening main/CDN check matched revision `2bc5f7a10203` and retained the
+full allegation, with exact payload/target hashes recorded. No corrective
+rollback or deletion publication occurred during the hold.
+
+Root reassessed the clause and bundled wording separately using the existing
+complete assessment, controlling method and new visible-body observation.
+The provisional shorter preference remains; the first כל component is weaker,
+and neither the image nor CI settles Qumran layout or earliest wording.
+No Hebrew, English, note or historical approval was changed. The follow-up was
+first prepared from main without the pending canonical deletion. It was then
+integrated into PR 299's existing application branch, preserving that exact
+candidate rather than duplicating the application. GitHub had reported a
+dirty merge state, but the actual latest-main merge was clean and preserved
+18 incoming Enoch 26:5 files. Integrating the follow-up required resolving only
+the research log's concurrent insertions; both complete entries were retained.
+
+The user then gave [explicit approval of the exact clause/disclosure arrangement](../sources/textual_restoration/applications/samuel2_22_explicit_user_approval.2026-10-17.v1.json),
+again verified from the actual human message. The existing shorter main text
+and full uncertain-reading footnote already match that arrangement. This is
+not blanket evidence for the other verse changes or certification of an
+interpolation. Source research continues and stronger contrary evidence can
+reopen the choice. After latest-main integration, all nine application tests
+passed again in 32.370 seconds, including exact candidate/pin validation,
+whole-book preservation and negative mutations. The earlier 48-test result is
+not represented as another new run. Primary-image hashes/sizes, manifest and
+source-report pins, document links and protected Genesis bytes also passed
+scoped checks. Future merge and actual reader checks remain pending; the full
+source-comparison objective remains active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

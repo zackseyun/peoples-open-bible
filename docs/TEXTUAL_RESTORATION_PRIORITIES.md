@@ -60,16 +60,18 @@ and he heard what his sons were doing to the people of Israel.” Its source
 choices are feature-specific: Qumran's ninety-year component survives but its
 eight-year completion is supplied; the first כל omission is gap-dependent;
 the participial ending and לבני have stronger preserved-letter support.
-No canonical edit is applied. The memory-only actual mobile exporter retained
-both notes and changed only this verse among 811, but carries no Hebrew-source
+The [exact provisional application](SAMUEL_2_22_APPLICATION_2026-10-17.md)
+is now independently approved and applied locally. The actual full-book export
+retains both notes and changes only this verse among 811, but carries no Hebrew-source
 identity. The [actual delivery follow-up](CRITICAL_SOURCE_READER_DELIVERY_2026-10-17.md)
 now confirms that the existing alternative critical-verse schema already
 supports canonical integration; legacy enum rejection alone is not a blocker.
 The live CDN omits target notes, while the public chapter's Check Provenance
-action reaches the full source and notes. Next perform the separate exact
-application/disclosure review under a declared reader arrangement. Keep the
-reading view clean; selected-verse notes are a design proposal, not an approved
-UI change or a demand for inline commentary. Do not repeat a generic “LXX omits” claim,
+action reaches the full source and notes. The fresh application judge accepts
+that existing on-demand arrangement; no new inline panel is required or
+implemented. Next complete ordinary CI/main integration and verify the actual
+Samuel chapter, provenance, selected-verse navigation and publisher revision.
+Keep the reading view clean. Do not repeat a generic “LXX omits” claim,
 count QDR/DJD twice, turn supplied text into ink, or use ImageGen to decide
 the missing area. The held 198/250 image routes do not block this different case.
 The [image/intertext follow-up](SAMUEL_2_22_IMAGE_AND_INTERTEXT_FOLLOWUP_2026-10-17.md)
@@ -93,8 +95,19 @@ continuity. Sparse calibration cannot uniquely predict the clause's width;
 the toy fits are not physical bounds. Stop repeated previews on these inputs.
 Resume independent geometry only with a new join/margin constraint or sufficient
 representative advances/bounds. Keep the spatial qualification attached to
-the now-reviewed complete research proposal; provisional editorial review
-does not establish the exact earliest wording or authorize publication.
+the now-applied provisional source. The separate application review approves
+repository publication readiness with required checks; it does not establish
+the exact earliest wording or certify a deployed release.
+
+The [direct Vaticanus check](SAMUEL_2_22_VATICANUS_IMAGE_CHECK_2026-10-17.md)
+now confirms the known shorter visible Greek main-column junction on manuscript
+page 311, column III. It does not certify the original hand, read the nearby
+margin or add another witness alongside the edition. The user's brief
+publication hold was explicitly superseded by permission for evidence-led
+omission, then explicit approval of shorter main text with the full clause and
+uncertainty in the footnote; PR 299 was closed unmerged, then reopened. Its other wording choices
+retain separate feature-specific arguments and limits. CI and actual future
+delivery remain gates, not evidence of textual originality.
 
 **October 17 new consequential comparison:** [2 Samuel 21:8](SAMUEL_21_8_MOTHER_COMPARISON_2026-10-17.md)
 now has a scoped mother-name dossier. Actual Kennicott 591 identifies

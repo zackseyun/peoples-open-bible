@@ -12,7 +12,7 @@ Current inventory, 2026-10-17:
 | [Deuteronomy 32:8](deuteronomy/032/008.json) | [Applied](../../../translation/ot/deuteronomy/032/008.yaml), provisionally selecting sons of God. |
 | [Psalm 145:13](psalms/145/013.json) | [Applied](../../../translation/ot/psalms/145/013.yaml), including the provisional nun line. |
 | [1 Samuel 17:4](1_samuel/017/004.json) | [Applied](../../../translation/ot/1_samuel/017/004.yaml), provisionally selecting four cubits. |
-| [1 Samuel 2:22](1_samuel/002/022.json) | Research source only; canonical source and English remain unchanged. |
+| [1 Samuel 2:22](1_samuel/002/022.json) | [Applied locally](../../../docs/SAMUEL_2_22_APPLICATION_2026-10-17.md), provisionally selecting the shorter source; merge and deployed delivery still require verification. |
 
 The [current delivery check](../../../docs/CRITICAL_SOURCE_READER_DELIVERY_2026-10-17.md)
 verifies that Deuteronomy's source and notes are reachable through the public

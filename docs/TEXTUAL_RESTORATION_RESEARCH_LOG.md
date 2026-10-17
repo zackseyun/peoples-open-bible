@@ -14706,6 +14706,70 @@ independent geometry or application checks. It found the provisional argument
 adequately qualified, not historically proven. No repeated agreement loop was
 needed; no approval of a canonical deletion is implied.
 
+## October 17 — Correct photograph, stronger intertext controls, no new letters
+
+The preceding turn made a consequential source comparison, published as PR 289,
+with an explicit but unapplied short-form candidate. This continuation adds
+an observation-basis correction and related source controls, not a repeated
+readiness audit. The [follow-up](SAMUEL_2_22_IMAGE_AND_INTERTEXT_FOLLOWUP_2026-10-17.md)
+supersedes root's erroneous **PAM 43.123** locator with **43.122**. The complete
+caption crop and correct owner metadata identify IAA B-277400. The preceding
+independent review expressly excluded plate III; it did not certify that error.
+The frozen preceding report, packet and receipt remain unchanged historical
+records rather than being silently repaired.
+
+Root and the image reader checked five previously retained, original 512×512
+viewer tiles against the edition's column-III arrangement. This is improved
+access to a historical photograph, not a new manuscript, modern multispectral
+capture, recovered ink or certified master image. No stitching, enhancement or
+ImageGen was used. The fragment edges still do not independently fix the lost
+margin or provide a sensitivity-tested capacity for the competing clauses.
+
+The scholarly reader obtained the 2020 author's abstract, not that complete
+article; the competing direction-of-dependence proposal therefore remains
+qualified. Root followed an actual author-page link to the separate 2023
+bronze-basin article and read its complete normalized reader, including all
+35 notes and bibliography. Its tables were not layout/glyph verified. Private
+snapshots preserve the consultation; full copyrighted text and manuscript
+images are not redistributed in Git. Neither a proposed literary history nor
+a reported modern apparatus entry is promoted to newly inspected witness ink.
+
+Root also read four current Hebrew source/English records and the actual
+Brooke–McLean Exodus target on two complete pages, with its relevant preface.
+Greek Exodus 38:26 corresponds here to Hebrew 38:8; the selected wording is
+not an identical service clause or direct evidence of Samuel's omission.
+The report keeps lexical affinity, textual priority, literary dependence and
+translation application separate. The provisional shorter-Samuel preference
+and all canonical records remain unchanged. No visions, fasting, coercion,
+priestess wording or canon inference is applied.
+
+Root's scoped verification passed **29 file pins**, **eight image dimensions**,
+the complete **136-line** reader union with **68** identical repeated line
+occurrences and **zero conflicts**, four raw canonical baseline equalities and
+the report's relative links. The protected unrelated Genesis file remains
+unchanged and unstaged. One bounded new-facts review was requested, excluding
+another full-article/full-corpus pass or model-vote loop. The next physical
+experiment must constrain placements independently and compare both candidate
+texts under the same layout assumptions; more previews are not that experiment.
+The [single bounded review](../sources/textual_restoration/comparisons/samuel2_22_image_intertext_review.2026-10-17.v1.json)
+returned PASS at report `e68e15b5…` and packet `f4555e88…`. It directly checked
+the caption/plate, owner HTML, five tiles, two Greek target pages and selected
+modern article paragraphs; all packet pins and eight dimensions matched. It
+did not independently read the full modern article, compute the reader union,
+read the Greek preface, duplicate Git equalities or model the gap. Those limits
+remain explicit; there was no repeated agreement loop or application approval.
+
+Publication housekeeping also completed PR 286 through a normal protected
+merge, `217fb0d5c576924c19d2c8ee3a8f85057179596b`, after fresh exact-head checks.
+Seventeen incoming unrelated Enoch-review files were preserved without a claim
+to have reviewed their scholarship. Worktree, ancestry and compare-and-swap
+guards preceded advancing local main; normal main push was already up to date.
+PR 289 subsequently passed both complete exact-head checks and merged normally
+as `a0afe61a760e2fbdf9772edcdba3c96c1d51254b`. Fresh ancestry/worktree/CAS
+checks safely advanced local main and the current research baseline; a normal
+main push again confirmed the configured remote was up to date. The follow-up's
+historical comparison baseline remains `2ea97c8a…`, not rewritten after merge.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -58,6 +58,14 @@ counterargument and spatial inference, then review any complete critical-source,
 English and disclosure application. Do not repeat a generic “LXX omits” claim,
 count QDR/DJD twice, turn supplied text into ink, or use ImageGen to decide
 the missing area. The held 198/250 image routes do not block this different case.
+The [image/intertext follow-up](SAMUEL_2_22_IMAGE_AND_INTERTEXT_FOLLOWUP_2026-10-17.md)
+explicitly corrects root's photo locator to **PAM 43.122**, identifies the
+matching IAA record and checks retained native historical-photo tiles. It also
+distinguishes the complete 2023 related article from the abstract-only 2020
+paper and checks actual Greek Exodus wording. None supplies new accepted
+letters or an independent missing-width measurement. Next build a common
+short/long layout test with independently constrained placements and report
+sensitivity to missing margins; do not infer the width from the preferred text.
 
 **October 17 new consequential comparison:** [2 Samuel 21:8](SAMUEL_21_8_MOTHER_COMPARISON_2026-10-17.md)
 now has a scoped mother-name dossier. Actual Kennicott 591 identifies

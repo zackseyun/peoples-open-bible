@@ -193,6 +193,22 @@ remain unavailable after three new lawful routes for each. Stop those exhausted
 routes; the [application receipt](../sources/textual_restoration/applications/kings8_reader.2026-10-17.v1.json)
 separates local validation and publication status from historical priority.
 
+**October 17 broader Greek gap partly closed:** the
+[temple-poem follow-up](KINGS_8_BROADER_GREEK_AND_COUNTERMODEL_2026-10-17.md)
+now uses the acquired BM Kings apparatus at both locations. Named witnesses
+support the alternate sun verb; 127 explicitly has Greek μοι, but also an
+altered surrounding construction, critical marking and subject omission.
+The group cannot be assembled uniformly from generic `rell`. The same-book
+1:27 lexical control and actual Burkitt argument support a tentative local
+Greek preference for ἐγνώρισεν, not a recovered Hebrew clause. The full Kató
+2019 counterproposal is now read; its supplied dwelling verb and religious
+history remain hypotheses. Hebrew priority is HOLD, and the existing
+Swete-scoped reader disclosure remains accurate. No canonical change or export.
+The historical broader-apparatus requirement is partly satisfied, not the
+modern Antiochene edition or Latin manuscript/hand requirement. Do not repeat
+these completed page/article/control readings; seek a discriminating new
+input or continue another consequential OT comparison.
+
 **October 17 distinct consequential comparison:** the
 [extended Greek ending of Job](JOB_42_GREEK_ENDING_COMPARISON_2026-10-17.md)
 now compares its resurrection statement, Jobab genealogy, age variants and

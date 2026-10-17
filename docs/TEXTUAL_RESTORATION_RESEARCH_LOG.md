@@ -14074,6 +14074,81 @@ recovered letters, a new canon proposal, or certification of every existing
 Job rationale. ImageGen provides no evidence. Broader source comparison and
 the missing discriminating historical evidence remain open.
 
+## October 17 distinct comparison: 2 Kings 8:10 ketiv/qere
+
+The [connected source-and-reader review](KINGS_2_8_10_SOURCE_AND_READER_REVIEW_2026-10-17.md)
+opens a new consequential question rather than rereading the completed Job
+decision. The vendored Hebrew explicitly records written לא and read לו.
+POB's positive recovery message uses that formal qere; the existing explanation
+incorrectly treats it like a conjecture and says the negative conflicts with
+the death announcement. The negative actually agrees with that announcement;
+its difference becomes important for Hazael's positive report in verse 14.
+Root read the complete Hebrew XML context 8:7–15 and the target's full
+rationales, without certifying all neighboring notes or explanations.
+
+The actual Swete target/apparatus, same-volume conventions, complete relevant
+appendix and a Clementine Vulgate control support bounded comparisons, not an
+earliest-Greek or lost-Hebrew conclusion. The current QDR releases retain the
+same 211 primary rows as the retained May releases. Identified 6Q4 blocks do
+not preserve 8:10: that coverage gap is not an omission reading. Unplaced scraps
+remain outside any exhaustive absence claim. The Vulgate is not Old Latin.
+Trebolle's directly relevant 2015 chapter and Labuschagne's 1965 note remain
+unread after bounded lawful access routes; no conclusion is inferred from titles.
+Chisholm's complete connected pages 76–78, not the full article, supply an
+interpretive counterargument, not fresh witness evidence.
+
+The proposed application replaces and reanchors the existing note and repairs
+two explanations, preserving Hebrew and marker-free English. Seven old fields
+are archived without transferring historical approval. A hardcoded complete
+record oracle and separate baseline/evidence pins constrain the delta.
+The implementation agent's one successful preflight script validated schema,
+the exact record, all 719 live baseline files and the actual historical/candidate
+full-book exports: only 8:10 changed, with 718 other units and metadata fixed.
+It was not a unittest-suite execution and has no precisely instrumented elapsed
+time. Root's two non-export focused methods then passed in 128.154 seconds;
+all 34 source-snapshot file pins also passed. The independent joint review and
+post-application live export remain separate gates, not repeated exporter votes.
+
+The independent combined review subsequently passed at the frozen report,
+evidence, contract, candidate and checker hashes recorded in the
+[receipt](../sources/textual_restoration/applications/kings2_8_10_reader.2026-10-17.v1.json).
+The reviewer independently reproduced the release comparison and checked all
+34 pins, four render dimensions, the exact archives and source observations;
+the full-book export was not independently rerun. Root applied the exact
+candidate, then passed one live full-book test in 160.286 seconds. The actual
+export digest is
+`c1c12bb0f1e43f81a6b4048c4dac89637985d2ce059cede240305e101e11d56b`.
+All 718 other raw records and exported units plus metadata remain fixed.
+Hebrew and marker-free English are unchanged, old approvals are not transferred,
+and historical priority remains HOLD. No newly recovered letter, whole-verse
+optimality, canon expansion or deployed-reader certification follows.
+
+The existing reader-export module also passed all 37 tests in 1,357.346 seconds.
+That whole-module selection was broader than the initially intended subset;
+the already-running process was allowed to finish once, without restart or
+duplicate execution. Prefer appropriately bounded regressions on later small
+applications. No whole-corpus local suite or deployed-reader check is claimed.
+The unrelated untracked Genesis follow-up remains untouched and unstaged.
+
+During this work, both required checks for the prior Job PR 275 passed at
+`12fa8aad57a9bb573177c4a5864c0e9ee62b369d`. A normal protected merge succeeded
+as `127c4861e1998991f1c29ecfd566cae4cf97296a`; main was fast-forwarded locally
+after confirming it was not checked out elsewhere, and its normal push was
+already up to date. That publication does not certify this separate 2 Kings
+change, which retains its own committed-head CI and merge gate.
+
+A later, separate access follow-up reached the public author-upload HTML of
+[Torijano and Trebolle's 2022 edition study](https://www.researchgate.net/publication/362556749_The_Edition_of_III-IV_Kingdoms_The_Critical_Reconstruction_of_the_Old_Greek_Text_and_the_Construction_of_the_Critical_Apparatus),
+DOI 10.13109/9783666560637.53. Root and the Greek reader read its introductory
+framework and complete section 2.2 (pp. 67–71), not the whole chapter. At p. 69
+the reported Old Latin/Antiochene distinction concerns the opening imperative,
+not recovery polarity. It reinforces caution about equating B with earliest
+Greek but does not settle לא/לו. The PDF route returned 404 and direct HTML
+download a challenge; neither was bypassed or retried. This is not the missing
+2015 chapter or a newly acquired Old Latin manuscript. The frozen source
+snapshot and candidate were not rewritten to count this as another letter-level
+vote. Its later consultation is separately documented here.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

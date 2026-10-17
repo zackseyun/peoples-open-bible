@@ -223,6 +223,21 @@ and its canonical pins as their historical snapshot. The independent bounded
 application review and four-test preflight pass; the post-application live
 export matches the reviewed candidate with all other 1,069 Job units unchanged.
 
+**October 17 new source-and-reader question:** the
+[2 Kings 8:10 review](KINGS_2_8_10_SOURCE_AND_READER_REVIEW_2026-10-17.md)
+distinguishes the formal Hebrew qere from conjectural repair and corrects an
+existing rationale's false conflict between the negative ketiv and the following
+death announcement. The proposed disclosure/explanation repair leaves Hebrew
+and marker-free main English fixed. Current identified Qumran blocks do not
+preserve the target; Swete's positive selected text and a Vulgate control do not
+settle historical priority. The actual 2015 Antiochene/Old Latin target chapter
+remains unacquired. Prefer discriminating target evidence over more agreement
+counts, and do not treat the Vulgate or a manuscript coverage gap as substitutes.
+The exact application now passes its independent combined review and live
+export gate; all other 718 units and book metadata remain fixed. The repaired
+record remains draft/needs-review, without transferred old approval. No Hebrew
+replacement or historical-priority victory is claimed.
+
 **Related historical control completed:** the
 [Hannah prayer clause at 1:13](SAMUEL_1_13_PRAYER_PLUS_2026-10-16.md)
 is now checked in the printed Samuel apparatus. The Genesis controls limit

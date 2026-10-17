@@ -46,6 +46,19 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 17 new consequential comparison:** [1 Samuel 2:22](SAMUEL_2_22_SANCTUARY_CLAUSE_2026-10-17.md)
+now tests the sexual-misconduct clause and women at the sanctuary. Actual DJD
+and QDR distinguish a space-based short junction from preserved omission ink;
+the Greek apparatus has both short and nonuniform long forms. Josephus's
+actual retelling positively establishes early longer reception. The shorter
+unit is provisionally preferred, not certified as the complete earliest verse.
+An explicit WLC-minus-clause research candidate records the possible main-English
+impact; no canonical edit is applied. Next test the strongest long-form
+counterargument and spatial inference, then review any complete critical-source,
+English and disclosure application. Do not repeat a generic “LXX omits” claim,
+count QDR/DJD twice, turn supplied text into ink, or use ImageGen to decide
+the missing area. The held 198/250 image routes do not block this different case.
+
 **October 17 new consequential comparison:** [2 Samuel 21:8](SAMUEL_21_8_MOTHER_COMPARISON_2026-10-17.md)
 now has a scoped mother-name dossier. Actual Kennicott 591 identifies
 מירב198 and מרב250; 172 omits the name, not a third Merab witness. The DJD

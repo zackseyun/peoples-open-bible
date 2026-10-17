@@ -1,12 +1,25 @@
 # Provisionally reviewed POB Hebrew critical sources
 
-This directory begins a **partial editorial source corpus**, not a replacement
-for WLC and not a claim of recovered autographs. Currently it contains only
-[Isaiah 53:11](isaiah/053/011.json). Its selected Hebrew has independent AI
-editorial approval. Its exact full-verse candidate has now been applied to the
-canonical repository YAML, including English "he will see light" and the
-uncertainty note. The public provenance page now displays them; the public
-chapter reader was checked and still displays the older wording (see below).
+This is a **partial editorial source corpus**, not a replacement for WLC or a
+claim of recovered autographs. Source selection, repository application and
+public-reader delivery are different statuses.
+
+Current inventory, 2026-10-17:
+
+| Source record | Canonical repository status |
+| --- | --- |
+| [Isaiah 53:11](isaiah/053/011.json) | Applied; see the historical application below. |
+| [Deuteronomy 32:8](deuteronomy/032/008.json) | [Applied](../../../translation/ot/deuteronomy/032/008.yaml), provisionally selecting sons of God. |
+| [Psalm 145:13](psalms/145/013.json) | [Applied](../../../translation/ot/psalms/145/013.yaml), including the provisional nun line. |
+| [1 Samuel 17:4](1_samuel/017/004.json) | [Applied](../../../translation/ot/1_samuel/017/004.yaml), provisionally selecting four cubits. |
+| [1 Samuel 2:22](1_samuel/002/022.json) | Research source only; canonical source and English remain unchanged. |
+
+The [current delivery check](../../../docs/CRITICAL_SOURCE_READER_DELIVERY_2026-10-17.md)
+verifies that Deuteronomy's source and notes are reachable through the public
+chapter's Check Provenance action. The inspected CDN payload does not carry
+those notes or inline markers. That is not a claim that disclosure is absent
+from the entire website, nor a requirement to insert commentary into Bible
+verses. The September 6 observations below remain dated history.
 
 Each record retains the full source text, contrary apparatus, composition
 disclosure, original Git baseline, candidate, explicit patch bundle and exact
@@ -17,17 +30,20 @@ single-scroll transcription. The retained-base literary form and analysis
 remain the declared context; unchanged words are not freshly adjudicated.
 
 Schema validation alone is insufficient. The read-only verifier recomposes the
-source and checks its linked records using review and composition hashes independently supplied
-by the caller. **Historical commands:** these passed under the original policy,
-but now reject changed live policy pins after the incoming source-distinction
-policy update. They are not current-policy certification. To reproduce that
-historical state, use a separate checkout at `b6c87caad0`; do not reset a working
-checkout or replace the old review hashes. For that historical Isaiah record:
+source and checks linked records using review and composition hashes independently
+supplied by the caller. The current implementation reads original method and
+doctrine policies at the pinned Git baseline; evidence, schemas and other
+nonpolicy inputs remain live. This preserves historical review context without
+claiming review under every later policy. For the Isaiah record:
 
 ```bash
 .venv/bin/python -m tools.textual_restoration.reviewed_critical_source sources/ot/pob_critical/isaiah/053/011.json --trusted-review-sha256 2695236defe6209ccdd7806bd7f9e8696d261125ef09e1a6fd485c837b50043f --trusted-composition-sha256 d7f01021de7d9b3817d1d75799958c6c0e87fca3320e36f74a7417ebb7f72b1e
 .venv/bin/python -m unittest tests.test_reviewed_critical_source tests.test_source_composition
 ```
+
+The source-composition test wrapper includes a historical replay, not a current
+whole-OT audit. Use a separate checkout at `b6c87caad0` to reproduce the original
+Isaiah-era implementation; do not reset a working checkout or replace old hashes.
 
 The base is read from its immutable Git revision, so a future live-verse edit
 does not erase the earlier reading. Candidate and review files remain historical
@@ -85,7 +101,7 @@ unchanged. The 27 incoming source-distinction tests passed.
 
 Four old protected paths changed upstream: `DOCTRINE.md`, `METHODOLOGY.md`,
 `tools/draft.py`, and `tools/prompts/revision_policy.md`. All other historical
-protected paths checked remain unchanged. The old live-pin verifier correctly
-rejects that policy drift; it was not weakened, and the full test suite is not
-claimed green. The compatibility record is a bounded editorial judgment plus
+protected paths checked remain unchanged. At that historical check, the old
+live-pin verifier correctly rejected the policy drift; it was not weakened,
+and the full test suite was not claimed green. The compatibility record is a bounded editorial judgment plus
 observed integration evidence, not a newly generalized automatic approval tool.

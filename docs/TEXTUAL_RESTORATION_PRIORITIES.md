@@ -109,6 +109,14 @@ uncertainty in the footnote; PR 299 was closed unmerged, then reopened. Its othe
 retain separate feature-specific arguments and limits. CI and actual future
 delivery remain gates, not evidence of textual originality.
 
+The [Alexandrinus countercheck](SAMUEL_2_22_ALEXANDRINUS_COUNTERCHECK_2026-10-17.md)
+now confirms the known longer body in a photographic facsimile, including
+A's distinctive ΕΚΟΜΙΖΟΝ and its mixed totalizer/recipient profile. Do not
+silently repair its verb, give every longer branch identical sexual wording,
+or count the facsimile and edition twice. The provisional selection is
+unchanged; further work needs discriminating transmission/layout evidence,
+not another same-reading vote.
+
 **October 17 new consequential comparison:** [2 Samuel 21:8](SAMUEL_21_8_MOTHER_COMPARISON_2026-10-17.md)
 now has a scoped mother-name dossier. Actual Kennicott 591 identifies
 מירב198 and מרב250; 172 omits the name, not a third Merab witness. The DJD

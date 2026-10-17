@@ -15198,6 +15198,50 @@ source-report pins, document links and protected Genesis bytes also passed
 scoped checks. Future merge and actual reader checks remain pending; the full
 source-comparison objective remains active.
 
+## October 17 — Test the contrary Alexandrinus body
+
+The preceding turn made progress: actual Vaticanus pixels confirmed the known
+shorter visible body; the user's brief hold, reversal and explicit approval of
+the shorter-main/full-uncertain-note arrangement were verified and recorded.
+Latest main was integrated and nine application tests passed again. PR 299
+was updated to `906681736833804915261ec0239b0f55160bafe7`. This continuation
+confirmed both exact checks, 117500491120 and 117500483045, live and later in
+the reader-notes/consultation step. Neither was manually restarted; main
+remained `2bc5f7a102037aa6d7ca54936c0080165c2e4fe8` at the initial check.
+
+One bounded read-only agent then tested positive contrary evidence rather
+than another preferred-reading confirmation. The
+[Alexandrinus report](SAMUEL_2_22_ALEXANDRINUS_COUNTERCHECK_2026-10-17.md)
+records a British Museum photographic facsimile, not a newly acquired modern
+owner photograph. Its actual title/introduction establish 1930 despite the
+archive's 1915 metadata. The target plate has a continuous longer body with
+ΕΚΟΜΙΖΟΝ, first σύμπαντα and the sons-of-Israel recipient expression. Root
+read the complete plate and target region, actual title and introduction,
+the edition's symbol key and target apparatus. A fresh Poppler crop is
+byte-identical to the agent's; input/render/display sizes remain separate.
+Neither reader certifies original-hand status from this black-and-white
+reproduction. Both knew the published reading; this is not a blind benchmark.
+
+Root's primary lexical controls keep κομίζω distinct from κοιμίζω without
+choosing A's intended meaning or silently emending it. The longer clause,
+possible early shared omission and positive early reception remain serious
+counterevidence. These known differences had already been considered in the
+provisional source choice, so photographic confirmation does not itself change
+priority, Hebrew, English, notes or approval. No missing Hebrew was recovered.
+The owner catalogue also adds a concrete reception control for Clementine
+works in another volume; physical codex inclusion is not a canon decision.
+
+The new observation and metadata are kept on a separate research branch so
+PR 299's running checks are not restarted for a documentation-only follow-up.
+Raw assets remain outside Git, the unrelated Genesis draft is preserved,
+and no additional source-selection vote or general framework was added.
+Scoped checks passed the PDF/derived-image hashes, PDF page count and size,
+independently identical crop, observation JSON, unchanged candidate and
+implementation, document links, Genesis hash and whitespace. The application
+suite was not rerun merely for these research additions.
+Public application and actual main-text/footnote/navigation verification
+remain pending; the full objective remains active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

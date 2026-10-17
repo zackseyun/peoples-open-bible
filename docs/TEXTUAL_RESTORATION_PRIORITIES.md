@@ -62,9 +62,14 @@ eight-year completion is supplied; the first כל omission is gap-dependent;
 the participial ending and לבני have stronger preserved-letter support.
 No canonical edit is applied. The memory-only actual mobile exporter retained
 both notes and changed only this verse among 811, but carries no Hebrew-source
-identity. Next address deliberate canonical critical-source integration and
-reader-visible source disclosure, then verify web/CDN/deployed routes and
-separate application/publication review. Do not repeat a generic “LXX omits” claim,
+identity. The [actual delivery follow-up](CRITICAL_SOURCE_READER_DELIVERY_2026-10-17.md)
+now confirms that the existing alternative critical-verse schema already
+supports canonical integration; legacy enum rejection alone is not a blocker.
+The live CDN omits target notes, while the public chapter's Check Provenance
+action reaches the full source and notes. Next perform the separate exact
+application/disclosure review under a declared reader arrangement. Keep the
+reading view clean; selected-verse notes are a design proposal, not an approved
+UI change or a demand for inline commentary. Do not repeat a generic “LXX omits” claim,
 count QDR/DJD twice, turn supplied text into ink, or use ImageGen to decide
 the missing area. The held 198/250 image routes do not block this different case.
 The [image/intertext follow-up](SAMUEL_2_22_IMAGE_AND_INTERTEXT_FOLLOWUP_2026-10-17.md)

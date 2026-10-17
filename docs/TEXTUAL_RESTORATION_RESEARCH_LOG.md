@@ -14992,6 +14992,92 @@ artifact hashes, eight canonical/context hashes and zero translation-file
 changes against the current main baseline. The protected unrelated Genesis
 file remains byte-identical and unstaged.
 
+## October 17 — Research corpus placement and actual reader disclosure
+
+The previous goal turn made progress: a complete provisional 1 Samuel 2:22
+source/English candidate passed bounded reviews, exact composition/integration
+checks and a real local export probe. Two historical-policy test corrections
+passed separately. The combined research was committed and pushed in
+[PR 296](https://github.com/zackseyun/peoples-open-bible/pull/296), exact head
+`c1ddab1660b541f6ed1383c936f1f88819dd0428`. This turn confirmed the same two
+live checks, 117485724162 and 117485649090, both running the reader-notes and
+consultation-policy step. No job was restarted. The task attachment limit
+prevented attaching that PR; its public link remains usable.
+
+The [delivery follow-up](CRITICAL_SOURCE_READER_DELIVERY_2026-10-17.md) corrects
+an overstatement in the preceding preflight: the existing alternative
+critical-verse schema already supports canonical critical-source integration.
+The legacy enum's rejection alone does not require a new schema or exporter.
+Root and a bounded read-only agent inspected actual Isaiah, Deuteronomy,
+Psalm and Goliath instances, the generic integration/verifier, local exporter,
+raw-source overwrite guard and publication workflow. No code was changed to
+manufacture compatibility, and frozen records remain unchanged.
+
+The approved provisional Samuel source is now copied byte-for-byte into the
+partial critical-source corpus, with a canonical-format research candidate
+pointing to it. That path is the only value changed from the frozen reviewed
+verse; Hebrew, English, notes and history are identical. The
+[preparation receipt](../sources/textual_restoration/applications/samuel2_22_application_20261017/preparation.v1.json)
+records actual validation, three rejected drift mutations and the unchanged
+canonical target. This is a new corpus placement, not a new ancient witness,
+source-selection vote or canonical adoption. The corpus README now correctly
+distinguishes four already-applied sources from this research-only source,
+and describes the current historical-policy verifier rather than repeating
+its obsolete live-policy failure. Root matched all four applied source objects
+to their actual canonical source objects and reran the Isaiah source verifier.
+That is not a fresh adjudication or whole-corpus certification.
+
+The decisive new evidence concerns delivery. The web reader tool could not
+open the two public URLs; ordinary successful HTTP GETs then obtained the
+declared CDN manifest and its exact payload. At the observation time the
+manifest identified `5fae1212c4725f1bae775d114db3f07f02be9a12`. Both inspected
+verse objects, DEU 32:8 and 1SA 2:22, contain marker-free English but no notes.
+Root and the separate agent checked target, chapter, book and root shapes.
+A full recursive root scan found 29 `source_witness_url` fields elsewhere,
+but no footnote/apparatus/provenance/critical-integration fields. The
+[dated probe](../sources/textual_restoration/applications/samuel2_22_application_20261017/delivery_probe.v1.json)
+retains exact URLs, manifest and payload hashes, target objects and scope.
+The complete 13.8 MB payload was not imported into the repository. The agent
+independently reproduced its hash and target observations; its initial broad
+source-field shorthand is superseded by the explicit 29-field exception.
+
+Root also checked the real browser interfaces. Deuteronomy's provenance page
+visibly displays POB-critical, Hebrew, composite-source disclosure, apparatus,
+both anchored notes and incomplete-review status. The chapter reader shows
+the adopted English without inline notes. Selecting verse 8 exposes Check
+Provenance; clicking it opens the correct separate source record with that
+disclosure. Thus the notes are accessible through a real reader action, not
+missing across the whole website. The actual chapter URL redirects into the
+current read route, as recorded in the probe. No mobile/offline interface,
+future Samuel rendering or entire website was tested. Browser navigation was
+read-only; no personal notes, account data or site content was changed.
+
+Main translation pushes invoke the separate publisher and website-sync
+workflow. Its implementation is not this local exporter. Local note retention
+therefore cannot prove production payload retention, and a future canonical
+merge cannot be treated as unrelated to publishing. The exact external code
+responsible has not been located or modified. The request to extend work to
+those implementations received a design concern, not unconditional approval:
+inline disclosure can make the Bible look messy. The proposed response keeps
+verses unchanged and opens a compact Textual notes panel only when a verse
+is selected; full Hebrew/apparatus remain under Check Provenance. No such
+UI change is approved or implemented. Delivering note data does not require
+inline explanatory paragraphs, and inline display is not a newly imposed
+source-adjudication rule. The demonstrated provenance action is the baseline
+for the separate exact application/disclosure assessment still to be done.
+
+One final [factual review](../sources/textual_restoration/applications/samuel2_22_application_20261017/delivery_review.v1.json)
+passed the frozen report and preparation/delivery records. It checked pins,
+the one-path candidate delta, actual critical-verse validation and the unchanged
+canonical hash, while explicitly not independently repeating root's browser
+observations. This is not approval of source priority, application or UI design.
+No source-vote or stylistic agreement loop followed. Scoped checks passed new
+review pins, document links, candidate/schema verification, three negative
+drift probes, four applied source-object equalities, the existing Isaiah source
+verifier and the protected Genesis hash. No broad suite was rerun for these
+research/documentation additions. Canonical source/English/notes and canon are
+unchanged; the full goal remains active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

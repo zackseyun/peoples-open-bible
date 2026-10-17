@@ -333,6 +333,18 @@ P.Oxy. target notes/second-column alignment, modern target apparatus and actual
 version entries before stronger historical claims. Do not repeat these completed
 article, edition and bounded coverage checks as new evidence.
 
+**Original-edition follow-up:** the
+[Parsons and interpretation control](JOB_42_PAPYRUS_AND_INTERPRETATION_2026-10-17.md)
+now closes the original target-entry, conventions and plate access gap. The
+three conditional layouts do not establish a physical ending or omission of
+17a; the printed references 16³ and 17 must not become 17a. Häner's complete
+author-posted article text is now read, not its inaccessible PDF. No stronger
+priority, Hebrew, English, note or canon change follows. Seek the actual modern
+target apparatus, exact version entries or justified physical alignment rather
+than repeating the completed original-edition search. Frozen reports and
+application pins remain historical snapshots, with this follow-up superseding
+their access status only.
+
 **Separate Job reader application:** the
 [ending disclosure](JOB_42_READER_DISCLOSURE_2026-10-17.md) now applies one note
 on the attested resurrection and Jobab continuation. Its exact candidate,

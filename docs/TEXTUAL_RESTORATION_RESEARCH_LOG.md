@@ -15297,6 +15297,41 @@ emended; the Hebrew continuation is the author's proposed retroversion.
 These qualify the argument's evidential use without deciding priority or
 changing POB. Raw sources remain private; no generated ink or canon claim follows.
 
+## October 17 — Read the original Job papyrus entry
+
+The [original-edition follow-up](JOB_42_PAPYRUS_AND_INTERPRETATION_2026-10-17.md)
+replaces a secondary quotation with Parsons's complete target entry,
+publication conventions and plate I. Root and one bounded source reader
+checked the same known edition, not a blind new decipherment or another
+source-preference vote. Its three conditional layouts leave the second-column
+alignment unresolved. The height calculations cannot become independent
+measurements, and printed 16³ and 17 cannot become an attestation about 17a.
+The alleged omission remains unverified rather than disproved.
+
+Root also read Häner's complete indexed author text and notes, not a downloaded
+PDF or its AI summary. The follow-up separates his interpretive argument from
+new physical evidence and canonical authority. Neither consultation warrants
+a source, English or reader-note change. The original edition's access gap is
+closed; exact modern apparatus/version entries and physical alignment remain
+discriminating inputs. More searches for these same completed readings are
+not progress. Raw sources stay private; ordinary public access is not a
+redistribution licence. No challenge or authentication was bypassed.
+
+The user's concern about clutter keeps the existing on-demand provenance
+route as the current reader presentation. No external publisher or reader
+implementation is changed, and a possible subtle selected-verse indicator
+is not an approved inline panel. The frozen Job dossier/application and
+protected unrelated Genesis draft remain untouched. New source observations
+are kept on a separate branch so PR 303's running checks are not restarted.
+
+The bounded Parsons factual check passed against the actual edition, including
+the 32.5 cm reconstruction, printed references, locators and asset hashes.
+It did not review Häner or vote on source priority. Root's scoped validation
+passed JSON parsing, five unchanged Job controls, private PDF size/hash,
+seven render hashes, relative links, the protected Genesis hash and whitespace.
+No application or full-corpus test rerun is claimed for these documentation-only
+changes. Required publication checks remain separate from these results.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

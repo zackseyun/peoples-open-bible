@@ -14149,6 +14149,66 @@ download a challenge; neither was bypassed or retried. This is not the missing
 snapshot and candidate were not rewritten to count this as another letter-level
 vote. Its later consultation is separately documented here.
 
+## 2026-10-17 — Hoshea's evaluation: a substantive source-only comparison
+
+The [new dossier](KINGS_17_HOSHEA_COMPARISON_2026-10-17.md) examines 2 Kings
+17:2 in its connected 17:1–6 context. The acquired actual Fischer OL115 edition
+attests an intensifying comparator, while WLC and Swete's selected B text
+have the negative comparison. Both portray Hoshea as doing evil. This is an
+established variant newly investigated here, not a recovered unknown letter.
+
+Public institutional repository APIs supplied three scholarly PDFs after
+bounded journal/catalogue access failures. Root read the complete Richelle
+2017 article visually, all of Tekoniemi's TC 27 (2022) article, and the complete
+Hoshea section of his 2019 dissertation, not that whole dissertation or the
+2021 book. The dossier records their competing explanations without turning
+them into independent votes. Richelle's corrupt extraction was not repaired
+by invented character substitution: all 21 actual rendered pages were read.
+The TC metadata/delivered-file checksum mismatch is explicitly retained;
+the two delivered copies have matching extracted text on all 16 pages.
+
+Two bounded source readers independently controlled the Hebrew/POB/6Q4 and
+Greek/actual Old Latin evidence. Current identified 6Q4 blocks do not supply
+this target; its fragment 17 is not chapter 17. This is a bounded coverage
+result, not a claim that all possible Hebrew witnesses are absent. Edition
+conventions, witness identity, actual page locators, private file hashes and
+render dimensions are preserved in the
+[packet](../sources/textual_restoration/comparisons/kings17_hoshea.2026-10-17.v1.json).
+Modern source PDFs and full article texts are not added to Git.
+
+Observation and the semantic difference are secure at the consulted edition
+level; historical Hebrew priority remains HOLD. Neither moral expectations
+about the last king nor a witness's general antiquity resolves direction.
+The next test is the comparative royal formula and its translation habits,
+with actual Antiochene target evidence, rather than more generic agreement
+counts. No source, English, note, candidate or canon change follows this pass.
+The six canonical records and WLC are pinned unchanged. The unrelated Genesis
+follow-up remains protected. One independent frozen-artifact source review
+is recorded separately; no canonical application or previous exporter test
+is being certified or rerun by that review.
+
+The single independent source review passed at the exact report and packet
+hashes recorded in its
+[receipt](../sources/textual_restoration/comparisons/kings17_hoshea_review.2026-10-17.v1.json).
+The reviewer reproduced all 50 file pins, native render dimensions, six
+canonical baseline records, protected Genesis hash and three relative links.
+Its actual scholarly reading scope is explicit and narrower than root's;
+it did not independently reread both complete articles. It supports the
+dossier's accuracy and unresolved priority, not a canonical application.
+Root's JSON/link/pin and whitespace checks also passed. No unit test or
+full-book export was run for this source-only documentation change.
+
+During this pass, the previous 2 Kings 8:10 PR 276 completed both required
+`corpus-integrity` checks successfully at
+`7ab6a5c807177d54b1cbec13908bce8bb817010d`. A fresh clean/mergeable check and
+exact-head normal merge succeeded as
+`4d299289af6576101f662e4eb7fb7401db09db8b`. That is publication of the earlier
+application, not historical-priority approval of this Hoshea comparison.
+After checking that main was not checked out in another worktree, its local
+ref was fast-forwarded to that merge; a normal push succeeded. The consulted
+method, rights, WLC and six canonical inputs are identical across the research
+baseline and this merged main.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

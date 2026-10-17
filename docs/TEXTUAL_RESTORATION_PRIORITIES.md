@@ -193,6 +193,26 @@ remain unavailable after three new lawful routes for each. Stop those exhausted
 routes; the [application receipt](../sources/textual_restoration/applications/kings8_reader.2026-10-17.v1.json)
 separates local validation and publication status from historical priority.
 
+**October 17 distinct consequential comparison:** the
+[extended Greek ending of Job](JOB_42_GREEK_ENDING_COMPARISON_2026-10-17.md)
+now compares its resurrection statement, Jobab genealogy, age variants and
+connected intercession wording against Hebrew. Root read the complete Cook
+2011 study and actual Swete targets/key/conventions; the Greek source reader
+independently checked the small A/Sinaiticus apparatus and correction hands.
+Kraft's actual P.Oxy. 3522 examination prevents treating a simple catalogue
+range as the whole preservation problem: a second column has disputed traces
+and conditional layouts. Its alleged omission remains unverified, not disproved.
+The actual 11Q10 end reaches only part of 42:12, not a physical ending at 42:17;
+the named Hebrew/Aramaic controls cannot decide inclusion. 4Q101a adds a display
+outside the book map's annotated hits, not a newly certified independent object.
+The published Aramaic at 11Q10 column 38.2–3 positively parallels Greek 42:9's
+forgiveness wording; shared interpretation remains possible, without a lost
+Hebrew or independence conclusion.
+No Hebrew, English, note or canon change is applied. Next obtain the original
+P.Oxy. target notes/second-column alignment, modern target apparatus and actual
+version entries before stronger historical claims. Do not repeat these completed
+article, edition and bounded coverage checks as new evidence.
+
 **Related historical control completed:** the
 [Hannah prayer clause at 1:13](SAMUEL_1_13_PRAYER_PLUS_2026-10-16.md)
 is now checked in the printed Samuel apparatus. The Genesis controls limit

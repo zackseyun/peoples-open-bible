@@ -13938,6 +13938,85 @@ fresh lexicon consultation was used. The wider OT comparison goal remains open;
 further source claims require discriminating evidence, not additional tokens
 or repeated same-evidence agreement. About-page integration remains deferred.
 
+## October 17 — Greek Job ending and the difference between coverage and omission
+
+The previous goal turn made progress through an applied reader disclosure,
+exact export checks and normal Git delivery. At this continuation's start,
+PR274's two specific required jobs were confirmed live at the exact reviewed
+head. Their live state is a publication wait, not a failed process or a reason
+to restart them. The wider source goal remains incomplete.
+
+A bounded portfolio check found a consequential unperformed question in the
+[extended Greek ending of Job](JOB_42_GREEK_ENDING_COMPARISON_2026-10-17.md),
+distinct from completed 13:15, 24:21, 42:6 and Ephraemi image-feasibility work.
+Root compared the actual Greek ending, connected forgiveness/speech wording,
+paired ages and Genesis royal sequence with 29 current POB source/English/note
+controls. Greek resurrection and Jobab statements are attested literary
+material, not new Hebrew letters. Selected B's 240 years and the reported
+plus-eight branch remain separate; neither replaces Hebrew's 140 post-event
+years automatically. A low-resolution A/Sinaiticus siglum attribution was
+corrected against the key and 300dpi apparatus before the report was frozen.
+
+Root read all 22 pages and notes of Cook's 2011 OTE study and visually checked
+the decisive discussion. Historical Old Greek labels, claims about revisions
+and indirectly cited versional evidence remain distinct from directly consulted
+readings. Swete's actual Greek death statement is not erased by the article's
+NO OG TEXT label. Its argument about P.Oxy. 3522 required a preservation check,
+not agreement with the author's conclusion or the opposite inference from a
+catalogue range alone.
+
+The Greek source reader checked the edition's target, same-volume conventions
+and key. Actual Kraft section 14 qualifies the Oxford 42:11–12 label with a
+second column's three legible letters and alternative reconstructed layouts.
+Original Parsons target notes remain unavailable; no secure omission of the
+resurrection line, or complete preserved continuation, follows from those
+controls. Oxford and papyri.info challenges were not bypassed. Häner's official
+open-access record led to a bot challenge and the publisher to restricted
+access; its full argument remains unread. The old Johnson PDF route returned
+404. These access outcomes neither settle priority nor block this different
+published-evidence comparison.
+
+The Hebrew/Aramaic reader checked named Qumran-Digital displays at their actual
+fragment boundaries. 11Q10's complete numbered end columns and root's direct
+column-38 reading locate the last partly preserved blessing at 42:12. Missing
+later text is not a physical book ending or an omission witness. The unindexed
+links and reciprocal fragment displays stay qualified. The 4Q101a display is
+a control outside the book map's annotated hits, not a newly discovered object
+or another vote automatically added to an independence count.
+
+The same check also yielded a positive comparison: 11Q10 column 38.2–3
+explicitly describes forgiveness of the friends' sins on Job's account.
+The independent reader checked the relevant words outside supply brackets
+and distinguished a nearby superscript insertion. This semantically parallels
+Greek 42:9 but does not prove shared lost Hebrew or independence from Greek;
+contextual interpretation remains a serious explanation.
+
+The documentation workflow keeps attestation, source priority, English and
+canon separate. It preserves the significant Greek form without inventing its
+Hebrew precursor, identifying its named Syriac book with a surviving Targum, or
+forcing earlier Hebrew afterlife passages into harmony. A labelled parallel
+Greek presentation or disclosure could be useful after its own application
+review; this pass does not apply it. The packet records 66 exact file pins,
+17 retained-render bindings/dimensions and 29 canonical baseline controls.
+Independent source/report review passed at report SHA256
+`7434422130697c1b26c9f84adc7fb3e4ab9ca97fb0251c81eb6a058c581b9eb6`
+and review-input packet SHA256
+`b718a334998df011ea1306c5006cebd5b7c129a6ae2a394072c685cf16927ce4`.
+The reviewer checked the decisive article pages, not the complete article,
+and the actual bounded source scopes. Its strongest objection remains the
+unverified papyrus alignment and versional evidence for earliest Greek history.
+Root's final validation also passed all 66 pins, 17 render bindings, 29 baseline
+controls and 580 relative links; the unrelated untracked file stayed unchanged.
+These checks are separate from publication CI. No whole-corpus
+local rerun, manuscript recovery, ImageGen evidence, source/reader rewrite or
+canon addition is claimed. Next seek the exact target apparatus, papyrus notes
+and actual version entries, not another same-evidence preference vote.
+
+During this pass, both exact-head required CI jobs for PR274 completed
+successfully. A fresh clean/open/head check preceded its normal merge at
+`25da75638b5c91b92f729c22e7a662825e98541c`. This publication result concerns
+the previously reviewed Kings application, not approval of a Job application.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

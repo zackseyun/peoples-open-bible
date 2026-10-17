@@ -14414,6 +14414,79 @@ after another worktree check, local main and this research branch were safely
 fast-forwarded to the merge. Normal pushing of main confirmed it was already
 up to date remotely. Uncommitted current-case documentation was preserved.
 
+## 2026-10-17 — Modern Jeroboam argument and a separate reader disclosure
+
+The [reader follow-up](KINGS_12_READER_DISCLOSURE_2026-10-17.md) closes one
+specific access gap and prepares a separate factual application. New bounded
+Joosten author/institution searches and an ordinary Peeters preview route did
+not yield the chapter (preview 404); no snippets were adopted as its argument.
+Those routes are stopped. The other reused source reader found Darshan's public
+author upload, exposing the complete pre-pagination 1–23 text with notes and
+bibliography. Root also read all 142 exposed reader lines. The retained private
+composite matches all four overlapping normalized-reader responses, with exact
+overlap agreement. It is not downloaded HTML or PDF, and its flattened tables
+do not establish new glyph readings or layout. The contract pins the six private
+source files. The earlier abstract-only source snapshot remains unchanged as
+history; the report identifies exactly which consultation status is superseded.
+
+The new reader note is drafted from the already reviewed historical Greek
+edition, not from the modern article's English Bible quotations. At 12:3 it
+describes the differing participation clauses, return placement and expanded
+story, while explicitly retaining uncertainty. The existing assembly note's
+marker moves onto its word. Hebrew, marker-free main English, existing note
+bodies, lexical rationales and original AI provenance stay unchanged. Five
+exact baseline archives and draft/needs_review status prevent transferring
+historical approvals to the new note. This is not an application of a newly
+selected Hebrew form or a claimed novel reading.
+
+The [contract](../sources/textual_restoration/comparisons/kings12_reader_contract.2026-10-17.v1.json)
+and complete candidate were frozen before independent application review.
+The read-only scoped checker validates the full allowed record delta, schema,
+archives, anchors, protected unrelated work, and all 817 current book files
+against an immutable Git archive. Full preflight used the actual exporter with
+baseline/candidate loader overlays: 22 chapters, 817 units, changed ID only
+12:3, all other 816 units and book metadata identical. No full-book output file
+was generated. The exported new note and its reason match the candidate exactly.
+
+Validation routing initially named a nonexistent test module. A subsequent
+whole-module selection was broader than needed and was interrupted by signaling
+only its verified process. Neither run is reported as a suite pass. The corrected
+selection—18 footnote-audit checks and six generic reader-export checks—passed
+all 24 tests in 28.073 seconds. No dependency installation, runtime exporter
+change or CI workflow expansion was made. The independent reviewer is asked
+to run structural checks and assess source/application fidelity, not duplicate
+the full-book export or vote again on Hebrew priority.
+
+That single bounded factual application review passed at the exact four
+artifact hashes recorded in the
+[receipt](../sources/textual_restoration/applications/kings12_reader.2026-10-17.v1.json).
+Its actual scope includes complete candidate/contract/checker/report, target
+and paragraph context, reused complete BM source/key reading and selected
+modern-article paragraphs. It reproduced structural checks, six private pins,
+142 source-reader lines and 108 matching overlap lines; it did not claim a
+complete modern-article reading or independent full export. Root then applied
+the exact reviewed candidate and ran full applied checks: only 12:3 changes,
+the other 816 book records/units and metadata stay unchanged, and the real
+canonical target loader/export matches the candidate. Hebrew, marker-free
+English and original provenance are preserved. No deployed-reader verification
+or historical source-priority approval follows. The new record remains draft
+and needs_review, with no transferred historical approval. Prior source records
+and their pre-application pins stay frozen.
+
+The preceding source-only PR 281 passed both required `corpus-integrity`
+checks at `6bec58a26e31d30f1b7a4a8a530c2c3fee398058`. A fresh exact-head,
+complete-check-list, zero-blocking-legacy-status and clean/mergeable guard
+allowed normal merge as `6dc0fa7b5b11ae39bbf6645f3c6b4a5cd75bb18d`.
+That merge publishes the source dossier, not this later reader application.
+Main also contains 17 unrelated Enoch-review additions from another task.
+A fresh tree comparison confirmed that these are the only incoming differences
+from this application's baseline; no Kings record or pinned input changes.
+After verifying main was absent from other worktrees, local main and the reader
+branch were safely fast-forwarded, preserving those additions and the current
+uncommitted application. Normal pushing of main confirmed the remote was
+already up to date. The applied structural check passed again after that
+fast-forward without repeating the expensive full export.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

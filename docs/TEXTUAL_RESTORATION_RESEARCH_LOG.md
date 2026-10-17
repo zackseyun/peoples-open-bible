@@ -13450,6 +13450,62 @@ There is no source/translation diff against297de693ae; no new corpus test or
 book export was needed for this research-only update. Main publication still
 requires the current head's successful protected checks.
 
+## October 16 — Vatican image and the Esther literary forms
+
+The previous turn was progress: it committed and pushed dd44d9a9f9 with new
+ending-witness and Augustine evidence. Its exact-head required checks were
+confirmed live at this turn's start; no expired observation was treated as a
+failed/stopped job and no job was restarted. The work then moved from a
+published witness map to actual imagery, alongside a bounded broader-OT triage.
+
+The official Vatican **digi** viewer exposes an accessible manifest and images.
+Root acquired folios 30r–v and located 15:29 on 30v, written lines 7–10. Root
+and a second reader's original-image check corroborate BMT v245's long branch
+without initial pronoun. Exact verb-end orthography remains uncertified; the
+normalized published string is not a diplomatic transcription. A later crop
+is a potentially reencoded display aid, not a pixel-preserving new source.
+The image-specific report review passes within that scope. Institutional
+metadata, native dimensions and study-only rights remain separate checks;
+the images are private and no ImageGen output supplies letters or evidence.
+
+An independent bounded portfolio search identified the previously unperformed
+[Esther 8–9 comparison](ESTHER_8_9_SOURCE_COMPARISON_2026-10-16.md).
+Root and the delegated reader completed the full Bezold article, including
+notes and bibliography, then compared actual RH wording and seven current POB
+records. Root recovered the initially truncated middle sections before claiming
+a complete reading. The Greek is not uniformly less violent or devoid of
+defense language. Its plunder, agency and numeral differences require connected
+comparison rather than a moral preference or automatic Hebrew retroversion.
+Alpha remains reported through the author; its direct text has not been checked.
+
+The same reader and root visually checked complete Swete pp. 776–777, its
+preface and sigla. Affirmative plunder at 9:10 has a specific A killing prefix,
+not a reported negative; nearby negative-plunder language has hand/placement
+variation across 9:16–17. This completes the old-edition test, not all-Greek
+coverage or a proof against early negative loss. The source/report review
+passes with those limits. A local numbering audit finds 104 ESG rows explicitly
+partitioned as Additions A–F and confirms ADE's shifted verse labels. Neither
+stream supplies independent primary evidence. An initial Hebrew XML query
+used the wrong element names; the corrected OSIS navigation supplied the named
+controls, so the empty query was not used as absence evidence. Ordinary RH
+downloads returned 403 although actual web text was readable; no private
+chapter snapshot or access bypass is claimed.
+
+The documentation workflow keeps source attestation, literary interpretation
+and canonical application separate. No source, main English, notes or canon
+change follows. The next evidence is new witness collation/imagery for Samuel
+and connected modern apparatus, Alpha text and calendar controls for Esther;
+the completed image and edition checks are not tasks to repeat.
+
+Validation passes both JSON packets, nineteen unique private-source byte/hash
+pins, four WLC pins, nine unchanged canonical records, two local Greek-stream
+pins, both exact reviewed report hashes, and the protected untracked-file pin.
+Manifest/canvas/image bindings and native JPEG dimensions are checked, as are
+559 relative file-link targets and diff whitespace. There is no biblical-text
+or source-corpus diff against dd44d9a9f9. No full corpus test or book export was
+needed for these research-only changes. Publication to main remains subject
+to the exact committed head's required checks and branch protection.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

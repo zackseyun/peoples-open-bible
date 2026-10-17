@@ -87,8 +87,8 @@ this volume's own key, printed pp. v–vi / PDF pp. 11–12.
 
 The Samuel key identifies 19 as Chigi R. vi. 38, 108 as Vatican Gr 330,
 82 as Coislin 3, 127 as Moscow Synodal Gr 31 and 93 as Royal 1 D. ii. These
-are the edition's historical identifiers, not freshly verified current shelfmark
-or custody records. Its b₂ = 29 is a different siglum and belongs to the long
+are the edition's historical identifiers; the current institutional route is
+now verified for Vatican Gr 334 below, not for every listed object. Its b₂ = 29 is a different siglum and belongs to the long
 branch; confusing b with b₂ would reverse the attribution.
 
 The edition's general instructions, Genesis printed p. ii / PDF p. 10, explain
@@ -99,6 +99,41 @@ ending subentries; the nearby b* omission concerns **τοῦ**, not the final
 pronoun. This sample is not a complete supporter census, hand collation or
 proof of textual independence. Root and the delegated reader visually checked
 the target, the Samuel key and the general convention page.
+
+## Vatican Gr 334 image confirmation
+
+The [official Vatican viewer](https://digi.vatlib.it/view/MSS_Vat.gr.334/0070)
+now supplies an actual image at folio 30v. Its advertised IIIF manifest identifies
+canvas p0070 as 30v; the [institutional content record](https://digi.vatlib.it/mss/detail/222916)
+places Regum I at 1r–60r. The manuscript's general record gives a broad
+tenth–eleventh-century date, not an exact date for this passage's reading.
+The earlier unsuccessful viewer open did not establish an access barrier;
+this continuation used the accessible official **digi.vatlib.it** route and
+the manifest URL exposed by its viewer.
+
+Root located the passage by reading the preceding folio 30r, then read 30v.
+Written lines 7–10, counted from the first main-text line, contain the verse's
+division/nonhuman sequence and longer ending. After **τοῦ μετανοῆσαι**, the
+threatening verb follows without initial **αὐτός**. The standing-fast clause
+with **καὶ οὐκ** follows, and verse 30 begins without an additional final
+pronoun. This confirms BMT's qualified v = 245 long branch in the photographed
+continuous body text. No hole or obvious interlinear insertion interrupts
+these junctions; that observation does not establish an unrevised original hand.
+
+**ἀπειλήσει καὶ οὐκ ἐμμενεῖ** remains a normalized rendering following BMT,
+not a diplomatic transcription of the photograph. Exact final vowel spelling
+and diacritics are not certified by this check. Root and a second reader
+inspected the original full JPEG; both knew the published reading. This is
+context-aware image corroboration, not a blinded two-family reading or a new
+discovery. The second reader's later JPEG crop is only a potentially reencoded
+display aid, not pixel-identical evidence or an additional source.
+
+The downloaded full images are 1841 × 2381 pixels for 30r and 1834 × 2380
+for 30v, matching their manifest dimensions. The viewer permits personal study
+and requires permission for publication; images remain private, with only
+locators, hashes and these bounded findings in Git. No ImageGen restoration,
+new Hebrew letters, source-priority verdict or POB change follows. Further
+enlargement of this same image is not the next historical test.
 
 ## Augustine quotes and interprets the long clause
 
@@ -202,8 +237,10 @@ access results are not evidence for or against his explanation.
 
 The three ending branches and the bounded BMT siglum sample are now checked;
 do not repeat the same apparatus entry as a new collation. The next useful
-Greek test is source imagery or a new critical collation for the identified
-witnesses, including correction hands and local shortening behavior. Josephus,
+Greek test is new critical collation or other identified witness imagery,
+including correction hands and local shortening behavior. Vatican Gr 334's
+qualified long branch is now image-corroborated at the scope above; do not repeat
+its preview as new evidence. Josephus,
 Numbers and Augustine are directly checked at their stated scopes. Augustine
 is a substantive quotation but does not settle direction; repeating these
 parallels would not supply a new witness or Hebrew retroversion.

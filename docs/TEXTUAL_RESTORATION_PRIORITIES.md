@@ -51,9 +51,9 @@ to its three questions, not to all OT evidence. A wider bounded audit found
 an unperformed comparison with an already acquired critical edition:
 [the narrative forms of 1 Samuel 17–18](SAMUEL_17_18_NARRATIVE_FORMS_2026-10-16.md).
 The first pass now checks four Greek junctions, 18:6's transition, the tiny
-4Q51 portions at 18:4–5, and the 18:28 combined reading. While the three
-historical questions below await new inputs, use this as the single active
-accessible case. The follow-up now checks individual 18:1 readings, c/x's
+4Q51 portions at 18:4–5, and the 18:28 combined reading. With the three
+historical questions below awaiting new inputs, this opened an accessible
+comparison. The follow-up now checks individual 18:1 readings, c/x's
 17:58 omission, g's relocation, and the Greek/Hebrew controls on a proposed
 Merab marriage ending. The full 2020 study has been read as indexed text.
 Next verify manuscript 845's actual coverage at 18:10–11 and 18:17 before
@@ -79,12 +79,28 @@ pronoun-only, long and zero endings, preserving a/v/z's pronoun differences
 and composite b versus b₂. Augustine's actual Latin chapter explicitly quotes
 the long ending but interprets it as human action, not the proposed divine
 rhetorical question. The edition manuscript's submission for peer review is
-verified; a released Göttingen volume and apparatus are not. Next obtain
-new imagery or collation of the identified Greek witnesses and McCarter's
+verified; a released Göttingen volume and apparatus are not. Actual Vatican
+Gr 334 folio 30v now image-corroborates its long branch without initial pronoun;
+exact verb-end spelling and historical priority remain unapproved. Do not
+repeat that image as new evidence. Next obtain
+other witness imagery or new collation and McCarter's
 actual argument through new lawful routes. These apparatus and parallel checks
 are complete at their stated scopes, not tasks to repeat. No source or reader change is
 applied by this case. The 845 edition-access hold does not block this distinct
 published-evidence route or imply exhaustion of the wider OT program.
+
+**October 16 broader comparison opened:** [Esther 8–9](ESTHER_8_9_SOURCE_COMPARISON_2026-10-16.md)
+now compares linked authorization, plunder, agency and casualty differences.
+The complete Bezold article and actual RH chapters are checked; Swete's target,
+key and conventions confirm positive 9:10 plunder with A's killing prefix,
+not a negative at that entry. Neighboring 9:16–17 wording moves across verse
+boundaries and correction hands. Greek self-help, gathering and Addition E's
+resistance wording prevent a blanket absence-of-defense claim. Next consult
+the modern connected apparatus and direct Alpha text/numbering, and test the
+article's linked-calendar argument. Do not repeat the completed Swete check
+or use standalone local ESG Additions numbering as continuous Esther.
+Source, English, notes and canon remain unchanged; the held Samuel history
+does not block this distinct consequential comparison.
 
 **Related historical control completed:** the
 [Hannah prayer clause at 1:13](SAMUEL_1_13_PRAYER_PLUS_2026-10-16.md)

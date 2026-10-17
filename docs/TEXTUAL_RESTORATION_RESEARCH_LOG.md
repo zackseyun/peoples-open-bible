@@ -15078,6 +15078,62 @@ verifier and the protected Genesis hash. No broad suite was rerun for these
 research/documentation additions. Canonical source/English/notes and canon are
 unchanged; the full goal remains active.
 
+## October 17 — Apply the provisional 1 Samuel 2:22 source and English
+
+The preceding turn made progress by placing the reviewed source in the partial
+corpus, testing the real chapter-to-provenance route and correcting the false
+schema-blocker assumption. Its [PR 298](https://github.com/zackseyun/peoples-open-bible/pull/298)
+remains a separate research/preparation record. During this continuation,
+[PR 296](https://github.com/zackseyun/peoples-open-bible/pull/296) passed both
+existing checks, 117485724162 and 117485649090, and merged normally as
+`629422a66a23d68591df4ce3c1893de50c61a01f`. No job was restarted or protection
+bypassed. This is research integration, not the later canonical application.
+
+The [application report](SAMUEL_2_22_APPLICATION_2026-10-17.md) records a real
+local source and English change, not another preference vote. Preparation
+exposed one metadata defect: the active description of the longer reading
+would falsely say it remained canonical after adoption. A v2 candidate corrects
+only that description; Hebrew, English, both notes and five patches are
+identical to v1. The source wrapper now binds the v2 candidate, composition
+and actual new review. All frozen research/preparation artifacts and their
+historical flags remain unchanged. Their previous corpus-source pin is
+reproduced from Git `032c4620d5e8d8faa1c5bf9cb56fa16327be47d5`, not silently
+replaced with the new live wrapper.
+
+A fresh independent task-agent judge read the full connected dossier, exact
+plan/delta, policies and delivery/integration evidence. It approved the
+provisional source/full record, exact canonical application and repository
+publication readiness, conditional on the actual postchecks. It did not
+repeat browser observations, source-image reading, exports, tests or network
+checks, and did not certify the deployed reader. Its review accepts the
+existing selected-verse Check Provenance arrangement. The user's concern about
+messy inline disclosure therefore does not require a new panel or external
+publisher/reader code changes. None were implemented. This is bounded
+task-agent review, not external scholarly peer review or unanimity evidence.
+
+Root applied the exact candidate bytes to 1 Samuel 2:22 and independently
+verified strict source/full-record validation with literal trusted hashes,
+all 811 raw book paths and the actual 31-chapter export. Only 2:22 changes;
+all other 810 raw/exported verses, including 17:4, are preserved. Both notes
+survive the local export; it still does not carry Hebrew source JSON.
+The new case module passed nine tests in 53.205 seconds, executed once by the
+test agent and completely read by root. Root's three existing Samuel/footnote
+modules passed 48 tests in 326.461 seconds. Tests cover historical replay,
+exact application, rejected source/English/note/review drift, old-score
+nontransfer and the raw-source overwrite guard. CI adds the module and two
+baseline fetches without removing other checks. The unrelated untracked
+Genesis draft retains its original hash and is not staged.
+
+The [actual application receipt](../sources/textual_restoration/applications/samuel2_22_application_20261017/application.v1.json)
+separates adoption from source-stage false flags. The repository now locally
+selects the shorter main text, while retaining the full longer allegation,
+age uncertainty and other contrary evidence in the notes/apparatus. This is
+a known published variant newly applied to POB, not newly deciphered ink or
+a settled claim about the earliest wording or historical conduct. No canon
+change follows. Ordinary CI/main integration and actual Samuel public-reader,
+navigation, manifest and publisher checks remain pending; local tests do not
+certify deployment. The broader source-comparison goal remains active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

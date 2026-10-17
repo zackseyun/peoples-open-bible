@@ -145,3 +145,62 @@ manuscript-level comparison remains a separate source-selection gate.
 Do not repeat abstract searches or the failed download routes without new
 access evidence. No ImageGen, fresh transcription, independent review,
 canonical change, or deployment occurred.
+
+## October 16 full chapter review and distinct Greek forms
+
+The [new evidence record](../sources/textual_restoration/comparisons/samuel14_41_greek_forms.2026-10-16.v1.json)
+extends the earlier three-page dissertation check. A delegated reader read
+Yardney's complete chapter 3, printed pp. 129–201 / PDF pp. 141–213, including
+notes, and visually checked Figure 2, Table 12 and Figure 3. Root read the
+specified argument and counterargument pages and visually checked Figure 2
+and Table 12. This is a full chapter consultation, not a full-dissertation
+reading or new manuscript decipherment.
+
+**The chapter does not argue that a Greek translator invented the longer
+prayer.** Yardney favors a longer Hebrew prayer and treats the shorter MT as
+copying loss between repeated “Israel.” Her separate claim is that the earliest
+Greek interpreted that longer prayer creatively. Her explicit statement on
+p. 158 favors Urim/Thummim in the Hebrew Vorlage, not *tāmîm* as its better
+reading. Rejecting 4Q52 fragment 2's identification in her later work therefore
+must not be represented as rejection of the longer prayer. The fragment remains
+excluded from positive support under the earlier disposition.
+
+The actual [Bible Society Rahlfs–Hanhart display](https://www.die-bibel.de/bibel/LXX/1SA.14)
+at 14:41 has conditional **εἰ** and **ἐν τῷ λαῷ**, “in the people.” Root also
+visually read BMT printed pp. 45–46 / PDF pp. 61–62, including an enlarged
+target. Its B-based continuous text instead has initial **ἤ**, lacks that
+preposition, and has an additional **δὸς δή** before “to your people.” These
+are published edition readings, not independently inspected codex pixels.
+
+| Text under discussion | Relevant construction | Status and meaning |
+| --- | --- | --- |
+| Rahlfs–Hanhart selected text | Conditional opening; “in the people” | Alternative outcomes, conventionally understood as Urim versus Thummim. |
+| BMT's B-based text | Question opening; “to your people”; extra command | Distinct printed wording; not identical to Rahlfs or Yardney's combined text. |
+| Yardney's A/B | Combines preferred readings from A and B, removing B's extra command and correcting its verb | Her reconstructed Old Greek asks for an indication and then the people's exoneration. It is not a verbatim witness. |
+
+Her argument on pp. 155–164 relates the requests to the stated result:
+Saul/Jonathan are selected and the people cleared. She proposes that a translator
+read the consonants תמים as “blamelessness,” making those outcomes explicit.
+She acknowledges that selection already implies the requested indication
+(p. 156 note 86); the alleged mismatch concerns what is explicitly said.
+That proposed motive is an explanation, not an observed copying event.
+
+Her Greek-priority argument on pp. 194–199 treats **ὁσιότης** as inherited in
+the Antiochene and V forms even when their syntax restores the Hebrew sense.
+Root directly checked the selected Greek **ἀλήθεια** equivalents at Exodus
+28:30, Leviticus 8:8 and Deuteronomy 33:8 against local WLC. This supports the
+Pentateuchal comparison, not a mandatory rule for another translator. The
+chapter itself acknowledges the missing same-book Thummim control (p. 150
+note 69). Its V text is reconstructed from apparatuses; its competing
+Aejmelaeus text is a proposal quoted in 2017, not our fresh consultation of
+the current critical apparatus. Priority therefore remains open.
+
+**POB consequence:** retain source and main English provisionally, without
+claiming renewed approval of “Give a perfect lot.” Yardney's pp. 133–134
+challenge that supplied-noun interpretation directly; the existing note already
+admits that “lot” is supplied. A separate English comparison should weigh the
+short Hebrew phrase's grammar and contextual intelligibility. Any revised
+reader disclosure should identify the selected Greek edition and distinguish
+the other Greek constructions. No candidate is applied in this research step.
+Earliest Greek, closest Hebrew rendering, reconstructed Hebrew wording and
+English publication are four distinct decisions under the existing method.

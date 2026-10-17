@@ -13233,6 +13233,41 @@ No biblical record changed against ef68337470. PR267's two exact-head checks
 were confirmed running at that commit; publication remains subject to the
 new head's required checks, without a restart or protection bypass.
 
+## October 16 — Samuel 14 41 prayer length and Greek interpretation
+
+The preceding turn made progress by completing the Bodleian review correction
+and acquiring a Samuel study, without treating acquisition as attestation.
+This [new chapter comparison](SAMUEL_SOURCE_COMPARISON_PASS_2.md#october-16-full-chapter-review-and-distinct-greek-forms)
+reads the study's full14:41 argument. One delegated source reader completed
+all73 printed chapter pages and notes, with three visual table/figure checks.
+Root read the specified decisive pages, checked Figure2/Table12 visually,
+and directly inspected BMT's B-based14:41 alongside the publisher's selected
+Rahlfs-Hanhart text. This extends the earlier three-page fragment discussion.
+
+The result separates a longer Hebrew prayer from a proposed interpretive
+Greek translation of it. Yardney favors the former; her creativity argument
+does not make the whole prayer a Greek invention. Her A/B is eclectic, not
+a verbatim codex, and the claimed direction competes with a different critical
+reconstruction. Direct Pentateuchal Greek controls support her lexical premise
+without supplying a mandatory Samuel rule. The proposed translator motive
+remains inference, not recovered ink. Earlier4Q52 exclusion is unchanged.
+
+The study also directly challenges “Give a perfect lot.” Current source,
+main English and note remain provisionally unchanged, not newly certified.
+A separate linguistic comparison and edition-qualified reader disclosure
+are identifiable next tasks; no unreviewed candidate or retroverted Hebrew
+was applied. The existing four-decision method suffices; no redundant rule
+expansion, canon recommendation or generated-image evidence is introduced.
+
+The chapter reader's bounded factual review passed without corrections. This
+was a context-aware review against the chapter, not an independent recheck
+of root's printed Greek controls, file hashes or earliest-source priority.
+Validation passed JSON parsing, two complete PDF pins, five Hebrew control
+pins, unchanged canonical/protected-file pins, 600 relative file-link targets,
+four workflow YAML parses and diff checks. No biblical record changed against
+68007c52c7. Publication remains subject to the new head's required checks;
+neither a review pass nor a research commit authorizes bypassing protection.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

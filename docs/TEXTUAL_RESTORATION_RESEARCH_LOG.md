@@ -13811,6 +13811,63 @@ and unchanged source/English verify. No full-corpus/export rerun or historical
 priority approval is claimed. The new documentation's publication checks are
 separate from this source/report review.
 
+## October 17 — Solomon temple poem and source language limits
+
+The previous turn made progress through the directly consulted Joshua
+countermodel and its explicit next test. At this continuation's start, PR272's
+two exact-head integrity jobs were confirmed live. One subsequently passed;
+the other remained authoritatively in progress at the publication check.
+No restart, cancellation or protection bypass was warranted by the wait.
+
+A bounded search of the existing portfolio found an unperformed consequential
+comparison in [1 Kings 8](KINGS_8_TEMPLE_POEM_COMPARISON_2026-10-17.md).
+Ordinary institutional downloads yielded Pakkala's 2014 reprint and Richelle's
+2018 article. Root read their complete English arguments and notes, then
+visually checked the decisive Hebrew/Greek reconstructions and tables. These
+are competing editorial arguments, not extra manuscripts or recovered letters.
+
+The Greek source reader checked actual Swete target pages and the same
+edition's conventions, keys and qualified date descriptions. Root checked
+the decisive pages, connected prayer wording and Chronicles parallel as well.
+The B-based early junction omits the poem at that position but contains its
+longer form after 8:53. The explicit A early insertion and positive A late
+local variants qualify a uniform two-form story. Complete unchanged late A
+wording still depends on the collation convention and silence, not newly read
+manuscript ink. Greek accusative sun/nominative Lord cannot be silently
+translated as a speaking sun. In/from-darkness, imperative/building claim,
+newness/eternity, pronouns and source citation remain distinct comparisons.
+
+The Latin reader obtained Vercellone's original published target and key after
+the official Moreno thesis route returned no bytes. Root visually checked all
+three target/key pages. The edition explicitly reports marginal, Greek-derived
+Latin with a first-person command; alternatives and editorial commentary must
+not be flattened into one reading. Its physical codex date, hand and modern
+siglum are not certified by that passage. An adjacent early-date description
+belongs to another manuscript. No unauthorized access or external request
+was made.
+
+The Hebrew reader inspected all displayed primary rows in three Kings records
+and four identity controls. The 4Q54 gap between early 8:9 and 8:16–17 is not
+an omission witness. Reference ranges include supplied wording; unassigned
+scraps and unindexed quotations prevent an exhaustive absence claim. Existing
+reciprocal labels, repeated displays and held reassignment challenges remain
+qualified. Root checked 45 current canonical source, English and note controls,
+including the heavenly dwelling expressions and actual Jashar references.
+That is not a full rationale/lexicon audit or corpus-quality certification.
+
+The documentation workflow preserves attestation, interpretation and application
+as separate decisions. No combined Hebrew, English rewrite, note, order or canon
+change is applied. The independent bounded review passes at the recorded report
+and review-input packet hashes after checking decisive sources and article
+sections, not independently reading both complete studies or every QDR row.
+All 93 exact file pins, 24 render dimensions/bindings, 45 unchanged canonical
+controls and protected unrelated data verify. No full-corpus/export rerun is
+claimed for documentation-only changes. The next evidence is a broader target
+collation and Latin edition/manuscript context, not another preference vote on
+these same inputs. A reader disclosure is a separate possible application;
+the cited Song book is not recovered or promoted to the canon. The wider OT
+goal and manuscript-recovery evaluation remain incomplete.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

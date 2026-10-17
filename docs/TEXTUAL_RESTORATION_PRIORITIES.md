@@ -99,6 +99,15 @@ the now-applied provisional source. The separate application review approves
 repository publication readiness with required checks; it does not establish
 the exact earliest wording or certify a deployed release.
 
+The [direct Vaticanus check](SAMUEL_2_22_VATICANUS_IMAGE_CHECK_2026-10-17.md)
+now confirms the known shorter visible Greek main-column junction on manuscript
+page 311, column III. It does not certify the original hand, read the nearby
+margin or add another witness alongside the edition. The user's brief
+publication hold was explicitly superseded by permission for evidence-led
+omission; PR 299 was closed unmerged, then reopened. Its other wording choices
+retain separate feature-specific arguments and limits. CI and actual future
+delivery remain gates, not evidence of textual originality.
+
 **October 17 new consequential comparison:** [2 Samuel 21:8](SAMUEL_21_8_MOTHER_COMPARISON_2026-10-17.md)
 now has a scoped mother-name dossier. Actual Kennicott 591 identifies
 מירב198 and מרב250; 172 omits the name, not a third Merab witness. The DJD

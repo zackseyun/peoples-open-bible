@@ -15139,6 +15139,50 @@ scholarly review of those separate tasks. The unused local main was advanced
 to the fetched remote main and its normal push was already up to date. The
 broader source-comparison goal remains active.
 
+## October 17 — Direct Vaticanus observation and superseded publication hold
+
+The preceding turn made progress by committing the exact provisional Samuel
+application, adding nine case tests and passing 48 existing Samuel/footnote
+tests. It submitted [PR 299](https://github.com/zackseyun/peoples-open-bible/pull/299),
+head `16a25b296789181719872efbace05d4f6d5abc37`, rather than claiming deployed
+delivery. This continuation confirmed both PR 298 checks successful and merged
+that research/preparation PR normally as
+`2bc5f7a102037aa6d7ca54936c0080165c2e4fe8`. The incoming separate Enoch 26:5
+work was preserved, not newly adjudicated here. The unused local main was
+fast-forwarded after an ancestry/worktree check; normal push was up to date.
+PR 299's existing jobs were verified live and not manually restarted.
+
+While those jobs ran, one bounded agent located the actual Vaticanus page.
+The [direct image follow-up](SAMUEL_2_22_VATICANUS_IMAGE_CHECK_2026-10-17.md)
+confirms the known shorter visible main-column junction on manuscript page
+311, column III, rather than another edition alone. Root independently viewed
+the retained full page and two regions, read the official manifest metadata
+and recomputed hashes. The margin remains unread; ordinary images do not
+certify the original hand separately from retracing. Both readers knew the
+published wording. No blinded benchmark, new letter, extra witness or changed
+source priority is claimed. Rotated margin attempts stopped without a reading.
+
+The related progress chat then transmitted a human publication hold. Root
+verified the actual human reply, closed PR 299 unmerged and preserved its
+branch. The user promptly superseded that instruction with permission for
+evidence-led omission. Root verified that actual message too and reopened the
+same unchanged head at 20:37:55 UTC. The PR body and
+[user-decision record](../sources/textual_restoration/applications/samuel2_22_user_instructions.2026-10-17.v1.json)
+state that the blanket hold and its extra approval gate are no longer active.
+The intervening main/CDN check matched revision `2bc5f7a10203` and retained the
+full allegation, with exact payload/target hashes recorded. No corrective
+rollback or deletion publication occurred during the hold.
+
+Root reassessed the clause and bundled wording separately using the existing
+complete assessment, controlling method and new visible-body observation.
+The provisional shorter preference remains; the first כל component is weaker,
+and neither the image nor CI settles Qumran layout or earliest wording.
+No Hebrew, English, note or historical approval was changed. The current
+research branch starts from main, so this follow-up itself does not carry the
+pending canonical deletion. Candidate/application records remain preserved on
+PR 299's branch. Future merge and actual reader checks remain pending; the full
+source-comparison objective remains active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -166,6 +166,23 @@ after bounded access checks. Stop those exhausted routes; seek actual target
 pages through a genuinely new lawful route, or proceed with another consequential
 OT comparison. Source priority and application remain held.
 
+**October 17 consequential comparison opened:** the
+[Solomon temple poem](KINGS_8_TEMPLE_POEM_COMPARISON_2026-10-17.md) now compares
+Hebrew 1 Kings 8:12–13 with Swete's longer Greek form after 8:53, its explicit
+early A insertion and later A local variants, the Chronicles parallel, and
+Vercellone's actual marginal Latin report. The full English arguments and notes
+of Pakkala's 2014 and Richelle's 2018 studies are read; their reconstructed
+Hebrew remains distinct from attestation. The printed Greek sun is an object,
+not a speaking subject. Latin has a first-person building command but is
+Greek-derived marginal evidence. The checked Judean Desert records preserve
+no identified target or continuous junction; their gaps do not attest omission.
+Current source, main English, notes and canon are unchanged. Next obtain the
+broader Greek/Antiochene target collation and a modern Latin edition or manuscript
+context before deciding priority or a combined reconstruction. An eventual
+reader disclosure requires separate application/export review. Do not repeat
+the completed article, Swete, Latin-report or bounded coverage passes as new
+evidence. The Song-book citation is not a recovered book or a canon decision.
+
 **Related historical control completed:** the
 [Hannah prayer clause at 1:13](SAMUEL_1_13_PRAYER_PLUS_2026-10-16.md)
 is now checked in the printed Samuel apparatus. The Genesis controls limit

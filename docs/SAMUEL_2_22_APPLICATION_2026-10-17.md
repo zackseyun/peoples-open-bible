@@ -113,6 +113,14 @@ Actual new-text, two-note and website-sync delivery therefore remain unverified;
 the pre-publication browser observations above must not be relabelled as a
 successful release check.
 
+The subsequent [dated public delivery check](SAMUEL_2_22_PUBLIC_DELIVERY_2026-10-17.md)
+now verifies the updated upstream CDN, actual composed Hebrew and English,
+both full public notes, their readable anchor and post-merge selected-verse
+provenance navigation. The actual chapter still showed the older wording;
+its separately dispatched website rebuild remained pending at that observation.
+Thus disclosure and CDN delivery passed their scoped checks, but synchronized
+chapter delivery did not. The earlier receipt and observations remain dated history.
+
 This closes the exact local application step, not the broader comparison
 program. Further Samuel spatial work requires new independent constraints,
 not repeated previews or more votes on the same evidence. Known textual

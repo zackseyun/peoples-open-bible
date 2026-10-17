@@ -72,6 +72,10 @@ that existing on-demand arrangement; no new inline panel is required or
 implemented. Both exact-head CI checks passed and ordinary main integration
 completed; next verify the actual
 Samuel chapter, provenance, selected-verse navigation and publisher revision.
+The [subsequent live check](SAMUEL_2_22_PUBLIC_DELIVERY_2026-10-17.md) has now
+verified the CDN's complete Samuel text and updated provenance with both notes
+and navigation. The chapter still displayed older text while its website
+rebuild was pending; that is the remaining reader gate, not another source vote.
 Keep the reading view clean. Do not repeat a generic “LXX omits” claim,
 count QDR/DJD twice, turn supplied text into ink, or use ImageGen to decide
 the missing area. The held 198/250 image routes do not block this different case.
@@ -257,6 +261,13 @@ and Puech's 2015 re-edition remain unconsulted at the required target scope
 after bounded access checks. Stop those exhausted routes; seek actual target
 pages through a genuinely new lawful route, or proceed with another consequential
 OT comparison. Source priority and application remain held.
+
+The [original-study control](JOSHUA_24_ARGUMENT_CONTROLS_2026-10-17.md) now
+checks Holmes's actual emended table and authorial Hebrew retroversion. Neither
+is surviving Hebrew evidence; the priority hold remains. Its apparatus access
+check repeated the existing boundary rather than acquiring new pages. Follow
+the countermodel report's stop rule, not just the first dossier's older next-step
+paragraph, before investing in another access search.
 
 **October 17 consequential comparison opened:** the
 [Solomon temple poem](KINGS_8_TEMPLE_POEM_COMPARISON_2026-10-17.md) now compares

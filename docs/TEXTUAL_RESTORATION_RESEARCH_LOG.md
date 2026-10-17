@@ -15261,6 +15261,42 @@ The [active application report](SAMUEL_2_22_APPLICATION_2026-10-17.md) now
 distinguishes completed CI/main integration from pending public delivery.
 Frozen reviews and the original local application receipt remain unchanged.
 
+## October 17 — Verify public disclosure and qualify the Joshua argument
+
+The preceding continuation made progress: actual public Samuel provenance
+displayed the critical Hebrew, shorter English, full contrary apparatus and
+both exact notes, with Review needed rather than the old approval score.
+Root clicked the readable longer-reading note and repeated selected-verse
+navigation after merge. The [dated delivery check](SAMUEL_2_22_PUBLIC_DELIVERY_2026-10-17.md)
+also compared all 811 Samuel CDN texts with marker-free canonical English;
+all matched. Its manifest was a verified descendant of PR 299. The actual
+chapter remained older while the separate website rebuild was pending.
+No publisher/reader code was changed and the frozen local receipt was preserved.
+
+Both exact-head documentation checks then passed and PR 302 merged normally
+as `606b148c772f970c78f4b706a0a7be1d30e5d17c`. The requested website run
+and its companion were later authoritatively cancelled, not still active.
+A newer quiet-time run was queued; a fresh 22:34–22:35 chapter observation
+still showed the older text. Read-only inspection identified the newer
+workflow's cancellable build and separate non-cancelling publication jobs,
+not an established cause of the older cancellations. The delivery report
+preserves this result without relabelling its earlier successful checks.
+
+One bounded agent checked the Joshua apparatus route. It reconfirmed an
+access boundary already present in the separate countermodel report; it did
+not acquire a new collation. Root had followed the first dossier's next-step
+paragraph before reading that linked follow-up. The priorities now make this
+duplication explicit and retain the stop rule. No further same-route search
+or corrupted-OCR reconstruction is justified.
+
+The genuinely new [Holmes control](JOSHUA_24_ARGUMENT_CONTROLS_2026-10-17.md)
+comes from the actual 1914 book, not another article's quotation. Root visually
+read the complete relevant pages and a second reader checked its emendations,
+retroversion and literary dependency. The forty-year comparison is expressly
+emended; the Hebrew continuation is the author's proposed retroversion.
+These qualify the argument's evidential use without deciding priority or
+changing POB. Raw sources remain private; no generated ink or canon claim follows.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

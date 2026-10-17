@@ -238,6 +238,18 @@ export gate; all other 718 units and book metadata remain fixed. The repaired
 record remains draft/needs-review, without transferred old approval. No Hebrew
 replacement or historical-priority victory is claimed.
 
+**October 17 new source comparison:** the
+[Hoshea assessment](KINGS_17_HOSHEA_COMPARISON_2026-10-17.md) now compares the
+actual OL115 edition's intensified judgment at 2 Kings 17:2 with the negative
+WLC and Swete readings, inside 17:1–6. Both competing scholarly explanations
+were consulted at explicitly documented scopes, including the complete
+contrary article. The difference is meaning-bearing, but earliest Hebrew
+priority remains HOLD; no canonical record or English candidate changed.
+Next acquire the actual Antiochene target apparatus and test comparative
+royal formulas across the relevant translation/revision layers. Do not resume
+generic reliability counts, unrelated note-anchor polish or full-book exports
+as substitutes for this discriminating source comparison.
+
 **Related historical control completed:** the
 [Hannah prayer clause at 1:13](SAMUEL_1_13_PRAYER_PLUS_2026-10-16.md)
 is now checked in the printed Samuel apparatus. The Genesis controls limit

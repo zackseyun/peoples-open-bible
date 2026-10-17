@@ -14770,6 +14770,67 @@ checks safely advanced local main and the current research baseline; a normal
 main push again confirmed the configured remote was up to date. The follow-up's
 historical comparison baseline remains `2ea97c8a…`, not rewritten after merge.
 
+## October 17 — A conditional local layout test for 1 Samuel 2:22
+
+The preceding goal turn made progress: an explicit image-locator correction,
+matching historical-photo access and related source controls were committed
+and pushed as PR 291. This turn initially re-polled its same two live check IDs,
+117470715433 and 117470660366; neither was restarted. The next source experiment
+tests the actual spatial claim rather than rerunning that source-access work.
+
+Root read complete DJD printed 16–17 / PDF 39–40 in text and newly rendered
+images. The introduction positively reports preserved column-III margins and
+9 cm width, while warning of shrinkage and differing column widths. This is
+stronger, more specific published physical evidence than a generic average;
+it remains distinct from a measurement reproduced by this project. The
+[layout stress test](SAMUEL_2_22_LAYOUT_STRESS_TEST_2026-10-17.md) records its
+actual authority and full table-3 column-III sequence.
+
+The exact same-prefix/suffix comparison gives 39 letters + 9 spaces = 48 units
+short, or 74 + 18 = 92 with the previously specified MT long clause. Excluding
+the target and four dashes leaves 38 published counts ranging 44–54. Under an
+explicit equal-average-unit model, fitting 92 into the 54-unit comparison width
+requires about 0.587 times the average advance; even illustrative 50% widening
+only reaches 81 units. These are model scenarios, not measured shrinkage bounds,
+independent capacity limits or confidence scores. The table itself includes
+reconstructed wording. The 2026-05-21 QDR target primary rows were re-read
+locally and confirmed in the fresh public reader, without a full release-audit
+claim or counting its parallel MT row as scroll ink.
+
+The experiment supports the published short-line arrangement conditionally;
+it does not yet replace the provisional source judgment with independent
+physical proof. The next discriminating action is to validate transfer of the
+reported surviving margin to the target and measure the actual local mixture
+of letter/space advances. The method advances to 2.0.16 to prohibit using a
+reconstructed count table as an independent physical ceiling and require the
+same surrounding wording/anchors for competing count-based models. A manuscript
+omission would still not, by itself, establish the earliest Samuel wording.
+Canonical source, English, notes and approvals remain unchanged.
+
+One bounded quantitative reviewer checked the two complete new source pages,
+all 43 table entries and the arithmetic, returning PASS for report `047fe39f…`.
+The review does not certify image joins, margin transfer or actual glyph advances.
+Root separately checked seven existing source/repository pins, one canonical
+Git-baseline equality, two new render hashes and dimensions, report links, exact
+candidate strings and all calculation inputs. Frozen predecessor reports and
+receipts, plus the unrelated protected Genesis file, remain unchanged.
+The [bounded review receipt](../sources/textual_restoration/comparisons/samuel2_22_layout_review.2026-10-17.v1.json)
+pins its exact scope. Separately, the image reader observed rows 14–15 on the
+same photographed narrow tongue of fragment a, without a complete white gap
+between them: local vertical adjacency has photographic support, not only a
+supplied-text argument. The lower part of a shows an apparent intercolumn
+blank band, but transferring it upward crosses a narrow cracked/creased
+connection. The reader did not certify every join, shear or ruling, and did
+not establish a validated total width/transform. Actual local advances can be
+calibrated from upper extant spans in principle; this pass has not completed
+that measurement. This separate observation does not turn the count review
+into an independent physical-model pass.
+The separate reader used non-generative nearest-neighbor inspection derivatives
+and crops, not just native displays; their scope is retained in the receipt.
+Root then inspected the additional original lower-margin tile `a11483ce…`
+natively and pinned its bytes. No new acquisition, precise word boxes or
+accepted letters resulted from the enlarged views.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

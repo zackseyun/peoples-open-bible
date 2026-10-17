@@ -66,6 +66,13 @@ paper and checks actual Greek Exodus wording. None supplies new accepted
 letters or an independent missing-width measurement. Next build a common
 short/long layout test with independently constrained placements and report
 sensitivity to missing margins; do not infer the width from the preferred text.
+The [conditional layout stress test](SAMUEL_2_22_LAYOUT_STRESS_TEST_2026-10-17.md)
+now checks the actual published 9 cm margin report and same-line counts: 48
+units short versus 92 with the specified long clause. The table includes
+reconstructed text, so its 44–54 comparison range is not independent capacity
+evidence. Next validate margin transfer and actual local writing advances;
+do not restart the search for a generic column width or treat these ratios as
+confidence percentages.
 
 **October 17 new consequential comparison:** [2 Samuel 21:8](SAMUEL_21_8_MOTHER_COMPARISON_2026-10-17.md)
 now has a scoped mother-name dossier. Actual Kennicott 591 identifies

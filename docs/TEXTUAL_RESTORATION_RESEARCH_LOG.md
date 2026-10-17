@@ -13714,6 +13714,63 @@ for these documentation-only changes. Review history and scoped validation are
 recorded in the new evidence packet; publication remains subject to exact-head
 protection checks.
 
+## October 17 — Joshua 24 ending and connected Hebrew controls
+
+The preceding goal turn made progress by locating the actual Jeremiah margin
+and correcting the major bracket-boundary interpretation. At this continuation's
+start, PR270's exact-head integrity checks were authoritatively confirmed live;
+their pending status did not warrant restarting them or treating the whole OT
+program as blocked.
+Both subsequently passed. A fresh exact-head/open/clean check preceded PR270's
+merge as 213bbe5a1a915df74241cdfb72ad8d59c9e08b2f; no protection was bypassed.
+
+A bounded selection audit found a consequential unperformed comparison in
+[Joshua 24](JOSHUA_24_ENDING_COMPARISON_2026-10-17.md), beyond the completed
+Jeremiah checks. Actual institutional/publisher downloads yielded Mäkipelto's
+2017 author offprint and McKinion's 2025 article. Root read both complete studies,
+including notes/bibliography, and visually checked the main tables and ending
+discussion. Their historical models remain proposals, not manuscript dates or
+observed decisions by ancient communities. The 2017 article expressly excludes
+the final 33a–b units from its main analysis; the 2025 study is a different lens,
+not an explicit comprehensive reply to it.
+
+Root and a source reader checked actual Swete Joshua ending, Judges parallel,
+circumcision, knives, assembly pages and the edition's own key. The different
+RH/Swete verse labels are mapped by content. Actual Greek controls retain divine
+deliverance, disobedient Egypt-warriors and replacement by sons; the longer ending
+is not proof of uniform erasure of Moses or the generation distinction. Forty-two
+and forty years are not silently harmonized. Eglon/Moab/eighteen years connects
+to a different Judges cycle from Cushan/Aram/eight years, without proving the
+original absence of intervening episodes.
+
+The Hebrew reader checked all primary rows of five relevant QDR witness files,
+separate from their biblical reference parallels. Root checked 4Q47 fragments
+1–2's relevant rows personally. The connected Joshua 5 evidence is not simply
+absent: it preserves portions of the Hebrew explanation. Its decisive
+circumcised/uncircumcised clauses and numeral remain supplied, however. No new
+join, geometry, photographed reading or direct Hebrew for the ending is claimed.
+No identified Joshua 24/Judges 2 target in this checked set is narrower than an
+all-discovered-source census. The tentatively aligned 1Q6 Judges 3:8 fragment
+does not preserve eight years.
+
+The documentation workflow separates content alignment, published preservation,
+literary interpretation and application. Current source, order, English, notes
+and canon remain unchanged; no eclectic hybrid or optimal-English claim follows.
+Review identified one source-attribution ambiguity: the table defaulted to RH
+although the chapter 5 control was Swete. That row now explicitly names Swete;
+RH 5 is not falsely claimed as a completed consultation. The initial finding
+and correction are preserved rather than silently replacing the review record.
+The next evidence is the actual target recensional apparatus and a discriminating
+transmission argument, not another complete reading of the same studies.
+Exact source, render and canonical-control pins are recorded in the case packet;
+independent bounded review now passes at the corrected report and review-input
+packet hashes. Eight private source files, nineteen renders, four frozen inputs,
+37 unchanged canonical controls and 572 relative links verify; protected unrelated
+data is unchanged. The judge checked decisive pages and selected article sections,
+not both complete studies or every QDR primary row. No full-corpus/export rerun
+is claimed for these documentation-only changes. Publication checks remain
+separate from historical priority and comprehensive corpus completion.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -138,6 +138,23 @@ preview indexed as Jeremiah proved to be Ezra II and is excluded. Do not repeat
 the completed target location, major-bracket check, article, junction, printed
 supplement or 4Q252 attribution test; no source or reader change is applied.
 
+**October 17 new consequential comparison:** the
+[Joshua 24 ending](JOSHUA_24_ENDING_COMPARISON_2026-10-17.md) now compares
+fidelity/death order, knives, Phinehas and the Moabite conclusion with Judges.
+The full 2017 and 2025 studies are read alongside actual Swete targets/key and
+selected RH controls. RH and Swete label the same units differently. The
+connected 4Q47 Joshua 5 control supplies partial Hebrew wording, not preserved
+proof of the crucial circumcised/uncircumcised clauses. Greek retains
+disobedient Egypt-warriors and their replacement; its forty-two and Hebrew's
+forty remain distinct. Eglon/Moab/eighteen years is not Cushan/Aram/eight years.
+These controls constrain a uniform ideological history without settling
+priority. Source, main English and reader notes remain unchanged. Next obtain
+the actual Margolis Part V target apparatus/conventions and substantive
+counterarguments; a specific DJD XIV placement/transcription check may further
+test the connected Hebrew evidence. Do not repeat the completed article,
+selected-text or QDR-preservation checks as new evidence. This distinct case
+advances the wider OT program while the prior portfolio's access limits remain.
+
 **Related historical control completed:** the
 [Hannah prayer clause at 1:13](SAMUEL_1_13_PRAYER_PLUS_2026-10-16.md)
 is now checked in the printed Samuel apparatus. The Genesis controls limit

@@ -14645,6 +14645,67 @@ The elapsed-time intervention did not turn partial work into implied coverage;
 the returned result and exclusions are retained. No second agreement loop
 was run. The pass does not select a Hebrew mother-name or approve application.
 
+## October 17 — The sexual-misconduct clause in 1 Samuel 2:22
+
+The previous turn made progress: witness identities and preservation metadata
+were checked and published as PR 286, with no recovered reading claimed. A fresh
+exact-head check confirmed its two required jobs remained live; no job was
+restarted. The broader goal remains open. Rather than repeat its held image
+routes or a readiness audit, root selected an unperformed consequential case:
+[1 Samuel 2:22](SAMUEL_2_22_SANCTUARY_CLAUSE_2026-10-17.md).
+The history search found only incidental inclusion in an earlier context
+contract, not an adjudication of this clause.
+
+Root read the complete current target YAML and 37 connected source/English
+records. The record's note concerns served/assembled and is anchored after
+very old; neither it nor historical AI agreement decides the inclusion question.
+The new comparison does not polish that anchor or transfer old approval.
+Two reused source readers handled the Greek apparatus and scholarly arguments.
+Root checked actual DJD transcription/argument pages and plate III, QDR's
+complete column-III table, the Greek target and enlarged apparatus, Driver's
+complete target pages, actual Josephus 5.337–342, and the Hebrew intertext controls.
+
+The short Qumran junction is spatially reconstructed, not wholly preserved.
+DJD explicitly argues that the long clause cannot fit; no new measurement or
+fresh letter is claimed from the degraded plate. Actual Greek branches prevent
+a blanket LXX-absence claim and preserve A's different verb and marginal/
+asterisk qualifications. Josephus's sexual mistreatment with force and gifts
+is positive early longer reception, not an exact Hebrew quotation or permission
+to add coercion to POB's Hebrew-based translation. Temple/doors and Exodus
+service-language controls support a possible expansion without proving its date
+or direction. Reported later mitigation makes censorship conceivable, not proven.
+
+The resulting working preference favors the shorter unit provisionally. The
+report includes an explicit eclectic WLC-minus-clause research candidate and
+its main-English consequence, rather than treating an unchanged base as a
+historical winner or substituting a minor note fix for source adjudication.
+Other opening variants and any complete canonical application remain separate.
+No source, English, note, approval or canon change is applied in this source pass.
+
+Modern access did not yield a complete target discussion: Harvey's body was
+restricted, Tov's bare/www author routes failed ordinary certificate/fetch
+checks, and an Emory download was inaccessible. Search-indexed text remained
+a lead; no complete-article claim follows. The two retained Yardney filenames
+proved byte-identical. No access gate was bypassed and failed routes were stopped.
+The [packet](../sources/textual_restoration/comparisons/samuel2_22_sanctuary_clause.2026-10-17.v1.json)
+pins source bytes, exact consultation scopes and unchanged canonical inputs.
+One fresh, bounded source judge is assigned only the decisive evidence and
+provisional preference, not another full-corpus/WLC/export pass or a source-truth
+vote. Root handles reproducibility separately. No new test infrastructure,
+book export, bulk OCR or ImageGen run was added.
+
+Root's scoped verification passed 18 file pins, seven render dimensions,
+37 raw baseline equalities and the ordered file-list digest, one report link,
+and whitespace validation. The protected unrelated Genesis file is unchanged
+and unstaged. The [single bounded review](../sources/textual_restoration/comparisons/samuel2_22_sanctuary_clause_review.2026-10-17.v1.json)
+returned PASS at report `b763b285…` and packet `9045c368…`. It checked the
+actual DJD, Greek, Driver and Josephus targets, four used source pins and six
+used render pins/dimensions. It explicitly did not duplicate QDR/plate/key,
+remaining repository pins, the 37 equalities, modern inaccessible arguments,
+independent geometry or application checks. It found the provisional argument
+adequately qualified, not historically proven. No repeated agreement loop was
+needed; no approval of a canonical deletion is implied.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

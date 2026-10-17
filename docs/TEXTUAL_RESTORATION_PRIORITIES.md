@@ -208,10 +208,20 @@ outside the book map's annotated hits, not a newly certified independent object.
 The published Aramaic at 11Q10 column 38.2–3 positively parallels Greek 42:9's
 forgiveness wording; shared interpretation remains possible, without a lost
 Hebrew or independence conclusion.
-No Hebrew, English, note or canon change is applied. Next obtain the original
+No Hebrew, English, note or canon change was applied by that source comparison.
+Next obtain the original
 P.Oxy. target notes/second-column alignment, modern target apparatus and actual
 version entries before stronger historical claims. Do not repeat these completed
 article, edition and bounded coverage checks as new evidence.
+
+**Separate Job reader application:** the
+[ending disclosure](JOB_42_READER_DISCLOSURE_2026-10-17.md) now applies one note
+on the attested resurrection and Jobab continuation. Its exact candidate,
+review and export checks are separate from historical priority; no Hebrew
+precursor or canon addition is inferred. Keep the original source comparison
+and its canonical pins as their historical snapshot. The independent bounded
+application review and four-test preflight pass; the post-application live
+export matches the reviewed candidate with all other 1,069 Job units unchanged.
 
 **Related historical control completed:** the
 [Hannah prayer clause at 1:13](SAMUEL_1_13_PRAYER_PLUS_2026-10-16.md)

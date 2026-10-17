@@ -14017,6 +14017,63 @@ successfully. A fresh clean/open/head check preceded its normal merge at
 `25da75638b5c91b92f729c22e7a662825e98541c`. This publication result concerns
 the previously reviewed Kings application, not approval of a Job application.
 
+## October 17 — Apply the Job ending comparison as a reader disclosure
+
+The previous turn completed and committed the source comparison, a progress
+turn rather than a same-evidence status restatement. At this continuation's
+start, PR275's exact-head check handles 117376463861 and 117376400566 were
+confirmed in progress. Their live state did not justify restarting the jobs.
+
+New public searches did not obtain the original P.Oxy. target notes or a
+complete contrary article. The JSTOR record provided no readable full text;
+the encoded Vienna PDF route, newly returned by search, returned 502.
+Bibliographic hits naming volume L did not supply its target pages. These
+outcomes add no textual votes. Do not repeatedly fetch those routes or treat
+an indexed snippet as a full-article reading.
+
+The useful next action is a [reader disclosure](JOB_42_READER_DISCLOSURE_2026-10-17.md),
+not forcing a Hebrew replacement. It describes the selected Greek ending's
+resurrection sentence and Jobab material at 42:17, keeping Hebrew, marker-free
+main English and the existing lifespan note unchanged. Root checked the
+decisive connected Swete pages against that description. The earlier full
+source study and its no-application snapshot stay frozen.
+
+The implementation task is limited to the exact candidate, contract, focused
+checks and narrow CI additions. A separate context-aware reviewer assesses
+that application without repeating the historical-priority review. The
+candidate must archive all six old values, including Job's source-audit data,
+and must not transfer those approvals to the edited record. Original draft
+provenance and earlier revisions remain historical, not new endorsements.
+
+Root's existing note/export regression checks passed 24 tests in 74.471
+seconds. The new checks must separately verify the exact permitted record
+delta, schema, archives, note anchors, all 1,070 live Job file hashes and the
+actual historical/candidate full-book export. Only 42:17 may change; all other
+1,069 units and book metadata must remain unchanged. To avoid redundant
+expensive runs, root runs the full new preflight once; the reviewer inspects
+its mechanism and exact artifacts, with no claim of independently executing
+the complete exporter again. A post-application live export remains required.
+
+The frozen application review passed at the exact report, contract, candidate
+and checker hashes recorded in the receipt. Root's four focused preflight
+tests passed in 77.620 seconds. The historical export digest is
+`01a1c70626b89b51ba38ae3f74585ba3d4ee80b6fd51a1d13e880b2d032c3b02`;
+the candidate digest is
+`35e12434f2f8648ad5e10de4f4b26a97de338a875d94286fd4f50d486a407bdb`.
+Root applied the exact reviewed bytes, then passed the single live full-book
+test in 166.971 seconds. The actual 42-chapter/1,070-unit export matches the
+candidate digest; all 1,069 other records, units and book metadata stay fixed.
+The seven inputs and unrelated local file remain unchanged. CI adds only its
+pinned baseline fetch and focused test, with existing checks preserved.
+The active verse is draft/needs_review, without transferred historical approvals.
+A numeric-hunk patch envelope was rejected without changing the verse; root
+reverified the baseline hash before using the supported apply-patch envelope.
+
+This is a consequential disclosure within an already biblical book, not
+recovered letters, a new canon proposal, or certification of every existing
+Job rationale. ImageGen provides no evidence. Broader source comparison and
+the missing discriminating historical evidence remain open.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

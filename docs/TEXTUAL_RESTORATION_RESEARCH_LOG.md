@@ -13868,6 +13868,76 @@ these same inputs. A reader disclosure is a separate possible application;
 the cited Song book is not recovered or promoted to the canon. The wider OT
 goal and manuscript-recovery evaluation remain incomplete.
 
+## October 17 — Temple poem reader disclosure and bounded application
+
+The previous turn made progress by distinguishing the attested temple-poem
+forms from reconstructed Hebrew. PR272 subsequently passed both required jobs
+and merged as def45afbff5c5c3913a1b0cdb2833474bb0c5507; main was synchronized
+and normally pushed. At the current publication check, PR273's exact source
+head 6a2cc87cc5085eab28b341999a11d17004db842e had one successful job and one
+live job. The latter had passed complete-reader validation and was running its
+note/consultation tests. It subsequently passed at 09:54:13 UTC. A fresh
+open/clean/exact-head and all-successful-checks review preceded PR273's merge
+as dc49b4fc7af666e4894bf4cad7ea44dad7c04317. After ancestry and worktree checks,
+main was fast-forwarded and a normal main push confirmed it up to date. No
+restart or protection bypass occurred. The reader application below has its
+own separate publication gate.
+
+The [separate reader application](KINGS_8_READER_DISCLOSURE_2026-10-17.md)
+freezes two complete candidate records and an explicit factual review contract.
+It corrects the dark-cloud and fixed-dwelling lexical-note anchors and adds one
+textual-variant note at the poem's end. The note attributes the published Greek
+report to Swete, distinguishes Vaticanus and Alexandrinus at both locations,
+and retains uncertainty about priority and reconstructed Hebrew. It does not
+claim a speaking sun, identify the command's addressee or merge literary forms.
+Source objects, marker-free main English, existing note bodies, AI-draft
+provenance and lexical/theological rationales remain unchanged.
+
+One independent context-aware review passes for the exact report, contract,
+candidate and checker hashes. It verified the five exact archives per record
+and the seven current input pins, and reproduced all four focused tests in
+202.432 seconds, including real full-book export and unchanged live baseline.
+Its strongest objection was possible overcompression of the Greek tradition;
+edition attribution, named codices, both positions and priority qualification
+adequately constrain that risk. This is not a blind style vote, whole-verse
+approval, source-priority certification or deployed-reader review. The earlier
+source-review pass was not automatically transferred to the new application.
+
+Root's preflight passed four focused tests in 207.169 seconds and 24 existing
+note/export tests in 85.176 seconds. All 817 book files matched the immutable
+baseline before application. The real candidate export has 22 chapters and
+817 units: only 8:12 and 8:13 differ, with the other 815 units and metadata
+identical. A compact Git-archive digest replaces an unnecessary 817-entry pin
+list. The exact candidates were then applied through supported patch syntax;
+a first numeric-hunk patch was rejected without changes, and baseline bytes
+were reverified before retrying. The
+[receipt](../sources/textual_restoration/applications/kings8_reader.2026-10-17.v1.json)
+records the independent bindings and actual post-application state. CI now
+fetches the exact new baseline and runs the focused tests; no existing check
+was removed. Post-application, all four focused tests passed in 199.754 seconds;
+the actual live export equals the reviewed candidate export. All other 815
+canonical book files, seven pinned inputs and protected unrelated data remain
+unchanged. Local application does not imply publication or deployment.
+
+Three distinct lawful routes each for the Antiochene Greek edition and the
+Moreno Latin thesis supplied catalogue information but no actual target pages.
+The former's CSIC record is out of print without a digital sample; the latter's
+UNED listing imports Dialnet and points to the same unavailable UCM record.
+No inaccessible apparatus or manuscript conventions are treated as consulted.
+Stop these exhausted routes rather than rerun them or the complete articles.
+A prior private source-reader description of Chronicles 6:1 was also corrected
+against Swete II printed 68 / PDF 86: `κατασκηνωσαι] κατοικησαι A`. Neither
+the frozen Git report nor packet contained the erroneous description, and
+the source decision and reader note do not depend on it.
+
+The documentation workflow preserves the earlier no-application dossier as a
+historical snapshot and records this as a later bounded reader contribution.
+Hebrew priority stays held; the Song-book citation supplies neither a recovered
+work nor a canon recommendation. No ImageGen evidence, new transcription or
+fresh lexicon consultation was used. The wider OT comparison goal remains open;
+further source claims require discriminating evidence, not additional tokens
+or repeated same-evidence agreement. About-page integration remains deferred.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

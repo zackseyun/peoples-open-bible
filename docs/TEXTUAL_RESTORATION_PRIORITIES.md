@@ -51,9 +51,9 @@ to its three questions, not to all OT evidence. A wider bounded audit found
 an unperformed comparison with an already acquired critical edition:
 [the narrative forms of 1 Samuel 17–18](SAMUEL_17_18_NARRATIVE_FORMS_2026-10-16.md).
 The first pass now checks four Greek junctions, 18:6's transition, the tiny
-4Q51 portions at 18:4–5, and the 18:28 combined reading. While the three
-historical questions below await new inputs, use this as the single active
-accessible case. The follow-up now checks individual 18:1 readings, c/x's
+4Q51 portions at 18:4–5, and the 18:28 combined reading. With the three
+historical questions below awaiting new inputs, this opened an accessible
+comparison. The follow-up now checks individual 18:1 readings, c/x's
 17:58 omission, g's relocation, and the Greek/Hebrew controls on a proposed
 Merab marriage ending. The full 2020 study has been read as indexed text.
 Next verify manuscript 845's actual coverage at 18:10–11 and 18:17 before
@@ -65,6 +65,73 @@ establishing the omission junction. Seek Hunger's transcription or a successor
 collation next. DCLP's public XML has no transcription; do not repeat its access
 attempts or another same-image preview as the next evidence step.
 Do not repeat the completed height decision, junctions or 18:1 comparison.
+
+**October 16 separate accessible source question:** the completed full reading
+of Aejmelaeus's 2022 author manuscript supplies no 845 reconstruction, but opens
+[1 Samuel 15:29](SAMUEL_15_29_SOURCE_COMPARISON_2026-10-16.md). Direct DJD/QDR
+checks establish Hebrew **ישוב** against WLC **ישקר**, while the division clause
+remains wholly supplied and disputed. The longer Greek ending is a third unit,
+not proof of a longer Hebrew original. The actual Josephus retelling is now
+checked: its shared reliability verb is not a diagnostic quotation of the long
+ending. Wellhausen's original euphemism argument is also checked; it does not
+establish Hebrew priority. A bounded BMT witness/key check now separates
+pronoun-only, long and zero endings, preserving a/v/z's pronoun differences
+and composite b versus b₂. Augustine's actual Latin chapter explicitly quotes
+the long ending but interprets it as human action, not the proposed divine
+rhetorical question. The edition manuscript's submission for peer review is
+verified; a released Göttingen volume and apparatus are not. Actual Vatican
+Gr 334 folio 30v now image-corroborates its long branch without initial pronoun;
+exact verb-end spelling and historical priority remain unapproved. Do not
+repeat that image as new evidence. Next obtain
+other witness imagery or new collation and McCarter's
+actual argument through new lawful routes. These apparatus and parallel checks
+are complete at their stated scopes, not tasks to repeat. No source or reader change is
+applied by this case. The 845 edition-access hold does not block this distinct
+published-evidence route or imply exhaustion of the wider OT program.
+
+**October 16 broader comparison opened:** [Esther 8–9](ESTHER_8_9_SOURCE_COMPARISON_2026-10-16.md)
+now compares linked authorization, plunder, agency and casualty differences.
+The complete Bezold article and actual RH chapters are checked; Swete's target,
+key and conventions confirm positive 9:10 plunder with A's killing prefix,
+not a negative at that entry. Neighboring 9:16–17 wording moves across verse
+boundaries and correction hands. Greek self-help, gathering and Addition E's
+resistance wording prevent a blanket absence-of-defense claim. The direct
+Lagarde Alpha ending now corroborates delegated punishment and subsequent
+collective violence, without an explicit second day in its battle unit;
+edition-local chapter 8 aligns with modern AT chapter 7. Its agency variant
+and the connected calendar/letter check qualify a uniform Alpha account and
+date-based preemptive inference. Papyrus 967's catalogued calendar coverage is
+not yet a target reading; its listed fragments do not cover the chapter 9
+targets. Next obtain the modern connected apparatus or a new lawful route to
+967's actual calendar text. The separate [3:7 reader application](ESTHER_3_7_LOT_CASTING_READER_APPLICATION_2026-10-16.md)
+now qualifies the elapsed-casting note and three rationales and relocates its
+anchor after a scoped independent pass. Hebrew and marker-free main English
+are retained; an optimal main-sentence recast is not certified. Do not repeat
+completed edition, calendar, article or note-application checks or the
+failed image routes; do not use standalone local ESG Additions numbering as
+continuous Esther.
+The earlier comparison's source-priority and 967 holds remain; no Hebrew or
+canon change follows. The held Samuel history does not block this distinct
+consequential comparison.
+
+**Related historical control completed:** the
+[Hannah prayer clause at 1:13](SAMUEL_1_13_PRAYER_PLUS_2026-10-16.md)
+is now checked in the printed Samuel apparatus. The Genesis controls limit
+the inference that differing Greek wording requires Hebrew-stage borrowing;
+they do not establish Greek expansion instead. No source or English change
+follows. DJD XVII and Qumran-Digital now provide qualified 4Q51 support for the
+short junction at the actual insertion site; the tiny ayin trace remains an
+edition-dependent identification. The complete 2019 chapter study has now been
+read: the same manuscript's short 1:13 and Nazirite 1:22 constrain a unified
+late-editing account. The [1:23 word comparison](SAMUEL_1_23_WORD_COMPARISON_2026-10-16.md)
+now checks the opposing Hornkohl argument against the local vow law and narrative.
+The alternative is attested Hebrew, not just retroversion. The direct CAL
+Peshitta checks now distinguish “your word” from the retained mouth idiom
+elsewhere; they do not recover Hebrew דברך or settle direction. A qualified
+reader note is applied locally, with source and main English retained. Do not
+repeat these controls: reopen historical selection with a broader same-book
+translation sample or new manuscript evidence. Manuscript 845's line
+reconstruction remains a separate uncompleted input.
 
 **October 16 access boundary:** a bounded independent audit found no verified,
 high-value unperformed test within this portfolio using its presently accessible

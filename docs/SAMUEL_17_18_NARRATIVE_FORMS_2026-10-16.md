@@ -261,6 +261,46 @@ record; it contains no paper or transcription and supplies no additional vote
 for a reading. Locate Hunger's edition or an accessible successor collation
 before resolving the omission or using the mixed pattern to date growth stages.
 
+### A new accessible study is not the missing transcription
+
+The university copy of Sarah Shaw Yardney's 2017 dissertation,
+[*Interpretation in the Septuagint of Samuel*](https://knowledge.uchicago.edu/records/sn039-sg771),
+is now acquired completely. Its old `nanna/record/1335` file URL returned 404;
+the current record's ordinary download supplied the PDF. The publisher's
+displayed MD5 matches the downloaded bytes. This is an access correction,
+not a new manuscript witness.
+
+A targeted text search located **845** in the manuscript list on printed xii /
+PDF p. 12, but did not locate its needed line reconstruction. Root visually
+checked the title, contents and that list; no full-dissertation reading or
+independent 845 collation is claimed. The contents identify studies of 1:6,
+14:41 and 15:29, which may inform a separately scoped translation-profile
+test. They do not close the current 18:10–11 preservation question.
+Hunger's target edition remains unacquired after this bounded public search.
+
+The private file `research_sources/yardney-samuel-dissertation.pdf` has
+2,052,836 bytes, 323 PDF pages, MD5 `6a8b61410545747ac6a38686a0669b06` and
+SHA256 `1cefea4f022566cc4911f90dc318d57a2b7976d9413cd990d4c28adf5e3300a6`.
+Copyright remains with the author; the PDF is not reproduced in Git.
+
+### Further edition routes checked on October 16
+
+A bounded delegated search found no transcription at the new institutional
+routes. The [ÖAW online catalogue](https://austriaca.at/anzeiger_collection)
+lists volumes 135 (2000) through 160 (2025), not the target 93 (1956).
+The [Messina author record](https://iris.unime.it/handle/11570/2205237) has no
+associated Pintaudi file. The [JSTOR issue listing](https://www.jstor.org/stable/i24182923)
+identifies that article at stable 24182941, but ordinary advertised retrieval
+routes yielded no text. Its May 1988 issue date differs from the 1987 university
+and 4CARE dates; a title-page check remains necessary. This is a concrete
+library locator, not evidence for the chapter-18 omission.
+
+The newly acquired [Aejmelaeus 2022 author manuscript](https://researchportal.helsinki.fi/en/publications/challenges-in-preparing-the-critical-edition-of-1-samuel/)
+mentions 845 only in its witness list. Its complete reading therefore does not
+close this gap. It does open a distinct, consequential
+[15:29 source comparison](SAMUEL_15_29_SOURCE_COMPARISON_2026-10-16.md).
+Do not repeat these completed access checks without a genuinely new route.
+
 ## Next discriminating comparison
 
 The 18:1 test and full 2020 reading are completed controls. Manuscript 845's

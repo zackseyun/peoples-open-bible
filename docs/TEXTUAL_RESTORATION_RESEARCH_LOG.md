@@ -12917,6 +12917,692 @@ PR265 passed both exact-head corpus-integrity checks and merged as
 precomputed merge. This publishes the earlier Samuel comparison; the present
 image-access follow-up starts from that merged state.
 
+## October 16 — Hannah prayer clause and the language of expansion
+
+The previous continuation made progress through manuscript acquisition and a
+committed preservation assessment. An accessible modern study now motivates a
+different discriminating test, documented in the [1:13 comparison](SAMUEL_1_13_PRAYER_PLUS_2026-10-16.md).
+The printed Samuel apparatus confirms a qualified Greek plus; the Genesis
+apparatus prevents nonidentical selected wording from being treated as proof
+that borrowing must have happened in Hebrew. The two Genesis entries are not
+combined into an invented witness. Root checked the complete relevant pages;
+a second reader checked the entries, sigla qualifications and inference.
+Local WLC context distinguishes earlier narrative assurance from the presence
+of answered prayer elsewhere in the chapter. No source, English or note changes
+are accepted. The complete 2020 indexed article was read, but the separate
+2019 chapter-wide argument remains an input; the subsequent locus check below
+supersedes early Hebrew coverage as an unperformed task.
+The PDF and documentation skills kept published readings separate from the
+historical reconstruction. PR266 remains a separate publication dependency.
+
+## October 16 — Early Hebrew control on the Hannah addition
+
+The intervening Nahum recheck yielded no new evidence, so this continuation
+classified it as no progress and resumed the unfinished Hannah test. DJD XVII
+pp.29–30 and Qumran-Digital 4Q51 fragment 1b line 6 publish the short junction:
+the trace assigned to the end of the unheard-voice verb immediately precedes
+the beginning of Eli's judgment verb. This is qualified early Hebrew support
+at the Greek-plus insertion site, not merely chapter coverage. Root read the
+complete edition pages and inspected Plate I; the scan does not justify a fresh
+decipherment of the tiny ayin. A bounded second reader confirmed the published
+junction and its limits. The [case report](SAMUEL_1_13_PRAYER_PLUS_2026-10-16.md)
+records the consequence: the short form is not only late Masoretic evidence,
+but its originality and the origin of the Greek plus remain unsettled. POB
+source and English remain unchanged. The article PDF download is terminally
+incomplete; no acquisition or PDF reading is claimed. This is progress through
+newly checked discriminating evidence, not a newly discovered manuscript.
+
+## October 16 — Hannah chapter controls and the competing word references
+
+The preceding Nahum confirmation added no evidence and is classified as no
+progress. This continuation advances the [1:23 source comparison](SAMUEL_1_23_WORD_COMPARISON_2026-10-16.md):
+the Qumran edition preserves the alternative referring to Hannah's utterance,
+while a complete reading of Hornkohl's opposing study supplies an argument
+for MT rather than treating the edition's preference as decisive. A local
+Numbers 30 and Samuel check weakens the alleged legal necessity of adding
+the phrase. One bounded independent reader checked that inference. Source
+priority remains unresolved; a qualified reader-note application is warranted,
+and direct Syriac comparison is the next historical test.
+
+The [1:13 report](SAMUEL_1_13_PRAYER_PLUS_2026-10-16.md#chapter-argument-and-the-mixed-qumran-witness)
+also now records the previously completed full 2019 article reading and the
+DJD dating/mixed-witness check. Its short junction coexists with Nazirite
+wording at 1:22; the wording at 1:11 remains reconstructed. This constrains
+chronology without selecting an original chapter-wide edition. PDF and
+documentation guidance keep these distinct claims explicit. No Hebrew,
+English, note or generated-image evidence is added to the biblical corpus.
+The canonical 1:23 hash and source PDF pin are in the new case report.
+
+Live API checks found PR266 and PR267 open, each with two corpus-integrity
+checks still in progress. No CI restart or merge bypass was attempted.
+The existing research branch remains the publication vehicle.
+
+## October 16 — Samuel word variant disclosed to readers
+
+The previous turn made progress through a committed source comparison. This
+continuation directly checks the Syriac reading and two translation controls
+through CAL, then applies the [1:23 reader note](SAMUEL_1_23_WORD_COMPARISON_2026-10-16.md#reader-application-boundary).
+The controls support treating the Syriac expression as distinct evidence;
+they do not establish an invariant translation rule or a lost Hebrew form.
+Root retrieved the target text; the delegated source reader checked all three
+loci and provenance, with root's failed additional fetches recorded in the case.
+
+One separate independent reader passed the exact full-record candidate and
+frozen contract. The application preserves the declared WLC and marker-free
+English, archives seven prior fields, revises the dependent lexical/theological
+explanations, and relocates the note marker. The full actual export matches the
+proposed output: one changed verse, 810 unchanged units, and the note exported.
+The candidate, contract and receipt preserve preflight versus applied status;
+the original review scores do not certify the new record. Documentation
+guidance kept this application in the existing case report. No generated image,
+source-priority decision, deployment or comprehensive OT completion is claimed.
+
+The pending combined regression run completed successfully: 54 tests in
+`tests.test_samuel1_23_word_reader`, `tests.test_samuel1_24_25_scene_reader`,
+`tests.test_samuel1_24_source_proposal` and `tests.test_reader_footnote_export`.
+This closes application validation without repeating the source adjudication.
+
+## October 16 — Genesis 5 linked age comparison
+
+The preceding turn verified that PR267 checks were still running but added no
+new textual evidence. The [Genesis 5 comparison](GENESIS_5_AGE_SYSTEMS_2026-10-16.md)
+now records nine linked age triads across WLC, a specified Samaritan edition
+and two selected Greek editions. All 36 triads balance, but they imply different
+conditional chronologies. The Greek Methuselah readings are kept separate;
+4Q2's supplied age is excluded from surviving-numeral support. An independent
+reader confirmed the Samaritan numbers and edition notation. No newly
+deciphered text or source-priority result is claimed.
+
+The method now requires linked numerical comparisons. POB's age translations
+agree with its declared source, but consequential alternative numbers merit
+reader disclosure. A concrete Kenan note is proposed in the case report;
+canonical application and its full-record/export checks remain pending. The
+PDF skill guided page inspection, and documentation guidance kept the numerical
+evidence and qualifications together. No ImageGen output supplied evidence.
+
+## October 16 — Kenan age variant disclosed to readers
+
+The preceding Nahum reread confirmed an existing result but supplied no new
+evidence. This continuation applies the [Genesis 5:12 age note](GENESIS_5_AGE_SYSTEMS_2026-10-16.md#reader-application)
+after one independent full-candidate review. The note contrasts the linked
+70/840 and 170/740 readings, both totaling 910, and names the consulted Greek
+and Samaritan editions. It does not turn arithmetic agreement into historical
+priority or count supplied Qumran numerals as surviving text.
+
+The source and main English are unchanged. The existing lexical note is
+preserved; five prior fields are archived without carrying their review
+approval forward. A frozen full-book comparison and the actual export agree:
+only 5:12 changes among 1,533 verses. The candidate, contract and application
+receipt distinguish proposed from applied status. Documentation guidance kept
+this application in the existing case report rather than adding another
+parallel narrative. Wider chapter disclosure, modern apparatus comparison
+and linked Genesis 11 work remain open. No generated image supplies evidence,
+and neither deployment nor comprehensive OT comparison is claimed.
+
+Four application tests and 47 existing comparison/export/Genesis 6:3 tests
+passed. The WLC and protected unrelated file hashes, documentation links,
+workflow parsing and diff check also passed. Publication uses the existing
+research branch and remains subject to the required CI checks.
+
+## October 16 — Genesis 11 genealogical structure and linked ages
+
+The preceding Nahum confirmation supplied no new textual evidence. This
+continuation completes the [Genesis 11 comparison](GENESIS_11_AGE_SYSTEMS_2026-10-16.md)
+already in progress. The selected Greek texts add Cainan; the consulted
+Samaritan text agrees with their shared begetting ages while omitting that
+generation and printing eight explicit lifetime totals. The report distinguishes
+those totals from calculated sums, and Terah's grouped offspring from an
+individual birth-age assertion. The method now requires those distinctions.
+
+Jubilees 8:1–5 supplies a relevant Kainan parallel in the consulted edition.
+Ancient Hebrew preservation of that particular clause and its independence
+from Greek Genesis remain unverified. This supports further literary comparison,
+without settling Genesis priority or recommending a canon change. The Greek
+apparatus records the bounded Cainan-paragraph omission in E* and its marginal
+presence in Eᵃ; the finding is not expanded into absence of the name everywhere.
+
+One delegated reader checked the report and numerical record against the
+completed Samaritan inspection and found no mismatch. Executable checks
+reproduced all 34 pairs' sums, eight explicit totals, five paired adjustments,
+four conditional chronology sums, four source-file hashes and the unchanged
+32-file chapter manifest. The protected unrelated Genizah file also retains
+its hash. These checks establish consistency, not historical priority.
+
+The report contains a concrete reader-note proposal for 11:12, identifying
+Greek verse 13 and the differing Arpachshad ages explicitly. Full-record review
+and export verification remain the application steps. This packet changes
+research documentation and the method; no biblical source or translation record
+changes. The documentation guidance kept the source limits beside the claims
+they qualify. No generated image supplied evidence.
+
+## October 16 — Cainan genealogy disclosed to Genesis readers
+
+The previous goal turn made progress by committing the Genesis 11 source
+comparison. This continuation applies the [11:12 reader note](GENESIS_11_AGE_SYSTEMS_2026-10-16.md#reader-application):
+the selected Greek text places Cainan between Arpachshad and Shelah, whereas
+the declared WLC and specified Samaritan edition connect them directly, with
+different Arpachshad ages. The note identifies its editions and Greek verse
+number rather than implying unanimity or a recovered Hebrew generation.
+
+An independent delegated reader passed the exact full candidate and frozen
+contract, including Genesis 11:10–15 context, source report, numerical record,
+archival boundaries and reproduced complete preflight export. The review was
+context-aware, not blinded or a new external collation. Root then applied the
+unchanged candidate and verified the actual complete export: one changed verse,
+1,532 unchanged units and all four target notes present. The existing number-order
+note marker also moves to the number phrase; all three old note bodies remain.
+
+The Hebrew, marker-free English, lexical data and original draft provenance are
+unchanged. Five prior fields are archived without carrying approval forward.
+The original research receipt remains intact, and a separate application receipt
+binds the reviewed candidate and actual export. All 41 shared reader-footnote
+and existing Kenan application tests passed. The protected unrelated Genizah
+file retains its hash. Documentation guidance kept research and application
+status together in the existing case report. No source-priority result, canon
+change, deployment or generated-image evidence is claimed.
+
+Final validation passed the frozen candidate/contract and applied receipt
+bindings, WLC and protected-file hashes, 524 relative link targets, workflow
+YAML parsing and diff checks. Only Genesis 11:12 changed among biblical records.
+
+## October 16 — Jubilees counting controls and the Cainan source history
+
+The preceding goal turn applied and pushed the Genesis 11 reader note. This
+continuation tests the [Jubilees argument and preservation](GENESIS_11_AGE_SYSTEMS_2026-10-16.md#jubilees-counting-and-preservation).
+A delegated reader compared the complete relevant Steinmann and Smith–Udd
+sections, with consultation limits in the evidence record. Root independently
+enumerated both pedigrees and visually checked Smith–Udd's p. 140 note 102.
+The inclusive/exclusive endpoint distinction changes the alleged 22-person
+contradiction; the note's local arithmetic slip is recorded without dismissing
+the paper's coherent main argument.
+
+Root also read the actual 4Q216 section 7 lines 11–17 and 4Q180 fragment 1
+lines 1–10 in the published editions. The former preserves endpoint wording
+but supplies the preceding 22-leaders clause; the latter does not provide a
+complete explicit Shem-to-Abraham ten-generation statement in the consulted
+rows. Neither becomes direct Cainan inclusion/omission evidence by expansion
+of missing text. Ancient Hebrew preservation of Jubilees 8 remains unverified.
+A separate reader checked the hash-verified primary rows and clarified that
+the second 22 in 4Q216's works comparison is distinct from the supplied first
+leadership count. The report and evidence record preserve that distinction.
+
+A separate bounded apparatus search acquired Wevers's own introduction, not
+the verse apparatus. Its 509/E/a² crosswalk identifies the Oxford target and
+prevents double-counting edition labels or transferring hand sigla blindly.
+The actual modern target apparatus and cited Syriac edition remain next sources.
+The method now requires preserved endpoints and explicit counting conventions.
+No biblical record or generated-image evidence changes in this research step.
+PR267's two required checks were confirmed still running at the existing head;
+no restart or protection bypass was attempted.
+
+Validation passed five raw source-file pins, both endpoint enumerations and
+the primary Hebrew preservation boundaries. Current verse, WLC and protected
+file hashes match; all biblical records are unchanged against the pinned base.
+The new JSON, workflow YAML, 527 relative link targets and diff checks pass.
+These checks validate the recorded evidence and calculations, not source priority.
+
+## October 16 — Syriac Cainan wording and disputed transmission
+
+The preceding packet tested Jubilees counting and Hebrew preservation. This
+[follow-up](GENESIS_11_AGE_SYSTEMS_2026-10-16.md#syriac-cainan-evidence-and-transmission)
+acquires and visually checks the cited printed Syriac building phrase. The
+complete Chabot scan is pinned by bytes and hash; its actual title dates this
+volume to 1920, not the archive's 1916 label. Printed p. 46 is PDF p. 307.
+An independent reader corrected root's tentative abbreviated phrase; root
+rechecked the enlarged target. No manuscript pixels or lost Hebrew letters
+were recovered. The Monitum's transcript limitation is recorded narrowly.
+
+The packet also distinguishes a published early Syriac genealogical list from
+the chronicle's narrative and records modern objections to assuming direct
+Hebrew transmission. Consultation scopes and access failures are explicit in
+the evidence record, including an incomplete thesis download excluded from
+verified inputs. This adds source evidence, not a repeated arithmetic exercise.
+It does not establish an earlier Hebrew Genesis, justify another reader-note
+change, or settle canon. The existing method's mediation rules were applied;
+no redundant methodology expansion or new factual unit test was needed.
+
+The final bounded independent review passed the exact phrase, edition identity,
+and evidence/inference boundaries; it did not independently verify the modern
+studies or Monitum. Validation passed the complete scan's byte/hash pin, JSON,
+all three unchanged verse/WLC/protected-file hashes, 529 relative link targets,
+four workflow YAML files and the diff check. No biblical record changed against
+the pinned baseline. Publication continues through PR267; its two existing
+required checks were still running when checked, so no protected merge was
+attempted. New-head checks must pass before main integration.
+
+## October 16 — Bodleian Cainan paragraph and correction boundaries
+
+The preceding turn made progress by committing the Syriac source check.
+This continuation acquired the exact [Tischendorf 1857 edition](GENESIS_11_AGE_SYSTEMS_2026-10-16.md#the-bodleian-text-and-its-corrections)
+cited for the Oxford part of Greek509, rather than repeating the unavailable
+modern-apparatus searches. The printed shorter state names Cainan as
+Arpachshad's son but lacks his separate life paragraph; it is not simply the
+Masoretic genealogy. Its Arpachshad age35 and subsequent330 are distinguished
+from the later marked addition of100 and separately reported marginal
+Cainan130/330 paragraph. Nahor79/129 was also checked in the printed text.
+
+The PDF workflow required visual inspection of complete target pages and the
+editorial conventions, not trust in the badly recognized OCR. The documentation
+guidance kept the new findings in the existing report; no additional narrative
+document or method-version bump was needed. This is published evidence, not
+new decipherment, a second independent manuscript, or proof of source priority.
+No biblical text or reader note changes in this step.
+
+The enlarged Brooke–McLean apparatus distinguishes the marginal age addition
+Eᵇᵐᵍ from the Cainan paragraph Eᵃᵐᵍ. Both concern the same manuscript, not two
+independent ancient witnesses. Validation passes both source PDF hashes, the
+new JSON, three unchanged verse/WLC/protected-file hashes, 531 relative link
+targets, four workflow YAML files and diff checks. At the preceding committed
+head, both live CI jobs had passed catalogue, complete-reader-corpus and
+historical-boundary validation and were running reader-note/policy tests.
+No restart or protection bypass was attempted.
+
+A delegated catalogue/image search and subsequent bounded review returned no
+usable result before being explicitly interrupted. No independent pass or
+custodial image access is claimed. Root's printed-page checks support the
+findings above; the unreturned review is not counted as confirming evidence.
+
+## October 16 — Bodleian locator correction and Samuel source access
+
+The preceding turn made progress by committing the Bodleian comparison but
+did not complete its delegated review. A fresh, narrowly scoped reader now
+checked the report, JSON and six specified printed-page images. It caught
+a real error: the marginal age addition's locator is **XIII.A.34**, not
+XIII.A.40. Locators precede their entries; the latter belongs to Shelah's
+verb and the separate Cainan paragraph insertion context. Root rechecked the
+actual prolegomena and corrected both records. The same reader then confirmed
+that correction resolved its issue. Substantive readings passed; neither
+review certified manuscript pixels, earliest wording or source priority.
+The earlier interrupted review remains preserved as history, not rewritten
+into a successful one. No biblical text or reader note changed.
+
+The broader queue points next to manuscript845's published line reconstruction,
+not another preview of its acquired photographs. A bounded public edition search
+did not supply Hunger's article. The new [Yardney acquisition](SAMUEL_17_18_NARRATIVE_FORMS_2026-10-16.md#a-new-accessible-study-is-not-the-missing-transcription)
+closes a university URL-migration problem and pins the complete dissertation;
+its targeted search and inspected front matter do not supply that reconstruction.
+This source may serve a separate translation-profile study, not an omission
+vote. The PDF workflow preserved that consultation limit; documentation guidance
+kept the access result beside the existing case rather than creating another
+research narrative. The actual Samuel omission and Genesis priority remain open.
+
+Validation passed the corrected locator/review provenance, three complete
+source-file pins, four unchanged verse/source/protected-file hashes, 533
+relative file-link targets, four workflow YAML parses, JSON and diff checks.
+No biblical record changed against ef68337470. PR267's two exact-head checks
+were confirmed running at that commit; publication remains subject to the
+new head's required checks, without a restart or protection bypass.
+
+## October 16 — Samuel 14 41 prayer length and Greek interpretation
+
+The preceding turn made progress by completing the Bodleian review correction
+and acquiring a Samuel study, without treating acquisition as attestation.
+This [new chapter comparison](SAMUEL_SOURCE_COMPARISON_PASS_2.md#october-16-full-chapter-review-and-distinct-greek-forms)
+reads the study's full14:41 argument. One delegated source reader completed
+all73 printed chapter pages and notes, with three visual table/figure checks.
+Root read the specified decisive pages, checked Figure2/Table12 visually,
+and directly inspected BMT's B-based14:41 alongside the publisher's selected
+Rahlfs-Hanhart text. This extends the earlier three-page fragment discussion.
+
+The result separates a longer Hebrew prayer from a proposed interpretive
+Greek translation of it. Yardney favors the former; her creativity argument
+does not make the whole prayer a Greek invention. Her A/B is eclectic, not
+a verbatim codex, and the claimed direction competes with a different critical
+reconstruction. Direct Pentateuchal Greek controls support her lexical premise
+without supplying a mandatory Samuel rule. The proposed translator motive
+remains inference, not recovered ink. Earlier4Q52 exclusion is unchanged.
+
+The study also directly challenges “Give a perfect lot.” Current source,
+main English and note remain provisionally unchanged, not newly certified.
+A separate linguistic comparison and edition-qualified reader disclosure
+are identifiable next tasks; no unreviewed candidate or retroverted Hebrew
+was applied. The existing four-decision method suffices; no redundant rule
+expansion, canon recommendation or generated-image evidence is introduced.
+
+The chapter reader's bounded factual review passed without corrections. This
+was a context-aware review against the chapter, not an independent recheck
+of root's printed Greek controls, file hashes or earliest-source priority.
+Validation passed JSON parsing, two complete PDF pins, five Hebrew control
+pins, unchanged canonical/protected-file pins, 600 relative file-link targets,
+four workflow YAML parses and diff checks. No biblical record changed against
+68007c52c7. Publication remains subject to the new head's required checks;
+neither a review pass nor a research commit authorizes bypassing protection.
+
+## October 16 — Samuel 14 41 short request and English disclosure
+
+The preceding turn made progress by completing the Greek-form/chapter comparison
+and pushing cb88b55928. Its exact-head required checks were confirmed live on
+this turn, not treated as stopped or restarted. The new
+[linguistic follow-up](SAMUEL_SOURCE_COMPARISON_PASS_2.md#october-16-short-hebrew-request-and-reader-disclosure)
+tests the pointed short Hebrew separately from prayer-length selection.
+
+Root reread Yardney's complete pp. 133–134, directly read and visually checked
+BDB's full *tāmîm* entry and **תֹם** section 4, and acquired/read Driver's
+complete printed pp. 117–118 including the footnote. Driver's first two PDF
+routes returned 403; the Internet Archive download redirect returned 500.
+The item's public metadata then identified its data server, whose ordinary
+download succeeded. No credentials, paywall bypass or altered source were used.
+GKC's section 118m–q was read in the Wikisource transcription. A fitz import
+was unavailable; existing pypdf and Poppler supplied extraction and visual checks.
+The BDB layout is the already pinned enhanced file, not original print pagination.
+
+The independent Hebrew assessor and root read the named local controls. Amos
+5:10 supports truth-conforming content; it strengthens the initial assessment
+without making Samuel's construction identical. Giving “what is good” shows
+that adjective classification does not require an implied concrete noun.
+Neither alternative removes every contextual interpretation: “lot” comes from
+the selection scene; “answer” also comes from context. BDB's target proposal
+changes the pointed interpretation to Thummim. It cannot be silently borrowed
+as lexical approval of unchanged WLC or as another Hebrew manuscript.
+
+The exact proposed note/rationale passed a context-aware bounded review, not
+a blinded main-English contest. The reviewed change discloses “Answer honestly”
+as an interpretation, names the selected Greek edition and retains the 4Q52
+caveat. Main English and source stay provisional. The application record pins
+the baseline and semantic delta. The exact note/rationale are now applied
+locally, with source and the entire main English string unchanged. Stale
+status, revision and agreement values were archived verbatim with their
+baseline binding, and active flags reset to draft/needs-review. The first
+preflight correctly rejected retaining the legacy revised flag under the
+current draft-only schema; the planned archival/reset resolved that failure.
+No new method version or generated evidence is needed.
+
+Schema, semantic-delta, archival-value, source/protected pin, note-anchor and
+full-book export checks pass. Both preflight and actual export contain 811
+units; only 14:41's disclosure changes and all 810 others remain unchanged.
+The actual export digest matches the preflight result. JSON, 479 relative
+file-link targets across the two edited reports, four workflow YAML parses
+and diff checks pass. This is a local disclosure improvement, not a main-text
+replacement, source-priority decision or verified deployment.
+
+All 18 footnote-audit tests and six generic reader-export tests pass (24 total).
+The initial broad module invocation was deliberately interrupted while doing
+an unrelated Genesis whole-book export after its scope was inspected; exit 130
+is recorded, not presented as a test-suite pass. The narrower run avoids
+repeating unrelated corpus checks, while the actual 811-unit Samuel export
+above remains the application check. No new tests or export behavior were added.
+
+## October 16 — Samuel 15 29 Hebrew verb and Greek ending
+
+The previous turn made progress by applying and verifying the 14:41 disclosure
+and pushing45009a69ee. Both of its exact-head required checks were confirmed
+live here; no check was restarted because of an observation timeout. The
+broader queue then returned to consequential source history, not another note.
+
+A bounded delegated edition search checked new ÖAW, Messina and JSTOR routes
+without obtaining Hunger or a successor transcription. The
+[845 access update](SAMUEL_17_18_NARRATIVE_FORMS_2026-10-16.md#further-edition-routes-checked-on-october-16)
+preserves those specific results, the Pintaudi date discrepancy and the still
+unverified omission. Separately, a newly located university author manuscript
+of Aejmelaeus's2022 chapter was fully acquired/read. It contains no845 line
+reconstruction, but supplies a substantive new15:29 lead. One web open returned
+a transient500; the normal institutional download succeeded. The copy is an
+author manuscript with its own pagination, not freshly consulted final-volume
+typesetting or a current critical-edition publication-status check.
+
+The [new comparison](SAMUEL_15_29_SOURCE_COMPARISON_2026-10-16.md) separates
+the opening, negative verb and ending. Root read the complete target DJD pages,
+Greek edition/apparatus pages, versioned QDR group and selected publisher Greek,
+plus the named Hebrew and Numbers Greek controls. Published **ישוב** survives
+outside reconstruction brackets; the proposed division clause does not. The
+longer Greek ending has an actual apparatus entry, but its Hebrew ancestry
+cannot be inferred from Greek priority. Direct Numbers Greek comparison gives
+a concrete, nonverbatim literary parallel without proving borrowing or direction.
+
+The independent source reader completed Yardney's74-page chapter4 and its
+decisive visual checks. Root read the specified argument and limitation pages.
+She accepts the longer Greek ending and retains **ישוב**, while challenging
+the fragment placements and retroverted opening. Her proposed Greek mechanism
+does not eliminate every lost Hebrew alternative. Her width fits remain
+reconstructions, not new ink; no additional fit or image preview was commissioned.
+The reader's bounded report/JSON review passes, with root's other source checks
+explicitly outside that independent revalidation. No main English, Hebrew,
+reader note, canon or generated-evidence change follows. This adds a real
+Hebrew source candidate and changes the next discriminating research action;
+it does not certify a new original reading.
+
+Validation passes JSON, five private-source byte/hash pins, three WLC pins,
+the exact reviewed report hash, two unchanged canonical verse pins, the
+protected untracked-file pin, 556 relative file-link targets across the four
+case/queue/log documents, four workflow YAML parses and diff checks. There is
+no biblical diff against45009a69ee, so no new export or unrelated test-suite
+run is needed for this research-only packet. The previous note application
+and its verification remain preserved; publication still requires the new
+head's required checks, without a protection bypass.
+
+## October 16 — Josephus and Wellhausen at Samuel 15 29
+
+The [15:29 comparison](SAMUEL_15_29_SOURCE_COMPARISON_2026-10-16.md#josephus-and-the-reliability-statement)
+now checks Josephus directly in a pinned Perseus Niese-based Greek text.
+Root read *Antiquities*6.130–160 and the6.205 lexical control. God's abiding
+by decisions precedes the human-change comparison in6.153; neither the threat
+verb nor the longer Greek ending's negative rhetorical question is repeated.
+The same infinitive also occurs in Josephus's own narration about Saul.
+This establishes a possible echo, not a diagnostic quotation or Hebrew source.
+A delegated judge read6.131–155 and6.205 and passed that bounded conclusion,
+including correct treatment of the electronic text's deletion markup.
+
+A separate bounded source task acquired Wellhausen's1871 original through
+Internet Archive. Both root and the source reader visually read complete
+printed96 and101, including the cross-reference to avoidance of anthropomorphism.
+His euphemism proposal is now verified directly, but it gives no paleographic
+chain and predates4Q51. A Greek-only change would not by itself explain the
+Hebrew alternative; a Hebrew-stage euphemism remains possible. The source
+reader's bounded review passes. McCarter264 was not delivered by the other
+two routes, Google Books and Yale; his argument remains secondhand here.
+The evidence record preserves distinct review scopes and historical input
+hashes, not a claim that either reviewer certified the whole case.
+
+No source, main English, note or canon change follows. The gain is two directly
+checked arguments and a narrower next test, not new decipherment or extra
+ancient manuscript votes. Repeating these parallel passages or failed access
+routes is not the next task. No new corpus tests or exports were added for
+this documentation-only update. Validation passes JSON, seven private-source
+byte/hash pins, three WLC pins, two unchanged canonical verse pins, the
+protected untracked-file pin, 555 relative file-link targets across the three
+changed research documents, and diff checks. Main publication remains subject
+to the exact head's required checks; no protection bypass is authorized.
+
+## October 16 — Samuel 15 29 ending witnesses and Augustine
+
+The previous goal turn made progress by acquiring and checking Josephus and
+Wellhausen, committing297de693ae and pushing the branch. Its exact-head
+required jobs were confirmed live at this turn's start, not presumed stopped
+or restarted after a polling timeout. This turn continued the consequential
+ending question rather than changing a reader note or repeating a corpus scan.
+
+The [case report](SAMUEL_15_29_SOURCE_COMPARISON_2026-10-16.md#three-greek-endings-and-identified-witnesses)
+now resolves a bounded set of BMT ending sigla against its Samuel key and
+general apparatus conventions. Pronoun alone, long clause and complete ending
+omission are distinct; a/v's absent initial pronoun and z's added final pronoun
+must not become uniform full-string agreement. Composite b19/108 is not b₂29.
+Root and a delegated source reader visually checked the target, key and
+convention pages. This supplies an actual witness map for a subsequent image
+or new-collation test, not a new manuscript decipherment or full supporter count.
+
+An accessible public-domain CSEL source now supplies Augustine's complete
+Latin17.7 and notes. Root read its XML and visually checked all five printed
+target pages228–232/PDF245–249. His explicit quotation is stronger evidence
+for Latin circulation of the long clause than Josephus's lexical echo, while
+his human-action interpretation differs from a divine rhetorical question.
+The appeal to Greek copies belongs to neighboring verse28; the LXX absence
+claim is Hoffmann's modern note, not Augustine's statement or universal Greek
+coverage. Repetition and modern presentations do not add ancient witnesses.
+The old index's lat4 download was absent; the actual repository tree led to
+the merged lat3 XML and its linked scan. Earlier Augustinus/ancienttexts/ATLAS
+access errors were not treated as source evidence or bypassed. No target
+Vatican manuscript image was acquired from the attempted public viewer.
+
+A separate current-status check verifies manuscript submission for peer review,
+not a released Göttingen1Samuel apparatus. Three context-aware bounded reviews
+pass within separate BMT, Augustine-XML and publication-status scopes; none
+certifies the whole case or independently verifies root's scan-reading event.
+The documentation workflow preserves these distinct attestation, interpretation
+and source-selection judgments. No Hebrew, English, note, canon or generated
+evidence change follows. Completed sample and parallel checks are removed from
+the next-task queue; new imagery/collation or the actual McCarter argument must
+supply new evidence. Source files stay private and pinned, not copied into Git.
+
+Validation passes JSON, thirteen unique private-source byte/hash pins, three
+WLC pins, the exact reviewed report hash, two unchanged canonical records, the
+protected untracked-file pin, 556 relative file-link targets and diff checks.
+There is no source/translation diff against297de693ae; no new corpus test or
+book export was needed for this research-only update. Main publication still
+requires the current head's successful protected checks.
+
+## October 16 — Vatican image and the Esther literary forms
+
+The previous turn was progress: it committed and pushed dd44d9a9f9 with new
+ending-witness and Augustine evidence. Its exact-head required checks were
+confirmed live at this turn's start; no expired observation was treated as a
+failed/stopped job and no job was restarted. The work then moved from a
+published witness map to actual imagery, alongside a bounded broader-OT triage.
+
+The official Vatican **digi** viewer exposes an accessible manifest and images.
+Root acquired folios 30r–v and located 15:29 on 30v, written lines 7–10. Root
+and a second reader's original-image check corroborate BMT v245's long branch
+without initial pronoun. Exact verb-end orthography remains uncertified; the
+normalized published string is not a diplomatic transcription. A later crop
+is a potentially reencoded display aid, not a pixel-preserving new source.
+The image-specific report review passes within that scope. Institutional
+metadata, native dimensions and study-only rights remain separate checks;
+the images are private and no ImageGen output supplies letters or evidence.
+
+An independent bounded portfolio search identified the previously unperformed
+[Esther 8–9 comparison](ESTHER_8_9_SOURCE_COMPARISON_2026-10-16.md).
+Root and the delegated reader completed the full Bezold article, including
+notes and bibliography, then compared actual RH wording and seven current POB
+records. Root recovered the initially truncated middle sections before claiming
+a complete reading. The Greek is not uniformly less violent or devoid of
+defense language. Its plunder, agency and numeral differences require connected
+comparison rather than a moral preference or automatic Hebrew retroversion.
+Alpha remains reported through the author; its direct text has not been checked.
+
+The same reader and root visually checked complete Swete pp. 776–777, its
+preface and sigla. Affirmative plunder at 9:10 has a specific A killing prefix,
+not a reported negative; nearby negative-plunder language has hand/placement
+variation across 9:16–17. This completes the old-edition test, not all-Greek
+coverage or a proof against early negative loss. The source/report review
+passes with those limits. A local numbering audit finds 104 ESG rows explicitly
+partitioned as Additions A–F and confirms ADE's shifted verse labels. Neither
+stream supplies independent primary evidence. An initial Hebrew XML query
+used the wrong element names; the corrected OSIS navigation supplied the named
+controls, so the empty query was not used as absence evidence. Ordinary RH
+downloads returned 403 although actual web text was readable; no private
+chapter snapshot or access bypass is claimed.
+
+The documentation workflow keeps source attestation, literary interpretation
+and canonical application separate. No source, main English, notes or canon
+change follows. The next evidence is new witness collation/imagery for Samuel
+and connected modern apparatus, Alpha text and calendar controls for Esther;
+the completed image and edition checks are not tasks to repeat.
+
+Validation passes both JSON packets, nineteen unique private-source byte/hash
+pins, four WLC pins, nine unchanged canonical records, two local Greek-stream
+pins, both exact reviewed report hashes, and the protected untracked-file pin.
+Manifest/canvas/image bindings and native JPEG dimensions are checked, as are
+559 relative file-link targets and diff whitespace. There is no biblical-text
+or source-corpus diff against dd44d9a9f9. No full corpus test or book export was
+needed for these research-only changes. Publication to main remains subject
+to the exact committed head's required checks and branch protection.
+
+## October 16 — Direct Alpha ending and connected calendar controls
+
+The previous goal turn made progress: it committed and pushed ea71ec2b26 with
+the Vatican image and initial Esther comparison. The exact-head required CI
+jobs were confirmed live during this continuation; observation delays were
+not treated as terminal failures, and no jobs were restarted. This pass used
+bounded source tasks and separate report checks rather than repeating the
+finished Swete or Bezold work.
+
+The [Esther case](ESTHER_8_9_SOURCE_COMPARISON_2026-10-16.md#direct-alpha-edition-and-its-numbering)
+now consults Lagarde's actual 1883 Alpha edition through BSB's public manifest
+and images. Root and the source reader checked the title, preface conventions
+and complete relevant pages. The chapter heading corrected an initial numbering
+assumption: Lagarde alpha 8 aligns with the article's modern AT 7. The ending
+really combines delegated punishment with later collective killing and plunder.
+However, its battle unit does not explicitly say “tomorrow” or “a second day,”
+and one reported plural verb qualifies an across-witness royal-agency claim.
+Printed spacing is not evidence for missing manuscript text or a literary layer.
+The images stay private under the recorded BSB rights statement.
+
+The connected RH/WLC calendar comparison confirms the selected Greek date
+contrast while reading the countermanding and defensive language with it.
+The inference of necessary preemptive action or a still-operative Haman order
+is not established by dates alone. Method version 2.0.15 now requires separate
+issue, intended execution, actual action and rest/festival controls, together
+with legal instructions. Current POB's 3:7 elapsed-casting explanation is a
+distinct English/rationale candidate, not a new Hebrew variant or an approved
+replacement. No source, English, note or canon change is applied.
+
+Papyrus 967 is not ignored because a later edition was easier to consult.
+The complete De Troyer chapter and institutional coverage descriptions now
+identify potential calendar controls but no target ink reading. Its quoted
+Hanhart reports do not supply the modern target apparatus. Four 2200-pixel
+IIIF requests derived from observed filenames/thumbnail patterns returned 500;
+the exact attempts and their provenance are preserved in the evidence packet.
+The listed Dublin pieces do not cover the chapter 9 targets; non-coverage is
+not an omission. The actual modern edition is published, but the licensed
+preview ends before the apparatus and the publisher route returned 403. Use
+new lawful routes, not the same failed requests or repeated article summaries.
+
+Three context-aware bounded reviews pass separately for the calendar/method,
+Alpha edition and 967 paragraphs at the exact recorded report hash. They do
+not certify the root-only modern-preview access check or the entire case.
+Validation passes the JSON packet, eighteen private-source byte/hash pins,
+seventeen unique unchanged canonical records, WLC and two local Greek-stream
+pins, exact reviewed report/method hashes and the protected unrelated file.
+All twelve acquired BSB images match manifest URL/dimension bindings, and 607
+relative file-link targets pass. No biblical-text or
+source-corpus diff exists against ea71ec2b26; no full corpus rerun or export
+was needed for these research-only changes. Main publication remains subject
+to the final exact-head checks and branch protection.
+
+## October 16 — Esther 3:7 reader clarification applied
+
+The prior continuation made progress with 1f18f14032: direct Alpha ending and
+connected calendar controls, plus accurately bounded 967 access findings.
+This continuation follows the already identified 3:7 English/rationale issue
+instead of repeating those source checks or treating inaccessible ink as read.
+
+The [application report](ESTHER_3_7_LOT_CASTING_READER_APPLICATION_2026-10-16.md)
+separates candidate-date testing from months of elapsed casting. Root and a
+delegated source reader checked actual WLC 3:6–13, current POB 3:7, and complete
+target pages in Streane (1907) and Keil's English commentary (1873), including
+visual footnote checks. Root also checked title/imprint text and the NET
+translators' own notes. The commentaries supply scholarly arguments, not new
+ancient witnesses. Their proposed missing-clause explanations are not adopted;
+their date interpretation can be considered independently. No fresh HALOT
+consultation or modern-translation majority vote is claimed.
+
+After the exact candidate and contract were frozen, one independent bounded
+judge passed the note, anchor and three-rationale application. It reproduced
+the schema, allowed delta, six exact archives, 167 baseline file pins, five
+input pins, two private-source pins, and complete Esther exports. It checked
+the local source/context but did not reread the four commentary pages in that
+judge pass. This is not a blind stylistic vote or a repeat-until-agreement loop.
+The retained main sentence's “until” can still imply elapsed time; that strongest
+objection is recorded and whole-sentence optimality remains unresolved.
+
+The applied note now qualifies the elapsed-time inference and sits beside
+“until the twelfth month.” Three dependent rationales are qualified together;
+their unverified HALOT labels are removed and archived, not retroactively
+certified. Hebrew, marker-free main English, other lexical entries and original
+AI provenance remain unchanged. The former active agreement/revision flags
+are archived with their exact baseline and explicitly do not approve this
+candidate; the active record is draft and needs review. No lost Hebrew clause,
+Greek day numeral, historical source priority or canon change is adopted.
+
+Post-application verification matches the frozen candidate and exact YAML
+hash. The actual ten-chapter Esther export has 167 units: only 3:7 changes,
+with its note body, reason and new anchor visible; 166 other export units and
+record files are unchanged. All 24 targeted existing audit/export tests pass,
+as do schema, archives, source/input pins and the protected unrelated-file
+check. No full-corpus rerun or deployment certification is claimed. The older
+Esther research packet and report remain frozen historical inputs; this
+separate receipt documents the later application. Main publication still
+requires the final exact committed head's checks and branch protection.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

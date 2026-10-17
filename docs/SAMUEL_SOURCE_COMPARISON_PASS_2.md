@@ -204,3 +204,66 @@ reader disclosure should identify the selected Greek edition and distinguish
 the other Greek constructions. No candidate is applied in this research step.
 Earliest Greek, closest Hebrew rendering, reconstructed Hebrew wording and
 English publication are four distinct decisions under the existing method.
+
+## October 16 short Hebrew request and reader disclosure
+
+The follow-up favors clearer disclosure, not a newly preferred main sentence.
+The short pointed request **הָבָה תָמִים** leaves its precise force uncertain.
+Neither an adjective label nor the absence of a written noun resolves that
+uncertainty. The [application record](../sources/textual_restoration/applications/samuel14_41_reader.2026-10-16.v1.json)
+pins the baseline, exact reviewed wording, controls and bounded review.
+
+The named WLC controls distinguish constructions. Genesis 17:1 uses *tāmîm*
+predicatively. Joshua 24:14, Judges 9:16/19 and Psalm 84:12 use it with **ב**
+to express integrity in action; Psalm 15:2 has a bare form after “walking.”
+Amos 5:10 is more directly useful for truth-conforming content: “one who
+speaks *tāmîm*.” Psalm 85:13 has a giving verb with the substantive adjective
+“what is good,” while 1 Samuel 14:40 has “do what is good in your eyes.”
+These prevent a blanket rule that a nounless adjective must denote a person
+or require an omitted noun. They do not reproduce Samuel's exact request.
+Psalm references here follow Hebrew numbering: 84:12 and 85:13 correspond
+to English 84:11 and 85:12. The XML morphology is editorial analysis, not
+another witness.
+
+Direct lexical and grammatical checks sharpen the distinction. BDB's complete
+*tāmîm* entry, enhanced PDF pp. 2606–2607, includes a neuter/substantive use
+with truth-conforming content. Its target cross-reference, however, points
+to **תֹם** section 4, which proposes **Thummim instead of the pointed form**.
+It is not direct certification of “perfect lot” or “answer honestly” at this
+verse. [GKC section 118m–q](https://en.wikisource.org/wiki/Gesenius%27_Hebrew_Grammar/118)
+describes manner accusatives generally; it does not adjudicate this request.
+
+[Driver's 1913 second edition](https://archive.org/details/2ndednotesonhebr00drivuoft),
+printed pp. 117–118 / PDF pp. 253–254, rejects the short-phrase renderings
+and favors a longer Hebrew reconstruction from Greek. That is a substantive
+objection, not an independently surviving Hebrew prayer. His printed argument
+and footnote were visually checked alongside the BDB pages. Yardney's complete
+pp. 133–134 were reread: her “answer honestly” takes its answering action
+from the oracular context, rather than a separately written Hebrew verb.
+
+| English option | What it interprets |
+| --- | --- |
+| Give a perfect lot | Supplies “lot” from the division and selection in verses 40–42; “perfect” describes the requested outcome. |
+| Give honesty | Uses an abstract/substantive sense, but is awkward and underspecified in English. |
+| Answer honestly | Makes the contextual answering action explicit; it is not a literal gloss of “give.” |
+| Give a true answer | Supplies “answer” and selects a truth-content interpretation; not established as superior. |
+| Give Thummim | Changes the interpretation/vocalization of the source consonants; not simply an English restatement of pointed WLC. |
+
+The delegated Hebrew assessor independently checked the named corpus controls
+and favored retaining the main sentence provisionally. Its subsequent exact
+note/rationale review passed without factual corrections. It did not freshly
+verify Driver/BDB pages, adjudicate source priority or conduct a blinded
+whole-verse preference test. The reviewed note explains the supplied noun,
+offers “Answer honestly” as an interpretation, and names Rahlfs–Hanhart for
+the longer prayer. It retains the disputed-fragment qualification. The lexical
+rationale preserves the historical HALOT label without inventing a fresh
+consultation. No new source letters or generated-image evidence follow.
+
+The reviewed disclosure and rationale are now applied locally. The Hebrew,
+entire main English string, note marker/reason and other semantic fields are
+unchanged. Superseded status, revision and agreement flags are preserved
+verbatim with their baseline binding; the edited record is draft/needs-review,
+not assigned the historical agreement score. The full 811-unit Samuel export
+matches preflight exactly: only 14:41's note changes, and all 810 other units
+are unchanged. This verifies the exported disclosure, not deployment or a new
+claim that the retained main wording is optimal.

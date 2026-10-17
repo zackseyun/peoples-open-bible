@@ -13268,6 +13268,60 @@ four workflow YAML parses and diff checks. No biblical record changed against
 68007c52c7. Publication remains subject to the new head's required checks;
 neither a review pass nor a research commit authorizes bypassing protection.
 
+## October 16 — Samuel 14 41 short request and English disclosure
+
+The preceding turn made progress by completing the Greek-form/chapter comparison
+and pushing cb88b55928. Its exact-head required checks were confirmed live on
+this turn, not treated as stopped or restarted. The new
+[linguistic follow-up](SAMUEL_SOURCE_COMPARISON_PASS_2.md#october-16-short-hebrew-request-and-reader-disclosure)
+tests the pointed short Hebrew separately from prayer-length selection.
+
+Root reread Yardney's complete pp. 133–134, directly read and visually checked
+BDB's full *tāmîm* entry and **תֹם** section 4, and acquired/read Driver's
+complete printed pp. 117–118 including the footnote. Driver's first two PDF
+routes returned 403; the Internet Archive download redirect returned 500.
+The item's public metadata then identified its data server, whose ordinary
+download succeeded. No credentials, paywall bypass or altered source were used.
+GKC's section 118m–q was read in the Wikisource transcription. A fitz import
+was unavailable; existing pypdf and Poppler supplied extraction and visual checks.
+The BDB layout is the already pinned enhanced file, not original print pagination.
+
+The independent Hebrew assessor and root read the named local controls. Amos
+5:10 supports truth-conforming content; it strengthens the initial assessment
+without making Samuel's construction identical. Giving “what is good” shows
+that adjective classification does not require an implied concrete noun.
+Neither alternative removes every contextual interpretation: “lot” comes from
+the selection scene; “answer” also comes from context. BDB's target proposal
+changes the pointed interpretation to Thummim. It cannot be silently borrowed
+as lexical approval of unchanged WLC or as another Hebrew manuscript.
+
+The exact proposed note/rationale passed a context-aware bounded review, not
+a blinded main-English contest. The reviewed change discloses “Answer honestly”
+as an interpretation, names the selected Greek edition and retains the 4Q52
+caveat. Main English and source stay provisional. The application record pins
+the baseline and semantic delta. The exact note/rationale are now applied
+locally, with source and the entire main English string unchanged. Stale
+status, revision and agreement values were archived verbatim with their
+baseline binding, and active flags reset to draft/needs-review. The first
+preflight correctly rejected retaining the legacy revised flag under the
+current draft-only schema; the planned archival/reset resolved that failure.
+No new method version or generated evidence is needed.
+
+Schema, semantic-delta, archival-value, source/protected pin, note-anchor and
+full-book export checks pass. Both preflight and actual export contain 811
+units; only 14:41's disclosure changes and all 810 others remain unchanged.
+The actual export digest matches the preflight result. JSON, 479 relative
+file-link targets across the two edited reports, four workflow YAML parses
+and diff checks pass. This is a local disclosure improvement, not a main-text
+replacement, source-priority decision or verified deployment.
+
+All 18 footnote-audit tests and six generic reader-export tests pass (24 total).
+The initial broad module invocation was deliberately interrupted while doing
+an unrelated Genesis whole-book export after its scope was inspected; exit 130
+is recorded, not presented as a test-suite pass. The narrower run avoids
+repeating unrelated corpus checks, while the actual 811-unit Samuel export
+above remains the application check. No new tests or export behavior were added.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

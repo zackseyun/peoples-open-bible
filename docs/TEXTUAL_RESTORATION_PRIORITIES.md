@@ -282,6 +282,22 @@ modern apparatus/local transmission study, early quotation/version, or Hebrew
 coverage arrives. Continue a distinct consequential OT question; repeated
 same-page inspection or agreement counts are not the next experiment.
 
+**October 17 distinct narrative comparison:** the
+[Jeroboam dossier](KINGS_12_JEROBOAM_NARRATIVE_COMPARISON_2026-10-17.md)
+compares the complete selected regular junction and expanded 12:24a–z with
+100 connected current Hebrew/POB records. The historical apparatus distinguishes
+whole omission, 127's illness-span omission, 554's substitutions and 56's
+Adoram/coronation addition. A reported B original-hand name error and later
+marginal corrections are not silently normalized. The original Gooding scan
+corrects reversed A/B table labels in the estate resetting; its methodological
+objections do not prove a harmonization or motive. Historical Hebrew priority
+remains HOLD; no canonical application. Obtain an actual modern local
+transmission argument/apparatus and test its specific predictions. Joosten 2020
+and Darshan 2024 are identified but not fully read; their access gaps remain
+explicit. A separately reviewed reader disclosure is possible, not yet applied.
+Do not repeat these eight pages or turn differing narrative forms into a
+synthetic recovered Hebrew story or a canon-addition claim.
+
 **Related historical control completed:** the
 [Hannah prayer clause at 1:13](SAMUEL_1_13_PRAYER_PLUS_2026-10-16.md)
 is now checked in the printed Samuel apparatus. The Genesis controls limit

@@ -54,8 +54,15 @@ The complete Hays article and McNaughton's concluding argument challenge a
 simple harmonizing change; Josephus's actual Greek names Michal/five children
 elsewhere but no husband there. Hebrew priority remains unresolved, with
 provisional Michal retention, not automatic WLC authority. No canonical edit
-is applied. Next identify and inspect Kennicott 198/250 and obtain a modern
-local Greek collation with a discriminating history-of-change argument.
+is applied. The [Hebrew witness follow-up](SAMUEL_21_8_HEBREW_WITNESSES_2026-10-17.md)
+now identifies 198's Nuremberg collection and 250's Turin A.IV.3; the latter
+has 15 damaged surviving leaves, not complete loss, with target coverage unknown.
+Digital Kennicott supplies released 39-book metadata and a checked derivative
+mother-name entry, not a new witness or unrestricted corpus import. No target
+hand was read. Next obtain actual 198 Samuel imagery, a passage inventory of
+250's survivors, its relevant collation, or a discriminating modern Greek
+collation; do not repeat the seven failed owner routes or infer preservation
+from a catalogue's book range.
 Do not repeat the supplied name, completed article reading or readiness audit
 as new evidence.
 

@@ -14568,6 +14568,83 @@ Kings merge after a fresh worktree, ancestry and identical-tree check;
 normal pushing of main confirmed synchronization. This does not change the
 frozen source dossier's earlier baseline or any of its canonical file hashes.
 
+## October 17 — Hebrew witness identities and released Kennicott data
+
+The [new access follow-up](SAMUEL_21_8_HEBREW_WITNESSES_2026-10-17.md)
+keeps the preceding mother-name dossier and its review frozen. Reused source
+readers pursued the Nuremberg and Turin routes while root read Kennicott's
+actual catalogue pages and public Digital Kennicott documentation/data. The
+first standalone volume download lacked the needed appendix; the combined
+copy supplies actual printed 88/91. Reported dates and institutional identities
+are not fresh target-hand readings.
+
+Kennicott 198 is Nuremberg's seven-volume Bible, reported 1291. Digital
+Kennicott maps its Former Prophets volume to Solg. 3 fol.; NLI's microfilm
+endpoint is 1 Kings 13:7, the project's 12:7. The discrepancy and missing leaves
+prevent a preservation claim. All seven publicly linked owner image routes
+returned 403; NLI's viewer is library-only. No restrictions were bypassed.
+
+The Turin institutional records identify 250 with A.IV.3 and report 15 current
+surviving leaves out of 499, all damaged. This qualifies the key and Digital
+Kennicott's complete-loss wording. Their survival does not establish the
+mother-name's survival. Script classifications also disagree and remain
+unresolved. Parma 2874 is an eighteenth-century collation of six Turin codices,
+not a newly photographed original or another independent ancient vote. Both
+tested NLI collation routes failed. No actual target hand was read.
+
+The public Digital Kennicott edition supplies documented GET source access.
+Root inspected all 41 collection member names/titles: 39 biblical documents
+and two auxiliary/demo files. Only 2 Samuel's biblical source was downloaded.
+Its exact mother-name entry matches the prior printed reading: omission172,
+מירב198, מרב250. The non-word caret must not disappear in word-only extraction.
+Root read the full K198/K250 witness nodes and the source/license metadata;
+this is a bounded sample, not 39-book validation. CC BY-NC-SA 4.0 terms prevent
+treating the released XML as already cleared for POB corpus incorporation.
+The consultation bytes stay private; no bulk import, parser, OCR pipeline,
+test infrastructure, full-book export or canonical edit was added.
+
+The [packet](../sources/textual_restoration/comparisons/samuel21_8_hebrew_witnesses.2026-10-17.v1.json)
+pins the new consultation files, three derived renders and unchanged predecessor
+inputs. One reused independent judge is assigned a bounded new-facts review,
+not another earliest-Hebrew vote or repeat of the 43-record WLC/export checks.
+Next evidence is an actual Samuel leaf, the surviving-leaf passage inventory,
+a relevant existing pre-fire capture or actual collation target. If unavailable,
+move to a distinct accessible consequential question rather than same-route
+retry loops. The broader program remains unfinished; no source priority,
+new letter, numerical confidence or canon claim follows.
+
+The preceding dossier's PR 284 passed both required `corpus-integrity` checks
+at `eef183dd5e408dde3c05338770af176c6fcecd88`. A fresh exact-head/full-check-list,
+zero-legacy-blocker and clean/mergeable guard allowed normal merge as
+`15c2f68fae18288cfdd485b1ed9199b2dd1f9e56`. No CI restart, cancellation,
+branch-protection bypass or deployed-reader claim follows.
+
+Root's scoped checks passed 22 file pins, all three render dimensions, the
+exact XML mother-name/symbol assertions, the 41/39/2 collection distinction,
+two relative report links and `git diff --check`. The target and frozen prior
+records are unchanged. Fresh worktree/ancestry/compare-and-swap checks allowed
+local main and the research branch to fast-forward to the merge; the only
+incoming differences were 40 unrelated Enoch-review additions, preserved
+without claiming review of them. Normal pushing of main confirmed remote
+synchronization. No broad test-suite or deployment pass is asserted.
+
+The new-facts review exceeded its intended elapsed-time bound. Root stopped
+further reviewer work and requested a conclusion from completed checks only,
+with unreviewed items explicit. An assignment or root's own successful checks
+must not be represented as an independent pass; only a returned result at
+the frozen hashes can support that claim.
+
+The reviewer then returned [PASS within the checked source-access scope](../sources/textual_restoration/comparisons/samuel21_8_hebrew_witnesses_review.2026-10-17.v1.json)
+at report `d1414d39…` and packet `14c785c3…`, with no factual corrections.
+Its actual checks cover all 22 pins, three dimensions, catalogue 88/91 and
+key PDF13 visually, retained NLI/Turin fields, complete K198/K250 metadata,
+the exact omission/name entry, all 41 collection names/titles and two links.
+It did not independently retry access failures, read manuscript leaves/hands,
+the Parma target or the other 38 biblical sources, or certify source priority.
+The elapsed-time intervention did not turn partial work into implied coverage;
+the returned result and exclusions are retained. No second agreement loop
+was run. The pass does not select a Hebrew mother-name or approve application.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

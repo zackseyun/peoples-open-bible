@@ -30,6 +30,24 @@ The newly dispatched [website rebuild](https://github.com/zackseyun/cartha.websi
 was initially pending. Its status, the changed CDN and source-page success
 must not stand in for observing the actual updated chapter.
 
+At the later 22:34–22:35 UTC observation, the requested deployment
+`39071463873` and its companion quiet-time run `39071467896` were terminally
+cancelled, last updated at 22:06:50 and 22:06:53 respectively. They are not
+still-running handles. A newer [quiet-time run](https://github.com/zackseyun/cartha.website/actions/runs/39075344945),
+created by a website push at 22:30:24, was observed queued; its existence does
+not establish the contents or completion of a replacement deployment. A fresh
+actual Samuel chapter still displayed the older full allegation. Synchronized
+chapter delivery therefore remains unverified. No duplicate dispatch or
+manual restart was performed, and no cancellation cause is inferred from
+status alone.
+
+Read-only inspection of that newer run's workflow at website revision
+`246f395d9e171b8e8feaf7308812d5901b8b5078` shows cancellable commit builds
+after five quiet minutes and a separate serialized, non-cancelling publication
+job. This describes the inspected configuration, not the cause of earlier
+cancellations, a claim that publication ran, or permission to change the
+website repository. No workflow or reader implementation was edited here.
+
 The [dated observation record](../sources/textual_restoration/applications/samuel2_22_public_delivery.2026-10-17.v1.json)
 keeps the payload hashes, ancestry check, exact target text and separate
 delivery stages. It supplements rather than rewrites the frozen local

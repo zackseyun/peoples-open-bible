@@ -13370,6 +13370,39 @@ run is needed for this research-only packet. The previous note application
 and its verification remain preserved; publication still requires the new
 head's required checks, without a protection bypass.
 
+## October 16 — Josephus and Wellhausen at Samuel 15 29
+
+The [15:29 comparison](SAMUEL_15_29_SOURCE_COMPARISON_2026-10-16.md#josephus-and-the-reliability-statement)
+now checks Josephus directly in a pinned Perseus Niese-based Greek text.
+Root read *Antiquities*6.130–160 and the6.205 lexical control. God's abiding
+by decisions precedes the human-change comparison in6.153; neither the threat
+verb nor the longer Greek ending's negative rhetorical question is repeated.
+The same infinitive also occurs in Josephus's own narration about Saul.
+This establishes a possible echo, not a diagnostic quotation or Hebrew source.
+A delegated judge read6.131–155 and6.205 and passed that bounded conclusion,
+including correct treatment of the electronic text's deletion markup.
+
+A separate bounded source task acquired Wellhausen's1871 original through
+Internet Archive. Both root and the source reader visually read complete
+printed96 and101, including the cross-reference to avoidance of anthropomorphism.
+His euphemism proposal is now verified directly, but it gives no paleographic
+chain and predates4Q51. A Greek-only change would not by itself explain the
+Hebrew alternative; a Hebrew-stage euphemism remains possible. The source
+reader's bounded review passes. McCarter264 was not delivered by the other
+two routes, Google Books and Yale; his argument remains secondhand here.
+The evidence record preserves distinct review scopes and historical input
+hashes, not a claim that either reviewer certified the whole case.
+
+No source, main English, note or canon change follows. The gain is two directly
+checked arguments and a narrower next test, not new decipherment or extra
+ancient manuscript votes. Repeating these parallel passages or failed access
+routes is not the next task. No new corpus tests or exports were added for
+this documentation-only update. Validation passes JSON, seven private-source
+byte/hash pins, three WLC pins, two unchanged canonical verse pins, the
+protected untracked-file pin, 555 relative file-link targets across the three
+changed research documents, and diff checks. Main publication remains subject
+to the exact head's required checks; no protection bypass is authorized.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

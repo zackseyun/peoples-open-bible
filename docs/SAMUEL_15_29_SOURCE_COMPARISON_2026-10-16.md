@@ -68,16 +68,70 @@ This makes a Greek-level literary relationship a concrete possibility;
 it does not prove Greek expansion or exclude a Hebrew antecedent. The shared
 reliability theme alone cannot determine the direction or language of borrowing.
 
+## Josephus and the reliability statement
+
+Direct comparison with [Perseus's Niese-based Greek text](https://github.com/PerseusDL/canonical-greekLit/blob/03952c9751d7f963fe5cbbc062fbe2503181de47/data/tlg0526/tlg001/tlg0526.tlg001.perseus-grc2.xml)
+now replaces the secondhand Josephus lead. In *Antiquities* 6.152–154, the
+cloak tears, Samuel announces the transfer of kingship, and Saul asks for
+public honor. Within that sequence, 6.153 says that God stands by the decisions
+concerning Saul: **ἐμμένειν γὰρ τὸν θεὸν**. It then contrasts human changing
+of mind with divine power. The reliability statement precedes that contrast;
+the longer Samuel Greek puts its disputed threatening-and-standing clause
+after the nonhuman comparison.
+
+The shared **ἐμμένω** vocabulary makes the proposed echo concrete, but Josephus
+does not reproduce the threat verb, the negative rhetorical question or the
+long ending's full wording. The shorter Samuel text already conveys divine
+constancy, so Josephus could also have expressed that theme without that
+ending. His own narrative uses **ἐμμένειν** again at 6.205, of Saul not abiding
+by what had happened. Lexical overlap alone is therefore not a diagnostic
+quotation. The retelling is compatible with knowledge of the longer Greek,
+but does not independently establish its priority, exact wording or Hebrew
+ancestry. Nor does it decide **ישוב** versus **ישקר** or preserve the disputed
+Israel-division opening.
+
+The consulted source is an electronic edited text, not a Josephus manuscript
+or newly checked critical apparatus. Its editorial deletion of **αὐτοῦ** in
+6.153 must not be silently counted as accepted continuous text. Root read
+6.130–160 in context and 6.205 as a lexical control; a search for this exact
+infinitive is not a complete lemma concordance. This follow-up changes the
+evidence classification from a reported parallel to a directly checked,
+non-diagnostic parallel. POB's source and translation remain unchanged.
+
+## Wellhausen and the Hebrew verb
+
+Wellhausen's [1871 original](https://archive.org/download/dertextderbche00well/dertextderbche00well.pdf),
+printed p. 101 / PDF p. 121, explicitly calls the Greek's **ישוב** in place of
+**ישקר** a euphemism. His reference back to 15:1, printed p. 96 / PDF p. 116,
+discusses avoidance of “God's voice” as an anthropomorphism. This establishes
+his proposed theological motivation, not a paleographic chain or a manuscript
+demonstration that **ישקר** came first. Both complete pages were visually read
+by root and the delegated source reader.
+
+The argument predates 4Q51 and cannot account for its Hebrew evidence directly.
+A change made only by a Greek translator would not by itself explain surviving
+Hebrew **ישוב**. A Hebrew-stage euphemistic alteration remains possible, however;
+the scroll's agreement with Greek does not prove that their shared wording is
+earliest. Neither the theological motivation nor the attestation alone selects
+POB's source text. The result remains **HOLD** between the two Hebrew readings.
+
+McCarter's staged-corruption explanation remains known here through Yardney,
+not direct consultation of his p. 264. A bounded Google Books route did not
+deliver that page, and the publisher's page supplied no target excerpt. These
+access results are not evidence for or against his explanation.
+
 ## Next discriminating work
 
 Test the isolated-pronoun and longer-ending readings in identified witnesses,
-including correction hands and local shortening behavior. Compare Josephus's
-complete retelling and its position of the reliability statement; the present
-Josephus evidence is quoted in the consulted studies, not a new direct edition
-check. This can test early Greek history without promoting a Hebrew retroversion.
+including correction hands and local shortening behavior. Josephus's retelling
+and the Numbers comparison are now directly checked; repeating their shared
+vocabulary would not add independent evidence. A diagnostic quotation or
+manuscript reading could test early Greek history without promoting a Hebrew
+retroversion.
 
-For the Hebrew verb, consult the actual staged-corruption/euphemism arguments
-cited by Yardney before choosing between **ישוב** and **ישקר**. Local WLC
+For the Hebrew verb, obtain McCarter's actual staged-corruption argument
+through a new lawful route before choosing between **ישוב** and **ישקר**.
+Wellhausen's brief euphemism argument is now checked, not a task to repeat. Local WLC
 15:25–31 repeatedly uses returning language, while Numbers 23:19 provides a
 lying/nonhuman/regret parallel: these are relevant controls, not proof of a
 specific correction. For the opening, adjudicate the disputed fragment

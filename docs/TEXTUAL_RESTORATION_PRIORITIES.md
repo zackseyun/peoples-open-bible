@@ -71,10 +71,13 @@ of Aejmelaeus's 2022 author manuscript supplies no 845 reconstruction, but opens
 [1 Samuel 15:29](SAMUEL_15_29_SOURCE_COMPARISON_2026-10-16.md). Direct DJD/QDR
 checks establish Hebrew **ישוב** against WLC **ישקר**, while the division clause
 remains wholly supplied and disputed. The longer Greek ending is a third unit,
-not proof of a longer Hebrew original. Next test its identified Greek readings
-and the actual Josephus retelling, alongside the cited Hebrew-corruption and
-euphemism arguments. The initial Numbers comparison is complete; do not repeat
-its lexical overlap as new proof of borrowing. No source or reader change is
+not proof of a longer Hebrew original. The actual Josephus retelling is now
+checked: its shared reliability verb is not a diagnostic quotation of the long
+ending. Wellhausen's original euphemism argument is also checked; it does not
+establish Hebrew priority. Next test identified Greek readings and obtain
+McCarter's actual corruption argument through a new lawful route. The Numbers
+and Josephus comparisons and Wellhausen target pages are complete;
+do not repeat their lexical overlap as new proof. No source or reader change is
 applied by this case. The 845 edition-access hold does not block this distinct
 published-evidence route or imply exhaustion of the wider OT program.
 

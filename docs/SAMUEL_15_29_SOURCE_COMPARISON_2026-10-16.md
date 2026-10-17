@@ -68,6 +68,84 @@ This makes a Greek-level literary relationship a concrete possibility;
 it does not prove Greek expansion or exclude a Hebrew antecedent. The shared
 reliability theme alone cannot determine the direction or language of borrowing.
 
+## Three Greek endings and identified witnesses
+
+BMT's printed p. 52 / PDF p. 68 distinguishes the pronoun-only ending in its
+B-based continuous text, a longer clause in the apparatus, and omission of the
+pronoun itself. The last branch must not be confused with a long clause that
+lacks its initial pronoun. The following bounded sample resolves sigla against
+this volume's own key, printed pp. v–vi / PDF pp. 11–12.
+
+| BMT witness | Published ending at this locus | Scope |
+| --- | --- | --- |
+| B-based continuous text | αὐτός alone | Selected continuous text, not a fresh Vaticanus image reading. |
+| a = 707, Sinai St Catherine 1 | Long clause without initial αὐτός | Long branch, not the identical common string. |
+| v = 245, Vatican Gr 334 | Long clause without initial αὐτός | Same local qualification as a. |
+| z = 554, Paris Gr 133 | Long clause with additional final αὐτός | Initial and additional final pronouns must be distinguished. |
+| b = agreement of b′ 19 and barred-b 108 | No final αὐτός or long clause | A composite agreement symbol, not one physical witness. |
+| o = 82; c₂ = 127; e₂ = 93 | No final αὐτός or long clause | Separate members of the explicit omission entry. |
+
+The Samuel key identifies 19 as Chigi R. vi. 38, 108 as Vatican Gr 330,
+82 as Coislin 3, 127 as Moscow Synodal Gr 31 and 93 as Royal 1 D. ii. These
+are the edition's historical identifiers, not freshly verified current shelfmark
+or custody records. Its b₂ = 29 is a different siglum and belongs to the long
+branch; confusing b with b₂ would reverse the attribution.
+
+The edition's general instructions, Genesis printed p. ii / PDF p. 10, explain
+that the long reading is a common type followed by supporters and bracketed
+exceptions. All relevant subentries must therefore be assembled before assigning
+an exact string to a witness. No correction index occurs on a, v or z in these
+ending subentries; the nearby b* omission concerns **τοῦ**, not the final
+pronoun. This sample is not a complete supporter census, hand collation or
+proof of textual independence. Root and the delegated reader visually checked
+the target, the Samuel key and the general convention page.
+
+## Augustine quotes and interprets the long clause
+
+Hoffmann's CSEL edition of *De civitate Dei* 17.7 prints an explicit Latin
+quotation, **ipse minatur, et non permanet**, after the nonhuman comparison
+(printed p. 229, lines 9–12). Later Augustine repeats it and assigns the action
+to humanity, not God (p. 231, lines 3–6). This is a substantive longer-clause
+parallel, stronger than Josephus's shared reliability vocabulary. It is not
+evidence that the clause was always understood as a rhetorical question about
+God. Latin tense and this interpretation do not select the Greek tense or
+recover its punctuation. The chapter also quotes the Israel-division opening;
+that is Latin reception evidence, not preserved Hebrew support for 4Q51's
+supplied opening.
+
+The original-language check uses the [OpenGreekAndLatin electronic edition](https://github.com/OpenGreekAndLatin/csel-dev/blob/a930441f99e57a62724991a91d102bf2053635c7/data/stoa0040/stoa003/stoa0040.stoa003.opp-lat3.xml)
+and the [underlying public-domain scan](https://archive.org/details/corpusscriptoru07wiengoog/page/n245/mode/2up).
+Root read the entire chapter and its notes in XML, then visually checked complete
+printed pp. 228–232 / PDF pp. 245–249. A delegated reader independently read the
+complete XML chapter and notes, not the scan. The XML joins both CSEL volumes
+under opp-lat3; its old web index's separate opp-lat4 download no longer exists.
+Neither presentation is another ancient witness, and the repeated quotation
+within the chapter is not an independent vote. These are edited author-text
+readings, not new collation of a Latin Bible manuscript; the ancient author's
+period must not be assigned to the modern edition or an unidentified copy.
+
+Two nearby statements need especially narrow attribution. Augustine's appeal
+to Greek copies at p. 229, lines 21–25 concerns **regnum ab Israel** in verse 28,
+not demonstrated consultation of the Greek ending in verse 29. Hoffmann's
+apparatus at line 11 says the ending's words are absent from LXX; that is the
+modern editor's note, not Augustine's claim or a complete inventory of Greek
+evidence. BMT's explicit long-clause entry prevents treating it as universal
+absence. The quotation establishes Latin attestation and an ancient alternative
+interpretation, not earliest Greek priority or an exact Hebrew ancestor.
+
+## Current critical edition status
+
+A fresh status check distinguishes authorial completion from publication.
+The [Göttingen notice of November 19, 2025](https://septuaginta.uni-goettingen.de/news/11/)
+specifies that Aejmelaeus submitted her 1 Samuel manuscript for peer review.
+The [IOSCS obituary](https://septuaginta.uni-goettingen.de/ioscs/news/)
+describes the edition as completed. The [current publication list](https://septuaginta.uni-goettingen.de/publications/septuaginta/)
+does not list Regnorum I. This bounded check did not verify a released volume
+or acquire its apparatus; unsuccessful publisher access is not proof that no
+release exists. The consulted 2022 chapter remains an account of selected
+editorial decisions, not the finished critical edition. Do not infer present
+availability from its historical forthcoming language.
+
 ## Josephus and the reliability statement
 
 Direct comparison with [Perseus's Niese-based Greek text](https://github.com/PerseusDL/canonical-greekLit/blob/03952c9751d7f963fe5cbbc062fbe2503181de47/data/tlg0526/tlg001/tlg0526.tlg001.perseus-grc2.xml)
@@ -122,12 +200,13 @@ access results are not evidence for or against his explanation.
 
 ## Next discriminating work
 
-Test the isolated-pronoun and longer-ending readings in identified witnesses,
-including correction hands and local shortening behavior. Josephus's retelling
-and the Numbers comparison are now directly checked; repeating their shared
-vocabulary would not add independent evidence. A diagnostic quotation or
-manuscript reading could test early Greek history without promoting a Hebrew
-retroversion.
+The three ending branches and the bounded BMT siglum sample are now checked;
+do not repeat the same apparatus entry as a new collation. The next useful
+Greek test is source imagery or a new critical collation for the identified
+witnesses, including correction hands and local shortening behavior. Josephus,
+Numbers and Augustine are directly checked at their stated scopes. Augustine
+is a substantive quotation but does not settle direction; repeating these
+parallels would not supply a new witness or Hebrew retroversion.
 
 For the Hebrew verb, obtain McCarter's actual staged-corruption argument
 through a new lawful route before choosing between **ישוב** and **ישקר**.

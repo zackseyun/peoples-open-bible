@@ -13403,6 +13403,53 @@ protected untracked-file pin, 555 relative file-link targets across the three
 changed research documents, and diff checks. Main publication remains subject
 to the exact head's required checks; no protection bypass is authorized.
 
+## October 16 — Samuel 15 29 ending witnesses and Augustine
+
+The previous goal turn made progress by acquiring and checking Josephus and
+Wellhausen, committing297de693ae and pushing the branch. Its exact-head
+required jobs were confirmed live at this turn's start, not presumed stopped
+or restarted after a polling timeout. This turn continued the consequential
+ending question rather than changing a reader note or repeating a corpus scan.
+
+The [case report](SAMUEL_15_29_SOURCE_COMPARISON_2026-10-16.md#three-greek-endings-and-identified-witnesses)
+now resolves a bounded set of BMT ending sigla against its Samuel key and
+general apparatus conventions. Pronoun alone, long clause and complete ending
+omission are distinct; a/v's absent initial pronoun and z's added final pronoun
+must not become uniform full-string agreement. Composite b19/108 is not b₂29.
+Root and a delegated source reader visually checked the target, key and
+convention pages. This supplies an actual witness map for a subsequent image
+or new-collation test, not a new manuscript decipherment or full supporter count.
+
+An accessible public-domain CSEL source now supplies Augustine's complete
+Latin17.7 and notes. Root read its XML and visually checked all five printed
+target pages228–232/PDF245–249. His explicit quotation is stronger evidence
+for Latin circulation of the long clause than Josephus's lexical echo, while
+his human-action interpretation differs from a divine rhetorical question.
+The appeal to Greek copies belongs to neighboring verse28; the LXX absence
+claim is Hoffmann's modern note, not Augustine's statement or universal Greek
+coverage. Repetition and modern presentations do not add ancient witnesses.
+The old index's lat4 download was absent; the actual repository tree led to
+the merged lat3 XML and its linked scan. Earlier Augustinus/ancienttexts/ATLAS
+access errors were not treated as source evidence or bypassed. No target
+Vatican manuscript image was acquired from the attempted public viewer.
+
+A separate current-status check verifies manuscript submission for peer review,
+not a released Göttingen1Samuel apparatus. Three context-aware bounded reviews
+pass within separate BMT, Augustine-XML and publication-status scopes; none
+certifies the whole case or independently verifies root's scan-reading event.
+The documentation workflow preserves these distinct attestation, interpretation
+and source-selection judgments. No Hebrew, English, note, canon or generated
+evidence change follows. Completed sample and parallel checks are removed from
+the next-task queue; new imagery/collation or the actual McCarter argument must
+supply new evidence. Source files stay private and pinned, not copied into Git.
+
+Validation passes JSON, thirteen unique private-source byte/hash pins, three
+WLC pins, the exact reviewed report hash, two unchanged canonical records, the
+protected untracked-file pin, 556 relative file-link targets and diff checks.
+There is no source/translation diff against297de693ae; no new corpus test or
+book export was needed for this research-only update. Main publication still
+requires the current head's successful protected checks.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

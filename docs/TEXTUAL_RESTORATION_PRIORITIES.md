@@ -74,10 +74,15 @@ remains wholly supplied and disputed. The longer Greek ending is a third unit,
 not proof of a longer Hebrew original. The actual Josephus retelling is now
 checked: its shared reliability verb is not a diagnostic quotation of the long
 ending. Wellhausen's original euphemism argument is also checked; it does not
-establish Hebrew priority. Next test identified Greek readings and obtain
-McCarter's actual corruption argument through a new lawful route. The Numbers
-and Josephus comparisons and Wellhausen target pages are complete;
-do not repeat their lexical overlap as new proof. No source or reader change is
+establish Hebrew priority. A bounded BMT witness/key check now separates
+pronoun-only, long and zero endings, preserving a/v/z's pronoun differences
+and composite b versus b₂. Augustine's actual Latin chapter explicitly quotes
+the long ending but interprets it as human action, not the proposed divine
+rhetorical question. The edition manuscript's submission for peer review is
+verified; a released Göttingen volume and apparatus are not. Next obtain
+new imagery or collation of the identified Greek witnesses and McCarter's
+actual argument through new lawful routes. These apparatus and parallel checks
+are complete at their stated scopes, not tasks to repeat. No source or reader change is
 applied by this case. The 845 edition-access hold does not block this distinct
 published-evidence route or imply exhaustion of the wider OT program.
 

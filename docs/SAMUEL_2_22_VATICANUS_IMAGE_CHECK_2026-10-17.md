@@ -111,3 +111,12 @@ alternative. The numerical age is not adopted, and removal of the loader's
 serialized maqaf tail is not an ancient punctuation discovery. No candidate
 Hebrew, English or note changed during this reassessment. The existing full
 record/application review remains distinct from this factual follow-up.
+
+The user subsequently gave [explicit approval of the exact arrangement](../sources/textual_restoration/applications/samuel2_22_explicit_user_approval.2026-10-17.v1.json):
+“shorter main text with the full clause and uncertainty in the footnote.”
+Root verified that actual human message. The existing candidate already meets
+the clause/disclosure arrangement; it was not changed to obtain approval.
+This authorizes neither certainty about interpolation nor unreasoned adoption
+of other verse changes. Actual public main text, full reader-visible note and
+navigation still require deployment verification, and stronger contrary
+evidence can reopen the textual decision.

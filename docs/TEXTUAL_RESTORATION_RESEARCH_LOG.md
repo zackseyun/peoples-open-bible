@@ -15177,10 +15177,25 @@ Root reassessed the clause and bundled wording separately using the existing
 complete assessment, controlling method and new visible-body observation.
 The provisional shorter preference remains; the first כל component is weaker,
 and neither the image nor CI settles Qumran layout or earliest wording.
-No Hebrew, English, note or historical approval was changed. The current
-research branch starts from main, so this follow-up itself does not carry the
-pending canonical deletion. Candidate/application records remain preserved on
-PR 299's branch. Future merge and actual reader checks remain pending; the full
+No Hebrew, English, note or historical approval was changed. The follow-up was
+first prepared from main without the pending canonical deletion. It was then
+integrated into PR 299's existing application branch, preserving that exact
+candidate rather than duplicating the application. GitHub had reported a
+dirty merge state, but the actual latest-main merge was clean and preserved
+18 incoming Enoch 26:5 files. Integrating the follow-up required resolving only
+the research log's concurrent insertions; both complete entries were retained.
+
+The user then gave [explicit approval of the exact clause/disclosure arrangement](../sources/textual_restoration/applications/samuel2_22_explicit_user_approval.2026-10-17.v1.json),
+again verified from the actual human message. The existing shorter main text
+and full uncertain-reading footnote already match that arrangement. This is
+not blanket evidence for the other verse changes or certification of an
+interpolation. Source research continues and stronger contrary evidence can
+reopen the choice. After latest-main integration, all nine application tests
+passed again in 32.370 seconds, including exact candidate/pin validation,
+whole-book preservation and negative mutations. The earlier 48-test result is
+not represented as another new run. Primary-image hashes/sizes, manifest and
+source-report pins, document links and protected Genesis bytes also passed
+scoped checks. Future merge and actual reader checks remain pending; the full
 source-comparison objective remains active.
 
 ## Later About-page summary — proposed, not published

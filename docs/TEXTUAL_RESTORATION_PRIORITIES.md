@@ -104,7 +104,8 @@ now confirms the known shorter visible Greek main-column junction on manuscript
 page 311, column III. It does not certify the original hand, read the nearby
 margin or add another witness alongside the edition. The user's brief
 publication hold was explicitly superseded by permission for evidence-led
-omission; PR 299 was closed unmerged, then reopened. Its other wording choices
+omission, then explicit approval of shorter main text with the full clause and
+uncertainty in the footnote; PR 299 was closed unmerged, then reopened. Its other wording choices
 retain separate feature-specific arguments and limits. CI and actual future
 delivery remain gates, not evidence of textual originality.
 

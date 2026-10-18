@@ -46,6 +46,17 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 new connected comparison:** [Psalm 40 and Hebrews 10](PSALM_40_EARS_AND_BODY_COMPARISON_2026-10-18.md)
+now separates Hebrew ears, body-bearing Greek transmission and the ears-printing
+Rahlfs control. Both full competing studies and newer bounded quotation controls
+are consulted. The Latin Irenaeus reading is not surviving second-century Greek;
+the proposed precise Christian-revision chronology is not independently established.
+Retain Hebrew and the distinct Hebrews text; Greek priority remains unresolved.
+Next consult actual Bodmer XXIV target evidence and the remaining modern local
+apparatus/quotation study, or separately review a qualified reader-note correction.
+No source, main English or note is applied by this comparison. Do not repeat the
+completed selected texts or full articles as another source-preference vote.
+
 **October 18 source-integrity checkpoint:** the
 [current whole-OT provenance check](OT_SOURCE_PROVENANCE_CHECKPOINT_2026-10-18.md)
 accounts for all 23,264 records after the newer critical-source applications.

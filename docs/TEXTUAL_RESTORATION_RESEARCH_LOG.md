@@ -15425,6 +15425,44 @@ runner evidence and the unresolved deployment gate. Frozen candidate reviews,
 receipts and the unrelated Genesis draft remain untouched. The full research
 objective stays active; technical fidelity does not certify historical priority.
 
+## October 18 — Compare Psalm ears and body without harmonizing the texts
+
+The previous goal turn made progress by verifying Lamentations' new public
+provenance disclosure. A fresh chapter action now reaches that updated record
+while retaining the clean reading view. The checkpoint appends this later
+observation without rewriting its pre-release baseline or frozen receipt.
+PR 307's same two exact-head checks remain live; no restart was requested.
+
+A bounded local scout identified the previously unperformed
+[Psalm 40 comparison](PSALM_40_EARS_AND_BODY_COMPARISON_2026-10-18.md).
+Root checked the actual three-part Hebrew alignment, Greek selected text and
+apparatus, the reacquired hash-matching Rahlfs surface text, Hebrews' Greek
+quotation/context and distinct Hebrew ear parallels. The PDF skill prompted
+visual inspection of complete target pages and tables. Both opposing studies
+were read in full at the documented PDF-text/HTML-text scopes; the newer Gäbel
+chapter was consulted only at its introduction and Irenaeus/Origen controls.
+The documentation skill kept this evidence in the established Git reports,
+with raw acquisitions private and observation separated from reconstruction.
+
+This comparison establishes a real Greek transmission problem, not recovered
+Hebrew body wording or a newly discovered variant. The Latin Irenaeus reading
+and differing Greek combinations limit blanket manuscript-count and dependence
+claims. Exact authorial changes in Hebrews cannot be proven merely by comparing
+it with a reconstructed exemplar. Source/English priority and a possible note
+repair remain separate decisions. No canonical source, main English, note,
+publisher/reader code or canon change is applied here; no ImageGen output is
+used as evidence. The full OT comparison/restoration objective remains active.
+
+One bounded independent factual review passed the exact draft report and
+packet without required corrections. Its scope was reference alignment,
+primary selected/report Greek, local Hebrew/NT controls and Gäbel's bounded
+quotation evidence, not another priority vote or a certification of root's
+full-article reading. Root's scoped checks pass all 14 canonical pins, 40
+private asset hashes, three actual Psalm alignments, 668 relative link targets,
+the protected Genesis hash and whitespace. Source/English/code diff is empty.
+No redundant full-corpus or application/export suite was run for this research
+documentation change. Required CI and main integration remain separate gates.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

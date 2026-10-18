@@ -84,3 +84,16 @@ pending at this observation. No infrastructure, external publisher or reader
 code was changed. Bible-repository CI and provenance delivery are separate from
 that website build; the offline runner does not establish failure of those
 other processes. No new inline panel or canon change follows.
+
+## Subsequent Lamentations delivery observation
+
+After PR 306's ordinary merge at `37b604cc43664284c91cdcb736c97e197de49e45`,
+the actual public provenance view at 00:37:05 UTC displayed the complete new
+4Q111 note, corrected impurity-note anchor, two footnotes and “Review needed,”
+without inherited agreement approval. Clicking its new marker reached
+`#footnote-b`. A subsequent fresh chapter inspection followed the actual
+selected-verse action to that updated LAM.1.17 record; the reading text remained
+clean and marker-free. The earlier baseline and machine-readable observation
+remain historical snapshots. This verifies the on-demand public disclosure,
+not mobile/offline delivery, a CDN manifest or completion of the separate
+website build. No reader/publisher code or runner recovery was performed.

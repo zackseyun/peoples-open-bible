@@ -15692,6 +15692,39 @@ source/code and the protected unrelated file. No whole-corpus or export rerun is
 claimed. Required CI, normal main integration and actual publication remain
 separate gates; the complete program remains active.
 
+## October 18 — Distinguish original and corrected Job 2 in Sinaiticus
+
+The [Sinaiticus follow-up](JOB_2_SINAITICUS_CORRECTIONS_2026-10-18.md) examines
+the official target markup, image and correction popup. The project's original
+πλανωμενη and ca's πλανητιϲ belong to one witness's different states. Five other
+local correction units include a waiting verb and the deliverance possessive;
+they prevent treating one selected edition's grammar as uniform. The longer
+speech is already in the reported original state. No new erased letter or
+independent palaeographic attribution is claimed. Hebrew/main English remain
+provisional and unchanged; Greek authorship and Hebrew priority remain open.
+
+The PDF skill's specification check makes explicit original-state selection
+mandatory instead of assuming the first displayed reading. The documentation
+skill keeps the predecessor frozen and this follow-up separately reproducible.
+Raw project assets remain private under their stated reuse restrictions. A
+bounded three-route scout did not acquire Heater's target pages or Fernández
+Marcos's chapter; those positions remain indirect. No repeated access loop,
+whole-corpus/export rerun, inline panel or reader/publisher redesign is applied.
+The user's concern about clutter preserves the existing on-demand provenance
+arrangement rather than authorizing expanded website work. The complete research
+goal remains active; review, required CI, main integration and public delivery
+remain distinct gates.
+
+One bounded independent factual review passed without required correction;
+the unchanged report and pre-receipt packet hashes bind its actual scope.
+Root's six exact correction/line controls, original scene and command checks,
+five asset pins, two frozen predecessors, 36 canonical pins, 680 relative links,
+whitespace and unrelated-file protection passed. No whole-corpus or export rerun
+is claimed. Separately, both required PR313 checks passed on exact head
+413dacd41cd60f8f9d5259ebfd9ae5682e62145b; the normal merge is
+21d78296475419f66879b90bc8603a5aa93a1aef, with local main advanced and pushed.
+That integration does not certify the still-running Job checks or public delivery.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

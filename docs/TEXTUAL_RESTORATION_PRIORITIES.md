@@ -46,6 +46,14 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 Sinaiticus follow-up:** the [Job 2 correction states](JOB_2_SINAITICUS_CORRECTIONS_2026-10-18.md)
+now distinguish the project's original participle from ca's noun, plus five
+other local corrections. The longer speech is not wholly a ca addition.
+This sharpens the lexical control without settling Greek authorship or Hebrew
+priority. Keep the main translation unchanged. Seek actual modern apparatus
+and competing target studies; do not count this edition or correction as an
+additional manuscript, or repeat the three exhausted study-access routes.
+
 **October 18 new connected comparison:** [Job 2:9–10](JOB_2_WIFE_SPEECH_COMPARISON_2026-10-18.md)
 now compares the longer Greek wife speech and response within the full prologue,
 including actual apparatus and the four disputed bless/curse controls. Added

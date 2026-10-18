@@ -15850,6 +15850,51 @@ the protected unrelated Genesis file. No whole-corpus or export rerun was
 appropriate for this research-only change. A fresh check-run API read confirmed
 the same pending CI handles live, not failed; they were allowed to continue.
 
+## October 18 — Test the lexical and version explanation directly
+
+The preceding goal turn made progress through the reviewed, committed Jeremiah
+comparison and ordinary integration of PR319 and PR320. Their exact successful
+heads were 254512e48dce73421dc3eca449d2413625a3ee2c and
+8e1a9ef95a9c3cac4797f11460bc42a040dc529b; their normal merge commits are
+d2d4eb5f61ae4085cb2e6ba1c2a4ec87fc9e4116 and
+3e4f0aa817351f32b3c7a0fe58ca356c75c9ab7a. Local main was advanced and
+ordinarily pushed. These merges did not certify deployed reader behavior.
+Fresh checks found the exact PR323 head and its two check handles still live;
+no restart followed an observation boundary.
+
+The [lexical/version follow-up](JEREMIAH_31_LEXICAL_AND_VERSION_CONTROLS_2026-10-18.md)
+resolves previously indirect inputs against actual sources. One bounded scout
+found the old lexicon scan and Arabic control. Root visually checked the full
+relevant entries and title, then read the actual Hebrew commentary, Aramaic
+targets and Syriac contextual units. The PDF skill guards the multi-column
+lexicon layout; the documentation skill keeps qualified definitions, related
+languages, version dependence and biblical manuscript attestation separate.
+
+The old lexicon's impression date is uncertain; a handwritten date was not
+promoted to a printed publication date. Radak reports his own and his father's
+interpretations separately. A semantic comparison with another Hebrew verb
+does not attest that replacement spelling at Jeremiah31:32. The actual Syriac
+profile also qualifies any simple independence or following-preposition rule.
+These new controls refine the hypothesis rather than settling source priority.
+Canonical source, main English, note, metadata, implementation, canon and ink
+readings remain unchanged. Raw source snapshots stay private; the original
+Latin lexicon and Pococke are still unconsulted. No full-corpus or export rerun
+is claimed. The full research objective remains active.
+
+One bounded independent factual review passed with no required corrections,
+including direct inspection of the original lexicon pages and all seven
+normalized excerpts. The unchanged report and pre-receipt packet hashes bind
+that review. Root separately passed 58 canonical hash controls, two frozen
+predecessors, twelve private asset byte/hash pins, the exact excerpts and
+chapter-unit counts, empty canonical/code diff scope, and the protected
+unrelated Genesis file. These checks do not certify remote CI or publication.
+
+The user cautioned that inline disclosure can make the reading view messy.
+A small optional indicator opening the relevant provenance is a design
+suggestion, not an approved implementation. Existing Check Provenance remains
+the reader route; no separate publisher/reader code, website workflow or
+About-page change is authorized or performed by this research pass.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

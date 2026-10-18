@@ -5,6 +5,10 @@ confirmation that private Ephraemi spectral images and the requested Job edition
 are unavailable. **No new biblical reading has been established.** POB's source
 text and English remain unchanged.
 
+Update on 2026-10-17: [four raw-capture JPEG exposures were acquired](ZACYNTHIUS_RAW_EXPOSURES_2026-10-17.md)
+after public archive access recovered. The access failures below describe
+October 14, not the current availability. No new letter has been accepted.
+
 ## What actually became available
 
 The [Birmingham project](https://www.birmingham.ac.uk/research/centres-institutes/textual-scholarship-and-electronic-editing/projects/codex-zacynthius)

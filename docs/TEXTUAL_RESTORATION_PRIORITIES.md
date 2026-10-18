@@ -46,6 +46,16 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 source-integrity checkpoint:** the
+[current whole-OT provenance check](OT_SOURCE_PROVENANCE_CHECKPOINT_2026-10-18.md)
+accounts for all 23,264 records after the newer critical-source applications.
+Its five critical bindings and complete Psalms map pass, with no unexplained
+WLC wording difference. This is declared-source fidelity, not exhaustive
+manuscript comparison or earliest-wording approval. Repeat it when source,
+selection or numbering inputs change, not on every continuation. The same
+dated report records the public Lamentations baseline and offline website
+runner boundary separately from the running Bible-repository checks.
+
 **October 17 new linked Hebrew comparison:**
 [Lamentations 1:15–18](LAMENTATIONS_1_15_18_LINKED_FORM_2026-10-17.md)
 now moves beyond the old screen to connected-form assessment, actual Greek

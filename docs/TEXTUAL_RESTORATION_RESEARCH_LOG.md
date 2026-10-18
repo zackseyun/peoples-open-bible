@@ -15497,6 +15497,44 @@ links. The protected Genesis draft is unchanged; source/English/code diff is
 empty. No whole-corpus or export rerun is claimed. Required CI/main integration
 remain separate; the larger source-comparison objective remains active.
 
+## October 18 — Qualify the existing Psalm 40 reader note
+
+The previous goal turn made progress through a version-pinned Eusebius source
+comparison, a bounded factual review and committed PR 309. Current read-only
+checks confirm that PRs 308 and 309 retain their original live CI jobs; one
+308 check has passed. No job was restarted and no separate website recovery
+was attempted.
+
+A new bounded source search did not acquire Bodmer's target: the journal
+archive presented a security-verification page, JSTOR search gave no target
+text and the author's Toronto homepage timed out. A parallel Didymus scout
+identified the actual Cologne page 285 catalogue target but no working target
+image/edition route after three credible checks. These are navigation/access
+results, not newly read manuscript wording. The documented stop boundaries
+prevent repeated source-access loops without new access.
+
+The [reader-note application](PSALM_40_READER_NOTE_2026-10-18.md) uses the already
+checked Greek edition difference for a concrete disclosure correction. One
+independent exact factual/application review passed with no required correction;
+it did not repeat a Greek-priority vote. Root's four focused tests passed,
+including the actual 150-chapter, 2,578-unit Psalm export. The exact candidate
+was then applied; the live-target test and all 2,578 raw-record comparisons
+confirm that only Psalm 40:6 changed. Its Hebrew, full marked main English,
+anchors, note a, lexical/theological fields and generation metadata are
+preserved. Five former review/note fields are archived with baseline bindings;
+the changed record is draft/needs-review without inherited approval.
+
+All 37 existing reader-footnote export tests also passed. Nine input pins,
+14 canonical controls (with the exact reviewed target exception), five bound
+review artifacts, 674 relative links and whitespace checks passed. No local
+whole-corpus rerun was claimed for this one-note application.
+
+The documentation skill keeps the exact contract and application receipt
+separate from the earlier frozen comparisons. No new source reading, main
+translation, canon claim, generated-ink evidence or inline panel is introduced.
+CI and actual publication remain separate gates; the full objective remains
+active. Detailed source access and review scopes are linked in the report.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

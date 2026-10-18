@@ -46,6 +46,13 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 Psalm note application:** the [edition-qualified note](PSALM_40_READER_NOTE_2026-10-18.md)
+replaces the blanket Septuagint claim in Psalm 40:6 after exact factual review.
+Hebrew, main English and anchors are unchanged; Greek priority stays open.
+The receipt distinguishes repository application from CI, main and public delivery.
+Do not reopen the completed Bodmer journal/author or Didymus catalogue routes
+without new access; actual target editions/images remain the discriminating input.
+
 **October 18 quotation follow-up:** the [version-pinned PTA comparison](PSALM_40_QUOTATION_AND_EDITION_FOLLOWUP_2026-10-18.md)
 now reads Eusebius's Psalm 39 section, absent in the inspected 2022 edition.
 The new Didymus quotation controls distinguish body prepared, ears prepared

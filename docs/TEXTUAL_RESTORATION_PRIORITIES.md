@@ -46,6 +46,15 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 connected Daniel comparison:** [Daniel 4 and the Prayer of Nabonidus](DANIEL_4_NABONIDUS_AND_GREEK_FORMS_2026-10-18.md)
+now distinguishes Aramaic, selected Old Greek, Theodotion and the related prayer.
+Actual 967 collation qualifies a uniform Greek reading; Qumran supplies do not
+become preserved court wording. Stadel's original line-4 syntax argument makes
+the prayer's forgiveness agency disputed, not newly deciphered. Retain POB
+provisionally; seek full local apparatus/early transcription or the specific
+Aramaic construction controls next. No renamed king, new source letters,
+English application or canon addition follows.
+
 **October 18 Amos syntax follow-up:** [the carrying tense and question test](AMOS_5_HEBREW_TENSE_AND_QUESTION_2026-10-18.md)
 finds that the original grammar expressly allows alternatives. Driver's
 future preference is contextual; Keil argues for a past assertion; Wilgus

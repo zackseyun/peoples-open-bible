@@ -16125,6 +16125,54 @@ allowed merge 0aa3e29d92329a4f9420c88f0fcf20ba48e76757. No runner restart,
 protection bypass or public delivery claim follows. Local main passed the
 ancestry/worktree guard, advanced to that merge and was ordinarily pushed.
 
+## October 18 — Compare Daniel 4 forms and the related Nabonidus prayer
+
+The previous goal turn made progress through a documented, reviewed, committed
+Amos syntax test. This turn verified its same live exact-head jobs without
+restarting them, then opened a different consequential
+[Daniel comparison](DANIEL_4_NABONIDUS_AND_GREEK_FORMS_2026-10-18.md).
+Two bounded read-only scouts acquired the Greek/967 and Qumran/prayer controls.
+Root read the source-only Aramaic unit and connected material-list passages,
+both complete selected Greek forms, actual Swete pages and conventions,
+McLay's collation introduction/key/target, the author-posted 2005 reproduction,
+Steinmann's complete original article, Stadel's complete first case study and
+the current QDR primary target rows. The PDF skill required actual relevant-page
+inspection; the documentation skill separates these sources from our inferences.
+
+The Greek story differs in punishment, replacement ruler, restoration and
+proclamation. Early Aramaic fragments support only portions of the court
+wording; supplied titles, spirit formulas and names are not ink. The related
+prayer preserves different king/affliction language and disputed forgiveness
+syntax. Neither historical direction nor an original synthetic story follows.
+Source and English are unchanged; no new canon, restored letter, inline panel
+or external publication claim is made. This is a known-evidence comparison new
+to this program, not a discovery new to scholarship.
+
+Acquisition corrections are retained: a neighboring-work XML was Bel/Dragon,
+not Daniel, and was excluded. Swete's XML includes a chapter-5 preface within
+its chapter-4 container; actual print controls the boundary. Cached QDR pages
+first suggested older releases; raw changelogs instead identify 2026-10-06,
+which was acquired for all three objects. Thirteen IAA photographs are one
+composition's image inventory; delivered 512-pixel derivatives are not native
+high-resolution restoration inputs. Re-requesting a larger size supplied no
+new pixels. Root's different-resolution renders of McLay pages 9–10 replace
+those derivative files only; the scout's frozen receipt retains its original
+render hashes, and the new packet pins the current renders and unchanged PDF.
+Cross's bounded inaccessible original routes are not counted as consultation.
+No package installation, fabricated source stroke or corpus-wide rerun occurs.
+
+One bounded independent factual review passed the exact frozen report and
+pre-receipt packet without required consequential corrections. Its scope
+includes actual critical pages and primary QDR rows, but not a second check of
+the modern publisher Greek pages, which lack local raw captures. Root's direct
+web readings remain separately identified. The supply qualification concerns
+4Q115's introduction; its later row 18 partly preserves the 4:15 spirit formula.
+No claim of a globally absent formula follows. Root separately passed 51 current
+canonical hashes, two frozen predecessors, two method controls, 56 private
+byte/hash pins, 700 relative links and whitespace checks. The protected Genesis
+file is untouched, and canonical/code diff is empty. Publication checks and
+historical priority remain separate from this factual pass.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

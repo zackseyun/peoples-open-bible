@@ -46,6 +46,16 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 new connected Amos comparison:** [Amos 5 and Acts 7](AMOS_5_ACTS_7_SOURCE_COMPARISON_2026-10-18.md)
+now distinguishes deity/tent wording, star/images, carrying and exile, and
+Damascus/Babylon across actual editions and the Damascus quotation. CD's
+Qumran copies preserve nearby commentary, not this quotation's decisive words.
+The complete Steyn study is read; its proposed Acts/CD relationship remains
+hypothetical. Keep Hebrew, Greek and main English unchanged. Next seek actual
+modern target apparatus, the original competing philology or a discriminating
+carrying-tense analysis, not another selected-text vote. No canon addition,
+new ink or inline reader change follows.
+
 **October 18 Syriac independence follow-up:** [Greenberg's original argument
 and two early-copy catalogue checks](JEREMIAH_31_SYRIAC_INDEPENDENCE_2026-10-18.md)
 strengthen the caution against counting Syriac as independent Hebrew support.

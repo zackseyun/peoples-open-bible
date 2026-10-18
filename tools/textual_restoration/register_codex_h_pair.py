@@ -31,7 +31,7 @@ if len(good) < 40:
     (out / "report.json").write_text(json.dumps(report, indent=2)+"\n")
     print(json.dumps(report))
     sys.exit(0)
-matrix, mask = cv2.estimateAffinePartial2D(src[::2], dst[::2], method=cv2.RANSAC,
+matrix, mask = cv2.estimateAffinePartial2D(src[::2].copy(), dst[::2].copy(), method=cv2.RANSAC,
     ransacReprojThreshold=2, maxIters=5000, confidence=.999)
 assert matrix is not None
 pred = src[1::2] @ matrix[:, :2].T + matrix[:, 2]

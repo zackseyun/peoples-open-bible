@@ -15,7 +15,9 @@ The [Codex H public-image control](CODEX_H_PUBLIC_TRACE_GATE_2026-10-18.md)
 confirms a live two-line uncertainty and public native-resolution display
 tiles, but not a new reading. A blinded control inspection could not securely
 assign the dark forms to a writing layer; a direct-view comparison supplied
-22 matches against a 40-match gate. Raw spectral data remains request-only.
+22 matches against a 40-match gate. A fixed edge-based alternative yielded
+72 matches but failed held-out correspondence by hundreds of pixels, with no
+accepted transform. Raw spectral data remains request-only.
 Do not treat the published team's ink-offset recovery as our discovery, or
 TEI `supplied` words as observed ink. Further work needs a stronger physical
 control or materially different measurements, not an expected-text completion.

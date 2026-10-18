@@ -5,7 +5,7 @@ surviving parchment. That recovery belongs to the Glasgow and EMEL team, not
 POB. Our bounded inspection establishes public image access and a remaining
 two-line uncertainty, but **does not establish a new reading**. A native
 resolution control crop still leaves writing-layer attribution uncertain, and
-the attempted direct-view comparison failed its feature-match gate. POB's
+both attempted direct-view comparisons failed their gates. POB's
 Bible text remains unchanged.
 
 The [evidence record](../sources/textual_restoration/discovery/codex_h_public_trace_gate.2026-10-18.v1.json)
@@ -105,6 +105,23 @@ accepted. The failed count was reproduced exactly with the portable script.
 This rejects that comparison attempt, not all possible registration methods.
 We did not relax the gate or subtract the images to manufacture a residual.
 
+After the user's continuation request, one predeclared alternative used the
+existing 3x3 Gaussian blur (sigma 0.8) and Sobel gradient-magnitude helper,
+scaled by each overview's ninety-ninth percentile. It retained SIFT6000,
+ratio 0.7, the 40-match minimum, alternating fit/check matches and the existing
+partial-affine RANSAC settings. Acceptance still required a held-out median
+at most 1.5 pixels and ninety-fifth percentile at most 3 pixels.
+
+The edge representation yielded 72 matches, but the candidate collapsed to a
+zero-scale mapping with only 10 fit inliers. Held-out median error was 925.959
+overview pixels and the ninety-fifth percentile was 1721.072. All held-out
+errors remain in the record. **More matches did not mean valid correspondence.**
+No transform or new reading was accepted, and no aligned residual was produced.
+The first execution encountered an OpenCV non-contiguous-array error; making
+explicit copies of the alternating match slices fixed that implementation
+issue without changing the scientific gates. A synthetic-image regression test
+now exercises this previously unexecuted fit branch.
+
 ## Reproduction and next decision
 
 The bounded acquisition script accepts only 2v and 3r. Place each public
@@ -120,11 +137,13 @@ python tools/textual_restoration/acquire_codex_h_public_tiles.py --work-dir /dat
 python tools/textual_restoration/inspect_codex_h_tei.py --work-dir /data/h
 python tools/textual_restoration/inspect_codex_h_channels.py /data/h/codex-h-3r-native-control/assembled.png /data/h/native-channels
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python tools/textual_restoration/register_codex_h_pair.py --work-dir /data/h
-python -m unittest tests.test_codex_h_inventory -v
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python tools/textual_restoration/compare_codex_h_gradients.py --work-dir /data/h
+python -m unittest tests.test_codex_h_inventory tests.test_codex_h_registration -v
 ```
 
-Four inventory tests passed. Portable replay reproduced the inventory, failed
-registration report, all six native channel PNGs, their receipt and contact
+Four inventory and two registration tests passed with image dependencies
+installed. Portable replay reproduced the inventory, both failed
+registration reports, all six native channel PNGs, their receipt and contact
 sheet exactly. The acquisition algorithm was verified by offline tile replay;
 the portable path-argument change was not re-downloaded solely for testing.
 These checks validate record handling and processing, not a biblical reading.

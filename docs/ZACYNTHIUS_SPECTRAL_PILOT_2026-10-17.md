@@ -7,6 +7,10 @@ improvement over the published composite has been established.** The useful
 progress is access to measured exposures and a reproducible processing test,
 not a decipherment. No Bible text was changed by this experiment.
 
+A subsequent [line-control inspection](ZACYNTHIUS_LINE_CONTROLS_2026-10-17.md)
+located neighboring lines and tested a fixed component at those controls. The
+uncertain letters remain unresolved.
+
 This extends the earlier [four-exposure acquisition](ZACYNTHIUS_RAW_EXPOSURES_2026-10-17.md).
 The [machine-readable record](../sources/textual_restoration/discovery/zacynthius_spectral_pilot.2026-10-17.v1.json)
 contains the acquisition receipts, every input hash, alignment measurements,

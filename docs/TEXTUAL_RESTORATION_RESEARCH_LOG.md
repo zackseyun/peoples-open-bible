@@ -15654,6 +15654,44 @@ appended normally to existing PR313; its new head requires its own CI, and old
 head checks cannot approve it. No manual restart or force push is used. The full
 goal remains active; this source-access limit does not block other source work.
 
+## October 18 — Compare Job's wife across the two prologue forms
+
+The previous goal turn made progress through a reviewed 4Q364 locator/access
+checkpoint and a normal appended commit to PR313. This turn's current checks
+confirmed the original PR311 and new-head PR313 jobs live. No restart, bypass
+or separate website mutation was attempted. The exhausted 4Q364 routes were
+not repeated; the source-access limit does not block this different passage.
+
+A bounded local scout selected the [Job2 comparison](JOB_2_WIFE_SPEECH_COMPARISON_2026-10-18.md),
+with a primary edition already held and no prior substantive local comparison.
+Its initial locator was wrong: PDF526 was Canticles2, not Job. Root's complete
+page inspection caught that mistake; root and scout verified correct Job
+PDF541–542/printed523–524. No PDF/OCR displacement was demonstrated and no
+frozen finding was rewritten. The PDF skill's visual check prevented a false
+source citation. Root then read all six actual Greek prologue pages, sigla/C
+limits and the full local Job1–2 Hebrew/English context; all35 WLC bindings match.
+
+Cook's complete ten public article pages and Mangum's full seven-page article
+were read, with the latter's relevant4–6 pages inspected visually. Their
+different moral portraits remain interpretations, not manuscript votes. The
+longer scene gives the wife an explicit voice about maternal loss and service;
+its closing command does not explicitly name cursing. Root separated those
+observations from a recovered Hebrew form or a proved original translator.
+The actual lexical variants and Ephraemi's late local coverage constrain claims.
+
+The biblical QDR reference screen found no Job1–2 hits in its Job-labelled
+records, not proof of ancient absence. A current POB Bless/Curse metadata
+inconsistency is recorded without turning this into a maintenance application.
+The documentation skill separates source observation, published argument and
+provisional judgment. Source, main English, notes, implementation and canon
+remain unchanged. The single bounded factual review passed without required
+correction; the unchanged report and pre-receipt packet hashes bind its scope.
+Root verified 36 canonical pins, 15 private assets, 35 WLC alignments, the exact
+QDR screen, the metadata inconsistency, 677 relative links, whitespace, unchanged
+source/code and the protected unrelated file. No whole-corpus or export rerun is
+claimed. Required CI, normal main integration and actual publication remain
+separate gates; the complete program remains active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -46,6 +46,15 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 new connected comparison:** [Job 2:9–10](JOB_2_WIFE_SPEECH_COMPARISON_2026-10-18.md)
+now compares the longer Greek wife speech and response within the full prologue,
+including actual apparatus and the four disputed bless/curse controls. Added
+maternal loss and service change her voice; their moral interpretation remains
+contested. Retain Hebrew/main English provisionally, without retroverting the
+speech. Next seek modern local apparatus/hands and the actual competing studies,
+not another reading of the same selected text. A wrong book locator was caught
+and corrected visually before the comparison was recorded.
+
 **October 18 4Q364 access boundary:** the
 [compact locator checkpoint](../sources/textual_restoration/discovery/exodus24_4q364_access.2026-10-18.v1.json)
 records three completed edition routes, historical plate/PAM associations and

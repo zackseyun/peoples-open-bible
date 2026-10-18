@@ -15398,6 +15398,33 @@ public reader behavior remain separate gates. Existing on-demand provenance,
 not an added inline panel, is the delivery design. The original Hebrew and
 canon questions remain unresolved; the full objective remains active.
 
+## October 18 — Verify the current source corpus and delivery boundary
+
+The preceding goal turn made progress by establishing the public Lamentations
+baseline and identifying the website's offline matching runner. Recovery
+authority remains requested, not presumed. The same queued website job and
+the Bible PR check handles were verified live; no process was restarted merely
+because observation elapsed. Selected-verse navigation correctly reaches
+LAM.1.17, whose public record still lacks the new disclosure at this baseline.
+
+Because Hebrew source choices changed after the October 10 checkpoint, root
+performed the [new whole-OT provenance check](OT_SOURCE_PROVENANCE_CHECKPOINT_2026-10-18.md)
+while existing CI continued. The read-only scan took 58.293 seconds and found
+no unexplained WLC difference among the 20,686 non-Psalm records. The existing
+complete Psalms map passed in 7.485 seconds for 2,578 records. Actual critical
+composition/full-record binding checks also passed all five current critical
+verses using existing controls and literal external trust hashes. This adds
+current corpus-integrity evidence after source changes, not another source
+preference vote or claim that all manuscripts were collated.
+
+Raw OT and XML inventories were identical before and after the scan. No source,
+English, selection or implementation changed. New observations are held on a
+separate branch so PRs 305 and 306 keep their original running checks. The
+dated report separates actual publication observations, repository-visible
+runner evidence and the unresolved deployment gate. Frozen candidate reviews,
+receipts and the unrelated Genesis draft remain untouched. The full research
+objective stays active; technical fidelity does not certify historical priority.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

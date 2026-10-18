@@ -46,6 +46,15 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 lexical and version follow-up:** [the original lexical controls](JEREMIAH_31_LEXICAL_AND_VERSION_CONTROLS_2026-10-18.md)
+now verify Gesenius's qualified negative proposal, Radak's father/son
+distinction and actual Syriac/Aramaic wording. The Arabic example concerns
+perplexity or disgust at an affair, not an independently established Hebrew
+human-recipient construction. Syriac has a mixed feature profile; its negative
+target is not proof of independence from Greek. Retain the main texts
+provisionally. Next seek independent usage or critical target collation, or
+apply the separately reviewed note correction; do not repeat these controls.
+
 **October 18 new connected comparison:** [Jeremiah 31 and Hebrews 8](JEREMIAH_31_NEW_COVENANT_COMPARISON_2026-10-18.md)
 now distinguishes husband/master language from Greek disregard, compares the
 connected promises and checks original competing arguments. A new lawful BSB

@@ -46,6 +46,15 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 new connected comparison:** [Jeremiah 31 and Hebrews 8](JEREMIAH_31_NEW_COVENANT_COMPARISON_2026-10-18.md)
+now distinguishes husband/master language from Greek disregard, compares the
+connected promises and checks original competing arguments. A new lawful BSB
+route supplied Schenker's actual target section; the precise lost Hebrew verb
+remains unidentified. Retain the distinct main texts provisionally. POB's
+Jeremiah note conflates Greek disregard with dominion and needs a separate
+exact correction. Next test original lexical/Syriac controls and actual modern
+apparatus; do not repeat these selected texts as another source-preference vote.
+
 **October 18 Job interpretation application:** the
 [reader qualification](JOB_2_READER_QUALIFICATION_2026-10-18.md) distinguishes
 POB's contextual curse interpretation from the written blessing verb and a

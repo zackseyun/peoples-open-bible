@@ -15807,6 +15807,49 @@ The exact reviewed candidate, ten input pins, six review-bound artifacts,
 687 relative documentation links and protected unrelated Genesis file pass.
 No whole-corpus local rerun or deployed-reader change is claimed.
 
+## October 18 — Compare the new covenant divine response
+
+The preceding goal turn made progress by applying and testing the Job2 note
+qualification, committed and pushed in PR320. Fresh API checks confirmed
+PR319 and PR320 still running on their exact heads. A later API read timed out;
+rechecking the same PRs again confirmed running checks, not terminal failures.
+No restart or branch-protection bypass was attempted.
+
+A bounded portfolio check opened the consequential
+[Jeremiah31 and Hebrews8 comparison](JEREMIAH_31_NEW_COVENANT_COMPARISON_2026-10-18.md).
+Two read-only scouts handled Hebrew preservation/lexical controls and original
+study access. The new BSB route yielded actual Schenker target images; root
+read those and Boyd's complete local thesis section, not their complete books.
+The PDF skill required full target-page inspection. Root located Boyd's cited
+Schenker quotation on printed22 rather than12, preserving the argument while
+correcting its locator. The documentation skill separates the known wording
+contrast from competing historical explanations.
+
+Actual WLC, selected Greek and connected Hebrews controls expose a false
+equivalence in POB's existing Jeremiah note: disregard is not simply dominion.
+The related Hebrew construction and lemma screen limit a compulsory negative
+analysis without disproving a rare sense. QDR supplies no indexed target hit,
+not proof of universal absence. No new Hebrew letters, source/main English,
+note, metadata, code, recovered ink or canon change is applied in this pass.
+Raw copyrighted study images and the thesis remain private. Publisher Greek
+was readable in the web text tool; direct raw download returned403 and stopped.
+The scout's temporary browser surface was unavailable at cleanup, so no
+successful closure or alteration of pre-existing user tabs is claimed.
+
+The next discriminating work is original lexical/Syriac evidence and modern
+local apparatus, or the separately reviewed correction of the existing note.
+The full source comparison/restoration goal remains active; ordinary CI,
+main integration and public delivery remain distinct from source judgment.
+
+One bounded independent factual review passed without required correction;
+the unchanged report and pre-receipt packet hashes bind its actual scope.
+Root separately verified 51 canonical control hashes across 44 verse records
+and seven WLC files, two frozen predecessors, all 26 private asset byte/hash
+pins, 686 relative documentation links, empty canonical/code change scope and
+the protected unrelated Genesis file. No whole-corpus or export rerun was
+appropriate for this research-only change. A fresh check-run API read confirmed
+the same pending CI handles live, not failed; they were allowed to continue.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

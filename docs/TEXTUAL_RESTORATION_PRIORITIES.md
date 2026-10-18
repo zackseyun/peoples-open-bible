@@ -46,6 +46,16 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 Job interpretation application:** the
+[reader qualification](JOB_2_READER_QUALIFICATION_2026-10-18.md) distinguishes
+POB's contextual curse interpretation from the written blessing verb and a
+competing literal interpretation. It also corrects active metadata that still
+described a different main rendering. Hebrew and full marked main English are
+unchanged. The exact candidate passed a bounded factual/application review;
+CI, main integration and actual public delivery remain separate gates. No
+inline panel is added. The historical-priority and Greek-authorship research
+still needs genuinely new evidence, not another preference vote.
+
 **October 18 original study and version controls:** the
 [competing-arguments follow-up](JOB_2_COMPETING_ARGUMENTS_AND_VERSIONS_2026-10-18.md)
 now resolves a secondary attribution against the original chapter and tests a

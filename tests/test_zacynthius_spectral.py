@@ -20,6 +20,35 @@ if cv2 is not None:
 
 @unittest.skipIf(cv2 is None, "Spectral pilot requires OpenCV, NumPy and Pillow")
 class AlignmentTests(unittest.TestCase):
+    def exposure_rows(self, prefix):
+        suffixes = ["MB530GN_005.jpg"] + [f"W_test_{i}.jpg" for i in range(41)]
+        suffixes += [f"TX_test_{i}.jpg" for i in range(9)]
+        return [{"archive_member": f"{prefix}/{prefix}+{suffix}",
+                 "local_file": f"{prefix}+{suffix}"} for suffix in suffixes]
+
+    def test_selects_reference_for_each_supported_folio(self):
+        for folio, prefix in pilot.FOLIOS.items():
+            selected, reference, name = pilot.select_exposures(self.exposure_rows(prefix), folio)
+            self.assertEqual(len(selected), 42)
+            self.assertEqual(name, prefix + "+MB530GN_005.jpg")
+            self.assertEqual(reference["local_file"], name)
+
+    def test_wrong_folio_is_rejected_before_image_processing(self):
+        with self.assertRaisesRegex(ValueError, "modern folio 164v"):
+            pilot.select_exposures(self.exposure_rows("00057-R"), "164v")
+
+    def test_duplicate_exposure_is_rejected(self):
+        rows = self.exposure_rows("00164-V")
+        rows[-1] = rows[0]
+        with self.assertRaisesRegex(ValueError, "51 distinct"):
+            pilot.select_exposures(rows, "164v")
+
+    def test_wrong_band_family_count_is_rejected(self):
+        rows = self.exposure_rows("00164-V")
+        rows[-1] = {key: value.replace("+TX_test", "+W_extra") for key, value in rows[-1].items()}
+        with self.assertRaisesRegex(ValueError, "42 prespecified"):
+            pilot.select_exposures(rows, "164v")
+
     def fixture(self):
         rng = np.random.default_rng(1729)
         points = np.float32([(x, y) for x in np.linspace(300, 1200, 10)

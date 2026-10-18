@@ -46,6 +46,16 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 Syriac independence follow-up:** [Greenberg's original argument
+and two early-copy catalogue checks](JEREMIAH_31_SYRIAC_INDEPENDENCE_2026-10-18.md)
+strengthen the caution against counting Syriac as independent Hebrew support.
+Her local Greek-influence argument is probabilistic; the catalogues supply no
+target reading. Keep Hebrew and main English unchanged. Stop repeating these
+inputs and three exhausted manuscript routes; reopen with precise collation,
+complete Greek apparatus or discriminating Hebrew usage. Prefer other portfolio
+work until genuinely new evidence appears. Inline-disclosure design remains a
+proposal, not authorization for separate reader or publisher edits.
+
 **October 18 critical Syriac and manuscript follow-up:** the
 [direct critical-edition and 7a1 check](JEREMIAH_31_CRITICAL_SYRIAC_AND_MANUSCRIPT_2026-10-18.md)
 confirms the negative target in the electronic critical text and historical

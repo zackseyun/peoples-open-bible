@@ -16026,6 +16026,60 @@ certification is implied. The packet distinguishes the review's inspected
 sources from acquisition-history claims it did not repeat. A receipt patch
 was first rejected for hunk syntax without changing files, then corrected.
 
+## October 18 — Compare Amos 5 with Acts and the Damascus quotation
+
+The previous turn made progress: its exact Syriac independence report passed
+a bounded factual review, was committed and pushed in PR328. Current checks
+confirmed specific live handles rather than restarting a runner. This turn
+opened a distinct [Amos comparison](AMOS_5_ACTS_7_SOURCE_COMPARISON_2026-10-18.md)
+instead of repeating the completed Jeremiah inputs.
+
+Two read-only scouts checked Hebrew quotation/preservation and actual Greek
+edition/apparatus controls. Root read the complete Steyn article and footnotes,
+the historical CD target and identification pages, actual QDR target/parallel
+bodies, Swete target, key, conventions and appendix, and SBL's actual XML and
+apparatus explanation. The PDF skill required complete relevant-page inspection;
+the documentation skill separates published wording, hypotheses and priority.
+
+The connected forms differ in meaningful ways, but no synthetic Hebrew or
+canonical edit follows. The CD quotation is printed in the later Cairo witness;
+the inspected Qumran fragments preserve only nearby commentary, with supplied
+target-related words. SBL's labels compare editions, not independent Acts
+manuscripts. The study's proposed Acts/CD link remains a hypothesis; the fact
+of a medieval Egyptian copy cannot date a first-century transmission route.
+The empty Borger download and inaccessible institutional/OA-index checks are
+access outcomes, not evidence that his original argument was consulted. A
+catchword-study search hit concerned James and was excluded from this case.
+An unavailable optional HTML package was replaced by standard-library parsing;
+no package installation or repository code edit was needed.
+
+PR327's two exact-head jobs passed; a fresh clean/mergeable read and empty
+legacy status allowed its normal merge as
+49f2d04b62cbea516ad9daf56bb9495995921cc3. Local main was advanced after ancestry
+and worktree checks. PR328's jobs were still live on the last read. Integration,
+source priority and public delivery remain distinct. The broader goal is active;
+the next experiment needs new apparatus/philology or a specific syntax test,
+not another rereading of the same selections.
+
+One bounded independent factual review passed the exact Amos report and
+pre-receipt packet without required corrections, including complete original
+study pages, actual Greek target/conventions, CD target/identification and
+the QDR quotation/commentary boundaries. Root separately passed 35 canonical
+hashes, two method controls, 45 private asset byte/hash pins, 695 relative links
+in the three changed documents, empty canonical/code diff and protected
+unrelated Genesis. Twelve Acts source word sequences match the pinned upstream
+after a declared normalization. The initial 7:48 mismatch was an apostrophe
+encoding difference, not different Greek wording; punctuation fidelity is not
+claimed by that word-layer check. A first packet-generation command had a
+syntax error before writing and was replaced with structured generation.
+No full-corpus rerun, new ink or public deployment certification is claimed.
+
+PR328 then passed both exact-head jobs and the fresh normal merge gates,
+merging as a92b9667af35f3edde4d9694b050599c25f18fd4. The earlier live-check
+state above remains the historical observation, not a current blocker.
+Local main again passed ancestry/worktree checks and was ordinarily pushed
+at that merge. No public-reader delivery is implied.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

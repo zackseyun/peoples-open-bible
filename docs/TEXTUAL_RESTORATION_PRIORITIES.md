@@ -46,6 +46,14 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 quotation follow-up:** the [version-pinned PTA comparison](PSALM_40_QUOTATION_AND_EDITION_FOLLOWUP_2026-10-18.md)
+now reads Eusebius's Psalm 39 section, absent in the inspected 2022 edition.
+The new Didymus quotation controls distinguish body prepared, ears prepared
+and Aquila-like ears dug without counting them as independent Psalters.
+Greek priority is still open; actual Bodmer/Didymus target evidence remains next.
+Keep the reading view clean, with detail through existing Check Provenance;
+no inline panel or reader/publisher code changes are applied.
+
 **October 18 new connected comparison:** [Psalm 40 and Hebrews 10](PSALM_40_EARS_AND_BODY_COMPARISON_2026-10-18.md)
 now separates Hebrew ears, body-bearing Greek transmission and the ears-printing
 Rahlfs control. Both full competing studies and newer bounded quotation controls

@@ -15463,6 +15463,40 @@ the protected Genesis hash and whitespace. Source/English/code diff is empty.
 No redundant full-corpus or application/export suite was run for this research
 documentation change. Required CI and main integration remain separate gates.
 
+## October 18 — Check the newly available Eusebius section and quotation variants
+
+PR 307 passed its two exact-head checks and merged normally as
+`7f51a0254bba5bef857022d26321e7aa3a6959af`; main was advanced and pushed.
+PR 308's original head remains untouched while its existing checks run.
+The [new follow-up](PSALM_40_QUOTATION_AND_EDITION_FOLLOWUP_2026-10-18.md)
+records actual original PTA XML, not the automatically analysed derivative.
+The current edition contains Psalm 39, absent in the inspected 2022 version.
+Root read the whole section and checked the ears-and-obedience paraphrase
+against its lemma and nearby named alternative translations. This closes a
+specific access gap, not an ancient lacuna or Greek-priority decision.
+
+The PDF skill prompted full-page visual checks of Gäbel's newly consulted
+Eusebius and Didymus sections. The three reported Didymus forms and ambiguous
+quotation terminology constrain witness counting; the original Tura target
+and Field page remain unconsulted. The Bodmer owner catalogue supplies a
+dating range, but the inspected gallery previews did not identify the target.
+A bounded three-route scout did not obtain the rest of Gäbel's chapter and
+stopped without bypassing access controls. These completed routes should not
+consume another repeat search turn.
+
+The documentation skill kept this follow-up separate from the earlier frozen
+report and packet. The user's concern about messy inline disclosure is
+recorded: retain a clean reading view and the existing Check Provenance route,
+with no reader/publisher code extension. No canonical source, main English,
+note or canon change is applied. One bounded independent factual review passed
+the pinned draft with no required correction, checking original PTA XML and
+the nine new complete Gäbel pages, not source priority or original Didymus ink.
+Root checks passed 14 canonical pins, two frozen predecessors, 16 private
+assets, both original XML versions, the target digest/structure and 668 relative
+links. The protected Genesis draft is unchanged; source/English/code diff is
+empty. No whole-corpus or export rerun is claimed. Required CI/main integration
+remain separate; the larger source-comparison objective remains active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -46,6 +46,15 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 17 new linked Hebrew comparison:**
+[Lamentations 1:15–18](LAMENTATIONS_1_15_18_LINKED_FORM_2026-10-17.md)
+now moves beyond the old screen to connected-form assessment, actual Greek
+target pages, appendix judgments and local acrostic/formula controls. Keep
+historical priority separate from an appropriate next reader disclosure;
+neither new source wording nor a canonical note is applied by this dossier.
+Its exact preservation and transmission limits govern continuation. Do not
+repeat the completed screen or same-evidence checks as the next experiment.
+
 **October 17 new consequential comparison:** [1 Samuel 2:22](SAMUEL_2_22_SANCTUARY_CLAUSE_2026-10-17.md)
 now tests the sexual-misconduct clause and women at the sanctuary. Actual DJD
 and QDR distinguish a space-based short junction from preserved omission ink;
@@ -332,6 +341,18 @@ Next obtain the original
 P.Oxy. target notes/second-column alignment, modern target apparatus and actual
 version entries before stronger historical claims. Do not repeat these completed
 article, edition and bounded coverage checks as new evidence.
+
+**Original-edition follow-up:** the
+[Parsons and interpretation control](JOB_42_PAPYRUS_AND_INTERPRETATION_2026-10-17.md)
+now closes the original target-entry, conventions and plate access gap. The
+three conditional layouts do not establish a physical ending or omission of
+17a; the printed references 16³ and 17 must not become 17a. Häner's complete
+author-posted article text is now read, not its inaccessible PDF. No stronger
+priority, Hebrew, English, note or canon change follows. Seek the actual modern
+target apparatus, exact version entries or justified physical alignment rather
+than repeating the completed original-edition search. Frozen reports and
+application pins remain historical snapshots, with this follow-up superseding
+their access status only.
 
 **Separate Job reader application:** the
 [ending disclosure](JOB_42_READER_DISCLOSURE_2026-10-17.md) now applies one note

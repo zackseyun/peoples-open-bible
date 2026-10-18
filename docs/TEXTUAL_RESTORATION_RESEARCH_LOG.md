@@ -15297,6 +15297,74 @@ emended; the Hebrew continuation is the author's proposed retroversion.
 These qualify the argument's evidential use without deciding priority or
 changing POB. Raw sources remain private; no generated ink or canon claim follows.
 
+## October 17 — Read the original Job papyrus entry
+
+The [original-edition follow-up](JOB_42_PAPYRUS_AND_INTERPRETATION_2026-10-17.md)
+replaces a secondary quotation with Parsons's complete target entry,
+publication conventions and plate I. Root and one bounded source reader
+checked the same known edition, not a blind new decipherment or another
+source-preference vote. Its three conditional layouts leave the second-column
+alignment unresolved. The height calculations cannot become independent
+measurements, and printed 16³ and 17 cannot become an attestation about 17a.
+The alleged omission remains unverified rather than disproved.
+
+Root also read Häner's complete indexed author text and notes, not a downloaded
+PDF or its AI summary. The follow-up separates his interpretive argument from
+new physical evidence and canonical authority. Neither consultation warrants
+a source, English or reader-note change. The original edition's access gap is
+closed; exact modern apparatus/version entries and physical alignment remain
+discriminating inputs. More searches for these same completed readings are
+not progress. Raw sources stay private; ordinary public access is not a
+redistribution licence. No challenge or authentication was bypassed.
+
+The user's concern about clutter keeps the existing on-demand provenance
+route as the current reader presentation. No external publisher or reader
+implementation is changed, and a possible subtle selected-verse indicator
+is not an approved inline panel. The frozen Job dossier/application and
+protected unrelated Genesis draft remain untouched. New source observations
+are kept on a separate branch so PR 303's running checks are not restarted.
+
+The bounded Parsons factual check passed against the actual edition, including
+the 32.5 cm reconstruction, printed references, locators and asset hashes.
+It did not review Häner or vote on source priority. Root's scoped validation
+passed JSON parsing, five unchanged Job controls, private PDF size/hash,
+seven render hashes, relative links, the protected Genesis hash and whitespace.
+No application or full-corpus test rerun is claimed for these documentation-only
+changes. Required publication checks remain separate from these results.
+
+## October 17 — Compare the linked Lamentations form
+
+The previous goal turn made progress by consulting the actual Parsons edition
+and committing its qualified result. The same PR 303 check handles remain
+authoritatively in progress; no restart is warranted. A bounded read-only
+inventory check identified an unfinished connected Hebrew unit rather than
+repeating a parked source vote or another acquisition loop.
+
+The [Lamentations comparison](LAMENTATIONS_1_15_18_LINKED_FORM_2026-10-17.md)
+now tests that unit against the actual Greek targets, scholarly appendix and
+local source controls. One bounded Hebrew reader independently checked the
+published preservation and acrostic limits, not a new English candidate or
+historical-priority verdict. Root read the relevant Swete and Kotzé pages
+visually and van Rooy's target HTML discussion. Native retrieval also verified
+the current Qumran-Digital release at the same locus after the web reader's
+transient error; this was ordinary public access, not a bypass. Unit 3's
+complete ten own rows retain their text and notation between the two releases.
+
+This closes the linked comparison left open by the earlier screen, not its
+historical-source question. The report identifies an appropriate separate
+reader disclosure and discriminating historical inputs. No canonical Hebrew,
+English, note, reader implementation or canon changes here; no PDF/image is
+vendored. The full objective remains active, with its research and public
+delivery gates separate.
+
+The bounded final Hebrew check prompted a precision correction: unpointed
+wording and a doubtful verb do not certify eye number or one syntax. Root's
+scoped checks passed the eleven preserved controls, all 154 book record pins,
+private PDF/HTML/render hashes, links, JSON, protected Genesis and whitespace.
+No full-corpus or application-suite rerun is claimed for documentation only.
+Both exact checks on PR 303 succeeded; normal merge completed as
+`2aeb82969388858df8da191c514cfba8618dc257`, without a restart or protection bypass.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

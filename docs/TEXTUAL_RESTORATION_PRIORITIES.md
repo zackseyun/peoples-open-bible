@@ -55,6 +55,14 @@ neither new source wording nor a canonical note is applied by this dossier.
 Its exact preservation and transmission limits govern continuation. Do not
 repeat the completed screen or same-evidence checks as the next experiment.
 
+The separate [reader application](LAMENTATIONS_1_17_READER_DISCLOSURE_2026-10-17.md)
+now passes one exact factual/application review and is applied locally. One
+new 4Q111 disclosure and the corrected existing-note anchor retain Hebrew and
+marker-free English; all other 153 book units and metadata remain fixed.
+The [receipt](../sources/textual_restoration/applications/lamentations1_17_reader.2026-10-17.v1.json)
+records actual validation separately from pending main/public-reader delivery.
+No inline panel, whole-verse approval or stronger source-priority claim follows.
+
 **October 17 new consequential comparison:** [1 Samuel 2:22](SAMUEL_2_22_SANCTUARY_CLAUSE_2026-10-17.md)
 now tests the sexual-misconduct clause and women at the sanctuary. Actual DJD
 and QDR distinguish a space-based short junction from preserved omission ink;

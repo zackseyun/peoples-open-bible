@@ -15588,6 +15588,72 @@ PR309 and PR310. Both merged normally after exact-head and clean-merge checks;
 no live head was rewritten or job restarted. This records repository
 integration, not verification that the Psalm40 note is publicly delivered.
 
+## October 18 — Read Philo's actual Exodus 24 quotation contexts
+
+The previous goal turn made progress through the reviewed Exodus comparison,
+commit and pushed PR311, and the ordinary merges of PR309/310. Fresh checks
+confirmed the two original PR311 CI jobs were live, not stopped; no restart or
+head rewrite was attempted. This follow-up proceeds on a separate branch.
+
+The [Philo comparison](EXODUS_24_PHILO_RECEPTION_2026-10-18.md) reaches a named
+discriminating input from the preceding report. Root acquired version-pinned
+Greek TEI, read the specified quotation contexts and visually checked the four
+complete target pages with apparatus in the historical print editions. An
+initial scan locator for volume II proved wrong on visual inspection; the
+correct printed 247–248 / PDF300–301 mapping is recorded, not inferred from
+unreliable OCR labels. The PDF skill prompted this check; the documentation
+skill keeps literary reception distinct from physical preservation and origin.
+
+The actual On Dreams quotations make place wording part of two different
+arguments. Confusion adapts the scene; its exact selected wording and editorial
+supply must not be silently replaced by another English edition. Three uses
+by one author and duplicate print/digital editions do not multiply independent
+Exodus witnesses. No Philo manuscript hand or newly recovered Hebrew is claimed.
+No source, main English, note, reader implementation or canon change is applied.
+
+A separate scout completed three new apparatus routes. The official publisher
+route denied access, the actual Logos preview stopped during Exodus1:2, and
+Google Books provided only metadata. The target apparatus remains unread;
+the denied Bonn route was not repeated. Actual modern local apparatus or the
+original 4Q364 target remains next. Another review of the same selected texts
+is not the next source experiment. The single bounded independent factual review
+passed without required corrections. Root checked two frozen predecessors,
+27 canonical controls, ten private assets, exact selected Greek clauses,
+674 relative links, unchanged canonical/code files, whitespace and the protected
+unrelated Genesis file. The reviewed report and pre-receipt packet hashes bind
+the recorded result; the report is unchanged. No whole-corpus or export rerun
+is claimed. Required CI and normal main integration remain separate gates.
+The full goal remains active.
+
+## October 18 — Bound the 4Q364 edition and photo locator question
+
+The previous turn made progress by consulting actual Philo contexts and pushing
+reviewed PR313. Current authoritative checks confirmed PR311 and313 original
+CI jobs still in progress; no restart was attempted. This follow-up records
+access and locator evidence, not another source-priority or translation finding.
+
+The [compact checkpoint](../sources/textual_restoration/discovery/exodus24_4q364_access.2026-10-18.v1.json)
+records a three-route edition scout and root's inventory/image check. No target
+DJD XIII entry was acquired. Root read Reed's actual preliminary inventory
+pages10/65/66 and verified the historical plate/PAM table visually, using the
+PDF skill. The public IAA query returns four exposures of two different pieces,
+both labelled fragment14 on different museum plates. The two infrared previews
+were inspected, but neither was assigned to the published DJD fragment or the
+vision verse. No new letter, join or recovery is accepted. Original-image
+geometry does not license a number-only crosswalk.
+
+The documentation skill keeps this as a small access checkpoint within the
+ongoing Exodus work. Earlier reports and receipts stay frozen; no canonical,
+English, note, reader or canon change is applied. Do not repeat these routes
+without a new edition/plate or independently supported crosswalk. One scoped
+independent review passed with no correction. Root's seven asset pins, two
+frozen predecessors, 27 canonical controls, exact four-record query, 674 relative
+links, whitespace, source/code scope and protected unrelated-file checks passed.
+The review hash binds the pre-receipt packet. This related access record is
+appended normally to existing PR313; its new head requires its own CI, and old
+head checks cannot approve it. No manual restart or force push is used. The full
+goal remains active; this source-access limit does not block other source work.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -46,6 +46,13 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 Nabonidus grammar controls:** [the three actual Aramaic passages](NABONIDUS_ARAMAIC_SYNTAX_CONTROLS_2026-10-18.md)
+confirm separate object pronouns in two specific settings and a recipient with
+the forgiveness verb in Job. They do not decide the prayer's agent or independently
+replicate Stadel's corpus claims. Keep source and English unchanged. Stop
+repeating these controls; reopen for discriminating clause evidence, an auditable
+corpus test or original critical apparatus, otherwise prefer other portfolio work.
+
 **October 18 connected Daniel comparison:** [Daniel 4 and the Prayer of Nabonidus](DANIEL_4_NABONIDUS_AND_GREEK_FORMS_2026-10-18.md)
 now distinguishes Aramaic, selected Old Greek, Theodotion and the related prayer.
 Actual 967 collation qualifies a uniform Greek reading; Qumran supplies do not

@@ -16173,6 +16173,52 @@ byte/hash pins, 700 relative links and whitespace checks. The protected Genesis
 file is untouched, and canonical/code diff is empty. Publication checks and
 historical priority remain separate from this factual pass.
 
+## October 18 — Test the actual Nabonidus grammar controls
+
+The [bounded syntax check](NABONIDUS_ARAMAIC_SYNTAX_CONTROLS_2026-10-18.md)
+tests Stadel's three cited Aramaic passages rather than taking his interpretation
+as a source-text decision. A read-only scout acquired 1Q20; root independently
+parsed its target primary rows and acquired 11Q10. Root read all 70 displayed
+rows of 1Q20 XIII and XIX and all 20 rows of 11Q10 XXXVII–XXXVIII, excluding
+parallel text from attestation. Stadel's printed 641–642 and notes were checked
+again in extracted text and renders. The PDF skill required actual page
+inspection; the documentation skill separates attestation from grammatical
+inference. The prior frozen report and packet remain unchanged.
+
+The finite object control follows a participle; the other fronts its object
+within a coordinated infinitival phrase. Job supplies a recipient alongside
+an explicit sin object. Its actual pronoun is להון, not the preliminary expected
+לכון. The extraction helper prints a hard-coded 1Q20 label even for Job;
+the input object and table identify 11Q10 in the new packet. Neither issue
+changes the source. Unannotated word spans do not become publisher morphology.
+These controls support the distinctions, not a unique diviner-agent reading,
+new manuscript letters, a changed Daniel source or a canon addition.
+
+Fassberg's full 2018 article was not acquired through bounded publisher,
+institutional PDF and author searches. Its metadata/abstract are not the full
+argument; unrelated department PDFs and annual listings were excluded. The
+ethical-dative exclusion and Stadel's correction remain attributed, unreplicated
+claims. Web-tool access to the QDR targets failed, but ordinary downloads
+succeeded; the source is not globally inaccessible. An unavailable fitz module
+was replaced by installed pypdf for extraction, without installing packages.
+
+The next useful evidence must discriminate clause structures or supply an
+auditable corpus/apparatus test. Stop repeating the same three passages and
+blocked acquisition routes. No modern English Bible supplied drafting wording;
+source, English and reader/publisher code are unchanged. The user's inline-clutter
+concern leaves a sparse marker with Check Provenance detail as a proposal only.
+No About integration or public delivery is claimed. The broader goal remains active.
+
+One independent factual review passed the frozen report and pre-receipt packet
+without consequential corrections. Root applied its optional locator precision:
+אלהא occurs within the following clause on Job line 3, not at the line's end.
+The packet distinguishes the reviewed and corrected report hashes; no reviewer
+loop followed. Root separately passed 51 canonical hashes, two frozen current
+predecessors, two earlier predecessors, two method controls, eight private asset
+pins, 702 relative links and whitespace checks. Canonical/code diff is empty;
+the protected unrelated Genesis file is untouched. These checks are not CI,
+historical-priority or public-deployment certification.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

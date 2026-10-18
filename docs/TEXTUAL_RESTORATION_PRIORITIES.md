@@ -46,6 +46,15 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 Amos syntax follow-up:** [the carrying tense and question test](AMOS_5_HEBREW_TENSE_AND_QUESTION_2026-10-18.md)
+finds that the original grammar expressly allows alternatives. Driver's
+future preference is contextual; Keil argues for a past assertion; Wilgus
+argues for a continuing question. A past relative clause does not rule out
+future carrying. Retain source and main English provisionally, with question
+scope still open. Reopen only with a discriminating discourse test or genuinely
+new apparatus/philology, not another vote among these same pages. No reader
+or publisher layout change is authorized by the user's clutter concern.
+
 **October 18 new connected Amos comparison:** [Amos 5 and Acts 7](AMOS_5_ACTS_7_SOURCE_COMPARISON_2026-10-18.md)
 now distinguishes deity/tent wording, star/images, carrying and exile, and
 Damascus/Babylon across actual editions and the Damascus quotation. CD's

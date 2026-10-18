@@ -16080,6 +16080,51 @@ state above remains the historical observation, not a current blocker.
 Local main again passed ancestry/worktree checks and was ordinarily pushed
 at that merge. No public-reader delivery is implied.
 
+## October 18 — Test Amos carrying tense and the scope of its question
+
+The [Hebrew syntax follow-up](AMOS_5_HEBREW_TENSE_AND_QUESTION_2026-10-18.md)
+tests a specific unresolved issue rather than repeating the selected witnesses.
+One read-only scout acquired and inspected Driver's future argument and
+Keil's contrary past construction. Root checked their actual target pages
+and acquired the grammar and Wilgus thesis. The thesis's first download
+timed out; an ordinary byte-range resume produced the complete valid PDF.
+The partial file was never evidence. No package install, generated manuscript
+image, canonical edit or external reader change was needed.
+
+Gesenius's actual x and rr provisions expressly preserve alternatives.
+Wilgus adds a continuing-question account, not just another past assertion.
+Root tested the past-relative exclusion against the actual Exodus 6:8 source:
+earlier making or swearing does not forbid later carrying or bringing.
+Same-book justice passages favor an ethical context without deciding the
+carrying construction. Deity deportation parallels do not identify Amos's
+carrier, and a blanket no-other-cult-accusation premise is unsafe. None of
+these controls uniquely determines the source's temporal or question scope.
+Source and main English therefore remain provisional and unchanged.
+
+The PDF skill required actual page inspection, and the documentation skill
+separates original arguments from our countertests and their implications.
+Only relevant sections were read, not complete books or the whole thesis.
+No modern English Bible wording supplied a draft. The user's concern about
+messy inline disclosure is preserved as a boundary: sparse markers with
+Check Provenance detail remain a proposal, not approval for separate
+publisher/reader implementation. The wider source-comparison goal is active.
+
+One bounded independent factual review passed the exact frozen report and
+pre-receipt packet with no required corrections. Its source scope is recorded
+in the packet; passing confirms accurate representation and limited inference,
+not a winning interpretation. Root separately passed 57 canonical hashes,
+two frozen predecessors, two method controls, 17 private byte/hash pins,
+698 relative links and whitespace checks. Canonical/code diff is empty and
+the unrelated untracked Genesis file is untouched. A generated packet was
+initially placed in the task directory by a relative patch path, then moved
+to the authoritative repository with an absolute patch and its redundant
+task-directory copy removed; the content was preserved.
+
+PR330's two specific exact-head jobs passed and fresh normal merge gates
+allowed merge 0aa3e29d92329a4f9420c88f0fcf20ba48e76757. No runner restart,
+protection bypass or public delivery claim follows. Local main passed the
+ancestry/worktree guard, advanced to that merge and was ordinarily pushed.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

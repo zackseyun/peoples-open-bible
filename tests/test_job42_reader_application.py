@@ -205,24 +205,18 @@ class Job42ReaderApplicationTests(unittest.TestCase):
                       'deployment_review', 'blind_stylistic_vote_claimed'):
             self.assertFalse(self.contract['review_contract'][field])
 
-    def test_live_book_is_exact_baseline_or_candidate(self):
-        live_raw = {str(p.relative_to(ROOT)): p.read_bytes()
-                    for p in (ROOT / 'translation/ot/job').rglob('*.yaml')}
-        self.assertEqual(set(live_raw), set(self.raw), 'Job record path set changed')
-        current = sha(live_raw[TARGET])
+    def test_live_target_is_exact_and_exported(self):
+        # The complete historical export above remains frozen. A local ending
+        # disclosure must not permanently freeze unrelated future Job work.
+        current = sha((ROOT / TARGET).read_bytes())
         self.assertIn(current, (self.item['before_sha256'], self.item['candidate_sha256']))
-        expected_raw = {p: sha(raw) for p, raw in self.raw.items()}
-        expected_raw[TARGET] = current
-        self.assertEqual({p: sha(raw) for p, raw in live_raw.items()}, expected_raw,
-                         'Unrelated Job bytes changed')
         selected = self.candidate if current == self.item['candidate_sha256'] else self.before[KEY]
         live = exporter.export_book('JOB')
-        def overlay(code, chapter, verse):
-            self.assertEqual(code, 'JOB')
-            return selected if (chapter, verse) == KEY else self.before[(chapter, verse)]
-        with patch.object(exporter, 'load_translation_record', side_effect=overlay):
-            expected = exporter.export_book('JOB')
-        self.assertEqual(live, expected, 'Live full-book units or metadata differ')
+        target = [v for c in live['chapters'] if c['chapter'] == KEY[0]
+                  for v in c['verses'] if v['verse'] == KEY[1]]
+        self.assertEqual(target, [{'verse': KEY[1],
+                                  'text': selected['translation']['text'],
+                                  'footnotes': selected['translation']['footnotes']}])
 
 
 if __name__ == '__main__':

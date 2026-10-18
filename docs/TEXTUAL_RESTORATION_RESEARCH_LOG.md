@@ -15769,6 +15769,44 @@ PR315 subsequently passed both required checks on exact head
 Enoch review-hold update, which was preserved rather than attributed to this
 comparison. The newer literature/version follow-up remains a separate change.
 
+## October 18 — Apply the Job interpretation qualification
+
+The preceding turn made concrete progress: the original-study/version comparison
+was independently checked, committed and pushed in PR319. Fresh API checks
+confirmed its two required checks still running; no restart or merge bypass
+was attempted. The next translation-facing action is the
+[Job 2 qualification](JOB_2_READER_QUALIFICATION_2026-10-18.md), not a repeat
+of the same scholarship as another source vote.
+
+The existing note now identifies the contextual curse reading as POB's
+interpretation and discloses the competing literal blessing interpretation.
+Active lexical/theological fields are aligned with the actual main text;
+the stale claim that Bless remains in the main text is removed from active
+metadata and retained in exact historical archives. Seven prior fields retain
+baseline bindings without transferring their review scores. Hebrew, full marked
+main English, the existing anchor, drafting metadata and old revisions remain
+unchanged. The documentation skill keeps the interpretation decision distinct
+from source spelling and historical priority.
+
+One bounded independent factual/application review required the new test's
+baseline fetch for shallow CI; that was added and the exact final artifacts
+passed. The reviewer also checked the surgical Job42 live-test scope correction:
+its historical whole-book test remains unchanged, while its live check enforces
+the actual ending record/export rather than freezing unrelated future verses.
+No reader/publisher code, inline panel, new recovered ink or canon change is
+involved. The application receipt records actual local validation separately
+from remote CI, main integration and public delivery. The complete source
+comparison and restoration goal remains active.
+
+Root's four preapplication and four postapplication Job2 tests passed, as did
+six Job42 tests, its postapplication live-target check and 37 existing reader
+footnote tests. The actual live-book comparison confirms only the target raw
+record changes among 1,070; the real 42-chapter export changes only the existing
+Job2:9 footnote body, preserving all other 1,069 units and book metadata.
+The exact reviewed candidate, ten input pins, six review-bound artifacts,
+687 relative documentation links and protected unrelated Genesis file pass.
+No whole-corpus local rerun or deployed-reader change is claimed.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

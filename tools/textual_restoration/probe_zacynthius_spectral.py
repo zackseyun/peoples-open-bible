@@ -1,8 +1,8 @@
-"""Deterministic 57r JPEG spectral pilot, not a transcription or restoration.
+"""Deterministic Zacynthius JPEG spectral pilot, not a transcription or restoration.
 
 Requires NumPy, Pillow and OpenCV. No verse text, generative model, inpainting,
 deconvolution or sharpening is used. Inputs are verified and never overwritten.
-The fixed geometry applies only to the public 1533 x 2044 folio 57r JPEGs.
+The fixed geometry applies only to the public 1533 x 2044 folio JPEGs.
 """
 
 import argparse
@@ -16,6 +16,22 @@ from PIL import Image, ImageDraw
 
 ROI = (280, 200, 1260, 1800)
 REFERENCE = "00057-R+MB530GN_005.jpg"
+FOLIOS = {"57r": "00057-R", "164v": "00164-V"}
+
+
+def select_exposures(rows, folio):
+    prefix = FOLIOS[folio]
+    names = [row["archive_member"] for row in rows]
+    if (len(rows) != 51 or len(set(names)) != 51
+            or any(not name.startswith(prefix + "/" + prefix + "+") for name in names)
+            or len({row["local_file"] for row in rows}) != 51):
+        raise ValueError(f"Expected 51 distinct exposures for modern folio {folio}")
+    selected = [row for row in rows if "+MB" in row["archive_member"] or "+W" in row["archive_member"]]
+    if len(selected) != 42:
+        raise ValueError("Expected the 42 prespecified MB/W exposures")
+    reference_name = prefix + "+MB530GN_005.jpg"
+    reference_row = next(row for row in selected if row["archive_member"] == prefix + "/" + reference_name)
+    return selected, reference_row, reference_name
 
 
 def features(a, detector):
@@ -75,20 +91,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source-dir", required=True, type=Path)
     parser.add_argument("--output-dir", required=True, type=Path)
+    parser.add_argument("--folio", choices=FOLIOS, default="57r")
     args = parser.parse_args()
     source, out = args.source_dir, args.output_dir
     receipt_path = source / "receipt.json"
     receipt = json.loads(receipt_path.read_text())
     rows = receipt["member_payloads_verified"]
-    names = [row["archive_member"] for row in rows]
-    if (len(rows) != 51 or len(set(names)) != 51
-            or any(not name.startswith("00057-R/00057-R+") for name in names)
-            or len({row["local_file"] for row in rows}) != 51):
-        raise ValueError("Expected 51 distinct exposures for modern folio 57r")
-    selected = [row for row in rows if "+MB" in row["archive_member"] or "+W" in row["archive_member"]]
-    if len(selected) != 42:
-        raise ValueError("Expected the 42 prespecified MB/W exposures")
-    reference_row = next(row for row in selected if row["archive_member"] == "00057-R/" + REFERENCE)
+    selected, reference_row, reference_name = select_exposures(rows, args.folio)
     reference = read_verified(source, reference_row)
     out.mkdir(exist_ok=False)
     cv2.setRNGSeed(1729)
@@ -102,7 +111,8 @@ def main():
               "thresholds": {"min_matches": 40, "median_px": 1.5, "p95_px": 3,
                   "scale_min": 0.98, "scale_max": 1.02, "abs_rotation_deg": 1,
                   "abs_translation_px": 10, "min_spatial_cells": 6},
-              "roi_xyxy": list(ROI), "reference": REFERENCE, "alignment": [], "channels": [], "views": [],
+              "roi_xyxy": list(ROI), "reference": reference_name, "folio": args.folio,
+              "alignment": [], "channels": [], "views": [],
               "text_input": False, "generative_processing": False, "transcription_performed": False,
               "versions": {"opencv": cv2.__version__, "numpy": np.__version__, "pillow": Image.__version__},
               "limitation": "Feature-level holdout errors are not letter-level validation; SIFT orientation duplicates are not independent physical controls."}

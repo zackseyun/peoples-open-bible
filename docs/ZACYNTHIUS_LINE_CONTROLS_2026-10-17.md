@@ -129,3 +129,8 @@ published image, then acquire spectral exposures only for the relevant modern
 half. Neither a familiar verse completion nor the edition's spacing judgment
 may be substituted for visible traces. No new reading of that passage is claimed
 here.
+
+Follow-up: the [83v spectral test](ZACYNTHIUS_83V_SPECTRAL_2026-10-18.md)
+acquired modern 164v's 51 exposures and tested the published uncertainty. A fixed
+spectral contrast improved check-line image agreement, but no new reading was
+established.

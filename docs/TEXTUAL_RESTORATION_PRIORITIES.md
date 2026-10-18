@@ -46,6 +46,14 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 new connected source comparison:** [Exodus 24:9–11](EXODUS_24_VISION_AND_PLACE_COMPARISON_2026-10-18.md)
+now distinguishes direct Hebrew vision from Greek place/preservation wording.
+Actual apparatus/adverb differences and chapter33 controls prevent a blanket
+anti-anthropomorphism explanation. 4Q22's normalized vision words are supplied,
+not preserved ink. The Hebrew-exemplar countermodel remains viable; source
+priority is unresolved and no canonical or reader change is applied. Next seek
+the actual modernἐκεῖapparatus, original Philo context or4Q364target edition.
+
 **October 18 Psalm note application:** the [edition-qualified note](PSALM_40_READER_NOTE_2026-10-18.md)
 replaces the blanket Septuagint claim in Psalm 40:6 after exact factual review.
 Hebrew, main English and anchors are unchanged; Greek priority stays open.

@@ -15535,6 +15535,59 @@ translation, canon claim, generated-ink evidence or inline panel is introduced.
 CI and actual publication remain separate gates; the full objective remains
 active. Detailed source access and review scopes are linked in the report.
 
+## October 18 — Compare divine vision and Greek place language in Exodus 24
+
+The previous goal turn made progress through the exact Psalm40 note
+application, passed local checks, a pushed PR310 and ordinary PR308 merge.
+This turn's fresh read-only checks found the original PR309/310 CI jobs still
+live; no restart, bypass or separate website mutation was attempted.
+
+A bounded local scout found an unperformed connected case with already-held
+editions: [Exodus24:9–11](EXODUS_24_VISION_AND_PLACE_COMPARISON_2026-10-18.md).
+Root read the full local chapter and relevant33/34controls, visually inspected
+the actual Swete and Brooke–McLean target/apparatus pages, and verified26
+canonical Hebrew alignments against the local WLC loader. The Greek place,
+passive-encounter and survival clauses differ materially from the retained
+Hebrew. Actual chapter33control wording and the adverb variation constrain
+blanket theological and Hebrew-exemplar claims.
+
+The source-index check materially changes the evidence accounting: 4Q22's
+normalized vision words are supplied within cross-token brackets, not newly
+preserved early Hebrew support. A separate local scout did not locate the
+nonbiblical raw file, so root reacquired the pinned snapshot and read4Q364f14
+directly. Its target-vision preservation remains unresolved; empty references
+and coverage inventories do not vote. The raw edition and data are not vendored.
+
+Wyckoff's complete public article text, including its notes and conclusion,
+was read through the web tool. The ordinary downloaded HTML was only a
+security page, not an article acquisition. McClellan's competing argument was
+read at its stated public-text scope, not as a full-thesis consultation or
+newly attested Hebrew retroversion. Rendsburg remained an adjacent-topic lead;
+the denied Bonn route was not bypassed. The PDF skill prompted complete target
+page inspection, and the documentation skill separated observation, published
+argument and root's provisional assessment in the packet/report.
+
+The case opens substantive textual-history work without another note-polishing
+application. No source, main English, reader code, canon or recovered-ink claim
+is applied. The bounded independent factual review passed with no required
+correction; the unchanged report and pre-receipt packet are hash-bound in the
+packet. Root's checks passed: 27 canonical pins, 12 private assets, 26 WLC
+alignments, the critical supply spans, 282,778 unusable nonbiblical references,
+671 relative links, unchanged source/code and the protected unrelated file.
+Two initial one-off harness assumptions were corrected, not the evidence.
+The full source-comparison objective remains active.
+
+The user's disclosure reply is conditional on presentation, not blanket
+authorization to extend the separate publisher/reader. Keep chapter text clean
+and existing Check Provenance access. Any future inline proposal should first
+show a small optional indicator and its appearance; no inline code change or
+separate website recovery is authorized or performed by this reply.
+
+Subsequent fresh checks found both original CI checks successful for each of
+PR309 and PR310. Both merged normally after exact-head and clean-merge checks;
+no live head was rewritten or job restarted. This records repository
+integration, not verification that the Psalm40 note is publicly delivered.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

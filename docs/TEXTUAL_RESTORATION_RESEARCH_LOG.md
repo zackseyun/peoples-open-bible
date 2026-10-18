@@ -15588,6 +15588,43 @@ PR309 and PR310. Both merged normally after exact-head and clean-merge checks;
 no live head was rewritten or job restarted. This records repository
 integration, not verification that the Psalm40 note is publicly delivered.
 
+## October 18 — Read Philo's actual Exodus 24 quotation contexts
+
+The previous goal turn made progress through the reviewed Exodus comparison,
+commit and pushed PR311, and the ordinary merges of PR309/310. Fresh checks
+confirmed the two original PR311 CI jobs were live, not stopped; no restart or
+head rewrite was attempted. This follow-up proceeds on a separate branch.
+
+The [Philo comparison](EXODUS_24_PHILO_RECEPTION_2026-10-18.md) reaches a named
+discriminating input from the preceding report. Root acquired version-pinned
+Greek TEI, read the specified quotation contexts and visually checked the four
+complete target pages with apparatus in the historical print editions. An
+initial scan locator for volume II proved wrong on visual inspection; the
+correct printed 247–248 / PDF300–301 mapping is recorded, not inferred from
+unreliable OCR labels. The PDF skill prompted this check; the documentation
+skill keeps literary reception distinct from physical preservation and origin.
+
+The actual On Dreams quotations make place wording part of two different
+arguments. Confusion adapts the scene; its exact selected wording and editorial
+supply must not be silently replaced by another English edition. Three uses
+by one author and duplicate print/digital editions do not multiply independent
+Exodus witnesses. No Philo manuscript hand or newly recovered Hebrew is claimed.
+No source, main English, note, reader implementation or canon change is applied.
+
+A separate scout completed three new apparatus routes. The official publisher
+route denied access, the actual Logos preview stopped during Exodus1:2, and
+Google Books provided only metadata. The target apparatus remains unread;
+the denied Bonn route was not repeated. Actual modern local apparatus or the
+original 4Q364 target remains next. Another review of the same selected texts
+is not the next source experiment. The single bounded independent factual review
+passed without required corrections. Root checked two frozen predecessors,
+27 canonical controls, ten private assets, exact selected Greek clauses,
+674 relative links, unchanged canonical/code files, whitespace and the protected
+unrelated Genesis file. The reviewed report and pre-receipt packet hashes bind
+the recorded result; the report is unchanged. No whole-corpus or export rerun
+is claimed. Required CI and normal main integration remain separate gates.
+The full goal remains active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

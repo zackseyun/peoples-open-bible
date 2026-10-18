@@ -46,6 +46,14 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 Philo source follow-up:** [the actual quotation contexts](EXODUS_24_PHILO_RECEPTION_2026-10-18.md)
+now confirm place wording in the received Greek of On Dreams 1.62 and 2.222,
+with a related adaptation in Confusion 96. This strengthens Jewish reception
+evidence, not a recovered Hebrew clause or three independent manuscripts.
+The modern apparatus remains inaccessible after three bounded new routes;
+next seek its actual target entries or the original 4Q364 edition/plate.
+Do not repeat the now-consulted Philo contexts as the next source experiment.
+
 **October 18 new connected source comparison:** [Exodus 24:9–11](EXODUS_24_VISION_AND_PLACE_COMPARISON_2026-10-18.md)
 now distinguishes direct Hebrew vision from Greek place/preservation wording.
 Actual apparatus/adverb differences and chapter33 controls prevent a blanket

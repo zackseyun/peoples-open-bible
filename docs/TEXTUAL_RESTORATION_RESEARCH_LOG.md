@@ -15725,6 +15725,50 @@ is claimed. Separately, both required PR313 checks passed on exact head
 21d78296475419f66879b90bc8603a5aa93a1aef, with local main advanced and pushed.
 That integration does not certify the still-running Job checks or public delivery.
 
+## October 18 — Test competing Job 2 arguments against their sources
+
+The previous goal turn made progress through the reviewed, committed Sinaiticus
+follow-up, not a new Hebrew reading. Fresh exact-head checks found PR314 and315
+still live; no restart was attempted. A two-route scout found the actual
+Fernández Marcos chapter through DigitalCSIC's native search, rather than
+repeating the exhausted announcement, catalogue and preview routes. Root read
+the full chapter text and notes and used the PDF skill to inspect the decisive
+pages and article boundary. The [new follow-up](JOB_2_COMPETING_ARGUMENTS_AND_VERSIONS_2026-10-18.md)
+corrects a secondary attribution; the disputed authorship remains open.
+
+Root also read Lier's full article and visually inspected its key argument and
+conclusion pages, then checked the actual contextual Hebrew and Aramaic/Syriac
+prologue wording. The latter controls identify their editions without pretending
+to be ancient manuscript photographs. Differences in speakers and recipients
+limit a proposed deathbed parallel; isolated lexical agreement does not settle
+pragmatic meaning. No missing Hebrew letters, source/main English, notes,
+metadata, implementation or canon are changed. Raw assets stay private.
+
+The documentation skill keeps the earlier reports frozen and the new evidence
+separate. The shared method now explicitly checks primary attribution, article
+boundaries and the direction of cited parallels. No same-evidence consensus
+loop or whole-corpus/export rerun is treated as new research progress. The full
+goal stays active; scientific judgment, exact-head CI, normal main integration
+and actual public delivery remain distinct.
+
+One fresh bounded independent factual review passed without required correction;
+the unchanged report and pre-receipt packet hashes bind its actual scope. An
+earlier reviewer handle was unavailable without a result; no approval was
+inferred. Root separately verified four frozen predecessors, 60 canonical pins,
+15 private assets, six exact normalized version pairs, both complete version
+prologues, the edition and contextual controls, 733 relative links, whitespace,
+unchanged canonical/code scope and the protected unrelated Genesis file. These
+are scoped checks, not a whole-corpus or export rerun. Separately, PR314's two
+required checks passed on exact head e6c16e0fe94f68644e88ee22fae254aebe456689;
+its normal merge is fc900506d29b1b4c0104153cd04d83e72d83da93, and local main
+was advanced and pushed. That does not certify later PRs or public delivery.
+
+PR315 subsequently passed both required checks on exact head
+40ab14ca5e85d0001b4a7fedb971c19bee8debcd and merged normally as
+209c89c5560cb2b93d57572d4e928f9951112760. Main also contained another task's
+Enoch review-hold update, which was preserved rather than attributed to this
+comparison. The newer literature/version follow-up remains a separate change.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -207,6 +207,15 @@ preferring a less restrictive English earth clause. It retains source priority
 on hold and treats the missing article in הָרִים as a separate rationale issue,
 not as authorization to change English or insert Hebrew letters automatically.
 
+Verify secondary attributions against the exact primary argument before using
+them as corroboration. Agreement about a book's general translation technique
+does not imply agreement about the authorship of one addition. The
+[Job 2 follow-up](JOB_2_COMPETING_ARGUMENTS_AND_VERSIONS_2026-10-18.md) resolves
+such an attribution by consulting the original chapter. Check printed article
+boundaries as well as repository pagination. For a proposed cultural parallel,
+verify who speaks, who acts and who receives the action in the cited source;
+shared setting alone is not proof of the same meaning.
+
 Separate lexical interpretation from emendation even when both produce the
 same English. In the [Joel comparison](JOEL_2_23_LEXICAL_AND_VERSION_COMPARISON_2026-10-12.md),
 BDB's target timing discussion proposes a different Hebrew form for a former-state

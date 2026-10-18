@@ -46,6 +46,14 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 original study and version controls:** the
+[competing-arguments follow-up](JOB_2_COMPETING_ARGUMENTS_AND_VERSIONS_2026-10-18.md)
+now resolves a secondary attribution against the original chapter and tests a
+literal-blessing proposal against contextual Hebrew and two named versional
+controls. Keep original-translator authorship open and retain Hebrew/main
+English provisionally. Do not repeat the acquired studies as another priority
+vote; actual modern apparatus or a new lawful Heater route remains next.
+
 **October 18 Sinaiticus follow-up:** the [Job 2 correction states](JOB_2_SINAITICUS_CORRECTIONS_2026-10-18.md)
 now distinguish the project's original participle from ca's noun, plus five
 other local corrections. The longer speech is not wholly a ca addition.

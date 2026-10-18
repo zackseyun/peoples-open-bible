@@ -46,6 +46,15 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 critical Syriac and manuscript follow-up:** the
+[direct critical-edition and 7a1 check](JEREMIAH_31_CRITICAL_SYRIAC_AND_MANUSCRIPT_2026-10-18.md)
+confirms the negative target in the electronic critical text and historical
+manuscript facsimile. These are dependent presentations, not extra witness
+votes. Actual conventions forbid unanimity from silence; tokenized notes lack
+the printed-page coverage summary. Next obtain other old witnesses' precise
+target states or complete Greek apparatus. Keep source priority open and do
+not repeat the three exhausted Greek access routes.
+
 **October 18 Jeremiah disclosure correction:** the
 [reader note correction](JEREMIAH_31_READER_NOTE_CORRECTION_2026-10-18.md)
 distinguishes Hebrew husband/lord language from Greek disregard and relocates

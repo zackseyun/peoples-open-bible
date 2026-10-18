@@ -15932,6 +15932,58 @@ A first patch was rejected for hunk syntax without changing the target; the
 corrected patch applied the byte-identical reviewed candidate. No full-corpus
 rerun, remote CI success or deployed-reader result is implied by local checks.
 
+## October 18 — Trace the Syriac reading to critical text and manuscript
+
+The preceding goal turn made progress by applying, independently reviewing,
+testing, committing and pushing the Jeremiah note correction in PR325. Its
+source and marker-free main English remained unchanged. Fresh exact-head
+checks found the preceding research/application PRs live; an observation
+boundary was not treated as failure or permission to restart a runner.
+
+Two bounded read-only scouts sought modern Greek and Syriac critical evidence.
+The Greek target remained unavailable after three lawful routes. The Syriac
+scout followed advertised public collection/version links to actual chapter
+text and embedded notes. Root read the target units, controls, preface x–xv,
+Jeremiah introduction 3–14 and embedded notes, then checked the identified base
+against the historical facsimile. The PDF skill required actual title/contents
+page inspection; the documentation skill keeps edition, manuscript, dependency
+and historical priority separate in the
+[new follow-up](JEREMIAH_31_CRITICAL_SYRIAC_AND_MANUSCRIPT_2026-10-18.md).
+
+The critical electronic text corroborates the earlier positive/negative pair.
+The target's four embedded notes do not attach to the negative verb, but the
+actual editorial rules prohibit an agreement census from that silence. Root
+located the clause across facsimile scans n355 and n354, verified the reverse
+sequence, and read the known negative wording. Photolithographic intervention
+and sixth/seventh-century dating remain explicit; no new ink is claimed.
+
+The library's modern digital viewer returned an access error. The modern
+facsimile introduction was text-readable through the web tool, but its local
+download was empty and visual retrieval failed; it is not a visually verified
+source here. An OCR download and a navigation-only image download timed out
+partially; neither is used as a complete source. Greek's downloaded placeholder
+and Syriac's incomplete route-script are likewise not edition evidence. Raw
+assets remain private, with the publisher's access flag preserved. No bypass,
+canonical edit, website workflow, inline panel or broad corpus rerun occurred.
+The full source-comparison and restoration goal remains active.
+
+One bounded independent factual review passed without required corrections,
+including the complete electronic target/context and notes, actual edition
+conventions, original-size target facsimiles, title and historical preface.
+The unchanged report and pre-receipt packet hashes bind that review. Root
+separately passed 58 canonical controls at the already-applied reader baseline,
+seven frozen predecessors, 37 private asset byte/hash pins, two exact normalized
+targets, all four target note attachments, parsed chapter counts, 692 relative
+documentation links, empty canonical/code diff and protected unrelated Genesis.
+These are research integrity checks, not a corpus-wide historical-text result.
+
+Fresh exact-head checks subsequently passed both PR323 integrity jobs and
+allowed its normal merge as fc26e717762d20d1fe6f3f619a1c8d202aba8ee4.
+The fetch also included unrelated remote merges, which were preserved. Local
+main was advanced only after ancestry and worktree checks; ordinary pushing
+does not certify reader publication. PR324 and PR325 still had live checks
+on the last read, so no protection bypass or runner restart was attempted.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

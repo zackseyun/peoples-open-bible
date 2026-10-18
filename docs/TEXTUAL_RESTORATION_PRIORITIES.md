@@ -46,6 +46,14 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 Jeremiah disclosure correction:** the
+[reader note correction](JEREMIAH_31_READER_NOTE_CORRECTION_2026-10-18.md)
+distinguishes Hebrew husband/lord language from Greek disregard and relocates
+the existing marker to the relevant clause. It preserves the Hebrew and
+marker-free main English. The historical relation of the readings remains
+unresolved; the correction is not a source-priority decision or a new inline
+layout. Exact application, CI, integration and publication are separate gates.
+
 **October 18 lexical and version follow-up:** [the original lexical controls](JEREMIAH_31_LEXICAL_AND_VERSION_CONTROLS_2026-10-18.md)
 now verify Gesenius's qualified negative proposal, Radak's father/son
 distinction and actual Syriac/Aramaic wording. The Arabic example concerns

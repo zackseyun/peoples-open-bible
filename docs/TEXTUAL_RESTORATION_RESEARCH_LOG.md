@@ -15895,6 +15895,43 @@ suggestion, not an approved implementation. Existing Check Provenance remains
 the reader route; no separate publisher/reader code, website workflow or
 About-page change is authorized or performed by this research pass.
 
+## October 18 — Correct the Jeremiah reader explanation
+
+The preceding goal turn made progress: actual lexical and version controls
+refined the negative interpretation and were documented, independently checked,
+committed and pushed in PR324. No new Hebrew letters or main rendering followed.
+At the start of this application, PR323 and PR324 had exact live integrity
+check handles, not terminal failures; no runner restart was authorized.
+
+The [reader correction](JEREMIAH_31_READER_NOTE_CORRECTION_2026-10-18.md)
+addresses the established false equivalence between Greek disregard and Hebrew
+dominion. It moves the existing marker from Egypt to husband and qualifies the
+two relevant active rationales. The source and marker-free main English remain
+the same. This is an exact factual/application task rather than another vote
+on the unresolved source history. The documentation skill keeps its scope and
+publication limits explicit; it does not authorize a separate reader redesign.
+
+The user cautioned against inline clutter. No paragraph, panel, new note or
+publisher/reader feature is added. Original drafting metadata and older
+revisions are retained; superseded review fields are archived exactly rather
+than transferred to the edited note. The contract and application receipt
+bind the candidate, review and actual tests. The full source-comparison and
+restoration goal remains active; genuinely new usage or critical collation is
+still required to reopen this passage's source priority.
+
+One bounded factual/application reviewer passed the exact five bound artifacts
+without required corrections and independently passed all four focused tests.
+Root's four tests passed before and after application, as did 25 existing
+note-audit and selected generic export tests. Actual live-file comparison
+against the frozen baseline shows only the target record changed among 1,364;
+the actual 52-chapter export changes only its note body and existing marker
+position. All other 1,363 units and book metadata remain unchanged. Twelve
+input pins, five review-bound hashes, 57 unaffected canonical controls, 693
+relative documentation links and the protected unrelated Genesis file pass.
+A first patch was rejected for hunk syntax without changing the target; the
+corrected patch applied the byte-identical reviewed candidate. No full-corpus
+rerun, remote CI success or deployed-reader result is implied by local checks.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

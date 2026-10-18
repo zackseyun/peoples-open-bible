@@ -15984,6 +15984,48 @@ main was advanced only after ancestry and worktree checks; ordinary pushing
 does not certify reader publication. PR324 and PR325 still had live checks
 on the last read, so no protection bypass or runner restart was attempted.
 
+## October 18 — Test Syriac independence without counting repeated editions
+
+The [original-thesis and early-copy follow-up](JEREMIAH_31_SYRIAC_INDEPENDENCE_2026-10-18.md)
+tests a remaining source-priority question rather than applying another reader
+edit. Root read Greenberg's actual target argument, methodological distinctions
+and practical base-text discussion. The local argument favors selective Greek
+influence; its contextual preference is not a uniquely discriminating shared
+error. An English pronoun slip is visibly present in the thesis, but the Syriac
+still refers to them. Neither point licenses a Hebrew replacement.
+
+A bounded read-only scout exhausted three early-manuscript routes. Root checked
+the exact BL records, retained route log and complete Wright catalogue pages.
+General coverage does not establish either early copy's surviving target words.
+No new manuscript vote, letter, source spelling or canonical edit results.
+The PDF skill required inspection of relevant rendered pages; the documentation
+skill keeps the original argument, our assessment and the access limits apart.
+The entire thesis was not read, and the exhausted routes should not be repeated
+without new access. Other consequential portfolio work should take precedence
+over another pass through these same inputs.
+
+The user warned that inline disclosure can look messy. That does not authorize
+the separate publisher or reader work. A sparse marker with details behind
+Check Provenance remains a proposed design only; no website edit or runner
+workflow occurs here.
+
+Fresh exact-head successes allowed PR325's normal merge as
+aeefcde8f23f2e5ad36815ed1f1f0e8cf6a458a5. Local main passed ancestry/worktree
+checks, advanced to that merge and was ordinarily pushed. PR327's two specific
+checks were still live on the last read; no restart or bypass was attempted.
+These integration states do not certify the public reader's delivery.
+
+One bounded independent factual review passed the exact frozen report and
+pre-receipt packet without required corrections. It inspected the original
+target, method and base-text discussion, both complete Wright pages, exact BL
+records and critical introduction controls. Root separately passed 63 current
+canonical hashes, nine frozen predecessors, 18 private asset byte/hash pins,
+696 relative links in the three changed documents, empty canonical/code diff
+and the protected unrelated Genesis file. No corpus-wide rerun or publication
+certification is implied. The packet distinguishes the review's inspected
+sources from acquisition-history claims it did not repeat. A receipt patch
+was first rejected for hunk syntax without changing files, then corrected.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

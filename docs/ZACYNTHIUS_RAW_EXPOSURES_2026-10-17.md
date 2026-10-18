@@ -6,6 +6,10 @@ removes the access obstacle recorded in the
 [October 14 probe](ZACYNTHIUS_PUBLIC_RECOVERY_2026-10-14.md), but does not resolve
 the uncertain writing in Luke 9:7. No new letter or biblical reading is accepted.
 
+Later that day, a [51-exposure acquisition and deterministic pilot](ZACYNTHIUS_SPECTRAL_PILOT_2026-10-17.md)
+extended this four-file probe. The historical counts below describe this initial
+acquisition only.
+
 ## Acquired evidence
 
 The [official archive](https://edata.bham.ac.uk/428/) now returns the actual

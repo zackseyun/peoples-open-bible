@@ -46,6 +46,13 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 4Q364 access boundary:** the
+[compact locator checkpoint](../sources/textual_restoration/discovery/exodus24_4q364_access.2026-10-18.v1.json)
+records three completed edition routes, historical plate/PAM associations and
+two different archive pieces both called fragment 14. Neither is certified as
+published DJD fragment 14 or vision wording. Hold until an actual edition/plate
+or supported crosswalk arrives; do not repeat the same access routes.
+
 **October 18 Philo source follow-up:** [the actual quotation contexts](EXODUS_24_PHILO_RECEPTION_2026-10-18.md)
 now confirm place wording in the received Greek of On Dreams 1.62 and 2.222,
 with a related adaptation in Confusion 96. This strengthens Jewish reception

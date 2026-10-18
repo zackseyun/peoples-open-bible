@@ -15625,6 +15625,35 @@ the recorded result; the report is unchanged. No whole-corpus or export rerun
 is claimed. Required CI and normal main integration remain separate gates.
 The full goal remains active.
 
+## October 18 — Bound the 4Q364 edition and photo locator question
+
+The previous turn made progress by consulting actual Philo contexts and pushing
+reviewed PR313. Current authoritative checks confirmed PR311 and313 original
+CI jobs still in progress; no restart was attempted. This follow-up records
+access and locator evidence, not another source-priority or translation finding.
+
+The [compact checkpoint](../sources/textual_restoration/discovery/exodus24_4q364_access.2026-10-18.v1.json)
+records a three-route edition scout and root's inventory/image check. No target
+DJD XIII entry was acquired. Root read Reed's actual preliminary inventory
+pages10/65/66 and verified the historical plate/PAM table visually, using the
+PDF skill. The public IAA query returns four exposures of two different pieces,
+both labelled fragment14 on different museum plates. The two infrared previews
+were inspected, but neither was assigned to the published DJD fragment or the
+vision verse. No new letter, join or recovery is accepted. Original-image
+geometry does not license a number-only crosswalk.
+
+The documentation skill keeps this as a small access checkpoint within the
+ongoing Exodus work. Earlier reports and receipts stay frozen; no canonical,
+English, note, reader or canon change is applied. Do not repeat these routes
+without a new edition/plate or independently supported crosswalk. One scoped
+independent review passed with no correction. Root's seven asset pins, two
+frozen predecessors, 27 canonical controls, exact four-record query, 674 relative
+links, whitespace, source/code scope and protected unrelated-file checks passed.
+The review hash binds the pre-receipt packet. This related access record is
+appended normally to existing PR313; its new head requires its own CI, and old
+head checks cannot approve it. No manual restart or force push is used. The full
+goal remains active; this source-access limit does not block other source work.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

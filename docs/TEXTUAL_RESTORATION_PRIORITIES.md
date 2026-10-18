@@ -2,6 +2,15 @@
 
 ## Decision
 
+**Current imaging constraint, October 18:** the user authorizes only
+non-generative processing, with originals preserved. This supersedes the earlier
+generative-hypothesis option below. The [Zacynthius 83v spectral experiment](ZACYNTHIUS_83V_SPECTRAL_2026-10-18.md)
+acquired 51 public exposures and tested a fixed neighboring-line contrast.
+Check-line image agreement improved, but Luke 10:33's uncertain phrase remains
+unread. No new letters or Bible-text change were accepted. Further work on this
+phrase needs an attributable trace, materially better measured data or stronger
+independent control, not continued parameter tuning against expected wording.
+
 Session addition, 2026-10-13: pursue the bounded
 [AI manuscript recovery investigation](AI_MANUSCRIPT_RECOVERY_2026-10-13.md).
 It adds an executable spectral-image feasibility track and explicit completion

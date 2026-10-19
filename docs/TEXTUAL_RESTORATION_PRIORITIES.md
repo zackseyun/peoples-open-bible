@@ -93,7 +93,17 @@ now supplies a complete scout candidate map and two root-checked omissions:
 the8:25 purpose clause was lost at adjudication, and the8:92 oath was already
 lost at parsing. All92 numbers survived. Prioritize one exact source/English
 repair with notes, source-loader recurrence and export checks; the candidate
-map is not an applied correction or a token-level chapter collation.
+map is not an applied correction or a token-level chapter collation. The
+[bounded repair](1ESDRAS_8_PARTITION_REPAIR_2026-10-19.md) now prepares the exact
+Greek/English application and normalized-source recurrence checks; finish this
+concrete correction before reopening another ancient-priority case. Reader and
+publisher layout remain on hold; the user's concern about clutter is not
+authorization for new inline disclosure.
+The actual export preflight also finds a pre-existing chapter5 defect: source
+and YAML contain1–70 plus145, so the exporter withholds that whole chapter.
+Next establish its complete printed alignment rather than deleting145,
+inventing missing units or claiming a complete book export. Chapter8's repair
+must preserve all unrelated outputs and does not certify the rest of the book.
 
 **October 19 Jeremiah release forms:** the
 [connected Hebrew/Greek/Latin comparison](JEREMIAH_39_RELEASE_FORMS_2026-10-19.md)

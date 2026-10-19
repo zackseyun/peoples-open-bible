@@ -17629,6 +17629,61 @@ receipts. This is a demonstrated POB processing problem, not an ancient variant,
 new decipherment, completed repair or canon inference. Do not substitute another
 same-evidence preference review for that implementation.
 
+## October 19 — Assemble the bounded Esdras import repair
+
+The [repair report](1ESDRAS_8_PARTITION_REPAIR_2026-10-19.md) separates the
+printed-source import correction from the unresolved ancient-priority question.
+One source author prepares all 92 exact Greek units with original slice offsets,
+page identities and only two restored passages. A separate English author routes
+the 46 affected target records, notes and active decisions. Root assembles complete
+records and the existing normalized override lane; a different reviewer checks
+that exact application before canonical replacement. This is division of work,
+not multiple votes about the same reading. No new research case is opened.
+
+Root's full-page assembly check catches a remaining scout-map error at83/84:
+inline84 begins at `ἔδωκας`, after the address and participial clause belonging
+to83. The exact source and English candidates correct that boundary; the frozen
+diagnostic remains historical. The collective infinitival clause in91 also
+retains collective English rather than reintroducing an old imperative-style
+revision. Neither adjustment is an ancient-priority decision.
+
+The actual whole-book export rejects the assumption that all nine chapters
+already ship: chapter5 has IDs1–70 plus145 in both YAML and historical source.
+Its gap causes that entire chapter to be withheld. Both baseline and repaired
+export therefore contain eight chapters/425 units, while all496 input records
+remain present. The regression compares actual outputs by chapter number,
+not list position, and verifies only chapter8 changes. A separate chapter5
+printed alignment is a concrete next corpus-integrity task; this batch does
+not fix that pre-existing defect or certify the other chapters' source text.
+
+Schema preflight finds three legacy target shells without `ai_draft` (41,85,87).
+Their corrected content comes from42,86,88. Those genuine contributing draft
+receipts are relocated unchanged, with explicit origin path/ID/hash, a record
+of the original target's missing receipt and `certifies_current_record: false`.
+The source notes disclose this routing; no provider run or new receipt is
+invented. The exact six-test application suite passes before independent
+review. Frozen application evidence SHA256 is
+`538c109f2d6cb07050eb5d85e7df731d22381241efb361cabd288856e2a00e34`.
+
+The source normalizer preserves the historical adjudicated book and rejects its
+hash drifting. Its scoped command writes only 1ES, not other override books or
+their summary. Tests require every existing nonspace Greek codepoint exactly
+once in order, schema-valid full records, archived old review state, correctly
+bound note markers, real source-loader recurrence and a before/after run of the
+whole-book exporter over all 496 input records. Old high-confidence labels and approximate Hebrew mappings
+are not approvals for the replacement records. The AI draft receipt stays a
+historical receipt, not a fabricated receipt for this revision.
+
+The user reiterates that inline disclosure can be messy, depending on design.
+Reader/publisher layout stays on hold. A restrained marker for meaning-bearing
+variants with details on demand is only a possible future design, not an
+implemented or authorized expansion. Necessary rebinding of existing notes in
+the verse repair is distinct from adding a new disclosure system. The preceding
+Jeremiah release-law batch, PR368, passed both exact-head integrity checks and
+merged normally as `e0a4f02675b589c74322e97144fc2478eccff9f1`; local/remote main
+were verified at that merge. The Esdras application requires its own validation
+and publication; no refreshed website deployment is claimed.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

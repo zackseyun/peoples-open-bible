@@ -18048,6 +18048,39 @@ and main integration after PR372/373 remain publication gates, separate from
 any website/CDN refresh. This does not establish ancient priority, recover
 Hebrew, add a canonical book or certify the rest of these verses lexically.
 
+## October 19 Esdras delivery verified on main
+
+The chapter6 application is merged in
+[PR372](https://github.com/zackseyun/peoples-open-bible/pull/372), the chapter7
+diagnostic in [PR373](https://github.com/zackseyun/peoples-open-bible/pull/373),
+and the two-word application in
+[PR374](https://github.com/zackseyun/peoples-open-bible/pull/374). Both integrity
+jobs passed at each exact publication head before the ordinary merges. PR374's
+reviewed head is `d09552494c5328fb908259ed2b38588645736158`; its merge is
+`04ae8698501969ea6c3f9610be7821304abb51a5`. Local main, origin/main and the
+configured remote agree on that merge, whose complete file tree equals the
+reviewed head. This completes the pending Git delivery of the chapter5/6/7/8
+repairs; earlier preparation and pending-publication entries remain historical.
+
+On that actual main, both chapter7 canonical records match the complete
+reviewed objects and the byte hashes in the
+[delivery record](../sources/textual_restoration/comparisons/1esdras7_application_delivery.2026-10-19.v1.json).
+The six live application tests pass again, including all495 canonical records,
+493 unchanged records against the pre-application baseline, retained chapter5/6/8
+repairs, source normalization and the complete nine-chapter export. Both genuine
+draft receipts and the unrelated untracked Genesis file remain unchanged.
+The two corrected records remain draft/needs_review; the application review
+does not certify every lexical decision in those verses.
+
+The contribution is correction of inherited digital transcription and its
+consequential English, not evidence of a newly discovered ancient reading,
+earliest Hebrew wording or a change of canon. Reader/publisher layout remains
+on hold, and a repository merge does not prove a website/CDN refresh. The
+completed Esdras repairs need no further same-evidence review loop. The next
+substantial source comparison remains the unresolved Ezekiel36–39/P967 question,
+where modern local apparatus and original argument access can distinguish
+historical explanations; repeating closed controls cannot supply that evidence.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -44,6 +44,8 @@ ESDRAS5_PARTITION = REPO_ROOT / "sources/textual_restoration/candidates/1esdras5
 ESDRAS5_AFFECTED = {25, 28, 29, 31, 38, 39}
 ESDRAS6_PARTITION = REPO_ROOT / "sources/textual_restoration/candidates/1esdras6_source_partition.2026-10-19.v1.json"
 ESDRAS6_AFFECTED = {1, 8, 9, 10, 24, 26, 30, 31}
+ESDRAS7_IMPORT = REPO_ROOT / "sources/textual_restoration/candidates/1esdras7_source_import.2026-10-19.v1.json"
+ESDRAS7_AFFECTED = {4, 6}
 
 import lxx_swete  # noqa: E402
 
@@ -217,7 +219,7 @@ def normalize_1es(records: list[dict]) -> tuple[list[dict], list[str]]:
         })
         out.append(new)
     out, dropped = normalize_1es5(out)
-    return normalize_1es6(out), dropped
+    return normalize_1es7(normalize_1es6(out)), dropped
 
 
 def normalize_1es5(records: list[dict]) -> tuple[list[dict], list[str]]:
@@ -324,6 +326,63 @@ def normalize_1es6(records: list[dict]) -> list[dict]:
                    normalization={"rule": "1esdras6_printed_partition_2026-10-19", "note": note})
         new.setdefault("source_correction_history", []).append({
             "baseline_commit": "08a8a4cc05fcb8eb91580e01fb506a90de9799a9",
+            "record": copy.deepcopy(rec), "certifies_corrected_record": False,
+            "contributors": unit["contributors"],
+        })
+        out.append(new)
+    return out
+
+
+def normalize_1es7(records: list[dict]) -> list[dict]:
+    """Replace two printed words; preserve every boundary and all other rows."""
+    candidate = json.loads(ESDRAS7_IMPORT.read_text(encoding="utf-8"))
+    units = candidate["records"]
+    if set(units) != {str(v) for v in range(1, 16)}:
+        raise ValueError("1ES 7 requires all 15 unique printed units")
+    chapter = [r for r in records if int(r["chapter"]) == 7]
+    if [int(r["verse"]) for r in chapter] != list(range(1, 16)):
+        raise ValueError("1ES 7 historical source identity/order changed")
+    replacements = {4: ("προτάγματος", "προστάγματος"),
+                    6: ("προσενεχθέντες", "προστεθέντες")}
+    out = []
+    for rec in records:
+        v = int(rec["verse"])
+        if int(rec["chapter"]) != 7:
+            out.append(rec)
+            continue
+        unit = units[str(v)]
+        old = rec["greek"]
+        if (old != unit["old_greek"]
+                or hashlib.sha256(old.encode()).hexdigest() != unit["old_greek_sha256"]):
+            raise ValueError(f"1ES 7:{v} historical Greek changed")
+        if v not in ESDRAS7_AFFECTED:
+            if unit["greek"] != old:
+                raise ValueError(f"Unexpected Greek change outside reviewed scope: 1ES 7:{v}")
+            out.append(rec)
+            continue
+        before, after = replacements[v]
+        if old.count(before) != 1 or unit["greek"] != old.replace(before, after):
+            raise ValueError(f"1ES 7:{v} exceeds the single reviewed word correction")
+        new = copy.deepcopy(rec)
+        for field in list(new):
+            if field in ("similarity", "adjudication") or field.startswith("pre_adjudication"):
+                new.pop(field, None)
+        note = (
+            f"1 Esdras 7:{v}, Swete II printed150; one-based PDF168; raw scan leaf167. "
+            "PDF SHA256 945c5b15bf0f9dfc93890b28ee5b66a388acbf4597f1f2be5430ac6cba9c30b0. "
+            "One specified printed-word import correction, with historical row archived; "
+            "not an ancient-priority decision or full lexical collation. "
+            "See docs/1ESDRAS_7_WORD_REPAIR_2026-10-19.md."
+        )
+        new.update(greek=unit["greek"], source_pages=unit["source_pages"],
+                   ocr_method="printed_word_import_correction",
+                   validation="scan_word_correction_pending_full_review", confidence="medium",
+                   source_note=note,
+                   adjudication={"verdict": "printed_word_import_correction", "confidence": "medium",
+                                 "reasoning": note},
+                   normalization={"rule": "1esdras7_printed_words_2026-10-19", "note": note})
+        new.setdefault("source_correction_history", []).append({
+            "baseline_commit": "8ad14030bcedcdc533a74724afcdd672bdbf89ed",
             "record": copy.deepcopy(rec), "certifies_corrected_record": False,
             "contributors": unit["contributors"],
         })

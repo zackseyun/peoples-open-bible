@@ -21,6 +21,13 @@ measurements remain request-only, with a single-leaf request prepared but not
 sent. The published team's ink-offset recovery and TEI supplied words remain
 distinct from any new POB reading. No Bible-text change follows from this pass.
 
+The [primary-source and Kyiv follow-up](CODEX_H_PRIOR_ART_AND_KYIV_2026-10-18.md)
+verifies Robinson's 1895 Paris transcription and its two dotted lower rows.
+Another public transfer pair, Kyiv 40v/41r, passes fixed-coordinate navigation,
+but its selected native strip yields no secure additional sequence. Website
+transcription absence is not novelty. Stop tuning that strip against expected
+wording; prioritize materially different measured data and capture provenance.
+
 Session addition, 2026-10-13: pursue the bounded
 [AI manuscript recovery investigation](AI_MANUSCRIPT_RECOVERY_2026-10-13.md).
 It adds an executable spectral-image feasibility track and explicit completion

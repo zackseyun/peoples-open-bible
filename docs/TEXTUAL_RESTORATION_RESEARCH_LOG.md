@@ -17555,6 +17555,188 @@ evidence; do not infer Lundbom's reasoning from Terblanche's citation. The
 documentation skill preserves this consultation boundary. No canonical text,
 note, reader layout, source approval or canon decision changes.
 
+## October 19 — Compare the marriage endings and identify an import gap
+
+The preceding turn closed three original-commentary access routes and verified
+live CI. This turn's fresh exact-head checks both succeeded for PR367, which
+merged normally at `a029547e35025ead1578b3c0cd24cd572fb34e61`. Local main was
+fast-forwarded with an ancestry/CAS check and its ordinary remote push verified.
+The four-file release-law batch was merged with updated main and pushed
+separately in [PR368](https://github.com/zackseyun/peoples-open-bible/pull/368);
+its own new checks remain required. No old-head success is reused.
+
+The [Ezra/1 Esdras comparison](EZRA_10_MARRIAGE_ENDING_COMPARISON_2026-10-19.md)
+opens a consequential, previously unperformed source question while that batch
+validates. Root reads77 selected source/main-English records, both full target
+records, WLC's target XML, seven complete Greek pages/apparatus, and the stated
+original argument pages. One source scout independently acquires opposing
+Keil/Széchy arguments; root also reads their target pages. Oswald's emendation
+and Keil's contextual-clarification countermodel do not determine Hebrew
+priority. Birth and dismissal remain distinct POB texts, not silently harmonized.
+
+The PDF skill preserves complete target pages and notes; the documentation
+skill keeps original consultation, reported arguments and historical inference
+separate. Wooden's actual NETS introduction corrects the alignment JSON/README's
+unsupported certainty about Greek composition. Their alignment rows and lookup
+behavior remain unchanged and explicitly unverified comprehensively.
+
+The current POB chapter-ending sequence lacks the oath event visible in
+Swete8:92 and corroborated by NETS, amid divergent labels. This is a concrete
+corpus-integrity follow-up, not new ancient ink or proof of another literary
+form. Full chapter alignment and a separately reviewed exact source/English
+repair are required; current verses/notes and reader layout are unchanged.
+No canon addition, restoration acceptance or whole-program completion follows.
+
+One bounded independent factual review passed without corrections:79 current,
+two baseline and five private input pins,77 current source/main-English records,
+both complete target records, seven complete Greek pages and the specified
+original/NETS pages. Report SHA256
+`0a9742b6bc63434cb2a7ce30b87b04b48007ec0f10ad0335d0b6cb69eeeceddc`;
+packet SHA256 `079ead0f29e9d1b2178b22a3f9c2127854d2d6fe882bdee1ca9d04848f0c17c1`.
+Local checks reproduce all pins, preserve all15 alignment rows and the actual
+map-builder output, verify report links/whitespace and preserve the protected
+Genesis bytes. No local full-corpus rerun or further judge loop is needed for
+this metadata/documentation contribution. A separate read-only chapter-alignment
+diagnostic now addresses the demonstrated import gap before any verse repair.
+
+## October 19 — Trace two missing Esdras clauses through the source layers
+
+A separate read-only scout compares all92 chapter8 source/main-English records
+against nine complete Greek pages, producing the
+[candidate partition map](../sources/textual_restoration/comparisons/1esdras8_partition_diagnostic.2026-10-19.v1.json).
+Root directly checks the missing8:25 purpose clause on printed153/privatePDF171,
+the complete canonical record and its raw/parsed/ours/final source records;
+the8:92 oath and ending were already checked on printed158/privatePDF176.
+The raw transcription preserves both. The oath is missing by the parsed-AI
+stage;25's purpose clause survives parsing but disappears when adjudication
+replaces that record with its opening. Current Greek copies the final layer
+at all92 IDs after the stated normalization. All verse numbers and high review
+labels therefore did not establish printed-source completeness. The model's
+internal cause is not established.
+
+The scout map distinguishes split and combined units and their exact anchors;
+its first boundary mismatch is13/14, with sustained offset first at40.
+No other whole-clause omission/duplication was detected in that boundary pass,
+which is not a token-level chapter collation. The packet pins the92-file
+manifest and five historical layers. Root reproduces those pins and the
+all92 source-layer comparison. Historical files and canonical text remain
+unchanged. The documentation skill keeps root-checked losses separate from
+the candidate full mapping; exact application review is still required.
+
+Next prepare one source/English repair with active lexical decisions and notes,
+source-loader recurrence and full-book export checks. Preserve the historical
+receipts. This is a demonstrated POB processing problem, not an ancient variant,
+new decipherment, completed repair or canon inference. Do not substitute another
+same-evidence preference review for that implementation.
+
+## October 19 — Assemble the bounded Esdras import repair
+
+The [repair report](1ESDRAS_8_PARTITION_REPAIR_2026-10-19.md) separates the
+printed-source import correction from the unresolved ancient-priority question.
+One source author prepares all 92 exact Greek units with original slice offsets,
+page identities and only two restored passages. A separate English author routes
+the 46 affected target records, notes and active decisions. Root assembles complete
+records and the existing normalized override lane; a different reviewer checks
+that exact application before canonical replacement. This is division of work,
+not multiple votes about the same reading. No new research case is opened.
+
+Root's full-page assembly check catches a remaining scout-map error at83/84:
+inline84 begins at `ἔδωκας`, after the address and participial clause belonging
+to83. The exact source and English candidates correct that boundary; the frozen
+diagnostic remains historical. The collective infinitival clause in91 also
+retains collective English rather than reintroducing an old imperative-style
+revision. Neither adjustment is an ancient-priority decision.
+
+The actual whole-book export rejects the assumption that all nine chapters
+already ship: chapter5 has IDs1–70 plus145 in both YAML and historical source.
+Its gap causes that entire chapter to be withheld. Both baseline and repaired
+export therefore contain eight chapters/425 units, while all496 input records
+remain present. The regression compares actual outputs by chapter number,
+not list position, and verifies only chapter8 changes. A separate chapter5
+printed alignment is a concrete next corpus-integrity task; this batch does
+not fix that pre-existing defect or certify the other chapters' source text.
+
+Schema preflight finds three legacy target shells without `ai_draft` (41,85,87).
+Their corrected content comes from42,86,88. Those genuine contributing draft
+receipts are relocated unchanged, with explicit origin path/ID/hash, a record
+of the original target's missing receipt and `certifies_current_record: false`.
+The source notes disclose this routing; no provider run or new receipt is
+invented. The exact six-test application suite passes before independent
+review. Frozen application evidence SHA256 is
+`538c109f2d6cb07050eb5d85e7df731d22381241efb361cabd288856e2a00e34`.
+
+The source normalizer preserves the historical adjudicated book and rejects its
+hash drifting. Its scoped command writes only 1ES, not other override books or
+their summary. Tests require every existing nonspace Greek codepoint exactly
+once in order, schema-valid full records, archived old review state, correctly
+bound note markers, real source-loader recurrence and a before/after run of the
+whole-book exporter over all 496 input records. Old high-confidence labels and approximate Hebrew mappings
+are not approvals for the replacement records. The AI draft receipt stays a
+historical receipt, not a fabricated receipt for this revision.
+
+The user reiterates that inline disclosure can be messy, depending on design.
+Reader/publisher layout stays on hold. A restrained marker for meaning-bearing
+variants with details on demand is only a possible future design, not an
+implemented or authorized expansion. Necessary rebinding of existing notes in
+the verse repair is distinct from adding a new disclosure system. The preceding
+Jeremiah release-law batch, PR368, passed both exact-head integrity checks and
+merged normally as `e0a4f02675b589c74322e97144fc2478eccff9f1`; local/remote main
+were verified at that merge. The Esdras application requires its own validation
+and publication; no refreshed website deployment is claimed.
+
+## October 19 — Apply the independently reviewed Esdras correction
+
+One independent review checks the exact 92-unit Greek partition, all 46 active
+records, nine complete printed pages, eight current and18 historical pins,
+private scan, receipt routing, source loader and real export. Its sole required
+change removes an unsupported verb derivation from the active rationale for
+`σταθὲν` at8:61. Root replaces that explanation with the contextual weighing
+sense and an explicit no-new-lexicon-consultation qualification. Deep JSON
+comparison proves that only this rationale changes in the English candidate
+and full application. The Greek and English strings remain unchanged. The
+[delivery record](../sources/textual_restoration/comparisons/1esdras8_application_delivery.2026-10-19.v1.json)
+retains the raw review, its conditional acceptance, the precise correction and
+actual applied-file hashes; no independent full re-review is invented.
+
+The 46 exact canonical replacements are applied locally. All six focused tests
+pass again, alongside five Letter of Jeremiah and nine reader-note regressions.
+Unrelated canonical files, historical raw/source layers and protected Genesis
+remain unchanged. Corrected application SHA256 is
+`f825ce3e15f576caec94c072fc5f0552ca179ab4ed0d09d4b76e767de29fb91c`;
+corrected evidence SHA256 is
+`3d265b6bca190e99e7c42ded454863be985eaf904f3c52012d54fac45df9ed60`.
+These are import/partition corrections, not newly discovered ancient readings,
+full lexical approval, a recovered Hebrew text or a canon decision. Publication
+still requires the exact new Git head's integrity checks and ordinary merge;
+reader/publisher layout and any separate website deployment are not changed.
+
+The preceding marriage-ending study and initial partition diagnostic retain
+their pre-repair snapshots and verse IDs. Resolve their pins at the recorded
+commits, not as assertions that the repaired live text still has those omissions.
+Do not rewrite an old receipt to make it describe a later correction.
+
+### Chapter5 duplicate diagnosis during the application review
+
+The [read-only follow-up](../sources/textual_restoration/discovery/1esdras5_duplicate145.2026-10-19.v1.json)
+shows exact Greek identity between5:47 and stray5:145. Parsed-AI chapter5 has
+exactly1–70; ours-only has no145; the adjudicated stream adds145 without source
+pages. Its rationale itself names printed page145 and Swete V47. Root renders
+and reads complete printed145–147/privatePDF163–165 non-generatively: the
+altar-preparation text is inline47,145 is the footer, and70 closes immediately
+before VI1. This bounds the introduction to the later processing layer; the
+specific code/model-internal cause is not yet established. Two different
+English drafts of identical copied Greek are not independent ancient witnesses.
+
+A real exporter probe in a temporary copy excluding only145 returns all nine
+chapters/495 units rather than eight/425. Its70 chapter5 units are contiguous
+and every other exported chapter is identical as structured data. Actual
+chapter5 and the historical source remain untouched. Next complete its printed
+alignment and prepare a recoverable duplicate quarantine with source-loader
+and export checks. Preserve/replay the chapter8 historical snapshot when later
+changing whole-book artifacts; do not fabricate71–144 or claim the other
+chapters are fully collated. The scan source remains unchanged, with no new
+manuscript reading or canon inference.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

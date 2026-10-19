@@ -5,7 +5,7 @@ Create translation-ready overrides for deuterocanonical books whose raw
 scan-adjudicated verse stream still contains known numbering contamination
 or still needs canonical partitioning into reader-facing units.
 
-The raw source of truth remains:
+The historical raw/adjudicated baseline remains preserved at:
   sources/lxx/swete/final_corpus_adjudicated/
 
 This script writes only the cleaned override files needed by the
@@ -13,6 +13,7 @@ translation layer under:
   sources/lxx/swete/final_corpus_normalized/
 
 Current outputs:
+- 1ES: chapter 8 partition restored to the selected printed edition
 - WIS: canonical Wisdom only (drop duplicate chapter 20 and Sirach spill)
 - BAR: canonical Baruch only (trim back to 1:1-5:9)
 - PAZ: Prayer of Azariah + Song of the Three (standalone extraction)
@@ -26,6 +27,9 @@ Intentionally NOT output yet:
 from __future__ import annotations
 
 import json
+import argparse
+import copy
+import hashlib
 import pathlib
 import re
 from collections import Counter
@@ -34,6 +38,8 @@ REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC_DIR = REPO_ROOT / "sources" / "lxx" / "swete" / "final_corpus_adjudicated"
 OUT_DIR = REPO_ROOT / "sources" / "lxx" / "swete" / "final_corpus_normalized"
 TRANSCRIBED_DIR = REPO_ROOT / "sources" / "lxx" / "swete" / "transcribed"
+ESDRAS_PARTITION = REPO_ROOT / "sources/textual_restoration/candidates/1esdras8_source_partition.2026-10-19.v1.json"
+ESDRAS_AFFECTED = {13, 14, 17, 18, 25, *range(39, 63), *range(76, 93)}
 
 import lxx_swete  # noqa: E402
 
@@ -153,6 +159,58 @@ def normalize_wis(records: list[dict]) -> tuple[list[dict], list[str]]:
             )
         )
     return kept, dropped
+
+
+def normalize_1es(records: list[dict]) -> tuple[list[dict], list[str]]:
+    """Replay a bounded printed-source correction, not an ancient-text emendation.
+
+    Historical parser/adjudicator receipts remain in their original lane. Reject
+    drift rather than applying this partition to an unreviewed source stream.
+    """
+    source = SRC_DIR / "1ES.jsonl"
+    if hashlib.sha256(source.read_bytes()).hexdigest() != "ce3c44488397c44c3af51178d22cc644ae5541e551cb814c7d1e59e2bb5aee74":
+        raise ValueError("1ES historical source differs from the reviewed partition baseline")
+    candidate = json.loads(ESDRAS_PARTITION.read_text(encoding="utf-8"))
+    units = candidate["records"]
+    if set(units) != {str(v) for v in range(1, 93)}:
+        raise ValueError("1ES 8 requires all 92 unique printed units")
+    chapter = [r for r in records if int(r["chapter"]) == 8]
+    if [int(r["verse"]) for r in chapter] != list(range(1, 93)):
+        raise ValueError("1ES 8 historical source identity/order changed")
+    out = []
+    for rec in records:
+        v = int(rec["verse"])
+        if int(rec["chapter"]) != 8 or v not in ESDRAS_AFFECTED:
+            if int(rec["chapter"]) == 8 and rec["greek"] != units[str(v)]["greek"]:
+                raise ValueError(f"Unexpected Greek change outside reviewed scope: 1ES 8:{v}")
+            out.append(rec)
+            continue
+        unit = units[str(v)]
+        new = copy.deepcopy(rec)
+        for field in list(new):
+            if field in ("similarity", "adjudication") or field.startswith("pre_adjudication"):
+                new.pop(field, None)
+        note = (
+            f"1 Esdras 8:{v}, Swete II printed pp. {unit['printed_pages']}; "
+            f"PDF pp. {unit['pdf_pages']}; raw scan-leaf indices {unit['source_pages']}. "
+            "PDF SHA256 945c5b15bf0f9dfc93890b28ee5b66a388acbf4597f1f2be5430ac6cba9c30b0. "
+            "Printed partition correction; not an ancient variant or a full lexical collation. "
+            "See docs/1ESDRAS_8_PARTITION_REPAIR_2026-10-19.md."
+        )
+        new.update(greek=unit["greek"], source_pages=unit["source_pages"],
+                   ocr_method="printed_partition_correction",
+                   validation="scan_partition_correction_pending_full_review", confidence="medium",
+                   source_note=note,
+                   adjudication={"verdict": "printed_partition_correction", "confidence": "medium",
+                                 "reasoning": note},
+                   normalization={"rule": "1esdras8_printed_partition_2026-10-19", "note": note})
+        new.setdefault("source_correction_history", []).append({
+            "baseline_commit": "97194d2b4c691514373896490110246b0b024219",
+            "record": copy.deepcopy(rec), "certifies_corrected_record": False,
+            "contributors": unit["contributors"],
+        })
+        out.append(new)
+    return out, []
 
 
 def normalize_bar(records: list[dict]) -> tuple[list[dict], list[str]]:
@@ -384,7 +442,11 @@ def summarize_job(summary_lines: list[str], *, book: str, raw_count: int | None,
     summary_lines.append("")
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--book", choices=["1ES", "WIS", "BAR", "PAZ", "SUS", "BEL"],
+                        help="Write only this override; leave other outputs and SUMMARY.md untouched")
+    args = parser.parse_args(argv)
     summary_lines = [
         "# Normalized deuterocanonical corpus overrides",
         "",
@@ -394,6 +456,7 @@ def main() -> int:
     ]
 
     jobs = {
+        "1ES": lambda: normalize_1es(load_book("1ES")),
         "WIS": lambda: normalize_wis(load_book("WIS")),
         "BAR": lambda: normalize_bar(load_book("BAR")),
         "PAZ": lambda: normalize_paz(load_book("ADA")),
@@ -401,6 +464,7 @@ def main() -> int:
         "BEL": normalize_bel,
     }
     raw_counts = {
+        "1ES": len(load_book("1ES")),
         "WIS": len(load_book("WIS")),
         "BAR": len(load_book("BAR")),
         "PAZ": len(load_book("ADA")),
@@ -408,12 +472,15 @@ def main() -> int:
         "BEL": None,
     }
     notes = {
+        "1ES": "Chapter 8 printed partition and two omitted clauses restored; historical adjudicated stream preserved.",
         "PAZ": "Standalone extraction from Daniel 3:24-90.",
         "SUS": "Standalone extraction currently follows the Theodotion stream because it is the cleanest complete extract in the current corpus.",
         "BEL": "Standalone extraction currently follows the Theodotion stream because it is the cleanest complete extract in the current corpus.",
     }
 
     for book, fn in jobs.items():
+        if args.book and args.book != book:
+            continue
         normalized, dropped = fn()
         write_book(book, normalized)
         summarize_job(
@@ -434,7 +501,8 @@ def main() -> int:
         ]
     )
 
-    (OUT_DIR / "SUMMARY.md").write_text("\n".join(summary_lines).rstrip() + "\n", encoding="utf-8")
+    if not args.book:
+        (OUT_DIR / "SUMMARY.md").write_text("\n".join(summary_lines).rstrip() + "\n", encoding="utf-8")
     print(f"Wrote normalized overrides to {OUT_DIR}")
     return 0
 

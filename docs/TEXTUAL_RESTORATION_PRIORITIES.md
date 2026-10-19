@@ -78,6 +78,16 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 19 Jeremiah release forms:** the
+[connected Hebrew/Greek/Latin comparison](JEREMIAH_39_RELEASE_FORMS_2026-10-19.md)
+confirms that Swete's main Greek connects 39:3 directly to14, without the fall
+narrative and explicit royal release order; its apparatus preserves a longer
+layer. Reported VL177 additionally lacks1–2, while its verse15 is illegible,
+not recovered from ink. A repeated Hebrew ending supplies a conditional
+copying-loss countermodel for4–13, not1–2 or a proven event. Retain POB
+provisionally. Next require actual Latin transition, modern local apparatus
+or original language-history evidence; no reader-layout expansion.
+
 **October 19 Deuteronomy altar and chosen place:** the
 [original-argument and Qumran-context test](DEUTERONOMY_27_CHOSEN_PLACE_2026-10-19.md)
 compares opposing altar histories and a future-anterior grammatical proposal.

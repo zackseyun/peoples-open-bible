@@ -81,6 +81,14 @@ whole-book edition. POB remains longer pending exact form/source-and-English
 assessment. Next actual DJD fragment/plate and BHQ target evidence, or a separately
 reviewed qualified disclosure; do not repeat these same texts as another vote.
 
+The [separate disclosure application](JUDGES_6_READER_NOTE_2026-10-18.md) now
+expands existing note b at 6:7 after one exact-candidate independent PASS.
+No marker, main English or source is added or removed. This is a reader-note
+improvement, not a new discovery or resolution of historical priority. The
+eight-page authorized BHQ sample and separate limited preview do not reach
+the Judges 6 target; repeat acquisition is not the next discriminating task.
+See the application receipt for local checks and publication status.
+
 **October 18 direct Vatican source acquisition:** the
 [Ra246 digitization check](KINGS_6_VATICAN_DIRECT_SCAN_2026-10-18.md)
 adds actual manuscript openings, but no secure target transcription. A

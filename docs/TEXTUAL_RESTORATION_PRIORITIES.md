@@ -71,11 +71,15 @@ no ancestor layout or transmission direction. One bounded factual review passes;
 source, main English and note stay unchanged. Park these acquired arguments
 until genuinely new target evidence appears, rather than repeating the model.
 
-A distinct accessible next comparison is 1 Samuel 10:1: chapter 6 of the newly
-acquired editing study is available, while the current POB record has the short
-commission. The Samuel pass documents do not cover this locus in the inspected
-search. Establish actual Greek/versional evidence and the strongest alternative
-before judging it; the chapter's title is not itself proof of omission.
+**October 19 connected Saul commission comparison:** [1 Samuel 10:1](SAMUEL_10_1_COMMISSION_COMPARISON_2026-10-18.md)
+now has the complete original editing argument, opposing Keil/Driver arguments,
+actual wider Cambridge apparatus and distinct Latin edition controls. The
+obelized Greek span is not an omission; the Clementine partial plus is not
+uniform Vulgate wording or independent Hebrew support. A simple repeated-formula
+skip loses the retained particle, while positive Saul material limits a general
+suppression account. Historical priority remains unresolved and POB is unchanged.
+Next require the original Pisano/critical Hebrew target argument or precise
+Latin ancestry evidence; do not repeat the acquired texts as another vote.
 
 **October 18 direct Vatican source acquisition:** the
 [Ra246 digitization check](KINGS_6_VATICAN_DIRECT_SCAN_2026-10-18.md)

@@ -17528,6 +17528,33 @@ and protected Genesis checks pass. Only four documentation/comparison files
 belong to this contribution; no local full-corpus rerun or further judge loop.
 The corpus goal remains active, not completed by this selected legal case.
 
+## October 19 — Bound the original release-numeral argument search
+
+The preceding turn was a verified CI wait. PR367's exact-head jobs
+118174626381 and118174603474 remain live in reader-note/consultation tests;
+the reviewed release-law contribution remains committed locally as
+`95f5d654bf1da4b19bdda30a98dd0c92d8797b85`, without another research push.
+
+One read-only scout tested three public routes for Lundbom's *Jeremiah21–36*
+(2004), p.563 and connected34:14 notes:
+[Google Books](https://books.google.com/books/about/Jeremiah_21_36.html?hl=en&id=SZbHzwEACAAJ&output=html_text)
+listed no preview and its direct opening returned403;
+[Open Library](https://openlibrary.org/works/OL3359092W/Jeremiah_21-36?edition=key:/books/OL3287688M&mode=all)
+offered catalogue/library/purchase routes, not readable original pages;
+[Faithlife/Logos](https://faithlife.com/store/product/41436/jeremiah-21-36)
+showed title/imprint, dedication and partial contents before an explicit
+limited-preview notice. The scout read zero pages of the target discussion;
+root has no newly acquired original argument to assess. No file was downloaded,
+account or purchase used, or access control bypassed. These are route-specific
+limits, not a claim that the commentary is inaccessible everywhere.
+
+Keep the frozen comparison and historical-priority HOLD unchanged. Record the
+exhausted routes here rather than create another case dossier or judge vote.
+Reopen for actual target pages, local critical collation or discriminating early
+evidence; do not infer Lundbom's reasoning from Terblanche's citation. The
+documentation skill preserves this consultation boundary. No canonical text,
+note, reader layout, source approval or canon decision changes.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

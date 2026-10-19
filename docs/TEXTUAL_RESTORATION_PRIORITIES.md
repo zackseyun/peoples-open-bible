@@ -135,6 +135,10 @@ still retains communal release and judgment. The translator-change claim
 depends on an earlier commentary, not a new collation. Retain POB's seven/six
 wording and require the original local argument or critical/early evidence.
 Do not repeat these legal clauses as another historical-priority vote.
+The bounded Lundbom2004 access follow-up exposed no target discussion through
+Google Books, Open Library or the public Logos preview. These routes are closed
+until access changes; catalogue/imprint pages do not verify p.563's argument.
+Prefer actual local critical evidence or another accessible portfolio target.
 
 **October 19 Habakkuk survival and divine endurance:** the
 [Greek and tradition follow-up](HABAKKUK_1_12_GREEK_AND_TRADITION_2026-10-19.md)

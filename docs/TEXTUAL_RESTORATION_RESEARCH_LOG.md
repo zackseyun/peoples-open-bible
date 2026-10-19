@@ -17454,6 +17454,43 @@ no corpus rerun is needed locally. Batch the connected result into existing
 PR367, with fresh exact-head CI still required, rather than open another
 stacked PR. The full corpus goal remains active, without a further judge loop.
 
+## October 19 — Test number smoothing rather than assume it
+
+The preceding turn made progress by independently reviewing and pushing the
+connected royal-agency comparison at `3ac33bfe020938e57a456f633f7aca5e0f5038e2`
+to existing PR367. This turn tests a possible explanation rather than making
+another literary-preference judgment. A finite-verb-only preflight misses the
+target and catches a morphology-tag mismatch; the fixed suffix-plus-plural-verb
+screen yields13 annotation hits in the actual52-chapter/1,364-verse WLC XML,
+including another false singular tag on25:27's written plural suffix.
+Speech changes, quantitative minuses and explicit neighboring controls stay
+separate in the [number-shift comparison](JEREMIAH_NUMBER_SHIFT_CONTROLS_2026-10-19.md).
+Actual Greek permits mixed number and royal plural address; the target singular
+is not compulsory. Its historical origin remains unresolved, not decided by
+a statistical translator profile. Source and POB English remain unchanged.
+
+The PDF workflow checks complete relevant prints/apparatus; corrupted OCR is
+used for locators only. The documentation workflow preserves the failed
+preflight and explicit scope instead of promoting raw hits to evidence.
+Fifteen source/main-English records are read; no upstream annotation, corpus
+import, new checker, source letters, notes, approvals, reader layout or canon
+status changes. PR367's exact prior-head jobs are freshly verified queued,
+not inferred stopped or restarted. No additional source-acquisition agent is used.
+
+One bounded independent factual-method review passed without corrections,
+reproducing both screens and the complete disjoint partition, verifying both
+annotation mismatches, seventeen repository/one private input pins, all fifteen
+selected records and eight complete Greek pages/apparatus. Reviewed report
+SHA256 `8d7c69065e14d9ca295a47bf2a676105ea7df6d8358a462353a2b1b6d096be81`;
+packet SHA256 `560749f639fe46e21208645fa6d74197724fa99de507192cb617f38ab2f5ab01`.
+Local JSON, screen reproduction, pins, report links, whitespace and protected
+Genesis checks pass. Preserve all canonical and frozen comparison files.
+Batch this connected four-file contribution into existing PR367 rather than
+another stacked PR. To reduce redundant CI, cancel only known superseded
+heads' runs after the new head is verified; never cancel the latest required
+gates or reuse old-head success. No restart, workflow weakening or further
+judge loop is needed. The larger corpus goal remains active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

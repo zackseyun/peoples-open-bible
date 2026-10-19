@@ -120,6 +120,14 @@ Retain POB; next require local critical collation/correction history, direct
 Hebrew evidence or a discriminating construction test, not another vote on
 these selected sources. No reader change.
 
+The [number-shift controls](JEREMIAH_NUMBER_SHIFT_CONTROLS_2026-10-19.md)
+now test a fixed annotation screen and actual Greek contexts. Greek retains
+mixed number and a plural command addressed to Zedekiah;37:18's singular is
+not grammatically compulsory. Other singular presentations, quotation changes,
+quantitative minuses and wrong morphology tags prevent an automatic profile.
+Retain historical HOLD; close these controls and require discriminating local
+collation/correction history or genuinely matched constructions next.
+
 **October 19 Habakkuk survival and divine endurance:** the
 [Greek and tradition follow-up](HABAKKUK_1_12_GREEK_AND_TRADITION_2026-10-19.md)
 checks the actual historical Greek edition and a Hebrew deliverance expression,

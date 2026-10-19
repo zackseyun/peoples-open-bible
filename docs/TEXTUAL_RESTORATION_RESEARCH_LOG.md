@@ -16284,6 +16284,50 @@ independent replications. Root separately passed 47 canonical/source controls,
 the protected unrelated Genesis file is untouched. No corpus-wide rerun was
 needed for four documentary files.
 
+## October 18 — Check numeral–verb exceptions and witness ancestry
+
+The [new bounded follow-up](KINGS_6_VERB_AND_WITNESS_ANCESTRY_2026-10-18.md)
+addresses two concrete unperformed checks from the connected Kings comparison:
+the original Holmes–Parsons apparatus/identity keys and the original debate
+about dating readings from textual-group ancestry. Two read-only source scouts
+acquired public facsimiles and read the designated studies; root separately
+checked complete key renders, relevant original arguments and current catalogue
+payloads. The PDF skill required complete relevant-page inspection; the
+documentation skill separates reported evidence, inference and application.
+No full-volume or full-journal root reading is claimed.
+
+HP explicitly reports the different verb for 44 and historical-book 144; their
+440 is inherited from its base. It explicitly reports the eighty component for
+246; that witness's verb is inherited. Apparatus silence is weaker than direct
+collation, but these reported cross-pairings defeat exclusivity at this reporting
+level. Its own preface and final catalogue redirect historical-book 144 to 130,
+resolving the bare modern-number objection. Current catalogue data distinguish
+Ra130/Theol.gr.23 from Ra144/Theol.gr.228; no exact target folio, hand or newly
+read manuscript sequence follows. The inspected volume-II III Regum appendix
+has no chapter-VI entry; this is not an all-volume errata audit.
+
+The full original Law–Kauhanen response, Kreuzer2009 argument and immediate
+Kreuzer2010 rejoinder were read by the source scout, with root's narrower
+independent reading recorded in the packet. Neither article nor rejoinder
+analyzes the target's joint numeral–verb distribution. Both broad ancestry
+and local transmission context matter; neither automatically decides the age
+of each reading. Hebrew agreement does not by itself prove late correction.
+Public split facsimiles avoided an unnecessary 2.55GB download. Journal web
+opening timed out, but ordinary direct official downloads succeeded; public
+catalogue HTML contained the needed data. No access bypass was attempted.
+
+No source, English, canon, reader, publisher, About or generative-image change
+is applied. The user's concern about clutter does not authorize reader work;
+sparse disclosure remains a separate proposal. Stop repeating these acquired
+pages or same-evidence votes. Direct target collation or local critical evidence
+connecting the numeral and verb to one stage is the next discriminating input.
+The broader research goal remains active; no novelty or optimal-English claim.
+
+The previous chronology PR337's same two jobs completed successfully at its
+exact head. Fresh ordinary merge gates passed; merge
+`d1d0f5224f2f2d06e850c04454ec2cb68ccd38fc` was accepted. This is repository
+publication, not verification of public-reader deployment or this follow-up's CI.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

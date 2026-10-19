@@ -46,6 +46,14 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 numeral–verb and witness-identity follow-up:** the
+[original HP apparatus and ancestry debate](KINGS_6_VERB_AND_WITNESS_ANCESTRY_2026-10-18.md)
+confirm reported cross-pairings and resolve historical-book 144 through the
+edition's own redirect to 130. These are edition reports, not new manuscript
+readings. Neither broad ancestry nor Hebrew agreement alone dates this local
+numeral. Retain the prior provisional source and English. Stop repeating these
+acquired pages; next require discriminating local collation or critical evidence.
+
 **October 18 connected temple chronology:** [Kings 6–9](KINGS_6_TEMPLE_CHRONOLOGY_2026-10-18.md)
 now compares actual numeral, date placement, seven-year expression, palace
 duration/date and combined twenty-year entries. The 440/480 and palace groups

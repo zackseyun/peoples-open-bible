@@ -88,6 +88,12 @@ boundary: the inspected sequence lacks the oath event in Swete/NETS8:92 and
 has divergent verse labels. Establish full chapter alignment before an exact
 source/English repair; do not overwrite8:92 blindly. Ancient-priority work
 needs actual modern apparatus or discriminating argument, not repeat pages.
+The separate [chapter partition diagnostic](../sources/textual_restoration/comparisons/1esdras8_partition_diagnostic.2026-10-19.v1.json)
+now supplies a complete scout candidate map and two root-checked omissions:
+the8:25 purpose clause was lost at adjudication, and the8:92 oath was already
+lost at parsing. All92 numbers survived. Prioritize one exact source/English
+repair with notes, source-loader recurrence and export checks; the candidate
+map is not an applied correction or a token-level chapter collation.
 
 **October 19 Jeremiah release forms:** the
 [connected Hebrew/Greek/Latin comparison](JEREMIAH_39_RELEASE_FORMS_2026-10-19.md)

@@ -17599,6 +17599,36 @@ Genesis bytes. No local full-corpus rerun or further judge loop is needed for
 this metadata/documentation contribution. A separate read-only chapter-alignment
 diagnostic now addresses the demonstrated import gap before any verse repair.
 
+## October 19 — Trace two missing Esdras clauses through the source layers
+
+A separate read-only scout compares all92 chapter8 source/main-English records
+against nine complete Greek pages, producing the
+[candidate partition map](../sources/textual_restoration/comparisons/1esdras8_partition_diagnostic.2026-10-19.v1.json).
+Root directly checks the missing8:25 purpose clause on printed153/privatePDF171,
+the complete canonical record and its raw/parsed/ours/final source records;
+the8:92 oath and ending were already checked on printed158/privatePDF176.
+The raw transcription preserves both. The oath is missing by the parsed-AI
+stage;25's purpose clause survives parsing but disappears when adjudication
+replaces that record with its opening. Current Greek copies the final layer
+at all92 IDs after the stated normalization. All verse numbers and high review
+labels therefore did not establish printed-source completeness. The model's
+internal cause is not established.
+
+The scout map distinguishes split and combined units and their exact anchors;
+its first boundary mismatch is13/14, with sustained offset first at40.
+No other whole-clause omission/duplication was detected in that boundary pass,
+which is not a token-level chapter collation. The packet pins the92-file
+manifest and five historical layers. Root reproduces those pins and the
+all92 source-layer comparison. Historical files and canonical text remain
+unchanged. The documentation skill keeps root-checked losses separate from
+the candidate full mapping; exact application review is still required.
+
+Next prepare one source/English repair with active lexical decisions and notes,
+source-loader recurrence and full-book export checks. Preserve the historical
+receipts. This is a demonstrated POB processing problem, not an ancient variant,
+new decipherment, completed repair or canon inference. Do not substitute another
+same-evidence preference review for that implementation.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

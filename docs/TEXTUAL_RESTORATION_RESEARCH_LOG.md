@@ -17039,6 +17039,41 @@ PR357's two original CI checks remained live during this work, without restart.
 Current integration and public delivery remain separate gates. The full
 source-comparison goal stays active.
 
+## October 19 — Verify the early Psalm quotation-chain papyrus
+
+The preceding turn's comparison was committed/pushed as PR358. Its explicit
+early-witness acquisition task is now closed by the
+[Papyrus 230 follow-up](PSALM_14_EARLY_PAPYRUS_2026-10-19.md): actual Kenyon
+plate/description/transcription and the complete current British Library record
+replace reliance on a secondary attestation report. The longer chain precedes
+the resumption of Psalm 13:4 in column II, with numerous supplied endings.
+Multiple recto/verso/edition identifiers are one object, not extra witnesses.
+Current date scopes and the historical dating attribution remain distinct.
+
+The complete original identity discussion was also read; it does not establish
+a separate Pauline fragment. The papyrus strengthens attestation, not the date
+or language of the lost exemplar. Retain POB's distinct texts. No new letters,
+Hebrew retroversion, source/English/note/approval/layout change or canon inference.
+The PDF workflow kept supplied wording distinct from visible marks; the
+documentation workflow kept historical hypotheses separate from observation.
+
+One bounded independent factual reviewer gave SCOPED PASS on report SHA256
+`0a4f53cdc2be4e01eedb702626a1b9c7bd6c7ae3fd0cdd1f85379a787216eca0`
+and [packet](../sources/textual_restoration/comparisons/psalm14_early_papyrus.2026-10-19.v1.json)
+`685b6f77f2be417d8c051b83174b16449dafdc5709b9d3daee16c4f680dafe62`.
+It checked five repository/three private pins, actual plate/transcription,
+Library record and the relevant identity argument/appendix. It did not
+independently retrieve Oxford's work/deposit metadata or establish dating,
+ancestry or source priority. No acquisition scout or consensus loop was used.
+
+Local JSON, pins, links, whitespace, unchanged canonical/source/code scope and
+protected Genesis checks pass, including all ten earlier case input pins.
+No new checker or local full-corpus rerun. Park these completed pages; require
+discriminating quotation or original 11Q7 reconstruction evidence next.
+PR357/358's original checks remain live, without restart or gate bypass.
+Current integration and public delivery are separate. The broader goal remains
+active, and the user's concern about reader clutter remains controlling.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -16328,6 +16328,19 @@ exact head. Fresh ordinary merge gates passed; merge
 `d1d0f5224f2f2d06e850c04454ec2cb68ccd38fc` was accepted. This is repository
 publication, not verification of public-reader deployment or this follow-up's CI.
 
+Root integrity checks passed all 47 canonical controls, 18 private byte/hash
+pins, two frozen predecessors, two method controls, 706 local relative links
+and whitespace. Canonical/code diff is empty; unrelated Genesis is untouched.
+The follow-up was committed and pushed as PR338. Its initial two exact-head
+CI jobs were running, not failed or restarted. The chat's 100-attachment cap
+prevented its attachment; the GitHub PR itself exists. The independent review
+ran beyond the bounded check's useful timebox, so further inspection was
+stopped and current supported findings requested. The reviewer returned
+incomplete: report/packet read, but HP, catalogue and original-method passages
+not independently inspected before the stop. No discrepancy from the dossier
+alone is not a PASS. CI and independent review remain separate from source
+judgment; no merge or protection bypass follows from a pending or incomplete gate.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

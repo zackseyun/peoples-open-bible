@@ -13,7 +13,7 @@ translation layer under:
   sources/lxx/swete/final_corpus_normalized/
 
 Current outputs:
-- 1ES: chapters 5 and 8 partition restored to the selected printed edition
+- 1ES: chapters 5, 6 and 8 import/partition restored to the selected printed edition
 - WIS: canonical Wisdom only (drop duplicate chapter 20 and Sirach spill)
 - BAR: canonical Baruch only (trim back to 1:1-5:9)
 - PAZ: Prayer of Azariah + Song of the Three (standalone extraction)
@@ -42,6 +42,8 @@ ESDRAS_PARTITION = REPO_ROOT / "sources/textual_restoration/candidates/1esdras8_
 ESDRAS_AFFECTED = {13, 14, 17, 18, 25, *range(39, 63), *range(76, 93)}
 ESDRAS5_PARTITION = REPO_ROOT / "sources/textual_restoration/candidates/1esdras5_source_partition.2026-10-19.v1.json"
 ESDRAS5_AFFECTED = {25, 28, 29, 31, 38, 39}
+ESDRAS6_PARTITION = REPO_ROOT / "sources/textual_restoration/candidates/1esdras6_source_partition.2026-10-19.v1.json"
+ESDRAS6_AFFECTED = {1, 8, 9, 10, 24, 26, 30, 31}
 
 import lxx_swete  # noqa: E402
 
@@ -214,7 +216,8 @@ def normalize_1es(records: list[dict]) -> tuple[list[dict], list[str]]:
             "contributors": unit["contributors"],
         })
         out.append(new)
-    return normalize_1es5(out)
+    out, dropped = normalize_1es5(out)
+    return normalize_1es6(out), dropped
 
 
 def normalize_1es5(records: list[dict]) -> tuple[list[dict], list[str]]:
@@ -273,6 +276,59 @@ def normalize_1es5(records: list[dict]) -> tuple[list[dict], list[str]]:
         })
         out.append(new)
     return out, ["1ES 5:145 — exact Greek duplicate of5:47; historical row retained, canonical YAML quarantined"]
+
+
+def normalize_1es6(records: list[dict]) -> list[dict]:
+    """Replay chapter6's explicit additions, moves and modern-error corrections.
+
+    The source candidate accounts for each retained, replaced or excluded old
+    codepoint. Raw source and all unaffected normalized rows remain unchanged.
+    """
+    candidate = json.loads(ESDRAS6_PARTITION.read_text(encoding="utf-8"))
+    units = candidate["records"]
+    if set(units) != {str(v) for v in range(1, 34)}:
+        raise ValueError("1ES 6 requires all 33 unique printed units")
+    chapter = [r for r in records if int(r["chapter"]) == 6]
+    if [int(r["verse"]) for r in chapter] != list(range(1, 34)):
+        raise ValueError("1ES 6 historical source identity/order changed")
+    out = []
+    for rec in records:
+        v = int(rec["verse"])
+        if int(rec["chapter"]) != 6:
+            out.append(rec)
+            continue
+        unit = units[str(v)]
+        if v not in ESDRAS6_AFFECTED:
+            if rec["greek"] != unit["greek"]:
+                raise ValueError(f"Unexpected Greek change outside reviewed scope: 1ES 6:{v}")
+            out.append(rec)
+            continue
+        new = copy.deepcopy(rec)
+        for field in list(new):
+            if field in ("similarity", "adjudication") or field.startswith("pre_adjudication"):
+                new.pop(field, None)
+        note = (
+            f"1 Esdras 6:{v}, Swete II printed pp. {unit['printed_pages']}; "
+            f"PDF pp. {unit['pdf_pages']}; raw scan-leaf indices {unit['source_pages']}. "
+            "PDF SHA256 945c5b15bf0f9dfc93890b28ee5b66a388acbf4597f1f2be5430ac6cba9c30b0. "
+            "Printed import/partition correction: two whole clauses restored, two modern duplicate slices "
+            "excluded with originals archived, one specified accent corrected; not ancient priority or full lexical collation. "
+            "See docs/1ESDRAS_6_PARTITION_REPAIR_2026-10-19.md."
+        )
+        new.update(greek=unit["greek"], source_pages=unit["source_pages"],
+                   ocr_method="printed_partition_correction",
+                   validation="scan_partition_correction_pending_full_review", confidence="medium",
+                   source_note=note,
+                   adjudication={"verdict": "printed_partition_correction", "confidence": "medium",
+                                 "reasoning": note},
+                   normalization={"rule": "1esdras6_printed_partition_2026-10-19", "note": note})
+        new.setdefault("source_correction_history", []).append({
+            "baseline_commit": "08a8a4cc05fcb8eb91580e01fb506a90de9799a9",
+            "record": copy.deepcopy(rec), "certifies_corrected_record": False,
+            "contributors": unit["contributors"],
+        })
+        out.append(new)
+    return out
 
 
 def normalize_bar(records: list[dict]) -> tuple[list[dict], list[str]]:

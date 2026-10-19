@@ -150,6 +150,72 @@ class HistoricalTestRunnerTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "Esdras dependency path"):
                     module._esdras8_archive_paths(module.ROOT)
 
+    def run_esdras5_mocked(self, result=None, *, missing_baseline=False, returncode=0):
+        payload = result or {"passed": True, "tests_run": 6, "skipped": 0, "expected_failures": 0}
+        reply = subprocess.CompletedProcess([], returncode, json.dumps(payload), "esdras5 child diagnostic")
+        outputs = [module.ESDRAS5_COMMIT.encode(),
+                   ("0" * 40 if missing_baseline else module.ESDRAS5_BASE).encode(),
+                   b"/private/frozen-history.git", b"archive"]
+        with patch.object(module, "git", side_effect=outputs) as git, \
+             patch.object(module, "_esdras5_archive_paths", return_value=["tests"]) as paths, \
+             patch.object(module, "extract_regular") as extract, \
+             patch.object(module.subprocess, "run", return_value=reply) as child:
+            try:
+                actual = module.run_suite("esdras5_partition")
+                return actual, child.call_args, git.call_args_list
+            finally:
+                if missing_baseline:
+                    paths.assert_not_called()
+                    child.assert_not_called()
+                if extract.called:
+                    self.assertFalse(extract.call_args.args[1].exists(), "private tree leaked")
+
+    def test_esdras5_uses_distinct_snapshot_and_private_git_context(self):
+        result, call, calls = self.run_esdras5_mocked()
+        self.assertEqual(result["commit"], module.ESDRAS5_COMMIT)
+        self.assertEqual(result["tests_run"], 6)
+        self.assertFalse(result["current_corpus_validated"])
+        self.assertFalse(result["application_approved"])
+        self.assertEqual(call.args[0][:3], [module.sys.executable, "-I", "-c"])
+        self.assertEqual(json.loads(call.args[0][-1]), ["test_1esdras5_partition_application"])
+        env = call.kwargs["env"]
+        self.assertEqual(env["GIT_DIR"], "/private/frozen-history.git")
+        self.assertEqual(env["GIT_WORK_TREE"], call.kwargs["cwd"])
+        self.assertNotEqual(Path(env["GIT_WORK_TREE"]), module.ROOT)
+        self.assertFalse(Path(env["GIT_WORK_TREE"]).exists())
+        self.assertEqual(env["GIT_OPTIONAL_LOCKS"], "0")
+        self.assertEqual(env["GIT_NO_REPLACE_OBJECTS"], "1")
+        self.assertEqual(calls[-1].args[1:5], ("archive", "--format=tar", module.ESDRAS5_COMMIT, "--"))
+
+    def test_esdras5_rejects_missing_baseline_failure_and_wrong_test_counts(self):
+        with self.assertRaisesRegex(ValueError, "baseline resolution mismatch"):
+            self.run_esdras5_mocked(missing_baseline=True)
+        with self.assertRaisesRegex(RuntimeError, "esdras5 child diagnostic"):
+            self.run_esdras5_mocked(returncode=1)
+        valid = {"passed": True, "tests_run": 6, "skipped": 0, "expected_failures": 0}
+        for field, value in (("passed", False), ("tests_run", 5), ("tests_run", 7),
+                             ("skipped", 1), ("expected_failures", 1)):
+            with self.subTest(field=field, value=value), self.assertRaisesRegex(RuntimeError, "coverage mismatch"):
+                self.run_esdras5_mocked({**valid, field: value})
+
+    def test_esdras5_dependency_closure_is_frozen_and_cannot_escape(self):
+        paths = module._esdras5_archive_paths(module.ROOT)
+        self.assertEqual(paths, sorted(set(paths)))
+        for path in ("tools", "translation/deuterocanon/1_esdras",
+                     "sources/lxx/swete/final_corpus_normalized/1ES.jsonl",
+                     "sources/lxx/swete/final_corpus_adjudicated/ADA.jsonl",
+                     "sources/textual_restoration/candidates/1esdras8_source_partition.2026-10-19.v1.json",
+                     "sources/textual_restoration/comparisons/1esdras8_application.2026-10-19.v1.json",
+                     "sources/textual_restoration/quarantine/1esdras5_duplicate145.2026-10-19.v1.yaml"):
+            self.assertIn(path, paths)
+        self.assertNotIn("translation/deuterocanon", paths)
+        for path in ("../outside", "sources/../outside", "sources/[ab]", "/sources/a", "unrelated/a"):
+            evidence = {"baseline_commit": module.ESDRAS5_BASE,
+                        "reviewed_file_pins": {path: "0" * 64}, "unchanged_live_inputs": []}
+            with self.subTest(path=path), patch.object(module, "git", return_value=json.dumps(evidence).encode()):
+                with self.assertRaisesRegex(ValueError, "Esdras5 dependency path"):
+                    module._esdras5_archive_paths(module.ROOT)
+
 
 if __name__ == "__main__":
     unittest.main()

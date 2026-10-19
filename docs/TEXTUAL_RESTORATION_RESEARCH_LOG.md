@@ -59,6 +59,30 @@ both exact-head checks and merged at `050ebd6a8329617f765c394073ccfc6a02e0f9ba`.
 
 ## Objective and current assessment
 
+### Samuel 10 Old Latin control 2026 10 19
+
+The [Old Latin follow-up](SAMUEL_10_1_OLD_LATIN_CONTROL_2026-10-19.md) directly
+checks Belsheim's original edition and Fischer's revision. The longer commission
+and sign are supported, but damage leaves the exact rescue verb unresolved.
+Former Vienna17 and Naples lat.1 identify the same Samuel–Kings undertext,
+VL115; editions, mirrors and ambiguous place labels must not inflate witness
+counts. This changes the current access and preservation assessment, not the
+frozen comparison's historical receipt. Historical-priority HOLD and provisional
+retention of POB's Hebrew/main English remain. No new ink or canon inference
+is claimed. The bounded alternate Pisano search found no accessible original;
+the blocked routes were not repeated or bypassed.
+
+One independent factual review passed without corrections. Actual scoped checks
+verified 23 current/baseline input pins, eight private assets, the duplicate PDF
+hash, 581 local links, unchanged canonical text/frozen records and the protected
+Genesis file. Whitespace passed; corpus tests were not rerun for this
+documentation-only contribution. Exact-head CI and main integration are separate.
+
+For the user's inline-clutter concern, the existing Judges reader-note scope
+remains: reuse the current footnote, preserve main verse wording and anchors,
+and add no panel, marker or separate publisher/reader implementation. Full
+reasoning stays in provenance and these Git records.
+
 Current objective, reset 2026-10-12: investigate consequential unresolved questions
 about the Bible's earliest attainable texts and literary development, prioritizing
 the OT and extending to the NT where evidence warrants. Seek overlooked, unread

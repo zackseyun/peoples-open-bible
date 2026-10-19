@@ -87,6 +87,13 @@ and Romans text; do not retrovert the chain into Hebrew. Next require early
 papyrus collation, original reconstruction evidence or discriminating ancient
 quotation evidence, not another comparison of these selected texts.
 
+The [early-papyrus follow-up](PSALM_14_EARLY_PAPYRUS_2026-10-19.md) now reads
+Kenyon's actual plate/transcription and the current Library record for Papyrus
+230 / Rahlfs 2019. The longer chain occupies column II before the psalm resumes;
+many endings remain supplied. Strawbridge's complete identity discussion does
+not establish a separate Pauline fragment. This acquisition is closed; retain
+distinct POB texts and seek discriminating quotation/reconstruction evidence.
+
 **October 19 Amos possession and inclusion:** the
 [original-argument and Hebrew-control test](AMOS_9_POSSESSION_AND_INCLUSION_2026-10-19.md)
 distinguishes possible incorporation of the nations from a required conversion

@@ -78,6 +78,15 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 19 Exodus original altar argument:** the
+[Bogaert follow-up](EXODUS_BOGAERT_ALTAR_ARGUMENT_2026-10-19.md) reads the actual
+altar table and contexts within a partial original preview. Lost Latin 35:15
+is inferred from Greek, not another preserved omission; Bogaert aligns the
+surviving burnt-altar reference with 40:33 rather than 40:29. His proposed
+Hebrew stages remain hypotheses. Retain POB. MacDonald's full target chapter
+and Dold's original remain unread; require new original argument or continuity
+evidence, not another reading of these pages or restricted-preview retries.
+
 **October 19 Exodus Greek/Old Latin control:** the
 [direct edition comparison](EXODUS_INCENSE_GREEK_LATIN_CONTROLS_2026-10-19.md)
 now distinguishes ordinary Greek construction omission from longer Greek

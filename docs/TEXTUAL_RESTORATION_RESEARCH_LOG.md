@@ -16704,6 +16704,51 @@ original jobs and merged at `d0e2939e4a88229b0770d81c9fa4161c62b83d34`; local
 and remote main plus ordinary push were verified. New candidate CI and live
 delivery remain separate. The full source-comparison goal remains active.
 
+## October 19 — Check the connected Jehoram reign variants
+
+The [bounded Kings comparison](KINGS_8_17_REIGN_COMPARISON_2026-10-19.md)
+closes the reign-length gap noted in the preceding Ahaziah contribution.
+Cambridge Kings, printed 325 / PDF 137, reports eight, ten and forty;
+the selected body gives forty, not a unanimous Greek reading. The inherited
+own key identifies the ten-year witnesses as 82,127,93. A preliminary scout
+OCR reading of 83 was corrected against the image before documentation.
+The fragment d₂ is distinguished from the Aquila palimpsest Z₃ without
+inventing a modern manuscript number.
+
+Connected Chronicles pages report further age/reign variants and omissions;
+agreement at one age unit does not validate a whole Greek chronology.
+The WLC target's ketiv/qere concerns the year noun, not its eight numeral.
+Retain the source and English eight provisionally. Harmonization remains
+a counterargument, not an observed copying event. No newly deciphered
+reading, Hebrew reconstruction, canonical change or canon inference follows.
+
+One acquisition scout and one fresh independent factual reviewer checked
+the complete target pages and appropriate keys. The reviewer found no
+factual blockers. Frozen SHA256: report
+`49171a0e190107a0f4b2c27ec99b4bc9b6027dbf8db5b35b4280e1c3a9420c1f`;
+[packet](../sources/textual_restoration/comparisons/kings8_17_reign.2026-10-19.v1.json)
+`b75cc467f40832504e2472a7f61d5bfe9a3873bef69b6d5cc20b597c6c7986cb`.
+Root's checks pass JSON parsing, five input hashes/baseline bytes, six private
+asset hashes, local report links and the protected Genesis hash. Diff checks
+show no translation, source-corpus, tools, tests or workflow changes. Only
+the report, packet and this log are task changes; no new checker is needed.
+
+Publisher metadata identifies modern Tetley chapters worth consulting, but
+their authenticated contents were not read. Hughes's target argument was
+also unavailable. Do not adopt unofficial-mirror or snippet conclusions.
+Reopen for an actual discriminating target argument/apparatus rather than
+another model vote or repeated broad search. The PDF and documentation
+workflows keep page-level observation separate from historical inference.
+The user's inline-clutter concern continues to rule out layout expansion;
+this comparison needs no new reader note at all.
+
+Earlier PR349 passed both original CI jobs and merged at
+`aba26a5bca22d97b37fc7716c2955f4e84806026`; local/remote main and ordinary
+push were verified. PR350's original jobs were still running at the initial
+check; no restart was made. This documentation's CI/main integration and
+any public website delivery remain separate from the factual result.
+The larger source-comparison program remains active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

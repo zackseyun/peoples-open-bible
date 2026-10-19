@@ -89,6 +89,8 @@ class Judges6NoteTests(unittest.TestCase):
             self.assertFalse(self.c[key])
 
     def test_evidence_and_implementation_pins(self):
+        workflow = (ROOT / '.github/workflows/corpus-integrity.yml').read_text()
+        self.assertIn(f'git fetch --no-tags --depth=1 origin {BASELINE}', workflow)
         self.assertEqual(len(self.c['input_pins']), 6)
         for path, pin in self.c['input_pins'].items():
             historical = subprocess.check_output(['git', 'show', f'{BASELINE}:{path}'], cwd=ROOT)

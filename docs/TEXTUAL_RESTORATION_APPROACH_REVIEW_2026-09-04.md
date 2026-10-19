@@ -26,6 +26,31 @@ statistical profile. Modern authors' conclusions do not replace their local
 derivations or the actual apparatus. This supplements the comparison method
 without relabeling frozen receipts or lowering source/application gates.
 
+## October 19 refinement Printed import completeness
+
+Before interpreting a digital difference as an ancient variant, compare the
+local import against its selected source. The
+[1 Esdras5 repair](1ESDRAS_5_PARTITION_REPAIR_2026-10-19.md) distinguishes two
+whole entries lost during adjudication, two flattened body/alternate numbering
+boundaries and an extra record duplicating a real verse. A complete set of
+verse IDs, fluent English and high model-agreement labels did not catch them.
+
+Read complete pages with apparatus and adjoining-unit context. Preserve exact
+source slices, trace each loss through raw/parsed/adjudicated layers, and keep
+the old records recoverable. A scout's transcription is not the scan: at5:25,
+direct checking corrects its1017 to the main body's217, while retaining A's
+reported1017 as an apparatus alternative. Do not merge body and apparatus or
+count two English drafts of copied Greek as independent witnesses.
+
+Verify the repaired source loader and actual full-book English export, not
+only a candidate JSON or numbering continuity. Preserve prior proof at its
+immutable checkpoint when a legitimate successor changes whole-book counts;
+add separate live assertions for the successor and all unaffected records.
+Use one bounded source/English application review, with further review only
+for a substantive failure. These are import-completeness controls, not evidence
+that a printed reading is historically earliest or a license to reconstruct
+missing manuscript ink generatively.
+
 ## Assessment
 
 Keep the project and most of its infrastructure. The strongest achievement is

@@ -13,7 +13,7 @@ translation layer under:
   sources/lxx/swete/final_corpus_normalized/
 
 Current outputs:
-- 1ES: chapter 8 partition restored to the selected printed edition
+- 1ES: chapters 5 and 8 partition restored to the selected printed edition
 - WIS: canonical Wisdom only (drop duplicate chapter 20 and Sirach spill)
 - BAR: canonical Baruch only (trim back to 1:1-5:9)
 - PAZ: Prayer of Azariah + Song of the Three (standalone extraction)
@@ -40,6 +40,8 @@ OUT_DIR = REPO_ROOT / "sources" / "lxx" / "swete" / "final_corpus_normalized"
 TRANSCRIBED_DIR = REPO_ROOT / "sources" / "lxx" / "swete" / "transcribed"
 ESDRAS_PARTITION = REPO_ROOT / "sources/textual_restoration/candidates/1esdras8_source_partition.2026-10-19.v1.json"
 ESDRAS_AFFECTED = {13, 14, 17, 18, 25, *range(39, 63), *range(76, 93)}
+ESDRAS5_PARTITION = REPO_ROOT / "sources/textual_restoration/candidates/1esdras5_source_partition.2026-10-19.v1.json"
+ESDRAS5_AFFECTED = {25, 28, 29, 31, 38, 39}
 
 import lxx_swete  # noqa: E402
 
@@ -170,6 +172,8 @@ def normalize_1es(records: list[dict]) -> tuple[list[dict], list[str]]:
     source = SRC_DIR / "1ES.jsonl"
     if hashlib.sha256(source.read_bytes()).hexdigest() != "ce3c44488397c44c3af51178d22cc644ae5541e551cb814c7d1e59e2bb5aee74":
         raise ValueError("1ES historical source differs from the reviewed partition baseline")
+    if records != load_book("1ES"):
+        raise ValueError("1ES supplied records differ from the pinned historical source")
     candidate = json.loads(ESDRAS_PARTITION.read_text(encoding="utf-8"))
     units = candidate["records"]
     if set(units) != {str(v) for v in range(1, 93)}:
@@ -210,7 +214,65 @@ def normalize_1es(records: list[dict]) -> tuple[list[dict], list[str]]:
             "contributors": unit["contributors"],
         })
         out.append(new)
-    return out, []
+    return normalize_1es5(out)
+
+
+def normalize_1es5(records: list[dict]) -> tuple[list[dict], list[str]]:
+    """Apply only the six reviewed chapter-5 units and omit its redundant145.
+
+    Called after the chapter-8 correction, so all other rows (including8)
+    remain exactly as supplied. The discarded historical row remains in the
+    immutable adjudicated corpus; its canonical YAML has a separate quarantine.
+    """
+    candidate = json.loads(ESDRAS5_PARTITION.read_text(encoding="utf-8"))
+    units = candidate["records"]
+    if set(units) != {str(v) for v in range(1, 71)}:
+        raise ValueError("1ES 5 requires all 70 unique printed units")
+    chapter = [r for r in records if int(r["chapter"]) == 5]
+    if [int(r["verse"]) for r in chapter] != [*range(1, 71), 145]:
+        raise ValueError("1ES 5 historical source identity/order changed")
+    by_verse = {int(r["verse"]): r for r in chapter}
+    if by_verse[145]["greek"] != by_verse[47]["greek"]:
+        raise ValueError("1ES 5:145 no longer exactly duplicates47")
+    out = []
+    for rec in records:
+        v = int(rec["verse"])
+        if int(rec["chapter"]) != 5:
+            out.append(rec)
+            continue
+        if v == 145:
+            continue
+        unit = units[str(v)]
+        if v not in ESDRAS5_AFFECTED:
+            if rec["greek"] != unit["greek"]:
+                raise ValueError(f"Unexpected Greek change outside reviewed scope: 1ES 5:{v}")
+            out.append(rec)
+            continue
+        new = copy.deepcopy(rec)
+        for field in list(new):
+            if field in ("similarity", "adjudication") or field.startswith("pre_adjudication"):
+                new.pop(field, None)
+        note = (
+            f"1 Esdras 5:{v}, Swete II printed pp. {unit['printed_pages']}; "
+            f"PDF pp. {unit['pdf_pages']}; raw scan-leaf indices {unit['source_pages']}. "
+            "PDF SHA256 945c5b15bf0f9dfc93890b28ee5b66a388acbf4597f1f2be5430ac6cba9c30b0. "
+            "Printed partition/import correction, not an ancient-priority decision or full lexical collation. "
+            "See docs/1ESDRAS_5_PARTITION_REPAIR_2026-10-19.md."
+        )
+        new.update(greek=unit["greek"], source_pages=unit["source_pages"],
+                   ocr_method="printed_partition_correction",
+                   validation="scan_partition_correction_pending_full_review", confidence="medium",
+                   source_note=note,
+                   adjudication={"verdict": "printed_partition_correction", "confidence": "medium",
+                                 "reasoning": note},
+                   normalization={"rule": "1esdras5_printed_partition_2026-10-19", "note": note})
+        new.setdefault("source_correction_history", []).append({
+            "baseline_commit": "756074bd3e0bd97c5d849c5ff47125972f4684b2",
+            "record": copy.deepcopy(rec), "certifies_corrected_record": False,
+            "contributors": unit["contributors"],
+        })
+        out.append(new)
+    return out, ["1ES 5:145 — exact Greek duplicate of5:47; historical row retained, canonical YAML quarantined"]
 
 
 def normalize_bar(records: list[dict]) -> tuple[list[dict], list[str]]:

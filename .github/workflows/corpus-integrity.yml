@@ -19,6 +19,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Fetch the reviewed source baselines
         run: |
+          git fetch --no-tags --depth=1 origin 756074bd3e0bd97c5d849c5ff47125972f4684b2
           git fetch --no-tags --depth=1 origin 97194d2b4c691514373896490110246b0b024219
           git fetch --no-tags --depth=1 origin c80c24a7aaeb42cc9920c7124cc34788ee70e3f9
           git fetch --no-tags --depth=1 origin 34a9faf23d9cac3b2ddd4d6102acc50a2a84344f
@@ -181,7 +182,8 @@ jobs:
           python -m unittest discover -s tests -p 'test_jeremiah31_reader_application.py'
           python -m unittest discover -s tests -p 'test_judges6_reader_note_application.py'
           python -m unittest discover -s tests -p 'test_letter_jeremiah_69_70_correction.py'
-          python -m unittest discover -s tests -p 'test_1esdras8_partition_application.py'
+          python -m tools.textual_restoration.replay_historical_tests esdras8_partition
+          python -m unittest discover -s tests -p 'test_1esdras5_partition_application.py'
           python -m unittest discover -s tests -p 'test_chronicles22_2_reader.py'
           python -m unittest discover -s tests -p 'test_kings2_8_10_reader_application.py'
           python -m unittest discover -s tests -p 'test_ot_witness_registry.py'

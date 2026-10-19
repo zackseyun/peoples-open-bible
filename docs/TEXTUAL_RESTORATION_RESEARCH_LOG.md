@@ -16848,6 +16848,45 @@ push were verified. PR351/352 jobs remained live during this work, without
 restart. Current documentation integration and public delivery remain separate.
 The broader source-comparison program is still active.
 
+## October 19 — Read the original Bogaert altar argument
+
+The previous Greek/Latin contribution made progress as PR353. This bounded
+follow-up obtained the actual Bogaert 2005 altar table and contexts through an
+ordinary lawful preview: eleven complete pages read, four unavailable. The
+[new report](EXODUS_BOGAERT_ALTAR_ARGUMENT_2026-10-19.md) distinguishes lost
+Latin 35:15 from a preserved omission and records Bogaert's 40:33 alignment of
+the burnt-altar reference. The earlier frozen Ziegler column label remains
+historical, not a settled verse assignment. Proposed room placement and
+successive Hebrew stages remain interpretations, not recovered wording.
+
+One acquisition scout and one fresh independent factual reviewer were used;
+no consensus loop or new tool was built. The reviewer gave SCOPED PASS on
+report SHA256 `2f9a125e174913ae40f3664f914661854bea1a938f862c0a760caa1249aebd6b`
+and [packet](../sources/textual_restoration/comparisons/exodus_bogaert_altar_argument.2026-10-19.v1.json)
+`f9cf48d30f207d3d2c75b5285e557f02c60edd2f14240a3748d37daac22b4b33`.
+It checked original target pages, all three repository/fifteen private pins,
+and all 1,214 unchanged Exodus verse/source paths. Root's JSON, pins, links,
+whitespace and protected-Genesis checks pass. No full-corpus rerun is needed
+locally for these documentation-only changes; ordinary repository CI remains
+the integration gate.
+
+MacDonald's publisher provides only an abstract without chapter access, and
+the ordinary Google preview returned a viewing-limit notice. No bypass or
+unofficial mirror was used. Stop retrying those routes; an accessible original
+argument, actual Latin revision or independent continuity control is needed
+next. No source, English, note, approval, canon or reader layout changed.
+The user's concern about visual clutter remains controlling: this work does
+not expand the publisher or website reader. The PDF/documentation workflows
+keep full-page observations separate from historical reconstruction.
+
+Earlier PR351 passed both original CI jobs and merged at
+`d54d8fd970ae4916102006c6ad703f56ec9d935b`; local/remote main and ordinary push
+were verified. PR352 subsequently passed both original jobs and merged at
+`e4d395287cd82e1f49484536b3badaf91011eff7`. PR353 checks were still live at this
+checkpoint, without restart. Public delivery is separate from repository
+integration. The broader comparison goal remains active; this contribution
+improves evidence classification rather than claiming a new ancient reading.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

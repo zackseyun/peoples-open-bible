@@ -17348,6 +17348,40 @@ PR363/364/365 were freshly confirmed mergeable with both exact-head checks
 still live; no jobs were restarted or gates bypassed. Their original study
 outputs remain unchanged, and the wider research goal remains active.
 
+## October 19 — Test Jeremiah's shorter text against Kings
+
+The preceding turn made progress by verifying the original Latin edition and
+pushing reviewed PR366. This turn reads Fischer's complete original author
+manuscript, then tests its parallel-account argument against actual Swete
+Kings/Jeremiah pages and 40 current POB contexts in the
+[deportation comparison](JEREMIAH_52_PARALLEL_CONTROL_2026-10-19.md).
+The national-deportation minuses are real within the selected Greek body;
+royal captivity and agricultural survivors also remain. An undifferentiated
+“no exile” or universal-annihilation conclusion is not accepted. Agreement
+with Kings supports a countermodel, not three independent ancestral votes
+or proof of the translator's exact Hebrew. Retain POB provisionally.
+
+The PDF workflow checked complete target pages and notes visually; the
+documentation workflow preserves author arguments, own tests and read limits.
+The institutional bibliography resolves the deposit cover's inconsistent date
+labels without altering the source file. One bounded scout failed to acquire
+Joosten's original; metadata is not linguistic evidence. Park those routes.
+The initial wrong2-kings directory was corrected to actual2_kings before the
+complete16 Kings records were read; no empty result supplied a conclusion.
+No source, English, note, approval, reader-layout or canon change is made.
+
+One fresh bounded factual reviewer gave SCOPED PASS without corrections on
+report SHA256 `53b8501a136ccef946d8d1b3d3caadb8abe435f5d7d3f18ab0ac93d79c0cbd5c`
+and [packet](../sources/textual_restoration/comparisons/jeremiah52_parallel_control.2026-10-19.v1.json)
+`55d276b17308a130bdecdce54069288d987288a51e12c3fd2cdd4a9afe8800ac`.
+It checked the complete selected edition pages/apparatuses, original argument,
+all 40 contexts, seven repository/four private pins and protected Genesis.
+Local JSON, links, pins, whitespace and unchanged source/code scope pass.
+No consensus loop, new checker or local full-corpus rerun was needed.
+Fresh exact-head checks on PR363–366 remain live, with one PR364 check passed;
+no merge, restart or bypass was inferred from their running state. The larger
+research goal remains active and these selected controls are now closed.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -95,6 +95,14 @@ claim reports a codex reinspection, not merely a conjectural spelling, but is
 not new POB manuscript evidence. Attestation strengthens; Hebrew priority
 remains held. Close these printed controls and seek discriminating evidence.
 
+The [Jeremiah52 parallel control](JEREMIAH_52_PARALLEL_CONTROL_2026-10-19.md)
+tests an original Greek-abbreviation argument against actual Greek Kings and
+Jeremiah. The selected Jeremiah body lacks national-deportation clauses but
+still contains royal captivity and survivors; its Qmg layer is not conflated
+with the body. Local abbreviation is plausible, not a uniquely proven history.
+Joosten's original remains unread after bounded routes. Retain POB and require
+discriminating apparatus, ancestry or original language evidence next.
+
 **October 19 Habakkuk survival and divine endurance:** the
 [Greek and tradition follow-up](HABAKKUK_1_12_GREEK_AND_TRADITION_2026-10-19.md)
 checks the actual historical Greek edition and a Hebrew deliverance expression,

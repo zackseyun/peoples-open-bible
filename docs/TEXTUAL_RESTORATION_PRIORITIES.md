@@ -78,6 +78,16 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 19 Jeremiah reconstruction control:** the
+[original opposing argument and conditional word-load check](JEREMIAH_10_RECONSTRUCTION_CONTROL_2026-10-19.md)
+distinguish acceptance of 4Q71's shorter arrangement from a claim of its priority.
+DJD's MT-based table already uses Greek arrangement; it is not an unchanged-MT
+capacity test. The exact WLC interval between adjacent published line-end anchors
+has 254 letters, but no measured missing-width limit follows. Retain source,
+main English and the already qualified note. Saley remains unread after three
+distinct alternate routes; do not repeat those or substitute a secondary report
+for his original. Seek discriminating reconstruction/physical evidence next.
+
 **October 18 connected Judges comparison:** [Judges 6:1–14 and the missing
 prophet speech](JUDGES_6_PROPHET_SPEECH_COMPARISON_2026-10-18.md) now has an
 original-editor transcription/reconstruction, all nine QDR lines, actual Greek
@@ -112,6 +122,12 @@ skip loses the retained particle, while positive Saul material limits a general
 suppression account. Historical priority remains unresolved and POB is unchanged.
 Next require the original Pisano/critical Hebrew target argument or precise
 Latin ancestry evidence; do not repeat the acquired texts as another vote.
+
+The [Old Latin original and revision](SAMUEL_10_1_OLD_LATIN_CONTROL_2026-10-19.md)
+now close the underlying edition-access gap. Damage leaves the precise rescue
+verb unresolved; former Vienna17 and Naples lat.1 are the same VL115 object,
+not extra votes. Historical-priority HOLD remains; original Pisano or precise
+ancestry/critical target evidence, not repeat edition reading, remains next.
 
 **October 18 direct Vatican source acquisition:** the
 [Ra246 digitization check](KINGS_6_VATICAN_DIRECT_SCAN_2026-10-18.md)

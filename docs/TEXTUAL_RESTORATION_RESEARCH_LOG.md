@@ -18019,6 +18019,35 @@ review is the next gate, distinct from the completed diagnostic review.
 Chapter6 PR372 and diagnostic PR373 retain their fixed publication heads.
 No new ancient-priority, Hebrew recovery, canon or reader-layout claim follows.
 
+## October 19 — Apply the independently reviewed Esdras7 words
+
+One independent exact-application reviewer passes checkpoint519acad5d9 with
+no blocking correction. It checks the complete printed page/apparatus, all15
+Greek units, both full replacement records, relevant primary LSJ entries and
+all1724 old codepoints, plus10 prepared,17 historical,15 canonical and five
+private pins. Its six live tests,18 runner tests and six frozen chapter6 tests
+pass. This is a new full-application gate after the earlier diagnostic, not
+another vote on the same unmodified question. Added remains provisional with
+joined them noted and agent/complement unresolved; no unique optimum is claimed.
+
+Root rechecks the frozen pins and original full-book manifest, then applies
+only7:4/6. All six post-application tests pass in19.301seconds. A separate
+actual check reproduces both complete objects and deterministic YAML hashes,
+compares all495 canonical files with baseline and confirms493 unchanged files.
+The live export is nine chapters/495 units, fifteen in chapter7, with added
+in the main wording and joined them in the note. All chapter5/6/8 repairs remain
+byte-identical; no canonical file is deleted. Both genuine draft-receipt values
+remain unchanged; the protected Genesis file retains its exact original bytes.
+
+The [delivery record](../sources/textual_restoration/comparisons/1esdras7_application_delivery.2026-10-19.v1.json)
+stores the completed review verbatim and both actual applied-file hashes.
+Current source/English/decisions are aligned, old review fields remain archived,
+and active records remain draft/needs_review with medium source confidence.
+Reader/publisher layout is unchanged. Ordinary commit/push, own exact-head CI
+and main integration after PR372/373 remain publication gates, separate from
+any website/CDN refresh. This does not establish ancient priority, recover
+Hebrew, add a canonical book or certify the rest of these verses lexically.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

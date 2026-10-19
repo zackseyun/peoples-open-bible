@@ -16386,6 +16386,71 @@ guard left the file unchanged. Canonical/code diff is empty and the protected
 unrelated Genesis file is untouched. These are documentary integrity checks,
 not a successful manuscript collation or public-reader delivery certification.
 
+## October 18 — Compare the Judges 6 prophet speech and shorter form
+
+The previous goal turn made progress through the direct-source acquisition and
+location safeguards. This continuation verified the same four live CI jobs for
+PR338/340 without restart; neither was mergeable through its pending required
+checks at that checkpoint. An inventory scout found the main Ezekiel portfolio
+still requires a genuinely new apparatus input, then identified an unperformed
+[Judges6 comparison](JUDGES_6_PROPHET_SPEECH_COMPARISON_2026-10-18.md) with an
+already acquired 4Q49 transcription. The earlier Joshua/Judges screen had
+checked coverage, not this consequential speech or narrative relationship.
+
+A source scout lawfully acquired the original editor's complete1991 article
+and read Rofé's full public author manuscript. Root separately checked the
+actual Hebrew transcription/reconstruction, all nine strict QDR primary lines,
+source-only connected Hebrew controls, current POB6:1–14, three full Greek
+pages and relevant original competing arguments. The PDF skill supplied native
+page inspection; the documentation skill separates surviving text, supplies,
+historical hypotheses and application. No complete-article root claim follows.
+
+Line5 preserves portions of the cry; the angel's arrival is supplied. Adjacent
+line6 preserves Joash/Abiezrite/Gideon material. This is a spatially constrained
+published short form, not an intact photographed6→11junction. A separate
+published אלהים/יהוה contrast at6:13 is not automatically selected with the
+shorter form. Swete's B/A reports retain the prophet/rebuke but differ in the
+repeated-cry connection and an8–9Egypt-deliverance block. A smaller Greek
+difference must not become another whole-speech omission witness.
+
+Rofé accepts literary addition but proposes an early addition followed by
+accidental paragraph loss; he does not deny all growth. Root independently
+confirmed current WLC open-section markers after6:6and6:10, not a lost exemplar's
+layout. The repeated cry alone does not explain a skip through the differently
+ending6:10. Expansion is preferred provisionally, with paragraph loss and dating
+still open. The WLC6:1moral frame prevents a claim that removing the speech
+necessarily erases the story's wrongdoing/causality;4Q49does not preserve that
+opening. POB's current longer source/English stay unchanged pending a distinct
+full application assessment, not because MT is presumed automatically earlier.
+
+The final DJDXIV161–164/plateXXXVI locator was established, not acquired.
+Rofé's public indexed full text worked despite ordinary PDFdownload403; no
+bypass was attempted. No comprehensive modern apparatus, new letters, images,
+canon addition, reader/publisher/About edit or full-book short reconstruction
+is claimed. The next input must discriminate, not repeat the selected texts or
+theories. A qualified disclosure remains a separate possible application.
+
+One fresh bounded factual review passed the exact report and pre-receipt packet.
+It independently checked the nine QDR lines, original transcription/capacity
+passages, complete Greek pages/key, relevant Rofé/Rezetko arguments and WLC
+controls. Complete articles, original plate, BHQ, photographs, palaeography,
+physical measurements, complete census, hashes and current POB English/notes
+remain outside that independent review. Goal active, not complete.
+
+Root separately passed 27 canonical/source controls, two method pins, two frozen
+predecessors, 12 private byte/hash assets, 709 local links and whitespace. No
+canonical or code diff exists; the protected unrelated Genesis file is unchanged.
+The file's October18date is local; the packet separately records actual UTC
+October19rather than silently calling the local date UTC. These checks do not
+certify the entire corpus or actual public delivery.
+
+PR338's same two exact-head jobs subsequently completed successfully. Fresh
+ordinary merge gates passed and merge2e39b5d16a8df919a269036e3d8916e38a601bf5
+was accepted. This publishes the earlier HP record, not this Judges proposal
+or a public-reader Bible change. At the last inspected PR340checkpoint its push
+job had succeeded and pull-request job117901489323was still live in reader-note
+tests; no restart or protection bypass was attempted.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

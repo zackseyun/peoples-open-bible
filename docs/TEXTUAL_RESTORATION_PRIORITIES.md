@@ -65,6 +65,15 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 connected Judges comparison:** [Judges 6:1–14 and the missing
+prophet speech](JUDGES_6_PROPHET_SPEECH_COMPARISON_2026-10-18.md) now has an
+original-editor transcription/reconstruction, all nine QDR lines, actual Greek
+contrasts and the original early-addition-plus-copying-loss counterargument.
+Prefer expansion provisionally, not an intact newly read junction or a dated
+whole-book edition. POB remains longer pending exact form/source-and-English
+assessment. Next actual DJD fragment/plate and BHQ target evidence, or a separately
+reviewed qualified disclosure; do not repeat these same texts as another vote.
+
 **October 18 direct Vatican source acquisition:** the
 [Ra246 digitization check](KINGS_6_VATICAN_DIRECT_SCAN_2026-10-18.md)
 adds actual manuscript openings, but no secure target transcription. A

@@ -16887,6 +16887,45 @@ checkpoint, without restart. Public delivery is separate from repository
 integration. The broader comparison goal remains active; this contribution
 improves evidence classification rather than claiming a new ancient reading.
 
+## October 19 — Identify the Samuel casualty-count witnesses
+
+The preceding goal turn made progress through the original Bogaert argument,
+committed/pushed as PR354. This continuation closed an explicit older evidence
+gap rather than repeating a selected text: the
+[Samuel numeral follow-up](SAMUEL_6_19_NUMERAL_APPARATUS_2026-10-19.md) reads
+Kennicott's actual 6:19 apparatus and the wider Cambridge Greek apparatus.
+Three identified Hebrew copies reportedly omit fifty thousand; another omits
+seventy. Reversed figures and Greek five-thousand variation prevent a simplistic
+seventy-versus-uniform-tradition account. Modern key dates are metadata, not
+new palaeographic findings. No manuscript pixels were newly deciphered.
+
+Driver and Keil's original arguments distinguish numerical preference from
+the opening-clause decision. A conditional repeated-word loss reproduces the
+seventy-only sequence without proving a historical event. The now-available
+pinned QDR file has adjacent references but no exact 6:19 tokens; that indexing
+result supplies no numeral reading. Retain POB provisionally, not as proof
+of longer priority. No source, English, note, approval or reader-layout change.
+
+One Hebrew-collation scout and one independent factual reviewer were used.
+The reviewer gave SCOPED PASS on report SHA256
+`3dbd43f03004f6000a54864fcd86b0f5a6eb8596f0eb72b315e011e17f105a8c`
+and [packet](../sources/textual_restoration/comparisons/samuel6_19_numeral_apparatus.2026-10-19.v1.json)
+`ed853ef117445419b2842a48d8233e38e9bb494525bb14b5617f62f85c6e07f1`.
+It checked original pages/conventions, three repository/nine private pins,
+the exact reference screen, conditional deletion and unchanged canonical scope.
+Root's JSON, pins, links, whitespace and protected-Genesis checks pass. No
+new checker or local full-corpus rerun was needed for this documentation-only
+contribution. The PDF skill enforces page/apparatus checks; the documentation
+skill keeps observed variants separate from inferred transmission histories.
+Next require target manuscript/correction evidence or a discriminating critical
+argument, not another vote on these pages. No new discovery or canon inference.
+
+PR353 passed both original CI jobs and merged at
+`850bdd211606f4fee6d80dcf018b053b37d39b77`; local/remote main and ordinary push
+were verified. PR354's original jobs remained live during this work, without
+restart. Current exact-head CI, integration and public delivery remain separate
+gates. The full source-comparison goal remains active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

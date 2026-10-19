@@ -46,6 +46,15 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 19 Samuel casualty-count apparatus:** the
+[identified Hebrew and wider Greek follow-up](SAMUEL_6_19_NUMERAL_APPARATUS_2026-10-19.md)
+verifies Kennicott's three seventy-only reports, a different fifty-thousand-only
+report and reordered figures, plus Greek five-thousand variation. These are
+published readings, not new ink or independent votes. A repeated-word loss
+countermodel remains possible; source priority is open and POB unchanged.
+Next require target manuscript/correction evidence or a discriminating critical
+argument, not a repeat of these now-consulted apparatus pages.
+
 **October 19 Exodus original altar argument:** the
 [Bogaert follow-up](EXODUS_BOGAERT_ALTAR_ARGUMENT_2026-10-19.md) reads the actual
 altar table and contexts within a partial original preview. Lost Latin 35:15

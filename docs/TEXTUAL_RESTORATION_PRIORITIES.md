@@ -96,6 +96,14 @@ existing choice wording provisionally; no reader change. The selected arguments
 are now closed controls. Next require actual local critical apparatus and
 relationships or new provenanced Hebrew, not another vote on these studies.
 
+The [historical apparatus follow-up](DEUTERONOMY_CHOICE_APPARATUS_2026-10-19.md)
+now confirms selected indicative verb reports in m/72, HP16 and Latin Lr,
+without reconstructing complete clauses or counting editions as copies.
+The current specialist catalogue dates 16 around 1300 with qualified alternatives,
+not automatically to the older eleventh-century attribution. Priority remains
+held. The actual modern target apparatus and authenticated Schenker originals
+remain unread; park these completed Cambridge pages and failed routes.
+
 **October 19 Psalm and Romans quotation chain:** the
 [Psalm 14 / Greek Psalm 13 comparison](PSALM_14_ROMANS_3_CATENA_2026-10-19.md)
 distinguishes the longer Greek text, omission and correction layers, and opposing
@@ -121,6 +129,14 @@ the Septuagint. This strengthens that transmission hypothesis, not a recovered
 Hebrew text or a canon addition. Close this selected quotation acquisition;
 require original 11Q7 reconstruction evidence or a materially earlier
 independent witness before reopening. No reader layout expansion.
+
+The [bounded material-access checkpoint](../sources/textual_restoration/discovery/psalm14_11q7_material_access.2026-10-19.v1.json)
+obtains no original target pages or plate. An institutional inventory gives
+a different explicit 11Q7 plate entry from the provisional search leads;
+the Psalm 14 fragment-to-image crosswalk remains unverified. Park the checked
+metadata/archive routes. Reopen with original reconstruction evidence or a
+verified target image locator; prefer another accessible portfolio target
+meanwhile. No new Hebrew or English reading follows.
 
 **October 19 Amos possession and inclusion:** the
 [original-argument and Hebrew-control test](AMOS_9_POSSESSION_AND_INCLUSION_2026-10-19.md)

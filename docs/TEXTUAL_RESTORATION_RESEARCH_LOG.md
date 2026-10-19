@@ -17191,6 +17191,83 @@ OSIS namespace; no empty result was used as evidence. The default Python lacked
 YAML, so the successful context check used the repository environment. No
 local full-corpus rerun is claimed; integration remains subject to CI.
 
+## October 19 — Bound the remaining 11Q7 material access
+
+The preceding display discussion made no research progress. This turn checked
+the live repository and CI, then pursued the unresolved physical reconstruction
+question in the [Psalm comparison](PSALM_14_ROMANS_3_CATENA_2026-10-19.md).
+DJD XXIII's target pages and plate remain unread. One acquisition scout checked
+three additional routes for the 1996 preliminary edition; the exact institutional
+record and publisher archive provide metadata, not the target article.
+These are access limits, not evidence for either textual history.
+
+Root checked the institutional museum inventory's entries 603–621B. Entry 606
+explicitly lists 11Q7 and refers to photograph 43.980; entry 604 lists 4Q299.
+The mixed entries 614 and 621B do not explicitly list 11Q7. This does not exclude
+unlisted fragments or resolve historical numbering differences. It does prevent
+treating provisional plate-number search leads as a verified Psalm 14 locator.
+The [checkpoint](../sources/textual_restoration/discovery/psalm14_11q7_material_access.2026-10-19.v1.json)
+preserves the consulted source, private hashes and acquisition boundaries.
+
+No original reconstruction rationale, target pixels or new Hebrew letters were
+obtained. Source, English, notes, approvals, layout and canon remain unchanged.
+The PDF workflow was loaded for the planned acquisition; no new PDF-based
+textual judgment resulted. The documentation workflow keeps this as a compact
+checkpoint rather than another source-priority report. Park these routes until
+access or target evidence changes and prefer accessible portfolio evidence next.
+
+One bounded independent factual review passed the inventory statements,
+consultation limits and all three input/private pins. The reviewed checkpoint
+SHA256 is `d6665f9a96dbbbba5764d2e6374e0602140d898fbbf07f32798b7912a3953cd8`.
+Local JSON, links, pins, whitespace, unchanged source/code scope and protected
+Genesis checks pass. No full-corpus local rerun or specialist approval is claimed.
+
+PR361 passed both original checks and merged normally as
+`ba9920a07e441e255239db6a6eae806e15986b00`. Main was synchronized without force.
+The broader research goal remains active; this checkpoint does not complete
+whole-book or all-source comparison.
+
+## October 19 — Read the selected Deuteronomy choice apparatus
+
+The preceding turn made progress by completing the connected original-argument
+test and pushing PR361. This turn revalidated that state, then consulted the
+[actual historical apparatus](DEUTERONOMY_CHOICE_APPARATUS_2026-10-19.md) for
+six selected choice-form loci. The four m/72 indicative reports, HP16's
+intermediated Greek report and two Latin reports are now distinguished from
+complete witness clauses, modern apparatus approval and independent Hebrew
+ancestry. Bohairic edition sigla are not extra physical manuscripts. The actual
+specialist catalogue qualifies manuscript16's date around1300; an older
+eleventh-century label is not adopted uncritically.
+
+No source, English, note, approval, layout or canon change follows. The PDF
+workflow checked complete target and convention pages visually; the
+documentation workflow kept reported readings and editorial intermediaries
+distinct. One acquisition scout exhausted bounded original-study routes and
+obtained the current institutional Ra16 record. Schenker's full originals
+remain unauthenticated/unread. The blog copy was a locator lead only; failed
+routes and a catalogue challenge were not bypassed, and no new manuscript
+image reading is claimed.
+
+One fresh bounded factual reviewer required removing the packet's unqualified
+future-tense label for k's unusual εξελεξεται spelling. The exact reported
+form is retained with interpretation unestablished. After that narrow correction,
+the same reviewer confirmed SCOPED PASS on report SHA256
+`9d9dcbf2600af4af08d10b146ce035393825d62cf7cfa0d001d545716af6d672`
+and [packet](../sources/textual_restoration/comparisons/deuteronomy_choice_apparatus.2026-10-19.v1.json)
+`07fcef6fabe0d55bfd60c8ab25ce7592535e66c3ba557673d02dcc20183c22da`.
+It verified four repository/three private pins, selected apparatus/key pages,
+the complete public catalogue data and unchanged protected Genesis bytes.
+Underlying Latin/Coptic targets, modern apparatus and source-priority approval
+remain outside that verdict. No consensus loop.
+
+Local JSON, pins, links, whitespace and unchanged canonical/source/code scope
+pass; no new checker or local full-corpus rerun. PR359 passed both original
+checks and merged normally as `ae80c58441ff0a0385781fe74d3534754ba8e84e`;
+local and remote main were verified there. PR360/361 remain under their own
+original gates without restart or bypass. Park these Cambridge pages and
+failed study routes; genuinely new apparatus or witness evidence is required
+before reopening this selected question. The broader research goal stays active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -87,6 +87,14 @@ countermodel remains possible; source priority is open and POB unchanged.
 Next require target manuscript/correction evidence or a discriminating critical
 argument, not a repeat of these now-consulted apparatus pages.
 
+The [bounded image-access checkpoint](../sources/textual_restoration/discovery/samuel6_19_manuscript_access.2026-10-19.v1.json)
+now identifies Paris's exact digitization and Parma's analog-reproduction record,
+but acquires no target pixels. Oxford's search failed during a technical issue;
+Paris's viewer failed; Parma's inspected record exposed no usable digital images.
+These are not non-digitization findings. Preserve the conflicting attributed
+Paris date labels and dual foliation. Park the completed routes until access
+or target evidence changes; prefer other accessible portfolio work meanwhile.
+
 **October 19 Exodus original altar argument:** the
 [Bogaert follow-up](EXODUS_BOGAERT_ALTAR_ARGUMENT_2026-10-19.md) reads the actual
 altar table and contexts within a partial original preview. Lost Latin 35:15

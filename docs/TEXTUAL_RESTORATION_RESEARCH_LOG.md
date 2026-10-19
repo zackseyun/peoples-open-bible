@@ -16341,6 +16341,51 @@ not independently inspected before the stop. No discrepancy from the dossier
 alone is not a PASS. CI and independent review remain separate from source
 judgment; no merge or protection bypass follows from a pending or incomplete gate.
 
+## October 18 — Acquire the direct Vatican witness and audit reading limits
+
+The previous turn made progress by committing/pushing the HP and ancestry
+record, not by recovering a reading. This continuation rechecked PR338's same
+exact-head jobs117895857164 and117895844340: both were live, with no restart.
+A fresh reviewer received a bounded page set rather than the earlier large
+context. It returned PASS for central HP cross-pairings, the144→130 alias,
+four specified method pages and two catalogue identity payloads. Its unchecked
+article, appendix, date and Smith passages remain explicit. This does not
+rewrite the earlier incomplete review or certify every report claim.
+
+The [new direct-source pass](KINGS_6_VATICAN_DIRECT_SCAN_2026-10-18.md)
+followed Ra246's actual public catalogue to Vatican Greek1238. Public part2/3
+manifests and native image samples were acquired without access bypass; the
+current record reports1195 and Reigns232r–330v. Three part2 samples and four
+complete part3 openings were inspected, not the complete codex. A native
+crop and image-service dimensions were retained. Vatican reproduction rights
+keep photographs private; no image is committed or published.
+
+The independent reader first suggested a tentative chronology verb/location,
+but could not substantiate it with surrounding words after a native-coordinate
+check. Crop y225 plus region y600 is full-image y825, not y640; display scaling had
+been conflated with native pixels. The reader withdrew its identification.
+Root's tentative visual impression is not accepted either. No secure target
+verb, numeral, manuscript folio, hand or correction follows; the apparatus's
+480 remains an edition report. No generative reconstruction was used.
+The controlling method now adds neighboring-word anchoring and native crop
+mapping as explicit acceptance guards, with a contextless-fragment exception.
+
+The catalogue also lists the Testament of Job and Testaments of the Twelve
+Patriarchs. That is a comparative-study lead, not a new discovery or a canon
+decision from physical inclusion. Those text passages were not inspected.
+Stop repeating the same hard-to-read openings or magnifying existing pixels.
+Next require a sound target locator and legible source or an explicit critical
+collation. Source/English/canon and reader/publisher/About remain unchanged.
+The PDF skill supplied complete-image review; the documentation skill keeps
+the withdrawn claim and resulting evidence boundary auditable. Goal active.
+
+Root passed 47 unchanged canonical controls, two current method pins, two frozen
+predecessors, 14 private byte/hash assets, 760 local relative links and whitespace.
+The method's earlier hash is a historical baseline, not a claim that its new
+guard left the file unchanged. Canonical/code diff is empty and the protected
+unrelated Genesis file is untouched. These are documentary integrity checks,
+not a successful manuscript collation or public-reader delivery certification.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -66,6 +66,15 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 direct Vatican source acquisition:** the
+[Ra246 digitization check](KINGS_6_VATICAN_DIRECT_SCAN_2026-10-18.md)
+adds actual manuscript openings, but no secure target transcription. A
+tentative independent verb/location was withdrawn after a coordinate/context
+check. Keep 480 at edition-report status, not photograph-confirmed. Do not
+repeat these openings; require a verified locator with legible evidence or an
+explicit critical collation. The earlier central HP/alias claims now have a
+bounded independent PASS, distinct from this unsuccessful direct reading.
+
 **October 18 numeral–verb and witness-identity follow-up:** the
 [original HP apparatus and ancestry debate](KINGS_6_VERB_AND_WITNESS_ANCESTRY_2026-10-18.md)
 confirm reported cross-pairings and resolve historical-book 144 through the

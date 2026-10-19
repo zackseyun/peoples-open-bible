@@ -78,6 +78,15 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 19 Habakkuk survival and divine endurance:** the
+[Greek and tradition follow-up](HABAKKUK_1_12_GREEK_AND_TRADITION_2026-10-19.md)
+checks the actual historical Greek edition and a Hebrew deliverance expression,
+alongside opposing contextual arguments. Retain “We will not die” provisionally;
+neither a manuscript majority nor obligatory human immortality follows.
+McCarthy's original and complete local modern apparatus remain unread.
+Park these selected controls and failed routes; next require discriminating
+original tradition analysis or precise early versional collation. No reader change.
+
 **October 19 Deuteronomy altar and chosen place:** the
 [original-argument and Qumran-context test](DEUTERONOMY_27_CHOSEN_PLACE_2026-10-19.md)
 compares opposing altar histories and a future-anterior grammatical proposal.

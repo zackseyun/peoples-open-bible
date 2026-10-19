@@ -17,8 +17,10 @@ retain two failed feature-matching attempts. The subsequent
 passes its upper/middle navigation check and distinguishes a few additional
 shapes from the host's visible large letters. Its lower field fails coverage;
 the lower native crops yield no new accepted sequence. Original spectral
-measurements remain request-only, with a single-leaf request prepared but not
-sent. The published team's ink-offset recovery and TEI supplied words remain
+measurements remain request-only. The [single-leaf request](CODEX_H_DATA_REQUEST_DRAFT_2026-10-18.md)
+was submitted with user authorization on October 19; the site confirmed it was
+sent. Access and image delivery remain unconfirmed. The published team's
+ink-offset recovery and TEI supplied words remain
 distinct from any new POB reading. No Bible-text change follows from this pass.
 
 The [primary-source and Kyiv follow-up](CODEX_H_PRIOR_ART_AND_KYIV_2026-10-18.md)

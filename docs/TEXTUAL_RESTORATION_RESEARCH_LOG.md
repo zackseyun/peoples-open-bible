@@ -16798,6 +16798,56 @@ match the earlier copy; bounded correction searches found none, without
 claiming an exhaustive erratum census. Normal CI/main integration and website
 delivery remain separate. The full source-comparison goal stays active.
 
+## October 19 — Compare original Greek and Old Latin incense evidence
+
+The preceding goal turn made progress through the reviewed Exodus capacity
+control, committed/pushed as PR352. This continuation pursued its explicit
+direct-edition gap, rather than repeating its arithmetic. One bounded source
+scout acquired Ziegler's original Monacensis page images and notation; root
+checked those against complete Greek target pages and POB contexts. The first
+Ranke lead was corrected: his 1871 Würzburg edition is a different object,
+not a Monacensis edition. No new manuscript ink was deciphered.
+
+The [new comparison](EXODUS_INCENSE_GREEK_LATIN_CONTROLS_2026-10-19.md)
+verifies a Greek ordinary construction minus without erasing the later
+gold-altar placement. A separate Greek form reports construction with local
+dimension variants; G does not cover that unit, and c supplies the appendix
+text. Own keys, local availability and hand labels matter. The 5×5×3 dimensions
+match the Hebrew bronze altar, making assimilation a testable possibility,
+not an established copying event or a reason to adopt those dimensions.
+
+Ziegler's upright 40:5 text positively reports a golden incense-altar command;
+italic supplements in other damaged passages are not additional surviving
+letters. The editor's physical-loss notes prevent blanket omission claims.
+The institutional Wevers introduction was read directly: Latin104's explicit
+collation exclusions qualify apparatus silence, while its hand notation must
+not be imported into Cambridge. Dold's revised original remains unread after
+an ordinary route returned an HTML challenge; no bypass or revised-letter
+claim was made. The failed PDF download was not restarted; public original
+reader page images supplied the Ziegler evidence instead.
+
+One fresh independent factual reviewer gave SCOPED PASS on frozen report
+SHA256 `7c3cfc975c178c9edb774684adf7ac83eebcfa5cce39c6d7acf7073583280bc2`
+and [packet](../sources/textual_restoration/comparisons/exodus_incense_greek_latin.2026-10-19.v1.json)
+`4ca26db0006c7db7946254e8c7f376498de67f7fd2a5b158ba97d8a383e298d0`.
+It checked target pages/notation and all five repository/sixteen private pins;
+all 1,214 Exodus verse/source paths equal baseline. Root's JSON, hashes,
+local links, whitespace and unchanged canonical/source/code checks pass;
+protected Genesis work remains intact. No new checker or full-corpus rerun.
+
+The PDF skill supplied full-page/apparatus checks; the documentation skill
+keeps reported survival separate from reconstruction and historical inference.
+Retain Hebrew, English, notes and approval metadata provisionally. No new
+reader layout, canon inference or missing Hebrew reconstruction follows.
+Reopen for actual competing modern arguments, precise later Latin revisions
+or independent continuity evidence, not another vote on these same pages.
+
+Earlier PR350 passed both original CI jobs and merged at
+`51151926bef95525b7186d88383763524d175a37`; local/remote main and ordinary
+push were verified. PR351/352 jobs remained live during this work, without
+restart. Current documentation integration and public delivery remain separate.
+The broader source-comparison program is still active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

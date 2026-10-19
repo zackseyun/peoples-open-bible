@@ -46,6 +46,17 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 19 Exodus Greek/Old Latin control:** the
+[direct edition comparison](EXODUS_INCENSE_GREEK_LATIN_CONTROLS_2026-10-19.md)
+now distinguishes ordinary Greek construction omission from longer Greek
+construction reports and later altar placement. Its c-based appendix dimensions
+are not identical to the F report or Hebrew. Ziegler's actual Monacensis edition
+positively reports the golden incense-altar command, while damage/supplies
+limit other omission claims. Wevers explicitly excludes some Latin material
+from collation; silence is not agreement. Retain POB provisionally. Next seek
+the original competing modern arguments and later Latin revisions, not another
+reading of these acquired pages or the exhausted Dold/Winter routes.
+
 **October 19 Exodus tabernacle reconstruction control:** the
 [material-model audit](EXODUS_TABERNACLE_RECONSTRUCTION_CONTROL_2026-10-19.md)
 reads the previously unexamined terminal-length argument in Dayfani's 2023

@@ -17422,6 +17422,38 @@ and its remote SHA verified at `ae9e55685e78b98c3d1b90ea3e0032dc80cef3b7`.
 PR365's running checks were not restarted or bypassed. The larger research goal
 remains active; no new source acquisition or further judge loop was started.
 
+## October 19 — Test the king accusation against the connected rescue
+
+The previous turn made progress by committing and pushing the independently
+reviewed matched-source refinement at `fe1f5325a1f8135d5a13b23861b2a2b1b5a2c5b6`
+to existing PR367. It also recorded the user's reader-layout hold. This turn
+moves from selected general conclusions to Tucker's actual local38:9 argument
+and Birdsong's complete2017 author essay, without claiming the monograph read.
+The [royal-agency comparison](JEREMIAH_38_ROYAL_AGENCY_2026-10-19.md)
+checks eighteen current source/main-English/footnote records and actual Greek
+body/apparatus controls. Greek accusation of the king changes the rhetoric;
+retained inability, bread and rescue prevent an unqualified no-aid summary.
+Qmg plural/longer readings remain distinct from the printed body. Historical
+direction and lost Hebrew wording remain unresolved; retain POB provisionally.
+
+The PDF skill required complete relevant page/notes inspection; the repository
+documentation workflow preserves source limits and historical receipts. No
+image generation, source letters, English, note, approval, layout or canon change.
+PR365 was freshly confirmed merged with both exact-head checks successful;
+PR367's two new-head jobs were confirmed queued, not stopped or restarted.
+No additional acquisition agent or review of the previous review was opened.
+
+One fresh bounded factual review passed without corrections, checking all
+nineteen repository and three private pins, the eighteen selected records,
+complete relevant original pages/notes/apparatus and the full author essay.
+Report SHA256 `d077931d043671414e219d8fd33ea635fd1b67b1f062960f38044e5ce218934f`;
+packet SHA256 `37b62e59c7c8ecdbd3866d592ae0add1ae60ae97aa9cba154672046bb3a6a1fb`.
+Local JSON, pins, report links, protected Genesis hash and whitespace checks
+pass. Only four documentation/comparison files belong to this contribution;
+no corpus rerun is needed locally. Batch the connected result into existing
+PR367, with fresh exact-head CI still required, rather than open another
+stacked PR. The full corpus goal remains active, without a further judge loop.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

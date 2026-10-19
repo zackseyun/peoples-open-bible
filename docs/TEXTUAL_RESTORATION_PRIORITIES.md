@@ -111,6 +111,15 @@ explicit killing predicate. No whole-book profile or earlier Hebrew is proved.
 Frohlich's local39 analysis remains unread. Next require its actual derivation,
 modern local apparatus/correction history or adequately matched regional data.
 
+The [royal-agency comparison](JEREMIAH_38_ROYAL_AGENCY_2026-10-19.md)
+now checks Tucker's actual local38:9 argument and Birdsong's complete author
+essay against eighteen current records and Greek body/marginal controls. The
+Greek directly accuses the king, but also retains inability, bread and rescue
+controls. A sharper literary effect does not alone establish earlier Hebrew.
+Retain POB; next require local critical collation/correction history, direct
+Hebrew evidence or a discriminating construction test, not another vote on
+these selected sources. No reader change.
+
 **October 19 Habakkuk survival and divine endurance:** the
 [Greek and tradition follow-up](HABAKKUK_1_12_GREEK_AND_TRADITION_2026-10-19.md)
 checks the actual historical Greek edition and a Hebrew deliverance expression,

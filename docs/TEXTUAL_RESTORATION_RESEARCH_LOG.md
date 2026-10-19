@@ -83,6 +83,28 @@ remains: reuse the current footnote, preserve main verse wording and anchors,
 and add no panel, marker or separate publisher/reader implementation. Full
 reasoning stays in provenance and these Git records.
 
+### Jeremiah 10 reconstruction control 2026 10 19
+
+The [new original-argument and word-load check](JEREMIAH_10_RECONSTRUCTION_CONTROL_2026-10-19.md)
+finds that Adcock accepts the shorter 4Q71 arrangement while arguing for longer
+priority. The section was read through indexed original text, not a downloaded
+or visually inspected thesis. DJD's actual table and reconstruction distinguish
+an MT-wording calculation inside Greek layout from unchanged MT order. A direct
+written-WLC interval between adjacent published anchors has 66 tokens and 254
+letters before spacing; this is a conditional textual load, not an independently
+measured width or proof of literary direction. Keep source, English and the
+existing qualified note unchanged. Saley's original remains unread after three
+distinct alternate routes; the new client challenge was respected, not bypassed.
+The prior frozen dossier is not rewritten by this follow-up.
+
+A scoped independent review reproduced the full token array through direct
+OSIS parsing and checked DJD's complete target discussion, 18 current/baseline
+pins and four private assets. It could not reopen Adcock's target section after
+an initial indexed metadata/abstract read, so root's specific attribution is
+not represented as independently checked. Local JSON, whitespace, 722 document
+links and unchanged canonical/frozen/protected files passed. No corpus rerun
+or publication approval is inferred from these documentation checks.
+
 Current objective, reset 2026-10-12: investigate consequential unresolved questions
 about the Bible's earliest attainable texts and literary development, prioritizing
 the OT and extending to the NT where evidence warrants. Seek overlooked, unread

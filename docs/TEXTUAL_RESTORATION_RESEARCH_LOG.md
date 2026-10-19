@@ -17555,6 +17555,50 @@ evidence; do not infer Lundbom's reasoning from Terblanche's citation. The
 documentation skill preserves this consultation boundary. No canonical text,
 note, reader layout, source approval or canon decision changes.
 
+## October 19 — Compare the marriage endings and identify an import gap
+
+The preceding turn closed three original-commentary access routes and verified
+live CI. This turn's fresh exact-head checks both succeeded for PR367, which
+merged normally at `a029547e35025ead1578b3c0cd24cd572fb34e61`. Local main was
+fast-forwarded with an ancestry/CAS check and its ordinary remote push verified.
+The four-file release-law batch was merged with updated main and pushed
+separately in [PR368](https://github.com/zackseyun/peoples-open-bible/pull/368);
+its own new checks remain required. No old-head success is reused.
+
+The [Ezra/1 Esdras comparison](EZRA_10_MARRIAGE_ENDING_COMPARISON_2026-10-19.md)
+opens a consequential, previously unperformed source question while that batch
+validates. Root reads77 selected source/main-English records, both full target
+records, WLC's target XML, seven complete Greek pages/apparatus, and the stated
+original argument pages. One source scout independently acquires opposing
+Keil/Széchy arguments; root also reads their target pages. Oswald's emendation
+and Keil's contextual-clarification countermodel do not determine Hebrew
+priority. Birth and dismissal remain distinct POB texts, not silently harmonized.
+
+The PDF skill preserves complete target pages and notes; the documentation
+skill keeps original consultation, reported arguments and historical inference
+separate. Wooden's actual NETS introduction corrects the alignment JSON/README's
+unsupported certainty about Greek composition. Their alignment rows and lookup
+behavior remain unchanged and explicitly unverified comprehensively.
+
+The current POB chapter-ending sequence lacks the oath event visible in
+Swete8:92 and corroborated by NETS, amid divergent labels. This is a concrete
+corpus-integrity follow-up, not new ancient ink or proof of another literary
+form. Full chapter alignment and a separately reviewed exact source/English
+repair are required; current verses/notes and reader layout are unchanged.
+No canon addition, restoration acceptance or whole-program completion follows.
+
+One bounded independent factual review passed without corrections:79 current,
+two baseline and five private input pins,77 current source/main-English records,
+both complete target records, seven complete Greek pages and the specified
+original/NETS pages. Report SHA256
+`0a9742b6bc63434cb2a7ce30b87b04b48007ec0f10ad0335d0b6cb69eeeceddc`;
+packet SHA256 `079ead0f29e9d1b2178b22a3f9c2127854d2d6fe882bdee1ca9d04848f0c17c1`.
+Local checks reproduce all pins, preserve all15 alignment rows and the actual
+map-builder output, verify report links/whitespace and preserve the protected
+Genesis bytes. No local full-corpus rerun or further judge loop is needed for
+this metadata/documentation contribution. A separate read-only chapter-alignment
+diagnostic now addresses the demonstrated import gap before any verse repair.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

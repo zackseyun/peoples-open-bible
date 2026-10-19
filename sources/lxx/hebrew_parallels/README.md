@@ -85,12 +85,16 @@ transcription is likewise commercially licensed. Neubauer (1878)
 is the best Hebrew path we have access to under a clean license.
 Treat as reference, not Vorlage.
 
-**1 Esdras — MT alignment table (editorial, CC-BY 4.0).** 1 Esdras
-has no underlying Hebrew of its own — it was composed in Greek
-from Hebrew sources that survive in canonical 2 Chr, Ezra, and
-Neh. The alignment follows the standard table in NETS and
-Talshir's SBL commentary; the Hebrew text itself comes from our
-`sources/ot/wlc/` WLC corpus (PD).
+**1 Esdras — MT alignment table (editorial, CC-BY 4.0).** The supplied
+Hebrew is WLC parallel material, not a recovered source of Esdras A.
+[NETS's introduction](https://ccat.sas.upenn.edu/nets/edition/15-1esdras-nets.pdf)
+leaves translation from Hebrew-Aramaic versus Greek composition open.
+Keep Greek as the operative source and match actual clauses across
+edition-dependent verse numbers. The inherited table's ranges and approximate
+lookups are not a comprehensively verified alignment; the
+[October 19 comparison](../../../docs/EZRA_10_MARRIAGE_ENDING_COMPARISON_2026-10-19.md)
+records the local chapter-ending mismatch. The Hebrew text itself comes from
+our `sources/ot/wlc/` WLC corpus (PD).
 
 ## What is NOT in this directory
 

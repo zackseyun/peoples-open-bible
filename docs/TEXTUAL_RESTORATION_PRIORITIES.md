@@ -78,6 +78,17 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 19 Ezra and 1 Esdras:** the
+[marriage-ending comparison](EZRA_10_MARRIAGE_ENDING_COMPARISON_2026-10-19.md)
+distinguishes childbirth from explicit dismissal with children and checks
+opposing original arguments. Retain the distinct main texts provisionally.
+The alignment documentation's categorical Greek-composition claim is corrected;
+no Hebrew Vorlage is recovered. A concrete next task is the POB8:89–9:1
+boundary: the inspected sequence lacks the oath event in Swete/NETS8:92 and
+has divergent verse labels. Establish full chapter alignment before an exact
+source/English repair; do not overwrite8:92 blindly. Ancient-priority work
+needs actual modern apparatus or discriminating argument, not repeat pages.
+
 **October 19 Jeremiah release forms:** the
 [connected Hebrew/Greek/Latin comparison](JEREMIAH_39_RELEASE_FORMS_2026-10-19.md)
 confirms that Swete's main Greek connects 39:3 directly to14, without the fall

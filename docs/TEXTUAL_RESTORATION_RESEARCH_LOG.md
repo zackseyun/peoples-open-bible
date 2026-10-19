@@ -16620,6 +16620,52 @@ Corrected-head CI and actual public delivery remain unverified at this record;
 no unchanged-job restart, protection bypass or unrelated work deletion occurred.
 The full source program remains active.
 
+## October 19 — Repair two Letter of Jeremiah comparisons
+
+The [new source check](LETTER_JEREMIAH_69_70_SOURCE_CORRECTION_2026-10-19.md)
+found a bounded contribution rather than another historical-priority vote.
+Swete III, third edition 1905, printed 384/PDF 408, has a protective figure in
+verse 69 and a thorny shrub in verse 70. POB's malformed Greek had deleted the
+first comparison from its English and turned the second into another
+scarecrow. The selected print also lacks the article POB inserted before the
+corpse. Root checked both complete lines and apparatus against the actual
+page; root and one lexical scout read both complete primary LSJ entries.
+No modern English translation supplied the candidate wording.
+
+One fresh independent factual/application reviewer passed the frozen report,
+candidate, comparison packet, checker and workflow hashes. Root then applied
+the exact two-record YAML and final-corpus candidate. Five focused tests passed
+before and after application; the actual source loader and complete 72-verse
+export preserve all other 70 units and book metadata. The old source/English
+review bindings are archived, not inherited; records remain draft/needs-review.
+Raw page transcription, historical source receipts, all other Letter records
+and the protected Genesis work remain unchanged. The
+[application receipt](../sources/textual_restoration/applications/letter_jeremiah_69_70.2026-10-19.v1.json)
+records exact hashes, checks, the small initial test-assertion repair and limits.
+
+The user's inline-clutter concern constrains presentation: retain one short
+existing note per verse, with the protective-charm or buckthorn alternative.
+No new panel, inline scholarly block, publisher change or reader-layout code.
+These source/English repairs are not newly discovered ancient readings.
+
+Root and an access scout also read Thomas's 2008 complete public original
+article rendition, pages 547–562, including notes; the independent reviewer checked
+its original argument. Native PDF and original-language table typography were
+not acquired/verified. The argument challenges necessary dependence on the
+long Jeremiah form but does not uniquely identify a short Hebrew exemplar.
+Historical priority remains HOLD; no Jeremiah source letters or canon change.
+Ancient circulation, literary dependence and canonical authority stay separate.
+
+The practical approach refinement is source verification before source
+inference: agreement on corrupted pipeline output is not independent evidence.
+The PDF skill supplied the target-page check; the documentation skill keeps
+observations, inference, exact application and access limits in the Git record.
+Stop this bounded repair after verification rather than escalating it into
+autograph or canon claims. CI/main integration and live website delivery are
+separate from the local result. Earlier PR346 cleared both original jobs and
+merged at `619a05f9ed3e1d401a5b17bf977908be2efaf4e5`; local/remote main and
+ordinary push were verified there. The larger source-comparison program remains active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

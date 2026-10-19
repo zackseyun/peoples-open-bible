@@ -63,6 +63,20 @@ eight-page authorized BHQ sample and separate limited preview do not reach
 the Judges 6 target; repeat acquisition is not the next discriminating task.
 See the application receipt for local checks and publication status.
 
+The [original-argument countertest](JUDGES_6_COPYING_MECHANISM_2026-10-18.md)
+adds Ausloos's explicit shared-beginning skip and the editing study's admission
+that the cry repetition introduces, rather than concludes, the proposed addition.
+The two-letter cue can generate the shorter sequence conditionally but supplies
+no ancestor layout or transmission direction. One bounded factual review passes;
+source, main English and note stay unchanged. Park these acquired arguments
+until genuinely new target evidence appears, rather than repeating the model.
+
+A distinct accessible next comparison is 1 Samuel 10:1: chapter 6 of the newly
+acquired editing study is available, while the current POB record has the short
+commission. The Samuel pass documents do not cover this locus in the inspected
+search. Establish actual Greek/versional evidence and the strongest alternative
+before judging it; the chapter's title is not itself proof of omission.
+
 **October 18 direct Vatican source acquisition:** the
 [Ra246 digitization check](KINGS_6_VATICAN_DIRECT_SCAN_2026-10-18.md)
 adds actual manuscript openings, but no secure target transcription. A

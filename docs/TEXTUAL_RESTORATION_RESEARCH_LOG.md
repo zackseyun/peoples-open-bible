@@ -16497,6 +16497,41 @@ reader-note test step at the latest inspection, without restart or bypass.
 The local research date is October 18; the actual UTC receipt date is October 19.
 The full source-comparison program remains active.
 
+## October 18 — Test an explicit Judges copying mechanism
+
+The prior goal turn made concrete progress through the applied, reviewed and
+pushed reader note. This continuation confirmed all four original PR341/342
+CI handles still running and did not restart them. One bounded scout acquired
+two lawful original sources not found in the existing case records: the full
+Ausloos 2014 article and the publisher's complete Evidence of Editing. Root
+read all nineteen article pages and complete chapter 5, not the entire book;
+the PDF skill supplied full-page checks and the documentation skill separates
+the conditional model from historical claims.
+
+The [countertest](JUDGES_6_COPYING_MECHANISM_2026-10-18.md) confirms a possible
+eye return on the two-letter וי beginning, distinct from the previously tested
+cry ending and paragraph/blank-space alternatives. It qualifies categorical
+absence-of-trigger claims. The editing study also expressly qualifies the
+usual end-resumption analogy. Neither point establishes an actual copying
+event, dates the addition or determines historical priority. All nine QDR rows
+and direct WLC controls retain the distinction between surviving adjacent
+material and supplied arrival wording. A quick scout full-word attribution
+was corrected against the original page before being used.
+
+One fresh bounded independent factual review passed the exact report and
+pre-receipt packet with no correction, reproduced the five prefix coordinates
+and conditional junction, and checked both original arguments. Root separately
+verified four historical/current pins, six private assets and fourteen unchanged
+canonical controls. No source, main English, note, canon, reader/publisher code
+or frozen predecessor changes; the protected Genesis work remains untouched.
+This is an improved transmission argument, not a newly deciphered reading.
+The source program remains active; existing CI and delivery gates are separate.
+
+The newly acquired book also makes a distinct 1 Samuel 10:1 chapter available.
+A bounded search of current Samuel case records found no comparison at this
+locus; current POB has the short commission. Its actual source comparison is
+next, not another vote on the completed Judges arguments or an approved change.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

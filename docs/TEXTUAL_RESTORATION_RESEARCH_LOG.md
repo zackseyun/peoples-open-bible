@@ -16666,6 +16666,44 @@ separate from the local result. Earlier PR346 cleared both original jobs and
 merged at `619a05f9ed3e1d401a5b17bf977908be2efaf4e5`; local/remote main and
 ordinary push were verified there. The larger source-comparison program remains active.
 
+## October 19 — Verify Greek manuscript evidence for Ahaziah's age
+
+The prior turn made progress through the Letter of Jeremiah source/English
+repair, now committed and pushed as PR349. Its original CI jobs were confirmed
+live; no restart was attempted. This continuation pursued a specific remaining
+OT source gap rather than repeating the old Chronicles interpretation.
+
+The [new apparatus comparison](CHRONICLES_22_2_GREEK_APPARATUS_2026-10-19.md)
+directly verifies Greek twenty-two at 2 Chronicles 22:2 in multiple manuscript
+reports. One bounded acquisition scout obtained Cambridge II.3 (1932); root
+read the complete target page and its own key/conventions. Eleven reported
+manuscript identities are not eleven independent votes. Greek twenty remains
+attested; Kings' age unit gives twenty-two without a reported twenty alternative.
+No twenty-plus-twenty-two copying event is demonstrated. Curtis/Madsen's
+original target argument supports twenty-two as a probable correction; its
+actual scanned impression is 1952, despite the catalogue's 1910 label. CAL's
+Syriac target and edition metadata were read directly without its AI commentary.
+
+One fresh independent factual/application review passed the frozen candidate
+and evidence. Root applied the exact note/rationale candidate, retained WLC
+forty-two and all marked main English, and archived old approval bindings.
+Four focused checks passed before and after application, including the actual
+36-chapter/822-verse exporter: only note a at 22:2 changes. All other 821 raw
+verse files, note b, lexical explanations and original draft metadata remain
+unchanged. The [receipt](../sources/textual_restoration/applications/chronicles22_2_reader.2026-10-19.v1.json)
+records hashes, timing, scope and an additional reign-length limit: agreement
+on this age is not agreement on the whole Greek chronology. No reconstructed
+Hebrew numeral, new ancient reading, canon change or UI expansion is approved.
+
+The source-selection question remains unresolved; twenty-two is the leading
+correction candidate, not an adopted Hebrew reading. The concrete contribution
+is verified Greek attestation and an improved compact existing note, not another
+model vote. The PDF and documentation skills supplied page-level checks and
+separation of attestation, inference and application. Earlier PR348 passed both
+original jobs and merged at `d0e2939e4a88229b0770d81c9fa4161c62b83d34`; local
+and remote main plus ordinary push were verified. New candidate CI and live
+delivery remain separate. The full source-comparison goal remains active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

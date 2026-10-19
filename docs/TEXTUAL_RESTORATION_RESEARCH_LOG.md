@@ -17851,7 +17851,7 @@ checking the real inline marker. No general chapter spelling/translation
 approval or ancient-priority judgment follows from this boundary audit.
 
 Root verifies all33 current source fields equal the final-adjudicated layer,
-all33 canonical/11 historical-source pins, the original PDF, eight PNGs and the
+all33 canonical/11 historical-source pins, the original PDF, seven PNGs and the
 private diagnostic. Every one of5167 baseline codepoints is accounted once
 as retained, explicitly replaced or recoverably excluded;33 excluded points
 are the two pinned duplicate slices. No canonical file is removed. The existing
@@ -17893,6 +17893,37 @@ same-verse receipt snapshot. Application SHA256 is
 `6955b51e110a0174e46a59afafa12520545338869223f150f50abac8d31d4d82`.
 The next gate is that bounded completed review before replacement, not another
 same-evidence preference vote. PR371's fixed-head checks continue separately.
+
+## October 19 — Apply the independently reviewed Esdras6 repair
+
+One independent reviewer passes the exact application at checkpoint
+`9a04142b42e382e5a61b9f00c2b556e21b79fd55` with no blocking correction. It
+checks all four complete pages and apparatus,33 Greek units, eight active full
+records, exact5167-point ownership,11 prepared-file pins,14 historical/live
+pins,33 baseline file pins, the original PDF, seven pinned page images and
+diagnostic. The mutable log's earlier eight-image count is corrected to the
+actual seven-entry manifest; no reviewed artifact or source reading changes.
+The independent six live tests, both frozen six-test proofs and15 runner tests
+pass. Its acceptance is for this import/partition application, not whole-verse
+lexical accuracy, ancient priority, recovered Hebrew, canon or deployment.
+
+Root rechecks the frozen hashes and original24 receipt, then applies only
+1,8,9,10,24,26,30,31. All six post-application tests pass in15.929 seconds.
+A separate check verifies every actual record object and deterministic file
+hash and executes the live export: nine chapters/495 units,33 in chapter6.
+It confirms the foundation question, explicit building permission and prayer
+for the king's and sons' lives are present. No canonical file is deleted;
+both excluded duplicate slices remain recoverable in the source candidate,
+archived old source fields and immutable baseline. All487 unrelated surviving
+records, including every chapter5/8 record, remain byte-identical.
+
+The [delivery record](../sources/textual_restoration/comparisons/1esdras6_application_delivery.2026-10-19.v1.json)
+stores the completed review verbatim and all eight applied-file hashes.
+Record24's same-verse historical draft receipt is restored unchanged and
+expressly does not certify the correction. Historical source inputs and the
+protected Genesis file remain unchanged. Existing note routing is repaired;
+reader/publisher layout stays on hold. Ordinary commit/push and exact-head CI
+publication remain to be completed, separately from any website/CDN refresh.
 
 ## Later About-page summary — proposed, not published
 

@@ -88,6 +88,13 @@ copying-loss countermodel for4–13, not1–2 or a proven event. Retain POB
 provisionally. Next require actual Latin transition, modern local apparatus
 or original language-history evidence; no reader-layout expansion.
 
+The [original Latin edition follow-up](JEREMIAH_39_LATIN_EDITION_2026-10-19.md)
+now confirms both jumps within Ranke's single transcribed column and his
+explicit1–2-minus note. Verse15 remains dotted, not recovered. His `TAFRET`
+claim reports a codex reinspection, not merely a conjectural spelling, but is
+not new POB manuscript evidence. Attestation strengthens; Hebrew priority
+remains held. Close these printed controls and seek discriminating evidence.
+
 **October 19 Habakkuk survival and divine endurance:** the
 [Greek and tradition follow-up](HABAKKUK_1_12_GREEK_AND_TRADITION_2026-10-19.md)
 checks the actual historical Greek edition and a Hebrew deliverance expression,

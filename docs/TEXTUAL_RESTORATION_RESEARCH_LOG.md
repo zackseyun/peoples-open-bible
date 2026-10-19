@@ -17319,6 +17319,35 @@ remains active; this contribution does not claim comprehensive collation.
 Their documentation overlaps were subsequently resolved by retaining both
 records and pushing ordinary merge commits; their new heads require fresh CI.
 
+## October 19 — Check Jeremiah's Latin transition in Ranke
+
+The preceding turn made progress: the connected Jeremiah comparison passed
+bounded factual review and was committed/pushed as PR365. This turn inspected
+the actual original [Latin edition pages](JEREMIAH_39_LATIN_EDITION_2026-10-19.md),
+confirming both jumps within one transcribed column and Ranke's explicit
+1–2-minus note. His later `TAFRET` claim is a reported codex reinspection,
+not merely a proposed spelling. Verse15 remains dotted. This strengthens
+edition-level attestation without proving a Hebrew deletion or changing POB.
+
+The edition pages were accessed through the ordinary public reader after web
+open failed; observed images were retained privately, without acquiring a
+full PDF or new manuscript pixels. The PDF skill was loaded for the anticipated
+edition acquisition; the actual input was page images. The documentation
+workflow preserves the previous report as history and adds this source-specific
+refinement. No new acquisition scout, account creation, generative restoration,
+reader-layout expansion or restricted-route bypass was used.
+
+One fresh bounded factual review gave SCOPED PASS without corrections on
+report SHA256 `dca9b2a880991919c08cfd2c36acb574a78fbeb169e96857ede8240e76a9f3ad`
+and [packet](../sources/textual_restoration/comparisons/jeremiah39_latin_edition.2026-10-19.v1.json)
+`561cdcfa060e47e8a096adc13e28e0370ba769cd5201e421f6b84f68cbf8d7b1`.
+It checked all three complete page images, four repository/three private pins,
+unchanged protected Genesis and documentation-only scope. No consensus loop,
+new checker or local full-corpus rerun. JSON, links, pins and whitespace pass.
+PR363/364/365 were freshly confirmed mergeable with both exact-head checks
+still live; no jobs were restarted or gates bypassed. Their original study
+outputs remain unchanged, and the wider research goal remains active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -16926,6 +16926,39 @@ were verified. PR354's original jobs remained live during this work, without
 restart. Current exact-head CI, integration and public delivery remain separate
 gates. The full source-comparison goal remains active.
 
+## October 19 — Bound the Samuel numeral manuscript image routes
+
+The preceding goal turn made progress by identifying the actual published
+Hebrew/Greek numeral entries, committed/pushed as PR355. This follow-up tried
+to verify a reported seventy-only Hebrew witness in actual images. No target
+pixels were acquired. The [compact access checkpoint](../sources/textual_restoration/discovery/samuel6_19_manuscript_access.2026-10-19.v1.json)
+records completed Oxford, Paris and Parma routes without promoting the earlier
+edition reports to image readings. Oxford's technical problem is not a
+non-digitization finding. Paris's exact digitization/manifest was identified,
+but direct requests and its ordinary viewer failed. Parma's actual ARCA record
+lists analog reproductions; its empty image area and generic export dialog
+do not expose a usable digital target. No challenge bypass was attempted.
+
+Paris's BnF-derived Biblissima metadata has a different attributed date range
+from the modern lookup key, and distinguishes old/new foliation. Preserve
+those differences rather than silently changing the frozen report or using
+a folio number as a canvas index. Root checked the saved metadata and Parma
+record; one source scout handled the bounded Oxford/Parma acquisition routes.
+One short independent factual check gave SCOPED PASS on checkpoint SHA256
+`7c702721fc7dc631e09823e70d6df97fa1432bfa8cf87fe9819b41b909d0179d`,
+including two repository/six private pins. It did not independently reproduce
+the attributed HTTP/UI observations or adjudicate source priority.
+
+The documentation skill keeps temporary access failure distinct from textual
+absence. Root's JSON, pins, local links, whitespace, unchanged canonical/code
+scope and protected-Genesis checks pass; no new checker or local full-corpus
+rerun. No source, English, reader note, approval, layout or canon change.
+Park these completed routes until usable access or discriminating target
+evidence appears; prefer other accessible portfolio work meanwhile. This is
+a locator/metadata contribution and an unsuccessful image-verification attempt,
+not a newly recovered reading. PR355's original CI jobs remained live during
+the attempt, without restart. The broader source-comparison goal stays active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

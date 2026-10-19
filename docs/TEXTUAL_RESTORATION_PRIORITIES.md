@@ -90,13 +90,13 @@ apparatus or discriminating argument, not repeat pages.
 
 The pre-repair [chapter diagnostic](../sources/textual_restoration/comparisons/1esdras8_partition_diagnostic.2026-10-19.v1.json)
 traces two digital omissions despite all 92 numbers surviving. The
-[bounded repair](1ESDRAS_8_PARTITION_REPAIR_2026-10-19.md) is now applied locally:
+[bounded repair](1ESDRAS_8_PARTITION_REPAIR_2026-10-19.md) is merged in PR370:
 the purpose clause in8:25 and oath in8:92 are restored, 46 source/English/metadata
 records are routed and old approvals archived. Root corrects the scout's83/84
 boundary before the independent application review. That review otherwise
 passes with one requested lexical-rationale correction, now mechanically
-verified and applied. All six focused and14 related checks pass. Exact-head
-publication checks and ordinary merge are still required. This is not a new
+verified and applied. All six focused and14 related checks pass; both exact-head
+integrity checks passed before the ordinary merge. This is not a new
 ancient reading or full lexical approval of the chapter.
 
 The [chapter5 follow-up](../sources/textual_restoration/discovery/1esdras5_duplicate145.2026-10-19.v1.json)
@@ -104,11 +104,23 @@ verifies that stray145 exactly duplicates47; printed page145 places the text
 at V47. The extra record appears in adjudication, not parsed/ours-only data.
 The exporter therefore withholds the whole chapter. A temporary-copy probe
 excluding only145 restores70 chapter5 units, with every other chapter unchanged.
-The actual chapter5 is unchanged. Next complete its printed alignment and
-prepare a recoverable quarantine, source-loader and export checks; do not
-fabricate71–144 or rewrite frozen historical review evidence. Chapter8's repair
-does not certify the rest of the book. Reader/publisher layout remains on hold;
-the user's clutter concern is not authorization for new inline disclosure.
+The [reviewed chapter5 repair](1ESDRAS_5_PARTITION_REPAIR_2026-10-19.md) is now
+merged in PR371 after both exact-head integrity checks passed. It restores two
+lost entries and quarantines145 recoverably; the actual export has495 units.
+The [chapter6 application](1ESDRAS_6_PARTITION_REPAIR_2026-10-19.md) restores two
+clauses and life in the royal prayer, passes its independent review and27 focused
+checks after integration with main, and awaits both live integrity jobs in PR372.
+No website/CDN deployment follows from these Git transactions alone.
+
+The [chapter7 diagnostic](1ESDRAS_7_IMPORT_DIAGNOSTIC_2026-10-19.md) rejects
+the two preliminary boundary suspicions and confirms Coele-Syria in the print.
+It instead finds two inherited word-level import differences, including a
+different participle at7:6 that affects the current lexical explanation.
+Only those two corrections and the consequential English need a later exact
+application; no chapter7 text changes here. Stop the completed boundary screen.
+These scoped repairs do not certify the rest of the book. Reader/publisher
+layout remains on hold; the user's clutter concern is not authorization for
+new inline disclosure.
 
 **October 19 Jeremiah release forms:** the
 [connected Hebrew/Greek/Latin comparison](JEREMIAH_39_RELEASE_FORMS_2026-10-19.md)

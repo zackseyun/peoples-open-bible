@@ -12,11 +12,19 @@ from tools.enoch import build_restoration_queue as queue
 
 
 class EnochCompletenessTest(unittest.TestCase):
-    def test_primary_inventory_one_through_thirty_five(self):
+    def test_declared_primary_inventories(self):
         for chapter, expected in coverage.EXPECTED_VERSES.items():
             rows, _ = verse_parser.parse_chapter(chapter)
             self.assertEqual([row.verse for row in rows], list(range(1, expected + 1)), chapter)
         self.assertEqual(coverage.EXPECTED_VERSES[20], 7)
+        self.assertEqual(coverage.EXPECTED_VERSES[45], 6)
+
+    def test_chapter_45_sixth_unit_is_declared_but_not_complete(self):
+        row = coverage.audit([45])["chapters"][0]
+        self.assertEqual(row["expected_count_basis"], "declared_primary_inventory")
+        self.assertEqual(row["primary_source_verses"], 6)
+        self.assertEqual(row["missing_verse_numbers"], [6])
+        self.assertFalse(row["inventory_complete"])
 
     def test_missing_empty_and_primary_gaps_fail_inventory(self):
         with tempfile.TemporaryDirectory() as directory:

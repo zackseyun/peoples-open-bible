@@ -17925,6 +17925,57 @@ protected Genesis file remain unchanged. Existing note routing is repaired;
 reader/publisher layout stays on hold. Ordinary commit/push and exact-head CI
 publication remain to be completed, separately from any website/CDN refresh.
 
+## October 19 — Close the Esdras7 boundary screen and identify two word errors
+
+The [chapter7 diagnostic](1ESDRAS_7_IMPORT_DIAGNOSTIC_2026-10-19.md) checks all15
+current Greek/main-English units and the complete printed150, with apparatus
+and chapterVIII opening. One read-only agent challenges root's preliminary
+low-resolution boundary reading; both independently inspect the sharper
+non-generative240dpi render and confirm body8 before goats and11 before
+and all. Both boundary suspicions are withdrawn. Coele-Syria is also genuinely
+printed. No boundary moves, whole-clause restoration or removal is justified.
+
+Two genuine word differences remain:7:4 loses sigma from the printed decree
+noun, and7:6 imports a brought/presented participle where the print has the
+added form. Both are already wrong in raw transcription. Chapter7 has no
+parsed-AI artifact; regex/ours/final stages carry the forms into canonical
+records. The7:6 brought-back/returned English premise and current metadata
+need a separate exact application review. The attached approximate Hebrew
+festival excerpt supplies no independent support for that participle. No
+source, English, note, normalized corpus or frozen review artifact changes.
+
+Root verifies the diagnostic's SHA256, all stage/page/PDF pins,15-file manifest
+and all current/final Greek strings. The
+[diagnostic](../sources/textual_restoration/discovery/1esdras7_import_diagnostic.2026-10-19.v1.json)
+retains the rejected leads as well as positive findings. This is a bounded
+import contribution, not a new ancient reading or whole-book lexical approval.
+One independent reviewer passes the exact prepared diagnostic at0f99767de1,
+with no blocking correction. It independently checks the complete printed
+page/apparatus,15 current records, raw/ours/final trace,11 stage pins, chapter
+manifest, PDF and both images, plus the optional access receipt's saved assets.
+The [completed review](../sources/textual_restoration/comparisons/1esdras7_import_diagnostic_review.2026-10-19.v1.json)
+is retained verbatim. Root's scoped validation checks two JSON files,817 local
+links, all11 chapter6 reviewed-file pins, unchanged canonical/source/code and
+protected Genesis bytes. No whole-corpus tests are rerun for this diagnostic.
+The current priorities now distinguish chapter5/8's completed main merges
+from chapter6's fixed-head PR372, whose two integrity jobs remain live.
+
+### Bounded Ezekiel quotation-study access
+
+The consequential Ezekiel36–39 historical question stays unresolved. A new
+acquisition target is Finsterbusch's VT71(2021)329–351 quotation study,
+[DOI10.1163/15685330-00001108](https://doi.org/10.1163/15685330-00001108), not
+her already-read2020 chapter35 paper. The ordinary publisher route exposes
+abstract/access options only. A separate bounded agent checks Tuebingen's
+actual author/target search and exact-DOI query, then the official author's
+publications/bibliography route; neither supplies the original article.
+The [access receipt](../sources/textual_restoration/discovery/ezekiel_finsterbusch2021_access.2026-10-19.v1.json)
+retains exact routes, four private asset hashes and consultation limits.
+No target argument is read or inferred from the abstract. Park these specific
+routes until access changes; they do not warrant another source-priority vote
+or a Hebrew/English alteration. The separate chapter7 diagnostic is not a
+substitute for this larger historical question.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -108,6 +108,14 @@ claim a second blinded model pass occurred unless its actual output is stored.
   only its abstract; see the [4Q37 follow-up](PENTATEUCH_SOURCE_COMPARISON_PASS_4.md).
 - For a report from an edition, say **published reading**; for newly read
   pixels, give the image ID and region. Do not substitute one claim for the other.
+- Before accepting a target-specific image reading, anchor the clause with
+  securely readable neighboring words, or explain why a fragment has none.
+  Preserve native image dimensions and the crop origin/scale; map displayed
+  coordinates back to that source and keep canvas positions distinct from
+  manuscript folios. If context or coordinate checks fail, withdraw the target
+  identification rather than importing the apparatus's expected letters. The
+  [Vatican Kings check](KINGS_6_VATICAN_DIRECT_SCAN_2026-10-18.md) records such
+  a withdrawal; neither a crop request nor an enlargement supplies new ink.
 - Check errata, disputed fragment identifications, and later reassessments of
   decisive readings. A recent digital release date does not establish that
   earlier editorial claims have been revised. Record which arguments and

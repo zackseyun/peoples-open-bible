@@ -10,7 +10,7 @@ import xml.etree.ElementTree as ET
 from PIL import Image
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--folio", choices=["2v", "3r"], default="3r")
+parser.add_argument("--folio", choices=["2v", "3r", "40v", "41r"], default="3r")
 parser.add_argument("--work-dir", type=Path, required=True)
 parser.add_argument("--level", type=int, required=True)
 parser.add_argument("--box", type=int, nargs=4)

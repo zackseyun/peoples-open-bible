@@ -39,6 +39,22 @@ class CoordinateTests(unittest.TestCase):
         self.assertGreater(result["strong_median"], 2.5)
         self.assertFalse(result["gate_passed"])
 
+    def test_kyiv_identity_uses_native_overview_dimensions(self):
+        image = np.random.default_rng(1044).integers(0, 256, (1759, 1396, 3), dtype=np.uint8)
+        for region in ("upper", "lower"):
+            result = controls.measure_region(image, image, region, (1759, 1396, 3))
+            self.assertEqual(result["strong_count"], 35)
+            self.assertTrue(result["gate_passed"])
+
+    def test_wrong_dimensions_are_rejected(self):
+        with self.assertRaises(ValueError):
+            controls.measure_region(self.image, self.image, "upper", (1759, 1396, 3))
+
+    def test_incomplete_patch_grid_is_rejected(self):
+        image = self.image[:900]
+        with self.assertRaisesRegex(ValueError, "complete fixed patch grid"):
+            controls.measure_region(image, image, "lower", image.shape)
+
 
 if __name__ == "__main__":
     unittest.main()

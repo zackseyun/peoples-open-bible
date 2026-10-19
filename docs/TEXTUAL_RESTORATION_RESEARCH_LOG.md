@@ -16532,6 +16532,48 @@ A bounded search of current Samuel case records found no comparison at this
 locus; current POB has the short commission. Its actual source comparison is
 next, not another vote on the completed Judges arguments or an approved change.
 
+## October 19 — Compare Saul's commission and correct the Judges CI setup
+
+The previous goal turn made progress through an original-argument countertest
+and normal PR341 integration. Main was verified at merge
+`52483d36c2259bb56099202307521cafeb10ed00` locally and remotely, with ordinary
+push complete. This continuation confirmed the original PR342/343 jobs live
+before doing a distinct [1 Samuel 10:1 comparison](SAMUEL_10_1_COMMISSION_COMPARISON_2026-10-18.md),
+started locally October 18 and completed October 19.
+
+Root read the full editing-study chapter, Driver's original target and Keil's
+actual opposing discussion. One bounded source agent checked Greek/Latin and
+then the already acquired wider Cambridge apparatus; root separately inspected
+its actual target and conventions. The critical distinction is an obelized
+span, not an omitted speech. Latin is also feature-specific: the Clementine
+partial plus differs both from Greek and from the short Weber–Gryson text.
+Original Old Latin manuscript/edition and Pisano target access remain limited.
+No supplied Hebrew is promoted to surviving ink.
+
+Direct Hebrew tests confirm acceptable הלוא כי elsewhere and reproduce the
+particle problem for the simplest skip. Positive rescue/commission wording
+retained in the connected account qualifies a general anti-Saul deletion
+story. These are constraints on competing explanations, not proof of either
+history. One fresh factual review passed the exact report and pre-receipt
+packet, checked all cited original arguments and relevant apparatus, and
+reproduced the controls. Root passed 21 historical/current input pins,
+18 private assets and 18 unchanged canonical controls. POB source/main English,
+notes, canon and reader code remain unchanged; no corpus rerun is claimed for
+this documentary comparison. The PDF skill supplied page-level checks; the
+documentation skill keeps attestation, reconstruction and application separate.
+
+PR #342 job `117918280266` subsequently failed because the shallow checkout lacked
+the new test's pinned historical tree; no focused tests ran there. Actual logs
+were read, not inferred from the exit code. A separate
+[CI follow-up](../sources/textual_restoration/applications/judges6_reader_note_ci_followup.2026-10-18.v1.json)
+adds the exact baseline fetch and a regression assertion. All four focused
+tests pass locally in 14.280 seconds; canonical/candidate bytes remain identical.
+The correction was committed/pushed to PR342 and carried into PR343 and this
+descendant branch without rewriting the historical application receipt.
+Corrected-head CI and actual public delivery remain unverified at this record;
+no unchanged-job restart, protection bypass or unrelated work deletion occurred.
+The full source program remains active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -17976,6 +17976,49 @@ routes until access changes; they do not warrant another source-priority vote
 or a Hebrew/English alteration. The separate chapter7 diagnostic is not a
 substitute for this larger historical question.
 
+## October 19 — Prepare the two Esdras7 word corrections
+
+The [source-and-English application](1ESDRAS_7_WORD_REPAIR_2026-10-19.md)
+is now prepared for7:4/6 only. The source candidate retains all15 units and
+accounts for all1724 old codepoints, including whitespace, exactly once.
+It replaces only the printed decree noun and added participle. No boundary,
+Coele-Syria, repeated purification, other Greek wording or canonical ID changes.
+Root independently reproduces these constraints and the source stage pins.
+
+The English author compares passive added, idiomatic joined them and the old
+brought-back explanation using six stated criteria. The candidate provisionally
+chooses who had been added and notes joined them, preserving the unstated
+agent/complement rather than inserting a return journey. Actual primary LSJ
+entries are consulted through Scaife; root also checks their relevant forms
+and senses and retains both original HTML responses privately with hashes.
+Empty Logeion extraction is not counted as a lexical consultation. The7:4
+main words stay; its decree rationale and existing note anchors are corrected.
+Both complete records archive old source/English/decisions/review fields and
+retain their genuine historical draft receipts unchanged. Old approximate
+Hebrew parallels are archived, not treated as verified evidence for the word.
+
+The existing normalizer reproduces495 rows with only7:4/6 changed. The new
+live six-test suite passes before application, initially in14.760seconds and
+then in22.300seconds after strengthening every-codepoint ownership, exact
+two-unit export scope and active validation checks. The actual isolated full-book
+export remains nine chapters/495 units;493 unrelated canonical files and all
+current chapter5/6/8 records remain unchanged. Root's18 runner checks pass;
+the author runs all three unchanged historical six-test proofs, and root
+independently reruns the newly migrated chapter6 proof atc083d5b8. Those frozen
+tests validate their historical snapshots, not the live successor.
+
+The [evidence packet](../sources/textual_restoration/comparisons/1esdras7_application.2026-10-19.v1.json)
+binds10 prepared files,17 historical inputs,15 canonical baseline files and
+five private primary assets. Root verifies these pins,649 local links and the
+protected Genesis hash. Application SHA256 is
+`5cfc392312a24b7bf04558d90623f1a3aeffb2a1e07a8434a2f375a5e09a4f8c`;
+evidence SHA256 is
+`b9f23bd8cf5d122856c0305c28757c40aad8f0235624718c145b03aeda6801a6`.
+Both canonical records are still untouched. One independent full-application
+review is the next gate, distinct from the completed diagnostic review.
+Chapter6 PR372 and diagnostic PR373 retain their fixed publication heads.
+No new ancient-priority, Hebrew recovery, canon or reader-layout claim follows.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

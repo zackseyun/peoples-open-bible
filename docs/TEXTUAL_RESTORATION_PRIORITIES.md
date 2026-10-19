@@ -85,27 +85,30 @@ Preserve existing manuscript, application and publication safeguards.
 distinguishes childbirth from explicit dismissal with children and checks
 opposing original arguments. Retain the distinct main texts provisionally.
 The alignment documentation's categorical Greek-composition claim is corrected;
-no Hebrew Vorlage is recovered. A concrete next task is the POB8:89–9:1
-boundary: the inspected sequence lacks the oath event in Swete/NETS8:92 and
-has divergent verse labels. Establish full chapter alignment before an exact
-source/English repair; do not overwrite8:92 blindly. Ancient-priority work
-needs actual modern apparatus or discriminating argument, not repeat pages.
-The separate [chapter partition diagnostic](../sources/textual_restoration/comparisons/1esdras8_partition_diagnostic.2026-10-19.v1.json)
-now supplies a complete scout candidate map and two root-checked omissions:
-the8:25 purpose clause was lost at adjudication, and the8:92 oath was already
-lost at parsing. All92 numbers survived. Prioritize one exact source/English
-repair with notes, source-loader recurrence and export checks; the candidate
-map is not an applied correction or a token-level chapter collation. The
-[bounded repair](1ESDRAS_8_PARTITION_REPAIR_2026-10-19.md) now prepares the exact
-Greek/English application and normalized-source recurrence checks; finish this
-concrete correction before reopening another ancient-priority case. Reader and
-publisher layout remain on hold; the user's concern about clutter is not
-authorization for new inline disclosure.
-The actual export preflight also finds a pre-existing chapter5 defect: source
-and YAML contain1–70 plus145, so the exporter withholds that whole chapter.
-Next establish its complete printed alignment rather than deleting145,
-inventing missing units or claiming a complete book export. Chapter8's repair
-must preserve all unrelated outputs and does not certify the rest of the book.
+no Hebrew Vorlage is recovered. Ancient-priority work needs actual modern
+apparatus or discriminating argument, not repeat pages.
+
+The pre-repair [chapter diagnostic](../sources/textual_restoration/comparisons/1esdras8_partition_diagnostic.2026-10-19.v1.json)
+traces two digital omissions despite all 92 numbers surviving. The
+[bounded repair](1ESDRAS_8_PARTITION_REPAIR_2026-10-19.md) is now applied locally:
+the purpose clause in8:25 and oath in8:92 are restored, 46 source/English/metadata
+records are routed and old approvals archived. Root corrects the scout's83/84
+boundary before the independent application review. That review otherwise
+passes with one requested lexical-rationale correction, now mechanically
+verified and applied. All six focused and14 related checks pass. Exact-head
+publication checks and ordinary merge are still required. This is not a new
+ancient reading or full lexical approval of the chapter.
+
+The [chapter5 follow-up](../sources/textual_restoration/discovery/1esdras5_duplicate145.2026-10-19.v1.json)
+verifies that stray145 exactly duplicates47; printed page145 places the text
+at V47. The extra record appears in adjudication, not parsed/ours-only data.
+The exporter therefore withholds the whole chapter. A temporary-copy probe
+excluding only145 restores70 chapter5 units, with every other chapter unchanged.
+The actual chapter5 is unchanged. Next complete its printed alignment and
+prepare a recoverable quarantine, source-loader and export checks; do not
+fabricate71–144 or rewrite frozen historical review evidence. Chapter8's repair
+does not certify the rest of the book. Reader/publisher layout remains on hold;
+the user's clutter concern is not authorization for new inline disclosure.
 
 **October 19 Jeremiah release forms:** the
 [connected Hebrew/Greek/Latin comparison](JEREMIAH_39_RELEASE_FORMS_2026-10-19.md)

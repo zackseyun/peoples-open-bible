@@ -17684,6 +17684,59 @@ merged normally as `e0a4f02675b589c74322e97144fc2478eccff9f1`; local/remote main
 were verified at that merge. The Esdras application requires its own validation
 and publication; no refreshed website deployment is claimed.
 
+## October 19 — Apply the independently reviewed Esdras correction
+
+One independent review checks the exact 92-unit Greek partition, all 46 active
+records, nine complete printed pages, eight current and18 historical pins,
+private scan, receipt routing, source loader and real export. Its sole required
+change removes an unsupported verb derivation from the active rationale for
+`σταθὲν` at8:61. Root replaces that explanation with the contextual weighing
+sense and an explicit no-new-lexicon-consultation qualification. Deep JSON
+comparison proves that only this rationale changes in the English candidate
+and full application. The Greek and English strings remain unchanged. The
+[delivery record](../sources/textual_restoration/comparisons/1esdras8_application_delivery.2026-10-19.v1.json)
+retains the raw review, its conditional acceptance, the precise correction and
+actual applied-file hashes; no independent full re-review is invented.
+
+The 46 exact canonical replacements are applied locally. All six focused tests
+pass again, alongside five Letter of Jeremiah and nine reader-note regressions.
+Unrelated canonical files, historical raw/source layers and protected Genesis
+remain unchanged. Corrected application SHA256 is
+`f825ce3e15f576caec94c072fc5f0552ca179ab4ed0d09d4b76e767de29fb91c`;
+corrected evidence SHA256 is
+`3d265b6bca190e99e7c42ded454863be985eaf904f3c52012d54fac45df9ed60`.
+These are import/partition corrections, not newly discovered ancient readings,
+full lexical approval, a recovered Hebrew text or a canon decision. Publication
+still requires the exact new Git head's integrity checks and ordinary merge;
+reader/publisher layout and any separate website deployment are not changed.
+
+The preceding marriage-ending study and initial partition diagnostic retain
+their pre-repair snapshots and verse IDs. Resolve their pins at the recorded
+commits, not as assertions that the repaired live text still has those omissions.
+Do not rewrite an old receipt to make it describe a later correction.
+
+### Chapter5 duplicate diagnosis during the application review
+
+The [read-only follow-up](../sources/textual_restoration/discovery/1esdras5_duplicate145.2026-10-19.v1.json)
+shows exact Greek identity between5:47 and stray5:145. Parsed-AI chapter5 has
+exactly1–70; ours-only has no145; the adjudicated stream adds145 without source
+pages. Its rationale itself names printed page145 and Swete V47. Root renders
+and reads complete printed145–147/privatePDF163–165 non-generatively: the
+altar-preparation text is inline47,145 is the footer, and70 closes immediately
+before VI1. This bounds the introduction to the later processing layer; the
+specific code/model-internal cause is not yet established. Two different
+English drafts of identical copied Greek are not independent ancient witnesses.
+
+A real exporter probe in a temporary copy excluding only145 returns all nine
+chapters/495 units rather than eight/425. Its70 chapter5 units are contiguous
+and every other exported chapter is identical as structured data. Actual
+chapter5 and the historical source remain untouched. Next complete its printed
+alignment and prepare a recoverable duplicate quarantine with source-loader
+and export checks. Preserve/replay the chapter8 historical snapshot when later
+changing whole-book artifacts; do not fabricate71–144 or claim the other
+chapters are fully collated. The scan source remains unchanged, with no new
+manuscript reading or canon inference.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

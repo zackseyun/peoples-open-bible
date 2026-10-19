@@ -28,6 +28,12 @@ but its selected native strip yields no secure additional sequence. Website
 transcription absence is not novelty. Stop tuning that strip against expected
 wording; prioritize materially different measured data and capture provenance.
 
+The [October 19 public-screen limits](CODEX_H_PUBLIC_SCREEN_LIMITS_2026-10-19.md)
+add bounded previews of 44r, 71r and 77v, with no clearly attributable additional
+sequence selected for native reading. Omont's inspected 1889 plates depict
+different physical leaves, not the Paris two-line gap. Do not repeat these
+preview checks without a new discriminating source input; no new word is accepted.
+
 Session addition, 2026-10-13: pursue the bounded
 [AI manuscript recovery investigation](AI_MANUSCRIPT_RECOVERY_2026-10-13.md).
 It adds an executable spectral-image feasibility track and explicit completion

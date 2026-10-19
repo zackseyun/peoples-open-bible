@@ -16749,6 +16749,55 @@ check; no restart was made. This documentation's CI/main integration and
 any public website delivery remain separate from the factual result.
 The larger source-comparison program remains active.
 
+## October 19 — Audit the Exodus tabernacle reconstruction argument
+
+The previous goal turn made progress: the reign comparison was committed and
+pushed as PR351, while the earlier Letter of Jeremiah correction merged into
+main. This continuation confirmed specific original PR350/351 CI jobs live;
+none was restarted. The Samuel lot and Jeroboam narrative leads were checked
+against existing dossiers and not repeated. One bounded scout identified
+Exodus 35–40's material-reconstruction argument as a substantive unread target
+within an already acquired article, rather than a wholly new acquisition.
+
+The [new control](EXODUS_TABERNACLE_RECONSTRUCTION_CONTROL_2026-10-19.md)
+reads Dayfani's complete 2023 article and tests its previously unexamined
+terminal-length inference. Exact decimal arithmetic reproduces two intermediate
+sums but not footnote 29's explicit terminal series: 202.3 cm rather than
+printed 188. This flags numerical precision, not a newly measured scroll length
+or a refutation of the longer form. Secure material constraints and text-fitted
+distances remain distinct. No source, English, note or canon change follows.
+
+Complete published own-manuscript target rows distinguish 4Q22's partially
+preserved frame/table content from reconstructed surrounding words. In 4Q17,
+the Urim-making words survive in the transcription, but following Thummim and
+command wording are supplied. Root corrected a provisional fragment label
+against the actual table heading before freezing the packet: fragment 1 ii,
+not 2 ii. No manuscript pixels were newly deciphered. POB's existing 28:30
+instruction puts the objects into the breastpiece; its 39:21–22 fulfillment
+sequence lacks an explicit making clause. That local difference warrants
+comparison, not an inference about the objects' actual historical manufacture.
+
+One fresh independent factual/math reviewer gave SCOPED PASS on report SHA256
+`03f014274aae99e8e483c50616ce4d7052f4eadd7afdbf0a9ee049a31fd4c2be`
+and [packet](../sources/textual_restoration/comparisons/exodus_tabernacle_reconstruction.2026-10-19.v1.json)
+`882c271eaf855b985f916c13e152cede4a178803d2c21f76a2cd16823fde76a3`.
+It independently reproduced all sums, checked the printed figure/footnote and
+own-manuscript rows, verified all four input/seven private-asset hashes and
+confirmed all 1,214 tracked Exodus verse/source paths identical to baseline.
+Root's JSON, hash, local-link, whitespace and unchanged-scope checks pass;
+the protected Genesis bytes remain intact. No full corpus rerun or new checker
+is justified by this documentation-only contribution.
+
+The PDF skill supplied the complete-page numerical check; the documentation
+skill preserves the older limited incense consultation and separates inference
+from preservation. The priority queue now points to actual Greek/Old Latin
+wording and survival apparatus, not another model vote on these sums.
+Winter's original remains unread after distinct ordinary journal routes failed;
+Monacensis has not been independently collated. Current publisher PDF bytes
+match the earlier copy; bounded correction searches found none, without
+claiming an exhaustive erratum census. Normal CI/main integration and website
+delivery remain separate. The full source-comparison goal stays active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -87,6 +87,14 @@ existing choice wording provisionally; no reader change. The selected arguments
 are now closed controls. Next require actual local critical apparatus and
 relationships or new provenanced Hebrew, not another vote on these studies.
 
+The [historical apparatus follow-up](DEUTERONOMY_CHOICE_APPARATUS_2026-10-19.md)
+now confirms selected indicative verb reports in m/72, HP16 and Latin Lr,
+without reconstructing complete clauses or counting editions as copies.
+The current specialist catalogue dates 16 around 1300 with qualified alternatives,
+not automatically to the older eleventh-century attribution. Priority remains
+held. The actual modern target apparatus and authenticated Schenker originals
+remain unread; park these completed Cambridge pages and failed routes.
+
 **October 19 Psalm and Romans quotation chain:** the
 [Psalm 14 / Greek Psalm 13 comparison](PSALM_14_ROMANS_3_CATENA_2026-10-19.md)
 distinguishes the longer Greek text, omission and correction layers, and opposing

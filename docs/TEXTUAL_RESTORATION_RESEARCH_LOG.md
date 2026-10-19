@@ -17491,6 +17491,70 @@ heads' runs after the new head is verified; never cancel the latest required
 gates or reuse old-head success. No restart, workflow weakening or further
 judge loop is needed. The larger corpus goal remains active.
 
+## October 19 — Compare the release numeral with the connected laws
+
+The previous turn was a verified wait: PR367's current jobs were confirmed
+live at checkout/fetch and queued, not inferred stopped. This turn keeps its
+published head `04d2d625a32610d27fb41d3105ef9b18b25352d0` fixed while making
+a consequential connected source comparison. Two superseded3ac33 runs are now
+confirmed cancelled; the olderfe1f53 push job completed successfully, despite
+a lagging run status. No force-cancel or restart was used. Both latest jobs
+subsequently reached reader-note/consultation-policy tests.
+
+One bounded source-search agent acquired Terblanche's original2016 article.
+Root reads its complete14-page text and notes/bibliography, and views the six
+complete key pages alongside actual Greek context. The
+[release-law comparison](JEREMIAH_34_RELEASE_LAW_2026-10-19.md)
+reads49 current source/main-English records and the full34:14 record.
+It separates shared legal formulas, the article's interpretation, and unproved
+transmission direction. Greek six retains communal release/judgment; Hebrew
+itself specifies six service years. The seven-year formula also occurs in
+Deuteronomy31:10, limiting a unique15:1 locator inference. No restored letter,
+source/English/note, approval, reader or canon change follows.
+
+The PDF skill preserves complete relevant pages/notes; the documentation skill
+keeps original and reported scholarship distinct. Prepare the result locally
+without resetting PR367's running head. Its successful exact-head checks and
+ordinary merge remain required before another research push.
+
+One bounded independent factual review passed without corrections: all fifty
+repository/two private input pins, forty-nine current source/main-English
+records, the complete target record, full original article, six key article
+images and two complete Greek pages/apparatus were checked. Reviewed report
+SHA256 `2cba1f76dea90065894aabec2593bc59c3a36251c02651e6ee20d36eb280088c`;
+packet SHA256 `ab0e31ce8599ea0b069ff6ea51ed3eba94549effc5863da95066ae4245fab4ef`.
+Local JSON, pins, exact three-locus Hebrew formula, report links, whitespace
+and protected Genesis checks pass. Only four documentation/comparison files
+belong to this contribution; no local full-corpus rerun or further judge loop.
+The corpus goal remains active, not completed by this selected legal case.
+
+## October 19 — Bound the original release-numeral argument search
+
+The preceding turn was a verified CI wait. PR367's exact-head jobs
+118174626381 and118174603474 remain live in reader-note/consultation tests;
+the reviewed release-law contribution remains committed locally as
+`95f5d654bf1da4b19bdda30a98dd0c92d8797b85`, without another research push.
+
+One read-only scout tested three public routes for Lundbom's *Jeremiah21–36*
+(2004), p.563 and connected34:14 notes:
+[Google Books](https://books.google.com/books/about/Jeremiah_21_36.html?hl=en&id=SZbHzwEACAAJ&output=html_text)
+listed no preview and its direct opening returned403;
+[Open Library](https://openlibrary.org/works/OL3359092W/Jeremiah_21-36?edition=key:/books/OL3287688M&mode=all)
+offered catalogue/library/purchase routes, not readable original pages;
+[Faithlife/Logos](https://faithlife.com/store/product/41436/jeremiah-21-36)
+showed title/imprint, dedication and partial contents before an explicit
+limited-preview notice. The scout read zero pages of the target discussion;
+root has no newly acquired original argument to assess. No file was downloaded,
+account or purchase used, or access control bypassed. These are route-specific
+limits, not a claim that the commentary is inaccessible everywhere.
+
+Keep the frozen comparison and historical-priority HOLD unchanged. Record the
+exhausted routes here rather than create another case dossier or judge vote.
+Reopen for actual target pages, local critical collation or discriminating early
+evidence; do not infer Lundbom's reasoning from Terblanche's citation. The
+documentation skill preserves this consultation boundary. No canonical text,
+note, reader layout, source approval or canon decision changes.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

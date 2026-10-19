@@ -16219,6 +16219,71 @@ pins, 702 relative links and whitespace checks. Canonical/code diff is empty;
 the protected unrelated Genesis file is untouched. These checks are not CI,
 historical-priority or public-deployment certification.
 
+## October 18 — Compare the connected temple chronology
+
+The previous turn made progress through the committed Nabonidus control test,
+not a newly recovered reading. This continuation verified its same live jobs,
+without restart. PR334's two exact-head jobs were successful; fresh normal
+merge gates allowed merge 65d9f58b34440c9c239852c464695a12ecd66f20.
+Local main passed ancestry and worktree guards, advanced and was ordinarily
+pushed. PR335's separate jobs remained live when inspected; this is not a
+claim that it merged or that public Bible delivery changed.
+
+A bounded read-only inventory check rejected Habakkuk 2:4 as already completed
+and identified an unperformed connected
+[temple chronology comparison](KINGS_6_TEMPLE_CHRONOLOGY_2026-10-18.md).
+The Greek scout read the actual Kings target pages and inherited conventions;
+the original-study reader read all twenty-four pages of Smith's 2024 article.
+Root separately read source-only Hebrew linked units, the four complete Greek
+target pages, relevant key text, Smith's target discussion/tables/appendix and
+Meiser's actual target in a lawful publisher preview. The PDF skill required
+full relevant-page inspection, and the documentation skill separates their
+arguments from our countertests. No full-volume root reading is claimed.
+
+The linked dates do not explain the forty-year gap; palace duration and ordinal
+date groups cross the 440/480 groups. Explicit seven years must be distinguished
+from arithmetic inference and relocated/additional wording. The Greek forty-cubit
+length is architecture, not a forty-year interval. Smith's likely Old Greek
+440 and proposed original Hebrew 480 are different judgments. His jubilee
+argument retains unreplicated premises; Meiser's symbolic model supplies no
+observed revision event. Root also visually verified the appendix's printed
+eighty form differs from the cited apparatus form, qualifying its literal
+shared-letter illustration without disproving general contamination.
+
+The first WLC extraction lacked the OSIS namespace and returned no rows; the
+correct namespace yielded actual source text. No absence claim used the empty
+result. A legacy primary-row helper also retained stale row identity across
+4Q54 parallel rows, yielding 117 mixed entries. A strict active line-verse
+predicate instead isolated all 42 primary rows, which root read. Identified
+later Kings material is not a 6:1 number vote. The same strict predicate
+preserves the earlier Nabonidus counts of 70 and 20, so those frozen reports
+remain unchanged. A clipped broad Meiser extraction was not treated as a full
+chapter reading; complete target pages were separately retrieved and viewed.
+
+Source and main English remain unchanged; no canon, reader/publisher, About,
+new-ink or optimal-English claim follows. No modern English Bible supplied a
+draft. The packet pins current canonical inputs independently of historical
+source reports. Next seek a discriminating modern local apparatus or direct
+evidence, not repeated selected-text, symbolic or reviewer votes. The full
+program remains active, not complete.
+
+PR335's same exact-head jobs 117732838048 and 117732762258 subsequently
+completed successfully. Its fresh mergeability state was still unknown at
+the pre-commit checkpoint; no merge or protection bypass was attempted from
+that state. These running/completed observations are successive checkpoints,
+not restarted jobs or a public-delivery claim.
+
+One bounded independent factual review passed the exact frozen report and
+pre-receipt packet without consequential corrections. It checked the actual
+four Greek pages and keys, Smith's target/tables/appendix, Meiser's target,
+the genealogy and strict 4Q54 rows. The legacy mixed-row and prior Nabonidus
+rechecks, and current IOSCS guide, remain root-attributed rather than implied
+independent replications. Root separately passed 47 canonical/source controls,
+14 private byte/hash pins, two frozen predecessors, two method controls,
+703 relative links and whitespace checks. Canonical/code diff is empty and
+the protected unrelated Genesis file is untouched. No corpus-wide rerun was
+needed for four documentary files.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

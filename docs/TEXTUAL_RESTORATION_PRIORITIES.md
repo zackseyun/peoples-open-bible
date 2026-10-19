@@ -95,6 +95,39 @@ claim reports a codex reinspection, not merely a conjectural spelling, but is
 not new POB manuscript evidence. Attestation strengthens; Hebrew priority
 remains held. Close these printed controls and seek discriminating evidence.
 
+The [Jeremiah52 parallel control](JEREMIAH_52_PARALLEL_CONTROL_2026-10-19.md)
+tests an original Greek-abbreviation argument against actual Greek Kings and
+Jeremiah. The selected Jeremiah body lacks national-deportation clauses but
+still contains royal captivity and survivors; its Qmg layer is not conflated
+with the body. Local abbreviation is plausible, not a uniquely proven history.
+Joosten's original remains unread after bounded routes. Retain POB and require
+discriminating apparatus, ancestry or original language evidence next.
+
+The [matched-source and Greek-revision refinement](JEREMIAH_MATCHED_SOURCE_METHOD_2026-10-19.md)
+now consults selected Tucker2020 originals and Frohlich2022's actual opening
+preview. Three local controls distinguish matching units from near-parallels
+and differing Hebrew constructions; the Greek52:27 minus also includes the
+explicit killing predicate. No whole-book profile or earlier Hebrew is proved.
+Frohlich's local39 analysis remains unread. Next require its actual derivation,
+modern local apparatus/correction history or adequately matched regional data.
+
+The [royal-agency comparison](JEREMIAH_38_ROYAL_AGENCY_2026-10-19.md)
+now checks Tucker's actual local38:9 argument and Birdsong's complete author
+essay against eighteen current records and Greek body/marginal controls. The
+Greek directly accuses the king, but also retains inability, bread and rescue
+controls. A sharper literary effect does not alone establish earlier Hebrew.
+Retain POB; next require local critical collation/correction history, direct
+Hebrew evidence or a discriminating construction test, not another vote on
+these selected sources. No reader change.
+
+The [number-shift controls](JEREMIAH_NUMBER_SHIFT_CONTROLS_2026-10-19.md)
+now test a fixed annotation screen and actual Greek contexts. Greek retains
+mixed number and a plural command addressed to Zedekiah;37:18's singular is
+not grammatically compulsory. Other singular presentations, quotation changes,
+quantitative minuses and wrong morphology tags prevent an automatic profile.
+Retain historical HOLD; close these controls and require discriminating local
+collation/correction history or genuinely matched constructions next.
+
 **October 19 Habakkuk survival and divine endurance:** the
 [Greek and tradition follow-up](HABAKKUK_1_12_GREEK_AND_TRADITION_2026-10-19.md)
 checks the actual historical Greek edition and a Hebrew deliverance expression,

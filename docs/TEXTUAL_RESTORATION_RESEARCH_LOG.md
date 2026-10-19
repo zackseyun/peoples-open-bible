@@ -17348,6 +17348,149 @@ PR363/364/365 were freshly confirmed mergeable with both exact-head checks
 still live; no jobs were restarted or gates bypassed. Their original study
 outputs remain unchanged, and the wider research goal remains active.
 
+## October 19 — Test Jeremiah's shorter text against Kings
+
+The preceding turn made progress by verifying the original Latin edition and
+pushing reviewed PR366. This turn reads Fischer's complete original author
+manuscript, then tests its parallel-account argument against actual Swete
+Kings/Jeremiah pages and 40 current POB contexts in the
+[deportation comparison](JEREMIAH_52_PARALLEL_CONTROL_2026-10-19.md).
+The national-deportation minuses are real within the selected Greek body;
+royal captivity and agricultural survivors also remain. An undifferentiated
+“no exile” or universal-annihilation conclusion is not accepted. Agreement
+with Kings supports a countermodel, not three independent ancestral votes
+or proof of the translator's exact Hebrew. Retain POB provisionally.
+
+The PDF workflow checked complete target pages and notes visually; the
+documentation workflow preserves author arguments, own tests and read limits.
+The institutional bibliography resolves the deposit cover's inconsistent date
+labels without altering the source file. One bounded scout failed to acquire
+Joosten's original; metadata is not linguistic evidence. Park those routes.
+The initial wrong2-kings directory was corrected to actual2_kings before the
+complete16 Kings records were read; no empty result supplied a conclusion.
+No source, English, note, approval, reader-layout or canon change is made.
+
+One fresh bounded factual reviewer gave SCOPED PASS without corrections on
+report SHA256 `53b8501a136ccef946d8d1b3d3caadb8abe435f5d7d3f18ab0ac93d79c0cbd5c`
+and [packet](../sources/textual_restoration/comparisons/jeremiah52_parallel_control.2026-10-19.v1.json)
+`55d276b17308a130bdecdce54069288d987288a51e12c3fd2cdd4a9afe8800ac`.
+It checked the complete selected edition pages/apparatuses, original argument,
+all 40 contexts, seven repository/four private pins and protected Genesis.
+Local JSON, links, pins, whitespace and unchanged source/code scope pass.
+No consensus loop, new checker or local full-corpus rerun was needed.
+Fresh exact-head checks on PR363–366 remain live, with one PR364 check passed;
+no merge, restart or bypass was inferred from their running state. The larger
+research goal remains active and these selected controls are now closed.
+
+## October 19 — Separate translation from inherited source and Greek revision
+
+The preceding turn made progress by checking a concrete parallel-account
+countermodel and pushing reviewed PR367. This turn acquires Tucker's public
+2020 dissertation and an original Frohlich2022 preview, then applies their
+method distinctions to six current POB records in the
+[matched-source test](JEREMIAH_MATCHED_SOURCE_METHOD_2026-10-19.md).
+One lexical unit matches, one Hebrew construction differs, and one near-parallel
+has quantitative Greek minuses. The explicit killing predicate is also absent
+from the selected Jeremiah52:27 body; its survival implication is not inferred.
+These illustrations are not a statistical translation profile or new ink.
+
+The PDF workflow viewed complete selected original pages and notes. The
+documentation workflow adds a dated refinement to the approach review without
+rewriting historical receipts. One bounded scout obtained Frohlich's actual
+26-page preview; corrupt text extraction was replaced by visual reading, not
+invented wording. The full book, local39 derivation and2018 dissertation remain
+unread. Tucker's selected methods/conclusions are not a complete440-page audit
+or the2022 book. No source, English, note, approval, layout or canon change.
+
+Reader disclosure remains a separate design decision. The user cautioned that
+inline disclosure can look messy; that response is not approval to change the
+publisher or reader. Keep the current layout unchanged. Any later proposal
+should preview a compact, optional interaction before implementation, rather
+than insert expanded textual notes into the reading flow by default.
+
+One fresh bounded factual review returned a scoped pass without corrections:
+all eight repository and four private input pins match, the six canonical
+source/English records and protected unrelated Genesis file are unchanged,
+and the three controls preserve the stated consultation limits. Reviewed report
+SHA256 `c6f0e8a223409f620c8568c66cd7ae6263f0b65ab89c73f81d11e3824f89652e`;
+packet SHA256 `9dad8fdacb71059f6c4f98cfc84814ed512ff498951f0e35167996c5e4f6aad3`.
+Local JSON, input pins, report links and whitespace checks pass. This connected
+refinement joins existing PR367 rather than creating another stacked PR; the
+new head still requires fresh checks. During this turn, prior PR363, PR364 and
+PR366 passed their exact-head checks and merged normally; main was synchronized
+and its remote SHA verified at `ae9e55685e78b98c3d1b90ea3e0032dc80cef3b7`.
+PR365's running checks were not restarted or bypassed. The larger research goal
+remains active; no new source acquisition or further judge loop was started.
+
+## October 19 — Test the king accusation against the connected rescue
+
+The previous turn made progress by committing and pushing the independently
+reviewed matched-source refinement at `fe1f5325a1f8135d5a13b23861b2a2b1b5a2c5b6`
+to existing PR367. It also recorded the user's reader-layout hold. This turn
+moves from selected general conclusions to Tucker's actual local38:9 argument
+and Birdsong's complete2017 author essay, without claiming the monograph read.
+The [royal-agency comparison](JEREMIAH_38_ROYAL_AGENCY_2026-10-19.md)
+checks eighteen current source/main-English/footnote records and actual Greek
+body/apparatus controls. Greek accusation of the king changes the rhetoric;
+retained inability, bread and rescue prevent an unqualified no-aid summary.
+Qmg plural/longer readings remain distinct from the printed body. Historical
+direction and lost Hebrew wording remain unresolved; retain POB provisionally.
+
+The PDF skill required complete relevant page/notes inspection; the repository
+documentation workflow preserves source limits and historical receipts. No
+image generation, source letters, English, note, approval, layout or canon change.
+PR365 was freshly confirmed merged with both exact-head checks successful;
+PR367's two new-head jobs were confirmed queued, not stopped or restarted.
+No additional acquisition agent or review of the previous review was opened.
+
+One fresh bounded factual review passed without corrections, checking all
+nineteen repository and three private pins, the eighteen selected records,
+complete relevant original pages/notes/apparatus and the full author essay.
+Report SHA256 `d077931d043671414e219d8fd33ea635fd1b67b1f062960f38044e5ce218934f`;
+packet SHA256 `37b62e59c7c8ecdbd3866d592ae0add1ae60ae97aa9cba154672046bb3a6a1fb`.
+Local JSON, pins, report links, protected Genesis hash and whitespace checks
+pass. Only four documentation/comparison files belong to this contribution;
+no corpus rerun is needed locally. Batch the connected result into existing
+PR367, with fresh exact-head CI still required, rather than open another
+stacked PR. The full corpus goal remains active, without a further judge loop.
+
+## October 19 — Test number smoothing rather than assume it
+
+The preceding turn made progress by independently reviewing and pushing the
+connected royal-agency comparison at `3ac33bfe020938e57a456f633f7aca5e0f5038e2`
+to existing PR367. This turn tests a possible explanation rather than making
+another literary-preference judgment. A finite-verb-only preflight misses the
+target and catches a morphology-tag mismatch; the fixed suffix-plus-plural-verb
+screen yields13 annotation hits in the actual52-chapter/1,364-verse WLC XML,
+including another false singular tag on25:27's written plural suffix.
+Speech changes, quantitative minuses and explicit neighboring controls stay
+separate in the [number-shift comparison](JEREMIAH_NUMBER_SHIFT_CONTROLS_2026-10-19.md).
+Actual Greek permits mixed number and royal plural address; the target singular
+is not compulsory. Its historical origin remains unresolved, not decided by
+a statistical translator profile. Source and POB English remain unchanged.
+
+The PDF workflow checks complete relevant prints/apparatus; corrupted OCR is
+used for locators only. The documentation workflow preserves the failed
+preflight and explicit scope instead of promoting raw hits to evidence.
+Fifteen source/main-English records are read; no upstream annotation, corpus
+import, new checker, source letters, notes, approvals, reader layout or canon
+status changes. PR367's exact prior-head jobs are freshly verified queued,
+not inferred stopped or restarted. No additional source-acquisition agent is used.
+
+One bounded independent factual-method review passed without corrections,
+reproducing both screens and the complete disjoint partition, verifying both
+annotation mismatches, seventeen repository/one private input pins, all fifteen
+selected records and eight complete Greek pages/apparatus. Reviewed report
+SHA256 `8d7c69065e14d9ca295a47bf2a676105ea7df6d8358a462353a2b1b6d096be81`;
+packet SHA256 `560749f639fe46e21208645fa6d74197724fa99de507192cb617f38ab2f5ab01`.
+Local JSON, screen reproduction, pins, report links, whitespace and protected
+Genesis checks pass. Preserve all canonical and frozen comparison files.
+Batch this connected four-file contribution into existing PR367 rather than
+another stacked PR. To reduce redundant CI, cancel only known superseded
+heads' runs after the new head is verified; never cancel the latest required
+gates or reuse old-head success. No restart, workflow weakening or further
+judge loop is needed. The larger corpus goal remains active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

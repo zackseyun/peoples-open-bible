@@ -9,6 +9,23 @@ earlier work; it must not be described as an independent blind review.
 For the current continuation assessment, see the [2026-10-04 review](OT_SOURCE_COMPARISON_CONTINUATION_2026-10-04.md).
 The dated analysis below remains historical rather than a newly performed review.
 
+## October 19 refinement Greek revision and matched controls
+
+The [Jeremiah method test](JEREMIAH_MATCHED_SOURCE_METHOD_2026-10-19.md)
+adds an operational distinction for ancient translations. Label the selected
+units as matching Hebrew, near-parallels or source-mismatched constructions
+before using their Greek differences to infer translation technique. Verify
+the local Greek reading and correction layer; a printed body is not
+automatically unrevised Old Greek. Test ordinary translation, inherited source
+difference and later Greek revision separately, keeping contrary examples.
+
+A natural Greek phrase alone neither licenses large-scale abbreviation nor
+rules out partial revision. Shared features and directional patterns require
+an appropriate regional sample; three illustrative pairs do not supply a
+statistical profile. Modern authors' conclusions do not replace their local
+derivations or the actual apparatus. This supplements the comparison method
+without relabeling frozen receipts or lowering source/application gates.
+
 ## Assessment
 
 Keep the project and most of its infrastructure. The strongest achievement is

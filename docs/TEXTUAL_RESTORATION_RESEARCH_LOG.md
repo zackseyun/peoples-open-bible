@@ -16451,6 +16451,52 @@ or a public-reader Bible change. At the last inspected PR340checkpoint its push
 job had succeeded and pull-request job117901489323was still live in reader-note
 tests; no restart or protection bypass was attempted.
 
+## October 18 — Disclose the Judges 6 shorter form without extra inline clutter
+
+The user cautioned that inline disclosure can look messy; this is not blanket
+authorization for separate publisher or website-reader changes. The
+[exact application](JUDGES_6_READER_NOTE_2026-10-18.md) expands existing note b
+at 6:7, retaining its lexical alternative and both existing markers. It records
+the published shorter form, the partly reconstructed junction, and the dispute
+between earlier literary form and copying loss. Hebrew, full marked main
+English, note a and unrelated metadata remain unchanged. This is a qualified
+disclosure, not a newly deciphered variant, a main-text deletion or a decision
+on canon. The documentation skill keeps evidence, application and delivery
+claims separate; the PDF skill supplied the bounded preview-page check.
+
+The complete eight-page public BHQ distributor sample was text-inspected and
+its final commentary page visually checked. The actual text/apparatus ends at
+the beginning of 2:1 and commentary at part of 1:13. A separate authorized
+Logos/Biblia preview also contains only early chapter-one commentary. Neither
+provides the Judges 6 target; full BHQ and final DJD target access remain open.
+These are bounded access results, not new negative manuscript evidence.
+
+The first root export test failed because it patched only the Psalms-style
+path root and therefore reread unchanged live Judges files. Inspection found
+the canonical loader uses draft's path resolver. Patching that root too made
+the real temporary historical-book test pass: 618 units, with only note b's
+text/reason at 6:7 changed. No exporter implementation was altered to pass it.
+
+One fresh independent reviewer passed the exact candidate, contract, report,
+test and one-line CI integration. It checked all nine QDR primary rows and
+original-editor printed pages 6–7 and 11 against the proposed wording, verified
+the preservation/archive contract and independently passed four tests. It did
+not certify full BHQ/DJD, new photographs, dating, comprehensive witnesses,
+historical priority or the whole verse. No repeated consensus loop occurred.
+The exact reviewed candidate was then applied with old status, revision pass,
+cross-check and footnotes archived; active status remains draft/needs-review.
+The [receipt](../sources/textual_restoration/applications/judges6_reader_note.2026-10-18.v1.json)
+records actual live checks and separate pending delivery gates. Frozen source
+comparison records were not rewritten. No About integration was performed.
+
+The previous PR340's same two jobs both completed successfully. Fresh expected-
+head ordinary merge gates passed, producing merge
+`81bd1dc40a31536fbacd4c806a36bb2472ef9f97`; local and remote main were verified
+there and ordinary push completed. PR341's two original jobs remained in their
+reader-note test step at the latest inspection, without restart or bypass.
+The local research date is October 18; the actual UTC receipt date is October 19.
+The full source-comparison program remains active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

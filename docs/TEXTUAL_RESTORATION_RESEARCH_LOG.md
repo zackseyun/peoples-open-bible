@@ -17268,6 +17268,86 @@ original gates without restart or bypass. Park these Cambridge pages and
 failed study routes; genuinely new apparatus or witness evidence is required
 before reopening this selected question. The broader research goal stays active.
 
+## October 19 — Jeremiah's release and the limits of shorter-text priority
+
+The preceding turn completed the Habakkuk Greek/usage comparison as PR364,
+not a new Hebrew reading. This turn's [Jeremiah comparison](JEREMIAH_39_RELEASE_FORMS_2026-10-19.md)
+checks actual Swete pages against current POB contexts and a bounded original
+Bogaert discussion. The consequential difference is the royal authorization
+and intervening fall narrative, not a cosmetic English choice. Our Hebrew
+repeated-ending test supplies a concrete conditional loss alternative, while
+the extra reported Latin minus remains unexplained by that mechanism alone.
+Retain POB provisionally; no source, English, note, approval, layout or canon
+change. Reader clutter is a constraint, not permission to implement markers.
+
+The PDF workflow checked the complete Greek target pages visually; the
+documentation workflow separates edition text, attributed Latin reports,
+historical hypotheses and our test. Bogaert2013 pp225–229, including notes,
+were read, not the entire article. His illegible Latin verse15 is not new ink.
+One bounded source scout acquired the original discussion; exact cited Latin,
+modern apparatus and language-history targets remain unread. Close these
+selected pages and require discriminating new input before reopening.
+
+One fresh bounded factual reviewer required distinguishing Hebrew Ramah from
+Swete's main Greek Δαμαν and its apparatus variants. After that narrow fix,
+the same reviewer confirmed SCOPED PASS on report SHA256
+`304682be9475cc0e820bccf4e60ef20958c845e9d7f3caae0bf7eb96859dc8a6`
+and [packet](../sources/textual_restoration/comparisons/jeremiah39_release_forms.2026-10-19.v1.json)
+`e433e4e435d609cddac51051d15c2a1cd146c2f3aabb3903b577e363f14bead2`.
+All three repository and eleven private pins, 42 controls and the protected
+Genesis file passed. No new manuscript collation, source-priority approval or
+consensus loop. Local JSON, links, pins, whitespace and unchanged canonical/code
+scope pass; no new checker or local full-corpus rerun was needed.
+
+A compact Ezekiel access checkpoint also belongs in this log, not another
+large case report. The complete original [Bogaert1981 review, pp138–139](https://www.persee.fr/doc/scrip_0036-9772_1981_num_35_1_1210_t1_0138_0000_2)
+was read as public page text; the scout viewed both pages and root viewed138.
+It criticizes reliance on Ranke's folio placement and claims VL177 agrees
+with P967's order. Its author range38:6–26 is preserved, not silently equated
+with our selected Ranke38:8–14 labels. Initials are not automatic evidence of
+capitula ancestry. This short review supplies neither the missing1978
+reconstruction derivation nor a fresh physical join or36-minus proof.
+The Lust1981 ordinary JSTOR reader instead opened free-account registration;
+no account was created or gate bypassed, and the original remains unread.
+Park that anonymous route; this is not a universal unavailability claim.
+
+PR362 passed both original exact-head checks and merged normally as
+`8f51c8346c37b795a856d34a60c7d37e6a115c0e`; local main was synchronized,
+ordinary push returned up-to-date and remote main was verified there.
+PR363/364 remain subject to their own fresh normal gates. The wider goal
+remains active; this contribution does not claim comprehensive collation.
+Their documentation overlaps were subsequently resolved by retaining both
+records and pushing ordinary merge commits; their new heads require fresh CI.
+
+## October 19 — Check Jeremiah's Latin transition in Ranke
+
+The preceding turn made progress: the connected Jeremiah comparison passed
+bounded factual review and was committed/pushed as PR365. This turn inspected
+the actual original [Latin edition pages](JEREMIAH_39_LATIN_EDITION_2026-10-19.md),
+confirming both jumps within one transcribed column and Ranke's explicit
+1–2-minus note. His later `TAFRET` claim is a reported codex reinspection,
+not merely a proposed spelling. Verse15 remains dotted. This strengthens
+edition-level attestation without proving a Hebrew deletion or changing POB.
+
+The edition pages were accessed through the ordinary public reader after web
+open failed; observed images were retained privately, without acquiring a
+full PDF or new manuscript pixels. The PDF skill was loaded for the anticipated
+edition acquisition; the actual input was page images. The documentation
+workflow preserves the previous report as history and adds this source-specific
+refinement. No new acquisition scout, account creation, generative restoration,
+reader-layout expansion or restricted-route bypass was used.
+
+One fresh bounded factual review gave SCOPED PASS without corrections on
+report SHA256 `dca9b2a880991919c08cfd2c36acb574a78fbeb169e96857ede8240e76a9f3ad`
+and [packet](../sources/textual_restoration/comparisons/jeremiah39_latin_edition.2026-10-19.v1.json)
+`561cdcfa060e47e8a096adc13e28e0370ba769cd5201e421f6b84f68cbf8d7b1`.
+It checked all three complete page images, four repository/three private pins,
+unchanged protected Genesis and documentation-only scope. No consensus loop,
+new checker or local full-corpus rerun. JSON, links, pins and whitespace pass.
+PR363/364/365 were freshly confirmed mergeable with both exact-head checks
+still live; no jobs were restarted or gates bypassed. Their original study
+outputs remain unchanged, and the wider research goal remains active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

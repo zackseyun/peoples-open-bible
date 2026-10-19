@@ -78,6 +78,23 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 19 Jeremiah release forms:** the
+[connected Hebrew/Greek/Latin comparison](JEREMIAH_39_RELEASE_FORMS_2026-10-19.md)
+confirms that Swete's main Greek connects 39:3 directly to14, without the fall
+narrative and explicit royal release order; its apparatus preserves a longer
+layer. Reported VL177 additionally lacks1–2, while its verse15 is illegible,
+not recovered from ink. A repeated Hebrew ending supplies a conditional
+copying-loss countermodel for4–13, not1–2 or a proven event. Retain POB
+provisionally. Next require actual Latin transition, modern local apparatus
+or original language-history evidence; no reader-layout expansion.
+
+The [original Latin edition follow-up](JEREMIAH_39_LATIN_EDITION_2026-10-19.md)
+now confirms both jumps within Ranke's single transcribed column and his
+explicit1–2-minus note. Verse15 remains dotted, not recovered. His `TAFRET`
+claim reports a codex reinspection, not merely a conjectural spelling, but is
+not new POB manuscript evidence. Attestation strengthens; Hebrew priority
+remains held. Close these printed controls and seek discriminating evidence.
+
 **October 19 Habakkuk survival and divine endurance:** the
 [Greek and tradition follow-up](HABAKKUK_1_12_GREEK_AND_TRADITION_2026-10-19.md)
 checks the actual historical Greek edition and a Hebrew deliverance expression,

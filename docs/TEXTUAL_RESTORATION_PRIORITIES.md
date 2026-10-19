@@ -66,6 +66,15 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 18 connected temple chronology:** [Kings 6–9](KINGS_6_TEMPLE_CHRONOLOGY_2026-10-18.md)
+now compares actual numeral, date placement, seven-year expression, palace
+duration/date and combined twenty-year entries. The 440/480 and palace groups
+cross; no uniform forty-year revision follows. Original Smith and Meiser
+arguments remain distinct from the chronology and copying countertests.
+Retain Hebrew and English provisionally; working Greek 440 does not establish
+earliest Hebrew or an Exodus date. Seek actual modern Antiochene target evidence
+or another discriminating input, not another vote on these completed pages.
+
 **October 18 Nabonidus grammar controls:** [the three actual Aramaic passages](NABONIDUS_ARAMAIC_SYNTAX_CONTROLS_2026-10-18.md)
 confirm separate object pronouns in two specific settings and a recipient with
 the forgiveness verb in Job. They do not decide the prayer's agent or independently

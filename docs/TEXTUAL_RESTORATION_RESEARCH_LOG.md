@@ -17737,6 +17737,94 @@ changing whole-book artifacts; do not fabricate71–144 or claim the other
 chapters are fully collated. The scan source remains unchanged, with no new
 manuscript reading or canon inference.
 
+## October 19 — Restore the omitted Esdras family entries
+
+The chapter5 scout completes a printed-unit map against all71 current source
+and main-English records. Root and the source author each read all seven full
+printed pages141–147/PDF159–165 with apparatus and adjoining chapter context.
+The [source candidate](../sources/textual_restoration/candidates/1esdras5_source_partition.2026-10-19.v1.json)
+adds two omitted family entries, moves the Tobeis clause from29 into28 and the
+naming clause from39 into38, and preserves exact slices of all70 surviving
+units. The complete raw/parsed/ours/final trace shows both missing entries
+surviving through ours-only and absent by final adjudication. All71 canonical
+Greek strings equal that final stream. No specific internal model cause is
+established.
+
+Direct image checking corrects two initial scout transcriptions rather than
+promoting them to authoritative evidence. Charme's main-body number is217,
+not1017; Swete's apparatus reports A with “thousand,” yielding1017, for the
+second “two hundred.” The source author's reread also corrects Basalem to
+`Βασαλέμ`, not `Βασαλήμ`. The earlier private diagnostic remains unchanged and
+hash-bound as history; the current candidate records its corrections. Main
+body, apparatus report and modern transcription remain distinct. This is not
+a direct manuscript-A collation, an ancient-priority decision or recovered
+Hebrew.
+
+The [complete six-record application](../sources/textual_restoration/candidates/1esdras5_application.2026-10-19.v1.json)
+restores the two entries in English, routes clause-specific notes and active
+decisions, archives misleading approximate Hebrew comparisons and old review
+fields, and retains genuine draft receipts unchanged. Old approvals do not
+certify the replacements. Extra145 is an exact Greek duplicate of47, not an
+independent witness. Its full canonical YAML is copied byte-for-byte into
+[recoverable quarantine](../sources/textual_restoration/quarantine/1esdras5_duplicate145.2026-10-19.v1.yaml)
+before any removal from the active chapter.
+
+The existing source normalizer reproduces495 units, preserves chapter8 and
+rejects drift in both the historical file and supplied input records. Six new
+preflight tests pass against the exact candidate. The actual exporter in an
+isolated full-book copy changes from eight chapters/425 units to nine/495;
+all70 chapter5 IDs are contiguous, both entries are restored, and the other
+eight chapter outputs are identical. Separate live assertions protect all489
+unrelated surviving YAML files, including all92 chapter8 records. Excluding145
+alone would satisfy numbering but leave the two omissions and boundaries wrong.
+
+Chapter8's original six tests run unchanged at checkpoint756074b with original
+baseline97194d; old evidence and496-record expectations are not repinned to
+approve the new state. Root reproduces that six-test replay,12 replay-runner
+checks and37 reader-note checks. One independent reviewer receives the exact
+[chapter5 evidence packet](../sources/textual_restoration/comparisons/1esdras5_application.2026-10-19.v1.json),
+SHA256 `d5118ca438d63ee2026301ff45f86974e7fe9f0a57741c2d9a554cafd50f1243`,
+before canonical replacement. The [repair report](1ESDRAS_5_PARTITION_REPAIR_2026-10-19.md)
+and [approach refinement](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md)
+explain these import-completeness controls. Reader/publisher layout stays on
+hold; no new disclosure system is implemented.
+
+During preparation, PR370's two exact-head integrity checks both complete
+successfully. It merges normally as `8fcd8dcda4ebb88d2b2bf8efafa5af88aec14a88`;
+local main, origin/main and the live remote main ref are verified at that
+commit, and the ordinary main push reports up to date. That publishes the
+preceding chapter8 repair in Git, not the pending chapter5 application or a
+separate website/CDN refresh. The broader source-comparison goal remains open.
+
+## October 19 — Apply the reviewed Esdras5 repair
+
+One independent reviewer passes the exact chapter5 application with no
+correction required. It checks all seven complete pages and apparatus, all70
+Greek units, the six complete records' active fields,12 prepared-file pins,
+21 historical/live pins,71 canonical baseline pins and private-source/image
+hashes. Its separate six-test live run and six-test immutable chapter8 replay
+both pass. This approves the specified import repair, not whole-verse lexical
+accuracy, ancient priority, recovered Hebrew, canonical authority or deployment.
+
+Root verifies the frozen evidence and baseline hashes again, then applies
+exactly25,28,29,31,38,39 and removes redundant145 from the active chapter. Its
+complete original YAML remains byte-identical in recoverable quarantine, SHA256
+`df89390df4567d111ff938bd53dee403b5a56b02fd8c2f3a1a31061f106d8d97`.
+All six post-application tests pass in15.579 seconds. A separate actual-file
+check verifies every replacement's complete object and deterministic bytes,
+and executes the live whole-book exporter: nine chapters,495 units,70 in
+chapter5. The test protects all489 unrelated surviving YAML records, including
+all92 chapter8 records. Historical source layers and protected Genesis remain
+unchanged; the old high review labels do not certify the replacements.
+
+The [delivery record](../sources/textual_restoration/comparisons/1esdras5_application_delivery.2026-10-19.v1.json)
+preserves the completed independent report verbatim, its exact evidence hash,
+all six actual applied-file hashes and the recoverable duplicate locator.
+The prepared checkpoint is `a7fb0c3db6bb01f0e792e4f5ea0562d81c3c01e4`;
+Greek, English, application and evidence hashes remain unchanged after review.
+Publication still requires the new head's ordinary integrity checks and merge.
+No reader layout or separate website/CDN deployment is changed.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

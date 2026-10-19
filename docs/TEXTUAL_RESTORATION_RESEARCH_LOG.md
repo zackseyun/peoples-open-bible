@@ -17382,6 +17382,46 @@ Fresh exact-head checks on PR363–366 remain live, with one PR364 check passed;
 no merge, restart or bypass was inferred from their running state. The larger
 research goal remains active and these selected controls are now closed.
 
+## October 19 — Separate translation from inherited source and Greek revision
+
+The preceding turn made progress by checking a concrete parallel-account
+countermodel and pushing reviewed PR367. This turn acquires Tucker's public
+2020 dissertation and an original Frohlich2022 preview, then applies their
+method distinctions to six current POB records in the
+[matched-source test](JEREMIAH_MATCHED_SOURCE_METHOD_2026-10-19.md).
+One lexical unit matches, one Hebrew construction differs, and one near-parallel
+has quantitative Greek minuses. The explicit killing predicate is also absent
+from the selected Jeremiah52:27 body; its survival implication is not inferred.
+These illustrations are not a statistical translation profile or new ink.
+
+The PDF workflow viewed complete selected original pages and notes. The
+documentation workflow adds a dated refinement to the approach review without
+rewriting historical receipts. One bounded scout obtained Frohlich's actual
+26-page preview; corrupt text extraction was replaced by visual reading, not
+invented wording. The full book, local39 derivation and2018 dissertation remain
+unread. Tucker's selected methods/conclusions are not a complete440-page audit
+or the2022 book. No source, English, note, approval, layout or canon change.
+
+Reader disclosure remains a separate design decision. The user cautioned that
+inline disclosure can look messy; that response is not approval to change the
+publisher or reader. Keep the current layout unchanged. Any later proposal
+should preview a compact, optional interaction before implementation, rather
+than insert expanded textual notes into the reading flow by default.
+
+One fresh bounded factual review returned a scoped pass without corrections:
+all eight repository and four private input pins match, the six canonical
+source/English records and protected unrelated Genesis file are unchanged,
+and the three controls preserve the stated consultation limits. Reviewed report
+SHA256 `c6f0e8a223409f620c8568c66cd7ae6263f0b65ab89c73f81d11e3824f89652e`;
+packet SHA256 `9dad8fdacb71059f6c4f98cfc84814ed512ff498951f0e35167996c5e4f6aad3`.
+Local JSON, input pins, report links and whitespace checks pass. This connected
+refinement joins existing PR367 rather than creating another stacked PR; the
+new head still requires fresh checks. During this turn, prior PR363, PR364 and
+PR366 passed their exact-head checks and merged normally; main was synchronized
+and its remote SHA verified at `ae9e55685e78b98c3d1b90ea3e0032dc80cef3b7`.
+PR365's running checks were not restarted or bypassed. The larger research goal
+remains active; no new source acquisition or further judge loop was started.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -103,6 +103,14 @@ with the body. Local abbreviation is plausible, not a uniquely proven history.
 Joosten's original remains unread after bounded routes. Retain POB and require
 discriminating apparatus, ancestry or original language evidence next.
 
+The [matched-source and Greek-revision refinement](JEREMIAH_MATCHED_SOURCE_METHOD_2026-10-19.md)
+now consults selected Tucker2020 originals and Frohlich2022's actual opening
+preview. Three local controls distinguish matching units from near-parallels
+and differing Hebrew constructions; the Greek52:27 minus also includes the
+explicit killing predicate. No whole-book profile or earlier Hebrew is proved.
+Frohlich's local39 analysis remains unread. Next require its actual derivation,
+modern local apparatus/correction history or adequately matched regional data.
+
 **October 19 Habakkuk survival and divine endurance:** the
 [Greek and tradition follow-up](HABAKKUK_1_12_GREEK_AND_TRADITION_2026-10-19.md)
 checks the actual historical Greek edition and a Hebrew deliverance expression,

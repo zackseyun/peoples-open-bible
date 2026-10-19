@@ -17154,6 +17154,43 @@ Close these selected arguments; require actual local apparatus/relationships
 or new provenanced Hebrew before another source-priority vote. The broader
 research goal remains active and the reader stays uncluttered.
 
+## October 19 — Test Habakkuk survival against Greek and contextual objections
+
+The preceding turn made progress by merging PR361 and recording the unresolved
+11Q7 material crosswalk. This turn left those routes parked and completed a
+[Habakkuk 1:12 follow-up](HABAKKUK_1_12_GREEK_AND_TRADITION_2026-10-19.md).
+Actual Swete target/apparatus and appendix pages now establish the edition's
+first-person plural, not a uniform all-Greek census or surviving Hebrew prefix.
+An actual WLC Psalm 118 context counters obligatory immortality as the meaning
+of negated dying without deciding Habakkuk's textual history.
+
+One bounded scout exhausted McCarthy original-acquisition routes, then read an
+accessible independently authored thesis section. Root read that complete
+section and the opposing author's complete public article, separating arguments
+from unchecked versional claims and conjectural repairs. No target content was
+attributed to an inaccessible original. The PDF workflow checked complete target
+pages and footnotes visually; the documentation workflow preserves the earlier
+report and distinguishes our inference from published readings.
+
+Retain POB's source and English provisionally; the existing qualified note,
+approval, layout and canon remain unchanged. No generated image or newly
+deciphered letter is evidence here. Park these completed controls and failed
+routes rather than repeat a preference vote. The broader research goal remains
+active; this bounded result does not close book-wide or all-source comparison.
+
+One fresh bounded factual reviewer passed the exact report SHA256
+`a9e1a9fb344c4e6366f0a3c5b531ff27112e6c0ca8e75ee0ec9236cfbecec095`
+and [packet](../sources/textual_restoration/comparisons/habakkuk1_12_greek_tradition.2026-10-19.v1.json)
+`a5eb651fc8bf33f786a658c350e2b4b67c0110109971ba583031cf643906c7bb`.
+It verified three repository/four private pins, the actual target pages,
+contextual controls and unchanged protected Genesis bytes. No consensus loop
+or specialist approval. Local JSON, pins, relative links, namespace-aware OSIS
+selection, whitespace and unchanged canonical/source/code scope pass. An initial
+unqualified XML selector returned no verses and was corrected to the actual
+OSIS namespace; no empty result was used as evidence. The default Python lacked
+YAML, so the successful context check used the repository environment. No
+local full-corpus rerun is claimed; integration remains subject to CI.
+
 ## October 19 — Bound the remaining 11Q7 material access
 
 The preceding display discussion made no research progress. This turn checked

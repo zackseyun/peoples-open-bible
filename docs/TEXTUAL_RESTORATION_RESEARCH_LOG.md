@@ -17115,6 +17115,45 @@ PR358/359 remain subject to their own fresh normal gates. The broader goal
 remains active; reader clutter remains a constraint, not authorization for
 publisher or reader code expansion.
 
+## October 19 — Test the Deuteronomy altar and chosen-place arguments
+
+The previous turn completed an actual quotation acquisition and committed its
+reviewed findings as PR360; it was progress, not a status-only continuation.
+This turn revalidated the worktree and live checks, then selected a different
+consequential held case. The [Deuteronomy follow-up](DEUTERONOMY_27_CHOSEN_PLACE_2026-10-19.md)
+reads opposing original arguments about the altar and a grammatical alternative
+to a strict past/future binary. Two actual Qumran contexts confirm the reported
+verb forms but do not, by themselves, date a revision of Deuteronomy. The new
+test narrows the usable historical inference; it is not newly deciphered ink.
+
+Retain POB's source, English and already qualified mountain note provisionally.
+No approval, layout, canon or publication change is inferred. The PDF workflow
+checked complete relevant Himbaza pages and footnotes visually; the documentation
+workflow kept author models separate from direct controls and our inference.
+Failed author/PDF routes were not bypassed. Schorch and Laato were read through
+public author-text extraction, not authenticated local full PDFs. Actual
+institutional Qumran transcription rows, rather than reference-index counts,
+and seventeen written OSIS contexts supplied the new language controls.
+
+One bounded acquisition scout located the opposing original. One fresh factual
+reviewer gave SCOPED PASS, verifying all six repository/four private pins,
+actual Qumran rows, selected OSIS contexts and the relevant original arguments.
+A page-reference refinement was applied and the same reviewer confirmed final
+report SHA256 `f3daffc5bc24f38783ad3bd42d684685a204b9373260049e53febd45c2f01ded`
+and [packet](../sources/textual_restoration/comparisons/deuteronomy27_chosen_place.2026-10-19.v1.json)
+`e6d2bcc1e3d4cd723fe8854938d82948205bd8f52a97874521db0da58ba04cb5`.
+No new manuscript-image reading, dating authentication, original critical
+apparatus collation or specialist approval is claimed. No consensus loop.
+
+Local JSON, pins, links, whitespace, unchanged canonical/source/code scope and
+protected Genesis checks pass; no new checker or local full-corpus rerun.
+PR358 passed both original checks and merged normally as
+`edc75dbe1c357f7a944bc7fcdb10880b78435b87`; local and remote main were verified
+at that merge. PR359/360 remain under their original gates without restart.
+Close these selected arguments; require actual local apparatus/relationships
+or new provenanced Hebrew before another source-priority vote. The broader
+research goal remains active and the reader stays uncluttered.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

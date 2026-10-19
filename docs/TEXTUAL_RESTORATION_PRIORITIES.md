@@ -78,6 +78,15 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 19 Deuteronomy altar and chosen place:** the
+[original-argument and Qumran-context test](DEUTERONOMY_27_CHOSEN_PLACE_2026-10-19.md)
+compares opposing altar histories and a future-anterior grammatical proposal.
+Actual 4Q394 and Temple Scroll forms are confirmed, but their different
+viewpoints do not alone date Deuteronomy's revision. Retain Ebal and the
+existing choice wording provisionally; no reader change. The selected arguments
+are now closed controls. Next require actual local critical apparatus and
+relationships or new provenanced Hebrew, not another vote on these studies.
+
 **October 19 Psalm and Romans quotation chain:** the
 [Psalm 14 / Greek Psalm 13 comparison](PSALM_14_ROMANS_3_CATENA_2026-10-19.md)
 distinguishes the longer Greek text, omission and correction layers, and opposing

@@ -1,8 +1,15 @@
 # Codex H single leaf data request
 
-Draft for review. This request has not been sent. An email address supplied
-for this purpose is required by the University of Glasgow's public form.
-No personal contact address belongs in this repository document.
+**Submitted October 19, 2026.** Following the user's authorization and privately
+supplied recipient address, the University of Glasgow form displayed
+"Your request has been sent." The [submission receipt](../sources/textual_restoration/discovery/codex_h_request_submission.2026-10-19.v1.json)
+records the confirmation without publishing the address. The filename preserves
+the original draft locator; the request text below is unchanged.
+
+This is a confirmed request submission, not an access grant, receipt of image
+files, or a new manuscript reading. Await the provider's response before
+claiming access or attempting spectral processing. No personal contact address
+belongs in this repository document.
 
 Destination: [Enlighten Research Data request for dataset 1865](https://researchdata.gla.ac.uk/cgi/request_data?_action_null=Request+Data&eprintid=1865).
 Dataset: Allen, Fowler and Phelps, Codex H (GA 015) Multispectral Images,

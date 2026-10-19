@@ -17074,6 +17074,47 @@ PR357/358's original checks remain live, without restart or gate bypass.
 Current integration and public delivery are separate. The broader goal remains
 active, and the user's concern about reader clutter remains controlling.
 
+## October 19 — Test the ancient Psalm quotation evidence
+
+The [ancient-quotation follow-up](PSALM_14_ANCIENT_QUOTATIONS_2026-10-19.md)
+reads Justin's full local Greek chapter, Jerome's complete relevant Latin
+preface in two presentations, and Meiser's original transmission discussion
+and specific dependence argument. Justin preserves a shorter, reordered chain,
+not a verbatim complete Romans expansion. That does not disprove dependence.
+Jerome explicitly argues for incorporation from Paul into the psalm; his Greek
+common edition must not be mistaken for the Latin Vulgate. Two digital copies
+of one work are not extra ancient witnesses. Author and surviving-copy dates
+remain distinct.
+
+This strengthens the Pauline-related transmission hypothesis without recovering
+Hebrew wording or proving the first copying event. Retain distinct POB Psalm
+and Romans texts, with no source, English, note, approval, layout or canon
+change. The PDF workflow checked the complete comparison pages visually;
+the documentation workflow preserved edition differences and attributed
+historical arguments. The failed partial Justin PDF is excluded; Meiser's
+actual institutional record supplied a valid current download after the old
+host returned 404. No access circumvention or new acquisition scout was used.
+
+One independent factual reviewer gave SCOPED PASS on report SHA256
+`90a88261b18a1ee2e3ec057f684e7a2c93068ae48b9449b2656e03f59f1704c3`
+and [packet](../sources/textual_restoration/comparisons/psalm14_ancient_quotations.2026-10-19.v1.json)
+`a567f08a658a4fecc6276da62a170f8a78fd1f21e7869f23e1f609f89108a129`.
+It verified all seven repository and five private pins and checked the actual
+Greek, Latin and relevant Meiser pages. Ancient manuscript images, original
+critical apparatuses, Origen's original and a wider census were outside scope.
+No consensus loop was used.
+
+Close this selected quotation acquisition. Further work on this case requires
+original 11Q7 reconstruction evidence or a materially earlier independent
+witness, not repeated summaries of these authors. This is a transmission
+contribution, not a new biblical reading. Local JSON, pins, links, whitespace,
+unchanged canonical/source/code scope and protected Genesis checks pass; no
+new checker or local full-corpus rerun. PR357 passed its two original checks
+and merged normally as `27078bb355e4709f281e3ba8e6dd6e7bdf93d01d`;
+PR358/359 remain subject to their own fresh normal gates. The broader goal
+remains active; reader clutter remains a constraint, not authorization for
+publisher or reader code expansion.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

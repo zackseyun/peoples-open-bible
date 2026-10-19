@@ -94,6 +94,16 @@ many endings remain supplied. Strawbridge's complete identity discussion does
 not establish a separate Pauline fragment. This acquisition is closed; retain
 distinct POB texts and seek discriminating quotation/reconstruction evidence.
 
+The [ancient-quotation check](PSALM_14_ANCIENT_QUOTATIONS_2026-10-19.md) now
+reads Justin's local Greek chain and Jerome's complete relevant Latin preface,
+alongside Meiser's actual dependence argument and transmission cautions.
+Justin is not an exact complete Romans copy; Jerome expressly proposes
+Paul-to-psalm incorporation and distinguishes the Greek common edition from
+the Septuagint. This strengthens that transmission hypothesis, not a recovered
+Hebrew text or a canon addition. Close this selected quotation acquisition;
+require original 11Q7 reconstruction evidence or a materially earlier
+independent witness before reopening. No reader layout expansion.
+
 **October 19 Amos possession and inclusion:** the
 [original-argument and Hebrew-control test](AMOS_9_POSSESSION_AND_INCLUSION_2026-10-19.md)
 distinguishes possible incorporation of the nations from a required conversion

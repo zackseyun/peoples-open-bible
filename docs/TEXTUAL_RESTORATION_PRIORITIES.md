@@ -46,6 +46,15 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 19 Psalm and Romans quotation chain:** the
+[Psalm 14 / Greek Psalm 13 comparison](PSALM_14_ROMANS_3_CATENA_2026-10-19.md)
+distinguishes the longer Greek text, omission and correction layers, and opposing
+composition histories. Actual 11Q7 transcription shows a reconstructed short
+sequence, not a wholly surviving junction. Retain POB's distinct Hebrew psalm
+and Romans text; do not retrovert the chain into Hebrew. Next require early
+papyrus collation, original reconstruction evidence or discriminating ancient
+quotation evidence, not another comparison of these selected texts.
+
 **October 19 Amos possession and inclusion:** the
 [original-argument and Hebrew-control test](AMOS_9_POSSESSION_AND_INCLUSION_2026-10-19.md)
 distinguishes possible incorporation of the nations from a required conversion

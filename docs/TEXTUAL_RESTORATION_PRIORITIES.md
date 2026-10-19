@@ -88,6 +88,15 @@ copying-loss countermodel for4–13, not1–2 or a proven event. Retain POB
 provisionally. Next require actual Latin transition, modern local apparatus
 or original language-history evidence; no reader-layout expansion.
 
+**October 19 Habakkuk survival and divine endurance:** the
+[Greek and tradition follow-up](HABAKKUK_1_12_GREEK_AND_TRADITION_2026-10-19.md)
+checks the actual historical Greek edition and a Hebrew deliverance expression,
+alongside opposing contextual arguments. Retain “We will not die” provisionally;
+neither a manuscript majority nor obligatory human immortality follows.
+McCarthy's original and complete local modern apparatus remain unread.
+Park these selected controls and failed routes; next require discriminating
+original tradition analysis or precise early versional collation. No reader change.
+
 **October 19 Deuteronomy altar and chosen place:** the
 [original-argument and Qumran-context test](DEUTERONOMY_27_CHOSEN_PLACE_2026-10-19.md)
 compares opposing altar histories and a future-anterior grammatical proposal.
@@ -130,6 +139,14 @@ the Septuagint. This strengthens that transmission hypothesis, not a recovered
 Hebrew text or a canon addition. Close this selected quotation acquisition;
 require original 11Q7 reconstruction evidence or a materially earlier
 independent witness before reopening. No reader layout expansion.
+
+The [bounded material-access checkpoint](../sources/textual_restoration/discovery/psalm14_11q7_material_access.2026-10-19.v1.json)
+obtains no original target pages or plate. An institutional inventory gives
+a different explicit 11Q7 plate entry from the provisional search leads;
+the Psalm 14 fragment-to-image crosswalk remains unverified. Park the checked
+metadata/archive routes. Reopen with original reconstruction evidence or a
+verified target image locator; prefer another accessible portfolio target
+meanwhile. No new Hebrew or English reading follows.
 
 **October 19 Amos possession and inclusion:** the
 [original-argument and Hebrew-control test](AMOS_9_POSSESSION_AND_INCLUSION_2026-10-19.md)

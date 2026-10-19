@@ -17001,6 +17001,44 @@ PR356 passed both original CI jobs and merged at
 and public delivery remain separate gates. The broader comparison goal remains
 active; this contribution narrows an interpretation, not the ancient wording.
 
+## October 19 — Compare Psalm 14 and the Romans quotation chain
+
+The preceding goal turn made progress through the Amos interpretation test,
+committed/pushed as PR357. This continuation opens a consequential comparison
+not already adjudicated here: [Psalm 14 and Romans 3](PSALM_14_ROMANS_3_CATENA_2026-10-19.md).
+Swete's actual longer Greek body, A omission, Sinaiticus correction treatment
+and R/U internal differences prevent a uniform “the Septuagint” account.
+The offered Sinaiticus XML confirms an original longer text and a subsequent
+encoded deletion, not a newly inspected physical erasure. POB's distinct
+Hebrew and Romans source bodies remain unchanged.
+
+Root also checked all fifteen primary 11Q7 fragment-group 4–7 rows. Much of
+the decisive sequence is supplied; the digital edition's short reconstruction
+must not become a wholly surviving omission junction. The two original
+composition arguments remain distinct, and neither supplies a newly attested
+ancient Hebrew expansion. Agreement establishes a relationship, not its
+direction. No new decipherment, source/English application or canon inference.
+
+Two bounded source scouts and one fresh independent factual reviewer were
+used, not a consensus loop. The reviewer gave SCOPED PASS on report SHA256
+`11f066216ed82745f1c03d0caa54c15e972ffa4b83ca76d001144ddf1902ab2c`
+and [packet](../sources/textual_restoration/comparisons/psalm14_romans3_catena.2026-10-19.v1.json)
+`472a4b456e651520544a0c75cc6aaec2fcb743a3ad8f433f525df2b2eb237915`.
+It independently checked ten repository/six private pins, actual target
+readings/encoding, Hebrew survival and both original target arguments.
+This is factual/logic review, not earliest-text approval or a complete census.
+
+The PDF workflow required full-page apparatus checks; the documentation
+workflow separates observation from transmission hypotheses. Local JSON, pins,
+links, whitespace, unchanged canonical/source/code scope and protected Genesis
+checks pass. No local full-corpus rerun or new checker is needed for this
+documentation-only change. No reader or publisher expansion is made. Reopen
+for the actual early papyrus collation, original reconstruction evidence or
+discriminating ancient quotation—not another vote on these selected texts.
+PR357's two original CI checks remained live during this work, without restart.
+Current integration and public delivery remain separate gates. The full
+source-comparison goal stays active.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

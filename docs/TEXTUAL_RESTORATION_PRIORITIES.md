@@ -11,16 +11,15 @@ unread. No new letters or Bible-text change were accepted. Further work on this
 phrase needs an attributable trace, materially better measured data or stronger
 independent control, not continued parameter tuning against expected wording.
 
-The [Codex H public-image control](CODEX_H_PUBLIC_TRACE_GATE_2026-10-18.md)
-confirms a live two-line uncertainty and public native-resolution display
-tiles, but not a new reading. A blinded control inspection could not securely
-assign the dark forms to a writing layer; a direct-view comparison supplied
-22 matches against a 40-match gate. A fixed edge-based alternative yielded
-72 matches but failed held-out correspondence by hundreds of pixels, with no
-accepted transform. Raw spectral data remains request-only.
-Do not treat the published team's ink-offset recovery as our discovery, or
-TEI `supplied` words as observed ink. Further work needs a stronger physical
-control or materially different measurements, not an expected-text completion.
+The [Codex H initial controls](CODEX_H_PUBLIC_TRACE_GATE_2026-10-18.md)
+retain two failed feature-matching attempts. The subsequent
+[coordinate and native comparison](CODEX_H_COORDINATE_CONTROLS_2026-10-18.md)
+passes its upper/middle navigation check and distinguishes a few additional
+shapes from the host's visible large letters. Its lower field fails coverage;
+the lower native crops yield no new accepted sequence. Original spectral
+measurements remain request-only, with a single-leaf request prepared but not
+sent. The published team's ink-offset recovery and TEI supplied words remain
+distinct from any new POB reading. No Bible-text change follows from this pass.
 
 Session addition, 2026-10-13: pursue the bounded
 [AI manuscript recovery investigation](AI_MANUSCRIPT_RECOVERY_2026-10-13.md).

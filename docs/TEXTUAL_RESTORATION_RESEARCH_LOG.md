@@ -17796,6 +17796,35 @@ commit, and the ordinary main push reports up to date. That publishes the
 preceding chapter8 repair in Git, not the pending chapter5 application or a
 separate website/CDN refresh. The broader source-comparison goal remains open.
 
+## October 19 — Apply the reviewed Esdras5 repair
+
+One independent reviewer passes the exact chapter5 application with no
+correction required. It checks all seven complete pages and apparatus, all70
+Greek units, the six complete records' active fields,12 prepared-file pins,
+21 historical/live pins,71 canonical baseline pins and private-source/image
+hashes. Its separate six-test live run and six-test immutable chapter8 replay
+both pass. This approves the specified import repair, not whole-verse lexical
+accuracy, ancient priority, recovered Hebrew, canonical authority or deployment.
+
+Root verifies the frozen evidence and baseline hashes again, then applies
+exactly25,28,29,31,38,39 and removes redundant145 from the active chapter. Its
+complete original YAML remains byte-identical in recoverable quarantine, SHA256
+`df89390df4567d111ff938bd53dee403b5a56b02fd8c2f3a1a31061f106d8d97`.
+All six post-application tests pass in15.579 seconds. A separate actual-file
+check verifies every replacement's complete object and deterministic bytes,
+and executes the live whole-book exporter: nine chapters,495 units,70 in
+chapter5. The test protects all489 unrelated surviving YAML records, including
+all92 chapter8 records. Historical source layers and protected Genesis remain
+unchanged; the old high review labels do not certify the replacements.
+
+The [delivery record](../sources/textual_restoration/comparisons/1esdras5_application_delivery.2026-10-19.v1.json)
+preserves the completed independent report verbatim, its exact evidence hash,
+all six actual applied-file hashes and the recoverable duplicate locator.
+The prepared checkpoint is `a7fb0c3db6bb01f0e792e4f5ea0562d81c3c01e4`;
+Greek, English, application and evidence hashes remain unchanged after review.
+Publication still requires the new head's ordinary integrity checks and merge.
+No reader layout or separate website/CDN deployment is changed.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

@@ -17949,6 +17949,14 @@ and all current/final Greek strings. The
 [diagnostic](../sources/textual_restoration/discovery/1esdras7_import_diagnostic.2026-10-19.v1.json)
 retains the rejected leads as well as positive findings. This is a bounded
 import contribution, not a new ancient reading or whole-book lexical approval.
+One independent reviewer passes the exact prepared diagnostic at0f99767de1,
+with no blocking correction. It independently checks the complete printed
+page/apparatus,15 current records, raw/ours/final trace,11 stage pins, chapter
+manifest, PDF and both images, plus the optional access receipt's saved assets.
+The [completed review](../sources/textual_restoration/comparisons/1esdras7_import_diagnostic_review.2026-10-19.v1.json)
+is retained verbatim. Root's scoped validation checks two JSON files,817 local
+links, all11 chapter6 reviewed-file pins, unchanged canonical/source/code and
+protected Genesis bytes. No whole-corpus tests are rerun for this diagnostic.
 The current priorities now distinguish chapter5/8's completed main merges
 from chapter6's fixed-head PR372, whose two integrity jobs remain live.
 

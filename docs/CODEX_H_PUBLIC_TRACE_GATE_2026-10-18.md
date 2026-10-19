@@ -2,11 +2,16 @@
 
 Codex H provides a real example of recovering lost-page text from ink left on
 surviving parchment. That recovery belongs to the Glasgow and EMEL team, not
-POB. Our bounded inspection establishes public image access and a remaining
-two-line uncertainty, but **does not establish a new reading**. A native
-resolution control crop still leaves writing-layer attribution uncertain, and
-both attempted direct-view comparisons failed their gates. POB's
-Bible text remains unchanged.
+POB. The initial inspection established public image access and a remaining
+two-line uncertainty, but **did not establish a new reading**. A native
+resolution control crop inspected alone left writing-layer attribution
+uncertain, and both feature-matching comparisons failed their gates.
+
+The [coordinate follow-up](CODEX_H_COORDINATE_CONTROLS_2026-10-18.md) now supports
+an upper/middle-page comparison and distinguishes a few additional shapes
+from the host's large visible letters in a paired native control. The lower
+field fails its coverage requirement and yields no new accepted sequence.
+POB's Bible text remains unchanged.
 
 The [evidence record](../sources/textual_restoration/discovery/codex_h_public_trace_gate.2026-10-18.v1.json)
 contains source hashes, every acquired tile URL and hash, display coefficients,

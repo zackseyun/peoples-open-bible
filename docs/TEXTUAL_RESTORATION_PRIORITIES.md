@@ -128,6 +128,14 @@ quantitative minuses and wrong morphology tags prevent an automatic profile.
 Retain historical HOLD; close these controls and require discriminating local
 collation/correction history or genuinely matched constructions next.
 
+The [release-law comparison](JEREMIAH_34_RELEASE_LAW_2026-10-19.md)
+reads Terblanche's full2016 article and49 connected Hebrew/English records.
+The same seven-year formula occurs in Deuteronomy15:1 and31:10; Greek six
+still retains communal release and judgment. The translator-change claim
+depends on an earlier commentary, not a new collation. Retain POB's seven/six
+wording and require the original local argument or critical/early evidence.
+Do not repeat these legal clauses as another historical-priority vote.
+
 **October 19 Habakkuk survival and divine endurance:** the
 [Greek and tradition follow-up](HABAKKUK_1_12_GREEK_AND_TRADITION_2026-10-19.md)
 checks the actual historical Greek edition and a Hebrew deliverance expression,

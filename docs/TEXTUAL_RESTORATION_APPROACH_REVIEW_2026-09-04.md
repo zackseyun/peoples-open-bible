@@ -51,6 +51,23 @@ for a substantive failure. These are import-completeness controls, not evidence
 that a printed reading is historically earliest or a license to reconstruct
 missing manuscript ink generatively.
 
+## October 19 refinement Track exclusions and replacements explicitly
+
+The [chapter6 repair](1ESDRAS_6_PARTITION_REPAIR_2026-10-19.md) extends the
+source-completeness check beyond preserving all old characters: an import can
+also contain modern duplicates. Account for each baseline codepoint exactly
+once as retained, explicitly replaced or recoverably excluded. Pin the old
+slice, replacement and reason rather than quietly deleting inconvenient text.
+When joining a page-split word, consume its residual fragment; when moving a
+wrongly assigned prefix, transfer it instead of discarding it. Check the
+resulting chapter's union, not only each revised verse in isolation.
+
+A missing current provider receipt is a provenance problem, not permission to
+invent one. Prefer a verified genuine same-verse historical receipt, restored
+unchanged and expressly non-certifying. Preserve the old incomplete record in
+history and keep current review status separate. Apply these controls before
+interpreting a local digital discrepancy as an ancient variant.
+
 ## Assessment
 
 Keep the project and most of its infrastructure. The strongest achievement is

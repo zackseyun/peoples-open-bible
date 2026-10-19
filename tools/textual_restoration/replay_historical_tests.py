@@ -20,8 +20,11 @@ ROOT = Path(__file__).resolve().parents[2]
 COMMIT = "7637f998fd1edd9f7ab1acabf1e3037f2024b7e7"
 ESDRAS8_COMMIT = "756074bd3e0bd97c5d849c5ff47125972f4684b2"
 ESDRAS8_BASE = "97194d2b4c691514373896490110246b0b024219"
+ESDRAS5_COMMIT = "08a8a4cc05fcb8eb91580e01fb506a90de9799a9"
+ESDRAS5_BASE = ESDRAS8_COMMIT
 _REGISTRY = "test_ot_witness_registry.OtWitnessRegistryTests."
 SUITES = {
+    "esdras5_partition": (["test_1esdras5_partition_application"], 6),
     "esdras8_partition": (["test_1esdras8_partition_application"], 6),
     "genesis": (["test_genesis_note_transaction"], 28),
     "unflagged": (["test_unflagged_english_sample"], 4),
@@ -68,6 +71,43 @@ def _esdras8_archive_paths(repo):
                         or path.startswith(("tools/", "tests/", "schema/", "sources/", "docs/")))):
             raise ValueError(f"Invalid historical Esdras dependency path: {path}")
     return sorted(paths)
+
+
+def _esdras5_archive_paths(repo):
+    """Replay the original successor proof without substituting live inputs.
+
+    Its frozen checks protect chapter8's evidence as well as chapter5's repair;
+    both dependency sets must therefore come from the applied chapter5 commit.
+    """
+    prefix = "sources/textual_restoration/comparisons/"
+    evidence_paths = [prefix + f"1esdras{chapter}_application.2026-10-19.v1.json"
+                      for chapter in (5, 8)]
+    evidence = [json.loads(git(repo, "show", f"{ESDRAS5_COMMIT}:{path}"))
+                for path in evidence_paths]
+    if evidence[0]["baseline_commit"] != ESDRAS5_BASE:
+        raise ValueError("Historical Esdras5 baseline mismatch")
+    paths = {
+        "tools", "tests/test_1esdras5_partition_application.py",
+        "translation/deuterocanon/1_esdras", "schema/verse.schema.json",
+        "sources/early_christian_texts/catalog.json",
+        ".github/workflows/corpus-integrity.yml", *evidence_paths,
+        "sources/lxx/swete/final_corpus_adjudicated/WIS.jsonl",
+        "sources/lxx/swete/final_corpus_adjudicated/BAR.jsonl",
+        "sources/lxx/swete/final_corpus_adjudicated/ADA.jsonl",
+    }
+    for item in evidence:
+        paths.update(item["reviewed_file_pins"])
+        paths.update(item["unchanged_live_inputs"])
+    for path in paths:
+        if (not isinstance(path, str) or Path(path).is_absolute()
+                or ".." in Path(path).parts or any(c in path for c in "*?[:\\")
+                or not (path == "tools" or path == ".github/workflows/corpus-integrity.yml"
+                        or path == "translation/deuterocanon/1_esdras"
+                        or path.startswith(("tools/", "tests/", "schema/", "sources/", "docs/")))):
+            raise ValueError(f"Invalid historical Esdras5 dependency path: {path}")
+    return sorted(paths)
+
+
 ARCHIVE_ROOTS = (
     "tools", "tests", "docs", "schema", "schemas", "translation/ot",
     "sources/ot", "sources/nt", "sources/lxx/swete",
@@ -207,17 +247,20 @@ def run_suite(name: str, *, repo: Path = ROOT):
         raise ValueError(f"Unknown historical suite: {name}")
     if sys.flags.optimize:
         raise ValueError("Historical replay requires non-optimized Python")
-    commit = ESDRAS8_COMMIT if name == "esdras8_partition" else COMMIT
+    commit = {"esdras8_partition": ESDRAS8_COMMIT,
+              "esdras5_partition": ESDRAS5_COMMIT}.get(name, COMMIT)
     resolved = git(repo, "rev-parse", "--verify", f"{commit}^{{commit}}").decode().strip()
     if resolved != commit:
         raise ValueError("Historical commit resolution mismatch")
     names, count = SUITES[name]
     child_options = {}
-    if name == "esdras8_partition":
-        baseline = git(repo, "rev-parse", "--verify", f"{ESDRAS8_BASE}^{{commit}}").decode().strip()
-        if baseline != ESDRAS8_BASE:
+    if name in ("esdras8_partition", "esdras5_partition"):
+        expected_base = ESDRAS8_BASE if name == "esdras8_partition" else ESDRAS5_BASE
+        baseline = git(repo, "rev-parse", "--verify", f"{expected_base}^{{commit}}").decode().strip()
+        if baseline != expected_base:
             raise ValueError("Historical Esdras baseline resolution mismatch")
-        paths = _esdras8_archive_paths(repo)
+        paths = (_esdras8_archive_paths(repo) if name == "esdras8_partition"
+                 else _esdras5_archive_paths(repo))
         # Frozen tests issue only read-only `git show` and `git archive` calls.
         # Resolve their original BASE from local history, not a current checkout.
         child_options["env"] = dict(
@@ -234,7 +277,7 @@ def run_suite(name: str, *, repo: Path = ROOT):
     with tempfile.TemporaryDirectory(prefix="pob-historical-tests-") as directory:
         extract_regular(archive, Path(directory))
         del archive
-        if name == "esdras8_partition":
+        if name in ("esdras8_partition", "esdras5_partition"):
             child_options["env"]["GIT_WORK_TREE"] = directory
         child = subprocess.run(
             [sys.executable, "-I", "-c", _CHILD, json.dumps(names)],

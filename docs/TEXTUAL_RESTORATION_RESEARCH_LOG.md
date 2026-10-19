@@ -17825,6 +17825,106 @@ Greek, English, application and evidence hashes remain unchanged after review.
 Publication still requires the new head's ordinary integrity checks and merge.
 No reader layout or separate website/CDN deployment is changed.
 
+## October 19 — Extend the source completeness check to Esdras6
+
+While PR371's chapter5 integrity jobs run at fixed head08a8a4, a read-only scout
+maps all33 chapter6 Greek/English units against complete printed147–150 /
+PDF165–168. Root reads the same four complete pages, including apparatus and
+the following VII/VIII headings, and verifies the eight-target scope against
+current records and historical layers. Work proceeds on a separate branch;
+the published chapter5 head is not changed or its checks restarted.
+
+The [source candidate](../sources/textual_restoration/candidates/1esdras6_source_partition.2026-10-19.v1.json)
+restores the second half of the officials' question at10 and permission to
+build that house on the site at26. Both survive parsed/ours-only records as
+wrong prefixes of11/27, then disappear during adjudication. A doubled article
+at1 is already wrong in raw transcription, not an ancient scribal irregularity.
+Current24 repeats a page-join fragment already restored completely in23;
+removing only that fragment preserves the genuine offering statement. The
+single specified accent correction is24's `οὓ` to printed `οὗ`.
+
+The construction-stone/timber prefix moves from9 into8. `ζωῆς.` moves from31
+into30: life is present in current Greek but absent from both English records,
+so the royal prayer needs an explicit life/lives rendering. Current7/8 and28/29
+are negative controls; the scout's initial suspicion at28/29 is withdrawn after
+checking the real inline marker. No general chapter spelling/translation
+approval or ancient-priority judgment follows from this boundary audit.
+
+Root verifies all33 current source fields equal the final-adjudicated layer,
+all33 canonical/11 historical-source pins, the original PDF, seven PNGs and the
+private diagnostic. Every one of5167 baseline codepoints is accounted once
+as retained, explicitly replaced or recoverably excluded;33 excluded points
+are the two pinned duplicate slices. No canonical file is removed. The existing
+normalizer reproduces495 units, changes only the eight chapter6 rows and
+preserves the chapter5/8 corrections.
+
+Record24 lacks current draft metadata. A genuine SAME-VERSE receipt is found
+and directly read at41ee5f, file SHA256
+`9d04bce5f7b00e2b71b1db86e4e1ac66157d595067d89c738fad79deca4ad604`.
+The planned restoration keeps that receipt unchanged with explicit historical
+origin and noncertification, rather than borrowing23's receipt or inventing a
+provider call. The [repair report](1ESDRAS_6_PARTITION_REPAIR_2026-10-19.md)
+and living approach refinement document these boundaries. Fifteen replay-runner
+checks and both unchanged historical six-test chapter5/8 proofs pass in root's
+run. The eight-record English/full application and its separate independent
+review remain the next gate; chapter6 canonical files are still untouched.
+
+### Freeze the complete eight-record Esdras6 application
+
+The [English candidate](../sources/textual_restoration/candidates/1esdras6_english_partition.2026-10-19.v1.json)
+and [complete application](../sources/textual_restoration/candidates/1esdras6_application.2026-10-19.v1.json)
+are assembled. They restore both printed clauses and life in the prayer,
+remove false import-as-ancient explanations, rebind notes to the actual terms
+and preserve the remaining English choices. The closing preposition at1 and
+penalty method at31 remain qualified; no new ancient-priority or historical
+method judgment is claimed. Old source/English/decisions/review fields are
+archived;24's genuine same-verse historical receipt is restored unchanged
+with explicit commit/path/hash and noncertification.
+
+All six application preflight tests pass in12.649 seconds, including the actual
+495-unit before/after export in an isolated full-book copy. Its other eight
+chapter outputs are identical. Live scope checks protect all487 unrelated
+surviving YAML files and all current chapter5/8 records. No canonical6 record
+has changed at this checkpoint. One independent reviewer receives the exact
+[evidence packet](../sources/textual_restoration/comparisons/1esdras6_application.2026-10-19.v1.json),
+SHA256 `fe9d9ffa6cea9c9c2ae55a5744fc97a7fc9c46709d80f028aca84a2dd14cbb47`,
+with11 prepared-file pins,14 historical/live input pins and the separate
+same-verse receipt snapshot. Application SHA256 is
+`6955b51e110a0174e46a59afafa12520545338869223f150f50abac8d31d4d82`.
+The next gate is that bounded completed review before replacement, not another
+same-evidence preference vote. PR371's fixed-head checks continue separately.
+
+## October 19 — Apply the independently reviewed Esdras6 repair
+
+One independent reviewer passes the exact application at checkpoint
+`9a04142b42e382e5a61b9f00c2b556e21b79fd55` with no blocking correction. It
+checks all four complete pages and apparatus,33 Greek units, eight active full
+records, exact5167-point ownership,11 prepared-file pins,14 historical/live
+pins,33 baseline file pins, the original PDF, seven pinned page images and
+diagnostic. The mutable log's earlier eight-image count is corrected to the
+actual seven-entry manifest; no reviewed artifact or source reading changes.
+The independent six live tests, both frozen six-test proofs and15 runner tests
+pass. Its acceptance is for this import/partition application, not whole-verse
+lexical accuracy, ancient priority, recovered Hebrew, canon or deployment.
+
+Root rechecks the frozen hashes and original24 receipt, then applies only
+1,8,9,10,24,26,30,31. All six post-application tests pass in15.929 seconds.
+A separate check verifies every actual record object and deterministic file
+hash and executes the live export: nine chapters/495 units,33 in chapter6.
+It confirms the foundation question, explicit building permission and prayer
+for the king's and sons' lives are present. No canonical file is deleted;
+both excluded duplicate slices remain recoverable in the source candidate,
+archived old source fields and immutable baseline. All487 unrelated surviving
+records, including every chapter5/8 record, remain byte-identical.
+
+The [delivery record](../sources/textual_restoration/comparisons/1esdras6_application_delivery.2026-10-19.v1.json)
+stores the completed review verbatim and all eight applied-file hashes.
+Record24's same-verse historical draft receipt is restored unchanged and
+expressly does not certify the correction. Historical source inputs and the
+protected Genesis file remain unchanged. Existing note routing is repaired;
+reader/publisher layout stays on hold. Ordinary commit/push and exact-head CI
+publication remain to be completed, separately from any website/CDN refresh.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

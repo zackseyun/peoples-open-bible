@@ -46,6 +46,15 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 19 Amos possession and inclusion:** the
+[original-argument and Hebrew-control test](AMOS_9_POSSESSION_AND_INCLUSION_2026-10-19.md)
+distinguishes possible incorporation of the nations from a required conversion
+or military mechanism. King's full original essay is read; Timmer's full 2019
+argument remains inaccessible, not inferred from its abstract. Retain “possess”
+and the distinct Acts wording. No source or reader change. Reopen for a broader
+construction-sensitive argument or discriminating source evidence, not another
+vote on these completed controls.
+
 **October 19 Samuel casualty-count apparatus:** the
 [identified Hebrew and wider Greek follow-up](SAMUEL_6_19_NUMERAL_APPARATUS_2026-10-19.md)
 verifies Kennicott's three seventy-only reports, a different fifty-thousand-only

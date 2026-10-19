@@ -16959,6 +16959,48 @@ a locator/metadata contribution and an unsuccessful image-verification attempt,
 not a newly recovered reading. PR355's original CI jobs remained live during
 the attempt, without restart. The broader source-comparison goal stays active.
 
+## October 19 — Test possession and inclusion under retained Amos Hebrew
+
+The [Amos semantic follow-up](AMOS_9_POSSESSION_AND_INCLUSION_2026-10-19.md)
+tests a new argument rather than repeating the earlier manuscript comparison.
+King's complete six-page original essay permits Gentile inclusion under the
+Hebrew, while selected Hebrew controls limit stronger claims. Personal
+inheritance shows that ירש is not universally military; it does not establish
+conversion of nations. Isaiah 54 supplies a close restoration parallel without
+specifying the mechanism. Joab's name over a captured city is not identical to
+Yahweh's name, and Jeremiah's named house is not a nations-conversion clause.
+Retain the open “possess” and distinct Acts wording. Historical source priority
+remains unresolved; there is no new manuscript reading or canon inference.
+
+King's vowels-only account of Edom/humanity does not explain written WLC's vav;
+its proposed Greek misreading is a transmission hypothesis, not an observed
+event. Timmer's full 2019 article remains unread after bounded ordinary access
+attempts; no security challenge was bypassed or abstract substituted for its
+argument. Park these completed routes and controls. A stronger semantic choice
+requires a construction-sensitive lexical argument, not another review vote.
+
+One independent factual reviewer gave SCOPED PASS on report SHA256
+`d05da7c23e88288125ab65495b9ef8ccb45f60635eb0cb2610fa1c62487b36d6`
+and [packet](../sources/textual_restoration/comparisons/amos9_possession_inclusion.2026-10-19.v1.json)
+`c64050609192cb62c3f9e6a5b7ce3fd77473036cb06df6cefe9191526a9a2df8`.
+It independently read all six King pages and the selected Hebrew contexts,
+verified nine repository/two private pins, and checked the qualifications on
+transferring examples between constructions. This is not approval of every
+existing Amos 9:11 rationale or a source-priority decision.
+
+The PDF workflow keeps full-page observations distinct from extraction; the
+documentation workflow keeps interpretation distinct from recovered wording.
+Local JSON, pins, links, whitespace and unchanged canonical/source/code checks
+pass; protected Genesis work remains intact. No new checker or local full-corpus
+rerun is needed for this documentation-only contribution. No source, English,
+reader note, approval, layout or canon change. The user's concern about inline
+clutter remains controlling; this work does not expand the reader or publisher.
+
+PR356 passed both original CI jobs and merged at
+`71ba12e3ebe790ce5b5e4d75427cc77a2200085b`. Current documentation integration
+and public delivery remain separate gates. The broader comparison goal remains
+active; this contribution narrows an interpretation, not the ancient wording.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

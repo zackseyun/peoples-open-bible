@@ -46,6 +46,18 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 19 Exodus tabernacle reconstruction control:** the
+[material-model audit](EXODUS_TABERNACLE_RECONSTRUCTION_CONTROL_2026-10-19.md)
+reads the previously unexamined terminal-length argument in Dayfani's 2023
+article. Its explicit terminal sum does not reproduce, although the two
+intermediate sums do. This is a model-precision problem, not a refutation of
+the longer account. Actual published 4Q22/4Q17 rows distinguish preserved
+frame/Urim content from supplied context and Thummim wording. Retain source
+and English. Next compare actual Greek/Old Latin readings and survival
+apparatus, or obtain an equal-constraint physical refit after the terminal
+calculation is clarified. Do not repeat the same sums, article or failed
+Winter routes as a new evidence task.
+
 **October 19 Jeremiah reconstruction control:** the
 [original opposing argument and conditional word-load check](JEREMIAH_10_RECONSTRUCTION_CONTROL_2026-10-19.md)
 distinguish acceptance of 4Q71's shorter arrangement from a claim of its priority.

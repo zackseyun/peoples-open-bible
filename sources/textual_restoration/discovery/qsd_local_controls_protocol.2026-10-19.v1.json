@@ -1,0 +1,39 @@
+{
+  "date_local": "2026-10-19",
+  "experiment": "Fixed two by two QSD classifier development comparison",
+  "frozen_before_inference": true,
+  "upstream_commit": "22e09c6219b16dafdf3a943fb18df774f7e3e8e8",
+  "release_report_sha256": "6c8aa9195dd81c9179ffa82632109f90f79039e82500ee4003dcb98ed75922dc",
+  "prior_probe_sha256": "57b8fa1d3a008bb4620303c9e254a99bf3be73b4b9fbdfa5c83b539d1c80e8d1",
+  "training_regimes": {"single": ["124_001"], "diverse": ["124_001", "690_003"]},
+  "training_selection": "Retain original124_001 control; add the lexically first nonempty690 prefix fragment. Prefixes are not authenticated manuscript identities.",
+  "evaluation": "All18 other fragments, every pixel, identical set for all four models. No training fragment enters any reported evaluation.",
+  "feature_modes": ["raw", "local"],
+  "raw_features": ["first/65535", "last/65535", "(last-first)/65535"],
+  "local_features": "Append clipped local z scores of each measured band to the three raw features; Gaussian mean and variance, reflect101 border, sigma8pixels, standard deviation floor1/1024 in unit intensities, clip to[-8,8]. No text input or synthesized stroke.",
+  "local_sigma_pixels": 8.0,
+  "local_std_floor": 0.0009765625,
+  "local_z_clip": 8.0,
+  "classifier": "OpenCV RTrees",
+  "seed": 1776,
+  "training_pixels_per_class_per_fragment_max": 10000,
+  "trees": 100,
+  "max_depth": 12,
+  "min_sample_count": 10,
+  "active_variables": 2,
+  "prediction_batch_pixels": 200000,
+  "comparison": "Read the released MTEM masks at the same18 fragment inputs; this does not execute MTEM.",
+  "development_screen": [
+    "Pooled precision at least the released MTEM precision on these18 fragments",
+    "Mean F1 across the fixed nonempty-reference subset at least released MTEM on that identical subset",
+    "124_008 F1 at least its released MTEM value",
+    "No false-positive pixels on either empty-annotation control690_015 or690_016"
+  ],
+  "limits": [
+    "All20 fragments were evaluated in earlier development; this is not blind or pristine held-out research.",
+    "Manuscript-disjointness is not verified; image-ID prefixes do not prove witness identity.",
+    "Annotation agreement does not prove physical ink or letter identity.",
+    "This screen cannot authorize transcription deployment or a Bible-text change even if passed.",
+    "No parameter tuning or alternative training-fragment search after these results."
+  ]
+}

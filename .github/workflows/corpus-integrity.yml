@@ -19,6 +19,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Fetch the reviewed source baselines
         run: |
+          git fetch --no-tags --depth=1 origin dab81e375f0ba3b6f0d269543755f21b33c29704
           git fetch --no-tags --depth=1 origin c083d5b872d1bb70c79f065cf0007cb97ffceb97
           git fetch --no-tags --depth=1 origin 8ad14030bcedcdc533a74724afcdd672bdbf89ed
           git fetch --no-tags --depth=1 origin 08a8a4cc05fcb8eb91580e01fb506a90de9799a9
@@ -102,6 +103,8 @@ jobs:
           git fetch --no-tags --depth=1 origin 7c6b9bb703e55380b02ee50aaa15c0fb6b1a9e54
           git fetch --no-tags --depth=1 origin b388ce5089ea64ecd3adac354dbd1118c7dbea85
           git fetch --no-tags --depth=1 origin a0ae3c29b4525087faa1ceab1ed2822301aa2f37
+          git fetch --no-tags --depth=1 origin 9f4f2198128fa969948b4822cc423dba6f352228
+          git fetch --no-tags --depth=1 origin 627ad02109a5970c6e10f3fe872004a30838df31
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -182,18 +185,23 @@ jobs:
           python -m unittest discover -s tests -p 'test_job42_reader_application.py'
           python -m unittest discover -s tests -p 'test_lamentations1_17_reader_application.py'
           python -m unittest discover -s tests -p 'test_psalm40_reader_note_application.py'
+          python -m unittest discover -s tests -p 'test_isaiah19_18_reader_note.py'
           python -m unittest discover -s tests -p 'test_job2_reader_application.py'
           python -m unittest discover -s tests -p 'test_jeremiah31_reader_application.py'
           python -m unittest discover -s tests -p 'test_judges6_reader_note_application.py'
-          python -m unittest discover -s tests -p 'test_letter_jeremiah_69_70_correction.py'
+          python -m tools.textual_restoration.replay_letter_jeremiah69_70
+          python -m unittest discover -s tests -p 'test_letter_jeremiah_69_70_live.py'
           python -m tools.textual_restoration.replay_historical_tests esdras8_partition
           python -m tools.textual_restoration.replay_historical_tests esdras5_partition
           python -m tools.textual_restoration.replay_historical_tests esdras6_partition
-          python -m unittest discover -s tests -p 'test_1esdras7_word_application.py'
+          python -m tools.textual_restoration.replay_1esdras7_word
+          python -m unittest discover -s tests -p 'test_1esdras7_word_live.py'
+          python -m unittest discover -s tests -p 'test_1esdras7_replay.py'
           python -m unittest discover -s tests -p 'test_chronicles22_2_reader.py'
           python -m unittest discover -s tests -p 'test_kings2_8_10_reader_application.py'
           python -m unittest discover -s tests -p 'test_ot_witness_registry.py'
           python -m unittest discover -s tests -p 'test_replay_historical_tests.py'
+          python -m unittest discover -s tests -p 'test_letter_jeremiah_replay.py'
           python -m unittest discover -s tests -p 'test_zephaniah3_17_reader_application.py'
           python -m unittest discover -s tests -p 'test_zephaniah3_18_reader_application.py'
           python -m unittest discover -s tests -p 'test_zephaniah3_19_20_reader_application.py'
@@ -233,6 +241,10 @@ jobs:
           python -m unittest discover -s tests -p 'test_enoch_16_transaction.py'
           python -m unittest discover -s tests -p 'test_enoch_83_transaction.py'
           python -m unittest discover -s tests -p 'test_enoch_completeness.py'
+          python -m unittest discover -s tests -p 'test_enoch_editorial_issues.py'
+          python -m unittest discover -s tests -p 'test_enoch_20261020_transaction.py'
+          python -m unittest discover -s tests -p 'test_enoch26_5_application.py'
+          python -m unittest discover -s tests -p 'test_enoch26_6_application.py'
           python -m unittest discover -s tests -p 'test_enoch_codex_source_review.py'
           python -m unittest discover -s tests -p 'test_unflagged_english_sample_2.py'
           python -m unittest discover -s tests -p 'test_ezekiel48_28_disclosure.py'

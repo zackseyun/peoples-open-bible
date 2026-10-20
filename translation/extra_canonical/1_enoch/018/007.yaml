@@ -8,20 +8,69 @@ source:
   pages:
   - 86
   confidence: medium
-  validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch18.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 18, but verse-aligned extraction is not yet implemented in this prompt builder.
+  validation: selected_edition_unit_review_accepted
+  note: Selected Charles1906 printed edition; two scan reviews for this exact unit are preserved in sources/textual_restoration/applications/enoch_source_repairs_20261020/ch18-fresh-review/.
+    Critical-edition reconstruction is not independent manuscript attestation. Chapter remains incomplete or held.
 translation:
-  text: 'And those toward the east were of colored stone, and one was of pearl stone, and one of healing stone; and those toward the south were of red stone.'
-revisions:
-- timestamp: '2026-05-18T03:58:15Z'
-  adjudicator: doctrine-realignment
-  reviewer_model: agentic-pilot-claude-sonnet-4-6
-  category: doctrine_realignment
-  from: 'And those toward the east were of colored stone[a], and one was of pearl stone, and one of precious stone[d][c][b]; and those toward the south were of red stone.'
-  to: 'And those toward the east were of colored stone, and one was of pearl stone, and one of healing stone; and those toward the south were of red stone.'
-  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''healing'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+  text: And those toward the east were of colored stone, and one was of pearl stone and one of healing stone;[a]
+    and those toward the south were of red stone.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: The Ge'ez mineral names are retained provisionally as colored, pearl, healing, and red stone. In particular,
+      healing stone is not silently replaced with jasper from the facing Greek/editorial discussion; printed49 note13
+      calls the Greek stone-name wording corrupt.
+    reason: lexical_alternative
+status: draft
 revision_pass:
-  model: doctrine-realignment
-  timestamp: '2026-05-18T03:58:15Z'
+  model: codex-bounded-scan-review
+  timestamp: '2026-10-20'
   unchanged: false
-  changes_summary: 'doctrine_realignment: 1 Enoch 18:7 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''healing'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote'
+  changes_summary: Restore selected-edition source and English; see bounded first and independent review. No whole-chapter
+    approval.
+cross_check:
+  status: needs_review
+  scope: Selected-edition unit accepted in two scan reviews; broader witness, specialist and complete-chapter verification
+    not supplied.
+  chapter_publication_approval: false
+  human_specialist_certification: false
+source_correction:
+  baseline_sha256: b9f0e3ea1cfea664a61fc99c564d35a54dac2f0221d03ed8e3de0af140122006
+  individual_unit_application_approved: true
+  chapter_publication_approval: false
+  human_specialist_certification: false
+  manuscript_witness_certification: false
+  review_package: sources/textual_restoration/applications/enoch_source_repairs_20261020/ch18-fresh-review
+enoch_witnesses:
+  section: Book of the Watchers
+  loaded_witnesses_by_language:
+    geez:
+    - charles_1906
+  available_witnesses:
+  - language: geez
+    witness: charles_1906
+    text: ወዘመንገለ፡ ጽባሕ*ሰ፡ *ዘእምእብነ፡ ሕብር፡ ወ፩ሰ፡ እምእብነ፡ ባሕርይ፡ ወ፩*ኒ፡ እምእብነ፡ ፈውስ፡ ወዘመንገለ፡ አዜብ፡ እምእብነ፡ ቀይሕ።
+    source_edition: Charles 1906 selected edited text
+    confidence: medium
+    note: Critical edition, not a fresh manuscript collation; supplies and corruption are disclosed in translation
+      notes.
+  source_warnings:
+  - Only the bounded selected-edition unit is accepted; whole chapter and Graphic publication are not certified.
+review_history:
+- field: baseline_record
+  package_file: 018-007.baseline.yaml
+  sha256: b9f0e3ea1cfea664a61fc99c564d35a54dac2f0221d03ed8e3de0af140122006
+  certifies_this_candidate: false
+ai_draft:
+  model_id: not_reported
+  model_version: not_reported
+  prompt_id: bounded_editorial_integration_20261020
+  prompt_sha256: d8851fa0a3111b0c002bbc976e4194ab78b8a0bc4b98d6daa278bf7ee62bed51
+  timestamp: '2026-10-20T09:16:29.925164+00:00'
+  output_hash: 5d3a259e98354e6e585d99b7d84d46cd31697850fe710d757ae74d2f9ac3a25d
+  zone1_sources_at_draft:
+  - Charles1906 selected edited text; exact unit scan/input hashes in this application package
+  zone2_consults_known: []
+  provenance_scope: Editorial integration metadata, not a claimed original hosted-model drafting receipt. Prompt
+    hash binds the stored integration instructions only. Output hash binds compact sorted source/translation JSON.
+    Reviewer identities, inputs and results are preserved separately; model version and full prompts are not reported.

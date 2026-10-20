@@ -1,0 +1,77 @@
+{
+  "record_type": "historical_proof_and_live_successor_test_migration",
+  "date": "2026-10-19",
+  "pull_request": "https://github.com/zackseyun/peoples-open-bible/pull/381",
+  "failed_head": "d46d8f94694d88e1bd8b3a05a57821c5b4054817",
+  "diagnosis": {
+    "failed_jobs": [118423821257, 118423552352],
+    "inspected_job_log": 118423821257,
+    "step": "Test reader notes and consultation policy",
+    "assertion": "test_frozen_evidence_and_ci_setup compares current docs/TEXTUAL_ADJUDICATION_METHOD.md with the old baseline bytes",
+    "cause": "Method2.0.17 is a legitimate current-document change, but the original Letter correction test binds its entire proof, including itself, to method2.0.16. Root reproduces the single failing original test locally; this is caused by this PR, not the separate preexisting NT report/render mismatch.",
+    "resolution": "Replay the original proof and all its inputs at the immutable applied checkpoint; retain separate current-code source, candidate, corpus and export checks. Never edit the original test or repin its evidence to manufacture a pass."
+  },
+  "historical_proof": {
+    "applied_commit": "a0ae3c29b4525087faa1ceab1ed2822301aa2f37",
+    "pre_application_baseline": "b388ce5089ea64ecd3adac354dbd1118c7dbea85",
+    "suite": "letter_jeremiah69_70",
+    "tests_expected": 5,
+    "inputs": "Original code/test/workflow, complete72unit Letter book, LJE corpus, schema/catalog and every historical/reviewed/unchanged evidence path come from the applied checkpoint. Read-only git show/archive resolves the original baseline. No current code or method is substituted.",
+    "method_sha256": "89705fb3caab6c7b124e84e7adb6db4e7e4b7181b41c407135f7df1149b41a8e",
+    "unchanged_current_pins": {
+      "tests/test_letter_jeremiah_69_70_correction.py": "22f466d1223a7b409cf1304e9af4b35e82ac9d3002281698f85487e6ead80eb9",
+      "sources/textual_restoration/comparisons/letter_jeremiah_69_70.2026-10-19.v1.json": "10f656b0ffafd2e6a62c3eef17adfe0b4bfcd3b49f7167a376ac2eba3f2cb71d",
+      "sources/textual_restoration/candidates/letter_jeremiah_69_70.2026-10-19.v1.json": "8e01dc85cd3fe52f42d84a338a333f6066666592c5a12215fc09b9b7ac1c8f92",
+      "docs/LETTER_JEREMIAH_69_70_SOURCE_CORRECTION_2026-10-19.md": "cfd0b5e0cdaaa26456d720acd2c464cc1b0b44c76bf882a41166da983ff0ee35"
+    },
+    "claim_limit": "Historical replay does not validate the current corpus or grant new application approval."
+  },
+  "live_successor": {
+    "path": "tests/test_letter_jeremiah_69_70_live.py",
+    "inherits": "All four original behavioral checks unchanged: complete candidate/schema/archives; source-loader/corpus scope; full72unit export; exact baseline-or-reviewed-candidate live tree.",
+    "replacement_pin_check": "Freeze evidence bytes to applied commit; retain all historical pins, including method2.0.16; retain all reviewed-file pins and unchanged-live-input checks except current methodology bytes. Require both historical fetches and both replay/live commands in CI.",
+    "mutation_controls": "Allow simulated future current-method bytes; reject corrupted historical method, live transcription/meta, original test or evidence.",
+    "tests_expected": 8,
+    "current_method_sha256": "9cb00e0ec12f19d348bf9840e552777664fac8c0a6f4fafb5f63297e959395da"
+  },
+  "local_validation": {
+    "root": "Original5-test replay, live8tests, runner22regressions and43historical-boundary tests pass; no skips/xfails in original replay. Whitespace and frozen/canonical/source pins checked.",
+    "implementation_agent": "Original5-test replay, runner22regressions and all three existing Esdras replays pass (6tests each); only runner and runner-test files edited.",
+    "independent_review": "correction_donor_method_judge reads four implementation files and passes with no actionable defect; independently runs live8 and runner22tests. Not a manuscript review or source-priority vote.",
+    "remote_ci": "Both old-head jobs fail. Replacement exact-head CI must pass after publication before merge; no CI pass claimed by this local record."
+  },
+  "second_ci_failure_and_isolation": {
+    "head": "d5b631908895488cdd412702bddb9e5e1b2ffc3e",
+    "failed_jobs": [118436355401, 118436342500],
+    "inspected_log": "Job118436355401 passes originalLetter5/live8 and existingEsdrasreplays, then fails originalEsdras7proof on sharedrunnerhash. Local shared-file restoration next exposes its whole-workflow pin. These are caused by this change, not relabelled preexisting failures.",
+    "shared_files_resolution": "Restore shared replay runner and its tests byte-exactly to pretaskd46/7050, and put new replays/regressions in separate modules; do not migrate unrelated receipts or repin original evidence.",
+    "restored_shared_sha256": {
+      "tools/textual_restoration/replay_historical_tests.py": "f75956f9f68380c9334cb4046bf4f8d07a92edd06a62f64d152a9a82c96d37c0",
+      "tests/test_replay_historical_tests.py": "139ac9f6cba4558b4510378025525a8b39ac4815ad4099ca4639943c4d6efd0d"
+    },
+    "letter_command": "python -m tools.textual_restoration.replay_letter_jeremiah69_70",
+    "esdras7_command": "python -m tools.textual_restoration.replay_1esdras7_word",
+    "esdras7_applied_commit": "9f4f2198128fa969948b4822cc423dba6f352228",
+    "esdras7_baseline": "8ad14030bcedcdc533a74724afcdd672bdbf89ed",
+    "esdras7_original_tests": 6,
+    "esdras7_original_test_sha256": "a96b633ccd84789aedc671566609b34e91286939e8b982a05c8cfb34ef4c2449",
+    "esdras7_original_evidence_sha256": "b9f23bd8cf5d122856c0305c28757c40aad8f0235624718c145b03aeda6801a6",
+    "esdras7_original_workflow_sha256": "03ead066041aad1eb380430644a6972312b93816164337bdcce5f1c0d18e95e9",
+    "esdras7_live_successor": "tests/test_1esdras7_word_live.py inherits all5behavioral checks, freezes evidence bytes and all original historical/current pins, except workflow pin verified at applied commit. Current workflow must contain required fetches/replays/livecommands. Mutation tests reject corrupt oldworkflow, liveevidence/source/candidate/originaltest/sharedrunner; unrelated future workflow comment allowed.",
+    "pin_audit": "Implementation agent traces all12sourceJSONworkflow references; onlyEsdras5/6/7have whole-workflow live hash consumers,5/6alreadyhistorical. No further such reader-step consumer identified. Full affected CIstep is still required, rather than inferring suite success from this audit.",
+    "local_targeted_results": "OriginalLetter5 andEsdras7six replays pass; separate replayregressions5each, unchanged shared18tests and rootEsdras7live9 pass. Prior22runner result above describes intermediate implementation, not restored shared suite.",
+    "independent_followup": "Same implementation judge passes isolatedreplay/liveoverride migration, verifies original proofs/evidence/sharedfiles equal7050, independently runs Esdras7live9, Letterlive8 and both standalone regressions10. No new manuscript priority vote.",
+    "full_affected_step": {"workflow_step": "Test reader notes and consultation policy", "commands": 126, "all_passed": true, "seconds": 995.04, "runtime": "RepositoryPython3.12.14 with existing bundledPython3.12sitepackages exposed forPillow; no dependencies installed", "environment_probe": "Bundled-only orchestration first stops on missingPyYAML before any tests; repositoryruntime suppliesYAML/jsonschema, existing compatible bundledsite suppliesPillow.", "limit": "Local126command pass, not replacement remoteCI or source-priority approval"}
+  },
+  "application": {
+    "canonical_source_changed": false,
+    "english_changed": false,
+    "reader_notes_changed": false,
+    "reader_layout_changed": false,
+    "frozen_letter_evidence_changed": false,
+    "frozen_ezekiel_evidence_changed": false,
+    "new_ancient_reading": false,
+    "canon_result": false,
+    "unrelated_genesis_file_changed": false
+  }
+}

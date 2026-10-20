@@ -18129,6 +18129,169 @@ corrects the report/evidence; the review otherwise passes within its stated
 scope. Further source-priority work needs materially new apparatus/witness controls,
 not another reading of these same pages or repeated agreement votes.
 
+## October 19 Correction agreement and inferred donors
+
+A bounded source search exposes Tov's2024 original argument through a public
+31-page PDF text extraction, not just an abstract. Root reads the continuous
+English argument and notes through the conclusion and appendix; no local PDF
+or visible screenshot is acquired. Hebrew table placement and figures remain
+unverified. Failed ordinary downloads and the browser security check are not
+bypassed. The [access and method record](../sources/textual_restoration/discovery/correction_donor_method.2026-10-19.v1.json)
+also preserves the failed new Finsterbusch2021 access pass rather than treating
+another work as that unread article.
+
+One independent conceptual review finds a specific gap in method2.0.16:
+corrected-state agreement and an inferred donor were not explicitly separated.
+Version2.0.17 adds the reviewed narrow rule. Test correction against the copy's
+own exemplar, internal repair and a different exemplar; uncorrected differences
+can challenge comprehensive revision without excluding selective revision.
+Do not infer an independent witness from a proposed donor.
+The same reviewer checks the three-file implementation and passes within this
+method/access scope, without another historical-priority vote.
+
+Tov's broader no-external-comparison proposal remains his working hypothesis,
+with possible exceptions, not POB's finding. His restricted use of variants
+does not deny textual variation. No correction inventory, Hebrew table,
+manuscript image or case priority is newly validated here. Masada's published
+new-heart attestation and the frozen Ezekiel decision remain unchanged, as do
+canonical source, English, notes, canon and reader layout. The contribution is
+a more explicit operational safeguard; no source-text discovery is claimed.
+
+The43 historical-boundary checks pass with bundled Python/Pillow. An initial
+58-test probe also exposes an unrelated NT-pilot report/render mismatch:
+the same code, test, data and report at baseline7050c599 reproduce it.
+The repository venv's missing Pillow is resolved for the boundary rerun by
+using the existing bundled runtime, not installing or changing dependencies.
+No unrelated report or test is rewritten to manufacture a green result.
+
+## October 19 Historical correction proof and current method checks
+
+The methodology update exposes a real CI incompatibility: the original Letter
+of Jeremiah correction test requires the current methodology document to equal
+its historical baseline. Both jobs at the first PR381 head fail; the inspected
+job log and local reproduction identify this assertion, separately from the
+unrelated NT report/render mismatch. The [migration record](../sources/textual_restoration/discovery/letter_jeremiah_method_replay_migration.2026-10-19.v1.json)
+preserves the diagnosis and exact historical checkpoints.
+
+The original five-test proof now runs with its original code, method, workflow
+and evidence at the immutable applied commit. Its test, candidate, report and
+evidence remain unchanged. A separate live successor retains all four checks
+of candidate records, source loading, corpus scope and complete Letter export.
+Only the current-method equality requirement is removed; the historical method
+pin remains binding. Mutation controls reject altered historical method,
+source transcription, original test and evidence while allowing future current
+method revisions without rewriting the old proof.
+
+Root verifies the original five-test replay, eight live tests, 22 runner
+regressions and 43 historical-boundary tests. The implementation agent also
+verifies all three existing Esdras replays, six tests each. One independent
+implementation review passes and independently reruns the live and runner
+tests. Replacement remote CI remains a separate merge requirement. This repair
+changes neither biblical source/English nor the frozen Letter or Ezekiel
+judgments; it separates historical reproducibility from current safeguards.
+
+Replacement CI then passes the Letter checks but exposes another immutable
+dependency: the Esdras 7 proof pins both the shared replay runner and the
+whole workflow. The shared runner and its tests are restored exactly; new
+replays use separate modules. Esdras 7's original six tests now replay at its
+actual applied checkpoint, while a separate live successor inherits all five
+behavioral checks and retains every current pin except workflow evolution.
+The original workflow remains pinned at that checkpoint. No old proof,
+evidence or source is rewritten. The migration record distinguishes the
+initial test counts from this successor and records both failed CI heads.
+
+The independent implementation follow-up passes and reruns the eight Letter
+live checks, nine Esdras 7 live checks and ten standalone replay regressions.
+Root then runs every command in the affected reader-policy CI step: all 126
+pass in 995.04 seconds. The repository Python supplies YAML/jsonschema and the
+existing compatible bundled runtime supplies Pillow; nothing is installed.
+Canonical/source bytes, both original proofs/evidence and the restored shared
+runner files remain unchanged. Fresh exact-head remote CI is still required
+before merge; the local result is not represented as that approval.
+
+## October 19 Joshua camp formulas and Greek transmission
+
+The full institutionally hosted De Troyer study of Joshua 10 supplies a new
+original argument for the open Joshua translation-history question. Root reads
+all 28 extracted pages including appendix and notes, visually checks the title,
+15–18 and 23, and compares the relevant current Hebrew/POB records with complete
+Swete I pages 440–443 and their apparatus. The [comparison](JOSHUA_10_CAMP_ARGUMENT_2026-10-19.md)
+and [evidence record](../sources/textual_restoration/comparisons/joshua10_camp.2026-10-19.v1.json)
+preserve the source, render and unchanged-input pins.
+
+The selected Greek lacks both return-to-Gilgal verses, 10:15 and 10:43, and
+the camp phrase at 10:21. The 10:15 apparatus distinguishes a Vaticanus marginal
+addition from its original-hand omission; the stages are not conflated.
+De Troyer's published Quast notes remain mediated apparatus evidence, and her
+Schøyen codex statements remain attributed rather than new leaf consultation.
+Her own conclusion is tentative. Normal lexical rendering elsewhere cannot
+exclude selective Greek omission, while acknowledged Greek rewriting cannot
+prove these particular omissions either. The correlated return formulas do
+not independently establish a single earlier Hebrew edition.
+
+One fresh factual reviewer confirms the bounded findings, consultation limits
+and two local descriptive corrections; a subsequent implementation check of
+the two new files passes and verifies all 13 render hashes. The actual contrary
+CTAT I page 17 argument is not acquired: its ordinary institutional route
+returns a security challenge, without bypass. Hebrew expansion, Greek editing
+and branching Hebrew forms therefore remain competing explanations. Current
+source, English, notes and layout stay unchanged, as do the frozen Joshua 24
+packets. This is new comparative evidence, not newly recovered Hebrew, a
+decision on 4Q47 placement or a basis for a canon addition.
+
+## October 19 Further public Ezechiel access checks
+
+The user's renewed public-copy request prompts one bounded search, including
+an independent three-query check of institutional and older-edition routes.
+The [current publisher page](https://www.degruyterbrill.com/document/isbn/9783666534355/html)
+directs readers to its [e-library](https://www.vr-elibrary.de/isbn/9783666534355),
+where the ordinary browser encounters a security-verification page. No
+challenge is bypassed. The [Academy publication list](https://adw-goe.de/forschung/abgeschlossene-forschungsprojekte/akademienprogramm/septuaginta-unternehmen/veroeffentlichungen/septuaginta-vetus-testamentum-graecum/)
+offers Ezechiel order and eBook links, not a free-download designation.
+Google Books supplies [1977](https://books.google.com/books?id=1KU8AAAAYAAJ)
+and [1952](https://books.google.com/books?id=zCd_AAAAMAAJ) records with contents
+and “No eBook available”; neither check supplies the target pages.
+
+No additional PDF or apparatus reading is acquired. The
+[existing preview receipt](../sources/textual_restoration/discovery/ezekiel_gottingen_public_preview.2026-10-19.v1.json)
+remains unchanged. This access result does not establish that no lawful public
+copy exists. Historical priority, Hebrew, English and reader layout remain
+unchanged. Retire these same routes unless access changes or a concrete new
+copy is identified; further source adjudication needs the actual local
+apparatus, applicable notation key and relevant Fraenkel entries.
+
+## October 20 Isaiah Egyptian cities and the blessing of nations
+
+The preceding turn completes a bounded Ezechiel access record without new
+textual evidence. This continuation checks the broader Greek comparison gap,
+then opens a genuinely unexamined connected unit rather than publishing another
+corpus-availability count. No full Greek corpus is imported. The
+[Isaiah19 comparison](ISAIAH_19_EGYPT_AND_CITY_COMPARISON_2026-10-20.md) now
+distinguishes primary Qumran body rows from parallel displays, and1Q8/1QIsaᵇ
+from4Q56/4QIsaᵇ. At19:18 two published transcriptions preserve the Sun spelling's
+decisive heth. At25 their differing supplied spans prevent a false three-witness
+claim for the complete blessing.
+
+Root reads ten current Hebrew/English records, complete Swete134–135 with
+apparatus, the full Holter2018 article and the stated Balogh2009 sections.
+The selected Greek changes the blessing's presentation but retains Egyptian
+knowledge, offering, return and healing. Opposing grammatical and city-name
+arguments remain arguments, not newly recovered Hebrew or a proven scribal
+motive. The factual review catches the need to acknowledge Balogh's explicit
+challenge to comitative service. The source-priority decision stays held.
+
+The [separate note application](../sources/textual_restoration/applications/isaiah19_18_reader.2026-10-20.v1.json)
+adds one concise existing-system disclosure at19:18. An exact-candidate
+implementation review passes; root applies the reviewed record and all five
+focused tests pass in32.469seconds. Complete Isaiah export has66 chapters and
+1,291 units; only19:18 changes. Source and marker-free English are unchanged,
+old revision metadata is archived and the record remains draft/needs_review.
+The two legacy required-field schema failures remain exactly unchanged;
+changed-field validation is not advertised as full-schema approval. This is a
+source-backed reader contribution, not a new ancient discovery or a canon
+decision. Reader/publisher code and inline layout remain untouched. Required
+remote integrity and deployed delivery are separate from this local application.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

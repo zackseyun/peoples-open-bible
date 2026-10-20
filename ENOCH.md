@@ -68,6 +68,20 @@ exporter still excludes chapter 97. Neither the reviews nor this source
 repair approve chapter-level Graphic publication. See
 `sources/textual_restoration/applications/enoch_97_review_20261019/` and
 `sources/textual_restoration/applications/enoch_97_1_3_5_8_20261019/`.
+## Bounded repairs and complete issue register (2026-10-20)
+
+The [October 20 audit](docs/ENOCH_REPAIR_AUDIT_2026-10-20.md) records fifteen
+bounded repairs, including three newly restored records (18:11,14,15), restored
+18:10's heavens subject, corrected 63:7 negatives/notes and mechanical English
+deduplication at 81:4 and 89:26. The independent review rejected unproven
+34:1 wording, and the whole chapter84 hold remains intact. No artwork was published.
+
+The fresh all-108 inventory reports 15 absent files under declared counts,
+153 additional parser-derived absent-unit leads and 50 source-alignment signals.
+These are not a sum of proven translation errors or full-book certification.
+Run `python3 tools/enoch/audit_editorial_issues.py --output /tmp/enoch-issues.json`
+for a hash-bound issue register; inspect the linked audit for exact references,
+retained source uncertainties and the application/verification commands.
 
 ## Why Enoch
 

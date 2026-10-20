@@ -14,7 +14,11 @@ class Enoch266Application(unittest.TestCase):
   self.assertEqual(app['canonical_sha256'],hashlib.sha256(Y.read_bytes()).hexdigest())
   self.assertFalse(record['source_correction']['chapter_publication_approval'])
   self.assertFalse(record['source_correction']['human_specialist_certification'])
-  self.assertFalse((Y.parent/'005.yaml').exists())
+  # 26:5 was subsequently restored by its own bounded two-review application.
+  # Keep that exact later repair, not the historical expectation of absence.
+  later=json.loads((P.parent/'enoch_26_5_20261017/application.json').read_text())
+  self.assertEqual(hashlib.sha256((Y.parent/'005.yaml').read_bytes()).hexdigest(),later['canonical_sha256'])
+  self.assertFalse(later['chapter_complete'])
  def test_two_acceptances_and_refined_note(self):
   hashes=[]
   for n in (1,2):

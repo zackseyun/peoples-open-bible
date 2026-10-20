@@ -108,16 +108,27 @@ The [reviewed chapter5 repair](1ESDRAS_5_PARTITION_REPAIR_2026-10-19.md) is now
 merged in PR371 after both exact-head integrity checks passed. It restores two
 lost entries and quarantines145 recoverably; the actual export has495 units.
 The [chapter6 application](1ESDRAS_6_PARTITION_REPAIR_2026-10-19.md) restores two
-clauses and life in the royal prayer, passes its independent review and27 focused
-checks after integration with main, and awaits both live integrity jobs in PR372.
+clauses and life in the royal prayer across eight records. It is merged in
+[PR372](https://github.com/zackseyun/peoples-open-bible/pull/372) after its
+independent review, focused checks and both exact-head integrity jobs passed.
 No website/CDN deployment follows from these Git transactions alone.
 
 The [chapter7 diagnostic](1ESDRAS_7_IMPORT_DIAGNOSTIC_2026-10-19.md) rejects
 the two preliminary boundary suspicions and confirms Coele-Syria in the print.
 It instead finds two inherited word-level import differences, including a
 different participle at7:6 that affects the current lexical explanation.
-Only those two corrections and the consequential English need a later exact
-application; no chapter7 text changes here. Stop the completed boundary screen.
+The diagnostic is merged in
+[PR373](https://github.com/zackseyun/peoples-open-bible/pull/373). The separately
+[reviewed application](1ESDRAS_7_WORD_REPAIR_2026-10-19.md) is merged in
+[PR374](https://github.com/zackseyun/peoples-open-bible/pull/374), with both
+exact-head integrity jobs successful. Only7:4/6 change;7:6 provisionally reads
+who had been added, with joined them noted and the agent unstated. The
+[delivery record](../sources/textual_restoration/comparisons/1esdras7_application_delivery.2026-10-19.v1.json)
+retains the independent review and applied-file hashes. Actual main reproduces
+the full495-unit export and preserves493 other records. Both corrected records
+remain draft/needs_review. These are repairs to the digital import, not newly
+discovered ancient readings or recovered Hebrew. Close the completed boundary,
+word-repair and publication tasks; preserve their frozen preparation records.
 These scoped repairs do not certify the rest of the book. Reader/publisher
 layout remains on hold; the user's clutter concern is not authorization for
 new inline disclosure.

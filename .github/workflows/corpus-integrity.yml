@@ -19,6 +19,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Fetch the reviewed source baselines
         run: |
+          git fetch --no-tags --depth=1 origin dab81e375f0ba3b6f0d269543755f21b33c29704
           git fetch --no-tags --depth=1 origin c083d5b872d1bb70c79f065cf0007cb97ffceb97
           git fetch --no-tags --depth=1 origin 8ad14030bcedcdc533a74724afcdd672bdbf89ed
           git fetch --no-tags --depth=1 origin 08a8a4cc05fcb8eb91580e01fb506a90de9799a9
@@ -240,6 +241,10 @@ jobs:
           python -m unittest discover -s tests -p 'test_enoch_16_transaction.py'
           python -m unittest discover -s tests -p 'test_enoch_83_transaction.py'
           python -m unittest discover -s tests -p 'test_enoch_completeness.py'
+          python -m unittest discover -s tests -p 'test_enoch_editorial_issues.py'
+          python -m unittest discover -s tests -p 'test_enoch_20261020_transaction.py'
+          python -m unittest discover -s tests -p 'test_enoch26_5_application.py'
+          python -m unittest discover -s tests -p 'test_enoch26_6_application.py'
           python -m unittest discover -s tests -p 'test_enoch_codex_source_review.py'
           python -m unittest discover -s tests -p 'test_unflagged_english_sample_2.py'
           python -m unittest discover -s tests -p 'test_ezekiel48_28_disclosure.py'

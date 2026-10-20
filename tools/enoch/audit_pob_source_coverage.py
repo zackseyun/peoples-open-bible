@@ -37,6 +37,10 @@ EXPECTED_VERSES = {
     # Whole83 accepted scan markers1-11, including4/11 continuations.
     # sources/textual_restoration/applications/enoch_83_20261013/
     83: 11,
+    # Charles 1906 printed pp. 161-163 / PDF 199-201 explicitly numbers
+    # LXXXIV.1-6, then LXXXV. The count is independent of the unresolved
+    # royal noun and throne-location readings in 84:2-3.
+    84: 6,
     # Charles 1906 printed p. 203 / PDF p. 241 labels XCVII.10, then
     # XCVIII; OCR recovers the tenth unit across the ch98 file boundary.
     # This certifies the count, not the unapproved wording of 97:10.
@@ -59,13 +63,13 @@ def audit(chapters: list[int], pob_root: Path = POB_ROOT) -> dict:
         empty_translation = []
         source_review = []
         for verse in present:
+            record = yaml.safe_load((pob_root / f"{chapter:03d}/{verse:03d}.yaml").read_text())
+            if not str((record.get("translation") or {}).get("text") or "").strip():
+                empty_translation.append(verse)
             recovered = source_by_verse.get(verse)
             if recovered is None:
                 source_review.append(f"{chapter}:{verse}: no primary Geʿez row")
                 continue
-            record = yaml.safe_load((pob_root / f"{chapter:03d}/{verse:03d}.yaml").read_text())
-            if not str(record.get("translation", {}).get("text", "")).strip():
-                empty_translation.append(verse)
             saved = str(record.get("source", {}).get("text", "")).strip()
             current = recovered.text.strip()
             # This is a conservative signal for editorial review, not an
@@ -88,11 +92,12 @@ def audit(chapters: list[int], pob_root: Path = POB_ROOT) -> dict:
             "empty_translation_verse_numbers": empty_translation,
             "inventory_complete": verified_inventory and not (missing or unexpected or primary_missing
                                        or primary_unexpected or empty_translation or source_review),
+            "translation_verified_by_this_audit": False,
             "existing_source_review": source_review,
             "primary_source_warnings": source_warnings,
         })
     return {
-        "scope": "source inventory and review signals only; not translation approval. Counts beyond 35 except independently scan-boundary-reviewed chapters 45, 83 and 97 are primary-parser leads, not a certified versification inventory.",
+        "scope": "source inventory and review signals only; not translation approval. Counts beyond 35 except independently scan-boundary-reviewed chapters 45, 83, 84 and 97 are primary-parser leads, not a certified versification inventory.",
         "chapters": rows,
         "missing_verse_total": sum(len(row["missing_verse_numbers"]) for row in rows),
         "source_review_total": sum(len(row["existing_source_review"]) for row in rows),

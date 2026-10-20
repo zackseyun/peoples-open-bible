@@ -286,3 +286,60 @@ support sixteen complete imported selected-edition chapter reviews at113
 units; the prior twelve-count snapshot remains an accurate earlier checkpoint.
 Neither these counts nor the historical wording receipts certify the remaining
 92 chapters, the full final schema, reader-note UI or artwork publication.
+
+## Fifth application: eleven more units, not every held neighbor
+
+The [fifth application](../sources/textual_restoration/applications/enoch_full_repair_batch05_20261020/)
+now installs **28:1–3;34:1–3;42:1–2;43:1,3,4**, including five absent records,
+for923 canonical records.28:3's legible source is rendered as a qualified
+flow, not an unqualified torrent or a silently reconstructed cloud.34:1 uses
+the selected design/counsel word rather than the reported wonder variant;
+34:2 restores the actual numeral one.42:2 restores the dropped negative;
+43:3 removes an OCR-only star and43:4 corrects both source title spellings.
+28:1 is an explicit punctuation/note successor with unchanged source and
+unaltered historical evidence.42:3 and43:2 remain held and are not installed
+as new wording; existing43:2 is unchanged. Neither partial chapter is certified
+complete. The eleven exact units have author and separate source-review checks,
+with opinion exposure and the parent's metadata-only role normalization disclosed.
+
+The [fifth progress snapshot](../sources/enoch/coverage/full-repair-progress-batch05-20261020.json)
+imports123 current reviewed units (including29 previously accepted historical
+units, not29 new repairs),18 complete selected-edition chapter reviews, and29
+paired chapter-count inventories. The
+[issue register](../sources/enoch/coverage/editorial-issues-batch05-20261020.md)
+now uses the separately paired72–82 counts:40 absent units under declared or
+paired counts,98 remaining parser-based absence leads,41 alignment signals,
+and seven stale witness echoes. The increase in confirmed absence count is
+new structural evidence, not newly lost text; categories overlap and are not
+a total of mistranslations.
+
+Both readers confirmed154 actual units in72–82, including eight—not nine—in77,
+and30 currently absent IDs. All29 full-page photos plus the higher-resolution
+heading were inspected. These counts are imported into diagnostics/progress
+without mutating reader-release counts or granting any wording approval.
+Nine cross-page leads remain leads, not automatic proof of clipped translation.
+The new adapter rejects changed input/result/provenance/span/photo bindings.
+
+All208 local Enoch tests pass, including eleven strict candidate/review/schema
+bindings, five additions, explicit28:1 supersession, held-neighbor exclusion,
+partial source-ingress preservation, historical proof and count tamper guards,
+and the complete mobile-export comparison. That comparison adds only28/34,
+changes only existing43, preserves notes, leaves43:2 unchanged and keeps42
+withheld as incomplete. These are local checks, not exact-head CI or public
+reader-note UI certification for the fifth batch.
+
+The fourth application has now passed both exact-head CI runs39512857211 and
+39512853309 and merged through PR389 on main
+**e531cf1e4802807de0b047c9bcb33c23336d37ed**, whose tree exactly matched tested
+head25090c5806ecce11a83173d9657dd04b591e4317. Local main was advanced and
+pushed. Automatic publisher39517572610 is being followed; public delivery of
+that fourth batch is not yet asserted here. The last verified public checkpoint
+remains66 repaired units on ac51ddc7c552e27c128ccb6719835876a8070170.
+
+Chapter84 now has an independently accepted all-six **critical-treatment
+proposal**, with one literal POB-added unknown-glyph span, not six entirely
+certain transcriptions. It remains outside canonical until marker, metadata
+and provisional-note visibility checks pass. The source glyph is not guessed
+from the dictionary. No partial84 installation or artwork approval is granted.
+24–25 independent review and40–41/79–80 authoring continue; source-based repairs
+remain active rather than declaring all108 complete.

@@ -34,6 +34,9 @@ EXPECTED_VERSES = {
     # Paired scan-boundary inventories, PDF pp.113-118 / printed75-80.
     # Exact sources and assessments: enoch_full_repair_batch02_20261020.
     36: 4, 37: 5, 38: 6, 39: 14,
+    # Actual PDF121-122 boundaries counted by author and separate reader.
+    # Only42:1-2 and43:1,3,4 wording is accepted;42:3/43:2 remain held.
+    42: 3, 43: 4,
     # Charles 1906 printed p. 86 / PDF p. 124 labels XLV.6, then XLVI;
     # the Geʿez parser recovers the sixth unit across its OCR-file boundary.
     # This is a count boundary only, not approval of 45:6's wording.
@@ -60,13 +63,17 @@ EXPECTED_VERSES = {
 }
 
 
-def audit(chapters: list[int], pob_root: Path = POB_ROOT) -> dict:
+def audit(chapters: list[int], pob_root: Path = POB_ROOT, *,
+          diagnostic_counts: dict[int, int] | None = None) -> dict:
+    # Optional read-only observations do not mutate reader/export release counts.
+    diagnostic_counts = diagnostic_counts or {}
+    counts = {**EXPECTED_VERSES, **diagnostic_counts}
     rows = []
     for chapter in chapters:
         source_rows, source_warnings = verse_parser.parse_chapter(chapter)
         source_by_verse = {row.verse: row for row in source_rows}
-        verified_inventory = chapter in EXPECTED_VERSES
-        expected = EXPECTED_VERSES.get(chapter, max(source_by_verse, default=0))
+        verified_inventory = chapter in counts
+        expected = counts.get(chapter, max(source_by_verse, default=0))
         present = sorted(int(path.stem) for path in (pob_root / f"{chapter:03d}").glob("[0-9][0-9][0-9].yaml"))
         missing = sorted(set(range(1, expected + 1)) - set(present))
         unexpected = sorted(set(present) - set(range(1, expected + 1)))
@@ -93,7 +100,9 @@ def audit(chapters: list[int], pob_root: Path = POB_ROOT) -> dict:
         rows.append({
             "chapter": chapter,
             "expected_verses": expected,
-            "expected_count_basis": "declared_primary_inventory" if verified_inventory else "unverified_recovered_primary_maximum",
+            "expected_count_basis": ("separately_paired_structural_count" if chapter in diagnostic_counts else
+                                     "declared_primary_inventory" if verified_inventory else
+                                     "unverified_recovered_primary_maximum"),
             "versification_inventory_declared": verified_inventory,
             "primary_source_verses": len(source_rows),
             "pob_verses": len(present),
@@ -109,7 +118,7 @@ def audit(chapters: list[int], pob_root: Path = POB_ROOT) -> dict:
             "primary_source_warnings": source_warnings,
         })
     return {
-        "scope": "source inventory and review signals only; not translation approval. Counts beyond39 except independently scan-boundary-reviewed chapters45,50,51,70,83,84,97,104,105,107 are primary-parser leads, not a certified versification inventory.",
+        "scope": "Source inventory and review signals only, not wording or reader-release approval. Explicit declared or separately paired counts are distinguished from unverified parser maxima in each row.",
         "chapters": rows,
         "missing_verse_total": sum(len(row["missing_verse_numbers"]) for row in rows),
         "source_review_total": sum(len(row["existing_source_review"]) for row in rows),
@@ -126,7 +135,8 @@ def main() -> int:
     chapters = list(range(start, end + 1))
     if not chapters or any(not 1 <= chapter <= 108 for chapter in chapters):
         parser.error("Chapter range must be within 1-108")
-    result = audit(chapters)
+    from tools.enoch.structural_counts import load_inventories
+    result = audit(chapters, diagnostic_counts={c: len(v['units']) for c, v in load_inventories().items()})
     print(json.dumps(result, indent=2, ensure_ascii=False))
     if args.require_complete and result["incomplete_chapters"]:
         return 1

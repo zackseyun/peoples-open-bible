@@ -95,7 +95,9 @@ def record_issues(record: dict, chapter: int, verse: int) -> list[dict]:
 
 def build(chapters: list[int], pob_root: Path = coverage.POB_ROOT,
           applications: Path = ROOT / 'sources/textual_restoration/applications') -> dict:
-    inventory = coverage.audit(chapters, pob_root)
+    from tools.enoch.structural_counts import load_inventories
+    inventory = coverage.audit(chapters, pob_root, diagnostic_counts={
+        c: len(v['units']) for c, v in load_inventories().items()})
     issues = {}
     hashes = {}
 

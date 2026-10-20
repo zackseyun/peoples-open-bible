@@ -11,6 +11,14 @@ unread. No new letters or Bible-text change were accepted. Further work on this
 phrase needs an attributable trace, materially better measured data or stronger
 independent control, not continued parameter tuning against expected wording.
 
+The [Qumran classifier control comparison](QSD_LOCAL_CONTROL_COMPARISON_2026-10-19.md)
+uses already acquired spectral data while Glasgow is pending. Local contrast
+reduces false ink detections in the one-image model by43.54percent, but all four
+fixed models fail the development screen; adding the second training image
+increases recall and false detections. No transcription deployment or Bible
+change is justified. Keep the measured result and stop tuning this cohort;
+next require independently verified labels and separate manuscript controls.
+
 The [Codex H initial controls](CODEX_H_PUBLIC_TRACE_GATE_2026-10-18.md)
 retain two failed feature-matching attempts. The subsequent
 [coordinate and native comparison](CODEX_H_COORDINATE_CONTROLS_2026-10-18.md)

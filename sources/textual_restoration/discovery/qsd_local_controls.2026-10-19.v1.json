@@ -1,0 +1,2577 @@
+{
+  "date_local": "2026-10-19",
+  "protocol": {
+    "date_local": "2026-10-19",
+    "experiment": "Fixed two by two QSD classifier development comparison",
+    "frozen_before_inference": true,
+    "upstream_commit": "22e09c6219b16dafdf3a943fb18df774f7e3e8e8",
+    "release_report_sha256": "6c8aa9195dd81c9179ffa82632109f90f79039e82500ee4003dcb98ed75922dc",
+    "prior_probe_sha256": "57b8fa1d3a008bb4620303c9e254a99bf3be73b4b9fbdfa5c83b539d1c80e8d1",
+    "training_regimes": {
+      "single": [
+        "124_001"
+      ],
+      "diverse": [
+        "124_001",
+        "690_003"
+      ]
+    },
+    "training_selection": "Retain original124_001 control; add the lexically first nonempty690 prefix fragment. Prefixes are not authenticated manuscript identities.",
+    "evaluation": "All18 other fragments, every pixel, identical set for all four models. No training fragment enters any reported evaluation.",
+    "feature_modes": [
+      "raw",
+      "local"
+    ],
+    "raw_features": [
+      "first/65535",
+      "last/65535",
+      "(last-first)/65535"
+    ],
+    "local_features": "Append clipped local z scores of each measured band to the three raw features; Gaussian mean and variance, reflect101 border, sigma8pixels, standard deviation floor1/1024 in unit intensities, clip to[-8,8]. No text input or synthesized stroke.",
+    "local_sigma_pixels": 8.0,
+    "local_std_floor": 0.0009765625,
+    "local_z_clip": 8.0,
+    "classifier": "OpenCV RTrees",
+    "seed": 1776,
+    "training_pixels_per_class_per_fragment_max": 10000,
+    "trees": 100,
+    "max_depth": 12,
+    "min_sample_count": 10,
+    "active_variables": 2,
+    "prediction_batch_pixels": 200000,
+    "comparison": "Read the released MTEM masks at the same18 fragment inputs; this does not execute MTEM.",
+    "development_screen": [
+      "Pooled precision at least the released MTEM precision on these18 fragments",
+      "Mean F1 across the fixed nonempty-reference subset at least released MTEM on that identical subset",
+      "124_008 F1 at least its released MTEM value",
+      "No false-positive pixels on either empty-annotation control690_015 or690_016"
+    ],
+    "limits": [
+      "All20 fragments were evaluated in earlier development; this is not blind or pristine held-out research.",
+      "Manuscript-disjointness is not verified; image-ID prefixes do not prove witness identity.",
+      "Annotation agreement does not prove physical ink or letter identity.",
+      "This screen cannot authorize transcription deployment or a Bible-text change even if passed.",
+      "No parameter tuning or alternative training-fragment search after these results."
+    ]
+  },
+  "protocol_sha256": "a217c81862e60e5d38fe487ca54c5accf39455bb50c9460bfd81bce71cc750cf",
+  "tool_sha256": "8745dedb57ca1c7d8fe27e53d9c8f30cd540c2e56003c18eeecf2ba1b8abd795",
+  "fresh_inference_executed": true,
+  "blind_evaluation": false,
+  "manuscript_disjoint_verified": false,
+  "evaluation_fragments": [
+    "124_002",
+    "124_004",
+    "124_005",
+    "124_006",
+    "124_007",
+    "124_008",
+    "124_009",
+    "198_006",
+    "198_007",
+    "690_004",
+    "690_007",
+    "690_008",
+    "690_011",
+    "690_014",
+    "690_015",
+    "690_016",
+    "690_018",
+    "690_019"
+  ],
+  "evaluation_includes_training": false,
+  "training_samples": {
+    "124_001": {
+      "pixels": 30000,
+      "sample_sha256": "e97748ea1b6c852590d19ce558584b87c7aed8e8a7ee5b16bc1762cdfa35c31d"
+    },
+    "690_003": {
+      "pixels": 30000,
+      "sample_sha256": "ce4d7956655357b325e9d2a2fac3f49dc82a2f6eaca5fc44ec4fd8e4146ffa8c"
+    }
+  },
+  "reference_summary": {
+    "evaluation_fragments": 18,
+    "pooled_counts": {
+      "tp": 1656632,
+      "fp": 113725,
+      "fn": 243111,
+      "tn": 53886532
+    },
+    "pooled_metrics": {
+      "precision": 0.9357615441405321,
+      "recall": 0.8720295324157005,
+      "iou": 0.8227754302526784,
+      "f1": 0.902772131549549
+    },
+    "macro_all_defined": {
+      "precision": 0.8838850217356166,
+      "recall": 0.679422681915897,
+      "iou": 0.646822161339718,
+      "f1": 0.7474934919355594
+    },
+    "macro_all_defined_counts": {
+      "precision": 16,
+      "recall": 16,
+      "iou": 16,
+      "f1": 16
+    },
+    "nonempty_reference_fragments": 16,
+    "nonempty_reference_macro_f1": 0.7474934919355594,
+    "empty_reference_false_positives": {
+      "690_015": 0,
+      "690_016": 0
+    }
+  },
+  "summaries": {
+    "single_raw": {
+      "evaluation_fragments": 18,
+      "pooled_counts": {
+        "tp": 1746994,
+        "fp": 1599827,
+        "fn": 152749,
+        "tn": 52400430
+      },
+      "pooled_metrics": {
+        "precision": 0.5219860876933663,
+        "recall": 0.9195949136277907,
+        "iou": 0.49920247344673774,
+        "f1": 0.6659573770566793
+      },
+      "macro_all_defined": {
+        "precision": 0.29019918339410444,
+        "recall": 0.8635361475194019,
+        "iou": 0.2779550334177746,
+        "f1": 0.39513799906991875
+      },
+      "macro_all_defined_counts": {
+        "precision": 18,
+        "recall": 16,
+        "iou": 18,
+        "f1": 18
+      },
+      "nonempty_reference_fragments": 16,
+      "nonempty_reference_macro_f1": 0.4445302489536586,
+      "empty_reference_false_positives": {
+        "690_015": 16800,
+        "690_016": 15354
+      }
+    },
+    "single_local": {
+      "evaluation_fragments": 18,
+      "pooled_counts": {
+        "tp": 1771420,
+        "fp": 903327,
+        "fn": 128323,
+        "tn": 53096930
+      },
+      "pooled_metrics": {
+        "precision": 0.6622757217785458,
+        "recall": 0.9324524422513992,
+        "iou": 0.6319571041750652,
+        "f1": 0.7744775920375824
+      },
+      "macro_all_defined": {
+        "precision": 0.4557015039874481,
+        "recall": 0.8808429153342983,
+        "iou": 0.4325616286604421,
+        "f1": 0.5531571779599492
+      },
+      "macro_all_defined_counts": {
+        "precision": 18,
+        "recall": 16,
+        "iou": 18,
+        "f1": 18
+      },
+      "nonempty_reference_fragments": 16,
+      "nonempty_reference_macro_f1": 0.6223018252049429,
+      "empty_reference_false_positives": {
+        "690_015": 4112,
+        "690_016": 3560
+      }
+    },
+    "diverse_raw": {
+      "evaluation_fragments": 18,
+      "pooled_counts": {
+        "tp": 1794091,
+        "fp": 1859924,
+        "fn": 105652,
+        "tn": 52140333
+      },
+      "pooled_metrics": {
+        "precision": 0.49099168996295856,
+        "recall": 0.9443861617071362,
+        "iou": 0.477194123841287,
+        "f1": 0.6460818062292235
+      },
+      "macro_all_defined": {
+        "precision": 0.2816370549450091,
+        "recall": 0.8915246607481824,
+        "iou": 0.2736536965524952,
+        "f1": 0.3946498415384806
+      },
+      "macro_all_defined_counts": {
+        "precision": 18,
+        "recall": 16,
+        "iou": 18,
+        "f1": 18
+      },
+      "nonempty_reference_fragments": 16,
+      "nonempty_reference_macro_f1": 0.44398107173079066,
+      "empty_reference_false_positives": {
+        "690_015": 15314,
+        "690_016": 12975
+      }
+    },
+    "diverse_local": {
+      "evaluation_fragments": 18,
+      "pooled_counts": {
+        "tp": 1822516,
+        "fp": 1196688,
+        "fn": 77227,
+        "tn": 52803569
+      },
+      "pooled_metrics": {
+        "precision": 0.6036412246406668,
+        "recall": 0.9593487119047155,
+        "iou": 0.5885860204861662,
+        "f1": 0.7410187586896139
+      },
+      "macro_all_defined": {
+        "precision": 0.42573226648891843,
+        "recall": 0.926883383031299,
+        "iou": 0.4139975358922153,
+        "f1": 0.5388954108593712
+      },
+      "macro_all_defined_counts": {
+        "precision": 18,
+        "recall": 16,
+        "iou": 18,
+        "f1": 18
+      },
+      "nonempty_reference_fragments": 16,
+      "nonempty_reference_macro_f1": 0.6062573372167926,
+      "empty_reference_false_positives": {
+        "690_015": 4897,
+        "690_016": 4423
+      }
+    }
+  },
+  "development_screens": {
+    "single_raw": {
+      "checks": {
+        "pooled_precision": false,
+        "fixed_nonempty_macro_f1": false,
+        "difficult_fragment_f1": false,
+        "empty_controls": false
+      },
+      "passed": false,
+      "transcription_deployment_authorized": false
+    },
+    "single_local": {
+      "checks": {
+        "pooled_precision": false,
+        "fixed_nonempty_macro_f1": false,
+        "difficult_fragment_f1": false,
+        "empty_controls": false
+      },
+      "passed": false,
+      "transcription_deployment_authorized": false
+    },
+    "diverse_raw": {
+      "checks": {
+        "pooled_precision": false,
+        "fixed_nonempty_macro_f1": false,
+        "difficult_fragment_f1": false,
+        "empty_controls": false
+      },
+      "passed": false,
+      "transcription_deployment_authorized": false
+    },
+    "diverse_local": {
+      "checks": {
+        "pooled_precision": false,
+        "fixed_nonempty_macro_f1": false,
+        "difficult_fragment_f1": false,
+        "empty_controls": false
+      },
+      "passed": false,
+      "transcription_deployment_authorized": false
+    }
+  },
+  "rows": [
+    {
+      "fragment": "124_002",
+      "model": "single_raw",
+      "reference_positive_pixels": 473030,
+      "prediction_binary_sha256": "4c9fc859a9ac324678fe228a9c88b921a2b29e763f1b2d1e224a111c4a109f12",
+      "tp": 389059,
+      "fp": 443739,
+      "fn": 83971,
+      "tn": 13183231,
+      "precision": 0.4671709105929649,
+      "recall": 0.8224827177980255,
+      "iou": 0.4243806236903735,
+      "f1": 0.5958809276566286
+    },
+    {
+      "fragment": "124_002",
+      "model": "single_local",
+      "reference_positive_pixels": 473030,
+      "prediction_binary_sha256": "c2b9d58c9c575999f708518d15dafc373a6c7a1dce2241a7a5245ecb06436403",
+      "tp": 401750,
+      "fp": 324597,
+      "fn": 71280,
+      "tn": 13302373,
+      "precision": 0.5531102902607156,
+      "recall": 0.8493118829672537,
+      "iou": 0.5036815453839952,
+      "f1": 0.6699311392497939
+    },
+    {
+      "fragment": "124_002",
+      "model": "diverse_raw",
+      "reference_positive_pixels": 473030,
+      "prediction_binary_sha256": "8e2f628a166272dd4a2e7afdb1b99695f3c96d11e5b39f70738364eeb8955044",
+      "tp": 425628,
+      "fp": 527273,
+      "fn": 47402,
+      "tn": 13099697,
+      "precision": 0.44666549830465074,
+      "recall": 0.8997907109485657,
+      "iou": 0.42549907378064444,
+      "f1": 0.5969826029450233
+    },
+    {
+      "fragment": "124_002",
+      "model": "diverse_local",
+      "reference_positive_pixels": 473030,
+      "prediction_binary_sha256": "2522216c9a5494d58534097eb282263726e4368819150c87a3a626c733d71818",
+      "tp": 431392,
+      "fp": 439332,
+      "fn": 41638,
+      "tn": 13187638,
+      "precision": 0.4954405758885709,
+      "recall": 0.9119759846098556,
+      "iou": 0.472829863584849,
+      "f1": 0.6420699026756386
+    },
+    {
+      "fragment": "124_004",
+      "model": "single_raw",
+      "reference_positive_pixels": 1107882,
+      "prediction_binary_sha256": "7e15988a827df5fdfcafbeb170ddf24fc4cc65de8bf1700b7e4ba7998f48277f",
+      "tp": 1079863,
+      "fp": 364665,
+      "fn": 28019,
+      "tn": 18587453,
+      "precision": 0.7475542184021355,
+      "recall": 0.9747094004596157,
+      "iou": 0.7333300736750678,
+      "f1": 0.8461516762589083
+    },
+    {
+      "fragment": "124_004",
+      "model": "single_local",
+      "reference_positive_pixels": 1107882,
+      "prediction_binary_sha256": "19b390e7d33c3e0fcd77db8a46962d7c4090c56cc36f742dae62ccfd8166ceb8",
+      "tp": 1089186,
+      "fp": 199560,
+      "fn": 18696,
+      "tn": 18752558,
+      "precision": 0.8451517987252725,
+      "recall": 0.9831245565863512,
+      "iou": 0.83306639988619,
+      "f1": 0.9089320495295891
+    },
+    {
+      "fragment": "124_004",
+      "model": "diverse_raw",
+      "reference_positive_pixels": 1107882,
+      "prediction_binary_sha256": "83bc97fba68f7c6a5f9a48e756d7a92680c7f3d43a728b21a4343ac57bc73172",
+      "tp": 1083597,
+      "fp": 499347,
+      "fn": 24285,
+      "tn": 18452771,
+      "precision": 0.68454537873734,
+      "recall": 0.978079795501687,
+      "iou": 0.674201996106342,
+      "f1": 0.8054010181260327
+    },
+    {
+      "fragment": "124_004",
+      "model": "diverse_local",
+      "reference_positive_pixels": 1107882,
+      "prediction_binary_sha256": "4e16631365f2e96e0e9c038f3c5e1eb757c15f16bd26c31fc293cd944fff32f1",
+      "tp": 1096946,
+      "fp": 282473,
+      "fn": 10936,
+      "tn": 18669645,
+      "precision": 0.7952232062919243,
+      "recall": 0.9901289126459316,
+      "iou": 0.7889682850782713,
+      "f1": 0.8820371961415204
+    },
+    {
+      "fragment": "124_005",
+      "model": "single_raw",
+      "reference_positive_pixels": 77871,
+      "prediction_binary_sha256": "3dfc0c3f95b29f262fe5f33b6c7ed781ef189ea269bca0c82a8dc83b6dd5ae18",
+      "tp": 73809,
+      "fp": 53012,
+      "fn": 4062,
+      "tn": 2339117,
+      "precision": 0.5819935184236049,
+      "recall": 0.9478368070270062,
+      "iou": 0.5639311446100715,
+      "f1": 0.7211713208137104
+    },
+    {
+      "fragment": "124_005",
+      "model": "single_local",
+      "reference_positive_pixels": 77871,
+      "prediction_binary_sha256": "040de99691aeec0801878c879abc408ab9d0ee8542deece02b7561a5ca456488",
+      "tp": 73702,
+      "fp": 25193,
+      "fn": 4169,
+      "tn": 2366936,
+      "precision": 0.7452550685070024,
+      "recall": 0.9464627396591799,
+      "iou": 0.715109058449119,
+      "f1": 0.833893395788783
+    },
+    {
+      "fragment": "124_005",
+      "model": "diverse_raw",
+      "reference_positive_pixels": 77871,
+      "prediction_binary_sha256": "cc69d60e62e679d34749b4935dd8eb81dce38a36e199c27ea12a1422b510532e",
+      "tp": 73822,
+      "fp": 75866,
+      "fn": 4049,
+      "tn": 2316263,
+      "precision": 0.4931724653946876,
+      "recall": 0.9480037497913215,
+      "iou": 0.4801836903282879,
+      "f1": 0.6488163509243756
+    },
+    {
+      "fragment": "124_005",
+      "model": "diverse_local",
+      "reference_positive_pixels": 77871,
+      "prediction_binary_sha256": "af895ece72703d3d8dc33c35d69d2e7e2dd2b2b412e888e41daca4d0a05fbbee",
+      "tp": 74908,
+      "fp": 35855,
+      "fn": 2963,
+      "tn": 2356274,
+      "precision": 0.6762908191363542,
+      "recall": 0.9619498914872032,
+      "iou": 0.6586708404410601,
+      "f1": 0.7942152528176256
+    },
+    {
+      "fragment": "124_006",
+      "model": "single_raw",
+      "reference_positive_pixels": 35489,
+      "prediction_binary_sha256": "0bf1dd2ab46e551400a34469717c915ed90199c18ceb930cbd13b9c868c1790d",
+      "tp": 33953,
+      "fp": 33695,
+      "fn": 1536,
+      "tn": 1190816,
+      "precision": 0.5019069299905392,
+      "recall": 0.9567189833469526,
+      "iou": 0.4907637604070305,
+      "f1": 0.658405809748199
+    },
+    {
+      "fragment": "124_006",
+      "model": "single_local",
+      "reference_positive_pixels": 35489,
+      "prediction_binary_sha256": "3d8af49d4a782ab04848bc612af5e20283fa6d7e35c052dced534b953661f665",
+      "tp": 34400,
+      "fp": 13478,
+      "fn": 1089,
+      "tn": 1211033,
+      "precision": 0.71849283595806,
+      "recall": 0.9693144354588746,
+      "iou": 0.7025139379582167,
+      "f1": 0.8252665922967122
+    },
+    {
+      "fragment": "124_006",
+      "model": "diverse_raw",
+      "reference_positive_pixels": 35489,
+      "prediction_binary_sha256": "f33be79c92b0779e00a0162d7e3bbe864c0c23f9017817b4aa0581d7763e4bee",
+      "tp": 34861,
+      "fp": 39194,
+      "fn": 628,
+      "tn": 1185317,
+      "precision": 0.47074471676456686,
+      "recall": 0.9823043760038321,
+      "iou": 0.46678628335765837,
+      "f1": 0.6364748411597166
+    },
+    {
+      "fragment": "124_006",
+      "model": "diverse_local",
+      "reference_positive_pixels": 35489,
+      "prediction_binary_sha256": "1a7f54dcab536af0e61fe35ad161ce179008df22f613c8f210b44fe0d194ca5b",
+      "tp": 35039,
+      "fp": 19075,
+      "fn": 450,
+      "tn": 1205436,
+      "precision": 0.6475034187086521,
+      "recall": 0.9873200146524275,
+      "iou": 0.6421633311340811,
+      "f1": 0.7820943495195474
+    },
+    {
+      "fragment": "124_007",
+      "model": "single_raw",
+      "reference_positive_pixels": 27621,
+      "prediction_binary_sha256": "e911673620f0e09721e748d54bd0708505efb131b39a52c63d89bfc4bc206a3a",
+      "tp": 26523,
+      "fp": 29247,
+      "fn": 1098,
+      "tn": 963132,
+      "precision": 0.4755782678859602,
+      "recall": 0.9602476376669925,
+      "iou": 0.46639586410635153,
+      "f1": 0.6361118106270461
+    },
+    {
+      "fragment": "124_007",
+      "model": "single_local",
+      "reference_positive_pixels": 27621,
+      "prediction_binary_sha256": "0ecf1a9bf3370b4ede200f163754666db82516ee0b89fe6cad640cd3603d52ce",
+      "tp": 26838,
+      "fp": 8483,
+      "fn": 783,
+      "tn": 983896,
+      "precision": 0.7598312618555534,
+      "recall": 0.9716520039100685,
+      "iou": 0.7433525371150012,
+      "f1": 0.8527851037463061
+    },
+    {
+      "fragment": "124_007",
+      "model": "diverse_raw",
+      "reference_positive_pixels": 27621,
+      "prediction_binary_sha256": "a7e85ed6d182f6b7d99df6980045cc3612190fc146773e827f5eb8717d04a010",
+      "tp": 26597,
+      "fp": 30336,
+      "fn": 1024,
+      "tn": 962043,
+      "precision": 0.4671631566929549,
+      "recall": 0.9629267586256833,
+      "iou": 0.45890919129699603,
+      "f1": 0.6291127563450576
+    },
+    {
+      "fragment": "124_007",
+      "model": "diverse_local",
+      "reference_positive_pixels": 27621,
+      "prediction_binary_sha256": "2241f89eb1b29394841cd5fb9f2f1eb33e7e38103e7cfa7d7f7a4119dfe6beae",
+      "tp": 27093,
+      "fp": 10786,
+      "fn": 528,
+      "tn": 981593,
+      "precision": 0.7152511945933103,
+      "recall": 0.980884109916368,
+      "iou": 0.705418283125472,
+      "f1": 0.827267175572519
+    },
+    {
+      "fragment": "124_008",
+      "model": "single_raw",
+      "reference_positive_pixels": 17818,
+      "prediction_binary_sha256": "d4d02bb2f161ce9f787d05c71a4a4f53acdfb36aad2088cb4b6a5e44f70ec460",
+      "tp": 15881,
+      "fp": 243582,
+      "fn": 1937,
+      "tn": 1738600,
+      "precision": 0.06120718561027969,
+      "recall": 0.891289707037827,
+      "iou": 0.06075363427697016,
+      "f1": 0.1145480577464738
+    },
+    {
+      "fragment": "124_008",
+      "model": "single_local",
+      "reference_positive_pixels": 17818,
+      "prediction_binary_sha256": "84e081f9948798a45f3a0a71735b7dc3c9d033200792e707c2017989c17adc87",
+      "tp": 15885,
+      "fp": 172942,
+      "fn": 1933,
+      "tn": 1809240,
+      "precision": 0.08412462200850514,
+      "recall": 0.8915141991244808,
+      "iou": 0.08327217446005451,
+      "f1": 0.15374192455660673
+    },
+    {
+      "fragment": "124_008",
+      "model": "diverse_raw",
+      "reference_positive_pixels": 17818,
+      "prediction_binary_sha256": "313eb56162b9b2bbf8daf1ab5c106f672f260199563acb960bd115f8777d3381",
+      "tp": 15291,
+      "fp": 244349,
+      "fn": 2527,
+      "tn": 1737833,
+      "precision": 0.05889308272993375,
+      "recall": 0.8581771242563699,
+      "iou": 0.05832541853093639,
+      "f1": 0.11022208766732262
+    },
+    {
+      "fragment": "124_008",
+      "model": "diverse_local",
+      "reference_positive_pixels": 17818,
+      "prediction_binary_sha256": "f8bc36d96344d8dac790077afc4e10a12fb2e1d5b9f627d3b238f13536269ee5",
+      "tp": 15827,
+      "fp": 213743,
+      "fn": 1991,
+      "tn": 1768439,
+      "precision": 0.06894193492181035,
+      "recall": 0.8882590638679987,
+      "iou": 0.0683491606963176,
+      "f1": 0.1279528513913367
+    },
+    {
+      "fragment": "124_009",
+      "model": "single_raw",
+      "reference_positive_pixels": 29102,
+      "prediction_binary_sha256": "9b2ea726642a74a2442a9749657f356ad72a9316b7350938be449679a65b36d7",
+      "tp": 26984,
+      "fp": 35710,
+      "fn": 2118,
+      "tn": 1735188,
+      "precision": 0.43040801352601527,
+      "recall": 0.9272214968043433,
+      "iou": 0.4163426525951984,
+      "f1": 0.5879123273345244
+    },
+    {
+      "fragment": "124_009",
+      "model": "single_local",
+      "reference_positive_pixels": 29102,
+      "prediction_binary_sha256": "835f15242ebe4a665ac8a6bb21bd66570148df4e3779a60782bea6176b32428b",
+      "tp": 27872,
+      "fp": 16696,
+      "fn": 1230,
+      "tn": 1754202,
+      "precision": 0.6253814395979178,
+      "recall": 0.9577348635832589,
+      "iou": 0.6085855277523036,
+      "f1": 0.7566716438170219
+    },
+    {
+      "fragment": "124_009",
+      "model": "diverse_raw",
+      "reference_positive_pixels": 29102,
+      "prediction_binary_sha256": "658071d7e3df479ddf920714a0ae61e2f761dfe2796ca37746ca2f71fd7cba3b",
+      "tp": 28438,
+      "fp": 40081,
+      "fn": 664,
+      "tn": 1730817,
+      "precision": 0.4150381645966812,
+      "recall": 0.977183698714865,
+      "iou": 0.41105473888093896,
+      "f1": 0.582620542711097
+    },
+    {
+      "fragment": "124_009",
+      "model": "diverse_local",
+      "reference_positive_pixels": 29102,
+      "prediction_binary_sha256": "0fa8b0b6a8a01f3b415a809f43dd5a13f96e588bac1520e7668e04021d0735dd",
+      "tp": 28805,
+      "fp": 27293,
+      "fn": 297,
+      "tn": 1743605,
+      "precision": 0.5134764162715248,
+      "recall": 0.9897945158408357,
+      "iou": 0.5107722315808139,
+      "f1": 0.6761737089201878
+    },
+    {
+      "fragment": "198_006",
+      "model": "single_raw",
+      "reference_positive_pixels": 4413,
+      "prediction_binary_sha256": "026752caf6777be4f8405f21811f215382af12cc335dff8c0e00cf23294f3254",
+      "tp": 2820,
+      "fp": 74556,
+      "fn": 1593,
+      "tn": 3521031,
+      "precision": 0.036445409429280394,
+      "recall": 0.6390210740992522,
+      "iou": 0.035710215400980135,
+      "f1": 0.06895792832777024
+    },
+    {
+      "fragment": "198_006",
+      "model": "single_local",
+      "reference_positive_pixels": 4413,
+      "prediction_binary_sha256": "939eb94493772ca40e52c506f6a98c657cf880e7368b02382ac0f369e52847a2",
+      "tp": 2758,
+      "fp": 37803,
+      "fn": 1655,
+      "tn": 3557784,
+      "precision": 0.0679963511747738,
+      "recall": 0.6249716745977792,
+      "iou": 0.06533068031078264,
+      "f1": 0.12264864143727487
+    },
+    {
+      "fragment": "198_006",
+      "model": "diverse_raw",
+      "reference_positive_pixels": 4413,
+      "prediction_binary_sha256": "e5451ffe6d5e6e9a9b360978612e205892cc99eb7128a588d6965f2d2612e7a6",
+      "tp": 3044,
+      "fp": 84725,
+      "fn": 1369,
+      "tn": 3510862,
+      "precision": 0.034681949207578985,
+      "recall": 0.6897801948787673,
+      "iou": 0.0341492965962889,
+      "f1": 0.0660432622420863
+    },
+    {
+      "fragment": "198_006",
+      "model": "diverse_local",
+      "reference_positive_pixels": 4413,
+      "prediction_binary_sha256": "8da40dc3981a61c47b1f5f32efaf13bfe2e565435ebceaab925703e485b886f4",
+      "tp": 3404,
+      "fp": 45944,
+      "fn": 1009,
+      "tn": 3549643,
+      "precision": 0.06897949258328605,
+      "recall": 0.7713573532744165,
+      "iou": 0.06759735488611315,
+      "f1": 0.12663454920853406
+    },
+    {
+      "fragment": "198_007",
+      "model": "single_raw",
+      "reference_positive_pixels": 45415,
+      "prediction_binary_sha256": "1e059f811440e2c8c89865e2e2e2ae1e3349ab0f1e24f31bd0b5f70a2654e1d5",
+      "tp": 26946,
+      "fp": 66138,
+      "fn": 18469,
+      "tn": 2688447,
+      "precision": 0.2894804692535774,
+      "recall": 0.5933281955301112,
+      "iou": 0.24155334235744444,
+      "f1": 0.3891147228499845
+    },
+    {
+      "fragment": "198_007",
+      "model": "single_local",
+      "reference_positive_pixels": 45415,
+      "prediction_binary_sha256": "cc8128eba5823d2fcd42cee7f6f1a359b747ac9b00fb7edf892488ad4b6e4bc6",
+      "tp": 25669,
+      "fp": 36613,
+      "fn": 19746,
+      "tn": 2717972,
+      "precision": 0.41214154972544237,
+      "recall": 0.5652097324672465,
+      "iou": 0.31292973131125956,
+      "f1": 0.4766892299692656
+    },
+    {
+      "fragment": "198_007",
+      "model": "diverse_raw",
+      "reference_positive_pixels": 45415,
+      "prediction_binary_sha256": "180534e089172e84d1bd18cc93541f4b10beee3bfccccb9635ed582eafc612d1",
+      "tp": 28956,
+      "fp": 84946,
+      "fn": 16459,
+      "tn": 2669639,
+      "precision": 0.25421853874383243,
+      "recall": 0.6375867004293736,
+      "iou": 0.2221216468115464,
+      "f1": 0.3635016978727945
+    },
+    {
+      "fragment": "198_007",
+      "model": "diverse_local",
+      "reference_positive_pixels": 45415,
+      "prediction_binary_sha256": "6c803c05e215f7a3a9271e86148f26cefeaf5a1e8d7e7e0c7926b5f0ab64fb62",
+      "tp": 32042,
+      "fp": 44514,
+      "fn": 13373,
+      "tn": 2710071,
+      "precision": 0.4185432885730707,
+      "recall": 0.7055378179015743,
+      "iou": 0.35630330594135373,
+      "f1": 0.5254035795393988
+    },
+    {
+      "fragment": "690_004",
+      "model": "single_raw",
+      "reference_positive_pixels": 35678,
+      "prediction_binary_sha256": "8c2552f77a644fd73782132d2bdafbe7b8e9733e714d60bee3ba066ccf337673",
+      "tp": 31290,
+      "fp": 82344,
+      "fn": 4388,
+      "tn": 2431978,
+      "precision": 0.2753577274407308,
+      "recall": 0.8770110432199114,
+      "iou": 0.2651200623612547,
+      "f1": 0.41912237462494645
+    },
+    {
+      "fragment": "690_004",
+      "model": "single_local",
+      "reference_positive_pixels": 35678,
+      "prediction_binary_sha256": "b9f73dd7940110c9cf328d84b418e4974842fc0e52d579f5621f5d3f075b2566",
+      "tp": 31787,
+      "fp": 13597,
+      "fn": 3891,
+      "tn": 2500725,
+      "precision": 0.7004010223867442,
+      "recall": 0.8909411962553955,
+      "iou": 0.6450938609842719,
+      "f1": 0.7842638967703733
+    },
+    {
+      "fragment": "690_004",
+      "model": "diverse_raw",
+      "reference_positive_pixels": 35678,
+      "prediction_binary_sha256": "f4a3537013c9c2d7267cebbe947d969b276baad33d83647d114874417873047c",
+      "tp": 32437,
+      "fp": 73892,
+      "fn": 3241,
+      "tn": 2440430,
+      "precision": 0.30506258875753556,
+      "recall": 0.9091597062615617,
+      "iou": 0.29603906178698547,
+      "f1": 0.4568366348137768
+    },
+    {
+      "fragment": "690_004",
+      "model": "diverse_local",
+      "reference_positive_pixels": 35678,
+      "prediction_binary_sha256": "1737991f6a9f9f5961c997806ac2f536a327902449c487c54cdb38dc07732a16",
+      "tp": 33592,
+      "fp": 15315,
+      "fn": 2086,
+      "tn": 2499007,
+      "precision": 0.6868546424847158,
+      "recall": 0.9415325971186725,
+      "iou": 0.658757084305689,
+      "f1": 0.7942779452621623
+    },
+    {
+      "fragment": "690_007",
+      "model": "single_raw",
+      "reference_positive_pixels": 14353,
+      "prediction_binary_sha256": "58f0b5ceb41b4989420f5091ad3eb5bf2ced3e8cdce97e0a884b01793e924006",
+      "tp": 12473,
+      "fp": 17374,
+      "fn": 1880,
+      "tn": 568273,
+      "precision": 0.4178979461922471,
+      "recall": 0.8690169302584826,
+      "iou": 0.3931351845431336,
+      "f1": 0.5643891402714932
+    },
+    {
+      "fragment": "690_007",
+      "model": "single_local",
+      "reference_positive_pixels": 14353,
+      "prediction_binary_sha256": "d6c5a0cedfbfbb311f40071c83304b05e0dbee8ee6a9c17f3a8c8663bdb068e8",
+      "tp": 13278,
+      "fp": 10233,
+      "fn": 1075,
+      "tn": 575414,
+      "precision": 0.5647569222916933,
+      "recall": 0.9251027659722706,
+      "iou": 0.540063450744326,
+      "f1": 0.701352207901965
+    },
+    {
+      "fragment": "690_007",
+      "model": "diverse_raw",
+      "reference_positive_pixels": 14353,
+      "prediction_binary_sha256": "f93ff5aa144fed8dd02f45eb03f7cf8dac2cf0af450a2c80b9558862d8f287db",
+      "tp": 13036,
+      "fp": 17686,
+      "fn": 1317,
+      "tn": 567961,
+      "precision": 0.4243213332465334,
+      "recall": 0.9082421793353306,
+      "iou": 0.40687911607728083,
+      "f1": 0.5784137548530227
+    },
+    {
+      "fragment": "690_007",
+      "model": "diverse_local",
+      "reference_positive_pixels": 14353,
+      "prediction_binary_sha256": "38edd025b000a2cfeeb9b4dc5950a7380b6b309e1ac63a166933e5ee75ba0990",
+      "tp": 13842,
+      "fp": 11559,
+      "fn": 511,
+      "tn": 574088,
+      "precision": 0.544939175623007,
+      "recall": 0.9643976868947258,
+      "iou": 0.5341926520531028,
+      "f1": 0.6963827539367108
+    },
+    {
+      "fragment": "690_008",
+      "model": "single_raw",
+      "reference_positive_pixels": 5819,
+      "prediction_binary_sha256": "663c339a2e9f3a5d8ffb27a219dc11122ea6548d52f83f6f790c812b67425452",
+      "tp": 4265,
+      "fp": 16433,
+      "fn": 1554,
+      "tn": 477748,
+      "precision": 0.20605855638225914,
+      "recall": 0.7329438047774531,
+      "iou": 0.19166816465935646,
+      "f1": 0.32168043142135233
+    },
+    {
+      "fragment": "690_008",
+      "model": "single_local",
+      "reference_positive_pixels": 5819,
+      "prediction_binary_sha256": "d2480100caada6df03f27a9c107436a3271185b2086832d5e901093d0dab82d2",
+      "tp": 4514,
+      "fp": 5891,
+      "fn": 1305,
+      "tn": 488290,
+      "precision": 0.43382988947621337,
+      "recall": 0.7757346623131122,
+      "iou": 0.38548249359521775,
+      "f1": 0.5564595660749507
+    },
+    {
+      "fragment": "690_008",
+      "model": "diverse_raw",
+      "reference_positive_pixels": 5819,
+      "prediction_binary_sha256": "3a4b71dea9fad8eda88e1343aedcf93bafbda890386eb7ecf1ef4bba4de4cd60",
+      "tp": 4774,
+      "fp": 14805,
+      "fn": 1045,
+      "tn": 479376,
+      "precision": 0.2438326778691455,
+      "recall": 0.8204158790170132,
+      "iou": 0.231477889837083,
+      "f1": 0.3759351130010237
+    },
+    {
+      "fragment": "690_008",
+      "model": "diverse_local",
+      "reference_positive_pixels": 5819,
+      "prediction_binary_sha256": "0c47f4b21c537d576c3ded9caf27f60ec28084d18ebc65e63c1f9ff8f7b79688",
+      "tp": 5175,
+      "fp": 6384,
+      "fn": 644,
+      "tn": 487797,
+      "precision": 0.4477030885024656,
+      "recall": 0.8893280632411067,
+      "iou": 0.4240760468737196,
+      "f1": 0.5955806191736679
+    },
+    {
+      "fragment": "690_011",
+      "model": "single_raw",
+      "reference_positive_pixels": 9796,
+      "prediction_binary_sha256": "fd1fdb137312aa759da32548cd815da3a77236d67b164d7b7b82b62b5630f323",
+      "tp": 9275,
+      "fp": 18871,
+      "fn": 521,
+      "tn": 671333,
+      "precision": 0.3295317274213032,
+      "recall": 0.9468150265414454,
+      "iou": 0.32354274950291273,
+      "f1": 0.4889041168098677
+    },
+    {
+      "fragment": "690_011",
+      "model": "single_local",
+      "reference_positive_pixels": 9796,
+      "prediction_binary_sha256": "cfd3d6cb59620ba1a2459c8fdc64c87400ed48e9c7b70f9797d6e26178990fa9",
+      "tp": 9406,
+      "fp": 7515,
+      "fn": 390,
+      "tn": 682689,
+      "precision": 0.5558773122155901,
+      "recall": 0.9601878317680685,
+      "iou": 0.5433539368031888,
+      "f1": 0.7041209716659804
+    },
+    {
+      "fragment": "690_011",
+      "model": "diverse_raw",
+      "reference_positive_pixels": 9796,
+      "prediction_binary_sha256": "a473e6bde236b9298d927ac03c3006efe997982f48c9c74c9021926f17897e46",
+      "tp": 9383,
+      "fp": 19840,
+      "fn": 413,
+      "tn": 670364,
+      "precision": 0.32108270882524037,
+      "recall": 0.9578399346672111,
+      "iou": 0.31660817924146306,
+      "f1": 0.4809451805530639
+    },
+    {
+      "fragment": "690_011",
+      "model": "diverse_local",
+      "reference_positive_pixels": 9796,
+      "prediction_binary_sha256": "473c846d021aa0f209c10043e654a66e23575a48877d591cd86df45740792cda",
+      "tp": 9614,
+      "fp": 9232,
+      "fn": 182,
+      "tn": 680972,
+      "precision": 0.5101347766104213,
+      "recall": 0.981420988158432,
+      "iou": 0.5052554130754677,
+      "f1": 0.6713218350673835
+    },
+    {
+      "fragment": "690_014",
+      "model": "single_raw",
+      "reference_positive_pixels": 4617,
+      "prediction_binary_sha256": "724b8e1923c97de309c8579f89979161cb4f2256149e631de0d6296b93213ef3",
+      "tp": 4144,
+      "fp": 29951,
+      "fn": 473,
+      "tn": 445432,
+      "precision": 0.1215427482035489,
+      "recall": 0.8975525232835174,
+      "iou": 0.1198796574866929,
+      "f1": 0.21409382103740443
+    },
+    {
+      "fragment": "690_014",
+      "model": "single_local",
+      "reference_positive_pixels": 4617,
+      "prediction_binary_sha256": "e3b7d3ed6fdcab513736365cff69909569325b67598e648a6d92ec0bb34f1de9",
+      "tp": 4325,
+      "fp": 6011,
+      "fn": 292,
+      "tn": 469372,
+      "precision": 0.41844040247678016,
+      "recall": 0.9367554689192116,
+      "iou": 0.4069439217162213,
+      "f1": 0.5784792349361332
+    },
+    {
+      "fragment": "690_014",
+      "model": "diverse_raw",
+      "reference_positive_pixels": 4617,
+      "prediction_binary_sha256": "0246d1afafe9c656725dc8ab239b0e1e3a7aef2ed845140ba9b4b9db659d2007",
+      "tp": 4342,
+      "fp": 26862,
+      "fn": 275,
+      "tn": 448521,
+      "precision": 0.1391488270734521,
+      "recall": 0.9404375135369287,
+      "iou": 0.13793322532481972,
+      "f1": 0.24242762625275677
+    },
+    {
+      "fragment": "690_014",
+      "model": "diverse_local",
+      "reference_positive_pixels": 4617,
+      "prediction_binary_sha256": "d478fad4680738db1d862f2a0f8fb72bdfcf30898736f7513bff8e5318b66fc4",
+      "tp": 4551,
+      "fp": 6872,
+      "fn": 66,
+      "tn": 468511,
+      "precision": 0.39840672327759785,
+      "recall": 0.9857050032488629,
+      "iou": 0.3961180259378536,
+      "f1": 0.5674563591022443
+    },
+    {
+      "fragment": "690_015",
+      "model": "single_raw",
+      "reference_positive_pixels": 0,
+      "prediction_binary_sha256": "0c98239c88e8ddd1a0b626b4ef0008cfb01b71500d837c538e5b554191db9ea5",
+      "tp": 0,
+      "fp": 16800,
+      "fn": 0,
+      "tn": 313200,
+      "precision": 0.0,
+      "recall": null,
+      "iou": 0.0,
+      "f1": 0.0
+    },
+    {
+      "fragment": "690_015",
+      "model": "single_local",
+      "reference_positive_pixels": 0,
+      "prediction_binary_sha256": "6c2361fadbb3ee1afac758bcbb6021e5e4d1f140124eada16c807cc13a5dca06",
+      "tp": 0,
+      "fp": 4112,
+      "fn": 0,
+      "tn": 325888,
+      "precision": 0.0,
+      "recall": null,
+      "iou": 0.0,
+      "f1": 0.0
+    },
+    {
+      "fragment": "690_015",
+      "model": "diverse_raw",
+      "reference_positive_pixels": 0,
+      "prediction_binary_sha256": "5d61c142bc942dc92302638ddca353059dfc94772b050a5b860367eb086efe88",
+      "tp": 0,
+      "fp": 15314,
+      "fn": 0,
+      "tn": 314686,
+      "precision": 0.0,
+      "recall": null,
+      "iou": 0.0,
+      "f1": 0.0
+    },
+    {
+      "fragment": "690_015",
+      "model": "diverse_local",
+      "reference_positive_pixels": 0,
+      "prediction_binary_sha256": "a6807981c6649a8907c46b2eba1612c6ea5f8a8b37c4768ad226f3594a284b21",
+      "tp": 0,
+      "fp": 4897,
+      "fn": 0,
+      "tn": 325103,
+      "precision": 0.0,
+      "recall": null,
+      "iou": 0.0,
+      "f1": 0.0
+    },
+    {
+      "fragment": "690_016",
+      "model": "single_raw",
+      "reference_positive_pixels": 0,
+      "prediction_binary_sha256": "830baf551fb0a48ad268dcb390643c2a29c4217fa8d25f4f874aa9a15896131a",
+      "tp": 0,
+      "fp": 15354,
+      "fn": 0,
+      "tn": 314646,
+      "precision": 0.0,
+      "recall": null,
+      "iou": 0.0,
+      "f1": 0.0
+    },
+    {
+      "fragment": "690_016",
+      "model": "single_local",
+      "reference_positive_pixels": 0,
+      "prediction_binary_sha256": "2ac27ae85a2563a296321337cd3fa286aa54b33887798ad2df90a61c3c939ff1",
+      "tp": 0,
+      "fp": 3560,
+      "fn": 0,
+      "tn": 326440,
+      "precision": 0.0,
+      "recall": null,
+      "iou": 0.0,
+      "f1": 0.0
+    },
+    {
+      "fragment": "690_016",
+      "model": "diverse_raw",
+      "reference_positive_pixels": 0,
+      "prediction_binary_sha256": "3c3bde9f231f501976c7720014cc50dc51501e9b9b9639bf26070db6eba37835",
+      "tp": 0,
+      "fp": 12975,
+      "fn": 0,
+      "tn": 317025,
+      "precision": 0.0,
+      "recall": null,
+      "iou": 0.0,
+      "f1": 0.0
+    },
+    {
+      "fragment": "690_016",
+      "model": "diverse_local",
+      "reference_positive_pixels": 0,
+      "prediction_binary_sha256": "85ab5962786867e7769f7207e81ae3d1c94bbf51623cdce1b678d1cb2c34123e",
+      "tp": 0,
+      "fp": 4423,
+      "fn": 0,
+      "tn": 325577,
+      "precision": 0.0,
+      "recall": null,
+      "iou": 0.0,
+      "f1": 0.0
+    },
+    {
+      "fragment": "690_018",
+      "model": "single_raw",
+      "reference_positive_pixels": 3312,
+      "prediction_binary_sha256": "798b8b1887d91a1c2f96aa0c084600a26ccd1a48bf73ddc7893a5cf46fa5aa1c",
+      "tp": 2901,
+      "fp": 18499,
+      "fn": 411,
+      "tn": 478189,
+      "precision": 0.1355607476635514,
+      "recall": 0.8759057971014492,
+      "iou": 0.1330062812342396,
+      "f1": 0.23478471997410166
+    },
+    {
+      "fragment": "690_018",
+      "model": "single_local",
+      "reference_positive_pixels": 3312,
+      "prediction_binary_sha256": "07721bd8424d27c0cd8ab4075571b1663194d63b59cb36799d304b2107918025",
+      "tp": 3018,
+      "fp": 6441,
+      "fn": 294,
+      "tn": 490247,
+      "precision": 0.31906121154456074,
+      "recall": 0.9112318840579711,
+      "iou": 0.3094432482313134,
+      "f1": 0.47263330984261215
+    },
+    {
+      "fragment": "690_018",
+      "model": "diverse_raw",
+      "reference_positive_pixels": 3312,
+      "prediction_binary_sha256": "41a3919d2157aa9d80b58f5240f157a3868662ca4a9abb6afeb21087db0bbb8a",
+      "tp": 2846,
+      "fp": 16505,
+      "fn": 466,
+      "tn": 480183,
+      "precision": 0.1470725027130381,
+      "recall": 0.8592995169082126,
+      "iou": 0.14361406872886914,
+      "f1": 0.2511582756034064
+    },
+    {
+      "fragment": "690_018",
+      "model": "diverse_local",
+      "reference_positive_pixels": 3312,
+      "prediction_binary_sha256": "2e0fc6a8f404a86e643bd018bcae51c3e1c6df7f88b33281227077cb607f8bab",
+      "tp": 3040,
+      "fp": 7450,
+      "fn": 272,
+      "tn": 489238,
+      "precision": 0.2897998093422307,
+      "recall": 0.9178743961352657,
+      "iou": 0.2824753763241033,
+      "f1": 0.4405158672656137
+    },
+    {
+      "fragment": "690_019",
+      "model": "single_raw",
+      "reference_positive_pixels": 7527,
+      "prediction_binary_sha256": "cd58cc3af885c379a1930de41bfaf8db5ffec3db0ff3a72fcb358cf4f32043ee",
+      "tp": 6808,
+      "fp": 39857,
+      "fn": 719,
+      "tn": 752616,
+      "precision": 0.14589092467588127,
+      "recall": 0.9044772153580444,
+      "iou": 0.1436771906128651,
+      "f1": 0.25125479775612636
+    },
+    {
+      "fragment": "690_019",
+      "model": "single_local",
+      "reference_positive_pixels": 7527,
+      "prediction_binary_sha256": "a7315ec65a2feb17106574b757c17960c5d6398b3e66545841d3ec8ae0d98ba0",
+      "tp": 7032,
+      "fp": 10602,
+      "fn": 495,
+      "tn": 781871,
+      "precision": 0.39877509356924123,
+      "recall": 0.9342367477082503,
+      "iou": 0.38788681118649676,
+      "f1": 0.5589602956957196
+    },
+    {
+      "fragment": "690_019",
+      "model": "diverse_raw",
+      "reference_positive_pixels": 7527,
+      "prediction_binary_sha256": "94fd2930271ea95153c874b7b3e187b05ebfea9a63c0c182e36ccce3ff93e592",
+      "tp": 7039,
+      "fp": 35928,
+      "fn": 488,
+      "tn": 756545,
+      "precision": 0.16382339935299184,
+      "recall": 0.9351667330941942,
+      "iou": 0.16198366125877345,
+      "f1": 0.2788054026220937
+    },
+    {
+      "fragment": "690_019",
+      "model": "diverse_local",
+      "reference_positive_pixels": 7527,
+      "prediction_binary_sha256": "82861af2c6d3964cabb4b7a72c229496bb2804c5dd483a683e5dff9ae59a67ba",
+      "tp": 7246,
+      "fp": 11541,
+      "fn": 281,
+      "tn": 780932,
+      "precision": 0.3856922339915899,
+      "recall": 0.9626677295071078,
+      "iou": 0.3800083910216069,
+      "f1": 0.5507334498745915
+    }
+  ],
+  "reference_rows": [
+    {
+      "fragment": "124_002",
+      "reference_positive_pixels": 473030,
+      "tp": 429882,
+      "fp": 80787,
+      "fn": 43148,
+      "tn": 13546183,
+      "precision": 0.8418016366765948,
+      "recall": 0.9087837980677759,
+      "iou": 0.7762166925175644,
+      "f1": 0.8740112575086485
+    },
+    {
+      "fragment": "124_004",
+      "reference_positive_pixels": 1107882,
+      "tp": 1004923,
+      "fp": 11805,
+      "fn": 102959,
+      "tn": 18940313,
+      "precision": 0.9883892250434728,
+      "recall": 0.9070668175852663,
+      "iou": 0.8975034987456316,
+      "f1": 0.9459834981478954
+    },
+    {
+      "fragment": "124_005",
+      "reference_positive_pixels": 77871,
+      "tp": 58490,
+      "fp": 168,
+      "fn": 19381,
+      "tn": 2391961,
+      "precision": 0.9971359405366702,
+      "recall": 0.7511140219080273,
+      "iou": 0.7494970463486206,
+      "f1": 0.8568143031883336
+    },
+    {
+      "fragment": "124_006",
+      "reference_positive_pixels": 35489,
+      "tp": 32620,
+      "fp": 303,
+      "fn": 2869,
+      "tn": 1224208,
+      "precision": 0.9907967074689427,
+      "recall": 0.9191580489729212,
+      "iou": 0.9113768439874832,
+      "f1": 0.9536338654037303
+    },
+    {
+      "fragment": "124_007",
+      "reference_positive_pixels": 27621,
+      "tp": 24907,
+      "fp": 227,
+      "fn": 2714,
+      "tn": 992152,
+      "precision": 0.9909684093260126,
+      "recall": 0.9017414286231491,
+      "iou": 0.8943909796035622,
+      "f1": 0.9442517296938678
+    },
+    {
+      "fragment": "124_008",
+      "reference_positive_pixels": 17818,
+      "tp": 3900,
+      "fp": 16569,
+      "fn": 13918,
+      "tn": 1965613,
+      "precision": 0.19053202403634764,
+      "recall": 0.21887978448759682,
+      "iou": 0.1134149533253846,
+      "f1": 0.20372450178911902
+    },
+    {
+      "fragment": "124_009",
+      "reference_positive_pixels": 29102,
+      "tp": 27420,
+      "fp": 370,
+      "fn": 1682,
+      "tn": 1770528,
+      "precision": 0.9866858582223822,
+      "recall": 0.9422032849975946,
+      "iou": 0.9303745928338762,
+      "f1": 0.9639316599873444
+    },
+    {
+      "fragment": "198_006",
+      "reference_positive_pixels": 4413,
+      "tp": 1756,
+      "fp": 1171,
+      "fn": 2657,
+      "tn": 3594416,
+      "precision": 0.5999316706525453,
+      "recall": 0.3979152503965556,
+      "iou": 0.3144699140401146,
+      "f1": 0.4784741144414169
+    },
+    {
+      "fragment": "198_007",
+      "reference_positive_pixels": 45415,
+      "tp": 14282,
+      "fp": 248,
+      "fn": 31133,
+      "tn": 2754337,
+      "precision": 0.9829318651066759,
+      "recall": 0.31447759550809207,
+      "iou": 0.3127696384381228,
+      "f1": 0.47650346150638084
+    },
+    {
+      "fragment": "690_004",
+      "reference_positive_pixels": 35678,
+      "tp": 25604,
+      "fp": 417,
+      "fn": 10074,
+      "tn": 2513905,
+      "precision": 0.9839744821490335,
+      "recall": 0.7176411233813554,
+      "iou": 0.7093503255298518,
+      "f1": 0.8299648292516897
+    },
+    {
+      "fragment": "690_007",
+      "reference_positive_pixels": 14353,
+      "tp": 12187,
+      "fp": 254,
+      "fn": 2166,
+      "tn": 585393,
+      "precision": 0.9795836347560486,
+      "recall": 0.8490907824148262,
+      "iou": 0.8343260080783186,
+      "f1": 0.9096812719265507
+    },
+    {
+      "fragment": "690_008",
+      "reference_positive_pixels": 5819,
+      "tp": 1737,
+      "fp": 276,
+      "fn": 4082,
+      "tn": 493905,
+      "precision": 0.8628912071535022,
+      "recall": 0.2985048977487541,
+      "iou": 0.28498769483182934,
+      "f1": 0.44356486210418794
+    },
+    {
+      "fragment": "690_011",
+      "reference_positive_pixels": 9796,
+      "tp": 7923,
+      "fp": 5,
+      "fn": 1873,
+      "tn": 690199,
+      "precision": 0.9993693239152371,
+      "recall": 0.8087995100040833,
+      "iou": 0.8083868992959902,
+      "f1": 0.8940419769803656
+    },
+    {
+      "fragment": "690_014",
+      "reference_positive_pixels": 4617,
+      "tp": 3569,
+      "fp": 170,
+      "fn": 1048,
+      "tn": 475213,
+      "precision": 0.9545332976731746,
+      "recall": 0.773012778860732,
+      "iou": 0.7455608940881554,
+      "f1": 0.8542364767831498
+    },
+    {
+      "fragment": "690_015",
+      "reference_positive_pixels": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 330000,
+      "precision": null,
+      "recall": null,
+      "iou": null,
+      "f1": null
+    },
+    {
+      "fragment": "690_016",
+      "reference_positive_pixels": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 330000,
+      "precision": null,
+      "recall": null,
+      "iou": null,
+      "f1": null
+    },
+    {
+      "fragment": "690_018",
+      "reference_positive_pixels": 3312,
+      "tp": 1035,
+      "fp": 102,
+      "fn": 2277,
+      "tn": 496586,
+      "precision": 0.9102902374670184,
+      "recall": 0.3125,
+      "iou": 0.3031634446397188,
+      "f1": 0.4652730950775455
+    },
+    {
+      "fragment": "690_019",
+      "reference_positive_pixels": 7527,
+      "tp": 6397,
+      "fp": 853,
+      "fn": 1130,
+      "tn": 791620,
+      "precision": 0.8823448275862069,
+      "recall": 0.8498737876976219,
+      "iou": 0.7633651551312649,
+      "f1": 0.8658049671787237
+    }
+  ],
+  "verified_inputs": {
+    "qumran_segmentation_dataset/multispectral_images/124_001_001.tif": {
+      "sha256": "27ce30b3c46203e42a6a337576a22ebf7022de4bab9bd2e894a03c27d2c89d63",
+      "git_blob_sha1": "e4b5eb75ddc3d83c3b6fef4b5aaccc741796bb90",
+      "bytes": 11879822,
+      "shape_hw": [
+        3000,
+        3200
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/multispectral_images/124_001_012.tif": {
+      "sha256": "02b46b53711da298a3328e87bcf1b7cf775489c9232048b58751603b21ca7cbc",
+      "git_blob_sha1": "2e99397e131d4244f3982c962967fb3759516b8e",
+      "bytes": 11541194,
+      "shape_hw": [
+        3000,
+        3200
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/ink_masks/124_001.png": {
+      "sha256": "2bf7153b9a61bcaad0138311315522562feb308cbc51e3e95c4a7c5c6f9b7ab3",
+      "git_blob_sha1": "8cc9e9e96587210f6267a06ae3a32faa286ecbe7",
+      "bytes": 45170,
+      "shape_hw": [
+        3000,
+        3200
+      ],
+      "dtype": "uint8"
+    },
+    "qumran_segmentation_dataset/parchment_masks/124_001.png": {
+      "sha256": "bc3bc974c6bbef1c4f4947eef45de07c38ea5c008ca447ebf82b49e6351e16f4",
+      "git_blob_sha1": "fb7199466b2d1e5af6cf5ade39181be0fcd2af51",
+      "bytes": 40955,
+      "shape_hw": [
+        3000,
+        3200
+      ],
+      "dtype": "uint8"
+    },
+    "qumran_segmentation_dataset/multispectral_images/690_003_001.tif": {
+      "sha256": "84b9f3fb7d2c0133f23c78bc19e3196fe14866666fa6a78e239822b2de4c8efc",
+      "git_blob_sha1": "04f2a847f549d6a2ad1691358857944734e7c33c",
+      "bytes": 3569316,
+      "shape_hw": [
+        2100,
+        1300
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/multispectral_images/690_003_012.tif": {
+      "sha256": "ac4f1ca4edd083ad1718965423ac227b9985b7a026fd17e7bdbafb19517d6e8a",
+      "git_blob_sha1": "2ac9e075e56fb5fc4375ba827c5618053cf4d8d0",
+      "bytes": 3289924,
+      "shape_hw": [
+        2100,
+        1300
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/ink_masks/690_003.png": {
+      "sha256": "0354dbaf86a0f85b747c3ff8bb1104a8a946834ee2b3cb1006127c4a15b7bdf4",
+      "git_blob_sha1": "1d6234a7c450583c7d4539d1fe27ca365de1bdd6",
+      "bytes": 10196,
+      "shape_hw": [
+        2100,
+        1300
+      ],
+      "dtype": "uint8"
+    },
+    "qumran_segmentation_dataset/parchment_masks/690_003.png": {
+      "sha256": "61f277a594c7c54a11c75533ffd6fc479609453cc89dd460a2075c120ca9faca",
+      "git_blob_sha1": "4fc093ffc211be4cb76684188e5f5390cc1dad93",
+      "bytes": 14132,
+      "shape_hw": [
+        2100,
+        1300
+      ],
+      "dtype": "uint8"
+    },
+    "qumran_segmentation_dataset/multispectral_images/124_002_001.tif": {
+      "sha256": "4aa4b3f9a530864d513fa357366054c76f7ef367e0229c229f7ed595db5b03aa",
+      "git_blob_sha1": "4570296704a3bc0c1149ffe030e74e23326b50f4",
+      "bytes": 17354382,
+      "shape_hw": [
+        3000,
+        4700
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/multispectral_images/124_002_012.tif": {
+      "sha256": "5b766d22bc12bb5df425ec9a0d81a9d538532d295fbbf33727abfe57690d5468",
+      "git_blob_sha1": "2cb6cc525f3ad2bfda4ffd0b34a0a6b4481fb44a",
+      "bytes": 16845830,
+      "shape_hw": [
+        3000,
+        4700
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/ink_masks/124_002.png": {
+      "sha256": "6b3f9b55ae9bb52edc032305fb5e7db778e6a393b2d5a220e4e7ed5465e7bbaf",
+      "git_blob_sha1": "4ebcaac1398d3d90ed4affa84882799e9b9b59c9",
+      "bytes": 61427,
+      "shape_hw": [
+        3000,
+        4700
+      ],
+      "dtype": "uint8"
+    },
+    "qumran_segmentation_dataset/parchment_masks/124_002.png": {
+      "sha256": "cb9c73e390e82bd27f7a6633a8fc95ffac4c16dfae91707121d674adf77ac8e0",
+      "git_blob_sha1": "4e2ef780f9a26787bb5c1ec78d2107c03a3b8114",
+      "bytes": 59054,
+      "shape_hw": [
+        3000,
+        4700
+      ],
+      "dtype": "uint8"
+    },
+    "msem_results/ink_masks/124_002.png": {
+      "bytes": 77210,
+      "git_blob_sha1": "414f70a16d4c1c41c345c6fd199fdcb3a2850c45",
+      "sha256": "5c4d8ae9a8b0d34cb3b3ee62f6644b4498ff3394a1be1bc8d598a4f5031dcb61",
+      "shape_hw": [
+        3000,
+        4700
+      ],
+      "values": [
+        0,
+        255
+      ]
+    },
+    "qumran_segmentation_dataset/multispectral_images/124_004_001.tif": {
+      "sha256": "80912f56f0a7b6f08c0f668b054e612b37d133b14b9d8964d77b6dea3660e920",
+      "git_blob_sha1": "6081fdc610fc9b1e9db0b916219dc5880d356674",
+      "bytes": 24690898,
+      "shape_hw": [
+        3400,
+        5900
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/multispectral_images/124_004_012.tif": {
+      "sha256": "cfd5dea8730704b084e3bb59c3410ae923530baa89b04d1b141769896f6c72a9",
+      "git_blob_sha1": "2e8e69b0dc75a519b9a93b9be5fefab0e0c35038",
+      "bytes": 24258314,
+      "shape_hw": [
+        3400,
+        5900
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/ink_masks/124_004.png": {
+      "sha256": "e9cd456e29391133f7a84830869ba9a9015ca0018b917e483a5647fc12f1c0d7",
+      "git_blob_sha1": "3b5997d7a78e412988b4ec24b19801b0fc44eb1c",
+      "bytes": 115979,
+      "shape_hw": [
+        3400,
+        5900
+      ],
+      "dtype": "uint8"
+    },
+    "qumran_segmentation_dataset/parchment_masks/124_004.png": {
+      "sha256": "4c0753740376b8d4f8f089352b7c34b4dfabf2d73f0419e16ddeaf7a0c5ebcf5",
+      "git_blob_sha1": "5b5e90f1562d099dad0ee20f3de3f501f6fd62e2",
+      "bytes": 92825,
+      "shape_hw": [
+        3400,
+        5900
+      ],
+      "dtype": "uint8"
+    },
+    "msem_results/ink_masks/124_004.png": {
+      "bytes": 176169,
+      "git_blob_sha1": "fc73be33cd2c7c579eda6760b7e34e1884022f37",
+      "sha256": "b5f3f2cbbc2d47299eaf203c73f2b39eba74d63c4d4692cf806e25eaf456fc2b",
+      "shape_hw": [
+        3400,
+        5900
+      ],
+      "values": [
+        0,
+        255
+      ]
+    },
+    "qumran_segmentation_dataset/multispectral_images/124_005_001.tif": {
+      "sha256": "7edb9729adb7cc9c7e2412c2eef2caedfbc3ceaa8e0b8b069f68a850e45d3b7e",
+      "git_blob_sha1": "023a6d715775a8bc2ff143619d0d97086fb38ef6",
+      "bytes": 3084724,
+      "shape_hw": [
+        1900,
+        1300
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/multispectral_images/124_005_012.tif": {
+      "sha256": "639e4d661708383217c51db7e099112f0216a9b47447eb73a3b665aafbda760d",
+      "git_blob_sha1": "104a9c018c0423778a0d8a9377ab05604ed9e5c6",
+      "bytes": 3006298,
+      "shape_hw": [
+        1900,
+        1300
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/ink_masks/124_005.png": {
+      "sha256": "ede1a6fe1a823f09ba904d1051ec77d972dfb46b34be43a3abb7dd79858ac069",
+      "git_blob_sha1": "ed732ea1b2ea3cf32cf99f126f88f88718362058",
+      "bytes": 11285,
+      "shape_hw": [
+        1900,
+        1300
+      ],
+      "dtype": "uint8"
+    },
+    "qumran_segmentation_dataset/parchment_masks/124_005.png": {
+      "sha256": "e2d1dbaf3e066722e5a7556e51edb684122aef021919e02d41d1f1aaaeb9cb3f",
+      "git_blob_sha1": "2dc401d42e10f3d40bbf2a68c36d107caf8a34de",
+      "bytes": 13987,
+      "shape_hw": [
+        1900,
+        1300
+      ],
+      "dtype": "uint8"
+    },
+    "msem_results/ink_masks/124_005.png": {
+      "bytes": 17367,
+      "git_blob_sha1": "78f3c464ff5ebb27ae154275a8bbb372cbc94627",
+      "sha256": "b9a5d0657aeded3544acecd4397f33931e75255496aa2947af237d8273e531a7",
+      "shape_hw": [
+        1900,
+        1300
+      ],
+      "values": [
+        0,
+        255
+      ]
+    },
+    "qumran_segmentation_dataset/multispectral_images/124_006_001.tif": {
+      "sha256": "70e61fb43e8908e21da818c1f581c906c1f85a2e996f32281391109d25f09a83",
+      "git_blob_sha1": "d8b15d7610f683b4cb4daea077edd43e5c99df95",
+      "bytes": 1611322,
+      "shape_hw": [
+        1800,
+        700
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/multispectral_images/124_006_012.tif": {
+      "sha256": "869463d70600a128ffcaed4774e0599366978bac6501b0a205cfeb617922d83d",
+      "git_blob_sha1": "a6531ebd4b4b7c52bc5f0e5a1cc28983bdf094ce",
+      "bytes": 1568284,
+      "shape_hw": [
+        1800,
+        700
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/ink_masks/124_006.png": {
+      "sha256": "40ffb2da6e9cde71e20877ecc239badda62a39ea09e2e309a7078f6450be3a9b",
+      "git_blob_sha1": "47689141d9fa2229b2826aff0f889bd4422fde0c",
+      "bytes": 5034,
+      "shape_hw": [
+        1800,
+        700
+      ],
+      "dtype": "uint8"
+    },
+    "qumran_segmentation_dataset/parchment_masks/124_006.png": {
+      "sha256": "fee70e8073f415a8ba64e1dbef286e5b3ad1d244d79de1fff3dcfaa820b8ace2",
+      "git_blob_sha1": "3475d7782164799e315e1d079fcd1eaab79f0560",
+      "bytes": 9486,
+      "shape_hw": [
+        1800,
+        700
+      ],
+      "dtype": "uint8"
+    },
+    "msem_results/ink_masks/124_006.png": {
+      "bytes": 9355,
+      "git_blob_sha1": "4de9cd75a3788c2a0c1c193d9e5951ecdc7d0b86",
+      "sha256": "376dfee72fc9caa8e377611edb02fd76855cd62ce3840a2cd6911ae7bb5e4621",
+      "shape_hw": [
+        1800,
+        700
+      ],
+      "values": [
+        0,
+        255
+      ]
+    },
+    "qumran_segmentation_dataset/multispectral_images/124_007_001.tif": {
+      "sha256": "af8da1f6e57925026f66374b7b5bb2d12cbb4c475dcc267ba7a393815e2dc16d",
+      "git_blob_sha1": "19e9a289424280515ad357afa0c87570413b8d76",
+      "bytes": 1358210,
+      "shape_hw": [
+        1700,
+        600
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/multispectral_images/124_007_012.tif": {
+      "sha256": "a6954b20c787176432da5a0354322b86f57320bcdc121527855a59731a40c9cd",
+      "git_blob_sha1": "fcbe0af1af326ad9c13334b30443b098dc94e251",
+      "bytes": 1268514,
+      "shape_hw": [
+        1700,
+        600
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/ink_masks/124_007.png": {
+      "sha256": "062f2854dffe2da8026cdaa4f98ae39d46162126a27875993e81b4e69781eaee",
+      "git_blob_sha1": "cf061578b8eda63e455d76d5155718a49d625a25",
+      "bytes": 3760,
+      "shape_hw": [
+        1700,
+        600
+      ],
+      "dtype": "uint8"
+    },
+    "qumran_segmentation_dataset/parchment_masks/124_007.png": {
+      "sha256": "8336d2d0ff453605886283be850cefcdc5c425f75544db2821dd6ffd49395f27",
+      "git_blob_sha1": "70190752b2f66a894aad8ebc19c846eef232aa07",
+      "bytes": 8098,
+      "shape_hw": [
+        1700,
+        600
+      ],
+      "dtype": "uint8"
+    },
+    "msem_results/ink_masks/124_007.png": {
+      "bytes": 8052,
+      "git_blob_sha1": "701d07d31819be4daa477245ef23c305b817387b",
+      "sha256": "90d565be50fb5fb7706e88c8999bf511079ea8442e552b75be8d74ff3a58c03a",
+      "shape_hw": [
+        1700,
+        600
+      ],
+      "values": [
+        0,
+        255
+      ]
+    },
+    "qumran_segmentation_dataset/multispectral_images/124_008_001.tif": {
+      "sha256": "b37aee53004832cd3995a6c057059a3636bee677631afc2cd05496ce1e3d5f5b",
+      "git_blob_sha1": "101798df8aa9642f9bf1bf14f6992c1a4ea27020",
+      "bytes": 2626306,
+      "shape_hw": [
+        2000,
+        1000
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/multispectral_images/124_008_012.tif": {
+      "sha256": "15be302729ca8aece4b5d95981f32e379d24a3868567e79ffc4ec80123312b99",
+      "git_blob_sha1": "bb8db4256d2107c882cb0aab50391311925ade64",
+      "bytes": 2412798,
+      "shape_hw": [
+        2000,
+        1000
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/ink_masks/124_008.png": {
+      "sha256": "c503a392011ec1255fd19e6713568f62d1c3bdf8401376a96755cb4095cf605b",
+      "git_blob_sha1": "0ff22537b8234c2095d45aebf2de848b15d111b6",
+      "bytes": 4209,
+      "shape_hw": [
+        2000,
+        1000
+      ],
+      "dtype": "uint8"
+    },
+    "qumran_segmentation_dataset/parchment_masks/124_008.png": {
+      "sha256": "15e9d30558ccae3cb09316c1f30d054cd09bc97ebfdbaf4c0c3a11b5effc7035",
+      "git_blob_sha1": "a7aae2a8110dec82aaf5a554d340e7934b1b3db7",
+      "bytes": 13249,
+      "shape_hw": [
+        2000,
+        1000
+      ],
+      "dtype": "uint8"
+    },
+    "msem_results/ink_masks/124_008.png": {
+      "bytes": 10729,
+      "git_blob_sha1": "9bfd345330783fca9aa2d6dac95bd3504bcbf64f",
+      "sha256": "404d7fa9b8688849c45f587e166170c4921d248bda95d4ac7d11abd3dfdc1955",
+      "shape_hw": [
+        2000,
+        1000
+      ],
+      "values": [
+        0,
+        255
+      ]
+    },
+    "qumran_segmentation_dataset/multispectral_images/124_009_001.tif": {
+      "sha256": "e857c844b7b02683e64f4fb2167c04cf4f122d99beab72bc05cdb4955d13e36a",
+      "git_blob_sha1": "9948a6cad89f1a9f8d045ee5f808b838d62b275e",
+      "bytes": 2243068,
+      "shape_hw": [
+        1200,
+        1500
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/multispectral_images/124_009_012.tif": {
+      "sha256": "0e8455f45054b6245473531fd0a6ec4588344d92c3d560d98b79e916490deec5",
+      "git_blob_sha1": "5200f5db2cb0ae7f09ee2b17bfe812c7a254bbbe",
+      "bytes": 2105110,
+      "shape_hw": [
+        1200,
+        1500
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/ink_masks/124_009.png": {
+      "sha256": "121c7b780a15b15f0744427c1baf1c4bfb90b644a1d9188676be70b64cec08aa",
+      "git_blob_sha1": "f8014561a1469c32a6ddd5475999c71cb8ae7e51",
+      "bytes": 4917,
+      "shape_hw": [
+        1200,
+        1500
+      ],
+      "dtype": "uint8"
+    },
+    "qumran_segmentation_dataset/parchment_masks/124_009.png": {
+      "sha256": "2b59b22f4bde061eef55936afee0bab806fc59681f26e537e88a773f122b8728",
+      "git_blob_sha1": "164c995300b6f8039748cf682b676b958f2d0c71",
+      "bytes": 8614,
+      "shape_hw": [
+        1200,
+        1500
+      ],
+      "dtype": "uint8"
+    },
+    "msem_results/ink_masks/124_009.png": {
+      "bytes": 8655,
+      "git_blob_sha1": "9c7125c8ffbedd8814601e279cdaf1ba9c7fa0e5",
+      "sha256": "f04c0457e32cc9ddbe91c3388fe218d33977cf1c71b98d35725413555b54b887",
+      "shape_hw": [
+        1200,
+        1500
+      ],
+      "values": [
+        0,
+        255
+      ]
+    },
+    "qumran_segmentation_dataset/multispectral_images/198_006_001.tif": {
+      "sha256": "9255d0338bac2804e22e0cda500c6dc68fd84c13f059a379d5585cef49228f0f",
+      "git_blob_sha1": "9bff3d7aa8b8fbaac9dfb93d75dc14fdad0e5b13",
+      "bytes": 4700514,
+      "shape_hw": [
+        2000,
+        1800
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/multispectral_images/198_006_012.tif": {
+      "sha256": "dc015a7b9241d06c0360f8f5da724a0c2c177016d992b5a46650056775d9bc3b",
+      "git_blob_sha1": "994c2df2b2250caa0093a69fefde54ae74948be2",
+      "bytes": 4489722,
+      "shape_hw": [
+        2000,
+        1800
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/ink_masks/198_006.png": {
+      "sha256": "79fded44a962248ea5a330c18b78bc88c8205756dfa14d08b25271fa94820262",
+      "git_blob_sha1": "0b013de0559b9be75d42759f779f042cbf06e5a6",
+      "bytes": 4826,
+      "shape_hw": [
+        2000,
+        1800
+      ],
+      "dtype": "uint8"
+    },
+    "qumran_segmentation_dataset/parchment_masks/198_006.png": {
+      "sha256": "90bbd9a587722a0e8eb15c68ce9c677449199a19c978a9c521751f3c8baba37b",
+      "git_blob_sha1": "50331dcc9ae382917c9b57ba4e1718c28b2db994",
+      "bytes": 22721,
+      "shape_hw": [
+        2000,
+        1800
+      ],
+      "dtype": "uint8"
+    },
+    "msem_results/ink_masks/198_006.png": {
+      "bytes": 7754,
+      "git_blob_sha1": "f7a9cb40275e5733f0cf9825e43a1d1a5b672c15",
+      "sha256": "d3812f0c0462081281fe1b50f1a82f3793ddeb576541196dc50407ecafa36da4",
+      "shape_hw": [
+        2000,
+        1800
+      ],
+      "values": [
+        0,
+        255
+      ]
+    },
+    "qumran_segmentation_dataset/multispectral_images/198_007_001.tif": {
+      "sha256": "4953837cd441ea018be94ce01307ab8fb59ba223acba35b4ebad7f7bc4c6e5b9",
+      "git_blob_sha1": "f8efb480b07f4ceeb889f2652d3afdcad8efb629",
+      "bytes": 3590268,
+      "shape_hw": [
+        1400,
+        2000
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/multispectral_images/198_007_012.tif": {
+      "sha256": "991480a3e61bcddb8981a1353923d7a3b02ff1c9c3aed9ccb664c23fc23c6238",
+      "git_blob_sha1": "edd6627afd96deda5932df0f712eb46806f3a170",
+      "bytes": 3491036,
+      "shape_hw": [
+        1400,
+        2000
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/ink_masks/198_007.png": {
+      "sha256": "d604190f5b6304507f288c37e97c61a6c32457ad58d32704de7380301bec5910",
+      "git_blob_sha1": "0221a187d8fc8e1c8250313018447d3a7da794df",
+      "bytes": 14550,
+      "shape_hw": [
+        1400,
+        2000
+      ],
+      "dtype": "uint8"
+    },
+    "qumran_segmentation_dataset/parchment_masks/198_007.png": {
+      "sha256": "c85ac1f3c0beb26c434f427336c1659607c200a0c8c421c6b33d4859e19d6597",
+      "git_blob_sha1": "e02aa131c852727a5b196437119d379af130c94b",
+      "bytes": 13040,
+      "shape_hw": [
+        1400,
+        2000
+      ],
+      "dtype": "uint8"
+    },
+    "msem_results/ink_masks/198_007.png": {
+      "bytes": 10080,
+      "git_blob_sha1": "48e3587c51d1a6e89d0014190aaaa6f04ef7bc31",
+      "sha256": "ae6634d456b09d48c68f5d4b40e088945514d8c0e61c472c8e708cbda44745d1",
+      "shape_hw": [
+        1400,
+        2000
+      ],
+      "values": [
+        0,
+        255
+      ]
+    },
+    "qumran_segmentation_dataset/multispectral_images/690_004_001.tif": {
+      "sha256": "3d07ea7cfd639f00c7baccf2883620bb2c5ef9ddbea22f29f596f876cfeb3483",
+      "git_blob_sha1": "b163c3e5fd3b915403c3c10375e1f3e498ff9518",
+      "bytes": 3431434,
+      "shape_hw": [
+        1700,
+        1500
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/multispectral_images/690_004_012.tif": {
+      "sha256": "f155a36b950b304d916fd4f755cdf36839b46d13e2467bb1e633f0b03db588dc",
+      "git_blob_sha1": "9e7f7c5b93a1b0eba52ef144948d0534ae78b7f9",
+      "bytes": 3141030,
+      "shape_hw": [
+        1700,
+        1500
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/ink_masks/690_004.png": {
+      "sha256": "36d6f718cb8062e8a3a80e3ee73c8721f6610da1898f155830472c7738ade621",
+      "git_blob_sha1": "a80186bf8c351e2c5b1f33d3fbfb1a0417f2730a",
+      "bytes": 10846,
+      "shape_hw": [
+        1700,
+        1500
+      ],
+      "dtype": "uint8"
+    },
+    "qumran_segmentation_dataset/parchment_masks/690_004.png": {
+      "sha256": "ef74563cbe29dd7a8d666c465233742e705b4a6d580a3e598b09a87d0f9b20ae",
+      "git_blob_sha1": "909f4bdce15a5a98e2509c6664562263e643ff44",
+      "bytes": 10689,
+      "shape_hw": [
+        1700,
+        1500
+      ],
+      "dtype": "uint8"
+    },
+    "msem_results/ink_masks/690_004.png": {
+      "bytes": 13017,
+      "git_blob_sha1": "4d7789be7b0e9ab7e574b6119bab20672dcd085f",
+      "sha256": "abb6f118fa82d9edb93791079a23e8c482e172be91badf31d26e699c9c1d74dd",
+      "shape_hw": [
+        1700,
+        1500
+      ],
+      "values": [
+        0,
+        255
+      ]
+    },
+    "qumran_segmentation_dataset/multispectral_images/690_007_001.tif": {
+      "sha256": "6a98f3f2773c372aeed3c31d6fab9663a88a915c17b5ccb33c5b745a7448a6c3",
+      "git_blob_sha1": "79c4067fc231fc8984d6ff2c5675d55a6f75832b",
+      "bytes": 751430,
+      "shape_hw": [
+        1000,
+        600
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/multispectral_images/690_007_012.tif": {
+      "sha256": "6eac8f67c23f88e59419509974e67849fb0861ed347d1581584c11aae6871903",
+      "git_blob_sha1": "b108093f6ce67e658196606ea0e4865a2fe0c2cf",
+      "bytes": 704632,
+      "shape_hw": [
+        1000,
+        600
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/ink_masks/690_007.png": {
+      "sha256": "4dd637a0c1be88e7d3cbe2968a9b752dae8437a4ca0392d0ae786feda64d3240",
+      "git_blob_sha1": "0c2723f1f8aae3f25cb7aaebcd4bdf21062cf7d8",
+      "bytes": 3031,
+      "shape_hw": [
+        1000,
+        600
+      ],
+      "dtype": "uint8"
+    },
+    "qumran_segmentation_dataset/parchment_masks/690_007.png": {
+      "sha256": "293d8ba1995d2f7cdad6254f2cf3e18ba77e4c83fa205347ba28026acf236685",
+      "git_blob_sha1": "84c7d0f46e53dbb46f237d61eda2454af21d1ec3",
+      "bytes": 4797,
+      "shape_hw": [
+        1000,
+        600
+      ],
+      "dtype": "uint8"
+    },
+    "msem_results/ink_masks/690_007.png": {
+      "bytes": 4797,
+      "git_blob_sha1": "4d01c206c97ec1ad1fcf323689121db91a713543",
+      "sha256": "214afbaea55918a89b6f9c126803bdd0abc382f391be2ce5e612d37738940b45",
+      "shape_hw": [
+        1000,
+        600
+      ],
+      "values": [
+        0,
+        255
+      ]
+    },
+    "qumran_segmentation_dataset/multispectral_images/690_008_001.tif": {
+      "sha256": "c82c7f532f8957968f98fac6b2d98150c3094ec5e0e592c744d182c2e119d1de",
+      "git_blob_sha1": "8155223742e478dda4835b5c2727af55891d612d",
+      "bytes": 670734,
+      "shape_hw": [
+        1000,
+        500
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/multispectral_images/690_008_012.tif": {
+      "sha256": "8b49ac6b73fe4cf93d260e0127b6e1fbbc95c5cbeb10f55b73a0f4aafd5c4c42",
+      "git_blob_sha1": "4ad7a8d8a408de6bca99f47a50d986e84a49223f",
+      "bytes": 594470,
+      "shape_hw": [
+        1000,
+        500
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/ink_masks/690_008.png": {
+      "sha256": "1caf18803772ae371defda680f0504422b592622fcdfb1f36bf02ac6bfecff50",
+      "git_blob_sha1": "b342066ad09f1fa1700f00393321f91e4514ab17",
+      "bytes": 1567,
+      "shape_hw": [
+        1000,
+        500
+      ],
+      "dtype": "uint8"
+    },
+    "qumran_segmentation_dataset/parchment_masks/690_008.png": {
+      "sha256": "a04059f8d904ed350acdd4ab2a3ed50f4d3fae2f97e0dcbf0b36d8026934e655",
+      "git_blob_sha1": "dbadc207fcc62712bcebb4684ea246f3f7ad1fb6",
+      "bytes": 3637,
+      "shape_hw": [
+        1000,
+        500
+      ],
+      "dtype": "uint8"
+    },
+    "msem_results/ink_masks/690_008.png": {
+      "bytes": 2455,
+      "git_blob_sha1": "77ad5490e0a51047f421b5506f4f1c5b235a72ed",
+      "sha256": "2177f5de50452fceb65e7c7a4e4ed640088ddc05f5b1d891064ec9f774f02e63",
+      "shape_hw": [
+        1000,
+        500
+      ],
+      "values": [
+        0,
+        255
+      ]
+    },
+    "qumran_segmentation_dataset/multispectral_images/690_011_001.tif": {
+      "sha256": "df6968ce6cf6748c503defe81ddcf849da438e8a1786004aa57396b11b6a5718",
+      "git_blob_sha1": "5e239ccd3f98411fcf4ea2db901e9b0e259fec46",
+      "bytes": 914156,
+      "shape_hw": [
+        1400,
+        500
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/multispectral_images/690_011_012.tif": {
+      "sha256": "e9790b2cb5aab182050d4e03a69e2367a636025c0c0a5103fb8f54d35b6d585e",
+      "git_blob_sha1": "d09212306f26c4ce870c0ffa91f929c55bcc2cb6",
+      "bytes": 839500,
+      "shape_hw": [
+        1400,
+        500
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/ink_masks/690_011.png": {
+      "sha256": "7c531b6d8cc7d62a4835d8f7767a7aa567bab2a935bc31e68f61689d269efd36",
+      "git_blob_sha1": "c31dee394464803b1164465874c86f9205cc0864",
+      "bytes": 2662,
+      "shape_hw": [
+        1400,
+        500
+      ],
+      "dtype": "uint8"
+    },
+    "qumran_segmentation_dataset/parchment_masks/690_011.png": {
+      "sha256": "287e59ea64d1f39091f29b516734440e61f63d625b2498878e522cd451b594c8",
+      "git_blob_sha1": "893fbe4e34f5f7e44682cadd599519c4e3c3246b",
+      "bytes": 5545,
+      "shape_hw": [
+        1400,
+        500
+      ],
+      "dtype": "uint8"
+    },
+    "msem_results/ink_masks/690_011.png": {
+      "bytes": 5059,
+      "git_blob_sha1": "2f588954276e70000b6feff907120d8948540abe",
+      "sha256": "0d9885b78a4f24358c2dae82a31f3faa92438ea4e0dfcf15603141206a24e08c",
+      "shape_hw": [
+        1400,
+        500
+      ],
+      "values": [
+        0,
+        255
+      ]
+    },
+    "qumran_segmentation_dataset/multispectral_images/690_014_001.tif": {
+      "sha256": "c42e31caca5c62c8b23fb612b2ecedc0f2bc1983a5ab766a86d4e254f0e71952",
+      "git_blob_sha1": "f541957bb8ae56e9a3f2a85e96ede762659d2ecb",
+      "bytes": 725150,
+      "shape_hw": [
+        1200,
+        400
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/multispectral_images/690_014_012.tif": {
+      "sha256": "5b316e585f4cf2070480f4cc6e2fc549e247ed3040e778dc521d60a22d8ad7d5",
+      "git_blob_sha1": "dff6d200a9018fe3f18e1add13ba903c9f61519a",
+      "bytes": 639638,
+      "shape_hw": [
+        1200,
+        400
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/ink_masks/690_014.png": {
+      "sha256": "97f19e12a9749ec357decb9ec37bec7e94bf2b71ca81c0c7b5d6213fc69c03c3",
+      "git_blob_sha1": "013375bc437ca42b8d6a846f75912d62165c7dee",
+      "bytes": 1207,
+      "shape_hw": [
+        1200,
+        400
+      ],
+      "dtype": "uint8"
+    },
+    "qumran_segmentation_dataset/parchment_masks/690_014.png": {
+      "sha256": "124e42dae07d1db2b0c2cdc2fb60c4d039a09b9174c266d56aa36cf13bd38bbc",
+      "git_blob_sha1": "28565f6df11bd9bc3dc50bf330def998c27b71b2",
+      "bytes": 4105,
+      "shape_hw": [
+        1200,
+        400
+      ],
+      "dtype": "uint8"
+    },
+    "msem_results/ink_masks/690_014.png": {
+      "bytes": 3453,
+      "git_blob_sha1": "4d46588b8477bb2ad881daf1dd794d6a525d86f1",
+      "sha256": "e788c7c7c518bb3d270ef11a0471ab48bf02a5ef0320f136d25a157775b0fb67",
+      "shape_hw": [
+        1200,
+        400
+      ],
+      "values": [
+        0,
+        255
+      ]
+    },
+    "qumran_segmentation_dataset/multispectral_images/690_015_001.tif": {
+      "sha256": "740c5e633c73131ea6a7d9537557800ca5ae044c3918cf19d7df4da58fe762bb",
+      "git_blob_sha1": "5e5fd99383bf313d92388c94fadfc15d2a828758",
+      "bytes": 503240,
+      "shape_hw": [
+        1100,
+        300
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/multispectral_images/690_015_012.tif": {
+      "sha256": "17abda6644fc5f435c080bba2c2c9edac51c10774e0e0cbcef97854e80232b6f",
+      "git_blob_sha1": "9122f6dd3cda0e40668ab0e5405bc6906ec35683",
+      "bytes": 452088,
+      "shape_hw": [
+        1100,
+        300
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/ink_masks/690_015.png": {
+      "sha256": "0c2b192731251a297d803a98bb85e984ccb77bb6bd2a484be54f028e85cb852d",
+      "git_blob_sha1": "e117ef4629fabccf3ea8d2c1075a7dc0ef568884",
+      "bytes": 401,
+      "shape_hw": [
+        1100,
+        300
+      ],
+      "dtype": "uint8"
+    },
+    "qumran_segmentation_dataset/parchment_masks/690_015.png": {
+      "sha256": "554e60758831f5f043a09186cb5383cb597f1e968d6e65aef8bf217f15d7a55d",
+      "git_blob_sha1": "dad5bfb96e0c0ad8ec2f4188ab0f6d527c68eefc",
+      "bytes": 3770,
+      "shape_hw": [
+        1100,
+        300
+      ],
+      "dtype": "uint8"
+    },
+    "msem_results/ink_masks/690_015.png": {
+      "bytes": 2004,
+      "git_blob_sha1": "341b4035c26af39020344fad1748d122fca3dc53",
+      "sha256": "1b3dcc3d2694e48ff52198a4b388eb35453e90fc1d6f4c81c6142da9615758df",
+      "shape_hw": [
+        1100,
+        300
+      ],
+      "values": [
+        0
+      ]
+    },
+    "qumran_segmentation_dataset/multispectral_images/690_016_001.tif": {
+      "sha256": "87d5eb3ac633d77d448c7ca6406eed1b54ed2b0109280995e8392f343d93cd58",
+      "git_blob_sha1": "b2a45c6e360e20ebb2a616b6269b16855a0a4e6d",
+      "bytes": 494740,
+      "shape_hw": [
+        1100,
+        300
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/multispectral_images/690_016_012.tif": {
+      "sha256": "6f42abea1b6c488c3c40fabf352053b8f205aff4017b49b58f295ffb7bb1ae07",
+      "git_blob_sha1": "b25d7f5c8b42dfcba060d367761e661e0c464c5d",
+      "bytes": 439836,
+      "shape_hw": [
+        1100,
+        300
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/ink_masks/690_016.png": {
+      "sha256": "0c2b192731251a297d803a98bb85e984ccb77bb6bd2a484be54f028e85cb852d",
+      "git_blob_sha1": "e117ef4629fabccf3ea8d2c1075a7dc0ef568884",
+      "bytes": 401,
+      "shape_hw": [
+        1100,
+        300
+      ],
+      "dtype": "uint8"
+    },
+    "qumran_segmentation_dataset/parchment_masks/690_016.png": {
+      "sha256": "074c2be10eb089fdcdc42522d6add8fad5a33918477abb39372a5222d104ebcd",
+      "git_blob_sha1": "cc9f88c2dc303433bd25855acec0204988f324af",
+      "bytes": 3791,
+      "shape_hw": [
+        1100,
+        300
+      ],
+      "dtype": "uint8"
+    },
+    "msem_results/ink_masks/690_016.png": {
+      "bytes": 2004,
+      "git_blob_sha1": "341b4035c26af39020344fad1748d122fca3dc53",
+      "sha256": "1b3dcc3d2694e48ff52198a4b388eb35453e90fc1d6f4c81c6142da9615758df",
+      "shape_hw": [
+        1100,
+        300
+      ],
+      "values": [
+        0
+      ]
+    },
+    "qumran_segmentation_dataset/multispectral_images/690_018_001.tif": {
+      "sha256": "6a4d4ba73c98715090761405d6ec68513d6edab1f2bd91e39622cf5a2ef5e239",
+      "git_blob_sha1": "5f8c866e8dc125d3a8241254ffa9e33b1a2e320f",
+      "bytes": 665502,
+      "shape_hw": [
+        1000,
+        500
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/multispectral_images/690_018_012.tif": {
+      "sha256": "53ea9b31d6c941c3b06e633a682b38d47cf7e6212513e128355ff5cfd17eec48",
+      "git_blob_sha1": "b136612307d14bb30229d8363e04cade99ad7163",
+      "bytes": 600056,
+      "shape_hw": [
+        1000,
+        500
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/ink_masks/690_018.png": {
+      "sha256": "ce17d7fb0a5600e86763f5dba49661e04397c7322e91d2171af5d72971cf9b12",
+      "git_blob_sha1": "019818caec8bd00eeca194bb3564b4d44b138307",
+      "bytes": 1534,
+      "shape_hw": [
+        1000,
+        500
+      ],
+      "dtype": "uint8"
+    },
+    "qumran_segmentation_dataset/parchment_masks/690_018.png": {
+      "sha256": "5c5b30df8dda80ca9ef26452a44b54c4fe3214e59070fdc0e2fba6f265433f4d",
+      "git_blob_sha1": "a3959392aefb50f8001a88dd33879535a56f09f5",
+      "bytes": 4179,
+      "shape_hw": [
+        1000,
+        500
+      ],
+      "dtype": "uint8"
+    },
+    "msem_results/ink_masks/690_018.png": {
+      "bytes": 2433,
+      "git_blob_sha1": "d830e9afaf0b7b8273ed84952752e44aebcbd5ef",
+      "sha256": "eaaeadc83edeee7d8efc9e9f6c5193d736d2b1db0f239a11eb517bed9dc41105",
+      "shape_hw": [
+        1000,
+        500
+      ],
+      "values": [
+        0,
+        255
+      ]
+    },
+    "qumran_segmentation_dataset/multispectral_images/690_019_001.tif": {
+      "sha256": "8b61ee00830a435b6bf7df4c33ee25f11a90133f0018de5b7e46ca5ece984b4f",
+      "git_blob_sha1": "9449cde8a3b282eb9979d0597fe36a04a3fe1df1",
+      "bytes": 1111582,
+      "shape_hw": [
+        1600,
+        500
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/multispectral_images/690_019_012.tif": {
+      "sha256": "17c91568737152bb5db07441c4f22152656ab40841a0ce7024d3027b706b4a18",
+      "git_blob_sha1": "94d54fdb71d67a147ad3d0eb2fc5cc329ccd9b64",
+      "bytes": 995706,
+      "shape_hw": [
+        1600,
+        500
+      ],
+      "dtype": "uint16"
+    },
+    "qumran_segmentation_dataset/ink_masks/690_019.png": {
+      "sha256": "68e3ae0acd4b9a9ea799ef71ee1094efb297b67a9771cfa1c82e3423b6706af7",
+      "git_blob_sha1": "86885e571a5bd217120a7aac08c6cd4388797f34",
+      "bytes": 2346,
+      "shape_hw": [
+        1600,
+        500
+      ],
+      "dtype": "uint8"
+    },
+    "qumran_segmentation_dataset/parchment_masks/690_019.png": {
+      "sha256": "2a003c3165b123f71d80b3cebcec896d559857740b1be1df03a48dc6c9a071eb",
+      "git_blob_sha1": "9607d1254206470ea0b582a4b4cc2e2f58c5d2a5",
+      "bytes": 6044,
+      "shape_hw": [
+        1600,
+        500
+      ],
+      "dtype": "uint8"
+    },
+    "msem_results/ink_masks/690_019.png": {
+      "bytes": 4996,
+      "git_blob_sha1": "b4d86e6abb76ebba8c3b601a78990679c66ab941",
+      "sha256": "dfd03309b58c91b271e8595b94719efde2f76355c3dcbacc103921e09638eafb",
+      "shape_hw": [
+        1600,
+        500
+      ],
+      "values": [
+        0,
+        255
+      ]
+    }
+  },
+  "all_input_hashes_unchanged_after_processing": true,
+  "prior_raw_confusion_counts_exact": true,
+  "runtime": {
+    "numpy": "2.3.5",
+    "opencv": "4.13.0",
+    "pillow": "12.3.0",
+    "threads_requested": 1,
+    "threads_reported": 8
+  },
+  "image_outputs_written": false,
+  "new_characters_accepted": 0,
+  "canonical_change": false,
+  "transcription_deployment_authorized": false
+}

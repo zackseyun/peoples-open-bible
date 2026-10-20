@@ -1,6 +1,6 @@
 # POB source-wording adjudication method
 
-Version: 2.0.16 · Revised: 2026-10-17 (conditional layout calculations)
+Version: 2.0.17 · Revised: 2026-10-19 (correction donor hypotheses)
 
 This is the controlling method for source selection and English impact. The
 [approach review](TEXTUAL_RESTORATION_APPROACH_REVIEW_2026-09-04.md) records the
@@ -379,6 +379,19 @@ interpretation; test those explanations rather than assigning a fixed weight
 to the whole manuscript. The [Ezekiel recension controls](EZEKIEL_36_LANGUAGE_CONTROLS_2026-10-12.md#reading-level-affiliation-in-ezekiel)
 provide positive and contrary local examples. An author's proposed genealogy
 remains an inference, not a recovered ancestor.
+
+Record a correction's recoverable earlier reading, intervention and resulting
+reading separately from its proposed cause. Agreement with MT or a specified
+versional reading does not alone identify another exemplar. Test return to the
+copy's own exemplar, internal repair or harmonization, and consultation of
+another exemplar as competing explanations; retain uncertainty about hands
+and timing.
+Examine uncorrected disagreements when testing the proposed scope of revision.
+They can challenge comprehensive revision without excluding selective revision.
+An inferred donor is not an independently attested witness. The
+[correction donor review](../sources/textual_restoration/discovery/correction_donor_method.2026-10-19.v1.json)
+records the original argument, independent critique and consultation limits;
+uncertain donor history does not erase the corrected reading's attestation.
 
 Treat drafting preferences and embedded lexicon names as separate from source
 consultation. An instruction to preserve a traditional rendering is not another

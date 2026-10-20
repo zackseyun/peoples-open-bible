@@ -252,3 +252,25 @@ full-chapter count certificates, so the twelve newly certified chapter count
 reviews remain twelve. Chapters13/14 and the weaker or single-pass historical
 units are not silently promoted by this adapter. Seven stale active witness
 metadata echoes remain separate work and are not recycled as primary evidence.
+
+## Third application delivered; fourth application in CI
+
+The third application subsequently passed both exact-head CI runs39508051158
+and39508045642 at ee901a7e6b0235770bc2ce2f6b7e7f9d0f4b78e2. PR388 merged
+on main **ac51ddc7c552e27c128ccb6719835876a8070170**; its tree exactly matched
+that tested head, preserving the separately merged four97 repairs. Local
+main was advanced and pushed. Automatic publisher39512510698 succeeded,
+including the website rebuild request. The
+[public delivery check](../sources/enoch/coverage/delivery-batch03-20261020.json)
+matched all66 distinct repaired public English units from our first three
+applications, and all nine retired105:3–11 wrong addresses were absent.
+The base CDN still omits footnotes; this is not rendered reader-note/device
+verification or artwork publication.97:10 remains held.
+
+The fourth application's PR389 refresh merges main with its already tested
+191-test tree unchanged, at25090c5806ecce11a83173d9657dd04b591e4317.
+Its two exact-head CI runs are39512857211 and39512853309; main/public delivery
+of that fourth batch is not yet claimed. The older own128fb push CI was
+canceled as obsolete after that unchanged-tree refresh; no publisher or other
+chat's run was canceled. The subsequent historical-evidence working state
+passes196 local Enoch tests, with no canonical changes beyond the fourth batch.

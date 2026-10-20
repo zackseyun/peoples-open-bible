@@ -228,3 +228,27 @@ full mobile-export comparison. That comparison adds only50,51,70,107 and
 preserves their notes;18 remains withheld by the mobile completeness gate.
 Other existing mobile chapter payloads are unchanged. Exact-head CI, main
 integration and public delivery remain separate gates still to be recorded.
+
+## Versioned historical evidence import, not unnecessary retranslation
+
+A read-only historical audit recovered exact accepted input/result/current
+candidate chains, including an exactly reproduced original14-v2 input hash.
+It also showed why legacy `chapter_complete=true` labels must not be accepted
+as whole-chapter proof: chapter13's main package reviewed only4–10, and14's
+only19–25. Their preserved prefixes need separate evidence. Missing original
+bindings do not prove that those translations are wrong.
+
+The first [portable historical index](../sources/enoch/coverage/historical-input-bindings-v1.json)
+imports29 existing units only: all12 of15, all4 of16, both of29, and all11 of83.
+It copies no source/English bodies and performs no canonical writes. The
+versioned adapter directly revalidates each original input hash, raw accepted
+review result, original package dependencies, final reviewed-content hash,
+manifest, installed candidate and application receipt. A changed current record
+loses that imported acceptance; changed historical artifacts are rejected.
+These are historical independent-review bindings, not fabricated fresh paired
+review or human-specialist/manuscript certification. This raises the imported
+unit inventory to113 without claiming29 newly repaired verses. It adds **no**
+full-chapter count certificates, so the twelve newly certified chapter count
+reviews remain twelve. Chapters13/14 and the weaker or single-pass historical
+units are not silently promoted by this adapter. Seven stale active witness
+metadata echoes remain separate work and are not recycled as primary evidence.

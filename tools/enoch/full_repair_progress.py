@@ -30,6 +30,12 @@ def build() -> dict:
                                 'kind': 'earlier_bounded_unit_repair'}
     except (ValueError, OSError) as error:
         warnings.append('Earlier 15-unit application requires supersession/evidence audit: ' + str(error))
+    # Versioned historical input/result evidence is not a fresh paired scan review.
+    from tools.enoch import historical_evidence
+    try:
+        accepted.update(historical_evidence.load_current())
+    except (ValueError, OSError, KeyError) as error:
+        warnings.append('Historical input binding import requires audit: ' + str(error))
     for package in sorted(transaction.APPLICATIONS.glob('enoch_full_repair_batch*')):
         receipt_path = package / 'application.json'
         if not receipt_path.exists():

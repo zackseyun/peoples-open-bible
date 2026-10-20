@@ -1,5 +1,9 @@
 # 1 Enoch repair audit - October 20, 2026
 
+Historical first-batch snapshot. The [ongoing full-book repair report](ENOCH_FULL_REPAIR_PROGRESS_2026-10-20.md)
+records later repairs and current evidence; do not treat the counts below as
+the latest state.
+
 The POB translation remains incomplete and is not fully source-verified. This
 is a statement about this digital translation, not about the completeness of
 the ancient work. Neither a chapter entry nor a Graphic Reader illustration

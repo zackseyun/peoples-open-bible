@@ -113,6 +113,8 @@ def verify(applied: bool = False, check_corpus: bool = False) -> dict:
             if sha(preimage) != baseline:
                 raise ValueError(f'Archived baseline differs: {ref}')
         if applied:
+            if not path.exists() or path.read_bytes() != raw:
+                raise ValueError(f'Applied candidate differs: {ref}')
             expected_corpus[rel] = sha(raw)
         elif (path.exists() and sha(path.read_bytes()) != baseline) or \
                 (not path.exists() and baseline is not None):

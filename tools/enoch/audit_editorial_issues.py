@@ -47,6 +47,16 @@ def record_issues(record: dict, chapter: int, verse: int) -> list[dict]:
         return issues
     if not str(source.get('text') or '').strip():
         add('empty_source', 'Source text is empty')
+    origin_note = str(source.get('note') or '').casefold()
+    if any(signal in origin_note for signal in (
+            'source corrected to full beta', 'source text corrected against beta',
+            'full text recovered from oracle')):
+        add('source_origin_policy_review',
+            'Current source explicitly comes from the validation oracle; replace from inspected permitted edition, not a copied oracle')
+    for witness in (record.get('enoch_witnesses') or {}).get('available_witnesses', []):
+        if witness.get('witness') == 'charles_1906' and witness.get('text') != source.get('text'):
+            add('charles_witness_source_mismatch',
+                'Loaded Charles text differs from the declared selected source; adjudicate rather than inheriting stale witness claims')
     text = str(translation.get('text') or '')
     if not text.strip():
         add('empty_translation', 'English text is empty')
@@ -103,6 +113,11 @@ def build(chapters: list[int], pob_root: Path = coverage.POB_ROOT,
                 'detail': ('Absent under a declared selected-edition count' if
                            chapter['versification_inventory_declared'] else
                            'Parser-derived absent-unit lead; verify count and combined units'),
+                'count_basis': chapter['expected_count_basis']})
+        for verse in chapter['unexpected_verse_numbers']:
+            row(number, verse)['findings'].append({
+                'kind': 'unexpected_verse_file',
+                'detail': 'Record number exceeds the selected count; check printed addressing before retiring or relocating it',
                 'count_basis': chapter['expected_count_basis']})
         for signal in chapter['existing_source_review']:
             verse = int(signal.split(':')[1])

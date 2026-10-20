@@ -20,12 +20,14 @@ class EnochCompletenessTest(unittest.TestCase):
         self.assertEqual(coverage.EXPECTED_VERSES[45], 6)
         self.assertEqual(coverage.EXPECTED_VERSES[97], 10)
 
-    def test_chapter_45_sixth_unit_is_declared_but_not_complete(self):
+    def test_chapter_45_sixth_unit_is_now_present_after_bounded_review(self):
         row = coverage.audit([45])["chapters"][0]
         self.assertEqual(row["expected_count_basis"], "declared_primary_inventory")
         self.assertEqual(row["primary_source_verses"], 6)
-        self.assertEqual(row["missing_verse_numbers"], [6])
-        self.assertFalse(row["inventory_complete"])
+        self.assertEqual(row["missing_verse_numbers"], [])
+        # Raw OCR alignment is only a diagnostic; exact accepted payloads
+        # and the full printed count are tested by the batch02 application.
+        self.assertFalse(row["translation_verified_by_this_audit"])
 
     def test_chapter_97_tenth_unit_is_declared_but_not_complete(self):
         row = coverage.audit([97])["chapters"][0]

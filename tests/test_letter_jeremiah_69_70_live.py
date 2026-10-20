@@ -35,7 +35,7 @@ class LetterJeremiahLiveSuccessorTests(original.LetterJeremiahCorrectionTests):
         workflow = (original.ROOT / '.github/workflows/corpus-integrity.yml').read_text()
         for commit in (original.BASE, APPLIED):
             self.assertIn(f'git fetch --no-tags --depth=1 origin {commit}', workflow)
-        self.assertIn('python -m tools.textual_restoration.replay_historical_tests letter_jeremiah69_70', workflow)
+        self.assertIn('python -m tools.textual_restoration.replay_letter_jeremiah69_70', workflow)
         self.assertIn("python -m unittest discover -s tests -p 'test_letter_jeremiah_69_70_live.py'", workflow)
 
     def test_frozen_evidence_and_ci_setup(self):

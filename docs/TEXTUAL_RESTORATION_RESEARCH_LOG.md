@@ -18190,6 +18190,25 @@ tests. Replacement remote CI remains a separate merge requirement. This repair
 changes neither biblical source/English nor the frozen Letter or Ezekiel
 judgments; it separates historical reproducibility from current safeguards.
 
+Replacement CI then passes the Letter checks but exposes another immutable
+dependency: the Esdras 7 proof pins both the shared replay runner and the
+whole workflow. The shared runner and its tests are restored exactly; new
+replays use separate modules. Esdras 7's original six tests now replay at its
+actual applied checkpoint, while a separate live successor inherits all five
+behavioral checks and retains every current pin except workflow evolution.
+The original workflow remains pinned at that checkpoint. No old proof,
+evidence or source is rewritten. The migration record distinguishes the
+initial test counts from this successor and records both failed CI heads.
+
+The independent implementation follow-up passes and reruns the eight Letter
+live checks, nine Esdras 7 live checks and ten standalone replay regressions.
+Root then runs every command in the affected reader-policy CI step: all 126
+pass in 995.04 seconds. The repository Python supplies YAML/jsonschema and the
+existing compatible bundled runtime supplies Pillow; nothing is installed.
+Canonical/source bytes, both original proofs/evidence and the restored shared
+runner files remain unchanged. Fresh exact-head remote CI is still required
+before merge; the local result is not represented as that approval.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

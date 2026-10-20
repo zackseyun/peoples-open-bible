@@ -18081,6 +18081,25 @@ substantial source comparison remains the unresolved Ezekiel36–39/P967 questio
 where modern local apparatus and original argument access can distinguish
 historical explanations; repeating closed controls cannot supply that evidence.
 
+## October 19 Public Göttingen Ezekiel preview acquired
+
+After the user requests another public-source search, the actual bookseller
+reading-sample viewer supplies a public 2015 fourth-edition PDF. The
+[access record](../sources/textual_restoration/discovery/ezekiel_gottingen_public_preview.2026-10-19.v1.json)
+pins the unchanged original and four non-generative page renders. The sample
+has 26 PDF pages and ends at printed page 25. Its inspected title, prefaces, contents
+and final page establish partial access, not a complete reading of its introduction.
+The contents locate the notation section at 79, Bible text at 91 and Fraenkel's
+supplement at 331, with collation at 336; those pages are outside this sample.
+
+Separate supplement and older-edition searches find catalogue/subscription
+records, unrelated digitizations or restricted routes, not the missing target.
+The public Leuven introduction was already consulted and is not new apparatus.
+Thus access improves from catalogue-only to an actual edition preview, but
+Ezekiel 36:23–38 source priority, Hebrew, English and reader layout remain unchanged.
+The exact remaining input is the target apparatus and applicable supplement/key,
+not another reading of these preview or metadata pages.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

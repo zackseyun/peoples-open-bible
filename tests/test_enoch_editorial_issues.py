@@ -34,6 +34,15 @@ class EditorialIssuesTest(unittest.TestCase):
     def test_supplied_words_are_not_silently_treated_as_notes(self):
         self.assertEqual(self.kinds(fixture('He blessed [him].')), set())
 
+    def test_oracle_origin_and_stale_selected_witness_are_not_ignored(self):
+        record = fixture()
+        record['source']['note'] = 'Source corrected to full Beta maṣāḥǝft oracle text.'
+        record['enoch_witnesses'] = {'available_witnesses': [
+            {'witness': 'charles_1906', 'text': 'different source'}]}
+        self.assertTrue({'source_origin_policy_review', 'charles_witness_source_mismatch'} <= self.kinds(record))
+        clean = fixture('A judgment oracle was spoken.')
+        self.assertNotIn('source_origin_policy_review', self.kinds(clean))
+
     def test_missing_and_empty_note(self):
         kinds = self.kinds(fixture('A[b].', [{'marker': 'a', 'text': ''}]))
         self.assertTrue({'unanchored_footnote', 'missing_footnote', 'empty_footnote'} <= kinds)

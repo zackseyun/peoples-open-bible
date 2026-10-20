@@ -2,6 +2,7 @@
 import copy
 import json
 from pathlib import Path
+import shutil
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -66,6 +67,19 @@ class EnochOctober20Test(unittest.TestCase):
         held = json.loads((transaction.PACKAGE / 'held_chapter84/review.json').read_text())
         self.assertTrue(any(r['verdict'] == 'hold' for r in held['reviews']))
         self.assertFalse(any(c == 84 for c, _ in transaction.REFS))
+
+    def test_verify_applied_checks_each_current_target_even_without_full_corpus_check(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for c, v in transaction.REFS:
+                path = root / f'{c:03d}/{v:03d}.yaml'
+                path.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(transaction.TRANSLATION/f'{c:03d}/{v:03d}.yaml', path)
+            changed = root/'018/001.yaml'
+            changed.write_bytes(changed.read_bytes()+b'\n# tampered fixture\n')
+            with patch.object(transaction, 'TRANSLATION', root):
+                with self.assertRaisesRegex(ValueError, 'Applied candidate differs'):
+                    transaction.verify(applied=True, check_corpus=False)
 
 
 if __name__ == '__main__':

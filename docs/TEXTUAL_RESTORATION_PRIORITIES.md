@@ -88,6 +88,19 @@ Preserve existing manuscript, application and publication safeguards.
 
 ## Active research portfolio
 
+**October 20 Isaiah Egyptian cities and blessing:** the
+[connected19:16–25 comparison](ISAIAH_19_EGYPT_AND_CITY_COMPARISON_2026-10-20.md)
+checks three actual published Qumran body transcriptions and Swete's complete
+local Greek pages against current Hebrew/English and opposing original arguments.
+The Sun spelling is unbracketed/undotted in1QIsaᵃ and4Q56 at19:18; at25 the
+fragmentary witnesses must not inherit1QIsaᵃ's fully preserved blessing.
+The independently reviewed note-only application discloses Sun while retaining
+POB's Hebrew and marker-free English provisionally. Greek diaspora-compatible
+wording and Hebrew service construals affect interpretation but do not prove
+a unique earlier source or comprehensive ideological revision. Next require
+local critical/correction evidence or a properly matched construction test,
+not another vote on these selected rows. No reader/publisher layout expansion.
+
 **October 19 Ezra and 1 Esdras:** the
 [marriage-ending comparison](EZRA_10_MARRIAGE_ENDING_COMPARISON_2026-10-19.md)
 distinguishes childbirth from explicit dismissal with children and checks

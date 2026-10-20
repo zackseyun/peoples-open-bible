@@ -11,6 +11,7 @@ import copy
 import hashlib
 import json
 import os
+import subprocess
 from pathlib import Path
 import sys
 
@@ -97,8 +98,20 @@ def verify(applied: bool = False, check_corpus: bool = False) -> dict:
         baseline = manifest['canonical_baseline_sha256'].get(rel)
         if candidate['source_correction']['baseline_sha256'] != baseline:
             raise ValueError(f'Candidate baseline differs: {ref}')
-        if baseline is not None and sha((PACKAGE / f'{key}.baseline.yaml').read_bytes()) != baseline:
-            raise ValueError(f'Archived baseline differs: {ref}')
+        if baseline is not None:
+            archived = PACKAGE / f'{key}.baseline.yaml'
+            if archived.exists():
+                preimage = archived.read_bytes()
+            else:
+                # The inherited 28:1 contains oracle-derived wording. Bind its
+                # existing Git blob without vendoring that text again.
+                blob = manifest.get('baseline_git_blobs', {}).get(rel)
+                if not blob:
+                    raise ValueError(f'Archived baseline absent: {ref}')
+                preimage = subprocess.run(['git', 'cat-file', 'blob', blob['blob']],
+                                          cwd=ROOT, check=True, capture_output=True).stdout
+            if sha(preimage) != baseline:
+                raise ValueError(f'Archived baseline differs: {ref}')
         if applied:
             expected_corpus[rel] = sha(raw)
         elif (path.exists() and sha(path.read_bytes()) != baseline) or \

@@ -27,6 +27,9 @@ checks. Three previously absent records were added: **18:11, 18:14, 18:15**.
 The [application package](../sources/textual_restoration/applications/enoch_source_repairs_20261020/)
 preserves exact baselines, candidates, inputs, first/independent reviews,
 provenance, artifact hashes and the bounded application receipt. The integration
+retains the inherited oracle-derived 28:1 preimage by its existing Git blob and
+SHA-256, rather than duplicating that wording in the new application tree. The
+integration
 metadata explicitly says that generating model versions and full reviewer
 prompts were not reported; it does not fabricate drafting receipts. Legacy
 claims are archived rather than inherited as current certificates. Records

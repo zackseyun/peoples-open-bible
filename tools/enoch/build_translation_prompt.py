@@ -179,7 +179,8 @@ def build_enoch_prompt(chapter: int, verse: int) -> EnochPromptBundle:
     # The primary Ge'ez line may continue on the next chapter's scanned page.
     # Record every page-window file actually used by the recovered verse.
     source_chapters = [int(value) for value in re.findall(r"/ch(\d+)\.txt", charles.note)]
-    pages = list(dict.fromkeys(
+    source_row, _ = verse_parser.load_verse(chapter, verse)
+    pages = list(source_row.pages) if source_row and source_row.pages else list(dict.fromkeys(
         page for source_chapter in (source_chapters or [chapter])
         for page in _chapter_pages(source_chapter, edition="charles_1906")
     ))
@@ -187,7 +188,9 @@ def build_enoch_prompt(chapter: int, verse: int) -> EnochPromptBundle:
     witness_set.greek_edition_control = load_greek_edition_control(chapter, verse)
     greek = witness_set.greek_edition_control
     reference = f"1 Enoch {chapter}:{verse}"
-    zone1_sources_at_draft = [_snapshot_label("Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser)")]
+    source_kind = ('paired-reviewed primary transcription' if source_row and source_row.pages
+                   else 'Gemini OCR + verse parser')
+    zone1_sources_at_draft = [_snapshot_label(f"Charles 1906 Ethiopic Enoch ({source_kind})")]
     if _dillmann_available(chapter):
         zone1_sources_at_draft.append(_snapshot_label("Dillmann 1851 Ethiopic Enoch (chapter OCR only)"))
     if greek is not None:
@@ -201,7 +204,8 @@ def build_enoch_prompt(chapter: int, verse: int) -> EnochPromptBundle:
         "text": charles.text,
         "pages": pages,
         "confidence": charles.confidence,
-        "validation": "verse_parser_ok",
+        "validation": ("paired_reviewed_source_inputs" if source_row and source_row.pages
+                       else "verse_parser_ok"),
         "note": charles.note,
         "section": _section_name(chapter),
     }

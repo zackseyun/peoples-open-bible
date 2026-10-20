@@ -5,8 +5,9 @@ The expected verse numbers below follow the recovered Charles 1906 primary
 witness, with the documented editorial boundary at 6:8. In particular chapter
 20 has seven units in this witness, not the eight in Charles's later English
 edition. English wording is never used as POB source text. The primary
-Geʿez comparison is the recovered Charles 1906 OCR, including cross-page
-continuations from ``verse_parser``.
+Geʿez comparison uses separately paired-reviewed source inputs for registered
+complete chapters, otherwise recovered Charles1906 OCR with cross-page
+continuations. Reviewed inputs are never read from canonical verse outputs.
 """
 from __future__ import annotations
 
@@ -48,6 +49,10 @@ EXPECTED_VERSES = {
     # XCVIII; OCR recovers the tenth unit across the ch98 file boundary.
     # This certifies the count, not the unapproved wording of 97:10.
     97: 10,
+    # Actual CIV/CV/CVI boundaries on printed216-219 / PDF254-257.
+    # Old105:1 continued104:1, and old105:2-11 were104:2-11.
+    # Paired full selected-edition repair: enoch_full_repair_batch03_20261020.
+    104: 13, 105: 2,
 }
 
 
@@ -100,7 +105,7 @@ def audit(chapters: list[int], pob_root: Path = POB_ROOT) -> dict:
             "primary_source_warnings": source_warnings,
         })
     return {
-        "scope": "source inventory and review signals only; not translation approval. Counts beyond39 except independently scan-boundary-reviewed chapters45,83,84,97 are primary-parser leads, not a certified versification inventory.",
+        "scope": "source inventory and review signals only; not translation approval. Counts beyond39 except independently scan-boundary-reviewed chapters45,83,84,97,104,105 are primary-parser leads, not a certified versification inventory.",
         "chapters": rows,
         "missing_verse_total": sum(len(row["missing_verse_numbers"]) for row in rows),
         "source_review_total": sum(len(row["existing_source_review"]) for row in rows),

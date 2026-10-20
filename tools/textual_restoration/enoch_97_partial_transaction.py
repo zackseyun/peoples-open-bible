@@ -29,6 +29,8 @@ PACKAGE = ROOT / 'sources/textual_restoration/applications/enoch_97_1_3_5_8_2026
 REVIEW = ROOT / 'sources/textual_restoration/applications/enoch_97_review_20261019/individual_1_3_5_8'
 TRANSLATION = ROOT / 'translation/extra_canonical/1_enoch'
 VERSES = (1, 3, 5, 8)
+PRIMARY_PDF = ROOT / 'sources/enoch/scans/charles_1906_ethiopic.pdf'
+PRIMARY_SHA = '505f248c667cebd5136991d7c570841a0a3ed9396d5b28b85bf07f4a3957053e'
 
 
 def sha(data: bytes) -> str:
@@ -43,7 +45,7 @@ def name(verse: int) -> str:
     return f'097-{verse:03d}'
 
 
-def verify(*, applied: bool = False) -> dict:
+def verify(*, applied: bool = False, require_primary_pdf: bool = True) -> dict:
     manifest = json.loads((PACKAGE / 'manifest.json').read_text())
     refs = [f'1 Enoch 97:{n}' for n in VERSES]
     expected_files = {f'{name(n)}.{kind}.yaml' for n in VERSES
@@ -54,9 +56,12 @@ def verify(*, applied: bool = False) -> dict:
             manifest.get('canonical_changed') is not False or \
             set(manifest.get('files', {})) != expected_files:
         raise ValueError('Application scope or manifest differs')
-    pdf = ROOT / 'sources/enoch/scans/charles_1906_ethiopic.pdf'
-    if sha(pdf.read_bytes()) != manifest['source_pdf_sha256']:
+    if manifest['source_pdf_sha256'] != PRIMARY_SHA:
+        raise ValueError('Primary source identity changed')
+    if PRIMARY_PDF.exists() and sha(PRIMARY_PDF.read_bytes()) != PRIMARY_SHA:
         raise ValueError('Primary PDF changed')
+    if not PRIMARY_PDF.exists() and require_primary_pdf:
+        raise ValueError('Rehydrate the pinned primary PDF before applying or reviewing a new transaction')
     for filename, digest in manifest['files'].items():
         if sha((PACKAGE / filename).read_bytes()) != digest:
             raise ValueError(f'Application package changed: {filename}')
@@ -115,7 +120,8 @@ def verify(*, applied: bool = False) -> dict:
             raise ValueError(f'Footnote anchor differs: {key}')
         candidates[verse] = candidate_bytes
     return {'references': refs, 'accepted_review_sha256': manifest['accepted_review_sha256'],
-            'candidate_sha256': {name(n): sha(candidates[n]) for n in VERSES}}
+            'candidate_sha256': {name(n): sha(candidates[n]) for n in VERSES},
+            'primary_pdf_checked': PRIMARY_PDF.exists()}
 
 
 def verify_export_delta() -> dict:
@@ -148,7 +154,10 @@ def verify_export_delta() -> dict:
 
 
 def verify_applied() -> dict:
-    verified = verify(applied=True)
+    # Installed artifact/receipt verification works in a clean CI checkout,
+    # where ignored source binaries are not rehydrated. New applications still
+    # require the actual PDF; a present but corrupt PDF is never ignored.
+    verified = verify(applied=True, require_primary_pdf=False)
     manifest = json.loads((PACKAGE / 'manifest.json').read_text())
     for verse in VERSES:
         if sha(verse_file(verse).read_bytes()) != manifest['files'][f'{name(verse)}.candidate.yaml']:
@@ -160,7 +169,7 @@ def verify_applied() -> dict:
             receipt.get('installed_sha256') != verified['candidate_sha256'] or \
             receipt.get('chapter97_publication_approved') is not False:
         raise ValueError('Application receipt differs')
-    return receipt
+    return {**receipt, 'primary_pdf_checked': verified['primary_pdf_checked']}
 
 
 def apply() -> dict:

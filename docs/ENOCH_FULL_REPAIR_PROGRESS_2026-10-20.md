@@ -48,7 +48,7 @@ Critical stars, daggers and brackets remain source signs, with relevant
 editorial supplies/reported variants distinguished in notes. Exact title
 spellings **መንፈሳት** are preserved rather than normalized to familiar OCR.
 
-## Current issue inventory and next repairs
+## Second-application issue snapshot and next repairs
 
 The fresh [verse register](../sources/enoch/coverage/editorial-issues-batch02-20261020.md)
 and [hash-bound JSON](../sources/enoch/coverage/editorial-issues-batch02-20261020.json)
@@ -82,9 +82,59 @@ title should read **መንፈሳት**, not its installed **መናፍስት**. Th
 repair remains separate from this spelling defect. A new reviewed superseding
 application is required; historical acceptance is evidence, not infallibility.
 
-The [108-chapter progress snapshot](../sources/enoch/coverage/full-repair-progress-batch02-20261020.json)
-imports exact current evidence for50 units (the previous15 plus these35),
-with five complete selected-edition chapter reviews. This is a conservative
+## Third local application: correct addresses, not blind moves
+
+The next [reviewed application](../sources/textual_restoration/applications/enoch_full_repair_batch03_20261020/)
+has now installed17 units: **4:1;63:7;104:1–13;105:1–2**, and retired exactly
+nine misaddressed105:3–11 records through separately accepted address maps.
+The full104/105 source/English/notes were reviewed, not merely relabeled.
+Old105:1 was the continuation of104:1; old105:2–11 belonged to104:2–11.
+Actual105:1–2 were replaced with their actual printed units, not deleted.
+Twelve absent104 records are restored, for905 canonical records overall.
+The receipt proves all unrelated canonical files unchanged. Old preimages are
+retained by Git/hash, not by copying oracle text into new application files.
+The full mobile-export comparison adds only104/105 and changes the existing
+chapter4 payload;63's English/notes and all surrounding chapter payloads stay
+unchanged.
+
+4:1 replaces its oracle-derived source with complete actual PDF44/46, retaining
+the printed heat form and qualified pronoun/temporal note.63:7's source-only
+title correction is now applied through explicit supersession; its earlier
+negative-clause English and notes are unchanged, and chapter63 is still held.
+104:3 now preserves the appearance sense without inventing an explicit divine
+agent/object;105:1 removes an unsupported reflexive and discloses its compressed
+reward syntax.105:2 retains the printed “I and my son,” without harmonization.
+
+The [new progress snapshot](../sources/enoch/coverage/full-repair-progress-batch03-20261020.json)
+imports current accepted evidence for66 distinct units and eight complete
+selected-edition chapters:4,36–39,45,104,105. This is still not all108, and
+unimported historical evidence still requires audit rather than automatic
+retranslation. The [new issue register](../sources/enoch/coverage/editorial-issues-batch03-20261020.md)
+reports14 declared absent records,142 parser-derived leads,46 alignment
+signals, four explicit oracle-origin policy leads and seven witness/source
+echo mismatches. These overlapping diagnostics are not a mistranslation total.
+
+A separate [72–82 structural checkpoint](../sources/enoch/coverage/count72-82-20261020/inventory-structural.json)
+inspected29 actual source pages:154 printed units versus124 current records,
+with30 absent IDs and nine clipped cross-page source leads.77 has eight actual
+units in this edition, not an assumed nine. That checkpoint is a single source
+count audit awaiting independent completion evidence, **not wording approval**.
+Its committed derivative omits current source/English strings and retains hashes.
+
+The third application is locally verified, not yet claimed public. The last
+publicly verified state above remains main51649352589ed5b84875422870c63c5c4000d7f7
+and50 repaired English units. Work on18:12,50/51,70/107 and historical accepted
+evidence continues. Genuine unresolved readings and chapter84's no-partial-install
+gate remain unchanged; chapter97's separate dirty checkout remains untouched.
+All174 local Enoch tests pass, including the complete mobile-export comparison,
+rollback and retirement dependency guards, source-registry tamper rejection,
+exact current targets and explicit source-only supersession without rewriting
+the older package. These local checks do not substitute for exact-head CI or
+public delivery of this third application.
+
+For comparison, the earlier [second-application snapshot](../sources/enoch/coverage/full-repair-progress-batch02-20261020.json)
+imported evidence for50 units (the previous15 plus the second35),
+with five complete selected-edition chapter reviews. This was a conservative
 evidence-import count, **not** a claim that every other existing unit is bad.
 Unimported historical packages still require audit. Full-book completion is
 explicitly false until all requirements below pass.
@@ -93,6 +143,7 @@ explicitly false until all requirements below pass.
 
 ```sh
 python3 -m tools.enoch.bounded_application verify-applied --package enoch_full_repair_batch02_20261020
+python3 -m tools.enoch.bounded_application verify-applied --package enoch_full_repair_batch03_20261020
 python3 -m unittest discover -s tests -p 'test_enoch*.py'
 python3 -m tools.enoch.full_repair_progress --output state/enoch-full-repair-progress.json
 ```
@@ -105,15 +156,24 @@ exports and regression checks; changes on main and exact canonical/public
 delivery; and a requirement-by-requirement completion audit. No narrow test
 suite substitutes for these gates.
 
-The mobile export now adds exactly36,37,38,39,45 with their full reviewed unit
-counts and notes. Other mobile chapter payloads are unchanged. Mobile export
+The second application's mobile export added exactly36,37,38,39,45 with their full reviewed unit
+counts and notes. Its other mobile chapter payloads were unchanged. Mobile export
 completeness is not the CDN's policy: the base public CDN can include partial
 chapters and strips footnote anchors/notes. Public English matching, repository
 note preservation and actual reader-note UI verification are distinct checks.
-At this snapshot this second application is local, not yet a verified public
-deployment. Publication evidence must be recorded separately after CI/merge.
+This second application subsequently passed both exact-head corpus CI runs
+(`39492333632`, `39492327263`), merged through PR386 and was pushed on main at
+`51649352589ed5b84875422870c63c5c4000d7f7`. The main tree matched tested head
+`78d0771b4860a4cbd551a4f198f65152fdc58269`. Automatic publisher run39498494273
+succeeded, including the website rebuild request step. The public manifest
+reached that exact main commit, and **all50 repaired public English units**
+(the earlier15 plus these35) matched their accepted candidates after removing
+single-letter footnote anchors only. See the
+[delivery evidence](../sources/enoch/coverage/delivery-batch02-20261020.json).
+The base payload still omits footnotes. A rebuild request is not verification
+of a rendered website, reader-note UI, physical device or artwork publication.
 
-Local validation passed all146 Enoch tests, including transaction rollback,
+The second-application local validation passed all146 Enoch tests, including transaction rollback,
 artifact/preimage rejection, exact35-unit review bindings, ten additions,
 the108-chapter progress limits and the full mobile-export comparison. An older
 verifier weakness was fixed: installed targets are now byte-compared even when

@@ -15,14 +15,15 @@ from tools.enoch.build_translation_prompt import build_enoch_prompt
 @contextmanager
 def evidence_copy():
     with tempfile.TemporaryDirectory() as directory:
-        root = Path(directory)
+        root = Path(directory).resolve()
         registry = root/'registry.json'
         registry.write_bytes(sources.REGISTRY.read_bytes())
         name = 'enoch_full_repair_batch02_20261020'
         package = root/'applications'/name
         shutil.copytree(transaction.APPLICATIONS/name, package)
         with patch.object(sources, 'REGISTRY', registry), \
-                patch.object(transaction, 'APPLICATIONS', package.parent):
+                patch.object(transaction, 'APPLICATIONS', package.parent), \
+                patch.object(transaction, 'ROOT', root):
             yield registry, package
 
 
@@ -89,6 +90,49 @@ class ReviewedSourcesTest(unittest.TestCase):
             m.write_text(json.dumps(manifest))
             with self.assertRaisesRegex(ValueError, 'not independently bound'):
                 sources.load_chapter(36)
+
+    def test_individual_override_changes_only_its_exact_raw_unit(self):
+        with evidence_copy() as (registry,package):
+            data=json.loads(registry.read_text());data['chapters'].pop('39')
+            data['units']={'39:7':package.name};registry.write_text(json.dumps(data))
+            raw,_=parser.parse_ocr_chapter(39);rows,warnings=parser.parse_chapter(39)
+            self.assertIn('ይትለሐዩ',rows[6].text)
+            self.assertTrue(rows[6].pages)
+            self.assertEqual([r for r in rows if r.verse!=7],[r for r in raw if r.verse!=7])
+            self.assertIn('does not approve other OCR rows',warnings[-1])
+
+    def test_individual_source_requires_declared_count_and_valid_address(self):
+        for key in ('40:1','18:99'):
+            with evidence_copy() as (registry,package):
+                data=json.loads(registry.read_text());data['units']={key:package.name}
+                registry.write_text(json.dumps(data))
+                with self.assertRaisesRegex(ValueError,'requires a declared printed count'):
+                    sources.load_unit_overrides(int(key.split(':')[0]))
+
+    def test_individual_override_does_not_accept_an_ambiguous_raw_address(self):
+        with evidence_copy() as (registry,package):
+            data=json.loads(registry.read_text());data['chapters'].pop('39')
+            data['units']={'39:7':package.name};registry.write_text(json.dumps(data))
+            row=parser.EnochVerseRow(39,7,'raw','7.','fixture')
+            with patch.object(parser,'parse_ocr_chapter',return_value=([row,row],[])):
+                with self.assertRaisesRegex(ValueError,'ambiguous raw address'):
+                    parser.parse_chapter(39)
+
+    def test_individual_override_cannot_hide_an_unaccepted_exact_reference(self):
+        with evidence_copy() as (registry,package):
+            data=json.loads(registry.read_text());data['units']={'18:12':package.name}
+            registry.write_text(json.dumps(data))
+            with self.assertRaisesRegex(ValueError,'lacks the exact unit'):
+                sources.load_unit_overrides(18)
+
+    def test_reviewed_source_controls_survive_into_the_drafting_prompt(self):
+        # These are the source-reviewer's editorial notes, not the English
+        # running translation being fed back as a source/oracle.
+        row,_=parser.load_verse(4,1)
+        self.assertTrue(row.source_note)
+        prompt=build_enoch_prompt(4,1)
+        self.assertIn('Source editorial control:',prompt.source_payload['note'])
+        self.assertIn(row.source_note,prompt.source_payload['note'])
 
 
 if __name__=='__main__':

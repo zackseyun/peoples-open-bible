@@ -18209,6 +18209,36 @@ Canonical/source bytes, both original proofs/evidence and the restored shared
 runner files remain unchanged. Fresh exact-head remote CI is still required
 before merge; the local result is not represented as that approval.
 
+## October 19 Joshua camp formulas and Greek transmission
+
+The full institutionally hosted De Troyer study of Joshua 10 supplies a new
+original argument for the open Joshua translation-history question. Root reads
+all 28 extracted pages including appendix and notes, visually checks the title,
+15–18 and 23, and compares the relevant current Hebrew/POB records with complete
+Swete I pages 440–443 and their apparatus. The [comparison](JOSHUA_10_CAMP_ARGUMENT_2026-10-19.md)
+and [evidence record](../sources/textual_restoration/comparisons/joshua10_camp.2026-10-19.v1.json)
+preserve the source, render and unchanged-input pins.
+
+The selected Greek lacks both return-to-Gilgal verses, 10:15 and 10:43, and
+the camp phrase at 10:21. The 10:15 apparatus distinguishes a Vaticanus marginal
+addition from its original-hand omission; the stages are not conflated.
+De Troyer's published Quast notes remain mediated apparatus evidence, and her
+Schøyen codex statements remain attributed rather than new leaf consultation.
+Her own conclusion is tentative. Normal lexical rendering elsewhere cannot
+exclude selective Greek omission, while acknowledged Greek rewriting cannot
+prove these particular omissions either. The correlated return formulas do
+not independently establish a single earlier Hebrew edition.
+
+One fresh factual reviewer confirms the bounded findings, consultation limits
+and two local descriptive corrections; a subsequent implementation check of
+the two new files passes and verifies all 13 render hashes. The actual contrary
+CTAT I page 17 argument is not acquired: its ordinary institutional route
+returns a security challenge, without bypass. Hebrew expansion, Greek editing
+and branching Hebrew forms therefore remain competing explanations. Current
+source, English, notes and layout stay unchanged, as do the frozen Joshua 24
+packets. This is new comparative evidence, not newly recovered Hebrew, a
+decision on 4Q47 placement or a basis for a canon addition.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

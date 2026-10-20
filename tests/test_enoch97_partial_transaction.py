@@ -42,6 +42,34 @@ class Enoch97PartialTransactionTest(unittest.TestCase):
                     with self.assertRaises(ValueError):
                         transaction.verify_applied()
 
+    def test_clean_checkout_can_verify_installed_evidence_but_not_apply_without_pdf(self):
+        with tempfile.TemporaryDirectory() as directory:
+            missing = Path(directory)/'not-rehydrated.pdf'
+            before = {n:transaction.verse_file(n).read_bytes() for n in transaction.VERSES}
+            with patch.object(transaction,'PRIMARY_PDF',missing):
+                result=transaction.verify_applied()
+                self.assertFalse(result['primary_pdf_checked'])
+                with self.assertRaisesRegex(ValueError,'Rehydrate the pinned primary PDF'):
+                    transaction.apply()
+            self.assertEqual(before,{n:transaction.verse_file(n).read_bytes() for n in transaction.VERSES})
+
+    def test_present_bad_primary_pdf_is_not_skipped_by_installed_verification(self):
+        with tempfile.TemporaryDirectory() as directory:
+            bad=Path(directory)/'bad.pdf';bad.write_bytes(b'not an actual source edition')
+            with patch.object(transaction,'PRIMARY_PDF',bad):
+                with self.assertRaisesRegex(ValueError,'Primary PDF changed'):
+                    transaction.verify_applied()
+
+    def test_source_identity_is_pinned_even_when_primary_binary_is_absent(self):
+        with tempfile.TemporaryDirectory() as directory:
+            package=Path(directory)/'package';shutil.copytree(transaction.PACKAGE,package)
+            manifest=package/'manifest.json';data=json.loads(manifest.read_text())
+            data['source_pdf_sha256']='0'*64;manifest.write_text(json.dumps(data))
+            with patch.object(transaction,'PACKAGE',package), \
+                    patch.object(transaction,'PRIMARY_PDF',Path(directory)/'absent.pdf'):
+                with self.assertRaisesRegex(ValueError,'Primary source identity changed'):
+                    transaction.verify_applied()
+
 
 if __name__ == '__main__':
     unittest.main()

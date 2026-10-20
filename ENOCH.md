@@ -58,6 +58,17 @@ specialist, independent manuscript, full-book or Graphic Reader publication
 certification. The chapter45/97 count checks are not editorial approval at all.
 Artwork continuity/publication QA is still separate.
 
+## Chapter 97 individual source repairs (2026-10-20)
+
+Two scan-bound whole-chapter reviews held 97:10 and called for revisions in
+97:1-9. A separate bounded review accepted revised individual units 97:1,
+3, 5 and 8. Their hash-checked transaction installed only those four source,
+translation and note repairs; canonical 97:10 remains absent and the mobile
+exporter still excludes chapter 97. Neither the reviews nor this source
+repair approve chapter-level Graphic publication. See
+`sources/textual_restoration/applications/enoch_97_review_20261019/` and
+`sources/textual_restoration/applications/enoch_97_1_3_5_8_20261019/`.
+
 ## Why Enoch
 
 Four reasons this book warrants a dedicated phase:

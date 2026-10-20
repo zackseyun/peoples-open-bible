@@ -18129,6 +18129,41 @@ corrects the report/evidence; the review otherwise passes within its stated
 scope. Further source-priority work needs materially new apparatus/witness controls,
 not another reading of these same pages or repeated agreement votes.
 
+## October 19 Correction agreement and inferred donors
+
+A bounded source search exposes Tov's2024 original argument through a public
+31-page PDF text extraction, not just an abstract. Root reads the continuous
+English argument and notes through the conclusion and appendix; no local PDF
+or visible screenshot is acquired. Hebrew table placement and figures remain
+unverified. Failed ordinary downloads and the browser security check are not
+bypassed. The [access and method record](../sources/textual_restoration/discovery/correction_donor_method.2026-10-19.v1.json)
+also preserves the failed new Finsterbusch2021 access pass rather than treating
+another work as that unread article.
+
+One independent conceptual review finds a specific gap in method2.0.16:
+corrected-state agreement and an inferred donor were not explicitly separated.
+Version2.0.17 adds the reviewed narrow rule. Test correction against the copy's
+own exemplar, internal repair and a different exemplar; uncorrected differences
+can challenge comprehensive revision without excluding selective revision.
+Do not infer an independent witness from a proposed donor.
+The same reviewer checks the three-file implementation and passes within this
+method/access scope, without another historical-priority vote.
+
+Tov's broader no-external-comparison proposal remains his working hypothesis,
+with possible exceptions, not POB's finding. His restricted use of variants
+does not deny textual variation. No correction inventory, Hebrew table,
+manuscript image or case priority is newly validated here. Masada's published
+new-heart attestation and the frozen Ezekiel decision remain unchanged, as do
+canonical source, English, notes, canon and reader layout. The contribution is
+a more explicit operational safeguard; no source-text discovery is claimed.
+
+The43 historical-boundary checks pass with bundled Python/Pillow. An initial
+58-test probe also exposes an unrelated NT-pilot report/render mismatch:
+the same code, test, data and report at baseline7050c599 reproduce it.
+The repository venv's missing Pillow is resolved for the boundary rerun by
+using the existing bundled runtime, not installing or changing dependencies.
+No unrelated report or test is rewritten to manufacture a green result.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

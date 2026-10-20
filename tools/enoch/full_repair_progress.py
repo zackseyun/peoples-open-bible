@@ -23,7 +23,8 @@ def build() -> dict:
     # This earlier application has its own versioned schema/review normalizer.
     from tools.textual_restoration import enoch_20261020_transaction as previous
     try:
-        previous.verify(applied=True)
+        from tools.enoch.current_evidence import verify_current
+        verify_current(previous.PACKAGE)
         for c, v in previous.REFS:
             accepted[(c, v)] = {'application': str(previous.PACKAGE.relative_to(transaction.ROOT)),
                                 'kind': 'earlier_bounded_unit_repair'}
@@ -34,6 +35,7 @@ def build() -> dict:
         if not receipt_path.exists():
             continue
         try:
+            transaction.verify(package, evidence_only=True)
             manifest = transaction.load_manifest(package)
             receipt = json.loads(receipt_path.read_text())
             if receipt.get('status') != 'applied_verified' or \

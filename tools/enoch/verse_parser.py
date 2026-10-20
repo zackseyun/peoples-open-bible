@@ -28,11 +28,13 @@ import argparse
 import json
 import pathlib
 import re
+import sys
 from dataclasses import asdict, dataclass, replace
 from typing import Iterable
 
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(REPO_ROOT))
 CHARLES_ROOT = REPO_ROOT / "sources" / "enoch" / "ethiopic" / "transcribed" / "charles_1906"
 
 _HEADING_PREFIXES = (
@@ -80,6 +82,7 @@ class EnochVerseRow:
     text: str
     marker_raw: str
     chapter_file: str
+    pages: tuple[int, ...] = ()
 
 
 def roman_numeral(n: int) -> str:
@@ -160,7 +163,7 @@ def extract_chapter_segment(chapter: int, raw_text: str) -> tuple[str, list[str]
     return segment, warnings
 
 
-def parse_chapter(chapter: int) -> tuple[list[EnochVerseRow], list[str]]:
+def parse_ocr_chapter(chapter: int) -> tuple[list[EnochVerseRow], list[str]]:
     path = chapter_path(chapter)
     if not path.exists():
         raise FileNotFoundError(f"Missing Charles 1906 chapter file: {path}")
@@ -291,6 +294,22 @@ def parse_chapter(chapter: int) -> tuple[list[EnochVerseRow], list[str]]:
         warnings.append("Duplicate verse numbers recovered in chapter segment.")
 
     return rows, warnings
+
+
+def parse_chapter(chapter: int) -> tuple[list[EnochVerseRow], list[str]]:
+    # Reviewed inputs are an independent source transcription, not a readback
+    # of canonical translations. A corrupt registered package fails closed;
+    # never silently fall back to damaged OCR after a source-evidence failure.
+    from tools.enoch.selected_edition_sources import load_chapter
+    source = load_chapter(chapter)
+    if source is not None:
+        return [EnochVerseRow(chapter=chapter, verse=row['verse'],
+                    text=row['source']['text'], marker_raw='reviewed printed unit boundary',
+                    chapter_file=row['evidence'], pages=tuple(row['source']['pages']))
+                for row in source], [
+            'Primary selected-edition source comes from exact paired-reviewed inputs; '
+            'raw OCR remains available via parse_ocr_chapter. Not independent manuscript certification.']
+    return parse_ocr_chapter(chapter)
 
 
 def load_verse(chapter: int, verse: int) -> tuple[EnochVerseRow | None, list[str]]:

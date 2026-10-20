@@ -74,6 +74,33 @@ def load_manifest(package: Path) -> dict:
         c, v = parse_ref(ref)
         if f'{c:03d}-{v:03d}.candidate.yaml' not in manifest['files']:
             raise ValueError(f'Candidate is not hash-pinned: {ref}')
+    retired = [row['reference'] for row in manifest.get('retirements', [])]
+    if len(retired) != len(set(retired)) or set(retired) & set(refs) or \
+            [parse_ref(ref) for ref in retired] != sorted(parse_ref(ref) for ref in retired):
+        raise ValueError('Retired references overlap candidates, duplicate or are unsorted')
+    for row in manifest.get('retirements', []):
+        c,v = parse_ref(row['reference'])
+        baseline = manifest['canonical_baseline_sha256'].get(f'{c:03d}/{v:03d}.yaml')
+        replacements = row.get('replacement_references', [])
+        if row.get('action') != 'retire_misaddressed_record' or not row.get('reason') or \
+                not baseline or row.get('baseline_sha256') != baseline or \
+                not replacements or len(replacements) != len(set(replacements)) or \
+                not set(replacements) <= set(refs):
+            raise ValueError('Retirement lacks an exact preimage, reason or reviewed replacement')
+    for ref, prior in manifest.get('supersedes', {}).items():
+        if ref not in refs:
+            raise ValueError('Supersession must name a candidate in this exact scope')
+        c,v = parse_ref(ref)
+        old_package = artifact(APPLICATIONS, prior['package'])
+        if old_package.parent != APPLICATIONS.resolve() or old_package == package.resolve():
+            raise ValueError('Supersession package is not a distinct direct application')
+        old_manifest = old_package/'manifest.json'
+        old_candidate = old_package/f'{c:03d}-{v:03d}.candidate.yaml'
+        old_hash = sha(old_candidate.read_bytes())
+        if sha(old_manifest.read_bytes()) != prior['manifest_sha256'] or \
+                old_hash != prior['candidate_sha256'] or \
+                manifest['canonical_baseline_sha256'].get(f'{c:03d}/{v:03d}.yaml') != old_hash:
+            raise ValueError('Supersession does not bind the historical manifest/candidate/preimage')
     return manifest
 
 
@@ -104,8 +131,34 @@ def review_row(package: Path, binding: dict, ref: str, pinned: dict) -> dict:
     return selected[0]
 
 
+def reviewed_rows(package: Path, bindings: list[dict], ref: str,
+                  pinned: dict) -> list[dict]:
+    if len(bindings) < 2 or len({b['reviewer_id'] for b in bindings}) < 2:
+        raise ValueError(f'Two distinct reviewers required: {ref}')
+    rows, roles = [], []
+    for binding in bindings:
+        rows.append(review_row(package, binding, ref, pinned))
+        provenance = json.loads(artifact(package, binding['provenance']).read_text())
+        if provenance['reviewer_id'] != binding['reviewer_id']:
+            raise ValueError('Reviewer identity differs from pinned provenance')
+        roles.append(provenance.get('role'))
+    if 'independent_reviewer' not in roles:
+        raise ValueError(f'Independent source assessment required: {ref}')
+    return rows
+
+
+def verify_git_preimage(manifest: dict, relative: str, expected: str) -> None:
+    blob = manifest['baseline_git_blobs'][relative]
+    preimage = subprocess.run(['git', 'cat-file', 'blob', blob['blob']], cwd=ROOT,
+                              check=True, capture_output=True).stdout
+    if sha(preimage) != expected:
+        raise ValueError(f'Historical Git preimage changed: {relative}')
+
+
 def verify(package: Path, *, applied: bool = False,
-           check_corpus: bool = False) -> dict:
+           check_corpus: bool = False, evidence_only: bool = False) -> dict:
+    if evidence_only and (applied or check_corpus):
+        raise ValueError('Historical evidence validation cannot claim installed targets')
     manifest = load_manifest(package)
     schema = jsonschema.Draft202012Validator(json.loads((ROOT / 'schema/verse.schema.json').read_text()))
     expected = dict(manifest['canonical_baseline_sha256'])
@@ -134,22 +187,11 @@ def verify(package: Path, *, applied: bool = False,
         errors = [f for f in findings if f['kind'] != 'repeated_english_span_review']
         if errors:
             raise ValueError(f'Candidate has mechanical errors: {ref}: {errors}')
-        bindings = manifest['review_bindings'][ref]
-        if len(bindings) < 2 or len({b['reviewer_id'] for b in bindings}) < 2:
-            raise ValueError(f'Two distinct reviewers required: {ref}')
-        roles = []
-        for binding in bindings:
-            row = review_row(package, binding, ref, manifest['files'])
-            provenance = json.loads(artifact(package, binding['provenance']).read_text())
-            if provenance['reviewer_id'] != binding['reviewer_id']:
-                raise ValueError('Reviewer identity differs from pinned provenance')
-            roles.append(provenance.get('role'))
+        for row in reviewed_rows(package, manifest['review_bindings'][ref], ref, manifest['files']):
             if any(candidate['source'].get(key) != row['source'].get(key)
                    for key in ('edition', 'language', 'text', 'pages')) or \
                     candidate['translation'] != row['translation']:
                 raise ValueError(f'Candidate differs from accepted source/English/notes: {ref}')
-        if 'independent_reviewer' not in roles:
-            raise ValueError(f'Independent source assessment required: {ref}')
         witnesses = candidate.get('enoch_witnesses', {}).get('available_witnesses', [])
         if len(witnesses) != 1 or witnesses[0]['witness'] != 'charles_1906' or \
                 witnesses[0]['text'] != candidate['source']['text']:
@@ -158,12 +200,11 @@ def verify(package: Path, *, applied: bool = False,
         if correction['baseline_sha256'] != baseline:
             raise ValueError(f'Preimage hash differs: {ref}')
         if baseline is not None:
-            blob = manifest['baseline_git_blobs'][relative]
-            preimage = subprocess.run(['git', 'cat-file', 'blob', blob['blob']], cwd=ROOT,
-                                      check=True, capture_output=True).stdout
-            if sha(preimage) != baseline:
-                raise ValueError(f'Historical Git preimage changed: {ref}')
+            verify_git_preimage(manifest, relative, baseline)
         target = TRANSLATION / relative
+        if evidence_only:
+            candidates[relative] = raw
+            continue
         if applied:
             if not target.exists() or target.read_bytes() != raw:
                 raise ValueError(f'Applied candidate differs: {ref}')
@@ -172,10 +213,30 @@ def verify(package: Path, *, applied: bool = False,
                 (not target.exists() and baseline is not None):
             raise ValueError(f'Canonical preimage changed: {ref}')
         candidates[relative] = raw
+    for retirement in manifest.get('retirements', []):
+        ref = retirement['reference']
+        c,v = parse_ref(ref)
+        relative = f'{c:03d}/{v:03d}.yaml'
+        expected_row = {k:v for k,v in retirement.items() if k != 'review_bindings'}
+        for row in reviewed_rows(package, retirement['review_bindings'], ref, manifest['files']):
+            if row != expected_row:
+                raise ValueError(f'Retirement differs from accepted exact address map: {ref}')
+        verify_git_preimage(manifest, relative, retirement['baseline_sha256'])
+        target = TRANSLATION / relative
+        if evidence_only:
+            continue
+        if applied:
+            if target.exists():
+                raise ValueError(f'Retired misaddressed record still exists: {ref}')
+            del expected[relative]
+        elif not target.exists() or sha(target.read_bytes()) != retirement['baseline_sha256']:
+            raise ValueError(f'Retirement preimage changed: {ref}')
     if check_corpus and corpus_hashes() != expected:
         raise ValueError('Canonical changes exceed the exact bounded scope')
     return {'references': manifest['references'], 'candidate_files': len(candidates),
+            'retired_references': [r['reference'] for r in manifest.get('retirements', [])],
             'snapshot_file_count': len(expected), 'full_book_verified': False,
+            'canonical_targets_checked': not evidence_only,
             'graphic_publication_approved': False}
 
 
@@ -192,10 +253,16 @@ def apply(package: Path) -> dict:
         for ref in manifest['references']:
             c, v = parse_ref(ref)
             target = TRANSLATION / f'{c:03d}/{v:03d}.yaml'
+            target.parent.mkdir(parents=True, exist_ok=True)
             originals[target] = target.read_bytes() if target.exists() else None
             temporary = target.with_suffix('.yaml.enoch-pending')
             temporary.write_bytes(artifact(package, f'{c:03d}-{v:03d}.candidate.yaml').read_bytes())
             os.replace(temporary, target)
+        for retirement in manifest.get('retirements', []):
+            c,v = parse_ref(retirement['reference'])
+            target = TRANSLATION / f'{c:03d}/{v:03d}.yaml'
+            originals[target] = target.read_bytes()
+            target.unlink()
         receipt = {'status': 'applied_verified',
                    **verify(package, applied=True, check_corpus=True),
                    'canonical_after_sha256': corpus_hashes(),

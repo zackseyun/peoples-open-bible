@@ -61,7 +61,9 @@ def load_manifest() -> dict:
     return manifest
 
 
-def verify(applied: bool = False, check_corpus: bool = False) -> dict:
+def verify(applied: bool = False, check_corpus: bool = False, *, evidence_only: bool = False) -> dict:
+    if evidence_only and (applied or check_corpus):
+        raise ValueError('Historical evidence validation cannot claim installed targets')
     manifest = load_manifest()
     schema = json.loads((ROOT / 'schema/verse.schema.json').read_text())
     expected_corpus = dict(manifest['canonical_baseline_sha256'])
@@ -112,6 +114,8 @@ def verify(applied: bool = False, check_corpus: bool = False) -> dict:
                                           cwd=ROOT, check=True, capture_output=True).stdout
             if sha(preimage) != baseline:
                 raise ValueError(f'Archived baseline differs: {ref}')
+        if evidence_only:
+            continue  # Historical artifact validation, explicitly not current proof.
         if applied:
             if not path.exists() or path.read_bytes() != raw:
                 raise ValueError(f'Applied candidate differs: {ref}')
@@ -122,6 +126,7 @@ def verify(applied: bool = False, check_corpus: bool = False) -> dict:
     if check_corpus and canonical_hashes() != expected_corpus:
         raise ValueError('Canonical corpus changed beyond the exact bounded application')
     return {'references': manifest['references'], 'canonical_files': len(expected_corpus),
+            'canonical_targets_checked': not evidence_only,
             'chapter_publication_approval': False, 'human_specialist_certification': False}
 
 

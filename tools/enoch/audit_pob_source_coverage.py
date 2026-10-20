@@ -5,8 +5,9 @@ The expected verse numbers below follow the recovered Charles 1906 primary
 witness, with the documented editorial boundary at 6:8. In particular chapter
 20 has seven units in this witness, not the eight in Charles's later English
 edition. English wording is never used as POB source text. The primary
-Geʿez comparison is the recovered Charles 1906 OCR, including cross-page
-continuations from ``verse_parser``.
+Geʿez comparison uses separately paired-reviewed source inputs for registered
+complete chapters, otherwise recovered Charles1906 OCR with cross-page
+continuations. Reviewed inputs are never read from canonical verse outputs.
 """
 from __future__ import annotations
 

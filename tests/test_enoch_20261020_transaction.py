@@ -11,12 +11,13 @@ import jsonschema
 import yaml
 
 from tools.textual_restoration import enoch_20261020_transaction as transaction
+from tools.enoch.current_evidence import verify_current
 
 
 class EnochOctober20Test(unittest.TestCase):
     def test_exact_review_scope_and_installed_or_ready_bytes(self):
         applied = (transaction.PACKAGE / 'application.json').exists()
-        result = transaction.verify(applied=applied)
+        result = verify_current(transaction.PACKAGE) if applied else transaction.verify()
         self.assertEqual(len(result['references']), 15)
         self.assertFalse(result['chapter_publication_approval'])
         baseline = json.loads((transaction.PACKAGE / 'manifest.json').read_text())['canonical_baseline_sha256']

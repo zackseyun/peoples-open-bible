@@ -274,3 +274,15 @@ of that fourth batch is not yet claimed. The older own128fb push CI was
 canceled as obsolete after that unchanged-tree refresh; no publisher or other
 chat's run was canceled. The subsequent historical-evidence working state
 passes196 local Enoch tests, with no canonical changes beyond the fourth batch.
+
+A subsequent, separately bound **fresh count-only review** now checks all13
+actual primary photographs for those four historical chapters. Parent and
+independent reader agree15=12,16=4,29=2,83=11, including the cross-page final
+units and alternating Greek/editorial pages (not extra Ge’ez units or freshly
+collated manuscripts). Its original input, independent result and provenance
+are pinned under historical-counts-20261020. The adapter keeps these new count
+certificates separate from the old exact wording reviews. Together they now
+support sixteen complete imported selected-edition chapter reviews at113
+units; the prior twelve-count snapshot remains an accurate earlier checkpoint.
+Neither these counts nor the historical wording receipts certify the remaining
+92 chapters, the full final schema, reader-note UI or artwork publication.

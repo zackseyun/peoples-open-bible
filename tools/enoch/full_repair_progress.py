@@ -34,6 +34,7 @@ def build() -> dict:
     from tools.enoch import historical_evidence
     try:
         accepted.update(historical_evidence.load_current())
+        inventories.update(historical_evidence.load_count_inventories())
     except (ValueError, OSError, KeyError) as error:
         warnings.append('Historical input binding import requires audit: ' + str(error))
     for package in sorted(transaction.APPLICATIONS.glob('enoch_full_repair_batch*')):

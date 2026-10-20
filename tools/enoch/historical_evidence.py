@@ -89,3 +89,57 @@ def load_current(index=INDEX):
                               'kind':'historical_exact_accepted_input_result_current_candidate',
                               'fresh_review':False,'full_chapter_count_certified_by_import':False}
     return accepted
+
+
+def load_count_inventories(index=INDEX):
+    """Separate newly paired actual-page counts; never infer from old labels."""
+    data=json.loads(index.read_text())
+    if data.get('kind')!='enoch-historical-current-input-bindings-v1' or \
+            data.get('primary_pdf_sha256')!=transaction.PRIMARY_SHA:
+        raise ValueError('Historical index source/kind differs')
+    bundle=data.get('paired_count_review')
+    if bundle is None:return {}
+    if set(bundle['files'])!={bundle[k] for k in ('input','review','provenance')}:
+        raise ValueError('Historical count artifact scope differs')
+    def read(name):
+        if name not in bundle['files']:raise ValueError('Unpinned historical count artifact')
+        path=transaction.artifact(transaction.ROOT,name)
+        if transaction.sha(path.read_bytes())!=bundle['files'][name]:
+            raise ValueError('Historical count artifact hash differs')
+        return json.loads(path.read_text())
+    original=read(bundle['input']);review=read(bundle['review']);pv=read(bundle['provenance'])
+    if original.get('primary_pdf_sha256')!=transaction.PRIMARY_SHA or \
+            review.get('source_pdf_sha256')!=transaction.PRIMARY_SHA or \
+            pv.get('source_pdf_sha256')!=transaction.PRIMARY_SHA or \
+            pv.get('reviewer_id')!=review.get('reviewer_id') or \
+            not pv.get('reviewer_id') or pv['reviewer_id']==original.get('reviewer_id') or \
+            pv.get('role')!='independent_structural_count_reviewer' or \
+            pv.get('input_sha256')!=bundle['files'][bundle['input']] or \
+            review.get('input_sha256')!=pv['input_sha256'] or \
+            pv.get('review_sha256')!=bundle['files'][bundle['review']] or review.get('mismatches')!=[]:
+        raise ValueError('Historical paired count provenance differs')
+    images=pv.get('scan_image_sha256',{})
+    if not images or len(images)!=len(original.get('image_sha256',{})) or \
+            {Path(p).name:h for p,h in images.items()}!=original['image_sha256']:
+        raise ValueError('Historical count photographed evidence differs')
+    output={}
+    if len(review['reviews'])!=len(original['chapters']):
+        raise ValueError('Historical count chapter scope differs')
+    for chapter in original['chapters']:
+        c=chapter['chapter'];units=chapter['units']
+        matched=[r for r in review['reviews'] if r['chapter']==c]
+        if type(c) is not int or not 1<=c<=108 or c in output or units!=list(range(1,len(units)+1)) or not units or len(matched)!=1:
+            raise ValueError('Historical count addresses differ')
+        r=matched[0]
+        if r.get('verdict')!='accept' or r.get('parent_inventory_match') is not True or \
+                r.get('printed_unit_count')!=len(units) or \
+                [transaction.parse_ref(u['reference']) for u in r['units']]!=[(c,v) for v in units] or \
+                any(not u.get('pdf_pages') or
+                    any(type(p) is not int or p<=0 or f'pdf-{p:03d}.png' not in original['image_sha256'] for p in u['pdf_pages'])
+                    for u in r['units']) or \
+                sorted({p for u in r['units'] for p in u['pdf_pages']})!=chapter['main_pages']:
+            raise ValueError('Historical actual unit count review differs')
+        output[c]={'chapter':c,'units':units,'artifact':bundle['review'],
+                   'independent_count_confirmation':True,
+                   'kind':'fresh_paired_structural_count_separate_from_historical_wording_review'}
+    return output

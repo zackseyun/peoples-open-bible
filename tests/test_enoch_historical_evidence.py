@@ -21,11 +21,27 @@ class HistoricalEvidenceTest(unittest.TestCase):
         self.assertGreaterEqual(report['current_units_with_imported_review_evidence'],113)
         self.assertEqual(report['evidence_inventory_warnings'],[])
         self.assertFalse(report['completion_proven'])
-        # A count certificate has NOT been imported by this provenance adapter.
+        # Separate fresh paired source counts, not old chapter_complete labels.
         for c in [15,16,29,83]:
-            self.assertNotIn(c,report['chapters_with_complete_imported_selected_edition_review'])
+            self.assertIn(c,report['chapters_with_complete_imported_selected_edition_review'])
         self.assertNotIn((13,1),result)
         self.assertNotIn((14,1),result)
+
+    def test_separate_fresh_counts_are_bound_and_not_wording_reviews(self):
+        result=historical.load_count_inventories()
+        self.assertEqual({c:len(v['units']) for c,v in result.items()},{15:12,16:4,29:2,83:11})
+        data=json.loads(historical.INDEX.read_text())
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory).resolve();index=root/'index.json'
+            for name in data['paired_count_review']['files']:
+                target=root/name;target.parent.mkdir(parents=True,exist_ok=True)
+                target.write_bytes((historical.transaction.ROOT/name).read_bytes())
+            index.write_text(json.dumps(data))
+            with patch.object(historical.transaction,'ROOT',root):
+                self.assertEqual(len(historical.load_count_inventories(index)),4)
+                (root/data['paired_count_review']['review']).write_text('{}')
+                with self.assertRaisesRegex(ValueError,'Historical count artifact hash differs'):
+                    historical.load_count_inventories(index)
 
     def fixture(self,directory):
         root=Path(directory).resolve();data=json.loads(historical.INDEX.read_text())

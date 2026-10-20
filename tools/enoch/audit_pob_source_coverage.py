@@ -37,6 +37,10 @@ EXPECTED_VERSES = {
     # Whole83 accepted scan markers1-11, including4/11 continuations.
     # sources/textual_restoration/applications/enoch_83_20261013/
     83: 11,
+    # Charles 1906 printed p. 203 / PDF p. 241 labels XCVII.10, then
+    # XCVIII; OCR recovers the tenth unit across the ch98 file boundary.
+    # This certifies the count, not the unapproved wording of 97:10.
+    97: 10,
 }
 
 
@@ -88,7 +92,7 @@ def audit(chapters: list[int], pob_root: Path = POB_ROOT) -> dict:
             "primary_source_warnings": source_warnings,
         })
     return {
-        "scope": "source inventory and review signals only; not translation approval. Counts beyond 35 except independently scan-boundary-reviewed chapters 45 and 83 are primary-parser leads, not a certified versification inventory.",
+        "scope": "source inventory and review signals only; not translation approval. Counts beyond 35 except independently scan-boundary-reviewed chapters 45, 83 and 97 are primary-parser leads, not a certified versification inventory.",
         "chapters": rows,
         "missing_verse_total": sum(len(row["missing_verse_numbers"]) for row in rows),
         "source_review_total": sum(len(row["existing_source_review"]) for row in rows),

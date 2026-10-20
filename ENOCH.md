@@ -50,11 +50,13 @@ claims are preserved as unverified history. See
 `sources/textual_restoration/applications/enoch_83_20261013/` and run
 `tools/textual_restoration/enoch_83_transaction.py verify-applied`.
 
-Chapter83 now has an explicit scan-bound unit inventory; other counts beyond35
-remain parser leads unless separately certified. This work is selected-edition
-editorial approval, not human specialist, independent manuscript, full-book or
-Graphic Reader publication certification. Artwork continuity/publication QA is
-still separate.
+Chapter83 now has an explicit scan-bound unit inventory. Chapters45 and97 have
+separately scan-checked count boundaries only; their missing final units remain
+unapproved. Other counts beyond35 remain parser leads unless separately
+certified. Chapter83's work is selected-edition editorial approval, not human
+specialist, independent manuscript, full-book or Graphic Reader publication
+certification. The chapter45/97 count checks are not editorial approval at all.
+Artwork continuity/publication QA is still separate.
 
 ## Why Enoch
 

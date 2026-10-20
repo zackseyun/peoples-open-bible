@@ -18,12 +18,20 @@ class EnochCompletenessTest(unittest.TestCase):
             self.assertEqual([row.verse for row in rows], list(range(1, expected + 1)), chapter)
         self.assertEqual(coverage.EXPECTED_VERSES[20], 7)
         self.assertEqual(coverage.EXPECTED_VERSES[45], 6)
+        self.assertEqual(coverage.EXPECTED_VERSES[97], 10)
 
     def test_chapter_45_sixth_unit_is_declared_but_not_complete(self):
         row = coverage.audit([45])["chapters"][0]
         self.assertEqual(row["expected_count_basis"], "declared_primary_inventory")
         self.assertEqual(row["primary_source_verses"], 6)
         self.assertEqual(row["missing_verse_numbers"], [6])
+        self.assertFalse(row["inventory_complete"])
+
+    def test_chapter_97_tenth_unit_is_declared_but_not_complete(self):
+        row = coverage.audit([97])["chapters"][0]
+        self.assertEqual(row["expected_count_basis"], "declared_primary_inventory")
+        self.assertEqual(row["primary_source_verses"], 10)
+        self.assertEqual(row["missing_verse_numbers"], [10])
         self.assertFalse(row["inventory_complete"])
 
     def test_missing_empty_and_primary_gaps_fail_inventory(self):

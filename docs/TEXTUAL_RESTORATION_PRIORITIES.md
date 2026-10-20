@@ -2,6 +2,16 @@
 
 ## Decision
 
+The [Mercati spectral inspection](MERCATI_SPECTRAL_INSPECTION_2026-10-19.md)
+tests two regions from public no-gamma TIFF captures. Page27 provides a useful
+undertext/infrared control, but its longer spelling was already noted in prior
+work, including Mercati's footnote as reported by Young. Page60's reported
+Greek abbreviation remains unconfirmed after five fixed measured views and one
+linear diagnostic. No new character or Bible change is accepted. Preserve the
+source crops; do not retune these regions against expected words. Further work
+needs a genuinely discriminating trace and current apparatus, not merely an
+older edition's apparent gap.
+
 **Current imaging constraint, October 18:** the user authorizes only
 non-generative processing, with originals preserved. This supersedes the earlier
 generative-hypothesis option below. The [Zacynthius 83v spectral experiment](ZACYNTHIUS_83V_SPECTRAL_2026-10-18.md)

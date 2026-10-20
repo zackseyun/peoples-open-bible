@@ -74,6 +74,23 @@ def load_manifest(package: Path) -> dict:
         c, v = parse_ref(ref)
         if f'{c:03d}-{v:03d}.candidate.yaml' not in manifest['files']:
             raise ValueError(f'Candidate is not hash-pinned: {ref}')
+    certificates = {}
+    for certificate in manifest.get('chapter_inventories', []):
+        c = certificate['chapter']
+        units = certificate['units']
+        chapter_refs = [v for chapter,v in numbers if chapter == c]
+        if certificate.get('independent_count_confirmation') is not True:
+            raise ValueError('Complete chapter certificate is not independently bound')
+        if c in certificates or not units or units != list(range(1,len(units)+1)) or \
+                chapter_refs != units or \
+                certificate.get('artifact') not in manifest['files']:
+            raise ValueError('Complete chapter certificate differs from exact candidate scope')
+        inventory = json.loads(artifact(package,certificate['artifact']).read_text())
+        rows = [row for row in inventory['chapters'] if row['chapter'] == c]
+        if inventory.get('primary_pdf_sha256') != PRIMARY_SHA or len(rows) != 1 or \
+                rows[0]['units'] != units:
+            raise ValueError('Complete chapter certificate differs from pinned inventory')
+        certificates[c] = units
     retired = [row['reference'] for row in manifest.get('retirements', [])]
     if len(retired) != len(set(retired)) or set(retired) & set(refs) or \
             [parse_ref(ref) for ref in retired] != sorted(parse_ref(ref) for ref in retired):
@@ -87,6 +104,10 @@ def load_manifest(package: Path) -> dict:
                 not replacements or len(replacements) != len(set(replacements)) or \
                 not set(replacements) <= set(refs):
             raise ValueError('Retirement lacks an exact preimage, reason or reviewed replacement')
+        replacement_chapters = {parse_ref(ref)[0] for ref in replacements}
+        if c not in certificates or not replacement_chapters <= set(certificates) or \
+                v in certificates[c]:
+            raise ValueError('Retirement requires complete corrected-address and replacement chapters; valid selected addresses cannot be deleted')
     for ref, prior in manifest.get('supersedes', {}).items():
         if ref not in refs:
             raise ValueError('Supersession must name a candidate in this exact scope')
@@ -181,6 +202,9 @@ def verify(package: Path, *, applied: bool = False,
                 correction.get('manuscript_witness_certification') is not False or \
                 correction.get('graphic_publication_approved') is not False:
             raise ValueError(f'Candidate approval scope differs: {ref}')
+        if correction.get('selected_edition_chapter_reviewed') is True and not any(
+                certificate['chapter'] == c for certificate in manifest.get('chapter_inventories', [])):
+            raise ValueError(f'Candidate claims an unbound complete-chapter review: {ref}')
         findings = record_issues(candidate, c, v)
         # Real source poetry can repeat: repeated spans are review signals,
         # not a license to delete a source-supported refrain.

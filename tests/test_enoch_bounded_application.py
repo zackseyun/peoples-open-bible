@@ -100,6 +100,10 @@ def retirement_fixture():
             bindings.append({'input':inp, 'review':review, 'provenance':provenance,
                              'reviewer_id':role})
         manifest['retirements'] = [{**row, 'review_bindings': bindings}]
+        (package/'count.json').write_text(json.dumps({'primary_pdf_sha256':transaction.PRIMARY_SHA,
+            'chapters':[{'chapter':1,'units':[1]}]}))
+        manifest['chapter_inventories']=[{'chapter':1,'units':[1],
+            'artifact':'count.json','independent_count_confirmation':True}]
         repin()
         def check_preimage(m, relative, digest):
             assert relative == '001/002.yaml' and digest == transaction.sha(raw)
@@ -255,6 +259,19 @@ class BoundedApplicationTest(unittest.TestCase):
             (translation/'001/002.yaml').write_text('reintroduced: wrong address\n')
             with self.assertRaisesRegex(ValueError, 'still exists'):
                 transaction.verify(package, applied=True)
+
+    def test_retirement_cannot_omit_the_complete_replacement_chapter(self):
+        with retirement_fixture() as (package, translation, manifest, repin):
+            manifest.pop('chapter_inventories');repin()
+            with self.assertRaisesRegex(ValueError, 'requires complete corrected-address'):
+                transaction.apply(package)
+            self.assertTrue((translation/'001/002.yaml').exists())
+
+    def test_complete_chapter_certificate_cannot_hide_missing_candidates(self):
+        with retirement_fixture() as (package, translation, manifest, repin):
+            manifest['chapter_inventories'][0]['units']=[1,2];repin()
+            with self.assertRaisesRegex(ValueError, 'differs from exact candidate scope'):
+                transaction.verify(package)
 
     def test_reviewed_successor_preserves_strict_old_verifier_and_history(self):
         with succession_fixture() as (old,new,translation,m,repin):

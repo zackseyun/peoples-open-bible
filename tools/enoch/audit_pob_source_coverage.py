@@ -49,6 +49,10 @@ EXPECTED_VERSES = {
     # XCVIII; OCR recovers the tenth unit across the ch98 file boundary.
     # This certifies the count, not the unapproved wording of 97:10.
     97: 10,
+    # Actual CIV/CV/CVI boundaries on printed216-219 / PDF254-257.
+    # Old105:1 continued104:1, and old105:2-11 were104:2-11.
+    # Paired full selected-edition repair: enoch_full_repair_batch03_20261020.
+    104: 13, 105: 2,
 }
 
 
@@ -101,7 +105,7 @@ def audit(chapters: list[int], pob_root: Path = POB_ROOT) -> dict:
             "primary_source_warnings": source_warnings,
         })
     return {
-        "scope": "source inventory and review signals only; not translation approval. Counts beyond39 except independently scan-boundary-reviewed chapters45,83,84,97 are primary-parser leads, not a certified versification inventory.",
+        "scope": "source inventory and review signals only; not translation approval. Counts beyond39 except independently scan-boundary-reviewed chapters45,83,84,97,104,105 are primary-parser leads, not a certified versification inventory.",
         "chapters": rows,
         "missing_verse_total": sum(len(row["missing_verse_numbers"]) for row in rows),
         "source_review_total": sum(len(row["existing_source_review"]) for row in rows),

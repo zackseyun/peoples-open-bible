@@ -110,8 +110,17 @@ counts and notes. Other mobile chapter payloads are unchanged. Mobile export
 completeness is not the CDN's policy: the base public CDN can include partial
 chapters and strips footnote anchors/notes. Public English matching, repository
 note preservation and actual reader-note UI verification are distinct checks.
-At this snapshot this second application is local, not yet a verified public
-deployment. Publication evidence must be recorded separately after CI/merge.
+This second application subsequently passed both exact-head corpus CI runs
+(`39492333632`, `39492327263`), merged through PR386 and was pushed on main at
+`51649352589ed5b84875422870c63c5c4000d7f7`. The main tree matched tested head
+`78d0771b4860a4cbd551a4f198f65152fdc58269`. Automatic publisher run39498494273
+succeeded, including the website rebuild request step. The public manifest
+reached that exact main commit, and **all50 repaired public English units**
+(the earlier15 plus these35) matched their accepted candidates after removing
+single-letter footnote anchors only. See the
+[delivery evidence](../sources/enoch/coverage/delivery-batch02-20261020.json).
+The base payload still omits footnotes. A rebuild request is not verification
+of a rendered website, reader-note UI, physical device or artwork publication.
 
 Local validation passed all146 Enoch tests, including transaction rollback,
 artifact/preimage rejection, exact35-unit review bindings, ten additions,

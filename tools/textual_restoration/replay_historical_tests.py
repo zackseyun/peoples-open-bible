@@ -24,8 +24,11 @@ ESDRAS5_COMMIT = "08a8a4cc05fcb8eb91580e01fb506a90de9799a9"
 ESDRAS5_BASE = ESDRAS8_COMMIT
 ESDRAS6_COMMIT = "c083d5b872d1bb70c79f065cf0007cb97ffceb97"
 ESDRAS6_BASE = ESDRAS5_COMMIT
+LETTER_JEREMIAH69_70_COMMIT = "a0ae3c29b4525087faa1ceab1ed2822301aa2f37"
+LETTER_JEREMIAH69_70_BASE = "b388ce5089ea64ecd3adac354dbd1118c7dbea85"
 _REGISTRY = "test_ot_witness_registry.OtWitnessRegistryTests."
 SUITES = {
+    "letter_jeremiah69_70": (["test_letter_jeremiah_69_70_correction"], 5),
     "esdras6_partition": (["test_1esdras6_partition_application"], 6),
     "esdras5_partition": (["test_1esdras5_partition_application"], 6),
     "esdras8_partition": (["test_1esdras8_partition_application"], 6),
@@ -43,6 +46,37 @@ SUITES = {
         "test_psalms_case_and_coverage_validate",
     )], 2),
 }
+
+
+def _letter_jeremiah69_70_archive_paths(repo):
+    """Keep the original five-check correction proof at its applied commit.
+
+    The baseline predates the candidate, test and evidence. Archive their
+    reviewed/applied checkpoint, including its original method and workflow;
+    the frozen test reads the earlier baseline separately from Git history.
+    """
+    evidence_path = "sources/textual_restoration/comparisons/letter_jeremiah_69_70.2026-10-19.v1.json"
+    evidence = json.loads(git(repo, "show", f"{LETTER_JEREMIAH69_70_COMMIT}:{evidence_path}"))
+    if evidence["baseline_commit"] != LETTER_JEREMIAH69_70_BASE:
+        raise ValueError("Historical Letter of Jeremiah baseline mismatch")
+    paths = {
+        "tools", "tests/test_letter_jeremiah_69_70_correction.py",
+        "translation/deuterocanon/letter_of_jeremiah",
+        "sources/lxx/swete/final_corpus_adjudicated/LJE.jsonl",
+        "schema/verse.schema.json", "sources/early_christian_texts/catalog.json",
+        ".github/workflows/corpus-integrity.yml", evidence_path,
+        *evidence["historical_input_pins"], *evidence["reviewed_file_pins"],
+        *evidence["unchanged_live_inputs"],
+    }
+    for path in paths:
+        if (not isinstance(path, str) or Path(path).is_absolute()
+                or ".." in Path(path).parts or any(c in path for c in "*?[:\\")
+                or not (path == "tools" or path == ".github/workflows/corpus-integrity.yml"
+                        or path == "translation/deuterocanon/letter_of_jeremiah"
+                        or path.startswith(("tools/", "tests/", "schema/", "sources/", "docs/",
+                                            "translation/deuterocanon/letter_of_jeremiah/")))):
+            raise ValueError(f"Invalid historical Letter of Jeremiah dependency path: {path}")
+    return sorted(paths)
 
 
 def _esdras8_archive_paths(repo):
@@ -288,23 +322,26 @@ def run_suite(name: str, *, repo: Path = ROOT):
         raise ValueError("Historical replay requires non-optimized Python")
     commit = {"esdras8_partition": ESDRAS8_COMMIT,
               "esdras5_partition": ESDRAS5_COMMIT,
-              "esdras6_partition": ESDRAS6_COMMIT}.get(name, COMMIT)
+              "esdras6_partition": ESDRAS6_COMMIT,
+              "letter_jeremiah69_70": LETTER_JEREMIAH69_70_COMMIT}.get(name, COMMIT)
     resolved = git(repo, "rev-parse", "--verify", f"{commit}^{{commit}}").decode().strip()
     if resolved != commit:
         raise ValueError("Historical commit resolution mismatch")
     names, count = SUITES[name]
     child_options = {}
-    esdras_bases = {"esdras8_partition": ESDRAS8_BASE,
-                    "esdras5_partition": ESDRAS5_BASE,
-                    "esdras6_partition": ESDRAS6_BASE}
-    if name in esdras_bases:
-        expected_base = esdras_bases[name]
+    historical_bases = {"esdras8_partition": ESDRAS8_BASE,
+                        "esdras5_partition": ESDRAS5_BASE,
+                        "esdras6_partition": ESDRAS6_BASE,
+                        "letter_jeremiah69_70": LETTER_JEREMIAH69_70_BASE}
+    if name in historical_bases:
+        expected_base = historical_bases[name]
         baseline = git(repo, "rev-parse", "--verify", f"{expected_base}^{{commit}}").decode().strip()
         if baseline != expected_base:
-            raise ValueError("Historical Esdras baseline resolution mismatch")
+            raise ValueError("Historical suite baseline resolution mismatch")
         paths = {"esdras8_partition": _esdras8_archive_paths,
                  "esdras5_partition": _esdras5_archive_paths,
-                 "esdras6_partition": _esdras6_archive_paths}[name](repo)
+                 "esdras6_partition": _esdras6_archive_paths,
+                 "letter_jeremiah69_70": _letter_jeremiah69_70_archive_paths}[name](repo)
         # Frozen tests issue only read-only `git show` and `git archive` calls.
         # Resolve their original BASE from local history, not a current checkout.
         child_options["env"] = dict(
@@ -321,7 +358,7 @@ def run_suite(name: str, *, repo: Path = ROOT):
     with tempfile.TemporaryDirectory(prefix="pob-historical-tests-") as directory:
         extract_regular(archive, Path(directory))
         del archive
-        if name in esdras_bases:
+        if name in historical_bases:
             child_options["env"]["GIT_WORK_TREE"] = directory
         child = subprocess.run(
             [sys.executable, "-I", "-c", _CHILD, json.dumps(names)],

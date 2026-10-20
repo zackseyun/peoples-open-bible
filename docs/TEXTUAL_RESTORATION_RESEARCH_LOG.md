@@ -18164,6 +18164,32 @@ The repository venv's missing Pillow is resolved for the boundary rerun by
 using the existing bundled runtime, not installing or changing dependencies.
 No unrelated report or test is rewritten to manufacture a green result.
 
+## October 19 Historical correction proof and current method checks
+
+The methodology update exposes a real CI incompatibility: the original Letter
+of Jeremiah correction test requires the current methodology document to equal
+its historical baseline. Both jobs at the first PR381 head fail; the inspected
+job log and local reproduction identify this assertion, separately from the
+unrelated NT report/render mismatch. The [migration record](../sources/textual_restoration/discovery/letter_jeremiah_method_replay_migration.2026-10-19.v1.json)
+preserves the diagnosis and exact historical checkpoints.
+
+The original five-test proof now runs with its original code, method, workflow
+and evidence at the immutable applied commit. Its test, candidate, report and
+evidence remain unchanged. A separate live successor retains all four checks
+of candidate records, source loading, corpus scope and complete Letter export.
+Only the current-method equality requirement is removed; the historical method
+pin remains binding. Mutation controls reject altered historical method,
+source transcription, original test and evidence while allowing future current
+method revisions without rewriting the old proof.
+
+Root verifies the original five-test replay, eight live tests, 22 runner
+regressions and 43 historical-boundary tests. The implementation agent also
+verifies all three existing Esdras replays, six tests each. One independent
+implementation review passes and independently reruns the live and runner
+tests. Replacement remote CI remains a separate merge requirement. This repair
+changes neither biblical source/English nor the frozen Letter or Ezekiel
+judgments; it separates historical reproducibility from current safeguards.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

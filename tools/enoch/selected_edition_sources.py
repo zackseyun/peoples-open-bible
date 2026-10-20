@@ -6,26 +6,60 @@ Old raw OCR remains available separately for diagnostics and reproducibility.
 """
 import json
 from pathlib import Path
+import yaml
 
 from tools.enoch import bounded_application as transaction
 
 REGISTRY = transaction.ROOT / 'sources/enoch/ethiopic/reviewed_source_registry.json'
 
 
-def load_chapter(chapter: int) -> list[dict] | None:
+def registry_data() -> dict | None:
     if not REGISTRY.exists():
         return None
     registry = json.loads(REGISTRY.read_text())
     if registry.get('kind') != 'enoch-selected-edition-sources-v1' or \
             registry.get('primary_pdf_sha256') != transaction.PRIMARY_SHA:
         raise ValueError('Reviewed source registry kind/primary differs')
-    name = registry['chapters'].get(str(chapter))
-    if name is None:
-        return None
+    return registry
+
+
+def package_evidence(name: str) -> tuple[Path, dict]:
     package = transaction.artifact(transaction.APPLICATIONS, name)
     if package.parent != transaction.APPLICATIONS.resolve():
         raise ValueError('Source package must be a direct application directory')
-    manifest = transaction.load_manifest(package)
+    return package, transaction.load_manifest(package)
+
+
+def source_row(package: Path, manifest: dict, chapter: int, verse: int) -> dict:
+    ref = f'1 Enoch {chapter}:{verse}'
+    if ref not in manifest['review_bindings']:
+        raise ValueError(f'Registered source lacks the exact unit: {ref}')
+    rows = transaction.reviewed_rows(package, manifest['review_bindings'][ref], ref, manifest['files'])
+    sources = [row['source'] for row in rows]
+    if any(source != sources[0] for source in sources[1:]):
+        raise ValueError(f'Accepted source inputs differ: {ref}')
+    source = sources[0]
+    candidate_name = f'{chapter:03d}-{verse:03d}.candidate.yaml'
+    candidate = yaml.load(transaction.artifact(package, candidate_name).read_bytes(),
+                          Loader=transaction.LOADER)
+    if any(candidate['source'].get(k) != source.get(k)
+           for k in ('edition','language','text','pages')) or \
+            source.get('edition') != 'charles-1906-enoch' or source.get('language') != 'Geez' or \
+            not source.get('text') or not source.get('pages'):
+        raise ValueError(f'Reviewed source identity/payload differs: {ref}')
+    return {'reference': ref, 'verse':verse, 'source':source,
+            'evidence':str(package.relative_to(transaction.ROOT)) + '/' +
+                       manifest['review_bindings'][ref][0]['input']}
+
+
+def load_chapter(chapter: int) -> list[dict] | None:
+    registry = registry_data()
+    if registry is None:
+        return None
+    name = registry['chapters'].get(str(chapter))
+    if name is None:
+        return None
+    package, manifest = package_evidence(name)
     certificates = [c for c in manifest.get('chapter_inventories', []) if c['chapter'] == chapter]
     if len(certificates) != 1:
         raise ValueError('Reviewed source chapter lacks one exact count certificate')
@@ -40,25 +74,26 @@ def load_chapter(chapter: int) -> list[dict] | None:
     if len(matching) != 1 or matching[0]['units'] != units or \
             inventory.get('primary_pdf_sha256') != transaction.PRIMARY_SHA:
         raise ValueError('Count certificate differs from pinned printed inventory')
+    return [source_row(package,manifest,chapter,verse) for verse in units]
+
+
+def load_unit_overrides(chapter: int) -> list[dict]:
+    """Exact accepted units inside an already declared printed count.
+
+    A unit registration does not certify other units or an entire chapter.
+    It prevents an individually repaired negative/glyph from regressing to OCR.
+    """
+    registry = registry_data()
+    if registry is None:
+        return []
     output = []
-    for verse in units:
-        ref = f'1 Enoch {chapter}:{verse}'
-        rows = transaction.reviewed_rows(package, manifest['review_bindings'][ref], ref, manifest['files'])
-        sources = [row['source'] for row in rows]
-        # Exact input source objects, not a new rendition inferred from English.
-        if any(source != sources[0] for source in sources[1:]):
-            raise ValueError(f'Accepted source inputs differ: {ref}')
-        source = sources[0]
-        candidate_name = f'{chapter:03d}-{verse:03d}.candidate.yaml'
-        import yaml
-        candidate = yaml.load(transaction.artifact(package, candidate_name).read_bytes(),
-                              Loader=transaction.LOADER)
-        if any(candidate['source'].get(k) != source.get(k)
-               for k in ('edition','language','text','pages')) or \
-                source.get('edition') != 'charles-1906-enoch' or source.get('language') != 'Geez' or \
-                not source.get('text') or not source.get('pages'):
-            raise ValueError(f'Reviewed source identity/payload differs: {ref}')
-        output.append({'reference': ref, 'verse':verse, 'source': source,
-                       'evidence': str(package.relative_to(transaction.ROOT)) + '/' +
-                                   manifest['review_bindings'][ref][0]['input']})
-    return output
+    for key, name in registry.get('units',{}).items():
+        c,v = transaction.parse_ref('1 Enoch ' + key)
+        if c != chapter:
+            continue
+        from tools.enoch.audit_pob_source_coverage import EXPECTED_VERSES
+        if c not in EXPECTED_VERSES or v > EXPECTED_VERSES[c]:
+            raise ValueError('Individual source override requires a declared printed count/address')
+        package,manifest = package_evidence(name)
+        output.append(source_row(package,manifest,c,v))
+    return sorted(output,key=lambda row:row['verse'])

@@ -24,6 +24,16 @@ describe the source as a paired-reviewed transcription, not Gemini OCR or
 an independent ancient manuscript. Correct source readings therefore do not
 have to be distorted to pass a damaged-OCR length comparison.
 
+Individual repaired units can also be registered through the optional `units`
+map, inside an already declared printed count. Such an override uses the same
+exact paired-reviewed input/candidate checks, never canonical readback. Only
+the named unit changes; other OCR rows remain unapproved. An ambiguous raw
+address is rejected rather than silently deduplicated. This prevents a repaired
+negative or anomalous printed glyph from reverting to OCR before the rest of
+its chapter is complete. Source-review editorial controls stay with the Ge'ez
+input into drafting prompts; the English running translation is not fed back
+as a primary source. Unit registration is not a full-chapter certificate.
+
 ## Atomic bounded applications
 
 `bounded_application` checks exact candidate identities, schemas, source and

@@ -83,6 +83,7 @@ class EnochVerseRow:
     marker_raw: str
     chapter_file: str
     pages: tuple[int, ...] = ()
+    source_note: str = ''
 
 
 def roman_numeral(n: int) -> str:
@@ -300,16 +301,36 @@ def parse_chapter(chapter: int) -> tuple[list[EnochVerseRow], list[str]]:
     # Reviewed inputs are an independent source transcription, not a readback
     # of canonical translations. A corrupt registered package fails closed;
     # never silently fall back to damaged OCR after a source-evidence failure.
-    from tools.enoch.selected_edition_sources import load_chapter
+    from tools.enoch.selected_edition_sources import load_chapter, load_unit_overrides
     source = load_chapter(chapter)
+    def reviewed(row):
+        return EnochVerseRow(chapter=chapter, verse=row['verse'], text=row['source']['text'],
+            marker_raw='reviewed printed unit boundary', chapter_file=row['evidence'],
+            pages=tuple(row['source']['pages']), source_note=row['source'].get('note',''))
     if source is not None:
-        return [EnochVerseRow(chapter=chapter, verse=row['verse'],
-                    text=row['source']['text'], marker_raw='reviewed printed unit boundary',
-                    chapter_file=row['evidence'], pages=tuple(row['source']['pages']))
-                for row in source], [
+        rows, warnings = [reviewed(row) for row in source], [
             'Primary selected-edition source comes from exact paired-reviewed inputs; '
             'raw OCR remains available via parse_ocr_chapter. Not independent manuscript certification.']
-    return parse_ocr_chapter(chapter)
+    else:
+        rows, warnings = parse_ocr_chapter(chapter)
+    overrides = load_unit_overrides(chapter)
+    for row in overrides:
+        positions = [i for i,r in enumerate(rows) if r.verse == row['verse']]
+        if len(positions) > 1:
+            raise ValueError('Individual source override has an ambiguous raw address')
+        if positions:
+            rows[positions[0]] = reviewed(row)
+        else:
+            numbers = [r.verse for r in rows]
+            if numbers != sorted(set(numbers)):
+                raise ValueError('Cannot insert a reviewed unit into ambiguous raw structure')
+            rows.append(reviewed(row))
+            rows.sort(key=lambda r:r.verse)
+    if overrides:
+        warnings.append('Exact paired-reviewed individual source overrides: ' +
+            ', '.join(row['reference'] for row in overrides) +
+            '. This does not approve other OCR rows or certify an entire chapter.')
+    return rows, warnings
 
 
 def load_verse(chapter: int, verse: int) -> tuple[EnochVerseRow | None, list[str]]:

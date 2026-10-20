@@ -132,7 +132,8 @@ def _load_charles_witness(chapter: int, verse: int) -> tuple[EnochWitnessReading
             text=row.text,
             source_edition="Charles 1906 Ethiopic Enoch",
             confidence="medium",
-            note=f"Recovered from {row.chapter_file} via tools/enoch/verse_parser.py",
+            note=f"Recovered from {row.chapter_file} via tools/enoch/verse_parser.py" +
+                 (f"\nSource editorial control: {row.source_note}" if row.source_note else ''),
         ),
         warnings,
     )

@@ -18100,6 +18100,35 @@ Ezekiel 36:23–38 source priority, Hebrew, English and reader layout remain unc
 The exact remaining input is the target apparatus and applicable supplement/key,
 not another reading of these preview or metadata pages.
 
+## October 19 Esther Alpha independent source argument tested
+
+The full public Fox1990 article, printed27–54, is acquired from the Hebrew
+Bible Project and read visually by root and a source reader, including both
+tables and all64notes. The [follow-up](ESTHER_ALPHA_FOX_2026-10-19.md) and
+[evidence record](../sources/textual_restoration/comparisons/esther_alpha_fox.2026-10-19.v1.json)
+test only two diagnostic units against actual Lagarde Alpha pages508/510,
+WLC1:17/2:7 and the current POB records. Root also inspects Swete758–759,
+their apparatuses and key. Source images remain private; ordinary rendering
+does not create manuscript evidence.
+
+The editions confirm the Alpha past verb and faithful-fostering expression.
+They challenge simple copying of the selected Greek main text, but do not
+distinguish independent Hebrew translation from Hebrew-informed Greek revision.
+Swete's reported Sinaiticus marginal beauty addition directly qualifies any
+claim that the second beauty phrase is unique Alpha evidence. Fox himself
+accepts the Masoretic pointing at1:17 and acknowledges Greek recensional
+parallels at2:7. His proto-Alpha remains an inferred layer, not recovered Hebrew.
+
+Retain the Hebrew, English and reader notes at both units; the earlier frozen
+endings comparison is unchanged. This is a constrained historical result,
+not a novel ancient reading, a decision on canon, or the separate lost-negative
+argument for9:10. One independent factual challenge requires a margin-label
+correction: the2:7addition is marginal, while lower margin labels a separate
+2:8entry. Root verifies the original apparatus at higher resolution and
+corrects the report/evidence; the review otherwise passes within its stated
+scope. Further source-priority work needs materially new apparatus/witness controls,
+not another reading of these same pages or repeated agreement votes.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

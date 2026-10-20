@@ -18,8 +18,12 @@ class EnochOctober20Test(unittest.TestCase):
         result = transaction.verify(applied=applied)
         self.assertEqual(len(result['references']), 15)
         self.assertFalse(result['chapter_publication_approval'])
+        baseline = json.loads((transaction.PACKAGE / 'manifest.json').read_text())['canonical_baseline_sha256']
+        # Scope this historical hold to this application. A later independently
+        # approved restoration must not fail merely because its file now exists.
         for c, v in ((18, 12), (18, 13), (18, 16), (28, 2), (28, 3), (84, 6), (97, 10)):
-            self.assertFalse((transaction.TRANSLATION / f'{c:03d}/{v:03d}.yaml').exists())
+            self.assertNotIn((c, v), transaction.REFS)
+            self.assertNotIn(f'{c:03d}/{v:03d}.yaml', baseline)
 
     def test_candidates_conform_to_schema_and_preserve_medium_confidence(self):
         schema = json.loads((transaction.ROOT / 'schema/verse.schema.json').read_text())

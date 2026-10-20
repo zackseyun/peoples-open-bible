@@ -18239,6 +18239,27 @@ source, English, notes and layout stay unchanged, as do the frozen Joshua 24
 packets. This is new comparative evidence, not newly recovered Hebrew, a
 decision on 4Q47 placement or a basis for a canon addition.
 
+## October 19 Further public Ezechiel access checks
+
+The user's renewed public-copy request prompts one bounded search, including
+an independent three-query check of institutional and older-edition routes.
+The [current publisher page](https://www.degruyterbrill.com/document/isbn/9783666534355/html)
+directs readers to its [e-library](https://www.vr-elibrary.de/isbn/9783666534355),
+where the ordinary browser encounters a security-verification page. No
+challenge is bypassed. The [Academy publication list](https://adw-goe.de/forschung/abgeschlossene-forschungsprojekte/akademienprogramm/septuaginta-unternehmen/veroeffentlichungen/septuaginta-vetus-testamentum-graecum/)
+offers Ezechiel order and eBook links, not a free-download designation.
+Google Books supplies [1977](https://books.google.com/books?id=1KU8AAAAYAAJ)
+and [1952](https://books.google.com/books?id=zCd_AAAAMAAJ) records with contents
+and “No eBook available”; neither check supplies the target pages.
+
+No additional PDF or apparatus reading is acquired. The
+[existing preview receipt](../sources/textual_restoration/discovery/ezekiel_gottingen_public_preview.2026-10-19.v1.json)
+remains unchanged. This access result does not establish that no lawful public
+copy exists. Historical priority, Hebrew, English and reader layout remain
+unchanged. Retire these same routes unless access changes or a concrete new
+copy is identified; further source adjudication needs the actual local
+apparatus, applicable notation key and relevant Fraenkel entries.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

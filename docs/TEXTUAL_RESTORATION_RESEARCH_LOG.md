@@ -18260,6 +18260,38 @@ unchanged. Retire these same routes unless access changes or a concrete new
 copy is identified; further source adjudication needs the actual local
 apparatus, applicable notation key and relevant Fraenkel entries.
 
+## October 20 Isaiah Egyptian cities and the blessing of nations
+
+The preceding turn completes a bounded Ezechiel access record without new
+textual evidence. This continuation checks the broader Greek comparison gap,
+then opens a genuinely unexamined connected unit rather than publishing another
+corpus-availability count. No full Greek corpus is imported. The
+[Isaiah19 comparison](ISAIAH_19_EGYPT_AND_CITY_COMPARISON_2026-10-20.md) now
+distinguishes primary Qumran body rows from parallel displays, and1Q8/1QIsaᵇ
+from4Q56/4QIsaᵇ. At19:18 two published transcriptions preserve the Sun spelling's
+decisive heth. At25 their differing supplied spans prevent a false three-witness
+claim for the complete blessing.
+
+Root reads ten current Hebrew/English records, complete Swete134–135 with
+apparatus, the full Holter2018 article and the stated Balogh2009 sections.
+The selected Greek changes the blessing's presentation but retains Egyptian
+knowledge, offering, return and healing. Opposing grammatical and city-name
+arguments remain arguments, not newly recovered Hebrew or a proven scribal
+motive. The factual review catches the need to acknowledge Balogh's explicit
+challenge to comitative service. The source-priority decision stays held.
+
+The [separate note application](../sources/textual_restoration/applications/isaiah19_18_reader.2026-10-20.v1.json)
+adds one concise existing-system disclosure at19:18. An exact-candidate
+implementation review passes; root applies the reviewed record and all five
+focused tests pass in32.469seconds. Complete Isaiah export has66 chapters and
+1,291 units; only19:18 changes. Source and marker-free English are unchanged,
+old revision metadata is archived and the record remains draft/needs_review.
+The two legacy required-field schema failures remain exactly unchanged;
+changed-field validation is not advertised as full-schema approval. This is a
+source-backed reader contribution, not a new ancient discovery or a canon
+decision. Reader/publisher code and inline layout remain untouched. Required
+remote integrity and deployed delivery are separate from this local application.
+
 ## Later About-page summary — proposed, not published
 
 > POB's ongoing source-comparison program examines biblical manuscripts and

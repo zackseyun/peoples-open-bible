@@ -38,6 +38,8 @@ EXPECTED_VERSES = {
     # the Geʿez parser recovers the sixth unit across its OCR-file boundary.
     # This is a count boundary only, not approval of 45:6's wording.
     45: 6,
+    # Full paired source/count reviews, PDF130-132 and165-166.
+    50: 5, 51: 5, 70: 4,
     # Whole83 accepted scan markers1-11, including4/11 continuations.
     # sources/textual_restoration/applications/enoch_83_20261013/
     83: 11,
@@ -53,6 +55,8 @@ EXPECTED_VERSES = {
     # Old105:1 continued104:1, and old105:2-11 were104:2-11.
     # Paired full selected-edition repair: enoch_full_repair_batch03_20261020.
     104: 13, 105: 2,
+    # Actual CVII.1-3, PDF260-261; 1 continues across the page.
+    107: 3,
 }
 
 
@@ -105,7 +109,7 @@ def audit(chapters: list[int], pob_root: Path = POB_ROOT) -> dict:
             "primary_source_warnings": source_warnings,
         })
     return {
-        "scope": "source inventory and review signals only; not translation approval. Counts beyond39 except independently scan-boundary-reviewed chapters45,83,84,97,104,105 are primary-parser leads, not a certified versification inventory.",
+        "scope": "source inventory and review signals only; not translation approval. Counts beyond39 except independently scan-boundary-reviewed chapters45,50,51,70,83,84,97,104,105,107 are primary-parser leads, not a certified versification inventory.",
         "chapters": rows,
         "missing_verse_total": sum(len(row["missing_verse_numbers"]) for row in rows),
         "source_review_total": sum(len(row["existing_source_review"]) for row in rows),

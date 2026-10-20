@@ -180,3 +180,51 @@ verifier weakness was fixed: installed targets are now byte-compared even when
 not requesting a frozen whole-corpus check. A regression test deliberately
 changes an installed fixture and verifies rejection. No actual prior15-unit
 application drift was found by the separate current hash checks.
+
+## Fourth application: eighteen reviewed units, four more full chapters
+
+The [fourth application](../sources/textual_restoration/applications/enoch_full_repair_batch04_20261020/)
+installs **18:12;50:1–5;51:1–5;70:1–4;107:1–3**, including thirteen absent records.
+Its receipt records918 canonical files and no unrelated canonical changes.
+Each exact source/English/note input has an author and separate source-review
+acceptance. These are edition-specific AI reviews, not human-specialist or
+independent manuscript certification. All candidates remain draft/medium;
+no graphic publication approval is granted.
+
+The count certificates close the selected-edition reviews of50,51,70 and107.
+They do not close18: only18:12 is applied. That source retains the printed
+negative and anomalous nun-ending water-position token. English water explicitly
+follows the edition's reported apparatus reading, not a silent glyph change.
+51:1 restores three return clauses and translates an entrusted deposit rather
+than a womb.70 retains the printed third-to-first-person shift and counted,
+not an unannounced drawn-reading.107:3 preserves the dagger-marked verb and
+separately reports the editor's proposed rest reconstruction. Compressed and
+damaged syntax in50/51 and70 is disclosed, not claimed completely reconstructed.
+
+The [fourth progress snapshot](../sources/enoch/coverage/full-repair-progress-batch04-20261020.json)
+imports exact current evidence for84 distinct units and twelve complete
+selected-edition chapters:4,36–39,45,50,51,70,104,105,107. Historical evidence
+still being audited is not automatically counted and is not presumed wrong.
+The [fourth issue register](../sources/enoch/coverage/editorial-issues-batch04-20261020.md)
+reports13 absent units under declared counts,130 parser-count absence leads,
+42 alignment signals and seven stale witness/source echoes. These overlap,
+are not a mistranslation total, and do not replace actual scan review.
+The four explicit oracle-origin leads present in the prior diagnostic are
+removed by this source-based application; that mechanical fact alone is not
+full linguistic approval of the rest of the book.
+
+The new individual-unit source registration keeps18:12's reviewed negative,
+anomalous source glyph and source-control note in future drafting prompts,
+without approving neighboring OCR units or feeding accepted English back as
+source. Raw OCR remains available unchanged. Full-chapter registration still
+requires independent exact count confirmation. Chapter84's all-six-unit gate
+and97:10's source hold remain in force. This is local application evidence,
+not yet a claim of main/public delivery for this fourth batch.
+
+All191 local Enoch tests pass for the fourth-batch working state, including
+its eighteen strict schema/review bindings, thirteen additions, exact source
+critical controls, independently declared counts, partial18 boundary and a
+full mobile-export comparison. That comparison adds only50,51,70,107 and
+preserves their notes;18 remains withheld by the mobile completeness gate.
+Other existing mobile chapter payloads are unchanged. Exact-head CI, main
+integration and public delivery remain separate gates still to be recorded.

@@ -343,3 +343,72 @@ and provisional-note visibility checks pass. The source glyph is not guessed
 from the dictionary. No partial84 installation or artwork approval is granted.
 24–25 independent review and40–41/79–80 authoring continue; source-based repairs
 remain active rather than declaring all108 complete.
+
+## Fourth application publicly verified; fifth in exact-head CI
+
+Automatic publisher39517572610 subsequently succeeded, including the website
+rebuild request. The public manifest reached main
+**e531cf1e4802807de0b047c9bcb33c23336d37ed**. The
+[fourth delivery check](../sources/enoch/coverage/delivery-batch04-20261020.json)
+matched **all84 distinct repaired public English units** from our first four
+applications, and all nine retired105:3–11 addresses were absent. The payload
+still omits footnotes, so this does not certify reader-note UI, source-text UI,
+a physical device or artwork. The fifth batch is PR390 at
+b7e2e1848fe9a38eba16b3158200a9bd32f5c98b; exact-head CI runs39518492211 and
+39518399229 are being followed. Its eleven units are not yet claimed public.
+
+## Fifth application publicly verified; sixth bounded application
+
+PR390 merged on main **a38e34152c91fdacda495f30303483f2e53848c3** with the exact
+b7e2e1848fe9a38eba16b3158200a9bd32f5c98b tested tree. Both exact-head CI runs
+39518492211 and39518399229 succeeded. Local main was advanced and pushed.
+Publisher39531772629 succeeded, including its website rebuild request. The
+[fifth delivery check](../sources/enoch/coverage/delivery-batch05-20261020.json)
+matched all94 distinct repaired English units from the first five applications;
+all nine retired105:3–11 addresses were absent. Footnotes remain absent in that
+public payload; this is not reader-note UI, device or artwork verification.
+
+The [sixth bounded application](../sources/textual_restoration/applications/enoch_full_repair_batch06_20261020/)
+installs42 exact reviewed units:24:1–6;25:1–7;40:1–10;41:1–4,6–7,9;79:1–6;
+80:1–4,6–7. Its16 additions take the inventory from923 to939. Full chapter
+certificates apply only to24,25,40 and79;41/80 remain partial. The actual79:4
+numerals are177 days,25 weeks and two days, without calendar harmonization.
+41's closed storehouses, enduring name and seeing for judgment replace
+unsupported readings. Source daggers, actual glyphs and qualified lexical
+choices are retained. The exact source/English/note pair, photographs and
+primary controls are pinned, with earlier adverse opinions preserved.
+
+41:5 remains held for critical-note visibility;41:8 and80:5 for source semantics.
+80:8 was accepted but conservatively deferred during whole-chapter exposure
+assessment. The subsequent actual-file probe found80:5 absent, so80:8 can be
+applied separately without completing80. This resolves a release dependency,
+not the80:5 reading, and will not rewrite the sixth application receipt.
+
+25:7 is a narrow workflow/footnote-reason-enum successor with source, English
+and note wording unchanged. The versioned predecessor adapter pins its old
+receipt, accepted inputs/results and Git record; both original checks replay
+unchanged at their old tree. The old installed-byte check remains strict;
+current verification follows only the unique installed explicit successor.
+Additional translation-source metadata is now checked against accepted inputs.
+The raw-OCR continuation regression explicitly tests the raw OCR path, not a
+later reviewed override; the missing-count fixture isolates its count rather
+than relying on a chapter remaining forever unreviewed. Neither change weakens
+the source or continuation requirement.
+
+The [sixth progress snapshot](../sources/enoch/coverage/full-repair-progress-batch06-20261020.json)
+records165 current reviewed units,22 complete selected-edition chapter reviews
+and32 paired count inventories. Its
+[verse-level issue register](../sources/enoch/coverage/editorial-issues-batch06-20261020.md)
+lists34 declared/paired absent units,88 parser absence leads,39 alignment signals
+and seven stale witness echoes. These overlap, are not a mistranslation total,
+and do not prove unflagged wording correct. The local mobile comparison adds
+only complete24/25/40/79, retains notes and withholds incomplete41/80. Sixth
+exact-head CI and public delivery are not yet asserted. Chapter84 remains
+outside canonical pending its all-six marker/metadata/note visibility gate.
+
+All220 local Enoch tests now pass, including the strict42-unit transaction,
+narrow25:7 predecessor/successor and frozen original checks, source-metadata
+binding, historical/current evidence, raw OCR continuation and complete mobile
+comparison. The user authorized on-demand reviewed Enoch notes; restoring their
+actual publisher/client delivery is a separate implementation and QA gate, not
+already completed by this local export test.

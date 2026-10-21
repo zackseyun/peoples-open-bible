@@ -122,6 +122,9 @@ def load_manifest(package: Path) -> dict:
                 old_hash != prior['candidate_sha256'] or \
                 manifest['canonical_baseline_sha256'].get(f'{c:03d}/{v:03d}.yaml') != old_hash:
             raise ValueError('Supersession does not bind the historical manifest/candidate/preimage')
+    for ref in manifest.get('supersedes_legacy_individuals',{}):
+        from tools.enoch.legacy_individual_evidence import validate_declared_successor
+        validate_declared_successor(package,manifest,ref)
     return manifest
 
 
@@ -213,7 +216,7 @@ def verify(package: Path, *, applied: bool = False,
             raise ValueError(f'Candidate has mechanical errors: {ref}: {errors}')
         for row in reviewed_rows(package, manifest['review_bindings'][ref], ref, manifest['files']):
             if any(candidate['source'].get(key) != row['source'].get(key)
-                   for key in ('edition', 'language', 'text', 'pages')) or \
+                   for key in ('edition', 'language', 'text', 'pages', 'additional_translation_input')) or \
                     candidate['translation'] != row['translation']:
                 raise ValueError(f'Candidate differs from accepted source/English/notes: {ref}')
         witnesses = candidate.get('enoch_witnesses', {}).get('available_witnesses', [])

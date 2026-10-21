@@ -9,6 +9,7 @@ from unittest.mock import patch
 
 from tools.enoch import selected_edition_sources as sources, verse_parser as parser
 from tools.enoch import bounded_application as transaction
+from tools.enoch.audit_pob_source_coverage import EXPECTED_VERSES
 from tools.enoch.build_translation_prompt import build_enoch_prompt
 
 
@@ -106,8 +107,12 @@ class ReviewedSourcesTest(unittest.TestCase):
             with evidence_copy() as (registry,package):
                 data=json.loads(registry.read_text());data['units']={key:package.name}
                 registry.write_text(json.dumps(data))
-                with self.assertRaisesRegex(ValueError,'requires a declared printed count'):
-                    sources.load_unit_overrides(int(key.split(':')[0]))
+                # This fixture tests missing-count rejection, not the evolving
+                # production count inventory (40 now has a paired count).
+                counts=dict(EXPECTED_VERSES);counts.pop(40,None)
+                with patch.dict(EXPECTED_VERSES,counts,clear=True):
+                    with self.assertRaisesRegex(ValueError,'requires a declared printed count'):
+                        sources.load_unit_overrides(int(key.split(':')[0]))
 
     def test_individual_override_does_not_accept_an_ambiguous_raw_address(self):
         with evidence_copy() as (registry,package):

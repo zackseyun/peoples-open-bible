@@ -31,7 +31,10 @@ class EnochTransitionPageMapTest(unittest.TestCase):
     def test_transcribed_verse_tails_cross_into_next_page_window(self):
         for chapter, final_verse in ((77, 8), (79, 6), (80, 8), (86, 6)):
             with self.subTest(chapter=chapter):
-                row, warnings = verse_parser.load_verse(chapter, final_verse)
+                # This regression concerns raw OCR page-window continuation,
+                # independent of later accepted source overrides.
+                rows, warnings = verse_parser.parse_ocr_chapter(chapter)
+                row = next(row for row in rows if row.verse == final_verse)
                 self.assertIn(f"ch{chapter + 1:02d}.txt", row.chapter_file)
                 self.assertTrue(any("Continued chapter" in warning for warning in warnings))
 

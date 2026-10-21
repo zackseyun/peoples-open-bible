@@ -43,7 +43,7 @@ def source_row(package: Path, manifest: dict, chapter: int, verse: int) -> dict:
     candidate = yaml.load(transaction.artifact(package, candidate_name).read_bytes(),
                           Loader=transaction.LOADER)
     if any(candidate['source'].get(k) != source.get(k)
-           for k in ('edition','language','text','pages')) or \
+           for k in ('edition','language','text','pages','additional_translation_input')) or \
             source.get('edition') != 'charles-1906-enoch' or source.get('language') != 'Geez' or \
             not source.get('text') or not source.get('pages'):
         raise ValueError(f'Reviewed source identity/payload differs: {ref}')

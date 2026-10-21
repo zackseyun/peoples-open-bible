@@ -34,15 +34,17 @@ EXPECTED_VERSES = {
     # Paired scan-boundary inventories, PDF pp.113-118 / printed75-80.
     # Exact sources and assessments: enoch_full_repair_batch02_20261020.
     36: 4, 37: 5, 38: 6, 39: 14,
-    # Actual PDF121-122 boundaries counted by author and separate reader.
-    # Only42:1-2 and43:1,3,4 wording is accepted;42:3/43:2 remain held.
-    42: 3, 43: 4,
+    # Actual PDF118-122 boundaries counted by author and separate reader.
+    # Complete40 and only named41/42/43 units have wording acceptance; holds remain.
+    40: 10, 41: 9, 42: 3, 43: 4,
     # Charles 1906 printed p. 86 / PDF p. 124 labels XLV.6, then XLVI;
     # the Geʿez parser recovers the sixth unit across its OCR-file boundary.
     # This is a count boundary only, not approval of 45:6's wording.
     45: 6,
     # Full paired source/count reviews, PDF130-132 and165-166.
     50: 5, 51: 5, 70: 4,
+    # Paired79/80 source/count observations;80:5 remains held and8 deferred.
+    79: 6, 80: 8,
     # Whole83 accepted scan markers1-11, including4/11 continuations.
     # sources/textual_restoration/applications/enoch_83_20261013/
     83: 11,

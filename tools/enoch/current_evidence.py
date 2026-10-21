@@ -15,6 +15,9 @@ PREVIOUS = 'enoch_source_repairs_20261020'
 
 def verify_current(package: Path, *, seen: tuple[str, ...] = ()) -> dict:
     name = package.name
+    from tools.enoch import legacy_individual_evidence as legacy
+    if legacy.registered(package):
+        return legacy.verify_current(package,seen=seen)
     if name in seen:
         raise ValueError('Reviewed supersession cycle')
     seen = (*seen,name)

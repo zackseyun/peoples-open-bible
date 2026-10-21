@@ -228,3 +228,118 @@ full mobile-export comparison. That comparison adds only50,51,70,107 and
 preserves their notes;18 remains withheld by the mobile completeness gate.
 Other existing mobile chapter payloads are unchanged. Exact-head CI, main
 integration and public delivery remain separate gates still to be recorded.
+
+## Versioned historical evidence import, not unnecessary retranslation
+
+A read-only historical audit recovered exact accepted input/result/current
+candidate chains, including an exactly reproduced original14-v2 input hash.
+It also showed why legacy `chapter_complete=true` labels must not be accepted
+as whole-chapter proof: chapter13's main package reviewed only4–10, and14's
+only19–25. Their preserved prefixes need separate evidence. Missing original
+bindings do not prove that those translations are wrong.
+
+The first [portable historical index](../sources/enoch/coverage/historical-input-bindings-v1.json)
+imports29 existing units only: all12 of15, all4 of16, both of29, and all11 of83.
+It copies no source/English bodies and performs no canonical writes. The
+versioned adapter directly revalidates each original input hash, raw accepted
+review result, original package dependencies, final reviewed-content hash,
+manifest, installed candidate and application receipt. A changed current record
+loses that imported acceptance; changed historical artifacts are rejected.
+These are historical independent-review bindings, not fabricated fresh paired
+review or human-specialist/manuscript certification. This raises the imported
+unit inventory to113 without claiming29 newly repaired verses. It adds **no**
+full-chapter count certificates, so the twelve newly certified chapter count
+reviews remain twelve. Chapters13/14 and the weaker or single-pass historical
+units are not silently promoted by this adapter. Seven stale active witness
+metadata echoes remain separate work and are not recycled as primary evidence.
+
+## Third application delivered; fourth application in CI
+
+The third application subsequently passed both exact-head CI runs39508051158
+and39508045642 at ee901a7e6b0235770bc2ce2f6b7e7f9d0f4b78e2. PR388 merged
+on main **ac51ddc7c552e27c128ccb6719835876a8070170**; its tree exactly matched
+that tested head, preserving the separately merged four97 repairs. Local
+main was advanced and pushed. Automatic publisher39512510698 succeeded,
+including the website rebuild request. The
+[public delivery check](../sources/enoch/coverage/delivery-batch03-20261020.json)
+matched all66 distinct repaired public English units from our first three
+applications, and all nine retired105:3–11 wrong addresses were absent.
+The base CDN still omits footnotes; this is not rendered reader-note/device
+verification or artwork publication.97:10 remains held.
+
+The fourth application's PR389 refresh merges main with its already tested
+191-test tree unchanged, at25090c5806ecce11a83173d9657dd04b591e4317.
+Its two exact-head CI runs are39512857211 and39512853309; main/public delivery
+of that fourth batch is not yet claimed. The older own128fb push CI was
+canceled as obsolete after that unchanged-tree refresh; no publisher or other
+chat's run was canceled. The subsequent historical-evidence working state
+passes196 local Enoch tests, with no canonical changes beyond the fourth batch.
+
+A subsequent, separately bound **fresh count-only review** now checks all13
+actual primary photographs for those four historical chapters. Parent and
+independent reader agree15=12,16=4,29=2,83=11, including the cross-page final
+units and alternating Greek/editorial pages (not extra Ge’ez units or freshly
+collated manuscripts). Its original input, independent result and provenance
+are pinned under historical-counts-20261020. The adapter keeps these new count
+certificates separate from the old exact wording reviews. Together they now
+support sixteen complete imported selected-edition chapter reviews at113
+units; the prior twelve-count snapshot remains an accurate earlier checkpoint.
+Neither these counts nor the historical wording receipts certify the remaining
+92 chapters, the full final schema, reader-note UI or artwork publication.
+
+## Fifth application: eleven more units, not every held neighbor
+
+The [fifth application](../sources/textual_restoration/applications/enoch_full_repair_batch05_20261020/)
+now installs **28:1–3;34:1–3;42:1–2;43:1,3,4**, including five absent records,
+for923 canonical records.28:3's legible source is rendered as a qualified
+flow, not an unqualified torrent or a silently reconstructed cloud.34:1 uses
+the selected design/counsel word rather than the reported wonder variant;
+34:2 restores the actual numeral one.42:2 restores the dropped negative;
+43:3 removes an OCR-only star and43:4 corrects both source title spellings.
+28:1 is an explicit punctuation/note successor with unchanged source and
+unaltered historical evidence.42:3 and43:2 remain held and are not installed
+as new wording; existing43:2 is unchanged. Neither partial chapter is certified
+complete. The eleven exact units have author and separate source-review checks,
+with opinion exposure and the parent's metadata-only role normalization disclosed.
+
+The [fifth progress snapshot](../sources/enoch/coverage/full-repair-progress-batch05-20261020.json)
+imports123 current reviewed units (including29 previously accepted historical
+units, not29 new repairs),18 complete selected-edition chapter reviews, and29
+paired chapter-count inventories. The
+[issue register](../sources/enoch/coverage/editorial-issues-batch05-20261020.md)
+now uses the separately paired72–82 counts:40 absent units under declared or
+paired counts,98 remaining parser-based absence leads,41 alignment signals,
+and seven stale witness echoes. The increase in confirmed absence count is
+new structural evidence, not newly lost text; categories overlap and are not
+a total of mistranslations.
+
+Both readers confirmed154 actual units in72–82, including eight—not nine—in77,
+and30 currently absent IDs. All29 full-page photos plus the higher-resolution
+heading were inspected. These counts are imported into diagnostics/progress
+without mutating reader-release counts or granting any wording approval.
+Nine cross-page leads remain leads, not automatic proof of clipped translation.
+The new adapter rejects changed input/result/provenance/span/photo bindings.
+
+All208 local Enoch tests pass, including eleven strict candidate/review/schema
+bindings, five additions, explicit28:1 supersession, held-neighbor exclusion,
+partial source-ingress preservation, historical proof and count tamper guards,
+and the complete mobile-export comparison. That comparison adds only28/34,
+changes only existing43, preserves notes, leaves43:2 unchanged and keeps42
+withheld as incomplete. These are local checks, not exact-head CI or public
+reader-note UI certification for the fifth batch.
+
+The fourth application has now passed both exact-head CI runs39512857211 and
+39512853309 and merged through PR389 on main
+**e531cf1e4802807de0b047c9bcb33c23336d37ed**, whose tree exactly matched tested
+head25090c5806ecce11a83173d9657dd04b591e4317. Local main was advanced and
+pushed. Automatic publisher39517572610 is being followed; public delivery of
+that fourth batch is not yet asserted here. The last verified public checkpoint
+remains66 repaired units on ac51ddc7c552e27c128ccb6719835876a8070170.
+
+Chapter84 now has an independently accepted all-six **critical-treatment
+proposal**, with one literal POB-added unknown-glyph span, not six entirely
+certain transcriptions. It remains outside canonical until marker, metadata
+and provisional-note visibility checks pass. The source glyph is not guessed
+from the dictionary. No partial84 installation or artwork approval is granted.
+24–25 independent review and40–41/79–80 authoring continue; source-based repairs
+remain active rather than declaring all108 complete.

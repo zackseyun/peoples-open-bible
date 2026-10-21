@@ -30,6 +30,18 @@ def build() -> dict:
                                 'kind': 'earlier_bounded_unit_repair'}
     except (ValueError, OSError) as error:
         warnings.append('Earlier 15-unit application requires supersession/evidence audit: ' + str(error))
+    # Versioned historical input/result evidence is not a fresh paired scan review.
+    from tools.enoch import historical_evidence
+    try:
+        accepted.update(historical_evidence.load_current())
+        inventories.update(historical_evidence.load_count_inventories())
+    except (ValueError, OSError, KeyError) as error:
+        warnings.append('Historical input binding import requires audit: ' + str(error))
+    from tools.enoch import structural_counts
+    try:
+        inventories.update(structural_counts.load_inventories())
+    except (ValueError, OSError, KeyError) as error:
+        warnings.append('Structural count import requires audit: ' + str(error))
     for package in sorted(transaction.APPLICATIONS.glob('enoch_full_repair_batch*')):
         receipt_path = package / 'application.json'
         if not receipt_path.exists():
@@ -73,7 +85,7 @@ def build() -> dict:
         chapters.append({'chapter': chapter, 'current_records': present,
                          'expected_units': expected,
                          'count_basis': ('paired_scan_inventory' if certificate else
-                                         'legacy_declared_count_needs_completion_evidence' if count else
+                                         'declared_count_needs_separate_completion_evidence' if count else
                                          'count_not_yet_completion_certified'),
                          'current_units_with_imported_review_evidence': reviewed,
                          'selected_edition_chapter_review_complete': complete})
@@ -83,6 +95,7 @@ def build() -> dict:
             'current_units_with_imported_review_evidence': len(accepted),
             'chapters_with_complete_imported_selected_edition_review': [c['chapter'] for c in chapters
                 if c['selected_edition_chapter_review_complete']],
+            'chapters_with_imported_paired_count_inventory': sorted(inventories),
             'chapters': chapters, 'evidence_inventory_warnings': warnings,
             'limits': 'Historical accepted packages not yet imported require evidence audit, not automatic retranslation. Parser lengths and file presence do not prove source fidelity.',
             'completion_proven': False,

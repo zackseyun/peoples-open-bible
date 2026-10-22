@@ -12,9 +12,9 @@ jobs:
   validate:
     name: corpus-integrity
     runs-on: ubuntu-latest
-    # Full source checkout plus corpus-wide checks can exceed 30 minutes.
-    # Preserve every integrity check; allow the complete suite to finish.
-    timeout-minutes: 60
+    # Exact-head batch07 needed44minutes; expanded source/metadata and full-corpus
+    # checks must finish without dropping historical or current integrity gates.
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
       - name: Fetch the reviewed source baselines
@@ -111,6 +111,7 @@ jobs:
           git fetch --no-tags --depth=1 origin 25090c5806ecce11a83173d9657dd04b591e4317
           git fetch --no-tags --depth=1 origin b7e2e1848fe9a38eba16b3158200a9bd32f5c98b
           git fetch --no-tags --depth=1 origin bc3ad70d49985f39e9ec0c939cbbdfdff2402992
+          git fetch --no-tags --depth=1 origin 6c8803637481d9e8abc622aa51946b3e7adc4c21
           git fetch --no-tags --depth=1 origin e535f38cf637133f09519899049fbf374c44a29c
       - uses: actions/setup-python@v5
         with:
@@ -250,7 +251,9 @@ jobs:
           python -m unittest discover -s tests -p 'test_enoch_completeness.py'
           python -m unittest discover -s tests -p 'test_enoch_editorial_issues.py'
           python -m unittest discover -s tests -p 'test_enoch_historical_evidence.py'
+          python -m unittest discover -s tests -p 'test_enoch_historical_raw_receipts.py'
           python -m unittest discover -s tests -p 'test_enoch_structural_counts.py'
+          python -m unittest discover -s tests -p 'test_enoch_structural_count_profiles.py'
           python -m unittest discover -s tests -p 'test_enoch_20261020_transaction.py'
           python -m unittest discover -s tests -p 'test_enoch_bounded_application.py'
           python -m unittest discover -s tests -p 'test_enoch_full_repair_batch02.py'
@@ -259,7 +262,9 @@ jobs:
           python -m unittest discover -s tests -p 'test_enoch_full_repair_batch05.py'
           python -m unittest discover -s tests -p 'test_enoch_full_repair_batch06.py'
           python -m unittest discover -s tests -p 'test_enoch_full_repair_batch07.py'
+          python -m unittest discover -s tests -p 'test_enoch_full_repair_batch08.py'
           python -m unittest discover -s tests -p 'test_enoch_editorial_input_ingress.py'
+          python -m unittest discover -s tests -p 'test_enoch_critical_confidence.py'
           python -m unittest discover -s tests -p 'test_enoch_reviewed_note_export.py'
           python -m unittest discover -s tests -p 'test_enoch_legacy_individual_evidence.py'
           python -m unittest discover -s tests -p 'test_enoch25_7_application.py'

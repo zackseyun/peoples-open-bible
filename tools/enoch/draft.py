@@ -16,6 +16,7 @@ The runner is intentionally narrow:
 from __future__ import annotations
 
 import argparse
+import copy
 import hashlib
 import json
 import os
@@ -285,6 +286,10 @@ def validate_tool_input(tool_input: dict[str, Any]) -> None:
     philosophy = str(tool_input.get("translation_philosophy", "") or "")
     lexical_decisions = tool_input.get("lexical_decisions")
     theological_decisions = tool_input.get("theological_decisions")
+    for key in ("additional_translation_input", "transcription_uncertainties"):
+        if key in bundle.source_payload:
+            record["source"][key] = copy.deepcopy(bundle.source_payload[key])
+
     footnotes = tool_input.get("footnotes")
 
     if not english_text.strip():
@@ -370,6 +375,7 @@ def _build_enoch_witnesses(bundle: build_translation_prompt.EnochPromptBundle) -
         "attestation_expectations": _attestation_summary(bundle.chapter),
         "geez_only_zone1": 37 <= bundle.chapter <= 71,
         "source_warnings": bundle.source_warnings,
+        "accepted_source_editorial_controls": copy.deepcopy(bundle.witness_set.get("accepted_source_editorial_controls",{})),
     }
 
 
@@ -419,6 +425,10 @@ def build_record(
         "status": "draft",
         "enoch_witnesses": _build_enoch_witnesses(bundle),
     }
+
+    for key in ("additional_translation_input", "transcription_uncertainties"):
+        if key in bundle.source_payload:
+            record["source"][key] = copy.deepcopy(bundle.source_payload[key])
 
     footnotes = tool_input.get("footnotes")
     if footnotes:

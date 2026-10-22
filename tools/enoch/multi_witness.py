@@ -275,8 +275,9 @@ def load_verse(chapter: int, verse: int) -> Optional[EnochVerseWitnessSet]:
             witness="charles_1906",
             text=row.text,
             source_edition="Charles 1906 Ethiopic Enoch",
-            confidence="medium",
-            note=f"Recovered from {row.chapter_file} via tools/enoch/verse_parser.py",
+            confidence=row.source_confidence or "medium",
+            note=f"Recovered from {row.chapter_file} via tools/enoch/verse_parser.py" +
+                 (f"\nSource editorial control: {row.source_note}" if row.source_note else ""),
         ),
     )
     witness_set.accepted_source_editorial_controls = {

@@ -7,7 +7,7 @@ from tools import export_reader_bible as exporter
 class ReviewedEnochNotesExportTest(unittest.TestCase):
     def fixture(self):
         return {'book':'1 Enoch','source':{'edition':'charles-1906-enoch','language':'Geez',
-            'text':'መ⟦?⟧ትከ','pages':[200],'transcription_uncertainties':[{'marker':'⟦?⟧','status':'unresolved'}],
+            'text':'መ⟦?⟧ትከ','pages':[200], 'note':'POB-added unknown span; not a Charles mark or ancient lacuna.', 'confidence':'low','transcription_uncertainties':[{'marker':'⟦?⟧','status':'unresolved'}],
             'additional_translation_input':[{'language':'Greek','text':'reported reading','scope':'printed edited comparison only'}]},
             'source_correction':{'individual_unit_application_approved':True},
             'translation':{'text':'Provisional rendering[a] [critical words].',

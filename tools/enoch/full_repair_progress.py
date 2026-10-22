@@ -33,13 +33,13 @@ def build() -> dict:
     # Versioned historical input/result evidence is not a fresh paired scan review.
     from tools.enoch import historical_evidence
     try:
-        accepted.update(historical_evidence.load_current())
+        accepted.update(historical_evidence.load_all_current())
         inventories.update(historical_evidence.load_count_inventories())
     except (ValueError, OSError, KeyError) as error:
         warnings.append('Historical input binding import requires audit: ' + str(error))
     from tools.enoch import structural_counts
     try:
-        inventories.update(structural_counts.load_inventories())
+        inventories.update(structural_counts.load_all_inventories())
     except (ValueError, OSError, KeyError) as error:
         warnings.append('Structural count import requires audit: ' + str(error))
     for package in sorted(transaction.APPLICATIONS.glob('enoch_full_repair_batch*')):
@@ -65,7 +65,8 @@ def build() -> dict:
                     transaction.review_row(package, binding, ref, manifest['files'])
                 accepted[(c, v)] = {'application': str(package.relative_to(transaction.ROOT)),
                                     'kind': 'paired_selected_edition_unit_review'}
-            for certificate in manifest.get('chapter_inventories', []):
+            for certificate in (manifest.get('chapter_inventories', []) +
+                                manifest.get('source_only_count_inventories', [])):
                 if not certificate.get('independent_count_confirmation'):
                     continue
                 if certificate['artifact'] not in manifest['files']:

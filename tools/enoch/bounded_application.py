@@ -249,7 +249,7 @@ def verify(package: Path, *, applied: bool = False,
         schema.validate(candidate)
         if candidate['id'] != f'1EN.{c}.{v}' or candidate['reference'] != ref or \
                 candidate.get('book') != '1 Enoch' or candidate.get('status') != 'draft' or \
-                candidate['source'].get('confidence') != 'medium':
+                candidate['source'].get('confidence') not in ('medium','low'):
             raise ValueError(f'Candidate identity/lifecycle differs: {ref}')
         correction = candidate['source_correction']
         if correction.get('individual_unit_application_approved') is not True or \
@@ -268,8 +268,16 @@ def verify(package: Path, *, applied: bool = False,
         if errors:
             raise ValueError(f'Candidate has mechanical errors: {ref}: {errors}')
         for row in reviewed_rows(package, manifest['review_bindings'][ref], ref, manifest['files']):
+            if candidate['source'].get('confidence')=='low' and (
+                    row['source'].get('confidence')!='low' or
+                    not candidate['source'].get('transcription_uncertainties') or
+                    not candidate['source'].get('note') or
+                    not row['source'].get('note') or row['source']['note'] not in candidate['source']['note'] or
+                    not candidate['translation'].get('footnotes')):
+                raise ValueError(f'Low-confidence critical treatment lacks exact accepted uncertainty/explanation controls: {ref}')
             if any(candidate['source'].get(key) != row['source'].get(key)
                    for key in ('edition', 'language', 'text', 'pages', 'additional_translation_input', 'transcription_uncertainties')) or \
+                    ('confidence' in row['source'] and candidate['source'].get('confidence')!=row['source']['confidence']) or \
                     candidate['translation'] != row['translation']:
                 raise ValueError(f'Candidate differs from accepted source/English/notes: {ref}')
         witnesses = candidate.get('enoch_witnesses', {}).get('available_witnesses', [])

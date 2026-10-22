@@ -62,3 +62,20 @@ def load_inventories(index=INDEX):
                    'artifact':data['review'],'independent_count_confirmation':True,
                    'kind':'paired_structural_only_not_wording_or_reader_release_approval'}
     return output
+
+
+def load_all_inventories():
+    """Diagnostic/progress union; never changes reader release declarations.
+
+    Keep the original72–82 loader and its raw serializer contract intact.
+    Each added profile validates its own distinct author/reader receipts.
+    """
+    from tools.enoch import structural_count_profiles
+    output=load_inventories()
+    for name in ('count52-69-20261022','count91-103-20261022'):
+        index=transaction.ROOT/'sources/enoch/coverage'/name/'paired-count-index-v2.json'
+        current=structural_count_profiles.load(index,transaction.ROOT)
+        if set(current)&set(output):
+            raise ValueError('Diagnostic structural inventory scopes overlap')
+        output.update(current)
+    return output

@@ -47,6 +47,8 @@ def source_row(package: Path, manifest: dict, chapter: int, verse: int) -> dict:
             source.get('edition') != 'charles-1906-enoch' or source.get('language') != 'Geez' or \
             not source.get('text') or not source.get('pages'):
         raise ValueError(f'Reviewed source identity/payload differs: {ref}')
+    if 'confidence' in source and candidate['source'].get('confidence')!=source['confidence']:
+        raise ValueError(f'Reviewed source confidence differs: {ref}')
     return {'reference': ref, 'verse':verse, 'source':source,
             'evidence':str(package.relative_to(transaction.ROOT)) + '/' +
                        manifest['review_bindings'][ref][0]['input']}

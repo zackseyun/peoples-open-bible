@@ -343,3 +343,19 @@ would be natural extensions of this phase if we ever pursue them:
 None are committed to. The Enoch phase itself is scheduled; these
 remain speculative and would each need their own scope document
 when/if we pursue them.
+
+## Batch 10 selected-edition treatments (2026-10-22)
+
+[Batch 10](docs/ENOCH_BATCH10_2026-10-22.md) installs 41 exact paired-reviewed
+units: complete treatment of chapter 18 and 25 individually accepted units in
+65–69, restoring five missing records. The unclear consonant at 18:8 stays
+explicitly marked, low confidence and provisionally explained; this does not
+certify every glyph. Twelve earlier accepted records receive bound successors,
+not twelve new English bodies. Thirty-seven held proposals remain unchanged.
+
+The dated snapshot reports958files,339imported-review units and30chapters
+with complete imported review coverage, not a flawless-notes or all108 certificate.
+Fresh substantive followups on29:2and97:5remain pending; historical acceptance
+does not clear new adverse findings. Canonical97:10and69:28–29remain absent.
+The quiet selected-verse explanation interface is unchanged. See the linked
+audit for exact references, unresolved controls and verification boundaries.

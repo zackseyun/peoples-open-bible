@@ -44,6 +44,15 @@ class FullRepairBatch04Test(unittest.TestCase):
         self.assertEqual(record(107,1)['source']['pages'],[260,261])
 
     def test_individual_18_negative_and_anomalous_printing_do_not_approve_chapter(self):
+        if (transaction.APPLICATIONS/'enoch_full_repair_batch10_20261022/application.json').exists():
+            # The old partial18 assertion is replayed unchanged at f082.
+            # This requires the installed all16 successor; current18 controls
+            # are independently asserted by test_enoch_full_repair_batch10.
+            from tools.enoch.replay_18_pre_complete_gate import replay
+            result=replay('individual18')
+            self.assertEqual((result['tests_run'],result['skipped'],result['expected_failures']), (1,0,0))
+            self.assertFalse(result['current_corpus_validated'])
+            return
         data=record(18,12)
         self.assertIn('*ኢጽገበ',data['source']['text'])
         self.assertIn('ወኢማን',data['source']['text'])
@@ -81,6 +90,12 @@ class FullRepairBatch04Test(unittest.TestCase):
         self.assertFalse(report['completion_proven'])
 
     def test_mobile_adds_only_four_full_chapters_and_retains_notes(self):
+        if (transaction.APPLICATIONS/'enoch_full_repair_batch10_20261022/application.json').exists():
+            from tools.enoch.replay_18_pre_complete_gate import replay
+            result=replay('export18')
+            self.assertEqual((result['tests_run'],result['skipped'],result['expected_failures']), (1,0,0))
+            self.assertFalse(result['current_corpus_validated'])
+            return
         manifest=transaction.load_manifest(PACKAGE)
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory);old=root/'1_enoch';shutil.copytree(transaction.TRANSLATION,old)

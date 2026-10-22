@@ -102,6 +102,12 @@ class FullRepairBatch08Test(unittest.TestCase):
         self.assertFalse(record(55,3)['source_correction']['selected_edition_chapter_reviewed'])
 
     def test_progress_adds35_reviews_and3full_scopes_not_a_whole_book_certificate(self):
+        if (t.APPLICATIONS/'enoch_full_repair_batch10_20261022/application.json').exists():
+            from tools.enoch.replay_18_pre_complete_gate import replay
+            result=replay('progress18')
+            self.assertEqual((result['tests_run'],result['skipped'],result['expected_failures']), (1,0,0))
+            self.assertFalse(result['current_corpus_validated'])
+            return
         report=build();self.assertGreaterEqual(report['current_units_with_imported_review_evidence'],258)
         self.assertTrue(set(FULL)<=set(report['chapters_with_complete_imported_selected_edition_review']))
         self.assertEqual(report['evidence_inventory_warnings'],[]);self.assertFalse(report['completion_proven'])

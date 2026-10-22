@@ -599,3 +599,36 @@ and the replay requires the actual accepted allsix84successor evidence. A new
 current-state assertion separately verifies complete inventory still does **not**
 let the mechanical audit approve a translation. This is not an exemption for
 unknown glyphs, source/English matching, explanation access or current data.
+
+## Twelfth bounded application: four existing chapter32 units
+
+The twelfth application admits exact paired current treatments for32:1,2,4,5,
+not a completed chapter.32:3 remains held; absent32:6 stays absent even though
+its separate bounded critical treatment has paired acceptance, preventing a new
+complete-looking reader chapter from exposing held3. No count migration,
+reader-policy change or artwork publication occurs.
+
+32:4 replaces unqualified carob identification with the explicitly opaque
+selected comparison in transliteration and indispensable click-accessible
+explanation.32:2 retains actual daggers and the scoped printed editorial repair.
+32:5 preserves the existing English/editorial brackets while honestly lowering
+confidence and recording their critical status. A pre-application source
+punctuation check caught a silent draft separator; a separately authored v4 and
+independent exact-delta assessment restore actual joinedሠናይዝ. The positive
+v3 and adverse separator addendum remain immutable history; no incorrect
+separator was applied canonically or published.
+
+The typed legacy32 adapter keeps the old bounded north correction distinct from
+the two accepted individual32:5 reviews. All41 original artifacts, actual applied
+Git records and receipts stay unchanged. Two old installed-hash cases replay
+unchanged at their pinned pre-successor tree, and direct current counterproof
+checks new paired payloads, held3/absent6, export stability and failure on drift.
+10new focused checks and4old chapter32 checks passed. Full regression/CI/main/
+public delivery remain separate gates until terminal results are recorded.
+Coverage reaches370imported-review units, not108completechapters; complete
+imported chapter coverage remains31. Quiet selected-verse explanations remain
+marker-free. See[batch12](ENOCH_BATCH12_2026-10-22.md).
+
+Local full regression passed333tests in891.675seconds (no skips/expectedfailures);
+final10batch12checks passed again after narrow legacy-scope assertion hardening.
+Exact-head CI and later main/public delivery are not inferred from these results.

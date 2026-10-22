@@ -25,6 +25,7 @@ secondary witness, but its verse alignment is not yet implemented here.
 from __future__ import annotations
 
 import argparse
+import copy
 import json
 import pathlib
 import re
@@ -84,6 +85,8 @@ class EnochVerseRow:
     chapter_file: str
     pages: tuple[int, ...] = ()
     source_note: str = ''
+    additional_translation_input: object | None = None
+    transcription_uncertainties: object | None = None
 
 
 def roman_numeral(n: int) -> str:
@@ -306,7 +309,9 @@ def parse_chapter(chapter: int) -> tuple[list[EnochVerseRow], list[str]]:
     def reviewed(row):
         return EnochVerseRow(chapter=chapter, verse=row['verse'], text=row['source']['text'],
             marker_raw='reviewed printed unit boundary', chapter_file=row['evidence'],
-            pages=tuple(row['source']['pages']), source_note=row['source'].get('note',''))
+            pages=tuple(row['source']['pages']), source_note=row['source'].get('note',''),
+            additional_translation_input=copy.deepcopy(row['source'].get('additional_translation_input')),
+            transcription_uncertainties=copy.deepcopy(row['source'].get('transcription_uncertainties')))
     if source is not None:
         rows, warnings = [reviewed(row) for row in source], [
             'Primary selected-edition source comes from exact paired-reviewed inputs; '

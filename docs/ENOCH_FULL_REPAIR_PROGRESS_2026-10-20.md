@@ -412,3 +412,78 @@ binding, historical/current evidence, raw OCR continuation and complete mobile
 comparison. The user authorized on-demand reviewed Enoch notes; restoring their
 actual publisher/client delivery is a separate implementation and QA gate, not
 already completed by this local export test.
+
+## Sixth application publicly verified; reviewed-note delivery being implemented
+
+PR391 merged the unchanged tested41170822f8de2f4341fd143ce65fe9d27f006db9 tree
+on main **bc3ad70d49985f39e9ec0c939cbbdfdff2402992**. Both exact-head CI runs
+39559376304 and39560712793 succeeded; main was advanced and pushed locally.
+Publisher39570507780 succeeded. The
+[sixth delivery check](../sources/enoch/coverage/delivery-batch06-20261021.json)
+matched all136 distinct repaired/reviewed public English units from the first
+six applications, with all nine retired105:3–11 addresses absent. The payload
+still contains no notes: this does not verify note UI or approve held critical
+treatments. It is not a claim that all939 existing records are source-verified.
+
+The user explicitly approved on-demand reviewed Enoch notes. Isolated private
+backend/web/native worktrees now implement that delivery separately; their code
+is not copied into this public corpus repository. Publisher archive/compiler
+tests preserve exact approved notes, Ge’ez unknown-glyph markers and structured
+uncertainty metadata, while unapproved/other-book notes retain the prior policy.
+Native widget tests demonstrate a note opening with inline markers off. Local
+web testing caught and corrected a macOS case-insensitive module-resolution bug;
+a fresh-origin reader now displays the actual reviewed25:7 and its note control.
+These working tests are not deployed reader or physical-device proof. The
+Python export now carries the same narrowly scoped note-review/source metadata;
+the existing37 reader-footnote export tests passed after restoring their sparse
+source fixtures. No held18/41:5/84 candidate has been installed by this work.
+
+
+## Marker-free wording details: source, deployment and live check
+
+The user superseded the footnote UI proposal: no inline letters or standalone
+note dots. A small “About this wording” panel appears only after selecting one
+verse; More expands its exact explanation. Internal source explanations remain
+part of the audit trail, not footnotes in the reading text.
+
+Private publisher code and web/native source are on their respective main
+branches. The publisher successfully rebuilt the unchanged canonical bc3ad70
+with compiler revision enoch-notes-v1. Exact public-data comparison verified103
+approved explanation units/133 explanations; those are not103 new repairs.
+Website deployment39714559880 succeeded for49f9f62a00b1c98635749fb998acb1138a01bac0,
+which contains the reviewed panel9b4334. A fresh production reader at cartha.com
+was checked on25:7: marker-free prose, single-verse click, compact panel, More,
+and exact full explanation all worked. Source-only/native tests are distinct
+from this web proof; no physical-device or App Store release is asserted.
+Chapter84 remains outside canonical. No artwork publication is approved.
+
+## Seventh bounded application:50 exact additional units
+
+The seventh application installs50 separately accepted source/English/explanation
+payloads in19/20,22/23,46/47,48/49, plus deferred41:5 and80:8. Only19,46,49 have
+complete selected-edition chapter certificates. Two absent units46:8 and80:8
+are added; unrelated canonical bytes are preserved.49:2 repairs the mistaken
+adversary lookup to the actual noun for remaining/abiding;46:4 preserves the
+daggered raising direction instead of silently importing cast down.22:9 retains
+the actual brightness adjective and its qualified explanation. Reported variant
+adoptions48:8/49:1 retain exact structured additional-source metadata.
+
+20:6,23:4,44:1,47:4,48:7,41:8,80:5 and97:10 remain held.22:2 needs an exact
+structured editorial-supply metadata amendment;22:14 is deferred alongside it
+so the reader does not newly expose the whole chapter before that repair.
+18/84 critical treatments remain outside this package. No artwork is approved.
+
+Two source-only count certificates47/48 permit exact individual source ingress,
+not chapter wording approval or a reader/export count change. Their full paired
+submitted scopes and explicit held decisions remain pinned. Future prompt and
+witness-control payloads retain additional inputs and literal unknown-glyph
+metadata separately from loaded manuscript slots. The two retained review
+serializers (reviews/results) are read without rewriting their bytes; absent,
+ambiguous, duplicate or non-explicit decisions fail closed. Adverse22/49 first
+passes are retained alongside their accepted revisions.
+
+The internal explanations are still auditable data, not visible reader footnotes.
+The deployed selected-verse panel and More were actually verified on approved25:7.
+This source application is not yet a claim of exact-head CI or candidate public
+delivery; those terminal checks must follow. The full108 completion gate remains
+false.

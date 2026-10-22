@@ -649,6 +649,15 @@ def _export_record_verse(verse_num: int, record: dict[str, Any]) -> dict[str, An
     notes = reader_footnotes(record, text)
     if notes:
         out['footnotes'] = notes
+        source = record.get('source') or {}
+        if record.get('book') == '1 Enoch' and \
+                (record.get('source_correction') or {}).get('individual_unit_application_approved') is True and \
+                source.get('edition') == 'charles-1906-enoch' and source.get('language') == 'Geez' and \
+                source.get('text') and source.get('pages'):
+            out['footnote_review'] = 'pob-enoch-paired-source-review-v1'
+            out['source_critical'] = {key: source[key] for key in
+                ('edition', 'language', 'text', 'pages', 'transcription_uncertainties',
+                 'additional_translation_input') if key in source}
     if record.get("is_superscription") or verse_num == 0:
         out["is_superscription"] = True
     return out

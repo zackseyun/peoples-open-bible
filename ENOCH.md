@@ -359,3 +359,21 @@ Fresh substantive followups on29:2and97:5remain pending; historical acceptance
 does not clear new adverse findings. Canonical97:10and69:28–29remain absent.
 The quiet selected-verse explanation interface is unchanged. See the linked
 audit for exact references, unresolved controls and verification boundaries.
+
+## Batch 11 full29/97 critical treatments (2026-10-22)
+
+[Batch 11](docs/ENOCH_BATCH11_2026-10-22.md) integrates29exactpaired units,
+including full29/97 treatments and partial17/71. Restored97:10retains the
+negative wealth clause and both causal connections; all nine neighbors have
+accepted current treatments before its release. Charles97:5shortform and
+97:6verbvoice remain intrinsically uncertain, with lowconfidence and exact
+explicit edited/reported additional inputs for the English. This is not silent
+source normalization or a fresh manuscript claim.
+
+The29:2Greek main/apparatus note and unsupported possessive are corrected;
+historical acceptance did not waive fresh adverse findings. Four missing
+records are restored, eight held proposal preimages unchanged. The dated
+snapshot has962records,366imported-review units and31complete imported
+chapter coverages, not an all108 certificate. Quiet verse-click details remain,
+with no new visible footnote markers. Main, CI and public delivery require
+separate terminal verification.

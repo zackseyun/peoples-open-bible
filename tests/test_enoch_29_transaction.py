@@ -7,6 +7,14 @@ from tools.enoch import verse_parser
 
 class Enoch29Transaction(unittest.TestCase):
     def test_full_two_unit_printed_source_and_review_bindings(self):
+        if (transaction.P.parent/'enoch_full_repair_batch11_20261022/application.json').is_file():
+            # Original assertions below are replayed unchanged at pinned49ed;
+            # current full29/97 treatments have separate batch11 counterproof.
+            from tools.enoch.replay_29_97_pre_successor import replay
+            result = replay('29:test_full_two_unit_printed_source_and_review_bindings')
+            self.assertEqual((result['tests_run'], result['skipped'], result['expected_failures']), (1, 0, 0))
+            self.assertFalse(result['current_corpus_validated'])
+            return
         applied=(transaction.P/'application.json').exists()
         rows=transaction.verify_evidence(applied=applied)
         self.assertEqual(set(rows),{1,2})
@@ -16,17 +24,41 @@ class Enoch29Transaction(unittest.TestCase):
         else:self.assertEqual(transaction.verify_export()['changed_chapters'],[29])
 
     def test_history_preserves_rejection_before_acceptance(self):
+        if (transaction.P.parent/'enoch_full_repair_batch11_20261022/application.json').is_file():
+            # Original assertions below are replayed unchanged at pinned49ed;
+            # current full29/97 treatments have separate batch11 counterproof.
+            from tools.enoch.replay_29_97_pre_successor import replay
+            result = replay('29:test_history_preserves_rejection_before_acceptance')
+            self.assertEqual((result['tests_run'], result['skipped'], result['expected_failures']), (1, 0, 0))
+            self.assertFalse(result['current_corpus_validated'])
+            return
         prior=json.loads((transaction.P/'prior-revise-review.json').read_text())
         current=json.loads((transaction.P/'review-final/review.json').read_text())
         self.assertEqual([r['verdict'] for r in prior['review']['reviews']],['accept','revise'])
         self.assertEqual([r['verdict'] for r in current['reviews']],['accept','accept'])
 
     def test_changed_review_hash_fails_closed(self):
+        if (transaction.P.parent/'enoch_full_repair_batch11_20261022/application.json').is_file():
+            # Original assertions below are replayed unchanged at pinned49ed;
+            # current full29/97 treatments have separate batch11 counterproof.
+            from tools.enoch.replay_29_97_pre_successor import replay
+            result = replay('29:test_changed_review_hash_fails_closed')
+            self.assertEqual((result['tests_run'], result['skipped'], result['expected_failures']), (1, 0, 0))
+            self.assertFalse(result['current_corpus_validated'])
+            return
         actual=transaction.sha
         with patch.object(transaction,'sha',side_effect=lambda path:'bad' if path==transaction.P/'review-final/review.json' else actual(path)):
             with self.assertRaises(ValueError):transaction.verify_evidence(applied=(transaction.P/'application.json').exists())
 
     def test_source_review_scope_never_claims_human_or_manuscript_certification(self):
+        if (transaction.P.parent/'enoch_full_repair_batch11_20261022/application.json').is_file():
+            # Original assertions below are replayed unchanged at pinned49ed;
+            # current full29/97 treatments have separate batch11 counterproof.
+            from tools.enoch.replay_29_97_pre_successor import replay
+            result = replay('29:test_source_review_scope_never_claims_human_or_manuscript_certification')
+            self.assertEqual((result['tests_run'], result['skipped'], result['expected_failures']), (1, 0, 0))
+            self.assertFalse(result['current_corpus_validated'])
+            return
         rows=transaction.verify_evidence(applied=(transaction.P/'application.json').exists())
         for row in rows.values():
             self.assertFalse(row['source_correction']['human_specialist_certification'])

@@ -89,12 +89,17 @@ def load_unit_overrides(chapter: int) -> list[dict]:
     if registry is None:
         return []
     output = []
+    # Match load_chapter: verify each package once within this single read.
+    # Never cache across calls; a subsequent read must detect artifact drift.
+    packages = {}
     for key, name in registry.get('units',{}).items():
         c,v = transaction.parse_ref('1 Enoch ' + key)
         if c != chapter:
             continue
         from tools.enoch.audit_pob_source_coverage import EXPECTED_VERSES
-        package,manifest = package_evidence(name)
+        if name not in packages:
+            packages[name] = package_evidence(name)
+        package,manifest = packages[name]
         count = EXPECTED_VERSES.get(c)
         if count is None:
             # Versioned paired source-only counts are not reader/export release

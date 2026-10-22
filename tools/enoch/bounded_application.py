@@ -91,6 +91,41 @@ def load_manifest(package: Path) -> dict:
                 rows[0]['units'] != units:
             raise ValueError('Complete chapter certificate differs from pinned inventory')
         certificates[c] = units
+    # These counts bind individual source ingress only. They deliberately do
+    # not confer full chapter wording approval or alter reader/export counts.
+    source_counts = set()
+    for certificate in manifest.get('source_only_count_inventories', []):
+        c, units = certificate['chapter'], certificate['units']
+        if c in source_counts or c in certificates or not units or \
+                units != list(range(1, len(units)+1)) or \
+                certificate.get('independent_count_confirmation') is not True or \
+                certificate.get('artifact') not in manifest['files']:
+            raise ValueError('Source-only count certificate scope differs')
+        inventory = json.loads(artifact(package, certificate['artifact']).read_text())
+        matches = [r for r in inventory['chapters'] if r['chapter'] == c]
+        if inventory.get('kind') != 'enoch-source-ingress-counts-v1' or \
+                inventory.get('primary_pdf_sha256') != PRIMARY_SHA or \
+                inventory.get('wording_approval') is not False or \
+                inventory.get('reader_release_policy_changed') is not False or \
+                len(matches) != 1 or matches[0]['units'] != units:
+            raise ValueError('Source-only count artifact or release limit differs')
+        chapter_refs = [ref for ref in refs if parse_ref(ref)[0] == c]
+        if not chapter_refs:
+            raise ValueError('Source-only count has no exact approved individual unit')
+        # Each already-pinned author/reader input and explicit decision list
+        # must actually represent the entire numbered structural scope. Held
+        # decisions stay held and are never passed to reviewed_rows as accepts.
+        bindings = manifest['review_bindings'][chapter_refs[0]]
+        reviewed_rows(package, bindings, chapter_refs[0], manifest['files'])
+        for binding in bindings:
+            inputs = json.loads(artifact(package, binding['input']).read_text())
+            decisions = review_entries(json.loads(artifact(package, binding['review']).read_text()))
+            for rows in (inputs, decisions):
+                observed = sorted(parse_ref(r['reference'])[1] for r in rows
+                                  if parse_ref(r['reference'])[0] == c)
+                if observed != units:
+                    raise ValueError('Source-only count differs from full paired submitted scope')
+        source_counts.add(c)
     retired = [row['reference'] for row in manifest.get('retirements', [])]
     if len(retired) != len(set(retired)) or set(retired) & set(refs) or \
             [parse_ref(ref) for ref in retired] != sorted(parse_ref(ref) for ref in retired):
@@ -128,17 +163,35 @@ def load_manifest(package: Path) -> dict:
     return manifest
 
 
+def review_entries(result: dict) -> list[dict]:
+    """Read either retained receipt serializer without rewriting signed bytes.
+
+    The 48–49 reader emitted ``results``; other readers emitted ``reviews``.
+    Both contain explicit reference/verdict rows. Ambiguous dual containers,
+    absent decisions and duplicates fail closed, never infer acceptance.
+    """
+    keys = [key for key in ('reviews', 'results') if key in result]
+    if len(keys) != 1 or not isinstance(result[keys[0]], list):
+        raise ValueError('Review receipt must contain one explicit decision list')
+    rows = result[keys[0]]
+    if any(not isinstance(row, dict) or not row.get('reference') or
+           row.get('verdict') not in ('accept', 'hold', 'revise', 'reject') for row in rows) or \
+            len({row['reference'] for row in rows}) != len(rows):
+        raise ValueError('Review receipt has invalid or duplicate explicit decisions')
+    return rows
+
+
 def review_row(package: Path, binding: dict, ref: str, pinned: dict) -> dict:
     for key in ('input', 'review', 'provenance'):
         if binding.get(key) not in pinned:
             raise ValueError(f'Unpinned {key} evidence for {ref}')
     inputs = json.loads(artifact(package, binding['input']).read_text())
     results = json.loads(artifact(package, binding['review']).read_text())
-    if len({row['reference'] for row in inputs}) != len(inputs) or \
-            len({row['reference'] for row in results['reviews']}) != len(results['reviews']):
+    decisions = review_entries(results)
+    if len({row['reference'] for row in inputs}) != len(inputs):
         raise ValueError('Duplicate input/review references')
     selected = [row for row in inputs if row['reference'] == ref]
-    verdicts = [row for row in results['reviews'] if row['reference'] == ref]
+    verdicts = [row for row in decisions if row['reference'] == ref]
     if len(selected) != 1 or len(verdicts) != 1 or verdicts[0]['verdict'] != 'accept':
         raise ValueError(f'Exact submitted unit is not accepted: {ref}')
     provenance = json.loads(artifact(package, binding['provenance']).read_text())
@@ -216,7 +269,7 @@ def verify(package: Path, *, applied: bool = False,
             raise ValueError(f'Candidate has mechanical errors: {ref}: {errors}')
         for row in reviewed_rows(package, manifest['review_bindings'][ref], ref, manifest['files']):
             if any(candidate['source'].get(key) != row['source'].get(key)
-                   for key in ('edition', 'language', 'text', 'pages', 'additional_translation_input')) or \
+                   for key in ('edition', 'language', 'text', 'pages', 'additional_translation_input', 'transcription_uncertainties')) or \
                     candidate['translation'] != row['translation']:
                 raise ValueError(f'Candidate differs from accepted source/English/notes: {ref}')
         witnesses = candidate.get('enoch_witnesses', {}).get('available_witnesses', [])

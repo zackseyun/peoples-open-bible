@@ -41,6 +41,8 @@ EXPECTED_VERSES = {
     # the Geʿez parser recovers the sixth unit across its OCR-file boundary.
     # This is a count boundary only, not approval of 45:6's wording.
     45: 6,
+    # Paired full selected-edition reviews; no47/48 release count inferred.
+    46: 8, 49: 4,
     # Full paired source/count reviews, PDF130-132 and165-166.
     50: 5, 51: 5, 70: 4,
     # Paired79/80 source/count observations;80:5 remains held and8 deferred.

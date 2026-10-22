@@ -43,7 +43,7 @@ def source_row(package: Path, manifest: dict, chapter: int, verse: int) -> dict:
     candidate = yaml.load(transaction.artifact(package, candidate_name).read_bytes(),
                           Loader=transaction.LOADER)
     if any(candidate['source'].get(k) != source.get(k)
-           for k in ('edition','language','text','pages','additional_translation_input')) or \
+           for k in ('edition','language','text','pages','additional_translation_input','transcription_uncertainties')) or \
             source.get('edition') != 'charles-1906-enoch' or source.get('language') != 'Geez' or \
             not source.get('text') or not source.get('pages'):
         raise ValueError(f'Reviewed source identity/payload differs: {ref}')
@@ -92,8 +92,16 @@ def load_unit_overrides(chapter: int) -> list[dict]:
         if c != chapter:
             continue
         from tools.enoch.audit_pob_source_coverage import EXPECTED_VERSES
-        if c not in EXPECTED_VERSES or v > EXPECTED_VERSES[c]:
-            raise ValueError('Individual source override requires a declared printed count/address')
         package,manifest = package_evidence(name)
+        count = EXPECTED_VERSES.get(c)
+        if count is None:
+            # Versioned paired source-only counts are not reader/export release
+            # declarations: neighboring held wording must remain unavailable.
+            matches = [row for row in manifest.get('source_only_count_inventories', [])
+                       if row['chapter'] == c]
+            if len(matches) == 1:
+                count = len(matches[0]['units'])
+        if count is None or v > count:
+            raise ValueError('Individual source override requires a declared printed count/address')
         output.append(source_row(package,manifest,c,v))
     return sorted(output,key=lambda row:row['verse'])

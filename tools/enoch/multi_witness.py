@@ -34,10 +34,11 @@ that Phase 11c will consume.
 from __future__ import annotations
 
 import hashlib
+import copy
 import json
 import pathlib
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Optional
 
 try:
@@ -78,6 +79,8 @@ class EnochVerseWitnessSet:
     greek_chester_beatty: Optional[EnochWitnessReading] = None # chs 97-107
     # Edited comparative text, never silently placed in a manuscript slot.
     greek_edition_control: Optional[EnochWitnessReading] = None
+    # Exact accepted apparatus/uncertainty metadata, not a manuscript slot.
+    accepted_source_editorial_controls: dict = field(default_factory=dict)
 
     def available_witnesses(self) -> list[EnochWitnessReading]:
         out = []
@@ -276,6 +279,11 @@ def load_verse(chapter: int, verse: int) -> Optional[EnochVerseWitnessSet]:
             note=f"Recovered from {row.chapter_file} via tools/enoch/verse_parser.py",
         ),
     )
+    witness_set.accepted_source_editorial_controls = {
+        key: copy.deepcopy(getattr(row, key))
+        for key in ('additional_translation_input', 'transcription_uncertainties')
+        if getattr(row, key, None) is not None
+    }
 
     if dillmann_is_available():
         d_row, d_warnings = dillmann_verse_parser.load_verse(chapter, verse)

@@ -16,6 +16,7 @@ AI drafting. The prompt is intentionally conservative:
 from __future__ import annotations
 
 import argparse
+import copy
 import json
 import pathlib
 import re
@@ -210,6 +211,21 @@ def build_enoch_prompt(chapter: int, verse: int) -> EnochPromptBundle:
         "note": charles.note,
         "section": _section_name(chapter),
     }
+    # Preserve exact accepted editorial inputs without inventing a newly loaded
+    # manuscript witness. The selected Ge'ez line remains unchanged.
+    editorial_inputs = {}
+    if source_row is not None:
+        for key in ('additional_translation_input', 'transcription_uncertainties'):
+            value = getattr(source_row, key, None)
+            if value is not None:
+                source_payload[key] = copy.deepcopy(value)
+                editorial_inputs[key] = copy.deepcopy(value)
+    editorial_section = (
+        'Accepted source editorial controls (reported/edited evidence, not newly inspected manuscripts):\n'
+        + json.dumps(editorial_inputs, ensure_ascii=False, indent=2)
+        + '\nPreserve these qualifications and unknown-glyph markers; do not silently resolve or omit them.'
+        if editorial_inputs else ''
+    )
 
     greek_section = (
         f"Greek edition comparative control (edited text; not a diplomatic manuscript reading):\n"
@@ -238,6 +254,8 @@ Additional witness state:
 - Greek fragment coverage for this section: {'possible/partial' if chapter <= 36 or chapter >= 72 else 'none or effectively none'}
 
 {greek_section}
+
+{editorial_section}
 
 Translation guardrails:
 {ENOCH_GUARDRAILS}
@@ -272,6 +290,7 @@ Do not copy from modern copyrighted English Enoch translations.
             "section": witness_set.section(),
             "available_witnesses": [asdict(w) for w in witness_set.available_witnesses()],
             "greek_edition_control": asdict(greek) if greek is not None else None,
+            "accepted_source_editorial_controls": editorial_inputs,
         },
     )
 

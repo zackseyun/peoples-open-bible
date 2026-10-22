@@ -107,6 +107,13 @@ class FullRepairBatch08Test(unittest.TestCase):
         self.assertEqual(report['evidence_inventory_warnings'],[]);self.assertFalse(report['completion_proven'])
         self.assertNotIn(18,report['chapters_with_complete_imported_selected_edition_review'])
 
+    def test_complete_inventory_still_does_not_make_mechanical_audit_a_translation_approval(self):
+        from tools.enoch.audit_pob_source_coverage import audit
+        row=audit([84])['chapters'][0]
+        self.assertTrue(row['inventory_complete'])
+        self.assertEqual(row['expected_verses'],6)
+        self.assertFalse(row['translation_verified_by_this_audit'])
+
     def test_serialization_addenda_are_explicit_not_new_source_votes(self):
         m=t.load_manifest(P)
         for sub in ('ch52-54','ch22-2-metadata'):

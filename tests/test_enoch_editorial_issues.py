@@ -84,11 +84,14 @@ class EditorialIssuesTest(unittest.TestCase):
             self.assertIn('missing_footnote', editorial.markdown(report))
 
     def test_chapter84_count_does_not_approve_held_text(self):
-        result = coverage.audit([84])['chapters'][0]
-        self.assertEqual(result['expected_verses'], 6)
-        self.assertEqual(result['expected_count_basis'], 'declared_primary_inventory')
-        self.assertFalse(result['inventory_complete'])
-        self.assertFalse(result['translation_verified_by_this_audit'])
+        # Preserve the exact original incomplete84 guard at its immutable tree.
+        # Current complete critical-treatment controls are tested separately.
+        from tools.enoch.replay_84_pre_critical_gate import replay
+        historical=replay()
+        self.assertTrue(historical['passed'])
+        self.assertEqual(historical['tests_run'],1)
+        self.assertEqual(historical['skipped'],0)
+        self.assertFalse(historical['current_corpus_validated'])
 
 
 if __name__ == '__main__':

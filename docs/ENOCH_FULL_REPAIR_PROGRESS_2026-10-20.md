@@ -591,3 +591,11 @@ receipt or approval gate has been rewritten to claim those future results.
 explicit earlier-input normalization/successor and historical-reader-gate work.
 41:8,80:5,97:10 and other genuine source holds remain outside this application.
 All108completion remains unproven; the active full-book objective continues.
+
+Postapplication regression found one obsolete mechanical-inventory assertion:
+the earlier84test expected the chapter to remain incomplete. Its exact original
+method now runs unchanged with zero skips at main6c8803637 in a private archive,
+and the replay requires the actual accepted allsix84successor evidence. A new
+current-state assertion separately verifies complete inventory still does **not**
+let the mechanical audit approve a translation. This is not an exemption for
+unknown glyphs, source/English matching, explanation access or current data.

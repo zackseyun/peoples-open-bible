@@ -487,3 +487,15 @@ The deployed selected-verse panel and More were actually verified on approved25:
 This source application is not yet a claim of exact-head CI or candidate public
 delivery; those terminal checks must follow. The full108 completion gate remains
 false.
+
+
+The first seventh-batch focused run caught two overbroad test assumptions
+(protocol fields on note-free verses, and old44/47/48 being absent from export).
+Those chapters were already complete-looking under the old raw-count fallback;
+the held neighbors are unchanged and receive no new review approval. Tests now
+check that distinction instead of falsely asserting global absence. A real
+implementation gap was also found: the nested Enoch export bypassed the record
+helper, dropping approved explanation metadata. It now uses that helper on the
+actual nested path. Declared/full-chapter release counts remain authoritative;
+individual source-only overrides cannot change fallback release eligibility.
+Exact source receipts and all50 installed source/English payloads are unchanged.

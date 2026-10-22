@@ -28,4 +28,29 @@ class ReviewedEnochNotesExportTest(unittest.TestCase):
             out=exporter._export_record_verse(2,record)
             self.assertNotIn('footnote_review',out);self.assertNotIn('source_critical',out)
 
+
+class EnochReleaseCountIsolationTest(unittest.TestCase):
+    def test_source_only_override_cannot_change_fallback_release_count(self):
+        from unittest.mock import patch
+        from tools.enoch import verse_parser, selected_edition_sources
+        from tools.enoch.audit_pob_source_coverage import EXPECTED_VERSES
+        raw=[verse_parser.EnochVerseRow(48,1,'raw','','fixture')]
+        reviewed=raw+[verse_parser.EnochVerseRow(48,2,'reviewed','','fixture')]
+        with patch.dict(EXPECTED_VERSES,{},clear=True), \
+             patch.object(selected_edition_sources,'registry_data',return_value={'chapters':{}}), \
+             patch.object(verse_parser,'parse_chapter',return_value=(reviewed,[])), \
+             patch.object(verse_parser,'parse_ocr_chapter',return_value=(raw,[])):
+            self.assertEqual(exporter._enoch_expected_verse_map()[48],[1])
+
+    def test_declared_release_count_is_not_replaced_by_a_partial_recovery(self):
+        from unittest.mock import patch
+        from tools.enoch import verse_parser, selected_edition_sources
+        from tools.enoch.audit_pob_source_coverage import EXPECTED_VERSES
+        partial=[verse_parser.EnochVerseRow(48,1,'raw','','fixture')]
+        with patch.dict(EXPECTED_VERSES,{48:3},clear=True), \
+             patch.object(selected_edition_sources,'registry_data',return_value={'chapters':{}}), \
+             patch.object(verse_parser,'parse_chapter',return_value=(partial,[])), \
+             patch.object(verse_parser,'parse_ocr_chapter',return_value=(partial,[])):
+            self.assertEqual(exporter._enoch_expected_verse_map()[48],[1,2,3])
+
 if __name__=='__main__':unittest.main()

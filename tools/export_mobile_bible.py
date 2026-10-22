@@ -881,11 +881,23 @@ def _enoch_expected_verse_map() -> dict[int, list[int]]:
 
     sys.path.insert(0, str(REPO_ROOT))
     from tools.enoch import verse_parser
+    from tools.enoch.audit_pob_source_coverage import EXPECTED_VERSES
+    from tools.enoch.selected_edition_sources import registry_data
 
-    return {
-        chapter: verse_parser.recovered_verse_numbers(chapter)
-        for chapter in range(1, 109)
-    }
+    full = (registry_data() or {}).get('chapters', {})
+    expected = {}
+    for chapter in range(1, 109):
+        # Still validate registered source evidence, failing closed on drift.
+        reviewed, _ = verse_parser.parse_chapter(chapter)
+        if chapter in EXPECTED_VERSES:
+            expected[chapter] = list(range(1, EXPECTED_VERSES[chapter] + 1))
+        elif str(chapter) in full:
+            expected[chapter] = [row.verse for row in reviewed]
+        else:
+            # Individual source-only overrides cannot alter release eligibility.
+            raw, _ = verse_parser.parse_ocr_chapter(chapter)
+            expected[chapter] = [row.verse for row in raw]
+    return expected
 
 
 def export_extra_canonical_book(book_code: str) -> dict[str, Any] | None:
@@ -973,6 +985,11 @@ def export_extra_canonical_book(book_code: str) -> dict[str, Any] | None:
                 notes = reader_footnotes(record, text)
                 if notes:
                     verse_out["footnotes"] = notes
+                if book_code == "ENO":
+                    # Use the actual record path, not just the standalone
+                    # helper tested by synthetic fixtures. Approved critical
+                    # details must survive the nested Enoch export too.
+                    verse_out = _export_record_verse(verse_num, record)
                 by_chapter[chapter_num][verse_num] = verse_out
 
         enoch_expected = _enoch_expected_verse_map() if book_code == "ENO" else None

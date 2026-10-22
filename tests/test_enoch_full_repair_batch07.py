@@ -44,8 +44,11 @@ class FullRepairBatch07Test(unittest.TestCase):
         m=t.load_manifest(P)
         for ref in m['references']:
             c,v=t.parse_ref(ref);d=record(c,v);out=mobile._export_record_verse(v,d)
-            self.assertEqual(out['footnote_review'],'pob-enoch-paired-source-review-v1')
-            self.assertEqual(out['source_critical']['text'],d['source']['text'])
+            if d['translation'].get('footnotes'):
+                self.assertEqual(out['footnote_review'],'pob-enoch-paired-source-review-v1')
+                self.assertEqual(out['source_critical']['text'],d['source']['text'])
+            else:
+                self.assertNotIn('footnote_review',out)
             self.assertEqual(out.get('footnotes',[]),d['translation'].get('footnotes',[]))
             for note in d['translation'].get('footnotes',[]):
                 self.assertIn('['+note['marker']+']',d['translation']['text'],ref)
@@ -67,8 +70,19 @@ class FullRepairBatch07Test(unittest.TestCase):
         for c,n in FULL.items():
             self.assertEqual([v['verse'] for v in out[c]['verses']],list(range(1,n+1)))
             self.assertEqual([r.verse for r in verse_parser.parse_chapter(c)[0]],list(range(1,n+1)))
-        for c in [41,44,47,48,80,84]:self.assertNotIn(c,out)
-        self.assertNotIn(22,out)  # missing14 deliberately stays deferred with22:2
+        for c in [41,80,84]:self.assertNotIn(c,set(out))
+        # These old complete-looking chapters were already exported. The
+        # seventh transaction neither applies nor marks their held unit approved.
+        for c,v in [(44,1),(47,4),(48,7)]:
+            self.assertFalse(record(c,v).get('source_correction',{}).get('individual_unit_application_approved',False))
+            if c in out:
+                row=next(r for r in out[c]['verses'] if r['verse']==v)
+                self.assertNotIn('footnote_review',row)
+        row=next(r for r in out[49]['verses'] if r['verse']==2)
+        self.assertEqual(row['footnote_review'],'pob-enoch-paired-source-review-v1')
+        self.assertEqual(row['source_critical']['text'],record(49,2)['source']['text'])
+        self.assertEqual(row['footnotes'],record(49,2)['translation']['footnotes'])
+        self.assertNotIn(22,set(out))  # missing14 deliberately stays deferred with22:2
         progress=build();self.assertGreaterEqual(progress['current_units_with_imported_review_evidence'],215)
         self.assertTrue(set(FULL)<=set(progress['chapters_with_complete_imported_selected_edition_review']))
         self.assertEqual(progress['evidence_inventory_warnings'],[])

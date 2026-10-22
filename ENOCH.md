@@ -83,6 +83,25 @@ Run `python3 tools/enoch/audit_editorial_issues.py --output /tmp/enoch-issues.js
 for a hash-bound issue register; inspect the linked audit for exact references,
 retained source uncertainties and the application/verification commands.
 
+## Batch 09 source repair snapshot (2026-10-22)
+
+[Batch 09](docs/ENOCH_BATCH09_2026-10-22.md) integrates 52 exact paired-reviewed
+units in 58–64, including seven restored records and complete chapter 58.
+The 60:21 surviving fragment retains low confidence, Charles's four printed
+dots and an explicit missing-conclusion explanation, not an invented ending.
+Explanations remain behind the quiet verse-click interface, without visible
+footnote markers. Twenty-five new proposals stay held; whole18 and whole97
+remain outside this application pending their remaining controls.
+
+Paired inventories for1–14 count116printed units without silently changing
+reader versification: selectedVI has7numbered units, while POB6 has8editorial
+addresses. Keep the explicit segmentation review and no automatic retirement.
+The dated progress snapshot reports953files,310imported-review units
+(including37historical),29complete selected-edition chapter treatments, and
+**no full-book certification**. Source/main/public/UI/device evidence is
+separate. The [updated verse issue register](docs/ENOCH_REPAIR_AUDIT_2026-10-22_BATCH09.md)
+is diagnostic, not automatic translation approval.
+
 ## Why Enoch
 
 Four reasons this book warrants a dedicated phase:

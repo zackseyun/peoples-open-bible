@@ -78,4 +78,11 @@ def load_all_inventories():
         if set(current)&set(output):
             raise ValueError('Diagnostic structural inventory scopes overlap')
         output.update(current)
+    from tools.enoch import interleaved_structural_counts
+    for name in ('count1-8-20261022','count9-14-20261022'):
+        index=transaction.ROOT/'sources/enoch/coverage'/name/'paired-count-index-v3.json'
+        current=interleaved_structural_counts.load(index,transaction.ROOT)
+        if set(current)&set(output):
+            raise ValueError('Interleaved structural inventory scopes overlap')
+        output.update(current)
     return output

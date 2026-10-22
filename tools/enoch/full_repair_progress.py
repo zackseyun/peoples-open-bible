@@ -42,6 +42,10 @@ def build() -> dict:
         inventories.update(structural_counts.load_all_inventories())
     except (ValueError, OSError, KeyError) as error:
         warnings.append('Structural count import requires audit: ' + str(error))
+    # Printed-unit cardinality is not always canonical versification. Retain
+    # this independent mapping hold even if a later application has counts.
+    pending_mappings={c:dict(v) for c,v in inventories.items()
+                      if v.get('canonical_mapping_pending') is True}
     for package in sorted(transaction.APPLICATIONS.glob('enoch_full_repair_batch*')):
         receipt_path = package / 'application.json'
         if not receipt_path.exists():
@@ -79,13 +83,18 @@ def build() -> dict:
         present = sorted(int(Path(name).stem) for name in current
                          if name.startswith(f'{chapter:03d}/'))
         certificate = inventories.get(chapter)
-        count = len(certificate['units']) if certificate else coverage.EXPECTED_VERSES.get(chapter)
+        mapping=pending_mappings.get(chapter)
+        count = (coverage.EXPECTED_VERSES.get(chapter) if mapping else
+                 len(certificate['units']) if certificate else coverage.EXPECTED_VERSES.get(chapter))
         reviewed = sorted(v for c, v in accepted if c == chapter)
         expected = list(range(1, count + 1)) if count is not None else None
-        complete = bool(certificate) and present == expected and reviewed == expected
+        complete = not mapping and bool(certificate) and present == expected and reviewed == expected
         chapters.append({'chapter': chapter, 'current_records': present,
                          'expected_units': expected,
-                         'count_basis': ('paired_scan_inventory' if certificate else
+                         'selected_printed_source_units': (mapping['units'] if mapping else certificate['units'] if certificate else None),
+                         'canonical_source_unit_mapping_pending': bool(mapping),
+                         'count_basis': ('paired_printed_units_need_canonical_segmentation_review' if mapping else
+                                         'paired_scan_inventory' if certificate else
                                          'declared_count_needs_separate_completion_evidence' if count else
                                          'count_not_yet_completion_certified'),
                          'current_units_with_imported_review_evidence': reviewed,

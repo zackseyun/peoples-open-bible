@@ -569,9 +569,9 @@ in Work settings. No bypass, device binary, newcandidatepublicUI or artwork clai
 Two more exact structural receipt profiles independently bind323printed units
 across30chapters:52–69 and91–103 excluding97. These are counts, not323English
 approvals. Original72–82/154unit serializer and release declarations are unchanged.
-Diagnostics/progress use their explicit union. Eight original historical raw
-review outputs were recovered by hashes already committed in older provenance:
-13:4–10 and14:24. They are eight current historical input/result bindings, not
+Diagnostics/progress use their explicit union. Two original historical raw
+review outputs were recovered by hashes already committed in older provenance;
+they bind eight units:13:4–10 and14:24. They are eight current historical input/result bindings, not
 new translations/fresh votes/full13-or14 completion. Other14v2units remain
 outside this import because the exact original input is not yet recovered.
 

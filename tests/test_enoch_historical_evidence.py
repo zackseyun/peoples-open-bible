@@ -11,6 +11,15 @@ from tools.enoch.full_repair_progress import build
 
 class HistoricalEvidenceTest(unittest.TestCase):
     def test_exact29_older_units_are_imported_without_fresh_review_claim(self):
+        from tools.enoch import bounded_application as current_transaction
+        if (current_transaction.APPLICATIONS/'enoch_full_repair_batch11_20261022/application.json').is_file():
+            # Exact original assertions remain below and run at pinned49ed;
+            # separate batch11 assertions validate actual current replacements.
+            from tools.enoch.replay_29_97_pre_successor import replay
+            result = replay('historical29')
+            self.assertEqual((result['tests_run'], result['skipped'], result['expected_failures']), (1, 0, 0))
+            self.assertFalse(result['current_corpus_validated'])
+            return
         result=historical.load_current()
         self.assertEqual(len(result),29)
         self.assertEqual({c for c,v in result},{15,16,29,83})
@@ -58,6 +67,15 @@ class HistoricalEvidenceTest(unittest.TestCase):
         return root,data,index
 
     def test_current_canonical_drift_is_not_approved_by_old_review(self):
+        from tools.enoch import bounded_application as current_transaction
+        if (current_transaction.APPLICATIONS/'enoch_full_repair_batch11_20261022/application.json').is_file():
+            # Exact original assertions remain below and run at pinned49ed;
+            # separate batch11 assertions validate actual current replacements.
+            from tools.enoch.replay_29_97_pre_successor import replay
+            result = replay('historical-drift')
+            self.assertEqual((result['tests_run'], result['skipped'], result['expected_failures']), (1, 0, 0))
+            self.assertFalse(result['current_corpus_validated'])
+            return
         with tempfile.TemporaryDirectory() as directory:
             root,data,index=self.fixture(directory)
             target=root/'translation/extra_canonical/1_enoch/015/001.yaml'

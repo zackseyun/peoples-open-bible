@@ -30,6 +30,15 @@ class EnochCompletenessTest(unittest.TestCase):
         self.assertFalse(row["translation_verified_by_this_audit"])
 
     def test_chapter_97_tenth_unit_is_declared_but_not_complete(self):
+        from tools.enoch import bounded_application as current_transaction
+        if (current_transaction.APPLICATIONS/'enoch_full_repair_batch11_20261022/application.json').is_file():
+            # Exact original assertions remain below and run at pinned49ed;
+            # separate batch11 assertions validate actual current replacements.
+            from tools.enoch.replay_29_97_pre_successor import replay
+            result = replay('inventory97')
+            self.assertEqual((result['tests_run'], result['skipped'], result['expected_failures']), (1, 0, 0))
+            self.assertFalse(result['current_corpus_validated'])
+            return
         row = coverage.audit([97])["chapters"][0]
         self.assertEqual(row["expected_count_basis"], "declared_primary_inventory")
         self.assertEqual(row["primary_source_verses"], 10)

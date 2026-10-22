@@ -6,6 +6,15 @@ from tools.enoch import historical_evidence as h,bounded_application as t
 
 class HistoricalRawReceiptsTest(unittest.TestCase):
     def test_exact_original_output8_unit_bindings_do_not_approve_other_units(self):
+        from tools.enoch import bounded_application as current_transaction
+        if (current_transaction.APPLICATIONS/'enoch_full_repair_batch11_20261022/application.json').is_file():
+            # Exact original assertions remain below and run at pinned49ed;
+            # separate batch11 assertions validate actual current replacements.
+            from tools.enoch.replay_29_97_pre_successor import replay
+            result = replay('historical-raw')
+            self.assertEqual((result['tests_run'], result['skipped'], result['expected_failures']), (1, 0, 0))
+            self.assertFalse(result['current_corpus_validated'])
+            return
         index=t.ROOT/'sources/enoch/coverage/historical-input-bindings-20261022.json'
         accepted=h.load_current(index)
         self.assertEqual(set(accepted),{(13,v) for v in range(4,11)}|{(14,24)})

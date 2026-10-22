@@ -8,6 +8,15 @@ from tools.textual_restoration import enoch_low_risk_transaction as release
 
 class EnochLowRiskTransactionTest(unittest.TestCase):
     def test_frozen_source_and_review_package(self):
+        from tools.enoch import bounded_application as current_transaction
+        if (current_transaction.APPLICATIONS/'enoch_full_repair_batch11_20261022/application.json').is_file():
+            # Exact original assertions remain below and run at pinned49ed;
+            # separate batch11 assertions validate actual current replacements.
+            from tools.enoch.replay_29_97_pre_successor import replay
+            result = replay('legacy17')
+            self.assertEqual((result['tests_run'], result['skipped'], result['expected_failures']), (1, 0, 0))
+            self.assertFalse(result['current_corpus_validated'])
+            return
         if (release.PACKAGE / 'application.json').exists():
             applied = release.verify_applied()
             self.assertEqual(applied['refs'], ['5:9', '17:7', '17:8'])

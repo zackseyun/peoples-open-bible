@@ -40,6 +40,15 @@ class EnochVerseInventoryTest(unittest.TestCase):
                 self.assertTrue(all(row.text for row in rows))
 
     def test_cross_file_continuation_is_not_lost(self):
+        from tools.enoch import bounded_application as current_transaction
+        if (current_transaction.APPLICATIONS/'enoch_full_repair_batch11_20261022/application.json').is_file():
+            # Exact original assertions remain below and run at pinned49ed;
+            # separate batch11 assertions validate actual current replacements.
+            from tools.enoch.replay_29_97_pre_successor import replay
+            result = replay('raw17-continuation')
+            self.assertEqual((result['tests_run'], result['skipped'], result['expected_failures']), (1, 0, 0))
+            self.assertFalse(result['current_corpus_validated'])
+            return
         for chapter, verse in ((5, 9), (6, 6), (7, 1), (9, 9), (10, 16),
                                (12, 1), (13, 4), (14, 19), (15, 9),
                                (16, 1), (17, 7)):

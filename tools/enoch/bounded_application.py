@@ -160,6 +160,9 @@ def load_manifest(package: Path) -> dict:
     for ref in manifest.get('supersedes_legacy_individuals',{}):
         from tools.enoch.legacy_individual_evidence import validate_declared_successor
         validate_declared_successor(package,manifest,ref)
+    if 'supersedes_legacy97' in manifest:
+        from tools.enoch.legacy97_evidence import validate_declared_successor
+        validate_declared_successor(package, manifest)
     return manifest
 
 
@@ -249,6 +252,8 @@ def verify(package: Path, *, applied: bool = False,
         schema.validate(candidate)
         if candidate['id'] != f'1EN.{c}.{v}' or candidate['reference'] != ref or \
                 candidate.get('book') != '1 Enoch' or candidate.get('status') != 'draft' or \
+                candidate['source'].get('edition') != 'charles-1906-enoch' or \
+                candidate['source'].get('language') != 'Geez' or \
                 candidate['source'].get('confidence') not in ('medium','low'):
             raise ValueError(f'Candidate identity/lifecycle differs: {ref}')
         correction = candidate['source_correction']

@@ -1,7 +1,8 @@
 """Reviewed Enoch notes and critical source metadata remain exact in exports."""
 import copy
+from pathlib import Path
 import unittest
-from tools import export_mobile_bible as exporter
+from tools import export_reader_bible as exporter
 
 class ReviewedEnochNotesExportTest(unittest.TestCase):
     def fixture(self):
@@ -52,5 +53,54 @@ class EnochReleaseCountIsolationTest(unittest.TestCase):
              patch.object(verse_parser,'parse_chapter',return_value=(partial,[])), \
              patch.object(verse_parser,'parse_ocr_chapter',return_value=(partial,[])):
             self.assertEqual(exporter._enoch_expected_verse_map()[48],[1,2,3])
+
+
+
+class ReaderExporterIsolationTest(unittest.TestCase):
+    def test_historical_shared_exporter_bytes_and_non_enoch_function_identity(self):
+        import hashlib
+        from tools import export_mobile_bible as legacy
+        self.assertEqual(hashlib.sha256(Path(legacy.__file__).read_bytes()).hexdigest(),
+            '2258f72485099fe1014152eeb29394324415940467c2edd9d9da0d48a4a113c3')
+        self.assertIs(exporter.export_book,legacy.export_book)
+        self.assertIs(exporter.export_apocrypha_book,legacy.export_apocrypha_book)
+        self.assertIs(exporter.export_psalms_book,legacy.export_psalms_book)
+        sentinel={'name':'unchanged non-Enoch output'}
+        from unittest.mock import patch
+        with patch.object(legacy,'export_extra_canonical_book',return_value=sentinel) as original:
+            self.assertIs(exporter.export_extra_canonical_book('DID'),sentinel)
+            original.assert_called_once_with('DID')
+
+    def test_explicit_current_cli_serializes_approved_details_without_a_legacy_hook(self):
+        import json,tempfile
+        from unittest.mock import patch
+        record=ReviewedEnochNotesExportTest().fixture()
+        verse=exporter._export_record_verse(2,record)
+        payload={'translation':'POB preview','books':[{'name':'1 Enoch',
+            'chapters':[{'chapter':84,'verses':[verse]}]}]}
+        with tempfile.TemporaryDirectory() as directory:
+            path=Path(directory)/'reader.json'
+            with patch.object(exporter,'export_translation',return_value=payload) as build:
+                self.assertEqual(exporter.main(['--output',str(path)]),0)
+                build.assert_called_once_with()
+            self.assertEqual(json.loads(path.read_text()),payload)
+
+
+
+class CurrentPayloadAssemblyTest(unittest.TestCase):
+    def test_real_payload_normalizer_preserves_exact_reviewed_critical_details(self):
+        from unittest.mock import patch
+        from tools import export_mobile_bible as legacy
+        record=ReviewedEnochNotesExportTest().fixture()
+        verse=exporter._export_record_verse(2,record)
+        book={'name':'1 Enoch','chapters':[{'chapter':84,'verses':[verse]}]}
+        with patch.object(legacy,'CANONICAL_BOOK_ORDER',[]), \
+             patch.object(legacy,'APOCRYPHA_BOOK_ORDER',[]), \
+             patch.object(legacy,'EXTRA_CANONICAL_BOOK_ORDER',['ENO']), \
+             patch.object(exporter,'export_extra_canonical_book',return_value=copy.deepcopy(book)):
+            payload=exporter.export_translation()
+        self.assertEqual(payload['books'],[book])
+        verse['source_critical']['pages'].append(999)
+        self.assertEqual(record['source']['pages'],[200])
 
 if __name__=='__main__':unittest.main()

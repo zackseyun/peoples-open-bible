@@ -5,7 +5,7 @@ import shutil
 import tempfile
 import unittest
 import yaml
-from tools import export_mobile_bible as mobile
+from tools import export_reader_bible as mobile
 from tools.enoch import bounded_application as t, verse_parser
 from tools.enoch.current_evidence import verify_current
 from tools.enoch.full_repair_progress import build

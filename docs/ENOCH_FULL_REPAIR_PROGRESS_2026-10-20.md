@@ -507,3 +507,28 @@ source/explanation delivery. Separate negative fixtures ensure source-only
 observations cannot change fallback release eligibility. Historical material
 choices are asserted against the pinned candidates; current-byte integrity
 still requires exact installed targets or explicit reviewed successor chains.
+
+
+## Reader export contract isolation
+
+CI correctly rejected changing the shared historical exporter, which other
+books pin as an exact source-review input. Its original bytes are restored:
+SHA2562258f72485099fe1014152eeb29394324415940467c2edd9d9da0d48a4a113c3.
+All existing Job42 and other historical input pins and test files remain intact.
+No unrelated source or application receipt is changed to accommodate Enoch.
+
+The explicit current-reader entry point is now
+`python3 tools/export_reader_bible.py --output <reader.json>`. Its versioned
+Enoch extension retains exact approved explanation/source metadata on the real
+nested-record path and isolates source-only counts from release eligibility.
+All non-Enoch export functions are the unchanged historical function objects;
+non-Enoch extra-canonical books delegate unchanged as well. There are no
+import-time hooks or replacements of the historical functions. Existing
+historical audit tools intentionally keep using their original exporter.
+
+The deployed publisher separately compiles raw verse YAMLs with the same narrow
+review protocol; it does not depend on this Python CLI. The reviewed website
+and native source already understand that protocol. The new CLI is for current
+reader-artifact generation, not a claim that a new native binary was released.
+The attempted generic-export modification/replay prototype is preserved outside
+canonical evidence for debugging only and is not reported as a passing gate.

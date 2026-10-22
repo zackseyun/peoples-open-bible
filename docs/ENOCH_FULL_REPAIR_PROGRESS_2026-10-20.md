@@ -499,3 +499,11 @@ helper, dropping approved explanation metadata. It now uses that helper on the
 actual nested path. Declared/full-chapter release counts remain authoritative;
 individual source-only overrides cannot change fallback release eligibility.
 Exact source receipts and all50 installed source/English payloads are unchanged.
+
+Negative seventh-application assertions are bound to the immutable application
+receipt, not a permanent ban on future accepted repairs of the held neighbors.
+The current-export test checks actual complete reviewed chapters and exact
+source/explanation delivery. Separate negative fixtures ensure source-only
+observations cannot change fallback release eligibility. Historical material
+choices are asserted against the pinned candidates; current-byte integrity
+still requires exact installed targets or explicit reviewed successor chains.

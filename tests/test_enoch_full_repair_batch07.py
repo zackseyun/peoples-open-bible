@@ -32,6 +32,8 @@ class FullRepairBatch07Test(unittest.TestCase):
         self.assertEqual({x['chapter'] for x in m['chapter_inventories']},set(FULL))
 
     def test_material_negative_direction_and_lexical_controls(self):
+        # Immutable applied choices; later explicitly reviewed successors may improve them.
+        def record(c,v):return yaml.load((P/f'{c:03d}-{v:03d}.candidate.yaml').read_bytes(),Loader=t.LOADER)
         self.assertIn('will raise kings',record(46,4)['translation']['text'])
         self.assertIn('†ያነሥኦሙ',record(46,4)['source']['text'])
         self.assertIn('does not remain',record(49,2)['translation']['text'])
@@ -65,24 +67,17 @@ class FullRepairBatch07Test(unittest.TestCase):
             self.assertIn('not newly inspected manuscripts',bundle.prompt)
             self.assertEqual(d['enoch_witnesses']['loaded_witnesses_by_language'],{'geez':['charles_1906']})
 
-    def test_new_complete_chapters_not_held_neighbors_are_mobile_eligible(self):
+    def test_current_complete_reviewed_chapters_export_exact_details(self):
         out={c['chapter']:c for c in mobile.export_extra_canonical_book('ENO')['chapters']}
         for c,n in FULL.items():
             self.assertEqual([v['verse'] for v in out[c]['verses']],list(range(1,n+1)))
             self.assertEqual([r.verse for r in verse_parser.parse_chapter(c)[0]],list(range(1,n+1)))
-        for c in [41,80,84]:self.assertNotIn(c,set(out))
-        # These old complete-looking chapters were already exported. The
-        # seventh transaction neither applies nor marks their held unit approved.
-        for c,v in [(44,1),(47,4),(48,7)]:
-            self.assertFalse(record(c,v).get('source_correction',{}).get('individual_unit_application_approved',False))
-            if c in out:
-                row=next(r for r in out[c]['verses'] if r['verse']==v)
-                self.assertNotIn('footnote_review',row)
+        # Negative application scope is checked against the immutable receipt in
+        # test_exact_scope... above, not a permanent ban on future reviewed repairs.
         row=next(r for r in out[49]['verses'] if r['verse']==2)
         self.assertEqual(row['footnote_review'],'pob-enoch-paired-source-review-v1')
         self.assertEqual(row['source_critical']['text'],record(49,2)['source']['text'])
         self.assertEqual(row['footnotes'],record(49,2)['translation']['footnotes'])
-        self.assertNotIn(22,set(out))  # missing14 deliberately stays deferred with22:2
         progress=build();self.assertGreaterEqual(progress['current_units_with_imported_review_evidence'],215)
         self.assertTrue(set(FULL)<=set(progress['chapters_with_complete_imported_selected_edition_review']))
         self.assertEqual(progress['evidence_inventory_warnings'],[])

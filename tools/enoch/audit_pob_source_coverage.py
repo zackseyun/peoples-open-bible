@@ -48,6 +48,9 @@ EXPECTED_VERSES = {
     # Allthree57units source/English/explanations independently accepted inbatch08.
     # Pure52–56 structural counts remain separate; held neighbors not released.
     57: 3,
+    # Allsix58 units have exact paired selected-edition review inbatch09.
+    # Pure59–64 structural counts do not release held neighbors.
+    58: 6,
     # Paired79/80 source/count observations;80:5 remains held and8 deferred.
     79: 6, 80: 8,
     # Whole83 accepted scan markers1-11, including4/11 continuations.

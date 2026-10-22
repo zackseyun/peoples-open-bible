@@ -96,8 +96,10 @@ def record_issues(record: dict, chapter: int, verse: int) -> list[dict]:
 def build(chapters: list[int], pob_root: Path = coverage.POB_ROOT,
           applications: Path = ROOT / 'sources/textual_restoration/applications') -> dict:
     from tools.enoch.structural_counts import load_all_inventories
+    counts=load_all_inventories()
+    mapping_reviews={c:v for c,v in counts.items() if v.get('canonical_mapping_pending') is True}
     inventory = coverage.audit(chapters, pob_root, diagnostic_counts={
-        c: len(v['units']) for c, v in load_all_inventories().items()})
+        c: len(v['units']) for c, v in counts.items() if c not in mapping_reviews})
     issues = {}
     hashes = {}
 
@@ -107,6 +109,13 @@ def build(chapters: list[int], pob_root: Path = coverage.POB_ROOT,
             'reference': f'1 Enoch {chapter}:{verse}', 'chapter': chapter, 'verse': verse,
             'findings': [], 'canonical_sha256': None, 'translation_approved': False})
 
+    for c,proof in mapping_reviews.items():
+        if c in chapters:
+            row(c,1)['findings'].append({
+                'kind':'printed_source_to_canonical_mapping_review',
+                'detail':f"Selected print has{len(proof['units'])} body units versus{coverage.EXPECTED_VERSES.get(c)} declared POBaddresses. Review source-to-canonical segmentation; no spurious-verse, missing-ancient-text or retirement conclusion from counts alone.",
+                'count_basis':'separately_paired_printed_source_units',
+                'artifact':proof['artifact']})
     for chapter in inventory['chapters']:
         number = chapter['chapter']
         for verse in chapter['missing_verse_numbers']:
@@ -163,7 +172,7 @@ def build(chapters: list[int], pob_root: Path = coverage.POB_ROOT,
         'issues': [issues[key] for key in sorted(issues)],
         'historical_review_status': reviews,
         'historical_review_limit': 'Status snapshots can be superseded by later bounded applications; acceptance of a candidate does not certify installed text or an entire chapter',
-        'inventory': inventory,
+        'inventory': inventory, 'printed_source_mapping_reviews':sorted(c for c in mapping_reviews if c in chapters),
         'canonical_changed': False, 'full_book_verified': False, 'publication_approved': False,
     }
 

@@ -35,7 +35,7 @@ def _export_record_verse(verse_num,record):
             source.get('text') and source.get('pages'):
         out['footnote_review']=PROTOCOL
         out['source_critical']={key:copy.deepcopy(source[key]) for key in
-            ('edition','language','text','pages','transcription_uncertainties',
+            ('edition','language','text','pages','note','confidence','transcription_uncertainties',
              'additional_translation_input') if key in source}
     return out
 

@@ -87,6 +87,7 @@ class EnochVerseRow:
     source_note: str = ''
     additional_translation_input: object | None = None
     transcription_uncertainties: object | None = None
+    source_confidence: str | None = None
 
 
 def roman_numeral(n: int) -> str:
@@ -311,7 +312,8 @@ def parse_chapter(chapter: int) -> tuple[list[EnochVerseRow], list[str]]:
             marker_raw='reviewed printed unit boundary', chapter_file=row['evidence'],
             pages=tuple(row['source']['pages']), source_note=row['source'].get('note',''),
             additional_translation_input=copy.deepcopy(row['source'].get('additional_translation_input')),
-            transcription_uncertainties=copy.deepcopy(row['source'].get('transcription_uncertainties')))
+            transcription_uncertainties=copy.deepcopy(row['source'].get('transcription_uncertainties')),
+            source_confidence=row['source'].get('confidence'))
     if source is not None:
         rows, warnings = [reviewed(row) for row in source], [
             'Primary selected-edition source comes from exact paired-reviewed inputs; '

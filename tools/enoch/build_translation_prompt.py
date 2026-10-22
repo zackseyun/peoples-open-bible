@@ -132,7 +132,7 @@ def _load_charles_witness(chapter: int, verse: int) -> tuple[EnochWitnessReading
             witness="charles_1906",
             text=row.text,
             source_edition="Charles 1906 Ethiopic Enoch",
-            confidence="medium",
+            confidence=row.source_confidence or "medium",
             note=f"Recovered from {row.chapter_file} via tools/enoch/verse_parser.py" +
                  (f"\nSource editorial control: {row.source_note}" if row.source_note else ''),
         ),
@@ -169,7 +169,7 @@ def build_enoch_prompt(chapter: int, verse: int) -> EnochPromptBundle:
     charles, parse_warnings = _load_charles_witness(chapter, verse)
     warnings.extend(parse_warnings)
     if charles is None:
-        raise ValueError(f"Could not recover 1 Enoch {chapter}:{verse} from the Charles 1906 OCR layer.")
+        raise ValueError(f"Could not load 1 Enoch {chapter}:{verse} from the reviewed source registry or Charles1906 OCR layer.")
 
     if _dillmann_available(chapter):
         warnings.append(
@@ -192,6 +192,8 @@ def build_enoch_prompt(chapter: int, verse: int) -> EnochPromptBundle:
     reference = f"1 Enoch {chapter}:{verse}"
     source_kind = ('paired-reviewed primary transcription' if source_row and source_row.pages
                    else 'Gemini OCR + verse parser')
+    recovery_method = ('exact independently accepted source input; raw OCR retained separately'
+                       if source_row and source_row.pages else 'verse_parser on chapter OCR')
     zone1_sources_at_draft = [_snapshot_label(f"Charles 1906 Ethiopic Enoch ({source_kind})")]
     if _dillmann_available(chapter):
         zone1_sources_at_draft.append(_snapshot_label("Dillmann 1851 Ethiopic Enoch (chapter OCR only)"))
@@ -220,6 +222,8 @@ def build_enoch_prompt(chapter: int, verse: int) -> EnochPromptBundle:
             if value is not None:
                 source_payload[key] = copy.deepcopy(value)
                 editorial_inputs[key] = copy.deepcopy(value)
+                zone1_sources_at_draft.append(_snapshot_label(
+                    f'Accepted source editorial control: {key}; exact payload retained, not a newly inspected manuscript'))
     editorial_section = (
         'Accepted source editorial controls (reported/edited evidence, not newly inspected manuscripts):\n'
         + json.dumps(editorial_inputs, ensure_ascii=False, indent=2)
@@ -240,13 +244,13 @@ Section: {_section_name(chapter)}
 Book context:
 {book_context()}
 
-Source witness (Zone 1 primary — Charles 1906 Ge'ez OCR):
+Source witness (Zone 1 primary — Charles1906 Ge'ez, {source_kind}):
 {charles.text}
 
 Source metadata:
 - Witness: Charles 1906 Ethiopic Enoch
 - Pages: {pages}
-- Recovery method: verse_parser on chapter OCR
+- Recovery method: {recovery_method}
 - Confidence: {charles.confidence}
 
 Additional witness state:

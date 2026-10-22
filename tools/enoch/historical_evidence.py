@@ -17,6 +17,17 @@ def core(record):
             'translation':record['translation']}
 
 
+def reviewed_input_core(record, serializer):
+    if serializer is None:
+        return core(record)
+    if serializer != 'flat-source-text-v1' or 'source' in record or \
+            set(record)-{'reference','source_text','translation','source_pages'} or \
+            not isinstance(record.get('source_text'),str) or not record.get('source_pages'):
+        raise ValueError('Historical input serializer differs')
+    return {'reference':record['reference'],'source_text':record['source_text'],
+            'additional_translation_input':None,'translation':record['translation']}
+
+
 def verdict(review, reference):
     raw=review.get('reviews',[])
     if isinstance(raw,dict):
@@ -81,7 +92,9 @@ def load_current(index=INDEX):
             if pv['package_input_sha256'].get('review-input.json')!=files[unit['input']]:
                 raise ValueError('Historical exact input hash differs')
             rows=[x for x in read(unit['input']) if transaction.parse_ref(x['reference'])==cv]
-            if len(rows)!=1 or core(rows[0])!=c or verdict(read(unit['review']),reference)!='accept':
+            if len(rows)!=1 or reviewed_input_core(rows[0],unit.get('input_serializer'))!=c or \
+                    (unit.get('input_serializer')=='flat-source-text-v1' and rows[0]['source_pages']!=candidate['source']['pages']) or \
+                    verdict(read(unit['review']),reference)!='accept':
                 raise ValueError('Historical actual reviewed input/result differs')
             current=transaction.TRANSLATION/f'{cv[0]:03d}/{cv[1]:03d}.yaml'
             if current.exists() and transaction.sha(current.read_bytes())==digest:
@@ -142,4 +155,13 @@ def load_count_inventories(index=INDEX):
         output[c]={'chapter':c,'units':units,'artifact':bundle['review'],
                    'independent_count_confirmation':True,
                    'kind':'fresh_paired_structural_count_separate_from_historical_wording_review'}
+    return output
+
+
+def load_all_current():
+    """Import exact prior receipts only, without changing either frozen index."""
+    output=load_current()
+    added=load_current(transaction.ROOT/'sources/enoch/coverage/historical-input-bindings-20261022.json')
+    if set(output)&set(added):raise ValueError('Historical current input scopes overlap')
+    output.update(added)
     return output

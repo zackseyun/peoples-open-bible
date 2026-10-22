@@ -45,6 +45,9 @@ EXPECTED_VERSES = {
     46: 8, 49: 4,
     # Full paired source/count reviews, PDF130-132 and165-166.
     50: 5, 51: 5, 70: 4,
+    # Allthree57units source/English/explanations independently accepted inbatch08.
+    # Pure52–56 structural counts remain separate; held neighbors not released.
+    57: 3,
     # Paired79/80 source/count observations;80:5 remains held and8 deferred.
     79: 6, 80: 8,
     # Whole83 accepted scan markers1-11, including4/11 continuations.

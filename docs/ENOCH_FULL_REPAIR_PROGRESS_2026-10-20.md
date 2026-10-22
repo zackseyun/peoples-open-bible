@@ -532,3 +532,62 @@ and native source already understand that protocol. The new CLI is for current
 reader-artifact generation, not a claim that a new native binary was released.
 The attempted generic-export modification/replay prototype is preserved outside
 canonical evidence for debugging only and is not reported as a passing gate.
+
+## Batch08 - local exact47-unit application, 2026-10-22
+
+Batch07 is now main `6c8803637481d9e8abc622aa51946b3e7adc4c21` after both
+exact-head checks passed. Automatic publisher39748669105 completed. Separate
+public comparisons verified186distinct latest English units,136reviewed
+explanation units/166exact definitions, and all9retired105:3–11 addresses absent.
+The source-only compiler-v2 upgrade also preserves exact source explanations and
+confidence. Its private backend main824cbe6d0301fd7a243919ed9966bef405d449fd was
+scoped-deployed to the existing publisher only; terminal request
+29201ef6-6ddc-4eb2-981b-1642812e9300 completed and exact publicv2 data matched.
+These are bounded source/delivery facts, not a complete-book certification.
+
+`enoch_full_repair_batch08_20261022` locally applies47exact separately accepted
+units: all22, accepted subsets52–56, all57, and allsix84critical treatments.
+There are35newly imported reviewed units and12metadata-only22successors, not47
+new retranslations. Five records are added:22:14,52:9,53:5,54:9,84:6. Fourteen
+explicit semantic/glyph holds in52–56 remain unchanged/absent. Only22,57,84 get
+full selected-edition treatment certificates;52–56 pure counts cannot promote
+neighboring wording or reader-release policy. Earlier adverse reviews and every
+original serializer receipt remain pinned. Mechanical integrator provenance
+adapters identify their creator explicitly and add no new source-review vote.
+
+Chapter84 is a reviewed critical treatment, **not all-glyph certification**.
+84:2 retains literal POB-added `መ⟦?⟧ትከ`, its structured uncertainty, low source
+confidence and exact provisional-meaning explanation. Allsix were preflighted
+together through actual source loading, parser/prompt/witness and current nested
+export before canonical application. Both draft serializers now retain these
+controls; the historical shared exporter remains unchanged. Reader text stays
+marker-free with a small contextual panel on verse click, not visible footnotes.
+Local allsix84UI fixtures and actual public25:7panel were checked earlier. A fresh
+new-candidate visual check could not run because local browser use is disabled
+in Work settings. No bypass, device binary, newcandidatepublicUI or artwork claim.
+
+Two more exact structural receipt profiles independently bind323printed units
+across30chapters:52–69 and91–103 excluding97. These are counts, not323English
+approvals. Original72–82/154unit serializer and release declarations are unchanged.
+Diagnostics/progress use their explicit union. Eight original historical raw
+review outputs were recovered by hashes already committed in older provenance:
+13:4–10 and14:24. They are eight current historical input/result bindings, not
+new translations/fresh votes/full13-or14 completion. Other14v2units remain
+outside this import because the exact original input is not yet recovered.
+
+Current local inventory:946canonical records,258units with imported exact review
+evidence (including37historical units),28complete selected-edition chapter
+treatments. This does not mean946verified verses or258new repairs. The current
+issue register contains115absent-address leads (91under declared/paired counts,
+24parser-derived),34source-alignment signals and7witness/source mismatch signals;
+categories overlap and are not a proven mistranslation total. See the exact JSON
+and verse-by-verse Markdown under `sources/enoch/coverage/`.
+
+Local preapplication whole-Enoch regression:262checks passed. Eight focused
+postapplication checks passed; full postapplication exact-head regression,
+protected-main merge and public candidate delivery are still required. No old
+receipt or approval gate has been rewritten to claim those future results.
+18:12metadata amendment is separately paired accepted, but full18 still needs
+explicit earlier-input normalization/successor and historical-reader-gate work.
+41:8,80:5,97:10 and other genuine source holds remain outside this application.
+All108completion remains unproven; the active full-book objective continues.

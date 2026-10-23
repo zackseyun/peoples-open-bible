@@ -18,6 +18,9 @@ def verify_current(package: Path, *, seen: tuple[str, ...] = ()) -> dict:
     from tools.enoch import legacy_editorial_evidence as editorial
     if editorial.registered(package):
         return editorial.verify_current(package,seen=seen)
+    from tools.enoch import legacy13_parent_evidence as legacy13
+    if legacy13.registered(package):
+        return legacy13.verify_current(package,seen=seen)
     from tools.enoch import metadata26_evidence as metadata26
     if metadata26.registered(package):
         return metadata26.verify_current(package,seen=seen)

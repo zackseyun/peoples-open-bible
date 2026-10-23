@@ -126,3 +126,35 @@ class FullRepairBatch17Test(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'artifact changed'):t.load_manifest(p)
         workflow=(t.ROOT/'.github/workflows/corpus-integrity.yml').read_text()
         self.assertIn('git fetch --no-tags --depth=1 origin e05937eff24f125aa4b18fb3f5ee9fd0c23270d0',workflow)
+
+    def test_original13_first3_receipt_is_historical_not_new_source_votes(self):
+        from tools.enoch import legacy13_parent_evidence as old
+        proof=old.verify_current(t.APPLICATIONS/old.NAME)
+        self.assertEqual(proof['historical_independent_source_review_passes_proven'],0)
+        self.assertTrue(proof['actual_parent_and_baseline_preimages_verified'])
+        self.assertFalse(proof['full_chapter_approval'])
+        self.assertEqual({r['reference']for r in proof['reviewed_supersessions']},{f'1 Enoch 13:{v}'for v in(1,2,3)})
+        self.assertEqual(t.sha((P/'manifest.json').read_bytes()),'85b6a9a55f206a568e3986ceb679076b499101629cbd340ae5f25316bfc7b81f')
+        for v in(1,2,3):
+            d=record(13,v);self.assertNotIn('lexical_decisions',d)
+            self.assertEqual(d['ai_draft']['model_id'],'not_reported')
+            self.assertEqual(d['cross_check']['status'],'needs_review')
+            self.assertFalse(d['review_history'][0]['certifies_this_candidate'])
+            self.assertEqual(d['review_history'][0]['sha256'],proof['historical_canonical_sha256'][f'1 Enoch 13:{v}'])
+            self.assertEqual(d, yaml.load((P/f'013-{v:03d}.candidate.yaml').read_bytes(),Loader=t.LOADER))
+        d=record(13,2)
+        self.assertIn('No respite or petition will be granted',d['translation']['text'])
+        self.assertNotIn('mercy',d['translation']['text'])
+        self.assertIn('actual cols1330 and1213',d['translation']['footnotes'][0]['text'])
+        self.assertIn('col250',d['translation']['footnotes'][0]['text'])
+        self.assertIn('col376',d['translation']['footnotes'][0]['text'])
+
+    def test_legacy13_detached_index_and_raw_editorial_drift_rejected(self):
+        from tools.enoch import legacy13_parent_evidence as old
+        index=old.read_index();raw=t.artifact
+        with patch.object(old.t,'artifact',side_effect=lambda root,path:Path('/dev/null')if path==old.INDEX else raw(root,path)):
+            with self.assertRaisesRegex(ValueError,'fixed detached index differs'):old.read_index()
+        path=next(k for k in index['legacy_files']if k.endswith('editorial-review.json'))
+        with patch.object(old.t,'artifact',side_effect=lambda root,p:Path('/dev/null')if p==path else raw(root,p)):
+            with self.assertRaisesRegex(ValueError,'original artifact differs'):old.read_index()
+        self.assertIn('git fetch --no-tags --depth=2 origin 053a1b8f175d6b047bdb20a0fa95f7ab2ba0dd41',(t.ROOT/'.github/workflows/corpus-integrity.yml').read_text())

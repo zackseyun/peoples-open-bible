@@ -3,7 +3,9 @@
 This performs no writes, no fresh source review and no full-chapter count
 certification. A legacy chapter_complete flag never closes a chapter here.
 """
+import copy
 import json
+import re
 from pathlib import Path
 import yaml
 from tools.enoch import bounded_application as transaction
@@ -26,6 +28,17 @@ def reviewed_input_core(record, serializer):
         raise ValueError('Historical input serializer differs')
     return {'reference':record['reference'],'source_text':record['source_text'],
             'additional_translation_input':None,'translation':record['translation']}
+
+
+def validate_source_metadata_delta(reviewed, candidate, policy):
+    # This added profile has a known, exact lifecycle-only delta. Never strip
+    # notes, confidence, pages, uncertainties or additional evidence controls.
+    if policy != 'validation-only-workflow-delta-v1':
+        raise ValueError('Unknown historical source metadata policy')
+    a,b=copy.deepcopy(reviewed),copy.deepcopy(candidate)
+    if (a.pop('validation',None),b.pop('validation',None)) != \
+            ('scan_grounded_candidate','scan_grounded_codex_review') or a!=b:
+        raise ValueError('Historical source differs beyond exact workflow-validation delta')
 
 
 def verdict(review, reference):
@@ -96,6 +109,14 @@ def load_current(index=INDEX):
                     (unit.get('input_serializer')=='flat-source-text-v1' and rows[0]['source_pages']!=candidate['source']['pages']) or \
                     verdict(read(unit['review']),reference)!='accept':
                 raise ValueError('Historical actual reviewed input/result differs')
+            policy=unit.get('source_metadata_policy')
+            if policy is not None:
+                images=pv.get('scan_image_sha256')
+                if manifest.get('primary_scan_sha256')!=transaction.PRIMARY_SHA or not isinstance(images,dict) or not images or any(not isinstance(v,str) or not re.fullmatch('[0-9a-f]{64}',v)for v in images.values()):
+                    raise ValueError('Historical full-source policy lacks primary/image identity')
+                if unit.get('input_serializer') is not None or 'source' not in rows[0]:
+                    raise ValueError('Historical metadata policy requires full source serializer')
+                validate_source_metadata_delta(rows[0]['source'],candidate['source'],policy)
             current=transaction.TRANSLATION/f'{cv[0]:03d}/{cv[1]:03d}.yaml'
             if current.exists() and transaction.sha(current.read_bytes())==digest:
                 accepted[cv]={'application':package['package'],
@@ -164,4 +185,18 @@ def load_all_current():
     added=load_current(transaction.ROOT/'sources/enoch/coverage/historical-input-bindings-20261022.json')
     if set(output)&set(added):raise ValueError('Historical current input scopes overlap')
     output.update(added)
+    index=transaction.ROOT/'sources/enoch/coverage/historical-input-bindings-20261023.json'
+    # Freeze this separately recovered-input profile; original indices and all
+    # original adverse/accepted receipts remain byte-identical.
+    if transaction.sha(index.read_bytes())!='c776cc04a175980f0fc9e20b1244509e2dec3b72002652f9482d8aaa193ee036':
+        raise ValueError('Recovered14 exact historical index differs')
+    data=json.loads(index.read_text())
+    if len(data['packages'])!=1 or [u['reference'] for u in data['packages'][0]['units']] != \
+            [f'1 Enoch 14:{v}' for v in (19,20,21,22,23,25)] or any(
+            u.get('source_metadata_policy')!='validation-only-workflow-delta-v1'
+            for u in data['packages'][0]['units']):
+        raise ValueError('Recovered14 exact scope/metadata policy differs')
+    recovered=load_current(index)
+    if set(output)&set(recovered):raise ValueError('Recovered historical input scopes overlap')
+    output.update(recovered)
     return output

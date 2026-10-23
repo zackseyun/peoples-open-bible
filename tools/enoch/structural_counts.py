@@ -85,4 +85,5 @@ def load_all_inventories():
         if set(current)&set(output):
             raise ValueError('Interleaved structural inventory scopes overlap')
         output.update(current)
-    return output
+    from tools.enoch.canonical_address_maps import apply_reviewed_maps
+    return apply_reviewed_maps(output)

@@ -42,3 +42,19 @@ budget or smaller image groups, while retaining raw responses and separate
 source/English gates. Unknown logical requests must not be silently retried.
 The batch13 canonical repairs use separately attributed actual source-author and
 independent-review evidence, **not these pilots as invented approval votes**.
+
+## Additive chapter6 follow-up
+
+A **new**, never-before-submitted source-only chapter6 request completed through
+an external long-socket-timeout subprocess wrapper. Provider handle
+`resp_0b664c1d8eae73ab006adb2c5f707c8197acefb6067a96d49a` reported15,080tokens.
+The separately retained follow-up lives in
+`sources/enoch/coverage/azure61-sol-source6-followup-20261023/`; the original
+pilot index/report above remain unchanged. Known cumulative reported usage is
+now71,549tokens, still not a complete billing total.
+
+The result distinguishes seven actual printed units and no printed8, but leaves
+glyph unknowns and gives a coda form conflicting with selected-print inspection.
+It is not adopted into source, English or approval evidence. Raising the socket
+timeout is not separately measured proof of an HTTP write deadline or proof
+that the older unknown large exact uploads are solved; neither was resent.

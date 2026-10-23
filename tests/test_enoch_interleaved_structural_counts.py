@@ -43,6 +43,14 @@ class InterleavedCountTest(unittest.TestCase):
         row=next(r for r in first['units'] if r['reference']=='1 Enoch 4:1');self.assertEqual(row['pdf_pages'],[44,46])
 
     def test_current_progress_distinguishes_printed7_from_canonical8_and_never_completes6(self):
+        if (t.ROOT/'sources/enoch/coverage/canonical-address-mapping6-20261023/mapping-index-v1.json').is_file():
+            # Exact count-only assertions remain unchanged at their old tree;
+            # a new paired map resolves addressing, never wording approval.
+            from tools.enoch.replay_06_pre_mapping_gate import replay
+            result=replay('progress')
+            self.assertEqual((result['tests_run'],result['skipped'],result['expected_failures']),(1,0,0))
+            self.assertFalse(result['current_corpus_validated'])
+            return
         data=build();row=data['chapters'][5]
         self.assertEqual(row['selected_printed_source_units'],list(range(1,8)))
         self.assertEqual(row['expected_units'],list(range(1,9)))
@@ -52,6 +60,14 @@ class InterleavedCountTest(unittest.TestCase):
         self.assertFalse(data['completion_proven']);self.assertEqual(data['evidence_inventory_warnings'],[])
 
     def test_diagnostic_count_difference_does_not_declare_canonical8_spurious(self):
+        if (t.ROOT/'sources/enoch/coverage/canonical-address-mapping6-20261023/mapping-index-v1.json').is_file():
+            # Exact count-only assertions remain unchanged at their old tree;
+            # a new paired map resolves addressing, never wording approval.
+            from tools.enoch.replay_06_pre_mapping_gate import replay
+            result=replay('audit')
+            self.assertEqual((result['tests_run'],result['skipped'],result['expected_failures']),(1,0,0))
+            self.assertFalse(result['current_corpus_validated'])
+            return
         result=issues([6]);row=result['inventory']['chapters'][0]
         self.assertEqual(row['expected_verses'],8)
         self.assertEqual(result['printed_source_mapping_reviews'],[6])

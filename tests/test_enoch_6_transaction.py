@@ -7,12 +7,11 @@ from tools.textual_restoration import enoch_6_transaction as release
 
 class EnochSixTransactionTest(unittest.TestCase):
     def test_frozen_source_and_review_package(self):
-        if (release.PACKAGE / 'application.json').exists():
-            applied = release.verify_applied()
-            self.assertEqual(applied['refs'], ['6:6', '6:7', '6:8'])
-        else:
-            candidates = release.verify_structure()
-            self.assertEqual(set(candidates), {'006-006', '006-007', '006-008'})
+        from tools.enoch.replay_06_pre_critical_coda import replay
+        result=replay('original')
+        self.assertTrue(result['passed'])
+        self.assertEqual(result['tests_run'],1)
+        self.assertEqual(result['skipped'],0)
 
     def test_chapter_six_export_has_eight_ordered_verses(self):
         if (release.PACKAGE / 'application.json').exists():

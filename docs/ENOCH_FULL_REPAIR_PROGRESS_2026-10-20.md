@@ -666,3 +666,13 @@ terminal responses, not invented English review votes. Four source-onlyjobs
 completed12units; the larger11/12exactuploads have unknown provider outcomes and
 were not blindly resent. The21glyphcontrol did not clear its genuine holds.
 The continuing all108 objective remains active.
+
+Initial full batch13 regression ran349tests with two obsolete mechanical gate
+failures, also detected by exact-head CI: old12installedhashes and old5raw-source
+expectation. Both original methods are retained and replayed at7c29, now four
+named historical cases. Current unregistered fallback, partial5accepted ingress
+and strict five-unit12successor/held4 counterproof are separately required.
+The detached12declaration preserves all original raw artifacts and currentbatch13
+receipts/candidates byte-for-byte; it does not invent independent legacy passes.
+Final corrected-head verification remains required; an initial failed suite is
+not reported as a pass.

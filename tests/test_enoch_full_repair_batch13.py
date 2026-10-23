@@ -218,11 +218,40 @@ class FullRepairBatch13Test(unittest.TestCase):
             for cc,v in HOLDS:
                 if cc==c:self.assertNotIn(f'{c}:{v}',registry['units'])
 
+    def test_legacy12_parent_record_is_not_upgraded_to_independent_approval(self):
+        from tools.enoch import legacy12_evidence as old
+        from tools.textual_restoration import enoch_12_transaction as strict
+        result=verify_current(t.APPLICATIONS/old.NAME)
+        self.assertEqual(result['historical_independent_review_passes_proven'],0)
+        self.assertEqual(result['original_parent_editorial_decisions_preserved'],6)
+        self.assertEqual(len(result['reviewed_supersessions']),5)
+        self.assertTrue(result['held_preimage_unchanged'])
+        self.assertEqual(result['historical_canonical_sha256']['012/004.yaml'],result['current_canonical_sha256']['012/004.yaml'])
+        for v in (1,2,3,5,6):
+            self.assertNotEqual(result['historical_canonical_sha256'][f'012/{v:03d}.yaml'],result['current_canonical_sha256'][f'012/{v:03d}.yaml'])
+        with self.assertRaisesRegex(ValueError,'Applied source differs'):
+            strict.verify_applied()
+        declaration=old.read_declaration()
+        self.assertEqual(declaration['successor_manifest_sha256'],t.sha((P/'manifest.json').read_bytes()))
+        self.assertTrue(declaration['no_historical_receipt_or_current_application_rewritten'])
+
+    def test_current_unregistered_fallback_stays_raw_while_exact5_overrides_remain_separate(self):
+        from tools.enoch import selected_edition_sources as sources,verse_parser as parser
+        registry=copy.deepcopy(sources.registry_data())
+        self.assertNotIn('5',registry['chapters'])
+        registry['units']={key:value for key,value in registry['units'].items()if not key.startswith('5:')}
+        with patch.object(sources,'registry_data',return_value=registry):
+            self.assertIsNone(sources.load_chapter(5))
+            self.assertEqual(sources.load_unit_overrides(5),[])
+            self.assertEqual(parser.parse_chapter(5),parser.parse_ocr_chapter(5))
+        self.assertEqual([r['verse']for r in sources.load_unit_overrides(5)],[2,3,4,5,7,8,9])
+        self.assertNotEqual(parser.parse_chapter(5),parser.parse_ocr_chapter(5))
+
     def test_ci_fetches_actual_original_and_replay_tree_and_runs_current_counterproof(self):
         workflow=(t.ROOT/'.github/workflows/corpus-integrity.yml').read_text()
-        for sha in ('f59737b6fe9071b9f98c2a1b75375518d508debf','7c290e9d069ccabdb91eeccfd82ab592c80aef31'):
+        for sha in ('f59737b6fe9071b9f98c2a1b75375518d508debf','0eba75255fa8d6ebefcf4fc79ef1e4b405ab442e','7c290e9d069ccabdb91eeccfd82ab592c80aef31'):
             self.assertIn('git fetch --no-tags --depth=1 origin '+sha,workflow)
-        for name in ('test_enoch_full_repair_batch13.py','test_enoch21_10_application.py','test_enoch_low_risk_transaction.py'):
+        for name in ('test_enoch_full_repair_batch13.py','test_enoch21_10_application.py','test_enoch_low_risk_transaction.py','test_enoch_12_transaction.py','test_enoch_reviewed_sources.py'):
             self.assertIn(name,workflow)
 
     def test_progress_does_not_close_the_book_or_partial_chapters(self):

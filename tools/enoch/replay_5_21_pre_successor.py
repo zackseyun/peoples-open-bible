@@ -1,4 +1,4 @@
-"""Replay only two unchanged original5/21 pre-successor mechanical cases.
+"""Replay only four unchanged original5/12/21 pre-successor mechanical cases.
 
 Their historical assertions remain intact at pinned7c29. Current paired
 source/English/explanation and old-scope counterproof are required separately.
@@ -16,15 +16,15 @@ from tools.textual_restoration.replay_unflagged_sample import git, extract_regul
 
 COMMIT = '7c290e9d069ccabdb91eeccfd82ab592c80aef31'
 SUCCESSOR = 'enoch_full_repair_batch13_20261023'
-DESCRIPTOR = t.ROOT/'sources/enoch/coverage/frozen-mechanical-gates/5-21-pre-paired-successor-v1.json'
-CASES = {'individual21': ('tests/test_enoch21_10_application.py', 'test_enoch21_10_application.Enoch2110Application.test_unit_exact_and_chapter_held', '162b210660168c95d1973917e4b71e95173dd934c07379ec51d7d418cbb418f9'), 'legacy5-export': ('tests/test_enoch_low_risk_transaction.py', 'test_enoch_low_risk_transaction.EnochLowRiskTransactionTest.test_only_chapters_five_and_seventeen_change_in_local_export', 'eb498407d82babd28562867aa44e45cc717901719f229219d7c38f53c2905b59')}
+DESCRIPTOR = t.ROOT/'sources/enoch/coverage/frozen-mechanical-gates/5-12-21-pre-paired-successor-v2.json'
+CASES = {'individual21': ('tests/test_enoch21_10_application.py', 'test_enoch21_10_application.Enoch2110Application.test_unit_exact_and_chapter_held', '162b210660168c95d1973917e4b71e95173dd934c07379ec51d7d418cbb418f9'), 'legacy5-export': ('tests/test_enoch_low_risk_transaction.py', 'test_enoch_low_risk_transaction.EnochLowRiskTransactionTest.test_only_chapters_five_and_seventeen_change_in_local_export', 'eb498407d82babd28562867aa44e45cc717901719f229219d7c38f53c2905b59'), 'legacy12': ('tests/test_enoch_12_transaction.py', 'test_enoch_12_transaction.EnochTwelveTransactionTest.test_frozen_source_and_review_package', 'a6e0e2c3acfe481978fd3612b5e91a068904ae56e8806ea6c1248fc408763945'), 'raw5-before-registration': ('tests/test_enoch_reviewed_sources.py', 'test_enoch_reviewed_sources.ReviewedSourcesTest.test_unregistered_chapters_keep_raw_parser', '9351f3bb1c2600079e825d90ce73756def964af98d68443ca77d48a59a65c6ff')}
 
 
 def replay(case):
     if sys.flags.optimize or case not in CASES:
         raise ValueError('Historical5/21 replay needs a registered case and non-optimized Python')
     data = json.loads(DESCRIPTOR.read_text())
-    expected = {'kind': 'enoch5-21-pre-paired-successor-gates-v1', 'commit': COMMIT,
+    expected = {'kind': 'enoch5-12-21-pre-paired-successor-gates-v2', 'commit': COMMIT,
                 'successor': SUCCESSOR, 'cases': {k: {'test': v[0], 'method': v[1],
                 'test_sha256': v[2], 'expected_tests': 1} for k, v in CASES.items()}}
     if data != expected:
@@ -48,6 +48,13 @@ def replay(case):
     from tools.enoch.legacy21_evidence import verify_current as verify_old, NAME
     if len(verify_old(t.APPLICATIONS/NAME)['reviewed_supersessions']) != 1:
         raise ValueError('Current21 historical-successor counterproof missing')
+    from tools.enoch.legacy12_evidence import verify_current as verify12, NAME as NAME12
+    old12 = verify12(t.APPLICATIONS/NAME12)
+    if len(old12['reviewed_supersessions']) != 5 or not old12['held_preimage_unchanged'] or old12['historical_independent_review_passes_proven'] != 0:
+        raise ValueError('Legacy12 exact current/historical-scope counterproof missing')
+    from tools.enoch.selected_edition_sources import load_chapter, load_unit_overrides
+    if load_chapter(5) is not None or [r['verse'] for r in load_unit_overrides(5)] != [2,3,4,5,7,8,9]:
+        raise ValueError('Current partial5 source ingress differs from paired scope')
     names = git(t.ROOT, 'ls-tree', '-r', '--name-only', COMMIT).decode().splitlines()
     roots = ('tools', 'lib', 'schema', 'shared', 'data', 'sources/enoch',
              'sources/early_christian_texts', 'translation/extra_canonical/1_enoch')

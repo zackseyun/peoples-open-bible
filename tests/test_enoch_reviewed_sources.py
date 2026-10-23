@@ -63,6 +63,15 @@ class ReviewedSourcesTest(unittest.TestCase):
         self.assertNotIn('Gemini OCR', bundle.zone1_sources_at_draft[0])
 
     def test_unregistered_chapters_keep_raw_parser(self):
+        if (transaction.APPLICATIONS/'enoch_full_repair_batch13_20261023/application.json').is_file():
+            # The exact old raw5 assertion remains below and runs unchanged at
+            # pinned7c29. Current unregistered fallback and partial5 ingress are
+            # separately tested in batch13; no held row becomes registered.
+            from tools.enoch.replay_5_21_pre_successor import replay
+            result = replay('raw5-before-registration')
+            self.assertEqual((result['tests_run'],result['skipped'],result['expected_failures']),(1,0,0))
+            self.assertFalse(result['current_corpus_validated'])
+            return
         self.assertIsNone(sources.load_chapter(5))
         self.assertEqual(parser.parse_chapter(5), parser.parse_ocr_chapter(5))
 

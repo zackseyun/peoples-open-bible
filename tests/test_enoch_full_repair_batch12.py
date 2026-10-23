@@ -159,6 +159,16 @@ class FullRepairBatch12Test(unittest.TestCase):
         self.assertFalse(r['completion_proven'])
         self.assertFalse(r['artwork_publication_approval'])
 
+    def test_ci_fetches_exact_original_records_parent_and_replay_and_runs_current_checks(self):
+        workflow = (t.ROOT/'.github/workflows/corpus-integrity.yml').read_text()
+        self.assertIn('git fetch --no-tags --depth=2 origin 3e0060dfff08b37967ecd3250fb850673b26fde4', workflow)
+        for commit in ('d817122009b7f4710903b2cdc1abbf08a14d8363',
+                       'af21d2ccfa20d3df47ac633c3d591a688d7c2c01'):
+            self.assertIn('git fetch --no-tags --depth=1 origin '+commit, workflow)
+        for filename in ('test_enoch_full_repair_batch12.py', 'test_enoch32_north_correction.py',
+                         'test_enoch32_5_application.py'):
+            self.assertIn("python -m unittest discover -s tests -p '"+filename+"'", workflow)
+
 
 if __name__ == '__main__':
     unittest.main()

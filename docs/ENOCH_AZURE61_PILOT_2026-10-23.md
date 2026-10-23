@@ -58,3 +58,15 @@ glyph unknowns and gives a coda form conflicting with selected-print inspection.
 It is not adopted into source, English or approval evidence. Raising the socket
 timeout is not separately measured proof of an HTTP write deadline or proof
 that the older unknown large exact uploads are solved; neither was resent.
+
+## Additive chapter10 follow-up
+
+A separate fresh source-only22-unit request completed with provider handle
+`resp_01dc9762f0556a0e006adb5ad0e4c481969c15996e4fa5da61` and8,320reportedtokens.
+The original source-author froze its own packet before reading this advisory.
+Actual output preserves whole-unit unknowns for most/all text, rather than
+pretending the low-detail full-page images were legible. It is not source or
+English approval and does not clear any hold. Raw terminal/model/manifest receipts
+are retained in`sources/enoch/coverage/azure61-sol-source10-followup-20261023/`.
+Known cumulative reported usage is79,869tokens, still not complete billing.
+No older unknown exact11/12upload was retried or new model resource created.

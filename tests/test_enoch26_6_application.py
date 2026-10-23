@@ -11,13 +11,23 @@ class Enoch266Application(unittest.TestCase):
   self.assertEqual(record['source']['text'],recovered[6]);self.assertEqual(record['reference'],'1 Enoch 26:6')
   self.assertIn('marveled greatly',record['translation']['text'])
   for key in ('chapter_complete','graphic_publication_approved','app_published'):self.assertFalse(app[key])
-  self.assertEqual(app['canonical_sha256'],hashlib.sha256(Y.read_bytes()).hexdigest())
+  # The old complete-byte assertion stays on its actual original Git blob;
+  # current metadata-only differences require a separately verified exact delta.
+  from tools.enoch import metadata26_evidence as followup
+  proof=followup.verify_current(P);self.assertTrue(proof['canonical_targets_checked'])
+  case=followup.read_index()['cases'][record['reference']]
+  import subprocess
+  original=subprocess.check_output(['git','show',case['applied_commit']+':'+app['canonical_file']],cwd=ROOT)
+  self.assertEqual(app['canonical_sha256'],hashlib.sha256(original).hexdigest())
   self.assertFalse(record['source_correction']['chapter_publication_approval'])
   self.assertFalse(record['source_correction']['human_specialist_certification'])
   # 26:5 was subsequently restored by its own bounded two-review application.
   # Keep that exact later repair, not the historical expectation of absence.
   later=json.loads((P.parent/'enoch_26_5_20261017/application.json').read_text())
-  self.assertEqual(hashlib.sha256((Y.parent/'005.yaml').read_bytes()).hexdigest(),later['canonical_sha256'])
+  five=followup.read_index()['cases']['1 Enoch 26:5']
+  original5=subprocess.check_output(['git','show',five['applied_commit']+':'+later['canonical_file']],cwd=ROOT)
+  self.assertEqual(hashlib.sha256(original5).hexdigest(),later['canonical_sha256'])
+  self.assertTrue(followup.verify_current(P.parent/five['package'])['canonical_targets_checked'])
   self.assertFalse(later['chapter_complete'])
  def test_two_acceptances_and_refined_note(self):
   hashes=[]

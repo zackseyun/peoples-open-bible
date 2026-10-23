@@ -111,4 +111,16 @@ def load_unit_overrides(chapter: int) -> list[dict]:
         if count is None or v > count:
             raise ValueError('Individual source override requires a declared printed count/address')
         output.append(source_row(package,manifest,c,v))
+    metadata = registry.get('metadata_units', {})
+    if metadata:
+        from tools.enoch import metadata26_evidence as followup
+        expected = {'26:5': followup.NAME, '26:6': followup.NAME}
+        if metadata != expected:
+            raise ValueError('Historical metadata source overlay scope differs')
+        if chapter == 26:
+            if '26' in registry['chapters'] or set(metadata)&set(registry.get('units', {})):
+                raise ValueError('Metadata source overlay conflicts with a current wording successor')
+            # Immutable inherited source plus an exactly reviewed metadata delta,
+            # never a canonical-to-source echo or a new whole-language vote.
+            output.extend(followup.source_overrides(chapter))
     return sorted(output,key=lambda row:row['verse'])

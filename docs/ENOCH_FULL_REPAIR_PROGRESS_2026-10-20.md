@@ -695,3 +695,27 @@ New test assertions also incorrectly assumed a parser field name and that all
 accepted units had notes; those assumptions were corrected against actual types
 and the established empty-note export contract. No raw review or candidate was
 changed. All exact application artifacts remain immutable after application.
+
+## Fifteenth/sixteenth applications and metadata26
+
+Fourteen existing chapter10 units and complete selected35:1 now have exact paired
+source/English/explanation treatment, while eight chapter10 units and six30/31
+proposals remain whole-held. 10:19 required a genuinely new qualified quantity
+proposal after adverse Latin dictionary evidence; its oldten-thousand overclaim
+was not promoted. 10:12 hills,10:17 rest, whole cross-page4/16 and the actual5
+light-negative remain explicit. 35 retains selectedeast with critical qualification,
+not an apparatus-normalizednorth or old uncertifiedspring-word.
+
+Metadata26 preserves source words and entire translations, fixes workflow
+attribution/controls, and distinguishes historical executions from final full-note
+acceptance. It adds0freshlanguagevotes. Complete schema validation fills unknown
+model provenance truthfully and separately downgrades invalid workflow states;
+no original raw artifact is rewritten and no schema exception is added.
+
+Independent short-chapter counts add30/31/35 without clearing their held English.
+Only two page-map arrays expand13/14's incomplete source windows. The local
+snapshot is436 imported-review units,33 complete imported chapters,962files;
+all108 completion is false. See [the detailed account](ENOCH_BATCH15_16_2026-10-23.md)
+and [current issue register](ENOCH_REPAIR_AUDIT_2026-10-23_BATCH16.md).
+Publication still requires final local checks, both exact-head CI successes,
+normal protected-main merge and exact publisher/public readback.

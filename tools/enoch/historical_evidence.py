@@ -199,4 +199,9 @@ def load_all_current():
     recovered=load_current(index)
     if set(output)&set(recovered):raise ValueError('Recovered historical input scopes overlap')
     output.update(recovered)
+    from tools.enoch import metadata26_evidence
+    metadata = metadata26_evidence.current_units()
+    if set(output)&set(metadata):
+        raise ValueError('Metadata26 historical payload import overlaps another scope')
+    output.update(metadata)
     return output

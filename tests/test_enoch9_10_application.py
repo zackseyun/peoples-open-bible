@@ -43,5 +43,22 @@ class Enoch910(unittest.TestCase):
   for r in self.rows:
    f=ROOT/r['target'];d=yaml.safe_load(f.read_text());validator.validate(d);self.assertIn(audit_footnotes.audit_one(f)['status'],['ok','no_footnotes']);self.assertEqual(d['status'],'draft');self.assertNotIn('cross_check',d);self.assertEqual(d['ai_draft']['model_id'],'codex-assistant');self.assertFalse(d['textual_comparison']['human_specialist_review']);self.assertTrue(all(not x['certifies_this_candidate'] for x in d['previous_reviews']));self.assertTrue(all('lexicon' not in x for x in d.get('lexical_decisions',[])))
  def test_model_mistranslations_are_not_silently_retained(self):
-  self.assertNotIn('the King:',self.get(9,4)['translation']['text']);self.assertIn('make known',self.get(10,11)['translation']['text']);self.assertNotIn('bind',self.get(10,11)['translation']['text']);self.assertIn('[disclosed]',self.get(10,7)['translation']['text']);self.assertIn('ten thousand',self.get(10,19)['translation']['text']);self.assertIn(' and the offspring',self.get(10,15)['translation']['text']);self.assertNotIn('is condemned',self.get(10,14)['translation']['text'])
+  self.assertNotIn('the King:',self.get(9,4)['translation']['text']);self.assertIn('make known',next(r for r in self.rows if r['reference']=='1 Enoch 10:11')['english']);self.assertIn('Go, announce to Semyaza',self.get(10,11)['translation']['text']);self.assertNotIn('bind',self.get(10,11)['translation']['text']);self.assertIn('[disclosed]',self.get(10,7)['translation']['text']);self.assert_qualified_current19_and_preserved_old_claim();self.assertIn(' and the offspring',self.get(10,15)['translation']['text']);self.assertNotIn('is condemned',self.get(10,14)['translation']['text'])
+
+ # Keep the old dated quantity claim as an immutable historical assertion, not
+ # as authority over the newly source-reviewed critical treatment.
+ def assert_qualified_current19_and_preserved_old_claim(self):
+  from tools.enoch import bounded_application as t
+  from tools.enoch.current_evidence import verify_current
+  package=t.APPLICATIONS/'enoch_full_repair_batch15_20261023'
+  self.assertIn('1 Enoch 10:19',verify_current(package)['references'])
+  old=next(r for r in self.rows if r['reference']=='1 Enoch 10:19')
+  self.assertIn('ten thousand',old['english'])
+  current=self.get(10,19)
+  self.assertIn('one measure will produce a thousand;[a]',current['translation']['text'])
+  self.assertNotIn('ten thousand',current['translation']['text'])
+  self.assertEqual(current['source']['transcription_uncertainties'][0]['status'],'retained_lexical_quantity_ambiguity')
+  self.assertIn('thousand or',current['source']['transcription_uncertainties'][0]['issue'])
+  self.assertIn('፲ምክያደ',current['source']['text'])
+
 if __name__=='__main__':unittest.main()

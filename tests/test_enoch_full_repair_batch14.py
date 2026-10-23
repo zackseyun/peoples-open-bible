@@ -106,7 +106,7 @@ class FullRepairBatch14Test(unittest.TestCase):
         from tools.enoch import legacy_editorial_evidence as old,legacy6_evidence as six
         for name,n in zip(old.NAMES,(7,6)):
             proof=verify_current(t.APPLICATIONS/name);self.assertEqual(proof['historical_independent_review_passes_proven'],0)
-            self.assertEqual(len(proof['reviewed_supersessions']),n);self.assertFalse(proof['chapter_publication_approval'])
+            self.assertEqual(len([r for r in proof['reviewed_supersessions']if r['superseded_by']==P.name]),n);self.assertFalse(proof['chapter_publication_approval'])
         proof=verify_current(t.APPLICATIONS/six.NAME);self.assertEqual(proof['historical_independent_review_passes_proven'],0)
         self.assertTrue(proof['actual_parent_preimages_verified']);self.assertEqual(proof['reviewed_supersessions'],[{'reference':'1 Enoch 6:8','superseded_by':P.name}])
         for ref in ('1 Enoch 6:6','1 Enoch 6:7'):

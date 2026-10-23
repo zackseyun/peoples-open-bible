@@ -695,3 +695,45 @@ New test assertions also incorrectly assumed a parser field name and that all
 accepted units had notes; those assumptions were corrected against actual types
 and the established empty-note export contract. No raw review or candidate was
 changed. All exact application artifacts remain immutable after application.
+
+## Fifteenth/sixteenth applications and metadata26
+
+Fourteen existing chapter10 units and complete selected35:1 now have exact paired
+source/English/explanation treatment, while eight chapter10 units and six30/31
+proposals remain whole-held. 10:19 required a genuinely new qualified quantity
+proposal after adverse Latin dictionary evidence; its oldten-thousand overclaim
+was not promoted. 10:12 hills,10:17 rest, whole cross-page4/16 and the actual5
+light-negative remain explicit. 35 retains selectedeast with critical qualification,
+not an apparatus-normalizednorth or old uncertifiedspring-word.
+
+Metadata26 preserves source words and entire translations, fixes workflow
+attribution/controls, and distinguishes historical executions from final full-note
+acceptance. It adds0freshlanguagevotes. Complete schema validation fills unknown
+model provenance truthfully and separately downgrades invalid workflow states;
+no original raw artifact is rewritten and no schema exception is added.
+
+Independent short-chapter counts add30/31/35 without clearing their held English.
+Only two page-map arrays expand13/14's incomplete source windows. The local
+snapshot is436 imported-review units,33 complete imported chapters,962files;
+all108 completion is false. See [the detailed account](ENOCH_BATCH15_16_2026-10-23.md)
+and [current issue register](ENOCH_REPAIR_AUDIT_2026-10-23_BATCH16.md).
+Publication still requires final local checks, both exact-head CI successes,
+normal protected-main merge and exact publisher/public readback.
+
+## Seventeenth bounded application:17new13/14 treatments
+
+The new17-unit source/English/explanation pair covers13:1–3 and14:1,3–5,7,9–17;
+whole14:2/6/8/18 remain held. Older13:4–10 and14:19–25 context bytes stay unchanged
+with0newEnglishvotes. Actual walls/doorway/judgment-subject corrections, false
+apparatus-derived star removal and complete14:3 continuation are retained.
+Historical7plusnew3 completes imported selected13 coverage, not a freshfull10
+or35unit languagepass. The local snapshot reaches453 imported-review units,
+34complete imported chapters,91pairedcount inventories,962files, with all108
+completion stillfalse. See [batch17](ENOCH_BATCH17_2026-10-23.md) and the
+[current repair register](ENOCH_REPAIR_AUDIT_2026-10-23_BATCH17.md).
+
+The previously admitted10/35/metadata26 package passed401localtests887.321s.
+Because17more genuinely accepted treatments became ready before finalCI, they
+were integrated as a new immutable application instead of being held solely for
+a stable smaller head. Superseded CI handles are not finalpasses. The final
+409-test suite, exact new-head CI pair and actualmain/public delivery are required.

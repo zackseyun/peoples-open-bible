@@ -335,7 +335,7 @@ def parse_chapter(chapter: int) -> tuple[list[EnochVerseRow], list[str]]:
             rows.append(reviewed(row))
             rows.sort(key=lambda r:r.verse)
     if overrides:
-        warnings.append('Exact paired-reviewed individual source overrides: ' +
+        warnings.append('Exact evidence-bound individual source overrides: ' +
             ', '.join(row['reference'] for row in overrides) +
             '. This does not approve other OCR rows or certify an entire chapter.')
     return rows, warnings

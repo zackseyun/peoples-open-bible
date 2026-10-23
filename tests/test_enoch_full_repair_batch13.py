@@ -174,11 +174,15 @@ class FullRepairBatch13Test(unittest.TestCase):
         current=json.loads(p.read_text())
         before=json.loads(subprocess.check_output(['git','show','7c290e9d069ccabdb91eeccfd82ab592c80aef31:'+str(p.relative_to(t.ROOT))],cwd=t.ROOT))
         self.assertEqual(current['editions']['charles_1906']['chapters']['005']['pages'],[46,48,50])
-        current['editions']['charles_1906']['chapters']['005']['pages']=[46,48]
-        self.assertEqual(before,current)
+        # Preserve the entire original bounded page-map5 assertion at the
+        # actual applied tree, not a freeze on later reviewed chapter windows.
+        applied_raw=subprocess.check_output(['git','show','2b91607210474c57a16a7f4c3745b2b7b18fce85:'+str(p.relative_to(t.ROOT))],cwd=t.ROOT)
+        applied=json.loads(applied_raw)
+        applied['editions']['charles_1906']['chapters']['005']['pages']=[46,48]
+        self.assertEqual(before,applied)
         proof=json.loads((t.ROOT/'sources/enoch/coverage/page-map5-continuation-20261023.json').read_text())
         self.assertFalse(proof['wording_approval'])
-        self.assertEqual(proof['after_sha256'],t.sha(p.read_bytes()))
+        self.assertEqual(proof['after_sha256'],t.sha(applied_raw))
         for rel,digest in proof['source_first_input_hashes'].items():
             self.assertEqual(t.sha((P/'history'/rel).read_bytes()),digest)
 

@@ -12,7 +12,14 @@ class Enoch265Application(unittest.TestCase):
   self.assertEqual(record['reference'],'1 Enoch 26:5')
   self.assertIn('no[b] tree',record['translation']['text'])
   for key in ('chapter_complete','graphic_publication_approved','app_published'):self.assertFalse(app[key])
-  self.assertEqual(app['canonical_sha256'],hashlib.sha256(Y.read_bytes()).hexdigest())
+  # The old complete-byte assertion stays on its actual original Git blob;
+  # current metadata-only differences require a separately verified exact delta.
+  from tools.enoch import metadata26_evidence as followup
+  proof=followup.verify_current(P);self.assertTrue(proof['canonical_targets_checked'])
+  case=followup.read_index()['cases'][record['reference']]
+  import subprocess
+  original=subprocess.check_output(['git','show',case['applied_commit']+':'+app['canonical_file']],cwd=ROOT)
+  self.assertEqual(app['canonical_sha256'],hashlib.sha256(original).hexdigest())
   self.assertFalse(record['source_correction']['chapter_publication_approval'])
   self.assertFalse(record['source_correction']['human_specialist_certification'])
   self.assertNotEqual(yaml.safe_load(Y.parent.joinpath('004.yaml').read_text())['source']['text'],recovered[4])

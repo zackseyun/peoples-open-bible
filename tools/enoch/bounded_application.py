@@ -163,6 +163,9 @@ def load_manifest(package: Path) -> dict:
     if 'supersedes_legacy97' in manifest:
         from tools.enoch.legacy97_evidence import validate_declared_successor
         validate_declared_successor(package, manifest)
+    if 'supersedes_legacy_editorial' in manifest:
+        from tools.enoch.legacy_editorial_evidence import validate_declared_successors
+        validate_declared_successors(package,manifest)
     if 'supersedes_legacy21' in manifest:
         from tools.enoch.legacy21_evidence import validate_declared_successor
         validate_declared_successor(package, manifest)

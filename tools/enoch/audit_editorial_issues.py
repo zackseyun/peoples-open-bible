@@ -99,7 +99,7 @@ def build(chapters: list[int], pob_root: Path = coverage.POB_ROOT,
     counts=load_all_inventories()
     mapping_reviews={c:v for c,v in counts.items() if v.get('canonical_mapping_pending') is True}
     inventory = coverage.audit(chapters, pob_root, diagnostic_counts={
-        c: len(v['units']) for c, v in counts.items() if c not in mapping_reviews})
+        c: len(v.get('canonical_address_units',v['units'])) for c, v in counts.items() if c not in mapping_reviews})
     issues = {}
     hashes = {}
 

@@ -15,6 +15,12 @@ PREVIOUS = 'enoch_source_repairs_20261020'
 
 def verify_current(package: Path, *, seen: tuple[str, ...] = ()) -> dict:
     name = package.name
+    from tools.enoch import legacy_editorial_evidence as editorial
+    if editorial.registered(package):
+        return editorial.verify_current(package,seen=seen)
+    from tools.enoch import legacy6_evidence as legacy6
+    if legacy6.registered(package):
+        return legacy6.verify_current(package,seen=seen)
     from tools.enoch import legacy12_evidence as legacy12
     if legacy12.registered(package):
         return legacy12.verify_current(package, seen=seen)

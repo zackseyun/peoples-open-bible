@@ -676,3 +676,22 @@ The detached12declaration preserves all original raw artifacts and currentbatch1
 receipts/candidates byte-for-byte; it does not invent independent legacy passes.
 Final corrected-head verification remains required; an initial failed suite is
 not reported as a pass.
+
+## Fourteenth bounded application:21units; six historical imports
+
+Exact paired partial2/6/7/8/9 treatments cover21 existing units, while12 whole
+proposals remain held. Six unchanged14 historical payloads receive exact
+reconstituted-input bindings, not new votes. The current snapshot is419 imported
+units,32 complete imported chapters,962files; all108 completion remains false.
+The separately reviewed6 structural map distinguishes seven printed units from
+eight POB addresses. The low-confidence qualified6:8 coda keeps its initial-fidel
+spelling difference explicit. Original unqualified8 remains historically held.
+See [batch14](ENOCH_BATCH14_2026-10-23.md) and the regenerated
+[verse-by-verse register](ENOCH_REPAIR_AUDIT_2026-10-23_BATCH14.md).
+
+A source-ingress test exposed missing registration of accepted partial units;
+that was fixed using immutable paired inputs, not by relaxing the assertion.
+New test assertions also incorrectly assumed a parser field name and that all
+accepted units had notes; those assumptions were corrected against actual types
+and the established empty-note export contract. No raw review or candidate was
+changed. All exact application artifacts remain immutable after application.

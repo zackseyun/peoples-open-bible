@@ -125,6 +125,13 @@ jobs:
           git fetch --no-tags --depth=1 origin f59737b6fe9071b9f98c2a1b75375518d508debf
           git fetch --no-tags --depth=1 origin 0eba75255fa8d6ebefcf4fc79ef1e4b405ab442e
           git fetch --no-tags --depth=1 origin 7c290e9d069ccabdb91eeccfd82ab592c80aef31
+          # Paired7-9 successors and separate reviewed6 addressing retain
+          # original parent receipts, actual applied parents, and old gate tree.
+          git fetch --no-tags --depth=2 origin f436ae1f5e6f3b4764ccd3102a4d0828ad67ffe8
+          git fetch --no-tags --depth=2 origin c77a1868d83428a0814c44b7922cb6096362df9e
+          git fetch --no-tags --depth=1 origin c0fe2efffb4ebe23968f8931df3d51fc04a918d6
+          git fetch --no-tags --depth=1 origin 2b91607210474c57a16a7f4c3745b2b7b18fce85
+          git fetch --no-tags --depth=2 origin 839ec57460182b422cd72fab65355c39726f7254
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -281,6 +288,10 @@ jobs:
           python -m unittest discover -s tests -p 'test_enoch_full_repair_batch11.py'
           python -m unittest discover -s tests -p 'test_enoch_full_repair_batch12.py'
           python -m unittest discover -s tests -p 'test_enoch_full_repair_batch13.py'
+          python -m unittest discover -s tests -p 'test_enoch_full_repair_batch14.py'
+          python -m unittest discover -s tests -p 'test_enoch_6_transaction.py'
+          python -m unittest discover -s tests -p 'test_enoch_canonical_address_maps.py'
+          python -m unittest discover -s tests -p 'test_enoch_historical14_recovered.py'
           python -m unittest discover -s tests -p 'test_enoch_12_transaction.py'
           python -m unittest discover -s tests -p 'test_enoch_low_risk_transaction.py'
           python -m unittest discover -s tests -p 'test_enoch21_10_application.py'

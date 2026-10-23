@@ -262,10 +262,10 @@ def parse_ocr_chapter(chapter: int) -> tuple[list[EnochVerseRow], list[str]]:
             )
         )
 
-    # The OCR preserves the words closing chapter 6, but Charles 1906's
-    # chapter-file transcription omits the printed boundary before the final
-    # "chiefs of tens" sentence. Keep the source words intact while restoring
-    # the verse 8 boundary used by the project's Enoch versification.
+    # Charles1906 prints seven units in chapter6. Existing POB addressing
+    # divides printed7 into its name-list head and an unnumbered final coda.
+    # Retain that explicit editorial split, not a supposedly recovered printed8.
+    # The separately paired address map does not approve the coda's wording.
     if chapter == 6 and [row.verse for row in rows] == list(range(1, 8)):
         boundary = "እሉ፡ እሙንቱ፡"
         last = rows[-1]
@@ -279,7 +279,7 @@ def parse_ocr_chapter(chapter: int) -> tuple[list[EnochVerseRow], list[str]]:
                 chapter=chapter, verse=8, text=last.text[split_at:].strip(),
                 marker_raw="editorial boundary", chapter_file=last.chapter_file,
             ))
-            warnings.append("Restored chapter 6 verse 8 boundary before the chiefs-of-tens sentence.")
+            warnings.append("Retained POB editorial chapter 6 verse 8 boundary within Charles printed7; no printed numeral8.")
 
     for index, row in enumerate(rows):
         cleanups = SCAN_OCR_CLEANUPS.get((chapter, row.verse), ())
@@ -308,8 +308,9 @@ def parse_chapter(chapter: int) -> tuple[list[EnochVerseRow], list[str]]:
     from tools.enoch.selected_edition_sources import load_chapter, load_unit_overrides
     source = load_chapter(chapter)
     def reviewed(row):
+        from tools.enoch.canonical_address_maps import reviewed_boundary_label
         return EnochVerseRow(chapter=chapter, verse=row['verse'], text=row['source']['text'],
-            marker_raw='reviewed printed unit boundary', chapter_file=row['evidence'],
+            marker_raw=reviewed_boundary_label(chapter,row['verse']), chapter_file=row['evidence'],
             pages=tuple(row['source']['pages']), source_note=row['source'].get('note',''),
             additional_translation_input=copy.deepcopy(row['source'].get('additional_translation_input')),
             transcription_uncertainties=copy.deepcopy(row['source'].get('transcription_uncertainties')),

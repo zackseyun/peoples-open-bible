@@ -132,7 +132,14 @@ class FullRepairBatch11Test(unittest.TestCase):
  def test_old29_imports_skip_repaired_units_and_old17_receipt_is_not_reused(self):
   from tools.enoch import historical_evidence as h
   old=h.load_current();self.assertEqual(len(old),27);self.assertNotIn((29,1),old);self.assertNotIn((29,2),old)
-  self.assertEqual(len(h.load_all_current()),35)
+  # Preserve the exact dated two-index35-unit assertion without freezing all
+  # future historical imports. The six recovered14 bindings are a distinct,
+  # code-pinned profile; old29/17 checks below still run against current bytes.
+  second=h.load_current(t.ROOT/'sources/enoch/coverage/historical-input-bindings-20261022.json')
+  self.assertEqual(len(second),8)
+  original={**old,**second};self.assertEqual(len(original),35)
+  current=h.load_all_current();self.assertTrue(set(original)<=set(current))
+  self.assertTrue({(14,v)for v in(19,20,21,22,23,25)}<=set(current))
   m=t.load_manifest(P);prior=t.APPLICATIONS/'enoch_5_9_17_7_8_20260929';old_manifest=json.loads((prior/'manifest.json').read_text())
   for v in(7,8):
    raw=(prior/f'017-{v:03d}.candidate.yaml').read_bytes();digest=t.sha(raw)

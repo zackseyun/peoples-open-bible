@@ -38,7 +38,16 @@ class FullRepairBatch13Test(unittest.TestCase):
         for c,v in HOLDS:
             rel=f'{c:03d}/{v:03d}.yaml'
             self.assertEqual(t.sha((t.TRANSLATION/rel).read_bytes()),m['canonical_baseline_sha256'][rel])
-        self.assertEqual(t.corpus_hashes(),receipt['canonical_after_sha256'])
+        # Verify the complete historical transaction, not equality between a
+        # dated snapshot and every future legitimate repair elsewhere.
+        expected_after=dict(m['canonical_baseline_sha256'])
+        current=t.corpus_hashes()
+        for c,v in EXPECTED:
+            rel=f'{c:03d}/{v:03d}.yaml'
+            digest=t.sha((P/f'{c:03d}-{v:03d}.candidate.yaml').read_bytes())
+            expected_after[rel]=digest
+            self.assertEqual(current[rel],digest)
+        self.assertEqual(receipt['canonical_after_sha256'],expected_after)
 
     def test_complete11_only_not_partial_count_approval(self):
         m=t.load_manifest(P)

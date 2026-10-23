@@ -7,6 +7,16 @@ from tools.textual_restoration import enoch_12_transaction as release
 
 class EnochTwelveTransactionTest(unittest.TestCase):
     def test_frozen_source_and_review_package(self):
+        from tools.enoch import bounded_application as current_transaction
+        if (current_transaction.APPLICATIONS/'enoch_full_repair_batch13_20261023/application.json').is_file():
+            # Original receipt/install assertions stay intact at pinned7c29.
+            # Fresh paired five-unit source/English and unchanged held4 are
+            # separately checked by the current typed successor counterproof.
+            from tools.enoch.replay_5_21_pre_successor import replay
+            result = replay('legacy12')
+            self.assertEqual((result['tests_run'],result['skipped'],result['expected_failures']),(1,0,0))
+            self.assertFalse(result['current_corpus_validated'])
+            return
         if (release.PACKAGE / 'application.json').exists():
             self.assertEqual(release.verify_applied()['refs'],
                              [f'12:{verse}' for verse in range(1, 7)])

@@ -632,3 +632,47 @@ marker-free. See[batch12](ENOCH_BATCH12_2026-10-22.md).
 Local full regression passed333tests in891.675seconds (no skips/expectedfailures);
 final10batch12checks passed again after narrow legacy-scope assertion hardening.
 Exact-head CI and later main/public delivery are not inferred from these results.
+
+## Thirteenth bounded application:22existing units, complete11
+
+The next exact paired application covers5:2–5,7–9;11:1–2;12:1–3,5–6;
+21:1–2,4–5,7–10. It changes no file count or release count and leaves5:1/6,
+12:4 and21:3/6 byte-identical holds. Five's ninth unit includes PDF50's six-line
+continuation beforeVI; the page-map window adds only50 with distinct source-first
+count/span proof. Twenty-one's ninth unit now includes its complete question,
+first-person reply and painful-torment continuation. Eleven alone adds a complete
+imported chapter:392imported-review units,32complete imported chapters,962files.
+These are not392new repairs or proof of all108completion.
+
+XII.2 retains selected daggers and lowconfidence with exact internal explanation.
+An additive, independently checked structured-uncertainty delta fills a missing
+metadata control without changing source, English, notes or other fields/rows.
+A typed legacy21adapter preserves18rawartifacts, originalappliedGitbytes, two
+individual10acceptances and the old clipped9/held6 distinction. Raw historical
+chapter_complete=true is not relabelled as chapterwordingapproval. Two narrow
+obsolete mechanical cases replay their unchanged assertions at7c29, separately
+from current22unit counterproof. The shared historical exporter is unchanged.
+
+The first focused run correctly exposed missing source-registry ingress for
+XII.2's structured control; accepted units are now registered from exact immutable
+review inputs, not canonical-to-source echo. A new regression pins that ingress.
+The same run exposed a new test's wrong provenance key; the assertion now reads
+the actual identity_and_exposure field, with no review evidence modified.
+Final regression, exact-head CI, main and public readback are separate gates.
+See[batch13](ENOCH_BATCH13_2026-10-23.md).
+
+Actual Azure6.1Sol source-only and narrow-control calls are documented with raw
+terminal responses, not invented English review votes. Four source-onlyjobs
+completed12units; the larger11/12exactuploads have unknown provider outcomes and
+were not blindly resent. The21glyphcontrol did not clear its genuine holds.
+The continuing all108 objective remains active.
+
+Initial full batch13 regression ran349tests with two obsolete mechanical gate
+failures, also detected by exact-head CI: old12installedhashes and old5raw-source
+expectation. Both original methods are retained and replayed at7c29, now four
+named historical cases. Current unregistered fallback, partial5accepted ingress
+and strict five-unit12successor/held4 counterproof are separately required.
+The detached12declaration preserves all original raw artifacts and currentbatch13
+receipts/candidates byte-for-byte; it does not invent independent legacy passes.
+Final corrected-head verification remains required; an initial failed suite is
+not reported as a pass.

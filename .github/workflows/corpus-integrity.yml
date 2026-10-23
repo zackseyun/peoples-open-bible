@@ -121,6 +121,10 @@ jobs:
           git fetch --no-tags --depth=2 origin 3e0060dfff08b37967ecd3250fb850673b26fde4
           git fetch --no-tags --depth=1 origin d817122009b7f4710903b2cdc1abbf08a14d8363
           git fetch --no-tags --depth=1 origin af21d2ccfa20d3df47ac633c3d591a688d7c2c01
+          # Partial5/21 retains original21 applied bytes and exact pre-successor gates.
+          git fetch --no-tags --depth=1 origin f59737b6fe9071b9f98c2a1b75375518d508debf
+          git fetch --no-tags --depth=1 origin 0eba75255fa8d6ebefcf4fc79ef1e4b405ab442e
+          git fetch --no-tags --depth=1 origin 7c290e9d069ccabdb91eeccfd82ab592c80aef31
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -276,6 +280,10 @@ jobs:
           python -m unittest discover -s tests -p 'test_enoch_full_repair_batch10.py'
           python -m unittest discover -s tests -p 'test_enoch_full_repair_batch11.py'
           python -m unittest discover -s tests -p 'test_enoch_full_repair_batch12.py'
+          python -m unittest discover -s tests -p 'test_enoch_full_repair_batch13.py'
+          python -m unittest discover -s tests -p 'test_enoch_12_transaction.py'
+          python -m unittest discover -s tests -p 'test_enoch_low_risk_transaction.py'
+          python -m unittest discover -s tests -p 'test_enoch21_10_application.py'
           python -m unittest discover -s tests -p 'test_enoch32_north_correction.py'
           python -m unittest discover -s tests -p 'test_enoch32_5_application.py'
           python -m unittest discover -s tests -p 'test_enoch_legacy97_evidence.py'

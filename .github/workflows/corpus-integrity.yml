@@ -116,6 +116,11 @@ jobs:
           git fetch --no-tags --depth=1 origin f082317ff0dad41b3ca856f4fd3e3a932f9d5748
           git fetch --no-tags --depth=1 origin af46c46b41f66ca4c2383e0c251fd29ea3695a90
           git fetch --no-tags --depth=1 origin 49ed7c66243a8e7697d684dad283b07dbf93666c
+          # Partial32 binds two original applied records and its pre-successor tree.
+          # Depth2 retains the original north-correction parent preimage as well.
+          git fetch --no-tags --depth=2 origin 3e0060dfff08b37967ecd3250fb850673b26fde4
+          git fetch --no-tags --depth=1 origin d817122009b7f4710903b2cdc1abbf08a14d8363
+          git fetch --no-tags --depth=1 origin af21d2ccfa20d3df47ac633c3d591a688d7c2c01
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -270,6 +275,9 @@ jobs:
           python -m unittest discover -s tests -p 'test_enoch_full_repair_batch09.py'
           python -m unittest discover -s tests -p 'test_enoch_full_repair_batch10.py'
           python -m unittest discover -s tests -p 'test_enoch_full_repair_batch11.py'
+          python -m unittest discover -s tests -p 'test_enoch_full_repair_batch12.py'
+          python -m unittest discover -s tests -p 'test_enoch32_north_correction.py'
+          python -m unittest discover -s tests -p 'test_enoch32_5_application.py'
           python -m unittest discover -s tests -p 'test_enoch_legacy97_evidence.py'
           python -m unittest discover -s tests -p 'test_enoch_source_read_scope.py'
           python -m unittest discover -s tests -p 'test_enoch_18_frozen_gate.py'

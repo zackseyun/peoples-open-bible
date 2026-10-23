@@ -5,6 +5,9 @@ P=ROOT/'sources/textual_restoration/applications/enoch_32_review_hold_20261017'
 Y=ROOT/'translation/extra_canonical/1_enoch/032/001.yaml'
 class Enoch32NorthCorrection(unittest.TestCase):
  def test_bounded_correction_not_publication(self):
+  if (ROOT/'sources/textual_restoration/applications/enoch_full_repair_batch12_20261022/application.json').is_file():
+   from tools.enoch.replay_32_pre_successor import replay
+   self.assertTrue(replay('north')['passed']);return
   x=yaml.safe_load(Y.read_text());a=json.loads((P/'translation-correction.json').read_text())
   self.assertIn('these aromatics, toward the north',x['translation']['text'])
   self.assertNotIn('south',x['translation']['text'].lower())

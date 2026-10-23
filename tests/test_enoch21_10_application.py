@@ -7,6 +7,14 @@ R=ROOT/'sources/textual_restoration/applications/enoch_21_review_hold_20261017'
 Y=ROOT/'translation/extra_canonical/1_enoch/021/010.yaml'
 class Enoch2110Application(unittest.TestCase):
  def test_unit_exact_and_chapter_held(self):
+  if (ROOT/'sources/textual_restoration/applications/enoch_full_repair_batch13_20261023/application.json').is_file():
+   # Original exact-installed assertions stay unchanged below and run at7c29.
+   # Separate batch13 counterproof verifies the actual current paired payload.
+   from tools.enoch.replay_5_21_pre_successor import replay
+   result=replay('individual21')
+   self.assertEqual((result['tests_run'],result['skipped'],result['expected_failures']),(1,0,0))
+   self.assertFalse(result['current_corpus_validated'])
+   return
   x=yaml.safe_load(Y.read_text());a=json.loads((P/'application.json').read_text())
   source={r.verse:r.text for r in verse_parser.parse_chapter(21)[0]}
   self.assertEqual(x['source']['text'],source[10])

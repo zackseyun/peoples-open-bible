@@ -21,6 +21,20 @@ CONTEXT=[(13,v)for v in range(4,11)]+[(14,v)for v in range(19,26)]
 def record(c,v):return yaml.load((t.TRANSLATION/f'{c:03d}/{v:03d}.yaml').read_bytes(),Loader=t.LOADER)
 
 
+def assert_current_held_or_exact_later_treatment(test,c,v,old_hash):
+    successor=t.APPLICATIONS/'enoch_full_repair_batch18_20261023'
+    rel=f'{c:03d}/{v:03d}.yaml';ref=f'1 Enoch {c}:{v}'
+    if(c,v)in{(14,2),(14,6),(14,18)}and(successor/'application.json').is_file():
+        # Original batch17 hold was real and its raw/postmap stays unchanged.
+        # Only a separately paired exact whole-unit treatment may change it.
+        manifest=t.load_manifest(successor);proof=verify_current(successor)
+        test.assertEqual(manifest['references'],['1 Enoch 14:2','1 Enoch 14:6','1 Enoch 14:18'])
+        test.assertIn(ref,proof['references']);test.assertEqual(manifest['canonical_baseline_sha256'][rel],old_hash)
+        t.verify_git_preimage(manifest,rel,old_hash)
+        test.assertEqual(t.sha((t.TRANSLATION/rel).read_bytes()),manifest['files'][f'{c:03d}-{v:03d}.candidate.yaml'])
+    else:test.assertEqual(t.sha((t.TRANSLATION/rel).read_bytes()),old_hash)
+
+
 class FullRepairBatch17Test(unittest.TestCase):
     def test_exact17_historical_postmap_and_unchanged_holds_and_context(self):
         result=verify_current(P);m=t.load_manifest(P);receipt=json.loads((P/'application.json').read_text())
@@ -35,7 +49,7 @@ class FullRepairBatch17Test(unittest.TestCase):
         self.assertEqual({r['reference']for r in m['not_applied']},{f'1 Enoch {c}:{v}'for c,v in HOLDS})
         for c,v in HOLDS+CONTEXT:
             rel=f'{c:03d}/{v:03d}.yaml';self.assertEqual(receipt['canonical_after_sha256'][rel],m['canonical_baseline_sha256'][rel])
-            self.assertEqual(t.sha((t.TRANSLATION/rel).read_bytes()),m['canonical_baseline_sha256'][rel])
+            assert_current_held_or_exact_later_treatment(self,c,v,m['canonical_baseline_sha256'][rel])
 
     def test_actual_walls_doorway_judgment_subject_and_negatives(self):
         self.assertIn('The walls of that house',record(14,10)['translation']['text'])
@@ -88,7 +102,12 @@ class FullRepairBatch17Test(unittest.TestCase):
                     self.assertEqual(registry['units'][f'{c}:{v}'],P.name)
                     self.assertEqual(rows[v]['source']['text'],record(c,v)['source']['text'])
                     self.assertIn('/final/',rows[v]['evidence'])
-        for c,v in HOLDS:self.assertNotIn(f'{c}:{v}',registry['units'])
+        for c,v in HOLDS:
+            if v in(2,6,18)and(t.APPLICATIONS/'enoch_full_repair_batch18_20261023/application.json').is_file():
+                self.assertEqual(registry['units'][f'{c}:{v}'],'enoch_full_repair_batch18_20261023')
+                m=t.load_manifest(t.APPLICATIONS/registry['units'][f'{c}:{v}'])
+                assert_current_held_or_exact_later_treatment(self,c,v,m['canonical_baseline_sha256'][f'{c:03d}/{v:03d}.yaml'])
+            else:self.assertNotIn(f'{c}:{v}',registry['units'])
 
     def test_exact_explanations_controls_export_and_prompt(self):
         book=reader.export_extra_canonical_book('ENO');rows={(c['chapter'],v['verse']):v for c in book['chapters']for v in c['verses']}

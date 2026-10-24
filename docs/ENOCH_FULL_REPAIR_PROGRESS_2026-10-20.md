@@ -737,3 +737,24 @@ Because17more genuinely accepted treatments became ready before finalCI, they
 were integrated as a new immutable application instead of being held solely for
 a stable smaller head. Superseded CI handles are not finalpasses. The final
 409-test suite, exact new-head CI pair and actualmain/public delivery are required.
+
+## Local chapter14 critical follow-up, batch18
+
+Three separately paired full-unit treatments14:2/6/18are applied locally. Two
+precisely scoped printedGreek clauses are explicitly disclosed;18instead keeps
+primaryvoice, allthreebracketedcopulas andliteralcircle. Its earlier vision
+proposal stays rejected, and14:8remains a realprimaryglyphhold. No fullchapter25
+or manuscript certificate is fabricated. Actual962-file preimage/postmap and
+rawaccepted/adverse inputs are retained. This is456imported-evidence units,
+34complete imported chapters,99pairedcounts, with fullbookverification false.
+
+Separate actualphoto+blindAzurecounts add20/23/41–44/106/108inventories and repair
+five source lookup windows, withzeroEnglishvotes.107recountiscontextonly. Source
+counts exposed real missing41:8/106:15–19; those have active source-author lanes.
+Full17has a fresh proposed complete packet awaiting distinctpeer. Chapter1
+accepted-subset terminalpunctuation is being checked against nativeprint before
+canonicalpublication; no rawsource/Azureadverse result is overwritten.
+
+Ten batch18focusedtests andten batch17historical/currentcounterproofs pass.
+Fullsuite, exactheadCI, main/public delivery still pending for this localfollowup.
+No inlinefootnotes, art/native/newbrowser/deviceQA or all108completion is claimed.

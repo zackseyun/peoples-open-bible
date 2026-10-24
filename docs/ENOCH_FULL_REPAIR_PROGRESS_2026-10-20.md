@@ -934,3 +934,15 @@ edition chapters; inventory warnings are empty. Full regression, final exact-hea
 CI and main/public delivery for this structural integration remain pending.
 Full43/53/54 language work continues with genuine whole-unit holds, not lexical
 normalization, stylistic rewrite credit or caveat-only approval.
+
+## Local selected-source43:3 successor, batch26
+
+One existing43:3 record now has paired correction of the actual relative hidden
+ending and its complete editorial-star explanation. Full clauses and original
+four-unit accept/hold decisions remain. Identical-source context1 is not rewritten
+or credited; original2/4 holds stay tied to their original inputs. A separate new
+4JP2 review is not part of this application. The exact batch05 owner and complete
+965-file preimage are bound; no addition, retirement or full43 certificate occurs.
+Ten focused tests pass. Totals remain475 evidence-backed records,36 complete
+selected-edition chapters and108 count inventories; final regression and delivery
+for these newer changes are still required.

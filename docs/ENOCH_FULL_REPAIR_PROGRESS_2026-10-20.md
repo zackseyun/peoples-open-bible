@@ -823,3 +823,66 @@ no inventory warnings. The separately published web compiler and isolated
 complete-chapter reader exporter are distinct verification surfaces. Superseded
 batch20-only CI is not the final delivery gate; exact new-head CI/main/public
 verification remains pending. Whole26 and27 source-review work continues.
+
+## Verified20/21 delivery and local chapter26 successors
+
+PR402 landed on protected main `ee2a89b5e46db917b59bfa891e127d6bf98f5cfc`, with
+the identical tested tree after both exact-head CI successes and496 local tests.
+Main was fast-forwarded and pushed. Exact automatic publisher40087883641 succeeded;
+public readback verified426 latest English references,360 reviewed-explanation
+units,424 definitions and retired105 addresses absent. The public web compiler
+did include new106:15/16; the isolated complete-chapter reader exporter remains
+a separate surface. No browser/device or all108 completion was inferred.
+
+Batch22 now applies five paired complete26:1/2/3/5/6 treatments while4 stays held.
+Actual moist replaces shaded; editorial botanical boundaries, higher/flow
+relations, selected negative dependency and three wonders remain. Two exact
+metadata26v3 preimages are explicitly superseded; historical old models/pass
+counts and metadata's zero-language scope remain unchanged. The source-only
+full-six inventory does not approve4 or certify the chapter. Live comparison
+ordering now places old metadata before its newer language successors, not last.
+
+Current local totals:470 reviewed-evidence records,35 complete selected-edition
+chapters,102 count inventories,964 files and82 address gaps; no inventory warnings.
+Fourteen new focused tests, metadata/legacy/predecessor counterproofs and delivery
+ordering pass. Full final regression, exact-head CI and main/public delivery for
+this new application remain required. Whole33 is awaiting distinct peer; a new
+27:4 exact language pair is retained pending a conservative confidence-field
+serialization follow-up, not fabricated extra English passes. Original27's
+held/incomplete placeholders are not a full-five language review.
+
+## Local exact27:4 and a confidence-only follow-up, batch23
+
+An exact new complete27:4 source/English/two-note pair is now applied. Original
+language input9ff5d5... remains the primary two-actor evidence. A separately
+approved sole qualifier change0.91→medium ineead1fa... has zero extra English,
+provider or photo passes; no raw input or empty metadata scan map is rewritten.
+The fixed composite verifier enforces original full language evidence plus the
+exact conservative metadata delta, not a generic metadata-to-language approval.
+The source loader projects the qualifier from immutable inputs, not canonical
+feedback. Other27diagnostics remain unapproved/incomplete, not full-five passes.
+
+The inherited-object ambiguity is not filled with an unprinted inheritance.
+The existing declared count5 plus independently checked source-count profile
+bounds the one approved address; no full-five certificate is fabricated.
+Local totals471/964 evidence-backed records,35/108 complete selected-edition
+chapters,102/108 count inventories and82 address gaps; no inventory warnings.
+Twelve new focused tests pass. Batch22-only512 regression passed; the actual
+combined final suite, exact-head CI and main/public delivery remain required.
+
+## Local three-unit chapter33 follow-up, batch24
+
+Complete paired33:2/3/4 source/English/explanation treatments are applied. Actual
+east and controlled derived-rest wording remain qualified; how/fullgate-count,
+exact quantity, real doubled-one star (not apparatus31), full ordered list,
+selected Urel and I-wrote3 versus he-wrote4 are retained. Both original fullfour
+inputs/decisions and additive corrections remain; source1 bird descriptor stays
+a real whole hold with unchanged canonical bytes. No imagined plumage/teeth,
+modern geography/astronomy or wholechapter certificate is supplied.
+
+Twelve new focused checks and the actual combined536-test local suite pass.
+The current local state is474/964 evidence-backed records,35/108 complete
+selected-edition chapters,102/108 count inventories and82 address gaps, with no
+inventory warnings. Nine reviewed updates across26/27/33 now require final exact-
+head CI, protected main and exact live delivery. Whole42 author/peer work and
+whole43 author/peer work continue with primary controls and honest holds.

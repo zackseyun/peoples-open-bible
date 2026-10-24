@@ -39,6 +39,8 @@ def source_row(package: Path, manifest: dict, chapter: int, verse: int) -> dict:
     if any(source != sources[0] for source in sources[1:]):
         raise ValueError(f'Accepted source inputs differ: {ref}')
     source = sources[0]
+    from tools.enoch.confidence27_evidence import qualified_source
+    source = qualified_source(package,manifest,ref,source)
     candidate_name = f'{chapter:03d}-{verse:03d}.candidate.yaml'
     candidate = yaml.load(transaction.artifact(package, candidate_name).read_bytes(),
                           Loader=transaction.LOADER)
@@ -49,9 +51,9 @@ def source_row(package: Path, manifest: dict, chapter: int, verse: int) -> dict:
         raise ValueError(f'Reviewed source identity/payload differs: {ref}')
     if 'confidence' in source and candidate['source'].get('confidence')!=source['confidence']:
         raise ValueError(f'Reviewed source confidence differs: {ref}')
+    evidence=manifest.get('confidence_metadata_evidence') or manifest['review_bindings'][ref][0]['input']
     return {'reference': ref, 'verse':verse, 'source':source,
-            'evidence':str(package.relative_to(transaction.ROOT)) + '/' +
-                       manifest['review_bindings'][ref][0]['input']}
+            'evidence':str(package.relative_to(transaction.ROOT)) + '/' + evidence}
 
 
 def load_chapter(chapter: int) -> list[dict] | None:

@@ -106,7 +106,10 @@ class FullRepairBatch15Test(unittest.TestCase):
         for ref,case in d['cases'].items():
             c,v=t.parse_ref(ref);rel=f'{c:03d}/{v:03d}.yaml'
             self.assertEqual(m['canonical_baseline_sha256'][rel],d['files'][case['candidate']])
-        proof=metadata.verify(applied=True)
+        # Preserve the original metadata-only transaction, without freezing
+        # current26:5/6 against a later exact paired language successor.
+        proof=metadata.verify(check_targets=False,applied=True)
+        self.assertTrue(metadata.verify_current(t.APPLICATIONS/metadata.NAME)['current_targets_or_reviewed_successors_verified'])
         self.assertEqual(proof['new_full_source_English_reviews'],0)
         self.assertEqual(proof['historical_payloads']['1 Enoch 26:6']['historical_full_final_payload_accepting_passes'],[2])
 

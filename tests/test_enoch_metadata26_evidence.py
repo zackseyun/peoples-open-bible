@@ -14,6 +14,16 @@ from tools.enoch.build_translation_prompt import build_enoch_prompt
 
 
 class Metadata26Test(unittest.TestCase):
+    def assert_exact_language_successor(self,ref):
+        successor=t.APPLICATIONS/'enoch_full_repair_batch22_20261024'
+        self.assertEqual(t.sha((successor/'manifest.json').read_bytes()),'74d1340efb155ac8a266f751c49f212f1ecae8d915fd107dc03b933b4f08470b')
+        manifest=t.load_manifest(successor);case=m.read_index()['cases'][ref]
+        self.assertEqual(manifest['supersedes'][ref],{'package':m.NAME,'manifest_sha256':t.sha((t.APPLICATIONS/m.NAME/'manifest.json').read_bytes()),'candidate_sha256':m.read_index()['files'][case['candidate']]})
+        c,v=t.parse_ref(ref);rel=f'{c:03d}/{v:03d}.yaml'
+        self.assertEqual(manifest['canonical_baseline_sha256'][rel],m.read_index()['files'][case['candidate']])
+        self.assertEqual(t.sha((t.TRANSLATION/rel).read_bytes()),manifest['files'][f'{c:03d}-{v:03d}.candidate.yaml'])
+        self.assertIn(ref,m.verify_current(t.APPLICATIONS/m.NAME)['references'])
+
     def test_actual_historical_full_payload_counts_not_new_metadata_language_votes(self):
         d=m.read_index();_,proofs=m._originals(d)
         self.assertEqual(proofs[m.REFS[0]]['historical_full_final_payload_accepting_passes'],[1,2])
@@ -30,9 +40,12 @@ class Metadata26Test(unittest.TestCase):
             self.assertFalse(current['graphic_publication_approved'])
 
     def test_every_source_semantic_field_and_entire_translation_remain_exact(self):
-        d=m.read_index();old,_=m._originals(d);result=m.verify(applied=True)
+        d=m.read_index();old,_=m._originals(d);result=m.verify(check_targets=False,applied=True)
         for ref,case in d['cases'].items():
-            c,v=t.parse_ref(ref);current=yaml.load((t.TRANSLATION/f'{c:03d}/{v:03d}.yaml').read_bytes(),Loader=t.LOADER)
+            # Exact metadata-only claims belong to the historical applied
+            # candidate; current language changes need their own paired proof.
+            c,v=t.parse_ref(ref);current=yaml.load(t.artifact(t.ROOT,case['candidate']).read_bytes(),Loader=t.LOADER)
+            self.assert_exact_language_successor(ref)
             self.assertEqual(current['translation'],old[ref]['translation'])
             for key in ('text','edition','language','pages','confidence','validation'):
                 self.assertEqual(current['source'][key],old[ref]['source'][key])
@@ -72,8 +85,13 @@ class Metadata26Test(unittest.TestCase):
         book=reader.export_extra_canonical_book('ENO');public={v['verse']:v for c in book['chapters']if c['chapter']==26 for v in c['verses']}
         for v in(5,6):
             d=yaml.load((t.TRANSLATION/f'026/{v:03d}.yaml').read_bytes(),Loader=t.LOADER)
-            self.assertEqual(override[v]['source'],d['source'])
-            self.assertIn('metadata-delta-on-exact-historical-payload',override[v]['evidence'])
+            self.assert_exact_language_successor(f'1 Enoch 26:{v}')
+            self.assertIn('enoch_full_repair_batch22_20261024/final/',override[v]['evidence'])
+            for key in('text','language','pages','confidence','transcription_uncertainties','additional_translation_input'):
+                if key in d['source']:self.assertEqual(override[v]['source'].get(key),d['source'][key])
+            historical={r['verse']:r for r in m.source_overrides(26)}
+            self.assertIn('metadata-delta-on-exact-historical-payload',historical[v]['evidence'])
+            self.assertEqual(historical[v]['source'],m.verify(check_targets=False,applied=True)['metadata_candidate_source'][f'1 Enoch 26:{v}'])
             self.assertEqual(public[v]['footnotes'],d['translation']['footnotes'])
             self.assertEqual(public[v]['source_critical']['note'],d['source']['note'])
             if v==5:
@@ -100,6 +118,7 @@ class Metadata26Test(unittest.TestCase):
             raw=path.read_bytes();path.write_bytes(raw+b'\n# arbitrary unreviewed edit\n')
             with patch.object(t,'TRANSLATION',root/'1_enoch'):
                 with self.assertRaisesRegex(ValueError,'current canonical target differs'):m.verify(applied=True)
+                with self.assertRaises(ValueError):m.verify_current(t.APPLICATIONS/m.NAME)
                 self.assertNotIn((26,5),m.current_units())
                 rows=m.source_overrides(26);self.assertEqual(len(rows),2)
                 self.assertNotIn('arbitrary unreviewed edit',str(rows))

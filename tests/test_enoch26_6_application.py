@@ -35,9 +35,12 @@ class Enoch266Application(unittest.TestCase):
    p=P/f'review-pass{n}';review=json.loads((p/'review.json').read_text());provenance=json.loads((p/'provenance.json').read_text());inp=json.loads((p/'review-input.json').read_text())
    self.assertFalse(review['chapter_complete'])
    self.assertEqual([(r['reference'],r['verdict']) for r in review['reviews']],[('1 Enoch 26:6','accept')])
-   self.assertEqual(inp[0]['source']['text'],yaml.safe_load(Y.read_text())['source']['text'])
+   from tools.enoch import metadata26_evidence as history
+   originals,_=history._originals(history.read_index())
+   self.assertEqual(inp[0]['source']['text'],originals['1 Enoch 26:6']['source']['text'])
    digest=hashlib.sha256((p/'review.json').read_bytes()).hexdigest();self.assertEqual(provenance['review_sha256'],digest);hashes.append(digest)
   app=json.loads((P/'application.json').read_text());self.assertEqual(app['review_sha256'],hashes)
   final=json.loads((P/'review-pass2/review-input.json').read_text())[0]['translation']
-  self.assertEqual(yaml.safe_load(Y.read_text())['translation'],final)
+  self.assertEqual(originals['1 Enoch 26:6']['translation'],final)
+  self.assertEqual(history.verify_current(P)['reviewed_supersessions'][0]['superseded_by'],'enoch_full_repair_batch22_20261024')
 if __name__=='__main__':unittest.main()

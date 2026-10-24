@@ -850,3 +850,22 @@ this new application remain required. Whole33 is awaiting distinct peer; a new
 27:4 exact language pair is retained pending a conservative confidence-field
 serialization follow-up, not fabricated extra English passes. Original27's
 held/incomplete placeholders are not a full-five language review.
+
+## Local exact27:4 and a confidence-only follow-up, batch23
+
+An exact new complete27:4 source/English/two-note pair is now applied. Original
+language input9ff5d5... remains the primary two-actor evidence. A separately
+approved sole qualifier change0.91→medium ineead1fa... has zero extra English,
+provider or photo passes; no raw input or empty metadata scan map is rewritten.
+The fixed composite verifier enforces original full language evidence plus the
+exact conservative metadata delta, not a generic metadata-to-language approval.
+The source loader projects the qualifier from immutable inputs, not canonical
+feedback. Other27diagnostics remain unapproved/incomplete, not full-five passes.
+
+The inherited-object ambiguity is not filled with an unprinted inheritance.
+The existing declared count5 plus independently checked source-count profile
+bounds the one approved address; no full-five certificate is fabricated.
+Local totals471/964 evidence-backed records,35/108 complete selected-edition
+chapters,102/108 count inventories and82 address gaps; no inventory warnings.
+Twelve new focused tests pass. Batch22-only512 regression passed; the actual
+combined final suite, exact-head CI and main/public delivery remain required.

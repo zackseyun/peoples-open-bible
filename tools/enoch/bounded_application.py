@@ -172,6 +172,9 @@ def load_manifest(package: Path) -> dict:
     if 'supersedes_legacy32' in manifest:
         from tools.enoch.legacy32_evidence import validate_declared_successor
         validate_declared_successor(package, manifest)
+    if 'confidence_metadata_evidence' in manifest:
+        from tools.enoch.confidence27_evidence import validate
+        validate(package,manifest)
     return manifest
 
 
@@ -289,9 +292,11 @@ def verify(package: Path, *, applied: bool = False,
                     not row['source'].get('note') or row['source']['note'] not in candidate['source']['note'] or
                     not candidate['translation'].get('footnotes')):
                 raise ValueError(f'Low-confidence critical treatment lacks exact accepted uncertainty/explanation controls: {ref}')
+            from tools.enoch.confidence27_evidence import accepted_confidence
+            confidence=accepted_confidence(package,manifest,ref,row['source'].get('confidence'))
             if any(candidate['source'].get(key) != row['source'].get(key)
                    for key in ('edition', 'language', 'text', 'pages', 'additional_translation_input', 'transcription_uncertainties')) or \
-                    ('confidence' in row['source'] and candidate['source'].get('confidence')!=row['source']['confidence']) or \
+                    ('confidence' in row['source'] and candidate['source'].get('confidence')!=confidence) or \
                     candidate['translation'] != row['translation']:
                 raise ValueError(f'Candidate differs from accepted source/English/notes: {ref}')
         witnesses = candidate.get('enoch_witnesses', {}).get('available_witnesses', [])

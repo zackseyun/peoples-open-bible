@@ -909,3 +909,52 @@ inventory warnings. Twelve focused tests, six historical batch05 checks and
 seven41/44 checks pass. Complete final regression, exact-head CI and main/public
 verification remain pending. Chapter43's independently held units and full53
 source work continue; uncertainty is not silently normalized away.
+
+## Verified complete42 delivery and local completion of structural checking
+
+PR405 landed on protected main170a0d32d78dc2651bcc5b0f7684396e14a70e1a,
+with the identical tested tree after both exact-head CI successes and548 local
+tests. Automatic publisher40133127753 succeeded. Actual public readback verified
+434 latest English references,369 reviewed explanation units,433 definitions and
+retired105 addresses absent. Complete42, including real missing42:3, is published;
+no browser/device or full108 completion is inferred.
+
+The final six count inventories85–90 are locally imported after a source reader's
+cold primary-photo inventory and three blind Azure6.1Sol jobs independently
+matched all142 main-body unit spans. Total source-count coverage is now108/108,
+not108 fully translated chapters. Original physical Greek-only interleaves213/215
+are preserved in author raw evidence and excluded from main-body projections.
+Five exact source windows53/85/88/89/90 gain clipped continuations;53 already had
+an imported paired count and is not credited again. Full-map typed successors
+remain strict. Translation YAML's entire965-file hash map is unchanged.
+
+Nine new focused checks and25 historical count-profile checks passed. Local
+language totals remain475/965 evidence-backed records and36/108 complete selected-
+edition chapters; inventory warnings are empty. Full regression, final exact-head
+CI and main/public delivery for this structural integration remain pending.
+Full43/53/54 language work continues with genuine whole-unit holds, not lexical
+normalization, stylistic rewrite credit or caveat-only approval.
+
+## Local selected-source43:3 successor, batch26
+
+One existing43:3 record now has paired correction of the actual relative hidden
+ending and its complete editorial-star explanation. Full clauses and original
+four-unit accept/hold decisions remain. Identical-source context1 is not rewritten
+or credited; original2/4 holds stay tied to their original inputs. A separate new
+4JP2 review is not part of this application. The exact batch05 owner and complete
+965-file preimage are bound; no addition, retirement or full43 certificate occurs.
+Ten focused tests pass. Totals remain475 evidence-backed records,36 complete
+selected-edition chapters and108 count inventories; final regression and delivery
+for these newer changes are still required.
+
+## Local new43:4 exact JP2 follow-up, batch27
+
+A separately paired new43:4 payload now corrects both actual printed title forms
+and explains their distinction from the apparatus-reported variant. Original
+old4hold decisions remain unchanged; the peer's provisional vowel-label error is
+retained and additively corrected with actual source-shape controls. All complete
+possessive, names, dwelling, belief/title and eternity clauses remain. One existing
+record explicitly supersedes its batch05 owner;3 remains batch26's and2 stays
+held. No extra record, count or complete43 credit is taken. Current totals stay
+475/965 evidence-backed records,36/108 complete selected-edition chapters and
+108/108 paired count inventories; full final regression and delivery remain.

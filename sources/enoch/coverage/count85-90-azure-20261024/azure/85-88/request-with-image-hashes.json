@@ -1,0 +1,189 @@
+{
+  "request_projection": {
+    "model": "gpt-6-1-sol-review",
+    "input": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "input_text",
+            "text": "Independently inspect ONLY the actual supplied Charles1906 selected Ethiopic main-body photographs for requested chapters [85, 86, 87, 88]. Source-ONLY STRUCTURAL COUNT AND UNIT SPANS, not translation or glyph transcription: for each requested chapter, count actual printed numbered units (the first may be unnumbered after a Roman chapter heading), list every unit's actual PDF page(s), following all continuations. Include all complete requested chapters, excluding surrounding chapters. Actual source filename pdf-NNN.png identifies PDF page NNN; printed page numbers differ. Some intervening physical pages may contain Greek comparison or apparatus rather than Ethiopic main text: exclude such pages from Ethiopic unit spans, without dropping continuations on later actual main-text pages. Observe baseline body unit numbers, not raised apparatus labels. Do not import counts from a remembered English Bible, corpus, OCR, canonical YAML, file catalog or another edition. None are supplied. A separate author's count is withheld. No expected counts, unit spans, English candidate, earlier decisions or author reasoning are supplied. Count all units through the next Roman chapter boundary. If any count, numeral, boundary or continuation cannot be verified, hold that whole chapter count and give precise uncertainty rather than guessing. Exclude apparatus from body spans. No source-word or English correctness, human/manuscript certification, canonical edits, artwork, reader release or publication approval. wording_approved AND publication_approved MUST be false. Return only JSON."
+          },
+          {
+            "type": "input_text",
+            "text": "Actual source photo pdf-200.png"
+          },
+          {
+            "type": "input_image",
+            "detail": "high",
+            "image_bytes_sha256": "2bcd6d8eef6cc019585631e32e59f148f58baf7a83ca35945be2e2df37f2c942"
+          },
+          {
+            "type": "input_text",
+            "text": "Actual source photo pdf-201.png"
+          },
+          {
+            "type": "input_image",
+            "detail": "high",
+            "image_bytes_sha256": "1722a97d4cd7ffb6ee11d32f7639091cbb56b6de06533feff2ee565d0095f277"
+          },
+          {
+            "type": "input_text",
+            "text": "Actual source photo pdf-202.png"
+          },
+          {
+            "type": "input_image",
+            "detail": "high",
+            "image_bytes_sha256": "498b672a6d97993b1535862e2c62b231d905ae8116e65a35242ee139d3d2ae39"
+          },
+          {
+            "type": "input_text",
+            "text": "Actual source photo pdf-203.png"
+          },
+          {
+            "type": "input_image",
+            "detail": "high",
+            "image_bytes_sha256": "1352a3bf3e7860af3c3fdc4511fbe3e5d3c2112b193f3223dc37c517973350f4"
+          },
+          {
+            "type": "input_text",
+            "text": "Actual source photo pdf-204.png"
+          },
+          {
+            "type": "input_image",
+            "detail": "high",
+            "image_bytes_sha256": "8a88f8dcca01d0039d6bb66d2407925497ca2134d1ce9062c772f2face807176"
+          },
+          {
+            "type": "input_text",
+            "text": "Actual source photo pdf-205.png"
+          },
+          {
+            "type": "input_image",
+            "detail": "high",
+            "image_bytes_sha256": "3eb528daf96febe5d8401c0e7d0c003e5da400d10dddb9973df273d1401861b8"
+          },
+          {
+            "type": "input_text",
+            "text": "Actual source photo pdf-206.png"
+          },
+          {
+            "type": "input_image",
+            "detail": "high",
+            "image_bytes_sha256": "491fb52249f864179444af0710d982ea32d9d42d86ad0bae1c2b851357e9864f"
+          }
+        ]
+      }
+    ],
+    "reasoning": {
+      "effort": "medium"
+    },
+    "max_output_tokens": 14000,
+    "store": true,
+    "background": true,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "enoch85_90_structural_counts",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "properties": {
+            "chapters": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "chapter": {
+                    "type": "integer",
+                    "enum": [
+                      85,
+                      86,
+                      87,
+                      88
+                    ]
+                  },
+                  "verdict": {
+                    "type": "string",
+                    "enum": [
+                      "accept",
+                      "hold"
+                    ]
+                  },
+                  "actual_printed_unit_count": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  },
+                  "units": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "verse": {
+                          "type": "integer"
+                        },
+                        "pdf_pages": {
+                          "type": "array",
+                          "items": {
+                            "type": "integer"
+                          }
+                        },
+                        "boundary_observation": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "verse",
+                        "pdf_pages",
+                        "boundary_observation"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "uncertainties": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "chapter",
+                  "verdict",
+                  "actual_printed_unit_count",
+                  "units",
+                  "uncertainties"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "excluded_material": {
+              "type": "string"
+            },
+            "limits": {
+              "type": "string"
+            },
+            "wording_approved": {
+              "type": "boolean"
+            },
+            "publication_approved": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "chapters",
+            "excluded_material",
+            "limits",
+            "wording_approved",
+            "publication_approved"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  },
+  "original_full_request_sha256": "25d75b1ecf7228869ee81121592465e150da50abd69d74963d55be5b29c6b4b6",
+  "no_expected_count_or_author_candidate_supplied": true
+}

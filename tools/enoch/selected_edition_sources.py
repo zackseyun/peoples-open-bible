@@ -92,6 +92,7 @@ def load_unit_overrides(chapter: int) -> list[dict]:
     # Match load_chapter: verify each package once within this single read.
     # Never cache across calls; a subsequent read must detect artifact drift.
     packages = {}
+    ending_counts = None
     for key, name in registry.get('units',{}).items():
         c,v = transaction.parse_ref('1 Enoch ' + key)
         if c != chapter:
@@ -108,6 +109,19 @@ def load_unit_overrides(chapter: int) -> list[dict]:
                        if row['chapter'] == c]
             if len(matches) == 1:
                 count = len(matches[0]['units'])
+        if count is None and c in (106,108):
+            # These independently paired, hash-pinned source/count photographs
+            # were imported separately from partial language applications.
+            # Do not invent a full19 language certificate from a five-unit
+            # tail input, infer a count from installed files/OCR, or change
+            # reader release eligibility. Exact language acceptance below is
+            # still required for every separately registered unit.
+            if ending_counts is None:
+                from tools.enoch.count106_108_evidence import load
+                ending_counts = load()
+            certificate = ending_counts.get(c)
+            if certificate and certificate.get('independent_count_confirmation') is True:
+                count = len(certificate['units'])
         if count is None or v > count:
             raise ValueError('Individual source override requires a declared printed count/address')
         output.append(source_row(package,manifest,c,v))

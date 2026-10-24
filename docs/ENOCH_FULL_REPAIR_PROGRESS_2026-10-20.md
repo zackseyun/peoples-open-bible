@@ -800,3 +800,26 @@ clause coordination, created-between supply and closing relation are not made
 publishable by an honest caveat. Missing106:15-19 has a frozen full author packet
 and independent peer work; no unpaired proposal has been installed. Whole26
 author/peer source-first work continues with accurate prior26:5/6 exposure.
+
+## Local missing106 pair, batch21
+
+Actual missing106:15/16 are restored after complete separate author/peer accepts
+of source, English and notes. Selected one-year quantity, repeated destruction,
+three children and repeated survival remain; no Latin duration, unprinted names
+or divine sender is imported. Both original full-five reviews still hold17-19.
+The peer recovered a technical timeout from its durable source checkpoint; that
+interruption and running status are not additional completed review passes.
+
+The independently paired count19 profile now supplies the required address
+bound for individual106source ingress. Exact unit language acceptance is still
+mandatory; no full19 language certificate or reader release eligibility is
+invented from five target units. A missing-count negative test keeps this fail
+closed. Twelve new focused checks pass after that integration fix; a known-broken
+broad run was stopped and retained, and a fresh496-test final suite is required.
+
+Local totals are467/964 evidence-backed records,35/108 complete selected-edition
+chapters,102/108 count inventories and82 unfilled expected address slots, with
+no inventory warnings. The separately published web compiler and isolated
+complete-chapter reader exporter are distinct verification surfaces. Superseded
+batch20-only CI is not the final delivery gate; exact new-head CI/main/public
+verification remains pending. Whole26 and27 source-review work continues.

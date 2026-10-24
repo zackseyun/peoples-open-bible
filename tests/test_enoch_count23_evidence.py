@@ -37,7 +37,12 @@ class Chapter23CountEvidenceTest(unittest.TestCase):
 
     def test_loading_count_observations_does_not_change_any_canonical_bytes(self):
         before=t.corpus_hashes();counts.load();after=t.corpus_hashes()
-        self.assertEqual(before,after);self.assertEqual(len(after),962)
+        # Read-only is an exact before/after byte-map property, not a ban on
+        # separately paired future additions such as106:15/16. Preserve the
+        # old962 snapshot against its actual receipt instead of current files.
+        self.assertEqual(before,after)
+        prior=json.loads((t.APPLICATIONS/'enoch_full_repair_batch19_20261023/application.json').read_text())
+        self.assertEqual(prior['snapshot_file_count'],962)
 
     def test_index_or_original_hold_receipt_drift_is_rejected(self):
         d=json.loads((t.ROOT/counts.INDEX).read_text())

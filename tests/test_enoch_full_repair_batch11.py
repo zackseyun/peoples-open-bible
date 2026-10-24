@@ -13,6 +13,16 @@ P=t.APPLICATIONS/'enoch_full_repair_batch11_20261022'
 def record(c,v):return yaml.load((t.TRANSLATION/f'{c:03d}/{v:03d}.yaml').read_bytes(),Loader=t.LOADER)
 
 class FullRepairBatch11Test(unittest.TestCase):
+ def assert_exact17_successor(self,v):
+  """Preserve batch11's dated claims; permit only the paired full17 successor."""
+  successor=t.APPLICATIONS/'enoch_full_repair_batch20_20261024'
+  self.assertEqual(t.sha((successor/'manifest.json').read_bytes()),'e6ecdc3955bb53a4a108510d0b553a58554fcbd10ce4231cffe23acdd2fbddba')
+  m=t.load_manifest(successor);old=t.load_manifest(P);ref=f'1 Enoch 17:{v}'
+  self.assertEqual(m['supersedes'][ref],{'package':P.name,'manifest_sha256':t.sha((P/'manifest.json').read_bytes()),'candidate_sha256':old['files'][f'017-{v:03d}.candidate.yaml']})
+  self.assertEqual(m['canonical_baseline_sha256'][f'017/{v:03d}.yaml'],old['files'][f'017-{v:03d}.candidate.yaml'])
+  self.assertEqual(t.sha((t.TRANSLATION/f'017/{v:03d}.yaml').read_bytes()),m['files'][f'017-{v:03d}.candidate.yaml'])
+  self.assertIn(ref,verify_current(successor)['references'])
+
  def test_exact29_units_four_restored_records_and_eight_held_preimages(self):
   result=verify_current(P);m=t.load_manifest(P);receipt=json.loads((P/'application.json').read_text())
   self.assertEqual(result['candidate_files'],29);self.assertFalse(result['full_book_verified'])
@@ -113,17 +123,25 @@ class FullRepairBatch11Test(unittest.TestCase):
   m=t.load_manifest(P);self.assertEqual({c['chapter']:len(c['units'])for c in m['source_only_count_inventories']},{17:8,71:17})
   for ref in m['references']:
    c,v=t.parse_ref(ref)
-   if c in(17,71):self.assertFalse(record(c,v)['source_correction']['selected_edition_chapter_reviewed'])
+   if c==17:
+    historical=yaml.load((P/f'017-{v:03d}.candidate.yaml').read_bytes(),Loader=t.LOADER)
+    self.assertFalse(historical['source_correction']['selected_edition_chapter_reviewed'])
+    self.assert_exact17_successor(v)
+    self.assertTrue(record(c,v)['source_correction']['selected_edition_chapter_reviewed'])
+   elif c==71:self.assertFalse(record(c,v)['source_correction']['selected_edition_chapter_reviewed'])
   self.assertIn('You are the Son of Man',record(71,14)['translation']['text']);self.assertIn('will not leave you',record(71,14)['translation']['text'])
   self.assertIn('Their dwelling will be with you',record(71,16)['translation']['text']);self.assertIn('that Son of Man',record(71,17)['translation']['text'])
 
  def test_language_id_normalization_changes_no_source_glyph_or_english(self):
   m=t.load_manifest(P)
   for v in(7,8):
-   current=record(17,v);old=yaml.load((P/f'history/unpublished-local-language-defect/017-{v:03d}.candidate.yaml').read_bytes(),Loader=t.LOADER)
+   # This exact normalization happened at batch11. A separately paired full17
+   # now legitimately changes source/English, not that historical receipt.
+   current=yaml.load((P/f'017-{v:03d}.candidate.yaml').read_bytes(),Loader=t.LOADER);old=yaml.load((P/f'history/unpublished-local-language-defect/017-{v:03d}.candidate.yaml').read_bytes(),Loader=t.LOADER)
    self.assertEqual(old['source']['language'],'Geʿez');self.assertEqual(current['source']['language'],'Geez')
    a=copy.deepcopy(current['source']);b=copy.deepcopy(old['source']);a.pop('language');b.pop('language');self.assertEqual(a,b)
    self.assertEqual(current['translation'],old['translation']);self.assertTrue(all('ch17-language-id'in b['input']for b in m['review_bindings'][f'1 Enoch 17:{v}']))
+   self.assert_exact17_successor(v)
   with tempfile.TemporaryDirectory()as directory:
    target=Path(directory)/'package';shutil.copytree(P,target);path=target/'017-007.candidate.yaml';d=yaml.load(path.read_bytes(),Loader=t.LOADER);d['source']['language']='Geʿez';path.write_text(yaml.safe_dump(d,allow_unicode=True,sort_keys=False))
    manifest=json.loads((target/'manifest.json').read_text());manifest['files'][path.name]=t.sha(path.read_bytes());(target/'manifest.json').write_text(json.dumps(manifest))
@@ -145,13 +163,16 @@ class FullRepairBatch11Test(unittest.TestCase):
    raw=(prior/f'017-{v:03d}.candidate.yaml').read_bytes();digest=t.sha(raw)
    self.assertEqual(digest,old_manifest['files'][f'017-{v:03d}.candidate.yaml'])
    self.assertEqual(m['canonical_baseline_sha256'][f'017/{v:03d}.yaml'],digest)
-   self.assertEqual(record(17,v)['review_history'][0]['sha256'],digest)
+   applied=yaml.load((P/f'017-{v:03d}.candidate.yaml').read_bytes(),Loader=t.LOADER)
+   self.assertEqual(applied['review_history'][0]['sha256'],digest)
+   self.assert_exact17_successor(v)
+   self.assertEqual(record(17,v)['review_history'][0]['sha256'],m['files'][f'017-{v:03d}.candidate.yaml'])
    self.assertNotEqual(t.sha((t.TRANSLATION/f'017/{v:03d}.yaml').read_bytes()),digest)
   # Raw continuation evidence remains available independently of accepted source ingress.
   from tools.enoch import verse_parser
   raw17=next(r for r in verse_parser.parse_ocr_chapter(17)[0]if r.verse==7)
   self.assertIn('ch18.txt',raw17.chapter_file)
-  accepted=verse_parser.load_verse(17,7)[0];self.assertIn('enoch_full_repair_batch11',accepted.chapter_file)
+  accepted=verse_parser.load_verse(17,7)[0];self.assertIn('enoch_full_repair_batch20',accepted.chapter_file)
   self.assertEqual(record(17,7)['source']['pages'],[84,86])
 
  def test_current_progress_and_delivery_limits_not_whole_book_certificate(self):

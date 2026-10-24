@@ -775,3 +775,51 @@ evidence-inventory warnings and full-book completion still false. Twelve new
 focused tests pass. Full regression, exact-head CI and main/public delivery are
 pending. Chapter17 full-peer and missing 106:15-19 paired-source work continue;
 41:8 remains a source-author task, not a familiar-English fill.
+
+## Verified batch18-19 delivery and local full17 successor
+
+PR401 passed both exact-head CI runs, all462 local Enoch tests and14 fresh
+remote-filtered/shallow baseline checks. Normal protected squash landed on
+main `d03dadea03d61bccea631399659c794532d619fd` with the identical tested tree;
+local main was fast-forwarded and pushed. The automatic exact-main publisher
+succeeded. Public readback verified422 latest-candidate English references,
+356 reviewed-explanation units,423 exact definitions and all retired wrong105
+addresses absent. No browser/device or all108 certification was inferred.
+
+Batch20 now applies all8 separately paired chapter17 payloads, with six explicit
+batch11 supersessions and two new evidence units17:3/6. Low/critical qualifications
+remain essential at3/4/6/7. The old normalization/partial17 tests preserve their
+historical applied bytes and separately require the exact reviewed successor.
+Source-only26/27/33 inventories add three count checks and typed17/26 window
+fixes add no English votes. Current local progress:465/962 evidence-backed units,
+35/108 complete selected-edition chapters,102/108 count inventories, no inventory
+warnings. The full goal remains active and incomplete.
+
+Missing41:8 has exact author/peer whole holds; provisional opening inflection,
+clause coordination, created-between supply and closing relation are not made
+publishable by an honest caveat. Missing106:15-19 has a frozen full author packet
+and independent peer work; no unpaired proposal has been installed. Whole26
+author/peer source-first work continues with accurate prior26:5/6 exposure.
+
+## Local missing106 pair, batch21
+
+Actual missing106:15/16 are restored after complete separate author/peer accepts
+of source, English and notes. Selected one-year quantity, repeated destruction,
+three children and repeated survival remain; no Latin duration, unprinted names
+or divine sender is imported. Both original full-five reviews still hold17-19.
+The peer recovered a technical timeout from its durable source checkpoint; that
+interruption and running status are not additional completed review passes.
+
+The independently paired count19 profile now supplies the required address
+bound for individual106source ingress. Exact unit language acceptance is still
+mandatory; no full19 language certificate or reader release eligibility is
+invented from five target units. A missing-count negative test keeps this fail
+closed. Twelve new focused checks pass after that integration fix; a known-broken
+broad run was stopped and retained, and a fresh496-test final suite is required.
+
+Local totals are467/964 evidence-backed records,35/108 complete selected-edition
+chapters,102/108 count inventories and82 unfilled expected address slots, with
+no inventory warnings. The separately published web compiler and isolated
+complete-chapter reader exporter are distinct verification surfaces. Superseded
+batch20-only CI is not the final delivery gate; exact new-head CI/main/public
+verification remains pending. Whole26 and27 source-review work continues.

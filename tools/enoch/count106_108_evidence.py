@@ -88,7 +88,9 @@ def verify_current_windows():
     d,after=evidence();raw=t.artifact(t.ROOT,PATH).read_bytes();current=json.loads(raw)
     # Any future legitimate map edit needs a separately pinned successor, not a
     # permissive ignore of arbitrary changes outside the three owned arrays.
-    if t.sha(raw)!=d['files'][d['artifact_prefix']+'/page-map-after.json']:
+    from tools.enoch.count26_27_33_evidence import window_successor as next_window
+    expected=next_window(d['files'][d['artifact_prefix']+'/page-map-after.json'])
+    if t.sha(raw)!=expected:
         raise ValueError('Current full source map needs an explicit reviewed window successor')
     for c in(106,107):
         key=f'{c:03d}'

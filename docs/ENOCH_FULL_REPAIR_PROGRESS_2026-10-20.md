@@ -869,3 +869,20 @@ Local totals471/964 evidence-backed records,35/108 complete selected-edition
 chapters,102/108 count inventories and82 address gaps; no inventory warnings.
 Twelve new focused tests pass. Batch22-only512 regression passed; the actual
 combined final suite, exact-head CI and main/public delivery remain required.
+
+## Local three-unit chapter33 follow-up, batch24
+
+Complete paired33:2/3/4 source/English/explanation treatments are applied. Actual
+east and controlled derived-rest wording remain qualified; how/fullgate-count,
+exact quantity, real doubled-one star (not apparatus31), full ordered list,
+selected Urel and I-wrote3 versus he-wrote4 are retained. Both original fullfour
+inputs/decisions and additive corrections remain; source1 bird descriptor stays
+a real whole hold with unchanged canonical bytes. No imagined plumage/teeth,
+modern geography/astronomy or wholechapter certificate is supplied.
+
+Twelve new focused checks and the actual combined536-test local suite pass.
+The current local state is474/964 evidence-backed records,35/108 complete
+selected-edition chapters,102/108 count inventories and82 address gaps, with no
+inventory warnings. Nine reviewed updates across26/27/33 now require final exact-
+head CI, protected main and exact live delivery. Whole42 author/peer work and
+whole43 author/peer work continue with primary controls and honest holds.

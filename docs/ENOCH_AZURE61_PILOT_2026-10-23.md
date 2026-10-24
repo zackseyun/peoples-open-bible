@@ -110,3 +110,20 @@ arrays were corrected; see[the exact scope](ENOCH_SOURCE_WINDOWS_2026-10-23.md).
 Known cumulative reported usage is112,076tokens, still not complete billing.
 This count success is not17Geʽez/English approvals or resolution of the earlier
 glyph/translation holds. Neither older unknown request was retried.
+
+
+## Ending and chapter20 independent counts
+
+Two additional **fresh** source-only count scopes completed.106–108returned
+19/3/15units,37matching independently frozen parent spans; actual handle
+`resp_0089cd11ad8cf9ad006adbff33ba0481959dad2fc1375e2297` reported11,746tokens.
+Only106/108are newly registered counts;107remains context under its older full
+language certificate. The106/107source lookup windows were corrected with a
+separate exact two-array receipt, not an amendment of the older three-array map.
+
+Chapter20returned7units, all on90, matching the original distinct source-first
+observer, with no expected roster/count/English supplied to the API. Actual
+handle`resp_080cc63578dfd429006adc071713ec8194a946b4a5a3457a03` reported3,959tokens.
+Its genuine20:6wording hold remains. Known cumulative reported pilot usage is
+127,781tokens, not complete billing. No new language votes were imported; no
+older unknown requests, resource changes or artwork publication followed.

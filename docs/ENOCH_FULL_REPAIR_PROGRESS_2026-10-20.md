@@ -909,3 +909,28 @@ inventory warnings. Twelve focused tests, six historical batch05 checks and
 seven41/44 checks pass. Complete final regression, exact-head CI and main/public
 verification remain pending. Chapter43's independently held units and full53
 source work continue; uncertainty is not silently normalized away.
+
+## Verified complete42 delivery and local completion of structural checking
+
+PR405 landed on protected main170a0d32d78dc2651bcc5b0f7684396e14a70e1a,
+with the identical tested tree after both exact-head CI successes and548 local
+tests. Automatic publisher40133127753 succeeded. Actual public readback verified
+434 latest English references,369 reviewed explanation units,433 definitions and
+retired105 addresses absent. Complete42, including real missing42:3, is published;
+no browser/device or full108 completion is inferred.
+
+The final six count inventories85–90 are locally imported after a source reader's
+cold primary-photo inventory and three blind Azure6.1Sol jobs independently
+matched all142 main-body unit spans. Total source-count coverage is now108/108,
+not108 fully translated chapters. Original physical Greek-only interleaves213/215
+are preserved in author raw evidence and excluded from main-body projections.
+Five exact source windows53/85/88/89/90 gain clipped continuations;53 already had
+an imported paired count and is not credited again. Full-map typed successors
+remain strict. Translation YAML's entire965-file hash map is unchanged.
+
+Nine new focused checks and25 historical count-profile checks passed. Local
+language totals remain475/965 evidence-backed records and36/108 complete selected-
+edition chapters; inventory warnings are empty. Full regression, final exact-head
+CI and main/public delivery for this structural integration remain pending.
+Full43/53/54 language work continues with genuine whole-unit holds, not lexical
+normalization, stylistic rewrite credit or caveat-only approval.

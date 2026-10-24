@@ -90,6 +90,8 @@ def verify_current_windows():
     # permissive ignore of arbitrary changes outside the three owned arrays.
     from tools.enoch.count26_27_33_evidence import window_successor as next_window
     expected=next_window(d['files'][d['artifact_prefix']+'/page-map-after.json'])
+    from tools.enoch.count85_90_evidence import window_successor as last_window
+    expected=last_window(expected)
     if t.sha(raw)!=expected:
         raise ValueError('Current full source map needs an explicit reviewed window successor')
     for c in(106,107):

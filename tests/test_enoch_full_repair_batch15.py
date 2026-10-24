@@ -128,9 +128,16 @@ class FullRepairBatch15Test(unittest.TestCase):
     def test_page_windows_only_two_arrays_change_and_actual_pair_is_bound(self):
         p=t.ROOT/'sources/enoch/ethiopic/page_map.json';proof=json.loads((WINDOW/'application-proof.json').read_text())
         baseline=subprocess.check_output(['git','show',proof['source_baseline_git_commit']+':'+str(p.relative_to(t.ROOT))],cwd=t.ROOT)
-        self.assertEqual(t.sha(baseline),proof['before_sha256']);self.assertEqual(t.sha(p.read_bytes()),proof['after_sha256'])
+        self.assertEqual(t.sha(baseline),proof['before_sha256'])
+        # Retain the complete original two-array assertion against its actual
+        # applied main snapshot. Later41/42/44 windows are separately reviewed,
+        # not an amendment to this raw13/14 receipt or permission to alter it.
+        applied=subprocess.check_output(['git','show','dfd1b8d7fae6dec36efebb67c0f923368150bf16:'+str(p.relative_to(t.ROOT))],cwd=t.ROOT)
+        self.assertEqual(t.sha(applied),proof['after_sha256'])
         self.assertEqual(proof['after_sha256'],'3767ebc1bb19abf174afe21aa7c992af551853cbefa358ee12f1cc18a4a19800')
-        old=json.loads(baseline);new=json.loads(p.read_text())
+        old=json.loads(baseline);new=json.loads(applied);current=json.loads(p.read_text())
+        for c in('013','014'):
+            self.assertEqual(current['editions']['charles_1906']['chapters'][c],new['editions']['charles_1906']['chapters'][c])
         self.assertEqual(new['editions']['charles_1906']['chapters']['013']['pages'],[70,72])
         self.assertEqual(new['editions']['charles_1906']['chapters']['014']['pages'],[72,74,76,78])
         new['editions']['charles_1906']['chapters']['013']['pages']=[70]

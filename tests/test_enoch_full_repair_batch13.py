@@ -270,7 +270,11 @@ class FullRepairBatch13Test(unittest.TestCase):
     def test_progress_does_not_close_the_book_or_partial_chapters(self):
         report=build()
         self.assertEqual(report['evidence_inventory_warnings'],[])
-        self.assertEqual(report['canonical_file_count'],962)
+        # Count current files without freezing a dated snapshot against later
+        # independently paired restorations. The old receipt stays exact.
+        self.assertEqual(report['canonical_file_count'],len(t.corpus_hashes()))
+        historical=json.loads((P/'application.json').read_text())
+        self.assertEqual(historical['snapshot_file_count'],962)
         self.assertIn(11,report['chapters_with_complete_imported_selected_edition_review'])
         for c in (5,12,21):self.assertNotIn(c,report['chapters_with_complete_imported_selected_edition_review'])
         self.assertFalse(report['completion_proven'])

@@ -50,8 +50,12 @@ class Batch26Test(unittest.TestCase):
 
     def test_identical_source_context1_not_rewritten_and_holds2_4_unchanged(self):
         m=t.load_manifest(P)
-        for v in(1,2,4):
+        for v in(1,2):
             self.assertEqual(t.sha((t.TRANSLATION/f'043/{v:03d}.yaml').read_bytes()),m['canonical_baseline_sha256'][f'043/{v:03d}.yaml']);self.assertFalse((P/f'043-{v:03d}.candidate.yaml').exists())
+        # OriginalB26 did not change4. Only exactB27 may now supersede it.
+        receipt=json.loads((P/'application.json').read_text());self.assertEqual(receipt['canonical_after_sha256']['043/004.yaml'],m['canonical_baseline_sha256']['043/004.yaml'])
+        from test_enoch_full_repair_batch27 import assert_current4
+        assert_current4(self)
         rows=json.loads((P/'final/ch43-full/review-input.json').read_text());old=yaml.load((OLD/'043-001.candidate.yaml').read_bytes(),Loader=t.LOADER)
         self.assertEqual(rows[0]['source']['text'],old['source']['text']);self.assertEqual(m['not_applied'][0]['verdicts'],['accept','accept']);self.assertIn('stylistic',m['not_applied'][0]['reason'])
         self.assertEqual(m['chapter_inventories'],[]);self.assertEqual(m['source_only_count_inventories'][0]['units'],[1,2,3,4])
@@ -59,7 +63,9 @@ class Batch26Test(unittest.TestCase):
     def test_partial_registry_source_prompt_and_existing_details_export(self):
         from tools.enoch.selected_edition_sources import registry_data
         reg=registry_data();self.assertNotIn('43',reg['chapters']);self.assertEqual(reg['units']['43:3'],P.name)
-        for v in(1,4):self.assertEqual(reg['units'][f'43:{v}'],OLD.name)
+        self.assertEqual(reg['units']['43:1'],OLD.name)
+        from test_enoch_full_repair_batch27 import assert_current4
+        assert_current4(self)
         d=record(3);out=reader._export_record_verse(3,d);prompt=build_enoch_prompt(43,3)
         self.assertEqual(out['text'],d['translation']['text']);self.assertEqual(out['footnotes'],d['translation']['footnotes']);self.assertEqual(out['footnote_review'],reader.PROTOCOL)
         self.assertEqual(out['source_critical']['text'],d['source']['text']);self.assertEqual(prompt.source_payload['text'],d['source']['text'])

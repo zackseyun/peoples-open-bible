@@ -52,7 +52,11 @@ class FullRepairBatch05Test(unittest.TestCase):
         self.assertIn('፩',record(34,2)['source']['text'])
         self.assertIn('ወኢረከበት',record(42,2)['source']['text'])
         self.assertIn('found no dwelling',record(42,2)['translation']['text'])
-        self.assertEqual(record(43,4)['source']['text'].count('መንፈሳት'),2)
+        historical=yaml.load((PACKAGE/'043-004.candidate.yaml').read_bytes(),Loader=transaction.LOADER)
+        self.assertEqual(historical['source']['text'].count('መንፈሳት'),2)
+        from test_enoch_full_repair_batch27 import assert_current4
+        assert_current4(self)
+        self.assertEqual(record(43,4)['source']['text'].count('መንፈስት'),2)
         self.assertNotIn('መናፍስት',record(43,4)['source']['text'])
 
     def test_explicit28_successor_preserves_old_source_and_history(self):

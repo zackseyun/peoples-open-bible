@@ -946,3 +946,15 @@ or credited; original2/4 holds stay tied to their original inputs. A separate ne
 Ten focused tests pass. Totals remain475 evidence-backed records,36 complete
 selected-edition chapters and108 count inventories; final regression and delivery
 for these newer changes are still required.
+
+## Local new43:4 exact JP2 follow-up, batch27
+
+A separately paired new43:4 payload now corrects both actual printed title forms
+and explains their distinction from the apparatus-reported variant. Original
+old4hold decisions remain unchanged; the peer's provisional vowel-label error is
+retained and additively corrected with actual source-shape controls. All complete
+possessive, names, dwelling, belief/title and eternity clauses remain. One existing
+record explicitly supersedes its batch05 owner;3 remains batch26's and2 stays
+held. No extra record, count or complete43 credit is taken. Current totals stay
+475/965 evidence-backed records,36/108 complete selected-edition chapters and
+108/108 paired count inventories; full final regression and delivery remain.

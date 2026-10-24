@@ -110,5 +110,10 @@ def load_all_inventories():
     if set(observed20)&set(output):
         raise ValueError('20 structural inventory overlaps another profile')
     output.update(observed20)
+    from tools.enoch import count26_27_33_evidence
+    observed26_27_33=count26_27_33_evidence.load()
+    if set(observed26_27_33)&set(output):
+        raise ValueError('26/27/33 structural inventories overlap another profile')
+    output.update(observed26_27_33)
     from tools.enoch.canonical_address_maps import apply_reviewed_maps
     return apply_reviewed_maps(output)

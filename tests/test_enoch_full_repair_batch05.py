@@ -20,6 +20,15 @@ def record(c,v):
     return yaml.load((transaction.TRANSLATION/f'{c:03d}/{v:03d}.yaml').read_bytes(),Loader=transaction.LOADER)
 
 class FullRepairBatch05Test(unittest.TestCase):
+    def assert_exact42_successor(self,v):
+        successor=transaction.APPLICATIONS/'enoch_full_repair_batch25_20261024'
+        self.assertEqual(transaction.sha((successor/'manifest.json').read_bytes()),'a63aeb53e3aa258c49d57e24e1bad6fdc6ec3ceca917882ddfc2b94715f92661')
+        m=transaction.load_manifest(successor);old=transaction.load_manifest(PACKAGE);ref=f'1 Enoch 42:{v}'
+        self.assertEqual(m['supersedes'][ref],{'package':PACKAGE.name,'manifest_sha256':transaction.sha((PACKAGE/'manifest.json').read_bytes()),'candidate_sha256':old['files'][f'042-{v:03d}.candidate.yaml']})
+        self.assertEqual(m['canonical_baseline_sha256'][f'042/{v:03d}.yaml'],old['files'][f'042-{v:03d}.candidate.yaml'])
+        self.assertEqual(transaction.sha((transaction.TRANSLATION/f'042/{v:03d}.yaml').read_bytes()),m['files'][f'042-{v:03d}.candidate.yaml'])
+        self.assertIn(ref,verify_current(successor)['references'])
+
     def test_exact11_units_and_five_additions_with_no_held_candidate(self):
         result=verify_current(PACKAGE)
         self.assertEqual(result['candidate_files'],11)
@@ -60,11 +69,20 @@ class FullRepairBatch05Test(unittest.TestCase):
             row=next(r for r in verse_parser.parse_chapter(c)[0] if r.verse==v)
             self.assertEqual(row.text,record(c,v)['source']['text'])
             self.assertEqual(row.pages,(record(c,v)['source']['pages'][0],))
-            self.assertFalse(record(c,v)['source_correction']['selected_edition_chapter_reviewed'])
+            historical=yaml.load((PACKAGE/f'{c:03d}-{v:03d}.candidate.yaml').read_bytes(),Loader=transaction.LOADER)
+            self.assertFalse(historical['source_correction']['selected_edition_chapter_reviewed'])
+            if c==42:
+                self.assert_exact42_successor(v)
+                self.assertTrue(record(c,v)['source_correction']['selected_edition_chapter_reviewed'])
+            else:self.assertFalse(record(c,v)['source_correction']['selected_edition_chapter_reviewed'])
         manifest=transaction.load_manifest(PACKAGE)
         held=transaction.TRANSLATION/'043/002.yaml'
         self.assertEqual(transaction.sha(held.read_bytes()),manifest['canonical_baseline_sha256']['043/002.yaml'])
-        self.assertFalse((transaction.TRANSLATION/'042/003.yaml').exists())
+        original_receipt=json.loads((PACKAGE/'application.json').read_text())
+        self.assertNotIn('042/003.yaml',original_receipt['canonical_after_sha256'])
+        later=transaction.APPLICATIONS/'enoch_full_repair_batch25_20261024'
+        self.assertIn('1 Enoch 42:3',verify_current(later)['references'])
+        self.assertEqual(transaction.sha((transaction.TRANSLATION/'042/003.yaml').read_bytes()),transaction.load_manifest(later)['files']['042-003.candidate.yaml'])
         self.assertNotIn('043-002.candidate.yaml',manifest['files'])
 
     def test_progress_and_actual_counts_do_not_certify_the_full_book(self):
@@ -80,15 +98,23 @@ class FullRepairBatch05Test(unittest.TestCase):
     def test_mobile_adds28_34_and_only_changes_existing43_without_approving_it(self):
         manifest=transaction.load_manifest(PACKAGE)
         with tempfile.TemporaryDirectory() as directory:
-            root=Path(directory);old=root/'1_enoch';shutil.copytree(transaction.TRANSLATION,old)
+            root=Path(directory);after_root=root/'after';old_root=root/'before'
+            applied=after_root/'1_enoch';shutil.copytree(transaction.TRANSLATION,applied)
+            # Reconstruct this application's exact contribution, not its two
+            # partial42units plus a much later restored3 from the current tree.
+            (applied/'042/003.yaml').unlink(missing_ok=True)
+            for ref in manifest['references']:
+                c,v=transaction.parse_ref(ref)
+                (applied/f'{c:03d}/{v:03d}.yaml').write_bytes((PACKAGE/f'{c:03d}-{v:03d}.candidate.yaml').read_bytes())
+            old=old_root/'1_enoch';shutil.copytree(applied,old)
             for ref in manifest['references']:
                 c,v=transaction.parse_ref(ref);relative=f'{c:03d}/{v:03d}.yaml';target=old/relative
                 if relative in manifest['baseline_git_blobs']:
                     target.write_bytes(subprocess.run(['git','cat-file','blob',manifest['baseline_git_blobs'][relative]['blob']],
                         cwd=transaction.ROOT,check=True,capture_output=True).stdout)
                 else:target.unlink()
-            with patch.object(mobile,'EXTRA_CANONICAL_ROOT',root):before=mobile.export_extra_canonical_book('ENO')
-            after=mobile.export_extra_canonical_book('ENO')
+            with patch.object(mobile,'EXTRA_CANONICAL_ROOT',old_root):before=mobile.export_extra_canonical_book('ENO')
+            with patch.object(mobile,'EXTRA_CANONICAL_ROOT',after_root):after=mobile.export_extra_canonical_book('ENO')
         before={c['chapter']:c for c in before['chapters']};after={c['chapter']:c for c in after['chapters']}
         self.assertEqual(sorted(set(after)-set(before)),[28,34])
         self.assertEqual([c for c in sorted(before) if before[c]!=after[c]],[43])

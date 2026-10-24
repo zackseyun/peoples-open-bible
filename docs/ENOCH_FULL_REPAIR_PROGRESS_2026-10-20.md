@@ -823,3 +823,30 @@ no inventory warnings. The separately published web compiler and isolated
 complete-chapter reader exporter are distinct verification surfaces. Superseded
 batch20-only CI is not the final delivery gate; exact new-head CI/main/public
 verification remains pending. Whole26 and27 source-review work continues.
+
+## Verified20/21 delivery and local chapter26 successors
+
+PR402 landed on protected main `ee2a89b5e46db917b59bfa891e127d6bf98f5cfc`, with
+the identical tested tree after both exact-head CI successes and496 local tests.
+Main was fast-forwarded and pushed. Exact automatic publisher40087883641 succeeded;
+public readback verified426 latest English references,360 reviewed-explanation
+units,424 definitions and retired105 addresses absent. The public web compiler
+did include new106:15/16; the isolated complete-chapter reader exporter remains
+a separate surface. No browser/device or all108 completion was inferred.
+
+Batch22 now applies five paired complete26:1/2/3/5/6 treatments while4 stays held.
+Actual moist replaces shaded; editorial botanical boundaries, higher/flow
+relations, selected negative dependency and three wonders remain. Two exact
+metadata26v3 preimages are explicitly superseded; historical old models/pass
+counts and metadata's zero-language scope remain unchanged. The source-only
+full-six inventory does not approve4 or certify the chapter. Live comparison
+ordering now places old metadata before its newer language successors, not last.
+
+Current local totals:470 reviewed-evidence records,35 complete selected-edition
+chapters,102 count inventories,964 files and82 address gaps; no inventory warnings.
+Fourteen new focused tests, metadata/legacy/predecessor counterproofs and delivery
+ordering pass. Full final regression, exact-head CI and main/public delivery for
+this new application remain required. Whole33 is awaiting distinct peer; a new
+27:4 exact language pair is retained pending a conservative confidence-field
+serialization follow-up, not fabricated extra English passes. Original27's
+held/incomplete placeholders are not a full-five language review.

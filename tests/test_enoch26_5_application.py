@@ -10,7 +10,7 @@ class Enoch265Application(unittest.TestCase):
   recovered={r.verse:r.text for r in verse_parser.parse_chapter(26)[0]}
   self.assertEqual(record['source']['text'],recovered[5].replace('ኢ*ይትከል','ኢይትከል'))
   self.assertEqual(record['reference'],'1 Enoch 26:5')
-  self.assertIn('no[b] tree',record['translation']['text'])
+  self.assertIn('no tree',record['translation']['text'])
   for key in ('chapter_complete','graphic_publication_approved','app_published'):self.assertFalse(app[key])
   # The old complete-byte assertion stays on its actual original Git blob;
   # current metadata-only differences require a separately verified exact delta.
@@ -20,6 +20,8 @@ class Enoch265Application(unittest.TestCase):
   import subprocess
   original=subprocess.check_output(['git','show',case['applied_commit']+':'+app['canonical_file']],cwd=ROOT)
   self.assertEqual(app['canonical_sha256'],hashlib.sha256(original).hexdigest())
+  self.assertIn('no[b] tree',yaml.safe_load(original)['translation']['text'])
+  self.assertEqual(proof['reviewed_supersessions'][0]['superseded_by'],'enoch_full_repair_batch22_20261024')
   self.assertFalse(record['source_correction']['chapter_publication_approval'])
   self.assertFalse(record['source_correction']['human_specialist_certification'])
   self.assertNotEqual(yaml.safe_load(Y.parent.joinpath('004.yaml').read_text())['source']['text'],recovered[4])
@@ -29,7 +31,9 @@ class Enoch265Application(unittest.TestCase):
    p=P/f'review-pass{n}';review=json.loads((p/'review.json').read_text());provenance=json.loads((p/'provenance.json').read_text());inp=json.loads((p/'review-input.json').read_text())
    self.assertFalse(review['chapter_complete'])
    self.assertEqual([(r['reference'],r['verdict']) for r in review['reviews']],[('1 Enoch 26:5','accept')])
-   self.assertEqual(inp[0]['source']['text'],yaml.safe_load(Y.read_text())['source']['text'])
+   from tools.enoch import metadata26_evidence as history
+   originals,_=history._originals(history.read_index())
+   self.assertEqual(inp[0]['source']['text'],originals['1 Enoch 26:5']['source']['text'])
    digest=hashlib.sha256((p/'review.json').read_bytes()).hexdigest();self.assertEqual(provenance['review_sha256'],digest);hashes.append(digest)
   app=json.loads((P/'application.json').read_text());self.assertEqual(app['review_sha256'],hashes)
 if __name__=='__main__':unittest.main()

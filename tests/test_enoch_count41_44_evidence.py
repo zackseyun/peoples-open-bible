@@ -35,11 +35,26 @@ class Chapter41To44CountEvidenceTest(unittest.TestCase):
         self.assertTrue(set(counts.COUNTS)<=set(load_all_inventories()))
         from tools.enoch.full_repair_progress import build
         report=build();self.assertEqual(report['evidence_inventory_warnings'],[])
-        for c in counts.COUNTS:self.assertNotIn(c,report['chapters_with_complete_imported_selected_edition_review'])
+        # The count profile itself approved no English. Preserve its dated
+        # partial state instead of blocking a later full-language chapter42.
+        import subprocess
+        baseline='6499ede72eea063ebc8574ff56e029bb66768f5f'
+        path='sources/enoch/coverage/full-repair-progress-batch24-20261024.json'
+        historical=json.loads(subprocess.check_output(['git','show',baseline+':'+path],cwd=t.ROOT))
+        for c in counts.COUNTS:self.assertNotIn(c,historical['chapters_with_complete_imported_selected_edition_review'])
+        successor=t.APPLICATIONS/'enoch_full_repair_batch25_20261024'
+        from tools.enoch.current_evidence import verify_current
+        manifest=t.load_manifest(successor)
+        self.assertEqual(t.sha((successor/'manifest.json').read_bytes()),'a63aeb53e3aa258c49d57e24e1bad6fdc6ec3ceca917882ddfc2b94715f92661')
+        self.assertEqual(verify_current(successor)['references'],[f'1 Enoch 42:{v}'for v in(1,2,3)])
+        self.assertEqual(manifest['chapter_inventories'][0]['units'],[1,2,3])
+        self.assertIn(42,report['chapters_with_complete_imported_selected_edition_review'])
+        for c in set(counts.COUNTS)-{42}:self.assertNotIn(c,report['chapters_with_complete_imported_selected_edition_review'])
         self.assertFalse(report['completion_proven']);self.assertFalse(report['artwork_publication_approval'])
         from tools.enoch.selected_edition_sources import registry_data
         registry=registry_data()
-        for c in counts.COUNTS:self.assertNotIn(str(c),registry['chapters'])
+        self.assertEqual(registry['chapters']['42'],successor.name)
+        for c in set(counts.COUNTS)-{42}:self.assertNotIn(str(c),registry['chapters'])
 
     def test_provider_receipt_is_a_real_completed_structural_only_job(self):
         d,_=counts.evidence();prefix=t.ROOT/d['artifact_prefix']

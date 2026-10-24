@@ -886,3 +886,26 @@ selected-edition chapters,102/108 count inventories and82 address gaps, with no
 inventory warnings. Nine reviewed updates across26/27/33 now require final exact-
 head CI, protected main and exact live delivery. Whole42 author/peer work and
 whole43 author/peer work continue with primary controls and honest holds.
+
+## Verified22/23/24 delivery and local complete42, batch25
+
+PR404 landed on protected main6499ede72eea063ebc8574ff56e029bb66768f5f after
+both exact-head CI successes and536 local tests. Automatic publisher40121955404
+succeeded. Actual public readback verified433 latest English references,367
+reviewed explanation units,431 definitions and the nine retired105 addresses
+absent. Public delivery is not new browser/device QA or all108 completion.
+
+Complete paired42:1/2/3 treatments are locally applied. Real absent3 is restored;
+old batch05's two existing candidates are explicitly superseded, not recounted
+as two new meaning repairs. The actual feminine singular keeps Injustice as the
+subject of did-not-want/find/dwell, not a reversal into people rejecting her.
+Starred existence/seating forms and both whole rain/dew comparisons are preserved.
+Full3 reviewed language plus actual count qualifies complete42 for the isolated
+reader under its unchanged policy; a count inventory alone never qualifies it.
+
+Local totals are475/965 evidence-backed records,36/108 complete selected-edition
+chapters,102/108 paired count inventories and81 expected-address gaps, without
+inventory warnings. Twelve focused tests, six historical batch05 checks and
+seven41/44 checks pass. Complete final regression, exact-head CI and main/public
+verification remain pending. Chapter43's independently held units and full53
+source work continue; uncertainty is not silently normalized away.

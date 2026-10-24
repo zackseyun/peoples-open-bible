@@ -70,3 +70,60 @@ English approval and does not clear any hold. Raw terminal/model/manifest receip
 are retained in`sources/enoch/coverage/azure61-sol-source10-followup-20261023/`.
 Known cumulative reported usage is79,869tokens, still not complete billing.
 No older unknown exact11/12upload was retried or new model resource created.
+
+## Additive chapter1 quality checks
+
+Two **new** logical requests completed on the existing deployment, with raw
+terminal responses retained under
+`sources/enoch/coverage/azure61-sol-ch01-followup-20261023/`. The source-only
+nine-unit response (`resp_0c63090db7486dd2006adbe200404c8190bdb5a9259c6fc3b8`)
+reported16,652tokens and retained unresolved fidels throughout. It is not an
+exact complete transcription or an English approval.
+
+A subsequent **one-unit candidate-facing** check of1:7, with its own prior
+source result frozen first, completed as
+`resp_0707196db5e3d703006adbe48fe9988193b08ef6d844b0a5b9` (8,261tokens). Its
+raw verdict is **hold**, not accept: it identifies first-verb visual uncertainty,
+a possible final-colon/full-stop discrepancy, and author-provenance claims not
+established by the limited material supplied for that bounded check. It also
+confirms that actual Dillmann400 provides sinking/submergence support. None of
+these findings is silently converted into a complete approval or substituted
+for the separate photo reviewers. The raw output says five lexicon photos;
+the actual manifest contains **four lexicon photos plus two source images**.
+That model miscount is disclosed without rewriting the original response.
+
+Known cumulative reported usage is now **104,782tokens**, not a complete billing
+total because the two older unknown uploads remain unknown. No older logical
+request was retried; no model resource, role, quota or key was changed. No Azure
+vote from these two calls was imported into canonical wording. Their useful role
+is bounded counterchecking, not automatically approving an entire book.
+
+## Structural counts: a faster useful Sol task
+
+A fresh pixel-only41–44structural job independently matched a separately frozen,
+withheld parent observation:17actual units, including cross-page continuations.
+Actual handle`resp_048a5444503cf6d9006adbf7a779bc8196ac7d180d02c7ddd0` reported
+7,294tokens, and explicitly approved **no wording or publication**. Raw receipts
+and the hash-projected actual request are retained in
+`sources/enoch/coverage/count41-44-azure-20261023/`. Three clipped source-window
+arrays were corrected; see[the exact scope](ENOCH_SOURCE_WINDOWS_2026-10-23.md).
+Known cumulative reported usage is112,076tokens, still not complete billing.
+This count success is not17Geʽez/English approvals or resolution of the earlier
+glyph/translation holds. Neither older unknown request was retried.
+
+
+## Ending and chapter20 independent counts
+
+Two additional **fresh** source-only count scopes completed.106–108returned
+19/3/15units,37matching independently frozen parent spans; actual handle
+`resp_0089cd11ad8cf9ad006adbff33ba0481959dad2fc1375e2297` reported11,746tokens.
+Only106/108are newly registered counts;107remains context under its older full
+language certificate. The106/107source lookup windows were corrected with a
+separate exact two-array receipt, not an amendment of the older three-array map.
+
+Chapter20returned7units, all on90, matching the original distinct source-first
+observer, with no expected roster/count/English supplied to the API. Actual
+handle`resp_080cc63578dfd429006adc071713ec8194a946b4a5a3457a03` reported3,959tokens.
+Its genuine20:6wording hold remains. Known cumulative reported pilot usage is
+127,781tokens, not complete billing. No new language votes were imported; no
+older unknown requests, resource changes or artwork publication followed.

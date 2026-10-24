@@ -90,5 +90,25 @@ def load_all_inventories():
     if set(short)&set(output):
         raise ValueError('Short Watchers structural inventory overlaps another profile')
     output.update(short)
+    from tools.enoch import count23_evidence
+    observed23 = count23_evidence.load()
+    if set(observed23)&set(output):
+        raise ValueError('Chapter23 structural inventory overlaps another profile')
+    output.update(observed23)
+    from tools.enoch import count41_44_evidence
+    observed41_44 = count41_44_evidence.load()
+    if set(observed41_44)&set(output):
+        raise ValueError('41-44 structural inventory overlaps another profile')
+    output.update(observed41_44)
+    from tools.enoch import count106_108_evidence
+    ending = count106_108_evidence.load()
+    if set(ending)&set(output):
+        raise ValueError('Ending106/108 new structural inventory overlaps another profile')
+    output.update(ending)
+    from tools.enoch import count20_evidence
+    observed20=count20_evidence.load()
+    if set(observed20)&set(output):
+        raise ValueError('20 structural inventory overlaps another profile')
+    output.update(observed20)
     from tools.enoch.canonical_address_maps import apply_reviewed_maps
     return apply_reviewed_maps(output)

@@ -53,8 +53,9 @@ def artifact(package: Path, relative: str) -> Path:
     return path
 
 
-def load_manifest(package: Path) -> dict:
-    manifest = json.loads((package / 'manifest.json').read_text())
+def load_manifest(package: Path, *, _snapshot: dict | None = None) -> dict:
+    raw_manifest = (package / 'manifest.json').read_bytes()
+    manifest = json.loads(raw_manifest)
     refs = manifest.get('references', [])
     if manifest.get('kind') != 'enoch-reviewed-units-v1' or not refs or \
             len(refs) != len(set(refs)) or \
@@ -126,6 +127,9 @@ def load_manifest(package: Path) -> dict:
                 if observed != units:
                     raise ValueError('Source-only count differs from full paired submitted scope')
         source_counts.add(c)
+    if manifest.get('existing_paired_count_ingress') is not None:
+        from tools.enoch.existing_count_ingress import validate as validate_existing_ingress
+        validate_existing_ingress(manifest)
     retired = [row['reference'] for row in manifest.get('retirements', [])]
     if len(retired) != len(set(retired)) or set(retired) & set(refs) or \
             [parse_ref(ref) for ref in retired] != sorted(parse_ref(ref) for ref in retired):
@@ -175,6 +179,8 @@ def load_manifest(package: Path) -> dict:
     if 'confidence_metadata_evidence' in manifest:
         from tools.enoch.confidence27_evidence import validate
         validate(package,manifest)
+    if _snapshot is not None:
+        _snapshot.update(manifest=manifest, manifest_sha256=sha(raw_manifest))
     return manifest
 
 
@@ -248,10 +254,12 @@ def verify_git_preimage(manifest: dict, relative: str, expected: str) -> None:
 
 
 def verify(package: Path, *, applied: bool = False,
-           check_corpus: bool = False, evidence_only: bool = False) -> dict:
+           check_corpus: bool = False, evidence_only: bool = False,
+           _validated_manifest: dict | None = None) -> dict:
     if evidence_only and (applied or check_corpus):
         raise ValueError('Historical evidence validation cannot claim installed targets')
-    manifest = load_manifest(package)
+    snapshot = {}
+    manifest = load_manifest(package, _snapshot=snapshot)
     schema = jsonschema.Draft202012Validator(json.loads((ROOT / 'schema/verse.schema.json').read_text()))
     expected = dict(manifest['canonical_baseline_sha256'])
     candidates = {}
@@ -340,11 +348,15 @@ def verify(package: Path, *, applied: bool = False,
             raise ValueError(f'Retirement preimage changed: {ref}')
     if check_corpus and corpus_hashes() != expected:
         raise ValueError('Canonical changes exceed the exact bounded scope')
-    return {'references': manifest['references'], 'candidate_files': len(candidates),
+    result = {'references': manifest['references'], 'candidate_files': len(candidates),
             'retired_references': [r['reference'] for r in manifest.get('retirements', [])],
             'snapshot_file_count': len(expected), 'full_book_verified': False,
             'canonical_targets_checked': not evidence_only,
             'graphic_publication_approved': False}
+    # Per-call handoff only after every gate succeeds. Never cache across reads.
+    if _validated_manifest is not None:
+        _validated_manifest.update(snapshot)
+    return result
 
 
 def apply(package: Path) -> dict:

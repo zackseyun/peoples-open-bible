@@ -1,0 +1,101 @@
+{
+  "original_full_request_sha256": "a97178419468ad12b834dfca1a687fa860044fff0f5e783f5e1b447aa3c65287",
+  "request_projection": {
+    "model": "gpt-6-1-sol-review",
+    "input": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "input_text",
+            "text": "Cold source-only phase for 1 Enoch 54:1, selected Charles1906 edited Ethiopic. Personally inspect the actual supplied source photographs. PDF135 printed97 includes LIV1/2; PDF137 printed99 includes LIV9. Identify ONLY the requested whole unit, implicit1 after LIV or baseline body numeral2/9 through the next baseline unit boundary, excluding surrounding unit text and raised apparatus numbers. Give your own exact selected Geʽez transcription with real brackets, baseline stars and punctuation retained, without source normalization. Distinguish radial asterisks from cross-shaped fidel strokes. Do not translate, use a familiar English rendering, infer missing glyphs, consult modern dictionaries or import source from memory. No proposed source text/English, author decisions, old reviews or lexicon hints are supplied in this phase. Mark true glyph/continuation uncertainty as hold with exact locations; never pretend difficult signs are certain. This is a source-only freeze, no English or publication approval; both approval flags must reflect that. Native/cropped/rendered images are scan derivatives, not new physical resolution or manuscript witnesses. Return JSON only."
+          },
+          {
+            "type": "input_text",
+            "text": "Actual photo: archive-leaf0135-native-page.png"
+          },
+          {
+            "type": "input_image",
+            "detail": "original",
+            "image_bytes_sha256": "27f7174ef88ea235bce8f9007f7bee7e8ff4ec8866b1bc0a3291fb6304358404"
+          },
+          {
+            "type": "input_text",
+            "text": "Actual photo: native135-units1-2-full.png"
+          },
+          {
+            "type": "input_image",
+            "detail": "original",
+            "image_bytes_sha256": "422f0eb51e1a38c41dd1fb71930a2276868e99f69f6452237aa08fd19ee8d841"
+          }
+        ]
+      }
+    ],
+    "reasoning": {
+      "effort": "medium"
+    },
+    "max_output_tokens": 5000,
+    "background": true,
+    "store": true,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "enoch_source_freeze",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "properties": {
+            "reference": {
+              "type": "string",
+              "enum": [
+                "1 Enoch 54:1"
+              ]
+            },
+            "source_verdict": {
+              "type": "string",
+              "enum": [
+                "clear",
+                "hold"
+              ]
+            },
+            "selected_Geez_transcription": {
+              "type": "string"
+            },
+            "observed_boundaries": {
+              "type": "string"
+            },
+            "critical_signs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "decisive_uncertainties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "source_only_no_English_wording_approval": {
+              "type": "boolean"
+            },
+            "publication_approved": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "reference",
+            "source_verdict",
+            "selected_Geez_transcription",
+            "observed_boundaries",
+            "critical_signs",
+            "decisive_uncertainties",
+            "source_only_no_English_wording_approval",
+            "publication_approved"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  }
+}

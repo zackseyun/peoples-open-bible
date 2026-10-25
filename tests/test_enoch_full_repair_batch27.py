@@ -71,7 +71,7 @@ class Batch27Test(unittest.TestCase):
 
     def test_no_source_record_chapter_count_or_book_completion_inflation(self):
         from tools.enoch.full_repair_progress import build
-        r=build();self.assertEqual(r['canonical_file_count'],965);self.assertEqual(r['current_units_with_imported_review_evidence'],475);self.assertEqual(len(r['chapters_with_complete_imported_selected_edition_review']),36);self.assertEqual(len(r['chapters_with_imported_paired_count_inventory']),108);self.assertFalse(r['completion_proven'])
+        r=build();self.assertEqual(r['canonical_file_count'],966);self.assertEqual(r['current_units_with_imported_review_evidence'],476);self.assertEqual(len(r['chapters_with_complete_imported_selected_edition_review']),36);self.assertEqual(len(r['chapters_with_imported_paired_count_inventory']),108);self.assertFalse(r['completion_proven'])
         self.assertFalse(record(4)['source_correction']['selected_edition_chapter_reviewed']);self.assertFalse(record(4)['source_correction']['chapter_publication_approval'])
 
     def test_CI_fetches_actual_preimage_and_runs_gate(self):

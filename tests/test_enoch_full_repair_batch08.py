@@ -18,6 +18,23 @@ PARTIAL={52:9,53:7,54:10,55:4,56:8}
 def record(c,v):return yaml.load((t.TRANSLATION/f'{c:03d}/{v:03d}.yaml').read_bytes(),Loader=t.LOADER)
 
 class FullRepairBatch08Test(unittest.TestCase):
+    def assert_later53_6_restoration(self):
+        # B08's original fourteen holds remain historical holds. Only this
+        # explicit later exact paired application may add the absent sixth unit.
+        successor=t.APPLICATIONS/'enoch_full_repair_batch30_20261025'
+        self.assertEqual(t.sha((successor/'manifest.json').read_bytes()),'c71ce5a3d18960cc6ac785bee2be9afd52247aa5faacf4c6539b5129e6fff978')
+        m=t.load_manifest(successor);self.assertEqual(m['references'],['1 Enoch 53:6'])
+        self.assertEqual(verify_current(successor)['references'],['1 Enoch 53:6'])
+        self.assertNotIn('053/006.yaml',m['canonical_baseline_sha256'])
+        prior=json.loads((t.APPLICATIONS/'enoch_full_repair_batch29_20261024/application.json').read_text())
+        self.assertEqual(m['canonical_baseline_sha256'],prior['canonical_after_sha256'])
+        bindings=m['review_bindings']['1 Enoch 53:6'];self.assertEqual(len({b['reviewer_id']for b in bindings}),2)
+        rows=t.reviewed_rows(successor,bindings,'1 Enoch 53:6',m['files']);self.assertEqual(rows[0],rows[1])
+        self.assertEqual(record(53,6),yaml.load((successor/'053-006.candidate.yaml').read_bytes(),Loader=t.LOADER))
+        self.assertEqual(selected_edition_sources.registry_data()['units']['53:6'],successor.name)
+        self.assertFalse(record(53,6)['source_correction']['selected_edition_chapter_reviewed'])
+        return 6
+
     def test_exact_application_and_metadata_successors_preserve_unrelated_and_held_bytes(self):
         result=verify_current(P);self.assertEqual(result['candidate_files'],47)
         self.assertFalse(result['full_book_verified'])
@@ -49,8 +66,25 @@ class FullRepairBatch08Test(unittest.TestCase):
             self.assertEqual([r.verse for r in rows],list(range(1,n+1)))
         for c in PARTIAL:
             refs=sorted(t.parse_ref(r)[1] for r in m['references'] if t.parse_ref(r)[0]==c)
+            if c==53:refs=sorted([*refs,self.assert_later53_6_restoration()])
             self.assertEqual([r['verse'] for r in selected_edition_sources.load_unit_overrides(c)],refs)
             self.assertTrue(all(not record(c,v)['source_correction']['selected_edition_chapter_reviewed'] for v in refs))
+
+    def test_later53_6_exception_is_one_exact_paired_addition_not_a_general_hold_waiver(self):
+        self.assertEqual(self.assert_later53_6_restoration(),6)
+        original=t.load_manifest(P)
+        self.assertIn('1 Enoch 53:6',[r['reference']for r in original['not_applied']])
+        self.assertEqual(len(original['not_applied']),14)
+        registry=selected_edition_sources.registry_data()
+        for v in(2,3,4,7):self.assertNotIn(f'53:{v}',registry['units'])
+
+    def test_later53_6_canonical_drift_cannot_use_the_historical_hold_exception(self):
+        with tempfile.TemporaryDirectory()as directory:
+            root=Path(directory);target=root/'053/006.yaml';target.parent.mkdir(parents=True)
+            raw=(t.TRANSLATION/'053/006.yaml').read_bytes();self.assertIn('መንፈስት'.encode(),raw)
+            target.write_bytes(raw.replace('መንፈስት'.encode(),'መንፈሳት'.encode()))
+            with patch.object(t,'TRANSLATION',root):
+                with self.assertRaises(ValueError):self.assert_later53_6_restoration()
 
     def test_all6_84_unknown_span_source_note_low_confidence_and_explanations_survive(self):
         self.assertEqual([r.verse for r in verse_parser.parse_chapter(84)[0]],list(range(1,7)))
@@ -94,6 +128,12 @@ class FullRepairBatch08Test(unittest.TestCase):
         self.assertFalse(set(PARTIAL)&set(EXPECTED_VERSES))
         for row in t.load_manifest(P)['not_applied']:
             c,v=t.parse_ref(row['reference'])
+            if (c,v)==(53,6):
+                self.assert_later53_6_restoration()
+                historical=json.loads((P/'application.json').read_text())
+                self.assertNotIn('053/006.yaml',historical['canonical_after_sha256'])
+                self.assertNotIn(row['reference'],t.load_manifest(P)['references'])
+                continue  # Not B08 approval or count-based promotion.
             if (t.TRANSLATION/f'{c:03d}/{v:03d}.yaml').exists():
                 self.assertFalse(record(c,v).get('source_correction',{}).get('individual_unit_application_approved',False))
             else:

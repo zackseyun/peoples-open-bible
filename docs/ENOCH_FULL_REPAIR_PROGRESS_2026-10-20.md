@@ -958,3 +958,30 @@ record explicitly supersedes its batch05 owner;3 remains batch26's and2 stays
 held. No extra record, count or complete43 credit is taken. Current totals stay
 475/965 evidence-backed records,36/108 complete selected-edition chapters and
 108/108 paired count inventories; full final regression and delivery remain.
+
+## Verified count/batches26-27 delivery and locally repaired53:5/54:9, batch29
+
+PR406 landed on protected main9e1a7a359d1aa9a2ef21104f1d7d697cf2cf2996 with
+identical tested tree,577 local tests and both exact-head CI successes. Automatic
+publisher40140796851 succeeded; actual public readback verified434 latest English
+references,371 reviewed-explanation units and435 definitions. Source counts now
+cover all108 chapters, not all108 language reviews.
+
+Batch29 locally corrects singular53:5in-it versus unjustifiedpluralby-them, and
+actual1906selected54:9activeplural/accusative all versus oldpassive-like canonical
+forms. New actual grammar, complete source apparatus and case controls—not votes—
+resolve the latter's specific adverse morphology hold. Both full sentences and
+mandatory explanations have exact paired acceptance. No unprinted named agent or
+fixed pronoun antecedent is supplied. Other53/54/55/44proposals remain separately
+held or under review; no count or word-form normalization releases a neighbor.
+
+The unpublished localB28attempt was explicitly rolled back after54:2spelling
+conflict; actual applied receipt and all adverse evidence remain preserved, no
+publication occurred. The original54:1/2accepts and9interimaccepts were withdrawn
+where unsupported;9was later separately resolved with material new primary data.
+Ten additional Azure proposal jobs completed as holds, not automatic approvals.
+Count-ingress reuse now validates the actual existing52–69 paired profile without
+pretending a one-row language input covered all units. Eight qualifier safety and
+twelve application checks pass. Totals remain475/965 evidence-backed records,
+36/108 complete selected-edition chapters,108/108 counts, no whole-book completion.
+Full final regression and exact final-head delivery gates remain required.

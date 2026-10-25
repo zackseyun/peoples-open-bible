@@ -126,6 +126,9 @@ def load_manifest(package: Path) -> dict:
                 if observed != units:
                     raise ValueError('Source-only count differs from full paired submitted scope')
         source_counts.add(c)
+    if manifest.get('existing_paired_count_ingress') is not None:
+        from tools.enoch.existing_count_ingress import validate as validate_existing_ingress
+        validate_existing_ingress(manifest)
     retired = [row['reference'] for row in manifest.get('retirements', [])]
     if len(retired) != len(set(retired)) or set(retired) & set(refs) or \
             [parse_ref(ref) for ref in retired] != sorted(parse_ref(ref) for ref in retired):

@@ -95,6 +95,7 @@ def load_unit_overrides(chapter: int) -> list[dict]:
     # Never cache across calls; a subsequent read must detect artifact drift.
     packages = {}
     ending_counts = None
+    existing_counts = {}
     for key, name in registry.get('units',{}).items():
         c,v = transaction.parse_ref('1 Enoch ' + key)
         if c != chapter:
@@ -111,6 +112,15 @@ def load_unit_overrides(chapter: int) -> list[dict]:
                        if row['chapter'] == c]
             if len(matches) == 1:
                 count = len(matches[0]['units'])
+        if count is None and manifest.get('existing_paired_count_ingress'):
+            # A distinct, already paired source inventory bounds this unit.
+            # It supplies no language acceptance and no chapter release.
+            if name not in existing_counts:
+                from tools.enoch.existing_count_ingress import validate
+                existing_counts[name] = validate(manifest)
+            certificate = existing_counts[name].get(c)
+            if certificate is not None:
+                count = len(certificate['units'])
         if count is None and c in (106,108):
             # These independently paired, hash-pinned source/count photographs
             # were imported separately from partial language applications.

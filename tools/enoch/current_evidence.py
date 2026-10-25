@@ -45,6 +45,7 @@ def verify_current(package: Path, *, seen: tuple[str, ...] = ()) -> dict:
     if name in seen:
         raise ValueError('Reviewed supersession cycle')
     seen = (*seen,name)
+    verified_snapshot = None
     if name == PREVIOUS:
         from tools.textual_restoration import enoch_20261020_transaction as previous
         if package.resolve() != previous.PACKAGE.resolve():
@@ -52,12 +53,15 @@ def verify_current(package: Path, *, seen: tuple[str, ...] = ()) -> dict:
         historical = previous.verify(evidence_only=True)
         manifest = previous.load_manifest()
     else:
-        historical = transaction.verify(package, evidence_only=True)
-        manifest = transaction.load_manifest(package)
+        verified_snapshot = {}
+        historical = transaction.verify(package, evidence_only=True, _validated_manifest=verified_snapshot)
+        manifest = verified_snapshot['manifest']
     receipt = json.loads((package/'application.json').read_text())
     if receipt.get('status') != 'applied_verified':
         raise ValueError('Historical application was not installed')
     manifest_hash = transaction.sha((package/'manifest.json').read_bytes())
+    if verified_snapshot is not None and manifest_hash != verified_snapshot['manifest_sha256']:
+        raise ValueError('Manifest changed after verified snapshot')
     if name != PREVIOUS and receipt.get('manifest_sha256') != manifest_hash:
         raise ValueError('Historical receipt does not bind this manifest')
     current, superseded = [], []

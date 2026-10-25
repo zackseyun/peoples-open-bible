@@ -52,7 +52,7 @@ class Count85To90EvidenceTest(unittest.TestCase):
     def test_progress_has108_counts_not108_complete_translation_chapters(self):
         from tools.enoch.full_repair_progress import build
         from tools.enoch.selected_edition_sources import registry_data
-        r=build();self.assertEqual(r['chapters_with_imported_paired_count_inventory'],list(range(1,109)));self.assertEqual(r['canonical_file_count'],965)
+        r=build();self.assertEqual(r['chapters_with_imported_paired_count_inventory'],list(range(1,109)));self.assertEqual(r['canonical_file_count'],966)
         self.assertEqual(len(r['chapters_with_complete_imported_selected_edition_review']),36)
         registry=registry_data()
         for c in range(85,91):self.assertNotIn(str(c),registry['chapters'])

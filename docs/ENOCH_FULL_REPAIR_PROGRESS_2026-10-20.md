@@ -985,3 +985,20 @@ pretending a one-row language input covered all units. Eight qualifier safety an
 twelve application checks pass. Totals remain475/965 evidence-backed records,
 36/108 complete selected-edition chapters,108/108 counts, no whole-book completion.
 Full final regression and exact final-head delivery gates remain required.
+
+## Batch30 (2026-10-25): missing53:6 restored locally, delivery gates separate
+
+The exact final paired53:6 input restores one missing record after earlier whole-
+unit holds caught substituted/normalized source words. All adverse inputs/votes
+remain history. [Batch30](ENOCH_BATCH30_2026-10-25.md) binds the entire965-file
+published-main preimage and exactly one addition. Aggregate review evidence becomes
+476/966, not a new complete chapter:36/108 complete selected-edition chapters and
+108/108 paired count inventories remain. Existing unreviewed53:3 is unchanged;
+53:4/7 remain absent. No other new proposal receives approval by association.
+
+Batch29 has now passed603 actual local tests, both exact-head CI gates, normal
+protected merge and automatic publisher40181949105. Public readback at main
+`cc3ee94d1fb63bfadfd1f514477978f2537a02ad` verifies434 latest supplied English
+references,371 reviewed-explanation units and435 exact definitions. That scope is
+not all475 earlier evidence-backed records or the full book. Batch30 requires its
+own exact final-state tests/CI/main/public readback before being called published.

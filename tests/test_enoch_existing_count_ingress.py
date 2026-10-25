@@ -45,5 +45,13 @@ class ExistingCountIngressTest(unittest.TestCase):
     def test_real_source_ingress_does_not_promote_unreviewed_neighbors(self):
         registry=sources.registry_data();self.assertEqual(registry['units']['53:5'],P.name);self.assertEqual(registry['units']['54:9'],P.name)
         for c in(53,54):self.assertNotIn(str(c),registry['chapters'])
-        self.assertFalse((t.TRANSLATION/'053/006.yaml').exists());self.assertNotIn('53:6',registry['units'])
+        # B30 now supplies an exact paired language review for previously held6.
+        # Count reuse alone still cannot create an unreviewed neighbors, present or absent.
+        from tools.enoch.current_evidence import verify_current
+        successor=t.APPLICATIONS/'enoch_full_repair_batch30_20261025';m=t.load_manifest(successor)
+        self.assertEqual(verify_current(successor)['references'],['1 Enoch 53:6']);self.assertEqual(registry['units']['53:6'],successor.name)
+        self.assertNotIn('053/006.yaml',m['canonical_baseline_sha256']);self.assertTrue((t.TRANSLATION/'053/006.yaml').exists())
+        for v in(3,4,7):self.assertNotIn(f'53:{v}',registry['units'])
+        for v in(4,7):self.assertFalse((t.TRANSLATION/f'053/{v:03d}.yaml').exists())
+        self.assertEqual(t.sha((t.TRANSLATION/'053/003.yaml').read_bytes()),m['canonical_baseline_sha256']['053/003.yaml'])
         self.assertEqual(next(r['source']['text']for r in sources.load_unit_overrides(53)if r['verse']==5),__import__('yaml').safe_load((t.TRANSLATION/'053/005.yaml').read_text())['source']['text'])

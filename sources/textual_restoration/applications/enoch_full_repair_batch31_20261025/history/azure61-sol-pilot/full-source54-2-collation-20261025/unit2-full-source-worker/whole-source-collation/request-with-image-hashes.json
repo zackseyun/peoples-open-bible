@@ -1,0 +1,232 @@
+{
+  "original_full_request_sha256": "3990b6c6c0a043ebbaa834c423e9cf136623d1a6eb21a7d49410e690813b864b",
+  "request_projection": {
+    "model": "gpt-6-1-sol-review",
+    "input": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "input_text",
+            "text": "NEW WHOLE-UNIT primary FIDEL collation only for 1 Enoch 54:2. WHOLE LIVunit2 on printed97 from baseline2 through before baseline3; unit1aboveand3belowONLYboundarycontext. Excludeapparatus. Everyword/prefix/vowelorder/endings mustbe independentlyaudited. Actual1906 Charles native sourcephotos, sameedition auxiliaryphysicalcopy photos/crops, and actual1907TableI are supplied. No expectedsource transcription, oldmodelreadings, Englishverse/gloss, candidate or votes supplied. Do NOT use rememberedEnochstory, modernortraditionalEnglishBible, OCR/TEI, or expectedword meaning/grammar toguessfidels. Independently transcribe ALL selectedsource words/signs and audit EVERYfidel and itsorder against visibleprimarysource/table strokes. Compactly state exactvisible sourcegeometry and actualTableIorder comparison foreachfidel; do not merelydeclare a wholeword familiar. Preserve true stars/brackets/punctuation separately, exclude raisedapparatusnumerals; do not confusefidelcrossstrokes withradialstars. Identifybaselineunitboundaries beforetranscription and genuinepagecontinuation. Do not silentlynormalizeformsvowelorders, suffixes, title/pluralforms or spelling. Ifsign/order unresolved, explicitlymarkprecisepositionandcompetingletters and HOLD; a plausibleword, AImajorityorhighconfidencecannotresolveunclearprimaryprint. NativeimagesandpixelidenticallosslessWebPare notnewphysicalresolution; enlargementisdisplayonly. DifferentphysicalphotosofsameeditionarenotnewMSS. ForlateroriginalLatinphotodiscoveryonly, requestliteralGe'ezheadtokens inthestructuredfield, noEnglishannotationsinside literal_Geez_head. Headguessesdonotcertifysourceormeaning. Scopeisexpandedwholeunit sourceonly, notEnglishlanguageapproval, sourcecriticaladoption, human/MSS/autographcertificationorpublication. ReturnJSONonly, all3approvalflagsfalse."
+          },
+          {
+            "type": "input_text",
+            "text": "Actual primary image original-p97.webp"
+          },
+          {
+            "type": "input_image",
+            "detail": "original",
+            "image_bytes_sha256": "aec1bceb42a54333a9e96a3b1ad1b54b3ac6b2e123bda8e1a9ad05baf132c496"
+          },
+          {
+            "type": "input_text",
+            "text": "Actual primary image auxiliary-p97-body.webp"
+          },
+          {
+            "type": "input_image",
+            "detail": "original",
+            "image_bytes_sha256": "73ffed0b5b888be504af194b1fa881b100f251698cc06f724f76d06096d4fd9c"
+          },
+          {
+            "type": "input_text",
+            "text": "Actual primary image original-1907-alphabet-TableI.webp"
+          },
+          {
+            "type": "input_image",
+            "detail": "original",
+            "image_bytes_sha256": "9ea4e745c3a0fcd5de43a70437884463e03c1a0f994997c52bb7dfeff56fd4bc"
+          }
+        ]
+      }
+    ],
+    "reasoning": {
+      "effort": "medium"
+    },
+    "max_output_tokens": 20000,
+    "background": true,
+    "store": true,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "whole_source_fidel_collation",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "properties": {
+            "reference": {
+              "type": "string",
+              "enum": [
+                "1 Enoch 54:2"
+              ]
+            },
+            "task_kind": {
+              "type": "string",
+              "enum": [
+                "whole_unit_primary_fidel_collation_only"
+              ]
+            },
+            "source_verdict": {
+              "type": "string",
+              "enum": [
+                "clear",
+                "hold"
+              ]
+            },
+            "whole_selected_Geez_transcription": {
+              "type": "string"
+            },
+            "whole_unit_boundaries_and_cross_page_continuity": {
+              "type": "string"
+            },
+            "all_source_words_in_order": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "word_index": {
+                    "type": "integer"
+                  },
+                  "source_image_line_position": {
+                    "type": "string"
+                  },
+                  "exact_word": {
+                    "type": "string"
+                  },
+                  "fidel_audit": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "index_in_word": {
+                          "type": "integer"
+                        },
+                        "observed_fidel": {
+                          "type": "string"
+                        },
+                        "visible_geometry_and_TableI_order_control": {
+                          "type": "string"
+                        },
+                        "competing_fidels_if_any": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "status": {
+                          "type": "string",
+                          "enum": [
+                            "clear",
+                            "uncertain"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "index_in_word",
+                        "observed_fidel",
+                        "visible_geometry_and_TableI_order_control",
+                        "competing_fidels_if_any",
+                        "status"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "word_status": {
+                    "type": "string",
+                    "enum": [
+                      "clear",
+                      "uncertain"
+                    ]
+                  }
+                },
+                "required": [
+                  "word_index",
+                  "source_image_line_position",
+                  "exact_word",
+                  "fidel_audit",
+                  "word_status"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "critical_signs_and_punctuation": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "unresolved_questions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "lexical_head_discovery_requests": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "literal_Geez_head": {
+                    "type": "string"
+                  },
+                  "source_word_index": {
+                    "type": "integer"
+                  },
+                  "tentative_not_source_or_meaning_proof": {
+                    "type": "boolean",
+                    "enum": [
+                      true
+                    ]
+                  }
+                },
+                "required": [
+                  "literal_Geez_head",
+                  "source_word_index",
+                  "tentative_not_source_or_meaning_proof"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "image_comparisons_and_limits": {
+              "type": "string"
+            },
+            "English_wording_approval": {
+              "type": "boolean",
+              "enum": [
+                false
+              ]
+            },
+            "whole_verse_English_review_completed": {
+              "type": "boolean",
+              "enum": [
+                false
+              ]
+            },
+            "publication_approved": {
+              "type": "boolean",
+              "enum": [
+                false
+              ]
+            }
+          },
+          "required": [
+            "reference",
+            "task_kind",
+            "source_verdict",
+            "whole_selected_Geez_transcription",
+            "whole_unit_boundaries_and_cross_page_continuity",
+            "all_source_words_in_order",
+            "critical_signs_and_punctuation",
+            "unresolved_questions",
+            "lexical_head_discovery_requests",
+            "image_comparisons_and_limits",
+            "English_wording_approval",
+            "whole_verse_English_review_completed",
+            "publication_approved"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  }
+}

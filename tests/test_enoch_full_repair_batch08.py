@@ -35,6 +35,15 @@ class FullRepairBatch08Test(unittest.TestCase):
         self.assertFalse(record(53,6)['source_correction']['selected_edition_chapter_reviewed'])
         return 6
 
+    def assert_later55_2_review(self):
+        # Exactly B31's new whole pair, not B08 or source-count approval.
+        from test_enoch_full_repair_batch31 import assert_current_batch31,P as successor
+        m,_=assert_current_batch31(self);ref='1 Enoch 55:2'
+        rows=t.reviewed_rows(successor,m['review_bindings'][ref],ref,m['files']);self.assertEqual(rows[0],rows[1])
+        self.assertEqual(selected_edition_sources.registry_data()['units']['55:2'],successor.name)
+        self.assertEqual(record(55,2),yaml.load((successor/'055-002.candidate.yaml').read_bytes(),Loader=t.LOADER))
+        self.assertFalse(record(55,2)['source_correction']['selected_edition_chapter_reviewed']);return 2
+
     def test_exact_application_and_metadata_successors_preserve_unrelated_and_held_bytes(self):
         result=verify_current(P);self.assertEqual(result['candidate_files'],47)
         self.assertFalse(result['full_book_verified'])
@@ -67,6 +76,7 @@ class FullRepairBatch08Test(unittest.TestCase):
         for c in PARTIAL:
             refs=sorted(t.parse_ref(r)[1] for r in m['references'] if t.parse_ref(r)[0]==c)
             if c==53:refs=sorted([*refs,self.assert_later53_6_restoration()])
+            if c==55:refs=sorted([*refs,self.assert_later55_2_review()])
             self.assertEqual([r['verse'] for r in selected_edition_sources.load_unit_overrides(c)],refs)
             self.assertTrue(all(not record(c,v)['source_correction']['selected_edition_chapter_reviewed'] for v in refs))
 
@@ -134,6 +144,12 @@ class FullRepairBatch08Test(unittest.TestCase):
                 self.assertNotIn('053/006.yaml',historical['canonical_after_sha256'])
                 self.assertNotIn(row['reference'],t.load_manifest(P)['references'])
                 continue  # Not B08 approval or count-based promotion.
+            if (c,v)==(55,2):
+                self.assert_later55_2_review()
+                historical=json.loads((P/'application.json').read_text())
+                self.assertEqual(historical['canonical_after_sha256']['055/002.yaml'],t.load_manifest(P)['canonical_baseline_sha256']['055/002.yaml'])
+                self.assertNotIn(row['reference'],t.load_manifest(P)['references'])
+                continue  # Explicit later whole pair, never B08/count approval.
             if (t.TRANSLATION/f'{c:03d}/{v:03d}.yaml').exists():
                 self.assertFalse(record(c,v).get('source_correction',{}).get('individual_unit_application_approved',False))
             else:
@@ -170,5 +186,12 @@ class FullRepairBatch08Test(unittest.TestCase):
             self.assertFalse(adapted['new_source_review_vote'])
             self.assertEqual(adapted['receipt_creator'],'/root')
             self.assertTrue(adapted['scan_image_sha256'])
+
+
+    def test_later55_2_exception_rejects_source_drift(self):
+        with tempfile.TemporaryDirectory()as directory:
+            root=Path(directory);import shutil;shutil.copytree(t.TRANSLATION,root/'corpus');target=root/'corpus/055/002.yaml';target.write_bytes(target.read_bytes().replace('በሰማያት'.encode(),'በሰማይ'.encode()))
+            with patch.object(t,'TRANSLATION',root/'corpus'):
+                with self.assertRaises(AssertionError):self.assert_later55_2_review()
 
 if __name__=='__main__':unittest.main()

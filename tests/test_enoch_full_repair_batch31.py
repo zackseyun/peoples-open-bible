@@ -67,3 +67,8 @@ class Batch31Test(unittest.TestCase):
  def test_real_one_review_increment_not_complete_chapter_or_book(self):
   from tools.enoch.full_repair_progress import build
   d=build();self.assertEqual(d['canonical_file_count'],966);self.assertEqual(d['current_units_with_imported_review_evidence'],477);self.assertEqual(len(d['chapters_with_complete_imported_selected_edition_review']),36);self.assertEqual(len(d['chapters_with_imported_paired_count_inventory']),108);self.assertEqual(d['evidence_inventory_warnings'],[]);self.assertFalse(d['completion_proven'])
+
+ def test_CI_fetches_actual_published_preimage_and_runs_new_guards(self):
+  workflow=(t.ROOT/'.github/workflows/corpus-integrity.yml').read_text()
+  self.assertIn('git fetch --no-tags --depth=1 origin b86c6a52cebc16c554f5b0192572fca9cf05e1c1',workflow)
+  for pattern in ['test_enoch_full_repair_batch31.py','test_enoch_review_input_preflight.py']:self.assertIn("python -m unittest discover -s tests -p '"+pattern+"'",workflow)

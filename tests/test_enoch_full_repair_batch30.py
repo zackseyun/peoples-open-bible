@@ -13,7 +13,7 @@ class Batch30Test(unittest.TestCase):
         self.assertEqual(t.sha((P/'manifest.json').read_bytes()),SHA);m=t.load_manifest(P);r=json.loads((P/'application.json').read_text());old=json.loads((PREVIOUS/'application.json').read_text())
         self.assertEqual(m['references'],[REF]);self.assertEqual(m['canonical_baseline_sha256'],old['canonical_after_sha256']);self.assertEqual(len(m['canonical_baseline_sha256']),965)
         expected=dict(m['canonical_baseline_sha256']);self.assertNotIn('053/006.yaml',expected);expected['053/006.yaml']=m['files']['053-006.candidate.yaml']
-        self.assertEqual(r['canonical_after_sha256'],expected);self.assertEqual(t.corpus_hashes(),expected);self.assertEqual(r['snapshot_file_count'],966);self.assertTrue(r['unrelated_canonical_files_unchanged_at_application']);self.assertEqual(m['retirements'],[]);self.assertEqual(m['supersedes'],{})
+        self.assertEqual(r['canonical_after_sha256'],expected);from test_enoch_full_repair_batch31 import assert_current_batch31;successor,_=assert_current_batch31(self);self.assertEqual(successor['canonical_baseline_sha256'],expected);self.assertEqual(r['snapshot_file_count'],966);self.assertTrue(r['unrelated_canonical_files_unchanged_at_application']);self.assertEqual(m['retirements'],[]);self.assertEqual(m['supersedes'],{})
         self.assertEqual(t.sha((P/'history/unapplied-stage-v1/manifest.json').read_bytes()),'436e7ebfe09c7a93c526563a956679b107190458f93e6a6544f486b4725c902e')
     def test_actual_published_main_git_path_was_absent(self):
         m=t.load_manifest(P);base='cc3ee94d1fb63bfadfd1f514477978f2537a02ad';self.assertEqual(m['source_baseline_git_commit'],base)
@@ -67,5 +67,5 @@ class Batch30Test(unittest.TestCase):
                 with self.assertRaises(ValueError):t.verify(q,evidence_only=True)
     def test_exact_progress_increment_no_new_complete_chapter_or_count_credit(self):
         from tools.enoch.full_repair_progress import build
-        r=build();self.assertEqual(r['canonical_file_count'],966);self.assertEqual(r['current_units_with_imported_review_evidence'],476);self.assertEqual(len(r['chapters_with_complete_imported_selected_edition_review']),36);self.assertEqual(len(r['chapters_with_imported_paired_count_inventory']),108);self.assertEqual(r['evidence_inventory_warnings'],[]);self.assertFalse(r['completion_proven'])
+        r=build();self.assertEqual(r['canonical_file_count'],966);self.assertEqual(r['current_units_with_imported_review_evidence'],477);self.assertEqual(len(r['chapters_with_complete_imported_selected_edition_review']),36);self.assertEqual(len(r['chapters_with_imported_paired_count_inventory']),108);self.assertEqual(r['evidence_inventory_warnings'],[]);self.assertFalse(r['completion_proven'])
         old=json.loads((t.ROOT/'sources/enoch/coverage/full-repair-progress-batch29-20261024.json').read_text());self.assertEqual(old['canonical_file_count'],965);self.assertEqual(old['current_units_with_imported_review_evidence'],475)

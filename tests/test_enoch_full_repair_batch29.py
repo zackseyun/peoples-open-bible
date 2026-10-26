@@ -49,7 +49,9 @@ class Batch29Test(unittest.TestCase):
         raw=json.loads((P/'history/ch54-full-exact-peer-followup1/independent-review.json').read_text());self.assertEqual(next(r['verdict']for r in raw['reviews']if r['reference']=='1 Enoch 54:9'),'hold')
         api=json.loads((P/'history/azure61-sol-pilot/accelerated54-unit09-v1/exact-review/raw-model-text.json').read_text());self.assertEqual(api['reviews'][0]['verdict'],'hold')
         m=t.load_manifest(P)
-        for v in(1,2):self.assertEqual(t.sha((t.TRANSLATION/f'054/{v:03d}.yaml').read_bytes()),m['canonical_baseline_sha256'][f'054/{v:03d}.yaml'])
+        from test_enoch_full_repair_batch31 import assert_current_batch31
+        successor,_=assert_current_batch31(self);self.assertEqual(successor['canonical_baseline_sha256']['054/001.yaml'],m['canonical_baseline_sha256']['054/001.yaml'])
+        self.assertEqual(t.sha((t.TRANSLATION/'054/002.yaml').read_bytes()),m['canonical_baseline_sha256']['054/002.yaml'])
     def test_existing_count_reuse_not_fake_full_submitted_language_scope(self):
         m=t.load_manifest(P);self.assertEqual(m['source_only_count_inventories'],[]);self.assertEqual(m['chapter_inventories'],[]);self.assertEqual([r['chapter']for r in m['existing_paired_count_ingress']],[53,54])
         data=json.loads((P/'source-only-counts.json').read_text());original=json.loads(t.artifact(t.ROOT,data['existing_paired_unit_spans']['path']).read_text())
@@ -68,5 +70,5 @@ class Batch29Test(unittest.TestCase):
                 with self.assertRaises(ValueError):t.verify(q,evidence_only=True)
     def test_counts_record_coverage_and_language_certificates_not_inflated(self):
         from tools.enoch.full_repair_progress import build
-        r=build();self.assertEqual(r['canonical_file_count'],966);self.assertEqual(r['current_units_with_imported_review_evidence'],476);self.assertEqual(len(r['chapters_with_complete_imported_selected_edition_review']),36);self.assertEqual(len(r['chapters_with_imported_paired_count_inventory']),108);self.assertFalse(r['completion_proven']);self.assertEqual(r['evidence_inventory_warnings'],[])
+        r=build();self.assertEqual(r['canonical_file_count'],966);self.assertEqual(r['current_units_with_imported_review_evidence'],477);self.assertEqual(len(r['chapters_with_complete_imported_selected_edition_review']),36);self.assertEqual(len(r['chapters_with_imported_paired_count_inventory']),108);self.assertFalse(r['completion_proven']);self.assertEqual(r['evidence_inventory_warnings'],[])
         for c,v in((53,5),(54,9)):self.assertFalse(record(c,v)['source_correction']['selected_edition_chapter_reviewed'])

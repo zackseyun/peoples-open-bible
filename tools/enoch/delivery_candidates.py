@@ -28,5 +28,15 @@ def ordered_packages():
     for v in(5,6):
         if m['canonical_baseline_sha256'][f'026/{v:03d}.yaml']!=t.sha((metadata/f'026-{v:03d}.candidate.yaml').read_bytes()):
             raise ValueError('Delivery metadata26 does not precede batch15 preimage')
-    return ([t.APPLICATIONS/'enoch_source_repairs_20261020']+
-            [p for n,p in batches if n<15]+[metadata]+[p for n,p in batches if n>=15])
+    ordered = ([t.APPLICATIONS/'enoch_source_repairs_20261020']+
+               [p for n,p in batches if n<15]+[metadata]+[p for n,p in batches if n>=15])
+    from tools.enoch import witness_projection_metadata as projection
+    projected=t.APPLICATIONS/projection.NAME
+    if (projected/'application.json').is_file():
+        data=projection.read_manifest();projection.verify_current(projected)
+        boundary=t.APPLICATIONS/data['source_application']
+        if boundary not in ordered:raise ValueError('Witness metadata delivery boundary is missing')
+        # Insert at the actual B32 application boundary. A later language
+        # successor must win; never append stale metadata after every batch.
+        ordered.insert(ordered.index(boundary)+1,projected)
+    return ordered

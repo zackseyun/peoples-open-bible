@@ -67,5 +67,5 @@ class Batch30Test(unittest.TestCase):
                 with self.assertRaises(ValueError):t.verify(q,evidence_only=True)
     def test_exact_progress_increment_no_new_complete_chapter_or_count_credit(self):
         from tools.enoch.full_repair_progress import build
-        r=build();self.assertEqual(r['canonical_file_count'],966);self.assertEqual(r['current_units_with_imported_review_evidence'],477);self.assertEqual(len(r['chapters_with_complete_imported_selected_edition_review']),36);self.assertEqual(len(r['chapters_with_imported_paired_count_inventory']),108);self.assertEqual(r['evidence_inventory_warnings'],[]);self.assertFalse(r['completion_proven'])
+        r=build();self.assertEqual(r['canonical_file_count'],966);self.assertEqual(r['current_units_with_imported_review_evidence'],478);self.assertEqual(len(r['chapters_with_complete_imported_selected_edition_review']),36);self.assertEqual(len(r['chapters_with_imported_paired_count_inventory']),108);self.assertEqual(r['evidence_inventory_warnings'],[]);self.assertFalse(r['completion_proven'])
         old=json.loads((t.ROOT/'sources/enoch/coverage/full-repair-progress-batch29-20261024.json').read_text());self.assertEqual(old['canonical_file_count'],965);self.assertEqual(old['current_units_with_imported_review_evidence'],475)

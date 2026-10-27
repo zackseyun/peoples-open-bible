@@ -47,7 +47,10 @@ class FullRepairBatch10Test(unittest.TestCase):
         self.assertTrue(record(18,6)['source']['additional_translation_input'])
         for v in range(1,17):
             d=record(18,v);self.assertEqual(d['status'],'draft')
-            self.assertTrue(d['source_correction']['selected_edition_chapter_reviewed'])
+            if v==8:
+                from test_enoch_full_repair_batch32 import assert_current_batch32
+                assert_current_batch32(self);self.assertFalse(d['source_correction']['selected_edition_chapter_reviewed'])
+            else:self.assertTrue(d['source_correction']['selected_edition_chapter_reviewed'])
             self.assertFalse(d['source_correction']['manuscript_witness_certification'])
             self.assertFalse(d['source_correction']['graphic_publication_approved'])
         prior=verify_current(t.APPLICATIONS/'enoch_source_repairs_20261020')
@@ -55,23 +58,26 @@ class FullRepairBatch10Test(unittest.TestCase):
         self.assertIn('1 Enoch 18:12',[r['reference'] for r in verify_current(
             t.APPLICATIONS/'enoch_full_repair_batch04_20261020')['reviewed_supersessions']])
 
-    def test_unclear18_8_glyph_is_not_silently_chosen_from_lexical_meaning(self):
-        d=record(18,8);s=d['source'];self.assertIn('ወ⟦?⟧ማሑ',s['text']);self.assertEqual(s['confidence'],'low')
+    def test_historical_unclear18_8_requires_exact_whole_B32_successor(self):
+        d=yaml.load((P/'018-008.candidate.yaml').read_bytes(),Loader=t.LOADER);s=d['source'];self.assertIn('ወ⟦?⟧ማሑ',s['text']);self.assertEqual(s['confidence'],'low')
         u=s['transcription_uncertainties'][0];self.assertFalse(u['selected_glyph_resolved'])
         self.assertIn('POB',u['marker_owner']);self.assertIn('not Charles',u['marker_owner'])
         extra=s['additional_translation_input'][0]
         self.assertFalse(extra['adopted_into_diplomatic_source']);self.assertFalse(extra['selected_glyph_certified'])
         note=d['translation']['footnotes'][1];self.assertEqual(note['reason'],'textual_variant')
         self.assertIn('provisional',note['text']);self.assertIn('did not print',note['text'])
-        bundle=build_enoch_prompt(18,8)
+        from test_enoch_full_repair_batch32 import assert_current_batch32
+        assert_current_batch32(self);current=record(18,8);bundle=build_enoch_prompt(18,8)
+        self.assertEqual(bundle.source_payload['text'],current['source']['text']);self.assertNotIn('⟦?⟧',bundle.source_payload['text'])
         self.assertEqual(bundle.source_payload['confidence'],'low')
-        self.assertEqual(bundle.source_payload['transcription_uncertainties'],s['transcription_uncertainties'])
-        self.assertEqual(bundle.source_payload['additional_translation_input'],s['additional_translation_input'])
-        self.assertIn('⟦?⟧',bundle.prompt)
+        self.assertEqual(bundle.source_payload['transcription_uncertainties'],current['source']['transcription_uncertainties'])
 
     def test12_successors_preserve_all_english_bodies_and11_exact_note_sets(self):
         for ref,b in t.load_manifest(P)['supersedes'].items():
             c,v=t.parse_ref(ref);old=yaml.load((t.APPLICATIONS/b['package']/f'{c:03d}-{v:03d}.candidate.yaml').read_bytes(),Loader=t.LOADER);new=record(c,v)
+            if (c,v)==(18,8):
+                from test_enoch_full_repair_batch32 import assert_current_batch32
+                assert_current_batch32(self);new=yaml.load((P/'018-008.candidate.yaml').read_bytes(),Loader=t.LOADER)  # Preserve B10's exact historical claims, not its old glyph forever.
             self.assertEqual(old['translation']['text'],new['translation']['text'])
             for k in ('edition','language','pages'):self.assertEqual(old['source'].get(k),new['source'].get(k))
             if v==8:

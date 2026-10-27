@@ -15,7 +15,9 @@ def assert_current_batch31(case):
  expected=dict(m['canonical_baseline_sha256'])
  for ref in REFS:
   c,v=t.parse_ref(ref);expected[f'{c:03d}/{v:03d}.yaml']=m['files'][f'{c:03d}-{v:03d}.candidate.yaml']
- receipt=json.loads((P/'application.json').read_text());case.assertEqual(receipt['canonical_after_sha256'],expected);case.assertEqual(t.corpus_hashes(),expected);case.assertEqual(t.verify(P,applied=True,check_corpus=True)['references'],REFS)
+ receipt=json.loads((P/'application.json').read_text());case.assertEqual(receipt['canonical_after_sha256'],expected)
+ from test_enoch_full_repair_batch32 import assert_current_batch32
+ successor,_=assert_current_batch32(case);case.assertEqual(successor['canonical_baseline_sha256'],expected);case.assertEqual(t.verify(P,applied=True)['references'],REFS)
  case.assertEqual(m['retirements'],[]);case.assertEqual(receipt['snapshot_file_count'],966);case.assertTrue(receipt['unrelated_canonical_files_unchanged_at_application']);return m,expected
 class Batch31Test(unittest.TestCase):
  def test_exact_current966_postmap_only_two_existing_changes(self):
@@ -63,10 +65,10 @@ class Batch31Test(unittest.TestCase):
   with tempfile.TemporaryDirectory()as directory:
    root=Path(directory);shutil.copytree(t.TRANSLATION,root/'corpus');target=root/'corpus/055/002.yaml';target.write_bytes(target.read_bytes().replace('በሰማያት'.encode(),'በሰማይ'.encode()))
    with patch.object(t,'TRANSLATION',root/'corpus'):
-    with self.assertRaises(AssertionError):assert_current_batch31(self)
+    with self.assertRaises((AssertionError,ValueError)):assert_current_batch31(self)
  def test_real_one_review_increment_not_complete_chapter_or_book(self):
   from tools.enoch.full_repair_progress import build
-  d=build();self.assertEqual(d['canonical_file_count'],966);self.assertEqual(d['current_units_with_imported_review_evidence'],477);self.assertEqual(len(d['chapters_with_complete_imported_selected_edition_review']),36);self.assertEqual(len(d['chapters_with_imported_paired_count_inventory']),108);self.assertEqual(d['evidence_inventory_warnings'],[]);self.assertFalse(d['completion_proven'])
+  d=build();self.assertEqual(d['canonical_file_count'],966);self.assertEqual(d['current_units_with_imported_review_evidence'],478);self.assertEqual(len(d['chapters_with_complete_imported_selected_edition_review']),36);self.assertEqual(len(d['chapters_with_imported_paired_count_inventory']),108);self.assertEqual(d['evidence_inventory_warnings'],[]);self.assertFalse(d['completion_proven'])
 
  def test_CI_fetches_actual_published_preimage_and_runs_new_guards(self):
   workflow=(t.ROOT/'.github/workflows/corpus-integrity.yml').read_text()

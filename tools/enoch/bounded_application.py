@@ -130,6 +130,9 @@ def load_manifest(package: Path, *, _snapshot: dict | None = None) -> dict:
     if manifest.get('existing_paired_count_ingress') is not None:
         from tools.enoch.existing_count_ingress import validate as validate_existing_ingress
         validate_existing_ingress(manifest)
+    if 'existing_paired_application_count_ingress' in manifest:
+        from tools.enoch.application_count_ingress48 import validate as validate_application_ingress
+        validate_application_ingress(manifest)
     retired = [row['reference'] for row in manifest.get('retirements', [])]
     if len(retired) != len(set(retired)) or set(retired) & set(refs) or \
             [parse_ref(ref) for ref in retired] != sorted(parse_ref(ref) for ref in retired):

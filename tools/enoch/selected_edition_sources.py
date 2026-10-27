@@ -96,6 +96,7 @@ def load_unit_overrides(chapter: int) -> list[dict]:
     packages = {}
     ending_counts = None
     existing_counts = {}
+    application_counts = {}
     for key, name in registry.get('units',{}).items():
         c,v = transaction.parse_ref('1 Enoch ' + key)
         if c != chapter:
@@ -119,6 +120,15 @@ def load_unit_overrides(chapter: int) -> list[dict]:
                 from tools.enoch.existing_count_ingress import validate
                 existing_counts[name] = validate(manifest)
             certificate = existing_counts[name].get(c)
+            if certificate is not None:
+                count = len(certificate['units'])
+        if count is None and manifest.get('existing_paired_application_count_ingress'):
+            # Reuse only the fixed historical48 paired certificate. This is
+            # not an expansion of the legacy same-input or52–69 count gates.
+            if name not in application_counts:
+                from tools.enoch.application_count_ingress48 import validate
+                application_counts[name] = validate(manifest)
+            certificate = application_counts[name].get(c)
             if certificate is not None:
                 count = len(certificate['units'])
         if count is None and c in (106,108):

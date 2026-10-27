@@ -1,0 +1,190 @@
+{
+  "original_full_request_sha256": "6765cd43f2235015f74721d9e7759647e0583a4f62cd2b9f69e89127b83e612e",
+  "request_projection": {
+    "model": "gpt-6-1-sol-review",
+    "input": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "input_text",
+            "text": "Primary source-FIDEL diagnostic ONLY for 1 Enoch 18:8. Position hint from an earlier source observer, NOT an expected reading: Printed48unit8, second line, entire word immediately following the stone-word and superscript46; targetnativecropincludes thewordandneighbors. Transcribewhole targetword, notonlyonecertainletter. No desiredreading.. Actual native source context, native target crop, explicit2xnearest-neighbor display, and original1907 Ge'ez alphabet TableI are supplied. Pixel-identical losslessWebP transport; display enlargement is NOTnew physical resolution. OldToronto and/or auxiliaryClaremont are photographs of the same1906 selected edition, not differentmanuscripts or translationwitnesses; none is a generated source. Transcribe the exact targeted word one FIDEL at a time by actual visible source strokes and alphabet vowel orders; list ALL Unicodecodepoints for exactly your target string. Explain each observed glyph against actualtable/source shape. Do not infer a word from knownEnoch story, familiarBibletranslation, lexiconmeaning, OCR/TEI or expectedgrammar. No desiredtarget transcription, Englishverse, lexicongloss, candidate or reviewerdecision is provided. If a true glyph/order is not visible or multiple shapes cannotbe distinguished, HOLD with exact competing signs/locations; confidence/majorityvotes cannot close it. Preserve real stars/punctuation separately; exclude raisedapparatusnumerals. Also transcribe surrounding source lines only tolocate the target, without Englishtranslation or wordmeaning. This is NOTwholeunit languageapproval, sourcecritical adoption, human/MSS/autograph certification or publication. English_wording_approval=false, whole_verse_English_review_completed=false, publication_approved=false regardlessofclearfidels. Return JSONonly."
+          },
+          {
+            "type": "input_text",
+            "text": "Actual primary image actual-p48-native-page.webp"
+          },
+          {
+            "type": "input_image",
+            "detail": "original",
+            "image_bytes_sha256": "32e99c8735825d78b9e7112ff18bb33e1cd4af4c97040f4cd1dbb460b1288258"
+          },
+          {
+            "type": "input_text",
+            "text": "Actual primary image actual-p48-target-native.webp"
+          },
+          {
+            "type": "input_image",
+            "detail": "original",
+            "image_bytes_sha256": "73e251c0bcb8e2353f9f4917e86d35b1302ee60bb59bd07ed6ee3158deb02607"
+          },
+          {
+            "type": "input_text",
+            "text": "Actual primary image actual-p48-target-display2x.webp"
+          },
+          {
+            "type": "input_image",
+            "detail": "original",
+            "image_bytes_sha256": "70e3c3e34c272d155b1b3f94f6f90206eed4e3eb3f7d232fcec3ce560e36cbc2"
+          },
+          {
+            "type": "input_text",
+            "text": "Actual primary image original1907-alphabet-TableI.webp"
+          },
+          {
+            "type": "input_image",
+            "detail": "original",
+            "image_bytes_sha256": "9ea4e745c3a0fcd5de43a70437884463e03c1a0f994997c52bb7dfeff56fd4bc"
+          }
+        ]
+      }
+    ],
+    "reasoning": {
+      "effort": "medium"
+    },
+    "max_output_tokens": 8000,
+    "background": true,
+    "store": true,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "source_fidel_diagnostic",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "properties": {
+            "reference": {
+              "type": "string",
+              "enum": [
+                "1 Enoch 18:8"
+              ]
+            },
+            "task_kind": {
+              "type": "string",
+              "enum": [
+                "primary_fidel_diagnostic_only"
+              ]
+            },
+            "target_verdict": {
+              "type": "string",
+              "enum": [
+                "clear",
+                "hold"
+              ]
+            },
+            "target_word_transcription": {
+              "type": "string"
+            },
+            "target_unicode_codepoints": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "fidel_observations": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "source_character_index": {
+                    "type": "integer"
+                  },
+                  "observed_fidel": {
+                    "type": "string"
+                  },
+                  "visible_source_geometry": {
+                    "type": "string"
+                  },
+                  "actual_alphabet_comparison": {
+                    "type": "string"
+                  },
+                  "possible_other_fidels": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "clear",
+                      "uncertain"
+                    ]
+                  }
+                },
+                "required": [
+                  "source_character_index",
+                  "observed_fidel",
+                  "visible_source_geometry",
+                  "actual_alphabet_comparison",
+                  "possible_other_fidels",
+                  "status"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "native_context_source_transcription": {
+              "type": "string"
+            },
+            "printed_signs_or_boundaries": {
+              "type": "string"
+            },
+            "unresolved_questions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "source_image_comparisons_and_limits": {
+              "type": "string"
+            },
+            "English_wording_approval": {
+              "type": "boolean",
+              "enum": [
+                false
+              ]
+            },
+            "whole_verse_English_review_completed": {
+              "type": "boolean",
+              "enum": [
+                false
+              ]
+            },
+            "publication_approved": {
+              "type": "boolean",
+              "enum": [
+                false
+              ]
+            }
+          },
+          "required": [
+            "reference",
+            "task_kind",
+            "target_verdict",
+            "target_word_transcription",
+            "target_unicode_codepoints",
+            "fidel_observations",
+            "native_context_source_transcription",
+            "printed_signs_or_boundaries",
+            "unresolved_questions",
+            "source_image_comparisons_and_limits",
+            "English_wording_approval",
+            "whole_verse_English_review_completed",
+            "publication_approved"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  }
+}

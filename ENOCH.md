@@ -102,6 +102,10 @@ The dated progress snapshot reports953files,310imported-review units
 separate. The [updated verse issue register](docs/ENOCH_REPAIR_AUDIT_2026-10-22_BATCH09.md)
 is diagnostic, not automatic translation approval.
 
+## Batch32 source and metadata repairs (2026-10-26)
+
+[Batch32](docs/ENOCH_BATCH32_2026-10-26.md) locally integrates exact whole repairs18:8,54:8,84:2 and six separate stale witness-metadata projections. The latter add no language-review credit. Current local retained-review coverage is478/1061 units, not full-book completion. See the [current mechanical issue register](docs/ENOCH_REPAIR_AUDIT_2026-10-26_BATCH32.md); source publication and live delivery require separate exact-head gates.
+
 ## Why Enoch
 
 Four reasons this book warrants a dedicated phase:

@@ -12,3 +12,5 @@ python3 -m tools.enoch.review_input_preflight /absolute/path/review-input.json -
 - Flat provenance: `reviewer_id`, `role`, `input_sha256`, `review_sha256`, `source_pdf_sha256`, and `scan_image_sha256` mapping actual photo paths to hashes. Identity/role must agree with the review. Do not invent photo views or human/MSS/provider certification.
 - A well-formed HOLD remains HOLD. Passing this preflight does not inspect photographic content, certify language, replace distinct whole-verse review, or relax the existing bounded transaction/current-evidence gates.
 - Broad Azure character collations can omit/misread even unflagged words. Target diagnostics may supply useful leads, but actual full native source/Table-I/Latin/grammar controls must resolve them. API success, agreeing models, or consistent codepoints do not prove the reading.
+
+Batch32 additionally rejects blank source and blank English, including medium-confidence/no-anchor inputs. This is an integration-readiness boundary, not language approval; a valid adverse/HOLD receipt can still serialize independently.

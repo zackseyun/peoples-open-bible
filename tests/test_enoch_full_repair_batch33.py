@@ -32,6 +32,10 @@ class Batch33Test(unittest.TestCase):
   self.assertNotIn('lexical_decisions',record());old=yaml.load((M/'013-006.candidate.yaml').read_bytes(),Loader=t.LOADER);self.assertEqual(old['lexical_decisions'][5]['source_word'],'እሱተ');self.assertEqual(record()['review_history'][0]['sha256'],t.sha((M/'013-006.candidate.yaml').read_bytes()))
  def test_only_individual_source_ingress_and_exact_quiet_details(self):
   d=record();reg=sources.registry_data();self.assertEqual(reg['units']['13:6'],P.name);self.assertNotIn('13',reg['chapters']);self.assertFalse(d['source_correction']['selected_edition_chapter_reviewed']);out=reader._export_record_verse(6,d);self.assertEqual(out['footnote_review'],reader.PROTOCOL);self.assertEqual(out['footnotes'],d['translation']['footnotes']);self.assertEqual(out['source_critical']['text'],d['source']['text']);self.assertEqual(build_enoch_prompt(13,6).source_payload['text'],d['source']['text'])
+ def test_current_parser_uses_exact_new_source_not_retained_raw_ocr(self):
+  from tools.enoch import verse_parser
+  d=record();row,_=verse_parser.load_verse(13,6);self.assertEqual(row.text,d['source']['text']);self.assertEqual(row.source_confidence,'low');self.assertIn(P.name,row.chapter_file)
+  raw,_=verse_parser.parse_ocr_chapter(13);self.assertTrue(next(r.text for r in raw if r.verse==6).endswith('ወአስተ።'));self.assertTrue(row.text.endswith('ወኑሐተ።'))
  def test_rehashed_source_english_and_explanation_tampering_rejected(self):
   for mode in('source','English','note'):
    with self.subTest(mode=mode),tempfile.TemporaryDirectory()as directory:

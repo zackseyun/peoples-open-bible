@@ -69,7 +69,10 @@ class EnochCompletenessTest(unittest.TestCase):
 
     def test_chapter_thirteen_scan_cleanup_is_bounded_and_raw_ocr_preserved(self):
         raw = verse_parser.chapter_path(13).read_bytes()
-        rows, warnings = verse_parser.parse_chapter(13)
+        # This test covers the retained OCR cleanup, not the subsequently
+        # paired-reviewed individual 13:6 source override. Keep testing the
+        # original cleanup bytes rather than requiring current source to regress.
+        rows, warnings = verse_parser.parse_ocr_chapter(13)
         texts = {row.verse: row.text for row in rows}
         self.assertIn('*ትዝካረ፡', texts[4])
         self.assertTrue(texts[6].endswith('ወአስተ።'))
@@ -79,7 +82,7 @@ class EnochCompletenessTest(unittest.TestCase):
         self.assertTrue(any('scan OCR cleanup' in warning for warning in warnings))
         with patch.dict(verse_parser.SCAN_OCR_CLEANUPS, {(13,4): (('missing baseline','bad'),)}):
             with self.assertRaises(ValueError):
-                verse_parser.parse_chapter(13)
+                verse_parser.parse_ocr_chapter(13)
 
     def test_missing_dillmann_header_is_not_full_file_witness(self):
         with tempfile.TemporaryDirectory() as directory:

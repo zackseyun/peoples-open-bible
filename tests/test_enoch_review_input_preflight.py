@@ -7,6 +7,14 @@ class ReviewInputPreflightTest(unittest.TestCase):
  def test_valid_shape_is_only_serialization_not_language_acceptance(self):self.assertEqual(p.findings(BASE),[])
  def test_empty_and_map_inputs_fail(self):
   self.assertTrue(p.findings([]));self.assertTrue(p.findings({}))
+ def test_empty_or_blank_source_cannot_be_integration_ready(self):
+  for text in('', ' \n\t'):
+   rows=copy.deepcopy(BASE);rows[0]['source']['text']=text
+   self.assertTrue(any('source.text_empty_or_blank'in e for e in p.findings(rows)))
+ def test_empty_or_blank_english_without_anchors_cannot_be_integration_ready(self):
+  for text in('', ' \n\t'):
+   rows=copy.deepcopy(BASE);rows[0]['source']['confidence']='medium';rows[0]['translation'].update(text=text,footnotes=[])
+   self.assertTrue(any('translation.text_empty_or_blank'in e for e in p.findings(rows)))
  def test_new_hold_receipt_can_be_serialized_but_is_not_an_acceptance(self):
   with tempfile.TemporaryDirectory()as directory:
    i,r,v=self.receipt(Path(directory),'hold');self.assertEqual(p.receipt_findings(i,r,v),[])

@@ -44,6 +44,15 @@ class FullRepairBatch08Test(unittest.TestCase):
         self.assertEqual(record(55,2),yaml.load((successor/'055-002.candidate.yaml').read_bytes(),Loader=t.LOADER))
         self.assertFalse(record(55,2)['source_correction']['selected_edition_chapter_reviewed']);return 2
 
+    def assert_later54_8_review(self):
+        # B08's HOLD is preserved. Only the new exact whole B32 pair may replace it.
+        from test_enoch_full_repair_batch32 import assert_current_batch32,P as successor
+        m,_=assert_current_batch32(self);ref='1 Enoch 54:8'
+        rows=t.reviewed_rows(successor,m['review_bindings'][ref],ref,m['files']);self.assertEqual(rows[0],rows[1])
+        self.assertEqual(selected_edition_sources.registry_data()['units']['54:8'],successor.name)
+        self.assertEqual(record(54,8),yaml.load((successor/'054-008.candidate.yaml').read_bytes(),Loader=t.LOADER))
+        self.assertFalse(record(54,8)['source_correction']['selected_edition_chapter_reviewed']);return 8
+
     def test_exact_application_and_metadata_successors_preserve_unrelated_and_held_bytes(self):
         result=verify_current(P);self.assertEqual(result['candidate_files'],47)
         self.assertFalse(result['full_book_verified'])
@@ -77,6 +86,7 @@ class FullRepairBatch08Test(unittest.TestCase):
             refs=sorted(t.parse_ref(r)[1] for r in m['references'] if t.parse_ref(r)[0]==c)
             if c==53:refs=sorted([*refs,self.assert_later53_6_restoration()])
             if c==55:refs=sorted([*refs,self.assert_later55_2_review()])
+            if c==54:refs=sorted([*refs,self.assert_later54_8_review()])
             self.assertEqual([r['verse'] for r in selected_edition_sources.load_unit_overrides(c)],refs)
             self.assertTrue(all(not record(c,v)['source_correction']['selected_edition_chapter_reviewed'] for v in refs))
 
@@ -96,18 +106,17 @@ class FullRepairBatch08Test(unittest.TestCase):
             with patch.object(t,'TRANSLATION',root):
                 with self.assertRaises(ValueError):self.assert_later53_6_restoration()
 
-    def test_all6_84_unknown_span_source_note_low_confidence_and_explanations_survive(self):
+    def test_historical84_unknown_span_requires_exact_whole_B32_successor(self):
+        historical=yaml.load((P/'084-002.candidate.yaml').read_bytes(),Loader=t.LOADER)
+        self.assertIn('መ⟦?⟧ትከ',historical['source']['text']);self.assertEqual(historical['source']['confidence'],'low')
+        self.assertIn('not a mark printed by Charles',historical['translation']['footnotes'][1]['text'])
+        from test_enoch_full_repair_batch32 import assert_current_batch32
+        assert_current_batch32(self);d=record(84,2);bundle=build_enoch_prompt(84,2);api=verse_parser.build_jsonable(84)
         self.assertEqual([r.verse for r in verse_parser.parse_chapter(84)[0]],list(range(1,7)))
-        d=record(84,2);self.assertIn('መ⟦?⟧ትከ',d['source']['text']);self.assertEqual(d['source']['confidence'],'low')
-        bundle=build_enoch_prompt(84,2);row=verse_parser.load_verse(84,2)[0];api=verse_parser.build_jsonable(84)
-        self.assertEqual(row.source_confidence,'low');self.assertEqual(bundle.source_payload['confidence'],'low')
-        self.assertIn('⟦?⟧',bundle.prompt);self.assertIn('መ⟦?⟧ትከ',api['verses'][1]['text'])
-        self.assertEqual(api['verses'][1]['transcription_uncertainties'],d['source']['transcription_uncertainties'])
-        self.assertIn('not a mark printed by Charles',d['translation']['footnotes'][1]['text'])
-        self.assertIn('provisional',d['translation']['footnotes'][1]['text'].lower())
+        self.assertEqual(bundle.source_payload['text'],d['source']['text']);self.assertEqual(bundle.source_payload['confidence'],'low');self.assertNotIn('⟦?⟧',d['source']['text'])
+        self.assertEqual(api['verses'][1]['text'],d['source']['text']);self.assertEqual(api['verses'][1]['transcription_uncertainties'],d['source']['transcription_uncertainties'])
         self.assertFalse(json.loads((P/'uncertainty-policy.json').read_text())['application_approved'])
-        gate=json.loads((P/'explanation-delivery-gate.json').read_text())
-        self.assertFalse(gate['candidate_public_delivery_verified']);self.assertFalse(gate['physical_device_verified'])
+        gate=json.loads((P/'explanation-delivery-gate.json').read_text());self.assertFalse(gate['candidate_public_delivery_verified']);self.assertFalse(gate['physical_device_verified'])
 
     def test_complete_current_export_contains_exact_source_metadata_and_linked_explanations(self):
         output={c['chapter']:c for c in reader.export_extra_canonical_book('ENO')['chapters']}
@@ -150,6 +159,10 @@ class FullRepairBatch08Test(unittest.TestCase):
                 self.assertEqual(historical['canonical_after_sha256']['055/002.yaml'],t.load_manifest(P)['canonical_baseline_sha256']['055/002.yaml'])
                 self.assertNotIn(row['reference'],t.load_manifest(P)['references'])
                 continue  # Explicit later whole pair, never B08/count approval.
+            if (c,v)==(54,8):
+                self.assert_later54_8_review();historical=json.loads((P/'application.json').read_text())
+                self.assertEqual(historical['canonical_after_sha256']['054/008.yaml'],t.load_manifest(P)['canonical_baseline_sha256']['054/008.yaml'])
+                self.assertNotIn(row['reference'],t.load_manifest(P)['references']);continue
             if (t.TRANSLATION/f'{c:03d}/{v:03d}.yaml').exists():
                 self.assertFalse(record(c,v).get('source_correction',{}).get('individual_unit_application_approved',False))
             else:
@@ -192,6 +205,6 @@ class FullRepairBatch08Test(unittest.TestCase):
         with tempfile.TemporaryDirectory()as directory:
             root=Path(directory);import shutil;shutil.copytree(t.TRANSLATION,root/'corpus');target=root/'corpus/055/002.yaml';target.write_bytes(target.read_bytes().replace('በሰማያት'.encode(),'በሰማይ'.encode()))
             with patch.object(t,'TRANSLATION',root/'corpus'):
-                with self.assertRaises(AssertionError):self.assert_later55_2_review()
+                with self.assertRaises((AssertionError,ValueError)):self.assert_later55_2_review()
 
 if __name__=='__main__':unittest.main()

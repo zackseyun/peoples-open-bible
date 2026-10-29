@@ -15,6 +15,9 @@ PREVIOUS = 'enoch_source_repairs_20261020'
 
 def verify_current(package: Path, *, seen: tuple[str, ...] = ()) -> dict:
     name = package.name
+    from tools.enoch import witness_projection_metadata as projection
+    if projection.registered(package):
+        return projection.verify_current(package,seen=seen)
     from tools.enoch import legacy_editorial_evidence as editorial
     if editorial.registered(package):
         return editorial.verify_current(package,seen=seen)

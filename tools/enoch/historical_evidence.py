@@ -118,10 +118,23 @@ def load_current(index=INDEX):
                     raise ValueError('Historical metadata policy requires full source serializer')
                 validate_source_metadata_delta(rows[0]['source'],candidate['source'],policy)
             current=transaction.TRANSLATION/f'{cv[0]:03d}/{cv[1]:03d}.yaml'
-            if current.exists() and transaction.sha(current.read_bytes())==digest:
+            current_matches = current.exists() and transaction.sha(current.read_bytes())==digest
+            metadata_projected = False
+            if not current_matches:
+                # The original full input/notes/verdict guards above remain
+                # mandatory. Only six fixed, installed metadata projections
+                # may inherit that same historical evidence, never a new vote.
+                from tools.enoch.witness_projection_metadata import matches_declared_successor
+                current_matches = matches_declared_successor(reference,digest,candidate,current)
+                metadata_projected = current_matches
+            if current_matches:
                 accepted[cv]={'application':package['package'],
-                              'kind':'historical_exact_accepted_input_result_current_candidate',
+                              'kind':('historical_exact_accepted_input_result_plus_fixed_metadata_projection'
+                                      if metadata_projected else 'historical_exact_accepted_input_result_current_candidate'),
                               'fresh_review':False,'full_chapter_count_certified_by_import':False}
+                if metadata_projected:
+                    accepted[cv]['metadata_projection_application']='enoch_witness_metadata13_14_20261026'
+                    accepted[cv]['fresh_source_English_reviews_from_projection']=0
     return accepted
 
 

@@ -21,6 +21,8 @@ def findings(rows):
    for e in jsonschema.Draft202012Validator(SCHEMA['properties'][field]).iter_errors(obj):errors.append(prefix+field+'.'+'.'.join(map(str,e.path))+':'+e.message)
   src=row.get('source',{});trans=row.get('translation',{})
   src=src if isinstance(src,dict)else{};trans=trans if isinstance(trans,dict)else{}
+  for field,obj in [('source',src),('translation',trans)]:
+   if isinstance(obj.get('text'),str)and not obj['text'].strip():errors.append(prefix+field+'.text_empty_or_blank:mustremainHOLD,notintegrationready')
   if src.get('edition')!='charles-1906-enoch'or src.get('language')!='Geez':errors.append(prefix+'selectededition/languageinvalid')
   if src.get('confidence')not in['medium','low']:errors.append(prefix+'explicitboundedconfidence required')
   if any(x in (src.get('text','')if isinstance(src.get('text',''),str)else'')for x in['\ufffd','□','⟦','UNRESOLVED']):errors.append(prefix+'placeholderorunresolvedfidels:mustremainHOLD,notintegrationready')

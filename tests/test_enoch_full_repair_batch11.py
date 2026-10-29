@@ -150,12 +150,17 @@ class FullRepairBatch11Test(unittest.TestCase):
  def test_old29_imports_skip_repaired_units_and_old17_receipt_is_not_reused(self):
   from tools.enoch import historical_evidence as h
   old=h.load_current();self.assertEqual(len(old),27);self.assertNotIn((29,1),old);self.assertNotIn((29,2),old)
-  # Preserve the exact dated two-index35-unit assertion without freezing all
-  # future historical imports. The six recovered14 bindings are a distinct,
-  # code-pinned profile; old29/17 checks below still run against current bytes.
-  second=h.load_current(t.ROOT/'sources/enoch/coverage/historical-input-bindings-20261022.json')
-  self.assertEqual(len(second),8)
-  original={**old,**second};self.assertEqual(len(original),35)
+  # The dated index still declares eight original units. A fresh exact13:6
+  # language successor must lose historical-current credit, not borrow the
+  # older vote or inflate the historical coverage count.
+  index=t.ROOT/'sources/enoch/coverage/historical-input-bindings-20261022.json'
+  declared={t.parse_ref(row['reference'])for package in json.loads(index.read_text())['packages']for row in package['units']};self.assertEqual(len(declared),8)
+  second=h.load_current(index);superseded=set()
+  if (t.APPLICATIONS/'enoch_full_repair_batch33_20261027/application.json').is_file():
+   from test_enoch_full_repair_batch33 import assert_current_batch33
+   assert_current_batch33(self);superseded={(13,6)};self.assertNotIn((13,6),second)
+  self.assertEqual(set(second),declared-superseded)
+  original={**old,**second};self.assertEqual(len(original),35-len(superseded))
   current=h.load_all_current();self.assertTrue(set(original)<=set(current))
   self.assertTrue({(14,v)for v in(19,20,21,22,23,25)}<=set(current))
   m=t.load_manifest(P);prior=t.APPLICATIONS/'enoch_5_9_17_7_8_20260929';old_manifest=json.loads((prior/'manifest.json').read_text())

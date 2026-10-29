@@ -24,6 +24,11 @@ def record(c,v):return yaml.load((t.TRANSLATION/f'{c:03d}/{v:03d}.yaml').read_by
 def assert_current_held_or_exact_later_treatment(test,c,v,old_hash):
     successor=t.APPLICATIONS/'enoch_full_repair_batch18_20261023'
     rel=f'{c:03d}/{v:03d}.yaml';ref=f'1 Enoch {c}:{v}'
+    if (c,v)==(13,6) and (t.APPLICATIONS/'enoch_full_repair_batch33_20261027/application.json').is_file():
+        from test_enoch_full_repair_batch33 import assert_current_batch33
+        from tools.enoch import witness_projection_metadata as projection
+        newer,_=assert_current_batch33(test);case=projection.read_manifest()['cases'][ref]
+        test.assertEqual(case['original_sha256'],old_hash);test.assertEqual(newer['canonical_baseline_sha256'][rel],case['candidate_sha256']);return
     if(c,v)in{(14,2),(14,6),(14,18)}and(successor/'application.json').is_file():
         # Original batch17 hold was real and its raw/postmap stays unchanged.
         # Only a separately paired exact whole-unit treatment may change it.
@@ -32,7 +37,19 @@ def assert_current_held_or_exact_later_treatment(test,c,v,old_hash):
         test.assertIn(ref,proof['references']);test.assertEqual(manifest['canonical_baseline_sha256'][rel],old_hash)
         t.verify_git_preimage(manifest,rel,old_hash)
         test.assertEqual(t.sha((t.TRANSLATION/rel).read_bytes()),manifest['files'][f'{c:03d}-{v:03d}.candidate.yaml'])
-    else:test.assertEqual(t.sha((t.TRANSLATION/rel).read_bytes()),old_hash)
+    else:
+        from tools.enoch import witness_projection_metadata as projection
+        if ref in projection.REFS and (t.APPLICATIONS/projection.NAME/'application.json').is_file():
+            # The old language/body is unchanged. Only the exact fixed
+            # witness projection and status policy may replace these bytes.
+            data=projection.read_manifest();case=data['cases'][ref]
+            test.assertEqual(case['original_sha256'],old_hash)
+            # Verify the installed projection or its exact reviewed successor,
+            # not the intermediate six-projection whole-corpus snapshot.
+            # Batch33 separately checks the full 966-record current postmap.
+            test.assertEqual(projection.verify_current(t.APPLICATIONS/projection.NAME)['new_full_source_or_English_reviews'],0)
+            test.assertEqual(t.sha((t.TRANSLATION/rel).read_bytes()),case['candidate_sha256'])
+        else:test.assertEqual(t.sha((t.TRANSLATION/rel).read_bytes()),old_hash)
 
 
 class FullRepairBatch17Test(unittest.TestCase):
@@ -80,7 +97,11 @@ class FullRepairBatch17Test(unittest.TestCase):
         m=t.load_manifest(P);self.assertEqual(m['chapter_inventories'],[]);self.assertEqual(m['source_only_count_inventories'],[])
         self.assertFalse({f'1 Enoch {c}:{v}'for c,v in CONTEXT}&set(m['references']))
         old=historical_evidence.load_all_current()
-        for key in CONTEXT:self.assertIn(key,old)
+        for key in CONTEXT:
+            if key==(13,6) and (t.APPLICATIONS/'enoch_full_repair_batch33_20261027/application.json').is_file():
+                from test_enoch_full_repair_batch33 import assert_current_batch33
+                assert_current_batch33(self);self.assertNotIn(key,old)  # Fresh B33 pair, never B17 or metadata credit.
+            else:self.assertIn(key,old)
         from tools.enoch.full_repair_progress import build
         report=build();self.assertEqual(report['evidence_inventory_warnings'],[])
         self.assertIn(13,report['chapters_with_complete_imported_selected_edition_review'])

@@ -6,7 +6,13 @@ from tools.textual_restoration import enoch_13_transaction as release
 class EnochThirteenTransactionTest(unittest.TestCase):
     def test_scoped_source_and_review_binding(self):
         if (release.PACKAGE / 'application.json').exists():
-            self.assertEqual(release.verify_applied()['refs'], [f'13:{n}' for n in range(4,11)])
+            from tools.enoch import witness_projection_metadata as projection
+            if (projection.t.APPLICATIONS/projection.NAME/'application.json').is_file():
+                from tools.enoch.replay_witness_projection_preimages import verify
+                proof=verify(13);self.assertTrue(proof['original_strict_current_rejection_verified']);self.assertEqual(proof['new_full_source_or_English_reviews'],0)
+                self.assertEqual(proof['legacy_refs'],[f'13:{n}'for n in range(4,11)])
+            else:
+                self.assertEqual(release.verify_applied()['refs'], [f'13:{n}' for n in range(4,11)])
         else:
             self.assertEqual(set(release.verify_structure()), {f'013-{n:03d}' for n in range(4,11)})
         review=json.loads((release.PACKAGE/'final-source-review.json').read_text())

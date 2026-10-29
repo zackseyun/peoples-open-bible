@@ -24,7 +24,12 @@ def assert_current_batch32(case):
  metadata=t.APPLICATIONS/'enoch_witness_metadata13_14_20261026'
  if (metadata/'application.json').is_file():
   from tools.enoch import witness_projection_metadata as projection
-  case.assertEqual(projection.read_manifest()['canonical_baseline_sha256'],expected);case.assertEqual(projection.verify(applied=True)['snapshot_file_count'],966)
+  case.assertEqual(projection.read_manifest()['canonical_baseline_sha256'],expected)
+  successor=t.APPLICATIONS/'enoch_full_repair_batch33_20261027'
+  if (successor/'application.json').is_file():
+   from test_enoch_full_repair_batch33 import assert_current_batch33
+   newer,_=assert_current_batch33(case);case.assertEqual(newer['canonical_baseline_sha256'],json.loads((metadata/'application.json').read_text())['canonical_after_sha256']);case.assertEqual(projection.verify_current(metadata)['snapshot_file_count'],966)
+  else:case.assertEqual(projection.verify(applied=True)['snapshot_file_count'],966)
  else:case.assertEqual(t.corpus_hashes(),expected)
  return m,expected
 class Batch32Test(unittest.TestCase):

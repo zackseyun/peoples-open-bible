@@ -16,18 +16,28 @@ class WitnessProjectionMetadataTest(unittest.TestCase):
   for b in d['metadata_reviews']:
    pv=json.loads((t.APPLICATIONS/m.NAME/b['provenance']).read_text());self.assertEqual(pv['new_source_English_reviews'],0);self.assertEqual(pv['new_actual_photo_views'],0);self.assertEqual(pv['new_provider_calls'],0);self.assertEqual(pv['actual_photo_view_map'],{})
  def test_applied_exact966_postmap_and_original_input_evidence_preserved(self):
-  d=m.read_manifest();r=m.verify(applied=True);self.assertTrue(r['inherited_historical_review_only']);self.assertEqual(r['new_full_source_or_English_reviews'],0);self.assertEqual(verify_current(t.APPLICATIONS/m.NAME)['references'],m.REFS)
+  d=m.read_manifest();r=m.verify(applied=True,check_corpus=False);self.assertTrue(r['inherited_historical_review_only']);self.assertEqual(r['new_full_source_or_English_reviews'],0);self.assertEqual(verify_current(t.APPLICATIONS/m.NAME)['references'],m.REFS)
   receipt=json.loads((t.APPLICATIONS/m.NAME/'application.json').read_text());expected=dict(d['canonical_baseline_sha256'])
   for ref,case in d['cases'].items():expected['%03d/%03d.yaml'%t.parse_ref(ref)]=case['candidate_sha256']
-  self.assertEqual(t.corpus_hashes(),expected);self.assertEqual(receipt['canonical_after_sha256'],expected)
+  self.assertEqual(receipt['canonical_after_sha256'],expected)
+  successor=t.APPLICATIONS/'enoch_full_repair_batch33_20261027'
+  if (successor/'application.json').is_file():
+   from test_enoch_full_repair_batch33 import assert_current_batch33
+   newer,_=assert_current_batch33(self);self.assertEqual(newer['canonical_baseline_sha256'],expected)
+  else:self.assertEqual(t.corpus_hashes(),expected)
   imported=historical.load_all_current()
   for ref in m.REFS:
+   if ref=='1 Enoch 13:6' and (successor/'application.json').is_file():self.assertNotIn((13,6),imported);continue
    evidence=imported[t.parse_ref(ref)];self.assertFalse(evidence['fresh_review']);self.assertFalse(evidence['full_chapter_count_certified_by_import'])
  def test_projection_never_adds_new_reader_protocol_or_source_registry_claim(self):
   from tools.enoch.selected_edition_sources import registry_data
   d=m.read_manifest();reg=registry_data()
   for ref,case in d['cases'].items():
-   c,v=t.parse_ref(ref);old=yaml.load(t.artifact(t.ROOT,case['original_candidate']).read_bytes(),Loader=t.LOADER);new=yaml.load((t.TRANSLATION/f'{c:03d}/{v:03d}.yaml').read_bytes(),Loader=t.LOADER);self.assertEqual(reader._export_record_verse(v,old),reader._export_record_verse(v,new));self.assertNotIn(f'{c}:{v}',reg['units']);self.assertEqual(old['source_correction'],new['source_correction']);self.assertFalse(new['source_correction'].get('individual_unit_application_approved',False))
+   c,v=t.parse_ref(ref);old=yaml.load(t.artifact(t.ROOT,case['original_candidate']).read_bytes(),Loader=t.LOADER);new=yaml.load(t.artifact(t.APPLICATIONS/m.NAME,case['candidate']).read_bytes(),Loader=t.LOADER);self.assertEqual(reader._export_record_verse(v,old),reader._export_record_verse(v,new));self.assertEqual(old['source_correction'],new['source_correction']);self.assertFalse(new['source_correction'].get('individual_unit_application_approved',False))
+   if ref=='1 Enoch 13:6' and (t.APPLICATIONS/'enoch_full_repair_batch33_20261027/application.json').is_file():
+    from test_enoch_full_repair_batch33 import assert_current_batch33
+    assert_current_batch33(self);self.assertEqual(reg['units']['13:6'],'enoch_full_repair_batch33_20261027')
+   else:self.assertNotIn(f'{c}:{v}',reg['units'])
  def fixture(self,directory):
   root=Path(directory);package=root/m.NAME;shutil.copytree(t.APPLICATIONS/m.NAME,package);return root,package,json.loads((package/'manifest.json').read_text())
  def rebound(self,p,d):
@@ -76,7 +86,11 @@ class WitnessProjectionMetadataTest(unittest.TestCase):
   with tempfile.TemporaryDirectory()as directory:
    root=Path(directory);shutil.copytree(t.TRANSLATION,root/'corpus');target=root/'corpus/014/019.yaml';target.write_bytes(target.read_bytes()+b'\n# arbitrary drift\n')
    with patch.object(t,'TRANSLATION',root/'corpus'):
-    with self.assertRaises(ValueError):m.verify(applied=True)
+    if (t.APPLICATIONS/'enoch_full_repair_batch33_20261027/application.json').is_file():
+     from test_enoch_full_repair_batch33 import assert_current_batch33
+     with self.assertRaises((AssertionError,ValueError)):assert_current_batch33(self)
+    else:
+     with self.assertRaises(ValueError):m.verify(applied=True)
     with self.assertRaises(ValueError):verify_current(t.APPLICATIONS/m.NAME)
     imported=historical.load_current(t.ROOT/'sources/enoch/coverage/historical-input-bindings-20261023.json');self.assertNotIn((14,19),imported);self.assertEqual(len(imported),5)
  def test_wrong_old_hash_and_outside_six_reference_cannot_use_projection(self):
@@ -128,3 +142,7 @@ class WitnessProjectionMetadataTest(unittest.TestCase):
     self.assertEqual(target.read_bytes(),external[0]);self.assertFalse((p/'application.json').exists());self.assertFalse((p/'application.json.pending').exists())
     for ref,case in d['cases'].items():
      if ref!='1 Enoch 13:4':self.assertEqual(t.sha((corpus/('%03d/%03d.yaml'%t.parse_ref(ref))).read_bytes()),case['original_sha256'])
+ def test_foreign_application_root_cannot_supply_an_isolated_fixture_approval(self):
+  d=m.read_manifest();ref=m.REFS[0];case=d['cases'][ref];old=yaml.load(t.artifact(t.ROOT,case['original_candidate']).read_bytes(),Loader=t.LOADER);target=t.TRANSLATION/('%03d/%03d.yaml'%t.parse_ref(ref))
+  with tempfile.TemporaryDirectory()as directory,patch.object(t,'ROOT',Path(directory)):
+   self.assertFalse(m.matches_declared_successor(ref,case['original_sha256'],old,target))

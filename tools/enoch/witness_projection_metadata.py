@@ -115,6 +115,9 @@ def matches_declared_successor(reference, original_sha, original_candidate, targ
     """Called only AFTER original full historical input/review validation succeeds."""
     if reference not in REFS:return False
     package=t.APPLICATIONS/NAME
+    # An isolated historical fixture must never borrow an installed metadata
+    # receipt from a different repository root.
+    if not package.resolve().is_relative_to(t.ROOT.resolve()):return False
     # No receipt is not an approval. Before installation, original bytes still
     # take the ordinary historical path. Never accept an unapplied proposal.
     if not (package/'application.json').is_file():return False

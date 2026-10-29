@@ -106,6 +106,10 @@ is diagnostic, not automatic translation approval.
 
 [Batch32](docs/ENOCH_BATCH32_2026-10-26.md) locally integrates exact whole repairs18:8,54:8,84:2 and six separate stale witness-metadata projections. The latter add no language-review credit. Current local retained-review coverage is478/1061 units, not full-book completion. See the [current mechanical issue register](docs/ENOCH_REPAIR_AUDIT_2026-10-26_BATCH32.md); source publication and live delivery require separate exact-head gates.
 
+## Batch33 whole13:6 correction (2026-10-27)
+
+[Batch33](docs/ENOCH_BATCH33_2026-10-27.md) adds an exact whole source/English/explanation pair for13:6, including its photographed final noun and source-controlled forbearance. It supersedes only that unit's earlier metadata projection; other metadata changes remain separate zero-language-credit work. Local retained-review coverage remains478/1061, not full-book completion. Final combined-state CI/main/public-delivery gates remain required.
+
 ## Why Enoch
 
 Four reasons this book warrants a dedicated phase:

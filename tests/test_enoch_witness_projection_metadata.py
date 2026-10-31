@@ -107,6 +107,14 @@ class WitnessProjectionMetadataTest(unittest.TestCase):
  def writer_fixture(self,directory):
   root,package,data=self.fixture(directory);(package/'application.json').unlink(missing_ok=True);corpus=root/'corpus';shutil.copytree(t.TRANSLATION,corpus)
   for ref,case in data['cases'].items():(corpus/('%03d/%03d.yaml'%t.parse_ref(ref))).write_bytes(t.artifact(t.ROOT,case['original_candidate']).read_bytes())
+  # Reconstruct this historical writer's exact preimage, not a mixture of
+  # old six metadata targets and a later unrelated44 language successor.
+  drift={k for k,v in t.corpus_hashes(corpus).items()if data['canonical_baseline_sha256'].get(k)!=v}
+  if drift:
+   from tools.enoch import batch34_evidence,legacy44_evidence
+   batch34_evidence.verify_current();self.assertEqual(drift,{'044/001.yaml'})
+   raw=legacy44_evidence.historical_bytes();self.assertEqual(t.sha(raw),data['canonical_baseline_sha256']['044/001.yaml']);(corpus/'044/001.yaml').write_bytes(raw)
+  self.assertEqual(t.corpus_hashes(corpus),data['canonical_baseline_sha256'])
   return root,package,data,corpus
  def test_writer_uses_atomic_receipt_and_keeps_exact_whole_postmap(self):
   with tempfile.TemporaryDirectory()as directory:

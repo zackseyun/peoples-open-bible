@@ -1,5 +1,6 @@
 """Actual independent Azure structural counts, not Geʽez/English approval."""
 import json
+from tools.enoch.batch34_evidence import assert_current_progress
 from pathlib import Path
 import shutil
 import tempfile
@@ -49,7 +50,14 @@ class Chapter41To44CountEvidenceTest(unittest.TestCase):
         self.assertEqual(verify_current(successor)['references'],[f'1 Enoch 42:{v}'for v in(1,2,3)])
         self.assertEqual(manifest['chapter_inventories'][0]['units'],[1,2,3])
         self.assertIn(42,report['chapters_with_complete_imported_selected_edition_review'])
-        for c in set(counts.COUNTS)-{42}:self.assertNotIn(c,report['chapters_with_complete_imported_selected_edition_review'])
+        completed_by_separate_language_pairs={42}
+        from tools.enoch import batch34_evidence
+        if (t.APPLICATIONS/batch34_evidence.NAME/'application.json').is_file():
+            batch34_evidence.verify_current()
+            self.assertIn(44,report['chapters_with_complete_imported_selected_edition_review'])
+            completed_by_separate_language_pairs.add(44)
+        assert_current_progress(self,report)
+        for c in set(counts.COUNTS)-completed_by_separate_language_pairs:self.assertNotIn(c,report['chapters_with_complete_imported_selected_edition_review'])
         self.assertFalse(report['completion_proven']);self.assertFalse(report['artwork_publication_approval'])
         from tools.enoch.selected_edition_sources import registry_data
         registry=registry_data()

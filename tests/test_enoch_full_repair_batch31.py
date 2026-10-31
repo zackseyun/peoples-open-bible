@@ -1,5 +1,6 @@
 """Exact54:1/55:2 correction pair, not a generic historical-hold waiver."""
 import json,shutil,tempfile,unittest
+from tools.enoch.batch34_evidence import assert_current_progress
 from pathlib import Path
 from unittest.mock import patch
 import yaml
@@ -68,7 +69,7 @@ class Batch31Test(unittest.TestCase):
     with self.assertRaises((AssertionError,ValueError)):assert_current_batch31(self)
  def test_real_one_review_increment_not_complete_chapter_or_book(self):
   from tools.enoch.full_repair_progress import build
-  d=build();self.assertEqual(d['canonical_file_count'],966);self.assertEqual(d['current_units_with_imported_review_evidence'],478);self.assertEqual(len(d['chapters_with_complete_imported_selected_edition_review']),36);self.assertEqual(len(d['chapters_with_imported_paired_count_inventory']),108);self.assertEqual(d['evidence_inventory_warnings'],[]);self.assertFalse(d['completion_proven'])
+  d=build();self.assertEqual(d['canonical_file_count'],966);assert_current_progress(self,d);self.assertEqual(len(d['chapters_with_imported_paired_count_inventory']),108);self.assertEqual(d['evidence_inventory_warnings'],[]);self.assertFalse(d['completion_proven'])
 
  def test_CI_fetches_actual_published_preimage_and_runs_new_guards(self):
   workflow=(t.ROOT/'.github/workflows/corpus-integrity.yml').read_text()

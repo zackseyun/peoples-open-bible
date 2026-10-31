@@ -1,0 +1,113 @@
+{
+  "kind": "read-only-engineering-integration-risk-audit",
+  "reviewer_id": "/root/peer44_exact_20261031",
+  "at": "2026-10-31T07:49:09.608814+00:00",
+  "repository": "/Users/zackseyun/Documents/future 2/workspaces/enoch-audit-integration-20261020",
+  "head": "5a6633695bfcc3264f508974c104ad556892c036",
+  "scope": "Engineering only, no additional language vote, no repository/reviewer-output edits.",
+  "live_probes": {
+    "canonical44sha": "81006512ac9fddfaa608ef3f5b3378ddb9dcbf4b2c9cdaee2b2e729fce6fd607",
+    "legacy_receipt_path": "sources/textual_restoration/applications/enoch44_1.2026-10-06.v1.json",
+    "legacy_receipt_sha256": "ca86da66cec2848a79fe467b4244c9d475b946fa9f13c14c80c5a355546f93bf",
+    "legacy_applied_commit": "e978b6dc47e16886ea0c7b8efb3ee4665e457a60",
+    "legacy_before_commit_used_by_test": "21faf461feba9970d651bb70fa8d88aabeab43fe",
+    "legacy_applied_git_bytes_match_current": true,
+    "source_registry44_chapter": null,
+    "source_registry44_unit": null,
+    "existing_structural44_units": [
+      1
+    ],
+    "existing_structural44_pages": [
+      122,
+      123
+    ],
+    "reader_expected44": [
+      1
+    ],
+    "canonical_file_count": 966,
+    "reviewed_unit_count": 478,
+    "complete_chapter_count": 36,
+    "evidence_inventory_warnings": []
+  },
+  "critical_findings": [
+    {
+      "risk": "Legacy44 is a file receipt, not a manifest application directory",
+      "modules": [
+        "tools/enoch/bounded_application.py:load_manifest",
+        "tools/enoch/current_evidence.py:verify_current",
+        "tests/test_enoch44_1_application.py"
+      ],
+      "finding": "Generic supersedes requires old_package/manifest.json and old candidate YAML, so cannot honestly represent enoch44_1.2026-10-06.v1.json. Existing legacy editorial adapter supports only7-10; legacy individual adapter supports only25:7. No current adapter owns44.",
+      "narrow_update": "Add a dedicated fixed legacy44 descriptor/validator (or equally strict fixed guard in B34 integration) binding original receipt SHA, actual applied Git YAML hash, original baseline, and exact B34 preimage. Do not create a fake old manifest or pretend old parent-only approval was a distinct paired review. If adding a manifest supersedes_legacy44 key, explicitly validate it in bounded_application and dispatch current verification; never leave an ignored declarative key."
+    },
+    {
+      "risk": "Historical44 test freezes incorrect current source and English",
+      "modules": [
+        "tests/test_enoch44_1_application.py"
+      ],
+      "finding": "All four tests currently read live YAML as the legacy candidate: suffix appended to old source, along-with-them note/English, previous_reviews/textual_comparison, and receipt after_sha. B34 correctly violates these.",
+      "narrow_update": "Keep original assertions on actual historical Git candidate, still match immutable receipt; separately require exact B34 current successor with fresh paired input, sole44 changed preimage, witness projection and protocol. Do not replace historical receipt after_sha or remove the tests."
+    },
+    {
+      "risk": "Raw OCR fallback unless source ingress is explicitly registered",
+      "modules": [
+        "sources/enoch/ethiopic/reviewed_source_registry.json",
+        "tools/enoch/selected_edition_sources.py",
+        "tools/enoch/verse_parser.py"
+      ],
+      "finding": "44 absent both registry sections and absent EXPECTED_VERSES. Existing count41_44_evidence is not currently a special fallback in load_unit_overrides.",
+      "narrow_update": "Minimal route: register units[44:1] to B34 and include a valid pinned source_only_count_inventories chapter44 units[1], with independently evidenced count. Both exact one-row input/review lists satisfy the existing full structural scope gate. Bind count artifact to existing immutable41-44 photo count index; do not count canonical files or raw OCR. This route needs no broad parser change. A chapter44 registration is an alternative only with valid chapter_inventories certificate; do not register both or claim neighbors. Reuse count proof, not old wording approval."
+    },
+    {
+      "risk": "Full966 postmap freezes reject unrelated legitimate44 replacement",
+      "modules": [
+        "tests/test_enoch_full_repair_batch33.py:assert_current_batch33",
+        "tests/test_enoch_full_repair_batch32.py:assert_current_batch32",
+        "tests/test_enoch_witness_projection_metadata.py:test_applied_exact966_postmap_and_original_input_evidence_preserved",
+        "tools/enoch/replay_witness_projection_preimages.py:verify"
+      ],
+      "finding": "B33 directly requires corpus_hashes==B33 historical postmap and check_corpus=True. B32 and witness metadata tests call B33 helper, so transitively fail. Replay13/14 also calls t.verify(B33, applied=True, check_corpus=True), a separate production code full-corpus gate.",
+      "narrow_update": "Preserve B33 historical expected map/receipt and its13:6 current target checks. When B34 installed, verify exact B34 package/receipt, baseline==B33 historical full966 after-map, and current==B34 after-map with exactly044/001.yaml changed and no retirement. B33 helper must return B33 historical map, not B34 map, because B32 checks chronology. Update replay path with the same pinned successor-chain proof; do not merely turn off all corpus checks. B32 and witness tests may require no direct changes if their B33-helper dependency remains semantically historical."
+    },
+    {
+      "risk": "Stale live metadata and lexical objects can survive payload replacement",
+      "modules": [
+        "translation/extra_canonical/1_enoch/044/001.yaml",
+        "tools/enoch/bounded_application.py:verify",
+        "tools/export_reader_bible.py:_export_record_verse"
+      ],
+      "finding": "Current YAML includes incorrect lexical_decisions, theological_decisions, old textual_comparison publication approval, old model draft, and old witness text. Merely replacing source/translation leaves false current claims.",
+      "narrow_update": "Build a clean candidate using exact accepted source/translation; one Charles witness text must equal source; preserve old full-record SHA/history as non-current evidence. source_correction must bind exact baseline, new package, individual approval, no human/MSS/full-book/graphic approval. Keep draft, low confidence, accepted uncertainty controls and both explanations. Do not inherit historical graphic approval as current release authority."
+    },
+    {
+      "risk": "Delivery and progress conflation",
+      "modules": [
+        "tools/export_reader_bible.py:_enoch_expected_verse_map",
+        "tools/enoch/delivery_candidates.py:ordered_packages",
+        "tools/enoch/full_repair_progress.py:build"
+      ],
+      "finding": "Live release44 already equals[1] from raw parser. An individual source registration does not change release policy. Applied B34 automatically orders after B33 in delivery comparator; unapplied proposal must remain excluded.44 was not in imported review set, so valid installation adds one current reviewed unit and completes existing structural single-unit chapter.",
+      "narrow_update": "Assert release44 remains[1], canonical count966, reviewed units479 and complete chapters37 (new44), assuming no concurrent changes; warnings remain empty and full-book completion false. Test reader source_critical/footnote_review protocol and exact two explanations. No change to legacy mobile exporter or global eligibility map required."
+    }
+  ],
+  "new_batch34_tests_required": [
+    "Exact immutable author and distinct reviewer bytes bound to a1149d13d2397c6f3d56e7a2c365d69c0bdd8457eb61e46104dc9b1d0f6d7e0c; roles distinct, independent_reviewer present; altered review hash or rebound old0394 rejected.",
+    "Exact current966 preimage from main5a6633695b, B33 full after-map equals B34 baseline; sole044/001.yaml changed; no retirements; actual Git preimage hash810065... verified.",
+    "Legacy44 historical receipt, original before/applied Git blobs, source and English remain immutable; current successor explicit and unique; undeclared/wrong-receipt/multiple successors rejected.",
+    "Rehashed source, English, explanation-a and explanation-b tampering each rejected even if candidate manifest hash rewritten.",
+    "Current parser44 uses exact accepted input, not canonical YAML feedback; raw parse_ocr_chapter44 remains old for diagnostics; witness text matches new source.",
+    "Count/source ingress uses exact[1] and actual122-123 span; false count2, wrong hash, wrong primary PDF, language-credit flags, or neighboring unit registration rejected.",
+    "B33 full postmap successor negative cases: unrelated second YAML edit, wrong baseline, missing application receipt, stale manifest hash, or B34 candidate drift all reject. Replay13/14 remains strict and historical metadata receives no fresh language credit.",
+    "Reader exact English and both notes plus low source uncertainty appear with existing protocol; no release count policy or mobile exporter hash change.",
+    "CI includes B34 tests and fetches actual5a6633695bfcc3264f508974c104ad556892c036 preimage commit; original legacy44 Git hashes remain available."
+  ],
+  "unchanged_controls": [
+    "count41_44_evidence immutable index and page-map receipts",
+    "structural_counts counts",
+    "audit_pob_source_coverage EXPECTED_VERSES need not change for minimal individual ingress route",
+    "delivery_candidates chronology algorithm already supports installed batch34",
+    "old batch32/batch33 manifests, receipts, candidates, and author/reviewer outputs"
+  ],
+  "verification_performed": "Read source/tests plus read-only Git and live Python probes of structural inventory, source registry, reader expected map and full_repair_progress. Did not execute full unit suite or modify repository.",
+  "canonical_write_or_publication_authorized": false
+}

@@ -1,5 +1,6 @@
 """All108 structural inventories, without treating any count as a translation."""
 import copy
+from tools.enoch.batch34_evidence import assert_current_progress
 import json
 from pathlib import Path
 import tempfile
@@ -53,7 +54,7 @@ class Count85To90EvidenceTest(unittest.TestCase):
         from tools.enoch.full_repair_progress import build
         from tools.enoch.selected_edition_sources import registry_data
         r=build();self.assertEqual(r['chapters_with_imported_paired_count_inventory'],list(range(1,109)));self.assertEqual(r['canonical_file_count'],966)
-        self.assertEqual(len(r['chapters_with_complete_imported_selected_edition_review']),36)
+        assert_current_progress(self,r)
         registry=registry_data()
         for c in range(85,91):self.assertNotIn(str(c),registry['chapters'])
         self.assertEqual(r['evidence_inventory_warnings'],[])

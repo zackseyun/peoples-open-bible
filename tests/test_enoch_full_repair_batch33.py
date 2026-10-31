@@ -1,5 +1,6 @@
 """Exact fresh13:6 source/English/explanations supersede only its metadata preimage."""
 import json,shutil,tempfile,unittest
+from tools.enoch.batch34_evidence import assert_current_progress
 from pathlib import Path
 from unittest.mock import patch
 import yaml
@@ -10,7 +11,8 @@ from tools import export_reader_bible as reader
 P=t.APPLICATIONS/'enoch_full_repair_batch33_20261027';M=t.APPLICATIONS/'enoch_witness_metadata13_14_20261026';SHA='113b61f03934b82eca38023d0d4eb62bb3a78b0c454013d3f12bb4210d6296cc';INPUT='0614fc4a79b0dd44a9214942cd684545bcfbad7f8533204c49f86659d840524c';REF='1 Enoch 13:6';BASE='f125fb680b4107aea28a4cc49eb7182c1ced596c'
 def record():return yaml.load((t.TRANSLATION/'013/006.yaml').read_bytes(),Loader=t.LOADER)
 def assert_current_batch33(case):
- case.assertEqual(t.sha((P/'manifest.json').read_bytes()),SHA);m=t.load_manifest(P);case.assertEqual(m['references'],[REF]);prior=json.loads((M/'application.json').read_text());case.assertEqual(m['canonical_baseline_sha256'],prior['canonical_after_sha256']);expected=dict(m['canonical_baseline_sha256']);expected['013/006.yaml']=m['files']['013-006.candidate.yaml'];r=json.loads((P/'application.json').read_text());case.assertEqual(r['canonical_after_sha256'],expected);case.assertEqual(t.corpus_hashes(),expected);case.assertEqual(t.verify(P,applied=True,check_corpus=True)['references'],[REF]);case.assertEqual(len(expected),966);case.assertEqual(m['source_baseline_git_commit'],BASE);return m,expected
+ from tools.enoch.batch34_evidence import verify_batch33_postmap_or_fixed_successor
+ m,expected=verify_batch33_postmap_or_fixed_successor();case.assertEqual(t.sha((P/'manifest.json').read_bytes()),SHA);case.assertEqual(m['references'],[REF]);prior=json.loads((M/'application.json').read_text());case.assertEqual(m['canonical_baseline_sha256'],prior['canonical_after_sha256']);case.assertEqual(len(expected),966);case.assertEqual(m['source_baseline_git_commit'],BASE);return m,expected
 class Batch33Test(unittest.TestCase):
  def test_exact966_chain_and_only_one_existing_change(self):
   m,after=assert_current_batch33(self);self.assertEqual({k for k in after if after[k]!=m['canonical_baseline_sha256'][k]},{'013/006.yaml'});self.assertEqual(m['retirements'],[])
@@ -47,4 +49,4 @@ class Batch33Test(unittest.TestCase):
     with self.assertRaises(ValueError):t.verify(p,evidence_only=True)
  def test_no_new_unit_count_or_chapter_credit_and_actual_CI_git_fetch(self):
   from tools.enoch.full_repair_progress import build
-  r=build();self.assertEqual(r['canonical_file_count'],966);self.assertEqual(r['current_units_with_imported_review_evidence'],478);self.assertEqual(len(r['chapters_with_complete_imported_selected_edition_review']),36);self.assertEqual(r['evidence_inventory_warnings'],[]);self.assertFalse(r['completion_proven']);workflow=(t.ROOT/'.github/workflows/corpus-integrity.yml').read_text();self.assertIn('git fetch --no-tags --depth=1 origin '+BASE,workflow);self.assertIn("python -m unittest discover -s tests -p 'test_enoch_full_repair_batch33.py'",workflow)
+  r=build();self.assertEqual(r['canonical_file_count'],966);assert_current_progress(self,r);self.assertEqual(r['evidence_inventory_warnings'],[]);self.assertFalse(r['completion_proven']);workflow=(t.ROOT/'.github/workflows/corpus-integrity.yml').read_text();self.assertIn('git fetch --no-tags --depth=1 origin '+BASE,workflow);self.assertIn("python -m unittest discover -s tests -p 'test_enoch_full_repair_batch33.py'",workflow)

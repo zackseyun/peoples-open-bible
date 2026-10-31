@@ -31,7 +31,8 @@ def verify(chapter):
             if t.sha(target.read_bytes())!=case['candidate_sha256']:
                 name='enoch_full_repair_batch33_20261027';p=t.APPLICATIONS/name
                 if ref!='1 Enoch 13:6' or t.sha((p/'manifest.json').read_bytes())!='113b61f03934b82eca38023d0d4eb62bb3a78b0c454013d3f12bb4210d6296cc' or {'reference':ref,'superseded_by':name}not in current_projection['reviewed_supersessions']:raise ValueError('No exact fresh13:6 language successor for legacy projection')
-                t.verify(p,applied=True,check_corpus=True)
+                from tools.enoch.batch34_evidence import verify_batch33_postmap_or_fixed_successor
+                verify_batch33_postmap_or_fixed_successor()
         elif target.read_bytes()!=raw:raise ValueError('Unrelated legacy target changed without a declared successor')
         originals[(c,v)]=raw
     with tempfile.TemporaryDirectory(prefix='enoch-exact-legacy-projection-')as directory:

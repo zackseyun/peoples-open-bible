@@ -1,0 +1,7 @@
+# Post-freeze exposure / correction addendum
+
+The pre-candidate freeze remains unchanged. After sending READY, I used collaboration.list_agents to check coordination. That unexpectedly returned the author's completion summary, including the phrases 'Singular predicates and final their form remain explicit', path, and proposed hash. This was not the routed exact packet; no author directory or proposal was opened. It is real semantic exposure and is not erased or represented as a pristine pre-candidate source reading.
+
+A 400-dpi native-resolution re-render of the same Charles PDF122 had already started before this exposure. It has been inspected after exposure. It is the same photographic source, not an additional independent witness or physical-source resolution. First native crop mistakenly covered apparatus; a second corrected crop covers the actual body. Neither is a new source witness.
+
+The final word, provisionally transcribed ምስሌሆሙ and understood as 'with them' by language competence in the frozen controls, is now a specific lexical/morphological concern because the exposed author summary reads it as 'their form'. This concern is POST-EXPOSURE, not an independently discovered pre-freeze agreement or disagreement. It requires photo-controlled distinction between the preposition and image/form noun, not assumption from either author's English or my earlier gloss. The whole unit remains HOLD.

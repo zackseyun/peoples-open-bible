@@ -1,5 +1,6 @@
 """Singular53:5 and actual selected54:9 voice, with adverse evidence preserved."""
 import json,shutil,tempfile,unittest
+from tools.enoch.batch34_evidence import assert_current_progress
 from pathlib import Path
 import yaml
 from tools.enoch import bounded_application as t
@@ -70,5 +71,5 @@ class Batch29Test(unittest.TestCase):
                 with self.assertRaises(ValueError):t.verify(q,evidence_only=True)
     def test_counts_record_coverage_and_language_certificates_not_inflated(self):
         from tools.enoch.full_repair_progress import build
-        r=build();self.assertEqual(r['canonical_file_count'],966);self.assertEqual(r['current_units_with_imported_review_evidence'],478);self.assertEqual(len(r['chapters_with_complete_imported_selected_edition_review']),36);self.assertEqual(len(r['chapters_with_imported_paired_count_inventory']),108);self.assertFalse(r['completion_proven']);self.assertEqual(r['evidence_inventory_warnings'],[])
+        r=build();self.assertEqual(r['canonical_file_count'],966);assert_current_progress(self,r);self.assertEqual(len(r['chapters_with_imported_paired_count_inventory']),108);self.assertFalse(r['completion_proven']);self.assertEqual(r['evidence_inventory_warnings'],[])
         for c,v in((53,5),(54,9)):self.assertFalse(record(c,v)['source_correction']['selected_edition_chapter_reviewed'])

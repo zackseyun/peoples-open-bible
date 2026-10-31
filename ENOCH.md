@@ -385,3 +385,14 @@ snapshot has962records,366imported-review units and31complete imported
 chapter coverages, not an all108 certificate. Quiet verse-click details remain,
 with no new visible footnote markers. Main, CI and public delivery require
 separate terminal verification.
+
+
+## Batch34 exact whole44:1 correction (2026-10-31)
+
+[Batch34](docs/ENOCH_BATCH34_2026-10-31.md) replaces the older parent-only
+cross-page treatment with a newly paired whole source/English/two-explanation
+treatment. The selected plural rising predicate, subsequent singulars and
+nominal “their form” are retained without invented antecedents. LOW qualifies
+the compressed selected-edition relation, not unread fidels. The dated local
+ledger is479/1061 units and37/108 complete imported chapter reviews; exact-head
+CI, main merge and public delivery remain separate pending gates.

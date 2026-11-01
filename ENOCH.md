@@ -396,3 +396,14 @@ nominal “their form” are retained without invented antecedents. LOW qualifie
 the compressed selected-edition relation, not unread fidels. The dated local
 ledger is479/1061 units and37/108 complete imported chapter reviews; exact-head
 CI, main merge and public delivery remain separate pending gates.
+
+
+## Batch35 individual95/96 review branch (2026-10-31)
+
+[Batch35](docs/ENOCH_BATCH35_2026-10-31.md) locally installs exact paired95:1–5
+and96:1 treatments, retaining the explicit95:6–7 and96:2–8 holds. No missing
+records or fullchapter certificates are added. A separately proven structural
+transaction restores95's actual237–238 sourcewindow with zero new count or
+language votes. Expected local ledger485/1061 and37/108 is not a full-book or
+public-release certificate. Main merge/publication is held under the user's
+Azure-only instruction because the existing canonical publisher invokes AWS.

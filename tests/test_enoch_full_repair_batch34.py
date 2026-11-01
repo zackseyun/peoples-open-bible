@@ -38,7 +38,11 @@ class Batch34Test(unittest.TestCase):
   if proof['verified_current_successor']:
    from tools.enoch import batch35_evidence as successor
    self.assertEqual(proof['verified_current_successor'],successor.NAME)
-   self.assertEqual({k for k,v in proof['actual_current_postmap'].items()if proof['current_postmap'][k]!=v},successor.CHANGED_PATHS)
+   extra = set(successor.CHANGED_PATHS)
+   from tools.enoch import batch36_evidence as next_successor
+   if (t.APPLICATIONS/next_successor.NAME/'application.json').is_file():
+    next_successor.verify_current();extra |= next_successor.CHANGED_PATHS
+   self.assertEqual({k for k,v in proof['actual_current_postmap'].items()if proof['current_postmap'][k]!=v},extra)
   self.assertTrue(receipt['unrelated_canonical_files_unchanged_at_application'])
   self.assertFalse(receipt['deployed_by_transaction'])
  def test_legacy_descriptor_preserves_parent_only_history(self):

@@ -76,7 +76,7 @@ def verify_current():
     proof = historical_postmap()
     from tools.enoch import batch35_evidence as successor
     if (t.APPLICATIONS/successor.NAME/'application.json').is_file():
-        current = successor.verify_current()['current_postmap']
+        current = successor.verify_current()['actual_current_postmap']
         name = successor.NAME
     else:
         # An absent/unapplied B35 proposal licenses no later canonical drift.
@@ -103,7 +103,11 @@ def assert_current_progress(case, report):
         proof = verify_current()
         from tools.enoch import batch35_evidence as successor
         installed = proof['verified_current_successor'] == successor.NAME
-        case.assertEqual(report['current_units_with_imported_review_evidence'], 485 if installed else 479)
+        from tools.enoch import batch36_evidence as next_successor
+        extended = installed and (t.APPLICATIONS/next_successor.NAME/'application.json').is_file()
+        if extended:
+            next_successor.verify_current()
+        case.assertEqual(report['current_units_with_imported_review_evidence'], 486 if extended else 485 if installed else 479)
         case.assertEqual(len(report['chapters_with_complete_imported_selected_edition_review']), 37)
         case.assertIn(44, report['chapters_with_complete_imported_selected_edition_review'])
         if installed:
@@ -111,7 +115,8 @@ def assert_current_progress(case, report):
             for c, units in successor.ACCEPTED_UNITS.items():
                 case.assertNotIn(c, report['chapters_with_complete_imported_selected_edition_review'])
                 row = next(row for row in report['chapters'] if row['chapter'] == c)
-                case.assertEqual(row['current_units_with_imported_review_evidence'], units)
+                wanted_units = sorted(set(units) | ({3} if extended and c == 96 else set()))
+                case.assertEqual(row['current_units_with_imported_review_evidence'], wanted_units)
                 case.assertFalse(row['selected_edition_chapter_review_complete'])
     else:
         case.assertEqual(report['current_units_with_imported_review_evidence'], 478)

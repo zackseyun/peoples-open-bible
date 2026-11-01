@@ -82,7 +82,12 @@ class Batch35Test(unittest.TestCase):
         self.assertEqual(proof['prior_historical_postmap'], before)
         self.assertEqual(len(before), 966)
         self.assertEqual(set(proof['current_postmap']), set(before))
-        self.assertEqual(proof['current_postmap'], proof['actual_current_postmap'])
+        from tools.enoch import batch36_evidence as next_successor
+        if proof.get('verified_current_successor'):
+            self.assertEqual(proof['verified_current_successor'], next_successor.NAME)
+            self.assertEqual({k for k in proof['current_postmap'] if proof['current_postmap'][k] != proof['actual_current_postmap'][k]}, next_successor.CHANGED_PATHS)
+        else:
+            self.assertEqual(proof['current_postmap'], proof['actual_current_postmap'])
         self.assertEqual({k for k in before if before[k] != proof['current_postmap'][k]}, PATHS)
         self.assertEqual(manifest['references'], REFS)
         self.assertEqual(manifest['retirements'], [])
@@ -90,7 +95,8 @@ class Batch35Test(unittest.TestCase):
         for path in sorted(PATHS):
             t.verify_git_preimage(manifest, path, before[path])
         receipt = read_json(P / 'application.json')
-        self.assertEqual(receipt['canonical_after_sha256'], t.corpus_hashes())
+        self.assertEqual(receipt['canonical_after_sha256'], proof['current_postmap'])
+        self.assertEqual(proof['actual_current_postmap'], t.corpus_hashes())
         self.assertEqual(receipt['snapshot_file_count'], 966)
         self.assertEqual(receipt['candidate_files'], 6)
         self.assertEqual(receipt['retired_references'], [])
@@ -193,15 +199,20 @@ class Batch35Test(unittest.TestCase):
     def test_registry_units_only_accepted_input_not_canonical_echo(self):
         registry = sources.registry_data()
         wanted = {f'{c}:{v}': b.NAME for c, v in map(t.parse_ref, REFS)}
+        from tools.enoch import batch36_evidence as next_successor
+        installed = (t.APPLICATIONS/next_successor.NAME/'application.json').is_file()
+        if installed:
+            next_successor.verify_current()
+            wanted['96:3'] = next_successor.NAME
         self.assertEqual({k: v for k, v in registry['units'].items()
                           if k.startswith(('95:', '96:')) or v == b.NAME}, wanted)
         for c in (95, 96):
             self.assertNotIn(str(c), registry['chapters'])
             self.assertIsNone(sources.load_chapter(c))
         with patch.object(t, 'TRANSLATION', Path('/nonexistent-canonical-source-proof')):
-            for c, count in ((95, 5), (96, 1)):
+            for c, wanted_units in ((95, [1,2,3,4,5]), (96, [1,3] if installed else [1])):
                 rows = sources.load_unit_overrides(c)
-                self.assertEqual([r['verse'] for r in rows], list(range(1, count + 1)))
+                self.assertEqual([r['verse'] for r in rows], wanted_units)
                 for row in rows:
                     self.assertIn('/final/', row['evidence'])
                     self.assertNotIn('translation/extra_canonical', row['evidence'])
@@ -263,7 +274,7 @@ class Batch35Test(unittest.TestCase):
         from tools.enoch.full_repair_progress import build
         report = build()
         self.assertEqual(report['canonical_file_count'], 966)
-        self.assertEqual(report['current_units_with_imported_review_evidence'], 485)
+        prior.assert_current_progress(self, report)
         self.assertEqual(len(report['chapters_with_complete_imported_selected_edition_review']), 37)
         self.assertNotIn(95, report['chapters_with_complete_imported_selected_edition_review'])
         self.assertNotIn(96, report['chapters_with_complete_imported_selected_edition_review'])

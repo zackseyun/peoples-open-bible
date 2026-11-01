@@ -124,7 +124,7 @@ def _source_counts(package, manifest):
     window.verify_applied()
 
 
-def verify_current():
+def historical_postmap():
     package = t.APPLICATIONS/NAME
     if t.sha((package/'manifest.json').read_bytes()) != MANIFEST_SHA:
         raise ValueError('Fixed B35 manifest differs')
@@ -181,10 +181,31 @@ def verify_current():
     registry = registry_data()
     wanted = {f'{c}:{v}': NAME for c in (95, 96) for v in ACCEPTED_UNITS[c]}
     if (registry is None or any(str(c) in registry['chapters'] for c in (95, 96)) or
-            {key: value for key, value in registry.get('units', {}).items()
-             if key.startswith(('95:', '96:')) or value == NAME} != wanted):
+            {key: value for key, value in registry.get('units', {}).items() if value == NAME} != wanted or
+            any(registry.get('units', {}).get(key) != value for key, value in wanted.items())):
         raise ValueError('B35 individual source registry exceeds six accepted units')
-    proof = t.verify(package, applied=True, check_corpus=True)
+    proof = t.verify(package, applied=True, check_corpus=False)
     return {**proof, 'manifest': manifest, 'prior_historical_postmap': before,
             'current_postmap': expected, 'actual_current_postmap': expected,
             'new_language_review_units': 6, 'new_structural_count_votes': 0}
+
+
+def verify_current():
+    """Only the fixed applied B36 may extend the immutable historical B35 map."""
+    proof = historical_postmap()
+    from tools.enoch import batch36_evidence as successor
+    if (t.APPLICATIONS/successor.NAME/'application.json').is_file():
+        current = successor.verify_current()['current_postmap']
+        name = successor.NAME
+    else:
+        t.verify(t.APPLICATIONS/NAME, applied=True, check_corpus=True)
+        from tools.enoch.selected_edition_sources import registry_data
+        registry = registry_data()
+        wanted = {f'{c}:{v}': NAME for c in (95,96) for v in ACCEPTED_UNITS[c]}
+        if {key:value for key,value in registry.get('units',{}).items()
+            if key.startswith(('95:', '96:')) or value == NAME} != wanted:
+            raise ValueError('B35 has an unapproved registry successor')
+        current = proof['current_postmap']
+        name = None
+    return {**proof, 'actual_current_postmap': current,
+            'verified_current_successor': name}

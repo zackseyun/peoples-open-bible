@@ -108,14 +108,17 @@ class WitnessProjectionMetadataTest(unittest.TestCase):
   root,package,data=self.fixture(directory);(package/'application.json').unlink(missing_ok=True);corpus=root/'corpus';shutil.copytree(t.TRANSLATION,corpus)
   for ref,case in data['cases'].items():(corpus/('%03d/%03d.yaml'%t.parse_ref(ref))).write_bytes(t.artifact(t.ROOT,case['original_candidate']).read_bytes())
   # Reconstruct all966 exact historical preimages after reverting its own six
-  # metadata targets. Later44 and six B35 units require their fixed current
-  # chain, then actual Git bytes at this metadata writer's declared baseline.
+  # metadata targets. Later44, six B35 units and the fixed B36 unit require
+  # their strict current chain, then actual Git bytes at the declared baseline.
   drift={k for k,v in t.corpus_hashes(corpus).items()if data['canonical_baseline_sha256'].get(k)!=v}
   if drift:
    from tools.enoch import batch34_evidence,batch35_evidence
    if (t.APPLICATIONS/batch35_evidence.NAME/'application.json').is_file():
     batch35_evidence.verify_current()
     expected_drift={'044/001.yaml'}|batch35_evidence.CHANGED_PATHS
+    from tools.enoch import batch36_evidence
+    if (t.APPLICATIONS/batch36_evidence.NAME/'application.json').is_file():
+     batch36_evidence.verify_current();expected_drift |= batch36_evidence.CHANGED_PATHS
    else:
     batch34_evidence.verify_current();expected_drift={'044/001.yaml'}
    self.assertEqual(drift,expected_drift)

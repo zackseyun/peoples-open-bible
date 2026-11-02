@@ -118,3 +118,15 @@ but no real SDK/cloud integration or permissions claim is made.
    do not change DNS or claim `bible.cartha.com` migrated.
 6. Verify exact terminal publication and public custom-host readback. Offline
    parity, fake-store tests and green CI are not deployment or full-book repair.
+
+## Batch 36 successor fixture — still offline only
+
+`batch36-changes.json` pins the tested Batch 36 draft (`ab73737d415d953359073b63a8eea3878af75d8c`).
+It preserves all six Batch 35 changes and permits only the separately paired
+96:3 repair in addition. The full-dataset regression checks both exact application
+manifest hashes, seven total changes versus the retained public baseline, one
+change versus Batch 35, unchanged address structure, and absence of held 95:6–7
+and 96:4–8. CI fetches that immutable draft commit without merging it.
+
+This fixture does not authorize activation, main merges, additional neighbors,
+or publication. The original Batch 35 fixture and all activation gates remain.

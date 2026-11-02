@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { gunzipSync, gzipSync } from 'node:zlib';
@@ -31,6 +32,23 @@ test('B35 changes exactly six whole records, no held-neighbor exposure',async()=
  const p=await compileGit(root,changes.source_sha);const result=assertParity(baseline,p,changes.allowed);assert.equal(result.changed.length,6);
  assert.deepEqual(result.changed.map(k=>JSON.parse(k).slice(1)).sort(),[[95,1],[95,2],[95,3],[95,4],[95,5],[96,1]].sort());
 });
+
+test('B36 extends B35 by exactly reviewed 96:3; no address or held-neighbor additions',async()=>{
+ const next=JSON.parse(fs.readFileSync(fixture('batch36-changes.json')));
+ assert.equal(next.previous_source_sha,changes.source_sha);
+ assert.equal(next.runtime_activation_authorized,false);
+ assert.equal(hash(fs.readFileSync(fixture('baseline-a368.json.gz'))),next.baseline_inventory_sha256);
+ for(const m of next.review_application_manifests)assert.equal(hash(execFileSync('git',['-C',root,'show',`${m.source_sha}:${m.path}`])),m.sha256);
+ const previous=await compileGit(root,changes.source_sha),p=await compileGit(root,next.source_sha);
+ const pi=inventory(previous),ni=inventory(p),key=JSON.stringify(['1 Enoch',96,3]);
+ const delta=Object.keys(ni.records).filter(k=>ni.records[k]!==pi.records[k]);
+ assert.deepEqual(delta,[key]);assert.equal(ni.structure_sha256,pi.structure_sha256);
+ assert.deepEqual(next.allowed,{...changes.allowed,[key]:{before:baseline.records[key],after:ni.records[key]}});
+ const result=assertParity(baseline,p,next.allowed);assert.equal(result.changed.length,7);
+ const enoch=p.books.find(b=>b.name==='1 Enoch');
+ for(const [ch,held] of [[95,[6,7]],[96,[4,5,6,7,8]]])for(const v of held)assert.ok(!enoch.chapters.find(c=>c.chapter===ch).verses.some(r=>r.verse===v));
+});
+
 for(const [name,edit] of [
  ['deletion',p=>p.books[0].chapters[0].verses.pop()],
  ['new held neighbor',p=>p.books[0].chapters[0].verses.push({verse:6,text:'Not approved'})],

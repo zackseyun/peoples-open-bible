@@ -25,8 +25,9 @@ jobs:
         run: |
           git fetch --no-tags --depth=1 origin a3681961d91c1eb1a609e12cec312a644148f9bb
           git fetch --no-tags --depth=1 origin 3ca33e73a8b5dc73b98852a1add96cbb58fb63a1
+          git fetch --no-tags --depth=1 origin ab73737d415d953359073b63a8eea3878af75d8c
       - run: npm ci --prefix tools/pob_publisher --ignore-scripts --no-audit --no-fund
-      - name: Compile both complete datasets and verify exact parity
+      - name: Compile pinned complete datasets and verify exact parity
         run: npm test --prefix tools/pob_publisher
       - name: Fake-store tests only, no Azure SDK or cloud client
         run: python3 -m unittest discover -s tests -p test_pob_azure_stage_proposal.py -v

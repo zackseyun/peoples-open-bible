@@ -91,7 +91,41 @@ class HermasSourceRepairTests(unittest.TestCase):
         assert "λαμπροί, [μὴ] λελατομημένοι." in third.text
         assert any("absent" in n and "μὴ" in n for n in third.notes)
         assert third.text.endswith("κατὰ ἕνα λίθον ἐβάσταζον ὁμοῦ.")
-        assert fourth.text == "Καθὼς δὲ ἐστάθησαν ὁμοῦ κύκλῳ τῆς πύλης, οὕτως"
+        assert fourth.source_pages == [388, 389, 390]
+        assert fourth.text.startswith("Καθὼς δὲ ἐστάθησαν ὁμοῦ κύκλῳ τῆς πύλης, οὕτως")
+        assert fourth.text.endswith("μὴ κοπιᾶτε οὖν, [φασίν,] εἰς μάτην.")
+
+    def test_supplements_and_uncertain_text_survive_cross_page_normalization(self):
+        fourth = hermas.load_unit("S.9.iv")
+        sixth = hermas.load_unit("S.9.vi")
+        eighth = hermas.load_unit("S.9.viii")
+        assert "| καὶ ἀνέπλησαν ὅλην τὴν πέτραν." in fourth.text
+        assert sixth.text.count("|") == 6
+        assert "6. | καὶ ἐπηρώτησαν αὐτὸν οἱ οἰκοδομοῦντες" in sixth.text
+        assert eighth.text.count("†") == 2
+        assert "[εὑρέθησαν καὶ]" in eighth.text
+        assert "[τῶν παρθένων]" in eighth.text
+        assert any("Vertical bars" in note for note in sixth.notes)
+
+    def test_nine_continuation_keeps_complete_chapters_and_partial_tail_distinct(self):
+        fifth = hermas.load_unit("S.9.v")
+        tenth = hermas.load_unit("S.9.x")
+        eleventh = hermas.load_unit("S.9.xi")
+        assert "καὶ μὴ λελατομημένων" in fifth.text
+        assert "ταῖς δὲ παρθένοις ἐπέταξαν" in fifth.text
+        assert "παρεγεγόνει" in fifth.text
+        assert tenth.text.endswith("αἱ ἐνδοξότεραι αὐτῶν.")
+        assert eleventh.text.endswith("καὶ οὐδὲν ὅλως ἀποκρύψω ἀπὸ σοῦ.")
+        assert eleventh.source_pages == [396, 397]
+        twelfth = hermas.load_unit("S.9.xii")
+        thirteenth = hermas.load_unit("S.9.xiii")
+        partial = hermas.load_unit("S.9.xiv")
+        assert "Ἡ πέτρα, φησίν, αὕτη καὶ ἡ πύλη ὁ υἱὸς τοῦ Θεοῦ ἐστί." in twelfth.text
+        assert "διῆλθον γὰρ διὰ τῆς πύλης" in thirteenth.text
+        assert "ἐνδιδυσκόμενοι τὰ πνεύματα" in thirteenth.text
+        assert partial.text.endswith("καὶ ἤδη κατεφθαρμένων ἡμῶν")
+        rows = json.loads((hermas.REPO_ROOT / "sources/shepherd_of_hermas/repair/coverage.v1.json").read_text())["units"]
+        assert next(r for r in rows if r["unit_id"] == "S.9.xiv")["source_status"] == "partially_transcribed"
 
     def test_cutoff_extension_does_not_renumber_imported_units(self):
         path = hermas.REPO_ROOT / "sources/shepherd_of_hermas/repair/coverage.v1.json"

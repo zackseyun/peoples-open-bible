@@ -107,6 +107,24 @@ paragraphs in chapter 63. These are still drafts pending final collation and
 verified publication. The earlier graphic edition remains a separate pinned
 text snapshot.
 
+## Further Similitude 9 restoration
+
+`nine-20261103.v1.json` records twelve more scanned leaves (physical pages
+389–400). The printed body now runs through 9.xiii, with 9.xiv incomplete
+inside paragraph 3. There are 84 normalized working units, not 84 certified
+complete chapters. Twenty-three whole ending chapters remain untranscribed,
+along with this partial chapter and the earlier gaps and unresolved boundaries.
+
+The normalizer now preserves printed vertical bars delimiting editorial
+supplements, and the dagger-marked crux in 9.viii.5. The standard chapter 63
+source references were synchronized with the recovered marks; its English,
+IDs, simplified bases, and review history were preserved. Earlier normalized
+sections also recover their existing raw-file bars; their translation records
+have not been silently rewritten. The audit records eleven scan-verified
+transcription corrections and several source choices still requiring witness
+comparison. First1KGreek was used only for difference detection after manual
+transcription; adopted corrections were checked against the acquired scan.
+
 ## Next work
 
 Finish the opening's witness comparison and standard/simplified reader

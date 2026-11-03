@@ -255,7 +255,9 @@ def extract_running_head(page_text: str) -> str:
 def _clean_body_lines(body_text: str) -> list[str]:
     lines: list[str] = []
     for raw_line in body_text.splitlines():
-        line = raw_line.replace("|", " ").strip()
+        # Lightfoot also uses vertical bars to delimit supplied text. They
+        # are source-critical marks, not disposable table-column separators.
+        line = raw_line.strip()
         line = line.strip('"`“”')
         if not line:
             continue
@@ -356,7 +358,6 @@ def _normalize_unit_text(lines: list[str]) -> str:
     if not lines:
         return ""
     joined = "\n".join(lines)
-    joined = joined.replace("|", " ")
     joined = _HYPHEN_BREAK_RE.sub(r"\1\2", joined)
     joined = re.sub(r"\s*\n\s*", " ", joined)
     joined = _MULTI_SPACE_RE.sub(" ", joined)
@@ -382,6 +383,9 @@ def parse_units() -> list[HermasUnit]:
             return
         text = _normalize_unit_text(current_lines)
         if text:
+            notes = current_notes[:]
+            if "|" in text:
+                notes.append("Vertical bars from the printed working edition are preserved as editorial markers; consult the passage apparatus before treating their contents as manuscript-attested wording.")
             units.append(
                 HermasUnit(
                     key=current_key,
@@ -389,7 +393,7 @@ def parse_units() -> list[HermasUnit]:
                     text=text,
                     source_pages=current_pages[:],
                     source_files=current_files[:],
-                    notes=current_notes[:],
+                    notes=notes,
                 )
             )
         current_key = None

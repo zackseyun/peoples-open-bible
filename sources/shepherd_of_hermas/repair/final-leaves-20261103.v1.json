@@ -199,6 +199,11 @@
     "run": 41689957771,
     "terminal_result": "Cancelled at90minute workflow timeout; GitHub annotation confirms maximum execution time exceeded.",
     "changes": "Batch adjacent baseline fetches from124 requests to6, preserving the complete ordered SHA list and depth2 parent fetches; allow180minutes for the same complete validation suite.",
-    "validation": "Workflow YAML and fetch shell syntax parse; ordered commit IDs and all depth2 commands compared against prior workflow. Full remote CI remains required."
+    "validation": "Workflow YAML and fetch shell syntax parse; ordered commit IDs and all depth2 commands compared against prior workflow. Full remote CI remains required.",
+    "later_correction": {
+      "run": 41711202759,
+      "failure": "test_judges6_reader_note_application requires literal individual baseline fetch command text. Batching preserved requested commits but broke the workflow-format contract.",
+      "resolution": "Restore the original entire baseline-fetch step verbatim; retain180minute timeout. No test assertion relaxed or historical evidence changed."
+    }
   }
 }

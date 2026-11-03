@@ -39,6 +39,7 @@ BODY_RE = re.compile(
     re.DOTALL,
 )
 RUNNING_HEAD_RE = re.compile(r"\[RUNNING HEAD\]\s*\n(.*?)(?=\n\[)", re.DOTALL)
+EDITORIAL_CONTEXT_RE = re.compile(r"\[EDITORIAL UNIT CONTEXT\]\s*\n([^\n]+)")
 PAGE_RE = re.compile(r"_p(\d{4})\.txt$")
 RUN_HEAD_KEY_RE = re.compile(r"([VMS])\.\s*(\d+)(?:\.\s*([ivxlcdm]+|\d+))?", re.IGNORECASE)
 MINOR_HEAD_RE = re.compile(r"^([IVXLCDM]+)\.\s*(.*)$")
@@ -283,7 +284,12 @@ def load_raw_page(page: int) -> RawPage | None:
         path=path,
         running_head=running_head,
         body_lines=_clean_body_lines(body),
-        page_hint=parse_running_head(running_head),
+        # Opening leaves may print a title rather than a running head. Keep
+        # our supplied identification separate from the diplomatic heading.
+        page_hint=parse_running_head(running_head) or (
+            parse_running_head(context.group(1))
+            if (context := EDITORIAL_CONTEXT_RE.search(text)) else None
+        ),
     )
 
 

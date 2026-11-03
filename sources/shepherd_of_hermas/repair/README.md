@@ -190,3 +190,21 @@ paragraph redirect map. No English or reader ID is changed here. The draft
 writer now rejects a source-index destination occupied by a different reader
 ID, including overwrite mode, so inserted source chapters cannot erase
 existing English before the explicit reader migration is completed.
+
+
+## Mandate boundary repairs
+
+`mandate-boundaries-20261103.v1.json` records direct scan restoration of
+physical pages338,340,342. Missing M.4.iv, M.5.ii and M.6.ii headings now
+separate their formerly misassigned continuations. There are111 working
+units, with three S.5 boundaries still outstanding. The previous21-page
+review queue has18 unresolved candidates; this is not a missing-word count.
+
+`reader-source-crosswalk-20261103.v2.json` updates source ordering while
+preserving all63 legacy reader IDs. Its prior version remains a checkpoint.
+M.4.iii, M.5.i and M.6.i legacy source containers each included the following
+chapter's surviving tail. English paragraph alignment remains pending.
+The newly transcribed apparatus records substantive readings, including
+Athos's negation at M.4.iii.6 and the edition-reported Sinaitic endpoint.
+These are edition reports awaiting further witness comparison, not fresh
+manuscript-image collation or completed English adjudications.

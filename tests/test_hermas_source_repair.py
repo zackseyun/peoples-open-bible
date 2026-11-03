@@ -178,11 +178,13 @@ class HermasSourceRepairTests(unittest.TestCase):
         path = hermas.REPO_ROOT / "sources/shepherd_of_hermas/repair/coverage.v1.json"
         rows = json.loads(path.read_text())["units"]
         current = {u.unit_id: i for i, u in enumerate(hermas.parse_units(), 1)}
-        cross = json.loads((path.parent / "reader-source-crosswalk-20261103.v1.json").read_text())
+        cross = json.loads((path.parent / "reader-source-crosswalk-20261103.v2.json").read_text())
         assert not cross["reader_ids_renumbered"]
         assert not cross["reader_english_changed"]
         by_legacy = {r["legacy_reader_chapter"]: r for r in cross["legacy_readers"]}
         assert len(by_legacy) == 63
+        for legacy in by_legacy.values():
+            assert legacy["current_index_of_legacy_label"] == current[legacy["legacy_source_label"]]
         for row in rows:
             assert row["current_source_sequence"] == current.get(row["unit_id"])
             if row["imported_sequence"] is not None:
@@ -190,7 +192,7 @@ class HermasSourceRepairTests(unittest.TestCase):
                 assert legacy["legacy_source_label"] == row["unit_id"]
                 doc = yaml.safe_load((hermas.REPO_ROOT / legacy["legacy_record_path"]).read_text())
                 assert doc["id"] == legacy["legacy_record_id"] == "HERM." + row["unit_id"]
-        assert current["S.8.iv"] == 64
+        assert current["S.8.iv"] == 67
         assert by_legacy[63]["legacy_source_label"] == "S.8.iv"
         assert cross["new_source_units"][0]["new_reader_slot"] is None
 
@@ -224,6 +226,28 @@ class HermasSourceRepairTests(unittest.TestCase):
         assert third_sim.source_pages == [361]
         assert third_sim.text.endswith("ἀλλὰ πάντες ὅμοιοί εἰσιν.")
         assert fourth_sim.text.startswith("1. Ἔδειξέ μοι πάλιν")
+
+    def test_mandate_scan_repairs_separate_missing_chapters_and_preserve_variants(self):
+        third = hermas.load_unit("M.4.iii")
+        fourth = hermas.load_unit("M.4.iv")
+        assert third.source_pages == [338]
+        assert "μίαν μετάνοιαν ἔχει" in third.text
+        assert third.text.endswith("καὶ πάντες ὅσοι ἐὰν ταῦτα ποιήσωσιν.")
+        assert fourth.source_pages == [338, 339]
+        assert fourth.text.startswith("Ἠρώτησα αὐτὸν πάλιν λέγων· Κύριε, ἐπεὶ ἅπαξ ἀνέχῃ μου")
+        assert any("negation" in n and "οὐ" in n for n in third.notes)
+        fifth_first = hermas.load_unit("M.5.i")
+        fifth_second = hermas.load_unit("M.5.ii")
+        assert fifth_first.text.endswith("ἐδικαιώθησαν γὰρ πάντες ὑπὸ τοῦ σεμνοτάτου ἀγγέλου.")
+        assert fifth_second.source_pages == [340, 341]
+        assert "δοξάζουσα τὸν Κύριον ἐν παντὶ καιρῷ" in fifth_second.text
+        sixth_first = hermas.load_unit("M.6.i")
+        sixth_second = hermas.load_unit("M.6.ii")
+        assert sixth_first.text.endswith("πορεύσεται ἐν αὐτῇ.")
+        assert sixth_second.source_pages == [342, 343]
+        assert "[ταῦτα οὖν ἐστὶ τὰ ἔργα τοῦ ἀγγέλου τῆς δικαιοσύνης.]" in sixth_second.text
+        assert "APPARATUS" not in sixth_second.text
+        assert "Ἐντολὴ" not in sixth_second.text
 
     def test_source_reordering_cannot_overwrite_a_different_legacy_reader_id(self):
         from pathlib import Path

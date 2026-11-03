@@ -31,12 +31,17 @@ class Enoch441Application(unittest.TestCase):
   package=matches[0];manifest=t.load_manifest(package)
   self.assertEqual(manifest['references'],[legacy44.REF])
   self.assertEqual(manifest['retirements'],[])
-  self.assertEqual(t.verify(package,applied=True,check_corpus=True)['references'],[legacy44.REF])
+  self.assertEqual(t.verify(package,applied=True,check_corpus=False)['references'],[legacy44.REF])
+  from tools.enoch import batch34_evidence
+  self.assertEqual(package.name,batch34_evidence.NAME)
+  chain=batch34_evidence.verify_current()
   receipt=json.loads((package/'application.json').read_text())
   self.assertEqual(receipt['status'],'applied_verified')
   self.assertEqual(receipt['manifest_sha256'],t.sha((package/'manifest.json').read_bytes()))
   expected=dict(manifest['canonical_baseline_sha256']);expected['044/001.yaml']=manifest['files']['044-001.candidate.yaml']
   self.assertEqual(len(expected),966);self.assertEqual(receipt['canonical_after_sha256'],expected)
+  self.assertEqual(chain['current_postmap'],expected)
+  self.assertEqual(chain['actual_current_postmap'],t.corpus_hashes())
   rows,_=verse_parser.parse_chapter(44);current=yaml.safe_load(TARGET.read_text())
   self.assertEqual(rows[0].text,current['source']['text'])
   self.assertEqual(current['enoch_witnesses']['available_witnesses'][0]['text'],current['source']['text'])

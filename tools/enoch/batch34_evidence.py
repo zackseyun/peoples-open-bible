@@ -33,7 +33,8 @@ def prior_postmap():
     return m, expected
 
 
-def verify_current():
+def historical_postmap():
+    """Prove B34's immutable full map and still-current own44, not later edits."""
     package = t.APPLICATIONS/NAME
     if t.sha((package/'manifest.json').read_bytes()) != MANIFEST_SHA:
         raise ValueError('Fixed B34 manifest differs')
@@ -66,9 +67,24 @@ def verify_current():
             index['counts']['44'] != 1 or index['chapter_pages']['44'] != [122, 123] or
             t.sha((package/'original-count41-44-index.json').read_bytes()) != count.INDEX_SHA):
         raise ValueError('B34 existing structural-only count binding differs')
-    proof = t.verify(package, applied=True, check_corpus=True)
-    return {**proof, 'prior_historical_postmap': before, 'current_postmap': expected,
+    proof = t.verify(package, applied=True, check_corpus=False)
+    return {**proof, 'manifest': m, 'prior_historical_postmap': before, 'current_postmap': expected,
             'new_language_review_units': 1, 'new_structural_count_votes': 0}
+
+
+def verify_current():
+    proof = historical_postmap()
+    from tools.enoch import batch35_evidence as successor
+    if (t.APPLICATIONS/successor.NAME/'application.json').is_file():
+        current = successor.verify_current()['current_postmap']
+        name = successor.NAME
+    else:
+        # An absent/unapplied B35 proposal licenses no later canonical drift.
+        t.verify(t.APPLICATIONS/NAME, applied=True, check_corpus=True)
+        current = proof['current_postmap']
+        name = None
+    return {**proof, 'actual_current_postmap': current,
+            'verified_current_successor': name}
 
 
 def verify_batch33_postmap_or_fixed_successor():
@@ -82,12 +98,21 @@ def verify_batch33_postmap_or_fixed_successor():
 
 
 def assert_current_progress(case, report):
-    """Keep old478/36 claims unless the exact sole44 successor is installed."""
+    """Advance only through the exact applied44 and six-unit B35 successors."""
     if (t.APPLICATIONS/NAME/'application.json').is_file():
-        verify_current()
-        case.assertEqual(report['current_units_with_imported_review_evidence'], 479)
+        proof = verify_current()
+        from tools.enoch import batch35_evidence as successor
+        installed = proof['verified_current_successor'] == successor.NAME
+        case.assertEqual(report['current_units_with_imported_review_evidence'], 485 if installed else 479)
         case.assertEqual(len(report['chapters_with_complete_imported_selected_edition_review']), 37)
         case.assertIn(44, report['chapters_with_complete_imported_selected_edition_review'])
+        if installed:
+            case.assertEqual(report['canonical_file_count'], 966)
+            for c, units in successor.ACCEPTED_UNITS.items():
+                case.assertNotIn(c, report['chapters_with_complete_imported_selected_edition_review'])
+                row = next(row for row in report['chapters'] if row['chapter'] == c)
+                case.assertEqual(row['current_units_with_imported_review_evidence'], units)
+                case.assertFalse(row['selected_edition_chapter_review_complete'])
     else:
         case.assertEqual(report['current_units_with_imported_review_evidence'], 478)
         case.assertEqual(len(report['chapters_with_complete_imported_selected_edition_review']), 36)

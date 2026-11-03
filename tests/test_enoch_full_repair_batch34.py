@@ -33,7 +33,12 @@ class Batch34Test(unittest.TestCase):
   self.assertEqual(before['044/001.yaml'],legacy.AFTER_SHA)
   t.verify_git_preimage(m,'044/001.yaml',legacy.AFTER_SHA)
   receipt=json.loads((P/'application.json').read_text())
-  self.assertEqual(receipt['canonical_after_sha256'],t.corpus_hashes())
+  self.assertEqual(receipt['canonical_after_sha256'],proof['current_postmap'])
+  self.assertEqual(proof['actual_current_postmap'],t.corpus_hashes())
+  if proof['verified_current_successor']:
+   from tools.enoch import batch35_evidence as successor
+   self.assertEqual(proof['verified_current_successor'],successor.NAME)
+   self.assertEqual({k for k,v in proof['actual_current_postmap'].items()if proof['current_postmap'][k]!=v},successor.CHANGED_PATHS)
   self.assertTrue(receipt['unrelated_canonical_files_unchanged_at_application'])
   self.assertFalse(receipt['deployed_by_transaction'])
  def test_legacy_descriptor_preserves_parent_only_history(self):
@@ -96,12 +101,10 @@ class Batch34Test(unittest.TestCase):
   self.assertEqual(out['source_critical']['text'],SOURCE);self.assertEqual(out['source_critical']['confidence'],'low')
   self.assertEqual(reader._enoch_expected_verse_map()[44],[1])
   self.assertEqual(t.sha((t.ROOT/'tools/export_mobile_bible.py').read_bytes()),'2258f72485099fe1014152eeb29394324415940467c2edd9d9da0d48a4a113c3')
- def test_progress479_37_with_no_full_book_claim(self):
+ def test_current_progress_follows_only_exact_installed_successors(self):
   from tools.enoch.full_repair_progress import build
   report=build();self.assertEqual(report['canonical_file_count'],966)
-  self.assertEqual(report['current_units_with_imported_review_evidence'],479)
-  self.assertEqual(len(report['chapters_with_complete_imported_selected_edition_review']),37)
-  self.assertIn(44,report['chapters_with_complete_imported_selected_edition_review'])
+  b.assert_current_progress(self,report)
   self.assertEqual(report['evidence_inventory_warnings'],[]);self.assertFalse(report['completion_proven'])
  def test_rehashed_source_english_and_each_explanation_rejected(self):
   for mode in ['source','English','notea','noteb']:

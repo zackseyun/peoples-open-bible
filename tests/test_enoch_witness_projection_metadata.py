@@ -1,5 +1,5 @@
 """Six fixed metadata projections retain historical inputs, not new language votes."""
-import copy,json,shutil,tempfile,unittest
+import copy,json,shutil,subprocess,tempfile,unittest
 from pathlib import Path
 from unittest.mock import patch
 import yaml
@@ -107,13 +107,23 @@ class WitnessProjectionMetadataTest(unittest.TestCase):
  def writer_fixture(self,directory):
   root,package,data=self.fixture(directory);(package/'application.json').unlink(missing_ok=True);corpus=root/'corpus';shutil.copytree(t.TRANSLATION,corpus)
   for ref,case in data['cases'].items():(corpus/('%03d/%03d.yaml'%t.parse_ref(ref))).write_bytes(t.artifact(t.ROOT,case['original_candidate']).read_bytes())
-  # Reconstruct this historical writer's exact preimage, not a mixture of
-  # old six metadata targets and a later unrelated44 language successor.
+  # Reconstruct all966 exact historical preimages after reverting its own six
+  # metadata targets. Later44 and six B35 units require their fixed current
+  # chain, then actual Git bytes at this metadata writer's declared baseline.
   drift={k for k,v in t.corpus_hashes(corpus).items()if data['canonical_baseline_sha256'].get(k)!=v}
   if drift:
-   from tools.enoch import batch34_evidence,legacy44_evidence
-   batch34_evidence.verify_current();self.assertEqual(drift,{'044/001.yaml'})
-   raw=legacy44_evidence.historical_bytes();self.assertEqual(t.sha(raw),data['canonical_baseline_sha256']['044/001.yaml']);(corpus/'044/001.yaml').write_bytes(raw)
+   from tools.enoch import batch34_evidence,batch35_evidence
+   if (t.APPLICATIONS/batch35_evidence.NAME/'application.json').is_file():
+    batch35_evidence.verify_current()
+    expected_drift={'044/001.yaml'}|batch35_evidence.CHANGED_PATHS
+   else:
+    batch34_evidence.verify_current();expected_drift={'044/001.yaml'}
+   self.assertEqual(drift,expected_drift)
+   for relative in sorted(drift):
+    historical='translation/extra_canonical/1_enoch/'+relative
+    raw=subprocess.check_output(['git','show',m.BASE+':'+historical],cwd=t.ROOT)
+    self.assertEqual(t.sha(raw),data['canonical_baseline_sha256'][relative])
+    (corpus/relative).write_bytes(raw)
   self.assertEqual(t.corpus_hashes(corpus),data['canonical_baseline_sha256'])
   return root,package,data,corpus
  def test_writer_uses_atomic_receipt_and_keeps_exact_whole_postmap(self):

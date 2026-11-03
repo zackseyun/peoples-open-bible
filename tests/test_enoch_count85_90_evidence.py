@@ -28,7 +28,12 @@ class Count85To90EvidenceTest(unittest.TestCase):
         for c,pages in{53:[134,135],85:[201,202],88:[204,205],89:[205,206,207,208,209,210,211,212,214,216,217,218,219],90:list(range(219,228))}.items():
             expected['editions']['charles_1906']['chapters'][f'{c:03d}']['pages']=pages
         self.assertEqual(after,expected);self.assertTrue(evidence.verify_current_windows())
-        self.assertEqual(t.sha(t.artifact(t.ROOT,evidence.PATH).read_bytes()),'dc672a5dacef5ddca28c354aef1c12dc57d779e88abcb3fbb8887e0ab98c1bd4')
+        # Preserve the exact historical85-90 postmap; current95's unrelated
+        # window needs its own fixed proof/receipt, never a map-drift waiver.
+        old_sha='dc672a5dacef5ddca28c354aef1c12dc57d779e88abcb3fbb8887e0ab98c1bd4'
+        self.assertEqual(t.sha(t.artifact(t.ROOT,d['artifact_prefix']+'/page-map-after.json').read_bytes()),old_sha)
+        from tools.enoch.count95_window_evidence import window_successor
+        self.assertEqual(t.sha(t.artifact(t.ROOT,evidence.PATH).read_bytes()),window_successor(old_sha))
 
     def test_entire_current_map_chain_remains_strict(self):
         from tools.enoch import count41_44_evidence,count106_108_evidence,count26_27_33_evidence

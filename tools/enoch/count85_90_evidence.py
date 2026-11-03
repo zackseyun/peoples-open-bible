@@ -124,7 +124,9 @@ def window_successor(before_sha256):
 
 def verify_current_windows():
     d,_=evidence()
-    if t.sha(t.artifact(t.ROOT,PATH).read_bytes())!=d['files'][d['artifact_prefix']+'/page-map-after.json']:
+    from tools.enoch.count95_window_evidence import window_successor as window95
+    expected=window95(d['files'][d['artifact_prefix']+'/page-map-after.json'])
+    if t.sha(t.artifact(t.ROOT,PATH).read_bytes())!=expected:
         raise ValueError('Current full source map needs an explicit reviewed window successor')
     return True
 

@@ -123,9 +123,55 @@ class HermasSourceRepairTests(unittest.TestCase):
         assert "Ἡ πέτρα, φησίν, αὕτη καὶ ἡ πύλη ὁ υἱὸς τοῦ Θεοῦ ἐστί." in twelfth.text
         assert "διῆλθον γὰρ διὰ τῆς πύλης" in thirteenth.text
         assert "ἐνδιδυσκόμενοι τὰ πνεύματα" in thirteenth.text
-        assert partial.text.endswith("καὶ ἤδη κατεφθαρμένων ἡμῶν")
+        assert partial.text.endswith("τὸ ὄνομα αὐτοῦ φορεῖν.")
         rows = json.loads((hermas.REPO_ROOT / "sources/shepherd_of_hermas/repair/coverage.v1.json").read_text())["units"]
-        assert next(r for r in rows if r["unit_id"] == "S.9.xiv")["source_status"] == "partially_transcribed"
+        assert next(r for r in rows if r["unit_id"] == "S.9.xviii")["source_status"] == "printed_body_restored_pending_collation"
+
+    def test_damaged_letters_and_quotation_evidence_are_not_silently_certified(self):
+        fifteenth = hermas.load_unit("S.9.xv")
+        sixteenth = hermas.load_unit("S.9.xvi")
+        seventeenth = hermas.load_unit("S.9.xvii")
+        eighteenth = hermas.load_unit("S.9.xviii")
+        assert fifteenth.text.startswith("⸢Δήλωσόν μοι⸣")
+        assert "ἐσχήκει⸢σαν⸣, ⸢οὐκ ἂν⸣" in fifteenth.text
+        assert "| ἀλλ᾿ οὗτοι ζῶντες κατέβησαν, [καὶ πάλιν ζῶντες ἀνέβησαν]" in sixteenth.text
+        assert any("Clement" in n and "indirect Greek" in n for n in sixteenth.notes)
+        assert "ἀλατόμητοι συνῳκοδομήθησαν" in sixteenth.text
+        assert seventeenth.source_pages == [403, 404]
+        assert "ἐγνωκ⸢ό⸣τες" in eighteenth.text
+        assert "⸢ἠρ⸣μένους" in eighteenth.text
+        assert eighteenth.text.endswith("τῶν δώδεκα ἐθνῶν.")
+
+    def test_complete_printed_ending_is_latin_not_an_invented_greek_retroversion(self):
+        mixed = hermas.load_normalized_unit("S.9.xxx")
+        latin = hermas.load_normalized_unit("S.10.iv")
+        assert mixed.source_language == "Greek and Latin"
+        assert "3. quodsi de ceteris montibus" in mixed.text
+        assert "†posse eos veritati favere,†" in mixed.text
+        assert latin.source_language == "Latin"
+        assert latin.source_pages == [417, 418]
+        assert latin.text.endswith("remissurum se pastorem illum et virgines in domum meam.")
+        assert "festinetis" in latin.text
+        assert "conmunda domum tuam" in hermas.load_unit("S.10.iii").text
+        assert "SIMILITUDO DECIMA" not in hermas.load_unit("S.9.xxxiii").text
+        assert "SIMILITUDO DECIMA" not in hermas.load_unit("S.10.i").text
+        assert "νοεῖ⸢τε⸣" in hermas.load_unit("S.9.xxviii").text
+        rows = json.loads((hermas.REPO_ROOT / "sources/shepherd_of_hermas/repair/coverage.v1.json").read_text())["units"]
+        assert not any(r["source_status"] == "absent_after_cutoff" for r in rows)
+
+    def test_drafting_prompt_uses_actual_latin_source_and_warns_about_version_evidence(self):
+        import subprocess
+        import sys
+        result = subprocess.run(
+            [sys.executable, str(hermas.REPO_ROOT / "tools/build_shepherd_of_hermas_prompt.py"),
+             "--unit-id", "S.10.iv", "--json"],
+            cwd=hermas.REPO_ROOT, capture_output=True, text=True, check=True,
+        )
+        payload = json.loads(result.stdout)
+        assert payload["source"]["language"] == "Latin"
+        assert payload["source"]["text"].startswith("Ait deinde mihi: Viriliter")
+        assert "not surviving original Greek" in payload["prompt"]
+        assert any("final printed Latin" in note for note in payload["source_warnings"])
 
     def test_cutoff_extension_does_not_renumber_imported_units(self):
         path = hermas.REPO_ROOT / "sources/shepherd_of_hermas/repair/coverage.v1.json"

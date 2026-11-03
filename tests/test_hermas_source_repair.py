@@ -173,13 +173,71 @@ class HermasSourceRepairTests(unittest.TestCase):
         assert "not surviving original Greek" in payload["prompt"]
         assert any("final printed Latin" in note for note in payload["source_warnings"])
 
-    def test_cutoff_extension_does_not_renumber_imported_units(self):
+    def test_restored_boundaries_have_explicit_legacy_reader_crosswalk(self):
+        import yaml
         path = hermas.REPO_ROOT / "sources/shepherd_of_hermas/repair/coverage.v1.json"
         rows = json.loads(path.read_text())["units"]
         current = {u.unit_id: i for i, u in enumerate(hermas.parse_units(), 1)}
+        cross = json.loads((path.parent / "reader-source-crosswalk-20261103.v1.json").read_text())
+        assert not cross["reader_ids_renumbered"]
+        assert not cross["reader_english_changed"]
+        by_legacy = {r["legacy_reader_chapter"]: r for r in cross["legacy_readers"]}
+        assert len(by_legacy) == 63
         for row in rows:
+            assert row["current_source_sequence"] == current.get(row["unit_id"])
             if row["imported_sequence"] is not None:
-                assert current[row["unit_id"]] == row["imported_sequence"]
+                legacy = by_legacy[row["imported_sequence"]]
+                assert legacy["legacy_source_label"] == row["unit_id"]
+                doc = yaml.safe_load((hermas.REPO_ROOT / legacy["legacy_record_path"]).read_text())
+                assert doc["id"] == legacy["legacy_record_id"] == "HERM." + row["unit_id"]
+        assert current["S.8.iv"] == 64
+        assert by_legacy[63]["legacy_source_label"] == "S.8.iv"
+        assert cross["new_source_units"][0]["new_reader_slot"] is None
+
+    def test_earlier_scan_repairs_recover_text_without_swallowing_next_chapters(self):
+        ninth = hermas.load_unit("V.3.ix")
+        tenth = hermas.load_unit("V.3.x")
+        assert ninth.source_pages == [326, 327]
+        assert "ἀπὸ πάσης πονηρίας" in ninth.text
+        assert ninth.text.endswith("τῷ Κυρίῳ ὑμῶν.")
+        assert tenth.text.startswith("Ὅτε οὖν ἐπαύσατο")
+        assert "AP. FATH." not in hermas.load_unit("V.3.iii").text
+        third = hermas.load_unit("M.12.iii")
+        fourth = hermas.load_unit("M.12.iv")
+        sixth = hermas.load_unit("M.12.vi")
+        assert "εὐφρᾶναι καρδίαν ἀνθρώπου" in third.text
+        assert third.text.endswith("ὑπὸ ἀνθρώπου φυλαχθῆναι.")
+        assert fourth.text.startswith("Καὶ ταῦτά μοι λίαν ὀργίλως")
+        assert "[πάντων καὶ] πασῶν" in fourth.text
+        assert sixth.source_pages == [356, 357]
+        assert "ἰσχυροποιῆσαι αὐτοὺς" in sixth.text
+        assert sixth.text.endswith("καὶ ζήσονται τῷ Θεῷ.")
+        first = hermas.load_unit("S.1")
+        second = hermas.load_unit("S.2")
+        third_sim = hermas.load_unit("S.3")
+        fourth_sim = hermas.load_unit("S.4")
+        assert first.text.startswith("Λέγει μοι· Οἴδατε")
+        assert first.text.endswith("τὸ δὲ σὸν ἔργον ἐργάζου, καὶ σωθήσῃ.")
+        assert second.text.startswith("Περιπατοῦντός μου")
+        assert "πληροφοροῦσι τὰς εὐχὰς αὐτῶν" in second.text
+        assert second.text.endswith("δυνήσονται ἀγαθόν τι ἐργάζεσθαι.")
+        assert third_sim.source_pages == [361]
+        assert third_sim.text.endswith("ἀλλὰ πάντες ὅμοιοί εἰσιν.")
+        assert fourth_sim.text.startswith("1. Ἔδειξέ μοι πάλιν")
+
+    def test_source_reordering_cannot_overwrite_a_different_legacy_reader_id(self):
+        from pathlib import Path
+        from tempfile import TemporaryDirectory
+        from unittest.mock import patch
+        from tools import draft_shepherd_of_hermas as drafter
+        unit = hermas.load_normalized_unit("S.3")
+        with TemporaryDirectory() as tmp, patch.object(drafter, "TRANSLATION_ROOT", Path(tmp)):
+            path = Path(tmp) / f"{unit.sequence:03d}.yaml"
+            before = "id: HERM.S.4\ntranslation:\n  text: Historical reader text\n"
+            path.write_text(before)
+            with self.assertRaisesRegex(ValueError, "another legacy reader unit"):
+                drafter.output_path_for_unit(unit)
+            assert path.read_text() == before
 
     def test_bounded_selections_keep_working_print_and_manuscript_evidence_separate(self):
         tenth = hermas.load_unit("S.8.x")

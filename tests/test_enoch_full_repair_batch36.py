@@ -34,7 +34,7 @@ class Batch36Test(unittest.TestCase):
         self.assertEqual(proof['prior_historical_postmap'],before)
         self.assertEqual(len(before),966)
         self.assertEqual({k for k in before if before[k]!=proof['current_postmap'][k]},{b.PATH})
-        self.assertEqual(proof['current_postmap'],t.corpus_hashes())
+        self.assertEqual(proof['actual_current_postmap'],t.corpus_hashes())
         m=t.load_manifest(P)
         self.assertEqual(m['source_baseline_git_commit'],b.BASE)
         self.assertEqual(m['references'],[b.REF])
@@ -89,6 +89,10 @@ class Batch36Test(unittest.TestCase):
     def test_registry_source_ingress_only_exact3_not_canonical_echo(self):
         original=json.loads(subprocess.check_output(['git','show',b.BASE+':'+str(sources.REGISTRY.relative_to(t.ROOT))],cwd=t.ROOT))
         expected=copy.deepcopy(original);expected['units']['96:3']=b.NAME
+        from tools.enoch import batch37_evidence as successor
+        if (t.APPLICATIONS/successor.NAME/'application.json').is_file():
+            successor.verify_current()
+            expected['units']['97:1']=successor.NAME
         self.assertEqual(sources.registry_data(),expected)
         self.assertNotIn('96',expected['chapters'])
         with patch.object(t,'TRANSLATION',Path('/nonexistent-canonical-echo')):

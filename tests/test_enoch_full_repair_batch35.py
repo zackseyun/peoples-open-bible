@@ -85,7 +85,12 @@ class Batch35Test(unittest.TestCase):
         from tools.enoch import batch36_evidence as next_successor
         if proof.get('verified_current_successor'):
             self.assertEqual(proof['verified_current_successor'], next_successor.NAME)
-            self.assertEqual({k for k in proof['current_postmap'] if proof['current_postmap'][k] != proof['actual_current_postmap'][k]}, next_successor.CHANGED_PATHS)
+            from tools.enoch import batch37_evidence as last_successor
+            changes=set(next_successor.CHANGED_PATHS)
+            if (t.APPLICATIONS/last_successor.NAME/'application.json').is_file():
+                last_successor.verify_current()
+                changes |= last_successor.CHANGED_PATHS
+            self.assertEqual({k for k in proof['current_postmap'] if proof['current_postmap'][k] != proof['actual_current_postmap'][k]}, changes)
         else:
             self.assertEqual(proof['current_postmap'], proof['actual_current_postmap'])
         self.assertEqual({k for k in before if before[k] != proof['current_postmap'][k]}, PATHS)

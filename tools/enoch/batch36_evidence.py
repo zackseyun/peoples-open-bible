@@ -67,7 +67,7 @@ def _pair(package, manifest):
         raise ValueError('B36 exact actor binding differs')
 
 
-def verify_current():
+def historical_postmap():
     package = t.APPLICATIONS/NAME
     if t.sha((package/'manifest.json').read_bytes()) != MANIFEST_SHA:
         raise ValueError('Fixed B36 manifest differs')
@@ -121,12 +121,29 @@ def verify_current():
             any(receipt.get(k) is not False for k in
                 ['deployed_by_transaction','full_book_verified','graphic_publication_approved'])):
         raise ValueError('B36 applied receipt/full966 postmap differs')
-    from tools.enoch.selected_edition_sources import REGISTRY,registry_data
-    original = json.loads(subprocess.check_output(['git','show',BASE+':'+str(REGISTRY.relative_to(t.ROOT))],cwd=t.ROOT))
-    original.setdefault('units',{})['96:3'] = NAME
-    if registry_data() != original:
-        raise ValueError('B36 source registry differs beyond exact96:3 individual override')
-    proof = t.verify(package,applied=True,check_corpus=True)
+    from tools.enoch.selected_edition_sources import registry_data
+    if registry_data().get('units',{}).get('96:3') != NAME:
+        raise ValueError('B36 own exact individual source registration differs')
+    proof = t.verify(package,applied=True,check_corpus=False)
     return {**proof,'manifest':manifest,'prior_historical_postmap':before,
             'current_postmap':expected,'actual_current_postmap':expected,
             'new_language_review_units':1,'new_structural_count_votes':0}
+
+
+def verify_current():
+    """Only fixed, applied B37 may extend the historical B36 snapshot."""
+    proof = historical_postmap()
+    from tools.enoch import batch37_evidence as successor
+    if (t.APPLICATIONS/successor.NAME/'application.json').is_file():
+        current = successor.verify_current()['current_postmap']
+        name = successor.NAME
+    else:
+        t.verify(t.APPLICATIONS/NAME,applied=True,check_corpus=True)
+        from tools.enoch.selected_edition_sources import REGISTRY,registry_data
+        wanted = json.loads(subprocess.check_output(['git','show',BASE+':'+str(REGISTRY.relative_to(t.ROOT))],cwd=t.ROOT))
+        wanted.setdefault('units',{})['96:3'] = NAME
+        if registry_data() != wanted:
+            raise ValueError('B36 has an unapproved registry successor')
+        current = proof['current_postmap']
+        name = None
+    return {**proof,'actual_current_postmap':current,'verified_current_successor':name}

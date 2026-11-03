@@ -6,10 +6,12 @@ complete the historical book. The original import also skipped the opening
 body leaf and has earlier omissions and merged boundaries.
 
 `coverage.v1.json` keeps the full 114-chapter scope visible. Its 44
-`absent_after_cutoff` rows are entirely absent chapters; the incomplete cutoff
+baseline `absent_after_cutoff` rows are entirely absent chapters; the incomplete cutoff
 chapter and earlier gaps are additional. `boundary_unresolved` does **not**
 mean missing: the text may be merged into a neighboring imported unit.
 `imported_unverified` does **not** mean complete or critically checked.
+`baseline_source_status` preserves this initial audit, while `source_status`
+and `current_source_sequence` track ongoing repair.
 
 `witnesses.v1.json` separates discovered manuscripts, reported readings, and
 direct collation. Catalogued witnesses are a work queue, not a completed
@@ -43,6 +45,19 @@ Run the source-regression checks with:
 ```sh
 python3 -m unittest discover -s tests -p test_hermas_source_repair.py -v
 ```
+
+## Cutoff source repair, 2026-11-03
+
+The completed transcription of physical pages 380–381 restores the remainder
+of Similitude 8.4 and all of 8.5, and begins 8.6. Its final sentence remains
+incomplete pending page 382. Existing imported sequences 1–63 stay stable.
+`cutoff-20261103.v1.json` records the source work and unfinished English work.
+
+Printed brackets are retained. In particular 8.5.4 is an editorial Greek
+restoration supported by ancient versions and absent from A. It must not be
+represented as an extant Greek manuscript reading. Page-level editorial notes
+now survive normalization. The flat 063 Greek has been updated; its English
+and the reader/simplified records still await repair.
 
 ## Next work
 

@@ -6,6 +6,10 @@ from tools import shepherd_of_hermas as hermas
 
 
 class HermasSourceRepairTests(unittest.TestCase):
+    def test_editorial_notes_are_not_source_body_without_apparatus(self):
+        page = "[BODY]\nGreek body\n[EDITORIAL TRANSCRIPTION NOTES]\nEditorial warning\n---END-PAGE---"
+        assert hermas.extract_body(page) == "Greek body"
+
     def test_opening_leaf_keeps_editorial_context_out_of_printed_heading(self):
         page = hermas.load_raw_page(313)
         assert page is not None
@@ -42,5 +46,29 @@ class HermasSourceRepairTests(unittest.TestCase):
         rows = ledger["units"]
         assert len(rows) == len({r["unit_id"] for r in rows}) == 114
         assert rows[-1]["unit_id"] == "S.10.iv"
-        assert sum(r["source_status"] == "absent_after_cutoff" for r in rows) == 44
+        assert sum(r["baseline_source_status"] == "absent_after_cutoff" for r in rows) == 44
         assert not ledger["complete"]
+
+    def test_cutoff_repair_preserves_boundaries_and_editorial_brackets(self):
+        fourth = hermas.load_unit("S.8.iv")
+        fifth = hermas.load_unit("S.8.v")
+        sixth = hermas.load_unit("S.8.vi")
+        assert "6. εἶτα" in fourth.text
+        assert fourth.text.endswith("τοὺς δὲ χωρίς.")
+        assert fifth.source_pages == [380, 381]
+        assert "καὶ βεβρωμένας, τινὲς δὲ ἡμιξήρους" in fifth.text
+        assert "[4. εἶτα" in fifth.text
+        assert "ἴδιον τάγμα.] 5." in fifth.text
+        assert fifth.text.endswith("εἰς τὸ ἴδιον τάγμα.")
+        assert any("not an extant continuous Greek reading of A" in n for n in fifth.notes)
+        assert sixth.text.startswith("Μετὰ τὸ πάντων")
+        assert sixth.text.endswith("προδόται τῆς ἐκκλησίας")
+        assert "EDITORIAL TRANSCRIPTION" not in sixth.text
+
+    def test_cutoff_extension_does_not_renumber_imported_units(self):
+        path = hermas.REPO_ROOT / "sources/shepherd_of_hermas/repair/coverage.v1.json"
+        rows = json.loads(path.read_text())["units"]
+        current = {u.unit_id: i for i, u in enumerate(hermas.parse_units(), 1)}
+        for row in rows:
+            if row["imported_sequence"] is not None:
+                assert current[row["unit_id"]] == row["imported_sequence"]

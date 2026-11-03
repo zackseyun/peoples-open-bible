@@ -33,6 +33,14 @@ Existing review history, the remaining translation, and the repentance
 footnote are preserved. This checkpoint does not certify the whole unit's
 wording or a completed multi-witness collation.
 
+The October contextual-repentance decision remains immutable. Its validator
+accepts this later opening repair only through the exact source/English pair
+in `contextual-policy-followup-20261103.v1.json`, whose file hash is pinned in
+the validator. Historical checks project the unchanged October decision;
+the new source/English pair, live reader note and lexical choices are still
+checked. An arbitrary prefix, changed Greek, or a live self-reported hash
+cannot grant a follow-up exemption.
+
 Nested standard reader records and simplified records still represent the
 earlier partial opening. Reconcile their independent editorial histories and
 record an explicit reference migration before publication. The earlier three

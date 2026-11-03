@@ -54,9 +54,10 @@ class ContextualRepentanceTests(unittest.TestCase):
                 self.assertEqual(policy.SHA(r['after_text']),r['after_text_sha256'])
                 self.assertEqual(policy.approved_errors(ROOT/r['path'],d),[])
                 self.assertEqual(prior.approved_errors(ROOT/r['path'],d,True),[])
-                self.assertEqual(d['translation']['text'],r['after_text'])
+                historical=policy.historical_view(ROOT/r['path'],d)
+                self.assertEqual(historical['translation']['text'],r['after_text'])
                 self.assertEqual(d['terminology_revision']['current_policy_id'],policy.POLICY)
-                self.assertEqual(d['translation']['text']==old['translation']['text'],r['decision']=='retain_contextual_wording')
+                self.assertEqual(historical['translation']['text']==old['translation']['text'],r['decision']=='retain_contextual_wording')
                 self.assertNotRegex(d['translation']['text'],r'(?i)\breorient\w*')
                 for entry in d.get('lexical_decisions',[]):
                     self.assertNotRegex(entry.get('chosen',''),r'(?i)\breorient\w*')
@@ -64,7 +65,7 @@ class ContextualRepentanceTests(unittest.TestCase):
     def test_unrelated_fields_sources_generation_and_history_not_rewritten(self):
         permitted=set(policy.FIELDS)|{'review_history','revisions','revision_pass','source_audit'}
         for r in self.items:
-            old=self.before[r['path']];new=self.current[r['path']]
+            old=self.before[r['path']];new=policy.historical_view(ROOT/r['path'],self.current[r['path']])
             for field in set(old)|set(new):
                 if field not in permitted:self.assertEqual(old.get(field),new.get(field),(r['path'],field))
             for field in ('review_history','revisions'):
@@ -167,5 +168,43 @@ class ContextualRepentanceTests(unittest.TestCase):
         rebuilt=policy.build_record(self.before[r['path']],r,self.plan['baseline_commit'],'test')
         self.assertEqual(rebuilt['translation']['text'],self.before[r['path']]['translation']['text'])
         self.assertFalse(rebuilt['terminology_revision']['independent_scholar_review'])
+
+class HermasSourceRepairFollowupTests(unittest.TestCase):
+    def setUp(self):
+        self.path=ROOT/policy.HERMAS_OPENING
+        self.current=prior.load(self.path)
+
+    def test_exact_later_pair_projects_the_original_terminology_decision(self):
+        untouched=copy.deepcopy(self.current)
+        historical=policy.historical_view(self.path,self.current)
+        item=policy.plan_by_path()[policy.HERMAS_OPENING]
+        self.assertEqual(historical['translation']['text'],item['after_text'])
+        self.assertEqual(prior.digest(historical['source']),item['source_sha256'])
+        self.assertEqual(policy.approved_errors(self.path,self.current),[])
+        self.assertEqual(self.current,untouched)
+        self.assertTrue(self.current['translation']['text'].startswith('The man who raised me'))
+
+    def test_source_and_english_tampering_are_not_followup_exemptions(self):
+        for field in ('source','translation'):
+            with self.subTest(field=field):
+                bad=copy.deepcopy(self.current)
+                bad[field]['text']+=' altered'
+                bad['terminology_revision']['after_text_sha256']=policy.SHA(bad['translation']['text'])
+                self.assertTrue(policy.approved_errors(self.path,bad))
+
+    def test_mutating_the_later_decision_file_cannot_certify_a_repair(self):
+        with patch.object(Path,'read_bytes',return_value=b'{}'):
+            with self.assertRaisesRegex(ValueError,'decision pin differs'):
+                policy.historical_view(self.path,self.current)
+
+    def test_retained_note_and_lexical_checks_still_apply_to_the_live_record(self):
+        bad=copy.deepcopy(self.current)
+        bad['translation']['footnotes'][0]['text']='changed note'
+        self.assertTrue(policy.approved_errors(self.path,bad))
+        item=policy.plan_by_path()[policy.HERMAS_OPENING]
+        for update in item['lexical_updates']:
+            bad=copy.deepcopy(self.current)
+            bad['lexical_decisions'][update['index']]['chosen']='unreviewed wording'
+            self.assertTrue(policy.approved_errors(self.path,bad))
 
 if __name__=='__main__':unittest.main()

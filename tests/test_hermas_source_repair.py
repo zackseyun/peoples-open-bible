@@ -62,8 +62,36 @@ class HermasSourceRepairTests(unittest.TestCase):
         assert fifth.text.endswith("εἰς τὸ ἴδιον τάγμα.")
         assert any("not an extant continuous Greek reading of A" in n for n in fifth.notes)
         assert sixth.text.startswith("Μετὰ τὸ πάντων")
-        assert sixth.text.endswith("προδόται τῆς ἐκκλησίας")
+        assert sixth.text.endswith("τὸ δὲ μὴ μετανοῆσαι θάνατον.")
+        assert "πολυευσπλαγχνίαν" in sixth.text
+        assert "ἔδωκε πνεῦμα" in sixth.text
+        assert "τῶν ἁμαρτιῶν ζωὴν ἔχει" in sixth.text
         assert "EDITORIAL TRANSCRIPTION" not in sixth.text
+
+    def test_completed_similitude_eight_does_not_swallow_nine(self):
+        eighth = hermas.load_unit("S.8.viii")
+        tenth = hermas.load_unit("S.8.x")
+        last = hermas.load_unit("S.8.xi")
+        first_nine = hermas.load_unit("S.9.i")
+        assert "οὗτοι τὸ ζῆν εἰς τέλος ἀπώλεσαν." in eighth.text
+        assert "ξηρὰς ἐπιδεδωκότες" in tenth.text
+        assert "[καὶ λαλήσας]" in last.text
+        assert last.text.endswith("μετ᾿ ὀλίγας ἡμέρας.")
+        assert "Παραβολὴ" not in last.text
+        assert first_nine.source_pages == [386, 387]
+        assert first_nine.text.startswith("Μετὰ τὸ γράψαι")
+        assert first_nine.text.endswith("εὐπρεπέστατον ἦν ἑαυτῷ τὸ ὄρος.")
+
+    def test_new_chapters_preserve_editorial_negation_and_partial_boundary(self):
+        second = hermas.load_unit("S.9.ii")
+        third = hermas.load_unit("S.9.iii")
+        fourth = hermas.load_unit("S.9.iv")
+        assert "πύλην ἐκκεκομμένην" in second.text
+        assert "διηπόρουν" in second.text
+        assert "λαμπροί, [μὴ] λελατομημένοι." in third.text
+        assert any("absent" in n and "μὴ" in n for n in third.notes)
+        assert third.text.endswith("κατὰ ἕνα λίθον ἐβάσταζον ὁμοῦ.")
+        assert fourth.text == "Καθὼς δὲ ἐστάθησαν ὁμοῦ κύκλῳ τῆς πύλης, οὕτως"
 
     def test_cutoff_extension_does_not_renumber_imported_units(self):
         path = hermas.REPO_ROOT / "sources/shepherd_of_hermas/repair/coverage.v1.json"
@@ -72,3 +100,19 @@ class HermasSourceRepairTests(unittest.TestCase):
         for row in rows:
             if row["imported_sequence"] is not None:
                 assert current[row["unit_id"]] == row["imported_sequence"]
+
+    def test_bounded_selections_keep_working_print_and_manuscript_evidence_separate(self):
+        tenth = hermas.load_unit("S.8.x")
+        third = hermas.load_unit("S.9.iii")
+        raw_tenth = hermas.load_raw_page(385)
+        raw_third = hermas.load_raw_page(388)
+        assert "παθοῦνται" in tenth.text
+        assert "ἑκόντες θλίβονται" not in tenth.text
+        assert any("ἑκόντες θλίβονται" in line for line in raw_tenth.body_lines)
+        assert "ἐπάνω τῆς πέτρας πύργον τινά" in third.text
+        assert any("πύλης πύργον τινά" in line for line in raw_third.body_lines)
+        path = hermas.REPO_ROOT / "sources/shepherd_of_hermas/repair/manuscript-selection-20261103.v1.json"
+        selection = json.loads(path.read_text())
+        assert {d["unit_id"] for d in selection["decisions"]} == {"S.8.x", "S.9.iii"}
+        negation = next(c for c in selection["open_cases"] if c["passage"] == "S.9.iii.3")
+        assert "lost leaf" in negation["observation"]

@@ -35,10 +35,15 @@ UNIT_MAP_PATH = TRANSCRIBED_DIR / "unit_map.json"
 MANUAL_OVERRIDE_PATH = TRANSCRIBED_DIR / "manual_unit_overrides.json"
 
 BODY_RE = re.compile(
-    r"\[BODY\]\s*\n(.*?)(?=\n\[(?:RUNNING HEAD|APPARATUS|FOOTNOTES|MARGINALIA|BLANK|PLATE)\]|\n---END-PAGE---|\Z)",
+    r"\[BODY\]\s*\n(.*?)(?=\n\[(?:RUNNING HEAD|APPARATUS|FOOTNOTES|MARGINALIA|BLANK|PLATE|EDITORIAL TRANSCRIPTION NOTES|EDITORIAL UNIT CONTEXT|TITLE)\]|\n---END-PAGE---|\Z)",
     re.DOTALL,
 )
 RUNNING_HEAD_RE = re.compile(r"\[RUNNING HEAD\]\s*\n(.*?)(?=\n\[)", re.DOTALL)
+EDITORIAL_CONTEXT_RE = re.compile(r"\[EDITORIAL UNIT CONTEXT\]\s*\n([^\n]+)")
+EDITORIAL_NOTES_RE = re.compile(
+    r"\[EDITORIAL TRANSCRIPTION NOTES\]\s*\n(.*?)(?=\n---END-PAGE---|\Z)",
+    re.DOTALL,
+)
 PAGE_RE = re.compile(r"_p(\d{4})\.txt$")
 RUN_HEAD_KEY_RE = re.compile(r"([VMS])\.\s*(\d+)(?:\.\s*([ivxlcdm]+|\d+))?", re.IGNORECASE)
 MINOR_HEAD_RE = re.compile(r"^([IVXLCDM]+)\.\s*(.*)$")
@@ -118,6 +123,7 @@ class RawPage:
     running_head: str
     body_lines: list[str]
     page_hint: HermasUnitKey | None
+    editorial_notes: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -278,12 +284,19 @@ def load_raw_page(page: int) -> RawPage | None:
     body = extract_body(text)
     if not body.strip():
         return None
+    notes = EDITORIAL_NOTES_RE.search(text)
     return RawPage(
         page=page,
         path=path,
         running_head=running_head,
         body_lines=_clean_body_lines(body),
-        page_hint=parse_running_head(running_head),
+        # Opening leaves may print a title rather than a running head. Keep
+        # our supplied identification separate from the diplomatic heading.
+        page_hint=parse_running_head(running_head) or (
+            parse_running_head(context.group(1))
+            if (context := EDITORIAL_CONTEXT_RE.search(text)) else None
+        ),
+        editorial_notes=[f"Page {page}: {_MULTI_SPACE_RE.sub(' ', notes.group(1).strip())}"] if notes else [],
     )
 
 
@@ -360,9 +373,11 @@ def parse_units() -> list[HermasUnit]:
     current_lines: list[str] = []
     current_pages: list[int] = []
     current_files: list[str] = []
+    current_notes: list[str] = []
+    page_notes = {page.page: page.editorial_notes for page in pages}
 
     def flush() -> None:
-        nonlocal current_key, current_heading, current_lines, current_pages, current_files
+        nonlocal current_key, current_heading, current_lines, current_pages, current_files, current_notes
         if current_key is None:
             return
         text = _normalize_unit_text(current_lines)
@@ -374,6 +389,7 @@ def parse_units() -> list[HermasUnit]:
                     text=text,
                     source_pages=current_pages[:],
                     source_files=current_files[:],
+                    notes=current_notes[:],
                 )
             )
         current_key = None
@@ -381,13 +397,15 @@ def parse_units() -> list[HermasUnit]:
         current_lines = []
         current_pages = []
         current_files = []
+        current_notes = []
 
     def start_unit(key: HermasUnitKey, *, page: int, file_name: str, heading: str | None = None) -> None:
-        nonlocal current_key, current_heading, current_pages, current_files
+        nonlocal current_key, current_heading, current_pages, current_files, current_notes
         current_key = key
         current_heading = heading
         current_pages = [page]
         current_files = [file_name]
+        current_notes = page_notes.get(page, [])[:]
 
     def touch_current(page: int, file_name: str) -> None:
         if current_key is None:
@@ -396,6 +414,9 @@ def parse_units() -> list[HermasUnit]:
             current_pages.append(page)
         if file_name not in current_files:
             current_files.append(file_name)
+        for note in page_notes.get(page, []):
+            if note not in current_notes:
+                current_notes.append(note)
 
     for page in pages:
         has_major_heading = any(_detect_major_heading(line, minorized) is not None for line in page.body_lines)
@@ -475,6 +496,9 @@ def parse_units() -> list[HermasUnit]:
                 existing.source_files.append(file_name)
         if existing.heading is None and unit.heading is not None:
             existing.heading = unit.heading
+        for note in unit.notes:
+            if note not in existing.notes:
+                existing.notes.append(note)
 
     return apply_manual_overrides(sorted(
         merged.values(),

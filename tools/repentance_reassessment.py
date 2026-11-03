@@ -31,6 +31,42 @@ FIELDS = ('translation', 'lexical_decisions', 'theological_decisions',
 def plan_by_path():
     return {r['path']: r for r in json.loads(PLAN.read_text())['records']}
 
+HERMAS_OPENING = 'translation/extra_canonical/shepherd_of_hermas/001.yaml'
+HERMAS_FOLLOWUP = 'sources/shepherd_of_hermas/repair/contextual-policy-followup-20261103.v1.json'
+HERMAS_FOLLOWUP_SHA256 = 'a68860fd33f98804cbe79977b89f0e8a1a5843a7a4cafe2a27cacec8e676be4d'
+
+def historical_view(path, doc):
+    """Validate one exact later source repair before projecting its history.
+
+    The 397-record terminology plan stays immutable. Its original source and
+    English remain the historical contract; a repaired opening is separately
+    pinned, never accepted from a mutable hash in the live verse itself.
+    All notes, lexical judgments, revision metadata and other fields continue
+    through the original checks unchanged.
+    """
+    name = Path(path).resolve().relative_to(ROOT).as_posix()
+    if name != HERMAS_OPENING:
+        return doc
+    item = plan_by_path()[name]
+    source = doc.get('source') or {}
+    text = doc.get('translation', {}).get('text')
+    if prior.digest(source) == item['source_sha256'] and text == item['after_text']:
+        return doc
+    raw = (ROOT / HERMAS_FOLLOWUP).read_bytes()
+    if SHA(raw) != HERMAS_FOLLOWUP_SHA256:
+        raise ValueError('Hermas source-repair decision pin differs')
+    repair = json.loads(raw)
+    if (repair['path'] != name or
+        prior.digest(repair['before_source']) != item['source_sha256'] or
+        repair['before_text'] != item['after_text']):
+        raise ValueError('Hermas repair does not preserve the historical terminology input')
+    if source != repair['after_source'] or text != repair['after_text']:
+        raise ValueError('Hermas source/text differs from exact later opening repair')
+    result = copy.deepcopy(doc)
+    result['source'] = repair['before_source']
+    result['translation']['text'] = repair['before_text']
+    return result
+
 def approved_errors(path, doc):
     """Check committed output, not a mutable hash supplied by the record itself."""
     try:
@@ -41,6 +77,10 @@ def approved_errors(path, doc):
     meta = doc.get('terminology_revision') or {}
     if item is None:
         return ['Unknown reassessment record'] if meta.get('current_policy_id') == POLICY else []
+    try:
+        doc = historical_view(path, doc)
+    except (ValueError, OSError, KeyError) as exc:
+        return [str(exc)]
     errors = []
     if meta.get('current_policy_id') != POLICY:
         return ['Contextual repentance review has not been applied']

@@ -9,7 +9,9 @@ Shared scope doc: [`../../GREEK_EXTRA_CANONICAL.md`](../../GREEK_EXTRA_CANONICAL
 
 The Shepherd of Hermas survives primarily in **Greek**, with important
 secondary witness traditions in Latin and Ethiopic. For the first POB
-pass, the translation anchor is Greek.
+pass, the translation anchor is Greek. That import is incomplete: see the
+[complete-source repair ledger](repair/README.md). Greek is not continuously
+extant through the ending; versional evidence must retain its actual language.
 
 ## Local layout
 

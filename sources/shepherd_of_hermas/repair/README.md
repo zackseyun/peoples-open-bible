@@ -127,6 +127,19 @@ transcription; adopted corrections were checked against the acquired scan.
 
 ## Next work
 
+`ending-20261103.v1.json` extends the printed body through 9.xvii and into
+9.xviii.3 (88 working units). The next required scan leaf is physical page
+405; nineteen whole ending chapters remain beyond the partial chapter.
+Corner marks now distinguish supplied letters in worm-damaged Athos text
+from the edition's other editorial marks. At 9.xvi.6 the printed apparatus
+explicitly derives Greek from Clement's quotation. The bounded comparison
+in `clement-quotation-20261103.v1.json` checks the acquired 1906 Clement
+edition directly and supports retaining the ascent-alive clause. It also
+excludes the Clement editor's corrections taken from Hermas from independent
+support. This is indirect quotation evidence, not another continuous
+manuscript. The unquarried-stones parallel in 9.xvi.7 is internal
+context and is not counted as another witness.
+
 Finish the opening's witness comparison and standard/simplified reader
 reconciliation, then repair the earlier truncations and the omitted ending.
 The complete-source translation, ID crosswalk, checks, and verified

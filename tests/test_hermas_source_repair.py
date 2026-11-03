@@ -123,9 +123,24 @@ class HermasSourceRepairTests(unittest.TestCase):
         assert "Ἡ πέτρα, φησίν, αὕτη καὶ ἡ πύλη ὁ υἱὸς τοῦ Θεοῦ ἐστί." in twelfth.text
         assert "διῆλθον γὰρ διὰ τῆς πύλης" in thirteenth.text
         assert "ἐνδιδυσκόμενοι τὰ πνεύματα" in thirteenth.text
-        assert partial.text.endswith("καὶ ἤδη κατεφθαρμένων ἡμῶν")
+        assert partial.text.endswith("τὸ ὄνομα αὐτοῦ φορεῖν.")
         rows = json.loads((hermas.REPO_ROOT / "sources/shepherd_of_hermas/repair/coverage.v1.json").read_text())["units"]
-        assert next(r for r in rows if r["unit_id"] == "S.9.xiv")["source_status"] == "partially_transcribed"
+        assert next(r for r in rows if r["unit_id"] == "S.9.xviii")["source_status"] == "partially_transcribed"
+
+    def test_damaged_letters_and_quotation_evidence_are_not_silently_certified(self):
+        fifteenth = hermas.load_unit("S.9.xv")
+        sixteenth = hermas.load_unit("S.9.xvi")
+        seventeenth = hermas.load_unit("S.9.xvii")
+        eighteenth = hermas.load_unit("S.9.xviii")
+        assert fifteenth.text.startswith("⸢Δήλωσόν μοι⸣")
+        assert "ἐσχήκει⸢σαν⸣, ⸢οὐκ ἂν⸣" in fifteenth.text
+        assert "| ἀλλ᾿ οὗτοι ζῶντες κατέβησαν, [καὶ πάλιν ζῶντες ἀνέβησαν]" in sixteenth.text
+        assert any("Clement" in n and "indirect Greek" in n for n in sixteenth.notes)
+        assert "ἀλατόμητοι συνῳκοδομήθησαν" in sixteenth.text
+        assert seventeenth.source_pages == [403, 404]
+        assert "ἐγνωκ⸢ό⸣τες" in eighteenth.text
+        assert "⸢ἠρ⸣μένους" in eighteenth.text
+        assert eighteenth.text.endswith("βλασφήμους καὶ")
 
     def test_cutoff_extension_does_not_renumber_imported_units(self):
         path = hermas.REPO_ROOT / "sources/shepherd_of_hermas/repair/coverage.v1.json"

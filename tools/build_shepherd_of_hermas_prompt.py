@@ -102,7 +102,7 @@ def build_shepherd_of_hermas_prompt(*, unit_id: str | None = None, sequence: int
 
     source_payload = {
         'edition': unit.source_edition,
-        'language': 'Greek',
+        'language': unit.source_language,
         'text': unit.text,
         'unit_id': unit.unit_id,
         'label': unit.label,
@@ -144,7 +144,8 @@ Source pages: {unit.source_pages}
 
 # Derivative-work guardrails
 
-- The English output must remain anchored in the Greek unit text above.
+- The English output must remain anchored in the source unit text above, in its declared language.
+- Latin is an ancient version witness, not surviving original Greek; never invent Greek behind it or describe a Latin-only passage as directly translated from Greek.
 - Do NOT reproduce wording from copyrighted modern Hermas translations.
 - Use later scholarship only as fact-level context, not as source phrasing.
 - Preserve allegorical, paraenetic, and visionary texture instead of flattening it.

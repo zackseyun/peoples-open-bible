@@ -140,6 +140,22 @@ support. This is indirect quotation evidence, not another continuous
 manuscript. The unquarried-stones parallel in 9.xvi.7 is internal
 context and is not counted as another witness.
 
+`final-leaves-20261103.v1.json` restores physical pages 405–418 through the
+edition's final sentence. All 44 whole chapters beyond the original cutoff
+now have working printed source text. This yields 107 working units; seven
+earlier historical boundaries and earlier truncations/contamination still
+need repair before the 114-chapter source can be certified complete.
+
+The edition switches to edited Latin Vulgata at 9.xxx.3, within physical
+page 412. That unit is explicitly Greek and Latin; the later units through
+10.iv are Latin. Normalized metadata and drafting prompts now carry that
+language and prohibit describing the Latin as surviving Greek. Latin line
+hyphens and the major heading are parsed without swallowing chapter text.
+The ending retains the printed Latin crux and selected apparatus reports,
+including a Cambridge manuscript shelfmark conflict and a pseudo-Cyprian
+quotation still requiring direct consultation. The old V.3.iii import also
+contains an identified printing footer, now queued for scan-based repair.
+
 Finish the opening's witness comparison and standard/simplified reader
 reconciliation, then repair the earlier truncations and the omitted ending.
 The complete-source translation, ID crosswalk, checks, and verified

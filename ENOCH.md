@@ -407,3 +407,14 @@ transaction restores95's actual237–238 sourcewindow with zero new count or
 language votes. Expected local ledger485/1061 and37/108 is not a full-book or
 public-release certificate. Main merge/publication is held under the user's
 Azure-only instruction because the existing canonical publisher invokes AWS.
+
+## Batch37 individual97:1 correction (2026-11-02)
+
+[Batch37](docs/ENOCH_BATCH37_2026-11-02.md) replaces only97:1 with a fresh
+exact whole-source/English/both-explanations pair. It corrects the selected
+Gaml order and sinners-noun Alf order, preserves the reproach noun's printed
+spelling, and retains explicit adverse drafts and withdrawn v1 approval.
+The existing10-unit chapter count and other97 treatments remain retained;
+no new chapter/count/publication approval is inferred. Local source coverage
+remains486/1061 units and37 complete selected-critical chapters, not full-book
+completion. AWS-triggering main merges and Azure activation remain held.

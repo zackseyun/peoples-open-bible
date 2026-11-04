@@ -93,6 +93,10 @@ class Batch36Test(unittest.TestCase):
         if (t.APPLICATIONS/successor.NAME/'application.json').is_file():
             successor.verify_current()
             expected['units']['97:1']=successor.NAME
+            from tools.enoch import batch38_evidence
+            if (t.APPLICATIONS/batch38_evidence.NAME/'application.json').is_file():
+                batch38_evidence.verify_current()
+                expected['units']['1:9']=batch38_evidence.NAME
         self.assertEqual(sources.registry_data(),expected)
         self.assertNotIn('96',expected['chapters'])
         with patch.object(t,'TRANSLATION',Path('/nonexistent-canonical-echo')):
@@ -126,11 +130,13 @@ class Batch36Test(unittest.TestCase):
         self.assertNotIn(96,{x['chapter']for x in(payload or {}).get('chapters',[])})
         self.assertEqual(t.sha((t.ROOT/'tools/export_mobile_bible.py').read_bytes()),'2258f72485099fe1014152eeb29394324415940467c2edd9d9da0d48a4a113c3')
 
-    def test_progress486_37_not_fullbook(self):
+    def test_progress_not_fullbook(self):
         from tools.enoch.full_repair_progress import build
         report=build()
         self.assertEqual(report['canonical_file_count'],966)
-        self.assertEqual(report['current_units_with_imported_review_evidence'],486)
+        from tools.enoch import batch38_evidence
+        added = (t.APPLICATIONS/batch38_evidence.NAME/'application.json').is_file()
+        self.assertEqual(report['current_units_with_imported_review_evidence'],486 + int(added))
         self.assertEqual(len(report['chapters_with_complete_imported_selected_edition_review']),37)
         self.assertEqual(next(x for x in report['chapters']if x['chapter']==96)['current_units_with_imported_review_evidence'],[1,3])
         self.assertNotIn(96,report['chapters_with_complete_imported_selected_edition_review'])

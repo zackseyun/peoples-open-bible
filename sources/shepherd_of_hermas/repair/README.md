@@ -244,3 +244,26 @@ Printed conjectures and substantive alternatives, includingM.11.14's
 earthly/holy spirit andS.8.ii.2's seal/seals, remain explicitly recorded
 for adjudication and corresponding English review. No completed-reader or
 publication claim follows from these source repairs.
+
+
+## Primary-scan provenance for Mandates8–10
+
+`override-provenance-20261103.v1.json` records restored raw345–348 and
+scan review of344–350. Five modern-web whole-unit overrides (M.8,M.9,
+M.10.i–iii) are retired; these chapters now normalize directly from the
+primary printed source. Baseline commit and hashes retain their audit trail.
+The two explicit bounded manuscript selections remain active.
+
+This resolves the original marker/length-based raw-page queue, not the full
+source audit. Printed brackets and version-supported bars dropped by the
+old patches are now retained. Source/English differences, includingM.8.6's
+dialogue division, require adjudication and reader revision. The legacy
+English, artwork and63 IDs remain unchanged; all114 source divisions are
+represented but the completed edition is still unproven.
+
+A broader comparison of106 purely Greek units against an external
+validation-only digital edition flags three large source-only spans. All
+three are printed supplements inS.5.iii,vi,vii, checked in primary scans;
+no additional large control-only gap was found at the12-word threshold.
+This does not verify every word, shorter or shared omissions, the mixed/Latin
+ending, or any manuscript choice. The comparison text is not vendored.

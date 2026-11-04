@@ -7,6 +7,7 @@ from pathlib import Path
 import yaml
 from tools import draft_shepherd_of_hermas as drafting
 from tools import shepherd_of_hermas as hermas
+from tools import reorientation_policy as prior
 
 ROOT = Path(__file__).resolve().parents[1]
 REPAIR = ROOT / 'sources/shepherd_of_hermas/repair'
@@ -46,8 +47,57 @@ class HermasEarlierDraftTests(unittest.TestCase):
         for path, entry in archive['nested_unchanged'].items():
             assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == entry['file_sha256']
         neighbor = archive['unchanged_neighbor']
-        assert hashlib.sha256((ROOT / neighbor['path']).read_bytes()).hexdigest() == neighbor['file_sha256']
+        # The next repair intentionally updates M5 in its own unchanged slot.
+        # Pin its prior record and the old file receipt, rather than requiring
+        # this separate source repair to preserve the former truncation.
+        later = json.loads((REPAIR / 'legacy32-before-temper-repair-20261104.v1.json').read_text())
+        assert later['standard_flat_before_file_sha256'] == neighbor['file_sha256']
+        assert prior.digest(later['standard_flat']) == '5beba495888dec56d6375fdde2f3708687008a653398737254e74a5df1dbfda5'
         assert yaml.safe_load((ROOT / neighbor['path']).read_text())['id'] == 'HERM.M.5.i'
+
+    def test_five_temper_restores_every_paragraph_and_exposes_variants(self):
+        audit = json.loads((REPAIR / 'five-temper-repair-20261104.v1.json').read_text())
+        row = audit['english_drafts'][0]
+        assert not audit['complete'] and not audit['independent_review']
+        assert not audit['normalized_source_body_changed'] and not audit['legacy_reader_ids_changed']
+        expected = '\n\n'.join(hermas.load_normalized_unit(uid).text for uid in ['M.5.i', 'M.5.ii'])
+        for kind in ['standard', 'simplified']:
+            doc = yaml.safe_load((ROOT / row[kind + '_path']).read_text())
+            assert doc['id'] == 'HERM.M.5.i' and doc['source']['text'] == expected
+            paragraphs = doc['translation']['text'].split('\n\n')
+            assert [p.split('. ', 1)[0] for p in paragraphs] == ['I.' + str(n) for n in range(1,8)] + ['II.' + str(n) for n in range(1,9)]
+            for span in doc['source']['source_unit_spans']:
+                body = expected[span['start']:span['start'] + span['length']]
+                assert body == hermas.load_normalized_unit(span['unit_id']).text
+                assert hashlib.sha256(body.encode()).hexdigest() == span['text_sha256']
+            assert 'prayer is not useful to God' in paragraphs[5]
+            assert 'household' in paragraphs[6] and 'repents with their whole heart' in paragraphs[6]
+            assert 'justified by the most revered angel' in paragraphs[6]
+            assert 'Lord’s power' in paragraphs[7] and 'giving or receiving' in paragraphs[8]
+            assert 'glorif' in paragraphs[9] and 'righteous spirit' in paragraphs[13]
+            notes = {n['marker']:n['text'] for n in doc['translation']['footnotes']}
+            assert 'her/its petition' in notes['a'] and 'my power' in notes['d']
+            assert 'supplies no vote here' in notes['d']
+            assert 'holy spirit' in notes['g'] and 'righteous spirit' in notes['g']
+            assert hashlib.sha256(doc['translation']['text'].encode()).hexdigest() == row[kind + '_text_sha256']
+            assert doc['status'] == 'draft' and not doc['ai_draft']['independent_review']
+
+    def test_five_temper_preserves_nested_readers_and_following_mandate(self):
+        audit = json.loads((REPAIR / 'five-temper-repair-20261104.v1.json').read_text())
+        archive = json.loads((REPAIR / audit['history_archive']).read_text())
+        assert len(archive['nested_unchanged']) == 14
+        for path, entry in archive['nested_unchanged'].items():
+            assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == entry['file_sha256']
+        neighbor = archive['unchanged_neighbor']
+        assert hashlib.sha256((ROOT / neighbor['path']).read_bytes()).hexdigest() == neighbor['file_sha256']
+        assert yaml.safe_load((ROOT / neighbor['path']).read_text())['source']['unit_id'] == 'M.6.i'
+        standard = yaml.safe_load((ROOT / audit['english_drafts'][0]['standard_path']).read_text())
+        simple = yaml.safe_load((ROOT / audit['english_drafts'][0]['simplified_path']).read_text())
+        payload = dict(english_text=standard['translation']['text'], translation_philosophy=standard['translation']['philosophy'], lexical_decisions=standard['lexical_decisions'], footnotes=standard['translation']['footnotes'], theological_decisions=standard['theological_decisions'])
+        assert standard['ai_draft']['output_hash'] == drafting.sha256_hex(drafting.canonical_json(payload))
+        assert simple['base_translation']['text'] == standard['translation']['text']
+        assert simple['base_translation']['sha256'] == drafting.sha256_hex(standard['translation']['text'])
+        assert simple['ai_draft']['output_hash'] == drafting.sha256_hex(simple['translation']['text'])
 
     def test_four_baptism_payload_and_simple_base_are_current(self):
         audit = json.loads((REPAIR / 'four-baptism-repair-20261104.v1.json').read_text())

@@ -208,3 +208,21 @@ The newly transcribed apparatus records substantive readings, including
 Athos's negation at M.4.iii.6 and the edition-reported Sinaitic endpoint.
 These are edition reports awaiting further witness comparison, not fresh
 manuscript-image collation or completed English adjudications.
+
+
+## Similitude 5 and full chapter-boundary inventory
+
+`similitude-five-20261103.v1.json` records restored body from physical
+pages362–367, including S.4's ending, S.5's opening and the missing S.5.iv
+and vi headings. All114 historical divisions now have working source units.
+This establishes chapter representation, not complete source verification:
+twelve earlier page candidates, older overrides and full witness collation
+remain. The English and illustrated readers are still incomplete.
+
+`reader-source-crosswalk-20261103.v3.json` preserves all63 legacy IDs and
+updates source order (S.8.iv is now70 in source order, still63 in the legacy
+reader). Earlier crosswalks remain checkpoint evidence. S.5.ii's old source
+included the S.5.i tail; S.5.iii included S.5.iv's tail; S.5.v included S.5.vi.
+No English or artwork is silently reassigned. Printed supplements and
+conjectures, including the substantive negation at S.5.vi.1, remain explicitly
+distinguished from manuscript readings pending adjudication.

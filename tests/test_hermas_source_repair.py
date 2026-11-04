@@ -125,7 +125,7 @@ class HermasSourceRepairTests(unittest.TestCase):
         assert "ἐνδιδυσκόμενοι τὰ πνεύματα" in thirteenth.text
         assert partial.text.endswith("τὸ ὄνομα αὐτοῦ φορεῖν.")
         rows = json.loads((hermas.REPO_ROOT / "sources/shepherd_of_hermas/repair/coverage.v1.json").read_text())["units"]
-        assert next(r for r in rows if r["unit_id"] == "S.9.xviii")["source_status"] == "printed_body_restored_pending_collation"
+        assert next(r for r in rows if r["unit_id"] == "S.9.xviii")["source_status"] == "bounded_Sinaiticus_transcription_reading_selected_full_collation_pending"
 
     def test_damaged_letters_and_quotation_evidence_are_not_silently_certified(self):
         fifteenth = hermas.load_unit("S.9.xv")
@@ -317,7 +317,7 @@ class HermasSourceRepairTests(unittest.TestCase):
 
     def test_primary_scan_restoration_replaces_only_the_five_web_patch_bodies(self):
         overrides = {u.unit_id for u in hermas.load_manual_unit_overrides()}
-        assert overrides == {"S.6.iv", "S.8.x", "S.9.iii"}
+        assert overrides == {"S.6.iv", "S.8.x", "S.9.iii", "S.9.xviii"}
         eighth = hermas.load_unit("M.8")
         assert eighth.source_pages == [344, 345, 346]
         assert eighth.text.count("|") == 2

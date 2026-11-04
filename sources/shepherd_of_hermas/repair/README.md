@@ -384,3 +384,33 @@ repentance conditions, and women/activities alternative remain explicit.
 Twenty of44wholeomittedendingchapters have drafts;24remain. These are
 unreviewed drafts; earlier English repairs and reader/artwork migration
 remain incomplete. No source-body change or publication is claimed here.
+
+
+## Primary Sinaiticus transcription and seal chapters
+
+`sinaiticus-passages-20261103.v1.json` records acquisition of the official
+Birmingham backup of the Codex Sinaiticus Project transcription v1.05. The
+modern XML remains outside the repository; this record contains bounded
+ancient-word observations, hashes and editorial decisions. Supplies, gaps
+and correcting hands are kept separate. Its wrongly labelled chapter65
+division must be located by its explicit identifier, not the n attribute.
+The separated New Finds regions extend into S.8.ii.5 as well as the later
+S.9.xiv.4–xviii.5 leaf; they are not continuous coverage of the gaps.
+
+The fourth bounded working source selection replaces the old conjectural
+“who ought to do good” with the Sinaiticus “who loves to do good” at
+S.9.xviii.2. The final letters of the infinitive are dotted as uncertain,
+not supplied. The first God noun atxviii.1 is also attested in the primary
+transcription; the following verb has distinct original/corrected forms.
+Prior source and English are archived in `chapter95-before-sinaiticus-20261103.v1.json`.
+`accountability-drafts-20261103.v2.json` records current hashes; v1 remains
+a historical checkpoint. Only this source phrase and its corresponding
+English change; no full Sinaiticus adoption or image verification is claimed.
+
+`seal-drafts-20261103.v1.json` records new flat091–094 for S.9.xiv–xvii,
+24paragraphs in each English edition. The negative conditional and entry
+clause have bounded Sinaiticus support. The alive-again phrase retains
+Clement quotation support alongside the shorter Sinaiticus alternative.
+Twenty-four of44wholeomittedendingchapters now have drafts;20remain.
+Independent review, earlier English repairs, reader/artwork migration and
+publication remain incomplete.

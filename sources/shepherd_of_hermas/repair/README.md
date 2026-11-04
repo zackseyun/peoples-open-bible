@@ -462,3 +462,21 @@ foundation supplements and long return-promise supplement stay explicit.
 Thirty-six of44wholeomittedendingchapters now have drafts;8remain. All new
 drafts still need independent review. Earlier English repairs, full manuscript
 comparison, reader/artwork migration and publication remain incomplete.
+
+
+## Rods, repentance offer and twelve mountains
+
+`rod-mountain-drafts-20261104.v1.json` records flat075–078, S.8.ix–xi and
+S.9.i:23paragraphs per edition. Three bounded source selections are archived
+in `rod-mountain-witness-comparison-20261104.v1.json`: the conjunction extending
+the offer to both groups, only-believed, and their-wickedness. The papyrus
+conjunction’s alpha is restored; the only-word in Michigan is wholly supplied
+from spacing, so Athos supplies that selection’s preserved Greek evidence.
+
+Michigan partly preserves clauses earlier supplied from versions in xi.3–4,
+without making their full reconstructed wording intact manuscript testimony.
+The existing suffering verb is carried forward without supplied willingness.
+The Spirit/Son identification and all twelve mountain descriptions remain.
+Forty of44wholeomittedendingchapters now have drafts;4remain. Full source
+collation, earlier English repairs, independent review, reader/artwork
+migration and publication remain incomplete.

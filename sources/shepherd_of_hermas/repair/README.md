@@ -226,3 +226,21 @@ included the S.5.i tail; S.5.iii included S.5.iv's tail; S.5.v included S.5.vi.
 No English or artwork is silently reassigned. Printed supplements and
 conjectures, including the substantive negation at S.5.vi.1, remain explicitly
 distinguished from manuscript readings pending adjudication.
+
+
+## Earlier leaves and end-marker audit
+
+`earlier-leaves-20261103.v1.json` records scan review of331,336,351,352,
+370,372,375,377. Seven pages had body omissions;351's printed body was
+already complete and only its apparatus/end marker needed repair. Page377
+had a marker despite missingS.8.i.15–18 and the opening ofii.6. Completeness
+cannot be inferred from markers or114 chapter labels. Four earlier raw
+candidates345–348 and all older overrides still need primary-scan checking;
+a comprehensive source and witness audit remains required.
+
+`reader-source-crosswalk-20261103.v4.json` records that oldS.8.i also held
+theS.7 continuation from375. All63 legacy English IDs remain unchanged.
+Printed conjectures and substantive alternatives, includingM.11.14's
+earthly/holy spirit andS.8.ii.2's seal/seals, remain explicitly recorded
+for adjudication and corresponding English review. No completed-reader or
+publication claim follows from these source repairs.

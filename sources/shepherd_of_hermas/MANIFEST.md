@@ -18,6 +18,7 @@ Editions and facsimiles do not count as additional independent manuscripts.
 |---|---|---:|---|
 | [apostolicfather01lakegoog.pdf](https://archive.org/download/apostolicfather01lakegoog/apostolicfather01lakegoog.pdf) | Kirsopp Lake, *The Apostolic Fathers*, vol. II (1917), Greek text and apparatus; physical pages 19 and 21 consulted for the opening | 12,565,229 | `231f54d5bdff97aabfaffebd43bd98a36dea110f4a59d8aae6a381f8ffe0aa04` |
 | [facsimilesofatho00herm.pdf](https://archive.org/download/facsimilesofatho00herm/facsimilesofatho00herm.pdf) | Lake (1907), Athos Hermas facsimiles; acquired, direct collation pending | 7,241,953 | `c9e89bef57d68ccf74428800116dc912f0249fcba00e55a181a5cc3898a1a5e4` |
+| [bwb_KU-773-309.pdf](https://archive.org/download/bwb_KU-773-309/bwb_KU-773-309.pdf) | Stählin (1906), *Clemens Alexandrinus* II; title leaf and printed p.136 (physical pp.5,154) read for bounded indirect quotation comparison | 34,791,969 | `58f50e5bf428cd918f8a792586891665196446cbe4b248027eec2e7537d943bb` |
 
 ## Michigan consultation edition
 

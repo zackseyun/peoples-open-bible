@@ -46,11 +46,12 @@ EDITORIAL_NOTES_RE = re.compile(
 )
 PAGE_RE = re.compile(r"_p(\d{4})\.txt$")
 RUN_HEAD_KEY_RE = re.compile(r"([VMS])\.\s*(\d+)(?:\.\s*([ivxlcdm]+|\d+))?", re.IGNORECASE)
-MINOR_HEAD_RE = re.compile(r"^([IVXLCDM]+)\.\s*(.*)$")
+MINOR_HEAD_RE = re.compile(r"^([IVXLCDMΙΧΜ]+)\.\s*(.*)$")
 MAJOR_HEAD_RE = re.compile(r"^\[?\s*(Ὅρασις|Ἀποκάλυψις|Ἐντολὴ|Παραβολὴ)\s+([^\]]+?)\s*\]?\.?$")
 
 _GREEK_CHAR = r"[\u0370-\u03FF\u1F00-\u1FFF]"
-_HYPHEN_BREAK_RE = re.compile(rf"({_GREEK_CHAR})[-‐]\s+({_GREEK_CHAR})")
+_SOURCE_LETTER = r"[A-Za-z\u0370-\u03FF\u1F00-\u1FFF]"
+_HYPHEN_BREAK_RE = re.compile(rf"({_SOURCE_LETTER})[-‐]\s+((?:⸢)?{_SOURCE_LETTER})")
 _MULTI_SPACE_RE = re.compile(r"\s+")
 
 _PRIME_CHARS = {
@@ -135,6 +136,7 @@ class HermasUnit:
     heading: str | None = None
     notes: list[str] = field(default_factory=list)
     source_edition: str = "Lightfoot & Harmer 1891 (normalized OCR)"
+    source_language: str = "Greek"
 
     @property
     def unit_id(self) -> str:
@@ -255,7 +257,9 @@ def extract_running_head(page_text: str) -> str:
 def _clean_body_lines(body_text: str) -> list[str]:
     lines: list[str] = []
     for raw_line in body_text.splitlines():
-        line = raw_line.replace("|", " ").strip()
+        # Lightfoot also uses vertical bars to delimit supplied text. They
+        # are source-critical marks, not disposable table-column separators.
+        line = raw_line.strip()
         line = line.strip('"`“”')
         if not line:
             continue
@@ -330,6 +334,10 @@ def _default_key_for_major(part: str, major: int, minorized: set[tuple[str, int]
 
 def _detect_major_heading(line: str, minorized: set[tuple[str, int]]) -> tuple[HermasUnitKey, str] | None:
     candidate = line.strip().strip('"`“”')
+    if candidate == "SIMILITUDO DECIMA.":
+        return _default_key_for_major("S", 10, minorized), candidate
+    if _strip_diacritics(candidate).upper() == "ΠΑΡΑΒΟΛΑΙ ΑΣ ΕΛΑΛΗΣΕ ΜΕΤ ΕΜΟΥ.":
+        return _default_key_for_major("S", 1, minorized), candidate
     m = MAJOR_HEAD_RE.match(candidate)
     if not m:
         return None
@@ -345,22 +353,45 @@ def _detect_minor_heading(line: str) -> tuple[str, str] | None:
     m = MINOR_HEAD_RE.match(candidate)
     if not m:
         return None
-    marker = _normalize_minor(m.group(1))
+    # OCR sometimes encodes a printed Roman numeral using Greek lookalikes.
+    # Translate only the numeral token; never transliterate the Greek body.
+    marker = _normalize_minor(m.group(1).translate(str.maketrans({"Ι": "I", "Χ": "X", "Μ": "M"})))
     remainder = m.group(2).strip()
     if not marker:
         return None
     return marker, remainder
 
 
+def _is_other_similitude_heading(line: str) -> bool:
+    return _strip_diacritics(line.strip()).lower() == "αλλη παραβολη."
+
+
 def _normalize_unit_text(lines: list[str]) -> str:
     if not lines:
         return ""
     joined = "\n".join(lines)
-    joined = joined.replace("|", " ")
     joined = _HYPHEN_BREAK_RE.sub(r"\1\2", joined)
     joined = re.sub(r"\s*\n\s*", " ", joined)
     joined = _MULTI_SPACE_RE.sub(" ", joined)
     return joined.strip()
+
+
+def _lightfoot_source_language(key: HermasUnitKey) -> str:
+    """Actual language of this working edition, not a Greek retroversion.
+
+    Physical p.412 changes to Latin Vulgata within S.9.xxx.3; the
+    remainder through S.10.iv is printed in Latin. Overrides may declare
+    another language explicitly if a different primary source is selected.
+    """
+    if key.part == "S" and key.major == 10:
+        return "Latin"
+    if key.part == "S" and key.major == 9 and key.minor:
+        minor = _roman_to_int(key.minor.upper())
+        if minor == 30:
+            return "Greek and Latin"
+        if minor > 30:
+            return "Latin"
+    return "Greek"
 
 
 def parse_units() -> list[HermasUnit]:
@@ -382,6 +413,9 @@ def parse_units() -> list[HermasUnit]:
             return
         text = _normalize_unit_text(current_lines)
         if text:
+            notes = current_notes[:]
+            if "|" in text:
+                notes.append("Vertical bars from the printed working edition are preserved as editorial markers; consult the passage apparatus before treating their contents as manuscript-attested wording.")
             units.append(
                 HermasUnit(
                     key=current_key,
@@ -389,7 +423,15 @@ def parse_units() -> list[HermasUnit]:
                     text=text,
                     source_pages=current_pages[:],
                     source_files=current_files[:],
-                    notes=current_notes[:],
+                    notes=notes,
+                    source_edition=(
+                        "Lightfoot & Harmer 1891 (edited Latin Vulgata ending)"
+                        if _lightfoot_source_language(current_key) == "Latin" else
+                        "Lightfoot & Harmer 1891 (Greek working text and edited Latin Vulgata ending)"
+                        if _lightfoot_source_language(current_key) == "Greek and Latin" else
+                        "Lightfoot & Harmer 1891 (normalized OCR)"
+                    ),
+                    source_language=_lightfoot_source_language(current_key),
                 )
             )
         current_key = None
@@ -419,7 +461,10 @@ def parse_units() -> list[HermasUnit]:
                 current_notes.append(note)
 
     for page in pages:
-        has_major_heading = any(_detect_major_heading(line, minorized) is not None for line in page.body_lines)
+        has_major_heading = any(
+            _detect_major_heading(line, minorized) is not None or _is_other_similitude_heading(line)
+            for line in page.body_lines
+        )
         has_minor_heading = any(_detect_minor_heading(line) is not None for line in page.body_lines)
         has_explicit_heading = has_major_heading or has_minor_heading
 
@@ -454,6 +499,13 @@ def parse_units() -> list[HermasUnit]:
 
         for raw_line in page.body_lines:
             line = raw_line.strip()
+            if _is_other_similitude_heading(line):
+                if current_key is None or current_key.part != "S":
+                    raise ValueError(f"Unnumbered Similitude heading without context on page {page.page}")
+                key = _default_key_for_major("S", current_key.major + 1, minorized)
+                flush()
+                start_unit(key, page=page.page, file_name=page.path.name, heading=line)
+                continue
             major = _detect_major_heading(line, minorized)
             if major is not None:
                 key, heading = major
@@ -464,6 +516,10 @@ def parse_units() -> list[HermasUnit]:
             minor = _detect_minor_heading(line)
             if minor is not None and current_key is not None:
                 marker, remainder = minor
+                if marker == "i" and (current_key.part, current_key.major) not in minorized:
+                    if remainder:
+                        current_lines.append(remainder)
+                    continue
                 candidate_key = HermasUnitKey(part=current_key.part, major=current_key.major, minor=marker)
                 if candidate_key != current_key:
                     flush()
@@ -525,6 +581,7 @@ class NormalizedUnit:
     text: str
     sequence: int
     source_edition: str = "Lightfoot & Harmer 1891 (normalized OCR)"
+    source_language: str = "Greek"
 
 
 def load_unit_map() -> dict[str, object]:
@@ -585,6 +642,7 @@ def load_normalized_unit(unit_id: str | None = None, *, sequence: int | None = N
         text=text,
         sequence=seq,
         source_edition=meta.get("source_edition", "Lightfoot & Harmer 1891 (normalized OCR)"),
+        source_language=str(target.get("source_language", meta.get("source_language", "Greek"))),
     )
 
 
@@ -621,6 +679,7 @@ def load_manual_unit_overrides() -> list[HermasUnit]:
             heading=unit.get("heading"),
             notes=[str(n) for n in unit.get("notes", [])],
             source_edition=unit.get("source_edition", "Lightfoot & Harmer 1891 (normalized OCR + manual unit override)"),
+            source_language=unit.get("source_language", _lightfoot_source_language(HermasUnitKey(str(unit["part"]), int(unit["major"]), unit.get("minor")))),
         ))
     return out
 
@@ -660,6 +719,7 @@ def unit_map_payload() -> dict[str, object]:
                 "source_files": unit.source_files,
                 "text_path": str(unit.output_path.relative_to(REPO_ROOT)),
                 "notes": unit.notes,
+                "source_language": unit.source_language,
             }
             for unit in units
         ],
@@ -678,6 +738,7 @@ def write_normalized() -> dict[str, object]:
             f"# source_pages: {','.join(str(p) for p in unit.source_pages)}",
             f"# source_files: {','.join(unit.source_files)}",
             f"# source_edition: {unit.source_edition}",
+            f"# source_language: {unit.source_language}",
         ]
         if unit.heading:
             lines.append(f"# heading: {unit.heading}")

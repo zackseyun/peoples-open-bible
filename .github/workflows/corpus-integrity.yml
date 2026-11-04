@@ -12,9 +12,9 @@ jobs:
   validate:
     name: corpus-integrity
     runs-on: ubuntu-latest
-    # Exact-head batch07 needed44minutes; expanded source/metadata and full-corpus
-    # checks must finish without dropping historical or current integrity gates.
-    timeout-minutes: 90
+    # A verified Hermas run exceeded90minutes after slow checkout/baseline fetches.
+    # Preserve every historical/current gate and allow the full suite to finish.
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
       - name: Fetch the reviewed source baselines
@@ -44,6 +44,7 @@ jobs:
           git fetch --no-tags --depth=1 origin 52792dc1d808476debbb975c5e223c0f92608a9e
           git fetch --no-tags --depth=1 origin 7cf29b67bd9f13d088b2935e27910f78b440d1fe
           git fetch --no-tags --depth=1 origin 21faf461feba9970d651bb70fa8d88aabeab43fe
+          git fetch --no-tags --depth=1 origin a3681961d91c1eb1a609e12cec312a644148f9bb
           git fetch --no-tags --depth=1 origin dd74081885dcfa8b4bdc8beb53f2337a1353c8a1
           git fetch --no-tags --depth=1 origin e2d28622a8cd69df0f30eecc8da61f36b492ead1
           git fetch --no-tags --depth=1 origin 17b964c3bf7085d8660175a500391b272f57313c

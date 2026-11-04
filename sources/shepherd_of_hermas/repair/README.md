@@ -731,3 +731,41 @@ The separate Azure model review in `model_reviews/legacy036-20261104-r2/`
 accepted both exact draft files. Its scope is the supplied source/disclosures;
 independent scholarship, other excerpt witnesses, reader migration and
 whole-book publication remain pending.
+
+
+## Mandate 10 sorrow/source alignment, 2026-11-04
+
+`ten-sorrow-alignment-20261104.v1.json` records the complete three-section
+comparison. All sixteen historical paragraphs were already in the English,
+in six, one, and four reader paragraphs. The new flat drafts use six, six,
+and four paragraphs per edition; this is a paragraph crosswalk, not a claim
+that sixteen missing paragraphs were translated. The repair attaches the
+restored continuous Greek, restores against you in ii.5, follows working now
+and God where the old attached source differed, preserves the comparative
+more quickly, and correctly anchors the notes. Full original records and all
+22 nested standard/simplified records remain in
+`legacy37-39-before-sorrow-alignment-20261104.v1.json`. Reader artwork and
+legacy references were not reassigned.
+
+Athos Plate VII and both printed Latin traditions were compared at bounded
+loci. The notes expose Athos’s extra and again saves at ii.2, the working
+bracketed against you and differing petition constructions at ii.5, and the
+not praying/not obtaining and God/Lord differences at iii.2. The difficult
+saving assertion, qualified seems to have salvation, departure warning,
+prayer/altar imagery, same-prayer comparison, and final conditions remain.
+The Greek body is unchanged; these editions are not extra independent
+manuscript votes, and full photograph/excerpt collation remains pending.
+
+The contextual repentance decision in ii.3–4 and the immutable 397-record
+plan remain intact. An exact full-record follow-up in
+`contextual-policy-ten-ii-followup-20261104.v1.json` pins the later source and
+English repair before the validator projects the earlier record. Tests reject
+source, English, annotation, and review-status drift.
+
+Separate Azure reviews in `model_reviews/legacy037-20261104-r2/`,
+`legacy038-20261104-r2/`, and `legacy039-20261104-r2/` accepted all six exact
+draft files after the recorded corrections. Earlier raw responses are retained.
+The review scope is fidelity to the supplied source and disclosures; it does
+not authenticate manuscript handwriting or replace independent scholarship.
+Nested reader migration, remaining witness comparisons, artwork and verified
+whole-book publication are still pending.

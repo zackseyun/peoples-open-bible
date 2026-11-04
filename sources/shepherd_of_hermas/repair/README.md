@@ -5,9 +5,10 @@ mid-sentence at Similitude 8.4.5. Completing that import's artwork did not
 complete the historical book. The original import also skipped the opening
 body leaf and has earlier omissions and merged boundaries.
 
-The working source now has 108 units and includes the printed ending, while
-earlier omissions, six historical boundaries, witness comparison and English
-reader revision remain unfinished. The legacy reader's 63 chapter IDs stay
+The working source now represents all 114 historical chapters and includes the
+printed ending. The earlier marker/length repair queue and six missing chapter
+boundaries have been resolved. Full word-level verification, manuscript
+comparison and English reader revision remain unfinished. The legacy reader's 63 chapter IDs stay
 unchanged; source-index changes are recorded in the migration inventory below.
 
 `coverage.v1.json` keeps the full 114-chapter scope visible. Its 44
@@ -358,3 +359,28 @@ Foolishness, childlikeness/gentleness and spirit/seed alternatives remain
 explicit. Sixteen of44wholeomittedendingchapters now have drafts;28remain.
 Full source collation, earlier English repairs, review, migration and
 publication are still incomplete.
+
+## Later Greek witnesses: coverage correction and image inspection
+
+`sinaiticus-new-finds-20261103.v1.json` withdraws the inventory's incorrect
+rejection of later Sinaiticus coverage. The Codex Sinaiticus Project reports
+1975 finds in Similitudes 6–7 and a leaf containing 9.xiv.4–xviii.5. These are
+separated regions of the same codex. The project's reconstruction of lost
+text is not surviving text, and no new Sinaiticus reading is selected here.
+
+`oxy3528-images-20261103.v1.json` records official DCLP metadata and private
+inspection of two Oxford photographs. Only small portions of 9.xx.3–4 and
+9.xxii.1 survive. They cannot certify the supplied negation in 9.xx.2 or the
+entire repentance condition in 9.xx.4. The metadata has no Greek transcription;
+the copyrighted photographs remain outside the repository.
+
+
+## Responsibility and further mountain drafts
+
+`accountability-drafts-20261103.v1.json` records standard and simplified
+flat095–098 for S.9.xviii–xxi:16paragraphs per edition. The first
+God/Christ/Lord question, bare/high/dry mountain, supplied negation and
+repentance conditions, and women/activities alternative remain explicit.
+Twenty of44wholeomittedendingchapters have drafts;24remain. These are
+unreviewed drafts; earlier English repairs and reader/artwork migration
+remain incomplete. No source-body change or publication is claimed here.

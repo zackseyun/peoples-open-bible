@@ -22,10 +22,12 @@ GATE_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/gate-drafts-20261104.v1.
 
 STONE_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/stone-drafts-20261104.v1.json'
 
+FOUNDATION_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/foundation-drafts-20261104.v1.json'
+
 
 class HermasEndingDraftTests(unittest.TestCase):
     def test_ending_drafts_have_current_sources_and_explicit_review_limits(self):
-        for record, slots in [(RECORD, {113, 114}), (TEN_RECORD, {108, 109, 110, 111, 112}), (MOUNTAIN_RECORD, {105, 106, 107}), (SERVICE_RECORD, {102, 103, 104}), (FORGIVENESS_RECORD, {99, 100, 101}), (ACCOUNTABILITY_RECORD, {95, 96, 97, 98}), (SEAL_RECORD, {91, 92, 93, 94}), (GATE_RECORD, {87, 88, 89, 90}), (STONE_RECORD, {83, 84, 85, 86})]:
+        for record, slots in [(RECORD, {113, 114}), (TEN_RECORD, {108, 109, 110, 111, 112}), (MOUNTAIN_RECORD, {105, 106, 107}), (SERVICE_RECORD, {102, 103, 104}), (FORGIVENESS_RECORD, {99, 100, 101}), (ACCOUNTABILITY_RECORD, {95, 96, 97, 98}), (SEAL_RECORD, {91, 92, 93, 94}), (GATE_RECORD, {87, 88, 89, 90}), (STONE_RECORD, {83, 84, 85, 86}), (FOUNDATION_RECORD, {79, 80, 81, 82})]:
             audit = json.loads(record.read_text())
             assert not audit['complete']
             assert not audit['independent_review']
@@ -133,6 +135,26 @@ class HermasEndingDraftTests(unittest.TestCase):
             crux = yaml.safe_load((ROOT / root / 'extra_canonical/shepherd_of_hermas/085.yaml').read_text())
             assert '†' in crux['source']['text']
             assert any('exact disturbed Greek wording' in n['text'] for n in crux['translation']['footnotes'])
+
+    def test_foundation_draft_exposes_editorial_negation_and_missing_witness(self):
+        comparison = json.loads((ROOT / 'sources/shepherd_of_hermas/repair/foundation-witness-comparison-20261104.v1.json').read_text())
+        assert not comparison['source_body_changed']
+        for row in comparison['source_units']:
+            assert hashlib.sha256(hermas.load_normalized_unit(row['unit_id']).text.encode()).hexdigest() == row['sha256']
+        for root in ('translation', 'translation_simplified'):
+            stones = yaml.safe_load((ROOT / root / 'extra_canonical/shepherd_of_hermas/080.yaml').read_text())
+            assert '[μὴ]' in stones['source']['text']
+            assert 'had not been cut' in stones['translation']['text']
+            note = next(n['text'] for n in stones['translation']['footnotes'] if n['marker'] == 'b')
+            assert 'leaf' in note and 'cannot decide' in note
+            assert 'which had been cut' in note and 'supplied, not read' in note
+            foundation = yaml.safe_load((ROOT / root / 'extra_canonical/shepherd_of_hermas/081.yaml').read_text())
+            count = next(n['text'] for n in foundation['translation']['footnotes'] if n['marker'] == 'b')
+            assert 'twenty stones' in count and 'fifteen stones' in count
+            assert any('shorter corresponding reason' in n['text'] for n in foundation['translation']['footnotes'])
+            pause = yaml.safe_load((ROOT / root / 'extra_canonical/shepherd_of_hermas/082.yaml').read_text())
+            assert 'If your eagerness is not empty' in pause['translation']['text']
+            assert any('long bar-marked' in n['text'] for n in pause['translation']['footnotes'])
 
     def test_greek_selection_is_bounded_and_latin_is_not_silently_rewritten(self):
         standard = yaml.safe_load((ROOT / 'translation/extra_canonical/shepherd_of_hermas/113.yaml').read_text())

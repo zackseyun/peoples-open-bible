@@ -414,3 +414,20 @@ Clement quotation support alongside the shorter Sinaiticus alternative.
 Twenty-four of44wholeomittedendingchapters now have drafts;20remain.
 Independent review, earlier English repairs, reader/artwork migration and
 publication remain incomplete.
+
+
+## Tower, gate and clothing drafts
+
+`gate-drafts-20261104.v1.json` records new standard and simplified flat087–090
+for S.9.x–xiii:33paragraphs per edition. Lord/world, Son/holy-name and
+him/God alternatives remain visible, as does the long version-supported
+supplement in xiii.4. The affection, brother/husband distinction, prayer,
+plural holy spirits and clothing metaphor are preserved.
+
+`amherst190-gate-20261104.v1.json` bounds fragmentsf/g to their actual
+partly surviving passages. Fragmentf stops before the Lord/world variant;
+fragmentg has its twelve in brackets. Existing flat094 receives a note and
+provenance clarification only. No new source-body selection is made.
+Twenty-eight of44wholeomittedendingchapters now have drafts;16remain.
+Review, earlier English repair, reader/artwork migration and publication
+remain incomplete.

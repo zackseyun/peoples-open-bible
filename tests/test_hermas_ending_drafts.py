@@ -18,10 +18,12 @@ ACCOUNTABILITY_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/accountability
 
 SEAL_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/seal-drafts-20261103.v1.json'
 
+GATE_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/gate-drafts-20261104.v1.json'
+
 
 class HermasEndingDraftTests(unittest.TestCase):
     def test_ending_drafts_have_current_sources_and_explicit_review_limits(self):
-        for record, slots in [(RECORD, {113, 114}), (TEN_RECORD, {108, 109, 110, 111, 112}), (MOUNTAIN_RECORD, {105, 106, 107}), (SERVICE_RECORD, {102, 103, 104}), (FORGIVENESS_RECORD, {99, 100, 101}), (ACCOUNTABILITY_RECORD, {95, 96, 97, 98}), (SEAL_RECORD, {91, 92, 93, 94})]:
+        for record, slots in [(RECORD, {113, 114}), (TEN_RECORD, {108, 109, 110, 111, 112}), (MOUNTAIN_RECORD, {105, 106, 107}), (SERVICE_RECORD, {102, 103, 104}), (FORGIVENESS_RECORD, {99, 100, 101}), (ACCOUNTABILITY_RECORD, {95, 96, 97, 98}), (SEAL_RECORD, {91, 92, 93, 94}), (GATE_RECORD, {87, 88, 89, 90})]:
             audit = json.loads(record.read_text())
             assert not audit['complete']
             assert not audit['independent_review']
@@ -91,6 +93,21 @@ class HermasEndingDraftTests(unittest.TestCase):
             assert 'without a repeated “alive”' in note
             assert 'separate transmission routes' in note
             assert 'supplied letters' in note
+
+    def test_gate_variants_and_plural_spirits_are_not_harmonized(self):
+        for root in ('translation', 'translation_simplified'):
+            gate = yaml.safe_load((ROOT / root / 'extra_canonical/shepherd_of_hermas/089.yaml').read_text())
+            notes = {n['marker']: n['text'] for n in gate['translation']['footnotes']}
+            assert 'wall around the world' in notes['f']
+            assert 'Amherstf does not reach' in notes['f']
+            assert 'his holy name' in notes['d']
+            church = yaml.safe_load((ROOT / root / 'extra_canonical/shepherd_of_hermas/090.yaml').read_text())
+            assert 'They are holy spirits' in church['translation']['text']
+            assert any('long bar-marked insertion' in n['text'] for n in church['translation']['footnotes'])
+            stay = yaml.safe_load((ROOT / root / 'extra_canonical/shepherd_of_hermas/088.yaml').read_text())
+            assert 'as a brother, not as a husband' in stay['translation']['text']
+            assert 'kissing and embracing me' in stay['translation']['text']
+            assert 'except pray' in stay['translation']['text']
 
     def test_greek_selection_is_bounded_and_latin_is_not_silently_rewritten(self):
         standard = yaml.safe_load((ROOT / 'translation/extra_canonical/shepherd_of_hermas/113.yaml').read_text())

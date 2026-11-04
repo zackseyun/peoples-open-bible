@@ -325,3 +325,17 @@ alias for traceability, not an additional witness. The S.10.ii.4 faciunt
 report still needs direct manuscript collation; catalogue identity alone
 does not verify that reading. Draft112 footnotes/provenance reflect this
 resolution, with English text unchanged.
+
+
+## Further ending drafts and bounded excerpt comparisons
+
+`service-mountain-drafts-20261103.v1.json` records new standard/simplified
+flat102–104 for S.9.xxv–xxvii,13paragraphs per edition. The office-term
+conjecture and Athos alternative remain explicit. Thirteen of the44 wholly
+omitted ending chapters now have drafts;31still need drafts. Earlier
+English repairs, review, migration and publication remain incomplete.
+
+`florilegium-comparison-20261103.v1.json` records bounded comparisons
+and draft revisions. The current108–112 draft checkpoint is
+`amherst190-ten-drafts-20261103.v2.json`; v1 is preserved as history.
+No continuous source body, legacy reader ID or artwork is replaced.

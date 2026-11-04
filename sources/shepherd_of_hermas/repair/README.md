@@ -653,3 +653,26 @@ manuscript readings, and do not independently decide the exact iii.6 negation.
 No Clement expansion or editorially supplied Latin wording enters normalized
 Hermas Greek. The final in-them interpretation is retained with an explicit
 in-him alternative; independent interpretation review remains required.
+
+
+## Mandate 8 self-control and practical service
+
+`eight-service-alignment-20261104.v1.json` replaces legacy035's retired web
+override with the restored continuous printed source. All twelve English
+paragraphs already existed. Standard and new simplified flat drafts follow
+the working single-speaker question at6 and needy-debtors adjective at10,
+with Athos's dialogue and conjunction alternatives explicit. The stumble
+metaphor now reads grammatically; respectful address and footnote anchors are
+corrected. Twenty-four old nested records and artwork remain unchanged.
+
+Notes preserve the version-supported printed insertion at2, shorter Athos
+vice list, Lord/God at9, brotherhood/goodness at10 and the entire conditional
+ending. The available Vulgata scan jumps printed51 to54: pages52–53 have not
+been read and are not claimed as service-list evidence. Palatina97/99/101/103
+and Athos PlatesVI/VII were compared directly as printed texts. This is no
+claim of full manuscript-photo collation or independent review.
+
+`six-servant-policy-followup-20261104.v1.json` also corrects the earlier
+Mandate6 draft's accidental use of superseded slave metadata. Both reader
+editions now use servants as current DOCTRINE.md requires; bonded status and
+allegiance remain explicit in notes. Prior records and wording are archived.

@@ -94,7 +94,14 @@ class FullRepairBatch19Test(unittest.TestCase):
     def test_two_original_whole_holds_are_not_approved_by_subset_or_count(self):
         m=t.load_manifest(P);self.assertEqual([r['reference']for r in m['not_applied']],['1 Enoch 1:2','1 Enoch 1:9'])
         for v in(2,9):
-            rel=f'001/{v:03d}.yaml';self.assertEqual(t.sha((t.TRANSLATION/rel).read_bytes()),m['canonical_baseline_sha256'][rel])
+            rel=f'001/{v:03d}.yaml'
+            from tools.enoch import batch38_evidence as successor
+            if v == 9 and (t.APPLICATIONS/successor.NAME/'application.json').is_file():
+                proof=successor.verify_current()
+                self.assertEqual(proof['manifest']['canonical_baseline_sha256'][rel],m['canonical_baseline_sha256'][rel])
+                self.assertEqual(t.sha((t.TRANSLATION/rel).read_bytes()),proof['current_postmap'][rel])
+            else:
+                self.assertEqual(t.sha((t.TRANSLATION/rel).read_bytes()),m['canonical_baseline_sha256'][rel])
             for b in m['review_bindings']['1 Enoch 1:1']:
                 with self.assertRaisesRegex(ValueError,'not in review input|not accepted|missing|not found'):t.review_row(P,b,f'1 Enoch 1:{v}',m['files'])
         from tools.enoch.full_repair_progress import build
@@ -110,7 +117,14 @@ class FullRepairBatch19Test(unittest.TestCase):
             self.assertEqual(registry['units'][f'1:{v}'],P.name)
             self.assertEqual(rows[v]['source']['text'],record(v)['source']['text'])
             self.assertIn('/final/',rows[v]['evidence'])
-        for v in(2,9):self.assertNotIn(f'1:{v}',registry['units'])
+        self.assertNotIn('1:2',registry['units'])
+        from tools.enoch import batch38_evidence as successor
+        if (t.APPLICATIONS/successor.NAME/'application.json').is_file():
+            successor.verify_current()
+            self.assertEqual(registry['units']['1:9'],successor.NAME)
+            self.assertIn(successor.NAME,rows[9]['evidence'])
+        else:
+            self.assertNotIn('1:9',registry['units'])
 
     def test_exact_explanations_controls_and_source_terminals_survive_export(self):
         book=reader.export_extra_canonical_book('ENO');verses={v['verse']:v for c in book['chapters']if c['chapter']==1 for v in c['verses']}

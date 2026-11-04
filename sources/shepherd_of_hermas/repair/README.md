@@ -653,3 +653,50 @@ manuscript readings, and do not independently decide the exact iii.6 negation.
 No Clement expansion or editorially supplied Latin wording enters normalized
 Hermas Greek. The final in-them interpretation is retained with an explicit
 in-him alternative; independent interpretation review remains required.
+
+
+## Mandate 8 self-control and practical service
+
+`eight-service-alignment-20261104.v1.json` replaces legacy035's retired web
+override with the restored continuous printed source. All twelve English
+paragraphs already existed. Standard and new simplified flat drafts follow
+the working single-speaker question at6 and needy-debtors adjective at10,
+with Athos's dialogue and conjunction alternatives explicit. The stumble
+metaphor now reads grammatically; respectful address and footnote anchors are
+corrected. Twenty-four old nested records and artwork remain unchanged.
+
+Notes preserve the version-supported printed insertion at2, shorter Athos
+vice list, Lord/God at9, brotherhood/goodness at10 and the entire conditional
+ending. The available Vulgata scan jumps printed51 to54: pages52–53 have not
+been read and are not claimed as service-list evidence. Palatina97/99/101/103
+and Athos PlatesVI/VII were compared directly as printed texts. This is no
+claim of full manuscript-photo collation or independent review.
+
+`six-servant-policy-followup-20261104.v1.json` also corrects the earlier
+Mandate6 draft's accidental use of superseded slave metadata. Both reader
+editions now use servants as current DOCTRINE.md requires; bonded status and
+allegiance remain explicit in notes. Prior records and wording are archived.
+
+
+## Mandate 8 review and recovered Latin scan pages, 2026-11-04
+
+The second Hilgenfeld 1873 scan,
+[hermaepastorvet01hermgoog](https://archive.org/details/hermaepastorvet01hermgoog),
+contains printed pages 52–53 at physical pages 71–72. These pages were visually
+read and resolve the first scan's local gap. They supply bounded Vulgata evidence
+for the dialogue split, Lord, brotherhood, and its shorter/different service list
+and ending. This is the same edition and version tradition, not another
+independent manuscript. The acquisition hash and exact scope are recorded in
+`eight-service-alignment-20261104.v1.json`. The Greek body was not harmonized to
+this Latin text.
+
+`tools/hermas/review_repair_draft.py` reviews explicit standard/simplified paths,
+checks their source identity and simplified base, and saves the exact request,
+raw response and input hashes. It does not assume that a legacy reader slot is
+the current source sequence, rewrite translations, or accept proposed wording.
+The separate Azure review in `model_reviews/legacy035-20261104-r7/` accepted both
+exact final Mandate 8 drafts after the recorded corrections. Earlier responses
+remain intact. Model acceptance covers the supplied source and disclosures;
+it does not authenticate external plates or replace independent scholarship.
+The YAML records remain drafts, with nested reader/artwork migration and
+publication pending. Other chapters have not inherited this review result.

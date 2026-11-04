@@ -700,3 +700,34 @@ remain intact. Model acceptance covers the supplied source and disclosures;
 it does not authenticate external plates or replace independent scholarship.
 The YAML records remain drafts, with nested reader/artwork migration and
 publication pending. Other chapters have not inherited this review result.
+
+
+## Mandate 9 prayer/source alignment, 2026-11-04
+
+`nine-prayer-alignment-20261104.v1.json` attaches the restored continuous Greek
+in place of the retired web patch. Both English drafts retain all twelve
+paragraphs. The repair restores the reflexive itself in paragraph 10 and the
+working placement of anything in paragraph 1, relocates notes, and preserves the
+contextual repentance choice and difficult salvation/delayed-request assertions.
+The original full record and all 24 nested standard/simplified records are
+preserved in `legacy36-before-prayer-alignment-20261104.v1.json`; no artwork or
+reader reference was reassigned.
+
+Lake's Athos transcription and the Vulgata/Palatina printed Latin texts expose
+sister/daughter, cleansing/observing prior words, saved/live-to-God, certainly/
+perhaps, and thinking/doing alternatives. A bounded enlargement of Lake's
+Plate VII photographic facsimile, physical page 35 line 30, is visually
+consistent with sister; this is not a full all-letter or correcting-hand
+collation. The separately consulted Athanasius De decretis4.3 publisher preview
+has an offspring allusion rather than the same daughter clause. It is not
+counted as an exact quotation that decides this variant. Primary source
+locators, acquisition hashes and limitations are in the audit.
+
+The immutable 397-record repentance plan remains unchanged. Its validator pins
+the exact complete later Mandate 9 record through
+`contextual-policy-nine-followup-20261104.v1.json` before projecting the original
+historical record. Tests reject source, English, notes and review-status drift.
+The separate Azure model review in `model_reviews/legacy036-20261104-r2/`
+accepted both exact draft files. Its scope is the supplied source/disclosures;
+independent scholarship, other excerpt witnesses, reader migration and
+whole-book publication remain pending.

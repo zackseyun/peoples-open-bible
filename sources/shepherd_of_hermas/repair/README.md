@@ -267,3 +267,18 @@ three are printed supplements inS.5.iii,vi,vii, checked in primary scans;
 no additional large control-only gap was found at the12-word threshold.
 This does not verify every word, shorter or shared omissions, the mixed/Latin
 ending, or any manuscript choice. The comparison text is not vendored.
+
+
+## Greek fragments and new English ending drafts
+
+`oxy404-ending-20261103.v1.json` recordsP.Oxy.III404 alongside continuous
+Latin. Published correctedGreek know informsS.10.iii.4; sourceLatin see is
+unchanged and the full English alternative is exposed. Purity/dwelling and
+plural-guilt differences remain open. PlateIV404(c)recto was inspected;
+this does not certify the verso or reported correction. Restorations are
+not ink. The continuous source language remainsLatin.
+
+New standard/simplified flat drafts113–114 coverS.10.iii–iv, five paragraphs
+each. Previously empty slots preserve all63legacy IDs. These are unreviewed
+source-based drafts with alternatives, not completed English, paragraph
+migration, artwork or publication. No fullGreek ending is invented.

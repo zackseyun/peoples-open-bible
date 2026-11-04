@@ -36,7 +36,13 @@ class TwelveDialogueTests(unittest.TestCase):
         a=json.loads((REPAIR/'legacy41-47-before-twelve-restoration-20261104.v1.json').read_text())
         self.assertEqual(len(a['nested_unchanged']),48)
         for path,x in a['nested_unchanged'].items():self.assertEqual(hashlib.sha256((ROOT/path).read_bytes()).hexdigest(),x['file_sha256'])
-        donor=a['standard_flats']['47'];self.assertEqual(hashlib.sha256((ROOT/donor['path']).read_bytes()).hexdigest(),donor['file_sha256'])
+        donor=a['standard_flats']['47']
+        later=json.loads((REPAIR/'legacy47-48-before-city-restoration-20261104.v1.json').read_text())
+        self.assertEqual(later['flats'][donor['path']],{'file_sha256':donor['file_sha256'],'record':donor['record']})
+        current=yaml.safe_load((ROOT/donor['path']).read_text())
+        self.assertEqual(current['source_grounding']['evidence_record'],'sources/shepherd_of_hermas/repair/one-city-restoration-20261104.v1.json')
+        self.assertEqual(current['source']['unit_id'],'S.1')
+        self.assertEqual(len(current['translation']['text'].split('\n\n')),11)
         self.assertIn('if the turning is toward your own city',donor['record']['translation']['text'])
         self.assertIn('desire…',a['standard_flats']['43']['record']['translation']['text'])
         for n in range(41,47):

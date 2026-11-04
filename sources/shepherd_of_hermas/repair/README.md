@@ -282,3 +282,20 @@ New standard/simplified flat drafts113–114 coverS.10.iii–iv, five paragraphs
 each. Previously empty slots preserve all63legacy IDs. These are unreviewed
 source-based drafts with alternatives, not completed English, paragraph
 migration, artwork or publication. No fullGreek ending is invented.
+
+
+## Amherst Greek at the continuous-source boundary
+
+`amherst190-ten-drafts-20261103.v1.json` records primary-edition and
+PlateXXIV inspection of P.Amh.II190. Fragment h overlaps S.9.xxx.1–4;
+its verso preserves some Greek beyond the continuous Athos cutoff.
+It does not cover S.10.i–ii. Missing letters, proposed future-belief wording
+and the separate xxx.5 crux are not certified by this fragment. The source
+body remains unchanged; the comparison is attached to the source warning.
+
+New standard/simplified flat108–112 draft S.9.xxxi–xxxiii and S.10.i–ii
+from Latin. Together with113–114, all seven purely Latin tail chapters
+now have English drafts, not independent review or reader/artwork migration.
+Thirty-seven of the44 whole ending chapters still need drafts, alongside
+earlier English repairs. Bracketed editorial supplies and conjectures remain
+visible in footnotes, including the supplied death penalty in S.9.xxxii.4.

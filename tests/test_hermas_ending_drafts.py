@@ -10,35 +10,37 @@ from tools import shepherd_of_hermas as hermas
 
 ROOT = Path(__file__).resolve().parents[1]
 RECORD = ROOT / 'sources/shepherd_of_hermas/repair/oxy404-ending-20261103.v1.json'
+TEN_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/amherst190-ten-drafts-20261103.v1.json'
 
 
 class HermasEndingDraftTests(unittest.TestCase):
-    def test_both_ending_drafts_have_current_sources_and_explicit_review_limits(self):
-        audit = json.loads(RECORD.read_text())
-        assert not audit['complete']
-        assert not audit['independent_review']
-        assert not audit['legacy_reader_ids_changed']
-        assert not audit['source_body_changed']
-        assert {r['reader_slot'] for r in audit['english_drafts']} == {113, 114}
-        for row in audit['english_drafts']:
-            source = hermas.load_normalized_unit(row['unit_id'])
-            standard = yaml.safe_load((ROOT / row['standard_path']).read_text())
-            simplified = yaml.safe_load((ROOT / row['simplified_path']).read_text())
-            for kind, doc in [('standard', standard), ('simplified', simplified)]:
-                text = doc['translation']['text']
-                assert doc['id'] == 'HERM.' + row['unit_id']
-                assert doc['source']['text'] == source.text
-                assert doc['source']['language'] == 'Latin'
-                assert doc['status'] == 'draft'
-                assert not doc['ai_draft']['independent_review']
-                assert doc['cross_check']['status'] == 'needs_review'
-                assert doc['source_grounding']['reserved_reader_slot'] == row['reader_slot']
-                assert len(text.split('\n\n')) == row['paragraphs'] == 5
-                assert hashlib.sha256(text.encode()).hexdigest() == row[kind + '_text_sha256']
-                markers = re.findall(r'\[([a-z])\]', text)
-                assert sorted(markers) == sorted(n['marker'] for n in doc['translation']['footnotes'])
-            assert simplified['base_translation']['text'] == standard['translation']['text']
-            assert simplified['base_translation']['sha256'] == row['standard_text_sha256']
+    def test_ending_drafts_have_current_sources_and_explicit_review_limits(self):
+        for record, slots in [(RECORD, {113, 114}), (TEN_RECORD, {108, 109, 110, 111, 112})]:
+            audit = json.loads(record.read_text())
+            assert not audit['complete']
+            assert not audit['independent_review']
+            assert not audit['legacy_reader_ids_changed']
+            assert not audit['source_body_changed']
+            assert {r['reader_slot'] for r in audit['english_drafts']} == slots
+            for row in audit['english_drafts']:
+                source = hermas.load_normalized_unit(row['unit_id'])
+                standard = yaml.safe_load((ROOT / row['standard_path']).read_text())
+                simplified = yaml.safe_load((ROOT / row['simplified_path']).read_text())
+                for kind, doc in [('standard', standard), ('simplified', simplified)]:
+                    text = doc['translation']['text']
+                    assert doc['id'] == 'HERM.' + row['unit_id']
+                    assert doc['source']['text'] == source.text
+                    assert doc['source']['language'] == 'Latin'
+                    assert doc['status'] == 'draft'
+                    assert not doc['ai_draft']['independent_review']
+                    assert doc['cross_check']['status'] == 'needs_review'
+                    assert doc['source_grounding']['reserved_reader_slot'] == row['reader_slot']
+                    assert len(text.split('\n\n')) == row['paragraphs']
+                    assert hashlib.sha256(text.encode()).hexdigest() == row[kind + '_text_sha256']
+                    markers = re.findall(r'\[([a-z])\]', text)
+                    assert sorted(markers) == sorted(n['marker'] for n in doc['translation']['footnotes'])
+                assert simplified['base_translation']['text'] == standard['translation']['text']
+                assert simplified['base_translation']['sha256'] == row['standard_text_sha256']
 
     def test_greek_selection_is_bounded_and_latin_is_not_silently_rewritten(self):
         standard = yaml.safe_load((ROOT / 'translation/extra_canonical/shepherd_of_hermas/113.yaml').read_text())
@@ -58,3 +60,25 @@ class HermasEndingDraftTests(unittest.TestCase):
         assert 'becomes guilty of that person’s blood.[b]' in final['translation']['text']
         assert 'his house' not in final['translation']['text'].split('\n\n')[-1]
         assert 'back to my house' in final['translation']['text'].split('\n\n')[-1]
+
+    def test_amherst_evidence_is_not_assigned_to_uncovered_chapters(self):
+        audit = json.loads(TEN_RECORD.read_text())
+        assert not audit['source_body_changed']
+        assert 309 in audit['physical_pages_visually_read']
+        h = next(row for row in audit['checked_edition_ranges'] if row['fragment'] == 'h')
+        assert h['range'] == 'S.9.xxx.1–4; recto1–2, verso3–4'
+        for slot in (111, 112):
+            doc = yaml.safe_load((ROOT / f'translation/extra_canonical/shepherd_of_hermas/{slot}.yaml').read_text())
+            assert 'not a Greek witness' in doc['source']['drafting_basis']
+        second = yaml.safe_load((ROOT / 'translation/extra_canonical/shepherd_of_hermas/112.yaml').read_text())
+        assert any('here they' in n['text'] for n in second['translation']['footnotes'])
+        assert any('direct collation' in n['text'] for n in second['translation']['footnotes'])
+
+    def test_supplied_death_penalty_is_exposed_in_both_editions(self):
+        for root in ('translation', 'translation_simplified'):
+            doc = yaml.safe_load((ROOT / root / 'extra_canonical/shepherd_of_hermas/109.yaml').read_text())
+            assert '[morte te]' in doc['source']['text']
+            assert 'death' in doc['translation']['text']
+            note = doc['translation']['footnotes'][0]['text']
+            assert 'editorial supply absent' in note
+            assert 'conjectural' in note

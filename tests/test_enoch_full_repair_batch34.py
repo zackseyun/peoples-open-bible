@@ -21,19 +21,44 @@ def record():return yaml.load((t.TRANSLATION/'044/001.yaml').read_bytes(),Loader
 def write_json(path,data):path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
 
 class Batch34Test(unittest.TestCase):
+ def test_fixed_postmap_rejects_unrelated_or_unpinned_edits(self):
+  expected=json.loads((P/'application.json').read_text())['canonical_after_sha256']
+  self.assertEqual(b.verify_fixed_postmap(expected,expected),expected)
+  successor=dict(expected);successor['052/008.yaml']='6ed95c749033803e5bc930f39824157c79105e1d5bb5a69db1cf7044e533f0b2'
+  self.assertEqual(b.verify_fixed_postmap(expected,successor),successor)
+  for key in ('044/001.yaml','052/008.yaml','013/006.yaml','001/001.yaml'):
+   bad=dict(successor);bad[key]='0'*64
+   with self.assertRaises(ValueError):b.verify_fixed_postmap(expected,bad)
+  for bad in (dict(successor, unexpected='0'*64), {k:v for k,v in successor.items() if k!='001/001.yaml'}):
+   with self.assertRaises(ValueError):b.verify_fixed_postmap(expected,bad)
+
+ def test_integrated_fixed_postmap_rejects_drift(self):
+  expected=json.loads((P/'application.json').read_text())['canonical_after_sha256']
+  for key in ('044/001.yaml','013/006.yaml','052/008.yaml','001/001.yaml'):
+   bad=dict(expected);bad[key]='0'*64
+   with patch.object(t,'corpus_hashes',return_value=bad):
+    with self.assertRaises(ValueError):b.verify_current()
+  bad=dict(expected);bad.pop('001/001.yaml')
+  with patch.object(t,'corpus_hashes',return_value=bad):
+   with self.assertRaises(ValueError):b.verify_current()
+  bad=dict(expected,extra='0'*64)
+  with patch.object(t,'corpus_hashes',return_value=bad):
+   with self.assertRaises(ValueError):b.verify_current()
+  bad=dict(expected);bad['052/008.yaml']='0'*64
+  with self.assertRaises(ValueError):b.verify_fixed_postmap(bad,expected)
  def package_fixture(self,root):
   p=Path(root)/b.NAME;shutil.copytree(P,p);return p,json.loads((p/'manifest.json').read_text())
  def test_exact_one_change_full966_receipt_and_actual_git_preimage(self):
   self.assertEqual(t.sha((P/'manifest.json').read_bytes()),SHA)
   proof=b.verify_current();m=t.load_manifest(P);_,before=b.prior_postmap()
   self.assertEqual(m['canonical_baseline_sha256'],before);self.assertEqual(len(before),966)
-  self.assertEqual({k for k,v in proof['current_postmap'].items()if before[k]!=v},{'044/001.yaml'})
+  self.assertEqual({k for k,v in proof['historical_postmap'].items()if before[k]!=v},{'044/001.yaml'})
   self.assertEqual(m['references'],[b.REF]);self.assertEqual(m['retirements'],[])
   self.assertEqual(m['source_baseline_git_commit'],'5a6633695bfcc3264f508974c104ad556892c036')
   self.assertEqual(before['044/001.yaml'],legacy.AFTER_SHA)
   t.verify_git_preimage(m,'044/001.yaml',legacy.AFTER_SHA)
   receipt=json.loads((P/'application.json').read_text())
-  self.assertEqual(receipt['canonical_after_sha256'],t.corpus_hashes())
+  self.assertEqual(b.verify_fixed_postmap(receipt['canonical_after_sha256'],t.corpus_hashes()),t.corpus_hashes())
   self.assertTrue(receipt['unrelated_canonical_files_unchanged_at_application'])
   self.assertFalse(receipt['deployed_by_transaction'])
  def test_legacy_descriptor_preserves_parent_only_history(self):

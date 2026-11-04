@@ -178,7 +178,7 @@ class HermasSourceRepairTests(unittest.TestCase):
         path = hermas.REPO_ROOT / "sources/shepherd_of_hermas/repair/coverage.v1.json"
         rows = json.loads(path.read_text())["units"]
         current = {u.unit_id: i for i, u in enumerate(hermas.parse_units(), 1)}
-        cross = json.loads((path.parent / "reader-source-crosswalk-20261103.v3.json").read_text())
+        cross = json.loads((path.parent / "reader-source-crosswalk-20261103.v4.json").read_text())
         assert not cross["reader_ids_renumbered"]
         assert not cross["reader_english_changed"]
         by_legacy = {r["legacy_reader_chapter"]: r for r in cross["legacy_readers"]}
@@ -281,6 +281,72 @@ class HermasSourceRepairTests(unittest.TestCase):
         assert "VII." not in sixth.text
         assert any("negation" in n and "absent in A" in n for n in sixth.notes)
         assert units["S.5.vii"].text.startswith("Ηὐφράνθην")
+
+    def test_earlier_leaves_recover_missing_body_even_when_end_marker_existed(self):
+        second_vision = hermas.load_unit("V.4.ii")
+        assert "τὸ ὄνομά ἐστιν Σεγρί" in second_vision.text
+        assert "καὶ τῇ πολυσπλαγχνίᾳ αὐτοῦ ἐξέφυγον αὐτό" in second_vision.text
+        mandate = hermas.load_unit("M.4.i")
+        assert "ἀλλὰ δεῖ παραδεχθῆναι" in mandate.text
+        assert "μετανοήσῃ [ἡ γυνὴ]" in mandate.text
+        eleventh = hermas.load_unit("M.11")
+        assert "τὸ πνεῦμα τὸ ἐπίγειον ὑπὸ τοῦ φόβου φεύγει" in eleventh.text
+        assert "καὶ σιφώνισον εἰς τὸν οὐρανόν" in eleventh.text
+        assert any("holy" in n and "ἅγιον" in n for n in eleventh.notes)
+        sixth_second = hermas.load_unit("S.6.ii")
+        assert "ἄγγελος τρυφῆς καὶ ἀπάτης" in sixth_second.text
+        assert "τῶν τοιούτων ἡ ζωὴ θάνατός ἐστιν" in sixth_second.text
+        sixth_fourth = hermas.load_unit("S.6.iv")
+        assert "| Ἐλάχιστον, φημί, κύριε, βασανίζονται· |" in sixth_fourth.text
+        seventh = hermas.load_unit("S.7")
+        eighth_first = hermas.load_unit("S.8.i")
+        assert seventh.source_pages == [374, 375]
+        assert "δυνήσεταί σου ἡ μετάνοια ἰσχυρὰ καὶ καθαρὰ εἶναι" in seventh.text
+        assert eighth_first.text.startswith("Ἔδειξέ μοι ἰτέαν [μεγάλην]")
+        assert "15. ἑτέρων δὲ ἦν ἐλάχιστον χλωρόν" in eighth_first.text
+        assert eighth_first.text.count("|") == 4  # two existing bars plus the restored377 pair
+        eighth_second = hermas.load_unit("S.8.ii")
+        assert "δοὺς αὐτοῖς σφραγῖδα." in eighth_second.text
+        assert "ἱματισμὸν [λευκὸν] καὶ σφραγῖδας" in eighth_second.text
+        assert "6. καὶ μετὰ τὸ ἀπελθεῖν τὸν ἄγγελον" in eighth_second.text
+        record = json.loads((hermas.REPO_ROOT / "sources/shepherd_of_hermas/repair/earlier-leaves-20261103.v1.json").read_text())
+        page351 = next(c for c in record["raw_changes"] if c["physical_page"] == 351)
+        assert not page351["body_changed"]
+        assert not record["complete"]
+
+    def test_primary_scan_restoration_replaces_only_the_five_web_patch_bodies(self):
+        overrides = {u.unit_id for u in hermas.load_manual_unit_overrides()}
+        assert overrides == {"S.8.x", "S.9.iii"}
+        eighth = hermas.load_unit("M.8")
+        assert eighth.source_pages == [344, 345, 346]
+        assert eighth.text.count("|") == 2
+        assert "ἀφ᾽ ὧν [ἡμᾶς]" in eighth.text
+        assert "[καὶ] μνησικακίας" in eighth.text
+        assert "[φησί,] τοῖς δούλοις τοῦ Θεοῦ;" in eighth.text
+        assert "χήραις ὑπηρετεῖν" in eighth.text
+        assert eighth.text.endswith("πορευθῶσιν ἐν αὐταῖς.")
+        ninth = hermas.load_unit("M.9")
+        assert ninth.source_pages == [346, 347]
+        assert "τὴν πολυευσπλαγχνίαν αὐτοῦ" in ninth.text
+        assert ninth.text.endswith("οἱ ταῦτα φρονοῦντες.")
+        first = hermas.load_unit("M.10.i")
+        second = hermas.load_unit("M.10.ii")
+        third = hermas.load_unit("M.10.iii")
+        assert first.source_pages == [347, 348]
+        assert first.text.startswith("Ἆρον ἀπὸ σεαυτοῦ")
+        assert first.text.endswith("καὶ πάντα συνήσεις καὶ νοήσεις.")
+        assert second.source_pages == [348, 349]
+        assert second.text.startswith("Ἄκουε νῦν, φησίν, ἀνόητε")
+        assert "μήποτε ἐντεύξηται [κατὰ σοῦ] τῷ Θεῷ" in second.text
+        assert third.source_pages == [349, 350]
+        assert third.text.startswith("Ἔνδυσαι οὖν τὴν ἱλαρότητα")
+        assert "Ἐντολὴ" not in third.text
+        for unit in [eighth, ninth, first, second, third]:
+            assert "manual unit override" not in unit.source_edition
+            assert not any("greekdoc" in n for n in unit.notes)
+        record = json.loads((hermas.REPO_ROOT / "sources/shepherd_of_hermas/repair/override-provenance-20261103.v1.json").read_text())
+        assert len(record["retired_overrides"]) == 5
+        assert not record["complete"]
 
     def test_source_reordering_cannot_overwrite_a_different_legacy_reader_id(self):
         from pathlib import Path

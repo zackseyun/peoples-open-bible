@@ -226,3 +226,59 @@ included the S.5.i tail; S.5.iii included S.5.iv's tail; S.5.v included S.5.vi.
 No English or artwork is silently reassigned. Printed supplements and
 conjectures, including the substantive negation at S.5.vi.1, remain explicitly
 distinguished from manuscript readings pending adjudication.
+
+
+## Earlier leaves and end-marker audit
+
+`earlier-leaves-20261103.v1.json` records scan review of331,336,351,352,
+370,372,375,377. Seven pages had body omissions;351's printed body was
+already complete and only its apparatus/end marker needed repair. Page377
+had a marker despite missingS.8.i.15–18 and the opening ofii.6. Completeness
+cannot be inferred from markers or114 chapter labels. Four earlier raw
+candidates345–348 and all older overrides still need primary-scan checking;
+a comprehensive source and witness audit remains required.
+
+`reader-source-crosswalk-20261103.v4.json` records that oldS.8.i also held
+theS.7 continuation from375. All63 legacy English IDs remain unchanged.
+Printed conjectures and substantive alternatives, includingM.11.14's
+earthly/holy spirit andS.8.ii.2's seal/seals, remain explicitly recorded
+for adjudication and corresponding English review. No completed-reader or
+publication claim follows from these source repairs.
+
+
+## Primary-scan provenance for Mandates8–10
+
+`override-provenance-20261103.v1.json` records restored raw345–348 and
+scan review of344–350. Five modern-web whole-unit overrides (M.8,M.9,
+M.10.i–iii) are retired; these chapters now normalize directly from the
+primary printed source. Baseline commit and hashes retain their audit trail.
+The two explicit bounded manuscript selections remain active.
+
+This resolves the original marker/length-based raw-page queue, not the full
+source audit. Printed brackets and version-supported bars dropped by the
+old patches are now retained. Source/English differences, includingM.8.6's
+dialogue division, require adjudication and reader revision. The legacy
+English, artwork and63 IDs remain unchanged; all114 source divisions are
+represented but the completed edition is still unproven.
+
+A broader comparison of106 purely Greek units against an external
+validation-only digital edition flags three large source-only spans. All
+three are printed supplements inS.5.iii,vi,vii, checked in primary scans;
+no additional large control-only gap was found at the12-word threshold.
+This does not verify every word, shorter or shared omissions, the mixed/Latin
+ending, or any manuscript choice. The comparison text is not vendored.
+
+
+## Greek fragments and new English ending drafts
+
+`oxy404-ending-20261103.v1.json` recordsP.Oxy.III404 alongside continuous
+Latin. Published correctedGreek know informsS.10.iii.4; sourceLatin see is
+unchanged and the full English alternative is exposed. Purity/dwelling and
+plural-guilt differences remain open. PlateIV404(c)recto was inspected;
+this does not certify the verso or reported correction. Restorations are
+not ink. The continuous source language remainsLatin.
+
+New standard/simplified flat drafts113–114 coverS.10.iii–iv, five paragraphs
+each. Previously empty slots preserve all63legacy IDs. These are unreviewed
+source-based drafts with alternatives, not completed English, paragraph
+migration, artwork or publication. No fullGreek ending is invented.

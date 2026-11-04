@@ -1,3 +1,4 @@
+import subprocess
 """Six fixed metadata projections retain historical inputs, not new language votes."""
 import copy,json,shutil,tempfile,unittest
 from pathlib import Path
@@ -112,7 +113,15 @@ class WitnessProjectionMetadataTest(unittest.TestCase):
   drift={k for k,v in t.corpus_hashes(corpus).items()if data['canonical_baseline_sha256'].get(k)!=v}
   if drift:
    from tools.enoch import batch34_evidence,legacy44_evidence
-   batch34_evidence.verify_current();self.assertEqual(drift,{'044/001.yaml'})
+   proof=batch34_evidence.verify_current()
+   allowed={'044/001.yaml'}
+   if proof['current_postmap']['052/008.yaml']!=proof['historical_postmap']['052/008.yaml']:
+    allowed.add('052/008.yaml')
+   self.assertEqual(drift,allowed)
+   if '052/008.yaml' in drift:
+    raw52=subprocess.check_output(['git','show','a3681961d91c1eb1a609e12cec312a644148f9bb:translation/extra_canonical/1_enoch/052/008.yaml'],cwd=t.ROOT)
+    self.assertEqual(t.sha(raw52),data['canonical_baseline_sha256']['052/008.yaml'])
+    (corpus/'052/008.yaml').write_bytes(raw52)
    raw=legacy44_evidence.historical_bytes();self.assertEqual(t.sha(raw),data['canonical_baseline_sha256']['044/001.yaml']);(corpus/'044/001.yaml').write_bytes(raw)
   self.assertEqual(t.corpus_hashes(corpus),data['canonical_baseline_sha256'])
   return root,package,data,corpus

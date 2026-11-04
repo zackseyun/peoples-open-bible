@@ -609,3 +609,27 @@ sense without becoming identical Greek testimony. The justification by the
 most revered angel and all conditions remain explicit. Sinaiticus ends before
 this passage and cannot decide its variants. These are working drafts; fresh
 photograph adjudication, independent review and reader migration remain pending.
+
+
+## Mandate 6.i–ii roads and the two angels
+
+`six-two-angels-repair-20261104.v1.json` restores the straight-road conclusion,
+wholehearted turning to the Lord, the two-angel introduction, and the complete
+working description of the righteous angel. Standard and new simplified flat
+drafts cover i.1–5 and ii.1–10 in fifteen paragraphs. Hashed character spans
+and I/II labels retain both sections in legacy033, with legacy034 still M.7.
+Six old nested records remain unchanged. The old flat and generation/review
+history are archived; they do not certify the repaired candidate.
+
+The bounded Athos transcription has a shorter ii.3 description; the two
+printed Latin versions have different lists. Notes expose those differences,
+Greek turning versus Vulgata belief at i.5, and edited imperative/now forms
+versus Athos indicative/therefore. Both necessity claims and the final positive
+and negative work clauses remain. No harmonized manuscript consensus is claimed.
+
+`six-source-corrections-20261104.v1.json` preserves the full prior raw page343
+and its hash, correcting the article to printed OR at ii.5 and restoring the
+acute in good at ii.8. Normalization reproduces those two corrections only.
+They are transcription repairs, not additional manuscript selections.
+Independent English review, full photograph adjudication, reader/artwork
+reconciliation and whole-book publication remain pending.

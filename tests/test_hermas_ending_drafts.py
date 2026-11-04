@@ -20,15 +20,17 @@ SEAL_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/seal-drafts-20261103.v1.
 
 GATE_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/gate-drafts-20261104.v1.json'
 
+STONE_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/stone-drafts-20261104.v1.json'
+
 
 class HermasEndingDraftTests(unittest.TestCase):
     def test_ending_drafts_have_current_sources_and_explicit_review_limits(self):
-        for record, slots in [(RECORD, {113, 114}), (TEN_RECORD, {108, 109, 110, 111, 112}), (MOUNTAIN_RECORD, {105, 106, 107}), (SERVICE_RECORD, {102, 103, 104}), (FORGIVENESS_RECORD, {99, 100, 101}), (ACCOUNTABILITY_RECORD, {95, 96, 97, 98}), (SEAL_RECORD, {91, 92, 93, 94}), (GATE_RECORD, {87, 88, 89, 90})]:
+        for record, slots in [(RECORD, {113, 114}), (TEN_RECORD, {108, 109, 110, 111, 112}), (MOUNTAIN_RECORD, {105, 106, 107}), (SERVICE_RECORD, {102, 103, 104}), (FORGIVENESS_RECORD, {99, 100, 101}), (ACCOUNTABILITY_RECORD, {95, 96, 97, 98}), (SEAL_RECORD, {91, 92, 93, 94}), (GATE_RECORD, {87, 88, 89, 90}), (STONE_RECORD, {83, 84, 85, 86})]:
             audit = json.loads(record.read_text())
             assert not audit['complete']
             assert not audit['independent_review']
             assert not audit['legacy_reader_ids_changed']
-            assert audit['source_body_changed'] is (record == ACCOUNTABILITY_RECORD)
+            assert audit['source_body_changed'] is (record in {ACCOUNTABILITY_RECORD, STONE_RECORD})
             assert {r['reader_slot'] for r in audit['english_drafts']} == slots
             for row in audit['english_drafts']:
                 source = hermas.load_normalized_unit(row['unit_id'])
@@ -108,6 +110,29 @@ class HermasEndingDraftTests(unittest.TestCase):
             assert 'as a brother, not as a husband' in stay['translation']['text']
             assert 'kissing and embracing me' in stay['translation']['text']
             assert 'except pray' in stay['translation']['text']
+
+    def test_stone_source_selections_are_exact_and_alternatives_remain(self):
+        evidence = json.loads((ROOT / 'sources/shepherd_of_hermas/repair/stone-witness-comparison-20261104.v1.json').read_text())
+        for key, page in [('selected_reading', 391), ('joint_selection', 395)]:
+            row = evidence[key]
+            assert row['source_before'].count(row['old_printed_clause']) == 1
+            assert row['source_after'] == row['source_before'].replace(row['old_printed_clause'], row['new_selected_clause'])
+            assert hermas.load_normalized_unit(row['unit_id']).text == row['source_after']
+            for phase in ('before', 'after'):
+                assert hashlib.sha256(row['source_' + phase].encode()).hexdigest() == row[phase + '_source_sha256']
+            assert row['old_printed_clause'] in ' '.join(hermas.raw_page_path(page).read_text().replace('-\n', '').split())
+        for root in ('translation', 'translation_simplified'):
+            staff = yaml.safe_load((ROOT / root / 'extra_canonical/shepherd_of_hermas/083.yaml').read_text())
+            assert 'three times' in staff['translation']['text']
+            joint = yaml.safe_load((ROOT / root / 'extra_canonical/shepherd_of_hermas/086.yaml').read_text())
+            assert 'without a single joint' in joint['translation']['text']
+            note = next(n['text'] for n in joint['translation']['footnotes'] if n['marker'] == 'd')
+            assert 'with one joint' in note
+            certainty = next(n['text'] for n in joint['translation']['footnotes'] if n['marker'] == 'b')
+            assert 'Perhaps' in certainty and 'all these stones' in certainty
+            crux = yaml.safe_load((ROOT / root / 'extra_canonical/shepherd_of_hermas/085.yaml').read_text())
+            assert '†' in crux['source']['text']
+            assert any('exact disturbed Greek wording' in n['text'] for n in crux['translation']['footnotes'])
 
     def test_greek_selection_is_bounded_and_latin_is_not_silently_rewritten(self):
         standard = yaml.safe_load((ROOT / 'translation/extra_canonical/shepherd_of_hermas/113.yaml').read_text())

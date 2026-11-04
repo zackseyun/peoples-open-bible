@@ -46,6 +46,9 @@ HERMAS_FOUR_I_FOLLOWUP_SHA256 = '89a03e9d99eab6c403e6a456463dbe9626200e6cd25c956
 HERMAS_FOUR_II = 'translation/extra_canonical/shepherd_of_hermas/030.yaml'
 HERMAS_FOUR_II_FOLLOWUP = 'sources/shepherd_of_hermas/repair/contextual-policy-four-030-followup-20261104.v1.json'
 HERMAS_FOUR_II_FOLLOWUP_SHA256 = '1529d3aa68be40bc63adfa9a2670203c89fe435a40dc30140359bae7820ac6a6'
+HERMAS_NINE = 'translation/extra_canonical/shepherd_of_hermas/036.yaml'
+HERMAS_NINE_FOLLOWUP = 'sources/shepherd_of_hermas/repair/contextual-policy-nine-followup-20261104.v1.json'
+HERMAS_NINE_FOLLOWUP_SHA256 = '218263f33ed55faf6cf64d083fb2b5a0f592f415ea5709a2498a545add37df44'
 
 def historical_view(path, doc):
     """Validate one exact later source repair before projecting its history.
@@ -64,6 +67,7 @@ def historical_view(path, doc):
         HERMAS_FOUR: (HERMAS_FOUR_FOLLOWUP, HERMAS_FOUR_FOLLOWUP_SHA256),
         HERMAS_FOUR_I: (HERMAS_FOUR_I_FOLLOWUP, HERMAS_FOUR_I_FOLLOWUP_SHA256),
         HERMAS_FOUR_II: (HERMAS_FOUR_II_FOLLOWUP, HERMAS_FOUR_II_FOLLOWUP_SHA256),
+        HERMAS_NINE: (HERMAS_NINE_FOLLOWUP, HERMAS_NINE_FOLLOWUP_SHA256),
     }
     if name not in followups:
         return doc
@@ -83,7 +87,7 @@ def historical_view(path, doc):
         raise ValueError('Hermas repair does not preserve the historical terminology input')
     if source != repair['after_source'] or text != repair['after_text']:
         raise ValueError('Hermas source/text differs from exact later repair')
-    if name in (HERMAS_ELEVEN, HERMAS_FOUR, HERMAS_FOUR_I, HERMAS_FOUR_II):
+    if name in (HERMAS_ELEVEN, HERMAS_FOUR, HERMAS_FOUR_I, HERMAS_FOUR_II, HERMAS_NINE):
         # This repair replaces obsolete lacuna annotations and generation
         # provenance as well as restoring the missing paragraphs. Pin the
         # complete new record before exposing the original review contract.

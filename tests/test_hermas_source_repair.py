@@ -314,6 +314,40 @@ class HermasSourceRepairTests(unittest.TestCase):
         assert not page351["body_changed"]
         assert not record["complete"]
 
+    def test_primary_scan_restoration_replaces_only_the_five_web_patch_bodies(self):
+        overrides = {u.unit_id for u in hermas.load_manual_unit_overrides()}
+        assert overrides == {"S.8.x", "S.9.iii"}
+        eighth = hermas.load_unit("M.8")
+        assert eighth.source_pages == [344, 345, 346]
+        assert eighth.text.count("|") == 2
+        assert "ἀφ᾽ ὧν [ἡμᾶς]" in eighth.text
+        assert "[καὶ] μνησικακίας" in eighth.text
+        assert "[φησί,] τοῖς δούλοις τοῦ Θεοῦ;" in eighth.text
+        assert "χήραις ὑπηρετεῖν" in eighth.text
+        assert eighth.text.endswith("πορευθῶσιν ἐν αὐταῖς.")
+        ninth = hermas.load_unit("M.9")
+        assert ninth.source_pages == [346, 347]
+        assert "τὴν πολυευσπλαγχνίαν αὐτοῦ" in ninth.text
+        assert ninth.text.endswith("οἱ ταῦτα φρονοῦντες.")
+        first = hermas.load_unit("M.10.i")
+        second = hermas.load_unit("M.10.ii")
+        third = hermas.load_unit("M.10.iii")
+        assert first.source_pages == [347, 348]
+        assert first.text.startswith("Ἆρον ἀπὸ σεαυτοῦ")
+        assert first.text.endswith("καὶ πάντα συνήσεις καὶ νοήσεις.")
+        assert second.source_pages == [348, 349]
+        assert second.text.startswith("Ἄκουε νῦν, φησίν, ἀνόητε")
+        assert "μήποτε ἐντεύξηται [κατὰ σοῦ] τῷ Θεῷ" in second.text
+        assert third.source_pages == [349, 350]
+        assert third.text.startswith("Ἔνδυσαι οὖν τὴν ἱλαρότητα")
+        assert "Ἐντολὴ" not in third.text
+        for unit in [eighth, ninth, first, second, third]:
+            assert "manual unit override" not in unit.source_edition
+            assert not any("greekdoc" in n for n in unit.notes)
+        record = json.loads((hermas.REPO_ROOT / "sources/shepherd_of_hermas/repair/override-provenance-20261103.v1.json").read_text())
+        assert len(record["retired_overrides"]) == 5
+        assert not record["complete"]
+
     def test_source_reordering_cannot_overwrite_a_different_legacy_reader_id(self):
         from pathlib import Path
         from tempfile import TemporaryDirectory

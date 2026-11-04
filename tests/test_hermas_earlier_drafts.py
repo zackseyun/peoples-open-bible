@@ -13,6 +13,54 @@ REPAIR = ROOT / 'sources/shepherd_of_hermas/repair'
 
 
 class HermasEarlierDraftTests(unittest.TestCase):
+    def test_mandate_eleven_restores_tests_and_both_upward_examples(self):
+        audit = json.loads((REPAIR / 'mandate-eleven-repair-20261104.v1.json').read_text())
+        assert not audit['complete'] and not audit['independent_review']
+        assert not audit['source_body_changed'] and not audit['legacy_reader_ids_changed']
+        row = audit['english_drafts'][0]
+        source = hermas.load_normalized_unit('M.11').text
+        assert hashlib.sha256(source.encode()).hexdigest() == audit['source_sha256']
+        docs = {}
+        for kind in ('standard', 'simplified'):
+            doc = yaml.safe_load((ROOT / row[kind + '_path']).read_text())
+            docs[kind] = doc
+            text = doc['translation']['text']
+            assert len(text.split('\n\n')) == 21
+            assert doc['source']['text'] == source
+            assert hashlib.sha256(text.encode()).hexdigest() == row[kind + '_text_sha256']
+            assert doc['status'] == 'draft' and not doc['ai_draft']['independent_review']
+            assert 'empty jar' in text and 'life and works' in text
+            assert 'a stone' in text and 'water tube' in text and 'pierce heaven' in text
+            assert 'earthly spirit flees' in text
+            notes = {n['marker']: n['text'] for n in doc['translation']['footnotes']}
+            assert 'The holy spirit flees' in notes['f']
+            assert 'spiritus ille terrestris' in notes['f'] and 'spiritus terrenus' in notes['f']
+            assert 'not preserved Athos Greek' in notes['f']
+            assert 'angel of the prophet' in notes['e']
+        assert docs['simplified']['base_translation']['text'] == docs['standard']['translation']['text']
+        assert docs['simplified']['base_translation']['sha256'] == row['standard_text_sha256']
+
+    def test_mandate_eleven_retains_original_reader_history_and_policy_paragraph(self):
+        audit = json.loads((REPAIR / 'mandate-eleven-repair-20261104.v1.json').read_text())
+        archive = json.loads((REPAIR / audit['history_archive']).read_text())
+        assert len(archive['nested_unchanged']) == 34
+        for path, entry in archive['nested_unchanged'].items():
+            assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == entry['file_sha256']
+        doc = yaml.safe_load((ROOT / audit['english_drafts'][0]['standard_path']).read_text())
+        assert doc['translation']['text'].split('\n\n')[3] == archive['standard_flat']['translation']['text'].split('\n\n')[3]
+        assert doc['lexical_decisions'][13] == archive['standard_flat']['lexical_decisions'][13]
+        assert doc['terminology_revision'] == archive['standard_flat']['terminology_revision']
+        assert archive['standard_flat']['translation']['text'].split('\n\n')[13].strip() == '14. [Heaven.]'
+
+    def test_mandate_eleven_payload_and_simple_output_hashes_are_current(self):
+        audit = json.loads((REPAIR / 'mandate-eleven-repair-20261104.v1.json').read_text())
+        row = audit['english_drafts'][0]
+        standard = yaml.safe_load((ROOT / row['standard_path']).read_text())
+        simple = yaml.safe_load((ROOT / row['simplified_path']).read_text())
+        payload = dict(english_text=standard['translation']['text'], translation_philosophy=standard['translation']['philosophy'], lexical_decisions=standard['lexical_decisions'], footnotes=standard['translation']['footnotes'], theological_decisions=standard['theological_decisions'])
+        assert standard['ai_draft']['output_hash'] == drafting.sha256_hex(drafting.canonical_json(payload))
+        assert simple['ai_draft']['output_hash'] == row['simplified_text_sha256']
+
     def test_vision_four_source_repairs_have_exact_history(self):
         audit = json.loads((REPAIR / 'vision-four-dialogue-20261104.v1.json').read_text())
         raw = audit['raw_correction']

@@ -516,3 +516,26 @@ and its disturbed earlier form distinguished. Primary Sinaiticus project XML
 23.1–6 also supplies substantive white-hands and holy-angel/name alternatives.
 No modern XML is vendored and no full manuscript photograph collation or
 independent English review is claimed.
+
+
+## Mandate 11 missing tests and illustrations
+
+`mandate-eleven-repair-20261104.v1.json` restores the flat standard chapter 040
+and creates a complete simplified flat draft, all 21 historical paragraphs.
+The former Heaven placeholder at 14 now contains the missing 14–18: the
+assembly test, empty jar, test by life and works, two kinds of spirit, and
+stone/water examples. Prior flat and nested records are archived in
+`legacy40-before-dialogue-repair-20261104.v1.json`; reader/artwork migration
+and independent review remain pending.
+
+Athos’s holy-spirit reading at 14 is exposed against the working earthly
+correction. Bounded printed Vulgata and Palatina comparisons support earthly;
+this is versional evidence, not preserved Athos Greek or a fresh manuscript
+photograph collation. The angel-of-prophet alternative at 9 is also explicit.
+No source body changes in this follow-up.
+
+The 397-record terminology plan remains unchanged. Paragraph 4, its contextual
+reader note, lexical choice and revision metadata are retained. The separately
+hash-pinned `contextual-policy-eleven-followup-20261104.v1.json` permits only
+the exact later source/text repair while continuing the original terminology
+checks. It adds no general exemption or live-record self-certification.

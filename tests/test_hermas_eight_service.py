@@ -42,7 +42,7 @@ class EightServiceTests(unittest.TestCase):
                 assert word in text,word
             notes={n['marker']:n['text'] for n in doc['translation']['footnotes']}
             assert 'vertical bars' in notes['b'] and 'absent in Athos' in notes['b']
-            assert 'printed52–53 were not read' in notes['c']
+            assert 'subsequently read in the second scan' in notes['c']
             assert 'Hermas’s reply' in notes['d'] and 'one question' in notes['d']
             assert 'fear of God' in notes['e']
             assert 'debtors and the needy' in notes['f']

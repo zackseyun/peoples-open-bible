@@ -10,13 +10,14 @@ from tools import shepherd_of_hermas as hermas
 
 ROOT = Path(__file__).resolve().parents[1]
 RECORD = ROOT / 'sources/shepherd_of_hermas/repair/oxy404-ending-20261103.v1.json'
-TEN_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/amherst190-ten-drafts-20261103.v1.json'
+TEN_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/amherst190-ten-drafts-20261103.v2.json'
 MOUNTAIN_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/white-mountain-drafts-20261103.v1.json'
+SERVICE_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/service-mountain-drafts-20261103.v1.json'
 
 
 class HermasEndingDraftTests(unittest.TestCase):
     def test_ending_drafts_have_current_sources_and_explicit_review_limits(self):
-        for record, slots in [(RECORD, {113, 114}), (TEN_RECORD, {108, 109, 110, 111, 112}), (MOUNTAIN_RECORD, {105, 106, 107})]:
+        for record, slots in [(RECORD, {113, 114}), (TEN_RECORD, {108, 109, 110, 111, 112}), (MOUNTAIN_RECORD, {105, 106, 107}), (SERVICE_RECORD, {102, 103, 104})]:
             audit = json.loads(record.read_text())
             assert not audit['complete']
             assert not audit['independent_review']
@@ -96,3 +97,24 @@ class HermasEndingDraftTests(unittest.TestCase):
         assert 'Amherst h stops' in crux['evidence']
         found = next(row for row in audit['decisions'] if row['case_id'] == 'S.9.xxx.3-found')
         assert any('young' in text for text in found['full_English_alternatives'])
+
+    def test_excerpt_selection_keeps_latin_alternative_and_historical_hash(self):
+        old = json.loads((ROOT / 'sources/shepherd_of_hermas/repair/amherst190-ten-drafts-20261103.v1.json').read_text())
+        current = json.loads(TEN_RECORD.read_text())
+        prior = next(row for row in old['english_drafts'] if row['reader_slot'] == 110)
+        revised = next(row for row in current['english_drafts'] if row['reader_slot'] == 110)
+        assert prior['standard_text_sha256'] != revised['standard_text_sha256']
+        doc = yaml.safe_load((ROOT / revised['standard_path']).read_text())
+        assert 'Dei servis' in doc['source']['text']
+        assert 'God’s servant[b]' in doc['translation']['text']
+        assert any('God’s servants' in n['text'] for n in doc['translation']['footnotes'])
+        assert not doc['ai_draft']['independent_review']
+
+    def test_service_draft_retains_conditional_and_uncertain_source_claims(self):
+        doc = yaml.safe_load((ROOT / 'translation/extra_canonical/shepherd_of_hermas/103.yaml').read_text())
+        text = doc['translation']['text']
+        assert 'I do not know' in text
+        assert 'impossible' in text
+        assert 'seems to be available' in text
+        office = yaml.safe_load((ROOT / 'translation/extra_canonical/shepherd_of_hermas/104.yaml').read_text())
+        assert any('overseers and hospitable people' in n['text'] for n in office['translation']['footnotes'])

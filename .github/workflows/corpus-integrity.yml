@@ -12,10 +12,9 @@ jobs:
   validate:
     name: corpus-integrity
     runs-on: ubuntu-latest
-    # Exact-head batch07 needed44minutes; expanded source/metadata and full-corpus
-    # checks must finish without dropping historical or current integrity gates.
-    # Two full checks reached 90 minutes during reader-note validation.
-    timeout-minutes: 150
+    # A verified Hermas run exceeded90minutes after slow checkout/baseline fetches.
+    # Preserve every historical/current gate and allow the full suite to finish.
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
       - name: Fetch the reviewed source baselines

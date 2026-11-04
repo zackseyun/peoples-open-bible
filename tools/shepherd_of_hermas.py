@@ -50,7 +50,8 @@ MINOR_HEAD_RE = re.compile(r"^([IVXLCDM]+)\.\s*(.*)$")
 MAJOR_HEAD_RE = re.compile(r"^\[?\s*(Ὅρασις|Ἀποκάλυψις|Ἐντολὴ|Παραβολὴ)\s+([^\]]+?)\s*\]?\.?$")
 
 _GREEK_CHAR = r"[\u0370-\u03FF\u1F00-\u1FFF]"
-_HYPHEN_BREAK_RE = re.compile(rf"({_GREEK_CHAR})[-‐]\s+({_GREEK_CHAR})")
+_SOURCE_LETTER = r"[A-Za-z\u0370-\u03FF\u1F00-\u1FFF]"
+_HYPHEN_BREAK_RE = re.compile(rf"({_SOURCE_LETTER})[-‐]\s+((?:⸢)?{_SOURCE_LETTER})")
 _MULTI_SPACE_RE = re.compile(r"\s+")
 
 _PRIME_CHARS = {
@@ -135,6 +136,7 @@ class HermasUnit:
     heading: str | None = None
     notes: list[str] = field(default_factory=list)
     source_edition: str = "Lightfoot & Harmer 1891 (normalized OCR)"
+    source_language: str = "Greek"
 
     @property
     def unit_id(self) -> str:
@@ -332,6 +334,8 @@ def _default_key_for_major(part: str, major: int, minorized: set[tuple[str, int]
 
 def _detect_major_heading(line: str, minorized: set[tuple[str, int]]) -> tuple[HermasUnitKey, str] | None:
     candidate = line.strip().strip('"`“”')
+    if candidate == "SIMILITUDO DECIMA.":
+        return _default_key_for_major("S", 10, minorized), candidate
     m = MAJOR_HEAD_RE.match(candidate)
     if not m:
         return None
@@ -364,6 +368,24 @@ def _normalize_unit_text(lines: list[str]) -> str:
     return joined.strip()
 
 
+def _lightfoot_source_language(key: HermasUnitKey) -> str:
+    """Actual language of this working edition, not a Greek retroversion.
+
+    Physical p.412 changes to Latin Vulgata within S.9.xxx.3; the
+    remainder through S.10.iv is printed in Latin. Overrides may declare
+    another language explicitly if a different primary source is selected.
+    """
+    if key.part == "S" and key.major == 10:
+        return "Latin"
+    if key.part == "S" and key.major == 9 and key.minor:
+        minor = _roman_to_int(key.minor.upper())
+        if minor == 30:
+            return "Greek and Latin"
+        if minor > 30:
+            return "Latin"
+    return "Greek"
+
+
 def parse_units() -> list[HermasUnit]:
     pages = valid_raw_pages()
     minorized = _minorized_majors(pages)
@@ -394,6 +416,14 @@ def parse_units() -> list[HermasUnit]:
                     source_pages=current_pages[:],
                     source_files=current_files[:],
                     notes=notes,
+                    source_edition=(
+                        "Lightfoot & Harmer 1891 (edited Latin Vulgata ending)"
+                        if _lightfoot_source_language(current_key) == "Latin" else
+                        "Lightfoot & Harmer 1891 (Greek working text and edited Latin Vulgata ending)"
+                        if _lightfoot_source_language(current_key) == "Greek and Latin" else
+                        "Lightfoot & Harmer 1891 (normalized OCR)"
+                    ),
+                    source_language=_lightfoot_source_language(current_key),
                 )
             )
         current_key = None
@@ -529,6 +559,7 @@ class NormalizedUnit:
     text: str
     sequence: int
     source_edition: str = "Lightfoot & Harmer 1891 (normalized OCR)"
+    source_language: str = "Greek"
 
 
 def load_unit_map() -> dict[str, object]:
@@ -589,6 +620,7 @@ def load_normalized_unit(unit_id: str | None = None, *, sequence: int | None = N
         text=text,
         sequence=seq,
         source_edition=meta.get("source_edition", "Lightfoot & Harmer 1891 (normalized OCR)"),
+        source_language=str(target.get("source_language", meta.get("source_language", "Greek"))),
     )
 
 
@@ -625,6 +657,7 @@ def load_manual_unit_overrides() -> list[HermasUnit]:
             heading=unit.get("heading"),
             notes=[str(n) for n in unit.get("notes", [])],
             source_edition=unit.get("source_edition", "Lightfoot & Harmer 1891 (normalized OCR + manual unit override)"),
+            source_language=unit.get("source_language", _lightfoot_source_language(HermasUnitKey(str(unit["part"]), int(unit["major"]), unit.get("minor")))),
         ))
     return out
 
@@ -664,6 +697,7 @@ def unit_map_payload() -> dict[str, object]:
                 "source_files": unit.source_files,
                 "text_path": str(unit.output_path.relative_to(REPO_ROOT)),
                 "notes": unit.notes,
+                "source_language": unit.source_language,
             }
             for unit in units
         ],
@@ -682,6 +716,7 @@ def write_normalized() -> dict[str, object]:
             f"# source_pages: {','.join(str(p) for p in unit.source_pages)}",
             f"# source_files: {','.join(unit.source_files)}",
             f"# source_edition: {unit.source_edition}",
+            f"# source_language: {unit.source_language}",
         ]
         if unit.heading:
             lines.append(f"# heading: {unit.heading}")

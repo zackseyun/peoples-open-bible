@@ -297,7 +297,8 @@ class HermasSourceRepairTests(unittest.TestCase):
         assert "ἄγγελος τρυφῆς καὶ ἀπάτης" in sixth_second.text
         assert "τῶν τοιούτων ἡ ζωὴ θάνατός ἐστιν" in sixth_second.text
         sixth_fourth = hermas.load_unit("S.6.iv")
-        assert "| Ἐλάχιστον, φημί, κύριε, βασανίζονται· |" in sixth_fourth.text
+        assert "Οὐχ ἱκανόν, φημί, κύριε, χρόνον βασανίζονται·" in sixth_fourth.text
+        assert "| Ἐλάχιστον, φημί, κύριε, βασανίζονται· |" in hermas.raw_page_path(372).read_text()
         seventh = hermas.load_unit("S.7")
         eighth_first = hermas.load_unit("S.8.i")
         assert seventh.source_pages == [374, 375]
@@ -316,7 +317,7 @@ class HermasSourceRepairTests(unittest.TestCase):
 
     def test_primary_scan_restoration_replaces_only_the_five_web_patch_bodies(self):
         overrides = {u.unit_id for u in hermas.load_manual_unit_overrides()}
-        assert overrides == {"S.8.x", "S.9.iii"}
+        assert overrides == {"S.6.iv", "S.8.x", "S.9.iii"}
         eighth = hermas.load_unit("M.8")
         assert eighth.source_pages == [344, 345, 346]
         assert eighth.text.count("|") == 2

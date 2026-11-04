@@ -13,11 +13,12 @@ RECORD = ROOT / 'sources/shepherd_of_hermas/repair/oxy404-ending-20261103.v1.jso
 TEN_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/amherst190-ten-drafts-20261103.v2.json'
 MOUNTAIN_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/white-mountain-drafts-20261103.v1.json'
 SERVICE_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/service-mountain-drafts-20261103.v1.json'
+FORGIVENESS_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/forgiveness-mountain-drafts-20261103.v1.json'
 
 
 class HermasEndingDraftTests(unittest.TestCase):
     def test_ending_drafts_have_current_sources_and_explicit_review_limits(self):
-        for record, slots in [(RECORD, {113, 114}), (TEN_RECORD, {108, 109, 110, 111, 112}), (MOUNTAIN_RECORD, {105, 106, 107}), (SERVICE_RECORD, {102, 103, 104})]:
+        for record, slots in [(RECORD, {113, 114}), (TEN_RECORD, {108, 109, 110, 111, 112}), (MOUNTAIN_RECORD, {105, 106, 107}), (SERVICE_RECORD, {102, 103, 104}), (FORGIVENESS_RECORD, {99, 100, 101})]:
             audit = json.loads(record.read_text())
             assert not audit['complete']
             assert not audit['independent_review']
@@ -118,3 +119,35 @@ class HermasEndingDraftTests(unittest.TestCase):
         assert 'seems to be available' in text
         office = yaml.safe_load((ROOT / 'translation/extra_canonical/shepherd_of_hermas/104.yaml').read_text())
         assert any('overseers and hospitable people' in n['text'] for n in office['translation']['footnotes'])
+
+    def test_legacy57_repair_preserves_id_and_archives_truncated_records(self):
+        audit = json.loads((ROOT / 'sources/shepherd_of_hermas/repair/six-four-repair-20261103.v1.json').read_text())
+        archive = json.loads((ROOT / 'sources/shepherd_of_hermas/repair' / audit['history_archive']).read_text())
+        source = hermas.load_normalized_unit('S.6.iv')
+        assert source.sequence == 64
+        assert archive['standard_flat']['source']['text'] != source.text
+        assert archive['simplified_flat_before'] is None
+        assert yaml.safe_load((ROOT / 'translation_simplified/extra_canonical/shepherd_of_hermas/057/001.yaml').read_text()) == archive['simplified_nested_unchanged']
+        row = audit['english_drafts'][0]
+        standard = yaml.safe_load((ROOT / row['standard_path']).read_text())
+        simple = yaml.safe_load((ROOT / row['simplified_path']).read_text())
+        for kind, doc in [('standard', standard), ('simplified', simple)]:
+            assert doc['id'] == 'HERM.S.6.iv'
+            assert doc['source']['text'] == source.text
+            assert doc['source_grounding']['reserved_reader_slot'] == 57
+            assert doc['source_grounding']['current_historical_source_sequence'] == 64
+            assert len(doc['translation']['text'].split('\n\n')) == 4
+            assert 'seven times as much' in doc['translation']['text']
+            assert hashlib.sha256(doc['translation']['text'].encode()).hexdigest() == row[kind + '_text_sha256']
+            assert not doc['ai_draft']['independent_review']
+        assert simple['base_translation']['text'] == standard['translation']['text']
+        assert source.text == audit['source_after']
+
+    def test_spirit_seed_conjecture_is_exposed_without_changing_source(self):
+        doc = yaml.safe_load((ROOT / 'translation/extra_canonical/shepherd_of_hermas/101.yaml').read_text())
+        assert 'τοῦ πνεύματος αὐτοῦ' in doc['source']['text']
+        assert 'his spirit.[c]' in doc['translation']['text']
+        assert any('his seed' in n['text'] for n in doc['translation']['footnotes'])
+        audit = json.loads(FORGIVENESS_RECORD.read_text())
+        case = next(row for row in audit['decisions'] if row['case_id'] == 'S.9.xxiv.4-spirit-seed')
+        assert case['status'] == 'provisionally_follow_printed_conjecture'

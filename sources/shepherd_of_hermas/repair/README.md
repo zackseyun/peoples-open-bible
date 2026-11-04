@@ -339,3 +339,22 @@ English repairs, review, migration and publication remain incomplete.
 and draft revisions. The current108–112 draft checkpoint is
 `amherst190-ten-drafts-20261103.v2.json`; v1 is preserved as history.
 No continuous source body, legacy reader ID or artwork is replaced.
+
+
+## Earlier dialogue repair and further mountain drafts
+
+`six-four-repair-20261103.v1.json` selects one reported Lavra duration
+clause in S.6.iv.2 in place of the older conjectural supplement. The raw
+printed source remains intact; the third bounded working override is
+explicit. Paragraph numbering differs from the study’s locus label, and
+punctuation is editorial. Legacy flat057 is repaired to four complete
+paragraphs, and a new flat simplified057 is added. Prior flat standard and
+nested simplified records are archived. Source sequence64 remains reader57;
+no nested reader/artwork repinning or publication is claimed.
+
+`forgiveness-mountain-drafts-20261103.v1.json` records new standard and
+simplified flat099–101 for S.9.xxii–xxiv,13paragraphs per edition.
+Foolishness, childlikeness/gentleness and spirit/seed alternatives remain
+explicit. Sixteen of44wholeomittedendingchapters now have drafts;28remain.
+Full source collation, earlier English repairs, review, migration and
+publication are still incomplete.

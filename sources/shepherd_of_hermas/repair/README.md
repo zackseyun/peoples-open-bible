@@ -447,3 +447,18 @@ variant and version-supported long supplements are exposed in English notes.
 All new English remains draft with independent review pending.32of44whole
 omittedendingchapters now have drafts;12remain. Reader/artwork migration,
 earlier English repairs, full collation and publication remain incomplete.
+
+
+## Foundation and building-pause drafts
+
+`foundation-drafts-20261104.v1.json` records flat079–082 for S.9.ii–v:
+27paragraphs in each edition. The existing rock selection remains; no new
+source-body override is made. `foundation-witness-comparison-20261104.v1.json`
+bounds Michigan’s lost leaf, shorter reason and damaged instruction, and
+Amherst190e’s partial overlap. Latin editorial non and rock are not counted
+as independently preserved readings. The supplied negative, 25/20/15 counts,
+foundation supplements and long return-promise supplement stay explicit.
+
+Thirty-six of44wholeomittedendingchapters now have drafts;8remain. All new
+drafts still need independent review. Earlier English repairs, full manuscript
+comparison, reader/artwork migration and publication remain incomplete.

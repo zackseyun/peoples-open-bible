@@ -539,3 +539,27 @@ reader note, lexical choice and revision metadata are retained. The separately
 hash-pinned `contextual-policy-eleven-followup-20261104.v1.json` permits only
 the exact later source/text repair while continuing the original terminology
 checks. It adds no general exemption or live-record self-certification.
+
+
+## Mandate 4.iii–iv baptism dialogue and remarriage
+
+`four-baptism-repair-20261104.v1.json` repairs legacy flat reader 031 and
+adds a complete simplified draft: seven historical paragraphs of iii and
+four of iv. Both complete normalized sources are retained in declared
+character spans. III/IV labels expose the boundary. Reader 032 remains M.5.i;
+no index-based overwrite, new public redirect or artwork reassignment occurs.
+The former flat and 16 nested records are archived in
+`legacy31-before-baptism-repair-20261104.v1.json`.
+
+The positive repentance warning is provisionally retained with the substantive
+Athos negative alternative explicit. Printed Vulgata/Palatina comparisons
+support the positive/repeated-repentance sense; damaged Sinaiticus breaks off
+before that clause and cannot decide it. Its XML also files portions of iii.3
+inside chapter 30.3; supplied words are not treated as manuscript ink. Older
+and later Athos edition reports disagree at iii.3 and the calling phrase.
+No normalized source body changes or full photograph collation are claimed.
+
+The historical 397-record terminology plan remains unchanged. The separately
+hash-pinned `contextual-policy-four-followup-20261104.v1.json` validates the
+complete repaired record before projecting its prior terminology history.
+Independent review and reader/artwork migration remain pending.

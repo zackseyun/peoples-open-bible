@@ -563,3 +563,30 @@ The historical 397-record terminology plan remains unchanged. The separately
 hash-pinned `contextual-policy-four-followup-20261104.v1.json` validates the
 complete repaired record before projecting its prior terminology history.
 Independent review and reader/artwork migration remain pending.
+
+
+## Mandate 4.i–ii recorded-source and annotation alignment
+
+`four-source-alignment-20261104.v1.json` distinguishes a missing source
+record from missing English: standard 029 already contained all eleven
+historical paragraphs in six reader paragraphs. Its attached Greek still
+skipped from i.5 into i.8; it now matches the restored normalized source,
+including printed supplements. Standard 030 already matched its normalized
+source and retains that source unchanged. English wording in both is
+unchanged; numeric footnotes now attach to their actual phrases. The obsolete
+029a rendering is preserved in the before-record archive rather than displayed
+as a current variant. Contextual repentance notes and lexical decisions remain.
+
+The new i.11 note distinguishes Sinaiticus's shorter first-hand text from
+its ca/d corrections containing the healing clause. Athos's diplomatic
+transcription and the printed Vulgata also contain healing. The working
+reading is retained without treating correcting hands or editions as additional
+independent manuscripts. No normalized source body changes are made.
+
+The two finite, separately hash-pinned `contextual-policy-four-029-followup-`
+and `contextual-policy-four-030-followup-20261104.v1.json` records validate
+each complete repaired record before historical projection. The immutable
+397-record terminology plan is unchanged. This bounded source/annotation
+alignment does not clear either chapter's full review queue. Simplified flat
+drafts, independent review, nested-reader reconciliation and publication remain
+pending.

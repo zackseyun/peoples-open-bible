@@ -40,6 +40,12 @@ HERMAS_ELEVEN_FOLLOWUP_SHA256 = '103ae3f5018c0da809ecbe3a4a7443ae433cfd8a0675192
 HERMAS_FOUR = 'translation/extra_canonical/shepherd_of_hermas/031.yaml'
 HERMAS_FOUR_FOLLOWUP = 'sources/shepherd_of_hermas/repair/contextual-policy-four-followup-20261104.v1.json'
 HERMAS_FOUR_FOLLOWUP_SHA256 = '7f36ca786b1a97bb882e0fd9beb8f45d5e8666d9b1a1d27065d002456c504839'
+HERMAS_FOUR_I = 'translation/extra_canonical/shepherd_of_hermas/029.yaml'
+HERMAS_FOUR_I_FOLLOWUP = 'sources/shepherd_of_hermas/repair/contextual-policy-four-029-followup-20261104.v1.json'
+HERMAS_FOUR_I_FOLLOWUP_SHA256 = '89a03e9d99eab6c403e6a456463dbe9626200e6cd25c9567cd581129c45d0c54'
+HERMAS_FOUR_II = 'translation/extra_canonical/shepherd_of_hermas/030.yaml'
+HERMAS_FOUR_II_FOLLOWUP = 'sources/shepherd_of_hermas/repair/contextual-policy-four-030-followup-20261104.v1.json'
+HERMAS_FOUR_II_FOLLOWUP_SHA256 = '1529d3aa68be40bc63adfa9a2670203c89fe435a40dc30140359bae7820ac6a6'
 
 def historical_view(path, doc):
     """Validate one exact later source repair before projecting its history.
@@ -56,6 +62,8 @@ def historical_view(path, doc):
         HERMAS_OPENING: (HERMAS_FOLLOWUP, HERMAS_FOLLOWUP_SHA256),
         HERMAS_ELEVEN: (HERMAS_ELEVEN_FOLLOWUP, HERMAS_ELEVEN_FOLLOWUP_SHA256),
         HERMAS_FOUR: (HERMAS_FOUR_FOLLOWUP, HERMAS_FOUR_FOLLOWUP_SHA256),
+        HERMAS_FOUR_I: (HERMAS_FOUR_I_FOLLOWUP, HERMAS_FOUR_I_FOLLOWUP_SHA256),
+        HERMAS_FOUR_II: (HERMAS_FOUR_II_FOLLOWUP, HERMAS_FOUR_II_FOLLOWUP_SHA256),
     }
     if name not in followups:
         return doc
@@ -75,7 +83,7 @@ def historical_view(path, doc):
         raise ValueError('Hermas repair does not preserve the historical terminology input')
     if source != repair['after_source'] or text != repair['after_text']:
         raise ValueError('Hermas source/text differs from exact later repair')
-    if name in (HERMAS_ELEVEN, HERMAS_FOUR):
+    if name in (HERMAS_ELEVEN, HERMAS_FOUR, HERMAS_FOUR_I, HERMAS_FOUR_II):
         # This repair replaces obsolete lacuna annotations and generation
         # provenance as well as restoring the missing paragraphs. Pin the
         # complete new record before exposing the original review contract.

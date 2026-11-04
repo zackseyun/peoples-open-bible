@@ -33,6 +33,17 @@ def prior_postmap():
     return m, expected
 
 
+def verify_fixed_postmap(expected, actual):
+    """Only the original B34 map or the exact approved 52:8 successor."""
+    if expected.get('052/008.yaml') != '53aaf4b10056413fe1adf895504fe7036739018fd87fb089feafd07660fa48aa':
+        raise ValueError('B34 52:8 preimage differs')
+    successor = dict(expected)
+    successor['052/008.yaml'] = '6ed95c749033803e5bc930f39824157c79105e1d5bb5a69db1cf7044e533f0b2'
+    if actual != expected and actual != successor:
+        raise ValueError('Canonical changes exceed fixed B34 or exact 52:8 successor')
+    return actual
+
+
 def verify_current():
     package = t.APPLICATIONS/NAME
     if t.sha((package/'manifest.json').read_bytes()) != MANIFEST_SHA:
@@ -66,8 +77,9 @@ def verify_current():
             index['counts']['44'] != 1 or index['chapter_pages']['44'] != [122, 123] or
             t.sha((package/'original-count41-44-index.json').read_bytes()) != count.INDEX_SHA):
         raise ValueError('B34 existing structural-only count binding differs')
-    proof = t.verify(package, applied=True, check_corpus=True)
-    return {**proof, 'prior_historical_postmap': before, 'current_postmap': expected,
+    proof = t.verify(package, applied=True, check_corpus=False)
+    actual = verify_fixed_postmap(expected, t.corpus_hashes())
+    return {**proof, 'prior_historical_postmap': before, 'historical_postmap': expected, 'current_postmap': actual,
             'new_language_review_units': 1, 'new_structural_count_votes': 0}
 
 

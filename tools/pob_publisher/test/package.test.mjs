@@ -66,6 +66,23 @@ test('B37 extends B36 by exactly reviewed 97:1; no address or held-neighbor addi
  for(const [ch,held] of [[95,[6,7]],[96,[4,5,6,7,8]]])for(const v of held)assert.ok(!enoch.chapters.find(c=>c.chapter===ch).verses.some(r=>r.verse===v));
 });
 
+test('B38 extends B37 by exactly reviewed 1:9; no address or held-neighbor additions',async()=>{
+ const changes=JSON.parse(fs.readFileSync(fixture('batch37-changes.json')));
+ const next=JSON.parse(fs.readFileSync(fixture('batch38-changes.json')));
+ assert.equal(next.previous_source_sha,changes.source_sha);
+ assert.equal(next.runtime_activation_authorized,false);
+ assert.equal(hash(fs.readFileSync(fixture('baseline-a368.json.gz'))),next.baseline_inventory_sha256);
+ for(const m of next.review_application_manifests)assert.equal(hash(execFileSync('git',['-C',root,'show',`${m.source_sha}:${m.path}`])),m.sha256);
+ const previous=await compileGit(root,changes.source_sha),p=await compileGit(root,next.source_sha);
+ const pi=inventory(previous),ni=inventory(p),key=JSON.stringify(['1 Enoch',1,9]);
+ const delta=Object.keys(ni.records).filter(k=>ni.records[k]!==pi.records[k]);
+ assert.deepEqual(delta,[key]);assert.equal(ni.structure_sha256,pi.structure_sha256);
+ assert.deepEqual(next.allowed,{...changes.allowed,[key]:{before:baseline.records[key],after:ni.records[key]}});
+ const result=assertParity(baseline,p,next.allowed);assert.equal(result.changed.length,9);
+ const enoch=p.books.find(b=>b.name==='1 Enoch');
+ for(const [ch,held] of [[95,[6,7]],[96,[4,5,6,7,8]]])for(const v of held)assert.ok(!enoch.chapters.find(c=>c.chapter===ch).verses.some(r=>r.verse===v));
+});
+
 for(const [name,edit] of [
  ['deletion',p=>p.books[0].chapters[0].verses.pop()],
  ['new held neighbor',p=>p.books[0].chapters[0].verses.push({verse:6,text:'Not approved'})],

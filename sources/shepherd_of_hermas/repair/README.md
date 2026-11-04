@@ -1,9 +1,14 @@
 # Complete-source repair
 
-The existing 63 imported units are an incomplete edition of Hermas. They end
+The original 63 imported units were an incomplete edition of Hermas. They ended
 mid-sentence at Similitude 8.4.5. Completing that import's artwork did not
 complete the historical book. The original import also skipped the opening
 body leaf and has earlier omissions and merged boundaries.
+
+The working source now has 108 units and includes the printed ending, while
+earlier omissions, six historical boundaries, witness comparison and English
+reader revision remain unfinished. The legacy reader's 63 chapter IDs stay
+unchanged; source-index changes are recorded in the migration inventory below.
 
 `coverage.v1.json` keeps the full 114-chapter scope visible. Its 44
 baseline `absent_after_cutoff` rows are entirely absent chapters; the incomplete cutoff
@@ -58,7 +63,7 @@ python3 -m unittest discover -s tests -p test_hermas_source_repair.py -v
 
 The first cutoff repair transcribed physical pages 380–381, restoring the
 remainder of Similitude 8.4 and all of 8.5, and beginning 8.6. At that
-checkpoint 8.6 remained incomplete. Existing imported sequences 1–63 stay stable.
+checkpoint 8.6 remained incomplete and imported sequences 1–63 were unchanged.
 `cutoff-20261103.v1.json` records the source work and unfinished English work.
 
 Printed brackets are retained. In particular 8.5.4 is an editorial Greek
@@ -157,6 +162,31 @@ quotation still requiring direct consultation. The old V.3.iii import also
 contains an identified printing footer, now queued for scan-based repair.
 
 Finish the opening's witness comparison and standard/simplified reader
-reconciliation, then repair the earlier truncations and the omitted ending.
+reconciliation, and repair the remaining earlier omissions and boundaries.
 The complete-source translation, ID crosswalk, checks, and verified
 publication remain required; this checkpoint is not the completed edition.
+
+## Earlier source repair and reader migration inventory
+
+`earlier-gaps-20261103.v1.json` restores omitted Mandate 12.iii/iv/vi text,
+the first Similitude's missing opening and ending, and the second's missing
+opening. Greek-encoded Roman X is recognized at Vision 3.x, returning its
+preceding continuation to 3.ix. The printing footer in 3.iii is removed
+from body and preserved in an editorial note. Unnumbered Other Similitude
+headings now separate the S.2 tail, complete S.3 and S.4 opening. There are
+108 working units and six remaining historical boundary questions.
+
+The page audit also identifies 21 short or unclosed raw-page candidates.
+This is a review queue, not proof that all 21 lack text: some have later
+unit overrides and some may simply lack an end marker. Unflagged pages are
+not certified complete by that heuristic. S.4's raw-page 362 truncation is
+confirmed and still needs repair. A scan check also corrects prayers versus
+souls in the S.2.8 source; corresponding reader review remains pending.
+
+`reader-source-crosswalk-20261103.v1.json` preserves the identities of all
+63 legacy reader chapters while recording the corrected source order and
+legacy source containers spanning several chapters. It is not a finished
+paragraph redirect map. No English or reader ID is changed here. The draft
+writer now rejects a source-index destination occupied by a different reader
+ID, including overwrite mode, so inserted source chapters cannot erase
+existing English before the explicit reader migration is completed.

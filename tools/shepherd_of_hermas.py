@@ -46,7 +46,7 @@ EDITORIAL_NOTES_RE = re.compile(
 )
 PAGE_RE = re.compile(r"_p(\d{4})\.txt$")
 RUN_HEAD_KEY_RE = re.compile(r"([VMS])\.\s*(\d+)(?:\.\s*([ivxlcdm]+|\d+))?", re.IGNORECASE)
-MINOR_HEAD_RE = re.compile(r"^([IVXLCDM]+)\.\s*(.*)$")
+MINOR_HEAD_RE = re.compile(r"^([IVXLCDMΙΧΜ]+)\.\s*(.*)$")
 MAJOR_HEAD_RE = re.compile(r"^\[?\s*(Ὅρασις|Ἀποκάλυψις|Ἐντολὴ|Παραβολὴ)\s+([^\]]+?)\s*\]?\.?$")
 
 _GREEK_CHAR = r"[\u0370-\u03FF\u1F00-\u1FFF]"
@@ -336,6 +336,8 @@ def _detect_major_heading(line: str, minorized: set[tuple[str, int]]) -> tuple[H
     candidate = line.strip().strip('"`“”')
     if candidate == "SIMILITUDO DECIMA.":
         return _default_key_for_major("S", 10, minorized), candidate
+    if _strip_diacritics(candidate).upper() == "ΠΑΡΑΒΟΛΑΙ ΑΣ ΕΛΑΛΗΣΕ ΜΕΤ ΕΜΟΥ.":
+        return _default_key_for_major("S", 1, minorized), candidate
     m = MAJOR_HEAD_RE.match(candidate)
     if not m:
         return None
@@ -351,11 +353,17 @@ def _detect_minor_heading(line: str) -> tuple[str, str] | None:
     m = MINOR_HEAD_RE.match(candidate)
     if not m:
         return None
-    marker = _normalize_minor(m.group(1))
+    # OCR sometimes encodes a printed Roman numeral using Greek lookalikes.
+    # Translate only the numeral token; never transliterate the Greek body.
+    marker = _normalize_minor(m.group(1).translate(str.maketrans({"Ι": "I", "Χ": "X", "Μ": "M"})))
     remainder = m.group(2).strip()
     if not marker:
         return None
     return marker, remainder
+
+
+def _is_other_similitude_heading(line: str) -> bool:
+    return _strip_diacritics(line.strip()).lower() == "αλλη παραβολη."
 
 
 def _normalize_unit_text(lines: list[str]) -> str:
@@ -453,7 +461,10 @@ def parse_units() -> list[HermasUnit]:
                 current_notes.append(note)
 
     for page in pages:
-        has_major_heading = any(_detect_major_heading(line, minorized) is not None for line in page.body_lines)
+        has_major_heading = any(
+            _detect_major_heading(line, minorized) is not None or _is_other_similitude_heading(line)
+            for line in page.body_lines
+        )
         has_minor_heading = any(_detect_minor_heading(line) is not None for line in page.body_lines)
         has_explicit_heading = has_major_heading or has_minor_heading
 
@@ -488,6 +499,13 @@ def parse_units() -> list[HermasUnit]:
 
         for raw_line in page.body_lines:
             line = raw_line.strip()
+            if _is_other_similitude_heading(line):
+                if current_key is None or current_key.part != "S":
+                    raise ValueError(f"Unnumbered Similitude heading without context on page {page.page}")
+                key = _default_key_for_major("S", current_key.major + 1, minorized)
+                flush()
+                start_unit(key, page=page.page, file_name=page.path.name, heading=line)
+                continue
             major = _detect_major_heading(line, minorized)
             if major is not None:
                 key, heading = major
@@ -498,6 +516,10 @@ def parse_units() -> list[HermasUnit]:
             minor = _detect_minor_heading(line)
             if minor is not None and current_key is not None:
                 marker, remainder = minor
+                if marker == "i" and (current_key.part, current_key.major) not in minorized:
+                    if remainder:
+                        current_lines.append(remainder)
+                    continue
                 candidate_key = HermasUnitKey(part=current_key.part, major=current_key.major, minor=marker)
                 if candidate_key != current_key:
                     flush()

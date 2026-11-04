@@ -181,7 +181,17 @@ DEFAULT_BACKEND = default_backend()
 
 
 def output_path_for_unit(unit: hermas.NormalizedUnit) -> pathlib.Path:
-    return TRANSLATION_ROOT / f'{unit.sequence:03d}.yaml'
+    path = TRANSLATION_ROOT / f'{unit.sequence:03d}.yaml'
+    if path.exists():
+        existing = yaml.safe_load(path.read_text(encoding='utf-8'))
+        expected = f'HERM.{unit.unit_id}'
+        if not isinstance(existing, dict) or existing.get('id') != expected:
+            raise ValueError(
+                f'Source sequence {unit.sequence} now identifies {expected}, but {path} '
+                'belongs to another legacy reader unit. Complete the explicit reader '
+                'crosswalk/migration before drafting here; overwrite cannot change its identity.'
+            )
+    return path
 
 
 def validate_tool_input(tool_input: dict[str, Any]) -> None:

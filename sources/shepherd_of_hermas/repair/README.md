@@ -590,3 +590,22 @@ each complete repaired record before historical projection. The immutable
 alignment does not clear either chapter's full review queue. Simplified flat
 drafts, independent review, nested-reader reconciliation and publication remain
 pending.
+
+
+## Mandate 5.i–ii patience and quick temper
+
+`five-temper-repair-20261104.v1.json` restores the lost prayer clause at i.6,
+the household warning and whole-heart repentance promise at i.7, and ii.1–3's
+opening explanation of quick temper. Complete standard and simplified flat
+drafts cover i.1–7 and ii.1–8 in fifteen paragraphs. Character spans and I/II
+labels retain both historical sections within legacy032; legacy033 remains
+Mandate6i. Fourteen old nested records and the former flat record are archived
+unchanged. No normalized source bodies or artwork are changed.
+
+Bounded comparisons distinguish Athos's feminine prayer pronoun and my-power
+reading from the working source's masculine pronoun and the Lord's power.
+The printed Vulgata and Palatina divine-power renderings support the latter
+sense without becoming identical Greek testimony. The justification by the
+most revered angel and all conditions remain explicit. Sinaiticus ends before
+this passage and cannot decide its variants. These are working drafts; fresh
+photograph adjudication, independent review and reader migration remain pending.

@@ -39,11 +39,14 @@ class SixTwoAngelsTests(unittest.TestCase):
             assert hashlib.sha256(doc['translation']['text'].encode()).hexdigest()==row[kind+'_text_sha256']
             assert doc['status']=='draft' and doc['cross_check']['status']=='needs_review'
             assert not doc['ai_draft']['independent_review']
+            assert doc['translation']['text'].count('God’s servants')==2
+            assert 'God’s slaves' not in doc['translation']['text']
             notes={n['marker']:n['text'] for n in doc['translation']['footnotes']}
             assert 'believes in the Lord' in notes['c']
             assert 'omits that intervening description' in notes['d']
             assert 'different expanded list' in notes['d'] and 'marked corrupt' in notes['d']
             assert 'therefore' in notes['e'] and 'cannot decide Mandate6' in notes['h']
+            assert 'bonded-status' in notes['e'] and 'total-allegiance' in notes['e']
 
     def test_two_transcription_changes_match_scan_receipt_and_parser(self):
         audit=json.loads((REPAIR/'six-source-corrections-20261104.v1.json').read_text())

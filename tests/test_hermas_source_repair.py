@@ -285,7 +285,9 @@ class HermasSourceRepairTests(unittest.TestCase):
 
     def test_earlier_leaves_recover_missing_body_even_when_end_marker_existed(self):
         second_vision = hermas.load_unit("V.4.ii")
-        assert "τὸ ὄνομά ἐστιν Σεγρί" in second_vision.text
+        assert "τὸ ὄνομά ἐστιν Θεγρί" in second_vision.text
+        assert "τὸ ὄνομά ἐστιν Σεγρί" in " ".join(hermas.raw_page_path(331).read_text().split())
+        assert "τὸν ἐπὶ τῶν θηρίων ὄντα" in second_vision.text
         assert "καὶ τῇ πολυσπλαγχνίᾳ αὐτοῦ ἐξέφυγον αὐτό" in second_vision.text
         mandate = hermas.load_unit("M.4.i")
         assert "ἀλλὰ δεῖ παραδεχθῆναι" in mandate.text
@@ -318,7 +320,7 @@ class HermasSourceRepairTests(unittest.TestCase):
 
     def test_primary_scan_restoration_replaces_only_the_five_web_patch_bodies(self):
         overrides = {u.unit_id for u in hermas.load_manual_unit_overrides()}
-        assert overrides == {"S.6.iv", "S.8.vi", "S.8.ix", "S.8.x", "S.8.xi", "S.9.iii", "S.9.vi", "S.9.ix", "S.9.xviii"}
+        assert overrides == {"V.4.ii", "S.6.iv", "S.8.vi", "S.8.ix", "S.8.x", "S.8.xi", "S.9.iii", "S.9.vi", "S.9.ix", "S.9.xviii"}
         eighth = hermas.load_unit("M.8")
         assert eighth.source_pages == [344, 345, 346]
         assert eighth.text.count("|") == 2

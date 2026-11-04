@@ -14,17 +14,19 @@ TEN_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/amherst190-ten-drafts-202
 MOUNTAIN_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/white-mountain-drafts-20261103.v1.json'
 SERVICE_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/service-mountain-drafts-20261103.v1.json'
 FORGIVENESS_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/forgiveness-mountain-drafts-20261103.v1.json'
-ACCOUNTABILITY_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/accountability-drafts-20261103.v1.json'
+ACCOUNTABILITY_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/accountability-drafts-20261103.v2.json'
+
+SEAL_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/seal-drafts-20261103.v1.json'
 
 
 class HermasEndingDraftTests(unittest.TestCase):
     def test_ending_drafts_have_current_sources_and_explicit_review_limits(self):
-        for record, slots in [(RECORD, {113, 114}), (TEN_RECORD, {108, 109, 110, 111, 112}), (MOUNTAIN_RECORD, {105, 106, 107}), (SERVICE_RECORD, {102, 103, 104}), (FORGIVENESS_RECORD, {99, 100, 101}), (ACCOUNTABILITY_RECORD, {95, 96, 97, 98})]:
+        for record, slots in [(RECORD, {113, 114}), (TEN_RECORD, {108, 109, 110, 111, 112}), (MOUNTAIN_RECORD, {105, 106, 107}), (SERVICE_RECORD, {102, 103, 104}), (FORGIVENESS_RECORD, {99, 100, 101}), (ACCOUNTABILITY_RECORD, {95, 96, 97, 98}), (SEAL_RECORD, {91, 92, 93, 94})]:
             audit = json.loads(record.read_text())
             assert not audit['complete']
             assert not audit['independent_review']
             assert not audit['legacy_reader_ids_changed']
-            assert not audit['source_body_changed']
+            assert audit['source_body_changed'] is (record == ACCOUNTABILITY_RECORD)
             assert {r['reader_slot'] for r in audit['english_drafts']} == slots
             for row in audit['english_drafts']:
                 source = hermas.load_normalized_unit(row['unit_id'])
@@ -59,6 +61,36 @@ class HermasEndingDraftTests(unittest.TestCase):
             assert 'not the complete inserted condition' in notes['d']
             divided = yaml.safe_load((ROOT / root / 'extra_canonical/shepherd_of_hermas/098.yaml').read_text())
             assert any('Without it:' in n['text'] for n in divided['translation']['footnotes'])
+
+    def test_sinaiticus_followup_is_exactly_bounded_and_archived(self):
+        repair = ROOT / 'sources/shepherd_of_hermas/repair'
+        followup = json.loads((repair / 'sinaiticus-passages-20261103.v1.json').read_text())
+        selection = followup['selected_reading']
+        assert followup['source_after'] == followup['source_before'].replace(selection['old_printed_clause'], selection['new_selected_clause'])
+        assert followup['source_before'].count(selection['old_printed_clause']) == 1
+        assert 'not' in selection['damage'] or 'Neither' in selection['damage']
+        archive = json.loads((repair / followup['history_archive']).read_text())
+        old = json.loads((repair / 'accountability-drafts-20261103.v1.json').read_text())
+        current = json.loads(ACCOUNTABILITY_RECORD.read_text())
+        for slot in (96, 97, 98):
+            assert next(r for r in old['english_drafts'] if r['reader_slot'] == slot) == next(r for r in current['english_drafts'] if r['reader_slot'] == slot)
+        for root, key in [('translation', 'standard'), ('translation_simplified', 'simplified')]:
+            doc = yaml.safe_load((ROOT / root / 'extra_canonical/shepherd_of_hermas/095.yaml').read_text())
+            assert archive[key]['source']['text'] == followup['source_before']
+            assert doc['source']['text'] == followup['source_after']
+            assert 'who loves to do good[b]' in doc['translation']['text']
+            assert any('neither verb is supplied' in n['text'] for n in doc['translation']['footnotes'])
+        assert selection['old_printed_clause'] in ' '.join(hermas.raw_page_path(404).read_text().split())
+
+    def test_seal_draft_keeps_quotation_and_continuous_witness_distinct(self):
+        for root in ('translation', 'translation_simplified'):
+            doc = yaml.safe_load((ROOT / root / 'extra_canonical/shepherd_of_hermas/093.yaml').read_text())
+            assert 'The seal' in doc['translation']['text']
+            assert 'came up alive again' in doc['translation']['text']
+            note = next(n['text'] for n in doc['translation']['footnotes'] if n['marker'] == 'd')
+            assert 'without a repeated “alive”' in note
+            assert 'separate transmission routes' in note
+            assert 'supplied letters' in note
 
     def test_greek_selection_is_bounded_and_latin_is_not_silently_rewritten(self):
         standard = yaml.safe_load((ROOT / 'translation/extra_canonical/shepherd_of_hermas/113.yaml').read_text())

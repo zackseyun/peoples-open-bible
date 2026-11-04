@@ -89,7 +89,9 @@ class HermasEarlierDraftTests(unittest.TestCase):
         for path, entry in archive['nested_unchanged'].items():
             assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == entry['file_sha256']
         neighbor = archive['unchanged_neighbor']
-        assert hashlib.sha256((ROOT / neighbor['path']).read_bytes()).hexdigest() == neighbor['file_sha256']
+        later = json.loads((REPAIR / 'legacy33-before-two-angels-repair-20261104.v1.json').read_text())
+        assert later['standard_flat_before_file_sha256'] == neighbor['file_sha256']
+        assert prior.digest(later['standard_flat']) == '400ef98e65e7671cedb555fc1666cbd323b0bf1e7add8e1eab286699780d6e6d'
         assert yaml.safe_load((ROOT / neighbor['path']).read_text())['source']['unit_id'] == 'M.6.i'
         standard = yaml.safe_load((ROOT / audit['english_drafts'][0]['standard_path']).read_text())
         simple = yaml.safe_load((ROOT / audit['english_drafts'][0]['simplified_path']).read_text())

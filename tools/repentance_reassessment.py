@@ -34,26 +34,35 @@ def plan_by_path():
 HERMAS_OPENING = 'translation/extra_canonical/shepherd_of_hermas/001.yaml'
 HERMAS_FOLLOWUP = 'sources/shepherd_of_hermas/repair/contextual-policy-followup-20261103.v1.json'
 HERMAS_FOLLOWUP_SHA256 = 'a68860fd33f98804cbe79977b89f0e8a1a5843a7a4cafe2a27cacec8e676be4d'
+HERMAS_ELEVEN = 'translation/extra_canonical/shepherd_of_hermas/040.yaml'
+HERMAS_ELEVEN_FOLLOWUP = 'sources/shepherd_of_hermas/repair/contextual-policy-eleven-followup-20261104.v1.json'
+HERMAS_ELEVEN_FOLLOWUP_SHA256 = '103ae3f5018c0da809ecbe3a4a7443ae433cfd8a06751920e2f56d8053980016'
 
 def historical_view(path, doc):
     """Validate one exact later source repair before projecting its history.
 
     The 397-record terminology plan stays immutable. Its original source and
-    English remain the historical contract; a repaired opening is separately
+    English remain the historical contract; each later repair is separately
     pinned, never accepted from a mutable hash in the live verse itself.
-    All notes, lexical judgments, revision metadata and other fields continue
-    through the original checks unchanged.
+    Original judgments and metadata remain subject to the historical checks.
+    Chapter 11 additionally pins its complete repaired record before replacing
+    obsolete annotations or generation provenance in the projected view.
     """
     name = Path(path).resolve().relative_to(ROOT).as_posix()
-    if name != HERMAS_OPENING:
+    followups = {
+        HERMAS_OPENING: (HERMAS_FOLLOWUP, HERMAS_FOLLOWUP_SHA256),
+        HERMAS_ELEVEN: (HERMAS_ELEVEN_FOLLOWUP, HERMAS_ELEVEN_FOLLOWUP_SHA256),
+    }
+    if name not in followups:
         return doc
     item = plan_by_path()[name]
     source = doc.get('source') or {}
     text = doc.get('translation', {}).get('text')
     if prior.digest(source) == item['source_sha256'] and text == item['after_text']:
         return doc
-    raw = (ROOT / HERMAS_FOLLOWUP).read_bytes()
-    if SHA(raw) != HERMAS_FOLLOWUP_SHA256:
+    record, expected_sha256 = followups[name]
+    raw = (ROOT / record).read_bytes()
+    if SHA(raw) != expected_sha256:
         raise ValueError('Hermas source-repair decision pin differs')
     repair = json.loads(raw)
     if (repair['path'] != name or
@@ -61,7 +70,17 @@ def historical_view(path, doc):
         repair['before_text'] != item['after_text']):
         raise ValueError('Hermas repair does not preserve the historical terminology input')
     if source != repair['after_source'] or text != repair['after_text']:
-        raise ValueError('Hermas source/text differs from exact later opening repair')
+        raise ValueError('Hermas source/text differs from exact later repair')
+    if name == HERMAS_ELEVEN:
+        # This repair replaces obsolete lacuna annotations and generation
+        # provenance as well as restoring the missing paragraphs. Pin the
+        # complete new record before exposing the original review contract.
+        historical = repair['before_record']
+        if (prior.digest(doc) != repair['after_record_sha256'] or
+            historical['source'] != repair['before_source'] or
+            historical['translation']['text'] != repair['before_text']):
+            raise ValueError('Hermas eleven record differs from exact later repair')
+        return copy.deepcopy(historical)
     result = copy.deepcopy(doc)
     result['source'] = repair['before_source']
     result['translation']['text'] = repair['before_text']

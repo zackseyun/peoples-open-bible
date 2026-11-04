@@ -84,7 +84,7 @@ class ContextualRepentanceTests(unittest.TestCase):
 
     def test_reader_annotations_preserved_and_current_notes_anchored(self):
         for r in self.items:
-            d=self.current[r['path']];old=self.before[r['path']];m=r['reader_note_marker']
+            d=policy.historical_view(ROOT/r['path'],self.current[r['path']]);old=self.before[r['path']];m=r['reader_note_marker']
             self.assertRegex(m,r'^[a-z]$')
             self.assertEqual(d['translation']['text'].count('['+m+']'),1)
             self.assertEqual([n['marker'] for n in d['translation']['footnotes']],
@@ -206,5 +206,44 @@ class HermasSourceRepairFollowupTests(unittest.TestCase):
             bad=copy.deepcopy(self.current)
             bad['lexical_decisions'][update['index']]['chosen']='unreviewed wording'
             self.assertTrue(policy.approved_errors(self.path,bad))
+
+class HermasElevenSourceRepairFollowupTests(unittest.TestCase):
+    def setUp(self):
+        self.path = ROOT / policy.HERMAS_ELEVEN
+        self.current = prior.load(self.path)
+
+    def test_exact_pair_keeps_the_prior_vacillation_decision(self):
+        item = policy.plan_by_path()[policy.HERMAS_ELEVEN]
+        historical = policy.historical_view(self.path, self.current)
+        self.assertEqual(historical['translation']['text'], item['after_text'])
+        self.assertEqual(prior.digest(historical['source']), item['source_sha256'])
+        self.assertEqual(policy.approved_errors(self.path, self.current), [])
+        self.assertEqual(self.current['translation']['text'].split('\n\n')[3], item['after_text'].split('\n\n')[3])
+        self.assertEqual(len(self.current['translation']['text'].split('\n\n')), 21)
+
+    def test_repair_is_not_a_source_text_or_note_exemption(self):
+        for field in ('source', 'translation'):
+            bad = copy.deepcopy(self.current)
+            bad[field]['text'] += ' altered'
+            bad['terminology_revision']['after_text_sha256'] = policy.SHA(bad['translation']['text'])
+            self.assertTrue(policy.approved_errors(self.path, bad))
+        bad = copy.deepcopy(self.current)
+        next(n for n in bad['translation']['footnotes'] if n['marker'] == 'b')['text'] = 'changed note'
+        self.assertTrue(policy.approved_errors(self.path, bad))
+        bad = copy.deepcopy(self.current)
+        bad['lexical_decisions'][13]['chosen'] = 'repent toward God'
+        self.assertTrue(policy.approved_errors(self.path, bad))
+        bad = copy.deepcopy(self.current)
+        bad['ai_draft']['independent_review'] = True
+        self.assertTrue(policy.approved_errors(self.path, bad))
+        bad = copy.deepcopy(self.current)
+        next(n for n in bad['translation']['footnotes'] if n['marker'] == 'f')['text'] = 'all manuscripts agree'
+        self.assertTrue(policy.approved_errors(self.path, bad))
+
+    def test_live_hashes_cannot_replace_the_pinned_decision_file(self):
+        with patch.object(Path, 'read_bytes', return_value=b'{}'):
+            with self.assertRaisesRegex(ValueError, 'decision pin differs'):
+                policy.historical_view(self.path, self.current)
+
 
 if __name__=='__main__':unittest.main()

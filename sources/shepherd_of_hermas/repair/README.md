@@ -431,3 +431,19 @@ provenance clarification only. No new source-body selection is made.
 Twenty-eight of44wholeomittedendingchapters now have drafts;16remain.
 Review, earlier English repair, reader/artwork migration and publication
 remain incomplete.
+
+
+## Stone inspection and restoration drafts
+
+`stone-drafts-20261104.v1.json` records flat083–086, S.9.vi–ix:29paragraphs
+per edition. `stone-witness-comparison-20261104.v1.json` records two bounded
+source selections: three staff strikes and no joint in the completed tower.
+It preserves the exact before/after text and hashes, as well as the older
+positive-joint alternative. The new public-domain Latin editions are used
+only at declared passages; editions are not counted as new manuscripts.
+
+The white-stones Greek crux remains dagger-marked. The certainly/all/perhaps
+variant and version-supported long supplements are exposed in English notes.
+All new English remains draft with independent review pending.32of44whole
+omittedendingchapters now have drafts;12remain. Reader/artwork migration,
+earlier English repairs, full collation and publication remain incomplete.

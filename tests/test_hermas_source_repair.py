@@ -317,7 +317,7 @@ class HermasSourceRepairTests(unittest.TestCase):
 
     def test_primary_scan_restoration_replaces_only_the_five_web_patch_bodies(self):
         overrides = {u.unit_id for u in hermas.load_manual_unit_overrides()}
-        assert overrides == {"S.6.iv", "S.8.x", "S.9.iii", "S.9.xviii"}
+        assert overrides == {"S.6.iv", "S.8.x", "S.9.iii", "S.9.vi", "S.9.ix", "S.9.xviii"}
         eighth = hermas.load_unit("M.8")
         assert eighth.source_pages == [344, 345, 346]
         assert eighth.text.count("|") == 2

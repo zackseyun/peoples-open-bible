@@ -24,15 +24,17 @@ STONE_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/stone-drafts-20261104.v
 
 FOUNDATION_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/foundation-drafts-20261104.v1.json'
 
+ROD_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/rod-mountain-drafts-20261104.v1.json'
+
 
 class HermasEndingDraftTests(unittest.TestCase):
     def test_ending_drafts_have_current_sources_and_explicit_review_limits(self):
-        for record, slots in [(RECORD, {113, 114}), (TEN_RECORD, {108, 109, 110, 111, 112}), (MOUNTAIN_RECORD, {105, 106, 107}), (SERVICE_RECORD, {102, 103, 104}), (FORGIVENESS_RECORD, {99, 100, 101}), (ACCOUNTABILITY_RECORD, {95, 96, 97, 98}), (SEAL_RECORD, {91, 92, 93, 94}), (GATE_RECORD, {87, 88, 89, 90}), (STONE_RECORD, {83, 84, 85, 86}), (FOUNDATION_RECORD, {79, 80, 81, 82})]:
+        for record, slots in [(RECORD, {113, 114}), (TEN_RECORD, {108, 109, 110, 111, 112}), (MOUNTAIN_RECORD, {105, 106, 107}), (SERVICE_RECORD, {102, 103, 104}), (FORGIVENESS_RECORD, {99, 100, 101}), (ACCOUNTABILITY_RECORD, {95, 96, 97, 98}), (SEAL_RECORD, {91, 92, 93, 94}), (GATE_RECORD, {87, 88, 89, 90}), (STONE_RECORD, {83, 84, 85, 86}), (FOUNDATION_RECORD, {79, 80, 81, 82}), (ROD_RECORD, {75, 76, 77, 78})]:
             audit = json.loads(record.read_text())
             assert not audit['complete']
             assert not audit['independent_review']
             assert not audit['legacy_reader_ids_changed']
-            assert audit['source_body_changed'] is (record in {ACCOUNTABILITY_RECORD, STONE_RECORD})
+            assert audit['source_body_changed'] is (record in {ACCOUNTABILITY_RECORD, STONE_RECORD, ROD_RECORD})
             assert {r['reader_slot'] for r in audit['english_drafts']} == slots
             for row in audit['english_drafts']:
                 source = hermas.load_normalized_unit(row['unit_id'])
@@ -155,6 +157,30 @@ class HermasEndingDraftTests(unittest.TestCase):
             pause = yaml.safe_load((ROOT / root / 'extra_canonical/shepherd_of_hermas/082.yaml').read_text())
             assert 'If your eagerness is not empty' in pause['translation']['text']
             assert any('long bar-marked' in n['text'] for n in pause['translation']['footnotes'])
+
+    def test_rod_selections_keep_damage_and_response_conditions_explicit(self):
+        audit = json.loads((ROOT / 'sources/shepherd_of_hermas/repair/rod-mountain-witness-comparison-20261104.v1.json').read_text())
+        assert len(audit['selected_readings']) == 3
+        for row in audit['selected_readings']:
+            assert row['source_before'].count(row['old_printed_clause']) == 1
+            assert row['source_after'] == row['source_before'].replace(row['old_printed_clause'], row['new_selected_clause'])
+            assert hermas.load_normalized_unit(row['unit_id']).text == row['source_after']
+            for phase in ('before', 'after'):
+                assert hashlib.sha256(row['source_' + phase].encode()).hexdigest() == row[phase + '_source_sha256']
+        for root in ('translation', 'translation_simplified'):
+            offer = yaml.safe_load((ROOT / root / 'extra_canonical/shepherd_of_hermas/075.yaml').read_text())
+            assert 'and for those who wavered' in offer['translation']['text'] or 'and those who wavered' in offer['translation']['text']
+            assert 'quick' in offer['translation']['text'] and 'Death is near' in offer['translation']['text']
+            suffering = yaml.safe_load((ROOT / root / 'extra_canonical/shepherd_of_hermas/076.yaml').read_text())
+            assert 'only believed' in suffering['translation']['text']
+            assert 'will also suffer' in suffering['translation']['text']
+            assert 'suffer willingly' not in suffering['translation']['text']
+            warning = yaml.safe_load((ROOT / root / 'extra_canonical/shepherd_of_hermas/077.yaml').read_text())
+            assert 'their previously mentioned wickedness' in warning['translation']['text']
+            assert any('partly preserves corresponding Greek' in n['text'] for n in warning['translation']['footnotes'])
+            mountain = yaml.safe_load((ROOT / root / 'extra_canonical/shepherd_of_hermas/078.yaml').read_text())
+            assert 'spirit is the Son of God' in mountain['translation']['text']
+            assert any('thirteen or fourteen lines' in n['text'] for n in mountain['translation']['footnotes'])
 
     def test_greek_selection_is_bounded_and_latin_is_not_silently_rewritten(self):
         standard = yaml.safe_load((ROOT / 'translation/extra_canonical/shepherd_of_hermas/113.yaml').read_text())

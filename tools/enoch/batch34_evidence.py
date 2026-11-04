@@ -98,7 +98,7 @@ def verify_batch33_postmap_or_fixed_successor():
 
 
 def assert_current_progress(case, report):
-    """Advance only through the exact applied44 and six-unit B35 successors."""
+    """Advance counts only through verified, exact applied successors."""
     if (t.APPLICATIONS/NAME/'application.json').is_file():
         proof = verify_current()
         from tools.enoch import batch35_evidence as successor
@@ -107,7 +107,15 @@ def assert_current_progress(case, report):
         extended = installed and (t.APPLICATIONS/next_successor.NAME/'application.json').is_file()
         if extended:
             next_successor.verify_current()
-        case.assertEqual(report['current_units_with_imported_review_evidence'], 486 if extended else 485 if installed else 479)
+        from tools.enoch import batch38_evidence
+        added_1_9 = extended and (t.APPLICATIONS/batch38_evidence.NAME/'application.json').is_file()
+        if added_1_9:
+            batch38_evidence.verify_current()
+            row = next(row for row in report['chapters'] if row['chapter'] == 1)
+            case.assertEqual(row['current_units_with_imported_review_evidence'], [1, 3, 4, 5, 6, 7, 8, 9])
+            case.assertFalse(row['selected_edition_chapter_review_complete'])
+        case.assertEqual(report['current_units_with_imported_review_evidence'],
+                         (486 if extended else 485 if installed else 479) + int(added_1_9))
         case.assertEqual(len(report['chapters_with_complete_imported_selected_edition_review']), 37)
         case.assertIn(44, report['chapters_with_complete_imported_selected_edition_review'])
         if installed:

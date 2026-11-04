@@ -135,7 +135,7 @@ def verify_current():
     proof = historical_postmap()
     from tools.enoch import batch37_evidence as successor
     if (t.APPLICATIONS/successor.NAME/'application.json').is_file():
-        current = successor.verify_current()['current_postmap']
+        current = successor.verify_current()['actual_current_postmap']
         name = successor.NAME
     else:
         t.verify(t.APPLICATIONS/NAME,applied=True,check_corpus=True)

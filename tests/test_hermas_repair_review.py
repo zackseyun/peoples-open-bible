@@ -11,6 +11,18 @@ def paths(n):
 
 
 class RepairReviewTests(unittest.TestCase):
+    def test_explicit_evidence_is_hash_pinned_and_not_external_authentication(self):
+        path=ROOT/'sources/shepherd_of_hermas/repair/twelve-witness-extracts-20261104.v1.json'
+        body,_=review.prepare(*paths(43),evidence_path=path)
+        context=json.loads(body['messages'][1]['content'])
+        evidence=context['supplemental_evidence']
+        self.assertEqual(evidence['file_sha256'],review.sha(path.read_bytes()))
+        self.assertIn('excerpts',evidence['record'])
+        self.assertIn('do not authenticate unseen images',body['messages'][0]['content'])
+        with self.assertRaises(ValueError):review.load_evidence(ROOT/'DOCTRINE.md')
+        with patch.object(Path,'read_bytes',return_value=b'{"version":1}'):
+            with self.assertRaisesRegex(ValueError,'Invalid supplemental evidence'):review.load_evidence(path)
+
     def test_legacy_reader_does_not_select_source_by_current_sequence(self):
         docs,manifest=review.load_pair(*paths(35))
         self.assertEqual(docs[0]['source']['unit_id'],'M.8')

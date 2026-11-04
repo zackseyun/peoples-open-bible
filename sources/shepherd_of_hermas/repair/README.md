@@ -299,3 +299,29 @@ now have English drafts, not independent review or reader/artwork migration.
 Thirty-seven of the44 whole ending chapters still need drafts, alongside
 earlier English repairs. Bracketed editorial supplies and conjectures remain
 visible in footnotes, including the supplied death penalty in S.9.xxxii.4.
+
+
+## Greek/mixed-source drafts through the white mountain
+
+`white-mountain-drafts-20261103.v1.json` records new standard/simplified
+flat105–107 for S.9.xxviii–xxx. Greek changes to edited Latin at xxx.3;
+the English preserves that declared basis. Amherst h is consulted only
+for its overlapping fragment. It cannot settle the conjectural inventi
+or the separate dagger-marked Latin crux in xxx.5. Those uncertainties,
+the Greek fruit adjective variant and restored blessing remain explicit.
+
+Ten of the44 wholly omitted ending chapters now have drafts, leaving34;
+this does not complete earlier English repairs, independent review,
+reader/artwork migration or publication. The source body is unchanged.
+
+
+## Cambridge Latin witness identity
+
+`cambridge-identity-20261103.v1.json` checks the primary1856 library
+catalogue entries186–187: Hermas is Dd.IV.11, ff.68a–90a, with the
+reported ending inside S.10.iii.2. Dd.IV.12 is a different Jerome volume.
+The former inventory label is corrected, retaining its legacy ID as an
+alias for traceability, not an additional witness. The S.10.ii.4 faciunt
+report still needs direct manuscript collation; catalogue identity alone
+does not verify that reading. Draft112 footnotes/provenance reflect this
+resolution, with English text unchanged.

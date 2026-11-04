@@ -66,8 +66,9 @@ translation:
     text: The working edition prints et faciunt adversus illum, “and act against him.” Its apparatus reports
       faciunt in Cambridge Dd.IV.11 and its omission in the other Latin manuscripts, with a larger omission
       explained as a jump between similar endings; Palatina and Ethiopic are cited for comparison. This
-      is an edition report, not direct collation of that manuscript; the shelfmark conflict in the witness
-      inventory remains unresolved.
+      is an edition report, not direct collation of that manuscript; the 1856 Cambridge catalogue, entries186–187,
+      identifies Dd.IV.11 as the Hermas volume and Dd.IV.12 as a different Jerome volume. That resolves
+      the inventory label, not the actual manuscript reading.
 lexical_decisions:
 - source_word: domine
   chosen: Sir
@@ -97,12 +98,15 @@ ai_draft:
   model_id: Codex-interactive
   model_version: not separately recorded
   prompt_id: hermas_source_repair_interactive_simplification_v1
-  prompt_sha256: 113b58473026caebbb091e37e664f6fc32ee243b7f592b910197353300a2f995
+  prompt_sha256: 5a13ce575468c3ae2d050f0617ab77cd03ffab22efb6014613730afe9d7ae410
   timestamp: '2026-11-04T03:54:34Z'
   output_hash: f50e6775ff6ea2fa0403143771cf78695152972cf243f1a44c0927ba093b4007
   zone1_sources_at_draft:
   - Lightfoot 1891 Hermas (normalized OCR) @89f8ab6d55
   - Manual repair metadata where noted @89f8ab6d55
+  - 'Cambridge University Library, A Catalogue of the Manuscripts, vol.I (1856), printed215–216, entries186–187,
+    physical235–236: Dd.IV.11 has Hermas ff.68a–90a ending in S.10.iii.2; Dd.IV.12 has Jerome. Identity
+    checked in catalogue, not direct manuscript-image collation.'
   zone2_consults_known:
   - Holmes / Lake / Lightfoot Apostolic Fathers editions and notes (consult only)
   - Modern Hermas commentary and translation literature (consult only)
@@ -111,7 +115,9 @@ ai_draft:
     reviewer.
   independent_review: false
   output_hash_scope: Final simplified translation.text string.
-  prompt_hash_scope: Recorded source bundle plus simplification instruction and standard draft.
+  prompt_hash_scope: Recorded source bundle, existing simplification context where applicable, and explicitly
+    recorded primary catalogue evidence added during provenance correction.
+  provenance_updated: '2026-11-03: catalogue identity and footnote corrected; translation.text unchanged.'
 status: draft
 theological_decisions:
 - issue: Visionary authority and moral responsibility
@@ -123,6 +129,8 @@ source_grounding:
   source_language_review: Latin draft; independent review pending
   reserved_reader_slot: 112
   reader_paragraph_migration: pending; no nested reader/artwork records generated
+  additional_evidence_records:
+  - sources/shepherd_of_hermas/repair/cambridge-identity-20261103.v1.json
 cross_check:
   status: needs_review
 source_language_review: pending independent review

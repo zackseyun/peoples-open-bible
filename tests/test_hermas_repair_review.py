@@ -48,6 +48,10 @@ class RepairReviewTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'contradicts'):review.validate_result(bad,docs)
         bad=copy.deepcopy(good);bad['editions'][0].update(verdict='revise',findings=[dict(source_quote='invented Greek',english_quote='',issue='omission',suggested_revision='change',severity='major')])
         with self.assertRaisesRegex(ValueError,'source quote'):review.validate_result(bad,docs)
+        bad=copy.deepcopy(good);bad['editions'][0].update(verdict='revise',findings=[dict(source_quote='ῥήματα δικαιοσύνης',english_quote='invented metadata',issue='bad note',suggested_revision='change',severity='minor')])
+        with self.assertRaisesRegex(ValueError,'text or metadata'):review.validate_result(bad,docs)
+        bad['editions'][0]['findings'][0]['english_quote']=docs[0]['lexical_decisions'][0]['rationale']
+        review.validate_result(bad,docs)
 
 
 if __name__=='__main__':unittest.main()

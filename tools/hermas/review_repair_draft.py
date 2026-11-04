@@ -70,7 +70,7 @@ def prepare(standard_path,simplified_path):
     context=dict(source=docs[0]['source'],editions={kind:{k:doc.get(k) for k in ['id','reference','translation','lexical_decisions','theological_decisions','simplification_decisions']} for kind,doc in zip(['standard','simplified'],docs)},input_manifest=manifest)
     system='''Independently review both supplied English editions against every clause of the selected Hermas source. Do not assume their wording or notes are correct. You are a separate model reviewer, not an independent scholar or manuscript photographer. No external manuscript images are supplied. Evaluate faithfulness to the selected working source and honest disclosure of the stated alternatives; do not certify unseen editions, handwriting or exhaustive collation. Distinguish editorial supplements from preserved text. Do not replace a disclosed working reading merely because a variant exists. Apply current project policy, including reader-facing servant and contextual repentance. Do not add doctrinal conditions, erase difficult assertions, harmonize witnesses, or weaken negation or necessity. Findings must name a concrete fidelity defect, not a preferred style. Review the simplified edition independently against the source as well as the standard. Proposed replacements require fresh review; no English is automatically accepted or rewritten.
 
-Return a JSON object with editions=[{edition:standard|simplified,verdict:accept|revise|blocked,checks:{complete_coverage:boolean,no_added_claims:boolean,names_and_negations:boolean,speaker_attribution:boolean,source_choices_and_notes:boolean,terminology_policy:boolean},findings:[{source_quote:exact selected source quotation,english_quote:exact draft quotation or empty for omission,issue:specific defect,suggested_revision:proposed correction or evidence needed,severity:blocking|major|minor}]}],summary:string. Include each edition exactly once. Accept requires all checks true and no findings; otherwise use revise or blocked. Do not claim unique interpretation or scholarly certification.
+Return a JSON object with editions=[{edition:standard|simplified,verdict:accept|revise|blocked,checks:{complete_coverage:boolean,no_added_claims:boolean,names_and_negations:boolean,speaker_attribution:boolean,source_choices_and_notes:boolean,terminology_policy:boolean},findings:[{source_quote:exact selected source quotation,english_quote:exact quotation from the supplied English text, notes or lexical/theological metadata, or empty for omission,issue:specific defect,suggested_revision:proposed correction or evidence needed,severity:blocking|major|minor}]}],summary:string. Include each edition exactly once. Accept requires all checks true and no findings; otherwise use revise or blocked. Do not claim unique interpretation or scholarly certification.
 
 Current project policy:
 '''+(ROOT/'DOCTRINE.md').read_text()
@@ -93,7 +93,15 @@ def validate_result(result,docs):
             if not all(isinstance(x,str) for x in finding.values()):raise ValueError('Invalid finding fields')
             if finding['severity'] not in ['blocking','major','minor']:raise ValueError('Invalid finding severity')
             if not finding['source_quote'] or finding['source_quote'] not in doc['source']['text']:raise ValueError('Finding source quote is not in selected source')
-            if finding['english_quote'] and finding['english_quote'] not in doc['translation']['text']:raise ValueError('Finding English quote is not in reviewed draft')
+            def strings(value):
+                if isinstance(value,str):yield value
+                elif isinstance(value,list):
+                    for child in value:yield from strings(child)
+                elif isinstance(value,dict):
+                    for child in value.values():yield from strings(child)
+            quoted_fields={k:doc.get(k) for k in ['translation','lexical_decisions','theological_decisions','simplification_decisions']}
+            if finding['english_quote'] and not any(finding['english_quote'] in s for s in strings(quoted_fields)):
+                raise ValueError('Finding English quote is not in reviewed text or metadata')
 
 def main():
     ap=argparse.ArgumentParser(description=__doc__)

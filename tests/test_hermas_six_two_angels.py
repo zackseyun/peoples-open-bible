@@ -6,6 +6,7 @@ import unittest
 import yaml
 from tools import shepherd_of_hermas as hermas
 from tools import draft_shepherd_of_hermas as drafting
+from tools import reorientation_policy as prior
 
 ROOT=Path(__file__).resolve().parents[1]
 REPAIR=ROOT/'sources/shepherd_of_hermas/repair'
@@ -64,7 +65,9 @@ class SixTwoAngelsTests(unittest.TestCase):
         for path,entry in archive['nested_unchanged'].items():
             assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==entry['file_sha256']
         neighbor=archive['unchanged_neighbor']
-        assert hashlib.sha256((ROOT/neighbor['path']).read_bytes()).hexdigest()==neighbor['file_sha256']
+        later=json.loads((REPAIR/'legacy34-before-fear-review-20261104.v1.json').read_text())
+        assert later['standard_flat_before_file_sha256']==neighbor['file_sha256']
+        assert prior.digest(later['standard_flat'])=='23d6ce23f208da6515d9befda430fcb573324713b6128e41eb1996964453d71c'
         assert yaml.safe_load((ROOT/neighbor['path']).read_text())['source']['unit_id']=='M.7'
         row=audit['english_drafts'][0]
         standard=yaml.safe_load((ROOT/row['standard_path']).read_text())

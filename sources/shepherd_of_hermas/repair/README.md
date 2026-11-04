@@ -633,3 +633,23 @@ acute in good at ii.8. Normalization reproduces those two corrections only.
 They are transcription repairs, not additional manuscript selections.
 Independent English review, full photograph adjudication, reader/artwork
 reconciliation and whole-book publication remain pending.
+
+
+## Mandate 7 fear teaching and Clement parallels
+
+`seven-fear-witness-comparison-20261104.v1.json` records that the standard
+source and English already cover all five paragraphs. English words are
+unchanged; new notes distinguish the fear contrast, both evil/good branches,
+editor-supplied Latin text and the singular Greek versus differing Latin
+endings. A complete five-paragraph simplified flat draft is added. Ten nested
+records remain unchanged. This bounded comparison leaves the full source
+collation queue and independent-review status pending.
+
+Clement's Stromata II.12, Stählin1906 printed143 lines5–10, paraphrases the
+fear teaching with additional building-up/love explanation. The adjacent
+lines10–13 and II.13 discussion on143–144 provide further indirect evidence
+for Mandate4ii/iii. These are paraphrase/discussion, not continuous Hermas
+manuscript readings, and do not independently decide the exact iii.6 negation.
+No Clement expansion or editorially supplied Latin wording enters normalized
+Hermas Greek. The final in-them interpretation is retained with an explicit
+in-him alternative; independent interpretation review remains required.

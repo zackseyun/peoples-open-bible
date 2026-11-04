@@ -26,15 +26,17 @@ FOUNDATION_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/foundation-drafts-
 
 ROD_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/rod-mountain-drafts-20261104.v1.json'
 
+FINAL_RECORD = ROOT / 'sources/shepherd_of_hermas/repair/final-omitted-drafts-20261104.v1.json'
+
 
 class HermasEndingDraftTests(unittest.TestCase):
     def test_ending_drafts_have_current_sources_and_explicit_review_limits(self):
-        for record, slots in [(RECORD, {113, 114}), (TEN_RECORD, {108, 109, 110, 111, 112}), (MOUNTAIN_RECORD, {105, 106, 107}), (SERVICE_RECORD, {102, 103, 104}), (FORGIVENESS_RECORD, {99, 100, 101}), (ACCOUNTABILITY_RECORD, {95, 96, 97, 98}), (SEAL_RECORD, {91, 92, 93, 94}), (GATE_RECORD, {87, 88, 89, 90}), (STONE_RECORD, {83, 84, 85, 86}), (FOUNDATION_RECORD, {79, 80, 81, 82}), (ROD_RECORD, {75, 76, 77, 78})]:
+        for record, slots in [(RECORD, {113, 114}), (TEN_RECORD, {108, 109, 110, 111, 112}), (MOUNTAIN_RECORD, {105, 106, 107}), (SERVICE_RECORD, {102, 103, 104}), (FORGIVENESS_RECORD, {99, 100, 101}), (ACCOUNTABILITY_RECORD, {95, 96, 97, 98}), (SEAL_RECORD, {91, 92, 93, 94}), (GATE_RECORD, {87, 88, 89, 90}), (STONE_RECORD, {83, 84, 85, 86}), (FOUNDATION_RECORD, {79, 80, 81, 82}), (ROD_RECORD, {75, 76, 77, 78}), (FINAL_RECORD, {71, 72, 73, 74})]:
             audit = json.loads(record.read_text())
             assert not audit['complete']
             assert not audit['independent_review']
             assert not audit['legacy_reader_ids_changed']
-            assert audit['source_body_changed'] is (record in {ACCOUNTABILITY_RECORD, STONE_RECORD, ROD_RECORD})
+            assert audit['source_body_changed'] is (record in {ACCOUNTABILITY_RECORD, STONE_RECORD, ROD_RECORD, FINAL_RECORD})
             assert {r['reader_slot'] for r in audit['english_drafts']} == slots
             for row in audit['english_drafts']:
                 source = hermas.load_normalized_unit(row['unit_id'])
@@ -181,6 +183,34 @@ class HermasEndingDraftTests(unittest.TestCase):
             mountain = yaml.safe_load((ROOT / root / 'extra_canonical/shepherd_of_hermas/078.yaml').read_text())
             assert 'spirit is the Son of God' in mountain['translation']['text']
             assert any('thirteen or fourteen lines' in n['text'] for n in mountain['translation']['footnotes'])
+
+    def test_final_omitted_drafts_keep_selected_noun_and_witness_gaps_explicit(self):
+        audit = json.loads((ROOT / 'sources/shepherd_of_hermas/repair/final-omitted-witness-comparison-20261104.v1.json').read_text())
+        row = audit['selected_readings'][0]
+        assert row['source_before'].count(row['old_printed_clause']) == 1
+        assert row['source_after'] == row['source_before'].replace(row['old_printed_clause'], row['new_selected_clause'])
+        assert hermas.load_normalized_unit(row['unit_id']).text == row['source_after']
+        for phase in ('before', 'after'):
+            assert hashlib.sha256(row['source_' + phase].encode()).hexdigest() == row[phase + '_source_sha256']
+        assert row['old_printed_clause'] in ' '.join(hermas.raw_page_path(382).read_text().split())
+        all_slots = []
+        for file in ROOT.joinpath('sources/shepherd_of_hermas/repair').glob('*drafts-*.json'):
+            if file.name in {r.name for r in (TEN_RECORD, MOUNTAIN_RECORD, SERVICE_RECORD, FORGIVENESS_RECORD, ACCOUNTABILITY_RECORD, SEAL_RECORD, GATE_RECORD, STONE_RECORD, FOUNDATION_RECORD, ROD_RECORD, FINAL_RECORD)}:
+                all_slots.extend(r['reader_slot'] for r in json.loads(file.read_text())['english_drafts'])
+        all_slots.extend(r['reader_slot'] for r in json.loads(RECORD.read_text())['english_drafts'])
+        assert sorted(all_slots) == list(range(71, 115))
+        for root in ('translation', 'translation_simplified'):
+            teaching = yaml.safe_load((ROOT / root / 'extra_canonical/shepherd_of_hermas/072.yaml').read_text())
+            assert 'repentance of sinners brings life' in teaching['translation']['text']
+            assert 'renew their spirits' in teaching['translation']['text']
+            assert 'receiving a seal from you' in teaching['translation']['text']
+            assert 'Those who will not repent have lost their life' in teaching['translation']['text']
+            notes = {n['marker']: n['text'] for n in teaching['translation']['footnotes']}
+            assert 'blaspheme his law' in notes['b']
+            assert 'whole noun is not intact ink' in notes['h']
+            proportions = yaml.safe_load((ROOT / root / 'extra_canonical/shepherd_of_hermas/074.yaml').read_text())
+            assert 'two-thirds green and one-third dry' in proportions['translation']['text']
+            assert any('cannot decide the proportions' in n['text'] for n in proportions['translation']['footnotes'])
 
     def test_greek_selection_is_bounded_and_latin_is_not_silently_rewritten(self):
         standard = yaml.safe_load((ROOT / 'translation/extra_canonical/shepherd_of_hermas/113.yaml').read_text())

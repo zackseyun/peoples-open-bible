@@ -497,3 +497,22 @@ unchanged. The new drafts expose the name/law variant, Michigan’s shorter
 rod list and omitted negative condition, and the version-supported green/dry
 reversal that Michigan’s gap cannot decide. P.Oxy1599 remains a reported lead
 awaiting direct primary-edition comparison, not a freshly collated witness.
+
+
+## Vision 4.ii missing dialogue and warning
+
+`vision-four-dialogue-20261104.v1.json` restores all six historical paragraphs
+in flat standard reader slot 023 and a new flat simplified draft. The former
+three-paragraph English joined the opening of paragraph 2 to the ending of
+paragraph 5, losing the church identification, beast dialogue and warning’s
+conditions. Prior flat and six nested records are preserved in
+`legacy23-before-dialogue-repair-20261104.v1.json`. Nested reader/artwork
+migration remains pending, with the malformed paragraph mapped explicitly.
+
+Renewed print review corrects an earlier transcription’s singular beast to
+plural beasts. The bounded name selection follows Athos Thegri against the
+printed Segri conjecture, with corrected Sinaiticus’s corresponding spelling
+and its disturbed earlier form distinguished. Primary Sinaiticus project XML
+23.1–6 also supplies substantive white-hands and holy-angel/name alternatives.
+No modern XML is vendored and no full manuscript photograph collation or
+independent English review is claimed.

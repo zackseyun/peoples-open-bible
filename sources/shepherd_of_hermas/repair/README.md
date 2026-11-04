@@ -480,3 +480,20 @@ The Spirit/Son identification and all twelve mountain descriptions remain.
 Forty of44wholeomittedendingchapters now have drafts;4remain. Full source
 collation, earlier English repairs, independent review, reader/artwork
 migration and publication remain incomplete.
+
+
+## Last four omitted ending drafts
+
+`final-omitted-drafts-20261104.v1.json` records flat 071–074, S.8.v–viii:
+23 paragraphs per edition. All 44 whole chapters omitted after the original
+cutoff now have standard and simplified flat drafts. They remain drafts with
+independent review and reader/artwork migration pending. This milestone does
+not certify the whole source or complete the earlier English repairs.
+
+`final-omitted-witness-comparison-20261104.v1.json` archives the exact
+S.8.vi.6 sins/sinners noun selection: Athos reads sinners; Michigan partly
+preserves the noun, with its ending restored. The 1891 historical wording is
+unchanged. The new drafts expose the name/law variant, Michigan’s shorter
+rod list and omitted negative condition, and the version-supported green/dry
+reversal that Michigan’s gap cannot decide. P.Oxy1599 remains a reported lead
+awaiting direct primary-edition comparison, not a freshly collated witness.

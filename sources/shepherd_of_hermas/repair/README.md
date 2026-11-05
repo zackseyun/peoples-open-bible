@@ -2116,3 +2116,30 @@ YAML guards,100structured repair payload/source/base hash checks and git diff
 check pass. Both remain draft/needs_review with independent review false. Other
 collation, earlier English repairs, nested reader/artwork migration and
 publication remain unfinished.
+
+## Second Mandate primary comparison before English repair
+
+`second-mandate-primary-comparison-20261105.v1.json` records bounded
+comparison of all seven paragraphs in the selected print, Athos diplomatic
+edition, official layered Sinaiticus XML, Vulgata, Palatina, and the Ethiopic
+edition's mediated Latin rendering. P.Oxy.4706 fragment8 adds limited evidence
+for parts of paragraphs4–5. The record preserves source and consultation hashes;
+it does not change Greek selection, English, policy pins, or nested readers.
+
+Sinaiticus global27.7 contains only the final `antos` fragment and punctuation.
+The XML marks a two-line gap immediately before the verse element, outside
+that element. Reading the verse extraction alone loses this context. This
+fragment cannot attest the whole paragraph, its household repentance, or the
+selected conjectural heart wording. No new photograph-based diagnosis of the
+gap's cause is claimed. The selected print identifies heart-your as conjectural,
+brackets your, reports Athos innocence/harmlessness, and distinguishes versional
+evidence. The Ethiopic edition's proposed negative for needy recipients is an
+editorial correction, not a preserved negative silently shared by all witnesses.
+
+The papyrus editor's inferred absence of repeated give-to-all depends on line
+reconstruction. Its from-preposition is restored, not surviving ink. The
+selected repeated instruction remains. P.Oxy.1172 and Berlin5513 concern
+Similitude2 rather than this Mandate and are excluded. Reported Antiochus and
+Pseudo-Athanasius quotation leads remain unchecked. English repair, independent
+review, further manuscript comparison, reader/artwork migration and publication
+remain pending.

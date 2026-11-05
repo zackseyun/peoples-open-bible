@@ -966,3 +966,10 @@ migration, artwork and publication remain unfinished. The earlier comparison
 queue now contains 34 source-collation sections and 12 repaired-source comparison
 sections (46 total); these draft repairs do not certify exhaustive collation.
 
+
+The exact final050files passed a fresh Azure model review (both accept), with
+request/raw response/review/receipt retained in `model_reviews/legacy050-20261104-r1`.
+All105tests (85Hermas+20contextual),397policy checks,439/398YAML reader guards
+and66source/payload/base hash checks pass. No397policy record contains flat050.
+Model acceptance is limited to the supplied working source and attributed
+evidence; it does not replace independent scholarship or photo authentication.

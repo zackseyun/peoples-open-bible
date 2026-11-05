@@ -81,7 +81,7 @@ HERMAS_FIRST_HOUSEHOLD_FOLLOWUP_SHA256 = 'd1ce1ea7460c5a98494725fc2d53402bddfc41
 
 HERMAS_SECOND_WARNING = 'translation/extra_canonical/shepherd_of_hermas/006.yaml'
 HERMAS_SECOND_WARNING_FOLLOWUP = 'sources/shepherd_of_hermas/repair/contextual-policy-second-warning-followup-20261104.v1.json'
-HERMAS_SECOND_WARNING_FOLLOWUP_SHA256 = '8c52e28adb07d6487e63e0013afd512ff9802cb274dbd63471b536e99b89032c'
+HERMAS_SECOND_WARNING_FOLLOWUP_SHA256 = '1a45efce88bcf8305cf79a8324b02eff6a50e49b6377f8aebc6a603766ed73a4'
 
 def historical_view(path, doc):
     """Validate one exact later source repair before projecting its history.

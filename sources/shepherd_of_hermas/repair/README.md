@@ -1095,3 +1095,36 @@ and69source/payload/base hash checks pass. Targeted tests were rerun after
 the note-only correction. Flat053 is not in the397contextualpolicyplan.
 No source extent, whole-book completeness or independent scholarly review
 is inferred from these checks.
+
+`six-death-renewal-restoration-20261104.v1.json` restores the actual English
+omission at S.6.ii.1 after the first question/answer through the end of ii.3.
+Standard and simplified reader055 now contain all six historical paragraphs;
+ii.4–6 already existed and are not counted as new extent. Reader identity
+HERM.S.6.ii remains; its historical source sequence is62. The complete prior
+flat record, unchanged nested records and neighbor hashes are archived.
+The normalized source is unchanged. Flat054 alignment remains pending.
+
+The missing angel explanation, living God's commandments, no repentance of
+life, name-blasphemy and life-is-death statements are restored alongside the
+second group's hope of renewal and the explicit eternal destruction contrast.
+Earlier very bitter look, corruption, final at ease wording, and the
+contextual repentance choice remain. The immutable397record terminology
+plan is preserved with a complete-record, separately pinned historical
+follow-up for055; changed source, English or notes cannot pass that pin.
+
+`six-death-renewal-witness-extracts-20261104.v1.json` records direct printed
+comparison of LH1891physical370–371, Michigan printed63–67, Vulgata88–89 and
+Palatina163–165. Notes disclose Michigan's different first verb and added
+description, active blasphemy accusation and shorter death formula. Palatina's
+printed some-to-death is an editorial addition absent its codex and cannot
+be counted as independent manuscript ink. Critical brackets and damaged or
+supplied letters remain distinguished. No new source selection is made.
+Seven sections now await repaired-source comparison, alongside34sections
+still requiring broader source collation. All draft/review/migration and
+publication requirements remain open until independently verified.
+
+The exact final055 pair passed Azure r1 review (both accept), with request,
+raw response and input/evidence receipts retained. All114targeted tests
+(94Hermas+20contextual),397policy checks,439/402YAML corpus guards and
+70payload/source/base checks pass. Model acceptance does not certify
+independent scholarship, complete collation, reader migration or publication.

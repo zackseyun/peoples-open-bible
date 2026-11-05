@@ -1196,3 +1196,9 @@ the specific new S8i repair identity; accepted059r2input hashes stay exact.
 Five sections remain in repaired-source comparison;34still require broader
 source collation. Independent scholarship, other witnesses, nested reader
 and artwork migration, and whole-book publication remain pending.
+
+The exact final060 pair passed Azure r1 review (both accept), with raw
+request/response and input/evidence hash receipts retained. All120targeted
+tests (100Hermas+20contextual),397policy checks,439/404YAMLcorpus guards
+and72payload/source/base checks pass. This does not certify independent
+scholarship, full manuscript collation, reader migration or publication.

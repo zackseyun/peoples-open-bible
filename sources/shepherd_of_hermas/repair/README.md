@@ -1620,3 +1620,32 @@ final changes;87payload/source/base hashes and two focused tests also pass.
 unchanged21contextual tests passed at006. The34broader source-collation flags,
 further witness comparisons, reader/artwork migration, whole-book verification
 and publication remain unfinished.
+
+`tower-stones-alignment-20261104.v1.json` aligns V.3.ii in nine numbered
+paragraphs and adds simplified010. All nine historical paragraphs already
+existed. The printed sympselion was imported as symplesion, leading to an
+unsupported plaited-bench material claim. Raw320, normalized and attached
+source now match the print; the English and lexical decision read bench.
+The prior full flat record, raw page and eighteen unchanged nested records
+are archived. The shared-leaf regression proves that009's exact repaired
+raw320 is010's input, then allows only this one audited print correction.
+The accepted009 translation/evidence and normalized body are unchanged.
+This adds no manuscript-selection locus or English extent.
+
+`tower-stones-witness-extracts-20261104.v1.json` compares LH1891physical320–321,
+Athos PlateII, Sinaiticus10.1–9, Vulgata printed14–16, Palatina printed33/35,
+and d’Abbadie1860's Latin-rendered Ethiopic printed118–119. It distinguishes
+Sinaiticus's two first-hand sixty counts corrected by ca to six, unreadable
+first-hand letters and S1 readings, the selected not-double-minded qualifier
+from the Ethiopic rendering's positive doubtful wording, and the editor's
+comment about a lost negative. The latter is not preserved negative evidence.
+Bracketed You, different rod descriptions, stone categories, road/no-road
+readings and the added Sinaiticus burning clause are disclosed. Equal gifts/
+promises, definite future cleansing, all stone groups and inability despite
+desire remain. No direct Geʿez or original-photograph collation is claimed.
+
+Azure010r1 accepts both editions; exact current input/evidence hashes match.
+All131Hermas tests,397policy,439/420YAML corpus guards and88payload/source/
+base hashes pass. The unchanged21contextual tests passed at006. There remain
+34broader source-collation flags. Further manuscript/version/excerpt comparison,
+reader/artwork migration, whole-book verification and publication are unfinished.

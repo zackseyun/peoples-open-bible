@@ -5,12 +5,18 @@ from pathlib import Path
 import re
 import unittest
 from tools import shepherd_of_hermas as hermas
+from tools import draft_shepherd_of_hermas as draft
 from tools.hermas import review_repair_draft as review
 ROOT=Path(__file__).resolve().parents[1]
 P=ROOT/'sources/shepherd_of_hermas/repair'
 PATHS=[ROOT/r/'extra_canonical/shepherd_of_hermas/022.yaml' for r in ['translation','translation_simplified']]
 
 class FourthVisionBeastTests(unittest.TestCase):
+    def test_reviewed_pair_obeys_structured_payload_contract(self):
+        docs,_=review.load_pair(*PATHS)
+        for doc in docs:
+            draft.validate_tool_input(dict(english_text=doc['translation']['text'], translation_philosophy=doc['translation']['philosophy'], lexical_decisions=doc['lexical_decisions'], footnotes=doc['translation']['footnotes'], theological_decisions=doc['theological_decisions']))
+
     def test_complete_clauses_and_notes_at_actual_passages(self):
         docs,_=review.load_pair(*PATHS)
         for doc in docs:

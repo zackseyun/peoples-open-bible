@@ -97,7 +97,7 @@ HERMAS_FOUR_FEET_REVELATION_FOLLOWUP_SHA256 = 'df635417e1791657c3424ade0d6498d44
 
 HERMAS_FOURTH_VISION_BEAST = 'translation/extra_canonical/shepherd_of_hermas/022.yaml'
 HERMAS_FOURTH_VISION_BEAST_FOLLOWUP = 'sources/shepherd_of_hermas/repair/contextual-policy-fourth-vision-beast-followup-20261105.v1.json'
-HERMAS_FOURTH_VISION_BEAST_FOLLOWUP_SHA256 = '8e2b89e6ec7247443346296462bf1f7e59a8e8ec8f0917dfdf869ef44f98a411'
+HERMAS_FOURTH_VISION_BEAST_FOLLOWUP_SHA256 = '346dbeb1bf6b02aeb66a95f6518895fbb4fa5ffa720539aff36470528211dee4'
 
 def historical_view(path, doc):
     """Validate one exact later source repair before projecting its history.

@@ -1058,3 +1058,40 @@ the targeted tests/hash/reader checks passed again. Flat052 is not a member
 of the397contextualpolicyplan. Exact earlier049/050/051accepted files remain
 unchanged. Model review does not certify independent scholarship or the
 whole-book edition.
+
+## Similitude5.vii flesh and healing alignment, 2026-11-04
+
+`five-flesh-healing-alignment-20261104.v1.json` aligns the standard reader053
+and adds a complete simplified draft to all four historical paragraphs,
+retaining HERM.S.5.vii and current source sequence60. The old English already
+contained the complete passage across four differently split reader
+paragraphs: no new chapter or passage extent is claimed. The full old flat
+record and eight unchanged nested records are preserved in
+`legacy53-before-flesh-healing-20261104.v1.json` with the paragraph crosswalk.
+
+The repair retains the established clean/clean repetition and working flesh
+warning, removes a misattached previous-rendering note, and replaces vague
+variant notes with bounded primary evidence. Michigan printed59 partly
+corroborates flesh in the second warning, against the suggested Spirit
+emendation. Vulgata printed85 has both body and HolySpirit, with other forms
+reported in its apparatus; Palatina printed159 has body. The full conditional
+healing promise remains, with explicit differences between Michigan’s shorter
+wording/pantos, Vulgata’s Almighty and Palatina’s perhaps. Brackets, the dagger,
+negatives and original source bodies remain unchanged.
+
+`five-flesh-healing-witness-extracts-20261104.v1.json` records LH1891physical368–369,
+Michigan printed59–60, Vulgata85–86 and Palatina159–161. Direct manuscript
+photos, remaining versions/excerpts and broader collation remain pending.
+The source-collation queue deliberately retains S5.vii; bounded draft
+availability is recorded separately. Counts remain34source-collation plus
+8repaired-source-comparison sections (42total),14selectedloci13overrideunits.
+The old052neighbor053 guard now checks the exact old053 archive hash and the
+specific new S5.vii alignment identity; it does not broadly exempt changes.
+
+The exact final053files passed fresh Azure r2review (both accept); r1’s copied
+simplified-idiom-note finding and both raw review receipts are preserved.
+All111tests(91Hermas+20contextual),397policy checks,439/401YAML reader guards
+and69source/payload/base hash checks pass. Targeted tests were rerun after
+the note-only correction. Flat053 is not in the397contextualpolicyplan.
+No source extent, whole-book completeness or independent scholarly review
+is inferred from these checks.

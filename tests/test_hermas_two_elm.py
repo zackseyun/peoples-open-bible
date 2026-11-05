@@ -20,7 +20,12 @@ class TwoElmTests(unittest.TestCase):
     def test_exact_archives_donor_and_prior_acceptance_preserved(self):
         a=json.loads((P/'legacy48-49-before-elm-restoration-20261104.v1.json').read_text());self.assertEqual(len(a['nested_unchanged']),28)
         for path,item in a['nested_unchanged'].items():self.assertEqual(hashlib.sha256((ROOT/path).read_bytes()).hexdigest(),item['file_sha256'])
-        donor='translation/extra_canonical/shepherd_of_hermas/049.yaml';self.assertEqual(hashlib.sha256((ROOT/donor).read_bytes()).hexdigest(),a['flats'][donor]['file_sha256'])
+        donor='translation/extra_canonical/shepherd_of_hermas/049.yaml'
+        later=json.loads((P/'legacy49-before-trees-restoration-20261104.v1.json').read_text())
+        self.assertEqual(later['standard_flat'],dict(path=donor,**a['flats'][donor]))
+        current=yaml.safe_load((ROOT/donor).read_text())
+        self.assertEqual(current['source_grounding']['evidence_record'],'sources/shepherd_of_hermas/repair/three-four-trees-restoration-20261104.v1.json')
+        self.assertEqual([s['unit_id'] for s in current['source']['source_unit_spans']],['S.3','S.4'])
         receipt=json.loads((P/'model_reviews/legacy047-20261104-r1/receipt.json').read_text())
         for x in receipt['input_manifest']:self.assertEqual(hashlib.sha256((ROOT/x['path']).read_bytes()).hexdigest(),x['file_sha256'])
         std=yaml.safe_load((ROOT/'translation/extra_canonical/shepherd_of_hermas/048.yaml').read_text());simple=yaml.safe_load((ROOT/'translation_simplified/extra_canonical/shepherd_of_hermas/048.yaml').read_text());payload=dict(english_text=std['translation']['text'],translation_philosophy=std['translation']['philosophy'],lexical_decisions=std['lexical_decisions'],footnotes=std['translation']['footnotes'],theological_decisions=std['theological_decisions'])

@@ -43,14 +43,22 @@ def load_pair(standard_path, simplified_path):
         if doc['id']!='HERM.'+uid:raise ValueError('Record identity does not match source')
         source=doc['source']['text'];spans=doc['source'].get('source_unit_spans')
         if spans:
-            if spans[0]['unit_id']!=uid:raise ValueError('Compound leading source identity differs')
-            texts=[];offset=0
+            anchor=doc['source'].get('identity_anchor_unit_id')
+            ids=[s['unit_id'] for s in spans]
+            if len(ids)!=len(set(ids)):raise ValueError('Duplicate compound source unit')
+            if anchor is not None and (anchor!=uid or ids.count(anchor)!=1):
+                raise ValueError('Invalid explicit compound identity anchor')
+            if spans[0]['unit_id']!=uid and anchor!=uid:
+                raise ValueError('Compound leading source identity differs')
+            texts=[];offset=0;previous_sequence=None
             for span in spans:
                 unit=hermas.load_normalized_unit(span['unit_id'])
                 if not unit:raise ValueError('Unknown compound source unit')
+                if span.get('current_source_sequence')!=unit.sequence or (previous_sequence is not None and unit.sequence!=previous_sequence+1):
+                    raise ValueError('Compound source order differs from historical sequence')
                 if (span['start']!=offset or span['length']!=len(unit.text) or span['text_sha256']!=sha(unit.text)):
                     raise ValueError('Compound source span differs from normalized source')
-                texts.append(unit.text);offset+=len(unit.text)+2
+                texts.append(unit.text);offset+=len(unit.text)+2;previous_sequence=unit.sequence
             if source!='\n\n'.join(texts):raise ValueError('Incomplete compound source')
         else:
             unit=hermas.load_normalized_unit(uid)

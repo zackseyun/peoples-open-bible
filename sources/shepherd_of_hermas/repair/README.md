@@ -804,3 +804,42 @@ and migrate the nested reader before publishing this range. Historical reader
 IDs and artwork have not been reassigned. The remaining source/translation
 queue is 34 sections needing collation and 17 needing repaired-source comparison;
 whole-book verification and publication remain incomplete.
+
+
+## Similitude 1 boundary and source correction, 2026-11-04
+
+`one-city-restoration-20261104.v1.json` records eleven complete paragraphs per
+flat edition in legacy slot47. The old record began with Mandate12.vi material,
+joined its pure-heart condition to the city teaching, and ended within S1.5.
+Slot48 contained S1.9–11 material alongside S2 and unsupported additions.
+The repair restores S1.1–2, the warning’s continuation, sufficient provision,
+promises conditional on keeping commandments, buying afflicted souls, widows
+and orphans, and the complete closing commands and salvation assertion.
+The old48 donor still needs S2 repair and reader migration before publication.
+
+The physical357 scan exposed an additional transcription error: printed
+διανοεῖται, does not intend, had been replaced by reported Athos δύναται, can.
+The printed body and Hollenberg apparatus attribution are corrected, while the
+Athos alternative is disclosed. Both printed Latin editions have non cogitat.
+This corrects transcription of the edition; it is not a newly chosen manuscript
+reading. Other normalized bodies, including Mandate12.vi, are unchanged.
+Bounded notes expose editorial brackets, actions/possessions, wishes/comes,
+city movement, God/Lord and cheerful/holy differences. Latin traditions remain
+distinct from Greek manuscripts. The Bodmer holding catalogue confirms its
+Hermas text is Visions, despite a secondary guide’s Similitudes label; it is
+not counted as S1 evidence. Leipzig photograph collation remains pending.
+
+The full old47/48 records, raw357 and normalizedS1 are archived in
+`legacy47-48-before-city-restoration-20261104.v1.json`; all16 nested files and
+slot48 remain unchanged. The earlier M12 donor guard now compares that exact
+original record to this subsequent archive and requires the specific S1 repair,
+rather than exempting arbitrary future changes. All12 final M12 review input
+hashes still match their receipts. No397policy record contains flat047.
+
+Separate Azure model review `model_reviews/legacy047-20261104-r1` accepts both
+exact final drafts against the supplied source and located evidence. The
+receipt and raw response are retained; independent scholarly and manuscript
+review remain pending. 79 Hermas tests,20 contextual tests,397policy checks,
+both reader guards(439/395 YAML files),and63 repair hash checks pass. The
+remaining earlier queue is34 sections needing collation plus16 needing
+repaired-source comparison. Full-book verification and publication remain open.

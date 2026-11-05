@@ -1714,3 +1714,38 @@ hashes verified. All135Hermas tests,22contextual-policy tests,397policy
 records,439/422YAML guards and90repair payload/source/base hashes pass.
 The34broader collation flags, remaining witnesses, independent review,
 reader/artwork migration and publication remain unfinished.
+
+
+`wealth-stones-alignment-20261105.v1.json` aligns V.3.vi as seven complete
+paragraphs and adds simplified014. All seven paragraphs already existed.
+The printerfooter20—2 interrupted dia/touto across the323/324 join; raw323
+and normalized/attached source now exclude it. No ancient words were added.
+The old full flat record, fourteen unchanged nested records and raw323 are
+archived. The shared-leaf guard proves013's exact repaired page is014's
+input, then permits only this footer removal. Accepted013 YAML/evidence
+and normalized body are unchanged. No manuscript-selection locus is added.
+
+The bounded evidence compares LH1891printed307–308, Athos PlateIII, official
+Sinaiticus14.1–7, Vulgata20–22, Palatina43/45 and Latin-rendered Ethiopic
+120–121. Newly compared P.Oxy.4706 fragment2 has only central word-parts
+of14.6; its large surrounding restorations and uncertain gar/ti/kai
+reconstructions are distinguished. The Oxford photo-edition match supplies
+no later Lord/Christ title or closing14.7 clause. Athos has Christ in the
+second comparison, Palatina says denyGod, and Sinaiticus omits several
+clauses. The Vulgata righteousness/iniquity supplement is explicitly from
+Palatina, not unbroken Vulgata manuscript evidence. These are disclosed
+without harmonizing the selected source.
+
+Prior serviceable/scabbed/holyones/truncated/captivates/cutback/trimmed/sheds
+choices remain. The contextual passive closing interpretation is retained
+with the active alternative and its uncertainty disclosed. The versions'
+being-of-the-stones formulations are not described as active-use evidence;
+Sinaiticus omits the clause. Plural address and bracketed de are explicit.
+Azure014r1 caught an inherited overgeneralization identifying all remaining
+stones as scabbed; both editions now preserve that subgroup distinction.
+Azure014r2 accepts both editions; exact current YAML/evidence hashes match.
+
+All137Hermas tests,397policy records,439/423YAML guards and91repair
+payload/source/base hashes pass. The unchanged22contextual-policy tests
+passed at013. All34broader collation flags remain; other witnesses,
+independent review, reader/artwork migration and publication are unfinished.

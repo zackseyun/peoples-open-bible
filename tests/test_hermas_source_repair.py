@@ -222,8 +222,8 @@ class HermasSourceRepairTests(unittest.TestCase):
         assert first.text.startswith("Λέγει μοι· Οἴδατε")
         assert first.text.endswith("τὸ δὲ σὸν ἔργον ἐργάζου, καὶ σωθήσῃ.")
         assert second.text.startswith("Περιπατοῦντός μου")
-        assert "πληροφοροῦσι τὰς εὐχὰς αὐτῶν" in second.text
-        assert second.text.endswith("δυνήσονται ἀγαθόν τι ἐργάζεσθαι.")
+        assert "πληροφοροῦσι τὰς ψυχὰς αὐτῶν" in second.text  # enlarged print check reverses erroneous earlier prayer claim
+        assert second.text.endswith("δυνήσεται δια[κ]ονῆσαί τ[ι ἀ]γαθόν.")  # bounded Michigan selection, supplies visible
         assert third_sim.source_pages == [361]
         assert third_sim.text.endswith("ἀλλὰ πάντες ὅμοιοί εἰσιν.")
         assert fourth_sim.text.startswith("1. Ἔδειξέ μοι πάλιν")
@@ -320,7 +320,7 @@ class HermasSourceRepairTests(unittest.TestCase):
 
     def test_primary_scan_restoration_replaces_only_the_five_web_patch_bodies(self):
         overrides = {u.unit_id for u in hermas.load_manual_unit_overrides()}
-        assert overrides == {"V.4.ii", "S.6.iv", "S.8.vi", "S.8.ix", "S.8.x", "S.8.xi", "S.9.iii", "S.9.vi", "S.9.ix", "S.9.xviii"}
+        assert overrides == {"S.2", "V.4.ii", "S.6.iv", "S.8.vi", "S.8.ix", "S.8.x", "S.8.xi", "S.9.iii", "S.9.vi", "S.9.ix", "S.9.xviii"}
         eighth = hermas.load_unit("M.8")
         assert eighth.source_pages == [344, 345, 346]
         assert eighth.text.count("|") == 2

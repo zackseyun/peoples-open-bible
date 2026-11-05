@@ -55,8 +55,14 @@ class SevenHouseholdTests(unittest.TestCase):
         self.assertNotIn('be restored again', donor['translation']['text'])
         for path, item in archive['nested_unchanged'].items():
             self.assertEqual(hashlib.sha256((ROOT / path).read_bytes()).hexdigest(), item['file_sha256'])
+        later = json.loads((P / 'legacy60-before-willow-restoration-20261104.v1.json').read_text())
         for path, item in archive['read_only_donor60'].items():
-            self.assertEqual(hashlib.sha256((ROOT / path).read_bytes()).hexdigest(), item['file_sha256'])
+            self.assertEqual(path, later['standard_flat']['path'])
+            self.assertEqual(item['file_sha256'], later['standard_flat']['file_sha256'])
+            current = yaml.safe_load((ROOT / path).read_text())
+            self.assertEqual(current['source_grounding']['evidence_record'],
+                             'sources/shepherd_of_hermas/repair/eight-willow-restoration-20261104.v1.json')
+            self.assertEqual(current['source']['unit_id'], 'S.8.i')
 
     def test_exact_policy_followup_rejects_unconditional_promise(self):
         doc = yaml.safe_load(PATHS[0].read_text())

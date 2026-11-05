@@ -1535,3 +1535,26 @@ payload/source/base hashes passed before the rationale correction. The
 two focused warning tests,397policy and84hashes passed after it. There
 remain34broader source-collation flags; other witness comparisons, reader/
 artwork migration, whole-book verification and publication are unfinished.
+
+`maximus-warning-alignment-20261104.v1.json` aligns V.2.iii in four numbered
+paragraphs and adds simplified007. All four paragraphs already existed;
+source body and whole-book English extent are unchanged. Notes now accompany
+the sister, discipline, death, tribulations, business dealings, continuation
+condition, eternal life, denial, returners and written citation. The full
+old flat record and eight unchanged nested records are archived.
+
+`maximus-warning-witness-extracts-20261104.v1.json` compares LH1891physical318,
+Athos Plates I–II, Sinaiticus7.1–4, Vulgata printed10–11, Palatina printed23,
+and d’Abbadie1860's Latin-rendered Ethiopic printed116–117. It distinguishes
+the conjectural denial infinitive from manuscript arnesai, Athos's bracketed
+negative, Sinaiticus's unreadable first-hand letter/correction, corrected
+sins versus first-hand business dealings, and the versions' additional or
+different death, virtue, hope and return wording. The selected causes,
+no-grudge condition, perfect saved/if continue, eternal-life language and
+Maximus warning remain. No direct Geʿez or original-photo collation is claimed.
+
+Azure007r1 accepts both editions; current YAML/evidence hashes match the
+receipt. All125Hermas tests,397policy,439/417YAML guards and85payload/source/
+base hashes pass. The unchanged21contextual tests passed at006. The34broader
+source-collation flags remain. Further witness comparison, reader/artwork
+migration, whole-book verification and publication remain unfinished.

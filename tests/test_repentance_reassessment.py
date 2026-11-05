@@ -387,7 +387,7 @@ class HermasFourthVisionBeastFollowupTests(unittest.TestCase):
             bad = copy.deepcopy(current)
             bad[field]['text'] += ' altered'
             self.assertTrue(policy.approved_errors(path, bad))
-        for before, after in [('give repentance[m]', 'observe remorse[m]'), ('such a rushing roar that', 'a roar so that'), ('did not move at all until', 'moved before')]:
+        for before, after in [('give repentance[m]', 'observe remorse[m]'), ('such a rushing sound that', 'a roar so that'), ('did not move at all until', 'moved before')]:
             bad = copy.deepcopy(current)
             self.assertIn(before, bad['translation']['text'])
             bad['translation']['text'] = bad['translation']['text'].replace(before, after)

@@ -105,7 +105,7 @@ HERMAS_SHEPHERD_INTRODUCTION_FOLLOWUP_SHA256 = '24c13d904ddb9f1c4e1405897c80d34c
 
 HERMAS_SECOND_MANDATE = 'translation/extra_canonical/shepherd_of_hermas/027.yaml'
 HERMAS_SECOND_MANDATE_FOLLOWUP = 'sources/shepherd_of_hermas/repair/contextual-policy-second-mandate-followup-20261105.v1.json'
-HERMAS_SECOND_MANDATE_FOLLOWUP_SHA256 = '508770a937b3e3731930d72cca951594a5c58332c8b92b03a732f7faff8bd1ec'
+HERMAS_SECOND_MANDATE_FOLLOWUP_SHA256 = '99e5554467f46ec06d7e453b4d5b9f5b9b1aa3939f69edb5d8874d81384b91c0'
 
 def historical_view(path, doc):
     """Validate one exact later source repair before projecting its history.

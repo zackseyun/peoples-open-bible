@@ -21,7 +21,7 @@ class SecondMandateTests(unittest.TestCase):
                 self.assertIn(phrase,ps[1])
             self.assertEqual(ps[1].count('guilty of the slanderer’s sin'),2)
             for phrase in ['restless demon[c]','never at peace','divisions','well-being with all[a]']:self.assertIn(phrase,ps[2])
-            for phrase in ['all things are smooth and cheerful[r]','God gives you','give simply to all who are in need[e]','Give to all[j]','God wants all to be given from his own gifts[o]']:self.assertIn(phrase,ps[3])
+            for phrase in ['all things are smooth and cheerful[r]','God gives you','give simply to all who are in need[e]','Give to all[j]','God wants everyone to receive from his own gifts[o]']:self.assertIn(phrase,ps[3])
             for phrase in ['will not be judged','in hypocrisy will pay the penalty[k]']:self.assertIn(phrase,ps[4])
             for phrase in ['innocent[p]','from the Lord the ministry to carry out[h]','glorious before God[i]','to God will live[n]']:self.assertIn(phrase,ps[5])
             for phrase in ['your repentance[b] and that of your household','found in simplicity[m]','[your] heart clean and unstained[l]']:self.assertIn(phrase,ps[6])

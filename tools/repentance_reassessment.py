@@ -75,6 +75,10 @@ HERMAS_VISION_THREE = 'translation/extra_canonical/shepherd_of_hermas/011.yaml'
 HERMAS_VISION_THREE_FOLLOWUP = 'sources/shepherd_of_hermas/repair/contextual-policy-vision-three-followup-20261104.v1.json'
 HERMAS_VISION_THREE_FOLLOWUP_SHA256 = '48dc908e3804441b20e3f8fc7934896294b069a49b3fb1fb0c3f6b44fbc3b1d5'
 
+HERMAS_FIRST_HOUSEHOLD = 'translation/extra_canonical/shepherd_of_hermas/003.yaml'
+HERMAS_FIRST_HOUSEHOLD_FOLLOWUP = 'sources/shepherd_of_hermas/repair/contextual-policy-first-household-followup-20261104.v1.json'
+HERMAS_FIRST_HOUSEHOLD_FOLLOWUP_SHA256 = 'd19882adbbe2c5b09da339d793b03126dc0e50ffa90d143dd384bfb48cf89282'
+
 def historical_view(path, doc):
     """Validate one exact later source repair before projecting its history.
 
@@ -87,6 +91,7 @@ def historical_view(path, doc):
     """
     name = Path(path).resolve().relative_to(ROOT).as_posix()
     followups = {
+        HERMAS_FIRST_HOUSEHOLD: (HERMAS_FIRST_HOUSEHOLD_FOLLOWUP, HERMAS_FIRST_HOUSEHOLD_FOLLOWUP_SHA256),
         HERMAS_VISION_THREE: (HERMAS_VISION_THREE_FOLLOWUP, HERMAS_VISION_THREE_FOLLOWUP_SHA256),
         HERMAS_OPENING: (HERMAS_FOLLOWUP, HERMAS_FOLLOWUP_SHA256),
         HERMAS_ELEVEN: (HERMAS_ELEVEN_FOLLOWUP, HERMAS_ELEVEN_FOLLOWUP_SHA256),
@@ -119,7 +124,7 @@ def historical_view(path, doc):
         raise ValueError('Hermas repair does not preserve the historical terminology input')
     if source != repair['after_source'] or text != repair['after_text']:
         raise ValueError('Hermas source/text differs from exact later repair')
-    if name in (HERMAS_OPENING, HERMAS_VISION_THREE, HERMAS_ELEVEN, HERMAS_FOUR, HERMAS_FOUR_I, HERMAS_FOUR_II, HERMAS_NINE, HERMAS_TEN_II, HERMAS_TWELVE_IV, HERMAS_TWELVE_VI, HERMAS_SIX_II, HERMAS_SEVEN, HERMAS_EIGHT_I):
+    if name in (HERMAS_FIRST_HOUSEHOLD, HERMAS_OPENING, HERMAS_VISION_THREE, HERMAS_ELEVEN, HERMAS_FOUR, HERMAS_FOUR_I, HERMAS_FOUR_II, HERMAS_NINE, HERMAS_TEN_II, HERMAS_TWELVE_IV, HERMAS_TWELVE_VI, HERMAS_SIX_II, HERMAS_SEVEN, HERMAS_EIGHT_I):
         # This repair replaces obsolete lacuna annotations and generation
         # provenance as well as restoring the missing paragraphs. Pin the
         # complete new record before exposing the original review contract.

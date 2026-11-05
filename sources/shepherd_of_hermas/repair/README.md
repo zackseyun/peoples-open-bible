@@ -2143,3 +2143,41 @@ Similitude2 rather than this Mandate and are excluded. Reported Antiochus and
 Pseudo-Athanasius quotation leads remain unchecked. English repair, independent
 review, further manuscript comparison, reader/artwork migration and publication
 remain pending.
+
+
+## Second Mandate giving and responsibility alignment
+
+`second-mandate-alignment-20261105.v1.json` records all seven historical
+paragraphs of legacy027, eighteen localized notes and a new simplified edition.
+The full earlier record, adjudications and fourteen unchanged nested records
+are archived. Selected source and raw334–335 remain unchanged. The original
+nine notes are relocated or incorporated, and the contextual repentance note
+remains verbatim under a pinned complete-record followup to the immutable
+397-record historical policy contract.
+
+Fresh Azure r1 caught an inherited grammatical error: all-to-be-given treated
+Greek dative pasin as the object or amount given. Both editions now say God
+wants everyone to receive from his own gifts. This explicit correction retains
+the repeated universal recipient scope; the old wording and r1 findings remain
+archived. Conditional believing-hearer guilt, repeated liability, giver
+innocence, recipient accountability, afflicted-not-judged/hypocrite-penalty,
+Lord/ministry/completion/no-discrimination and household repentance remain.
+The earlier unqualified will-live with service-to-God attachment is retained
+after reconsideration; the life-to-God alternative is disclosed. Stale level
+metadata is reconciled to the retained smooth main text.
+
+The preceding primary comparison supplies bounded witness differences. Notes
+now disclose the conjectural heart, additionally bracketed your, Athos
+innocence/harmlessness, Sinaiticus gap outside the verse element, Ethiopic
+editorial negative, papyrus inferred omission and restored preposition. No
+new manuscript selection, direct Ge'ez or exhaustive photograph collation is
+claimed. English renders [your] and leaves the broader heart conjecture
+explicit in the note.
+
+Fresh Azure legacy027-20261105-r2 accepts both editions, actual model
+gpt-6.1-sol-2026-09-29; exact final YAML and evidence hashes match the receipt.
+All159Hermas tests,27contextual-policy tests,397-record check,439standard/
+433simplified YAML guards,101structured repair payload/source/base hash checks
+and git diff check pass. Both editions remain draft/needs_review and independent
+review false. Further collation, third-Mandate repair, nested reader/artwork
+migration and publication remain unfinished.

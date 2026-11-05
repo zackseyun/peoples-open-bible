@@ -1168,3 +1168,37 @@ All117tests (97Hermas+20contextual),397policy checks,439/403YAMLguards and
 71payload/source/base checks passed. After the one-sentence correction, the
 three targeted chapter checks and71hash checks passed again. These checks do
 not establish independent scholarly review or whole-book publication.
+
+`eight-willow-restoration-20261104.v1.json` restores the complete18paragraphs
+of S.8.i in standard and simplified reader060, keeping HERM.S.8.i/current
+sequence67. The actual new extent is I.1 and I.15–18; I.2–14already existed.
+The misassigned S.7.4–5opening is removed from060 and remains in complete059
+and the full historical archive. All thirteen rod groups I.6–18remain
+distinct, including proportions, splits, shoots, fruit and the final joy.
+Old060/nested records and unchanged061neighbor hashes are archived.
+
+`eight-willow-witness-extracts-20261104.v1.json` records direct LH1891
+physical375–377, Michigan printed83–88, Berlin6789BKTprinted17–20,
+Vulgata97–99, Palatina173–177 and Sinaiticus Project global67comparison.
+The notes distinguish first hands, corrections, supplies and physical gaps.
+Sinaiticus has opening large without supply/correction markup, but branch
+handing in2is a corrector addition; paragraph15green is an S1correction.
+Vulgata’s printed paragraph10is supplied from Palatina, not independent
+Vulgata manuscript evidence. Palatina omits several groups; those are not
+silently inserted into that version. Berlin’s paragraph10opening is mostly
+supplied across damage, not intact early ink. Full Greek working body,
+critical bars/brackets and14selectedloci/13overrideunits remain unchanged.
+
+The397record terminology plan is unchanged; a separately pinned complete
+record follow-up preserves060’s former judgment in its actual S7context.
+The preceding059donor guard now matches the exact old060archive hash and
+the specific new S8i repair identity; accepted059r2input hashes stay exact.
+Five sections remain in repaired-source comparison;34still require broader
+source collation. Independent scholarship, other witnesses, nested reader
+and artwork migration, and whole-book publication remain pending.
+
+The exact final060 pair passed Azure r1 review (both accept), with raw
+request/response and input/evidence hash receipts retained. All120targeted
+tests (100Hermas+20contextual),397policy checks,439/404YAMLcorpus guards
+and72payload/source/base checks pass. This does not certify independent
+scholarship, full manuscript collation, reader migration or publication.

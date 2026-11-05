@@ -85,7 +85,7 @@ HERMAS_SECOND_WARNING_FOLLOWUP_SHA256 = '1a45efce88bcf8305cf79a8324b02eff6a50e49
 
 HERMAS_STONES_MEANING = 'translation/extra_canonical/shepherd_of_hermas/013.yaml'
 HERMAS_STONES_MEANING_FOLLOWUP = 'sources/shepherd_of_hermas/repair/contextual-policy-stones-meaning-followup-20261105.v1.json'
-HERMAS_STONES_MEANING_FOLLOWUP_SHA256 = 'b9d30a0f7dca8dd7a46624eefbbc7fbbbcea35e2e8a1c6885d6438c54fde6c73'
+HERMAS_STONES_MEANING_FOLLOWUP_SHA256 = '337f668d626b7d4f0cc060947389eb44bd20f94383654a163905022eba1aa76e'
 
 def historical_view(path, doc):
     """Validate one exact later source repair before projecting its history.

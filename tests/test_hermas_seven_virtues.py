@@ -27,7 +27,7 @@ class SevenVirtuesTests(unittest.TestCase):
             for phrase in ['serves','proves able to hold fast to their works[j]','dwelling in the tower','holy ones of God[k]']:self.assertIn(phrase,ps[7])
             for phrase in ['still being built','end','built up quickly','this reminder and the renewal of your spirits' if doc is docs[0] else 'This reminder and the renewal of your spirits','are enough for you and for the holy ones[m]']:self.assertIn(phrase,ps[8])
             for phrase in ['not revealed to you alone','known to all[n]']:self.assertIn(phrase,ps[9])
-            for phrase in ['After three days[r]','first','command you, Hermas','words I am about to say','speak[o] them all[p]','ears of the holy ones','hearing them and doing them','cleansed from their evils[q]','you also with them']:self.assertIn(phrase,ps[10])
+            for phrase in ['After three days[r]','first','command you, Hermas','words I am about to say','speak[o] them all[p]','ears of the holy ones, so that','hearing them and doing them','cleansed from their evils[q]','you also with them']:self.assertIn(phrase,ps[10])
             for p in ps:self.assertEqual(p.count('“'),p.count('”'))
             notes={n['marker']:n['text'] for n in doc['translation']['footnotes']}
             self.assertEqual(len(notes),18)

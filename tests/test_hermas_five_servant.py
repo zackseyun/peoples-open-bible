@@ -24,7 +24,13 @@ class ServantExplanationTests(unittest.TestCase):
         for path, item in arc['nested_unchanged'].items():
             self.assertEqual(hashlib.sha256((ROOT / path).read_bytes()).hexdigest(), item['file_sha256'])
         neighbor = ROOT / 'translation/extra_canonical/shepherd_of_hermas/053.yaml'
-        self.assertEqual(hashlib.sha256(neighbor.read_bytes()).hexdigest(), arc['neighbor053_unchanged_sha256'])
+        later = json.loads((P / 'legacy53-before-flesh-healing-20261104.v1.json').read_text())
+        self.assertEqual(later['standard_flat']['file_sha256'], arc['neighbor053_unchanged_sha256'])
+        import yaml
+        current = yaml.safe_load(neighbor.read_text())
+        self.assertEqual(current['source_grounding']['evidence_record'],
+                         'sources/shepherd_of_hermas/repair/five-flesh-healing-alignment-20261104.v1.json')
+        self.assertEqual(current['source']['unit_id'], 'S.5.vii')
         for key in ['legacy049-20261104-r2', 'legacy050-20261104-r1', 'legacy051-20261104-r2']:
             for item in json.loads((P / 'model_reviews' / key / 'receipt.json').read_text())['input_manifest']:
                 self.assertEqual(hashlib.sha256((ROOT / item['path']).read_bytes()).hexdigest(), item['file_sha256'])

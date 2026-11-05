@@ -27,6 +27,13 @@ class FourSourceAlignmentTests(unittest.TestCase):
                 self.assertEqual(later['standard_flat']['record_sha256'], row['record_sha256'])
                 doc = later['standard_flat']['record']
                 self.assertEqual(prior.digest(doc), row['record_sha256'])
+            if (row['unit_id'] == 'M.4.ii' and
+                    doc.get('source_grounding', {}).get('history_archive') ==
+                    'sources/shepherd_of_hermas/repair/legacy30-before-understanding-alignment-20261104.v1.json'):
+                later = json.loads((REPAIR / 'legacy30-before-understanding-alignment-20261104.v1.json').read_text())
+                self.assertEqual(later['standard_flat']['record_sha256'], row['record_sha256'])
+                doc = later['standard_flat']['record']
+                self.assertEqual(prior.digest(doc), row['record_sha256'])
             body = '\n'.join(l for l in (ROOT / row['normalized_path']).read_text().splitlines()
                              if not l.startswith('#')).strip()
             self.assertEqual(doc['source']['text'], body)
@@ -50,7 +57,7 @@ class FourSourceAlignmentTests(unittest.TestCase):
                        'makes images as the nations do[8]', 'give healing[9]']:
             self.assertIn(phrase, first['translation']['text'])
         for phrase in ['am over repentance[a][1]', 'comes up upon his heart[2]',
-                       'the man who has sinned[3]', 'lavishly[4]', 'will live to God[6]']:
+                       '[the man] who has sinned[3]', 'lavishly[4]', 'will live to God[6]']:
             self.assertIn(phrase, second['translation']['text'])
         for doc in [first, second]:
             markers = [n['marker'] for n in doc['translation']['footnotes']]

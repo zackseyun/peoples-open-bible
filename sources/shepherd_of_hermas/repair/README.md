@@ -1777,3 +1777,39 @@ evidence hashes match its receipt. All139Hermas tests,23contextual-policy
 tests,397policy records,439/424YAML guards and92repair payload/source/base
 hashes pass. All34broader collation flags remain; independent review,
 other witnesses, reader/artwork migration and publication are unfinished.
+
+
+`seven-virtues-alignment-20261105.v1.json` aligns V.3.viii as eleven
+complete historical paragraphs and adds simplified016. All eleven already
+existed in seven English blocks. The source is unchanged; raw325/326 and
+fourteen nested records remain hash-guarded. The complete old record,
+including the hold-fast lexical and compound-renewal grammar adjudications,
+is archived. Eighteen notes replace misplaced and repeated markers.
+
+The evidence compares LH1891printed309–310, Athos PlateIII, official
+Sinaiticus16.1–11, Vulgata23–25, Palatina47/49/51 and the mediated Ethiopic
+Latin rendering122–123. It discloses differing virtue lists and birth
+chains, the believing/if construction, singular/plural address and titles,
+and corrections versus first-hand words. The final speak is an explicit
+contextual resolution of the obelized Greek infinitive; all corresponds
+to bracketed editorial panta. Vulgata omnia and Palatina’s live/Caritas
+emendations are distinguished from their codex words. The Ethiopic
+rendering’s proposed passive revealed is not treated as preserved text.
+
+The prior hold-fast and compound reminder-and-renewal choices remain, as
+do all seven women, salvation through Faith, abstention/inheritance
+condition, serve-and-hold requirements, tower/end/quick-completion and
+hearing-and-doing cleansing with Hermas included. Azure016r1 accepted
+standard but found simplified11 had lost the explicit purpose connector.
+Simplified now restores so that; the added regression guard protects it.
+Fresh Azure016r2 accepts both editions, with current YAML/evidence hashes
+verified against the receipt. All141Hermas tests,397policy records,
+439/425YAML guards and93repair payload/source/base hashes pass. The
+unchanged23contextual-policy tests passed at015. All34broader collation
+flags remain; other witnesses, independent review, reader/artwork
+migration and publication remain unfinished.
+
+CI42029340121 exposed a machine-local raw archive path in the new016
+history test. The original path remains as provenance; an explicit
+repository-relative path now drives the portable hash check. The raw
+bytes and accepted016 YAML/evidence are unchanged.

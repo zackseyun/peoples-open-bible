@@ -843,3 +843,50 @@ review remain pending. 79 Hermas tests,20 contextual tests,397policy checks,
 both reader guards(439/395 YAML files),and63 repair hash checks pass. The
 remaining earlier queue is34 sections needing collation plus16 needing
 repaired-source comparison. Full-book verification and publication remain open.
+
+
+## Similitude 2 and three early papyrus comparisons, 2026-11-04
+
+`two-elm-vine-restoration-20261104.v1.json` records ten complete historical
+paragraphs per flat edition in slot48. The old record mixed S1 luxury teaching
+with S2.4’s conclusion and omitted S2.1–4’s opening dialogue/comparison; its
+second paragraph contained S2.5–8 until a cutoff. Slot49 contained S2.8–10
+before S3/S4. Complete S2 is now in48, with faithful wage, without doubting,
+and abundant with God choices retained and notes correctly anchored. The old
+full48/49 records and28 nested files are archived; donor49 and all nested files
+remain unchanged pending their explicit next repair and reader migration.
+
+An enlarged physical361/printed345 scan reversed a mistaken earlier repair:
+the print reads souls, ψυχὰς, not prayers. `earlier-gaps-20261103.v1.json`’s
+contrary historical claim is superseded by this located evidence; its original
+record is preserved. P.Oxy1172 line40 prints psi outside brackets; Michigan
+supplies psi, and Berlin reports only a trace. Those are different evidence
+strengths, not three complete preserved votes. Palatina printed139 has animas.
+Raw361 is corrected; other raw source bodies remain unchanged.
+
+New primary editions acquired from public scans, with hashes in the witness
+extracts, supply bounded comparisons for Berlin5513 and Oxyrhynchus1172.
+Together with Michigan917 they support the singular understanding/service
+construction in the closing explanatory sentence. The selected normalized
+source follows Michigan there, retaining its supplied letters in brackets.
+Berlin lacks good, and Oxyrhynchus has a damaged/corrected object; the former
+1891 plural think/do reading and Athos’s reported omission remain disclosed.
+This is the twelfth bounded selected locus across eleven override units, not
+an exhaustive critical edition or new manuscript-photo authentication. The
+raw1891 closing text remains intact. Other early-papyrus differences in Lord/
+God, above, resting/relying, confession and ministry are exposed in the notes.
+Both Latin versions were compared; the Vulgata editor’s longer Palatina supply
+is not counted as independent Vulgata manuscript evidence.
+
+The separate Azure r1 review caught inherited added ascent in no power to go
+up above; both drafts now preserve no power above. Fresh r2 review accepts
+both exact final files, with immutable requests, responses and evidence hashes.
+All101 tests(81Hermas+20contextual),397policy checks,439/396 YAML guards and
+64repair source/payload/base checks pass. Flat048 is not a member of the397
+policy plan. The S1 donor guard now requires the exact archived original48 and
+the specific complete S2 successor; its checks were not broadly disabled.
+
+Independent scholarship, remaining witness/photo collation, nested reader and
+artwork migration, and whole-book publication remain incomplete. The earlier
+queue is34 sections needing source collation and15 needing repaired-source
+comparison. Next repair the S2-tail/S3/S4 compound in legacy49.

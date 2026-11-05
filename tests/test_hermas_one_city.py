@@ -22,7 +22,13 @@ class OneCityTests(unittest.TestCase):
     def test_preserved_donor_and_nested_history_and_hashes(self):
         arc=json.loads((REPAIR/'legacy47-48-before-city-restoration-20261104.v1.json').read_text());self.assertEqual(len(arc['nested_unchanged']),16)
         for path,item in arc['nested_unchanged'].items():self.assertEqual(hashlib.sha256((ROOT/path).read_bytes()).hexdigest(),item['file_sha256'])
-        donor='translation/extra_canonical/shepherd_of_hermas/048.yaml';self.assertEqual(hashlib.sha256((ROOT/donor).read_bytes()).hexdigest(),arc['flats'][donor]['file_sha256'])
+        donor='translation/extra_canonical/shepherd_of_hermas/048.yaml'
+        later=json.loads((REPAIR/'legacy48-49-before-elm-restoration-20261104.v1.json').read_text())
+        self.assertEqual(later['flats'][donor],arc['flats'][donor])
+        current=yaml.safe_load((ROOT/donor).read_text())
+        self.assertEqual(current['source_grounding']['evidence_record'],'sources/shepherd_of_hermas/repair/two-elm-vine-restoration-20261104.v1.json')
+        self.assertEqual(current['source']['unit_id'],'S.2')
+        self.assertEqual(len(current['translation']['text'].split('\n\n')),10)
         std=yaml.safe_load((ROOT/'translation/extra_canonical/shepherd_of_hermas/047.yaml').read_text());simple=yaml.safe_load((ROOT/'translation_simplified/extra_canonical/shepherd_of_hermas/047.yaml').read_text())
         payload=dict(english_text=std['translation']['text'],translation_philosophy=std['translation']['philosophy'],lexical_decisions=std['lexical_decisions'],footnotes=std['translation']['footnotes'],theological_decisions=std['theological_decisions'])
         self.assertEqual(std['ai_draft']['output_hash'],d.sha256_hex(d.canonical_json(payload)));self.assertEqual(simple['base_translation']['text'],std['translation']['text']);self.assertEqual(simple['base_translation']['sha256'],d.sha256_hex(std['translation']['text']));self.assertEqual(simple['ai_draft']['output_hash'],d.sha256_hex(simple['translation']['text']))

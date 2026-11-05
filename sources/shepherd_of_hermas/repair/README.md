@@ -1310,7 +1310,7 @@ M.4.i alignment into eleven numbered paragraphs per English edition and
 adds simplified029. All eleven historical paragraphs already existed in
 six reader paragraphs; neither new source nor new whole-book English extent
 is claimed. Quote boundaries are clarified, source-supplied and/wife are
-bracketed, and the full old record, ten nested records and prior policy
+bracketed, and the full old record, twelve nested records and prior policy
 follow-up are archived. Normalized Greek and14loci/13overrideunits are unchanged.
 
 `four-reception-witness-extracts-20261104.v1.json` records LH1891pages336–337,

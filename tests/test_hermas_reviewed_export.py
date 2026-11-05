@@ -5,6 +5,17 @@ from tools.hermas import export_reviewed_reader as export
 from tools.hermas.review_repair_draft import sha
 ROOT=Path(__file__).resolve().parents[1]
 class ReviewedHermasExportTests(unittest.TestCase):
+    def test_complete_release_includes_opening_and_final_departure(self):
+        books=export.export(ROOT/'sources/shepherd_of_hermas/repair/publication-release-20261105.v1.json')
+        for book,count in zip(books,[725,730]):
+            self.assertEqual(len(book['chapters']),107)
+            self.assertEqual(sum(len(c['verses']) for c in book['chapters']),count)
+            self.assertEqual(book['chapters'][0]['historical_units'],['V.1.i'])
+            self.assertEqual(book['chapters'][-1]['historical_units'],['S.10.iv'])
+            self.assertIn('Rhoda',book['chapters'][0]['verses'][0]['text'])
+            self.assertIn('virgins',book['chapters'][-1]['verses'][-1]['text'])
+            self.assertEqual(book['metadata']['reader_edition'],'hermas-complete-written-20261105')
+
     def test_actual_accepted_pair_and_note_localization(self):
         p=ROOT/'sources/shepherd_of_hermas/repair/model_reviews/legacy027-20261105-r2/receipt.json'
         docs=export.verified_pair({'receipt':str(p.relative_to(ROOT)),'receipt_sha256':sha(p.read_bytes())})

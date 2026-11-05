@@ -68,6 +68,8 @@ def export(manifest_path):
         'division_note':'Reader chapter IDs retain the legacy edition and reserved continuation slots. Numbered reading units are modern paragraphs; historical references appear in the text and chapter headings.',
         'edition_note':'Complete reading edition reviewed against the selected working sources. Manuscript gaps, editorial supplements and alternatives are disclosed in notes. Further critical collation remains open.',
         'historical_chapters':114,'independent_scholar_review':False,
+        'reader_edition':'hermas-complete-written-20261105',
+        'reference_note':'Paragraph numbers belong to this complete written edition and differ from the earlier incomplete reader. Historical section references are retained in the chapter headings and prose.',
         'artwork_note':'The graphic edition retains its earlier text snapshot. New and repaired reading paragraphs do not imply new or reassigned artwork.'},'chapters':[]} for _ in range(2)]
     seen=set();slots=set()
     for row in manifest['pairs']:

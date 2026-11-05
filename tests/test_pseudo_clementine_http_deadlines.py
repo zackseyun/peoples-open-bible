@@ -35,6 +35,18 @@ class HttpDeadlineTests(unittest.TestCase):
         self.assertEqual(command,['az','rest'])
         self.assertFalse(metadata['http_deadline_installed'])
 
+    def test_pip_python_launcher_uses_its_existing_runtime(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);runtime=root/'bin/python';runtime.parent.mkdir();runtime.write_text('')
+            launcher=root/'az'
+            launcher.write_text(f"#!{runtime}\nimport os, sys\nos.execl(sys.executable, sys.executable, '-m', 'azure.cli', *sys.argv[1:])\n")
+            with patch.object(pages.shutil,'which',return_value=str(launcher)):
+                command,metadata=pages.cli_http_command(['rest','--body','@unchanged.json'])
+            self.assertEqual(command[0],str(runtime))
+            self.assertEqual(command[2:],['rest','--body','@unchanged.json'])
+            self.assertEqual(metadata['identity'],'unchanged_installed_azure_cli_session')
+            self.assertEqual(metadata['http_read_timeout_seconds'],600)
+
 
 if __name__ == '__main__':
     unittest.main()

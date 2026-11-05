@@ -2181,3 +2181,47 @@ All159Hermas tests,27contextual-policy tests,397-record check,439standard/
 and git diff check pass. Both editions remain draft/needs_review and independent
 review false. Further collation, third-Mandate repair, nested reader/artwork
 migration and publication remain unfinished.
+
+## Complete written reading edition, 2026-11-05
+
+`publication-release-20261105.v1.json` binds all 107 standard/simplified
+reading-section pairs to actual Azure acceptances and their exact files,
+working sources, requests, provider responses, findings and evidence hashes.
+Together they cover all 114 historical source chapters exactly once, including
+the restored opening, intervening omissions and the final departure. These
+are complete reading-edition drafts, not certification of exhaustive manuscript
+collation or independent scholarship. The broader critical-collation flags
+remain open; supplied letters, conjectures, versions, quotations and unresolved
+cruces retain their reader notes.
+
+The new publication successors live in each edition's `publication/` directory.
+Original flat and nested records retain their historical adjudications and
+artwork relationships. Every successor correction is archived before another
+round is applied. Inherited `ai_draft` fields describe that drafting history;
+the final whole-file hashes and actual Azure review receipts, rather than old
+output hashes, bind the current publication. Reviews caught substantive scope,
+condition, negation, agency and source-note problems, and corrected pairs were
+reviewed again. Failed and invalid responses remain failures; interrupted
+unbounded requests have explicit cancellation records and no claimed verdict.
+The installed pip Azure CLI launcher now receives finite socket deadlines for
+new requests through its existing identity.
+
+`reference-migration-20261105.v1.json` explicitly declares the new written
+paragraph numbering, preserves legacy chapter slots and the reserved continuation
+slots, and pins the original nested-record hashes. This is a versioned reading
+edition, not an automatic redirect of old paragraph references. Existing graphic
+panels, illustrations and their earlier text snapshots are unchanged and are
+identified as the earlier edition in the reader. No new artwork coverage or
+verse-to-panel reassignment is claimed.
+
+`tools/hermas/export_reviewed_reader.py` refuses a missing/changed acceptance,
+changed source or base text, inconsistent raw response, orphaned notes, repeated
+historical unit or incomplete 114-chapter coverage. It emits both complete books
+with declared historical units and source-review metadata. The website preserves
+the notes as selected-paragraph wording details, keeps literal editorial
+brackets, and navigates actual chapter numbers, including the gap before the
+reserved continuation slots. The checked-in website bundle is authoritative for
+this complete reading edition after ordinary upstream synchronization.
+
+Publication state at this checkpoint: all pairs accepted and the complete
+bundle prepared; public deployment and exact-byte verification still pending.

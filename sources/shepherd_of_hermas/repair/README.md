@@ -1870,3 +1870,15 @@ records,439/427YAML guards and95repair payload/source/base hashes pass.
 The unchanged23contextual-policy tests passed at015. All34broader
 collation flags remain; other witnesses, independent review, reader/artwork
 migration and publication remain unfinished.
+
+A further020source pass adds P.Amh.II190b–c recto, V3xii3, from
+Grenfell–Hunt1901printed197. The bounded ten-line fragment includes
+parts of softness/strength/faith, the Lord’s seeing/rejoicing and the
+tower/further-disclosure sequence. Bracketed/dotted letters and missing
+beginnings remain distinct from preserved parts; the fragment does not
+reach the closing whole-heart peace condition. The consulted PlateXXIV
+shows b/c versos from the next chapter, so no fresh recto photograph
+collation is claimed. Main text is unchanged. Fresh Azure020r3 accepts
+both augmented editions; current YAML/evidence receipt hashes match and
+all145Hermas tests and95repair hashes pass again. Earlier r1/r2 receipts
+are retained as historical reviews of their own inputs.

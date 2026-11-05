@@ -1480,3 +1480,30 @@ All119Hermas tests,397policy,439/414YAML guards and82payload/source/base
 hashes pass; the unchanged20contextual tests passed at the household
 checkpoint. The34broader collation flags remain. Other witnesses, independent
 scholarship, nested reader/artwork migration and publication remain unfinished.
+
+`second-book-alignment-20261104.v1.json` aligns V.2.i in four numbered
+paragraphs and adds simplified005. All four paragraphs already existed;
+source body and whole-book English extent are unchanged. Notes formerly
+clustered after the snatched book now accompany Cumae, spirit, kneeling,
+little book, copying and elect. The full old flat record and eight nested
+records are archived.
+
+`second-book-witness-extracts-20261104.v1.json` records LH1891physical316,
+Athos Plate I, Sinaiticus5.1–4, Vulgata printed8, Palatina printed17–19, and
+d’Abbadie1860’s Latin-rendered Ethiopic printed115–116. Cumae/villages,
+God/Lord, last-year/before, the absent first-hand take-and-return reply
+added by ca, and copying formulations are disclosed. Vulgata’s withdrawing
+is an editorial emendation against reported sitting; the continuous-script
+explanation and the Ethiopic translator’s illiteracy alternative are not
+treated as an explicit cause in the selected Greek. The causal worthiness/
+former-sins clause, entire letter-for-letter copying, and unidentified
+snatching agent remain. No direct Geʿez or original-photo collation is claimed.
+
+Azure005r1accepted standard and caught an omitted spatial detail in
+simplified: in front of me is now restored. Fresh005r2accepts both editions;
+current input/evidence hashes match. All121Hermas tests,397policy,439/415YAML
+guards and83payload/source/base hashes pass; two focused tests and83hashes
+passed after the spatial fix. The unchanged20contextual tests passed at the
+household checkpoint. The34broader collation flags remain. Other witnesses,
+independent scholarship, nested reader/artwork migration and publication
+remain unfinished.

@@ -22,7 +22,11 @@ class Batch39Test(unittest.TestCase):
         self.assertEqual((len(old), len(new)), (966, 967))
         self.assertEqual(set(new) - set(old), {'066/002.yaml'})
         self.assertEqual({k for k in new if new[k] != old.get(k)}, b.CHANGED_PATHS)
-        self.assertEqual(prior.verify_current()['actual_current_postmap'], new)
+        actual=prior.verify_current()['actual_current_postmap']
+        self.assertEqual(proof['actual_current_postmap'],actual)
+        from tools.enoch import batch40_evidence
+        added=batch40_evidence.CHANGED_PATHS if proof.get('verified_current_successor')==batch40_evidence.NAME else set()
+        self.assertEqual({k for k in actual if actual[k]!=new.get(k)},added)
         self.assertEqual(existing_count_ingress.validate(proof['manifest'])[66]['units'], [1, 2, 3])
         self.assertEqual(proof['manifest']['chapter_inventories'], [])
 

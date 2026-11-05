@@ -101,6 +101,9 @@ class Batch36Test(unittest.TestCase):
                 if (t.APPLICATIONS/batch39_evidence.NAME/'application.json').is_file():
                     batch39_evidence.verify_current()
                     expected['units'].update({k:batch39_evidence.NAME for k in ('7:3','66:1','66:2')})
+                    from tools.enoch import batch40_evidence
+                    if (t.APPLICATIONS/batch40_evidence.NAME/'application.json').is_file():
+                        batch40_evidence.verify_current();expected['units'].update({k:batch40_evidence.NAME for k in ('32:3','32:6')})
         self.assertEqual(sources.registry_data(),expected)
         self.assertNotIn('96',expected['chapters'])
         with patch.object(t,'TRANSLATION',Path('/nonexistent-canonical-echo')):

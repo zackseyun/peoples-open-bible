@@ -96,6 +96,9 @@ class Batch35Test(unittest.TestCase):
                     from tools.enoch import batch39_evidence
                     if (t.APPLICATIONS/batch39_evidence.NAME/'application.json').is_file():
                         batch39_evidence.verify_current();changes |= batch39_evidence.CHANGED_PATHS
+                        from tools.enoch import batch40_evidence
+                        if (t.APPLICATIONS/batch40_evidence.NAME/'application.json').is_file():
+                            batch40_evidence.verify_current();changes |= batch40_evidence.CHANGED_PATHS
             self.assertEqual({k for k in proof['actual_current_postmap'] if proof['current_postmap'].get(k) != proof['actual_current_postmap'][k]}, changes)
         else:
             self.assertEqual(proof['current_postmap'], proof['actual_current_postmap'])

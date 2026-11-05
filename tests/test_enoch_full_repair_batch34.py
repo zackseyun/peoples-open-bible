@@ -51,6 +51,9 @@ class Batch34Test(unittest.TestCase):
       from tools.enoch import batch39_evidence
       if (t.APPLICATIONS/batch39_evidence.NAME/'application.json').is_file():
        batch39_evidence.verify_current();extra |= batch39_evidence.CHANGED_PATHS
+       from tools.enoch import batch40_evidence
+       if (t.APPLICATIONS/batch40_evidence.NAME/'application.json').is_file():
+        batch40_evidence.verify_current();extra |= batch40_evidence.CHANGED_PATHS
    self.assertEqual({k for k,v in proof['actual_current_postmap'].items()if proof['current_postmap'].get(k)!=v},extra)
   self.assertTrue(receipt['unrelated_canonical_files_unchanged_at_application'])
   self.assertFalse(receipt['deployed_by_transaction'])

@@ -1304,3 +1304,36 @@ Bodmer canvas017’s info.json resolves, but two image-size requests returned
 HTTP500. No new Bodmer image, reading or transcription is claimed. Its resolved
 manifest and catalogue metadata remain useful access records; actual passage
 comparison still requires the images or the1991edition.
+
+`four-reception-alignment-20261104.v1.json` expands the earlier bounded
+M.4.i alignment into eleven numbered paragraphs per English edition and
+adds simplified029. All eleven historical paragraphs already existed in
+six reader paragraphs; neither new source nor new whole-book English extent
+is claimed. Quote boundaries are clarified, source-supplied and/wife are
+bracketed, and the full old record, twelve nested records and prior policy
+follow-up are archived. Normalized Greek and14loci/13overrideunits are unchanged.
+
+`four-reception-witness-extracts-20261104.v1.json` records LH1891pages336–337,
+AthosPlateVlines15–32, Sinaiticus29.1–11, Vulgata39–40andPalatina77–81.
+Remember-wife/Lord, wickedness/fornication corrections, damaged letters,
+frequency/duration, image-making/imitation and the first-hand/corrector
+healing difference are disclosed. Ignorance/knowledge, continued sin,
+repentance/return, required reception, one repentance, no remarriage and
+both-sex application remain; the closing states healing ability rather
+than importing Vulgata’s promised remedy.
+
+The earlier029alignment contract is checked against its exact archived
+record; the live full-record terminology follow-up is separately pinned.
+The397record plan remains unchanged. Azure029r1found both reader texts
+faithful but caught inherited metadata choosing slave and misattributing it
+to current policy. Current decision records now choose servant and retain
+bonded-status nuance; superseded metadata remains archived. Fresh029r2accepts
+both editions, with exact input/evidence hashes verified. All128tests
+(108Hermas+20contextual),397policy,439/409YAMLguards and77payload/source/base
+checks pass; the five focused Mandate4tests and hash/policy checks were rerun
+after metadata correction.
+
+The earlier repaired-source comparison queue is now empty. The34broader
+source-collation flags remain, including chapters that already have bounded
+complete drafts. This does not establish exhaustive manuscript collation,
+independent scholarship, reader/artwork migration or whole-book publication.

@@ -39,6 +39,16 @@ class FirstHouseholdTests(unittest.TestCase):
             self.assertIn('conjectures', notes['k'])
             self.assertIn('whom I love', notes['k'])
 
+    def test_simplification_keeps_explanatory_relationships(self):
+        docs, _ = review.load_pair(*PATHS)
+        text = docs[1]['translation']['text'].split('\n\n')[0]
+        self.assertIn('He is angry so that you may turn back your household', text)
+        self.assertIn('because you were fond of your children, you did not admonish', text)
+        notes = {n['marker']: n['text'] for n in docs[0]['translation']['footnotes']}
+        self.assertIn('not directly from Geʿez', notes['a'])
+        self.assertIn('retains I know, if they repent', notes['f'])
+        self.assertIn('not counted as preserved Ethiopic words', notes['e'])
+
     def test_exact_source_history_policy_and_neighbors(self):
         a = json.loads((P / 'first-household-alignment-20261104.v1.json').read_text())
         arc = json.loads((P / a['history_archive']).read_text())

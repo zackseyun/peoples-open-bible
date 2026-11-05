@@ -77,7 +77,7 @@ HERMAS_VISION_THREE_FOLLOWUP_SHA256 = '48dc908e3804441b20e3f8fc7934896294b069a49
 
 HERMAS_FIRST_HOUSEHOLD = 'translation/extra_canonical/shepherd_of_hermas/003.yaml'
 HERMAS_FIRST_HOUSEHOLD_FOLLOWUP = 'sources/shepherd_of_hermas/repair/contextual-policy-first-household-followup-20261104.v1.json'
-HERMAS_FIRST_HOUSEHOLD_FOLLOWUP_SHA256 = 'd19882adbbe2c5b09da339d793b03126dc0e50ffa90d143dd384bfb48cf89282'
+HERMAS_FIRST_HOUSEHOLD_FOLLOWUP_SHA256 = 'd1ce1ea7460c5a98494725fc2d53402bddfc41728833ece534baa442752997b1'
 
 def historical_view(path, doc):
     """Validate one exact later source repair before projecting its history.

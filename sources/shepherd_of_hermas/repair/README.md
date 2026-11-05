@@ -1238,3 +1238,35 @@ request/response and input/evidence hash receipts retained. All122targeted
 tests (102Hermas+20contextual),397policy checks,439/405YAMLcorpus guards
 and73payload/source/base checks pass. These do not certify independent
 scholarship, exhaustive manuscript collation, migration or publication.
+
+`vision-nine-ten-boundaries-20261104.v1.json` reunites Vision 3.ix in017
+and separates 3.x in018, ten historical paragraphs each in both editions.
+The older017ended mid-sentence;018contained the rest of ix and all of x.
+All of that English already existed across the two slots: this is boundary
+repair, not newly recovered whole-book extent. Full prior flat history and
+18unchanged nested records are archived. Raw328’s first tower noun is
+corrected from OCR πύργου to printed πύργον; no manuscript selection is
+added. The IXsource body remains unchanged, including printed παῆναι.
+
+`vision-nine-ten-witness-extracts-20261104.v1.json` records LH1891pages326–328,
+Lake1907PlateIII transcription (same Athos codex), Sinaiticus Project17/18,
+Vulgata25–28 and Palatina51–57. Notes distinguish first hands and correctors,
+the bracketed goods adjective and among-them/yourselves ambiguity, Palatina’s
+ask-me-later/believe variants and Vulgata’s alternative rebuke. Sinaiticus’s
+sufficiency sentence in18.8is a caaddition, not intact first-hand evidence.
+Polite sir addresses the young man; divine Lord remains distinct.
+
+Fresh final017r2and018r2Azure reviews accept both editions after corrections
+to simplified training/purpose/scope, intensive cheerfulness and the negative
+expectation of the stronger-revelations question. Exact inputs/evidence hashes
+match the receipts. All124tests (104Hermas+20contextual),397policy checks,
+439/407YAMLguards and75payload/source/base checks pass. Two sections remain
+in repaired-source comparison (V3iii,M4i), alongside34broader-collation flags.
+These are not counts of known missing chapters. Independent scholarship,
+other witnesses, nested reader/artwork migration and publication are unfinished.
+
+`bodmer38-availability-20261104.v1.json` identifies the official Bodmer Lab
+52-canvas manifest and the DCLP metadata record. DCLP’s edition element is
+empty, so the catalogue’s digital-text link must not be described as an
+acquired transcription. Images and the1991edition still require passage-level
+comparison; no Bodmer reading is selected on the basis of this availability check.

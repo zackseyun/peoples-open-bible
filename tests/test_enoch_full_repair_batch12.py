@@ -36,9 +36,18 @@ class FullRepairBatch12Test(unittest.TestCase):
         self.assertEqual(not_applied['1 Enoch 32:3']['verdicts'], ['hold', 'hold'])
         self.assertEqual(not_applied['1 Enoch 32:6']['verdicts'], ['accept', 'accept'])
         self.assertIn('release deferred', not_applied['1 Enoch 32:6']['reason'])
-        self.assertEqual(t.sha((t.TRANSLATION/'032/003.yaml').read_bytes()),
-                         m['canonical_baseline_sha256']['032/003.yaml'])
-        self.assertFalse((t.TRANSLATION/'032/006.yaml').exists())
+        from tools.enoch import batch40_evidence as successor
+        if (t.APPLICATIONS/successor.NAME/'application.json').is_file():
+            proof=successor.verify_current()
+            self.assertEqual(proof['manifest']['canonical_baseline_sha256']['032/003.yaml'],
+                             m['canonical_baseline_sha256']['032/003.yaml'])
+            self.assertNotIn('032/006.yaml',proof['manifest']['canonical_baseline_sha256'])
+            for relative in successor.CHANGED_PATHS:
+                self.assertEqual(t.sha((t.TRANSLATION/relative).read_bytes()),proof['current_postmap'][relative])
+        else:
+            self.assertEqual(t.sha((t.TRANSLATION/'032/003.yaml').read_bytes()),
+                             m['canonical_baseline_sha256']['032/003.yaml'])
+            self.assertFalse((t.TRANSLATION/'032/006.yaml').exists())
         for v in (1, 2, 4, 5):
             self.assertFalse(record(v)['source_correction']['selected_edition_chapter_reviewed'])
 
@@ -105,6 +114,14 @@ class FullRepairBatch12Test(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             shutil.copytree(t.TRANSLATION, root/'1_enoch')
+            from tools.enoch import batch40_evidence as successor
+            if (t.APPLICATIONS/successor.NAME/'application.json').is_file():
+                successor.verify_current()
+                (root/'1_enoch/032/006.yaml').unlink()
+                (root/'1_enoch/032/003.yaml').write_bytes(subprocess.check_output(
+                    ['git','show',successor.BASE+':translation/extra_canonical/1_enoch/032/003.yaml'],cwd=t.ROOT))
+            with patch.object(reader, 'EXTRA_CANONICAL_ROOT', root):
+                after = reader.export_extra_canonical_book('ENO')
             for ref in m['references']:
                 c, v = t.parse_ref(ref)
                 blob = m['baseline_git_blobs'][f'{c:03d}/{v:03d}.yaml']['blob']
@@ -112,7 +129,6 @@ class FullRepairBatch12Test(unittest.TestCase):
                     subprocess.check_output(['git', 'cat-file', 'blob', blob], cwd=t.ROOT))
             with patch.object(reader, 'EXTRA_CANONICAL_ROOT', root):
                 before = reader.export_extra_canonical_book('ENO')
-            after = reader.export_extra_canonical_book('ENO')
         self.assertEqual(before, after)
         self.assertNotIn(32, [c['chapter'] for c in after['chapters']])
 
@@ -155,7 +171,12 @@ class FullRepairBatch12Test(unittest.TestCase):
     def test_current_progress_is_not_whole_book_or_chapter32_completion(self):
         r = build()
         self.assertGreaterEqual(r['current_units_with_imported_review_evidence'], 370)
-        self.assertNotIn(32, r['chapters_with_complete_imported_selected_edition_review'])
+        from tools.enoch import batch40_evidence as successor
+        if (t.APPLICATIONS/successor.NAME/'application.json').is_file():
+            successor.verify_current()
+            self.assertIn(32,r['chapters_with_complete_imported_selected_edition_review'])
+        else:
+            self.assertNotIn(32,r['chapters_with_complete_imported_selected_edition_review'])
         self.assertFalse(r['completion_proven'])
         self.assertFalse(r['artwork_publication_approval'])
 

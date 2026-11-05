@@ -400,4 +400,30 @@ class HermasFourthVisionBeastFollowupTests(unittest.TestCase):
                 policy.historical_view(path, current)
 
 
+class HermasShepherdIntroductionFollowupTests(unittest.TestCase):
+    def test_exact_record_preserves_two_conditions_and_repentance_title(self):
+        path = ROOT / policy.HERMAS_SHEPHERD_INTRODUCTION
+        current = prior.load(path)
+        item = policy.plan_by_path()[policy.HERMAS_SHEPHERD_INTRODUCTION]
+        historical = policy.historical_view(path, current)
+        self.assertEqual(historical['translation']['text'], item['after_text'])
+        self.assertEqual(prior.digest(historical['source']), item['source_sha256'])
+        self.assertEqual(policy.approved_errors(path, current), [])
+        for field in ('source', 'translation'):
+            bad = copy.deepcopy(current)
+            bad[field]['text'] += ' altered'
+            self.assertTrue(policy.approved_errors(path, bad))
+        for before, after in [('do not repent[h]', 'do not feel sorry[h]'), ('angel of repentance[r]', 'angel of grief[r]'), ('but still add to your sins', 'because you obey'), ('be able to keep them[n]', 'ignore them[n]')]:
+            bad = copy.deepcopy(current)
+            self.assertIn(before, bad['translation']['text'])
+            bad['translation']['text'] = bad['translation']['text'].replace(before, after)
+            self.assertTrue(policy.approved_errors(path, bad))
+        bad = copy.deepcopy(current)
+        next(n for n in bad['translation']['footnotes'] if n['marker'] == 'n')['text'] = 'Clement preserves every word of both conditional warnings.'
+        self.assertTrue(policy.approved_errors(path, bad))
+        with patch.object(Path, 'read_bytes', return_value=b'{}'):
+            with self.assertRaisesRegex(ValueError, 'decision pin differs'):
+                policy.historical_view(path, current)
+
+
 if __name__=='__main__':unittest.main()

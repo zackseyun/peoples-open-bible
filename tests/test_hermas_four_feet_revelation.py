@@ -19,6 +19,7 @@ class FourFeetRevelationTests(unittest.TestCase):
             for phrase in ['third vision','younger[g], beautiful, and cheerful','her appearance was beautiful']:self.assertIn(phrase,ps[0])
             for phrase in ['good message[a]','grieving','forgets his former sorrows','accepts[h] nothing else except','strengthened for the good','his spirit is renewed because of the joy','received a renewal of your spirits[i]','by seeing these good things']:self.assertIn(phrase.lower(),ps[1].lower())
             self.assertEqual(ps[2].count('stool'),2);self.assertNotIn('bench',ps[2])
+            self.assertIn('because the stool has four feet[o] and stands firmly',ps[2])
             for phrase in ['position is firm[j]','four feet[o]','stands firmly','world','held together by four elements[c]']:self.assertIn(phrase,ps[2])
             for phrase in ['repented[f] completely','will be new[d] and firmly founded[l]','repented from their whole heart[k]','revelation complete[e]','about revelation[m]','if anything is needed[n]','it will be revealed to you']:self.assertIn(phrase,ps[3])
             self.assertEqual(ps[3].count('repented'),2)

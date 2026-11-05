@@ -1360,3 +1360,34 @@ hashes passed; two focused tests and78hashes passed after the metadata fix.
 The34broader source-collation flags remain, including M.4.ii. Nested reader,
 artwork, independent scholarship, other witnesses and publication remain
 unfinished.
+
+`opening-alignment-20261104.v1.json` aligns all nine V.1.i paragraphs in
+standard001 and adds complete simplified001. All nine were already present
+in the restored standard draft; no new whole-book extent or source-body
+change is claimed. Eight orphan numeric note markers now have live notes,
+and Rhoda, Cumae and the negative-question variant receive bounded notes.
+The full old flat record, six nested records and prior terminology follow-up
+are archived. The397-record plan remains unchanged; the opening follow-up
+now pins the entire later record before projecting the original judgment.
+
+`opening-witness-extracts-20261104.v1.json` records LH1891physical313–314,
+Athos Plate I, Sinaiticus1.1–9, Vulgata printed2–4 and Palatina printed3–9.
+Names, place/way, goddess/daughter/lady, the negative-question correction,
+heavenly honor, wealth/vices and healing/forgiveness differences are
+disclosed. The working future will repent is now a statement, matching
+the printed working edition. Athos will greatly regret and the different
+Latin formulations remain explicit alternatives. Neither the difficult
+hopelessness statement nor the promise to the whole household and all the
+holy ones is removed. This choice does not claim that manuscript punctuation
+independently settles the rhetorical interpretation.
+
+Azure001r1caught a shared terrain-description defect: cut off by the waters
+implied isolation, whereas the Greek describes ground broken by water.
+Both editions now say broken up by the waters; Vulgata and Palatina also
+describe damaged terrain. Fresh001r2accepts both editions, with current
+input/evidence hashes verified. All132tests (112Hermas+20contextual),397policy,
+439/411YAML guards and79payload/source/base hashes passed. The two opening
+tests,79hashes and397policy checks passed again after the terrain correction.
+Bodmer availability is not counted as an acquired reading. Other witnesses,
+full collation, independent scholarship, nested reader/artwork migration and
+publication remain unfinished. The34broader collation flags are unchanged.

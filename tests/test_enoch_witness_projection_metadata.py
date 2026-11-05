@@ -125,10 +125,17 @@ class WitnessProjectionMetadataTest(unittest.TestCase):
       from tools.enoch import batch38_evidence
       if (t.APPLICATIONS/batch38_evidence.NAME/'application.json').is_file():
        batch38_evidence.verify_current();expected_drift |= batch38_evidence.CHANGED_PATHS
+       from tools.enoch import batch39_evidence
+       if (t.APPLICATIONS/batch39_evidence.NAME/'application.json').is_file():
+        batch39_evidence.verify_current();expected_drift |= batch39_evidence.CHANGED_PATHS
    else:
     batch34_evidence.verify_current();expected_drift={'044/001.yaml'}
    self.assertEqual(drift,expected_drift)
    for relative in sorted(drift):
+    if relative not in data['canonical_baseline_sha256']:
+     self.assertEqual(relative, '066/002.yaml')
+     (corpus/relative).unlink()
+     continue
     historical='translation/extra_canonical/1_enoch/'+relative
     raw=subprocess.check_output(['git','show',m.BASE+':'+historical],cwd=t.ROOT)
     self.assertEqual(t.sha(raw),data['canonical_baseline_sha256'][relative])

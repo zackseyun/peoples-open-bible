@@ -110,7 +110,7 @@ def verify_current():
     proof=historical_postmap()
     from tools.enoch import batch38_evidence as successor
     if (t.APPLICATIONS/successor.NAME/"application.json").is_file():
-        current=successor.verify_current()["current_postmap"]
+        current=successor.verify_current()["actual_current_postmap"]
         return {**proof,"actual_current_postmap":current,"verified_current_successor":successor.NAME}
     package=t.APPLICATIONS/NAME
     from tools.enoch.selected_edition_sources import REGISTRY,registry_data

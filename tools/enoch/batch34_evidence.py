@@ -114,12 +114,20 @@ def assert_current_progress(case, report):
             row = next(row for row in report['chapters'] if row['chapter'] == 1)
             case.assertEqual(row['current_units_with_imported_review_evidence'], [1, 3, 4, 5, 6, 7, 8, 9])
             case.assertFalse(row['selected_edition_chapter_review_complete'])
+        from tools.enoch import batch39_evidence
+        added_b39 = added_1_9 and (t.APPLICATIONS/batch39_evidence.NAME/'application.json').is_file()
+        if added_b39:
+            batch39_evidence.verify_current()
+            for chapter, units in ((7, list(range(1, 7))), (66, [1, 2, 3])):
+                row = next(row for row in report['chapters'] if row['chapter'] == chapter)
+                case.assertEqual(row['current_units_with_imported_review_evidence'], units)
+                case.assertTrue(row['selected_edition_chapter_review_complete'])
         case.assertEqual(report['current_units_with_imported_review_evidence'],
-                         (486 if extended else 485 if installed else 479) + int(added_1_9))
-        case.assertEqual(len(report['chapters_with_complete_imported_selected_edition_review']), 37)
+                         (486 if extended else 485 if installed else 479) + int(added_1_9) + 3*int(added_b39))
+        case.assertEqual(len(report['chapters_with_complete_imported_selected_edition_review']), 37 + 2*int(added_b39))
         case.assertIn(44, report['chapters_with_complete_imported_selected_edition_review'])
         if installed:
-            case.assertEqual(report['canonical_file_count'], 966)
+            case.assertEqual(report['canonical_file_count'], 966 + int(added_b39))
             for c, units in successor.ACCEPTED_UNITS.items():
                 case.assertNotIn(c, report['chapters_with_complete_imported_selected_edition_review'])
                 row = next(row for row in report['chapters'] if row['chapter'] == c)

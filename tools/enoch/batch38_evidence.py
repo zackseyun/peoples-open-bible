@@ -11,9 +11,8 @@ CHANGED_PATHS = {PATH}
 REFS = ['1 Enoch 1:9']
 
 
-def verify_current():
+def historical_postmap():
     from tools.enoch import batch37_evidence as prior
-    from tools.enoch.selected_edition_sources import REGISTRY, registry_data
     package = t.APPLICATIONS / NAME
     if t.sha((package / 'manifest.json').read_bytes()) != MANIFEST_SHA:
         raise ValueError('Fixed B38 manifest differs')
@@ -33,9 +32,20 @@ def verify_current():
         or receipt.get('unrelated_canonical_files_unchanged_at_application') is not True
         or any(receipt.get(k) is not False for k in ('deployed_by_transaction','full_book_verified','graphic_publication_approved'))):
         raise ValueError('B38 receipt differs')
+    proof = t.verify(package, evidence_only=True)
+    return {**proof, 'manifest': manifest, 'current_postmap': current, 'actual_current_postmap': current}
+
+
+def verify_current():
+    proof = historical_postmap()
+    from tools.enoch import batch39_evidence as successor
+    if (t.APPLICATIONS / successor.NAME / 'application.json').is_file():
+        current = successor.verify_current()['actual_current_postmap']
+        return {**proof, 'actual_current_postmap': current, 'verified_current_successor': successor.NAME}
+    from tools.enoch.selected_edition_sources import REGISTRY, registry_data
+    package = t.APPLICATIONS / NAME
     wanted = json.loads(subprocess.check_output(['git','show',BASE+':'+str(REGISTRY.relative_to(t.ROOT))],cwd=t.ROOT))
     wanted['units']['1:9'] = NAME
     if registry_data() != wanted:
         raise ValueError('B38 source registry differs beyond 1:9')
-    proof = t.verify(package, applied=True, check_corpus=True)
-    return {**proof, 'manifest': manifest, 'current_postmap': current, 'actual_current_postmap': current}
+    return {**proof, **t.verify(package, applied=True, check_corpus=True)}

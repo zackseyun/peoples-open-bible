@@ -93,7 +93,10 @@ class Batch35Test(unittest.TestCase):
                 from tools.enoch import batch38_evidence
                 if (t.APPLICATIONS/batch38_evidence.NAME/'application.json').is_file():
                     batch38_evidence.verify_current();changes |= batch38_evidence.CHANGED_PATHS
-            self.assertEqual({k for k in proof['current_postmap'] if proof['current_postmap'][k] != proof['actual_current_postmap'][k]}, changes)
+                    from tools.enoch import batch39_evidence
+                    if (t.APPLICATIONS/batch39_evidence.NAME/'application.json').is_file():
+                        batch39_evidence.verify_current();changes |= batch39_evidence.CHANGED_PATHS
+            self.assertEqual({k for k in proof['actual_current_postmap'] if proof['current_postmap'].get(k) != proof['actual_current_postmap'][k]}, changes)
         else:
             self.assertEqual(proof['current_postmap'], proof['actual_current_postmap'])
         self.assertEqual({k for k in before if before[k] != proof['current_postmap'][k]}, PATHS)
@@ -281,9 +284,7 @@ class Batch35Test(unittest.TestCase):
     def test_progress485_37_fullbook_false(self):
         from tools.enoch.full_repair_progress import build
         report = build()
-        self.assertEqual(report['canonical_file_count'], 966)
         prior.assert_current_progress(self, report)
-        self.assertEqual(len(report['chapters_with_complete_imported_selected_edition_review']), 37)
         self.assertNotIn(95, report['chapters_with_complete_imported_selected_edition_review'])
         self.assertNotIn(96, report['chapters_with_complete_imported_selected_edition_review'])
         self.assertEqual(report['evidence_inventory_warnings'], [])

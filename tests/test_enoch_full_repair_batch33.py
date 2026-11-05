@@ -49,4 +49,4 @@ class Batch33Test(unittest.TestCase):
     with self.assertRaises(ValueError):t.verify(p,evidence_only=True)
  def test_no_new_unit_count_or_chapter_credit_and_actual_CI_git_fetch(self):
   from tools.enoch.full_repair_progress import build
-  r=build();self.assertEqual(r['canonical_file_count'],966);assert_current_progress(self,r);self.assertEqual(r['evidence_inventory_warnings'],[]);self.assertFalse(r['completion_proven']);workflow=(t.ROOT/'.github/workflows/corpus-integrity.yml').read_text();self.assertIn('git fetch --no-tags --depth=1 origin '+BASE,workflow);self.assertIn("python -m unittest discover -s tests -p 'test_enoch_full_repair_batch33.py'",workflow)
+  r=build();assert_current_progress(self,r);self.assertEqual(r['evidence_inventory_warnings'],[]);self.assertFalse(r['completion_proven']);workflow=(t.ROOT/'.github/workflows/corpus-integrity.yml').read_text();self.assertIn('git fetch --no-tags --depth=1 origin '+BASE,workflow);self.assertIn("python -m unittest discover -s tests -p 'test_enoch_full_repair_batch33.py'",workflow)

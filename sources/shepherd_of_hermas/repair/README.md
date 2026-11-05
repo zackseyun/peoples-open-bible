@@ -890,3 +890,46 @@ Independent scholarship, remaining witness/photo collation, nested reader and
 artwork migration, and whole-book publication remain incomplete. The earlier
 queue is34 sections needing source collation and15 needing repaired-source
 comparison. Next repair the S2-tail/S3/S4 compound in legacy49.
+
+
+## Complete tree parables in legacy reader49, 2026-11-04
+
+`three-four-trees-restoration-20261104.v1.json` records complete S3(3paras) and
+S4(8paras) in each flat edition. The old49 record began with displaced S2.8–10,
+then contained all S3 and only S4.1–4opening. S2 is already restored in48;
+S4’s actual missing4tail–8 now includes burning and its two stated reasons,
+repentance, many activities, both request outcomes, pure-mind condition and
+the final fruit-bearing promise. S3was already complete in extent; its full
+source collation remains queued. The full old49 and24 nested files are
+archived in `legacy49-before-trees-restoration-20261104.v1.json`; nested reader
+and artwork migration remain pending.
+
+The unchanged S4reader identity anchors a complete chronological S3/S4 source.
+`identity_anchor_unit_id` explicitly declares the non-leading anchor. The review
+tool accepts this only with a unique anchor in unique, contiguous, historically
+ordered spans and exact normalized source offsets/hashes. Tests reject absent
+or wrong anchors, duplicates, reordering, sequence drift and source hash drift.
+The earlier implicit-leading contract still applies when no anchor is declared.
+
+A thirteenth bounded selection across twelve override units omits the1891
+bracketed those-who-are-least conjecture in S4.3, following the shorter Michigan
+reading, with qualified Berlin comparison. Michigan’s supplied letters and
+Berlin’s largely supplied/different continuation are documented; Palatina’s
+least wording and reported Athos repetition remain exposed. Raw1891 remains
+intact. Other difficult differences, including Michigan invisible versus working
+manifest at4.4 and to-all versus all at4.2, are disclosed without harmonization.
+The complete Vulgata continuation was also checked: it omits the negative
+request outcome retained in Greek/Palatina and distinguishes God/Lord at4.7.
+Version traditions and edition reports are not extra independent manuscript
+votes or new photograph certifications.
+
+Both initial drafts passed Azure r1; completing the Latin continuation changed
+notes, so fresh r2 accepted the exact final files against evidencev2. All raw
+requests/responses are retained, and evidencev1 remains unchanged for r1.
+Independent scholarship and full manuscript/excerpt collation remain pending.
+All103 tests(83Hermas+20contextual),397policy checks,439/397 YAML guards and
+65source/payload/base checks pass. No397policy record contains flat049; current
+contextual repent/serve terminology is preserved. The previous S2donor49 guard
+now requires exact archived-original equivalence and the specific S3/S4successor,
+rather than exempting arbitrary changes. Remaining earlier queue:34source
+collation+14repaired-source comparison=48. Whole-book publication is unfinished.

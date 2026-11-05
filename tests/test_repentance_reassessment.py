@@ -182,7 +182,7 @@ class HermasSourceRepairFollowupTests(unittest.TestCase):
         self.assertEqual(prior.digest(historical['source']),item['source_sha256'])
         self.assertEqual(policy.approved_errors(self.path,self.current),[])
         self.assertEqual(self.current,untouched)
-        self.assertTrue(self.current['translation']['text'].startswith('The man who raised me'))
+        self.assertTrue(self.current['translation']['text'].startswith('I.1. The man who raised me'))
 
     def test_source_and_english_tampering_are_not_followup_exemptions(self):
         for field in ('source','translation'):

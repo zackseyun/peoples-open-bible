@@ -973,3 +973,34 @@ All105tests (85Hermas+20contextual),397policy checks,439/398YAML reader guards
 and66source/payload/base hash checks pass. No397policy record contains flat050.
 Model acceptance is limited to the supplied working source and attributed
 evidence; it does not replace independent scholarship or photo authentication.
+
+## Similitude5.iii–iv fasting and explanation, 2026-11-04
+
+`five-fast-explanation-restoration-20261104.v1.json` restores all nine III and
+five IV historical paragraphs in standard and simplified flat reader051,
+retaining HERM.S.5.iii and chronological source spans56–57. The old flat record
+and ten unchanged nested records are preserved in
+`legacy51-before-fast-explanation-20261104.v1.json`, with a five-paragraph
+crosswalk. The source bodies remain unchanged.
+
+The old reader joined III.2 to III.7, invented instructions/prudence in place
+of humility, and joined III.9’s blessing to IV.4’s understanding request.
+The repair restores command keeping/enrollment, comparative glory, extra
+service, the bread-and-water fast, calculation and giving of the saved food
+expense, recipient prayer, complete asking promise, strong no-question rebuke
+and Hermas’s objection. It preserves the tension between asking and the rebuke
+without harmonizing it away.
+
+`five-fast-explanation-witness-extracts-20261104.v1.json` records bounded direct
+comparison of LH1891physical365–367, Michigan917 printed49–56, Vulgata79–82
+and Palatina147–151. Michigan partly corroborates the existing III.2 supplied
+passage and III.9 asking conjecture. Actual differences in written/heard,
+prayer wording, without-ceasing/without-hesitation and holy/glorious angel are
+disclosed. Original photos and primary excerpt witnesses remain pending;
+versional/editorial supplies are not counted as preserved ink. No new source
+selection was made; totals remain14loci13overrideunits.
+
+Both files remain drafts. The earlier queue is now34source-collation plus
+10repaired-source-comparison sections (44total), with broader manuscript
+comparison, independent scholarship, nested readers, artwork and publication
+unfinished.

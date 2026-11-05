@@ -29,6 +29,7 @@ class SevenHouseholdTests(unittest.TestCase):
             self.assertIn('If he endures', ps[3])
             self.assertIn('[God]', ps[4])
             self.assertIn('every evil deed', ps[4])
+            self.assertIn('so that, knowing', ps[4])
             self.assertIn('[easily]', ps[5])
             self.assertIn('your children', ps[5].lower())
             self.assertIn('strong and clean', ps[5])

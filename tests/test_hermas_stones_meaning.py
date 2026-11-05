@@ -47,7 +47,14 @@ class StonesMeaningTests(unittest.TestCase):
         self.assertEqual(hermas.load_normalized_unit('V.3.v').text,arc['normalized_before'].replace('ἔριττον','ἔριπτον'))
         self.assertEqual(arc['raw323_before'].count('ἔριττον'),1)
         raw=hermas.raw_page_path(323)
-        self.assertEqual(raw.read_text(),arc['raw323_before'].replace('ἔριττον','ἔριπτον'))
+        after = arc['raw323_before'].replace('ἔριττον','ἔριπτον')
+        # The next section shares this leaf. Prove its exact input is this
+        # repair's output, then permit only the audited printerfooter removal.
+        follow = json.loads((P/'legacy14-before-wealth-stones-alignment-20261105.v1.json').read_text())
+        self.assertEqual(follow['raw323_before'], after)
+        self.assertEqual(after.count('\n20—2\n'), 1)
+        after = after.replace('\n20—2\n', '\n')
+        self.assertEqual(raw.read_text(), after)
         self.assertEqual(len(arc['nested_unchanged']),10)
         for p,row in arc['nested_unchanged'].items():self.assertEqual(hashlib.sha256((ROOT/p).read_bytes()).hexdigest(),row['file_sha256'])
         recovered=arc['recovered_historical_record']['record']

@@ -20,6 +20,13 @@ class FourSourceAlignmentTests(unittest.TestCase):
         originals = {r['path']: r['record'] for r in archive['records']}
         for row in audit['records']:
             doc = prior.load(ROOT / row['path'])
+            if (row['unit_id'] == 'M.4.i' and
+                    doc.get('source_grounding', {}).get('history_archive') ==
+                    'sources/shepherd_of_hermas/repair/legacy29-before-reception-alignment-20261104.v1.json'):
+                later = json.loads((REPAIR / 'legacy29-before-reception-alignment-20261104.v1.json').read_text())
+                self.assertEqual(later['standard_flat']['record_sha256'], row['record_sha256'])
+                doc = later['standard_flat']['record']
+                self.assertEqual(prior.digest(doc), row['record_sha256'])
             body = '\n'.join(l for l in (ROOT / row['normalized_path']).read_text().splitlines()
                              if not l.startswith('#')).strip()
             self.assertEqual(doc['source']['text'], body)

@@ -1004,3 +1004,10 @@ Both files remain drafts. The earlier queue is now34source-collation plus
 10repaired-source-comparison sections (44total), with broader manuscript
 comparison, independent scholarship, nested readers, artwork and publication
 unfinished.
+
+The final051files passed a fresh Azure r2review (both accept). Original r1
+request/response/review/receipt preserve its footnote-attribution finding; r2
+records the corrected exact files. All107tests(87Hermas+20contextual),397policy
+checks,439/399YAML reader guards and67source/payload/base hash checks pass.
+Flat051 is not in the397contextualpolicyplan. These are model fidelity checks,
+not independent scholarship or whole-book completeness certification.

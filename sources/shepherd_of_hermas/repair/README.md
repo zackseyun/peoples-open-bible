@@ -1391,3 +1391,28 @@ tests,79hashes and397policy checks passed again after the terrain correction.
 Bodmer availability is not counted as an acquired reading. Other witnesses,
 full collation, independent scholarship, nested reader/artwork migration and
 publication remain unfinished. The34broader collation flags are unchanged.
+
+`first-elder-alignment-20261104.v1.json` aligns V.1.ii in four numbered
+paragraphs and adds complete simplified002. All four paragraphs were already
+present in standard English. Greetings, chair, atonement, completed sins,
+older woman, wool, temperament and spirit notes are now attached to their
+own clauses instead of being clustered after self-controlled Hermas.
+The old flat record, stale review claims and eight nested records are
+archived. Edition-specific lexical and theological decisions now match the
+reader text, including servant and the source’s completed-sins modifier.
+
+`first-elder-witness-extracts-20261104.v1.json` records LH1891physical314–315,
+Athos Plate I, Sinaiticus2.1–4, Vulgata printed4–5 and Palatina printed9–11.
+The Sinaiticus first hand’s rejoicing and absent snowy differ from ca’s
+weeping and added snowy. Its added reproach phrase contains supplied letters.
+The Latin perhaps differs from working surely, and Palatina’s you-are-full
+words are explicitly an editorial supply absent from the reported codex.
+The difficult atonement questions, tested spirit desiring evil, and complete
+every/all virtue scope remain. No source-body change or new manuscript
+selection is made; the34broader collation flags remain.
+
+Azure002r1accepts both editions with input/evidence hashes verified.
+All114Hermas tests pass; the unchanged20contextual tests passed at the
+opening checkpoint. The397policy check,439/412YAML guards and80payload/source/base
+hashes pass. Other witnesses, original photographs, independent scholarship,
+nested reader/artwork migration and publication remain unfinished.

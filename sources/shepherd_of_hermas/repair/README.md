@@ -1558,3 +1558,34 @@ receipt. All125Hermas tests,397policy,439/417YAML guards and85payload/source/
 base hashes pass. The unchanged21contextual tests passed at006. The34broader
 source-collation flags remain. Further witness comparison, reader/artwork
 migration, whole-book verification and publication remain unfinished.
+
+`church-booklets-alignment-20261104.v1.json` aligns V.2.iv in three numbered
+paragraphs and adds simplified008. All three historical paragraphs already
+existed; source body and English extent are unchanged. The flat record had
+lost footnotes, lexical/theological decisions and drafting metadata while
+keeping orphan markers. Its prior complete record was recovered from Git
+commit286c9666699e4062546f8ce60358d0d59667aa4a. Both full flat histories and
+six unchanged nested records are archived. Notes and editorial metadata are
+restored, with all markers localized and the duplicated elders marker removed.
+
+`church-booklets-witness-extracts-20261104.v1.json` compares LH1891physical318–319,
+Athos PlateII, Sinaiticus8.1–3, Vulgata printed11–12, Palatina printed25/27/29,
+and d’Abbadie1860's Latin-rendered Ethiopic printed117. Notes distinguish
+Sinaiticus's S1 old-age-question addition, Athos's uncertain sleeping line
+and bracketed admonish letters, Vulgata's conjectural through-you wording,
+and Palatina/Ethiopic-rendering absence of a separately named Grapte. The
+Ethiopic rendering also addresses Hermas as the one completing the words,
+unlike the selected old woman's I complete. The source's first-created
+Church, world ordered for her sake, all elect through Hermas, two recipients,
+distinct commissions and reading with presiding elders remain explicit.
+No direct Geʿez or original-photograph collation is claimed.
+
+Azure008r1 caught an inherited rejected Sibyl identity listed as a viable
+alternative; r2 caught an unsupported causative reading alternative. Both
+metadata defects are corrected, with the narrative unchanged. Fresh008r3
+accepts both editions; current input/evidence hashes match its receipt.
+All127Hermas tests,397policy,439/418YAML guards and86payload/source/base
+hashes passed before metadata corrections; two focused tests and86hashes
+passed after each correction. The unchanged21contextual tests passed at006.
+There remain34broader source-collation flags. Further witness comparison,
+reader/artwork migration, whole-book verification and publication are unfinished.

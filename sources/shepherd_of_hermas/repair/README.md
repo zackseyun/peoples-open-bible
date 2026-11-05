@@ -1087,3 +1087,11 @@ availability is recorded separately. Counts remain34source-collation plus
 8repaired-source-comparison sections (42total),14selectedloci13overrideunits.
 The old052neighbor053 guard now checks the exact old053 archive hash and the
 specific new S5.vii alignment identity; it does not broadly exempt changes.
+
+The exact final053files passed fresh Azure r2review (both accept); r1’s copied
+simplified-idiom-note finding and both raw review receipts are preserved.
+All111tests(91Hermas+20contextual),397policy checks,439/401YAML reader guards
+and69source/payload/base hash checks pass. Targeted tests were rerun after
+the note-only correction. Flat053 is not in the397contextualpolicyplan.
+No source extent, whole-book completeness or independent scholarly review
+is inferred from these checks.

@@ -1882,3 +1882,36 @@ collation is claimed. Main text is unchanged. Fresh Azure020r3 accepts
 both augmented editions; current YAML/evidence receipt hashes match and
 all145Hermas tests and95repair hashes pass again. Earlier r1/r2 receipts
 are retained as historical reviews of their own inputs.
+
+
+`four-feet-revelation-alignment-20261105.v1.json` aligns V.3.xiii as four
+complete paragraphs and adds simplified021. All four already existed; the
+source and raw329/330 are unchanged. The full flat/terminology history and
+eight unchanged nested records are archived. Sixteen localized notes
+replace the misplaced good-message and final stacked markers. The prior
+accepts/for-the-good/stool choices remain; stool now consistently renders
+both occurrences of the same Greek noun.
+
+The comparison reads LH1891printed313–314, Athos PlateIV, official
+Sinaiticus21.1–4, Vulgata29–30, Palatina59 and the mediated Ethiopic Latin
+rendering125. It also compares P.Oxy.4706fragments4+5 in Gonis2005printed5–6
+with a bounded Oxford photograph/edition match, and P.Amh.II190b–c verso
+from printed197 and the limited PlateXXIV image. Visible word-parts are
+distinguished from restored complete clauses; spacing-based omissions,
+word-order conjectures and reconstruction difficulties stay explicit.
+Palatina’s angles and the Ethiopic rendering’s walls are not exact
+corroboration of the selected world’s four elements.
+
+Both repentance participles, completely/whole-heart, definite newness and
+foundation, full revelation, no more asking about revelation and the
+if-needed future promise remain. The397-policy historical contract and
+complete new record are separately pinned and mutation-tested. Sinaiticus
+corrections, the reported omitted about-revelation phrase, the Palatina
+if-you-ask condition and partial papyrus readings remain distinct.
+Azure021r1 accepted standard and found simplified3’s causal connection
+implicit; simplified now explicitly gives because for the stool’s four
+feet and firm standing. Fresh Azure021r2 accepts both; exact current
+YAML/evidence hashes match. All147Hermas tests,24contextual-policy tests,
+397policy records,439/428YAML guards and96repair source/payload/base hashes
+pass. All34broader collation flags remain; other witnesses, independent
+review, reader/artwork migration and publication remain unfinished.

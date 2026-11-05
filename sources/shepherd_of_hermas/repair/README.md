@@ -1128,3 +1128,43 @@ raw response and input/evidence receipts retained. All114targeted tests
 (94Hermas+20contextual),397policy checks,439/402YAML corpus guards and
 70payload/source/base checks pass. Model acceptance does not certify
 independent scholarship, complete collation, reader migration or publication.
+
+`seven-household-restoration-20261104.v1.json` reunites S.7 into complete
+standard and simplified reader059, preserving HERM.S.7/current sequence66.
+Old059 stopped mid-paragraph4. Read-only donor060 already contained4tail
+through5opening under S.8.i; the genuinely missing English starts with
+beneficial affliction in5 and continues through7. Full old059/nested and
+donor060 records are archived. Normalized Greek and donor060 are unchanged;
+the latter must be migrated before publication to avoid duplicate material.
+The paragraph3 contrast now explicitly says while you are at ease,
+correcting the old ambiguous being steadfast.
+
+All seven paragraphs retain the non-immediate-forgiveness question and
+negative reply, afflicting one's own soul, endurance/clean-heart conditions,
+healing, advance warning, lesser affliction, restoration, children/household,
+and the conditional closing promises. Misattached previous-rendering notes
+are archived rather than attached to unrelated new words. The397record
+terminology plan stays unchanged; the later complete-record repair has a
+separately pinned historical follow-up that rejects altered English/notes.
+
+`seven-household-witness-extracts-20261104.v1.json` records direct LH1891
+physical374–375, Michigan printed77–83, Vulgata94–97, Palatina171–173 and
+Sinaiticus Project global66.1–6 comparison. Michigan partly corroborates
+immediately and healing previously supplied in the1891 edition; no new
+normalized selection is made. Both Latin versions have perhaps rather than
+surely. Easily/whole/God retain disclosed working brackets; return to place
+in Michigan/Sinaiticus/Latin differs from working house. Palatina omits the
+first explicit household-if clause; it is retained in the working English.
+Sinaiticus supplies, corrected readings and physical gaps are distinguished: its
+fragment cannot attest the creator/healing/clean-heart stretch or unpreserved
+closing paragraph. Six sections remain in repaired-source comparison and34
+in broader source collation. Independent review, other witnesses, nested
+reader migration and whole-book publication remain pending.
+
+The final059pair passed fresh Azure r2 review (both accept). R1 accepted
+the standard but requested an explicit advance-warning purpose in simplified5;
+that link is now restored, with the original finding/raw receipts retained.
+All117tests (97Hermas+20contextual),397policy checks,439/403YAMLguards and
+71payload/source/base checks passed. After the one-sentence correction, the
+three targeted chapter checks and71hash checks passed again. These checks do
+not establish independent scholarly review or whole-book publication.

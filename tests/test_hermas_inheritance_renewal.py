@@ -32,6 +32,9 @@ class InheritanceRenewalTests(unittest.TestCase):
             self.assertIn('their strengthening',notes['m'])
             self.assertIn('whole-heart mutual love',notes['e'])
             self.assertIn('commands to renew the soul',notes['c'])
+            self.assertIn('P.Amh.II190 b–c recto',notes['d'])
+            self.assertIn('outside this fragment',notes['f'])
+            self.assertIn('not fresh recto photograph collation',notes['m'])
 
     def test_full_prior_posture_decision_and_source_unchanged(self):
         a=json.loads((P/'inheritance-renewal-alignment-20261105.v1.json').read_text());arc=json.loads((P/a['history_archive']).read_text())

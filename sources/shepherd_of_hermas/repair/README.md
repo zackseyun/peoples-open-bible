@@ -1202,3 +1202,33 @@ request/response and input/evidence hash receipts retained. All120targeted
 tests (100Hermas+20contextual),397policy checks,439/404YAMLcorpus guards
 and72payload/source/base checks pass. This does not certify independent
 scholarship, full manuscript collation, reader migration or publication.
+
+`eight-crowns-planting-alignment-20261104.v1.json` aligns complete S.8.ii
+in standard reader061 and adds the simplified flat draft, preserving
+HERM.S.8.ii/current sequence68. All nine historical paragraphs already
+existed; no missing chapter or paragraph extent is claimed. Small corrections
+render II.2singular a seal, II.4bracketed white, and II.6explicit departure.
+The original flat and two unchanged nested records are fully archived.
+Old notes stacked at the end of9are replaced by anchored source disclosures.
+
+`eight-crowns-witness-extracts-20261104.v1.json` records LH1891physical377–378,
+Michigan printed88–92, Vulgata99–101, Palatina177–179 and Sinaiticus Project
+global68.1–5comparison. Sinaiticus and Michigan corroborate white in4against
+the older edition’s bracket and reported Athos omission; seals retain their
+working singular/plural distinction. Sinaiticus breaks within5and cannot
+attest the subsequent warning/planting/hope. Michigan omits the full repeated
+if-anyone clause and second careful instruction, while the working English
+retains them; its Lord-of-the-tree differs from working Creator. Both Latin
+versions preserve the conditional altar warning. Palatina omits Hermas’s
+question about the dry rods. All these differences remain disclosed.
+
+The Creator’s desire for all branch recipients to live stays distinct from
+the shepherd’s hope for the greater part, the moisture/planting condition
+and possible failure. The normalized Greek is unchanged, including the
+critical bracket;14selectedloci/13overrideunits remain unchanged. Flat061
+is not in the397record contextual terminology plan. The old060neighbor061
+guard is adapted only through the exact archived old061hash and specific
+new S8ii alignment identity; accepted060r1inputs remain exact. Four sections
+remain in repaired-source comparison, alongside34requiring broader source
+collation. Other witnesses, independent scholarship, nested reader/artwork
+migration and whole-book publication remain pending.

@@ -66,8 +66,14 @@ class WillowTests(unittest.TestCase):
         self.assertTrue(arc['nested_unchanged'])
         for path, item in arc['nested_unchanged'].items():
             self.assertEqual(hashlib.sha256((ROOT / path).read_bytes()).hexdigest(), item['file_sha256'])
+        later = json.loads((P / 'legacy61-before-crowns-alignment-20261104.v1.json').read_text())
         for path, digest in arc['neighbor61_unchanged'].items():
-            self.assertEqual(hashlib.sha256((ROOT / path).read_bytes()).hexdigest(), digest)
+            self.assertEqual(path, later['standard_flat']['path'])
+            self.assertEqual(digest, later['standard_flat']['file_sha256'])
+            current = yaml.safe_load((ROOT / path).read_text())
+            self.assertEqual(current['source_grounding']['evidence_record'],
+                             'sources/shepherd_of_hermas/repair/eight-crowns-planting-alignment-20261104.v1.json')
+            self.assertEqual(current['source']['unit_id'], 'S.8.ii')
         # The transferred teaching remains in the complete preceding chapter.
         prior = yaml.safe_load((ROOT / 'translation/extra_canonical/shepherd_of_hermas/059.yaml').read_text())
         self.assertIn('forgiven immediately', prior['translation']['text'])

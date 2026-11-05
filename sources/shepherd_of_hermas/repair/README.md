@@ -1011,3 +1011,41 @@ records the corrected exact files. All107tests(87Hermas+20contextual),397policy
 checks,439/399YAML reader guards and67source/payload/base hash checks pass.
 Flat051 is not in the397contextualpolicyplan. These are model fidelity checks,
 not independent scholarship or whole-book completeness certification.
+
+## Similitude5.v–vi and Hamburg evidence, 2026-11-04
+
+`five-servant-explanation-restoration-20261104.v1.json` restores all five V
+and eight VI historical paragraphs in flat standard/simplified reader052,
+retaining HERM.S.5.v and chronological source spans58–59. The old flat and
+eight unchanged nested records are preserved in
+`legacy52-before-servant-explanation-20261104.v1.json`, including a four-paragraph
+crosswalk and neighbor053 hash. The actual omitted extent was V.1ending–5 and
+VI.1–2opening; VI.2tail–8 was already present and is now aligned in full.
+
+The restored text retains the parable identities, servant/Son question,
+disputed working negative, full authority statement, creator-Spirit wording,
+flesh service/partnership and conditional reward. The source bodies remain
+unchanged. `five-servant-witness-extracts-20261104.v1.json` records direct primary
+edition comparisons: LH1891physical367–368, Michigan printed56–59, Vulgata82–85
+and Palatina151–159. Both Latin versions support the negative in VI.1;
+reported Athos lacks it, and Michigan physically loses fifteen lines there.
+Vulgata’s additional son-as-Spirit identification is absent from Palatina and
+the working Greek. The Latin created-first wording differs from Greek
+created-all-creation. These alternatives are exposed without doctrinal
+harmonization or treating damaged manuscript gaps as omissions.
+
+`hamburg-parchment-comparison-20261104.v1.json` upgrades the previously
+reported Hamburg evidence to a bounded directly consulted1924primary printed
+edition: Wessely, PatrologiaOrientalis18.3, printed479–481. It corroborates
+the earlier restored fasting reply and shorter S4.7 passage. The inventory
+now identifies Hamburg Bibliothekgr24 as parchment, preserving the old alias
+without confusing it with documentary P.Hamb.I24 or adding a witness count.
+Printed recto fruit-promise coverage is recorded even though the catalogue’s
+short description ends at S4.7. No earlier accepted YAML or source body was
+changed by this corroboration. Original parchment photos and1909comparison
+remain pending; printed letters/supplies are not universally preserved ink.
+
+No source selection was added: totals remain14loci13overrideunits. The earlier
+queue is now34source-collation plus8repaired-source-comparison sections
+(42total). Draft repair, bounded comparison and model review do not complete
+independent scholarship, nested reader/artwork migration or publication.

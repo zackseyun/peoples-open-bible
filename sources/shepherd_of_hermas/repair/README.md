@@ -2024,3 +2024,10 @@ inputs remain unchanged pending detailed followup. These recovered leaves do
 not cover the current Vision4or5passages. Many earlier canvases and a larger
 derivative still return500. Images stay outsideGit under the repository's
 CC-BY-NC4.0 attribution/license; only own observations and hashes are recorded.
+
+
+After the Bodmer availability update, fresh Azure legacy024-20261105-r2
+accepts both unchanged four-color editions; exact YAML and revised evidence
+hashes match. All153Hermas tests pass, including the recovered-image work/
+passage boundary guard. The existing152-test and r1results above are historical
+checkpoints; r2is the current exact-evidence review.

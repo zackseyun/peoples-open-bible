@@ -1232,3 +1232,9 @@ new S8ii alignment identity; accepted060r1inputs remain exact. Four sections
 remain in repaired-source comparison, alongside34requiring broader source
 collation. Other witnesses, independent scholarship, nested reader/artwork
 migration and whole-book publication remain pending.
+
+The exact final061 pair passed Azure r1 review (both accept), with raw
+request/response and input/evidence hash receipts retained. All122targeted
+tests (102Hermas+20contextual),397policy checks,439/405YAMLcorpus guards
+and73payload/source/base checks pass. These do not certify independent
+scholarship, exhaustive manuscript collation, migration or publication.

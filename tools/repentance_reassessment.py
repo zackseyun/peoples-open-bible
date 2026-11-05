@@ -83,6 +83,10 @@ HERMAS_SECOND_WARNING = 'translation/extra_canonical/shepherd_of_hermas/006.yaml
 HERMAS_SECOND_WARNING_FOLLOWUP = 'sources/shepherd_of_hermas/repair/contextual-policy-second-warning-followup-20261104.v1.json'
 HERMAS_SECOND_WARNING_FOLLOWUP_SHA256 = '1a45efce88bcf8305cf79a8324b02eff6a50e49b6377f8aebc6a603766ed73a4'
 
+HERMAS_STONES_MEANING = 'translation/extra_canonical/shepherd_of_hermas/013.yaml'
+HERMAS_STONES_MEANING_FOLLOWUP = 'sources/shepherd_of_hermas/repair/contextual-policy-stones-meaning-followup-20261105.v1.json'
+HERMAS_STONES_MEANING_FOLLOWUP_SHA256 = '337f668d626b7d4f0cc060947389eb44bd20f94383654a163905022eba1aa76e'
+
 def historical_view(path, doc):
     """Validate one exact later source repair before projecting its history.
 
@@ -95,6 +99,7 @@ def historical_view(path, doc):
     """
     name = Path(path).resolve().relative_to(ROOT).as_posix()
     followups = {
+        HERMAS_STONES_MEANING: (HERMAS_STONES_MEANING_FOLLOWUP, HERMAS_STONES_MEANING_FOLLOWUP_SHA256),
         HERMAS_SECOND_WARNING: (HERMAS_SECOND_WARNING_FOLLOWUP, HERMAS_SECOND_WARNING_FOLLOWUP_SHA256),
         HERMAS_FIRST_HOUSEHOLD: (HERMAS_FIRST_HOUSEHOLD_FOLLOWUP, HERMAS_FIRST_HOUSEHOLD_FOLLOWUP_SHA256),
         HERMAS_VISION_THREE: (HERMAS_VISION_THREE_FOLLOWUP, HERMAS_VISION_THREE_FOLLOWUP_SHA256),
@@ -129,7 +134,7 @@ def historical_view(path, doc):
         raise ValueError('Hermas repair does not preserve the historical terminology input')
     if source != repair['after_source'] or text != repair['after_text']:
         raise ValueError('Hermas source/text differs from exact later repair')
-    if name in (HERMAS_SECOND_WARNING, HERMAS_FIRST_HOUSEHOLD, HERMAS_OPENING, HERMAS_VISION_THREE, HERMAS_ELEVEN, HERMAS_FOUR, HERMAS_FOUR_I, HERMAS_FOUR_II, HERMAS_NINE, HERMAS_TEN_II, HERMAS_TWELVE_IV, HERMAS_TWELVE_VI, HERMAS_SIX_II, HERMAS_SEVEN, HERMAS_EIGHT_I):
+    if name in (HERMAS_STONES_MEANING, HERMAS_SECOND_WARNING, HERMAS_FIRST_HOUSEHOLD, HERMAS_OPENING, HERMAS_VISION_THREE, HERMAS_ELEVEN, HERMAS_FOUR, HERMAS_FOUR_I, HERMAS_FOUR_II, HERMAS_NINE, HERMAS_TEN_II, HERMAS_TWELVE_IV, HERMAS_TWELVE_VI, HERMAS_SIX_II, HERMAS_SEVEN, HERMAS_EIGHT_I):
         # This repair replaces obsolete lacuna annotations and generation
         # provenance as well as restoring the missing paragraphs. Pin the
         # complete new record before exposing the original review contract.

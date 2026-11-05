@@ -1681,3 +1681,36 @@ All133Hermas tests,397policy records,439/421YAML guards and89repair
 payload/source/base hashes pass. All34broader collation flags remain;
 independent review, other manuscript comparison, reader/artwork migration
 and publication remain unfinished.
+
+
+`stones-meaning-alignment-20261105.v1.json` aligns V.3.v in five complete
+paragraphs and adds simplified013. All five paragraphs already existed.
+The actual print has eripton with pi, where the import had eritton with
+tau; raw323/normalized/attached source now agree with the print. The old
+variant note mistook that import error for manuscript variation and is
+superseded. The prior full flat record, ten unchanged nested records, raw
+page and recovered pre-bulk-edit record (20notes/31lexical/7theological
+decisions) are archived. The accomplished-commandments adjudication and
+contextual repentance wording remain. No new manuscript-selection locus
+or English extent is claimed.
+
+The bounded evidence compares LH1891printed307, Athos PlatesII/III, official
+Sinaiticus13.1–5, Vulgata18–20, Palatina39/41/43, and Latin-rendered Ethiopic
+120. The selected positive evil-was-found agrees with Sinaiticus/Palatina;
+Athos/Vulgata/Ethiopic rendering have a negative. That disagreement is
+disclosed rather than harmonized. Name-of-God versus Lord, extra death
+wording, unreadable first-hand letters, later correctors and Athos bracketed
+restorations are distinguished. All four roles, triple service, stone
+groups, repeated repentance conditions, construction deadline, no-place
+denial and exclusion remain. The historical397-record policy plan stays
+immutable; one exact complete-record followup is independently hash-pinned
+and mutation-tested for013.
+
+Azure013r1 identified a nonexistent elect-policy citation, a simplified
+metadata mismatch and a mislabeled unsupported genitive alternative. These
+were corrected with historical records preserved; reader wording stayed
+the same. Azure013r2 accepts both editions, with exact current YAML/evidence
+hashes verified. All135Hermas tests,22contextual-policy tests,397policy
+records,439/422YAML guards and90repair payload/source/base hashes pass.
+The34broader collation flags, remaining witnesses, independent review,
+reader/artwork migration and publication remain unfinished.

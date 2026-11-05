@@ -1915,3 +1915,57 @@ YAML/evidence hashes match. All147Hermas tests,24contextual-policy tests,
 397policy records,439/428YAML guards and96repair source/payload/base hashes
 pass. All34broader collation flags remain; other witnesses, independent
 review, reader/artwork migration and publication remain unfinished.
+
+
+## Vision 4.i beast and manuscript-correction alignment
+
+`fourth-vision-beast-alignment-20261105.v1.json` records ten complete
+paragraphs in legacy022, with a new simplified counterpart and twenty localized
+notes. All ten paragraphs already existed: this repair adds no source extent.
+The full earlier flat record, terminology/review/adjudication history and twenty
+unchanged nested reader records remain archived. Source pages330–331 are
+unchanged. The exact full-record policy followup preserves the immutable
+397-record terminology contract and is covered by mutation tests.
+
+The selected wording retains both warnings, every prayer clause, twenty days,
+ten stadia, one stadion, a hundred feet, the jar simile, fiery locusts, the
+only-tongue restriction, no movement until the narrator passes, and four color
+groups. Stale lexical metadata now matches the retained main text. The opening
+vision noun is identified as an editorial antecedent completion. Servants
+follows the consistent reader-facing policy without excluding possible
+bonded-status, belonging or allegiance nuances.
+
+Fresh Azure review prompted explicit reconsideration of the earlier rushing
+roar to rushing sound. The degree/result construction such ... that and ravage
+remain; the prior wording and rationale stay archived. This is a lexical
+revision, not a new manuscript selection. Palatina roaring is disclosed without
+making it an extra word in the selected Greek. The bounded lexical discussion
+in Nicholas Lane, Pindar, Isthmian4.47, footnote13, is contextual lexical
+evidence rather than another Hermas witness or a direct LSJ lookup.
+
+`fourth-vision-beast-witness-extracts-20261105.v1.json` distinguishes
+Sinaiticus first-hand kneeling from ca weeping, first-hand stone from S1 tongue,
+its omitted opening type/tribulation tail, corrected distance and countryside
+phrases, and other correction layers. Athos diplomatic print, Vulgata, Palatina
+and the mediated Ethiopic Latin rendering are compared without claiming fresh
+Geʿez collation. P.Oxy.4706 fragments4+5/6/7 are bounded edition evidence;
+restored letters, conjectural order/placement and missing lines are not visible
+complete verses. Acquired Oxford photographs do not establish a new complete
+line-by-line reading of these fragments.
+
+Azure `legacy022-20261105-r1` requested the sound, antecedent and servants
+changes. After revision, fresh `legacy022-20261105-r2` accepted both editions
+(actual model gpt-6.1-sol-2026-09-29); both YAML and evidence hashes match the
+receipt. Both editions remain drafts, with needs_review cross-check status and
+independent review false. The 149 Hermas tests, 25 contextual-policy tests,
+397-record check, 439 standard/429 simplified YAML guards and 97 repair
+payload/source/base hash checks pass. Full manuscript comparison, earlier
+English repairs, nested reader/artwork migration and publication are unfinished.
+
+
+Vision4.i metadata followup: the supplied-antecedent note now uses the supported
+lexical_alternative category rather than an unsupported translation_note value.
+A structured-payload validation test covers both editions. Wording and evidence
+are unchanged; fresh Azure legacy022-20261105-r3 accepts both editions, with
+exact YAML and supplemental-evidence hashes verified. The exact full-record
+policy pin was refreshed for this metadata-only change; earlier receipts remain.

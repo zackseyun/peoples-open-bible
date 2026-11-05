@@ -56,6 +56,13 @@ class FirstSeatTests(unittest.TestCase):
                     self.assertEqual(before.count(row['before']), row['count'])
                     after = after.replace(row['before'], row['after'])
             raw = ROOT / f'sources/shepherd_of_hermas/transcribed/raw/hermas_lightfoot1891_p{int(n):04d}.txt'
+            if n == '320':
+                # The next unit shares this leaf; prove its exact input is this
+                # repair's output, then permit only its one audited print fix.
+                follow = json.loads((P / 'legacy10-before-tower-stones-alignment-20261104.v1.json').read_text())
+                self.assertEqual(follow['raw_before']['320'], after)
+                self.assertEqual(after.count('συμπλέσιον'), 1)
+                after = after.replace('συμπλέσιον', 'συμψέλιον')
             self.assertEqual(raw.read_text(), after)
         self.assertEqual(len(arc['nested_unchanged']), 18)
         for path, row in arc['nested_unchanged'].items():

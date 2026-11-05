@@ -1813,3 +1813,30 @@ CI42029340121 exposed a machine-local raw archive path in the new016
 history test. The original path remains as provenance; an explicit
 repository-relative path now drives the portable hash check. The raw
 bytes and accepted016 YAML/evidence are unchanged.
+
+
+`aged-spirit-alignment-20261105.v1.json` aligns V.3.xi as four complete
+historical paragraphs and adds simplified019. All four already existed
+in two dialogue blocks; the source is unchanged. The complete old record
+and its lexical/grammar/revision history, plus four unchanged nested
+records, are archived. Raw328/329 hashes use repository-relative paths.
+Fourteen local notes replace duplicated and misplaced markers.
+
+The bounded comparison reads LH1891printed312–313, Athos PlatesIII–IV,
+official Sinaiticus19.1–4, Vulgata28, Palatina57 and the mediated Ethiopic
+Latin rendering124. Athos’s sins versus working softness and omission of
+softened are disclosed. Sinaiticus’s damaged/corrected mind clause and
+added three/first, Athos bracketed continuations and differing Latin
+luxuries/anxieties/thoughts are not unbroken exact corroboration. Sleep
+remains the Greek image; the Ethiopic rendering’s explicit death is
+identified as mediated versional wording.
+
+The prior softness/softened/steadied and polite I-would-like-to-know
+choices remain with alternatives and full historical adjudications.
+Singular spirit with plural addressees, all negatives/causes, Lord versus
+sir and the bodily-support purpose remain. Azure019r1 accepts both
+editions; current YAML/evidence hashes match its exact receipt.
+All143Hermas tests,397policy records,439/426YAML guards and94repair
+payload/source/base hashes pass. The unchanged23contextual-policy tests
+passed at015. All34broader collation flags remain; other witnesses,
+independent review, reader/artwork migration and publication are unfinished.

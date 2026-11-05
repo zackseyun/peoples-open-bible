@@ -22,6 +22,8 @@ class WealthStonesTests(unittest.TestCase):
                 self.assertIn(phrase,ps[0])
             for phrase in ['scabbed ones[h]','not going into the building','did not remain','holy ones[k]','useless']:
                 self.assertIn(phrase,ps[1])
+            self.assertIn('among these' if doc is docs[0] else 'Among them',ps[1])
+            self.assertIn('scabbed ones[h] are',ps[1])
             for phrase in ['cracks[g]','not at peace','face of peace[l]','remain in their hearts']:
                 self.assertIn(phrase,ps[2])
             self.assertIn('?” “',ps[2])

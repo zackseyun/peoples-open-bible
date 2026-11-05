@@ -1961,3 +1961,11 @@ independent review false. The 149 Hermas tests, 25 contextual-policy tests,
 397-record check, 439 standard/429 simplified YAML guards and 97 repair
 payload/source/base hash checks pass. Full manuscript comparison, earlier
 English repairs, nested reader/artwork migration and publication are unfinished.
+
+
+Vision4.i metadata followup: the supplied-antecedent note now uses the supported
+lexical_alternative category rather than an unsupported translation_note value.
+A structured-payload validation test covers both editions. Wording and evidence
+are unchanged; fresh Azure legacy022-20261105-r3 accepts both editions, with
+exact YAML and supplemental-evidence hashes verified. The exact full-record
+policy pin was refreshed for this metadata-only change; earlier receipts remain.

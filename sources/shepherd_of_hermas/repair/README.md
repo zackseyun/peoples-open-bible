@@ -1649,3 +1649,35 @@ All131Hermas tests,397policy,439/420YAML corpus guards and88payload/source/
 base hashes pass. The unchanged21contextual tests passed at006. There remain
 34broader source-collation flags. Further manuscript/version/excerpt comparison,
 reader/artwork migration, whole-book verification and publication are unfinished.
+
+
+`builders-revelation-alignment-20261105.v1.json` aligns V.3.iv as three
+complete historical paragraphs, joining six existing dialogue blocks and
+adding simplified012. It archives the full old flat record and twelve
+unchanged nested records, including prior growth/build and outcome
+adjudications. Duplicated and misplaced notes are localized. No source-body
+or English-extent change or new manuscript-selection locus is claimed.
+
+The bounded evidence compares LH1891 printed306, Athos PlateII, official
+Sinaiticus12.1–3, Vulgata17–18, Palatina37/39, and Latin-rendered Ethiopic
+119–120. It newly acquires Gonis2005's P.Oxy.LXIX edition and identifies
+Oxford4706 fragment1 at V3iv3/global12.3 in both print and the photograph.
+Surviving right-edge word parts are distinguished from reconstructed
+pronouns, conjunctions, verbs and spacing-based article omission. Correct
+DCLP/TM69384 has empty edition metadata; it supplies no transcript. Four
+Oxford images and the modern scan remain outsideGit for consultation.
+Bodmer readings remain edition-reported, without fresh Bodmer collation.
+
+Sinaiticus's sixty-to-six correction, deletion of the second six, added
+past revelation and added doubt question are distinguished from its first
+hand. Athos's diaphora/exodos, eti and estai differences and the versions'
+different titles/wording are disclosed. Azure012r1 caught inherited
+softening of edei to mere fitness; the standard now preserves ought-to-
+have-been, while simplified retains should-have-been. Both lexical records
+now describe the actual obligation. Azure012r2 accepts both editions;
+exact current input and evidence hashes are verified.
+
+All133Hermas tests,397policy records,439/421YAML guards and89repair
+payload/source/base hashes pass. All34broader collation flags remain;
+independent review, other manuscript comparison, reader/artwork migration
+and publication remain unfinished.

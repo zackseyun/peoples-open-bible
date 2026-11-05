@@ -769,3 +769,38 @@ The review scope is fidelity to the supplied source and disclosures; it does
 not authenticate manuscript handwriting or replace independent scholarship.
 Nested reader migration, remaining witness comparisons, artwork and verified
 whole-book publication are still pending.
+
+
+## Complete Mandate 12 dialogue restoration, 2026-11-04
+
+`twelve-dialogue-restoration-20261104.v1.json` records six complete historical
+sections, 30 paragraphs in each flat edition. Sections iii and iv had broken
+or displaced material, and vi was cut off and then misjoined to Similitude 1.
+The repair restores the full virtue list, salvation warning including children
+and household, anger/creation dialogue, lips/heart contrast, and final pure-heart
+conditions. Sections i, ii and v were already complete in extent and receive
+source alignment and notes. The normalized Greek bodies are unchanged.
+
+Lightfoot/Harmer, Lake’s Athos diplomatic transcription, and both Latin editions
+were compared at bounded loci. Palatina lacks iii through part of v.3; its
+editor supplies that stretch from Vulgata, so it is not independent Palatina
+evidence. The resumed text and editorial negations at printed129 are separately
+documented. Leipzig-held leaves are absent from Lake’s reproduction, not lost.
+The v1/v2 witness extracts preserve exact locators and source hashes, with
+edition reports distinguished from fresh manuscript photograph certification.
+
+All twelve exact flat files have model acceptance receipts: sections i–iv/vi
+in r2, v in r3 after documenting the two remaining note claims. Original requests,
+responses and revisions are retained; the audit verifies final file hashes.
+These are model fidelity reviews, not independent scholarship. All records
+remain drafts, and the immutable 397-record policy plan is preserved with exact
+full-record follow-ups for iv and vi. 77 Hermas tests, 20 contextual tests,
+397 policy checks, both reader guards and 62 repair hash checks passed.
+
+All 48 original nested records and the old slot47 donor remain unchanged and
+archived in `legacy41-47-before-twelve-restoration-20261104.v1.json`. Slot47
+still contains displaced Mandate material and a bad join: repair Similitude 1
+and migrate the nested reader before publishing this range. Historical reader
+IDs and artwork have not been reassigned. The remaining source/translation
+queue is 34 sections needing collation and 17 needing repaired-source comparison;
+whole-book verification and publication remain incomplete.

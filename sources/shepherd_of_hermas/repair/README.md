@@ -1507,3 +1507,31 @@ passed after the spatial fix. The unchanged20contextual tests passed at the
 household checkpoint. The34broader collation flags remain. Other witnesses,
 independent scholarship, nested reader/artwork migration and publication
 remain unfinished.
+
+`second-warning-alignment-20261104.v1.json` aligns V.2.ii in eight numbered
+paragraphs and adds simplified006. All eight paragraphs already existed.
+The printed verb in II.8, ἀπεγνωρίσθαι, had lost ρι in the import; raw317,
+normalized source and attached source now match the print, Athos and Sinaiticus.
+This is a transcription correction, with zero new manuscript-selection loci.
+The full old flat record, raw page and sixteen unchanged nested records are
+archived. The contextual policy uses an exact full-record follow-up pin.
+
+`second-warning-witness-extracts-20261104.v1.json` compares LH1891physical317,
+Athos Plate I, Sinaiticus6.1–8, Vulgata printed8–10, Palatina printed19–23,
+and d’Abbadie1860's Latin-rendered Ethiopic printed116. Notes distinguish
+Sinaiticus's first-hand Christ/corrected Lord, Vulgata's positive profit,
+negative versus positive life-denial, editorial emendations, forgiveness
+scope and past/future mercy. The selected whole-heart repentance AND
+removal of double-mindedness condition, no-salvation warning, distinct
+group/time limits, negative life clause and past mercy remain explicit.
+No direct Geʿez or original-photograph collation is claimed.
+
+Azure006r1 caught a stale lexical rationale identifying the passage with
+death/judgment. Both rationales now leave its kind unspecified, as the
+source does; the English paragraphs are unchanged. Fresh006r2 accepts
+both editions and the current YAML/evidence hashes match its receipt.
+All123Hermas tests,21contextual tests,397policy,439/416YAML guards and84
+payload/source/base hashes passed before the rationale correction. The
+two focused warning tests,397policy and84hashes passed after it. There
+remain34broader source-collation flags; other witness comparisons, reader/
+artwork migration, whole-book verification and publication are unfinished.

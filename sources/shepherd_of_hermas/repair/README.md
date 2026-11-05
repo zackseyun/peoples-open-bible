@@ -1589,3 +1589,34 @@ hashes passed before metadata corrections; two focused tests and86hashes
 passed after each correction. The unchanged21contextual tests passed at006.
 There remain34broader source-collation flags. Further witness comparison,
 reader/artwork migration, whole-book verification and publication are unfinished.
+
+`first-seat-alignment-20261104.v1.json` aligns V.3.i in nine numbered
+paragraphs and adds simplified009. All nine paragraphs already existed.
+Scans confirm seven imported transcription errors: the cushion word,
+two linen accents, three seat-word pi/psi forms on319, and the remain
+command on320. Raw/normalized/attached source now matches the print for
+those words; adjacent V.2.iv and V.3.ii normalized bodies are unchanged.
+These are print corrections, with zero new manuscript-selection loci.
+The full old flat record, raw pages and eighteen unchanged nested records
+are archived. All note anchors are localized.
+
+`first-seat-witness-extracts-20261104.v1.json` compares LH1891physical319–320,
+Athos PlateII, Sinaiticus9.1–9, Vulgata printed12–14, Palatina printed29–33,
+and d’Abbadie1860's Latin-rendered Ethiopic printed117–118. Notes distinguish
+fifth/sixth hour, bracketed Vulgata furniture supplement, the arrival/listening
+block absent in Sinaiticus/Palatina, the conjectural stood-near form,
+Sinaiticus's S1/ca left-gesture additions, bare/my/his Name, and different
+share, confession and perseverance wording. The selected scene, imperative,
+sitting promise and works/endurance conditions remain. No direct Geʿez or
+original-manuscript photograph collation is claimed.
+
+Azure009r1 caught two stale lexical metadata entries: a clock-conversion
+claim and do-their-deeds instead of the actual do-their-works. These are
+corrected. Additional scan/XML comparison corrected the three seat-word
+forms before fresh009r2, which accepts both editions; current input/evidence
+hashes match its receipt. All129Hermas tests and397policy pass after the
+final changes;87payload/source/base hashes and two focused tests also pass.
+439/419YAML guards passed before the final source/metadata revision. The
+unchanged21contextual tests passed at006. The34broader source-collation flags,
+further witness comparisons, reader/artwork migration, whole-book verification
+and publication remain unfinished.

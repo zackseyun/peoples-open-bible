@@ -1456,3 +1456,27 @@ are still34broader collation flags. Other witnesses, direct photographs,
 independent scholarship, nested reader/artwork migration and publication
 remain unfinished. Further Bodmer image requests returnedHTTP500; no
 Bodmer image, transcription or reading is claimed.
+
+`first-departure-alignment-20261104.v1.json` aligns V.1.iv in three
+numbered paragraphs and adds simplified004. All three paragraphs already
+existed; no source body or whole-book English extent is added. The misplaced
+last/earlier-things note is now attached to that distinction rather than
+the chair. The full old flat record and six nested records are archived.
+
+`first-departure-witness-extracts-20261104.v1.json` records LH1891physical316,
+Athos Plate I, Sinaiticus4.1–3, Vulgata printed7, Palatina printed17, and
+d’Abbadie1860’s Latin-rendered Ethiopic printed115. Sinaiticus first hand
+lacks the chair-lifting clause and the please/but-earlier phrase; ca and S1
+respectively add them. The working fuller narrative is retained with those
+corrections distinguished. Four chair-carriers and two woman-carriers,
+later-pleasing/earlier-harsh, the two response groups, elbows, east, cheerful
+departure and courage exhortation remain. The Latin versions’ shoulders/
+with-their-hands wording and the Ethiopic rendering’s different farewell
+are disclosed, not substituted. No direct Geʿez or all-letter manuscript
+photograph collation is claimed.
+
+Azure004r1accepts both editions, with current input/evidence hashes verified.
+All119Hermas tests,397policy,439/414YAML guards and82payload/source/base
+hashes pass; the unchanged20contextual tests passed at the household
+checkpoint. The34broader collation flags remain. Other witnesses, independent
+scholarship, nested reader/artwork migration and publication remain unfinished.

@@ -1969,3 +1969,65 @@ A structured-payload validation test covers both editions. Wording and evidence
 are unchanged; fresh Azure legacy022-20261105-r3 accepts both editions, with
 exact YAML and supplemental-evidence hashes verified. The exact full-record
 policy pin was refreshed for this metadata-only change; earlier receipts remain.
+
+
+## Vision 4.iii four-color explanation alignment
+
+`four-colors-alignment-20261105.v1.json` records all seven historical
+paragraphs in legacy024, previously arranged in five English blocks. A complete
+simplified counterpart and eighteen localized notes now accompany them. The
+selected Greek source is unchanged; physical332/printed316 contains the whole
+unit, while physical333 starts Vision5. All previous flat review/adjudication
+history and ten unchanged nested records remain archived.
+
+The print’s bracketed dwelling phrase is now represented as [who dwell], with
+its disputed editorial status explicit; it formerly appeared only in a note.
+The selected second-person future is restored as you ... will be purified.
+Earlier adjudications upon, among them and fired remain. Both editions retain
+necessity in the blood/fire destruction clause, the past escape, every grief
+and distress, purity and usefulness for the tower, the full spotless/pure and
+chosen-by-God eternal-life clause, the negative command, the elliptical willing/
+nothing condition, prior written instruction, and the narrator’s fearful
+inference rather than an actual return of the beast. The prior interpretation
+of the conditional remains one possibility, alongside event-aversion, without
+turning either into an added main-text assertion.
+
+`four-colors-witness-extracts-20261105.v1.json` compares Athos diplomatic
+print, official Sinaiticus XML, Vulgata, Palatina and the mediated Ethiopic Latin
+rendering. Sinaiticus’s shorter purity clause and cloud, Palatina’s cloud and
+future escape, singular/plural pronouns, title differences, correction hands
+and the XML-supplied place are distinguished. Editorial brackets are not called
+physical manuscript loss. No new manuscript selection or fresh complete
+photograph/direct-Geʿez collation is claimed. P.Oxy.4706 and P.Amh.190 are not
+assumed to cover this passage. Selected Bodmer38 image derivatives are now
+recovered; their inspected Hermas/Dorotheus boundary excludes this passage.
+
+Fresh Azure legacy024-20261105-r1 accepts both editions (actual model
+gpt-6.1-sol-2026-09-29), with both YAML and supplemental-evidence file hashes
+verified. Both remain draft/needs_review with independent review false. All152
+Hermas tests, the439 standard/430simplified YAML guards and98repair structured
+payload/source/base hash checks pass. This record is outside the immutable397-
+record contextual terminology plan, which is unchanged. Full collation, earlier
+English repairs, nested reader/artwork migration and publication remain pending.
+
+
+## Bodmer38 selected-image recovery
+
+`bodmer38-recovered-leaves-20261105.v1.json` records valid official JPEGs
+recovered after earlier HTTP500 responses. The inspected captions place
+canvas17 at14.6-15.5,22 at18.8-20.1 and23 at20.1-21.4. Canvas24 begins
+Dorotheus, and the later acquired leaves are other-work evidence rather than
+additional Hermas witnesses. A1532x2044 derivative of23 permits a bounded
+inheritance/renewal/third-vision stool-sequence word-group match; it does not
+certify every damaged letter, later wording or order. Earlier020/021accepted
+inputs remain unchanged pending detailed followup. These recovered leaves do
+not cover the current Vision4or5passages. Many earlier canvases and a larger
+derivative still return500. Images stay outsideGit under the repository's
+CC-BY-NC4.0 attribution/license; only own observations and hashes are recorded.
+
+
+After the Bodmer availability update, fresh Azure legacy024-20261105-r2
+accepts both unchanged four-color editions; exact YAML and revised evidence
+hashes match. All153Hermas tests pass, including the recovered-image work/
+passage boundary guard. The existing152-test and r1results above are historical
+checkpoints; r2is the current exact-evidence review.

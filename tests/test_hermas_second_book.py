@@ -24,6 +24,7 @@ class SecondBookTests(unittest.TestCase):
                 self.assertIn(text, ps[1])
             for text in ['last year[h]', 'little book[d]', 'elect of God[f]', 'so many things', 'Take it', 'give it back to me[g]']:
                 self.assertIn(text, ps[2])
+            self.assertTrue('before me' in ps[2] or 'in front of me' in ps[2])
             for text in ['field', 'letter for letter', 'syllables[e]', 'snatched from my hand']:
                 self.assertIn(text, ps[3])
             self.assertTrue('by whom I did not see' in ps[3] or 'did not see who took it' in ps[3])

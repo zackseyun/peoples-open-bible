@@ -1749,3 +1749,31 @@ All137Hermas tests,397policy records,439/423YAML guards and91repair
 payload/source/base hashes pass. The unchanged22contextual-policy tests
 passed at013. All34broader collation flags remain; other witnesses,
 independent review, reader/artwork migration and publication are unfinished.
+
+
+`repentance-transfer-alignment-20261105.v1.json` aligns V.3.vii as six
+complete paragraphs and adds simplified015. All six already existed in
+five English blocks. Two imported demonstratives on physical325 now match
+the printed rough breathing/circumflex; no negation, manuscript-selection
+locus or English extent is added. The complete flat history, raw/normalized
+input and ten unchanged nested records are archived. Nineteen notes now
+attach once at their actual clauses.
+
+The evidence compares LH1891printed308–309, Athos PlateIII, official
+Sinaiticus15.1–6, Vulgata22–23, Palatina45/47 and the Ethiopic edition’s
+Latin rendering121–122. It preserves the selected positive and negative
+transfer conditions while disclosing Sinaiticus/Palatina’s different
+because-of construction. Bracketed Vulgata repentance wording, the
+Palatina editorial proposal and the Ethiopic rendering’s supplied negative
+are distinguished from preserved manuscript words. Athos’s difficult
+conditional is not silently repaired into corroboration. Bodmer imagery
+remains unacquired after another HTTP500 tile response.
+
+The contextual repent in2/change-their-mind in3 distinction and prior
+cravings, courage, righteous-word and plural-pronoun choices remain. The
+full later record and historical397-policy contract are exactly pinned
+and mutation-tested. Azure015r1 accepts both editions; current YAML and
+evidence hashes match its receipt. All139Hermas tests,23contextual-policy
+tests,397policy records,439/424YAML guards and92repair payload/source/base
+hashes pass. All34broader collation flags remain; independent review,
+other witnesses, reader/artwork migration and publication are unfinished.

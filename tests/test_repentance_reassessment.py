@@ -321,4 +321,31 @@ class HermasStonesMeaningFollowupTests(unittest.TestCase):
                 policy.historical_view(path, current)
 
 
+class HermasRepentanceTransferFollowupTests(unittest.TestCase):
+    def test_exact_record_preserves_opposite_directions_and_conditions(self):
+        path = ROOT / policy.HERMAS_REPENTANCE_TRANSFER
+        current = prior.load(path)
+        item = policy.plan_by_path()[policy.HERMAS_REPENTANCE_TRANSFER]
+        historical = policy.historical_view(path, current)
+        self.assertEqual(historical['translation']['text'], item['after_text'])
+        self.assertEqual(prior.digest(historical['source']), item['source_sha256'])
+        self.assertEqual(policy.approved_errors(path, current), [])
+        for field in ('source', 'translation'):
+            bad = copy.deepcopy(current)
+            bad[field]['text'] += ' altered'
+            self.assertTrue(policy.approved_errors(path, bad))
+        bad = copy.deepcopy(current)
+        bad['translation']['text'] = bad['translation']['text'].replace('change their mind[d]', 'repent[d]')
+        self.assertTrue(policy.approved_errors(path, bad))
+        bad = copy.deepcopy(current)
+        bad['translation']['text'] = bad['translation']['text'].replace('if the evil deeds', 'because of the evil deeds')
+        self.assertTrue(policy.approved_errors(path, bad))
+        bad = copy.deepcopy(current)
+        next(n for n in bad['translation']['footnotes'] if n['marker'] == 's')['text'] = 'All witnesses preserve the supplied words.'
+        self.assertTrue(policy.approved_errors(path, bad))
+        with patch.object(Path, 'read_bytes', return_value=b'{}'):
+            with self.assertRaisesRegex(ValueError, 'decision pin differs'):
+                policy.historical_view(path, current)
+
+
 if __name__=='__main__':unittest.main()

@@ -1270,3 +1270,37 @@ other witnesses, nested reader/artwork migration and publication are unfinished.
 empty, so the catalogue’s digital-text link must not be described as an
 acquired transcription. Images and the1991edition still require passage-level
 comparison; no Bodmer reading is selected on the basis of this availability check.
+
+`vision-three-tower-alignment-20261104.v1.json` aligns complete V.3.iii in
+standard011 and adds five paragraphs in simplified011. All five historical
+English paragraphs already existed; no new whole-book extent is claimed.
+The source attached to the older reader still contained a printer footer,
+although the normalized source had already removed it. Raw322/printed306
+now correctly reads imperative ἐπερώτα and ἄξιόν με ἡγήσω, replacing corrupt
+OCR. The normalized body changes only those printed readings, not a newly
+selected manuscript locus. The prior flat record/adjudications and ten
+unchanged nested records are archived.
+
+`vision-three-tower-witness-extracts-20261104.v1.json` records LH1891pages321–322,
+AthosLake1907PlateIIlines27–36, Sinaiticus Project11.1–5, Vulgata16–17and
+Palatina35–37. The cheerful/these-things supplement remains marked in English;
+the note explains that two English bracket spans represent one Greek span
+because the hearing verb itself is outside it. Conditions for rejoicing,
+completed revelations, rebuke, the Church’s self-identification, imperative
+asking, limits on disclosure and both past/future saved-through-water verbs
+remain. God/Lord, honorifying/knowing, the Palatina alternative to the rebuke
+and Vulgata’s added scriptures phrase are disclosed rather than harmonized.
+
+The397record policy plan is unchanged. A separately SHA-pinned complete
+record follow-up preserves011’s historical contextual repentance judgment,
+reader note and terminology metadata. Fresh Azure011r1accepts both editions;
+input and evidence hashes match. All126tests (106Hermas+20contextual),397policy,
+439/408YAMLguards and76payload/source/base checks pass. One earlier repaired
+comparison item remains (M4i), plus34broader-collation flags. Independent
+scholarship, other witnesses, nested reader/artwork migration and publication
+remain unfinished.
+
+Bodmer canvas017’s info.json resolves, but two image-size requests returned
+HTTP500. No new Bodmer image, reading or transcription is claimed. Its resolved
+manifest and catalogue metadata remain useful access records; actual passage
+comparison still requires the images or the1991edition.

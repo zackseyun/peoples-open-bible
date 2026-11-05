@@ -2076,3 +2076,43 @@ receipt. All155Hermas tests,26contextual-policy tests,397-record check,
 hash checks and git diff check pass. Both remain draft/needs_review with
 independent review false. Other witness collation, earlier English repairs,
 nested reader/artwork migration and publication remain unfinished.
+
+
+## First Mandate creation, trust and conditional life alignment
+
+`first-mandate-alignment-20261105.v1.json` records both historical
+paragraphs of legacy026, previously one English block. Ten localized notes and
+a complete simplified counterpart now accompany them. The earlier flat record,
+all consistency/adjudication history and two unchanged nested records remain
+archived. Selected Greek and raw334 are unchanged; no source or English extent
+is added. This unit is outside the immutable397-record terminology plan.
+
+The earlier live-to-God consistency decision remains in both editions and is
+now reflected in the lexical/theological metadata. The documented put-your-trust
+choice is restored, while set in order, from what was not, encompasses,
+practice self-control, throw off and put on remain. All three creation all-
+things expressions, one God, alone uncontainable, the trust/fear/self-control
+chain, keeping, future removal of every wickedness from yourself, every virtue
+of righteousness and the closing if-you-keep-this-command condition remain.
+The old identical-main-text alternative note is archived rather than repeated.
+
+`first-mandate-witness-extracts-20261105.v1.json` distinguishes Athos/
+Sinaiticus, Vulgata/Palatina and mediated Ethiopic evidence. The extra Latin
+words about definition and conception are not imported into the Greek; Lord/
+God and the Ethiopic rendering's different restraint/virtue construction are
+disclosed. No new manuscript selection or full photograph/Ge'ez collation is
+claimed. Athanasius De incarnatione3.1 is checked against the Bodleian scan
+physical25/printed4; it quotes only through into being. An extra word in the
+First1KGreek electronic text is rejected as digital duplication after the print
+comparison, not promoted to a manuscript variant. The Irenaeus quotation through
+Eusebius Historia ecclesiastica5.8.7 stops after created/ordered. This single
+transmission chain is not two independent manuscripts. Neither quotation
+attests the whole conduct paragraph or authorizes adding surrounding theology.
+
+Fresh Azure legacy026-20261105-r1 accepts both editions, actual model
+gpt-6.1-sol-2026-09-29, with exact YAML and supplemental-evidence hashes
+verified. All157Hermas tests,397-record policy check,439standard/432simplified
+YAML guards,100structured repair payload/source/base hash checks and git diff
+check pass. Both remain draft/needs_review with independent review false. Other
+collation, earlier English repairs, nested reader/artwork migration and
+publication remain unfinished.

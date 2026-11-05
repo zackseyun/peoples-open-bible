@@ -1840,3 +1840,45 @@ All143Hermas tests,397policy records,439/426YAML guards and94repair
 payload/source/base hashes pass. The unchanged23contextual-policy tests
 passed at015. All34broader collation flags remain; other witnesses,
 independent review, reader/artwork migration and publication are unfinished.
+
+
+`inheritance-renewal-alignment-20261105.v1.json` aligns V.3.xii as three
+complete numbered paragraphs and adds simplified020. All three already
+existed. The source is unchanged; raw329 and six nested records remain
+hash-guarded and the complete prior flat record is archived. The earlier
+she-says attribution is corrected to the continuing male interpreter,
+with the woman retained as the person he describes. Fourteen local notes
+and balanced quotations accompany the repair.
+
+The comparison reads LH1891printed313, Athos PlateIV, official
+Sinaiticus20.1–3, Vulgata28–29, Palatina57/59 and the mediated Ethiopic
+Latin rendering124–125. Sinaiticus’s S1-added relative clause and their
+versus your strengthening, Athos’s bracketed sequences, and the Vulgata’s
+bracketed spirit-renewal supply are explicit. The Ethiopic rendering’s
+commands/future strength, patience and mutual-love condition are
+distinguished from the working past statements, strengthening and peace.
+
+The prior rises-up adjudication and complete posture chain remain, with
+both causes of despair, only-last-day expectation, sudden inheritance,
+corruption from prior deeds, plural spirits, past compassion/actions,
+joy/reason and future whole-heart peace condition. Azure020r1 accepted
+standard and both main texts but identified simplified notea’s reference
+to countenance rather than its actual face. The note now matches its
+edition and has a regression guard. Fresh Azure020r2 accepts both; exact
+current YAML/evidence receipt hashes match. All145Hermas tests,397policy
+records,439/427YAML guards and95repair payload/source/base hashes pass.
+The unchanged23contextual-policy tests passed at015. All34broader
+collation flags remain; other witnesses, independent review, reader/artwork
+migration and publication remain unfinished.
+
+A further020source pass adds P.Amh.II190b–c recto, V3xii3, from
+Grenfell–Hunt1901printed197. The bounded ten-line fragment includes
+parts of softness/strength/faith, the Lord’s seeing/rejoicing and the
+tower/further-disclosure sequence. Bracketed/dotted letters and missing
+beginnings remain distinct from preserved parts; the fragment does not
+reach the closing whole-heart peace condition. The consulted PlateXXIV
+shows b/c versos from the next chapter, so no fresh recto photograph
+collation is claimed. Main text is unchanged. Fresh Azure020r3 accepts
+both augmented editions; current YAML/evidence receipt hashes match and
+all145Hermas tests and95repair hashes pass again. Earlier r1/r2 receipts
+are retained as historical reviews of their own inputs.

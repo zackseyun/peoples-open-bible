@@ -5,7 +5,7 @@ from tools.enoch import bounded_application as t
 
 NAME = 'enoch_full_repair_batch39_20261105'
 BASE = '661a61a3b19f2d16819a5f7cd7916f5bedc9b814'
-MANIFEST_SHA = '91ad98d147a72b29f82fe7769dc1ef28607fcac33223d986386dae9cc46eeff5'
+MANIFEST_SHA = '1650c36fad62c2a9cfeb87585628ac6aef32105305cb2be308148853c423533f'
 REFS = ['1 Enoch 7:3', '1 Enoch 66:1', '1 Enoch 66:2']
 CHANGED_PATHS = {'007/003.yaml', '066/001.yaml', '066/002.yaml'}
 

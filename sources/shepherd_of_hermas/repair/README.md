@@ -1416,3 +1416,43 @@ All114Hermas tests pass; the unchanged20contextual tests passed at the
 opening checkpoint. The397policy check,439/412YAML guards and80payload/source/base
 hashes pass. Other witnesses, original photographs, independent scholarship,
 nested reader/artwork migration and publication remain unfinished.
+
+`first-household-alignment-20261104.v1.json` aligns V.1.iii in four
+numbered paragraphs and adds simplified003. All four paragraphs already
+existed. Raw315 and normalized Greek now correctly read printed ὑμᾶς, you,
+where the import had ἡμᾶς, us. The English follows the printed working
+edition; actual Sinaiticus ca us remains a disclosed variant. The complete
+old flat record, eight nested records and old raw315/normalized text are
+archived. A separately SHA-pinned full-record follow-up preserves the
+original397-record terminology decision without altering that plan.
+
+`first-household-witness-extracts-20261104.v1.json` records LH1891physical315–316,
+Athos Plate I, Sinaiticus3.1–4, Vulgata printed5–7 and Palatina printed11–17.
+Orphan notes b–g and misplaced a are repaired. The household’s correction,
+all past evils, daily righteous word, conditional whole-heart repentance,
+plural books with the holy ones, terrifying/remembered words, full creation
+recital, moving/leveling and final statutes/faith condition remain. Differences
+in pronouns, conditionality, book number, remembered words and invisible
+power are disclosed, not harmonized.
+
+D’Abbadie1860’s Ethiopic edition was acquired. Its Latin rendering of V.1.iii
+(printed114–115, physical126–127) is now also compared. It retains the
+repentance condition, but has singular book, forgiveness versus healing,
+a different creation/purification recital and hoped-for hope language.
+Its proposed foundation reading is an editorial change, not preserved
+Ethiopic words. This is expressly evidence through the printed Latin
+translation, not direct Geʿez or manuscript-photo collation. The complete
+Vision I Latin rendering was visually read at physical125–127; integrating
+the remaining opening/closing notes is pending.
+
+Azure003r1accepted standard and requested two simplified corrections:
+the corrective purpose of anger, and fondness explaining non-admonition.
+Those relationships are explicit now. Fresh003r2accepts both editions,
+including the added Ethiopic evidence; exact input/evidence hashes match.
+All136tests (116Hermas+20contextual),397policy,439/413YAML guards and81
+payload/source/base hashes passed before the final revisions. The three
+focused household tests,81hashes and397policy passed after them. There
+are still34broader collation flags. Other witnesses, direct photographs,
+independent scholarship, nested reader/artwork migration and publication
+remain unfinished. Further Bodmer image requests returnedHTTP500; no
+Bodmer image, transcription or reading is claimed.

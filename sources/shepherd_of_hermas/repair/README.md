@@ -2031,3 +2031,48 @@ accepts both unchanged four-color editions; exact YAML and revised evidence
 hashes match. All153Hermas tests pass, including the recovered-image work/
 passage boundary guard. The existing152-test and r1results above are historical
 checkpoints; r2is the current exact-evidence review.
+
+
+## Vision5 shepherd introduction and bounded Clement quotation
+
+`shepherd-introduction-alignment-20261105.v1.json` records seven complete
+paragraphs in legacy025, a new simplified counterpart and eighteen localized
+notes. The full prior flat record, review/adjudication/terminology history and
+fourteen unchanged nested records remain archived. Selected Greek and raw
+pages333-334 are unchanged; no source extent is added. The exact full-record
+policy followup preserves the immutable397-record contextual terminology
+contract, with mutation tests for both conditions and the repentance title.
+
+Documented guise, handed over, mandates and senselessly choices are retained
+or restored consistently. The very main points returns to the earlier archived
+appositional wording, replacing especially. Both editions retain the reciprocal
+greeting, sender and rest-of-life purpose, narrator's testing supposition, full
+recognition/transformation/fear/grief chain, all previous things shown again,
+plural beneficial-you, repeated first instructions, other-things/as-shown
+writing, hand/read/able-keep purpose, both full hearing/keeping/walking/doing
+and not-repenting/adding-sins conditions, pure heart, both Lord outcomes, all
+promises, opposite things and the angel-of-repentance title.
+
+`shepherd-introduction-witness-extracts-20261105.v1.json` distinguishes
+Athos/Sinaiticus and the Vulgata/Palatina/mediated Ethiopic comparisons: hide,
+goat skin and cloak; most-venerable sender versus angel of justice; correction
+hands; pure heart versus pure mind or purifying hearts; repeated instruction
+and closing-word differences. Testing remains the narrator's inference and
+white skin is the worn hide, not bodily complexion. No new Greek manuscript
+selection, exhaustive photograph or direct-Ge'ez collation is claimed.
+
+Clement's primary Greek Stromata1.1.1 opening, consulted through the
+Stahlin/Perseus electronic edition, preserves the short read-at-hand/able-keep
+purpose of Vision5.5. It is not an attestation of every word of the closing
+Vision5.7 warning. The bounded ancient clause, primary URL and acquisition hash
+are recorded; full modern HTML remains outsideGit. The quotation is not a
+continuous Hermas manuscript. Bodmer's recovered earlier-Vision3 leaves and
+P.Oxy.4706/P.Amh.190 are not assumed to cover this unit.
+
+Fresh Azure legacy025-20261105-r1 accepts both editions, actual model
+gpt-6.1-sol-2026-09-29; exact YAML and supplemental-evidence hashes match the
+receipt. All155Hermas tests,26contextual-policy tests,397-record check,
+439standard/431simplified YAML guards,99structured repair payload/source/base
+hash checks and git diff check pass. Both remain draft/needs_review with
+independent review false. Other witness collation, earlier English repairs,
+nested reader/artwork migration and publication remain unfinished.

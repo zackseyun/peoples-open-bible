@@ -21,6 +21,8 @@ class OpeningAlignmentTests(unittest.TestCase):
             self.assertEqual([p.split('. ', 1)[0] for p in ps], [f'I.{i}' for i in range(1, 10)])
             self.assertIn('nothing', ps[1])
             self.assertIn('confess my sins', ps[2])
+            self.assertIn('broken up by the waters', ps[2])
+            self.assertNotIn('cut off by the waters', ps[2])
             self.assertIn('against me', ps[5])
             self.assertIn('falsely accusing', ps[6])
             self.assertIn('goddess[1]', ps[6])

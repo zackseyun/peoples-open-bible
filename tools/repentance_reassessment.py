@@ -33,7 +33,7 @@ def plan_by_path():
 
 HERMAS_OPENING = 'translation/extra_canonical/shepherd_of_hermas/001.yaml'
 HERMAS_FOLLOWUP = 'sources/shepherd_of_hermas/repair/contextual-policy-followup-20261103.v1.json'
-HERMAS_FOLLOWUP_SHA256 = 'a3e5f53b2847a7c24f0ec1c82912519b618b3bff53851c9f0f03d17181f0810f'
+HERMAS_FOLLOWUP_SHA256 = 'af22e9c33cd6b6e6750804f3c07f417f7a74bde5eca5e6d7df2d31ef21d786fe'
 HERMAS_ELEVEN = 'translation/extra_canonical/shepherd_of_hermas/040.yaml'
 HERMAS_ELEVEN_FOLLOWUP = 'sources/shepherd_of_hermas/repair/contextual-policy-eleven-followup-20261104.v1.json'
 HERMAS_ELEVEN_FOLLOWUP_SHA256 = '103ae3f5018c0da809ecbe3a4a7443ae433cfd8a06751920e2f56d8053980016'

@@ -26,6 +26,7 @@ class InheritanceRenewalTests(unittest.TestCase):
             self.assertEqual(set(re.findall(r'\[([a-z]|[0-9]+)\]',doc['translation']['text'])),set(notes))
             for m in notes:self.assertEqual(doc['translation']['text'].count('['+m+']'),1)
             self.assertIn('male interpreter',notes['g'])
+            self.assertTrue(notes['a'].startswith('Countenance renders' if doc is docs[0] else 'Face renders'))
             self.assertIn('S1 marginal addition over an empty first-hand reading',notes['k'])
             self.assertIn('editorial supply from Greek',notes['j'])
             self.assertIn('their strengthening',notes['m'])

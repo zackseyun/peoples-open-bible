@@ -91,6 +91,10 @@ HERMAS_REPENTANCE_TRANSFER = 'translation/extra_canonical/shepherd_of_hermas/015
 HERMAS_REPENTANCE_TRANSFER_FOLLOWUP = 'sources/shepherd_of_hermas/repair/contextual-policy-repentance-transfer-followup-20261105.v1.json'
 HERMAS_REPENTANCE_TRANSFER_FOLLOWUP_SHA256 = '5adb15063e79b60bebe752fefa1d4cefb87f8340d3b9837e4aef356ff3cf12c9'
 
+HERMAS_FOUR_FEET_REVELATION = 'translation/extra_canonical/shepherd_of_hermas/021.yaml'
+HERMAS_FOUR_FEET_REVELATION_FOLLOWUP = 'sources/shepherd_of_hermas/repair/contextual-policy-four-feet-revelation-followup-20261105.v1.json'
+HERMAS_FOUR_FEET_REVELATION_FOLLOWUP_SHA256 = 'df635417e1791657c3424ade0d6498d44953c0c15395d4e273b7a2af00612aed'
+
 def historical_view(path, doc):
     """Validate one exact later source repair before projecting its history.
 
@@ -103,6 +107,7 @@ def historical_view(path, doc):
     """
     name = Path(path).resolve().relative_to(ROOT).as_posix()
     followups = {
+        HERMAS_FOUR_FEET_REVELATION: (HERMAS_FOUR_FEET_REVELATION_FOLLOWUP, HERMAS_FOUR_FEET_REVELATION_FOLLOWUP_SHA256),
         HERMAS_REPENTANCE_TRANSFER: (HERMAS_REPENTANCE_TRANSFER_FOLLOWUP, HERMAS_REPENTANCE_TRANSFER_FOLLOWUP_SHA256),
         HERMAS_STONES_MEANING: (HERMAS_STONES_MEANING_FOLLOWUP, HERMAS_STONES_MEANING_FOLLOWUP_SHA256),
         HERMAS_SECOND_WARNING: (HERMAS_SECOND_WARNING_FOLLOWUP, HERMAS_SECOND_WARNING_FOLLOWUP_SHA256),
@@ -139,7 +144,7 @@ def historical_view(path, doc):
         raise ValueError('Hermas repair does not preserve the historical terminology input')
     if source != repair['after_source'] or text != repair['after_text']:
         raise ValueError('Hermas source/text differs from exact later repair')
-    if name in (HERMAS_REPENTANCE_TRANSFER, HERMAS_STONES_MEANING, HERMAS_SECOND_WARNING, HERMAS_FIRST_HOUSEHOLD, HERMAS_OPENING, HERMAS_VISION_THREE, HERMAS_ELEVEN, HERMAS_FOUR, HERMAS_FOUR_I, HERMAS_FOUR_II, HERMAS_NINE, HERMAS_TEN_II, HERMAS_TWELVE_IV, HERMAS_TWELVE_VI, HERMAS_SIX_II, HERMAS_SEVEN, HERMAS_EIGHT_I):
+    if name in (HERMAS_FOUR_FEET_REVELATION, HERMAS_REPENTANCE_TRANSFER, HERMAS_STONES_MEANING, HERMAS_SECOND_WARNING, HERMAS_FIRST_HOUSEHOLD, HERMAS_OPENING, HERMAS_VISION_THREE, HERMAS_ELEVEN, HERMAS_FOUR, HERMAS_FOUR_I, HERMAS_FOUR_II, HERMAS_NINE, HERMAS_TEN_II, HERMAS_TWELVE_IV, HERMAS_TWELVE_VI, HERMAS_SIX_II, HERMAS_SEVEN, HERMAS_EIGHT_I):
         # This repair replaces obsolete lacuna annotations and generation
         # provenance as well as restoring the missing paragraphs. Pin the
         # complete new record before exposing the original review contract.

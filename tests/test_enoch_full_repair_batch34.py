@@ -48,7 +48,10 @@ class Batch34Test(unittest.TestCase):
      from tools.enoch import batch38_evidence
      if (t.APPLICATIONS/batch38_evidence.NAME/'application.json').is_file():
       batch38_evidence.verify_current();extra |= batch38_evidence.CHANGED_PATHS
-   self.assertEqual({k for k,v in proof['actual_current_postmap'].items()if proof['current_postmap'][k]!=v},extra)
+      from tools.enoch import batch39_evidence
+      if (t.APPLICATIONS/batch39_evidence.NAME/'application.json').is_file():
+       batch39_evidence.verify_current();extra |= batch39_evidence.CHANGED_PATHS
+   self.assertEqual({k for k,v in proof['actual_current_postmap'].items()if proof['current_postmap'].get(k)!=v},extra)
   self.assertTrue(receipt['unrelated_canonical_files_unchanged_at_application'])
   self.assertFalse(receipt['deployed_by_transaction'])
  def test_legacy_descriptor_preserves_parent_only_history(self):
@@ -113,7 +116,7 @@ class Batch34Test(unittest.TestCase):
   self.assertEqual(t.sha((t.ROOT/'tools/export_mobile_bible.py').read_bytes()),'2258f72485099fe1014152eeb29394324415940467c2edd9d9da0d48a4a113c3')
  def test_current_progress_follows_only_exact_installed_successors(self):
   from tools.enoch.full_repair_progress import build
-  report=build();self.assertEqual(report['canonical_file_count'],966)
+  report=build()
   b.assert_current_progress(self,report)
   self.assertEqual(report['evidence_inventory_warnings'],[]);self.assertFalse(report['completion_proven'])
  def test_rehashed_source_english_and_each_explanation_rejected(self):

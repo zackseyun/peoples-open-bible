@@ -36,7 +36,14 @@ class FullRepairBatch14Test(unittest.TestCase):
         self.assertEqual(m['retirements'],[])
         self.assertEqual({r['reference']for r in m['not_applied']},{f'1 Enoch {c}:{v}'for c,v in HOLDS})
         for c,v in HOLDS:
-            rel=f'{c:03d}/{v:03d}.yaml';self.assertEqual(t.sha((t.TRANSLATION/rel).read_bytes()),m['canonical_baseline_sha256'][rel])
+            rel=f'{c:03d}/{v:03d}.yaml'
+            from tools.enoch import batch39_evidence as successor
+            if (c,v)==(7,3) and (t.APPLICATIONS/successor.NAME/'application.json').is_file():
+                proof=successor.verify_current()
+                self.assertEqual(proof['manifest']['canonical_baseline_sha256'][rel],m['canonical_baseline_sha256'][rel])
+                self.assertEqual(t.sha((t.TRANSLATION/rel).read_bytes()),proof['current_postmap'][rel])
+            else:
+                self.assertEqual(t.sha((t.TRANSLATION/rel).read_bytes()),m['canonical_baseline_sha256'][rel])
 
     def test_full_count_scope_not_full_wording_approval(self):
         m=t.load_manifest(P);self.assertEqual(m['chapter_inventories'],[])
@@ -160,7 +167,13 @@ class FullRepairBatch14Test(unittest.TestCase):
             rows={r['verse']:r for r in sources.load_unit_overrides(c)}
             self.assertEqual(rows[v]['source']['text'],record(c,v)['source']['text'])
             self.assertIn('/final/',rows[v]['evidence'])
-        for c,v in HOLDS:self.assertNotIn(f'{c}:{v}',registry['units'])
+        from tools.enoch import batch39_evidence as successor
+        for c,v in HOLDS:
+            if (c,v)==(7,3) and (t.APPLICATIONS/successor.NAME/'application.json').is_file():
+                successor.verify_current()
+                self.assertEqual(registry['units']['7:3'],successor.NAME)
+            else:
+                self.assertNotIn(f'{c}:{v}',registry['units'])
 
     def test_no_new_reader_chapter_address_or_unrelated_export_change(self):
         m=t.load_manifest(P)
@@ -177,7 +190,14 @@ class FullRepairBatch14Test(unittest.TestCase):
     def test_current_progress_keeps_partial_chapters_and_all108_open(self):
         from tools.enoch.full_repair_progress import build
         report=build();self.assertEqual(report['evidence_inventory_warnings'],[])
-        for c in (2,3,6,7,8,9):self.assertNotIn(c,report['chapters_with_complete_imported_selected_edition_review'])
+        from tools.enoch import batch39_evidence as successor
+        complete=report['chapters_with_complete_imported_selected_edition_review']
+        if (t.APPLICATIONS/successor.NAME/'application.json').is_file():
+            successor.verify_current()
+            self.assertIn(7,complete)
+        else:
+            self.assertNotIn(7,complete)
+        for c in (2,3,6,8,9):self.assertNotIn(c,complete)
         six=next(x for x in report['chapters']if x['chapter']==6)
         self.assertEqual(six['selected_printed_source_units'],list(range(1,8)))
         self.assertEqual(six['expected_units'],list(range(1,9)));self.assertFalse(six['canonical_source_unit_mapping_pending'])

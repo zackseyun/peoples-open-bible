@@ -32,7 +32,11 @@ class Batch37Test(unittest.TestCase):
         self.assertEqual(proof['actual_current_postmap'],current)
         from tools.enoch import batch38_evidence
         changes = batch38_evidence.CHANGED_PATHS if proof.get('verified_current_successor') == batch38_evidence.NAME else set()
-        self.assertEqual({k for k in current if proof['current_postmap'][k] != current[k]},changes)
+        from tools.enoch import batch39_evidence
+        if (t.APPLICATIONS/batch39_evidence.NAME/'application.json').is_file():
+            batch39_evidence.verify_current()
+            changes = changes | batch39_evidence.CHANGED_PATHS
+        self.assertEqual({k for k in current if proof['current_postmap'].get(k) != current[k]},changes)
         self.assertEqual(prior.verify_current()['actual_current_postmap'],t.corpus_hashes())
         m=t.load_manifest(P);self.assertEqual(m['source_baseline_git_commit'],b.BASE)
         self.assertEqual(m['references'],[b.REF]);self.assertEqual(m['retirements'],[])

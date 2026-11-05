@@ -16,6 +16,8 @@ class FourReceptionTests(unittest.TestCase):
     def test_all_eleven_paragraphs_conditions_and_variant_disclosure(self):
         docs, _ = review.load_pair(*PATHS)
         for doc in docs:
+            self.assertEqual(doc['lexical_decisions'][10]['chosen'], 'servant')
+            self.assertIn('servant of God', doc['theological_decisions'][2]['chosen_reading'])
             ps = doc['translation']['text'].split('\n\n')
             self.assertEqual([p.split('. ', 1)[0] for p in ps], [f'I.{n}' for n in range(1, 12)])
             self.assertIn('your own wife', ps[0])

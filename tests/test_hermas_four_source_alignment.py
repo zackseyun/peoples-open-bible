@@ -68,7 +68,12 @@ class FourSourceAlignmentTests(unittest.TestCase):
             doc = prior.load(path)
             self.assertEqual(policy.approved_errors(path, doc), [])
             old = policy.historical_view(path, doc)
-            self.assertEqual(old['lexical_decisions'], doc['lexical_decisions'])
+            decisions = doc['lexical_decisions']
+            if name == policy.HERMAS_FOUR_I and doc.get('source_grounding', {}).get('history_archive') == 'sources/shepherd_of_hermas/repair/legacy29-before-reception-alignment-20261104.v1.json':
+                archived = json.loads((REPAIR / 'legacy29-before-reception-alignment-20261104.v1.json').read_text())
+                decisions = archived['standard_flat']['record']['lexical_decisions']
+                self.assertEqual(doc['lexical_decisions'][10]['chosen'], 'servant')
+            self.assertEqual(old['lexical_decisions'], decisions)
             self.assertEqual(old['translation']['text'], policy.plan_by_path()[name]['after_text'])
             for field in ['source', 'translation']:
                 bad = copy.deepcopy(doc)

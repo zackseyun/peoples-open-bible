@@ -933,3 +933,36 @@ contextual repent/serve terminology is preserved. The previous S2donor49 guard
 now requires exact archived-original equivalence and the specific S3/S4successor,
 rather than exempting arbitrary changes. Remaining earlier queue:34source
 collation+14repaired-source comparison=48. Whole-book publication is unfinished.
+# Similitude 5 fasting and vineyard restoration, 2026-11-04
+
+`five-fasting-restoration-20261104.v1.json` records complete working standard
+and simplified drafts of S.5.i (five historical paragraphs) and S.5.ii
+(eleven) in unchanged legacy reader 050, ID HERM.S.5.ii. The source spans
+remain in chronological order, with the explicit non-leading S.5.ii identity
+anchor. Current source sequences 54–55 are not reader filenames.
+`legacy50-before-fasting-restoration-20261104.v1.json` preserves the entire
+old flat record and twelve unchanged nested records. The six old paragraphs
+are mapped before their malformed narrative joins are removed.
+
+The repair restores the mountain/thanksgiving/early question, complete fasting
+teaching and continuous vineyard story. The old English jumped from I.3 to
+II.4 and from II.5 to II.11, with an unsupported narrative bridge. Restored
+conditions include ethical abstinence, promised freedom, extra work, shared
+inheritance, food distribution and the fellow servants’ prayer for favor.
+
+One further bounded source selection restores Hermas’s reply in I.3 from
+Michigan917, Bonner1934 printed46, papyrus5 lines11–14. Palatina printed143
+directly corroborates its sense; Vulgata printed76 omits it. Bonner’s reported
+Hamburg/Coptic support remains attributed. The damaged final divine abbreviation
+is explicitly marked and expanded; raw1891 is unchanged. This brings the
+selected total to fourteen loci in thirteen override units. No other S.5.i/ii
+source wording is silently harmonized. `five-fasting-witness-extracts-20261104.v1.json`
+records the bounded primary edition comparisons, including Michigan’s missing
+leaf across the central parable and wholly supplied instructions, which cannot
+be counted as preserved ink or witness omissions.
+
+Both records remain drafts pending independent scholarly review. Nested reader
+migration, artwork and publication remain unfinished. The earlier comparison
+queue now contains 34 source-collation sections and 12 repaired-source comparison
+sections (46 total); these draft repairs do not certify exhaustive collation.
+

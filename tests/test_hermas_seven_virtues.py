@@ -42,7 +42,11 @@ class SevenVirtuesTests(unittest.TestCase):
         a=json.loads((P/'seven-virtues-alignment-20261105.v1.json').read_text());arc=json.loads((P/a['history_archive']).read_text())
         self.assertFalse(a['normalized_source_body_changed']);self.assertFalse(a['english_extent_changed'])
         self.assertEqual(hermas.load_normalized_unit('V.3.viii').text,arc['normalized_before'])
-        for row in arc['raw_unchanged'].values():self.assertEqual(hashlib.sha256((ROOT/row['path']).read_bytes()).hexdigest(),row['file_sha256'])
+        for row in arc['raw_unchanged'].values():
+            path=Path(row['repository_relative_path'])
+            self.assertFalse(path.is_absolute())
+            self.assertNotIn('..',path.parts)
+            self.assertEqual(hashlib.sha256((ROOT/path).read_bytes()).hexdigest(),row['file_sha256'])
         self.assertEqual(len(arc['nested_unchanged']),14)
         for p,row in arc['nested_unchanged'].items():self.assertEqual(hashlib.sha256((ROOT/p).read_bytes()).hexdigest(),row['file_sha256'])
         revs=arc['standard_flat']['record']['revisions']

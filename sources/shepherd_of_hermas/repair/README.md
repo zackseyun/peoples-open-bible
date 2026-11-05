@@ -1808,3 +1808,8 @@ verified against the receipt. All141Hermas tests,397policy records,
 unchanged23contextual-policy tests passed at015. All34broader collation
 flags remain; other witnesses, independent review, reader/artwork
 migration and publication remain unfinished.
+
+CI42029340121 exposed a machine-local raw archive path in the new016
+history test. The original path remains as provenance; an explicit
+repository-relative path now drives the portable hash check. The raw
+bytes and accepted016 YAML/evidence are unchanged.

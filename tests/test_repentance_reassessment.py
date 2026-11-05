@@ -426,4 +426,30 @@ class HermasShepherdIntroductionFollowupTests(unittest.TestCase):
                 policy.historical_view(path, current)
 
 
+class HermasSecondMandateFollowupTests(unittest.TestCase):
+    def test_exact_record_retains_household_repentance_and_responsibility(self):
+        path = ROOT / policy.HERMAS_SECOND_MANDATE
+        current = prior.load(path)
+        item = policy.plan_by_path()[policy.HERMAS_SECOND_MANDATE]
+        historical = policy.historical_view(path, current)
+        self.assertEqual(historical['translation']['text'], item['after_text'])
+        self.assertEqual(prior.digest(historical['source']), item['source_sha256'])
+        self.assertEqual(policy.approved_errors(path, current), [])
+        for field in ('source', 'translation'):
+            bad = copy.deepcopy(current)
+            bad[field]['text'] += ' altered'
+            self.assertTrue(policy.approved_errors(path, bad))
+        for before, after in [('your repentance[b] and that of your household', 'your regret alone'), ('if you believe the slander you hear', 'whenever you hear anything'), ('Give to all[j]', 'Give only to selected people[j]'), ('will not be judged', 'will be judged')]:
+            bad = copy.deepcopy(current)
+            self.assertIn(before, bad['translation']['text'])
+            bad['translation']['text'] = bad['translation']['text'].replace(before, after)
+            self.assertTrue(policy.approved_errors(path, bad))
+        bad = copy.deepcopy(current)
+        next(n for n in bad['translation']['footnotes'] if n['marker'] == 'l')['text'] = 'All manuscripts preserve your heart completely.'
+        self.assertTrue(policy.approved_errors(path, bad))
+        with patch.object(Path, 'read_bytes', return_value=b'{}'):
+            with self.assertRaisesRegex(ValueError, 'decision pin differs'):
+                policy.historical_view(path, current)
+
+
 if __name__=='__main__':unittest.main()

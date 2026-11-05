@@ -1337,3 +1337,26 @@ The earlier repaired-source comparison queue is now empty. The34broader
 source-collation flags remain, including chapters that already have bounded
 complete drafts. This does not establish exhaustive manuscript collation,
 independent scholarship, reader/artwork migration or whole-book publication.
+
+`four-understanding-alignment-20261104.v1.json` aligns M.4.ii in four
+numbered paragraphs and adds simplified030. All four historical paragraphs
+already existed; normalized source and English extent are unchanged. The
+supplied man is visibly bracketed. Bounded LH1891, Athos Plate V,
+Sinaiticus30 and Vulgata/Palatina comparisons disclose Lord/God,
+hardened/blinded, the supplied noun, lavish good, the difficult soul verb,
+and Harmer’s then-I-do-not-know conjecture against so-that-I-may-know.
+Sinaiticus30.3 is damaged and incorporates supplied later material; it
+cannot be counted as complete evidence for the disputed conjunction or II.4.
+
+The full old flat record, eight nested records and prior terminology
+follow-up remain archived. The397-record plan is unchanged, with an exact
+full-record follow-up pin. Azure030r1accepted the reader texts but requested
+a simplified lexical-record correction: many and various now matches its
+reader wording. Fresh030r2accepted both editions. A copied Athos source
+method’s plate locator was then corrected from III to V;030r3accepts both
+editions with current input/evidence hashes verified. All130tests
+(110Hermas+20contextual),397policy,439/410YAML guards and78payload/source/base
+hashes passed; two focused tests and78hashes passed after the metadata fix.
+The34broader source-collation flags remain, including M.4.ii. Nested reader,
+artwork, independent scholarship, other witnesses and publication remain
+unfinished.

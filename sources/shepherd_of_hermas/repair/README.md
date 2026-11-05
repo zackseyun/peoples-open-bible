@@ -1999,7 +1999,8 @@ future escape, singular/plural pronouns, title differences, correction hands
 and the XML-supplied place are distinguished. Editorial brackets are not called
 physical manuscript loss. No new manuscript selection or fresh complete
 photograph/direct-Geʿez collation is claimed. P.Oxy.4706 and P.Amh.190 are not
-assumed to cover this passage; Bodmer38 images remain unacquired.
+assumed to cover this passage. Selected Bodmer38 image derivatives are now
+recovered; their inspected Hermas/Dorotheus boundary excludes this passage.
 
 Fresh Azure legacy024-20261105-r1 accepts both editions (actual model
 gpt-6.1-sol-2026-09-29), with both YAML and supplemental-evidence file hashes
@@ -2008,3 +2009,18 @@ Hermas tests, the439 standard/430simplified YAML guards and98repair structured
 payload/source/base hash checks pass. This record is outside the immutable397-
 record contextual terminology plan, which is unchanged. Full collation, earlier
 English repairs, nested reader/artwork migration and publication remain pending.
+
+
+## Bodmer38 selected-image recovery
+
+`bodmer38-recovered-leaves-20261105.v1.json` records valid official JPEGs
+recovered after earlier HTTP500 responses. The inspected captions place
+canvas17 at14.6-15.5,22 at18.8-20.1 and23 at20.1-21.4. Canvas24 begins
+Dorotheus, and the later acquired leaves are other-work evidence rather than
+additional Hermas witnesses. A1532x2044 derivative of23 permits a bounded
+inheritance/renewal/third-vision stool-sequence word-group match; it does not
+certify every damaged letter, later wording or order. Earlier020/021accepted
+inputs remain unchanged pending detailed followup. These recovered leaves do
+not cover the current Vision4or5passages. Many earlier canvases and a larger
+derivative still return500. Images stay outsideGit under the repository's
+CC-BY-NC4.0 attribution/license; only own observations and hashes are recorded.

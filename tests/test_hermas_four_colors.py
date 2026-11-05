@@ -12,6 +12,21 @@ P=ROOT/'sources/shepherd_of_hermas/repair'
 PATHS=[ROOT/r/'extra_canonical/shepherd_of_hermas/024.yaml' for r in ['translation','translation_simplified']]
 
 class FourColorsTests(unittest.TestCase):
+    def test_recovered_bodmer_images_do_not_become_unrelated_passage_votes(self):
+        e=json.loads((P/'four-colors-witness-extracts-20261105.v1.json').read_text())
+        link=e['availability_followup'];path=P/link['record']
+        self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),link['sha256'])
+        self.assertTrue(link['does_not_cover_current_unit'])
+        b=json.loads(path.read_text())
+        self.assertEqual(b['witness_id'],'G-BODMER38');self.assertFalse(b['complete'])
+        labels={row['canvas']:row for row in b['caption_observations']}
+        self.assertEqual(labels[23]['global_range'],'20.1-21.4')
+        self.assertEqual(labels[24]['work'],'Dorotheus')
+        self.assertEqual(b['bounded_comparison']['unit_ids'],['V.3.xii','V.3.xiii'])
+        self.assertIn('not independently certified',b['bounded_comparison']['finding'])
+        self.assertIn('/by-nc/4.0/',b['rights']['license'])
+        self.assertTrue(all(len(row['sha256'])==64 for row in b['images']))
+
     def test_seven_complete_paragraphs_and_localized_notes(self):
         docs,_=review.load_pair(*PATHS)
         for doc in docs:

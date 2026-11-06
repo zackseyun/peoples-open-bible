@@ -1,0 +1,31 @@
+# INACTIVE PROPOSAL. This file is intentionally outside .github/workflows.
+# Not authority to merge, disable AWS writers, instantiate Azure clients or upload.
+# A future reviewed replacement must reconcile BOTH the AWS GH workflow and
+# the independently defined hourly Lambda writer before ANY new main merge.
+name: Proposed Azure canonical POB publication - INACTIVE
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: canonical-pob
+  cancel-in-progress: false
+jobs:
+  reviewed-package-only:
+    if: ${{ false }} # Non-configurable interlock: activation requires code review.
+    runs-on: [self-hosted, Linux, ARM64, azure, cartha-ci]
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify exact reviewed package offline
+        run: |
+          set -euo pipefail
+          npm ci --prefix tools/pob_publisher --ignore-scripts --no-audit --no-fund
+          npm test --prefix tools/pob_publisher
+          python3 -m unittest discover -s tests -p test_pob_azure_stage_proposal.py
+      - name: Runtime deliberately unavailable
+        run: |
+          echo 'No upload command exists. Identity/RBAC, namespace ownership and website exclusion, source freshness, AWS-writer quiescence and exact package/consumer proofs require a separately reviewed activation change.'
+          exit 1

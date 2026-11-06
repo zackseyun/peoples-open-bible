@@ -152,8 +152,14 @@ def cli_http_command(arguments: list[str]) -> tuple[list[str], dict]:
         except (UnicodeError, OSError):
             launcher = ""
         runtime = re.search(r"(/[^\s\"']+/bin/python(?:3(?:\.\d+)?)?)\s+-Im\s+azure\.cli", launcher)
-        if runtime and Path(runtime[1]).is_file():
-            return [runtime[1], str(ROOT / "tools/extra_texts/azure_cli_bounded_http.py"), *arguments], {
+        interpreter = runtime[1] if runtime else None
+        # pip's Python launcher execs the same installed CLI module. Recognize
+        # only that explicit layout; never infer an arbitrary shebang wrapper.
+        if interpreter is None and "os.execl(sys.executable, sys.executable, '-m', 'azure.cli'" in launcher:
+            shebang = re.match(r'#!(/[^\s]+/bin/python(?:3(?:\.\d+)?)?)\s*\n', launcher)
+            if shebang:interpreter=shebang[1]
+        if interpreter and Path(interpreter).is_file():
+            return [interpreter, str(ROOT / "tools/extra_texts/azure_cli_bounded_http.py"), *arguments], {
                 "http_connect_timeout_seconds": 30, "http_read_timeout_seconds": 600,
                 "identity": "unchanged_installed_azure_cli_session"}
     return ["az", *arguments], {"identity": "unchanged_installed_azure_cli_session", "http_deadline_installed": False}

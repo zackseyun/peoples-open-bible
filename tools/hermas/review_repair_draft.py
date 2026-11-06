@@ -128,7 +128,11 @@ def main():
     ap.add_argument('--standard',type=Path,required=True);ap.add_argument('--simplified',type=Path,required=True)
     ap.add_argument('--evidence',type=Path,help='Explicit bounded project evidence JSON; does not authenticate external images.')
     ap.add_argument('--output',type=Path,required=True);ap.add_argument('--prepare-only',action='store_true')
+    ap.add_argument('--max-completion-tokens',type=int,default=16000,
+                    help='Bound output reservation for paced batch review; truncated responses remain invalid.')
     args=ap.parse_args();body,manifest=prepare(args.standard,args.simplified,args.evidence)
+    if not 2000<=args.max_completion_tokens<=16000:raise ValueError('Review output limit must be between 2000 and 16000')
+    body['max_completion_tokens']=args.max_completion_tokens
     evidence=load_evidence(args.evidence)
     output=args.output.resolve()
     if output.exists():raise ValueError('Refusing to overwrite review evidence')

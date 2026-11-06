@@ -39,6 +39,9 @@ class Batch37Test(unittest.TestCase):
             from tools.enoch import batch40_evidence
             if (t.APPLICATIONS/batch40_evidence.NAME/'application.json').is_file():
                 batch40_evidence.verify_current();changes = changes | batch40_evidence.CHANGED_PATHS
+                from tools.enoch import batch41_evidence
+                if (t.APPLICATIONS/batch41_evidence.NAME/'application.json').is_file():
+                    batch41_evidence.verify_current();changes = changes | batch41_evidence.CHANGED_PATHS
         self.assertEqual({k for k in current if proof['current_postmap'].get(k) != current[k]},changes)
         self.assertEqual(prior.verify_current()['actual_current_postmap'],t.corpus_hashes())
         m=t.load_manifest(P);self.assertEqual(m['source_baseline_git_commit'],b.BASE)

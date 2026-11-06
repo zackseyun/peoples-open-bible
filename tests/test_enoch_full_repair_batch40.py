@@ -24,7 +24,11 @@ class Batch40Test(unittest.TestCase):
         self.assertEqual({k for k in new if old.get(k)!=new[k]},b.CHANGED_PATHS)
         self.assertEqual(proof['manifest']['references'],b.REFS)
         self.assertEqual(proof['manifest']['chapter_inventories'],[])
-        self.assertEqual(prior.verify_current()['actual_current_postmap'],new)
+        actual=prior.verify_current()['actual_current_postmap']
+        self.assertEqual(proof['actual_current_postmap'],actual)
+        from tools.enoch import batch41_evidence
+        added=batch41_evidence.CHANGED_PATHS if proof.get('verified_current_successor')==batch41_evidence.NAME else set()
+        self.assertEqual({k for k in actual if actual[k]!=new.get(k)},added)
 
     def test_review_and_source_ingress_preserve_exact_uncertainties(self):
         m=t.load_manifest(P)

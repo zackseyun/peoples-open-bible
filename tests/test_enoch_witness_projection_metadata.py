@@ -131,6 +131,9 @@ class WitnessProjectionMetadataTest(unittest.TestCase):
         from tools.enoch import batch40_evidence
         if (t.APPLICATIONS/batch40_evidence.NAME/'application.json').is_file():
          batch40_evidence.verify_current();expected_drift |= batch40_evidence.CHANGED_PATHS
+         from tools.enoch import batch41_evidence
+         if (t.APPLICATIONS/batch41_evidence.NAME/'application.json').is_file():
+          batch41_evidence.verify_current();expected_drift |= batch41_evidence.CHANGED_PATHS
    else:
     batch34_evidence.verify_current();expected_drift={'044/001.yaml'}
    self.assertEqual(drift,expected_drift)

@@ -26,6 +26,10 @@ class Batch39Test(unittest.TestCase):
         self.assertEqual(proof['actual_current_postmap'],actual)
         from tools.enoch import batch40_evidence
         added=batch40_evidence.CHANGED_PATHS if proof.get('verified_current_successor')==batch40_evidence.NAME else set()
+        from tools.enoch import batch41_evidence
+        if (t.APPLICATIONS/batch41_evidence.NAME/'application.json').is_file():
+            batch41_evidence.verify_current()
+            added=added | batch41_evidence.CHANGED_PATHS
         self.assertEqual({k for k in actual if actual[k]!=new.get(k)},added)
         self.assertEqual(existing_count_ingress.validate(proof['manifest'])[66]['units'], [1, 2, 3])
         self.assertEqual(proof['manifest']['chapter_inventories'], [])

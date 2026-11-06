@@ -17,3 +17,10 @@ Only 1 Enoch 1:9 differs from B37; the cumulative allowlist has nine records.
 All 135 books, 2651 chapters and 45231 addresses remain bound to the baseline.
 This is an offline test fixture, not activation or language approval for any
 neighbor. B38 corpus CI passed twice and its 796 local Enoch tests passed.
+
+B41 offline address-scope fixture: compared with B38, only five existing
+reviewed records change and only 32:6 and 66:2 are added. The default publisher
+still refuses structural additions. The test removes the two exact additions
+from a copy only to compare all remaining addresses, structure, metadata and
+reviewed before/after hashes. That comparison is not a deployable payload or
+an address-authorization change. Runtime activation remains held.

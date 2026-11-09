@@ -13,18 +13,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch78.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 78, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: 'And Uriel showed me another law: when light is transferred into the moon[c][b][a], and from where it is transferred from the sun.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'another order' or 'another ordinance.' The Ge'ez term can denote an ordered rule or fixed arrangement in the cosmos.
-    reason: lexical_alternative
-  - marker: b
-    text: 'The wording is somewhat compressed: the sense is that Uriel showed Enoch the rule governing how the moon receives its light from the sun.'
-    reason: alternative_reading
-  - marker: c
-    text: Or 'when the light is transferred into the moon, and from where it is transferred from the sun.'.
-    reason: previous_rendering
+  text: Uriel showed me another law governing when light is transferred from the sun into the moon and the direction from which it comes.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ካልእት
   chosen: another
@@ -151,12 +141,18 @@ revisions:
   from: 'And Uriel showed me another law: when light is transferred into the moon, and from which direction it is transferred from the sun.'
   to: 'And Uriel showed me another law: when light is transferred into the moon, and from where it is transferred from the sun.'
   rationale: Revised 'which direction' to 'where' for closer lexical accuracy and more natural English. Retained 'law' and the repeated 'is transferred' to reflect the source structure.
+- timestamp: '2026-11-09T20:07:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And Uriel showed me another law: when light is transferred into the moon[c][b][a], and from where it is transferred from the sun.'
+  to: Uriel showed me another law governing when light is transferred from the sun into the moon and the direction from which it comes.
+  rationale: The current wording correctly preserves the transfer of light from the sun. The earlier disagreement over 'where' and 'direction' was resolved in light of verse 14, without adding a modern explanation of moonlight.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:07Z'
   unchanged: false
   changes_summary: Revised 'which direction' to 'where' for closer lexical accuracy and more natural English. Retained 'law' and the repeated 'is transferred' to reflect the source structure.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -176,3 +172,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/078/010.job-72656.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:52Z'
+  change_level: refined
+  confidence: high
+  meaning: Uriel shows Enoch the law governing when the moon receives light from the sun and the direction from which that light comes.
+  meaning_decisions:
+  - source_phrase: ሶበ፡ ይትወደይ፡ ብርሃን፡ ውስተ፡ ወርኅ፡ ወእምኀበ፡ ይትወደይ፡ እምፀሐይ
+    prior_rendering: when light is transferred into the moon, and from where it is transferred from the sun
+    new_rendering: when light is transferred from the sun into the moon and the direction from which it comes
+    rationale: The law concerns both the timing and the spatial direction of the transfer. The following description of the side from which the moon gains and loses light supports making the directional sense explicit.
+  footnote_kinds: {}
+  history_weighed: The current wording correctly preserves the transfer of light from the sun. The earlier disagreement over 'where' and 'direction' was resolved in light of verse 14, without adding a modern explanation of moonlight.

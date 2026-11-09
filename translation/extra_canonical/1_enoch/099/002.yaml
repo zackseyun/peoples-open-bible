@@ -13,18 +13,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch99.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 99, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Woe to those who pervert the word of righteousness and the eternal ordinance[a], and reckon themselves not to be sinners[c][b]; they shall be trampled upon the earth.
-  philosophy: optimal-equivalence
+  text: Woe to those who pervert the word of righteousness and violate the eternal ordinance, yet do not consider themselves sinners[a]; they will be trampled upon the earth.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The clause 'though they were not sinners upon the earth' is textually difficult. The Ethiopic wording may preserve an awkward or corrupt line; some interpreters understand it differently, such as implying a claim to innocence rather than an actual former innocence.
-    reason: textual_variant
-  - marker: b
-    text: The image 'twist their heads around' is kept close to the Ethiopic. It likely expresses deliberate turning aside from what is right, but the bodily imagery is part of the verse's force.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'and twist their heads around, though they were not sinners upon the earth; they shall be trampled down.'.
-    reason: previous_rendering
+    text: Or 'turn themselves into what they were not before—sinners.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: አሌ
   chosen: Woe
@@ -154,9 +148,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Woe to those who pervert the word of righteousness and the eternal ordinance[a], and reckon themselves not to be sinners[c][b]; they shall be trampled upon the earth.'
-  to: 'Woe to those who pervert the word of righteousness and the eternal ordinance[a], and reckon themselves not to be sinners[c][b]; they shall be trampled upon the earth.'
+  from: Woe to those who pervert the word of righteousness and the eternal ordinance[a], and reckon themselves not to be sinners[c][b]; they shall be trampled upon the earth.
+  to: Woe to those who pervert the word of righteousness and the eternal ordinance[a], and reckon themselves not to be sinners[c][b]; they shall be trampled upon the earth.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they shall be trampled down''].'
+- timestamp: '2026-11-09T20:07:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Woe to those who pervert the word of righteousness and the eternal ordinance[a], and reckon themselves not to be sinners[c][b]; they shall be trampled upon the earth.
+  to: Woe to those who pervert the word of righteousness and violate the eternal ordinance, yet do not consider themselves sinners[a]; they will be trampled upon the earth.
+  rationale: The earlier correction rightly recognized an idiom about oneself rather than an image of twisting heads. I retain its understanding of self-exoneration, restore the separate act of violating the ordinance, and replace the conflicting notes with one serious alternative.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:01:11Z'
@@ -181,3 +182,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/099/002.job-72905.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:46Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Those who distort righteous teaching and violate the eternal ordinance while denying that they are sinners will be trampled upon the earth.
+  meaning_decisions:
+  - source_phrase: ወሥርዐተ፡ እንተ፡ ለዓለም፡ የኃልዉ
+    prior_rendering: and the eternal ordinance
+    new_rendering: and violate the eternal ordinance
+    rationale: This clause contains a separate verb of violation; the ordinance's eternal character is already expressed by the preceding relative phrase.
+  - source_phrase: ወይሬስዩ፡ ርእሶሙ፡ ዘአኮኑ፡ [ኃጥኣነ፡]
+    prior_rendering: and reckon themselves not to be sinners
+    new_rendering: yet do not consider themselves sinners
+    rationale: The self-exonerating sense is retained, with the contrast between their conduct and their judgment of themselves made explicit; the alternative understanding of transformation into sinners is acknowledged in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier correction rightly recognized an idiom about oneself rather than an image of twisting heads. I retain its understanding of self-exoneration, restore the separate act of violating the ordinance, and replace the conflicting notes with one serious alternative.

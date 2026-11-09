@@ -16,18 +16,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And in that fourth gate[a], from which the sun comes out in the first month, there are twelve open windows[c][b], from which a flame comes out when they are opened at their appointed times.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Ge'ez phrase rendered 'of the dominion of the wind' is difficult in this OCR witness. It may also be understood more specifically as 'of the angels of the winds.'
-    reason: alternative_reading
-  - marker: b
-    text: The Astronomical Book regularly depicts the heavens with gates and openings through which luminaries, winds, and fiery heat emerge according to fixed times.
-    reason: cultural_note
-  - marker: c
-    text: Or 'window-openings of the dominion of the wind, and from them'.
-    reason: previous_rendering
+  text: And in that fourth gate, from which the sun comes out in the first month, there are twelve open windows, from which a flame comes out when they are opened at their appointed times.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ኆኅት ራብዕት
   chosen: fourth gate
@@ -147,12 +137,18 @@ revisions:
   from: window-openings of the dominion of the wind, and from them
   to: open windows, from which
   rationale: 'The Ge''ez `መላክወ ርኅዋተ` is an OCR error for `መሳክወ ርኅዋተ` (masākwa rǝḫwāta), meaning "open windows" (from ርኅወ, to open). The drafter correctly recognized this exact OCR error in 72:3 (`ወመላክወ ብዙኃት` -> "many windows") but here hallucinated a connection to "dominion" (መለከ) and "wind". The text simply describes twelve open windows from which flames emerge. Additionally, `ዘእምኔሆን` is a relative pronoun ("from which"), not a conjunction ("and from them"). | Adjudicator: The reviewer correctly identifies an OCR error in the Ge''ez source text (`መላክወ` for `መሳክወ`, masākwa, "windows"). The current translation hallucinates "dominion of the wind" by falsely deriving the OCR'
+- timestamp: '2026-11-09T20:02:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And in that fourth gate[a], from which the sun comes out in the first month, there are twelve open windows[c][b], from which a flame comes out when they are opened at their appointed times.
+  to: And in that fourth gate, from which the sun comes out in the first month, there are twelve open windows, from which a flame comes out when they are opened at their appointed times.
+  rationale: The correction to twelve open windows is supported by the explicit window noun and the verbs of opening. The older notes about winds or angels do not describe the verse’s supported meaning and are removed.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:14Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -172,3 +168,17 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/072/007.job-72576.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:02:51Z'
+  change_level: refined
+  confidence: high
+  meaning: The fourth gate contains twelve windows through which flame emerges when they open at their appointed times.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The correction to twelve open windows is supported by the explicit window noun and the verbs of opening. The older notes about winds or angels do not describe the verse’s supported meaning and are removed.

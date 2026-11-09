@@ -12,18 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch76.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 76, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the first three are toward the east[a], and three toward the north, and three after these, on the left, toward the south[c][b], and three toward the west.
-  philosophy: optimal-equivalence
+  text: And the first three are toward the east, and three toward the north, and three after these, on the left[a], toward the south, and three toward the west.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The phrase 'on the left' reflects the ancient convention of facing east; in that scheme, the left side corresponds to the north, just as the right side corresponds to the south.
-    reason: cultural_note
-  - marker: b
-    text: The bracketed portion in the supplied Ethiopic witness suggests some textual uncertainty around 'after these, on the left'; the translation keeps the phrase but signals the uncertainty here.
+    text: The words 'after these, on the left' are uncertain in the Ge'ez; when facing east, the left would normally mean north rather than south.
     reason: textual_variant
-  - marker: c
-    text: Or 'And three of them are on the east side, and three on the south side, and after these, on the left, three on the north side and three on the west.'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ቀዳማያት
   chosen: on the east side
@@ -147,12 +141,18 @@ revisions:
   from: And the first three are toward the east, and three toward the north, and three—after these, on the left—toward the south, and three toward the west.
   to: And the first three are toward the east, and three toward the north, and three after these, on the left, toward the south, and three toward the west.
   rationale: Removed the em dashes around 'after these, on the left' for a more formal, natural rendering while preserving all source elements and directional terms.
+- timestamp: '2026-11-09T20:05:28Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the first three are toward the east[a], and three toward the north, and three after these, on the left, toward the south[c][b], and three toward the west.
+  to: And the first three are toward the east, and three toward the north, and three after these, on the left[a], toward the south, and three toward the west.
+  rationale: The earlier correction recovered 'first' and the actual meanings of the north and south terms, avoiding a silent reversal of the directions. I kept those gains and replaced the conflicting earlier notes with one note on the uncertain phrase.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:32Z'
   unchanged: false
   changes_summary: Removed the em dashes around 'after these, on the left' for a more formal, natural rendering while preserving all source elements and directional terms.
-
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -172,3 +172,18 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/076/003.job-72632.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:05:28Z'
+  change_level: refined
+  confidence: low
+  meaning: Enoch identifies the four groups of portals by compass direction, though the description of the southern group contains an uncertain reference to the left.
+  meaning_decisions: []
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier correction recovered 'first' and the actual meanings of the north and south terms, avoiding a silent reversal of the directions. I kept those gains and replaced the conflicting earlier notes with one note on the uncertain phrase.

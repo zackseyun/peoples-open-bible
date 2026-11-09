@@ -15,21 +15,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch69.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 69, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the name of the first was Yeqon[a]; this is the one who led all the children of the angels astray, and brought them down upon the dry land[d][c][b], and led them astray through the daughters of men.
-  philosophy: optimal-equivalence
+  text: The first was named Yeqon. He led all the children of the angels[a] astray, brought them down to earth, and led them astray through the daughters of men.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Yeqon is a transliteration of the Ge'ez form; English spellings may vary, including Yequn or Yequn.
-    reason: lexical_alternative
-  - marker: b
-    text: The phrase rendered 'the sons of the angels' is literal. Some interpreters take it more broadly as the angelic host.
-    reason: lexical_alternative
-  - marker: c
-    text: '''Upon the dry land'' may also be rendered ''upon the earth'' or ''onto the land''; the Ge''ez points concretely to the terrestrial realm.'
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'by the daughters of men'.
-    reason: previous_rendering
+    text: The phrase 'children of the angels' may refer to the angels themselves rather than to their offspring.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ወስሙ
   chosen: And the name
@@ -187,9 +178,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the name of the first was Yeqon[a]; this is the one who led all the children of the angels astray, and brought them down to the dry land[d][c][b], and led them astray by the daughters of men.'
-  to: 'And the name of the first was Yeqon[a]; this is the one who led all the children of the angels astray, and brought them down upon the dry land[d][c][b], and led them astray through the daughters of men.'
-  rationale: 'Azure undid Gemini tier-3''s instrumental-preposition correction (''through'' for instrumental ba, avoiding agent-reading ambiguity of ''by'') and the drafter''s documented ''upon the dry land'' (preserving ዲበ spatial descent imagery), with no lexical engagement.'
+  from: And the name of the first was Yeqon[a]; this is the one who led all the children of the angels astray, and brought them down to the dry land[d][c][b], and led them astray by the daughters of men.
+  to: And the name of the first was Yeqon[a]; this is the one who led all the children of the angels astray, and brought them down upon the dry land[d][c][b], and led them astray through the daughters of men.
+  rationale: Azure undid Gemini tier-3's instrumental-preposition correction ('through' for instrumental ba, avoiding agent-reading ambiguity of 'by') and the drafter's documented 'upon the dry land' (preserving ዲበ spatial descent imagery), with no lexical engagement.
+- timestamp: '2026-11-09T20:01:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the name of the first was Yeqon[a]; this is the one who led all the children of the angels astray, and brought them down upon the dry land[d][c][b], and led them astray through the daughters of men.
+  to: The first was named Yeqon. He led all the children of the angels[a] astray, brought them down to earth, and led them astray through the daughters of men.
+  rationale: I preserve the earlier gain of 'through,' which keeps Yeqon responsible for leading them astray rather than making the women the agents. The unusual phrase about the angels' children remains, with one note acknowledging its serious alternative understanding.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-15T18:54:35Z'
@@ -214,3 +212,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/069/004.job-72531.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:01:11Z'
+  change_level: refined
+  confidence: medium
+  meaning: Yeqon led the children of the angels astray, brought them down to earth, and used human daughters to draw them into wrongdoing.
+  meaning_decisions:
+  - source_phrase: ወአውረዶሙ፡ ዲበ፡ የብስ
+    prior_rendering: and brought them down upon the dry land
+    new_rendering: brought them down to earth
+    rationale: The movement is descent into the earthly realm; 'to earth' preserves that movement without implying a contrast with the sea.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I preserve the earlier gain of 'through,' which keeps Yeqon responsible for leading them astray rather than making the women the agents. The unusual phrase about the angels' children remains, with one note acknowledging its serious alternative understanding.

@@ -16,15 +16,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: On that day the day becomes longer than the night[a], and the day becomes twice the night, and the day becomes twelve parts[b], and the night grows shorter and becomes six parts.
-  philosophy: optimal-equivalence
+  text: On that day the day becomes longer than the night and becomes nine times as long as the night[a]; the day becomes twelve parts[b], and the night grows shorter and becomes six parts.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The verse uses the chapter's schematic system of dividing day and night into numbered 'parts.' The clause 'the day becomes nine parts of the night' is rendered closely from the Ge'ez, though the proportional wording is somewhat compressed in English.
-    reason: cultural_note
+    text: The Ge'ez numerical expression is unclear; the twelve-to-six division that follows would mean “twice as long,” not “nine times as long.”
+    reason: alternative_reading
   - marker: b
-    text: Or 'and the day becomes nine parts of the night'.
-    reason: previous_rendering
+    text: The chapter measures the combined length of day and night in eighteen equal parts.
+    reason: cultural_note
 lexical_decisions:
 - source_word: በይእቲ ዕለት
   chosen: On that day
@@ -152,9 +152,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'On that day the day becomes longer than the night[a], and the day becomes twice the night, and the day becomes twelve parts[b], and the night grows shorter and becomes six parts.'
-  to: 'On that day the day becomes longer than the night[a], and the day becomes twice the night, and the day becomes twelve parts[b], and the night grows shorter and becomes six parts.'
+  from: On that day the day becomes longer than the night[a], and the day becomes twice the night, and the day becomes twelve parts[b], and the night grows shorter and becomes six parts.
+  to: On that day the day becomes longer than the night[a], and the day becomes twice the night, and the day becomes twelve parts[b], and the night grows shorter and becomes six parts.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''grows longer''].'
+- timestamp: '2026-11-09T20:01:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: On that day the day becomes longer than the night[a], and the day becomes twice the night, and the day becomes twelve parts[b], and the night grows shorter and becomes six parts.
+  to: On that day the day becomes longer than the night and becomes nine times as long as the night[a]; the day becomes twelve parts[b], and the night grows shorter and becomes six parts.
+  rationale: The earlier revision correctly recognized that twelve parts are twice six, but its proposed correction is not identified as the selected reading in the source note. The conflicting current footnotes are replaced with a direct explanation of the numerical uncertainty.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:01:22Z'
@@ -179,3 +186,23 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/072/014.job-72583.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:01:13Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Daylight reaches twelve parts and the night six parts, though the accompanying comparison of their lengths is unclear.
+  meaning_decisions:
+  - source_phrase: ፱ዕበተ፡ ሌሊት
+    prior_rendering: twice the night
+    new_rendering: nine times as long as the night[a]
+    rationale: The supplied expression contains the numeral nine. The earlier correction to 'twice' fits the following proportions but requires changing that expression; the apparent reading is therefore preserved, with the strongly supported alternative explained in a note.
+  footnote_kinds:
+    a: alternative_meaning
+    b: cultural_background
+  history_weighed: The earlier revision correctly recognized that twelve parts are twice six, but its proposed correction is not identified as the selected reading in the source note. The conflicting current footnotes are replaced with a direct explanation of the numerical uncertainty.

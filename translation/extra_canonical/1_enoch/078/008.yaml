@@ -13,21 +13,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch78.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 78, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And in its waning[a], on the first day it diminishes to fourteen parts of its light, and on the second it diminishes to thirteen parts of light, and on the third it diminishes to twelve, and on the fourth to eleven parts, and on the fifth it diminishes to ten parts, and on the sixth it diminishes to nine parts, and on the seventh it diminishes to eight parts, and on the eighth it diminishes to seven, and on the ninth it diminishes to six, and on the tenth it diminishes to five, and on the eleventh it diminishes to four, and on the twelfth it diminishes to three, and on the thirteenth it diminishes to two, and on the fourteenth it diminishes to half of a seventh part of all its light[d][c][b]; and on the fifteenth day that which remains from the whole is consumed.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The final fraction, 'half of a seventh part,' is a literal rendering of a mathematically awkward Ge'ez expression. The text appears to preserve a precise fractional remainder rather than a smoother idiom.
-    reason: lexical_alternative
-  - marker: b
-    text: The verse describes the measured waning of the moon's light across successive days; 'becomes visible' may also be understood as 'is seen' or 'appears' with reference to the remaining portion.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'diminishes by fourteen parts of its light, and on the second it diminishes by thirteen parts of light, and on the third by twelve, and on the fourth by eleven parts, and on the fifth it diminishes by ten parts, and on the sixth it diminishes by nine parts, and on the seventh by eight parts, and on the eighth it diminishes by seven, and on the ninth it diminishes by six, and on the tenth by five, and on the eleventh by four, and on the twelfth by three, and on the thirteenth by two, and on the fourteenth by half of a seventh part of all its light'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'becomes visible'.
-    reason: previous_rendering
+  text: As the moon wanes, its light diminishes to fourteen parts on the first day, to thirteen on the second, to twelve on the third, to eleven on the fourth, to ten on the fifth, to nine on the sixth, to eight on the seventh, to seven on the eighth, to six on the ninth, to five on the tenth, to four on the eleventh, to three on the twelfth, and to two on the thirteenth. On the fourteenth day it diminishes to one-fourteenth of its full light; on the fifteenth day all that remains is consumed.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ሕጸጸ
   chosen: waning
@@ -150,12 +137,18 @@ revisions:
   from: becomes visible
   to: is consumed
   rationale: 'The verb ይትዌዳእ (yətwedāʾ) is the G-stem passive/reflexive of ወደአ (wadaʾa, ''to finish, consume''), meaning ''is consumed,'' ''is exhausted,'' or ''is finished'' (Dillmann col. 917). The draft''s ''becomes visible'' is the exact opposite of the meaning; on the 15th day of waning, the moon''s remaining light is completely extinguished. | Adjudicator: The reviewer is entirely correct. The Ge''ez verb ይትዌዳእ (yətwedāʾ) is the passive/intransitive imperfect of ወደአ (wadaʾa), which means ''to finish, complete, consume, or exhaust'' (Leslau, CDG 605; Dillma'
+- timestamp: '2026-11-09T20:05:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And in its waning[a], on the first day it diminishes to fourteen parts of its light, and on the second it diminishes to thirteen parts of light, and on the third it diminishes to twelve, and on the fourth to eleven parts, and on the fifth it diminishes to ten parts, and on the sixth it diminishes to nine parts, and on the seventh it diminishes to eight parts, and on the eighth it diminishes to seven, and on the ninth it diminishes to six, and on the tenth it diminishes to five, and on the eleventh it diminishes to four, and on the twelfth it diminishes to three, and on the thirteenth it diminishes to two, and on the fourteenth it diminishes to half of a seventh part of all its light[d][c][b]; and on the fifteenth day that which remains from the whole is consumed.
+  to: As the moon wanes, its light diminishes to fourteen parts on the first day, to thirteen on the second, to twelve on the third, to eleven on the fourth, to ten on the fifth, to nine on the sixth, to eight on the seventh, to seven on the eighth, to six on the ninth, to five on the tenth, to four on the eleventh, to three on the twelfth, and to two on the thirteenth. On the fourteenth day it diminishes to one-fourteenth of its full light; on the fifteenth day all that remains is consumed.
+  rationale: The revisions establishing remaining amounts—“to,” not “by”—and consumption of the final light are sound and are preserved. The obsolete alternatives about visibility and subtraction have been dropped, while the daily sequence is expressed with less cumbersome repetition.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:07Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: needs_review
   agreement: 0.5
@@ -175,3 +168,21 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/078/008.job-72654.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:05:01Z'
+  change_level: refined
+  confidence: high
+  meaning: The moon’s remaining light decreases day by day until the last portion is consumed on the fifteenth day of waning.
+  meaning_decisions:
+  - source_phrase: መንፈቀ፡ ሳብዐቱ፡ እደ፡ ኵሉ፡ ብርሃኑ
+    prior_rendering: half of a seventh part of all its light
+    new_rendering: one-fourteenth of its full light
+    rationale: This expresses the same fraction directly and identifies the whole against which the remaining light is measured. The numerical sequence is preserved without reconciling it with the fifteen-part total.
+  footnote_kinds: {}
+  history_weighed: The revisions establishing remaining amounts—“to,” not “by”—and consumption of the final light are sound and are preserved. The obsolete alternatives about visibility and subtraction have been dropped, while the daily sequence is expressed with less cumbersome repetition.

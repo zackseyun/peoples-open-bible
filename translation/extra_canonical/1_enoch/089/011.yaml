@@ -22,18 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And they began to gore one another[a]; and that white bull which was born in their midst begot a wild ass and a white bull with it[c][b], and the wild asses multiplied.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The opening clause is textually difficult in the OCR. The verb likely describes mutual violent action among the animals; 'gore one another' preserves the probable bovine imagery.
-    reason: textual_variant
-  - marker: b
-    text: The phrase rendered 'bull-calves of the field' is uncertain. The Ge'ez may point instead to 'wild asses' or similar animals of the open country. The main text keeps the immediate bovine flow of the passage while preserving the uncertainty here.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'but among them there was born a white bull-calf, and after it there were born many bull-calves of the field and white cattle with them.'.
-    reason: previous_rendering
+  text: They began to bite one another. The white bull that had been born among them fathered a wild ass and a white bull as well, and the wild asses multiplied.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ይትናሰኩ
   chosen: began to gore one another
@@ -154,12 +144,18 @@ revisions:
   from: And they began to gore one another; and that white bull which was born in their midst begot a wild ass, and a white bull with him, and the wild asses multiplied.
   to: And they began to gore one another; and that white bull which was born in their midst begot a wild ass and a white bull with it, and the wild asses multiplied.
   rationale: Removed the comma before 'and a white bull with it' for smoother English and changed 'with him' to 'with it' for consistent animal reference.
+- timestamp: '2026-11-09T20:10:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they began to gore one another[a]; and that white bull which was born in their midst begot a wild ass and a white bull with it[c][b], and the wild asses multiplied.
+  to: They began to bite one another. The white bull that had been born among them fathered a wild ass and a white bull as well, and the wild asses multiplied.
+  rationale: The earlier correction of the genealogy and the singular and plural wild asses is sound. I retain those gains, correct the mutual violence to biting, and omit notes that preserve superseded bovine mistranslations.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:01Z'
   unchanged: false
   changes_summary: Removed the comma before 'and a white bull with it' for smoother English and changed 'with him' to 'with it' for consistent animal reference.
-
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -179,3 +175,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/011.job-72737.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:29Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The animals begin attacking one another, while the new white bull fathers a wild ass and another white bull, and the wild asses increase.
+  meaning_decisions:
+  - source_phrase: ይትናሰኩ
+    prior_rendering: gore one another
+    new_rendering: bite one another
+    rationale: The reciprocal verb describes biting; the earlier appeal to bovine imagery is insufficient, especially after a list containing many kinds of beasts and birds.
+  - source_phrase: ወለደ፡ ... ወላህመ፡ ጸዓዳ፡ ምስሌሁ
+    prior_rendering: begot a wild ass and a white bull with it
+    new_rendering: fathered a wild ass and a white bull as well
+    rationale: Clearly identifies both animals as offspring of the white bull without suggesting that “with it” merely describes an accompanying animal.
+  footnote_kinds: {}
+  history_weighed: The earlier correction of the genealogy and the singular and plural wild asses is sound. I retain those gains, correct the mutual violence to biting, and omit notes that preserve superseded bovine mistranslations.

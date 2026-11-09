@@ -14,21 +14,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch91.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 91, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And all will be given over with the nations[a], and the towers will be burned with fire; and they will be removed from all the earth, and they will be cast into the judgment of fire[d][c][b], and they will perish in wrath and in mighty judgment forever.
-  philosophy: optimal-equivalence
+  text: All will be handed over with the nations, and the towers[a] will burn with fire. They will be driven from the whole earth and cast into the judgment of fire; they will perish in wrath and in mighty, everlasting judgment.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The noun rendered 'assembly-place' is uncertain; it may denote a gathering-place, camp, or collective enclosure. The translation keeps a spatial sense without overdefining it.
-    reason: lexical_alternative
-  - marker: b
-    text: '''With the nations'' could also be understood as ''among the nations'' depending on how the preposition is taken in context.'
-    reason: lexical_alternative
-  - marker: c
-    text: The closing 'forever' marks enduring eschatological finality in the verse; readers should avoid importing a later doctrinal system more specific than the text itself states.
-    reason: cultural_note
-  - marker: d
-    text: Or 'And all of them will be handed over with the nations, and the assembly-place'.
-    reason: previous_rendering
+    text: The Ge'ez word translated “towers” is unclear; it may mean “gathering places” instead.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ይትወሀብ
   chosen: will be handed over
@@ -186,9 +177,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And all will be given over with the nations[a], and the towers will be burned with fire; and they will be removed from all the earth, and they will be cast into the judgment of fire[d][c][b], and they will perish in wrath and in mighty judgment forever.'
-  to: 'And all will be given over with the nations[a], and the towers will be burned with fire; and they will be removed from all the earth, and they will be cast into the judgment of fire[d][c][b], and they will perish in wrath and in mighty judgment forever.'
-  rationale: 'Restored Gemini tier-3 OCR corrections (ጣዖት idols, ማኅፈድ temples) silently reverted by azure.'
+  from: And all will be given over with the nations[a], and the towers will be burned with fire; and they will be removed from all the earth, and they will be cast into the judgment of fire[d][c][b], and they will perish in wrath and in mighty judgment forever.
+  to: And all will be given over with the nations[a], and the towers will be burned with fire; and they will be removed from all the earth, and they will be cast into the judgment of fire[d][c][b], and they will perish in wrath and in mighty judgment forever.
+  rationale: Restored Gemini tier-3 OCR corrections (ጣዖት idols, ማኅፈድ temples) silently reverted by azure.
+- timestamp: '2026-11-09T20:12:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And all will be given over with the nations[a], and the towers will be burned with fire; and they will be removed from all the earth, and they will be cast into the judgment of fire[d][c][b], and they will perish in wrath and in mighty judgment forever.
+  to: All will be handed over with the nations, and the towers[a] will burn with fire. They will be driven from the whole earth and cast into the judgment of fire; they will perish in wrath and in mighty, everlasting judgment.
+  rationale: I followed the supplied wording 'all will be handed over' rather than the historical reconstruction naming idols. The current 'towers' remains a cautious rendering of a disputed noun, with its serious alternative stated for readers.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-15T08:53:57Z'
@@ -213,3 +211,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/091/009.job-72845.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:12:30Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Those handed over with the nations face burning, expulsion from the earth, and destruction in everlasting fiery judgment.
+  meaning_decisions:
+  - source_phrase: በኵነኔ፡ ኃያል፡ እንተ፡ ለዓለም
+    prior_rendering: in mighty judgment forever
+    new_rendering: in mighty, everlasting judgment
+    rationale: The closing relative expression characterizes the judgment as everlasting. This avoids suggesting that the act of perishing itself must continue forever.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I followed the supplied wording 'all will be handed over' rather than the historical reconstruction naming idols. The current 'towers' remains a cautious rendering of a disputed noun, with its serious alternative stated for readers.

@@ -12,18 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch101.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 101, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Have you not seen the captains of the ships[a], how they are tossed by the waves, and their ships are shaken by the winds[c][b], and they are distressed?
-  philosophy: optimal-equivalence
+  text: Have you not seen the captains of the ships, how they are tossed by the waves[a], and their ships are shaken by the winds, and they are distressed?
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The phrase rendered 'from the movement of their souls' is difficult. The underlying words may also suggest 'from the winds' or 'from their spirits/minds.'
-    reason: lexical_alternative
-  - marker: b
-    text: The image likely points to wealthy or powerful seafarers whose apparent security collapses under judgment; the verse may also imply the inner panic of the powerful when their stability fails.
-    reason: cultural_note
-  - marker: c
-    text: Or 'the kings of the ships, how they are tossed from side to side and are shaken from the movement of their souls'.
-    reason: previous_rendering
+    text: The Ge'ez phrase here is unclear; it may describe being tossed from side to side.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ኢትሬእይዎሙኑ
   chosen: Have you not seen
@@ -151,12 +145,18 @@ revisions:
   from: the kings of the ships, how they are tossed from side to side and are shaken from the movement of their souls
   to: the captains of the ships, how they are tossed by the waves, and their ships are shaken by the winds
   rationale: 'The draft mistranslates `አሕማሮሙ` (''aḥmāromu) as "their souls"; it is the plural of `ሐመር` (ship) with a 3mp suffix, meaning "their ships". `እምነፋሳት` (''əm-nafāsāt) means "by the winds", not "from the movement". `እምገደ` is an OCR error for `እምሞገድ` (''əm-mogad, "by the waves"). Furthermore, `ተነገሥተ፡ አሕማር` means "captains of the ships" or "mariners" (as the draft correctly renders the exact same phrase in 101:9), not "kings of the ships". | Adjudicator: The reviewer''s rationale is entirely correct and identifies multiple compounding errors in the current draft. The Ge''ez `እምነፋሳት` (''əm-nafāsāt) means ''by the winds'', which the draft confused with `ነፍሳት'
+- timestamp: '2026-11-09T20:07:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Have you not seen the captains of the ships[a], how they are tossed by the waves, and their ships are shaken by the winds[c][b], and they are distressed?
+  to: Have you not seen the captains of the ships, how they are tossed by the waves[a], and their ships are shaken by the winds, and they are distressed?
+  rationale: Kept the substantial earlier corrections identifying ships and winds rather than souls and inward movements. The phrase understood as 'by the waves' remains uncertain in the supplied text, so it receives a brief note rather than the older speculative explanations.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:50Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -176,3 +176,18 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/101/004.job-72930.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:20Z'
+  change_level: refined
+  confidence: medium
+  meaning: The hearers are reminded how waves and winds overwhelm ship captains and cause them distress.
+  meaning_decisions: []
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: Kept the substantial earlier corrections identifying ships and winds rather than souls and inward movements. The phrase understood as 'by the waves' remains uncertain in the supplied text, so it receives a brief note rather than the older speculative explanations.

@@ -22,24 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And he gave them over into the hand of the lions and the leopards and the wolves and the hyenas[a], and into the hand of the foxes, and to all the wild beasts[e][d][c][b]; and those beasts of the field began to tear apart those sheep.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The animal named here is uncertain; the Ge'ez term may refer to a large feline such as a leopard or panther rather than a tiger in the modern zoological sense.
-    reason: lexical_alternative
-  - marker: b
-    text: The predator rendered 'hyenas' may alternatively be understood as 'jackals.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'the tigers'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'and over all the wild beasts'.
-    reason: previous_rendering
-  - marker: e
-    text: Or 'those wild beasts began'.
-    reason: previous_rendering
+  text: And he gave them over to the lions, the leopards, the wolves, the hyenas, the foxes, and all the wild beasts. Those beasts of the field began to tear apart those sheep.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ወሐደጎሙ
   chosen: and he gave them over
@@ -192,12 +176,18 @@ revisions:
   from: those wild beasts began
   to: those beasts of the field began
   rationale: 'The Ge''ez distinguishes between ኵሉ፡ አራዊት (kʷəllu ''arāwit, ''all the wild beasts'') and ዝኩ፡ አራዊተ፡ ገዳም (zəku ''arāwita gadām, ''those beasts of the field''). The draft flattens this distinction by rendering both as ''wild beasts'', and loses consistency with 89:57 where ''beasts of the field'' is used for the exact same phrase. | Adjudicator: The reviewer correctly identifies that the Ge''ez text uses two distinct phrases: the bare plural አራዊት (arāwit, "beasts") and the construct phrase አራዊተ፡ ገዳም (arāwita gadām, "beasts of the field/wildern'
+- timestamp: '2026-11-09T20:11:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he gave them over into the hand of the lions and the leopards and the wolves and the hyenas[a], and into the hand of the foxes, and to all the wild beasts[e][d][c][b]; and those beasts of the field began to tear apart those sheep.
+  to: And he gave them over to the lions, the leopards, the wolves, the hyenas, the foxes, and all the wild beasts. Those beasts of the field began to tear apart those sheep.
+  rationale: The correction to 'leopards' and the distinction between 'wild beasts' and 'beasts of the field' are retained. The surrender and violent tearing remain explicit, while the repetitive hand idiom and unnecessary zoological notes are removed.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:10Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -217,3 +207,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/055.job-72781.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:11:52Z'
+  change_level: refined
+  confidence: high
+  meaning: The Lord gives the sheep over to the predators, which begin tearing them apart.
+  meaning_decisions:
+  - source_phrase: ውስተ፡ እደ፡ አናብስት፡ ወአንምርት፡ ወአዝእብት፡ ወአጽዕብት፡ ወውስተ፡ እደ፡ ቈናጽል
+    prior_rendering: into the hand of the lions and the leopards and the wolves and the hyenas, and into the hand of the foxes
+    new_rendering: to the lions, the leopards, the wolves, the hyenas, the foxes
+    rationale: Giving the sheep over already expresses surrender into the predators' power; repeating the hand idiom adds no distinct image or action here.
+  footnote_kinds: {}
+  history_weighed: The correction to 'leopards' and the distinction between 'wild beasts' and 'beasts of the field' are retained. The surrender and violent tearing remain explicit, while the repetitive hand idiom and unnecessary zoological notes are removed.

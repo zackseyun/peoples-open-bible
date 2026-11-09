@@ -14,18 +14,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch82.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 82, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the names of those who lead them are Adnarel[a], Iyasusael, and Elomeel. These three follow after the leaders of the orders, and there are two that follow after the leaders of the orders, which follow after all the leaders of the fixed stations[c][b], who divide the four parts of the year.
-  philosophy: optimal-equivalence
+  text: Those who lead them are named Adnarel, Iyasusael, and Elomeel. These three follow the leaders of the orders, and two follow the seventy leaders of the orders[a], who in turn follow those leaders of the fixed stations who divide the year into four parts.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the four divisions of the year'; the phrase refers to the calendrical partition of the year in the Astronomical Book.
-    reason: lexical_alternative
-  - marker: b
-    text: The syntax of the middle clauses is difficult, with repeated 'follow after' and multiple groups of leaders. The translation preserves the sequence of the Ge'ez rather than smoothing it into a fully resolved hierarchy.
+    text: The numbers are disputed; another reading has one following three leaders of the orders.
     reason: textual_variant
-  - marker: c
-    text: Or 'and there are two that follow after the leaders of the orders'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: አስማቲሆሙ
   chosen: the names of them
@@ -152,12 +146,18 @@ revisions:
   from: And the names of those who lead them are Adnarel, Iyasusael, and Elomeel. These three follow after the leaders of the orders, and there is one that follows after the three leaders of the orders, which follow after those leaders of the fixed stations, who divide the four parts of the year.
   to: And the names of those who lead them are Adnarel, Iyasusael, and Elomeel. These three follow after the leaders of the orders, and there are two that follow after the leaders of the orders, which follow after all the leaders of the fixed stations, who divide the four parts of the year.
   rationale: Corrected 'there is one' to 'there are two' to match the source, and simplified the clause structure for closer alignment with the Geez while preserving the sense.
+- timestamp: '2026-11-09T20:07:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the names of those who lead them are Adnarel[a], Iyasusael, and Elomeel. These three follow after the leaders of the orders, and there are two that follow after the leaders of the orders, which follow after all the leaders of the fixed stations[c][b], who divide the four parts of the year.
+  to: Those who lead them are named Adnarel, Iyasusael, and Elomeel. These three follow the leaders of the orders, and two follow the seventy leaders of the orders[a], who in turn follow those leaders of the fixed stations who divide the year into four parts.
+  rationale: The revision history documents a serious dispute over the numbers, but the supplied source still reads two and seventy. The repeated succession is made readable without supplying a more definite hierarchy than the text establishes.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:45Z'
   unchanged: false
   changes_summary: Corrected 'there is one' to 'there are two' to match the source, and simplified the clause structure for closer alignment with the Geez while preserving the sense.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.8
@@ -177,3 +177,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/082/014.job-72689.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:10Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Three named leaders belong to a succession of celestial orders beneath the leaders of the year’s four divisions, although the numerical relationships are disputed.
+  meaning_decisions:
+  - source_phrase: ወ፪ዘይተሉ፡ ድኅረ፸መራሕያነ፡ ሥርዓታት
+    prior_rendering: and there are two that follow after the leaders of the orders
+    new_rendering: and two follow the seventy leaders of the orders
+    rationale: The supplied source includes both two and seventy. Omitting seventy conceals a significant feature of that reading; the historically proposed one-and-three reading belongs in a note.
+  - source_phrase: እልኵቱ፡ መራሕያነ፡ ምቅዋማት
+    prior_rendering: all the leaders of the fixed stations
+    new_rendering: those leaders of the fixed stations
+    rationale: The demonstrative points to the station leaders already in view rather than asserting 'all.'
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The revision history documents a serious dispute over the numbers, but the supplied source still reads two and seventy. The repeated succession is made readable without supplying a more definite hierarchy than the text establishes.

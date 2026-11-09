@@ -13,21 +13,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch74.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 74, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And in certain months it changes its settings[a], and in certain months it travels its course[d][c][b], one by one.
-  philosophy: optimal-equivalence
+  text: In some months the moon changes where it sets; in some months it follows its own distinct course[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'The Ethiopic wording is difficult: the phrase rendered ''by the paths of the east'' appears twice, and the final repetition ''one, one'' likely has a distributive sense (''one by one'' / ''each separately'').'
-    reason: textual_variant
-  - marker: b
-    text: '''Goes down westward'' could also be rendered ''descends to the west'' or, more interpretively, ''sets in the west.'''
-    reason: lexical_alternative
-  - marker: c
-    text: The line belongs to the Astronomical Book's description of the ordered tracks of the luminaries; 'course' here refers to a fixed celestial route, not merely general movement.
-    reason: cultural_note
-  - marker: d
-    text: Or 'And by the paths of the east it goes down westward, and by the paths of the east it travels, each one by one, in its course.'.
-    reason: previous_rendering
+    text: The final words may instead mean that it follows its course “one by one,” through successive months.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: አውራኅ
   chosen: paths
@@ -142,9 +133,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And in certain months it changes its settings[a], and in certain months it travels its course[d][c][b], one by one.'
-  to: 'And in certain months it changes its settings[a], and in certain months it travels its course[d][c][b], one by one.'
+  from: And in certain months it changes its settings[a], and in certain months it travels its course[d][c][b], one by one.
+  to: And in certain months it changes its settings[a], and in certain months it travels its course[d][c][b], one by one.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''each one by one''].'
+- timestamp: '2026-11-09T20:03:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And in certain months it changes its settings[a], and in certain months it travels its course[d][c][b], one by one.
+  to: In some months the moon changes where it sets; in some months it follows its own distinct course[a].
+  rationale: The earlier corrections establishing months, change, and settings are well grounded and have been preserved. The final repeated one remains open to more than one understanding, so its meaningful alternative is noted rather than the obsolete notes about eastern paths.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:01:11Z'
@@ -169,3 +167,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/074/004.job-72613.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:03:34Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The moon changes its setting place in some months and follows a distinct course in some months.
+  meaning_decisions:
+  - source_phrase: ይዌልጥ፡ ምዕራባተ
+    prior_rendering: it changes its settings
+    new_rendering: the moon changes where it sets
+    rationale: Settings here are the moon’s places of setting, not adjustments or conditions.
+  - source_phrase: የሐውር፡ ምሕዋሪሁ፡ አሐዱ፡ አሐዱ
+    prior_rendering: it travels its course, one by one
+    new_rendering: it follows its own distinct course
+    rationale: The repeated one can have an individualizing sense, describing a distinct course; the successive, distributive understanding remains a serious alternative.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier corrections establishing months, change, and settings are well grounded and have been preserved. The final repeated one remains open to more than one understanding, so its meaningful alternative is noted rather than the obsolete notes about eastern paths.

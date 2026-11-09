@@ -22,21 +22,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And thus in the vision I saw that the one who wrote wrote down every one that was destroyed by those shepherds[a], day by day, and he brought up and laid down and showed that whole book to the Lord of the sheep, all that they had done, and all that each one of them had made away with[d][c][b], and all that they had given over to destruction.
-  philosophy: optimal-equivalence
+  text: And so, in the vision, I saw the scribe recording every sheep destroyed by those shepherds, day by day. He brought up the whole book, set it down, and showed it to the Lord of the sheep. It recorded all they had done, all that each of them had removed[a], and all they had handed over to destruction.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The clause rendered 'had put away' is lexically difficult in the Ethiopic witness and may refer more specifically to what each shepherd had removed or caused to disappear from the flock.
-    reason: lexical_alternative
-  - marker: b
-    text: The repeated writing and presentation imagery depicts a heavenly record of the shepherds' actions brought before the divine court.
-    reason: cross_reference
-  - marker: c
-    text: Or 'he wrote down every one of those shepherds, day by day, who was destroyed from among them'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'and he went up and laid it all before the Lord of the sheep, and showed him all'.
-    reason: previous_rendering
+    text: The Ge’ez word translated 'removed' is unclear; it may refer to sheep each shepherd caused to disappear.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ርኢክዎ
   chosen: I saw
@@ -215,9 +206,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And thus in the vision I saw that the one who wrote wrote down every one that was destroyed by those shepherds[a], day by day, and he brought up and laid down and showed that whole book to the Lord of the sheep, all that they had done, and all that each one of them had made away with[d][c][b], and all that they had given over to destruction.'
-  to: 'And thus in the vision I saw that the one who wrote wrote down every one that was destroyed by those shepherds[a], day by day, and he brought up and laid down and showed that whole book to the Lord of the sheep, all that they had done, and all that each one of them had made away with[d][c][b], and all that they had given over to destruction.'
-  rationale: 'Drafter chose ''had put away'' for ዘአእተተ explicitly to preserve lexical ambiguity (Geʿez root is difficult; ''put away'' is broad enough to avoid over-specifying). Azure substituted ''made away with'' which carries a specific killing/stealing idiomatic sense, citing only ''more natural yet still formal''.'
+  from: And thus in the vision I saw that the one who wrote wrote down every one that was destroyed by those shepherds[a], day by day, and he brought up and laid down and showed that whole book to the Lord of the sheep, all that they had done, and all that each one of them had made away with[d][c][b], and all that they had given over to destruction.
+  to: And thus in the vision I saw that the one who wrote wrote down every one that was destroyed by those shepherds[a], day by day, and he brought up and laid down and showed that whole book to the Lord of the sheep, all that they had done, and all that each one of them had made away with[d][c][b], and all that they had given over to destruction.
+  rationale: Drafter chose 'had put away' for ዘአእተተ explicitly to preserve lexical ambiguity (Geʿez root is difficult; 'put away' is broad enough to avoid over-specifying). Azure substituted 'made away with' which carries a specific killing/stealing idiomatic sense, citing only 'more natural yet still formal'.
+- timestamp: '2026-11-09T20:12:05Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And thus in the vision I saw that the one who wrote wrote down every one that was destroyed by those shepherds[a], day by day, and he brought up and laid down and showed that whole book to the Lord of the sheep, all that they had done, and all that each one of them had made away with[d][c][b], and all that they had given over to destruction.
+  to: And so, in the vision, I saw the scribe recording every sheep destroyed by those shepherds, day by day. He brought up the whole book, set it down, and showed it to the Lord of the sheep. It recorded all they had done, all that each of them had removed[a], and all they had handed over to destruction.
+  rationale: The revisions correctly restored the sheep as victims and the book as the object brought up and presented. The history also gives a sound warning against overdefining the difficult removal verb, so a broader rendering and one short note are used.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-15T18:39:35Z'
@@ -242,3 +240,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/070.job-72796.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:12:05Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The scribe records every sheep destroyed and presents the complete account of the shepherds’ conduct to the Lord of the sheep.
+  meaning_decisions:
+  - source_phrase: ለዝኩ፡ ዘይጽሕፍ፡ እፎ፡ ይጽሕፍ፡ ዘይትሐጐል፡ እምነ፡ ዝኩ፡ ኖላዊያን
+    prior_rendering: the one who wrote wrote down every one that was destroyed by those shepherds
+    new_rendering: the scribe recording every sheep destroyed by those shepherds
+    rationale: The writing figure is identified by his established function, and the sheep are made explicit as the victims; the shepherds remain the agents of destruction.
+  - source_phrase: ወያዓርግ፡ ወያዓርፍ፡ ወያርኢ፡ ኵሎ፡ ኪያሁ፡ መጽሐፈ፡ ለእግዚአ፡ አባግዕ
+    prior_rendering: he brought up and laid down and showed that whole book to the Lord of the sheep
+    new_rendering: He brought up the whole book, set it down, and showed it to the Lord of the sheep
+    rationale: The book is placed with the verbs that govern it, preserving all three actions without the source-shaped accumulation.
+  - source_phrase: ዘአእተተ
+    prior_rendering: had made away with
+    new_rendering: had removed
+    rationale: The difficult word should not be narrowed to the killing or stealing suggested by the English idiom 'made away with.'
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The revisions correctly restored the sheep as victims and the book as the object brought up and presented. The history also gives a sound warning against overdefining the difficult removal verb, so a broader rendering and one short note are used.

@@ -88,6 +88,18 @@ translating from the same sources the scholarly community works from — the
 Greek and Hebrew — applying documented translation philosophy to each verse,
 with every decision auditable.
 
+## What the main text aims for
+
+The main text aims for the true meaning: what each author was saying, and
+what God was saying through that author, to the people who first heard it.
+Even the original words are a vessel for that meaning. Where an idiom or
+word-for-word pattern would obscure the meaning for a reader today, the text
+carries the meaning and a footnote shows the literal wording. Where the
+long-established English word carries more of the meaning (soul,
+righteousness, "the valley of the shadow of death"), it stays. See
+[DOCTRINE.md](DOCTRINE.md#translation-philosophy) and
+[docs/MEANING_FIRST_TRANSLATION_2026-11.md](docs/MEANING_FIRST_TRANSLATION_2026-11.md).
+
 ## What "transparent" actually means here
 
 Every verse in this translation is a file in this repository. Each file

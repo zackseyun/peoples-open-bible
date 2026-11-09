@@ -14,24 +14,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch108.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 108, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I have spoken of all their blessings in the books[a], and he has rewarded them themselves, because these are found to love heaven more than their life[b] in the world; and while they are trodden down by evil men[d], they hear from them abuse and reviling[e] and are put to shame while blessing me[c].
-  philosophy: optimal-equivalence
+  text: I have described all their blessings in the books, and he has rewarded them, because they have proved to love heaven more than their life in the world. While evil men trample them underfoot, they hear abuse and reviling from them and are put to shame, yet they continue to bless me[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Literally, 'their heads.' The phrase may mean their leaders or chiefs; the Ge'ez wording is difficult.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'their breath in the world.' Here 'breath' is rendered as 'life' to convey the idiom.
-    reason: lexical_alternative
-  - marker: c
-    text: The final clause reads 'while blessing me.' The first-person object is retained as written, though some interpreters suspect a difficult or corrupt reading here.
-    reason: textual_variant
-  - marker: d
-    text: Or 'and I have set them down for their leaders'.
-    reason: previous_rendering
-  - marker: e
-    text: Or 'and hear from them abuse and reviling, they endure it while blessing me.'.
-    reason: previous_rendering
+    text: The change of speaker is not made explicit; “me” may refer to Enoch or introduce God’s own speech.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ኵሎ በረከቶሙ
   chosen: all their blessings
@@ -191,8 +179,8 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I have spoken of all their blessings in the books[a], and I have appointed them for their leaders, because these are found to love heaven more than their life in the world; and while they are oppressed by evil men[e][d][c][b], they hear from them abuse and reviling and suffer shame while blessing me.'
-  to: 'And I have spoken of all their blessings in the books, and he has rewarded them themselves, because these are found to love heaven more than their life in the world; and while they are trodden down by evil men, they hear from them abuse and reviling and are put to shame while blessing me.'
+  from: And I have spoken of all their blessings in the books[a], and I have appointed them for their leaders, because these are found to love heaven more than their life in the world; and while they are oppressed by evil men[e][d][c][b], they hear from them abuse and reviling and suffer shame while blessing me.
+  to: And I have spoken of all their blessings in the books, and he has rewarded them themselves, because these are found to love heaven more than their life in the world; and while they are trodden down by evil men, they hear from them abuse and reviling and are put to shame while blessing me.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they are trodden down''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -202,6 +190,13 @@ revisions:
   from: And I have spoken of all their blessings in the books, and he has rewarded them themselves, because these are found to love heaven more than their life in the world; and while they are trodden down by evil men, they hear from them abuse and reviling and are put to shame while blessing me.
   to: And I have spoken of all their blessings in the books[a], and he has rewarded them themselves, because these are found to love heaven more than their life[b] in the world; and while they are trodden down by evil men[d], they hear from them abuse and reviling[e] and are put to shame while blessing me[c].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it; [b] anchored to ('life') because the note quotes that phrase from the rendering; [c] anchored to ('while blessing me') because the note names that rendering; [d] restored to the position it held before an earlier revision pass dropped it; [e] anchored to ('abuse and reviling') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T20:04:18Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I have spoken of all their blessings in the books[a], and he has rewarded them themselves, because these are found to love heaven more than their life[b] in the world; and while they are trodden down by evil men[d], they hear from them abuse and reviling[e] and are put to shame while blessing me[c].
+  to: I have described all their blessings in the books, and he has rewarded them, because they have proved to love heaven more than their life in the world. While evil men trample them underfoot, they hear abuse and reviling from them and are put to shame, yet they continue to bless me[a].
+  rationale: The earlier corrections to 'he has rewarded' and 'are put to shame' are supported by the source, unlike the alternatives concerning leaders or mere endurance. I preserved the shifts between 'I,' 'he,' and 'me' rather than silently assigning every clause to one speaker.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:10:48Z'
@@ -226,3 +221,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/108/010.job-72989.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:04:18Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The faithful receive their recorded blessings because they love heaven above earthly life and continue blessing the speaker despite oppression, insults, and disgrace.
+  meaning_decisions:
+  - source_phrase: ወእንዘ፡ ይትከየዱ፡ እምእኩያን፡ ሰብእ፡ … ወኀሥሡ፡ እንዘ፡ ይባርኩኒ
+    prior_rendering: while they are trodden down by evil men, they hear from them abuse and reviling and are put to shame while blessing me
+    new_rendering: While evil men trample them underfoot, they hear abuse and reviling from them and are put to shame, yet they continue to bless me
+    rationale: The reordering brings out their continued blessing amid persecution while preserving both the trampling image and the fact that they suffer disgrace.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier corrections to 'he has rewarded' and 'are put to shame' are supported by the source, unlike the alternatives concerning leaders or mere endurance. I preserved the shifts between 'I,' 'he,' and 'me' rather than silently assigning every clause to one speaker.

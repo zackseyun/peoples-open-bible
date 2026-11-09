@@ -22,18 +22,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And all those feared and trembled before him[a], and they followed after that ram that was with them [that was in their midst][c][b], because it was not able to stand before our Lord and look at him.
-  philosophy: optimal-equivalence
+  text: 'They all feared him and trembled, and they cried out to the sheep that was among them[a]: “We cannot stand before our Lord or look at him.”'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The clause 'that was in their midst' is bracketed in the source witness and may reflect a secondary or uncertain reading.
-    reason: textual_variant
-  - marker: b
-    text: The phrase rendered 'they begged after him' is difficult in the Ge'ez and could also suggest crying out after him or seeking him concerning the ram.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'all those said ones'.
-    reason: previous_rendering
+    text: The Ge'ez phrase translated 'cried out to' is unclear; it may mean 'followed after.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ኵሎሙ
   chosen: all those
@@ -196,9 +190,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And all those feared and trembled before him[a], and they followed after that ram that was with them [that was in their midst][c][b], because it was not able to stand before our Lord and look at him.'
-  to: 'And all those feared and trembled before him[a], and they followed after that ram that was with them [that was in their midst][c][b], because it was not able to stand before our Lord and look at him.'
-  rationale: 'Restored ''begged after him for that ram'' (drafter''s documented petition reading).'
+  from: And all those feared and trembled before him[a], and they followed after that ram that was with them [that was in their midst][c][b], because it was not able to stand before our Lord and look at him.
+  to: And all those feared and trembled before him[a], and they followed after that ram that was with them [that was in their midst][c][b], because it was not able to stand before our Lord and look at him.
+  rationale: Restored 'begged after him for that ram' (drafter's documented petition reading).
+- timestamp: '2026-11-09T20:10:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And all those feared and trembled before him[a], and they followed after that ram that was with them [that was in their midst][c][b], because it was not able to stand before our Lord and look at him.
+  to: 'They all feared him and trembled, and they cried out to the sheep that was among them[a]: “We cannot stand before our Lord or look at him.”'
+  rationale: The history records competing following and petition readings, so the uncertain phrase receives a short note. More importantly, the supplied first-person plural verb corrects the current attribution of inability to the ram; the bracketed locative phrase does not change the verse's meaning.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-15T08:53:57Z'
@@ -223,3 +224,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/031.job-72757.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:03Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Overwhelmed with fear, the sheep appeal to their companion, saying that they cannot stand before or look at the Lord.
+  meaning_decisions:
+  - source_phrase: ወደርኁ፡ ድኅሬሁ፡ ለዝኩ፡ በግዕ
+    prior_rendering: and they followed after that ram
+    new_rendering: and they cried out to the sheep
+    rationale: The documented cry or appeal sense fits the statement of inability that follows. The noun is the same 'sheep' used for this figure in the surrounding verses and does not itself specify a ram.
+  - source_phrase: እስመ፡ ኢንክል፡ ቀዊመ፡ ቅድመ፡ እግዚእነ፡ ወአነጽሮቶ
+    prior_rendering: because it was not able to stand before our Lord and look at him
+    new_rendering: “We cannot stand before our Lord or look at him.”
+    rationale: 'The verb is first-person plural: the frightened sheep speak of their own inability, not the companion sheep''s inability. Direct speech makes this change of voice clear, and ''or'' expresses the scope of the negative naturally.'
+  - source_phrase: ምስሌሆሙ፡ [ዘሀሎ፡ ማእከሎሙ፡]
+    prior_rendering: that was with them [that was in their midst]
+    new_rendering: that was among them
+    rationale: Both expressions identify the companion sheep's presence with the flock. Their overlap can be conveyed once, without editorial brackets or a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history records competing following and petition readings, so the uncertain phrase receives a short note. More importantly, the supplied first-person plural verb corrects the current attribution of inability to the ram; the bracketed locative phrase does not change the verse's meaning.

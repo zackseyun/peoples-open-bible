@@ -14,24 +14,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch108.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 108, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the sinners will cry out and see them while they shine[a], and they themselves will go to where the days and the times have been written down for them[e][d][c][b]. The vision of the hidden things of Enoch.
-  philosophy: optimal-equivalence
+  text: And the sinners will cry out and see the righteous shining, and they themselves will go where their days and times have been written down[a]. Enoch’s vision of hidden things.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'The closing words may function as a subscription or title: ''The vision of the hidden things that Enoch saw,'' rather than as part of the sinners'' movement clause.'
-    reason: textual_variant
-  - marker: b
-    text: '''Written down for them'' reflects the apocalyptic motif of fixed, recorded times of judgment.'
+    text: The heavenly records contain the times appointed for the sinners’ judgment.
     reason: cultural_note
-  - marker: c
-    text: The verb rendered 'wander about' is difficult and may also suggest agitation or turmoil rather than aimless movement.
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'while they wander about'.
-    reason: previous_rendering
-  - marker: e
-    text: Or ', in the vision of the hidden things that Enoch saw.'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ወይጸርኁ
   chosen: and they will cry out
@@ -185,9 +173,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the sinners will cry out and see them while they shine[a], and they themselves will go where the days and times have been written down for them[e][d][c][b]. The vision of the hidden things of Enoch.'
-  to: 'And the sinners will cry out and see them while they shine[a], and they themselves will go to where the days and the times have been written down for them[e][d][c][b]. The vision of the hidden things of Enoch.'
-  rationale: 'Drafter chose ''to where'' to render the directional preposition በኀበ; azure dropped ''to'' calling it unnecessary, ignoring the drafter''s documented rationale that it marks direction toward a destination. ''The days and the times'' also stripped to stylistic ''days and times''.'
+  from: And the sinners will cry out and see them while they shine[a], and they themselves will go where the days and times have been written down for them[e][d][c][b]. The vision of the hidden things of Enoch.
+  to: And the sinners will cry out and see them while they shine[a], and they themselves will go to where the days and the times have been written down for them[e][d][c][b]. The vision of the hidden things of Enoch.
+  rationale: Drafter chose 'to where' to render the directional preposition በኀበ; azure dropped 'to' calling it unnecessary, ignoring the drafter's documented rationale that it marks direction toward a destination. 'The days and the times' also stripped to stylistic 'days and times'.
+- timestamp: '2026-11-09T20:04:18Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the sinners will cry out and see them while they shine[a], and they themselves will go to where the days and the times have been written down for them[e][d][c][b]. The vision of the hidden things of Enoch.
+  to: And the sinners will cry out and see the righteous shining, and they themselves will go where their days and times have been written down[a]. Enoch’s vision of hidden things.
+  rationale: I retained the corrections identifying the righteous as shining and treating the final noun phrase as a separate closing title. The movement toward the sinners’ recorded fate remains, with a brief note explaining the heavenly-record imagery rather than reviving the unsupported wandering interpretation.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-15T18:39:35Z'
@@ -212,3 +207,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/108/015.job-72994.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:04:18Z'
+  change_level: refined
+  confidence: high
+  meaning: The sinners will cry out at the sight of the radiant righteous and proceed to their recorded fate, after which a closing title identifies Enoch’s vision of hidden things.
+  meaning_decisions:
+  - source_phrase: ወይሬእይዎሙ፡ ኃጥኣን፡ እንዘ፡ ይትወሐውሑ
+    prior_rendering: the sinners will cry out and see them while they shine
+    new_rendering: the sinners will cry out and see the righteous shining
+    rationale: The preceding verse establishes that the righteous are shining. Naming them prevents the English pronouns from suggesting that the sinners shine.
+  - source_phrase: ራእየ፡ ኅቡኣት፡ ዘሄኖክ
+    prior_rendering: The vision of the hidden things of Enoch
+    new_rendering: Enoch’s vision of hidden things
+    rationale: This expresses the closing title naturally and attaches Enoch’s name to the vision rather than suggesting that the hidden things belong to him.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: I retained the corrections identifying the righteous as shining and treating the final noun phrase as a separate closing title. The movement toward the sinners’ recorded fate remains, with a brief note explaining the heavenly-record imagery rather than reviving the unsupported wandering interpretation.

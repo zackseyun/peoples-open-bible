@@ -12,21 +12,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch81.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 81, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I looked at the tablets of heaven[a], and I read all that was written, and I understood it all; and I read the book of all the deeds of humankind and of all the children of flesh upon the earth[d][c][b], to the generations of eternity.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the book concerning all the deeds of humankind.' The Ge'ez construction may be read as a genitival description of the book's contents.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Children of flesh'' is a literal rendering of a Semitic-style expression for human beings in their mortal, earthly condition.'
-    reason: cultural_note
-  - marker: c
-    text: Or 'to eternal generations' / 'for the generations forever.' The closing phrase is idiomatic and expansive rather than narrowly chronological.
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'who will be upon the earth'.
-    reason: previous_rendering
+  text: I looked at the tablets of heaven, read all that was written on them, and understood it all. I read the book recording all the deeds of humankind and of all those born of flesh on the earth, through all generations forever.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ነጸርኩ
   chosen: I looked
@@ -154,12 +141,18 @@ revisions:
   from: who will be upon the earth
   to: upon the earth
   rationale: 'Adjudicator-modified: The Ge''ez phrase ዘዲበ፡ ምድር (za-diba mədr) is a verbless relative clause. While supplying a verb like ''will be'' (to match the future scope of ''to the generations of eternity'') or ''are'' (as a timeless present) is grammatically defensible, both introduce tense restrictions not explicitly present in the source. Translating it simply as ''upon the earth'' perfectly captures the verbless Ge''ez construction and allows the temporal scope to be governed naturally by the surrounding context.'
+- timestamp: '2026-11-09T20:07:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I looked at the tablets of heaven[a], and I read all that was written, and I understood it all; and I read the book of all the deeds of humankind and of all the children of flesh upon the earth[d][c][b], to the generations of eternity.
+  to: I looked at the tablets of heaven, read all that was written on them, and understood it all. I read the book recording all the deeds of humankind and of all those born of flesh on the earth, through all generations forever.
+  rationale: The earlier decision not to impose a future tense on those living on earth is preserved. The notes correctly identified mortal humanity and an expansive succession of generations, but those meanings can be conveyed directly in the text.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:39Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -179,3 +172,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/081/002.job-72671.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:40Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Enoch reads and understands the heavenly record of all human deeds across every generation.
+  meaning_decisions:
+  - source_phrase: ለመጽሐፈ፡ ኵሉ፡ ምግባሮሙ፡ ለሰብእ
+    prior_rendering: the book of all the deeds of humankind
+    new_rendering: the book recording all the deeds of humankind
+    rationale: Makes clear that the book contains a record of human deeds while preserving the book itself as part of the vision.
+  - source_phrase: ውሉደ፡ ሥጋ፡ ዘዲበ፡ ምድር
+    prior_rendering: the children of flesh upon the earth
+    new_rendering: those born of flesh on the earth
+    rationale: Clarifies the expression for embodied human beings while retaining its imagery of flesh and birth.
+  - source_phrase: እስከ፡ ትውልደ፡ ዓለም
+    prior_rendering: to the generations of eternity
+    new_rendering: through all generations forever
+    rationale: Conveys the record's unlimited generational scope without the obscure suggestion of generations belonging to eternity.
+  footnote_kinds: {}
+  history_weighed: The earlier decision not to impose a future tense on those living on earth is preserved. The notes correctly identified mortal humanity and an expansive succession of generations, but those meanings can be conveyed directly in the text.

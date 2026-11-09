@@ -15,18 +15,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch69.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 69, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And over them this oath became strong[a], and they are kept by it; and their paths are kept[c][b], and their courses do not perish.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'their ways were guarded, and their circuits do not fail.' The Ge'ez wording allows either a more general sense ('ways') or a more ordered/cosmic sense ('courses, circuits').
-    reason: lexical_alternative
-  - marker: b
-    text: The line is textually difficult in the Ethiopic witness, and the repeated passive verb may indicate both that they are kept by the oath and that their paths are kept under it.
-    reason: textual_variant
-  - marker: c
-    text: Or 'And among them the oath became strong, and they were kept by it; and their paths were kept'.
-    reason: previous_rendering
+  text: This oath firmly binds them, and they are kept by it; their paths are guarded, and their courses do not fail.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ዲቤሆሙ
   chosen: among them
@@ -156,12 +146,18 @@ revisions:
   from: And upon them this oath became strong, and they are kept by it; and their paths are kept, and their courses do not perish.
   to: And over them this oath became strong, and they are kept by it; and their paths are kept, and their courses do not perish.
   rationale: Changed 'upon them' to 'over them' for a more natural rendering of the preposition while preserving the sense; otherwise retained the draft as accurate and complete.
+- timestamp: '2026-11-09T20:01:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And over them this oath became strong[a], and they are kept by it; and their paths are kept[c][b], and their courses do not perish.
+  to: This oath firmly binds them, and they are kept by it; their paths are guarded, and their courses do not fail.
+  rationale: The earlier corrections rightly established the oath's authority over them and its continuing preservation. The supplied repetition about guarding their paths does not change the sense, and “kept” leaves protection and restraint together rather than choosing only one.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:08Z'
   unchanged: false
   changes_summary: Changed 'upon them' to 'over them' for a more natural rendering of the preposition while preserving the sense; otherwise retained the draft as accurate and complete.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.8
@@ -181,3 +177,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/069/025.job-72552.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:01:42Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The oath firmly governs and preserves the heavenly powers, keeping their paths and courses intact.
+  meaning_decisions:
+  - source_phrase: ወዲቤሆሙ፡ ጸንዐ፡ ዝማሐላ
+    prior_rendering: And over them this oath became strong
+    new_rendering: This oath firmly binds them
+    rationale: The oath's strength over them expresses its binding force, not merely an increase in abstract strength.
+  - source_phrase: ወምሕዋራቲሆሙ፡ ኢይማስን
+    prior_rendering: and their courses do not perish
+    new_rendering: and their courses do not fail
+    rationale: The ordered courses remain intact and operative; “do not fail” conveys this without treating the courses as living beings.
+  footnote_kinds: {}
+  history_weighed: The earlier corrections rightly established the oath's authority over them and its continuing preservation. The supplied repetition about guarding their paths does not change the sense, and “kept” leaves protection and restraint together rather than choosing only one.

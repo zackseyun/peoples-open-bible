@@ -22,24 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And that pool of water was split[a], and the water stood on this side and on that side before their faces; and their Lord, while he was leading them[e][d][c][b], stood between them and the wolves.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'watercourse' or 'channel of water.' The Ge'ez expression points to a bounded course of water rather than water in general.
-    reason: lexical_alternative
-  - marker: b
-    text: The phrase 'before their faces' is more literally 'before their faces'; the English could also be simplified to 'before them.'
-    reason: lexical_alternative
-  - marker: c
-    text: The final clause likely means that the standing water formed a barrier separating the flock from the wolves.
-    reason: cultural_note
-  - marker: d
-    text: Or 'and before their lord, while he was leading them; and it stood between them and between the wolves.'.
-    reason: previous_rendering
-  - marker: e
-    text: Or 'water-channel'.
-    reason: previous_rendering
+  text: That body of water split apart, and the water stood on either side before them. Their Lord, who was leading them, stood between them and the wolves.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ዐይገ ማይ
   chosen: water-channel
@@ -175,12 +159,18 @@ revisions:
   from: And that And that pool of water was split, and the water stood on this side and on that side before their faces; and their Lord, while he was leading them, stood between them and the wolves. was split, and the water stood on this side and on that side before their faces ; and their Lord, while he was leading them, stood between them and the wolves.
   to: And that pool of water was split, and the water stood on this side and on that side before their faces; and their Lord, while he was leading them, stood between them and the wolves.
   rationale: Removed duplicated text and corrected punctuation; retained the translation otherwise as accurate and natural.
+- timestamp: '2026-11-09T20:10:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And that pool of water was split[a], and the water stood on this side and on that side before their faces; and their Lord, while he was leading them[e][d][c][b], stood between them and the wolves.
+  to: That body of water split apart, and the water stood on either side before them. Their Lord, who was leading them, stood between them and the wolves.
+  rationale: I keep the earlier grammatical correction that makes their Lord, not the water, the subject of the final 'stood.' The conflicting notes do not establish a serious alternative, and the spatial expressions can be rendered naturally without explanation.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:06Z'
   unchanged: false
   changes_summary: Removed duplicated text and corrected punctuation; retained the translation otherwise as accurate and natural.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -200,3 +190,21 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/024.job-72750.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:03Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The water divides before the sheep, while their Lord stands between them and their pursuers.
+  meaning_decisions:
+  - source_phrase: ውእቱ፡ ዐይገ፡ ማይ
+    prior_rendering: that pool of water
+    new_rendering: that body of water
+    rationale: This identifies the same water-place as in verse 23 without introducing the smaller-scale image suggested by 'pool.'
+  footnote_kinds: {}
+  history_weighed: I keep the earlier grammatical correction that makes their Lord, not the water, the subject of the final 'stood.' The conflicting notes do not establish a serious alternative, and the spatial expressions can be rendered naturally without explanation.

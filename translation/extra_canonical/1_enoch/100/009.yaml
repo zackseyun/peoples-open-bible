@@ -12,15 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch100.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 100, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: 'Woe to you[a], sinners, because of the words of your mouth and because of the deeds of your hands[b], which your wickedness has done: in the heat of a flame more burning than fire you shall burn.'
-  philosophy: optimal-equivalence
+  text: 'Woe to you, sinners, for the words of your mouth and the deeds of your hands, which your wickedness has produced: a flame will burn hotter than fire[a].'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The clause 'which your godlessness has done' is syntactically difficult in English. It likely gathers both the speech and the deeds into one charge and attributes them to the sinners' impious wickedness.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'in blazing flames of fire you shall burn.'.
-    reason: previous_rendering
+    text: The final verb means 'it will burn,' but its subject is unclear; another Ge'ez reading has 'you will burn.'
+    reason: textual_variant
 lexical_decisions:
 - source_word: አሌ
   chosen: Woe
@@ -152,6 +149,13 @@ revisions:
   from: 'Woe to you[a], sinners, because of the words of your mouth and because of the deeds of your hands[b], which your wickedness has done: in the heat of a flame more burning than fire you shall burn.'
   to: 'Woe to you[a], sinners, because of the words of your mouth and because of the deeds of your hands[b], which your wickedness has done: in the heat of a flame more burning than fire you shall burn.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''your godlessness''].'
+- timestamp: '2026-11-09T20:08:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Woe to you[a], sinners, because of the words of your mouth and because of the deeds of your hands[b], which your wickedness has done: in the heat of a flame more burning than fire you shall burn.'
+  to: 'Woe to you, sinners, for the words of your mouth and the deeds of your hands, which your wickedness has produced: a flame will burn hotter than fire[a].'
+  rationale: The earlier correction rightly recognized the comparison with fire, but its defense of 'you shall burn' relies on a different Ge'ez verb from the one supplied here. The translation follows the supplied singular wording while acknowledging the uncertain subject.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:01:11Z'
@@ -176,3 +180,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/100/009.job-72925.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:08:16Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The sinners' wicked speech and deeds bring a threat of fiery judgment more intense than ordinary fire.
+  meaning_decisions:
+  - source_phrase: እለ፡ ገብረ፡ ርስዓኒክሙ
+    prior_rendering: which your wickedness has done
+    new_rendering: which your wickedness has produced
+    rationale: The clause attributes the speech and deeds to the sinners' wickedness; 'produced' conveys that relationship naturally.
+  - source_phrase: በዋዕየ፡ ላህብ፡ እምእሳት፡ ይውዒ
+    prior_rendering: in the heat of a flame more burning than fire you shall burn
+    new_rendering: a flame will burn hotter than fire
+    rationale: The supplied verb is third-person singular rather than second-person plural; the flame is the most plausible subject in context, and the uncertainty and other reading are noted.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier correction rightly recognized the comparison with fire, but its defense of 'you shall burn' relies on a different Ge'ez verb from the one supplied here. The translation follows the supplied singular wording while acknowledging the uncertain subject.

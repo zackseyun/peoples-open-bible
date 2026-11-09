@@ -13,18 +13,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch78.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 78, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And fifteen parts of light are added within it until the fifteenth day[a]; and its light is completed as a sign of the year, and it becomes fifteen parts[c][b], and the moon comes into being by half of a seventh part.
-  philosophy: optimal-equivalence
+  text: Fifteen parts of light are added within the moon up to the fifteenth day; its light becomes full as a sign of the year and reaches fifteen parts. The moon grows brighter by one-fourteenth of its full light at a time[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The final clause is difficult in the Ethiopic. The wording likely refers to the month reaching its midpoint by counted portions of light, but the exact force of 'in the seventh portion' is uncertain.
-    reason: textual_variant
-  - marker: b
-    text: The repeated 'fifteen' likely refers to fifteen parts of lunar light, a technical reckoning used in this chapter, rather than merely the calendar date.
-    reason: cultural_note
-  - marker: c
-    text: Or 'and the month comes to its half in the seventh portion.'.
-    reason: previous_rendering
+    text: The final clause is unclear; it may instead describe the moon first appearing with one-fourteenth of its light.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ፲ትኅምስት
   chosen: fifteen
@@ -163,12 +157,18 @@ revisions:
   from: and the month comes to its half in the seventh portion.
   to: and the moon comes into being by half of a seventh part.
   rationale: 'The Ge''ez `ወርኅ` here refers to the ''moon'' (as the subject of its phases), and `በመንፈቀ ሳብዕ እደ` means ''by half of a seventh part'' (the daily increment of 1/14th of its light, as established in 78:6), not ''comes to its half in the seventh portion.'' The preposition `በ` indicates the means or increment, and `መንፈቀ` is in construct with `ሳብዕ እደ` (''half of a seventh part''). The draft misses the specific astronomical math of the lunar cycle. | Adjudicator: The reviewer is entirely correct regarding the astronomical mathematics and vocabulary of this section. In the Astronomical Book, the moon''s light waxes and wanes in increments of 1/14th, which the Ge'
+- timestamp: '2026-11-09T20:05:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And fifteen parts of light are added within it until the fifteenth day[a]; and its light is completed as a sign of the year, and it becomes fifteen parts[c][b], and the moon comes into being by half of a seventh part.
+  to: Fifteen parts of light are added within the moon up to the fifteenth day; its light becomes full as a sign of the year and reaches fifteen parts. The moon grows brighter by one-fourteenth of its full light at a time[a].
+  rationale: The revision identifying the moon and the half-seventh fraction is stronger than the earlier interpretation about the month’s midpoint. Its phrase “comes into being” remains misleading in this context, but the final clause is genuinely uncertain and does not justify complete confidence.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:05Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.8
@@ -188,3 +188,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/078/007.job-72653.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:05:01Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The moon’s light reaches fifteen parts by the fifteenth day, serves as a sign of the year, and increases by a counted fraction.
+  meaning_decisions:
+  - source_phrase: ይትፈጸም፡ ብርሃነ፡ ዚአሁ፡ ለትእምርተ፡ ዓመት፡ ወይከውን፡ ለ፲፲ትኅምስት
+    prior_rendering: its light is completed as a sign of the year, and it becomes fifteen parts
+    new_rendering: its light becomes full as a sign of the year and reaches fifteen parts
+    rationale: The completion concerns lunar illumination, and the repeated fifteen states its full measured amount. The new wording makes the referent clear while preserving the calendrical sign.
+  - source_phrase: ወይከውን፡ ወርኅ፡ በመንፈቀ፡ ሳብዕ፡ እደ
+    prior_rendering: and the moon comes into being by half of a seventh part
+    new_rendering: The moon grows brighter by one-fourteenth of its full light at a time
+    rationale: In the account of waxing light, the clause most likely describes the moon’s increase rather than its creation. The fractional increment is expressed naturally, while the possibility that the clause describes its first appearance is noted.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The revision identifying the moon and the half-seventh fraction is stronger than the earlier interpretation about the month’s midpoint. Its phrase “comes into being” remains misleading in this context, but the final clause is genuinely uncertain and does not justify complete confidence.

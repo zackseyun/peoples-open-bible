@@ -11,21 +11,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch87.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 87, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And again I lifted up my eyes to heaven[a], and I saw in a vision—and behold, there came out from heaven beings in the likeness of white men; and four came out from that place[d][c][b], and three with them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'figures like white men.' The Ge'ez describes their appearance by comparison rather than directly naming their class.
-    reason: lexical_alternative
-  - marker: b
-    text: 'The final count is abrupt in the Ethiopic: ''and four came out from that place, and three with them.'' The verse likely intends a total of seven heavenly figures, but the syntax is preserved rather than smoothed.'
-    reason: textual_variant
-  - marker: c
-    text: Or 'in the vision'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'beings like white men'.
-    reason: previous_rendering
+  text: Again I lifted my eyes to heaven and saw in a vision white figures in human form coming out of heaven. Four came out from there, and three others with them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: አንሣእኩ
   chosen: I lifted up
@@ -174,12 +161,18 @@ revisions:
   from: beings like white men
   to: beings in the likeness of white men
   rationale: 'The Ge''ez phrase ከመ፡ እምሳለ (kama ʾamsāla) explicitly means ''like the likeness of'' or ''in the likeness/form of.'' The draft translates ከመ (''like'') but omits the noun አምሳለ (''likeness''), flattening the characteristic apocalyptic language of visionary resemblance. | Adjudicator: The Ge''ez phrase ከመ፡ እምሳለ (kama ʾamsāla) specifically means ''in the likeness of'' or ''ad similitudinem'' (Dillmann). The current rendering ''like'' flattens this characteristic apocalyptic distancing lang'
+- timestamp: '2026-11-09T20:08:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And again I lifted up my eyes to heaven[a], and I saw in a vision—and behold, there came out from heaven beings in the likeness of white men; and four came out from that place[d][c][b], and three with them.
+  to: Again I lifted my eyes to heaven and saw in a vision white figures in human form coming out of heaven. Four came out from there, and three others with them.
+  rationale: I preserved the earlier care to describe the figures by appearance rather than explicitly name them as angels. The notes about resemblance and the abrupt count are unnecessary once those features are expressed clearly in the text.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:55Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -199,3 +192,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/087/002.job-72722.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:08:52Z'
+  change_level: refined
+  confidence: high
+  meaning: Enoch sees white, humanlike figures coming from heaven, four accompanied by three others.
+  meaning_decisions:
+  - source_phrase: ከመ፡ እምሳለ፡ ሰብእ፡ ጸዓዳ
+    prior_rendering: beings in the likeness of white men
+    new_rendering: white figures in human form
+    rationale: This preserves the figures’ whiteness and human appearance without inviting a modern racial reading or adding clothing that the verse does not mention.
+  - source_phrase: ወ፬ወፁኡ፡ እምውእቱ፡ መካን፡ ወ፫ምስሌሆሙ
+    prior_rendering: and four came out from that place, and three with them
+    new_rendering: Four came out from there, and three others with them.
+    rationale: The following verse distinguishes the later three from the four; 'others' makes that relationship clear without replacing the two counts with a single total.
+  footnote_kinds: {}
+  history_weighed: I preserved the earlier care to describe the figures by appearance rather than explicitly name them as angels. The notes about resemblance and the abrupt count are unnecessary once those features are expressed clearly in the text.

@@ -13,12 +13,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch99.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 99, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: 'And again I swear to you[a], sinners: sin has been prepared for the day of blood that does not cease.'
-  philosophy: optimal-equivalence
+  text: 'And again I swear to you, sinners: sin[a] has been prepared for the day of unceasing bloodshed.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'punishment/judgment has been prepared for the day of bloodshed.' The Ge'ez text reads 'sin,' but the line may use the word for sin in a compressed sense for its consequence.
-    reason: lexical_alternative
+    text: Here 'sin' may mean 'punishment for sin.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ወካዕበ
   chosen: And again
@@ -131,7 +131,6 @@ revisions:
   from: 'And again I swear to you, sinners: sin has been prepared for the day of unceasing bloodshed.'
   to: 'And again I swear to you, sinners: sin has been prepared for the day of unceasing bloodshed.'
   rationale: Revised 'unceasing bloodshed' to the more literal 'blood that does not cease' to better reflect the source wording without interpretive expansion; retained the rest of the draft.
-
 - timestamp: '2026-05-18T03:02:03Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -139,6 +138,13 @@ revisions:
   from: 'And again I swear to you[a], sinners: sin has been prepared for the day of blood that does not cease.'
   to: 'And again I swear to you[a], sinners: sin has been prepared for the day of blood that does not cease.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''unceasing''].'
+- timestamp: '2026-11-09T20:07:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And again I swear to you[a], sinners: sin has been prepared for the day of blood that does not cease.'
+  to: 'And again I swear to you, sinners: sin[a] has been prepared for the day of unceasing bloodshed.'
+  rationale: The first draft's 'unceasing bloodshed' conveys the phrase more clearly than the later surface rendering. The unusual assertion that sin is prepared remains unresolved in the main text, with its possible reference to punishment stated briefly beside 'sin.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -158,3 +164,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/099/006.job-72909.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:46Z'
+  change_level: refined
+  confidence: low
+  meaning: Enoch solemnly warns sinners that sin stands prepared for a day of relentless bloodshed.
+  meaning_decisions:
+  - source_phrase: ለዕለተ፡ ደም፡ ዘአየሀድአ
+    prior_rendering: for the day of blood that does not cease
+    new_rendering: for the day of unceasing bloodshed
+    rationale: Blood here signifies violent shedding of blood; 'unceasing bloodshed' conveys the ominous meaning naturally rather than describing the substance itself as continuing.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft's 'unceasing bloodshed' conveys the phrase more clearly than the later surface rendering. The unusual assertion that sin is prepared remains unresolved in the main text, with its possible reference to punishment stated briefly beside 'sin.'

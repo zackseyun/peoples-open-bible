@@ -12,30 +12,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch77.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 77, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: 'And the fourth wind[a], whose name is the North, is divided into three parts: one part for a dwelling for humankind, and another is over the seas of water of water, and over the abysses, and over the forests, and over the rivers, and over darkness, and over mist[g][f][e][d][c][b]; and the third part is in the garden of righteousness.'
-  philosophy: optimal-equivalence
+  text: 'The fourth wind, called the North, is divided into three parts: one is a dwelling for humankind; another contains the seas, the abysses, the forests[a], the rivers, darkness, and mist[b]; and the third contains the garden of righteousness.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The name 'Mesʿ' is transliterated from the Ge'ez; its meaning is uncertain.
-    reason: lexical_alternative
+    text: The Ge'ez word here is unclear; 'forests' is the likely sense.
+    reason: alternative_reading
   - marker: b
-    text: The phrase 'seas of water' is literal and may simply mean 'the seas,' but the fuller wording has been retained to reflect the Ge'ez.
-    reason: lexical_alternative
-  - marker: c
-    text: The term rendered 'mist' is uncertain and could also be understood as 'fog,' 'cloud,' or a similar atmospheric vapor.
-    reason: lexical_alternative
-  - marker: d
-    text: '''Garden of righteousness'' may evoke Eden or Paradise, but the translation keeps the Ge''ez expression without specifying the identification.'
-    reason: cross_reference
-  - marker: e
-    text: Or 'whose name is Mesʿ'.
-    reason: previous_rendering
-  - marker: f
-    text: Or 'over the valleys'.
-    reason: previous_rendering
-  - marker: g
-    text: Or 'over the wilderness'.
-    reason: previous_rendering
+    text: Or 'clouds.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ራብዕ
   chosen: the fourth
@@ -232,6 +217,13 @@ revisions:
   from: 'And the fourth wind, whose name is the North, is divided into three parts: one of them is a dwelling for humankind, and another is over the seas, and over the abysses, and over the forests, and over the rivers, and over darkness, and over mist; and the third part is in the garden of righteousness.'
   to: 'And the fourth wind, whose name is the North, is divided into three parts: one part for a dwelling for humankind, and another over the seas of water, and over the abysses, and over the forests, and over the rivers, and over darkness, and over mist; and the third part is in the garden of righteousness.'
   rationale: Restored 'for a dwelling for humankind' (nominal predicate) and 'seas of water' (pleonasm preserved per lexical decision).
+- timestamp: '2026-11-09T20:04:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And the fourth wind[a], whose name is the North, is divided into three parts: one part for a dwelling for humankind, and another is over the seas of water of water, and over the abysses, and over the forests, and over the rivers, and over darkness, and over mist[g][f][e][d][c][b]; and the third part is in the garden of righteousness.'
+  to: 'The fourth wind, called the North, is divided into three parts: one is a dwelling for humankind; another contains the seas, the abysses, the forests[a], the rivers, darkness, and mist[b]; and the third contains the garden of righteousness.'
+  rationale: I retain the history's corrections to 'North' and 'abysses,' rather than the obsolete alternatives in the notes. The uncertain word underlying 'forests' requires a reader's note, while the garden's identity remains unstated.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-14T00:00:00Z'
@@ -256,3 +248,31 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/077/003.job-72642.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:04:33Z'
+  change_level: retranslated
+  confidence: low
+  meaning: 'The northern region has three divisions: human habitation, a region of waters and other natural and cosmic features, and the garden of righteousness.'
+  meaning_decisions:
+  - source_phrase: አሐዱ፡ እምኔሆሙ፡ ማኅደር፡ ለሰብእ
+    prior_rendering: one part for a dwelling for humankind
+    new_rendering: one is a dwelling for humankind
+    rationale: An explicit English predicate conveys the function of the first division without the awkward repetition of 'for.'
+  - source_phrase: ወካልእ፡ በአብሕርት፡ ማይ፡ ወበቀላያት፡ ወበፆም፡ ወበአፍላግ፡ ወጽልመት፡ ወጊሜ
+    prior_rendering: and another is over the seas of water of water, and over the abysses, and over the forests, and over the rivers, and over darkness, and over mist
+    new_rendering: another contains the seas, the abysses, the forests, the rivers, darkness, and mist
+    rationale: The verse describes the contents of a geographical division, not a wind hovering above these features; the repeated 'water' adds no distinct meaning.
+  - source_phrase: ወሠልስ፡ ክፍል፡ በገነት፡ ጽድቅ
+    prior_rendering: and the third part is in the garden of righteousness
+    new_rendering: and the third contains the garden of righteousness
+    rationale: The regional description places the garden within the third division, in parallel with the features of the second.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: I retain the history's corrections to 'North' and 'abysses,' rather than the obsolete alternatives in the notes. The uncertain word underlying 'forests' requires a reader's note, while the garden's identity remains unstated.

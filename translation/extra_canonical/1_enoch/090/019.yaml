@@ -18,12 +18,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw until a great sword was given to the sheep[a], and the sheep went out against all the beasts of the field to kill them; and all the beasts and the birds of heaven fled from before their face.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The phrase 'from before their face' reflects a Semitic-style idiom for fleeing in someone's presence; English readers may understand simply 'fled before them.'
-    reason: lexical_alternative
+  text: I kept watching until a great sword was given to the sheep. The sheep went out against all the beasts of the field to kill them, and all the beasts and the birds of heaven fled before them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ርኢኩ
   chosen: I saw
@@ -139,7 +135,6 @@ revision_pass:
   timestamp: '2026-04-23T11:38:19Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -159,3 +154,33 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/090/019.job-72817.json
+revisions:
+- timestamp: '2026-11-09T20:17:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I saw until a great sword was given to the sheep[a], and the sheep went out against all the beasts of the field to kill them; and all the beasts and the birds of heaven fled from before their face.
+  to: I kept watching until a great sword was given to the sheep. The sheep went out against all the beasts of the field to kill them, and all the beasts and the birds of heaven fled before them.
+  rationale: The current wording preserves the vision’s animal imagery and the force of the great sword, which remain unchanged. Its footnote explains the fleeing idiom; rendering that idiom naturally makes the note unnecessary, and the source record identifies no specific uncertainty requiring a reader’s note.
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:17:12Z'
+  change_level: refined
+  confidence: high
+  meaning: The sheep receive a great sword and go out to kill the beasts, while all the beasts and birds flee before them.
+  meaning_decisions:
+  - source_phrase: ወርኢኩ፡ እስከ፡ ተውህበ
+    prior_rendering: And I saw until ... was given
+    new_rendering: I kept watching until ... was given
+    rationale: Expresses the continuing observation and the decisive event in natural English without losing the temporal progression.
+  - source_phrase: ነፍጹ፡ እምቅድመ፡ ገጾሙ
+    prior_rendering: fled from before their face
+    new_rendering: fled before them
+    rationale: 'Conveys the idiom’s meaning directly: the beasts and birds retreat before the advancing sheep.'
+  footnote_kinds: {}
+  history_weighed: The current wording preserves the vision’s animal imagery and the force of the great sword, which remain unchanged. Its footnote explains the fleeing idiom; rendering that idiom naturally makes the note unnecessary, and the source record identifies no specific uncertainty requiring a reader’s note.

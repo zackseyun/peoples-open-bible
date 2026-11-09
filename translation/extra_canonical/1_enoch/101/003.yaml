@@ -12,21 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch101.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 101, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And if he sends his wrath upon you for all your deeds[a], will you not entreat him? For you speak great and harsh words against his righteousness[d][c][b], and you have no peace.
-  philosophy: optimal-equivalence
+  text: And if he sends his wrath upon you for all your deeds, you will not be able to entreat him[a], for you speak proud and harsh words against his righteousness, and you have no peace.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'you are not those who can seek his favor.' The Ge'ez verb can denote imploring or making supplication.
-    reason: lexical_alternative
-  - marker: b
-    text: '''His righteousness'' may also be understood as ''his justice'' in this context of judgment.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'you are not those who can entreat him'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'proud and insolent words'.
-    reason: previous_rendering
+    text: Or 'will you not entreat him?'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ፈነወ
   chosen: sends
@@ -160,12 +151,18 @@ revisions:
   from: And if he sends his wrath upon you for all your deeds, will you not be the ones who entreat him?, for you speak great and harsh words against his righteousness, and you have no peace.
   to: And if he sends his wrath upon you for all your deeds, will you not entreat him? For you speak great and harsh words against his righteousness, and you have no peace.
   rationale: Removed the awkward appositive 'be the ones who' for more natural English, capitalized the new sentence after the question, and removed the stray comma before the question mark. The sense and content remain the same.
+- timestamp: '2026-11-09T20:07:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And if he sends his wrath upon you for all your deeds[a], will you not entreat him? For you speak great and harsh words against his righteousness[d][c][b], and you have no peace.
+  to: And if he sends his wrath upon you for all your deeds, you will not be able to entreat him[a], for you speak proud and harsh words against his righteousness, and you have no peace.
+  rationale: The history rightly recognized that the negative construction can introduce a rhetorical question, but the Ge'ez context also supports the earlier denial. I gave the explanatory clause greater weight, retained righteousness and the terse judgment of no peace, and noted the consequential alternative.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:50Z'
   unchanged: false
   changes_summary: Removed the awkward appositive 'be the ones who' for more natural English, capitalized the new sentence after the question, and removed the stray comma before the question mark. The sense and content remain the same.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -185,3 +182,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/101/003.job-72929.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:20Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The sinners' attacks on God's righteousness leave them unable to appeal to him when his wrath comes, and they have no peace.
+  meaning_decisions:
+  - source_phrase: አኮ፡ አንትሙ፡ እለ፡ ታስተበቍዕዎ
+    prior_rendering: will you not entreat him?
+    new_rendering: you will not be able to entreat him
+    rationale: The construction can be a denial or a rhetorical question. The following 'for' most naturally makes their speech against God's righteousness the reason they cannot appeal to him; the interrogative understanding remains a serious alternative.
+  - source_phrase: ዐቢይተ፡ ወጽኑዓተ
+    prior_rendering: great and harsh words
+    new_rendering: proud and harsh words
+    rationale: Here 'great' characterizes boastful, arrogant speech, not speech deserving admiration. 'Proud' conveys that force while preserving the distinctive accusation of harsh speech.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history rightly recognized that the negative construction can introduce a rhetorical question, but the Ge'ez context also supports the earlier denial. I gave the explanatory clause greater weight, retained righteousness and the terse judgment of no peace, and noted the consequential alternative.

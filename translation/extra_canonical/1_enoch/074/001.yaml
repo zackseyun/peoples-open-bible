@@ -13,18 +13,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch74.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 74, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: 'And I saw for it another course and regulation: by that regulation it makes its course of the months[a][b][c].'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'ordinance' instead of 'regulation'; the Ge'ez term can denote an authoritative ordering principle.
-    reason: lexical_alternative
-  - marker: b
-    text: The final phrase is textually and syntactically difficult. It likely refers to the movement or circuit of the winds.
-    reason: textual_variant
-  - marker: c
-    text: Or 'its course, the course of the winds'.
-    reason: previous_rendering
+  text: 'I saw another course of the moon and the law governing it: under that law it follows its monthly course.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ካልአ
   chosen: another
@@ -151,12 +141,18 @@ revisions:
   from: 'And another course and regulation I saw for it: by that regulation it makes its course of the months.'
   to: 'And I saw for it another course and regulation: by that regulation it makes its course of the months.'
   rationale: Moved 'for it' earlier to reflect the source order more naturally and retained the repeated 'regulation' and 'course' for consistency and completeness.
+- timestamp: '2026-11-09T20:03:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And I saw for it another course and regulation: by that regulation it makes its course of the months[a][b][c].'
+  to: 'I saw another course of the moon and the law governing it: under that law it follows its monthly course.'
+  rationale: The earlier correction from winds to months is sound and governs the rendering. The surviving notes about winds and the supposed difficulty of the final phrase are misleading and have been dropped.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:25Z'
   unchanged: false
   changes_summary: Moved 'for it' earlier to reflect the source order more naturally and retained the repeated 'regulation' and 'course' for consistency and completeness.
-
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -176,3 +172,29 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/074/001.job-72610.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:03:34Z'
+  change_level: refined
+  confidence: high
+  meaning: Enoch sees another course of the moon and the law governing its monthly movement.
+  meaning_decisions:
+  - source_phrase: ሎቱ
+    prior_rendering: for it
+    new_rendering: of the moon
+    rationale: The chapter concerns the moon’s monthly movement; naming the understood subject makes the opening clear.
+  - source_phrase: ትእዛዘ ... በውእቱ፡ ትእዛዝ
+    prior_rendering: regulation ... by that regulation
+    new_rendering: the law governing it ... under that law
+    rationale: This is the fixed ordering of a heavenly body’s movement, not an administrative regulation.
+  - source_phrase: ይገብር፡ ምሕዋሮ፡ ዘአውራኅ
+    prior_rendering: it makes its course of the months
+    new_rendering: it follows its monthly course
+    rationale: The phrase describes the moon carrying out its monthly movement; natural English conveys that meaning without reproducing the construction.
+  footnote_kinds: {}
+  history_weighed: The earlier correction from winds to months is sound and governs the rendering. The surviving notes about winds and the supposed difficulty of the final phrase are misleading and have been dropped.

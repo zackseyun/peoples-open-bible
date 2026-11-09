@@ -16,24 +16,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And on that day the night exceeds the day[a], and the night increases from night to night, and the day grows shorter from day to day, until thirty mornings, and the night becomes exactly ten parts[e][d][c][b], and the day eight parts.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The repeated phrase 'night increases beyond night' is awkward in English but likely means 'the night increases from night to night.'
-    reason: lexical_alternative
-  - marker: b
-    text: '''Thirty mornings'' may function as a count of successive days or dawns in the seasonal cycle; the Ge''ez wording is literally ''thirty mornings.'''
-    reason: cultural_note
-  - marker: c
-    text: The word following 'ten parts' is textually or lexically difficult in this OCR witness and may mean 'complete,' 'exact,' or a similar qualifier of the measure.
-    reason: textual_variant
-  - marker: d
-    text: Or 'and night increases beyond night, and the day grows shorter than day by day'.
-    reason: previous_rendering
-  - marker: e
-    text: Or 'becomes ten parts'.
-    reason: previous_rendering
+  text: And on that day the night becomes longer than the day. The night lengthens from night to night and the day grows shorter from day to day until thirty mornings have passed; then the night becomes exactly ten parts and the day eight parts.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: በይእቲ ዕለት
   chosen: on that day
@@ -176,12 +160,18 @@ revisions:
   from: And on that day the night increases beyond the day, and the night increases from night to night, and the day grows shorter from day to day, until thirty mornings, and the night becomes exactly ten parts, and the day eight parts.
   to: And on that day the night exceeds the day, and the night increases from night to night, and the day grows shorter from day to day, until thirty mornings, and the night becomes exactly ten parts, and the day eight parts.
   rationale: Changed 'increases beyond the day' to 'exceeds the day' for more natural and precise English while preserving the source sense; left the rest unchanged.
+- timestamp: '2026-11-09T20:01:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And on that day the night exceeds the day[a], and the night increases from night to night, and the day grows shorter from day to day, until thirty mornings, and the night becomes exactly ten parts[e][d][c][b], and the day eight parts.
+  to: And on that day the night becomes longer than the day. The night lengthens from night to night and the day grows shorter from day to day until thirty mornings have passed; then the night becomes exactly ten parts and the day eight parts.
+  rationale: The earlier revisions correctly understood the repeated nouns as progression from one night or day to the next and restored 'exactly.' The source now supplies that qualifier clearly, so the older lexical uncertainty note is unnecessary.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:20Z'
   unchanged: false
   changes_summary: Changed 'increases beyond the day' to 'exceeds the day' for more natural and precise English while preserving the source sense; left the rest unchanged.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -201,3 +191,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/072/022.job-72591.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:01:13Z'
+  change_level: refined
+  confidence: high
+  meaning: Over thirty mornings, nights lengthen beyond the days until night occupies exactly ten parts and day eight.
+  meaning_decisions:
+  - source_phrase: እስከ፡ ሠላሳ፡ ጸባሕ
+    prior_rendering: until thirty mornings
+    new_rendering: until thirty mornings have passed
+    rationale: Making the implied completion explicit clarifies that the changes continue throughout the counted interval and culminate in the stated proportions.
+  footnote_kinds: {}
+  history_weighed: The earlier revisions correctly understood the repeated nouns as progression from one night or day to the next and restored 'exactly.' The source now supplies that qualifier clearly, so the older lexical uncertainty note is unnecessary.

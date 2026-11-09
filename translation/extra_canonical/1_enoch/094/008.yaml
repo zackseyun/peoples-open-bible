@@ -12,15 +12,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch94.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 94, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Woe to you[a], rich ones, for you have trusted in your riches, and from your riches you will depart[b], because you did not remember the Most High in the days of your riches.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'you will depart from your riches.' The wording may imply being stripped of wealth, or more broadly leaving it behind in judgment.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'from your riches you will go out'.
-    reason: previous_rendering
+  text: Woe to you who are rich, for you have trusted in your riches; you will leave your riches behind because you did not remember the Most High in the days of your riches.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: አሌ
   chosen: Woe
@@ -137,12 +130,18 @@ revisions:
   from: from your riches you will go out
   to: from your riches you will depart
   rationale: The Ge'ez verb ወፅአ (waḍʾa) with the preposition እምነ (ʾəmna) means 'to go out from' or 'depart from'. While 'go out' is a literal rendering of the spatial metaphor, in English one does not 'go out' from abstract possessions like wealth. 'Depart from' preserves the active, spatial separation of the Ge'ez while reading naturally in English.
+- timestamp: '2026-11-09T20:15:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Woe to you[a], rich ones, for you have trusted in your riches, and from your riches you will depart[b], because you did not remember the Most High in the days of your riches.
+  to: Woe to you who are rich, for you have trusted in your riches; you will leave your riches behind because you did not remember the Most High in the days of your riches.
+  rationale: The earlier revision rightly moved away from the awkward 'go out from your riches,' and its caution against specifying the manner of loss is preserved. The new wording makes that separation clear enough that the two largely duplicate notes are unnecessary.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:36Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -162,3 +161,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/094/008.job-72875.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:15:30Z'
+  change_level: refined
+  confidence: high
+  meaning: The rich who trusted their wealth and forgot the Most High will be separated from the riches on which they relied.
+  meaning_decisions:
+  - source_phrase: ወእምነ፡ ብዕልክሙ፡ ትወፅኡ
+    prior_rendering: and from your riches you will depart
+    new_rendering: you will leave your riches behind
+    rationale: This expresses the threatened separation from wealth in natural English without deciding whether it occurs through death, dispossession, or another form of judgment.
+  footnote_kinds: {}
+  history_weighed: The earlier revision rightly moved away from the awkward 'go out from your riches,' and its caution against specifying the manner of loss is preserved. The new wording makes that separation clear enough that the two largely duplicate notes are unnecessary.

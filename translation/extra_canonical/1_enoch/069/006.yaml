@@ -15,18 +15,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch69.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 69, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the third was named Gadreel[a]; this is the one who showed all the blows of death to the children of men, and he led Eve astray[c][b], and he showed the weapons of death to the sons of men—the shield and the breastplate and the sword for slaughter—and all the weapons of death to the children of men.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The clause about 'the weapons of death' is textually difficult in this Ge'ez witness and appears with a repeated summary after the list. The translation keeps both the specific list and the repeated closing phrase rather than collapsing them.
-    reason: textual_variant
-  - marker: b
-    text: Or 'all the blows of death.' The underlying expression may refer more broadly to death-dealing assaults or wounds, not only manufactured weapons.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'all the deadly blows'.
-    reason: previous_rendering
+  text: The third was named Gadreel. He showed humanity all the death-dealing blows. He led Eve astray and showed humanity the weapons of death—the shield, the breastplate, the sword for slaughter, and every weapon of death.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ሣልስ
   chosen: the third
@@ -183,9 +173,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the third was named Gadreel[a]; this is the one who showed all the blows of death to the children of men, and he led Eve astray[c][b], and he showed the weapons of death to the sons of men—the shield and the breastplate and the sword for slaughter—and all the weapons of death to the children of men.'
-  to: 'And the third was named Gadreel[a]; this is the one who showed all the blows of death to the children of men, and he led Eve astray[c][b], and he showed the weapons of death to the sons of men—the shield and the breastplate and the sword for slaughter—and all the weapons of death to the children of men.'
+  from: And the third was named Gadreel[a]; this is the one who showed all the blows of death to the children of men, and he led Eve astray[c][b], and he showed the weapons of death to the sons of men—the shield and the breastplate and the sword for slaughter—and all the weapons of death to the children of men.
+  to: And the third was named Gadreel[a]; this is the one who showed all the blows of death to the children of men, and he led Eve astray[c][b], and he showed the weapons of death to the sons of men—the shield and the breastplate and the sword for slaughter—and all the weapons of death to the children of men.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the coat of mail''].'
+- timestamp: '2026-11-09T20:01:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the third was named Gadreel[a]; this is the one who showed all the blows of death to the children of men, and he led Eve astray[c][b], and he showed the weapons of death to the sons of men—the shield and the breastplate and the sword for slaughter—and all the weapons of death to the children of men.
+  to: The third was named Gadreel. He showed humanity all the death-dealing blows. He led Eve astray and showed humanity the weapons of death—the shield, the breastplate, the sword for slaughter, and every weapon of death.
+  rationale: The earlier revisions rightly emphasized the repeated association with death and Gadreel's responsibility for Eve's deception. I preserve both, including the comprehensive closing reference to weapons; the supplied phrase repeats the surrounding meaning and needs no note.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:01:35Z'
@@ -210,3 +207,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/069/006.job-72533.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:01:11Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Gadreel taught humanity death-dealing violence and its weapons and was also responsible for leading Eve astray.
+  meaning_decisions:
+  - source_phrase: ኵሎ፡ ዝብጠተ፡ ሞት
+    prior_rendering: all the blows of death
+    new_rendering: all the death-dealing blows
+    rationale: The expression concerns blows that bring death; the new wording makes that relationship natural while keeping death explicit.
+  - source_phrase: ለውሉደ፡ ሰብእ፡ ... ለደቂቀ፡ ሰብእ
+    prior_rendering: to the children of men ... to the sons of men
+    new_rendering: humanity
+    rationale: Both expressions refer collectively to human beings; their English variation should not suggest different groups.
+  footnote_kinds: {}
+  history_weighed: The earlier revisions rightly emphasized the repeated association with death and Gadreel's responsibility for Eve's deception. I preserve both, including the comprehensive closing reference to weapons; the supplied phrase repeats the surrounding meaning and needs no note.

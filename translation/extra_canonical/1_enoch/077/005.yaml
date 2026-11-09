@@ -12,15 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch77.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 77, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw seven rivers upon the earth[a], greater than all the rivers[b]; and one of them comes from the west and pours its waters into the Great Sea.
-  philosophy: optimal-equivalence
+  text: I saw seven rivers on the earth, greater than all the other rivers. One of them comes from the west and pours its waters into the Great Sea[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'into the great sea.' The phrase may be read either as a geographic designation ('the Great Sea') or as a descriptive expression.
+    text: This name usually refers to the Mediterranean.
     reason: lexical_alternative
-  - marker: b
-    text: Or 'And I saw rivers upon the earth'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: አፍላገ
   chosen: rivers
@@ -142,12 +139,18 @@ revisions:
   from: And I saw seven rivers upon the earth, greater than all the rivers; and one of them comes from the west and pours its waters into the Great Sea., greater than all the rivers; and one of them comes from the west and pours its waters into the Great Sea.
   to: And I saw seven rivers upon the earth, greater than all the rivers; and one of them comes from the west and pours its waters into the Great Sea.
   rationale: Removed the accidental duplicated clause at the end. Retained the translation otherwise, which accurately and naturally reflects the source.
+- timestamp: '2026-11-09T20:04:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I saw seven rivers upon the earth[a], greater than all the rivers[b]; and one of them comes from the west and pours its waters into the Great Sea.
+  to: I saw seven rivers on the earth, greater than all the other rivers. One of them comes from the west and pours its waters into the Great Sea[a].
+  rationale: The restoration of the numeral seven is essential to the following one–two–four division and is preserved. I retain the Great Sea as a geographical name, replacing the earlier editorial alternatives with a short identification for readers.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:05Z'
   unchanged: false
   changes_summary: Removed the accidental duplicated clause at the end. Retained the translation otherwise, which accurately and naturally reflects the source.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -167,3 +170,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/077/005.job-72644.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:04:33Z'
+  change_level: refined
+  confidence: high
+  meaning: Enoch sees seven rivers greater than the others, one of which comes from the west and empties into the Great Sea.
+  meaning_decisions:
+  - source_phrase: ዓበይተ፡ እምኵሎሙ፡ አፍላገ
+    prior_rendering: greater than all the rivers
+    new_rendering: greater than all the other rivers
+    rationale: The comparison distinguishes these seven rivers from the remaining rivers, rather than comparing them with themselves.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The restoration of the numeral seven is essential to the following one–two–four division and is preserved. I retain the Great Sea as a geographical name, replacing the earlier editorial alternatives with a short identification for readers.

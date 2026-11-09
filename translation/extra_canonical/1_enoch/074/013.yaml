@@ -13,11 +13,11 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch74.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 74, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: For three years there are one thousand ninety-two days[a], and for five years, one thousand eight hundred twenty days and eight; thus for eight years there are two thousand nine hundred twelve days, and ten and two days.
-  philosophy: optimal-equivalence
+  text: Three years amount to one thousand and ninety-two days; five years to one thousand eight hundred and twenty-eight days; thus eight years amount to two thousand nine hundred and twelve days, plus twelve days[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'The Ethiopic line is numerically difficult in this OCR witness. The verse appears to total days across spans of three, five, and eight years, but the final wording may preserve a split or awkwardly ordered numeral. A smoother rendering would be: ''For three years, 1,092 days; for five years, 1,828 days; thus for eight years, 2,912 days.'''
+    text: The extra numbers are unclear in the Ge’ez; a 364-day year would total 1,820 days for five years and 2,912 for eight.
     reason: textual_variant
 lexical_decisions:
 - source_word: ለ፫ዓም
@@ -141,14 +141,20 @@ revisions:
   from: For three years there are one thousand ninety-two days, and for five years, one thousand eight hundred twenty days and eight; thus for eight years there are two thousand nine hundred twelve days, and ten and two days.
   to: For three years there are one thousand ninety-two days, and for five years, one thousand eight hundred twenty-eight days; thus for eight years there are two thousand nine hundred twelve days.
   rationale: Corrected the arithmetic phrasing so the five-year total is 'one thousand eight hundred twenty-eight days' rather than 'one thousand eight hundred twenty days and eight,' and removed the redundant final 'and ten and two days' since 2,912 is already fully stated in natural English.
-
 - timestamp: '2026-05-15T18:39:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For three years there are one thousand ninety-two days[a], and for five years, one thousand eight hundred twenty-eight days; thus for eight years there are two thousand nine hundred twelve days.'
-  to: 'For three years there are one thousand ninety-two days[a], and for five years, one thousand eight hundred twenty days and eight; thus for eight years there are two thousand nine hundred twelve days, and ten and two days.'
-  rationale: 'Drafter explicitly preserved ''one thousand eight hundred twenty days and eight'' (the Geʿez split numeral ፲ወ፰፻፳መዋዕለ ወ፰) and the additive closing ''and ten and two days'' as source-transparency choices. Azure normalized to ''1,828 days'' and dropped ''and ten and two days'' as ''redundant'', exactly the smoothing the drafter refused.'
+  from: For three years there are one thousand ninety-two days[a], and for five years, one thousand eight hundred twenty-eight days; thus for eight years there are two thousand nine hundred twelve days.
+  to: For three years there are one thousand ninety-two days[a], and for five years, one thousand eight hundred twenty days and eight; thus for eight years there are two thousand nine hundred twelve days, and ten and two days.
+  rationale: Drafter explicitly preserved 'one thousand eight hundred twenty days and eight' (the Geʿez split numeral ፲ወ፰፻፳መዋዕለ ወ፰) and the additive closing 'and ten and two days' as source-transparency choices. Azure normalized to '1,828 days' and dropped 'and ten and two days' as 'redundant', exactly the smoothing the drafter refused.
+- timestamp: '2026-11-09T20:05:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For three years there are one thousand ninety-two days[a], and for five years, one thousand eight hundred twenty days and eight; thus for eight years there are two thousand nine hundred twelve days, and ten and two days.
+  to: Three years amount to one thousand and ninety-two days; five years to one thousand eight hundred and twenty-eight days; thus eight years amount to two thousand nine hundred and twelve days, plus twelve days[a].
+  rationale: The history rightly cautions against silently deleting the additional numbers, but preserving their original English word order does not clarify their meaning. Both additions remain, with a short note explaining why the totals are uncertain.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -168,3 +174,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/074/013.job-72622.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:05:21Z'
+  change_level: refined
+  confidence: low
+  meaning: The verse totals the days in three, five, and eight solar years, although additional figures make the latter totals uncertain.
+  meaning_decisions:
+  - source_phrase: ፲ወ፰፻፳መዋዕለ፡ ወ፰
+    prior_rendering: one thousand eight hundred twenty days and eight
+    new_rendering: one thousand eight hundred and twenty-eight days
+    rationale: The additive number is expressed naturally in English without deleting the final eight or changing the stated total.
+  - source_phrase: ወዓሡር፡ ወስኑይ፡ መዋዕለ
+    prior_rendering: and ten and two days
+    new_rendering: plus twelve days[a]
+    rationale: Ten and two are expressed as twelve, while the additional days remain in the text rather than being dismissed as redundant.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The history rightly cautions against silently deleting the additional numbers, but preserving their original English word order does not clarify their meaning. Both additions remain, with a short note explaining why the totals are uncertain.

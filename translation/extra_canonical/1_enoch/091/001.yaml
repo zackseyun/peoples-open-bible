@@ -14,21 +14,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch91.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 91, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And now[a], my son Methuselah, call all your brothers to me, and gather to me all the children of your mother; for a word calls me, and a spirit of uprightness is poured out upon me[d][c][b], so that I may show you everything that will come upon you forever.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the Spirit of righteousness is upon me.' The phrase may denote divine inspiration in a more personified sense.
-    reason: lexical_alternative
-  - marker: b
-    text: The closing phrase may also be understood as 'unto eternity,' 'for all ages,' or 'for the generations to come,' depending on how broadly the temporal expression is taken.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'a spirit of uprightness is upon me'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'sons of your mother'.
-    reason: previous_rendering
+  text: And now, my son Methuselah, call all your brothers to me and gather all your mother's children to me; for a word summons me, and a spirit has been poured out upon me, so that I may show you everything that will befall you through all the ages.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ወይእዜኒ
   chosen: And now
@@ -195,12 +182,18 @@ revisions:
   from: And now, my son Methuselah, call all your brothers to me, and gather to me all the And now, my son Methuselah, call all your brothers to me, and gather to me all the children of your mother; for a word calls me, and a spirit is poured out upon me, so that I may show you everything that will come upon you forever.; for a word calls me, and a spirit is poured out upon me, so that I may show you everything that will come upon you forever.
   to: And now, my son Methuselah, call all your brothers to me, and gather to me all the children of your mother; for a word calls me, and a spirit of uprightness is poured out upon me, so that I may show you everything that will come upon you forever.
   rationale: Removed the accidental duplicated clause in the draft and rendered መንፈስ ትክዕወት more accurately as 'a spirit of uprightness' instead of simply 'a spirit.'
+- timestamp: '2026-11-09T20:12:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And now[a], my son Methuselah, call all your brothers to me, and gather to me all the children of your mother; for a word calls me, and a spirit of uprightness is poured out upon me[d][c][b], so that I may show you everything that will come upon you forever.
+  to: And now, my son Methuselah, call all your brothers to me and gather all your mother's children to me; for a word summons me, and a spirit has been poured out upon me, so that I may show you everything that will befall you through all the ages.
+  rationale: I retained the family language and the unspecified word that calls Enoch. The earlier analysis of the outpouring is stronger than the later decision to add uprightness, and the existing theological notes depend on that unsupported addition.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:26Z'
   unchanged: false
   changes_summary: Removed the accidental duplicated clause in the draft and rendered መንፈስ ትክዕወት more accurately as 'a spirit of uprightness' instead of simply 'a spirit.'
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -220,3 +213,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/091/001.job-72837.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:12:30Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Enoch asks Methuselah to gather the family because an outpouring of spirit enables him to reveal what will befall them throughout the ages.
+  meaning_decisions:
+  - source_phrase: ወመንፈስ፡ ትክዕወት፡ ላዕሌየ
+    prior_rendering: and a spirit of uprightness is poured out upon me
+    new_rendering: and a spirit has been poured out upon me
+    rationale: The phrase describes the pouring out of spirit; it does not also contain a noun meaning uprightness. The earlier correction recognized this, but a later revision reintroduced the unsupported qualification.
+  - source_phrase: ኵሎ፡ ዘይበጽሐክሙ፡ እስከ፡ ለዓለም
+    prior_rendering: everything that will come upon you forever
+    new_rendering: everything that will befall you through all the ages
+    rationale: The closing expression extends the horizon of Enoch's revelation, rather than saying that each event continues forever.
+  footnote_kinds: {}
+  history_weighed: I retained the family language and the unspecified word that calls Enoch. The earlier analysis of the outpouring is stronger than the later decision to add uprightness, and the existing theological notes depend on that unsupported addition.

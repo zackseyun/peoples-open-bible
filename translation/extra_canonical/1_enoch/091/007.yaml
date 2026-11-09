@@ -14,15 +14,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch91.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 91, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And when sin and transgression[b] and blasphemy and violence increase in every deed, and lawlessness and wrongdoing and uncleanness increase, a great punishment[a] will come from heaven upon them all, and the Holy Lord will come forth in wrath and in punishment, to execute judgment upon the earth.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'a great plague' or 'a great scourge'; the Ge'ez term can denote punitive affliction as well as punishment.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'And sin and transgression and blasphemy and violence will increase in every deed, and lawlessness and wrongdoing and uncleanness will increase; and a great punishment will come'.
-    reason: previous_rendering
+  text: And when sin and transgression and blasphemy and violence increase in every deed, and lawlessness and wrongdoing and uncleanness increase, a great punishment will come from heaven upon them all. The Holy Lord will come forth in wrath and punishment to execute judgment upon the earth.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ትልህቅ / ትለህቅ
   chosen: will increase
@@ -221,8 +214,8 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when sin and transgression and blasphemy and violence increase in every deed[a], and lawlessness and wrongdoing and uncleanness increase, a great punishment will come from heaven upon them all, and the Holy Lord will come forth in wrath and punishment[b], to execute judgment upon the earth.'
-  to: 'And when sin and transgression and blasphemy and violence increase in every deed, and lawlessness and wrongdoing and uncleanness increase, a great punishment will come from heaven upon them all, and the Holy Lord will come forth in wrath and in punishment, to execute judgment upon the earth.'
+  from: And when sin and transgression and blasphemy and violence increase in every deed[a], and lawlessness and wrongdoing and uncleanness increase, a great punishment will come from heaven upon them all, and the Holy Lord will come forth in wrath and punishment[b], to execute judgment upon the earth.
+  to: And when sin and transgression and blasphemy and violence increase in every deed, and lawlessness and wrongdoing and uncleanness increase, a great punishment will come from heaven upon them all, and the Holy Lord will come forth in wrath and in punishment, to execute judgment upon the earth.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in punishment''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -232,6 +225,13 @@ revisions:
   from: And when sin and transgression and blasphemy and violence increase in every deed, and lawlessness and wrongdoing and uncleanness increase, a great punishment will come from heaven upon them all, and the Holy Lord will come forth in wrath and in punishment, to execute judgment upon the earth.
   to: And when sin and transgression[b] and blasphemy and violence increase in every deed, and lawlessness and wrongdoing and uncleanness increase, a great punishment[a] will come from heaven upon them all, and the Holy Lord will come forth in wrath and in punishment, to execute judgment upon the earth.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('a great punishment') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('transgression') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T20:12:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when sin and transgression[b] and blasphemy and violence increase in every deed, and lawlessness and wrongdoing and uncleanness increase, a great punishment[a] will come from heaven upon them all, and the Holy Lord will come forth in wrath and in punishment, to execute judgment upon the earth.
+  to: And when sin and transgression and blasphemy and violence increase in every deed, and lawlessness and wrongdoing and uncleanness increase, a great punishment will come from heaven upon them all. The Holy Lord will come forth in wrath and punishment to execute judgment upon the earth.
+  rationale: The current wording correctly restores the temporal connection between increasing evil and heavenly punishment. I retained the accumulated vice list and divine title, making only small improvements to sentence division and phrasing and dropping unnecessary alternatives.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:10:48Z'
@@ -256,3 +256,17 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/091/007.job-72843.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:12:30Z'
+  change_level: refined
+  confidence: high
+  meaning: When corruption increases throughout human conduct, heavenly punishment comes and the Holy Lord intervenes in wrath to judge the earth.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The current wording correctly restores the temporal connection between increasing evil and heavenly punishment. I retained the accumulated vice list and divine title, making only small improvements to sentence division and phrasing and dropping unnecessary alternatives.

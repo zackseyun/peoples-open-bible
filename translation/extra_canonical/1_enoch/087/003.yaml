@@ -11,21 +11,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch87.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 87, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And those three who came out afterward seized me by my hand[a], and they lifted me up from the offspring of the earth and brought me up onto a high place, and showed me a lofty tower above the earth[d][c][b], and all the hills became low.
-  philosophy: optimal-equivalence
+  text: Those three who came out afterward took me by the hand, lifted me up from among those born of the earth, and brought me to a high place. They showed me a lofty tower[a] above the earth, and all the hills lay below it[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'from those born of the earth.' The Ge'ez phrase is more literal than a simple 'from the earth.'
-    reason: lexical_alternative
+    text: The Ge’ez word translated 'tower' is unclear; it may refer more generally to a lofty structure.
+    reason: alternative_reading
   - marker: b
-    text: The noun rendered 'tower' is difficult and may denote a lofty structure more generally.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'all the mountains were brought low.'
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'And those three came out after they had seized me by my hands,'.
-    reason: previous_rendering
+    text: Or 'all the hills were brought low.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ፫እለ
   chosen: those three
@@ -164,9 +158,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And those three who came out afterward seized me by my hand[a], and they lifted me up from the earth and brought me up onto a high place, and showed me a lofty tower above the earth[d][c][b], and all the hills became low.'
-  to: 'And those three who came out afterward seized me by my hand[a], and they lifted me up from the offspring of the earth and brought me up onto a high place, and showed me a lofty tower above the earth[d][c][b], and all the hills became low.'
-  rationale: 'Drafter chose ''offspring of the earth'' for ትውልደ ምድር to preserve the Geʿez birth/generation idiom (documented in both lexical_decisions and theological_decisions). Azure collapsed to ''from the earth'' erasing the lexical content. ''A tower raised high'' (preserving ነዋኅ as verbal modifier) flattened to ''a lofty tower''.'
+  from: And those three who came out afterward seized me by my hand[a], and they lifted me up from the earth and brought me up onto a high place, and showed me a lofty tower above the earth[d][c][b], and all the hills became low.
+  to: And those three who came out afterward seized me by my hand[a], and they lifted me up from the offspring of the earth and brought me up onto a high place, and showed me a lofty tower above the earth[d][c][b], and all the hills became low.
+  rationale: Drafter chose 'offspring of the earth' for ትውልደ ምድር to preserve the Geʿez birth/generation idiom (documented in both lexical_decisions and theological_decisions). Azure collapsed to 'from the earth' erasing the lexical content. 'A tower raised high' (preserving ነዋኅ as verbal modifier) flattened to 'a lofty tower'.
+- timestamp: '2026-11-09T20:08:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And those three who came out afterward seized me by my hand[a], and they lifted me up from the offspring of the earth and brought me up onto a high place, and showed me a lofty tower above the earth[d][c][b], and all the hills became low.
+  to: Those three who came out afterward took me by the hand, lifted me up from among those born of the earth, and brought me to a high place. They showed me a lofty tower[a] above the earth, and all the hills lay below it[b].
+  rationale: I retained the corrected sequence in which the later three take Enoch’s hand, as well as the earthly birth imagery restored in the revision history. The uncertain noun still warrants a note, while the ascent provides stronger contextual support for understanding the hills as lower than the tower.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-15T18:39:35Z'
@@ -191,3 +192,31 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/087/003.job-72723.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:08:52Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The three later figures raise Enoch away from earthly beings to a high place and show him a tower above the earth, with the hills below it.
+  meaning_decisions:
+  - source_phrase: አሐዙኒ፡ በእዴየ
+    prior_rendering: seized me by my hand
+    new_rendering: took me by the hand
+    rationale: The verb describes taking hold; the context is guidance and elevation, not an explicitly violent seizure.
+  - source_phrase: እምትውልደ፡ ምድር
+    prior_rendering: from the offspring of the earth
+    new_rendering: from among those born of the earth
+    rationale: This retains the birth imagery while making clear that Enoch is being separated from earthly beings, not merely lifted off the ground.
+  - source_phrase: ወኮነ፡ ሕፁፀ፡ ኵሉ፡ አውግር
+    prior_rendering: and all the hills became low
+    new_rendering: and all the hills lay below it
+    rationale: The ascent and lofty tower supply a comparison of heights, making this more likely a description of the elevated viewpoint than a transformation of the landscape; the latter remains in a footnote.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: I retained the corrected sequence in which the later three take Enoch’s hand, as well as the earthly birth imagery restored in the revision history. The uncertain noun still warrants a note, while the ascent provides stronger contextual support for understanding the hills as lower than the tower.

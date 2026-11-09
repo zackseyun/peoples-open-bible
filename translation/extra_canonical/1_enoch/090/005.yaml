@@ -18,18 +18,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw until the time when twenty-three were shepherding[a], and they completed, in their respective times[c][b], fifty-eight times.
-  philosophy: optimal-equivalence
+  text: And I saw until twenty-three more shepherds had tended them; they completed their periods, fifty-eight periods in all[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ethiopic wording is difficult here. The clause rendered 'when twenty-three had looked' may refer to a counted sequence reaching twenty-three, but the exact verb sense is uncertain in this witness.
-    reason: textual_variant
-  - marker: b
-    text: Literally 'fifty-eight times'; the word may denote counted periods or appointed spans rather than repeated actions.
+    text: Literally, “until twenty-three tended, and they completed in their times fifty-eight times.”
     reason: lexical_alternative
-  - marker: c
-    text: Or 'when twenty-three had looked'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ወርኢኩ
   chosen: And I saw
@@ -147,12 +141,18 @@ revisions:
   from: And I saw until the time when twenty-three were pasturing, and they completed, in their respective times, fifty-eight times.
   to: And I saw until the time when twenty-three were shepherding, and they completed, in their respective times, fifty-eight times.
   rationale: Changed 'were pasturing' to 'were shepherding' for more natural and contextually appropriate English while preserving the source sense; retained the rest of the wording.
+- timestamp: '2026-11-09T20:45:49Z'
+  adjudicator: claude-opus-5-5-meaning-pass
+  reviewer_model: claude-opus-5-5
+  category: meaning_retranslation
+  from: And I saw until the time when twenty-three were shepherding[a], and they completed, in their respective times[c][b], fifty-eight times.
+  to: And I saw until twenty-three more shepherds had tended them; they completed their periods, fifty-eight periods in all[a].
+  rationale: Departed from the current word-for-word rendering to make the count understandable, and kept the literal wording in a note.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:16Z'
   unchanged: false
   changes_summary: Changed 'were pasturing' to 'were shepherding' for more natural and contextually appropriate English while preserving the source sense; retained the rest of the wording.
-
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -172,3 +172,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/090/005.job-72803.json
+meaning_pass:
+  run: enoch-v1
+  model: claude-opus-5-5
+  deployment: none (Azure's content filter blocked these verses on pob-meaning-gpt-6-1-sol)
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:45:49Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Twenty-three more shepherds serve, bringing the periods of oversight to fifty-eight.
+  meaning_decisions:
+  - source_phrase: ፳ወ፫ ... ፶ወ፰ ጊዜያተ
+    prior_rendering: twenty-three ... fifty-eight times
+    new_rendering: twenty-three more ... fifty-eight periods in all
+    rationale: Fifty-eight is the running total of shepherds' periods (thirty-five before, twenty-three now), as the vision's count of seventy requires.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: Departed from the current word-for-word rendering to make the count understandable, and kept the literal wording in a note.

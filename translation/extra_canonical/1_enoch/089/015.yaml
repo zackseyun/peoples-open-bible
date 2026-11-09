@@ -22,18 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the wolves began to terrify them and to oppress them[a], until they destroyed their little ones and cast their little ones into a stream of much water[c][b]. And those sheep began to cry out because of their little ones and to lament before their Lord.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'attacked them' for 'oppressed them'; the Ge'ez verb can denote forceful hostile action.
-    reason: lexical_alternative
-  - marker: b
-    text: '''A stream of much water'' may also be rendered ''a river of much water'' or ''a torrent of abundant water.'''
-    reason: lexical_alternative
-  - marker: c
-    text: '''Before their Lord'' could also be understood as ''to their master,'' but the context favors a divine referent within the allegory.'
-    reason: alternative_reading
+  text: And the wolves began to fear the sheep and oppress them, until they killed the sheep's little ones and cast them into a great river. The sheep began to cry out over their little ones and lament to their Lord.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: አዝእብት
   chosen: the wolves
@@ -179,14 +169,20 @@ revisions:
   from: And the wolves began to fear them and to oppress them, until they destroyed their little ones and threw their little ones into a stream of much water. And those sheep began to cry out because of their little ones, and to lament before their Lord.
   to: And the wolves began to fear them and to oppress them, until they destroyed their little ones and threw their little ones into a stream of much water. And those sheep began to cry out because of their little ones, and to lament before their Lord.
   rationale: Changed 'fear them' to 'terrify them' to reflect the causative sense more accurately; changed 'threw' to 'cast' for a more formal register. Minor punctuation smoothing.
-
 - timestamp: '2026-05-18T03:01:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the wolves began to terrify them and to oppress them[a], until they destroyed their little ones and cast their little ones into a stream of much water[c][b]. And those sheep began to cry out because of their little ones and to lament before their Lord.'
-  to: 'And the wolves began to terrify them and to oppress them[a], until they destroyed their little ones and cast their little ones into a stream of much water[c][b]. And those sheep began to cry out because of their little ones and to lament before their Lord.'
+  from: And the wolves began to terrify them and to oppress them[a], until they destroyed their little ones and cast their little ones into a stream of much water[c][b]. And those sheep began to cry out because of their little ones and to lament before their Lord.
+  to: And the wolves began to terrify them and to oppress them[a], until they destroyed their little ones and cast their little ones into a stream of much water[c][b]. And those sheep began to cry out because of their little ones and to lament before their Lord.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''began to fear them''].'
+- timestamp: '2026-11-09T20:10:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the wolves began to terrify them and to oppress them[a], until they destroyed their little ones and cast their little ones into a stream of much water[c][b]. And those sheep began to cry out because of their little ones and to lament before their Lord.
+  to: And the wolves began to fear the sheep and oppress them, until they killed the sheep's little ones and cast them into a great river. The sheep began to cry out over their little ones and lament to their Lord.
+  rationale: The first draft and lexical discussion support the wolves' fear, despite a later claim that the verb is causative. The current notes offer no necessary qualification to the oppression, killing, or river imagery.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -206,3 +202,33 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/015.job-72741.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:10Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The wolves fear the sheep and oppress them so severely that they kill their little ones, prompting the sheep to cry to their Lord in grief.
+  meaning_decisions:
+  - source_phrase: ይፈርህዎሙ
+    prior_rendering: to terrify them
+    new_rendering: to fear the sheep
+    rationale: The supplied verb expresses the wolves' fear, not their causing fear; the sheep's multiplication in the preceding verse explains this response.
+  - source_phrase: እስከ፡ ያኅልቅ፡ ደቂቆሙ
+    prior_rendering: until they destroyed their little ones
+    new_rendering: until they killed the sheep's little ones
+    rationale: The violence concerns the death of the sheep's offspring; naming the sheep removes a possible attachment of 'their' to the wolves.
+  - source_phrase: በውኂዘ፡ ማይ፡ ብዙኅ
+    prior_rendering: into a stream of much water
+    new_rendering: into a great river
+    rationale: The phrase describes a substantial watercourse, not the small stream that the current English may suggest.
+  - source_phrase: ኀበ፡ እግዚኦሙ
+    prior_rendering: before their Lord
+    new_rendering: to their Lord
+    rationale: Their lament is directed to their Lord, whose response follows in verse 16.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical discussion support the wolves' fear, despite a later claim that the verb is causative. The current notes offer no necessary qualification to the oppression, killing, or river imagery.

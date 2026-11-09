@@ -16,15 +16,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And on that day the night decreases from its length by a ninth part[a], that is, one part, and the night becomes eleven parts[b], and the day seven parts.
-  philosophy: optimal-equivalence
+  text: And on that day the night shortens by a ninth part[a], that is, one part; the night becomes thirteen parts[b], and the day seven parts.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ethiopic text is textually difficult here, with OCR uncertainty around the numeral phrase after 'from nine.' The sense is that the night is reduced by one part, yielding a night of eleven parts and a day of seven parts.
-    reason: textual_variant
+    text: The Ge'ez expression translated 'a ninth part' is uncertain.
+    reason: alternative_reading
   - marker: b
-    text: Or 'And on that day the night decreases from nine parts by one part, and the night becomes eleven parts, and the day seven parts.'.
-    reason: previous_rendering
+    text: The Ge'ez says 'twelve and one part'; eleven parts would fit the surrounding sequence.
+    reason: textual_variant
 lexical_decisions:
 - source_word: ኀፀፀት
   chosen: decreases
@@ -154,12 +154,18 @@ revisions:
   from: And on that day the night decreases from its length by a ninth part—which is one part—and the night becomes eleven parts, and the day seven parts.
   to: And on that day the night decreases from its length by a ninth part, that is, one part, and the night becomes eleven parts, and the day seven parts.
   rationale: Smoothed punctuation and phrasing by replacing the dash with 'that is' for more natural formal English, while preserving the source sense and all numerical details.
+- timestamp: '2026-11-09T20:02:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And on that day the night decreases from its length by a ninth part[a], that is, one part, and the night becomes eleven parts[b], and the day seven parts.
+  to: And on that day the night shortens by a ninth part[a], that is, one part; the night becomes thirteen parts[b], and the day seven parts.
+  rationale: The earlier revision correctly recognized shortening from the night's length rather than 'from nine,' but its eleven parts does not match the supplied numeral phrase. The uncertain fraction and conflicting total both require brief reader-facing notes; the supplied explanatory phrase 'that is, one part' needs no editorial comment.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:21Z'
   unchanged: false
   changes_summary: Smoothed punctuation and phrasing by replacing the dash with 'that is' for more natural formal English, while preserving the source sense and all numerical details.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -179,3 +185,23 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/072/028.job-72597.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:02:15Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The night grows shorter and the day reaches seven parts, but the stated length of the night conflicts with that decrease.
+  meaning_decisions:
+  - source_phrase: ፲ወ፪ተ፡ ወአሐደ፡ ክፍለ
+    prior_rendering: eleven parts
+    new_rendering: thirteen parts
+    rationale: The supplied phrase adds one part to twelve; it does not express subtraction. Its conflict with the surrounding sequence is acknowledged rather than silently corrected.
+  footnote_kinds:
+    a: alternative_meaning
+    b: textual_variant
+  history_weighed: The earlier revision correctly recognized shortening from the night's length rather than 'from nine,' but its eleven parts does not match the supplied numeral phrase. The uncertain fraction and conflicting total both require brief reader-facing notes; the supplied explanatory phrase 'that is, one part' needs no editorial comment.

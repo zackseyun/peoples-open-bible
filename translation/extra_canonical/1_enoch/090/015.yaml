@@ -18,18 +18,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I watched until the Lord of the sheep came to them in wrath[a], and all who saw him fled[c][b], and they all fell into the shadow before his face.
-  philosophy: optimal-equivalence
+  text: And I watched until the Lord of the sheep came to them in wrath. All who saw him fled from his presence, and they all fell into shadow[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'from before his face'; the Ge'ez idiom can denote the overwhelming effect of his presence.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Into the shadow'' is a literal rendering of the Ge''ez; the image may suggest a dark place of downfall, but the wording is left transparent rather than interpreted more narrowly.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'before his face'.
-    reason: previous_rendering
+    text: Or “they all fell into shadow before him.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ርኢኩ
   chosen: I watched
@@ -158,12 +152,18 @@ revisions:
   from: And I watched until the Lord of the sheep came to them in wrath, and all who saw him fled, and they all fell into the shadow from before his face.
   to: And I watched until the Lord of the sheep came to them in wrath, and all who saw him fled, and they all fell into the shadow before his face.
   rationale: Removed 'from' before 'before his face' for more natural English while preserving the sense of the source; otherwise retained the draft.
+- timestamp: '2026-11-09T20:17:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I watched until the Lord of the sheep came to them in wrath[a], and all who saw him fled[c][b], and they all fell into the shadow before his face.
+  to: And I watched until the Lord of the sheep came to them in wrath. All who saw him fled from his presence, and they all fell into shadow[a].
+  rationale: Earlier revisions alternated between preserving the final phrase’s sense of movement away and describing the fall as occurring before the Lord. The rendering preserves that movement while noting the alternative, and retains the shadow image without narrowing it to darkness, death, or a place of punishment.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:18Z'
   unchanged: false
   changes_summary: Removed 'from' before 'before his face' for more natural English while preserving the sense of the source; otherwise retained the draft.
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -183,3 +183,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/090/015.job-72813.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:17:12Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The Lord of the sheep arrives in wrath, causing all who see him to flee his presence and fall into shadow.
+  meaning_decisions:
+  - source_phrase: ወእለ፡ ርእይዎ፡ ኵሎሙ፡ ነፍጹ፡ ወወድቁ፡ ኵሎሙ፡ ውስተ፡ ጽላሎት፡ እምቅድመ፡ ገጹ
+    prior_rendering: all who saw him fled, and they all fell into the shadow before his face
+    new_rendering: All who saw him fled from his presence, and they all fell into shadow
+    rationale: The final expression most naturally conveys movement away from his presence. Connecting it explicitly with their flight carries that sense into natural English without defining what the shadow represents.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: Earlier revisions alternated between preserving the final phrase’s sense of movement away and describing the fall as occurring before the Lord. The rendering preserves that movement while noting the alternative, and retains the shadow image without narrowing it to darkness, death, or a place of punishment.

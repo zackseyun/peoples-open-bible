@@ -12,21 +12,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch01.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 1, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: 'And Enoch answered and said: "A righteous man[a], whose eyes were opened by God, saw a holy vision in the heavens, which the angels showed me; and from them I heard everything, and I understood what I saw—but not for this generation[d][c][b], but for a distant one that is to come."'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The clause about Enoch's eyes being opened by God is textually awkward in the Ethiopic OCR, but the sense is that his visionary sight was divinely opened or uncovered.
-    reason: textual_variant
-  - marker: b
-    text: '''Heavens'' reflects the plural cosmological idiom common in Semitic and apocalyptic texts.'
-    reason: cultural_note
-  - marker: c
-    text: Or 'but for a generation far away that will come.' The final phrase may be taken collectively or as a singular future generation.
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'And Enoch, a righteous man, answered and said—his eyes having been opened by God—"I saw'.
-    reason: previous_rendering
+  text: 'Enoch, a righteous man whose eyes God had opened, spoke: “I saw a holy vision in the heavens, which the angels showed me. I heard everything from them and understood what I saw. This vision is not for this generation, but for a generation far in the future.”'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: አውሥአ
   chosen: answered
@@ -177,6 +164,13 @@ revisions:
   from: 'And Enoch answered and said: "A righteous man[a], whose eyes were opened by God, saw a holy vision in the heavens, which the angels showed me; and from them I heard everything, and I understood what I saw—but not for this generation[d][c][b], but for a distant one that is to come."'
   to: 'And Enoch answered and said: "A righteous man[a], whose eyes were opened by God, saw a holy vision in the heavens, which the angels showed me; and from them I heard everything, and I understood what I saw—but not for this generation[d][c][b], but for a distant one that is to come."'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''but not for this generation, rather for one far off that is to come''].'
+- timestamp: '2026-11-09T19:43:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And Enoch answered and said: "A righteous man[a], whose eyes were opened by God, saw a holy vision in the heavens, which the angels showed me; and from them I heard everything, and I understood what I saw—but not for this generation[d][c][b], but for a distant one that is to come."'
+  to: 'Enoch, a righteous man whose eyes God had opened, spoke: “I saw a holy vision in the heavens, which the angels showed me. I heard everything from them and understood what I saw. This vision is not for this generation, but for a generation far in the future.”'
+  rationale: Earlier review preserved the third-to-first-person shift as a possible echo of prophetic speech; this rendering preserves its claim to divinely opened sight while making clear that Enoch is the seer. The bracketed connective adds no separate meaning, and the distant-generation contrast remains intact.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:01:46Z'
@@ -201,3 +195,29 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/001/002.job-72153.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:43:19Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Righteous Enoch reports a holy vision revealed through angels after God opened his eyes, intended for a distant future generation rather than his own.
+  meaning_decisions:
+  - source_phrase: ወአውሥአ ፡ ወይቤ ፡ ሄኖክ
+    prior_rendering: And Enoch answered and said
+    new_rendering: Enoch ... spoke
+    rationale: This is a formal introduction to Enoch’s discourse, not necessarily an answer to a preceding question; natural English conveys its function without implying an unmentioned exchange.
+  - source_phrase: ብእሲ ፡ ጻድቅ ፡ ዘእምኀበ ፡ እግዚአብሔር ፡ [እንዘ ፡] አዕይን ቲሁ ፡ ክሡታት ፡ ወይሬኢ
+    prior_rendering: “A righteous man, whose eyes were opened by God, saw
+    new_rendering: 'a righteous man whose eyes God had opened, spoke: “I saw'
+    rationale: The righteous seer is Enoch himself. Placing his description before the speech and using the first person within it makes that identity clear while preserving his righteousness and divinely opened sight.
+  - source_phrase: ወአኮ ፡ ለዛ ፡ ትውልድ ፡ አላ ፡ ለዘ ፡ ይመጽእ ፡ ርኁቃት
+    prior_rendering: but not for this generation, but for a distant one that is to come
+    new_rendering: This vision is not for this generation, but for a generation far in the future.
+    rationale: Making the implied subject explicit shows that the revelation is intended for later hearers; the distance is temporal, not geographical.
+  footnote_kinds: {}
+  history_weighed: Earlier review preserved the third-to-first-person shift as a possible echo of prophetic speech; this rendering preserves its claim to divinely opened sight while making clear that Enoch is the seer. The bracketed connective adds no separate meaning, and the distant-generation contrast remains intact.

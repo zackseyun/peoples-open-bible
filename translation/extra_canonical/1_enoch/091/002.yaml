@@ -14,15 +14,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch91.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 91, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And after this[a], Methuselah went and called all his brothers to him[b], and gathered his kindred.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The opening expression can also be rendered 'thereupon' or 'from this point.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'and gathered his kindred to himself.'.
-    reason: previous_rendering
+  text: And after this, Methuselah went and called all his brothers to him, and gathered his kindred.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: እምኔሁ
   chosen: after this
@@ -145,12 +138,18 @@ revisions:
   from: And after this, Methuselah went and called all his brothers to him, And after this, Methuselah went and called all his brothers to him, and gathered his kindred.
   to: And after this, Methuselah went and called all his brothers to him, and gathered his kindred.
   rationale: Removed the duplicated opening clause and retained the full sense of the verse with natural, formal English.
+- timestamp: '2026-11-09T20:12:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And after this[a], Methuselah went and called all his brothers to him[b], and gathered his kindred.
+  to: And after this, Methuselah went and called all his brothers to him, and gathered his kindred.
+  rationale: The current wording already conveys the narrative clearly and preserves the earlier correction removing an unnecessary second 'to himself.' The notes offer wording alternatives that readers do not need.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:25Z'
   unchanged: false
   changes_summary: Removed the duplicated opening clause and retained the full sense of the verse with natural, formal English.
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -170,3 +169,17 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/091/002.job-72838.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:12:30Z'
+  change_level: refined
+  confidence: high
+  meaning: Methuselah carries out Enoch's request by calling his brothers and gathering his relatives.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The current wording already conveys the narrative clearly and preserves the earlier correction removing an unnecessary second 'to himself.' The notes offer wording alternatives that readers do not need.

@@ -12,15 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch62.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 62, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: For from the beginning the Son of Man was hidden[a], and the Most High kept him in the presence of his power[b], and revealed him to the chosen ones.
-  philosophy: optimal-equivalence
+  text: For the Son of Man was hidden from the beginning; the Most High kept him in his mighty presence[a] and revealed him to the chosen ones.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'before his power' or 'before his might.' The Ge'ez phrase is difficult, and this rendering keeps the imagery rather than smoothing it away.
+    text: Literally, “before his power”; the sense of this phrase is uncertain.
     reason: lexical_alternative
-  - marker: b
-    text: Or 'before him'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: እስመ
   chosen: For
@@ -153,12 +150,18 @@ revisions:
   from: before him
   to: from the beginning
   rationale: 'The Ge''ez word እምቅድሙ (em-qedmu) is a temporal adverb meaning ''from the beginning'' or ''previously'' (Dillmann, Lexicon col. 458). The draft incorrectly renders it spatially as ''before him'', which obscures the temporal pre-existence motif central to the Parables. Spatial ''before him'' in this chapter is consistently rendered with በቅድሜሁ (ba-qedmehu) (cf. vv. 3, 8, 9). | Adjudicator: The reviewer is correct. The Ge''ez term እምቅድሙ (em-qedmu) functions here as a temporal adverb meaning ''from the beginning'' or ''previously,'' not as a spatial preposition ''before him.'' The spatial concep'
+- timestamp: '2026-11-09T19:58:09Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For from the beginning the Son of Man was hidden[a], and the Most High kept him in the presence of his power[b], and revealed him to the chosen ones.
+  to: For the Son of Man was hidden from the beginning; the Most High kept him in his mighty presence[a] and revealed him to the chosen ones.
+  rationale: The recorded correction to 'from the beginning' is sound and takes precedence over the older spatial interpretation. The remaining phrase about divine power is genuinely difficult, so its likely sense is rendered cautiously and its uncertainty preserved.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:36:53Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -178,3 +181,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/062/007.job-72484.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:58:09Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The Son of Man was hidden from the beginning, kept with the Most High, and revealed to the chosen ones.
+  meaning_decisions:
+  - source_phrase: በቅድመ፡ ኃይሉ፡
+    prior_rendering: in the presence of his power
+    new_rendering: in his mighty presence
+    rationale: This conveys proximity to the Most High together with his power, without making power sound like a separate being or location. The uncertain literal expression is given in the note.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The recorded correction to 'from the beginning' is sound and takes precedence over the older spatial interpretation. The remaining phrase about divine power is genuinely difficult, so its likely sense is rendered cautiously and its uncertainty preserved.

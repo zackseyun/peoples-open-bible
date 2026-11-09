@@ -92,6 +92,8 @@ def verify_current_windows():
     expected=next_window(d['files'][d['artifact_prefix']+'/page-map-after.json'])
     from tools.enoch.count85_90_evidence import window_successor as last_window
     expected=last_window(expected)
+    from tools.enoch.count95_window_evidence import window_successor as window95
+    expected=window95(expected)
     if t.sha(raw)!=expected:
         raise ValueError('Current full source map needs an explicit reviewed window successor')
     for c in(106,107):

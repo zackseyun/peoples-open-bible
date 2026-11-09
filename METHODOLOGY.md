@@ -8,6 +8,21 @@ shows the sources, review layers, and public artifacts someone would
 need in order to inspect or reproduce the results without replaying
 our internal work log step by step.
 
+## Meaning-first retranslation (2026-11-09)
+
+The canonical and deuterocanonical main text was retranslated meaning-first
+with GPT-6.1 Sol (Azure OpenAI, high reasoning effort, Flex tier), one
+passage at a time with the whole chapter in view. For each verse the model
+received the source text, the current wording and footnotes, the first
+draft, the full revision history with maintainer revisions marked, and the
+lexical and theological decisions. Each applied verse records a
+`meaning_retranslation` revision and a `meaning_pass` block. Instructions:
+`tools/prompts/pob_meaning_first_v4.md`; tool: `tools/pob_meaning_pass.py`;
+details and coverage:
+[docs/MEANING_FIRST_TRANSLATION_2026-11.md](docs/MEANING_FIRST_TRANSLATION_2026-11.md).
+The stages below describe how the earlier drafts and revisions were made;
+they remain the history each verse's new wording was weighed against.
+
 ## Source-distinction checkpoint (2026-09-06)
 
 Drafting and the main review lanes now require an explicit source-distinction

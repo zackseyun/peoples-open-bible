@@ -13,15 +13,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch99.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 99, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: In those days nations shall be thrown into confusion[a], and the clans of the nations shall rise up on the day of destruction[b].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the kindreds/tribes of the nations.' The Ge'ez term can denote kin-groups or related peoples.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'on the day of slaughter' or 'ruin,' depending on how strongly the final noun is taken.
-    reason: lexical_alternative
+  text: In those days the nations will be thrown into confusion, and the clans of the nations will rise up on the day of destruction.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: በአማንቱ መዋዕል
   chosen: In those days
@@ -137,13 +130,12 @@ revisions:
   from: In those days nations shall be thrown into confusion, and the clans of the nations shall rise up on the day of destruction.
   to: In those days the nations shall be thrown into confusion, and the clans of the nations shall rise up on the day of slaughter.
   rationale: Added 'the' before both occurrences of 'nations' for more natural formal English, and revised 'destruction' to 'slaughter' to more closely reflect ሐጕል.
-
 - timestamp: '2026-05-18T03:10:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'In those days the nations shall be thrown into confusion[b][a], and the clans of the nations shall rise up on the day of slaughter.'
-  to: 'In those days nations shall be thrown into confusion, and the clans of the nations shall rise up on the day of destruction.'
+  from: In those days the nations shall be thrown into confusion[b][a], and the clans of the nations shall rise up on the day of slaughter.
+  to: In those days nations shall be thrown into confusion, and the clans of the nations shall rise up on the day of destruction.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''on the day of destruction''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -153,6 +145,13 @@ revisions:
   from: In those days nations shall be thrown into confusion, and the clans of the nations shall rise up on the day of destruction.
   to: In those days nations shall be thrown into confusion[a], and the clans of the nations shall rise up on the day of destruction[b].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it; [b] anchored to ('on the day of destruction') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T20:07:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: In those days nations shall be thrown into confusion[a], and the clans of the nations shall rise up on the day of destruction[b].
+  to: In those days the nations will be thrown into confusion, and the clans of the nations will rise up on the day of destruction.
+  rationale: The current wording preserves both the collective upheaval and the unspecified rising of the clans. 'Destruction' remains preferable to the narrower 'slaughter,' and the notes offer only overlapping expressions.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -172,3 +171,17 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/099/004.job-72907.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:46Z'
+  change_level: refined
+  confidence: high
+  meaning: The day of destruction will bring confusion among the nations and the rising of their clans.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The current wording preserves both the collective upheaval and the unspecified rising of the clans. 'Destruction' remains preferable to the narrower 'slaughter,' and the notes offer only overlapping expressions.

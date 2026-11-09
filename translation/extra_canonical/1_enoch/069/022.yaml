@@ -15,21 +15,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch69.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 69, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And likewise heaven[a], the spirits of the winds, and all the spirits[d][c][b], and their paths from all the gatherings of spirits.
-  philosophy: optimal-equivalence
+  text: The same is true of heaven, the spirits of the winds, all the spirits, and their paths from all the gatherings of spirits[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ethiopic text of this line is difficult, especially in the middle and final phrases. 'Received' is supplied in English to make the syntax intelligible; the underlying wording may also be understood more literally but less clearly.
+    text: This sentence is unclear in the Ge'ez, especially the description of the winds and the spirits' paths.
     reason: textual_variant
-  - marker: b
-    text: The term rendered 'paths' may also mean 'ways,' 'courses,' or 'movements.'
-    reason: lexical_alternative
-  - marker: c
-    text: The final phrase could also be understood as referring to every 'company' or 'assembly' of spirits.
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'heaven received their spirits, and all the spirits and their paths from every gathering of spirits.'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ሰማይ
   chosen: heaven
@@ -141,12 +132,18 @@ revisions:
   from: And so heaven, the winds of the winds, and all the spirits, and their paths from all the gatherings of spirits.
   to: And likewise heaven, the spirits of the winds, and all the spirits, and their paths from all the gatherings of spirits.
   rationale: Revised 'the winds of the winds' to 'the spirits of the winds' for better lexical accuracy with ነፋሳቲሆሙ / ለነፋሳት, while preserving the verse's list structure and formal register.
+- timestamp: '2026-11-09T20:01:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And likewise heaven[a], the spirits of the winds, and all the spirits[d][c][b], and their paths from all the gatherings of spirits.
+  to: The same is true of heaven, the spirits of the winds, all the spirits, and their paths from all the gatherings of spirits[a].
+  rationale: The earlier removal of “received” was justified because the Ge'ez supplies no such action. The current list is preserved, including its genuinely uncertain descriptions, rather than reshaped into a statement about receiving souls.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:08Z'
   unchanged: false
   changes_summary: Revised 'the winds of the winds' to 'the spirits of the winds' for better lexical accuracy with ነፋሳቲሆሙ / ለነፋሳት, while preserving the verse's list structure and formal register.
-
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -166,3 +163,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/069/022.job-72549.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:01:42Z'
+  change_level: refined
+  confidence: low
+  meaning: Heaven, the wind spirits, and the other spirits with their paths likewise belong to the order just described.
+  meaning_decisions:
+  - source_phrase: ወከመዝ
+    prior_rendering: And likewise
+    new_rendering: The same is true of
+    rationale: The verse continues the preceding description with an elliptical list; this English construction makes the connection intelligible without inventing a new action.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier removal of “received” was justified because the Ge'ez supplies no such action. The current list is preserved, including its genuinely uncertain descriptions, rather than reshaped into a statement about receiving souls.

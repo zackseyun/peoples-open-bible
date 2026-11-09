@@ -15,21 +15,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch60.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 60, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the thunder[a], according to their places of striking, and for every division that is divided by the lightning, so that it may flash—and their restraint[d][c][b], so that they may hear quickly.
-  philosophy: optimal-equivalence
+  text: He showed me thunder at each of its places of striking, each portion divided by lightning so that it may flash[a], and how thunder and lightning are restrained so that they respond swiftly[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ge'ez is difficult. 'According to their stations' may also mean 'in their places' or 'by their measures.'
-    reason: lexical_alternative
+    text: The Ge’ez is unclear here; this may refer to the portions allotted to lightning.
+    reason: alternative_reading
   - marker: b
-    text: '''Every division that is divided'' preserves the repetitive wording of the source; it may refer to each apportioned section of the storm phenomena.'
+    text: Literally, 'hear quickly,' which may mean 'obey promptly.'
     reason: lexical_alternative
-  - marker: c
-    text: The final clause literally says 'that they may hear quickly.' In context this could imply swift responsiveness or obedience, not only auditory hearing.
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'according to their stations'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ነጐድጓድ
   chosen: thunder
@@ -153,9 +147,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the thunder[a], according to their places of striking, and for every division that is divided by the lightning, so that it may flash—and their restraint[d][c][b], so that they may hear quickly.'
-  to: 'And the thunder[a], according to their places of striking, and for every division that is divided by the lightning, so that it may flash—and their restraint[d][c][b], so that they may hear quickly.'
+  from: And the thunder[a], according to their places of striking, and for every division that is divided by the lightning, so that it may flash—and their restraint[d][c][b], so that they may hear quickly.
+  to: And the thunder[a], according to their places of striking, and for every division that is divided by the lightning, so that it may flash—and their restraint[d][c][b], so that they may hear quickly.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''so that it may flash forth''].'
+- timestamp: '2026-11-09T19:57:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the thunder[a], according to their places of striking, and for every division that is divided by the lightning, so that it may flash—and their restraint[d][c][b], so that they may hear quickly.
+  to: He showed me thunder at each of its places of striking, each portion divided by lightning so that it may flash[a], and how thunder and lightning are restrained so that they respond swiftly[b].
+  rationale: The correction from general 'stations' to concrete places of striking is well supported and is retained. The difficult lightning clause remains qualified, while the earlier note’s recognition that hearing can imply responsiveness informs the final clause.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:02:17Z'
@@ -180,3 +181,27 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/060/013.job-72456.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:57:37Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The angel reveals the assigned places and divisions of thunder and lightning and their restraint for swift responsiveness.
+  meaning_decisions:
+  - source_phrase: ወነጐድጓድ፡ በበመዳቃቲሆሙ
+    prior_rendering: And the thunder, according to their places of striking
+    new_rendering: He showed me thunder at each of its places of striking
+    rationale: The showing continues from the preceding verses, and English treats 'thunder' as a collective singular while preserving its distributed striking places.
+  - source_phrase: ወትዕግሥቶሙ፡ ከመ፡ ፍጡነ፡ ይስምዑ
+    prior_rendering: and their restraint, so that they may hear quickly
+    new_rendering: and how thunder and lightning are restrained so that they respond swiftly
+    rationale: The following verses establish thunder and lightning as the paired forces under restraint; hearing in this context plausibly expresses readiness to respond, rather than ordinary auditory perception.
+  footnote_kinds:
+    a: alternative_meaning
+    b: literal_wording
+  history_weighed: The correction from general 'stations' to concrete places of striking is well supported and is retained. The difficult lightning clause remains qualified, while the earlier note’s recognition that hearing can imply responsiveness informs the final clause.

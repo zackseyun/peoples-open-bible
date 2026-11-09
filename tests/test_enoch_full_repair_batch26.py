@@ -82,7 +82,7 @@ class Batch26Test(unittest.TestCase):
 
     def test_no_new_record_fullchapter_or_book_completion_credit(self):
         from tools.enoch.full_repair_progress import build
-        r=build();self.assertEqual(r['canonical_file_count'],966);assert_current_progress(self,r)
+        r=build();assert_current_progress(self,r)
         self.assertNotIn(43,r['chapters_with_complete_imported_selected_edition_review']);self.assertFalse(r['completion_proven'])
         flags=record(3)['source_correction']
         for key in('selected_edition_chapter_reviewed','chapter_publication_approval','full_book_verified','human_specialist_certification','manuscript_witness_certification','graphic_publication_approved'):self.assertFalse(flags[key])

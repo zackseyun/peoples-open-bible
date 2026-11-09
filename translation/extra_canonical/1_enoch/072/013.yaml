@@ -16,21 +16,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And it enters at dawn and goes out through the sixth[a], and it goes out and sets in the sixth gate for thirty-two mornings[d][c][b], according to its sign.
-  philosophy: optimal-equivalence
+  text: Then it returns to the east[a] and comes out through the sixth gate. For thirty-two mornings it rises and sets through the sixth gate because of its sign.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ge'ez text is compressed and somewhat repetitive here; 'the sixth' is understood as the sixth gate/opening in the sequence described throughout this chapter.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'thirty-two mornings.' The text counts the period by mornings rather than using a smoother English summary such as 'days.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'goes out through the sixth, and it sets through the sixth gate'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'according to the sign of it'.
-    reason: previous_rendering
+    text: Or “it returns at dawn.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ይገብእ
   chosen: enters
@@ -166,12 +157,18 @@ revisions:
   from: And it enters at dawn and goes out into the sixth, and it goes out and sets in the sixth gate for thirty-two mornings, on account of its sign.
   to: And it enters at dawn and goes out through the sixth, and it goes out and sets in the sixth gate for thirty-two mornings, according to its sign.
   rationale: Changed 'into the sixth' to 'through the sixth' for more natural and accurate English with the implied gate/opening; changed 'on account of its sign' to 'according to its sign' for a more natural rendering of the concluding phrase.
+- timestamp: '2026-11-09T20:02:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And it enters at dawn and goes out through the sixth[a], and it goes out and sets in the sixth gate for thirty-two mornings[d][c][b], according to its sign.
+  to: Then it returns to the east[a] and comes out through the sixth gate. For thirty-two mornings it rises and sets through the sixth gate because of its sign.
+  rationale: I retain all thirty-two mornings and both occurrences of the emergence verb, while restoring the causal force recognized in an earlier revision. The repeated eastward return supports the directional reading of dawn, but its temporal alternative deserves a short note.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:16Z'
   unchanged: false
   changes_summary: Changed 'into the sixth' to 'through the sixth' for more natural and accurate English with the implied gate/opening; changed 'on account of its sign' to 'according to its sign' for a more natural rendering of the concluding phrase.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -191,3 +188,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/072/013.job-72582.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:02:51Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The sun returns eastward to the sixth gate and follows its rising-and-setting course there for thirty-two mornings because of its sign.
+  meaning_decisions:
+  - source_phrase: ወይገብእ፡ ጽባሐ
+    prior_rendering: And it enters at dawn
+    new_rendering: Then it returns to the east
+    rationale: The same return verb describes the sun’s journey back toward its rising gates elsewhere in this passage; the dawn word can designate the east, though a temporal reading remains possible.
+  - source_phrase: ወይወፅእ፡ ውስተ፡ ሳድስት፡ ወይወፅእ፡ ወየዓርብ
+    prior_rendering: goes out through the sixth, and it goes out and sets
+    new_rendering: comes out through the sixth gate. For thirty-two mornings it rises and sets
+    rationale: The first emergence introduces the move to the sixth gate, and the repeated emergence and setting describe its continuing course there; the implied gate is named explicitly.
+  - source_phrase: በእንተ፡ ትእምርተ፡ ዚአሃ
+    prior_rendering: according to its sign
+    new_rendering: because of its sign
+    rationale: The preposition gives a reason for the stated duration, rather than merely conformity to a sign; the sign itself remains unexplained.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retain all thirty-two mornings and both occurrences of the emergence verb, while restoring the causal force recognized in an earlier revision. The repeated eastward return supports the directional reading of dawn, but its temporal alternative deserves a short note.

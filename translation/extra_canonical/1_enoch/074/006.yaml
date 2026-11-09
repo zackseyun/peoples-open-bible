@@ -13,21 +13,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch74.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 74, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: For seven days it goes out and turns about[a], and it returns again through the gate from which the sun goes out; and it completes all its light, and it withdraws from the sun[d][c][b], and it enters for eight days through the sixth gate from which the sun goes out.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Ge'ez term for the heavenly opening can also be rendered 'gate.' 'Window' is kept here because it fits the imagery of the luminaries' openings, but 'gate' remains a viable lexical alternative in this section.
-    reason: lexical_alternative
-  - marker: b
-    text: The subject is implicit in this verse. In context it is likely the moon, but the main text keeps the pronoun 'it' rather than supplying the noun.
-    reason: alternative_reading
-  - marker: c
-    text: The clause 'it completes all its light' is somewhat technical and may refer to the luminary reaching the full measure of its brightness before changing its course.
-    reason: cultural_note
-  - marker: d
-    text: Or 'And for seven days it goes out and turns about, and it returns again through the window from which the sun comes out; and it completes all its light, and it withdraws from the sun, and it enters for eight days through the sixth window from which the sun comes out.'.
-    reason: previous_rendering
+  text: For seven days the moon rises and makes its circuit; then it returns through the gate from which the sun rises. It reaches its full light, withdraws from the sun, and for eight days enters through the sixth gate, from which the sun rises.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ይወፅእ
   chosen: it goes out
@@ -151,12 +138,18 @@ revisions:
   from: And for seven days it goes out and turns about, and it returns again through the window from which the sun comes out; and it completes all its light, and it withdraws from the sun, and it enters for eight days through the sixth window from which the sun comes out.
   to: For seven days it goes out and turns about, and it returns again through the gate from which the sun goes out; and it completes all its light, and it withdraws from the sun, and it enters for eight days through the sixth gate from which the sun goes out.
   rationale: 'Ge''ez ኆኅት (ḫoḫət) means ''gate'' or ''portal'' (Dillmann 108), distinct from መስኮት (maskot, ''window''). Translating it as ''window'' obscures Enoch''s specific cosmological architecture and breaks consistency with verse 7. Additionally, ይወፅእ is translated as ''comes out'' twice here but ''goes out'' elsewhere; standardizing to ''goes out'' maintains consistency. Finally, the initial ''And'' has no corresponding conjunction (ወ) in the Ge''ez text (ይወፅእ). | Adjudicator: The reviewer is entirely correct on all three points. Most importantly, the Ge''ez word ኆኅት (ḫoḫət) means ''gate'' or ''door'' (often rendered ''portal'' in Enochic scholarship), whereas ''window'' is መስኮት (ma'
+- timestamp: '2026-11-09T20:03:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For seven days it goes out and turns about[a], and it returns again through the gate from which the sun goes out; and it completes all its light, and it withdraws from the sun[d][c][b], and it enters for eight days through the sixth gate from which the sun goes out.
+  to: For seven days the moon rises and makes its circuit; then it returns through the gate from which the sun rises. It reaches its full light, withdraws from the sun, and for eight days enters through the sixth gate, from which the sun rises.
+  rationale: The correction from window to gate preserves the source’s cosmic architecture. The current notes correctly recognize the moon and its full light but leave those meanings unnecessarily obscure in the main text.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:26Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -176,3 +169,33 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/074/006.job-72615.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:03:34Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The moon follows a seven-day circuit, returns through the sun’s rising gate and reaches full light, then withdraws from the sun and enters through the sixth gate for eight days.
+  meaning_decisions:
+  - source_phrase: ይወፅእ
+    prior_rendering: it goes out
+    new_rendering: the moon rises
+    rationale: The understood subject is the moon, and going out through the heavenly gates describes its rising.
+  - source_phrase: ወየአውድ
+    prior_rendering: and turns about
+    new_rendering: and makes its circuit
+    rationale: The verb describes circling movement; circuit conveys that motion more clearly than turns about.
+  - source_phrase: እንተ፡ ይወፅእ፡ ፀሐይ ... እንተ፡ እምኔሃ፡ ይወፅእ፡ ፀሐይ
+    prior_rendering: from which the sun goes out
+    new_rendering: from which the sun rises
+    rationale: Rises expresses the astronomical meaning while retaining the heavenly gate image.
+  - source_phrase: ወይፌጽም፡ ኵሎ፡ ብርሃኖ
+    prior_rendering: and it completes all its light
+    new_rendering: It reaches its full light
+    rationale: The phrase describes the moon reaching the full measure of its light.
+  footnote_kinds: {}
+  history_weighed: The correction from window to gate preserves the source’s cosmic architecture. The current notes correctly recognize the moon and its full light but leave those meanings unnecessarily obscure in the main text.

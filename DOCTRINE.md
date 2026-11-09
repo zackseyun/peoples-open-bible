@@ -35,20 +35,33 @@ translation.
 
 ## Translation philosophy
 
-The People's Open Bible aims at **optimal equivalence**: the most faithful,
-intelligible English representation of the source's meaning, wording patterns,
-literary form, and rhetorical force. This is not an automatic midpoint between
-formal and dynamic translation. Readability serves source fidelity; convention
-and familiarity do not override it.
+Since November 2026 the People's Open Bible is **meaning-first**. The main
+text conveys what each passage means: what its author was saying, and what
+the church confesses God was saying through that author, to the people who
+first heard it. The Hebrew, Aramaic, and Greek words are the vessel, not the
+destination. Their word order, idioms, and wording patterns are kept where
+they carry meaning, and moved to footnotes where they would obscure it for a
+reader today. See
+[docs/MEANING_FIRST_TRANSLATION_2026-11.md](docs/MEANING_FIRST_TRANSLATION_2026-11.md)
+for the change and how the current text was produced.
+
+Earlier passes aimed at **optimal equivalence**, which weighted the source's
+wording patterns alongside its meaning. That history stays in every verse's
+revision record.
 
 Specifically:
 
-1. **Original-language primacy with reader-conscious wording.** Where
-   long-standing English renderings obscure the source text's plain
-   sense, we explain the source pressure openly. For *doulos*, the main
-   text uses "servant" consistently while notes and the public audit
-   trail preserve bonded-status, ownership, and total-allegiance nuance
-   where it is historically or theologically salient (Rom 1:1, Phil 1:1).
+1. **Meaning over surface, weight over modernity.** The best-supported
+   meaning goes in the text; a revealing literal wording or serious
+   alternative reading goes in a footnote. A plainer or more contemporary
+   word is not automatically closer to the meaning. Keep weighty words
+   (soul, righteousness, glory, grace, holy, mercy, sin, covenant) and
+   classic images when they carry more of it: Psalm 23 keeps "He restores
+   my soul", "paths of righteousness", and "the valley of the shadow of
+   death". For *doulos*, the main text uses "servant" consistently while
+   notes and the public audit trail preserve bonded-status, ownership, and
+   total-allegiance nuance where it is historically or theologically
+   salient (Rom 1:1, Phil 1:1).
 
 2. **Translate titles; use conventional name forms.** Christological
    titles are translated to preserve meaning (*Christos* →
@@ -80,17 +93,21 @@ Specifically:
    footnoted, not required) and informality that undersells the
    text's gravity.
 
-## Source distinctions and optimal English
+## Source distinctions
 
-Source fidelity takes priority over mere familiarity or defensibility. A
-significant Greek or Hebrew wording pattern must receive an explicit comparison
-with the best source-transparent English candidate, even when a prior draft
-already discusses it in a footnote. Prior rationale is evidence, not a veto.
-Do not infer different meanings from morphology alone or invent theology to
-justify different glosses; preserve observable wording without adding claims.
-A concise source-qualified or hyphenated rendering is available when ordinary
-English otherwise conceals the source pattern. Record unresolved proposals for
-maintainer review; do not silently certify them as unchanged or auto-publish.
+A significant Greek or Hebrew distinction stays visible when it carries
+meaning the reader needs: in the text where it shapes the sense, and in a
+footnote otherwise. Prior rationale and earlier revisions are evidence, with
+maintainer revisions weighed most; they are not a veto. Do not infer
+different meanings from morphology alone or invent theology to justify
+different glosses. Record unresolved proposals for maintainer review; do not
+silently certify them as unchanged or auto-publish.
+
+**Approved rendering for sexual "knowing":** where Hebrew *yada* or Greek
+*ginōskō* refers to sexual union, the text keeps "know": "Adam knew Eve his
+wife" (Gen 4:1), "he did not know her" (Matt 1:25), "I have not known a man"
+(Luke 1:34). Do not replace it with "was intimate with", "slept with", or
+"made love to".
 
 **Approved scoped rendering:** John 21:15–17 uses **agape-love** for ἀγαπάω
 and **phileo-love** for φιλέω, including the repeated question in verse 17.
@@ -227,6 +244,15 @@ supported language gets the full People's Open Bible.
 
 Material changes to this document are themselves commits. Prior
 versions of the stance are preserved in git history.
+
+- **2026-11-09:** Translation philosophy changed from optimal
+  equivalence to meaning-first: the main text conveys what the
+  author, and God through the author, meant to the first hearers,
+  with revealing literal wording in footnotes. Added the
+  meaning-over-modernity principle (Psalm 23 calibration) and the
+  approved "know" rendering for sexual union. The canonical and
+  deuterocanonical text was retranslated on this basis; see
+  [docs/MEANING_FIRST_TRANSLATION_2026-11.md](docs/MEANING_FIRST_TRANSLATION_2026-11.md).
 
 - **2026-04-21:** Removed creedal affirmations (Apostles' Creed,
   Nicene Creed, Chalcedonian Definition) and replaced with a

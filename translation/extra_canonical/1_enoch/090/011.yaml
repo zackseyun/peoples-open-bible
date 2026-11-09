@@ -18,24 +18,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And with that[a], all those eagles and vultures and ravens and kites kept snatching away the sheep even until now, and swooping down upon them and devouring them; but the sheep remained silent[e][d][c][b], and the rams lamented and cried out.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The bird names are rendered as distinct kinds of predatory/scavenging birds to preserve the vision's concrete animal imagery; some individual identifications remain uncertain.
-    reason: lexical_alternative
-  - marker: b
-    text: 'The wording presents a tension: the sheep are said to be silent, yet also to cry out and lament. The translation preserves both elements rather than smoothing the line.'
-    reason: textual_variant
-  - marker: c
-    text: Or 'kites and ravens'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'trampling on them'.
-    reason: previous_rendering
-  - marker: e
-    text: Or 'though they cried out and lamented'.
-    reason: previous_rendering
+  text: Meanwhile, all those eagles and vultures and ravens and kites kept snatching away the sheep even until now, swooping down upon them and devouring them; but the sheep remained silent, and the rams lamented and cried out.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: አንስርት
   chosen: eagles
@@ -176,12 +160,18 @@ revisions:
   from: though they cried out and lamented
   to: and the rams lamented and cried out
   rationale: 'The Ge''ez ይቤላት (yebelat) is the plural of ይቤላ (yebela, ''ram''). The draft missed this noun, mistakenly attributing the crying to the sheep and creating a false contradiction. Footnote ''b'' and the theological note should be deleted as they are based on this mistranslation. | Adjudicator: The reviewer is entirely correct. The Ge''ez text explicitly contains the noun ይቤላት (yebēlāt), which is the plural of ይቤላ (yebēlā, ''ram''). The current translation missed this noun, incorrectly attribut'
+- timestamp: '2026-11-09T20:18:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And with that[a], all those eagles and vultures and ravens and kites kept snatching away the sheep even until now, and swooping down upon them and devouring them; but the sheep remained silent[e][d][c][b], and the rams lamented and cried out.
+  to: Meanwhile, all those eagles and vultures and ravens and kites kept snatching away the sheep even until now, swooping down upon them and devouring them; but the sheep remained silent, and the rams lamented and cried out.
+  rationale: 'The current wording preserves the gains of the later revisions: the bird order, the swooping action, and the distinction between the silent sheep and the lamenting rams. The older notes largely reflect superseded readings, so they have been removed.'
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:17Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: needs_review
   agreement: 0.5
@@ -201,3 +191,21 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/090/011.job-72809.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:18:46Z'
+  change_level: refined
+  confidence: high
+  meaning: The birds continue attacking and devouring the sheep up to the present, while the sheep remain silent and the rams lament and cry out.
+  meaning_decisions:
+  - source_phrase: ወምስለዝ
+    prior_rendering: And with that
+    new_rendering: Meanwhile
+    rationale: The connective places the continuing attacks alongside the preceding action; it does not imply that the sheep’s rallying caused the attacks.
+  footnote_kinds: {}
+  history_weighed: 'The current wording preserves the gains of the later revisions: the bird order, the swooping action, and the distinction between the silent sheep and the lamenting rams. The older notes largely reflect superseded readings, so they have been removed.'

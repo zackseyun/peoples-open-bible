@@ -11,18 +11,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch33.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 33, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And from there I went to the ends of the earth[a], and there I saw great beasts, and they differed from one another; and the birds also differed in their appearance and their forms[c][b], and their voices also differed one from another.
-  philosophy: optimal-equivalence
+  text: From there I went to the ends of the earth, where I saw great beasts, each different from the others. The birds too differed in appearance and beauty[a], and their voices also differed from one another.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Literally, 'their faces.' The broader rendering 'appearance' is used here because the verse describes how the birds differed visibly as well as in bodily form and voice.
-    reason: lexical_alternative
-  - marker: b
-    text: The term rendered 'the form of their bodies' is somewhat uncertain in this OCR witness; it likely refers to bodily shape or build.
-    reason: textual_variant
-  - marker: c
-    text: Or 'and the birds also differed in their appearance and in the form of their bodies and in their voices, each from the other.'.
-    reason: previous_rendering
+    text: The word rendered “beauty” is uncertain; it may refer to bodily form.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: እምህየ
   chosen: from there
@@ -168,12 +162,18 @@ revisions:
   from: and the birds also differed in their appearance and in the form of their bodies and in their voices, each from the other.
   to: and the birds also differed in their appearance and their forms, and their voices also differed one from another.
   rationale: 'Adjudicator-modified: The reviewer correctly identifies that the current English collapses the repeated verb ይትዌለጥ (differed) and misses the enclitic -ሂ (also) on ቃሎሙ (their voices). The Ge''ez explicitly repeats the verb and adds the enclitic to emphasize that the voices, too, were distinct. Furthermore, expanding ስኖሙ (sǝnnomu) to ''the form of their bodies'' is an unnecessary paraphrase; ''their forms'' or ''their beauty'' is more accurate. I have slightly smoothed the reviewer''s proposed English to maintain natural synta'
+- timestamp: '2026-11-09T19:50:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And from there I went to the ends of the earth[a], and there I saw great beasts, and they differed from one another; and the birds also differed in their appearance and their forms[c][b], and their voices also differed one from another.
+  to: From there I went to the ends of the earth, where I saw great beasts, each different from the others. The birds too differed in appearance and beauty[a], and their voices also differed from one another.
+  rationale: The current wording rightly preserves the separate emphasis on the birds’ voices. The earlier discussion leaves the intervening noun uncertain and recognizes beauty as a possibility, so I use that sense while noting the bodily-form alternative.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:36:10Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -193,3 +193,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/033/001.job-72329.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:50:03Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Enoch sees diverse great beasts at the ends of the earth, along with birds that differ in appearance, beauty, and voice.
+  meaning_decisions:
+  - source_phrase: ወስኖሙ
+    prior_rendering: and their forms
+    new_rendering: and beauty
+    rationale: The noun most naturally refers to beauty, distinguishing the birds’ visible appearance from their beauty; bodily form remains a possible sense noted for the reader.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The current wording rightly preserves the separate emphasis on the birds’ voices. The earlier discussion leaves the intervening noun uncertain and recognizes beauty as a possibility, so I use that sense while noting the bodily-form alternative.

@@ -13,24 +13,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch99.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 99, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And in those days those who are pregnant will go out and cast away their children[a], and they will abandon them; and their offspring will slip from them. And while nursing, they will cast away their children and will not return to them[e][d][c][b], and they will have no mercy on their beloved ones.
-  philosophy: optimal-equivalence
+  text: And in those days pregnant women will go out and snatch away their children[a] and abandon them, and their offspring will slip from their wombs. They will abandon their nursing children and will not return to them; they will have no mercy on their beloved ones.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The opening sequence after 'in those days' is textually difficult in the Ethiopic OCR. The rendering follows the verse's evident pattern of childbirth, violent taking, and abandonment, but some words could be understood differently, such as 'go out' or 'bring out' instead of 'seize.'
-    reason: textual_variant
-  - marker: b
-    text: The repeated references to children, infants, and beloved ones intensify the picture of judgment by portraying the collapse of ordinary family mercy.
-    reason: cultural_note
-  - marker: c
-    text: Or 'they will bring forth and seize their children'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'from among them they will strike down their infants'.
-    reason: previous_rendering
-  - marker: e
-    text: Or 'while they look on'.
-    reason: previous_rendering
+    text: The verb translated 'snatch away' is uncertain; it may mean 'tear.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: በአማንቱ መዋዕል
   chosen: in those days
@@ -195,9 +183,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And in those days those who are pregnant will go out and cast away their children[a], and they will abandon them; and their offspring will slip from them. And while nursing, they will cast away their children and will not return to them[e][d][c][b], and they will have no mercy on their beloved ones.'
-  to: 'And in those days those who are pregnant will go out and cast away their children[a], and they will abandon them; and their offspring will slip from them. And while nursing, they will cast away their children and will not return to them[e][d][c][b], and they will have no mercy on their beloved ones.'
+  from: And in those days those who are pregnant will go out and cast away their children[a], and they will abandon them; and their offspring will slip from them. And while nursing, they will cast away their children and will not return to them[e][d][c][b], and they will have no mercy on their beloved ones.
+  to: And in those days those who are pregnant will go out and cast away their children[a], and they will abandon them; and their offspring will slip from them. And while nursing, they will cast away their children and will not return to them[e][d][c][b], and they will have no mercy on their beloved ones.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they will cast them away''].'
+- timestamp: '2026-11-09T20:07:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And in those days those who are pregnant will go out and cast away their children[a], and they will abandon them; and their offspring will slip from them. And while nursing, they will cast away their children and will not return to them[e][d][c][b], and they will have no mercy on their beloved ones.
+  to: And in those days pregnant women will go out and snatch away their children[a] and abandon them, and their offspring will slip from their wombs. They will abandon their nursing children and will not return to them; they will have no mercy on their beloved ones.
+  rationale: The revisions correctly recovered pregnancy, the intransitive slipping of offspring, and nursing from earlier mistranslations. The later substitution of 'cast away' for the distinct forceful verb is not well supported, so that action is restored with a short note acknowledging its uncertainty.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:01:21Z'
@@ -222,3 +217,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/099/005.job-72908.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:46Z'
+  change_level: retranslated
+  confidence: low
+  meaning: In those days, pregnant women will violently take and abandon their children, pregnancies will fail, and nursing children will be abandoned without mercy.
+  meaning_decisions:
+  - source_phrase: ወይመሥጡ፡ ደቂቆሙ፡ ወይገድፍዎሙ
+    prior_rendering: and cast away their children, and they will abandon them
+    new_rendering: and snatch away their children and abandon them
+    rationale: The first verb denotes a forceful taking or tearing, distinct from the following verb of abandonment; rendering both as rejection obscures that distinction.
+  - source_phrase: ወእምኔሆሙ፡ ይደህፁ፡ ውሉዶሙ
+    prior_rendering: and their offspring will slip from them
+    new_rendering: and their offspring will slip from their wombs
+    rationale: The pregnancy context identifies this slipping as miscarriage; naming the womb makes the bodily image intelligible while preserving it.
+  - source_phrase: ወእንዘ፡ ይጠብዉ፡ ይገድፍዎሙ፡ ለደቂቆሙ
+    prior_rendering: And while nursing, they will cast away their children
+    new_rendering: They will abandon their nursing children
+    rationale: The nursing language identifies the children's dependence at the time of abandonment, rather than introducing a separate action whose subject is unclear in English.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The revisions correctly recovered pregnancy, the intransitive slipping of offspring, and nursing from earlier mistranslations. The later substitution of 'cast away' for the distinct forceful verb is not well supported, so that action is restored with a short note acknowledging its uncertainty.

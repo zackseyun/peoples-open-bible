@@ -12,21 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch98.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 98, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: For you men love adornment on yourselves more than women[a], and companionship more than a virgin; in kingship and in greatness and in authority and in silver and gold and purple[d][c][b], and in splendor and in food they will be poured out like water.
-  philosophy: optimal-equivalence
+  text: For you men put on more finery than women, and more colorful garments than a virgin. With all their royal power, greatness, authority, silver, gold, purple robes, splendor, and food, they will be poured out like water[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The phrases 'deeds of excess from women' and 'fellowship of excess from virgins' are difficult. The preposition literally reads 'from,' but the sense may be 'with women' and 'with virgins,' referring to indulgent or illicit association.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Purple'' likely refers to costly dyed cloth, a standard image of elite luxury and status.'
-    reason: cultural_note
-  - marker: c
-    text: The final image may mean either that these luxuries are lavished wastefully or that they themselves will dissipate like water.
+    text: The image may instead mean that their wealth and luxuries are lavished like water.
     reason: alternative_reading
-  - marker: d
-    text: Or 'For you have prepared for yourselves deeds of excess from women, and fellowship of excess from virgins;'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: እስመ
   chosen: For
@@ -225,9 +216,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For you men love adornment on yourselves more than women[a], and companionship more than a virgin; in kingship and in greatness and in authority and in silver and gold and purple[d][c][b], and in honor and in food they will be poured out like water.'
-  to: 'For you men love adornment on yourselves more than women[a], and companionship more than a virgin; in kingship and in greatness and in authority and in silver and gold and purple[d][c][b], and in splendor and in food they will be poured out like water.'
-  rationale: 'Drafter explicitly chose ''splendor'' over ''honor'' for ወክብር because this is a material luxury catalogue where visible magnificence is the operative sense, not the relational sense of ''honor''; azure substituted the drafter''s own listed alternative without engaging the rationale.'
+  from: For you men love adornment on yourselves more than women[a], and companionship more than a virgin; in kingship and in greatness and in authority and in silver and gold and purple[d][c][b], and in honor and in food they will be poured out like water.
+  to: For you men love adornment on yourselves more than women[a], and companionship more than a virgin; in kingship and in greatness and in authority and in silver and gold and purple[d][c][b], and in splendor and in food they will be poured out like water.
+  rationale: Drafter explicitly chose 'splendor' over 'honor' for ወክብር because this is a material luxury catalogue where visible magnificence is the operative sense, not the relational sense of 'honor'; azure substituted the drafter's own listed alternative without engaging the rationale.
+- timestamp: '2026-11-09T20:10:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For you men love adornment on yourselves more than women[a], and companionship more than a virgin; in kingship and in greatness and in authority and in silver and gold and purple[d][c][b], and in splendor and in food they will be poured out like water.
+  to: For you men put on more finery than women, and more colorful garments than a virgin. With all their royal power, greatness, authority, silver, gold, purple robes, splendor, and food, they will be poured out like water[a].
+  rationale: The earlier revision correctly recognized men, adornment, comparison, and colored garments; the later changes to “love” and “companionship” obscured those gains. The final image remains uncertain, so its wording is preserved with a short alternative.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-15T18:25:27Z'
@@ -252,3 +250,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/098/002.job-72895.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:06Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Men who outdo women in adornment and surround themselves with power and luxury face a fate pictured as being poured out like water.
+  meaning_decisions:
+  - source_phrase: ሥነ፡ ትወድዩ፡ ላዕሌክሙ፡ አንትሙ፡ *ዕደው፡ ፈድፋደ፡ እምአንስት
+    prior_rendering: you men love adornment on yourselves more than women
+    new_rendering: you men put on more finery than women
+    rationale: The verb describes putting or placing adornment upon oneself, rather than loving it; the comparison concerns men's greater adornment.
+  - source_phrase: ወኅብረ፡ ፈድፋደ፡ እምድንግል
+    prior_rendering: and companionship more than a virgin
+    new_rendering: and more colorful garments than a virgin
+    rationale: In this parallel with adornment, the noun denotes color, understood as colored clothing, not companionship.
+  - source_phrase: በመንንግሥት፡ ወበዕበይ፡ ወበሥልጣን፡ ወበብሩር፡ ወወርቅ፡ ወሜላት፡ ወክብር፡ ወመብልዕት፡ ከመ፡ ማይ፡ ይትከዐዉ
+    prior_rendering: in kingship and in greatness and in authority and in silver and gold and purple, and in splendor and in food they will be poured out like water
+    new_rendering: With all their royal power, greatness, authority, silver, gold, purple robes, splendor, and food, they will be poured out like water
+    rationale: The following verse favors the destruction of these men together with their possessions. The translation makes that connection intelligible, identifies purple as clothing, and preserves the water image while noting its serious alternative.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier revision correctly recognized men, adornment, comparison, and colored garments; the later changes to “love” and “companionship” obscured those gains. The final image remains uncertain, so its wording is preserved with a short alternative.

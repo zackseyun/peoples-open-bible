@@ -15,18 +15,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch69.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 69, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And these are the chiefs of their angels[a], and their names, and the commanders of their hundreds, and the commanders of their fifties[c][b], and the commanders of their tens.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'The Ge''ez lists a hierarchy by numerical units: hundreds, fifties, and tens. This likely reflects ranked divisions or ordered companies rather than simple arithmetic totals.'
-    reason: cultural_note
-  - marker: b
-    text: The possessive 'their' is repeated throughout the verse in Ge'ez. Its exact referent is supplied by the surrounding context.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'the commander of their hundreds, and the commander of their fifties, and the commander of their tens'.
-    reason: previous_rendering
+  text: These are the names of their angelic chiefs and their commanders over companies of a hundred, fifty, and ten.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: እሉ
   chosen: these
@@ -151,12 +141,18 @@ revisions:
   from: And these are the chiefs of their angels, and their names, and their commanders of hundreds, and their commanders of fifties, and their commanders of tens.
   to: And these are the chiefs of their angels, and their names, and the commanders of their hundreds, and the commanders of their fifties, and the commanders of their tens.
   rationale: 'Added articles for natural English and adjusted the possessive placement in the repeated phrases to better reflect the source structure: ''the commanders of their hundreds/fifties/tens.'''
+- timestamp: '2026-11-09T20:01:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And these are the chiefs of their angels[a], and their names, and the commanders of their hundreds, and the commanders of their fifties[c][b], and the commanders of their tens.
+  to: These are the names of their angelic chiefs and their commanders over companies of a hundred, fifty, and ten.
+  rationale: The earlier explanation of distributive command ranks is more helpful than the later emphasis on possessive placement. Making the companies explicit carries that meaning into the text and removes the need for the earlier notes.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:34Z'
   unchanged: false
   changes_summary: 'Added articles for natural English and adjusted the possessive placement in the repeated phrases to better reflect the source structure: ''the commanders of their hundreds/fifties/tens.'''
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -176,3 +172,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/069/003.job-72530.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:01:11Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The roster identifies angelic chiefs and commanders responsible for companies of a hundred, fifty, and ten.
+  meaning_decisions:
+  - source_phrase: አርእስተ፡ መላእክቲሆሙ፡ ወአስማቲሆሙ
+    prior_rendering: the chiefs of their angels, and their names
+    new_rendering: the names of their angelic chiefs
+    rationale: The verse presents a named roster, not people and names as separate kinds of objects; the reordered English makes that function clear.
+  - source_phrase: መኰንነ፡ ምእት፡ ዚአሆሙ፡ ወመኰንነ፡ ኀምሳ፡ ዚአሆሙ፡ ወመኰንነ፡ ዐሠርተ፡ ዚአሆሙ
+    prior_rendering: the commanders of their hundreds, and the commanders of their fifties, and the commanders of their tens
+    new_rendering: their commanders over companies of a hundred, fifty, and ten
+    rationale: These are ranks defined by the size of the companies commanded, not arithmetic totals belonging to the commanders.
+  footnote_kinds: {}
+  history_weighed: The earlier explanation of distributive command ranks is more helpful than the later emphasis on possessive placement. Making the companies explicit carries that meaning into the text and removes the need for the earlier notes.

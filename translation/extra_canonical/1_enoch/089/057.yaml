@@ -22,15 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I began to cry out with all my strength[a], and I called to the Lord of the sheep and showed him concerning the sheep[b], that they were being devoured by all the wild beasts.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'by all the wild beasts.' The Ge'ez expression can evoke beasts of the open country or wilderness; the image is of predatory animals attacking the flock.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'beasts of the field'.
-    reason: previous_rendering
+  text: I began to cry out with all my strength. I called to the Lord of the sheep and pointed out to him that the sheep were being devoured by all the wild beasts.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: አኃዝኩ
   chosen: I began
@@ -160,12 +153,18 @@ revisions:
   from: And I began to cry out with all my strength, and I called to the Lord of the sheep and showed him concerning the sheep, that they were being devoured by all the And I began to cry out with all my strength, and I called to the Lord of the sheep and showed him concerning the sheep, that they were being devoured by all the wild beasts..
   to: And I began to cry out with all my strength, and I called to the Lord of the sheep and showed him concerning the sheep, that they were being devoured by all the wild beasts.
   rationale: Removed the duplicated clause and corrected the ending punctuation. Retained the wording otherwise, which accurately reflects the source.
+- timestamp: '2026-11-09T20:11:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I began to cry out with all my strength[a], and I called to the Lord of the sheep and showed him concerning the sheep[b], that they were being devoured by all the wild beasts.
+  to: I began to cry out with all my strength. I called to the Lord of the sheep and pointed out to him that the sheep were being devoured by all the wild beasts.
+  rationale: The current wording already preserves the intensity of Enoch’s appeal and the predatory imagery. I clarified the awkward showing construction and dropped the misplaced notes about alternative descriptions of wild beasts.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:41Z'
   unchanged: false
   changes_summary: Removed the duplicated clause and corrected the ending punctuation. Retained the wording otherwise, which accurately reflects the source.
-
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -185,3 +184,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/057.job-72783.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:11:34Z'
+  change_level: refined
+  confidence: high
+  meaning: Enoch cries out with all his strength and appeals to the Lord about the predators devouring the sheep.
+  meaning_decisions:
+  - source_phrase: ወአርእዮ፡ በእንተ፡ አባግዕት፡ እስመ፡ ተበልዑ
+    prior_rendering: and showed him concerning the sheep, that they were being devoured
+    new_rendering: and pointed out to him that the sheep were being devoured
+    rationale: Enoch is drawing the Lord’s attention to the sheep’s plight, not merely showing something unspecified concerning them.
+  footnote_kinds: {}
+  history_weighed: The current wording already preserves the intensity of Enoch’s appeal and the predatory imagery. I clarified the awkward showing construction and dropped the misplaced notes about alternative descriptions of wild beasts.

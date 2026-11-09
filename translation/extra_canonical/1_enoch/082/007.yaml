@@ -14,27 +14,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch82.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 82, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the matter is true[a], and the reckoning is exact; for Uriel showed me the luminaries, and the paths, and the appointed times, and the years, and the days, and breathed on me—Uriel[f][e][d][c][b], to whom the Lord of all creation of the world gave command concerning the host of heaven.
-  philosophy: optimal-equivalence
+  text: This account is true, and the established reckoning is exact, for Uriel showed me the luminaries, the months, the festivals, the years[a], and the days, and breathed on me. The Lord of all creation in the world gave him charge of the host of heaven[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the careful calculation' or 'the precise account.' The Ge'ez phrase suggests deliberate exactness, fitting the calendrical material of this section.
-    reason: lexical_alternative
+    text: The word translated 'years' may mean 'seasons' instead.
+    reason: alternative_reading
   - marker: b
-    text: '''Paths'' may also be rendered ''courses,'' referring to the routes of the heavenly lights.'
-    reason: lexical_alternative
-  - marker: c
-    text: The term rendered 'appointed times' can also mean 'feasts' or 'festivals'; here the broader calendrical sense is likely.
-    reason: lexical_alternative
-  - marker: d
-    text: The word rendered 'years' is textually difficult in this OCR witness; some understand a seasonal or annual division here.
+    text: The wording about Uriel's commission is unclear; it appears to give him responsibility for the heavenly host.
     reason: textual_variant
-  - marker: e
-    text: '''Host of heaven'' may refer to the ordered heavenly array, including the celestial bodies governed in this book.'
-    reason: cultural_note
-  - marker: f
-    text: Or 'And this is the matter, and the exact reckoning of the luminaries, and of the paths, and of the appointed times, and of the years, and of the days, as Uriel showed me'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: አማን
   chosen: this is
@@ -204,9 +192,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the matter is true[a], and the reckoning is exact; for Uriel showed me the luminaries, and the paths, and the appointed times, and the years, and the days, and breathed on me—Uriel[f][e][d][c][b], to whom the Lord of all creation of the world gave command concerning the host of heaven.'
-  to: 'And the matter is true[a], and the reckoning is exact; for Uriel showed me the luminaries, and the paths, and the appointed times, and the years, and the days, and breathed on me—Uriel[f][e][d][c][b], to whom the Lord of all creation of the world gave command concerning the host of heaven.'
+  from: And the matter is true[a], and the reckoning is exact; for Uriel showed me the luminaries, and the paths, and the appointed times, and the years, and the days, and breathed on me—Uriel[f][e][d][c][b], to whom the Lord of all creation of the world gave command concerning the host of heaven.
+  to: And the matter is true[a], and the reckoning is exact; for Uriel showed me the luminaries, and the paths, and the appointed times, and the years, and the days, and breathed on me—Uriel[f][e][d][c][b], to whom the Lord of all creation of the world gave command concerning the host of heaven.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''breathed upon me''].'
+- timestamp: '2026-11-09T20:07:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the matter is true[a], and the reckoning is exact; for Uriel showed me the luminaries, and the paths, and the appointed times, and the years, and the days, and breathed on me—Uriel[f][e][d][c][b], to whom the Lord of all creation of the world gave command concerning the host of heaven.
+  to: This account is true, and the established reckoning is exact, for Uriel showed me the luminaries, the months, the festivals, the years[a], and the days, and breathed on me. The Lord of all creation in the world gave him charge of the host of heaven[b].
+  rationale: The history's corrections concerning truth, the causal connection, months, and the established reckoning are supported by the source. I kept the concrete breathing image and the selected sense 'years,' while reducing the notes to the two uncertainties that materially affect meaning.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:01:21Z'
@@ -231,3 +226,35 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/082/007.job-72682.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:19Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Enoch affirms the truth and precision of the reckoning because Uriel revealed it to him under divine authority over the heavenly host.
+  meaning_decisions:
+  - source_phrase: ወጥንቁቅ፡ ሐሳቡ፡ ዘልኩዕ
+    prior_rendering: and the reckoning is exact
+    new_rendering: and the established reckoning is exact
+    rationale: The source includes the description of the reckoning as fixed or established, in addition to its precision. The current wording omits that element.
+  - source_phrase: ወለአውራኅ
+    prior_rendering: and the paths
+    new_rendering: the months
+    rationale: The word means months, as it also does in verses 9 and 10. The earlier history correctly identified this, whereas the subsequent return to 'paths' has no support in the supplied Ge'ez.
+  - source_phrase: ወለበዓላት
+    prior_rendering: and the appointed times
+    new_rendering: the festivals
+    rationale: The word carries the sacred feast-time sense also expressed in verse 9. Keeping 'festivals' preserves that dimension of the revealed calendar.
+  - source_phrase: ዘአዘዘ፡ ሎቱ፡ እግዚእ፡ ኵሉ፡ ፍጥረት፡ ዓለም፡ ለሐይለ፡ ሰማይ
+    prior_rendering: to whom the Lord of all creation of the world gave command concerning the host of heaven
+    new_rendering: The Lord of all creation in the world gave him charge of the host of heaven
+    rationale: The clause establishes Uriel's divine commission concerning the heavenly host, which the next verse describes as authority. 'Gave him charge' communicates that responsibility naturally, while the note acknowledges the uncertain construction.
+  footnote_kinds:
+    a: alternative_meaning
+    b: textual_variant
+  history_weighed: The history's corrections concerning truth, the causal connection, months, and the established reckoning are supported by the source. I kept the concrete breathing image and the selected sense 'years,' while reducing the notes to the two uncertainties that materially affect meaning.

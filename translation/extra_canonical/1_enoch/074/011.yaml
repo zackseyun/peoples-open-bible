@@ -13,18 +13,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch74.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 74, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And their excess for the sun and the stars comes to six days[a]; in five years, at six each, it amounts for them to thirty days[c][b], and the moon falls behind the sun and the stars by thirty days.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The verse's arithmetic is compressed. The sense appears to be that over five years the sun and stars accumulate six extra days, while the moon's reckoning is thirty days shorter than theirs.
-    reason: cultural_note
-  - marker: b
-    text: '''The moon'' could also be understood as ''the month,'' since the Ge''ez term can bear either sense in calendrical contexts.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'comes to six days in five years; by six they reach them, to thirty days, and they are taken away from the sun and from the stars—thirty days for the moon.'.
-    reason: previous_rendering
+  text: The sun and the stars gain six days each year; over five years, six days a year amount to thirty days, and the moon falls thirty days behind the sun and the stars.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ምብጻሒሆሙ
   chosen: their completion
@@ -142,9 +132,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And their excess for the sun and the stars comes to six days[a]; in five years, at six each, it amounts for them to thirty days[c][b], and the moon falls behind the sun and the stars by thirty days.'
-  to: 'And their excess for the sun and the stars comes to six days[a]; in five years, at six each, it amounts for them to thirty days[c][b], and the moon falls behind the sun and the stars by thirty days.'
+  from: And their excess for the sun and the stars comes to six days[a]; in five years, at six each, it amounts for them to thirty days[c][b], and the moon falls behind the sun and the stars by thirty days.
+  to: And their excess for the sun and the stars comes to six days[a]; in five years, at six each, it amounts for them to thirty days[c][b], and the moon falls behind the sun and the stars by thirty days.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''their completion''].'
+- timestamp: '2026-11-09T20:05:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And their excess for the sun and the stars comes to six days[a]; in five years, at six each, it amounts for them to thirty days[c][b], and the moon falls behind the sun and the stars by thirty days.
+  to: The sun and the stars gain six days each year; over five years, six days a year amount to thirty days, and the moon falls thirty days behind the sun and the stars.
+  rationale: The recorded correction rightly recognized both the yearly distribution and the moon’s shortfall rather than a removal of days. The current notes obscure that straightforward calculation, and the context makes “moon,” rather than “month,” sufficiently clear.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:02:03Z'
@@ -169,3 +166,21 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/074/011.job-72620.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:05:21Z'
+  change_level: refined
+  confidence: high
+  meaning: At six days a year, the sun and stars gain thirty days over five years, leaving the moon thirty days behind.
+  meaning_decisions:
+  - source_phrase: ስሱ፡ መዋዕለ፡ ለ፭ዓመታት፡ በበስሱ፡ ይበጽሖሙ፡ ለሠላሳ፡ ዕለት
+    prior_rendering: comes to six days; in five years, at six each, it amounts for them to thirty days
+    new_rendering: gain six days each year; over five years, six days a year amount to thirty days
+    rationale: The distributive expression means six for each year; naming the yearly unit removes the ambiguity of “at six each.”
+  footnote_kinds: {}
+  history_weighed: The recorded correction rightly recognized both the yearly distribution and the moon’s shortfall rather than a removal of days. The current notes obscure that straightforward calculation, and the context makes “moon,” rather than “month,” sufficiently clear.

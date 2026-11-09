@@ -13,18 +13,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch63.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 63, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And on the day of our distress and our affliction[a], he will not save us, and we shall find no rest to believe that our Lord is faithful in all his works and in his judgments and his righteousness[c][b], and his judgments show no partiality.
-  philosophy: optimal-equivalence
+  text: And on the day of our distress and our affliction, he will not save us, and we will find no rest. We believe[a] that our Lord is faithful in all his works, his judgments, and his righteousness, and his judgments show no partiality.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The clause 'we shall find no rest to believe' is textually and syntactically difficult in the Ge'ez. It may mean 'we shall find no rest in which to trust' or 'we shall find no respite for hope.'
+    text: The connection between rest and belief is unclear in the Ge’ez; it may mean “we will find no rest in which to believe.”
     reason: alternative_reading
-  - marker: b
-    text: Literally, the final clause refers to judgment not 'lifting up the face'—an idiom for showing no favoritism or partiality.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'in all his works and in his judgments; and his judgment shows no partiality.'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: በዕለተ
   chosen: on the day of
@@ -197,6 +191,13 @@ revisions:
   from: And in the day of our trouble and our affliction, he will not save us, and we shall not find rest; for we trusted that our Lord is faithful in all his works and in his judgments and his righteousness, and his judgments show no partiality.
   to: And on the day of our distress and our affliction, he will not save us, and we shall find no rest to believe, for our Lord is faithful in all his works, his judgments, and his righteousness; and his judgments show no partiality.
   rationale: Restored 'on the day of', 'our distress', and 'we shall find no rest to believe' (theological_decisions preserved deliberate awkwardness).
+- timestamp: '2026-11-09T19:57:59Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And on the day of our distress and our affliction[a], he will not save us, and we shall find no rest to believe that our Lord is faithful in all his works and in his judgments and his righteousness[c][b], and his judgments show no partiality.
+  to: And on the day of our distress and our affliction, he will not save us, and we will find no rest. We believe[a] that our Lord is faithful in all his works, his judgments, and his righteousness, and his judgments show no partiality.
+  rationale: Earlier corrections rightly restored righteousness to the list and preserved the impartial-judgment idiom. The source does not settle how belief connects to the absence of rest, so the main text offers a coherent reading while the note preserves the serious alternative.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-14T00:00:00Z'
@@ -221,3 +222,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/063/008.job-72496.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:57:59Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The rulers acknowledge that no rescue or rest awaits them and confess that the Lord is faithful and judges without favoritism.
+  meaning_decisions:
+  - source_phrase: ወኢንረክብ፡ ዕረፍተ፡ ንእመን፡ እስመ፡ መሃይምን፡ ውእቱ፡ እግዚእነ
+    prior_rendering: and we shall find no rest to believe that our Lord is faithful
+    new_rendering: and we will find no rest. We believe that our Lord is faithful
+    rationale: The unjoined verb can introduce a fresh confession, fitting the rulers’ present recognition in verses 4 and 9. This gives intelligible English without changing belief into past trust; the uncertain purpose-clause reading remains in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: Earlier corrections rightly restored righteousness to the list and preserved the impartial-judgment idiom. The source does not settle how belief connects to the absence of rest, so the main text offers a coherent reading while the note preserves the serious alternative.

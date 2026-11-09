@@ -18,18 +18,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And he said to that man who was writing before him[a], who was one of those seven white ones, and he said to him, “Take those seventy shepherds to whom I delivered the sheep; and they, taking them[c][b], killed many more than I commanded them.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'I entrusted the sheep to them.' The verb can emphasize handing over into another's charge.
-    reason: lexical_alternative
-  - marker: b
-    text: The wording implies that the shepherds went beyond the limit of what had been commanded to them.
-    reason: alternative_reading
-  - marker: c
-    text: Or 'And he said to that man who was writing before him—one of those seven white ones—“Take'.
-    reason: previous_rendering
+  text: Then the Lord of the sheep said to the man who was writing before him, one of those seven white ones, “Take into custody those seventy shepherds to whom I entrusted the sheep. They took charge of them and killed many more than I had commanded them to kill.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ብእሲ
   chosen: man
@@ -173,12 +163,18 @@ revisions:
   from: 'And he said to that man who was writing before him—being one of those seven white ones—and he said to him: “Take those seventy shepherds to whom I delivered the sheep; and they, taking them, killed many more than I commanded them.”'
   to: And he said to that man who was writing before him, who was one of those seven white ones, and he said to him, “Take those seventy shepherds to whom I delivered the sheep; and they, taking them, killed many more than I commanded them.”
   rationale: 'Adjusted the parenthetical phrase to a more natural restrictive clause: ''who was one of those seven white ones'' instead of ''being one of those seven white ones.'''
+- timestamp: '2026-11-09T20:17:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he said to that man who was writing before him[a], who was one of those seven white ones, and he said to him, “Take those seventy shepherds to whom I delivered the sheep; and they, taking them[c][b], killed many more than I commanded them.”
+  to: Then the Lord of the sheep said to the man who was writing before him, one of those seven white ones, “Take into custody those seventy shepherds to whom I entrusted the sheep. They took charge of them and killed many more than I had commanded them to kill.”
+  rationale: The current wording correctly preserves the scribe's identity, the shepherd imagery, and the accusation of killing beyond an authorized limit. The earlier insistence on repeating the speech introduction concerns sentence form rather than meaning; the existing footnotes add no necessary reader guidance, and the restored source supports translating the complete accusation.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:21Z'
   unchanged: false
   changes_summary: 'Adjusted the parenthetical phrase to a more natural restrictive clause: ''who was one of those seven white ones'' instead of ''being one of those seven white ones.'''
-
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -198,3 +194,37 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/090/022.job-72820.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:17:12Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Lord of the sheep orders the heavenly scribe to take the seventy shepherds into custody because they killed many more sheep than he had commanded.
+  meaning_decisions:
+  - source_phrase: ወይቤሎ፡ ለዝኩ፡ ብእሲ፡ ዘይጽሕፍ፡ በቅድሜሁ፡
+    prior_rendering: And he said to that man who was writing before him
+    new_rendering: Then the Lord of the sheep said to the man who was writing before him
+    rationale: The surrounding judgment scene identifies the speaker as the Lord of the sheep; naming him makes the subject clear without adding a new identification.
+  - source_phrase: ወ*ይቤሎ፡
+    prior_rendering: and he said to him
+    new_rendering: ''
+    rationale: The repeated speech introduction resumes the same sentence after the scribe's identification; one English speech introduction conveys its full function.
+  - source_phrase: ንሥኦሙ፡ ለእሉ፡ ፸ኖሎት፡
+    prior_rendering: Take those seventy shepherds
+    new_rendering: Take into custody those seventy shepherds
+    rationale: The command summons the shepherds as prisoners before the court, as the following verse confirms; 'into custody' makes the contextual force of 'take' explicit.
+  - source_phrase: እለ፡ መጠውክዎሙ፡ አባግዐተ፡
+    prior_rendering: to whom I delivered the sheep
+    new_rendering: to whom I entrusted the sheep
+    rationale: The handing over established the shepherds' responsibility for the sheep, not merely a transfer of possession.
+  - source_phrase: ወ*ነሢኦሙ፡ ቀተሉ፡ ብዙኃነ፡ *እምዘ፡ አዘዝክዎሙ፡ እሙንቱ።
+    prior_rendering: and they, taking them, killed many more than I commanded them
+    new_rendering: They took charge of them and killed many more than I had commanded them to kill
+    rationale: The shepherds received the sheep into their charge and exceeded the commanded number of killings; the natural English sequence makes both their responsibility and their culpable excess clear.
+  footnote_kinds: {}
+  history_weighed: The current wording correctly preserves the scribe's identity, the shepherd imagery, and the accusation of killing beyond an authorized limit. The earlier insistence on repeating the speech introduction concerns sentence form rather than meaning; the existing footnotes add no necessary reader guidance, and the restored source supports translating the complete accusation.

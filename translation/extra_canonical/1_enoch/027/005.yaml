@@ -11,15 +11,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch27.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 27, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: At that time I blessed the Lord of glory[b][a], and I spoke and sang praise as is fitting for his majesty.
-  philosophy: optimal-equivalence
+  text: At that time I blessed the Lord of glory, spoke of him[a], and sang praise as is fitting for his majesty.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The phrase rendered 'I spoke of him' is textually/lexically difficult in this witness; it may also be understood as 'I spoke to him' or 'I declared [his praise].'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'and I spoke of him'.
-    reason: previous_rendering
+    text: The Ge'ez wording here is unclear; it may mean “spoke to him.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ውእቱ ጊዜ
   chosen: At that time
@@ -143,12 +140,18 @@ revisions:
   from: At that time I blessed the Lord of glory, and I declared his glory and sang praise, as is fitting for his majesty.
   to: At that time I blessed the Lord of glory, and I spoke and sang praise as is fitting for his majesty.
   rationale: Removed the added object 'his glory' after 'declared,' since the source more naturally has a separate verb 'I spoke' followed by 'and I sang.' Kept 'Lord of glory' and 'as is fitting for his majesty' as accurate and natural.
+- timestamp: '2026-11-09T19:49:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: At that time I blessed the Lord of glory[b][a], and I spoke and sang praise as is fitting for his majesty.
+  to: At that time I blessed the Lord of glory, spoke of him[a], and sang praise as is fitting for his majesty.
+  rationale: The first draft’s 'spoke of him' addresses the supplied wording more fully than the current bare 'spoke.' The later proposal to substitute 'his glory' depends on changing the given source, so the uncertainty is preserved rather than silently repaired.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:36:06Z'
   unchanged: false
   changes_summary: Removed the added object 'his glory' after 'declared,' since the source more naturally has a separate verb 'I spoke' followed by 'and I sang.' Kept 'Lord of glory' and 'as is fitting for his majesty' as accurate and natural.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -168,3 +171,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/027/005.job-72314.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:49:01Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Enoch responds by blessing the Lord of glory and honoring his majesty through speech and song.
+  meaning_decisions:
+  - source_phrase: ወተሎቱ፡ ነገርኩ
+    prior_rendering: and I spoke
+    new_rendering: spoke of him
+    rationale: The current wording omits the uncertain expression attached to the speech verb. 'Of him' is the best-supported sense recorded for the supplied reading, with 'to him' preserved as an alternative.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft’s 'spoke of him' addresses the supplied wording more fully than the current bare 'spoke.' The later proposal to substitute 'his glory' depends on changing the given source, so the uncertainty is preserved rather than silently repaired.

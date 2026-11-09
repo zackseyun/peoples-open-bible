@@ -13,21 +13,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch63.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 63, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Now they will say to them[a], ‘Our soul has had its fill of unjust gain[d][c][b], but it does not keep us from going down from the midst of it into the burden of Sheol.’
-  philosophy: optimal-equivalence
+  text: Now they will say to the angels, “Our souls have had their fill of unjust gain[a], but that cannot keep us from leaving it behind and descending into the oppressive weight of Sheol[b].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The phrase rendered 'of unjust gain' is textually and lexically difficult in the Ge'ez and may refer more broadly to wealth acquired by wrongdoing.
-    reason: lexical_alternative
+    text: The Ge’ez phrase is unclear; it seems to mean wealth acquired through wrongdoing.
+    reason: alternative_reading
   - marker: b
-    text: Or 'to the weight/heaviness of Sheol.' The image is of oppressive descent into the realm of the dead, not merely burial.
+    text: Literally, “from its midst into the weight of Sheol”; the precise image is unclear.
     reason: lexical_alternative
-  - marker: c
-    text: '''Sheol'' is retained rather than ''hell'' to preserve the ancient Jewish apocalyptic sense of the underworld.'
-    reason: cultural_note
-  - marker: d
-    text: Or 'Now they will say,'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ይእዜ
   chosen: Now
@@ -169,6 +163,13 @@ revisions:
   from: Now they will say to them, ‘Our soul has had its fill of unrighteous wealth, but it does not prevent our descent from its midst into the burden of Sheol.’
   to: Now they will say to them, ‘Our soul has had its fill of unjust gain, but it does not keep us from going down from the midst of it into the burden of Sheol.’
   rationale: Restored 3 documented drafter choices reverted to explicitly-rejected alternatives.
+- timestamp: '2026-11-09T19:57:59Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Now they will say to them[a], ‘Our soul has had its fill of unjust gain[d][c][b], but it does not keep us from going down from the midst of it into the burden of Sheol.’
+  to: Now they will say to the angels, “Our souls have had their fill of unjust gain[a], but that cannot keep us from leaving it behind and descending into the oppressive weight of Sheol[b].”
+  rationale: The revision history rightly restored the speech’s plural recipient and retained unjust gain and Sheol. The uncertainties concerning the gain phrase and the descent image remain substantial, so both receive short reader-facing notes.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-14T00:00:00Z'
@@ -193,3 +194,31 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/063/010.job-72498.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:57:59Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The rulers confess that the unjust wealth which satisfied them cannot prevent their descent into Sheol.
+  meaning_decisions:
+  - source_phrase: ይእዜ፡ ይብልዎሙ
+    prior_rendering: Now they will say to them
+    new_rendering: Now they will say to the angels
+    rationale: The object suffix preserves directed speech; the angels of punishment introduced in verse 1 are the contextual recipients.
+  - source_phrase: ትጸግብ፡ ነፍስነ
+    prior_rendering: Our soul has had its fill
+    new_rendering: Our souls have had their fill
+    rationale: The singular with a plural possessive speaks collectively for the rulers; English naturally expresses this distributively while retaining the soul imagery.
+  - source_phrase: ወኢትከልእ፡ ወረደተነ፡ እምልባ፡ ለክበደ፡ ሲኦል
+    prior_rendering: but it does not keep us from going down from the midst of it into the burden of Sheol
+    new_rendering: but that cannot keep us from leaving it behind and descending into the oppressive weight of Sheol
+    rationale: The best contextual sense contrasts their satisfying wealth with the descent it cannot avert. The rendering makes that movement intelligible while preserving Sheol’s weight; a note acknowledges the uncertain image.
+  footnote_kinds:
+    a: alternative_meaning
+    b: literal_wording
+  history_weighed: The revision history rightly restored the speech’s plural recipient and retained unjust gain and Sheol. The uncertainties concerning the gain phrase and the descent image remain substantial, so both receive short reader-facing notes.

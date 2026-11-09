@@ -8,6 +8,14 @@ the Book of Enoch (1 Enoch / Ethiopic Enoch / Mashafa Henok /
 applies the three-zone scholarly-source policy from
 [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md).
 
+> **Current status (2026-11-09): all 1,061 verses present, meaning-first.**
+> The 93 verses lost at page breaks were restored from the page transcription,
+> 27 cut-off verses were completed, and every verse was retranslated meaning-first
+> from the Ge'ez. Ge'ez accepted by the October-November source review is frozen
+> and checked by `tests/test_enoch_current_text.py`. No human specialist has
+> reviewed the result. See [docs/ENOCH_MEANING_FIRST_2026-11.md](docs/ENOCH_MEANING_FIRST_2026-11.md);
+> the dated sections below are history.
+
 > **Status (2026-10-02): translated corpus is incomplete.** The read-only
 > primary-source inventory finds 53 absent verse files in chapters 1–35,
 > and 209 recovered-primary missing-unit leads across all 108 chapters.
@@ -396,3 +404,25 @@ nominal “their form” are retained without invented antecedents. LOW qualifie
 the compressed selected-edition relation, not unread fidels. The dated local
 ledger is479/1061 units and37/108 complete imported chapter reviews; exact-head
 CI, main merge and public delivery remain separate pending gates.
+
+
+## Batch35 individual95/96 review branch (2026-10-31)
+
+[Batch35](docs/ENOCH_BATCH35_2026-10-31.md) locally installs exact paired95:1–5
+and96:1 treatments, retaining the explicit95:6–7 and96:2–8 holds. No missing
+records or fullchapter certificates are added. A separately proven structural
+transaction restores95's actual237–238 sourcewindow with zero new count or
+language votes. Expected local ledger485/1061 and37/108 is not a full-book or
+public-release certificate. Main merge/publication is held under the user's
+Azure-only instruction because the existing canonical publisher invokes AWS.
+
+## Batch37 individual97:1 correction (2026-11-02)
+
+[Batch37](docs/ENOCH_BATCH37_2026-11-02.md) replaces only97:1 with a fresh
+exact whole-source/English/both-explanations pair. It corrects the selected
+Gaml order and sinners-noun Alf order, preserves the reproach noun's printed
+spelling, and retains explicit adverse drafts and withdrawn v1 approval.
+The existing10-unit chapter count and other97 treatments remain retained;
+no new chapter/count/publication approval is inferred. Local source coverage
+remains486/1061 units and37 complete selected-critical chapters, not full-book
+completion. AWS-triggering main merges and Azure activation remain held.

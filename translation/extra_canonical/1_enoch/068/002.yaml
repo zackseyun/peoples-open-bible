@@ -11,18 +11,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch68.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 68, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And on that day Michael answered[a], saying to Raphael, “The power of the spirit seizes me and provokes me to anger because of the severity of the judgment concerning the hidden secrets. Who is there that can endure the severe judgment that has been executed[c][b], and before which they melt away?”
-  philosophy: optimal-equivalence
+  text: On that day Michael answered Raphael, “The power of the spirit seizes me and provokes me to anger because these hidden things are so terrible to hear[a]. Who can endure the severe judgment that has been carried out, before which they melt away?”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ge'ez text of this line is difficult, and the clause rendered 'because of the severity of the judgment concerning these hidden things' may also be understood more literally as a terrible matter 'for the ear' concerning hidden things.
-    reason: textual_variant
-  - marker: b
-    text: Or 'who can bear the severe thing that has been done?' The wording may refer either to the judgment itself or to the revelation of it.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'drives me on'.
-    reason: previous_rendering
+    text: The Ge’ez is unclear here; Michael may be reacting to the severity of the judgment itself or to the terrible report of it.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: አውሥአ
   chosen: answered
@@ -175,9 +169,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And on that day Michael answered[a], saying to Raphael, “The power of the spirit seizes me and provokes me because of the severity of the judgment concerning the hidden secrets. Who is there that can endure the severe judgment that has been executed[c][b], and before which they melt away?”'
-  to: 'And on that day Michael answered[a], saying to Raphael, “The power of the spirit seizes me and provokes me to anger because of the severity of the judgment concerning the hidden secrets. Who is there that can endure the severe judgment that has been executed[c][b], and before which they melt away?”'
-  rationale: 'Gemini tier-3 had correctly identified the causative-of-mə''a (anger-provocation) sense and rendered ''provokes me to anger''; azure silently dropped ''to anger'', leaving truncated ''provokes me'' that strips the emotional/judicial content. Azure engaged neither drafter nor adjudicator rationale.'
+  from: And on that day Michael answered[a], saying to Raphael, “The power of the spirit seizes me and provokes me because of the severity of the judgment concerning the hidden secrets. Who is there that can endure the severe judgment that has been executed[c][b], and before which they melt away?”
+  to: And on that day Michael answered[a], saying to Raphael, “The power of the spirit seizes me and provokes me to anger because of the severity of the judgment concerning the hidden secrets. Who is there that can endure the severe judgment that has been executed[c][b], and before which they melt away?”
+  rationale: Gemini tier-3 had correctly identified the causative-of-mə'a (anger-provocation) sense and rendered 'provokes me to anger'; azure silently dropped 'to anger', leaving truncated 'provokes me' that strips the emotional/judicial content. Azure engaged neither drafter nor adjudicator rationale.
+- timestamp: '2026-11-09T20:00:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And on that day Michael answered[a], saying to Raphael, “The power of the spirit seizes me and provokes me to anger because of the severity of the judgment concerning the hidden secrets. Who is there that can endure the severe judgment that has been executed[c][b], and before which they melt away?”
+  to: On that day Michael answered Raphael, “The power of the spirit seizes me and provokes me to anger because these hidden things are so terrible to hear[a]. Who can endure the severe judgment that has been carried out, before which they melt away?”
+  rationale: The revisions correctly recovered provoked anger rather than mere inward propulsion, and I retain that gain. The earlier notes acknowledge the difficult references to hearing; I give those references a place in the main text without claiming certainty.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-15T18:54:35Z'
@@ -202,3 +203,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/068/002.job-72524.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:00:34Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Michael is seized by the spirit’s power, becomes indignant at the dreadful things he hears, and questions how anyone can endure the judgment before which the condemned melt away.
+  meaning_decisions:
+  - source_phrase: በእንተ፡ ዕፁቡ፡ ለእዝኒ፡ እንተ፡ ኅቡኣት፡ ለእዝኒ
+    prior_rendering: because of the severity of the judgment concerning the hidden secrets
+    new_rendering: because these hidden things are so terrible to hear
+    rationale: The repeated references to the ear make hearing part of the best-supported sense. The following question supplies the judicial context, while the note preserves the uncertainty between the judgment and its terrible disclosure.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The revisions correctly recovered provoked anger rather than mere inward propulsion, and I retain that gain. The earlier notes acknowledge the difficult references to hearing; I give those references a place in the main text without claiming certainty.

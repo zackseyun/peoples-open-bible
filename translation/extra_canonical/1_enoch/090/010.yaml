@@ -18,18 +18,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And it looked at them[a], [and their eyes were opened,] and it cried out to the sheep and said to them[c][b], “Look!” and they all ran to it.
-  philosophy: optimal-equivalence
+  text: And it looked at them, and their eyes were opened[a]. It cried out to the sheep, and the rams saw it and all ran to it.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The clause 'their eyes were opened' is bracketed because the supplied Ethiopic witness marks it as uncertain or textually unstable, though it fits a recurring motif in this vision cycle.
+    text: The words “and their eyes were opened” are uncertain in the Ge'ez.
     reason: textual_variant
-  - marker: b
-    text: The final pronoun could also be rendered 'him' if the singular figure is understood as a personalized leader within the animal vision.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'And I saw among them that [their eyes were opened], and it cried out to the sheep and said to them, “Look!” And all of them ran to it.'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ወርእየ
   chosen: And I saw
@@ -146,12 +140,18 @@ revisions:
   from: And it looked at them, [and their eyes were opened,] and it cried out to the sheep, and the rams saw it, and they all ran to it.
   to: And it looked at them, [and their eyes were opened,] and it cried out to the sheep and said to them, “Look!” and they all ran to it.
   rationale: Added the omitted speech verb and imperative ('and said to them, “Look!”') to reflect ወይቤላት ርእይዎ. Removed 'the rams saw it,' which does not match the source here. Smoothed punctuation for natural formal English while preserving the bracketed clause.
+- timestamp: '2026-11-09T20:18:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And it looked at them[a], [and their eyes were opened,] and it cried out to the sheep and said to them[c][b], “Look!” and they all ran to it.
+  to: And it looked at them, and their eyes were opened[a]. It cried out to the sheep, and the rams saw it and all ran to it.
+  rationale: The earlier revision correctly recognized “the rams saw it”; the later return to direct speech is not supported by the Ge'ez noun and verb. The opened-eyes clause remains, with its uncertainty explained in a short note rather than brackets, while unnecessary pronoun and parsing notes are dropped.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:19Z'
   unchanged: false
   changes_summary: Added the omitted speech verb and imperative ('and said to them, “Look!”') to reflect ወይቤላት ርእይዎ. Removed 'the rams saw it,' which does not match the source here. Smoothed punctuation for natural formal English while preserving the bracketed clause.
-
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -171,3 +171,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/090/010.job-72808.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:18:46Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The sheep with the great horn looks toward the others, whose eyes are opened, and cries out to the flock; the rams see it and run to it.
+  meaning_decisions:
+  - source_phrase: ወይቤላት፡ ርእይዎ፡
+    prior_rendering: and said to them, “Look!”
+    new_rendering: and the rams saw it
+    rationale: ይቤላት names the rams, and ርእይዎ says that they saw it. The clause describes their response rather than a spoken command.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier revision correctly recognized “the rams saw it”; the later return to direct speech is not supported by the Ge'ez noun and verb. The opened-eyes clause remains, with its uncertainty explained in a short note rather than brackets, while unnecessary pronoun and parsing notes are dropped.

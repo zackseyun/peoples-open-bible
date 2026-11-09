@@ -11,18 +11,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch68.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 68, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: 'And it came to pass[a], when he stood before the Lord of Spirits, that Michael said this to Raphael: “He will not be for them before the eye of the Lord, for the Lord of Spirits is angry with them[c][b], because they act as if they were the Lord.”'
-  philosophy: optimal-equivalence
+  text: 'When Michael stood before the Lord of Spirits, he said to Raphael: “He[a] will not take their part in the sight of the Lord, for the Lord of Spirits is angry with them because they act as if they were the Lord[b].”'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The clause 'He will not be for them before the eye of the Lord' is difficult. It likely means that no support or advocacy will stand for them in God's presence.
-    reason: lexical_alternative
+    text: It is unclear who “he” refers to.
+    reason: alternative_reading
   - marker: b
-    text: Or, 'because they act like lords.' The Ge'ez wording is terse and may accuse them of assuming divine or ruling authority that is not theirs.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'He will not be for them'.
-    reason: previous_rendering
+    text: Or, “because they act like lords.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ወኮነ፡ ሶበ፡
   chosen: And it came to pass, when
@@ -146,12 +143,18 @@ revisions:
   from: 'And it came to pass, when he stood before the Lord of Spirits, that Michael said this to Raphael: “He will not take their part before the eye of the Lord, for the Lord of Spirits is angry with them, because they act as if they were the Lord.”'
   to: 'And it came to pass, when he stood before the Lord of Spirits, that Michael said this to Raphael: “He will not be for them before the eye of the Lord, for the Lord of Spirits is angry with them, because they act as if they were the Lord.”'
   rationale: Revised 'will not take their part' to the more literal and less interpretive 'will not be for them,' since the source does not explicitly state advocacy. Kept the rest substantially unchanged.
+- timestamp: '2026-11-09T20:00:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And it came to pass[a], when he stood before the Lord of Spirits, that Michael said this to Raphael: “He will not be for them before the eye of the Lord, for the Lord of Spirits is angry with them[c][b], because they act as if they were the Lord.”'
+  to: 'When Michael stood before the Lord of Spirits, he said to Raphael: “He[a] will not take their part in the sight of the Lord, for the Lord of Spirits is angry with them because they act as if they were the Lord[b].”'
+  rationale: The earlier lexical revision recognized the support or advocacy idiom, but a later revision returned to wording that obscured it. I recover that meaning while preserving the uncertain pronoun and the serious alternative understanding of the accusation.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:33Z'
   unchanged: false
   changes_summary: Revised 'will not take their part' to the more literal and less interpretive 'will not be for them,' since the source does not explicitly state advocacy. Kept the rest substantially unchanged.
-
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -171,3 +174,23 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/068/004.job-72526.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:00:34Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Michael announces the refusal of support for those who have angered the Lord of Spirits by acting as if they were the Lord.
+  meaning_decisions:
+  - source_phrase: ወኢይከውን፡ ሎሙ፡ በውስተ፡ ዓይነ፡ እግዚአ
+    prior_rendering: He will not be for them before the eye of the Lord
+    new_rendering: He will not take their part in the sight of the Lord
+    rationale: The construction means being on someone’s side or taking their part, not merely existing for them. The judicial force belongs in the main text, while the unidentified singular subject remains unidentified.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: The earlier lexical revision recognized the support or advocacy idiom, but a later revision returned to wording that obscured it. I recover that meaning while preserving the uncertain pronoun and the serious alternative understanding of the accusation.

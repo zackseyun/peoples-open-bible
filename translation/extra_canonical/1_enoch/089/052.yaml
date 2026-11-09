@@ -22,18 +22,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And one of them escaped and was not killed[a]; and it cried out over the sheep, and they wanted to kill it, but the Lord of the sheep saved it from among the sheep[c][b], and brought it up to me and set it down.
-  philosophy: optimal-equivalence
+  text: And one of them escaped and was not killed; it sprang up and cried out to the sheep[a]. They wanted to kill it, but the Lord of the sheep saved it from among the sheep, brought it up to me, and set it down.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'cried out to the sheep' or 'cried out concerning the sheep'; the Ge'ez preposition can be taken more than one way here.
-    reason: lexical_alternative
-  - marker: b
-    text: '''For the sheep'' may also mean ''to the sheep'' or ''on behalf of the sheep.'''
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'saved it from them for the sheep'.
-    reason: previous_rendering
+    text: Or 'cried out against the sheep' or 'cried out over them.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ድኅነ
   chosen: escaped
@@ -186,9 +180,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And one of them escaped and was not killed[a]; and it cried out over the sheep, and they wanted to kill it, but the Lord of the sheep saved it from among the sheep[c][b], and brought it up to me and set it down.'
-  to: 'And one of them escaped and was not killed[a]; and it cried out over the sheep, and they wanted to kill it, but the Lord of the sheep saved it from among the sheep[c][b], and brought it up to me and set it down.'
+  from: And one of them escaped and was not killed[a]; and it cried out over the sheep, and they wanted to kill it, but the Lord of the sheep saved it from among the sheep[c][b], and brought it up to me and set it down.
+  to: And one of them escaped and was not killed[a]; and it cried out over the sheep, and they wanted to kill it, but the Lord of the sheep saved it from among the sheep[c][b], and brought it up to me and set it down.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''sprang up''].'
+- timestamp: '2026-11-09T20:11:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And one of them escaped and was not killed[a]; and it cried out over the sheep, and they wanted to kill it, but the Lord of the sheep saved it from among the sheep[c][b], and brought it up to me and set it down.
+  to: And one of them escaped and was not killed; it sprang up and cried out to the sheep[a]. They wanted to kill it, but the Lord of the sheep saved it from among the sheep, brought it up to me, and set it down.
+  rationale: The earlier grammatical correction correctly identified the sheep as those from whom the messenger is saved, not the beneficiaries of its rescue. The source also contains the previously omitted motion verb, while the direction and force of the cry remain open enough to warrant a note.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:02:11Z'
@@ -213,3 +214,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/052.job-72778.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:11:52Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: One messenger survives and cries out to the sheep, which want to kill it, but their Lord saves it and brings it up to Enoch.
+  meaning_decisions:
+  - source_phrase: ወቀነጸ
+    prior_rendering: ''
+    new_rendering: it sprang up
+    rationale: The motion verb is present in the supplied Ge'ez and must be translated rather than omitted.
+  - source_phrase: ወጸርኀ፡ ዲበ፡ አባግዕ
+    prior_rendering: and it cried out over the sheep
+    new_rendering: and cried out to the sheep
+    rationale: The messenger's cry is directed toward the sheep in the sequence of proclamation and attempted killing; the preposition also permits an accusatory cry or a cry over them, so those possibilities are noted.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier grammatical correction correctly identified the sheep as those from whom the messenger is saved, not the beneficiaries of its rescue. The source also contains the previously omitted motion verb, while the direction and force of the cry remain open enough to warrant a note.

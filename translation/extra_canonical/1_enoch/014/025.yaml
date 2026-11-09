@@ -11,8 +11,7 @@ source:
   - 78
   confidence: medium
   validation: scan_grounded_codex_review
-  note: Charles1906 selected Geʿez critical edition; full unit recovered across chapter
-    page windows. sources/enoch/ethiopic/transcribed/charles_1906/ch15.txt
+  note: Charles1906 selected Geʿez critical edition; full unit recovered across chapter page windows. sources/enoch/ethiopic/transcribed/charles_1906/ch15.txt
   section: Book of the Watchers
   additional_translation_input:
     language: Greek
@@ -35,31 +34,19 @@ enoch_witnesses:
     text: . . . . ወአንሥአኒ፡ ወአቅረበኒ፡ እስከ፡ ኆኅት፤ ወአንሰ፡ ገጽየ፡ ታሕተ፡ †አኔጽር።†
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch15.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch15.txt via tools/enoch/verse_parser.py
 source_warnings:
-- Continued chapter 14 from sources/enoch/ethiopic/transcribed/charles_1906/ch15.txt
-  before its next chapter header.
-- Dillmann 1851 chapter OCR exists for chapter 14, but verse-aligned extraction is
-  not yet implemented in this prompt builder.
+- Continued chapter 14 from sources/enoch/ethiopic/transcribed/charles_1906/ch15.txt before its next chapter header.
+- Dillmann 1851 chapter OCR exists for chapter 14, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And one of the holy ones came to me and raised me.[a] He lifted me up and
-    brought me as far as the door; but I bowed my face downward.[b]
-  philosophy: optimal-equivalence
+  text: He[a] raised me up and brought me as far as the door; but I kept my face lowered[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Charles1906 prints a lacuna at the opening of the Geʿez unit. The opening
-      about one of the holy ones coming and raising Enoch is translated from the bracketed
-      Greek parallel printed on PDF79; the edition explicitly says that Greek supplies
-      this Geʿez lacuna. It is not invented Geʿez, a modern English substitution,
-      or a fresh manuscript transcription.
+    text: The beginning of this verse is missing in the Ge'ez; the Greek identifies a holy one who comes to Enoch.
     reason: textual_variant
   - marker: b
-    text: The final printed Geʿez verb is daggered. Apparatus30 calls it untranslatable
-      and suggests a corruption corresponding to Greek ἔκυφον. The final clause provisionally
-      follows printed Greek ἐγὼ δὲ τὸ πρόσωπόν μου κάτω ἔκυφον, but I bowed my face
-      downward. This is an explicitly Greek-supported repair, not a certified reading
-      of the difficult Geʿez verb.
+    text: The final Ge'ez verb is unclear; the Greek says that Enoch bowed his face downward.
     reason: textual_variant
 lexical_decisions: []
 theological_decisions:
@@ -99,20 +86,24 @@ review_history:
   certifies_this_candidate: false
 source_correction:
   scope: 1 Enoch14:19–25 completion
-  primary_edition: Charles1906Ethiopic with explicitly identified printed Greek support
-    at24/25
+  primary_edition: Charles1906Ethiopic with explicitly identified printed Greek support at24/25
   baseline_sha256: null
   publication_approval: true
   human_specialist_certification: false
   fresh_manuscript_reading: false
   dss_reading_used: false
-  review_basis: Bounded Codex review of actual Charles1906 scans, with explicitly
-    identified Greek support at24/25 and uncertain readings disclosed
+  review_basis: Bounded Codex review of actual Charles1906 scans, with explicitly identified Greek support at24/25 and uncertain readings disclosed
 revisions:
 - timestamp: '2026-10-08'
   category: bounded_source_completion_candidate
-  rationale: Restore clipped14:19 and absent20–25; disclose critical marks and original-language
-    Greek support rather than copy modern English or invent missing Geʿez.
+  rationale: Restore clipped14:19 and absent20–25; disclose critical marks and original-language Greek support rather than copy modern English or invent missing Geʿez.
+- timestamp: '2026-11-09T20:44:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And one of the holy ones came to me and raised me.[a] He lifted me up and brought me as far as the door; but I bowed my face downward.[b]
+  to: He[a] raised me up and brought me as far as the door; but I kept my face lowered[b].
+  rationale: The current notes identify a missing Ge'ez opening and a Greek-based repair at the ending. The new text translates only the surviving Ge'ez content, leaving the helper unnamed and the precise final action uncertain.
 cross_check:
   status: high_agreement
   reviewer_model: gpt-6.1-sol
@@ -121,3 +112,27 @@ cross_check:
   verdict: accept
   human_specialist_certification: false
   fresh_manuscript_reading: false
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:44:06Z'
+  change_level: retranslated
+  confidence: low
+  meaning: An unnamed figure raises Enoch and brings him to the doorway, while Enoch keeps his face lowered.
+  meaning_decisions:
+  - source_phrase: . . . . ወአንሥአኒ፡ ወአቅረበኒ፡ እስከ፡ ኆኅት
+    prior_rendering: And one of the holy ones came to me and raised me. He lifted me up and brought me as far as the door
+    new_rendering: He raised me up and brought me as far as the door
+    rationale: The surviving Ge'ez does not identify the subject or narrate his arrival. The Greek-supplied opening belongs in a footnote, and the Ge'ez contains only one raising action.
+  - source_phrase: ወአንሰ፡ ገጽየ፡ ታሕተ፡ †አኔጽር†
+    prior_rendering: but I bowed my face downward
+    new_rendering: but I kept my face lowered
+    rationale: The words about Enoch's face being downward are clear, but the final verb is not. The translation preserves that posture without treating the Greek action of bowing as a certain Ge'ez reading.
+  footnote_kinds:
+    a: textual_variant
+    b: textual_variant
+  history_weighed: The current notes identify a missing Ge'ez opening and a Greek-based repair at the ending. The new text translates only the surviving Ge'ez content, leaving the helper unnamed and the precise final action uncertain.

@@ -4,9 +4,10 @@ Maintained by [peoplesbible.com](https://peoplesbible.com), which
 stewards the public revision process, hosting infrastructure, and this
 open-source project.
 
-This is the people’s Bible — the most accurate-to-original translation
-from Hebrew, Greek, and Latin into English that we can build. Every
-decision is publicly defensible and publicly revisable. Our data,
+This is the people’s Bible: a translation from Hebrew, Greek, and Latin
+into English that aims to convey what each passage truly means, what its
+author, and God through its author, was saying to the people who first
+heard it. Every decision is publicly defensible and publicly revisable. Our data,
 methods, and code are published as openly as possible.
 
 [Read the Bible](https://peoplesbible.com/bible/) ·
@@ -77,11 +78,12 @@ Two verses that illustrate what POB does differently, and why.
 
 | | Rendering |
 |---|---|
-| **POB** | "**Breath of breaths**, says **Qoheleth**; breath of breaths, all is **mere breath**." |
+| **POB** | "**Sheer vapor**, says **Qoheleth**; sheer vapor! Everything is **vapor**." |
 | NKJV | "**Vanity of vanities**, says the Preacher; Vanity of vanities, all is vanity." |
 | NIV | "**Meaningless! Meaningless!** says the Teacher. Utterly meaningless! Everything is meaningless." |
 
-- **The key word, *hevel* (`הֶבֶל`) — "breath" / "mere breath."** Not simply "vanity" or "meaninglessness." The Hebrew image is concrete: breath, vapor, something real but fleeting, ungraspable, and gone almost as soon as it appears.
+- **The key word, *hevel* (`הֶבֶל`) — "vapor."** Not simply "vanity" or "meaninglessness." The Hebrew image is concrete: vapor, breath, something real but fleeting, ungraspable, and gone almost as soon as it appears.
+- **Why "sheer vapor" and not "vapor of vapors"?** The Hebrew doubling (*hevel havalim*) is a superlative, the way "king of kings" means the highest king. "Sheer vapor" carries that force in English; the footnote gives the literal form.
 - **Why not "vanity"?** It is historically familiar, but modern readers often hear pride or self-obsession, which is not Qoheleth's point.
 - **Why not "meaninglessness"?** It over-decides the theology and pushes the verse toward nihilism. *Hevel* is broader: transient, elusive, ironic, and frustrating.
 - **The speaker, *Qoheleth* (`קֹהֶלֶת`) — "Qoheleth."** This preserves the Hebrew title/name instead of narrowing it immediately to "Preacher" or "Teacher."
@@ -94,18 +96,18 @@ Two verses that illustrate what POB does differently, and why.
 | NKJV | "Now Adam **knew Eve his wife**, and she conceived and bore Cain, and said, 'I have **acquired** a man from the LORD.'" |
 | NIV | "Adam **made love to his wife Eve**, and she became pregnant and gave birth to Cain." |
 
-- **The first verb, *yada* (`יָדַע`) — "knew."** In context it functions as a euphemism for sexual relations—the conception that follows makes that clear—but the Hebrew image is still "knowing." POB preserves that image instead of replacing it with an explanation.
+- **The first verb, *yada* (`יָדַע`) — "knew."** In context it refers to sexual union—the conception that follows makes that clear—and "knew" carries that meaning with the Hebrew's own reserve. POB keeps it.
 - **Why not "made love"?** The NIV makes the sexual meaning explicit, but the modern English phrase also suggests an emotional or romantic nuance that the Hebrew verb does not itself state. "Knew" lets the narrative supply the sexual meaning without adding that extra shading.
 - **Eve's word, *qaniti* (`קָנִיתִי`) — "I have acquired."** This keeps the lexical link to Cain's name. Renderings such as "brought forth" explain the birth but weaken the Hebrew wordplay.
 - **The divine name (`יהוה`) — "Yahweh."** This makes the name visible rather than hiding it behind the typographic substitute "LORD."
 
 ### The philosophy behind these choices
 
-POB's choice is **source-image accuracy in the main text + contextual understanding in a companion layer** — not traditional smoothing, theological over-resolution, or pastoral softening of the translation itself.
+POB's choice is **the true meaning in the main text, with the literal wording one tap away in a footnote**. The goal is what the author, and God through the author, meant to the first hearers: not the shape of the Hebrew or Greek sentence for its own sake, and not traditional smoothing, theological over-resolution, or pastoral softening either.
 
-Ecclesiastes 1:2 shows why this matters: *hevel* is not just "vanity" and not simply "meaninglessness." It is breath — real, visible for a moment, impossible to hold. Genesis 4:1 shows the same principle in narrative: the Hebrew says Adam "knew" Eve, while the context communicates the sexual meaning. The translation preserves the source-text image rather than replacing it with a more explicit modern phrase.
+Ecclesiastes 1:2 shows the first half: the doubled Hebrew phrase is a superlative, so the text says "sheer vapor" and the footnote keeps "vapor of vapors." Genesis 4:1 shows the second: a plainer, more modern phrase is not automatically closer to the meaning. "Knew" holds more of it than "made love to", so it stays, just as Psalm 23 keeps "He restores my soul" and "the valley of the shadow of death."
 
-In both cases, familiar renderings preserve something valuable, but they also make hidden choices for the reader. POB keeps the core source-language pressure in the sentence itself, then uses footnotes, YAML rationale, the in-app **Original context** AI tool, and public discussion to make every choice visible and defensible.
+POB then uses footnotes, YAML rationale, the in-app **Original context** AI tool, and public discussion to make every choice visible and defensible. See [DOCTRINE.md](DOCTRINE.md#translation-philosophy) and [the November 2026 retranslation](docs/MEANING_FIRST_TRANSLATION_2026-11.md).
 
 ## License
 

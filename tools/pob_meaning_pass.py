@@ -672,6 +672,8 @@ def cmd_report(args: argparse.Namespace) -> int:
               "content_filtered": 0}
     filtered_ids: list[str] = []
     for f in sorted(run_dir.rglob("*.json")):
+        if "bundles" in f.relative_to(run_dir).parts:
+            continue
         res = json.loads(f.read_text())
         totals["cost"] += res.get("estimated_cost_usd") or 0
         totals["missing"] += len(res.get("missing") or [])
@@ -730,6 +732,8 @@ def cmd_apply(args: argparse.Namespace) -> int:
     if getattr(args, "hold", None):
         hold = {ln.split("#")[0].strip() for ln in pathlib.Path(args.hold).read_text().splitlines()} - {""}
     for f in sorted(run_dir.rglob("*.json")):
+        if "bundles" in f.relative_to(run_dir).parts:
+            continue
         res = json.loads(f.read_text())
         by_id = {v["id"]: v for v in res.get("verses") or []}
         for rel in res.get("paths") or []:
@@ -761,7 +765,7 @@ def cmd_apply(args: argparse.Namespace) -> int:
             if tr["text"] != old_text.strip() or [(n["marker"], n["text"]) for n in footnotes] != old_notes:
                 rec.setdefault("revisions", []).append({
                     "timestamp": res["timestamp"],
-                    "adjudicator": "gpt-6.1-sol-meaning-pass",
+                    "adjudicator": res.get("adjudicator") or "gpt-6.1-sol-meaning-pass",
                     "reviewer_model": res.get("model"),
                     "category": "meaning_retranslation",
                     "from": old_text,
@@ -792,6 +796,104 @@ def cmd_apply(args: argparse.Namespace) -> int:
     return 0
 
 
+# --------------------------------------------------------------------------
+# export / import: translate verses Azure refuses with another model
+# --------------------------------------------------------------------------
+
+def cmd_export(args: argparse.Namespace) -> int:
+    """Write one request bundle per chapter for verses a run lost to the content
+    filter (and, with --include-missing, verses still missing)."""
+    src_dir = STATE / args.run
+    out_dir = STATE / args.out_run / "bundles"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (STATE / args.out_run / "system.md").write_text(PROMPT_PATH.read_text(encoding="utf-8"), encoding="utf-8")
+    (STATE / args.out_run / "output.schema.json").write_text(json.dumps(OUTPUT_SCHEMA, indent=1))
+    n_bundles = n_verses = 0
+    for f in sorted(src_dir.rglob("*.json")):
+        res = json.loads(f.read_text())
+        want = set(res.get("content_filtered") or [])
+        if args.include_missing:
+            want |= set(res.get("missing") or [])
+        if not want:
+            continue
+        paths = [ROOT / rel for rel in res.get("paths") or []]
+        targets = [p for p in paths if load_yaml(p).get("id") in want]
+        if not targets:
+            continue
+        bdir, ch = targets[0].parent.parent, int(targets[0].parent.name)
+        files = chapter_files(bdir, ch)
+        ctxs = [verse_context(p) for p in targets]
+        label = load_yaml(files[0]).get("reference", "").rsplit(" ", 1)[0] or bdir.name
+        stem = f"{ch:03d}_{verse_num(targets[0]):03d}-{verse_num(targets[-1]):03d}"
+        dest = out_dir / bdir.relative_to(TRANSLATION)
+        dest.mkdir(parents=True, exist_ok=True)
+        (dest / f"{stem}.request.md").write_text(build_user_message(label, ch, chapter_text(files), ctxs), encoding="utf-8")
+        (dest / f"{stem}.meta.json").write_text(json.dumps({
+            "label": label, "chapter": ch, "ids": [c["id"] for c in ctxs],
+            "paths": [str(p.relative_to(ROOT)) for p in targets], "from": str(f.relative_to(STATE))}, indent=1))
+        n_bundles += 1
+        n_verses += len(targets)
+    print(f"bundles={n_bundles} verses={n_verses} -> {out_dir}")
+    return 0
+
+
+def cmd_import(args: argparse.Namespace) -> int:
+    """Turn <stem>.out.json answers next to each bundle into run results."""
+    run_dir = STATE / args.run
+    system = PROMPT_PATH.read_text(encoding="utf-8")
+    ok = bad = 0
+    for meta_path in sorted((run_dir / "bundles").rglob("*.meta.json")):
+        meta = json.loads(meta_path.read_text())
+        answer = meta_path.with_name(meta_path.name.replace(".meta.json", ".out.json"))
+        if not answer.exists():
+            print(f"no answer: {answer.relative_to(run_dir)}")
+            bad += 1
+            continue
+        try:
+            parsed = json.loads(answer.read_text())
+        except json.JSONDecodeError as exc:
+            print(f"unparseable: {answer.relative_to(run_dir)}: {exc}")
+            bad += 1
+            continue
+        got, problems = {}, {}
+        for v in parsed.get("verses") or []:
+            errs = validate_verse(v)
+            if v.get("id") in meta["ids"] and not errs:
+                got[v["id"]] = v
+            elif v.get("id") in meta["ids"]:
+                problems[v["id"]] = errs
+        missing = [i for i in meta["ids"] if i not in got]
+        if problems:
+            print(f"invalid in {answer.relative_to(run_dir)}: {problems}")
+        rel = meta_path.parent.relative_to(run_dir / "bundles")
+        out = run_dir / rel / meta_path.name.replace(".meta.json", ".json")
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(json.dumps({
+            "run": args.run,
+            "adjudicator": args.adjudicator,
+            "prompt_id": PROMPT_ID,
+            "prompt_sha256": sha256(system),
+            "deployment": args.deployment,
+            "model": args.model,
+            "reasoning_effort": None,
+            "service_tier": None,
+            "timestamp": utc_now(),
+            "seconds": None,
+            "requests": [],
+            "estimated_cost_usd": 0.0,
+            "passage_note": parsed.get("passage_note", ""),
+            "paths": meta["paths"],
+            "verses": [got[i] for i in meta["ids"] if i in got],
+            "missing": missing,
+            "content_filtered": [],
+            "translated_after": meta["from"],
+        }, ensure_ascii=False, indent=1))
+        ok += 1
+        bad += bool(missing)
+    print(f"imported={ok} with_problems={bad}")
+    return 1 if bad else 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -811,6 +913,17 @@ def main(argv: list[str] | None = None) -> int:
     r = sub.add_parser("report")
     r.add_argument("--run", required=True)
     r.set_defaults(func=cmd_report)
+    e = sub.add_parser("export", help="write request bundles for verses a run lost to the content filter")
+    e.add_argument("--run", required=True)
+    e.add_argument("--out-run", required=True)
+    e.add_argument("--include-missing", action="store_true")
+    e.set_defaults(func=cmd_export)
+    i = sub.add_parser("import", help="turn answered bundles into run results")
+    i.add_argument("--run", required=True)
+    i.add_argument("--model", required=True)
+    i.add_argument("--deployment", default="claude-code-subscription")
+    i.add_argument("--adjudicator", required=True)
+    i.set_defaults(func=cmd_import)
     a = sub.add_parser("apply", help="write a finished run into translation/ YAML (explicit step)")
     a.add_argument("--run", required=True)
     a.add_argument("--hold", help="file of verse paths (translation/...yaml) to leave untouched, one per line")

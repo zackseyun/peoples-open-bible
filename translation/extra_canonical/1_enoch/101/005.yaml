@@ -12,15 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch101.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 101, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And because of this they fear[a], for all their good possessions go out into the sea with them, and they do not think good in their hearts[b], for the sea will swallow them and they will sink in it.
-  philosophy: optimal-equivalence
+  text: 'That is why they are afraid: all their valuable possessions go out to sea with them, and in their hearts they expect the worst[a], fearing that the sea will swallow them and they will perish in it.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'they will not think about their goods in their hearts.' The Ge'ez wording can be read either as moral 'the good' or as a backward reference to their possessions.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'they will be afraid, for all their good possessions will go out with them into the sea; yet they will not take thought for the good in their hearts, for the sea will swallow them and they will be destroyed'.
-    reason: previous_rendering
+    text: Literally, 'they do not think good in their hearts.' This may also mean that they give no thought to their possessions.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ይፈርሁ
   chosen: they will be afraid
@@ -132,12 +129,18 @@ revisions:
   from: And because of this they fear, for all their good possessions go out into the sea with them, and they think nothing good in their hearts, for the sea will swallow them and they will perish within it.
   to: And because of this they fear, for all their good possessions go out into the sea with them, and they do not think good in their hearts, for the sea will swallow them and they will sink in it.
   rationale: Revised 'they think nothing good in their hearts' to 'they do not think good in their hearts' to reflect the negation more directly without adding 'nothing.' Revised 'they will perish within it' to 'they will sink in it' to more closely match the final verb and avoid interpretive expansion.
+- timestamp: '2026-11-09T20:07:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And because of this they fear[a], for all their good possessions go out into the sea with them, and they do not think good in their hearts[b], for the sea will swallow them and they will sink in it.
+  to: 'That is why they are afraid: all their valuable possessions go out to sea with them, and in their hearts they expect the worst[a], fearing that the sea will swallow them and they will perish in it.'
+  rationale: Kept the earlier recognition that the verse continues the description of frightened seafarers and does not accuse them of neglecting moral reflection. The later return to surface wording obscured both their foreboding and the finality of the threatened destruction.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:51Z'
   unchanged: false
   changes_summary: Revised 'they think nothing good in their hearts' to 'they do not think good in their hearts' to reflect the negation more directly without adding 'nothing.' Revised 'they will perish within it' to 'they will sink in it' to more closely match the final verb and avoid interpretive expansion.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -157,3 +160,34 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/101/005.job-72931.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:20Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The captains fear for themselves and their valuable possessions, expecting the sea to swallow them and bring about their death.
+  meaning_decisions:
+  - source_phrase: ይወፅእ፡ ውስተ፡ ባሕር፡ ምስሌሆሙ
+    prior_rendering: go out into the sea with them
+    new_rendering: go out to sea with them
+    rationale: The possessions accompany their owners on the voyage; the phrase does not itself say that the cargo has already fallen into the water.
+  - source_phrase: ወሠናየ፡ ኢይሐልዩ፡ በልቦሙ
+    prior_rendering: and they do not think good in their hearts
+    new_rendering: and in their hearts they expect the worst
+    rationale: In the storm scene, the expression describes ominous expectations rather than a failure to think morally good thoughts. The possible reference back to their possessions is noted.
+  - source_phrase: እስመ፡ ባሕር፡ ይውኅጦሙ
+    prior_rendering: for the sea will swallow them
+    new_rendering: fearing that the sea will swallow them
+    rationale: This gives the content of their foreboding, rather than declaring that every such voyage necessarily ends in destruction.
+  - source_phrase: ወይትኀጐሉ፡ ውስቴታ
+    prior_rendering: and they will sink in it
+    new_rendering: and they will perish in it
+    rationale: The verb conveys ruin or destruction; 'sink' alone does not carry its full force.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: Kept the earlier recognition that the verse continues the description of frightened seafarers and does not accuse them of neglecting moral reflection. The later return to surface wording obscured both their foreboding and the finality of the threatened destruction.

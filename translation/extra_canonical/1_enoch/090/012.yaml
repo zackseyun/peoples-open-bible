@@ -18,18 +18,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And those ravens fought and battled with him[a], and they wanted to remove his horn[c][b], but they did not prevail against him.
-  philosophy: optimal-equivalence
+  text: And those ravens fought and battled against him. They wanted to remove his horn[a], but they did not prevail against him.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'against him' for 'with him'; the Ge'ez preposition is literally 'with,' but the context is hostile conflict.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Horn'' is kept literally as part of the vision''s symbolic imagery, rather than rendered interpretively as ''power'' or ''strength.'''
-    reason: cultural_note
-  - marker: c
-    text: Or 'to lay low'.
-    reason: previous_rendering
+    text: Or “bring down his horn.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: እልኩ
   chosen: those ravens
@@ -148,12 +142,18 @@ revisions:
   from: to lay low
   to: to remove
   rationale: 'The Ge''ez verb ያእትቱ (from the causative of አተተ, ''a''tata) specifically means ''to remove,'' ''to take away,'' or ''to deprive'' (Dillmann, col. 768). ''Lay low'' is an English idiom that slightly alters the specific physical action described in the vision. | Adjudicator: The Ge''ez verb አእተተ (''a''tata) literally means ''to remove,'' ''to take away,'' or ''to eliminate'' (Leslau, CDG 46; Dillmann, col. 768). In the context of the Animal Apocalypse, the ravens are attempting to'
+- timestamp: '2026-11-09T20:18:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And those ravens fought and battled with him[a], and they wanted to remove his horn[c][b], but they did not prevail against him.
+  to: And those ravens fought and battled against him. They wanted to remove his horn[a], but they did not prevail against him.
+  rationale: The later revision supports “remove” over the earlier “lay low,” though the conflicting lexical guidance warrants a brief alternative note. The current wording otherwise conveys the verse well; its explanatory notes about the preposition and horn imagery are unnecessary.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:17Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -173,3 +173,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/090/012.job-72810.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:18:46Z'
+  change_level: refined
+  confidence: medium
+  meaning: The ravens fight against the horned sheep and want to remove his horn, but they fail to overcome him.
+  meaning_decisions:
+  - source_phrase: ይትጋደሉ፡ ወይትባአሱ፡ ምስሌሁ
+    prior_rendering: fought and battled with him
+    new_rendering: fought and battled against him
+    rationale: “Against” makes the hostile relationship explicit without changing the repeated emphasis on conflict.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The later revision supports “remove” over the earlier “lay low,” though the conflicting lexical guidance warrants a brief alternative note. The current wording otherwise conveys the verse well; its explanatory notes about the preposition and horn imagery are unnecessary.

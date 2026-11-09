@@ -15,18 +15,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch69.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 69, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And by that oath the depths were made firm[c][b][a], and they stand and do not move from their place from eternity to eternity.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'were strengthened.' The Ge'ez verb can express becoming firm or being established.
-    reason: lexical_alternative
-  - marker: b
-    text: '''From their place'' could also be rendered ''from their stations,'' which may emphasize fixed cosmic positions.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'they were made strong, and they stood firm and were not moved'.
-    reason: previous_rendering
+  text: And by that oath the depths were made firm, and they stand and do not move from their place from eternity to eternity.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ማሐላ
   chosen: oath
@@ -148,9 +138,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And by that oath the depths were made firm[c][b][a], and they stand and do not move from their place from eternity to eternity.'
-  to: 'And by that oath the depths were made firm[c][b][a], and they stand and do not move from their place from eternity to eternity.'
+  from: And by that oath the depths were made firm[c][b][a], and they stand and do not move from their place from eternity to eternity.
+  to: And by that oath the depths were made firm[c][b][a], and they stand and do not move from their place from eternity to eternity.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''forever and ever''].'
+- timestamp: '2026-11-09T20:01:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And by that oath the depths were made firm[c][b][a], and they stand and do not move from their place from eternity to eternity.
+  to: And by that oath the depths were made firm, and they stand and do not move from their place from eternity to eternity.
+  rationale: The earlier correction restored the essential subject, “the depths,” and rightly recognized their continuing immobility. The current translation conveys that meaning well; the notes offer only unnecessary wording alternatives.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:02:17Z'
@@ -175,3 +172,17 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/069/019.job-72546.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:01:42Z'
+  change_level: refined
+  confidence: high
+  meaning: The oath fixes the depths permanently in their appointed place.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The earlier correction restored the essential subject, “the depths,” and rightly recognized their continuing immobility. The current translation conveys that meaning well; the notes offer only unnecessary wording alternatives.

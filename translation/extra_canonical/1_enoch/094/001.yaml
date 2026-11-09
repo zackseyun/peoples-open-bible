@@ -12,18 +12,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch94.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 94, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: 'And now I say to you[a], my children: love righteousness and walk in it; for the paths of righteousness are worthy and acceptable[c][b], but the paths of iniquity will quickly be destroyed and vanish.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Ge'ez wording behind 'worthy and acceptable' is somewhat difficult; the sense is that the paths of righteousness are fitting and approved, in contrast to the doomed paths of violence.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Violence'' may also be understood more broadly as injustice or wrongdoing; the verse contrasts two moral ways rather than merely two private choices.'
-    reason: lexical_alternative
-  - marker: c
-    text: 'Or ''And now I say to you, my children: love righteousness, and walk in it; for the paths of righteousness are worthy and acceptable, but the paths of violence will quickly be destroyed and vanish.''.'
-    reason: previous_rendering
+  text: 'And now I say to you, my children: love righteousness and walk in it; for the paths of righteousness are worthy and acceptable, but the paths of iniquity will quickly be destroyed and vanish.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: እብለክሙ
   chosen: I say to you
@@ -170,12 +160,18 @@ revisions:
   from: 'And now I say to you, my children: love righteousness, and walk in it; for the paths of righteousness are worthy and acceptable, but the paths of iniquity will quickly be destroyed and vanish.'
   to: 'And now I say to you, my children: love righteousness and walk in it; for the paths of righteousness are worthy and acceptable, but the paths of iniquity will quickly be destroyed and vanish.'
   rationale: Removed the comma before 'and walk in it' for slightly more natural formal English. The draft is otherwise accurate and complete.
+- timestamp: '2026-11-09T20:15:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And now I say to you[a], my children: love righteousness and walk in it; for the paths of righteousness are worthy and acceptable[c][b], but the paths of iniquity will quickly be destroyed and vanish.'
+  to: 'And now I say to you, my children: love righteousness and walk in it; for the paths of righteousness are worthy and acceptable, but the paths of iniquity will quickly be destroyed and vanish.'
+  rationale: The revision's distinction between iniquity here and violence in verse 2 is well supported. The slightly difficult evaluative wording still clearly commends righteousness, so the existing notes do not add a consequential alternative meaning.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:34Z'
   unchanged: false
   changes_summary: Removed the comma before 'and walk in it' for slightly more natural formal English. The draft is otherwise accurate and complete.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -195,3 +191,17 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/094/001.job-72868.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:15:30Z'
+  change_level: refined
+  confidence: high
+  meaning: Enoch urges his children to love and practice righteousness because its paths are approved, while the paths of iniquity are doomed.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The revision's distinction between iniquity here and violence in verse 2 is well supported. The slightly difficult evaluative wording still clearly commends righteousness, so the existing notes do not add a consequential alternative meaning.

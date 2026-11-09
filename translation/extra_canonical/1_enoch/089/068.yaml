@@ -22,21 +22,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the shepherds and their companions handed over those sheep to all the wild beasts of the desert[a], so that they might devour them; and all of them, each in its time, was delivered over by number—sixty from among them—while the record of the others was written down in the book[d][c][b], how many were destroyed from among them.
-  philosophy: optimal-equivalence
+  text: The shepherds and their companions handed those sheep over to all the wild beasts of the wilderness to be devoured. All of them were handed over by number, each in its own time—sixty of them[a]—while the scribe recorded in the book how many of them were destroyed.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The numeral and surrounding accounting language are difficult in this witness. The Ethiopic OCR appears to read 'sixty,' but the line may preserve a corrupt or uncertain tally. The verse's main point is that the sheep were handed over under a counted and recorded reckoning.
+    text: The number and the surrounding counting clause are unclear in the Ge’ez.
     reason: textual_variant
-  - marker: b
-    text: Literally 'written in the book,' continuing the vision's theme that the destruction is not only permitted but also recorded.
-    reason: cross_reference
-  - marker: c
-    text: '''By tale'' means by numerical reckoning or count.'
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'by tale'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ኖላዊያን
   chosen: the shepherds
@@ -192,9 +183,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the shepherds and their companions handed over those sheep to all the wild beasts of the field[a], so that they might devour them; and all of them, each in its time, was handed over by number—sixty from among them—while the number of the rest was written down in the book[d][c][b], how many were destroyed from among them.'
-  to: 'And the shepherds and their companions handed over those sheep to all the wild beasts of the desert[a], so that they might devour them; and all of them, each in its time, was delivered over by number—sixty from among them—while the record of the others was written down in the book[d][c][b], how many were destroyed from among them.'
-  rationale: 'Restored ''wild beasts of the desert'' and ''was delivered over...record of the others''.'
+  from: And the shepherds and their companions handed over those sheep to all the wild beasts of the field[a], so that they might devour them; and all of them, each in its time, was handed over by number—sixty from among them—while the number of the rest was written down in the book[d][c][b], how many were destroyed from among them.
+  to: And the shepherds and their companions handed over those sheep to all the wild beasts of the desert[a], so that they might devour them; and all of them, each in its time, was delivered over by number—sixty from among them—while the record of the others was written down in the book[d][c][b], how many were destroyed from among them.
+  rationale: Restored 'wild beasts of the desert' and 'was delivered over...record of the others'.
+- timestamp: '2026-11-09T20:12:05Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the shepherds and their companions handed over those sheep to all the wild beasts of the desert[a], so that they might devour them; and all of them, each in its time, was delivered over by number—sixty from among them—while the record of the others was written down in the book[d][c][b], how many were destroyed from among them.
+  to: The shepherds and their companions handed those sheep over to all the wild beasts of the wilderness to be devoured. All of them were handed over by number, each in its own time—sixty of them[a]—while the scribe recorded in the book how many of them were destroyed.
+  rationale: The earlier improvement from 'by tale' to 'by number' is sound. The record’s uncertain tally of sixty is preserved rather than repaired conjecturally, but the final reference is clarified by the surrounding account of the scribe.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-15T09:09:19Z'
@@ -219,3 +217,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/068.job-72794.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:12:05Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The shepherds surrender the sheep to predatory beasts while their destruction is counted and recorded, though the counting clause is unclear.
+  meaning_decisions:
+  - source_phrase: አራዊተ፡ ገዳም
+    prior_rendering: the wild beasts of the desert
+    new_rendering: the wild beasts of the wilderness
+    rationale: The phrase describes beasts of uncultivated country without requiring a sandy or arid desert.
+  - source_phrase: ለካልኡ፡ በመጽሐፍ፡ ይጸሐፍ፡ ሚመጠነ፡ ያሐጕል፡ እምኔሆሙ
+    prior_rendering: the record of the others was written down in the book, how many were destroyed from among them
+    new_rendering: the scribe recorded in the book how many of them were destroyed
+    rationale: The singular 'other' points back to the recorder appointed in verses 61–64, not to a group of other sheep or shepherds.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier improvement from 'by tale' to 'by number' is sound. The record’s uncertain tally of sixty is preserved rather than repaired conjecturally, but the final reference is clarified by the surrounding account of the scribe.

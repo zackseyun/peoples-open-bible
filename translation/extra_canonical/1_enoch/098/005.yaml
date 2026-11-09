@@ -12,18 +12,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch98.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 98, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And barrenness was not given to a woman[a]; rather[c][b], because of the work of her hands she dies childless.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'sterility was not allotted to the woman.' The Ge'ez wording contrasts barrenness with death as the actual judgment.
-    reason: lexical_alternative
-  - marker: b
-    text: '''The work of her hands'' is an idiom for her deeds or actions.'
-    reason: cultural_note
-  - marker: c
-    text: Or 'to the woman; rather, because of the work of her hands she will die'.
-    reason: previous_rendering
+  text: And barrenness was not given to a woman; rather, she dies childless because of her own deeds.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ምክነት
   chosen: barrenness
@@ -151,9 +141,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And barrenness was not given to a woman[a]; rather[c][b], because of the work of her hands she dies childless.'
-  to: 'And barrenness was not given to a woman[a]; rather[c][b], because of the work of her hands she dies childless.'
+  from: And barrenness was not given to a woman[a]; rather[c][b], because of the work of her hands she dies childless.
+  to: And barrenness was not given to a woman[a]; rather[c][b], because of the work of her hands she dies childless.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''without children''].'
+- timestamp: '2026-11-09T20:10:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And barrenness was not given to a woman[a]; rather[c][b], because of the work of her hands she dies childless.
+  to: And barrenness was not given to a woman; rather, she dies childless because of her own deeds.
+  rationale: The current wording rightly treats the woman generically and includes the complete ending about childlessness. Its notes overstate a contrast between infertility and a harsher punishment; the translation leaves the claim as the Ge'ez expresses it.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:02:11Z'
@@ -178,3 +175,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/098/005.job-72898.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:06Z'
+  change_level: refined
+  confidence: high
+  meaning: The verse attributes a woman's dying childless to her own deeds rather than to barrenness allotted to her.
+  meaning_decisions:
+  - source_phrase: በእንተ፡ ግብረ፡ እዴሃ
+    prior_rendering: because of the work of her hands
+    new_rendering: because of her own deeds
+    rationale: The expression refers to her actions, not specifically to manual labor. The translation preserves the causal claim without specifying deeds the verse does not name.
+  footnote_kinds: {}
+  history_weighed: The current wording rightly treats the woman generically and includes the complete ending about childlessness. Its notes overstate a contrast between infertility and a harsher punishment; the translation leaves the claim as the Ge'ez expresses it.

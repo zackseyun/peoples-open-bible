@@ -13,18 +13,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch106.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 106, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: 'And now[a], my father, hear me: a son has been born to Lamech my son, and his appearance and form are not like the form of a human being. His color is whiter than snow and redder than the blossom of a rose, and the hair of his head is whiter than white wool. And his eyes are like the rays of the sun[c][b]; and he opened his eyes and lit up the whole house.'
-  philosophy: optimal-equivalence
+  text: 'Now, my father, hear me: a son has been born to my son Lamech. The child’s appearance and form are unlike those of a human being. His color is whiter than snow and redder than a rose blossom, and the hair of his head is whiter than white wool. His eyes are like the rays of the sun[a]; he opened his eyes and lit up the whole house.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The flower term in 'redder than a rose blossom' may refer more generally to a red blossom; the exact species identification is uncertain.
-    reason: lexical_alternative
-  - marker: b
-    text: The phrase rendered 'like the rays of the sun' is difficult in Ge'ez; the sense is clearly one of solar brightness.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'and he is not like a human being in his appearance and in the form of his making.'.
-    reason: previous_rendering
+    text: The Ge'ez comparison with the sun is unclear; it may refer to the sun’s disk rather than its rays.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ስምዐኒ
   chosen: hear me
@@ -190,12 +184,18 @@ revisions:
   from: His complexion is whiter than snow and redder than the blossom of a rose
   to: His color is whiter than snow and redder than the blossom of a rose
   rationale: Azure's substitution of 'complexion' for 'color' (ኅብሩ) was a stylistic-only override. The drafter explicitly considered and rejected 'complexion' as an alternative, preferring 'color' as the most direct rendering of ኅብር. Azure offered no lexical or source-language argument — its sole justification was 'more natural formal English.' Reverting to drafter's chosen per doctrine_realignment criteria.
+- timestamp: '2026-11-09T20:03:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And now[a], my father, hear me: a son has been born to Lamech my son, and his appearance and form are not like the form of a human being. His color is whiter than snow and redder than the blossom of a rose, and the hair of his head is whiter than white wool. And his eyes are like the rays of the sun[c][b]; and he opened his eyes and lit up the whole house.'
+  to: 'Now, my father, hear me: a son has been born to my son Lamech. The child’s appearance and form are unlike those of a human being. His color is whiter than snow and redder than a rose blossom, and the hair of his head is whiter than white wool. His eyes are like the rays of the sun[a]; he opened his eyes and lit up the whole house.'
+  rationale: The earlier correction to 'appearance and form' is retained, with the child named as their subject to prevent confusion with Lamech. The intensified color comparisons and sequence of actions remain unchanged; only the uncertain solar comparison needs a reader’s note.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:39:04Z'
   unchanged: false
   changes_summary: Added 'and' after 'my son' to reflect the conjunction in the source. Changed 'whose appearance and form' to 'and his appearance and form' for closer alignment. Rendered 'color' as 'complexion' for more natural formal English. Replaced 'when he opened his eyes' with 'and he opened his eyes' to reflect the sequential conjunction rather than a temporal paraphrase.
-
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -215,3 +215,18 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/106/010.job-72974.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:03:42Z'
+  change_level: refined
+  confidence: low
+  meaning: Methuselah describes Lamech’s newborn as unlike an ordinary human, with extraordinary coloring, white hair, and radiant eyes that light the house.
+  meaning_decisions: []
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier correction to 'appearance and form' is retained, with the child named as their subject to prevent confusion with Lamech. The intensified color comparisons and sequence of actions remain unchanged; only the uncertain solar comparison needs a reader’s note.

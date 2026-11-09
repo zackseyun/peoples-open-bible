@@ -12,18 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch94.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 94, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: You have committed reproach and violence[a], and you have made yourselves ready for the day of the shedding of blood, and for the day of darkness[c][b], and for the day of the great judgment.
-  philosophy: optimal-equivalence
+  text: You have committed blasphemy[a] and iniquity, and you are ready for the day of bloodshed, for the day of darkness, and for the day of the great judgment.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'you have done it for reproach and for violence'; the opening verb can be rendered more literally as 'made/done,' but the context supports the sense of preparing something for a destined outcome.
-    reason: lexical_alternative
-  - marker: b
-    text: '''The shedding of blood'' may also be rendered ''bloodshed.'''
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'You have prepared it for reproach and for violence'.
-    reason: previous_rendering
+    text: The word can also mean insulting or reviling others.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ገበርክምዋ
   chosen: you have prepared it
@@ -132,12 +126,18 @@ revisions:
   from: You have prepared it for reproach and for violence
   to: You have committed reproach and violence
   rationale: 'The Ge''ez phrase `ገበርክምዋ፡ ለጽርፈት፡ ወለዓመፃ` uses a standard proleptic object suffix (`-wa`, 3fs) anticipating the direct objects introduced by the nota accusativi `ለ` (lä-). The `ለ` here marks the direct object, not purpose (''for''). The verb `ገበረ` means ''to do'' or ''to commit.'' Thus, the text means ''You have committed reproach and violence,'' not ''You have prepared it for...'' | Adjudicator: The reviewer correctly identifies a standard Ge''ez grammatical structure. The verb `ገበርክምዋ` contains a proleptic 3fs object suffix (`-wa`) that anticipates the direct objects `ጽርፈት` (reproach/blasphem'
+- timestamp: '2026-11-09T20:15:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You have committed reproach and violence[a], and you have made yourselves ready for the day of the shedding of blood, and for the day of darkness[c][b], and for the day of the great judgment.
+  to: You have committed blasphemy[a] and iniquity, and you are ready for the day of bloodshed, for the day of darkness, and for the day of the great judgment.
+  rationale: 'I retain the revision''s grammatical correction: these are acts committed, not an unidentified object prepared for some purpose. The obsolete notes defending the earlier construction are dropped, while the meaningful range of the accusation is noted.'
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:36Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -157,3 +157,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/094/009.job-72876.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:15:30Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Their blasphemy and iniquity have made them ready for the coming day of bloodshed, darkness, and great judgment.
+  meaning_decisions:
+  - source_phrase: ገበርክምዋ፡ ለጽርፈት
+    prior_rendering: You have committed reproach
+    new_rendering: You have committed blasphemy
+    rationale: The accusation concerns abusive or irreverent conduct, not merely the disgrace the hearers have incurred. The preceding reference to forgetting the Most High supports 'blasphemy,' while the broader sense of reviling is noted.
+  - source_phrase: ወለዓመፃ
+    prior_rendering: and violence
+    new_rendering: and iniquity
+    rationale: The term names broad moral wrongdoing, as in verse 1, rather than specifying only physical violence.
+  - source_phrase: ወድልዋነ፡ ኮንክሙ
+    prior_rendering: and you have made yourselves ready
+    new_rendering: and you are ready
+    rationale: The construction describes their resulting condition without implying that they consciously intended to prepare for punishment.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: 'I retain the revision''s grammatical correction: these are acts committed, not an unidentified object prepared for some purpose. The obsolete notes defending the earlier construction are dropped, while the meaningful range of the accusation is noted.'

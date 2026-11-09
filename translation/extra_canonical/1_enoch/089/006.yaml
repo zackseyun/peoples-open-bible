@@ -22,24 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And that vessel floated upon the water[a], and all the bulls and elephants and camels and donkeys were swallowed up into the earth; and all the beasts—I could not see them—and they were not able to come out[e][d][c][b], but perished and sank into the depths.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Ethiopic term rendered 'mast' may denote an upright timber or beam; the exact object in the dream image is not fully certain.
-    reason: lexical_alternative
-  - marker: b
-    text: The final phrase could also be rendered 'into the deep' or 'into the sea.' 'Abyss' is chosen to preserve the ominous apocalyptic force of the image.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'And that mast sank into the water'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'and camels and donkeys'.
-    reason: previous_rendering
-  - marker: e
-    text: Or 'and all the cattle and the birds saw them'.
-    reason: previous_rendering
+  text: The vessel floated on the water, but all the bulls, elephants, camels, and donkeys sank into the earth, along with all the other beasts. I could no longer see them. They could not escape, but perished and sank into the depths.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: መሥቀር
   chosen: mast
@@ -222,6 +206,13 @@ revisions:
   from: And that vessel floated upon the water, and all the bulls and elephants and camels and donkeys sank into the earth; and all the beasts—I could not see them—and they were not able to come out, but perished and sank into the depths.
   to: And that vessel floated upon the water, and all the bulls and elephants and camels and donkeys were swallowed up into the earth; and all the beasts, and I could not see them, and they were not able to come out, but were destroyed and sank into the abyss.
   rationale: Restored vivid lexical choices and theological_decision on 'abyss' apocalyptic resonance.
+- timestamp: '2026-11-09T20:10:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And that vessel floated upon the water[a], and all the bulls and elephants and camels and donkeys were swallowed up into the earth; and all the beasts—I could not see them—and they were not able to come out[e][d][c][b], but perished and sank into the depths.
+  to: The vessel floated on the water, but all the bulls, elephants, camels, and donkeys sank into the earth, along with all the other beasts. I could no longer see them. They could not escape, but perished and sank into the depths.
+  rationale: The earlier restoration of the vessel, the complete animal list, and the narrator’s inability to see the animals was essential. I retain those gains and the watery “depths,” while omitting obsolete notes about a mast or animals watching the event.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-14T00:00:00Z'
@@ -246,3 +237,29 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/006.job-72732.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:29Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The vessel stays afloat while the animals disappear beneath the flood and cannot escape destruction.
+  meaning_decisions:
+  - source_phrase: ኅሠጥሙ፡ ውስተ፡ ምድር
+    prior_rendering: were swallowed up into the earth
+    new_rendering: sank into the earth
+    rationale: The verb describes sinking or submersion; the image of descent into the earth remains intact.
+  - source_phrase: ወኵሉ፡ እንስሳ፡ ወአክህልክ፡ ርእዮቶሙ
+    prior_rendering: and all the beasts—I could not see them
+    new_rendering: along with all the other beasts. I could no longer see them
+    rationale: Connects the beasts to the animals that sank and makes their disappearance a complete statement rather than a dangling clause.
+  - source_phrase: ስእኑ፡ ወጺአ
+    prior_rendering: were not able to come out
+    new_rendering: could not escape
+    rationale: In this scene, their inability to emerge from the engulfing water means that they cannot escape.
+  footnote_kinds: {}
+  history_weighed: The earlier restoration of the vessel, the complete animal list, and the narrator’s inability to see the animals was essential. I retain those gains and the watery “depths,” while omitting obsolete notes about a mast or animals watching the event.

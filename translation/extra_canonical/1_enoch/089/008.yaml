@@ -22,21 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the water began to descend into them until the earth was laid bare[a]; and that vessel rested upon the earth, and darkness was removed[d][c][b], and light came to be.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Ge'ez noun rendered 'abyss' is difficult and may also be understood as 'chasm,' 'pit,' or 'depth.'
-    reason: lexical_alternative
-  - marker: b
-    text: The line's movement from darkness to light likely evokes creation or restoration imagery, but the wording here is kept close to the Ge'ez rather than conformed to a standard Genesis-style English formula.
-    reason: cross_reference
-  - marker: c
-    text: Or 'that abyss was in the earth'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'And water descended into their midst'.
-    reason: previous_rendering
+  text: The water drained into them until the earth was laid bare. That vessel rested on the earth, the darkness was removed, and there was light.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ማይ
   chosen: water
@@ -177,6 +164,13 @@ revisions:
   from: And the water began to go down into them until the earth was uncovered; and that vessel rested upon the earth, and the darkness departed, and light appeared.
   to: And the water began to descend into them until the earth was laid bare; and that vessel rested upon the earth, and darkness was removed, and light came to be.
   rationale: Restored 4 documented lexical/theological choices flattened by azure.
+- timestamp: '2026-11-09T20:10:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the water began to descend into them until the earth was laid bare[a]; and that vessel rested upon the earth, and darkness was removed[d][c][b], and light came to be.
+  to: The water drained into them until the earth was laid bare. That vessel rested on the earth, the darkness was removed, and there was light.
+  rationale: The correction from “abyss” to “vessel” is secure and maintains the flood narrative. I follow the supplied temporal wording rather than the earlier conjecture about “began,” and remove notes tied to the abandoned noun reading.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-14T00:00:00Z'
@@ -201,3 +195,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/008.job-72734.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:29Z'
+  change_level: refined
+  confidence: high
+  meaning: The water drains away, the earth reappears, the vessel rests on land, and darkness gives way to light.
+  meaning_decisions:
+  - source_phrase: ወአንዘ፡ ማይ፡ ይረድ፡ ውስቴቶሙ
+    prior_rendering: the water began to descend into them
+    new_rendering: The water drained into them
+    rationale: The supplied wording describes the water’s ongoing descent; it does not require the earlier proposed change to a verb meaning “began.” “Drained” expresses its movement into the newly opened abysses.
+  - source_phrase: ወኮነ፡ ብርሃን
+    prior_rendering: and light came to be
+    new_rendering: and there was light
+    rationale: Uses natural existential English without adding a divine command or an explicit creation claim.
+  footnote_kinds: {}
+  history_weighed: The correction from “abyss” to “vessel” is secure and maintains the flood narrative. I follow the supplied temporal wording rather than the earlier conjecture about “began,” and remove notes tied to the abandoned noun reading.

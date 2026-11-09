@@ -13,24 +13,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch78.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 78, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: In the disk of the sun there are seven portions of light which are added to it beyond the moon[e][d][c][b][a], and in measure they are added until the seventh portion of the sun is completed.
-  philosophy: optimal-equivalence
+  text: Seven portions of light are added to the sun’s disk, more than are added to the moon. The light is allotted in measured amounts until the sun’s seventh portion is exhausted[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ethiopic syntax is difficult. The line appears to describe the sun as exceeding the moon by seven measured portions of light, but the final clause can also be understood as 'until the seventh portion of the sun is completed' or 'surpassed.'
-    reason: textual_variant
-  - marker: b
-    text: '''Circuit'' translates a term for circle or course, preserving the Astronomical Book''s schematic description of heavenly movement.'
-    reason: cultural_note
-  - marker: c
-    text: Or 'beyond the moon'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'until a seventh portion'.
-    reason: previous_rendering
-  - marker: e
-    text: Or 'In the circuit of the sun'.
-    reason: previous_rendering
+    text: The Ge’ez wording is uncertain, especially the comparison with the moon; the ending may mean “until the sun’s seventh portion is surpassed.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: በክበበ
   chosen: in the circuit of
@@ -180,12 +168,18 @@ revisions:
   from: In the disk of the sun there are seven portions of light which are added to it more than to the moon, and in measure they are added until the seventh portion of the sun is passed.
   to: In the disk of the sun there are seven portions of light which are added to it beyond the moon, and in measure they are added until the seventh portion of the sun is completed.
   rationale: Revised 'more than to the moon' to 'beyond the moon' for a more natural rendering of comparison, and changed 'is passed' to 'is completed' to better reflect the sense of reaching the seventh portion in context.
+- timestamp: '2026-11-09T20:05:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: In the disk of the sun there are seven portions of light which are added to it beyond the moon[e][d][c][b][a], and in measure they are added until the seventh portion of the sun is completed.
+  to: Seven portions of light are added to the sun’s disk, more than are added to the moon. The light is allotted in measured amounts until the sun’s seventh portion is exhausted[a].
+  rationale: The earlier revisions correctly recognized a quantitative comparison and the ordinal seventh, but the current wording obscures both the comparison and the allotment of light. The source marks the comparison as uncertain, so the translation does not turn it into an unqualified sevenfold-brightness claim.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:35Z'
   unchanged: false
   changes_summary: Revised 'more than to the moon' to 'beyond the moon' for a more natural rendering of comparison, and changed 'is passed' to 'is completed' to better reflect the sense of reaching the seventh portion in context.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -205,3 +199,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/078/004.job-72650.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:05:01Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The sun receives a greater allotment of light than the moon, and that light is apportioned according to a measured seven-part reckoning.
+  meaning_decisions:
+  - source_phrase: ዘይትዌሰክ፡ ቦቱ፡ እምወርኅ
+    prior_rendering: which are added to it beyond the moon
+    new_rendering: more than are added to the moon
+    rationale: The comparison concerns the quantity of light, not a position beyond the moon. The rendering makes that comparison explicit without imposing an exact brightness ratio on the uncertain wording.
+  - source_phrase: ወመስፈርት፡ ትትወደይ
+    prior_rendering: and in measure they are added
+    new_rendering: The light is allotted in measured amounts
+    rationale: The language of setting or assigning a measure is better conveyed as allotment than as a second indistinct statement that light is added.
+  - source_phrase: እስከ፡ የሐልፍ፡ ሳብዕ፡ ክፍለ፡ ፀሐይ
+    prior_rendering: until the seventh portion of the sun is completed
+    new_rendering: until the sun’s seventh portion is exhausted
+    rationale: The verb describes passing away or beyond; in the context of allotted light, exhaustion is better supported than the completion of an increasing total. The possible sense of surpassing the portion is acknowledged in the note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier revisions correctly recognized a quantitative comparison and the ordinal seventh, but the current wording obscures both the comparison and the allotment of light. The source marks the comparison as uncertain, so the translation does not turn it into an unqualified sevenfold-brightness claim.

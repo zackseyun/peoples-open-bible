@@ -22,15 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw the sheep until they came out from the wolves[a]; and the eyes of the wolves were blinded[b], and those wolves went out following the sheep with all their power.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The subject of 'they went out pursuing' is contextually best taken as the wolves, though the Ge'ez sequence is compact enough that the line could be read less explicitly as a continued movement scene involving both groups.
-    reason: alternative_reading
-  - marker: b
-    text: Or 'those sheep until they came out from the wolves; and the wolves blinded their eyes, and they went out pursuing those sheep'.
-    reason: previous_rendering
+  text: And I watched the sheep until they came out from among the wolves. The wolves' eyes were blinded, and those wolves went out in pursuit of the sheep with all their power.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ወርኢክዎሙ
   chosen: And I saw
@@ -146,12 +139,18 @@ revisions:
   from: And I saw the sheep until they came out from the wolves; and the eyes of the wolves were blinded, and those wolves went out pursuing the sheep with all their power.
   to: And I saw the sheep until they came out from the wolves; and the eyes of the wolves were blinded, and those wolves went out following the sheep with all their power.
   rationale: Changed 'pursuing' to 'following' for a more direct and less interpretive rendering of the source verb, while retaining the rest of the draft unchanged.
+- timestamp: '2026-11-09T20:10:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I saw the sheep until they came out from the wolves[a]; and the eyes of the wolves were blinded[b], and those wolves went out following the sheep with all their power.
+  to: And I watched the sheep until they came out from among the wolves. The wolves' eyes were blinded, and those wolves went out in pursuit of the sheep with all their power.
+  rationale: The history securely establishes that the wolves' eyes are blinded and that the wolves pursue the sheep. The current passive construction is preserved, while its neutral 'following' is clarified and the erroneous active-blinding alternative is dropped.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:05Z'
   unchanged: false
   changes_summary: Changed 'pursuing' to 'following' for a more direct and less interpretive rendering of the source verb, while retaining the rest of the draft unchanged.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -171,3 +170,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/021.job-72747.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:10Z'
+  change_level: refined
+  confidence: high
+  meaning: The sheep leave the wolves, but the blinded wolves pursue them with all their power.
+  meaning_decisions:
+  - source_phrase: እስከ፡ ወፁኡ፡ እምአዝእብት
+    prior_rendering: until they came out from the wolves
+    new_rendering: until they came out from among the wolves
+    rationale: The sheep leave the wolves' company and domain; 'from among' prevents the wording from suggesting emergence from inside the predators.
+  - source_phrase: ወወፁኡ፡ እንዘ፡ ይትልውዎሙ
+    prior_rendering: went out following
+    new_rendering: went out in pursuit
+    rationale: The preceding hostility and ensuing chase establish that this following is pursuit, not peaceful accompaniment.
+  footnote_kinds: {}
+  history_weighed: The history securely establishes that the wolves' eyes are blinded and that the wolves pursue the sheep. The current passive construction is preserved, while its neutral 'following' is clarified and the erroneous active-blinding alternative is dropped.

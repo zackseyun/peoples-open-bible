@@ -15,24 +15,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch60.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 60, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the name of the male was Behemoth[a], who occupies with his breast an unseen wilderness named Dundayin, east of the garden, where the chosen and the righteous dwell, where my great-grandfather was taken up, the seventh from Adam[e][d][c][b], the first of men whom the Lord of Spirits made.
-  philosophy: optimal-equivalence
+  text: The male was named Behemoth. With his breast he occupies an unseen wilderness named Dundayin, east of the garden where the chosen and the righteous dwell and where my great-grandfather[a], the seventh from Adam, was taken up. Adam was the first human whom the Lord of Spirits made.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The description of the wilderness is uncertain. The Ge'ez may suggest a wilderness that is unseen, inaccessible, or simply desolate.
-    reason: textual_variant
-  - marker: b
-    text: '''Garden'' is rendered literally from the Ge''ez; some readers may understand this as the primordial garden, but the text here does not explicitly say ''Eden.'''
-    reason: lexical_alternative
-  - marker: c
-    text: The speaker is Enoch, who identifies himself as 'the seventh from Adam.'
-    reason: cross_reference
-  - marker: d
-    text: Or 'And the name of the second was Behemoth'.
-    reason: previous_rendering
-  - marker: e
-    text: Or 'a desolate wilderness'.
-    reason: previous_rendering
+    text: The great-grandfather is Enoch, seventh from Adam, which points to Noah as the speaker even though verse 1 names Enoch.
+    reason: cultural_note
 lexical_decisions:
 - source_word: ለተ ባዕታይ
   chosen: the second
@@ -210,9 +198,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the name of the male was Behemoth[a], who occupied with his breast a desolate wilderness named Dundayin, east of the garden, where the chosen and the righteous dwell, where my great-grandfather was taken up, the seventh from Adam[e][d][c][b], the first of men whom the Lord of Spirits made.'
-  to: 'And the name of the male was Behemoth[a], who occupies with his breast an unseen wilderness named Dundayin, east of the garden, where the chosen and the righteous dwell, where my great-grandfather was taken up, the seventh from Adam[e][d][c][b], the first of men whom the Lord of Spirits made.'
-  rationale: 'Azure reverted Gemini tier-3 confidence-1.0 correction of ዘኢያስተርኢ (''unseen wilderness'' — Geʿez negative prefix ኢ- with imperfect of አስተርአየ = ''not visible'') back to drafter''s cautious ''desolate wilderness'', falsely claiming ''better lexical accuracy''. Also ''humankind'' -> ''men'' against drafter''s collective-sense rationale.'
+  from: And the name of the male was Behemoth[a], who occupied with his breast a desolate wilderness named Dundayin, east of the garden, where the chosen and the righteous dwell, where my great-grandfather was taken up, the seventh from Adam[e][d][c][b], the first of men whom the Lord of Spirits made.
+  to: And the name of the male was Behemoth[a], who occupies with his breast an unseen wilderness named Dundayin, east of the garden, where the chosen and the righteous dwell, where my great-grandfather was taken up, the seventh from Adam[e][d][c][b], the first of men whom the Lord of Spirits made.
+  rationale: Azure reverted Gemini tier-3 confidence-1.0 correction of ዘኢያስተርኢ ('unseen wilderness' — Geʿez negative prefix ኢ- with imperfect of አስተርአየ = 'not visible') back to drafter's cautious 'desolate wilderness', falsely claiming 'better lexical accuracy'. Also 'humankind' -> 'men' against drafter's collective-sense rationale.
+- timestamp: '2026-11-09T19:57:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the name of the male was Behemoth[a], who occupies with his breast an unseen wilderness named Dundayin, east of the garden, where the chosen and the righteous dwell, where my great-grandfather was taken up, the seventh from Adam[e][d][c][b], the first of men whom the Lord of Spirits made.
+  to: The male was named Behemoth. With his breast he occupies an unseen wilderness named Dundayin, east of the garden where the chosen and the righteous dwell and where my great-grandfather[a], the seventh from Adam, was taken up. Adam was the first human whom the Lord of Spirits made.
+  rationale: The later corrections establishing 'male' and 'unseen' are supported by the Ge’ez and outweigh the older lexical entries. I retain the breast image and precise kinship term, but correct the earlier note’s mistaken identification of the great-grandfather as the speaker himself.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-15T18:54:35Z'
@@ -237,3 +232,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/060/008.job-72451.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:57:37Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The male Behemoth occupies a hidden wilderness east of the righteous ones’ garden, where the seer’s great-grandfather, seventh from Adam, was taken up.
+  meaning_decisions:
+  - source_phrase: ሳብዕ፡ እምአዳም፡ ቀዳሚሆሙ፡ ለሰብእ፡ ዘገብረ፡ እግዚአ፡ መናፍስት
+    prior_rendering: the seventh from Adam, the first of men whom the Lord of Spirits made
+    new_rendering: the seventh from Adam ... Adam was the first human whom the Lord of Spirits made
+    rationale: The description of the first human refers to Adam, not to the great-grandfather who is seventh from him; a separate sentence makes the reference clear.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The later corrections establishing 'male' and 'unseen' are supported by the Ge’ez and outweigh the older lexical entries. I retain the breast image and precise kinship term, but correct the earlier note’s mistaken identification of the great-grandfather as the speaker himself.

@@ -12,18 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch76.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 76, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And after these winds[a], by the way of the south they go out through two gates; through the first gate, which inclines toward the east[c][b], there comes out a wind of death.
-  philosophy: optimal-equivalence
+  text: Next, the winds of the south go out through two gates[a]. From the first of these gates, which inclines toward the east, comes a wind of death.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ge'ez syntax after 'the first opening' is compressed. The clause likely means 'from those openings situated toward the east,' but the exact antecedent of 'those' is not fully explicit in this witness.
+    text: This verse names two gates, but the following verses describe a middle opening and a third opening as well.
     reason: textual_variant
-  - marker: b
-    text: Or 'a deadly wind.' The more literal 'a wind of death' is retained to preserve the cosmic and ominous tone of the passage.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'through two openings; through the first opening, from those that lie toward the east'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: እምድኅረ
   chosen: after
@@ -152,12 +146,18 @@ revisions:
   from: And after these winds, by the way of the south they go out through two gates; through the first of these gates, which inclines toward the east, there comes out a wind of death.
   to: And after these winds, by the way of the south they go out through two gates; through the first gate, which inclines toward the east, there comes out a wind of death.
   rationale: Removed the redundant phrase 'of these' after 'the first' for closer alignment with the source and smoother English; otherwise retained the draft.
+- timestamp: '2026-11-09T20:05:28Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And after these winds[a], by the way of the south they go out through two gates; through the first gate, which inclines toward the east[c][b], there comes out a wind of death.
+  to: Next, the winds of the south go out through two gates[a]. From the first of these gates, which inclines toward the east, comes a wind of death.
+  rationale: The earlier grammatical correction properly attached the eastward inclination to the singular gate. I kept 'wind of death,' clarified the transition to the southern group, and noted the unresolved count of two gates.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:33Z'
   unchanged: false
   changes_summary: Removed the redundant phrase 'of these' after 'the first' for closer alignment with the source and smoother English; otherwise retained the draft.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -177,3 +177,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/076/007.job-72636.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:05:28Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The catalog turns to the southern winds, whose first eastward-inclined gate releases a wind of death.
+  meaning_decisions:
+  - source_phrase: በመንገለ፡ አዜብ፡ ይወፅኡ
+    prior_rendering: by the way of the south they go out
+    new_rendering: the winds of the south go out
+    rationale: The phrase identifies the next directional group of winds, not a route traveled by the preceding winds.
+  - source_phrase: በቀዳሚት፡ ኆኅት፡ እምኔሆን
+    prior_rendering: through the first gate
+    new_rendering: From the first of these gates
+    rationale: The pronominal phrase identifies the first gate within the group just mentioned.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier grammatical correction properly attached the eastward inclination to the singular gate. I kept 'wind of death,' clarified the transition to the southern group, and noted the unresolved count of two gates.

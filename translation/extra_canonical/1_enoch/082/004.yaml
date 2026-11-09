@@ -14,18 +14,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch82.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 82, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Blessed are all the righteous who walk in the path of righteousness and have no sin like sinners[a], in the whole count of all their days, while the sun goes on its course in heaven, entering and going out through the gates for thirty days, together with the heads of the thousands of the order of the stars, and with the four that are added, which divide the four parts of the year[c][b], which lead them and enter with them on four days.
-  philosophy: optimal-equivalence
+  text: Blessed are all the righteous who walk in the path of righteousness and, unlike sinners, commit no sin in reckoning all the days[a]. The sun goes on its course in heaven, entering and going out through the gates for thirty days, together with the commanders of thousands in the order of the stars and the four additional ones[b] that mark off the four divisions of the year, lead the others, and enter with them on four days.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ethiopic OCR at this point is difficult and appears to show a numeral that may not fit the context. The sense is likely the four additional days that mark the year's four divisions.
-    reason: textual_variant
+    text: This may also describe the righteous as free from sin throughout all their days.
+    reason: alternative_reading
   - marker: b
-    text: Or 'the chiefs of the starry orders.' The Ge'ez phrase is numerically and syntactically difficult, so the translation keeps its hierarchical imagery visible rather than smoothing it away.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'heads of the thousand-order of the stars'.
-    reason: previous_rendering
+    text: The number here is unclear; the four days at the end of the verse support the reading 'four.'
+    reason: textual_variant
 lexical_decisions:
 - source_word: ብፁዓን
   chosen: Blessed
@@ -210,9 +207,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Blessed are all the righteous who walk in the path of righteousness and have no sin like sinners[a], in the whole number of all their days, while the sun traverses heaven, entering and going out through the gates for thirty days, together with the heads of the thousands of the order of the stars, and with the four that are added, which divide the four parts of the year[c][b], which lead them and enter with them on four days.'
-  to: 'Blessed are all the righteous who walk in the path of righteousness and have no sin like sinners[a], in the whole count of all their days, while the sun goes on its course in heaven, entering and going out through the gates for thirty days, together with the heads of the thousands of the order of the stars, and with the four that are added, which divide the four parts of the year[c][b], which lead them and enter with them on four days.'
-  rationale: 'Drafter chose ''count'' for ኍልቈ to preserve the Astronomical Book''s technical enumeration register; azure substituted ''number'' (more neutral). Drafter chose ''goes on its course in heaven'' as a deliberate structural echo of ''walk in the path of righteousness''; azure collapsed to ''traverses heaven'' destroying the parallel. Both stylistic-only.'
+  from: Blessed are all the righteous who walk in the path of righteousness and have no sin like sinners[a], in the whole number of all their days, while the sun traverses heaven, entering and going out through the gates for thirty days, together with the heads of the thousands of the order of the stars, and with the four that are added, which divide the four parts of the year[c][b], which lead them and enter with them on four days.
+  to: Blessed are all the righteous who walk in the path of righteousness and have no sin like sinners[a], in the whole count of all their days, while the sun goes on its course in heaven, entering and going out through the gates for thirty days, together with the heads of the thousands of the order of the stars, and with the four that are added, which divide the four parts of the year[c][b], which lead them and enter with them on four days.
+  rationale: Drafter chose 'count' for ኍልቈ to preserve the Astronomical Book's technical enumeration register; azure substituted 'number' (more neutral). Drafter chose 'goes on its course in heaven' as a deliberate structural echo of 'walk in the path of righteousness'; azure collapsed to 'traverses heaven' destroying the parallel. Both stylistic-only.
+- timestamp: '2026-11-09T20:07:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Blessed are all the righteous who walk in the path of righteousness and have no sin like sinners[a], in the whole count of all their days, while the sun goes on its course in heaven, entering and going out through the gates for thirty days, together with the heads of the thousands of the order of the stars, and with the four that are added, which divide the four parts of the year[c][b], which lead them and enter with them on four days.
+  to: Blessed are all the righteous who walk in the path of righteousness and, unlike sinners, commit no sin in reckoning all the days[a]. The sun goes on its course in heaven, entering and going out through the gates for thirty days, together with the commanders of thousands in the order of the stars and the four additional ones[b] that mark off the four divisions of the year, lead the others, and enter with them on four days.
+  rationale: The history correctly recovered the commanders-of-thousands image, and the record selects four additional ones despite the uncertain numeral. The immediate discussion of omitted calendar days supports a calendrical understanding of the sin language, but the difficult construction warrants an alternative note.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-15T18:25:27Z'
@@ -237,3 +241,31 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/082/004.job-72679.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:19Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The righteous avoid sinners' errors in counting the days, whose heavenly order includes the sun, the star-leaders, and the four divisions of the year.
+  meaning_decisions:
+  - source_phrase: ወአልቦሙ፡ ኃጢአት፡ ከመ፡ ኃጥኣን፡ በኍልቈ፡ ኵሉ፡ መዋዕሊሆሙ
+    prior_rendering: and have no sin like sinners, in the whole count of all their days
+    new_rendering: and, unlike sinners, commit no sin in reckoning all the days
+    rationale: The numerical language and the explanation of calendrical error in the next two verses favor connecting the sin specifically with reckoning the days. The broader ethical reading remains possible and is noted.
+  - source_phrase: አርእስተ፡ ፲፻ዘሥርዓቶሙ፡ ለከዋክብት
+    prior_rendering: the heads of the thousands of the order of the stars
+    new_rendering: the commanders of thousands in the order of the stars
+    rationale: This is the administrative or military image of leaders over thousands. The new wording makes that hierarchy intelligible without removing its numerical character.
+  - source_phrase: እለ፡ ይጼልዩ፡ ማእከለ፡ ፬ክፍለ፡ ዓመት፡ እለ፡ ይመርዓዎሙ
+    prior_rendering: which divide the four parts of the year, which lead them
+    new_rendering: that mark off the four divisions of the year, lead the others
+    rationale: The additional ones distinguish the year's divisions and lead the accompanying heavenly company. This wording clarifies the function while preserving the personified leadership image.
+  footnote_kinds:
+    a: alternative_meaning
+    b: textual_variant
+  history_weighed: The history correctly recovered the commanders-of-thousands image, and the record selects four additional ones despite the uncertain numeral. The immediate discussion of omitted calendar days supports a calendrical understanding of the sin language, but the difficult construction warrants an alternative note.

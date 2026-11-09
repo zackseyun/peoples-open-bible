@@ -14,18 +14,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch108.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 108, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I asked the two holy angels who were with me[a], and I said to him, “What is this glorious thing? For it is not heaven, but only a burning flame of fire[c][b], and the sound of weeping and crying out and lamentation and grievous pain.”
-  philosophy: optimal-equivalence
+  text: I asked the two holy angels who were with me, saying to one of them[a], “What is this glorious thing? It is not heaven, but only a burning flame of fire, with the sound of weeping, cries, lamentation, and grievous pain.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ge'ez reads 'I said to him' although the previous phrase mentions 'the two holy angels.' This may mean Enoch addressed one angel as spokesman, or it may reflect a textual irregularity.
-    reason: textual_variant
-  - marker: b
-    text: '''Glorious thing'' could also be rendered ''glorious place'' or ''splendor.'' The wording is kept broad because the referent is not yet explicitly named in the verse itself.'
+    text: Literally, “I said to him,” although two angels have just been mentioned.
     reason: lexical_alternative
-  - marker: c
-    text: Or 'only a blazing fire'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ተስእልክዎ
   chosen: I asked
@@ -174,12 +168,18 @@ revisions:
   from: And I asked the two holy angels who were with me, and I said to him, “What is this glorious thing? For it is not heaven, but only a flame of fire that burns, and the sound of weeping and crying out and lamentation and grievous pain.”
   to: And I asked the two holy angels who were with me, and I said to him, “What is this glorious thing? For it is not heaven, but only a burning flame of fire, and the sound of weeping and crying out and lamentation and grievous pain.”
   rationale: Changed 'a flame of fire that burns' to 'a burning flame of fire' for a more direct and natural rendering of the participial phrase while preserving the source sense. Kept the rest substantially unchanged.
+- timestamp: '2026-11-09T20:04:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I asked the two holy angels who were with me[a], and I said to him, “What is this glorious thing? For it is not heaven, but only a burning flame of fire[c][b], and the sound of weeping and crying out and lamentation and grievous pain.”
+  to: I asked the two holy angels who were with me, saying to one of them[a], “What is this glorious thing? It is not heaven, but only a burning flame of fire, with the sound of weeping, cries, lamentation, and grievous pain.”
+  rationale: The earlier notes correctly identify the shift from two angels to a singular addressee; a short literal note preserves that uncertainty without leaving the English referent unexplained. The fire imagery and accumulated sounds of suffering remain intact.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:39:06Z'
   unchanged: false
   changes_summary: Changed 'a flame of fire that burns' to 'a burning flame of fire' for a more direct and natural rendering of the participial phrase while preserving the source sense. Kept the rest substantially unchanged.
-
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -199,3 +199,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/108/005.job-72984.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:04:20Z'
+  change_level: refined
+  confidence: medium
+  meaning: Enoch asks his angelic companions what this glorious but terrifying scene is, since he sees fire rather than heaven and hears anguish.
+  meaning_decisions:
+  - source_phrase: ወእቤሎ፡
+    prior_rendering: and I said to him
+    new_rendering: saying to one of them[a]
+    rationale: 'The singular address is preserved while its most natural contextual referent is made explicit: one of the two accompanying angels.'
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier notes correctly identify the shift from two angels to a singular addressee; a short literal note preserves that uncertainty without leaving the English referent unexplained. The fire imagery and accumulated sounds of suffering remain intact.

@@ -11,18 +11,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch85.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 85, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And that black calf struck the red calf and pursued it onto the earth[c][b][a], and after that I could no longer see that red calf.
-  philosophy: optimal-equivalence
+  text: And that black calf struck the red calf and pursued him into the earth[a]. After that I could no longer see the red calf.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ge'ez wording suggests violent contact followed by pursuit. 'Struck' could also be rendered 'gored' in light of the bovine imagery.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Onto the earth'' may also be understood as ''to the ground'' or ''into the earth,'' depending on how concretely the motion is taken.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'And that black heifer struck the red one and pursued it onto the earth, and after that I could no longer see that red heifer.'.
-    reason: previous_rendering
+    text: The phrase may also mean “across the earth.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ጐድአ
   chosen: struck
@@ -144,9 +138,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And that black calf struck the red calf and pursued it onto the earth[c][b][a], and after that I could no longer see that red calf.'
-  to: 'And that black calf struck the red calf and pursued it onto the earth[c][b][a], and after that I could no longer see that red calf.'
+  from: And that black calf struck the red calf and pursued it onto the earth[c][b][a], and after that I could no longer see that red calf.
+  to: And that black calf struck the red calf and pursued it onto the earth[c][b][a], and after that I could no longer see that red calf.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the red one''].'
+- timestamp: '2026-11-09T20:09:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And that black calf struck the red calf and pursued it onto the earth[c][b][a], and after that I could no longer see that red calf.
+  to: And that black calf struck the red calf and pursued him into the earth[a]. After that I could no longer see the red calf.
+  rationale: The correction from heifers to calves was sound and is preserved. “Struck” avoids specifying horns where the verb itself does not require them, while the disputed spatial phrase receives one focused alternative note.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:02:03Z'
@@ -171,3 +172,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/085/004.job-72713.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:09:23Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The black calf’s violence against the red calf and the red calf’s disappearance depict one brother killing the other.
+  meaning_decisions:
+  - source_phrase: ውስተ፡ ምድር
+    prior_rendering: onto the earth
+    new_rendering: into the earth
+    rationale: The directional sense of the phrase, together with the red calf’s immediate disappearance, favors movement into the earth. The possible sense of pursuit across its surface remains in the note.
+  - source_phrase: ወተለዎ
+    prior_rendering: and pursued it
+    new_rendering: and pursued him
+    rationale: The masculine reference maintains the male identity of the calf established by the surrounding family imagery.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The correction from heifers to calves was sound and is preserved. “Struck” avoids specifying horns where the verb itself does not require them, while the disputed spatial phrase receives one focused alternative note.

@@ -15,21 +15,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch69.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 69, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: This is the secret of Kasbeel[a], the chief of the oath which he showed to the holy ones when he dwelt in glory on high[d][c][b], and its name is Biqa.
-  philosophy: optimal-equivalence
+  text: This is the number of Kasbeel[a], the chief of the oath, which they revealed to the holy ones when they dwelt in glory on high; its name is Biqa[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the chief of the adjuration'; the Ge'ez term commonly means 'oath,' but in this context it may denote a solemn revealed formula bound up with a name.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Holy ones'' likely refers to heavenly beings in this visionary setting, though the phrase is left literal in the translation.'
-    reason: cultural_note
-  - marker: c
-    text: The final pronoun could be understood as referring either to the revealed name/formula or, less likely, to Kasbeel himself.
+    text: The Ge'ez word appears to mean 'number,' but its sense here is unclear.
     reason: alternative_reading
-  - marker: d
-    text: Or 'third name'.
-    reason: previous_rendering
+  - marker: b
+    text: Or 'his name is Biqa,' referring to Kasbeel.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ጐልቁ
   chosen: third name
@@ -169,12 +163,18 @@ revisions:
   from: This is the number of Kasbeel, the chief of the oath which he showed to the holy ones when he dwelt in glory on high, and its name is Biqa.
   to: This is the secret of Kasbeel, the chief of the oath which he showed to the holy ones when he dwelt in glory on high, and its name is Biqa.
   rationale: Changed 'number' to 'secret' for better lexical accuracy of Ge'ez ጐልቁ in this context; retained the rest as accurate and natural.
+- timestamp: '2026-11-09T20:01:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: This is the secret of Kasbeel[a], the chief of the oath which he showed to the holy ones when he dwelt in glory on high[d][c][b], and its name is Biqa.
+  to: This is the number of Kasbeel[a], the chief of the oath, which they revealed to the holy ones when they dwelt in glory on high; its name is Biqa[b].
+  rationale: The detailed lexical argument for 'number' carries more weight than the unsupported later shift to 'secret,' though it does not establish the word's contextual sense. The source's plural verbs and the ambiguous final possessive also counsel against making the narrative more definite than it is.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:05Z'
   unchanged: false
   changes_summary: Changed 'number' to 'secret' for better lexical accuracy of Ge'ez ጐልቁ in this context; retained the rest as accurate and natural.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -194,3 +194,27 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/069/013.job-72540.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:01:11Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The verse links Kasbeel with an oath revealed to the holy ones in heavenly glory and called Biqa, though his 'number' remains unexplained.
+  meaning_decisions:
+  - source_phrase: ጐልቁ
+    prior_rendering: secret
+    new_rendering: number
+    rationale: The numerical sense has the stronger lexical explanation in the record; neither 'secret' nor the earlier 'third name' is adequately established, but the contextual meaning of 'number' remains uncertain.
+  - source_phrase: ዘአርአዩ፡ ... ሶበ፡ ኆደሩ
+    prior_rendering: which he showed ... when he dwelt
+    new_rendering: which they revealed ... when they dwelt
+    rationale: The source uses plural verbs; the English preserves them without assigning both actions to Kasbeel or identifying actors the verse does not name.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: The detailed lexical argument for 'number' carries more weight than the unsupported later shift to 'secret,' though it does not establish the word's contextual sense. The source's plural verbs and the ambiguous final possessive also counsel against making the narrative more definite than it is.

@@ -15,18 +15,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch69.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 69, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: All these will believe and give thanks before the Lord of Spirits[a], and they will bless with all their power, and their food will be in all thanksgiving[c][b]; and they will give thanks and bless and exalt the name of the Lord of Spirits forever and ever.
-  philosophy: optimal-equivalence
+  text: All these put their trust in the Lord of Spirits and give thanks before him; they bless him with all their strength, and every act of thanksgiving is their food[a]. They give thanks, bless, and exalt the name of the Lord of Spirits forever and ever.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'their possessions' or 'their substance' for 'their wealth'; the Ge'ez term likely refers broadly to what they have at their disposal, not only money.
+    text: Literally, “their food is in all thanksgiving.”
     reason: lexical_alternative
-  - marker: b
-    text: The phrase rendered 'in thanksgiving' is compressed in the Ge'ez and may also be understood as 'with all thanksgiving.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'and with all their wealth in thanksgiving;'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ያአምኑ
   chosen: will believe
@@ -170,12 +164,18 @@ revisions:
   from: All these will believe and give thanks before the Lord of Spirits, and they will bless with all their power , and their food is in all thanksgiving; and they will give thanks and bless and exalt the name of the Lord of Spirits forever and ever.
   to: All these will believe and give thanks before the Lord of Spirits, and they will bless with all their power, and their food will be in all thanksgiving; and they will give thanks and bless and exalt the name of the Lord of Spirits forever and ever.
   rationale: Adjusted punctuation spacing and changed 'their food is' to 'their food will be' for tense consistency with the surrounding future verbs.
+- timestamp: '2026-11-09T20:01:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: All these will believe and give thanks before the Lord of Spirits[a], and they will bless with all their power, and their food will be in all thanksgiving[c][b]; and they will give thanks and bless and exalt the name of the Lord of Spirits forever and ever.
+  to: All these put their trust in the Lord of Spirits and give thanks before him; they bless him with all their strength, and every act of thanksgiving is their food[a]. They give thanks, bless, and exalt the name of the Lord of Spirits forever and ever.
+  rationale: The earlier correction from wealth to food recovered the verse's important nourishment image. The later choice of future tense is less compelling than the ongoing cosmological context, while the compressed food clause warrants a brief literal note.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:08Z'
   unchanged: false
   changes_summary: Adjusted punctuation spacing and changed 'their food is' to 'their food will be' for tense consistency with the surrounding future verbs.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -195,3 +195,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/069/024.job-72551.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:01:42Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: All these heavenly powers trust and worship the Lord of Spirits, finding their nourishment in thanksgiving.
+  meaning_decisions:
+  - source_phrase: ኵሉ፡ እሉንቱ፡ ያአምኑ፡ ወየአኵቱ፡ በቅድመ፡ እግዚአ፡ መንፈሳት
+    prior_rendering: All these will believe and give thanks before the Lord of Spirits
+    new_rendering: All these put their trust in the Lord of Spirits and give thanks before him
+    rationale: The imperfect verbs continue the account of creation's ongoing order and worship. “Put their trust” conveys the relational sense of believing, with its understood object made explicit.
+  - source_phrase: ወሲሳዮሙ፡ በኵሉ፡ አኰቴት፡ ይእቲ
+    prior_rendering: and their food will be in all thanksgiving
+    new_rendering: and every act of thanksgiving is their food
+    rationale: The independent nominal clause presents thanksgiving as their nourishment; the food image is kept rather than reduced to possessions or resources.
+  - source_phrase: ወየአኵቱ፡ ወይሴብሑ፡ ወያሌዕሉ
+    prior_rendering: and they will give thanks and bless and exalt
+    new_rendering: They give thanks, bless, and exalt
+    rationale: The repeated worship describes the same continuing heavenly activity, not necessarily a separate future response.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier correction from wealth to food recovered the verse's important nourishment image. The later choice of future tense is less compelling than the ongoing cosmological context, while the compressed food clause warrants a brief literal note.

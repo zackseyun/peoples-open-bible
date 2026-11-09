@@ -12,18 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch100.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 100, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And wise men will see[a], and all the children of the earth will understand every matter of this book[c][b], and they will know that their wealth cannot save them from the destruction of their sins.
-  philosophy: optimal-equivalence
+  text: And wise men will see the truth[a], and the children of the earth will understand everything in this book. They will know that their wealth cannot save them from the ruin their sins bring.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The final phrase is difficult. It may also be rendered 'by casting off their sins' or 'by diminishing their sins.' The main text chooses 'by denying their sins' because the verse emphasizes failed self-deliverance through evasion of guilt.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'And the wise among men will see'.
-    reason: previous_rendering
-  - marker: c
-    text: Or 'they cannot save themselves by denying their sins'.
-    reason: previous_rendering
+    text: Or 'wise men will truly see.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: እሙነ
   chosen: the wise among
@@ -167,12 +161,18 @@ revisions:
   from: And wise men will see the truth, and all the children of the earth will understand every matter of this book, and they will know that their wealth cannot save them in the ruin of their sins.
   to: And wise men will see, and all the children of the earth will understand every matter of this book, and they will know that their wealth cannot save them from the destruction of their sins.
   rationale: Removed 'the truth' because it is not clearly present in the source, and revised the final clause to 'from the destruction of their sins' for a more direct and natural rendering of the source.
+- timestamp: '2026-11-09T20:08:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And wise men will see[a], and all the children of the earth will understand every matter of this book[c][b], and they will know that their wealth cannot save them from the destruction of their sins.
+  to: And wise men will see the truth[a], and the children of the earth will understand everything in this book. They will know that their wealth cannot save them from the ruin their sins bring.
+  rationale: The history correctly recovered wealth as the failed means of rescue and ruin as the consequence of sin. The later deletion of 'the truth' is less persuasive than the earlier lexical explanation, while the obsolete notes about denying sins have no support in this reading.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:48Z'
   unchanged: false
   changes_summary: Removed 'the truth' because it is not clearly present in the source, and revised the final clause to 'from the destruction of their sins' for a more direct and natural rendering of the source.
-
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -192,3 +192,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/100/006.job-72922.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:08:16Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: People will recognize the truth of this book and learn that wealth cannot rescue them from the ruin their sins bring.
+  meaning_decisions:
+  - source_phrase: እሙነ፡ ይሬእዩ፡ ሰብአ፡ ጠቢባን
+    prior_rendering: wise men will see
+    new_rendering: wise men will see the truth
+    rationale: The opening word is best understood as the object of seeing, though an adverbial understanding remains possible and is noted.
+  - source_phrase: ወይሌብዉ፡ ውሉደ፡ ምድር፡ ኵሎ፡ ነገረ፡ ዛቲ፡ መጽሐፍ
+    prior_rendering: all the children of the earth will understand every matter of this book
+    new_rendering: the children of the earth will understand everything in this book
+    rationale: The word for 'all' qualifies the book's contents; the new wording also replaces the unnatural 'every matter' with its ordinary English meaning.
+  - source_phrase: በመዳቀ፡ ኃጢአቶሙ
+    prior_rendering: from the destruction of their sins
+    new_rendering: from the ruin their sins bring
+    rationale: The warning concerns the sinners' ruin, not the destruction of sin itself.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history correctly recovered wealth as the failed means of rescue and ruin as the consequence of sin. The later deletion of 'the truth' is less persuasive than the earlier lexical explanation, while the obsolete notes about denying sins have no support in this reading.

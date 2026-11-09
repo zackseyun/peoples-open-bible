@@ -13,18 +13,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch78.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 78, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And in certain months[a], the month has twenty-nine days[c][b], and once twenty-eight.
-  philosophy: optimal-equivalence
+  text: Certain months have twenty-nine days; sometimes a month has five weeks[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The closing phrase is difficult in the Ethiopic OCR witness. The wording rendered 'and at one time five weeks' may reflect a corrupt or poorly recovered text; compare critical editions for possible clarification.
-    reason: textual_variant
-  - marker: b
-    text: The Astronomical Book uses technical calendrical language for the movements and reckonings of the heavenly lights; 'luminaries' is retained to preserve that specialized register.
-    reason: cultural_note
-  - marker: c
-    text: Or 'And in the days of the luminaries, it shall be twenty-nine days for the month, and at one time five weeks.'.
-    reason: previous_rendering
+    text: The closing measure is unclear in the Ge’ez; it has also been understood as twenty-eight days.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: አውራኅ
   chosen: days
@@ -134,12 +128,18 @@ revisions:
   from: And in the days of the luminaries, it shall be twenty-nine days for the month, and at one time five weeks.
   to: And in certain months, the month has twenty-nine days, and once twenty-eight.
   rationale: 'The draft contains multiple severe lexical errors. First, አውራኅ is the plural of ወርኅ (''month''), not ''days''. Second, እሙራን means ''certain'' or ''fixed'' (from አመረ), not ''luminaries'' (which would be ብርሃናት). Third, the OCR reading ፭ወሳሙን is a misrecognition of ፳ወ፰ (28), as ፳ (20) is visually similar to ፭ (5). The verse describes the length of lunar months: ''And in certain months the month has twenty-nine days, and once twenty-eight.'''
+- timestamp: '2026-11-09T20:05:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And in certain months[a], the month has twenty-nine days[c][b], and once twenty-eight.
+  to: Certain months have twenty-nine days; sometimes a month has five weeks[a].
+  rationale: The earlier correction rightly identified “months” and “certain,” replacing the draft’s erroneous references to days and luminaries. Its further change to twenty-eight is not represented by the supplied source, whose closing wording appears to give five weeks and remains uncertain.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:35Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: needs_review
   agreement: 0.3
@@ -159,3 +159,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/078/009.job-72655.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:05:01Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Certain lunar months have twenty-nine days, while an uncertain closing phrase gives another month length.
+  meaning_decisions:
+  - source_phrase: ወቦ፡ አመ፡ ፭ወሳሙን
+    prior_rendering: and once twenty-eight
+    new_rendering: sometimes a month has five weeks
+    rationale: The supplied source has five followed by wording associated with a week, rather than the numeral twenty-eight. Its difficult wording is translated without substituting the correction proposed in the revision history; the possible twenty-eight-day reading is noted.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier correction rightly identified “months” and “certain,” replacing the draft’s erroneous references to days and luminaries. Its further change to twenty-eight is not represented by the supplied source, whose closing wording appears to give five weeks and remains uncertain.

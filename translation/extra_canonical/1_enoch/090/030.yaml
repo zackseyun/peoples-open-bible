@@ -18,15 +18,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw all the sheep that were left[a], and every beast that was upon the earth, and all the birds of heaven, falling down and bowing to those sheep, and making petition to them[b], and obeying them in every word.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The verb translated 'obeying' is literally 'hearing.' In this context of prostration and petition, it likely carries the sense of heeding or obeying.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'And I saw all the sheep that were left, and every beast that was upon the earth, and all the birds of heaven, falling down and bowing'.
-    reason: previous_rendering
+  text: And I saw all the sheep that were left. Every beast on the earth and all the birds of heaven fell down and bowed before those sheep, petitioning them and obeying everything they said.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ወርኢክዎሙ
   chosen: And I saw
@@ -152,12 +145,18 @@ revisions:
   from: And I saw all the sheep that were left; and every beast that was upon the earth and all the birds of heaven were falling down and bowing to those sheep, and making petition to them, and obeying them in every word.
   to: And I saw all the sheep that were left, and every beast that was upon the earth, and all the birds of heaven, falling down and bowing to those sheep, and making petition to them, and obeying them in every word.
   rationale: Removed the semicolon for smoother formal English and adjusted the verb sequence so the collective subjects more naturally govern the participles while preserving the meaning. No lexical changes.
+- timestamp: '2026-11-09T20:17:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I saw all the sheep that were left[a], and every beast that was upon the earth, and all the birds of heaven, falling down and bowing to those sheep, and making petition to them[b], and obeying them in every word.
+  to: And I saw all the sheep that were left. Every beast on the earth and all the birds of heaven fell down and bowed before those sheep, petitioning them and obeying everything they said.
+  rationale: The earlier revision correctly distinguished the sheep from the beasts and birds that bow to them; the later wording obscured that distinction. The contextual sense of hearing as obedience is retained, while the explanatory note and the incomplete alternative wording are unnecessary for readers.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:23Z'
   unchanged: false
   changes_summary: Removed the semicolon for smoother formal English and adjusted the verb sequence so the collective subjects more naturally govern the participles while preserving the meaning. No lexical changes.
-
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -177,3 +176,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/090/030.job-72828.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:17:30Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Enoch sees the surviving sheep receiving homage, petitions, and complete obedience from every beast on earth and all the birds of heaven.
+  meaning_decisions:
+  - source_phrase: ወርኢክዎሙ፡ ለኵሎሙ፡ አባግዕ፡ እለ፡ ተርፉ፡ ወኵሉ፡ እንስሳ፡ ዘዲበ፡ ምድር፡ ወኵሉ፡ አዕዋፈ፡ ሰማይ፡ ይወድቁ፡ ወይሰግዱ፡ ለእልኩ፡ አባግዕ
+    prior_rendering: And I saw all the sheep that were left, and every beast that was upon the earth, and all the birds of heaven, falling down and bowing to those sheep
+    new_rendering: And I saw all the sheep that were left. Every beast on the earth and all the birds of heaven fell down and bowed before those sheep
+    rationale: The sheep are the object of Enoch's seeing and the recipients of homage; the beasts and birds perform the bowing. Separating the clauses makes that distinction clear and avoids suggesting that the sheep bow to themselves.
+  - source_phrase: ወይሰምዕዎሙ፡ በኵሉ፡ ቃል
+    prior_rendering: and obeying them in every word
+    new_rendering: and obeying everything they said
+    rationale: In this sequence of submission, hearing means obeying; the final phrase expresses obedience to everything the sheep say, rather than obedience expressed through the speakers' own words.
+  footnote_kinds: {}
+  history_weighed: The earlier revision correctly distinguished the sheep from the beasts and birds that bow to them; the later wording obscured that distinction. The contextual sense of hearing as obedience is retained, while the explanatory note and the incomplete alternative wording are unnecessary for readers.

@@ -22,18 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And read out before me by number how many they destroy[a], and how many they hand over to destruction, so that this may be a testimony for me against them, that I may know all the deeds of the shepherds, and assess them, and see what they do—whether they abide by my command that I commanded them[c][b], or not.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Ethiopic is difficult in the opening clause. The repeated counting language likely refers to a numerical reckoning of the shepherds and of those they destroyed.
-    reason: textual_variant
-  - marker: b
-    text: Or 'that this record might stand against them.' The phrase rendered 'upon them' may carry an accusatory force in context.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'And I read out before him the tally of those shepherds, and how many they had destroyed for the shepherds, so that this testimony might be upon them, that I might know all the deeds of the shepherds, and count them, and see what they do—whether they abide by my command that I commanded them, or not.'.
-    reason: previous_rendering
+  text: “Read out before me the tally of how many they destroy and how many they hand over to destruction, so that this may be testimony for me against them. In this way I may know all the deeds of the shepherds, assess them, and see what they do—whether they obey the command I gave them or not.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: አንበብ
   chosen: I read out
@@ -180,12 +170,18 @@ revisions:
   from: And I read out before him the tally of those shepherds, and how many they had destroyed for the shepherds, so that this testimony might be upon them, that I might know all the deeds of the shepherds, and count them, and see what they do—whether they abide by my command that I commanded them, or not.
   to: And read out before me by number how many they destroy, and how many they hand over to destruction, so that this may be a testimony for me against them, that I may know all the deeds of the shepherds, and assess them, and see what they do—whether they abide by my command that I commanded them, or not.
   rationale: 'The draft fundamentally misunderstands the speaker and mistranslates several clauses. The Lord is speaking to the scribe (as evidenced by ''my command'' later in the verse), so አንብብ (anbeb, slightly mis-OCRed as አንበብ) is imperative (''read out'') and ቅድሜየ (qedmeya) is ''before me'', not ''before him''. The draft invents ''the tally of those shepherds'' for ወበኍልቈ (wa-ba-xwelqwa, ''and by number''). It completely misses the second verb phrase ወሚመጠነ፡ ይሚጥዉ፡ ለኃጕል (wa-mi-matana yemitwu la-hagwel, ''and how many th | Adjudicator: The reviewer is entirely correct. The current draft fundamentally misconstrues the speaker and the grammar of the verse. The Ge''ez `ቅድሜየ` (qedmeya) is ''before me'' (1cs suffix), not ''before him''. The p'
+- timestamp: '2026-11-09T20:11:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And read out before me by number how many they destroy[a], and how many they hand over to destruction, so that this may be a testimony for me against them, that I may know all the deeds of the shepherds, and assess them, and see what they do—whether they abide by my command that I commanded them[c][b], or not.
+  to: “Read out before me the tally of how many they destroy and how many they hand over to destruction, so that this may be testimony for me against them. In this way I may know all the deeds of the shepherds, assess them, and see what they do—whether they obey the command I gave them or not.”
+  rationale: The current text correctly restores the Lord as speaker and distinguishes direct destruction from handing sheep over to destruction. I retained its judicial language and its open test of obedience, while removing notes based on the superseded first-person narrative.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:39:13Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -205,3 +201,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/063.job-72789.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:11:34Z'
+  change_level: refined
+  confidence: high
+  meaning: The destruction must be counted and reported to the Lord as testimony by which he assesses the shepherds’ obedience.
+  meaning_decisions:
+  - source_phrase: ወበኍልቈ፡ አንበብ፡ ቅድሜየ
+    prior_rendering: And read out before me by number
+    new_rendering: Read out before me the tally
+    rationale: The observer is to present a numerical account aloud; 'the tally' conveys that evidentiary function directly.
+  - source_phrase: ይነብሩ፡ በትእዛዝየ፡ ዘአዘዝክዎሙ
+    prior_rendering: they abide by my command that I commanded them
+    new_rendering: they obey the command I gave them
+    rationale: The construction tests whether their conduct remains within the Lord’s command; the English retains that standard without an unnatural repetition.
+  footnote_kinds: {}
+  history_weighed: The current text correctly restores the Lord as speaker and distinguishes direct destruction from handing sheep over to destruction. I retained its judicial language and its open test of obedience, while removing notes based on the superseded first-person narrative.

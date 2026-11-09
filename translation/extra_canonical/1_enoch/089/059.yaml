@@ -22,15 +22,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And he summoned seventy shepherds and gave over those sheep to them, that they might pasture them. And he said to the shepherds and to their companions[a], “From now on, each of you[b] shall pasture the sheep, and do all that I command you.”
-  philosophy: optimal-equivalence
+  text: He summoned seventy shepherds and handed those sheep over to them so that they might tend them. He said to the shepherds and their companions, “From now on, all of you shall tend the sheep in groups of seven[a]; do everything I command you.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The phrase rendered 'their companions' is somewhat uncertain; it likely refers to those associated with the shepherds.
-    reason: lexical_alternative
-  - marker: b
-    text: The Ethiopic text repeats the number seventy in the address ('all seventy of you'). The translation brings out the distributive sense as 'each of you' after already stating 'seventy shepherds.'
-    reason: lexical_alternative
+    text: The Ge’ez says “seven by seven,” which may instead mean seven serving at a time.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ጸውዐ
   chosen: summoned
@@ -155,13 +152,12 @@ revisions:
   from: And he summoned seventy shepherds and gave over those sheep to them, that they might pasture them. And he said to the shepherds and to their companions, “From now on, each of you shall pasture the sheep, and do all that I command you.”
   to: And he summoned seventy shepherds and gave those sheep over to them, that they might pasture them. And he said to the shepherds and to all their companions, “From now on, each of you shall pasture the sheep, and do all that I command you.”
   rationale: Added 'all' before 'their companions' to reflect ኵሉ, and adjusted word order slightly to 'gave those sheep over to them' for natural English while preserving the source sense.
-
 - timestamp: '2026-05-18T03:10:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he summoned seventy shepherds and gave those sheep over to them[a], that they might pasture them. And he said to the shepherds and to all their companions, “From now on, each of you shall pasture the sheep[b], and do all that I command you.”'
-  to: 'And he summoned seventy shepherds and gave over those sheep to them, that they might pasture them. And he said to the shepherds and to their companions, “From now on, each of you shall pasture the sheep, and do all that I command you.”'
+  from: And he summoned seventy shepherds and gave those sheep over to them[a], that they might pasture them. And he said to the shepherds and to all their companions, “From now on, each of you shall pasture the sheep[b], and do all that I command you.”
+  to: And he summoned seventy shepherds and gave over those sheep to them, that they might pasture them. And he said to the shepherds and to their companions, “From now on, each of you shall pasture the sheep, and do all that I command you.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to their companions''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -171,6 +167,13 @@ revisions:
   from: And he summoned seventy shepherds and gave over those sheep to them, that they might pasture them. And he said to the shepherds and to their companions, “From now on, each of you shall pasture the sheep, and do all that I command you.”
   to: And he summoned seventy shepherds and gave over those sheep to them, that they might pasture them. And he said to the shepherds and to their companions[a], “From now on, each of you[b] shall pasture the sheep, and do all that I command you.”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('their companions') because the note quotes that phrase from the rendering; [b] anchored to ('each of you') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T20:11:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he summoned seventy shepherds and gave over those sheep to them, that they might pasture them. And he said to the shepherds and to their companions[a], “From now on, each of you[b] shall pasture the sheep, and do all that I command you.”
+  to: He summoned seventy shepherds and handed those sheep over to them so that they might tend them. He said to the shepherds and their companions, “From now on, all of you shall tend the sheep in groups of seven[a]; do everything I command you.”
+  rationale: The current wording preserves the commission well, but its numerical note describes the supplied numeral incorrectly as seventy. I retained the seventy shepherds in the opening clause and represented the subsequent grouping in sevens without deciding whether it specifies successive periods of service.
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -190,3 +193,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/059.job-72785.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:11:34Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The Lord appoints seventy shepherds and their companions to tend the sheep in groups of seven under his commands.
+  meaning_decisions:
+  - source_phrase: ከመ፡ ይርዐይዎሙ
+    prior_rendering: that they might pasture them
+    new_rendering: so that they might tend them
+    rationale: The commission concerns the shepherds’ charge over the sheep, not only bringing them to grazing.
+  - source_phrase: ኵሉ፡ ፯፯እምኔክሙ
+    prior_rendering: each of you
+    new_rendering: all of you shall tend the sheep in groups of seven
+    rationale: The supplied Ge’ez contains a distributive seven, 'seven by seven,' rather than another seventy; the grouping therefore needs to remain visible.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The current wording preserves the commission well, but its numerical note describes the supplied numeral incorrectly as seventy. I retained the seventy shepherds in the opening clause and represented the subsequent grouping in sevens without deciding whether it specifies successive periods of service.

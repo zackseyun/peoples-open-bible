@@ -12,18 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch101.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 101, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Is not the whole sea[a], and all its waters, and all its movements[c][b], the work of the Most High? And he has measured all its works and bound its shores with sand.
-  philosophy: optimal-equivalence
+  text: Is not the whole sea, with all its waters and all its movements, the work of the Most High? He has set limits to all it does and bound it all around with sand[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The word rendered 'movements' may more specifically refer to the sea's surging or waves.
-    reason: lexical_alternative
-  - marker: b
-    text: The final clause is textually difficult. The Ge'ez appears to say that he 'bound their foundations with sand'; this may refer to God fixing the sea's boundary.
-    reason: textual_variant
-  - marker: c
-    text: Or 'Is not every sea, and all its waters, and all its movements, the work of the Most High? And he has measured all his works and bound their foundations with sand.'.
-    reason: previous_rendering
+    text: The final phrase is unclear in the Ge'ez; it may instead refer to binding the sea's foundations with sand.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: አኮ
   chosen: Is not
@@ -156,12 +150,18 @@ revisions:
   from: Is not the whole sea, and all its waters, and all its movements, the work of the Most High? And he has measured all its workings and bound it entirely with sand.
   to: Is not the whole sea, and all its waters, and all its movements, the work of the Most High? And he has measured all its works and bound its shores with sand.
   rationale: Revised 'workings' to 'works' for closer lexical consistency with 'work of the Most High,' and changed 'bound it entirely with sand' to 'bound its shores with sand' to reflect the specific noun for its boundary/edge rather than an adverbial sense of totality.
+- timestamp: '2026-11-09T20:07:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Is not the whole sea[a], and all its waters, and all its movements[c][b], the work of the Most High? And he has measured all its works and bound its shores with sand.
+  to: Is not the whole sea, with all its waters and all its movements, the work of the Most High? He has set limits to all it does and bound it all around with sand[a].
+  rationale: Kept the earlier correction identifying the activity as the sea's rather than God's works generally. The history gives conflicting explanations of the final words, so the binding image is preserved while the remaining uncertainty is made explicit.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:51Z'
   unchanged: false
   changes_summary: Revised 'workings' to 'works' for closer lexical consistency with 'work of the Most High,' and changed 'bound it entirely with sand' to 'bound its shores with sand' to reflect the specific noun for its boundary/edge rather than an adverbial sense of totality.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -181,3 +181,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/101/006.job-72932.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:20Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The sea and all its activity belong to God's creation and remain within the limits he has imposed.
+  meaning_decisions:
+  - source_phrase: ወውእቱ፡ ኵሉ፡ ግብረታ፡ ዐቀመ
+    prior_rendering: And he has measured all its works
+    new_rendering: He has set limits to all it does
+    rationale: The sea's own activity is being measured or bounded. In context, the point is God's determination of its limits, not the measurement of an unspecified collection of works.
+  - source_phrase: ወአሰረ፡ እብንታሃ፡ ቡኖባ
+    prior_rendering: and bound its shores with sand
+    new_rendering: and bound it all around with sand
+    rationale: The strongest contextual and historical evidence supports the sea being enclosed by sand. The uncertain final words do not securely name its shores, and the possible foundation sense is preserved in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: Kept the earlier correction identifying the activity as the sea's rather than God's works generally. The history gives conflicting explanations of the final words, so the binding image is preserved while the remaining uncertainty is made explicit.

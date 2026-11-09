@@ -12,15 +12,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch101.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 101, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Do not those kings of the sea fear the sea[b][a], while sinners do not fear the Most High?
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The phrase rendered 'those mariners' is textually difficult in the OCR'd Ge'ez. It likely refers to people who go down to the sea in ships; 'sailors' or 'seafarers' are possible alternatives.
-    reason: textual_variant
-  - marker: b
-    text: Or 'Are not those mariners afraid of the sea, while sinners do not fear'.
-    reason: previous_rendering
+  text: Do not those captains of the ships fear the sea, while sinners do not fear the Most High?
+  philosophy: dynamic
 lexical_decisions:
 - source_word: አኮኑ
   chosen: Are not
@@ -138,12 +131,18 @@ revisions:
   from: Do not those kings of the ships fear the sea, while sinners do not fear the Most High?
   to: Do not those kings of the sea fear the sea, while sinners do not fear the Most High?
   rationale: Revised 'kings of the ships' to 'kings of the sea' for better lexical accuracy and more natural English; retained the rhetorical contrast and formal register.
+- timestamp: '2026-11-09T20:07:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Do not those kings of the sea fear the sea[b][a], while sinners do not fear the Most High?
+  to: Do not those captains of the ships fear the sea, while sinners do not fear the Most High?
+  rationale: Kept the earlier gain of using 'fear' in both halves of the contrast. The subsequent change to 'kings of the sea' weakened both lexical accuracy and the connection to verse 4, so the same designation is restored here.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:51Z'
   unchanged: false
   changes_summary: Revised 'kings of the ships' to 'kings of the sea' for better lexical accuracy and more natural English; retained the rhetorical contrast and formal register.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -163,3 +162,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/101/009.job-72935.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:20Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The ship captains' fear of the sea condemns the sinners' failure to fear the Most High.
+  meaning_decisions:
+  - source_phrase: ውእቶሙ፡ ተነገሥተ፡ አሕማር
+    prior_rendering: those kings of the sea
+    new_rendering: those captains of the ships
+    rationale: This repeats the designation in verse 4 and refers to those commanding ships, not monarchs ruling the sea. Restoring the repetition makes the closing comparison unmistakable.
+  footnote_kinds: {}
+  history_weighed: Kept the earlier gain of using 'fear' in both halves of the contrast. The subsequent change to 'kings of the sea' weakened both lexical accuracy and the connection to verse 4, so the same designation is restored here.

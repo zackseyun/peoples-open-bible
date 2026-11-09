@@ -13,21 +13,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch99.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 99, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And those who bow down to stone[a], and those who make images of gold and silver and wood and clay[d][c][b], and those who bow down to evil spirits and demons and to every idol without understanding—they will find no help at all from them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The opening phrase literally says 'bow down to stone'; the singular likely stands for stone cult-objects in general.
-    reason: lexical_alternative
-  - marker: b
-    text: The phrase rendered 'evil spirits' could also be understood more literally as 'evil souls' or 'wicked souls.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'make images of gold and silver and wood and clay'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'they will receive no help from them.'.
-    reason: previous_rendering
+  text: And those who bow down to stone, those who make images of gold and silver and wood and clay, and those who, without understanding, bow down to evil spirits and demons and every idol—they will find no help at all from them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ይሰግዱ
   chosen: bow down
@@ -176,12 +163,18 @@ revisions:
   from: And those who bow down to stone, and those who make an image of gold and of silver and of wood and of clay, and those who bow down to evil spirits and demons and to every idol without understanding—they will find no help at all from them.
   to: And those who bow down to stone, and those who make images of gold and silver and wood and clay, and those who bow down to evil spirits and demons and to every idol without understanding—they will find no help at all from them.
   rationale: Changed 'an image' to 'images' to better match the plural sense of the list of materials and improve natural English; otherwise retained the draft.
+- timestamp: '2026-11-09T20:07:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And those who bow down to stone[a], and those who make images of gold and silver and wood and clay[d][c][b], and those who bow down to evil spirits and demons and to every idol without understanding—they will find no help at all from them.
+  to: And those who bow down to stone, those who make images of gold and silver and wood and clay, and those who, without understanding, bow down to evil spirits and demons and every idol—they will find no help at all from them.
+  rationale: The current wording rightly preserves the materials, supernatural objects of worship, and emphatic absence of help. The generic plural 'images' communicates the singular image used collectively, while the existing notes add no necessary distinction.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:40:16Z'
   unchanged: false
   changes_summary: Changed 'an image' to 'images' to better match the plural sense of the list of materials and improve natural English; otherwise retained the draft.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -201,3 +194,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/099/007.job-72910.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:46Z'
+  change_level: refined
+  confidence: high
+  meaning: Those who make and worship idols or bow before evil spirits and demons without understanding will find no help from what they worship.
+  meaning_decisions:
+  - source_phrase: ወእለ፡ ይሰግዱ፡ ለነፍሳት፡ እኩያት፡ ወአጋንንት፡ ወለኵሉ፡ ጣዖት፡ [ወ]ኢበተምሃር
+    prior_rendering: those who bow down to evil spirits and demons and to every idol without understanding
+    new_rendering: those who, without understanding, bow down to evil spirits and demons and every idol
+    rationale: Moving the phrase makes clear that the worshipers act without understanding, rather than suggesting that only the idols lack understanding.
+  footnote_kinds: {}
+  history_weighed: The current wording rightly preserves the materials, supernatural objects of worship, and emphatic absence of help. The generic plural 'images' communicates the singular image used collectively, while the existing notes add no necessary distinction.

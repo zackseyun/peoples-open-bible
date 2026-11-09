@@ -14,18 +14,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch91.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 91, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And lawlessness will again increase[a], and it will be brought to completion upon the earth[c][b]; and every work of lawlessness and violence and sin will again take hold.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The final clause literally speaks of every work of lawlessness, violence, and sin 'taking hold' again; the image is of evil regaining its grip on the earth.
-    reason: lexical_alternative
-  - marker: b
-    text: The verb rendered 'will be brought to completion' may also be understood as 'will be completed' or 'will be fulfilled,' here in the dark sense that wickedness reaches its full measure.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'will again be repeated'.
-    reason: previous_rendering
+  text: And lawlessness will return and reach its full measure upon the earth; every work of lawlessness and violence and sin will again take hold.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ትደገም
   chosen: will again be repeated
@@ -159,12 +149,18 @@ revisions:
   from: And lawlessness will be repeated, and it will be brought to completion upon the earth; and every work of lawlessness and violence and sin will again take hold.
   to: And lawlessness will again increase, and it will be brought to completion upon the earth; and every work of lawlessness and violence and sin will again take hold.
   rationale: Changed 'will be repeated' to 'will again increase' to better reflect the sense of the opening verb with ካዕበ ('again'), while retaining the rest of the verse unchanged.
+- timestamp: '2026-11-09T20:12:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And lawlessness will again increase[a], and it will be brought to completion upon the earth[c][b]; and every work of lawlessness and violence and sin will again take hold.
+  to: And lawlessness will return and reach its full measure upon the earth; every work of lawlessness and violence and sin will again take hold.
+  rationale: The earlier recurrence reading fits the source better than the later change to increase. I retained the distinct terms for evil and the image of taking hold, while expressing completion according to this verse's renewed-corruption context.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:26Z'
   unchanged: false
   changes_summary: Changed 'will be repeated' to 'will again increase' to better reflect the sense of the opening verb with ካዕበ ('again'), while retaining the rest of the verse unchanged.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -184,3 +180,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/091/006.job-72842.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:12:30Z'
+  change_level: retranslated
+  confidence: high
+  meaning: After the destruction, lawlessness returns, reaches its full extent on earth, and again takes hold through violent and sinful deeds.
+  meaning_decisions:
+  - source_phrase: ትደገም፡ ካዕበ፡ ዓመፃ
+    prior_rendering: lawlessness will again increase
+    new_rendering: lawlessness will return
+    rationale: The verb and adverb express recurrence, not increase. This marks renewed wickedness after the preceding judgment.
+  - source_phrase: ወትትፈጸም፡ ዲበ፡ ምድር
+    prior_rendering: and it will be brought to completion upon the earth
+    new_rendering: and reach its full measure upon the earth
+    rationale: Here completion describes the renewed development of evil, since the following clause says its deeds take hold again.
+  footnote_kinds: {}
+  history_weighed: The earlier recurrence reading fits the source better than the later change to increase. I retained the distinct terms for evil and the image of taking hold, while expressing completion according to this verse's renewed-corruption context.

@@ -16,15 +16,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the sun goes out from the west[a], from that sixth gate, and travels eastward, and rises in the fifth gate for thirty mornings[b], and sets again in the west in the fifth western gate.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Literally, 'thirty mornings.' This may function as a day-count, but the Ethiopic wording is preserved.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'from there, from the west'.
-    reason: previous_rendering
+  text: And the sun goes out from that sixth gate in the west and travels eastward. For thirty mornings it rises through the fifth gate and sets again through the fifth gate in the west.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ወይወፅእ
   chosen: and ... goes out
@@ -159,12 +152,18 @@ revisions:
   from: from there, from the west
   to: from the west
   rationale: 'The Ge''ez preposition እምነ (emna) simply means ''from'', not ''from there''. The draft adds ''from there'' without source justification, creating an unnecessary redundancy. | Adjudicator: The reviewer is correct. The Ge''ez text reads እምነ፡ ምዕራብ (''emna me''rāb), which translates simply as ''from the west.'' There is no adverb for ''there'' (such as ህየ) in the source text, making the current E'
+- timestamp: '2026-11-09T20:01:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the sun goes out from the west[a], from that sixth gate, and travels eastward, and rises in the fifth gate for thirty mornings[b], and sets again in the west in the fifth western gate.
+  to: And the sun goes out from that sixth gate in the west and travels eastward. For thirty mornings it rises through the fifth gate and sets again through the fifth gate in the west.
+  rationale: The earlier removal of the unsupported 'from there' is retained. The wording is lightly reorganized to clarify the paired gates and the duration, while the misplaced and redundant notes are dropped.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:17Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -184,3 +183,17 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/072/017.job-72586.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:01:13Z'
+  change_level: refined
+  confidence: high
+  meaning: The sun moves from the sixth western gate to a thirty-morning cycle through the fifth gates in the east and west.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The earlier removal of the unsupported 'from there' is retained. The wording is lightly reorganized to clarify the paired gates and the duration, while the misplaced and redundant notes are dropped.

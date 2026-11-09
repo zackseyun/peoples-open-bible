@@ -11,15 +11,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch20.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 20, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Saraqael[a], one of the holy angels[b], who is over the spirits of the children of men who sin.
-  philosophy: optimal-equivalence
+  text: Saraqael, one of the holy angels, who is over the spirits of human beings who sin in spirit[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The middle of the Ethiopic OCR line is uncertain. A widely attested understanding of this verse is that Saraqael is set over 'the spirits of humankind who sin' or similar wording.
-    reason: textual_variant
-  - marker: b
-    text: Or 'the spirits of those who sin in the spirit.'.
-    reason: previous_rendering
+    text: The wording is unclear; it may instead mean simply “the spirits that sin.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ሰራቃኤል
   chosen: Saraqael
@@ -135,12 +132,18 @@ revisions:
   from: Saraqael, one of the holy angels, who is over the spirits of the children of men who sin in the spirit.
   to: Saraqael, one of the holy angels, who is over the spirits of the children of men who sin.
   rationale: Removed 'in the spirit,' which is not supported by the source as translated here. The verse more naturally and accurately reads 'the spirits of the children of men who sin.'
+- timestamp: '2026-11-09T19:46:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Saraqael[a], one of the holy angels[b], who is over the spirits of the children of men who sin.
+  to: Saraqael, one of the holy angels, who is over the spirits of human beings who sin in spirit[a].
+  rationale: Earlier revisions proposed a human reference and then removed “in the spirit,” while the lexical discussion recognized the repeated spirit-language as significant. The supplied wording remains uncertain, so neither the proposed correction nor the final clause’s interpretation is treated as secure.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:36:26Z'
   unchanged: false
   changes_summary: Removed 'in the spirit,' which is not supported by the source as translated here. The verse more naturally and accurately reads 'the spirits of the children of men who sin.'
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -160,3 +163,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/020/006.job-72269.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:46:33Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Saraqael has authority over spirits associated with sin, probably the spirits of human beings who sin in spirit.
+  meaning_decisions:
+  - source_phrase: መናፍስት፡ [እስለ፡ እመሕያው፡] ዘመናፍስት፡ ያኃጥኡ
+    prior_rendering: the spirits of the children of men who sin
+    new_rendering: the spirits of human beings who sin in spirit
+    rationale: The human reference remains the probable sense of the unclear middle phrase. “Who sin in spirit” represents the final clause’s repeated spirit-language, which the latest wording omitted, while the note acknowledges the competing understanding.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: Earlier revisions proposed a human reference and then removed “in the spirit,” while the lexical discussion recognized the repeated spirit-language as significant. The supplied wording remains uncertain, so neither the proposed correction nor the final clause’s interpretation is treated as secure.

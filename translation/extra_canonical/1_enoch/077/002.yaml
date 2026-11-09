@@ -12,15 +12,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch77.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 77, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the wind from the west is named Hegulā[b][a], because there all the lights of heaven fade and go down.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'all the luminaries of heaven are extinguished and descend.' The verb may denote being effaced or obscured, and 'go down' likely refers to their setting in the west.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'are blotted out'.
-    reason: previous_rendering
+  text: And the wind from the west is named Hegulā, because there all the lights of heaven fade and go down.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ነፋስ
   chosen: wind
@@ -145,12 +138,18 @@ revisions:
   from: And the wind from the west is named Hegulā, because there all the lights of heaven wane and go down.
   to: And the wind from the west is named Hegulā, because there all the lights of heaven fade and go down.
   rationale: Changed 'wane' to 'fade' for more natural English while preserving the sense of diminishing; otherwise retained the draft.
+- timestamp: '2026-11-09T20:04:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the wind from the west is named Hegulā[b][a], because there all the lights of heaven fade and go down.
+  to: And the wind from the west is named Hegulā, because there all the lights of heaven fade and go down.
+  rationale: The current wording preserves the revision's sound distinction between diminishing and being blotted out. Its older footnotes offer misleading alternatives and are unnecessary for understanding the setting of the heavenly lights.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:34Z'
   unchanged: false
   changes_summary: Changed 'wane' to 'fade' for more natural English while preserving the sense of diminishing; otherwise retained the draft.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -170,3 +169,17 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/077/002.job-72641.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:04:33Z'
+  change_level: refined
+  confidence: high
+  meaning: The western wind is called Hegulā because the heavenly lights diminish and go down there.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The current wording preserves the revision's sound distinction between diminishing and being blotted out. Its older footnotes offer misleading alternatives and are unnecessary for understanding the setting of the heavenly lights.

@@ -11,18 +11,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch31.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 31, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And when they crush that fruit[c][b][a], it is better than every fragrance.
-  philosophy: optimal-equivalence
+  text: When that fruit is picked up[a], its fragrance surpasses every other.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The final phrase is uncertain in the OCR witness. The Ge'ez likely compares the fruit favorably with every odor or fragrance; 'than all perfumes' is a possible alternative.
+    text: The verb describing how the fruit is handled is unclear in the Ge'ez.
     reason: textual_variant
-  - marker: b
-    text: The clause may describe the fruit's excellence in smell rather than in general quality; compare the broader context of aromatic trees in this chapter.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'took up that fruit, it was better than every fragrance'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ተይነሥእዎ
   chosen: they took up
@@ -112,12 +106,18 @@ revisions:
   from: And when they rub that fruit, it is better than all fragrances.
   to: And when they crush that fruit, it is better than every fragrance.
   rationale: Changed 'rub' to 'crush' for better lexical accuracy, and 'all fragrances' to 'every fragrance' for a more natural and formal rendering closer to the source.
+- timestamp: '2026-11-09T19:49:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when they crush that fruit[c][b][a], it is better than every fragrance.
+  to: When that fruit is picked up[a], its fragrance surpasses every other.
+  rationale: The earlier change to crushing depended on a different verb from the one supplied here, so the take-up sense is restored cautiously. The current wording correctly preserves a present-tense comparison, and its notes support understanding the excellence specifically as fragrance.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:36:08Z'
   unchanged: false
   changes_summary: Changed 'rub' to 'crush' for better lexical accuracy, and 'all fragrances' to 'every fragrance' for a more natural and formal rendering closer to the source.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -137,3 +137,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/031/003.job-72323.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:49:10Z'
+  change_level: retranslated
+  confidence: low
+  meaning: When the fruit is picked up, its fragrance surpasses every other fragrance.
+  meaning_decisions:
+  - source_phrase: ወሶበ፡ ተይነሥእዎ፡
+    prior_rendering: And when they crush
+    new_rendering: When that fruit is picked up
+    rationale: The supplied verb points to taking up or lifting, not crushing; the passive construction expresses the unspecified, general human action naturally.
+  - source_phrase: ይኄይስ፡ እምኵሉ፡ አፈው።
+    prior_rendering: it is better than every fragrance
+    new_rendering: its fragrance surpasses every other
+    rationale: The comparison with fragrances concerns the fruit's scent, not its general quality; the new wording makes that contextual meaning explicit.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier change to crushing depended on a different verb from the one supplied here, so the take-up sense is restored cautiously. The current wording correctly preserves a present-tense comparison, and its notes support understanding the excellence specifically as fragrance.

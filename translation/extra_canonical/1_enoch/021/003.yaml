@@ -12,18 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch21.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 21, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And there I saw seven stars of heaven[a], bound together in it, like great mountains[c][b], and burning with fire.
-  philosophy: optimal-equivalence
+  text: I saw seven stars of heaven, like great mountains, bound together there[a] and burning with fire.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The image of stars being bound likely carries symbolic force for heavenly beings under judgment, but the text itself says 'stars.'
-    reason: cross_reference
-  - marker: b
-    text: The word rendered 'gathered together' follows a difficult Ge'ez reading (†ኅቡረ†); 'assembled' or 'clustered together' are possible.
-    reason: textual_variant
-  - marker: c
-    text: Or 'bound above it, gathered together'.
-    reason: previous_rendering
+    text: The Ge'ez word translated “together” is unclear. The phrase may also mean “bound above it, gathered together.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ርኢኩ
   chosen: I saw
@@ -140,12 +134,18 @@ revisions:
   from: And there I saw seven stars of heaven bound together in it, like great mountains, and burning with fire.
   to: And there I saw seven stars of heaven, bound together in it, like great mountains, and burning with fire.
   rationale: Added commas to clarify the appositional/participial structure; wording otherwise retained as accurate and natural.
+- timestamp: '2026-11-09T19:47:05Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And there I saw seven stars of heaven[a], bound together in it, like great mountains[c][b], and burning with fire.
+  to: I saw seven stars of heaven, like great mountains, bound together there[a] and burning with fire.
+  rationale: The earlier revisions correctly preserved the stars, their confinement, and their mountain-like appearance, but their spatial explanation relied partly on Greek. The Ge'ez uncertainty and the earlier alternative are therefore preserved in one reader-facing note, while the unnecessary explanation of the stars’ symbolism is dropped.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:35:56Z'
   unchanged: false
   changes_summary: Added commas to clarify the appositional/participial structure; wording otherwise retained as accurate and natural.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -165,3 +165,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/021/003.job-72273.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:47:05Z'
+  change_level: refined
+  confidence: low
+  meaning: Enoch sees seven heavenly stars confined together in the terrifying place, immense as mountains and burning with fire.
+  meaning_decisions:
+  - source_phrase: እሱራነ፡ በላዕሌሁ፡ †ኅቡረ፡†
+    prior_rendering: bound together in it
+    new_rendering: bound together there
+    rationale: This locates the confinement in the place Enoch has described without imposing a precise spatial relation on the difficult phrase; the possible vertical sense remains in the note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier revisions correctly preserved the stars, their confinement, and their mountain-like appearance, but their spatial explanation relied partly on Greek. The Ge'ez uncertainty and the earlier alternative are therefore preserved in one reader-facing note, while the unnecessary explanation of the stars’ symbolism is dropped.

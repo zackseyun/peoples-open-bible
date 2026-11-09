@@ -12,18 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch67.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 67, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And when all this happened[a], from that fiery stream and their convulsion in that place, a smell of sulfur was produced and joined with those waters[c][b]; and that valley of the angels who led astray burns beneath that land.
-  philosophy: optimal-equivalence
+  text: When all this happened, that fiery stream and their turmoil there[a] produced a smell of sulfur, which mingled with those waters. The valley of the angels who led others astray burns beneath that land.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Traditional English 'brimstone' is a possible rendering for the sulfur term here.
-    reason: lexical_alternative
-  - marker: b
-    text: The Ge'ez of this verse is difficult in places; 'it was joined with those waters' may also be understood as 'it mixed with those waters.'
+    text: The turmoil may refer to the angels’ agitation or to the turbulent waters.
     reason: alternative_reading
-  - marker: c
-    text: Or 'And all this happened from that fiery stream, and in that place there was produced a smell of sulfur'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ነጠብጣብ እሳት
   chosen: fiery stream
@@ -162,9 +156,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when all this happened[a], from that stream of fire and their disturbance in that place, a smell of sulfur was produced and joined with those waters[c][b]; and that valley of the angels who led astray burns beneath that land.'
-  to: 'And when all this happened[a], from that fiery stream and their convulsion in that place, a smell of sulfur was produced and joined with those waters[c][b]; and that valley of the angels who led astray burns beneath that land.'
-  rationale: 'Drafter chose ''fiery stream'' for ነጠብጣብ እሳት with explicit rationale (continuous fiery flow preserves the image without over-literal awkwardness); azure flipped to ''stream of fire'' claiming lexical correspondence without engaging the rationale. Also ''convulsion'' -> ''disturbance'' for ሀውኮሙ.'
+  from: And when all this happened[a], from that stream of fire and their disturbance in that place, a smell of sulfur was produced and joined with those waters[c][b]; and that valley of the angels who led astray burns beneath that land.
+  to: And when all this happened[a], from that fiery stream and their convulsion in that place, a smell of sulfur was produced and joined with those waters[c][b]; and that valley of the angels who led astray burns beneath that land.
+  rationale: Drafter chose 'fiery stream' for ነጠብጣብ እሳት with explicit rationale (continuous fiery flow preserves the image without over-literal awkwardness); azure flipped to 'stream of fire' claiming lexical correspondence without engaging the rationale. Also 'convulsion' -> 'disturbance' for ሀውኮሙ.
+- timestamp: '2026-11-09T19:59:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when all this happened[a], from that fiery stream and their convulsion in that place, a smell of sulfur was produced and joined with those waters[c][b]; and that valley of the angels who led astray burns beneath that land.
+  to: When all this happened, that fiery stream and their turmoil there[a] produced a smell of sulfur, which mingled with those waters. The valley of the angels who led others astray burns beneath that land.
+  rationale: I kept the earlier gains that restored the temporal clause and the previously omitted agitation. The older notes mostly offered synonymous wording; the uncertain reference of the turmoil is the point that merits a note.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-15T18:54:35Z'
@@ -189,3 +190,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/067/006.job-72515.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:59:22Z'
+  change_level: refined
+  confidence: medium
+  meaning: The fiery stream and turmoil produce sulfur that mingles with the waters, while the valley associated with the misleading angels burns beneath the land.
+  meaning_decisions:
+  - source_phrase: ወሀውኮሙ፡ በውእቱ፡ መካን
+    prior_rendering: and their convulsion in that place
+    new_rendering: and their turmoil there
+    rationale: Turmoil conveys violent agitation without suggesting a specifically bodily seizure or deciding whether the reference is to the angels or the waters.
+  - source_phrase: ተወልደ፡ ጼና፡ ተይ፡ ወተኃብረ፡ ምስለ፡ እልኩ፡ ማያት
+    prior_rendering: a smell of sulfur was produced and joined with those waters
+    new_rendering: produced a smell of sulfur, which mingled with those waters
+    rationale: The physical joining of sulfurous odor with the waters is naturally expressed as mingling, while the source’s causal connection remains intact.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I kept the earlier gains that restored the temporal clause and the previously omitted agitation. The older notes mostly offered synonymous wording; the uncertain reference of the turmoil is the point that merits a note.

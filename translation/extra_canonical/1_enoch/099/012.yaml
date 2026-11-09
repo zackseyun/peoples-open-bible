@@ -13,18 +13,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch99.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 99, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Woe to you who make the measure of sin and deceit[a], and who cause bitterness upon the earth[c][b], for by it they will be destroyed.
-  philosophy: optimal-equivalence
+  text: Woe to you who make your measures[a] instruments of sin and deceit, and spread this evil over the earth[b], for this will bring about your destruction.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The phrase rendered 'the measure of sin' is difficult. The Ge'ez word can mean 'measure' or 'standard,' so the line may also mean 'the full measure of sin' or 'the standard of sin.'
-    reason: lexical_alternative
+    text: Measures were used in trade; falsifying them cheated others.
+    reason: cultural_note
   - marker: b
-    text: The verb rendered 'provoke it' is uncertain in this form. It may mean to stir up, incite, or spread the preceding evil upon the earth.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'practice the measure of sin and deceit, and to those who provoke it'.
-    reason: previous_rendering
+    text: The Ge'ez verb is unclear; it may mean “make it known.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: እሌ ለክሙ
   chosen: Woe to you
@@ -153,12 +150,18 @@ revisions:
   from: Woe to you who make the measure false and deceitful, and who cause bitterness upon the earth, for by it they will be destroyed.
   to: Woe to you who make the measure of sin and deceit, and who cause bitterness upon the earth, for by it they will be destroyed.
   rationale: Revised 'the measure false and deceitful' to 'the measure of sin and deceit' to more directly reflect the source terms for 'measure,' 'sin,' and 'deceit.' Kept the rest substantially unchanged for formal, natural English.
+- timestamp: '2026-11-09T20:08:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Woe to you who make the measure of sin and deceit[a], and who cause bitterness upon the earth[c][b], for by it they will be destroyed.
+  to: Woe to you who make your measures[a] instruments of sin and deceit, and spread this evil over the earth[b], for this will bring about your destruction.
+  rationale: The history’s recognition of dishonest measures clarifies a phrase that the current wording leaves opaque. Its “cause bitterness” rendering depends on a different verb from the one supplied here, so I have not carried that correction into the translation and have marked the remaining uncertainty.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:46Z'
   unchanged: false
   changes_summary: Revised 'the measure false and deceitful' to 'the measure of sin and deceit' to more directly reflect the source terms for 'measure,' 'sin,' and 'deceit.' Kept the rest substantially unchanged for formal, natural English.
-
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -178,3 +181,31 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/099/012.job-72915.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:08:45Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Those who corrupt measures and spread their evil over the earth will be destroyed because of that evil.
+  meaning_decisions:
+  - source_phrase: ትገብርዋ፡ ለመስፈርት፡ ኃጢአት፡ ወትሐሱት
+    prior_rendering: make the measure of sin and deceit
+    new_rendering: make your measures instruments of sin and deceit
+    rationale: The measure is what they corrupt, not a quantity of sin they accumulate. The surrounding denunciations of social wrongdoing support dishonest measuring, while the rendering retains the explicit weight of sin and deceit.
+  - source_phrase: ወእለ፡ ተያእምሩ፡ ዲበ፡ ምድር
+    prior_rendering: and who cause bitterness upon the earth
+    new_rendering: and spread this evil over the earth
+    rationale: The supplied verb is uncertain and does not securely support “cause bitterness.” Spreading or making the preceding evil known is the best-supported contextual sense, with the uncertainty stated in a note.
+  - source_phrase: እስመ፡ ቦቱ፡ ይትዌደኡ
+    prior_rendering: for by it they will be destroyed
+    new_rendering: for this will bring about your destruction
+    rationale: The concluding third-person warning concerns the same people being addressed. English can keep the address consistent while preserving the causal connection between their evil and their destruction.
+  footnote_kinds:
+    a: cultural_background
+    b: alternative_meaning
+  history_weighed: The history’s recognition of dishonest measures clarifies a phrase that the current wording leaves opaque. Its “cause bitterness” rendering depends on a different verb from the one supplied here, so I have not carried that correction into the translation and have marked the remaining uncertainty.

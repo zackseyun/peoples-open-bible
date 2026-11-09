@@ -13,21 +13,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch93.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 93, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And now Enoch began to speak from the books[a], and he said, “I was born the seventh in the first week[d][c][b], while righteousness and justice still endured.”
-  philosophy: optimal-equivalence
+  text: And now Enoch began to speak from the books and said, “I was born in the first week[a], the seventh in the line from Adam, while righteousness and justice[b] still endured.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The phrase 'from the books' likely presents Enoch as reading or reciting from written records, not merely speaking spontaneously.
+    text: The “weeks” are symbolic periods of history, not seven-day weeks.
     reason: cultural_note
   - marker: b
-    text: '''First week'' refers to the symbolic historical periodization of the Apocalypse of Weeks, not necessarily to a literal seven-day week.'
-    reason: cross_reference
-  - marker: c
-    text: The word rendered 'uprightness' is textually difficult in this OCR witness; alternatives such as 'truth,' 'integrity,' or 'justice' are possible.
-    reason: textual_variant
-  - marker: d
-    text: Or 'until the time when righteousness and uprightness shall endure.'.
-    reason: previous_rendering
+    text: The Ge'ez word translated “justice” is unclear.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: አኀዘ
   chosen: began
@@ -181,12 +175,18 @@ revisions:
   from: And now Enoch began to speak from the books, and he said, “I was born the seventh in the first week, while judgment and righteousness still endured.”
   to: And now Enoch began to speak from the books, and he said, “I was born the seventh in the first week, while righteousness and justice still endured.”
   rationale: Replaced 'judgment and righteousness' with 'righteousness and justice' for a more natural and likely more accurate pairing of the source terms, while preserving the verse structure and sense.
+- timestamp: '2026-11-09T20:14:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And now Enoch began to speak from the books[a], and he said, “I was born the seventh in the first week[d][c][b], while righteousness and justice still endured.”
+  to: And now Enoch began to speak from the books and said, “I was born in the first week[a], the seventh in the line from Adam, while righteousness and justice[b] still endured.
+  rationale: The historical setting supports the current past-tense “still endured,” rather than the earliest draft's future reading. The history supports “justice,” but the supplied Ge'ez word remains unclear, so the uncertainty is acknowledged rather than silently treated as repaired.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:32Z'
   unchanged: false
   changes_summary: Replaced 'judgment and righteousness' with 'righteousness and justice' for a more natural and likely more accurate pairing of the source terms, while preserving the verse structure and sense.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -206,3 +206,23 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/093/003.job-72858.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:14:52Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Enoch places his birth as the seventh in Adam's line within the first symbolic week, when righteousness and justice still endured.
+  meaning_decisions:
+  - source_phrase: አነ፡ ሳብዕ፡ ተወለድኩ፡ በቀዳሚት፡ ሰንበት
+    prior_rendering: I was born the seventh in the first week
+    new_rendering: I was born in the first week, the seventh in the line from Adam
+    rationale: Makes the familiar ancestral sequence explicit so that “seventh” is not mistaken for a day of the week or birth order within a family.
+  footnote_kinds:
+    a: cultural_background
+    b: alternative_meaning
+  history_weighed: The historical setting supports the current past-tense “still endured,” rather than the earliest draft's future reading. The history supports “justice,” but the supplied Ge'ez word remains unclear, so the uncertainty is acknowledged rather than silently treated as repaired.

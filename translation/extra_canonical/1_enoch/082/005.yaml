@@ -14,21 +14,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch82.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 82, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Because of them, people go astray and do not reckon them in the reckoning of all the world[d][a]; for people err concerning them and do not know them[c] exactly[b].
-  philosophy: optimal-equivalence
+  text: People go astray because of these days and do not include them in the world's reckoning of time[a], for they are mistaken about them and do not understand them precisely.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ge'ez wording in the middle of the verse is difficult. The phrase rendered 'in the thought of all the world' may also mean 'in the reckoning/calculation of the whole world.'
-    reason: lexical_alternative
-  - marker: b
-    text: The final word may carry the sense 'carefully' or 'precisely'; thus, 'people do not know them carefully/precisely.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'for they lead them astray, and people do not know them exactly.'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'in the thought of all the world'.
-    reason: previous_rendering
+    text: The phrase about the world's reckoning is unclear in the Ge'ez.
+    reason: textual_variant
 lexical_decisions:
 - source_word: በእንቲአሆሙ
   chosen: because of them
@@ -167,8 +158,8 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Because of them[a], people go astray and do not reckon them in the reckoning of the whole world[d][c][b]; for people err concerning them and do not know them accurately.'
-  to: 'Because of them, people go astray and do not reckon them in the reckoning of all the world; for people err concerning them and do not know them exactly.'
+  from: Because of them[a], people go astray and do not reckon them in the reckoning of the whole world[d][c][b]; for people err concerning them and do not know them accurately.
+  to: Because of them, people go astray and do not reckon them in the reckoning of all the world; for people err concerning them and do not know them exactly.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''of all the world''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -178,6 +169,13 @@ revisions:
   from: Because of them, people go astray and do not reckon them in the reckoning of all the world; for people err concerning them and do not know them exactly.
   to: Because of them, people go astray and do not reckon them in the reckoning of all the world[d][a]; for people err concerning them and do not know them[c] exactly[b].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('of all the world') because the note names that rendering; [b] anchored to ('exactly') because the note's quoted alternative matches the lexical decision rendered there; [c] anchored to ('do not know them') because the note names that rendering; [d] anchored to ('of all the world') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T20:07:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Because of them, people go astray and do not reckon them in the reckoning of all the world[d][a]; for people err concerning them and do not know them[c] exactly[b].
+  to: People go astray because of these days and do not include them in the world's reckoning of time[a], for they are mistaken about them and do not understand them precisely.
+  rationale: I preserved the earlier corrections that made people the subject of the error and recognized reckoning as calendrical rather than general thought. The unclear middle phrase still warrants a short note, but the final adverb and the omission of the days need no editorial explanation.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:10:48Z'
@@ -202,3 +200,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/082/005.job-72680.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:19Z'
+  change_level: retranslated
+  confidence: low
+  meaning: People make errors about the additional days and omit them from their reckoning because they do not understand them precisely.
+  meaning_decisions:
+  - source_phrase: በእንቲአሆሙ
+    prior_rendering: Because of them
+    new_rendering: because of these days
+    rationale: The four days immediately preceding this verse, and their explicit inclusion in the year in the next verse, identify the subject of the error.
+  - source_phrase: ወኢየኀስብዎሙ፡ ተበሐሳቤ፡ ኵሉ፡ ዓለም
+    prior_rendering: and do not reckon them in the reckoning of all the world
+    new_rendering: and do not include them in the world's reckoning of time
+    rationale: The error is an omission from calendar reckoning. 'Include' makes that action clear, while 'of time' supplies the subject established by the surrounding verses.
+  - source_phrase: እስመ፡ ይጌግይዎሙ፡ ወኢያእምርዎሙ፡ ሰብእ፡ ጥንቁቀ
+    prior_rendering: for people err concerning them and do not know them exactly
+    new_rendering: for they are mistaken about them and do not understand them precisely
+    rationale: The clause describes people's mistaken understanding of the days, not the days misleading people. The English makes the cognitive and calendrical sense explicit.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: I preserved the earlier corrections that made people the subject of the error and recognized reckoning as calendrical rather than general thought. The unclear middle phrase still warrants a short note, but the final adverb and the omission of the days need no editorial explanation.

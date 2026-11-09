@@ -11,15 +11,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch30.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 30, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw a beautiful tree[a], which resembled a fragrant tree[b], like the mastic tree.
-  philosophy: optimal-equivalence
+  text: And I saw a beautiful tree that resembled the fragrant mastic tree[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The final plant name is uncertain in English; it likely refers to the mastic or lentisk tree, known for its aromatic resin.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'whose fragrance was like that of mastic.'.
-    reason: previous_rendering
+    text: 'The comparison may refer specifically to the fragrance: “whose fragrance was like that of mastic.”'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ወርኢኩ
   chosen: And I saw
@@ -122,12 +119,18 @@ revisions:
   from: And I saw a beautiful tree, which resembled a fragrant tree, like that of mastic.
   to: And I saw a beautiful tree, which resembled a fragrant tree, like the mastic tree.
   rationale: Revised the final phrase from 'like that of mastic' to 'like the mastic tree' for clearer, more natural English while preserving the comparison in the source.
+- timestamp: '2026-11-09T19:48:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I saw a beautiful tree[a], which resembled a fragrant tree[b], like the mastic tree.
+  to: And I saw a beautiful tree that resembled the fragrant mastic tree[a].
+  rationale: The revision history supports retaining a comparison between trees rather than limiting it to their fragrance. The wording is tightened while the serious alternative understanding remains in a footnote.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:36:07Z'
   unchanged: false
   changes_summary: Revised the final phrase from 'like that of mastic' to 'like the mastic tree' for clearer, more natural English while preserving the comparison in the source.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -147,3 +150,18 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/030/002.job-72319.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:48:42Z'
+  change_level: refined
+  confidence: medium
+  meaning: Enoch sees a beautiful tree resembling the fragrant mastic tree.
+  meaning_decisions: []
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The revision history supports retaining a comparison between trees rather than limiting it to their fragrance. The wording is tightened while the serious alternative understanding remains in a footnote.

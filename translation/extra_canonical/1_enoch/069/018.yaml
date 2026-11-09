@@ -15,18 +15,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch69.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 69, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And by that oath the sea was created[a], and as its foundation for the time of wrath he set sand for it[c][b], and it does not pass beyond it from the creation of the world and forever.
-  philosophy: optimal-equivalence
+  text: By that oath the sea was created. He set sand as its foundation[a] for the time of wrath[b], and since the creation of the world the sea has not crossed that limit, nor will it ever.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The phrase rendered 'for the time of wrath' is difficult in the Ge'ez and may also be understood more generally as 'for a time of judgment.'
-    reason: lexical_alternative
+    text: The Ge'ez word for “foundation” is uncertain here; it may refer to the sea's boundary.
+    reason: alternative_reading
   - marker: b
-    text: '''Its foundation'' likely refers to the sea''s fixed boundary or base; the image is that sand has been set as the limit it may not cross.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'he set for it sand'.
-    reason: previous_rendering
+    text: This may refer to the sea raging rather than to a day of divine wrath.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ማሐላ
   chosen: oath
@@ -142,12 +139,18 @@ revisions:
   from: he set for it sand
   to: he set sand for it
   rationale: The word order 'he set for it sand' is unnecessarily awkward in English. 'He set sand for it' smoothly renders the Ge'ez አንበረ፡ ላቲ፡ ኆፃ፡ (anbara lati hoza) without losing any lexical or grammatical force.
+- timestamp: '2026-11-09T20:01:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And by that oath the sea was created[a], and as its foundation for the time of wrath he set sand for it[c][b], and it does not pass beyond it from the creation of the world and forever.
+  to: By that oath the sea was created. He set sand as its foundation[a] for the time of wrath[b], and since the creation of the world the sea has not crossed that limit, nor will it ever.
+  rationale: The current wording preserves the important images of sand, foundation, and wrath. The uncertain foundation word is not replaced with a conjecture, and the possible reference to the sea's own raging is left open in a short note.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:06Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -167,3 +170,19 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/069/018.job-72545.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:01:42Z'
+  change_level: refined
+  confidence: low
+  meaning: The oath establishes the sea and the sandy limit it cannot cross, even in the time of wrath.
+  meaning_decisions: []
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: The current wording preserves the important images of sand, foundation, and wrath. The uncertain foundation word is not replaced with a conjecture, and the possible reference to the sea's own raging is left open in a short note.

@@ -13,18 +13,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch74.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 74, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And when the sun goes out from the fourth gate[a], it goes out for seven days, until it goes out from the fifth; and again it returns for seven days through the fourth gate, and completes all its light[c][b], and it withdraws and enters through the first gate for eight days.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Ethiopic text at 'until it goes out from the fifth' does not explicitly repeat 'gate'; the sense is almost certainly 'the fifth gate' from the surrounding pattern.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Completes all its light'' is a close rendering of the Ge''ez idiom. It likely refers to the sun reaching the full measure of its brightness in this phase of the cycle.'
-    reason: cultural_note
-  - marker: c
-    text: Or 'to the fourth gate'.
-    reason: previous_rendering
+  text: When the sun rises from the fourth gate, the moon rises for seven days until it rises from the fifth gate. Then it returns for seven days through the fourth gate and reaches its full light. It recedes and enters through the first gate for eight days.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ፀሐይ
   chosen: the sun
@@ -166,12 +156,18 @@ revisions:
   from: to the fourth gate
   to: through the fourth gate
   rationale: 'The Ge''ez preposition is በ (in/by/through), not ኀበ (to). The draft correctly translates the same preposition as ''through'' later in the verse (በቀዳሚት ኆኅት, ''through the first gate''). The luminaries travel *through* the gates, so ''returns... through the fourth gate'' is more accurate to the cosmology and the grammar. | Adjudicator: The Ge''ez preposition በ (ba) attached to ''gate'' (ኆኅት) in contexts of celestial motion typically denotes the path of transit (''through'' or ''by way of''), whereas ''to'' would more commonly be expressed wi'
+- timestamp: '2026-11-09T20:03:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when the sun goes out from the fourth gate[a], it goes out for seven days, until it goes out from the fifth; and again it returns for seven days through the fourth gate, and completes all its light[c][b], and it withdraws and enters through the first gate for eight days.
+  to: When the sun rises from the fourth gate, the moon rises for seven days until it rises from the fifth gate. Then it returns for seven days through the fourth gate and reaches its full light. It recedes and enters through the first gate for eight days.
+  rationale: The earlier correction to through the fourth gate is useful and has been kept. The current note attributing full light to the sun conflicts with the lunar sequence, so the moon is named explicitly and that note is removed.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:26Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -191,3 +187,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/074/007.job-72616.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:03:34Z'
+  change_level: retranslated
+  confidence: high
+  meaning: When the sun rises from the fourth gate, the moon follows a sequence through the fifth, fourth, and first gates, reaching full light before receding.
+  meaning_decisions:
+  - source_phrase: ወሶበ፡ ፀሐይ፡ ይወፅእ፡ እምራብዕት፡ ኆኅት፡ ይወፅእ፡ ሰቡዐ፡ መዋዕለ
+    prior_rendering: And when the sun goes out from the fourth gate, it goes out for seven days
+    new_rendering: When the sun rises from the fourth gate, the moon rises for seven days
+    rationale: The sun establishes the point of comparison, but the following movements belong to the moon; making that subject explicit prevents a misleading shift to a solar cycle.
+  - source_phrase: እስከ፡ ይወፅእ፡ እምነ፡ ኃምስት
+    prior_rendering: until it goes out from the fifth
+    new_rendering: until it rises from the fifth gate
+    rationale: The omitted noun is plainly gate, and the movement out of it is rising.
+  - source_phrase: ወይፌጽም፡ ኵሎ፡ ብርሃኖ
+    prior_rendering: and completes all its light
+    new_rendering: and reaches its full light
+    rationale: This describes the moon attaining full light, not the sun reaching a changing measure of brightness.
+  footnote_kinds: {}
+  history_weighed: The earlier correction to through the fourth gate is useful and has been kept. The current note attributing full light to the sun conflicts with the lunar sequence, so the moon is named explicitly and that note is removed.

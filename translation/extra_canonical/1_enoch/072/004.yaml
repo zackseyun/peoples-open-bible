@@ -16,18 +16,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And first a great light comes forth[a], whose name is the sun, and its disk is like the disk of heaven[c][b], and it is wholly full of fire that gives light and heat.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'its orb' or 'its circle'; the Ge'ez term can denote a round form or circuit. 'Disk' is chosen here because the comparison appears to concern visible shape.
-    reason: lexical_alternative
-  - marker: b
-    text: The final pair can also be understood as 'giving light and burning' or 'shining and heating.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'And the first comes forth as a great light'.
-    reason: previous_rendering
+  text: First a great light comes forth, whose name is the sun. Its disk is like the circle of heaven, and it is entirely filled with fire that gives light and heat.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ቀዳማዊ
   chosen: the first
@@ -162,9 +152,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And first a great light comes forth[a], whose name is the sun, and its disk is like the disk of heaven[c][b], and it is wholly full of fire that gives light and heat.'
-  to: 'And first a great light comes forth[a], whose name is the sun, and its disk is like the disk of heaven[c][b], and it is wholly full of fire that gives light and heat.'
+  from: And first a great light comes forth[a], whose name is the sun, and its disk is like the disk of heaven[c][b], and it is wholly full of fire that gives light and heat.
+  to: And first a great light comes forth[a], whose name is the sun, and its disk is like the disk of heaven[c][b], and it is wholly full of fire that gives light and heat.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''shining and burning''].'
+- timestamp: '2026-11-09T20:02:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And first a great light comes forth[a], whose name is the sun, and its disk is like the disk of heaven[c][b], and it is wholly full of fire that gives light and heat.
+  to: First a great light comes forth, whose name is the sun. Its disk is like the circle of heaven, and it is entirely filled with fire that gives light and heat.
+  rationale: The current wording correctly makes the great light the subject and expresses both light and heat. I keep those gains, clarify the circular comparison, and remove notes that offer no necessary alternative meaning.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:01:35Z'
@@ -189,3 +186,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/072/004.job-72573.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:02:51Z'
+  change_level: refined
+  confidence: high
+  meaning: The sun appears as a great circular light filled entirely with fire that illuminates and heats.
+  meaning_decisions:
+  - source_phrase: ከመ፡ ክበበ፡ ሰማይ
+    prior_rendering: like the disk of heaven
+    new_rendering: like the circle of heaven
+    rationale: Circle preserves the heavenly image without suggesting more specifically that heaven is a flat disk; the comparison itself remains unexplained.
+  footnote_kinds: {}
+  history_weighed: The current wording correctly makes the great light the subject and expresses both light and heat. I keep those gains, clarify the circular comparison, and remove notes that offer no necessary alternative meaning.

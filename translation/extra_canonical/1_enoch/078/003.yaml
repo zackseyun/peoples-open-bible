@@ -13,15 +13,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch78.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 78, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: These are the two great luminaries[a]; their disks are like the disk of heaven[b], and the size of the disks of the two of them is equal.
-  philosophy: optimal-equivalence
+  text: These are the two great luminaries; their disks are round like the circle of heaven, and the two disks are equal in size[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The final clause is difficult. The Ge'ez appears to say that the measured extent of the circuit belonging to both luminaries is 'equal' or 'the same.' A more literal alternative would be, 'and the measure of their circuit, for the two of them, is the same.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'their circuits are like the circuit of heaven, and the size of the circuit'.
-    reason: previous_rendering
+    text: The words can also refer to their circuits rather than their disks, with the two circuits equal in extent.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ብርሃናት
   chosen: luminaries
@@ -124,12 +121,18 @@ revisions:
   from: These are the two great luminaries; their disk is like the disk of heaven, and the size of the disk of the two of them is equal.
   to: These are the two great luminaries; their disks are like the disk of heaven, and the size of the disks of the two of them is equal.
   rationale: Changed 'their disk' to 'their disks' and 'the disk of the two of them' to 'the disks of the two of them' for grammatical agreement with the two luminaries and to better reflect the repeated plural possessive in the source.
+- timestamp: '2026-11-09T20:05:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: These are the two great luminaries[a]; their disks are like the disk of heaven[b], and the size of the disks of the two of them is equal.
+  to: These are the two great luminaries; their disks are round like the circle of heaven, and the two disks are equal in size[a].
+  rationale: The revision from circuits to disks fits the surrounding description of light within the luminaries, and that gain is preserved. The source term can nevertheless describe a circuit, so the serious alternative is kept in one concise note.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:06Z'
   unchanged: false
   changes_summary: Changed 'their disk' to 'their disks' and 'the disk of the two of them' to 'the disks of the two of them' for grammatical agreement with the two luminaries and to better reflect the repeated plural possessive in the source.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.8
@@ -149,3 +152,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/078/003.job-72649.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:05:01Z'
+  change_level: refined
+  confidence: medium
+  meaning: The sun and moon are the two great luminaries, circular like heaven and equal to one another in size.
+  meaning_decisions:
+  - source_phrase: ክበቦሙ፡ ከመ፡ ክበበ፡ ሰማይ
+    prior_rendering: their disks are like the disk of heaven
+    new_rendering: their disks are round like the circle of heaven
+    rationale: The comparison concerns circular form; the following clause separately compares the two luminaries’ sizes. Making roundness explicit avoids suggesting that their disks are as large as heaven.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The revision from circuits to disks fits the surrounding description of light within the luminaries, and that gain is preserved. The source term can nevertheless describe a circuit, so the serious alternative is kept in one concise note.

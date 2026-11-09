@@ -18,24 +18,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw until they laid aside that sword which had been given to the sheep[a], and they brought it into the house and sealed it before the face of the Lord; and all the sheep were summoned into that house[e][d][c][b], and it did not contain them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: '''Before the face of the Lord'' is a literal idiom meaning ''in the Lord''s presence.'''
-    reason: lexical_alternative
-  - marker: b
-    text: The final clause likely means that the house could not contain all the sheep.
-    reason: lexical_alternative
-  - marker: c
-    text: In the vision's symbolism, 'the house' may evoke the temple or the eschatological dwelling of God's people, but the text itself says only 'house.'
-    reason: cultural_note
-  - marker: d
-    text: Or 'they brought it'.
-    reason: previous_rendering
-  - marker: e
-    text: Or 'it was not enough to hold them'.
-    reason: previous_rendering
+  text: I watched until they laid aside the sword that had been given to the sheep. They brought it into the house, and it was sealed in the Lord’s presence. All the sheep were summoned into that house, but it could not hold them all.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: አሰከብዎ
   chosen: they laid aside
@@ -177,9 +161,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I saw until they laid aside that sword which had been given to the sheep[a], and they brought it into the house and sealed it before the face of the Lord; and all the sheep were summoned into that house[e][d][c][b], and it did not contain them.'
-  to: 'And I saw until they laid aside that sword which had been given to the sheep[a], and they brought it into the house and sealed it before the face of the Lord; and all the sheep were summoned into that house[e][d][c][b], and it did not contain them.'
+  from: And I saw until they laid aside that sword which had been given to the sheep[a], and they brought it into the house and sealed it before the face of the Lord; and all the sheep were summoned into that house[e][d][c][b], and it did not contain them.
+  to: And I saw until they laid aside that sword which had been given to the sheep[a], and they brought it into the house and sealed it before the face of the Lord; and all the sheep were summoned into that house[e][d][c][b], and it did not contain them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''sealed it up before the face of the Lord''].'
+- timestamp: '2026-11-09T20:17:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I saw until they laid aside that sword which had been given to the sheep[a], and they brought it into the house and sealed it before the face of the Lord; and all the sheep were summoned into that house[e][d][c][b], and it did not contain them.
+  to: I watched until they laid aside the sword that had been given to the sheep. They brought it into the house, and it was sealed in the Lord’s presence. All the sheep were summoned into that house, but it could not hold them all.
+  rationale: The earlier notes correctly identified the presence idiom and the house’s insufficient capacity; those meanings are now expressed directly without explanatory footnotes. I kept “brought it into” rather than restoring “back,” since the context does not establish that the sword had previously been in the house.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:01:11Z'
@@ -204,3 +195,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/090/034.job-72832.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:17:30Z'
+  change_level: refined
+  confidence: high
+  meaning: Enoch sees the sheep’s sword laid aside and sealed in the Lord’s presence, while all the sheep are summoned into a house that cannot hold them all.
+  meaning_decisions:
+  - source_phrase: ወኀተማ
+    prior_rendering: and sealed it
+    new_rendering: and it was sealed
+    rationale: The English passive preserves the sealing of the sword without assuming that the preceding plural subject also performs this singular action.
+  - source_phrase: እምቅድመ፡ ገጹ፡ ለእግዚእ
+    prior_rendering: before the face of the Lord
+    new_rendering: in the Lord’s presence
+    rationale: This expresses the presence idiom directly while preserving the solemnity of the act.
+  - source_phrase: ወኢያገምሮሙ
+    prior_rendering: and it did not contain them
+    new_rendering: but it could not hold them all
+    rationale: The gathering here and the house’s enlargement in verse 36 establish insufficient capacity, not a refusal to admit the sheep.
+  footnote_kinds: {}
+  history_weighed: The earlier notes correctly identified the presence idiom and the house’s insufficient capacity; those meanings are now expressed directly without explanatory footnotes. I kept “brought it into” rather than restoring “back,” since the context does not establish that the sword had previously been in the house.

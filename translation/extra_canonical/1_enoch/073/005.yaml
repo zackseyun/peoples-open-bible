@@ -12,18 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch73.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 73, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And its distant half is one seventh part[a], and all its disk is empty, without light[c][b], except for a seventh part of it—a fourteenth part of its light.
-  philosophy: optimal-equivalence
+  text: One half of it is separated by a seventh part[a]. Its whole disk is empty, without light, except for one seventh of that half—one fourteenth of its light.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The numerical phrasing is difficult in the Ethiopic witness. The repeated term rendered 'parts' is literally 'hand,' but in this context it functions as a unit or portion in the luminary's measured cycle.
-    reason: lexical_alternative
-  - marker: b
-    text: The verse appears to describe the moon's illuminated and darkened portions in the schematic style of the Astronomical Book rather than in modern scientific terms.
-    reason: cultural_note
-  - marker: c
-    text: Or 'seven parts of one, and all its disk is empty of light except for seven parts of it—fourteen parts of its light.'.
-    reason: previous_rendering
+    text: The meaning of the moon's half being distant or separated is unclear.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: መንፈቀ
   chosen: half
@@ -150,12 +144,18 @@ revisions:
   from: seven parts of one, and all its disk is empty of light except for seven parts of it—fourteen parts of its light.
   to: one seventh part, and all its disk is empty, without light, except for a seventh part of it—a fourteenth part of its light.
   rationale: 'The Astronomical Book''s lunar math divides the moon''s light into 14 parts. On the first day, it is illuminated by 1/14th of its total light (which is 1/7th of its half). The Ge''ez phrases ''ሳብዐተ እደ'' and ''ዐሠርተ ራብዐተ እደ'' function as fractions here (''a seventh part'', ''a fourteenth part''). Translating them as ''seven parts'' and ''fourteen parts'' destroys the mathematical sense of the passage, implying the moon is fully illuminated (''fourteen parts'') when the text explicitly says it is empty except for t | Adjudicator: The reviewer is entirely correct regarding Ge''ez fractional syntax. In Ge''ez, fractions are formed using the ordinal number followed by ''እድ'' (''ed, literally ''hand'' but here ''part''). Thus, ''ሳብዐተ እደ'' me'
+- timestamp: '2026-11-09T20:03:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And its distant half is one seventh part[a], and all its disk is empty, without light[c][b], except for a seventh part of it—a fourteenth part of its light.
+  to: One half of it is separated by a seventh part[a]. Its whole disk is empty, without light, except for one seventh of that half—one fourteenth of its light.
+  rationale: The corrected fractional readings preserve a real gain over the earliest whole-number rendering. The opening description remains uncertain, so its spatial wording is conveyed cautiously rather than turned into a complete astronomical explanation.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:23Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -175,3 +175,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/073/005.job-72606.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:03:37Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The moon's disk is almost entirely dark, with an illuminated portion described as one seventh of a half, or one fourteenth of its light.
+  meaning_decisions:
+  - source_phrase: ወመንፈቀ፡ ርኁቅ፡ ሳብዐተ፡ እደ፡ አሐደ
+    prior_rendering: And its distant half is one seventh part
+    new_rendering: One half of it is separated by a seventh part
+    rationale: The word distant is taken as describing a measured separation rather than equating a half with a seventh; the passage does not make clear what the half is separated from.
+  - source_phrase: ዘእንበለ፡ ሳብዐተ፡ እዴሁ፡ ዐሠርተ፡ ራብዐተ፡ እደ፡ ብርሃኑ
+    prior_rendering: except for a seventh part of it—a fourteenth part of its light
+    new_rendering: except for one seventh of that half—one fourteenth of its light
+    rationale: The reference to a half, made explicit again in the next verse, explains how a seventh here corresponds to a fourteenth of the moon's light.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The corrected fractional readings preserve a real gain over the earliest whole-number rendering. The opening description remains uncertain, so its spatial wording is conveyed cautiously rather than turned into a complete astronomical explanation.

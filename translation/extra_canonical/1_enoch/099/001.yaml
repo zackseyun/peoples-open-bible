@@ -13,15 +13,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch99.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 99, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: 'Woe to you who do wickedness[a], and who praise and honor the word of falsehood: you will perish[b], and no good life will be yours.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Ge'ez phrase rendered 'words of falsehood' could also be understood more broadly as 'a false matter' or 'false speech.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'words of falsehood'.
-    reason: previous_rendering
+  text: 'Woe to you who practice wickedness and praise and honor the word of falsehood: you will perish, and no good life will be yours.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: አሌ
   chosen: Woe
@@ -146,6 +139,13 @@ revisions:
   from: 'Woe to you who do wickedness[a], and who praise and honor the word of falsehood: you will perish[b], and no good life will be yours.'
   to: 'Woe to you who do wickedness[a], and who praise and honor the word of falsehood: you will perish[b], and no good life will be yours.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you will be destroyed''].'
+- timestamp: '2026-11-09T20:07:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Woe to you who do wickedness[a], and who praise and honor the word of falsehood: you will perish[b], and no good life will be yours.'
+  to: 'Woe to you who practice wickedness and praise and honor the word of falsehood: you will perish, and no good life will be yours.'
+  rationale: The current wording conveys the denunciation well, including the contrast between falsehood here and righteousness in verse 2. The earlier insistence on a singular 'word' preserves that contrast, but the existing notes offer no alternative that readers need.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:02:11Z'
@@ -170,3 +170,17 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/099/001.job-72904.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:46Z'
+  change_level: refined
+  confidence: high
+  meaning: Those who practice wickedness and honor falsehood are condemned to perish without a good life.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The current wording conveys the denunciation well, including the contrast between falsehood here and righteousness in verse 2. The earlier insistence on a singular 'word' preserves that contrast, but the existing notes offer no alternative that readers need.

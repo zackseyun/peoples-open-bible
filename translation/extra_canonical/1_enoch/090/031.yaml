@@ -18,18 +18,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And after that[a], those three clothed in white who had taken me by the hand, who had brought me up before, and the hand of that ram holding me[c][b], brought me up and set me down in the midst of those sheep before the judgment took place.
-  philosophy: optimal-equivalence
+  text: After that, those three clothed in white, who had taken me by the hand and had brought me up before, together with that ram[a] whose hand was holding me, brought me up and set me among those sheep before the judgment took place.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The clause 'those who had gone up before brought me up' is textually difficult in the OCR witness; the translation follows the apparent sense of guided ascent.
-    reason: textual_variant
-  - marker: b
-    text: '''Those sheep'' continues the Animal Apocalypse''s symbolic imagery, where human groups are represented as animals; the translation preserves the image rather than explaining it in the main text.'
-    reason: cultural_note
-  - marker: c
-    text: Or 'And from among them I saw three who were clothed in white, and they took me by my hand—those who had gone up before brought me up—and the hand of that one held me while he brought me up and set me down'.
-    reason: previous_rendering
+    text: The Ge'ez word here is unclear; it most likely means “ram.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: እልኩ ፫እለ
   chosen: I saw three
@@ -158,9 +152,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And after that[a], those three clothed in white who had taken me by the hand, who had brought me up before, and the hand of that ram holding me[c][b], brought me up and set me down in the midst of those sheep before the judgment took place.'
-  to: 'And after that[a], those three clothed in white who had taken me by the hand, who had brought me up before, and the hand of that ram holding me[c][b], brought me up and set me down in the midst of those sheep before the judgment took place.'
+  from: And after that[a], those three clothed in white who had taken me by the hand, who had brought me up before, and the hand of that ram holding me[c][b], brought me up and set me down in the midst of those sheep before the judgment took place.
+  to: And after that[a], those three clothed in white who had taken me by the hand, who had brought me up before, and the hand of that ram holding me[c][b], brought me up and set me down in the midst of those sheep before the judgment took place.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''were clothed in white''].'
+- timestamp: '2026-11-09T20:17:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And after that[a], those three clothed in white who had taken me by the hand, who had brought me up before, and the hand of that ram holding me[c][b], brought me up and set me down in the midst of those sheep before the judgment took place.
+  to: After that, those three clothed in white, who had taken me by the hand and had brought me up before, together with that ram[a] whose hand was holding me, brought me up and set me among those sheep before the judgment took place.
+  rationale: The current wording preserves the temporal opening, the guides' earlier ascent, and the complete ending missing from the first draft. The revision history supports “ram,” but the unclear source word warrants a brief reader-facing note rather than the earlier editorial explanations.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:02:03Z'
@@ -185,3 +186,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/090/031.job-72829.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:17:30Z'
+  change_level: refined
+  confidence: low
+  meaning: The three white-clothed figures who had guided Enoch before, together with the ram holding him, bring him up and place him among the sheep before the judgment.
+  meaning_decisions:
+  - source_phrase: ወእዴሁ፡ ለውእቱ፡ ይቤላ፡ እንዘ፡ ትእኅዘኒ፡
+    prior_rendering: and the hand of that ram holding me
+    new_rendering: together with that ram whose hand was holding me
+    rationale: Makes the ram's participation intelligible in English while preserving the image of its hand holding Enoch.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The current wording preserves the temporal opening, the guides' earlier ascent, and the complete ending missing from the first draft. The revision history supports “ram,” but the unclear source word warrants a brief reader-facing note rather than the earlier editorial explanations.

@@ -16,18 +16,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw six portals from which the sun rises[a], and six portals where the sun sets, and the moon rises and sets in those portals. And the leaders of the stars, together with those whom they lead, are six in the east and six in the west; and all of them, one after another, in exact order[c][b], with many windows to the right and to the left of those portals.
-  philosophy: optimal-equivalence
+  text: I saw six gates through which the sun rises and six through which it sets. The moon also rises and sets through these gates, as do the leaders of the stars and those they lead. There are six gates in the east and six in the west, all arranged one after another in exact order, with many windows[a] to their right and left.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ge'ez uses one term for the six main cosmic openings ('portals') and later a different difficult phrase that may refer to subsidiary openings or windows beside them.
-    reason: lexical_alternative
-  - marker: b
-    text: The final clause is textually difficult. The sense appears to be that the portals are arranged in proper sequence, with many side-openings on both the right and the left.
+    text: The Ge’ez wording about the windows is unclear.
     reason: textual_variant
-  - marker: c
-    text: Or 'and six portals in which the sun and the moon set; and in those portals they rise and set.'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ወርኢኩ
   chosen: And I saw
@@ -183,12 +177,18 @@ revisions:
   from: And I saw six portals from which the sun rises, and six portals in which the sun sets, and the moon rises and sets in those portals. And the leaders of the stars, together with those whom they lead, are six in the east and six in the west; and all of them, one after another, in exact order, with many windows to the right and to the left of those portals.
   to: And I saw six portals from which the sun rises, and six portals where the sun sets, and the moon rises and sets in those portals. And the leaders of the stars, together with those whom they lead, are six in the east and six in the west; and all of them, one after another, in exact order, with many windows to the right and to the left of those portals.
   rationale: Changed 'in which the sun sets' to 'where the sun sets' for more natural English while preserving the sense. No other changes needed.
+- timestamp: '2026-11-09T20:02:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I saw six portals from which the sun rises[a], and six portals where the sun sets, and the moon rises and sets in those portals. And the leaders of the stars, together with those whom they lead, are six in the east and six in the west; and all of them, one after another, in exact order[c][b], with many windows to the right and to the left of those portals.
+  to: I saw six gates through which the sun rises and six through which it sets. The moon also rises and sets through these gates, as do the leaders of the stars and those they lead. There are six gates in the east and six in the west, all arranged one after another in exact order, with many windows[a] to their right and left.
+  rationale: I retain the earlier correction separating the moon’s rising and setting from the sun’s setting. The chapter’s repeated six-gate scheme governs the compressed middle clause, while the genuine uncertainty about the windows receives a short note.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:14Z'
   unchanged: false
   changes_summary: Changed 'in which the sun sets' to 'where the sun sets' for more natural English while preserving the sense. No other changes needed.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -208,3 +208,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/072/003.job-72572.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:02:51Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Enoch sees six ordered gates on each side of heaven, used by the sun, moon, and star leaders with those they lead, with additional windows beside the gates.
+  meaning_decisions:
+  - source_phrase: ወመራኄሆሙ፡ ለከዋክብት፡ ምስለ፡ እለ፡ ይመርኅዎሙ
+    prior_rendering: And the leaders of the stars, together with those whom they lead, are six in the east and six in the west
+    new_rendering: as do the leaders of the stars and those they lead
+    rationale: The coordinated phrase continues the account of those using the gates; it does not require the leaders themselves to number six on each side.
+  - source_phrase: ፮በጽባሕ፡ ወ፮በምዕራብ፡ ፀሐይ፡ ወኵሎሙ፡ ፩፩እምድኅረ፡ ካልኡ፡ ርቱዕ
+    prior_rendering: are six in the east and six in the west; and all of them, one after another, in exact order
+    new_rendering: There are six gates in the east and six in the west, all arranged one after another in exact order
+    rationale: The repeated numbers summarize the eastern and western gates, whose ordered arrangement is then described; making the referent explicit avoids counting the star leaders instead.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: I retain the earlier correction separating the moon’s rising and setting from the sun’s setting. The chapter’s repeated six-gate scheme governs the compressed middle clause, while the genuine uncertainty about the windows receives a short note.

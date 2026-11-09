@@ -12,18 +12,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch73.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 73, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And on the day it takes up a seventh part of half of its light[c][b][a], and its light becomes one and a half seventh parts.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The underlying expression is literally 'seven hands,' an idiom for measured portions or units in this astronomical context.
-    reason: lexical_alternative
-  - marker: b
-    text: The final numbers are difficult in English. The Ge'ez reads literally along the lines of 'seven parts, one and a half,' so the verse likely describes a fractional increase in the moon's light.
-    reason: textual_variant
-  - marker: c
-    text: Or 'she rises, she takes seven parts from half of her light, and her light becomes seven parts and one half'.
-    reason: previous_rendering
+  text: During the day it receives a seventh of half its light, and its light becomes one and a half seventh parts.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: በዕለተ
   chosen: on the day
@@ -140,12 +130,18 @@ revisions:
   from: And on the day it takes a seventh part of half of its light, and its light becomes one seventh part and a half.
   to: And on the day it takes up a seventh part of half of its light, and its light becomes one and a half seventh parts.
   rationale: Changed 'takes' to 'takes up' for closer lexical correspondence, and revised 'one seventh part and a half' to 'one and a half seventh parts' for clearer, more natural English while preserving the source sense.
+- timestamp: '2026-11-09T20:03:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And on the day it takes up a seventh part of half of its light[c][b][a], and its light becomes one and a half seventh parts.
+  to: During the day it receives a seventh of half its light, and its light becomes one and a half seventh parts.
+  rationale: The revision correctly removed the duplicated rising action and established fractional rather than whole-number measures. Those gains stand; the older notes largely reflect the superseded draft rather than a necessary alternative meaning.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:24Z'
   unchanged: false
   changes_summary: Changed 'takes' to 'takes up' for closer lexical correspondence, and revised 'one seventh part and a half' to 'one and a half seventh parts' for clearer, more natural English while preserving the source sense.
-
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -165,3 +161,21 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/073/006.job-72607.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:03:37Z'
+  change_level: refined
+  confidence: medium
+  meaning: During the day the moon receives a measured increase of light, bringing its light to one and a half seventh parts.
+  meaning_decisions:
+  - source_phrase: ወበዕለተ፡ ትነሥእ
+    prior_rendering: And on the day it takes up
+    new_rendering: During the day it receives
+    rationale: The temporal phrase is expressed naturally, and receives fits the measured bestowal of light introduced in verse 2 without suggesting a separate rising action.
+  footnote_kinds: {}
+  history_weighed: The revision correctly removed the duplicated rising action and established fractional rather than whole-number measures. Those gains stand; the older notes largely reflect the superseded draft rather than a necessary alternative meaning.

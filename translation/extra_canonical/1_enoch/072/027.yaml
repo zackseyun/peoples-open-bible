@@ -16,24 +16,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the sun completes its courses[a], and again it travels upon those courses; and it enters through that gate for thirty mornings[e][d][c][b], and in the west it sets opposite it.
-  philosophy: optimal-equivalence
+  text: And the sun completes its courses and follows those courses again; it enters through that gate for thirty mornings and sets in the west in its distress[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'its principal path.' The Ge'ez term literally relates to 'head' or 'chief' and here likely denotes the sun's appointed main course.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'thirty mornings'; this likely marks a thirty-day span of appearances through the same gate.
-    reason: lexical_alternative
-  - marker: c
-    text: The phrase rendered 'by its own guidance' is difficult and may also mean 'according to its order' or 'by its appointed reckoning.'
+    text: The meaning of 'in its distress' here is unclear; another reading is 'opposite it.'
     reason: textual_variant
-  - marker: d
-    text: Or 'completed its chief course, and again it goes along that chief course'.
-    reason: previous_rendering
-  - marker: e
-    text: Or 'goes down by its own guidance'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ፈጸመ
   chosen: completed
@@ -192,12 +180,18 @@ revisions:
   from: And the sun completes its stations, and again it travels upon those stations; and it enters through that gate for thirty mornings, and in the west it sets opposite it.
   to: And the sun completes its courses, and again it travels upon those courses; and it enters through that gate for thirty mornings, and in the west it sets opposite it.
   rationale: Changed 'stations' to 'courses' for more natural and contextually accurate rendering of the sun's repeated paths; otherwise retained the structure and content of the draft.
+- timestamp: '2026-11-09T20:02:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the sun completes its courses[a], and again it travels upon those courses; and it enters through that gate for thirty mornings[e][d][c][b], and in the west it sets opposite it.
+  to: And the sun completes its courses and follows those courses again; it enters through that gate for thirty mornings and sets in the west in its distress[a].
+  rationale: The earlier revisions established useful plural course language, but their final phrase depends on a different Ge'ez word from the one supplied. The accumulated notes have been replaced with one explanation of that unresolved difficulty.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:20Z'
   unchanged: false
   changes_summary: Changed 'stations' to 'courses' for more natural and contextually accurate rendering of the sun's repeated paths; otherwise retained the structure and content of the draft.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -217,3 +211,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/072/027.job-72596.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:02:15Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The sun completes its courses and follows them again for thirty mornings through the same gate, although the description of its western setting is unclear.
+  meaning_decisions:
+  - source_phrase: በምዕራብኒ፡ በምንዳቤሁ፡ የዓርብ
+    prior_rendering: in the west it sets opposite it
+    new_rendering: sets in the west in its distress
+    rationale: The supplied Ge'ez word means distress, not opposition. The earlier correction requires a different reading, so that reading belongs in a footnote rather than replacing the source.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier revisions established useful plural course language, but their final phrase depends on a different Ge'ez word from the one supplied. The accumulated notes have been replaced with one explanation of that unresolved difficulty.

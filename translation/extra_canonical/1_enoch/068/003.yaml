@@ -11,21 +11,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch68.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 68, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And Mikael answered again[c] and said to Rufael[a], "Who is he whose heart is not softened concerning it[d][b], and whose kidneys are not troubled by this word of severity and the sentence that has gone out against them because of those who brought them out thus?"
-  philosophy: optimal-equivalence
+  text: 'Mikael answered Rufael again: “Whose heart is not softened by it, and whose inmost being[a] is not troubled by this severe sentence that has gone out against them because of those who brought them out in this way[b]?”'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'whose inward parts are not troubled.' The Ge'ez literally says 'kidneys,' a traditional bodily image for the inner self.
+    text: Literally, “kidneys,” understood as the seat of deep feelings.
     reason: lexical_alternative
   - marker: b
-    text: The closing clause is textually difficult in the Ethiopic witness, especially around the bracketed word. The translation keeps the wording cautious rather than adopting a more confident reconstruction.
-    reason: textual_variant
-  - marker: c
-    text: Or 'And he answered again and said to Rufael,'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'from before them?'.
-    reason: previous_rendering
+    text: The closing words are unclear; they may mean that the sentence came from those who brought them out in this way.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: አውሥአ ካዕበ
   chosen: answered again
@@ -166,8 +160,8 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Michael answered again and said to Raphael[a], "Who is he whose heart is not softened concerning it[d][c][b], and whose kidneys are not troubled by this word of severity and the sentence that has gone out against them from among them thus?"'
-  to: 'And Mikael answered again and said to Rufael, "Who is he whose heart is not softened concerning it, and whose kidneys are not troubled by this word of severity and the sentence that has gone out against them because of those who brought them out thus?"'
+  from: And Michael answered again and said to Raphael[a], "Who is he whose heart is not softened concerning it[d][c][b], and whose kidneys are not troubled by this word of severity and the sentence that has gone out against them from among them thus?"
+  to: And Mikael answered again and said to Rufael, "Who is he whose heart is not softened concerning it, and whose kidneys are not troubled by this word of severity and the sentence that has gone out against them because of those who brought them out thus?"
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to Rufael''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -177,6 +171,13 @@ revisions:
   from: And Mikael answered again and said to Rufael, "Who is he whose heart is not softened concerning it, and whose kidneys are not troubled by this word of severity and the sentence that has gone out against them because of those who brought them out thus?"
   to: And Mikael answered again[c] and said to Rufael[a], "Who is he whose heart is not softened concerning it[d][b], and whose kidneys are not troubled by this word of severity and the sentence that has gone out against them because of those who brought them out thus?"
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it; [b] restored to the position it held before an earlier revision pass dropped it; [c] anchored to ('answered again') because the note names that rendering; [d] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T20:00:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Mikael answered again[c] and said to Rufael[a], "Who is he whose heart is not softened concerning it[d][b], and whose kidneys are not troubled by this word of severity and the sentence that has gone out against them because of those who brought them out thus?"
+  to: 'Mikael answered Rufael again: “Whose heart is not softened by it, and whose inmost being[a] is not troubled by this severe sentence that has gone out against them because of those who brought them out in this way[b]?”'
+  rationale: The earlier revisions rightly restored Mikael as the speaker and preserved the final relative clause. I retain both, but translate the bodily idiom by its meaning and leave the difficult closing relationship unresolved in a note.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:10:52Z'
@@ -201,3 +202,27 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/068/003.job-72525.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:00:34Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Mikael asks who could remain without compassion or deep inward distress at the severe sentence issued against the condemned.
+  meaning_decisions:
+  - source_phrase: ወኢይትሀወክ፡ ኵልያቲሁ
+    prior_rendering: and whose kidneys are not troubled
+    new_rendering: and whose inmost being is not troubled
+    rationale: The kidneys express the deepest inward feelings, not a medical condition. The English conveys that bodily idiom’s meaning, with the literal image preserved in a note.
+  - source_phrase: ቃለ፡ *ጽነኒ፡ ወፅእት፡ ዲቤሆሙ
+    prior_rendering: this word of severity and the sentence that has gone out against them
+    new_rendering: this severe sentence that has gone out against them
+    rationale: The severe word is the pronouncement issued against them. The English should not suggest two separate things—a word and an additional sentence—where the passage describes one judicial pronouncement.
+  footnote_kinds:
+    a: literal_wording
+    b: alternative_meaning
+  history_weighed: The earlier revisions rightly restored Mikael as the speaker and preserved the final relative clause. I retain both, but translate the bodily idiom by its meaning and leave the difficult closing relationship unresolved in a note.

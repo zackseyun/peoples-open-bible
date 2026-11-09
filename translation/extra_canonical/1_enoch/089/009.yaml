@@ -22,18 +22,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And that white bull[a], which had become a man, went out from that enclosure, and with him came three bulls. And one of those three bulls was white, resembling that white bull, and one of them was red like blood, and one was black[c][b]; and that white bull departed from among them.
-  philosophy: optimal-equivalence
+  text: That white bull, which had become a man, came out of the vessel with two bulls[a]. One of those two bulls was white, resembling that bull; one was red like blood, and one was black. Then the first white bull departed from among them.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The final noun in the clause 'went out from there' is textually difficult in the OCR witness; the sense of departure from a place is clear, but a more specific rendering such as 'enclosure' or 'stall' is uncertain from this witness alone.
+    text: The Ge’ez gives “two” here and again in the next sentence, although it describes three bulls and verse 1 also names three.
     reason: textual_variant
-  - marker: b
-    text: Or 'went out from there'.
-    reason: previous_rendering
-  - marker: c
-    text: Or 'was like that white bull'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ላህም
   chosen: bull
@@ -172,12 +166,18 @@ revisions:
   from: And that white bull which had become a man went out from that vessel, and with him came three bulls. And one of those three bulls was white, resembling that bull, and one of them was red like blood, and one was black; and that white bull departed from among them.
   to: And that white bull, which had become a man, went out from that enclosure, and with him came three bulls. And one of those three bulls was white, resembling that white bull, and one of them was red like blood, and one was black; and that white bull departed from among them.
   rationale: Changed 'vessel' to 'enclosure' for better lexical fit with the context and repeated 'that white bull' for clarity and consistency with the source.
+- timestamp: '2026-11-09T20:10:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And that white bull[a], which had become a man, went out from that enclosure, and with him came three bulls. And one of those three bulls was white, resembling that white bull, and one of them was red like blood, and one was black[c][b]; and that white bull departed from among them.
+  to: That white bull, which had become a man, came out of the vessel with two bulls[a]. One of those two bulls was white, resembling that bull; one was red like blood, and one was black. Then the first white bull departed from among them.
+  rationale: The current “enclosure” breaks the recurring vessel reference, so I restore the earlier gain of “vessel.” The source’s repeated numeral conflicts with both the color list and verse 1; that tension remains visible and is explained briefly.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:01Z'
   unchanged: false
   changes_summary: Changed 'vessel' to 'enclosure' for better lexical fit with the context and repeated 'that white bull' for clarity and consistency with the source.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -197,3 +197,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/009.job-72735.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:29Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The transformed white bull leaves the vessel with differently colored bulls and then departs from their company.
+  meaning_decisions:
+  - source_phrase: ወጽአ፡ እምዝኩ፡ መስቀር
+    prior_rendering: went out from that enclosure
+    new_rendering: came out of the vessel
+    rationale: The repeated noun identifies the vessel that floated and then rested on the earth, not the flooded enclosure.
+  - source_phrase: ወ፪አልህምት፡ ... ፩እምዝኩ፡ ፪አልህምት
+    prior_rendering: three bulls ... one of those three bulls
+    new_rendering: two bulls ... one of those two bulls
+    rationale: The supplied source twice gives the numeral two. I preserve the inconsistency with the three color descriptions instead of silently correcting it.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The current “enclosure” breaks the recurring vessel reference, so I restore the earlier gain of “vessel.” The source’s repeated numeral conflicts with both the color list and verse 1; that tension remains visible and is explained briefly.

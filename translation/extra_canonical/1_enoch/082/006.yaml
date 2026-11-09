@@ -14,15 +14,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch82.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 82, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: 'For they belong to the reckoning of the year[a], and they are truly fixed forever: one in the first gate, one in the third gate, one in the fourth, and one in the sixth[b]; and the year is completed in three hundred and sixty-four days.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The repeated 'one ... one ... one ... one' refers to the four additional days distributed among the solar quarters in the Enochic 364-day calendar.
-    reason: cultural_note
-  - marker: b
-    text: The OCR line appears to omit 'gate' after 'fourth' and 'sixth,' but the sequence strongly implies the same noun throughout.
-    reason: textual_variant
+  text: 'For these days belong to the reckoning of the year, and they are truly fixed forever: one in the first gate, one in the third gate, one in the fourth, and one in the sixth. The year is completed in three hundred and sixty-four days.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: እስመ
   chosen: For
@@ -174,7 +167,6 @@ revisions:
   from: 'For they belong to the reckoning of the year, and they are truly appointed forever: one in the first gate, one in the third gate, one in the fourth, and one in the sixth; and the year is completed in three hundred and sixty-four days.'
   to: 'For they belong to the reckoning of the year, and they are truly appointed forever: one in the first gate, one in the third gate, one in the fourth, and one in the sixth; and the year is completed in three hundred and sixty-four days.'
   rationale: Changed 'appointed' to 'fixed' for closer lexical fit to the sense of being established, and supplied 'gate' after 'fourth' for consistency and completeness.
-
 - timestamp: '2026-05-18T03:01:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -182,6 +174,13 @@ revisions:
   from: 'For they belong to the reckoning of the year[a], and they are truly fixed forever: one in the first gate, one in the third gate, one in the fourth, and one in the sixth[b]; and the year is completed in three hundred and sixty-four days.'
   to: 'For they belong to the reckoning of the year[a], and they are truly fixed forever: one in the first gate, one in the third gate, one in the fourth, and one in the sixth[b]; and the year is completed in three hundred and sixty-four days.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''appointed''].'
+- timestamp: '2026-11-09T20:07:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'For they belong to the reckoning of the year[a], and they are truly fixed forever: one in the first gate, one in the third gate, one in the fourth, and one in the sixth[b]; and the year is completed in three hundred and sixty-four days.'
+  to: 'For these days belong to the reckoning of the year, and they are truly fixed forever: one in the first gate, one in the third gate, one in the fourth, and one in the sixth. The year is completed in three hundred and sixty-four days.'
+  rationale: The current wording already conveys the fixed arrangement and the full annual total well. The omitted repetitions of 'gate' are ordinary understood nouns, not gaps requiring a footnote.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -201,3 +200,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/082/006.job-72681.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:19Z'
+  change_level: refined
+  confidence: high
+  meaning: The four additional days have permanent places in the year's reckoning and complete its total of three hundred and sixty-four days.
+  meaning_decisions:
+  - source_phrase: እስመ፡ ሀለዉ፡ በሐሳበ፡ ዓመት
+    prior_rendering: For they belong to the reckoning of the year
+    new_rendering: For these days belong to the reckoning of the year
+    rationale: Naming the days makes explicit the contrast with their omission in the previous verse; the distributive list confirms that four days are intended.
+  footnote_kinds: {}
+  history_weighed: The current wording already conveys the fixed arrangement and the full annual total well. The omitted repetitions of 'gate' are ordinary understood nouns, not gaps requiring a footnote.

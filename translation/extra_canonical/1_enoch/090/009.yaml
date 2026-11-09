@@ -18,18 +18,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw until horns came out for those lambs[a], and the ravens cast down their horns. And I saw until one great horn sprouted on one of those sheep[c][b], and their eyes were opened.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Ethiopic reads literally 'horns' even for the deer-like animals. This likely reflects the vision's symbolic use of horns as signs of strength or rule rather than zoological precision.
-    reason: lexical_alternative
-  - marker: b
-    text: 'The final clause may imply restored perception or awareness within the vision: literally, ''their eyes were opened.'''
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'those deer'.
-    reason: previous_rendering
+  text: As I watched, horns grew on those lambs, but the ravens cast down their horns. Then I saw one great horn sprout on one of those sheep, and their eyes were opened.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: አቅርንት
   chosen: horns
@@ -150,12 +140,18 @@ revisions:
   from: those deer
   to: those lambs
   rationale: 'The Ge''ez word መኃስእ (maḥsə'') means ''lambs'' or ''young animals'', not ''deer''. In the Animal Apocalypse, these are the offspring of the sheep (Israel), representing the Maccabean generation. Translating as ''deer'' breaks the zoomorphic code and contradicts the context (e.g., 90:8, where the same animals are correctly rendered ''lambs''). | Adjudicator: The Ge''ez word መኃስእ (maḥāse'') is the plural of ማሕስእ (māḥsə''), which means ''lambs'' or ''young animals'' (Leslau, Comparative Dictionary of Ge''ez, p. 333), not ''deer''. In the context of the Animal Apocaly'
+- timestamp: '2026-11-09T20:18:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I saw until horns came out for those lambs[a], and the ravens cast down their horns. And I saw until one great horn sprouted on one of those sheep[c][b], and their eyes were opened.
+  to: As I watched, horns grew on those lambs, but the ravens cast down their horns. Then I saw one great horn sprout on one of those sheep, and their eyes were opened.
+  rationale: The surrounding account of lambs born from sheep supports the current correction from “deer” to “lambs,” despite the conflicting older lexical notes. The horn and opened-eye images remain intact; the existing notes do not identify a genuine uncertainty requiring a reader’s footnote.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:18Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -175,3 +171,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/090/009.job-72807.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:18:46Z'
+  change_level: refined
+  confidence: high
+  meaning: The ravens cast down the lambs’ emerging horns, but one sheep develops a great horn and the sheep’s eyes are opened.
+  meaning_decisions:
+  - source_phrase: ወርኢኩ፡ እስከ፡ ወፅአ፡ ሎሙ፡ አቅርንት፡ ለዝኩ፡ መኃስእ
+    prior_rendering: And I saw until horns came out for those lambs
+    new_rendering: As I watched, horns grew on those lambs
+    rationale: Expresses the unfolding vision naturally and makes clear that the horns emerge on the lambs themselves.
+  - source_phrase: ወቋንት፡ ያወድቅዎሙ፡ ለ*አቅርንቲሆሙ
+    prior_rendering: and the ravens cast down their horns
+    new_rendering: but the ravens cast down their horns
+    rationale: Makes explicit the contrast between the lambs’ emerging strength and the ravens’ hostile response, without specifying how the horns were brought down.
+  footnote_kinds: {}
+  history_weighed: The surrounding account of lambs born from sheep supports the current correction from “deer” to “lambs,” despite the conflicting older lexical notes. The horn and opened-eye images remain intact; the existing notes do not identify a genuine uncertainty requiring a reader’s footnote.

@@ -12,18 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch47.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 47, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the hearts of the holy ones shall be filled with joy[a], because the number of the righteous has drawn near, and the prayer of the righteous has been heard[c][b], and the blood of the righteous has been avenged before the Lord of Spirits.
-  philosophy: optimal-equivalence
+  text: And the hearts of the holy ones will be filled with joy, because the number of the righteous is nearing completion[a], the prayer of the righteous has been heard, and an accounting has been demanded for the blood of the righteous before the Lord of Spirits.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the reckoning of the righteous has drawn near,' if the noun is taken in a more judicial sense rather than as a numerical total.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Has been accepted'' may also carry the sense that the blood of the righteous has come into favorable notice before God, with vindication implied by the context.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'has been accepted'.
-    reason: previous_rendering
+    text: The phrase is unclear; it may instead mean “the reckoning of the righteous has drawn near,” referring to their coming judgment.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ልቦሙ
   chosen: their hearts
@@ -169,12 +163,18 @@ revisions:
   from: And the hearts of the holy ones shall be filled with joy, because the number of the righteous has drawn near, and the prayer of the righteous has been heard, and the blood of the righteous has been required before the Lord of Spirits.
   to: And the hearts of the holy ones shall be filled with joy, because the number of the righteous has drawn near, and the prayer of the righteous has been heard, and the blood of the righteous has been avenged before the Lord of Spirits.
   rationale: Changed 'required' to 'avenged' for better lexical accuracy and more natural English in context; the verse speaks of the righteous blood receiving vindication before the Lord of Spirits.
+- timestamp: '2026-11-09T19:52:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the hearts of the holy ones shall be filled with joy[a], because the number of the righteous has drawn near, and the prayer of the righteous has been heard[c][b], and the blood of the righteous has been avenged before the Lord of Spirits.
+  to: And the hearts of the holy ones will be filled with joy, because the number of the righteous is nearing completion[a], the prayer of the righteous has been heard, and an accounting has been demanded for the blood of the righteous before the Lord of Spirits.
+  rationale: 'The earlier revision''s evidence for blood being required supports a demand for accountability: “accepted” loses that judicial force, while “avenged” overstates its completion. The numerical explanation clarifies the approaching count, but the phrase remains uncertain enough to retain the alternative of a coming reckoning.'
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:36:26Z'
   unchanged: false
   changes_summary: Changed 'required' to 'avenged' for better lexical accuracy and more natural English in context; the verse speaks of the righteous blood receiving vindication before the Lord of Spirits.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -194,3 +194,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/047/004.job-72385.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:52:20Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The holy ones rejoice because the righteous are approaching their full number, their prayer has been heard, and an accounting for their shed blood has been demanded.
+  meaning_decisions:
+  - source_phrase: ቀርበ፡ ኍልቈ፡ ለጻድቅ
+    prior_rendering: the number of the righteous has drawn near
+    new_rendering: the number of the righteous is nearing completion
+    rationale: On the numerical understanding supported by the contextual decisions, the approaching number means that the full count is near completion; the serious alternative of a coming reckoning is noted.
+  - source_phrase: ወደሙ፡ ለጻድቅ፡ በቅድመ፡ እግዚአ፡ መናፍስት፡ ተፈቅደ
+    prior_rendering: and the blood of the righteous has been avenged before the Lord of Spirits
+    new_rendering: and an accounting has been demanded for the blood of the righteous before the Lord of Spirits
+    rationale: The verb expresses blood being required for an accounting, not necessarily vengeance already accomplished; this rendering carries the judicial idiom into natural English.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: 'The earlier revision''s evidence for blood being required supports a demand for accountability: “accepted” loses that judicial force, while “avenged” overstates its completion. The numerical explanation clarifies the approaching count, but the phrase remains uncertain enough to retain the alternative of a coming reckoning.'

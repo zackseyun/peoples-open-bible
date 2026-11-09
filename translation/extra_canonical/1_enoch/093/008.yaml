@@ -13,21 +13,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch93.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 93, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And after this[a], in the sixth week, all who are in it will be blind, and the hearts of all of them will forget wisdom. And in it a man will ascend, and at its completion the house of the kingdom will be burned with fire[d][c][b], and in it the whole stock of the chosen root will be scattered.
-  philosophy: optimal-equivalence
+  text: And after this, in the sixth week, all who live during it will be blind, and all their hearts will forget wisdom. During it a man will ascend[a]. At its end the house of the kingdom[b] will be burned with fire, and in that week the whole lineage of the chosen root will be scattered.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'all within it will be blind/darkened.' The Ge'ez wording likely describes the people of the sixth week as spiritually blinded.
-    reason: lexical_alternative
+    text: The man is usually understood as Elijah, who ascended to heaven (2 Kings 2:11).
+    reason: cross_reference
   - marker: b
-    text: Or 'a man will arise.' The verb can suggest rising or ascending; the more literal 'ascend' is kept to preserve the text's ambiguity.
-    reason: lexical_alternative
-  - marker: c
-    text: '''House of the kingdom'' may refer broadly to the royal order or dynasty, not necessarily only a physical building.'
-    reason: lexical_alternative
-  - marker: d
-    text: '''Chosen root'' combines lineage imagery with plant imagery; it may denote an elect line or remnant.'
-    reason: lexical_alternative
+    text: The house likely refers to the temple, though it can also be understood as the royal establishment.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ሳድስት ሰንበት
   chosen: the sixth week
@@ -158,14 +152,20 @@ revisions:
   from: And after this, in the sixth week, all who are in it will be blinded, and the hearts of all of them will forget wisdom. And in it a man will ascend; and at its completion the house of the kingdom will be burned with fire, and in it the whole stock of the chosen root will be scattered.
   to: And after this, in the sixth week, all who are in it will be blinded, and the hearts of all of them will forget wisdom. And in it a man will ascend; and at its completion the house of the kingdom will be burned with fire, and in it the whole stock of the chosen root will be scattered.
   rationale: Changed 'will be blinded' to 'will be blind' for a more direct rendering of the state described; removed an unnecessary semicolon for smoother formal English. All source elements are otherwise retained.
-
 - timestamp: '2026-05-18T03:02:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And after this[a], in the sixth week, all who are in it will be blind, and the hearts of all of them will forget wisdom. And in it a man will ascend, and at its completion the house of the kingdom will be burned with fire[d][c][b], and in it the whole stock of the chosen root will be scattered.'
-  to: 'And after this[a], in the sixth week, all who are in it will be blind, and the hearts of all of them will forget wisdom. And in it a man will ascend, and at its completion the house of the kingdom will be burned with fire[d][c][b], and in it the whole stock of the chosen root will be scattered.'
+  from: And after this[a], in the sixth week, all who are in it will be blind, and the hearts of all of them will forget wisdom. And in it a man will ascend, and at its completion the house of the kingdom will be burned with fire[d][c][b], and in it the whole stock of the chosen root will be scattered.
+  to: And after this[a], in the sixth week, all who are in it will be blind, and the hearts of all of them will forget wisdom. And in it a man will ascend, and at its completion the house of the kingdom will be burned with fire[d][c][b], and in it the whole stock of the chosen root will be scattered.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''all who are in it will be blinded''].'
+- timestamp: '2026-11-09T20:14:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And after this[a], in the sixth week, all who are in it will be blind, and the hearts of all of them will forget wisdom. And in it a man will ascend, and at its completion the house of the kingdom will be burned with fire[d][c][b], and in it the whole stock of the chosen root will be scattered.
+  to: And after this, in the sixth week, all who live during it will be blind, and all their hearts will forget wisdom. During it a man will ascend[a]. At its end the house of the kingdom[b] will be burned with fire, and in that week the whole lineage of the chosen root will be scattered.
+  rationale: The current wording preserves the verse's essential images, including blindness, ascent, fire, and the chosen root. The ascent remains unnamed in the text, but its likely historical reference is noted to prevent a misleading later identification.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -185,3 +185,27 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/093/008.job-72863.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:14:52Z'
+  change_level: refined
+  confidence: high
+  meaning: The sixth week is marked by blindness and forgotten wisdom, a man's ascent, the burning of the kingdom's house, and the scattering of the chosen lineage.
+  meaning_decisions:
+  - source_phrase: እለ፡ ይከውኑ፡ ውስቴታ
+    prior_rendering: all who are in it
+    new_rendering: all who live during it
+    rationale: Makes explicit that the week is a period inhabited by a generation, not a place.
+  - source_phrase: ኵሉ፡ ዘመደ፡ ሥርወ፡ ኀሩይ
+    prior_rendering: the whole stock of the chosen root
+    new_rendering: the whole lineage of the chosen root
+    rationale: Expresses the kinship element clearly while retaining the root image and its election language.
+  footnote_kinds:
+    a: cross_reference
+    b: alternative_meaning
+  history_weighed: The current wording preserves the verse's essential images, including blindness, ascent, fire, and the chosen root. The ascent remains unnamed in the text, but its likely historical reference is noted to prevent a misleading later identification.

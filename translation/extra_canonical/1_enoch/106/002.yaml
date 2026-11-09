@@ -13,18 +13,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch106.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 106, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And his body was white like snow[a], and red like the blooming of a rose; and the hair of his head was like white wool, and his locks were beautiful. And his eyes were beautiful; and when he opened his eyes, he lit up the whole house like the sun[c][b], and the whole house became exceedingly bright.
-  philosophy: optimal-equivalence
+  text: His body was white as snow and red as a rose blossom. The hair of his head was like white wool, and his locks were beautiful[a]. When he opened his eyes, he lit up the whole house like the sun, and the whole house became exceedingly bright.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ge'ez phrase rendered 'the blooming of a rose' is a floral comparison for redness; 'rose blossom' is also possible.
-    reason: lexical_alternative
-  - marker: b
-    text: The clause about the eyes is textually difficult in Ethiopic. The sense 'his eyes were beautiful' fits the immediate wording, but a slightly different nuance such as 'his eyes were splendid' is possible.
-    reason: textual_variant
-  - marker: c
-    text: Or 'and the hair of his head was white like wool, and his eyes were beautiful.'.
-    reason: previous_rendering
+    text: The Ge'ez wording about his locks and eyes is unclear; it may also describe his eyes as beautiful.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ሥጋሁ
   chosen: his body
@@ -173,12 +167,18 @@ revisions:
   from: And his body was white like snow, and red like the blooming of a rose; and the hair of his head was like white wool, and his locks were beautiful. And his eyes— And when he opened his eyes, he lit up the whole house like the sun, and the whole house became exceedingly bright.
   to: And his body was white like snow, and red like the blooming of a rose; and the hair of his head was like white wool, and his locks were beautiful. And his eyes were beautiful; and when he opened his eyes, he lit up the whole house like the sun, and the whole house became exceedingly bright.
   rationale: Completed an omitted phrase by rendering 'his eyes were beautiful' instead of leaving a broken 'And his eyes—'. Kept the rest substantially unchanged.
+- timestamp: '2026-11-09T20:03:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And his body was white like snow[a], and red like the blooming of a rose; and the hair of his head was like white wool, and his locks were beautiful. And his eyes were beautiful; and when he opened his eyes, he lit up the whole house like the sun[c][b], and the whole house became exceedingly bright.
+  to: His body was white as snow and red as a rose blossom. The hair of his head was like white wool, and his locks were beautiful[a]. When he opened his eyes, he lit up the whole house like the sun, and the whole house became exceedingly bright.
+  rationale: The revision history recovered the description of the locks, a real gain over the first draft. The later addition of beautiful eyes does not resolve the marked difficulty, so that possible sense is left in a short reader’s note.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:39:00Z'
   unchanged: false
   changes_summary: Completed an omitted phrase by rendering 'his eyes were beautiful' instead of leaving a broken 'And his eyes—'. Kept the rest substantially unchanged.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -198,3 +198,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/106/002.job-72966.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:03:42Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The newborn has extraordinary coloring and beautiful white hair, and opening his eyes fills the house with sunlike radiance.
+  meaning_decisions:
+  - source_phrase: ተወድምድማሁ፡ ሠናይ፡ አዕይንቲሁ፡†
+    prior_rendering: and his locks were beautiful. And his eyes were beautiful
+    new_rendering: and his locks were beautiful
+    rationale: The earlier correction identifies the locks as the best-supported subject of 'beautiful'; the subsequent revision repeats that description for the eyes without a clearly supported second predicate. The uncertain reference to the eyes is carried into the following clause rather than assigned another adjective.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The revision history recovered the description of the locks, a real gain over the first draft. The later addition of beautiful eyes does not resolve the marked difficulty, so that possible sense is left in a short reader’s note.

@@ -22,18 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And let them not know[a], and do not show them, and do not rebuke them; but write down all the destruction of the shepherds, each one in its time[c][b], and bring all of it up before me.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Ethiopic wording is difficult in the final clause. The verb can suggest 'bring up' or 'present.' The translation keeps the upward imagery of heavenly presentation.
-    reason: lexical_alternative
-  - marker: b
-    text: The distributive phrase after 'in its time' is textually awkward in the OCR witness; the sense appears to be sequential or item-by-item accounting.
-    reason: textual_variant
-  - marker: c
-    text: Or 'And they did not know, and I did not show them, and I did not rebuke them'.
-    reason: previous_rendering
+  text: “Do not let them know about this, and do not show them or rebuke them. Instead, write down all the destruction caused by each shepherd during his allotted time, and bring the whole record up to me.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ወኢያእምሩ
   chosen: and they did not know
@@ -141,12 +131,18 @@ revisions:
   from: And they did not know, and I did not show them, and I did not rebuke them
   to: And let them not know, and do not show them, and do not rebuke them
   rationale: 'The verbs are negative jussives expressing prohibition, addressed by the Lord of the sheep to the recording angel. `ኢታርእዮሙ` (ʾi-tārʾəyōmū) and `ኢትዝለፎሙ` (ʾi-təzlafōmū) have the 2nd-person masculine singular prefix `ት/ታ` (t/tā), making ''I did not show/rebuke'' grammatically impossible (1st person would require an `እ/አ` prefix). `ኢያእምሩ` (ʾi-yāʾmərū) is a 3rd-person plural jussive (''let them not know''). | Adjudicator: The reviewer correctly identifies the grammatical forms of the verbs. `ኢያእምሩ` (ʾi-yāʾmərū) is a third-person plural jussive (''let them not know''), while `ኢታርእዮሙ` (ʾi-tārʾəyōmū) and `ኢትዝለፎሙ` (ʾi-təzlaf'
+- timestamp: '2026-11-09T20:11:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And let them not know[a], and do not show them, and do not rebuke them; but write down all the destruction of the shepherds, each one in its time[c][b], and bring all of it up before me.
+  to: “Do not let them know about this, and do not show them or rebuke them. Instead, write down all the destruction caused by each shepherd during his allotted time, and bring the whole record up to me.”
+  rationale: The history’s grammatical correction establishes prohibitions addressed to the observer, not a report of past silence. I preserved that reading and the upward presentation, while clarifying whose destruction is recorded and whose allotted time is meant.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:42Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -166,3 +162,29 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/064.job-72790.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:11:34Z'
+  change_level: refined
+  confidence: high
+  meaning: The observer must keep the accounting secret, refrain from rebuking the shepherds, and report the destruction caused during each shepherd’s term.
+  meaning_decisions:
+  - source_phrase: ወኢያእምሩ፡ ወኢታርእዮሙ፡ ወኢትዝለፎሙ
+    prior_rendering: And let them not know, and do not show them, and do not rebuke them
+    new_rendering: Do not let them know about this, and do not show them or rebuke them
+    rationale: The withheld information is the observation and accounting just commanded; supplying its understood object makes the secrecy clear.
+  - source_phrase: ኵሎ፡ ሐጕለ፡ ኖላዊያን፡ በጊዜሁ፡ ለለ፡ ፩፩
+    prior_rendering: all the destruction of the shepherds, each one in its time
+    new_rendering: all the destruction caused by each shepherd during his allotted time
+    rationale: The destruction is what the shepherds cause, not their own downfall, and the distributive phrase assigns the accounting to each shepherd’s period of service.
+  - source_phrase: ወአዐርግ፡ ኵሎ፡ ኀቤየ
+    prior_rendering: and bring all of it up before me
+    new_rendering: and bring the whole record up to me
+    rationale: The material to be brought up is the written account, an object understood from the command to write.
+  footnote_kinds: {}
+  history_weighed: The history’s grammatical correction establishes prohibitions addressed to the observer, not a report of past silence. I preserved that reading and the upward presentation, while clarifying whose destruction is recorded and whose allotted time is meant.

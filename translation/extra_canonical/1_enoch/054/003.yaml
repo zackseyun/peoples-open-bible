@@ -12,21 +12,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch54.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 54, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And there my eyes saw their instruments[d][c][b][a], as they were making iron chains without measure.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Ge'ez term rendered 'instruments' may also be understood more specifically as 'tools' or 'implements' associated with the work being done.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'iron fetters.' The noun denotes devices for binding.
-    reason: lexical_alternative
-  - marker: c
-    text: Literally 'without measure'; the phrase may also imply 'without limit' or 'immeasurable.'
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'the instruments while they were making iron chains without measure'.
-    reason: previous_rendering
+  text: 'There my eyes saw their instruments being made: iron chains of immeasurable weight.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ርእያ አዕይንትየ
   chosen: my eyes saw
@@ -140,9 +127,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And there my eyes saw their instruments[d][c][b][a], as they were making iron chains without measure.'
-  to: 'And there my eyes saw their instruments[d][c][b][a], as they were making iron chains without measure.'
+  from: And there my eyes saw their instruments[d][c][b][a], as they were making iron chains without measure.
+  to: And there my eyes saw their instruments[d][c][b][a], as they were making iron chains without measure.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''while they were making''].'
+- timestamp: '2026-11-09T19:55:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And there my eyes saw their instruments[d][c][b][a], as they were making iron chains without measure.
+  to: 'There my eyes saw their instruments being made: iron chains of immeasurable weight.'
+  rationale: The revision history correctly identified both the object suffix and the reference to weight, but the current wording lost those gains. I preserve the visionary phrase “my eyes saw” while making the relationship between the instruments and the chains explicit.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:01:11Z'
@@ -167,3 +161,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/054/003.job-72415.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:55:20Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Enoch sees instruments of punishment being made in the form of immensely heavy iron chains.
+  meaning_decisions:
+  - source_phrase: ዘመባዕዕቲሆሙ፡ እንዘ፡ ይገብርዎሙ፡ መአስርተ፡ ሐጺን
+    prior_rendering: their instruments, as they were making iron chains
+    new_rendering: 'their instruments being made: iron chains'
+    rationale: The verb’s object refers back to the instruments, and the iron chains identify what those instruments are. Passive English conveys their manufacture without supplying an identity for the makers.
+  - source_phrase: ዘአልቦ፡ መደለውተ
+    prior_rendering: without measure
+    new_rendering: of immeasurable weight
+    rationale: The noun concerns weighing, so the image emphasizes the chains’ overwhelming weight rather than an unspecified measure or quantity.
+  footnote_kinds: {}
+  history_weighed: The revision history correctly identified both the object suffix and the reference to weight, but the current wording lost those gains. I preserve the visionary phrase “my eyes saw” while making the relationship between the instruments and the chains explicit.

@@ -22,21 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And one sheep went to the wolves at the word of the Lord[a], and another sheep met him and went with him. And the two of them went together and entered into the assembly of those wolves, and they spoke to them and made them hear[d][c][b], that from then on they should not ravage the sheep.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'by the command of the Lord.' The Ge'ez phrase can denote action undertaken in response to divine speech or command.
-    reason: lexical_alternative
-  - marker: b
-    text: The phrase 'made them hear' is retained close to the Ge'ez. It likely means that the wolves were compelled to listen to what the two sheep said.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'would no longer ravage them'—the final object is specified as 'the sheep' in the verse, clarifying the wolves' predatory action.
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'made them hear, so that from then on they would no longer ravage'.
-    reason: previous_rendering
+  text: And one sheep went to the wolves at the Lord's command, and another sheep met him and went with him. The two went together into the assembly of those wolves, spoke to them, and warned them that from then on they must not ravage the sheep.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: በግዕ
   chosen: sheep
@@ -187,12 +174,18 @@ revisions:
   from: And one sheep went to the wolves at the word of the Lord, and another sheep met him and went with him. And the two of them went together and entered into the assembly of those wolves, and they spoke to them and warned them, that from then on they should not ravage the sheep.
   to: And one sheep went to the wolves at the word of the Lord, and another sheep met him and went with him. And the two of them went together and entered into the assembly of those wolves, and they spoke to them and made them hear, that from then on they should not ravage the sheep.
   rationale: Replaced 'warned them' with 'made them hear' to more closely reflect the source verb while preserving formal register; otherwise retained the draft.
+- timestamp: '2026-11-09T20:10:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And one sheep went to the wolves at the word of the Lord[a], and another sheep met him and went with him. And the two of them went together and entered into the assembly of those wolves, and they spoke to them and made them hear[d][c][b], that from then on they should not ravage the sheep.
+  to: And one sheep went to the wolves at the Lord's command, and another sheep met him and went with him. The two went together into the assembly of those wolves, spoke to them, and warned them that from then on they must not ravage the sheep.
+  rationale: The earlier review identifies the warning idiom and its adversarial force convincingly. The later surface rendering 'made them hear' obscures that meaning, so its explanatory notes are replaced by a direct translation.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:04Z'
   unchanged: false
   changes_summary: Replaced 'warned them' with 'made them hear' to more closely reflect the source verb while preserving formal register; otherwise retained the draft.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -212,3 +205,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/018.job-72744.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:10Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Lord's messenger is joined by another sheep, and together they warn the wolves to stop ravaging the sheep.
+  meaning_decisions:
+  - source_phrase: በቃለ፡ እግዚእ
+    prior_rendering: at the word of the Lord
+    new_rendering: at the Lord's command
+    rationale: The phrase describes obedience to the divine commission, not merely action accompanying a spoken word.
+  - source_phrase: ወአስምዑ፡ ዲቤሆሙ
+    prior_rendering: made them hear
+    new_rendering: warned them
+    rationale: The expression means delivering a warning against the wolves, as the following prohibition makes clear; it does not establish that they were compelled to listen.
+  footnote_kinds: {}
+  history_weighed: The earlier review identifies the warning idiom and its adversarial force convincingly. The later surface rendering 'made them hear' obscures that meaning, so its explanatory notes are replaced by a direct translation.

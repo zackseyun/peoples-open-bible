@@ -18,24 +18,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the Lord of the sheep called those seven first white ones and commanded that they bring before him[a], beginning with the first star that went before those stars whose private parts were like those of horses, that first one which went out before them[e][d][c][b]; and they brought them before him.
-  philosophy: optimal-equivalence
+  text: The Lord of the sheep summoned those first seven white men and ordered them to bring the stars before him, beginning with the first star that had gone ahead of those whose private parts were like those of horses—the first star that had gone out before them[a]. And they brought them before him.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The clause about 'the first one that went out before' is textually difficult in this Ethiopic witness and may restate the identity of the leading star rather than introduce a separate figure.
-    reason: textual_variant
-  - marker: b
-    text: In this vision, 'stars' function symbolically for heavenly beings; the translation keeps the image rather than replacing it with its interpretation.
-    reason: cross_reference
-  - marker: c
-    text: The comparison to horses is an intentionally shameful sexual image, likely recalling the transgression of the rebellious heavenly beings.
-    reason: cultural_note
-  - marker: d
-    text: Or 'those seven first white ones'.
-    reason: previous_rendering
-  - marker: e
-    text: Or 'from the first star that went before those stars whose private parts were like those of horses, even that first one'.
-    reason: previous_rendering
+    text: The wording about the first star is unclear; the repeated reference may name another star rather than describe the same one.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: እግዚአ ሰብኡ
   chosen: the Lord of the sheep
@@ -175,12 +163,18 @@ revisions:
   from: And the Lord of the sheep called those seven first white men and commanded that they bring before him, beginning with the first star that went before those stars whose private parts were like those of horses, even that first star that went out before them; and they brought them before him.
   to: And the Lord of the sheep called those seven first white ones and commanded that they bring before him, beginning with the first star that went before those stars whose private parts were like those of horses, that first one which went out before them; and they brought them before him.
   rationale: Replaced 'men' with 'ones' to avoid adding a specific noun not explicit in the source, and adjusted the appositional phrase to read more naturally while preserving the repeated reference to the first star/first one.
+- timestamp: '2026-11-09T20:17:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the Lord of the sheep called those seven first white ones and commanded that they bring before him[a], beginning with the first star that went before those stars whose private parts were like those of horses, that first one which went out before them[e][d][c][b]; and they brought them before him.
+  to: The Lord of the sheep summoned those first seven white men and ordered them to bring the stars before him, beginning with the first star that had gone ahead of those whose private parts were like those of horses—the first star that had gone out before them[a]. And they brought them before him.
+  rationale: The earlier correction to 'white men' is supported by the explicit Ge'ez noun, despite its later reversal. I kept 'beginning with' and the horse imagery, while replacing the crowded notes with one note on the uncertain repeated reference to the first star.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:22Z'
   unchanged: false
   changes_summary: Replaced 'men' with 'ones' to avoid adding a specific noun not explicit in the source, and adjusted the appositional phrase to read more naturally while preserving the repeated reference to the first star/first one.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -200,3 +194,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/090/021.job-72819.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:17:12Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The Lord of the sheep orders the seven original white men to bring the offending stars before him, starting with the first star, and they obey.
+  meaning_decisions:
+  - source_phrase: ሰብአ፡ ፯ጸዓድወ፡ ቀዳማዊያን
+    prior_rendering: those seven first white ones
+    new_rendering: those first seven white men
+    rationale: The Ge'ez explicitly calls them men. Restoring that noun preserves the vision's distinction between human-shaped heavenly beings and the animals representing earthly people.
+  - source_phrase: ወአዘዘ፡ ከመ፡ ያምጽኡ፡ ቅድሜሁ፡ እምክቡበ፡ ቀዳማዊ
+    prior_rendering: commanded that they bring before him, beginning with the first star
+    new_rendering: ordered them to bring the stars before him, beginning with the first star
+    rationale: Making the implied object explicit gives the command a complete, natural English construction while retaining the order in which the stars are brought.
+  - source_phrase: '[ወሰነኩበ፡ ቀዳማዊ፡ ዘወፅአ፡ ቅድመ፡]'
+    prior_rendering: that first one which went out before them
+    new_rendering: the first star that had gone out before them
+    rationale: The phrase is best understood as restating the identity of the leading star. An appositional construction makes that relationship clearer, while the footnote preserves the serious uncertainty about whether another star is meant.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier correction to 'white men' is supported by the explicit Ge'ez noun, despite its later reversal. I kept 'beginning with' and the horse imagery, while replacing the crowded notes with one note on the uncertain repeated reference to the first star.

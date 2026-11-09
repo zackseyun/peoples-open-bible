@@ -16,18 +16,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And in those days the day grows longer from day to day[a], and the night grows shorter from night to night[c][b], until thirty mornings.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Ge'ez literally repeats 'day' and 'night' in a comparative pattern ('day from day,' 'night from night'). The sense is that each successive day becomes longer and each successive night shorter.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'until thirty dawns.' The term is literally 'morning' and likely marks a counted stage in the luminary scheme.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'the day grows longer than day, and the night grows shorter than night'.
-    reason: previous_rendering
+  text: During those days the day grows longer from day to day and the night grows shorter from night to night, until thirty mornings have passed.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: በእማንቱ መዋዕል
   chosen: in those days
@@ -130,12 +120,18 @@ revisions:
   from: And in those days the day grows longer than the day, and the night grows shorter than the night, until thirty mornings.
   to: And in those days the day grows longer from day to day, and the night grows shorter from night to night, until thirty mornings.
   rationale: Revised 'longer than the day' to 'longer from day to day' and 'shorter than the night' to 'shorter from night to night' for lexical accuracy and natural English, reflecting the comparative construction without awkward repetition.
+- timestamp: '2026-11-09T20:02:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And in those days the day grows longer from day to day[a], and the night grows shorter from night to night[c][b], until thirty mornings.
+  to: During those days the day grows longer from day to day and the night grows shorter from night to night, until thirty mornings have passed.
+  rationale: The current wording’s day-to-day and night-to-night expressions correctly convey the successive comparisons. I clarify only the completion of the thirty mornings and remove notes that repeat the main text.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:15Z'
   unchanged: false
   changes_summary: Revised 'longer than the day' to 'longer from day to day' and 'shorter than the night' to 'shorter from night to night' for lexical accuracy and natural English, reflecting the comparative construction without awkward repetition.
-
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -155,3 +151,17 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/072/009.job-72578.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:02:51Z'
+  change_level: refined
+  confidence: high
+  meaning: Throughout this thirty-morning period, successive days grow longer and successive nights shorter.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The current wording’s day-to-day and night-to-night expressions correctly convey the successive comparisons. I clarify only the completion of the thirty mornings and remove notes that repeat the main text.

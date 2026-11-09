@@ -15,21 +15,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch60.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 60, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: For resting places have been given to the thunder with patience for the sound of its voice[a]; and the thunder and the lightning are not separated, and though they are not one[d][c][b], by the Spirit the two of them go together and are not separated.
-  philosophy: optimal-equivalence
+  text: 'For thunder has been given resting places where it waits to sound[a]. Thunder and lightning are not separated: though they are distinct, the two move together by the spirit[b] and are not separated.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'with forbearance' or 'in patience.' The phrase is difficult in context and may describe the ordered restraint of thunder's sound.
-    reason: lexical_alternative
+    text: The wording is unclear; it may describe the restraint of thunder's voice.
+    reason: alternative_reading
   - marker: b
-    text: The Ge'ez term rendered 'Spirit' can also mean 'spirit,' 'breath,' or 'wind.' The line may speak of divine agency or of an animating force that causes thunder and lightning to move together.
-    reason: lexical_alternative
-  - marker: c
-    text: The clause rendered 'though not one' is textually difficult in this OCR witness. The sense appears to be that thunder and lightning remain distinct, yet they move together and are not separated.
-    reason: textual_variant
-  - marker: d
-    text: Or 'For for the thunder there has been given a resting-place'.
-    reason: previous_rendering
+    text: The words about their distinction are unclear. “Spirit” here can also mean “wind.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: እስመ
   chosen: for
@@ -194,9 +188,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For resting places have been given to the thunder with patience for the sound of its voice[a]; and the thunder and the lightning are not separated, and though they are not one[d][c][b], by the Spirit the two of them go together and are not separated.'
-  to: 'For resting places have been given to the thunder with patience for the sound of its voice[a]; and the thunder and the lightning are not separated, and though they are not one[d][c][b], by the Spirit the two of them go together and are not separated.'
+  from: For resting places have been given to the thunder with patience for the sound of its voice[a]; and the thunder and the lightning are not separated, and though they are not one[d][c][b], by the Spirit the two of them go together and are not separated.
+  to: For resting places have been given to the thunder with patience for the sound of its voice[a]; and the thunder and the lightning are not separated, and though they are not one[d][c][b], by the Spirit the two of them go together and are not separated.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and though not one''].'
+- timestamp: '2026-11-09T19:58:35Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For resting places have been given to the thunder with patience for the sound of its voice[a]; and the thunder and the lightning are not separated, and though they are not one[d][c][b], by the Spirit the two of them go together and are not separated.
+  to: 'For thunder has been given resting places where it waits to sound[a]. Thunder and lightning are not separated: though they are distinct, the two move together by the spirit[b] and are not separated.'
+  rationale: The earlier correction to plural resting places is sound and remains. The current notes identify genuine difficulties in the waiting phrase, the distinction between the two phenomena, and the sense of spirit; these are condensed into two reader-facing notes.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:01:35Z'
@@ -221,3 +222,31 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/060/014.job-72457.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:58:35Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Thunder waits for its appointed sound, while thunder and lightning remain distinct but move inseparably together through the spirit.
+  meaning_decisions:
+  - source_phrase: ምዕረፋተ፡ በትዕግሥት፡ ለቃለ፡ ዚአሁ፡ ተውህበ
+    prior_rendering: resting places have been given to the thunder with patience for the sound of its voice
+    new_rendering: thunder has been given resting places where it waits to sound
+    rationale: The surrounding account concerns restraint and appointed timing; waiting to sound conveys the likely force of patience without leaving an unintelligible English construction.
+  - source_phrase: ወእ*እም፪ኒ
+    prior_rendering: and though they are not one
+    new_rendering: though they are distinct
+    rationale: The contrast concerns two distinguishable phenomena that nevertheless move together; the footnote preserves the uncertainty of the wording.
+  - source_phrase: በመንፈስ
+    prior_rendering: by the Spirit
+    new_rendering: by the spirit
+    rationale: This weather passage does not explicitly identify the agency as the divine Spirit; lowercase preserves its personified cosmic character without making that identification.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: The earlier correction to plural resting places is sound and remains. The current notes identify genuine difficulties in the waiting phrase, the distinction between the two phenomena, and the sense of spirit; these are condensed into two reader-facing notes.

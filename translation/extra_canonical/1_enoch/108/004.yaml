@@ -14,21 +14,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch108.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 108, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And there I saw something like an invisible cloud[a], for because of its depth I was unable to look upon it; and I saw a flame of fire burning gloriously[d][c][b], and something like glorious mountains was circling and moving this way and that way.
-  philosophy: optimal-equivalence
+  text: There I saw something like an invisible cloud, for from its depths I was able to look upon it[a]. I saw a flame of fire burning gloriously, and shapes like glorious mountains circling and moving this way and that.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The phrase rendered 'above its measure' is textually difficult in this OCR witness. The Ge'ez appears to indicate looking upward beyond the cloud's extent or visible form.
-    reason: textual_variant
-  - marker: b
-    text: Or 'was shaken to and fro' for 'kept moving this way and that way.' The underlying Ge'ez suggests repeated motion in alternating directions.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'because from its depth I was able to look above its measure'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'and was encircled like glorious mountains, and it kept moving this way and that way'.
-    reason: previous_rendering
+    text: The Ge’ez phrase about looking at the cloud is unclear; it may instead mean, “Because of its depth I could not look upon it.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ርኢኩ
   chosen: I saw
@@ -207,9 +198,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And there I saw something like an invisible cloud[a], for because of its depth I was unable to look upon it; and I saw a flame of fire burning gloriously[d][c][b], and something like glorious mountains was circling and moving this way and that way.'
-  to: 'And there I saw something like an invisible cloud[a], for because of its depth I was unable to look upon it; and I saw a flame of fire burning gloriously[d][c][b], and something like glorious mountains was circling and moving this way and that way.'
+  from: And there I saw something like an invisible cloud[a], for because of its depth I was unable to look upon it; and I saw a flame of fire burning gloriously[d][c][b], and something like glorious mountains was circling and moving this way and that way.
+  to: And there I saw something like an invisible cloud[a], for because of its depth I was unable to look upon it; and I saw a flame of fire burning gloriously[d][c][b], and something like glorious mountains was circling and moving this way and that way.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as it burned''].'
+- timestamp: '2026-11-09T20:04:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And there I saw something like an invisible cloud[a], for because of its depth I was unable to look upon it; and I saw a flame of fire burning gloriously[d][c][b], and something like glorious mountains was circling and moving this way and that way.
+  to: There I saw something like an invisible cloud, for from its depths I was able to look upon it[a]. I saw a flame of fire burning gloriously, and shapes like glorious mountains circling and moving this way and that.
+  rationale: The earlier negative correction fits the cloud’s obscurity, but it does not match the ability form supplied in this record, so the uncertainty remains visible in a reader note. The earlier recognition of plural movement verbs is preserved.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:02:03Z'
@@ -234,3 +232,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/108/004.job-72983.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:04:20Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Enoch sees an obscure cloudlike region, a gloriously burning flame, and moving forms resembling glorious mountains.
+  meaning_decisions:
+  - source_phrase: እስመ፡ እምዕሙቁ፡ አክሀልኩ፡ ላዕለ፡ ነጽሮ፡
+    prior_rendering: for because of its depth I was unable to look upon it
+    new_rendering: for from its depths I was able to look upon it[a]
+    rationale: The supplied source has an affirmative ability form, whereas the earlier revision assumed a negative correction. The main text follows the supplied reading, while the note acknowledges the contextually plausible negative understanding of this uncertain phrase.
+  - source_phrase: ወይትከበቡ፡ ከመ፡ አድባር፡ ስቡሓን፡ ወይትሀወኩ፡ ለፌ፡ ወለፌ።
+    prior_rendering: and something like glorious mountains was circling and moving this way and that way
+    new_rendering: and shapes like glorious mountains circling and moving this way and that
+    rationale: Both movement verbs are plural, so the mountainlike forms are presented as multiple moving shapes rather than a single entity.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier negative correction fits the cloud’s obscurity, but it does not match the ability form supplied in this record, so the uncertainty remains visible in a reader note. The earlier recognition of plural movement verbs is preserved.

@@ -13,24 +13,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch103.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 103, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And your spirits will live[a], you who died in righteousness, and they will rejoice and be glad, and their spirits will not perish, and their remembrance will be before the face of the Great One for all the generations of eternity. And now[e][d][c][b], do not fear their humiliation.
-  philosophy: optimal-equivalence
+  text: And your spirits will live, you who died in righteousness, and they will rejoice and be glad. They will not perish, and you will be remembered before the Great One through all generations forever. Now do not fear the sinners’ scorn[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'you who died in righteousness.' The Ge'ez construction may directly address the righteous dead rather than appositionally describe 'your spirit.'
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'before the face of the Great One,' a standard presence formula in exalted or heavenly-court language.
-    reason: cultural_note
-  - marker: c
-    text: Or 'do not fear their reproach/disgrace.' The final noun can denote humiliation or public shame.
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'your spirit will live—those of you whose death was in righteousness'.
-    reason: previous_rendering
-  - marker: e
-    text: Or 'generations of the world'.
-    reason: previous_rendering
+    text: Or, “do not fear the disgrace suffered by the righteous dead.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: የሐይዉ
   chosen: will live
@@ -196,9 +184,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And your spirits will live[a], you who died in righteousness, and they will rejoice and be glad, and their spirits will not perish, and their remembrance will be before the face of the Great One for all the generations of eternity. And now[e][d][c][b], do not fear their humiliation.'
-  to: 'And your spirits will live[a], you who died in righteousness, and they will rejoice and be glad, and their spirits will not perish, and their remembrance will be before the face of the Great One for all the generations of eternity. And now[e][d][c][b], do not fear their humiliation.'
+  from: And your spirits will live[a], you who died in righteousness, and they will rejoice and be glad, and their spirits will not perish, and their remembrance will be before the face of the Great One for all the generations of eternity. And now[e][d][c][b], do not fear their humiliation.
+  to: And your spirits will live[a], you who died in righteousness, and they will rejoice and be glad, and their spirits will not perish, and their remembrance will be before the face of the Great One for all the generations of eternity. And now[e][d][c][b], do not fear their humiliation.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''those of you whose death was in righteousness''].'
+- timestamp: '2026-11-09T20:05:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And your spirits will live[a], you who died in righteousness, and they will rejoice and be glad, and their spirits will not perish, and their remembrance will be before the face of the Great One for all the generations of eternity. And now[e][d][c][b], do not fear their humiliation.
+  to: And your spirits will live, you who died in righteousness, and they will rejoice and be glad. They will not perish, and you will be remembered before the Great One through all generations forever. Now do not fear the sinners’ scorn[a].
+  rationale: I kept the direct address to those who died in righteousness and the promise of enduring life, without turning it into a claim about bodily resurrection. The earlier notes exposed a genuine ambiguity in the final phrase, but most of the remaining notes concerned ordinary grammar or presence language.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:01:13Z'
@@ -223,3 +218,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/103/004.job-72945.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:05:47Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The righteous dead will live joyfully and be remembered before the Great One forever, so the righteous need not fear the sinners’ scorn.
+  meaning_decisions:
+  - source_phrase: ወእቲዝካሮሙ፡ እምቅ ድመ፡ ገጸ፡ ለዐቢይ፡ ለኵሉ፡ ትውልደ፡ ዓለም
+    prior_rendering: their remembrance will be before the face of the Great One for all the generations of eternity
+    new_rendering: you will be remembered before the Great One through all generations forever
+    rationale: The presence formula expresses enduring remembrance before the Great One. Natural English makes that assurance explicit while keeping the same righteous dead as its referent.
+  - source_phrase: ኢትፍርህዎ፡ ለኀሣሮሙ
+    prior_rendering: do not fear their humiliation
+    new_rendering: do not fear the sinners’ scorn
+    rationale: In this consolation, the best-supported sense is the reproach directed at the righteous by sinners, not fear that the sinners themselves will be humiliated. The possible reference to the disgrace of the righteous dead remains in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I kept the direct address to those who died in righteousness and the promise of enduring life, without turning it into a claim about bodily resurrection. The earlier notes exposed a genuine ambiguity in the final phrase, but most of the remaining notes concerned ordinary grammar or presence language.

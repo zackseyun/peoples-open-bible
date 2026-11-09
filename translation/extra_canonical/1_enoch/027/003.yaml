@@ -11,21 +11,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch27.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 27, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: In the latter days this will become for them a spectacle of righteous judgment in the presence of the righteous forever[a]; all the days here the wise will bless the Lord of glory[d][c][b], the eternal King.
-  philosophy: optimal-equivalence
+  text: In the latter days, their punishment will be a spectacle of righteous judgment before the righteous forever[a]. Here those who have received mercy will bless the Lord of glory, the eternal King, for all time.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The word rendered 'forever' is textually uncertain in this witness (shown bracketed in the source). It may belong with the phrase 'in the presence of the righteous' or reflect a variant reading.
+    text: The word “forever” is uncertain in the Ge'ez.
     reason: textual_variant
-  - marker: b
-    text: '''Spectacle'' renders a term that can also mean ''sign,'' ''appearance,'' or ''example.'' The sense here is of a visible display of judgment.'
-    reason: lexical_alternative
-  - marker: c
-    text: '''This age'' could also be rendered ''this world,'' but the apocalyptic contrast between present age and coming judgment favors ''age.'''
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'all the days of this age the wise will bless'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: በዳኃሪ መዋዕል
   chosen: In the latter days
@@ -173,12 +164,18 @@ revisions:
   from: In the latter days this will become for them a spectacle of righteous judgment in the presence of the righteous forever; all the days here the merciful will bless the Lord of glory, the eternal King.
   to: In the latter days this will become for them a spectacle of righteous judgment in the presence of the righteous forever; all the days here the wise will bless the Lord of glory, the eternal King.
   rationale: Changed 'the merciful' to 'the wise' to reflect ምሑራን more accurately. Retained the rest of the draft as sufficiently faithful and natural.
+- timestamp: '2026-11-09T19:49:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: In the latter days this will become for them a spectacle of righteous judgment in the presence of the righteous forever[a]; all the days here the wise will bless the Lord of glory[d][c][b], the eternal King.
+  to: In the latter days, their punishment will be a spectacle of righteous judgment before the righteous forever[a]. Here those who have received mercy will bless the Lord of glory, the eternal King, for all time.
+  rationale: The earlier correction of 'this age' to 'here' is sound, but the competing revisions of ምሑራን must be judged by its spelling and the following mercy language. The uncertainty attached to 'forever' remains relevant; the old notes about 'this age' do not.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:36:05Z'
   unchanged: false
   changes_summary: Changed 'the merciful' to 'the wise' to reflect ምሑራን more accurately. Retained the rest of the draft as sufficiently faithful and natural.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -198,3 +195,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/027/003.job-72312.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:49:01Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The punishment of the accursed will remain a visible display of righteous judgment, while those who receive mercy bless the eternal King without end.
+  meaning_decisions:
+  - source_phrase: ይከውን፡ ላዕሌሆሙ፡ አርአያ፡ ኵነኔ፡ ዘበ፡ ጽድቅ
+    prior_rendering: this will become for them a spectacle of righteous judgment
+    new_rendering: their punishment will be a spectacle of righteous judgment
+    rationale: The judgment falls upon the accursed; they are its subjects, not its beneficiaries or merely its spectators. Making their punishment explicit clarifies what will be displayed before the righteous.
+  - source_phrase: ምሑራን
+    prior_rendering: the wise
+    new_rendering: those who have received mercy
+    rationale: The supplied spelling supports a passive form associated with receiving mercy, rather than being taught or wise. The following verse’s thanksgiving for mercy reinforces this reading.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier correction of 'this age' to 'here' is sound, but the competing revisions of ምሑራን must be judged by its spelling and the following mercy language. The uncertainty attached to 'forever' remains relevant; the old notes about 'this age' do not.

@@ -12,18 +12,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch73.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 73, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And in every month its going out and its returning vary[a], and its days are like the days of the sun; and when its light is full[c][b], it is a seventh part of the light of the sun.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The verse speaks of a luminary's cyclical 'going out' and 'returning,' likely technical or semi-technical astronomical language for its course. More interpretive renderings such as 'rising' and 'setting' are possible but not certain from the Ge'ez alone.
-    reason: lexical_alternative
-  - marker: b
-    text: The darkening language likely refers to the moon's waning light in comparison with the sun, here quantified as one-seventh.
-    reason: cultural_note
-  - marker: c
-    text: Or 'when it becomes dark, its light amounts to'.
-    reason: previous_rendering
+  text: Its rising and setting vary each month, and its days are like the days of the sun. When its light is full, it is one seventh of the sun's light.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ሙፃኢሁ
   chosen: its going out
@@ -146,12 +136,18 @@ revisions:
   from: And in every month its going out and its returning vary, and its days are like the days of the sun; and when its light is full, it amounts to a seventh part of the light of the sun.
   to: And in every month its going out and its returning vary, and its days are like the days of the sun; and when its light is full, it is a seventh part of the light of the sun.
   rationale: Replaced 'it amounts to' with 'it is' for a more direct and natural rendering of the final clause, while preserving the source meaning. Kept the rest unchanged.
+- timestamp: '2026-11-09T20:03:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And in every month its going out and its returning vary[a], and its days are like the days of the sun; and when its light is full[c][b], it is a seventh part of the light of the sun.
+  to: Its rising and setting vary each month, and its days are like the days of the sun. When its light is full, it is one seventh of the sun's light.
+  rationale: The revision history provides sound lexical grounds for full light rather than darkness, so that correction stands and the contradictory older notes are dropped. The rising-and-setting pair is clarified from the chapter's astronomical context.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:23Z'
   unchanged: false
   changes_summary: Replaced 'it amounts to' with 'it is' for a more direct and natural rendering of the final clause, while preserving the source meaning. Kept the rest unchanged.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -171,3 +167,21 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/073/003.job-72604.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:03:37Z'
+  change_level: refined
+  confidence: high
+  meaning: The moon's rising and setting vary each month, its days resemble the sun's days, and its full light is one seventh of the sun's light.
+  meaning_decisions:
+  - source_phrase: ሙፃኢሁ፡ ወምብዋኢሁ
+    prior_rendering: its going out and its returning
+    new_rendering: Its rising and setting
+    rationale: In this account of the luminaries, going out and entering describe rising and setting; the astronomical terms convey the movement without suggesting an unspecified return journey.
+  footnote_kinds: {}
+  history_weighed: The revision history provides sound lexical grounds for full light rather than darkness, so that correction stands and the contradictory older notes are dropped. The rising-and-setting pair is clarified from the chapter's astronomical context.

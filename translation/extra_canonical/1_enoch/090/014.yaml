@@ -18,18 +18,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw until that man came[a], the one who had written down the names of the shepherds, and he brought them up before the Lord of the sheep; and he helped him and rescued him[c][b], and he showed him everything concerning the downfall of his helper.
-  philosophy: optimal-equivalence
+  text: I watched until that man came—the one who had written down the names of the shepherds and brought them up before the Lord of the sheep. He helped the ram and rescued him, and showed him everything about his helper's descent[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The final clause is difficult in the Ethiopic as transmitted here. It may mean that the sheep was shown everything concerning the descent or intervention of its helper.
-    reason: textual_variant
-  - marker: b
-    text: The 'man who had written down the names of the shepherds' is the heavenly recorder figure already active in this vision's judgment scene.
-    reason: cross_reference
-  - marker: c
-    text: Or 'and he helped that sheep and rescued it, and he showed it everything, that its helper had come down for this purpose.'.
-    reason: previous_rendering
+    text: The final clause is unclear in the Ge'ez. It may instead mean that the man showed the ram everything and had come down to help him.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ብእሲ
   chosen: man
@@ -158,12 +152,18 @@ revisions:
   from: And I saw until that man came—the one who had written down the names of the shepherds—and he brought them up before the Lord of the sheep; and he helped him and rescued him, and he showed that ram all the descent of his helper.
   to: And I saw until that man came, the one who had written down the names of the shepherds, and he brought them up before the Lord of the sheep; and he helped him and rescued him, and he showed him everything concerning the downfall of his helper.
   rationale: Adjusted punctuation for smoother formal English; revised the final clause from 'he showed that ram all the descent of his helper' to 'he showed him everything concerning the downfall of his helper' to better reflect አርአዮ ኵሎ መራደ while avoiding the awkward and likely inaccurate 'that ram' and 'descent.'
+- timestamp: '2026-11-09T20:18:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I saw until that man came[a], the one who had written down the names of the shepherds, and he brought them up before the Lord of the sheep; and he helped him and rescued him[c][b], and he showed him everything concerning the downfall of his helper.
+  to: I watched until that man came—the one who had written down the names of the shepherds and brought them up before the Lord of the sheep. He helped the ram and rescued him, and showed him everything about his helper's descent[a].
+  rationale: The earlier correction rightly identified the ram and the helper's descent, while the later wording 'downfall' obscured the connection with arriving help. The existing notes recognized the final clause's uncertainty; that uncertainty is now addressed in one note placed directly beside it.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:19Z'
   unchanged: false
   changes_summary: Adjusted punctuation for smoother formal English; revised the final clause from 'he showed that ram all the descent of his helper' to 'he showed him everything concerning the downfall of his helper' to better reflect አርአዮ ኵሎ መራደ while avoiding the awkward and likely inaccurate 'that ram' and 'descent.'
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -183,3 +183,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/090/014.job-72812.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:18:46Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The man who records the shepherds' names before the Lord of the sheep arrives to help and rescue the embattled ram and reveals his helper's descent.
+  meaning_decisions:
+  - source_phrase: ዘጸሐፈ፡ አስማቲሆሙ፡ ለኖሎት፡ ወያዐርግ፡ ቅድሜሁ፡ ለእግዚአ፡ አባግዕ
+    prior_rendering: the one who had written down the names of the shepherds, and he brought them up before the Lord of the sheep
+    new_rendering: the one who had written down the names of the shepherds and brought them up before the Lord of the sheep
+    rationale: 'The connected actions identify the recorder by his work: recording the shepherds'' names and bringing those names before the Lord.'
+  - source_phrase: ወውእቱ፡ ረዳኦ፡ ወአድኃኖ
+    prior_rendering: and he helped him and rescued him
+    new_rendering: He helped the ram and rescued him
+    rationale: The ram who cried for help in the preceding verse is the recipient of both actions; naming him makes the pronouns clear without changing the vision's imagery.
+  - source_phrase: ወአርአዮ፡ ኵሎ፡ መራደ፡ ለረዳኢቱ፡ ለዝኩ፡ ይቤላ
+    prior_rendering: and he showed him everything concerning the downfall of his helper
+    new_rendering: and showed him everything about his helper's descent
+    rationale: The context concerns help arriving, not a helper's ruin. 'Descent' preserves the best-supported sense of the difficult noun, while the footnote acknowledges uncertainty about the clause's construction.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier correction rightly identified the ram and the helper's descent, while the later wording 'downfall' obscured the connection with arriving help. The existing notes recognized the final clause's uncertainty; that uncertainty is now addressed in one note placed directly beside it.

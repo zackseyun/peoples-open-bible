@@ -12,21 +12,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch56.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 56, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the city of my righteous ones shall be a hindrance to their horses[a]; and they will stir up slaughter among themselves, and their right hand will be strong against them. And a man will not know his brother, nor a son his father or his mother, until the number of the corpses from their death is complete[d][c][b], and their punishment will not be in vain.
-  philosophy: optimal-equivalence
+  text: But the city of my righteous ones will be an obstacle to their horses. They will stir up slaughter among themselves, and their right hands will be strong against one another. A man will not recognize his brother[a], nor a son his father or mother, until the full number of their dead has been reached[b]; their punishment will not be in vain.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'obstacle' or 'trap' for their horses; the Ge'ez term suggests something that blocks or ensnares.
-    reason: lexical_alternative
+    text: Or “will not acknowledge his brother,” disregarding family ties.
+    reason: alternative_reading
   - marker: b
-    text: Literally 'a man will not know his brother'; the sense may include 'recognize.'
-    reason: lexical_alternative
-  - marker: c
-    text: The clause about 'the number of the corpses' is textually difficult in the Ethiopic and is rendered transparently rather than smoothed.
+    text: The Ge’ez phrase about the number of the dead is unclear.
     reason: textual_variant
-  - marker: d
-    text: Or 'they will stir themselves up to slaughter among themselves'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ሀገረ
   chosen: city
@@ -177,12 +171,18 @@ revisions:
   from: they will stir themselves up to slaughter among themselves
   to: they will stir up slaughter among themselves
   rationale: 'The Ge''ez verb ያነሥኡ (yānaśśe''u) is transitive (''they will raise/stir up'') and takes the accusative noun ቀትለ (qatla, ''slaughter'') as its direct object. The draft incorrectly treats the verb as reflexive and the noun as an infinitive of purpose. | Adjudicator: The reviewer is correct about the Ge''ez grammar. The verb ያነሥኡ (yānaśśe''u) is the transitive causative form (''they will raise/stir up''), and ቀትለ (qatla) is an accusative noun (''slaughter'') functioning'
+- timestamp: '2026-11-09T19:55:54Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the city of my righteous ones shall be a hindrance to their horses[a]; and they will stir up slaughter among themselves, and their right hand will be strong against them. And a man will not know his brother, nor a son his father or his mother, until the number of the corpses from their death is complete[d][c][b], and their punishment will not be in vain.
+  to: But the city of my righteous ones will be an obstacle to their horses. They will stir up slaughter among themselves, and their right hands will be strong against one another. A man will not recognize his brother[a], nor a son his father or mother, until the full number of their dead has been reached[b]; their punishment will not be in vain.
+  rationale: The grammatical revision correctly treats slaughter as what they stir up, not as the purpose of a reflexive action. I retain the first-person possessive and mutual violence, while preserving uncertainty about the difficult clause concerning the dead.
 revision_pass:
   model: gemini-3.1-pro-preview
   timestamp: '2026-04-23T21:04:13Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -202,3 +202,35 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/056/007.job-72431.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:55:54Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The righteous city obstructs the invaders, who turn their strength against one another in a slaughter that disregards family bonds and fulfills their punishment.
+  meaning_decisions:
+  - source_phrase: ወሀገረ፡ ጻድቃነ፡ ዚአየ፡ ይከውን፡ ማዕቀፈ፡ ለአፍራሲሆሙ፡
+    prior_rendering: And the city of my righteous ones shall be a hindrance to their horses
+    new_rendering: But the city of my righteous ones will be an obstacle to their horses
+    rationale: The city’s resistance contrasts with the preceding devastation of the land; “obstacle” preserves the broad blocking image without specifying a trap.
+  - source_phrase: ወትጸንዕ፡ የማኖሙ፡ ዲቤሆሙ፡
+    prior_rendering: and their right hand will be strong against them
+    new_rendering: and their right hands will be strong against one another
+    rationale: The preceding reciprocal slaughter establishes that their strength is directed against members of their own force, not against the righteous.
+  - source_phrase: ወኢያእምር፡ ብእሲ፡ ለአኁሁ፡
+    prior_rendering: And a man will not know his brother
+    new_rendering: A man will not recognize his brother
+    rationale: In this scene of mutual slaughter, recognition is the best-supported sense of knowing; the alternative of refusing to acknowledge kinship remains in a note.
+  - source_phrase: እስከ፡ ይከውን፡ ኍልቈ፡ አብድነት፡ እሞቶሙ፡
+    prior_rendering: until the number of the corpses from their death is complete
+    new_rendering: until the full number of their dead has been reached
+    rationale: This conveys the best-supported sense of the difficult counting clause without the misleading redundancy of “corpses from their death”; its textual uncertainty is stated in a note.
+  footnote_kinds:
+    a: alternative_meaning
+    b: textual_variant
+  history_weighed: The grammatical revision correctly treats slaughter as what they stir up, not as the purpose of a reflexive action. I retain the first-person possessive and mutual violence, while preserving uncertainty about the difficult clause concerning the dead.

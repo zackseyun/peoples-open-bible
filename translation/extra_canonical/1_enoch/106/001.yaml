@@ -13,12 +13,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch106.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 106, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And after some days my son Methuselah took a wife for his son Lamech[a], and she conceived by him and bore a son.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The opening may also be understood more loosely as 'after a time.'
-    reason: lexical_alternative
+  text: After some time, my son Methuselah took a wife for his son Lamech, and she conceived by Lamech and bore a son.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: እምድኅረ መዋዕል
   chosen: after some days
@@ -114,7 +110,6 @@ revision_pass:
   timestamp: '2026-04-23T11:38:59Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -134,3 +129,33 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/106/001.job-72965.json
+revisions:
+- timestamp: '2026-11-09T20:03:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And after some days my son Methuselah took a wife for his son Lamech[a], and she conceived by him and bore a son.
+  to: After some time, my son Methuselah took a wife for his son Lamech, and she conceived by Lamech and bore a son.
+  rationale: The current wording correctly preserves Methuselah’s role in obtaining a wife for Lamech. Its temporal alternative supports an unspecified interval, while the context identifies Lamech as the father without requiring a footnote.
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:03:42Z'
+  change_level: refined
+  confidence: high
+  meaning: Methuselah obtains a wife for his son Lamech, and she conceives by Lamech and bears a son.
+  meaning_decisions:
+  - source_phrase: እምድኅረ፡ መዋዕል
+    prior_rendering: after some days
+    new_rendering: After some time
+    rationale: The expression marks an unspecified interval rather than necessarily a few days.
+  - source_phrase: እምኔሁ
+    prior_rendering: by him
+    new_rendering: by Lamech
+    rationale: Naming Lamech makes the intended paternity clear, since Methuselah is the subject of the preceding clause.
+  footnote_kinds: {}
+  history_weighed: The current wording correctly preserves Methuselah’s role in obtaining a wife for Lamech. Its temporal alternative supports an unspecified interval, while the context identifies Lamech as the father without requiring a footnote.

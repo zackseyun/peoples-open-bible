@@ -11,18 +11,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch59.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 59, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And there I saw the hidden chambers of the thunder[a], and how, when it crashes in the height of heaven, its sound is heard; and he showed me the dwellings of the dry land, and the sound of the thunder, whether for peace and blessing or for a curse[c][b], according to the word of the Lord of Spirits.
-  philosophy: optimal-equivalence
+  text: There I saw the hidden chambers of thunder and how its sound is heard when it crashes in the height of heaven. He showed me the dwellings on dry land[a] and how thunder sounds for peace and blessing or for a curse, according to the word of the Lord of Spirits.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The phrase rendered 'the dwellings of the dry land' is textually and lexically difficult; it may refer more generally to the inhabited places of the earth.
-    reason: lexical_alternative
-  - marker: b
-    text: A bracketed phrase in the witness repeats 'and the sound of the thunder'; the repetition may be original or may reflect scribal expansion, but it is represented in the translation's final clause.
-    reason: textual_variant
-  - marker: c
-    text: Or 'from above in heaven'.
-    reason: previous_rendering
+    text: The Ge'ez phrase is uncertain; it may refer more generally to the inhabited places of the earth.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ኅቡኣተ
   chosen: hidden chambers
@@ -168,9 +162,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And there I saw the hidden places of the thunder[a], and how, when it crashes in the height of heaven, its sound is heard; and he showed me the dwellings of the dry land, and the sound of the thunder, whether for peace and blessing or for a curse[c][b], according to the word of the Lord of Spirits.'
-  to: 'And there I saw the hidden chambers of the thunder[a], and how, when it crashes in the height of heaven, its sound is heard; and he showed me the dwellings of the dry land, and the sound of the thunder, whether for peace and blessing or for a curse[c][b], according to the word of the Lord of Spirits.'
+  from: And there I saw the hidden places of the thunder[a], and how, when it crashes in the height of heaven, its sound is heard; and he showed me the dwellings of the dry land, and the sound of the thunder, whether for peace and blessing or for a curse[c][b], according to the word of the Lord of Spirits.
+  to: And there I saw the hidden chambers of the thunder[a], and how, when it crashes in the height of heaven, its sound is heard; and he showed me the dwellings of the dry land, and the sound of the thunder, whether for peace and blessing or for a curse[c][b], according to the word of the Lord of Spirits.
   rationale: 'Drafter chose ''hidden chambers'' for ኅቡኣተ on Dillmann grounds: the plural carries a locative-repository sense fitting the apocalyptic context (concealed chambers of thunder), distinguishing it from abstract ''secrets''. Azure substituted ''hidden places'' solely ''for a more neutral rendering'' — pure stylistic preference.'
+- timestamp: '2026-11-09T19:54:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And there I saw the hidden chambers of the thunder[a], and how, when it crashes in the height of heaven, its sound is heard; and he showed me the dwellings of the dry land, and the sound of the thunder, whether for peace and blessing or for a curse[c][b], according to the word of the Lord of Spirits.
+  to: There I saw the hidden chambers of thunder and how its sound is heard when it crashes in the height of heaven. He showed me the dwellings on dry land[a] and how thunder sounds for peace and blessing or for a curse, according to the word of the Lord of Spirits.
+  rationale: The earlier deliberations support keeping the chamber image, thunder’s forceful crash, and the height of heaven. I retained the uncertainty about earthly dwellings, but removed the unnecessary note about the supplied phrase and the misplaced alternative for heaven’s height.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-15T18:39:35Z'
@@ -195,3 +196,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/059/002.job-72442.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:54:51Z'
+  change_level: refined
+  confidence: low
+  meaning: Enoch sees thunder’s hidden chambers, hears how it resounds in heaven, and is shown earthly dwellings and thunder’s purposes of peace, blessing, or curse under the Lord of Spirits.
+  meaning_decisions:
+  - source_phrase: ተመመንደርት፡ የብስ
+    prior_rendering: the dwellings of the dry land
+    new_rendering: the dwellings on dry land
+    rationale: The best-supported sense is dwellings situated on dry land, not dwellings belonging to a personified land; the uncertainty remains in a reader-facing note.
+  - source_phrase: '[ወቃል፡ ዘነጐድጓድ፡] ለሰላም፡ ወለበረከት፡ ወእመ፡ ለረገም'
+    prior_rendering: and the sound of the thunder, whether for peace and blessing or for a curse
+    new_rendering: and how thunder sounds for peace and blessing or for a curse
+    rationale: This expresses naturally what the visionary is shown without making thunder merely an announcement of the outcomes or specifying how it produces them.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier deliberations support keeping the chamber image, thunder’s forceful crash, and the height of heaven. I retained the uncertainty about earthly dwellings, but removed the unnecessary note about the supplied phrase and the misplaced alternative for heaven’s height.

@@ -18,24 +18,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw until that man[a], who was writing a book by the word of the Lord, opened that book of destruction which those twelve shepherds had wrought[e][d][c][b], and he showed before the Lord of the sheep that they had destroyed much more than those before them.
-  philosophy: optimal-equivalence
+  text: And I watched that man, who was writing a book at the Lord’s command, until he opened the book recording the destruction those twelve shepherds had caused. Before the Lord of the sheep, he showed that they had destroyed far more sheep than the shepherds before them[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The final clause is difficult in the Ethiopic. The sense appears to be that the twelve shepherds destroyed beyond the limit or charge assigned to them.
-    reason: textual_variant
-  - marker: b
-    text: '''Lord of the sheep'' is the vision''s own title within the animal imagery and is kept rather than replaced with a generic divine title.'
-    reason: cultural_note
-  - marker: c
-    text: Or 'opened that book of destruction which those twelve shepherds had destroyed'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'much more than what was commanded before them'.
-    reason: previous_rendering
-  - marker: e
-    text: Or 'And I saw till'.
-    reason: previous_rendering
+    text: This may instead mean that they had destroyed far more than they had been commanded to destroy.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ወርኢክዎ
   chosen: And I saw
@@ -201,12 +189,18 @@ revisions:
   from: And I saw until that man, who was writing a book by the word of the Lord, opened that book of the destruction that those twelve shepherds had wrought; and he showed before the Lord of the sheep that they had destroyed much more than those before them.
   to: And I saw until that man, who was writing a book by the word of the Lord, opened that book of destruction which those twelve shepherds had wrought, and he showed before the Lord of the sheep that they had destroyed much more than those before them.
   rationale: Removed the unnecessary article in 'book of destruction' for more natural English, changed 'that those twelve shepherds had wrought' to 'which those twelve shepherds had wrought' for smoother formal style, and adjusted punctuation slightly. The sense remains the same.
+- timestamp: '2026-11-09T20:17:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I saw until that man[a], who was writing a book by the word of the Lord, opened that book of destruction which those twelve shepherds had wrought[e][d][c][b], and he showed before the Lord of the sheep that they had destroyed much more than those before them.
+  to: And I watched that man, who was writing a book at the Lord’s command, until he opened the book recording the destruction those twelve shepherds had caused. Before the Lord of the sheep, he showed that they had destroyed far more sheep than the shepherds before them[a].
+  rationale: The revisions correctly distinguished the destruction recorded in the book from destruction of the book itself and identified the comparison as one with earlier shepherds. I preserve those gains, while reducing the conflicting older notes to the meaningful alternative concerning the shepherds’ allotted command.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:19Z'
   unchanged: false
   changes_summary: Removed the unnecessary article in 'book of destruction' for more natural English, changed 'that those twelve shepherds had wrought' to 'which those twelve shepherds had wrought' for smoother formal style, and adjusted punctuation slightly. The sense remains the same.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -226,3 +220,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/090/017.job-72815.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:17:12Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The man opens the record written at the Lord’s command and shows that the twelve shepherds destroyed far more sheep than their predecessors.
+  meaning_decisions:
+  - source_phrase: በቃለ፡ እግዚአ
+    prior_rendering: by the word of the Lord
+    new_rendering: at the Lord’s command
+    rationale: The phrase describes the authority under which the man keeps the record, not words that supply the book’s contents.
+  - source_phrase: መጽሐፈ፡ ሐጕል፡ ዘአሕጐሉ፡ እልኩ፡ ፲ወ፪የአቱ፡ ይኃርያን
+    prior_rendering: that book of destruction which those twelve shepherds had wrought
+    new_rendering: the book recording the destruction those twelve shepherds had caused
+    rationale: The book records the shepherds’ destructive acts; this wording prevents the relative clause from appearing to describe something done to the book itself.
+  - source_phrase: ፈድፋደ፡ እምቅድሜሆሙ፡ አሕጐሉ
+    prior_rendering: they had destroyed much more than those before them
+    new_rendering: they had destroyed far more sheep than the shepherds before them
+    rationale: The vision supplies sheep as the victims and earlier shepherds as the comparison; making both explicit clarifies the indictment without changing it.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The revisions correctly distinguished the destruction recorded in the book from destruction of the book itself and identified the comparison as one with earlier shepherds. I preserve those gains, while reducing the conflicting older notes to the meaningful alternative concerning the shepherds’ allotted command.

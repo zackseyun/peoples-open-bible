@@ -12,18 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch86.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 86, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And after that I saw large and black cattle[a], and behold, all of them changed their stalls and their pastures and their calves[c][b], and they began to live with one another.
-  philosophy: optimal-equivalence
+  text: After that I saw large black cattle. They all changed their stalls, their pastures, and their calves[a], and began to live with one another.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The clause about changing 'their stalls and their pastures and their calves' is textually and semantically difficult. The Ge'ez appears to list places and offspring together under one verb of change or alteration; a broader sense such as 'their dwelling places, their grazing places, and their young' is also possible.
-    reason: textual_variant
-  - marker: b
-    text: The final phrase may also be rendered 'they lived together' or 'they dwelt with one another.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'dark'.
-    reason: previous_rendering
+    text: The meaning of the phrase about changing stalls, pastures, and calves is unclear.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: አልህምተ
   chosen: cattle
@@ -150,12 +144,18 @@ revisions:
   from: And after that I saw large and And after that I saw large and black cattle, and behold, all of them changed their stalls and their pastures and their calves, and they began to live with one another. cattle, and behold, all of them changed their stalls and their pastures and their calves, and they began to live with one another.
   to: And after that I saw large and black cattle, and behold, all of them changed their stalls and their pastures and their calves, and they began to live with one another.
   rationale: Removed the accidental duplicated opening phrase. Retained the rest of the translation as a faithful and natural rendering of the source.
+- timestamp: '2026-11-09T20:08:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And after that I saw large and black cattle[a], and behold, all of them changed their stalls and their pastures and their calves[c][b], and they began to live with one another.
+  to: After that I saw large black cattle. They all changed their stalls, their pastures, and their calves[a], and began to live with one another.
+  rationale: I retain 'black,' which preserves the dream's distinct animal colors, and the current rendering of the difficult list. Its uncertainty warrants a short note rather than an invented explanation of what was changed.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:53Z'
   unchanged: false
   changes_summary: Removed the accidental duplicated opening phrase. Retained the rest of the translation as a faithful and natural rendering of the source.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -175,3 +175,18 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/086/002.job-72716.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:08:39Z'
+  change_level: refined
+  confidence: low
+  meaning: Enoch sees large black cattle change their stalls, pastures, and calves and begin living together.
+  meaning_decisions: []
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retain 'black,' which preserves the dream's distinct animal colors, and the current rendering of the difficult list. Its uncertainty warrants a short note rather than an invented explanation of what was changed.

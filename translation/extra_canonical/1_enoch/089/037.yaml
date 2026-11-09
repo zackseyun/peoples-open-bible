@@ -22,21 +22,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I watched until that sheep lay down—the one that had met that sheep which led them—and I watched until all the great and small sheep were stirred up in their place[d][c][b][a], and they entered into the pasture and came near the stream of water.
-  philosophy: optimal-equivalence
+  text: And I watched until that sheep lay down[a]—the one that had met the sheep who led them. I watched until all the grown sheep perished and young ones arose in their place; they entered a pasture and approached a river.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The clause 'were driven in their place' is uncertain. The underlying phrase may also be understood along the lines of 'to their place' or, less likely, 'instead of them.'
-    reason: textual_variant
-  - marker: b
-    text: '''Was laid down'' may imply that the sheep was brought low or killed, but the Ge''ez wording does not require the translator to make that explicit here.'
+    text: Here and in the next two verses, the sheep’s lying down represents death.
     reason: lexical_alternative
-  - marker: c
-    text: Or 'was laid down'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'all the sheep, great and small, were driven in their place'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ሰከበ
   chosen: was laid down
@@ -176,12 +167,18 @@ revisions:
   from: And I watched until that sheep lay down—the one that had met that sheep which led them—and I watched until all the great sheep perished, and the small ones arose in their place, and they entered into the pasture and came near the stream of water.
   to: And I watched until that sheep lay down—the one that had met that sheep which led them—and I watched until all the great and small sheep were stirred up in their place, and they entered into the pasture and came near the stream of water.
   rationale: Replaced 'perished' with 'were stirred up' to reflect ተኃጕሉ more accurately in context, and rendered ኵሎሙ አባግዕ ዐቢያን ወንኡሳን together as 'all the great and small sheep' rather than making 'small ones' a separate subject. Kept the rest substantially unchanged.
+- timestamp: '2026-11-09T20:10:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I watched until that sheep lay down—the one that had met that sheep which led them—and I watched until all the great and small sheep were stirred up in their place[d][c][b][a], and they entered into the pasture and came near the stream of water.
+  to: And I watched until that sheep lay down[a]—the one that had met the sheep who led them. I watched until all the grown sheep perished and young ones arose in their place; they entered a pasture and approached a river.
+  rationale: The earlier revision correctly recognized both the active “lay down” and the two clauses describing death and replacement. The later wording wrongly combined the generations and omitted their succession; the source supports restoring that meaning rather than treating it as an uncertain alternative.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:09Z'
   unchanged: false
   changes_summary: Replaced 'perished' with 'were stirred up' to reflect ተኃጕሉ more accurately in context, and rendered ኵሎሙ አባግዕ ዐቢያን ወንኡሳን together as 'all the great and small sheep' rather than making 'small ones' a separate subject. Kept the rest substantially unchanged.
-
 cross_check:
   status: needs_review
   agreement: 0.5
@@ -201,3 +198,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/037.job-72763.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:20Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The leader’s companion dies, the grown generation perishes and is replaced by young sheep, and the new flock approaches the river.
+  meaning_decisions:
+  - source_phrase: ተኃጕሉ፡ ኵሎሙ፡ አባግዕ፡ ዐቢያን፡ ወንኡሳን፡ ተንሥኡ፡ ህየንቴሆሙ
+    prior_rendering: all the great and small sheep were stirred up in their place
+    new_rendering: all the grown sheep perished and young ones arose in their place
+    rationale: 'The source has two clauses: the great sheep perish, and the small ones arise in their stead. The surrounding wilderness narrative identifies this as generational replacement, making “grown” and “young” the appropriate senses.'
+  - source_phrase: ፈለገ፡ ማይ
+    prior_rendering: the stream of water
+    new_rendering: a river
+    rationale: The flock approaches the flowing boundary it crosses before entering the good land. “River” conveys that setting naturally without replacing the image with a place name.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The earlier revision correctly recognized both the active “lay down” and the two clauses describing death and replacement. The later wording wrongly combined the generations and omitted their succession; the source supports restoring that meaning rather than treating it as an uncertain alternative.

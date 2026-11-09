@@ -22,18 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And sometimes their eyes were opened[a], and sometimes they were blinded, until another sheep arose and led them and brought them all in[c][b], and their eyes were opened.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The repeated image of eyes being opened likely carries symbolic force in the vision—awakening, recognition, or restored discernment—but the text itself leaves the image unexpanded.
-    reason: cultural_note
-  - marker: b
-    text: The clause 'brought them all in' may also be understood as 'gathered them all together,' depending on how the Ge'ez verb is taken.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'And there were some whose eyes were being opened, and there were some who were blind, until another sheep arose and led them and brought them all in'.
-    reason: previous_rendering
+  text: And sometimes their eyes were opened and sometimes they were blinded, until another sheep arose, led them, and brought them all back; and their eyes were opened.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ሰበ
   chosen: some
@@ -151,12 +141,18 @@ revisions:
   from: And sometimes their eyes were opened, and sometimes they were blinded, until another sheep arose and led them and brought them all back, and their eyes were opened.
   to: And sometimes their eyes were opened, and sometimes they were blinded, until another sheep arose and led them and brought them all in, and their eyes were opened.
   rationale: Changed 'brought them all back' to 'brought them all in' for closer lexical accuracy; the source does not explicitly say 'back.'
+- timestamp: '2026-11-09T20:10:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And sometimes their eyes were opened[a], and sometimes they were blinded, until another sheep arose and led them and brought them all in[c][b], and their eyes were opened.
+  to: And sometimes their eyes were opened and sometimes they were blinded, until another sheep arose, led them, and brought them all back; and their eyes were opened.
+  rationale: The earlier recognition of “sometimes … sometimes” is supported by the idiom and remains preferable to dividing the flock into two groups. Its accompanying correction to “brought them all back” also fits the verb and context better than the later return to “in.”
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:09Z'
   unchanged: false
   changes_summary: Changed 'brought them all back' to 'brought them all in' for closer lexical accuracy; the source does not explicitly say 'back.'
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -176,3 +172,21 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/041.job-72767.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:20Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The sheep alternate between sight and blindness until another leader brings them back and their eyes are opened.
+  meaning_decisions:
+  - source_phrase: አግብኦሙ፡ ለኵሎሙ
+    prior_rendering: brought them all in
+    new_rendering: brought them all back
+    rationale: The verb causes a return, as in verse 35. No destination is named, so “back” preserves the restoration without supplying one.
+  footnote_kinds: {}
+  history_weighed: The earlier recognition of “sometimes … sometimes” is supported by the idiom and remains preferable to dividing the flock into two groups. Its accompanying correction to “brought them all back” also fits the verb and context better than the later return to “in.”

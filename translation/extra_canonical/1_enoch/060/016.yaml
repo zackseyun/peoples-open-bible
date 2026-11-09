@@ -15,18 +15,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch60.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 60, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the spirit of the sea is male and strong[a], and according to the might of its strength he holds it back with a rein[c][b], and thus it is driven out and scattered among all the mountains of the earth.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the wind of the sea.' The Ge'ez word for 'spirit' can also denote wind or breath; the personified context favors 'spirit.'
-    reason: lexical_alternative
-  - marker: b
-    text: The image appears to depict the sea's force being reined in and then sent out or dispersed over the mountains, possibly in the form of mist, spray, or storm-clouds. The exact mechanics are not fully clear in the Ge'ez-only witness.
-    reason: cultural_note
-  - marker: c
-    text: Or 'the might of his strength'.
-    reason: previous_rendering
+  text: The spirit of the sea is male and strong. He reins in the sea according to its mighty strength, and so the sea is driven out and scattered among all the mountains of the earth.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: መንፈሰ ባሕር
   chosen: the spirit of the sea
@@ -157,9 +147,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the spirit of the sea is male and strong[a], and according to the might of its strength he holds it back with a rein[c][b], and thus it is driven out and scattered among all the mountains of the earth.'
-  to: 'And the spirit of the sea is male and strong[a], and according to the might of its strength he holds it back with a rein[c][b], and thus it is driven out and scattered among all the mountains of the earth.'
+  from: And the spirit of the sea is male and strong[a], and according to the might of its strength he holds it back with a rein[c][b], and thus it is driven out and scattered among all the mountains of the earth.
+  to: And the spirit of the sea is male and strong[a], and according to the might of its strength he holds it back with a rein[c][b], and thus it is driven out and scattered among all the mountains of the earth.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he draws it back with a rein''].'
+- timestamp: '2026-11-09T19:58:35Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the spirit of the sea is male and strong[a], and according to the might of its strength he holds it back with a rein[c][b], and thus it is driven out and scattered among all the mountains of the earth.
+  to: The spirit of the sea is male and strong. He reins in the sea according to its mighty strength, and so the sea is driven out and scattered among all the mountains of the earth.
+  rationale: The earlier grammatical correction rightly distinguished the male spirit from the sea referred to by the feminine forms. I made that distinction explicit and dropped speculative explanations of how the sea reaches the mountains.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:02:17Z'
@@ -184,3 +181,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/060/016.job-72459.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:58:35Z'
+  change_level: refined
+  confidence: medium
+  meaning: A strong male spirit reins in the powerful sea, which is then driven out and scattered among the earth's mountains.
+  meaning_decisions:
+  - source_phrase: ወበከመ፡ ኃይለ፡ ጽንዐታ፡ በአንቍ፡ ይገብእ፡ ወከመ'ዝ፡ ትትነጻእ፡ ወትዘራእ
+    prior_rendering: according to the might of its strength he holds it back with a rein, and thus it is driven out and scattered
+    new_rendering: He reins in the sea according to its mighty strength, and so the sea is driven out and scattered
+    rationale: Naming the sea makes clear that its strength and dispersal are distinguished from the male spirit who controls it; reins in preserves the image in natural English.
+  footnote_kinds: {}
+  history_weighed: The earlier grammatical correction rightly distinguished the male spirit from the sea referred to by the feminine forms. I made that distinction explicit and dropped speculative explanations of how the sea reaches the mountains.

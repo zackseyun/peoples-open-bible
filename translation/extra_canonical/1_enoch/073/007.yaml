@@ -12,18 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch73.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 73, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And it sets with the sun[a]; and when the sun rises, the moon rises with it and takes half a portion of light. And on that night, at the beginning of its morning, before the day[c][b], the moon sets with the sun and is dark through that night—seven parts and a half.
-  philosophy: optimal-equivalence
+  text: It sets with the sun. When the sun rises, the moon rises with it and receives half a part of light. That night, at the beginning of its dawn, before the moon's day[a], the moon sets with the sun, and seven and a half parts of it are dark that night.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ge'ez wording is difficult in the middle of the verse, especially around 'at the beginning of its morning, before the day.' The translation keeps the temporal sequence fairly literal rather than smoothing it into a modern astronomical explanation.
-    reason: textual_variant
-  - marker: b
-    text: The chapter repeatedly measures lunar light in numbered 'parts.' The phrase rendered 'half a portion of light' likely refers to that same system of fractional illumination.
-    reason: cultural_note
-  - marker: c
-    text: Or 'before the day, the moon sets'.
-    reason: previous_rendering
+    text: The timing here is unclear; “before the moon's day” may mean “at the beginning of the moon's day.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: የዓርብ
   chosen: sets
@@ -154,12 +148,18 @@ revisions:
   from: And it sets with the sun; and when the sun rises, the moon rises with it and takes half a portion of light. And on that night, at the beginning of its morning, before the day of the moon, the moon sets with the sun and is dark through that night—seven parts and a half.
   to: And it sets with the sun; and when the sun rises, the moon rises with it and takes half a portion of light. And on that night, at the beginning of its morning, before the day, the moon sets with the sun and is dark through that night—seven parts and a half.
   rationale: Removed 'of the moon' after 'before the day' as unsupported by the source and awkward in English; otherwise retained the draft.
+- timestamp: '2026-11-09T20:03:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And it sets with the sun[a]; and when the sun rises, the moon rises with it and takes half a portion of light. And on that night, at the beginning of its morning, before the day[c][b], the moon sets with the sun and is dark through that night—seven parts and a half.
+  to: It sets with the sun. When the sun rises, the moon rises with it and receives half a part of light. That night, at the beginning of its dawn, before the moon's day[a], the moon sets with the sun, and seven and a half parts of it are dark that night.
+  rationale: The earlier revision correctly restored the moon's possessive day, despite its later removal. The existing warning about the difficult timing remains necessary, but the sequence and numbers are not harmonized with a modern account of lunar motion.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:24Z'
   unchanged: false
   changes_summary: Removed 'of the moon' after 'before the day' as unsupported by the source and awkward in English; otherwise retained the draft.
-
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -179,3 +179,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/073/007.job-72608.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:03:37Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The moon rises and sets with the sun and receives half a part of light, while seven and a half parts of it are dark that night.
+  meaning_decisions:
+  - source_phrase: በቅድመ፡ ዕለቱ፡ ለወርኅ
+    prior_rendering: before the day
+    new_rendering: before the moon's day
+    rationale: The possessive construction explicitly identifies the day as the moon's; omitting it removes a calendrical distinction present in the Ge'ez.
+  - source_phrase: ወይጸልም፡ በይእቲ፡ ሌሊት፡ ፯ሳብዓተ፡ እደ፡ ወንፍቃ
+    prior_rendering: and is dark through that night—seven parts and a half
+    new_rendering: and seven and a half parts of it are dark that night
+    rationale: The closing quantity measures the moon's darkness in parts; attaching it directly to the darkened portion avoids suggesting a duration of seven and a half parts.
+  - source_phrase: ወይነሥእ፡ መንፈቀ፡ እደ፡ ብርሃን
+    prior_rendering: and takes half a portion of light
+    new_rendering: and receives half a part of light
+    rationale: Receives follows the chapter's description of allotted light, and part keeps the same measurement term used in the surrounding verses.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier revision correctly restored the moon's possessive day, despite its later removal. The existing warning about the difficult timing remains necessary, but the sequence and numbers are not harmonized with a modern account of lunar motion.

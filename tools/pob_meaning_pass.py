@@ -488,11 +488,23 @@ def run_job(job: dict[str, Any], args: argparse.Namespace, system: str, prompt_s
     got: dict[str, dict[str, Any]] = {}
     passage_note = ""
     pending = list(ctxs)
-    for attempt in range(3):
-        resp = call_model(system, user, deployment=args.deployment, effort=args.effort, tier=args.tier)
+    filtered: list[str] = []
+    blocked = False
+
+    def record(resp: dict[str, Any]) -> None:
         responses.append({"usage": resp.get("usage"), "model": resp.get("model"),
                           "service_tier": resp.get("service_tier"),
                           "finish_reason": resp["choices"][0].get("finish_reason")})
+
+    for attempt in range(3):
+        try:
+            resp = call_model(system, user, deployment=args.deployment, effort=args.effort, tier=args.tier)
+        except RuntimeError as exc:
+            if "content_filter" not in str(exc):
+                raise
+            blocked = True
+            break
+        record(resp)
         content = resp["choices"][0]["message"].get("content") or "{}"
         try:
             parsed = json.loads(content)
@@ -510,13 +522,43 @@ def run_job(job: dict[str, Any], args: argparse.Namespace, system: str, prompt_s
         bad = {v.get("id"): validate_verse(v) for v in parsed.get("verses") or [] if v.get("id") in want and validate_verse(v)}
         log(f"  {out.name}: retry {len(pending)} verse(s) {bad or ''}")
         user = build_user_message(job["label"], job["chapter"], job["chapter_text"], pending)
+    if blocked and pending:
+        # Azure's prompt filter tripped on the passage. Retry each verse alone with
+        # only its neighbours as context; record verses that are still blocked.
+        log(f"  {out.name}: content filter; retrying {len(pending)} verse(s) one at a time")
+        for c in list(pending):
+            num = int(str(c["id"]).rsplit(".", 1)[1])
+            window = "\n".join(
+                line for line in job["chapter_text"].splitlines()
+                if line.split(" ", 1)[0].isdigit() and abs(int(line.split(" ", 1)[0]) - num) <= 3)
+            single = build_user_message(job["label"], job["chapter"], window, [c])
+            for _ in range(2):
+                try:
+                    resp = call_model(system, single, deployment=args.deployment, effort=args.effort, tier=args.tier)
+                except RuntimeError as exc:
+                    if "content_filter" not in str(exc):
+                        raise
+                    filtered.append(c["id"])
+                    break
+                record(resp)
+                try:
+                    parsed = json.loads(resp["choices"][0]["message"].get("content") or "{}")
+                except json.JSONDecodeError:
+                    continue
+                passage_note = passage_note or parsed.get("passage_note", "")
+                for v in parsed.get("verses") or []:
+                    if v.get("id") == c["id"] and not validate_verse(v):
+                        got[c["id"]] = v
+                if c["id"] in got:
+                    break
+        pending = [c for c in ctxs if c["id"] not in got and c["id"] not in filtered]
     usage_total = sum(usage_cost(r["usage"] or {}, args.tier) for r in responses)
     result = {
         "run": args.run,
         "prompt_id": PROMPT_ID,
         "prompt_sha256": prompt_sha,
         "deployment": args.deployment,
-        "model": responses[-1].get("model"),
+        "model": responses[-1].get("model") if responses else None,
         "reasoning_effort": args.effort,
         "service_tier": args.tier,
         "timestamp": utc_now(),
@@ -527,6 +569,7 @@ def run_job(job: dict[str, Any], args: argparse.Namespace, system: str, prompt_s
         "paths": [str(p.relative_to(ROOT)) for p in job["files"]],
         "verses": [got[i] for i in want if i in got],
         "missing": [c["id"] for c in pending],
+        "content_filtered": filtered,
     }
     out.parent.mkdir(parents=True, exist_ok=True)
     tmp = out.with_suffix(".tmp")
@@ -577,11 +620,15 @@ def cmd_translate(args: argparse.Namespace) -> int:
 def cmd_report(args: argparse.Namespace) -> int:
     run_dir = STATE / args.run
     rows = []
-    totals = {"cost": 0.0, "verses": 0, "kept": 0, "refined": 0, "retranslated": 0, "missing": 0}
+    totals = {"cost": 0.0, "verses": 0, "kept": 0, "refined": 0, "retranslated": 0, "missing": 0,
+              "content_filtered": 0}
+    filtered_ids: list[str] = []
     for f in sorted(run_dir.rglob("*.json")):
         res = json.loads(f.read_text())
         totals["cost"] += res.get("estimated_cost_usd") or 0
         totals["missing"] += len(res.get("missing") or [])
+        totals["content_filtered"] += len(res.get("content_filtered") or [])
+        filtered_ids += res.get("content_filtered") or []
         by_id = {v["id"]: v for v in res.get("verses") or []}
         for rel in res.get("paths") or []:
             rec = load_yaml(ROOT / rel)
@@ -606,7 +653,8 @@ def cmd_report(args: argparse.Namespace) -> int:
                 "new": new,
             })
     out = run_dir.parent / f"{args.run}-report.json"
-    out.write_text(json.dumps({"run": args.run, "totals": totals, "rows": rows}, ensure_ascii=False, indent=1))
+    out.write_text(json.dumps({"run": args.run, "totals": totals, "content_filtered": filtered_ids, "rows": rows},
+                              ensure_ascii=False, indent=1))
     print(json.dumps(totals, indent=1))
     print(out)
     return 0

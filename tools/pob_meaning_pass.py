@@ -466,9 +466,19 @@ def plan_jobs(args: argparse.Namespace) -> list[dict[str, Any]]:
     return jobs
 
 
+def job_complete(out: pathlib.Path) -> bool:
+    """A finished output with every verse present; partial outputs get redone."""
+    if not out.exists():
+        return False
+    try:
+        return not json.loads(out.read_text()).get("missing")
+    except (OSError, json.JSONDecodeError):
+        return False
+
+
 def run_job(job: dict[str, Any], args: argparse.Namespace, system: str, prompt_sha: str) -> dict[str, Any]:
     out: pathlib.Path = job["out"]
-    if out.exists() and not args.force:
+    if job_complete(out) and not args.force:
         return json.loads(out.read_text())
     ctxs = job["contexts"]
     want = [c["id"] for c in ctxs]
@@ -484,7 +494,12 @@ def run_job(job: dict[str, Any], args: argparse.Namespace, system: str, prompt_s
                           "service_tier": resp.get("service_tier"),
                           "finish_reason": resp["choices"][0].get("finish_reason")})
         content = resp["choices"][0]["message"].get("content") or "{}"
-        parsed = json.loads(content)
+        try:
+            parsed = json.loads(content)
+        except json.JSONDecodeError as exc:
+            log(f"  {out.name}: unparseable response (finish_reason="
+                f"{resp['choices'][0].get('finish_reason')}, {len(content)} chars): {exc}; retrying")
+            continue
         passage_note = passage_note or parsed.get("passage_note", "")
         for v in parsed.get("verses") or []:
             if v.get("id") in want and v.get("id") not in got and not validate_verse(v):
@@ -524,7 +539,7 @@ def cmd_translate(args: argparse.Namespace) -> int:
     system = PROMPT_PATH.read_text(encoding="utf-8")
     prompt_sha = sha256(system)
     jobs = plan_jobs(args)
-    todo = [j for j in jobs if args.force or not j["out"].exists()]
+    todo = [j for j in jobs if args.force or not job_complete(j["out"])]
     log(f"run={args.run} jobs={len(jobs)} todo={len(todo)} verses={sum(len(j['files']) for j in todo)} "
         f"deployment={args.deployment} effort={args.effort} tier={args.tier}")
     if args.dry_run:

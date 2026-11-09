@@ -39,12 +39,12 @@ import yaml
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 TRANSLATION = ROOT / "translation"
 STATE = ROOT / "state" / "meaning_pass"
-PROMPT_ID = os.environ.get("POB_MEANING_PROMPT", "pob_meaning_first_v3")
+PROMPT_ID = os.environ.get("POB_MEANING_PROMPT", "pob_meaning_first_v4")
 PROMPT_PATH = ROOT / "tools" / "prompts" / f"{PROMPT_ID}.md"
 
 AZURE_ACCOUNT = os.environ.get("POB_AOAI_ACCOUNT", "cartha-aoai-truth-1c9177c8")
 AZURE_RG = os.environ.get("POB_AOAI_RG", "rg-cartha-truth-openai")
-DEFAULT_DEPLOYMENT = os.environ.get("POB_MEANING_DEPLOYMENT", "gpt-6-1-sol-review")
+DEFAULT_DEPLOYMENT = os.environ.get("POB_MEANING_DEPLOYMENT", "pob-meaning-gpt-6-1-sol")
 API_VERSION = "2025-04-01-preview"
 
 # USD per 1M tokens, Azure retail list price for gpt-6.1-sol, Global, short context.
@@ -365,7 +365,7 @@ def call_model(system: str, user: str, *, deployment: str, effort: str, tier: st
     for attempt in range(8):
         req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json", "api-key": key})
         try:
-            with urllib.request.urlopen(req, timeout=900) as resp:
+            with urllib.request.urlopen(req, timeout=3600) as resp:
                 return json.loads(resp.read().decode("utf-8"))
         except urllib.error.HTTPError as exc:
             detail = exc.read().decode("utf-8", "replace")[:600]

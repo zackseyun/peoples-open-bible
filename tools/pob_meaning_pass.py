@@ -154,7 +154,8 @@ PUNCT_BEFORE_MARKER_RE = re.compile(r"([.,;:!?\u201d\u2019\"')]+)((?:\[[a-z]{1,2
 
 def normalize_text(text: str) -> str:
     """Single line, markers before trailing punctuation ("God[a]," not "God,[a]")."""
-    text = " ".join((text or "").split())
+    text = re.sub(r"\u2014[ \t]*\n\s*", "\u2014", text or "")
+    text = " ".join(text.split())
     return PUNCT_BEFORE_MARKER_RE.sub(lambda m: m.group(2) + m.group(1), text)
 
 

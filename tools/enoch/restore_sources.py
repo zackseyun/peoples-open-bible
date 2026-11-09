@@ -5,8 +5,8 @@ The Charles 1906 page transcription (sources/enoch/ethiopic/transcribed/
 charles_1906/pages/) was first split into chapter files by page. A verse that
 ran onto the next page was cut off, and the verses at the top of that page were
 filed under the next chapter or dropped. Read in page order, the transcription
-holds all 1,061 printed units: 107 Roman chapter numerals plus the numbered
-verses.
+holds all 1,060 printed units: 107 Roman chapter numerals and 953 numbered
+verses (POB adds one reader address by splitting 6:7, for 1,061).
 
 This tool reads the pages in order, splits them at the printed chapter and verse
 numbers, and compares each unit with translation/extra_canonical/1_enoch/:
@@ -203,11 +203,14 @@ def cmd_apply(args: argparse.Namespace) -> int:
 
 
 def cmd_finalize(args: argparse.Namespace) -> int:
-    """Give records created here an ai_draft block from the meaning pass that wrote their English."""
+    """Give records without an ai_draft block one from the meaning pass that wrote their English.
+
+    That covers the records created here and a few older records that never had one.
+    """
     done = 0
     for path in sorted(BOOK.rglob("*.yaml")):
         rec = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
-        if rec.get("ai_draft") or (rec.get("source") or {}).get("validation") != VALIDATION:
+        if rec.get("ai_draft"):
             continue
         mp = rec.get("meaning_pass") or {}
         if mp.get("run") != args.run or not (rec.get("translation") or {}).get("text"):
@@ -216,7 +219,7 @@ def cmd_finalize(args: argparse.Namespace) -> int:
             "model_id": "gpt-6.1-sol", "model_version": str(mp.get("model") or "gpt-6.1-sol"),
             "prompt_id": mp["prompt_id"], "prompt_sha256": mp["prompt_sha256"], "timestamp": mp["timestamp"],
             "output_hash": hashlib.sha256(rec["translation"]["text"].encode("utf-8")).hexdigest(),
-            "zone1_sources_at_draft": ["Charles 1906 Ethiopic Enoch (page transcription, restored in page order)"],
+            "zone1_sources_at_draft": [f"Charles 1906 Ethiopic Enoch ({rec['source'].get('validation')})"],
         }
         path.write_text(yaml.safe_dump(rec, allow_unicode=True, sort_keys=False, width=1000), encoding="utf-8")
         done += 1

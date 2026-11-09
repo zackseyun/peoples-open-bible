@@ -7,7 +7,7 @@ translates, the source text, the current POB wording and footnotes, the
 lexical/theological decisions, the full revision history (MAINTAINER edits
 flagged).
 
-Outputs land under state/meaning_pass/<run>/ (gitignored). Nothing here edits
+Outputs land under $POB_MEANING_STATE/<run>/ (default ~/pob-meaning-state, outside the checkout). Nothing here edits
 translation/; `apply` is a separate, explicit step.
 
   python3 tools/pob_meaning_pass.py translate --run pilot-v1 \
@@ -38,7 +38,9 @@ import yaml
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 TRANSLATION = ROOT / "translation"
-STATE = ROOT / "state" / "meaning_pass"
+# Outputs live outside the checkout by default: sparse-checkout changes delete
+# ignored files in folders outside the cone, which once wiped a full run.
+STATE = pathlib.Path(os.environ.get("POB_MEANING_STATE", str(pathlib.Path.home() / "pob-meaning-state"))).expanduser()
 PROMPT_ID = os.environ.get("POB_MEANING_PROMPT", "pob_meaning_first_v4")
 PROMPT_PATH = ROOT / "tools" / "prompts" / f"{PROMPT_ID}.md"
 

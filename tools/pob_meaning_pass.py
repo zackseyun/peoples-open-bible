@@ -5,7 +5,7 @@ Each request translates one passage (a chapter, or a slice of a long chapter).
 The model sees the whole chapter for context and, for every verse it
 translates, the source text, the current POB wording and footnotes, the
 lexical/theological decisions, the full revision history (MAINTAINER edits
-flagged), and the SPOB rendering.
+flagged).
 
 Outputs land under state/meaning_pass/<run>/ (gitignored). Nothing here edits
 translation/; `apply` is a separate, explicit step.
@@ -38,9 +38,8 @@ import yaml
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 TRANSLATION = ROOT / "translation"
-SIMPLIFIED = ROOT / "translation_simplified"
 STATE = ROOT / "state" / "meaning_pass"
-PROMPT_ID = os.environ.get("POB_MEANING_PROMPT", "pob_meaning_first_v2")
+PROMPT_ID = os.environ.get("POB_MEANING_PROMPT", "pob_meaning_first_v3")
 PROMPT_PATH = ROOT / "tools" / "prompts" / f"{PROMPT_ID}.md"
 
 AZURE_ACCOUNT = os.environ.get("POB_AOAI_ACCOUNT", "cartha-aoai-truth-1c9177c8")
@@ -249,13 +248,6 @@ def compact_history(record: dict[str, Any]) -> tuple[list[dict[str, Any]], str, 
     return history, first_text, has_maintainer
 
 
-def spob_text(rel_path: pathlib.Path) -> str | None:
-    spob = SIMPLIFIED / rel_path
-    if not spob.exists():
-        return None
-    data = load_yaml(spob)
-    return ((data.get("translation") or {}).get("text")) or None
-
 
 def verse_context(path: pathlib.Path) -> dict[str, Any]:
     rec = load_yaml(path)
@@ -281,7 +273,6 @@ def verse_context(path: pathlib.Path) -> dict[str, Any]:
             "alternatives": item.get("alternative_readings") or [],
             "rationale": clip(item.get("rationale"), 450),
         })
-    rel = path.relative_to(TRANSLATION)
     ctx: dict[str, Any] = {
         "id": rec.get("id"),
         "reference": rec.get("reference"),
@@ -301,7 +292,6 @@ def verse_context(path: pathlib.Path) -> dict[str, Any]:
         "has_maintainer_revision": has_maintainer,
         "lexical_decisions": lexical,
         "theological_decisions": theological,
-        "spob_text": spob_text(rel),
     }
     return {k: v for k, v in ctx.items() if v not in (None, [], "")}
 
@@ -329,7 +319,7 @@ def build_user_message(book_label: str, chapter: int, chap_text: str, verse_ctxs
         f"## Verses to translate now ({len(ids)}): {', '.join(ids)}\n\n"
         "Each record below holds the source text, the current POB wording and footnotes, the first recorded "
         "draft, the full revision history (weight MAINTAINER = human editorial decision), the lexical and "
-        "theological decisions, and the SPOB rendering.\n\n"
+        "theological decisions.\n\n"
         "```json\n" + json.dumps(verse_ctxs, ensure_ascii=False, indent=1) + "\n```\n\n"
         f"Translate exactly these {len(ids)} verses, in order, using their exact ids."
     )
@@ -361,7 +351,7 @@ def call_model(system: str, user: str, *, deployment: str, effort: str, tier: st
     url = f"{endpoint}/openai/deployments/{deployment}/chat/completions?api-version={API_VERSION}"
     body: dict[str, Any] = {
         "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
-        "max_completion_tokens": 40000,
+        "max_completion_tokens": 32000,
         "reasoning_effort": effort,
         "response_format": {
             "type": "json_schema",
@@ -690,7 +680,7 @@ def main(argv: list[str] | None = None) -> int:
     t.add_argument("--book", action="append", help="whole book, e.g. romans or ot/genesis")
     t.add_argument("--deployment", default=DEFAULT_DEPLOYMENT)
     t.add_argument("--effort", default="high", choices=["low", "medium", "high", "xhigh"])
-    t.add_argument("--tier", default="default", choices=["default", "flex"])
+    t.add_argument("--tier", default="flex", choices=["default", "flex"])
     t.add_argument("--workers", type=int, default=4)
     t.add_argument("--budget", type=float, default=0.0, help="stop starting new requests past this USD estimate")
     t.add_argument("--force", action="store_true")

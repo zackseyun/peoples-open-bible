@@ -4,18 +4,18 @@ source:
   edition: WLC
   text: וְ/אֶפְרַ֜יִם עֶגְלָ֤ה מְלֻמָּדָה֙ אֹהַ֣בְתִּי לָ/ד֔וּשׁ וַ/אֲנִ֣י עָבַ֔רְתִּי עַל ט֖וּב צַוָּארָ֑/הּ אַרְכִּ֤יב אֶפְרַ֨יִם֙ יַחֲר֣וֹשׁ יְהוּדָ֔ה יְשַׂדֶּד ל֖/וֹ יַעֲקֹֽב־־׃
 translation:
-  text: Ephraim was a trained heifer that loved to thresh[a], but I spared her fair neck. I will put Ephraim to the yoke; Judah will plow[c][b]; Jacob will harrow for him.
-  philosophy: optimal-equivalence
+  text: Ephraim was a trained heifer that loved to thresh[a]; I spared her fair neck[b]. Now I will put Ephraim to the yoke; Judah will plow, and Jacob will break up the clods for him[c].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'but I passed over her lovely neck.' The Hebrew of this clause is difficult; the main text reflects the sense that Ephraim had previously been spared the heavier burden.
-    reason: alternative_reading
-  - marker: b
-    text: Or, 'I will harness Ephraim.' Literally, 'I will cause Ephraim to ride,' likely an idiom for putting the animal under harness or yoke.
-    reason: lexical_alternative
-  - marker: c
-    text: '''Harrow'' refers to breaking up and smoothing the soil after plowing; alternatively, ''break up the clods.'''
+    text: Threshing animals could eat the grain they trod; plowing was heavier work.
     reason: cultural_note
+  - marker: b
+    text: Or, 'I laid a yoke on her fair neck'; literally, 'I passed over her fair neck.'
+    reason: alternative_reading
+  - marker: c
+    text: Or, 'for himself.' The pronoun's referent is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: עֶגְלָה מְלֻמָּדָה
   chosen: a trained heifer
@@ -97,14 +97,20 @@ revisions:
   from: Ephraim was a trained heifer that loved to thresh; but I spared her fair neck. I will put Ephraim to the yoke; Judah will plow; Jacob will harrow for him.
   to: Ephraim was a trained heifer that loved to thresh, and I spared her fair neck. I will harness Ephraim; Judah will plow; Jacob will harrow for him.
   rationale: Replaced 'but' with 'and' to better reflect the Hebrew conjunction, and changed 'put Ephraim to the yoke' to 'harness Ephraim' for a more direct rendering of the verb.
-
 - timestamp: '2026-05-15T23:39:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Ephraim was a trained heifer that loved to thresh[a], and I spared her fair neck. I will harness Ephraim; Judah will plow[c][b]; Jacob will harrow for him.'
-  to: 'Ephraim was a trained heifer that loved to thresh[a], but I spared her fair neck. I will put Ephraim to the yoke; Judah will plow[c][b]; Jacob will harrow for him.'
-  rationale: 'Azure substituted ''harness Ephraim'' (drafter''s explicit rejected alternative) for chosen ''put Ephraim to the yoke'' (makes yoke image explicit per drafter''s documented idiom rationale). Also weakened contrastive ''but'' to ''and''.'
+  from: Ephraim was a trained heifer that loved to thresh[a], and I spared her fair neck. I will harness Ephraim; Judah will plow[c][b]; Jacob will harrow for him.
+  to: Ephraim was a trained heifer that loved to thresh[a], but I spared her fair neck. I will put Ephraim to the yoke; Judah will plow[c][b]; Jacob will harrow for him.
+  rationale: Azure substituted 'harness Ephraim' (drafter's explicit rejected alternative) for chosen 'put Ephraim to the yoke' (makes yoke image explicit per drafter's documented idiom rationale). Also weakened contrastive 'but' to 'and'.
+- timestamp: '2026-11-09T17:48:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Ephraim was a trained heifer that loved to thresh[a], but I spared her fair neck. I will put Ephraim to the yoke; Judah will plow[c][b]; Jacob will harrow for him.
+  to: Ephraim was a trained heifer that loved to thresh[a]; I spared her fair neck[b]. Now I will put Ephraim to the yoke; Judah will plow, and Jacob will break up the clods for him[c].
+  rationale: I retain the sparing interpretation and explicit yoke favored by the recorded revert, but locate the contrast between past restraint and future burden. The difficult neck clause and final pronoun remain open through footnotes.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -124,3 +130,28 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/hosea/010/011.job-46145.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:48:07Z'
+  change_level: refined
+  confidence: medium
+  meaning: Ephraim's former ease will give way to imposed labor, with Judah and Jacob also assigned the hard work of cultivating the ground.
+  meaning_decisions:
+  - source_phrase: וַאֲנִי עָבַרְתִּי עַל טוּב צַוָּארָהּ אַרְכִּיב אֶפְרַיִם
+    prior_rendering: but I spared her fair neck. I will put Ephraim to the yoke
+    new_rendering: I spared her fair neck. Now I will put Ephraim to the yoke
+    rationale: On the retained sparing interpretation, the contrast lies between former restraint and the coming heavier burden, rather than between threshing and sparing.
+  - source_phrase: יְשַׂדֶּד
+    prior_rendering: will harrow
+    new_rendering: will break up the clods
+    rationale: This expresses the precise field work in natural English without requiring readers to know the agricultural sense of 'harrow.'
+  footnote_kinds:
+    a: cultural_background
+    b: alternative_meaning
+    c: alternative_meaning
+  history_weighed: I retain the sparing interpretation and explicit yoke favored by the recorded revert, but locate the contrast between past restraint and future burden. The difficult neck clause and final pronoun remain open through footnotes.

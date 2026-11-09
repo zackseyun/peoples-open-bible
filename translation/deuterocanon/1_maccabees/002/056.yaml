@@ -21,12 +21,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: Caleb[a], when he testified before the assembly, received the land as an inheritance.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'when he bore witness before the assembly.'
-    reason: lexical_alternative
+  text: Caleb, because he testified before the assembly, received land as an inheritance.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Χαλὲβ
   chosen: Caleb
@@ -104,14 +100,20 @@ revisions:
   from: Caleb, when he testified in the assembly, received the land as an inheritance.
   to: Caleb, when he testified in the assembly, received the land as an inheritance.
   rationale: Changed 'in the assembly' to 'before the assembly' for a more natural and precise rendering of τῇ ἐκκλησίᾳ with ἐπιμαρτυρῆσαι.
-
 - timestamp: '2026-05-18T02:58:45Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Caleb[a], when he testified before the assembly, received the land as an inheritance.'
-  to: 'Caleb[a], when he testified before the assembly, received the land as an inheritance.'
+  from: Caleb[a], when he testified before the assembly, received the land as an inheritance.
+  to: Caleb[a], when he testified before the assembly, received the land as an inheritance.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the assembly''].'
+- timestamp: '2026-11-09T18:52:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Caleb[a], when he testified before the assembly, received the land as an inheritance.
+  to: Caleb, because he testified before the assembly, received land as an inheritance.
+  rationale: I retain the current wording's useful “before the assembly,” notwithstanding the automated reversion record. The contextual reward pattern supports an explicit causal connection, while the earlier synonymous footnote adds no necessary meaning.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -131,3 +133,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/002/056.job-48071.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:16Z'
+  change_level: refined
+  confidence: high
+  meaning: Caleb's faithful testimony before Israel's assembly was rewarded with land as an inheritance.
+  meaning_decisions:
+  - source_phrase: ἐν τῷ ἐπιμαρτυρῆσαι τῇ ἐκκλησίᾳ
+    prior_rendering: when he testified before the assembly
+    new_rendering: because he testified before the assembly
+    rationale: The sequence presents the ancestors' faithful actions as grounds for the rewards they received, making the causal relationship clearer than a merely temporal expression.
+  - source_phrase: ἔλαβε γῆν κληρονομίαν
+    prior_rendering: received the land as an inheritance
+    new_rendering: received land as an inheritance
+    rationale: Caleb received an allotted portion of land, not the whole promised land; the indefinite English expression avoids that possible misunderstanding.
+  footnote_kinds: {}
+  history_weighed: I retain the current wording's useful “before the assembly,” notwithstanding the automated reversion record. The contextual reward pattern supports an explicit causal connection, while the earlier synonymous footnote adds no necessary meaning.

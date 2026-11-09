@@ -27,12 +27,8 @@ source:
     note: MT parallel is APPROXIMATE -- 1 Esdras sometimes expands, conflates, or reorders the Hebrew. Use the MT hebrew as a sanity check on proper names and phrasing; the Greek remains the primary source text.
     reference: ''
 translation:
-  text: I, King Darius, have decreed that this be done carefully according to these instructions[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'according to these things.' The phrase refers to the preceding provisions of Darius's decree.
-    reason: lexical_alternative
+  text: I, King Darius, have decreed that this be done carefully according to these instructions.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐγὼ
   chosen: I
@@ -104,13 +100,12 @@ revisions:
   from: I, King Darius, have decreed that this be done carefully according to these instructions.
   to: I, King Darius, have decreed that it be done carefully according to these things.
   rationale: Changed 'this' to 'it' for a more direct rendering of the impersonal Greek, and replaced 'according to these instructions' with 'according to these things' to more closely reflect κατὰ ταῦτα without interpretive expansion.
-
 - timestamp: '2026-05-18T03:09:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'I[a], King Darius, have decreed that it be done carefully according to these things.'
-  to: 'I, King Darius, have decreed that this be done carefully according to these instructions.'
+  from: I[a], King Darius, have decreed that it be done carefully according to these things.
+  to: I, King Darius, have decreed that this be done carefully according to these instructions.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''according to these instructions''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -120,6 +115,13 @@ revisions:
   from: I, King Darius, have decreed that this be done carefully according to these instructions.
   to: I, King Darius, have decreed that this be done carefully according to these instructions[a].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('according to these instructions') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:49:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: I, King Darius, have decreed that this be done carefully according to these instructions[a].
+  to: I, King Darius, have decreed that this be done carefully according to these instructions.
+  rationale: The source-transparent revision to “according to these things” added no meaning and was later reverted. The current “according to these instructions” accurately identifies the preceding provisions, so it stands without an unnecessary literal-wording note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -139,3 +141,17 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/006/033.job-47789.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:49:56Z'
+  change_level: kept
+  confidence: high
+  meaning: Darius formally confirms his decree and requires its provisions to be carried out carefully.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The source-transparent revision to “according to these things” added no meaning and was later reverted. The current “according to these instructions” accurately identifies the preceding provisions, so it stands without an unnecessary literal-wording note.

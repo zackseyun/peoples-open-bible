@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: אֲשֶׁ֥ר נָשִׂ֖יא יֶֽחֱטָ֑א וְ/עָשָׂ֡ה אַחַ֣ת מִ/כָּל מִצְוֺת֩ יְהוָ֨ה אֱלֹהָ֜י/ו אֲשֶׁ֧ר לֹא תֵעָשֶׂ֛ינָה בִּ/שְׁגָגָ֖ה וְ/אָשֵֽׁם־־׃
 translation:
-  text: When a leader sins and unintentionally does one of any of the things that Yahweh his God has commanded not to be done[a], and becomes guilty[b],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'prince' or 'ruler'; Hebrew נָשִׂיא denotes a recognized leader or chief.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'in error' or 'by mistake'; the Hebrew refers to an unintentional offense.
-    reason: lexical_alternative
+  text: When a leader sins by unintentionally doing anything that Yahweh his God has forbidden and so incurs guilt,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: נָשִׂיא
   chosen: leader
@@ -103,14 +96,20 @@ revisions:
   from: When a leader sins and unintentionally does one of any of the things that the LORD his God has commanded not to be done, and so becomes guilty,
   to: When a leader sins and unintentionally does one of any of the things that the LORD his God has commanded not to be done, and so becomes guilty,
   rationale: Removed 'so' for a more formal, literal rendering; otherwise retained the draft as accurate and complete.
-
 - timestamp: '2026-05-18T02:57:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When a leader sins and unintentionally does one of any of the things that Yahweh his God has commanded not to be done[a], and becomes guilty[b],'
-  to: 'When a leader sins and unintentionally does one of any of the things that Yahweh his God has commanded not to be done[a], and becomes guilty[b],'
+  from: When a leader sins and unintentionally does one of any of the things that Yahweh his God has commanded not to be done[a], and becomes guilty[b],
+  to: When a leader sins and unintentionally does one of any of the things that Yahweh his God has commanded not to be done[a], and becomes guilty[b],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and so becomes guilty''].'
+- timestamp: '2026-11-09T18:15:35Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When a leader sins and unintentionally does one of any of the things that Yahweh his God has commanded not to be done[a], and becomes guilty[b],
+  to: When a leader sins by unintentionally doing anything that Yahweh his God has forbidden and so incurs guilt,
+  rationale: I retain 'leader,' which avoids implying royal birth, and the significant phrase 'Yahweh his God.' The draft and lexical rationale supported consequential 'so'; I restore that connection while removing the cumbersome prohibited-act construction.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -130,3 +129,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/weighted_vocab/ot/leviticus/004/022.job-15646.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:15:35Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A leader incurs guilt when he unintentionally sins by doing something Yahweh his God has forbidden.
+  meaning_decisions:
+  - source_phrase: יֶחֱטָא וְעָשָׂה אַחַת מִכָּל מִצְוֺת יְהוָה אֱלֹהָיו אֲשֶׁר לֹא תֵעָשֶׂינָה בִּשְׁגָגָה
+    prior_rendering: sins and unintentionally does one of any of the things that Yahweh his God has commanded not to be done
+    new_rendering: sins by unintentionally doing anything that Yahweh his God has forbidden
+    rationale: The prohibited act specifies how the leader sins; 'anything ... has forbidden' naturally conveys the scope of the commandments.
+  - source_phrase: וְאָשֵׁם
+    prior_rendering: and becomes guilty
+    new_rendering: and so incurs guilt
+    rationale: The guilt follows from the offense, and 'so' makes that consequential connection explicit.
+  footnote_kinds: {}
+  history_weighed: I retain 'leader,' which avoids implying royal birth, and the significant phrase 'Yahweh his God.' The draft and lexical rationale supported consequential 'so'; I restore that connection while removing the cumbersome prohibited-act construction.

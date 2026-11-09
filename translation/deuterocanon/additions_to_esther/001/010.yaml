@@ -11,15 +11,8 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 1 = Addition A, segmented from Swete pages 772-773 with First1KGreek used only as a verse-anchor map.
 translation:
-  text: Light and the sun rose[b][a], and the lowly were exalted and devoured the glorious.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the humble' for 'the lowly.' The Greek can describe either humble disposition or low social status; the main text preserves the reversal of status.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the honored' or 'the noble' for 'the glorious.' The Greek refers to those possessing honor or renown.
-    reason: lexical_alternative
+  text: Light dawned and the sun rose; the lowly were exalted and devoured those held in honor.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: φῶς
   chosen: Light
@@ -104,14 +97,20 @@ revisions:
   from: Light and the sun rose, and the lowly were lifted up and devoured the glorious.
   to: Light and the sun rose, and the lowly were lifted up and devoured the glorious.
   rationale: Changed 'lifted up' to 'exalted' for a more formal and direct rendering of ὑψώθησαν; retained the rest as accurate and complete.
-
 - timestamp: '2026-05-18T02:59:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Light and the sun rose[b][a], and the lowly were exalted and devoured the glorious.'
-  to: 'Light and the sun rose[b][a], and the lowly were exalted and devoured the glorious.'
+  from: Light and the sun rose[b][a], and the lowly were exalted and devoured the glorious.
+  to: Light and the sun rose[b][a], and the lowly were exalted and devoured the glorious.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''were lifted up''].'
+- timestamp: '2026-11-09T18:59:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Light and the sun rose[b][a], and the lowly were exalted and devoured the glorious.
+  to: Light dawned and the sun rose; the lowly were exalted and devoured those held in honor.
+  rationale: The current 'exalted' preserves the status reversal well despite the inconclusive automated history, and 'devoured' retains the force of the dream-image. The lexical record identifies honor and renown as the meaning obscured by 'the glorious.'
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -131,3 +130,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/additions_to_esther/001/010.job-50219.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:22Z'
+  change_level: refined
+  confidence: high
+  meaning: The dream turned to light and a reversal of status, as the lowly were exalted and overcame those held in honor.
+  meaning_decisions:
+  - source_phrase: φῶς καὶ ὁ ἥλιος ἀνέτειλεν
+    prior_rendering: Light and the sun rose
+    new_rendering: Light dawned and the sun rose
+    rationale: English naturally expresses the shared rising image with 'dawned' for light and 'rose' for the sun.
+  - source_phrase: τοὺς ἐνδόξους
+    prior_rendering: the glorious
+    new_rendering: those held in honor
+    rationale: The contrast concerns standing and honor, not spiritual glory; this wording also preserves the connection with Haman’s honored position in verse 17.
+  footnote_kinds: {}
+  history_weighed: The current 'exalted' preserves the status reversal well despite the inconclusive automated history, and 'devoured' retains the force of the dream-image. The lexical record identifies honor and renown as the meaning obscured by 'the glorious.'

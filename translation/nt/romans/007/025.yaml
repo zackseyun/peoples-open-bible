@@ -4,17 +4,11 @@ source:
   edition: SBLGNT
   text: ⸀χάρις τῷ θεῷ διὰ Ἰησοῦ Χριστοῦ τοῦ κυρίου ἡμῶν. Ἄρα οὖν αὐτὸς ἐγὼ τῷ μὲν νοῒ δουλεύω νόμῳ θεοῦ, τῇ δὲ σαρκὶ νόμῳ ἁμαρτίας.
 translation:
-  text: Thanks be to God through Jesus Christ our Lord! So then[a], I myself serve the law of God with my mind[c][b], but with my flesh the law of sin.
-  philosophy: optimal-equivalence
+  text: Thanks be to God through Jesus Christ our Lord! So then, I myself serve[a] the law of God with my mind, but with my flesh I serve the law of sin.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or "sinful nature" for "flesh."
-    reason: lexical_alternative
-  - marker: b
-    text: Or "the principle of sin" for "the law of sin."
-    reason: alternative_reading
-  - marker: c
-    text: 'Greek: "through Jesus the Messiah our Lord"; "Messiah" reflects Χριστός as a title here.'
+    text: The Greek verb denotes serving as a slave.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: χάρις
@@ -123,11 +117,17 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "Thanks be to God through Jesus Messiah our Lord! So then, I myself serve the law of God with my mind, but with my flesh the law of sin."
-  to: "Thanks be to God through Jesus the Messiah our Lord! So then, I myself serve the law of God with my mind, but with my flesh the law of sin."
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
+  from: Thanks be to God through Jesus Messiah our Lord! So then, I myself serve the law of God with my mind, but with my flesh the law of sin.
+  to: Thanks be to God through Jesus the Messiah our Lord! So then, I myself serve the law of God with my mind, but with my flesh the law of sin.
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:17:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Thanks be to God through Jesus Christ our Lord! So then[a], I myself serve the law of God with my mind[c][b], but with my flesh the law of sin.
+  to: Thanks be to God through Jesus Christ our Lord! So then, I myself serve[a] the law of God with my mind, but with my flesh I serve the law of sin.
+  rationale: Although later automated revisions restored “Jesus the Messiah,” the standing ruling requires “Jesus Christ” in this name construction, as in the current wording. I retain the mind/flesh contrast and replace the misplaced notes with one conveying the slavery sense of “serve.”
 status: revised
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -149,3 +149,22 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/high_scrutiny/nt/romans/007/025.job-7826.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:17:34Z'
+  change_level: refined
+  confidence: high
+  meaning: The speaker thanks God through Jesus Christ and summarizes his divided service to God's law with his mind and sin's law with his flesh.
+  meaning_decisions:
+  - source_phrase: τῇ δὲ σαρκὶ νόμῳ ἁμαρτίας
+    prior_rendering: but with my flesh the law of sin
+    new_rendering: but with my flesh I serve the law of sin
+    rationale: Repeating the verb makes the parallel service explicit in English without changing the contrast or explaining away its tension.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: Although later automated revisions restored “Jesus the Messiah,” the standing ruling requires “Jesus Christ” in this name construction, as in the current wording. I retain the mind/flesh contrast and replace the misplaced notes with one conveying the slavery sense of “serve.”

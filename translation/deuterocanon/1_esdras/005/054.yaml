@@ -30,15 +30,8 @@ source:
     note: MT parallel is APPROXIMATE -- 1 Esdras sometimes expands, conflates, or reorders the Hebrew. Use the MT hebrew as a sanity check on proper names and phrasing; the Greek remains the primary source text.
     reference: ''
 translation:
-  text: And in the second year[a], when they had come to the house of God in Jerusalem, in the second month, Zerubbabel son of Shealtiel and Jeshua son of Jozadak began, along with their brothers, the priests, the Levites, and all who had come from the captivity to Jerusalem[b],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the temple of God' or 'the sanctuary of God.' The Greek term can refer to the sacred complex more broadly, but 'house of God' preserves the restoration-era idiom.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'all who had returned from exile.' The Greek says more literally 'from the captivity.'
-    reason: lexical_alternative
+  text: In the second month of the second year after their arrival at the temple of God in Jerusalem, Zerubbabel son of Shealtiel and Jeshua son of Jozadak began the work, together with their kinsmen, the priests, the Levites, and all who had returned to Jerusalem from captivity.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: τῷ δευτέρῳ ἔτει
   chosen: in the second year
@@ -151,14 +144,20 @@ revisions:
   from: And in the second year, after they had come to the house of God in Jerusalem, in the second month, Zerubbabel son of Shealtiel and Jeshua son of Jozadak began, along with their brothers, the priests, the Levites, and all who had come from the captivity to Jerusalem,
   to: And in the second year, after they had come to the house of God in Jerusalem, in the second month, Zerubbabel son of Shealtiel and Jeshua son of Jozadak began, along with their brothers, the priests, the Levites, and all who had come from the captivity to Jerusalem,
   rationale: Changed 'after they had come' to 'when they had come' for a more direct and natural rendering of παραγενόμενοι while preserving the temporal sense. No other changes needed.
-
 - timestamp: '2026-05-18T02:59:20Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And in the second year[a], when they had come to the house of God in Jerusalem, in the second month, Zerubbabel son of Shealtiel and Jeshua son of Jozadak began, along with their brothers, the priests, the Levites, and all who had come from the captivity to Jerusalem[b],'
-  to: 'And in the second year[a], when they had come to the house of God in Jerusalem, in the second month, Zerubbabel son of Shealtiel and Jeshua son of Jozadak began, along with their brothers, the priests, the Levites, and all who had come from the captivity to Jerusalem[b],'
+  from: And in the second year[a], when they had come to the house of God in Jerusalem, in the second month, Zerubbabel son of Shealtiel and Jeshua son of Jozadak began, along with their brothers, the priests, the Levites, and all who had come from the captivity to Jerusalem[b],
+  to: And in the second year[a], when they had come to the house of God in Jerusalem, in the second month, Zerubbabel son of Shealtiel and Jeshua son of Jozadak began, along with their brothers, the priests, the Levites, and all who had come from the captivity to Jerusalem[b],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''after they had come''].'
+- timestamp: '2026-11-09T18:51:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And in the second year[a], when they had come to the house of God in Jerusalem, in the second month, Zerubbabel son of Shealtiel and Jeshua son of Jozadak began, along with their brothers, the priests, the Levites, and all who had come from the captivity to Jerusalem[b],
+  to: In the second month of the second year after their arrival at the temple of God in Jerusalem, Zerubbabel son of Shealtiel and Jeshua son of Jozadak began the work, together with their kinsmen, the priests, the Levites, and all who had returned to Jerusalem from captivity.
+  rationale: The first draft and lexical rationale correctly treated the arrival as prior to the work, despite the current 'when.' The following verse confirms the dating, while 'temple' and the supplied object of 'began' clarify this verse without moving the foundation-laying content into it.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -178,3 +177,37 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/005/054.job-47739.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:51:39Z'
+  change_level: retranslated
+  confidence: high
+  meaning: In the second month of the second year after returning, Zerubbabel, Jeshua, and the restored community began the temple work.
+  meaning_decisions:
+  - source_phrase: τῷ δευτέρῳ ἔτει παραγενόμενοι ... μηνὸς δευτέρου
+    prior_rendering: in the second year, when they had come ... in the second month
+    new_rendering: In the second month of the second year after their arrival
+    rationale: The arrival precedes the commencement of work, and the following verse confirms that the second year is counted from the return.
+  - source_phrase: τὸ ἱερὸν τοῦ θεοῦ
+    prior_rendering: the house of God
+    new_rendering: the temple of God
+    rationale: The Greek identifies the sacred temple complex; 'temple' is consistent with its rendering earlier in this passage.
+  - source_phrase: ἤρξαντο
+    prior_rendering: began
+    new_rendering: began the work
+    rationale: The object is understood from the construction narrative; supplying it completes the English without importing the foundation-laying details of the next verse.
+  - source_phrase: οἱ ἀδελφοὶ αὐτῶν
+    prior_rendering: their brothers
+    new_rendering: their kinsmen
+    rationale: The familial group need not consist only of immediate siblings.
+  - source_phrase: πάντες οἱ παραγενόμενοι ἐκ τῆς αἰχμαλωσίας εἰς Ἰερουσαλήμ
+    prior_rendering: all who had come from the captivity to Jerusalem
+    new_rendering: all who had returned to Jerusalem from captivity
+    rationale: The passage describes restoration to Jerusalem after forced removal; 'returned' conveys the direction and significance of their coming.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale correctly treated the arrival as prior to the work, despite the current 'when.' The following verse confirms the dating, while 'temple' and the supplied object of 'began' clarify this verse without moving the foundation-laying content into it.

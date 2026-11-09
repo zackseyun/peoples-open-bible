@@ -21,12 +21,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Daniel[a], in his simplicity, was rescued from the mouth of lions.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'in his simplicity' or 'in his single-mindedness.' The Greek term can denote sincerity or undividedness as well as moral integrity.
-    reason: lexical_alternative
+  text: Daniel, because of his integrity, was rescued from the lions' mouths.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἁπλότης
   chosen: integrity
@@ -90,14 +86,20 @@ revisions:
   from: Daniel, in his integrity, was rescued from the mouth of lions.
   to: Daniel, in his integrity, was rescued from the mouth of lions.
   rationale: Changed 'integrity' to 'simplicity' to more closely reflect ἁπλότης here; retained the rest of the wording as accurate and natural.
-
 - timestamp: '2026-05-18T02:59:14Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Daniel[a], in his simplicity, was rescued from the mouth of lions.'
-  to: 'Daniel[a], in his simplicity, was rescued from the mouth of lions.'
+  from: Daniel[a], in his simplicity, was rescued from the mouth of lions.
+  to: Daniel[a], in his simplicity, was rescued from the mouth of lions.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''integrity''].'
+- timestamp: '2026-11-09T18:52:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Daniel[a], in his simplicity, was rescued from the mouth of lions.
+  to: Daniel, because of his integrity, was rescued from the lions' mouths.
+  rationale: The first draft's “integrity” and the documented contextual rationale carry more meaning than the review's more form-oriented “simplicity.” I restore that ethical sense and keep the concrete rescue image.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -117,3 +119,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/002/060.job-48075.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:16Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Daniel's integrity was rewarded by his rescue from the lions.
+  meaning_decisions:
+  - source_phrase: ἐν τῇ ἁπλότητι αὐτοῦ
+    prior_rendering: in his simplicity
+    new_rendering: because of his integrity
+    rationale: In Daniel's story the term commends upright, undivided faithfulness, not intellectual simplicity or naivety; the causal phrasing follows the surrounding examples.
+  - source_phrase: ἐκ στόματος λεόντων
+    prior_rendering: from the mouth of lions
+    new_rendering: from the lions' mouths
+    rationale: The natural English plural preserves the vivid image of threatened devouring without reproducing the Greek collective singular.
+  footnote_kinds: {}
+  history_weighed: The first draft's “integrity” and the documented contextual rationale carry more meaning than the review's more form-oriented “simplicity.” I restore that ethical sense and keep the concrete rescue image.

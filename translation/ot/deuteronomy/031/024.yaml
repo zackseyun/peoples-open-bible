@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יְהִ֣י כְּ/כַלּ֣וֹת מֹשֶׁ֗ה לִ/כְתֹּ֛ב אֶת דִּבְרֵ֥י הַ/תּוֹרָֽה הַ/זֹּ֖את עַל סֵ֑פֶר עַ֖ד תֻּמָּֽ/ם׀־־־׃
 translation:
-  text: And when Moses had finished writing the words of this law in a book[a], until they were complete,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'on a scroll'; the Hebrew ספר can denote a written document or scroll, not necessarily a bound book in the modern sense.
-    reason: cultural_note
+  text: When Moses had finished writing all the words of this law on a scroll,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיְהִי
   chosen: And ...
@@ -93,14 +89,20 @@ revisions:
   from: And when Moses had finished writing the words of this law in a book, to their completion,
   to: And when Moses had finished writing the words of this law in a book, to their completion,
   rationale: Replaced the awkward phrase 'to their completion' with the more natural and accurate 'until they were complete,' which better reflects the Hebrew idiom while preserving the formal sense.
-
 - timestamp: '2026-05-18T02:55:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when Moses had finished writing the words of this law in a book[a], until they were complete,'
-  to: 'And when Moses had finished writing the words of this law in a book[a], until they were complete,'
+  from: And when Moses had finished writing the words of this law in a book[a], until they were complete,
+  to: And when Moses had finished writing the words of this law in a book[a], until they were complete,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''their completion''].'
+- timestamp: '2026-11-09T17:33:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when Moses had finished writing the words of this law in a book[a], until they were complete,
+  to: When Moses had finished writing all the words of this law on a scroll,
+  rationale: The recorded review sought to clarify the completion phrase but still left an awkward repetition. Its full extent is expressed with 'all the words,' and the earlier note’s historically appropriate 'scroll' is placed in the text.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -122,3 +124,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/031/024.job-61975.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:33:27Z'
+  change_level: refined
+  confidence: high
+  meaning: Moses completed a written copy of the whole law.
+  meaning_decisions:
+  - source_phrase: דִּבְרֵי הַתּוֹרָה הַזֹּאת ... עַד תֻּמָּם
+    prior_rendering: the words of this law ... until they were complete
+    new_rendering: all the words of this law
+    rationale: The completion expression emphasizes that the entire text was written; 'all the words' conveys that extent without an awkward repeated statement of finishing.
+  - source_phrase: עַל סֵפֶר
+    prior_rendering: in a book
+    new_rendering: on a scroll
+    rationale: The ancient written document was a scroll, not a modern bound volume; the earlier footnote’s clarification can be carried directly in the text.
+  footnote_kinds: {}
+  history_weighed: The recorded review sought to clarify the completion phrase but still left an awkward repetition. Its full extent is expressed with 'all the words,' and the earlier note’s historically appropriate 'scroll' is placed in the text.

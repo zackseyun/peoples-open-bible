@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: שֶׂ֧ה פְזוּרָ֛ה יִשְׂרָאֵ֖ל אֲרָי֣וֹת הִדִּ֑יחוּ הָ/רִאשׁ֤וֹן אֲכָל/וֹ֙ מֶ֣לֶךְ אַשּׁ֔וּר וְ/זֶ֤ה הָ/אַחֲרוֹן֙ עִצְּמ֔/וֹ נְבוּכַדְרֶאצַּ֖ר מֶ֥לֶךְ בָּבֶֽל׃ס
 translation:
-  text: Israel is a scattered sheep[a]; lions have driven him away. First the king of Assyria devoured him[c][b], and this last one—Nebuchadnezzar king of Babylon—has gnawed his bones.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Hebrew: ''Nebuchadrezzar,'' a form closer to the Hebrew spelling here; English traditionally uses ''Nebuchadnezzar.'''
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'a scattered lamb.'
-    reason: lexical_alternative
-  - marker: c
-    text: The Hebrew verb may mean 'has gnawed his bones,' 'has stripped his bones,' or more generally 'has crushed him.'
-    reason: lexical_alternative
+  text: Israel is a scattered sheep; lions have driven him away. First the king of Assyria devoured him; then Nebuchadnezzar king of Babylon gnawed his bones.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: שֶׂה
   chosen: sheep
@@ -109,14 +99,20 @@ revisions:
   from: Israel is a scattered sheep; lions have driven him away. The first to devour him was the king of Assyria, and this last one—Nebuchadnezzar king of Babylon—has gnawed his bones.
   to: Israel is a scattered sheep; lions have driven him away. The first to devour him was the king of Assyria, and this last one—Nebuchadnezzar king of Babylon—has gnawed his bones.
   rationale: Adjusted the middle clause for closer alignment with the Hebrew word order and sense ('First the king of Assyria devoured him' instead of 'The first to devour him was'). Kept 'gnawed his bones' as a natural rendering of the final verb.
-
 - timestamp: '2026-05-18T02:56:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Israel is a scattered sheep[a]; lions have driven him away. First the king of Assyria devoured him[c][b], and this last one—Nebuchadnezzar king of Babylon—has gnawed his bones.'
-  to: 'Israel is a scattered sheep[a]; lions have driven him away. First the king of Assyria devoured him[c][b], and this last one—Nebuchadnezzar king of Babylon—has gnawed his bones.'
+  from: Israel is a scattered sheep[a]; lions have driven him away. First the king of Assyria devoured him[c][b], and this last one—Nebuchadnezzar king of Babylon—has gnawed his bones.
+  to: Israel is a scattered sheep[a]; lions have driven him away. First the king of Assyria devoured him[c][b], and this last one—Nebuchadnezzar king of Babylon—has gnawed his bones.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to devour him''].'
+- timestamp: '2026-11-09T18:01:28Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Israel is a scattered sheep[a]; lions have driven him away. First the king of Assyria devoured him[c][b], and this last one—Nebuchadnezzar king of Babylon—has gnawed his bones.
+  to: Israel is a scattered sheep; lions have driven him away. First the king of Assyria devoured him; then Nebuchadnezzar king of Babylon gnawed his bones.
+  rationale: The earlier deliberation rightly preserves the sheep-and-lions image and the escalation from devouring to gnawing bones. I retain both, smooth the sequence, and drop the misplaced notes, which do not supply necessary meaning.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -136,3 +132,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/050/017.job-68219.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:01:28Z'
+  change_level: refined
+  confidence: high
+  meaning: Israel has been scattered and ravaged by successive imperial predators, first Assyria and then Babylon.
+  meaning_decisions:
+  - source_phrase: וְזֶה הָאַחֲרוֹן עִצְּמוֹ
+    prior_rendering: and this last one—Nebuchadnezzar king of Babylon—has gnawed his bones
+    new_rendering: then Nebuchadnezzar king of Babylon gnawed his bones
+    rationale: The phrase identifies the later predator in the sequence; natural chronological English carries that contrast without the cumbersome demonstrative.
+  footnote_kinds: {}
+  history_weighed: The earlier deliberation rightly preserves the sheep-and-lions image and the escalation from devouring to gnawing bones. I retain both, smooth the sequence, and drop the misplaced notes, which do not supply necessary meaning.

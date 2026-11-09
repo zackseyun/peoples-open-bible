@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: Ὡς δὲ τεσσαρεσκαιδεκάτη νὺξ ἐγένετο διαφερομένων ἡμῶν ἐν τῷ Ἀδρίᾳ, κατὰ μέσον τῆς νυκτὸς ὑπενόουν οἱ ναῦται προσάγειν τινὰ αὐτοῖς χώραν.
 translation:
-  text: When the fourteenth night had come[a], as we were being driven along in the Adriatic Sea[b], about midnight the sailors began to suspect that some land was drawing near to them.
-  philosophy: optimal-equivalence
+  text: On the fourteenth night we were being driven along in the Adriatic Sea[a]. About midnight the sailors began to suspect that we were nearing land.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'as we were being carried along in Adria.' The ancient term 'Adria' could refer more broadly to the central Mediterranean waters in this region, not only the modern Adriatic Sea.
+    text: In ancient usage, 'Adria' included waters of the central Mediterranean beyond the modern Adriatic Sea.
     reason: cultural_note
-  - marker: b
-    text: Literally, 'the sailors were suspecting that some land was approaching them.'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: τεσσαρεσκαιδεκάτη νὺξ
   chosen: the fourteenth night
@@ -108,14 +105,20 @@ revisions:
   from: When the fourteenth night had come, as we were being driven along in the Adriatic Sea, about midnight the sailors began to suspect that some land was approaching them.
   to: When the fourteenth night had come, as we were being driven along in the Adriatic Sea, about midnight the sailors began to suspect that some land was approaching them.
   rationale: Changed 'was approaching them' to 'was drawing near to them' for a more natural rendering of προσάγειν while preserving the sense that land was perceived as near. No other changes needed.
-
 - timestamp: '2026-05-18T03:01:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When the fourteenth night had come[a], as we were being driven along in the Adriatic Sea[b], about midnight the sailors began to suspect that some land was drawing near to them.'
-  to: 'When the fourteenth night had come[a], as we were being driven along in the Adriatic Sea[b], about midnight the sailors began to suspect that some land was drawing near to them.'
+  from: When the fourteenth night had come[a], as we were being driven along in the Adriatic Sea[b], about midnight the sailors began to suspect that some land was drawing near to them.
+  to: When the fourteenth night had come[a], as we were being driven along in the Adriatic Sea[b], about midnight the sailors began to suspect that some land was drawing near to them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was approaching''].'
+- timestamp: '2026-11-09T17:08:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When the fourteenth night had come[a], as we were being driven along in the Adriatic Sea[b], about midnight the sailors began to suspect that some land was drawing near to them.
+  to: On the fourteenth night we were being driven along in the Adriatic Sea[a]. About midnight the sailors began to suspect that we were nearing land.
+  rationale: The recorded revisions alternate between 'approaching' and 'drawing near' while preserving the Greek perspective of land approaching the ship; I instead express the actual perceived approach to land. The important historical qualification about the extent of Adria is retained and correctly attached to the sea’s name.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -135,3 +138,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/027/027.job-46752.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:38Z'
+  change_level: retranslated
+  confidence: high
+  meaning: On the fourteenth night, while they were still being driven along at sea, the sailors suspected around midnight that they were nearing land.
+  meaning_decisions:
+  - source_phrase: Ὡς δὲ τεσσαρεσκαιδεκάτη νὺξ ἐγένετο διαφερομένων ἡμῶν ἐν τῷ Ἀδρίᾳ
+    prior_rendering: When the fourteenth night had come, as we were being driven along in the Adriatic Sea
+    new_rendering: On the fourteenth night we were being driven along in the Adriatic Sea
+    rationale: Gives the same chronological setting and continuing uncontrolled movement in a complete, natural English sentence.
+  - source_phrase: προσάγειν τινὰ αὐτοῖς χώραν
+    prior_rendering: some land was drawing near to them
+    new_rendering: we were nearing land
+    rationale: Translates the sailors’ relative perception by its meaning rather than suggesting that the land itself was moving.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The recorded revisions alternate between 'approaching' and 'drawing near' while preserving the Greek perspective of land approaching the ship; I instead express the actual perceived approach to land. The important historical qualification about the extent of Adria is retained and correctly attached to the sea’s name.

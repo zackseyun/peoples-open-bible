@@ -4,18 +4,8 @@ source:
   edition: SBLGNT
   text: οὐδέν ἐστιν ἔξωθεν τοῦ ἀνθρώπου εἰσπορευόμενον εἰς αὐτὸν ὃ δύναται ⸂κοινῶσαι αὐτόν⸃· ἀλλὰ τὰ ⸂ἐκ τοῦ ἀνθρώπου ἐκπορευόμενά⸃ ἐστιν τὰ κοινοῦντα τὸν ⸀ἄνθρωπον.
 translation:
-  text: There is nothing outside a man that by going into him[c] is able to defile him[a]; rather[b], the things that come out from the man are what defile the man.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'make him unclean.' The Greek verb can refer to rendering someone unclean in a purity sense; 'defile' is used here because it also carries the broader moral force present in the context.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Man'' here is used generically for a human being, reflecting the singular Greek ἄνθρωπος.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'that, by going into him,'.
-    reason: previous_rendering
+  text: Nothing that enters a person from outside can defile them; rather, what comes out of a person is what defiles them.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: οὐδέν
   chosen: nothing
@@ -113,8 +103,8 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'There is nothing outside a person that by going into him is able to defile him[a]; rather[c][b], the things that come out from the person are what defile the person.'
-  to: 'There is nothing outside a man that by going into him is able to defile him; rather, the things that come out from the man are what defile the man.'
+  from: There is nothing outside a person that by going into him is able to defile him[a]; rather[c][b], the things that come out from the person are what defile the person.
+  to: There is nothing outside a man that by going into him is able to defile him; rather, the things that come out from the man are what defile the man.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the things that come out from the man''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -124,6 +114,13 @@ revisions:
   from: There is nothing outside a man that by going into him is able to defile him; rather, the things that come out from the man are what defile the man.
   to: There is nothing outside a man that by going into him[c] is able to defile him[a]; rather[b], the things that come out from the man are what defile the man.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it; [b] restored to the position it held before an earlier revision pass dropped it; [c] anchored to ('by going into him') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:27:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: There is nothing outside a man that by going into him[c] is able to defile him[a]; rather[b], the things that come out from the man are what defile the man.
+  to: Nothing that enters a person from outside can defile them; rather, what comes out of a person is what defiles them.”
+  rationale: I retain 'defile,' which the history rightly identifies as carrying both purity language and the moral force of the explanation that follows. The earlier move toward 'person' serves the saying's universal meaning; the automated revert supplies no contrary contextual reason.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:10:30Z'
@@ -151,3 +148,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/nt/mark/007/015.job-38763.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:27:04Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus declares that defilement comes from what emerges from within a person, not from what enters from outside.
+  meaning_decisions:
+  - source_phrase: τοῦ ἀνθρώπου / τὸν ἄνθρωπον
+    prior_rendering: a man / the man
+    new_rendering: a person / them
+    rationale: The saying concerns human beings universally; these forms communicate that scope without relying on masculine generic usage.
+  - source_phrase: οὐδέν ἐστιν ἔξωθεν ... εἰσπορευόμενον ... ὃ δύναται
+    prior_rendering: There is nothing outside a man that by going into him is able to
+    new_rendering: Nothing that enters a person from outside can
+    rationale: The streamlined construction preserves the outside-versus-inside contrast without making the act of entry sound parenthetical or cumbersome.
+  footnote_kinds: {}
+  history_weighed: I retain 'defile,' which the history rightly identifies as carrying both purity language and the moral force of the explanation that follows. The earlier move toward 'person' serves the saying's universal meaning; the automated revert supplies no contrary contextual reason.

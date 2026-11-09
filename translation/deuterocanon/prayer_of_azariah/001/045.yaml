@@ -42,17 +42,47 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone PAZ extraction from the curated ADA stream, using Daniel 3:24-90 as the source span and renumbering it to PAZ 1:1-67.
 translation:
-  text: 'Bless the Lord, dews and showers; sing praise to him and highly exalt him forever.'
+  text: Bless the Lord, dew and snowstorms; sing praise to him and highly exalt him forever.
+  philosophy: dynamic
 revisions:
 - timestamp: '2026-05-18T04:00:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Bless the Lord[a], dews and snowstorms; sing praise to him and highly exalt him forever.'
-  to: 'Bless the Lord, dews and showers; sing praise to him and highly exalt him forever.'
+  from: Bless the Lord[a], dews and snowstorms; sing praise to him and highly exalt him forever.
+  to: Bless the Lord, dews and showers; sing praise to him and highly exalt him forever.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''showers'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+- timestamp: '2026-11-09T19:01:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Bless the Lord, dews and showers; sing praise to him and highly exalt him forever.
+  to: Bless the Lord, dew and snowstorms; sing praise to him and highly exalt him forever.
+  rationale: The first recorded draft correctly identified νιφετοί as 'snowstorms'; the later 'showers' came from an automated policy revert, not a maintainer ruling or a lexical argument. I restore the explicit snow reference and use the natural English mass noun 'dew.'
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T04:00:08Z'
   unchanged: false
   changes_summary: 'doctrine_realignment: Prayer of Azariah and Song of the Three 1:45 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''showers'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote'
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:48Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Dew and snowstorms are called to join in everlasting praise of the Lord.
+  meaning_decisions:
+  - source_phrase: δρόσοι
+    prior_rendering: dews
+    new_rendering: dew
+    rationale: English naturally uses the mass noun 'dew' to encompass the repeated occurrences expressed by the Greek plural.
+  - source_phrase: νιφετοί
+    prior_rendering: showers
+    new_rendering: snowstorms
+    rationale: The Greek names falling snow or snowstorms, not unspecified showers that an English reader would normally understand as rain.
+  footnote_kinds: {}
+  history_weighed: The first recorded draft correctly identified νιφετοί as 'snowstorms'; the later 'showers' came from an automated policy revert, not a maintainer ruling or a lexical argument. I restore the explicit snow reference and use the natural English mass noun 'dew.'

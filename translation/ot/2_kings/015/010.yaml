@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּקְשֹׁ֤ר עָלָי/ו֙ שַׁלֻּ֣ם בֶּן יָבֵ֔שׁ וַ/יַּכֵּ֥/הוּ קָֽבָלְ עָ֖ם וַ/יְמִיתֵ֑/הוּ וַ/יִּמְלֹ֖ךְ תַּחְתָּֽי/ו־־׃
 translation:
-  text: Then Shallum son of Jabesh conspired against him and struck him down before the people[a], and put him to death and reigned in his place.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'in public' / 'before the assembly' for the difficult phrase קָבָל־עָם.
-    reason: lexical_alternative
+  text: Then Shallum son of Jabesh conspired against Zechariah, struck him down in public, and killed him. He became king in Zechariah’s place.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּקְשֹׁר עָלָיו
   chosen: conspired against him
@@ -71,14 +67,20 @@ revisions:
   from: Then Shallum son of Jabesh conspired against him and struck him down before the people, and he put him to death and reigned in his place.
   to: Then Shallum son of Jabesh conspired against him and struck him down before the people, and he put him to death and reigned in his place.
   rationale: Removed the unnecessary repeated subject 'he' before 'put him to death' for smoother, more formal English while preserving the full sense of the source.
-
 - timestamp: '2026-05-18T02:57:38Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Shallum son of Jabesh conspired against him and struck him down before the people[a], and put him to death and reigned in his place.'
-  to: 'Then Shallum son of Jabesh conspired against him and struck him down before the people[a], and put him to death and reigned in his place.'
+  from: Then Shallum son of Jabesh conspired against him and struck him down before the people[a], and put him to death and reigned in his place.
+  to: Then Shallum son of Jabesh conspired against him and struck him down before the people[a], and put him to death and reigned in his place.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he put him to death''].'
+- timestamp: '2026-11-09T17:28:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Shallum son of Jabesh conspired against him and struck him down before the people[a], and put him to death and reigned in his place.
+  to: Then Shallum son of Jabesh conspired against Zechariah, struck him down in public, and killed him. He became king in Zechariah’s place.
+  rationale: The earlier reviews only adjusted a repeated pronoun. The recorded explanation of the difficult public-setting phrase supports 'in public,' which now makes the earlier footnote unnecessary.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -98,3 +100,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_kings/015/010.job-60638.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:03Z'
+  change_level: refined
+  confidence: medium
+  meaning: Shallum plotted against Zechariah, publicly attacked and killed him, and took his throne.
+  meaning_decisions:
+  - source_phrase: וַיִּקְשֹׁר עָלָיו
+    prior_rendering: conspired against him
+    new_rendering: conspired against Zechariah
+    rationale: Naming the intended victim makes the referent immediately clear.
+  - source_phrase: קָבָלְ עָם
+    prior_rendering: before the people
+    new_rendering: in public
+    rationale: This expresses the best-supported sense of the difficult phrase without making 'before' sound merely spatial.
+  - source_phrase: וַיְמִיתֵהוּ וַיִּמְלֹךְ תַּחְתָּיו
+    prior_rendering: put him to death and reigned in his place
+    new_rendering: killed him. He became king in Zechariah’s place
+    rationale: The verbs describe an assassination followed by accession; 'killed' does not suggest a formal execution, and 'became king' makes the succession explicit.
+  footnote_kinds: {}
+  history_weighed: The earlier reviews only adjusted a repeated pronoun. The recorded explanation of the difficult public-setting phrase supports 'in public,' which now makes the earlier footnote unnecessary.

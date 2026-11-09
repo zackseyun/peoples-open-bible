@@ -16,18 +16,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Imitate me[a], brothers, he said, on the rack; do not desert by abandoning the struggle when I have not left it, nor through me renounce the brotherhood of courage. Wage the holy and noble campaign for godliness[c][b],
-  philosophy: optimal-equivalence
+  text: tortures, saying, “Imitate me, brothers! Do not desert your post in the struggle I have not abandoned, and do not let my suffering make you renounce our brotherhood of courage[a]. Wage the holy and noble campaign for godliness,
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'under torture.' The Greek expression evokes the torture-rack specifically, so the main text keeps the concrete image.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'do not become deserters' / 'do not abandon the ranks.' The verb is military in tone.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'piety.' The Greek εὐσέβεια is a key virtue in 4 Maccabees, denoting faithful devotion to God.
-    reason: lexical_alternative
+    text: Or “do not disown the brotherhood of courage you share with me.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: Μιμήσασθέ
   chosen: Imitate
@@ -143,14 +137,20 @@ revisions:
   from: 'Imitate me on the rack, brothers, he said: do not, by abandoning the struggle when I have not left it, desert your post; nor renounce through me the brotherhood of courage. Fight the holy and noble campaign for godliness,'
   to: 'Imitate me on the rack, brothers, he said: do not, by abandoning the struggle when I have not left it, desert your post; nor renounce through me the brotherhood of courage. Fight the holy and noble campaign for godliness,'
   rationale: Reordered 'on the rack' for more natural attachment to 'Imitate me'; adjusted 'desert your post' to 'desert' to avoid adding 'post' not explicit in the Greek; changed 'Fight' to 'Wage' for a more natural rendering of the cognate στρατείαν στρατεύσασθε ('wage the campaign').
-
 - timestamp: '2026-05-18T02:59:29Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Imitate me[a], brothers, he said, on the rack; do not desert by abandoning the struggle when I have not left it, nor through me renounce the brotherhood of courage. Wage the holy and noble campaign for godliness[c][b],'
-  to: 'Imitate me[a], brothers, he said, on the rack; do not desert by abandoning the struggle when I have not left it, nor through me renounce the brotherhood of courage. Wage the holy and noble campaign for godliness[c][b],'
+  from: Imitate me[a], brothers, he said, on the rack; do not desert by abandoning the struggle when I have not left it, nor through me renounce the brotherhood of courage. Wage the holy and noble campaign for godliness[c][b],
+  to: Imitate me[a], brothers, he said, on the rack; do not desert by abandoning the struggle when I have not left it, nor through me renounce the brotherhood of courage. Wage the holy and noble campaign for godliness[c][b],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''desert your post''].'
+- timestamp: '2026-11-09T18:58:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Imitate me[a], brothers, he said, on the rack; do not desert by abandoning the struggle when I have not left it, nor through me renounce the brotherhood of courage. Wage the holy and noble campaign for godliness[c][b],
+  to: tortures, saying, “Imitate me, brothers! Do not desert your post in the struggle I have not abandoned, and do not let my suffering make you renounce our brotherhood of courage[a]. Wage the holy and noble campaign for godliness,
+  rationale: The history supports preserving the military force of desertion and the holy campaign, and I retain those gains. Its treatment of στρεβλάς in isolation obscured the sentence spanning verses 22–23, so that attachment is corrected.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -170,3 +170,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/009/023.job-49961.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:58:24Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: While enduring torture, he urges his brothers to follow his example, remain united in courage, and continue their holy campaign for godliness.
+  meaning_decisions:
+  - source_phrase: στρεβλὰς ... λέγων
+    prior_rendering: he said, on the rack
+    new_rendering: tortures, saying
+    rationale: στρεβλάς supplies the object of “endured” in verse 22; it does not attach “on the rack” to the command to imitate him.
+  - source_phrase: μὴ λειπὼν τὸν ἀγῶνα λειποτακτήσητε
+    prior_rendering: do not desert by abandoning the struggle when I have not left it
+    new_rendering: Do not desert your post in the struggle I have not abandoned
+    rationale: The difficult construction contrasts his continued steadfastness with the desertion he forbids, and the military idiom is rendered naturally.
+  - source_phrase: μηδὲ ἐξομόσησθέ μου τὴν τῆς εὐψυχίας ἀδελφότητα
+    prior_rendering: nor through me renounce the brotherhood of courage
+    new_rendering: and do not let my suffering make you renounce our brotherhood of courage
+    rationale: This makes explicit the contextual appeal not to let his ordeal destroy their shared courage; the alternative attachment of the pronoun is noted.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history supports preserving the military force of desertion and the holy campaign, and I retain those gains. Its treatment of στρεβλάς in isolation obscured the sentence spanning verses 22–23, so that attachment is corrected.

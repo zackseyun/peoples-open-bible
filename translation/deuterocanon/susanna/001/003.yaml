@@ -28,12 +28,8 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Susanna extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: greatly[a], and fearing the Lord; and her parents were righteous, and they taught their daughter according to the law of Moses.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek literally, 'very much, and fearing the Lord'; the phrase continues the description of Susanna from the previous clause.
-    reason: cross_reference
+  text: exceptionally so—and feared the Lord. Her parents were righteous and had taught their daughter according to the law of Moses.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: σφόδρα
   chosen: very much
@@ -132,14 +128,20 @@ revisions:
   from: very much, and fearing the Lord. And her parents were righteous, and they taught their daughter according to the law of Moses.
   to: very much, and fearing the Lord. And her parents were righteous, and they taught their daughter according to the law of Moses.
   rationale: Replaced 'very much' with 'greatly' for more natural formal English, and changed the period after 'Lord' to a semicolon to better reflect the Greek connection within the sentence.
-
 - timestamp: '2026-05-18T02:58:19Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'greatly[a], and fearing the Lord; and her parents were righteous, and they taught their daughter according to the law of Moses.'
-  to: 'greatly[a], and fearing the Lord; and her parents were righteous, and they taught their daughter according to the law of Moses.'
+  from: greatly[a], and fearing the Lord; and her parents were righteous, and they taught their daughter according to the law of Moses.
+  to: greatly[a], and fearing the Lord; and her parents were righteous, and they taught their daughter according to the law of Moses.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''very much''].'
+- timestamp: '2026-11-09T19:09:35Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: greatly[a], and fearing the Lord; and her parents were righteous, and they taught their daughter according to the law of Moses.
+  to: exceptionally so—and feared the Lord. Her parents were righteous and had taught their daughter according to the law of Moses.
+  rationale: The draft and automated revisions recognized that the opening adverb continues verse 2, but their isolated 'very much' or 'greatly' remained awkward. I make that connection readable while retaining the established 'Lord,' 'righteous,' and 'law of Moses.'
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -159,3 +161,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/susanna/001/003.job-52420.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:35Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Susanna was exceptionally beautiful and feared the Lord, and her righteous parents had taught her according to the law of Moses.
+  meaning_decisions:
+  - source_phrase: σφόδρα καὶ φοβουμένη τὸν κύριον
+    prior_rendering: greatly, and fearing the Lord
+    new_rendering: exceptionally so—and feared the Lord
+    rationale: The opening adverb intensifies 'beautiful' in verse 2; 'exceptionally so' makes that connection intelligible without moving the intensifier into the preceding verse.
+  footnote_kinds: {}
+  history_weighed: The draft and automated revisions recognized that the opening adverb continues verse 2, but their isolated 'very much' or 'greatly' remained awkward. I make that connection readable while retaining the established 'Lord,' 'righteous,' and 'law of Moses.'

@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/נָתַתִּ֥י גִשְׁמֵי/כֶ֖ם בְּ/עִתָּ֑/ם וְ/נָתְנָ֤ה הָ/אָ֨רֶץ֙ יְבוּלָ֔/הּ וְ/עֵ֥ץ הַ/שָּׂדֶ֖ה יִתֵּ֥ן פִּרְיֽ/וֹ׃
 translation:
-  text: then I will give you your rains in their season[a], and the land will yield its produce[b], and the tree of the field will give their fruit.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'at their proper time' or 'in due season.'
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'the tree of the field' uses a singular form with collective force.
-    reason: lexical_alternative
+  text: then I will give you rain in its season. The land will yield its produce, and the trees of the field will bear their fruit.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְנָתַתִּי
   chosen: I will give
@@ -93,14 +86,20 @@ revisions:
   from: then I will give you your rains in their season, and the land will yield its produce, and the tree of the field will give its fruit.
   to: then I will give you your rains in their season, and the land will yield its produce, and the trees of the field will give their fruit.
   rationale: Changed 'the tree of the field will give its fruit' to 'the trees of the field will give their fruit' for more natural collective English while preserving the Hebrew sense.
-
 - timestamp: '2026-05-16T09:11:43Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'then I will give you your rains in their season[a], and the land will yield its produce[b], and the trees of the field will give their fruit.'
-  to: 'then I will give you your rains in their season[a], and the land will yield its produce[b], and the tree of the field will give their fruit.'
-  rationale: 'Restored drafter singular collective ''the tree of the field'' (עֵץ הַשָּׂדֶה) over azure plural which loses Hebrew collective sense.'
+  from: then I will give you your rains in their season[a], and the land will yield its produce[b], and the trees of the field will give their fruit.
+  to: then I will give you your rains in their season[a], and the land will yield its produce[b], and the tree of the field will give their fruit.
+  rationale: Restored drafter singular collective 'the tree of the field' (עֵץ הַשָּׂדֶה) over azure plural which loses Hebrew collective sense.
+- timestamp: '2026-11-09T18:22:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: then I will give you your rains in their season[a], and the land will yield its produce[b], and the tree of the field will give their fruit.
+  to: then I will give you rain in its season. The land will yield its produce, and the trees of the field will bear their fruit.
+  rationale: The earlier review correctly rendered the collective noun as “trees”; the later automated revert restored the Hebrew singular form and left mismatched English agreement. I retain the review's meaning-based gain rather than the revert's formal preference.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -120,3 +119,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/026/004.job-45497.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:22:33Z'
+  change_level: refined
+  confidence: high
+  meaning: Yahweh will provide timely rainfall so that Israel's land and trees produce their crops.
+  meaning_decisions:
+  - source_phrase: גִשְׁמֵיכֶם בְּעִתָּם
+    prior_rendering: your rains in their season
+    new_rendering: rain in its season
+    rationale: English treats rainfall naturally as a collective mass noun; “give you” already conveys that the rain is provided for Israel.
+  - source_phrase: וְעֵץ הַשָּׂדֶה יִתֵּן פִּרְיוֹ
+    prior_rendering: the tree of the field will give their fruit
+    new_rendering: the trees of the field will bear their fruit
+    rationale: The Hebrew singular is collective, so an English plural conveys its scope accurately; “bear fruit” is the natural expression for trees producing fruit.
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly rendered the collective noun as “trees”; the later automated revert restored the Hebrew singular form and left mismatched English agreement. I retain the review's meaning-based gain rather than the revert's formal preference.

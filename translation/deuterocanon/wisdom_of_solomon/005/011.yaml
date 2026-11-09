@@ -20,15 +20,8 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: 'or like a bird flying through the air: no evidence of its path is found[a], though the light air, whipped by the stroke of its pinions and split by force with the whirring of moving wings, was traversed[b], and after that no sign of its passage was found in it.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'trace of its journey' for τεκμήριον πορείας; the Greek emphasizes that no demonstrable mark of the bird's route remains.
-    reason: lexical_alternative
-  - marker: b
-    text: The phrase rendered 'the light wind' translates πνεῦμα κοῦφον, which could also be understood as 'light air' or 'subtle breeze.'
-    reason: lexical_alternative
+  text: 'or like a bird flying through the air: no evidence of its path can be found, though its pinions whip the light air and its whirring wings forcefully cleave it as it flies through; afterward no sign of its passage remains;'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὀρνέου
   chosen: bird
@@ -142,7 +135,6 @@ revisions:
   from: 'or like a bird flying through the air: no evidence of its path is found, though the light wind, whipped by the stroke of its pinions and split by force with the whirring of moving wings, was traversed, and after that no sign of its passage was found in it.'
   to: 'or like a bird flying through the air: no evidence of its path is found, though the light wind, whipped by the stroke of its pinions and split by force with the whirring of moving wings, was traversed, and after that no sign of its passage was found in it.'
   rationale: Changed 'wind' to 'air' for closer lexical accuracy to πνεῦμα here in context, since the bird is passing through the air rather than wind. Kept the rest substantially unchanged as accurate and natural.
-
 - timestamp: '2026-05-18T02:59:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -150,6 +142,13 @@ revisions:
   from: 'or like a bird flying through the air: no evidence of its path is found[a], though the light air, whipped by the stroke of its pinions and split by force with the whirring of moving wings, was traversed[b], and after that no sign of its passage was found in it.'
   to: 'or like a bird flying through the air: no evidence of its path is found[a], though the light air, whipped by the stroke of its pinions and split by force with the whirring of moving wings, was traversed[b], and after that no sign of its passage was found in it.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the light wind''].'
+- timestamp: '2026-11-09T19:11:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'or like a bird flying through the air: no evidence of its path is found[a], though the light air, whipped by the stroke of its pinions and split by force with the whirring of moving wings, was traversed[b], and after that no sign of its passage was found in it.'
+  to: 'or like a bird flying through the air: no evidence of its path can be found, though its pinions whip the light air and its whirring wings forcefully cleave it as it flies through; afterward no sign of its passage remains;'
+  rationale: The contextual revision from 'wind' to 'air' is sound, so I retain it along with the specific images of pinions and whirring wings. I recast the heavy passive construction to make the forceful passage and the absence of any lasting trace clear.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -169,3 +168,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/005/011.job-39554.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:56Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Like a bird that forcefully beats and parts the air but leaves no sign of its route, their former gains leave no lasting trace.
+  meaning_decisions:
+  - source_phrase: πληγῇ δὲ μαστιζόμενον ταρσῶν πνεῦμα κοῦφον καὶ σχιζόμενον βίᾳ ῥοιζῷ, κινουμένων πτερύγων διωδεύθη
+    prior_rendering: though the light air, whipped by the stroke of its pinions and split by force with the whirring of moving wings, was traversed
+    new_rendering: though its pinions whip the light air and its whirring wings forcefully cleave it as it flies through
+    rationale: Active clauses make the bird's action and the air's role immediately clear while retaining the forceful beating, splitting, sound, and movement of the source.
+  - source_phrase: καὶ μετὰ τοῦτο οὐχ εὑρέθη σημεῖον ἐπιβάσεως ἐν αὐτῷ
+    prior_rendering: and after that no sign of its passage was found in it
+    new_rendering: afterward no sign of its passage remains
+    rationale: The point is that the bird's passage leaves no enduring mark in the air, not merely that a particular observer failed to find one.
+  footnote_kinds: {}
+  history_weighed: The contextual revision from 'wind' to 'air' is sound, so I retain it along with the specific images of pinions and whirring wings. I recast the heavy passive construction to make the forceful passage and the absence of any lasting trace clear.

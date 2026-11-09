@@ -23,15 +23,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Remember your father and your mother[a], for you sit in the midst of great men; lest you be forgotten before them, and by your habit become foolish, and wish that you had not been born[b], and curse the day of your birth.
-  philosophy: optimal-equivalence
+  text: Remember your father and your mother, for you sit among men of rank. Do not forget yourself[a] in their presence or let your habitual speech make a fool of you, lest you wish you had never been born and curse the day of your birth.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'lest you forget yourself before them,' that is, lose proper restraint in their presence. The Greek form can be understood in more than one way here.
+    text: Or, “be forgotten in their presence”; the Greek form is difficult, but the context favors a lapse of restraint.
     reason: alternative_reading
-  - marker: b
-    text: '''Great men'' renders a masculine term for socially powerful or high-ranking men; alternatives include ''nobles'' or ''great ones.'''
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: μνήσθητι
   chosen: Remember
@@ -165,14 +162,20 @@ revisions:
   from: Remember your father and your mother, for you sit in the midst of great men; lest you be forgotten before them, and by your habit become foolish, and wish that you had not been born, and not curse the day of your birth.
   to: Remember your father and your mother, for you sit in the midst of great men; lest you be forgotten before them, and by your habit become foolish, and wish that you had not been born, and not curse the day of your birth.
   rationale: 'Removed ''not'' before ''curse the day of your birth'' to match the Greek μὴ καταράσῃ as part of the preceding lest-clause sequence: ''lest ... you curse the day of your birth.'''
-
 - timestamp: '2026-05-18T02:57:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Remember your father and your mother[a], for you sit in the midst of great men; lest you be forgotten before them, and by your habit become foolish, and wish that you had not been born[b], and curse the day of your birth.'
-  to: 'Remember your father and your mother[a], for you sit in the midst of great men; lest you be forgotten before them, and by your habit become foolish, and wish that you had not been born[b], and curse the day of your birth.'
+  from: Remember your father and your mother[a], for you sit in the midst of great men; lest you be forgotten before them, and by your habit become foolish, and wish that you had not been born[b], and curse the day of your birth.
+  to: Remember your father and your mother[a], for you sit in the midst of great men; lest you be forgotten before them, and by your habit become foolish, and wish that you had not been born[b], and curse the day of your birth.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and not curse''].'
+- timestamp: '2026-11-09T19:07:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Remember your father and your mother[a], for you sit in the midst of great men; lest you be forgotten before them, and by your habit become foolish, and wish that you had not been born[b], and curse the day of your birth.
+  to: Remember your father and your mother, for you sit among men of rank. Do not forget yourself[a] in their presence or let your habitual speech make a fool of you, lest you wish you had never been born and curse the day of your birth.
+  rationale: The earlier note already recognizes “forget yourself” as a serious alternative, and the surrounding speech instruction gives it stronger contextual support than the passive rendering. I also preserve the review's gain that cursing one's birth belongs to the feared consequences, rather than translating the final negative in isolation.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -192,3 +195,34 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/023/014.job-51597.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:02Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The pupil must remember his parents and restrain habitual speech among men of rank, lest a foolish lapse bring humiliating regret.
+  meaning_decisions:
+  - source_phrase: ἀνὰ μέσον … μεγιστάνων
+    prior_rendering: in the midst of great men
+    new_rendering: among men of rank
+    rationale: The term denotes social standing and power, not moral greatness; the masculine social setting is retained.
+  - source_phrase: μή ποτε ἐπιλαθῇ ἐνώπιον αὐτῶν
+    prior_rendering: lest you be forgotten before them
+    new_rendering: Do not forget yourself in their presence
+    rationale: The warning about habitual coarse speech and resulting shame favors losing one's restraint over being overlooked by others; the passive understanding remains in a footnote.
+  - source_phrase: τῷ ἐθισμῷ σου μωρανθῇς
+    prior_rendering: by your habit become foolish
+    new_rendering: let your habitual speech make a fool of you
+    rationale: The habit is the speech practice under discussion, and the consequence is foolish conduct or exposure as a fool, not an unexplained change in intelligence.
+  - source_phrase: καὶ θελήσεις εἰ μὴ ἐγεννήθης, καὶ τὴν ἡμέραν τοῦ τοκετοῦ σου μὴ καταράσῃ
+    prior_rendering: and wish that you had not been born, and curse the day of your birth
+    new_rendering: lest you wish you had never been born and curse the day of your birth
+    rationale: The English makes both expressions of bitter regret part of the outcome to be avoided.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier note already recognizes “forget yourself” as a serious alternative, and the surrounding speech instruction gives it stronger contextual support than the passive rendering. I also preserve the review's gain that cursing one's birth belongs to the feared consequences, rather than translating the final negative in isolation.

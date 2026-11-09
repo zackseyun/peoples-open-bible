@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: אֵ֛לֶּה מִשְׁפְּחֹ֥ת נַפְתָּלִ֖י לְ/מִשְׁפְּחֹתָ֑/ם וּ/פְקֻ֣דֵי/הֶ֔ם חֲמִשָּׁ֧ה וְ/אַרְבָּעִ֛ים אֶ֖לֶף וְ/אַרְבַּ֥ע מֵאֽוֹת׃
 translation:
-  text: These are the clans of Naphtali by their clans[b][a], and those numbered of them were forty-five thousand four hundred.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or "according to their clans."
-    reason: lexical_alternative
-  - marker: b
-    text: Or "their numbered men were forty-five thousand four hundred."
-    reason: lexical_alternative
+  text: These were Naphtali’s clans; the men counted totaled forty-five thousand four hundred.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: אֵלֶּה
   chosen: These are
@@ -67,14 +60,20 @@ revisions:
   from: These are the clans of Naphtali by their clans, and those numbered from them were forty-five thousand four hundred.
   to: These are the clans of Naphtali by their clans, and those numbered from them were forty-five thousand four hundred.
   rationale: Changed 'from them' to 'of them' for closer alignment with the Hebrew phrasing; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:57:14Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'These are the clans of Naphtali by their clans[b][a], and those numbered of them were forty-five thousand four hundred.'
-  to: 'These are the clans of Naphtali by their clans[b][a], and those numbered of them were forty-five thousand four hundred.'
+  from: These are the clans of Naphtali by their clans[b][a], and those numbered of them were forty-five thousand four hundred.
+  to: These are the clans of Naphtali by their clans[b][a], and those numbered of them were forty-five thousand four hundred.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''those numbered from them''].'
+- timestamp: '2026-11-09T19:31:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: These are the clans of Naphtali by their clans[b][a], and those numbered of them were forty-five thousand four hundred.
+  to: These were Naphtali’s clans; the men counted totaled forty-five thousand four hundred.
+  rationale: The reviews changed only the preposition connecting the counted people to their clans. I preserved the census meaning and exact number, while removing repetitive wording and unnecessary grammatical alternatives.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -94,3 +93,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/026/050.job-41714.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:31:38Z'
+  change_level: refined
+  confidence: high
+  meaning: Naphtali’s listed clans accounted for forty-five thousand four hundred men in the census.
+  meaning_decisions:
+  - source_phrase: אֵלֶּה מִשְׁפְּחֹת נַפְתָּלִי לְמִשְׁפְּחֹתָם
+    prior_rendering: These are the clans of Naphtali by their clans
+    new_rendering: These were Naphtali’s clans
+    rationale: The repeated clan wording summarizes the classification already given; English can carry that meaning without the tautology.
+  - source_phrase: וּפְקֻדֵיהֶם
+    prior_rendering: and those numbered of them were
+    new_rendering: the men counted totaled
+    rationale: The phrase reports the registered men’s total, with their sex established by verse 2.
+  footnote_kinds: {}
+  history_weighed: The reviews changed only the preposition connecting the counted people to their clans. I preserved the census meaning and exact number, while removing repetitive wording and unnecessary grammatical alternatives.

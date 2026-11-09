@@ -30,18 +30,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 38:2
 translation:
-  text: From God the physician becomes wise[c][b][a], and from the king he receives a gift.
-  philosophy: optimal-equivalence
+  text: The physician’s wisdom comes from God[a], and he receives gifts from the king.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek: ''For healing is from the Most High.'' The Hebrew reads ''from God'' and contains a difficult form where the Greek clearly supports ''healing.'''
-    reason: alternative_reading
-  - marker: b
-    text: The Hebrew line also includes 'physician/doctor' in a difficult construction; the Greek parallel instead gives a smoother sense focused on healing itself.
+    text: The Greek reads, 'For healing comes from the Most High.'
     reason: textual_variant
-  - marker: c
-    text: Or 'from the king he receives payment.' The Hebrew wording is idiomatic and difficult, while the Greek reads 'he will receive a gift.'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: מאת אל
   chosen: from God
@@ -113,14 +107,20 @@ revisions:
   from: For healing is from God, and from the king he receives a gift.
   to: For healing is from God, and from the king he receives a gift.
   rationale: Revised 'For healing is from God' to 'From God the physician becomes wise' to reflect יחכם רופא ('the physician becomes wise') rather than 'healing.' Kept the second clause with 'receives a gift' as a natural rendering of ישא משאות.
-
 - timestamp: '2026-05-18T02:58:25Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'From God the physician becomes wise[c][b][a], and from the king he receives a gift.'
-  to: 'From God the physician becomes wise[c][b][a], and from the king he receives a gift.'
+  from: From God the physician becomes wise[c][b][a], and from the king he receives a gift.
+  to: From God the physician becomes wise[c][b][a], and from the king he receives a gift.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from God''].'
+- timestamp: '2026-11-09T19:08:17Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: From God the physician becomes wise[c][b][a], and from the king he receives a gift.
+  to: The physician’s wisdom comes from God[a], and he receives gifts from the king.
+  rationale: The review correctly recognized the Hebrew's explicit physician and wisdom language, despite earlier notes favoring 'healing.' I retain that gain and consolidate the overlapping notes into the significant Greek alternative.
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -140,3 +140,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/038/002.job-52045.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:17Z'
+  change_level: refined
+  confidence: high
+  meaning: The physician receives his wisdom from God and material recognition from the king.
+  meaning_decisions:
+  - source_phrase: מאת אל יחכם רופא
+    prior_rendering: From God the physician becomes wise
+    new_rendering: The physician’s wisdom comes from God
+    rationale: This naturally expresses God as the source of the physician's wisdom without replacing the intelligible Hebrew clause with the Greek's statement about healing.
+  - source_phrase: ישא משאות
+    prior_rendering: he receives a gift
+    new_rendering: he receives gifts
+    rationale: The Hebrew uses a plural expression for gifts or rewards.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The review correctly recognized the Hebrew's explicit physician and wisdom language, despite earlier notes favoring 'healing.' I retain that gain and consolidate the overlapping notes into the significant Greek alternative.

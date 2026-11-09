@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: ⸀εἶπεν ὁ Ἰησοῦς· Ποιήσατε τοὺς ἀνθρώπους ἀναπεσεῖν. ἦν δὲ χόρτος πολὺς ἐν τῷ τόπῳ. ἀνέπεσαν οὖν οἱ ἄνδρες τὸν ἀριθμὸν ⸀ὡς πεντακισχίλιοι.
 translation:
-  text: Jesus said, “Have the people[a] sit down[b].” Now there was plenty of grass in the place. So the men sat down, about five thousand in number.
-  philosophy: optimal-equivalence
+  text: Jesus said, “Have the people sit down[a].” Now there was plenty of grass in the place. So the men sat down, about five thousand in number.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Greek first says 'the people' (ἀνθρώπους), then later 'the men' (ἄνδρες), indicating that the count of about five thousand refers specifically to the men.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'recline.' The Greek verb can refer to reclining for a meal, but here 'sit down' is used for natural English.
-    reason: lexical_alternative
+    text: The Greek describes reclining, the customary posture for a meal.
+    reason: cultural_note
 lexical_decisions:
 - source_word: Ποιήσατε
   chosen: Have
@@ -91,13 +88,12 @@ revisions:
   from: Jesus said, “Have the people sit down.” Now there was plenty of grass in the place. So the men sat down, about five thousand in number.
   to: Jesus said, “Have the people recline.” Now there was much grass in the place. So the men reclined, about five thousand in number.
   rationale: Changed 'sit down' to 'recline' to reflect ἀναπεσεῖν/ἀνέπεσαν more precisely; changed 'plenty of grass' to 'much grass' for a more formal, closer rendering of χόρτος πολὺς.
-
 - timestamp: '2026-05-18T03:10:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Jesus said[a], “Have the people recline.” Now there was much grass in the place. So the men reclined[b], about five thousand in number.'
-  to: 'Jesus said, “Have the people sit down.” Now there was plenty of grass in the place. So the men sat down, about five thousand in number.'
+  from: Jesus said[a], “Have the people recline.” Now there was much grass in the place. So the men reclined[b], about five thousand in number.
+  to: Jesus said, “Have the people sit down.” Now there was plenty of grass in the place. So the men sat down, about five thousand in number.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''plenty of grass''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -107,6 +103,13 @@ revisions:
   from: Jesus said, “Have the people sit down.” Now there was plenty of grass in the place. So the men sat down, about five thousand in number.
   to: Jesus said, “Have the people[a] sit down[b].” Now there was plenty of grass in the place. So the men sat down, about five thousand in number.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('the people') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('sit down') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:10:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Jesus said, “Have the people[a] sit down[b].” Now there was plenty of grass in the place. So the men sat down, about five thousand in number.
+  to: Jesus said, “Have the people sit down[a].” Now there was plenty of grass in the place. So the men sat down, about five thousand in number.
+  rationale: The history alternates between 'sit down' and 'recline' without a maintainer ruling; the current wording communicates the instruction naturally, with the meal posture preserved in a note. I retain the documented distinction between 'people' and the specifically counted 'men.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -129,3 +132,18 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/nt/john/006/010.job-38554.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:10:27Z'
+  change_level: kept
+  confidence: high
+  meaning: Jesus directs the people to sit down in a grassy place, and the men number about five thousand.
+  meaning_decisions: []
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The history alternates between 'sit down' and 'recline' without a maintainer ruling; the current wording communicates the instruction naturally, with the meal posture preserved in a note. I retain the documented distinction between 'people' and the specifically counted 'men.'

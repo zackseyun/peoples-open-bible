@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יְדַבֵּ֨ר יְהוֹנָתָ֤ן בְּ/דָוִד֙ ט֔וֹב אֶל שָׁא֖וּל אָבִ֑י/ו וַ/יֹּ֣אמֶר אֵ֠לָי/ו אַל יֶחֱטָ֨א הַ/מֶּ֜לֶךְ בְּ/עַבְדּ֣/וֹ בְ/דָוִ֗ד כִּ֣י ל֤וֹא חָטָא֙ לָ֔/ךְ וְ/כִ֥י מַעֲשָׂ֖י/ו טוֹב לְ/ךָ֥ מְאֹֽד־־־׃
 translation:
-  text: Jonathan spoke well of David to Saul his father[a], and said to him, “Let not the king sin against his servant David, because he has not sinned against you[b], and because his deeds have been very good for you.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'spoke favorably about David.' The Hebrew idiom literally says 'spoke good concerning David.'
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'Let not the king sin against his servant, against David' repeats the object for emphasis.
-    reason: lexical_alternative
+  text: Jonathan spoke well of David to his father Saul and said, “Let the king not sin against his servant David, for he has not sinned against you, and his deeds have benefited you greatly.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיְדַבֵּר ... טוֹב
   chosen: spoke well of
@@ -111,14 +104,20 @@ revisions:
   from: Jonathan spoke well of David to Saul his father, and said to him, “Let not the king sin against his servant, against David, because he has not sinned against you, and because his deeds have been very good for you.”
   to: Jonathan spoke well of David to Saul his father, and said to him, “Let not the king sin against his servant, against David, because he has not sinned against you, and because his deeds have been very good for you.”
   rationale: 'Removed the second ''against'' before ''David'' to reflect the Hebrew more naturally: ''against his servant David'' rather than ''against his servant, against David.'''
-
 - timestamp: '2026-05-18T02:55:38Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Jonathan spoke well of David to Saul his father[a], and said to him, “Let not the king sin against his servant David, because he has not sinned against you[b], and because his deeds have been very good for you.”'
-  to: 'Jonathan spoke well of David to Saul his father[a], and said to him, “Let not the king sin against his servant David, because he has not sinned against you[b], and because his deeds have been very good for you.”'
+  from: Jonathan spoke well of David to Saul his father[a], and said to him, “Let not the king sin against his servant David, because he has not sinned against you[b], and because his deeds have been very good for you.”
+  to: Jonathan spoke well of David to Saul his father[a], and said to him, “Let not the king sin against his servant David, because he has not sinned against you[b], and because his deeds have been very good for you.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''against David''].'
+- timestamp: '2026-11-09T17:23:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Jonathan spoke well of David to Saul his father[a], and said to him, “Let not the king sin against his servant David, because he has not sinned against you[b], and because his deeds have been very good for you.”
+  to: Jonathan spoke well of David to his father Saul and said, “Let the king not sin against his servant David, for he has not sinned against you, and his deeds have benefited you greatly.
+  rationale: The automated history debated repeating 'against,' but the current apposition 'his servant David' already conveys the sense naturally. I preserve the repeated 'sin' and the courtly appeal while clarifying the benefit of David’s deeds.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -140,3 +139,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/019/004.job-59232.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:12Z'
+  change_level: refined
+  confidence: high
+  meaning: Jonathan urges Saul not to sin against David, who has not sinned against Saul and has greatly benefited him.
+  meaning_decisions:
+  - source_phrase: אַל יֶחֱטָא הַמֶּלֶךְ
+    prior_rendering: Let not the king sin
+    new_rendering: Let the king not sin
+    rationale: The wording retains the deferential third-person appeal while placing the negation more naturally in contemporary English.
+  - source_phrase: מַעֲשָׂיו טוֹב לְךָ מְאֹד
+    prior_rendering: his deeds have been very good for you
+    new_rendering: his deeds have benefited you greatly
+    rationale: Jonathan’s second argument concerns the great benefit David’s actions have brought Saul, not merely their general goodness.
+  footnote_kinds: {}
+  history_weighed: The automated history debated repeating 'against,' but the current apposition 'his servant David' already conveys the sense naturally. I preserve the repeated 'sin' and the courtly appeal while clarifying the benefit of David’s deeds.

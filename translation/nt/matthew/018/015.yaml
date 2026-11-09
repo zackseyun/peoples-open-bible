@@ -4,18 +4,15 @@ source:
   edition: SBLGNT
   text: Ἐὰν δὲ ἁμαρτήσῃ ⸂εἰς σὲ⸃ ὁ ἀδελφός σου, ⸀ὕπαγε ἔλεγξον αὐτὸν μεταξὺ σοῦ καὶ αὐτοῦ μόνου. ἐάν σου ἀκούσῃ, ἐκέρδησας τὸν ἀδελφόν σου·
 translation:
-  text: But if your brother sins against you[a], go and reprove him between you and him alone. If he listens to you[b][c], you have gained your brother.
-  philosophy: optimal-equivalence
+  text: But if your brother[a] sins against you[b], go and show him his fault in private, just between the two of you. If he listens to you, you have won your brother back.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Some manuscripts omit 'against you,' reading, 'If your brother sins, go and confront him between you and him alone.'
-    reason: textual_variant
+    text: “Brother” is a family term for a fellow disciple here.
+    reason: lexical_alternative
   - marker: b
-    text: '''Brother'' is grammatically masculine singular; in context it may refer more broadly to a fellow disciple.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'reprove,' 'show him his fault.'
-    reason: lexical_alternative
+    text: Some manuscripts omit “against you,” reading simply, “if your brother sins.”
+    reason: textual_variant
 lexical_decisions:
 - source_word: ἁμαρτήσῃ
   chosen: sins
@@ -110,14 +107,20 @@ revisions:
   from: But if your brother sins against you, go and confront him between you and him alone. If he listens to you, you have gained your brother.
   to: But if your brother sins against you, go and confront him between you and him alone. If he listens to you, you have gained your brother.
   rationale: Changed 'confront' to 'reprove' for a more precise and formal rendering of ἔλεγξον; otherwise retained the draft.
-
 - timestamp: '2026-05-18T03:01:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But if your brother sins against you[a], go and reprove him between you and him alone. If he listens to you[c][b], you have gained your brother.'
-  to: 'But if your brother sins against you[a], go and reprove him between you and him alone. If he listens to you[c][b], you have gained your brother.'
+  from: But if your brother sins against you[a], go and reprove him between you and him alone. If he listens to you[c][b], you have gained your brother.
+  to: But if your brother sins against you[a], go and reprove him between you and him alone. If he listens to you[c][b], you have gained your brother.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''confront''].'
+- timestamp: '2026-11-09T20:32:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But if your brother sins against you[a], go and reprove him between you and him alone. If he listens to you[b][c], you have gained your brother.
+  to: But if your brother[a] sins against you[b], go and show him his fault in private, just between the two of you. If he listens to you, you have won your brother back.
+  rationale: The history considered both “confront” and “reprove,” and its lexical discussion identified bringing fault to light as the central action. I express that meaning directly and render the gain as restoration, while retaining the supplied text’s disputed “against you” with a manuscript note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -140,3 +143,31 @@ cross_check:
   verdict_counts:
     agree: 3
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/018/015.job-57155.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:32:16Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jesus directs disciples to address a fellow believer’s sin privately, with the aim of winning that person back.
+  meaning_decisions:
+  - source_phrase: ἔλεγξον αὐτὸν
+    prior_rendering: reprove him
+    new_rendering: show him his fault
+    rationale: The verb calls for bringing the wrong to light; this wording conveys that purpose more precisely than a general confrontation or an unexplained formal rebuke.
+  - source_phrase: μεταξὺ σοῦ καὶ αὐτοῦ μόνου
+    prior_rendering: between you and him alone
+    new_rendering: in private, just between the two of you
+    rationale: The natural English phrase makes the required privacy unmistakable.
+  - source_phrase: ἐκέρδησας τὸν ἀδελφόν σου
+    prior_rendering: you have gained your brother
+    new_rendering: you have won your brother back
+    rationale: The context concerns restoring an existing fellow disciple, not acquiring a new brother; “won ... back” communicates the relational gain.
+  footnote_kinds:
+    a: name_or_term
+    b: textual_variant
+  history_weighed: The history considered both “confront” and “reprove,” and its lexical discussion identified bringing fault to light as the central action. I express that meaning directly and render the gain as restoration, while retaining the supplied text’s disputed “against you” with a manuscript note.

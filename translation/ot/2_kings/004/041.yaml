@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֨אמֶר֙ וּ/קְחוּ קֶ֔מַח וַ/יַּשְׁלֵ֖ךְ אֶל הַ/סִּ֑יר וַ/יֹּ֗אמֶר צַ֤ק לָ/עָם֙ וְ/יֹאכֵ֔לוּ וְ/לֹ֥א הָיָ֛ה דָּבָ֥ר רָ֖ע בַּ/סִּֽיר־־׃ס
 translation:
-  text: Then he said[a], “Bring some flour.” And he threw it into the pot and said, “Pour it out for the people[b], so that they may eat.” And there was nothing harmful in the pot.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “Pour it out for the people.” The Hebrew verb is more literally “pour,” but here it refers to serving the prepared food.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, “there was not a bad/evil thing in the pot,” meaning the stew was no longer harmful.
-    reason: lexical_alternative
+  text: Then Elisha said, “Bring some flour.” He threw it into the pot and said, “Serve it to the people so that they may eat.” There was nothing harmful in the pot.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: Then he said
@@ -92,14 +85,20 @@ revisions:
   from: Then he said, “Bring some flour.” And he threw it into the pot and said, “Serve it to the people so that they may eat.” And there was nothing harmful in the pot.
   to: Then he said, “Bring some flour.” And he threw it into the pot and said, “Serve it to the people so that they may eat.” And there was nothing harmful in the pot.
   rationale: Changed “Serve it to the people” to “Pour it out for the people” to more closely reflect the Hebrew verb for serving/distributing from the pot.
-
 - timestamp: '2026-05-18T02:58:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then he said[a], “Bring some flour.” And he threw it into the pot and said, “Pour it out for the people[b], so that they may eat.” And there was nothing harmful in the pot.'
-  to: 'Then he said[a], “Bring some flour.” And he threw it into the pot and said, “Pour it out for the people[b], so that they may eat.” And there was nothing harmful in the pot.'
+  from: Then he said[a], “Bring some flour.” And he threw it into the pot and said, “Pour it out for the people[b], so that they may eat.” And there was nothing harmful in the pot.
+  to: Then he said[a], “Bring some flour.” And he threw it into the pot and said, “Pour it out for the people[b], so that they may eat.” And there was nothing harmful in the pot.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Serve it to the people''].'
+- timestamp: '2026-11-09T17:25:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then he said[a], “Bring some flour.” And he threw it into the pot and said, “Pour it out for the people[b], so that they may eat.” And there was nothing harmful in the pot.
+  to: Then Elisha said, “Bring some flour.” He threw it into the pot and said, “Serve it to the people so that they may eat.” There was nothing harmful in the pot.
+  rationale: The first draft and lexical rationale favor 'Serve it,' while the automated source-transparency pass favors 'Pour it out'; the former better communicates the action here. I retain 'nothing harmful,' which correctly treats the final clause as physical harmlessness rather than moral evil.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -119,3 +118,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_kings/004/041.job-60372.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:25:48Z'
+  change_level: refined
+  confidence: high
+  meaning: Elisha threw flour into the pot and directed that the stew be served, and it was no longer harmful.
+  meaning_decisions:
+  - source_phrase: וַיֹּאמֶר
+    prior_rendering: Then he said
+    new_rendering: Then Elisha said
+    rationale: Naming Elisha makes the change of speaker clear after the men’s outcry.
+  - source_phrase: צַק לָעָם וְיֹאכֵלוּ
+    prior_rendering: Pour it out for the people, so that they may eat
+    new_rendering: Serve it to the people so that they may eat
+    rationale: The command concerns distributing the prepared stew, not disposing of it; 'serve' expresses the intended action naturally.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale favor 'Serve it,' while the automated source-transparency pass favors 'Pour it out'; the former better communicates the action here. I retain 'nothing harmful,' which correctly treats the final clause as physical harmlessness rather than moral evil.

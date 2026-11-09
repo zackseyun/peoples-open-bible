@@ -4,12 +4,15 @@ source:
   edition: SBLGNT
   text: Καὶ ὁ Κορνήλιος ἔφη· Ἀπὸ τετάρτης ἡμέρας μέχρι ταύτης τῆς ὥρας ⸀ἤμην τὴν ⸀ἐνάτην προσευχόμενος ἐν τῷ οἴκῳ μου, καὶ ἰδοὺ ἀνὴρ ἔστη ἐνώπιόν μου ἐν ἐσθῆτι λαμπρᾷ
 translation:
-  text: And Cornelius said[a], “Four days ago, up to this hour, I was praying at the ninth hour in my house, and behold, a man stood before me in bright clothing.”
-  philosophy: optimal-equivalence
+  text: Cornelius replied, “Four days ago[a], at this very hour—about three in the afternoon[b]—I was praying in my house, and there before me stood a man in shining clothing.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: That is, about three in the afternoon.
+    text: Days are counted inclusively, including both the day of the vision and the day of Peter’s arrival.
     reason: cultural_note
+  - marker: b
+    text: Literally, “the ninth hour”; daytime hours were counted from sunrise.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: ἔφη
   chosen: said
@@ -100,13 +103,12 @@ revisions:
   from: And Cornelius said, “Four days ago, up to this hour, I was praying at the ninth hour in my house, and behold, a man stood before me in bright clothing.”
   to: And Cornelius said, “Four days ago, until this hour, I was praying at the ninth hour in my house, and behold, a man stood before me in bright clothing.”
   rationale: Changed 'up to this hour' to 'until this hour' for a more natural rendering while preserving the Greek sense. No other changes needed.
-
 - timestamp: '2026-05-18T03:10:25Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Cornelius said[a], “Four days ago, until this hour, I was praying at the ninth hour in my house, and behold, a man stood before me in bright clothing.”'
-  to: 'And Cornelius said, “Four days ago, up to this hour, I was praying at the ninth hour in my house, and behold, a man stood before me in bright clothing.”'
+  from: And Cornelius said[a], “Four days ago, until this hour, I was praying at the ninth hour in my house, and behold, a man stood before me in bright clothing.”
+  to: And Cornelius said, “Four days ago, up to this hour, I was praying at the ninth hour in my house, and behold, a man stood before me in bright clothing.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Four days ago, up to this hour''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -116,6 +118,13 @@ revisions:
   from: And Cornelius said, “Four days ago, up to this hour, I was praying at the ninth hour in my house, and behold, a man stood before me in bright clothing.”
   to: And Cornelius said[a], “Four days ago, up to this hour, I was praying at the ninth hour in my house, and behold, a man stood before me in bright clothing.”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:07:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Cornelius said[a], “Four days ago, up to this hour, I was praying at the ninth hour in my house, and behold, a man stood before me in bright clothing.”
+  to: Cornelius replied, “Four days ago[a], at this very hour—about three in the afternoon[b]—I was praying in my house, and there before me stood a man in shining clothing.
+  rationale: The earlier 'up to' versus 'until' revisions did not resolve the temporal construction’s misleading English implications. The rendering follows the chapter’s chronology and the documented afternoon-hour equivalent, preserving inclusive counting in a note.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -135,3 +144,31 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/010/030.job-46898.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:07:03Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Cornelius recounted that four days earlier by inclusive counting, at the same afternoon hour, a man in shining clothing stood before him while he prayed at home.
+  meaning_decisions:
+  - source_phrase: Ἀπὸ τετάρτης ἡμέρας μέχρι ταύτης τῆς ὥρας
+    prior_rendering: Four days ago, up to this hour
+    new_rendering: Four days ago, at this very hour
+    rationale: Cornelius locates the earlier event at the corresponding hour; the prior wording can misleadingly imply continuous prayer over several days.
+  - source_phrase: τὴν ἐνάτην
+    prior_rendering: at the ninth hour
+    new_rendering: about three in the afternoon
+    rationale: The approximate clock equivalent conveys the time directly, while the footnote preserves the ancient designation.
+  - source_phrase: καὶ ἰδοὺ ἀνὴρ ἔστη ἐνώπιόν μου ἐν ἐσθῆτι λαμπρᾷ
+    prior_rendering: and behold, a man stood before me in bright clothing
+    new_rendering: and there before me stood a man in shining clothing
+    rationale: The presentation retains the vivid appearance and standing posture, while 'shining' conveys the clothing’s radiance rather than merely its color.
+  footnote_kinds:
+    a: cultural_background
+    b: literal_wording
+  history_weighed: The earlier 'up to' versus 'until' revisions did not resolve the temporal construction’s misleading English implications. The rendering follows the chapter’s chronology and the documented afternoon-hour equivalent, preserving inclusive counting in a note.

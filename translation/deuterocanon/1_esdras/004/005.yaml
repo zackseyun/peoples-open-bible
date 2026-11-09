@@ -21,15 +21,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: Let each of us speak one word that will prevail[a]; and whoever’s statement appears wiser than the other’s, Darius the king will give him great gifts and great honors of victory[b],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'one statement' for 'one word' (λόγον); the Greek is concise and may refer to a proposition or argument in the contest.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Victory honors'' renders ἐπινίκια, honors or rewards given for winning.'
-    reason: lexical_alternative
+  text: '“Let each of us put forward a statement that will prevail. King Darius will give great gifts and great honors for his victory to the one whose statement proves wiser than the others’:'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Εἴπωμεν
   chosen: Let ... speak
@@ -130,14 +123,20 @@ revisions:
   from: Let each of us speak one word that will prevail; and whoever’s statement appears wiser than the other’s, Darius the king will give him great gifts and great victory honors,
   to: Let each of us speak one word that will prevail; and whoever’s statement appears wiser than the other’s, Darius the king will give him great gifts and great victory honors,
   rationale: Revised 'great victory honors' to 'great honors of victory' for more natural formal English while preserving the sense of ἐπινίκια μεγάλα. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:59:54Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Let each of us speak one word that will prevail[a]; and whoever’s statement appears wiser than the other’s, Darius the king will give him great gifts and great honors of victory[b],'
-  to: 'Let each of us speak one word that will prevail[a]; and whoever’s statement appears wiser than the other’s, Darius the king will give him great gifts and great honors of victory[b],'
+  from: Let each of us speak one word that will prevail[a]; and whoever’s statement appears wiser than the other’s, Darius the king will give him great gifts and great honors of victory[b],
+  to: Let each of us speak one word that will prevail[a]; and whoever’s statement appears wiser than the other’s, Darius the king will give him great gifts and great honors of victory[b],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''great victory honors''].'
+- timestamp: '2026-11-09T18:50:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Let each of us speak one word that will prevail[a]; and whoever’s statement appears wiser than the other’s, Darius the king will give him great gifts and great honors of victory[b],
+  to: '“Let each of us put forward a statement that will prevail. King Darius will give great gifts and great honors for his victory to the one whose statement proves wiser than the others’:'
+  rationale: The recorded revisions debate the arrangement of 'victory honors' without materially changing its meaning. The lexical record itself identifies the proposed logos as a statement or argument, which outweighs the earlier preference for the form 'one word.'
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -157,3 +156,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/004/005.job-47605.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:50:08Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The bodyguards propose competing statements, expecting Darius to reward the contestant whose statement proves wisest.
+  meaning_decisions:
+  - source_phrase: Εἴπωμεν ἕκαστος ἡμῶν ἕνα λόγον ὃς ὑπερισχύσει
+    prior_rendering: Let each of us speak one word that will prevail
+    new_rendering: Let each of us put forward a statement that will prevail
+    rationale: The contestants submit propositions, not single words; 'put forward a statement' conveys the competitive proposal.
+  - source_phrase: οὗ ἂν φανῇ τὸ ῥῆμα αὐτοῦ σοφώτερον τοῦ ἑτέρου
+    prior_rendering: whoever’s statement appears wiser than the other’s
+    new_rendering: the one whose statement proves wiser than the others’
+    rationale: Makes the comparison natural for a contest involving three participants and preserves the evaluative force.
+  - source_phrase: ἐπινίκια μεγάλα
+    prior_rendering: great honors of victory
+    new_rendering: great honors for his victory
+    rationale: Clarifies that the honors are awarded for winning rather than describing an abstract kind of honor.
+  footnote_kinds: {}
+  history_weighed: The recorded revisions debate the arrangement of 'victory honors' without materially changing its meaning. The lexical record itself identifies the proposed logos as a statement or argument, which outweighs the earlier preference for the form 'one word.'

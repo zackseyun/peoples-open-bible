@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: אַ֣ךְ אֶת זֶ֞ה לֹ֤א תֹֽאכְלוּ֙ מִ/מַּֽעֲלֵ֣י הַ/גֵּרָ֔ה וּ/מִ/מַּפְרִיסֵ֥י הַ/פַּרְסָ֖ה הַ/שְּׁסוּעָ֑ה אֶֽת הַ֠/גָּמָל וְ/אֶת הָ/אַרְנֶ֨בֶת וְ/אֶת הַ/שָּׁפָ֜ן כִּֽי מַעֲלֵ֧ה גֵרָ֣ה הֵ֗מָּה וּ/פַרְסָה֙ לֹ֣א הִפְרִ֔יסוּ טְמֵאִ֥ים הֵ֖ם לָ/כֶֽם־־־־־׃
 translation:
-  text: 'However[a], these you shall not eat from among those that chew the cud or from among those that have a divided hoof: the camel, the hare, and the rock badger; because they chew the cud but do not divide the hoof[b]. They are unclean for you.'
-  philosophy: optimal-equivalence
+  text: But among the animals that chew the cud or have divided hooves, you shall not eat the camel, the hare, or the rock hyrax. They chew the cud[a] but do not have divided hooves; they are unclean for you.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'rabbit.' The Hebrew animal term likely refers to a hare, though exact zoological identification is debated.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'hyrax.' Traditional English 'coney' is archaic.
-    reason: lexical_alternative
+    text: The hare and hyrax are classed here as cud-chewers, though they are not ruminants in modern zoology.
+    reason: cultural_note
 lexical_decisions:
 - source_word: אַךְ
   chosen: However
@@ -102,14 +99,20 @@ revisions:
   from: 'However, these you shall not eat from among those that chew the cud or from among those that have a divided hoof: the camel, the hare, and the rock badger; because they chew the cud but do not divide the hoof. They are unclean for you.'
   to: 'However, these you shall not eat from among those that chew the cud or from among those that have a split hoof: the camel, the hare, and the rock badger; because they chew the cud but do not split the hoof. They are unclean for you.'
   rationale: Revised 'divided hoof' to 'split hoof' in both occurrences for closer lexical consistency with the source and smoother English. No other changes needed.
-
 - timestamp: '2026-05-16T05:40:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'However[a], these you shall not eat from among those that chew the cud or from among those that have a split hoof: the camel, the hare, and the rock badger; because they chew the cud but do not split the hoof[b]. They are unclean for you.'
   to: 'However[a], these you shall not eat from among those that chew the cud or from among those that have a divided hoof: the camel, the hare, and the rock badger; because they chew the cud but do not divide the hoof[b]. They are unclean for you.'
-  rationale: 'Azure substituted ''split'' (twice) — drafter''s explicit rejected_alternatives for both מַפְרִיסֵי הַפַּרְסָה and לֹא הִפְרִיסוּ. Drafter chose ''divided'' for internal consistency between clauses + natural modern English.'
+  rationale: Azure substituted 'split' (twice) — drafter's explicit rejected_alternatives for both מַפְרִיסֵי הַפַּרְסָה and לֹא הִפְרִיסוּ. Drafter chose 'divided' for internal consistency between clauses + natural modern English.
+- timestamp: '2026-11-09T17:31:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'However[a], these you shall not eat from among those that chew the cud or from among those that have a divided hoof: the camel, the hare, and the rock badger; because they chew the cud but do not divide the hoof[b]. They are unclean for you.'
+  to: But among the animals that chew the cud or have divided hooves, you shall not eat the camel, the hare, or the rock hyrax. They chew the cud[a] but do not have divided hooves; they are unclean for you.
+  rationale: The review and automated revert debated 'split' versus 'divided' without changing the meaning; I retain 'divided' but make the anatomical description natural. The lexical record's identification of the rock badger as a hyrax supports naming it directly.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -129,3 +132,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/014/007.job-61592.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:31:07Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The camel, hare, and hyrax are forbidden because their classification as cud-chewers does not satisfy the additional requirement of divided hooves.
+  meaning_decisions:
+  - source_phrase: הַשָּׁפָן
+    prior_rendering: the rock badger
+    new_rendering: the rock hyrax
+    rationale: The animal is a hyrax, not a member of the badger family; the identification previously confined to a footnote is clearer in the main text.
+  - source_phrase: וּפַרְסָה לֹא הִפְרִיסוּ
+    prior_rendering: but do not divide the hoof
+    new_rendering: but do not have divided hooves
+    rationale: The clause describes the animals' anatomy, not an action they perform.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The review and automated revert debated 'split' versus 'divided' without changing the meaning; I retain 'divided' but make the anatomical description natural. The lexical record's identification of the rock badger as a hyrax supports naming it directly.

@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֨אמֶר שָׁא֜וּל אֶל דָּוִ֗ד בָּר֤וּךְ אַתָּה֙ בְּנִ֣/י דָוִ֔ד גַּ֚ם עָשֹׂ֣ה תַעֲשֶׂ֔ה וְ/גַ֖ם יָכֹ֣ל תּוּכָ֑ל וַ/יֵּ֤לֶךְ דָּוִד֙ לְ/דַרְכּ֔/וֹ וְ/שָׁא֖וּל שָׁ֥ב לִ/מְקוֹמֽ/וֹ־׃פ
 translation:
-  text: Then Saul said to David[a], “Blessed are you, my son David. You will surely do, and you will surely prevail.” Then David went on his way, and Saul returned to his place.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew literally, 'doing you will do, and being able you will be able'—a pair of infinitive absolute constructions intensifying the certainty of David's future success.
-    reason: lexical_alternative
+  text: Then Saul said to David, “Blessed are you, my son David. You will surely do great things, and you will surely prevail.” Then David went on his way, and Saul returned to his place.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: בָּר֤וּךְ אַתָּה
   chosen: Blessed are you
@@ -76,14 +72,20 @@ revisions:
   from: Then Saul said to David, “Blessed are you, my son David. You will surely do great things, and you will surely prevail.” Then David went on his way, and Saul returned to his place.
   to: Then Saul said to David, “Blessed are you, my son David. You will surely do great things, and you will surely prevail.” Then David went on his way, and Saul returned to his place.
   rationale: Removed 'great things,' which is not explicit in the source. Preserved the emphatic Hebrew construction with 'will surely do' and retained 'will surely prevail' for יכל תוכל.
-
 - timestamp: '2026-05-18T02:55:38Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Saul said to David[a], “Blessed are you, my son David. You will surely do, and you will surely prevail.” Then David went on his way, and Saul returned to his place.'
-  to: 'Then Saul said to David[a], “Blessed are you, my son David. You will surely do, and you will surely prevail.” Then David went on his way, and Saul returned to his place.'
+  from: Then Saul said to David[a], “Blessed are you, my son David. You will surely do, and you will surely prevail.” Then David went on his way, and Saul returned to his place.
+  to: Then Saul said to David[a], “Blessed are you, my son David. You will surely do, and you will surely prevail.” Then David went on his way, and Saul returned to his place.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''You will surely do great things''].'
+- timestamp: '2026-11-09T17:23:44Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Saul said to David[a], “Blessed are you, my son David. You will surely do, and you will surely prevail.” Then David went on his way, and Saul returned to his place.
+  to: Then Saul said to David, “Blessed are you, my son David. You will surely do great things, and you will surely prevail.” Then David went on his way, and Saul returned to his place.
+  rationale: The first draft and lexical decision supplied “great things” to express future achievement, while an automated review removed it because it was not explicit. I restore that meaning-based completion because “you will surely do” is incomplete English and obscures Saul’s acknowledgment of David’s future success.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -103,3 +105,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/026/025.job-59433.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:44Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Saul blesses David and confidently acknowledges his future achievements and success, after which David and Saul go their separate ways.
+  meaning_decisions:
+  - source_phrase: גַּם עָשֹׂה תַעֲשֶׂה
+    prior_rendering: You will surely do
+    new_rendering: You will surely do great things
+    rationale: The emphatic construction expresses confident anticipation of David’s achievements; supplying the implied object makes that meaning intelligible in English.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical decision supplied “great things” to express future achievement, while an automated review removed it because it was not explicit. I restore that meaning-based completion because “you will surely do” is incomplete English and obscures Saul’s acknowledgment of David’s future success.

@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וְ/אַתֶּ֖ם פְּנ֣וּ לָ/כֶ֑ם וּ/סְע֥וּ הַ/מִּדְבָּ֖רָ/ה דֶּ֥רֶךְ יַם סֽוּף־׃
 translation:
-  text: But as for you[a], turn yourselves around and set out for the wilderness by the way of the Red Sea.
-  philosophy: optimal-equivalence
+  text: But as for you, turn around and set out for the wilderness along the road to the Red Sea[a].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more literally, 'the Sea of Reeds.'
+    text: Literally, “Sea of Reeds.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וְ/אַתֶּם
@@ -82,14 +82,20 @@ revisions:
   from: But as for you, turn yourselves around and set out for the wilderness by the way of the Red Sea.
   to: But as for you, turn and set out for the wilderness by the way of the Red Sea.
   rationale: Removed the reflexive 'yourselves around' for a more natural and sufficiently accurate rendering of 'turn'; retained the contrastive opening and the route phrase 'by the way of the Red Sea.'
-
 - timestamp: '2026-05-16T05:56:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But as for you[a], turn and set out for the wilderness by the way of the Red Sea.'
-  to: 'But as for you[a], turn yourselves around and set out for the wilderness by the way of the Red Sea.'
-  rationale: 'Azure substituted bare ''turn'' — drafter''s first explicit rejected_alternative for פְּנוּ. Drafter chose ''turn yourselves around'' to render both concrete directional reversal of פנה AND absorb the לָכֶם intensifier.'
+  from: But as for you[a], turn and set out for the wilderness by the way of the Red Sea.
+  to: But as for you[a], turn yourselves around and set out for the wilderness by the way of the Red Sea.
+  rationale: Azure substituted bare 'turn' — drafter's first explicit rejected_alternative for פְּנוּ. Drafter chose 'turn yourselves around' to render both concrete directional reversal of פנה AND absorb the לָכֶם intensifier.
+- timestamp: '2026-11-09T17:30:35Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But as for you[a], turn yourselves around and set out for the wilderness by the way of the Red Sea.
+  to: But as for you, turn around and set out for the wilderness along the road to the Red Sea[a].”
+  rationale: The automated revert rightly emphasized preserving a concrete change of direction, which 'turn around' retains more naturally than either bare 'turn' or 'turn yourselves around.' I keep the established geographic name and relocate its literal-name note to the phrase it explains.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -109,3 +115,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/001/040.job-61297.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:30:35Z'
+  change_level: refined
+  confidence: high
+  meaning: Unlike the children who will enter the land, the condemned generation must turn around and depart toward the wilderness on the Red Sea road.
+  meaning_decisions:
+  - source_phrase: פְּנוּ לָכֶם
+    prior_rendering: turn yourselves around
+    new_rendering: turn around
+    rationale: The concrete reversal of direction remains explicit; English does not need an additional reflexive pronoun to convey the Hebrew construction.
+  - source_phrase: דֶּרֶךְ יַם סוּף
+    prior_rendering: by the way of the Red Sea
+    new_rendering: along the road to the Red Sea
+    rationale: The phrase identifies the route and its direction, not a journey through the sea; the new wording prevents that possible misunderstanding.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The automated revert rightly emphasized preserving a concrete change of direction, which 'turn around' retains more naturally than either bare 'turn' or 'turn yourselves around.' I keep the established geographic name and relocate its literal-name note to the phrase it explains.

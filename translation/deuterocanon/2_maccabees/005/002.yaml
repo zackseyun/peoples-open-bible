@@ -22,15 +22,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And throughout nearly the whole city[a], for forty days, it happened that horsemen were seen running through the air, wearing garments of gold and armed with lances drawn up in squadrons[b],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'appearing through the air' for 'were seen running through the air'; the Greek φαίνεσθαι can emphasize appearance/visibility as well as the fact of being seen.
-    reason: lexical_alternative
-  - marker: b
-    text: The phrase rendered 'drawn up in squadrons' translates σπειρηδόν, an adverb suggesting organized military formation; 'in ranks' or 'in companies' are also possible.
-    reason: lexical_alternative
+  text: For forty days, horsemen were seen throughout nearly the whole city, galloping through the air in gold-adorned garments, armed with lances and arrayed in squadrons.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: συνέβη
   chosen: it happened
@@ -131,14 +124,20 @@ revisions:
   from: And throughout nearly the whole city, for forty days, it happened that horsemen were seen running through the air, wearing garments of gold and armed with lances drawn up in squadrons,
   to: And throughout nearly the whole city, for forty days, it happened that horsemen were seen running through the air, wearing golden garments and armed with lances in formation,
   rationale: Revised 'garments of gold' to 'golden garments' for more natural English while preserving lexical sense. Revised 'drawn up in squadrons' to 'in formation' to better reflect σπειρηδόν without over-specifying military units.
-
 - timestamp: '2026-05-16T16:52:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And throughout nearly the whole city[a], for forty days, it happened that horsemen were seen running through the air, wearing golden garments and armed with lances in formation[b],'
-  to: 'And throughout nearly the whole city[a], for forty days, it happened that horsemen were seen running through the air, wearing garments of gold and armed with lances drawn up in squadrons[b],'
-  rationale: 'Restored drafter ''wearing garments of gold'' (preserving the chosen rendering with explicit ''of gold'') and ''drawn up in squadrons'' (preserving the chosen military formation idiom) per chosen renderings.'
+  from: And throughout nearly the whole city[a], for forty days, it happened that horsemen were seen running through the air, wearing golden garments and armed with lances in formation[b],
+  to: And throughout nearly the whole city[a], for forty days, it happened that horsemen were seen running through the air, wearing garments of gold and armed with lances drawn up in squadrons[b],
+  rationale: Restored drafter 'wearing garments of gold' (preserving the chosen rendering with explicit 'of gold') and 'drawn up in squadrons' (preserving the chosen military formation idiom) per chosen renderings.
+- timestamp: '2026-11-09T18:55:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And throughout nearly the whole city[a], for forty days, it happened that horsemen were seen running through the air, wearing garments of gold and armed with lances drawn up in squadrons[b],
+  to: For forty days, horsemen were seen throughout nearly the whole city, galloping through the air in gold-adorned garments, armed with lances and arrayed in squadrons.
+  rationale: The earlier review recognized the need for more natural clothing and formation language; the automated revert added no further evidence about meaning. I retain the established military imagery while clarifying the mounted movement and the relationship between weapons and formation.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -158,3 +157,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/005/002.job-49078.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:15Z'
+  change_level: refined
+  confidence: high
+  meaning: For forty days, people throughout nearly the whole city saw mounted warriors moving through the air in golden clothing and military formation.
+  meaning_decisions:
+  - source_phrase: τρέχοντας ἱππεῖς
+    prior_rendering: horsemen were seen running
+    new_rendering: horsemen were seen ... galloping
+    rationale: The movement is that of mounted riders; 'galloping' communicates what the observers saw without suggesting that the horsemen were running on foot.
+  - source_phrase: διαχρύσους στολὰς ἔχοντας
+    prior_rendering: wearing garments of gold
+    new_rendering: in gold-adorned garments
+    rationale: The garments are richly adorned with gold, not necessarily made entirely of gold.
+  - source_phrase: καὶ λόγχας σπειρηδὸν ἐξωπλισμένους
+    prior_rendering: armed with lances drawn up in squadrons
+    new_rendering: armed with lances and arrayed in squadrons
+    rationale: The revised coordination makes clear that the horsemen, rather than their lances, are arranged in military formation.
+  footnote_kinds: {}
+  history_weighed: The earlier review recognized the need for more natural clothing and formation language; the automated revert added no further evidence about meaning. I retain the established military imagery while clarifying the mounted movement and the relationship between weapons and formation.

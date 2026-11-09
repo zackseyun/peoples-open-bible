@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: לֵ֤ךְ וְ/אָמַרְתָּ֙ אֶל דָּוִ֣יד עַבְדִּ֔/י כֹּ֖ה אָמַ֣ר יְהוָ֑ה לֹ֥א אַתָּ֛ה תִּבְנֶה לִּ֥/י הַ/בַּ֖יִת לָ/שָֽׁבֶת־־׃
 translation:
-  text: 'Go and say to David my servant[b][a], ‘Thus says Yahweh: You shall not build for me the house to dwell in.’'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “You shall not build for me the house to dwell in,” or more literally, “Not you shall build for me the house to dwell in.”
-    reason: lexical_alternative
-  - marker: b
-    text: That is, the house intended as the LORD’s dwelling place; i.e., the temple.
-    reason: lexical_alternative
+  text: '“Go and tell my servant David: This is what Yahweh says: You are not the one to build the house for me to dwell in.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: לֵךְ
   chosen: Go
@@ -127,14 +120,20 @@ revisions:
   from: 'Go and say to David my servant, ‘Thus says the LORD: You are not the one to build for me the house to dwell in.’'
   to: 'Go and say to David my servant, ‘Thus says the LORD: You are not the one to build for me the house to dwell in.’'
   rationale: Replaced ‘You are not the one to build’ with ‘You shall not build’ for closer lexical alignment with the Hebrew and a more formal, natural rendering.
-
 - timestamp: '2026-05-16T10:37:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'Go and say to David my servant[b][a], ‘Thus says Yahweh: You shall not build for me the house to dwell in.’'
   to: 'Go and say to David my servant[b][a], ‘Thus says Yahweh: You shall not build for me the house to dwell in.’'
-  rationale: 'Restored drafter ''You are not the one to build'' (preserving emphatic pronoun focus on David as unsuitable builder) per chosen renderings.'
+  rationale: Restored drafter 'You are not the one to build' (preserving emphatic pronoun focus on David as unsuitable builder) per chosen renderings.
+- timestamp: '2026-11-09T17:19:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Go and say to David my servant[b][a], ‘Thus says Yahweh: You shall not build for me the house to dwell in.’'
+  to: '“Go and tell my servant David: This is what Yahweh says: You are not the one to build the house for me to dwell in.'
+  rationale: The first draft and the lexical rationale both recognize the emphatic focus on David, despite conflicting automated history entries. I restore that meaning-based gain and retain “house” rather than replacing it with “temple.”
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -157,3 +156,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_chronicles/017/004.job-57886.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:19:27Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Yahweh directs Nathan to tell David that David is not the appointed builder of God’s dwelling house.
+  meaning_decisions:
+  - source_phrase: לֹא אַתָּה תִּבְנֶה
+    prior_rendering: You shall not build
+    new_rendering: You are not the one to build
+    rationale: The emphatic independent pronoun focuses the refusal on David as the builder, anticipating the son who will build in verse 12; this is more than a bare prohibition.
+  - source_phrase: לִּי הַבַּיִת לָשָׁבֶת
+    prior_rendering: for me the house to dwell in
+    new_rendering: the house for me to dwell in
+    rationale: The reordered phrase makes God the intended occupant unmistakable while retaining “house,” which carries the passage’s wordplay.
+  footnote_kinds: {}
+  history_weighed: The first draft and the lexical rationale both recognize the emphatic focus on David, despite conflicting automated history entries. I restore that meaning-based gain and retain “house” rather than replacing it with “temple.”

@@ -9,15 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Tryphon learned that Simon had arisen in place of Jonathan his brother[a], and that he was about to engage him in war[b]; and he sent envoys to him, saying,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'had taken Jonathan's place' / 'had risen up instead of Jonathan.' The Greek ἀνέστη with ἀντί can denote emergence as a successor, not merely physical rising.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'to join battle with him' or 'to make war against him.' The Greek expression συνάπτειν αὐτῷ εἰς πόλεμον is an idiom for entering into armed conflict.
-    reason: lexical_alternative
+  text: 'Tryphon learned that Simon had succeeded his brother Jonathan and was about to fight against him. So he sent envoys to Simon with this message:'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἔγνω
   chosen: learned
@@ -100,13 +93,12 @@ revisions:
   from: And Tryphon learned that Simon had arisen in place of Jonathan his brother, and that he was about to engage him in war; and he sent envoys to him, saying,
   to: And Tryphon learned that Simon had arisen in place of Jonathan his brother, and that he was about to engage in war against him; and he sent envoys to him, saying,
   rationale: 'Clarified the object of ''engage in war'' to reflect the Greek more naturally in English: changed ''engage him in war'' to ''engage in war against him.'''
-
 - timestamp: '2026-05-18T03:09:47Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Tryphon learned that Simon had arisen in place of Jonathan his brother[a], and that he was about to engage in war against him; and he sent envoys to him, saying[b],'
-  to: 'And Tryphon learned that Simon had arisen in place of Jonathan his brother, and that he was about to engage him in war; and he sent envoys to him, saying,'
+  from: And Tryphon learned that Simon had arisen in place of Jonathan his brother[a], and that he was about to engage in war against him; and he sent envoys to him, saying[b],
+  to: And Tryphon learned that Simon had arisen in place of Jonathan his brother, and that he was about to engage him in war; and he sent envoys to him, saying,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to engage him in war''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -116,6 +108,13 @@ revisions:
   from: And Tryphon learned that Simon had arisen in place of Jonathan his brother, and that he was about to engage him in war; and he sent envoys to him, saying,
   to: And Tryphon learned that Simon had arisen in place of Jonathan his brother[a], and that he was about to engage him in war[b]; and he sent envoys to him, saying,
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it; [b] anchored to ('to engage him in war') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:52:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Tryphon learned that Simon had arisen in place of Jonathan his brother[a], and that he was about to engage him in war[b]; and he sent envoys to him, saying,
+  to: 'Tryphon learned that Simon had succeeded his brother Jonathan and was about to fight against him. So he sent envoys to Simon with this message:'
+  rationale: The earlier review recognized the need to clarify the hostile direction of the military idiom. I carry that gain further and put the succession explanation from the existing footnote into the main text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -135,3 +134,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/013/014.job-48738.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:47Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Learning that Simon has succeeded Jonathan and is about to fight him, Tryphon sends Simon a message through envoys.
+  meaning_decisions:
+  - source_phrase: ἀνέστη Σίμων ἀντὶ Ἰωνάθου τοῦ ἀδελφοῦ αὐτοῦ
+    prior_rendering: Simon had arisen in place of Jonathan his brother
+    new_rendering: Simon had succeeded his brother Jonathan
+    rationale: The expression describes Simon’s emergence as Jonathan’s successor, not a physical act of rising.
+  - source_phrase: συνάπτειν αὐτῷ μέλλει εἰς πόλεμον
+    prior_rendering: he was about to engage him in war
+    new_rendering: was about to fight against him
+    rationale: This states the military idiom’s meaning directly and preserves the imminence conveyed by μέλλει.
+  - source_phrase: ἀπέστειλεν πρὸς αὐτὸν πρέσβεις, λέγων
+    prior_rendering: he sent envoys to him, saying
+    new_rendering: So he sent envoys to Simon with this message
+    rationale: Naming the recipient removes pronoun congestion and makes clear that the following words are Tryphon’s message delivered by his envoys.
+  footnote_kinds: {}
+  history_weighed: The earlier review recognized the need to clarify the hostile direction of the military idiom. I carry that gain further and put the succession explanation from the existing footnote into the main text.

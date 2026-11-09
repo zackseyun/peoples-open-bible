@@ -6,11 +6,11 @@ source:
   text: Τῷ δὲ δυναμένῳ ὑμᾶς στηρίξαι κατὰ τὸ εὐαγγέλιόν μου καὶ τὸ κήρυγμα Ἰησοῦ Χριστοῦ, κατὰ ἀποκάλυψιν μυστηρίου χρόνοις αἰωνίοις σεσιγημένου,
   language: Greek
 translation:
-  text: 'to him[a] who is able to strengthen you according to my gospel and the preaching of Jesus Christ, according to the revelation of the mystery kept secret for long ages,'
-  philosophy: optimal-equivalence
+  text: To him[a] who is able to strengthen you according to the gospel I proclaim and the message about Jesus Christ, in keeping with the revelation of the mystery kept secret for long ages,
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Supplementary doxology (verses 25–27), absent from POB's SBLGNT base. Its wording follows the Robinson–Pierpont 2005-era digital text, which places it after Romans 14:23. POB presents it here at the end of chapter 16; that placement is an editorial choice, not the placement of the cited edition.
+    text: Manuscripts differ in whether they include verses 25–27 and where they place them; some place this doxology after Romans 14:23.
     reason: textual_variant
 lexical_decisions:
 - source_word: στηρίζω
@@ -19,7 +19,7 @@ lexical_decisions:
   - establish
   - make stand firm
   lexicon: BDAG
-  rationale: "Refers to establishing or strengthening believers in their faith; 'strengthen' clearly conveys the supportive, fortifying action of God in the believer's life. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'Refers to establishing or strengthening believers in their faith; ''strengthen'' clearly conveys the supportive, fortifying action of God in the believer''s life. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: σιγάω
   chosen: kept secret
   alternatives:
@@ -62,7 +62,6 @@ revisions:
   from: Now[a] to him who is able to strengthen you according to my gospel and the preaching of Jesus Christ, according to the revelation of the mystery kept secret for long ages,
   to: Now[a] to him who is able to strengthen you according to my gospel and the preaching of Jesus Messiah, according to the revelation of the mystery kept secret for long ages,
   rationale: Changed 'Jesus Christ' to 'Jesus Messiah' to match POB policy for Χριστός. No other changes needed.
-
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
   reviewer_model: codex
@@ -74,9 +73,16 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "'[A] to him who is able to strengthen you according to my gospel and the preaching of Jesus Messiah, according to the revelation of the mystery kept secret for long ages,'"
-  to: "'[A] to him who is able to strengthen you according to my gospel and the preaching of Jesus the Messiah, according to the revelation of the mystery kept secret for long ages,'"
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
+  from: '''[A] to him who is able to strengthen you according to my gospel and the preaching of Jesus Messiah, according to the revelation of the mystery kept secret for long ages,'''
+  to: '''[A] to him who is able to strengthen you according to my gospel and the preaching of Jesus the Messiah, according to the revelation of the mystery kept secret for long ages,'''
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:18:41Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: to him[a] who is able to strengthen you according to my gospel and the preaching of Jesus Christ, according to the revelation of the mystery kept secret for long ages,
+  to: To him[a] who is able to strengthen you according to the gospel I proclaim and the message about Jesus Christ, in keeping with the revelation of the mystery kept secret for long ages,
+  rationale: I retain the repository's end-of-letter placement and its textual caveat, replacing edition-specific details with a reader-facing account of manuscript differences. The automated title revisions do not override the standing 'Jesus Christ' ruling for name constructions.
 historical_cross_check_before_doxology_export:
   status: high_agreement
   agreement: 1.0
@@ -96,3 +102,26 @@ historical_cross_check_before_doxology_export:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/vertex_gap_closure_2026_04/nt/romans/016/025.job-75907.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:18:41Z'
+  change_level: refined
+  confidence: high
+  meaning: The doxology begins by identifying God as able to strengthen the believers in accordance with Paul's gospel about Jesus Christ and the revelation of a long-hidden mystery.
+  meaning_decisions:
+  - source_phrase: τὸ εὐαγγέλιόν μου
+    prior_rendering: my gospel
+    new_rendering: the gospel I proclaim
+    rationale: Paul means the gospel entrusted to and proclaimed by him, not a privately invented or competing gospel.
+  - source_phrase: τὸ κήρυγμα Ἰησοῦ Χριστοῦ
+    prior_rendering: the preaching of Jesus Christ
+    new_rendering: the message about Jesus Christ
+    rationale: The phrase refers to the proclamation whose subject is Jesus Christ; the prior English could instead suggest preaching performed by Jesus.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: I retain the repository's end-of-letter placement and its textual caveat, replacing edition-specific details with a reader-facing account of manuscript differences. The automated title revisions do not override the standing 'Jesus Christ' ruling for name constructions.

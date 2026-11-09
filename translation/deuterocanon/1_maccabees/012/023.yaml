@@ -27,18 +27,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: 'And we also write back to you: Your livestock and your possessions are ours[a], and ours are yours[c][b]. Therefore we are giving orders that they report this to you accordingly.'
-  philosophy: optimal-equivalence
+  text: 'We also write to you in reply: Your livestock and your possessions are ours, and ours are yours[a]. We are therefore instructing our messengers to convey this same message to you.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'we copy to you' if ἀντιγράφομεν is taken more literally; in this context it likely means 'we write back' or 'we send a written reply.'
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'Your livestock and your property are ours, and ours are yours'—a diplomatic formula expressing alliance and mutual solidarity, not necessarily abolition of legal ownership.
+    text: A diplomatic expression pledging mutual support and shared resources.
     reason: cultural_note
-  - marker: c
-    text: Or 'that they inform you to the same effect.' The Greek leaves the object of 'report' implicit.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ἀντιγράφομεν
   chosen: write back
@@ -117,14 +111,20 @@ revisions:
   from: 'And we also write back to you: Your livestock and your property are ours, and ours are yours. Therefore we are giving orders that they report these things to you accordingly.'
   to: 'And we also write back to you: Your livestock and your property are ours, and ours are yours. Therefore we are giving orders that they report these things to you accordingly.'
   rationale: Changed 'property' to 'possessions' for a more natural rendering of ὕπαρξις; changed 'these things' to 'this' to better match the singular sense of the message being reported. Kept the rest substantially unchanged.
-
 - timestamp: '2026-05-16T14:22:20Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'And we also write back to you: Your livestock and your possessions are ours[a], and ours are yours[c][b]. Therefore we are giving orders that they report this to you accordingly.'
   to: 'And we also write back to you: Your livestock and your possessions are ours[a], and ours are yours[c][b]. Therefore we are giving orders that they report this to you accordingly.'
-  rationale: 'Restored drafter ''property'' (preserving ὕπαρξις singular-collective sense) and ''they report these things'' (preserving plural object) per chosen renderings.'
+  rationale: Restored drafter 'property' (preserving ὕπαρξις singular-collective sense) and 'they report these things' (preserving plural object) per chosen renderings.
+- timestamp: '2026-11-09T18:52:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And we also write back to you: Your livestock and your possessions are ours[a], and ours are yours[c][b]. Therefore we are giving orders that they report this to you accordingly.'
+  to: 'We also write to you in reply: Your livestock and your possessions are ours, and ours are yours[a]. We are therefore instructing our messengers to convey this same message to you.'
+  rationale: The reviews debated 'property' versus 'possessions' without establishing a substantive difference, so I retain the current 'possessions.' The earlier notes correctly identified the mutual-possession formula as diplomatic solidarity; I preserve the formula and clarify the final instructions.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -144,3 +144,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/012/023.job-48694.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:56Z'
+  change_level: refined
+  confidence: high
+  meaning: The Spartan king pledges mutual solidarity in their possessions and instructs his messengers to convey the same assurance.
+  meaning_decisions:
+  - source_phrase: ἐντελλόμεθα οὖν ὅπως ἀπαγγείλωσιν ὑμῖν κατὰ τὰ αὐτά
+    prior_rendering: Therefore we are giving orders that they report this to you accordingly
+    new_rendering: We are therefore instructing our messengers to convey this same message to you
+    rationale: The unnamed reporting agents are the letter’s messengers, and their instructions are to convey a message corresponding to the written assurance; the new wording makes both points explicit.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The reviews debated 'property' versus 'possessions' without establishing a substantive difference, so I retain the current 'possessions.' The earlier notes correctly identified the mutual-possession formula as diplomatic solidarity; I preserve the formula and clarify the final instructions.

@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ἡ περιτομὴ οὐδέν ἐστιν, καὶ ἡ ἀκροβυστία οὐδέν ἐστιν, ἀλλὰ τήρησις ἐντολῶν θεοῦ.
 translation:
-  text: Circumcision is nothing[a], and uncircumcision is nothing, but keeping the commandments of God.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'counts for nothing' for both occurrences of 'is nothing.'
-    reason: lexical_alternative
+  text: Circumcision counts for nothing, and uncircumcision counts for nothing; what matters is keeping God’s commandments.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: περιτομή
   chosen: Circumcision
@@ -76,17 +72,23 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'Circumcision is nothing, and uncircumcision is nothing, but keeping God''s commandments.'
-  to: 'Circumcision is nothing, and uncircumcision is nothing, but keeping God''s commandments.'
+  from: Circumcision is nothing, and uncircumcision is nothing, but keeping God's commandments.
+  to: Circumcision is nothing, and uncircumcision is nothing, but keeping God's commandments.
   rationale: Replaced "God's commandments" with "the commandments of God" for a more formal register and closer correspondence to the Greek word order and phrasing.
-
 - timestamp: '2026-05-18T03:01:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Circumcision is nothing[a], and uncircumcision is nothing, but keeping the commandments of God.'
-  to: 'Circumcision is nothing[a], and uncircumcision is nothing, but keeping the commandments of God.'
+  from: Circumcision is nothing[a], and uncircumcision is nothing, but keeping the commandments of God.
+  to: Circumcision is nothing[a], and uncircumcision is nothing, but keeping the commandments of God.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: ["God''s commandments"].'
+- timestamp: '2026-11-09T17:06:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Circumcision is nothing[a], and uncircumcision is nothing, but keeping the commandments of God.
+  to: Circumcision counts for nothing, and uncircumcision counts for nothing; what matters is keeping God’s commandments.
+  rationale: The history’s change between “God’s commandments” and “the commandments of God” concerned form rather than meaning. I retain the established emphasis on commandments and incorporate the earlier footnote’s accurate idiom, “counts for nothing,” into the text.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -106,3 +108,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/1_corinthians/007/019.job-52751.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:06:21Z'
+  change_level: refined
+  confidence: high
+  meaning: Circumcision and uncircumcision count for nothing compared with keeping God’s commandments.
+  meaning_decisions:
+  - source_phrase: οὐδέν ἐστιν
+    prior_rendering: is nothing
+    new_rendering: counts for nothing
+    rationale: Paul is evaluating the significance of these conditions, not denying their existence; the idiom preserves his repeated, emphatic dismissal.
+  - source_phrase: ἀλλὰ τήρησις ἐντολῶν θεοῦ
+    prior_rendering: but keeping the commandments of God
+    new_rendering: what matters is keeping God’s commandments
+    rationale: 'English needs the implied predicate to complete the contrast: obedience, rather than circumcision status, is what matters.'
+  footnote_kinds: {}
+  history_weighed: The history’s change between “God’s commandments” and “the commandments of God” concerned form rather than meaning. I retain the established emphasis on commandments and incorporate the earlier footnote’s accurate idiom, “counts for nothing,” into the text.

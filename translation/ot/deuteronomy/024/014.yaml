@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: לֹא תַעֲשֹׁ֥ק שָׂכִ֖יר עָנִ֣י וְ/אֶבְי֑וֹן מֵ/אַחֶ֕י/ךָ א֧וֹ מִ/גֵּרְ/ךָ֛ אֲשֶׁ֥ר בְּ/אַרְצְ/ךָ֖ בִּ/שְׁעָרֶֽי/ךָ־׃
 translation:
-  text: You shall not oppress a hired worker who is poor and needy[a], whether one of your brothers or one of your sojourners who is in your land[b], within your gates.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'defraud' or 'exploit' a hired worker; the Hebrew verb includes economic oppression.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Within your gates'' is a Hebrew idiom for life within your towns or community jurisdiction.'
-    reason: cultural_note
+  text: You shall not oppress a poor and needy hired worker, whether a fellow Israelite or a resident foreigner living in your land, in one of your towns.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: תַעֲשֹׁק
   chosen: oppress
@@ -100,14 +93,20 @@ revisions:
   from: You shall not oppress a hired worker who is poor and needy, whether one of your brothers or one of your sojourners who are in your land, within your gates.
   to: You shall not oppress a hired worker who is poor and needy, whether one of your brothers or one of your sojourners who are in your land, within your gates.
   rationale: Changed 'who are in your land' to singular 'who is in your land' to match the singular 'sojourner' in the source and improve grammatical consistency. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:56:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'You shall not oppress a hired worker who is poor and needy[a], whether one of your brothers or one of your sojourners who is in your land[b], within your gates.'
-  to: 'You shall not oppress a hired worker who is poor and needy[a], whether one of your brothers or one of your sojourners who is in your land[b], within your gates.'
+  from: You shall not oppress a hired worker who is poor and needy[a], whether one of your brothers or one of your sojourners who is in your land[b], within your gates.
+  to: You shall not oppress a hired worker who is poor and needy[a], whether one of your brothers or one of your sojourners who is in your land[b], within your gates.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who are in your land''].'
+- timestamp: '2026-11-09T17:31:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You shall not oppress a hired worker who is poor and needy[a], whether one of your brothers or one of your sojourners who is in your land[b], within your gates.
+  to: You shall not oppress a poor and needy hired worker, whether a fellow Israelite or a resident foreigner living in your land, in one of your towns.
+  rationale: I retain “oppress,” since the lexical discussion rightly recognizes a broader prohibition than wage fraud alone. The recorded agreement adjustments and automated revert do not change the meaning; the earlier explanations of Israelite kinship, resident foreigners, and town gates guide the clarification.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -127,3 +126,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/024/014.job-61793.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:31:30Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A poor and needy hired worker must not be oppressed, whether an Israelite or a foreign resident of Israel’s communities.
+  meaning_decisions:
+  - source_phrase: מֵאַחֶיךָ
+    prior_rendering: one of your brothers
+    new_rendering: a fellow Israelite
+    rationale: The kinship expression identifies a fellow member of Israel, not necessarily a biological brother.
+  - source_phrase: מִגֵּרְךָ
+    prior_rendering: one of your sojourners
+    new_rendering: a resident foreigner
+    rationale: The protected person is a non-native resident, not a traveler or temporary visitor.
+  - source_phrase: בִּשְׁעָרֶיךָ
+    prior_rendering: within your gates
+    new_rendering: in one of your towns
+    rationale: The gates stand for the towns and their communities; the geographical meaning belongs in the main text.
+  footnote_kinds: {}
+  history_weighed: I retain “oppress,” since the lexical discussion rightly recognizes a broader prohibition than wage fraud alone. The recorded agreement adjustments and automated revert do not change the meaning; the earlier explanations of Israelite kinship, resident foreigners, and town gates guide the clarification.

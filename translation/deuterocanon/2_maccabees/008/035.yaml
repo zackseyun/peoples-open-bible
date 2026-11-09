@@ -24,17 +24,14 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: Having been humbled by those who were thought to be the least among his own[a], and by the Lord’s help having laid aside his splendid robe, he made himself like a fugitive, traveling through the inland country in isolation and came to Antioch[c][b], having prospered beyond all expectation in the destruction of his army.
-  philosophy: optimal-equivalence
+  text: he was humbled, with the Lord’s help, by those he considered insignificant. He laid aside his splendid robe and traveled alone through the interior like a runaway slave[a], arriving at Antioch after his extraordinary success—in the destruction of his own army[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more literally, 'through the interior.' The Greek term refers to inland territory, not the Mediterranean Sea.
-    reason: lexical_alternative
+    text: Or, “like a fugitive”; the Greek term often refers to a runaway slave.
+    reason: alternative_reading
   - marker: b
-    text: '''Like a fugitive'' translates an expression that can more literally mean ''in the manner of a runaway.'''
-    reason: lexical_alternative
-  - marker: c
-    text: 'The wording is ironic: he ''prospered'' only in relation to the destruction of his own army.'
+    text: Literally, “having prospered beyond all measure in the destruction of his army”; the closing words are ironic.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ταπεινωθεὶς
@@ -150,7 +147,6 @@ revisions:
   from: Having been humbled by those who were thought to be the least among his own, and with the Lord’s help having laid aside his splendid robe, he made himself like a fugitive, traveling through the inland country in isolation, and came to Antioch, having prospered beyond all expectation in the destruction of his army.
   to: Having been humbled by those whom he had considered the least, and by the Lord’s help having laid aside his splendid robe, he made himself a solitary fugitive through the inland country and came to Antioch, having fared exceedingly well in the destruction of his army.
   rationale: Adjusted 'were thought to be' to 'he had considered' to reflect the subject more clearly; simplified 'made himself like a fugitive, traveling through the inland country in isolation' to 'made himself a solitary fugitive through the inland country' for closer alignment with the Greek; revised 'prospered beyond all expectation' to 'fared exceedingly well' to more directly reflect the ironic sense of the Greek.
-
 - timestamp: '2026-05-14T00:00:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -158,6 +154,13 @@ revisions:
   from: Having been humbled by those whom he had considered the least, and by the Lord’s help having laid aside his splendid robe, he made himself a solitary fugitive through the inland country and came to Antioch, having fared exceedingly well in the destruction of his army.
   to: Having been humbled by those who were thought to be the least among his own, and with the Lord’s help having laid aside his splendid robe, he made himself like a fugitive, traveling through the inland country in isolation, and came to Antioch, having prospered beyond all expectation in the destruction of his army.
   rationale: 'Restored 3 drafter choices: passive ''those who were thought to be the least among his own'', ''like a fugitive...in isolation'', ''having prospered beyond all expectation'' (per theological_decision on hyperbolic irony).'
+- timestamp: '2026-11-09T18:55:44Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Having been humbled by those who were thought to be the least among his own[a], and by the Lord’s help having laid aside his splendid robe, he made himself like a fugitive, traveling through the inland country in isolation and came to Antioch[c][b], having prospered beyond all expectation in the destruction of his army.
+  to: he was humbled, with the Lord’s help, by those he considered insignificant. He laid aside his splendid robe and traveled alone through the interior like a runaway slave[a], arriving at Antioch after his extraordinary success—in the destruction of his own army[b].
+  rationale: The earlier review correctly clarified that Nicanor himself regarded his opponents as insignificant; its automated reversal does not outweigh the sentence’s meaning. I preserve the history’s insistence on irony while correcting the attachment of the Lord’s help and recovering the slave-flight comparison.
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -177,3 +180,35 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/008/035.job-49211.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:44Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: With the Lord’s help, people Nicanor despised humbled him, leaving him to flee alone without his splendid clothing after the ironic success of his army’s destruction.
+  meaning_decisions:
+  - source_phrase: ὑπὸ τῶν καθʼ αὑτὸν νομιζομένων ἐλαχίστων εἶναι
+    prior_rendering: by those who were thought to be the least among his own
+    new_rendering: by those he considered insignificant
+    rationale: The phrase expresses Nicanor’s estimation of his Jewish opponents, not their membership in his own party.
+  - source_phrase: τῇ τοῦ κυρίου βοηθείᾳ
+    prior_rendering: and by the Lord’s help having laid aside his splendid robe
+    new_rendering: he was humbled, with the Lord’s help
+    rationale: The Lord’s help accounts for the opponents’ victory and Nicanor’s humiliation, rather than assistance given to Nicanor in removing his robe.
+  - source_phrase: δραπέτου τρόπον ἔρημον ἑαυτὸν ποιήσας
+    prior_rendering: he made himself like a fugitive, traveling ... in isolation
+    new_rendering: traveled alone ... like a runaway slave
+    rationale: The comparison evokes the shameful flight of a runaway slave, sharpening the reversal of Nicanor’s plan to sell the Jews; the broader sense remains in a note.
+  - source_phrase: ὑπὲρ ἅπαν εὐημερηκὼς ἐπὶ τῇ τοῦ στρατοῦ διαφθορᾷ
+    prior_rendering: having prospered beyond all expectation in the destruction of his army
+    new_rendering: after his extraordinary success—in the destruction of his own army
+    rationale: The ironic claim of success remains intact, with English punctuation carrying the collision between prosperity and military ruin.
+  footnote_kinds:
+    a: alternative_meaning
+    b: literal_wording
+  history_weighed: The earlier review correctly clarified that Nicanor himself regarded his opponents as insignificant; its automated reversal does not outweigh the sentence’s meaning. I preserve the history’s insistence on irony while correcting the attachment of the Lord’s help and recovering the slave-flight comparison.

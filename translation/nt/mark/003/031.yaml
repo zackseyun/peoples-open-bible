@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: ⸂Καὶ ἔρχονται⸃ ⸂ἡ μήτηρ αὐτοῦ καὶ οἱ ἀδελφοὶ αὐτοῦ⸃ καὶ ἔξω ⸀στήκοντες ἀπέστειλαν πρὸς αὐτὸν ⸀καλοῦντες αὐτόν.
 translation:
-  text: Then his mother and his brothers came[a], and standing outside they sent word to him[b], calling him.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'they sent a message to him.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'calling him' or 'summoning him.'
-    reason: lexical_alternative
+  text: Then his mother and his brothers arrived. Standing outside, they sent word for him to come out to them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Καὶ
   chosen: Then
@@ -96,14 +89,20 @@ revisions:
   from: Then his mother and his brothers came, and standing outside they sent word to him, calling for him.
   to: Then his mother and his brothers came, and standing outside they sent word to him, calling for him.
   rationale: Changed 'calling for him' to 'calling him' for closer lexical correspondence to καλοῦντες αὐτόν while keeping natural English. Retained the rest as accurate and complete.
-
 - timestamp: '2026-05-18T03:00:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then his mother and his brothers came[a], and standing outside they sent word to him[b], calling him.'
-  to: 'Then his mother and his brothers came[a], and standing outside they sent word to him[b], calling him.'
+  from: Then his mother and his brothers came[a], and standing outside they sent word to him[b], calling him.
+  to: Then his mother and his brothers came[a], and standing outside they sent word to him[b], calling him.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''calling for him''].'
+- timestamp: '2026-11-09T17:13:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then his mother and his brothers came[a], and standing outside they sent word to him[b], calling him.
+  to: Then his mother and his brothers arrived. Standing outside, they sent word for him to come out to them.
+  rationale: The recorded review and revert disagree over 'calling him' and 'calling for him,' but the lexical rationale correctly identifies a request for Jesus to come out. I make that request clear while retaining the unqualified family terms.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -125,3 +124,21 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/mark/003/031.job-56176.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:13:55Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus' mother and brothers arrived and, remaining outside, sent a message summoning him to them.
+  meaning_decisions:
+  - source_phrase: ἀπέστειλαν πρὸς αὐτὸν καλοῦντες αὐτόν
+    prior_rendering: they sent word to him, calling him
+    new_rendering: they sent word for him to come out to them
+    rationale: 'The participle conveys the message''s purpose: they wanted Jesus to join them outside, rather than simply calling his name.'
+  footnote_kinds: {}
+  history_weighed: The recorded review and revert disagree over 'calling him' and 'calling for him,' but the lexical rationale correctly identifies a request for Jesus to come out. I make that request clear while retaining the unqualified family terms.

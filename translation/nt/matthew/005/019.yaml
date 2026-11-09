@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: ὃς ἐὰν οὖν λύσῃ μίαν τῶν ἐντολῶν τούτων τῶν ἐλαχίστων καὶ διδάξῃ οὕτως τοὺς ἀνθρώπους, ἐλάχιστος κληθήσεται ἐν τῇ βασιλείᾳ τῶν οὐρανῶν· ὃς δ’ ἂν ποιήσῃ καὶ διδάξῃ, οὗτος μέγας κληθήσεται ἐν τῇ βασιλείᾳ τῶν οὐρανῶν.
 translation:
-  text: Therefore[a], whoever relaxes one of the least of these commandments and teaches others to do so will be called least in the kingdom of heaven; but whoever does them and teaches them[b], this one will be called great in the kingdom of heaven.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'sets aside' or 'breaks.' The Greek verb literally means 'loosens' and here refers to weakening or treating a commandment as nonbinding.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Men'' here refers to people generally, not males only; the Greek uses a masculine plural with generic force.'
-    reason: lexical_alternative
+  text: Therefore, whoever sets aside even one of the least of these commandments and teaches others to do the same will be called least in the kingdom of heaven; but whoever obeys them and teaches them will be called great in the kingdom of heaven.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: λύσῃ
   lemma: λύω
@@ -116,14 +109,20 @@ revisions:
   from: Therefore, whoever relaxes one of the least of these commandments and teaches men to do so will be called least in the kingdom of heaven; but whoever does them and teaches them, this one will be called great in the kingdom of heaven.
   to: Therefore, whoever relaxes one of the least of these commandments and teaches men to do so will be called least in the kingdom of heaven; but whoever does them and teaches them, this one will be called great in the kingdom of heaven.
   rationale: Changed 'men' to 'others' to reflect τοὺς ἀνθρώπους more naturally and inclusively in English while preserving the meaning.
-
 - timestamp: '2026-05-18T02:59:59Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Therefore[a], whoever relaxes one of the least of these commandments and teaches others to do so will be called least in the kingdom of heaven; but whoever does them and teaches them[b], this one will be called great in the kingdom of heaven.'
-  to: 'Therefore[a], whoever relaxes one of the least of these commandments and teaches others to do so will be called least in the kingdom of heaven; but whoever does them and teaches them[b], this one will be called great in the kingdom of heaven.'
+  from: Therefore[a], whoever relaxes one of the least of these commandments and teaches others to do so will be called least in the kingdom of heaven; but whoever does them and teaches them[b], this one will be called great in the kingdom of heaven.
+  to: Therefore[a], whoever relaxes one of the least of these commandments and teaches others to do so will be called least in the kingdom of heaven; but whoever does them and teaches them[b], this one will be called great in the kingdom of heaven.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''teaches men to do so''].'
+- timestamp: '2026-11-09T17:15:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Therefore[a], whoever relaxes one of the least of these commandments and teaches others to do so will be called least in the kingdom of heaven; but whoever does them and teaches them[b], this one will be called great in the kingdom of heaven.
+  to: Therefore, whoever sets aside even one of the least of these commandments and teaches others to do the same will be called least in the kingdom of heaven; but whoever obeys them and teaches them will be called great in the kingdom of heaven.
+  rationale: I retain the current wording's generic 'others' and the documented distinction between least and great within the kingdom. The automated revert supplies no meaning-based objection to that inclusive wording; the documented legal sense of λύω supports 'sets aside.'
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -145,3 +144,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/matthew/005/019.job-38660.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:15:25Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Setting aside even a minor commandment and teaching others to do so brings low standing in the kingdom, while obedience joined with teaching brings greatness.
+  meaning_decisions:
+  - source_phrase: λύσῃ μίαν τῶν ἐντολῶν τούτων τῶν ἐλαχίστων
+    prior_rendering: relaxes one of the least of these commandments
+    new_rendering: sets aside even one of the least of these commandments
+    rationale: In this context λύω concerns treating a commandment as nonbinding, not merely making its requirements less demanding. 'Even one' expresses the force of the reference to the least commandments.
+  - source_phrase: ὃς δ’ ἂν ποιήσῃ καὶ διδάξῃ, οὗτος
+    prior_rendering: whoever does them and teaches them, this one
+    new_rendering: whoever obeys them and teaches them
+    rationale: With commandments as the implied object, 'obeys' communicates what 'does' means. The English conditional already identifies the person emphatically enough without the redundant 'this one.'
+  footnote_kinds: {}
+  history_weighed: I retain the current wording's generic 'others' and the documented distinction between least and great within the kingdom. The automated revert supplies no meaning-based objection to that inclusive wording; the documented legal sense of λύω supports 'sets aside.'

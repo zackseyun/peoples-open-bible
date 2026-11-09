@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: אַל תצאי הַ/שָּׂדֶ֔ה וּ/בַ/דֶּ֖רֶךְ אַל תלכי כִּ֚י חֶ֣רֶב לְ/אֹיֵ֔ב מָג֖וֹר מִ/סָּבִֽיב־־׃
 translation:
-  text: Do not go out into the field[a], and do not walk on the road[b], for the sword of the enemy and terror are on every side.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Hebrew: ''the sword of the enemy; terror on every side.'' The main text renders the possession idiomatically as ''the enemy has a sword.'''
-    reason: lexical_alternative
-  - marker: b
-    text: The warning is addressed with feminine singular verbs, likely personifying Jerusalem/daughter Zion.
-    reason: cultural_note
+  text: Do not go out into the open country or travel on the road, for the enemy has a sword; terror is on every side.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: אַל
   chosen: Do not
@@ -108,14 +101,20 @@ revisions:
   from: Do not go out into the field, and do not walk on the road, for the enemy has a sword; terror is on every side.
   to: Do not go out into the field, and do not walk on the road, for the enemy has a sword; terror is on every side.
   rationale: Revised 'the enemy has a sword' to 'the sword of the enemy' to reflect the Hebrew construction more accurately, and smoothed the final clause to include both 'the sword of the enemy' and 'terror' as the danger present on every side.
-
 - timestamp: '2026-05-18T02:56:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Do not go out into the field[a], and do not walk on the road[b], for the sword of the enemy and terror are on every side.'
-  to: 'Do not go out into the field[a], and do not walk on the road[b], for the sword of the enemy and terror are on every side.'
+  from: Do not go out into the field[a], and do not walk on the road[b], for the sword of the enemy and terror are on every side.
+  to: Do not go out into the field[a], and do not walk on the road[b], for the sword of the enemy and terror are on every side.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the enemy has''].'
+- timestamp: '2026-11-09T17:54:54Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Do not go out into the field[a], and do not walk on the road[b], for the sword of the enemy and terror are on every side.
+  to: Do not go out into the open country or travel on the road, for the enemy has a sword; terror is on every side.
+  rationale: The first draft and lexical rationale support 'the enemy has a sword,' whereas the automated review combined the sword and terror under one predicate. I return to the idiomatic possession construction because it preserves the distinct force of the recurring phrase 'terror is on every side.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -135,3 +134,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/006/025.job-67249.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:54:54Z'
+  change_level: refined
+  confidence: high
+  meaning: The people must avoid the open country and roads because the armed enemy makes danger and terror surround them.
+  meaning_decisions:
+  - source_phrase: הַשָּׂדֶה
+    prior_rendering: the field
+    new_rendering: the open country
+    rationale: The warning concerns exposed territory outside the city, not one particular agricultural field.
+  - source_phrase: וּבַדֶּרֶךְ אַל תֵּלְכִי
+    prior_rendering: and do not walk on the road
+    new_rendering: or travel on the road
+    rationale: The prohibition concerns going along the road, not only travel on foot; 'or' naturally joins the two forbidden alternatives.
+  - source_phrase: כִּי חֶרֶב לְאֹיֵב מָגוֹר מִסָּבִיב
+    prior_rendering: for the sword of the enemy and terror are on every side
+    new_rendering: for the enemy has a sword; terror is on every side
+    rationale: The possessive construction announces the armed enemy, followed by the compressed declaration of surrounding terror; separating them avoids making both clauses share a supplied predicate.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale support 'the enemy has a sword,' whereas the automated review combined the sword and terror under one predicate. I return to the idiomatic possession construction because it preserves the distinct force of the recurring phrase 'terror is on every side.'

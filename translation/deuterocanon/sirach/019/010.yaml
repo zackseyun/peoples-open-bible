@@ -21,12 +21,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: A fool will suffer pangs at the sight of a word[a], like a woman in labor at the sight of a baby.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Literally, ''from the face/presence of a word ... as from the face/presence of a baby.'' The Greek idiom expresses cause: the fool is seized with pain on account of a word, as a woman giving birth is on account of the baby.'
-    reason: lexical_alternative
+  text: A fool suffers labor pains over a report, like a woman giving birth to a baby.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀπὸ προσώπου
   chosen: because of
@@ -106,14 +102,20 @@ revisions:
   from: A fool will suffer pangs because of a word, like a woman in labor because of a baby.
   to: A fool will suffer pangs because of a word, like a woman in labor because of a baby.
   rationale: Revised 'because of' to 'at the sight of' to reflect ἀπὸ προσώπου more literally and consistently in both clauses; retained the formal comparison and natural English.
-
 - timestamp: '2026-05-18T02:59:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'A fool will suffer pangs at the sight of a word[a], like a woman in labor at the sight of a baby.'
-  to: 'A fool will suffer pangs at the sight of a word[a], like a woman in labor at the sight of a baby.'
+  from: A fool will suffer pangs at the sight of a word[a], like a woman in labor at the sight of a baby.
+  to: A fool will suffer pangs at the sight of a word[a], like a woman in labor at the sight of a baby.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''because of''].'
+- timestamp: '2026-11-09T19:07:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: A fool will suffer pangs at the sight of a word[a], like a woman in labor at the sight of a baby.
+  to: A fool suffers labor pains over a report, like a woman giving birth to a baby.
+  rationale: The first draft and lexical notes correctly treated ἀπὸ προσώπου as causal; the later 'at the sight of' wording creates a misleading picture of childbirth. I restore the causal meaning and retain the labor metaphor.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -133,3 +135,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/019/010.job-51477.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:00Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A fool's painful urge to tell a report is like the labor pains of a woman giving birth.
+  meaning_decisions:
+  - source_phrase: ἀπὸ προσώπου λόγου ὠδινήσει μωρός, ὡς ἀπὸ προσώπου βρέφους ἡ τίκτουσα
+    prior_rendering: A fool will suffer pangs at the sight of a word, like a woman in labor at the sight of a baby.
+    new_rendering: A fool suffers labor pains over a report, like a woman giving birth to a baby.
+    rationale: 'The repeated idiom expresses cause, not visual perception: a fool is distressed by information he wants to release, as a woman experiences the pains of delivering her baby.'
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical notes correctly treated ἀπὸ προσώπου as causal; the later 'at the sight of' wording creates a misleading picture of childbirth. I restore the causal meaning and retain the labor metaphor.

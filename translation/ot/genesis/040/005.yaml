@@ -4,21 +4,8 @@ source:
   edition: WLC
   text: וַ/יַּֽחַלְמוּ֩ חֲל֨וֹם שְׁנֵי/הֶ֜ם אִ֤ישׁ חֲלֹמ/וֹ֙ בְּ/לַ֣יְלָה אֶחָ֔ד אִ֖ישׁ כְּ/פִתְר֣וֹן חֲלֹמ֑/וֹ הַ/מַּשְׁקֶ֣ה וְ/הָ/אֹפֶ֗ה אֲשֶׁר֙ לְ/מֶ֣לֶךְ מִצְרַ֔יִם אֲשֶׁ֥ר אֲסוּרִ֖ים בְּ/בֵ֥ית הַ/סֹּֽהַר׃
 translation:
-  text: And the two of them dreamed a dream[a], each man his own dream, in one night, each according to the interpretation of his dream—the cupbearer and the baker who belonged to the king of Egypt[d][c][b], who were confined in the prison house.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'both of them had a dream ... on the same night.' The Hebrew uses a cognate expression, literally 'dreamed a dream,' and a temporal phrase literally 'in one night.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'each dream with its own interpretation.' The Hebrew emphasizes that each man's dream had a distinct interpretation corresponding to it.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'who served the king of Egypt.' The phrase can denote official attachment to Pharaoh's service.
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'who were confined in the prison house'.
-    reason: previous_rendering
+  text: The cupbearer and the baker who served the king of Egypt, both confined in the prison, each had a dream on the same night. Each dream had its own meaning.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיַּחַלְמוּ חֲלוֹם
   chosen: dreamed a dream
@@ -114,12 +101,18 @@ revisions:
   from: And the two of them dreamed a dream, each man his own dream, in one night, each according to the interpretation of his dream—the cupbearer and the baker who belonged to the king of Egypt, confined in the prison house.
   to: And the two of them dreamed a dream, each man his own dream, in one night, each according to the interpretation of his dream—the cupbearer and the baker who belonged to the king of Egypt, who were confined in the prison house.
   rationale: Added 'who were' before 'confined' to more clearly represent the relative clause modifying 'the cupbearer and the baker' and to improve natural English while preserving the source structure.
+- timestamp: '2026-11-09T17:44:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the two of them dreamed a dream[a], each man his own dream, in one night, each according to the interpretation of his dream—the cupbearer and the baker who belonged to the king of Egypt[d][c][b], who were confined in the prison house.
+  to: The cupbearer and the baker who served the king of Egypt, both confined in the prison, each had a dream on the same night. Each dream had its own meaning.
+  rationale: The reviews debated how to attach the confinement clause, and the lexical record recognized both 'on the same night' and 'each dream with its own interpretation.' I adopt those meaning-based gains rather than preserve the compressed Hebrew-shaped sentence.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:45:24Z'
   unchanged: false
   changes_summary: Added 'who were' before 'confined' to more clearly represent the relative clause modifying 'the cupbearer and the baker' and to improve natural English while preserving the source structure.
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -143,3 +136,33 @@ cross_check:
     agree: 2
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/ot/genesis/040/005.job-37674.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:44:21Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The imprisoned cupbearer and baker each had a distinct dream on the same night, with a meaning appropriate to each dream.
+  meaning_decisions:
+  - source_phrase: וַיַּחַלְמוּ חֲלוֹם שְׁנֵיהֶם אִישׁ חֲלֹמוֹ בְּלַיְלָה אֶחָד
+    prior_rendering: the two of them dreamed a dream, each man his own dream, in one night
+    new_rendering: each had a dream on the same night
+    rationale: The Hebrew distributes the dreams between the two men and emphasizes their shared night; natural English conveys both without the cognate repetition.
+  - source_phrase: אִישׁ כְּפִתְרוֹן חֲלֹמוֹ
+    prior_rendering: each according to the interpretation of his dream
+    new_rendering: Each dream had its own meaning
+    rationale: The phrase anticipates the distinct interpretation corresponding to each dream; it does not say the prisoners already understood their dreams.
+  - source_phrase: אֲשֶׁר לְמֶלֶךְ מִצְרַיִם
+    prior_rendering: who belonged to the king of Egypt
+    new_rendering: who served the king of Egypt
+    rationale: The relationship here is their attachment to the king’s service, not an assertion about ownership.
+  - source_phrase: אֲשֶׁר אֲסוּרִים בְּבֵית הַסֹּהַר
+    prior_rendering: who were confined in the prison house
+    new_rendering: both confined in the prison
+    rationale: Placing the phrase beside the two officials makes clear that both were imprisoned and avoids the stacked relative clauses.
+  footnote_kinds: {}
+  history_weighed: The reviews debated how to attach the confinement clause, and the lexical record recognized both 'on the same night' and 'each dream with its own interpretation.' I adopt those meaning-based gains rather than preserve the compressed Hebrew-shaped sentence.

@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: הוּא הִכָּ֨ה אֶת אֱד֤וֹם בְּ/גֵיא המלח עֲשֶׂ֣רֶת אֲלָפִ֔ים וְ/תָפַ֥שׂ אֶת הַ/סֶּ֖לַע בַּ/מִּלְחָמָ֑ה וַ/יִּקְרָ֤א אֶת שְׁמָ/הּ֙ יָקְתְאֵ֔ל עַ֖ד הַ/יּ֥וֹם הַ/זֶּֽה־־־־־׃פ
 translation:
-  text: He struck down ten thousand Edomites in the Valley of Salt, captured Sela[a] in battle, and called its name Joktheel, to this day.
-  philosophy: optimal-equivalence
+  text: He struck down ten thousand Edomites in the Valley of Salt and captured Sela in battle. He renamed it Joktheel, the name it bears to this day[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Sela can also be understood by its lexical sense, 'the rock' or 'the crag,' though here it is likely the place-name Sela.
-    reason: lexical_alternative
+    text: That is, at the time of the narrator.
+    reason: cultural_note
 lexical_decisions:
 - source_word: הִכָּה
   chosen: struck down
@@ -94,13 +94,12 @@ revisions:
   from: He struck down ten thousand Edomites in the Valley of Salt, captured Sela in battle, and called its name Joktheel, to this day.
   to: He struck down ten thousand of Edom in the Valley of Salt, captured Sela in battle, and called its name Joktheel, to this day.
   rationale: Changed 'ten thousand Edomites' to 'ten thousand of Edom' to more closely reflect the Hebrew wording while preserving natural formal English. No other changes needed.
-
 - timestamp: '2026-05-18T03:09:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He struck down ten thousand of Edom in the Valley of Salt[a], captured Sela in battle, and called its name Joktheel, to this day.'
-  to: 'He struck down ten thousand Edomites in the Valley of Salt, captured Sela in battle, and called its name Joktheel, to this day.'
+  from: He struck down ten thousand of Edom in the Valley of Salt[a], captured Sela in battle, and called its name Joktheel, to this day.
+  to: He struck down ten thousand Edomites in the Valley of Salt, captured Sela in battle, and called its name Joktheel, to this day.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Edomites''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -110,6 +109,13 @@ revisions:
   from: He struck down ten thousand Edomites in the Valley of Salt, captured Sela in battle, and called its name Joktheel, to this day.
   to: He struck down ten thousand Edomites in the Valley of Salt, captured Sela[a] in battle, and called its name Joktheel, to this day.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('Sela') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:27:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He struck down ten thousand Edomites in the Valley of Salt, captured Sela[a] in battle, and called its name Joktheel, to this day.
+  to: He struck down ten thousand Edomites in the Valley of Salt and captured Sela in battle. He renamed it Joktheel, the name it bears to this day[a].
+  rationale: The history supports the natural “Edomites” rather than the automated revision’s “of Edom,” and Sela remains a place-name. The naming formula is clarified while preserving the narrator’s “to this day” perspective.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -129,3 +135,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_kings/014/007.job-60608.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:27:07Z'
+  change_level: refined
+  confidence: high
+  meaning: Amaziah struck down ten thousand Edomites, captured Sela, and gave it the name Joktheel, which persisted to the narrator’s time.
+  meaning_decisions:
+  - source_phrase: וַיִּקְרָא אֶת שְׁמָהּ יָקְתְאֵל עַד הַיּוֹם הַזֶּה
+    prior_rendering: and called its name Joktheel, to this day
+    new_rendering: He renamed it Joktheel, the name it bears to this day
+    rationale: The temporal phrase describes the continued use of the new name, not an act of naming that continued indefinitely.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The history supports the natural “Edomites” rather than the automated revision’s “of Edom,” and Sela remains a place-name. The naming formula is clarified while preserving the narrator’s “to this day” perspective.

@@ -16,15 +16,15 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: And now[a], Lord, I am not taking this my sister because of sexual immorality, but in truth[b]. Command that I may find mercy and that I and she may grow old together.
-  philosophy: optimal-equivalence
+  text: Now, Lord, I am marrying this sister of mine[a] not out of lust, but with sincere intent. Ordain that I may receive mercy and that we may grow old together[b].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: '"This my sister" reflects the book''s kinship language for a close female relative who is also a lawful marriage partner; alternatively, "this sister of mine" or interpretively "my kinswoman."'
+    text: “Sister” is kinship language for his bride, who is also his relative.
     reason: cultural_note
   - marker: b
-    text: Or "Command that you have mercy on me and on her, and that we may grow old together." The Greek links "have mercy" and "grow old together" under the same petition.
-    reason: lexical_alternative
+    text: Or, “Ordain that mercy be shown to me and to her, and that we may grow old together.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: κύριε
   chosen: Lord
@@ -123,14 +123,20 @@ revisions:
   from: And now, Lord, I am not taking this my sister because of sexual immorality, but in truth. Command that I and she may grow old together under mercy.
   to: And now, Lord, I am not taking this my sister because of sexual immorality, but in truth. Command that I and she may grow old together under mercy.
   rationale: Revised the final clause to reflect ἐλεῆσαί με more accurately as 'that I may find mercy' rather than 'under mercy,' while preserving the separate request that they may grow old together. Kept 'sexual immorality' and 'in truth' as natural, formally appropriate renderings.
-
 - timestamp: '2026-05-18T02:59:19Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And now[a], Lord, I am not taking this my sister because of sexual immorality, but in truth[b]. Command that I may find mercy and that I and she may grow old together.'
-  to: 'And now[a], Lord, I am not taking this my sister because of sexual immorality, but in truth[b]. Command that I may find mercy and that I and she may grow old together.'
+  from: And now[a], Lord, I am not taking this my sister because of sexual immorality, but in truth[b]. Command that I may find mercy and that I and she may grow old together.
+  to: And now[a], Lord, I am not taking this my sister because of sexual immorality, but in truth[b]. Command that I may find mercy and that I and she may grow old together.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''under mercy''].'
+- timestamp: '2026-11-09T19:11:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And now[a], Lord, I am not taking this my sister because of sexual immorality, but in truth[b]. Command that I may find mercy and that I and she may grow old together.
+  to: Now, Lord, I am marrying this sister of mine[a] not out of lust, but with sincere intent. Ordain that I may receive mercy and that we may grow old together[b].”
+  rationale: I preserve the review’s important distinction between receiving mercy and growing old together rather than returning to the compressed under mercy. The source-transparent expressions taking and in truth are clarified by the marital context, and the disputed attachment of her is retained as an alternative.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -150,3 +156,31 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/tobit/008/007.job-52506.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:02Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Tobiah declares that he is marrying Sarah with sincere intent rather than out of lust and asks for mercy and a shared old age.
+  meaning_decisions:
+  - source_phrase: λαμβάνω τὴν ἀδελφήν μου ταύτην
+    prior_rendering: am taking this my sister
+    new_rendering: am marrying this sister of mine
+    rationale: Taking her means taking her as his wife; marrying states that understood action while retaining the kinship address.
+  - source_phrase: οὐ διὰ πορνείαν ... ἀλλʼ ἐπʼ ἀληθείας
+    prior_rendering: not ... because of sexual immorality, but in truth
+    new_rendering: not out of lust, but with sincere intent
+    rationale: 'The contrast concerns his purpose in entering marriage: lustful gratification versus sincere marital intent, not a claim that the marriage itself would otherwise constitute illicit sex.'
+  - source_phrase: ἐπίταξον ἐλεῆσαί με καὶ αὐτὴν συγκαταγηρᾶσαι
+    prior_rendering: Command that I may find mercy and that I and she may grow old together
+    new_rendering: Ordain that I may receive mercy and that we may grow old together
+    rationale: Ordain preserves the appeal to God’s authority in natural prayer language, and we expresses the joint old age without the awkward pronoun sequence.
+  footnote_kinds:
+    a: cultural_background
+    b: alternative_meaning
+  history_weighed: I preserve the review’s important distinction between receiving mercy and growing old together rather than returning to the compressed under mercy. The source-transparent expressions taking and in truth are clarified by the marital context, and the disputed attachment of her is retained as an alternative.

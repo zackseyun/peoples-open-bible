@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: חֶצְי/וֹ֙ שָׂרַ֣ף בְּמוֹ אֵ֔שׁ עַל חֶצְי/וֹ֙ בָּשָׂ֣ר יֹאכֵ֔ל יִצְלֶ֥ה צָלִ֖י וְ/יִשְׂבָּ֑ע אַף יָחֹם֙ וְ/יֹאמַ֣ר הֶאָ֔ח חַמּוֹתִ֖י רָאִ֥יתִי אֽוּר־־־׃
 translation:
-  text: 'Half of it he burns in the fire[a]; over the other half he eats meat: he roasts a roast and is satisfied. He also warms himself and says, “Aha! I am warm[c][b]; I have seen the fire.”'
-  philosophy: optimal-equivalence
+  text: He burns half the wood in the fire; over it he roasts meat and eats his fill. He also warms himself and says, “Ah! I am warm; I enjoy the fire[a]!”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “he roasts meat”; Hebrew literally uses a cognate expression, “he roasts a roast.”
+    text: Literally, “I have seen the fire”; seeing here can express experiencing or enjoying it.
     reason: lexical_alternative
-  - marker: b
-    text: Or “I have seen the flame.” The Hebrew noun can denote fire, flame, or glowing light.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'he eats meat, he roasts a roast'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: חֶצְיוֹ
   chosen: half of it
@@ -125,12 +119,18 @@ revisions:
   from: he eats meat, he roasts a roast
   to: 'he eats meat: he roasts a roast'
   rationale: The current phrasing, using a comma, lists 'he eats meat' and 'he roasts a roast' as sequential or parallel actions. This is logically confusing for an English reader, as roasting must precede eating. The Hebrew syntax presents a general outcome ('he eats meat') followed by the specific action ('he roasts a roast'). Using a colon clarifies this relationship of specification, showing that the roasting is the means by which the meat is prepared for eating, thus improving the logical flow without altering the translation's wording.
+- timestamp: '2026-11-09T17:52:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Half of it he burns in the fire[a]; over the other half he eats meat: he roasts a roast and is satisfied. He also warms himself and says, “Aha! I am warm[c][b]; I have seen the fire.”'
+  to: He burns half the wood in the fire; over it he roasts meat and eats his fill. He also warms himself and says, “Ah! I am warm; I enjoy the fire[a]!”
+  rationale: The earlier colon revision correctly recognized that roasting explains how the meat is eaten; I preserve that gain through natural action order. I depart from the documented “other half” because it conflicts with the Hebrew wording and the remainder described in verse 17.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:51:27Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -153,3 +153,30 @@ cross_check:
     major-issues: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/ot/isaiah/044/016.job-37910.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:52:33Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Half the wood supplies a fire for cooking and warmth, which gives the craftsman ordinary human satisfaction.
+  meaning_decisions:
+  - source_phrase: חֶצְיוֹ שָׂרַף בְּמוֹ אֵשׁ עַל חֶצְיוֹ בָּשָׂר יֹאכֵל
+    prior_rendering: Half of it he burns in the fire; over the other half he eats meat
+    new_rendering: He burns half the wood in the fire; over it he roasts meat
+    rationale: The Hebrew does not say “the other half”; the cooking uses the burning portion, while verse 17 identifies the remainder as material for the idol.
+  - source_phrase: בָּשָׂר יֹאכֵל יִצְלֶה צָלִי וְיִשְׂבָּע
+    prior_rendering: 'he eats meat: he roasts a roast and is satisfied'
+    new_rendering: he roasts meat and eats his fill
+    rationale: Natural English orders preparation before eating and conveys the cognate construction without an artificial repetition.
+  - source_phrase: הֶאָח חַמּוֹתִי רָאִיתִי אוּר
+    prior_rendering: Aha! I am warm; I have seen the fire
+    new_rendering: Ah! I am warm; I enjoy the fire
+    rationale: The exclamation expresses pleased experience of the fire, not merely a report of having observed it; the literal wording is retained in a note.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier colon revision correctly recognized that roasting explains how the meat is eaten; I preserve that gain through natural action order. I depart from the documented “other half” because it conflicts with the Hebrew wording and the remainder described in verse 17.

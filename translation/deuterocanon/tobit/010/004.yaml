@@ -16,12 +16,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Then his wife said to him[a], “The child has perished, because he has been delayed.” And she began to mourn for him and said,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek repeats 'him' ('for him, him'), likely for emphasis or as a scribal repetition; the English smooths this to idiomatic 'for him.'
-    reason: textual_variant
+  text: Then his wife said to him, “Our child has perished—he has been gone too long!” She began to mourn for him, saying,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἀπώλετο
   chosen: has perished
@@ -98,14 +94,20 @@ revisions:
   from: Then his wife said to him, “The child has perished, because he has delayed.” And she began to mourn for him and said,
   to: Then his wife said to him, “The child has perished, because he has delayed.” And she began to mourn for him and said,
   rationale: Changed 'he has delayed' to 'he has been delayed' to better reflect the Greek perfect passive/intransitive sense κεχρόνικεν ('has tarried/been delayed').
-
 - timestamp: '2026-05-18T02:59:19Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then his wife said to him[a], “The child has perished, because he has been delayed.” And she began to mourn for him and said,'
-  to: 'Then his wife said to him[a], “The child has perished, because he has been delayed.” And she began to mourn for him and said,'
+  from: Then his wife said to him[a], “The child has perished, because he has been delayed.” And she began to mourn for him and said,
+  to: Then his wife said to him[a], “The child has perished, because he has been delayed.” And she began to mourn for him and said,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''has delayed''].'
+- timestamp: '2026-11-09T19:11:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then his wife said to him[a], “The child has perished, because he has been delayed.” And she began to mourn for him and said,
+  to: Then his wife said to him, “Our child has perished—he has been gone too long!” She began to mourn for him, saying,
+  rationale: The review recognized the awkwardness of “has delayed,” but the passive replacement can suggest an obstruction not stated by the Greek. With no maintainer ruling, I express the prolonged absence that prompts the mother's conclusion and omit the insignificant repeated pronoun.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -125,3 +127,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/tobit/010/004.job-52535.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:19Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Tobit's wife concluded from their son's long absence that he had perished and began mourning him.
+  meaning_decisions:
+  - source_phrase: τὸ παιδίον
+    prior_rendering: The child
+    new_rendering: Our child
+    rationale: The mother is speaking to the child's father, so the shared parental relationship is naturally expressed in English.
+  - source_phrase: διότι κεχρόνικεν
+    prior_rendering: because he has been delayed
+    new_rendering: he has been gone too long
+    rationale: The verb describes prolonged absence, without identifying an external cause of delay; the dash presents that absence as the mother's reason for concluding he has died.
+  footnote_kinds: {}
+  history_weighed: The review recognized the awkwardness of “has delayed,” but the passive replacement can suggest an obstruction not stated by the Greek. With no maintainer ruling, I express the prolonged absence that prompts the mother's conclusion and omit the insignificant repeated pronoun.

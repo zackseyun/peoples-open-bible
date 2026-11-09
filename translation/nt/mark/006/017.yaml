@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: Αὐτὸς γὰρ ὁ Ἡρῴδης ἀποστείλας ἐκράτησεν τὸν Ἰωάννην καὶ ἔδησεν αὐτὸν ἐν φυλακῇ διὰ Ἡρῳδιάδα τὴν γυναῖκα Φιλίππου τοῦ ἀδελφοῦ αὐτοῦ, ὅτι αὐτὴν ἐγάμησεν·
 translation:
-  text: For Herod himself had sent and seized John[a], and bound him in prison because of Herodias, the wife of Philip his brother[b], because he had married her.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'had sent men and arrested John.' The Greek uses an aorist participle followed by main verbs, indicating that Herod initiated the action before John was seized.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'had sent and seized John'.
-    reason: previous_rendering
+  text: For Herod himself had sent men and had John arrested and bound in prison because of Herodias, his brother Philip’s wife, whom he had married.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Αὐτὸς
   chosen: himself
@@ -122,12 +115,18 @@ revisions:
   from: For Herod himself had sent for and seized John, and bound him in prison because of Herodias, the wife of Philip his brother, because he had married her.
   to: For Herod himself had sent and seized John, and bound him in prison because of Herodias, the wife of Philip his brother, because he had married her.
   rationale: Removed 'for' after 'sent' to more closely reflect the Greek participle ἀποστείλας ('having sent') without adding an object not in the source. Kept the rest substantially unchanged.
+- timestamp: '2026-11-09T17:14:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For Herod himself had sent and seized John[a], and bound him in prison because of Herodias, the wife of Philip his brother[b], because he had married her.
+  to: For Herod himself had sent men and had John arrested and bound in prison because of Herodias, his brother Philip’s wife, whom he had married.
+  rationale: The April 21 review correctly identified Herod as acting through agents; the April 23 reversal prioritized the absence of an expressed Greek object. I follow the contextual agency analysis, preserve the binding, and clarify the family relationship without adding moral commentary.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:53:00Z'
   unchanged: false
   changes_summary: Removed 'for' after 'sent' to more closely reflect the Greek participle ἀποστείλας ('having sent') without adding an object not in the source. Kept the rest substantially unchanged.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -149,3 +148,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/mark/006/017.job-38792.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:14:04Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Herod had ordered John’s arrest and imprisonment because of Herodias, his brother Philip’s wife, whom Herod had married.
+  meaning_decisions:
+  - source_phrase: ἀποστείλας ἐκράτησεν τὸν Ἰωάννην καὶ ἔδησεν αὐτὸν ἐν φυλακῇ
+    prior_rendering: had sent and seized John, and bound him in prison
+    new_rendering: had sent men and had John arrested and bound in prison
+    rationale: Herod initiated and accomplished the arrest through agents; the current construction can suggest that he personally seized John. The new wording supplies the understood agents while preserving the completed arrest and physical binding.
+  - source_phrase: διὰ Ἡρῳδιάδα τὴν γυναῖκα Φιλίππου τοῦ ἀδελφοῦ αὐτοῦ, ὅτι αὐτὴν ἐγάμησεν
+    prior_rendering: because of Herodias, the wife of Philip his brother, because he had married her
+    new_rendering: because of Herodias, his brother Philip’s wife, whom he had married
+    rationale: The reordered family identification and relative clause convey the same marriage-related cause without the awkward repeated “because.”
+  footnote_kinds: {}
+  history_weighed: The April 21 review correctly identified Herod as acting through agents; the April 23 reversal prioritized the absence of an expressed Greek object. I follow the contextual agency analysis, preserve the binding, and clarify the family relationship without adding moral commentary.

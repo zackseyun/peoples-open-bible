@@ -18,11 +18,11 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: I did not recognize the salvation that was saving seven sons for a little while[a].
-  philosophy: optimal-equivalence
+  text: She[a] did not regard as salvation a rescue that would keep her seven sons alive for only a little while.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'I did not recognize the deliverance that was saving seven sons for a short time.'
+    text: The supplied Greek text reads 'I did not recognize'; the surrounding account continues to speak about the mother's decision.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: οὐκ ἐπέγνων
@@ -98,14 +98,20 @@ revisions:
   from: I did not recognize the salvation that was preserving seven sons for a little while.
   to: I did not recognize the salvation that was preserving seven sons for a little while.
   rationale: Changed 'preserving' to 'saving' for closer lexical correspondence to σώζουσαν/σωτηρίαν and to preserve the wordplay/consistency within the verse.
-
 - timestamp: '2026-05-18T03:00:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'I did not recognize the salvation that was saving seven sons for a little while[a].'
-  to: 'I did not recognize the salvation that was saving seven sons for a little while[a].'
+  from: I did not recognize the salvation that was saving seven sons for a little while[a].
+  to: I did not recognize the salvation that was saving seven sons for a little while[a].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that was preserving''].'
+- timestamp: '2026-11-09T18:59:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: I did not recognize the salvation that was saving seven sons for a little while[a].
+  to: She[a] did not regard as salvation a rescue that would keep her seven sons alive for only a little while.
+  rationale: Earlier passes preserved the printed first person and debated 'saving' versus 'preserving,' but their rationale misconstrued the verse as retrospective. The council-and-vote context makes this a rejection of prospective temporary rescue, and I record rather than conceal the supplied text's person difficulty.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -125,3 +131,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/015/027.job-50131.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:37Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The mother rejected as salvation a rescue that would preserve her seven sons' lives only briefly.
+  meaning_decisions:
+  - source_phrase: οὐκ ἐπέγνων
+    prior_rendering: I did not recognize
+    new_rendering: She did not regard
+    rationale: The preceding deliberation and the following third-person account identify the mother as the person rejecting temporary rescue; the anomalous printed first person is explicitly recorded in a note.
+  - source_phrase: τὴν σώζουσαν ἑπτὰ υἱοὺς πρὸς ὀλίγον χρόνον σωτηρίαν
+    prior_rendering: the salvation that was saving seven sons for a little while
+    new_rendering: as salvation a rescue that would keep her seven sons alive for only a little while
+    rationale: The proposed rescue is an option before her, not a past preservation she failed to notice; the wording retains the tension between salvation and merely temporary survival.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: Earlier passes preserved the printed first person and debated 'saving' versus 'preserving,' but their rationale misconstrued the verse as retrospective. The council-and-vote context makes this a rejection of prospective temporary rescue, and I record rather than conceal the supplied text's person difficulty.

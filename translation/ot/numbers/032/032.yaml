@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: נַ֣חְנוּ נַעֲבֹ֧ר חֲלוּצִ֛ים לִ/פְנֵ֥י יְהוָ֖ה אֶ֣רֶץ כְּנָ֑עַן וְ/אִתָּ֨/נוּ֙ אֲחֻזַּ֣ת נַחֲלָתֵ֔/נוּ מֵ/עֵ֖בֶר לַ/יַּרְדֵּֽן׃
 translation:
-  text: We ourselves will cross over, armed, before Yahweh into the land of Canaan, and with us will be the possession of our inheritance on this side of the Jordan[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'beyond the Jordan' or 'across the Jordan'; the Hebrew expression is perspective-dependent. Here 'on this side of the Jordan' reflects the speakers' location east of the river.
-    reason: lexical_alternative
+  text: We ourselves will cross into the land of Canaan armed for battle before Yahweh, but our inheritance east of the Jordan will remain in our possession.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: נַחְנוּ
   chosen: We ourselves
@@ -98,13 +94,12 @@ revisions:
   from: We ourselves will cross over, armed, before the LORD into the land of Canaan, and with us will be the possession of our inheritance on this side of the Jordan.
   to: We ourselves will cross over, armed, before the LORD into the land of Canaan, and with us will be the possession of our inheritance beyond the Jordan.
   rationale: Changed 'on this side of the Jordan' to 'beyond the Jordan' to reflect מֵעֵבֶר לַיַּרְדֵּן more accurately and avoid imposing a viewpoint not explicit in the text.
-
 - timestamp: '2026-05-18T03:09:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'We ourselves will cross over[a], armed, before Yahweh into the land of Canaan, and with us will be the possession of our inheritance beyond the Jordan.'
-  to: 'We ourselves will cross over, armed, before Yahweh into the land of Canaan, and with us will be the possession of our inheritance on this side of the Jordan.'
+  from: We ourselves will cross over[a], armed, before Yahweh into the land of Canaan, and with us will be the possession of our inheritance beyond the Jordan.
+  to: We ourselves will cross over, armed, before Yahweh into the land of Canaan, and with us will be the possession of our inheritance on this side of the Jordan.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''on this side of the Jordan''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -114,6 +109,13 @@ revisions:
   from: We ourselves will cross over, armed, before Yahweh into the land of Canaan, and with us will be the possession of our inheritance on this side of the Jordan.
   to: We ourselves will cross over, armed, before Yahweh into the land of Canaan, and with us will be the possession of our inheritance on this side of the Jordan[a].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('on this side of the Jordan') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:33:09Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: We ourselves will cross over, armed, before Yahweh into the land of Canaan, and with us will be the possession of our inheritance on this side of the Jordan[a].
+  to: We ourselves will cross into the land of Canaan armed for battle before Yahweh, but our inheritance east of the Jordan will remain in our possession.”
+  rationale: The automated revision questioned “this side,” while the later automated revert restored it; neither is a MAINTAINER ruling. “East of the Jordan” preserves the contextual location without viewpoint ambiguity, and the possessive clause now states clearly that the inheritance remains theirs.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -135,3 +137,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/032/032.job-41947.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:33:09Z'
+  change_level: retranslated
+  confidence: high
+  meaning: They pledge to enter Canaan armed before Yahweh while retaining their inheritance east of the Jordan.
+  meaning_decisions:
+  - source_phrase: וְאִתָּנוּ אֲחֻזַּת נַחֲלָתֵנוּ
+    prior_rendering: and with us will be the possession of our inheritance
+    new_rendering: but our inheritance ... will remain in our possession
+    rationale: The compressed possessive clause asserts that their eastern inheritance remains theirs, not that the land somehow accompanies them across the river.
+  - source_phrase: מֵעֵבֶר לַיַּרְדֵּן
+    prior_rendering: on this side of the Jordan
+    new_rendering: east of the Jordan
+    rationale: The surrounding agreement identifies the eastern territory unequivocally; naming the direction avoids the modern reader’s uncertainty about the speakers’ viewpoint.
+  footnote_kinds: {}
+  history_weighed: The automated revision questioned “this side,” while the later automated revert restored it; neither is a MAINTAINER ruling. “East of the Jordan” preserves the contextual location without viewpoint ambiguity, and the possessive clause now states clearly that the inheritance remains theirs.

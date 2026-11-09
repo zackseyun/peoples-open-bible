@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: מִ/שִּׁפְעַ֥ת סוּסָ֖י/ו יְכַסֵּ֣/ךְ אֲבָקָ֑/ם מִ/קּוֹל֩ פָּרַ֨שׁ וְ/גַלְגַּ֜ל וָ/רֶ֗כֶב תִּרְעַ֨שְׁנָה֙ חֽוֹמוֹתַ֔יִ/ךְ בְּ/בֹא/וֹ֙ בִּ/שְׁעָרַ֔יִ/ךְ כִּ/מְבוֹאֵ֖י עִ֥יר מְבֻקָּעָֽה׃
 translation:
-  text: From the abundance of his horses their dust will cover you[a]; at the sound of horsemen and wheel and chariot your walls will quake when he enters your gates[b], as one enters a city that has been breached.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'at the noise of cavalry, wheels, and chariots.'
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew literally, 'as the entrances of a city breached'; the sense is entry like that into a city whose defenses have been broken open.
-    reason: lexical_alternative
+  text: His horses will be so numerous that the dust they raise will cover you. Your walls will quake at the sound of horsemen, wheels, and chariots when he enters your gates, as soldiers enter a breached city.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: מִשִּׁפְעַת
   chosen: From the abundance of
@@ -110,14 +103,20 @@ revisions:
   from: From the abundance of his horses their dust will cover you; at the sound of horseman and wheel and chariot your walls will quake when he enters your gates, as men enter a city that has been breached.
   to: From the abundance of his horses their dust will cover you; at the sound of horseman and wheel and chariot your walls will quake when he enters your gates, as men enter a city that has been breached.
   rationale: Changed 'horseman' to plural 'horsemen' to better match the collective sense, and changed 'as men enter' to 'as one enters' to reflect the singular Hebrew construction more naturally in English.
-
 - timestamp: '2026-05-16T02:38:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'From the abundance of his horses their dust will cover you[a]; at the sound of horsemen and wheel and chariot your walls will quake when he enters your gates[b], as one enters a city that has been breached.'
-  to: 'From the abundance of his horses their dust will cover you[a]; at the sound of horsemen and wheel and chariot your walls will quake when he enters your gates[b], as one enters a city that has been breached.'
-  rationale: 'Azure pluralized drafter''s chosen singular ''horseman'' (drafter''s collective-after-קול rationale) and singularized ''as men enter'' to ''as one enters'' — inverting Hebrew plural construct מְבוֹאֵי.'
+  from: From the abundance of his horses their dust will cover you[a]; at the sound of horsemen and wheel and chariot your walls will quake when he enters your gates[b], as one enters a city that has been breached.
+  to: From the abundance of his horses their dust will cover you[a]; at the sound of horsemen and wheel and chariot your walls will quake when he enters your gates[b], as one enters a city that has been breached.
+  rationale: Azure pluralized drafter's chosen singular 'horseman' (drafter's collective-after-קול rationale) and singularized 'as men enter' to 'as one enters' — inverting Hebrew plural construct מְבוֹאֵי.
+- timestamp: '2026-11-09T17:38:17Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: From the abundance of his horses their dust will cover you[a]; at the sound of horsemen and wheel and chariot your walls will quake when he enters your gates[b], as one enters a city that has been breached.
+  to: His horses will be so numerous that the dust they raise will cover you. Your walls will quake at the sound of horsemen, wheels, and chariots when he enters your gates, as soldiers enter a breached city.
+  rationale: The review and automated revert disagree about how closely English number should mirror the Hebrew forms. I follow the acknowledged collective military sense and the draft’s recognition of entry by a force, rather than treating those disputed grammatical preferences as binding.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -137,3 +136,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/026/010.job-63965.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:38:17Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The invading force will be so large that its horses cover Tyre with dust and its noisy entry through broken defenses makes the city walls quake.
+  meaning_decisions:
+  - source_phrase: מִשִּׁפְעַת סוּסָיו יְכַסֵּךְ אֲבָקָם
+    prior_rendering: From the abundance of his horses their dust will cover you
+    new_rendering: His horses will be so numerous that the dust they raise will cover you
+    rationale: The new sentence makes explicit the causal connection between the great number of horses and the dust covering the city.
+  - source_phrase: מִקּוֹל פָּרַשׁ וְגַלְגַּל וָרֶכֶב
+    prior_rendering: at the sound of horsemen and wheel and chariot
+    new_rendering: at the sound of horsemen, wheels, and chariots
+    rationale: The military nouns describe the invading force collectively; natural English plurals convey the massed sound rather than isolated pieces of equipment.
+  - source_phrase: כִּמְבוֹאֵי עִיר מְבֻקָּעָה
+    prior_rendering: as one enters a city that has been breached
+    new_rendering: as soldiers enter a breached city
+    rationale: The compressed comparison concerns military entry into a city with broken defenses; 'soldiers' makes that setting clear without adding a new action.
+  footnote_kinds: {}
+  history_weighed: The review and automated revert disagree about how closely English number should mirror the Hebrew forms. I follow the acknowledged collective military sense and the draft’s recognition of entry by a force, rather than treating those disputed grammatical preferences as binding.

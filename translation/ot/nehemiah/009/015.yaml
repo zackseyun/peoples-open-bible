@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וְ֠/לֶחֶם מִ/שָּׁמַ֜יִם נָתַ֤תָּה לָ/הֶם֙ לִ/רְעָבָ֔/ם וּ/מַ֗יִם מִ/סֶּ֛לַע הוֹצֵ֥אתָ לָ/הֶ֖ם לִ/צְמָאָ֑/ם וַ/תֹּ֣אמֶר לָ/הֶ֗ם לָ/בוֹא֙ לָ/רֶ֣שֶׁת אֶת הָ/אָ֔רֶץ אֲשֶׁר נָשָׂ֥אתָ אֶת יָדְ/ךָ֖ לָ/תֵ֥ת לָ/הֶֽם־־־׃
 translation:
-  text: You gave them bread from heaven for their hunger[a], and you brought out water from the rock for their thirst, and you told them to go in to possess the land that you had sworn to give them.
-  philosophy: optimal-equivalence
+  text: You gave them bread from heaven to satisfy their hunger and brought water out of the rock to quench their thirst. You told them to enter and take possession of the land you had sworn[a] to give them.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more idiomatically, 'that you had sworn to give them.' The Hebrew literally says 'lifted up your hand,' an oath-taking expression.
+    text: Literally, 'raised your hand,' a gesture of swearing an oath.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: לֶחֶם מִשָּׁמַיִם
@@ -106,14 +106,20 @@ revisions:
   from: You gave them bread from heaven for their hunger, and you brought out water from the rock for their thirst, and you told them to go in to possess the land that you had lifted up your hand to give them.
   to: You gave them bread from heaven for their hunger, and you brought out water from the rock for their thirst, and you told them to go in to possess the land that you had lifted up your hand to give them.
   rationale: Replaced the overly literal 'had lifted up your hand' with the natural formal equivalent 'had sworn,' which accurately conveys the idiom. No other changes needed.
-
 - timestamp: '2026-05-18T02:54:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'You gave them bread from heaven for their hunger[a], and you brought out water from the rock for their thirst, and you told them to go in to possess the land that you had sworn to give them.'
-  to: 'You gave them bread from heaven for their hunger[a], and you brought out water from the rock for their thirst, and you told them to go in to possess the land that you had sworn to give them.'
+  from: You gave them bread from heaven for their hunger[a], and you brought out water from the rock for their thirst, and you told them to go in to possess the land that you had sworn to give them.
+  to: You gave them bread from heaven for their hunger[a], and you brought out water from the rock for their thirst, and you told them to go in to possess the land that you had sworn to give them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you had lifted up your hand''].'
+- timestamp: '2026-11-09T18:27:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You gave them bread from heaven for their hunger[a], and you brought out water from the rock for their thirst, and you told them to go in to possess the land that you had sworn to give them.
+  to: You gave them bread from heaven to satisfy their hunger and brought water out of the rock to quench their thirst. You told them to enter and take possession of the land you had sworn[a] to give them.
+  rationale: The current wording already conveys the oath correctly as 'sworn,' despite inconsistent no-change records and an automated revert favoring the literal gesture. I keep that meaning-based gain and preserve the oath gesture in a correctly placed note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -133,3 +139,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/nehemiah/009/015.job-42582.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:27:56Z'
+  change_level: refined
+  confidence: high
+  meaning: God supplied food and water in the wilderness and told Israel to take possession of the land he had promised them by oath.
+  meaning_decisions:
+  - source_phrase: לִרְעָבָם ... לִצְמָאָם
+    prior_rendering: for their hunger ... for their thirst
+    new_rendering: to satisfy their hunger ... to quench their thirst
+    rationale: These purpose phrases describe provision that met the people's needs; the new wording expresses that relationship naturally while preserving the parallelism.
+  - source_phrase: לָבוֹא לָרֶשֶׁת
+    prior_rendering: to go in to possess
+    new_rendering: to enter and take possession of
+    rationale: The phrase concerns entering the land and actively taking possession, rather than merely remaining in possession.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The current wording already conveys the oath correctly as 'sworn,' despite inconsistent no-change records and an automated revert favoring the literal gesture. I keep that meaning-based gain and preserve the oath gesture in a correctly placed note.

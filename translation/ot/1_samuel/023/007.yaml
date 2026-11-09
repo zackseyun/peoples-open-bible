@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֻּגַּ֣ד לְ/שָׁא֔וּל כִּי בָ֥א דָוִ֖ד קְעִילָ֑ה וַ/יֹּ֣אמֶר שָׁא֗וּל נִכַּ֨ר אֹת֤/וֹ אֱלֹהִים֙ בְּ/יָדִ֔/י כִּ֚י נִסְגַּ֣ר לָ/ב֔וֹא בְּ/עִ֖יר דְּלָתַ֥יִם וּ/בְרִֽיחַ־׃
 translation:
-  text: And it was reported to Saul that David had come to Keilah[a]. So Saul said, “God has delivered him into my hand[b], for he has shut himself in by entering a city with doors and bars.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'God has handed him over into my hand.' Saul interprets David's position as divine delivery into his power.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'a city of double doors and bar,' referring to a fortified city secured by paired gate-leaves and a crossbar.
-    reason: cultural_note
+  text: Saul was told that David had come to Keilah. Saul said, “God has handed him over to me, for he has trapped himself by entering a city with barred gates.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֻּגַּד
   chosen: it was reported
@@ -96,14 +89,20 @@ revisions:
   from: And it was reported to Saul that David had come to Keilah. So Saul said, “God has delivered him into my hand, for he has shut himself in by entering a city with double doors and a bar.”
   to: And it was reported to Saul that David had come to Keilah. So Saul said, “God has delivered him into my hand, for he has shut himself in by entering a city with double doors and a bar.”
   rationale: Revised the final phrase from 'double doors and a bar' to 'doors and bars' for better lexical accuracy and natural English, reflecting the plural 'doors' and 'bars' without over-specifying 'double.'
-
 - timestamp: '2026-05-18T02:56:32Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And it was reported to Saul that David had come to Keilah[a]. So Saul said, “God has delivered him into my hand[b], for he has shut himself in by entering a city with doors and bars.”'
-  to: 'And it was reported to Saul that David had come to Keilah[a]. So Saul said, “God has delivered him into my hand[b], for he has shut himself in by entering a city with doors and bars.”'
+  from: And it was reported to Saul that David had come to Keilah[a]. So Saul said, “God has delivered him into my hand[b], for he has shut himself in by entering a city with doors and bars.”
+  to: And it was reported to Saul that David had come to Keilah[a]. So Saul said, “God has delivered him into my hand[b], for he has shut himself in by entering a city with doors and bars.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a city with double doors and a bar''].'
+- timestamp: '2026-11-09T17:23:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And it was reported to Saul that David had come to Keilah[a]. So Saul said, “God has delivered him into my hand[b], for he has shut himself in by entering a city with doors and bars.”
+  to: Saul was told that David had come to Keilah. Saul said, “God has handed him over to me, for he has trapped himself by entering a city with barred gates.”
+  rationale: The history consistently treats the delivery claim as Saul’s own speech, not the narrator’s endorsement, and I preserve that distinction. The lexical explanation of paired gate doors and a securing bar is more reliable than the automated rationale about plural bars; 'barred gates' carries the relevant meaning.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -126,3 +125,29 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/023/007.job-59333.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:38Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Saul interprets David’s entry into fortified Keilah as God handing David over to him because the city’s defenses could prevent David’s escape.
+  meaning_decisions:
+  - source_phrase: נִכַּר אֹתוֹ אֱלֹהִים בְּיָדִי
+    prior_rendering: God has delivered him into my hand
+    new_rendering: God has handed him over to me
+    rationale: This conveys Saul’s claim that God has placed David in his power and maintains the delivery language linking verses 4, 7, and 14.
+  - source_phrase: נִסְגַּר לָבוֹא
+    prior_rendering: he has shut himself in by entering
+    new_rendering: he has trapped himself by entering
+    rationale: Saul means that David has made escape difficult, not simply that he has entered an enclosed space.
+  - source_phrase: בְּעִיר דְּלָתַיִם וּבְרִיחַ
+    prior_rendering: a city with doors and bars
+    new_rendering: a city with barred gates
+    rationale: The doors are city gates secured by a crossbar; the revised wording makes their defensive function clear.
+  footnote_kinds: {}
+  history_weighed: The history consistently treats the delivery claim as Saul’s own speech, not the narrator’s endorsement, and I preserve that distinction. The lexical explanation of paired gate doors and a securing bar is more reliable than the automated rationale about plural bars; 'barred gates' carries the relevant meaning.

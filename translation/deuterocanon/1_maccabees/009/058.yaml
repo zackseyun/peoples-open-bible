@@ -25,12 +25,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And all the lawless men took counsel, saying, “Look, Jonathan and those with him are living in peace, confident[a]; so now let us bring Bacchides, and he will seize them all in a single night.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'dwelling quietly, confident.' The Greek combines quiet residence (ἐν ἡσυχίᾳ κατοικοῦσιν) with a participle meaning 'being confident' or 'trusting.'
-    reason: lexical_alternative
+  text: All the lawless men plotted together, saying, “Look, Jonathan and those with him are living peacefully and feel secure. So now let us bring Bacchides here, and he will seize them all in a single night.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐβουλεύσαντο
   chosen: took counsel
@@ -129,13 +125,12 @@ revisions:
   from: And all the lawless men took counsel, saying, “Look, Jonathan and those with him are living in peace, confident; so now let us bring Bacchides, and he will seize them all in a single night.”
   to: And all the lawless men took counsel, saying, “Look, Jonathan and those with him are living in peace and confidence. So now let us bring Bacchides, and he will seize them all in a single night.”
   rationale: Adjusted 'in peace, confident' to 'in peace and confidence' for more natural English while preserving the sense of ἐν ἡσυχίᾳ ... πεποιθότες; capitalized the new sentence after the semicolon as standard English punctuation.
-
 - timestamp: '2026-05-18T03:09:47Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And all the lawless men took counsel[a], saying, “Look, Jonathan and those with him are living in peace and confidence. So now let us bring Bacchides, and he will seize them all in a single night.”'
-  to: 'And all the lawless men took counsel, saying, “Look, Jonathan and those with him are living in peace, confident; so now let us bring Bacchides, and he will seize them all in a single night.”'
+  from: And all the lawless men took counsel[a], saying, “Look, Jonathan and those with him are living in peace and confidence. So now let us bring Bacchides, and he will seize them all in a single night.”
+  to: And all the lawless men took counsel, saying, “Look, Jonathan and those with him are living in peace, confident; so now let us bring Bacchides, and he will seize them all in a single night.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''confident''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -145,6 +140,13 @@ revisions:
   from: And all the lawless men took counsel, saying, “Look, Jonathan and those with him are living in peace, confident; so now let us bring Bacchides, and he will seize them all in a single night.”
   to: And all the lawless men took counsel, saying, “Look, Jonathan and those with him are living in peace, confident[a]; so now let us bring Bacchides, and he will seize them all in a single night.”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('confident') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:52:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And all the lawless men took counsel, saying, “Look, Jonathan and those with him are living in peace, confident[a]; so now let us bring Bacchides, and he will seize them all in a single night.”
+  to: All the lawless men plotted together, saying, “Look, Jonathan and those with him are living peacefully and feel secure. So now let us bring Bacchides here, and he will seize them all in a single night.”
+  rationale: The earlier review correctly identified the awkwardness of 'in peace, confident'; the automated revert supplies no meaning-based reason to retain it. The lexical decision's contextual sense of confidence as felt security is now expressed directly.
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -164,3 +166,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/009/058.job-48477.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:29Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The lawless men plotted to bring Bacchides back and capture Jonathan's unsuspecting group in a single night.
+  meaning_decisions:
+  - source_phrase: ἐβουλεύσαντο οἱ ἄνομοι πάντες
+    prior_rendering: all the lawless men took counsel
+    new_rendering: All the lawless men plotted together
+    rationale: Their consultation is specifically a hostile plan for a surprise capture, so 'plotted together' conveys its contextual character.
+  - source_phrase: ἐν ἡσυχίᾳ κατοικοῦσιν πεποιθότες
+    prior_rendering: are living in peace, confident
+    new_rendering: are living peacefully and feel secure
+    rationale: The confidence concerns their security during the lull, not confidence in an unspecified undertaking.
+  - source_phrase: ἄξομεν τὸν Βακχίδην
+    prior_rendering: let us bring Bacchides
+    new_rendering: let us bring Bacchides here
+    rationale: The destination is implicit in the conspirators' proposal and is made explicit without adding a new action.
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly identified the awkwardness of 'in peace, confident'; the automated revert supplies no meaning-based reason to retain it. The lexical decision's contextual sense of confidence as felt security is now expressed directly.

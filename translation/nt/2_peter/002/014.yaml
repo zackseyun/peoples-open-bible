@@ -4,14 +4,11 @@ source:
   edition: SBLGNT
   text: ὀφθαλμοὺς ἔχοντες μεστοὺς μοιχαλίδος καὶ ⸀ἀκαταπαύστους ἁμαρτίας, δελεάζοντες ψυχὰς ἀστηρίκτους, καρδίαν γεγυμνασμένην πλεονεξίας ἔχοντες, κατάρας τέκνα,
 translation:
-  text: having eyes full of an adulteress[a] and insatiable for sin[b], enticing unstable souls, having a heart trained in greed, children of a curse,
-  philosophy: optimal-equivalence
+  text: Their eyes are full of adulterous desire[a], and they never cease from sin. They entice unstable souls and have hearts trained in greed. They are under a curse!
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more interpretively, 'full of adultery' or 'full of adulterous desire.' The Greek is literally 'full of an adulteress,' a vivid idiom.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'unable to cease from sin' or 'unceasing from sin.'
+    text: Literally, “eyes full of an adulteress.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: μεστοὺς μοιχαλίδος
@@ -97,13 +94,12 @@ revisions:
   from: having eyes full of an adulteress and insatiable for sin, enticing unstable souls, having a heart trained in greed, children of a curse,
   to: having eyes full of an adulteress and unceasing in sin, enticing unstable souls, having a heart trained in greed, children of a curse,
   rationale: Changed 'insatiable for sin' to 'unceasing in sin' to more closely reflect ἀκαταπαύστους ἁμαρτίας ('not ceasing from sin'). Kept the rest as accurate and natural.
-
 - timestamp: '2026-05-18T03:10:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'having eyes full of an adulteress and unceasing in sin[a], enticing unstable souls, having a heart trained in greed, children of a curse[b],'
-  to: 'having eyes full of an adulteress and insatiable for sin, enticing unstable souls, having a heart trained in greed, children of a curse,'
+  from: having eyes full of an adulteress and unceasing in sin[a], enticing unstable souls, having a heart trained in greed, children of a curse[b],
+  to: having eyes full of an adulteress and insatiable for sin, enticing unstable souls, having a heart trained in greed, children of a curse,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''insatiable for sin''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -113,6 +109,13 @@ revisions:
   from: having eyes full of an adulteress and insatiable for sin, enticing unstable souls, having a heart trained in greed, children of a curse,
   to: having eyes full of an adulteress[a] and insatiable for sin[b], enticing unstable souls, having a heart trained in greed, children of a curse,
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('full of an adulteress') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('insatiable for sin') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:06:05Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: having eyes full of an adulteress[a] and insatiable for sin[b], enticing unstable souls, having a heart trained in greed, children of a curse,
+  to: Their eyes are full of adulterous desire[a], and they never cease from sin. They entice unstable souls and have hearts trained in greed. They are under a curse!
+  rationale: The review’s move toward unceasing sin better reflects ἀκαταπαύστους than the restored appetite wording, and the automated revert gives no countervailing meaning-based reason. I clarify the “adulteress” and “children of a curse” idioms rather than preserve their opaque English forms.
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -134,3 +137,34 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/nt/2_peter/002/014.job-27925.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:06:05Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The teachers are consumed by adulterous desire, persist in sin, entice vulnerable souls, cultivate greed, and stand under a curse.
+  meaning_decisions:
+  - source_phrase: ὀφθαλμοὺς ἔχοντες μεστοὺς μοιχαλίδος
+    prior_rendering: having eyes full of an adulteress
+    new_rendering: Their eyes are full of adulterous desire
+    rationale: The English preserves the eyes image while conveying its sexual meaning; the concrete Greek wording is retained in a footnote.
+  - source_phrase: ἀκαταπαύστους ἁμαρτίας
+    prior_rendering: insatiable for sin
+    new_rendering: they never cease from sin
+    rationale: The phrase emphasizes unceasing sin, not merely an appetite that remains unsatisfied.
+  - source_phrase: καρδίαν γεγυμνασμένην πλεονεξίας ἔχοντες
+    prior_rendering: having a heart trained in greed
+    new_rendering: have hearts trained in greed
+    rationale: The distributive plural is natural English for the several teachers, while retaining the pointed image of deliberate training in greed.
+  - source_phrase: κατάρας τέκνα
+    prior_rendering: children of a curse
+    new_rendering: They are under a curse!
+    rationale: This idiom identifies people subject to a curse, not literal children; the direct declaration preserves its denunciatory force.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The review’s move toward unceasing sin better reflects ἀκαταπαύστους than the restored appetite wording, and the automated revert gives no countervailing meaning-based reason. I clarify the “adulteress” and “children of a curse” idioms rather than preserve their opaque English forms.

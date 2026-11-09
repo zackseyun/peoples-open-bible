@@ -21,15 +21,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: The surface of it covered the life of every living thing[b][a], and to it is their return.
-  philosophy: optimal-equivalence
+  text: He covered the face of the earth with every living creature[a], and to the earth they return.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Literally, 'her face.' The Greek likely refers to the face or surface of the earth.
+    text: Literally, “the life of every living thing,” referring here to the creatures with which God populated the earth.
     reason: lexical_alternative
-  - marker: b
-    text: Or 'into her is their return.' The phrase points to living things returning to the earth.
-    reason: alternative_reading
 lexical_decisions:
 - source_word: ψυχὴν
   chosen: the life
@@ -116,14 +113,20 @@ revisions:
   from: The life of every living thing her surface covered, and to her is their return.
   to: The life of every living thing her surface covered, and to her is their return.
   rationale: Reordered the clause for natural English and closer alignment with the Greek syntax; rendered πρόσωπον αὐτῆς as 'the surface of it' rather than 'her surface'; retained 'life' for ψυχήν and 'return' for ἀποστροφή.
-
 - timestamp: '2026-05-16T12:52:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The surface of it covered the life of every living thing[b][a], and to it is their return.'
-  to: 'The surface of it covered the life of every living thing[b][a], and to it is their return.'
-  rationale: 'Restored drafter ''her surface covered'' and ''to her is their return'' (preserving Hebrew/Greek feminine personification of the earth) per chosen renderings.'
+  from: The surface of it covered the life of every living thing[b][a], and to it is their return.
+  to: The surface of it covered the life of every living thing[b][a], and to it is their return.
+  rationale: Restored drafter 'her surface covered' and 'to her is their return' (preserving Hebrew/Greek feminine personification of the earth) per chosen renderings.
+- timestamp: '2026-11-09T19:05:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The surface of it covered the life of every living thing[b][a], and to it is their return.
+  to: He covered the face of the earth with every living creature[a], and to the earth they return.
+  rationale: Earlier passes concentrated on word order and feminine pronouns but left the central subject–object relationship unclear. The preceding verse supplies God as the continuing agent, so I correct that relationship while retaining the earth-face image and the creatures' return.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -143,3 +146,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/016/030.job-51402.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:05:30Z'
+  change_level: retranslated
+  confidence: high
+  meaning: God populated the earth with living creatures, all of which return to the earth.
+  meaning_decisions:
+  - source_phrase: ψυχὴν παντὸς ζῴου ἐκάλυψεν τὸ πρόσωπον αὐτῆς
+    prior_rendering: The surface of it covered the life of every living thing
+    new_rendering: He covered the face of the earth with every living creature
+    rationale: God remains the subject from the preceding verse, and the earth's face is what he covers with living creatures; making the surface the agent obscures the creation account.
+  - source_phrase: καὶ εἰς αὐτὴν ἡ ἀποστροφὴ αὐτῶν
+    prior_rendering: and to it is their return
+    new_rendering: and to the earth they return
+    rationale: An explicit antecedent and a verbal clause communicate the creatures' return naturally without implying that the Greek's grammatical feminine requires personification.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: Earlier passes concentrated on word order and feminine pronouns but left the central subject–object relationship unclear. The preceding verse supplies God as the continuing agent, so I correct that relationship while retaining the earth-face image and the creatures' return.

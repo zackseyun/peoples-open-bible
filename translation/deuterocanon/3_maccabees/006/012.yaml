@@ -20,18 +20,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But you[a], who possess all might and dominion, unceasing One, eternal One, look now; have mercy on us[c][b], who through the insolent violence of lawless men are being irrationally removed from life in the manner of plotters.
-  philosophy: optimal-equivalence
+  text: But you, who possess all might and dominion, untiring One, eternal One, look upon us now. Have mercy on us, for lawless men in their insolent violence are senselessly putting us to death as though we were conspirators[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'untiring One' for ἀπάναυε.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'being removed from life'; the sense in context is being put to death.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'like conspirators' for 'in the manner of plotters.'
-    reason: lexical_alternative
+    text: Or, 'putting us to death through treacherous plotting.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἀλκήν
   chosen: might
@@ -153,14 +147,20 @@ revisions:
   from: But you, who possess all might and dominion, unceasing One, eternal One, look now; have mercy on us, who through the insolent violence of lawless men are being irrationally removed from life in the manner of plotters.
   to: But you, who possess all might and dominion, unceasing, eternal One, look now; have mercy on us, who through the insolent violence of lawless men are being senselessly deprived of life in the manner of conspirators.
   rationale: Adjusted 'unceasing One, eternal One' to 'unceasing, eternal One' for more natural apposition; changed 'irrationally removed from life' to 'senselessly deprived of life' for more natural English and closer force of μεθισταμένους ἐκ τοῦ ζῆν; changed 'plotters' to 'conspirators' for a more formal rendering of ἐπιβούλων.
-
 - timestamp: '2026-05-15T16:09:58Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But you[a], who possess all might and dominion, unceasing, eternal One, look now; have mercy on us[c][b], who through the insolent violence of lawless men are being senselessly deprived of life in the manner of conspirators.'
-  to: 'But you[a], who possess all might and dominion, unceasing One, eternal One, look now; have mercy on us[c][b], who through the insolent violence of lawless men are being irrationally removed from life in the manner of plotters.'
-  rationale: 'Restored 3 chosen renderings preserving dual vocatives, ἀλόγιστον force, and ἐπίβουλος ambiguity.'
+  from: But you[a], who possess all might and dominion, unceasing, eternal One, look now; have mercy on us[c][b], who through the insolent violence of lawless men are being senselessly deprived of life in the manner of conspirators.
+  to: But you[a], who possess all might and dominion, unceasing One, eternal One, look now; have mercy on us[c][b], who through the insolent violence of lawless men are being irrationally removed from life in the manner of plotters.
+  rationale: Restored 3 chosen renderings preserving dual vocatives, ἀλόγιστον force, and ἐπίβουλος ambiguity.
+- timestamp: '2026-11-09T18:57:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But you[a], who possess all might and dominion, unceasing One, eternal One, look now; have mercy on us[c][b], who through the insolent violence of lawless men are being irrationally removed from life in the manner of plotters.
+  to: But you, who possess all might and dominion, untiring One, eternal One, look upon us now. Have mercy on us, for lawless men in their insolent violence are senselessly putting us to death as though we were conspirators[a].
+  rationale: The review identified the obscurity of 'removed from life' and 'in the manner of plotters,' while the automated revert defended their form and ambiguity. I make execution explicit and preserve the serious alternative sense of plotting in a footnote rather than leaving the main clause opaque.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -180,3 +180,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/006/012.job-49654.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:47Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Eleazar appeals to the untiring, eternal ruler for mercy because lawless men are senselessly putting the Jews to death as though they were conspirators.
+  meaning_decisions:
+  - source_phrase: ἀπάναυε
+    prior_rendering: unceasing One
+    new_rendering: untiring One
+    rationale: The epithet describes one who never grows weary or ceases his activity; 'untiring' conveys that force distinctly from the following 'eternal.'
+  - source_phrase: νῦν ἐπίδε
+    prior_rendering: look now
+    new_rendering: look upon us now
+    rationale: The threatened people are the understood object of God's attention, and supplying them makes the urgent petition clear.
+  - source_phrase: καθʼ ὕβριν ἀνόμων ἀλόγιστον ἐκ τοῦ ζῆν μεθισταμένους
+    prior_rendering: through the insolent violence of lawless men are being irrationally removed from life
+    new_rendering: lawless men in their insolent violence are senselessly putting us to death
+    rationale: The active construction identifies the persecutors clearly, and removal from life means execution in this context.
+  - source_phrase: ἐν ἐπιβούλων τρόπῳ
+    prior_rendering: in the manner of plotters
+    new_rendering: as though we were conspirators
+    rationale: The likeliest sense is that the Jews are being treated as conspirators; the alternative that their persecutors act through treacherous plotting is preserved in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The review identified the obscurity of 'removed from life' and 'in the manner of plotters,' while the automated revert defended their form and ambiguity. I make execution explicit and preserve the serious alternative sense of plotting in a footnote rather than leaving the main clause opaque.

@@ -28,14 +28,11 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 37:8
 translation:
-  text: Every counselor says[b][a], “See!” but there is a counselor who trips him up.
-  philosophy: optimal-equivalence
+  text: Every counselor says, “Look!” but some take advantage of those they advise[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew 'See!' is difficult and may reflect a terse claim of insight or direction. The Greek parallel has a fuller warning about protecting yourself from a counselor, since he also counsels for himself.
-    reason: alternative_reading
-  - marker: b
-    text: Or 'who takes advantage of him.' The Hebrew literally says 'treads on him,' likely expressing harmful or self-serving counsel.
+    text: Literally, “treads on him.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: כל
@@ -128,14 +125,20 @@ revisions:
   from: Every counselor says, “See!” but there is a counselor who treads on him.
   to: Every counselor says, “See!” but there is a counselor who treads on him.
   rationale: Replaced 'treads on him' with 'trips him up' to better reflect the idiomatic sense of the Hebrew and improve natural English while preserving the contrast.
-
 - timestamp: '2026-05-18T02:58:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Every counselor says[b][a], “See!” but there is a counselor who trips him up.'
-  to: 'Every counselor says[b][a], “See!” but there is a counselor who trips him up.'
+  from: Every counselor says[b][a], “See!” but there is a counselor who trips him up.
+  to: Every counselor says[b][a], “See!” but there is a counselor who trips him up.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''treads on''].'
+- timestamp: '2026-11-09T19:08:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Every counselor says[b][a], “See!” but there is a counselor who trips him up.
+  to: Every counselor says, “Look!” but some take advantage of those they advise[a].
+  rationale: The earlier review sought an idiomatic rendering rather than literal “treads on him,” but “trips him up” narrows the image in an unsupported way. I adopt the exploitative sense already considered in the lexical history and preserve the image in a footnote.
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -155,3 +158,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/037/008.job-52020.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:10Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: A counselor's confident direction may conceal exploitation of the person seeking advice.
+  meaning_decisions:
+  - source_phrase: חזה
+    prior_rendering: See!
+    new_rendering: Look!
+    rationale: “Look!” is the more natural English equivalent of the terse directive without expanding its uncertain content.
+  - source_phrase: דורך עליו
+    prior_rendering: trips him up
+    new_rendering: take advantage of those they advise
+    rationale: Treading on a person suggests exploitation or oppressive treatment, not specifically causing a stumble; the person affected is the recipient of the counsel.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier review sought an idiomatic rendering rather than literal “treads on him,” but “trips him up” narrows the image in an unsupported way. I adopt the exploitative sense already considered in the lexical history and preserve the image in a footnote.

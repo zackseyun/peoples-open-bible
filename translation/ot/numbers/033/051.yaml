@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: דַּבֵּר֙ אֶל בְּנֵ֣י יִשְׂרָאֵ֔ל וְ/אָמַרְתָּ֖ אֲלֵ/הֶ֑ם כִּ֥י אַתֶּ֛ם עֹבְרִ֥ים אֶת הַ/יַּרְדֵּ֖ן אֶל אֶ֥רֶץ כְּנָֽעַן־־־׃
 translation:
-  text: Speak to the sons of Israel[a] and say to them, ‘When you cross[b] the Jordan into the land of Canaan,’
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the Israelites.' The Hebrew reads literally 'the sons of Israel.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'you are crossing' / 'you are about to cross.' The Hebrew participle expresses an imminent crossing.
-    reason: lexical_alternative
+  text: “Speak to the Israelites and say to them, ‘When you cross the Jordan into the land of Canaan,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: דַּבֵּר
   chosen: Speak
@@ -85,13 +78,12 @@ revisions:
   from: Speak to the sons of Israel and say to them, ‘When you cross the Jordan into the land of Canaan,’
   to: Speak to the sons of Israel and say to them, ‘For you are crossing the Jordan into the land of Canaan,’
   rationale: Changed “When” to “For” to reflect כִּי more accurately here; retained the rest as natural and complete.
-
 - timestamp: '2026-05-18T03:09:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Speak to the sons of Israel and say to them[b][a], ‘For you are crossing the Jordan into the land of Canaan,’'
-  to: 'Speak to the sons of Israel and say to them, ‘When you cross the Jordan into the land of Canaan,’'
+  from: Speak to the sons of Israel and say to them[b][a], ‘For you are crossing the Jordan into the land of Canaan,’
+  to: Speak to the sons of Israel and say to them, ‘When you cross the Jordan into the land of Canaan,’
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you cross''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -101,6 +93,13 @@ revisions:
   from: Speak to the sons of Israel and say to them, ‘When you cross the Jordan into the land of Canaan,’
   to: Speak to the sons of Israel[a] and say to them, ‘When you cross[b] the Jordan into the land of Canaan,’
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('the sons of Israel') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('you cross') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:34:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Speak to the sons of Israel[a] and say to them, ‘When you cross[b] the Jordan into the land of Canaan,’
+  to: “Speak to the Israelites and say to them, ‘When you cross the Jordan into the land of Canaan,
+  rationale: I weighed the review's 'For you are crossing' against the restored 'When you cross'; the following commands favor retaining the temporal clause. The quotation remains open because the instructions continue through verse 56, and the earlier notes are unnecessary.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -120,3 +119,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/033/051.job-42019.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:34:27Z'
+  change_level: refined
+  confidence: high
+  meaning: Moses is to tell the Israelites what they must do when they cross the Jordan into Canaan.
+  meaning_decisions:
+  - source_phrase: בְּנֵי יִשְׂרָאֵל
+    prior_rendering: the sons of Israel
+    new_rendering: the Israelites
+    rationale: The command is addressed to the people collectively; the familiar national designation conveys that meaning without a misleading restriction to males.
+  footnote_kinds: {}
+  history_weighed: I weighed the review's 'For you are crossing' against the restored 'When you cross'; the following commands favor retaining the temporal clause. The quotation remains open because the instructions continue through verse 56, and the earlier notes are unnecessary.

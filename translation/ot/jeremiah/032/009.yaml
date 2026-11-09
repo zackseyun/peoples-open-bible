@@ -4,15 +4,15 @@ source:
   edition: WLC
   text: וָֽ/אֶקְנֶה֙ אֶת הַ/שָּׂדֶ֔ה מֵ/אֵ֛ת חֲנַמְאֵ֥ל בֶּן דֹּדִ֖/י אֲשֶׁ֣ר בַּ/עֲנָת֑וֹת וָֽ/אֶשְׁקֲלָ/ה לּ/וֹ֙ אֶת הַ/כֶּ֔סֶף שִׁבְעָ֥ה שְׁקָלִ֖ים וַ/עֲשָׂרָ֥ה הַ/כָּֽסֶף־־־־׃
 translation:
-  text: 'So I bought the field from Hanamel the son of my uncle[a], who was at Anathoth[b], and I weighed out the silver to him: seventeen shekels of silver.'
-  philosophy: optimal-equivalence
+  text: So I bought the field at Anathoth[a] from my cousin Hanamel and weighed out seventeen shekels[b] of silver to pay him.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew literally, 'seven shekels and ten silver.' This is commonly understood as 'seventeen shekels of silver.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'from Hanamel, my cousin, who was in Anathoth.' The Hebrew more literally says 'Hanamel the son of my uncle, who was in Anathoth.'
+    text: Or, “from my cousin Hanamel, who was at Anathoth.”
     reason: alternative_reading
+  - marker: b
+    text: A shekel was a unit of weight; the payment here was weighed silver, not coins.
+    reason: cultural_note
 lexical_decisions:
 - source_word: וָאֶקְנֶה
   chosen: So I bought
@@ -100,7 +100,13 @@ revisions:
   from: 'So I bought the field at Anathoth from Hanamel the son of my uncle, and I weighed out the silver to him: seventeen shekels of silver.'
   to: 'So I bought the field from Hanamel the son of my uncle, who was at Anathoth, and I weighed out the silver to him: seventeen shekels of silver.'
   rationale: 'Reordered the phrase to reflect the Hebrew more closely: the field is bought from Hanamel, who is identified as being at Anathoth, rather than ''the field at Anathoth.'''
-
+- timestamp: '2026-11-09T17:57:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'So I bought the field from Hanamel the son of my uncle[a], who was at Anathoth[b], and I weighed out the silver to him: seventeen shekels of silver.'
+  to: So I bought the field at Anathoth[a] from my cousin Hanamel and weighed out seventeen shekels[b] of silver to pay him.
+  rationale: The automated revision attached Anathoth to Hanamel, but the first draft and lexical rationale attached it to the field. The repeated field location in verses 7–8 makes the first draft’s sense better supported in context, so I restore it and note the alternative.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -120,3 +126,31 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/032/009.job-67815.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:57:56Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jeremiah buys Hanamel’s field at Anathoth and pays seventeen shekels of weighed silver.
+  meaning_decisions:
+  - source_phrase: אֲשֶׁר בַּעֲנָתוֹת
+    prior_rendering: who was at Anathoth
+    new_rendering: the field at Anathoth
+    rationale: The repeated identification of the field’s location in verses 7–8 favors attaching the location to the field; the alternative attachment to Hanamel is noted.
+  - source_phrase: חֲנַמְאֵל בֶּן דֹּדִי
+    prior_rendering: Hanamel the son of my uncle
+    new_rendering: my cousin Hanamel
+    rationale: States the family relationship naturally without changing the seller’s identity.
+  - source_phrase: וָאֶשְׁקֲלָה לּוֹ אֶת הַכֶּסֶף
+    prior_rendering: 'I weighed out the silver to him: seventeen shekels of silver'
+    new_rendering: weighed out seventeen shekels of silver to pay him
+    rationale: Retains the concrete weighing of silver while making its function as payment explicit.
+  footnote_kinds:
+    a: alternative_meaning
+    b: cultural_background
+  history_weighed: The automated revision attached Anathoth to Hanamel, but the first draft and lexical rationale attached it to the field. The repeated field location in verses 7–8 makes the first draft’s sense better supported in context, so I restore it and note the alternative.

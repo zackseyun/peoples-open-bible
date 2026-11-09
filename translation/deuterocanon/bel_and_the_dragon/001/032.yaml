@@ -10,11 +10,11 @@ source:
   validation: normalized_direct_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Bel extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: There were seven lions in the pit[a], and each day they were given two bodies and two sheep; but then nothing was given to them, so that they might devour Daniel.
-  philosophy: optimal-equivalence
+  text: There were seven lions in the pit. They were given two human bodies[a] and two sheep each day, but this time their food was withheld so that they would devour Daniel.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'two carcasses' or 'two corpses' for 'two bodies'; the Greek says 'bodies' (σώματα), and the context suggests food for the lions.
+    text: Literally, “two bodies”; the text does not specify whether these were corpses or people delivered alive.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: λάκκῳ
@@ -22,7 +22,7 @@ lexical_decisions:
   alternatives:
   - den
   lexicon: LSJ
-  rationale: "The Greek literally denotes a pit or cistern-like hole. 'Pit' stays closer to the source wording than the more interpretive 'den,' though the context is lions confined there. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'The Greek literally denotes a pit or cistern-like hole. ''Pit'' stays closer to the source wording than the more interpretive ''den,'' though the context is lions confined there. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: ἑπτὰ λέοντες
   chosen: seven lions
   lexicon: LSJ
@@ -89,7 +89,6 @@ revision_pass:
   timestamp: '2026-04-23T15:38:40Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -117,3 +116,33 @@ revisions:
   from: Now there were seven lions in the pit[a], and each day they were given two bodies and two sheep; but then nothing was given to them, so that they might devour Daniel.
   to: There were seven lions in the pit[a], and each day they were given two bodies and two sheep; but then nothing was given to them, so that they might devour Daniel.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T19:01:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: There were seven lions in the pit[a], and each day they were given two bodies and two sheep; but then nothing was given to them, so that they might devour Daniel.
+  to: There were seven lions in the pit. They were given two human bodies[a] and two sheep each day, but this time their food was withheld so that they would devour Daniel.
+  rationale: The recorded history made only a discourse-marker cleanup, which is retained. The lexical discussion supports human bodies but did not establish corpses specifically, so the translation clarifies the referent while preserving that uncertainty.
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:04Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The seven lions are denied their usual daily food so that they will devour Daniel.
+  meaning_decisions:
+  - source_phrase: δύο σώματα
+    prior_rendering: two bodies
+    new_rendering: two human bodies
+    rationale: The contrast with the separately counted sheep indicates human bodies, but the wording does not settle whether the people were already dead.
+  - source_phrase: τότε δὲ οὐκ ἐδόθη αὐτοῖς, ἵνα καταφάγωσιν τὸν Δανιήλ
+    prior_rendering: but then nothing was given to them, so that they might devour Daniel
+    new_rendering: but this time their food was withheld so that they would devour Daniel
+    rationale: The contrast is between customary feeding and deliberate deprivation on this occasion, with Daniel’s death as the intended result.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The recorded history made only a discourse-marker cleanup, which is retained. The lexical discussion supports human bodies but did not establish corpses specifically, so the translation clarifies the referent while preserving that uncertainty.

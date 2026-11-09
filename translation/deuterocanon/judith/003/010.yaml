@@ -16,18 +16,15 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And they encamped between Gaibai and the city of the Scythians[a], and he was there for a full month[c][b], to gather all the full complement of his forces.
-  philosophy: optimal-equivalence
+  text: They encamped between Gaibai and Scythopolis[a]. He stayed there for a full month to gather all his army’s equipment and supplies[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'Scythopolis'; Greek literally, 'the city of Scythians.'
-    reason: alternative_reading
+    text: Literally, 'the city of the Scythians.'
+    reason: lexical_alternative
   - marker: b
-    text: Greek 'a month of days,' an idiomatic expression for a month.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'all the equipment' or 'the complete number' of his forces; the Greek term can denote full military readiness or full complement.
-    reason: lexical_alternative
+    text: Alternatively, 'to assemble the full complement of his army'; the Greek term can denote equipment or a full complement.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: κατεστρατοπέδευσαν
   chosen: encamped
@@ -121,14 +118,20 @@ revisions:
   from: And they encamped between Gaibai and the city of Scythians, and he was there for a month of days, to gather all the full complement of his forces.
   to: And they encamped between Gaibai and the city of Scythians, and he was there for a month of days, to gather all the full complement of his forces.
   rationale: Changed 'the city of Scythians' to 'the city of the Scythians' for natural English and clearer reference, and rendered 'a month of days' as 'a full month' for idiomatic but faithful English.
-
 - timestamp: '2026-05-16T18:22:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they encamped between Gaibai and the city of the Scythians[a], and he was there for a full month[c][b], to gather all the full complement of his forces.'
-  to: 'And they encamped between Gaibai and the city of the Scythians[a], and he was there for a full month[c][b], to gather all the full complement of his forces.'
-  rationale: 'Restored drafter ''the city of Scythians'' (preserving the chosen anarthrous rendering) and ''for a month of days'' (preserving the chosen Hebraic literal idiom) per chosen renderings.'
+  from: And they encamped between Gaibai and the city of the Scythians[a], and he was there for a full month[c][b], to gather all the full complement of his forces.
+  to: And they encamped between Gaibai and the city of the Scythians[a], and he was there for a full month[c][b], to gather all the full complement of his forces.
+  rationale: Restored drafter 'the city of Scythians' (preserving the chosen anarthrous rendering) and 'for a month of days' (preserving the chosen Hebraic literal idiom) per chosen renderings.
+- timestamp: '2026-11-09T19:01:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they encamped between Gaibai and the city of the Scythians[a], and he was there for a full month[c][b], to gather all the full complement of his forces.
+  to: They encamped between Gaibai and Scythopolis[a]. He stayed there for a full month to gather all his army’s equipment and supplies[b].
+  rationale: I retain the review’s idiomatic 'full month' rather than the automated revert’s 'month of days.' Although the lexical record preferred 'full complement,' the noun’s equipment sense better supports the concrete gathering described here, with the earlier understanding preserved as an alternative.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -148,3 +151,31 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/003/010.job-50550.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:29Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The army encamps between Gaibai and Scythopolis, where Holofernes remains for a full month gathering military equipment and supplies.
+  meaning_decisions:
+  - source_phrase: Σκυθῶν πόλεως
+    prior_rendering: the city of the Scythians
+    new_rendering: Scythopolis
+    rationale: Uses the recognizable city name, while retaining its source wording in a note.
+  - source_phrase: ἦν ἐκεῖ
+    prior_rendering: he was there
+    new_rendering: He stayed there
+    rationale: The specified month and purpose describe a continuing stay, not simply presence at a location.
+  - source_phrase: συλλέξαι πᾶσαν τὴν ἀπαρτίαν τῆς δυνάμεως αὐτοῦ
+    prior_rendering: to gather all the full complement of his forces
+    new_rendering: to gather all his army’s equipment and supplies
+    rationale: The military noun most naturally denotes the army’s equipage or material provision; the serious alternative concerning its full complement remains in a note.
+  footnote_kinds:
+    a: literal_wording
+    b: alternative_meaning
+  history_weighed: I retain the review’s idiomatic 'full month' rather than the automated revert’s 'month of days.' Although the lexical record preferred 'full complement,' the noun’s equipment sense better supports the concrete gathering described here, with the earlier understanding preserved as an alternative.

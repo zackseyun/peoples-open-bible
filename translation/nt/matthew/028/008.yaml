@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ ⸀ἀπελθοῦσαι ταχὺ ἀπὸ τοῦ μνημείου μετὰ φόβου καὶ χαρᾶς μεγάλης ἔδραμον ἀπαγγεῖλαι τοῖς μαθηταῖς αὐτοῦ.
 translation:
-  text: And leaving the tomb quickly[a], with fear and great joy, they ran to report to his disciples.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'with awe and great joy.' The Greek word for 'fear' can also carry the sense of reverent awe in this context.
-    reason: lexical_alternative
+  text: With fear and great joy, they quickly left the tomb and ran to tell his disciples the news.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀπελθοῦσαι
   lemma: ἀπέρχομαι
@@ -89,14 +85,20 @@ revisions:
   from: And leaving the tomb quickly, with fear and great joy, they ran to report it to his disciples.
   to: And leaving the tomb quickly, with fear and great joy, they ran to report it to his disciples.
   rationale: Removed 'it' because no direct object is expressed in the Greek; otherwise retained the draft's accurate and natural rendering.
-
 - timestamp: '2026-05-18T03:00:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And leaving the tomb quickly[a], with fear and great joy, they ran to report to his disciples.'
-  to: 'And leaving the tomb quickly[a], with fear and great joy, they ran to report to his disciples.'
+  from: And leaving the tomb quickly[a], with fear and great joy, they ran to report to his disciples.
+  to: And leaving the tomb quickly[a], with fear and great joy, they ran to report to his disciples.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to report it''].'
+- timestamp: '2026-11-09T17:15:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And leaving the tomb quickly[a], with fear and great joy, they ran to report to his disciples.
+  to: With fear and great joy, they quickly left the tomb and ran to tell his disciples the news.
+  rationale: The first draft supplied the implicit object “it,” while a later review removed it solely because the Greek leaves it unexpressed. The purpose clause clearly concerns the news just announced, so I restore an explicit object and preserve the fear–joy tension emphasized in the lexical record.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -118,3 +120,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/028/008.job-57551.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:15:50Z'
+  change_level: refined
+  confidence: high
+  meaning: The women quickly leave the tomb and run to bring the disciples the news, experiencing fear and great joy together.
+  meaning_decisions:
+  - source_phrase: καὶ ἀπελθοῦσαι ταχὺ ἀπὸ τοῦ μνημείου μετὰ φόβου καὶ χαρᾶς μεγάλης
+    prior_rendering: And leaving the tomb quickly, with fear and great joy
+    new_rendering: With fear and great joy, they quickly left the tomb
+    rationale: A complete English clause makes their departure clear while keeping fear and joy together as the emotions accompanying their response.
+  - source_phrase: ἔδραμον ἀπαγγεῖλαι τοῖς μαθηταῖς αὐτοῦ
+    prior_rendering: they ran to report to his disciples
+    new_rendering: ran to tell his disciples the news
+    rationale: The message is implicit in the Greek and obvious from the preceding announcement; supplying “the news” completes the English without expanding its content.
+  footnote_kinds: {}
+  history_weighed: The first draft supplied the implicit object “it,” while a later review removed it solely because the Greek leaves it unexpressed. The purpose clause clearly concerns the news just announced, so I restore an explicit object and preserve the fear–joy tension emphasized in the lexical record.

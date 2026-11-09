@@ -4,11 +4,11 @@ source:
   edition: SBLGNT
   text: Καὶ ἐγένετο ἐν τῷ ⸀πορεύεσθαι εἰς Ἰερουσαλὴμ καὶ αὐτὸς διήρχετο διὰ ⸀μέσον Σαμαρείας καὶ Γαλιλαίας.
 translation:
-  text: And it happened that[a], as he was going to Jerusalem, he was passing through the midst of Samaria and Galilee.
-  philosophy: optimal-equivalence
+  text: On his way to Jerusalem, Jesus was traveling along the border between Samaria and Galilee[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'he was passing through the midst of Samaria and Galilee.' The Greek expression can be understood either as movement between the two regions or through the border area separating them.
+    text: Or “through the midst of Samaria and Galilee.”
     reason: alternative_reading
 lexical_decisions:
 - source_word: ἐγένετο
@@ -79,14 +79,20 @@ revisions:
   from: And it happened that, as he was going to Jerusalem, he was passing along between Samaria and Galilee.
   to: And it happened that, as he was going to Jerusalem, he was passing along between Samaria and Galilee.
   rationale: Revised 'passing along between' to 'passing through the midst of' to reflect διήρχετο διὰ μέσον more closely and preserve the formal register.
-
 - timestamp: '2026-05-18T03:00:55Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And it happened that[a], as he was going to Jerusalem, he was passing through the midst of Samaria and Galilee.'
-  to: 'And it happened that[a], as he was going to Jerusalem, he was passing through the midst of Samaria and Galilee.'
+  from: And it happened that[a], as he was going to Jerusalem, he was passing through the midst of Samaria and Galilee.
+  to: And it happened that[a], as he was going to Jerusalem, he was passing through the midst of Samaria and Galilee.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was passing along''].'
+- timestamp: '2026-11-09T17:13:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And it happened that[a], as he was going to Jerusalem, he was passing through the midst of Samaria and Galilee.
+  to: On his way to Jerusalem, Jesus was traveling along the border between Samaria and Galilee[a].
+  rationale: The first draft and documented lexical decisions support movement between the regions; the later automated rationale favored formal resemblance rather than a clearer geographical meaning. I return to the border-area understanding and preserve the serious alternative in a note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -109,3 +115,26 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/nt/luke/017/011.job-38979.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:13:02Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Jesus continues his journey to Jerusalem through the area between Samaria and Galilee.
+  meaning_decisions:
+  - source_phrase: Καὶ ἐγένετο ἐν τῷ πορεύεσθαι εἰς Ἰερουσαλὴμ
+    prior_rendering: And it happened that, as he was going to Jerusalem
+    new_rendering: On his way to Jerusalem
+    rationale: Renders the narrative introduction and temporal construction without an empty event formula.
+  - source_phrase: καὶ αὐτὸς διήρχετο διὰ μέσον Σαμαρείας καὶ Γαλιλαίας
+    prior_rendering: he was passing through the midst of Samaria and Galilee
+    new_rendering: Jesus was traveling along the border between Samaria and Galilee
+    rationale: Uses the well-supported sense of movement through the intervening border area, rather than implying a journey through the centers of both regions.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and documented lexical decisions support movement between the regions; the later automated rationale favored formal resemblance rather than a clearer geographical meaning. I return to the border-area understanding and preserve the serious alternative in a note.

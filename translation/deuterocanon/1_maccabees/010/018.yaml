@@ -30,12 +30,12 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: with these words[a], saying, “King Alexander to his brother
-  philosophy: optimal-equivalence
+  text: 'with these words: “King Alexander to his brother[a]'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Greek text supplied for this verse appears incomplete and reads like the opening of a letter or citation formula rather than a full sentence. This translation therefore stays very close to the extant wording and does not reconstruct missing material.
-    reason: textual_variant
+    text: “Brother” is a diplomatic form of address here, not a claim of family relationship.
+    reason: cultural_note
 lexical_decisions:
 - source_word: κατὰ
   chosen: according to
@@ -100,14 +100,20 @@ revisions:
   from: according to these words, saying, King Alexander to his brother
   to: according to these words, saying, King Alexander to his brother
   rationale: Changed 'according to these words' to the more natural epistolary formula 'with these words.' Added opening quotation mark for the letter heading. Retained the incomplete phrase as in the source fragment.
-
 - timestamp: '2026-05-18T02:58:36Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'with these words[a], saying, “King Alexander to his brother'
-  to: 'with these words[a], saying, “King Alexander to his brother'
+  from: with these words[a], saying, “King Alexander to his brother
+  to: with these words[a], saying, “King Alexander to his brother
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''according to''].'
+- timestamp: '2026-11-09T18:52:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: with these words[a], saying, “King Alexander to his brother
+  to: 'with these words: “King Alexander to his brother[a]'
+  rationale: 'The history correctly preserved the open letter heading, but its incompleteness reflects the verse boundary: the recipient’s name follows in verse 19. I preserve that boundary and replace the earlier incompleteness note with the diplomatic meaning of “brother.”'
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -127,3 +133,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/010/018.job-48526.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:20Z'
+  change_level: refined
+  confidence: high
+  meaning: The letter opens with King Alexander addressing its recipient as his brother, a diplomatic term of honor.
+  meaning_decisions:
+  - source_phrase: κατὰ τοὺς λόγους τούτους λέγων
+    prior_rendering: with these words, saying
+    new_rendering: 'with these words:'
+    rationale: This is a conventional introduction to quoted correspondence; the colon carries the function of “saying” without redundant wording.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: 'The history correctly preserved the open letter heading, but its incompleteness reflects the verse boundary: the recipient’s name follows in verse 19. I preserve that boundary and replace the earlier incompleteness note with the diplomatic meaning of “brother.”'

@@ -21,18 +21,8 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: That night was made known beforehand to our fathers[a], so that, knowing with certainty the oaths in which they had trusted[c][b], they might be encouraged.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'was foreknown by our fathers.' The Greek verb can be rendered more literally this way, but in context it likely means that the night was disclosed to them beforehand.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'our ancestors.' The Greek literally says 'our fathers.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'they might be encouraged' / 'they might be of good cheer.'
-    reason: lexical_alternative
+  text: That night was made known beforehand to our fathers, so that they might take courage, fully assured of the oaths in which they had trusted.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐκείνη ἡ νύξ
   chosen: That night
@@ -119,14 +109,20 @@ revisions:
   from: That night was made known beforehand to our fathers, so that, knowing with certainty the oaths in which they had trusted, they might take courage.
   to: That night was made known beforehand to our fathers, so that, knowing with certainty the oaths in which they had trusted, they might take courage.
   rationale: Changed 'take courage' to 'be encouraged' for a more natural and formally appropriate rendering of ἐπευθυμήσωσιν, while preserving the sense. Kept the rest unchanged as accurate and complete.
-
 - timestamp: '2026-05-18T02:59:14Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'That night was made known beforehand to our fathers[a], so that, knowing with certainty the oaths in which they had trusted[c][b], they might be encouraged.'
-  to: 'That night was made known beforehand to our fathers[a], so that, knowing with certainty the oaths in which they had trusted[c][b], they might be encouraged.'
+  from: That night was made known beforehand to our fathers[a], so that, knowing with certainty the oaths in which they had trusted[c][b], they might be encouraged.
+  to: That night was made known beforehand to our fathers[a], so that, knowing with certainty the oaths in which they had trusted[c][b], they might be encouraged.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they might take courage''].'
+- timestamp: '2026-11-09T19:13:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: That night was made known beforehand to our fathers[a], so that, knowing with certainty the oaths in which they had trusted[c][b], they might be encouraged.
+  to: That night was made known beforehand to our fathers, so that they might take courage, fully assured of the oaths in which they had trusted.
+  rationale: The first draft and lexical rationale favor 'take courage,' while the later automated discussion offers the equivalent 'be encouraged.' I retain the established disclosure and oath language, restore the stronger expression of courage, and omit notes that merely repeat synonyms.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -146,3 +142,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/018/006.job-39364.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:13:20Z'
+  change_level: refined
+  confidence: high
+  meaning: The deliverance night was disclosed to Israel’s fathers beforehand so that assurance in the oaths they trusted would give them courage.
+  meaning_decisions:
+  - source_phrase: ἵνα ἀσφαλῶς εἰδότες οἷς ἐπίστευσαν ὅρκοις ἐπευθυμήσωσιν
+    prior_rendering: so that, knowing with certainty the oaths in which they had trusted, they might be encouraged
+    new_rendering: so that they might take courage, fully assured of the oaths in which they had trusted
+    rationale: The reordered clause makes assurance in the trusted oaths the ground of courage. 'Take courage' expresses the strengthening intended by the advance disclosure.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale favor 'take courage,' while the later automated discussion offers the equivalent 'be encouraged.' I retain the established disclosure and oath language, restore the stronger expression of courage, and omit notes that merely repeat synonyms.

@@ -16,17 +16,11 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 48:6
 translation:
-  text: who brought down kings to destruction[c][b][a], and nobles from their beds.
-  philosophy: optimal-equivalence
+  text: You brought kings down to destruction, and nobles from their beds to the grave[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'to the pit'; Hebrew שחת can denote a pit or ruin/destruction. The Greek parallel reads 'to destruction.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'nobles' or 'the honored ones.'
-    reason: lexical_alternative
-  - marker: c
-    text: The line likely echoes Elijah's judgments on kings and high-ranking figures, including a king confined to his bed (compare 2 Kings 1).
+    text: Compare 2 Kings 1:4, 16–17, where Elijah announces that King Ahaziah will die without leaving his bed.
     reason: cross_reference
 lexical_decisions:
 - source_word: המוריד
@@ -103,14 +97,20 @@ revisions:
   from: who brought down kings to destruction, and honored men from their beds.
   to: who brought down kings to destruction, and honored men from their beds.
   rationale: Replaced 'honored men' with 'nobles' to reflect נכבדים more accurately in context and removed the implied verb mismatch by keeping the ellipsis natural in English.
-
 - timestamp: '2026-05-18T02:59:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'who brought down kings to destruction[c][b][a], and nobles from their beds.'
-  to: 'who brought down kings to destruction[c][b][a], and nobles from their beds.'
+  from: who brought down kings to destruction[c][b][a], and nobles from their beds.
+  to: who brought down kings to destruction[c][b][a], and nobles from their beds.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and honored men''].'
+- timestamp: '2026-11-09T19:09:09Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: who brought down kings to destruction[c][b][a], and nobles from their beds.
+  to: You brought kings down to destruction, and nobles from their beds to the grave[a].
+  rationale: The current 'nobles' and the concrete beds image are retained. The history's recognition of ruin or death and its connection with the bedridden king justify clarifying the second half's implied destination.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -130,3 +130,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/048/006.job-52323.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:09Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Elijah's judgments brought kings and other people of high rank to ruin and death.
+  meaning_decisions:
+  - source_phrase: המוריד מלכים על שחת
+    prior_rendering: who brought down kings to destruction
+    new_rendering: You brought kings down to destruction
+    rationale: The complete sentence maintains the direct address and retains the downward image of ruin.
+  - source_phrase: ונכבדים ממטותם
+    prior_rendering: and nobles from their beds
+    new_rendering: and nobles from their beds to the grave
+    rationale: The destination expressed in the first half governs the parallel second half; making its deathward sense explicit prevents the line from sounding like merely removing people from beds.
+  footnote_kinds:
+    a: cross_reference
+  history_weighed: The current 'nobles' and the concrete beds image are retained. The history's recognition of ruin or death and its connection with the bedridden king justify clarifying the second half's implied destination.

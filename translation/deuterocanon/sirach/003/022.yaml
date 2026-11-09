@@ -26,12 +26,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 3:22
 translation:
-  text: Consider what[a] you have been commanded, and you have no business with hidden things.
-  philosophy: optimal-equivalence
+  text: Reflect on what you have been permitted to examine[a]; you have no business with hidden things.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew: ''what you have been permitted/authorized''; the Greek parallel reads ''what was commanded to you.'' The main text follows the Greek-supported sense of what has been assigned to your concern.'
-    reason: alternative_reading
+    text: The Greek reads, 'Consider what you have been commanded.'
+    reason: textual_variant
 lexical_decisions:
 - source_word: בַּמֶּה
   chosen: what
@@ -114,13 +114,12 @@ revisions:
   from: Consider what you have been commanded, and you have no business with hidden things.
   to: Consider what you have been assigned, and you have no business with hidden things.
   rationale: Changed 'commanded' to 'assigned' to better reflect הורשית ('you have been authorized/assigned') rather than a strict command. Kept the rest essentially the same for accuracy and natural formal English.
-
 - timestamp: '2026-05-18T03:09:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Consider what you have been assigned[a], and you have no business with hidden things.'
-  to: 'Consider what you have been commanded, and you have no business with hidden things.'
+  from: Consider what you have been assigned[a], and you have no business with hidden things.
+  to: Consider what you have been commanded, and you have no business with hidden things.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you have been commanded''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -130,6 +129,13 @@ revisions:
   from: Consider what you have been commanded, and you have no business with hidden things.
   to: Consider what[a] you have been commanded, and you have no business with hidden things.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('what') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:04:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Consider what[a] you have been commanded, and you have no business with hidden things.
+  to: Reflect on what you have been permitted to examine[a]; you have no business with hidden things.
+  rationale: The history acknowledges the Hebrew's permission language but selects 'commanded' from the Greek, after an automated revision briefly used 'assigned.' I give the supplied Hebrew priority here and preserve the Greek's genuine difference in a note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -149,3 +155,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/003/022.job-51049.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:04:32Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The hearer should reflect on matters he is permitted to examine and leave concealed matters outside his concern.
+  meaning_decisions:
+  - source_phrase: בַּמֶּה שֶׁהוּרְשֵׁיתָ הִתְבּוֹנֵן
+    prior_rendering: Consider what you have been commanded
+    new_rendering: Reflect on what you have been permitted to examine
+    rationale: The supplied Hebrew expresses permission or authorization, not an explicit command; the contrast with hidden matters defines the permitted sphere of inquiry.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The history acknowledges the Hebrew's permission language but selects 'commanded' from the Greek, after an automated revision briefly used 'assigned.' I give the supplied Hebrew priority here and preserve the Greek's genuine difference in a note.

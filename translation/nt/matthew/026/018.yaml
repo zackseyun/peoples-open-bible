@@ -4,18 +4,8 @@ source:
   edition: SBLGNT
   text: ὁ δὲ εἶπεν· Ὑπάγετε εἰς τὴν πόλιν πρὸς τὸν δεῖνα καὶ εἴπατε αὐτῷ· Ὁ διδάσκαλος λέγει· Ὁ καιρός μου ἐγγύς ἐστιν· πρὸς σὲ ποιῶ τὸ πάσχα μετὰ τῶν μαθητῶν μου.
 translation:
-  text: He said[a], “Go into the city to a certain man and tell him, ‘The Teacher says, “My time is near[b][c]. I am keeping the Passover with you with my disciples.”’”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'to so-and-so.' The Greek names an intentionally unspecified but particular person.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'I celebrate the Passover' or 'I observe the Passover.' The Greek idiom is literally 'I do/make the Passover.'
-    reason: lexical_alternative
-  - marker: c
-    text: Literally 'with you'; the sense in context is 'at your house' or 'at your place.'
-    reason: lexical_alternative
+  text: He said, “Go into the city to a certain man and tell him, ‘The Teacher says, “My time is near. I am keeping the Passover at your house with my disciples.”’”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ὑπάγετε
   chosen: Go
@@ -101,14 +91,20 @@ revisions:
   from: He said, “Go into the city to a certain man and tell him, ‘The Teacher says, “My time is near. I am keeping the Passover at your house with my disciples.”’”
   to: He said, “Go into the city to a certain man and tell him, ‘The Teacher says, “My time is near. I am keeping the Passover at your house with my disciples.”’”
   rationale: Revised “at your house” to “with you” for closer lexical accuracy to πρὸς σέ, which does not explicitly say ‘house.’
-
 - timestamp: '2026-05-18T03:00:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He said[a], “Go into the city to a certain man and tell him, ‘The Teacher says, “My time is near[c][b]. I am keeping the Passover with you with my disciples.”’”'
-  to: 'He said[a], “Go into the city to a certain man and tell him, ‘The Teacher says, “My time is near[c][b]. I am keeping the Passover with you with my disciples.”’”'
+  from: He said[a], “Go into the city to a certain man and tell him, ‘The Teacher says, “My time is near[c][b]. I am keeping the Passover with you with my disciples.”’”
+  to: He said[a], “Go into the city to a certain man and tell him, ‘The Teacher says, “My time is near[c][b]. I am keeping the Passover with you with my disciples.”’”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''at your house''].'
+- timestamp: '2026-11-09T17:15:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He said[a], “Go into the city to a certain man and tell him, ‘The Teacher says, “My time is near[b][c]. I am keeping the Passover with you with my disciples.”’”
+  to: He said, “Go into the city to a certain man and tell him, ‘The Teacher says, “My time is near. I am keeping the Passover at your house with my disciples.”’”
+  rationale: The first recorded draft and the lexical rationale both recognize the hosting idiom as “at your house.” The later preference for “with you” pursued lexical form at the expense of that meaning, so the earlier gain is restored; “My time is near” remains appropriately open in scope.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -131,3 +127,21 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/026/018.job-57439.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:15:33Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jesus directs the disciples to an unnamed man in the city with a message that his time is near and that he will keep Passover at the man’s house with his disciples.
+  meaning_decisions:
+  - source_phrase: πρὸς σὲ ποιῶ τὸ πάσχα
+    prior_rendering: I am keeping the Passover with you
+    new_rendering: I am keeping the Passover at your house
+    rationale: In this hospitality context, πρὸς σέ identifies the host’s premises, not simply his companionship; “at your house” conveys the intended location.
+  footnote_kinds: {}
+  history_weighed: The first recorded draft and the lexical rationale both recognize the hosting idiom as “at your house.” The later preference for “with you” pursued lexical form at the expense of that meaning, so the earlier gain is restored; “My time is near” remains appropriately open in scope.

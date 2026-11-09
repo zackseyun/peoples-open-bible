@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וְ/לִ/בְנֵ֣י לֵוִ֔י הִנֵּ֥ה נָתַ֛תִּי כָּל מַֽעֲשֵׂ֥ר בְּ/יִשְׂרָאֵ֖ל לְ/נַחֲלָ֑ה חֵ֤לֶף עֲבֹֽדָתָ/ם֙ אֲשֶׁר הֵ֣ם עֹֽבְדִ֔ים אֶת עֲבֹדַ֖ת אֹ֥הֶל מוֹעֵֽד־־־׃
 translation:
-  text: And to the sons of Levi[a], behold, I have given every tithe in Israel as an inheritance, in return for the service that they perform[c][b], the service of the tent of meeting.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'all the tithe in Israel.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'instead of their service' or 'as compensation for their service.'
-    reason: lexical_alternative
-  - marker: c
-    text: That is, the tabernacle, where the Levites carried out their assigned duties.
-    reason: cultural_note
+  text: As for the Levites, I have given them every tithe in Israel as an inheritance in return for their service at the tent of meeting.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְ/לִ/בְנֵי לֵוִי
   chosen: And to the sons of Levi
@@ -111,14 +101,20 @@ revisions:
   from: And to the sons of Levi, behold, I have given every tithe in Israel as an inheritance, in return for their service that they perform, the service of the tent of meeting.
   to: And to the sons of Levi, behold, I have given every tithe in Israel as an inheritance, in return for their service that they perform, the service of the tent of meeting.
   rationale: Changed 'their service' to 'the service' to reflect the Hebrew more directly and avoid an unnecessary possessive not explicit in the source.
-
 - timestamp: '2026-05-18T02:58:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And to the sons of Levi[a], behold, I have given every tithe in Israel as an inheritance, in return for the service that they perform[c][b], the service of the tent of meeting.'
-  to: 'And to the sons of Levi[a], behold, I have given every tithe in Israel as an inheritance, in return for the service that they perform[c][b], the service of the tent of meeting.'
+  from: And to the sons of Levi[a], behold, I have given every tithe in Israel as an inheritance, in return for the service that they perform[c][b], the service of the tent of meeting.
+  to: And to the sons of Levi[a], behold, I have given every tithe in Israel as an inheritance, in return for the service that they perform[c][b], the service of the tent of meeting.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''their service''].'
+- timestamp: '2026-11-09T18:30:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And to the sons of Levi[a], behold, I have given every tithe in Israel as an inheritance, in return for the service that they perform[c][b], the service of the tent of meeting.
+  to: As for the Levites, I have given them every tithe in Israel as an inheritance in return for their service at the tent of meeting.
+  rationale: The recorded passes debate “their service” versus “the service,” but the Hebrew explicitly includes the possessive suffix. I retain that meaning and the documented distinction between inheritance and compensation while consolidating the repetitive construction.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -138,3 +134,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/018/021.job-41491.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:30:02Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Yahweh gives Israel’s tithes to the Levites as their inheritance in compensation for their sanctuary service.
+  meaning_decisions:
+  - source_phrase: וְלִבְנֵי לֵוִי הִנֵּה נָתַתִּי
+    prior_rendering: And to the sons of Levi, behold, I have given
+    new_rendering: As for the Levites, I have given them
+    rationale: The wording naturally marks the transition from Aaron’s provision to the Levites’ provision while retaining the declaration’s emphasis.
+  - source_phrase: חֵלֶף עֲבֹדָתָם אֲשֶׁר הֵם עֹבְדִים אֶת עֲבֹדַת אֹהֶל מוֹעֵד
+    prior_rendering: in return for the service that they perform, the service of the tent of meeting
+    new_rendering: in return for their service at the tent of meeting
+    rationale: The repeated service construction identifies one activity, not two; the concise English retains both the sanctuary duties and their compensation.
+  footnote_kinds: {}
+  history_weighed: The recorded passes debate “their service” versus “the service,” but the Hebrew explicitly includes the possessive suffix. I retain that meaning and the documented distinction between inheritance and compensation while consolidating the repetitive construction.

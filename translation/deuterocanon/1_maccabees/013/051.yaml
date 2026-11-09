@@ -9,14 +9,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And he entered it on the twenty-third day of the second month, in the one hundred seventy-first year, with praise and palm branches and with harps[a] and cymbals and stringed instruments[b] and with hymns and songs, because a great enemy had been crushed out of Israel.
-  philosophy: optimal-equivalence
+  text: On the twenty-third day of the second month, in the one hundred seventy-first year, Simon entered the citadel with praise and palm branches, with lyres, cymbals, and harps[a], and with hymns and songs, because a great enemy had been crushed and removed from Israel.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'lyres' for 'harps' (κινύραις); the exact ancient instrument is not fully certain in modern English.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'harps' or 'psalteries' for 'stringed instruments' (νάβλαις); the Greek names a specific stringed instrument, but exact identification is uncertain.
+    text: The Greek names rendered 'lyres' and 'harps' refer to distinct ancient stringed instruments whose exact forms are uncertain.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: εἰσῆλθεν
@@ -158,13 +155,12 @@ revisions:
   from: And he entered it on the twenty-third day of the second month, in the one hundred seventy-first year, with praise and palm branches and with harps and cymbals and stringed instruments and with hymns and songs, because a great enemy had been crushed out of Israel.
   to: And he entered it on the twenty-third day of the second month, in the one hundred seventy-first year, with praise and palm branches and with harps and cymbals and lyres and with hymns and songs, because a great enemy had been crushed out of Israel.
   rationale: Replaced 'stringed instruments' with 'lyres' to render νάβλαις more specifically and naturally alongside the other named instruments. No other changes needed.
-
 - timestamp: '2026-05-18T03:09:47Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he entered it on the twenty-third day of the second month[a], in the one hundred seventy-first year, with praise and palm branches and with harps and cymbals and lyres and with hymns and songs[b], because a great enemy had been crushed out of Israel.'
-  to: 'And he entered it on the twenty-third day of the second month, in the one hundred seventy-first year, with praise and palm branches and with harps and cymbals and stringed instruments and with hymns and songs, because a great enemy had been crushed out of Israel.'
+  from: And he entered it on the twenty-third day of the second month[a], in the one hundred seventy-first year, with praise and palm branches and with harps and cymbals and lyres and with hymns and songs[b], because a great enemy had been crushed out of Israel.
+  to: And he entered it on the twenty-third day of the second month, in the one hundred seventy-first year, with praise and palm branches and with harps and cymbals and stringed instruments and with hymns and songs, because a great enemy had been crushed out of Israel.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''stringed instruments''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -174,6 +170,13 @@ revisions:
   from: And he entered it on the twenty-third day of the second month, in the one hundred seventy-first year, with praise and palm branches and with harps and cymbals and stringed instruments and with hymns and songs, because a great enemy had been crushed out of Israel.
   to: And he entered it on the twenty-third day of the second month, in the one hundred seventy-first year, with praise and palm branches and with harps[a] and cymbals and stringed instruments[b] and with hymns and songs, because a great enemy had been crushed out of Israel.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('harps') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('stringed instruments') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:53:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he entered it on the twenty-third day of the second month, in the one hundred seventy-first year, with praise and palm branches and with harps[a] and cymbals and stringed instruments[b] and with hymns and songs, because a great enemy had been crushed out of Israel.
+  to: On the twenty-third day of the second month, in the one hundred seventy-first year, Simon entered the citadel with praise and palm branches, with lyres, cymbals, and harps[a], and with hymns and songs, because a great enemy had been crushed and removed from Israel.
+  rationale: I retain the exact date and the full celebratory sequence. The earlier attempt to distinguish the instruments identified a real issue, but the source terms support 'lyres' for kinurai and 'harps' for nablai more naturally; their uncertain forms are acknowledged in one note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -193,3 +196,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/013/051.job-48775.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:34Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Simon enters the liberated citadel on the stated date amid praise, palms, music, and songs celebrating the removal of a great enemy from Israel.
+  meaning_decisions:
+  - source_phrase: εἰσῆλθεν εἰς αὐτήν
+    prior_rendering: he entered it
+    new_rendering: Simon entered the citadel
+    rationale: Both the subject and destination are understood from the preceding narrative and are made explicit.
+  - source_phrase: ἐν κινύραις καὶ ἐν κυμβάλοις καὶ ἐν νάβλαις
+    prior_rendering: with harps and cymbals and stringed instruments
+    new_rendering: with lyres, cymbals, and harps
+    rationale: The Greek distinguishes two named stringed instruments; these conventional equivalents preserve that distinction better than a named instrument followed by a generic category.
+  - source_phrase: συνετρίβη ἐχθρὸς μέγας ἐξ Ἰσραήλ
+    prior_rendering: a great enemy had been crushed out of Israel
+    new_rendering: a great enemy had been crushed and removed from Israel
+    rationale: English needs the defeat and removal expressed separately to convey the compressed Greek phrase without losing its crushing image.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: I retain the exact date and the full celebratory sequence. The earlier attempt to distinguish the instruments identified a real issue, but the source terms support 'lyres' for kinurai and 'harps' for nablai more naturally; their uncertain forms are acknowledged in one note.

@@ -4,12 +4,12 @@ source:
   edition: SBLGNT
   text: οὐ πεινάσουσιν ἔτι ⸀οὐδὲ διψήσουσιν ἔτι, οὐδὲ μὴ πέσῃ ἐπ’ αὐτοὺς ὁ ἥλιος οὐδὲ πᾶν καῦμα,
 translation:
-  text: They will hunger no more[a], nor thirst anymore; the sun will not strike them, nor any scorching heat.
-  philosophy: optimal-equivalence
+  text: They will hunger no more, nor thirst anymore; the sun will never strike them, nor will any scorching heat[a],
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'the sun will certainly not strike them.' The Greek uses an emphatic negation (οὐδὲ μὴ πέσῃ).
-    reason: lexical_alternative
+    text: Echoes Isaiah 49:10.
+    reason: cross_reference
 lexical_decisions:
 - source_word: πεινάσουσιν
   chosen: will hunger
@@ -90,14 +90,20 @@ revisions:
   from: They will hunger no more, nor thirst anymore; the sun will never fall on them, nor any scorching heat.
   to: They will hunger no more, nor thirst anymore; the sun will never fall on them, nor any scorching heat.
   rationale: Replaced 'will never fall on them' with 'will not strike them' to more accurately render πέσῃ ἐπ’ αὐτούς in natural English. Kept the rest substantially unchanged.
-
 - timestamp: '2026-05-18T03:00:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'They will hunger no more[a], nor thirst anymore; the sun will not strike them, nor any scorching heat.'
-  to: 'They will hunger no more[a], nor thirst anymore; the sun will not strike them, nor any scorching heat.'
+  from: They will hunger no more[a], nor thirst anymore; the sun will not strike them, nor any scorching heat.
+  to: They will hunger no more[a], nor thirst anymore; the sun will not strike them, nor any scorching heat.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will never fall on''].'
+- timestamp: '2026-11-09T20:32:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: They will hunger no more[a], nor thirst anymore; the sun will not strike them, nor any scorching heat.
+  to: They will hunger no more, nor thirst anymore; the sun will never strike them, nor will any scorching heat[a],
+  rationale: The recorded review's change from the sun “falling on” them to “striking” them is a meaning-based gain that I preserve. The earlier emphasis on strong negation is now carried by “never,” rather than left in a footnote.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -117,3 +123,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/revelation/007/016.job-47210.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:32:16Z'
+  change_level: refined
+  confidence: high
+  meaning: They will never again suffer hunger, thirst, or harm from the sun and scorching heat.
+  meaning_decisions:
+  - source_phrase: οὐδὲ μὴ πέσῃ ἐπ’ αὐτοὺς ὁ ἥλιος
+    prior_rendering: the sun will not strike them
+    new_rendering: the sun will never strike them
+    rationale: “Never” carries the emphatic future negation into the main text, making the permanence of the promise explicit.
+  footnote_kinds:
+    a: cross_reference
+  history_weighed: The recorded review's change from the sun “falling on” them to “striking” them is a meaning-based gain that I preserve. The earlier emphasis on strong negation is now carried by “never,” rather than left in a footnote.

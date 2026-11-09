@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: אֵלֶּה֩ רָאשֵׁ֨י הָ/אָב֧וֹת לַ/לְוִיִּ֛ם לְ/תֹלְדוֹתָ֖/ם רָאשִׁ֑ים אֵ֖לֶּה יָשְׁב֥וּ בִ/ירוּשָׁלִָֽם׃פ
 translation:
-  text: These were the heads of the fathers’ houses of the Levites[a], according to their generations, heads[b]. These lived in Jerusalem.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “chiefs” or “heads” for “chief men.” The Hebrew repeats the same root used earlier in the verse for emphasis.
-    reason: lexical_alternative
-  - marker: b
-    text: “Fathers’ houses” refers to clan or ancestral family units, not merely individual households.
-    reason: cultural_note
+  text: These were the heads of the Levites’ ancestral families, listed according to their lines of descent. These leaders lived in Jerusalem.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: רָאשֵׁי
   chosen: heads of
@@ -82,14 +75,20 @@ revisions:
   from: These were the heads of the fathers’ houses of the Levites, according to their generations, chief men. These lived in Jerusalem.
   to: These were the heads of the fathers’ houses of the Levites, according to their generations, chief men. These lived in Jerusalem.
   rationale: Replaced 'chief men' with 'heads' to reflect the repeated Hebrew term more directly and consistently within the verse.
-
 - timestamp: '2026-05-18T02:58:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'These were the heads of the fathers’ houses of the Levites[a], according to their generations, heads[b]. These lived in Jerusalem.'
-  to: 'These were the heads of the fathers’ houses of the Levites[a], according to their generations, heads[b]. These lived in Jerusalem.'
+  from: These were the heads of the fathers’ houses of the Levites[a], according to their generations, heads[b]. These lived in Jerusalem.
+  to: These were the heads of the fathers’ houses of the Levites[a], according to their generations, heads[b]. These lived in Jerusalem.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''chief men''].'
+- timestamp: '2026-11-09T17:20:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: These were the heads of the fathers’ houses of the Levites[a], according to their generations, heads[b]. These lived in Jerusalem.
+  to: These were the heads of the Levites’ ancestral families, listed according to their lines of descent. These leaders lived in Jerusalem.
+  rationale: The first draft’s “chief men” recognized the repeated noun’s emphasis on leadership. That meaning is retained, while the later formal repetition “heads ... heads” is replaced with a natural resumption.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -109,3 +108,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/1_chronicles/009/034.job-44520.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:20:00Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The listed men were ancestral family leaders among the Levites, identified by descent, and they lived in Jerusalem.
+  meaning_decisions:
+  - source_phrase: רָאשֵׁי הָאָבוֹת לַלְוִיִּם
+    prior_rendering: heads of the fathers’ houses of the Levites
+    new_rendering: heads of the Levites’ ancestral families
+    rationale: This identifies the inherited family units that the men led.
+  - source_phrase: לְתֹלְדוֹתָם
+    prior_rendering: according to their generations
+    new_rendering: listed according to their lines of descent
+    rationale: The phrase concerns genealogical classification, not merely the successive eras in which they lived.
+  - source_phrase: רָאשִׁים אֵלֶּה יָשְׁבוּ בִירוּשָׁלִָם
+    prior_rendering: heads. These lived in Jerusalem
+    new_rendering: These leaders lived in Jerusalem
+    rationale: The repeated designation of leadership is retained in the resumed subject rather than left as an isolated, confusing repetition.
+  footnote_kinds: {}
+  history_weighed: The first draft’s “chief men” recognized the repeated noun’s emphasis on leadership. That meaning is retained, while the later formal repetition “heads ... heads” is replaced with a natural resumption.

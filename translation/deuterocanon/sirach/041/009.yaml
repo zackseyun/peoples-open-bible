@@ -26,17 +26,68 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 41:9
 translation:
-  text: 'And if you are born, you will be born for a curse; and if you die, you will be allotted to a curse.'
+  text: If you increase in number, disaster awaits you[a]; if you have children, sorrow awaits you. If you fall, it will bring lasting rejoicing[b]; if you die, you will be cursed[c].
+  philosophy: dynamic
+  footnotes:
+  - marker: a
+    text: Literally, “if you multiply, through disaster”; the Hebrew is compressed.
+    reason: lexical_alternative
+  - marker: b
+    text: Or, “the world will rejoice.”
+    reason: alternative_reading
+  - marker: c
+    text: 'The Greek has a shorter form: “If you are born, you will be born into a curse; if you die, a curse will be your portion.”'
+    reason: textual_variant
 revisions:
 - timestamp: '2026-05-18T04:00:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If you prosper[a], it will be through disaster; and if you beget children, it will be for groaning. If you stumble, it will be for everlasting rejoicing; and if you die, it will be for a curse.'
-  to: 'And if you are born, you will be born for a curse; and if you die, you will be allotted to a curse.'
+  from: If you prosper[a], it will be through disaster; and if you beget children, it will be for groaning. If you stumble, it will be for everlasting rejoicing; and if you die, it will be for a curse.
+  to: And if you are born, you will be born for a curse; and if you die, you will be allotted to a curse.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you will be allotted'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+- timestamp: '2026-11-09T19:08:57Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And if you are born, you will be born for a curse; and if you die, you will be allotted to a curse.
+  to: If you increase in number, disaster awaits you[a]; if you have children, sorrow awaits you. If you fall, it will bring lasting rejoicing[b]; if you die, you will be cursed[c].
+  rationale: The first recorded draft represented all four Hebrew clauses, but the later automated substitution replaced them with the shorter Greek form. I restore the supplied Hebrew's full content, retaining the earlier temporal understanding of עולם while noting its alternative.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T04:00:00Z'
   unchanged: false
   changes_summary: 'doctrine_realignment: Sirach 41:9 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you will be allotted'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yah'
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:57Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The wicked face disaster as they increase, sorrow through their children, rejoicing at their downfall, and curses at death.
+  meaning_decisions:
+  - source_phrase: אם תפרו על ידי אסון
+    prior_rendering: And if you are born, you will be born for a curse
+    new_rendering: If you increase in number, disaster awaits you
+    rationale: The supplied Hebrew speaks of multiplying or increasing and associates that growth with disaster, rather than describing birth under a curse.
+  - source_phrase: ואם תולידו לאנחה
+    prior_rendering: Not represented in the current wording.
+    new_rendering: if you have children, sorrow awaits you
+    rationale: This restores the Hebrew's separate warning that having children brings grief.
+  - source_phrase: אם תכשלו לשמחת עולם
+    prior_rendering: Not represented in the current wording.
+    new_rendering: If you fall, it will bring lasting rejoicing
+    rationale: This restores the warning that the wicked's downfall occasions rejoicing; עולם is rendered temporally, with the serious alternative of worldwide rejoicing noted.
+  - source_phrase: ואם תמותו לקללה
+    prior_rendering: and if you die, you will be allotted to a curse
+    new_rendering: if you die, you will be cursed
+    rationale: The Hebrew states the outcome of death without an explicit verb of allotment; the new wording conveys that outcome directly.
+  footnote_kinds:
+    a: literal_wording
+    b: alternative_meaning
+    c: textual_variant
+  history_weighed: The first recorded draft represented all four Hebrew clauses, but the later automated substitution replaced them with the shorter Greek form. I restore the supplied Hebrew's full content, retaining the earlier temporal understanding of עולם while noting its alternative.

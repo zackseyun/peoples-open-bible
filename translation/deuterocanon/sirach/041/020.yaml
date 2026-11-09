@@ -26,12 +26,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 41:20
 translation:
-  text: Be ashamed of refusing a request[a], and of turning away the face of your neighbor.
-  philosophy: optimal-equivalence
+  text: Be ashamed of refusing to give what is asked of you, and of turning your neighbor away[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'The Hebrew here is uncertain and differs markedly from the Greek, which reads approximately: ''and from greeting in a matter of silence, and from looking at a woman who is a companion/courtesan.'' The main text follows the surviving Hebrew witness, but the divergence is significant.'
-    reason: alternative_reading
+    text: Literally, 'turning back the face of your neighbor,' an idiom for rejecting someone.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: ממנוע
   chosen: of refusing
@@ -119,14 +119,20 @@ revisions:
   from: Be ashamed of refusing a request, and of turning away your anger from your neighbor.[a]
   to: Be ashamed of refusing a request, and of turning away your anger from your neighbor.[a]
   rationale: 'Revised the second clause for lexical accuracy: Hebrew אפי רעך refers to ''the face of your neighbor,'' not ''your anger from your neighbor.'' Kept the formal structure and natural English.'
-
 - timestamp: '2026-05-18T02:58:53Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Be ashamed of refusing a request[a], and of turning away the face of your neighbor.'
-  to: 'Be ashamed of refusing a request[a], and of turning away the face of your neighbor.'
+  from: Be ashamed of refusing a request[a], and of turning away the face of your neighbor.
+  to: Be ashamed of refusing a request[a], and of turning away the face of your neighbor.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''your anger''].'
+- timestamp: '2026-11-09T19:08:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Be ashamed of refusing a request[a], and of turning away the face of your neighbor.
+  to: Be ashamed of refusing to give what is asked of you, and of turning your neighbor away[a].
+  rationale: The later review correctly recognized the neighbor's face rather than the first draft's 'your anger,' despite inconsistent automated-revert records. I preserve that lexical correction and carry the rejection idiom into intelligible English.
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -146,3 +152,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/041/020.job-52163.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:06Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Refusing requested generosity and dismissing a neighbor are things of which one should be ashamed.
+  meaning_decisions:
+  - source_phrase: ממנוע מתת שאלה
+    prior_rendering: of refusing a request
+    new_rendering: of refusing to give what is asked of you
+    rationale: The Hebrew includes giving as well as asking; the new wording identifies the refusal as withholding requested generosity rather than refusing any kind of request.
+  - source_phrase: מהשב אפי רעך
+    prior_rendering: of turning away the face of your neighbor
+    new_rendering: of turning your neighbor away
+    rationale: Turning back someone's face is a rejection idiom, not a literal instruction about the person's facial direction.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The later review correctly recognized the neighbor's face rather than the first draft's 'your anger,' despite inconsistent automated-revert records. I preserve that lexical correction and carry the rejection idiom into intelligible English.

@@ -20,15 +20,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: So he said these things[a]; but they, having been released in a moment, blessed their holy Savior God[b], having just escaped death.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'in a moment' or 'without delay.' The Greek idiom ἐν ἀμερεῖ χρόνῳ denotes a very short interval.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'their holy God and savior.' The Greek phrase can be understood as a compact string of titles for God.
-    reason: lexical_alternative
+  text: So the king spoke these words, and the Jews, released at once, blessed their holy God and Savior, having just escaped death.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐξέλεξεν
   chosen: spoke
@@ -119,14 +112,20 @@ revisions:
   from: So he spoke these things; but they, having been released in no time, blessed their holy savior God, having just escaped death.
   to: So he spoke these things; but they, having been released in no time, blessed their holy savior God, having just escaped death.
   rationale: Changed 'spoke' to 'said' for more natural formal English, 'in no time' to 'in a moment' for a more accurate rendering of ἐν ἀμερεῖ χρόνῳ, and capitalized 'Savior' as part of the divine title.
-
 - timestamp: '2026-05-16T19:37:32Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So he said these things[a]; but they, having been released in a moment, blessed their holy Savior God[b], having just escaped death.'
-  to: 'So he said these things[a]; but they, having been released in a moment, blessed their holy Savior God[b], having just escaped death.'
-  rationale: 'Restored drafter ''in no time'' (preserving the chosen idiomatic English rendering of ἐν ἀμερεῖ χρόνῳ) and ''their holy savior God'' (preserving the chosen lowercase compound) per chosen renderings.'
+  from: So he said these things[a]; but they, having been released in a moment, blessed their holy Savior God[b], having just escaped death.
+  to: So he said these things[a]; but they, having been released in a moment, blessed their holy Savior God[b], having just escaped death.
+  rationale: Restored drafter 'in no time' (preserving the chosen idiomatic English rendering of ἐν ἀμερεῖ χρόνῳ) and 'their holy savior God' (preserving the chosen lowercase compound) per chosen renderings.
+- timestamp: '2026-11-09T18:57:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So he said these things[a]; but they, having been released in a moment, blessed their holy Savior God[b], having just escaped death.
+  to: So the king spoke these words, and the Jews, released at once, blessed their holy God and Savior, having just escaped death.
+  rationale: The recorded revisions support immediate release and retain the weight of “blessed” and “Savior.” I preserve those gains while removing the awkward title sequence and notes whose points the main text now carries.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -146,3 +145,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/006/029.job-49671.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:11Z'
+  change_level: refined
+  confidence: high
+  meaning: After the king’s declaration, the Jews were immediately released and blessed God for their escape from death.
+  meaning_decisions:
+  - source_phrase: ὁ μὲν οὖν ταῦτα ἐξέλεξεν· οἱ δὲ
+    prior_rendering: So he said these things; but they
+    new_rendering: So the king spoke these words, and the Jews
+    rationale: Naming the subjects makes the transition clear, while “and” conveys the narrative progression without suggesting opposition.
+  - source_phrase: τὸν ἅγιον σωτῆρα θεὸν αὐτῶν
+    prior_rendering: their holy Savior God
+    new_rendering: their holy God and Savior
+    rationale: This expresses the compact divine titles naturally in English while clearly identifying one referent.
+  footnote_kinds: {}
+  history_weighed: The recorded revisions support immediate release and retain the weight of “blessed” and “Savior.” I preserve those gains while removing the awkward title sequence and notes whose points the main text now carries.

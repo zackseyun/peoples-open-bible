@@ -28,14 +28,11 @@ source:
     note: MT parallel is APPROXIMATE -- 1 Esdras sometimes expands, conflates, or reorders the Hebrew. Use the MT hebrew as a sanity check on proper names and phrasing; the Greek remains the primary source text.
     reference: ''
 translation:
-  text: But the people are many[a], and it is the rainy season, and we are not able to stand outside[b]; and this is not a task of one day.
-  philosophy: optimal-equivalence
+  text: But there are many people, and it is the rainy season; we cannot remain outdoors[a]. This task cannot be completed in a single day
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Greek text here contains a difficult clause, 'and not we found' (καὶ οὐχ εὕρομεν), whose sense is uncertain in this context. The translation follows the verse's clear overall meaning, supported by the Hebrew parallel in Ezra 10:13.
-    reason: textual_variant
-  - marker: b
-    text: Or, more literally, 'it is a wintry season.'
+    text: The Greek also reads 'and we did not find,' a clause whose meaning is uncertain here and is not represented in the main text.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: τὸ πλῆθος πολὺ
@@ -115,14 +112,20 @@ revisions:
   from: But the people are many, and it is the rainy season, and we are not able to stand outside; and this is not a task for one day.
   to: But the people are many, and it is the rainy season, and we are not able to stand outside; and this is not a task for one day.
   rationale: Changed 'for one day' to 'of one day' to more closely reflect the Greek genitive construction while keeping natural formal English. The rest is accurate and complete.
-
 - timestamp: '2026-05-18T02:59:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But the people are many[a], and it is the rainy season, and we are not able to stand outside[b]; and this is not a task of one day.'
-  to: 'But the people are many[a], and it is the rainy season, and we are not able to stand outside[b]; and this is not a task of one day.'
+  from: But the people are many[a], and it is the rainy season, and we are not able to stand outside[b]; and this is not a task of one day.
+  to: But the people are many[a], and it is the rainy season, and we are not able to stand outside[b]; and this is not a task of one day.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''this is not a task for one day''].'
+- timestamp: '2026-11-09T18:50:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But the people are many[a], and it is the rainy season, and we are not able to stand outside[b]; and this is not a task of one day.
+  to: But there are many people, and it is the rainy season; we cannot remain outdoors[a]. This task cannot be completed in a single day
+  rationale: The prior translation responsibly noted the obscure additional Greek clause rather than forcing a meaning, and that limitation remains explicit. The review's 'of one day' prioritized Greek syntax; the revised wording states the procedural meaning supported by the context and Ezra 10:13.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -142,3 +145,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/009/011.job-47907.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:50:47Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The people explain that their numbers and the rainy weather prevent a prolonged outdoor assembly, and that the task requires more than one day.
+  meaning_decisions:
+  - source_phrase: οὐκ ἰσχύσομεν στῆναι αἴθριοι
+    prior_rendering: we are not able to stand outside
+    new_rendering: we cannot remain outdoors
+    rationale: The difficulty is enduring continued exposure to the weather, not an inability to assume a standing posture.
+  - source_phrase: τὸ ἔργον ἡμῖν οὐκ ἔστιν ἡμέρας μιᾶς
+    prior_rendering: this is not a task of one day
+    new_rendering: This task cannot be completed in a single day
+    rationale: The genitive construction concerns the time required to finish the work, not the kind of task.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The prior translation responsibly noted the obscure additional Greek clause rather than forcing a meaning, and that limitation remains explicit. The review's 'of one day' prioritized Greek syntax; the revised wording states the procedural meaning supported by the context and Ezra 10:13.

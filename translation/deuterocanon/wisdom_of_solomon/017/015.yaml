@@ -22,15 +22,8 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: Some were driven by terrifying apparitions[a], and others were paralyzed by the betrayal of their soul[b]; for sudden and unexpected fear came upon them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'phantoms' or 'visions.' The Greek refers to frightening appearances, likely spectral or illusory.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'were paralyzed by the betrayal of the soul.' The phrase may mean an inward collapse in which their own inner self seemed to turn against them.
-    reason: alternative_reading
+  text: At times they were hounded by terrifying apparitions; at other times their own souls betrayed them and left them paralyzed, for sudden and unexpected fear came upon them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: τέρασιν
   chosen: monstrous
@@ -132,14 +125,20 @@ revisions:
   from: Some were driven by monstrous apparitions, and others were paralyzed by the betrayal of their soul; for sudden and unexpected fear came upon them.
   to: Some were driven by monstrous apparitions, and others were paralyzed by the betrayal of their soul; for sudden and unexpected fear came upon them.
   rationale: Changed 'monstrous apparitions' to 'terrifying apparitions' for more natural English and closer sense of τέρασιν φαντασμάτων as frightening prodigies/apparitions rather than 'monstrous.'
-
 - timestamp: '2026-05-18T03:00:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Some were driven by terrifying apparitions[a], and others were paralyzed by the betrayal of their soul[b]; for sudden and unexpected fear came upon them.'
-  to: 'Some were driven by terrifying apparitions[a], and others were paralyzed by the betrayal of their soul[b]; for sudden and unexpected fear came upon them.'
+  from: Some were driven by terrifying apparitions[a], and others were paralyzed by the betrayal of their soul[b]; for sudden and unexpected fear came upon them.
+  to: Some were driven by terrifying apparitions[a], and others were paralyzed by the betrayal of their soul[b]; for sudden and unexpected fear came upon them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''monstrous''].'
+- timestamp: '2026-11-09T19:12:57Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Some were driven by terrifying apparitions[a], and others were paralyzed by the betrayal of their soul[b]; for sudden and unexpected fear came upon them.
+  to: At times they were hounded by terrifying apparitions; at other times their own souls betrayed them and left them paralyzed, for sudden and unexpected fear came upon them.
+  rationale: The review’s preference for “terrifying apparitions” clarifies the uncanny fear better than the first draft’s “monstrous,” so the current wording is retained there. The lexical discussion of inward betrayal supports clarifying its direction without discarding “souls” or specifying a psychological mechanism.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -159,3 +158,29 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/017/015.job-39460.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:12:57Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Sudden fear alternately drove the Egyptians before terrifying apparitions and paralyzed them as their own inner strength failed them.
+  meaning_decisions:
+  - source_phrase: τὰ μὲν ... τὰ δὲ
+    prior_rendering: Some ... and others
+    new_rendering: At times ... at other times
+    rationale: The neuter accusative expressions function adverbially, describing alternating experiences rather than necessarily dividing the people into two groups.
+  - source_phrase: τέρασιν ἠλαύνοντο φαντασμάτων
+    prior_rendering: were driven by terrifying apparitions
+    new_rendering: were hounded by terrifying apparitions
+    rationale: “Hounded” makes the force of being driven or harried clear without suggesting that the apparitions merely guided their actions.
+  - source_phrase: τῆς ψυχῆς παρελύοντο προδοσίᾳ
+    prior_rendering: were paralyzed by the betrayal of their soul
+    new_rendering: their own souls betrayed them and left them paralyzed
+    rationale: The active construction clarifies that their own inner life failed them while preserving the striking betrayal metaphor and avoiding a narrower identification with conscience.
+  footnote_kinds: {}
+  history_weighed: The review’s preference for “terrifying apparitions” clarifies the uncanny fear better than the first draft’s “monstrous,” so the current wording is retained there. The lexical discussion of inward betrayal supports clarifying its direction without discarding “souls” or specifying a psychological mechanism.

@@ -4,14 +4,14 @@ source:
   edition: SBLGNT
   text: καὶ ἐποίησας αὐτοὺς τῷ θεῷ ἡμῶν ⸀βασιλείαν καὶ ἱερεῖς, καὶ ⸀βασιλεύουσιν ἐπὶ τῆς γῆς.
 translation:
-  text: and you made them a kingdom and priests to our God[b][a], and they reign on the earth.
-  philosophy: optimal-equivalence
+  text: and you made them a kingdom[a] and priests for our God, and they reign on the earth[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Some manuscripts read “kings and priests” instead of “a kingdom and priests.”
+    text: Some manuscripts read “kings” instead of “a kingdom.”
     reason: textual_variant
   - marker: b
-    text: Some manuscripts read “they reign on the earth” instead of “they will reign on the earth.”
+    text: Some manuscripts read “they will reign on the earth.”
     reason: textual_variant
 lexical_decisions:
 - source_word: ἐποίησας
@@ -89,14 +89,20 @@ revisions:
   from: and you made them a kingdom and priests to our God, and they will reign on the earth.
   to: and you made them a kingdom and priests to our God, and they will reign on the earth.
   rationale: Changed 'will reign' to 'reign' to reflect the present-tense reading in the provided Greek text (βασιλεύουσιν).
-
 - timestamp: '2026-05-18T03:01:02Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and you made them a kingdom and priests to our God[b][a], and they reign on the earth.'
-  to: 'and you made them a kingdom and priests to our God[b][a], and they reign on the earth.'
+  from: and you made them a kingdom and priests to our God[b][a], and they reign on the earth.
+  to: and you made them a kingdom and priests to our God[b][a], and they reign on the earth.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they will reign''].'
+- timestamp: '2026-11-09T20:35:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and you made them a kingdom and priests to our God[b][a], and they reign on the earth.
+  to: and you made them a kingdom[a] and priests for our God, and they reign on the earth[b].
+  rationale: No maintainer revision is recorded. I retained “a kingdom” and the current present-tense “they reign,” since the supplied Greek βασιλεύουσιν is present, despite the conflicting tense descriptions in the earlier deliberations; the variant note has been corrected accordingly.
 cross_check:
   status: moderate_agreement
   agreement: 0.8
@@ -119,3 +125,23 @@ cross_check:
     major-issues: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/revelation/005/010.job-57690.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:35:21Z'
+  change_level: refined
+  confidence: high
+  meaning: The Lamb has made the people he redeemed a kingdom and priests for God, and they reign on the earth.
+  meaning_decisions:
+  - source_phrase: τῷ θεῷ ἡμῶν
+    prior_rendering: to our God
+    new_rendering: for our God
+    rationale: “For” naturally expresses that the redeemed are constituted as a kingdom and priests belonging to and serving God; “to” is awkward in this English construction.
+  footnote_kinds:
+    a: textual_variant
+    b: textual_variant
+  history_weighed: No maintainer revision is recorded. I retained “a kingdom” and the current present-tense “they reign,” since the supplied Greek βασιλεύουσιν is present, despite the conflicting tense descriptions in the earlier deliberations; the variant note has been corrected accordingly.

@@ -4,15 +4,15 @@ source:
   edition: WLC
   text: וַ/יֹּ֨אמֶר יְהוָ֜ה אֵלַ֗/י הַשְׁלִיכֵ֨/הוּ֙ אֶל הַ/יּוֹצֵ֔ר אֶ֣דֶר הַ/יְקָ֔ר אֲשֶׁ֥ר יָקַ֖רְתִּי מֵֽ/עֲלֵי/הֶ֑ם וָֽ/אֶקְחָ/ה֙ שְׁלֹשִׁ֣ים הַ/כֶּ֔סֶף וָ/אַשְׁלִ֥יךְ אֹת֛/וֹ בֵּ֥ית יְהוָ֖ה אֶל הַ/יּוֹצֵֽר־־׃
 translation:
-  text: Then Yahweh said to me[a], “Throw it to the potter—the magnificent price at which I was valued by them.” So I took the thirty pieces of silver and threw it into the house of Yahweh[b], to the potter.
-  philosophy: optimal-equivalence
+  text: Then Yahweh said to me, “Throw it to the potter[a]—what a magnificent price they put on me[b]!” So I took the thirty pieces of silver and threw them to the potter in Yahweh’s temple.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew 'the potter.' Some interpreters propose 'the treasury' here because of the difficult context and the New Testament's use of this passage, but the Masoretic Text reads 'potter' in both places.
-    reason: alternative_reading
+    text: The Syriac version reads “the treasury”; the Hebrew text has “the potter” here and at the end of the verse.
+    reason: textual_variant
   - marker: b
-    text: 'Or ''the magnificent price,'' likely ironic: the phrase mocks the insultingly low valuation of thirty pieces of silver.'
-    reason: lexical_alternative
+    text: Exodus 21:32 sets thirty shekels of silver as compensation for a slave killed by an ox.
+    reason: cultural_note
 lexical_decisions:
 - source_word: יְהוָה
   chosen: Yahweh
@@ -108,14 +108,20 @@ revisions:
   from: Then the LORD said to me, “Throw it to the potter—the lordly price at which I was valued by them.” So I took the thirty pieces of silver and threw it into the house of the LORD, to the potter.
   to: Then the LORD said to me, “Throw it to the potter—the lordly price at which I was valued by them.” So I took the thirty pieces of silver and threw it into the house of the LORD, to the potter.
   rationale: Replaced 'lordly price' with 'magnificent price' to better reflect the ironic force of the Hebrew phrase while remaining natural in formal English. Kept the rest unchanged.
-
 - timestamp: '2026-05-17T03:36:32Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Yahweh said to me[a], “Throw it to the potter—the magnificent price at which I was valued by them.” So I took the thirty pieces of silver and threw it into the house of Yahweh[b], to the potter.'
-  to: 'Then Yahweh said to me[a], “Throw it to the potter—the magnificent price at which I was valued by them.” So I took the thirty pieces of silver and threw it into the house of Yahweh[b], to the potter.'
+  from: Then Yahweh said to me[a], “Throw it to the potter—the magnificent price at which I was valued by them.” So I took the thirty pieces of silver and threw it into the house of Yahweh[b], to the potter.
+  to: Then Yahweh said to me[a], “Throw it to the potter—the magnificent price at which I was valued by them.” So I took the thirty pieces of silver and threw it into the house of Yahweh[b], to the potter.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the lordly price''].'
+- timestamp: '2026-11-09T18:48:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Yahweh said to me[a], “Throw it to the potter—the magnificent price at which I was valued by them.” So I took the thirty pieces of silver and threw it into the house of Yahweh[b], to the potter.
+  to: Then Yahweh said to me, “Throw it to the potter[a]—what a magnificent price they put on me[b]!” So I took the thirty pieces of silver and threw them to the potter in Yahweh’s temple.
+  rationale: The recorded passes disagree over “lordly” and “magnificent,” but both identify the phrase as ironic; I retain “magnificent” and let the English exclamation carry that force. I also retain the Hebrew’s repeated “potter” rather than substituting the disputed treasury reading.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -136,3 +142,27 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/weighted_vocab/ot/zechariah/011/013.job-17878.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:48:40Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Yahweh dismisses the price placed on him with ironic praise, and the prophet throws the silver to the potter in Yahweh’s temple.
+  meaning_decisions:
+  - source_phrase: אֶדֶר הַיְקָר אֲשֶׁר יָקַרְתִּי מֵעֲלֵיהֶם
+    prior_rendering: the magnificent price at which I was valued by them
+    new_rendering: what a magnificent price they put on me!
+    rationale: The exclamation and active construction carry the elevated, ironic appraisal in natural English without replacing the irony with an explanation.
+  - source_phrase: וָאַשְׁלִיךְ אֹתוֹ בֵּית יְהוָה אֶל הַיּוֹצֵר
+    prior_rendering: threw it into the house of Yahweh, to the potter
+    new_rendering: threw them to the potter in Yahweh’s temple
+    rationale: “Them” agrees naturally with the silver pieces, and “temple” identifies Yahweh’s house for a modern reader; the reordered phrase preserves both the recipient and the location.
+  footnote_kinds:
+    a: textual_variant
+    b: cultural_background
+  history_weighed: The recorded passes disagree over “lordly” and “magnificent,” but both identify the phrase as ironic; I retain “magnificent” and let the English exclamation carry that force. I also retain the Hebrew’s repeated “potter” rather than substituting the disputed treasury reading.

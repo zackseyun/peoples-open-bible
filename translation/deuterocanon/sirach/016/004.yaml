@@ -28,12 +28,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 16:4
 translation:
-  text: From one[a] God-fearing childless man a city will be inhabited, but from a family of traitors it will be laid waste.
-  philosophy: optimal-equivalence
+  text: Through one childless man who fears Yahweh[a], a city will be inhabited, but through a treacherous family it will be laid waste.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek: ''From one prudent man a city will be inhabited.'' The Hebrew reads ''From one God-fearing childless man.'''
-    reason: alternative_reading
+    text: 'Greek: “Through one prudent man a city will be inhabited.”'
+    reason: textual_variant
 lexical_decisions:
 - source_word: מֵאֶחַד
   chosen: From one
@@ -136,13 +136,12 @@ revisions:
   from: From one God-fearing childless man a city will be inhabited, but from a family of traitors it will be laid waste.
   to: From one childless man who fears Yahweh a city will be inhabited, but from a family of traitors it will be laid waste.
   rationale: Reordered 'God-fearing childless man' to 'childless man who fears Yahweh' for more natural formal English and closer alignment to the Hebrew. Replaced 'God-fearing' with 'who fears Yahweh' to represent the divine name explicitly.
-
 - timestamp: '2026-05-18T03:09:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'From one childless man who fears Yahweh a city will be inhabited[a], but from a family of traitors it will be laid waste.'
-  to: 'From one God-fearing childless man a city will be inhabited, but from a family of traitors it will be laid waste.'
+  from: From one childless man who fears Yahweh a city will be inhabited[a], but from a family of traitors it will be laid waste.
+  to: From one God-fearing childless man a city will be inhabited, but from a family of traitors it will be laid waste.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''God-fearing''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -152,6 +151,13 @@ revisions:
   from: From one God-fearing childless man a city will be inhabited, but from a family of traitors it will be laid waste.
   to: From one[a] God-fearing childless man a city will be inhabited, but from a family of traitors it will be laid waste.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('From one') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:06:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: From one[a] God-fearing childless man a city will be inhabited, but from a family of traitors it will be laid waste.
+  to: Through one childless man who fears Yahweh[a], a city will be inhabited, but through a treacherous family it will be laid waste.
+  rationale: The earlier review’s explicit “who fears Yahweh” improves both clarity and representation of the divine name, despite its automated reversal. I retain the Hebrew’s striking “childless man” and the inhabited/desolated contrast, with the Greek’s different description in a note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -171,3 +177,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/016/004.job-51376.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:42Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Even one childless man who fears Yahweh can sustain a populated city, whereas a treacherous family brings it to ruin.
+  meaning_decisions:
+  - source_phrase: מֵאֶחַד עֲרִירִי יְרֵא יְהֹוָה
+    prior_rendering: From one God-fearing childless man
+    new_rendering: Through one childless man who fears Yahweh
+    rationale: “Through” conveys the man’s beneficial influence without suggesting that the city’s inhabitants are his descendants, and the divine name is rendered explicitly.
+  - source_phrase: מִמִּשְׁפַּחַת בֹּגְדִים
+    prior_rendering: from a family of traitors
+    new_rendering: through a treacherous family
+    rationale: The phrase concerns a family characterized by betrayal and faithlessness, not necessarily political treason.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier review’s explicit “who fears Yahweh” improves both clarity and representation of the divine name, despite its automated reversal. I retain the Hebrew’s striking “childless man” and the inhabited/desolated contrast, with the Greek’s different description in a note.

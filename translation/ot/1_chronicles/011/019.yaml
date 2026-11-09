@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֡אמֶר חָלִילָ/ה֩ לִּ֨/י מֵ/אֱלֹהַ֜/י מֵ/עֲשׂ֣וֹת זֹ֗את הֲ/דַ֣ם הָ/אֲנָשִׁים֩ הָ/אֵ֨לֶּה אֶשְׁתֶּ֤ה בְ/נַפְשׁוֹתָ/ם֙ כִּ֣י בְ/נַפְשׁוֹתָ֣/ם הֱבִיא֔וּ/ם וְ/לֹ֥א אָבָ֖ה לִ/שְׁתּוֹתָ֑/ם אֵ֣לֶּה עָשׂ֔וּ שְׁלֹ֖שֶׁת הַ/גִּבּוֹרִֽים׃
 translation:
-  text: And he said[a], “Far be it from me, by my God, to do this! Shall I drink the blood of these men at the cost of their lives? For they brought it at the cost of their lives.” So he was not willing to drink it[b]. These things the three mighty men did.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'at the risk of their lives.' The Hebrew repeats 'with/by their lives' for emphasis.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Blood'' is kept literally. David speaks of the water as if it were their blood because they obtained it through mortal danger.'
-    reason: cultural_note
+  text: He said, “My God forbid that I should do this! Should I drink the blood of these men who risked their lives? For they risked their lives to bring it.” So he would not drink it. These were the deeds of the three mighty men.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: חָלִילָה לִּי מֵאֱלֹהַי
   chosen: Far be it from me, by my God
@@ -96,14 +89,20 @@ revisions:
   from: And he said, “Far be it from me, by my God, to do this! Shall I drink the blood of these men at the cost of their lives? For they brought it at the cost of their lives.” So he was not willing to drink it. These things the three mighty men did.
   to: And he said, “Far be it from me before my God to do this! Shall I drink the blood of these men with their lives? For they brought it with their lives.” So he was not willing to drink it. These things the three mighty men did.
   rationale: Adjusted 'by my God' to 'before my God' for closer lexical accuracy, and replaced 'at the cost of their lives' with 'with their lives' to more directly reflect the Hebrew phrasing without interpretive expansion.
-
 - timestamp: '2026-05-15T12:54:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he said[a], “Far be it from me before my God to do this! Shall I drink the blood of these men with their lives? For they brought it with their lives.” So he was not willing to drink it[b]. These things the three mighty men did.'
-  to: 'And he said[a], “Far be it from me, by my God, to do this! Shall I drink the blood of these men at the cost of their lives? For they brought it at the cost of their lives.” So he was not willing to drink it[b]. These things the three mighty men did.'
-  rationale: 'Restored oath-force ''by my God'' and idiomatic ''at the cost of their lives''.'
+  from: And he said[a], “Far be it from me before my God to do this! Shall I drink the blood of these men with their lives? For they brought it with their lives.” So he was not willing to drink it[b]. These things the three mighty men did.
+  to: And he said[a], “Far be it from me, by my God, to do this! Shall I drink the blood of these men at the cost of their lives? For they brought it at the cost of their lives.” So he was not willing to drink it[b]. These things the three mighty men did.
+  rationale: Restored oath-force 'by my God' and idiomatic 'at the cost of their lives'.
+- timestamp: '2026-11-09T17:19:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he said[a], “Far be it from me, by my God, to do this! Shall I drink the blood of these men at the cost of their lives? For they brought it at the cost of their lives.” So he was not willing to drink it[b]. These things the three mighty men did.
+  to: He said, “My God forbid that I should do this! Should I drink the blood of these men who risked their lives? For they risked their lives to bring it.” So he would not drink it. These were the deeds of the three mighty men.
+  rationale: The review and automated revert debated source-shaped wording versus idiomatic wording, but neither was a maintainer ruling. I preserve their recognition of the appeal to God and the blood metaphor while adopting the existing footnote’s more accurate 'risk' sense.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -125,3 +124,29 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_chronicles/011/019.job-57829.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:19:45Z'
+  change_level: retranslated
+  confidence: high
+  meaning: David invokes God in rejecting the water because drinking something obtained at such mortal risk would be like drinking the men’s blood.
+  meaning_decisions:
+  - source_phrase: חָלִילָה לִּי מֵאֱלֹהַי מֵעֲשׂוֹת זֹאת
+    prior_rendering: Far be it from me, by my God, to do this!
+    new_rendering: My God forbid that I should do this!
+    rationale: This carries the strong repudiation and appeal to David’s God without the awkward English oath construction.
+  - source_phrase: הֲדַם הָאֲנָשִׁים הָאֵלֶּה אֶשְׁתֶּה בְנַפְשׁוֹתָם
+    prior_rendering: Shall I drink the blood of these men at the cost of their lives?
+    new_rendering: Should I drink the blood of these men who risked their lives?
+    rationale: The men endangered their lives but did not lose them; 'at the cost of their lives' can incorrectly imply their deaths. The blood image remains intact.
+  - source_phrase: כִּי בְנַפְשׁוֹתָם הֱבִיאוּם
+    prior_rendering: For they brought it at the cost of their lives
+    new_rendering: For they risked their lives to bring it
+    rationale: This states the mortal danger accurately and preserves the repetition that explains David’s refusal.
+  footnote_kinds: {}
+  history_weighed: The review and automated revert debated source-shaped wording versus idiomatic wording, but neither was a maintainer ruling. I preserve their recognition of the appeal to God and the blood metaphor while adopting the existing footnote’s more accurate 'risk' sense.

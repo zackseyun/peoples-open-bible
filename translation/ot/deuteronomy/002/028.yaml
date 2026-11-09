@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: אֹ֣כֶל בַּ/כֶּ֤סֶף תַּשְׁבִּרֵ֨/נִי֙ וְ/אָכַ֔לְתִּי וּ/מַ֛יִם בַּ/כֶּ֥סֶף תִּתֶּן לִ֖/י וְ/שָׁתִ֑יתִי רַ֖ק אֶעְבְּרָ֥ה בְ/רַגְלָֽ/י־׃
 translation:
-  text: You may sell me food for silver[a], so that I may eat, and give me water for silver, so that I may drink[b]; only let me pass through on my feet—
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'with money.' The Hebrew says literally 'for/with the silver.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'on foot.' The Hebrew reads literally 'on my feet.'
-    reason: lexical_alternative
+  text: Sell me food for money so that I may eat, and water for money so that I may drink; only let me pass through on foot—
+  philosophy: dynamic
 lexical_decisions:
 - source_word: אֹכֶל
   chosen: food
@@ -104,14 +97,20 @@ revisions:
   from: You may sell me food for silver so that I may eat, and give me water for silver so that I may drink; only let me pass through on my feet—
   to: You shall sell me food for silver, that I may eat, and give me water for silver, that I may drink; only let me pass through on foot—
   rationale: Changed 'may' to 'shall' for the direct request/statement, added commas for clarity, and revised 'on my feet' to the more natural formal English 'on foot' while preserving the sense.
-
 - timestamp: '2026-05-15T11:39:06Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'You shall sell me food for silver[a], that I may eat, and give me water for silver, that I may drink[b]; only let me pass through on foot—'
-  to: 'You may sell me food for silver[a], so that I may eat, and give me water for silver, so that I may drink[b]; only let me pass through on my feet—'
-  rationale: 'Restored petitionary ''may'', purposive ''so that'', concrete idiom ''on my feet''.'
+  from: You shall sell me food for silver[a], that I may eat, and give me water for silver, that I may drink[b]; only let me pass through on foot—
+  to: You may sell me food for silver[a], so that I may eat, and give me water for silver, so that I may drink[b]; only let me pass through on my feet—
+  rationale: Restored petitionary 'may', purposive 'so that', concrete idiom 'on my feet'.
+- timestamp: '2026-11-09T18:30:43Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You may sell me food for silver[a], so that I may eat, and give me water for silver, so that I may drink[b]; only let me pass through on my feet—
+  to: Sell me food for money so that I may eat, and water for money so that I may drink; only let me pass through on foot—
+  rationale: The revision history debated petitionary wording and the literal expression 'on my feet.' I preserve the request rather than the stronger 'shall,' while adopting natural English for walking and the payment sense already acknowledged in the earlier footnote.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -131,3 +130,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/002/028.job-61329.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:30:43Z'
+  change_level: refined
+  confidence: high
+  meaning: Moses requests food and water for payment and asks only to pass through on foot.
+  meaning_decisions:
+  - source_phrase: תַּשְׁבִּרֵנִי ... תִּתֶּן לִי
+    prior_rendering: You may sell me ... and give me
+    new_rendering: Sell me ... and
+    rationale: This is a request to purchase provisions, not permission granted to Sihon to sell them; supplying water for payment is likewise a sale.
+  - source_phrase: בַּכֶּסֶף
+    prior_rendering: for silver
+    new_rendering: for money
+    rationale: Silver functions here as payment, and 'money' conveys that commercial meaning without implying any particular form of currency.
+  - source_phrase: בְרַגְלָי
+    prior_rendering: on my feet
+    new_rendering: on foot
+    rationale: The ordinary English idiom communicates the manner of passage directly.
+  footnote_kinds: {}
+  history_weighed: The revision history debated petitionary wording and the literal expression 'on my feet.' I preserve the request rather than the stronger 'shall,' while adopting natural English for walking and the payment sense already acknowledged in the earlier footnote.

@@ -18,15 +18,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: No city under siege ever held out against many and varied siege engines as that most holy man[a], while his sacred soul was being burned by tortures and the wheel[b], stirred up those besieging him through the reason that defends godliness.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'racks' or more generally 'instruments of torture' for 'the wheel' (στρέβλαις). The exact device term is difficult, though it clearly refers to torturous means.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'because of reason defending godliness/piety.' The Greek places strong emphasis on λογισμός ('reason') as the power by which he resisted.
-    reason: lexical_alternative
+  text: No city under siege ever held out against many and varied siege engines as firmly as that most holy man. Though his sacred soul was being burned by tortures and racks, he shook his besiegers because his reason defended godliness.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: πόλις
   chosen: city
@@ -158,14 +151,20 @@ revisions:
   from: No city under siege ever held out against many and varied siege engines as that most holy man, while his sacred soul was being burned by tortures and the wheel, stirred up those besieging him, because of the reason that defended godliness.
   to: No city under siege ever held out against many and varied siege engines as that most holy man, while his sacred soul was being burned by tortures and the wheel, stirred up those besieging him, because of the reason that defended godliness.
   rationale: Replaced 'because of the reason that defended godliness' with 'through the reason that defends godliness' for more natural English and a closer rendering of διὰ + accusative and the present participle ὑπερασπίζοντα.
-
 - timestamp: '2026-05-18T03:00:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'No city under siege ever held out against many and varied siege engines as that most holy man[a], while his sacred soul was being burned by tortures and the wheel[b], stirred up those besieging him through the reason that defends godliness.'
-  to: 'No city under siege ever held out against many and varied siege engines as that most holy man[a], while his sacred soul was being burned by tortures and the wheel[b], stirred up those besieging him through the reason that defends godliness.'
+  from: No city under siege ever held out against many and varied siege engines as that most holy man[a], while his sacred soul was being burned by tortures and the wheel[b], stirred up those besieging him through the reason that defends godliness.
+  to: No city under siege ever held out against many and varied siege engines as that most holy man[a], while his sacred soul was being burned by tortures and the wheel[b], stirred up those besieging him through the reason that defends godliness.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that defended godliness''].'
+- timestamp: '2026-11-09T18:58:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: No city under siege ever held out against many and varied siege engines as that most holy man[a], while his sacred soul was being burned by tortures and the wheel[b], stirred up those besieging him through the reason that defends godliness.
+  to: No city under siege ever held out against many and varied siege engines as firmly as that most holy man. Though his sacred soul was being burned by tortures and racks, he shook his besiegers because his reason defended godliness.
+  rationale: The automated change and revert are not maintainer rulings; I retain the reason-defending-godliness emphasis while clarifying the comparison and causal connection. The lexical record’s acknowledged uncertainty does not justify specifying a wheel, so I use “racks.”
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -185,3 +184,33 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/007/004.job-49889.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:58:50Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Eleazar resisted torture more firmly than a besieged city resists its attackers, unsettling his persecutors because his reason defended godliness.
+  meaning_decisions:
+  - source_phrase: οὐχ οὕτως πόλις ... ἀντέσχεν ποτὲ πολιορκουμένη, ὡς ὁ πανάγιος ἐκεῖνος
+    prior_rendering: No city under siege ever held out against many and varied siege engines as that most holy man
+    new_rendering: No city under siege ever held out against many and varied siege engines as firmly as that most holy man.
+    rationale: The supplied comparative term makes clear that Eleazar’s steadfast resistance surpasses that of a fortified city.
+  - source_phrase: στρέβλαις
+    prior_rendering: the wheel
+    new_rendering: racks
+    rationale: The plural denotes devices or procedures of twisting torture; specifying a particular wheel is not justified by this wording.
+  - source_phrase: ἐκίνησεν τοὺς πολιορκοῦντας
+    prior_rendering: stirred up those besieging him
+    new_rendering: he shook his besiegers
+    rationale: His steadfastness unsettled his attackers; “stirred up” could instead suggest that he provoked them to attack.
+  - source_phrase: διὰ τὸν ὑπερασπίζοντα τῆς εὐσεβείας λογισμόν
+    prior_rendering: through the reason that defends godliness
+    new_rendering: because his reason defended godliness
+    rationale: The causal construction explains the source of his resistance, while “his reason” identifies the governing faculty already described.
+  footnote_kinds: {}
+  history_weighed: The automated change and revert are not maintainer rulings; I retain the reason-defending-godliness emphasis while clarifying the comparison and causal connection. The lexical record’s acknowledged uncertainty does not justify specifying a wheel, so I use “racks.”

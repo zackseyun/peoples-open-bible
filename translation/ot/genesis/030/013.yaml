@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: וַ/תֹּ֣אמֶר לֵאָ֔ה בְּ/אָשְׁרִ֕/י כִּ֥י אִשְּׁר֖וּ/נִי בָּנ֑וֹת וַ/תִּקְרָ֥א אֶת שְׁמ֖/וֹ אָשֵֽׁר־׃
 translation:
-  text: Then Leah said[b][a], “Happy am I! For women will call me happy.” So she called his name Asher.
-  philosophy: optimal-equivalence
+  text: Then Leah said, “How happy I am! For women will call me happy.” So she named him Asher[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The name Asher sounds like the Hebrew words for “happy” and “call happy” in Leah’s statement.
-    reason: lexical_alternative
-  - marker: b
-    text: Or “women,” since “daughters” can function idiomatically for women more generally.
+    text: Asher means “happy,” echoing the Hebrew words for “happy” and “call happy” in Leah’s statement.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: בְּאָשְׁרִי
@@ -72,14 +69,20 @@ revisions:
   from: Then Leah said, “Happy am I! For daughters will call me happy.” So she called his name Asher.
   to: Then Leah said, “Happy am I! For daughters will call me happy.” So she called his name Asher.
   rationale: Changed 'daughters' to 'women' to better reflect the idiomatic sense of בנות here in natural English while preserving the meaning. No other changes needed.
-
 - timestamp: '2026-05-17T10:16:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Leah said[b][a], “Happy am I! For women will call me happy.” So she called his name Asher.'
-  to: 'Then Leah said[b][a], “Happy am I! For women will call me happy.” So she called his name Asher.'
+  from: Then Leah said[b][a], “Happy am I! For women will call me happy.” So she called his name Asher.
+  to: Then Leah said[b][a], “Happy am I! For women will call me happy.” So she called his name Asher.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''daughters''].'
+- timestamp: '2026-11-09T17:44:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Leah said[b][a], “Happy am I! For women will call me happy.” So she called his name Asher.
+  to: Then Leah said, “How happy I am! For women will call me happy.” So she named him Asher[a].
+  rationale: I retain the current “women,” which the revision rationale correctly recognizes as the contextual meaning despite the automated revert’s preference for “daughters.” The happiness language and naming link remain intact, with only a more natural exclamation.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -103,3 +106,22 @@ cross_check:
     agree: 1
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/030/013.job-65241.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:44:01Z'
+  change_level: refined
+  confidence: high
+  meaning: Leah rejoiced that other women would recognize her happiness and named the son Asher.
+  meaning_decisions:
+  - source_phrase: וַתִּקְרָא אֶת שְׁמוֹ אָשֵׁר
+    prior_rendering: So she called his name Asher
+    new_rendering: So she named him Asher[a]
+    rationale: The natural English naming formula retains the causal connection, while the note preserves the repeated Hebrew root.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: I retain the current “women,” which the revision rationale correctly recognizes as the contextual meaning despite the automated revert’s preference for “daughters.” The happiness language and naming link remain intact, with only a more natural exclamation.

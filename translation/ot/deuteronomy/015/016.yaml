@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/הָיָה֙ כִּֽי יֹאמַ֣ר אֵלֶ֔י/ךָ לֹ֥א אֵצֵ֖א מֵ/עִמָּ֑/ךְ כִּ֤י אֲהֵֽבְ/ךָ֙ וְ/אֶת בֵּיתֶ֔/ךָ כִּי ט֥וֹב ל֖/וֹ עִמָּֽ/ךְ־־־׃
 translation:
-  text: And if he says to you[a], ‘I will not go out from you,’ because he loves you and your household, because it is good for him with you[b],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more idiomatically, 'I will not leave you' or 'I will not go free from you.' The Hebrew literally says 'I will not go out from being with you.'
-    reason: lexical_alternative
-  - marker: b
-    text: '''Household'' renders ''house'' in the sense of the people and domestic sphere under the master''s care, not merely the building.'
-    reason: cultural_note
+  text: But if he says to you, ‘I will not leave you,’ because he loves you and your household and life is good for him with you,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְהָיָה כִּי
   chosen: And if
@@ -84,14 +77,20 @@ revisions:
   from: And if he says to you, ‘I will not go out from being with you,’ because he loves you and your household, because it is good for him with you,
   to: And if he says to you, ‘I will not go out from being with you,’ because he loves you and your household, because it is good for him with you,
   rationale: Revised 'go out from being with you' to the more natural and accurate 'go out from you.' No other changes needed.
-
 - timestamp: '2026-05-18T02:56:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And if he says to you[a], ‘I will not go out from you,’ because he loves you and your household, because it is good for him with you[b],'
-  to: 'And if he says to you[a], ‘I will not go out from you,’ because he loves you and your household, because it is good for him with you[b],'
+  from: And if he says to you[a], ‘I will not go out from you,’ because he loves you and your household, because it is good for him with you[b],
+  to: And if he says to you[a], ‘I will not go out from you,’ because he loves you and your household, because it is good for him with you[b],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from being with you''].'
+- timestamp: '2026-11-09T17:30:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And if he says to you[a], ‘I will not go out from you,’ because he loves you and your household, because it is good for him with you[b],
+  to: But if he says to you, ‘I will not leave you,’ because he loves you and your household and life is good for him with you,
+  rationale: The earlier revisions sought to improve 'go out from being with you,' and the current footnote already offers 'leave you' as its idiomatic meaning. I bring that meaning into the text and retain 'household,' which already conveys the social rather than architectural sense.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -111,3 +110,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/015/016.job-61625.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:30:27Z'
+  change_level: refined
+  confidence: high
+  meaning: A servant may decline release because he loves the owner and household and life is good for him there.
+  meaning_decisions:
+  - source_phrase: וְהָיָה כִּי
+    prior_rendering: And if
+    new_rendering: But if
+    rationale: The condition introduces an exception to the expected release described in the preceding verses.
+  - source_phrase: לֹא אֵצֵא מֵעִמָּךְ
+    prior_rendering: I will not go out from you
+    new_rendering: I will not leave you
+    rationale: The servant is refusing departure from the owner's service and household, not merely movement out of a place.
+  - source_phrase: כִּי טוֹב לוֹ עִמָּךְ
+    prior_rendering: because it is good for him with you
+    new_rendering: and life is good for him with you
+    rationale: This naturally expresses his favorable circumstances alongside his love for the household, without reducing the reason to emotion alone.
+  footnote_kinds: {}
+  history_weighed: The earlier revisions sought to improve 'go out from being with you,' and the current footnote already offers 'leave you' as its idiomatic meaning. I bring that meaning into the text and retain 'household,' which already conveys the social rather than architectural sense.

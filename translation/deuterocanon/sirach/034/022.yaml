@@ -19,12 +19,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: Bread for the needy is the life of the poor[a]; the one who deprives them of it is a man of blood.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'a murderer' or 'a man guilty of bloodshed.' The Greek literally says 'a man of blood.'
-    reason: lexical_alternative
+  text: Bread for the needy is the life of the poor; whoever deprives them of it is guilty of bloodshed.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἄρτος
   chosen: Bread
@@ -114,14 +110,20 @@ revisions:
   from: Bread for the needy is the life of the poor; the man who deprives them of it is a man of blood.
   to: Bread for the needy is the life of the poor; the man who deprives them of it is a man of blood.
   rationale: Changed 'the man who' to 'the one who' for slightly more natural formal English while preserving the Greek sense; retained 'man of blood' as a literal rendering of the idiom.
-
 - timestamp: '2026-05-18T02:58:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Bread for the needy is the life of the poor[a]; the one who deprives them of it is a man of blood.'
-  to: 'Bread for the needy is the life of the poor[a]; the one who deprives them of it is a man of blood.'
+  from: Bread for the needy is the life of the poor[a]; the one who deprives them of it is a man of blood.
+  to: Bread for the needy is the life of the poor[a]; the one who deprives them of it is a man of blood.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the man who deprives''].'
+- timestamp: '2026-11-09T19:08:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Bread for the needy is the life of the poor[a]; the one who deprives them of it is a man of blood.
+  to: Bread for the needy is the life of the poor; whoever deprives them of it is guilty of bloodshed.
+  rationale: The history correctly emphasizes bloodguilt, but 'a man of blood' does not clearly express that idiom in contemporary English. I retain the bread-and-life imagery and put the earlier note's explanation into the main text.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -141,3 +143,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/034/022.job-51936.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:30Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Because bread sustains the poor's life, depriving them of it makes the offender guilty of bloodshed.
+  meaning_decisions:
+  - source_phrase: ὁ ἀποστερῶν αὐτὴν ἄνθρωπος αἱμάτων
+    prior_rendering: the one who deprives them of it is a man of blood
+    new_rendering: whoever deprives them of it is guilty of bloodshed
+    rationale: The idiom identifies bloodguilt, not merely a violent disposition; 'guilty of bloodshed' communicates that accusation directly while retaining the blood imagery.
+  footnote_kinds: {}
+  history_weighed: The history correctly emphasizes bloodguilt, but 'a man of blood' does not clearly express that idiom in contemporary English. I retain the bread-and-life imagery and put the earlier note's explanation into the main text.

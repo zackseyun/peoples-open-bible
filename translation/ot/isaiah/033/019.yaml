@@ -4,17 +4,11 @@ source:
   edition: WLC
   text: אֶת עַ֥ם נוֹעָ֖ז לֹ֣א תִרְאֶ֑ה עַ֣ם עִמְקֵ֤י שָׂפָה֙ מִ/שְּׁמ֔וֹעַ נִלְעַ֥ג לָשׁ֖וֹן אֵ֥ין בִּינָֽה־׃
 translation:
-  text: You will no longer see the insolent people[a], a people of speech too deep to understand[c][b], of a stammering tongue without comprehension.
-  philosophy: optimal-equivalence
+  text: You will no longer see the insolent people, a people whose speech you cannot understand, whose strange tongue[a] you cannot comprehend.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'a fierce people' or 'a defiant people.'
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'a people deep of lip from hearing,' that is, a people whose speech is too obscure to understand.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'a mocking tongue' or 'a strange/barbarous tongue.' The Hebrew expression is difficult and likely refers to foreign speech that is unintelligible to the hearer.
+    text: Literally, “a stammering tongue”; the phrase describes foreign speech as it sounds to the hearer.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: נוֹעָז
@@ -90,14 +84,20 @@ revisions:
   from: You will no longer see the insolent people, a people of speech too deep to understand, of a stammering tongue that has no comprehension.
   to: You will no longer see the insolent people, a people of speech too deep to understand, of a stammering tongue that has no comprehension.
   rationale: Replaced 'that has no comprehension' with 'without comprehension' for a more natural and formal rendering while preserving the meaning. Kept the rest unchanged as accurate and complete.
-
 - timestamp: '2026-05-17T20:06:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'You will no longer see the insolent people[a], a people of speech too deep to understand[c][b], of a stammering tongue without comprehension.'
-  to: 'You will no longer see the insolent people[a], a people of speech too deep to understand[c][b], of a stammering tongue without comprehension.'
+  from: You will no longer see the insolent people[a], a people of speech too deep to understand[c][b], of a stammering tongue without comprehension.
+  to: You will no longer see the insolent people[a], a people of speech too deep to understand[c][b], of a stammering tongue without comprehension.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that has no comprehension''].'
+- timestamp: '2026-11-09T17:50:57Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You will no longer see the insolent people[a], a people of speech too deep to understand[c][b], of a stammering tongue without comprehension.
+  to: You will no longer see the insolent people, a people whose speech you cannot understand, whose strange tongue[a] you cannot comprehend.
+  rationale: The earlier decisions correctly identify unintelligible foreign speech, but both recorded versions leave the location of “comprehension” unclear. I preserve “insolent” and the poetic parallelism while making the hearer's inability to understand explicit.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -117,3 +117,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/isaiah/033/019.job-66531.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:50:57Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The people will no longer face the insolent foreign oppressors whose language they cannot understand.
+  meaning_decisions:
+  - source_phrase: עַם עִמְקֵי שָׂפָה מִשְּׁמוֹעַ
+    prior_rendering: a people of speech too deep to understand
+    new_rendering: a people whose speech you cannot understand
+    rationale: The idiom describes speech inaccessible to its hearers, not speech that is intellectually profound.
+  - source_phrase: נִלְעַג לָשׁוֹן אֵין בִּינָה
+    prior_rendering: of a stammering tongue without comprehension
+    new_rendering: whose strange tongue you cannot comprehend
+    rationale: The incomprehension belongs to the hearer; the source does not attribute deficient understanding or a literal speech impediment to the foreign people.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier decisions correctly identify unintelligible foreign speech, but both recorded versions leave the location of “comprehension” unclear. I preserve “insolent” and the poetic parallelism while making the hearer's inability to understand explicit.

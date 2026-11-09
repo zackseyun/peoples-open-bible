@@ -4,18 +4,8 @@ source:
   edition: SBLGNT
   text: νῦν οὖν ὑμεῖς ἐμφανίσατε τῷ χιλιάρχῳ σὺν τῷ συνεδρίῳ ⸀ὅπως ⸂καταγάγῃ αὐτὸν εἰς⸃ ὑμᾶς ὡς μέλλοντας διαγινώσκειν ἀκριβέστερον τὰ περὶ αὐτοῦ· ἡμεῖς δὲ πρὸ τοῦ ἐγγίσαι αὐτὸν ἕτοιμοί ἐσμεν τοῦ ἀνελεῖν αὐτόν.
 translation:
-  text: Now therefore[a], you, together with the council, make it known to the commander so that he may bring him down to you, as though you were about to examine more carefully the things concerning him[c][b]. But we are ready to kill him before he comes near.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'bring him before you.' The Greek verb literally includes the idea of bringing him down.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'as if you were going to investigate his case more carefully.' The wording implies a pretense of further judicial examination.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'before he arrives.'
-    reason: lexical_alternative
+  text: Now then, you and the council must ask the commander to bring Paul down to you on the pretense that you intend to examine his case more carefully. We are ready to kill him before he reaches you.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐμφανίσατε
   chosen: make it known
@@ -122,14 +112,20 @@ revisions:
   from: Now therefore, you, together with the council, make it known to the commander so that he may bring him down to you, as though you were about to examine more accurately the things concerning him. But we are ready to kill him before he comes near.
   to: Now therefore, you, together with the council, make it known to the commander so that he may bring him down to you, as though you were about to examine more accurately the things concerning him. But we are ready to kill him before he comes near.
   rationale: Changed 'more accurately' to 'more carefully' for more natural formal English while preserving the sense of ἀκριβέστερον. No other changes needed.
-
 - timestamp: '2026-05-18T02:59:59Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now therefore[a], you, together with the council, make it known to the commander so that he may bring him down to you, as though you were about to examine more carefully the things concerning him[c][b]. But we are ready to kill him before he comes near.'
-  to: 'Now therefore[a], you, together with the council, make it known to the commander so that he may bring him down to you, as though you were about to examine more carefully the things concerning him[c][b]. But we are ready to kill him before he comes near.'
+  from: Now therefore[a], you, together with the council, make it known to the commander so that he may bring him down to you, as though you were about to examine more carefully the things concerning him[c][b]. But we are ready to kill him before he comes near.
+  to: Now therefore[a], you, together with the council, make it known to the commander so that he may bring him down to you, as though you were about to examine more carefully the things concerning him[c][b]. But we are ready to kill him before he comes near.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''more accurately''].'
+- timestamp: '2026-11-09T17:08:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Now therefore[a], you, together with the council, make it known to the commander so that he may bring him down to you, as though you were about to examine more carefully the things concerning him[c][b]. But we are ready to kill him before he comes near.
+  to: Now then, you and the council must ask the commander to bring Paul down to you on the pretense that you intend to examine his case more carefully. We are ready to kill him before he reaches you.”
+  rationale: The earlier review’s 'more carefully' already improves the forensic English, and the lexical notes recognize both the request and the pretense. I carry those contextual findings into the main text rather than retaining wording chosen chiefly for source-transparency.
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -149,3 +145,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/023/015.job-46421.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:01Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The conspirators instruct the leaders to arrange another hearing as a pretext for bringing Paul within reach of their planned attack.
+  meaning_decisions:
+  - source_phrase: νῦν οὖν ὑμεῖς ἐμφανίσατε τῷ χιλιάρχῳ σὺν τῷ συνεδρίῳ ὅπως καταγάγῃ αὐτὸν εἰς ὑμᾶς
+    prior_rendering: Now therefore, you, together with the council, make it known to the commander so that he may bring him down to you
+    new_rendering: Now then, you and the council must ask the commander to bring Paul down to you
+    rationale: The intended communication is a request for Paul’s transfer, as verse 20 confirms; the explicit request removes the undefined 'it.'
+  - source_phrase: ὡς μέλλοντας διαγινώσκειν ἀκριβέστερον τὰ περὶ αὐτοῦ
+    prior_rendering: as though you were about to examine more carefully the things concerning him
+    new_rendering: on the pretense that you intend to examine his case more carefully
+    rationale: The conspirators are proposing a deceptive judicial investigation, and 'his case' is the contextual meaning of 'the things concerning him.'
+  - source_phrase: πρὸ τοῦ ἐγγίσαι αὐτόν
+    prior_rendering: before he comes near
+    new_rendering: before he reaches you
+    rationale: The understood destination is the leaders addressed by the conspirators; making it explicit clarifies when the attack is planned.
+  footnote_kinds: {}
+  history_weighed: The earlier review’s 'more carefully' already improves the forensic English, and the lexical notes recognize both the request and the pretense. I carry those contextual findings into the main text rather than retaining wording chosen chiefly for source-transparency.

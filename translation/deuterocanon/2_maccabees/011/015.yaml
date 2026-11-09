@@ -24,17 +24,56 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: 'And Maccabeus agreed to everything that Lysias urged, being concerned for what was advantageous; for whatever Maccabeus set before Lysias in writing concerning the Jews, the king granted.'
+  text: Maccabeus agreed to all that Lysias proposed, with his people’s welfare in mind, for the secretary[a] granted everything Maccabeus had submitted to Lysias in writing concerning the Jews.
+  philosophy: dynamic
+  footnotes:
+  - marker: a
+    text: Some Greek manuscripts read “the king” instead of “the secretary.”
+    reason: textual_variant
 revisions:
 - timestamp: '2026-05-18T04:00:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Maccabeus agreed to all that Lysias proposed[a], being concerned for what was advantageous; for whatever Maccabeus submitted in writing to Lysias concerning the Jews, the king granted.'
-  to: 'And Maccabeus agreed to everything that Lysias urged, being concerned for what was advantageous; for whatever Maccabeus set before Lysias in writing concerning the Jews, the king granted.'
+  from: And Maccabeus agreed to all that Lysias proposed[a], being concerned for what was advantageous; for whatever Maccabeus submitted in writing to Lysias concerning the Jews, the king granted.
+  to: And Maccabeus agreed to everything that Lysias urged, being concerned for what was advantageous; for whatever Maccabeus set before Lysias in writing concerning the Jews, the king granted.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''urged'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+- timestamp: '2026-11-09T18:56:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Maccabeus agreed to everything that Lysias urged, being concerned for what was advantageous; for whatever Maccabeus set before Lysias in writing concerning the Jews, the king granted.
+  to: Maccabeus agreed to all that Lysias proposed, with his people’s welfare in mind, for the secretary[a] granted everything Maccabeus had submitted to Lysias in writing concerning the Jews.
+  rationale: The recorded wording consistently names the king, but the supplied Greek names the secretary, so the source takes priority and the other reading is noted. The earlier “proposed” and “submitted” also express the diplomatic context more clearly than the automated restoration.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T04:00:17Z'
   unchanged: false
   changes_summary: 'doctrine_realignment: 2 Maccabees 11:15 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''urged'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote m'
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:00Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Maccabeus accepted Lysias's proposals with the Jews' welfare in mind, since their written requests had been granted.
+  meaning_decisions:
+  - source_phrase: οἷς ὁ Λυσίας παρεκάλει
+    prior_rendering: everything that Lysias urged
+    new_rendering: all that Lysias proposed
+    rationale: In this negotiation, Lysias is urging acceptance of proposals; the new wording makes the object of Maccabeus’s agreement clear.
+  - source_phrase: τοῦ συμφέροντος φροντίζων
+    prior_rendering: being concerned for what was advantageous
+    new_rendering: with his people’s welfare in mind
+    rationale: The surrounding requests concern the Jews, making their welfare the understood benefit Maccabeus considers.
+  - source_phrase: συνεχώρησεν ὁ γραμματεύς
+    prior_rendering: the king granted
+    new_rendering: the secretary granted
+    rationale: The supplied source explicitly names the secretary, not the king; the competing reading belongs in a textual note.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The recorded wording consistently names the king, but the supplied Greek names the secretary, so the source takes priority and the other reading is noted. The earlier “proposed” and “submitted” also express the diplomatic context more clearly than the automated restoration.

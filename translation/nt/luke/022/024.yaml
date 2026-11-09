@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: Ἐγένετο δὲ καὶ φιλονεικία ἐν αὐτοῖς, τὸ τίς αὐτῶν δοκεῖ εἶναι μείζων.
 translation:
-  text: A dispute also arose among them as to which of them was considered to be greater[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'which of them seemed to be greater.' The Greek verb can mean 'seemed' or 'was considered.'
-    reason: lexical_alternative
+  text: A dispute also arose among them about which of them was considered the greatest.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἐγένετο
   chosen: arose
@@ -18,7 +14,7 @@ lexical_decisions:
   - occurred
   - happened
   lexicon: BDAG
-  rationale: "γίνομαι here introduces the emergence of a situation rather than mere existence. 'Arose' is idiomatic English for the onset of a dispute and fits the narrative flow better than the more wooden 'there was' or 'it happened.' Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'γίνομαι here introduces the emergence of a situation rather than mere existence. ''Arose'' is idiomatic English for the onset of a dispute and fits the narrative flow better than the more wooden ''there was'' or ''it happened.'' Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: δὲ
   chosen: Now
   alternatives:
@@ -108,13 +104,12 @@ revisions:
   from: Now a dispute also arose among them about which of them was considered to be greater.
   to: Now a dispute also arose among them about which of them was considered to be greater.
   rationale: Changed 'about which' to 'as to which' for a slightly more formal and natural rendering of τὸ τίς; otherwise retained the draft, which accurately reflects the Greek.
-
 - timestamp: '2026-05-18T03:01:51Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now a dispute also arose among them as to which of them was considered to be greater[a].'
-  to: 'Now a dispute also arose among them as to which of them was considered to be greater[a].'
+  from: Now a dispute also arose among them as to which of them was considered to be greater[a].
+  to: Now a dispute also arose among them as to which of them was considered to be greater[a].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''about which of them''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -123,6 +118,13 @@ revisions:
   from: Now a dispute also arose among them as to which of them was considered to be greater[a].
   to: A dispute also arose among them as to which of them was considered to be greater[a].
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:12:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: A dispute also arose among them as to which of them was considered to be greater[a].
+  to: A dispute also arose among them about which of them was considered the greatest.
+  rationale: I retain the history’s insight that the issue is social estimation, not mere appearance. Its insistence on “greater” rests on grammatical form rather than the group-ranking meaning, so I render that meaning with the English superlative.
 cross_check:
   status: needs_review
   agreement: 0.7
@@ -145,3 +147,21 @@ cross_check:
     major-issues: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/nt/luke/022/024.job-38930.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:39Z'
+  change_level: refined
+  confidence: high
+  meaning: The disciples also dispute which of them holds the highest standing.
+  meaning_decisions:
+  - source_phrase: τὸ τίς αὐτῶν δοκεῖ εἶναι μείζων
+    prior_rendering: as to which of them was considered to be greater
+    new_rendering: about which of them was considered the greatest
+    rationale: The comparison concerns rank within the whole group, so English naturally uses “the greatest”; this conveys the contextual function of the Greek comparative rather than intensifying the claim.
+  footnote_kinds: {}
+  history_weighed: I retain the history’s insight that the issue is social estimation, not mere appearance. Its insistence on “greater” rests on grammatical form rather than the group-ranking meaning, so I render that meaning with the English superlative.

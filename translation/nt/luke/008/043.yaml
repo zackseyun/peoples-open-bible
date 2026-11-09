@@ -4,17 +4,11 @@ source:
   edition: SBLGNT
   text: καὶ γυνὴ οὖσα ἐν ῥύσει αἵματος ἀπὸ ἐτῶν δώδεκα, ἥτις ⸂ἰατροῖς προσαναλώσασα ὅλον τὸν βίον⸃ οὐκ ἴσχυσεν ⸀ἀπ’ οὐδενὸς θεραπευθῆναι,
 translation:
-  text: And a woman who had been in a flow of blood for twelve years[a], and who had spent her whole livelihood on physicians, was not able to be healed by anyone[c][b],
-  philosophy: optimal-equivalence
+  text: A woman had been suffering from bleeding for twelve years. She had spent all she had on physicians[a], but no one had been able to heal her.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'with a discharge of blood' or more dynamically 'suffering from bleeding.'
-    reason: lexical_alternative
-  - marker: b
-    text: Greek βίος here means her means of living or resources, not her biological 'life.'
-    reason: lexical_alternative
-  - marker: c
-    text: Some manuscripts, reflected in the Textus Receptus and thus the KJV tradition, add that she 'could not be healed by any' after stating that she had spent all her livelihood on physicians; the SBLGNT text includes the inability clause but not the stronger implication that the physicians failed her by explicit addition beyond this wording.
+    text: Some manuscripts omit the statement that she had spent all she had on physicians.
     reason: textual_variant
 lexical_decisions:
 - source_word: γυνὴ οὖσα
@@ -111,14 +105,20 @@ revisions:
   from: And a woman who had been in a flow of blood for twelve years, and who had spent her whole livelihood on physicians, was not able to be healed by anyone,
   to: And a woman who had had a flow of blood for twelve years, and who had spent her whole livelihood on physicians, was not able to be healed by anyone,
   rationale: Changed 'had been in a flow of blood' to the more natural and accurate 'had had a flow of blood.'
-
 - timestamp: '2026-05-16T23:07:01Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And a woman who had had a flow of blood for twelve years[a], and who had spent her whole livelihood on physicians, was not able to be healed by anyone[c][b],'
-  to: 'And a woman who had been in a flow of blood for twelve years[a], and who had spent her whole livelihood on physicians, was not able to be healed by anyone[c][b],'
-  rationale: 'Restored drafter ''a woman who had been in a flow of blood for twelve years'' (preserving the chosen ''had been in'' periphrastic rendering) per chosen renderings.'
+  from: And a woman who had had a flow of blood for twelve years[a], and who had spent her whole livelihood on physicians, was not able to be healed by anyone[c][b],
+  to: And a woman who had been in a flow of blood for twelve years[a], and who had spent her whole livelihood on physicians, was not able to be healed by anyone[c][b],
+  rationale: Restored drafter 'a woman who had been in a flow of blood for twelve years' (preserving the chosen 'had been in' periphrastic rendering) per chosen renderings.
+- timestamp: '2026-11-09T17:11:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And a woman who had been in a flow of blood for twelve years[a], and who had spent her whole livelihood on physicians, was not able to be healed by anyone[c][b],
+  to: A woman had been suffering from bleeding for twelve years. She had spent all she had on physicians[a], but no one had been able to heal her.
+  rationale: The earlier review recognized the awkwardness of 'had been in a flow of blood,' but the automated revert restored that construction without a meaning-based reason. I carry forward that clarity concern and replace the inaccurate existing manuscript note with the actual variant concerning expenditure on physicians.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -141,3 +141,30 @@ cross_check:
     major-issues: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/008/043.job-55486.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:11:22Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A woman has suffered from bleeding for twelve years and exhausted her resources on physicians without obtaining healing.
+  meaning_decisions:
+  - source_phrase: οὖσα ἐν ῥύσει αἵματος ἀπὸ ἐτῶν δώδεκα
+    prior_rendering: who had been in a flow of blood for twelve years
+    new_rendering: had been suffering from bleeding for twelve years
+    rationale: This describes a chronic medical condition in intelligible English without adding a diagnosis.
+  - source_phrase: ὅλον τὸν βίον
+    prior_rendering: her whole livelihood
+    new_rendering: all she had
+    rationale: Here βίος means her material means of living, not her occupation or biological life.
+  - source_phrase: οὐκ ἴσχυσεν ἀπ’ οὐδενὸς θεραπευθῆναι
+    prior_rendering: was not able to be healed by anyone
+    new_rendering: no one had been able to heal her
+    rationale: The natural active construction makes clear that treatment had failed, rather than suggesting that receiving healing was an ability she lacked.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier review recognized the awkwardness of 'had been in a flow of blood,' but the automated revert restored that construction without a meaning-based reason. I carry forward that clarity concern and replace the inaccurate existing manuscript note with the actual variant concerning expenditure on physicians.

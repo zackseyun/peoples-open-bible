@@ -4,11 +4,11 @@ source:
   edition: SBLGNT
   text: ὁ δὲ ἐμβλέψας αὐτοῖς εἶπεν· Τί οὖν ἐστιν τὸ γεγραμμένον τοῦτο· Λίθον ὃν ἀπεδοκίμασαν οἱ οἰκοδομοῦντες, οὗτος ἐγενήθη εἰς κεφαλὴν γωνίας;
 translation:
-  text: 'But he looked at them and said[a], “What then is this that has been written: ‘The stone that the builders rejected, this one has become the head of the corner’?”'
-  philosophy: optimal-equivalence
+  text: 'But he looked at them and said, “Then what does this Scripture mean: ‘The stone that the builders rejected has become the cornerstone[a]’?”'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “the cornerstone”; alternatively, “the capstone.” The Greek reads literally, “the head of the corner.”
+    text: Or, “capstone.” Literally, “head of the corner.”
     reason: alternative_reading
 lexical_decisions:
 - source_word: ἐμβλέψας
@@ -95,14 +95,20 @@ revisions:
   from: 'But he looked at them and said, “What then is this that has been written: ‘The stone that the builders rejected, this one has become the head of the corner’?”'
   to: 'But he looked at them and said, “What then is this that is written: ‘The stone that the builders rejected, this has become the head of the corner’?”'
   rationale: Changed “has been written” to the more natural and direct “is written,” which accurately reflects the Greek perfect participle γεγραμμένον in this citation formula. No other changes needed.
-
 - timestamp: '2026-05-16T23:22:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'But he looked at them and said[a], “What then is this that is written: ‘The stone that the builders rejected, this has become the head of the corner’?”'
   to: 'But he looked at them and said[a], “What then is this that has been written: ‘The stone that the builders rejected, this one has become the head of the corner’?”'
-  rationale: 'Restored drafter ''What then is this that has been written'' (preserving the chosen perfect-passive rendering) and ''this one has become the head of the corner'' (preserving the chosen explicit demonstrative) per chosen renderings.'
+  rationale: Restored drafter 'What then is this that has been written' (preserving the chosen perfect-passive rendering) and 'this one has become the head of the corner' (preserving the chosen explicit demonstrative) per chosen renderings.
+- timestamp: '2026-11-09T17:12:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'But he looked at them and said[a], “What then is this that has been written: ‘The stone that the builders rejected, this one has become the head of the corner’?”'
+  to: 'But he looked at them and said, “Then what does this Scripture mean: ‘The stone that the builders rejected has become the cornerstone[a]’?”'
+  rationale: The earlier review favored a natural citation formula, while the automated revert restored source-shaped wording without new evidence about meaning. I retain the deliberate look and the architectural metaphor, but move the debated architectural alternative into a footnote.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -124,3 +130,26 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/020/017.job-55893.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:19Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jesus challenges their response by citing Scripture’s declaration that the stone rejected by the builders has become the cornerstone.
+  meaning_decisions:
+  - source_phrase: Τί οὖν ἐστιν τὸ γεγραμμένον τοῦτο
+    prior_rendering: What then is this that has been written
+    new_rendering: Then what does this Scripture mean
+    rationale: Jesus is asking how the scriptural declaration can be understood in light of their protest, not asking what written object he is referring to.
+  - source_phrase: οὗτος ἐγενήθη εἰς κεφαλὴν γωνίας
+    prior_rendering: this one has become the head of the corner
+    new_rendering: has become the cornerstone
+    rationale: The English sentence identifies the rejected stone itself as the cornerstone without a redundant demonstrative; the architectural image remains intelligible, with the serious alternative preserved in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review favored a natural citation formula, while the automated revert restored source-shaped wording without new evidence about meaning. I retain the deliberate look and the architectural metaphor, but move the debated architectural alternative into a footnote.

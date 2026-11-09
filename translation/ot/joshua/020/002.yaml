@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: דַּבֵּ֛ר אֶל בְּנֵ֥י יִשְׂרָאֵ֖ל לֵ/אמֹ֑ר תְּנ֤וּ לָ/כֶם֙ אֶת עָרֵ֣י הַ/מִּקְלָ֔ט אֲשֶׁר דִּבַּ֥רְתִּי אֲלֵי/כֶ֖ם בְּ/יַד מֹשֶֽׁה־־־־׃
 translation:
-  text: Speak to the sons of Israel[a], saying, ‘Appoint for yourselves the cities of refuge, about which I spoke to you through Moses,’
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Hebrew: ''by the hand of Moses,'' an idiom meaning ''through Moses.'''
-    reason: lexical_alternative
+  text: '“Tell the Israelites: ‘Designate for yourselves the cities of refuge that I spoke to you about through Moses,'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: דַּבֵּר
   chosen: Speak
@@ -97,14 +93,20 @@ revisions:
   from: Speak to the sons of Israel, saying, ‘Appoint for yourselves the cities of refuge that I spoke to you about through Moses,’
   to: Speak to the sons of Israel, saying, ‘Appoint for yourselves the cities of refuge that I spoke to you about through Moses,’
   rationale: Added a comma before the relative clause and revised 'that I spoke to you about' to 'about which I spoke to you' for more formal, natural English while preserving the source meaning.
-
 - timestamp: '2026-05-17T07:06:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Speak to the sons of Israel[a], saying, ‘Appoint for yourselves the cities of refuge, about which I spoke to you through Moses,’'
-  to: 'Speak to the sons of Israel[a], saying, ‘Appoint for yourselves the cities of refuge, about which I spoke to you through Moses,’'
+  from: Speak to the sons of Israel[a], saying, ‘Appoint for yourselves the cities of refuge, about which I spoke to you through Moses,’
+  to: Speak to the sons of Israel[a], saying, ‘Appoint for yourselves the cities of refuge, about which I spoke to you through Moses,’
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that I spoke to you about''].'
+- timestamp: '2026-11-09T18:10:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Speak to the sons of Israel[a], saying, ‘Appoint for yourselves the cities of refuge, about which I spoke to you through Moses,’
+  to: '“Tell the Israelites: ‘Designate for yourselves the cities of refuge that I spoke to you about through Moses,'
+  rationale: The recorded review and revert differ over relative-clause style, not meaning, and neither carries maintainer weight. I retain the established 'cities of refuge' and 'through Moses,' but replace the earlier source-transparent national designation with its inclusive meaning.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -124,3 +126,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/joshua/020/002.job-68902.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:10:01Z'
+  change_level: refined
+  confidence: high
+  meaning: Joshua must tell the Israelites to designate the cities of refuge that Yahweh had instructed them about through Moses.
+  meaning_decisions:
+  - source_phrase: דַּבֵּר אֶל בְּנֵי יִשְׂרָאֵל לֵאמֹר
+    prior_rendering: Speak to the sons of Israel, saying,
+    new_rendering: 'Tell the Israelites:'
+    rationale: The command concerns conveying instructions to the whole people; 'Israelites' expresses the conventional national designation without suggesting that only males are addressed.
+  - source_phrase: תְּנוּ לָכֶם
+    prior_rendering: Appoint for yourselves
+    new_rendering: Designate for yourselves
+    rationale: The cities are being assigned a legal function, for which 'designate' is the more natural English verb.
+  - source_phrase: אֲשֶׁר דִּבַּרְתִּי אֲלֵיכֶם בְּיַד מֹשֶׁה
+    prior_rendering: about which I spoke to you through Moses
+    new_rendering: that I spoke to you about through Moses
+    rationale: The clause identifies the previously commanded cities; the less inverted wording carries that connection naturally.
+  footnote_kinds: {}
+  history_weighed: The recorded review and revert differ over relative-clause style, not meaning, and neither carries maintainer weight. I retain the established 'cities of refuge' and 'through Moses,' but replace the earlier source-transparent national designation with its inclusive meaning.

@@ -4,11 +4,11 @@ source:
   edition: SBLGNT
   text: ἐπιλαβόμενοι δὲ ⸀πάντες Σωσθένην τὸν ἀρχισυνάγωγον ἔτυπτον ἔμπροσθεν τοῦ βήματος· καὶ οὐδὲν τούτων τῷ Γαλλίωνι ⸀ἔμελεν.
 translation:
-  text: Then they all seized Sosthenes[a], the synagogue ruler, and beat him in front of the tribunal. But Gallio paid no attention to these things.
-  philosophy: optimal-equivalence
+  text: Then they all[a] seized Sosthenes, the synagogue leader, and beat him in front of the judgment seat. But Gallio was unconcerned about any of this.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Some manuscripts read 'all the Greeks' instead of simply 'they all.' The earliest text is shorter and leaves the group's identity unspecified.
+    text: Some manuscripts read “all the Greeks”; the Greek text used here says only “all,” without explicitly identifying the attackers.
     reason: textual_variant
 lexical_decisions:
 - source_word: ἐπιλαβόμενοι
@@ -103,14 +103,20 @@ revisions:
   from: Then they all seized Sosthenes, the synagogue ruler, and were beating him in front of the tribunal. But Gallio paid no attention to these things.
   to: Then they all seized Sosthenes, the synagogue ruler, and were beating him in front of the tribunal. But Gallio paid no attention to these things.
   rationale: Changed 'were beating' to 'beat' to better reflect the Greek aorist and improve natural formal English; otherwise retained the draft.
-
 - timestamp: '2026-05-18T03:00:41Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then they all seized Sosthenes[a], the synagogue ruler, and beat him in front of the tribunal. But Gallio paid no attention to these things.'
-  to: 'Then they all seized Sosthenes[a], the synagogue ruler, and beat him in front of the tribunal. But Gallio paid no attention to these things.'
+  from: Then they all seized Sosthenes[a], the synagogue ruler, and beat him in front of the tribunal. But Gallio paid no attention to these things.
+  to: Then they all seized Sosthenes[a], the synagogue ruler, and beat him in front of the tribunal. But Gallio paid no attention to these things.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''were beating''].'
+- timestamp: '2026-11-09T17:12:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then they all seized Sosthenes[a], the synagogue ruler, and beat him in front of the tribunal. But Gallio paid no attention to these things.
+  to: Then they all[a] seized Sosthenes, the synagogue leader, and beat him in front of the judgment seat. But Gallio was unconcerned about any of this.
+  rationale: I weighed the earlier preference for “were beating” against the current “beat”; the Greek imperfect describes sustained violence, which “beat” naturally conveys here. There is no maintainer revision, and I retained the history’s restraint about the attackers’ identity while clarifying the setting and Gallio’s indifference.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -130,3 +136,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/018/017.job-46789.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:16Z'
+  change_level: refined
+  confidence: high
+  meaning: The whole group seized and beat Sosthenes, the synagogue leader, in front of the judgment seat, but Gallio remained indifferent.
+  meaning_decisions:
+  - source_phrase: τὸν ἀρχισυνάγωγον
+    prior_rendering: the synagogue ruler
+    new_rendering: the synagogue leader
+    rationale: “Leader” identifies Sosthenes’ office naturally without suggesting the broader governing authority that “ruler” can imply.
+  - source_phrase: ἔμπροσθεν τοῦ βήματος
+    prior_rendering: in front of the tribunal
+    new_rendering: in front of the judgment seat
+    rationale: The phrase locates the beating before Gallio’s judicial seat; “judgment seat” preserves that physical setting more clearly than “tribunal” and matches the preceding verse.
+  - source_phrase: καὶ οὐδὲν τούτων τῷ Γαλλίωνι ἔμελεν
+    prior_rendering: But Gallio paid no attention to these things.
+    new_rendering: But Gallio was unconcerned about any of this.
+    rationale: The Greek expresses lack of concern, not merely lack of attention; the revised wording makes Gallio’s indifference explicit while retaining the broad reference to these events.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: I weighed the earlier preference for “were beating” against the current “beat”; the Greek imperfect describes sustained violence, which “beat” naturally conveys here. There is no maintainer revision, and I retained the history’s restraint about the attackers’ identity while clarifying the setting and Gallio’s indifference.

@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֣אמֶר הַ/מֶּ֔לֶךְ זֹ֣את אֹמֶ֔רֶת זֶה בְּנִ֥/י הַ/חַ֖י וּ/בְנֵ֣/ךְ הַ/מֵּ֑ת וְ/זֹ֤את אֹמֶ֨רֶת֙ לֹ֣א כִ֔י בְּנֵ֥/ךְ הַ/מֵּ֖ת וּ/בְנִ֥/י הֶ/חָֽי־׃פ
 translation:
-  text: Then the king said[a], “This one says, ‘This is my son, the living one, and your son is the dead one,’ and this one says, ‘No, for your son is the dead one, and my son is the living one.’”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more idiomatically, 'This woman says ... and that woman says ...' The Hebrew uses feminine demonstratives, literally 'this one ... and this one,' referring to the two women.
-    reason: lexical_alternative
+  text: Then the king said, “One woman says, ‘This living child is my son, and the dead one is yours.’ The other says, ‘No! The dead one is your son, and the living one is mine.’”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: Then ... said
@@ -93,14 +89,20 @@ revisions:
   from: Then the king said, “This one says, ‘This living one is my son, and your son is the dead one,’ and this one says, ‘No, for your son is the dead one, and my son is the living one.’”
   to: Then the king said, “This one says, ‘This living one is my son, and your son is the dead one,’ and this one says, ‘No, for your son is the dead one, and my son is the living one.’”
   rationale: 'Adjusted the first clause to more closely reflect the Hebrew word order and apposition: ''This is my son, the living one'' instead of ''This living one is my son.'''
-
 - timestamp: '2026-05-18T02:57:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then the king said[a], “This one says, ‘This is my son, the living one, and your son is the dead one,’ and this one says, ‘No, for your son is the dead one, and my son is the living one.’”'
-  to: 'Then the king said[a], “This one says, ‘This is my son, the living one, and your son is the dead one,’ and this one says, ‘No, for your son is the dead one, and my son is the living one.’”'
+  from: Then the king said[a], “This one says, ‘This is my son, the living one, and your son is the dead one,’ and this one says, ‘No, for your son is the dead one, and my son is the living one.’”
+  to: Then the king said[a], “This one says, ‘This is my son, the living one, and your son is the dead one,’ and this one says, ‘No, for your son is the dead one, and my son is the living one.’”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''This living one''].'
+- timestamp: '2026-11-09T17:20:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then the king said[a], “This one says, ‘This is my son, the living one, and your son is the dead one,’ and this one says, ‘No, for your son is the dead one, and my son is the living one.’”
+  to: Then the king said, “One woman says, ‘This living child is my son, and the dead one is yours.’ The other says, ‘No! The dead one is your son, and the living one is mine.’”
+  rationale: The recorded passes mainly debated word order and apposition, and their records do not establish a maintainer preference. I retained the demonstrative emphasis and the opposed claims while expressing their identification and contradiction naturally.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -120,3 +122,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/003/023.job-58102.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:20:19Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The king summarizes the women’s opposing claims to the living child.
+  meaning_decisions:
+  - source_phrase: זֹאת אֹמֶרֶת ... וְזֹאת אֹמֶרֶת
+    prior_rendering: This one says ... and this one says
+    new_rendering: One woman says ... The other says
+    rationale: The two demonstratives distinguish the women; natural English names the contrast without requiring the reader to infer an accompanying gesture.
+  - source_phrase: זֶה בְּנִי הַחַי וּבְנֵךְ הַמֵּת
+    prior_rendering: This is my son, the living one, and your son is the dead one
+    new_rendering: This living child is my son, and the dead one is yours
+    rationale: This preserves the demonstrative identification of the living child while avoiding cumbersome apposition.
+  - source_phrase: לֹא כִי
+    prior_rendering: No, for
+    new_rendering: No!
+    rationale: The construction introduces an emphatic contradiction and correction, not a separate causal explanation.
+  footnote_kinds: {}
+  history_weighed: The recorded passes mainly debated word order and apposition, and their records do not establish a maintainer preference. I retained the demonstrative emphasis and the opposed claims while expressing their identification and contradiction naturally.

@@ -16,12 +16,12 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: For the passions of desires are held in check[a], being turned back by the self-controlled mind; and all the body's impulses are governed by reason.
-  philosophy: optimal-equivalence
+  text: For the self-controlled mind holds the passions of appetite in check and turns them back, and reason directs all the body's impulses toward honor[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'all the movements of the body are directed toward honor by reason.' The Greek verb here is unusual and carries the idea of aspiring eagerly or loving honor.
-    reason: lexical_alternative
+    text: Alternatively, “reason brings all the body's impulses under its control”; the Greek unusually applies the pursuit of honor to bodily impulses.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἀντέχεται
   chosen: are held in check
@@ -123,17 +123,23 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'For the passions of desires are held in check, being turned back by the self-controlled mind; and all the body''s impulses are made ambitious by reason.'
-  to: 'For the passions of desires are held in check, being turned back by the self-controlled mind; and all the body''s impulses are made ambitious by reason.'
+  from: For the passions of desires are held in check, being turned back by the self-controlled mind; and all the body's impulses are made ambitious by reason.
+  to: For the passions of desires are held in check, being turned back by the self-controlled mind; and all the body's impulses are made ambitious by reason.
   rationale: Replaced 'are made ambitious by reason' with 'are governed by reason' to reflect φιλοτιμοῦνται more naturally in context and maintain formal, readable English.
-
 - timestamp: '2026-05-18T02:59:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For the passions of desires are held in check[a], being turned back by the self-controlled mind; and all the body''s impulses are governed by reason.'
-  to: 'For the passions of desires are held in check[a], being turned back by the self-controlled mind; and all the body''s impulses are governed by reason.'
+  from: For the passions of desires are held in check[a], being turned back by the self-controlled mind; and all the body's impulses are governed by reason.
+  to: For the passions of desires are held in check[a], being turned back by the self-controlled mind; and all the body's impulses are governed by reason.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''are made ambitious''].'
+- timestamp: '2026-11-09T18:57:28Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For the passions of desires are held in check[a], being turned back by the self-controlled mind; and all the body's impulses are governed by reason.
+  to: For the self-controlled mind holds the passions of appetite in check and turns them back, and reason directs all the body's impulses toward honor[a].
+  rationale: The first draft and lexical rationale preserve the honor-related force of the unusual verb, whereas the later “governed” suppresses it. I retain that gain without the unnatural “made ambitious,” and preserve the contextual alternative in a correctly placed note.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -153,3 +159,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/001/035.job-49741.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:28Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The self-controlled mind checks appetitive passions, while reason directs bodily impulses toward honor.
+  meaning_decisions:
+  - source_phrase: ἀντέχεται ... τὰ τῶν ὀρέξεων πάθη ... ἀνακαμπτόμενα
+    prior_rendering: the passions of desires are held in check, being turned back
+    new_rendering: holds the passions of appetite in check and turns them back
+    rationale: Making the mind the explicit agent clarifies the two actions, while “appetite” identifies the kind of desire under discussion.
+  - source_phrase: φιλοτιμοῦνται πάντα τὰ τοῦ σώματος κινήματα ὑπὸ τοῦ λογισμοῦ
+    prior_rendering: all the body's impulses are governed by reason
+    new_rendering: reason directs all the body's impulses toward honor
+    rationale: The verb carries an honor-seeking or aspirational sense that generic governance loses; the broader contextual reading remains in a footnote.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and lexical rationale preserve the honor-related force of the unusual verb, whereas the later “governed” suppresses it. I retain that gain without the unnatural “made ambitious,” and preserve the contextual alternative in a correctly placed note.

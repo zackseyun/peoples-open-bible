@@ -11,18 +11,8 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 4 = Addition D, segmented from Swete pages 784-785 with manual phrase anchors derived from the Swete transcription.
 translation:
-  text: '...entirely covered with gold and costly stones[b][a], and he was very terrifying. And lifting up his face, blazing with splendor at the height of anger, he looked; and the queen fell and changed color in faintness[c], and she bent down upon the head of the delicate maidservant who was going before her.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Greek text for this verse begins mid-description in the supplied witness; the opening words are not fully preserved here, so the translation marks the ellipsis rather than supplying a reconstruction such as 'he was clothed.'
-    reason: textual_variant
-  - marker: b
-    text: Or 'all in gold and precious stones.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'her color changed as she grew faint.'
-    reason: lexical_alternative
+  text: He was covered with gold and precious stones and was utterly terrifying. Raising his face, blazing with splendor, he glared at her in fierce anger. The queen collapsed and turned pale as she grew faint, then slumped against the head of the attendant walking ahead of her.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὅλος διὰ χρυσοῦ καὶ λίθων πολυτελῶν
   chosen: entirely covered with gold and costly stones
@@ -124,7 +114,6 @@ revisions:
   from: '...entirely covered with gold and costly stones, and he was very terrifying. And lifting up his face, blazing with splendor at the height of anger, he looked; and the queen fell and changed color in faintness, and she bent down upon the head of the delicate maidservant who was going before her.'
   to: '...entirely covered with gold and costly stones, and he was very terrifying. And lifting up his face, blazing with splendor in the intensity of anger, he looked; and the queen fell and changed color in faintness, and she bent down upon the head of the delicate maidservant who was going before her.'
   rationale: Changed 'at the height of anger' to 'in the intensity of anger' for a more natural rendering of ἐν ἀκμῇ θυμοῦ while preserving the sense. Kept the rest unchanged as accurate and complete.
-
 - timestamp: '2026-05-18T03:09:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -140,6 +129,13 @@ revisions:
   from: '...entirely covered with gold and costly stones, and he was very terrifying. And lifting up his face, blazing with splendor at the height of anger, he looked; and the queen fell and changed color in faintness, and she bent down upon the head of the delicate maidservant who was going before her.'
   to: '...entirely covered with gold and costly stones[b][a], and he was very terrifying. And lifting up his face, blazing with splendor at the height of anger, he looked; and the queen fell and changed color in faintness[c], and she bent down upon the head of the delicate maidservant who was going before her.'
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it; [b] anchored to ('entirely covered with gold and costly stones') because the note's quoted alternative matches the lexical decision rendered there; [c] anchored to ('changed color in faintness') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:59:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: '...entirely covered with gold and costly stones[b][a], and he was very terrifying. And lifting up his face, blazing with splendor at the height of anger, he looked; and the queen fell and changed color in faintness[c], and she bent down upon the head of the delicate maidservant who was going before her.'
+  to: He was covered with gold and precious stones and was utterly terrifying. Raising his face, blazing with splendor, he glared at her in fierce anger. The queen collapsed and turned pale as she grew faint, then slumped against the head of the attendant walking ahead of her.
+  rationale: The revision history focused on competing expressions for intense anger, but the larger need is to clarify the hostile look and physical collapse. The fiery splendor and the specific reference to the attendant's head remain, while the earlier claim of a fragmentary opening is corrected by reading verses 6–7 together.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -159,3 +155,33 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/additions_to_esther/004/007.job-50269.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:36Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The magnificently adorned king looks at Esther in fierce anger, causing her to grow pale and collapse against her leading attendant.
+  meaning_decisions:
+  - source_phrase: δύκει, ὅλος διὰ χρυσοῦ καὶ λίθων πολυτελῶν
+    prior_rendering: '...entirely covered with gold and costly stones'
+    new_rendering: He was covered with gold and precious stones
+    rationale: The opening completes the clothing verb begun in verse 6; it is not evidence of missing narrative requiring an ellipsis.
+  - source_phrase: ἐν ἀκμῇ θυμοῦ ἔβλεψεν
+    prior_rendering: at the height of anger, he looked
+    new_rendering: he glared at her in fierce anger
+    rationale: The intense anger characterizes his look, and Esther is its understood object.
+  - source_phrase: ἔπεσεν ... μετέβαλε τὸ χρῶμα αὐτῆς ἐν ἐκλύσει ... κατέκυψεν
+    prior_rendering: fell and changed color in faintness ... bent down
+    new_rendering: collapsed and turned pale as she grew faint, then slumped
+    rationale: These actions describe involuntary physical collapse, not a deliberate bow; the change of complexion in this fainting scene is loss of color.
+  - source_phrase: τῆς ἅβρας τῆς προπορευομένης
+    prior_rendering: the delicate maidservant who was going before her
+    new_rendering: the attendant walking ahead of her
+    rationale: Here ἅβρα names the female attendant, as in verse 2, rather than adding a separate description of delicacy.
+  footnote_kinds: {}
+  history_weighed: The revision history focused on competing expressions for intense anger, but the larger need is to clarify the hostile look and physical collapse. The fiery splendor and the specific reference to the attendant's head remain, while the earlier claim of a fragmentary opening is corrected by reading verses 6–7 together.

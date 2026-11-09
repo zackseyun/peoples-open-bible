@@ -21,15 +21,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: Who will sing praise to the Most High in Hades[b][a], instead of the living who give thanks?
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'in Sheol' or 'in the grave'; the Greek reads 'in Hades,' referring here to the realm of the dead.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Give thanks'' could also be rendered ''offer acknowledgment'' or ''make confession,'' with the sense of grateful praise in worship.'
-    reason: lexical_alternative
+  text: Who in the realm of the dead will praise the Most High in place of the living who give thanks?
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ὑψίστῳ
   chosen: to the Most High
@@ -113,14 +106,20 @@ revisions:
   from: Who will sing praise to the Most High in Hades, instead of the living who give thanks?
   to: Who will praise the Most High in Hades, instead of the living who give thanks?
   rationale: Replaced 'sing praise to' with 'praise' for a more direct and natural rendering of αἰνέσει, while preserving the contrast with the living who give thanks.
-
 - timestamp: '2026-05-16T13:07:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Who will praise the Most High in Hades[b][a], instead of the living who give thanks?'
-  to: 'Who will sing praise to the Most High in Hades[b][a], instead of the living who give thanks?'
-  rationale: 'Restored drafter ''sing praise to the Most High'' (preserving αἰνέσει musical-praise nuance) per chosen renderings.'
+  from: Who will praise the Most High in Hades[b][a], instead of the living who give thanks?
+  to: Who will sing praise to the Most High in Hades[b][a], instead of the living who give thanks?
+  rationale: Restored drafter 'sing praise to the Most High' (preserving αἰνέσει musical-praise nuance) per chosen renderings.
+- timestamp: '2026-11-09T19:06:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Who will sing praise to the Most High in Hades[b][a], instead of the living who give thanks?
+  to: Who in the realm of the dead will praise the Most High in place of the living who give thanks?
+  rationale: The automated revision correctly recognized that the verb does not itself specify singing; the later automated revert supplies no sufficient meaning-based reason to add it. I retain the earlier understanding of Hades as the realm of the dead and of thanksgiving as grateful worship.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -140,3 +139,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/017/023.job-51425.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:03Z'
+  change_level: retranslated
+  confidence: high
+  meaning: No one in the realm of the dead can take the place of the living who praise and thank the Most High.
+  meaning_decisions:
+  - source_phrase: αἰνέσει
+    prior_rendering: will sing praise to
+    new_rendering: will praise
+    rationale: The verb denotes praise without specifying singing, so the translation should not restrict the worship to a musical form.
+  - source_phrase: ἐν ᾅδου
+    prior_rendering: in Hades
+    new_rendering: in the realm of the dead
+    rationale: This carries the term's meaning directly and avoids suggesting either the Greek deity or a specifically defined place of final punishment.
+  - source_phrase: ἀντὶ ζώντων
+    prior_rendering: instead of the living
+    new_rendering: in place of the living
+    rationale: The question asks who among the dead could replace living worshipers, rather than presenting a choice between two groups.
+  footnote_kinds: {}
+  history_weighed: The automated revision correctly recognized that the verb does not itself specify singing; the later automated revert supplies no sufficient meaning-based reason to add it. I retain the earlier understanding of Hades as the realm of the dead and of thanksgiving as grateful worship.

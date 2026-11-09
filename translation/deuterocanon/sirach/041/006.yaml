@@ -26,12 +26,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 41:6
 translation:
-  text: The dominion of evil[a] is from the child of injustice, and disgrace is always with his offspring.
-  philosophy: optimal-equivalence
+  text: Evil rule comes from an unjust man, and poverty always accompanies his descendants[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek: ''The inheritance of sinners'' children will perish, and with their offspring reproach will continue.'' The Hebrew surviving here is difficult, especially in the second clause, but it points in the same general direction of lasting shame upon the descendants of the unjust.'
-    reason: alternative_reading
+    text: 'The Greek differs substantially: “The inheritance of sinners'' children will perish, and reproach will remain with their descendants.” The Hebrew wording is difficult.'
+    reason: textual_variant
 lexical_decisions:
 - source_word: מבן עול
   chosen: from the child of injustice
@@ -114,13 +114,12 @@ revisions:
   from: The dominion of evil is from the child of injustice, and disgrace is always with his offspring.
   to: From a child of injustice comes the rule of evil, and disgrace is always with his offspring.
   rationale: 'Revised for more natural English and closer lexical sense: changed ''The dominion of evil is from'' to ''From a child of injustice comes the rule of evil,'' while retaining ''disgrace ... with his offspring.'''
-
 - timestamp: '2026-05-18T03:09:32Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'From a child of injustice comes the rule of evil[a], and disgrace is always with his offspring.'
-  to: 'The dominion of evil is from the child of injustice, and disgrace is always with his offspring.'
+  from: From a child of injustice comes the rule of evil[a], and disgrace is always with his offspring.
+  to: The dominion of evil is from the child of injustice, and disgrace is always with his offspring.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from the child of injustice''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -130,6 +129,13 @@ revisions:
   from: The dominion of evil is from the child of injustice, and disgrace is always with his offspring.
   to: The dominion of evil[a] is from the child of injustice, and disgrace is always with his offspring.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:08:57Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The dominion of evil[a] is from the child of injustice, and disgrace is always with his offspring.
+  to: Evil rule comes from an unjust man, and poverty always accompanies his descendants[a].
+  rationale: The review and revert retained “child of injustice,” while the lexical rationale used Greek reproach to supply “disgrace.” I depart from those choices because the character idiom and Hebrew term for poverty can be conveyed directly without conflating the witnesses.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -149,3 +155,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/041/006.job-52149.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:57Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: An unjust man is a source of evil rule, and poverty continually accompanies his descendants.
+  meaning_decisions:
+  - source_phrase: מבן עול ממשלת רע
+    prior_rendering: The dominion of evil is from the child of injustice
+    new_rendering: Evil rule comes from an unjust man
+    rationale: “Child of injustice” characterizes a person by wrongdoing rather than naming injustice as his parent; the new wording translates that idiom while retaining the Hebrew's reference to rule.
+  - source_phrase: וריש עם זרעו תמיד
+    prior_rendering: and disgrace is always with his offspring
+    new_rendering: and poverty always accompanies his descendants
+    rationale: The Hebrew ריש denotes poverty; the earlier rendering supplied disgrace from the differing Greek. The main text now follows the readable Hebrew term and records the Greek alternative separately.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The review and revert retained “child of injustice,” while the lexical rationale used Greek reproach to supply “disgrace.” I depart from those choices because the character idiom and Hebrew term for poverty can be conveyed directly without conflating the witnesses.

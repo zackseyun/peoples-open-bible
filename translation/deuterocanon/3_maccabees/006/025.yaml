@@ -20,15 +20,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: Who was it that removed each one from the secure strongholds of our homeland and household[a], where they had held us in faith[b], and gathered them here without reason?
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'faithfully,' 'in trust,' or possibly 'securely' for 'in faith' (ἐν πίστει); the Greek phrase is difficult in this context.
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek syntax in this clause is difficult; the sense is that the people were taken away from the secure places of their land and homes and assembled here without cause.
-    reason: textual_variant
+  text: Who removed from their homes those who had faithfully held the strongholds of our land and gathered every one of them here without reason?
+  philosophy: dynamic
 lexical_decisions:
 - source_word: τίς
   chosen: Who was it
@@ -138,14 +131,20 @@ revisions:
   from: Who was it that removed each one from the secure strongholds of our homeland and household, where they had held us in faith, and gathered them here without reason?
   to: Who was it that removed each one from the secure strongholds of our homeland and our homes, where they had been held in trust, and gathered them here without cause?
   rationale: Revised 'household' to 'our homes' for a more natural rendering of τῆς οἰκίας, adjusted 'had held us in faith' to 'had been held in trust' to better reflect ἐν πίστει, and changed 'without reason' to 'without cause' for a slightly more formal register.
-
 - timestamp: '2026-05-15T16:09:58Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Who was it that removed each one from the secure strongholds of our homeland and our homes[a], where they had been held in trust[b], and gathered them here without cause?'
-  to: 'Who was it that removed each one from the secure strongholds of our homeland and household[a], where they had held us in faith[b], and gathered them here without reason?'
-  rationale: 'Restored 3 chosen renderings; ''in faith'' is DOCTRINE.md-anchored choice for πίστις over ''in trust''.'
+  from: Who was it that removed each one from the secure strongholds of our homeland and our homes[a], where they had been held in trust[b], and gathered them here without cause?
+  to: Who was it that removed each one from the secure strongholds of our homeland and household[a], where they had held us in faith[b], and gathered them here without reason?
+  rationale: Restored 3 chosen renderings; 'in faith' is DOCTRINE.md-anchored choice for πίστις over 'in trust'.
+- timestamp: '2026-11-09T18:58:26Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Who was it that removed each one from the secure strongholds of our homeland and household[a], where they had held us in faith[b], and gathered them here without reason?
+  to: Who removed from their homes those who had faithfully held the strongholds of our land and gathered every one of them here without reason?
+  rationale: The automated attempt to replace “in faith” with “in trust” did not repair the clause’s syntax, and no MAINTAINER decision requires the reverted wording. I take the strongholds as the object of “held” and the home as the place of removal, with πίστις expressing loyalty in this royal context.
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -165,3 +164,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/006/025.job-49667.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:58:26Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The king demands to know who uprooted the people who had loyally held the country’s strongholds and assembled them here without justification.
+  meaning_decisions:
+  - source_phrase: τοὺς κρατήσαντας ἡμῶν ἐν πίστει τὰ τῆς χώρας ὀχυρώματα
+    prior_rendering: where they had held us in faith
+    new_rendering: those who had faithfully held the strongholds of our land
+    rationale: The strongholds are the object of “held,” and πίστις describes the people’s loyalty in the king’s service, not religious belief or their holding the king himself.
+  - source_phrase: τῆς οἰκίας ἀποστήσας
+    prior_rendering: removed each one from the secure strongholds of our homeland and household
+    new_rendering: removed from their homes
+    rationale: The genitive “home” belongs with the verb of separation; the strongholds belong with the earlier participle describing loyal service.
+  footnote_kinds: {}
+  history_weighed: The automated attempt to replace “in faith” with “in trust” did not repair the clause’s syntax, and no MAINTAINER decision requires the reverted wording. I take the strongholds as the object of “held” and the home as the place of removal, with πίστις expressing loyalty in this royal context.

@@ -24,18 +24,15 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: The Lord God is watching[a], and in truth he is being moved to compassion for us, just as Moses made clear in the song that testifies openly, saying[c][b], “And he will be moved to compassion for his servants.”
-  philosophy: optimal-equivalence
+  text: The Lord God is watching, and he truly has compassion on us, just as Moses declared in the song that bears witness against the people to their faces[a], when he said, “And he will have compassion on his servants[b].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “he is comforted … he will be comforted.” The Greek verb can carry senses such as comfort, exhortation, or being moved with pity; here the context and the quotation from the Song of Moses favor the sense of compassion or relenting.
-    reason: lexical_alternative
-  - marker: b
-    text: The quotation echoes Deuteronomy 32:36, where the Lord is said to be moved concerning his servants.
+    text: See Deuteronomy 31:19–21, where Moses’ song is given to stand as a witness against Israel.
     reason: cross_reference
-  - marker: c
-    text: 'Or “his servants.” Greek: “his slaves.”'
-    reason: alternative_reading
+  - marker: b
+    text: Deuteronomy 32:36.
+    reason: cross_reference
 lexical_decisions:
 - source_word: ἐφορᾷ
   chosen: is watching
@@ -163,7 +160,13 @@ revisions:
   from: The Lord God is watching, and in truth he is being moved to compassion for us, just as Moses made clear in the song that testifies openly, saying, “And he will be moved to compassion for his servants.”
   to: The Lord God is watching, and in truth he is being moved to compassion for us, just as Moses made clear in the song that testifies openly, saying, “And he will be moved to compassion for his slaves.”
   rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md policy)
-
+- timestamp: '2026-11-09T22:10:11Z'
+  adjudicator: claude-opus-5.5-meaning-pass
+  reviewer_model: claude-opus-5-5
+  category: meaning_retranslation
+  from: The Lord God is watching[a], and in truth he is being moved to compassion for us, just as Moses made clear in the song that testifies openly, saying[c][b], “And he will be moved to compassion for his servants.”
+  to: The Lord God is watching, and he truly has compassion on us, just as Moses declared in the song that bears witness against the people to their faces[a], when he said, “And he will have compassion on his servants[b].”
+  rationale: The automated regression fix that restored 'slaves' is overridden by the standing maintainer ruling on doulos, matching 'his own servants' in verse 33; the compassion sense chosen in the theological decisions is kept.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -183,3 +186,31 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/007/006.job-49140.json
+meaning_pass:
+  run: full-v4-opus
+  model: claude-opus-5-5
+  deployment: claude-code-subscription
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: null
+  timestamp: '2026-11-09T22:10:11Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The brothers declare that God sees their suffering and has compassion on them, as Moses promised in his song that God would have compassion on his servants.
+  meaning_decisions:
+  - source_phrase: ταῖς ἀληθείαις ἐφʼ ἡμῖν παρακαλεῖται
+    prior_rendering: in truth he is being moved to compassion for us
+    new_rendering: he truly has compassion on us
+    rationale: The verb echoes Deuteronomy 32:36, where God has compassion on his people; plain English carries this better than the stilted progressive passive.
+  - source_phrase: διὰ τῆς κατὰ πρόσωπον ἀντιμαρτυρούσης ᾠδῆς
+    prior_rendering: in the song that testifies openly
+    new_rendering: in the song that bears witness against the people to their faces
+    rationale: The phrase recalls Deuteronomy 31:21, where the song testifies against Israel to their faces; 'testifies openly' lost the adversative witness.
+  - source_phrase: δούλοις
+    prior_rendering: his servants (with a note giving 'slaves')
+    new_rendering: his servants
+    rationale: 'Standing ruling: doulos is ''servant'' in the main text; bonded status is not the point of the quotation, so the note is dropped.'
+  footnote_kinds:
+    a: cross_reference
+    b: cross_reference
+  history_weighed: The automated regression fix that restored 'slaves' is overridden by the standing maintainer ruling on doulos, matching 'his own servants' in verse 33; the compassion sense chosen in the theological decisions is kept.

@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וּ/בְ/נָבִ֕יא הֶעֱלָ֧ה יְהוָ֛ה אֶת יִשְׂרָאֵ֖ל מִ/מִּצְרָ֑יִם וּ/בְ/נָבִ֖יא נִשְׁמָֽר־׃
 translation:
-  text: By a prophet Yahweh brought Israel up from Egypt[b][a], and by a prophet he was guarded.
-  philosophy: optimal-equivalence
+  text: By a prophet[a] Yahweh brought Israel up from Egypt, and by a prophet Israel was guarded.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: That is, likely Moses in the exodus context.
-    reason: cross_reference
-  - marker: b
-    text: Or 'he was guarded' or 'he was preserved.'
-    reason: lexical_alternative
+    text: The exodus reference points to Moses.
+    reason: cultural_note
 lexical_decisions:
 - source_word: בְּנָבִיא
   chosen: by a prophet
@@ -72,14 +69,20 @@ revisions:
   from: By a prophet the LORD brought Israel up from Egypt, and by a prophet he was kept.
   to: By a prophet the LORD brought Israel up from Egypt, and by a prophet he was kept.
   rationale: Changed 'was kept' to 'was guarded' for a more natural and lexically precise rendering of נִשְׁמָר, while preserving the formal structure and meaning.
-
 - timestamp: '2026-05-17T20:36:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'By a prophet Yahweh brought Israel up from Egypt[b][a], and by a prophet he was guarded.'
-  to: 'By a prophet Yahweh brought Israel up from Egypt[b][a], and by a prophet he was guarded.'
+  from: By a prophet Yahweh brought Israel up from Egypt[b][a], and by a prophet he was guarded.
+  to: By a prophet Yahweh brought Israel up from Egypt[b][a], and by a prophet he was guarded.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he was kept''].'
+- timestamp: '2026-11-09T17:48:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: By a prophet Yahweh brought Israel up from Egypt[b][a], and by a prophet he was guarded.
+  to: By a prophet[a] Yahweh brought Israel up from Egypt, and by a prophet Israel was guarded.
+  rationale: I retain the current “guarded,” which makes the protective sense clearer than “kept” and preserves the verbal connection with Jacob’s work. The repeated prophetic agency remains, while the implied collective subject is made explicit.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -101,3 +104,22 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/hosea/012/014.job-65926.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:48:02Z'
+  change_level: refined
+  confidence: high
+  meaning: Yahweh used a prophet both to bring Israel out of Egypt and to guard the people.
+  meaning_decisions:
+  - source_phrase: וּבְנָבִיא נִשְׁמָר
+    prior_rendering: and by a prophet he was guarded
+    new_rendering: and by a prophet Israel was guarded
+    rationale: Repeating Israel makes clear that the guarded subject is the people delivered from Egypt, not the prophet or the individual patriarch.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: I retain the current “guarded,” which makes the protective sense clearer than “kept” and preserves the verbal connection with Jacob’s work. The repeated prophetic agency remains, while the implied collective subject is made explicit.

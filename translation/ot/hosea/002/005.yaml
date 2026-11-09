@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: פֶּן אַפְשִׁיטֶ֣/נָּה עֲרֻמָּ֔ה וְ/הִ֨צַּגְתִּ֔י/הָ כְּ/י֖וֹם הִוָּֽלְדָ֑/הּ וְ/שַׂמְתִּ֣י/הָ כַ/מִּדְבָּ֗ר וְ/שַׁתִּ֨/הָ֙ כְּ/אֶ֣רֶץ צִיָּ֔ה וַ/הֲמִתִּ֖י/הָ בַּ/צָּמָֽא־׃
 translation:
-  text: or else I will strip her naked and expose her as on the day she was born[a], and make her like the wilderness, and make her like a parched land[b], and let her die of thirst.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'lest I strip her naked.' The Hebrew particle can be rendered more formally as 'lest,' introducing the threatened consequence.
-    reason: lexical_alternative
-  - marker: b
-    text: 'Or ''kill her with thirst.'' The Hebrew is more literally causative: ''cause her to die by thirst.'''
-    reason: lexical_alternative
+  text: Otherwise I will strip her naked and expose her as on the day she was born; I will make her like the wilderness, turn her into a parched land, and kill her with thirst.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: פֶּן
   chosen: or else
@@ -98,14 +91,20 @@ revisions:
   from: or else I will strip her naked and expose her as on the day she was born, and make her like the wilderness, and make her like a parched land, and let her die of thirst.
   to: or else I will strip her naked and set her forth as on the day she was born, and make her like the wilderness, and make her like a parched land, and put her to death with thirst.
   rationale: Revised 'expose her' to 'set her forth' to reflect the source more closely, and changed 'let her die of thirst' to 'put her to death with thirst' to preserve the causative force of the verb.
-
 - timestamp: '2026-05-15T23:39:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'or else I will strip her naked and set her forth as on the day she was born[a], and make her like the wilderness, and make her like a parched land[b], and put her to death with thirst.'
-  to: 'or else I will strip her naked and expose her as on the day she was born[a], and make her like the wilderness, and make her like a parched land[b], and let her die of thirst.'
-  rationale: 'Azure substituted ''set her forth'' (drafter''s explicit rejected alternative — drafter chose ''expose her'' for public-shame imagery paired with ''strip her naked'') and ''put her to death with thirst'' (rejected — drafter chose ''let her die of thirst'' for idiomatic causative).'
+  from: or else I will strip her naked and set her forth as on the day she was born[a], and make her like the wilderness, and make her like a parched land[b], and put her to death with thirst.
+  to: or else I will strip her naked and expose her as on the day she was born[a], and make her like the wilderness, and make her like a parched land[b], and let her die of thirst.
+  rationale: Azure substituted 'set her forth' (drafter's explicit rejected alternative — drafter chose 'expose her' for public-shame imagery paired with 'strip her naked') and 'put her to death with thirst' (rejected — drafter chose 'let her die of thirst' for idiomatic causative).
+- timestamp: '2026-11-09T22:10:11Z'
+  adjudicator: claude-opus-5.5-meaning-pass
+  reviewer_model: claude-opus-5-5
+  category: meaning_retranslation
+  from: or else I will strip her naked and expose her as on the day she was born[a], and make her like the wilderness, and make her like a parched land[b], and let her die of thirst.
+  to: Otherwise I will strip her naked and expose her as on the day she was born; I will make her like the wilderness, turn her into a parched land, and kill her with thirst.
+  rationale: The doctrine-realignment revert restored 'expose her' over 'set her forth', and I keep it. It also restored 'let her die of thirst', but that was an automated revert, and the causative force the revision pass tried to keep is a real part of the meaning, so I render it with natural English ('kill her with thirst'). The old footnotes were misplaced and are no longer needed.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -125,3 +124,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/hosea/002/005.job-46196.json
+meaning_pass:
+  run: full-v4-opus
+  model: claude-opus-5-5
+  deployment: claude-code-subscription
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: null
+  timestamp: '2026-11-09T22:10:11Z'
+  change_level: refined
+  confidence: high
+  meaning: If she does not turn back, Yahweh will strip her of everything, leaving her as exposed as a newborn and as barren and lifeless as a waterless land.
+  meaning_decisions:
+  - source_phrase: וַהֲמִתִּיהָ בַּצָּמָא
+    prior_rendering: and let her die of thirst
+    new_rendering: and kill her with thirst
+    rationale: 'The Hiphil is causative: Yahweh himself brings about her death by thirst. ''Let her die'' makes him a bystander and weakens the threat.'
+  - source_phrase: פֶּן
+    prior_rendering: or else
+    new_rendering: Otherwise
+    rationale: This is the same warning, phrased as a full sentence after the command that ends 2:4.
+  footnote_kinds: {}
+  history_weighed: The doctrine-realignment revert restored 'expose her' over 'set her forth', and I keep it. It also restored 'let her die of thirst', but that was an automated revert, and the causative force the revision pass tried to keep is a real part of the meaning, so I render it with natural English ('kill her with thirst'). The old footnotes were misplaced and are no longer needed.

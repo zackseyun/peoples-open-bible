@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וּ/בְקָֽרְ/ךָ֤ וְ/צֹֽאנְ/ךָ֙ יִרְבְּיֻ֔/ן וְ/כֶ֥סֶף וְ/זָהָ֖ב יִרְבֶּה לָּ֑/ךְ וְ/כֹ֥ל אֲשֶׁר לְ/ךָ֖ יִרְבֶּֽה־־׃
 translation:
-  text: and your herds and your flocks multiply[a], and silver and gold increase for you[b], and all that is yours increases—
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'your cattle.' The Hebrew בקר refers specifically to bovine livestock.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'all that you have increases.'
-    reason: lexical_alternative
+  text: and your herds and flocks multiply, and your silver and gold increase, and everything you own increases—
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וּבְקָרְךָ
   chosen: and your herds
@@ -82,14 +75,20 @@ revisions:
   from: and your herds and your flocks multiply, and silver and gold increase for you, and all that is yours increases—
   to: and your herds and your flocks multiply, and your silver and gold increase, and all that is yours increases—
   rationale: Added 'your' before 'silver and gold' for closer correspondence to the Hebrew possession, and removed 'for you' as less natural and unnecessary here.
-
 - timestamp: '2026-05-16T05:56:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and your herds and your flocks multiply[a], and your silver and gold increase[b], and all that is yours increases—'
-  to: 'and your herds and your flocks multiply[a], and silver and gold increase for you[b], and all that is yours increases—'
+  from: and your herds and your flocks multiply[a], and your silver and gold increase[b], and all that is yours increases—
+  to: and your herds and your flocks multiply[a], and silver and gold increase for you[b], and all that is yours increases—
   rationale: 'Azure substituted BOTH documented rejected_alternatives: ''your silver and gold'' (rejected — drafter chose to omit possessive since לָךְ conveys it) and ''increase'' without ''for you'' (rejected — drafter chose to preserve dative לָךְ).'
+- timestamp: '2026-11-09T17:30:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and your herds and your flocks multiply[a], and silver and gold increase for you[b], and all that is yours increases—
+  to: and your herds and flocks multiply, and your silver and gold increase, and everything you own increases—
+  rationale: The earlier review adopted 'your silver and gold,' and the automated revert rejected it to preserve the Hebrew dative’s form. With no maintainer ruling here, I restore the review’s clearer English because it preserves the dative’s meaning; the misplaced and unnecessary notes are dropped.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -109,3 +108,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/008/013.job-61477.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:30:25Z'
+  change_level: refined
+  confidence: high
+  meaning: The warning includes the time when Israel’s livestock, precious metals, and possessions have all increased.
+  meaning_decisions:
+  - source_phrase: וְכֶסֶף וְזָהָב יִרְבֶּה לָּךְ
+    prior_rendering: and silver and gold increase for you
+    new_rendering: and your silver and gold increase
+    rationale: The Hebrew dative conveys that the growing wealth belongs to Israel; an English possessive carries that meaning more naturally without adding ownership absent from the source.
+  footnote_kinds: {}
+  history_weighed: The earlier review adopted 'your silver and gold,' and the automated revert rejected it to preserve the Hebrew dative’s form. With no maintainer ruling here, I restore the review’s clearer English because it preserves the dative’s meaning; the misplaced and unnecessary notes are dropped.

@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: וָ/אֹמְרָ֣/ה לָ/הֶ֗ם אֲנַ֣חְנוּ קָ֠נִינוּ אֶת אַחֵ֨י/נוּ הַ/יְּהוּדִ֜ים הַ/נִּמְכָּרִ֤ים לַ/גּוֹיִם֙ כְּ/דֵ֣י בָ֔/נוּ וְ/גַם אַתֶּ֛ם תִּמְכְּר֥וּ אֶת אֲחֵי/כֶ֖ם וְ/נִמְכְּרוּ לָ֑/נוּ וַֽ/יַּחֲרִ֔ישׁוּ וְ/לֹ֥א מָצְא֖וּ דָּבָֽר־־־־׃ס
 translation:
-  text: And I said to them[a], “We have bought back our Jewish brothers who were sold to the nations, as much as we were able. But now you yourselves are even selling your brothers[b], and they must be sold to us!” Then they were silent and found nothing to say.
-  philosophy: optimal-equivalence
+  text: I said to them, “We have bought back our Jewish brothers who had been sold to foreigners, as far as our means allowed. But now you yourselves are selling your own brothers, only for us to buy them back[a]!” They were silent and found nothing to say.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “our fellow Jews.” The Hebrew says “our brothers, the Jews,” using a masculine kinship term for fellow members of the community.
-    reason: lexical_alternative
-  - marker: b
-    text: 'Or “and should they be sold to us?” The Hebrew clause is terse and may be understood as a rhetorical consequence: their brothers end up being sold back to their own people.'
+    text: Or, “and are they to be sold to us?” The Hebrew may express the consequence as a rhetorical question.
     reason: alternative_reading
 lexical_decisions:
 - source_word: קָנִינוּ
@@ -107,14 +104,20 @@ revisions:
   from: And I said to them, “We have bought back our Jewish brothers who were sold to the nations as much as we were able. But now you yourselves are even selling your brothers, and they must be sold to us!” Then they were silent and found nothing to say.
   to: And I said to them, “We have bought back our Jewish brothers who were sold to the nations, as much as we were able. But you are even selling your brothers, and should they be sold to us?” Then they were silent and found nothing to say.
   rationale: 'Adjusted the second half for closer sense and more natural English: changed ''But now you yourselves are even selling'' to ''But you are even selling,'' and replaced ''and they must be sold to us!'' with the more accurate rhetorical sense ''and should they be sold to us?'' Retained the rest with only minor punctuation smoothing.'
-
 - timestamp: '2026-05-16T01:23:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I said to them[a], “We have bought back our Jewish brothers who were sold to the nations, as much as we were able. But you are even selling your brothers[b], and should they be sold to us?” Then they were silent and found nothing to say.'
-  to: 'And I said to them[a], “We have bought back our Jewish brothers who were sold to the nations, as much as we were able. But now you yourselves are even selling your brothers[b], and they must be sold to us!” Then they were silent and found nothing to say.'
-  rationale: 'Azure dropped emphatic ''now you yourselves'' (drafter''s documented contrast rendering of וְגַם אַתֶּם) and softened indicative ''they must be sold to us!'' to interrogative ''should they be sold to us?'' (rejected alternative).'
+  from: And I said to them[a], “We have bought back our Jewish brothers who were sold to the nations, as much as we were able. But you are even selling your brothers[b], and should they be sold to us?” Then they were silent and found nothing to say.
+  to: And I said to them[a], “We have bought back our Jewish brothers who were sold to the nations, as much as we were able. But now you yourselves are even selling your brothers[b], and they must be sold to us!” Then they were silent and found nothing to say.
+  rationale: Azure dropped emphatic 'now you yourselves' (drafter's documented contrast rendering of וְגַם אַתֶּם) and softened indicative 'they must be sold to us!' to interrogative 'should they be sold to us?' (rejected alternative).
+- timestamp: '2026-11-09T18:25:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I said to them[a], “We have bought back our Jewish brothers who were sold to the nations, as much as we were able. But now you yourselves are even selling your brothers[b], and they must be sold to us!” Then they were silent and found nothing to say.
+  to: I said to them, “We have bought back our Jewish brothers who had been sold to foreigners, as far as our means allowed. But now you yourselves are selling your own brothers, only for us to buy them back[a]!” They were silent and found nothing to say.
+  rationale: The history rightly preserves the emphatic contrast 'you yourselves,' which remains. Its 'they must be sold to us' can obscure the contradiction between rescue and renewed enslavement, so I clarify that consequence and retain the serious rhetorical-question reading in a note.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -134,3 +137,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/nehemiah/005/008.job-42779.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:25:25Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Nehemiah exposes the contradiction between buying Jewish brothers out of foreign slavery and selling them into bondage again, leaving the leaders without an answer.
+  meaning_decisions:
+  - source_phrase: הַנִּמְכָּרִים לַגּוֹיִם
+    prior_rendering: who were sold to the nations
+    new_rendering: who had been sold to foreigners
+    rationale: Here the nations are foreign peoples who held the Jews in slavery, not states purchasing them as political entities.
+  - source_phrase: וְגַם אַתֶּם תִּמְכְּרוּ אֶת אֲחֵיכֶם וְנִמְכְּרוּ לָנוּ
+    prior_rendering: But now you yourselves are even selling your brothers, and they must be sold to us!
+    new_rendering: But now you yourselves are selling your own brothers, only for us to buy them back!
+    rationale: The rebuke exposes a cycle in which the leaders undo the community's rescue efforts; 'buy them back' makes the consequence clear without presenting another sale as a command.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history rightly preserves the emphatic contrast 'you yourselves,' which remains. Its 'they must be sold to us' can obscure the contradiction between rescue and renewed enslavement, so I clarify that consequence and retain the serious rhetorical-question reading in a note.

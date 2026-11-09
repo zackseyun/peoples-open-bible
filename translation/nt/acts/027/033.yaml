@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: Ἄχρι δὲ οὗ ⸂ἡμέρα ἤμελλεν⸃ γίνεσθαι παρεκάλει ὁ Παῦλος ἅπαντας μεταλαβεῖν τροφῆς λέγων· Τεσσαρεσκαιδεκάτην σήμερον ἡμέραν προσδοκῶντες ἄσιτοι διατελεῖτε, μηθὲν προσλαβόμενοι·
 translation:
-  text: Until the day was about to dawn[a], Paul kept urging them all to take some food, saying, “Today is the fourteenth day that you have continued in suspense without eating, having taken nothing.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “waiting anxiously”; the Greek participle can denote expectation, and in this storm context likely carries the sense of anxious suspense.
-    reason: lexical_alternative
+  text: As dawn drew near, Paul kept urging everyone to eat, saying, “Today is the fourteenth day you have been waiting anxiously without eating; you have eaten nothing.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἄχρι δὲ οὗ
   chosen: Until
@@ -105,14 +101,20 @@ revisions:
   from: Until the day was about to dawn, Paul kept urging them all to take some food, saying, “Today is the fourteenth day that you have continued in suspense without eating, having taken nothing.”
   to: Until the day was about to dawn, Paul kept urging them all to take some food, saying, “Today is the fourteenth day that you have continued waiting without food, having taken nothing.”
   rationale: Replaced 'in suspense' with 'waiting' to more directly reflect προσδοκῶντες and avoid interpretive nuance. Kept the rest substantially the same for accuracy and naturalness.
-
 - timestamp: '2026-05-16T22:14:03Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Until the day was about to dawn[a], Paul kept urging them all to take some food, saying, “Today is the fourteenth day that you have continued waiting without food, having taken nothing.”'
-  to: 'Until the day was about to dawn[a], Paul kept urging them all to take some food, saying, “Today is the fourteenth day that you have continued in suspense without eating, having taken nothing.”'
-  rationale: 'Restored drafter ''in suspense'' (preserving the chosen rendering of προσδοκῶντες) and ''without eating'' (preserving the chosen explicit eating verb) per chosen renderings.'
+  from: Until the day was about to dawn[a], Paul kept urging them all to take some food, saying, “Today is the fourteenth day that you have continued waiting without food, having taken nothing.”
+  to: Until the day was about to dawn[a], Paul kept urging them all to take some food, saying, “Today is the fourteenth day that you have continued in suspense without eating, having taken nothing.”
+  rationale: Restored drafter 'in suspense' (preserving the chosen rendering of προσδοκῶντες) and 'without eating' (preserving the chosen explicit eating verb) per chosen renderings.
+- timestamp: '2026-11-09T18:07:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Until the day was about to dawn[a], Paul kept urging them all to take some food, saying, “Today is the fourteenth day that you have continued in suspense without eating, having taken nothing.”
+  to: As dawn drew near, Paul kept urging everyone to eat, saying, “Today is the fourteenth day you have been waiting anxiously without eating; you have eaten nothing.”
+  rationale: The review’s neutral “waiting” was later reverted to “in suspense.” The storm context and lexical rationale support retaining the apprehension conveyed by that wording, now expressed as “waiting anxiously.”
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -132,3 +134,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/027/033.job-46782.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:07:24Z'
+  change_level: retranslated
+  confidence: high
+  meaning: As dawn approaches, Paul urges everyone to eat after fourteen days of anxious waiting without nourishment.
+  meaning_decisions:
+  - source_phrase: Ἄχρι δὲ οὗ ἡμέρα ἤμελλεν γίνεσθαι παρεκάλει
+    prior_rendering: Until the day was about to dawn, Paul kept urging
+    new_rendering: As dawn drew near, Paul kept urging
+    rationale: Expresses the interval leading up to imminent daylight naturally while retaining Paul’s continuing appeal.
+  - source_phrase: προσδοκῶντες ἄσιτοι διατελεῖτε, μηθὲν προσλαβόμενοι
+    prior_rendering: you have continued in suspense without eating, having taken nothing
+    new_rendering: you have been waiting anxiously without eating; you have eaten nothing
+    rationale: Makes the anxious expectation explicit and renders the final participial phrase as an emphatic statement about their lack of nourishment.
+  footnote_kinds: {}
+  history_weighed: The review’s neutral “waiting” was later reverted to “in suspense.” The storm context and lexical rationale support retaining the apprehension conveyed by that wording, now expressed as “waiting anxiously.”

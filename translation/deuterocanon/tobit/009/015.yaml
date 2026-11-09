@@ -8,11 +8,11 @@ source:
   - 852
   validation: no_reference
 translation:
-  text: He blessed them forever[a].
-  philosophy: optimal-equivalence
+  text: … blessed … blessing[a] … all … forever …
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Some marginal witnesses add, 'with a pure and holy blessing.'
+    text: Some witnesses add “pure and holy” after “blessing.”
     reason: textual_variant
 lexical_decisions:
 - source_word: ηυλογησεν
@@ -78,14 +78,20 @@ revisions:
   from: He blessed them all forever.
   to: He blessed them all forever.
   rationale: Removed "all" because παντες appears only in variant witnesses and is not supported by the main text; retained a formal, natural rendering of the main Greek.
-
 - timestamp: '2026-05-18T02:58:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He blessed them forever[a].'
-  to: 'He blessed them forever[a].'
+  from: He blessed them forever[a].
+  to: He blessed them forever[a].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''them all''].'
+- timestamp: '2026-11-09T19:09:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He blessed them forever[a].
+  to: … blessed … blessing[a] … all … forever …
+  rationale: Earlier passes constructed a continuous blessing from disconnected apparatus entries and debated whether to include “all.” Neither reconstruction is supported by the supplied source, so only the recoverable expressions are retained.
 cross_check:
   status: needs_review
   agreement: 0.0
@@ -105,3 +111,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/tobit/009/015.job-52527.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:46Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The supplied notes mention blessing and everlasting duration but do not establish a complete statement or identify its participants.
+  meaning_decisions:
+  - source_phrase: ηυλογησεν A | ευλογια] + καθαρα και αγια Bab mgA | παντες] pr και A | τους αιωνας] pr παντας A
+    prior_rendering: He blessed them forever.
+    new_rendering: … blessed … blessing … all … forever …
+    rationale: These are separate apparatus entries, not a continuous sentence. They do not establish “he” or “them,” and πάντες is nominative “all,” not an object meaning “them.”
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: Earlier passes constructed a continuous blessing from disconnected apparatus entries and debated whether to include “all.” Neither reconstruction is supported by the supplied source, so only the recoverable expressions are retained.

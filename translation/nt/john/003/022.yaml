@@ -4,18 +4,12 @@ source:
   edition: SBLGNT
   text: Μετὰ ταῦτα ἦλθεν ὁ Ἰησοῦς καὶ οἱ μαθηταὶ αὐτοῦ εἰς τὴν Ἰουδαίαν γῆν, καὶ ἐκεῖ διέτριβεν μετ’ αὐτῶν καὶ ἐβάπτιζεν.
 translation:
-  text: After these things[a], Jesus and his disciples went into the land of Judea[c][b], and there he was spending time with them and baptizing.
-  philosophy: optimal-equivalence
+  text: After this, Jesus and his disciples went into the Judean countryside, where he spent time with them and baptized[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: John 4:2 later clarifies that Jesus himself was not baptizing, but his disciples were.
+    text: John 4:2 clarifies that Jesus' disciples performed the baptisms, not Jesus himself.
     reason: cross_reference
-  - marker: b
-    text: Or 'into the land of Judea' or simply 'into Judea.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'was staying there with them.'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: Μετὰ ταῦτα
   chosen: After these things
@@ -89,14 +83,20 @@ revisions:
   from: After these things, Jesus and his disciples went into the Judean countryside, and there he was spending time with them and baptizing.
   to: After these things, Jesus and his disciples went into the Judean countryside, and there he was spending time with them and baptizing.
   rationale: Changed 'the Judean countryside' to 'the land of Judea' to more directly reflect τὴν Ἰουδαίαν γῆν. Kept the rest essentially unchanged as accurate and natural.
-
 - timestamp: '2026-05-18T02:59:52Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'After these things[a], Jesus and his disciples went into the land of Judea[c][b], and there he was spending time with them and baptizing.'
-  to: 'After these things[a], Jesus and his disciples went into the land of Judea[c][b], and there he was spending time with them and baptizing.'
+  from: After these things[a], Jesus and his disciples went into the land of Judea[c][b], and there he was spending time with them and baptizing.
+  to: After these things[a], Jesus and his disciples went into the land of Judea[c][b], and there he was spending time with them and baptizing.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''into the Judean countryside''].'
+- timestamp: '2026-11-09T17:10:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: After these things[a], Jesus and his disciples went into the land of Judea[c][b], and there he was spending time with them and baptizing.
+  to: After this, Jesus and his disciples went into the Judean countryside, where he spent time with them and baptized[a].
+  rationale: The draft and lexical rationale rightly locate this movement in the countryside outside Jerusalem; the later preference for “land of Judea” chiefly pursued formal correspondence. I restore “Judean countryside” while preserving the narrative's attribution of baptizing to Jesus.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -118,3 +118,26 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/john/003/022.job-54728.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:10:15Z'
+  change_level: retranslated
+  confidence: high
+  meaning: After these events, Jesus and his disciples went into the Judean countryside, where he spent time with them and conducted a baptizing ministry.
+  meaning_decisions:
+  - source_phrase: εἰς τὴν Ἰουδαίαν γῆν
+    prior_rendering: into the land of Judea
+    new_rendering: into the Judean countryside
+    rationale: Jesus is already in Jerusalem, within Judea. The movement is into the surrounding countryside, not an arrival in Judea from outside it.
+  - source_phrase: καὶ ἐκεῖ διέτριβεν μετ’ αὐτῶν καὶ ἐβάπτιζεν
+    prior_rendering: and there he was spending time with them and baptizing
+    new_rendering: where he spent time with them and baptized
+    rationale: Natural English past-tense narration conveys the stay and accompanying activity without requiring progressive forms. Jesus remains the grammatical subject, with the later clarification supplied in a note.
+  footnote_kinds:
+    a: cross_reference
+  history_weighed: The draft and lexical rationale rightly locate this movement in the countryside outside Jerusalem; the later preference for “land of Judea” chiefly pursued formal correspondence. I restore “Judean countryside” while preserving the narrative's attribution of baptizing to Jesus.

@@ -12,15 +12,8 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 3 = Addition C, segmented from Swete pages 781-784 with First1KGreek used only as a verse-anchor map.
 translation:
-  text: Remember[a], Lord; make yourself known in the time of our affliction, and encourage me[b], O King of the gods and ruler over every authority.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'show yourself' or 'be made known.' The Greek imperative γνώρισθητι can be rendered in more than one way in English.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'O King of the gods.' The phrase expresses God's supremacy over every claimed divine or ruling power.
-    reason: lexical_alternative
+  text: Remember us, Lord; make yourself known in our time of affliction, and give me courage, O King of the gods and ruler over every authority.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: μνήσθητι
   chosen: Remember
@@ -114,14 +107,20 @@ revisions:
   from: Remember, Lord; make yourself known in the time of our affliction, and encourage me, O King of the gods and ruler over every authority.
   to: Remember, Lord; make yourself known in the time of our affliction, and encourage me, O King who rules over the gods and every authority.
   rationale: 'Revised the final address to reflect ἐπικρατῶν as modifying ''King'': ''O King who rules over the gods and every authority'' instead of ''O King of the gods and ruler over every authority.'''
-
 - timestamp: '2026-05-16T15:37:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Remember[a], Lord; make yourself known in the time of our affliction, and encourage me[b], O King who rules over the gods and every authority.'
-  to: 'Remember[a], Lord; make yourself known in the time of our affliction, and encourage me[b], O King of the gods and ruler over every authority.'
-  rationale: 'Restored drafter ''O King of the gods and ruler over every authority'' (preserving the chosen double-noun address structure) per chosen renderings.'
+  from: Remember[a], Lord; make yourself known in the time of our affliction, and encourage me[b], O King who rules over the gods and every authority.
+  to: Remember[a], Lord; make yourself known in the time of our affliction, and encourage me[b], O King of the gods and ruler over every authority.
+  rationale: Restored drafter 'O King of the gods and ruler over every authority' (preserving the chosen double-noun address structure) per chosen renderings.
+- timestamp: '2026-11-09T18:59:44Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Remember[a], Lord; make yourself known in the time of our affliction, and encourage me[b], O King of the gods and ruler over every authority.
+  to: Remember us, Lord; make yourself known in our time of affliction, and give me courage, O King of the gods and ruler over every authority.
+  rationale: The automated revision and revert concern the structure of the final title; I retain the current two-part address. Its explicit ‘King of the gods’ remains unsoftened, while the unnecessary explanatory notes are dropped.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -141,3 +140,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/additions_to_esther/003/022.job-50255.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:44Z'
+  change_level: refined
+  confidence: high
+  meaning: Esther asks God to remember his people, reveal himself in their affliction, and give her courage as the supreme ruler.
+  meaning_decisions:
+  - source_phrase: μνήσθητι, Κύριε
+    prior_rendering: Remember, Lord
+    new_rendering: Remember us, Lord
+    rationale: The people are the understood object of this appeal; supplying ‘us’ makes the prayer intelligible without specifying an unstated promise or action.
+  - source_phrase: ἐμὲ θάρσυνον
+    prior_rendering: encourage me
+    new_rendering: give me courage
+    rationale: Esther needs boldness for a dangerous approach to the king, not merely reassurance or improved spirits.
+  footnote_kinds: {}
+  history_weighed: The automated revision and revert concern the structure of the final title; I retain the current two-part address. Its explicit ‘King of the gods’ remains unsoftened, while the unnecessary explanatory notes are dropped.

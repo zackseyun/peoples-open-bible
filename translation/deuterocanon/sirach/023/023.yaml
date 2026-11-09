@@ -23,12 +23,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: For first[a], she disobeyed the law of the Most High; and second, she committed an offense against her husband; and third, in sexual immorality she committed adultery and presented children from another man.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more dynamically, 'bore children by another man.' The Greek more literally says 'presented children from another man.'
-    reason: lexical_alternative
+  text: For first, she disobeyed the law of the Most High; second, she wronged her husband; and third, she engaged in sexual immorality, committing adultery and bearing children by another man.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: πρῶτον μὲν ... καὶ δεύτερον ... καὶ τὸ τρίτον
   chosen: For first ... and second ... and third
@@ -142,14 +138,20 @@ revisions:
   from: For first, she disobeyed the law of the Most High; and second, she committed an offense against her husband; and third, in sexual immorality she committed adultery, and presented children from another man.
   to: For first, she disobeyed the law of the Most High; and second, she sinned against her husband; and third, in sexual immorality she committed adultery and bore children by another man.
   rationale: Replaced 'committed an offense against' with the more natural and accurate 'sinned against'; removed the unnecessary comma before 'and'; and changed 'presented children from another man' to the more idiomatic and contextually accurate 'bore children by another man.'
-
 - timestamp: '2026-05-15T12:54:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For first[a], she disobeyed the law of the Most High; and second, she sinned against her husband; and third, in sexual immorality she committed adultery and bore children by another man.'
-  to: 'For first[a], she disobeyed the law of the Most High; and second, she committed an offense against her husband; and third, in sexual immorality she committed adultery and presented children from another man.'
-  rationale: 'Restored graduated moral ''committed an offense'' and literal παρίστημι ''presented children''.'
+  from: For first[a], she disobeyed the law of the Most High; and second, she sinned against her husband; and third, in sexual immorality she committed adultery and bore children by another man.
+  to: For first[a], she disobeyed the law of the Most High; and second, she committed an offense against her husband; and third, in sexual immorality she committed adultery and presented children from another man.
+  rationale: Restored graduated moral 'committed an offense' and literal παρίστημι 'presented children'.
+- timestamp: '2026-11-09T19:06:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For first[a], she disobeyed the law of the Most High; and second, she committed an offense against her husband; and third, in sexual immorality she committed adultery and presented children from another man.
+  to: For first, she disobeyed the law of the Most High; second, she wronged her husband; and third, she engaged in sexual immorality, committing adultery and bearing children by another man.
+  rationale: I retain the history's distinction between disobedience to God, wrongdoing against the husband, and the sexual offense. The earlier review's childbirth wording conveys the act more clearly than the literal phrase restored by the automated revert.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -169,3 +171,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/023/023.job-51606.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:14Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Her conduct violates the Most High's law, wrongs her husband, and involves adultery and children fathered by another man.
+  meaning_decisions:
+  - source_phrase: εἰς ἄνδρα ἑαυτῆς ἐπλημμέλησεν
+    prior_rendering: she committed an offense against her husband
+    new_rendering: she wronged her husband
+    rationale: This expresses the offense directly while keeping it distinct from the explicit accusation of adultery that follows.
+  - source_phrase: ἐν πορνείᾳ ἐμοιχεύθη
+    prior_rendering: in sexual immorality she committed adultery
+    new_rendering: she engaged in sexual immorality, committing adultery
+    rationale: The natural English construction preserves sexual immorality as the broader description and adultery as its specific form here.
+  - source_phrase: ἐξ ἀλλοτρίου ἀνδρὸς τέκνα παρέστησεν
+    prior_rendering: presented children from another man
+    new_rendering: bearing children by another man
+    rationale: The context describes producing children fathered outside the marriage; literal 'presented children from' obscures that meaning in English.
+  footnote_kinds: {}
+  history_weighed: I retain the history's distinction between disobedience to God, wrongdoing against the husband, and the sexual offense. The earlier review's childbirth wording conveys the act more clearly than the literal phrase restored by the automated revert.

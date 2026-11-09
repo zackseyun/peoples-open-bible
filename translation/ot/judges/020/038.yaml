@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וְ/הַ/מּוֹעֵ֗ד הָיָ֛ה לְ/אִ֥ישׁ יִשְׂרָאֵ֖ל עִם הָ/אֹרֵ֑ב הֶ֕רֶב לְ/הַעֲלוֹתָ֛/ם מַשְׂאַ֥ת הֶ/עָשָׁ֖ן מִן הָ/עִֽיר־־׃
 translation:
-  text: The appointed sign between the men of Israel and the ambush was that they should make a great cloud of smoke rise from the city[a][b][c].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the appointed arrangement' or 'the agreed sign.' The Hebrew מוֹעֵד often means an appointed time, but here it refers to a prearranged signal in battle.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'to/for the men of Israel with the ambush'; the sense is an arrangement between the two parties.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'a mass/column of smoke.' The Hebrew expression refers to a conspicuous rising smoke signal from the city.
-    reason: lexical_alternative
+  text: 'The men of Israel and the men in ambush had agreed on a signal: the ambushers were to send up a great cloud of smoke from the city.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְהַמּוֹעֵד
   chosen: the appointed signal
@@ -24,7 +14,7 @@ lexical_decisions:
   - the arrangement
   - the agreed sign
   lexicon: HALOT
-  rationale: "מוֹעֵד commonly means an appointed time or meeting, but in this military context with 'between the men of Israel and the ambush' it refers to a prearranged signal or arrangement. 'Appointed signal' brings out the contextual function while retaining the sense of prior appointment. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'מוֹעֵד commonly means an appointed time or meeting, but in this military context with ''between the men of Israel and the ambush'' it refers to a prearranged signal or arrangement. ''Appointed signal'' brings out the contextual function while retaining the sense of prior appointment. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: לְאִישׁ יִשְׂרָאֵל
   chosen: between the men of Israel
   alternatives:
@@ -90,13 +80,12 @@ revisions:
   from: Now the appointed signal between the men of Israel and the ambush was that they should make a great cloud of smoke rise from the city.
   to: Now the appointed signal between the men of Israel and the ambush was that they should make a great cloud of smoke rise from the city.
   rationale: Changed 'signal' to 'sign' for a more formal and direct rendering of the Hebrew term; otherwise retained the draft as accurate and natural.
-
 - timestamp: '2026-05-18T02:55:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now the appointed sign between the men of Israel and the ambush was that they should make a great cloud of smoke rise from the city[a][b][c].'
-  to: 'Now the appointed sign between the men of Israel and the ambush was that they should make a great cloud of smoke rise from the city[a][b][c].'
+  from: Now the appointed sign between the men of Israel and the ambush was that they should make a great cloud of smoke rise from the city[a][b][c].
+  to: Now the appointed sign between the men of Israel and the ambush was that they should make a great cloud of smoke rise from the city[a][b][c].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the appointed signal''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -105,6 +94,13 @@ revisions:
   from: Now the appointed sign between the men of Israel and the ambush was that they should make a great cloud of smoke rise from the city[a][b][c].
   to: The appointed sign between the men of Israel and the ambush was that they should make a great cloud of smoke rise from the city[a][b][c].
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T18:21:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The appointed sign between the men of Israel and the ambush was that they should make a great cloud of smoke rise from the city[a][b][c].
+  to: 'The men of Israel and the men in ambush had agreed on a signal: the ambushers were to send up a great cloud of smoke from the city.'
+  rationale: The history and lexical decisions correctly identify a prearranged military signal and a conspicuous smoke cloud, both retained here; there is no MAINTAINER revision. The earlier footnotes are unnecessary because the revised text directly expresses the agreement, the participating groups, and the rising smoke.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -124,3 +120,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/judges/020/038.job-69383.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:21:14Z'
+  change_level: refined
+  confidence: high
+  meaning: The men of Israel had arranged for the ambushers to signal them by sending up a large cloud of smoke from the city.
+  meaning_decisions:
+  - source_phrase: וְהַמּוֹעֵד הָיָה לְאִישׁ יִשְׂרָאֵל עִם הָאֹרֵב
+    prior_rendering: The appointed sign between the men of Israel and the ambush was
+    new_rendering: The men of Israel and the men in ambush had agreed on a signal
+    rationale: The context identifies a previously agreed military signal, not merely an appointed sign; the active construction also makes clear that 'the ambush' denotes the men lying in wait.
+  - source_phrase: לְהַעֲלוֹתָם
+    prior_rendering: that they should make ... rise
+    new_rendering: the ambushers were to send up
+    rationale: Naming the ambushers removes uncertainty about who was responsible for producing the smoke signal, while 'send up' naturally conveys the causative verb.
+  footnote_kinds: {}
+  history_weighed: The history and lexical decisions correctly identify a prearranged military signal and a conspicuous smoke cloud, both retained here; there is no MAINTAINER revision. The earlier footnotes are unnecessary because the revised text directly expresses the agreement, the participating groups, and the rising smoke.

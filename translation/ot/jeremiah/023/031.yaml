@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: הִנְ/נִ֥י עַל הַ/נְּבִיאִ֖ם נְאֻם יְהוָ֑ה הַ/לֹּקְחִ֣ים לְשׁוֹנָ֔/ם וַֽ/יִּנְאֲמ֖וּ נְאֻֽם־־׃
 translation:
-  text: Behold[a], I am against the prophets, declares Yahweh, who take their own tongues and declare, ‘Declaration!’
-  philosophy: optimal-equivalence
+  text: Look, I am against the prophets, declares Yahweh, who use their own tongues and claim, ‘Yahweh declares[a]’.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, “who use their tongues and say, ‘Oracle!’” The Hebrew is terse and likely ironic, portraying prophets who manufacture authoritative-sounding speech from their own mouths.
+    text: Literally, “who take their tongue and declare a declaration.” The closing word mimics the prophetic formula “declares Yahweh.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: הִנְנִי
@@ -105,14 +105,20 @@ revisions:
   from: Behold, I am against the prophets, declares the LORD, who take their own tongues and declare, ‘Declaration!’
   to: Behold, I am against the prophets, declares the LORD, who use their tongues and declare, ‘Declares the LORD.’
   rationale: Revised 'take their own tongues' to the more natural and contextually accurate 'use their tongues.' Replaced 'Declaration!' with 'Declares the LORD.' to reflect the prophetic formula נְאֻם and preserve the irony of falsely claiming divine speech.
-
 - timestamp: '2026-05-15T17:57:42Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Behold[a], I am against the prophets, declares Yahweh, who use their tongues and declare, ‘Declares Yahweh.’'
-  to: 'Behold[a], I am against the prophets, declares Yahweh, who take their own tongues and declare, ‘Declaration!’'
-  rationale: 'Restored drafter''s ''take'' for לקח (concrete grasping image) and ''Declaration!'' for lone bare נְאֻם.'
+  from: Behold[a], I am against the prophets, declares Yahweh, who use their tongues and declare, ‘Declares Yahweh.’
+  to: Behold[a], I am against the prophets, declares Yahweh, who take their own tongues and declare, ‘Declaration!’
+  rationale: Restored drafter's 'take' for לקח (concrete grasping image) and 'Declaration!' for lone bare נְאֻם.
+- timestamp: '2026-11-09T17:57:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Behold[a], I am against the prophets, declares Yahweh, who take their own tongues and declare, ‘Declaration!’
+  to: Look, I am against the prophets, declares Yahweh, who use their own tongues and claim, ‘Yahweh declares[a]’.
+  rationale: The review correctly identified the false claim to divine speech, whereas the later automated revert chiefly defended literal “take” and the bare noun. I recover the review’s meaning-based gain while preserving the tongue image and documenting the terse Hebrew wording.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -135,3 +141,30 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/023/031.job-67615.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:57:45Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Yahweh opposes prophets who manufacture speech of their own while claiming his authority for it.
+  meaning_decisions:
+  - source_phrase: הִנְנִי
+    prior_rendering: Behold, I am
+    new_rendering: Look, I am
+    rationale: This preserves the emphatic announcement of divine opposition without archaic phrasing.
+  - source_phrase: הַלֹּקְחִים לְשׁוֹנָם
+    prior_rendering: who take their own tongues
+    new_rendering: who use their own tongues
+    rationale: The expression concerns employing their own speech, not physically grasping their tongues; the tongue image remains.
+  - source_phrase: וַיִּנְאֲמוּ נְאֻם
+    prior_rendering: and declare, ‘Declaration!’
+    new_rendering: and claim, ‘Yahweh declares’
+    rationale: The terse wording ironically imitates prophetic authority, which “Declaration!” does not communicate clearly in English; the implied speaker is supplied and the wordplay is noted.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The review correctly identified the false claim to divine speech, whereas the later automated revert chiefly defended literal “take” and the bare noun. I recover the review’s meaning-based gain while preserving the tongue image and documenting the terse Hebrew wording.

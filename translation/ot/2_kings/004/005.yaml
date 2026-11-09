@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/תֵּ֨לֶךְ֙ מֵֽ/אִתּ֔/וֹ וַ/תִּסְגֹּ֣ר הַ/דֶּ֔לֶת בַּעֲדָ֖/הּ וּ/בְעַ֣ד בָּנֶ֑י/הָ הֵ֛ם מַגִּשִׁ֥ים אֵלֶ֖י/הָ וְ/הִ֥יא מיצקת׃
 translation:
-  text: So she went from him and shut the door behind herself and behind her sons; they were bringing the vessels to her[a], and she was pouring.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew simply says, 'they were bringing to her'; 'the vessels' is supplied from the context of the empty containers in the preceding verses.
-    reason: lexical_alternative
+  text: So she left him and shut the door behind her and her sons. Her sons kept bringing her containers while she poured the oil.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַתֵּלֶךְ מֵאִתּוֹ
   chosen: So she went from him
@@ -67,14 +63,20 @@ revisions:
   from: So she went from him and shut the door behind herself and behind her sons; they were bringing the vessels to her, and she was pouring.
   to: So she went from him and shut the door behind her and behind her sons; they were bringing them to her, and she was pouring.
   rationale: Replaced 'behind herself' with the more natural 'behind her.' Removed the interpretive addition 'the vessels,' since the object is implied from context but not explicit in this clause; 'them' preserves completeness and natural English.
-
 - timestamp: '2026-05-16T11:22:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So she went from him and shut the door behind her and behind her sons; they were bringing them to her[a], and she was pouring.'
-  to: 'So she went from him and shut the door behind herself and behind her sons; they were bringing the vessels to her[a], and she was pouring.'
-  rationale: 'Restored drafter ''behind herself'' (reflexive) and explicit ''the vessels'' (contextually supplied) per chosen renderings.'
+  from: So she went from him and shut the door behind her and behind her sons; they were bringing them to her[a], and she was pouring.
+  to: So she went from him and shut the door behind herself and behind her sons; they were bringing the vessels to her[a], and she was pouring.
+  rationale: Restored drafter 'behind herself' (reflexive) and explicit 'the vessels' (contextually supplied) per chosen renderings.
+- timestamp: '2026-11-09T17:26:05Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So she went from him and shut the door behind herself and behind her sons; they were bringing the vessels to her[a], and she was pouring.
+  to: So she left him and shut the door behind her and her sons. Her sons kept bringing her containers while she poured the oil.
+  rationale: The earlier review’s “behind her” was a genuine improvement in English even though an automated revert removed it. I retained the drafter’s useful identification of the containers and made the concurrent actions explicit rather than withholding what the context supplies.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -94,3 +96,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_kings/004/005.job-60338.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:26:05Z'
+  change_level: refined
+  confidence: high
+  meaning: The woman follows Elisha’s instructions, pouring oil while her sons continually bring her containers.
+  meaning_decisions:
+  - source_phrase: וַתֵּלֶךְ מֵאִתּוֹ
+    prior_rendering: she went from him
+    new_rendering: she left him
+    rationale: This is the ordinary English expression for departing from Elisha after receiving his instructions.
+  - source_phrase: בַּעֲדָהּ וּבְעַד בָּנֶיהָ
+    prior_rendering: behind herself and behind her sons
+    new_rendering: behind her and her sons
+    rationale: The shorter construction conveys the same spatial relationship naturally.
+  - source_phrase: הֵם מַגִּשִׁים אֵלֶיהָ וְהִיא מְיַצָּקֶת
+    prior_rendering: they were bringing the vessels to her, and she was pouring
+    new_rendering: Her sons kept bringing her containers while she poured the oil
+    rationale: The paired participles describe concurrent, continuing actions; the subjects and objects are supplied from the immediate context.
+  footnote_kinds: {}
+  history_weighed: The earlier review’s “behind her” was a genuine improvement in English even though an automated revert removed it. I retained the drafter’s useful identification of the containers and made the concurrent actions explicit rather than withholding what the context supplies.

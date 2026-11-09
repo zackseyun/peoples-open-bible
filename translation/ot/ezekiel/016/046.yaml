@@ -4,11 +4,14 @@ source:
   edition: WLC
   text: וַ/אֲחוֹתֵ֨/ךְ הַ/גְּדוֹלָ֤ה שֹֽׁמְרוֹן֙ הִ֣יא וּ/בְנוֹתֶ֔י/הָ הַ/יּוֹשֶׁ֖בֶת עַל שְׂמֹאולֵ֑/ךְ וַ/אֲחוֹתֵ֞/ךְ הַ/קְּטַנָּ֣ה מִמֵּ֗/ךְ הַ/יּוֹשֶׁ֨בֶת֙ מִֽ/ימִינֵ֔/ךְ סְדֹ֖ם וּ/בְנוֹתֶֽי/הָ־׃
 translation:
-  text: Your older sister is Samaria[a], she and her daughters, who dwell to your left; and your younger sister, who dwells to your right, is Sodom and her daughters.
-  philosophy: optimal-equivalence
+  text: Your older sister[a] is Samaria, who lives to your north with her daughters[b]; your younger sister is Sodom, who lives to your south with her daughters.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: That is, from Jerusalem's perspective, Samaria is to the north and Sodom to the south.
+    text: Or “larger sister,” with “smaller sister” in the second clause.
+    reason: alternative_reading
+  - marker: b
+    text: The daughters are the dependent towns or communities associated with each city.
     reason: cultural_note
 lexical_decisions:
 - source_word: אֲחוֹתֵךְ
@@ -103,14 +106,20 @@ revisions:
   from: Your older sister is Samaria, she and her daughters, who dwell to your left; and your younger sister than you, who dwells to your right, is Sodom and her daughters.
   to: Your older sister is Samaria, she and her daughters, who dwell to your left; and your younger sister than you, who dwells to your right, is Sodom and her daughters.
   rationale: Removed 'than you' as unnecessary and awkward in English; the Hebrew comparative is sufficiently conveyed by 'younger sister.' Kept the rest of the verse essentially unchanged for accuracy and naturalness.
-
 - timestamp: '2026-05-18T02:54:47Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Your older sister is Samaria[a], she and her daughters, who dwell to your left; and your younger sister, who dwells to your right, is Sodom and her daughters.'
-  to: 'Your older sister is Samaria[a], she and her daughters, who dwell to your left; and your younger sister, who dwells to your right, is Sodom and her daughters.'
+  from: Your older sister is Samaria[a], she and her daughters, who dwell to your left; and your younger sister, who dwells to your right, is Sodom and her daughters.
+  to: Your older sister is Samaria[a], she and her daughters, who dwell to your left; and your younger sister, who dwells to your right, is Sodom and her daughters.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''your younger sister than you''].'
+- timestamp: '2026-11-09T17:37:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Your older sister is Samaria[a], she and her daughters, who dwell to your left; and your younger sister, who dwells to your right, is Sodom and her daughters.
+  to: Your older sister[a] is Samaria, who lives to your north with her daughters[b]; your younger sister is Sodom, who lives to your south with her daughters.
+  rationale: I retain the current removal of the awkward than you and the established sister-and-daughters metaphor. The earlier geographic note supplies the meaning now placed in the main text, while the size alternative qualifies older and younger.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -130,3 +139,27 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/016/046.job-63699.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:37:50Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jerusalem’s symbolic sisters are Samaria and her dependent towns to the north, and Sodom and her dependent towns to the south.
+  meaning_decisions:
+  - source_phrase: עַל שְׂמֹאולֵךְ ... מִימִינֵךְ
+    prior_rendering: to your left ... to your right
+    new_rendering: to your north ... to your south
+    rationale: These geographical directions assume an east-facing orientation; compass terms convey what the original audience understood.
+  - source_phrase: הִיא וּבְנוֹתֶיהָ הַיּוֹשֶׁבֶת
+    prior_rendering: she and her daughters, who dwell
+    new_rendering: who lives ... with her daughters
+    rationale: The singular city remains the personified sister, with her associated communities accompanying her.
+  footnote_kinds:
+    a: alternative_meaning
+    b: cultural_background
+  history_weighed: I retain the current removal of the awkward than you and the established sister-and-daughters metaphor. The earlier geographic note supplies the meaning now placed in the main text, while the size alternative qualifies older and younger.

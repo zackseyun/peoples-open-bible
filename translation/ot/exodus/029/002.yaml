@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/לֶ֣חֶם מַצּ֗וֹת וְ/חַלֹּ֤ת מַצֹּת֙ בְּלוּלֹ֣ת בַּ/שֶּׁ֔מֶן וּ/רְקִיקֵ֥י מַצּ֖וֹת מְשֻׁחִ֣ים בַּ/שָּׁ֑מֶן סֹ֥לֶת חִטִּ֖ים תַּעֲשֶׂ֥ה אֹתָֽ/ם׃
 translation:
-  text: and unleavened bread[a], and unleavened cakes mixed with oil, and unleavened wafers spread with oil[b]; you shall make them of fine wheat flour.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'unleavened loaves' for 'unleavened cakes' (חַלֹּת); the Hebrew term can denote a loaf-shaped bread item.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'spread with oil' for 'anointed with oil'; the verb is the usual word for anointing, but here it describes preparation of the wafers.
-    reason: lexical_alternative
+  text: Also prepare unleavened bread, unleavened loaves with oil mixed into the dough, and unleavened wafers spread with oil. Make them from fine wheat flour.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: לֶחֶם מַצּוֹת
   chosen: unleavened bread
@@ -84,14 +77,20 @@ revisions:
   from: and unleavened bread, and unleavened cakes mixed with oil, and unleavened wafers anointed with oil; you shall make them of fine wheat flour.
   to: and unleavened bread, and unleavened cakes mixed with oil, and unleavened wafers anointed with oil; you shall make them of fine wheat flour.
   rationale: Changed 'anointed with oil' to 'spread with oil' for a more natural and contextually fitting rendering of the participle describing the wafers. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:55:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and unleavened bread[a], and unleavened cakes mixed with oil, and unleavened wafers spread with oil[b]; you shall make them of fine wheat flour.'
-  to: 'and unleavened bread[a], and unleavened cakes mixed with oil, and unleavened wafers spread with oil[b]; you shall make them of fine wheat flour.'
+  from: and unleavened bread[a], and unleavened cakes mixed with oil, and unleavened wafers spread with oil[b]; you shall make them of fine wheat flour.
+  to: and unleavened bread[a], and unleavened cakes mixed with oil, and unleavened wafers spread with oil[b]; you shall make them of fine wheat flour.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''anointed with oil''].'
+- timestamp: '2026-11-09T17:35:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and unleavened bread[a], and unleavened cakes mixed with oil, and unleavened wafers spread with oil[b]; you shall make them of fine wheat flour.
+  to: Also prepare unleavened bread, unleavened loaves with oil mixed into the dough, and unleavened wafers spread with oil. Make them from fine wheat flour.
+  rationale: The earlier review recognized that oil application to the wafers means “spread,” despite the automated revert’s defense of the lexical wording “anointed.” I retain the current “spread with oil” and clarify the distinction between the bread preparations.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -111,3 +110,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/029/002.job-63019.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:35:42Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Moses must also prepare three kinds of unleavened bread from fine wheat flour, with oil mixed into the loaves and spread on the wafers.
+  meaning_decisions:
+  - source_phrase: וְלֶחֶם מַצּוֹת
+    prior_rendering: and unleavened bread
+    new_rendering: Also prepare unleavened bread
+    rationale: The verse continues the preceding list of required materials; supplying the understood instruction makes it a complete English sentence without changing its content.
+  - source_phrase: חַלֹּת מַצֹּת בְּלוּלֹת בַּשֶּׁמֶן
+    prior_rendering: unleavened cakes mixed with oil
+    new_rendering: unleavened loaves with oil mixed into the dough
+    rationale: These are bread loaves, not sweet cakes, and the oil is incorporated in their preparation rather than spread on them as it is on the wafers.
+  footnote_kinds: {}
+  history_weighed: The earlier review recognized that oil application to the wafers means “spread,” despite the automated revert’s defense of the lexical wording “anointed.” I retain the current “spread with oil” and clarify the distinction between the bread preparations.

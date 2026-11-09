@@ -4,14 +4,15 @@ source:
   edition: SBLGNT
   text: Ἰδὼν δὲ ὁ Ἰησοῦς ⸂πολλοὺς ὄχλους⸃ περὶ αὐτὸν ἐκέλευσεν ἀπελθεῖν εἰς τὸ πέραν.
 translation:
-  text: 'When Jesus saw a crowd around him, he gave orders to go to the other side.'
+  text: When Jesus saw the large crowd around him, he gave orders to cross to the other side of the sea.
+  philosophy: dynamic
 revisions:
 - timestamp: '2026-05-18T04:00:34Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now when Jesus saw many crowds around him[b][a], he gave orders to depart to the other side.'
-  to: 'Now when Jesus saw many crowds around him, he gave orders to go to the other side.'
+  from: Now when Jesus saw many crowds around him[b][a], he gave orders to depart to the other side.
+  to: Now when Jesus saw many crowds around him, he gave orders to go to the other side.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to go'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -29,9 +30,38 @@ revisions:
   from: When Jesus saw many crowds around him, he gave orders to go to the other side.
   to: When Jesus saw a crowd around him, he gave orders to go to the other side.
   rationale: Rendered the collective crowd noun naturally in English.
+- timestamp: '2026-11-09T17:18:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When Jesus saw a crowd around him, he gave orders to go to the other side.
+  to: When Jesus saw the large crowd around him, he gave orders to cross to the other side of the sea.
+  rationale: The latest review’s collective “crowd” is natural English, so I retain that gain while restoring the size indicated by the source. The following boat journey supplies the setting needed to clarify “the other side.”
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T04:00:34Z'
   unchanged: false
   changes_summary: 'doctrine_realignment: Matthew 8:18 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to go'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote m'
 status: revised
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:18:49Z'
+  change_level: refined
+  confidence: high
+  meaning: Seeing a large crowd around him, Jesus orders a crossing to the other side of the sea.
+  meaning_decisions:
+  - source_phrase: πολλοὺς ὄχλους
+    prior_rendering: a crowd
+    new_rendering: the large crowd
+    rationale: The collective singular is natural English, but the current wording loses the multitude explicitly indicated by πολλούς.
+  - source_phrase: ἐκέλευσεν ἀπελθεῖν εἰς τὸ πέραν
+    prior_rendering: he gave orders to go to the other side
+    new_rendering: he gave orders to cross to the other side of the sea
+    rationale: The surrounding narrative makes this a crossing of the sea, not an unspecified move to another side.
+  footnote_kinds: {}
+  history_weighed: The latest review’s collective “crowd” is natural English, so I retain that gain while restoring the size indicated by the source. The following boat journey supplies the setting needed to clarify “the other side.”

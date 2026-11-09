@@ -18,15 +18,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: with the accursed Simon and a very heavy force[a]. After coming forward, he said that he had come by the king’s commands[b], in order to take the private funds of the treasury.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'a very large army' or 'a most formidable force'; the Greek literally says 'a very heavy force/army,' using 'heavy' metaphorically for oppressive or formidable military strength.
-    reason: lexical_alternative
-  - marker: b
-    text: The phrase 'the private funds of the treasury' likely refers to monies regarded as private or deposited funds within the treasury, not necessarily the whole treasury itself.
-    reason: cultural_note
+  text: with the accursed Simon and a very formidable army. On arrival, he declared that he had come on the king’s orders to take the private funds held in the treasury.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: καταράτου
   chosen: accursed
@@ -135,14 +128,20 @@ revisions:
   from: with the accursed Simon and a very heavy force. After coming forward, he said that he had arrived by the king’s commands, so that he might take the private funds of the treasury.
   to: with the accursed Simon and a very large force. After coming forward, he said that he had come by the king’s commands, in order to take the private funds of the treasury.
   rationale: Changed 'very heavy force' to 'very large force' for natural and accurate English for στρατοῦ with βαρυτάτου; changed 'had arrived' to 'had come' for smoother formal style; changed 'so that he might take' to 'in order to take' for more natural rendering of ὅπως.
-
 - timestamp: '2026-05-15T15:55:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'with the accursed Simon and a very large force[a]. After coming forward, he said that he had come by the king’s commands[b], in order to take the private funds of the treasury.'
-  to: 'with the accursed Simon and a very heavy force[a]. After coming forward, he said that he had come by the king’s commands[b], in order to take the private funds of the treasury.'
-  rationale: 'Restored βαρύς oppressive/formidable metaphor (footnote [a] explicitly explains it). Kept azure''s other two minor changes.'
+  from: with the accursed Simon and a very large force[a]. After coming forward, he said that he had come by the king’s commands[b], in order to take the private funds of the treasury.
+  to: with the accursed Simon and a very heavy force[a]. After coming forward, he said that he had come by the king’s commands[b], in order to take the private funds of the treasury.
+  rationale: Restored βαρύς oppressive/formidable metaphor (footnote [a] explicitly explains it). Kept azure's other two minor changes.
+- timestamp: '2026-11-09T18:57:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: with the accursed Simon and a very heavy force[a]. After coming forward, he said that he had come by the king’s commands[b], in order to take the private funds of the treasury.
+  to: with the accursed Simon and a very formidable army. On arrival, he declared that he had come on the king’s orders to take the private funds held in the treasury.
+  rationale: The reversal of “very large force” correctly protected the oppressive force of βαρύς; “formidable” preserves that gain in intelligible English. The private-deposit distinction is now carried by the main text rather than a footnote.
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -162,3 +161,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/004/006.job-49792.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:47Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Apollonius arrived with Simon and an intimidating army, announcing royal orders to take the private money held in the treasury.
+  meaning_decisions:
+  - source_phrase: βαρυτάτου στρατοῦ
+    prior_rendering: a very heavy force
+    new_rendering: a very formidable army
+    rationale: The military force is intimidating and oppressive; “formidable” conveys that weight without suggesting heavy equipment or reducing the description to size alone.
+  - source_phrase: προσελθών, ταῖς τοῦ βασιλέως ἐντολαῖς ἥκειν ἔλεγεν
+    prior_rendering: After coming forward, he said that he had come by the king’s commands
+    new_rendering: On arrival, he declared that he had come on the king’s orders
+    rationale: The wording naturally conveys his arrival and assertion of royal authorization.
+  - source_phrase: τὰ ἰδιωτικὰ τοῦ γαζοφυλακίου ... χρήματα
+    prior_rendering: the private funds of the treasury
+    new_rendering: the private funds held in the treasury
+    rationale: The money is privately owned and held there for safekeeping, not owned by the treasury.
+  footnote_kinds: {}
+  history_weighed: The reversal of “very large force” correctly protected the oppressive force of βαρύς; “formidable” preserves that gain in intelligible English. The private-deposit distinction is now carried by the main text rather than a footnote.

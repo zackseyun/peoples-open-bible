@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/דָוִ֖ד ה֣וּא הַ/קָּטָ֑ן וּ/שְׁלֹשָׁה֙ הַ/גְּדֹלִ֔ים הָלְכ֖וּ אַחֲרֵ֥י שָׁאֽוּל׃ס
 translation:
-  text: David was the youngest[a], and the three oldest had gone after Saul.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'And David was the youngest, and the three oldest followed Saul.' The Hebrew conjunction may be rendered simply 'and,' and the verb may be translated without the English pluperfect.
-    reason: lexical_alternative
+  text: David was the youngest, while the three oldest had followed Saul.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְ/דָוִד
   chosen: David
@@ -17,7 +13,7 @@ lexical_decisions:
   - And David
   - Now David
   lexicon: HALOT
-  rationale: "The conjunction ו can be rendered simply as 'and,' but in narrative English 'now' often better signals a parenthetical explanatory statement while preserving the discourse connection. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'The conjunction ו can be rendered simply as ''and,'' but in narrative English ''now'' often better signals a parenthetical explanatory statement while preserving the discourse connection. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: הוּא
   chosen: was
   alternatives:
@@ -77,13 +73,12 @@ revisions:
   from: Now David was the youngest, and the three oldest had followed Saul.
   to: Now David was the youngest, and the three oldest had followed Saul.
   rationale: Changed 'had followed Saul' to 'had gone after Saul' for closer lexical correspondence to הָלְכוּ אַחֲרֵי while keeping natural English.
-
 - timestamp: '2026-05-18T02:55:38Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now David was the youngest[a], and the three oldest had gone after Saul.'
-  to: 'Now David was the youngest[a], and the three oldest had gone after Saul.'
+  from: Now David was the youngest[a], and the three oldest had gone after Saul.
+  to: Now David was the youngest[a], and the three oldest had gone after Saul.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''had followed''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -92,6 +87,13 @@ revisions:
   from: Now David was the youngest[a], and the three oldest had gone after Saul.
   to: David was the youngest[a], and the three oldest had gone after Saul.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:23:05Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: David was the youngest[a], and the three oldest had gone after Saul.
+  to: David was the youngest, while the three oldest had followed Saul.
+  rationale: I recover the draft’s clear 'had followed,' also supported by the lexical rationale, rather than the review’s more source-shaped 'had gone after.' The later removal of introductory 'Now' is retained.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -111,3 +113,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/017/014.job-59156.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:05Z'
+  change_level: refined
+  confidence: high
+  meaning: David is the youngest son, in contrast to the three oldest sons who have followed Saul.
+  meaning_decisions:
+  - source_phrase: וּשְׁלֹשָׁה הַגְּדֹלִים
+    prior_rendering: and the three oldest
+    new_rendering: while the three oldest
+    rationale: 'The conjunction connects contrasting circumstances: David’s position as the youngest and his oldest brothers’ participation with Saul.'
+  - source_phrase: הָלְכוּ אַחֲרֵי שָׁאוּל
+    prior_rendering: had gone after Saul
+    new_rendering: had followed Saul
+    rationale: This conveys their accompaniment of Saul without the possible temporal misunderstanding of 'gone after.'
+  footnote_kinds: {}
+  history_weighed: I recover the draft’s clear 'had followed,' also supported by the lexical rationale, rather than the review’s more source-shaped 'had gone after.' The later removal of introductory 'Now' is retained.

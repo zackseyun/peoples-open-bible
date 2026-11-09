@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: הֲ/לוֹא זֹ֖את תַּעֲשֶׂה לָּ֑/ךְ עָזְבֵ/ךְ֙ אֶת יְהוָ֣ה אֱלֹהַ֔יִ/ךְ בְּ/עֵ֖ת מוֹלִיכֵ֥/ךְ בַּ/דָּֽרֶךְ־־־׃
 translation:
-  text: Has not this brought it upon you[b][a], because you have forsaken Yahweh your God when he was leading you in the way?
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'Has not this done this to you?' The Hebrew is more literally 'Has not this done for/to you...?'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'while he was leading you on the way.'
-    reason: lexical_alternative
+  text: Have you not brought this on yourself by forsaking Yahweh your God while he was leading you along the way?
+  philosophy: dynamic
 lexical_decisions:
 - source_word: הֲלוֹא
   chosen: Has not
@@ -103,14 +96,20 @@ revisions:
   from: Has not this brought it upon you, that you have forsaken the LORD your God when he was leading you in the way?
   to: Has not this brought it upon you, that you have forsaken the LORD your God when he was leading you in the way?
   rationale: Replaced 'that' with 'because' to more clearly express the causal sense of the Hebrew while preserving the formal tone and structure.
-
 - timestamp: '2026-05-18T02:56:42Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Has not this brought it upon you[b][a], because you have forsaken Yahweh your God when he was leading you in the way?'
-  to: 'Has not this brought it upon you[b][a], because you have forsaken Yahweh your God when he was leading you in the way?'
+  from: Has not this brought it upon you[b][a], because you have forsaken Yahweh your God when he was leading you in the way?
+  to: Has not this brought it upon you[b][a], because you have forsaken Yahweh your God when he was leading you in the way?
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that you have forsaken''].'
+- timestamp: '2026-11-09T17:55:18Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Has not this brought it upon you[b][a], because you have forsaken Yahweh your God when he was leading you in the way?
+  to: Have you not brought this on yourself by forsaking Yahweh your God while he was leading you along the way?
+  rationale: The earlier review's change from 'that' to 'because' correctly recognized the causal construction. I preserve that gain and clarify the whole question rather than retaining its ambiguous demonstratives.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -132,3 +131,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/ot/jeremiah/002/017.job-38421.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:55:18Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Israel has brought this disaster on itself by forsaking Yahweh while he was leading it.
+  meaning_decisions:
+  - source_phrase: הֲלוֹא זֹאת תַּעֲשֶׂה לָּךְ עָזְבֵךְ אֶת יְהוָה אֱלֹהַיִךְ
+    prior_rendering: Has not this brought it upon you, because you have forsaken Yahweh your God
+    new_rendering: Have you not brought this on yourself by forsaking Yahweh your God
+    rationale: The infinitive identifies Israel's forsaking as the cause; making Israel the English subject removes the unclear relationship between 'this' and 'it.'
+  - source_phrase: בְּעֵת מוֹלִיכֵךְ בַּדָּרֶךְ
+    prior_rendering: when he was leading you in the way
+    new_rendering: while he was leading you along the way
+    rationale: This naturally expresses ongoing guidance at the very time Israel abandoned its guide.
+  footnote_kinds: {}
+  history_weighed: The earlier review's change from 'that' to 'because' correctly recognized the causal construction. I preserve that gain and clarify the whole question rather than retaining its ambiguous demonstratives.

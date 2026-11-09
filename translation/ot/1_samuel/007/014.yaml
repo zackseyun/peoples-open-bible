@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וַ/תָּשֹׁ֣בְנָה הֶ/עָרִ֡ים אֲשֶׁ֣ר לָֽקְחוּ פְלִשְׁתִּים֩ מֵ/אֵ֨ת יִשְׂרָאֵ֤ל לְ/יִשְׂרָאֵל֙ מֵ/עֶקְר֣וֹן וְ/עַד גַּ֔ת וְ/אֶ֨ת גְּבוּלָ֔/ן הִצִּ֥יל יִשְׂרָאֵ֖ל מִ/יַּ֣ד פְּלִשְׁתִּ֑ים וַ/יְהִ֣י שָׁל֔וֹם בֵּ֥ין יִשְׂרָאֵ֖ל וּ/בֵ֥ין הָ/אֱמֹרִֽי־׀־־׃
 translation:
-  text: And the cities that the Philistines had taken from Israel were restored to Israel[a], from Ekron to Gath; and Israel delivered its territory from the hand of the Philistines. And there was peace between Israel and the Amorites.
-  philosophy: optimal-equivalence
+  text: The cities the Philistines had taken from Israel, from Ekron to Gath, were restored to Israel. Israel also recovered the territory belonging to those cities from Philistine control. There was peace between Israel and the Amorites[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'the Canaanites,' if 'Amorites' is understood here as a broader term for the peoples of the land.
+    text: Here “Amorites” may be a broader designation for the Canaanite peoples of the land.
     reason: alternative_reading
 lexical_decisions:
 - source_word: וַתָּשֹׁבְנָה
@@ -105,14 +105,20 @@ revisions:
   from: And the cities that the Philistines had taken from Israel were restored to Israel, from Ekron to Gath; and Israel delivered their territory from the hand of the Philistines. And there was peace between Israel and the Amorites.
   to: And the cities that the Philistines had taken from Israel were restored to Israel, from Ekron to Gath; and Israel delivered their territory from the hand of the Philistines. And there was peace between Israel and the Amorites.
   rationale: Changed 'their territory' to 'its territory' for grammatical agreement with singular 'Israel.'
-
 - timestamp: '2026-05-18T02:56:32Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the cities that the Philistines had taken from Israel were restored to Israel[a], from Ekron to Gath; and Israel delivered its territory from the hand of the Philistines. And there was peace between Israel and the Amorites.'
-  to: 'And the cities that the Philistines had taken from Israel were restored to Israel[a], from Ekron to Gath; and Israel delivered its territory from the hand of the Philistines. And there was peace between Israel and the Amorites.'
+  from: And the cities that the Philistines had taken from Israel were restored to Israel[a], from Ekron to Gath; and Israel delivered its territory from the hand of the Philistines. And there was peace between Israel and the Amorites.
+  to: And the cities that the Philistines had taken from Israel were restored to Israel[a], from Ekron to Gath; and Israel delivered its territory from the hand of the Philistines. And there was peace between Israel and the Amorites.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''their territory''].'
+- timestamp: '2026-11-09T18:22:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the cities that the Philistines had taken from Israel were restored to Israel[a], from Ekron to Gath; and Israel delivered its territory from the hand of the Philistines. And there was peace between Israel and the Amorites.
+  to: The cities the Philistines had taken from Israel, from Ekron to Gath, were restored to Israel. Israel also recovered the territory belonging to those cities from Philistine control. There was peace between Israel and the Amorites[a].
+  rationale: The change to “its territory” treated the pronoun as referring to Israel, but the Hebrew and the original lexical rationale identify the cities as its antecedent. I restored that substantive understanding explicitly and retained the named Amorites with the documented broader alternative in a properly placed note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -132,3 +138,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/007/014.job-58900.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:22:14Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Israel regained its captured cities and their territories, and peaceful relations prevailed between Israel and the Amorites.
+  meaning_decisions:
+  - source_phrase: וְאֶת גְּבוּלָן
+    prior_rendering: its territory
+    new_rendering: the territory belonging to those cities
+    rationale: The feminine plural suffix refers to the cities, not to singular Israel; explicitly naming the antecedent prevents misunderstanding.
+  - source_phrase: הִצִּיל יִשְׂרָאֵל מִיַּד פְּלִשְׁתִּים
+    prior_rendering: Israel delivered its territory from the hand of the Philistines
+    new_rendering: Israel also recovered the territory belonging to those cities from Philistine control
+    rationale: Expresses the liberation and recovery of land in natural English while making the hostile-control idiom clear.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The change to “its territory” treated the pronoun as referring to Israel, but the Hebrew and the original lexical rationale identify the cities as its antecedent. I restored that substantive understanding explicitly and retained the named Amorites with the documented broader alternative in a properly placed note.

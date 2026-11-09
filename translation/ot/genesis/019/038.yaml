@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: וְ/הַ/צְּעִירָ֤ה גַם הִוא֙ יָ֣לְדָה בֵּ֔ן וַ/תִּקְרָ֥א שְׁמ֖/וֹ בֶּן עַמִּ֑י ה֛וּא אֲבִ֥י בְנֵֽי עַמּ֖וֹן עַד הַ/יּֽוֹם־־־־׃ס
 translation:
-  text: The younger also bore a son and called his name Ben-ammi[b][a]; he is the father of the Ammonites to this day.
-  philosophy: optimal-equivalence
+  text: The younger daughter also bore a son and named him Ben-ammi[a]; he is the ancestor of the Ammonites to this day.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Ben-ammi likely means 'son of my people' or 'son of my kinsman.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the Ammonites'; literally, 'the sons of Ammon.'
+    text: Ben-ammi means 'son of my people' or 'son of my kin.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וְהַצְּעִירָה
@@ -90,14 +87,20 @@ revisions:
   from: The younger also bore a son and called his name Ben-ammi; he is the father of the sons of Ammon to this day.
   to: The younger also bore a son and called his name Ben-ammi; he is the father of the sons of Ammon to this day.
   rationale: Replaced 'the sons of Ammon' with 'the Ammonites' for more natural English while preserving the meaning of 'sons/children of Ammon.'
-
 - timestamp: '2026-05-17T11:36:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The younger also bore a son and called his name Ben-ammi[b][a]; he is the father of the Ammonites to this day.'
-  to: 'The younger also bore a son and called his name Ben-ammi[b][a]; he is the father of the Ammonites to this day.'
+  from: The younger also bore a son and called his name Ben-ammi[b][a]; he is the father of the Ammonites to this day.
+  to: The younger also bore a son and called his name Ben-ammi[b][a]; he is the father of the Ammonites to this day.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the sons of Ammon''].'
+- timestamp: '2026-11-09T17:42:41Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The younger also bore a son and called his name Ben-ammi[b][a]; he is the father of the Ammonites to this day.
+  to: The younger daughter also bore a son and named him Ben-ammi[a]; he is the ancestor of the Ammonites to this day.
+  rationale: The current 'Ammonites' preserves the useful gain recorded in the revision, despite the later automated revert entry favoring 'sons of Ammon.' I retain that clear ethnic designation and the significant name explanation while making the ancestry statement explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -119,3 +122,30 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/019/038.job-64957.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:42:41Z'
+  change_level: refined
+  confidence: high
+  meaning: The younger daughter also gave birth to a son, Ben-ammi, the founding ancestor of the Ammonite people known to the narrator.
+  meaning_decisions:
+  - source_phrase: וְהַצְּעִירָה
+    prior_rendering: The younger
+    new_rendering: The younger daughter
+    rationale: The supplied noun makes the subject explicit and consistent with the preceding verses.
+  - source_phrase: וַתִּקְרָא שְׁמוֹ
+    prior_rendering: called his name
+    new_rendering: named him
+    rationale: This naturally conveys the Hebrew naming formula.
+  - source_phrase: הוּא אֲבִי בְנֵי עַמּוֹן
+    prior_rendering: he is the father of the Ammonites
+    new_rendering: he is the ancestor of the Ammonites
+    rationale: The clause identifies the people’s founding ancestor, matching the meaning and wording of verse 37.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The current 'Ammonites' preserves the useful gain recorded in the revision, despite the later automated revert entry favoring 'sons of Ammon.' I retain that clear ethnic designation and the significant name explanation while making the ancestry statement explicit.

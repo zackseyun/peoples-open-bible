@@ -4,17 +4,17 @@ source:
   edition: SBLGNT
   text: ἐν μέσῳ τῆς πλατείας αὐτῆς· καὶ τοῦ ποταμοῦ ἐντεῦθεν καὶ ἐκεῖθεν ξύλον ζωῆς ποιοῦν καρποὺς δώδεκα, κατὰ μῆνα ἕκαστον ⸀ἀποδιδοῦν τὸν καρπὸν αὐτοῦ, καὶ τὰ φύλλα τοῦ ξύλου εἰς θεραπείαν τῶν ἐθνῶν.
 translation:
-  text: in the middle of its street[a], and on this side and on that side of the river, was the tree of life, bearing twelve fruits, yielding its fruit each month[c][b]. And the leaves of the tree are for the healing of the nations.
-  philosophy: optimal-equivalence
+  text: through the middle of the city's street[a]. On both sides of the river stood the tree of life, bearing twelve crops of fruit[b] and yielding its fruit each month. The leaves of the tree are for the healing of the nations[c].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'on either side of the river.' The Greek literally says 'on this side and on that side.'
-    reason: lexical_alternative
+    text: Or, “In the middle of the city's street and on both sides of the river stood the tree of life.”
+    reason: alternative_reading
   - marker: b
-    text: Or, 'producing twelve fruits.' The phrase may mean twelve kinds of fruit or a full, abundant cycle of fruitfulness.
-    reason: lexical_alternative
+    text: Or, “twelve kinds of fruit.”
+    reason: alternative_reading
   - marker: c
-    text: The imagery echoes the tree of life in Genesis 2:9 and Ezekiel 47:12.
+    text: The tree of life recalls Genesis 2:9; the river, monthly fruit, and healing leaves echo Ezekiel 47:1–12.
     reason: cross_reference
 lexical_decisions:
 - source_word: ἐν μέσῳ
@@ -113,14 +113,20 @@ revisions:
   from: in the middle of its street, and on this side and on that side of the river, was the tree of life, bearing twelve kinds of fruit, yielding its fruit each month. And the leaves of the tree are for the healing of the nations.
   to: in the middle of its street, and on this side and on that side of the river, was the tree of life, bearing twelve kinds of fruit, yielding its fruit each month. And the leaves of the tree are for the healing of the nations.
   rationale: Changed 'twelve kinds of fruit' to 'twelve fruits' for closer lexical accuracy, since the Greek says 'twelve fruits' without explicitly stating 'kinds.'
-
 - timestamp: '2026-05-18T02:59:52Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'in the middle of its street[a], and on this side and on that side of the river, was the tree of life, bearing twelve fruits, yielding its fruit each month[c][b]. And the leaves of the tree are for the healing of the nations.'
-  to: 'in the middle of its street[a], and on this side and on that side of the river, was the tree of life, bearing twelve fruits, yielding its fruit each month[c][b]. And the leaves of the tree are for the healing of the nations.'
+  from: in the middle of its street[a], and on this side and on that side of the river, was the tree of life, bearing twelve fruits, yielding its fruit each month[c][b]. And the leaves of the tree are for the healing of the nations.
+  to: in the middle of its street[a], and on this side and on that side of the river, was the tree of life, bearing twelve fruits, yielding its fruit each month[c][b]. And the leaves of the tree are for the healing of the nations.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''bearing twelve kinds of fruit''].'
+- timestamp: '2026-11-09T17:17:35Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: in the middle of its street[a], and on this side and on that side of the river, was the tree of life, bearing twelve fruits, yielding its fruit each month[c][b]. And the leaves of the tree are for the healing of the nations.
+  to: through the middle of the city's street[a]. On both sides of the river stood the tree of life, bearing twelve crops of fruit[b] and yielding its fruit each month. The leaves of the tree are for the healing of the nations[c].
+  rationale: The record alternates between 'twelve fruits' and 'twelve kinds of fruit,' largely on formal grounds; the monthly yield favors twelve crops, with the kinds reading noted. I attach the opening street phrase to the river, following the source punctuation, while preserving the singular tree and noting the alternative attachment.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -140,3 +146,32 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/revelation/022/002.job-47198.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:17:35Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The river runs through the city's central street, and the tree of life on both banks yields fruit every month and provides leaves for the healing of the nations.
+  meaning_decisions:
+  - source_phrase: ἐν μέσῳ τῆς πλατείας αὐτῆς
+    prior_rendering: in the middle of its street
+    new_rendering: through the middle of the city's street
+    rationale: Following the supplied source punctuation, this phrase describes the river's course rather than the tree's location; making the city explicit clarifies the pronoun.
+  - source_phrase: τοῦ ποταμοῦ ἐντεῦθεν καὶ ἐκεῖθεν ξύλον ζωῆς
+    prior_rendering: on this side and on that side of the river, was the tree of life
+    new_rendering: On both sides of the river stood the tree of life
+    rationale: Natural English conveys the location on both banks while retaining the singular tree and leaving the visionary geography unresolved.
+  - source_phrase: ποιοῦν καρποὺς δώδεκα
+    prior_rendering: bearing twelve fruits
+    new_rendering: bearing twelve crops of fruit
+    rationale: The following monthly-yield clause supports twelve harvests rather than twelve individual pieces of fruit; the serious alternative of twelve kinds is noted.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+    c: cross_reference
+  history_weighed: The record alternates between 'twelve fruits' and 'twelve kinds of fruit,' largely on formal grounds; the monthly yield favors twelve crops, with the kinds reading noted. I attach the opening street phrase to the river, following the source punctuation, while preserving the singular tree and noting the alternative attachment.

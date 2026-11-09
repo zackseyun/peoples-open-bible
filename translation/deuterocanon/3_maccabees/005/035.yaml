@@ -9,12 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And the Jews[a], when they heard what came from the king, were praising the manifest God, the Lord, the King of kings, since they had obtained this help from him.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more idiomatically, 'the King of kings.' The Greek reads literally 'the King of those who rule.'
-    reason: lexical_alternative
+  text: When the Jews heard what the king had said, they praised God, who had made himself known—the Lord, the King of kings—for the help they had received from him.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: τὰ παρὰ τοῦ βασιλέως
   chosen: what came from the king
@@ -116,14 +112,20 @@ revisions:
   from: And the Jews, when they heard what came from the king, were praising the manifest God, the Lord, the King of those who rule, since they had obtained this help from him.
   to: And the Jews, when they heard what came from the king, were praising the manifest God, the Lord, the King of those who rule, since they had obtained this help from him.
   rationale: Changed 'the King of those who rule' to the more natural and standard 'the King of kings' for Βασιλέα τῶν βασιλευόντων. Kept the rest substantially the same.
-
 - timestamp: '2026-05-18T03:00:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the Jews[a], when they heard what came from the king, were praising the manifest God, the Lord, the King of kings, since they had obtained this help from him.'
-  to: 'And the Jews[a], when they heard what came from the king, were praising the manifest God, the Lord, the King of kings, since they had obtained this help from him.'
+  from: And the Jews[a], when they heard what came from the king, were praising the manifest God, the Lord, the King of kings, since they had obtained this help from him.
+  to: And the Jews[a], when they heard what came from the king, were praising the manifest God, the Lord, the King of kings, since they had obtained this help from him.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the King of those who rule''].'
+- timestamp: '2026-11-09T18:57:31Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the Jews[a], when they heard what came from the king, were praising the manifest God, the Lord, the King of kings, since they had obtained this help from him.
+  to: When the Jews heard what the king had said, they praised God, who had made himself known—the Lord, the King of kings—for the help they had received from him.
+  rationale: I retain the current “King of kings,” supported by the review, rather than reverting to the less idiomatic participial wording. The lexical explanation of “manifest” guides the clearer expression “had made himself known.”
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -143,3 +145,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/005/035.job-49626.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:31Z'
+  change_level: refined
+  confidence: high
+  meaning: On hearing the king’s words, the Jews praise God as the Lord and King above all kings who has made himself known through this help.
+  meaning_decisions:
+  - source_phrase: τὰ παρὰ τοῦ βασιλέως ἀκούσαντες
+    prior_rendering: when they heard what came from the king
+    new_rendering: When the Jews heard what the king had said
+    rationale: In context they hear the king’s declaration, not an unspecified object or event coming from him.
+  - source_phrase: τὸν ἐπιφανῆ θεὸν
+    prior_rendering: the manifest God
+    new_rendering: God, who had made himself known
+    rationale: The adjective presents God as revealed in his intervention; the relative clause makes that sense intelligible without suggesting a bodily appearance.
+  - source_phrase: ᾔνουν, καὶ τῆσδε τῆς βοηθείας αὐτοῦ τετευχότες
+    prior_rendering: were praising ... since they had obtained this help from him
+    new_rendering: praised ... for the help they had received from him
+    rationale: The natural English construction preserves the help as their reason for praise.
+  footnote_kinds: {}
+  history_weighed: I retain the current “King of kings,” supported by the review, rather than reverting to the less idiomatic participial wording. The lexical explanation of “manifest” guides the clearer expression “had made himself known.”

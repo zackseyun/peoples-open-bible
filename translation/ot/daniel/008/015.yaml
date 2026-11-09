@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יְהִ֗י בִּ/רְאֹתִ֛/י אֲנִ֥י דָנִיֵּ֖אל אֶת הֶ/חָז֑וֹן וָ/אֲבַקְשָׁ֣/ה בִינָ֔ה וְ/הִנֵּ֛ה עֹמֵ֥ד לְ/נֶגְדִּ֖/י כְּ/מַרְאֵה גָֽבֶר־־׃
 translation:
-  text: And it happened[a], when I, Daniel, had seen the vision and was seeking understanding, behold, standing before me was one with the appearance of a man.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'there stood before me one like the appearance of a man.'
-    reason: lexical_alternative
+  text: As I, Daniel, was seeking to understand the vision I had seen, there before me stood someone with the appearance of a man.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיְהִי
   chosen: And it happened
@@ -106,14 +102,20 @@ revisions:
   from: And it happened, when I, Daniel, had seen the vision and was seeking understanding, behold, standing before me was one with the appearance of a man.
   to: And it happened, when I, Daniel, had seen the vision and was seeking understanding, behold, one standing before me had the appearance of a man.
   rationale: 'Adjusted word order to more closely reflect the Greek/Hebrew structure: the figure is ''one standing before me'' who ''had the appearance of a man,'' rather than ''standing before me was one.'''
-
 - timestamp: '2026-05-16T04:26:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And it happened[a], when I, Daniel, had seen the vision and was seeking understanding, behold, one standing before me had the appearance of a man.'
-  to: 'And it happened[a], when I, Daniel, had seen the vision and was seeking understanding, behold, standing before me was one with the appearance of a man.'
-  rationale: 'Azure restructured ''standing before me was one with the appearance of a man'' into ''one standing before me had the appearance of a man'' — collapsing two documented lexical decisions (participle עמד as predicate; comparative כ + מראה with explicit referent) on bare preference grounds.'
+  from: And it happened[a], when I, Daniel, had seen the vision and was seeking understanding, behold, one standing before me had the appearance of a man.
+  to: And it happened[a], when I, Daniel, had seen the vision and was seeking understanding, behold, standing before me was one with the appearance of a man.
+  rationale: Azure restructured 'standing before me was one with the appearance of a man' into 'one standing before me had the appearance of a man' — collapsing two documented lexical decisions (participle עמד as predicate; comparative כ + מראה with explicit referent) on bare preference grounds.
+- timestamp: '2026-11-09T17:30:17Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And it happened[a], when I, Daniel, had seen the vision and was seeking understanding, behold, standing before me was one with the appearance of a man.
+  to: As I, Daniel, was seeking to understand the vision I had seen, there before me stood someone with the appearance of a man.
+  rationale: The automated revision and revert disputed word order rather than the figure's meaning. I preserve the documented description of someone standing before Daniel with a man's appearance, without identifying him beyond this verse.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -133,3 +135,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/daniel/008/015.job-44089.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:30:17Z'
+  change_level: retranslated
+  confidence: high
+  meaning: As Daniel seeks to understand the vision, he sees someone standing before him who has a man's appearance.
+  meaning_decisions:
+  - source_phrase: וַיְהִי בִּרְאֹתִי אֲנִי דָנִיֵּאל אֶת הֶחָזוֹן וָאֲבַקְשָׁה בִינָה
+    prior_rendering: And it happened, when I, Daniel, had seen the vision and was seeking understanding
+    new_rendering: As I, Daniel, was seeking to understand the vision I had seen
+    rationale: Replaces the Hebrew narrative formula with a natural temporal clause and makes explicit what Daniel was seeking to understand.
+  - source_phrase: וְהִנֵּה עֹמֵד לְנֶגְדִּי כְּמַרְאֵה גָבֶר
+    prior_rendering: behold, standing before me was one with the appearance of a man
+    new_rendering: there before me stood someone with the appearance of a man
+    rationale: Preserves the vivid presentation and the distinction between human appearance and actual identity without the formal English summons 'behold.'
+  footnote_kinds: {}
+  history_weighed: The automated revision and revert disputed word order rather than the figure's meaning. I preserve the documented description of someone standing before Daniel with a man's appearance, without identifying him beyond this verse.

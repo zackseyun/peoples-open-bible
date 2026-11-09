@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/הָיָ֞ה הִ֣יא רֹכֶ֣בֶת עַֽל הַ/חֲמ֗וֹר וְ/יֹרֶ֨דֶת֙ בְּ/סֵ֣תֶר הָ/הָ֔ר וְ/הִנֵּ֤ה דָוִד֙ וַ/אֲנָשָׁ֔י/ו יֹרְדִ֖ים לִ/קְרָאתָ֑/הּ וַ/תִּפְגֹּ֖שׁ אֹתָֽ/ם׀־׃
 translation:
-  text: And as she was riding on the donkey and going down under cover of the mountain[a], behold, David and his men were coming down to meet her, and she met them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'on the hidden side of the mountain.' The Hebrew phrase refers to a concealed or sheltered area of the mountain.
-    reason: lexical_alternative
+  text: As she rode the donkey down through a sheltered part of the mountain, David and his men suddenly appeared, coming down toward her, and she met them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְהָיָה הִיא
   chosen: And as she was
@@ -81,14 +77,20 @@ revisions:
   from: And as she was riding on the donkey and going down under cover of the mountain, behold, David and his men were coming down to meet her, and she met them.
   to: And as she was riding on the donkey and going down by the hidden side of the mountain, behold, David and his men were coming down toward her, and she met them.
   rationale: Adjusted 'under cover of the mountain' to 'by the hidden side of the mountain' for a more natural rendering of בְּסֵתֶר הָהָר; changed 'to meet her' to 'toward her' to avoid implying purpose more strongly than the Hebrew requires.
-
 - timestamp: '2026-05-16T04:55:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And as she was riding on the donkey and going down by the hidden side of the mountain[a], behold, David and his men were coming down toward her, and she met them.'
-  to: 'And as she was riding on the donkey and going down under cover of the mountain[a], behold, David and his men were coming down to meet her, and she met them.'
-  rationale: 'Azure substituted ''on the hidden side of the mountain'' — drafter''s explicit rejected_alternative. Drafter chose ''under cover of the mountain'' to preserve HALOT concealment nuance of סתר.'
+  from: And as she was riding on the donkey and going down by the hidden side of the mountain[a], behold, David and his men were coming down toward her, and she met them.
+  to: And as she was riding on the donkey and going down under cover of the mountain[a], behold, David and his men were coming down to meet her, and she met them.
+  rationale: Azure substituted 'on the hidden side of the mountain' — drafter's explicit rejected_alternative. Drafter chose 'under cover of the mountain' to preserve HALOT concealment nuance of סתר.
+- timestamp: '2026-11-09T18:24:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And as she was riding on the donkey and going down under cover of the mountain[a], behold, David and his men were coming down to meet her, and she met them.
+  to: As she rode the donkey down through a sheltered part of the mountain, David and his men suddenly appeared, coming down toward her, and she met them.
+  rationale: The April review correctly avoided implying that David had set out to meet Abigail; I adopt 'toward her' despite the automated revert. The sheltered setting retains the concealment recognized in the lexical record.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -108,3 +110,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/025/020.job-59391.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:24:27Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Abigail encounters David and his men unexpectedly while descending through terrain that had concealed them from view.
+  meaning_decisions:
+  - source_phrase: בְּסֵתֶר הָהָר
+    prior_rendering: under cover of the mountain
+    new_rendering: through a sheltered part of the mountain
+    rationale: The phrase describes concealing terrain, not necessarily a deliberate attempt to travel secretly.
+  - source_phrase: וְהִנֵּה
+    prior_rendering: behold
+    new_rendering: suddenly appeared
+    rationale: The narrative particle presents the approaching men as an unexpected development within the concealed mountain setting.
+  - source_phrase: יֹרְדִים לִקְרָאתָהּ
+    prior_rendering: were coming down to meet her
+    new_rendering: coming down toward her
+    rationale: The phrase describes their converging movement without implying that David already knew Abigail was coming.
+  footnote_kinds: {}
+  history_weighed: The April review correctly avoided implying that David had set out to meet Abigail; I adopt 'toward her' despite the automated revert. The sheltered setting retains the concealment recognized in the lexical record.

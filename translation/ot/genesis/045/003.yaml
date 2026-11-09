@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֨אמֶר יוֹסֵ֤ף אֶל אֶחָי/ו֙ אֲנִ֣י יוֹסֵ֔ף הַ/ע֥וֹד אָבִ֖/י חָ֑י וְ/לֹֽא יָכְל֤וּ אֶחָי/ו֙ לַ/עֲנ֣וֹת אֹת֔/וֹ כִּ֥י נִבְהֲל֖וּ מִ/פָּנָֽי/ו־־׃
 translation:
-  text: Then Joseph said to his brothers[a], “I am Joseph. Is my father still alive?” But his brothers could not answer him[b], because they were dismayed at his presence.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “were dismayed before him” or “were alarmed at the sight of him.”
-    reason: lexical_alternative
-  - marker: b
-    text: Literally “from before him/his face,” a Hebrew expression indicating the effect of being in someone's presence.
-    reason: lexical_alternative
+  text: Then Joseph said to his brothers, “I am Joseph. Is my father still alive?” But his brothers could not answer him, because they were terrified in his presence.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: Then ... said
@@ -108,14 +101,20 @@ revisions:
   from: Then Joseph said to his brothers, “I am Joseph. Is my father still alive?” But his brothers were not able to answer him, because they were terrified at his presence.
   to: Then Joseph said to his brothers, “I am Joseph. Is my father still alive?” But his brothers were not able to answer him, because they were terrified at his presence.
   rationale: Changed 'were not able to answer' to 'could not answer' for more natural formal English, and 'were terrified at his presence' to 'were dismayed at his presence' to more closely reflect the Hebrew verb without overstating it.
-
 - timestamp: '2026-05-15T21:54:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Joseph said to his brothers[a], “I am Joseph. Is my father still alive?” But his brothers could not answer him[b], because they were dismayed at his presence.'
-  to: 'Then Joseph said to his brothers[a], “I am Joseph. Is my father still alive?” But his brothers could not answer him[b], because they were dismayed at his presence.'
-  rationale: 'Drafter chose ''were terrified'' for the Niphal of בהל (HALOT-grounded — primary gloss is ''terrified/alarmed'', not ''dismayed'') given the dramatic intensity of Joseph''s revelation, with ''were dismayed'' as explicit rejected alternative. Azure substituted the rejected alternative on bare ''without overstating it'' grounds. Also ''were not able'' (mirroring יכל) softened to ''could not''.'
+  from: Then Joseph said to his brothers[a], “I am Joseph. Is my father still alive?” But his brothers could not answer him[b], because they were dismayed at his presence.
+  to: Then Joseph said to his brothers[a], “I am Joseph. Is my father still alive?” But his brothers could not answer him[b], because they were dismayed at his presence.
+  rationale: Drafter chose 'were terrified' for the Niphal of בהל (HALOT-grounded — primary gloss is 'terrified/alarmed', not 'dismayed') given the dramatic intensity of Joseph's revelation, with 'were dismayed' as explicit rejected alternative. Azure substituted the rejected alternative on bare 'without overstating it' grounds. Also 'were not able' (mirroring יכל) softened to 'could not'.
+- timestamp: '2026-11-09T17:46:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Joseph said to his brothers[a], “I am Joseph. Is my father still alive?” But his brothers could not answer him[b], because they were dismayed at his presence.
+  to: Then Joseph said to his brothers, “I am Joseph. Is my father still alive?” But his brothers could not answer him, because they were terrified in his presence.
+  rationale: The history records competing choices between “terrified” and “dismayed”; the lexical rationale and the brothers’ speechlessness favor “terrified.” I retain the later improvement “could not answer” rather than the more cumbersome first-draft wording.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -137,3 +136,21 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/045/003.job-65655.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:46:11Z'
+  change_level: refined
+  confidence: high
+  meaning: Joseph identifies himself and asks whether his father is still alive, but his brothers are too frightened in his presence to answer.
+  meaning_decisions:
+  - source_phrase: כִּי נִבְהֲלוּ מִפָּנָיו
+    prior_rendering: because they were dismayed at his presence
+    new_rendering: because they were terrified in his presence
+    rationale: The verb conveys alarm or terror, and their inability to answer after recognizing Joseph supports the stronger emotional sense.
+  footnote_kinds: {}
+  history_weighed: The history records competing choices between “terrified” and “dismayed”; the lexical rationale and the brothers’ speechlessness favor “terrified.” I retain the later improvement “could not answer” rather than the more cumbersome first-draft wording.

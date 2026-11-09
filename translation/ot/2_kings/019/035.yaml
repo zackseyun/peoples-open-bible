@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יְהִי֮ בַּ/לַּ֣יְלָה הַ/הוּא֒ וַ/יֵּצֵ֣א מַלְאַ֣ךְ יְהוָ֗ה וַ/יַּךְ֙ בְּ/מַחֲנֵ֣ה אַשּׁ֔וּר מֵאָ֛ה שְׁמוֹנִ֥ים וַ/חֲמִשָּׁ֖ה אָ֑לֶף וַ/יַּשְׁכִּ֣ימוּ בַ/בֹּ֔קֶר וְ/הִנֵּ֥ה כֻלָּ֖/ם פְּגָרִ֥ים מֵתִֽים׀׃
 translation:
-  text: And that night the angel of Yahweh went out and struck down one hundred eighty-five thousand in the camp of Assyria. When people rose early in the morning[a], behold[b], all of them were dead bodies.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'And they rose early in the morning.' The Hebrew leaves the subject indefinite.
-    reason: lexical_alternative
-  - marker: b
-    text: 'Hebrew: ''corpses, dead''—an emphatic expression for the slain.'
-    reason: lexical_alternative
+  text: That night the angel of Yahweh went out and struck down one hundred eighty-five thousand men in the Assyrian camp. When people rose early the next morning, they found all those men lying dead.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיְהִי בַּלַּיְלָה הַהוּא
   chosen: And that night
@@ -114,13 +107,12 @@ revisions:
   from: And that night the angel of the LORD went out and struck down one hundred eighty-five thousand in the camp of Assyria. When people rose early in the morning, behold, all of them were dead bodies.
   to: And that night the angel of the LORD went out and struck down one hundred eighty-five thousand in the camp of Assyria. When they rose early in the morning, behold, all of them were dead bodies.
   rationale: Replaced 'people' with 'they' to reflect the unspecified subject in the Hebrew and avoid adding a noun not present in the text. Kept the rest unchanged as accurate and natural.
-
 - timestamp: '2026-05-18T03:09:32Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And that night the angel of Yahweh went out and struck down one hundred eighty-five thousand in the camp of Assyria[a]. When they rose early in the morning, behold[b], all of them were dead bodies.'
-  to: 'And that night the angel of Yahweh went out and struck down one hundred eighty-five thousand in the camp of Assyria. When people rose early in the morning, behold, all of them were dead bodies.'
+  from: And that night the angel of Yahweh went out and struck down one hundred eighty-five thousand in the camp of Assyria[a]. When they rose early in the morning, behold[b], all of them were dead bodies.
+  to: And that night the angel of Yahweh went out and struck down one hundred eighty-five thousand in the camp of Assyria. When people rose early in the morning, behold, all of them were dead bodies.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''When people rose early in the morning''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -130,6 +122,13 @@ revisions:
   from: And that night the angel of Yahweh went out and struck down one hundred eighty-five thousand in the camp of Assyria. When people rose early in the morning, behold, all of them were dead bodies.
   to: And that night the angel of Yahweh went out and struck down one hundred eighty-five thousand in the camp of Assyria. When people rose early in the morning[a], behold[b], all of them were dead bodies.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('When people rose early in the morning') because the note's quoted alternative matches the lexical decision rendered there; [b] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:27:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And that night the angel of Yahweh went out and struck down one hundred eighty-five thousand in the camp of Assyria. When people rose early in the morning[a], behold[b], all of them were dead bodies.
+  to: That night the angel of Yahweh went out and struck down one hundred eighty-five thousand men in the Assyrian camp. When people rose early the next morning, they found all those men lying dead.
+  rationale: The history’s change to 'they' risked making the slain appear to be the people who rose, while the restored 'people' correctly leaves the observers unspecified. I retain that indefinite subject and clarify the discovery and its referent without identifying the observers or explaining how the deaths occurred.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -151,3 +150,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_kings/019/035.job-60783.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:27:08Z'
+  change_level: retranslated
+  confidence: high
+  meaning: That night Yahweh’s angel killed one hundred eighty-five thousand in the Assyrian camp, and their bodies were discovered the next morning.
+  meaning_decisions:
+  - source_phrase: וַיַּךְ בְּמַחֲנֵה אַשּׁוּר מֵאָה שְׁמוֹנִים וַחֲמִשָּׁה אָלֶף
+    prior_rendering: struck down one hundred eighty-five thousand in the camp of Assyria
+    new_rendering: struck down one hundred eighty-five thousand men in the Assyrian camp
+    rationale: The military setting supplies the people being counted; making that understood noun explicit gives the following discovery a clear referent.
+  - source_phrase: וַיַּשְׁכִּימוּ בַבֹּקֶר וְהִנֵּה כֻלָּם פְּגָרִים מֵתִים
+    prior_rendering: When people rose early in the morning, behold, all of them were dead bodies
+    new_rendering: When people rose early the next morning, they found all those men lying dead
+    rationale: The revised sentence distinguishes the living observers from the slain and conveys the startling discovery without the archaic attention marker 'behold.'
+  footnote_kinds: {}
+  history_weighed: The history’s change to 'they' risked making the slain appear to be the people who rose, while the restored 'people' correctly leaves the observers unspecified. I retain that indefinite subject and clarify the discovery and its referent without identifying the observers or explaining how the deaths occurred.

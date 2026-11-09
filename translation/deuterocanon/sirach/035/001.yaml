@@ -28,12 +28,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 35:1
 translation:
-  text: If they made you a leader, do not exalt yourself; be among them as one of them.[a]
-  philosophy: optimal-equivalence
+  text: Save us, God of all, and make all the nations fear you[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The supplied Hebrew witness for this reference reads, 'Save us, God of all, and put your fear upon all the nations.' Because that wording does not match the Greek verse attached to Sirach 35:1, the main translation follows the Greek here and notes the mismatch openly.
-    reason: textual_variant
+    text: Literally, “raise your fear over all the nations.”
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: Ἡγούμενόν
   chosen: leader
@@ -110,14 +110,20 @@ revisions:
   from: If they made you a leader, do not exalt yourself; be among them as one of them.
   to: Save us, God of all, and put your fear upon all the nations.
   rationale: 'Replaced the unrelated draft with a translation that matches the Hebrew: ''Save us'' for הושיענו, ''God of all'' for אלהי הכל, and ''put your fear upon all the nations'' for והרם פחדך על כל הגוים.'
-
 - timestamp: '2026-05-15T13:54:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Save us[a], God of all, and put your fear upon all the nations.'
-  to: 'If they made you a leader, do not exalt yourself; be among them as one of them.[a]'
-  rationale: 'Hebrew and Greek are entirely different sentences; drafter chose Greek per documented theological_decision.'
+  from: Save us[a], God of all, and put your fear upon all the nations.
+  to: If they made you a leader, do not exalt yourself; be among them as one of them.[a]
+  rationale: Hebrew and Greek are entirely different sentences; drafter chose Greek per documented theological_decision.
+- timestamp: '2026-11-09T20:13:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If they made you a leader, do not exalt yourself; be among them as one of them.[a]
+  to: Save us, God of all, and make all the nations fear you[a].
+  rationale: The April revision recognized and translated the supplied Hebrew prayer; I retain that gain rather than the later automated revert. The documented preference for Greek depends on a verse-alignment claim not established by the supplied material, and no MAINTAINER revision requires that choice.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -137,3 +143,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/035/001.job-51946.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:13:14Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The speaker asks the God of all to save his people and make every nation fear him.
+  meaning_decisions:
+  - source_phrase: הושיענו אלהי הכל
+    prior_rendering: If they made you a leader, do not exalt yourself
+    new_rendering: Save us, God of all
+    rationale: The supplied Hebrew addresses God in a prayer for deliverance; it contains no instruction about leadership. Following that source also connects this verse with the appeal against foreign peoples in verse 2.
+  - source_phrase: והרם פחדך על כל הגוים
+    prior_rendering: be among them as one of them
+    new_rendering: and make all the nations fear you
+    rationale: The Hebrew asks God to cause all nations to fear him. Natural English conveys this request directly, while the footnote preserves the image of raising his fear over them.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The April revision recognized and translated the supplied Hebrew prayer; I retain that gain rather than the later automated revert. The documented preference for Greek depends on a verse-alignment claim not established by the supplied material, and no MAINTAINER revision requires that choice.

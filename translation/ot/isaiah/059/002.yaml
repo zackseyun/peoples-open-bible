@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: כִּ֤י אִם עֲוֺנֹֽתֵי/כֶם֙ הָי֣וּ מַבְדִּלִ֔ים בֵּינֵ/כֶ֕ם לְ/בֵ֖ין אֱלֹֽהֵי/כֶ֑ם וְ/חַטֹּֽאותֵי/כֶ֗ם הִסְתִּ֧ירוּ פָנִ֛ים מִ/כֶּ֖ם מִ/שְּׁמֽוֹעַ־׃
 translation:
-  text: But your iniquities have become those dividing between you and your God[a], and your sins have hidden his face from you, from hearing.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or more idiomatically, 'your iniquities have separated you from your God, and your sins have hidden his face from you so that he does not hear.'
-    reason: lexical_alternative
+  text: But your iniquities have separated you from your God, and your sins have made him hide his face from you, so that he will not listen.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: כִּי אִם
   chosen: But
@@ -106,14 +102,20 @@ revisions:
   from: But your iniquities have become those dividing between you and your God, and your sins have hidden his face from you, from hearing.
   to: But your iniquities have separated you from your God, and your sins have hidden his face from you, so that he does not hear.
   rationale: 'Replaced the awkward literal phrasing with natural formal English: ''have separated you from your God'' for מַבְדִּלִים בֵּינֵיכֶם לְבֵין אֱלֹהֵיכֶם, and rendered מִשְּׁמוֹעַ idiomatically as ''so that he does not hear.'''
-
 - timestamp: '2026-05-15T10:08:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But your iniquities have separated you from your God[a], and your sins have hidden his face from you, so that he does not hear.'
-  to: 'But your iniquities have become those dividing between you and your God[a], and your sins have hidden his face from you, from hearing.'
-  rationale: 'Restored היה+participle aspect ''have become those dividing'' and formal ''from hearing''.'
+  from: But your iniquities have separated you from your God[a], and your sins have hidden his face from you, so that he does not hear.
+  to: But your iniquities have become those dividing between you and your God[a], and your sins have hidden his face from you, from hearing.
+  rationale: Restored היה+participle aspect 'have become those dividing' and formal 'from hearing'.
+- timestamp: '2026-11-09T17:55:31Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But your iniquities have become those dividing between you and your God[a], and your sins have hidden his face from you, from hearing.
+  to: But your iniquities have separated you from your God, and your sins have made him hide his face from you, so that he will not listen.
+  rationale: The earlier review correctly recognized the need for natural English expressing separation and its consequence. The subsequent automated revert privileged grammatical transparency rather than meaning, so I recover that gain while clarifying God's withdrawal.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -136,3 +138,25 @@ cross_check:
     major-issues: 1
     minor-issues: 1
   source_review: state/reviews/gemini/low_agreement_recheck/ot/isaiah/059/002.job-28661.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:55:31Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The people's iniquities, rather than any inability in God, have estranged them from him and caused him not to listen.
+  meaning_decisions:
+  - source_phrase: הָיוּ מַבְדִּלִים בֵּינֵיכֶם לְבֵין אֱלֹהֵיכֶם
+    prior_rendering: have become those dividing between you and your God
+    new_rendering: have separated you from your God
+    rationale: This expresses the resulting estrangement naturally without reproducing a Hebrew verbal construction that obscures the meaning in English.
+  - source_phrase: וְחַטֹּאותֵיכֶם הִסְתִּירוּ פָנִים מִכֶּם מִשְּׁמוֹעַ
+    prior_rendering: and your sins have hidden his face from you, from hearing
+    new_rendering: and your sins have made him hide his face from you, so that he will not listen
+    rationale: The sins cause God's withdrawal; they do not literally conceal his face. Making that agency and consequence explicit preserves the face image and distinguishes his refusal to listen from the inability denied in verse 1.
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly recognized the need for natural English expressing separation and its consequence. The subsequent automated revert privileged grammatical transparency rather than meaning, so I recover that gain while clarifying God's withdrawal.

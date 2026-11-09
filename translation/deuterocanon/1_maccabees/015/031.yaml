@@ -9,15 +9,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But if not[a], give five hundred talents of silver in place of them, and another five hundred talents for the destruction that you have caused and for the taxes of the cities. But if not[b], they will come and make war against you.
-  philosophy: optimal-equivalence
+  text: If you refuse, pay five hundred talents[a] of silver in their place, and another five hundred talents for the destruction you have caused and the taxes of the cities. If you refuse to pay, my forces will come and wage war against you.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek: ''and for the destruction that you have caused and for the taxes of the cities, another five hundred talents.'' The syntax is compressed; this translation takes the final sum as an additional payment covering both the damage and the cities'' taxes/tribute.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the tribute of the cities' instead of 'the taxes of the cities.'
-    reason: alternative_reading
+    text: A talent was a unit of weight for precious metals, about 26 kilograms (57 pounds) in the Greek system.
+    reason: cultural_note
 lexical_decisions:
 - source_word: εἰ δὲ μή
   chosen: But if not
@@ -117,7 +114,13 @@ revisions:
   from: But if not, give five hundred talents of silver in place of them, and for the destruction that you have caused, and for the taxes of the cities, another five hundred talents. But if not, they will come and make war against you.
   to: But if not, give five hundred talents of silver in place of them, and another five hundred talents for the destruction that you have caused and for the taxes of the cities. But if not, they will come and make war against you.
   rationale: 'Reordered the middle clause for clearer English while preserving the Greek sense: the additional five hundred talents are for the destruction caused and for the taxes of the cities. Removed an unnecessary comma before ''another five hundred talents.'''
-
+- timestamp: '2026-11-09T18:54:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But if not[a], give five hundred talents of silver in place of them, and another five hundred talents for the destruction that you have caused and for the taxes of the cities. But if not[b], they will come and make war against you.
+  to: If you refuse, pay five hundred talents[a] of silver in their place, and another five hundred talents for the destruction you have caused and the taxes of the cities. If you refuse to pay, my forces will come and wage war against you.”
+  rationale: I preserve the review’s helpful reordering of the additional five hundred talents and its interpretation that this second sum covers both destruction and city taxes. The changes clarify the conditions and the implied military subject without altering the amounts or the ultimatum.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -137,3 +140,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/015/031.job-48857.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:54:01Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Antiochus offers a large monetary payment as an alternative to surrendering the holdings and threatens war if Simon refuses to pay.
+  meaning_decisions:
+  - source_phrase: εἰ δὲ μή, δότε
+    prior_rendering: But if not, give
+    new_rendering: If you refuse, pay
+    rationale: The condition concerns refusal of the preceding demand, and the commanded transfer is a monetary payment.
+  - source_phrase: εἰ δὲ μή
+    prior_rendering: But if not
+    new_rendering: If you refuse to pay
+    rationale: The second condition concerns refusal of the alternative payment; making that referent explicit preserves the two-stage ultimatum.
+  - source_phrase: παραγενόμενοι ἐκπολεμήσουσιν ὑμᾶς
+    prior_rendering: they will come and make war against you
+    new_rendering: my forces will come and wage war against you
+    rationale: The unnamed plural subject is the king’s attacking forces, as the subsequent narrative confirms; identifying them avoids an unexplained 'they' in English.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: I preserve the review’s helpful reordering of the additional five hundred talents and its interpretation that this second sum covers both destruction and city taxes. The changes clarify the conditions and the implied military subject without altering the amounts or the ultimatum.

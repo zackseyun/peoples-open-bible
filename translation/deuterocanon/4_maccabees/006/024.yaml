@@ -18,15 +18,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: When they saw that he was so noble-minded[b] in the face of these compulsions[a], and that he was not even changing toward pity for them, they led him to the fire.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'constraints' or 'pressures' for 'compulsions' (ἀνάγκας). The Greek refers to coercive pressures brought to bear on him, not ordinary necessities.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Noble-minded'' renders μεγαλoφρονοῦντα, a term for greatness of spirit or magnanimity.'
-    reason: lexical_alternative
+  text: When they saw that he remained so great of spirit in the face of their coercion, and that he was not swayed even by their pity, they led him to the fire.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Πρὸς
   chosen: in the face of
@@ -125,13 +118,12 @@ revisions:
   from: When they saw that he was so noble-minded in the face of these compulsions, and that he was not even changing toward pity for them, they led him to the fire.
   to: When they saw that he was so noble-minded in the face of these torments, and that he was not even changing to pity for them, they led him to the fire.
   rationale: Changed 'compulsions' to 'torments' for better lexical fit with ἀνάγκας in context, and adjusted 'toward pity' to 'to pity' for more natural English while preserving the sense.
-
 - timestamp: '2026-05-18T03:10:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When they saw that he was so noble-minded in the face of these torments[a], and that he was not even changing to pity for them[b], they led him to the fire.'
-  to: 'When they saw that he was so noble-minded in the face of these compulsions, and that he was not even changing toward pity for them, they led him to the fire.'
+  from: When they saw that he was so noble-minded in the face of these torments[a], and that he was not even changing to pity for them[b], they led him to the fire.
+  to: When they saw that he was so noble-minded in the face of these compulsions, and that he was not even changing toward pity for them, they led him to the fire.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''compulsions''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -141,6 +133,13 @@ revisions:
   from: When they saw that he was so noble-minded in the face of these compulsions, and that he was not even changing toward pity for them, they led him to the fire.
   to: When they saw that he was so noble-minded[b] in the face of these compulsions[a], and that he was not even changing toward pity for them, they led him to the fire.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('compulsions') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('Noble-minded') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T22:10:11Z'
+  adjudicator: claude-opus-5.5-meaning-pass
+  reviewer_model: claude-opus-5-5
+  category: meaning_retranslation
+  from: When they saw that he was so noble-minded[b] in the face of these compulsions[a], and that he was not even changing toward pity for them, they led him to the fire.
+  to: When they saw that he remained so great of spirit in the face of their coercion, and that he was not swayed even by their pity, they led him to the fire.
+  rationale: The April revision rightly saw that 'compulsions' and 'toward pity' were unclear; the revert restored them without a meaning-based reason, so their sense is now made clear.
 cross_check:
   status: moderate_agreement
   agreement: 0.8
@@ -160,3 +159,29 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/006/024.job-49874.json
+meaning_pass:
+  run: full-v4-opus
+  model: claude-opus-5-5
+  deployment: claude-code-subscription
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: null
+  timestamp: '2026-11-09T22:10:11Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Seeing that Eleazar stayed high-spirited under coercion and was not swayed even by their pity, the guards brought him to the fire.
+  meaning_decisions:
+  - source_phrase: μηδὲ πρὸς τὸν οἰκτιρμὸν αὐτῶν μεταβαλλόμενον
+    prior_rendering: he was not even changing toward pity for them
+    new_rendering: he was not swayed even by their pity
+    rationale: The phrase means he did not change course in response to the pity his captors showed him (verses 12–15); the prior wording suggested he refused to pity them.
+  - source_phrase: πρὸς τὰς ἀνάγκας
+    prior_rendering: in the face of these compulsions
+    new_rendering: in the face of their coercion
+    rationale: The word denotes the force applied to make him yield; 'compulsions' now suggests an inner urge.
+  - source_phrase: μεγαλοφρονοῦντα
+    prior_rendering: so noble-minded
+    new_rendering: so great of spirit
+    rationale: The term means greatness of soul, resolute and unbowed; 'great of spirit' carries that more fully.
+  footnote_kinds: {}
+  history_weighed: The April revision rightly saw that 'compulsions' and 'toward pity' were unclear; the revert restored them without a meaning-based reason, so their sense is now made clear.

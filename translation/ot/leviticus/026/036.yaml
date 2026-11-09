@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/הַ/נִּשְׁאָרִ֣ים בָּ/כֶ֔ם וְ/הֵבֵ֤אתִי מֹ֨רֶךְ֙ בִּ/לְבָבָ֔/ם בְּ/אַרְצֹ֖ת אֹיְבֵי/הֶ֑ם וְ/רָדַ֣ף אֹתָ֗/ם ק֚וֹל עָלֶ֣ה נִדָּ֔ף וְ/נָס֧וּ מְנֻֽסַת חֶ֛רֶב וְ/נָפְל֖וּ וְ/אֵ֥ין רֹדֵֽף־׃
 translation:
-  text: As for those of you who remain, I will bring faintness into their hearts in the lands of their enemies, and the sound of a driven leaf[a] will pursue them; they will flee as one flees from the sword, and they will fall when no one is pursuing.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the sound of a windblown leaf.'
-    reason: lexical_alternative
+  text: As for those of you who remain, I will make them fainthearted in the lands of their enemies; even the sound of a windblown leaf will pursue them. They will flee as though from the sword and fall, though no one is pursuing them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: הַנִּשְׁאָרִים
   chosen: those of you who remain
@@ -123,13 +119,12 @@ revisions:
   from: As for those of you who remain, I will bring faintness into their hearts in the lands of their enemies, and the sound of a driven leaf will pursue them; they will flee as one flees from the sword, and they will fall when no one is pursuing.
   to: As for those of you who remain, I will bring faintness into their hearts in the lands of their enemies, and the sound of a driven leaf will pursue them; they will flee as from the sword, and they will fall when no one is pursuing.
   rationale: Simplified 'they will flee as one flees from the sword' to the more natural and equally accurate 'they will flee as from the sword.'
-
 - timestamp: '2026-05-18T03:00:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'As for those of you who remain[a], I will bring faintness into their hearts in the lands of their enemies, and the sound of a driven leaf will pursue them; they will flee as from the sword, and they will fall when no one is pursuing.'
-  to: 'As for those of you who remain, I will bring faintness into their hearts in the lands of their enemies, and the sound of a driven leaf will pursue them; they will flee as one flees from the sword, and they will fall when no one is pursuing.'
+  from: As for those of you who remain[a], I will bring faintness into their hearts in the lands of their enemies, and the sound of a driven leaf will pursue them; they will flee as from the sword, and they will fall when no one is pursuing.
+  to: As for those of you who remain, I will bring faintness into their hearts in the lands of their enemies, and the sound of a driven leaf will pursue them; they will flee as one flees from the sword, and they will fall when no one is pursuing.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as one flees from the sword''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -139,6 +134,13 @@ revisions:
   from: As for those of you who remain, I will bring faintness into their hearts in the lands of their enemies, and the sound of a driven leaf will pursue them; they will flee as one flees from the sword, and they will fall when no one is pursuing.
   to: As for those of you who remain, I will bring faintness into their hearts in the lands of their enemies, and the sound of a driven leaf[a] will pursue them; they will flee as one flees from the sword, and they will fall when no one is pursuing.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('the sound of a driven leaf') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:22:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: As for those of you who remain, I will bring faintness into their hearts in the lands of their enemies, and the sound of a driven leaf[a] will pursue them; they will flee as one flees from the sword, and they will fall when no one is pursuing.
+  to: As for those of you who remain, I will make them fainthearted in the lands of their enemies; even the sound of a windblown leaf will pursue them. They will flee as though from the sword and fall, though no one is pursuing them.
+  rationale: The review and subsequent revert differed only over the wording of flight from the sword. The lexical explanation of inward loss of courage guides 'fainthearted,' and the earlier windblown-leaf alternative is now sufficiently clear to use without a note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -158,3 +160,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/026/036.job-45471.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:22:56Z'
+  change_level: refined
+  confidence: high
+  meaning: Yahweh will deprive the survivors in exile of courage, so that even a leaf’s sound will provoke flight and collapse without any actual pursuer.
+  meaning_decisions:
+  - source_phrase: וְהֵבֵאתִי מֹרֶךְ בִּלְבָבָם
+    prior_rendering: I will bring faintness into their hearts
+    new_rendering: I will make them fainthearted
+    rationale: Uses the natural English expression for loss of courage, avoiding the possible impression of physical dizziness while preserving divine causation.
+  - source_phrase: קוֹל עָלֶה נִדָּף
+    prior_rendering: the sound of a driven leaf
+    new_rendering: even the sound of a windblown leaf
+    rationale: Makes the implied wind explicit and brings out the contrast between a negligible sound and overwhelming panic, while preserving the leaf image.
+  - source_phrase: וְאֵין רֹדֵף
+    prior_rendering: when no one is pursuing
+    new_rendering: though no one is pursuing them
+    rationale: 'Expresses the clause’s ironic contrast: they flee and fall despite having no pursuer.'
+  footnote_kinds: {}
+  history_weighed: The review and subsequent revert differed only over the wording of flight from the sword. The lexical explanation of inward loss of courage guides 'fainthearted,' and the earlier windblown-leaf alternative is now sufficiently clear to use without a note.

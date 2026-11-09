@@ -18,12 +18,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: For the mother of the seven young men endured the tortures of each one of her children[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or possibly, more specifically, “the rackings inflicted on each one of her children,” since the Greek term can denote torture by the rack.
-    reason: lexical_alternative
+  text: For the mother of the seven young men endured the tortures inflicted on each one of her children.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: μήτηρ
   chosen: mother
@@ -89,14 +85,20 @@ revisions:
   from: For the mother of the seven young men endured the tortures inflicted on each one of her children.
   to: For the mother of the seven young men endured the tortures inflicted on each one of her children.
   rationale: Removed 'inflicted on' to avoid adding wording not explicit in the Greek; rendered the phrase more directly as 'the tortures of each one of her children' while preserving the sense.
-
 - timestamp: '2026-05-18T02:59:20Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For the mother of the seven young men endured the tortures of each one of her children[a].'
-  to: 'For the mother of the seven young men endured the tortures of each one of her children[a].'
+  from: For the mother of the seven young men endured the tortures of each one of her children[a].
+  to: For the mother of the seven young men endured the tortures of each one of her children[a].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''inflicted on each one of her children''].'
+- timestamp: '2026-11-09T18:59:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For the mother of the seven young men endured the tortures of each one of her children[a].
+  to: For the mother of the seven young men endured the tortures inflicted on each one of her children.
+  rationale: The first draft correctly included “inflicted on,” and the lexical rationale explains why that phrase is warranted. The later removal made the relationship less clear, so the earlier wording is restored.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -116,3 +118,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/014/012.job-50084.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:21Z'
+  change_level: refined
+  confidence: high
+  meaning: The mother endured the suffering involved in the torture inflicted on each of her seven children.
+  meaning_decisions:
+  - source_phrase: τὰς ἐφ’ ἑνὶ ἑκάστῳ τῶν τέκνων στρέβλας
+    prior_rendering: the tortures of each one of her children
+    new_rendering: the tortures inflicted on each one of her children
+    rationale: The prepositional phrase identifies each child as the person tortured; making this explicit distinguishes their bodily torture from the mother’s sympathetic endurance.
+  footnote_kinds: {}
+  history_weighed: The first draft correctly included “inflicted on,” and the lexical rationale explains why that phrase is warranted. The later removal made the relationship less clear, so the earlier wording is restored.

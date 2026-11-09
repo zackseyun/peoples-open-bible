@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: כִּי רַבַּ֥ת בַּ/קָּהָ֖ל אֲשֶׁ֣ר לֹא הִתְקַדָּ֑שׁוּ וְ/הַ/לְוִיִּ֞ם עַל שְׁחִיטַ֣ת הַ/פְּסָחִ֗ים לְ/כֹל֙ לֹ֣א טָה֔וֹר לְ/הַקְדִּ֖ישׁ לַ/יהוָֽה־־־׃
 translation:
-  text: For many in the assembly had not sanctified themselves[a], and the Levites were over the slaughter of the Passover lambs for everyone who was not clean[c][b], to consecrate them to Yahweh.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'had not consecrated themselves.' The Hebrew uses sanctification language, though ritual purification is the immediate issue.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'the Passovers'; that is, the Passover sacrificial animals.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'for all who were unclean.'
-    reason: lexical_alternative
+  text: Because many in the assembly had not consecrated themselves, the Levites were responsible for slaughtering the Passover sacrifices on behalf of everyone who was not ritually clean, to consecrate the sacrifices to Yahweh.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: רַבַּת בַּקָּהָל
   chosen: many in the assembly
@@ -105,14 +95,20 @@ revisions:
   from: For many in the assembly had not sanctified themselves, so the Levites were over the slaughtering of the Passover lambs for everyone who was not clean, to consecrate them to the LORD.
   to: For many in the assembly had not sanctified themselves, so the Levites were over the slaughtering of the Passover lambs for everyone who was not clean, to consecrate them to the LORD.
   rationale: Replaced 'so' with 'and' to reflect the Hebrew more directly, and changed 'slaughtering' to the more formal 'slaughter' for register and naturalness.
-
 - timestamp: '2026-05-17T01:36:34Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For many in the assembly had not sanctified themselves[a], and the Levites were over the slaughter of the Passover lambs for everyone who was not clean[c][b], to consecrate them to Yahweh.'
-  to: 'For many in the assembly had not sanctified themselves[a], and the Levites were over the slaughter of the Passover lambs for everyone who was not clean[c][b], to consecrate them to Yahweh.'
+  from: For many in the assembly had not sanctified themselves[a], and the Levites were over the slaughter of the Passover lambs for everyone who was not clean[c][b], to consecrate them to Yahweh.
+  to: For many in the assembly had not sanctified themselves[a], and the Levites were over the slaughter of the Passover lambs for everyone who was not clean[c][b], to consecrate them to Yahweh.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the slaughtering of the Passover lambs''].'
+- timestamp: '2026-11-09T17:25:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For many in the assembly had not sanctified themselves[a], and the Levites were over the slaughter of the Passover lambs for everyone who was not clean[c][b], to consecrate them to Yahweh.
+  to: Because many in the assembly had not consecrated themselves, the Levites were responsible for slaughtering the Passover sacrifices on behalf of everyone who was not ritually clean, to consecrate the sacrifices to Yahweh.
+  rationale: The earlier decisions distinguish consecration from purification and identify the sacrifices as the implied object of the final clause. I retain both conclusions and restore the explanatory connection that the first draft expressed with 'so.'
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -135,3 +131,33 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_chronicles/030/017.job-60118.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:25:42Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Because many participants were not consecrated and ritually clean, the Levites took responsibility for slaughtering their Passover sacrifices and consecrating those sacrifices to Yahweh.
+  meaning_decisions:
+  - source_phrase: כִּי רַבַּת בַּקָּהָל אֲשֶׁר לֹא הִתְקַדָּשׁוּ
+    prior_rendering: For many in the assembly had not sanctified themselves
+    new_rendering: Because many in the assembly had not consecrated themselves
+    rationale: The opening explains the Levites’ responsibility; 'consecrated' retains the holiness language and matches its use elsewhere in the passage.
+  - source_phrase: וְהַלְוִיִּם עַל שְׁחִיטַת הַפְּסָחִים
+    prior_rendering: and the Levites were over the slaughter of the Passover lambs
+    new_rendering: the Levites were responsible for slaughtering the Passover sacrifices
+    rationale: '''Were over'' denotes responsibility, and the plural Passovers refers to the sacrificial animals.'
+  - source_phrase: לְכֹל לֹא טָהוֹר
+    prior_rendering: for everyone who was not clean
+    new_rendering: on behalf of everyone who was not ritually clean
+    rationale: The Levites acted for participants lacking ritual eligibility, not ordinary physical cleanliness.
+  - source_phrase: לְהַקְדִּישׁ לַיהוָה
+    prior_rendering: to consecrate them to Yahweh
+    new_rendering: to consecrate the sacrifices to Yahweh
+    rationale: Naming the implied object prevents readers from thinking that slaughter itself consecrated the unclean people.
+  footnote_kinds: {}
+  history_weighed: The earlier decisions distinguish consecration from purification and identify the sacrifices as the implied object of the final clause. I retain both conclusions and restore the explanatory connection that the first draft expressed with 'so.'

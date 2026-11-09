@@ -9,18 +9,15 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Since certain pestilent men seized control of the kingdom of our fathers[a], and I want to reclaim the kingdom so that I may restore it as it was before, I have enlisted a multitude of forces and equipped warships[c][b];
-  philosophy: optimal-equivalence
+  text: Since certain wicked men[a] have seized control of the kingdom of our fathers, I intend to reclaim the kingdom and restore it as it was before. I have therefore recruited a large force of mercenaries[b] and equipped warships.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'certain plagues seized the kingdom of our fathers'; the Greek uses λοιμοί, literally 'plagues/pestilences,' metaphorically for harmful people.
+    text: Literally, “plagues,” used here as an insult for destructive men.
     reason: lexical_alternative
   - marker: b
-    text: Or 'I have recruited many troops' or possibly 'I have levied a body of foreign/hired forces'; the verb can carry a military recruitment nuance.
-    reason: lexical_alternative
-  - marker: c
-    text: '''Equipped warships'' may also be rendered ''prepared'' or ''built warships,'' since the Greek verb can cover making ready as well as constructing.'
-    reason: lexical_alternative
+    text: Or, “recruited a large army”; the verb commonly refers to recruiting foreign or hired troops.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἐπειδὴ
   chosen: Since
@@ -135,14 +132,20 @@ revisions:
   from: Since certain pestilent men seized control of the kingdom of our fathers, and I want to lay claim to the kingdom so that I may restore it as it was before, I have enlisted a multitude of forces and equipped warships;
   to: Since certain pestilent men seized control of the kingdom of our fathers, and I want to lay claim to the kingdom so that I may restore it as it was before, I have enlisted a multitude of forces and equipped warships;
   rationale: Changed 'lay claim to' to 'reclaim' for a more natural and contextually accurate rendering of ἀντιποιήσασθαι τῆς βασιλείας in reference to recovering the ancestral kingdom. No other changes needed.
-
 - timestamp: '2026-05-18T02:59:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Since certain pestilent men seized control of the kingdom of our fathers[a], and I want to reclaim the kingdom so that I may restore it as it was before, I have enlisted a multitude of forces and equipped warships[c][b];'
-  to: 'Since certain pestilent men seized control of the kingdom of our fathers[a], and I want to reclaim the kingdom so that I may restore it as it was before, I have enlisted a multitude of forces and equipped warships[c][b];'
+  from: Since certain pestilent men seized control of the kingdom of our fathers[a], and I want to reclaim the kingdom so that I may restore it as it was before, I have enlisted a multitude of forces and equipped warships[c][b];
+  to: Since certain pestilent men seized control of the kingdom of our fathers[a], and I want to reclaim the kingdom so that I may restore it as it was before, I have enlisted a multitude of forces and equipped warships[c][b];
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to lay claim to the kingdom''].'
+- timestamp: '2026-11-09T18:53:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Since certain pestilent men seized control of the kingdom of our fathers[a], and I want to reclaim the kingdom so that I may restore it as it was before, I have enlisted a multitude of forces and equipped warships[c][b];
+  to: Since certain wicked men[a] have seized control of the kingdom of our fathers, I intend to reclaim the kingdom and restore it as it was before. I have therefore recruited a large force of mercenaries[b] and equipped warships.
+  rationale: I retain the review’s 'reclaim,' which fits the stated restoration of an ancestral kingdom better than the draft’s 'lay claim to.' The earlier lexical discussion acknowledges hired or foreign troops; I bring that stronger lexical sense into the text and preserve the broader reading in a note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -162,3 +165,31 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/015/003.job-48829.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:51Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Antiochus says that destructive usurpers have taken his ancestral kingdom and that he has raised military forces to reclaim and restore it.
+  meaning_decisions:
+  - source_phrase: τινες λοιμοί
+    prior_rendering: certain pestilent men
+    new_rendering: certain wicked men[a]
+    rationale: The expression denounces harmful people rather than describing disease; the main text conveys the denunciation, while the note preserves the plague metaphor.
+  - source_phrase: βούλομαι
+    prior_rendering: I want
+    new_rendering: I intend
+    rationale: The king announces an undertaking for which he has already made military preparations, not merely a wish.
+  - source_phrase: ἐξενολόγησα δὲ πλῆθος δυνάμεων
+    prior_rendering: I have enlisted a multitude of forces
+    new_rendering: I have therefore recruited a large force of mercenaries[b]
+    rationale: The military recruitment verb commonly concerns foreign or hired soldiers; the new wording conveys that specificity and expresses the large number naturally.
+  footnote_kinds:
+    a: literal_wording
+    b: alternative_meaning
+  history_weighed: I retain the review’s 'reclaim,' which fits the stated restoration of an ancestral kingdom better than the draft’s 'lay claim to.' The earlier lexical discussion acknowledges hired or foreign troops; I bring that stronger lexical sense into the text and preserve the broader reading in a note.

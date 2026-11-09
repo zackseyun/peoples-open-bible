@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וְ/כִֽי יִגֹּ֧ף שֽׁוֹר אִ֛ישׁ אֶת שׁ֥וֹר רֵעֵ֖/הוּ וָ/מֵ֑ת וּ/מָ֨כְר֜וּ אֶת הַ/שּׁ֤וֹר הַ/חַי֙ וְ/חָצ֣וּ אֶת כַּסְפּ֔/וֹ וְ/גַ֥ם אֶת הַ/מֵּ֖ת יֶֽחֱצֽוּ/ן־־־־־־׃
 translation:
-  text: And if one man's ox strikes his neighbor's ox and it dies[a], then they shall sell the live ox and divide its price[c][b], and they shall also divide the dead one.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'gores' for 'strikes'; the Hebrew verb can denote an ox's forceful blow.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'divide its silver/money,' meaning the sale price of the live ox.
-    reason: lexical_alternative
-  - marker: c
-    text: Literally, 'the dead one'; that is, the dead ox.
-    reason: lexical_alternative
+  text: If one man's ox strikes and kills his neighbor's ox, the two owners shall sell the live ox and divide the proceeds equally; they shall also divide the dead ox equally.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְכִי
   chosen: And if
@@ -93,7 +83,6 @@ revision_pass:
   timestamp: '2026-04-23T10:31:55Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -113,3 +102,37 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/021/035.job-62809.json
+revisions:
+- timestamp: '2026-11-09T17:36:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And if one man's ox strikes his neighbor's ox and it dies[a], then they shall sell the live ox and divide its price[c][b], and they shall also divide the dead one.
+  to: If one man's ox strikes and kills his neighbor's ox, the two owners shall sell the live ox and divide the proceeds equally; they shall also divide the dead ox equally.
+  rationale: The lexical deliberation rightly keeps 'strikes' broader than 'gores' and understands the money as sale proceeds; I preserve both judgments. The source's repeated halving verb warrants making equal shares explicit, while the earlier literal-wording notes are unnecessary.
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:36:00Z'
+  change_level: refined
+  confidence: high
+  meaning: When one man's ox kills his neighbor's ox, the owners must share equally both the proceeds from the surviving ox and the dead ox.
+  meaning_decisions:
+  - source_phrase: יִגֹּף ... וָמֵת
+    prior_rendering: strikes his neighbor's ox and it dies
+    new_rendering: strikes and kills his neighbor's ox
+    rationale: Expresses the fatal result directly and removes any uncertainty about which ox dies.
+  - source_phrase: וּמָכְרוּ ... וְחָצוּ אֶת כַּסְפּוֹ
+    prior_rendering: they shall sell ... and divide its price
+    new_rendering: the two owners shall sell ... and divide the proceeds equally
+    rationale: Identifies the actors and makes explicit that the verb describes halving the sale proceeds, not merely an unspecified division.
+  - source_phrase: וְגַם אֶת הַמֵּת יֶחֱצוּן
+    prior_rendering: and they shall also divide the dead one
+    new_rendering: they shall also divide the dead ox equally
+    rationale: Expands the compressed referent and preserves the equal division required by the repeated verb.
+  footnote_kinds: {}
+  history_weighed: The lexical deliberation rightly keeps 'strikes' broader than 'gores' and understands the money as sale proceeds; I preserve both judgments. The source's repeated halving verb warrants making equal shares explicit, while the earlier literal-wording notes are unnecessary.

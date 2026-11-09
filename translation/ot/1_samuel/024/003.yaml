@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּקַּ֣ח שָׁא֗וּל שְׁלֹ֧שֶׁת אֲלָפִ֛ים אִ֥ישׁ בָּח֖וּר מִ/כָּל יִשְׂרָאֵ֑ל וַ/יֵּ֗לֶךְ לְ/בַקֵּ֤שׁ אֶת דָּוִד֙ וַֽ/אֲנָשָׁ֔י/ו עַל פְּנֵ֖י צוּרֵ֥י הַ/יְּעֵלִֽים־־־׃
 translation:
-  text: Then Saul took three thousand chosen men from all Israel and went to seek David and his men in front of the rocks of the wild goats[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the crags of the wild goats'; the animal may specifically be the ibex.
-    reason: lexical_alternative
+  text: Then Saul took three thousand chosen men from all Israel and set out to search for David and his men near the crags of the wild goats.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּקַּח
   chosen: took
@@ -88,14 +84,20 @@ revisions:
   from: Then Saul took three thousand chosen men from all Israel and went to seek David and his men on the face of the rocks of the wild goats.
   to: Then Saul took three thousand chosen men from all Israel and went to seek David and his men on the face of the rocks of the wild goats.
   rationale: Replaced the overly literal 'on the face of' with the more natural 'in front of' for עַל פְּנֵי, while preserving the formal sense and all source elements.
-
 - timestamp: '2026-05-18T02:55:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Saul took three thousand chosen men from all Israel and went to seek David and his men in front of the rocks of the wild goats[a].'
-  to: 'Then Saul took three thousand chosen men from all Israel and went to seek David and his men in front of the rocks of the wild goats[a].'
+  from: Then Saul took three thousand chosen men from all Israel and went to seek David and his men in front of the rocks of the wild goats[a].
+  to: Then Saul took three thousand chosen men from all Israel and went to seek David and his men in front of the rocks of the wild goats[a].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''on the face of''].'
+- timestamp: '2026-11-09T17:23:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Saul took three thousand chosen men from all Israel and went to seek David and his men in front of the rocks of the wild goats[a].
+  to: Then Saul took three thousand chosen men from all Israel and set out to search for David and his men near the crags of the wild goats.
+  rationale: The recorded discussion recognized the awkwardness of “on the face of,” but the current “in front of” still obscures the geographical sense. I use the documented alternative “crags” and retain the wild-goat description without the unnecessary zoological note.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -117,3 +119,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/024/003.job-59357.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:16Z'
+  change_level: refined
+  confidence: high
+  meaning: Saul takes three thousand selected men from Israel to search for David and his followers in the rocky wild-goat country.
+  meaning_decisions:
+  - source_phrase: וַיֵּלֶךְ לְבַקֵּשׁ
+    prior_rendering: went to seek
+    new_rendering: set out to search for
+    rationale: This expresses the purpose of Saul’s expedition in natural English.
+  - source_phrase: עַל פְּנֵי צוּרֵי הַיְּעֵלִים
+    prior_rendering: in front of the rocks of the wild goats
+    new_rendering: near the crags of the wild goats
+    rationale: The phrase locates the search in relation to rocky cliffs; “in front of” misleadingly suggests a precise facing position, while “crags” better conveys the terrain.
+  footnote_kinds: {}
+  history_weighed: The recorded discussion recognized the awkwardness of “on the face of,” but the current “in front of” still obscures the geographical sense. I use the documented alternative “crags” and retain the wild-goat description without the unnecessary zoological note.

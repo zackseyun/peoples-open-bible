@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וְ/רָאָ֣ה הַ/כֹּהֵ֣ן אֶת הַ/נֶּ֣גַע בְּ/עֽוֹר הַ֠/בָּשָׂר וְ/שֵׂעָ֨ר בַּ/נֶּ֜גַע הָפַ֣ךְ לָבָ֗ן וּ/מַרְאֵ֤ה הַ/נֶּ֨גַע֙ עָמֹק֙ מֵ/ע֣וֹר בְּשָׂר֔/וֹ נֶ֥גַע צָרַ֖עַת ה֑וּא וְ/רָאָ֥/הוּ הַ/כֹּהֵ֖ן וְ/טִמֵּ֥א אֹתֽ/וֹ־־׀׃
 translation:
-  text: And the priest shall examine the diseased spot on the skin of the body[a], and if the hair in the spot has turned white and the appearance of the spot is deeper than the skin of his body, it is a diseased spot of skin disease; when the priest has examined him, he shall pronounce him unclean.
-  philosophy: optimal-equivalence
+  text: The priest must examine the affected spot on the person's skin. If the hair in the spot has turned white and the spot appears deeper than the surrounding skin, it is a case of skin disease. After examining the person, the priest must pronounce them unclean[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, traditionally, 'a spot of leprosy' / 'a leprous infection.' The Hebrew צָרַעַת refers to a broader category than modern leprosy.
+    text: '''Unclean'' denotes ritual impurity here, not dirtiness or personal moral guilt.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: נֶגַע
@@ -116,14 +116,20 @@ revisions:
   from: And the priest shall examine the diseased spot on the skin of the body, and if the hair in the spot has turned white and the appearance of the spot is deeper than the skin of his body, it is a diseased spot of skin disease; when the priest has examined him, he shall pronounce him unclean.
   to: And the priest shall examine the diseased spot on the skin of the body, and if the hair in the spot has turned white and the appearance of the spot is deeper than the skin of his body, it is a diseased spot of leprosy; when the priest has examined him, he shall pronounce him unclean.
   rationale: Changed 'skin disease' to 'leprosy' to more directly reflect צָרַעַת and avoid the awkward phrase 'diseased spot of skin disease.'
-
 - timestamp: '2026-05-16T08:55:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the priest shall examine the diseased spot on the skin of the body[a], and if the hair in the spot has turned white and the appearance of the spot is deeper than the skin of his body, it is a diseased spot of leprosy; when the priest has examined him, he shall pronounce him unclean.'
-  to: 'And the priest shall examine the diseased spot on the skin of the body[a], and if the hair in the spot has turned white and the appearance of the spot is deeper than the skin of his body, it is a diseased spot of skin disease; when the priest has examined him, he shall pronounce him unclean.'
-  rationale: 'Azure substituted ''leprosy'' — drafter''s explicit rejected_alternative for צָרַעַת. Drafter explicitly warned against importing modern medical diagnosis (''leprosy'' as Hansen''s disease) into ancient ritual-purity category.'
+  from: And the priest shall examine the diseased spot on the skin of the body[a], and if the hair in the spot has turned white and the appearance of the spot is deeper than the skin of his body, it is a diseased spot of leprosy; when the priest has examined him, he shall pronounce him unclean.
+  to: And the priest shall examine the diseased spot on the skin of the body[a], and if the hair in the spot has turned white and the appearance of the spot is deeper than the skin of his body, it is a diseased spot of skin disease; when the priest has examined him, he shall pronounce him unclean.
+  rationale: Azure substituted 'leprosy' — drafter's explicit rejected_alternative for צָרַעַת. Drafter explicitly warned against importing modern medical diagnosis ('leprosy' as Hansen's disease) into ancient ritual-purity category.
+- timestamp: '2026-11-09T18:18:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the priest shall examine the diseased spot on the skin of the body[a], and if the hair in the spot has turned white and the appearance of the spot is deeper than the skin of his body, it is a diseased spot of skin disease; when the priest has examined him, he shall pronounce him unclean.
+  to: The priest must examine the affected spot on the person's skin. If the hair in the spot has turned white and the spot appears deeper than the surrounding skin, it is a case of skin disease. After examining the person, the priest must pronounce them unclean[a].
+  rationale: I retain the history's distinction between tsaraʿat and modern leprosy, as well as its explanation that the priest pronounces rather than causes impurity. The awkward wording noted by the automated review is resolved without adopting its medically misleading substitute.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -147,3 +153,30 @@ cross_check:
     agree: 1
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/ot/leviticus/013/003.job-38427.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:18:55Z'
+  change_level: retranslated
+  confidence: high
+  meaning: White hair and an appearance deeper than the surrounding skin identify the affected spot as skin disease, requiring the priest to pronounce the person unclean.
+  meaning_decisions:
+  - source_phrase: הַנֶּגַע בְּעוֹר הַבָּשָׂר
+    prior_rendering: the diseased spot on the skin of the body
+    new_rendering: the affected spot on the person's skin
+    rationale: The priest examines an affected area before determining its classification; 'affected spot' avoids anticipating the verdict.
+  - source_phrase: וּמַרְאֵה הַנֶּגַע עָמֹק מֵעוֹר בְּשָׂרוֹ
+    prior_rendering: the appearance of the spot is deeper than the skin of his body
+    new_rendering: the spot appears deeper than the surrounding skin
+    rationale: The criterion concerns visible appearance relative to the surrounding skin, not a claim about measured penetration into the body.
+  - source_phrase: נֶגַע צָרַעַת הוּא
+    prior_rendering: it is a diseased spot of skin disease
+    new_rendering: it is a case of skin disease
+    rationale: This is the diagnostic classification of the spot; natural English need not reproduce both nouns in an awkward chain.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: I retain the history's distinction between tsaraʿat and modern leprosy, as well as its explanation that the priest pronounces rather than causes impurity. The awkward wording noted by the automated review is resolved without adopting its medically misleading substitute.

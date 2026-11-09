@@ -21,15 +21,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: A sinner who falls into surety and pursues contracts will fall into lawsuits[a][b].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'will fall into judgments' or 'legal disputes.' The Greek κρίσεις can refer broadly to judicial proceedings or verdicts; 'lawsuits' is chosen here because the context is financial surety and contractual obligations.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Surety'' refers to becoming security or guarantor for another person''s debt or obligation.'
-    reason: cultural_note
+  text: A sinner who becomes entangled in guaranteeing debts and pursues business contracts will become entangled in lawsuits.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἁμαρτωλός
   chosen: a sinner
@@ -99,14 +92,20 @@ revisions:
   from: A sinner who falls into surety, and who pursues contracts, will fall into lawsuits.
   to: A sinner who falls into surety, and who pursues contracts, will fall into lawsuits.
   rationale: Removed the unnecessary second 'who' for smoother, more natural English; otherwise retained the draft's accurate rendering of the Greek.
-
 - timestamp: '2026-05-18T02:59:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'A sinner who falls into surety and pursues contracts will fall into lawsuits[a][b].'
-  to: 'A sinner who falls into surety and pursues contracts will fall into lawsuits[a][b].'
+  from: A sinner who falls into surety and pursues contracts will fall into lawsuits[a][b].
+  to: A sinner who falls into surety and pursues contracts will fall into lawsuits[a][b].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who pursues''].'
+- timestamp: '2026-11-09T19:06:58Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: A sinner who falls into surety and pursues contracts will fall into lawsuits[a][b].
+  to: A sinner who becomes entangled in guaranteeing debts and pursues business contracts will become entangled in lawsuits.
+  rationale: The history mainly concerns minor smoothing and an automated revert, neither of which changes the interpretation. I retain the documented business and legal senses while clarifying the unfamiliar expression about surety.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -126,3 +125,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/029/019.job-51769.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:58Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: A sinner who becomes involved in guaranteeing debts and pursuing business contracts will become entangled in litigation.
+  meaning_decisions:
+  - source_phrase: ἐμπεσὼν εἰς ἐγγύην
+    prior_rendering: who falls into surety
+    new_rendering: who becomes entangled in guaranteeing debts
+    rationale: The phrase describes involvement in another person's financial obligation; “falls into surety” does not communicate that clearly in contemporary English.
+  - source_phrase: διώκων ἐργολαβίας
+    prior_rendering: pursues contracts
+    new_rendering: pursues business contracts
+    rationale: The term denotes contractual business undertakings, which explains why pursuing them leads into legal disputes.
+  - source_phrase: ἐμπεσεῖται εἰς κρίσεις
+    prior_rendering: will fall into lawsuits
+    new_rendering: will become entangled in lawsuits
+    rationale: Repeating “become entangled” preserves the source's repeated verb and its movement from financial obligations into litigation.
+  footnote_kinds: {}
+  history_weighed: The history mainly concerns minor smoothing and an automated revert, neither of which changes the interpretation. I retain the documented business and legal senses while clarifying the unfamiliar expression about surety.

@@ -4,12 +4,12 @@ source:
   edition: SBLGNT
   text: εὐθέως δὲ ὁ Ἰησοῦς ἐκτείνας τὴν χεῖρα ἐπελάβετο αὐτοῦ καὶ λέγει αὐτῷ· Ὀλιγόπιστε, εἰς τί ἐδίστασας;
 translation:
-  text: Immediately Jesus stretched out his hand[a], took hold of him, and said to him, “You of little faith, why did you doubt?”
-  philosophy: optimal-equivalence
+  text: Immediately Jesus stretched out his hand, took hold of him, and said to him, “You of little faith, why did you doubt[a]?”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “did you waver?” The Greek verb can denote hesitation or wavering as well as doubt.
-    reason: lexical_alternative
+    text: Or, “waver.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: εὐθέως
   chosen: Immediately
@@ -96,14 +96,20 @@ revisions:
   from: Immediately Jesus stretched out his hand, took hold of him, and says to him, “You of little faith, why did you doubt?”
   to: Immediately Jesus stretched out his hand, took hold of him, and says to him, “You of little faith, why did you doubt?”
   rationale: Changed 'says' to 'said' for natural English narrative past tense while preserving the Greek sense; no other changes needed.
-
 - timestamp: '2026-05-18T03:00:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Immediately Jesus stretched out his hand[a], took hold of him, and said to him, “You of little faith, why did you doubt?”'
-  to: 'Immediately Jesus stretched out his hand[a], took hold of him, and said to him, “You of little faith, why did you doubt?”'
+  from: Immediately Jesus stretched out his hand[a], took hold of him, and said to him, “You of little faith, why did you doubt?”
+  to: Immediately Jesus stretched out his hand[a], took hold of him, and said to him, “You of little faith, why did you doubt?”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''says to him''].'
+- timestamp: '2026-11-09T17:14:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Immediately Jesus stretched out his hand[a], took hold of him, and said to him, “You of little faith, why did you doubt?”
+  to: Immediately Jesus stretched out his hand, took hold of him, and said to him, “You of little faith, why did you doubt[a]?”
+  rationale: The current past-tense 'said' is natural English despite the recorded disagreement over reproducing the Greek historical present. The established distinction between little faith and total faithlessness is preserved, and the note on wavering is placed beside the word it explains.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -127,3 +133,18 @@ cross_check:
     agree: 2
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/014/031.job-57052.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:14:42Z'
+  change_level: kept
+  confidence: high
+  meaning: Jesus immediately takes hold of Peter and rebukes him for his little faith and doubt.
+  meaning_decisions: []
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The current past-tense 'said' is natural English despite the recorded disagreement over reproducing the Greek historical present. The established distinction between little faith and total faithlessness is preserved, and the note on wavering is placed beside the word it explains.

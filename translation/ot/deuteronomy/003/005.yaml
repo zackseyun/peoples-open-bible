@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: כָּל אֵ֜לֶּה עָרִ֧ים בְּצֻר֛וֹת חוֹמָ֥ה גְבֹהָ֖ה דְּלָתַ֣יִם וּ/בְרִ֑יחַ לְ/בַ֛ד מֵ/עָרֵ֥י הַ/פְּרָזִ֖י הַרְבֵּ֥ה מְאֹֽד־׃
 translation:
-  text: All these were fortified cities with a high wall, double doors, and bars, besides a great many rural towns[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'villages of the open country' or 'unwalled towns.' The Hebrew contrasts these settlements with the fortified cities just described.
-    reason: lexical_alternative
+  text: All these were fortified cities with high walls and gates secured by bars, besides a great many unwalled towns.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: בְּצֻר֛וֹת
   chosen: fortified
@@ -87,13 +83,12 @@ revisions:
   from: All these were fortified cities with a high wall, double doors, and bars, besides a great many rural towns.
   to: All these were fortified cities with high walls, gates, and bars, besides a great many rural towns.
   rationale: 'Revised ''a high wall, double doors'' to ''high walls, gates'' for better lexical accuracy and natural English: the Hebrew describes fortified cities with high walls, doors/gates, and bars, not specifically ''double doors.'''
-
 - timestamp: '2026-05-16T06:09:51Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'All these were fortified cities with high walls[a], gates, and bars, besides a great many rural towns.'
-  to: 'All these were fortified cities with a high wall, double doors, and bars, besides a great many rural towns.'
+  from: All these were fortified cities with high walls[a], gates, and bars, besides a great many rural towns.
+  to: All these were fortified cities with a high wall, double doors, and bars, besides a great many rural towns.
   rationale: 'Azure substituted BOTH documented rejected_alternatives: ''high walls'' (rejected for singular חוֹמָ֥ה גְבֹהָ֖ה — drafter preserved Hebrew singular) and ''gates'' (rejected for דְּלָתַ֣יִם — drafter chose ''double doors'' to preserve dual morphology).'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -103,6 +98,13 @@ revisions:
   from: All these were fortified cities with a high wall, double doors, and bars, besides a great many rural towns.
   to: All these were fortified cities with a high wall, double doors, and bars, besides a great many rural towns[a].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('rural towns') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:31:26Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: All these were fortified cities with a high wall, double doors, and bars, besides a great many rural towns[a].
+  to: All these were fortified cities with high walls and gates secured by bars, besides a great many unwalled towns.
+  rationale: The earlier automated review rightly clarified the city defenses; the subsequent automated revert defended singular and dual morphology rather than a difference in meaning. I recover that clarification and bring the documented contrast with unwalled settlements into the main text.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -122,3 +124,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/003/005.job-61339.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:31:26Z'
+  change_level: refined
+  confidence: high
+  meaning: The captured cities had substantial defenses, and Israel also took a great many settlements without walls.
+  meaning_decisions:
+  - source_phrase: חוֹמָה גְבֹהָה
+    prior_rendering: a high wall
+    new_rendering: high walls
+    rationale: The singular describes the defensive feature of each city; plural English naturally distributes that feature across the many cities.
+  - source_phrase: דְּלָתַיִם וּבְרִיחַ
+    prior_rendering: double doors, and bars
+    new_rendering: gates secured by bars
+    rationale: These are the door-leaves of city gates and their securing bars, not ordinary double doors; their defensive function is what the description communicates.
+  - source_phrase: מֵעָרֵי הַפְּרָזִי
+    prior_rendering: rural towns
+    new_rendering: unwalled towns
+    rationale: The decisive contrast is the absence of fortifications, not merely a rural location.
+  footnote_kinds: {}
+  history_weighed: The earlier automated review rightly clarified the city defenses; the subsequent automated revert defended singular and dual morphology rather than a difference in meaning. I recover that clarification and bring the documented contrast with unwalled settlements into the main text.

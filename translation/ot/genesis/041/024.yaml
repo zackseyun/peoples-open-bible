@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: וַ/תִּבְלַ֨עְןָ֙ הָ/שִׁבֳּלִ֣ים הַ/דַּקֹּ֔ת אֵ֛ת שֶׁ֥בַע הַֽ/שִׁבֳּלִ֖ים הַ/טֹּב֑וֹת וָֽ/אֹמַר֙ אֶל הַֽ/חַרְטֻמִּ֔ים וְ/אֵ֥ין מַגִּ֖יד לִֽ/י־׃
 translation:
-  text: And the thin ears swallowed up the seven good ears[a]. Then I told the magicians[c][b], but there was no one who could explain it to me.
-  philosophy: optimal-equivalence
+  text: The thin ears swallowed up the seven good ears. Then I told the dream to the magicians[a], but no one could explain it to me.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'heads of grain' instead of 'ears.'
-    reason: lexical_alternative
-  - marker: b
-    text: The Hebrew term rendered 'magicians' refers to Egyptian ritual specialists or dream interpreters.
+    text: Egyptian ritual specialists who interpreted dreams and practiced divination.
     reason: cultural_note
-  - marker: c
-    text: Or, 'there was no one who could interpret it for me.'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: וַתִּבְלַעְןָ
   chosen: swallowed up
@@ -89,14 +83,20 @@ revisions:
   from: And the thin ears swallowed up the seven good ears. Then I told it to the magicians, but there was no one who could explain it to me.
   to: And the thin ears swallowed up the seven good ears. Then I told it to the magicians, but there was no one who could explain it to me.
   rationale: Replaced 'told it to the magicians' with 'told the magicians' for natural English and closer alignment with the source, which does not explicitly include 'it.'
-
 - timestamp: '2026-05-17T08:36:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the thin ears swallowed up the seven good ears[a]. Then I told the magicians[c][b], but there was no one who could explain it to me.'
-  to: 'And the thin ears swallowed up the seven good ears[a]. Then I told the magicians[c][b], but there was no one who could explain it to me.'
+  from: And the thin ears swallowed up the seven good ears[a]. Then I told the magicians[c][b], but there was no one who could explain it to me.
+  to: And the thin ears swallowed up the seven good ears[a]. Then I told the magicians[c][b], but there was no one who could explain it to me.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Then I told it to''].'
+- timestamp: '2026-11-09T17:45:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the thin ears swallowed up the seven good ears[a]. Then I told the magicians[c][b], but there was no one who could explain it to me.
+  to: The thin ears swallowed up the seven good ears. Then I told the dream to the magicians[a], but no one could explain it to me.
+  rationale: The first draft and lexical rationale correctly supplied the understood object of 'told,' despite later concern that it was not separately expressed in Hebrew. I retain 'swallowed up' and 'explain,' and keep only the useful background note about the magicians.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -118,3 +118,22 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/041/024.job-65542.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:45:16Z'
+  change_level: refined
+  confidence: high
+  meaning: The thin ears consumed the good ears, and Egypt’s magicians could not explain Pharaoh’s dream.
+  meaning_decisions:
+  - source_phrase: וָאֹמַר אֶל הַחַרְטֻמִּים
+    prior_rendering: Then I told the magicians
+    new_rendering: Then I told the dream to the magicians
+    rationale: The dream is the understood object of Pharaoh’s report; making it explicit prevents an incomplete-sounding English clause.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The first draft and lexical rationale correctly supplied the understood object of 'told,' despite later concern that it was not separately expressed in Hebrew. I retain 'swallowed up' and 'explain,' and keep only the useful background note about the magicians.

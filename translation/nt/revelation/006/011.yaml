@@ -4,18 +4,15 @@ source:
   edition: SBLGNT
   text: καὶ ἐδόθη αὐτοῖς ἑκάστῳ στολὴ λευκή, καὶ ἐρρέθη αὐτοῖς ἵνα ⸀ἀναπαύσονται ἔτι χρόνον ⸀μικρόν, ἕως ⸀πληρωθῶσιν καὶ οἱ σύνδουλοι αὐτῶν καὶ οἱ ἀδελφοὶ ⸀αὐτῶν οἱ μέλλοντες ⸀ἀποκτέννεσθαι ὡς καὶ αὐτοί.
 translation:
-  text: And a white robe was given to each of them[a], and they were told that they should rest a little longer, until their fellow servants and their brothers, who are about to be killed just as they were[c][b], should also be completed.
-  philosophy: optimal-equivalence
+  text: Each of them was given a white robe. They were told to rest a little longer, until the number of their fellow servants[a] and their brothers and sisters—those who were to be killed just as they had been—was complete[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'until their fellow servants and their brothers also should be fulfilled' or 'until the full number of their fellow slaves and brothers should be complete.' The Greek says simply 'until ... should be made complete/fulfilled.'
-    reason: alternative_reading
-  - marker: b
-    text: '''Brothers'' may here refer to fellow believers more broadly, including women, but the Greek uses the masculine plural ἀδελφοί.'
+    text: Greek, “fellow slaves,” people who share the same master.
     reason: lexical_alternative
-  - marker: c
-    text: Or 'their fellow slaves and their brothers also should be made complete'.
-    reason: previous_rendering
+  - marker: b
+    text: Literally, “until their fellow servants and their brothers should also be made complete.”
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: στολή λευκή
   chosen: a white robe
@@ -130,9 +127,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And a white robe was given to each of them[a], and they were told that they should rest a little longer, until their fellow slaves and their brothers, who are about to be killed just as they were[c][b], should also be completed.'
-  to: 'And a white robe was given to each of them[a], and they were told that they should rest a little longer, until their fellow slaves and their brothers, who are about to be killed just as they were[c][b], should also be completed.'
+  from: And a white robe was given to each of them[a], and they were told that they should rest a little longer, until their fellow slaves and their brothers, who are about to be killed just as they were[c][b], should also be completed.
+  to: And a white robe was given to each of them[a], and they were told that they should rest a little longer, until their fellow slaves and their brothers, who are about to be killed just as they were[c][b], should also be completed.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''those who are about to be killed''].'
+- timestamp: '2026-11-09T17:16:17Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And a white robe was given to each of them[a], and they were told that they should rest a little longer, until their fellow servants and their brothers, who are about to be killed just as they were[c][b], should also be completed.
+  to: Each of them was given a white robe. They were told to rest a little longer, until the number of their fellow servants[a] and their brothers and sisters—those who were to be killed just as they had been—was complete[b].
+  rationale: Earlier reviews improved clause attachment but retained the opaque wording 'completed' because 'number' is not explicit in Greek; their own lexical rationale nevertheless favors completion of the group. I make that meaning explicit and follow the standing 'servant' ruling, with the shared-master relationship explained in a note.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:00:46Z'
@@ -160,3 +164,31 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/nt/revelation/006/011.job-38596.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:16:17Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Each martyr receives a white robe and is told to rest a little longer until the group of fellow believers who will likewise be killed is complete.
+  meaning_decisions:
+  - source_phrase: ἕως πληρωθῶσιν καὶ οἱ σύνδουλοι αὐτῶν καὶ οἱ ἀδελφοὶ αὐτῶν
+    prior_rendering: until their fellow servants and their brothers ... should also be completed
+    new_rendering: until the number of their fellow servants and their brothers and sisters ... was complete
+    rationale: The completion concerns the group of martyrs, not the moral perfection of individual believers. Supplying 'number' communicates the contextual sense of the compressed Greek; the literal construction is retained in a note.
+  - source_phrase: οἱ ἀδελφοὶ αὐτῶν
+    prior_rendering: their brothers
+    new_rendering: their brothers and sisters
+    rationale: The term describes the believers' shared family relationship and does not restrict the future martyrs to men. The inclusive English expression carries that communal meaning.
+  - source_phrase: οἱ μέλλοντες ἀποκτέννεσθαι ὡς καὶ αὐτοί
+    prior_rendering: who are about to be killed just as they were
+    new_rendering: those who were to be killed just as they had been
+    rationale: The construction identifies believers whose deaths still lie ahead in the vision. 'Were to be killed' preserves that prospect without suggesting a more precisely immediate timetable than the passage establishes.
+  footnote_kinds:
+    a: name_or_term
+    b: literal_wording
+  history_weighed: Earlier reviews improved clause attachment but retained the opaque wording 'completed' because 'number' is not explicit in Greek; their own lexical rationale nevertheless favors completion of the group. I make that meaning explicit and follow the standing 'servant' ruling, with the shared-master relationship explained in a note.

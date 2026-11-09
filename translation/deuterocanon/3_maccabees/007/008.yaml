@@ -16,15 +16,12 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: And we have ordered each and every one to return to his own home[a], with absolutely no one in any way harming them[b], nor insulting them over the things that happened contrary to reason.
-  philosophy: optimal-equivalence
+  text: We have ordered every one of them to return to their own home. No one is to harm them in any way or taunt them over the senseless events that took place[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'return to their own places.' The Greek εἰς τὰ ἴδια can denote one's own home, property, or place.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'over what happened irrationally' / 'over the unreasonable things that happened.' The phrase 'contrary to reason' renders Greek παρὰ λόγον closely.
-    reason: lexical_alternative
+    text: Or, “over the unexpected events that took place.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: προστετάχαμεν
   chosen: we have ordered
@@ -112,14 +109,20 @@ revisions:
   from: And we have ordered that everyone return to his own home, with no one in any way harming them at all, nor insulting them over the things that happened contrary to reason.
   to: And we have ordered that everyone return to his own home, with no one in any way harming them at all, nor insulting them over the things that happened contrary to reason.
   rationale: Clarified ἑκάστῳ πάντας as 'each and every one,' rendered τὰ ἴδια more naturally as 'his own home,' and adjusted word order to reflect the Greek emphasis while preserving formal, natural English.
-
 - timestamp: '2026-05-18T03:00:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And we have ordered each and every one to return to his own home[a], with absolutely no one in any way harming them[b], nor insulting them over the things that happened contrary to reason.'
-  to: 'And we have ordered each and every one to return to his own home[a], with absolutely no one in any way harming them[b], nor insulting them over the things that happened contrary to reason.'
+  from: And we have ordered each and every one to return to his own home[a], with absolutely no one in any way harming them[b], nor insulting them over the things that happened contrary to reason.
+  to: And we have ordered each and every one to return to his own home[a], with absolutely no one in any way harming them[b], nor insulting them over the things that happened contrary to reason.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that everyone''].'
+- timestamp: '2026-11-09T18:57:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And we have ordered each and every one to return to his own home[a], with absolutely no one in any way harming them[b], nor insulting them over the things that happened contrary to reason.
+  to: We have ordered every one of them to return to their own home. No one is to harm them in any way or taunt them over the senseless events that took place[a].
+  rationale: I retain the earlier decisions that everyone is to return home and that the prohibition excludes harm of any kind. The source-transparent 'contrary to reason' is expressed more naturally, with its serious alternative sense noted.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -139,3 +142,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/007/008.job-49691.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:55Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The king orders every Jew to return home and forbids anyone to harm or taunt them over their ordeal.
+  meaning_decisions:
+  - source_phrase: προστετάχαμεν ἑκάστῳ πάντας εἰς τὰ ἴδια ἐπιστρέφειν
+    prior_rendering: we have ordered each and every one to return to his own home
+    new_rendering: We have ordered every one of them to return to their own home
+    rationale: The explicit reference identifies the released Jews and retains the distributive command that each return home.
+  - source_phrase: ἐν παντὶ τρόπῳ μηθενὸς αὐτοὺς τὸ σύνολον καταβλάπτοντος, μήτε ὀνειδίζοντος
+    prior_rendering: with absolutely no one in any way harming them, nor insulting them
+    new_rendering: No one is to harm them in any way or taunt them
+    rationale: An independent prohibition gives the royal protection its full directive force; 'taunt' fits insults directed at their recent ordeal.
+  - source_phrase: περὶ τῶν γεγενημένων παρὰ λόγον
+    prior_rendering: over the things that happened contrary to reason
+    new_rendering: over the senseless events that took place
+    rationale: The main text conveys the king's dismissive characterization of the unreasonable events. The phrase can also mean events contrary to expectation, which is preserved in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retain the earlier decisions that everyone is to return home and that the prohibition excludes harm of any kind. The source-transparent 'contrary to reason' is expressed more naturally, with its serious alternative sense noted.

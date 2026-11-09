@@ -4,18 +4,8 @@ source:
   edition: SBLGNT
   text: καί τις ἀνὴρ χωλὸς ἐκ κοιλίας μητρὸς αὐτοῦ ὑπάρχων ἐβαστάζετο, ὃν ἐτίθουν καθ’ ἡμέραν πρὸς τὴν θύραν τοῦ ἱεροῦ τὴν λεγομένην Ὡραίαν τοῦ αἰτεῖν ἐλεημοσύνην παρὰ τῶν εἰσπορευομένων εἰς τὸ ἱερόν,
 translation:
-  text: And a certain man[a], lame from his mother’s womb, was being carried, whom they would place every day at the gate of the temple called Beautiful, to ask for alms from those entering into the temple[c][b],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek ἱερόν refers to the temple complex or precincts, not specifically the inner sanctuary (ναός).
-    reason: cultural_note
-  - marker: b
-    text: Or 'from birth' for 'from his mother’s womb.'
-    reason: lexical_alternative
-  - marker: c
-    text: The gate’s name is literally 'Beautiful.'
-    reason: lexical_alternative
+  text: A man who had been lame from birth was being carried to the temple gate called Beautiful, where people placed him every day to ask for alms from those entering the temple.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: τις ἀνὴρ
   chosen: a certain man
@@ -129,14 +119,20 @@ revisions:
   from: And a certain man, lame from his mother’s womb, was being carried, whom they used to place every day at the gate of the temple called Beautiful, to ask for alms from those entering into the temple,
   to: And a certain man, lame from his mother’s womb, was being carried, whom they used to place every day at the gate of the temple called Beautiful, to ask for alms from those entering into the temple,
   rationale: Changed 'used to place' to 'would place' for a more natural habitual past rendering of ἐτίθουν. Kept the rest unchanged as accurate and complete.
-
 - timestamp: '2026-05-18T03:01:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And a certain man[a], lame from his mother’s womb, was being carried, whom they would place every day at the gate of the temple called Beautiful, to ask for alms from those entering into the temple[c][b],'
-  to: 'And a certain man[a], lame from his mother’s womb, was being carried, whom they would place every day at the gate of the temple called Beautiful, to ask for alms from those entering into the temple[c][b],'
+  from: And a certain man[a], lame from his mother’s womb, was being carried, whom they would place every day at the gate of the temple called Beautiful, to ask for alms from those entering into the temple[c][b],
+  to: And a certain man[a], lame from his mother’s womb, was being carried, whom they would place every day at the gate of the temple called Beautiful, to ask for alms from those entering into the temple[c][b],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they used to place''].'
+- timestamp: '2026-11-09T17:05:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And a certain man[a], lame from his mother’s womb, was being carried, whom they would place every day at the gate of the temple called Beautiful, to ask for alms from those entering into the temple[c][b],
+  to: A man who had been lame from birth was being carried to the temple gate called Beautiful, where people placed him every day to ask for alms from those entering the temple.
+  rationale: The recorded discussion supports both ongoing carrying and habitual placement, which remain distinct here. The automated changes between “used to place” and “would place” carry little weight; “every day” clearly conveys the habitual action.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -156,3 +152,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/003/002.job-47029.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:16Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A man lame from birth was being carried to the temple gate where he was placed daily to ask entering worshipers for alms.
+  meaning_decisions:
+  - source_phrase: τις ἀνὴρ χωλὸς ἐκ κοιλίας μητρὸς αὐτοῦ ὑπάρχων
+    prior_rendering: a certain man, lame from his mother’s womb
+    new_rendering: A man who had been lame from birth
+    rationale: The womb expression establishes a lifelong condition beginning at birth; the English states that meaning without an unnecessary indefinite formula.
+  - source_phrase: ἐβαστάζετο, ὃν ἐτίθουν καθ’ ἡμέραν πρὸς τὴν θύραν τοῦ ἱεροῦ τὴν λεγομένην Ὡραίαν
+    prior_rendering: was being carried, whom they would place every day at the gate of the temple called Beautiful
+    new_rendering: was being carried to the temple gate called Beautiful, where people placed him every day
+    rationale: The reordered sentence makes the understood destination explicit and distinguishes the present carrying from his customary daily placement.
+  footnote_kinds: {}
+  history_weighed: The recorded discussion supports both ongoing carrying and habitual placement, which remain distinct here. The automated changes between “used to place” and “would place” carry little weight; “every day” clearly conveys the habitual action.

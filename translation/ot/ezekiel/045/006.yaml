@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/אֲחֻזַּ֨ת הָ/עִ֜יר תִּתְּנ֗וּ חֲמֵ֤שֶׁת אֲלָפִים֙ רֹ֔חַב וְ/אֹ֗רֶךְ חֲמִשָּׁ֤ה וְ/עֶשְׂרִים֙ אֶ֔לֶף לְ/עֻמַּ֖ת תְּרוּמַ֣ת הַ/קֹּ֑דֶשׁ לְ/כָל בֵּ֥ית יִשְׂרָאֵ֖ל יִהְיֶֽה־׃
 translation:
-  text: And as the city's property[a], you shall give an area five thousand wide and twenty-five thousand long, alongside the holy contribution[b]; it shall belong to the whole house of Israel.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'alongside the holy contribution' or 'parallel to the holy contribution.' The Hebrew expression can denote spatial alignment as well as correspondence in measure.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'house of Israel,' a collective term for the people of Israel.
-    reason: cultural_note
+  text: You shall assign to the city an area five thousand cubits wide and twenty-five thousand long, alongside the holy portion. It shall belong to all the people of Israel.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: אֲחֻזַּת הָעִיר
   chosen: the city's property
@@ -91,17 +84,23 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'And you shall give the city''s property an area five thousand wide and twenty-five thousand long, corresponding to the holy contribution; it shall belong to the whole house of Israel.'
-  to: 'And you shall give the city''s property an area five thousand wide and twenty-five thousand long, corresponding to the holy contribution; it shall belong to the whole house of Israel.'
+  from: And you shall give the city's property an area five thousand wide and twenty-five thousand long, corresponding to the holy contribution; it shall belong to the whole house of Israel.
+  to: And you shall give the city's property an area five thousand wide and twenty-five thousand long, corresponding to the holy contribution; it shall belong to the whole house of Israel.
   rationale: Reworded the opening to reflect the Hebrew construction more naturally ('as the city's property, you shall give'). Replaced 'corresponding to' with 'alongside' for לְעֻמַּת, which better fits the spatial sense here. Kept all measurements and the final possession clause intact.
-
 - timestamp: '2026-05-18T02:55:45Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And as the city''s property[a], you shall give an area five thousand wide and twenty-five thousand long, alongside the holy contribution[b]; it shall belong to the whole house of Israel.'
-  to: 'And as the city''s property[a], you shall give an area five thousand wide and twenty-five thousand long, alongside the holy contribution[b]; it shall belong to the whole house of Israel.'
+  from: And as the city's property[a], you shall give an area five thousand wide and twenty-five thousand long, alongside the holy contribution[b]; it shall belong to the whole house of Israel.
+  to: And as the city's property[a], you shall give an area five thousand wide and twenty-five thousand long, alongside the holy contribution[b]; it shall belong to the whole house of Israel.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''corresponding to''].'
+- timestamp: '2026-11-09T17:40:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And as the city's property[a], you shall give an area five thousand wide and twenty-five thousand long, alongside the holy contribution[b]; it shall belong to the whole house of Israel.
+  to: You shall assign to the city an area five thousand cubits wide and twenty-five thousand long, alongside the holy portion. It shall belong to all the people of Israel.
+  rationale: I retain the current 'alongside,' supported by the recorded review's spatial reading of the allotment. The lexical explanations of the city's landholding and Israel's collective ownership support the more direct English wording.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -121,3 +120,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/045/006.job-64441.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:40:30Z'
+  change_level: refined
+  confidence: high
+  meaning: A tract alongside the holy portion is assigned to the city and belongs to all Israel.
+  meaning_decisions:
+  - source_phrase: וַאֲחֻזַּת הָעִיר תִּתְּנוּ חֲמֵשֶׁת אֲלָפִים רֹחַב וְאֹרֶךְ חֲמִשָּׁה וְעֶשְׂרִים אֶלֶף
+    prior_rendering: And as the city's property, you shall give an area five thousand wide and twenty-five thousand long
+    new_rendering: You shall assign to the city an area five thousand cubits wide and twenty-five thousand long
+    rationale: This is a land assignment; the new construction expresses that action directly and supplies the assumed unit consistently with verse 1.
+  - source_phrase: תְּרוּמַת הַקֹּדֶשׁ
+    prior_rendering: the holy contribution
+    new_rendering: the holy portion
+    rationale: Here the contribution is the dedicated tract of land, not a payment or movable offering.
+  - source_phrase: לְכָל בֵּית יִשְׂרָאֵל
+    prior_rendering: to the whole house of Israel
+    new_rendering: to all the people of Israel
+    rationale: '''House of Israel'' is a collective designation for Israel''s people, not a particular household.'
+  footnote_kinds: {}
+  history_weighed: I retain the current 'alongside,' supported by the recorded review's spatial reading of the allotment. The lexical explanations of the city's landholding and Israel's collective ownership support the more direct English wording.

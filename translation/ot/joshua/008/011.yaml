@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/כָל הָ/עָ֨ם הַ/מִּלְחָמָ֜ה אֲשֶׁ֣ר אִתּ֗/וֹ עָלוּ֙ וַֽ/יִּגְּשׁ֔וּ וַ/יָּבֹ֖אוּ נֶ֣גֶד הָ/עִ֑יר וַֽ/יַּחֲנוּ֙ מִ/צְּפ֣וֹן לָ/עַ֔י וְ/הַ/גַּ֖י בינ/ו וּ/בֵין הָ/עָֽי־־׃
 translation:
-  text: And all the fighting people who were with him went up and approached[a], and they came before the city and camped north of Ai, with the valley between him and Ai.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Hebrew: ''between him and Ai.'' The singular pronoun likely refers to Joshua, though some understand the sense collectively as ''between them and Ai.'''
-    reason: lexical_alternative
+  text: All the troops with him went up and advanced to a position opposite the city. They camped north of Ai, with the valley between Joshua and Ai.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: כָל הָעָם הַמִּלְחָמָה
   chosen: all the fighting people
@@ -96,14 +92,20 @@ revisions:
   from: And all the fighting people who were with him went up, approached, and came before the city, and they camped north of Ai, with the valley between him and Ai.
   to: And all the men of war who were with him went up and approached, and they came before the city and camped north of Ai, with the valley between him and Ai.
   rationale: Replaced 'fighting people' with the more natural and formal 'men of war'; smoothed the verbal sequence slightly by removing one repeated 'and they' before 'camped' while preserving all source elements.
-
 - timestamp: '2026-05-15T21:09:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And all the men of war who were with him went up and approached[a], and they came before the city and camped north of Ai, with the valley between him and Ai.'
-  to: 'And all the fighting people who were with him went up and approached[a], and they came before the city and camped north of Ai, with the valley between him and Ai.'
-  rationale: 'Drafter chose ''fighting people'' for כָל עַם הַמִּלְחָמָה to preserve the collective sense of עָם (a human collective, not exclusively male). Azure substituted KJV-tradition ''men of war'' importing gender specification absent from Hebrew, on bare ''more natural and formal'' grounds.'
+  from: And all the men of war who were with him went up and approached[a], and they came before the city and camped north of Ai, with the valley between him and Ai.
+  to: And all the fighting people who were with him went up and approached[a], and they came before the city and camped north of Ai, with the valley between him and Ai.
+  rationale: Drafter chose 'fighting people' for כָל עַם הַמִּלְחָמָה to preserve the collective sense of עָם (a human collective, not exclusively male). Azure substituted KJV-tradition 'men of war' importing gender specification absent from Hebrew, on bare 'more natural and formal' grounds.
+- timestamp: '2026-11-09T18:09:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And all the fighting people who were with him went up and approached[a], and they came before the city and camped north of Ai, with the valley between him and Ai.
+  to: All the troops with him went up and advanced to a position opposite the city. They camped north of Ai, with the valley between Joshua and Ai.
+  rationale: The history's concern to preserve the combatants as a collective is respected by 'troops,' without adopting the source-shaped 'fighting people.' I also retain the gain of the difficult singular reference by identifying Joshua, rather than replacing it with a plural or a reference to the camp.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -123,3 +125,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/joshua/008/011.job-68609.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:09:15Z'
+  change_level: refined
+  confidence: high
+  meaning: Joshua's accompanying troops advance to face Ai and camp north of it, with the valley separating Joshua from the city.
+  meaning_decisions:
+  - source_phrase: כָל הָעָם הַמִּלְחָמָה אֲשֶׁר אִתּוֹ
+    prior_rendering: all the fighting people who were with him
+    new_rendering: All the troops with him
+    rationale: The expression identifies the accompanying combat force; 'troops' preserves its collective character in natural military English.
+  - source_phrase: עָלוּ וַיִּגְּשׁוּ וַיָּבֹאוּ נֶגֶד הָעִיר
+    prior_rendering: went up and approached, and they came before the city
+    new_rendering: went up and advanced to a position opposite the city
+    rationale: The sequence describes upward movement, approach, and arrival facing the city; the revised sentence conveys that progression without repetitive English movement clauses.
+  - source_phrase: בֵּינוֹ וּבֵין הָעָי
+    prior_rendering: between him and Ai
+    new_rendering: between Joshua and Ai
+    rationale: Joshua is the best-supported referent of the singular pronoun; naming him clarifies the relationship while preserving the singular rather than harmonizing it to the troops.
+  footnote_kinds: {}
+  history_weighed: The history's concern to preserve the combatants as a collective is respected by 'troops,' without adopting the source-shaped 'fighting people.' I also retain the gain of the difficult singular reference by identifying Joshua, rather than replacing it with a plural or a reference to the camp.

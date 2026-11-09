@@ -26,15 +26,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 3:11
 translation:
-  text: For a man[b]'s honor is the honor of his father, and one who dishonors his mother multiplies[a] sin.
-  philosophy: optimal-equivalence
+  text: For a man's honor comes from honoring his father, and one who curses his mother multiplies sin[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'one who curses his mother multiplies sin.' The Hebrew verb can specifically mean 'curse,' though here the honor/shame parallel and the Greek witness support the broader sense 'dishonor.'
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek parallel reads, 'for a man's glory is from the honor of his father, and a mother in disgrace is a reproach to her children,' reflecting a somewhat different second line than the extant Hebrew.
-    reason: alternative_reading
+    text: 'Greek: “For a man''s honor comes from his father''s honor, and a mother in disgrace is a reproach to her children.”'
+    reason: textual_variant
 lexical_decisions:
 - source_word: כְּבוֹד
   chosen: honor
@@ -123,16 +120,15 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'For a man''s honor is the honor of his father, and one who dishonors his mother multiplies sin.'
-  to: 'A man''s honor is the honor of his father, and whoever dishonors his mother multiplies sin.'
+  from: For a man's honor is the honor of his father, and one who dishonors his mother multiplies sin.
+  to: A man's honor is the honor of his father, and whoever dishonors his mother multiplies sin.
   rationale: Removed the unnecessary initial 'For' for more natural English, and changed 'one who' to 'whoever' for smoother formal style while preserving the meaning.
-
 - timestamp: '2026-05-18T03:09:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'A man''s honor is the honor of his father[b][a], and whoever dishonors his mother multiplies sin.'
-  to: 'For a man''s honor is the honor of his father, and one who dishonors his mother multiplies sin.'
+  from: A man's honor is the honor of his father[b][a], and whoever dishonors his mother multiplies sin.
+  to: For a man's honor is the honor of his father, and one who dishonors his mother multiplies sin.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''one who dishonors his mother''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -142,6 +138,13 @@ revisions:
   from: For a man's honor is the honor of his father, and one who dishonors his mother multiplies sin.
   to: For a man[b]'s honor is the honor of his father, and one who dishonors his mother multiplies[a] sin.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('multiplies') because the note names that rendering; [b] anchored to ('for a man') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:04:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For a man[b]'s honor is the honor of his father, and one who dishonors his mother multiplies[a] sin.
+  to: For a man's honor comes from honoring his father, and one who curses his mother multiplies sin[a].
+  rationale: The earlier rationale preserved an ambiguous genitive where English needs the relationship made clear; verse 12 supports understanding כִּבּוּד as the act of honoring. I adopt the previously noted 'curses' and preserve the Greek's different formulation in a note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -161,3 +164,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/003/011.job-51038.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:04:37Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: A man's honor comes from honoring his father, while cursing his mother increases his sin.
+  meaning_decisions:
+  - source_phrase: כְּבוֹד אִישׁ כִּבּוּד אָבִיו
+    prior_rendering: a man's honor is the honor of his father
+    new_rendering: a man's honor comes from honoring his father
+    rationale: The Hebrew noun כִּבּוּד denotes honoring, as it does in verse 12; the man's honor is linked to the honor he gives his father.
+  - source_phrase: מְקַלֵּל אִמּוֹ
+    prior_rendering: one who dishonors his mother
+    new_rendering: one who curses his mother
+    rationale: The Hebrew names cursing, a concrete and serious form of dishonor also named in verse 16; the Greek's different disgrace wording should not dilute it.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier rationale preserved an ambiguous genitive where English needs the relationship made clear; verse 12 supports understanding כִּבּוּד as the act of honoring. I adopt the previously noted 'curses' and preserve the Greek's different formulation in a note.

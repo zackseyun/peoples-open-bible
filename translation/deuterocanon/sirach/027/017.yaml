@@ -9,11 +9,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Cherish a friend and be faithful to him; but if you reveal his secrets[a], you will certainly not pursue after him.
-  philosophy: optimal-equivalence
+  text: Cherish a friend and be faithful to him; but if you reveal his secrets, you will never win him back[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'you should certainly not go after him.' The Greek can be heard either as a statement of consequence or, less likely, as a prohibition.
+    text: Or, 'do not go after him.' The Greek speaks of pursuing him, here understood as trying to recover the friendship.
     reason: alternative_reading
 lexical_decisions:
 - source_word: στέργον
@@ -116,14 +116,20 @@ revisions:
   from: Cherish a friend and be faithful with him; but if you reveal his secrets, you will certainly not pursue after him.
   to: Cherish a friend and be faithful with him; but if you reveal his secrets, you will certainly not pursue after him.
   rationale: Changed 'with him' to 'to him' for more natural English with 'be faithful' while preserving the sense; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:58:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Cherish a friend and be faithful to him; but if you reveal his secrets[a], you will certainly not pursue after him.'
-  to: 'Cherish a friend and be faithful to him; but if you reveal his secrets[a], you will certainly not pursue after him.'
+  from: Cherish a friend and be faithful to him; but if you reveal his secrets[a], you will certainly not pursue after him.
+  to: Cherish a friend and be faithful to him; but if you reveal his secrets[a], you will certainly not pursue after him.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with him''].'
+- timestamp: '2026-11-09T19:07:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Cherish a friend and be faithful to him; but if you reveal his secrets[a], you will certainly not pursue after him.
+  to: Cherish a friend and be faithful to him; but if you reveal his secrets, you will never win him back[a].
+  rationale: The prior decisions understood pursuit as an unsuccessful attempt to recover the friend, and I make that implied result explicit. The serious prohibition reading remains in a footnote.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -143,3 +149,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/027/017.job-51711.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:08Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: A friend should be cherished and treated faithfully, because betraying his secrets makes the friendship unrecoverable.
+  meaning_decisions:
+  - source_phrase: οὐ μὴ καταδιώξῃς ὀπίσω αὐτοῦ
+    prior_rendering: you will certainly not pursue after him
+    new_rendering: you will never win him back
+    rationale: The surrounding images explain why pursuit cannot recover the betrayed friend; the prior wording could misleadingly predict that no attempt at pursuit would occur.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The prior decisions understood pursuit as an unsuccessful attempt to recover the friend, and I make that implied result explicit. The serious prohibition reading remains in a footnote.

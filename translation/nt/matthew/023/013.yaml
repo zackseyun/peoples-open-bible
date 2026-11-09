@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: Οὐαὶ ⸀δὲ ὑμῖν, γραμματεῖς καὶ Φαρισαῖοι ὑποκριταί, ὅτι κλείετε τὴν βασιλείαν τῶν οὐρανῶν ἔμπροσθεν τῶν ἀνθρώπων· ὑμεῖς γὰρ οὐκ εἰσέρχεσθε, οὐδὲ τοὺς εἰσερχομένους ἀφίετε ⸀εἰσελθεῖν.
 translation:
-  text: But woe to you[a], scribes and Pharisees, hypocrites! For you shut the kingdom of heaven before people; for you do not enter[b], nor do you allow those who are entering to enter.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the kingdom of the heavens.' Matthew regularly uses this expression where other contexts may say 'kingdom of God.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'those trying to enter.' The Greek participle can denote those in the process of entering or seeking to enter.
-    reason: lexical_alternative
+  text: But woe to you, teachers of the law and Pharisees, hypocrites! For you shut the door to the kingdom of heaven in people’s faces. You yourselves do not enter, and you do not let those trying to enter go in.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Οὐαὶ
   chosen: woe
@@ -139,9 +132,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But woe to you[a], scribes and Pharisees, hypocrites! For you shut the kingdom of heaven before people; for you do not enter[c][b], nor do you allow those who are entering to enter.'
-  to: 'But woe to you[a], scribes and Pharisees, hypocrites! For you shut the kingdom of heaven before people; for you do not enter[c][b], nor do you allow those who are entering to enter.'
+  from: But woe to you[a], scribes and Pharisees, hypocrites! For you shut the kingdom of heaven before people; for you do not enter[c][b], nor do you allow those who are entering to enter.
+  to: But woe to you[a], scribes and Pharisees, hypocrites! For you shut the kingdom of heaven before people; for you do not enter[c][b], nor do you allow those who are entering to enter.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in front of people''].'
+- timestamp: '2026-11-09T17:14:57Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But woe to you[a], scribes and Pharisees, hypocrites! For you shut the kingdom of heaven before people; for you do not enter[b], nor do you allow those who are entering to enter.
+  to: But woe to you, teachers of the law and Pharisees, hypocrites! For you shut the door to the kingdom of heaven in people’s faces. You yourselves do not enter, and you do not let those trying to enter go in.
+  rationale: The history alternates between preserving repeated entrance verbs and smoothing their awkward English, without a MAINTAINER ruling. The new wording carries the complete accusation naturally, retains the kingdom and doorway imagery, and uses the contextually supported sense previously noted as “those trying to enter.”
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:00:53Z'
@@ -170,3 +170,29 @@ cross_check:
   verdict_counts:
     minor-issues: 4
   source_review: state/reviews/gemini/v31_recheck_applied/nt/matthew/023/013.job-38604.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:14:57Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jesus condemns the leaders’ hypocrisy because they neither enter the kingdom of heaven themselves nor allow others seeking entrance to enter.
+  meaning_decisions:
+  - source_phrase: γραμματεῖς καὶ Φαρισαῖοι
+    prior_rendering: scribes and Pharisees
+    new_rendering: teachers of the law and Pharisees
+    rationale: As in verse 2, this identifies the scribes’ relevant role as teachers and interpreters of the law.
+  - source_phrase: κλείετε τὴν βασιλείαν τῶν οὐρανῶν ἔμπροσθεν τῶν ἀνθρώπων
+    prior_rendering: you shut the kingdom of heaven before people
+    new_rendering: you shut the door to the kingdom of heaven in people’s faces
+    rationale: The source depicts closing off entrance to the kingdom; making the implied door explicit preserves the image and clarifies that people are being barred, not merely witnessing a closure.
+  - source_phrase: ὑμεῖς γὰρ οὐκ εἰσέρχεσθε, οὐδὲ τοὺς εἰσερχομένους ἀφίετε εἰσελθεῖν
+    prior_rendering: for you do not enter, nor do you allow those who are entering to enter
+    new_rendering: You yourselves do not enter, and you do not let those trying to enter go in
+    rationale: “Yourselves” conveys the emphatic pronoun, while “trying to enter” expresses the ongoing approach frustrated by the leaders; the English no longer suggests that entry has already succeeded.
+  footnote_kinds: {}
+  history_weighed: The history alternates between preserving repeated entrance verbs and smoothing their awkward English, without a MAINTAINER ruling. The new wording carries the complete accusation naturally, retains the kingdom and doorway imagery, and uses the contextually supported sense previously noted as “those trying to enter.”

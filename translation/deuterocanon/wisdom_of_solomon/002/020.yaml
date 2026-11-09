@@ -19,12 +19,12 @@ source:
   validation: minor_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: Let us condemn him to a shameful death[a], for there will be an examination of him according to his words.
-  philosophy: optimal-equivalence
+  text: Let us condemn him to a shameful death, for, according to his own words, God will care for him[a].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'there will be care for him,' 'there will be vindication for him,' or 'his words will be tested by what happens to him.' The Greek 'visitation' can refer broadly to divine attention or intervention.
-    reason: lexical_alternative
+    text: Or, 'he will be examined according to his words.' The Greek term can mean care, visitation, or inspection.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: θανάτῳ
   chosen: to a ... death
@@ -103,14 +103,20 @@ revisions:
   from: Let us condemn him to a shameful death, for there will be a visitation of him according to his words.
   to: Let us condemn him to a shameful death, for there will be a visitation of him according to his words.
   rationale: Replaced 'a visitation of him' with 'an examination of him' to better reflect ἐπισκοπή in this context and produce more natural English, while preserving the formal tone and sense of judgment based on his own words.
-
 - timestamp: '2026-05-18T03:00:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Let us condemn him to a shameful death[a], for there will be an examination of him according to his words.'
-  to: 'Let us condemn him to a shameful death[a], for there will be an examination of him according to his words.'
+  from: Let us condemn him to a shameful death[a], for there will be an examination of him according to his words.
+  to: Let us condemn him to a shameful death[a], for there will be an examination of him according to his words.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''visitation''].'
+- timestamp: '2026-11-09T19:11:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Let us condemn him to a shameful death[a], for there will be an examination of him according to his words.
+  to: Let us condemn him to a shameful death, for, according to his own words, God will care for him[a].”
+  rationale: The draft and theological rationale recognize divine visitation or intervention, whereas the later 'examination' wording shifts the emphasis toward testing by the persecutors. I render the contextually stronger sense of divine care and preserve examination as a serious alternative in the footnote.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -130,3 +136,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/002/020.job-39580.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:19Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: They propose sentencing him to a dishonorable death, mockingly appealing to his claim that God will care for him.
+  meaning_decisions:
+  - source_phrase: ἔσται γὰρ αὐτοῦ ἐπισκοπὴ ἐκ λόγων αὐτοῦ
+    prior_rendering: for there will be an examination of him according to his words
+    new_rendering: for, according to his own words, God will care for him
+    rationale: Verses 16–18 make divine attention to the righteous man the object of their challenge. The phrase most naturally reports, with hostile irony, his expectation of God's care; it does not specify how that care will occur.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The draft and theological rationale recognize divine visitation or intervention, whereas the later 'examination' wording shifts the emphasis toward testing by the persecutors. I render the contextually stronger sense of divine care and preserve examination as a serious alternative in the footnote.

@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: Εἰ δέ τις λελύπηκεν, οὐκ ἐμὲ λελύπηκεν, ἀλλὰ ἀπὸ μέρους ἵνα μὴ ἐπιβαρῶ πάντας ὑμᾶς.
 translation:
-  text: But if anyone has caused grief[a], he has grieved not me, but in part all of you—to some extent[b], so that I may not overstate it.
-  philosophy: optimal-equivalence
+  text: But if anyone has caused grief, he has grieved not so much me as all of you—to some extent; I do not want to overstate it[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “in part.”
-    reason: lexical_alternative
-  - marker: b
-    text: Or “so that I may not burden all of you” or “so that I may not put it too heavily on all of you.”
-    reason: lexical_alternative
+    text: Alternatively, the closing phrase can be understood as 'so that I may not burden all of you.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: λελύπηκεν
   chosen: has caused grief / has grieved
@@ -75,11 +72,17 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But if anyone has caused grief[a], he has grieved not me, but in part all of you—to some extent[b], so that I may not overstate it.'
-  to: 'But if anyone has caused grief[a], he has grieved not me, but in part all of you—to some extent[b], so that I may not overstate it.'
+  from: But if anyone has caused grief[a], he has grieved not me, but in part all of you—to some extent[b], so that I may not overstate it.
+  to: But if anyone has caused grief[a], he has grieved not me, but in part all of you—to some extent[b], so that I may not overstate it.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''press too hard on''].'
+- timestamp: '2026-11-09T17:05:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But if anyone has caused grief[a], he has grieved not me, but in part all of you—to some extent[b], so that I may not overstate it.
+  to: But if anyone has caused grief, he has grieved not so much me as all of you—to some extent; I do not want to overstate it[a].
+  rationale: The review rationale usefully identifies Paul's rhetorical restraint and the corporate reach of the grief, while the first draft preserves the possible burden sense. I retain both insights, remove the duplicated qualification, and clarify the personal-versus-corporate contrast.
 status: revised
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -99,3 +102,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/2_corinthians/002/005.job-53423.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:39Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The offender's actions have brought grief to the whole church, not principally to Paul, though Paul qualifies the extent of that grief.
+  meaning_decisions:
+  - source_phrase: οὐκ ἐμὲ λελύπηκεν, ἀλλὰ ... πάντας ὑμᾶς
+    prior_rendering: he has grieved not me, but ... all of you
+    new_rendering: he has grieved not so much me as all of you
+    rationale: Paul shifts attention from a personal grievance to the church's suffering; the contextual contrast downplays his own injury rather than denying that he experienced any grief.
+  - source_phrase: ἀπὸ μέρους
+    prior_rendering: in part ... to some extent
+    new_rendering: to some extent
+    rationale: The source contains one qualification, not two; removing the duplication preserves Paul's restraint without overstating it.
+  - source_phrase: ἵνα μὴ ἐπιβαρῶ
+    prior_rendering: so that I may not overstate it
+    new_rendering: I do not want to overstate it
+    rationale: This expresses the parenthetical rhetorical qualification naturally, while the footnote preserves the serious alternative involving a burden on the Corinthians.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The review rationale usefully identifies Paul's rhetorical restraint and the corporate reach of the grief, while the first draft preserves the possible burden sense. I retain both insights, remove the duplicated qualification, and clarify the personal-versus-corporate contrast.

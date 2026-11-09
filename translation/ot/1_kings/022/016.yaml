@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֤אמֶר אֵלָי/ו֙ הַ/מֶּ֔לֶךְ עַד כַּ/מֶּ֥ה פְעָמִ֖ים אֲנִ֣י מַשְׁבִּעֶ֑/ךָ אֲ֠שֶׁר לֹֽא תְדַבֵּ֥ר אֵלַ֛/י רַק אֱמֶ֖ת בְּ/שֵׁ֥ם יְהוָֽה־־־׃
 translation:
-  text: Then the king said to him[a], “How many times must I make you swear that you tell me nothing but the truth in the name of Yahweh?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “How often do I have to put you under oath…?” The Hebrew verb means to make someone swear or place him under oath.
-    reason: lexical_alternative
+  text: Then the king said to him, “How many times must I make you swear to tell me nothing but the truth in the name of Yahweh?”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: Then ... said
@@ -85,14 +81,20 @@ revisions:
   from: Then the king said to him, “How many times must I make you swear that you speak to me nothing but the truth in the name of the LORD?”
   to: Then the king said to him, “How many times must I make you swear that you speak to me nothing but the truth in the name of the LORD?”
   rationale: Changed 'speak to me' to 'tell me' for more natural English while preserving the sense; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:57:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then the king said to him[a], “How many times must I make you swear that you tell me nothing but the truth in the name of Yahweh?”'
-  to: 'Then the king said to him[a], “How many times must I make you swear that you tell me nothing but the truth in the name of Yahweh?”'
+  from: Then the king said to him[a], “How many times must I make you swear that you tell me nothing but the truth in the name of Yahweh?”
+  to: Then the king said to him[a], “How many times must I make you swear that you tell me nothing but the truth in the name of Yahweh?”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that you speak to me''].'
+- timestamp: '2026-11-09T17:22:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then the king said to him[a], “How many times must I make you swear that you tell me nothing but the truth in the name of Yahweh?”
+  to: Then the king said to him, “How many times must I make you swear to tell me nothing but the truth in the name of Yahweh?”
+  rationale: The current “tell me” preserves the natural-English gain recorded in the review. I retain the oath-setting force and the king’s exasperation; the former note merely restates what the main text already says.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -115,3 +117,21 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/022/016.job-58724.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:10Z'
+  change_level: refined
+  confidence: high
+  meaning: The king rejects Micaiah’s initial answer and demands an oath-bound statement of the truth in Yahweh’s name.
+  meaning_decisions:
+  - source_phrase: מַשְׁבִּעֶךָ אֲשֶׁר לֹא תְדַבֵּר אֵלַי רַק אֱמֶת
+    prior_rendering: make you swear that you tell me nothing but the truth
+    new_rendering: make you swear to tell me nothing but the truth
+    rationale: The king requires a sworn commitment to truthful speech; the infinitive expresses that commitment more clearly than the current tense construction.
+  footnote_kinds: {}
+  history_weighed: The current “tell me” preserves the natural-English gain recorded in the review. I retain the oath-setting force and the king’s exasperation; the former note merely restates what the main text already says.

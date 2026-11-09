@@ -16,15 +16,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 15:19
 translation:
-  text: The eyes of God see his works[b][a], and he knows every deed of a man.
-  philosophy: optimal-equivalence
+  text: The eyes of God see what people do[a]; he knows every human deed.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'every deed of a person.' The Hebrew reads 'of a man' (אִישׁ), a masculine singular form often used generically in wisdom literature.
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek parallel differs in the first clause, reading, 'his eyes are upon those who fear him,' while agreeing in sense that God fully knows human deeds.
-    reason: alternative_reading
+    text: The Greek first clause reads, “His eyes are on those who fear him.”
+    reason: textual_variant
 lexical_decisions:
 - source_word: עֵינֵי
   chosen: The eyes of
@@ -137,14 +134,20 @@ revisions:
   from: The eyes of God see his works, and he recognizes every deed of a man.
   to: The eyes of God see his works, and he recognizes every deed of a man.
   rationale: Changed 'recognizes' to 'knows' for a more natural and direct rendering of יַכִּיר in this context; retained the rest as accurate and complete.
-
 - timestamp: '2026-05-18T02:57:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The eyes of God see his works[b][a], and he knows every deed of a man.'
-  to: 'The eyes of God see his works[b][a], and he knows every deed of a man.'
+  from: The eyes of God see his works[b][a], and he knows every deed of a man.
+  to: The eyes of God see his works[b][a], and he knows every deed of a man.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''recognizes''].'
+- timestamp: '2026-11-09T19:05:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The eyes of God see his works[b][a], and he knows every deed of a man.
+  to: The eyes of God see what people do[a]; he knows every human deed.
+  rationale: The revision to 'knows' better expresses God's complete awareness than 'recognizes,' so it remains. The lexical record identifies 'his works' as the human person's works; I make that referent explicit while preserving the significant Greek difference.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -164,3 +167,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/015/019.job-51371.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:05:12Z'
+  change_level: retranslated
+  confidence: high
+  meaning: God sees what human beings do and knows every deed without exception.
+  meaning_decisions:
+  - source_phrase: עֵינֵי אֵל יִרְאוּ מַעֲשָׂיו
+    prior_rendering: The eyes of God see his works
+    new_rendering: The eyes of God see what people do
+    rationale: The human referent of 'his works' is supplied by the parallel clause. Making it explicit prevents readers from taking the phrase to mean that God sees only his own works, while retaining the image of God's eyes.
+  - source_phrase: כָּל מִפְעַל אִישׁ
+    prior_rendering: every deed of a man
+    new_rendering: every human deed
+    rationale: Expresses the generic human scope directly rather than suggesting a restriction to male deeds.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The revision to 'knows' better expresses God's complete awareness than 'recognizes,' so it remains. The lexical record identifies 'his works' as the human person's works; I make that referent explicit while preserving the significant Greek difference.

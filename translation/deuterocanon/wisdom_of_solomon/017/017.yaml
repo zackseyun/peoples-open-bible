@@ -22,12 +22,8 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: For if someone was a farmer[a], or a shepherd, or a worker at toils in the wilderness, once seized, he remained under the inescapable necessity.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'once overtaken, he remained in unavoidable compulsion.' The Greek participle and noun can be rendered with either the imagery of being seized or of being overtaken by necessity.
-    reason: lexical_alternative
+  text: For whether a person was a farmer, a shepherd, or a laborer toiling in the wilderness, once caught, he remained trapped with no escape.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: εἴ τε γὰρ
   chosen: For if
@@ -106,13 +102,12 @@ revisions:
   from: For if someone was a farmer, or a shepherd, or a worker at toils in the wilderness, once seized, he remained under the inescapable necessity.
   to: For whether someone was a farmer, or a shepherd, or a worker laboring in the wilderness, once seized, he remained under the inescapable necessity.
   rationale: Revised 'a worker at toils in the wilderness' to the more natural and accurate 'a worker laboring in the wilderness.' Kept the rest essentially unchanged, preserving the formal sense of being seized and remaining under unavoidable necessity.
-
 - timestamp: '2026-05-18T03:10:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For whether someone was a farmer[a], or a shepherd, or a worker laboring in the wilderness, once seized, he remained under the inescapable necessity.'
-  to: 'For if someone was a farmer, or a shepherd, or a worker at toils in the wilderness, once seized, he remained under the inescapable necessity.'
+  from: For whether someone was a farmer[a], or a shepherd, or a worker laboring in the wilderness, once seized, he remained under the inescapable necessity.
+  to: For if someone was a farmer, or a shepherd, or a worker at toils in the wilderness, once seized, he remained under the inescapable necessity.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a worker at toils in the wilderness''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -122,6 +117,13 @@ revisions:
   from: For if someone was a farmer, or a shepherd, or a worker at toils in the wilderness, once seized, he remained under the inescapable necessity.
   to: For if someone was a farmer[a], or a shepherd, or a worker at toils in the wilderness, once seized, he remained under the inescapable necessity.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:12:57Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For if someone was a farmer[a], or a shepherd, or a worker at toils in the wilderness, once seized, he remained under the inescapable necessity.
+  to: For whether a person was a farmer, a shepherd, or a laborer toiling in the wilderness, once caught, he remained trapped with no escape.
+  rationale: The earlier review correctly improved the occupational phrase and used “whether”; the subsequent automated revert supplies no meaning-based reason to reject those gains. The lexical record’s emphasis on oppressive constraint is retained, but its abstract English is replaced with the imprisonment sense established by the surrounding verses.
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -141,3 +143,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/017/017.job-39453.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:12:57Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Whatever their occupation or location, people overtaken by the darkness remained trapped and unable to escape.
+  meaning_decisions:
+  - source_phrase: εἴ τε γὰρ
+    prior_rendering: For if
+    new_rendering: For whether
+    rationale: The coordinated alternatives establish that occupation made no difference, rather than introducing a single hypothetical condition.
+  - source_phrase: τῶν κατʼ ἐρημίαν ἐργάτης μόχθων
+    prior_rendering: a worker at toils in the wilderness
+    new_rendering: a laborer toiling in the wilderness
+    rationale: This carries both strenuous labor and the wilderness setting in natural English.
+  - source_phrase: προλημφθεὶς τὴν δυσάλυκτον ἔμενεν ἀνάγκην
+    prior_rendering: once seized, he remained under the inescapable necessity
+    new_rendering: once caught, he remained trapped with no escape
+    rationale: The context concerns overpowering confinement, not an abstract necessity; the new wording conveys its continuing, inescapable force.
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly improved the occupational phrase and used “whether”; the subsequent automated revert supplies no meaning-based reason to reject those gains. The lexical record’s emphasis on oppressive constraint is retained, but its abstract English is replaced with the imprisonment sense established by the surrounding verses.

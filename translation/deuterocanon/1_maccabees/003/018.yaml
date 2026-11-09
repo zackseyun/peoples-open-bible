@@ -22,15 +22,15 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Judas said[a], “It is easy for many to be shut up into the hands of a few, and in the sight of heaven[b] there is no difference between saving by many or by few.”
-  philosophy: optimal-equivalence
+  text: Judas said, “It is easy for many to be delivered into the hands of a few; it makes no difference to God[a] whether he saves through many or through few[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'to be delivered into the hands of a few.' The Greek verb literally means 'to be shut up/enclosed,' here in the sense of being trapped in another's power.
+    text: Literally, “heaven,” here and in verse 19; a reverential way of referring to God.
     reason: lexical_alternative
   - marker: b
-    text: '''Heaven'' likely functions as a reverential way of referring to God; compare ''before God'' as an interpretive alternative.'
-    reason: alternative_reading
+    text: Compare 1 Samuel 14:6.
+    reason: cross_reference
 lexical_decisions:
 - source_word: Εὔκοπόν
   chosen: it is easy
@@ -119,13 +119,12 @@ revisions:
   from: And Judas said, “It is easy for many to be shut up into the hands of a few, and in the sight of heaven there is no difference between saving by many or by few.”
   to: And Judas said, “It is easy for many to be hemmed in by the hands of a few, and in the sight of heaven there is no difference between saving by many or by few.”
   rationale: Replaced 'be shut up into the hands of a few' with 'be hemmed in by the hands of a few' for a more natural rendering of συγκλεισθῆναι ἐν χερσὶν ὀλίγων while preserving the sense of being enclosed/delivered into the power of a few. Kept the rest substantially unchanged.
-
 - timestamp: '2026-05-18T03:09:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Judas said[a], “It is easy for many to be hemmed in by the hands of a few[b], and in the sight of heaven there is no difference between saving by many or by few.”'
-  to: 'And Judas said, “It is easy for many to be shut up into the hands of a few, and in the sight of heaven there is no difference between saving by many or by few.”'
+  from: And Judas said[a], “It is easy for many to be hemmed in by the hands of a few[b], and in the sight of heaven there is no difference between saving by many or by few.”
+  to: And Judas said, “It is easy for many to be shut up into the hands of a few, and in the sight of heaven there is no difference between saving by many or by few.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to be shut up into the hands of''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -135,6 +134,13 @@ revisions:
   from: And Judas said, “It is easy for many to be shut up into the hands of a few, and in the sight of heaven there is no difference between saving by many or by few.”
   to: And Judas said[a], “It is easy for many to be shut up into the hands of a few, and in the sight of heaven[b] there is no difference between saving by many or by few.”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it; [b] anchored to ('Heaven') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:51:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Judas said[a], “It is easy for many to be shut up into the hands of a few, and in the sight of heaven[b] there is no difference between saving by many or by few.”
+  to: Judas said, “It is easy for many to be delivered into the hands of a few; it makes no difference to God[a] whether he saves through many or through few[b].
+  rationale: Earlier passes retained heaven for source transparency; I name its understood referent and preserve the reverential wording in a note. “Delivered into the hands” communicates the military idiom more clearly than either recorded enclosure rendering.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -154,3 +160,27 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/003/018.job-48103.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:51:49Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Judas answered that God can deliver a numerous enemy into the power of a few and can save through either a large or a small force.
+  meaning_decisions:
+  - source_phrase: συγκλεισθῆναι πολλοὺς ἐν χερσὶν ὀλίγων
+    prior_rendering: many to be shut up into the hands of a few
+    new_rendering: many to be delivered into the hands of a few
+    rationale: The idiom means coming under another’s power, not being physically enclosed within hands.
+  - source_phrase: οὐκ ἔστι διαφορὰ ἐναντίον τοῦ οὐρανοῦ σῴζειν ἐν πολλοῖς ἢ ἐν ὀλίγοις
+    prior_rendering: in the sight of heaven there is no difference between saving by many or by few
+    new_rendering: it makes no difference to God whether he saves through many or through few
+    rationale: Heaven reverentially denotes God, the personal agent of deliverance; the sentence concerns his ability to save regardless of troop numbers.
+  footnote_kinds:
+    a: literal_wording
+    b: cross_reference
+  history_weighed: Earlier passes retained heaven for source transparency; I name its understood referent and preserve the reverential wording in a note. “Delivered into the hands” communicates the military idiom more clearly than either recorded enclosure rendering.

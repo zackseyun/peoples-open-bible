@@ -27,15 +27,18 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 49:5
 translation:
-  text: And they gave their horn backward[b][a], and their glory to a foolish foreign nation.
-  philosophy: optimal-equivalence
+  text: So God[a] handed over their power[b] to others[c], and their glory to a foolish foreign nation.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew reads an unusual form here ('backward' or similar), but the Greek parallel supports the sense 'to others.'
+    text: The Hebrew verb is singular, 'he gave,' understood here as referring to the Most High; the Greek reads, 'they gave.'
     reason: textual_variant
   - marker: b
-    text: Or 'their strength' for 'their horn'; the Hebrew and Greek both preserve the horn metaphor for power.
+    text: Literally, 'their horn,' an image of strength and royal power.
     reason: lexical_alternative
+  - marker: c
+    text: The Hebrew has 'backward,' an uncertain reading here; 'to others' follows the Greek.
+    reason: textual_variant
 lexical_decisions:
 - source_word: קרנם
   chosen: their horn
@@ -128,14 +131,20 @@ revisions:
   from: For they gave their horn to others, and their glory to a foolish foreign nation.
   to: For they gave their horn to others, and their glory to a foolish foreign nation.
   rationale: Revised 'For they gave' to 'And they gave' to match the simple conjunction ו. Changed 'to others' to 'backward' to reflect לאחור more literally, since 'others' is not in the Hebrew. Retained 'horn,' 'glory,' and 'a foolish foreign nation' as accurate and natural renderings.
-
 - timestamp: '2026-05-18T02:59:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they gave their horn backward[b][a], and their glory to a foolish foreign nation.'
-  to: 'And they gave their horn backward[b][a], and their glory to a foolish foreign nation.'
+  from: And they gave their horn backward[b][a], and their glory to a foolish foreign nation.
+  to: And they gave their horn backward[b][a], and their glory to a foolish foreign nation.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to others''].'
+- timestamp: '2026-11-09T19:10:35Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they gave their horn backward[b][a], and their glory to a foolish foreign nation.
+  to: So God[a] handed over their power[b] to others[c], and their glory to a foolish foreign nation.
+  rationale: The first draft and lexical review recovered 'to others'; I retain that gain rather than the later wooden 'backward.' Unlike the drafts, I follow the supplied Hebrew's singular verb as referring to God, while noting the Greek's plural.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -155,3 +164,32 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/049/005.job-52347.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:35Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: God handed Judah's power and glory over to a foolish foreign nation.
+  meaning_decisions:
+  - source_phrase: ויתן
+    prior_rendering: And they gave
+    new_rendering: So God handed over
+    rationale: The supplied Hebrew has a singular verb, naturally referring back to the Most High, and presents the transfer as the consequence of the kings' unfaithfulness.
+  - source_phrase: קרנם
+    prior_rendering: their horn
+    new_rendering: their power
+    rationale: Handing over a horn does not readily communicate the loss of royal strength in English; the meaningful source image is retained in a footnote.
+  - source_phrase: לאחור
+    prior_rendering: backward
+    new_rendering: to others
+    rationale: The Greek and the parallel transfer of glory to a foreign nation recover a coherent meaning from the difficult Hebrew wording.
+  footnote_kinds:
+    a: textual_variant
+    b: literal_wording
+    c: textual_variant
+  history_weighed: The first draft and lexical review recovered 'to others'; I retain that gain rather than the later wooden 'backward.' Unlike the drafts, I follow the supplied Hebrew's singular verb as referring to God, while noting the Greek's plural.

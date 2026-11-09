@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יַּ֧עַשׂ שְׁלֹמֹ֛ה כָּל הַ/כֵּלִ֥ים הָ/אֵ֖לֶּה לָ/רֹ֣ב מְאֹ֑ד כִּ֛י לֹ֥א נֶחְקַ֖ר מִשְׁקַ֥ל הַ/נְּחֹֽשֶׁת־׃פ
 translation:
-  text: Solomon made all these vessels in very great abundance[a], for the weight of the bronze could not be determined.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'for the weight of the bronze was not ascertained.' The Hebrew verb can mean 'searched out' or 'determined'; the sense here is that the bronze was so abundant that its weight was not calculated.
-    reason: lexical_alternative
+  text: Solomon had all these furnishings made in such great abundance that the weight of the bronze was not determined.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיַּעַשׂ
   chosen: made
@@ -81,14 +77,20 @@ revisions:
   from: Solomon made all these vessels in great abundance, because the weight of the bronze could not be determined.
   to: Solomon made all these vessels in great abundance, because the weight of the bronze could not be determined.
   rationale: Added 'very' to reflect מְאֹד with 'great abundance,' and changed 'because' to 'for' for a more formal, natural rendering of כִּי in this context.
-
 - timestamp: '2026-05-17T02:51:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Solomon made all these vessels in very great abundance[a], for the weight of the bronze could not be determined.'
-  to: 'Solomon made all these vessels in very great abundance[a], for the weight of the bronze could not be determined.'
+  from: Solomon made all these vessels in very great abundance[a], for the weight of the bronze could not be determined.
+  to: Solomon made all these vessels in very great abundance[a], for the weight of the bronze could not be determined.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in great abundance''].'
+- timestamp: '2026-11-09T17:24:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Solomon made all these vessels in very great abundance[a], for the weight of the bronze could not be determined.
+  to: Solomon had all these furnishings made in such great abundance that the weight of the bronze was not determined.
+  rationale: The earlier revisions preserve the emphasis on abundance, which remains. The existing footnote's more restrained “was not ascertained” better reflects the Hebrew than the main text's claim of inability, so its point is now incorporated into the translation.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -108,3 +110,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_chronicles/004/018.job-59585.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:24:47Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Solomon commissioned so many bronze furnishings that their total bronze weight was not determined.
+  meaning_decisions:
+  - source_phrase: וַיַּעַשׂ שְׁלֹמֹה
+    prior_rendering: Solomon made
+    new_rendering: Solomon had ... made
+    rationale: The king receives credit for commissioning the work that the preceding verses attribute to Huram.
+  - source_phrase: כָּל הַכֵּלִים הָאֵלֶּה
+    prior_rendering: all these vessels
+    new_rendering: all these furnishings
+    rationale: The inventory includes pillars, supports, and tools as well as containers; “furnishings” conveys the broader scope of the Hebrew term.
+  - source_phrase: לָרֹב מְאֹד כִּי לֹא נֶחְקַר מִשְׁקַל הַנְּחֹשֶׁת
+    prior_rendering: in very great abundance, for the weight of the bronze could not be determined
+    new_rendering: in such great abundance that the weight of the bronze was not determined
+    rationale: The unascertained weight illustrates the abundance, rather than causing it; the Hebrew states that the weight was not determined without necessarily asserting that calculation was impossible.
+  footnote_kinds: {}
+  history_weighed: The earlier revisions preserve the emphasis on abundance, which remains. The existing footnote's more restrained “was not ascertained” better reflects the Hebrew than the main text's claim of inability, so its point is now incorporated into the translation.

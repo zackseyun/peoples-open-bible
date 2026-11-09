@@ -19,12 +19,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: And the priests were singing the hymns[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Greek has an imperfect verb, indicating continuing action: ''were chanting'' rather than simply ''chanted.'''
-    reason: lexical_alternative
+  text: And the priests were singing the hymns.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Οἱ δὲ
   chosen: And
@@ -82,14 +78,20 @@ revisions:
   from: And the priests were chanting the hymns.
   to: And the priests were chanting the hymns.
   rationale: Changed 'chanting' to 'singing' for a more natural and direct rendering of ἐπέαλλον, while preserving the formal sense and completeness of the Greek.
-
 - timestamp: '2026-05-18T02:59:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the priests were singing the hymns[a].'
-  to: 'And the priests were singing the hymns[a].'
+  from: And the priests were singing the hymns[a].
+  to: And the priests were singing the hymns[a].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''were chanting''].'
+- timestamp: '2026-11-09T18:54:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the priests were singing the hymns[a].
+  to: And the priests were singing the hymns.
+  rationale: Both 'chanting' and 'singing' in the history describe liturgical praise, and the current wording conveys it naturally. 'Were singing' already carries the continuing action, so the grammatical footnote is unnecessary.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -109,3 +111,17 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/002/021.job-48948.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:54:10Z'
+  change_level: kept
+  confidence: high
+  meaning: The priests continued singing hymns during the sacrificial worship.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: Both 'chanting' and 'singing' in the history describe liturgical praise, and the current wording conveys it naturally. 'Were singing' already carries the continuing action, so the grammatical footnote is unnecessary.

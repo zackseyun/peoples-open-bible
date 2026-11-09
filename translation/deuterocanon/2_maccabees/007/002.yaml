@@ -24,12 +24,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But one of them[a], becoming their spokesman, said, “What do you intend to ask and learn from us? For we are ready to die rather than transgress the ancestral laws.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “the ancestral laws.”
-    reason: lexical_alternative
+  text: One of them, acting as their spokesman, said, “What do you intend to ask and learn from us? For we are ready to die rather than transgress the laws of our fathers.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: εἷς δὲ αὐτῶν
   chosen: But one of them
@@ -131,14 +127,20 @@ revisions:
   from: But one of them, becoming their spokesman, said, “What do you intend to ask and learn from us? For we are ready to die rather than transgress the laws of our fathers.”
   to: But one of them, becoming their spokesman, said, “What do you intend to ask and learn from us? For we are ready to die rather than transgress the laws of our fathers.”
   rationale: Replaced 'the laws of our fathers' with 'the ancestral laws' to reflect πατρῷα νόμους more naturally and formally while preserving the sense. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:59:26Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But one of them[a], becoming their spokesman, said, “What do you intend to ask and learn from us? For we are ready to die rather than transgress the ancestral laws.”'
-  to: 'But one of them[a], becoming their spokesman, said, “What do you intend to ask and learn from us? For we are ready to die rather than transgress the ancestral laws.”'
+  from: But one of them[a], becoming their spokesman, said, “What do you intend to ask and learn from us? For we are ready to die rather than transgress the ancestral laws.”
+  to: But one of them[a], becoming their spokesman, said, “What do you intend to ask and learn from us? For we are ready to die rather than transgress the ancestral laws.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the laws of our fathers''].'
+- timestamp: '2026-11-09T22:10:11Z'
+  adjudicator: claude-opus-5.5-meaning-pass
+  reviewer_model: claude-opus-5-5
+  category: meaning_retranslation
+  from: But one of them[a], becoming their spokesman, said, “What do you intend to ask and learn from us? For we are ready to die rather than transgress the ancestral laws.”
+  to: One of them, acting as their spokesman, said, “What do you intend to ask and learn from us? For we are ready to die rather than transgress the laws of our fathers.”
+  rationale: The drafter's 'laws of our fathers', preserved as a chosen rendering by the revert, is restored to the text and the misplaced footnote is dropped.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -158,3 +160,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/007/002.job-49136.json
+meaning_pass:
+  run: full-v4-opus
+  model: claude-opus-5-5
+  deployment: claude-code-subscription
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: null
+  timestamp: '2026-11-09T22:10:11Z'
+  change_level: refined
+  confidence: high
+  meaning: One brother, speaking for all, told the king that questioning them was pointless because they would die before they broke their ancestral law.
+  meaning_decisions:
+  - source_phrase: τὰ πατρῷα νόμους
+    prior_rendering: the ancestral laws
+    new_rendering: the laws of our fathers
+    rationale: The phrase carries the inherited, family-bound weight of the law; 'laws of our fathers' keeps that and matches verse 37.
+  - source_phrase: γενόμενος προήγορος
+    prior_rendering: becoming their spokesman
+    new_rendering: acting as their spokesman
+    rationale: Natural English for taking up the role of speaking for the group.
+  footnote_kinds: {}
+  history_weighed: The drafter's 'laws of our fathers', preserved as a chosen rendering by the revert, is restored to the text and the misplaced footnote is dropped.

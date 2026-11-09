@@ -18,12 +18,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Release me[a], he says, so that I may tell the king and all his friends who are with him.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'all the friends with him' or 'all his companions with him.' The Greek φίλοι can denote personal friends or royal associates/courtiers, but 'friends' is retained as the most direct rendering.
-    reason: lexical_alternative
+  text: “Release me,” he said, “so that I may speak to the king and all his court companions who are with him.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἀπόλυσόν
   chosen: Release
@@ -90,14 +86,20 @@ revisions:
   from: Release me, he says, so that I may tell the king and all his friends who are with him.
   to: Release me, he says, so that I may speak to the king and to all the friends with him.
   rationale: Changed 'tell' to 'speak to' for better lexical accuracy with εἴπω plus indirect object, and adjusted the final phrase to more naturally reflect καὶ τοῖς σὺν αὐτῷ φίλοις πᾶσιν as 'and to all the friends with him.'
-
 - timestamp: '2026-05-16T18:22:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Release me[a], he says, so that I may speak to the king and to all the friends with him.'
-  to: 'Release me[a], he says, so that I may tell the king and all his friends who are with him.'
-  rationale: 'Restored drafter ''so that I may tell the king and all his friends who are with him'' (preserving the chosen ''tell'' verb and explicit relative clause) per chosen renderings.'
+  from: Release me[a], he says, so that I may speak to the king and to all the friends with him.
+  to: Release me[a], he says, so that I may tell the king and all his friends who are with him.
+  rationale: Restored drafter 'so that I may tell the king and all his friends who are with him' (preserving the chosen 'tell' verb and explicit relative clause) per chosen renderings.
+- timestamp: '2026-11-09T18:59:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Release me[a], he says, so that I may tell the king and all his friends who are with him.
+  to: “Release me,” he said, “so that I may speak to the king and all his court companions who are with him.”
+  rationale: The review’s change to “speak to” improved the meaning and English idiom; the subsequent automated revert gives no meaning-based reason to abandon it. I also bring the earlier note’s courtly sense of φίλοι into the main text.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -117,3 +119,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/012/008.job-50033.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:15Z'
+  change_level: refined
+  confidence: high
+  meaning: The boy asks to be released from his restraints so that he can address the king and his court companions.
+  meaning_decisions:
+  - source_phrase: φησίν
+    prior_rendering: he says
+    new_rendering: he said
+    rationale: English past tense maintains the surrounding narrative sequence without losing the direct speech’s vividness.
+  - source_phrase: εἴπω τῷ βασιλεῖ
+    prior_rendering: so that I may tell the king
+    new_rendering: so that I may speak to the king
+    rationale: The boy requests an opportunity to address the king; “tell” without an expressed message is incomplete in contemporary English.
+  - source_phrase: τοῖς σὺν αὐτῷ φίλοις πᾶσιν
+    prior_rendering: all his friends who are with him
+    new_rendering: all his court companions who are with him
+    rationale: The setting gives φίλοι its royal-court sense, which the earlier footnote recognized.
+  footnote_kinds: {}
+  history_weighed: The review’s change to “speak to” improved the meaning and English idiom; the subsequent automated revert gives no meaning-based reason to abandon it. I also bring the earlier note’s courtly sense of φίλοι into the main text.

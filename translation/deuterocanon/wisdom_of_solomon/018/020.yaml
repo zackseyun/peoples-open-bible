@@ -21,15 +21,8 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: But the trial of death also touched the righteous[a], and a destruction of the multitude occurred in the wilderness[b]; yet the wrath did not remain for long.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'an experience of death' or 'a trial by death' for 'the testing of death.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'a crushing of the multitude' for 'a breaking of the multitude.'
-    reason: lexical_alternative
+  text: But the ordeal of death also touched the righteous, and a plague struck the multitude in the wilderness; yet the wrath did not last long.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἥψατο
   chosen: touched
@@ -133,14 +126,20 @@ revisions:
   from: But the testing of death also touched the righteous, and a breaking of the multitude happened in the wilderness; yet the wrath did not remain for long.
   to: But the testing of death also touched the righteous, and a breaking of the multitude happened in the wilderness; yet the wrath did not remain for long.
   rationale: 'Replaced ''testing'' with ''trial'' for a more natural and formal rendering of πεῖρα; replaced ''breaking'' with ''destruction'' for θραῦσις, which better fits the context of a deadly plague/judgment on the multitude. Minor smoothing: ''happened'' to ''occurred.'''
-
 - timestamp: '2026-05-16T17:22:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But the trial of death also touched the righteous[a], and a destruction of the multitude occurred in the wilderness[b]; yet the wrath did not remain for long.'
-  to: 'But the trial of death also touched the righteous[a], and a destruction of the multitude occurred in the wilderness[b]; yet the wrath did not remain for long.'
-  rationale: 'Restored drafter ''the testing of death'' (preserving the chosen rendering of πεῖρα as testing) and ''a breaking of the multitude'' (preserving the chosen rendering of θραῦσις) per chosen renderings.'
+  from: But the trial of death also touched the righteous[a], and a destruction of the multitude occurred in the wilderness[b]; yet the wrath did not remain for long.
+  to: But the trial of death also touched the righteous[a], and a destruction of the multitude occurred in the wilderness[b]; yet the wrath did not remain for long.
+  rationale: Restored drafter 'the testing of death' (preserving the chosen rendering of πεῖρα as testing) and 'a breaking of the multitude' (preserving the chosen rendering of θραῦσις) per chosen renderings.
+- timestamp: '2026-11-09T19:13:17Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But the trial of death also touched the righteous[a], and a destruction of the multitude occurred in the wilderness[b]; yet the wrath did not remain for long.
+  to: But the ordeal of death also touched the righteous, and a plague struck the multitude in the wilderness; yet the wrath did not last long.
+  rationale: The review improved the draft's opaque 'testing' and 'breaking,' whereas the automated revert privileged those forms without adding meaning-based evidence. I preserve the improvement and make the specific wilderness calamity clearer while retaining 'righteous' and 'wrath.'
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -160,3 +159,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/018/020.job-39369.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:13:17Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The righteous Israelites also suffered a deadly ordeal in the wilderness, but the wrath against them did not continue long.
+  meaning_decisions:
+  - source_phrase: πεῖρα θανάτου
+    prior_rendering: the trial of death
+    new_rendering: the ordeal of death
+    rationale: '''Ordeal'' expresses a deadly experience undergone by the righteous without suggesting that death itself was being tested.'
+  - source_phrase: θραῦσις ἐν ἐρήμῳ ἐγένετο πλήθους
+    prior_rendering: a destruction of the multitude occurred in the wilderness
+    new_rendering: a plague struck the multitude in the wilderness
+    rationale: The wording recalls the wilderness plague stopped by Aaron, where the Greek account likewise uses θραῦσις. 'Plague struck' identifies the calamity without implying that the entire multitude was destroyed.
+  footnote_kinds: {}
+  history_weighed: The review improved the draft's opaque 'testing' and 'breaking,' whereas the automated revert privileged those forms without adding meaning-based evidence. I preserve the improvement and make the specific wilderness calamity clearer while retaining 'righteous' and 'wrath.'

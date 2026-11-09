@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/אִישׁ֙ אֽוֹ אִשָּׁ֔ה כִּֽי יִהְיֶ֥ה בְ/עוֹר בְּשָׂרָ֖/ם בֶּהָרֹ֑ת בֶּהָרֹ֖ת לְבָנֹֽת־־־׃
 translation:
-  text: And if a man or a woman has bright spots on the skin of the body[a], white bright spots,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'bright white spots.'
-    reason: lexical_alternative
+  text: If a man or a woman has bright white spots on their skin,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְ/אִישׁ ... אִשָּׁה
   chosen: a man or a woman
@@ -68,14 +64,20 @@ revisions:
   from: And if a man or a woman has bright spots on the skin of their body, white bright spots,
   to: And if a man or a woman has bright spots on the skin of their body, white bright spots,
   rationale: Changed 'their body' to 'the body' for a more formal and literal rendering of the singular Hebrew while preserving natural English. No other changes needed.
-
 - timestamp: '2026-05-18T02:56:41Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And if a man or a woman has bright spots on the skin of the body[a], white bright spots,'
-  to: 'And if a man or a woman has bright spots on the skin of the body[a], white bright spots,'
+  from: And if a man or a woman has bright spots on the skin of the body[a], white bright spots,
+  to: And if a man or a woman has bright spots on the skin of the body[a], white bright spots,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''on the skin of their body''].'
+- timestamp: '2026-11-09T18:18:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And if a man or a woman has bright spots on the skin of the body[a], white bright spots,
+  to: If a man or a woman has bright white spots on their skin,
+  rationale: The recorded revisions focus on 'their body' versus 'the body' and source-shaped repetition, with no maintainer decision. I preserve the explicit inclusion of both sexes and the white coloration while removing unnecessary repetition.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -95,3 +97,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/013/038.job-45114.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:18:46Z'
+  change_level: refined
+  confidence: high
+  meaning: The law next considers white, bright-looking spots on the skin of either a man or a woman.
+  meaning_decisions:
+  - source_phrase: בְעוֹר בְּשָׂרָם בֶּהָרֹת בֶּהָרֹת לְבָנֹת
+    prior_rendering: bright spots on the skin of the body, white bright spots
+    new_rendering: bright white spots on their skin
+    rationale: The repeated noun specifies the spots' color; English can carry the full description in one phrase, and 'their skin' already supplies the bodily location.
+  footnote_kinds: {}
+  history_weighed: The recorded revisions focus on 'their body' versus 'the body' and source-shaped repetition, with no maintainer decision. I preserve the explicit inclusion of both sexes and the white coloration while removing unnecessary repetition.

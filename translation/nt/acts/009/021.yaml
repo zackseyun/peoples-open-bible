@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: ἐξίσταντο δὲ πάντες οἱ ἀκούοντες καὶ ἔλεγον· Οὐχ οὗτός ἐστιν ὁ πορθήσας ⸀ἐν Ἰερουσαλὴμ τοὺς ἐπικαλουμένους τὸ ὄνομα τοῦτο, καὶ ὧδε εἰς τοῦτο ἐληλύθει ἵνα δεδεμένους αὐτοὺς ἀγάγῃ ἐπὶ τοὺς ἀρχιερεῖς;
 translation:
-  text: And all who heard him were amazed and were saying[a], “Isn’t this the man who devastated in Jerusalem those who call on this name? And had he not come here for this purpose[b], that he might bring them bound to the chief priests?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “invoke this name.” The expression “call on this name” preserves the biblical idiom for appeal to or confession of Jesus’ name.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally “this name,” referring to Jesus.
-    reason: alternative_reading
+  text: All who heard him were amazed and said, “Isn’t this the man who wreaked havoc in Jerusalem among those who call on this name? And hadn’t he come here to bring them bound before the chief priests?”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐξίσταντο
   chosen: were amazed
@@ -127,14 +120,20 @@ revisions:
   from: 'And all who heard him were amazed and were saying, “Isn’t this the man who devastated those in Jerusalem who call on this name? And he had come here for this purpose: to bring them bound before the chief priests.”'
   to: And all who heard him were amazed and were saying, “Isn’t this the man who devastated those in Jerusalem who call on this name? And he had come here for this purpose—to bring them bound before the chief priests.”
   rationale: Adjusted the second question to reflect the Greek more fully and naturally ('And had he not come here for this purpose...'). Reordered 'in Jerusalem' to modify the devastation more clearly, and changed 'before the chief priests' to the more literal 'to the chief priests.'
-
 - timestamp: '2026-05-16T22:08:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And all who heard him were amazed and were saying[a], “Isn’t this the man who devastated in Jerusalem those who call on this name? And had he not come here for this purpose[b], that he might bring them bound to the chief priests?”'
-  to: 'And all who heard him were amazed and were saying[a], “Isn’t this the man who devastated in Jerusalem those who call on this name? And had he not come here for this purpose[b], that he might bring them bound to the chief priests?”'
-  rationale: 'Restored drafter ''he had come here for this purpose'' (preserving the chosen statement form) and ''to bring them bound before the chief priests'' (preserving the chosen ''before'' rendering); used em-dash to avoid colon-in-plain-scalar.'
+  from: And all who heard him were amazed and were saying[a], “Isn’t this the man who devastated in Jerusalem those who call on this name? And had he not come here for this purpose[b], that he might bring them bound to the chief priests?”
+  to: And all who heard him were amazed and were saying[a], “Isn’t this the man who devastated in Jerusalem those who call on this name? And had he not come here for this purpose[b], that he might bring them bound to the chief priests?”
+  rationale: Restored drafter 'he had come here for this purpose' (preserving the chosen statement form) and 'to bring them bound before the chief priests' (preserving the chosen 'before' rendering); used em-dash to avoid colon-in-plain-scalar.
+- timestamp: '2026-11-09T17:06:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And all who heard him were amazed and were saying[a], “Isn’t this the man who devastated in Jerusalem those who call on this name? And had he not come here for this purpose[b], that he might bring them bound to the chief priests?”
+  to: All who heard him were amazed and said, “Isn’t this the man who wreaked havoc in Jerusalem among those who call on this name? And hadn’t he come here to bring them bound before the chief priests?”
+  rationale: The history alternates between a statement and a second rhetorical question; the current question form conveys the hearers’ astonishment well and is retained. I preserve the documented severity of Saul’s violence and recover the earlier 'before' rendering for presentation to authority.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -154,3 +153,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/009/021.job-46645.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:06:25Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Saul’s hearers are astonished because the man now proclaiming Jesus had devastated those who invoked Jesus’ name and had come to arrest them.
+  meaning_decisions:
+  - source_phrase: ὁ πορθήσας ἐν Ἰερουσαλὴμ τοὺς ἐπικαλουμένους τὸ ὄνομα τοῦτο
+    prior_rendering: the man who devastated in Jerusalem those who call on this name
+    new_rendering: the man who wreaked havoc in Jerusalem among those who call on this name
+    rationale: Preserves the destructive force of the verb while avoiding both awkward word order and the possible modern sense of merely causing emotional distress.
+  - source_phrase: ὧδε εἰς τοῦτο ἐληλύθει ἵνα δεδεμένους αὐτοὺς ἀγάγῃ ἐπὶ τοὺς ἀρχιερεῖς
+    prior_rendering: And had he not come here for this purpose, that he might bring them bound to the chief priests?
+    new_rendering: And hadn’t he come here to bring them bound before the chief priests?
+    rationale: Expresses the purpose directly and restores the sense of presenting prisoners before the priestly authorities.
+  footnote_kinds: {}
+  history_weighed: The history alternates between a statement and a second rhetorical question; the current question form conveys the hearers’ astonishment well and is retained. I preserve the documented severity of Saul’s violence and recover the earlier 'before' rendering for presentation to authority.

@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יָּ֨קָם הַ/מֶּ֜לֶךְ לַ֗יְלָה וַ/יֹּ֨אמֶר֙ אֶל עֲבָדָ֔י/ו אַגִּֽידָה נָּ֣א לָ/כֶ֔ם אֵ֛ת אֲשֶׁר עָ֥שׂוּ לָ֖/נוּ אֲרָ֑ם יָדְע֞וּ כִּי רְעֵבִ֣ים אֲנַ֗חְנוּ וַ/יֵּצְא֤וּ מִן הַֽ/מַּחֲנֶה֙ לְ/הֵחָבֵ֤ה ב/ה/שדה לֵ/אמֹ֔ר כִּֽי יֵצְא֤וּ מִן הָ/עִיר֙ וְ/נִתְפְּשֵׂ֣/ם חַיִּ֔ים וְ/אֶל הָ/עִ֖יר נָבֹֽא־־־־־־־־׃
 translation:
-  text: Then the king arose in the night and said to his servants[a], “Let me tell you, please, what Aram has done to us. They know that we are hungry, so they have gone out from the camp to hide themselves in the field, saying, ‘When they come out from the city, we will seize them alive and enter the city.’”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “the Arameans.” The Hebrew uses the place/name Aram for the people or army of Aram.
-    reason: lexical_alternative
+  text: Then the king arose in the night and said to his servants, “Let me tell you what the Arameans have done to us. They know that we are hungry, so they have left the camp to hide in the open country, saying, ‘When they come out of the city, we will seize them alive and enter the city.’”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיָּקָם
   chosen: got up
@@ -123,14 +119,20 @@ revisions:
   from: Then the king got up in the night and said to his servants, “Let me tell you, please, what Aram has done to us. They know that we are hungry, so they have gone out from the camp to hide themselves in the field, saying, ‘When they come out from the city, we will seize them alive, and we will enter the city.’”
   to: Then the king got up in the night and said to his servants, “Let me tell you, please, what Aram has done to us. They know that we are hungry, so they have gone out from the camp to hide themselves in the field, saying, ‘When they come out from the city, we will seize them alive, and we will enter the city.’”
   rationale: Changed 'got up' to 'arose' for a more formal register, and removed the unnecessary second 'we will' before 'enter the city' to reflect the Hebrew more naturally and closely.
-
 - timestamp: '2026-05-18T02:58:46Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then the king arose in the night and said to his servants[a], “Let me tell you, please, what Aram has done to us. They know that we are hungry, so they have gone out from the camp to hide themselves in the field, saying, ‘When they come out from the city, we will seize them alive and enter the city.’”'
-  to: 'Then the king arose in the night and said to his servants[a], “Let me tell you, please, what Aram has done to us. They know that we are hungry, so they have gone out from the camp to hide themselves in the field, saying, ‘When they come out from the city, we will seize them alive and enter the city.’”'
+  from: Then the king arose in the night and said to his servants[a], “Let me tell you, please, what Aram has done to us. They know that we are hungry, so they have gone out from the camp to hide themselves in the field, saying, ‘When they come out from the city, we will seize them alive and enter the city.’”
+  to: Then the king arose in the night and said to his servants[a], “Let me tell you, please, what Aram has done to us. They know that we are hungry, so they have gone out from the camp to hide themselves in the field, saying, ‘When they come out from the city, we will seize them alive and enter the city.’”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and we will enter the city''].'
+- timestamp: '2026-11-09T18:26:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then the king arose in the night and said to his servants[a], “Let me tell you, please, what Aram has done to us. They know that we are hungry, so they have gone out from the camp to hide themselves in the field, saying, ‘When they come out from the city, we will seize them alive and enter the city.’”
+  to: Then the king arose in the night and said to his servants, “Let me tell you what the Arameans have done to us. They know that we are hungry, so they have left the camp to hide in the open country, saying, ‘When they come out of the city, we will seize them alive and enter the city.’”
+  rationale: The review and automated revert chiefly concern register and the repeated future verb, neither of which changes the king’s reasoning. I retain that reasoning while clarifying the collective people-name and the setting of the supposed ambush.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -153,3 +155,29 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_kings/007/012.job-60439.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:26:52Z'
+  change_level: refined
+  confidence: high
+  meaning: The king suspects that the Arameans have abandoned their camp as a trap to capture the starving inhabitants and enter the city.
+  meaning_decisions:
+  - source_phrase: אַגִּידָה נָּא לָכֶם
+    prior_rendering: Let me tell you, please
+    new_rendering: Let me tell you
+    rationale: Here the particle introduces the king’s urgent explanation rather than a request for permission; the English invitation already carries its discourse function.
+  - source_phrase: אֵת אֲשֶׁר עָשׂוּ לָנוּ אֲרָם
+    prior_rendering: what Aram has done to us
+    new_rendering: what the Arameans have done to us
+    rationale: Aram stands for its people or army here, as the following plural pronouns show.
+  - source_phrase: וַיֵּצְאוּ מִן הַמַּחֲנֶה לְהֵחָבֵה בַּשָּׂדֶה
+    prior_rendering: they have gone out from the camp to hide themselves in the field
+    new_rendering: they have left the camp to hide in the open country
+    rationale: The king imagines troops concealed outside the city, not necessarily in one cultivated field; the reflexive action is naturally conveyed by 'hide.'
+  footnote_kinds: {}
+  history_weighed: The review and automated revert chiefly concern register and the repeated future verb, neither of which changes the king’s reasoning. I retain that reasoning while clarifying the collective people-name and the setting of the supposed ambush.

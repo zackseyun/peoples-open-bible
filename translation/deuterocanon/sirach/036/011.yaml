@@ -21,11 +21,11 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: In fiery wrath let the survivor be consumed[a], and let those who do injustice to your people meet destruction.
-  philosophy: optimal-equivalence
+  text: In fiery wrath let any surviving enemy[a] be consumed, and let those who wrong your people meet destruction.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more literally, 'the one being saved/preserved.' The Greek phrase is difficult in context and may refer to any enemy who has thus far escaped destruction.
+    text: Literally, 'the one who is being saved,' here understood as an enemy who has escaped destruction.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐν ὀργῇ πυρὸς
@@ -105,14 +105,20 @@ revisions:
   from: In fiery wrath let the survivor be consumed, and let those who do injustice to your people meet destruction.
   to: In the wrath of fire let the one who escapes be consumed, and let those who do injustice to your people meet destruction.
   rationale: Revised 'fiery wrath' to 'the wrath of fire' for closer lexical correspondence to ἐν ὀργῇ πυρός, and changed 'the survivor' to 'the one who escapes' to better reflect ὁ σωζόμενος.
-
 - timestamp: '2026-05-16T12:07:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'In the wrath of fire let the one who escapes be consumed[a], and let those who do injustice to your people meet destruction.'
-  to: 'In fiery wrath let the survivor be consumed[a], and let those who do injustice to your people meet destruction.'
-  rationale: 'Restored drafter ''In fiery wrath'' (compact rendering of ἐν ὀργῇ πυρός) and ''the survivor'' (ὁ σωζόμενος as the one who escapes the prior judgment) per chosen renderings.'
+  from: In the wrath of fire let the one who escapes be consumed[a], and let those who do injustice to your people meet destruction.
+  to: In fiery wrath let the survivor be consumed[a], and let those who do injustice to your people meet destruction.
+  rationale: Restored drafter 'In fiery wrath' (compact rendering of ἐν ὀργῇ πυρός) and 'the survivor' (ὁ σωζόμενος as the one who escapes the prior judgment) per chosen renderings.
+- timestamp: '2026-11-09T19:07:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: In fiery wrath let the survivor be consumed[a], and let those who do injustice to your people meet destruction.
+  to: In fiery wrath let any surviving enemy[a] be consumed, and let those who wrong your people meet destruction.
+  rationale: The later revert restored the idiomatic 'fiery wrath' after a more literal revision, and I retain it. The earlier lexical discussion already understood the survivor as an escaped enemy, which is now explicit in the text.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -132,3 +138,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/036/011.job-51994.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:36Z'
+  change_level: refined
+  confidence: high
+  meaning: The prayer asks for fiery judgment on surviving enemies and destruction for those who wrong God's people.
+  meaning_decisions:
+  - source_phrase: ὁ σωζόμενος
+    prior_rendering: the survivor
+    new_rendering: any surviving enemy
+    rationale: The hostile prayer context identifies the survivor as an enemy; making that referent explicit avoids suggesting judgment on an unspecified survivor.
+  - source_phrase: οἱ ἀδικοῦντες τὸν λαόν σου
+    prior_rendering: those who do injustice to your people
+    new_rendering: those who wrong your people
+    rationale: '''Wrong'' expresses acting unjustly against someone in strong, natural English without narrowing the offense to a particular kind of oppression.'
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The later revert restored the idiomatic 'fiery wrath' after a more literal revision, and I retain it. The earlier lexical discussion already understood the survivor as an escaped enemy, which is now explicit in the text.

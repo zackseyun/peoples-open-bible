@@ -4,11 +4,14 @@ source:
   edition: SBLGNT
   text: ὅπως πληρωθῇ τὸ ῥηθὲν διὰ τοῦ προφήτου λέγοντος· Ἀνοίξω ἐν παραβολαῖς τὸ στόμα μου, ἐρεύξομαι κεκρυμμένα ἀπὸ ⸀καταβολῆς.
 translation:
-  text: 'so that what was spoken through the prophet might be fulfilled[a], saying: “I will open my mouth in parables; I will utter things hidden from the beginning.”'
-  philosophy: optimal-equivalence
+  text: 'This was to fulfill what was spoken through the prophet[a]: “I will open my mouth in parables; I will utter things hidden since the beginning[b].”'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Some manuscripts read “from the foundation of the world.”
+    text: Psalm 78:2.
+    reason: cross_reference
+  - marker: b
+    text: Some manuscripts read “since the foundation of the world.”
     reason: textual_variant
 lexical_decisions:
 - source_word: ὅπως
@@ -116,7 +119,6 @@ revisions:
   from: 'so that what was spoken through the prophet might be fulfilled, saying: “I will open my mouth in parables; I will utter things hidden from the foundation.”'
   to: 'so that what was spoken through the prophet might be fulfilled, saying: “I will open my mouth in parables; I will utter things hidden from the foundation of the world.”'
   rationale: Added “of the world” to reflect the idiomatic sense of ἀπὸ καταβολῆς in this context and to make the English complete and natural.
-
 - timestamp: '2026-08-27T21:08:39Z'
   adjudicator: source-audit
   reviewer_model: gpt-5.6-sol
@@ -126,6 +128,13 @@ revisions:
   from: 'so that what was spoken through the prophet might be fulfilled[a], saying: “I will open my mouth in parables; I will utter things hidden from the foundation of the world.”'
   to: 'so that what was spoken through the prophet might be fulfilled[a], saying: “I will open my mouth in parables; I will utter things hidden from the beginning.”'
   rationale: The participle 'saying' (λέγοντος) modifies 'prophet' (προφήτου), but the English word order separates them with 'might be fulfilled,' creating a dangling participle. It is better to omit 'saying' and use a colon, or rephrase the clause (e.g., 'through the prophet, who said:'). While formally literal for ἀπὸ καταβολῆς, 'from the foundation' sounds incomplete in English without an object. Since the drafter wishes to avoid adding 'of the world' (κόσμου) which is absent in this manuscript tradition, translating the idiom as 'from the beginning' provides a natural English rendering that captures the meaning without importing the textual variant.
+- timestamp: '2026-11-09T17:14:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'so that what was spoken through the prophet might be fulfilled[a], saying: “I will open my mouth in parables; I will utter things hidden from the beginning.”'
+  to: 'This was to fulfill what was spoken through the prophet[a]: “I will open my mouth in parables; I will utter things hidden since the beginning[b].”'
+  rationale: The later audit’s “from the beginning” corrected the incomplete “from the foundation” and appropriately distinguished the fuller manuscript reading. I preserve that gain and implement the audit’s recommendation to remove the dangling citation participle.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -148,3 +157,27 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/013/035.job-57000.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:14:49Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus’ use of parables fulfills the prophetic words about speaking in parables and revealing things hidden since the beginning.
+  meaning_decisions:
+  - source_phrase: ὅπως πληρωθῇ τὸ ῥηθὲν διὰ τοῦ προφήτου λέγοντος
+    prior_rendering: so that what was spoken through the prophet might be fulfilled, saying
+    new_rendering: This was to fulfill what was spoken through the prophet
+    rationale: The sentence clearly connects the preceding teaching with prophetic fulfillment and removes the dangling “saying,” without suggesting uncertainty about fulfillment.
+  - source_phrase: κεκρυμμένα ἀπὸ καταβολῆς
+    prior_rendering: things hidden from the beginning
+    new_rendering: things hidden since the beginning
+    rationale: “Since” clearly expresses how long these things have remained hidden.
+  footnote_kinds:
+    a: cross_reference
+    b: textual_variant
+  history_weighed: The later audit’s “from the beginning” corrected the incomplete “from the foundation” and appropriately distinguished the fuller manuscript reading. I preserve that gain and implement the audit’s recommendation to remove the dangling citation participle.

@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: אֵ֖לֶּה מִשְׁפְּחֹ֣ת מְנַשֶּׁ֑ה וּ/פְקֻ֣דֵי/הֶ֔ם שְׁנַ֧יִם וַ/חֲמִשִּׁ֛ים אֶ֖לֶף וּ/שְׁבַ֥ע מֵאֽוֹת׃ס
 translation:
-  text: These are the clans of Manasseh, and those numbered from them[a] were fifty-two thousand seven hundred.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or "their numbered men" or "their mustered ones." The Hebrew census formula uses a form of פקד, referring to those counted or enrolled.
-    reason: lexical_alternative
+  text: These are the clans of Manasseh; the men counted from them totaled fifty-two thousand seven hundred.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: אֵלֶּה
   chosen: These are
@@ -62,13 +58,12 @@ revisions:
   from: These are the clans of Manasseh, and those numbered from them were fifty-two thousand seven hundred.
   to: These are the clans of Manasseh, and those numbered of them were fifty-two thousand seven hundred.
   rationale: Changed 'from them' to 'of them' for a more formal and literal rendering of the Hebrew while preserving natural English.
-
 - timestamp: '2026-05-18T03:09:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'These are the clans of Manasseh[a], and those numbered of them were fifty-two thousand seven hundred.'
-  to: 'These are the clans of Manasseh, and those numbered from them were fifty-two thousand seven hundred.'
+  from: These are the clans of Manasseh[a], and those numbered of them were fifty-two thousand seven hundred.
+  to: These are the clans of Manasseh, and those numbered from them were fifty-two thousand seven hundred.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''those numbered from them''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -78,6 +73,13 @@ revisions:
   from: These are the clans of Manasseh, and those numbered from them were fifty-two thousand seven hundred.
   to: These are the clans of Manasseh, and those numbered from them[a] were fifty-two thousand seven hundred.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('those numbered from them') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:31:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: These are the clans of Manasseh, and those numbered from them[a] were fifty-two thousand seven hundred.
+  to: These are the clans of Manasseh; the men counted from them totaled fifty-two thousand seven hundred.
+  rationale: The review and automated revert concerned only the formal choice between “of” and “from.” I retain the established census sense and exact number, making explicit the counted men already understood from verse 2; the synonym note is no longer needed.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -97,3 +99,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/026/034.job-41736.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:31:25Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The census counted fifty-two thousand seven hundred military-age men from Manasseh’s clans.
+  meaning_decisions:
+  - source_phrase: וּפְקֻדֵיהֶם
+    prior_rendering: and those numbered from them were
+    new_rendering: the men counted from them totaled
+    rationale: The counted persons are the men defined by the census instructions, and “totaled” clearly identifies the following number as their total.
+  footnote_kinds: {}
+  history_weighed: The review and automated revert concerned only the formal choice between “of” and “from.” I retain the established census sense and exact number, making explicit the counted men already understood from verse 2; the synonym note is no longer needed.

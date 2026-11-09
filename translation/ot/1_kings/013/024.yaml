@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֵּ֕לֶךְ וַ/יִּמְצָאֵ֧/הוּ אַרְיֵ֛ה בַּ/דֶּ֖רֶךְ וַ/יְמִיתֵ֑/הוּ וַ/תְּהִ֤י נִבְלָת/וֹ֙ מֻשְׁלֶ֣כֶת בַּ/דֶּ֔רֶךְ וְ/הַ/חֲמוֹר֙ עֹמֵ֣ד אֶצְלָ֔/הּ וְ/הָ֣/אַרְיֵ֔ה עֹמֵ֖ד אֵ֥צֶל הַ/נְּבֵלָֽה׃
 translation:
-  text: And he went[a], and a lion found him on the road and killed him. And his corpse was cast on the road, and the donkey was standing beside it, and the lion was standing beside the corpse.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'his dead body was lying thrown on the road'; the Hebrew passive participle emphasizes that the body had been cast down there rather than merely lying there.
-    reason: lexical_alternative
+  text: He set out, and a lion came upon him on the road and killed him. His corpse lay thrown down on the road, with the donkey standing beside it and the lion standing beside the corpse.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֵּלֶךְ
   chosen: And he went
@@ -93,14 +89,20 @@ revisions:
   from: And he went, and a lion found him on the road and killed him. And his corpse was thrown on the road, and the donkey was standing beside it, and the lion was standing beside the corpse.
   to: And he went, and a lion found him on the road and killed him. And his corpse was thrown on the road, and the donkey was standing beside it, and the lion was standing beside the corpse.
   rationale: Changed 'was thrown' to 'was cast' for a more natural formal register while preserving the sense of the Hebrew. No other changes needed.
-
 - timestamp: '2026-05-18T02:57:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he went[a], and a lion found him on the road and killed him. And his corpse was cast on the road, and the donkey was standing beside it, and the lion was standing beside the corpse.'
-  to: 'And he went[a], and a lion found him on the road and killed him. And his corpse was cast on the road, and the donkey was standing beside it, and the lion was standing beside the corpse.'
+  from: And he went[a], and a lion found him on the road and killed him. And his corpse was cast on the road, and the donkey was standing beside it, and the lion was standing beside the corpse.
+  to: And he went[a], and a lion found him on the road and killed him. And his corpse was cast on the road, and the donkey was standing beside it, and the lion was standing beside the corpse.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was thrown''].'
+- timestamp: '2026-11-09T17:22:54Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he went[a], and a lion found him on the road and killed him. And his corpse was cast on the road, and the donkey was standing beside it, and the lion was standing beside the corpse.
+  to: He set out, and a lion came upon him on the road and killed him. His corpse lay thrown down on the road, with the donkey standing beside it and the lion standing beside the corpse.
+  rationale: The history debated “cast” and “thrown” without changing the underlying sense. “Lay thrown down” preserves the passive image and carries the earlier footnote’s point in the main text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -120,3 +122,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/013/024.job-58451.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:54Z'
+  change_level: refined
+  confidence: high
+  meaning: A lion kills the departing man of God, but both the lion and the donkey remain standing beside his corpse.
+  meaning_decisions:
+  - source_phrase: וַיִּמְצָאֵהוּ אַרְיֵה
+    prior_rendering: a lion found him
+    new_rendering: a lion came upon him
+    rationale: The verb describes an encounter on the journey, without implying that the lion had been searching for him.
+  - source_phrase: וַתְּהִי נִבְלָתוֹ מֻשְׁלֶכֶת בַּדֶּרֶךְ
+    prior_rendering: his corpse was cast on the road
+    new_rendering: His corpse lay thrown down on the road
+    rationale: The passive participle depicts the resulting condition of the corpse; the new wording retains the violent image without presenting another distinct action.
+  footnote_kinds: {}
+  history_weighed: The history debated “cast” and “thrown” without changing the underlying sense. “Lay thrown down” preserves the passive image and carries the earlier footnote’s point in the main text.

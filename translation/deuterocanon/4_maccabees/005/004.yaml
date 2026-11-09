@@ -18,15 +18,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But when many had been seized, one man, first from the flock[a], a Hebrew named Eleazar, a priest by birth, trained in the law in knowledge[b], advanced in age, and known to many around the tyrant because of his age, opened his mouth.
-  philosophy: optimal-equivalence
+  text: When many had been seized, the first man from this flock of captives was a Hebrew named Eleazar, a priest by birth and an expert in the law. He was advanced in age and known to many in the tyrant’s entourage because of his age. His mouth was being forced open[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'one man, first from the group.' The Greek literally says 'from the flock,' using a metaphor for the company of Hebrews.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'an expert in the law.' The Greek describes Eleazar as learned with respect to the law, not as a legal professional in the modern sense.
-    reason: lexical_alternative
+    text: Alternatively, “he opened his mouth.” The Greek construction is difficult.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: συναρπασθέντων
   chosen: had been seized
@@ -122,13 +119,12 @@ revisions:
   from: But when many had been seized, one man, first from the flock, a Hebrew named Eleazar, a priest by birth, trained in the law in knowledge, advanced in age, and known to many around the tyrant because of his age, opened his mouth.
   to: But when many had been seized, one man, first from the company, a Hebrew named Eleazar, a priest by birth, learned in the law, advanced in age, and known to many around the tyrant because of his age, opened his mouth.
   rationale: Replaced 'flock' with 'company' for more natural contextually appropriate rendering of ἀγέλη; simplified 'trained in the law in knowledge' to 'learned in the law' for clearer and more accurate English; retained the rest with only minor smoothing.
-
 - timestamp: '2026-05-18T03:10:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But when many had been seized[a], one man, first from the company, a Hebrew named Eleazar, a priest by birth, learned in the law, advanced in age, and known to many around the tyrant because of his age[b], opened his mouth.'
-  to: 'But when many had been seized, one man, first from the flock, a Hebrew named Eleazar, a priest by birth, trained in the law in knowledge, advanced in age, and known to many around the tyrant because of his age, opened his mouth.'
+  from: But when many had been seized[a], one man, first from the company, a Hebrew named Eleazar, a priest by birth, learned in the law, advanced in age, and known to many around the tyrant because of his age[b], opened his mouth.
+  to: But when many had been seized, one man, first from the flock, a Hebrew named Eleazar, a priest by birth, trained in the law in knowledge, advanced in age, and known to many around the tyrant because of his age, opened his mouth.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''trained in the law in knowledge''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -138,6 +134,13 @@ revisions:
   from: But when many had been seized, one man, first from the flock, a Hebrew named Eleazar, a priest by birth, trained in the law in knowledge, advanced in age, and known to many around the tyrant because of his age, opened his mouth.
   to: But when many had been seized, one man, first from the flock[a], a Hebrew named Eleazar, a priest by birth, trained in the law in knowledge[b], advanced in age, and known to many around the tyrant because of his age, opened his mouth.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('flock') because the note names that rendering; [b] anchored to ('trained in the law in knowledge') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:58:26Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But when many had been seized, one man, first from the flock[a], a Hebrew named Eleazar, a priest by birth, trained in the law in knowledge[b], advanced in age, and known to many around the tyrant because of his age, opened his mouth.
+  to: When many had been seized, the first man from this flock of captives was a Hebrew named Eleazar, a priest by birth and an expert in the law. He was advanced in age and known to many in the tyrant’s entourage because of his age. His mouth was being forced open[a].
+  rationale: The earlier review rightly clarified Eleazar's expertise, although its replacement of 'flock' need not be followed because that image remains intelligible when identified. Earlier passes understood the final clause as the beginning of speech; the grammatical form and forced-feeding context favor the alternative adopted here.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -157,3 +160,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/005/004.job-49816.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:58:26Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The first captive singled out is Eleazar, an elderly priest learned in the law and familiar to the tyrant's entourage, whose mouth is being opened by force.
+  meaning_decisions:
+  - source_phrase: εἷς πρῶτος ἐκ τῆς ἀγέλης
+    prior_rendering: one man, first from the flock
+    new_rendering: the first man from this flock of captives
+    rationale: The flock image is retained, while its reference to the seized Hebrews is made immediately clear.
+  - source_phrase: τὴν ἐπιστήμην νομικός
+    prior_rendering: trained in the law in knowledge
+    new_rendering: an expert in the law
+    rationale: The phrase describes Eleazar's learned competence in the Jewish law, not separate kinds of training and knowledge.
+  - source_phrase: πολλοῖς τῶν περὶ τὸν τύραννον
+    prior_rendering: many around the tyrant
+    new_rendering: many in the tyrant’s entourage
+    rationale: The expression identifies people associated with the ruler, not merely people standing nearby.
+  - source_phrase: ἠνῴχετο τὸ στόμιον αὐτοῦ
+    prior_rendering: opened his mouth
+    new_rendering: His mouth was being forced open
+    rationale: The middle-passive construction, read in the immediate forced-feeding context, favors an externally imposed opening of his mouth; the earlier interpretation remains in a footnote.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review rightly clarified Eleazar's expertise, although its replacement of 'flock' need not be followed because that image remains intelligible when identified. Earlier passes understood the final clause as the beginning of speech; the grammatical form and forced-feeding context favor the alternative adopted here.

@@ -18,17 +18,14 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Simon[a], being hostile to the king’s interests, reported that many tens of thousands of private funds had been stored in the treasuries of Jerusalem, not connected with the temple[c][b], but that these belonged to King Seleucus.
-  philosophy: optimal-equivalence
+  text: “I, Simon, have come in the king’s interests[a] to report that enormous sums of private money[b] have been deposited in Jerusalem’s treasuries. These funds do not belong to the temple but are due to King Seleucus.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the king’s affairs' or 'the king’s cause' for the phrase involving τοῖς τοῦ βασιλέως πράγμασιν; the Greek expression is somewhat compressed.
+    text: 'The opening Greek is awkward: “Being Simon, I have come in relation to the king’s affairs.” “I have come” is first person, indicating Simon’s direct speech.'
     reason: lexical_alternative
   - marker: b
-    text: Literally 'many myriads of private monies/funds.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'not shared with the temple' or 'not belonging in common to the temple.'
+    text: Literally, “many tens of thousands of private money”; no monetary unit is specified.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἥκω
@@ -126,7 +123,13 @@ revisions:
   from: Simon, being hostile to the king’s interests, reported that many tens of thousands of private funds had been stored in the treasuries of Jerusalem, funds not connected with the temple, but that these belonged to Seleucus the king.
   to: Simon, being hostile to the king’s interests, reported that many tens of thousands of private funds had been stored in the treasuries of Jerusalem, not connected with the temple, but that these belonged to King Seleucus.
   rationale: Removed the repeated noun 'funds' for smoother English and adjusted 'Seleucus the king' to 'King Seleucus' for more natural formal English. The rest of the draft accurately reflects the Greek.
-
+- timestamp: '2026-11-09T18:57:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Simon[a], being hostile to the king’s interests, reported that many tens of thousands of private funds had been stored in the treasuries of Jerusalem, not connected with the temple[c][b], but that these belonged to King Seleucus.
+  to: “I, Simon, have come in the king’s interests[a] to report that enormous sums of private money[b] have been deposited in Jerusalem’s treasuries. These funds do not belong to the temple but are due to King Seleucus.”
+  rationale: The later revision improved the royal name but retained an unsupported interpretation of ἥκω as hostility. I departed from that interpretation because the first-person verb and the surrounding narrative establish Simon’s professed service to the king; the documented distinction between private deposits and temple property is retained.
 cross_check:
   status: needs_review
   agreement: 0.1
@@ -146,3 +149,31 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/004/003.job-49789.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:47Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Simon claimed to be acting in the king’s interests and alleged that enormous private deposits in Jerusalem’s treasuries were not temple property but were due to Seleucus.
+  meaning_decisions:
+  - source_phrase: Σίμων ὢν τοῖς τοῦ βασιλέως πράγμασιν ἥκω, μηνύων
+    prior_rendering: Simon, being hostile to the king’s interests, reported
+    new_rendering: I, Simon, have come in the king’s interests to report
+    rationale: ἥκω means “I have come,” not “being hostile,” and verse 2 introduces speech; Apollonius’s praise in verse 4 also confirms that Simon presents himself as serving royal interests.
+  - source_phrase: πολλὰς ἰδιωτικῶν χρημάτων μυριάδας
+    prior_rendering: many tens of thousands of private funds
+    new_rendering: enormous sums of private money
+    rationale: The source emphasizes the immense amount of money without identifying a monetary unit; the literal numerical expression is preserved in a note.
+  - source_phrase: τῷ ἱερῷ μὴ ἐπικοινωνούσας, ἀλλὰ προσήκειν ταῦτα Σελεύκῳ τῷ βασιλεῖ
+    prior_rendering: not connected with the temple, but that these belonged to King Seleucus
+    new_rendering: These funds do not belong to the temple but are due to King Seleucus
+    rationale: The distinction concerns ownership rather than physical connection with the temple, and the royal claim remains explicitly part of Simon’s allegation.
+  footnote_kinds:
+    a: literal_wording
+    b: literal_wording
+  history_weighed: The later revision improved the royal name but retained an unsupported interpretation of ἥκω as hostility. I departed from that interpretation because the first-person verb and the surrounding narrative establish Simon’s professed service to the king; the documented distinction between private deposits and temple property is retained.

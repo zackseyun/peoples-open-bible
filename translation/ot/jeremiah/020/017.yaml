@@ -4,17 +4,11 @@ source:
   edition: WLC
   text: אֲשֶׁ֥ר לֹא מוֹתְתַ֖/נִי מֵ/רָ֑חֶם וַ/תְּהִי לִ֤/י אִמִּ/י֙ קִבְרִ֔/י וְ/רַחְמָ֖/הֿ הֲרַ֥ת עוֹלָֽם־־׃
 translation:
-  text: because he did not kill me from the womb[a], so that my mother would have been my grave[c][b], and her womb forever pregnant.
-  philosophy: optimal-equivalence
+  text: because he did not kill me in the womb[a]; otherwise my mother would have been my grave, and her womb forever pregnant.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more literally, 'who did not kill me from the womb.'
-    reason: lexical_alternative
-  - marker: b
-    text: 'Hebrew: ''my mother my grave,'' a compressed metaphor meaning that had he died in the womb, his mother would have served as his grave.'
-    reason: cultural_note
-  - marker: c
-    text: Or 'pregnant forever.'
+    text: Literally, “from the womb.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: אֲשֶׁר
@@ -96,14 +90,20 @@ revisions:
   from: because he did not put me to death from the womb, so that my mother would have been my grave, and her womb forever pregnant.
   to: because he did not put me to death from the womb, so that my mother would have been my grave, and her womb forever pregnant.
   rationale: Changed 'put me to death' to the more direct 'kill me' for closer lexical correspondence and smoother English; retained the rest of the structure.
-
 - timestamp: '2026-05-18T02:56:29Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'because he did not kill me from the womb[a], so that my mother would have been my grave[c][b], and her womb forever pregnant.'
-  to: 'because he did not kill me from the womb[a], so that my mother would have been my grave[c][b], and her womb forever pregnant.'
+  from: because he did not kill me from the womb[a], so that my mother would have been my grave[c][b], and her womb forever pregnant.
+  to: because he did not kill me from the womb[a], so that my mother would have been my grave[c][b], and her womb forever pregnant.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''did not put me to death''].'
+- timestamp: '2026-11-09T17:56:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: because he did not kill me from the womb[a], so that my mother would have been my grave[c][b], and her womb forever pregnant.
+  to: because he did not kill me in the womb[a]; otherwise my mother would have been my grave, and her womb forever pregnant.
+  rationale: The recorded “kill” and “put me to death” changes preserve the same transitive sense, so I retain the current “kill.” I preserve the counterfactual and the shocking mother-as-grave image while clarifying the location and consequence of the wished-for death.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -123,3 +123,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/020/017.job-67544.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:56:24Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Jeremiah continues the curse because he was not killed before birth, imagining his mother as his grave and her pregnancy without end.
+  meaning_decisions:
+  - source_phrase: מֵרָחֶם
+    prior_rendering: from the womb
+    new_rendering: in the womb
+    rationale: The following image of the mother as a grave and her continuing pregnancy shows that Jeremiah envisions death before birth; “kill me from the womb” does not communicate that clearly in English.
+  - source_phrase: וַתְּהִי לִי אִמִּי קִבְרִי
+    prior_rendering: so that my mother would have been my grave
+    new_rendering: otherwise my mother would have been my grave
+    rationale: '“Otherwise” makes the counterfactual clear: had he been killed before birth, his mother would have been his grave. It avoids attaching the grave image as a result of his not being killed.'
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The recorded “kill” and “put me to death” changes preserve the same transitive sense, so I retain the current “kill.” I preserve the counterfactual and the shocking mother-as-grave image while clarifying the location and consequence of the wished-for death.

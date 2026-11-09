@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: Καὶ εἶπεν πρὸς αὐτούς· Τίς ἐξ ὑμῶν ἕξει φίλον καὶ πορεύσεται πρὸς αὐτὸν μεσονυκτίου καὶ εἴπῃ αὐτῷ· Φίλε, χρῆσόν μοι τρεῖς ἄρτους,
 translation:
-  text: And he said to them[a], “Which of you who has a friend will go to him at midnight and say to him, ‘Friend, lend me three loaves,’”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “Who among you has a friend and goes to him at midnight…” The Greek uses future forms in a rhetorical question, which may be rendered more idiomatically in English with present tense.
-    reason: lexical_alternative
+  text: Then he said to them, “Suppose one of you has a friend and goes to him at midnight and says, ‘Friend, lend me three loaves,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Τίς ἐξ ὑμῶν
   chosen: Which of you
@@ -84,14 +80,20 @@ revisions:
   from: And he said to them, “Which of you will have a friend and will go to him at midnight and say to him, ‘Friend, lend me three loaves,’”
   to: And he said to them, “Which of you will have a friend and will go to him at midnight and say to him, ‘Friend, lend me three loaves,’”
   rationale: Revised the opening clause from 'will have a friend' to 'who has a friend' for more natural English while preserving the sense of the Greek. No other changes needed.
-
 - timestamp: '2026-05-18T03:01:54Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he said to them[a], “Which of you who has a friend will go to him at midnight and say to him, ‘Friend, lend me three loaves,’”'
-  to: 'And he said to them[a], “Which of you who has a friend will go to him at midnight and say to him, ‘Friend, lend me three loaves,’”'
+  from: And he said to them[a], “Which of you who has a friend will go to him at midnight and say to him, ‘Friend, lend me three loaves,’”
+  to: And he said to them[a], “Which of you who has a friend will go to him at midnight and say to him, ‘Friend, lend me three loaves,’”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will have''].'
+- timestamp: '2026-11-09T17:18:35Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he said to them[a], “Which of you who has a friend will go to him at midnight and say to him, ‘Friend, lend me three loaves,’”
+  to: Then he said to them, “Suppose one of you has a friend and goes to him at midnight and says, ‘Friend, lend me three loaves,
+  rationale: The earlier revision rightly moved away from the awkward 'will have a friend.' I extend that improvement by rendering the whole hypothetical setup idiomatically rather than retaining a question whose construction becomes unclear in English.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -115,3 +117,21 @@ cross_check:
     agree: 1
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/011/005.job-55588.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:18:35Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jesus asks his listeners to imagine going to a friend at midnight to borrow three loaves.
+  meaning_decisions:
+  - source_phrase: Τίς ἐξ ὑμῶν ἕξει φίλον καὶ πορεύσεται πρὸς αὐτὸν μεσονυκτίου καὶ εἴπῃ αὐτῷ
+    prior_rendering: Which of you who has a friend will go to him at midnight and say to him
+    new_rendering: Suppose one of you has a friend and goes to him at midnight and says
+    rationale: The extended rhetorical construction invites the hearers to imagine a situation. 'Suppose' carries that function naturally and allows the scenario to continue coherently through verses 6–7.
+  footnote_kinds: {}
+  history_weighed: The earlier revision rightly moved away from the awkward 'will have a friend.' I extend that improvement by rendering the whole hypothetical setup idiomatically rather than retaining a question whose construction becomes unclear in English.

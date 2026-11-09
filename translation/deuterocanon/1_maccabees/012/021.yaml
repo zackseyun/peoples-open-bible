@@ -27,15 +27,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: It was found in a writing concerning both the Spartans and the Jews that they are brothers and that they are of the family line of Abraham[a][b].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'in a document' or 'in a record.' The Greek term here refers to a written source and does not necessarily mean sacred Scripture.
-    reason: lexical_alternative
-  - marker: b
-    text: That is, a claimed shared descent from Abraham in the written source being cited.
-    reason: cultural_note
+  text: It has been found in a written record that the Spartans and the Jews are brothers and are descended from Abraham.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: εὑρέθη
   chosen: It was found
@@ -112,14 +105,20 @@ revisions:
   from: It was found in a writing concerning both the Spartans and the Jews that they are brothers and that they are from the family line of Abraham.
   to: It was found in a writing concerning both the Spartans and the Jews that they are brothers and that they are from the family line of Abraham.
   rationale: Changed 'from the family line of Abraham' to 'of the family line of Abraham' for a more natural and formally appropriate rendering of ἐκ γένους Ἀβραάμ while preserving the sense.
-
 - timestamp: '2026-05-18T02:59:02Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'It was found in a writing concerning both the Spartans and the Jews that they are brothers and that they are of the family line of Abraham[a][b].'
-  to: 'It was found in a writing concerning both the Spartans and the Jews that they are brothers and that they are of the family line of Abraham[a][b].'
+  from: It was found in a writing concerning both the Spartans and the Jews that they are brothers and that they are of the family line of Abraham[a][b].
+  to: It was found in a writing concerning both the Spartans and the Jews that they are brothers and that they are of the family line of Abraham[a][b].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from the family line of Abraham''].'
+- timestamp: '2026-11-09T18:52:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: It was found in a writing concerning both the Spartans and the Jews that they are brothers and that they are of the family line of Abraham[a][b].
+  to: It has been found in a written record that the Spartans and the Jews are brothers and are descended from Abraham.
+  rationale: The recorded review and automated revert concerned only 'from' versus 'of the family line.' I preserve the documented decision to translate the claim as actual shared descent, not merely political friendship, while making the English clearer.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -139,3 +138,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/012/021.job-48692.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:56Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Spartan king reports that a written record identifies Spartans and Jews as brothers descended from Abraham.
+  meaning_decisions:
+  - source_phrase: εὑρέθη ἐν γραφῇ περὶ τε τῶν Σπαρτιατῶν καὶ Ἰουδαίων
+    prior_rendering: It was found in a writing concerning both the Spartans and the Jews
+    new_rendering: It has been found in a written record that the Spartans and the Jews
+    rationale: The sentence reports information discovered in a written source; 'written record' makes this clear without suggesting that the source must be sacred Scripture.
+  - source_phrase: εἰσὶν ἐκ γένους Ἀβραάμ
+    prior_rendering: they are of the family line of Abraham
+    new_rendering: are descended from Abraham
+    rationale: The phrase asserts ancestry, which 'descended from' conveys directly and naturally.
+  footnote_kinds: {}
+  history_weighed: The recorded review and automated revert concerned only 'from' versus 'of the family line.' I preserve the documented decision to translate the claim as actual shared descent, not merely political friendship, while making the English clearer.

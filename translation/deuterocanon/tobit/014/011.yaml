@@ -7,18 +7,12 @@ source:
   pages: []
   confidence: high
 translation:
-  text: And now, children, see what almsgiving does, and how righteousness[a] delivers. And while he was saying these things, his life came to an end on the bed. He was a hundred fifty-eight years old[b], and he buried him honorably[c].
-  philosophy: optimal-equivalence
+  text: And now, children, see what almsgiving does, and how righteousness delivers.” While he was saying these things, his life came to an end[a] on his bed. He was one hundred fifty-eight years old, and Tobias buried him with honor.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'justice delivers.' The Greek word can denote either righteousness or justice depending on context.
+    text: Literally, "his soul failed."
     reason: lexical_alternative
-  - marker: b
-    text: Literally, 'his soul failed/left him.' This is a Greek idiom for death.
-    reason: lexical_alternative
-  - marker: c
-    text: 'Some readers may expect ''they buried him honorably,'' but the Greek witness here has a singular verb: ''he buried him honorably.'''
-    reason: textual_variant
 lexical_decisions:
 - source_word: παιδία
   chosen: children
@@ -135,13 +129,12 @@ revisions:
   from: And now, children, see what almsgiving does, and how righteousness delivers. And while he was saying these things, his life came to an end on the bed. He was a hundred fifty-eight years old, and he buried him honorably.
   to: And now, children, see what almsgiving does, and how righteousness delivers. And while he was saying these things, his soul departed on the bed. He was a hundred fifty-eight years old, and he buried him honorably.
   rationale: Changed 'his life came to an end' to 'his soul departed' to more closely reflect the Greek ἐξέλιπεν ... ἡ ψυχή while retaining formal register. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T03:09:42Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And now[a], children, see what almsgiving does, and how righteousness delivers. And while he was saying these things, his soul departed on the bed. He was a hundred fifty-eight years old[c][b], and he buried him honorably.'
-  to: 'And now, children, see what almsgiving does, and how righteousness delivers. And while he was saying these things, his life came to an end on the bed. He was a hundred fifty-eight years old, and he buried him honorably.'
+  from: And now[a], children, see what almsgiving does, and how righteousness delivers. And while he was saying these things, his soul departed on the bed. He was a hundred fifty-eight years old[c][b], and he buried him honorably.
+  to: And now, children, see what almsgiving does, and how righteousness delivers. And while he was saying these things, his life came to an end on the bed. He was a hundred fifty-eight years old, and he buried him honorably.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''his life came to an end''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -151,6 +144,13 @@ revisions:
   from: And now, children, see what almsgiving does, and how righteousness delivers. And while he was saying these things, his life came to an end on the bed. He was a hundred fifty-eight years old, and he buried him honorably.
   to: And now, children, see what almsgiving does, and how righteousness[a] delivers. And while he was saying these things, his life came to an end on the bed. He was a hundred fifty-eight years old[b], and he buried him honorably[c].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('righteousness') because the note names that rendering; [b] restored to the position it held before an earlier revision pass dropped it; [c] anchored to ('he buried him honorably') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:11:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And now, children, see what almsgiving does, and how righteousness[a] delivers. And while he was saying these things, his life came to an end on the bed. He was a hundred fifty-eight years old[b], and he buried him honorably[c].
+  to: And now, children, see what almsgiving does, and how righteousness delivers.” While he was saying these things, his life came to an end[a] on his bed. He was one hundred fifty-eight years old, and Tobias buried him with honor.
+  rationale: I retain the restored 'his life came to an end,' which conveys the death idiom without defining the soul's departure more precisely than the source does. The history's insistence on a singular burial verb is preserved by naming Tobias rather than changing it to 'they.'
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -170,3 +170,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/tobit/014/011.job-52614.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:03Z'
+  change_level: refined
+  confidence: high
+  meaning: Tobit concludes by pointing to the power of almsgiving and righteousness, dies at one hundred fifty-eight, and receives an honorable burial from his son.
+  meaning_decisions:
+  - source_phrase: καὶ ἔθαψεν αὐτὸν ἐνδόξως
+    prior_rendering: and he buried him honorably
+    new_rendering: and Tobias buried him with honor
+    rationale: The singular subject is Tobit's surviving son; naming him prevents the English from seeming to say that the deceased Tobit performed the burial.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: I retain the restored 'his life came to an end,' which conveys the death idiom without defining the soul's departure more precisely than the source does. The history's insistence on a singular burial verb is preserved by naming Tobias rather than changing it to 'they.'

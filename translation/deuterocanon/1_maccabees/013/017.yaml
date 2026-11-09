@@ -9,15 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Simon recognized that they were speaking deceitfully to him[a], yet he sent the money and the boys[b], lest he stir up great hostility against the people.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the silver.' The Greek ἀργύριον can denote silver as metal or money/payment silver.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'against the people' or 'with the people.' The Greek phrase πρὸς τὸν λαόν is relationally flexible; the translation takes it as hostility arising among the populace.
-    reason: alternative_reading
+  text: Although Simon recognized that they were deceiving him, he sent the money and the boys, for fear of incurring the people’s bitter hostility.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἔγνω
   chosen: recognized
@@ -114,14 +107,20 @@ revisions:
   from: And Simon recognized that they were speaking to him deceitfully, yet he sent the money and the boys, lest he stir up great hostility among the people.
   to: And Simon recognized that they were speaking to him deceitfully, yet he sent the money and the boys, lest he stir up great hostility among the people.
   rationale: Adjusted word order to more naturally reflect the Greek ('speaking deceitfully to him'). Changed 'among the people' to 'against the people' to better match πρὸς τὸν λαόν. Kept 'boys' for παιδάρια and retained 'yet' to reflect the contrast.
-
 - timestamp: '2026-05-16T14:22:20Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Simon recognized that they were speaking deceitfully to him[a], yet he sent the money and the boys[b], lest he stir up great hostility against the people.'
-  to: 'And Simon recognized that they were speaking deceitfully to him[a], yet he sent the money and the boys[b], lest he stir up great hostility against the people.'
-  rationale: 'Restored drafter ''were speaking to him deceitfully'' (preserving the chosen word order) and ''among the people'' (preserving the locative-among sense per chosen renderings).'
+  from: And Simon recognized that they were speaking deceitfully to him[a], yet he sent the money and the boys[b], lest he stir up great hostility against the people.
+  to: And Simon recognized that they were speaking deceitfully to him[a], yet he sent the money and the boys[b], lest he stir up great hostility against the people.
+  rationale: Restored drafter 'were speaking to him deceitfully' (preserving the chosen word order) and 'among the people' (preserving the locative-among sense per chosen renderings).
+- timestamp: '2026-11-09T18:52:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Simon recognized that they were speaking deceitfully to him[a], yet he sent the money and the boys[b], lest he stir up great hostility against the people.
+  to: Although Simon recognized that they were deceiving him, he sent the money and the boys, for fear of incurring the people’s bitter hostility.
+  rationale: The draft and lexical rationale recognized hostility arising among the people, whereas the later 'against the people' obscures the explanation in verse 18. I state that relationship directly and retain 'boys,' who are Jonathan’s sons from verse 16, not Simon’s sons.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -141,3 +140,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/013/017.job-48741.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:47Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Simon sends the money and Jonathan’s sons despite recognizing the deception, because he fears incurring the people’s hostility.
+  meaning_decisions:
+  - source_phrase: ἔγνω Σίμων ὅτι δόλῳ λαλοῦσιν πρὸς αὐτόν
+    prior_rendering: Simon recognized that they were speaking deceitfully to him
+    new_rendering: Although Simon recognized that they were deceiving him
+    rationale: The concessive construction makes explicit that Simon complied despite seeing through their message.
+  - source_phrase: μή ποτε ἔχθραν ἄρῃ μεγάλην πρὸς τὸν λαόν
+    prior_rendering: lest he stir up great hostility against the people
+    new_rendering: for fear of incurring the people’s bitter hostility
+    rationale: Verse 18 identifies the feared response as the people blaming Simon; the hostility would be theirs toward him, not hostility directed against them.
+  footnote_kinds: {}
+  history_weighed: The draft and lexical rationale recognized hostility arising among the people, whereas the later 'against the people' obscures the explanation in verse 18. I state that relationship directly and retain 'boys,' who are Jonathan’s sons from verse 16, not Simon’s sons.

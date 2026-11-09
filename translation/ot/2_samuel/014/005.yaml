@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּֽאמֶר לָ֥/הּ הַ/מֶּ֖לֶךְ מַה לָּ֑/ךְ וַ/תֹּ֗אמֶר אֲבָ֛ל אִשָּֽׁה אַלְמָנָ֥ה אָ֖נִי וַ/יָּ֥מָת אִישִֽׁ/י־־־׃
 translation:
-  text: The king said to her[a], “What is the matter?” She said, “Indeed, I am a widow[b], and my husband has died.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “What is the matter with you?”
-    reason: lexical_alternative
-  - marker: b
-    text: Or, “Alas, I am a widow.”
-    reason: lexical_alternative
+  text: The king said to her, “What is the matter?” She said, “Indeed, I am a widow, and my husband has died.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: מַה לָּךְ
   chosen: What troubles you?
@@ -75,14 +68,20 @@ revisions:
   from: The king said to her, “What troubles you?” She said, “Indeed, I am a widow, and my husband has died.”
   to: The king said to her, “What is the matter?” She said, “Indeed, I am a widow, and my husband is dead.”
   rationale: Revised “What troubles you?” to the more literal and formal “What is the matter?” and changed “has died” to “is dead” to reflect the Hebrew wording more directly.
-
 - timestamp: '2026-05-15T20:39:59Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The king said to her[a], “What is the matter?” She said, “Indeed, I am a widow[b], and my husband is dead.”'
-  to: 'The king said to her[a], “What is the matter?” She said, “Indeed, I am a widow[b], and my husband has died.”'
-  rationale: 'Drafter chose ''What troubles you?'' as idiomatic rendering of מַה לָּךְ (preserving personal directed-inquiry force); azure substituted ''What is the matter?'' (no more literal — just more formal). Drafter chose ''has died'' (English present-perfect for resultant-state widowhood); azure substituted ''is dead'' falsely claiming wayyiqtol has present-stative force.'
+  from: The king said to her[a], “What is the matter?” She said, “Indeed, I am a widow[b], and my husband is dead.”
+  to: The king said to her[a], “What is the matter?” She said, “Indeed, I am a widow[b], and my husband has died.”
+  rationale: Drafter chose 'What troubles you?' as idiomatic rendering of מַה לָּךְ (preserving personal directed-inquiry force); azure substituted 'What is the matter?' (no more literal — just more formal). Drafter chose 'has died' (English present-perfect for resultant-state widowhood); azure substituted 'is dead' falsely claiming wayyiqtol has present-stative force.
+- timestamp: '2026-11-09T17:29:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The king said to her[a], “What is the matter?” She said, “Indeed, I am a widow[b], and my husband has died.”
+  to: The king said to her, “What is the matter?” She said, “Indeed, I am a widow, and my husband has died.”
+  rationale: The history establishes that “has died” naturally conveys the death that has left her widowed, whereas the proposed “is dead” had no grammatical advantage. The current question and reply convey the meaning well and are retained.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -102,3 +101,17 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/014/005.job-45712.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:29:20Z'
+  change_level: kept
+  confidence: high
+  meaning: When the king asks what is wrong, the woman begins her account by presenting herself as a widow.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The history establishes that “has died” naturally conveys the death that has left her widowed, whereas the proposed “is dead” had no grammatical advantage. The current question and reply convey the meaning well and are retained.

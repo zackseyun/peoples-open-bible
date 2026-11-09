@@ -9,11 +9,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And they came as far as Ephron. This was a large city at the entrance[a], very strong. There was no way to turn aside from it to the right or to the left, but only to go through the middle of it.
-  philosophy: optimal-equivalence
+  text: They reached Ephron, a large, strongly fortified city controlling the route[a]. There was no way around it to the right or the left; they had to pass through the city itself.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'at the pass' or 'at the approach'; the Greek phrase identifies Ephron as controlling the entrance route, which explains why they could not go around it.
+    text: Literally, 'the city of the entrance,' indicating its position at an approach or pass.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἦλθον ἕως Ἐφρών
@@ -96,14 +96,20 @@ revisions:
   from: And they came as far as Ephron, a large city at the entrance, very strong. There was no turning aside from it to the right or to the left, but only to go through the middle of it.
   to: And they came as far as Ephron, a large city at the entrance, very strong. There was no turning aside from it to the right or to the left, but only to go through the middle of it.
   rationale: Split the sentence for clearer formal English, rendered αὕτη explicitly as 'This was,' and added 'way' to make 'there was no turning aside' more natural while preserving the sense.
-
 - timestamp: '2026-05-18T02:59:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they came as far as Ephron. This was a large city at the entrance[a], very strong. There was no way to turn aside from it to the right or to the left, but only to go through the middle of it.'
-  to: 'And they came as far as Ephron. This was a large city at the entrance[a], very strong. There was no way to turn aside from it to the right or to the left, but only to go through the middle of it.'
+  from: And they came as far as Ephron. This was a large city at the entrance[a], very strong. There was no way to turn aside from it to the right or to the left, but only to go through the middle of it.
+  to: And they came as far as Ephron. This was a large city at the entrance[a], very strong. There was no way to turn aside from it to the right or to the left, but only to go through the middle of it.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''There was no turning aside''].'
+- timestamp: '2026-11-09T18:52:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they came as far as Ephron. This was a large city at the entrance[a], very strong. There was no way to turn aside from it to the right or to the left, but only to go through the middle of it.
+  to: They reached Ephron, a large, strongly fortified city controlling the route[a]. There was no way around it to the right or the left; they had to pass through the city itself.
+  rationale: The review improved sentence structure, and the earlier note recognized that Ephron controlled the entrance route. I build on that contextual insight while retaining a note for the difficult geographical phrase.
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -123,3 +129,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/005/046.job-48252.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:22Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The travelers reached strongly fortified Ephron, which controlled their route and could not be bypassed.
+  meaning_decisions:
+  - source_phrase: ἡ τῆς εἰσόδου
+    prior_rendering: at the entrance
+    new_rendering: controlling the route
+    rationale: The following statement establishes the city's strategic control of their passage; an unspecified 'entrance' does not convey that clearly in English.
+  - source_phrase: ἰσχυρὰ σφόδρα
+    prior_rendering: very strong
+    new_rendering: strongly fortified
+    rationale: The city's strength in this military setting is defensive strength.
+  - source_phrase: οὐκ ἦν ἐκκλῖναι ἀπ’ αὐτῆς δεξιὰν ἢ ἀριστεράν
+    prior_rendering: There was no way to turn aside from it to the right or to the left
+    new_rendering: There was no way around it to the right or the left
+    rationale: The phrase concerns the impossibility of bypassing the city, not simply turning away from it.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The review improved sentence structure, and the earlier note recognized that Ephron controlled the entrance route. I build on that contextual insight while retaining a note for the difficult geographical phrase.

@@ -10,12 +10,8 @@ source:
   validation: normalized_direct_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Bel extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: And the king said to Daniel[a], “You cannot say that this is not a living god; and bow down to him.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “worship him.” The Greek verb can refer to bowing down in homage or to worship, especially when directed toward a deity.
-    reason: lexical_alternative
+  text: The king said to Daniel, “You cannot say that this is not a living god. So bow down to him.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Οὐ δύνασαι εἰπεῖν
   chosen: You cannot say
@@ -90,7 +86,13 @@ revisions:
   from: And the king said to Daniel, “You cannot say that this is not a living god; so bow down to him.”
   to: And the king said to Daniel, “You cannot say that this is not a living god; and bow down to him.”
   rationale: Replaced 'so bow down to him' with 'and bow down to him' to reflect the simple Greek conjunction καὶ more directly and avoid adding a causal nuance not explicit in the source.
-
+- timestamp: '2026-11-09T19:01:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the king said to Daniel[a], “You cannot say that this is not a living god; and bow down to him.”
+  to: The king said to Daniel, “You cannot say that this is not a living god. So bow down to him.”
+  rationale: The first draft’s 'so' was changed solely to mirror καί more closely. The king’s reasoning supports restoring that connection, while retaining 'living god' and the concrete act of bowing down.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -110,3 +112,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/bel_and_the_dragon/001/024.job-50478.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:04Z'
+  change_level: refined
+  confidence: high
+  meaning: The king argues that the dragon’s evident life establishes its divinity and therefore commands Daniel to bow down to it.
+  meaning_decisions:
+  - source_phrase: καὶ προσκύνησον αὐτῷ
+    prior_rendering: and bow down to him
+    new_rendering: So bow down to him
+    rationale: The command follows from the king’s claim that the dragon is a living god; 'so' conveys the argumentative connection that a bare 'and' obscures.
+  footnote_kinds: {}
+  history_weighed: The first draft’s 'so' was changed solely to mirror καί more closely. The king’s reasoning supports restoring that connection, while retaining 'living god' and the concrete act of bowing down.

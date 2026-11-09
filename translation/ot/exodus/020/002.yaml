@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: אָֽנֹכִ֖י יְהוָ֣ה אֱלֹהֶ֑י/ךָ אֲשֶׁ֧ר הוֹצֵאתִ֛י/ךָ מֵ/אֶ֥רֶץ מִצְרַ֖יִם מִ/בֵּ֥ית עֲבָדִֽים׃
 translation:
-  text: I am Yahweh your God[a], who brought you out from the land of Egypt[b], from the house of servants.
-  philosophy: optimal-equivalence
+  text: I am Yahweh your God, who brought you out of the land of Egypt, out of slavery[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more idiomatically, 'from the house of slavery.' The Hebrew is literally 'from the house of slaves.'
+    text: Literally, “out of the house of slaves.”
     reason: lexical_alternative
-  - marker: b
-    text: Hebrew YHWH, traditionally rendered 'the LORD'; alternatively transliterated 'Yahweh.'
-    reason: alternative_reading
 lexical_decisions:
 - source_word: אָֽנֹכִי
   chosen: I am
@@ -97,14 +94,20 @@ revisions:
   from: I am the LORD your God, who brought you out from the land of Egypt, from the house of slaves.
   to: I am the LORD your God, who brought you out of the land of Egypt, out of the house of slavery.
   rationale: Changed 'out from' to the more natural 'out of' in both phrases, and revised 'the house of slaves' to 'the house of slavery' for a more accurate and idiomatic rendering of בֵּית עֲבָדִים in this context.
-
 - timestamp: '2026-05-16T03:24:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'I am Yahweh your God[a], who brought you out of the land of Egypt[b], out of the house of slavery.'
-  to: 'I am Yahweh your God[a], who brought you out from the land of Egypt[b], from the house of slaves.'
+  from: I am Yahweh your God[a], who brought you out of the land of Egypt[b], out of the house of slavery.
+  to: I am Yahweh your God[a], who brought you out from the land of Egypt[b], from the house of slaves.
   rationale: 'Azure substituted ''out of'' (drops drafter''s parallel ''from'' structure) and ''house of slavery'' for drafter''s chosen ''out from / house of slaves'' (drafter''s documented rationale: ''house of slavery'' is rejected; preserves concrete Hebrew plural עֲבָדִים).'
+- timestamp: '2026-11-09T17:34:31Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: I am Yahweh your God[a], who brought you out from the land of Egypt[b], from the house of servants.
+  to: I am Yahweh your God, who brought you out of the land of Egypt, out of slavery[a].
+  rationale: The earlier review recognized the idiomatic sense of slavery, while the automated revert favored the concrete Hebrew construction; neither is a maintainer ruling. I follow the meaning-based gain of the review and preserve the household expression in a correctly placed footnote.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -127,3 +130,22 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/020/002.job-62753.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:34:31Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Yahweh identifies himself as Israel’s God and the one who freed them from slavery in Egypt.
+  meaning_decisions:
+  - source_phrase: מֵאֶרֶץ מִצְרַיִם מִבֵּית עֲבָדִים
+    prior_rendering: out from the land of Egypt, from the house of servants
+    new_rendering: out of the land of Egypt, out of slavery
+    rationale: The second phrase describes Israel’s condition of bondage, not an ordinary household of servants. Natural English makes the liberation explicit while preserving the repeated emphasis on being brought out.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier review recognized the idiomatic sense of slavery, while the automated revert favored the concrete Hebrew construction; neither is a maintainer ruling. I follow the meaning-based gain of the review and preserve the household expression in a correctly placed footnote.

@@ -19,12 +19,12 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: For the whole creation[a], in its own kind, was formed anew from above, serving your own commands, so that your children might be kept unharmed.
-  philosophy: optimal-equivalence
+  text: For the whole creation was refashioned from the beginning[a], each part according to its own kind, obeying your commands so that your children might be kept unharmed.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'was refashioned anew from the beginning.' The Greek ἄνωθεν can mean 'from above' or 'from the beginning,' and διετυποῦτο can suggest being reshaped or refashioned.
-    reason: lexical_alternative
+    text: Or, 'fashioned anew from above.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ὅλη
   chosen: the whole
@@ -126,14 +126,20 @@ revisions:
   from: For the whole creation, in its own kind, was formed anew from above, serving your own commands, so that your children might be kept unharmed.
   to: For the whole creation, in its own nature, was formed anew from the beginning, serving your commands, so that your children might be kept unharmed.
   rationale: Revised 'in its own kind' to 'in its own nature' for γένει, and 'from above' to 'from the beginning' for ἄνωθεν in this context. Removed the unnecessary second 'own' before 'commands' for more natural and accurate English.
-
 - timestamp: '2026-05-15T15:24:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For the whole creation[a], in its own nature, was formed anew from the beginning, serving your commands, so that your children might be kept unharmed.'
-  to: 'For the whole creation[a], in its own kind, was formed anew from above, serving your own commands, so that your children might be kept unharmed.'
-  rationale: 'Restored 3 chosen renderings preserving γένος (not φύσις), DOCTRINE.md §3 theological tension, and ἰδίαις representation.'
+  from: For the whole creation[a], in its own nature, was formed anew from the beginning, serving your commands, so that your children might be kept unharmed.
+  to: For the whole creation[a], in its own kind, was formed anew from above, serving your own commands, so that your children might be kept unharmed.
+  rationale: Restored 3 chosen renderings preserving γένος (not φύσις), DOCTRINE.md §3 theological tension, and ἰδίαις representation.
+- timestamp: '2026-11-09T19:14:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For the whole creation[a], in its own kind, was formed anew from above, serving your own commands, so that your children might be kept unharmed.
+  to: For the whole creation was refashioned from the beginning[a], each part according to its own kind, obeying your commands so that your children might be kept unharmed.
+  rationale: The earlier review favored renewal 'from the beginning,' but an automated revert restored 'from above'; there is no MAINTAINER ruling. The creation imagery favors the former here, while the latter remains available in the footnote.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -153,3 +159,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/019/006.job-39490.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:14:01Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Creation was fashioned anew under God's commands, each part according to its kind, to keep his children unharmed.
+  meaning_decisions:
+  - source_phrase: πάλιν ἄνωθεν διετυποῦτο
+    prior_rendering: was formed anew from above
+    new_rendering: was refashioned from the beginning
+    rationale: The following sea-to-land transformation evokes creation being ordered anew, favoring the temporal sense of ἄνωθεν. The serious alternative 'from above' remains in a note.
+  - source_phrase: ἐν ἰδίῳ γένει
+    prior_rendering: in its own kind
+    new_rendering: each part according to its own kind
+    rationale: The collective expression concerns creation's constituent kinds; making that distribution explicit avoids treating the whole creation as one biological kind.
+  - source_phrase: ὑπηρετοῦσα ταῖς ἰδίαις ἐπιταγαῖς
+    prior_rendering: serving your own commands
+    new_rendering: obeying your commands
+    rationale: Creation acts in service to God's authoritative orders; 'obeying' expresses this naturally without an awkward possessive repetition.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review favored renewal 'from the beginning,' but an automated revert restored 'from above'; there is no MAINTAINER ruling. The creation imagery favors the former here, while the latter remains available in the footnote.

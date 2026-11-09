@@ -9,12 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And after barely rousing himself[a], he pointed out that the time for the banquet was already slipping by, making his speech about these matters.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'the time for the feast was already passing by.' The Greek συμποσία can refer to a banquet or drinking feast, and παρατρέχοντα pictures the time as passing quickly.
-    reason: lexical_alternative
+  text: He woke the king with difficulty and explained that the time for the banquet was already slipping by.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: μόλις
   chosen: barely
@@ -88,13 +84,12 @@ revisions:
   from: And after barely rousing himself, he pointed out that the time for the banquet was already slipping by, making his speech about these matters.
   to: And after barely rousing himself, he pointed out that the time for the banquet was already slipping by, speaking about these matters.
   rationale: Replaced 'making his speech about these matters' with 'speaking about these matters' for more natural formal English while preserving the sense of τὸν περὶ τούτων λόγον ποιούμενος.
-
 - timestamp: '2026-05-18T03:10:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And after barely rousing himself[a], he pointed out that the time for the banquet was already slipping by, speaking about these matters.'
-  to: 'And after barely rousing himself, he pointed out that the time for the banquet was already slipping by, making his speech about these matters.'
+  from: And after barely rousing himself[a], he pointed out that the time for the banquet was already slipping by, speaking about these matters.
+  to: And after barely rousing himself, he pointed out that the time for the banquet was already slipping by, making his speech about these matters.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''making his speech about these matters''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -104,6 +99,13 @@ revisions:
   from: And after barely rousing himself, he pointed out that the time for the banquet was already slipping by, making his speech about these matters.
   to: And after barely rousing himself[a], he pointed out that the time for the banquet was already slipping by, making his speech about these matters.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:56:43Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And after barely rousing himself[a], he pointed out that the time for the banquet was already slipping by, making his speech about these matters.
+  to: He woke the king with difficulty and explained that the time for the banquet was already slipping by.
+  rationale: The recorded lexical rationale treated the waking as reflexive, but the sentence’s continuing subject and the preceding reference to the king support a transitive reading. The earlier review’s attempt to smooth the speech idiom was useful, and I carry that improvement further.
 cross_check:
   status: needs_review
   agreement: 0.7
@@ -123,3 +125,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/005/015.job-49606.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:43Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The official wakes the king with difficulty and explains that the time for the banquet is slipping away.
+  meaning_decisions:
+  - source_phrase: καὶ μόλις διεγείρας
+    prior_rendering: And after barely rousing himself
+    new_rendering: He woke the king with difficulty
+    rationale: The official remains the subject from verse 14, and the king is the implied object of the active verb; the official is not waking himself.
+  - source_phrase: ὑπέδειξέ … τὸν περὶ τούτων λόγον ποιούμενος
+    prior_rendering: he pointed out … making his speech about these matters
+    new_rendering: explained
+    rationale: The speech idiom describes the official’s explanation rather than an additional action and is naturally absorbed into the reporting verb.
+  footnote_kinds: {}
+  history_weighed: The recorded lexical rationale treated the waking as reflexive, but the sentence’s continuing subject and the preceding reference to the king support a transitive reading. The earlier review’s attempt to smooth the speech idiom was useful, and I carry that improvement further.

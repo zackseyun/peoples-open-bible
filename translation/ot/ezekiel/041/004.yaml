@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וַ/יָּ֨מָד אֶת אָרְכּ֜/וֹ עֶשְׂרִ֣ים אַמָּ֗ה וְ/רֹ֛חַב עֶשְׂרִ֥ים אַמָּ֖ה אֶל פְּנֵ֣י הַֽ/הֵיכָ֑ל וַ/יֹּ֣אמֶר אֵלַ֔/י זֶ֖ה קֹ֥דֶשׁ הַ/קֳּדָשִֽׁים־־׃
 translation:
-  text: 'Then he measured its length: twenty cubits[a], and the width: twenty cubits, before the nave; and he said to me, “This is the Most Holy Place.”'
-  philosophy: optimal-equivalence
+  text: 'Then he measured the inner room: twenty cubits long and twenty cubits wide, facing the main hall. He said to me, “This is the Most Holy Place[a].”'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, traditionally, “the Holy of Holies.”
+    text: Literally, “the Holy of Holies.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וַיָּמָד
@@ -93,7 +93,6 @@ revisions:
   from: 'Then he measured its length: twenty cubits, and the width: twenty cubits, in front of the nave; and he said to me, “This is the Most Holy Place.”'
   to: 'Then he measured its length: twenty cubits, and the width: twenty cubits, in front of the nave; and he said to me, “This is the Most Holy Place.”'
   rationale: Changed 'in front of the nave' to 'before the nave' for a slightly more formal and direct rendering of the spatial phrase. No other changes needed.
-
 - timestamp: '2026-05-18T02:54:36Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -101,6 +100,13 @@ revisions:
   from: 'Then he measured its length: twenty cubits[a], and the width: twenty cubits, before the nave; and he said to me, “This is the Most Holy Place.”'
   to: 'Then he measured its length: twenty cubits[a], and the width: twenty cubits, before the nave; and he said to me, “This is the Most Holy Place.”'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in front of the nave''].'
+- timestamp: '2026-11-09T17:40:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Then he measured its length: twenty cubits[a], and the width: twenty cubits, before the nave; and he said to me, “This is the Most Holy Place.”'
+  to: 'Then he measured the inner room: twenty cubits long and twenty cubits wide, facing the main hall. He said to me, “This is the Most Holy Place[a].”'
+  rationale: The review history alternates between “before” and “in front of,” neither of which clearly conveys the interior arrangement. I retain the established “Most Holy Place” rendering and place its literal-wording note at the phrase it explains.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -122,3 +128,26 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/ot/ezekiel/041/004.job-28553.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:40:30Z'
+  change_level: refined
+  confidence: high
+  meaning: The inner room facing the main hall is twenty cubits square and is identified as the Most Holy Place.
+  meaning_decisions:
+  - source_phrase: וַיָּמָד אֶת אָרְכּוֹ
+    prior_rendering: Then he measured its length
+    new_rendering: Then he measured the inner room
+    rationale: Naming the room makes the referent explicit and lets the length and width follow naturally.
+  - source_phrase: אֶל פְּנֵי הַהֵיכָל
+    prior_rendering: before the nave
+    new_rendering: facing the main hall
+    rationale: This expresses the rooms’ spatial relationship without suggesting that the inner sanctuary stands outside or ahead of the temple entrance.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The review history alternates between “before” and “in front of,” neither of which clearly conveys the interior arrangement. I retain the established “Most Holy Place” rendering and place its literal-wording note at the phrase it explains.

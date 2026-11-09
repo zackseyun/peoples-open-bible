@@ -4,18 +4,8 @@ source:
   edition: SBLGNT
   text: γνωστὸν ἔστω πᾶσιν ὑμῖν καὶ παντὶ τῷ λαῷ Ἰσραὴλ ὅτι ἐν τῷ ὀνόματι Ἰησοῦ Χριστοῦ τοῦ Ναζωραίου, ὃν ὑμεῖς ἐσταυρώσατε, ὃν ὁ θεὸς ἤγειρεν ἐκ νεκρῶν, ἐν τούτῳ οὗτος παρέστηκεν ἐνώπιον ὑμῶν ὑγιής.
 translation:
-  text: let it be known to all of you and to all the people of Israel that in the name of Jesus Christ the Nazarene[a], whom you crucified[c][b], whom God raised from the dead—by this name this man stands before you healthy.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Greek title Christos means ‘Messiah’; here it appears in the conventional English personal-name form.
-    reason: alternative_reading
-  - marker: b
-    text: Or "by this name." The phrase ἐν τούτῳ may refer instrumentally to Jesus himself or more specifically to his name just mentioned.
-    reason: lexical_alternative
-  - marker: c
-    text: Or "whole" or "well." The Greek ὑγιής denotes soundness or restored health.
-    reason: lexical_alternative
+  text: then let all of you and all the people of Israel know that it is in the name of Jesus of Nazareth, the Messiah—whom you crucified but whom God raised from the dead—that this man stands before you well.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: γνωστὸν ἔστω
   chosen: let it be known
@@ -132,10 +122,16 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "let it be known to all of you and to all the people of Israel that in the name of Jesus Messiah the Nazarene, whom you crucified, whom God raised from the dead—by this name this man stands before you healthy."
-  to: "let it be known to all of you and to all the people of Israel that in the name of Jesus the Messiah the Nazarene, whom you crucified, whom God raised from the dead—by this name this man stands before you healthy."
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
-
+  from: let it be known to all of you and to all the people of Israel that in the name of Jesus Messiah the Nazarene, whom you crucified, whom God raised from the dead—by this name this man stands before you healthy.
+  to: let it be known to all of you and to all the people of Israel that in the name of Jesus the Messiah the Nazarene, whom you crucified, whom God raised from the dead—by this name this man stands before you healthy.
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:06:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: let it be known to all of you and to all the people of Israel that in the name of Jesus Christ the Nazarene[a], whom you crucified[c][b], whom God raised from the dead—by this name this man stands before you healthy.
+  to: then let all of you and all the people of Israel know that it is in the name of Jesus of Nazareth, the Messiah—whom you crucified but whom God raised from the dead—that this man stands before you well.
+  rationale: The later revisions restore the titular 'Messiah,' and the recorded contextual rationale supports that choice over the current snapshot’s 'Christ.' I retain the effective agency of Jesus’ name while expressing the repeated Greek construction through English emphasis.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -157,3 +153,37 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/acts/004/010.job-53837.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:06:08Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Peter declares to the authorities and all Israel that the man is well through Jesus the Messiah, whom they crucified but God raised from the dead.
+  meaning_decisions:
+  - source_phrase: γνωστὸν ἔστω πᾶσιν ὑμῖν καὶ παντὶ τῷ λαῷ Ἰσραὴλ
+    prior_rendering: let it be known to all of you and to all the people of Israel
+    new_rendering: then let all of you and all the people of Israel know
+    rationale: Preserves the force of a public declaration and makes its connection to the preceding condition explicit.
+  - source_phrase: Ἰησοῦ Χριστοῦ τοῦ Ναζωραίου
+    prior_rendering: Jesus Christ the Nazarene
+    new_rendering: Jesus of Nazareth, the Messiah
+    rationale: Preserves the later revisions’ recognition of the active messianic title and expresses the geographical identification in recognizable English.
+  - source_phrase: ἐν τῷ ὀνόματι ... ἐν τούτῳ
+    prior_rendering: in the name ... by this name this man stands
+    new_rendering: it is in the name ... that this man stands
+    rationale: Uses an emphatic English cleft to carry the Greek’s repeated instrumental expression without an awkward restart.
+  - source_phrase: ὃν ὑμεῖς ἐσταυρώσατε, ὃν ὁ θεὸς ἤγειρεν ἐκ νεκρῶν
+    prior_rendering: whom you crucified, whom God raised from the dead
+    new_rendering: whom you crucified but whom God raised from the dead
+    rationale: Makes explicit the sharp contrast between the leaders’ action and God’s action.
+  - source_phrase: ὑγιής
+    prior_rendering: healthy
+    new_rendering: well
+    rationale: Naturally describes the man’s restored physical condition in the setting of the healing.
+  footnote_kinds: {}
+  history_weighed: The later revisions restore the titular 'Messiah,' and the recorded contextual rationale supports that choice over the current snapshot’s 'Christ.' I retain the effective agency of Jesus’ name while expressing the repeated Greek construction through English emphasis.

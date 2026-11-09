@@ -21,12 +21,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: From the dead, as from one who no longer exists, thanksgiving[a] perishes; but one who is alive and well will praise the Lord.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'confession'; the Greek noun can denote acknowledgment or thankful praise. Here 'thanksgiving' best fits the parallel with 'will praise.'
-    reason: lexical_alternative
+  text: Thanksgiving dies with the dead, as though they no longer existed; but one who is alive and well will praise the Lord.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀπὸ νεκροῦ
   lemma: ἀπό
@@ -123,13 +119,12 @@ revisions:
   from: From the dead, as from one who no longer exists, thanksgiving perishes; but one who is alive and well will praise the Lord.
   to: From the dead, as from one who no longer exists, praise perishes; but one who is alive and well will praise the Lord.
   rationale: Changed 'thanksgiving' to 'praise' to better reflect ἐξομολόγησις in parallel with αἰνέσει ('will praise') later in the verse, improving lexical consistency.
-
 - timestamp: '2026-05-18T03:09:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'From the dead[a], as from one who no longer exists, praise perishes; but one who is alive and well will praise the Lord.'
-  to: 'From the dead, as from one who no longer exists, thanksgiving perishes; but one who is alive and well will praise the Lord.'
+  from: From the dead[a], as from one who no longer exists, praise perishes; but one who is alive and well will praise the Lord.
+  to: From the dead, as from one who no longer exists, thanksgiving perishes; but one who is alive and well will praise the Lord.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''thanksgiving''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -139,6 +134,13 @@ revisions:
   from: From the dead, as from one who no longer exists, thanksgiving perishes; but one who is alive and well will praise the Lord.
   to: From the dead, as from one who no longer exists, thanksgiving[a] perishes; but one who is alive and well will praise the Lord.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('thanksgiving') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:06:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: From the dead, as from one who no longer exists, thanksgiving[a] perishes; but one who is alive and well will praise the Lord.
+  to: Thanksgiving dies with the dead, as though they no longer existed; but one who is alive and well will praise the Lord.
+  rationale: The history supports retaining 'thanksgiving' rather than replacing it with the broader 'praise,' preserving the distinction between the two clauses. I also retain the earlier recognition that the language of nonexistence is a comparison within the contrast between dead and living worshipers.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -158,3 +160,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/017/024.job-51426.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:03Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Thanksgiving ends with death, while someone alive and well will praise the Lord.
+  meaning_decisions:
+  - source_phrase: ἀπὸ νεκροῦ ὡς μηδὲ ὄντος ἀπόλλυται ἐξομολόγησις
+    prior_rendering: From the dead, as from one who no longer exists, thanksgiving perishes
+    new_rendering: Thanksgiving dies with the dead, as though they no longer existed
+    rationale: The reordered sentence communicates that thanksgiving no longer comes from the dead, preserving both the death image and the comparison with nonexistence without turning the comparison into a systematic claim.
+  footnote_kinds: {}
+  history_weighed: The history supports retaining 'thanksgiving' rather than replacing it with the broader 'praise,' preserving the distinction between the two clauses. I also retain the earlier recognition that the language of nonexistence is a comparison within the contrast between dead and living worshipers.

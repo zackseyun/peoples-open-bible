@@ -28,17 +28,52 @@ source:
   validation: no_reference
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Susanna extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: 'And as we were going around the enclosed garden, we saw this woman lying with a man, and standing there we watched them talking with one another,'
+  text: As we followed the path around the garden, we saw this woman lying with a man. We stopped and watched them talking to each other[a].
+  philosophy: dynamic
+  footnotes:
+  - marker: a
+    text: Or, “being intimate with one another.”
+    reason: alternative_reading
 revisions:
 - timestamp: '2026-05-18T04:00:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And as we were going around the enclosed garden[a], we saw this woman resting with a man, and standing there we watched them talking with one another[b],'
-  to: 'And as we were going around the enclosed garden, we saw this woman lying with a man, and standing there we watched them talking with one another,'
+  from: And as we were going around the enclosed garden[a], we saw this woman resting with a man, and standing there we watched them talking with one another[b],
+  to: And as we were going around the enclosed garden, we saw this woman lying with a man, and standing there we watched them talking with one another,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''lying'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+- timestamp: '2026-11-09T19:09:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And as we were going around the enclosed garden, we saw this woman lying with a man, and standing there we watched them talking with one another,
+  to: As we followed the path around the garden, we saw this woman lying with a man. We stopped and watched them talking to each other[a].
+  rationale: The automated reversal from “resting” to “lying” carries little editorial weight, but “lying” remains suitable in the accusation’s context. I clarify the garden walk while preserving the interaction’s lexical ambiguity in a footnote.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T04:00:08Z'
   unchanged: false
   changes_summary: 'doctrine_realignment: Susanna 1:37 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''lying'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote m'
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:56Z'
+  change_level: refined
+  confidence: medium
+  meaning: The elders claimed that they saw Susanna lying with a man during their garden walk and stopped to watch the pair interacting.
+  meaning_decisions:
+  - source_phrase: κυκλοῦντες τὸ στάδιον
+    prior_rendering: as we were going around the enclosed garden
+    new_rendering: As we followed the path around the garden
+    rationale: The phrase refers to the garden walk or circuit, rather than describing the garden as enclosed.
+  - source_phrase: στάντες ἐθεωροῦμεν αὐτοὺς ὁμιλοῦντας ἀλλήλοις
+    prior_rendering: standing there we watched them talking with one another
+    new_rendering: We stopped and watched them talking to each other[a]
+    rationale: The participle marks their stopping to observe; the note acknowledges that the interaction can also be understood as sexual intimacy in this accusation.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The automated reversal from “resting” to “lying” carries little editorial weight, but “lying” remains suitable in the accusation’s context. I clarify the garden walk while preserving the interaction’s lexical ambiguity in a footnote.

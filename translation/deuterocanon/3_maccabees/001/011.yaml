@@ -7,12 +7,12 @@ source:
   pages: []
   confidence: high
 translation:
-  text: But when some said that this ought not to be done[a], because not even the Gentiles enter, nor all the priests, but only the high priest who is over all—and he only once a year—he would not be persuaded at all.
-  philosophy: optimal-equivalence
+  text: Some told him that it was not right for him to do this, since neither Gentiles nor ordinary priests were permitted to enter, but only the high priest, who presided over them all—and even he only once a year[a]. Yet he would not be persuaded at all.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'this is not fitting to be done.' The Greek emphasizes propriety or appropriateness.
-    reason: lexical_alternative
+    text: This is the annual entry into the Most Holy Place described in Leviticus 16:2–34.
+    reason: cross_reference
 lexical_decisions:
 - source_word: μὴ καθήκειν γίνεσθαι τοῦτο
   chosen: this ought not to happen
@@ -98,14 +98,20 @@ revisions:
   from: But when some said that this ought not to happen, because not even the Gentiles may enter, nor all the priests, but only the high priest who stands over all—and he only once a year—he would not be persuaded at all.
   to: But when some said that this ought not to happen, because not even the Gentiles may enter, nor all the priests, but only the high priest who stands over all—and he only once a year—he would not be persuaded at all.
   rationale: Revised 'ought not to happen' to 'ought not to be done' for better fit with γίνεσθαι τοῦτο in context, and changed 'may enter' to 'enter' for a more direct rendering of εἰσιέναι without adding modal nuance.
-
 - timestamp: '2026-05-16T19:22:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But when some said that this ought not to be done[a], because not even the Gentiles enter, nor all the priests, but only the high priest who is over all—and he only once a year—he would not be persuaded at all.'
-  to: 'But when some said that this ought not to be done[a], because not even the Gentiles enter, nor all the priests, but only the high priest who is over all—and he only once a year—he would not be persuaded at all.'
-  rationale: 'Restored drafter ''this ought not to happen'' (preserving the chosen idiomatic rendering of γίνεσθαι) and ''only the high priest who stands over all'' (preserving the chosen explicit ''stands'') per chosen renderings.'
+  from: But when some said that this ought not to be done[a], because not even the Gentiles enter, nor all the priests, but only the high priest who is over all—and he only once a year—he would not be persuaded at all.
+  to: But when some said that this ought not to be done[a], because not even the Gentiles enter, nor all the priests, but only the high priest who is over all—and he only once a year—he would not be persuaded at all.
+  rationale: Restored drafter 'this ought not to happen' (preserving the chosen idiomatic rendering of γίνεσθαι) and 'only the high priest who stands over all' (preserving the chosen explicit 'stands') per chosen renderings.
+- timestamp: '2026-11-09T18:56:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But when some said that this ought not to be done[a], because not even the Gentiles enter, nor all the priests, but only the high priest who is over all—and he only once a year—he would not be persuaded at all.
+  to: Some told him that it was not right for him to do this, since neither Gentiles nor ordinary priests were permitted to enter, but only the high priest, who presided over them all—and even he only once a year[a]. Yet he would not be persuaded at all.
+  rationale: The first draft’s 'may enter' correctly recognized permission as the issue; the later preference for bare 'enter' obscured that meaning. The cultic hierarchy, annual restriction, and emphatic failure to persuade the king are preserved, with the annual-access allusion identified in a note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -125,3 +131,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/001/011.job-49485.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:37Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Ptolemy remained unpersuaded when told that entry was forbidden to Gentiles and ordinary priests and allowed only to the high priest once each year.
+  meaning_decisions:
+  - source_phrase: μὴ καθήκειν γίνεσθαι τοῦτο
+    prior_rendering: this ought not to be done
+    new_rendering: it was not right for him to do this
+    rationale: The objection concerns the propriety of the king’s proposed action, which English states with its understood subject.
+  - source_phrase: μηδὲ τοῖς ἔθνεσιν εἰσιέναι, μηδὲ πᾶσιν τοῖς ἱερεῦσιν, ἀλλ᾽ ἢ μόνῳ ... ἀρχιερεῖ
+    prior_rendering: not even the Gentiles enter, nor all the priests, but only the high priest
+    new_rendering: neither Gentiles nor ordinary priests were permitted to enter, but only the high priest
+    rationale: The sentence describes permitted access, not simply who happens to enter; the sole high-priestly exception establishes the exclusion of ordinary priests.
+  - source_phrase: τῷ προηγουμένῳ πάντων
+    prior_rendering: who is over all
+    new_rendering: who presided over them all
+    rationale: The high priest’s leadership over the priests is made explicit without suggesting authority over everyone without qualification.
+  footnote_kinds:
+    a: cross_reference
+  history_weighed: The first draft’s 'may enter' correctly recognized permission as the issue; the later preference for bare 'enter' obscured that meaning. The cultic hierarchy, annual restriction, and emphatic failure to persuade the king are preserved, with the annual-access allusion identified in a note.

@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: אִם יֶחֱטָ֥א אִישׁ֙ לְ/רֵעֵ֔/הוּ וְ/נָֽשָׁא ב֥/וֹ אָלָ֖ה לְ/הַֽאֲלֹת֑/וֹ וּ/בָ֗א אָלָ֛ה לִ/פְנֵ֥י מִֽזְבַּחֲ/ךָ֖ בַּ/בַּ֥יִת הַ/זֶּֽה־־׃
 translation:
-  text: If a man sins against his neighbor[a], and an oath is laid on him to make him swear, and he comes and the oath is before your altar in this house,
-  philosophy: optimal-equivalence
+  text: If a man sins against his neighbor and is required to take an oath[a], and he comes before your altar in this house to swear it,
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'a curse-oath is imposed on him' / 'he is put under a curse-oath.' The Hebrew term can denote an oath accompanied by a curse if the oath is violated.
-    reason: lexical_alternative
+    text: The oath invokes a curse on the person if he swears falsely.
+    reason: cultural_note
 lexical_decisions:
 - source_word: אִם
   chosen: If
@@ -108,14 +108,20 @@ revisions:
   from: If a man sins against his neighbor, and an oath is laid on him to make him swear, and he comes and the oath is before your altar in this house,
   to: If a man sins against his neighbor, and is made to take an oath, and he comes and the oath is before your altar in this house,
   rationale: Replaced 'an oath is laid on him to make him swear' with the more natural and accurate 'is made to take an oath,' reflecting the causative sense of the Hebrew without redundancy. Retained the rest unchanged.
-
 - timestamp: '2026-05-15T19:39:42Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If a man sins against his neighbor[a], and is made to take an oath, and he comes and the oath is before your altar in this house,'
-  to: 'If a man sins against his neighbor[a], and an oath is laid on him to make him swear, and he comes and the oath is before your altar in this house,'
+  from: If a man sins against his neighbor[a], and is made to take an oath, and he comes and the oath is before your altar in this house,
+  to: If a man sins against his neighbor[a], and an oath is laid on him to make him swear, and he comes and the oath is before your altar in this house,
   rationale: 'Drafter rendered the two distinct Hebrew constructions separately: וְנָשָׂא בוֹ אָלָה (''an oath is laid on him'') and לְהַאֲלֹתוֹ (Hiphil causative ''to make him swear''). Azure collapsed to single phrase ''is made to take an oath'', eliminating the second source word entirely on ''without redundancy'' grounds — pure stylistic compression with no engagement of the two-part rationale.'
+- timestamp: '2026-11-09T17:24:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If a man sins against his neighbor[a], and an oath is laid on him to make him swear, and he comes and the oath is before your altar in this house,
+  to: If a man sins against his neighbor and is required to take an oath[a], and he comes before your altar in this house to swear it,
+  rationale: The automated revert objected that the earlier simplification collapsed two Hebrew constructions, but their combined meaning is fully expressed by 'is required to take an oath.' I also clarify the oath's presentation before the altar and retain its curse sanction in a correctly placed note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -135,3 +141,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_chronicles/006/022.job-59621.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:24:20Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Solomon presents a case in which a man who sins against his neighbor is required to swear an oath before God’s altar.
+  meaning_decisions:
+  - source_phrase: וְנָשָׁא בוֹ אָלָה לְהַאֲלֹתוֹ
+    prior_rendering: an oath is laid on him to make him swear
+    new_rendering: is required to take an oath
+    rationale: The two Hebrew constructions together describe the imposition of an oath obligation; this English phrase conveys both the requirement and the swearing it requires.
+  - source_phrase: וּבָא אָלָה לִפְנֵי מִזְבַּחֲךָ בַּבַּיִת הַזֶּה
+    prior_rendering: he comes and the oath is before your altar in this house
+    new_rendering: he comes before your altar in this house to swear it
+    rationale: The oath is brought before the altar by being sworn there; the prior wording leaves that judicial action unclear.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The automated revert objected that the earlier simplification collapsed two Hebrew constructions, but their combined meaning is fully expressed by 'is required to take an oath.' I also clarify the oath's presentation before the altar and retain its curse sanction in a correctly placed note.

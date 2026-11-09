@@ -19,15 +19,8 @@ source:
   validation: minor_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: Let us test him with insolence and torture[b][a], so that we may know his gentleness and test his forbearance.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'with outrage and torment.' The Greek terms can denote abusive insolence and painful torment used as a means of testing.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'assess his patience in bearing wrong.' The final noun refers specifically to enduring injury without retaliation.
-    reason: lexical_alternative
+  text: Let us test him with abuse and torture, so that we may learn how gentle he is and judge his forbearance.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὕβρει
   chosen: with insult
@@ -112,14 +105,20 @@ revisions:
   from: Let us test him with insult and torture, so that we may know his gentleness and judge his forbearance.
   to: Let us test him with insult and torture, so that we may know his gentleness and judge his forbearance.
   rationale: Changed 'insult' to 'insolence' for closer lexical match to ὕβρις, and 'judge' to 'test' to reflect the likely sense of δικάζω here in parallel with 'test' rather than a judicial verdict.
-
 - timestamp: '2026-05-18T02:59:14Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Let us test him with insolence and torture[b][a], so that we may know his gentleness and test his forbearance.'
-  to: 'Let us test him with insolence and torture[b][a], so that we may know his gentleness and test his forbearance.'
+  from: Let us test him with insolence and torture[b][a], so that we may know his gentleness and test his forbearance.
+  to: Let us test him with insolence and torture[b][a], so that we may know his gentleness and test his forbearance.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with insult''].'
+- timestamp: '2026-11-09T19:11:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Let us test him with insolence and torture[b][a], so that we may know his gentleness and test his forbearance.
+  to: Let us test him with abuse and torture, so that we may learn how gentle he is and judge his forbearance.
+  rationale: The history identifies both abusive mistreatment and two distinct virtues, gentleness and forbearance. I retain those gains and restore the draft's 'judge,' supported by the lexical rationale, rather than flattening both examination verbs into 'test.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -139,3 +138,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/002/019.job-39588.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:19Z'
+  change_level: refined
+  confidence: high
+  meaning: They propose degrading abuse and torture as a test of his gentleness and patient endurance of wrongdoing.
+  meaning_decisions:
+  - source_phrase: ὕβρει
+    prior_rendering: with insolence
+    new_rendering: with abuse
+    rationale: In this proposed ordeal, the word denotes degrading mistreatment, not merely an insolent attitude.
+  - source_phrase: ἵνα γνῶμεν τὴν ἐπιείκειαν αὐτοῦ
+    prior_rendering: so that we may know his gentleness
+    new_rendering: so that we may learn how gentle he is
+    rationale: The natural English clause expresses their intention to discover the character of his response under mistreatment.
+  - source_phrase: δικάσωμεν τὴν ἀνεξικακίαν αὐτοῦ
+    prior_rendering: test his forbearance
+    new_rendering: judge his forbearance
+    rationale: The verb adds an evaluative, judgment-like nuance to the testing already proposed; 'judge' preserves that distinction.
+  footnote_kinds: {}
+  history_weighed: The history identifies both abusive mistreatment and two distinct virtues, gentleness and forbearance. I retain those gains and restore the draft's 'judge,' supported by the lexical rationale, rather than flattening both examination verbs into 'test.'

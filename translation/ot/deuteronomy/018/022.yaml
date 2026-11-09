@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: אֲשֶׁר֩ יְדַבֵּ֨ר הַ/נָּבִ֜יא בְּ/שֵׁ֣ם יְהוָ֗ה וְ/לֹֽא יִהְיֶ֤ה הַ/דָּבָר֙ וְ/לֹ֣א יָב֔וֹא ה֣וּא הַ/דָּבָ֔ר אֲשֶׁ֥ר לֹא דִבְּר֖/וֹ יְהוָ֑ה בְּ/זָדוֹן֙ דִּבְּר֣/וֹ הַ/נָּבִ֔יא לֹ֥א תָג֖וּר מִמֶּֽ/נּוּ־־׃ס
 translation:
-  text: When the prophet speaks in the name of Yahweh[a], and the matter does not happen or come about, that is the matter that Yahweh has not spoken. The prophet has spoken it presumptuously[c][b]; you shall not fear him.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the word' instead of 'the matter' for Hebrew דָּבָר; the term can refer both to the spoken message and to the event foretold.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'does not occur or come to pass.'
-    reason: lexical_alternative
-  - marker: c
-    text: '''Presumptuously'' conveys arrogant, willful presumption in speaking without the LORD''s authorization.'
-    reason: cultural_note
+  text: If a prophet speaks in the name of Yahweh and what he predicts does not come true, Yahweh has not spoken that message. The prophet has spoken presumptuously; you must not fear him.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: יְדַבֵּר
   chosen: speaks
@@ -124,14 +114,20 @@ revisions:
   from: When the prophet speaks in the name of the LORD, and the matter does not happen or come about, that is the matter that the LORD has not spoken. The prophet has spoken it presumptuously; you shall not fear him.
   to: When a prophet speaks in the name of the LORD, and the thing does not happen or come about, that is the thing that the LORD has not spoken. The prophet has spoken it presumptuously; you shall not fear him.
   rationale: Changed 'the prophet' to 'a prophet' for generic sense, and 'matter' to 'thing' for a more natural rendering of דָּבָר while preserving the repeated term consistently within the verse.
-
 - timestamp: '2026-05-15T11:39:06Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When a prophet speaks in the name of Yahweh[a], and the thing does not happen or come about, that is the thing that Yahweh has not spoken. The prophet has spoken it presumptuously[c][b]; you shall not fear him.'
-  to: 'When the prophet speaks in the name of Yahweh[a], and the matter does not happen or come about, that is the matter that Yahweh has not spoken. The prophet has spoken it presumptuously[c][b]; you shall not fear him.'
-  rationale: 'Restored definite article (Hebrew הַ-) and דָּבָר=''matter'' (avoiding ''thing'' repetition).'
+  from: When a prophet speaks in the name of Yahweh[a], and the thing does not happen or come about, that is the thing that Yahweh has not spoken. The prophet has spoken it presumptuously[c][b]; you shall not fear him.
+  to: When the prophet speaks in the name of Yahweh[a], and the matter does not happen or come about, that is the matter that Yahweh has not spoken. The prophet has spoken it presumptuously[c][b]; you shall not fear him.
+  rationale: Restored definite article (Hebrew הַ-) and דָּבָר='matter' (avoiding 'thing' repetition).
+- timestamp: '2026-11-09T17:31:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When the prophet speaks in the name of Yahweh[a], and the matter does not happen or come about, that is the matter that Yahweh has not spoken. The prophet has spoken it presumptuously[c][b]; you shall not fear him.
+  to: If a prophet speaks in the name of Yahweh and what he predicts does not come true, Yahweh has not spoken that message. The prophet has spoken presumptuously; you must not fear him.
+  rationale: Earlier revisions debated ‘a’ versus ‘the’ and ‘matter’ versus ‘thing,’ but the later restoration was automated rather than a maintainer decision. I use the generic English article and distinguish prediction from message instead of forcing one English noun into both roles, while retaining the warning against fearing the prophet.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -153,3 +149,29 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/018/022.job-61678.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:31:08Z'
+  change_level: retranslated
+  confidence: high
+  meaning: When a prediction made in Yahweh’s name fails, Israel can know that Yahweh did not speak that message and need not fear the presumptuous prophet.
+  meaning_decisions:
+  - source_phrase: אֲשֶׁר יְדַבֵּר הַנָּבִיא
+    prior_rendering: When the prophet speaks
+    new_rendering: If a prophet speaks
+    rationale: The clause presents a representative case for testing prophecy. English ‘a prophet’ expresses the Hebrew article’s generic function, while ‘if’ makes the test’s conditional structure clear.
+  - source_phrase: וְלֹא יִהְיֶה הַדָּבָר וְלֹא יָבֹא
+    prior_rendering: and the matter does not happen or come about
+    new_rendering: and what he predicts does not come true
+    rationale: Here ‘matter’ is the event announced by the prophet, and the paired verbs express its nonfulfillment. The new wording makes the connection between prophetic speech and the predicted event explicit.
+  - source_phrase: הוּא הַדָּבָר אֲשֶׁר לֹא דִבְּרוֹ יְהוָה
+    prior_rendering: that is the matter that Yahweh has not spoken
+    new_rendering: Yahweh has not spoken that message
+    rationale: At this point the repeated Hebrew noun refers to the prophetic message rather than simply the event. Distinguishing the two senses in English clarifies the conclusion without changing the test.
+  footnote_kinds: {}
+  history_weighed: Earlier revisions debated ‘a’ versus ‘the’ and ‘matter’ versus ‘thing,’ but the later restoration was automated rather than a maintainer decision. I use the generic English article and distinguish prediction from message instead of forcing one English noun into both roles, while retaining the warning against fearing the prophet.

@@ -25,15 +25,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But the King of kings stirred up Antiochus’s anger against the wretch[a], and when Lysias pointed him out as being responsible for the evils and for everything, he ordered them to put him to death, taking him to Beroea[b], as is the custom in that place.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'against the criminal' or 'against the villain' for 'the wretch' (Greek ἀλιτήριον), a strong term of moral condemnation.
-    reason: lexical_alternative
-  - marker: b
-    text: Beroea here refers to the place of execution according to local custom.
-    reason: cultural_note
+  text: But the King of kings stirred up Antiochus’s anger against this villain. When Lysias identified Menelaus as responsible for all the troubles, Antiochus ordered that he be taken to Beroea and put to death according to the local custom.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὁ δὲ βασιλεὺς τῶν βασιλέων
   chosen: the King of kings
@@ -140,13 +133,12 @@ revisions:
   from: But the King of kings stirred up Antiochus’s anger against the wretch, and when Lysias pointed him out as being responsible for the evils and for everything, he ordered them to put him to death, taking him to Beroea, as is the custom in that place.
   to: But the King of kings stirred up Antiochus’s anger against the wretch, and when Lysias pointed him out as being responsible for the evils and for all of them, he ordered them to put him to death, taking him to Beroea, as is the custom in that place.
   rationale: Changed 'for everything' to 'for all of them' to reflect πάντων more literally alongside 'the evils,' avoiding an unnatural absolute while preserving completeness.
-
 - timestamp: '2026-05-18T03:10:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But the King of kings stirred up Antiochus’s anger against the wretch[a], and when Lysias pointed him out as being responsible for the evils and for all of them, he ordered them to put him to death, taking him to Beroea[b], as is the custom in that place.'
-  to: 'But the King of kings stirred up Antiochus’s anger against the wretch, and when Lysias pointed him out as being responsible for the evils and for everything, he ordered them to put him to death, taking him to Beroea, as is the custom in that place.'
+  from: But the King of kings stirred up Antiochus’s anger against the wretch[a], and when Lysias pointed him out as being responsible for the evils and for all of them, he ordered them to put him to death, taking him to Beroea[b], as is the custom in that place.
+  to: But the King of kings stirred up Antiochus’s anger against the wretch, and when Lysias pointed him out as being responsible for the evils and for everything, he ordered them to put him to death, taking him to Beroea, as is the custom in that place.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as being responsible for the evils and for everything''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -156,6 +148,13 @@ revisions:
   from: But the King of kings stirred up Antiochus’s anger against the wretch, and when Lysias pointed him out as being responsible for the evils and for everything, he ordered them to put him to death, taking him to Beroea, as is the custom in that place.
   to: But the King of kings stirred up Antiochus’s anger against the wretch[a], and when Lysias pointed him out as being responsible for the evils and for everything, he ordered them to put him to death, taking him to Beroea[b], as is the custom in that place.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('against the wretch') because the note's quoted alternative matches the lexical decision rendered there; [b] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:56:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But the King of kings stirred up Antiochus’s anger against the wretch[a], and when Lysias pointed him out as being responsible for the evils and for everything, he ordered them to put him to death, taking him to Beroea[b], as is the custom in that place.
+  to: But the King of kings stirred up Antiochus’s anger against this villain. When Lysias identified Menelaus as responsible for all the troubles, Antiochus ordered that he be taken to Beroea and put to death according to the local custom.
+  rationale: The earlier review recognized the awkward breadth of 'for everything,' but its 'for all of them' remained cumbersome. I express the comprehensive accusation as 'all the troubles' and preserve the established divine reference of 'King of kings.'
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -175,3 +174,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/013/004.job-49366.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:19Z'
+  change_level: retranslated
+  confidence: high
+  meaning: God turned Antiochus against Menelaus, and after Lysias blamed him for all the troubles, the king ordered his execution at Beroea by the local method.
+  meaning_decisions:
+  - source_phrase: ἐπὶ τὸν ἀλιτήριον
+    prior_rendering: against the wretch
+    new_rendering: against this villain
+    rationale: The word condemns Menelaus’s wickedness; 'wretch' can instead suggest someone pitiable or unfortunate.
+  - source_phrase: Λυσίου ὑποδείξαντος τοῦτον αἴτιον τῶν κακῶν εἶναι καὶ πάντων
+    prior_rendering: when Lysias pointed him out as being responsible for the evils and for everything
+    new_rendering: When Lysias identified Menelaus as responsible for all the troubles
+    rationale: The compressed expression places comprehensive blame on Menelaus for the troubles at issue; natural English carries that emphasis without an undefined 'everything.'
+  - source_phrase: προσέταξεν ... προσαπολέσαι, ἀγαγόντας εἰς Βέροιαν
+    prior_rendering: he ordered them to put him to death, taking him to Beroea
+    new_rendering: Antiochus ordered that he be taken to Beroea and put to death
+    rationale: Naming the king prevents confusion after Lysias becomes the preceding subject, and the reordered clauses clarify the execution sequence.
+  footnote_kinds: {}
+  history_weighed: The earlier review recognized the awkward breadth of 'for everything,' but its 'for all of them' remained cumbersome. I express the comprehensive accusation as 'all the troubles' and preserve the established divine reference of 'King of kings.'

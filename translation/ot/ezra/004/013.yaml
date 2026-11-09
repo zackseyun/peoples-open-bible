@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: כְּעַ֗ן יְדִ֨יעַ֙ לֶהֱוֵ֣א לְ/מַלְכָּ֔/א דִּ֠י הֵ֣ן קִרְיְתָ֥/א דָךְ֙ תִּתְבְּנֵ֔א וְ/שׁוּרַיָּ֖/ה יִֽשְׁתַּכְלְל֑וּן מִנְדָּֽה בְל֤וֹ וַ/הֲלָךְ֙ לָ֣א יִנְתְּנ֔וּן וְ/אַפְּתֹ֥ם מַלְכִ֖ים תְּהַנְזִֽק־׃
 translation:
-  text: Now let it be known to the king[a] that if this city is rebuilt and its walls are completed, they will not pay tribute, tax, or toll, and in the end it will damage the revenue of the kings.
-  philosophy: optimal-equivalence
+  text: Now let it be known to the king that if this city is rebuilt and its walls are completed, they will not pay tribute, tax, or toll, and in the end it will damage the revenue of the kings[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'and finally it will cause loss to the kings.' The Aramaic expression is concise, and the exact nuance of the loss is inferred from the context of unpaid tribute, tax, and toll.
+    text: Literally, “it will cause loss to the kings.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: כְּעַן
@@ -132,15 +132,14 @@ revisions:
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Now let it be known to the king that if this city is rebuilt and its walls are completed, they will not pay tribute, tax, or toll, and in the end it will damage the revenue of the kings.
-  to: 'Now let it be known to the king that if this city is rebuilt and its walls are completed, they will not pay tribute, tax, or toll, and in the end it will damage the kings'' revenue.'
+  to: Now let it be known to the king that if this city is rebuilt and its walls are completed, they will not pay tribute, tax, or toll, and in the end it will damage the kings' revenue.
   rationale: Changed 'the revenue of the kings' to 'the kings' revenue' for more natural English while preserving the sense. Kept the rest unchanged as accurate and complete.
-
 - timestamp: '2026-05-18T03:09:25Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now let it be known to the king that if this city is rebuilt and its walls are completed[a], they will not pay tribute, tax, or toll, and in the end it will damage the kings'' revenue.'
-  to: 'Now let it be known to the king that if this city is rebuilt and its walls are completed, they will not pay tribute, tax, or toll, and in the end it will damage the revenue of the kings.'
+  from: Now let it be known to the king that if this city is rebuilt and its walls are completed[a], they will not pay tribute, tax, or toll, and in the end it will damage the kings' revenue.
+  to: Now let it be known to the king that if this city is rebuilt and its walls are completed, they will not pay tribute, tax, or toll, and in the end it will damage the revenue of the kings.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''it will damage the revenue of''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -150,6 +149,13 @@ revisions:
   from: Now let it be known to the king that if this city is rebuilt and its walls are completed, they will not pay tribute, tax, or toll, and in the end it will damage the revenue of the kings.
   to: Now let it be known to the king[a] that if this city is rebuilt and its walls are completed, they will not pay tribute, tax, or toll, and in the end it will damage the revenue of the kings.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('to the king') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:41:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Now let it be known to the king[a] that if this city is rebuilt and its walls are completed, they will not pay tribute, tax, or toll, and in the end it will damage the revenue of the kings.
+  to: Now let it be known to the king that if this city is rebuilt and its walls are completed, they will not pay tribute, tax, or toll, and in the end it will damage the revenue of the kings[a].
+  rationale: The recorded revision only smoothed the possessive, while the automated revert supplied no additional meaning-based evidence. The current fiscal warning is clear, so I retain it and place the literal-wording note on the clause it explains.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -169,3 +175,18 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/ezra/004/013.job-43047.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:41:00Z'
+  change_level: kept
+  confidence: high
+  meaning: The writers warn the king that a rebuilt and fortified Jerusalem will stop paying imperial levies and deprive the kings of revenue.
+  meaning_decisions: []
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The recorded revision only smoothed the possessive, while the automated revert supplied no additional meaning-based evidence. The current fiscal warning is clear, so I retain it and place the literal-wording note on the clause it explains.

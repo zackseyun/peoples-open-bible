@@ -12,15 +12,12 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 3 = Addition C, segmented from Swete pages 781-784 with First1KGreek used only as a verse-anchor map.
 translation:
-  text: And your servant did not eat at Haman’s table[a], and I did not honor the king’s banquet, nor did I drink the wine of libations[b];
-  philosophy: optimal-equivalence
+  text: And your servant[a] has not eaten at Haman’s table, and I have not honored the king’s banquet or drunk wine used for drink offerings;
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'your servant.' The Greek has 'your slave' (feminine), a stronger term of subordination.
+    text: Greek, ‘your female slave,’ expressing complete subordination.
     reason: lexical_alternative
-  - marker: b
-    text: That is, wine associated with libations or drink offerings, not merely ordinary wine.
-    reason: cultural_note
 lexical_decisions:
 - source_word: ἡ δούλη σου
   chosen: your slave
@@ -113,7 +110,13 @@ revisions:
   from: And your servant did not eat at Haman’s table, and I did not honor the king’s banquet, nor did I drink the wine of libations;
   to: And your slave did not eat at Haman’s table, and I did not honor the king’s banquet, nor did I drink the wine of libations;
   rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md policy)
-
+- timestamp: '2026-11-09T18:59:44Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And your servant did not eat at Haman’s table[a], and I did not honor the king’s banquet, nor did I drink the wine of libations[b];
+  to: And your servant[a] has not eaten at Haman’s table, and I have not honored the king’s banquet or drunk wine used for drink offerings;
+  rationale: The automated slave/servant reversions reflect earlier policy rather than a maintainer decision; I follow the standing ruling to retain ‘servant,’ with the stronger source term in a note. The lexical history rightly distinguishes ceremonial wine from ordinary wine, and that distinction is now explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -133,3 +136,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/additions_to_esther/003/027.job-50260.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:44Z'
+  change_level: refined
+  confidence: high
+  meaning: Esther declares that she has neither eaten at Haman’s table, honored the royal banquet, nor drunk wine associated with drink offerings.
+  meaning_decisions:
+  - source_phrase: οὐκ ἔφαγεν … οὐκ ἐδόξασα … οὐδὲ ἔπιον
+    prior_rendering: did not eat … did not honor … nor did I drink
+    new_rendering: has not eaten … have not honored … or drunk
+    rationale: The present perfect naturally presents these denials as part of Esther’s record up to the present crisis.
+  - source_phrase: οἶνον σπονδῶν
+    prior_rendering: the wine of libations
+    new_rendering: wine used for drink offerings
+    rationale: This identifies the wine’s ceremonial association in familiar biblical English without specifying an unstated deity or ritual.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The automated slave/servant reversions reflect earlier policy rather than a maintainer decision; I follow the standing ruling to retain ‘servant,’ with the stronger source term in a note. The lexical history rightly distinguishes ceremonial wine from ordinary wine, and that distinction is now explicit.

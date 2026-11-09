@@ -16,15 +16,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Look[a], our homesteads and every field of wheat and the flocks and the herds and all the enclosures of our tents lie before you[b]; use them as pleases you.
-  philosophy: optimal-equivalence
+  text: Look, our homesteads, all our wheat fields, our flocks and herds, and all the enclosures in our camps[a] are at your disposal; use them as you please.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'farmsteads' for 'homesteads' (ἐπαύλεις). The Greek suggests rural properties or settled dwellings in an agricultural setting.
+    text: Literally, 'all the enclosures of our tents.'
     reason: lexical_alternative
-  - marker: b
-    text: Literally, 'all the enclosures of our tents.' The phrase likely refers to the fenced or bounded areas associated with their encampments or livestock holdings.
-    reason: cultural_note
 lexical_decisions:
 - source_word: ἰδοὺ
   chosen: Look
@@ -126,14 +123,20 @@ revisions:
   from: Look, our homesteads and every field of wheat and the flocks and the herds and all the enclosures of our tents lie before you; use them as it pleases you.
   to: Look, our homesteads and every field of wheat and the flocks and the herds and all the enclosures of our tents lie before you; use them as it pleases you.
   rationale: Removed 'it' from 'as it pleases you' to more closely reflect the Greek construction while keeping formal, natural English. No other changes needed.
-
 - timestamp: '2026-05-18T02:59:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Look[a], our homesteads and every field of wheat and the flocks and the herds and all the enclosures of our tents lie before you[b]; use them as pleases you.'
-  to: 'Look[a], our homesteads and every field of wheat and the flocks and the herds and all the enclosures of our tents lie before you[b]; use them as pleases you.'
+  from: Look[a], our homesteads and every field of wheat and the flocks and the herds and all the enclosures of our tents lie before you[b]; use them as pleases you.
+  to: Look[a], our homesteads and every field of wheat and the flocks and the herds and all the enclosures of our tents lie before you[b]; use them as pleases you.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as it pleases you''].'
+- timestamp: '2026-11-09T19:01:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Look[a], our homesteads and every field of wheat and the flocks and the herds and all the enclosures of our tents lie before you[b]; use them as pleases you.
+  to: Look, our homesteads, all our wheat fields, our flocks and herds, and all the enclosures in our camps[a] are at your disposal; use them as you please.
+  rationale: The recorded revisions chiefly concerned the wording of 'as pleases you,' so I preserve the substance of the agricultural inventory. The lexical discussion supports understanding the tents collectively as camps, while the literal note retains the source expression.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -153,3 +156,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/003/003.job-50543.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:29Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The speakers surrender their agricultural property, livestock, and camp enclosures for Holofernes to use however he wishes.
+  meaning_decisions:
+  - source_phrase: πᾶσαι αἱ μάνδραι τῶν σκηνῶν ἡμῶν
+    prior_rendering: all the enclosures of our tents
+    new_rendering: all the enclosures in our camps
+    rationale: Makes the relationship between the enclosures and the tent settlements intelligible without narrowing the enclosures to a particular kind.
+  - source_phrase: παράκεινται πρὸ προσώπου σου
+    prior_rendering: lie before you
+    new_rendering: are at your disposal
+    rationale: Expresses the surrender of these resources rather than suggesting that scattered properties are physically lying before Holofernes.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The recorded revisions chiefly concerned the wording of 'as pleases you,' so I preserve the substance of the agricultural inventory. The lexical discussion supports understanding the tents collectively as camps, while the literal note retains the source expression.

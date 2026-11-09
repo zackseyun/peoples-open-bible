@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ἐὰν εἴπῃ ὁ πούς· Ὅτι οὐκ εἰμὶ χείρ, οὐκ εἰμὶ ἐκ τοῦ σώματος, οὐ παρὰ τοῦτο οὐκ ἔστιν ἐκ τοῦ σώματος;
 translation:
-  text: If the foot says[a], “Because I am not a hand, I am not of the body,” it is not for this reason not of the body, is it?
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more idiomatically, “I do not belong to the body ... that does not make it any less part of the body.”
-    reason: lexical_alternative
+  text: If the foot says, “Because I am not a hand, I do not belong to the body,” that does not make it any less a part of the body, does it?
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐὰν εἴπῃ
   chosen: If ... says
@@ -82,14 +78,20 @@ revisions:
   from: If the foot says, “Because I am not a hand, I am not from the body,” it is not for this reason not from the body, is it?
   to: If the foot says, “Because I am not a hand, I am not from the body,” it is not for this reason not from the body, is it?
   rationale: Changed “from the body” to “of the body” for more natural and consistent rendering of ἐκ τοῦ σώματος in this verse; otherwise retained the structure and rhetorical question.
-
 - timestamp: '2026-05-18T03:01:54Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If the foot says[a], “Because I am not a hand, I am not of the body,” it is not for this reason not of the body, is it?'
-  to: 'If the foot says[a], “Because I am not a hand, I am not of the body,” it is not for this reason not of the body, is it?'
+  from: If the foot says[a], “Because I am not a hand, I am not of the body,” it is not for this reason not of the body, is it?
+  to: If the foot says[a], “Because I am not a hand, I am not of the body,” it is not for this reason not of the body, is it?
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from the body''].'
+- timestamp: '2026-11-09T17:06:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If the foot says[a], “Because I am not a hand, I am not of the body,” it is not for this reason not of the body, is it?
+  to: If the foot says, “Because I am not a hand, I do not belong to the body,” that does not make it any less a part of the body, does it?
+  rationale: The earlier change from “from” to “of” moved toward the correct sense, but the current footnote carries that sense much more clearly than the text. I bring its idiomatic rendering into the main text while preserving the question and the personified foot.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -109,3 +111,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/1_corinthians/012/015.job-52888.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:06:04Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A foot’s difference from a hand does not make it any less part of the body.
+  meaning_decisions:
+  - source_phrase: οὐκ εἰμὶ ἐκ τοῦ σώματος
+    prior_rendering: I am not of the body
+    new_rendering: I do not belong to the body
+    rationale: The construction expresses membership and belonging, not origin or physical separation.
+  - source_phrase: οὐ παρὰ τοῦτο οὐκ ἔστιν ἐκ τοῦ σώματος;
+    prior_rendering: it is not for this reason not of the body, is it?
+    new_rendering: that does not make it any less a part of the body, does it?
+    rationale: This conveys the rebuttal and rhetorical question directly rather than requiring readers to untangle the source-shaped double negative.
+  footnote_kinds: {}
+  history_weighed: The earlier change from “from” to “of” moved toward the correct sense, but the current footnote carries that sense much more clearly than the text. I bring its idiomatic rendering into the main text while preserving the question and the personified foot.

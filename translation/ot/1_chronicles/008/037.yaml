@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וּ/מוֹצָ֖א הוֹלִ֣יד אֶת בִּנְעָ֑א רָפָ֥ה בְנ֛/וֹ אֶלְעָשָׂ֥ה בְנ֖/וֹ אָצֵ֥ל בְּנֽ/וֹ־׃
 translation:
-  text: And Moza fathered Binea[a]; Rephah[b] was his son, Eleasah[c] his son, Azel his son.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or "Bina." The Hebrew name בִּנְעָא may be represented in English with slightly different transliterations.
-    reason: lexical_alternative
-  - marker: b
-    text: Or "Rapha." The Hebrew name רָפָה is transliterated variously in English versions.
-    reason: lexical_alternative
-  - marker: c
-    text: Or "Elasah." The Hebrew name אֶלְעָשָׂה may be transliterated with a shorter initial vowel sequence in English.
-    reason: lexical_alternative
+  text: Moza fathered Binea. Binea’s son was Rephah, Rephah’s son was Eleasah, and Eleasah’s son was Azel.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וּ/מוֹצָא
   chosen: And Moza
@@ -97,13 +87,12 @@ revisions:
   from: And Moza fathered Binea; Rephah was his son, Eleasah his son, Azel his son.
   to: And Moza fathered Binea; Rephah his son, Eleasah his son, Azel his son.
   rationale: Removed 'was' before 'his son' to more closely reflect the genealogical style and source structure while keeping natural formal English.
-
 - timestamp: '2026-05-18T03:09:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Moza fathered Binea[a]; Rephah his son, Eleasah his son[c][b], Azel his son.'
-  to: 'And Moza fathered Binea; Rephah was his son, Eleasah his son, Azel his son.'
+  from: And Moza fathered Binea[a]; Rephah his son, Eleasah his son[c][b], Azel his son.
+  to: And Moza fathered Binea; Rephah was his son, Eleasah his son, Azel his son.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was his son''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -113,6 +102,13 @@ revisions:
   from: And Moza fathered Binea; Rephah was his son, Eleasah his son, Azel his son.
   to: And Moza fathered Binea[a]; Rephah[b] was his son, Eleasah[c] his son, Azel his son.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('Binea') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('Rephah') because the note's quoted alternative matches the lexical decision rendered there; [c] anchored to ('Eleasah') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:19:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Moza fathered Binea[a]; Rephah[b] was his son, Eleasah[c] his son, Azel his son.
+  to: Moza fathered Binea. Binea’s son was Rephah, Rephah’s son was Eleasah, and Eleasah’s son was Azel.
+  rationale: The recorded revision and automated revert concerned only whether to supply 'was,' not the successive referents of 'his.' I retain the established names but make those referents explicit, and omit notes that merely vary their spellings.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -132,3 +128,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/1_chronicles/008/037.job-44551.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:19:22Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The family line continued from Moza through Binea, Rephah, and Eleasah to Azel.
+  meaning_decisions:
+  - source_phrase: רָפָה בְנוֹ אֶלְעָשָׂה בְנוֹ אָצֵל בְּנוֹ
+    prior_rendering: Rephah was his son, Eleasah his son, Azel his son
+    new_rendering: Binea’s son was Rephah, Rephah’s son was Eleasah, and Eleasah’s son was Azel
+    rationale: Each 'his son' advances the genealogy by one generation; naming the implied father makes the successive descent unmistakable instead of suggesting that all three were sons of one man.
+  footnote_kinds: {}
+  history_weighed: The recorded revision and automated revert concerned only whether to supply 'was,' not the successive referents of 'his.' I retain the established names but make those referents explicit, and omit notes that merely vary their spellings.

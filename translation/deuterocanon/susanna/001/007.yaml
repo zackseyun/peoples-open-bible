@@ -28,12 +28,12 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Susanna extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: These men saw a woman beautiful in appearance[a], a wife of one of their brothers from the sons of Israel, whose name was Susanna, daughter of Hilkiah, wife of Joakim, walking in her husband's garden in the evening.
-  philosophy: optimal-equivalence
+  text: These men saw a beautiful woman walking in her husband's garden in the evening. Her name was Susanna, daughter of Hilkiah and wife of Joakim, one of their fellow Israelites[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Greek literally, 'a wife of their brother from the sons of Israel.' The wording is awkward; the translation preserves the sense that she was the wife of a fellow Israelite within their own people.
-    reason: alternative_reading
+    text: Literally, “wife of their brother, one of the sons of Israel.”
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: οὗτοι
   chosen: These men
@@ -141,17 +141,23 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'These men saw a woman of beautiful appearance, a wife of one of their brothers from the sons of Israel, whose name was Susanna, daughter of Hilkiah, wife of Joakim, walking in her husband''s garden in the evening.'
-  to: 'These men saw a woman of beautiful appearance, a wife of one of their brothers from the sons of Israel, whose name was Susanna, daughter of Hilkiah, wife of Joakim, walking in her husband''s garden in the evening.'
+  from: These men saw a woman of beautiful appearance, a wife of one of their brothers from the sons of Israel, whose name was Susanna, daughter of Hilkiah, wife of Joakim, walking in her husband's garden in the evening.
+  to: These men saw a woman of beautiful appearance, a wife of one of their brothers from the sons of Israel, whose name was Susanna, daughter of Hilkiah, wife of Joakim, walking in her husband's garden in the evening.
   rationale: Changed 'a woman of beautiful appearance' to 'a woman beautiful in appearance' for a more formal and closer rendering of γυναῖκα ἀστεῖαν τῷ εἴδει. No other changes needed.
-
 - timestamp: '2026-05-18T02:59:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'These men saw a woman beautiful in appearance[a], a wife of one of their brothers from the sons of Israel, whose name was Susanna, daughter of Hilkiah, wife of Joakim, walking in her husband''s garden in the evening.'
-  to: 'These men saw a woman beautiful in appearance[a], a wife of one of their brothers from the sons of Israel, whose name was Susanna, daughter of Hilkiah, wife of Joakim, walking in her husband''s garden in the evening.'
+  from: These men saw a woman beautiful in appearance[a], a wife of one of their brothers from the sons of Israel, whose name was Susanna, daughter of Hilkiah, wife of Joakim, walking in her husband's garden in the evening.
+  to: These men saw a woman beautiful in appearance[a], a wife of one of their brothers from the sons of Israel, whose name was Susanna, daughter of Hilkiah, wife of Joakim, walking in her husband's garden in the evening.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a woman of beautiful appearance''].'
+- timestamp: '2026-11-09T19:09:35Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: These men saw a woman beautiful in appearance[a], a wife of one of their brothers from the sons of Israel, whose name was Susanna, daughter of Hilkiah, wife of Joakim, walking in her husband's garden in the evening.
+  to: These men saw a beautiful woman walking in her husband's garden in the evening. Her name was Susanna, daughter of Hilkiah and wife of Joakim, one of their fellow Israelites[a].
+  rationale: The earlier deliberation and footnote already identified the 'brother' as a fellow Israelite rather than a biological sibling. I bring that established meaning into the main text while retaining the kinship wording in a footnote.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -171,3 +177,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/susanna/001/007.job-52424.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:35Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The elders saw the beautiful Susanna, wife of their fellow Israelite Joakim, walking in her husband's garden in the evening.
+  meaning_decisions:
+  - source_phrase: γυναῖκα ἀδελφοῦ αὐτῶν ἐκ τῶν υἱῶν Ἰσραήλ
+    prior_rendering: a wife of one of their brothers from the sons of Israel
+    new_rendering: wife of Joakim, one of their fellow Israelites
+    rationale: The kinship language identifies Joakim as belonging to their own Israelite community, not as a biological brother of both elders; the footnote preserves the familial image.
+  - source_phrase: γυναῖκα ἀστεῖαν τῷ εἴδει ... περιπατοῦσαν
+    prior_rendering: a woman beautiful in appearance ... walking
+    new_rendering: a beautiful woman walking
+    rationale: The long identification is separated from the action so readers can readily understand whom the men saw and what she was doing.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier deliberation and footnote already identified the 'brother' as a fellow Israelite rather than a biological sibling. I bring that established meaning into the main text while retaining the kinship wording in a footnote.

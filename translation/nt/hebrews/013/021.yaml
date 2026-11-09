@@ -4,11 +4,11 @@ source:
   edition: SBLGNT
   text: καταρτίσαι ὑμᾶς ἐν ⸀παντὶ ἀγαθῷ εἰς τὸ ποιῆσαι τὸ θέλημα αὐτοῦ, ποιῶν ἐν ⸀ἡμῖν τὸ εὐάρεστον ἐνώπιον αὐτοῦ διὰ Ἰησοῦ Χριστοῦ, ᾧ ἡ δόξα εἰς τοὺς ⸀αἰῶνας· ἀμήν.
 translation:
-  text: may he equip you in every good thing to do his will[a], working in us what is pleasing before him through Jesus Christ, to whom be the glory forever and ever. Amen.
-  philosophy: optimal-equivalence
+  text: equip you with every good thing to do his will, working in us what is pleasing in his sight through Jesus Christ, to whom[a] be the glory forever and ever. Amen.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'to whom' may refer specifically to Jesus the Messiah; some understand it instead to refer to the God of peace, the subject of the prayer.
+    text: The glory may be directed to Jesus Christ, the nearest antecedent, or to the God of peace, the subject of the prayer.
     reason: alternative_reading
 lexical_decisions:
 - source_word: καταρτίσαι
@@ -136,10 +136,16 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "may he equip you in every good thing to do his will, working in us what is pleasing before him through Jesus Messiah, to whom be the glory forever and ever. Amen."
-  to: "may he equip you in every good thing to do his will, working in us what is pleasing before him through Jesus the Messiah, to whom be the glory forever and ever. Amen."
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
-
+  from: may he equip you in every good thing to do his will, working in us what is pleasing before him through Jesus Messiah, to whom be the glory forever and ever. Amen.
+  to: may he equip you in every good thing to do his will, working in us what is pleasing before him through Jesus the Messiah, to whom be the glory forever and ever. Amen.
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:11:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: may he equip you in every good thing to do his will[a], working in us what is pleasing before him through Jesus Christ, to whom be the glory forever and ever. Amen.
+  to: equip you with every good thing to do his will, working in us what is pleasing in his sight through Jesus Christ, to whom[a] be the glory forever and ever. Amen.
+  rationale: The first draft's 'with every good thing,' supported by the lexical rationale, conveys equipping better than the later source-shaped 'in.' I retain the current 'Jesus Christ' under the standing name-construction ruling and preserve the earlier decision not to settle the doxology's recipient.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -162,3 +168,30 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/hebrews/013/021.job-54619.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:11:21Z'
+  change_level: refined
+  confidence: high
+  meaning: The writer prays that God will equip the readers to do his will and work in believers through Jesus Christ what pleases him, ending with everlasting glory.
+  meaning_decisions:
+  - source_phrase: καταρτίσαι ὑμᾶς
+    prior_rendering: may he equip you
+    new_rendering: equip you
+    rationale: This completes the prayer introduced by 'May the God of peace' in verse 20, avoiding a duplicated introductory 'may' without changing the content of the request.
+  - source_phrase: ἐν παντὶ ἀγαθῷ
+    prior_rendering: in every good thing
+    new_rendering: with every good thing
+    rationale: After 'equip,' English uses 'with' to express supplying what is needed; this conveys the purpose of enabling obedience more clearly.
+  - source_phrase: ἐνώπιον αὐτοῦ
+    prior_rendering: before him
+    new_rendering: in his sight
+    rationale: The phrase concerns God's appraisal of what is pleasing, which this established English idiom expresses clearly.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft's 'with every good thing,' supported by the lexical rationale, conveys equipping better than the later source-shaped 'in.' I retain the current 'Jesus Christ' under the standing name-construction ruling and preserve the earlier decision not to settle the doxology's recipient.

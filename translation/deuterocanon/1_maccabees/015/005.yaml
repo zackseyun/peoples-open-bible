@@ -9,15 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Now therefore I confirm for you all the remissions that the kings before me granted you[b][a], and whatever other remissions they granted you.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Greek text ends with a singular verb, 'he granted you,' after the plural subject 'the kings before me.' This may reflect the transmitted wording as preserved in Swete's text; some readers may expect 'they granted you.'
-    reason: textual_variant
-  - marker: b
-    text: '''Remissions'' refers to royal fiscal concessions or reductions in dues, not necessarily complete exemption from all obligations.'
-    reason: cultural_note
+  text: Now therefore I confirm for you all the remissions of dues that the kings before me granted you, together with any other such concessions granted to you.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: νῦν οὖν
   chosen: Now therefore
@@ -104,14 +97,20 @@ revisions:
   from: Now therefore I confirm for you all the remissions that the kings before me granted you, and whatever other remissions he granted you.
   to: Now therefore I confirm for you all the remissions that the kings before me granted you, and whatever other remissions he granted you.
   rationale: Changed 'he granted you' to 'they granted you' for agreement with the plural antecedent 'the kings before me.'
-
 - timestamp: '2026-05-18T02:59:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now therefore I confirm for you all the remissions that the kings before me granted you[b][a], and whatever other remissions they granted you.'
-  to: 'Now therefore I confirm for you all the remissions that the kings before me granted you[b][a], and whatever other remissions they granted you.'
+  from: Now therefore I confirm for you all the remissions that the kings before me granted you[b][a], and whatever other remissions they granted you.
+  to: Now therefore I confirm for you all the remissions that the kings before me granted you[b][a], and whatever other remissions they granted you.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he granted you''].'
+- timestamp: '2026-11-09T18:53:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Now therefore I confirm for you all the remissions that the kings before me granted you[b][a], and whatever other remissions they granted you.
+  to: Now therefore I confirm for you all the remissions of dues that the kings before me granted you, together with any other such concessions granted to you.
+  rationale: The earlier discussion correctly identifies fiscal concessions and warns against assuming every remission was a complete exemption. Rather than reproducing the draft’s unexplained 'he' or normalizing it to the review’s 'they,' I leave the final grant’s agent unstated.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -131,3 +130,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/015/005.job-48831.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:51Z'
+  change_level: refined
+  confidence: high
+  meaning: Antiochus ratifies the existing financial concessions granted to Simon by earlier kings.
+  meaning_decisions:
+  - source_phrase: πάντα τὰ ἀφαιρέματα
+    prior_rendering: all the remissions
+    new_rendering: all the remissions of dues
+    rationale: The administrative context concerns financial obligations; specifying dues prevents 'remissions' from being mistaken for a spiritual or medical term.
+  - source_phrase: καὶ ὅσα ἄλλα ἀφαιρέματα ἀφῆκέν σοι
+    prior_rendering: and whatever other remissions they granted you
+    new_rendering: together with any other such concessions granted to you
+    rationale: The passive wording preserves the additional grants without assigning a definite antecedent to the source’s unexpected singular final verb.
+  footnote_kinds: {}
+  history_weighed: The earlier discussion correctly identifies fiscal concessions and warns against assuming every remission was a complete exemption. Rather than reproducing the draft’s unexplained 'he' or normalizing it to the review’s 'they,' I leave the final grant’s agent unstated.

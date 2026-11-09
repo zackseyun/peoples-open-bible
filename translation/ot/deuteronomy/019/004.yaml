@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/זֶה֙ דְּבַ֣ר הָ/רֹצֵ֔חַ אֲשֶׁר יָנ֥וּס שָׁ֖מָּ/ה וָ/חָ֑י אֲשֶׁ֨ר יַכֶּ֤ה אֶת רֵעֵ֨/הוּ֙ בִּ/בְלִי דַ֔עַת וְ/ה֛וּא לֹא שֹׂנֵ֥א ל֖/וֹ מִ/תְּמֹ֥ל שִׁלְשֹֽׁם־־־־׃
 translation:
-  text: 'This is the provision for the manslayer who may flee there and live: when he strikes his neighbor without intent[a], and he did not hate him in times past.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Literally, 'from yesterday and the day before.' The idiom means 'previously' or 'beforehand.'
-    reason: lexical_alternative
+  text: 'This is the rule for someone who has killed another person: he may flee there and live if he killed his neighbor unintentionally and had not hated him beforehand.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: דְּבַר
   chosen: provision
@@ -18,7 +14,7 @@ lexical_decisions:
   - matter
   - word
   lexicon: HALOT
-  rationale: "In legal context, דָּבָר can denote the matter or rule governing a case. 'Provision' communicates that what follows is the legal stipulation concerning the manslayer, more naturally than the overly literal 'word' and more specifically than 'matter'. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'In legal context, דָּבָר can denote the matter or rule governing a case. ''Provision'' communicates that what follows is the legal stipulation concerning the manslayer, more naturally than the overly literal ''word'' and more specifically than ''matter''. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: הָרֹצֵחַ
   chosen: manslayer
   alternatives:
@@ -102,7 +98,6 @@ revisions:
   from: 'Now this is the provision for the manslayer who may flee there and live: when he strikes his neighbor without intent, and he did not hate him previously.'
   to: 'Now this is the provision for the manslayer who may flee there and live: when he strikes his neighbor without intent, and he did not hate him previously.'
   rationale: Replaced 'previously' with 'in times past' to more closely reflect 'from yesterday and the day before' while keeping natural formal English. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:56:58Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -117,6 +112,13 @@ revisions:
   from: 'Now this is the provision for the manslayer who may flee there and live: when he strikes his neighbor without intent[a], and he did not hate him in times past.'
   to: 'This is the provision for the manslayer who may flee there and live: when he strikes his neighbor without intent[a], and he did not hate him in times past.'
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:31:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'This is the provision for the manslayer who may flee there and live: when he strikes his neighbor without intent[a], and he did not hate him in times past.'
+  to: 'This is the rule for someone who has killed another person: he may flee there and live if he killed his neighbor unintentionally and had not hated him beforehand.'
+  rationale: The automated history debated 'previously' versus 'in times past,' with no maintainer ruling; 'beforehand' carries the relevant temporal meaning directly. I retain the recorded distinction between unintended killing and prior hatred, but make the fatal outcome explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -136,3 +138,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/019/004.job-61680.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:31:29Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A person who killed his neighbor unintentionally, without prior hatred, is eligible to flee to a refuge city and survive.
+  meaning_decisions:
+  - source_phrase: וְזֶה דְּבַר הָרֹצֵחַ אֲשֶׁר יָנוּס שָׁמָּה וָחָי
+    prior_rendering: This is the provision for the manslayer who may flee there and live
+    new_rendering: 'This is the rule for someone who has killed another person: he may flee there and live'
+    rationale: The revised structure introduces the homicide rule and then states the conditions for protection directly, without relying on an unfamiliar legal label.
+  - source_phrase: אֲשֶׁר יַכֶּה אֶת רֵעֵהוּ בִּבְלִי דַעַת
+    prior_rendering: when he strikes his neighbor without intent
+    new_rendering: if he killed his neighbor unintentionally
+    rationale: The blow is fatal in this homicide provision; 'strikes' alone can suggest a nonfatal assault, while the conditional makes the eligibility requirement clear.
+  - source_phrase: מִתְּמֹל שִׁלְשֹׁם
+    prior_rendering: in times past
+    new_rendering: beforehand
+    rationale: The idiom refers to hatred before the killing, not specifically to a remote historical period.
+  footnote_kinds: {}
+  history_weighed: The automated history debated 'previously' versus 'in times past,' with no maintainer ruling; 'beforehand' carries the relevant temporal meaning directly. I retain the recorded distinction between unintended killing and prior hatred, but make the fatal outcome explicit.

@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: הָב֥וּ לָ/כֶ֛ם שְׁלֹשָׁ֥ה אֲנָשִׁ֖ים לַ/שָּׁ֑בֶט וְ/אֶשְׁלָחֵ֗/ם וְ/יָקֻ֜מוּ וְ/יִֽתְהַלְּכ֥וּ בָ/אָ֛רֶץ וְ/יִכְתְּב֥וּ אוֹתָ֛/הּ לְ/פִ֥י נַֽחֲלָתָ֖/ם וְ/יָבֹ֥אוּ אֵלָֽ/י׃
 translation:
-  text: Provide for yourselves three men from each tribe[a], and I will send them out; they shall arise and walk through the land and write it down according to their inheritance[b], and they shall come to me.
-  philosophy: optimal-equivalence
+  text: Choose three men from each tribe, and I will send them out. They are to set out, travel through the land, and describe it in writing for the inheritance allotments[a], then return to me.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'appoint for yourselves three men per tribe.'
+    text: Literally, “according to their inheritance.”
     reason: lexical_alternative
-  - marker: b
-    text: That is, they were to record the land in relation to the inheritance allotments.
-    reason: cultural_note
 lexical_decisions:
 - source_word: הָבוּ
   chosen: Provide
@@ -102,14 +99,20 @@ revisions:
   from: Provide for yourselves three men from each tribe, and I will send them out; they shall arise and walk through the land and write a description of it according to their inheritance, and they shall come to me.
   to: Provide for yourselves three men from each tribe, and I will send them out; they shall arise and walk through the land and write a description of it according to their inheritance, and they shall come to me.
   rationale: Replaced 'write a description of it' with 'write it down' for closer lexical fidelity to the Hebrew, avoiding interpretive expansion while preserving natural English.
-
 - timestamp: '2026-05-17T07:06:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Provide for yourselves three men from each tribe[a], and I will send them out; they shall arise and walk through the land and write it down according to their inheritance[b], and they shall come to me.'
-  to: 'Provide for yourselves three men from each tribe[a], and I will send them out; they shall arise and walk through the land and write it down according to their inheritance[b], and they shall come to me.'
+  from: Provide for yourselves three men from each tribe[a], and I will send them out; they shall arise and walk through the land and write it down according to their inheritance[b], and they shall come to me.
+  to: Provide for yourselves three men from each tribe[a], and I will send them out; they shall arise and walk through the land and write it down according to their inheritance[b], and they shall come to me.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and write a description of it''].'
+- timestamp: '2026-11-09T18:10:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Provide for yourselves three men from each tribe[a], and I will send them out; they shall arise and walk through the land and write it down according to their inheritance[b], and they shall come to me.
+  to: Choose three men from each tribe, and I will send them out. They are to set out, travel through the land, and describe it in writing for the inheritance allotments[a], then return to me.
+  rationale: The first draft and lexical rationale correctly identify a written description as the task. The automated changes between 'write a description' and 'write it down' carry little editorial weight, so I make the survey’s meaning explicit and retain a literal note for its relationship to the inheritances.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -129,3 +132,34 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/joshua/018/004.job-68833.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:10:25Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Joshua orders each tribe to choose three men who will survey the land, describe it in writing for the inheritance allotments, and return to him.
+  meaning_decisions:
+  - source_phrase: הָבוּ לָכֶם שְׁלֹשָׁה אֲנָשִׁים לַשָּׁבֶט
+    prior_rendering: Provide for yourselves three men from each tribe
+    new_rendering: Choose three men from each tribe
+    rationale: Joshua calls for the selection of tribal representatives, not merely the provision of people.
+  - source_phrase: וְיָקֻמוּ וְיִתְהַלְּכוּ בָאָרֶץ
+    prior_rendering: they shall arise and walk through the land
+    new_rendering: They are to set out, travel through the land
+    rationale: Arising introduces the undertaking of the mission; 'set out' conveys that action rather than suggesting that standing up itself matters.
+  - source_phrase: וְיִכְתְּבוּ אֹתָהּ לְפִי נַחֲלָתָם
+    prior_rendering: and write it down according to their inheritance
+    new_rendering: and describe it in writing for the inheritance allotments
+    rationale: The land itself cannot be written down; the task is to prepare a written description organized for its allocation as tribal inheritances.
+  - source_phrase: וְיָבֹאוּ אֵלָי
+    prior_rendering: and they shall come to me
+    new_rendering: then return to me
+    rationale: Since Joshua is sending them from his location, their subsequent coming to him is a return.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The first draft and lexical rationale correctly identify a written description as the task. The automated changes between 'write a description' and 'write it down' carry little editorial weight, so I make the survey’s meaning explicit and retain a literal note for its relationship to the inheritances.

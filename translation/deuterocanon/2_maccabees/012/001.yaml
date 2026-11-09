@@ -9,15 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: After these agreements had been made[a], Lysias went away to the king[b], but the Jews occupied themselves with farming.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'had been concluded' for 'had been made'; the Greek participle can emphasize the completion of the agreements.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'were occupied around farming,' an idiom meaning they were engaged in agricultural work.
-    reason: lexical_alternative
+  text: After these agreements had been made, Lysias went to the king, while the Jews went about their farming.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Γενομένων
   chosen: had been made
@@ -93,14 +86,20 @@ revisions:
   from: After these agreements had been made, Lysias went away to the king, but the Jews occupied themselves with farming.
   to: After these agreements had been made, Lysias went away to the king, but the Jews went about their farming.
   rationale: Revised the final clause from 'occupied themselves with farming' to 'went about their farming' for a more direct and natural rendering of περὶ τὴν γεωργίαν ἐγίνοντο, while keeping the formal tone and meaning.
-
 - timestamp: '2026-05-16T15:52:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'After these agreements had been made[a], Lysias went away to the king[b], but the Jews went about their farming.'
-  to: 'After these agreements had been made[a], Lysias went away to the king[b], but the Jews occupied themselves with farming.'
-  rationale: 'Restored drafter ''the Jews occupied themselves with farming'' (preserving the chosen reflexive idiom) per chosen renderings.'
+  from: After these agreements had been made[a], Lysias went away to the king[b], but the Jews went about their farming.
+  to: After these agreements had been made[a], Lysias went away to the king[b], but the Jews occupied themselves with farming.
+  rationale: Restored drafter 'the Jews occupied themselves with farming' (preserving the chosen reflexive idiom) per chosen renderings.
+- timestamp: '2026-11-09T18:56:31Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: After these agreements had been made[a], Lysias went away to the king[b], but the Jews occupied themselves with farming.
+  to: After these agreements had been made, Lysias went to the king, while the Jews went about their farming.
+  rationale: The earlier review's agricultural wording conveys the idiom naturally, and the subsequent automated revert offers no meaning-based reason to reject it. The existing footnotes add nothing needed beyond the main text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -120,3 +119,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/012/001.job-49318.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:31Z'
+  change_level: refined
+  confidence: high
+  meaning: Once the agreements were concluded, Lysias departed for the king while the Jews attended to their farming.
+  meaning_decisions:
+  - source_phrase: ὁ μὲν Λυσίας ἀπῆε πρὸς τὸν βασιλέα, οἱ δὲ Ἰουδαῖοι
+    prior_rendering: Lysias went away to the king, but the Jews
+    new_rendering: Lysias went to the king, while the Jews
+    rationale: The construction contrasts the two parties' activities without implying opposition between those activities.
+  - source_phrase: περὶ τὴν γεωργίαν ἐγίνοντο
+    prior_rendering: occupied themselves with farming
+    new_rendering: went about their farming
+    rationale: This naturally conveys engagement in ordinary agricultural work.
+  footnote_kinds: {}
+  history_weighed: The earlier review's agricultural wording conveys the idiom naturally, and the subsequent automated revert offers no meaning-based reason to reject it. The existing footnotes add nothing needed beyond the main text.

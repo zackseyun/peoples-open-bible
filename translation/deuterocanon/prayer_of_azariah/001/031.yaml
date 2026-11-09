@@ -42,15 +42,12 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone PAZ extraction from the curated ADA stream, using Daniel 3:24-90 as the source span and renumbering it to PAZ 1:1-67.
 translation:
-  text: Blessed are you[a], who look upon the depths, seated upon the cherubim[b], and praised and highly exalted forever.
-  philosophy: optimal-equivalence
+  text: Blessed are you who look upon the depths, enthroned upon the cherubim[a], worthy of praise and highly exalted forever.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'enthroned above the cherubim.' The Greek more literally says 'seated upon the cherubim.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the abysses.' The phrase evokes the cosmic deep.
-    reason: lexical_alternative
+    text: Cherubim are heavenly beings associated with God's throne.
+    reason: cultural_note
 lexical_decisions:
 - source_word: εὐλογημένος
   chosen: Blessed are you
@@ -151,14 +148,20 @@ revisions:
   from: Blessed are you, who look upon the depths, seated upon the cherubim, and worthy of praise and highly exalted forever.
   to: Blessed are you, who look upon the depths, seated upon the cherubim, and worthy of praise and highly exalted forever.
   rationale: Changed 'worthy of praise' to 'praised' to reflect αἰνετός more directly and maintain the verbless predicate sequence; retained the rest as accurate and natural.
-
 - timestamp: '2026-05-18T02:59:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Blessed are you[a], who look upon the depths, seated upon the cherubim[b], and praised and highly exalted forever.'
-  to: 'Blessed are you[a], who look upon the depths, seated upon the cherubim[b], and praised and highly exalted forever.'
+  from: Blessed are you[a], who look upon the depths, seated upon the cherubim[b], and praised and highly exalted forever.
+  to: Blessed are you[a], who look upon the depths, seated upon the cherubim[b], and praised and highly exalted forever.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''worthy of praise''].'
+- timestamp: '2026-11-09T19:02:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Blessed are you[a], who look upon the depths, seated upon the cherubim[b], and praised and highly exalted forever.
+  to: Blessed are you who look upon the depths, enthroned upon the cherubim[a], worthy of praise and highly exalted forever.
+  rationale: The first draft's 'worthy of praise' is better supported by the adjective's meaning than the later rationale favoring 'praised' for formal resemblance. The documented enthronement alternative clarifies the royal image, while retaining 'upon' avoids unnecessarily resolving its spatial wording.
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -178,3 +181,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/prayer_of_azariah/001/031.job-50942.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:02:29Z'
+  change_level: refined
+  confidence: high
+  meaning: The three bless God, who surveys the cosmic depths from his cherubim throne and deserves praise and exaltation forever.
+  meaning_decisions:
+  - source_phrase: καθήμενος ἐπὶ χερουβεὶν
+    prior_rendering: seated upon the cherubim
+    new_rendering: enthroned upon the cherubim
+    rationale: The biblical cherubim image and the surrounding royal imagery identify this seating as divine enthronement, not an ordinary seated posture.
+  - source_phrase: αἰνετὸς
+    prior_rendering: praised
+    new_rendering: worthy of praise
+    rationale: The adjective expresses deserving praise, a sense explicitly recognized in the first draft and lexical rationale.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The first draft's 'worthy of praise' is better supported by the adjective's meaning than the later rationale favoring 'praised' for formal resemblance. The documented enthronement alternative clarifies the royal image, while retaining 'upon' avoids unnecessarily resolving its spatial wording.

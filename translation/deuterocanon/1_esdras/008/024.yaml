@@ -29,17 +29,14 @@ source:
     note: MT parallel is APPROXIMATE -- 1 Esdras sometimes expands, conflates, or reorders the Hebrew. Use the MT hebrew as a sanity check on proper names and phrasing; the Greek remains the primary source text.
     reference: ''
 translation:
-  text: And all who transgress both the law of your God and the king’s law shall be diligently punished[a], whether by death or by punishment[c][b], by a fine of silver or by confiscation.
-  philosophy: optimal-equivalence
+  text: All who transgress both the law of your God and the king’s law shall be punished with due diligence, whether by death or other punishment, but not[a] by a fine of silver or imprisonment[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Greek source here differs materially from the supplied MT parallel, which corresponds to a different context; this translation therefore follows the Greek as the primary witness.
-    reason: textual_variant
+    text: 'Alternatively, the final terms may be understood as further penalties in the list: ''or by a fine of silver or imprisonment''; the printed Greek has ''not,'' making the construction uncertain.'
+    reason: alternative_reading
   - marker: b
-    text: Or 'strictly punished'; the adverb may emphasize diligent enforcement rather than mere careful procedure.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'banishment' for 'confiscation'; the Greek term can denote removal, but in this legal list it is best understood as seizure of property.
+    text: Or, 'banishment'; the Greek term refers to taking someone away and can denote arrest or removal.
     reason: alternative_reading
 lexical_decisions:
 - source_word: παραβαίνωσι
@@ -149,14 +146,20 @@ revisions:
   from: And all who transgress both the law of your God and the king’s law shall be carefully punished, whether by death or by penalty, by a fine of silver or by confiscation.
   to: And all who transgress both the law of your God and the king’s law shall be carefully punished, whether by death or by penalty, by a fine of silver or by confiscation.
   rationale: Changed 'carefully punished' to 'diligently punished' for a more natural rendering of ἐπιμελῶς, and changed 'penalty' to 'punishment' for closer lexical correspondence to τιμωρίᾳ.
-
 - timestamp: '2026-05-18T02:59:14Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And all who transgress both the law of your God and the king’s law shall be diligently punished[a], whether by death or by punishment[c][b], by a fine of silver or by confiscation.'
-  to: 'And all who transgress both the law of your God and the king’s law shall be diligently punished[a], whether by death or by punishment[c][b], by a fine of silver or by confiscation.'
+  from: And all who transgress both the law of your God and the king’s law shall be diligently punished[a], whether by death or by punishment[c][b], by a fine of silver or by confiscation.
+  to: And all who transgress both the law of your God and the king’s law shall be diligently punished[a], whether by death or by punishment[c][b], by a fine of silver or by confiscation.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''carefully''].'
+- timestamp: '2026-11-09T18:51:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And all who transgress both the law of your God and the king’s law shall be diligently punished[a], whether by death or by punishment[c][b], by a fine of silver or by confiscation.
+  to: All who transgress both the law of your God and the king’s law shall be punished with due diligence, whether by death or other punishment, but not[a] by a fine of silver or imprisonment[b].
+  rationale: The earlier reviews improved the enforcement language but did not address the printed negative, and their case for confiscation depends too heavily on a parallel account. I follow the supplied wording while explicitly preserving the serious alternative reading of the penalty list.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -176,3 +179,31 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/008/024.job-47828.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:51:15Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The decree requires diligent punishment for transgressing divine and royal law, naming death and other punishment while apparently excluding a silver fine or imprisonment.
+  meaning_decisions:
+  - source_phrase: ἐπιμελῶς κολασθήσονται
+    prior_rendering: shall be diligently punished
+    new_rendering: shall be punished with due diligence
+    rationale: This conveys conscientious enforcement rather than an unusual manner of administering the punishment.
+  - source_phrase: ἐάν τε καὶ τιμωρίᾳ
+    prior_rendering: or by punishment
+    new_rendering: or other punishment
+    rationale: The contrast with death makes another form of punishment implicit.
+  - source_phrase: μὴ ἀργυρίῳ ζημίᾳ ἢ ἀπαγωγῇ
+    prior_rendering: by a fine of silver or by confiscation
+    new_rendering: but not by a fine of silver or imprisonment
+    rationale: The supplied printed text contains a negative that the current wording leaves untranslated; I preserve it while noting the possible continued-list interpretation, and render ἀπαγωγή as detention rather than assuming seizure of property.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: The earlier reviews improved the enforcement language but did not address the printed negative, and their case for confiscation depends too heavily on a parallel account. I follow the supplied wording while explicitly preserving the serious alternative reading of the penalty list.

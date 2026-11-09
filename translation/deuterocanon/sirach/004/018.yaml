@@ -28,15 +28,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 4:18
 translation:
-  text: If he turns aside[b][a], she will bind him with bonds.
-  philosophy: optimal-equivalence
+  text: If he turns aside and strays[a], I will bind him in fetters.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'The Greek parallel reads quite differently here: ''Then she will come again straight to him, gladden him, and reveal to him her hidden things.'' This likely reflects a different textual form of Sirach.'
+    text: The Hebrew expression after “turns aside” is uncertain, apparently referring to further deviation. The Greek instead describes Wisdom returning to gladden him and reveal her secrets.
     reason: textual_variant
-  - marker: b
-    text: Hebrew 'bind him with bonds' may also be understood more specifically as 'bind him with fetters' or, if the verb is read differently, 'I will bind him.'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: אִם
   chosen: If
@@ -122,14 +119,20 @@ revisions:
   from: If he turns aside and departs from her, she will bind him with bonds.
   to: If he turns aside and departs from her, she will bind him with bonds.
   rationale: Removed 'and departs from her,' because the Hebrew does not explicitly include 'from her' here; streamlined the clause for closer lexical accuracy while preserving natural English.
-
 - timestamp: '2026-05-18T02:58:03Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If he turns aside[b][a], she will bind him with bonds.'
-  to: 'If he turns aside[b][a], she will bind him with bonds.'
+  from: If he turns aside[b][a], she will bind him with bonds.
+  to: If he turns aside[b][a], she will bind him with bonds.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and departs from her''].'
+- timestamp: '2026-11-09T19:05:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If he turns aside[b][a], she will bind him with bonds.
+  to: If he turns aside and strays[a], I will bind him in fetters.
+  rationale: The review rightly cautioned against adding “from her” to the difficult first clause, so I do not supply that object. The earlier third-person rendering is outweighed by the pointed Hebrew verb and Wisdom’s first-person speech on either side of this verse.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -149,3 +152,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/004/018.job-51076.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:05:34Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Wisdom threatens to restrain the disciple if he strays.
+  meaning_decisions:
+  - source_phrase: אִם יָסוּר וּנְטוֹתֵיהוּ
+    prior_rendering: If he turns aside
+    new_rendering: If he turns aside and strays
+    rationale: The difficult additional expression appears to continue the language of deviation; the rendering conveys that apparent sense without adding an explicit object such as “from her.”
+  - source_phrase: וַאֲסַרְתִיהוּ בָאֲסוּרִים
+    prior_rendering: she will bind him with bonds
+    new_rendering: I will bind him in fetters
+    rationale: The pointed Hebrew verb is first person, agreeing with Wisdom’s speech in verses 17 and 19; “fetters” makes the restraint image intelligible without the redundant “bind with bonds.”
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The review rightly cautioned against adding “from her” to the difficult first clause, so I do not supply that object. The earlier third-person rendering is outweighed by the pointed Hebrew verb and Wisdom’s first-person speech on either side of this verse.

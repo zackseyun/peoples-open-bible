@@ -18,11 +18,11 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: What could be more painful than these things? For the power of fire[a], being sharp and brief, quickly destroyed the bodies.
-  philosophy: optimal-equivalence
+  text: What could be more painful than this? For the fire’s fierce, swift power[a] quickly consumed their bodies.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'quickly destroyed the bodies.' The Greek verb can mean 'dissolved,' 'broke up,' or 'destroyed'; 'consumed' is chosen here because the subject is fire.
+    text: Literally, “the power of fire was sharp and brief.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ὧν τί γένοιτο ἐπαλγέστερον;
@@ -90,14 +90,20 @@ revisions:
   from: What could be more painful than these things? For the power of fire, being sharp and swift, quickly consumed the bodies.
   to: What could be more painful than these things? For the power of fire, being sharp and swift, quickly consumed the bodies.
   rationale: Changed 'swift' to 'brief' to reflect σύντομος more accurately, and 'consumed' to 'destroyed' to better match διέλυσε without interpretive expansion.
-
 - timestamp: '2026-05-18T03:00:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'What could be more painful than these things? For the power of fire[a], being sharp and brief, quickly destroyed the bodies.'
-  to: 'What could be more painful than these things? For the power of fire[a], being sharp and brief, quickly destroyed the bodies.'
+  from: What could be more painful than these things? For the power of fire[a], being sharp and brief, quickly destroyed the bodies.
+  to: What could be more painful than these things? For the power of fire[a], being sharp and brief, quickly destroyed the bodies.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''quickly consumed the bodies''].'
+- timestamp: '2026-11-09T18:59:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: What could be more painful than these things? For the power of fire[a], being sharp and brief, quickly destroyed the bodies.
+  to: What could be more painful than this? For the fire’s fierce, swift power[a] quickly consumed their bodies.
+  rationale: The first draft and lexical rationale recognized swift action and destruction by fire, while the later review preferred the more literal “brief” and “destroyed.” The main text follows the contextual sense, with the literal descriptors preserved in a note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -117,3 +123,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/014/010.job-50082.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:21Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Their suffering was supremely painful, and the fire’s fierce, rapid action quickly destroyed their bodies.
+  meaning_decisions:
+  - source_phrase: ὀξεῖα ... καὶ σύντομος ἡ τοῦ πυρὸς ... δύναμις
+    prior_rendering: the power of fire, being sharp and brief
+    new_rendering: the fire’s fierce, swift power
+    rationale: In this description of destructive fire, the adjectives express intense and rapid action; “sharp” and “brief” alone leave the nature of that force unclear.
+  - source_phrase: ταχέως διέλυσε τὰ σώματα
+    prior_rendering: quickly destroyed the bodies
+    new_rendering: quickly consumed their bodies
+    rationale: “Consumed” expresses destruction by fire naturally, and “their” identifies the bodies already in view.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The first draft and lexical rationale recognized swift action and destruction by fire, while the later review preferred the more literal “brief” and “destroyed.” The main text follows the contextual sense, with the literal descriptors preserved in a note.

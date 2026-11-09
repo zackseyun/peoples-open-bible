@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: וַ/יֹּ֨אמֶר הָ/עָ֜ם לֹ֣א תֵצֵ֗א כִּי֩ אִם נֹ֨ס נָנ֜וּס לֹא יָשִׂ֧ימוּ אֵלֵ֣י/נוּ לֵ֗ב וְ/אִם יָמֻ֤תוּ חֶצְיֵ֨/נוּ֙ לֹֽא יָשִׂ֤ימוּ אֵלֵ֨י/נוּ֙ לֵ֔ב כִּֽי עַתָּ֥ה כָמֹ֖/נוּ עֲשָׂרָ֣ה אֲלָפִ֑ים וְ/עַתָּ֣ה ט֔וֹב כִּי תִֽהְיֶה לָּ֥/נוּ מֵ/עִ֖יר ל/עזיר־־־־־־־׃ס
 translation:
-  text: But the people said[a], “You must not go out, for if we flee, they will not pay attention to us; and if half of us die, they will not pay attention to us. For you are worth ten thousand of us[c][b]; so now it is better that you be ready to help us from the city.”
-  philosophy: optimal-equivalence
+  text: But the troops said, “You must not go out. Even if we flee, the enemy will not be concerned about us; even if half of us die, they will not be concerned about us. For you are worth ten thousand of us[a], so it is better for you to be ready to help us from the city.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “they will not set their heart on us,” an idiom meaning they will not regard us as their main concern.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew “for now you are like ten thousand of us.”
-    reason: lexical_alternative
-  - marker: c
-    text: The final phrase likely means David should remain in the city to provide support or reinforcements if needed.
-    reason: cultural_note
+    text: Following some Hebrew manuscripts and ancient versions; the traditional Hebrew text reads, “For now there are ten thousand like us.”
+    reason: textual_variant
 lexical_decisions:
 - source_word: לֹא תֵצֵא
   chosen: You must not go out
@@ -94,14 +88,20 @@ revisions:
   from: But the people said, “You must not go out, for if we flee, they will not pay attention to us; and if half of us die, they will not pay attention to us. But you are worth ten thousand of us, so now it is better that you be ready to help us from the city.”
   to: But the people said, “You must not go out, for if we flee, they will not pay attention to us; and if half of us die, they will not pay attention to us. But you are worth ten thousand of us, so now it is better that you be ready to help us from the city.”
   rationale: Replaced the second 'But' with 'For' to better reflect כי and improve the logical flow. Kept the rest of the draft, which is accurate, complete, and natural.
-
 - timestamp: '2026-05-17T05:09:43Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But the people said[a], “You must not go out, for if we flee, they will not pay attention to us; and if half of us die, they will not pay attention to us. For you are worth ten thousand of us[c][b]; so now it is better that you be ready to help us from the city.”'
-  to: 'But the people said[a], “You must not go out, for if we flee, they will not pay attention to us; and if half of us die, they will not pay attention to us. For you are worth ten thousand of us[c][b]; so now it is better that you be ready to help us from the city.”'
+  from: But the people said[a], “You must not go out, for if we flee, they will not pay attention to us; and if half of us die, they will not pay attention to us. For you are worth ten thousand of us[c][b]; so now it is better that you be ready to help us from the city.”
+  to: But the people said[a], “You must not go out, for if we flee, they will not pay attention to us; and if half of us die, they will not pay attention to us. For you are worth ten thousand of us[c][b]; so now it is better that you be ready to help us from the city.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''But you are worth ten thousand of us''].'
+- timestamp: '2026-11-09T17:28:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But the people said[a], “You must not go out, for if we flee, they will not pay attention to us; and if half of us die, they will not pay attention to us. For you are worth ten thousand of us[c][b]; so now it is better that you be ready to help us from the city.”
+  to: But the troops said, “You must not go out. Even if we flee, the enemy will not be concerned about us; even if half of us die, they will not be concerned about us. For you are worth ten thousand of us[a], so it is better for you to be ready to help us from the city.”
+  rationale: The recorded review recognized the explanatory force of “For,” which the current wording preserves. I retain the established valuation of David and the interpretation of support from the city, while replacing the earlier misplaced notes with a note on the actual textual difficulty.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -121,3 +121,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/018/003.job-45841.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:15Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The troops urge David to remain in the city because he matters far more to the enemy than they do and can support them from there.
+  meaning_decisions:
+  - source_phrase: הָעָם
+    prior_rendering: the people
+    new_rendering: the troops
+    rationale: These speakers are the fighting force whose possible flight and deaths they discuss.
+  - source_phrase: כִּי אִם נֹס נָנוּס ... וְאִם יָמֻתוּ חֶצְיֵנוּ
+    prior_rendering: for if we flee ... and if half of us die
+    new_rendering: Even if we flee ... even if half of us die
+    rationale: The concessions stress that even major losses among the troops would not matter to the enemy as David’s presence would.
+  - source_phrase: לֹא יָשִׂימוּ אֵלֵינוּ לֵב
+    prior_rendering: they will not pay attention to us
+    new_rendering: the enemy will not be concerned about us
+    rationale: The idiom concerns the enemy’s principal interest, not a failure to notice the troops; naming the implied enemy makes the argument clear.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The recorded review recognized the explanatory force of “For,” which the current wording preserves. I retain the established valuation of David and the interpretation of support from the city, while replacing the earlier misplaced notes with a note on the actual textual difficulty.

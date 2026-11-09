@@ -19,11 +19,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But the people became very thirsty[a], and they compelled us to do as we had said to them, and to bring upon ourselves an oath that we will not break.
-  philosophy: optimal-equivalence
+  text: But the people were desperately thirsty, and they compelled us to do as we had told them[a] and to bind ourselves by an oath that we will not break.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'to bind ourselves by an oath.' The Greek literally says 'to bring upon ourselves an oath.'
+    text: The supplied Greek reads 'as they had said to them'; the context identifies the earlier commitment as the rulers' words to the people.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐδίψησεν σφόδρα
@@ -90,14 +90,20 @@ revisions:
   from: But the people became very thirsty, and they compelled us to do as we had spoken to them, and to bring upon ourselves an oath that we will not break.
   to: But the people became very thirsty, and they compelled us to do as we had spoken to them, and to bring upon ourselves an oath that we will not break.
   rationale: Changed 'spoken' to 'said' for more natural English while preserving the sense; otherwise retained the draft as accurate and complete.
-
 - timestamp: '2026-05-18T02:59:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But the people became very thirsty[a], and they compelled us to do as we had said to them, and to bring upon ourselves an oath that we will not break.'
-  to: 'But the people became very thirsty[a], and they compelled us to do as we had said to them, and to bring upon ourselves an oath that we will not break.'
+  from: But the people became very thirsty[a], and they compelled us to do as we had said to them, and to bring upon ourselves an oath that we will not break.
+  to: But the people became very thirsty[a], and they compelled us to do as we had said to them, and to bring upon ourselves an oath that we will not break.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to do as we had spoken to them''].'
+- timestamp: '2026-11-09T19:01:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But the people became very thirsty[a], and they compelled us to do as we had said to them, and to bring upon ourselves an oath that we will not break.
+  to: But the people were desperately thirsty, and they compelled us to do as we had told them[a] and to bind ourselves by an oath that we will not break.
+  rationale: The history consistently understands the awkward Greek speech clause as referring to the rulers' earlier commitment, which the preceding chapter supports. I retain that contextual understanding, disclose the grammatical difficulty, and use the documented idiomatic alternative for taking the oath.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -117,3 +123,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/008/030.job-50673.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:20Z'
+  change_level: refined
+  confidence: medium
+  meaning: Uzziah explains that the people's severe thirst compelled the rulers to confirm their commitment with an oath they refuse to break.
+  meaning_decisions:
+  - source_phrase: ἐδίψησεν σφόδρα
+    prior_rendering: became very thirsty
+    new_rendering: were desperately thirsty
+    rationale: This gives the intensity of the thirst its proper weight as Uzziah's explanation for yielding to pressure.
+  - source_phrase: ἐπαγαγεῖν ἐφʼ ἡμᾶς ὅρκον
+    prior_rendering: to bring upon ourselves an oath
+    new_rendering: to bind ourselves by an oath
+    rationale: The idiom concerns accepting an oath's binding obligation, not bringing an object upon themselves.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The history consistently understands the awkward Greek speech clause as referring to the rulers' earlier commitment, which the preceding chapter supports. I retain that contextual understanding, disclose the grammatical difficulty, and use the documented idiomatic alternative for taking the oath.

@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/אֵ֤ת כָּל עָרֵי/הֶם֙ בְּ/מ֣וֹשְׁבֹתָ֔/ם וְ/אֵ֖ת כָּל טִֽירֹתָ֑/ם שָׂרְפ֖וּ בָּ/אֵֽשׁ־־׃
 translation:
-  text: And they burned with fire all their cities in their dwelling places[b][a], and all their encampments.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'all their cities in their settlements.' The Hebrew phrase may be rendered more formally, but 'where they lived' expresses the sense in natural English.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'their camps' or 'their villages' for 'their encampments.'
-    reason: lexical_alternative
+  text: They burned down all the cities where the Midianites lived and all their encampments.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: עָרֵיהֶם
   chosen: their cities
@@ -69,14 +62,20 @@ revisions:
   from: They burned with fire all their cities where they lived, and all their encampments.
   to: They burned with fire all their cities where they lived, and all their encampments.
   rationale: Reordered the sentence to reflect the Hebrew more closely, rendered בְּמוֹשְׁבֹתָם as 'in their dwelling places' rather than the interpretive 'where they lived,' and kept the formal repetition of 'all their ... and all their ...'.
-
 - timestamp: '2026-05-18T02:58:20Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they burned with fire all their cities in their dwelling places[b][a], and all their encampments.'
-  to: 'And they burned with fire all their cities in their dwelling places[b][a], and all their encampments.'
+  from: And they burned with fire all their cities in their dwelling places[b][a], and all their encampments.
+  to: And they burned with fire all their cities in their dwelling places[b][a], and all their encampments.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''where they lived''].'
+- timestamp: '2026-11-09T18:32:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they burned with fire all their cities in their dwelling places[b][a], and all their encampments.
+  to: They burned down all the cities where the Midianites lived and all their encampments.
+  rationale: The first draft and lexical discussion already recognized “where they lived” as the natural locative sense. I recover that clarity while retaining the important distinction between cities and encampments.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -96,3 +95,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/031/010.job-41266.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:32:16Z'
+  change_level: refined
+  confidence: high
+  meaning: The Israelites burn the Midianites’ inhabited cities and encampments.
+  meaning_decisions:
+  - source_phrase: עָרֵיהֶם בְּמוֹשְׁבֹתָם
+    prior_rendering: their cities in their dwelling places
+    new_rendering: the cities where the Midianites lived
+    rationale: The phrase identifies their inhabited settlements; the relative clause conveys that relationship naturally and makes the referent explicit.
+  - source_phrase: שָׂרְפוּ בָּאֵשׁ
+    prior_rendering: burned with fire
+    new_rendering: burned down
+    rationale: This describes destructive burning, which “burned down” conveys without the redundant English specification “with fire.”
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical discussion already recognized “where they lived” as the natural locative sense. I recover that clarity while retaining the important distinction between cities and encampments.

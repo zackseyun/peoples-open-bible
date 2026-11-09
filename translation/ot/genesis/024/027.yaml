@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֗אמֶר בָּר֤וּךְ יְהוָה֙ אֱלֹהֵי֙ אֲדֹנִ֣/י אַבְרָהָ֔ם אֲ֠שֶׁר לֹֽא עָזַ֥ב חַסְדּ֛/וֹ וַ/אֲמִתּ֖/וֹ מֵ/עִ֣ם אֲדֹנִ֑/י אָנֹכִ֗י בַּ/דֶּ֨רֶךְ֙ נָחַ֣/נִי יְהוָ֔ה בֵּ֖ית אֲחֵ֥י אֲדֹנִֽ/י־׃
 translation:
-  text: And he said[a], “Blessed be Yahweh, the God of my master Abraham, who has not forsaken his steadfast love and his faithfulness from my master. As for me[b], Yahweh has led me on the way to the house of my master’s brothers.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “his lovingkindness and his truth.” The Hebrew pair often carries the sense of covenant loyalty and reliability.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew “brothers”; here it refers to Abraham’s male kin/family line.
-    reason: lexical_alternative
+  text: And he said, “Blessed be Yahweh, the God of my master Abraham, who has not withdrawn his steadfast love and faithfulness from my master. As for me, Yahweh has led me on my journey to the house of my master’s relatives.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: בָּרוּךְ
   chosen: Blessed be
@@ -133,14 +126,20 @@ revisions:
   from: And he said, “Blessed be the LORD, the God of my master Abraham, who has not forsaken his steadfast love and his faithfulness toward my master. As for me, the LORD has led me on the way to the house of my master’s brothers.”
   to: And he said, “Blessed be the LORD, the God of my master Abraham, who has not forsaken his steadfast love and his faithfulness toward my master. As for me, the LORD has led me on the way to the house of my master’s brothers.”
   rationale: Adjusted 'toward my master' to 'from my master' to reflect the Hebrew preposition more closely.
-
 - timestamp: '2026-05-17T08:06:14Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he said[a], “Blessed be Yahweh, the God of my master Abraham, who has not forsaken his steadfast love and his faithfulness from my master. As for me[b], Yahweh has led me on the way to the house of my master’s brothers.”'
-  to: 'And he said[a], “Blessed be Yahweh, the God of my master Abraham, who has not forsaken his steadfast love and his faithfulness from my master. As for me[b], Yahweh has led me on the way to the house of my master’s brothers.”'
+  from: And he said[a], “Blessed be Yahweh, the God of my master Abraham, who has not forsaken his steadfast love and his faithfulness from my master. As for me[b], Yahweh has led me on the way to the house of my master’s brothers.”
+  to: And he said[a], “Blessed be Yahweh, the God of my master Abraham, who has not forsaken his steadfast love and his faithfulness from my master. As for me[b], Yahweh has led me on the way to the house of my master’s brothers.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''toward my master''].'
+- timestamp: '2026-11-09T17:44:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he said[a], “Blessed be Yahweh, the God of my master Abraham, who has not forsaken his steadfast love and his faithfulness from my master. As for me[b], Yahweh has led me on the way to the house of my master’s brothers.”
+  to: And he said, “Blessed be Yahweh, the God of my master Abraham, who has not withdrawn his steadfast love and faithfulness from my master. As for me, Yahweh has led me on my journey to the house of my master’s relatives.”
+  rationale: The first draft’s “toward my master” conveyed the relationship better than the later source-shaped “forsaken … from”; “withdrawn … from” preserves both the meaning and the withdrawal construction. The record itself recognizes the broader family reference of “brothers,” which I now express in the main text.
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -163,3 +162,29 @@ cross_check:
   verdict_counts:
     minor-issues: 3
   source_review: state/reviews/gemini/low_agreement_recheck/ot/genesis/024/027.job-28583.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:44:03Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The servant praises Yahweh for continuing his steadfast love and faithfulness to Abraham and for guiding him to Abraham’s relatives.
+  meaning_decisions:
+  - source_phrase: לֹא עָזַב חַסְדּוֹ וַאֲמִתּוֹ מֵעִם אֲדֹנִי
+    prior_rendering: has not forsaken his steadfast love and his faithfulness from my master
+    new_rendering: has not withdrawn his steadfast love and faithfulness from my master
+    rationale: The Hebrew means that Yahweh has not ceased showing loyal love and faithfulness to Abraham; “withdrawn … from” conveys this relationship naturally without weakening either weighty term.
+  - source_phrase: בַּדֶּרֶךְ נָחַנִי יְהוָה
+    prior_rendering: Yahweh has led me on the way
+    new_rendering: Yahweh has led me on my journey
+    rationale: The way is the servant’s journey, and the new wording makes the occasion of Yahweh’s guidance explicit.
+  - source_phrase: בֵּית אֲחֵי אֲדֹנִי
+    prior_rendering: the house of my master’s brothers
+    new_rendering: the house of my master’s relatives
+    rationale: The kinship term includes Abraham’s extended family here; “brothers” would suggest that the household consists of Abraham’s immediate siblings.
+  footnote_kinds: {}
+  history_weighed: The first draft’s “toward my master” conveyed the relationship better than the later source-shaped “forsaken … from”; “withdrawn … from” preserves both the meaning and the withdrawal construction. The record itself recognizes the broader family reference of “brothers,” which I now express in the main text.

@@ -10,14 +10,11 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: She went down with him into the pit[a], and in chains she did not abandon him, until she brought him the scepter of a kingdom and authority over those who had ruled him; she showed those who had slandered him to be false[b], and gave him everlasting glory.
-  philosophy: optimal-equivalence
+  text: She went down with him into the pit[a] and did not abandon him in chains, until she gave him the royal scepter and authority over those who had oppressed him; she showed that the accusations against him were false and gave him everlasting glory.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'into the dungeon'; the Greek literally says 'into the pit,' which can refer to an imprisonment pit or cistern.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'proved those who had accused him false.'
+    text: The Greek word can also mean 'dungeon.'
     reason: alternative_reading
 lexical_decisions:
 - source_word: συγκατέβη
@@ -126,14 +123,20 @@ revisions:
   from: She went down with him into the pit, and in chains she did not abandon him, until she brought him the scepter of a kingdom and authority over those who had ruled him; she showed those who had slandered him to be false, and gave him everlasting glory.
   to: She went down with him into the pit, and in chains she did not abandon him, until she brought him the scepter of a kingdom and authority over those who had tyrannized him; she showed those who had accused him to be false, and gave him everlasting glory.
   rationale: Replaced 'ruled him' with 'tyrannized him' to reflect τυραννούντων more precisely, and 'slandered him' with 'accused him' to better match μωμησαμένους without over-specifying defamation.
-
 - timestamp: '2026-05-16T17:22:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'She went down with him into the pit[a], and in chains she did not abandon him, until she brought him the scepter of a kingdom and authority over those who had tyrannized him; she showed those who had accused him to be false[b], and gave him everlasting glory.'
-  to: 'She went down with him into the pit[a], and in chains she did not abandon him, until she brought him the scepter of a kingdom and authority over those who had ruled him; she showed those who had slandered him to be false[b], and gave him everlasting glory.'
-  rationale: 'Restored drafter ''those who had ruled him'' (preserving the chosen rendering of τυραννούντων) and ''those who had slandered him'' (preserving the chosen rendering of μωμησαμένους) per chosen renderings.'
+  from: She went down with him into the pit[a], and in chains she did not abandon him, until she brought him the scepter of a kingdom and authority over those who had tyrannized him; she showed those who had accused him to be false[b], and gave him everlasting glory.
+  to: She went down with him into the pit[a], and in chains she did not abandon him, until she brought him the scepter of a kingdom and authority over those who had ruled him; she showed those who had slandered him to be false[b], and gave him everlasting glory.
+  rationale: Restored drafter 'those who had ruled him' (preserving the chosen rendering of τυραννούντων) and 'those who had slandered him' (preserving the chosen rendering of μωμησαμένους) per chosen renderings.
+- timestamp: '2026-11-09T19:11:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: She went down with him into the pit[a], and in chains she did not abandon him, until she brought him the scepter of a kingdom and authority over those who had ruled him; she showed those who had slandered him to be false[b], and gave him everlasting glory.
+  to: She went down with him into the pit[a] and did not abandon him in chains, until she gave him the royal scepter and authority over those who had oppressed him; she showed that the accusations against him were false and gave him everlasting glory.
+  rationale: I retain the pit, chains, scepter, and everlasting glory preserved throughout the history. The review’s attention to oppressive rule was sound, despite its automated reversal, and the refutation is expressed more naturally as the exposure of false accusations.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -153,3 +156,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/010/014.job-39478.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:46Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Wisdom accompanied Joseph through confinement, raised him to royal authority over his former oppressors, vindicated him against false accusations, and gave him everlasting glory.
+  meaning_decisions:
+  - source_phrase: ἤνεγκεν αὐτῷ σκῆπτρα βασιλείας
+    prior_rendering: she brought him the scepter of a kingdom
+    new_rendering: she gave him the royal scepter
+    rationale: The phrase describes the conferral of royal authority, not the delivery of an object belonging to an unspecified kingdom. The scepter remains as the meaningful symbol of that authority.
+  - source_phrase: ἐξουσίαν τυραννούντων αὐτοῦ
+    prior_rendering: authority over those who had ruled him
+    new_rendering: authority over those who had oppressed him
+    rationale: The verb carries domination or oppressive rule in this context, sharpening the reversal from Joseph’s subjection to his authority.
+  - source_phrase: ψευδεῖς τε ἔδειξεν τοὺς μωμησαμένους αὐτόν
+    prior_rendering: she showed those who had slandered him to be false
+    new_rendering: she showed that the accusations against him were false
+    rationale: Calling people 'false' is unclear English here; the construction communicates Joseph’s vindication by exposing the falsity of their accusations.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retain the pit, chains, scepter, and everlasting glory preserved throughout the history. The review’s attention to oppressive rule was sound, despite its automated reversal, and the refutation is expressed more naturally as the exposure of false accusations.

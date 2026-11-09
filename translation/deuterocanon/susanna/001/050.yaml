@@ -10,12 +10,8 @@ source:
   validation: no_reference
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Susanna extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: And all the people returned with haste. And the elders said to him[a], “Come, sit in our midst and tell us, for God has given you eldership.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “God has given you eldership,” “God has given you preeminence,” or “God has given you the rank of an elder.” The Greek τὸ πρεσβεῖον denotes seniority or honored rank; here it refers to recognized authority rather than literal age.
-    reason: lexical_alternative
+  text: All the people hurried back. The elders said to him, “Come, sit among us and tell us, for God has given you the authority of an elder.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀνέστρεψεν
   chosen: returned
@@ -105,14 +101,20 @@ revisions:
   from: And all the people returned with haste. And the elders said to him, “Come, sit in our midst and tell us, because God has given you senior standing among us.”
   to: And all the people returned with haste. And the elders said to him, “Come, sit in our midst and tell us, because God has given you senior standing among us.”
   rationale: Replaced 'because' with 'for' for a more formal connective, and revised 'senior standing among us' to 'eldership' to more directly reflect τὸ πρεσβεῖον without adding 'among us,' which is not in the Greek.
-
 - timestamp: '2026-05-18T02:59:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And all the people returned with haste. And the elders said to him[a], “Come, sit in our midst and tell us, for God has given you eldership.”'
-  to: 'And all the people returned with haste. And the elders said to him[a], “Come, sit in our midst and tell us, for God has given you eldership.”'
+  from: And all the people returned with haste. And the elders said to him[a], “Come, sit in our midst and tell us, for God has given you eldership.”
+  to: And all the people returned with haste. And the elders said to him[a], “Come, sit in our midst and tell us, for God has given you eldership.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''senior standing''].'
+- timestamp: '2026-11-09T19:10:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And all the people returned with haste. And the elders said to him[a], “Come, sit in our midst and tell us, for God has given you eldership.”
+  to: All the people hurried back. The elders said to him, “Come, sit among us and tell us, for God has given you the authority of an elder.”
+  rationale: The draft and lexical deliberation identify honored standing rather than literal age, while the later wording favors the compressed “eldership.” I preserve the recognized authority that both approaches intended, expressing it directly in the text.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -132,3 +134,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/susanna/001/050.job-52467.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:49Z'
+  change_level: refined
+  confidence: high
+  meaning: The people hurry back, and the elders invite Daniel to join them and speak, recognizing that God has given him an elder's authority.
+  meaning_decisions:
+  - source_phrase: σοὶ δέδωκεν ὁ θεὸς τὸ πρεσβεῖον
+    prior_rendering: God has given you eldership
+    new_rendering: God has given you the authority of an elder
+    rationale: The assembly recognizes the young Daniel's divinely given standing to conduct a judicial inquiry; this wording makes that meaning clearer than the unfamiliar noun “eldership.”
+  footnote_kinds: {}
+  history_weighed: The draft and lexical deliberation identify honored standing rather than literal age, while the later wording favors the compressed “eldership.” I preserve the recognized authority that both approaches intended, expressing it directly in the text.

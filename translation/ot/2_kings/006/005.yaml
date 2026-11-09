@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יְהִ֤י הָֽ/אֶחָד֙ מַפִּ֣יל הַ/קּוֹרָ֔ה וְ/אֶת הַ/בַּרְזֶ֖ל נָפַ֣ל אֶל הַ/מָּ֑יִם וַ/יִּצְעַ֥ק וַ/יֹּ֛אמֶר אֲהָ֥הּ אֲדֹנִ֖/י וְ/ה֥וּא שָׁאֽוּל־־׃
 translation:
-  text: But as one was felling a beam[a], the iron fell into the water, and he cried out and said, “Alas, my master! It was borrowed.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew literally, 'the iron fell into the water.' The phrase refers to the iron part of the tool, that is, the axe head.
-    reason: lexical_alternative
+  text: But as one of them was felling a tree, the iron axe head fell into the water. He cried out, “Alas, my master! It was borrowed!”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: מַפִּיל
   chosen: was felling
@@ -84,14 +80,20 @@ revisions:
   from: But as one was felling a beam, the iron axe head fell into the water, and he cried out and said, “Alas, my master! It was borrowed.”
   to: But as one was felling a beam, the iron axe head fell into the water, and he cried out and said, “Alas, my master! It was borrowed.”
   rationale: Changed 'the iron axe head' to 'the iron' for closer lexical accuracy, since the source says simply 'the iron.' No other changes needed.
-
 - timestamp: '2026-05-18T02:58:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But as one was felling a beam[a], the iron fell into the water, and he cried out and said, “Alas, my master! It was borrowed.”'
-  to: 'But as one was felling a beam[a], the iron fell into the water, and he cried out and said, “Alas, my master! It was borrowed.”'
+  from: But as one was felling a beam[a], the iron fell into the water, and he cried out and said, “Alas, my master! It was borrowed.”
+  to: But as one was felling a beam[a], the iron fell into the water, and he cried out and said, “Alas, my master! It was borrowed.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the iron axe head''].'
+- timestamp: '2026-11-09T17:27:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But as one was felling a beam[a], the iron fell into the water, and he cried out and said, “Alas, my master! It was borrowed.”
+  to: But as one of them was felling a tree, the iron axe head fell into the water. He cried out, “Alas, my master! It was borrowed!”
+  rationale: The first draft and lexical rationale explicitly identify the iron axe head; the later preference for “the iron” chiefly pursued lexical transparency. I recover the draft’s clarity and preserve the distressed address and the fact that the tool was borrowed.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -111,3 +113,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_kings/006/005.job-60403.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:27:06Z'
+  change_level: retranslated
+  confidence: high
+  meaning: While felling a tree, one man loses his iron axe head in the water and cries out in distress because it was borrowed.
+  meaning_decisions:
+  - source_phrase: מַפִּיל הַקּוֹרָה
+    prior_rendering: was felling a beam
+    new_rendering: was felling a tree
+    rationale: The object is a tree being felled for use as a beam; English “felling a beam” misleadingly suggests an already prepared building component.
+  - source_phrase: הַבַּרְזֶל
+    prior_rendering: the iron
+    new_rendering: the iron axe head
+    rationale: “Iron” names the tool’s metal head by its material; making the object explicit conveys what the first hearers understood while retaining the significant material.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale explicitly identify the iron axe head; the later preference for “the iron” chiefly pursued lexical transparency. I recover the draft’s clarity and preserve the distressed address and the fact that the tool was borrowed.

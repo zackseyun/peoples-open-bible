@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וְ/אַתָּ֣ה תִּשְׁמַ֣ע הַ/שָּׁמַ֗יִם וְ/סָ֨לַחְתָּ֜ לְ/חַטַּ֤את עֲבָדֶ֨י/ךָ֙ וְ/עַמְּ/ךָ֣ יִשְׂרָאֵ֔ל כִּ֥י תוֹרֵ֛/ם אֶל הַ/דֶּ֥רֶךְ הַ/טּוֹבָ֖ה אֲשֶׁ֣ר יֵֽלְכוּ בָ֑/הּ וְ/נָתַתָּ֤ה מָטָר֙ עַֽל אַרְצְ/ךָ֔ אֲשֶׁר נָתַ֥תָּה לְ/עַמְּ/ךָ֖ לְ/נַחֲלָֽה׀־־־־׃ס
 translation:
-  text: then may you hear in heaven and forgive the sin of your servants and of your people Israel[a], when you teach them the good way in which they should walk, and give rain on your land that you have given to your people as an inheritance.
-  philosophy: optimal-equivalence
+  text: then hear in heaven and forgive the sin of your servants and your people Israel—for you teach them the good way they should walk in[a]—and send rain on your land, which you have given to your people as an inheritance.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'hear from heaven.' The Hebrew literally says 'hear the heavens/heaven,' an idiom for God's hearing from his heavenly dwelling.
-    reason: lexical_alternative
+    text: Or 'when you teach them the good way they should walk in.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: תִּשְׁמַע הַשָּׁמַיִם
   chosen: hear in heaven
@@ -115,14 +115,20 @@ revisions:
   from: then may you hear in heaven and forgive the sin of your servants and of your people Israel, when you teach them the good way in which they should walk, and give rain on your land that you have given to your people as an inheritance.
   to: then may you hear from heaven and forgive the sin of your servants and of your people Israel, when you teach them the good way in which they should walk, and send rain on your land that you have given to your people as an inheritance.
   rationale: Changed 'in heaven' to 'from heaven' for more natural rendering of the idiom, and 'give rain on your land' to 'send rain on your land' for more natural English while preserving the meaning.
-
 - timestamp: '2026-05-15T19:39:42Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'then may you hear from heaven and forgive the sin of your servants and of your people Israel[a], when you teach them the good way in which they should walk, and send rain on your land that you have given to your people as an inheritance.'
-  to: 'then may you hear in heaven and forgive the sin of your servants and of your people Israel[a], when you teach them the good way in which they should walk, and give rain on your land that you have given to your people as an inheritance.'
+  from: then may you hear from heaven and forgive the sin of your servants and of your people Israel[a], when you teach them the good way in which they should walk, and send rain on your land that you have given to your people as an inheritance.
+  to: then may you hear in heaven and forgive the sin of your servants and of your people Israel[a], when you teach them the good way in which they should walk, and give rain on your land that you have given to your people as an inheritance.
   rationale: 'Drafter chose ''hear in heaven'' for שְׁמַע הַשָּׁמַיִם (slightly more literal preposition, with ''from heaven'' as explicit rejected alternative) and ''give rain'' for נתן מטר (literal: ''give'', with ''send rain'' as rejected alternative). Azure substituted both rejected alternatives on English-idiom preference, no lexical engagement.'
+- timestamp: '2026-11-09T17:24:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: then may you hear in heaven and forgive the sin of your servants and of your people Israel[a], when you teach them the good way in which they should walk, and give rain on your land that you have given to your people as an inheritance.
+  to: then hear in heaven and forgive the sin of your servants and your people Israel—for you teach them the good way they should walk in[a]—and send rain on your land, which you have given to your people as an inheritance.
+  rationale: The automated revert favored source-transparent 'in heaven' and 'give rain'; I retain the already clear 'in heaven' but use natural English for granting rain. The documented causal alternative for כִּי fits the preceding discipline language, though the earlier temporal reading remains in a footnote.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -142,3 +148,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_chronicles/006/027.job-59625.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:24:20Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Solomon asks God to hear, forgive, and restore rain, acknowledging that God teaches his people the good way they should follow.
+  meaning_decisions:
+  - source_phrase: כִּי תוֹרֵם אֶל הַדֶּרֶךְ הַטּוֹבָה אֲשֶׁר יֵלְכוּ בָהּ
+    prior_rendering: when you teach them the good way in which they should walk
+    new_rendering: for you teach them the good way they should walk in
+    rationale: The explanatory sense of כִּי connects God's discipline with his instruction; the temporal understanding remains possible and is noted.
+  - source_phrase: וְנָתַתָּה מָטָר עַל אַרְצְךָ
+    prior_rendering: and give rain on your land
+    new_rendering: and send rain on your land
+    rationale: '''Send rain'' naturally expresses God''s granting rainfall without changing its character as his gift.'
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The automated revert favored source-transparent 'in heaven' and 'give rain'; I retain the already clear 'in heaven' but use natural English for granting rain. The documented causal alternative for כִּי fits the preceding discipline language, though the earlier temporal reading remains in a footnote.

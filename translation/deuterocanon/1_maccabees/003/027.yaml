@@ -22,12 +22,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: When Antiochus the king heard these words[a], he became furiously angry, and he sent out and gathered all the forces of his kingdom, a very strong camp.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'a very strong encampment' or 'an exceedingly strong army camp.' The Greek παρεμβολή can denote the camp itself or the encamped force.
-    reason: lexical_alternative
+  text: When King Antiochus heard these reports, he was enraged. He sent out a summons and gathered all the forces of his kingdom—a very powerful army.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ὡς δὲ
   chosen: When
@@ -124,14 +120,20 @@ revisions:
   from: When Antiochus the king heard these words, he became furiously angry, and he sent out and gathered all the forces of his kingdom, a very strong camp.
   to: When Antiochus the king heard these words, he became very angry, and he sent and gathered all the forces of his kingdom, a very strong army camp.
   rationale: Replaced the paraphrastic 'furiously angry' with the more literal 'very angry'; simplified 'sent out' to 'sent'; and revised 'camp' to 'army camp' to better reflect παρεμβολή while preserving the appositional structure of the Greek.
-
 - timestamp: '2026-05-16T14:52:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When Antiochus the king heard these words[a], he became very angry, and he sent and gathered all the forces of his kingdom, a very strong army camp.'
-  to: 'When Antiochus the king heard these words[a], he became furiously angry, and he sent out and gathered all the forces of his kingdom, a very strong camp.'
-  rationale: 'Restored drafter ''furiously angry'' (preserving intensified anger force), ''sent out'' (preserving directional motion), and ''camp'' (preserving the chosen rendering of παρεμβολή) per chosen renderings.'
+  from: When Antiochus the king heard these words[a], he became very angry, and he sent and gathered all the forces of his kingdom, a very strong army camp.
+  to: When Antiochus the king heard these words[a], he became furiously angry, and he sent out and gathered all the forces of his kingdom, a very strong camp.
+  rationale: Restored drafter 'furiously angry' (preserving intensified anger force), 'sent out' (preserving directional motion), and 'camp' (preserving the chosen rendering of παρεμβολή) per chosen renderings.
+- timestamp: '2026-11-09T18:51:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When Antiochus the king heard these words[a], he became furiously angry, and he sent out and gathered all the forces of his kingdom, a very strong camp.
+  to: When King Antiochus heard these reports, he was enraged. He sent out a summons and gathered all the forces of his kingdom—a very powerful army.
+  rationale: The review’s very angry weakened the intensified anger, so I retained that force through enraged. The camp wording and the unspecified sent out were defended mainly on formal grounds; the military context supports army and an explicit summons.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -151,3 +153,33 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/003/027.job-48112.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:51:33Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Enraged by reports of Judas’s success, Antiochus mobilizes all his kingdom’s military forces into a powerful army.
+  meaning_decisions:
+  - source_phrase: τοὺς λόγους τούτους
+    prior_rendering: these words
+    new_rendering: these reports
+    rationale: Refers to the accounts of Judas’s military success reaching the king, not to a directly quoted speech.
+  - source_phrase: ὠργίσθη θυμῷ
+    prior_rendering: became furiously angry
+    new_rendering: was enraged
+    rationale: Carries the doubled expression’s intensity in a strong, natural English verb.
+  - source_phrase: ἀπέστειλεν καὶ συνήγαγεν
+    prior_rendering: he sent out and gathered
+    new_rendering: He sent out a summons and gathered
+    rationale: Supplies the understood act of summoning troops, avoiding an English verb left without its object.
+  - source_phrase: παρεμβολὴν ἰσχυρὰν σφόδρα
+    prior_rendering: a very strong camp
+    new_rendering: a very powerful army
+    rationale: The phrase describes the assembled military force rather than the strength of its campsite.
+  footnote_kinds: {}
+  history_weighed: The review’s very angry weakened the intensified anger, so I retained that force through enraged. The camp wording and the unspecified sent out were defended mainly on formal grounds; the military context supports army and an explicit summons.

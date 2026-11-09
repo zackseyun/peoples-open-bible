@@ -16,15 +16,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And because of them the nation was at peace[a], and, having renewed good order in the homeland[b], it has besieged the enemies completely.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'through them'; the Greek can express causation or instrumentality.
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek verb behind 'has driven completely out by siege' is intensive and built on 'besiege'; it may also be understood more literally as 'has utterly besieged the enemies.'
-    reason: lexical_alternative
+  text: Because of them the nation gained peace and, after restoring lawful order in the homeland, overcame its enemies by siege.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: διʼ αὐτοὺς
   chosen: because of them
@@ -121,14 +114,20 @@ revisions:
   from: And because of them the nation was at peace, and, having renewed the good order in the homeland, it has driven the enemies completely out by siege.
   to: And because of them the nation was at peace, and, having renewed the good order in the homeland, it has driven the enemies completely out by siege.
   rationale: Adjusted the final clause to reflect the Greek verb more accurately as 'has besieged' rather than 'has driven ... out by siege.' Also removed the article before 'good order' for more natural English while preserving the sense.
-
 - timestamp: '2026-05-18T02:59:29Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And because of them the nation was at peace[a], and, having renewed good order in the homeland[b], it has besieged the enemies completely.'
-  to: 'And because of them the nation was at peace[a], and, having renewed good order in the homeland[b], it has besieged the enemies completely.'
+  from: And because of them the nation was at peace[a], and, having renewed good order in the homeland[b], it has besieged the enemies completely.
+  to: And because of them the nation was at peace[a], and, having renewed good order in the homeland[b], it has besieged the enemies completely.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the good order''].'
+- timestamp: '2026-11-09T18:59:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And because of them the nation was at peace[a], and, having renewed good order in the homeland[b], it has besieged the enemies completely.
+  to: Because of them the nation gained peace and, after restoring lawful order in the homeland, overcame its enemies by siege.
+  rationale: The first draft and lexical rationale recognized the siege's decisive outcome, while the later review preferred simple besieging. I preserve the earlier resultative insight rather than the current wording's implication of an unresolved blockade.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -148,3 +147,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/018/004.job-50189.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:42Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Because of the martyrs, the nation gained peace, restored lawful order, and overcame its enemies.
+  meaning_decisions:
+  - source_phrase: εἰρήνευσεν τὸ ἔθνος
+    prior_rendering: the nation was at peace
+    new_rendering: the nation gained peace
+    rationale: The verse describes national deliverance resulting from the martyrs' faithfulness, not merely an existing peaceful condition.
+  - source_phrase: τὴν εὐνομίαν τὴν ἐπὶ τῆς πατρίδος ἀνανεωσάμενος
+    prior_rendering: having renewed good order in the homeland
+    new_rendering: after restoring lawful order in the homeland
+    rationale: Εὐνομία is order sustained by law, which matters in this account of defending the ancestral law. 'Restoring' naturally expresses its renewal.
+  - source_phrase: ἐκπεπολιόρκηκε τοὺς πολεμίους
+    prior_rendering: has besieged the enemies completely
+    new_rendering: overcame its enemies by siege
+    rationale: The compound verb conveys a successful, completed siege rather than merely surrounding the enemy. The rendering preserves both the military means and the decisive result without specifying expulsion more narrowly than necessary.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale recognized the siege's decisive outcome, while the later review preferred simple besieging. I preserve the earlier resultative insight rather than the current wording's implication of an unresolved blockade.

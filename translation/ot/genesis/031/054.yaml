@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּזְבַּ֨ח יַעֲקֹ֥ב זֶ֨בַח֙ בָּ/הָ֔ר וַ/יִּקְרָ֥א לְ/אֶחָ֖י/ו לֶ/אֱכָל לָ֑חֶם וַ/יֹּ֣אכְלוּ לֶ֔חֶם וַ/יָּלִ֖ינוּ בָּ/הָֽר־׃
 translation:
-  text: Then Jacob offered a sacrifice on the mountain and called his brothers to eat bread[a]. They ate bread and spent the night on the mountain.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'his kinsmen' or 'his relatives'; the Hebrew 'brothers' can refer more broadly to male kin or associates in context.
-    reason: lexical_alternative
+  text: Then Jacob offered a sacrifice on the mountain and invited his kinsmen to a meal. They ate and spent the night on the mountain.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּזְבַּח
   chosen: sacrificed
@@ -97,14 +93,20 @@ revisions:
   from: Then Jacob sacrificed a sacrifice on the mountain and called his brothers to eat bread. They ate bread and spent the night on the mountain.
   to: Then Jacob sacrificed a sacrifice on the mountain and called his brothers to eat bread. They ate bread and spent the night on the mountain.
   rationale: Changed 'sacrificed a sacrifice' to 'offered a sacrifice' for natural English while preserving the Hebrew sense; left the rest unchanged.
-
 - timestamp: '2026-05-17T09:41:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Jacob offered a sacrifice on the mountain and called his brothers to eat bread[a]. They ate bread and spent the night on the mountain.'
-  to: 'Then Jacob offered a sacrifice on the mountain and called his brothers to eat bread[a]. They ate bread and spent the night on the mountain.'
+  from: Then Jacob offered a sacrifice on the mountain and called his brothers to eat bread[a]. They ate bread and spent the night on the mountain.
+  to: Then Jacob offered a sacrifice on the mountain and called his brothers to eat bread[a]. They ate bread and spent the night on the mountain.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''sacrificed''].'
+- timestamp: '2026-11-09T17:44:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Jacob offered a sacrifice on the mountain and called his brothers to eat bread[a]. They ate bread and spent the night on the mountain.
+  to: Then Jacob offered a sacrifice on the mountain and invited his kinsmen to a meal. They ate and spent the night on the mountain.
+  rationale: I retain the later improvement “offered a sacrifice” instead of the cognate repetition. The lexical notes already recognize both “brothers” and “eat bread” as broader expressions, which I now render directly as kinship and a shared meal.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -127,3 +129,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/031/054.job-65310.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:44:34Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jacob offers a sacrifice and shares a meal with his kinsmen, after which they spend the night on the mountain.
+  meaning_decisions:
+  - source_phrase: לְאֶחָיו
+    prior_rendering: his brothers
+    new_rendering: his kinsmen
+    rationale: The term identifies the broader kin group present, not Jacob’s literal siblings.
+  - source_phrase: וַיִּקְרָא לְאֶחָיו לֶאֱכָל לָחֶם וַיֹּאכְלוּ לֶחֶם
+    prior_rendering: called his brothers to eat bread. They ate bread
+    new_rendering: invited his kinsmen to a meal. They ate
+    rationale: Calling them to eat is an invitation, and “eat bread” is the ordinary idiom for taking a meal, not a restriction of the food to bread.
+  footnote_kinds: {}
+  history_weighed: I retain the later improvement “offered a sacrifice” instead of the cognate repetition. The lexical notes already recognize both “brothers” and “eat bread” as broader expressions, which I now render directly as kinship and a shared meal.

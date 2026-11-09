@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/אֵ֗לֶּה הַ/בָּאִ֤ים אֶל דָּוִיד֙ לְ/צִ֣יקְלַ֔ג ע֣וֹד עָצ֔וּר מִ/פְּנֵ֖י שָׁא֣וּל בֶּן קִ֑ישׁ וְ/הֵ֨מָּה֙ בַּ/גִּבּוֹרִ֔ים עֹזְרֵ֖י הַ/מִּלְחָמָֽה־־׃
 translation:
-  text: These are the men who came to David at Ziklag while he was still kept back because of Saul son of Kish[a]; and they were among the mighty warriors[b], helpers in war.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'held back' or 'confined' because of Saul son of Kish.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'among the mighty men'; Hebrew gibbôrîm refers to valiant warriors or heroes.
-    reason: lexical_alternative
+  text: These are the men who came to David at Ziklag while he was still forced to stay away from Saul son of Kish. They were among his mighty warriors and helped him in battle.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְאֵלֶּה
   chosen: These are
@@ -21,7 +14,7 @@ lexical_decisions:
   - These are
   - Now these are
   lexicon: HALOT
-  rationale: "Introduces a new section/list. 'Now these are' gives natural English discourse flow while preserving the connective force of וְ and the demonstrative sense of אֵלֶּה. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'Introduces a new section/list. ''Now these are'' gives natural English discourse flow while preserving the connective force of וְ and the demonstrative sense of אֵלֶּה. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: הַבָּאִים
   chosen: who came
   alternatives:
@@ -107,13 +100,12 @@ revisions:
   from: Now these are the men who came to David at Ziklag while he was still restricted because of Saul son of Kish; and they were among the mighty warriors, helpers in war.
   to: Now these are the men who came to David at Ziklag while he was still restricted because of Saul son of Kish; and they were among the mighty warriors, helpers in war.
   rationale: Replaced 'restricted' with 'kept back' to more naturally and directly reflect the sense of being restrained/excluded, while preserving the formal tone. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:57:29Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now these are the men who came to David at Ziklag while he was still kept back because of Saul son of Kish[a]; and they were among the mighty warriors[b], helpers in war.'
-  to: 'Now these are the men who came to David at Ziklag while he was still kept back because of Saul son of Kish[a]; and they were among the mighty warriors[b], helpers in war.'
+  from: Now these are the men who came to David at Ziklag while he was still kept back because of Saul son of Kish[a]; and they were among the mighty warriors[b], helpers in war.
+  to: Now these are the men who came to David at Ziklag while he was still kept back because of Saul son of Kish[a]; and they were among the mighty warriors[b], helpers in war.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''restricted''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -122,6 +114,13 @@ revisions:
   from: Now these are the men who came to David at Ziklag while he was still kept back because of Saul son of Kish[a]; and they were among the mighty warriors[b], helpers in war.
   to: These are the men who came to David at Ziklag while he was still kept back because of Saul son of Kish[a]; and they were among the mighty warriors[b], helpers in war.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:19:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: These are the men who came to David at Ziklag while he was still kept back because of Saul son of Kish[a]; and they were among the mighty warriors[b], helpers in war.
+  to: These are the men who came to David at Ziklag while he was still forced to stay away from Saul son of Kish. They were among his mighty warriors and helped him in battle.
+  rationale: The recorded discussion correctly avoids suggesting imprisonment, but both 'restricted' and 'kept back' leave the nature of David’s situation unclear. The narrative context supports expressing his enforced separation from Saul directly.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -141,3 +140,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/1_chronicles/012/001.job-44404.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:19:39Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The men listed joined David at Ziklag while Saul kept him away, and they became part of the mighty warriors who supported him in battle.
+  meaning_decisions:
+  - source_phrase: עוֹד עָצוּר מִפְּנֵי שָׁאוּל בֶּן קִישׁ
+    prior_rendering: while he was still kept back because of Saul son of Kish
+    new_rendering: while he was still forced to stay away from Saul son of Kish
+    rationale: The context concerns David’s enforced separation from Saul, not imprisonment or an unspecified delay.
+  - source_phrase: וְהֵמָּה בַּגִּבּוֹרִים עֹזְרֵי הַמִּלְחָמָה
+    prior_rendering: and they were among the mighty warriors, helpers in war
+    new_rendering: They were among his mighty warriors and helped him in battle
+    rationale: The new sentence makes their support of David explicit while preserving their membership among the mighty warriors.
+  footnote_kinds: {}
+  history_weighed: The recorded discussion correctly avoids suggesting imprisonment, but both 'restricted' and 'kept back' leave the nature of David’s situation unclear. The narrative context supports expressing his enforced separation from Saul directly.

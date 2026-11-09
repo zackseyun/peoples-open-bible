@@ -28,12 +28,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 13:26
 translation:
-  text: A man's heart[a] changes his face, whether for good or for bad.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Greek parallel text differs notably here, reading along the lines of a cheerful face as the sign of a heart in good things, followed by a difficult clause about finding parables with labor. Because the Hebrew witness is extant and primary for this verse, the main text follows the Hebrew; the Greek confirms the general link between inner disposition and outward expression but not the exact wording.
-    reason: textual_variant
+  text: A man’s heart changes the expression on his face, for better or for worse.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: לֵב
   chosen: heart
@@ -102,16 +98,15 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'A man''s heart changes his face, whether for good or for bad.'
-  to: 'A person''s heart changes his face, whether for good or for evil.'
+  from: A man's heart changes his face, whether for good or for bad.
+  to: A person's heart changes his face, whether for good or for evil.
   rationale: Updated 'man's' to 'person's' for broader rendering of אֱנוֹשׁ, and changed 'bad' to 'evil' for a more formal and consistent rendering of רָע.
-
 - timestamp: '2026-05-18T03:09:34Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'A person''s heart changes his face[a], whether for good or for evil.'
-  to: 'A man''s heart changes his face, whether for good or for bad.'
+  from: A person's heart changes his face[a], whether for good or for evil.
+  to: A man's heart changes his face, whether for good or for bad.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''whether for good or for bad''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -121,6 +116,13 @@ revisions:
   from: A man's heart changes his face, whether for good or for bad.
   to: A man's heart[a] changes his face, whether for good or for bad.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('heart') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:05:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: A man's heart[a] changes his face, whether for good or for bad.
+  to: A man’s heart changes the expression on his face, for better or for worse.
+  rationale: The draft’s “heart” and broader good–bad contrast are retained rather than the April proposal’s narrower “evil.” Clarifying facial expression makes the inner–outer relationship explicit; the former Greek note quotes the following saying and is omitted.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -140,3 +142,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/013/026.job-51325.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:05:32Z'
+  change_level: refined
+  confidence: high
+  meaning: A person’s inner state changes the expression of the face, with good or bad effects.
+  meaning_decisions:
+  - source_phrase: יְשַׁנֵּא פָנָיו
+    prior_rendering: changes his face
+    new_rendering: changes the expression on his face
+    rationale: The proverb concerns the visible effect of the inner life on the face, rather than a change in its physical structure.
+  - source_phrase: אִם לְטוֹב וְאִם לְרָע
+    prior_rendering: whether for good or for bad
+    new_rendering: for better or for worse
+    rationale: This natural English pairing conveys contrasting effects without restricting them to moral goodness and evil.
+  footnote_kinds: {}
+  history_weighed: The draft’s “heart” and broader good–bad contrast are retained rather than the April proposal’s narrower “evil.” Clarifying facial expression makes the inner–outer relationship explicit; the former Greek note quotes the following saying and is omitted.

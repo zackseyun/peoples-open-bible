@@ -4,17 +4,11 @@ source:
   edition: WLC
   text: וְ/הֵבִ֤יא אֹתָ/ם֙ אֶל הַ/כֹּהֵ֔ן וְ/הִקְרִ֛יב אֶת אֲשֶׁ֥ר לַ/חַטָּ֖את רִאשׁוֹנָ֑ה וּ/מָלַ֧ק אֶת רֹאשׁ֛/וֹ מִ/מּ֥וּל עָרְפּ֖/וֹ וְ/לֹ֥א יַבְדִּֽיל־־־׃
 translation:
-  text: And he shall bring them to the priest[a], and he shall present first the one for the sin offering, and he shall pinch off its head from the front of its neck[c][b], but he shall not sever it.
-  philosophy: optimal-equivalence
+  text: He shall bring them to the priest, who shall present the one for the sin offering first. The priest shall cut the bird’s neck at the nape[a], but shall not completely detach its head.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'sin offering'; the Hebrew term חַטָּאת can also be understood more specifically as a 'purification offering' in Levitical sacrificial contexts.
-    reason: lexical_alternative
-  - marker: b
-    text: The verb describes the priest's ritual handling of a bird sacrifice; traditional English versions often render it 'wring off' the head.
-    reason: lexical_alternative
-  - marker: c
-    text: That is, the head was not to be fully detached from the body.
+    text: This action was traditionally performed with the priest’s fingernail rather than a knife.
     reason: cultural_note
 lexical_decisions:
 - source_word: וְהֵבִיא
@@ -101,14 +95,20 @@ revisions:
   from: And he shall bring them to the priest, and he shall present first the one for the sin offering, and he shall pinch off its head at the front of its neck, but he shall not sever it.
   to: And he shall bring them to the priest, and he shall present first the one for the sin offering, and he shall pinch off its head at the front of its neck, but he shall not sever it.
   rationale: Changed 'at the front of its neck' to 'from the front of its neck' for a more accurate rendering of the Hebrew preposition while preserving the formal sense and natural English.
-
 - timestamp: '2026-05-18T02:56:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he shall bring them to the priest[a], and he shall present first the one for the sin offering, and he shall pinch off its head from the front of its neck[c][b], but he shall not sever it.'
-  to: 'And he shall bring them to the priest[a], and he shall present first the one for the sin offering, and he shall pinch off its head from the front of its neck[c][b], but he shall not sever it.'
+  from: And he shall bring them to the priest[a], and he shall present first the one for the sin offering, and he shall pinch off its head from the front of its neck[c][b], but he shall not sever it.
+  to: And he shall bring them to the priest[a], and he shall present first the one for the sin offering, and he shall pinch off its head from the front of its neck[c][b], but he shall not sever it.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''at the front of its neck''].'
+- timestamp: '2026-11-09T18:16:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he shall bring them to the priest[a], and he shall present first the one for the sin offering, and he shall pinch off its head from the front of its neck[c][b], but he shall not sever it.
+  to: He shall bring them to the priest, who shall present the one for the sin offering first. The priest shall cut the bird’s neck at the nape[a], but shall not completely detach its head.
+  rationale: The history debated 'at' versus 'from' while retaining 'front of its neck'; that did not address the meaning of the nape term. I follow the ritual context and the final prohibition, preserving the recorded insight that the head must remain attached.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -128,3 +128,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/005/008.job-45564.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:16:46Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The offender brings the birds to the priest, who offers the sin-offering bird first and cuts its neck without completely detaching its head.
+  meaning_decisions:
+  - source_phrase: וְהֵבִיא אֹתָם אֶל הַכֹּהֵן וְהִקְרִיב
+    prior_rendering: he shall bring them to the priest, and he shall present
+    new_rendering: He shall bring them to the priest, who shall present
+    rationale: The subject changes from the offender to the priest; naming that change prevents readers from assigning the ritual action to the offender.
+  - source_phrase: וּמָלַק אֶת רֹאשׁוֹ מִמּוּל עָרְפּוֹ
+    prior_rendering: he shall pinch off its head from the front of its neck
+    new_rendering: The priest shall cut the bird’s neck at the nape
+    rationale: The neck term denotes the nape, and the ritual action cuts into the neck without necessarily detaching the head; 'pinch off' misleadingly suggests complete removal.
+  - source_phrase: וְלֹא יַבְדִּיל
+    prior_rendering: but he shall not sever it
+    new_rendering: but shall not completely detach its head
+    rationale: The prohibition concerns complete separation of the head, not the absence of a cut.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The history debated 'at' versus 'from' while retaining 'front of its neck'; that did not address the meaning of the nape term. I follow the ritual context and the final prohibition, preserving the recorded insight that the head must remain attached.

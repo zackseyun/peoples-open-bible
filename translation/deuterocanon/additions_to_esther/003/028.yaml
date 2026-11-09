@@ -12,15 +12,12 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 3 = Addition C, segmented from Swete pages 781-784 with First1KGreek used only as a verse-anchor map.
 translation:
-  text: And your servant has not rejoiced from the day of my change until now[a], except in you, Lord[b], God of Abraham.
-  philosophy: optimal-equivalence
+  text: And your servant has not rejoiced from the day I became queen[a] until now, except in you, Lord, God of Abraham.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'your servant.' The Greek has the feminine form of 'slave/servant' (δούλη), a humble self-designation before God.
+    text: Literally, ‘from the day of my change.’
     reason: lexical_alternative
-  - marker: b
-    text: Or 'from the day of my reversal' or 'since my circumstances changed.' The Greek phrase leaves the exact nature of the 'change' unstated.
-    reason: alternative_reading
 lexical_decisions:
 - source_word: δούλη
   chosen: slave
@@ -111,7 +108,13 @@ revisions:
   from: And your servant has not rejoiced from the day of my change until now, except in you, Lord, God of Abraham.
   to: And your slave has not rejoiced from the day of my change until now, except in you, Lord, God of Abraham.
   rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md policy)
-
+- timestamp: '2026-11-09T18:59:44Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And your servant has not rejoiced from the day of my change until now[a], except in you, Lord[b], God of Abraham.
+  to: And your servant has not rejoiced from the day I became queen[a] until now, except in you, Lord, God of Abraham.
+  rationale: I retain ‘servant’ under the standing ruling rather than follow the older automated reversions. The earlier rationale left the change unspecified for source transparency, but the immediate context supplies its meaning; the note preserves the broader source wording.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -131,3 +134,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/additions_to_esther/003/028.job-50261.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:44Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Esther declares that throughout her life as queen she has rejoiced only in the Lord, the God of Abraham.
+  meaning_decisions:
+  - source_phrase: ἀφʼ ἡμέρας μεταβολῆς μου
+    prior_rendering: from the day of my change
+    new_rendering: from the day I became queen
+    rationale: The preceding references to her marriage, royal head ornament, and court life identify the change as her elevation to queenship; the literal English otherwise leaves that contextual meaning obscure.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: I retain ‘servant’ under the standing ruling rather than follow the older automated reversions. The earlier rationale left the change unspecified for source transparency, but the immediate context supplies its meaning; the note preserves the broader source wording.

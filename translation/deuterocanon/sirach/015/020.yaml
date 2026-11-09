@@ -16,17 +16,64 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 15:20
 translation:
-  text: 'He did not command anyone to be ungodly, and he did not permit anyone to sin.'
+  text: He has not commanded anyone to sin, nor has he strengthened liars; he shows no mercy to those who practice falsehood[a] or betray secrets[b].
+  philosophy: dynamic
+  footnotes:
+  - marker: a
+    text: Or, “do what is worthless”; the Hebrew term can denote falsehood or emptiness.
+    reason: alternative_reading
+  - marker: b
+    text: The Greek reads, “He has not commanded anyone to be ungodly, nor has he given anyone permission to sin,” and lacks the final statement about mercy.
+    reason: textual_variant
 revisions:
 - timestamp: '2026-05-18T03:59:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He did not command anyone to sin[a], and he did not strengthen liars. And he does not have mercy on one who does what is vain, and on one who reveals a secret.'
-  to: 'He did not command anyone to be ungodly, and he did not permit anyone to sin.'
+  from: He did not command anyone to sin[a], and he did not strengthen liars. And he does not have mercy on one who does what is vain, and on one who reveals a secret.
+  to: He did not command anyone to be ungodly, and he did not permit anyone to sin.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''did not permit'', ''to be ungodly'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+- timestamp: '2026-11-09T19:05:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He did not command anyone to be ungodly, and he did not permit anyone to sin.
+  to: He has not commanded anyone to sin, nor has he strengthened liars; he shows no mercy to those who practice falsehood[a] or betray secrets[b].
+  rationale: The first recorded draft rendered the full Hebrew, whereas the automated revert replaced it with the shorter Greek reading; no MAINTAINER decision supports that omission. I restore the supplied Hebrew's content, refine its English, and preserve the Greek reading in a note.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:59:56Z'
   unchanged: false
   changes_summary: 'doctrine_realignment: Sirach 15:20 wholesale revert (2 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''did not permit'', ''to be ungodly'']. Applied via definitive_apply (fuzzy fingerprint match handli'
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:05:12Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: God neither commands sin nor strengthens liars, and he shows no mercy to those who practice falsehood or betray secrets.
+  meaning_decisions:
+  - source_phrase: לֹא צִוָּה אֱנוֹשׁ לַחֲטֹא
+    prior_rendering: He did not command anyone to be ungodly
+    new_rendering: He has not commanded anyone to sin
+    rationale: Restores the Hebrew's explicit verb 'sin' and presents the denial as relevant to the reader's present attempt to blame God.
+  - source_phrase: וְלֹא הֶחֱלִים אַנְשֵׁי כָזָב
+    prior_rendering: and he did not permit anyone to sin
+    new_rendering: nor has he strengthened liars
+    rationale: Translates the supplied Hebrew rather than substituting the Greek's statement about permission to sin.
+  - source_phrase: וְלֹא מְרַחֵם עַל עֹשֶׂה שָׁוְא
+    prior_rendering: ''
+    new_rendering: he shows no mercy to those who practice falsehood
+    rationale: Restores omitted Hebrew content; 'falsehood' fits the surrounding reference to liars, with the alternative sense of worthlessness noted.
+  - source_phrase: וְעַל מְגַלֶּה סוֹד
+    prior_rendering: ''
+    new_rendering: or betray secrets
+    rationale: Restores the second group denied mercy and conveys the breach of confidence intended by revealing a secret in this moral setting.
+  footnote_kinds:
+    a: alternative_meaning
+    b: textual_variant
+  history_weighed: The first recorded draft rendered the full Hebrew, whereas the automated revert replaced it with the shorter Greek reading; no MAINTAINER decision supports that omission. I restore the supplied Hebrew's content, refine its English, and preserve the Greek reading in a note.

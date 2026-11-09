@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וְ/עַתָּ֖ה שְׁמַ֣ע בְּ/קוֹלָ֑/ם אַ֗ךְ כִּֽי הָעֵ֤ד תָּעִיד֙ בָּ/הֶ֔ם וְ/הִגַּדְתָּ֣ לָ/הֶ֔ם מִשְׁפַּ֣ט הַ/מֶּ֔לֶךְ אֲשֶׁ֥ר יִמְלֹ֖ךְ עֲלֵי/הֶֽם־׃ס
 translation:
-  text: So now[a], listen to their voice; only, you must solemnly warn them and tell them the justice of the king who will reign over them.
-  philosophy: optimal-equivalence
+  text: So now grant their request, but you must solemnly warn them and tell them how the king who will reign over them will treat them[a].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the manner of the king'; the Hebrew מִשְׁפַּט can also mean 'legal right' or 'customary practice.'
-    reason: lexical_alternative
+    text: Or, “the rights of the king who will reign over them.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: שְׁמַע בְּקוֹלָם
   chosen: listen to their voice
@@ -94,14 +94,20 @@ revisions:
   from: So now, listen to their voice; only, you must solemnly warn them and tell them the custom of the king who will reign over them.
   to: So now, listen to their voice; only, you must solemnly warn them and tell them the custom of the king who will reign over them.
   rationale: Changed 'custom' to 'justice' to more directly reflect mishpat ('judgment/justice/right') in this context, while preserving the formal tone and completeness of the verse.
-
 - timestamp: '2026-05-18T02:55:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So now[a], listen to their voice; only, you must solemnly warn them and tell them the justice of the king who will reign over them.'
-  to: 'So now[a], listen to their voice; only, you must solemnly warn them and tell them the justice of the king who will reign over them.'
+  from: So now[a], listen to their voice; only, you must solemnly warn them and tell them the justice of the king who will reign over them.
+  to: So now[a], listen to their voice; only, you must solemnly warn them and tell them the justice of the king who will reign over them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the custom of the king''].'
+- timestamp: '2026-11-09T17:21:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So now[a], listen to their voice; only, you must solemnly warn them and tell them the justice of the king who will reign over them.
+  to: So now grant their request, but you must solemnly warn them and tell them how the king who will reign over them will treat them[a].”
+  rationale: The first draft and the documented lexical and theological decisions favor royal custom or practice, despite an automated rationale favoring “justice.” The ensuing list of royal exactions supports that descriptive understanding, which is now stated directly.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -121,3 +127,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/008/009.job-58912.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:21:52Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Yahweh instructs Samuel to grant the request only after solemnly warning the people about the conduct of the king who will rule them.
+  meaning_decisions:
+  - source_phrase: שְׁמַע בְּקוֹלָם
+    prior_rendering: listen to their voice
+    new_rendering: grant their request
+    rationale: The idiom requires compliance with the request, not simply attentive hearing.
+  - source_phrase: אַךְ כִּי
+    prior_rendering: only
+    new_rendering: but
+    rationale: This expresses the strong qualification naturally while “must solemnly warn” retains its obligatory force.
+  - source_phrase: מִשְׁפַּט הַמֶּלֶךְ אֲשֶׁר יִמְלֹךְ עֲלֵיהֶם
+    prior_rendering: the justice of the king who will reign over them
+    new_rendering: how the king who will reign over them will treat them
+    rationale: The following warning describes royal practices and exactions, not the king’s moral justice; the serious alternative of royal rights is retained in a footnote.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and the documented lexical and theological decisions favor royal custom or practice, despite an automated rationale favoring “justice.” The ensuing list of royal exactions supports that descriptive understanding, which is now stated directly.

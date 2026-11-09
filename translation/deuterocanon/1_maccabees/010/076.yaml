@@ -30,12 +30,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And those in the city[a], being afraid, opened the gates, and Jonathan took control of Joppa.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'opened'; the Greek does not explicitly say 'opened the gates,' though that is likely implied by the context.
-    reason: lexical_alternative
+  text: Frightened, the people of the city opened the gates, and Jonathan took control of Joppa.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: φοβηθέντες
   chosen: being afraid
@@ -102,14 +98,20 @@ revisions:
   from: And those from the city, being afraid, opened up, and Jonathan took control of Joppa.
   to: And those from the city, being afraid, opened up, and Jonathan took control of Joppa.
   rationale: Changed 'those from the city' to 'those in the city' for more natural sense in context, and 'opened up' to 'opened the gates' to reflect the implied object in the military/city context.
-
 - timestamp: '2026-05-16T14:52:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And those in the city[a], being afraid, opened the gates, and Jonathan took control of Joppa.'
-  to: 'And those in the city[a], being afraid, opened the gates, and Jonathan took control of Joppa.'
-  rationale: 'Restored drafter ''those from the city'' (preserving Greek partitive idiom) and ''opened up'' (preserving the chosen English idiom without supplied object) per chosen renderings.'
+  from: And those in the city[a], being afraid, opened the gates, and Jonathan took control of Joppa.
+  to: And those in the city[a], being afraid, opened the gates, and Jonathan took control of Joppa.
+  rationale: Restored drafter 'those from the city' (preserving Greek partitive idiom) and 'opened up' (preserving the chosen English idiom without supplied object) per chosen renderings.
+- timestamp: '2026-11-09T19:53:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And those in the city[a], being afraid, opened the gates, and Jonathan took control of Joppa.
+  to: Frightened, the people of the city opened the gates, and Jonathan took control of Joppa.
+  rationale: I retain the current wording’s helpful identification of the implied gates rather than returning to the less clear 'opened up.' The earlier literalness-based objection does not outweigh the military context, and the explanatory note is unnecessary.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -129,3 +131,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/010/076.job-48584.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:53:08Z'
+  change_level: refined
+  confidence: high
+  meaning: The frightened inhabitants open Joppa’s gates, allowing Jonathan to take control of the city.
+  meaning_decisions:
+  - source_phrase: φοβηθέντες ἤνοιξαν οἱ ἐκ τῆς πόλεως
+    prior_rendering: those in the city, being afraid, opened the gates
+    new_rendering: Frightened, the people of the city opened the gates
+    rationale: The participle explains why the inhabitants opened the city; the revised sentence conveys that connection directly.
+  footnote_kinds: {}
+  history_weighed: I retain the current wording’s helpful identification of the implied gates rather than returning to the less clear 'opened up.' The earlier literalness-based objection does not outweigh the military context, and the explanatory note is unnecessary.

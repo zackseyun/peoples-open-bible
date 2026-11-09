@@ -25,12 +25,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Since your brother Judas has died[a], and there is no man like him to go out against the enemies and Bacchides, and those who hate our nation,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Greek has an awkward phrase after ''Bacchides'' (literally, ''and in those hating our nation''). The translation renders the apparent sense in context: another hostile group opposed by the speaker.'
-    reason: lexical_alternative
+  text: “Since your brother Judas has died and there is no man like him to march out against our enemies, Bacchides, and those who hate our nation,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἀφʼ οὗ
   chosen: Since
@@ -139,14 +135,20 @@ revisions:
   from: Since your brother Judas has died, and there is no man like him to go out against the enemies and Bacchides, and against those who hate our nation,
   to: Since your brother Judas has died, and there is no man like him to go out against the enemies and Bacchides, and against those who hate our nation,
   rationale: Removed the second 'against' before 'those who hate our nation' to reflect the Greek more closely and improve English flow; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:59:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Since your brother Judas has died[a], and there is no man like him to go out against the enemies and Bacchides, and those who hate our nation,'
-  to: 'Since your brother Judas has died[a], and there is no man like him to go out against the enemies and Bacchides, and those who hate our nation,'
+  from: Since your brother Judas has died[a], and there is no man like him to go out against the enemies and Bacchides, and those who hate our nation,
+  to: Since your brother Judas has died[a], and there is no man like him to go out against the enemies and Bacchides, and those who hate our nation,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and against those who hate our nation''].'
+- timestamp: '2026-11-09T18:53:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Since your brother Judas has died[a], and there is no man like him to go out against the enemies and Bacchides, and those who hate our nation,
+  to: “Since your brother Judas has died and there is no man like him to march out against our enemies, Bacchides, and those who hate our nation,
+  rationale: The history consistently understands the awkward final Greek phrase as another hostile target and preserves 'man' and 'our nation'; those judgments remain. The automated debate over repeating 'against' does not affect the meaning, which the shared preposition makes clear.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -166,3 +168,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/009/029.job-48448.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:27Z'
+  change_level: refined
+  confidence: high
+  meaning: The supporters explain that Judas’s death has left them without a comparable man to confront their enemies.
+  meaning_decisions:
+  - source_phrase: ἐξελθεῖν πρὸς τοὺς ἐχθρούς
+    prior_rendering: to go out against the enemies
+    new_rendering: to march out against our enemies
+    rationale: The infinitive describes a military confrontation, and the speakers’ relationship to these enemies is understood from the context.
+  - source_phrase: καὶ Βακχίδην, καὶ ἐν τοῖς ἐχθαίνουσιν τοῦ ἔθνους ἡμῶν
+    prior_rendering: and Bacchides, and those who hate our nation
+    new_rendering: Bacchides, and those who hate our nation
+    rationale: The hostile targets remain coordinated under 'against,' while normal English list punctuation replaces the awkward repeated conjunctions.
+  footnote_kinds: {}
+  history_weighed: The history consistently understands the awkward final Greek phrase as another hostile target and preserves 'man' and 'our nation'; those judgments remain. The automated debate over repeating 'against' does not affect the meaning, which the shared preposition makes clear.

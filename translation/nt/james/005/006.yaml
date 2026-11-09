@@ -4,15 +4,15 @@ source:
   edition: SBLGNT
   text: κατεδικάσατε, ἐφονεύσατε τὸν δίκαιον. οὐκ ἀντιτάσσεται ὑμῖν;
 translation:
-  text: You condemned[a], you murdered the righteous one[b]. He does not resist you.
-  philosophy: optimal-equivalence
+  text: You have condemned and murdered the righteous person[a]. He does not resist you[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'the righteous one.' Some interpreters take this as a possible echo of Jesus, 'the Righteous One,' though the immediate context also supports a representative righteous person oppressed by the rich.
+    text: Or, 'the Righteous One,' possibly an allusion to Jesus.
     reason: alternative_reading
   - marker: b
-    text: 'Greek: ''Does he not resist you?'' The clause may be read as a rhetorical question with the sense given in the main text.'
-    reason: lexical_alternative
+    text: Or, 'Does he not oppose you?' Some understand God as the implied subject of this question.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: κατεδικάσατε
   chosen: you condemned
@@ -78,14 +78,20 @@ revisions:
   from: You condemned, you murdered the righteous man. He does not resist you.
   to: You condemned, you murdered the righteous man. He does not resist you.
   rationale: Changed 'the righteous man' to 'the righteous one' for a more direct and slightly less interpretive rendering of τὸν δίκαιον; otherwise retained the draft.
-
 - timestamp: '2026-05-18T03:01:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'You condemned[a], you murdered the righteous one[b]. He does not resist you.'
-  to: 'You condemned[a], you murdered the righteous one[b]. He does not resist you.'
+  from: You condemned[a], you murdered the righteous one[b]. He does not resist you.
+  to: You condemned[a], you murdered the righteous one[b]. He does not resist you.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the righteous man''].'
+- timestamp: '2026-11-09T17:08:43Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You condemned[a], you murdered the righteous one[b]. He does not resist you.
+  to: You have condemned and murdered the righteous person[a]. He does not resist you[b].
+  rationale: 'The history varies between ''man'' and ''one,'' but its contextual deliberation favors a representative oppressed righteous person rather than an explicit title for Jesus. I retain the declarative final clause, while correcting the earlier rationale: a negative Greek question need not carry the same meaning as that statement.'
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -105,3 +111,27 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/james/005/006.job-46354.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:43Z'
+  change_level: refined
+  confidence: medium
+  meaning: James accuses the rich of condemning and murdering a righteous person who does not resist them.
+  meaning_decisions:
+  - source_phrase: κατεδικάσατε, ἐφονεύσατε
+    prior_rendering: You condemned, you murdered
+    new_rendering: You have condemned and murdered
+    rationale: Connects the two accusations naturally and matches the preceding denunciation’s English tense without weakening either judicial condemnation or murder.
+  - source_phrase: τὸν δίκαιον
+    prior_rendering: the righteous one
+    new_rendering: the righteous person
+    rationale: Makes the best-supported representative reference clear while retaining righteousness and acknowledging the possible Christological reading in a note.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: 'The history varies between ''man'' and ''one,'' but its contextual deliberation favors a representative oppressed righteous person rather than an explicit title for Jesus. I retain the declarative final clause, while correcting the earlier rationale: a negative Greek question need not carry the same meaning as that statement.'

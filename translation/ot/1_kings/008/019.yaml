@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: רַ֣ק אַתָּ֔ה לֹ֥א תִבְנֶ֖ה הַ/בָּ֑יִת כִּ֤י אִם בִּנְ/ךָ֙ הַ/יֹּצֵ֣א מֵ/חֲלָצֶ֔י/ךָ הֽוּא יִבְנֶ֥ה הַ/בַּ֖יִת לִ/שְׁמִֽ/י־־׃
 translation:
-  text: Nevertheless[a], you shall not build the house; rather, your son who comes from your own body, he shall build the house for my name.
-  philosophy: optimal-equivalence
+  text: Nevertheless, you will not build the house; your son, your own flesh and blood[a], will build the house for my name.’
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Literally, 'who comes out from your loins,' an idiom meaning your own physical offspring.
+    text: Literally, “your son who comes from your loins.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: רַק
@@ -101,14 +101,20 @@ revisions:
   from: Nevertheless, you shall not build the house; rather, your son who will come from your own body—he shall build the house for my name.
   to: Nevertheless, you shall not build the house; rather, your son who will come from your own body—he shall build the house for my name.
   rationale: Adjusted 'will come' to 'comes' for a more natural rendering of the participle, and removed the em dash for smoother formal style. No substantive lexical change.
-
 - timestamp: '2026-05-18T02:56:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Nevertheless[a], you shall not build the house; rather, your son who comes from your own body, he shall build the house for my name.'
-  to: 'Nevertheless[a], you shall not build the house; rather, your son who comes from your own body, he shall build the house for my name.'
+  from: Nevertheless[a], you shall not build the house; rather, your son who comes from your own body, he shall build the house for my name.
+  to: Nevertheless[a], you shall not build the house; rather, your son who comes from your own body, he shall build the house for my name.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who will come from your own body''].'
+- timestamp: '2026-11-09T17:21:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Nevertheless[a], you shall not build the house; rather, your son who comes from your own body, he shall build the house for my name.
+  to: Nevertheless, you will not build the house; your son, your own flesh and blood[a], will build the house for my name.’
+  rationale: The recorded reviews largely concern participial tense and punctuation, not the verse's meaning. I preserve the qualification, physical descent, and contrast between builders, with the literal offspring-image attached to the correct phrase.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -128,3 +134,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/008/019.job-58260.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:21:32Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Despite approving David's intention, Yahweh declares that David's own son will build the house instead.
+  meaning_decisions:
+  - source_phrase: בִּנְךָ הַיֹּצֵא מֵחֲלָצֶיךָ
+    prior_rendering: your son who comes from your own body
+    new_rendering: your son, your own flesh and blood
+    rationale: The idiom emphasizes David's physical offspring; the English expression conveys that relationship without suggesting birth from a man's body.
+  - source_phrase: רַק אַתָּה לֹא תִבְנֶה הַבָּיִת כִּי אִם ... הוּא יִבְנֶה
+    prior_rendering: Nevertheless, you shall not build the house; rather, ... he shall build
+    new_rendering: Nevertheless, you will not build the house; ... will build
+    rationale: The contrasted subjects carry the emphasis that the son, not David, will build; contemporary future wording retains the force of the divine declaration.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The recorded reviews largely concern participial tense and punctuation, not the verse's meaning. I preserve the qualification, physical descent, and contrast between builders, with the literal offspring-image attached to the correct phrase.

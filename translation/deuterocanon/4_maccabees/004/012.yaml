@@ -18,12 +18,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: For he said that he had sinned, so that he was worthy even to die, and that, if he were saved, he would sing the blessedness of the holy place to all people[a].
-  philosophy: optimal-equivalence
+  text: For he acknowledged that he had sinned and therefore deserved even to die. He promised that, if his life were spared, he would praise the blessedness of the holy place before all people[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'he would praise the blessedness of the holy place to all people.' The Greek verb can denote hymn-like praise more generally, not only literal singing.
-    reason: lexical_alternative
+    text: The Greek verb can also mean “sing the praises of.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἔλεγεν
   chosen: he said
@@ -121,13 +121,12 @@ revisions:
   from: For he said that he had sinned, so that he was worthy even to die, and that, if he were saved, he would sing the blessedness of the holy place to all people.
   to: For he said that he had sinned, so that he was worthy even to die, and that, if he were saved, he would praise the blessedness of the holy place to all people.
   rationale: Changed 'sing' to 'praise' for more natural and lexically fitting rendering of ὑμνήσειεν; otherwise retained the draft.
-
 - timestamp: '2026-05-18T03:10:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For he said that he had sinned[a], so that he was worthy even to die, and that, if he were saved, he would praise the blessedness of the holy place to all people.'
-  to: 'For he said that he had sinned, so that he was worthy even to die, and that, if he were saved, he would sing the blessedness of the holy place to all people.'
+  from: For he said that he had sinned[a], so that he was worthy even to die, and that, if he were saved, he would praise the blessedness of the holy place to all people.
+  to: For he said that he had sinned, so that he was worthy even to die, and that, if he were saved, he would sing the blessedness of the holy place to all people.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he would sing''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -137,6 +136,13 @@ revisions:
   from: For he said that he had sinned, so that he was worthy even to die, and that, if he were saved, he would sing the blessedness of the holy place to all people.
   to: For he said that he had sinned, so that he was worthy even to die, and that, if he were saved, he would sing the blessedness of the holy place to all people[a].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('to all people') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:57:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For he said that he had sinned, so that he was worthy even to die, and that, if he were saved, he would sing the blessedness of the holy place to all people[a].
+  to: For he acknowledged that he had sinned and therefore deserved even to die. He promised that, if his life were spared, he would praise the blessedness of the holy place before all people[a].
+  rationale: The earlier revision to “praise” better conveys the public acknowledgment promised here; its automated reversal mainly protected verbal imagery. I retained “blessedness” and noted the hymn-like possibility, while following the documented understanding of rescue from death.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -156,3 +162,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/004/012.job-49798.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:47Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Apollonius acknowledged that his sin deserved death and promised public praise of the holy place’s blessedness if his life were spared.
+  meaning_decisions:
+  - source_phrase: ἔλεγεν γὰρ ἡμαρτηκώς, ὥστε καὶ ἀποθανεῖν ἄξιος ὑπάρχειν
+    prior_rendering: For he said that he had sinned, so that he was worthy even to die
+    new_rendering: For he acknowledged that he had sinned and therefore deserved even to die
+    rationale: This is an admission of guilt deserving punishment; “worthy to die” can misleadingly suggest an honor.
+  - source_phrase: σωθεὶς
+    prior_rendering: if he were saved
+    new_rendering: if his life were spared
+    rationale: The immediate issue is rescue from impending death, not an explicit claim about spiritual salvation.
+  - source_phrase: πᾶσίν τε ἀνθρώποις ὑμνήσειεν ... τὴν τοῦ ἱεροῦ τόπου μακαριότητα
+    prior_rendering: he would sing the blessedness of the holy place to all people
+    new_rendering: he would praise the blessedness of the holy place before all people
+    rationale: The promise concerns public extolling of the holy place; the verb does not require literal singing, whose possible force is retained in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier revision to “praise” better conveys the public acknowledgment promised here; its automated reversal mainly protected verbal imagery. I retained “blessedness” and noted the hymn-like possibility, while following the documented understanding of rescue from death.

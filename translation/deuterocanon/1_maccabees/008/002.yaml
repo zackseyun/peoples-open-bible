@@ -23,15 +23,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: and that they are mighty in strength[a]. They told him about their wars and the brave deeds they did among the Galatians[b], and that they had subdued them and brought them under tribute.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'acts of valor' for 'brave deeds.'
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'among the Galatians'; the phrase may refer to Roman exploits in relation to the Galatians or in Galatian territory.
-    reason: lexical_alternative
+  text: He also heard of their military might. He was told about their wars and their deeds of valor against the Galatians, whom they had subdued and made to pay tribute.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: δυνατοὶ ἰσχύϊ
   chosen: mighty in strength
@@ -113,14 +106,20 @@ revisions:
   from: and that they are mighty in strength. They told him about their wars and the brave deeds they do among the Galatians, and that they had subdued them and brought them under tribute.
   to: and that they are mighty in strength. They told him about their wars and the brave deeds they do among the Galatians, and that they had subdued them and brought them under tribute.
   rationale: Changed 'do' to 'did' for past-tense consistency with the surrounding narrative and the Greek context; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:59:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and that they are mighty in strength[a]. They told him about their wars and the brave deeds they did among the Galatians[b], and that they had subdued them and brought them under tribute.'
-  to: 'and that they are mighty in strength[a]. They told him about their wars and the brave deeds they did among the Galatians[b], and that they had subdued them and brought them under tribute.'
+  from: and that they are mighty in strength[a]. They told him about their wars and the brave deeds they did among the Galatians[b], and that they had subdued them and brought them under tribute.
+  to: and that they are mighty in strength[a]. They told him about their wars and the brave deeds they did among the Galatians[b], and that they had subdued them and brought them under tribute.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they do among the Galatians''].'
+- timestamp: '2026-11-09T19:52:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and that they are mighty in strength[a]. They told him about their wars and the brave deeds they did among the Galatians[b], and that they had subdued them and brought them under tribute.
+  to: He also heard of their military might. He was told about their wars and their deeds of valor against the Galatians, whom they had subdued and made to pay tribute.
+  rationale: The recorded review favored past-tense narration, while the automated revert gives little additional evidence about meaning. I retain the military valor, conquest, and tribute recognized in the lexical record, and drop the earlier notes because the text now communicates their useful points.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -140,3 +139,33 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/008/002.job-48389.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:52:42Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Judas hears further reports of Roman military strength, particularly their valorous conquest of the Galatians and imposition of tribute.
+  meaning_decisions:
+  - source_phrase: καὶ ὅτι εἰσὶν δυνατοὶ ἰσχύϊ
+    prior_rendering: and that they are mighty in strength
+    new_rendering: He also heard of their military might
+    rationale: The repeated report of strength is retained, while the following account of warfare makes its military character explicit.
+  - source_phrase: διηγήσαντο αὐτῷ
+    prior_rendering: They told him
+    new_rendering: He was told
+    rationale: The informants are unnamed; the passive avoids suggesting that the Romans themselves are necessarily the speakers.
+  - source_phrase: τὰς ἀνδραγαθίας ἃς ποιοῦσιν ἐν τοῖς Γαλάταις
+    prior_rendering: the brave deeds they did among the Galatians
+    new_rendering: their deeds of valor against the Galatians
+    rationale: The ensuing conquest establishes that these are military exploits against the Galatians, rather than deeds performed within an otherwise unspecified community.
+  - source_phrase: ἤγαγον αὐτοὺς ὑπὸ φόρον
+    prior_rendering: brought them under tribute
+    new_rendering: made to pay tribute
+    rationale: This states the imposed obligation in natural English while preserving the political significance of tribute.
+  footnote_kinds: {}
+  history_weighed: The recorded review favored past-tense narration, while the automated revert gives little additional evidence about meaning. I retain the military valor, conquest, and tribute recognized in the lexical record, and drop the earlier notes because the text now communicates their useful points.

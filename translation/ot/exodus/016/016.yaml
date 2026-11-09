@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: זֶ֤ה הַ/דָּבָר֙ אֲשֶׁ֣ר צִוָּ֣ה יְהוָ֔ה לִקְט֣וּ מִמֶּ֔/נּוּ אִ֖ישׁ לְ/פִ֣י אָכְל֑/וֹ עֹ֣מֶר לַ/גֻּלְגֹּ֗לֶת מִסְפַּר֙ נַפְשֹׁ֣תֵי/כֶ֔ם אִ֛ישׁ לַ/אֲשֶׁ֥ר בְּ/אָהֳל֖/וֹ תִּקָּֽחוּ׃
 translation:
-  text: 'This is the word that Yahweh has commanded: ‘Gather from it[a], each man according to his eating; an omer per person, according to the number of your persons. Each man shall take for those who are in his tent.’'
-  philosophy: optimal-equivalence
+  text: '“This is what Yahweh has commanded: ‘Gather as much of it as each of you needs to eat—an omer[a] per person, based on the number of people in your household. Each of you is to gather for those in your tent.’”'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Literally, 'an omer per head.'
-    reason: lexical_alternative
+    text: An omer was a dry measure of roughly two liters, or about two quarts.
+    reason: cultural_note
 lexical_decisions:
 - source_word: הַדָּבָר
   chosen: the word
@@ -116,14 +116,20 @@ revisions:
   from: 'This is the word that the LORD has commanded: ‘Gather from it, each man according to his eating; an omer per person, according to the number of your persons. Each man shall take for those who are in his tent.’'
   to: 'This is the thing that the LORD has commanded: ‘Gather from it, each one according to his eating; an omer per person, according to the number of your persons. Each one shall take for those who are in his tent.’'
   rationale: Changed 'word' to 'thing' for better lexical fit with הַדָּבָר in this context, and replaced 'each man' with 'each one' for more natural, inclusive formal English while preserving the singular distributive sense. Kept the rest substantially the same.
-
 - timestamp: '2026-05-16T03:24:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'This is the thing that Yahweh has commanded: ‘Gather from it[a], each one according to his eating; an omer per person, according to the number of your persons. Each one shall take for those who are in his tent.’'
   to: 'This is the word that Yahweh has commanded: ‘Gather from it[a], each man according to his eating; an omer per person, according to the number of your persons. Each man shall take for those who are in his tent.’'
-  rationale: 'Azure substituted ''the thing'' for drafter''s chosen ''the word'' (drafter''s HALOT rationale for זֶה הַדָּבָר command formula) and ''each one'' (twice) for chosen ''each man'' (drafter''s gender-accurate rendering of אִישׁ distributive).'
+  rationale: Azure substituted 'the thing' for drafter's chosen 'the word' (drafter's HALOT rationale for זֶה הַדָּבָר command formula) and 'each one' (twice) for chosen 'each man' (drafter's gender-accurate rendering of אִישׁ distributive).
+- timestamp: '2026-11-09T17:35:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'This is the word that Yahweh has commanded: ‘Gather from it[a], each man according to his eating; an omer per person, according to the number of your persons. Each man shall take for those who are in his tent.’'
+  to: '“This is what Yahweh has commanded: ‘Gather as much of it as each of you needs to eat—an omer[a] per person, based on the number of people in your household. Each of you is to gather for those in your tent.’”'
+  rationale: The review and automated revert debate 'word/thing' and 'man/one' primarily on source-form grounds; neither is a maintainer ruling. I express the command formula directly, retain the omer rather than replacing it with a modern unit, and clarify the household counting already established by the final clause.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -145,3 +151,34 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/ot/exodus/016/016.job-38243.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:35:08Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Yahweh commands each gatherer to collect enough for everyone in their tent, reckoned at one omer per person.
+  meaning_decisions:
+  - source_phrase: זֶה הַדָּבָר אֲשֶׁר צִוָּה יְהוָה
+    prior_rendering: This is the word that Yahweh has commanded
+    new_rendering: This is what Yahweh has commanded
+    rationale: The formula introduces the content of a command, rather than identifying a particular word.
+  - source_phrase: לִקְטוּ מִמֶּנּוּ אִישׁ לְפִי אָכְלוֹ
+    prior_rendering: Gather from it, each man according to his eating
+    new_rendering: Gather as much of it as each of you needs to eat
+    rationale: The idiom concerns the amount required for consumption; distributive 'each of you' expresses the instruction without implying that its meaning depends on male-only participation.
+  - source_phrase: מִסְפַּר נַפְשֹׁתֵיכֶם
+    prior_rendering: according to the number of your persons
+    new_rendering: based on the number of people in your household
+    rationale: The following tent instruction identifies the group whose members must be counted, making the otherwise awkward counting phrase intelligible.
+  - source_phrase: אִישׁ לַאֲשֶׁר בְּאָהֳלוֹ תִּקָּחוּ
+    prior_rendering: Each man shall take for those who are in his tent
+    new_rendering: Each of you is to gather for those in your tent
+    rationale: The instruction makes each gatherer responsible for the people sharing their tent, while maintaining the concrete tent setting.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The review and automated revert debate 'word/thing' and 'man/one' primarily on source-form grounds; neither is a maintainer ruling. I express the command formula directly, retain the omer rather than replacing it with a modern unit, and clarify the household counting already established by the final clause.

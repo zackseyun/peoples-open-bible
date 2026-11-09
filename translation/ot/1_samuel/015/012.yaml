@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יַּשְׁכֵּ֧ם שְׁמוּאֵ֛ל לִ/קְרַ֥את שָׁא֖וּל בַּ/בֹּ֑קֶר וַ/יֻּגַּ֨ד לִ/שְׁמוּאֵ֜ל לֵ/אמֹ֗ר בָּֽא שָׁא֤וּל הַ/כַּרְמֶ֨לָ/ה֙ וְ/הִנֵּ֨ה מַצִּ֥יב ל/וֹ֙ יָ֔ד וַ/יִּסֹּב֙ וַֽ/יַּעֲבֹ֔ר וַ/יֵּ֖רֶד הַ/גִּלְגָּֽל־׃
 translation:
-  text: Samuel rose early in the morning to meet Saul[a], and it was reported to Samuel, saying, “Saul came to Carmel, and look, he has set up a monument for himself; then he turned and passed on and went down to Gilgal.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew literally, “a hand for himself.” Here “hand” is an idiom for a memorial marker or monument.
-    reason: lexical_alternative
+  text: Samuel rose early in the morning to meet Saul, and he was told, “Saul came to Carmel, and look, he has set up a monument for himself; then he turned and went on down to Gilgal.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיַּשְׁכֵּם
   chosen: rose early
@@ -115,14 +111,20 @@ revisions:
   from: Samuel rose early to meet Saul in the morning, and it was reported to Samuel, saying, “Saul came to Carmel, and look, he has set up a monument for himself; then he turned, passed on, and went down to Gilgal.”
   to: Samuel rose early in the morning to meet Saul, and it was reported to Samuel, saying, “Saul came to Carmel, and behold, he set up a monument for himself; then he turned and passed on and went down to Gilgal.”
   rationale: Adjusted word order for more natural English, changed 'look' to the more formal 'behold,' and rendered the verbs in simple past ('came,' 'set up') for better narrative flow while preserving the source meaning.
-
 - timestamp: '2026-05-16T04:40:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Samuel rose early in the morning to meet Saul[a], and it was reported to Samuel, saying, “Saul came to Carmel, and behold, he set up a monument for himself; then he turned and passed on and went down to Gilgal.”'
-  to: 'Samuel rose early in the morning to meet Saul[a], and it was reported to Samuel, saying, “Saul came to Carmel, and look, he has set up a monument for himself; then he turned and passed on and went down to Gilgal.”'
-  rationale: 'Azure substituted ''behold'' (drafter''s explicit rejected alternative for וְהִנֵּה — drafter chose ''look'' as readable modern English retaining deictic force) and ''set up'' (drafter''s rejected alternative for מַצִּיב — drafter chose ''has set up'' for הִנֵּה+participle resultant state).'
+  from: Samuel rose early in the morning to meet Saul[a], and it was reported to Samuel, saying, “Saul came to Carmel, and behold, he set up a monument for himself; then he turned and passed on and went down to Gilgal.”
+  to: Samuel rose early in the morning to meet Saul[a], and it was reported to Samuel, saying, “Saul came to Carmel, and look, he has set up a monument for himself; then he turned and passed on and went down to Gilgal.”
+  rationale: Azure substituted 'behold' (drafter's explicit rejected alternative for וְהִנֵּה — drafter chose 'look' as readable modern English retaining deictic force) and 'set up' (drafter's rejected alternative for מַצִּיב — drafter chose 'has set up' for הִנֵּה+participle resultant state).
+- timestamp: '2026-11-09T17:23:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Samuel rose early in the morning to meet Saul[a], and it was reported to Samuel, saying, “Saul came to Carmel, and look, he has set up a monument for himself; then he turned and passed on and went down to Gilgal.”
+  to: Samuel rose early in the morning to meet Saul, and he was told, “Saul came to Carmel, and look, he has set up a monument for himself; then he turned and went on down to Gilgal.”
+  rationale: The recorded rationale for “look” and “has set up” usefully preserves the report’s attention-directing force and the monument’s resulting presence. Those gains and “monument for himself” are retained; the literal “hand” note adds nothing needed to understand the passage.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -142,3 +144,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/015/012.job-59101.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:11Z'
+  change_level: refined
+  confidence: high
+  meaning: Samuel sets out early to meet Saul and learns that Saul has erected a monument for himself at Carmel before continuing to Gilgal.
+  meaning_decisions:
+  - source_phrase: וַיֻּגַּד לִשְׁמוּאֵל לֵאמֹר
+    prior_rendering: it was reported to Samuel, saying
+    new_rendering: he was told
+    rationale: Natural English preserves the unspecified reporter without repeating Samuel’s name or reproducing the Hebrew speech-introduction.
+  - source_phrase: וַיִּסֹּב וַיַּעֲבֹר וַיֵּרֶד הַגִּלְגָּל
+    prior_rendering: then he turned and passed on and went down to Gilgal
+    new_rendering: then he turned and went on down to Gilgal
+    rationale: The travel sequence is conveyed without making continued movement sound like three separate journeys.
+  footnote_kinds: {}
+  history_weighed: The recorded rationale for “look” and “has set up” usefully preserves the report’s attention-directing force and the monument’s resulting presence. Those gains and “monument for himself” are retained; the literal “hand” note adds nothing needed to understand the passage.

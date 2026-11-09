@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ⸀παντὶ αἰτοῦντί σε δίδου, καὶ ἀπὸ τοῦ αἴροντος τὰ σὰ μὴ ἀπαίτει.
 translation:
-  text: Give to everyone who asks you[a], and from the one who takes what is yours, do not demand it back.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'from whoever takes what is yours, do not ask for it back.'
-    reason: lexical_alternative
+  text: Give to everyone who asks you, and if someone takes what is yours, do not demand it back.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: παντὶ
   chosen: to everyone
@@ -88,14 +84,20 @@ revisions:
   from: Give to everyone who asks you, and from the one who takes away what is yours, do not demand it back.
   to: Give to everyone who asks you, and from the one who takes away what is yours, do not demand it back.
   rationale: Changed 'takes away' to 'takes' for closer alignment with the Greek αἴροντος and smoother English; retained 'demand it back' as a natural rendering of μὴ ἀπαίτει.
-
 - timestamp: '2026-05-18T03:00:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Give to everyone who asks you[a], and from the one who takes what is yours, do not demand it back.'
-  to: 'Give to everyone who asks you[a], and from the one who takes what is yours, do not demand it back.'
+  from: Give to everyone who asks you[a], and from the one who takes what is yours, do not demand it back.
+  to: Give to everyone who asks you[a], and from the one who takes what is yours, do not demand it back.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from the one who takes away''].'
+- timestamp: '2026-11-09T17:15:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Give to everyone who asks you[a], and from the one who takes what is yours, do not demand it back.
+  to: Give to everyone who asks you, and if someone takes what is yours, do not demand it back.
+  rationale: The automated review's shorter 'takes' preserves the sense without imposing a legal category, and its policy reversal gives no meaning-based reason to reject it. I retain the current lexical choices while smoothing the second clause.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -117,3 +119,21 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/006/030.job-55397.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:15:14Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus commands generosity toward everyone who asks and forbids demanding back possessions someone takes.
+  meaning_decisions:
+  - source_phrase: ἀπὸ τοῦ αἴροντος τὰ σὰ μὴ ἀπαίτει
+    prior_rendering: from the one who takes what is yours, do not demand it back
+    new_rendering: if someone takes what is yours, do not demand it back
+    rationale: The conditional construction naturally expresses the situation and command without reproducing an awkward Greek prepositional structure.
+  footnote_kinds: {}
+  history_weighed: The automated review's shorter 'takes' preserves the sense without imposing a legal category, and its policy reversal gives no meaning-based reason to reject it. I retain the current lexical choices while smoothing the second clause.

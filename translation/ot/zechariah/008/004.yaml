@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: כֹּ֤ה אָמַר֙ יְהוָ֣ה צְבָא֔וֹת עֹ֤ד יֵֽשְׁבוּ֙ זְקֵנִ֣ים וּ/זְקֵנ֔וֹת בִּ/רְחֹב֖וֹת יְרוּשָׁלִָ֑ם וְ/אִ֧ישׁ מִשְׁעַנְתּ֛/וֹ בְּ/יָד֖/וֹ מֵ/רֹ֥ב יָמִֽים׃
 translation:
-  text: 'Thus says Yahweh of hosts: Old men and old women will yet sit in the streets of Jerusalem[a], each with his staff in his hand because of great age.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or "in the squares".
-    reason: lexical_alternative
+  text: 'Thus says Yahweh of Armies: Old men and old women will once again sit in Jerusalem''s squares, each with a staff in hand because of great age.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: כֹּה אָמַר
   chosen: Thus says
@@ -114,14 +110,20 @@ revisions:
   from: 'Thus says the LORD of hosts: Old men and old women will yet sit in the streets of Jerusalem, each with his staff in his hand because of great age.'
   to: 'Thus says the LORD of hosts: Old men and old women will yet sit in the streets of Jerusalem, each with staff in hand because of great age.'
   rationale: Adjusted 'each with his staff in his hand' to 'each with staff in hand' for more natural formal English and to avoid masculine wording where the Hebrew refers collectively to old men and old women.
-
 - timestamp: '2026-05-15T20:24:45Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'Thus says Yahweh of hosts: Old men and old women will yet sit in the streets of Jerusalem[a], each with staff in hand because of great age.'
   to: 'Thus says Yahweh of hosts: Old men and old women will yet sit in the streets of Jerusalem[a], each with his staff in his hand because of great age.'
-  rationale: 'Drafter chose ''his staff in his hand'' preserving the 3ms possessive suffixes on both Hebrew nouns (מִשְׁעַנְתּוֹ, בְּיָדוֹ) and the vividness of the source. Azure stripped both pronouns to bare ''staff in hand'' on stylistic / gender-avoidance grounds — but the Hebrew unambiguously has masculine pronouns and the drafter''s ''each'' already handles distributive collective.'
+  rationale: Drafter chose 'his staff in his hand' preserving the 3ms possessive suffixes on both Hebrew nouns (מִשְׁעַנְתּוֹ, בְּיָדוֹ) and the vividness of the source. Azure stripped both pronouns to bare 'staff in hand' on stylistic / gender-avoidance grounds — but the Hebrew unambiguously has masculine pronouns and the drafter's 'each' already handles distributive collective.
+- timestamp: '2026-11-09T18:48:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Thus says Yahweh of hosts: Old men and old women will yet sit in the streets of Jerusalem[a], each with his staff in his hand because of great age.'
+  to: 'Thus says Yahweh of Armies: Old men and old women will once again sit in Jerusalem''s squares, each with a staff in hand because of great age.'
+  rationale: The earlier review recognized the inclusive distributive sense, while the automated revert prioritized reproducing the masculine suffixes. I follow the meaning of the construction while preserving its vivid image, and promote the documented 'squares' alternative into the text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -142,3 +144,29 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/weighted_vocab/ot/zechariah/008/004.job-17848.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:48:16Z'
+  change_level: refined
+  confidence: high
+  meaning: Jerusalem will again be a place where men and women live to great age and sit in its public spaces.
+  meaning_decisions:
+  - source_phrase: יְהוָה צְבָאוֹת
+    prior_rendering: Yahweh of hosts
+    new_rendering: Yahweh of Armies
+    rationale: The title is rendered consistently with the surrounding declarations.
+  - source_phrase: עֹד ... בִּרְחֹבוֹת יְרוּשָׁלִָם
+    prior_rendering: will yet sit in the streets of Jerusalem
+    new_rendering: will once again sit in Jerusalem's squares
+    rationale: '''Once again'' makes the restoration explicit, and ''squares'' identifies the broad public spaces where the elderly gather.'
+  - source_phrase: וְאִישׁ מִשְׁעַנְתּוֹ בְּיָדוֹ
+    prior_rendering: each with his staff in his hand
+    new_rendering: each with a staff in hand
+    rationale: The distributive expression includes both the men and the women; the new wording preserves the concrete staff-in-hand scene without suggesting that only the men carry staffs.
+  footnote_kinds: {}
+  history_weighed: The earlier review recognized the inclusive distributive sense, while the automated revert prioritized reproducing the masculine suffixes. I follow the meaning of the construction while preserving its vivid image, and promote the documented 'squares' alternative into the text.

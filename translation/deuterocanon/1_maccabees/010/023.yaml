@@ -30,12 +30,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: He was grieved and said[a], “What is this that we have done, that Alexander has gotten ahead of us in securing friendship with the Jews for support?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “in gaining the friendship of the Jews for support.”
-    reason: lexical_alternative
+  text: He was grieved and said, “What have we done? Alexander has gotten ahead of us in winning the Jews’ friendship to secure their support!
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐλυπήθη
   chosen: He was grieved
@@ -117,14 +113,20 @@ revisions:
   from: He was grieved and said, “What is this that we have done, that Alexander has gotten ahead of us in securing friendship with the Jews as a support?”
   to: He was grieved and said, “What is this that we have done, that Alexander has gotten ahead of us in securing friendship with the Jews as a support?”
   rationale: Changed “as a support” to “for support” for more natural English while preserving the sense of εἰς στήριγμα.
-
 - timestamp: '2026-05-18T02:59:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He was grieved and said[a], “What is this that we have done, that Alexander has gotten ahead of us in securing friendship with the Jews for support?”'
-  to: 'He was grieved and said[a], “What is this that we have done, that Alexander has gotten ahead of us in securing friendship with the Jews for support?”'
+  from: He was grieved and said[a], “What is this that we have done, that Alexander has gotten ahead of us in securing friendship with the Jews for support?”
+  to: He was grieved and said[a], “What is this that we have done, that Alexander has gotten ahead of us in securing friendship with the Jews for support?”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as a support''].'
+- timestamp: '2026-11-09T18:53:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He was grieved and said[a], “What is this that we have done, that Alexander has gotten ahead of us in securing friendship with the Jews for support?”
+  to: He was grieved and said, “What have we done? Alexander has gotten ahead of us in winning the Jews’ friendship to secure their support!
+  rationale: The recorded review recognized the political meaning of “support,” though the subsequent automated revert adds little substantive evidence. I retain that understanding and the seriousness of Demetrius’s grief while removing the source-shaped rhetorical syntax.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -144,3 +146,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/010/023.job-48531.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:11Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Demetrius is distressed that Alexander has secured Jewish friendship for political support before he could do so.
+  meaning_decisions:
+  - source_phrase: Τί τοῦτο ἐποιήσαμεν, ὅτι
+    prior_rendering: What is this that we have done, that
+    new_rendering: What have we done? Alexander
+    rationale: Separating the rhetorical self-reproach from its explanation gives the lament its natural English force.
+  - source_phrase: τοῦ φιλίαν καταλαβέσθαι τοῖς Ἰουδαίοις εἰς στήριγμα
+    prior_rendering: in securing friendship with the Jews for support
+    new_rendering: in winning the Jews’ friendship to secure their support
+    rationale: The friendship is sought as a source of political backing; the new wording makes that purpose clear.
+  footnote_kinds: {}
+  history_weighed: The recorded review recognized the political meaning of “support,” though the subsequent automated revert adds little substantive evidence. I retain that understanding and the seriousness of Demetrius’s grief while removing the source-shaped rhetorical syntax.

@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: οἱ γὰρ κατοικοῦντες ἐν Ἰερουσαλὴμ καὶ οἱ ἄρχοντες αὐτῶν τοῦτον ἀγνοήσαντες καὶ τὰς φωνὰς τῶν προφητῶν τὰς κατὰ πᾶν σάββατον ἀναγινωσκομένας κρίναντες ἐπλήρωσαν,
 translation:
-  text: For those who live in Jerusalem and their rulers[a], because they did not recognize this one and by condemning him fulfilled the voices of the prophets that are read every Sabbath[b],
-  philosophy: optimal-equivalence
+  text: For the people of Jerusalem and their rulers did not recognize Jesus or understand the words of the prophets read every Sabbath[a], and by condemning him they fulfilled those very words.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'him.' The Greek has the demonstrative 'this one,' which may emphasize the speaker's reference to Jesus.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the words of the prophets.' Literally 'the voices of the prophets.'
-    reason: lexical_alternative
+    text: Alternatively, 'they did not recognize Jesus, but by condemning him they fulfilled the words of the prophets read every Sabbath.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: κατοικοῦντες ἐν Ἰερουσαλήμ
   chosen: those who live in Jerusalem
@@ -107,14 +104,20 @@ revisions:
   from: For those who live in Jerusalem and their rulers, because they did not recognize this one and by condemning him fulfilled the voices of the prophets that are read every Sabbath,
   to: For those who live in Jerusalem and their rulers, not recognizing this one and condemning him, fulfilled the words of the prophets that are read every Sabbath,
   rationale: Replaced 'because they did not recognize' with 'not recognizing' to reflect the participle more directly; changed 'voices' to 'words' for more natural English in this context; reordered slightly for clarity while preserving the Greek sense.
-
 - timestamp: '2026-05-15T16:39:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For those who live in Jerusalem and their rulers[a], not recognizing this one and condemning him, fulfilled the words of the prophets that are read every Sabbath[b],'
-  to: 'For those who live in Jerusalem and their rulers[a], because they did not recognize this one and by condemning him fulfilled the voices of the prophets that are read every Sabbath[b],'
-  rationale: 'Restored 3 chosen renderings preserving causal-participle force, instrumental sense, and φωνάς=''voices'' (BDAG).'
+  from: For those who live in Jerusalem and their rulers[a], not recognizing this one and condemning him, fulfilled the words of the prophets that are read every Sabbath[b],
+  to: For those who live in Jerusalem and their rulers[a], because they did not recognize this one and by condemning him fulfilled the voices of the prophets that are read every Sabbath[b],
+  rationale: Restored 3 chosen renderings preserving causal-participle force, instrumental sense, and φωνάς='voices' (BDAG).
+- timestamp: '2026-11-09T17:08:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For those who live in Jerusalem and their rulers[a], because they did not recognize this one and by condemning him fulfilled the voices of the prophets that are read every Sabbath[b],
+  to: For the people of Jerusalem and their rulers did not recognize Jesus or understand the words of the prophets read every Sabbath[a], and by condemning him they fulfilled those very words.
+  rationale: The earlier review rightly identified 'words' as natural English, while the revert preserved the important connection between condemnation and fulfillment. I retain that connection, repair the incomplete sentence, and note the alternative scope of their failure to understand.
 cross_check:
   status: needs_review
   agreement: 0.7
@@ -134,3 +137,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/013/027.job-46484.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:29Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Jerusalem's people and rulers failed to recognize Jesus and understand the prophetic words, yet fulfilled those words by condemning him.
+  meaning_decisions:
+  - source_phrase: τοῦτον ἀγνοήσαντες καὶ τὰς φωνὰς τῶν προφητῶν
+    prior_rendering: because they did not recognize this one
+    new_rendering: did not recognize Jesus or understand the words of the prophets
+    rationale: The prophetic words are best understood as a second object of their failure to recognize or understand; Jesus is named as the demonstrative's clear referent.
+  - source_phrase: τὰς φωνὰς τῶν προφητῶν τὰς κατὰ πᾶν σάββατον ἀναγινωσκομένας
+    prior_rendering: the voices of the prophets that are read every Sabbath
+    new_rendering: the words of the prophets read every Sabbath
+    rationale: These are the prophetic utterances read aloud from Scripture; 'words' conveys that meaning without suggesting that voices themselves are read.
+  - source_phrase: κρίναντες ἐπλήρωσαν
+    prior_rendering: and by condemning him fulfilled
+    new_rendering: and by condemning him they fulfilled those very words
+    rationale: A complete main clause makes clear that their condemnation was the means of fulfillment and preserves the irony of fulfilling words they failed to understand.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review rightly identified 'words' as natural English, while the revert preserved the important connection between condemnation and fulfillment. I retain that connection, repair the incomplete sentence, and note the alternative scope of their failure to understand.

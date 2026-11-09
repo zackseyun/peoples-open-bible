@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/הוֹצִ֣יא אֶת כָּל הַ֠/פָּר אֶל מִ/ח֨וּץ לַֽ/מַּחֲנֶ֜ה אֶל מָק֤וֹם טָהוֹר֙ אֶל שֶׁ֣פֶךְ הַ/דֶּ֔שֶׁן וְ/שָׂרַ֥ף אֹת֛/וֹ עַל עֵצִ֖ים בָּ/אֵ֑שׁ עַל שֶׁ֥פֶךְ הַ/דֶּ֖שֶׁן יִשָּׂרֵֽף־־־־־־־׃פ
 translation:
-  text: He shall bring out the whole bull to a clean place[a] outside the camp, to the ash dump, and burn it on wood in the fire[b]; it shall be burned at the ash dump.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more explicitly, 'a ceremonially clean place.'
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'the place where the ashes are poured out'; that is, a designated place for disposing of the altar ashes.
-    reason: lexical_alternative
+  text: he shall take the whole bull outside the camp to a ceremonially clean place where the altar ashes are deposited, and burn it on a wood fire; it shall be burned where the ashes are deposited.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְהוֹצִיא
   chosen: He shall bring out
@@ -108,14 +101,20 @@ revisions:
   from: He shall bring out the whole bull to a clean place outside the camp, to the ash dump, and burn it on wood in the fire; it shall be burned at the ash dump.
   to: He shall bring the whole bull outside the camp to a clean place, to the ash heap, and burn it on wood with fire; it shall be burned on the ash heap.
   rationale: Adjusted word order for smoother English; changed 'bring out' to 'bring' and moved 'outside the camp' earlier to reflect the Hebrew more naturally; revised 'ash dump' to the more formal 'ash heap'; changed 'in the fire' to 'with fire' for more idiomatic formal translation; retained the repeated ash-location phrase.
-
 - timestamp: '2026-05-15T12:24:07Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He shall bring the whole bull outside the camp to a clean place[a], to the ash heap, and burn it on wood with fire[b]; it shall be burned on the ash heap.'
-  to: 'He shall bring out the whole bull to a clean place[a] outside the camp, to the ash dump, and burn it on wood in the fire[b]; it shall be burned at the ash dump.'
-  rationale: 'Restored Hiphil directional ''bring out'', specific ''ash dump'' (designated site), and spatial ''in the fire''.'
+  from: He shall bring the whole bull outside the camp to a clean place[a], to the ash heap, and burn it on wood with fire[b]; it shall be burned on the ash heap.
+  to: He shall bring out the whole bull to a clean place[a] outside the camp, to the ash dump, and burn it on wood in the fire[b]; it shall be burned at the ash dump.
+  rationale: Restored Hiphil directional 'bring out', specific 'ash dump' (designated site), and spatial 'in the fire'.
+- timestamp: '2026-11-09T18:16:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He shall bring out the whole bull to a clean place[a] outside the camp, to the ash dump, and burn it on wood in the fire[b]; it shall be burned at the ash dump.
+  to: he shall take the whole bull outside the camp to a ceremonially clean place where the altar ashes are deposited, and burn it on a wood fire; it shall be burned where the ashes are deposited.
+  rationale: The revert rationale protects the outward movement, the designated disposal site, and the repeated location requirement; all are retained. I make ritual cleanness and altar-ash disposal explicit and render the wood-and-fire phrase naturally.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -135,3 +134,37 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/004/012.job-45552.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:16:24Z'
+  change_level: retranslated
+  confidence: high
+  meaning: All the bull’s remains must be taken outside the camp and burned on a wood fire at the ceremonially clean place where altar ashes are deposited.
+  meaning_decisions:
+  - source_phrase: וְהוֹצִיא אֶת כָּל הַפָּר אֶל מִחוּץ לַמַּחֲנֶה
+    prior_rendering: He shall bring out the whole bull to a clean place outside the camp
+    new_rendering: he shall take the whole bull outside the camp to a ceremonially clean place
+    rationale: '''Take ... outside'' naturally preserves the outward movement, and the location order makes the journey and destination clear.'
+  - source_phrase: מָקוֹם טָהוֹר
+    prior_rendering: a clean place
+    new_rendering: a ceremonially clean place
+    rationale: The requirement concerns ritual cleanness, not merely sanitary conditions; the main text now carries the earlier note’s essential clarification.
+  - source_phrase: אֶל שֶׁפֶךְ הַדֶּשֶׁן
+    prior_rendering: to the ash dump
+    new_rendering: where the altar ashes are deposited
+    rationale: The phrase identifies the designated place for disposing of altar ashes, rather than an arbitrary rubbish dump or ash heap.
+  - source_phrase: עַל עֵצִים בָּאֵשׁ
+    prior_rendering: on wood in the fire
+    new_rendering: on a wood fire
+    rationale: The natural English phrase preserves both the wood fuel and burning by fire without an awkward distinction between them.
+  - source_phrase: עַל שֶׁפֶךְ הַדֶּשֶׁן יִשָּׂרֵף
+    prior_rendering: it shall be burned at the ash dump
+    new_rendering: it shall be burned where the ashes are deposited
+    rationale: The repeated requirement remains explicit and names the same designated disposal location as the preceding clause.
+  footnote_kinds: {}
+  history_weighed: The revert rationale protects the outward movement, the designated disposal site, and the repeated location requirement; all are retained. I make ritual cleanness and altar-ash disposal explicit and render the wood-and-fire phrase naturally.

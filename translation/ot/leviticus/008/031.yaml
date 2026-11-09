@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֨אמֶר מֹשֶׁ֜ה אֶל אַהֲרֹ֣ן וְ/אֶל בָּנָ֗י/ו בַּשְּׁל֣וּ אֶת הַ/בָּשָׂר֮ פֶּ֣תַח אֹ֣הֶל מוֹעֵד֒ וְ/שָׁם֙ תֹּאכְל֣וּ אֹת֔/וֹ וְ/אֶ֨ת הַ/לֶּ֔חֶם אֲשֶׁ֖ר בְּ/סַ֣ל הַ/מִּלֻּאִ֑ים כַּ/אֲשֶׁ֤ר צִוֵּ֨יתִי֙ לֵ/אמֹ֔ר אַהֲרֹ֥ן וּ/בָנָ֖י/ו יֹאכְלֻֽ/הוּ־־־־׃
 translation:
-  text: And Moses said to Aaron and to his sons[a], “Boil the meat at the entrance of the tent of meeting, and there eat it and the bread that is in the basket of ordination offerings, just as I commanded, saying, ‘Aaron and his sons shall eat it.’”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “the basket of consecration offerings.” The Hebrew term refers to the offerings associated with the priests’ installation rite.
-    reason: lexical_alternative
+  text: 'Moses said to Aaron and his sons, “Boil the meat at the entrance of the tent of meeting, and eat it there with the bread in the basket of ordination offerings, just as I commanded: ‘Aaron and his sons are to eat it.’'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: בַּשְּׁלוּ
   chosen: Boil
@@ -93,14 +89,20 @@ revisions:
   from: And Moses said to Aaron and to his sons, “Boil the meat at the entrance of the tent of meeting, and there eat it, along with the bread that is in the basket of ordination offerings, just as I commanded, saying, ‘Aaron and his sons shall eat it.’”
   to: And Moses said to Aaron and to his sons, “Boil the flesh at the entrance of the tent of meeting, and there eat it and the bread that is in the basket of ordination, just as I commanded, saying, ‘Aaron and his sons shall eat it.’”
   rationale: Changed 'meat' to 'flesh' for closer lexical correspondence, removed 'along with' for a more direct rendering of the conjunction, and simplified 'basket of ordination offerings' to 'basket of ordination' to match the Hebrew more closely.
-
 - timestamp: '2026-05-16T08:55:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Moses said to Aaron and to his sons[a], “Boil the flesh at the entrance of the tent of meeting, and there eat it and the bread that is in the basket of ordination, just as I commanded, saying, ‘Aaron and his sons shall eat it.’”'
-  to: 'And Moses said to Aaron and to his sons[a], “Boil the meat at the entrance of the tent of meeting, and there eat it and the bread that is in the basket of ordination offerings, just as I commanded, saying, ‘Aaron and his sons shall eat it.’”'
-  rationale: 'Azure substituted ''flesh'' for chosen ''meat'' (drafter''s rejected alt — drafter explicitly rejected ''flesh'' as ''overly literal and less idiomatic'') and dropped ''offerings'' from ''basket of ordination offerings'' (drafter chose full phrase to communicate ritual sense).'
+  from: And Moses said to Aaron and to his sons[a], “Boil the flesh at the entrance of the tent of meeting, and there eat it and the bread that is in the basket of ordination, just as I commanded, saying, ‘Aaron and his sons shall eat it.’”
+  to: And Moses said to Aaron and to his sons[a], “Boil the meat at the entrance of the tent of meeting, and there eat it and the bread that is in the basket of ordination offerings, just as I commanded, saying, ‘Aaron and his sons shall eat it.’”
+  rationale: Azure substituted 'flesh' for chosen 'meat' (drafter's rejected alt — drafter explicitly rejected 'flesh' as 'overly literal and less idiomatic') and dropped 'offerings' from 'basket of ordination offerings' (drafter chose full phrase to communicate ritual sense).
+- timestamp: '2026-11-09T18:17:43Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Moses said to Aaron and to his sons[a], “Boil the meat at the entrance of the tent of meeting, and there eat it and the bread that is in the basket of ordination offerings, just as I commanded, saying, ‘Aaron and his sons shall eat it.’”
+  to: 'Moses said to Aaron and his sons, “Boil the meat at the entrance of the tent of meeting, and eat it there with the bread in the basket of ordination offerings, just as I commanded: ‘Aaron and his sons are to eat it.’'
+  rationale: The earlier defense of 'meat' and 'basket of ordination offerings' was meaning-based and is retained rather than adopting the more literal 'flesh' and 'basket of ordination.' The outer quotation continues through verse 35, where Moses’ speech ends.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -120,3 +122,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/008/031.job-45282.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:17:43Z'
+  change_level: refined
+  confidence: high
+  meaning: Moses instructed Aaron and his sons to boil and eat the sacrificial meat with the ordination bread at the tent’s entrance, according to his command.
+  meaning_decisions:
+  - source_phrase: וְשָׁם תֹּאכְלוּ אֹתוֹ וְאֶת הַלֶּחֶם
+    prior_rendering: and there eat it and the bread
+    new_rendering: and eat it there with the bread
+    rationale: This naturally expresses the prescribed meal while retaining the required location.
+  - source_phrase: כַּאֲשֶׁר צִוֵּיתִי לֵאמֹר ... יֹאכְלֻהוּ
+    prior_rendering: just as I commanded, saying ... shall eat it
+    new_rendering: 'just as I commanded: ... are to eat it'
+    rationale: A colon introduces the quoted command naturally, and 'are to' makes its instructional rather than predictive force clear.
+  footnote_kinds: {}
+  history_weighed: The earlier defense of 'meat' and 'basket of ordination offerings' was meaning-based and is retained rather than adopting the more literal 'flesh' and 'basket of ordination.' The outer quotation continues through verse 35, where Moses’ speech ends.

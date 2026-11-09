@@ -25,18 +25,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But the king[a], having learned by experience the Jews’ boldness, tried to take the strongholds by stratagems[c][b],
-  philosophy: optimal-equivalence
+  text: But the king, having learned by experience the Jews’ boldness, tried to take[a] the strongholds by stratagems.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Greek literally, 'having taken experience of the Jews’ boldness.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the positions' or 'the places'; the Greek is more literal than 'strongholds,' but the military context suggests defended locations.
-    reason: lexical_alternative
-  - marker: c
-    text: The verb rendered 'tried to take' is contextually difficult; it may also be understood more generally as 'attacked' or 'pressed against.'
-    reason: lexical_alternative
+    text: The Greek verb is difficult here; it may mean “attacked” or “pressed against.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: εἰληφὼς πεῖραν
   chosen: having learned by experience
@@ -107,14 +101,20 @@ revisions:
   from: But the king, having learned by experience the Jews’ boldness, tried to take the strongholds by stratagems,
   to: But the king, having learned by experience the Jews’ boldness, attacked the places by stratagems,
   rationale: 'Changed ''tried to take the strongholds'' to ''attacked the places'' for closer lexical accuracy: κατεῖρασεν is better represented as ''attacked/assailed'' than ''tried to take,'' and τοὺς τόπους is ''the places,'' not specifically ''the strongholds.'''
-
 - timestamp: '2026-05-16T16:07:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But the king[a], having learned by experience the Jews’ boldness, attacked the places by stratagems[c][b],'
-  to: 'But the king[a], having learned by experience the Jews’ boldness, tried to take the strongholds by stratagems[c][b],'
-  rationale: 'Restored drafter ''tried to take the strongholds by stratagems'' (preserving the chosen rendering with ''take'' attempt force and ''strongholds'') per chosen renderings.'
+  from: But the king[a], having learned by experience the Jews’ boldness, attacked the places by stratagems[c][b],
+  to: But the king[a], having learned by experience the Jews’ boldness, tried to take the strongholds by stratagems[c][b],
+  rationale: Restored drafter 'tried to take the strongholds by stratagems' (preserving the chosen rendering with 'take' attempt force and 'strongholds') per chosen renderings.
+- timestamp: '2026-11-09T19:55:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But the king[a], having learned by experience the Jews’ boldness, tried to take the strongholds by stratagems[c][b],
+  to: But the king, having learned by experience the Jews’ boldness, tried to take[a] the strongholds by stratagems.
+  rationale: The review preferred the less specific “attacked the places,” while the revert restored “tried to take the strongholds.” The following siege supports defended positions as the referent, so I retain the current contextual rendering while preserving the uncertainty about the verb in a correctly placed note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -134,3 +134,18 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/013/018.job-49380.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:55:55Z'
+  change_level: kept
+  confidence: medium
+  meaning: Having experienced the Jews’ boldness, the king seeks to overcome their defended positions through military stratagems.
+  meaning_decisions: []
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The review preferred the less specific “attacked the places,” while the revert restored “tried to take the strongholds.” The following siege supports defended positions as the referent, so I retain the current contextual rendering while preserving the uncertainty about the verb in a correctly placed note.

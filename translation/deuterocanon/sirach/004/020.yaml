@@ -28,17 +28,14 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 4:20
 translation:
-  text: My son[a], keep the proper time and beware of evil[c][b], and do not be ashamed for your own soul.
-  philosophy: optimal-equivalence
+  text: My son, be mindful of the right time[a] and beware of evil; do not be ashamed of yourself[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew 'keep time' is difficult because the transmitted Hebrew includes הָמוֹן, a word usually meaning something like 'multitude,' 'wealth,' or 'tumult.' The Greek parallel reads simply 'keep/observe the proper time,' which is followed here as the clearest sense.
+    text: The Hebrew expression is uncertain and includes a word commonly meaning “multitude” or “tumult”; the Greek reads “observe the proper time.”
     reason: textual_variant
   - marker: b
-    text: Or 'guard yourself from evil.' The Hebrew wording is awkward as transmitted, while the Greek parallel clearly has 'be on guard from evil.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'do not be ashamed for yourself' or 'for your life.' Hebrew נֶפֶשׁ and Greek ψυχή can mean 'soul,' 'self,' or 'life' depending on context.
+    text: Literally, “do not be ashamed concerning your soul.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: בְּנִי
@@ -135,14 +132,20 @@ revisions:
   from: My son, keep the proper time and guard yourself from evil, and do not be ashamed concerning your own soul.
   to: My son, keep the proper time and guard yourself from evil, and do not be ashamed concerning your own soul.
   rationale: Changed 'guard yourself from evil' to 'beware of evil' for closer lexical alignment with 'fear/beware of evil,' and adjusted 'concerning your own soul' to 'for your own soul' for more natural formal English.
-
 - timestamp: '2026-05-18T02:58:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'My son[a], keep the proper time and beware of evil[c][b], and do not be ashamed for your own soul.'
-  to: 'My son[a], keep the proper time and beware of evil[c][b], and do not be ashamed for your own soul.'
+  from: My son[a], keep the proper time and beware of evil[c][b], and do not be ashamed for your own soul.
+  to: My son[a], keep the proper time and beware of evil[c][b], and do not be ashamed for your own soul.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''guard yourself from evil''].'
+- timestamp: '2026-11-09T19:05:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: My son[a], keep the proper time and beware of evil[c][b], and do not be ashamed for your own soul.
+  to: My son, be mindful of the right time[a] and beware of evil; do not be ashamed of yourself[b].
+  rationale: The earlier passes recognized the difficulty of the time expression and appropriately consulted the Greek; I retain that textual judgment while making the counsel idiomatic. The prior rationale for “soul” overstates a distinct inward sense here, so I render the reflexive meaning in the text and preserve the literal wording in a note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -162,3 +165,27 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/004/020.job-51078.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:05:34Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The pupil must attend to the right time, beware of evil, and not be ashamed of himself.
+  meaning_decisions:
+  - source_phrase: עֵת הָמוֹן שְׁמֹר
+    prior_rendering: keep the proper time
+    new_rendering: be mindful of the right time
+    rationale: The counsel concerns discerning an appropriate occasion, not keeping a schedule; the clearer Greek supports this sense of the difficult Hebrew.
+  - source_phrase: וְאֶל נַפְשְׁךָ אַל תֵּבוֹשׁ
+    prior_rendering: and do not be ashamed for your own soul
+    new_rendering: do not be ashamed of yourself
+    rationale: Here nephesh refers to the person himself rather than a separately described inner faculty; the following verse qualifies the warning by distinguishing harmful shame from honorable shame.
+  footnote_kinds:
+    a: textual_variant
+    b: literal_wording
+  history_weighed: The earlier passes recognized the difficulty of the time expression and appropriately consulted the Greek; I retain that textual judgment while making the counsel idiomatic. The prior rationale for “soul” overstates a distinct inward sense here, so I render the reflexive meaning in the text and preserve the literal wording in a note.

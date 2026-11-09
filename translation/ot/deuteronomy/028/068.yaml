@@ -4,11 +4,17 @@ source:
   edition: WLC
   text: וֶֽ/הֱשִֽׁיבְ/ךָ֨ יְהוָ֥ה מִצְרַיִם֮ בָּ/אֳנִיּוֹת֒ בַּ/דֶּ֨רֶךְ֙ אֲשֶׁ֣ר אָמַ֣רְתִּֽי לְ/ךָ֔ לֹא תֹסִ֥יף ע֖וֹד לִ/רְאֹתָ֑/הּ וְ/הִתְמַכַּרְתֶּ֨ם שָׁ֧ם לְ/אֹיְבֶ֛י/ךָ לַ/עֲבָדִ֥ים וְ/לִ/שְׁפָח֖וֹת וְ/אֵ֥ין קֹנֶֽה׀־׃ס
 translation:
-  text: And Yahweh will bring you back to Egypt in ships[a], by the way of which I said to you, ‘You shall never see it again.’ And there you will offer yourselves for sale to your enemies as male servants and female servants, but there will be no buyer.
-  philosophy: optimal-equivalence
+  text: Yahweh will bring you back to Egypt in ships, along the route about which I told you, ‘You shall never see it again[a].’ There you will offer yourselves for sale[b] to your enemies as male and female servants[c], but there will be no buyer.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'you will be sold there to your enemies as slaves, male and female'; the Hebrew verb may be understood reflexively ('sell yourselves') or more generally as entering slavery.
+    text: See Deuteronomy 17:16, which forbids returning to Egypt by that route.
+    reason: cross_reference
+  - marker: b
+    text: Or, 'you will be sold there to your enemies as male and female servants.'
+    reason: alternative_reading
+  - marker: c
+    text: Here, 'servants' means male and female slaves offered for purchase, not hired workers.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וֶהֱשִׁיבְךָ
@@ -120,14 +126,20 @@ revisions:
   from: And the LORD will bring you back to Egypt in ships, by the way of which I said to you, ‘You shall never see it again.’ And there you will sell yourselves to your enemies as male slaves and female slaves, but there will be no buyer.
   to: And the LORD will bring you back to Egypt in ships, by the way of which I said to you, ‘You shall never see it again.’ And there you will sell yourselves to your enemies as male slaves and female slaves, but there will be no buyer.
   rationale: Changed 'sell yourselves' to 'offer yourselves for sale' to better reflect the passive/reflexive sense of the Hebrew and avoid implying a completed sale when the next clause says there will be no buyer. No other changes needed.
-
 - timestamp: '2026-05-18T02:55:55Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Yahweh will bring you back to Egypt in ships[a], by the way of which I said to you, ‘You shall never see it again.’ And there you will offer yourselves for sale to your enemies as male slaves and female slaves, but there will be no buyer.'
-  to: 'And Yahweh will bring you back to Egypt in ships[a], by the way of which I said to you, ‘You shall never see it again.’ And there you will offer yourselves for sale to your enemies as male slaves and female slaves, but there will be no buyer.'
+  from: And Yahweh will bring you back to Egypt in ships[a], by the way of which I said to you, ‘You shall never see it again.’ And there you will offer yourselves for sale to your enemies as male slaves and female slaves, but there will be no buyer.
+  to: And Yahweh will bring you back to Egypt in ships[a], by the way of which I said to you, ‘You shall never see it again.’ And there you will offer yourselves for sale to your enemies as male slaves and female slaves, but there will be no buyer.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you will sell yourselves''].'
+- timestamp: '2026-11-09T17:33:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Yahweh will bring you back to Egypt in ships[a], by the way of which I said to you, ‘You shall never see it again.’ And there you will offer yourselves for sale to your enemies as male servants and female servants, but there will be no buyer.
+  to: Yahweh will bring you back to Egypt in ships, along the route about which I told you, ‘You shall never see it again[a].’ There you will offer yourselves for sale[b] to your enemies as male and female servants[c], but there will be no buyer.
+  rationale: I retain the current 'offer yourselves for sale,' which the earlier review rightly connected with the absence of a buyer, despite inconsistent no-change and revert records. The literal enslaved status identified in the lexical discussion is made explicit in a note while retaining 'servants' in the text.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -150,3 +162,24 @@ cross_check:
   verdict_counts:
     minor-issues: 3
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/028/068.job-61914.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:33:04Z'
+  change_level: refined
+  confidence: medium
+  meaning: Yahweh will reverse Israel’s departure from Egypt, bringing them back by ship to such humiliation that even their enemies will not buy them as servants.
+  meaning_decisions:
+  - source_phrase: בַּדֶּרֶךְ אֲשֶׁר אָמַרְתִּי לְךָ
+    prior_rendering: by the way of which I said to you
+    new_rendering: along the route about which I told you
+    rationale: The expression refers to a route of return; 'by the way' now commonly signals a conversational aside and can conceal that reference.
+  footnote_kinds:
+    a: cross_reference
+    b: alternative_meaning
+    c: name_or_term
+  history_weighed: I retain the current 'offer yourselves for sale,' which the earlier review rightly connected with the absence of a buyer, despite inconsistent no-change and revert records. The literal enslaved status identified in the lexical discussion is made explicit in a note while retaining 'servants' in the text.

@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/עָמְד֣וּ רַגְלָ֣י/ו בַּ/יּוֹם הַ֠/הוּא עַל הַ֨ר הַ/זֵּתִ֜ים אֲשֶׁ֨ר עַל פְּנֵ֥י יְרוּשָׁלִַם֮ מִ/קֶּדֶם֒ וְ/נִבְקַע֩ הַ֨ר הַ/זֵּיתִ֤ים מֵֽ/חֶצְי/וֹ֙ מִזְרָ֣חָ/ה וָ/יָ֔מָּ/ה גֵּ֖יא גְּדוֹלָ֣ה מְאֹ֑ד וּ/מָ֨שׁ חֲצִ֥י הָ/הָ֛ר צָפ֖וֹנָ/ה וְ/חֶצְי/וֹ נֶֽגְבָּ/ה־־־־׃
 translation:
-  text: On that day his feet will stand on the Mount of Olives[a], which is before Jerusalem on the east; and the Mount of Olives will be split in two from east to west into a very great valley[b], with half of the mountain moving northward and half of it southward.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'which is opposite Jerusalem to the east.'
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'will be split' or 'will be cleft'; the Hebrew describes the mountain dividing so that its halves move apart.
-    reason: lexical_alternative
+  text: On that day his feet will stand on the Mount of Olives, which faces Jerusalem from the east. The Mount of Olives will be split in two through its middle from east to west, forming a very large valley, with half of the mountain moving northward and the other half southward.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְעָמְדוּ
   chosen: will stand
@@ -115,14 +108,20 @@ revisions:
   from: On that day his feet will stand on the Mount of Olives, which lies before Jerusalem on the east; and the Mount of Olives will be split in two from east to west into a very great valley, with half of the mountain moving northward and half of it southward.
   to: On that day his feet will stand on the Mount of Olives, which lies before Jerusalem on the east; and the Mount of Olives will be split in two from east to west into a very great valley, with half of the mountain moving northward and half of it southward.
   rationale: Changed 'lies before Jerusalem on the east' to 'is before Jerusalem on the east' for closer adherence to the source and a more formal register. Kept the rest unchanged.
-
 - timestamp: '2026-05-17T03:21:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'On that day his feet will stand on the Mount of Olives[a], which is before Jerusalem on the east; and the Mount of Olives will be split in two from east to west into a very great valley[b], with half of the mountain moving northward and half of it southward.'
-  to: 'On that day his feet will stand on the Mount of Olives[a], which is before Jerusalem on the east; and the Mount of Olives will be split in two from east to west into a very great valley[b], with half of the mountain moving northward and half of it southward.'
+  from: On that day his feet will stand on the Mount of Olives[a], which is before Jerusalem on the east; and the Mount of Olives will be split in two from east to west into a very great valley[b], with half of the mountain moving northward and half of it southward.
+  to: On that day his feet will stand on the Mount of Olives[a], which is before Jerusalem on the east; and the Mount of Olives will be split in two from east to west into a very great valley[b], with half of the mountain moving northward and half of it southward.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''which lies before Jerusalem on the east''].'
+- timestamp: '2026-11-09T20:31:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: On that day his feet will stand on the Mount of Olives[a], which is before Jerusalem on the east; and the Mount of Olives will be split in two from east to west into a very great valley[b], with half of the mountain moving northward and half of it southward.
+  to: On that day his feet will stand on the Mount of Olives, which faces Jerusalem from the east. The Mount of Olives will be split in two through its middle from east to west, forming a very large valley, with half of the mountain moving northward and the other half southward.
+  rationale: The recorded revisions concern only ‘lies/is before Jerusalem’ and contain no maintainer ruling; the new wording clarifies that same spatial relation. I retain the earlier lexical and theological decisions to preserve the concrete imagery of his feet and the mountain’s separating halves, and drop the redundant note about splitting.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -142,3 +141,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/zechariah/014/004.job-39774.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:31:56Z'
+  change_level: refined
+  confidence: high
+  meaning: On that day Yahweh will stand on the Mount of Olives east of Jerusalem, and the mountain will split along an east–west line, forming a vast valley as its halves move north and south.
+  meaning_decisions:
+  - source_phrase: אֲשֶׁר עַל פְּנֵי יְרוּשָׁלִַם מִקֶּדֶם
+    prior_rendering: which is before Jerusalem on the east
+    new_rendering: which faces Jerusalem from the east
+    rationale: Clarifies that the mountain lies east of Jerusalem and faces the city; the earlier footnote’s spatial clarification is now carried in the text.
+  - source_phrase: מֵחֶצְיוֹ מִזְרָחָה וָיָמָּה
+    prior_rendering: from east to west
+    new_rendering: through its middle from east to west
+    rationale: Preserves the east–west orientation while restoring the explicit statement that the split passes through the mountain’s middle.
+  - source_phrase: וְנִבְקַע ... גֵּיא גְּדוֹלָה מְאֹד
+    prior_rendering: will be split in two ... into a very great valley
+    new_rendering: will be split in two ... forming a very large valley
+    rationale: Makes clear that the separating halves create the valley, rather than suggesting that the mountain itself becomes a valley, while retaining the emphasis on its great size.
+  footnote_kinds: {}
+  history_weighed: The recorded revisions concern only ‘lies/is before Jerusalem’ and contain no maintainer ruling; the new wording clarifies that same spatial relation. I retain the earlier lexical and theological decisions to preserve the concrete imagery of his feet and the mountain’s separating halves, and drop the redundant note about splitting.

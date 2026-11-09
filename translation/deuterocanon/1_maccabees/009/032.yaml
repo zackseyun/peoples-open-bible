@@ -25,8 +25,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Bacchides found out, and he was seeking to kill him.
-  philosophy: optimal-equivalence
+  text: When Bacchides learned of this, he sought to kill Jonathan.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἔγνω
   chosen: found out
@@ -35,35 +35,28 @@ lexical_decisions:
   - learned
   - came to know
   lexicon: BDAG
-  rationale: Aorist of γινώσκω here likely means coming to know or discovering information,
-    not merely possessing knowledge. 'Found out' fits the narrative sense in idiomatic
-    English.
+  rationale: Aorist of γινώσκω here likely means coming to know or discovering information, not merely possessing knowledge. 'Found out' fits the narrative sense in idiomatic English.
 - source_word: ἐζήτει
   chosen: was seeking
   alternatives:
   - sought
   - was trying
   lexicon: BDAG
-  rationale: The imperfect indicates ongoing or attempted action. 'Was seeking' preserves
-    that aspect more clearly than the simple past 'sought.'
+  rationale: The imperfect indicates ongoing or attempted action. 'Was seeking' preserves that aspect more clearly than the simple past 'sought.'
 - source_word: ἀποκτεῖναι
   chosen: to kill
   alternatives:
   - to put to death
   - to slay
   lexicon: BDAG
-  rationale: The infinitive straightforwardly means 'to kill.' 'Put to death' could
-    imply formal execution, which the Greek does not require; 'slay' is too elevated
-    for the project's style.
+  rationale: The infinitive straightforwardly means 'to kill.' 'Put to death' could imply formal execution, which the Greek does not require; 'slay' is too elevated for the project's style.
 - source_word: Βακχίδης
   chosen: Bacchides
-  rationale: Personal names are transliterated by standard convention per project
-    philosophy.
+  rationale: Personal names are transliterated by standard convention per project philosophy.
 - source_word: αὐτόν
   chosen: him
   lexicon: BDAG
-  rationale: The pronoun is singular masculine accusative and refers back to the male
-    figure in context; 'him' is the direct and natural rendering.
+  rationale: The pronoun is singular masculine accusative and refers back to the male figure in context; 'him' is the direct and natural rendering.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -92,16 +85,21 @@ revisions:
   category: revision_pass
   from: And Bacchides found out, and he was seeking to kill him.
   to: And Bacchides learned of it, and he was seeking to kill him.
-  rationale: Revised 'found out' to 'learned of it' for a more formal and precise
-    rendering of ἔγνω, while preserving the sense and completeness of the verse.
-
+  rationale: Revised 'found out' to 'learned of it' for a more formal and precise rendering of ἔγνω, while preserving the sense and completeness of the verse.
 - timestamp: '2026-05-18T02:58:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Bacchides learned of it, and he was seeking to kill him.'
-  to: 'And Bacchides found out, and he was seeking to kill him.'
+  from: And Bacchides learned of it, and he was seeking to kill him.
+  to: And Bacchides found out, and he was seeking to kill him.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''found out''].'
+- timestamp: '2026-11-09T18:53:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Bacchides found out, and he was seeking to kill him.
+  to: When Bacchides learned of this, he sought to kill Jonathan.
+  rationale: The earlier review’s 'learned of it' made the implied information clearer, though an automated revert restored 'found out.' The history’s distinction between seeking someone’s death and formally executing him is retained.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -121,3 +119,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/009/032.job-48451.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:27Z'
+  change_level: refined
+  confidence: high
+  meaning: Bacchides learns of Jonathan’s succession and seeks to kill him.
+  meaning_decisions:
+  - source_phrase: ἔγνω Βακχίδης
+    prior_rendering: Bacchides found out
+    new_rendering: When Bacchides learned of this
+    rationale: The implied object is Jonathan’s assumption of leadership, and the temporal connection explains the ensuing hostile response.
+  - source_phrase: ἐζήτει αὐτὸν ἀποκτεῖναι
+    prior_rendering: he was seeking to kill him
+    new_rendering: he sought to kill Jonathan
+    rationale: Naming Jonathan clarifies the target, while 'sought' preserves hostile intent without suggesting that a direct attack had already occurred.
+  footnote_kinds: {}
+  history_weighed: The earlier review’s 'learned of it' made the implied information clearer, though an automated revert restored 'found out.' The history’s distinction between seeking someone’s death and formally executing him is retained.

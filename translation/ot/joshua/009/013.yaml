@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וְ/אֵ֨לֶּה נֹאד֤וֹת הַ/יַּ֨יִן֙ אֲשֶׁ֣ר מִלֵּ֣אנוּ חֲדָשִׁ֔ים וְ/הִנֵּ֖ה הִתְבַּקָּ֑עוּ וְ/אֵ֤לֶּה שַׂלְמוֹתֵ֨י/נוּ֙ וּ/נְעָלֵ֔י/נוּ בָּל֕וּ מֵ/רֹ֥ב הַ/דֶּ֖רֶךְ מְאֹֽד׃
 translation:
-  text: And these wineskins[a], which we filled when they were new—look, they have burst[c][b]; and these our garments and our sandals have worn out from the journey being very long.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'have split open.'
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'from the great amount of the journey, very much,' meaning because the journey was extremely long.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'because of the journey being very long'.
-    reason: previous_rendering
+  text: These wineskins were new when we filled them, but look—they have burst. These clothes and sandals of ours have worn out because the journey was extremely long.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: נֹאדוֹת הַיַּיִן
   chosen: wineskins
@@ -104,12 +94,18 @@ revisions:
   from: And these wineskins, which we filled when they were new—look, they have burst; and these our garments and our sandals have worn out because the journey was exceedingly long.
   to: And these wineskins, which we filled when they were new—look, they have burst; and these our garments and our sandals have worn out from the journey being very long.
   rationale: 'Adjusted the final clause to more directly reflect the Hebrew: changed ''because the journey was exceedingly long'' to ''from the journey being very long.'''
+- timestamp: '2026-11-09T18:09:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And these wineskins[a], which we filled when they were new—look, they have burst[c][b]; and these our garments and our sandals have worn out from the journey being very long.
+  to: These wineskins were new when we filled them, but look—they have burst. These clothes and sandals of ours have worn out because the journey was extremely long.”
+  rationale: The earlier review improved the causal clause, but a later automated pass restored the awkward construction for closer formal correspondence. I recover the direct causal wording because it preserves the meaning and emphasis more clearly.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:03:54Z'
   unchanged: false
   changes_summary: 'Adjusted the final clause to more directly reflect the Hebrew: changed ''because the journey was exceedingly long'' to ''from the journey being very long.'''
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -132,3 +128,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/ot/joshua/009/013.job-37594.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:09:22Z'
+  change_level: refined
+  confidence: high
+  meaning: They likewise claimed that an extremely long journey had damaged their originally new wineskins and worn out their clothing and sandals.
+  meaning_decisions:
+  - source_phrase: וְאֵלֶּה נֹאדוֹת הַיַּיִן אֲשֶׁר מִלֵּאנוּ חֲדָשִׁים וְהִנֵּה הִתְבַּקָּעוּ
+    prior_rendering: And these wineskins, which we filled when they were new—look, they have burst
+    new_rendering: These wineskins were new when we filled them, but look—they have burst
+    rationale: The sentence makes the claimed contrast between their original and present condition explicit while preserving the gesture toward the evidence.
+  - source_phrase: מֵרֹב הַדֶּרֶךְ מְאֹד
+    prior_rendering: from the journey being very long
+    new_rendering: because the journey was extremely long
+    rationale: A direct causal clause conveys both the cause and the emphatic length of the journey without an awkward gerund construction.
+  footnote_kinds: {}
+  history_weighed: The earlier review improved the causal clause, but a later automated pass restored the awkward construction for closer formal correspondence. I recover the direct causal wording because it preserves the meaning and emphasis more clearly.

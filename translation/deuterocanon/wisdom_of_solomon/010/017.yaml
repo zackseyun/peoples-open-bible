@@ -10,17 +10,11 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: He gave the holy ones the reward of their labors[a], guided them in a marvelous way[c][b], and became for them a shelter by day and a flame of stars by night.
-  philosophy: optimal-equivalence
+  text: She gave the holy ones the reward for their labors, guided them along a wondrous path, and became their shelter by day and a starry flame[a] by night.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The imagery recalls God's guidance and protection in the exodus, especially the cloud by day and fire by night; the Greek here states this allusively rather than with the full traditional formula.
-    reason: cross_reference
-  - marker: b
-    text: Or 'the godly' for 'the holy ones.'
-    reason: lexical_alternative
-  - marker: c
-    text: The phrase 'a flame of stars' is literal; it may also be understood as 'a starry flame.'
+    text: Literally, 'a flame of stars,' recalling the pillar of fire in Exodus 13:21–22.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἀπέδωκεν
@@ -122,14 +116,20 @@ revisions:
   from: He gave the holy ones the reward of their labors, guided them on a marvelous way, and became for them a shelter by day and a flame of stars by night.
   to: He gave the holy ones the reward of their labors, guided them on a marvelous way, and became for them a shelter by day and a flame of stars by night.
   rationale: Changed 'on a marvelous way' to 'in a marvelous way' for more natural English while preserving the sense of ἐν ὁδῷ θαυμαστῇ. No other changes needed.
-
 - timestamp: '2026-05-18T03:00:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He gave the holy ones the reward of their labors[a], guided them in a marvelous way[c][b], and became for them a shelter by day and a flame of stars by night.'
-  to: 'He gave the holy ones the reward of their labors[a], guided them in a marvelous way[c][b], and became for them a shelter by day and a flame of stars by night.'
+  from: He gave the holy ones the reward of their labors[a], guided them in a marvelous way[c][b], and became for them a shelter by day and a flame of stars by night.
+  to: He gave the holy ones the reward of their labors[a], guided them in a marvelous way[c][b], and became for them a shelter by day and a flame of stars by night.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''on a marvelous way''].'
+- timestamp: '2026-11-09T19:11:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He gave the holy ones the reward of their labors[a], guided them in a marvelous way[c][b], and became for them a shelter by day and a flame of stars by night.
+  to: She gave the holy ones the reward for their labors, guided them along a wondrous path, and became their shelter by day and a starry flame[a] by night.
+  rationale: The earlier history preserved the exodus imagery, which I keep rather than expanding it into cloud and fire pillars. Its defense of 'He' is inconsistent with the continuing Wisdom subject, and its debate over 'on' versus 'in a marvelous way' is resolved by making the path explicit.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -149,3 +149,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/010/017.job-39476.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:46Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Wisdom rewarded the holy people for their toil, guided them along a wondrous path, and provided shelter by day and fiery light by night.
+  meaning_decisions:
+  - source_phrase: ἀπέδωκεν … ὡδήγησεν … ἐγένετο
+    prior_rendering: He gave … guided … became
+    new_rendering: She gave … guided … became
+    rationale: The subject continues to be personified Wisdom. These Greek verb forms do not mark gender, and the mention of the Lord within verse 16 does not introduce a new subject.
+  - source_phrase: ἐν ὁδῷ θαυμαστῇ
+    prior_rendering: in a marvelous way
+    new_rendering: along a wondrous path
+    rationale: The phrase describes the extraordinary route along which the people were led, not merely a marvelous manner of guiding them.
+  - source_phrase: εἰς φλόγα ἄστρων
+    prior_rendering: a flame of stars
+    new_rendering: a starry flame
+    rationale: This preserves the compressed flame-and-stars image in natural English without replacing it with the fuller pillar-of-fire formula; the literal phrase is retained in a note.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier history preserved the exodus imagery, which I keep rather than expanding it into cloud and fire pillars. Its defense of 'He' is inconsistent with the continuing Wisdom subject, and its debate over 'on' versus 'in a marvelous way' is resolved by making the path explicit.

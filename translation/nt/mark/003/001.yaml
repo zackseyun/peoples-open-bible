@@ -4,18 +4,8 @@ source:
   edition: SBLGNT
   text: Καὶ εἰσῆλθεν πάλιν ⸀εἰς συναγωγήν, καὶ ἦν ἐκεῖ ἄνθρωπος ἐξηραμμένην ἔχων τὴν χεῖρα.
 translation:
-  text: And he entered a synagogue again[c][b][a], and a man was there with a withered hand.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'into the synagogue,' if Mark intends a specific synagogue already known from the immediate context.
-    reason: alternative_reading
-  - marker: b
-    text: Or, 'a shriveled hand' or 'a hand that had dried up.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'there was a man there'.
-    reason: previous_rendering
+  text: Jesus entered a synagogue again, and a man was there with a withered hand.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: εἰσῆλθεν
   chosen: entered
@@ -99,9 +89,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he entered a synagogue again[c][b][a], and a man was there with a withered hand.'
-  to: 'And he entered a synagogue again[c][b][a], and a man was there with a withered hand.'
+  from: And he entered a synagogue again[c][b][a], and a man was there with a withered hand.
+  to: And he entered a synagogue again[c][b][a], and a man was there with a withered hand.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''into a synagogue''].'
+- timestamp: '2026-11-09T17:13:54Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he entered a synagogue again[c][b][a], and a man was there with a withered hand.
+  to: Jesus entered a synagogue again, and a man was there with a withered hand.
+  rationale: Retained the earlier improvement from 'there was a man there' to 'a man was there,' along with the accurate description 'withered hand.' The former notes offer synonymous wording or an unnecessary article distinction and are dropped.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:01:03Z'
@@ -128,3 +125,21 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/mark/003/001.job-38809.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:13:54Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus again entered a synagogue, where a man had a withered hand.
+  meaning_decisions:
+  - source_phrase: Καὶ εἰσῆλθεν
+    prior_rendering: And he entered
+    new_rendering: Jesus entered
+    rationale: Names the understood subject at the opening of this scene without adding information.
+  footnote_kinds: {}
+  history_weighed: Retained the earlier improvement from 'there was a man there' to 'a man was there,' along with the accurate description 'withered hand.' The former notes offer synonymous wording or an unnecessary article distinction and are dropped.

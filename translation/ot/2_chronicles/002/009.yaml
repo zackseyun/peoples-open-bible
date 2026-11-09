@@ -4,17 +4,17 @@ source:
   edition: WLC
   text: וְ/הִנֵּ֣ה לַֽ/חֹטְבִ֣ים לְֽ/כֹרְתֵ֣י הָ/עֵצִ֡ים נָתַתִּי֩ חִטִּ֨ים מַכּ֜וֹת לַ/עֲבָדֶ֗י/ךָ כֹּרִים֙ עֶשְׂרִ֣ים אֶ֔לֶף וּ/שְׂעֹרִ֕ים כֹּרִ֖ים עֶשְׂרִ֣ים אָ֑לֶף וְ/יַ֗יִן בַּתִּים֙ עֶשְׂרִ֣ים אֶ֔לֶף וְ/שֶׁ֕מֶן בַּתִּ֖ים עֶשְׂרִ֥ים אָֽלֶף׀׀׀׃פ
 translation:
-  text: And behold[a], for the woodcutters, the cutters of the trees, I have given to your servants twenty thousand kors of crushed wheat, and twenty thousand kors of barley, and twenty thousand baths of wine[c][b], and twenty thousand baths of oil.
-  philosophy: optimal-equivalence
+  text: I will provide your servants who fell the trees with twenty thousand kors[a] of crushed wheat[b], twenty thousand kors of barley, twenty thousand baths[c] of wine, and twenty thousand baths of oil.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or possibly 'wheat as food' or 'crushed/beaten wheat'; the Hebrew expression is unusual.
-    reason: lexical_alternative
-  - marker: b
-    text: A kor is an ancient dry measure.
+    text: A kor was a dry measure, usually estimated at about 220 liters, or roughly 6 bushels.
     reason: cultural_note
+  - marker: b
+    text: Or possibly, “wheat for food”; the Hebrew expression is uncertain.
+    reason: alternative_reading
   - marker: c
-    text: A bath is an ancient liquid measure.
+    text: A bath was a liquid measure, usually estimated at about 22 liters, or roughly 6 U.S. gallons.
     reason: cultural_note
 lexical_decisions:
 - source_word: וְהִנֵּה
@@ -101,14 +101,20 @@ revisions:
   from: And behold, for the woodcutters, the cutters of the trees, I have given to your servants twenty thousand kors of beaten wheat, and twenty thousand kors of barley, and twenty thousand baths of wine, and twenty thousand baths of oil.
   to: And behold, for the woodcutters, the cutters of the trees, I have given to your servants twenty thousand kors of beaten wheat, and twenty thousand kors of barley, and twenty thousand baths of wine, and twenty thousand baths of oil.
   rationale: Changed 'beaten wheat' to 'crushed wheat' for a more natural and accurate rendering of מַכּוֹת while preserving the sense; otherwise retained the draft.
-
 - timestamp: '2026-05-17T03:21:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And behold[a], for the woodcutters, the cutters of the trees, I have given to your servants twenty thousand kors of crushed wheat, and twenty thousand kors of barley, and twenty thousand baths of wine[c][b], and twenty thousand baths of oil.'
-  to: 'And behold[a], for the woodcutters, the cutters of the trees, I have given to your servants twenty thousand kors of crushed wheat, and twenty thousand kors of barley, and twenty thousand baths of wine[c][b], and twenty thousand baths of oil.'
+  from: And behold[a], for the woodcutters, the cutters of the trees, I have given to your servants twenty thousand kors of crushed wheat, and twenty thousand kors of barley, and twenty thousand baths of wine[c][b], and twenty thousand baths of oil.
+  to: And behold[a], for the woodcutters, the cutters of the trees, I have given to your servants twenty thousand kors of crushed wheat, and twenty thousand kors of barley, and twenty thousand baths of wine[c][b], and twenty thousand baths of oil.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''beaten wheat''].'
+- timestamp: '2026-11-09T17:24:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And behold[a], for the woodcutters, the cutters of the trees, I have given to your servants twenty thousand kors of crushed wheat, and twenty thousand kors of barley, and twenty thousand baths of wine[c][b], and twenty thousand baths of oil.
+  to: I will provide your servants who fell the trees with twenty thousand kors[a] of crushed wheat[b], twenty thousand kors of barley, twenty thousand baths[c] of wine, and twenty thousand baths of oil.”
+  rationale: The reviews disagree over “beaten” and “crushed” but support a processed-wheat reading, which I retain with the serious alternative footnoted. I render the giving as promised provision rather than completed delivery because Huram later asks Solomon to send these supplies.
 cross_check:
   status: moderate_agreement
   agreement: 0.8
@@ -128,3 +134,28 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_chronicles/002/009.job-59547.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:24:07Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Solomon promises substantial supplies of wheat, barley, wine, and oil for Huram’s servants who cut the trees.
+  meaning_decisions:
+  - source_phrase: לַחֹטְבִים לְכֹרְתֵי הָעֵצִים ... לַעֲבָדֶיךָ
+    prior_rendering: for the woodcutters, the cutters of the trees ... to your servants
+    new_rendering: your servants who fell the trees
+    rationale: The repeated descriptions identify the same recipients; one clear phrase preserves their identity and task without suggesting separate groups.
+  - source_phrase: נָתַתִּי
+    prior_rendering: I have given
+    new_rendering: I will provide
+    rationale: 'The perfect expresses a firm commitment in this request, not a completed delivery: Huram subsequently asks Solomon to send the promised provisions.'
+  footnote_kinds:
+    a: cultural_background
+    b: alternative_meaning
+    c: cultural_background
+  history_weighed: The reviews disagree over “beaten” and “crushed” but support a processed-wheat reading, which I retain with the serious alternative footnoted. I render the giving as promised provision rather than completed delivery because Huram later asks Solomon to send these supplies.

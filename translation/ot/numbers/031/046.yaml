@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/נֶ֣פֶשׁ אָדָ֔ם שִׁשָּׁ֥ה עָשָׂ֖ר אָֽלֶף׃
 translation:
-  text: and the persons of mankind were sixteen thousand[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew literally, 'and the נפש of אדם, sixteen thousand'—that is, sixteen thousand human persons.
-    reason: lexical_alternative
+  text: and the people, 16,000.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְ/נֶפֶשׁ
   chosen: and the persons
@@ -53,13 +49,12 @@ revisions:
   from: and the persons of mankind were sixteen thousand.
   to: and the persons were sixteen thousand.
   rationale: Removed 'of mankind' as an unnecessary and awkward expansion; rendered נֶפֶשׁ אָדָם more naturally and formally as 'persons' while preserving the sense and number.
-
 - timestamp: '2026-05-18T03:09:19Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and the persons were sixteen thousand[a].'
-  to: 'and the persons of mankind were sixteen thousand.'
+  from: and the persons were sixteen thousand[a].
+  to: and the persons of mankind were sixteen thousand.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''of mankind''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -69,6 +64,13 @@ revisions:
   from: and the persons of mankind were sixteen thousand.
   to: and the persons of mankind were sixteen thousand[a].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('sixteen thousand') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:32:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and the persons of mankind were sixteen thousand[a].
+  to: and the people, 16,000.
+  rationale: The April review correctly removed the awkward 'of mankind,' and the automated revert did not establish a meaning-based reason to restore it. The lexical explanation confirms that this is an ordinary count of people, so no literal-wording note is needed.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -89,3 +91,21 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/031/046.job-41268.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:32:34Z'
+  change_level: refined
+  confidence: high
+  meaning: The congregation's share contained 16,000 people.
+  meaning_decisions:
+  - source_phrase: נֶפֶשׁ אָדָם
+    prior_rendering: the persons of mankind
+    new_rendering: the people
+    rationale: The expression counts human individuals in contrast to livestock; 'people' communicates that distinction fully and naturally.
+  footnote_kinds: {}
+  history_weighed: The April review correctly removed the awkward 'of mankind,' and the automated revert did not establish a meaning-based reason to restore it. The lexical explanation confirms that this is an ordinary count of people, so no literal-wording note is needed.

@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: וַ/יִּקְח֣וּ אֶת אַבְשָׁל֗וֹם וַ/יַּשְׁלִ֨יכוּ אֹת֤/וֹ בַ/יַּ֨עַר֙ אֶל הַ/פַּ֣חַת הַ/גָּד֔וֹל וַ/יַּצִּ֧בוּ עָלָ֛י/ו גַּל אֲבָנִ֖ים גָּד֣וֹל מְאֹ֑ד וְ/כָל יִשְׂרָאֵ֔ל נָ֖סוּ אִ֥ישׁ ל/אהל/ו־־־־׃ס
 translation:
-  text: And they took Absalom and threw him into the great pit in the forest[a], and they set up over him a very large heap of stones. And all Israel fled[b], each man to his tent.
-  philosophy: optimal-equivalence
+  text: They took Absalom and threw him into the large pit in the forest, then piled a very large heap of stones over him. All the Israelite troops fled, each man to his home[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'a cairn of stones.'
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'each man to his tent,' an idiom for dispersing to one's own dwelling; that is, 'each to his home.'
+    text: Literally, “each man to his tent,” an idiom for returning to one’s own home.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וַיִּקְחוּ
@@ -117,14 +114,20 @@ revisions:
   from: And they took Absalom and threw him into the great pit in the forest, and they raised over him a very large heap of stones. And all Israel fled, each man to his tent.
   to: And they took Absalom and threw him into the great pit in the forest, and they raised over him a very large heap of stones. And all Israel fled, each man to his tent.
   rationale: Changed 'raised' to 'set up' for closer alignment with the Hebrew verb for establishing/placing the heap; otherwise retained the draft.
-
 - timestamp: '2026-05-17T05:06:38Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they took Absalom and threw him into the great pit in the forest[a], and they set up over him a very large heap of stones. And all Israel fled[b], each man to his tent.'
-  to: 'And they took Absalom and threw him into the great pit in the forest[a], and they set up over him a very large heap of stones. And all Israel fled[b], each man to his tent.'
+  from: And they took Absalom and threw him into the great pit in the forest[a], and they set up over him a very large heap of stones. And all Israel fled[b], each man to his tent.
+  to: And they took Absalom and threw him into the great pit in the forest[a], and they set up over him a very large heap of stones. And all Israel fled[b], each man to his tent.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they raised over him''].'
+- timestamp: '2026-11-09T17:28:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they took Absalom and threw him into the great pit in the forest[a], and they set up over him a very large heap of stones. And all Israel fled[b], each man to his tent.
+  to: They took Absalom and threw him into the large pit in the forest, then piled a very large heap of stones over him. All the Israelite troops fled, each man to his home[a].
+  rationale: The earlier discussion correctly identifies both the burial heap and the homeward-dispersal idiom, although its wording favored source transparency. I preserve the indignity of “threw” and express those two actions directly in English.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -144,3 +147,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/018/017.job-45834.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:36Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Absalom is buried beneath a great heap of stones in the forest, while the defeated Israelite troops scatter to their homes.
+  meaning_decisions:
+  - source_phrase: וַיַּצִּבוּ עָלָיו גַּל אֲבָנִים גָּדוֹל מְאֹד
+    prior_rendering: they set up over him a very large heap of stones
+    new_rendering: piled a very large heap of stones over him
+    rationale: The action is the construction of a burial heap; “piled” conveys that physical action more naturally than “set up.”
+  - source_phrase: וְכָל יִשְׂרָאֵל נָסוּ
+    prior_rendering: And all Israel fled
+    new_rendering: All the Israelite troops fled
+    rationale: In the battle narrative, “Israel” denotes the army opposing David, not the entire civilian population.
+  - source_phrase: אִישׁ לְאֹהָלוֹ
+    prior_rendering: each man to his tent
+    new_rendering: each man to his home
+    rationale: This conventional expression means dispersing to one’s own dwelling, rather than necessarily returning to a military tent.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier discussion correctly identifies both the burial heap and the homeward-dispersal idiom, although its wording favored source transparency. I preserve the indignity of “threw” and express those two actions directly in English.

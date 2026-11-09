@@ -4,24 +4,15 @@ source:
   edition: SBLGNT
   text: Παραγγέλλομεν δὲ ὑμῖν, ἀδελφοί, ἐν ὀνόματι τοῦ κυρίου ⸀ἡμῶν Ἰησοῦ Χριστοῦ στέλλεσθαι ὑμᾶς ἀπὸ παντὸς ἀδελφοῦ ἀτάκτως περιπατοῦντος καὶ μὴ κατὰ τὴν παράδοσιν ἣν ⸀παρελάβοσαν παρ’ ἡμῶν.
 translation:
-  text: We command you[a], brothers, in the name of our Lord Jesus Christ[e][d][c][b], to keep away from every brother who is walking disorderly and not according to the tradition that they received from us.
-  philosophy: optimal-equivalence
+  text: We command you, brothers and sisters, in the name of our Lord Jesus Christ, to keep away from every brother or sister who lives irresponsibly[a] and does not follow the teaching they received from us[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: '"Brothers" translates the masculine plural ἀδελφοί; Paul is addressing the church as a whole.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or "to withdraw from"; the Greek means to keep oneself away from close association.
-    reason: lexical_alternative
-  - marker: c
-    text: '"Messiah" could also be rendered "Christ."'
+    text: Or, 'who lives in idleness.'
     reason: alternative_reading
-  - marker: d
-    text: Some manuscripts read "which you received from us" or "which he received from us," smoothing the syntax after "every brother." The printed text reads "they received from us."
+  - marker: b
+    text: Some manuscripts read 'you received from us' or 'he received from us' rather than 'they received from us.'
     reason: textual_variant
-  - marker: e
-    text: Or 'who walks disorderly'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: Παραγγέλλομεν
   chosen: we command
@@ -29,7 +20,7 @@ lexical_decisions:
   - we instruct
   - we order
   lexicon: BDAG
-  rationale: "παραγγέλλω carries the sense of giving an authoritative directive, stronger than mere exhortation. 'Command' best reflects the apostolic authority in context. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'παραγγέλλω carries the sense of giving an authoritative directive, stronger than mere exhortation. ''Command'' best reflects the apostolic authority in context. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: ἀδελφοί
   chosen: brothers
   alternatives:
@@ -129,7 +120,7 @@ revisions:
   rationale: Replaced 'the Messiah' with 'Christ' for more formal register and consistency with the Greek title; changed 'is living disorderly' to 'is walking disorderly' to more closely reflect περιπατοῦντος.
 - timestamp: '2026-04-23T12:00:00Z'
   adjudicator: claude-sonnet-4-6-regression-fix
-  reviewer_model:
+  reviewer_model: null
   category: regression_fix
   from: Now we command you, brothers, in the name of our Lord Jesus Christ, to keep away from every brother who is walking disorderly and not according to the tradition that they received from us.
   to: Now we command you, brothers, in the name of our Lord Jesus Messiah, to keep away from every brother who is walking disorderly and not according to the tradition that they received from us.
@@ -145,15 +136,21 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "We command you, brothers, in the name of our Lord Jesus Messiah, to keep away from every brother who is walking disorderly and not according to the tradition that they received from us."
-  to: "We command you, brothers, in the name of our Lord Jesus the Messiah, to keep away from every brother who is walking disorderly and not according to the tradition that they received from us."
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
+  from: We command you, brothers, in the name of our Lord Jesus Messiah, to keep away from every brother who is walking disorderly and not according to the tradition that they received from us.
+  to: We command you, brothers, in the name of our Lord Jesus the Messiah, to keep away from every brother who is walking disorderly and not according to the tradition that they received from us.
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:05:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: We command you[a], brothers, in the name of our Lord Jesus Christ[e][d][c][b], to keep away from every brother who is walking disorderly and not according to the tradition that they received from us.
+  to: We command you, brothers and sisters, in the name of our Lord Jesus Christ, to keep away from every brother or sister who lives irresponsibly[a] and does not follow the teaching they received from us[b].
+  rationale: Automated passes oscillated between 'walking' and 'living' and between christological forms, without a maintainer ruling. I retain the current name construction 'Jesus Christ' under the standing instruction, but render the conduct and received teaching in natural, context-sensitive English and make the congregation's scope explicit.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:38:20Z'
   unchanged: false
   changes_summary: 'Replaced ''the Messiah'' with ''Christ'' for more formal register and consistency with the Greek title; changed ''is living disorderly'' to ''is walking disorderly'' to more closely reflect περιπατοῦντος. [Regression fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)]'
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -175,3 +172,31 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/2_thessalonians/003/006.job-38669.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:25Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Invoking the authority of the Lord Jesus Christ, Paul commands the congregation to keep away from fellow believers whose irresponsible conduct violates the apostolic teaching they received.
+  meaning_decisions:
+  - source_phrase: ἀδελφοί ... παντὸς ἀδελφοῦ
+    prior_rendering: brothers ... every brother
+    new_rendering: brothers and sisters ... every brother or sister
+    rationale: The command addresses the congregation and concerns fellow members of that family; the wording makes that scope explicit while retaining the familial language.
+  - source_phrase: ἀτάκτως περιπατοῦντος
+    prior_rendering: who is walking disorderly
+    new_rendering: who lives irresponsibly
+    rationale: The expression describes a way of life, not physical walking or merely disruptive behavior; in this paragraph it concerns undisciplined refusal to work and its consequences.
+  - source_phrase: καὶ μὴ κατὰ τὴν παράδοσιν
+    prior_rendering: and not according to the tradition
+    new_rendering: and does not follow the teaching
+    rationale: The tradition here is instruction transmitted by Paul and his companions, not an unspecified custom; an explicit verb makes the violation clear in English.
+  footnote_kinds:
+    a: alternative_meaning
+    b: textual_variant
+  history_weighed: Automated passes oscillated between 'walking' and 'living' and between christological forms, without a maintainer ruling. I retain the current name construction 'Jesus Christ' under the standing instruction, but render the conduct and received teaching in natural, context-sensitive English and make the congregation's scope explicit.

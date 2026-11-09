@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: דִּ֡י יְבַקַּר֩ בִּֽ/סְפַר דָּכְרָ֨נַיָּ֜/א דִּ֣י אֲבָהָתָ֗/ךְ וּ֠/תְהַשְׁכַּח בִּ/סְפַ֣ר דָּכְרָנַיָּ/א֮ וְ/תִנְדַּע֒ דִּי֩ קִרְיְתָ֨/א דָ֜ךְ קִרְיָ֣א מָֽרָדָ֗א וּֽ/מְהַנְזְקַ֤ת מַלְכִין֙ וּ/מְדִנָ֔ן וְ/אֶשְׁתַּדּוּר֙ עָבְדִ֣ין בְּ/גַוַּ֔/הּ מִן יוֹמָ֖ת עָלְמָ֑/א עַ֨ל דְּנָ֔ה קִרְיְתָ֥/א דָ֖ךְ הָֽחָרְבַֽת־־־׃
 translation:
-  text: so that a search may be made in the book of records of your fathers[a], and you may find in the book of records and know that this city is a rebellious city, harmful to kings and provinces, and that sedition has been made within it from ancient days[b]; for this reason this city was laid waste.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'your ancestors' or 'your predecessors'; literally 'your fathers.'
-    reason: lexical_alternative
-  - marker: b
-    text: The Aramaic expression rendered 'rebellion has been stirred up' refers to sedition or revolt being fomented within the city.
-    reason: lexical_alternative
+  text: so that a search may be made in the record book of your predecessors. You will find there that this city is rebellious and harmful to kings and provinces, and that sedition has been stirred up within it since ancient times; that is why this city was laid waste.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: יְבַקַּר
   chosen: a search may be made
@@ -135,14 +128,20 @@ revisions:
   from: so that a search may be made in the book of records of your fathers, and you may find in the book of records and know that this city is a rebellious city, harmful to kings and provinces, and that rebellion has been stirred up within it from ancient days; for this reason this city was laid waste.
   to: so that a search may be made in the book of records of your fathers, and you may find in the book of records and know that this city is a rebellious city, harmful to kings and provinces, and that rebellion has been stirred up within it from ancient days; for this reason this city was laid waste.
   rationale: Replaced 'rebellion has been stirred up within it' with 'sedition has been made within it' to more closely reflect the Aramaic wording and maintain a formal register.
-
 - timestamp: '2026-05-18T02:58:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'so that a search may be made in the book of records of your fathers[a], and you may find in the book of records and know that this city is a rebellious city, harmful to kings and provinces, and that sedition has been made within it from ancient days[b]; for this reason this city was laid waste.'
-  to: 'so that a search may be made in the book of records of your fathers[a], and you may find in the book of records and know that this city is a rebellious city, harmful to kings and provinces, and that sedition has been made within it from ancient days[b]; for this reason this city was laid waste.'
+  from: so that a search may be made in the book of records of your fathers[a], and you may find in the book of records and know that this city is a rebellious city, harmful to kings and provinces, and that sedition has been made within it from ancient days[b]; for this reason this city was laid waste.
+  to: so that a search may be made in the book of records of your fathers[a], and you may find in the book of records and know that this city is a rebellious city, harmful to kings and provinces, and that sedition has been made within it from ancient days[b]; for this reason this city was laid waste.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''rebellion has been stirred up''].'
+- timestamp: '2026-11-09T17:41:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: so that a search may be made in the book of records of your fathers[a], and you may find in the book of records and know that this city is a rebellious city, harmful to kings and provinces, and that sedition has been made within it from ancient days[b]; for this reason this city was laid waste.
+  to: so that a search may be made in the record book of your predecessors. You will find there that this city is rebellious and harmful to kings and provinces, and that sedition has been stirred up within it since ancient times; that is why this city was laid waste.
+  rationale: The history inconsistently records whether “rebellion has been stirred up” was changed, but the first draft and lexical rationale both support an idiomatic expression for fomenting revolt. I retain the political term “sedition” while recovering that clarity and bringing the earlier note’s explanation of “fathers” into the text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -162,3 +161,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/ezra/004/015.job-43041.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:41:00Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The writers request a search of earlier royal records, claiming that these will establish Jerusalem’s history of damaging rebellion and explain its destruction.
+  meaning_decisions:
+  - source_phrase: בִּסְפַר דָּכְרָנַיָּא דִּי אֲבָהָתָךְ
+    prior_rendering: in the book of records of your fathers
+    new_rendering: in the record book of your predecessors
+    rationale: The royal correspondence refers to records belonging to earlier rulers, not merely the king’s biological forefathers.
+  - source_phrase: וּתְהַשְׁכַּח בִּסְפַר דָּכְרָנַיָּא וְתִנְדַּע
+    prior_rendering: and you may find in the book of records and know
+    new_rendering: You will find there that
+    rationale: After requesting the search, the writers confidently state what it will establish; “find there that” conveys the combined discovery and knowledge without cumbersome repetition.
+  - source_phrase: וְאֶשְׁתַּדּוּר עָבְדִין בְּגַוַּהּ מִן יוֹמָת עָלְמָא
+    prior_rendering: and that sedition has been made within it from ancient days
+    new_rendering: and that sedition has been stirred up within it since ancient times
+    rationale: The collocation describes the fomenting of sedition; English does not naturally speak of sedition being “made.”
+  footnote_kinds: {}
+  history_weighed: The history inconsistently records whether “rebellion has been stirred up” was changed, but the first draft and lexical rationale both support an idiomatic expression for fomenting revolt. I retain the political term “sedition” while recovering that clarity and bringing the earlier note’s explanation of “fathers” into the text.

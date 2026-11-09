@@ -14,12 +14,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: So a king who displays his own courage is better than the false gods[a], or a useful vessel in a house, which its owner will use, or a door in a house that keeps safe the things in it, or the false gods, and a wooden pillar in palaces is better than the false gods.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek repeats 'than the false gods' after each comparison for emphasis; the translation preserves that repetition as much as possible.
-    reason: lexical_alternative
+  text: So a king who displays his own courage is better than the false gods, as is a useful household vessel that its owner can use. A door that keeps a house’s contents safe is better than the false gods, and a wooden pillar in a palace is better than the false gods.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὥστε
   chosen: So
@@ -129,7 +125,6 @@ revision_pass:
   timestamp: '2026-04-23T15:40:48Z'
   unchanged: false
   changes_summary: 'Recast the comparison structure for accuracy and natural English: each item (king, useful vessel, door, wooden pillar) is stated as better than the false gods. Also removed the awkward placement of ''or the false gods'' after intermediate clauses.'
-
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -149,3 +144,33 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/letter_of_jeremiah/001/058.job-50897.json
+revisions:
+- timestamp: '2026-11-09T19:02:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So a king who displays his own courage is better than the false gods[a], or a useful vessel in a house, which its owner will use, or a door in a house that keeps safe the things in it, or the false gods, and a wooden pillar in palaces is better than the false gods.
+  to: So a king who displays his own courage is better than the false gods, as is a useful household vessel that its owner can use. A door that keeps a house’s contents safe is better than the false gods, and a wooden pillar in a palace is better than the false gods.
+  rationale: The documented decision to retain repeated comparisons captures the passage’s force, but the current wording does not successfully express those comparisons. The new sentences preserve that repetition without reproducing the Greek’s compressed syntax; the explanatory footnote is no longer needed.
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:02:29Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A courageous king and ordinary objects that actually serve a useful purpose are better than the false gods.
+  meaning_decisions:
+  - source_phrase: κρεῖσσον εἶναι βασιλέα ... ἢ σκεῖος ... ἢ οἱ ψευδεῖς θεοί
+    prior_rendering: a king ... is better than the false gods, or a useful vessel in a house
+    new_rendering: a king ... is better than the false gods, as is a useful household vessel
+    rationale: The king and vessel are both superior to the false gods; the existing arrangement obscures the shared comparison.
+  - source_phrase: ἢ καὶ θύρα ... ἢ οἱ ψευδεῖς θεοί· καὶ ξύλινος στύλος ... ἢ οἱ ψευδεῖς θεοί
+    prior_rendering: or a door ... or the false gods, and a wooden pillar ... is better than the false gods
+    new_rendering: A door ... is better than the false gods, and a wooden pillar ... is better than the false gods
+    rationale: Supplying the comparative predicate makes each comparison intelligible while retaining the repeated polemical refrain.
+  footnote_kinds: {}
+  history_weighed: The documented decision to retain repeated comparisons captures the passage’s force, but the current wording does not successfully express those comparisons. The new sentences preserve that repetition without reproducing the Greek’s compressed syntax; the explanatory footnote is no longer needed.

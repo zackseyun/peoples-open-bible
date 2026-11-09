@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וָ/אֶרְאֶ֗ה וְ/הִנֵּ֨ה אַרְבָּעָ֣ה אוֹפַנִּים֮ אֵ֣צֶל הַ/כְּרוּבִים֒ אוֹפַ֣ן אֶחָ֗ד אֵ֚צֶל הַ/כְּר֣וּב אֶחָ֔ד וְ/אוֹפַ֣ן אֶחָ֔ד אֵ֖צֶל הַ/כְּר֣וּב אֶחָ֑ד וּ/מַרְאֵה֙ הָ/א֣וֹפַנִּ֔ים כְּ/עֵ֖ין אֶ֥בֶן תַּרְשִֽׁישׁ׃
 translation:
-  text: And I looked[a], and behold, four wheels beside the cherubim, one wheel beside each cherub; and the appearance of the wheels was like beryl stone.
-  philosophy: optimal-equivalence
+  text: I looked and saw four wheels beside the cherubim, one wheel beside each cherub. The wheels had the appearance of beryl[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew 'tarshish stone'; the exact gemstone identification is uncertain. It may refer to beryl, chrysolite, or another precious stone.
-    reason: lexical_alternative
+    text: Or “chrysolite”; the Hebrew calls it a “tarshish stone,” whose precise identity is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וָאֶרְאֶה
   chosen: And I looked
@@ -90,14 +90,20 @@ revisions:
   from: And I looked, and behold, four wheels beside the cherubim, one wheel beside each cherub; and the appearance of the wheels was like the gleam of beryl stone.
   to: And I looked, and behold, four wheels beside the cherubim, one wheel beside each cherub; and the appearance of the wheels was like the gleam of beryl stone.
   rationale: Removed 'the gleam of' to more closely reflect the Hebrew/Greek wording, which compares the appearance of the wheels to beryl stone itself rather than explicitly to its gleam. Kept the rest unchanged as accurate and natural.
-
 - timestamp: '2026-05-18T02:55:45Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I looked[a], and behold, four wheels beside the cherubim, one wheel beside each cherub; and the appearance of the wheels was like beryl stone.'
-  to: 'And I looked[a], and behold, four wheels beside the cherubim, one wheel beside each cherub; and the appearance of the wheels was like beryl stone.'
+  from: And I looked[a], and behold, four wheels beside the cherubim, one wheel beside each cherub; and the appearance of the wheels was like beryl stone.
+  to: And I looked[a], and behold, four wheels beside the cherubim, one wheel beside each cherub; and the appearance of the wheels was like beryl stone.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was like the gleam of''].'
+- timestamp: '2026-11-09T17:37:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I looked[a], and behold, four wheels beside the cherubim, one wheel beside each cherub; and the appearance of the wheels was like beryl stone.
+  to: I looked and saw four wheels beside the cherubim, one wheel beside each cherub. The wheels had the appearance of beryl[a].
+  rationale: I retain the current distributive “one wheel beside each cherub” and its general appearance comparison rather than restoring “gleam,” which could narrow the resemblance. The uncertainty about the gemstone remains explicit in a note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -117,3 +123,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/010/009.job-63550.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:37:07Z'
+  change_level: refined
+  confidence: high
+  meaning: Ezekiel sees four gemstone-like wheels, one beside each cherub.
+  meaning_decisions:
+  - source_phrase: וָאֶרְאֶה וְהִנֵּה
+    prior_rendering: And I looked, and behold
+    new_rendering: I looked and saw
+    rationale: The natural English visual report preserves the movement of Ezekiel’s attention to the wheels.
+  - source_phrase: וּמַרְאֵה הָאוֹפַנִּים כְּעֵין אֶבֶן תַּרְשִׁישׁ
+    prior_rendering: and the appearance of the wheels was like beryl stone
+    new_rendering: The wheels had the appearance of beryl
+    rationale: This states the visual resemblance naturally without implying that the wheels were actually made of the gemstone.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retain the current distributive “one wheel beside each cherub” and its general appearance comparison rather than restoring “gleam,” which could narrow the resemblance. The uncertainty about the gemstone remains explicit in a note.

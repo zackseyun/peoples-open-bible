@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: Καὶ ὡς ἐγένετο ἡμέρα, συνήχθη τὸ πρεσβυτέριον τοῦ λαοῦ, ἀρχιερεῖς ⸀τε καὶ γραμματεῖς, καὶ ⸀ἀπήγαγον αὐτὸν εἰς τὸ συνέδριον αὐτῶν,
 translation:
-  text: And when day came[a], the council of the elders of the people gathered together, both chief priests and scribes, and they led him away into their Sanhedrin[b],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'when it became day' or 'at daybreak.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'into their council' or 'before their council.' The Greek uses συνέδριον, which can refer to the council itself or its formal meeting/place.
-    reason: lexical_alternative
+  text: At daybreak, the council of the people’s elders—both chief priests and scribes—assembled, and they brought Jesus before the council.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὡς ἐγένετο ἡμέρα
   chosen: when day came
@@ -87,14 +80,20 @@ revisions:
   from: And when day came, the council of the elders of the people gathered together, both chief priests and scribes, and they led him away into their council chamber,
   to: And when day came, the council of the elders of the people gathered together, both chief priests and scribes, and they led him away into their council chamber,
   rationale: Replaced 'council chamber' with 'Sanhedrin' to reflect συνέδριον more accurately here as the governing council rather than a physical room; retained the rest as accurate and natural.
-
 - timestamp: '2026-05-18T03:01:51Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when day came[a], the council of the elders of the people gathered together, both chief priests and scribes, and they led him away into their Sanhedrin[b],'
-  to: 'And when day came[a], the council of the elders of the people gathered together, both chief priests and scribes, and they led him away into their Sanhedrin[b],'
+  from: And when day came[a], the council of the elders of the people gathered together, both chief priests and scribes, and they led him away into their Sanhedrin[b],
+  to: And when day came[a], the council of the elders of the people gathered together, both chief priests and scribes, and they led him away into their Sanhedrin[b],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''into their council chamber''].'
+- timestamp: '2026-11-09T17:12:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when day came[a], the council of the elders of the people gathered together, both chief priests and scribes, and they led him away into their Sanhedrin[b],
+  to: At daybreak, the council of the people’s elders—both chief priests and scribes—assembled, and they brought Jesus before the council.
+  rationale: The recorded discussion weighed 'council chamber' against 'Sanhedrin,' with no MAINTAINER ruling. 'Before the council' preserves the institutional meaning emphasized by the later review without requiring a particular interpretation of the meeting place.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -117,3 +116,21 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/nt/luke/022/066.job-38924.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:40Z'
+  change_level: retranslated
+  confidence: high
+  meaning: At daybreak, the people’s council of elders assembles and has Jesus brought before it.
+  meaning_decisions:
+  - source_phrase: ἀπήγαγον αὐτὸν εἰς τὸ συνέδριον αὐτῶν
+    prior_rendering: they led him away into their Sanhedrin
+    new_rendering: they brought Jesus before the council
+    rationale: The phrase describes bringing Jesus before the assembled judicial body; this avoids both the unfamiliar 'into their Sanhedrin' and an unnecessary assertion that the noun specifically denotes a chamber.
+  footnote_kinds: {}
+  history_weighed: The recorded discussion weighed 'council chamber' against 'Sanhedrin,' with no MAINTAINER ruling. 'Before the council' preserves the institutional meaning emphasized by the later review without requiring a particular interpretation of the meeting place.

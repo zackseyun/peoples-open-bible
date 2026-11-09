@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/כִֽי תִמְכְּר֤וּ מִמְכָּר֙ לַ/עֲמִיתֶ֔/ךָ א֥וֹ קָנֹ֖ה מִ/יַּ֣ד עֲמִיתֶ֑/ךָ אַל תּוֹנ֖וּ אִ֥ישׁ אֶת אָחִֽי/ו־־־׃
 translation:
-  text: And if you sell something to your neighbor[a], or buy from your neighbor, no man shall oppress his brother.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'do not wrong one another'; the verb can denote taking unfair advantage, especially in commercial dealings.
-    reason: lexical_alternative
+  text: If you sell something to a fellow Israelite or buy from one, no one shall take unfair advantage of his brother.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְכִי
   chosen: And if
@@ -118,14 +114,20 @@ revisions:
   from: And if you sell something to your neighbor, or buy from your neighbor’s hand, no man shall oppress his brother.
   to: And if you sell something to your neighbor, or buy from your neighbor’s hand, no man shall oppress his brother.
   rationale: Removed 'hand' for more natural English while preserving the sense of buying from one's neighbor; otherwise retained the draft's accurate and complete rendering.
-
 - timestamp: '2026-05-18T02:56:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And if you sell something to your neighbor[a], or buy from your neighbor, no man shall oppress his brother.'
-  to: 'And if you sell something to your neighbor[a], or buy from your neighbor, no man shall oppress his brother.'
+  from: And if you sell something to your neighbor[a], or buy from your neighbor, no man shall oppress his brother.
+  to: And if you sell something to your neighbor[a], or buy from your neighbor, no man shall oppress his brother.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''your neighbor’s''].'
+- timestamp: '2026-11-09T18:22:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And if you sell something to your neighbor[a], or buy from your neighbor, no man shall oppress his brother.
+  to: If you sell something to a fellow Israelite or buy from one, no one shall take unfair advantage of his brother.
+  rationale: The earlier removal of 'hand' correctly carried the transactional idiom into natural English, and I retain that gain. The recorded rationale and footnote already identify unfair advantage as the verb’s contextual sense, so I bring it into the text while keeping the solidarity expressed by 'brother.'
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -145,3 +147,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/025/014.job-45216.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:22:16Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Israelites must not take unfair advantage of one another when buying and selling.
+  meaning_decisions:
+  - source_phrase: לַעֲמִיתֶךָ ... עֲמִיתֶךָ
+    prior_rendering: to your neighbor ... from your neighbor
+    new_rendering: to a fellow Israelite ... from one
+    rationale: The term identifies a fellow member of the covenant community, not necessarily someone living nearby, and clarifies the communal sense of 'brother.'
+  - source_phrase: אַל תּוֹנוּ אִישׁ אֶת אָחִיו
+    prior_rendering: no man shall oppress his brother
+    new_rendering: no one shall take unfair advantage of his brother
+    rationale: In these commercial dealings, the verb prohibits economic wrong or exploitation; 'oppress' is too general to convey the immediate demand for fair transactions.
+  footnote_kinds: {}
+  history_weighed: The earlier removal of 'hand' correctly carried the transactional idiom into natural English, and I retain that gain. The recorded rationale and footnote already identify unfair advantage as the verb’s contextual sense, so I bring it into the text while keeping the solidarity expressed by 'brother.'

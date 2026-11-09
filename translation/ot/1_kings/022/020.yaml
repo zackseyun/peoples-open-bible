@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֣אמֶר יְהוָ֗ה מִ֤י יְפַתֶּה֙ אֶת אַחְאָ֔ב וְ/יַ֕עַל וְ/יִפֹּ֖ל בְּ/רָמֹ֣ת גִּלְעָ֑ד וַ/יֹּ֤אמֶר זֶה֙ בְּ/כֹ֔ה וְ/זֶ֥ה אֹמֵ֖ר בְּ/כֹֽה־׃
 translation:
-  text: And Yahweh said[a], “Who will entice Ahab, so that he may go up and fall at Ramoth-gilead?” And this one said one thing, and that one said another.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “persuade”; the verb can also carry the sense “deceive,” depending on context.
-    reason: lexical_alternative
+  text: Yahweh asked, ‘Who will entice Ahab to go up to Ramoth-gilead and fall in battle there?’ One suggested one thing, and another something else.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: יְהוָה
   chosen: Yahweh
@@ -80,14 +76,20 @@ revisions:
   from: And the LORD said, “Who will entice Ahab, so that he may go up and fall at Ramoth-gilead?” And one said one thing, and another said another.
   to: And the LORD said, “Who will entice Ahab, so that he may go up and fall at Ramoth-gilead?” And one said one thing, and another said another.
   rationale: 'Revised the final clause to more closely reflect the Hebrew demonstratives: ''this one ... and that one ...'' instead of ''one ... and another ...''.'
-
 - timestamp: '2026-05-18T02:57:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Yahweh said[a], “Who will entice Ahab, so that he may go up and fall at Ramoth-gilead?” And this one said one thing, and that one said another.'
-  to: 'And Yahweh said[a], “Who will entice Ahab, so that he may go up and fall at Ramoth-gilead?” And this one said one thing, and that one said another.'
+  from: And Yahweh said[a], “Who will entice Ahab, so that he may go up and fall at Ramoth-gilead?” And this one said one thing, and that one said another.
+  to: And Yahweh said[a], “Who will entice Ahab, so that he may go up and fall at Ramoth-gilead?” And this one said one thing, and that one said another.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''And one said one thing, and another said another''].'
+- timestamp: '2026-11-09T17:22:43Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Yahweh said[a], “Who will entice Ahab, so that he may go up and fall at Ramoth-gilead?” And this one said one thing, and that one said another.
+  to: Yahweh asked, ‘Who will entice Ahab to go up to Ramoth-gilead and fall in battle there?’ One suggested one thing, and another something else.
+  rationale: The first draft and lexical discussion support natural English for the differing proposals rather than the later automated preference for ‘this one’ and ‘that one.’ I retain ‘entice’ and the direct portrayal of Yahweh initiating Ahab’s downfall.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -109,3 +111,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/022/020.job-58728.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:43Z'
+  change_level: refined
+  confidence: high
+  meaning: Yahweh asks who will induce Ahab to go to Ramoth-gilead and die there, and members of the heavenly court offer different proposals.
+  meaning_decisions:
+  - source_phrase: וְיַעַל וְיִפֹּל בְּרָמֹת גִּלְעָד
+    prior_rendering: so that he may go up and fall at Ramoth-gilead
+    new_rendering: to go up to Ramoth-gilead and fall in battle there
+    rationale: The intended result is Ahab’s death in battle; adding the understood military setting makes the meaning of ‘fall’ clear while preserving the image.
+  - source_phrase: זֶה בְּכֹה וְזֶה אֹמֵר בְּכֹה
+    prior_rendering: this one said one thing, and that one said another
+    new_rendering: One suggested one thing, and another something else
+    rationale: The expression describes differing proposals, not a contrast whose meaning depends on literal demonstratives.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical discussion support natural English for the differing proposals rather than the later automated preference for ‘this one’ and ‘that one.’ I retain ‘entice’ and the direct portrayal of Yahweh initiating Ahab’s downfall.

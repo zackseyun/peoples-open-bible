@@ -4,17 +4,11 @@ source:
   edition: WLC
   text: וְ/אֵת֩ כָּל קִיר֨וֹת הַ/בַּ֜יִת מֵסַ֣ב קָלַ֗ע פִּתּוּחֵי֙ מִקְלְעוֹת֙ כְּרוּבִ֣ים וְ/תִֽמֹרֹ֔ת וּ/פְטוּרֵ֖י צִצִּ֑ים מִ/לִּ/פְנִ֖ים וְ/לַ/חִיצֽוֹן־׀׃
 translation:
-  text: He carved all the walls of the house all around with engraved figures of cherubim[a], palm trees, and open flowers[c][b], on the inner and outer walls.
-  philosophy: optimal-equivalence
+  text: He carved figures of cherubim, palm trees, and open flowers on the walls throughout the house, in both the inner sanctuary and the main hall[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'flower blossoms' or 'unfolding flowers'; the Hebrew expression refers to floral decorative motifs, but the exact artistic form is uncertain.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'the house,' a common designation here for the temple structure.
-    reason: cultural_note
-  - marker: c
-    text: The final phrase may also be understood more generally as 'inside and outside,' though in this context it likely refers to the inner and outer sections of the sanctuary.
+    text: Or, “on the inner and outer walls.”
     reason: alternative_reading
 lexical_decisions:
 - source_word: קִירוֹת הַבַּיִת
@@ -96,14 +90,20 @@ revisions:
   from: He carved all the walls of the house all around with engraved figures of cherubim, palm trees, and open flowers, on the inner and outer rooms.
   to: He carved all the walls of the house all around with engraved figures of cherubim, palm trees, and open flowers, on the inner and outer rooms.
   rationale: Changed 'rooms' to 'walls' to match the Hebrew, which refers to the inner and outer sides/walls, not rooms.
-
 - timestamp: '2026-05-18T02:56:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He carved all the walls of the house all around with engraved figures of cherubim[a], palm trees, and open flowers[c][b], on the inner and outer walls.'
-  to: 'He carved all the walls of the house all around with engraved figures of cherubim[a], palm trees, and open flowers[c][b], on the inner and outer walls.'
+  from: He carved all the walls of the house all around with engraved figures of cherubim[a], palm trees, and open flowers[c][b], on the inner and outer walls.
+  to: He carved all the walls of the house all around with engraved figures of cherubim[a], palm trees, and open flowers[c][b], on the inner and outer walls.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''on the inner and outer rooms''].'
+- timestamp: '2026-11-09T17:21:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He carved all the walls of the house all around with engraved figures of cherubim[a], palm trees, and open flowers[c][b], on the inner and outer walls.
+  to: He carved figures of cherubim, palm trees, and open flowers on the walls throughout the house, in both the inner sanctuary and the main hall[a].
+  rationale: The automated review favored walls rather than rooms, but the lexical discussion and current footnote recognize the two interior sections as the likely referents. I follow that contextual evidence while preserving the current walls-based understanding as an alternative.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -123,3 +123,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/006/029.job-58186.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:21:02Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Solomon decorated the walls throughout both temple rooms with carved cherubim, palm trees, and open flowers.
+  meaning_decisions:
+  - source_phrase: קָלַע פִּתּוּחֵי מִקְלְעוֹת ... מֵסַב
+    prior_rendering: carved all the walls of the house all around with engraved figures
+    new_rendering: carved figures ... on the walls throughout the house
+    rationale: The natural English construction conveys the decorative carving and its comprehensive extent without redundant carving terminology.
+  - source_phrase: מִלִּפְנִים וְלַחִיצוֹן
+    prior_rendering: on the inner and outer walls
+    new_rendering: in both the inner sanctuary and the main hall
+    rationale: The surrounding account of interior cedar, gold, and flooring favors the inner and outer rooms rather than the building’s exterior surfaces.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The automated review favored walls rather than rooms, but the lexical discussion and current footnote recognize the two interior sections as the likely referents. I follow that contextual evidence while preserving the current walls-based understanding as an alternative.

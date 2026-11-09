@@ -26,12 +26,8 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; kept canonical Baruch 1:1-5:9 only, with Letter of Jeremiah handled separately as LJE.
 translation:
-  text: nor was it heard in Canaan[a], nor was it seen in Teman;
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: That is, the wisdom under discussion in the surrounding context; Greek leaves the subject implicit in this verse.
-    reason: cross_reference
+  text: Wisdom was neither heard of in Canaan nor seen in Teman.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: οὐδὲ
   chosen: nor
@@ -107,7 +103,13 @@ revisions:
   from: nor was it heard of in Canaan, nor was it seen in Teman;
   to: nor was it heard in Canaan, nor was it seen in Teman;
   rationale: Removed 'of' after 'heard' to more closely reflect the Greek and improve formal consistency; otherwise retained the draft.
-
+- timestamp: '2026-11-09T19:01:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: nor was it heard in Canaan[a], nor was it seen in Teman;
+  to: Wisdom was neither heard of in Canaan nor seen in Teman.
+  rationale: The first draft and lexical rationale correctly identified “heard of” as the natural expression for wisdom’s being unknown. The later removal of “of” favored formal correspondence without improving the meaning, so I restore it and make the implied subject explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -127,3 +129,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/baruch/003/022.job-50392.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:32Z'
+  change_level: refined
+  confidence: high
+  meaning: Wisdom was unknown in Canaan and Teman as well.
+  meaning_decisions:
+  - source_phrase: οὐδὲ ἠκούσθη
+    prior_rendering: nor was it heard
+    new_rendering: Wisdom was neither heard of
+    rationale: The context supplies wisdom as the subject, and “heard of” conveys knowledge of her rather than the hearing of a sound.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale correctly identified “heard of” as the natural expression for wisdom’s being unknown. The later removal of “of” favored formal correspondence without improving the meaning, so I restore it and make the implied subject explicit.

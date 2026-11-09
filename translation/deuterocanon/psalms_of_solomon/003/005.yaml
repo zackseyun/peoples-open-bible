@@ -8,21 +8,12 @@ source:
   - 791
   validation: swete_direct
 translation:
-  text: The righteous man is attentive and will declare the Lord just[a]; The righteous man is attentive and will vindicate the Lord[c]; he falls[d][b], and he looks to see what God will do for him., and he looks to see what God will do for him.
-  philosophy: optimal-equivalence
+  text: The righteous man is attentive and will declare the Lord just; when he falls, he looks to see what God will do for him[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or "will justify the Lord."
-    reason: lexical_alternative
-  - marker: b
-    text: Or "what God will do to him."
+    text: Or, “what God will do to him.”
     reason: alternative_reading
-  - marker: c
-    text: Or 'will vindicate the Lord'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'he has fallen'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: προσέχων
   chosen: is attentive
@@ -124,8 +115,8 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The righteous man is attentive and will declare the Lord just[a]; he falls[d][c][b], and he looks to see what God will do for him.'
-  to: 'The righteous man is attentive and will declare the Lord just; The righteous man is attentive and will vindicate the Lord; he falls, and he looks to see what God will do for him., and he looks to see what God will do for him.'
+  from: The righteous man is attentive and will declare the Lord just[a]; he falls[d][c][b], and he looks to see what God will do for him.
+  to: The righteous man is attentive and will declare the Lord just; The righteous man is attentive and will vindicate the Lord; he falls, and he looks to see what God will do for him., and he looks to see what God will do for him.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will vindicate''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -135,6 +126,13 @@ revisions:
   from: The righteous man is attentive and will declare the Lord just; The righteous man is attentive and will vindicate the Lord; he falls, and he looks to see what God will do for him., and he looks to see what God will do for him.
   to: The righteous man is attentive and will declare the Lord just[a]; The righteous man is attentive and will vindicate the Lord[c]; he falls[d][b], and he looks to see what God will do for him., and he looks to see what God will do for him.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it; [b] restored to the position it held before an earlier revision pass dropped it; [c] anchored to ('will vindicate the Lord') because the note quotes that phrase from the rendering; [d] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:03:57Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The righteous man is attentive and will declare the Lord just[a]; The righteous man is attentive and will vindicate the Lord[c]; he falls[d][b], and he looks to see what God will do for him., and he looks to see what God will do for him.
+  to: The righteous man is attentive and will declare the Lord just; when he falls, he looks to see what God will do for him[a].
+  rationale: I retained the substantive reviews establishing acknowledgment of God’s justice and the gnomic sense of “falls.” The later cleanup correctly removed duplication; the automated revert that restored it carries no meaning-based weight.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:09:44Z'
@@ -159,3 +157,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_greek_apocrypha/deuterocanon/psalms_of_solomon/003/005.job-73064.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:03:57Z'
+  change_level: refined
+  confidence: high
+  meaning: The righteous person remains attentive, acknowledges the Lord’s justice, and looks to God when he falls.
+  meaning_decisions:
+  - source_phrase: προσέχων ὁ δίκαιος καὶ δικαιώσει τὸν κύριον
+    prior_rendering: The righteous man is attentive and will declare the Lord just; The righteous man is attentive and will vindicate the Lord
+    new_rendering: The righteous man is attentive and will declare the Lord just
+    rationale: The source contains this assertion only once. “Declare the Lord just” explicitly carries the acknowledgment of God’s justice that also appears in verse 3.
+  - source_phrase: ἔπεσεν, καὶ ἀποβλέπει τί ποιήσει αὐτῷ ὁ θεός
+    prior_rendering: he falls, and he looks to see what God will do for him., and he looks to see what God will do for him.
+    new_rendering: when he falls, he looks to see what God will do for him
+    rationale: The aorist describes a characteristic situation, not an isolated historical event. “When” makes the relationship clear, and the duplicated clause has no source basis.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retained the substantive reviews establishing acknowledgment of God’s justice and the gnomic sense of “falls.” The later cleanup correctly removed duplication; the automated revert that restored it carries no meaning-based weight.

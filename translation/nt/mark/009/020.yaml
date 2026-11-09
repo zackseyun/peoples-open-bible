@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ ἤνεγκαν αὐτὸν πρὸς αὐτόν. καὶ ἰδὼν αὐτὸν ⸂τὸ πνεῦμα εὐθὺς⸃ ⸀συνεσπάραξεν αὐτόν, καὶ πεσὼν ἐπὶ τῆς γῆς ἐκυλίετο ἀφρίζων.
 translation:
-  text: And they brought him to him[a]. And when the spirit saw him, it immediately convulsed him, and he fell on the ground and rolled about[b], foaming.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the unclean spirit'; the broader context identifies the spirit as unclean, but this verse itself says simply 'the spirit.'
-    reason: alternative_reading
-  - marker: b
-    text: Or 'threw him into convulsions.'
-    reason: lexical_alternative
+  text: They brought the boy to Jesus. When the spirit saw Jesus, it immediately threw the boy into convulsions, and he fell to the ground and rolled about, foaming at the mouth.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἤνεγκαν
   chosen: brought
@@ -106,14 +99,20 @@ revisions:
   from: And they brought him to him. And when the spirit saw him, it immediately convulsed him, and falling on the ground, he rolled about, foaming.
   to: And they brought him to him. And when the spirit saw him, it immediately convulsed him, and falling on the ground, he rolled about, foaming.
   rationale: Replaced 'and falling on the ground' with 'and he fell on the ground' to reflect the finite participial sequence more naturally in English and clarify that the boy, not the spirit, fell.
-
 - timestamp: '2026-05-16T22:21:59Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they brought him to him[a]. And when the spirit saw him, it immediately convulsed him, and he fell on the ground and rolled about[b], foaming.'
-  to: 'And they brought him to him[a]. And when the spirit saw him, it immediately convulsed him, and he fell on the ground and rolled about[b], foaming.'
-  rationale: 'Restored drafter ''and falling on the ground, he rolled about'' (preserving the chosen participial construction) per chosen renderings.'
+  from: And they brought him to him[a]. And when the spirit saw him, it immediately convulsed him, and he fell on the ground and rolled about[b], foaming.
+  to: And they brought him to him[a]. And when the spirit saw him, it immediately convulsed him, and he fell on the ground and rolled about[b], foaming.
+  rationale: Restored drafter 'and falling on the ground, he rolled about' (preserving the chosen participial construction) per chosen renderings.
+- timestamp: '2026-11-09T17:13:59Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they brought him to him[a]. And when the spirit saw him, it immediately convulsed him, and he fell on the ground and rolled about[b], foaming.
+  to: They brought the boy to Jesus. When the spirit saw Jesus, it immediately threw the boy into convulsions, and he fell to the ground and rolled about, foaming at the mouth.
+  rationale: The review recognized that a finite clause clarifies that the boy falls; the later revert favored participial form without adding meaning. I retain the clearer sequence and make the other shifting subjects explicit.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -136,3 +135,25 @@ cross_check:
   verdict_counts:
     minor-issues: 3
   source_review: state/reviews/gemini/v31_full_coverage/nt/mark/009/020.job-56372.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:13:59Z'
+  change_level: refined
+  confidence: high
+  meaning: When the boy is brought to Jesus, the spirit reacts to seeing Jesus by throwing the boy into convulsions.
+  meaning_decisions:
+  - source_phrase: ἤνεγκαν αὐτὸν πρὸς αὐτόν … ἰδὼν αὐτὸν … συνεσπάραξεν αὐτόν
+    prior_rendering: they brought him to him … when the spirit saw him … it immediately convulsed him
+    new_rendering: They brought the boy to Jesus … When the spirit saw Jesus … it immediately threw the boy into convulsions
+    rationale: Naming the boy and Jesus makes the shifting pronoun references clear and preserves the spirit’s reaction to Jesus himself.
+  - source_phrase: ἀφρίζων
+    prior_rendering: foaming
+    new_rendering: foaming at the mouth
+    rationale: This supplies the understood location of the bodily symptom rather than leaving the English unusually vague.
+  footnote_kinds: {}
+  history_weighed: The review recognized that a finite clause clarifies that the boy falls; the later revert favored participial form without adding meaning. I retain the clearer sequence and make the other shifting subjects explicit.

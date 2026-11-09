@@ -23,11 +23,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: There is a word wrapped in death[a]; may it not be found in the inheritance of Jacob. For all these things will depart from the godly, and they will not wallow in sins.
-  philosophy: optimal-equivalence
+  text: There is speech wrapped in death; may it never be found among Jacob's people[a]. For the godly will have nothing to do with such things and will not wallow in sins.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'clothed with death' or 'surrounded by death.' The Greek image is of a kind of speech enveloped in death.
+    text: Literally, “in the inheritance of Jacob,” referring to the community of Israel.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: λέξις
@@ -140,13 +140,12 @@ revisions:
   from: There is a word wrapped in death; may it not be found in the inheritance of Jacob. For all these things will depart from the godly, and they will not wallow in sins.
   to: There is a word clothed with death; may it not be found in the inheritance of Jacob. For all these things will depart from the godly, and they will not wallow in sins.
   rationale: Changed 'wrapped in death' to 'clothed with death' for a more natural and closer rendering of ἀντιπεριβεβλημένη, while keeping the rest unchanged.
-
 - timestamp: '2026-05-18T03:09:32Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'There is a word clothed with death; may it not be found in the inheritance of Jacob. For all these things will depart from the godly[a], and they will not wallow in sins.'
-  to: 'There is a word wrapped in death; may it not be found in the inheritance of Jacob. For all these things will depart from the godly, and they will not wallow in sins.'
+  from: There is a word clothed with death; may it not be found in the inheritance of Jacob. For all these things will depart from the godly[a], and they will not wallow in sins.
+  to: There is a word wrapped in death; may it not be found in the inheritance of Jacob. For all these things will depart from the godly, and they will not wallow in sins.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''wrapped in''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -156,6 +155,13 @@ revisions:
   from: There is a word wrapped in death; may it not be found in the inheritance of Jacob. For all these things will depart from the godly, and they will not wallow in sins.
   to: There is a word wrapped in death[a]; may it not be found in the inheritance of Jacob. For all these things will depart from the godly, and they will not wallow in sins.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('death') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:07:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: There is a word wrapped in death[a]; may it not be found in the inheritance of Jacob. For all these things will depart from the godly, and they will not wallow in sins.
+  to: There is speech wrapped in death; may it never be found among Jacob's people[a]. For the godly will have nothing to do with such things and will not wallow in sins.
+  rationale: The recorded revisions only debate “wrapped” versus “clothed,” so I retain the current vivid image and its unresolved death-laden force. The earlier decisions establish that Jacob's inheritance is the community and that the final image is wallowing in sins; both meanings remain.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -175,3 +181,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/023/012.job-51595.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:02Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Death-laden speech must have no place among Jacob's people, whose godly members avoid such practices rather than wallowing in sins.
+  meaning_decisions:
+  - source_phrase: ἔστιν λέξις
+    prior_rendering: There is a word
+    new_rendering: There is speech
+    rationale: The warning concerns a kind of utterance or speech, not necessarily one particular vocabulary word.
+  - source_phrase: ἐν κληρονομίᾳ Ἰακώβ
+    prior_rendering: in the inheritance of Jacob
+    new_rendering: among Jacob's people
+    rationale: The phrase identifies Israel's community as the place where such speech must not occur; the inheritance language is preserved in a footnote.
+  - source_phrase: ἀπὸ γὰρ εὐσεβῶν ταῦτα πάντα ἀποστήσεται
+    prior_rendering: For all these things will depart from the godly
+    new_rendering: For the godly will have nothing to do with such things
+    rationale: The clause characterizes the separation of godly people from these sinful practices; the new wording avoids suggesting that the practices act independently and automatically leave them.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The recorded revisions only debate “wrapped” versus “clothed,” so I retain the current vivid image and its unresolved death-laden force. The earlier decisions establish that Jacob's inheritance is the community and that the final image is wallowing in sins; both meanings remain.

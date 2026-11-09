@@ -17,12 +17,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And after striking Egypt[a], Antiochus returned in the one hundred forty-third year; and he went up against Israel and Jerusalem with a great multitude.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'with a massive force' or 'with a large host.' The Greek literally says 'with a heavy multitude.'
-    reason: lexical_alternative
+  text: After defeating Egypt, Antiochus returned in the one hundred forty-third year and went up against Israel and Jerusalem with a massive force.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐπέστρεψεν
   chosen: returned
@@ -98,14 +94,20 @@ revisions:
   from: And after striking Egypt, Antiochus returned in the one hundred forty-third year; and he went up against Israel and Jerusalem with a heavy multitude.
   to: And after striking Egypt, Antiochus returned in the one hundred forty-third year; and he went up against Israel and Jerusalem with a heavy multitude.
   rationale: Changed 'heavy multitude' to 'great multitude' for more natural English and a better rendering of ἐν ὄχλῳ βαρεῖ in formal translation style.
-
 - timestamp: '2026-05-18T02:59:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And after striking Egypt[a], Antiochus returned in the one hundred forty-third year; and he went up against Israel and Jerusalem with a great multitude.'
-  to: 'And after striking Egypt[a], Antiochus returned in the one hundred forty-third year; and he went up against Israel and Jerusalem with a great multitude.'
+  from: And after striking Egypt[a], Antiochus returned in the one hundred forty-third year; and he went up against Israel and Jerusalem with a great multitude.
+  to: And after striking Egypt[a], Antiochus returned in the one hundred forty-third year; and he went up against Israel and Jerusalem with a great multitude.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with a heavy multitude''].'
+- timestamp: '2026-11-09T18:50:57Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And after striking Egypt[a], Antiochus returned in the one hundred forty-third year; and he went up against Israel and Jerusalem with a great multitude.
+  to: After defeating Egypt, Antiochus returned in the one hundred forty-third year and went up against Israel and Jerusalem with a massive force.
+  rationale: The earlier review improved “heavy multitude” but still left its military identity implicit. The documented contextual meaning supports “massive force,” while the supplied year 143 and the ascent against Jerusalem are retained.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -125,3 +127,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/001/020.job-47971.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:50:57Z'
+  change_level: retranslated
+  confidence: high
+  meaning: After defeating Egypt, Antiochus returned and advanced against Israel and Jerusalem with a large military force.
+  meaning_decisions:
+  - source_phrase: μετὰ τὸ πατάξαι Αἴγυπτον
+    prior_rendering: after striking Egypt
+    new_rendering: After defeating Egypt
+    rationale: The preceding account of Ptolemy’s rout and the capture of cities establishes a military defeat, not merely an unspecified blow.
+  - source_phrase: ἐν ὄχλῳ βαρεῖ
+    prior_rendering: with a great multitude
+    new_rendering: with a massive force
+    rationale: The multitude consists of troops, and the wording consistently conveys the same expression used in verse 17.
+  footnote_kinds: {}
+  history_weighed: The earlier review improved “heavy multitude” but still left its military identity implicit. The documented contextual meaning supports “massive force,” while the supplied year 143 and the ascent against Jerusalem are retained.

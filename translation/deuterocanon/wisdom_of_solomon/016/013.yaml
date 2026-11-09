@@ -22,15 +22,12 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: For you have authority over life and death[b][a], and you bring down to the gates of Hades and bring up.
-  philosophy: optimal-equivalence
+  text: For you have authority over life and death; you bring people down to the gates of Hades[a] and bring them up again.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or "the gates of the grave" or "the gates of the underworld." The Greek reads "Hades," the realm of the dead.
+    text: Hades is the realm of the dead.
     reason: lexical_alternative
-  - marker: b
-    text: Or "lead up" or "raise up." The Greek simply says "bring up," balancing "bring down" in the previous clause.
-    reason: alternative_reading
 lexical_decisions:
 - source_word: ἐξουσίαν
   chosen: authority
@@ -107,14 +104,20 @@ revisions:
   from: For you have authority over life and death, and you bring down to the gates of Hades and bring up again.
   to: For you have authority over life and death, and you bring down to the gates of Hades and bring up again.
   rationale: Removed 'again' because it is not present in the Greek; otherwise retained the draft's accurate and natural rendering.
-
 - timestamp: '2026-05-18T02:59:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For you have authority over life and death[b][a], and you bring down to the gates of Hades and bring up.'
-  to: 'For you have authority over life and death[b][a], and you bring down to the gates of Hades and bring up.'
+  from: For you have authority over life and death[b][a], and you bring down to the gates of Hades and bring up.
+  to: For you have authority over life and death[b][a], and you bring down to the gates of Hades and bring up.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''bring up again''].'
+- timestamp: '2026-11-09T19:12:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For you have authority over life and death[b][a], and you bring down to the gates of Hades and bring up.
+  to: For you have authority over life and death; you bring people down to the gates of Hades[a] and bring them up again.
+  rationale: I preserve the established “authority” and the image of Hades’ gates. The first draft’s “again” conveys the return implicit in the paired verbs; its later removal was based on word-for-word correspondence rather than a difference in meaning.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -134,3 +137,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/016/013.job-39440.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:12:56Z'
+  change_level: refined
+  confidence: high
+  meaning: God has sovereign authority over life and death and can bring people to death’s threshold and back.
+  meaning_decisions:
+  - source_phrase: κατάγεις ... καὶ ἀνάγεις
+    prior_rendering: you bring down ... and bring up
+    new_rendering: you bring people down ... and bring them up again
+    rationale: English needs an object for these transitive verbs, and their paired movement implies a return without requiring technical resurrection terminology.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: I preserve the established “authority” and the image of Hades’ gates. The first draft’s “again” conveys the return implicit in the paired verbs; its later removal was based on word-for-word correspondence rather than a difference in meaning.

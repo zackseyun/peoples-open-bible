@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/הָיָ֖ה אִם זָרַ֣ע יִשְׂרָאֵ֑ל וְ/עָלָ֨ה מִדְיָ֧ן וַֽ/עֲמָלֵ֛ק וּ/בְנֵי קֶ֖דֶם וְ/עָל֥וּ עָלָֽי/ו־־׃
 translation:
-  text: And whenever Israel sowed[a], Midian and Amalek and the people of the East would come up against them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew 'against him,' with singular suffix, referring collectively to Israel; some translations smooth this to 'against them.'
-    reason: lexical_alternative
+  text: Whenever the Israelites planted their crops, the Midianites, the Amalekites, and the eastern peoples would come up and attack them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְהָיָה
   chosen: And whenever
@@ -93,14 +89,20 @@ revisions:
   from: And whenever Israel sowed, Midian and Amalek and the people of the East would come up against him.
   to: And whenever Israel sowed, Midian and Amalek and the people of the East would come up against him.
   rationale: Changed 'against him' to 'against them' to match the collective sense of 'Israel' in natural English while preserving the source meaning.
-
 - timestamp: '2026-05-18T02:55:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And whenever Israel sowed[a], Midian and Amalek and the people of the East would come up against them.'
-  to: 'And whenever Israel sowed[a], Midian and Amalek and the people of the East would come up against them.'
+  from: And whenever Israel sowed[a], Midian and Amalek and the people of the East would come up against them.
+  to: And whenever Israel sowed[a], Midian and Amalek and the people of the East would come up against them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''would come up against him''].'
+- timestamp: '2026-11-09T18:13:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And whenever Israel sowed[a], Midian and Amalek and the people of the East would come up against them.
+  to: Whenever the Israelites planted their crops, the Midianites, the Amalekites, and the eastern peoples would come up and attack them.
+  rationale: I retain the current text’s collective “them” rather than the first draft’s “him.” The history’s repeated-action interpretation is supported by the description of recurring crop destruction in the following verses.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -120,3 +122,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/judges/006/003.job-69072.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:13:19Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Whenever Israel planted crops, Midian, Amalek, and eastern peoples repeatedly invaded to attack them.
+  meaning_decisions:
+  - source_phrase: אִם זָרַע יִשְׂרָאֵל
+    prior_rendering: whenever Israel sowed
+    new_rendering: Whenever the Israelites planted their crops
+    rationale: This states the recurring agricultural circumstance explicitly and identifies Israel as the people doing the planting.
+  - source_phrase: מִדְיָן וַעֲמָלֵק וּבְנֵי קֶדֶם
+    prior_rendering: Midian and Amalek and the people of the East
+    new_rendering: the Midianites, the Amalekites, and the eastern peoples
+    rationale: These names refer to invading peoples, not individuals; the English ethnic forms make that clear.
+  - source_phrase: וְעָלָה ... וְעָלוּ עָלָיו
+    prior_rendering: would come up against them
+    new_rendering: would come up and attack them
+    rationale: The rendering preserves the advance into Israel while stating its hostile character directly.
+  footnote_kinds: {}
+  history_weighed: I retain the current text’s collective “them” rather than the first draft’s “him.” The history’s repeated-action interpretation is supported by the description of recurring crop destruction in the following verses.

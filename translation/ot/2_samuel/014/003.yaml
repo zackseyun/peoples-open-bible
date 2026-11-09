@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וּ/בָאת֙ אֶל הַ/מֶּ֔לֶךְ וְ/דִבַּ֥רְתְּ אֵלָ֖י/ו כַּ/דָּבָ֣ר הַ/זֶּ֑ה וַ/יָּ֧שֶׂם יוֹאָ֛ב אֶת הַ/דְּבָרִ֖ים בְּ/פִֽי/הָ־־׃
 translation:
-  text: Then go to the king and speak to him in this way[a]. And Joab put the words in her mouth.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew 'put the words in her mouth' is an idiom meaning that Joab supplied her with the exact speech to say.
-    reason: cultural_note
+  text: “Then go to the king and speak to him in this way.” Joab told her exactly what to say.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וּבָאת
   chosen: Then go
@@ -80,14 +76,20 @@ revisions:
   from: Then go to the king and speak to him like this. And Joab put the words in her mouth.
   to: Then go to the king and speak to him like this. And Joab put the words in her mouth.
   rationale: Changed 'like this' to 'in this way' for a slightly more formal and natural rendering of כַּדָּבָר הַזֶּה; retained the rest unchanged.
-
 - timestamp: '2026-05-17T04:36:42Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then go to the king and speak to him in this way[a]. And Joab put the words in her mouth.'
-  to: 'Then go to the king and speak to him in this way[a]. And Joab put the words in her mouth.'
+  from: Then go to the king and speak to him in this way[a]. And Joab put the words in her mouth.
+  to: Then go to the king and speak to him in this way[a]. And Joab put the words in her mouth.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''like this''].'
+- timestamp: '2026-11-09T17:29:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then go to the king and speak to him in this way[a]. And Joab put the words in her mouth.
+  to: “Then go to the king and speak to him in this way.” Joab told her exactly what to say.
+  rationale: The earlier note and lexical rationale already explain that Joab supplied her exact speech. I carry that meaning into the main text rather than retaining an English idiom with a potentially different implication.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -107,3 +109,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/014/003.job-45704.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:29:20Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Joab directs the woman to address the king and supplies the exact speech she is to deliver.
+  meaning_decisions:
+  - source_phrase: וַיָּשֶׂם יוֹאָב אֶת הַדְּבָרִים בְּפִיהָ
+    prior_rendering: And Joab put the words in her mouth
+    new_rendering: Joab told her exactly what to say
+    rationale: The Hebrew idiom means supplying a speech; the English expression “put words in her mouth” can instead suggest falsely attributing statements to her.
+  footnote_kinds: {}
+  history_weighed: The earlier note and lexical rationale already explain that Joab supplied her exact speech. I carry that meaning into the main text rather than retaining an English idiom with a potentially different implication.

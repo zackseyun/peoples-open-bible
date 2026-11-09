@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וּ/לְ/בִלְתִּ֛י בְּנ֥וֹת בָּתִּ֖ים לְ/שִׁבְתֵּ֑/נוּ וְ/כֶ֧רֶם וְ/שָׂדֶ֛ה וָ/זֶ֖רַע לֹ֥א יִֽהְיֶה לָּֽ/נוּ־׃
 translation:
-  text: and not to build houses for us to live in[a]; and vineyard and field and seed have not been ours.
-  philosophy: optimal-equivalence
+  text: We have not built houses to live in, and we have owned no vineyards, fields, or seed for sowing[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more literally, 'and vineyard and field and seed have not been ours' / 'there has not been for us vineyard, field, or seed.'
-    reason: lexical_alternative
+    text: Or, “crops.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וּלְבִלְתִּי
   chosen: and not to
@@ -87,14 +87,20 @@ revisions:
   from: and not to build houses for us to live in; and vineyard and field and seed have not belonged to us.
   to: and not to build houses for us to live in; and vineyard and field and seed have not belonged to us.
   rationale: Revised 'have not belonged to us' to the more natural and formally equivalent 'have not been ours.' Kept the rest substantially unchanged to reflect the source closely.
-
 - timestamp: '2026-05-18T02:56:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and not to build houses for us to live in[a]; and vineyard and field and seed have not been ours.'
-  to: 'and not to build houses for us to live in[a]; and vineyard and field and seed have not been ours.'
+  from: and not to build houses for us to live in[a]; and vineyard and field and seed have not been ours.
+  to: and not to build houses for us to live in[a]; and vineyard and field and seed have not been ours.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''have not belonged to us''].'
+- timestamp: '2026-11-09T17:58:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and not to build houses for us to live in[a]; and vineyard and field and seed have not been ours.
+  to: We have not built houses to live in, and we have owned no vineyards, fields, or seed for sowing[a].
+  rationale: The draft and review both understood the final clause as continuing non-possession; their difference between 'belonged to us' and 'been ours' does not affect that meaning. I retain this understanding while making the sentence independent and the agricultural list natural in English.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -114,3 +120,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/035/009.job-67900.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:58:07Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Rechabites have also obeyed by building no houses for residence and possessing no vineyards, fields, or agricultural seed.
+  meaning_decisions:
+  - source_phrase: וּלְבִלְתִּי בְּנוֹת בָּתִּים לְשִׁבְתֵּנוּ
+    prior_rendering: and not to build houses for us to live in
+    new_rendering: We have not built houses to live in
+    rationale: The infinitive continues their report of obedience in verse 8; supplying the understood subject produces a complete sentence without changing its content.
+  - source_phrase: וְכֶרֶם וְשָׂדֶה וָזֶרַע לֹא יִהְיֶה לָּנוּ
+    prior_rendering: and vineyard and field and seed have not been ours
+    new_rendering: and we have owned no vineyards, fields, or seed for sowing[a]
+    rationale: The construction expresses possession, and the singular agricultural nouns designate categories of holdings. 'For sowing' clarifies the agricultural sense of seed, while the note preserves the serious alternative 'crops.'
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The draft and review both understood the final clause as continuing non-possession; their difference between 'belonged to us' and 'been ours' does not affect that meaning. I retain this understanding while making the sentence independent and the agricultural list natural in English.

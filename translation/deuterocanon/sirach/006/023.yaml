@@ -28,18 +28,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 6:23
 translation:
-  text: Listen[a], my son[b], and accept my judgment[c], and do not reject my counsel.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'The extant Hebrew line supplied in Zone 1 appears to be a mismatched or corrupt witness for this verse; the translation therefore follows the Greek parallel: ''Listen, child, and receive my judgment, and do not refuse my counsel.'''
-    reason: textual_variant
-  - marker: b
-    text: Or 'my child' for 'my son'; Greek τέκνον is broader in sense, but the instructional idiom here is rendered gender-accurately.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'receive my instruction/opinion' for 'accept my judgment'; Greek γνώμη can carry several nuances of considered thought or counsel.
-    reason: lexical_alternative
+  text: Listen, my son, and accept my guidance; do not reject my counsel.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἄκουσον
   chosen: Listen
@@ -122,15 +112,14 @@ revisions:
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Listen, my son, and accept my judgment, and do not reject my counsel.
-  to: 'A potter''s vessel is tested in a furnace, and so a man is tested by his reasoning.'
+  to: A potter's vessel is tested in a furnace, and so a man is tested by his reasoning.
   rationale: 'Replaced the unrelated draft with a translation that reflects the Hebrew imagery and syntax: ''potter''s vessel'' for כלי יוצר, ''is tested in a furnace'' for לבער כבשן, and ''a man is tested by his reasoning'' for וכמהו איש על חשבונו.'
-
 - timestamp: '2026-05-18T03:09:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'A potter''s vessel is tested in a furnace[c][b][a], and so a man is tested by his reasoning.'
-  to: 'Listen, my son, and accept my judgment, and do not reject my counsel.'
+  from: A potter's vessel is tested in a furnace[c][b][a], and so a man is tested by his reasoning.
+  to: Listen, my son, and accept my judgment, and do not reject my counsel.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''judgment''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -140,6 +129,13 @@ revisions:
   from: Listen, my son, and accept my judgment, and do not reject my counsel.
   to: Listen[a], my son[b], and accept my judgment[c], and do not reject my counsel.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('Listen') because the note names that rendering; [b] anchored to ('my son') because the note's quoted alternative matches the lexical decision rendered there; [c] anchored to ('accept my judgment') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:05:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Listen[a], my son[b], and accept my judgment[c], and do not reject my counsel.
+  to: Listen, my son, and accept my guidance; do not reject my counsel.
+  rationale: The review translated the misplaced pottery line, but the subsequent revert restored the chapter's instructional address. I follow the coherent Greek wording identified in the lexical record, not the unrelated supplied Hebrew.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -159,3 +155,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/006/023.job-51127.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:05:19Z'
+  change_level: refined
+  confidence: high
+  meaning: The teacher urges his son to listen and willingly accept his considered guidance.
+  meaning_decisions:
+  - source_phrase: δέξαι γνώμην
+    prior_rendering: accept my judgment
+    new_rendering: accept my guidance
+    rationale: Here γνώμη is the sage's considered teaching, not a judicial verdict; 'guidance' conveys its function in the exhortation.
+  footnote_kinds: {}
+  history_weighed: The review translated the misplaced pottery line, but the subsequent revert restored the chapter's instructional address. I follow the coherent Greek wording identified in the lexical record, not the unrelated supplied Hebrew.

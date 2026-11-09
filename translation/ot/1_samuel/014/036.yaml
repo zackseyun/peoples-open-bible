@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וַ/יֹּ֣אמֶר שָׁא֡וּל נֵרְדָ֣ה אַחֲרֵי֩ פְלִשְׁתִּ֨ים לַ֜יְלָה וְֽ/נָבֹ֥זָה בָ/הֶ֣ם עַד א֣וֹר הַ/בֹּ֗קֶר וְ/לֹֽא נַשְׁאֵ֤ר בָּ/הֶם֙ אִ֔ישׁ וַ/יֹּ֣אמְר֔וּ כָּל הַ/טּ֥וֹב בְּ/עֵינֶ֖י/ךָ עֲשֵׂ֑ה וַ/יֹּ֨אמֶר֙ הַ/כֹּהֵ֔ן נִקְרְבָ֥ה הֲלֹ֖ם אֶל הָ/אֱלֹהִֽים׀׀־־־ס־׃
 translation:
-  text: Then Saul said[a], “Let us go down after the Philistines by night and plunder them until the light of the morning, and let us not leave a man among them.” And they said, “Do whatever seems good in your eyes.” But the priest said, “Let us draw near here to God.”
-  philosophy: optimal-equivalence
+  text: Then Saul said, “Let us go down after the Philistines tonight and plunder them until morning light. Let us not leave a single man alive.” They replied, “Do whatever seems best to you.” But the priest said, “Let us consult God here first[a].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “Let us approach God here”; the priest's words likely imply seeking divine guidance before proceeding.
+    text: Literally, “Let us draw near here to God.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: נֵרְדָה
@@ -99,14 +99,20 @@ revisions:
   from: Then Saul said, “Let us go down after the Philistines by night and plunder among them until the light of the morning, and let us not leave a man among them.” And they said, “Do whatever seems good in your eyes.” But the priest said, “Let us draw near here to God.”
   to: Then Saul said, “Let us go down after the Philistines by night and plunder among them until the light of the morning, and let us not leave a man among them.” And they said, “Do whatever seems good in your eyes.” But the priest said, “Let us draw near here to God.”
   rationale: Changed 'plunder among them' to 'plunder them' for more natural English while preserving the sense of despoiling the Philistines. No other changes needed.
-
 - timestamp: '2026-05-18T02:56:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Saul said[a], “Let us go down after the Philistines by night and plunder them until the light of the morning, and let us not leave a man among them.” And they said, “Do whatever seems good in your eyes.” But the priest said, “Let us draw near here to God.”'
-  to: 'Then Saul said[a], “Let us go down after the Philistines by night and plunder them until the light of the morning, and let us not leave a man among them.” And they said, “Do whatever seems good in your eyes.” But the priest said, “Let us draw near here to God.”'
+  from: Then Saul said[a], “Let us go down after the Philistines by night and plunder them until the light of the morning, and let us not leave a man among them.” And they said, “Do whatever seems good in your eyes.” But the priest said, “Let us draw near here to God.”
+  to: Then Saul said[a], “Let us go down after the Philistines by night and plunder them until the light of the morning, and let us not leave a man among them.” And they said, “Do whatever seems good in your eyes.” But the priest said, “Let us draw near here to God.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and plunder among them''].'
+- timestamp: '2026-11-09T17:23:41Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Saul said[a], “Let us go down after the Philistines by night and plunder them until the light of the morning, and let us not leave a man among them.” And they said, “Do whatever seems good in your eyes.” But the priest said, “Let us draw near here to God.”
+  to: Then Saul said, “Let us go down after the Philistines tonight and plunder them until morning light. Let us not leave a single man alive.” They replied, “Do whatever seems best to you.” But the priest said, “Let us consult God here first[a].”
+  rationale: I retain the review’s natural “plunder them.” The earlier rationale acknowledges that approaching God implies seeking guidance; the immediate context warrants expressing that purpose directly while preserving the approach image in a note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -130,3 +136,34 @@ cross_check:
     agree: 1
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/014/036.job-59073.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:41Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Saul proposes a night-long pursuit that leaves no Philistine survivors, but the priest urges consulting God before proceeding.
+  meaning_decisions:
+  - source_phrase: לַיְלָה ... עַד אוֹר הַבֹּקֶר
+    prior_rendering: by night ... until the light of the morning
+    new_rendering: tonight ... until morning light
+    rationale: The proposal concerns the current night, and the endpoint is naturally expressed without losing the light image.
+  - source_phrase: וְלֹא נַשְׁאֵר בָּהֶם אִישׁ
+    prior_rendering: let us not leave a man among them
+    new_rendering: Let us not leave a single man alive
+    rationale: Saul proposes leaving no survivors, not merely removing the men from a location.
+  - source_phrase: כָּל הַטּוֹב בְּעֵינֶיךָ עֲשֵׂה
+    prior_rendering: Do whatever seems good in your eyes
+    new_rendering: Do whatever seems best to you
+    rationale: The idiom expresses acceptance of Saul’s judgment, not a meaningful visual image.
+  - source_phrase: נִקְרְבָה הֲלֹם אֶל הָאֱלֹהִים
+    prior_rendering: Let us draw near here to God
+    new_rendering: Let us consult God here first
+    rationale: The priest calls for divine consultation before the proposed pursuit, as the next verse confirms; no particular ritual method is specified.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: I retain the review’s natural “plunder them.” The earlier rationale acknowledges that approaching God implies seeking guidance; the immediate context warrants expressing that purpose directly while preserving the approach image in a note.

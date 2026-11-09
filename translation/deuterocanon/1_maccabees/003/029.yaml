@@ -22,15 +22,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: And he saw that the silver had run out from the treasuries[a], and that the taxes of the country were few because of the division and the blow that he had brought upon the land[b], by removing the customs that had existed from former days.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'because of the dissension and the calamity that he had inflicted on the land.' The Greek terms can carry broader political and punitive overtones than the more literal 'division' and 'blow.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the established laws' or 'the ancestral customs.' The Greek refers to long-standing norms or ordinances that had been in place from earlier times.
-    reason: lexical_alternative
+  text: He saw that the silver in the treasuries had run out. Tax revenues from the country were meager because of the dissension and the calamity he had brought upon the land by abolishing its long-established laws and customs.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐξέλιπεν
   chosen: had run out
@@ -140,14 +133,20 @@ revisions:
   from: And he saw that the silver had run out from the treasuries, and that the taxes of the country were few because of the division and the blow that he had brought upon the land, by removing the customs that had existed from former days.
   to: And he saw that the silver had run out from the treasuries, and that the revenues of the land were few because of the dissension and the calamity that he had brought upon the land, by removing the ordinances that had existed from former days.
   rationale: Changed 'taxes of the country' to 'revenues of the land' for broader lexical accuracy of φόροι/χώρα; changed 'division' to 'dissension' for διχοστασία; changed 'blow' to 'calamity' for more natural rendering of πληγή in context; changed 'customs' to 'ordinances' for νόμιμα.
-
 - timestamp: '2026-05-15T14:45:07Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he saw that the silver had run out from the treasuries[a], and that the revenues of the land were few because of the dissension and the calamity that he had brought upon the land[b], by removing the ordinances that had existed from former days.'
-  to: 'And he saw that the silver had run out from the treasuries[a], and that the taxes of the country were few because of the division and the blow that he had brought upon the land[b], by removing the customs that had existed from former days.'
-  rationale: 'Restored 4 chosen renderings (φόροι, διχοστασία, πληγή, νόμιμα); azure picked drafter''s rejected alternatives.'
+  from: And he saw that the silver had run out from the treasuries[a], and that the revenues of the land were few because of the dissension and the calamity that he had brought upon the land[b], by removing the ordinances that had existed from former days.
+  to: And he saw that the silver had run out from the treasuries[a], and that the taxes of the country were few because of the division and the blow that he had brought upon the land[b], by removing the customs that had existed from former days.
+  rationale: Restored 4 chosen renderings (φόροι, διχοστασία, πληγή, νόμιμα); azure picked drafter's rejected alternatives.
+- timestamp: '2026-11-09T18:51:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he saw that the silver had run out from the treasuries[a], and that the taxes of the country were few because of the division and the blow that he had brought upon the land[b], by removing the customs that had existed from former days.
+  to: He saw that the silver in the treasuries had run out. Tax revenues from the country were meager because of the dissension and the calamity he had brought upon the land by abolishing its long-established laws and customs.
+  rationale: The earlier review identified useful contextual senses for the fiscal and political terms, but its automated reversal preferred formal correspondences. I adopted those meaning-based gains while keeping the concrete silver and the king’s responsibility for the land’s distress.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -167,3 +166,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/003/029.job-48114.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:51:33Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Antiochus discovers that his treasuries are exhausted and tax income is low because his abolition of established laws and customs has brought dissension and calamity upon the land.
+  meaning_decisions:
+  - source_phrase: οἱ φόροι τῆς χώρας ὀλίγοι
+    prior_rendering: the taxes of the country were few
+    new_rendering: Tax revenues from the country were meager
+    rationale: The problem is the amount of income received, not the number of taxes imposed.
+  - source_phrase: τῆς διχοστασίας καὶ πληγῆς
+    prior_rendering: the division and the blow
+    new_rendering: the dissension and the calamity
+    rationale: Identifies social division and the damaging affliction caused by the king’s policies, rather than leaving division and blow undefined.
+  - source_phrase: τοῦ ἆραι τὰ νόμιμα ἃ ἦσαν ἀφʼ ἡμερῶν τῶν πρώτων
+    prior_rendering: by removing the customs that had existed from former days
+    new_rendering: by abolishing its long-established laws and customs
+    rationale: Abolishing fits a royal policy, while laws and customs preserves the established legal and religious scope of νόμιμα.
+  footnote_kinds: {}
+  history_weighed: The earlier review identified useful contextual senses for the fiscal and political terms, but its automated reversal preferred formal correspondences. I adopted those meaning-based gains while keeping the concrete silver and the king’s responsibility for the land’s distress.

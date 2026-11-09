@@ -4,18 +4,8 @@ source:
   edition: SBLGNT
   text: ὃς καὶ βεβαιώσει ὑμᾶς ἕως τέλους ἀνεγκλήτους ἐν τῇ ἡμέρᾳ τοῦ κυρίου ἡμῶν Ἰησοῦ Χριστοῦ.
 translation:
-  text: who will also establish you to the end[c][b][a], blameless in the day of our Lord Jesus Christ.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'confirm' or 'strengthen.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'beyond reproach' or 'free from accusation.'
-    reason: lexical_alternative
-  - marker: c
-    text: Greek 'Christ'; translated 'Messiah' here to preserve the title's meaning.
-    reason: lexical_alternative
+  text: He will also keep you firm to the end, so that you will be blameless on the day of our Lord Jesus Christ.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: βεβαιώσει
   chosen: will also establish
@@ -93,11 +83,17 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "who will also establish you to the end, blameless in the day of our Lord Jesus Messiah."
-  to: "who will also establish you to the end, blameless in the day of our Lord Jesus the Messiah."
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
+  from: who will also establish you to the end, blameless in the day of our Lord Jesus Messiah.
+  to: who will also establish you to the end, blameless in the day of our Lord Jesus the Messiah.
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:05:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: who will also establish you to the end[c][b][a], blameless in the day of our Lord Jesus Christ.
+  to: He will also keep you firm to the end, so that you will be blameless on the day of our Lord Jesus Christ.
+  rationale: I retain the review’s 'to the end' and the lexical discussion’s weighty 'blameless.' 'Keep you firm' expresses the sustaining action more clearly, while 'He' leaves the antecedent implicit rather than adding a name not present in this verse.
 status: revised
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -120,3 +116,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/1_corinthians/001/008.job-52625.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:50Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Corinthians will be sustained to the end so that they stand blameless on the day of the Lord Jesus Christ.
+  meaning_decisions:
+  - source_phrase: βεβαιώσει ὑμᾶς ἕως τέλους
+    prior_rendering: will also establish you to the end
+    new_rendering: will also keep you firm to the end
+    rationale: The verb describes sustaining their firmness through the end, which 'establish' can obscure by sounding like a one-time initial act.
+  - source_phrase: ἀνεγκλήτους ἐν τῇ ἡμέρᾳ
+    prior_rendering: blameless in the day
+    new_rendering: so that you will be blameless on the day
+    rationale: This makes explicit the resulting condition at the Lord’s day and uses the natural English temporal preposition.
+  footnote_kinds: {}
+  history_weighed: I retain the review’s 'to the end' and the lexical discussion’s weighty 'blameless.' 'Keep you firm' expresses the sustaining action more clearly, while 'He' leaves the antecedent implicit rather than adding a name not present in this verse.

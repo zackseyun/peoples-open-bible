@@ -4,14 +4,11 @@ source:
   edition: SBLGNT
   text: Βίβλος γενέσεως Ἰησοῦ χριστοῦ υἱοῦ Δαυὶδ υἱοῦ Ἀβραάμ.
 translation:
-  text: The book of the genealogy of Jesus Christ[a], the son of David[b], the son of Abraham.
-  philosophy: optimal-equivalence
+  text: The genealogical record[a] of Jesus the Messiah, the son of David, the son of Abraham.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'The book of the origin' or 'The book of the birth.' The Greek word can carry a broader 'genesis/origin' sense, though 'genealogy' best fits the lineage that follows.
-    reason: alternative_reading
-  - marker: b
-    text: The Greek title Christos means ‘Messiah’; here it appears in the conventional English personal-name form.
+    text: Or, “The account of the origins.”
     reason: alternative_reading
 lexical_decisions:
 - source_word: Βίβλος
@@ -99,10 +96,16 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "The book of the genealogy of Jesus Messiah, the son of David, the son of Abraham."
-  to: "The book of the genealogy of Jesus the Messiah, the son of David, the son of Abraham."
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
-
+  from: The book of the genealogy of Jesus Messiah, the son of David, the son of Abraham.
+  to: The book of the genealogy of Jesus the Messiah, the son of David, the son of Abraham.
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:13:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The book of the genealogy of Jesus Christ[a], the son of David[b], the son of Abraham.
+  to: The genealogical record[a] of Jesus the Messiah, the son of David, the son of Abraham.
+  rationale: The later recorded revisions and the lexical discussion support restoring Messiah as a title in this heading. I retain genealogy as the primary sense and preserve the weighty descriptions son of David and son of Abraham.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -125,3 +128,26 @@ cross_check:
   verdict_counts:
     agree: 3
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/001/001.job-56640.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:13:27Z'
+  change_level: retranslated
+  confidence: high
+  meaning: This genealogy presents Jesus as the Messiah descended from David and Abraham.
+  meaning_decisions:
+  - source_phrase: Βίβλος γενέσεως
+    prior_rendering: The book of the genealogy
+    new_rendering: The genealogical record
+    rationale: The phrase introduces a written lineage; this wording conveys its function naturally in English while the note preserves the broader possible sense of an account of origins.
+  - source_phrase: Ἰησοῦ χριστοῦ
+    prior_rendering: Jesus Christ
+    new_rendering: Jesus the Messiah
+    rationale: The heading identifies Jesus by his messianic title, emphasized by his descent from David, rather than merely using a conventional personal-name construction.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The later recorded revisions and the lexical discussion support restoring Messiah as a title in this heading. I retain genealogy as the primary sense and preserve the weighty descriptions son of David and son of Abraham.

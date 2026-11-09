@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: τότε ἀποκριθήσονται αὐτῷ οἱ δίκαιοι λέγοντες· Κύριε, πότε σε εἴδομεν πεινῶντα καὶ ἐθρέψαμεν, ἢ διψῶντα καὶ ἐποτίσαμεν;
 translation:
-  text: Then the righteous will answer him[a], saying, ‘Lord, when did we see you hungry and feed you, or thirsty and give you drink?’
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'gave you drink.'
-    reason: lexical_alternative
+  text: Then the righteous will answer him, ‘Lord, when did we see you hungry and feed you, or thirsty and give you something to drink?’
+  philosophy: dynamic
 lexical_decisions:
 - source_word: τότε
   chosen: Then
@@ -121,14 +117,20 @@ revisions:
   from: Then the righteous will answer him, saying, ‘Lord, when did we see you hungry and feed you, or thirsty and give you something to drink?’
   to: Then the righteous will answer him, saying, ‘Lord, when did we see you hungry and feed you, or thirsty and give you something to drink?’
   rationale: Replaced ‘give you something to drink’ with the more formal and closer ‘give you drink’ to reflect the Greek more directly while keeping natural translation style.
-
 - timestamp: '2026-05-18T03:00:53Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then the righteous will answer him[a], saying, ‘Lord, when did we see you hungry and feed you, or thirsty and give you drink?’'
-  to: 'Then the righteous will answer him[a], saying, ‘Lord, when did we see you hungry and feed you, or thirsty and give you drink?’'
+  from: Then the righteous will answer him[a], saying, ‘Lord, when did we see you hungry and feed you, or thirsty and give you drink?’
+  to: Then the righteous will answer him[a], saying, ‘Lord, when did we see you hungry and feed you, or thirsty and give you drink?’
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''give you something to drink''].'
+- timestamp: '2026-11-09T20:34:31Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then the righteous will answer him[a], saying, ‘Lord, when did we see you hungry and feed you, or thirsty and give you drink?’
+  to: Then the righteous will answer him, ‘Lord, when did we see you hungry and feed you, or thirsty and give you something to drink?’
+  rationale: The first recorded draft and the lexical decision support ‘give you something to drink’; the automated preference for ‘give you drink’ offers no gain in meaning. There is no MAINTAINER revision, and the established renderings ‘the righteous’ and ‘Lord’ are retained.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -150,3 +152,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/025/037.job-57414.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:34:31Z'
+  change_level: refined
+  confidence: high
+  meaning: The righteous ask the King when they had seen him hungry or thirsty and provided what he needed.
+  meaning_decisions:
+  - source_phrase: ἀποκριθήσονται αὐτῷ … λέγοντες
+    prior_rendering: will answer him, saying
+    new_rendering: will answer him
+    rationale: The direct quotation already conveys the function of ‘saying’; omitting the redundant speech formula makes the English natural without losing meaning.
+  - source_phrase: ἐποτίσαμεν
+    prior_rendering: give you drink
+    new_rendering: give you something to drink
+    rationale: This is idiomatic contemporary English for providing drink and does not specify a beverage the Greek leaves unspecified. The earlier footnote adds nothing necessary and is dropped.
+  footnote_kinds: {}
+  history_weighed: The first recorded draft and the lexical decision support ‘give you something to drink’; the automated preference for ‘give you drink’ offers no gain in meaning. There is no MAINTAINER revision, and the established renderings ‘the righteous’ and ‘Lord’ are retained.

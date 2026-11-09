@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ἡ γυνὴ ὅταν τίκτῃ λύπην ἔχει, ὅτι ἦλθεν ἡ ὥρα αὐτῆς· ὅταν δὲ γεννήσῃ τὸ παιδίον, οὐκέτι μνημονεύει τῆς θλίψεως διὰ τὴν χαρὰν ὅτι ἐγεννήθη ἄνθρωπος εἰς τὸν κόσμον.
 translation:
-  text: When a woman is giving birth[a], she has sorrow because her hour has come; but when she has given birth to the child, she no longer remembers the distress because of the joy that a child has been born into the world.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'a man has been born into the world.' The Greek ἄνθρωπος can mean 'man' or more generally 'human being'; here it is generic, not specifically male.
-    reason: lexical_alternative
+  text: When a woman is in labor, she is in anguish because her hour has come; but once she has given birth to the child, she no longer remembers the distress because of her joy that a child has been born into the world.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: γυνή
   chosen: woman
@@ -116,14 +112,20 @@ revisions:
   from: When a woman is giving birth, she has sorrow because her hour has come; but when she has given birth to the child, she no longer remembers the distress because of the joy that a human being has been born into the world.
   to: When a woman is giving birth, she has sorrow because her hour has come; but when she has given birth to the child, she no longer remembers the distress because of the joy that a human being has been born into the world.
   rationale: Changed 'a human being' to 'a child' to reflect the idiomatic sense of ἄνθρωπος here in the birth context and to improve natural English while preserving the meaning.
-
 - timestamp: '2026-05-18T03:00:54Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When a woman is giving birth[a], she has sorrow because her hour has come; but when she has given birth to the child, she no longer remembers the distress because of the joy that a child has been born into the world.'
-  to: 'When a woman is giving birth[a], she has sorrow because her hour has come; but when she has given birth to the child, she no longer remembers the distress because of the joy that a child has been born into the world.'
+  from: When a woman is giving birth[a], she has sorrow because her hour has come; but when she has given birth to the child, she no longer remembers the distress because of the joy that a child has been born into the world.
+  to: When a woman is giving birth[a], she has sorrow because her hour has come; but when she has given birth to the child, she no longer remembers the distress because of the joy that a child has been born into the world.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a human being''].'
+- timestamp: '2026-11-09T17:11:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When a woman is giving birth[a], she has sorrow because her hour has come; but when she has given birth to the child, she no longer remembers the distress because of the joy that a child has been born into the world.
+  to: When a woman is in labor, she is in anguish because her hour has come; but once she has given birth to the child, she no longer remembers the distress because of her joy that a child has been born into the world.
+  rationale: The history rightly treated ἄνθρωπος as generic human life, which the current “child” conveys naturally in this birth image. I retain “her hour” and the remembered-distress contrast while clarifying the nature of her suffering.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -145,3 +147,21 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/high_scrutiny/nt/john/016/021.job-7464.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:11:11Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A woman's anguish in childbirth gives way to joy over the child's birth, illustrating how the disciples' sorrow will become joy.
+  meaning_decisions:
+  - source_phrase: ἡ γυνὴ ὅταν τίκτῃ λύπην ἔχει
+    prior_rendering: When a woman is giving birth, she has sorrow
+    new_rendering: When a woman is in labor, she is in anguish
+    rationale: In this illustration, λύπη is the distress of labor, not sadness about giving birth; “anguish” carries both the suffering and its emotional dimension.
+  footnote_kinds: {}
+  history_weighed: The history rightly treated ἄνθρωπος as generic human life, which the current “child” conveys naturally in this birth image. I retain “her hour” and the remembered-distress contrast while clarifying the nature of her suffering.

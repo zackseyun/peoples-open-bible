@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: אֱמֹ֣ר אֲלֵי/הֶ֔ם כֹּ֥ה אָמַ֖ר אֲדֹנָ֣/י יְהֹוִ֑ה הַ/נָּשִׂ֞יא הַ/מַּשָּׂ֤א הַ/זֶּה֙ בִּ/יר֣וּשָׁלִַ֔ם וְ/כָל בֵּ֥ית יִשְׂרָאֵ֖ל אֲשֶׁר הֵ֥מָּה בְ/תוֹכָֽ/ם־־׃
 translation:
-  text: 'Say to them[a], ‘Thus says the Lord GOD: This burden concerns the prince in Jerusalem and all the house of Israel who are in their midst.’'
-  philosophy: optimal-equivalence
+  text: 'Say to them, ‘Thus says the Lord Yahweh: This oracle[a] concerns the prince in Jerusalem and all the people of Israel who live there.’'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'This oracle is about the prince in Jerusalem and all the house of Israel who are among them.'
+    text: The Hebrew word also means “burden,” echoing the baggage Ezekiel carried.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: אֱמֹר אֲלֵיהֶם
@@ -100,14 +100,20 @@ revisions:
   from: 'Say to them, ‘Thus says the Lord GOD: This burden concerns the prince in Jerusalem and all the house of Israel who are in their midst.’'
   to: 'Say to them, ‘Thus says the Lord GOD: This oracle concerns the prince in Jerusalem and all the house of Israel who are in its midst.’'
   rationale: Changed “burden” to “oracle” for more natural and contextually appropriate rendering of הַמַּשָּׂא, and changed “their midst” to “its midst” to match the singular referent Jerusalem.
-
 - timestamp: '2026-05-16T01:53:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'Say to them[a], ‘Thus says the Lord GOD: This oracle concerns the prince in Jerusalem and all the house of Israel who are in its midst.’'
   to: 'Say to them[a], ‘Thus says the Lord GOD: This burden concerns the prince in Jerusalem and all the house of Israel who are in their midst.’'
-  rationale: 'Azure substituted ''oracle'' (drafter''s explicit rejected alternative — drafter chose ''burden'' for הַמַּשָּׂא preserving lexical force and prophetic weight per theological_decisions) and ''its midst'' for chosen ''their midst''.'
+  rationale: Azure substituted 'oracle' (drafter's explicit rejected alternative — drafter chose 'burden' for הַמַּשָּׂא preserving lexical force and prophetic weight per theological_decisions) and 'its midst' for chosen 'their midst'.
+- timestamp: '2026-11-09T17:37:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Say to them[a], ‘Thus says the Lord GOD: This burden concerns the prince in Jerusalem and all the house of Israel who are in their midst.’'
+  to: 'Say to them, ‘Thus says the Lord Yahweh: This oracle[a] concerns the prince in Jerusalem and all the people of Israel who live there.’'
+  rationale: The automated review correctly recognized the oracle sense and Jerusalem referent, while the subsequent revert defended source-form choices rather than recording a maintainer judgment. I preserve the burden wordplay in a note and follow the standing divine-name ruling.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -130,3 +136,30 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/012/010.job-63595.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:37:37Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Yahweh identifies the sign's prophetic message as concerning Jerusalem's prince and the Israelites living there.
+  meaning_decisions:
+  - source_phrase: אֲדֹנָי יְהוִה
+    prior_rendering: the Lord GOD
+    new_rendering: the Lord Yahweh
+    rationale: The compound contains the divine name, which the standing maintainer ruling requires to be rendered Yahweh.
+  - source_phrase: הַמַּשָּׂא הַזֶּה
+    prior_rendering: This burden
+    new_rendering: This oracle
+    rationale: The phrase identifies a prophetic pronouncement; 'burden' alone can make it sound as though only the physical baggage is meant, so the double sense is preserved in a footnote.
+  - source_phrase: וְכָל בֵּית יִשְׂרָאֵל אֲשֶׁר הֵמָּה בְתוֹכָם
+    prior_rendering: and all the house of Israel who are in their midst
+    new_rendering: and all the people of Israel who live there
+    rationale: The context locates these Israelites in Jerusalem; the new wording makes the corporate reference and location intelligible rather than leaving an unexplained English plural antecedent.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The automated review correctly recognized the oracle sense and Jerusalem referent, while the subsequent revert defended source-form choices rather than recording a maintainer judgment. I preserve the burden wordplay in a note and follow the standing divine-name ruling.

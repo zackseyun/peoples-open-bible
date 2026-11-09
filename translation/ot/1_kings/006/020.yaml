@@ -4,15 +4,15 @@ source:
   edition: WLC
   text: וְ/לִ/פְנֵ֣י הַ/דְּבִ֡יר עֶשְׂרִים֩ אַמָּ֨ה אֹ֜רֶךְ וְ/עֶשְׂרִ֧ים אַמָּ֣ה רֹ֗חַב וְ/עֶשְׂרִ֤ים אַמָּה֙ קֽוֹמָת֔/וֹ וַ/יְצַפֵּ֖/הוּ זָהָ֣ב סָג֑וּר וַ/יְצַ֥ף מִזְבֵּ֖חַ אָֽרֶז׃
 translation:
-  text: In front of the inner sanctuary was twenty cubits in length[a], twenty cubits in width, and twenty cubits in its height. He overlaid it with pure gold[b], and he overlaid the cedar altar.
-  philosophy: optimal-equivalence
+  text: The inner sanctuary was twenty cubits[a] long, twenty cubits wide, and twenty cubits high. He overlaid it with pure gold and also overlaid the cedar altar[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'fine gold.' The Hebrew phrase זָהָב סָגוּר denotes high-quality refined gold.
-    reason: lexical_alternative
+    text: A cubit was a measure based on the distance from the elbow to the fingertips.
+    reason: cultural_note
   - marker: b
-    text: Or 'an altar of cedar.'
-    reason: lexical_alternative
+    text: Or, “he covered the altar with cedar.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: לִפְנֵי הַדְּבִיר
   lemma: לִפְנֵי
@@ -79,14 +79,20 @@ revisions:
   from: The inner sanctuary was twenty cubits long, twenty cubits wide, and twenty cubits high in front of it. He overlaid it with pure gold, and he overlaid the cedar altar.
   to: The inner sanctuary was twenty cubits long, twenty cubits wide, and twenty cubits high in front of it. He overlaid it with pure gold, and he overlaid the cedar altar.
   rationale: Reordered the opening phrase to reflect the Hebrew more naturally and accurately ('In front of the inner sanctuary was...') rather than making the sanctuary itself the subject. Also adjusted the dimensions to a more formal, complete rendering ('in length... in width... in its height').
-
 - timestamp: '2026-05-18T02:56:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'In front of the inner sanctuary was twenty cubits in length[a], twenty cubits in width, and twenty cubits in its height. He overlaid it with pure gold[b], and he overlaid the cedar altar.'
-  to: 'In front of the inner sanctuary was twenty cubits in length[a], twenty cubits in width, and twenty cubits in its height. He overlaid it with pure gold[b], and he overlaid the cedar altar.'
+  from: In front of the inner sanctuary was twenty cubits in length[a], twenty cubits in width, and twenty cubits in its height. He overlaid it with pure gold[b], and he overlaid the cedar altar.
+  to: In front of the inner sanctuary was twenty cubits in length[a], twenty cubits in width, and twenty cubits in its height. He overlaid it with pure gold[b], and he overlaid the cedar altar.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''twenty cubits long, twenty cubits wide, and twenty cubits high''].'
+- timestamp: '2026-11-09T17:21:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: In front of the inner sanctuary was twenty cubits in length[a], twenty cubits in width, and twenty cubits in its height. He overlaid it with pure gold[b], and he overlaid the cedar altar.
+  to: The inner sanctuary was twenty cubits[a] long, twenty cubits wide, and twenty cubits high. He overlaid it with pure gold and also overlaid the cedar altar[b].
+  rationale: The first draft associated the dimensions with the inner sanctuary, whereas the recorded reordering produced an unclear subject. I restore the contextual sense and retain the documented cedar-altar reading, with the serious alternative in a note.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -106,3 +112,23 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/006/020.job-58177.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:21:02Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The inner sanctuary measured twenty cubits in every dimension, and Solomon overlaid it and the cedar altar with gold.
+  meaning_decisions:
+  - source_phrase: וְלִפְנֵי הַדְּבִיר עֶשְׂרִים אַמָּה אֹרֶךְ ... קוֹמָתוֹ
+    prior_rendering: In front of the inner sanctuary was twenty cubits in length, twenty cubits in width, and twenty cubits in its height.
+    new_rendering: The inner sanctuary was twenty cubits long, twenty cubits wide, and twenty cubits high.
+    rationale: The surrounding description identifies these as the dimensions of the inner sanctuary itself, not an unnamed space in front of it; the compressed opening must not obscure that referent.
+  footnote_kinds:
+    a: cultural_background
+    b: alternative_meaning
+  history_weighed: The first draft associated the dimensions with the inner sanctuary, whereas the recorded reordering produced an unclear subject. I restore the contextual sense and retain the documented cedar-altar reading, with the serious alternative in a note.

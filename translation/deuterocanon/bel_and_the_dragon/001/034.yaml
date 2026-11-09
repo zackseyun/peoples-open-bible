@@ -10,15 +10,8 @@ source:
   validation: normalized_direct_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Bel extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: And an angel of the Lord said to Habakkuk[a], “Carry the meal that you have to Babylon[b], to Daniel in the lions’ pit.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “the food,” “the dinner,” or “the midday meal”; the Greek term refers to a meal and does not by itself specify the exact time of day.
-    reason: lexical_alternative
-  - marker: b
-    text: Traditionally, “the lions’ den.” The Greek more literally says “the pit of the lions.”
-    reason: lexical_alternative
+  text: And an angel of the Lord said to Habakkuk, “Carry the meal that you have to Babylon, to Daniel in the lions’ pit.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἄγγελος Κυρίου
   chosen: an angel of the Lord
@@ -102,7 +95,13 @@ revisions:
   from: And an angel of the Lord said to Habakkuk, “Carry the meal you have to Babylon, to Daniel in the lions’ pit.”
   to: And an angel of the Lord said to Habakkuk, “Carry the meal that you have to Babylon, to Daniel in the lions’ pit.”
   rationale: Added 'that' for slightly more natural formal English while preserving the sense; otherwise retained the draft, which accurately reflects the Greek.
-
+- timestamp: '2026-11-09T19:01:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And an angel of the Lord said to Habakkuk[a], “Carry the meal that you have to Babylon[b], to Daniel in the lions’ pit.”
+  to: And an angel of the Lord said to Habakkuk, “Carry the meal that you have to Babylon, to Daniel in the lions’ pit.”
+  rationale: The reviewed wording, including the added 'that,' already states the command naturally and accurately. 'Meal' avoids an unwarranted time-of-day specification, and 'pit' remains clear without an alternative note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -122,3 +121,17 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/bel_and_the_dragon/001/034.job-50488.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:04Z'
+  change_level: kept
+  confidence: high
+  meaning: An angel commands Habakkuk to take his prepared meal to Daniel in the lions’ pit at Babylon.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The reviewed wording, including the added 'that,' already states the command naturally and accurately. 'Meal' avoids an unwarranted time-of-day specification, and 'pit' remains clear without an alternative note.

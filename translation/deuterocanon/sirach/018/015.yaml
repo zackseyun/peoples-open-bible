@@ -21,12 +21,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: My child[a], in good things do not add reproach, nor in any gift grief of words.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'with every gift, do not add hurtful words.' The Greek literally says 'nor in any gift grief of words,' a compressed expression warning against spoiling generosity with speech that causes sorrow.
-    reason: lexical_alternative
+  text: My child, do not add reproach to your acts of kindness or hurtful words to any gift.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Τέκνον
   chosen: My child
@@ -105,14 +101,20 @@ revisions:
   from: My child, in good things do not give reproach, nor in any gift grief of words.
   to: My child, in good things do not give reproach, nor in any gift grief of words.
   rationale: Changed 'give reproach' to 'add reproach' for better lexical fit with μὴ δῷς in this context and more natural formal English; retained the rest closely to the Greek.
-
 - timestamp: '2026-05-18T02:58:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'My child[a], in good things do not add reproach, nor in any gift grief of words.'
-  to: 'My child[a], in good things do not add reproach, nor in any gift grief of words.'
+  from: My child[a], in good things do not add reproach, nor in any gift grief of words.
+  to: My child[a], in good things do not add reproach, nor in any gift grief of words.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''do not give''].'
+- timestamp: '2026-11-09T19:06:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: My child[a], in good things do not add reproach, nor in any gift grief of words.
+  to: My child, do not add reproach to your acts of kindness or hurtful words to any gift.
+  rationale: The history's distinction between “give” and “add” does not alter the warning's substance, and the current “add reproach” is retained. The lexical discussion and earlier footnote already identify beneficence and hurtful speech, which the main text now expresses without structural imitation.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -132,3 +134,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/018/015.job-51449.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:29Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Acts of kindness and gifts must not be accompanied by reproach or words that hurt their recipients.
+  meaning_decisions:
+  - source_phrase: ἐν ἀγαθοῖς
+    prior_rendering: in good things
+    new_rendering: to your acts of kindness
+    rationale: The context concerns benefits bestowed on others, not an unspecified setting of “good things.”
+  - source_phrase: καὶ ἐν πάσῃ δόσει λύπην λόγων
+    prior_rendering: nor in any gift grief of words
+    new_rendering: or hurtful words to any gift
+    rationale: The genitive describes sorrow caused by speech; the revised wording directly conveys the warning against hurting someone while giving.
+  footnote_kinds: {}
+  history_weighed: The history's distinction between “give” and “add” does not alter the warning's substance, and the current “add reproach” is retained. The lexical discussion and earlier footnote already identify beneficence and hurtful speech, which the main text now expresses without structural imitation.

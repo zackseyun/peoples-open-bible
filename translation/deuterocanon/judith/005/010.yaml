@@ -17,12 +17,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And they went down into Egypt[a], for a famine covered the face of the land of Canaan, and they lived there as sojourners until they were sustained; and there they became a very great multitude, and there was no number to their family line.
-  philosophy: optimal-equivalence
+  text: They went down to Egypt because famine had spread throughout the land of Canaan, and they lived there as foreigners as long as they were provided for[a]. There they grew into a great multitude, and their people were too numerous to count.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'there was no number of their stock/people'; the Greek γένος can denote lineage, kin-group, or people descended from a common ancestor.
-    reason: lexical_alternative
+    text: Or, “until they were provided for.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: κατέβησαν
   chosen: went down
@@ -125,14 +125,20 @@ revisions:
   from: And they went down into Egypt, for a famine covered the face of the land of Canaan, and they lived there as sojourners until they were sustained; and there they became a very great multitude, and there was no number to their family line.
   to: And they went down into Egypt, for a famine covered the face of the land of Canaan, and they sojourned there until they were provided for; and there they became a very great multitude, and there was no number to their offspring.
   rationale: Revised 'lived there as sojourners' to the more direct 'sojourned there'; changed 'were sustained' to 'were provided for' for more natural English; and replaced 'family line' with 'offspring' to better reflect γένος in context.
-
 - timestamp: '2026-05-15T15:39:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they went down into Egypt[a], for a famine covered the face of the land of Canaan, and they sojourned there until they were provided for; and there they became a very great multitude, and there was no number to their offspring.'
-  to: 'And they went down into Egypt[a], for a famine covered the face of the land of Canaan, and they lived there as sojourners until they were sustained; and there they became a very great multitude, and there was no number to their family line.'
-  rationale: 'Restored 3 chosen renderings; corrected azure''s lexical error γένος=''offspring'' (γένος is lineage, not progeny).'
+  from: And they went down into Egypt[a], for a famine covered the face of the land of Canaan, and they sojourned there until they were provided for; and there they became a very great multitude, and there was no number to their offspring.
+  to: And they went down into Egypt[a], for a famine covered the face of the land of Canaan, and they lived there as sojourners until they were sustained; and there they became a very great multitude, and there was no number to their family line.
+  rationale: Restored 3 chosen renderings; corrected azure's lexical error γένος='offspring' (γένος is lineage, not progeny).
+- timestamp: '2026-11-09T19:01:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they went down into Egypt[a], for a famine covered the face of the land of Canaan, and they lived there as sojourners until they were sustained; and there they became a very great multitude, and there was no number to their family line.
+  to: They went down to Egypt because famine had spread throughout the land of Canaan, and they lived there as foreigners as long as they were provided for[a]. There they grew into a great multitude, and their people were too numerous to count.
+  rationale: The earlier review usefully proposed 'provided for,' but its 'offspring' was challenged in the automated revert; 'their people' preserves the collective kin-group sense without narrowing it to progeny. The difficult duration clause receives a contextual rendering with the serious alternative retained.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -152,3 +158,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/005/010.job-50576.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:29Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: A widespread famine drove the Israelites to Egypt, where they were sustained and grew into an innumerable people.
+  meaning_decisions:
+  - source_phrase: ἐκάλυψεν γὰρ τὸ πρόσωπον τῆς γῆς Χανααν λιμός
+    prior_rendering: for a famine covered the face of the land of Canaan
+    new_rendering: because famine had spread throughout the land of Canaan
+    rationale: The expression describes famine affecting the whole country; the natural English preserves its extent and its causal connection to the journey.
+  - source_phrase: παρῴκησαν ἐκεῖ μέχρις οὗ διετράφησαν
+    prior_rendering: they lived there as sojourners until they were sustained
+    new_rendering: they lived there as foreigners as long as they were provided for[a]
+    rationale: The context favors a period of foreign residence during which they received sustenance, rather than departure immediately upon receiving provisions; the more strictly terminative reading is noted.
+  - source_phrase: ἐγένοντο ἐκεῖ εἰς πλῆθος πολύ
+    prior_rendering: there they became a very great multitude
+    new_rendering: There they grew into a great multitude
+    rationale: The result construction describes population growth into a numerous people.
+  - source_phrase: οὐκ ἦν ἀριθμὸς τοῦ γένους αὐτῶν
+    prior_rendering: there was no number to their family line
+    new_rendering: their people were too numerous to count
+    rationale: The statement concerns the innumerable members of the descent-based people, not the length or number of a genealogical line.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review usefully proposed 'provided for,' but its 'offspring' was challenged in the automated revert; 'their people' preserves the collective kin-group sense without narrowing it to progeny. The difficult duration clause receives a contextual rendering with the serious alternative retained.

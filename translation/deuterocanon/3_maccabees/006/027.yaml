@@ -20,15 +20,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: Release[a], release the unjust bonds; send them away to their own homes in peace[b], setting aside what has been ordered.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'to their own places.' The Greek εἰς τὰ ἴδια can refer more broadly to what belongs to them or to their own households/places.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'setting aside what had been ordered.' The participle indicates abandoning the previously issued command.
-    reason: lexical_alternative
+  text: Release them! Undo their unjust bonds and send them to their own homes in peace, setting aside the earlier orders.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: λύσατε
   lemma: λύω
@@ -127,14 +120,20 @@ revisions:
   from: Release, release the unjust bonds; send them away to their own homes in peace, renouncing what has been ordered.
   to: Release, release the unjust bonds; send them away to their own homes in peace, renouncing what has been ordered.
   rationale: Replaced 'renouncing' with 'setting aside' for a more natural and contextually fitting rendering of παραιτησάμενοι, while preserving the formal tone and meaning.
-
 - timestamp: '2026-05-18T03:00:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Release[a], release the unjust bonds; send them away to their own homes in peace[b], setting aside what has been ordered.'
-  to: 'Release[a], release the unjust bonds; send them away to their own homes in peace[b], setting aside what has been ordered.'
+  from: Release[a], release the unjust bonds; send them away to their own homes in peace[b], setting aside what has been ordered.
+  to: Release[a], release the unjust bonds; send them away to their own homes in peace[b], setting aside what has been ordered.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''renouncing''].'
+- timestamp: '2026-11-09T18:58:26Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Release[a], release the unjust bonds; send them away to their own homes in peace[b], setting aside what has been ordered.
+  to: Release them! Undo their unjust bonds and send them to their own homes in peace, setting aside the earlier orders.
+  rationale: I retain the review’s contextually apt “setting aside” rather than the draft’s more abstract “renouncing.” The emphatic double imperative remains forceful, but its objects are expressed naturally; the earlier notes are unnecessary because their points are carried in the text.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -154,3 +153,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/006/027.job-49669.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:58:26Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The king urgently commands the prisoners’ release, their peaceful return home, and the abandonment of the earlier orders.
+  meaning_decisions:
+  - source_phrase: λύσατε, ἐκλύσατε ἄδικα δεσμά
+    prior_rendering: Release, release the unjust bonds
+    new_rendering: Release them! Undo their unjust bonds
+    rationale: The doubled command urgently demands liberation; English naturally releases people and undoes their bonds.
+  - source_phrase: τὰ προστεταγμένα παραιτησάμενοι
+    prior_rendering: setting aside what has been ordered
+    new_rendering: setting aside the earlier orders
+    rationale: The substantive participle refers to commands already issued, which the king now orders abandoned.
+  footnote_kinds: {}
+  history_weighed: I retain the review’s contextually apt “setting aside” rather than the draft’s more abstract “renouncing.” The emphatic double imperative remains forceful, but its objects are expressed naturally; the earlier notes are unnecessary because their points are carried in the text.

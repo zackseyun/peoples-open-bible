@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יַּעֲשׂוּ֩ אַנְשֵׁ֨י עִיר֜/וֹ הַ/זְּקֵנִ֣ים וְ/הַ/חֹרִ֗ים אֲשֶׁ֤ר הַ/יֹּֽשְׁבִים֙ בְּ/עִיר֔/וֹ כַּ/אֲשֶׁ֛ר שָׁלְחָ֥ה אֲלֵי/הֶ֖ם אִיזָ֑בֶל כַּ/אֲשֶׁ֤ר כָּתוּב֙ בַּ/סְּפָרִ֔ים אֲשֶׁ֥ר שָׁלְחָ֖ה אֲלֵי/הֶֽם׃
 translation:
-  text: So the men of his city—the elders and the nobles who lived in his city—did as Jezebel had sent to them[a], as it was written in the letters that she had sent to them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the dignitaries'; the Hebrew term for 'nobles' can denote socially prominent men or officials of high rank.
-    reason: lexical_alternative
+  text: So the men of Naboth’s city—the elders and nobles who lived there—did just as Jezebel had instructed them in the letters she had sent them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיַּעֲשׂוּ
   chosen: did
@@ -87,14 +83,20 @@ revisions:
   from: So the men of his city—the elders and the nobles who lived in his city—did as Jezebel had sent word to them, as it was written in the letters that she had sent to them.
   to: So the men of his city—the elders and the nobles who lived in his city—did as Jezebel had sent word to them, as it was written in the letters that she had sent to them.
   rationale: Changed 'had sent word to them' to 'had sent to them' for closer lexical accuracy to the source, which simply says she sent to them; retained the rest as accurate and natural.
-
 - timestamp: '2026-05-18T02:57:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So the men of his city—the elders and the nobles who lived in his city—did as Jezebel had sent to them[a], as it was written in the letters that she had sent to them.'
-  to: 'So the men of his city—the elders and the nobles who lived in his city—did as Jezebel had sent to them[a], as it was written in the letters that she had sent to them.'
+  from: So the men of his city—the elders and the nobles who lived in his city—did as Jezebel had sent to them[a], as it was written in the letters that she had sent to them.
+  to: So the men of his city—the elders and the nobles who lived in his city—did as Jezebel had sent to them[a], as it was written in the letters that she had sent to them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as Jezebel had sent word to them''].'
+- timestamp: '2026-11-09T17:22:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So the men of his city—the elders and the nobles who lived in his city—did as Jezebel had sent to them[a], as it was written in the letters that she had sent to them.
+  to: So the men of Naboth’s city—the elders and nobles who lived there—did just as Jezebel had instructed them in the letters she had sent them.
+  rationale: The first draft’s “sent word” recognized that Jezebel sent instructions, while the current objectless “sent” obscures that point. I express their exact obedience naturally and identify Naboth as the referent of “his city.”
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -114,3 +116,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/021/011.job-58692.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:03Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Naboth’s local elders and nobles carry out Jezebel’s written instructions exactly.
+  meaning_decisions:
+  - source_phrase: אַנְשֵׁי עִירוֹ הַזְּקֵנִים וְהַחֹרִים אֲשֶׁר הַיֹּשְׁבִים בְּעִירוֹ
+    prior_rendering: the men of his city—the elders and the nobles who lived in his city
+    new_rendering: the men of Naboth’s city—the elders and nobles who lived there
+    rationale: Naming Naboth makes the local relationship clear while preserving the apposition identifying the responsible civic leaders.
+  - source_phrase: כַּאֲשֶׁר שָׁלְחָה אֲלֵיהֶם אִיזָבֶל כַּאֲשֶׁר כָּתוּב בַּסְּפָרִים אֲשֶׁר שָׁלְחָה אֲלֵיהֶם
+    prior_rendering: did as Jezebel had sent to them, as it was written in the letters that she had sent to them
+    new_rendering: did just as Jezebel had instructed them in the letters she had sent them
+    rationale: What Jezebel sent was written instruction; combining the overlapping clauses preserves their exact compliance and the letters’ role without an incomplete English construction.
+  footnote_kinds: {}
+  history_weighed: The first draft’s “sent word” recognized that Jezebel sent instructions, while the current objectless “sent” obscures that point. I express their exact obedience naturally and identify Naboth as the referent of “his city.”

@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: Μαρία δὲ εἱστήκει πρὸς ⸂τῷ μνημείῳ ἔξω κλαίουσα⸃. ὡς οὖν ἔκλαιεν παρέκυψεν εἰς τὸ μνημεῖον,
 translation:
-  text: But Mary was standing outside the tomb, weeping. So, as she was weeping, she bent over to look into the tomb[a],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'stooped and looked into the tomb.' The Greek verb includes the idea of bending down in order to look.
-    reason: lexical_alternative
+  text: But Mary was standing outside the tomb, weeping. As she wept, she bent over to look into the tomb,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: δὲ
   chosen: But
@@ -93,13 +89,12 @@ revisions:
   from: But Mary was standing outside the tomb, weeping. So, as she was weeping, she bent over to look into the tomb,
   to: But Mary was standing outside the tomb, weeping. So, as she was weeping, she stooped to look into the tomb,
   rationale: Changed 'bent over' to 'stooped' for a more natural and formal rendering of παρέκυψεν while preserving the sense of looking into the tomb.
-
 - timestamp: '2026-05-18T03:10:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But Mary was standing outside the tomb[a], weeping. So, as she was weeping, she stooped to look into the tomb,'
-  to: 'But Mary was standing outside the tomb, weeping. So, as she was weeping, she bent over to look into the tomb,'
+  from: But Mary was standing outside the tomb[a], weeping. So, as she was weeping, she stooped to look into the tomb,
+  to: But Mary was standing outside the tomb, weeping. So, as she was weeping, she bent over to look into the tomb,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''bent over to look''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -109,6 +104,13 @@ revisions:
   from: But Mary was standing outside the tomb, weeping. So, as she was weeping, she bent over to look into the tomb,
   to: But Mary was standing outside the tomb, weeping. So, as she was weeping, she bent over to look into the tomb[a],
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('into the tomb') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:10:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But Mary was standing outside the tomb, weeping. So, as she was weeping, she bent over to look into the tomb[a],
+  to: But Mary was standing outside the tomb, weeping. As she wept, she bent over to look into the tomb,
+  rationale: I retain “bent over to look,” the wording restored by the later revert, because it clearly conveys the physical action. The earlier synonym note is unnecessary once that action is explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -128,3 +130,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/high_scrutiny/nt/john/020/011.job-7595.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:10:53Z'
+  change_level: refined
+  confidence: high
+  meaning: Mary remained outside the tomb weeping and bent over to look inside.
+  meaning_decisions:
+  - source_phrase: ὡς οὖν ἔκλαιεν
+    prior_rendering: So, as she was weeping
+    new_rendering: As she wept
+    rationale: The temporal clause preserves her continuing grief while avoiding a connective that can suggest her weeping caused the next action.
+  footnote_kinds: {}
+  history_weighed: I retain “bent over to look,” the wording restored by the later revert, because it clearly conveys the physical action. The earlier synonym note is unnecessary once that action is explicit.

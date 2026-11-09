@@ -9,18 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Antiochus encamped against Dora[c][b][a], and with him were twelve myriads of fighting men and eight thousand cavalry.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'one hundred twenty thousand fighting men.' The Greek says 'twelve myriads,' using the ancient unit 'myriad' for ten thousand.
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek literally has 'eight thousand horse,' a collective military expression meaning mounted troops or cavalry.
-    reason: lexical_alternative
-  - marker: c
-    text: The place name appears here in Greek as 'Dora'; some English traditions use 'Dor.'
-    reason: alternative_reading
+  text: Antiochus encamped against Dora with 120,000 fighting men and 8,000 cavalry.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: παρενέβαλεν
   chosen: encamped against
@@ -93,7 +83,13 @@ revisions:
   from: And Antiochus encamped against Dora, with twelve myriads of fighting men and eight thousand cavalry with him.
   to: And Antiochus encamped against Dora, and with him were twelve myriads of fighting men and eight thousand cavalry.
   rationale: Reordered the second clause for more natural English and removed the repeated 'with him' at the end. Retained 'myriads' to reflect the Greek numeral expression and kept 'against Dora' and 'cavalry' as accurate renderings.
-
+- timestamp: '2026-11-09T18:53:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Antiochus encamped against Dora[c][b][a], and with him were twelve myriads of fighting men and eight thousand cavalry.
+  to: Antiochus encamped against Dora with 120,000 fighting men and 8,000 cavalry.
+  rationale: The earlier review usefully removed a repeated 'with him,' and I retain its clearer relationship between Antiochus and his army. The lexical record supplies the exact value of a myriad; carrying that number into the text removes the need for an explanatory note.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -113,3 +109,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/015/013.job-48839.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:51Z'
+  change_level: refined
+  confidence: high
+  meaning: Antiochus camps against Dora with an army of 120,000 fighting men and 8,000 cavalry.
+  meaning_decisions:
+  - source_phrase: δώδεκα μυριάδες
+    prior_rendering: twelve myriads
+    new_rendering: 120,000
+    rationale: The Greek gives an exact count in units of ten thousand; modern English 'myriads' commonly means an indefinite multitude, so stating the number preserves the meaning.
+  footnote_kinds: {}
+  history_weighed: The earlier review usefully removed a repeated 'with him,' and I retain its clearer relationship between Antiochus and his army. The lexical record supplies the exact value of a myriad; carrying that number into the text removes the need for an explanatory note.

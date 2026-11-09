@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּצְעֲק֣וּ אֶל יְהוָ֗ה וַ/יָּ֨שֶׂם מַֽאֲפֵ֜ל בֵּינֵי/כֶ֣ם וּ/בֵ֣ין הַ/מִּצְרִ֗ים וַ/יָּבֵ֨א עָלָ֤י/ו אֶת הַ/יָּם֙ וַ/יְכַסֵּ֔/הוּ וַ/תִּרְאֶ֨ינָה֙ עֵינֵי/כֶ֔ם אֵ֥ת אֲשֶׁר עָשִׂ֖יתִי בְּ/מִצְרָ֑יִם וַ/תֵּשְׁב֥וּ בַ/מִּדְבָּ֖ר יָמִ֥ים רַבִּֽים־׀־־׃
 translation:
-  text: Then they cried out to Yahweh[a], and he put darkness between you and the Egyptians, and brought the sea upon him and covered him, and your eyes saw what I did in Egypt. Then you lived in the wilderness many days.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Hebrew has singular pronouns here: ''upon him'' and ''covered him.'' The sense may be collective, referring to Egypt or the Egyptian force; many translations render ''them.'''
-    reason: alternative_reading
+  text: They cried out to Yahweh, and he put darkness between you and the Egyptians. He brought the sea over them and covered them. You saw with your own eyes what I did to Egypt. Then you lived in the wilderness for a long time.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּצְעֲקוּ
   chosen: they cried out
@@ -115,14 +111,20 @@ revisions:
   from: Then they cried out to the LORD, and he put darkness between you and the Egyptians, and brought the sea upon him and covered him, and your eyes saw what I did in Egypt. Then you lived in the wilderness many days.
   to: Then they cried out to the LORD, and he put darkness between you and the Egyptians, and brought the sea upon them and covered them, and your eyes saw what I did in Egypt. Then you lived in the wilderness many days.
   rationale: Changed 'him' to 'them' twice to match the plural 'the Egyptians' and the Hebrew suffixes in context; otherwise retained the draft.
-
 - timestamp: '2026-05-15T21:09:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then they cried out to Yahweh[a], and he put darkness between you and the Egyptians, and brought the sea upon them and covered them, and your eyes saw what I did in Egypt. Then you lived in the wilderness many days.'
-  to: 'Then they cried out to Yahweh[a], and he put darkness between you and the Egyptians, and brought the sea upon him and covered him, and your eyes saw what I did in Egypt. Then you lived in the wilderness many days.'
-  rationale: 'Drafter retained singular ''him/him'' (matching the singular pronominal suffixes עָלָיו and וַיְכַסֵּהוּ) as deliberate source-fidelity, documented in lexical_decisions, theological_decisions, and footnote. Azure smoothed to ''them/them'' falsely claiming this ''matches the Hebrew suffixes in context'' — but the Hebrew suffixes are singular.'
+  from: Then they cried out to Yahweh[a], and he put darkness between you and the Egyptians, and brought the sea upon them and covered them, and your eyes saw what I did in Egypt. Then you lived in the wilderness many days.
+  to: Then they cried out to Yahweh[a], and he put darkness between you and the Egyptians, and brought the sea upon him and covered him, and your eyes saw what I did in Egypt. Then you lived in the wilderness many days.
+  rationale: Drafter retained singular 'him/him' (matching the singular pronominal suffixes עָלָיו and וַיְכַסֵּהוּ) as deliberate source-fidelity, documented in lexical_decisions, theological_decisions, and footnote. Azure smoothed to 'them/them' falsely claiming this 'matches the Hebrew suffixes in context' — but the Hebrew suffixes are singular.
+- timestamp: '2026-11-09T18:11:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then they cried out to Yahweh[a], and he put darkness between you and the Egyptians, and brought the sea upon him and covered him, and your eyes saw what I did in Egypt. Then you lived in the wilderness many days.
+  to: They cried out to Yahweh, and he put darkness between you and the Egyptians. He brought the sea over them and covered them. You saw with your own eyes what I did to Egypt. Then you lived in the wilderness for a long time.
+  rationale: The revert correctly observes that the Hebrew suffixes are singular, correcting the earlier review’s grammatical claim. Nevertheless, the documented collective reference warrants 'them' in English; I preserve the eyewitness emphasis and the source’s shift from speaking of Yahweh to divine first-person speech.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -142,3 +144,33 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/weighted_vocab/ot/joshua/024/007.job-15368.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:11:23Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Yahweh answered Israel’s cry by separating them from the Egyptians and overwhelming their pursuers with the sea, after which Israel lived in the wilderness for a long time.
+  meaning_decisions:
+  - source_phrase: וַיָּבֵא עָלָיו אֶת הַיָּם וַיְכַסֵּהוּ
+    prior_rendering: brought the sea upon him and covered him
+    new_rendering: He brought the sea over them and covered them
+    rationale: The Hebrew singular suffixes refer collectively to Egypt or its force; English plural pronouns identify the Egyptian pursuers without introducing an unexplained individual.
+  - source_phrase: וַתִּרְאֶינָה עֵינֵיכֶם
+    prior_rendering: your eyes saw
+    new_rendering: You saw with your own eyes
+    rationale: This is the natural English expression for the source’s emphasis on direct eyewitness experience.
+  - source_phrase: אֵת אֲשֶׁר עָשִׂיתִי בְּמִצְרָיִם
+    prior_rendering: what I did in Egypt
+    new_rendering: what I did to Egypt
+    rationale: In this account of judgment on the Egyptian pursuers, the preposition identifies Egypt as the object of Yahweh’s action rather than limiting the action to a geographic location.
+  - source_phrase: יָמִים רַבִּים
+    prior_rendering: many days
+    new_rendering: for a long time
+    rationale: The idiom denotes an extended duration, not a count of individual days.
+  footnote_kinds: {}
+  history_weighed: The revert correctly observes that the Hebrew suffixes are singular, correcting the earlier review’s grammatical claim. Nevertheless, the documented collective reference warrants 'them' in English; I preserve the eyewitness emphasis and the source’s shift from speaking of Yahweh to divine first-person speech.

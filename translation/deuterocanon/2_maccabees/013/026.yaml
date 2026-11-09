@@ -9,18 +9,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: Lysias came forward to the tribunal[a], made as good a defense as he could[b], persuaded them, calmed them, made them well-disposed, and marched back to Antioch. Thus the king[c]’s attack and withdrawal proceeded.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'judgment seat' or 'platform' for 'tribunal' (βῆμα).
-    reason: lexical_alternative
-  - marker: b
-    text: The adverb behind 'as good a defense as he could' is difficult and may also mean 'adequately' or 'as circumstances allowed.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'the king’s assault and retreat' for 'the king’s attack and withdrawal.'
-    reason: lexical_alternative
+  text: Lysias came forward to the public platform and defended the treaty as well as he could. He persuaded the people, calmed them, and won their goodwill, then marched back to Antioch. This is how the king’s attack and withdrawal unfolded.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: προσῆλθεν
   chosen: came forward
@@ -141,13 +131,12 @@ revisions:
   from: Lysias came forward to the tribunal, made as good a defense as he could, persuaded them, calmed them, made them well-disposed, and marched back to Antioch. Thus the king’s attack and withdrawal proceeded.
   to: Lysias came forward to the tribunal, made as good a defense as he could, persuaded them, calmed them, made them well-disposed, and returned to Antioch. Thus the king’s attack and withdrawal proceeded.
   rationale: Changed 'marched back to Antioch' to 'returned to Antioch' for closer lexical accuracy to ἀνέζευξεν, which refers to breaking camp/departing rather than specifically marching.
-
 - timestamp: '2026-05-18T03:10:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Lysias came forward to the tribunal[a], made as good a defense as he could, persuaded them, calmed them, made them well-disposed, and returned to Antioch[c][b]. Thus the king’s attack and withdrawal proceeded.'
-  to: 'Lysias came forward to the tribunal, made as good a defense as he could, persuaded them, calmed them, made them well-disposed, and marched back to Antioch. Thus the king’s attack and withdrawal proceeded.'
+  from: Lysias came forward to the tribunal[a], made as good a defense as he could, persuaded them, calmed them, made them well-disposed, and returned to Antioch[c][b]. Thus the king’s attack and withdrawal proceeded.
+  to: Lysias came forward to the tribunal, made as good a defense as he could, persuaded them, calmed them, made them well-disposed, and marched back to Antioch. Thus the king’s attack and withdrawal proceeded.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''marched back''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -157,6 +146,13 @@ revisions:
   from: Lysias came forward to the tribunal, made as good a defense as he could, persuaded them, calmed them, made them well-disposed, and marched back to Antioch. Thus the king’s attack and withdrawal proceeded.
   to: Lysias came forward to the tribunal[a], made as good a defense as he could[b], persuaded them, calmed them, made them well-disposed, and marched back to Antioch. Thus the king[c]’s attack and withdrawal proceeded.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('tribunal') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('as good a defense as he could') because the note's quoted alternative matches the lexical decision rendered there; [c] anchored to ('the king') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:55:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Lysias came forward to the tribunal[a], made as good a defense as he could[b], persuaded them, calmed them, made them well-disposed, and marched back to Antioch. Thus the king[c]’s attack and withdrawal proceeded.
+  to: Lysias came forward to the public platform and defended the treaty as well as he could. He persuaded the people, calmed them, and won their goodwill, then marched back to Antioch. This is how the king’s attack and withdrawal unfolded.
+  rationale: The record’s alternatives for βῆμα support a public platform, and the dispute over the treaty supplies the subject of Lysias’s defense. I retain “marched back,” since the military context supports it despite the earlier review’s preference for the more generic “returned.”
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -176,3 +172,33 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/013/026.job-49388.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:55:55Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Lysias successfully defends the settlement before the people of Ptolemais, calms their opposition, and returns to Antioch as the account of the royal campaign concludes.
+  meaning_decisions:
+  - source_phrase: προσῆλθεν ἐπὶ τὸ βῆμα
+    prior_rendering: came forward to the tribunal
+    new_rendering: came forward to the public platform
+    rationale: Lysias addresses public opposition to the treaty; the verse does not establish a judicial trial, which “tribunal” may suggest.
+  - source_phrase: ἀπελογήσατο ἐνδεχομένως
+    prior_rendering: made as good a defense as he could
+    new_rendering: defended the treaty as well as he could
+    rationale: The preceding verse identifies the disputed settlement as the subject of his defense; the qualification retains the sense of doing what circumstances allowed.
+  - source_phrase: εὐμενεῖς ἐποίησεν
+    prior_rendering: made them well-disposed
+    new_rendering: won their goodwill
+    rationale: This naturally expresses the favorable attitude he brought about in the inhabitants.
+  - source_phrase: οὕτω τὰ τῆς ἐφόδου τοῦ βασιλέως καὶ τῆς ἀναζυγῆς ἐχώρησεν
+    prior_rendering: Thus the king’s attack and withdrawal proceeded
+    new_rendering: This is how the king’s attack and withdrawal unfolded
+    rationale: The sentence retrospectively summarizes how the narrated events developed, rather than announcing that the campaign continued.
+  footnote_kinds: {}
+  history_weighed: The record’s alternatives for βῆμα support a public platform, and the dispute over the treaty supplies the subject of Lysias’s defense. I retain “marched back,” since the military context supports it despite the earlier review’s preference for the more generic “returned.”

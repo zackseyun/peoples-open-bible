@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: כִּ֣י חִזְקִיָּ֣הוּ מֶֽלֶךְ יְ֠הוּדָה הֵרִ֨ים לַ/קָּהָ֜ל אֶ֣לֶף פָּרִים֮ וְ/שִׁבְעַ֣ת אֲלָפִ֣ים צֹאן֒ וְ/הַ/שָּׂרִ֞ים הֵרִ֤ימוּ לַ/קָּהָל֙ פָּרִ֣ים אֶ֔לֶף וְ/צֹ֖אן עֲשֶׂ֣רֶת אֲלָפִ֑ים וַ/יִּֽתְקַדְּשׁ֥וּ כֹהֲנִ֖ים לָ/רֹֽב־ס׃
 translation:
-  text: For Hezekiah king of Judah gave to the assembly one thousand bulls and seven thousand sheep[a], and the officials gave to the assembly one thousand bulls and ten thousand sheep[b]; and priests consecrated themselves in great numbers.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'for the assembly' instead of 'to the assembly'; the Hebrew preposition can be understood either way in this context of providing animals for communal worship.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Sheep'' renders Hebrew צֹאן, a broader term that can refer to flock animals generally, including sheep and goats.'
-    reason: lexical_alternative
+  text: For Hezekiah, king of Judah, gave the assembly one thousand bulls and seven thousand sheep and goats, and the officials gave them one thousand bulls and ten thousand sheep and goats. Priests also consecrated themselves in great numbers.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: כִּי
   chosen: For
@@ -101,14 +94,20 @@ revisions:
   from: For Hezekiah king of Judah contributed to the assembly one thousand bulls and seven thousand sheep, and the officials contributed to the assembly one thousand bulls and ten thousand sheep; and priests consecrated themselves in great numbers.
   to: For Hezekiah king of Judah contributed to the assembly one thousand bulls and seven thousand sheep, and the officials contributed to the assembly one thousand bulls and ten thousand sheep; and priests consecrated themselves in great numbers.
   rationale: Changed 'contributed' to 'gave' for a more direct and natural rendering of the verb, while preserving the formal sense. Kept the rest substantially the same.
-
 - timestamp: '2026-05-17T01:36:34Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For Hezekiah king of Judah gave to the assembly one thousand bulls and seven thousand sheep[a], and the officials gave to the assembly one thousand bulls and ten thousand sheep[b]; and priests consecrated themselves in great numbers.'
-  to: 'For Hezekiah king of Judah gave to the assembly one thousand bulls and seven thousand sheep[a], and the officials gave to the assembly one thousand bulls and ten thousand sheep[b]; and priests consecrated themselves in great numbers.'
+  from: For Hezekiah king of Judah gave to the assembly one thousand bulls and seven thousand sheep[a], and the officials gave to the assembly one thousand bulls and ten thousand sheep[b]; and priests consecrated themselves in great numbers.
+  to: For Hezekiah king of Judah gave to the assembly one thousand bulls and seven thousand sheep[a], and the officials gave to the assembly one thousand bulls and ten thousand sheep[b]; and priests consecrated themselves in great numbers.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''contributed''].'
+- timestamp: '2026-11-09T17:25:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For Hezekiah king of Judah gave to the assembly one thousand bulls and seven thousand sheep[a], and the officials gave to the assembly one thousand bulls and ten thousand sheep[b]; and priests consecrated themselves in great numbers.
+  to: For Hezekiah, king of Judah, gave the assembly one thousand bulls and seven thousand sheep and goats, and the officials gave them one thousand bulls and ten thousand sheep and goats. Priests also consecrated themselves in great numbers.
+  rationale: The history alternates between 'contributed' and 'gave'; the current 'gave' adequately conveys supplying animals for communal worship. I retain that wording and the consecration language, while making the broader livestock category explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -128,3 +127,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_chronicles/030/024.job-60124.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:25:42Z'
+  change_level: refined
+  confidence: high
+  meaning: The king and officials supplied thousands of sacrificial animals for the assembly, and large numbers of priests consecrated themselves for service.
+  meaning_decisions:
+  - source_phrase: צֹאן
+    prior_rendering: sheep
+    new_rendering: sheep and goats
+    rationale: The Hebrew category includes both kinds of flock animals; the broader meaning now appears in the text rather than only in a footnote.
+  footnote_kinds: {}
+  history_weighed: The history alternates between 'contributed' and 'gave'; the current 'gave' adequately conveys supplying animals for communal worship. I retain that wording and the consecration language, while making the broader livestock category explicit.

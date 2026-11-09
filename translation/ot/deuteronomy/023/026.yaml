@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: כִּ֤י תָבֹא֙ בְּ/קָמַ֣ת רֵעֶ֔/ךָ וְ/קָטַפְתָּ֥ מְלִילֹ֖ת בְּ/יָדֶ֑/ךָ וְ/חֶרְמֵשׁ֙ לֹ֣א תָנִ֔יף עַ֖ל קָמַ֥ת רֵעֶֽ/ךָ׃ס
 translation:
-  text: When you come into your neighbor’s standing grain[a], you may pluck heads with your hand[b], but you shall not put a sickle to your neighbor’s standing grain.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'ears of grain' for 'heads.' The Hebrew term refers to the grain-bearing heads that may be plucked by hand.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'you shall not use a sickle over/upon your neighbor’s standing grain.' The Hebrew verb literally suggests brandishing or applying the sickle.
-    reason: lexical_alternative
+  text: When you enter your neighbor’s field of standing grain, you may pluck heads of grain by hand, but you shall not use a sickle to harvest your neighbor’s standing grain.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: כִּי
   chosen: When
@@ -109,14 +102,20 @@ revisions:
   from: When you come into your neighbor’s standing grain, you may pluck heads with your hand, but you shall not wield a sickle against your neighbor’s standing grain.
   to: When you come into your neighbor’s standing grain, you may pluck heads with your hand, but you shall not wield a sickle against your neighbor’s standing grain.
   rationale: Replaced 'wield a sickle against' with the more literal and natural 'put a sickle to,' which better reflects the Hebrew idiom. No other changes needed.
-
 - timestamp: '2026-05-18T02:56:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When you come into your neighbor’s standing grain[a], you may pluck heads with your hand[b], but you shall not put a sickle to your neighbor’s standing grain.'
-  to: 'When you come into your neighbor’s standing grain[a], you may pluck heads with your hand[b], but you shall not put a sickle to your neighbor’s standing grain.'
+  from: When you come into your neighbor’s standing grain[a], you may pluck heads with your hand[b], but you shall not put a sickle to your neighbor’s standing grain.
+  to: When you come into your neighbor’s standing grain[a], you may pluck heads with your hand[b], but you shall not put a sickle to your neighbor’s standing grain.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you shall not wield''].'
+- timestamp: '2026-11-09T17:36:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When you come into your neighbor’s standing grain[a], you may pluck heads with your hand[b], but you shall not put a sickle to your neighbor’s standing grain.
+  to: When you enter your neighbor’s field of standing grain, you may pluck heads of grain by hand, but you shall not use a sickle to harvest your neighbor’s standing grain.
+  rationale: The drafts and lexical decisions preserve the essential contrast between permitted hand-plucking and prohibited sickle harvesting, although the automated records disagree about the sickle wording. No maintainer revision is recorded; I retain that contrast and the specificity of standing grain, while replacing the sickle idiom with its meaning and dropping the unnecessary footnotes.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -136,3 +135,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/023/026.job-61780.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:36:01Z'
+  change_level: refined
+  confidence: high
+  meaning: You may pluck grain by hand in your neighbor’s field, but you may not harvest the standing crop with a sickle.
+  meaning_decisions:
+  - source_phrase: תָבֹא בְּקָמַת רֵעֶךָ
+    prior_rendering: come into your neighbor’s standing grain
+    new_rendering: enter your neighbor’s field of standing grain
+    rationale: Makes the setting natural and explicit in English while preserving the reference to an unharvested crop.
+  - source_phrase: מְלִילֹת בְּיָדֶךָ
+    prior_rendering: heads with your hand
+    new_rendering: heads of grain by hand
+    rationale: Clarifies what may be plucked and expresses the permitted method in natural English.
+  - source_phrase: וְחֶרְמֵשׁ לֹא תָנִיף עַל קָמַת רֵעֶךָ
+    prior_rendering: but you shall not put a sickle to your neighbor’s standing grain
+    new_rendering: but you shall not use a sickle to harvest your neighbor’s standing grain
+    rationale: 'Expresses the agricultural meaning of applying the sickle: harvesting the crop, in contrast to the permitted hand-plucking.'
+  footnote_kinds: {}
+  history_weighed: The drafts and lexical decisions preserve the essential contrast between permitted hand-plucking and prohibited sickle harvesting, although the automated records disagree about the sickle wording. No maintainer revision is recorded; I retain that contrast and the specificity of standing grain, while replacing the sickle idiom with its meaning and dropping the unnecessary footnotes.

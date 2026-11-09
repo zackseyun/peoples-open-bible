@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: ᾔδει δὲ καὶ Ἰούδας ὁ παραδιδοὺς αὐτὸν τὸν τόπον, ὅτι πολλάκις ⸀συνήχθη Ἰησοῦς ἐκεῖ μετὰ τῶν μαθητῶν αὐτοῦ.
 translation:
-  text: Judas, who was betraying him[a], also knew the place, because[b] Jesus had often gathered there with his disciples.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'who was handing him over.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or, 'because Jesus had often met there with his disciples.'
-    reason: lexical_alternative
+  text: Judas, who was betraying him, also knew the place, because Jesus had often met there with his disciples.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ᾔδει
   chosen: knew
@@ -20,7 +13,7 @@ lexical_decisions:
   - had known
   - was acquainted with
   lexicon: BDAG
-  rationale: "οἶδα commonly conveys knowledge or awareness. 'Knew' is the natural English equivalent here, indicating Judas's familiarity with the location. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'οἶδα commonly conveys knowledge or awareness. ''Knew'' is the natural English equivalent here, indicating Judas''s familiarity with the location. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: δὲ
   chosen: Now
   alternatives:
@@ -111,13 +104,12 @@ revisions:
   from: Now Judas, who was betraying him, also knew the place, because Jesus had often gathered there with his disciples.
   to: Now Judas, who was betraying him, also knew the place, because Jesus often met there with his disciples.
   rationale: Changed “had often gathered there” to “often met there” for more natural English and better alignment with the intransitive sense of the Greek, where Jesus is said to meet there with his disciples.
-
 - timestamp: '2026-05-18T03:10:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now Judas[a], who was betraying him, also knew the place[b], because Jesus often met there with his disciples.'
-  to: 'Now Judas, who was betraying him, also knew the place, because Jesus had often gathered there with his disciples.'
+  from: Now Judas[a], who was betraying him, also knew the place[b], because Jesus often met there with his disciples.
+  to: Now Judas, who was betraying him, also knew the place, because Jesus had often gathered there with his disciples.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''had often gathered''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -134,6 +126,13 @@ revisions:
   from: Judas, who was betraying him, also knew the place, because Jesus had often gathered there with his disciples.
   to: Judas, who was betraying him[a], also knew the place, because[b] Jesus had often gathered there with his disciples.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('who was betraying him') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('because') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:10:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Judas, who was betraying him[a], also knew the place, because[b] Jesus had often gathered there with his disciples.
+  to: Judas, who was betraying him, also knew the place, because Jesus had often met there with his disciples.
+  rationale: The earlier review identified “met there” as the natural sense, and the later automated revert supplied no meaning-based objection. I retain the background past perfect and the established rendering “betraying,” while dropping notes that merely offered equivalent wording.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -153,3 +152,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/high_scrutiny/nt/john/018/002.job-7504.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:10:53Z'
+  change_level: refined
+  confidence: high
+  meaning: Judas, Jesus’ betrayer, knew the garden because Jesus had often met there with his disciples.
+  meaning_decisions:
+  - source_phrase: πολλάκις συνήχθη Ἰησοῦς ἐκεῖ μετὰ τῶν μαθητῶν αὐτοῦ
+    prior_rendering: Jesus had often gathered there with his disciples
+    new_rendering: Jesus had often met there with his disciples
+    rationale: “Met there with” naturally expresses the repeated gatherings that explain Judas’s familiarity with the place; it does not suggest that Jesus assembled alone.
+  footnote_kinds: {}
+  history_weighed: The earlier review identified “met there” as the natural sense, and the later automated revert supplied no meaning-based objection. I retain the background past perfect and the established rendering “betraying,” while dropping notes that merely offered equivalent wording.

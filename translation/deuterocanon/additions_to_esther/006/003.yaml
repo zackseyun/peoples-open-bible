@@ -11,12 +11,8 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 6 = Addition F, segmented from Swete pages 796-797 with First1KGreek used only as a verse-anchor map.
 translation:
-  text: The little spring that became a river was Esther[a], whom the king married and made queen; and there was light and sun and abundant water.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Greek more formally: ''Esther is the river.'' The translation smooths the clause into English while preserving the identification.'
-    reason: lexical_alternative
+  text: The little spring became a river, and there was light, sun, and abundant water. The river is Esther, whom the king married and made queen.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἡ μικρὰ πηγή
   chosen: the little spring
@@ -102,13 +98,12 @@ revisions:
   from: The little spring that became a river was Esther, whom the king married and made queen; and there was light and sun and abundant water.
   to: The little spring that became a river is Esther, whom the king married and made queen; and there was light and sun and abundant water.
   rationale: Changed 'was Esther' to 'is Esther' to reflect the Greek present tense ἐστιν more accurately; retained the rest as natural and complete.
-
 - timestamp: '2026-05-18T03:09:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The little spring that became a river is Esther[a], whom the king married and made queen; and there was light and sun and abundant water.'
-  to: 'The little spring that became a river was Esther, whom the king married and made queen; and there was light and sun and abundant water.'
+  from: The little spring that became a river is Esther[a], whom the king married and made queen; and there was light and sun and abundant water.
+  to: The little spring that became a river was Esther, whom the king married and made queen; and there was light and sun and abundant water.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was Esther''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -118,6 +113,13 @@ revisions:
   from: The little spring that became a river was Esther, whom the king married and made queen; and there was light and sun and abundant water.
   to: The little spring that became a river was Esther[a], whom the king married and made queen; and there was light and sun and abundant water.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('was Esther') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:00:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The little spring that became a river was Esther[a], whom the king married and made queen; and there was light and sun and abundant water.
+  to: The little spring became a river, and there was light, sun, and abundant water. The river is Esther, whom the king married and made queen.
+  rationale: The automated review recognized the present-tense identification, although the subsequent revert restored ‘was.’ I retain that useful distinction and bring the identification already explained in the footnote into the main text.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -137,3 +139,21 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/additions_to_esther/006/003.job-50305.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:00:33Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Mordecai recalls the dream’s spring, river, light, sun, and abundant water, and identifies the river with Esther, whom the king married and made queen.
+  meaning_decisions:
+  - source_phrase: ἡ μικρὰ πηγὴ ἡ ἐγένετο ποταμός, καὶ ἦν φῶς καὶ ἥλιος καὶ ὕδωρ πολύ. Ἐσθὴρ ἐστιν ὁ ποταμός
+    prior_rendering: The little spring that became a river was Esther ...; and there was light and sun and abundant water
+    new_rendering: The little spring became a river, and there was light, sun, and abundant water. The river is Esther
+    rationale: Keeping the dream imagery together before interpreting it prevents the light, sun, and water from sounding like a description of Esther’s marriage, while preserving the direct symbolic identification.
+  footnote_kinds: {}
+  history_weighed: The automated review recognized the present-tense identification, although the subsequent revert restored ‘was.’ I retain that useful distinction and bring the identification already explained in the footnote into the main text.

@@ -26,17 +26,14 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 41:18
 translation:
-  text: Before a master and mistress[a], be ashamed of a lie; before an assembly and the people, of transgression; before a companion and a friend, of wrongdoing; and where you sojourn[c][b], of theft.
-  philosophy: optimal-equivalence
+  text: Before a master and mistress[a], be ashamed of a lie; before an assembly and the people, of transgression; before a companion and a friend, of betrayal; and in the place where you live, of theft[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew reads 'master and mistress'; the Greek parallel has 'judge and ruler.' The main text follows the Hebrew as the primary witness for extant Hebrew Sirach.
+    text: The Greek reads 'judge and ruler' instead of 'master and mistress.'
     reason: textual_variant
   - marker: b
-    text: Hebrew מעל can also be rendered 'trespass' or 'breach of trust.'
-    reason: lexical_alternative
-  - marker: c
-    text: 'The final Hebrew phrase is difficult: literally something like ''from/at the place where you dwell, concerning זר.'' The Greek parallel points toward ''theft/stealing,'' which is reflected in the main text.'
+    text: The final Hebrew word is uncertain; the Greek supports the meaning 'theft.'
     reason: textual_variant
 lexical_decisions:
 - source_word: מאדון וגברת
@@ -132,14 +129,20 @@ revisions:
   from: Before a master and mistress, be ashamed of a lie; before an assembly and the people, of transgression; before a companion and a friend, of wrongdoing; and where you live, of theft.
   to: Before a master and mistress, be ashamed of a lie; before an assembly and the people, of transgression; before a companion and a friend, of wrongdoing; and where you live, of theft.
   rationale: Revised 'where you live' to 'where you sojourn' to more closely reflect ממקום תגור ('the place where you reside/sojourn') while keeping the formal register. No other changes needed.
-
 - timestamp: '2026-05-18T02:57:58Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Before a master and mistress[a], be ashamed of a lie; before an assembly and the people, of transgression; before a companion and a friend, of wrongdoing; and where you sojourn[c][b], of theft.'
-  to: 'Before a master and mistress[a], be ashamed of a lie; before an assembly and the people, of transgression; before a companion and a friend, of wrongdoing; and where you sojourn[c][b], of theft.'
+  from: Before a master and mistress[a], be ashamed of a lie; before an assembly and the people, of transgression; before a companion and a friend, of wrongdoing; and where you sojourn[c][b], of theft.
+  to: Before a master and mistress[a], be ashamed of a lie; before an assembly and the people, of transgression; before a companion and a friend, of wrongdoing; and where you sojourn[c][b], of theft.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and where you live''].'
+- timestamp: '2026-11-09T19:08:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Before a master and mistress[a], be ashamed of a lie; before an assembly and the people, of transgression; before a companion and a friend, of wrongdoing; and where you sojourn[c][b], of theft.
+  to: Before a master and mistress[a], be ashamed of a lie; before an assembly and the people, of transgression; before a companion and a friend, of betrayal; and in the place where you live, of theft[b].
+  rationale: The lexical record already recognizes breach of trust as a meaning of מעל, so the main text now carries what was previously left in a note. I retain the Hebrew's 'master and mistress' and the Greek-supported 'theft,' while returning to the clearer residential wording supported by the earlier draft.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -159,3 +162,27 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/041/018.job-52161.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:06Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Lying, transgression, betrayal, and theft should bring shame in relation to one's authorities, community, friends, and place of residence.
+  meaning_decisions:
+  - source_phrase: על מעל
+    prior_rendering: of wrongdoing
+    new_rendering: of betrayal
+    rationale: The term carries breach-of-trust force, especially in relation to a companion and friend; generic 'wrongdoing' loses that important connection.
+  - source_phrase: וממקום תגור
+    prior_rendering: and where you sojourn
+    new_rendering: and in the place where you live
+    rationale: The admonition concerns accountability in one's place of residence; 'sojourn' unnecessarily suggests a specifically temporary stay.
+  footnote_kinds:
+    a: textual_variant
+    b: textual_variant
+  history_weighed: The lexical record already recognizes breach of trust as a meaning of מעל, so the main text now carries what was previously left in a note. I retain the Hebrew's 'master and mistress' and the Greek-supported 'theft,' while returning to the clearer residential wording supported by the earlier draft.

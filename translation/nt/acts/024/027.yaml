@@ -4,12 +4,12 @@ source:
   edition: SBLGNT
   text: Διετίας δὲ πληρωθείσης ἔλαβεν διάδοχον ὁ Φῆλιξ Πόρκιον Φῆστον· θέλων τε ⸀χάριτα καταθέσθαι τοῖς Ἰουδαίοις ὁ Φῆλιξ κατέλιπε τὸν Παῦλον δεδεμένον.
 translation:
-  text: But when two years had been completed[a], Felix was succeeded by Porcius Festus; and because Felix wanted to lay up favor with the Jews, he left Paul bound.
-  philosophy: optimal-equivalence
+  text: After two years had passed, Felix was succeeded by Porcius Festus. Wanting to gain favor with the Jews[a], Felix left Paul in chains.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'to gain favor with the Jews.' The Greek expression can mean either to bestow a favor on them or to secure their goodwill.
-    reason: lexical_alternative
+    text: Or “to do the Jews a favor.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: Διετίας ... πληρωθείσης
   chosen: when two years had been completed
@@ -86,14 +86,20 @@ revisions:
   from: But when two years had been completed, Felix was succeeded by Porcius Festus; and because Felix wanted to lay up favor with the Jews, he left Paul bound.
   to: But when two years had been completed, Felix was succeeded by Porcius Festus; and because Felix wanted to do the Jews a favor, he left Paul bound.
   rationale: Replaced 'lay up favor with the Jews' with the more natural and accurate 'do the Jews a favor' for χάριτα καταθέσθαι, while preserving the formal tone and the rest of the verse.
-
 - timestamp: '2026-05-16T22:08:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But when two years had been completed[a], Felix was succeeded by Porcius Festus; and because Felix wanted to do the Jews a favor, he left Paul bound.'
-  to: 'But when two years had been completed[a], Felix was succeeded by Porcius Festus; and because Felix wanted to lay up favor with the Jews, he left Paul bound.'
-  rationale: 'Restored drafter ''wanted to lay up favor with the Jews'' (preserving the chosen rendering of χάριτα καταθέσθαι as ''lay up favor'') per chosen renderings.'
+  from: But when two years had been completed[a], Felix was succeeded by Porcius Festus; and because Felix wanted to do the Jews a favor, he left Paul bound.
+  to: But when two years had been completed[a], Felix was succeeded by Porcius Festus; and because Felix wanted to lay up favor with the Jews, he left Paul bound.
+  rationale: Restored drafter 'wanted to lay up favor with the Jews' (preserving the chosen rendering of χάριτα καταθέσθαι as 'lay up favor') per chosen renderings.
+- timestamp: '2026-11-09T17:12:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But when two years had been completed[a], Felix was succeeded by Porcius Festus; and because Felix wanted to lay up favor with the Jews, he left Paul bound.
+  to: After two years had passed, Felix was succeeded by Porcius Festus. Wanting to gain favor with the Jews[a], Felix left Paul in chains.
+  rationale: The review’s do the Jews a favor recognized the idiom, while the automated reversion restored its source-shaped wording. I retain the current interpretation of securing goodwill in natural English and preserve the review’s substantial alternative in a footnote.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -113,3 +119,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/024/027.job-46384.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:39Z'
+  change_level: retranslated
+  confidence: high
+  meaning: After two years, Porcius Festus succeeded Felix, who left Paul imprisoned to secure Jewish goodwill.
+  meaning_decisions:
+  - source_phrase: Διετίας δὲ πληρωθείσης
+    prior_rendering: But when two years had been completed
+    new_rendering: After two years had passed
+    rationale: The construction marks elapsed time; the passive wording does not add a further meaning that English must reproduce.
+  - source_phrase: θέλων τε χάριτα καταθέσθαι τοῖς Ἰουδαίοις
+    prior_rendering: because Felix wanted to lay up favor with the Jews
+    new_rendering: Wanting to gain favor with the Jews
+    rationale: Gain favor conveys the political goodwill sought by the idiom, whereas lay up favor is unclear in contemporary English; bestowing a favor remains a serious alternative.
+  - source_phrase: κατέλιπε τὸν Παῦλον δεδεμένον
+    prior_rendering: he left Paul bound
+    new_rendering: Felix left Paul in chains
+    rationale: In chains preserves the image of continuing bonds while making the custodial condition immediately intelligible.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The review’s do the Jews a favor recognized the idiom, while the automated reversion restored its source-shaped wording. I retain the current interpretation of securing goodwill in natural English and preserve the review’s substantial alternative in a footnote.

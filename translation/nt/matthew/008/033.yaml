@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: οἱ δὲ βόσκοντες ἔφυγον, καὶ ἀπελθόντες εἰς τὴν πόλιν ἀπήγγειλαν πάντα καὶ τὰ τῶν δαιμονιζομένων.
 translation:
-  text: Then the herdsmen fled[a], and going away into the city, they reported everything, including what had happened to the demon-possessed men.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'and the things concerning the demon-possessed men.'
-    reason: lexical_alternative
+  text: Then the herdsmen fled to the city and reported everything, including what had happened to the demon-possessed men.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: οἱ δὲ βόσκοντες
   chosen: Then the herdsmen
@@ -90,14 +86,20 @@ revisions:
   from: Then the herdsmen fled, and when they went into the city, they reported everything, including what had happened to the demon-possessed men.
   to: Then the herdsmen fled, and when they went into the city, they reported everything, including what had happened to the demon-possessed men.
   rationale: Replaced 'when they went' with the more direct 'going away into the city' to reflect the participle ἀπελθόντες more closely while keeping natural English. No other changes needed.
-
 - timestamp: '2026-05-18T02:59:59Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then the herdsmen fled[a], and going away into the city, they reported everything, including what had happened to the demon-possessed men.'
-  to: 'Then the herdsmen fled[a], and going away into the city, they reported everything, including what had happened to the demon-possessed men.'
+  from: Then the herdsmen fled[a], and going away into the city, they reported everything, including what had happened to the demon-possessed men.
+  to: Then the herdsmen fled[a], and going away into the city, they reported everything, including what had happened to the demon-possessed men.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''when they went into the city''].'
+- timestamp: '2026-11-09T17:18:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then the herdsmen fled[a], and going away into the city, they reported everything, including what had happened to the demon-possessed men.
+  to: Then the herdsmen fled to the city and reported everything, including what had happened to the demon-possessed men.
+  rationale: The first draft’s temporal clause and lexical rationale already recognized that the participle describes the herdsmen’s journey to the city. I undo the later source-shaped “going away” construction while preserving the clear summary of what they reported.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -119,3 +121,21 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/008/033.job-56831.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:18:49Z'
+  change_level: refined
+  confidence: high
+  meaning: The herdsmen flee to the city and report the entire incident, including what happened to the demon-possessed men.
+  meaning_decisions:
+  - source_phrase: ἔφυγον, καὶ ἀπελθόντες εἰς τὴν πόλιν ἀπήγγειλαν πάντα
+    prior_rendering: fled, and going away into the city, they reported everything
+    new_rendering: fled to the city and reported everything
+    rationale: The coordinated sequence describes flight followed by arrival and reporting; natural English can express the journey as the destination of their flight without a cumbersome participial construction.
+  footnote_kinds: {}
+  history_weighed: The first draft’s temporal clause and lexical rationale already recognized that the participle describes the herdsmen’s journey to the city. I undo the later source-shaped “going away” construction while preserving the clear summary of what they reported.

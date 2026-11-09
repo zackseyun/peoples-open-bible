@@ -9,12 +9,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: He ordered that[a], by the coming day, all the elephants—five hundred in number—be given drink with generous draughts of frankincense and much unmixed wine, and that, once made savage by the abundant supply of drink, they be brought in for the destruction of the Jews.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'for the doom/death of the Jews.' The Greek phrase is literally 'for a meeting with the doom of the Jews,' an idiom expressing their intended destruction.
-    reason: lexical_alternative
+  text: He ordered that by the next day all five hundred elephants be given large quantities of undiluted wine mixed with generous handfuls of frankincense. Once the drink had made them savage, they were to be brought in to destroy the Jews.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐκέλευσεν
   chosen: He ordered
@@ -135,14 +131,20 @@ revisions:
   from: He ordered that, by the coming day, all the elephants—five hundred in number—be given drink with generous draughts of frankincense and with much unmixed wine, and that, once made savage by the abundant supply of drink, they be brought in for the destruction of the Jews.
   to: He ordered that, by the coming day, all the elephants—five hundred in number—be given drink with generous amounts of frankincense and much unmixed wine, and that, once made savage by the abundant supply of drink, they be brought in to meet the destruction of the Jews.
   rationale: Adjusted 'draughts' to 'amounts' for more natural English with frankincense, and revised 'for the destruction of the Jews' to 'to meet the destruction of the Jews' to more closely reflect the Greek phrase 'πρὸς συνάντησιν τοῦ μόρου τῶν Ἰουδαίων.'
-
 - timestamp: '2026-05-15T16:24:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He ordered that[a], by the coming day, all the elephants—five hundred in number—be given drink with generous amounts of frankincense and much unmixed wine, and that, once made savage by the abundant supply of drink, they be brought in to meet the destruction of the Jews.'
-  to: 'He ordered that[a], by the coming day, all the elephants—five hundred in number—be given drink with generous draughts of frankincense and much unmixed wine, and that, once made savage by the abundant supply of drink, they be brought in for the destruction of the Jews.'
-  rationale: 'Restored 2 chosen renderings preserving δράξ measured-drinking sense and theological_decision idiom.'
+  from: He ordered that[a], by the coming day, all the elephants—five hundred in number—be given drink with generous amounts of frankincense and much unmixed wine, and that, once made savage by the abundant supply of drink, they be brought in to meet the destruction of the Jews.
+  to: He ordered that[a], by the coming day, all the elephants—five hundred in number—be given drink with generous draughts of frankincense and much unmixed wine, and that, once made savage by the abundant supply of drink, they be brought in for the destruction of the Jews.
+  rationale: Restored 2 chosen renderings preserving δράξ measured-drinking sense and theological_decision idiom.
+- timestamp: '2026-11-09T18:59:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He ordered that[a], by the coming day, all the elephants—five hundred in number—be given drink with generous draughts of frankincense and much unmixed wine, and that, once made savage by the abundant supply of drink, they be brought in for the destruction of the Jews.
+  to: He ordered that by the next day all five hundred elephants be given large quantities of undiluted wine mixed with generous handfuls of frankincense. Once the drink had made them savage, they were to be brought in to destroy the Jews.
+  rationale: The review rightly questioned 'draughts of frankincense,' although an automated revert reinstated it; the source noun supports 'handfuls.' I preserve the earlier meaning-based decision to render the final idiom as the intended destruction of the Jews.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -162,3 +164,29 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/005/002.job-49593.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:24Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The king orders all five hundred elephants to be made savage with wine and frankincense for the next day's destruction of the Jews.
+  meaning_decisions:
+  - source_phrase: δαψιλέσι δράκεσι λιβανωτοῦ
+    prior_rendering: generous draughts of frankincense
+    new_rendering: generous handfuls of frankincense
+    rationale: The noun denotes handfuls, not draughts; frankincense is an ingredient administered with the wine.
+  - source_phrase: οἴνῳ πλείονι ἀκράτῳ
+    prior_rendering: much unmixed wine
+    new_rendering: large quantities of undiluted wine mixed with ... frankincense
+    rationale: Undiluted means that the wine was not weakened with water; it does not exclude the frankincense mixture described elsewhere in the chapter.
+  - source_phrase: εἰσαγαγεῖν πρὸς συνάντησιν τοῦ μόρου τῶν Ἰουδαίων
+    prior_rendering: they be brought in for the destruction of the Jews
+    new_rendering: they were to be brought in to destroy the Jews
+    rationale: The elephants are the intended instruments of the Jews' destruction, not spectators at an encounter with their doom.
+  footnote_kinds: {}
+  history_weighed: The review rightly questioned 'draughts of frankincense,' although an automated revert reinstated it; the source noun supports 'handfuls.' I preserve the earlier meaning-based decision to render the final idiom as the intended destruction of the Jews.

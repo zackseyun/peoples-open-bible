@@ -12,18 +12,12 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 3 = Addition C, segmented from Swete pages 781-784 with First1KGreek used only as a verse-anchor map.
 translation:
-  text: And taking off her garments of glory[a], she put on garments of distress and mourning; and instead of splendid perfumes, she filled her head with ashes and dung, and she humbled her body greatly[c][b], and every place of her joyful adornment she filled with the twisting of her hair.
-  philosophy: optimal-equivalence
+  text: She took off her splendid robes and put on garments of distress and mourning. Instead of splendid perfumes, she covered her head with ashes and dung. She afflicted her body severely and covered every part she had adorned for joyful celebration with her tangled hair[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'instead of luxurious perfumes.' The Greek literally says 'proud perfumes,' likely referring to costly or ostentatious fragrances.
+    text: The final phrase is difficult; literally, “she filled every place of her joyful adornment with her twisted hair.” It may describe disheveled hair replacing her usual ornaments.
     reason: lexical_alternative
-  - marker: b
-    text: Or 'she covered her head with ashes and dung.' The Greek more literally says 'she filled her head.'
-    reason: lexical_alternative
-  - marker: c
-    text: The final phrase is difficult. It may mean that the places once beautified for rejoicing were now marked by her hair left twisted or disheveled in mourning.
-    reason: alternative_reading
 lexical_decisions:
 - source_word: ἀφελομένη
   lemma: ἀφαιρέω
@@ -131,14 +125,20 @@ revisions:
   from: And taking off her garments of glory, she put on garments of distress and mourning; and instead of proud perfumes, she filled her head with ashes and dung, and she humbled her body greatly, and every place of her joyful adornment she filled with the twisting of her hair.
   to: And taking off her garments of glory, she put on garments of distress and mourning; and instead of proud perfumes, she filled her head with ashes and dung, and she humbled her body greatly, and every place of her joyful adornment she filled with the twisting of her hair.
   rationale: Changed 'proud perfumes' to 'splendid perfumes' for more natural English and a better fit for ὑπερηφάνων ἡδυσμάτων in context.
-
 - timestamp: '2026-05-18T02:59:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And taking off her garments of glory[a], she put on garments of distress and mourning; and instead of splendid perfumes, she filled her head with ashes and dung, and she humbled her body greatly[c][b], and every place of her joyful adornment she filled with the twisting of her hair.'
-  to: 'And taking off her garments of glory[a], she put on garments of distress and mourning; and instead of splendid perfumes, she filled her head with ashes and dung, and she humbled her body greatly[c][b], and every place of her joyful adornment she filled with the twisting of her hair.'
+  from: And taking off her garments of glory[a], she put on garments of distress and mourning; and instead of splendid perfumes, she filled her head with ashes and dung, and she humbled her body greatly[c][b], and every place of her joyful adornment she filled with the twisting of her hair.
+  to: And taking off her garments of glory[a], she put on garments of distress and mourning; and instead of splendid perfumes, she filled her head with ashes and dung, and she humbled her body greatly[c][b], and every place of her joyful adornment she filled with the twisting of her hair.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''instead of proud perfumes''].'
+- timestamp: '2026-11-09T18:59:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And taking off her garments of glory[a], she put on garments of distress and mourning; and instead of splendid perfumes, she filled her head with ashes and dung, and she humbled her body greatly[c][b], and every place of her joyful adornment she filled with the twisting of her hair.
+  to: She took off her splendid robes and put on garments of distress and mourning. Instead of splendid perfumes, she covered her head with ashes and dung. She afflicted her body severely and covered every part she had adorned for joyful celebration with her tangled hair[a].
+  rationale: I retained the current “splendid perfumes” and the deliberately stark “ashes and dung,” as supported by the recorded explanations. The history rightly cautions against confidently translating the final phrase as hair-tearing, but its source-shaped wording obscures the likely contrast between adornment and mourning.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -158,3 +158,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/additions_to_esther/003/012.job-50245.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:48Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Esther replaces her royal splendor with severe bodily abasement and mourning, covering herself with ashes, dung, and disordered hair.
+  meaning_decisions:
+  - source_phrase: τὰ ἱμάτια τῆς δόξης αὐτῆς
+    prior_rendering: her garments of glory
+    new_rendering: her splendid robes
+    rationale: Here glory denotes the visible splendor of Esther’s royal clothing, contrasted with her mourning garments.
+  - source_phrase: ἔπλησεν τὴν κεφαλήν
+    prior_rendering: she filled her head
+    new_rendering: she covered her head
+    rationale: Ashes and dung are applied to the outside of her head; “filled her head” misleadingly suggests an interior action in English.
+  - source_phrase: τὸ σῶμα ἐταπείνωσεν σφόδρα
+    prior_rendering: she humbled her body greatly
+    new_rendering: She afflicted her body severely
+    rationale: The object is her body, so the phrase describes severe physical self-abasement, not simply an inward attitude of humility; no particular practice such as fasting is supplied.
+  - source_phrase: πάντα τόπον κόσμου ἀγαλλιάματος αὐτῆς ἔπλησεν στρεπτῶν τριχῶν αὐτῆς
+    prior_rendering: every place of her joyful adornment she filled with the twisting of her hair
+    new_rendering: covered every part she had adorned for joyful celebration with her tangled hair
+    rationale: The phrase contrasts former adornment with hair marking mourning; the English identifies the adorned parts and renders twisted hair as tangled, while the note preserves the uncertainty.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: I retained the current “splendid perfumes” and the deliberately stark “ashes and dung,” as supported by the recorded explanations. The history rightly cautions against confidently translating the final phrase as hair-tearing, but its source-shaped wording obscures the likely contrast between adornment and mourning.

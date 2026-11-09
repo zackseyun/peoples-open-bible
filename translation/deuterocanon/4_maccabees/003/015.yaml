@@ -19,15 +19,12 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: And even while burning with thirst[b][a], he reasoned that it would be an utterly dreadful danger to the soul if the drink were regarded as equivalent to blood.
-  philosophy: optimal-equivalence
+  text: But although the king was burning with thirst, he reasoned that drinking it would pose an utterly dreadful danger to his soul, since he regarded the drink as equivalent to blood[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'an utterly dreadful danger to the soul.' The Greek intensifier πάνδεινον strongly heightens 'danger.'
-    reason: lexical_alternative
-  - marker: b
-    text: That is, he judged that taking the drink would amount to treating it as blood.
-    reason: cultural_note
+    text: Compare 2 Samuel 23:16–17 and 1 Chronicles 11:18–19, where David calls the water the blood of the men who risked their lives to bring it.
+    reason: cross_reference
 lexical_decisions:
 - source_word: διαπυρούμενος
   chosen: burning
@@ -143,14 +140,20 @@ revisions:
   from: And even when he was burning with thirst, he reasoned that it would be an all-terrible danger to the soul if the drink were regarded as equivalent to blood.
   to: And even when he was burning with thirst, he reasoned that it would be an all-terrible danger to the soul if the drink were regarded as equivalent to blood.
   rationale: Changed 'when he was' to 'while' for smoother style, and revised 'all-terrible' to the more natural formal English 'utterly dreadful' while preserving the force of πάνδεινον. Kept the rest essentially unchanged.
-
 - timestamp: '2026-05-18T03:00:34Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And even while burning with thirst[b][a], he reasoned that it would be an utterly dreadful danger to the soul if the drink were regarded as equivalent to blood.'
-  to: 'And even while burning with thirst[b][a], he reasoned that it would be an utterly dreadful danger to the soul if the drink were regarded as equivalent to blood.'
+  from: And even while burning with thirst[b][a], he reasoned that it would be an utterly dreadful danger to the soul if the drink were regarded as equivalent to blood.
+  to: And even while burning with thirst[b][a], he reasoned that it would be an utterly dreadful danger to the soul if the drink were regarded as equivalent to blood.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''all-terrible''].'
+- timestamp: '2026-11-09T18:57:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And even while burning with thirst[b][a], he reasoned that it would be an utterly dreadful danger to the soul if the drink were regarded as equivalent to blood.
+  to: But although the king was burning with thirst, he reasoned that drinking it would pose an utterly dreadful danger to his soul, since he regarded the drink as equivalent to blood[a].
+  rationale: I retain the review’s smoother “utterly dreadful,” the burning image, and the established rendering “soul.” The earlier rationale’s inferred legal explanation is not added to the main text; the underlying David narratives clarify the blood comparison in a footnote.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -170,3 +173,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/003/015.job-49780.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:49Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Despite his intense thirst, the king judged that drinking water equivalent to blood would place his soul in terrible danger.
+  meaning_decisions:
+  - source_phrase: ἐλογίσατο πάνδεινον εἶναι κίνδυνον τῇ ψυχῇ λογισθὲν ἰσοδύναμον τὸ ποτὸν αἵματι
+    prior_rendering: he reasoned that it would be an utterly dreadful danger to the soul if the drink were regarded as equivalent to blood
+    new_rendering: he reasoned that drinking it would pose an utterly dreadful danger to his soul, since he regarded the drink as equivalent to blood
+    rationale: The danger concerns consuming the water, and its equivalence to blood is the basis of his judgment, not merely a hypothetical condition.
+  footnote_kinds:
+    a: cross_reference
+  history_weighed: I retain the review’s smoother “utterly dreadful,” the burning image, and the established rendering “soul.” The earlier rationale’s inferred legal explanation is not added to the main text; the underlying David narratives clarify the blood comparison in a footnote.

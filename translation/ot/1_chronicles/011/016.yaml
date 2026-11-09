@@ -4,22 +4,15 @@ source:
   edition: WLC
   text: וְ/דָוִ֖יד אָ֣ז בַּ/מְּצוּדָ֑ה וּ/נְצִ֣יב פְּלִשְׁתִּ֔ים אָ֖ז בְּ/בֵ֥ית לָֽחֶם׃
 translation:
-  text: David was in the stronghold[b][a], and the garrison of the Philistines was then in Bethlehem.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'fortress' for 'stronghold.'
-    reason: lexical_alternative
-  - marker: b
-    text: 'The Hebrew repeats ''then'' in both clauses for emphasis: ''David was then in the stronghold, and the garrison of the Philistines was then in Bethlehem.'''
-    reason: lexical_alternative
+  text: At that time David was in the stronghold, and the Philistine garrison was in Bethlehem.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: מְּצוּדָה
   chosen: stronghold
   alternatives:
   - fortress
   lexicon: HALOT
-  rationale: "מְצוּדָה denotes a fortified place or defensible refuge. 'Stronghold' is idiomatic in English and fits the military setting while preserving the concrete sense better than a more generic 'place of safety.' Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'מְצוּדָה denotes a fortified place or defensible refuge. ''Stronghold'' is idiomatic in English and fits the military setting while preserving the concrete sense better than a more generic ''place of safety.'' Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: נְצִיב
   chosen: garrison
   alternatives:
@@ -73,7 +66,6 @@ revisions:
   from: Now David was then in the stronghold, and the garrison of the Philistines was then in Bethlehem.
   to: Now David was in the stronghold, and the garrison of the Philistines was then in Bethlehem.
   rationale: Removed the first redundant 'then.' The Hebrew has אָז once with David and once with the Philistine garrison; in natural English, retaining only the second 'then' avoids awkwardness while preserving the temporal sense.
-
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
   reviewer_model: codex
@@ -81,6 +73,13 @@ revisions:
   from: Now David was in the stronghold[b][a], and the garrison of the Philistines was then in Bethlehem.
   to: David was in the stronghold[b][a], and the garrison of the Philistines was then in Bethlehem.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:19:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: David was in the stronghold[b][a], and the garrison of the Philistines was then in Bethlehem.
+  to: At that time David was in the stronghold, and the Philistine garrison was in Bethlehem.
+  rationale: The earlier review appropriately avoided repeating “then,” and the later cleanup removed an unnecessary discourse marker. I preserve that naturalness while placing the temporal frame where it clearly governs both locations; the earlier notes are no longer needed.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -102,3 +101,21 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_chronicles/011/016.job-57827.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:19:51Z'
+  change_level: refined
+  confidence: high
+  meaning: At the time of the visit, David occupies the stronghold and the Philistines have a garrison in Bethlehem.
+  meaning_decisions:
+  - source_phrase: אָז ... אָז
+    prior_rendering: David was in the stronghold, and the garrison of the Philistines was then in Bethlehem
+    new_rendering: At that time David was in the stronghold, and the Philistine garrison was in Bethlehem
+    rationale: A single opening time phrase clearly applies to both simultaneous circumstances, carrying the meaning of both Hebrew occurrences without cumbersome repetition.
+  footnote_kinds: {}
+  history_weighed: The earlier review appropriately avoided repeating “then,” and the later cleanup removed an unnecessary discourse marker. I preserve that naturalness while placing the temporal frame where it clearly governs both locations; the earlier notes are no longer needed.

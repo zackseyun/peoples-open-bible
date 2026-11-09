@@ -18,12 +18,12 @@ source:
   - 769
   validation: no_reference
 translation:
-  text: Settle a stranger with you[a], and he will throw you into turmoil, and estrange you from your own.
-  philosophy: optimal-equivalence
+  text: If you take in a stranger, he will throw you into turmoil and estrange you from your own people[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'from your own household' or 'from what is your own.' The Greek τῶν ἰδίων σου is broad and can refer to one's own people, household, or belongings; the context favors estrangement from one's proper circle.
-    reason: lexical_alternative
+    text: Or, 'separate you from your own possessions.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: παροίκισον
   lemma: παροικίζω
@@ -106,14 +106,20 @@ revisions:
   from: Settle a stranger with you, and he will throw you into turmoil, and estrange you from your own people.
   to: Settle a stranger with you, and he will throw you into turmoil, and estrange you from your own people.
   rationale: Changed 'your own people' to 'your own' to reflect τῶν ἰδίων σου more literally and avoid adding 'people,' which is not in the Greek.
-
 - timestamp: '2026-05-18T02:58:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Settle a stranger with you[a], and he will throw you into turmoil, and estrange you from your own.'
-  to: 'Settle a stranger with you[a], and he will throw you into turmoil, and estrange you from your own.'
+  from: Settle a stranger with you[a], and he will throw you into turmoil, and estrange you from your own.
+  to: Settle a stranger with you[a], and he will throw you into turmoil, and estrange you from your own.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from your own people''].'
+- timestamp: '2026-11-09T19:08:09Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Settle a stranger with you[a], and he will throw you into turmoil, and estrange you from your own.
+  to: If you take in a stranger, he will throw you into turmoil and estrange you from your own people[a].
+  rationale: The first draft and lexical rationale already understood 'your own' as one's people, and I restore that clarity rather than retain an incomplete English expression. The possessive can also refer to belongings, so that alternative remains in a note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -133,3 +139,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/033/035.job-51910.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:09Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: An outsider admitted to one's household will cause turmoil and estrangement from one's own people.
+  meaning_decisions:
+  - source_phrase: παροίκισον ἀλλότριον, καὶ διαστρέψει σε ἐν ταραχαῖς
+    prior_rendering: Settle a stranger with you, and he will throw you into turmoil
+    new_rendering: If you take in a stranger, he will throw you into turmoil
+    rationale: The imperative followed by a consequence functions as a warning about what will happen if an outsider is admitted, not as an instruction to admit him.
+  - source_phrase: ἀπαλλοτριώσει σε τῶν ἰδίων σου
+    prior_rendering: estrange you from your own
+    new_rendering: estrange you from your own people
+    rationale: The relational setting favors one's household or personal circle; supplying 'people' makes the English intelligible while the possible reference to belongings remains in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and lexical rationale already understood 'your own' as one's people, and I restore that clarity rather than retain an incomplete English expression. The possessive can also refer to belongings, so that alternative remains in a note.

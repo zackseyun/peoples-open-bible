@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: πιστεύεις, βασιλεῦ Ἀγρίππα, τοῖς προφήταις; οἶδα ὅτι πιστεύεις.
 translation:
-  text: King Agrippa, do you believe the prophets[a]? I know that you do believe.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'accept the prophets' or 'trust the prophets.'
-    reason: lexical_alternative
+  text: King Agrippa, do you believe the prophets? I know that you do believe.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: πιστεύεις
   chosen: do you believe
@@ -82,13 +78,12 @@ revisions:
   from: King Agrippa, do you believe the prophets? I know that you do believe.
   to: King Agrippa, do you believe the prophets? I know that you believe.
   rationale: Removed the extra auxiliary 'do' in the final clause for more natural formal English while preserving the emphatic sense of the Greek.
-
 - timestamp: '2026-05-18T03:10:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'King Agrippa[a], do you believe the prophets? I know that you believe.'
-  to: 'King Agrippa, do you believe the prophets? I know that you do believe.'
+  from: King Agrippa[a], do you believe the prophets? I know that you believe.
+  to: King Agrippa, do you believe the prophets? I know that you do believe.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you do believe''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -98,6 +93,13 @@ revisions:
   from: King Agrippa, do you believe the prophets? I know that you do believe.
   to: King Agrippa, do you believe the prophets[a]? I know that you do believe.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('the prophets') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:07:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: King Agrippa, do you believe the prophets[a]? I know that you do believe.
+  to: King Agrippa, do you believe the prophets? I know that you do believe.
+  rationale: The history briefly removed and then restored the emphatic 'do'; its force suits Paul’s pointed appeal, so the current wording stands. The footnote’s synonyms do not offer a materially different understanding.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -119,3 +121,17 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/acts/026/027.job-53979.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:07:38Z'
+  change_level: kept
+  confidence: high
+  meaning: Paul presses Agrippa to acknowledge belief in the prophets and confidently affirms that he does believe them.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The history briefly removed and then restored the emphatic 'do'; its force suits Paul’s pointed appeal, so the current wording stands. The footnote’s synonyms do not offer a materially different understanding.

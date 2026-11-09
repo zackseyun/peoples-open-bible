@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: Τῇ οὖν ἐπαύριον ἐλθόντος τοῦ Ἀγρίππα καὶ τῆς Βερνίκης μετὰ πολλῆς φαντασίας καὶ εἰσελθόντων εἰς τὸ ἀκροατήριον σύν ⸀τε χιλιάρχοις καὶ ἀνδράσιν τοῖς κατ’ ⸀ἐξοχὴν τῆς πόλεως καὶ κελεύσαντος τοῦ Φήστου ἤχθη ὁ Παῦλος.
 translation:
-  text: So on the next day, Agrippa and Bernice came with great pomp[a] and entered the audience hall with both the military tribunes and the prominent men of the city[b], and at Festus's command Paul was brought in.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'with much pageantry' or 'with great display' for 'with great pomp.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the leading men of the city.'
-    reason: lexical_alternative
+  text: So on the next day, Agrippa and Bernice came with great pomp and entered the audience hall with both the military commanders and the prominent men of the city. At Festus’s command, Paul was brought in.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Τῇ οὖν ἐπαύριον
   chosen: So on the next day
@@ -92,16 +85,15 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'So on the next day, Agrippa and Bernice came with great pomp and entered the audience hall with both the military tribunes and the prominent men of the city, and at Festus''s command Paul was brought in.'
-  to: 'So on the next day, Agrippa and Bernice came with great pomp and entered the audience hall with the military tribunes and the prominent men of the city, and at Festus''s command Paul was brought in.'
+  from: So on the next day, Agrippa and Bernice came with great pomp and entered the audience hall with both the military tribunes and the prominent men of the city, and at Festus's command Paul was brought in.
+  to: So on the next day, Agrippa and Bernice came with great pomp and entered the audience hall with the military tribunes and the prominent men of the city, and at Festus's command Paul was brought in.
   rationale: Removed 'both' before 'the military tribunes' because σύν τε does not require that rendering in English here; otherwise retained the draft as accurate and natural.
-
 - timestamp: '2026-05-18T03:10:25Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So on the next day[a], Agrippa and Bernice came with great pomp and entered the audience hall with the military tribunes and the prominent men of the city[b], and at Festus''s command Paul was brought in.'
-  to: 'So on the next day, Agrippa and Bernice came with great pomp and entered the audience hall with both the military tribunes and the prominent men of the city, and at Festus''s command Paul was brought in.'
+  from: So on the next day[a], Agrippa and Bernice came with great pomp and entered the audience hall with the military tribunes and the prominent men of the city[b], and at Festus's command Paul was brought in.
+  to: So on the next day, Agrippa and Bernice came with great pomp and entered the audience hall with both the military tribunes and the prominent men of the city, and at Festus's command Paul was brought in.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with both the military tribunes''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -111,6 +103,13 @@ revisions:
   from: So on the next day, Agrippa and Bernice came with great pomp and entered the audience hall with both the military tribunes and the prominent men of the city, and at Festus's command Paul was brought in.
   to: So on the next day, Agrippa and Bernice came with great pomp[a] and entered the audience hall with both the military tribunes and the prominent men of the city[b], and at Festus's command Paul was brought in.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('with great pomp') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('the prominent men of the city') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:08:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So on the next day, Agrippa and Bernice came with great pomp[a] and entered the audience hall with both the military tribunes and the prominent men of the city[b], and at Festus's command Paul was brought in.
+  to: So on the next day, Agrippa and Bernice came with great pomp and entered the audience hall with both the military commanders and the prominent men of the city. At Festus’s command, Paul was brought in.
+  rationale: The recorded revision and revert concerned whether to retain “both,” not the participants or the ceremonial display. I retain the coordination and the strong phrase “great pomp,” while clarifying the military title and dividing the long sentence.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -130,3 +129,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/025/023.job-46575.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:55Z'
+  change_level: refined
+  confidence: high
+  meaning: Agrippa and Bernice arrive ceremonially with military and civic dignitaries, and Paul is brought before them at Festus’s command.
+  meaning_decisions:
+  - source_phrase: χιλιάρχοις
+    prior_rendering: the military tribunes
+    new_rendering: the military commanders
+    rationale: The functional English title makes the presence of senior military officers immediately clear without requiring familiarity with Roman ranks.
+  footnote_kinds: {}
+  history_weighed: The recorded revision and revert concerned whether to retain “both,” not the participants or the ceremonial display. I retain the coordination and the strong phrase “great pomp,” while clarifying the military title and dividing the long sentence.

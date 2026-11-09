@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וְ/עַתָּ֗ה שְׁמַֽע נָ֤א גַם אַתָּה֙ בְּ/ק֣וֹל שִׁפְחָתֶ֔/ךָ וְ/אָשִׂ֧מָה לְ/פָנֶ֛י/ךָ פַּת לֶ֖חֶם וֶ/אֱכ֑וֹל וִ/יהִ֤י בְ/ךָ֙ כֹּ֔חַ כִּ֥י תֵלֵ֖ךְ בַּ/דָּֽרֶךְ־־־׃
 translation:
-  text: Now then[a], please listen, you also, to the voice of your female servant, and let me set a piece of bread before you. Eat, so that there may be strength in you[c][b], because you must go on your way.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'maidservant.' The Hebrew specifically uses a feminine term for servant.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'listen to the voice of your female servant,' a Hebrew idiom meaning 'heed your female servant.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'a morsel of bread.'
-    reason: lexical_alternative
+  text: Now please listen to your servant in turn, and let me set a piece of bread before you. Eat so that you will have strength for your journey.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְעַתָּה
   chosen: Now then
@@ -104,14 +94,20 @@ revisions:
   from: Now then, please, you also listen to the voice of your female servant, and let me set a piece of bread before you. Eat, so that there may be strength in you, because you must go on the way.
   to: Now then, please, you also listen to the voice of your female servant, and let me set a piece of bread before you. Eat, so that there may be strength in you, because you must go on the way.
   rationale: Adjusted word order for more natural English while preserving emphasis ('please listen, you also'). Changed 'on the way' to 'on your way' to better reflect the idiom in context. Kept 'female servant' and 'piece of bread' as accurate renderings.
-
 - timestamp: '2026-05-18T02:56:43Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now then[a], please listen, you also, to the voice of your female servant, and let me set a piece of bread before you. Eat, so that there may be strength in you[c][b], because you must go on your way.'
-  to: 'Now then[a], please listen, you also, to the voice of your female servant, and let me set a piece of bread before you. Eat, so that there may be strength in you[c][b], because you must go on your way.'
+  from: Now then[a], please listen, you also, to the voice of your female servant, and let me set a piece of bread before you. Eat, so that there may be strength in you[c][b], because you must go on your way.
+  to: Now then[a], please listen, you also, to the voice of your female servant, and let me set a piece of bread before you. Eat, so that there may be strength in you[c][b], because you must go on your way.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''because you must go on the way''].'
+- timestamp: '2026-11-09T17:23:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Now then[a], please listen, you also, to the voice of your female servant, and let me set a piece of bread before you. Eat, so that there may be strength in you[c][b], because you must go on your way.
+  to: Now please listen to your servant in turn, and let me set a piece of bread before you. Eat so that you will have strength for your journey.
+  rationale: The history correctly identified the reciprocal appeal and the journey as the reason for eating. I retain the modest offer of a piece of bread but replace the cumbersome word order and gender-explicit self-address with natural English.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -131,3 +127,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/028/022.job-59465.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:53Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The woman asks Saul to heed her in return and eat so that he has strength for his journey.
+  meaning_decisions:
+  - source_phrase: שְׁמַע נָא גַם אַתָּה בְּקוֹל שִׁפְחָתֶךָ
+    prior_rendering: please listen, you also, to the voice of your female servant
+    new_rendering: please listen to your servant in turn
+    rationale: The emphatic ‘you also’ asks for reciprocity after her obedience to Saul. ‘Your servant’ retains her deferential address; the speaker’s identity already makes her sex clear.
+  - source_phrase: וִיהִי בְךָ כֹּחַ כִּי תֵלֵךְ בַּדָּרֶךְ
+    prior_rendering: so that there may be strength in you, because you must go on your way
+    new_rendering: so that you will have strength for your journey
+    rationale: Eating is intended to give Saul the physical strength needed for his impending departure. The revised wording conveys that purpose without imposing an explicit obligation absent from the Hebrew.
+  footnote_kinds: {}
+  history_weighed: The history correctly identified the reciprocal appeal and the journey as the reason for eating. I retain the modest offer of a piece of bread but replace the cumbersome word order and gender-explicit self-address with natural English.

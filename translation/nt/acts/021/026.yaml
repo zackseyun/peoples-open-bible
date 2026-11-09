@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: τότε ὁ Παῦλος παραλαβὼν τοὺς ἄνδρας τῇ ἐχομένῃ ἡμέρᾳ σὺν αὐτοῖς ἁγνισθεὶς εἰσῄει εἰς τὸ ἱερόν, διαγγέλλων τὴν ἐκπλήρωσιν τῶν ἡμερῶν τοῦ ἁγνισμοῦ ἕως οὗ προσηνέχθη ὑπὲρ ἑνὸς ἑκάστου αὐτῶν ἡ προσφορά.
 translation:
-  text: Then Paul took the men[a], and on the next day, having purified himself with them, he entered the temple, giving notice of the completion of the days of purification[b], until the offering was presented for each one of them.
-  philosophy: optimal-equivalence
+  text: Then Paul took the men, and the next day he underwent ritual purification with them and entered the temple. He gave notice of when the purification period would end and the offering would be presented for each of them[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the temple precincts'; the Greek ἱερόν refers to the temple complex, not specifically the inner sanctuary.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'was offered' for 'was presented.'
-    reason: lexical_alternative
+    text: Alternatively, the closing clause may describe Paul continuing to enter the temple until the offering was presented for each of them.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: παραλαβὼν
   chosen: took
@@ -132,14 +129,20 @@ revisions:
   from: Then Paul took the men, and on the next day, having purified himself with them, he was entering the temple, giving notice of the completion of the days of purification, until the offering was presented for each one of them.
   to: Then Paul took the men, and on the next day, having purified himself with them, he was entering the temple, giving notice of the completion of the days of purification, until the offering was presented for each one of them.
   rationale: Changed 'he was entering' to 'he entered' for more natural English while preserving the narrative sense; retained the rest as accurate and complete.
-
 - timestamp: '2026-05-18T03:00:14Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Paul took the men[a], and on the next day, having purified himself with them, he entered the temple, giving notice of the completion of the days of purification[b], until the offering was presented for each one of them.'
-  to: 'Then Paul took the men[a], and on the next day, having purified himself with them, he entered the temple, giving notice of the completion of the days of purification[b], until the offering was presented for each one of them.'
+  from: Then Paul took the men[a], and on the next day, having purified himself with them, he entered the temple, giving notice of the completion of the days of purification[b], until the offering was presented for each one of them.
+  to: Then Paul took the men[a], and on the next day, having purified himself with them, he entered the temple, giving notice of the completion of the days of purification[b], until the offering was presented for each one of them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he was entering''].'
+- timestamp: '2026-11-09T17:09:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Paul took the men[a], and on the next day, having purified himself with them, he entered the temple, giving notice of the completion of the days of purification[b], until the offering was presented for each one of them.
+  to: Then Paul took the men, and the next day he underwent ritual purification with them and entered the temple. He gave notice of when the purification period would end and the offering would be presented for each of them[a].
+  rationale: The earlier review’s “entered” naturalized the imperfect appropriately, and it is retained. The earlier lexical rationale also recognized a procedural timetable, which supports a prospective notice here, though the difficult closing clause warrants an alternative note.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -159,3 +162,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/021/026.job-46986.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:09:30Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Paul joined the men in ritual purification and notified the temple of the purification timetable and the offering to be presented for each man.
+  meaning_decisions:
+  - source_phrase: σὺν αὐτοῖς ἁγνισθείς
+    prior_rendering: having purified himself with them
+    new_rendering: he underwent ritual purification with them
+    rationale: This makes the ceremonial character of the action explicit and replaces a compressed participial construction with a natural narrative clause.
+  - source_phrase: διαγγέλλων τὴν ἐκπλήρωσιν τῶν ἡμερῶν τοῦ ἁγνισμοῦ ἕως οὗ προσηνέχθη ... ἡ προσφορά
+    prior_rendering: giving notice of the completion of the days of purification, until the offering was presented
+    new_rendering: He gave notice of when the purification period would end and the offering would be presented
+    rationale: In the context of the still-unfinished seven days in verse 27, the notice most naturally concerns the scheduled completion and offerings, rather than announcing that everything had already occurred; the alternative temporal attachment is noted.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review’s “entered” naturalized the imperfect appropriately, and it is retained. The earlier lexical rationale also recognized a procedural timetable, which supports a prospective notice here, though the difficult closing clause warrants an alternative note.

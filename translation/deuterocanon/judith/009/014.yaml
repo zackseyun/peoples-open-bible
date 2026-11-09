@@ -19,15 +19,8 @@ source:
   confidence: high
   validation: no_reference
 translation:
-  text: And bring about[a], upon all your nation and every tribe, recognition, so that they may know that you are the God of all power and might[b], and there is no other who defends the people of Israel except you.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'acknowledgment' or 'full knowledge' for 'recognition' (Greek ἐπίγνωσιν).
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'the God of all power and might.'
-    reason: lexical_alternative
+  text: And bring your whole nation and every tribe to recognize that you are the God of all power and might, and that no one but you defends the people of Israel.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ποίησον
   chosen: bring about
@@ -132,14 +125,20 @@ revisions:
   from: And bring about, upon all your nation and every tribe, recognition, so that they may know that you are the God of all power and might, and there is no other who defends the people of Israel except you.
   to: And bring about, for all your nation and every tribe, knowledge, so that they may know that you are the God of all power and might, and there is no other who defends the race of Israel except you.
   rationale: Adjusted 'upon' to 'for' for more natural English with ἐπὶ; changed 'recognition' to 'knowledge' for ἐπίγνωσιν; and rendered γένος more literally as 'race' instead of 'people.'
-
 - timestamp: '2026-05-15T15:39:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And bring about[a], for all your nation and every tribe, knowledge, so that they may know that you are the God of all power and might[b], and there is no other who defends the race of Israel except you.'
-  to: 'And bring about[a], upon all your nation and every tribe, recognition, so that they may know that you are the God of all power and might[b], and there is no other who defends the people of Israel except you.'
-  rationale: 'Restored 3 chosen renderings preserving ἐπί+accusative, ἐπίγνωσις distinction from γνῶσις, and γένος as people.'
+  from: And bring about[a], for all your nation and every tribe, knowledge, so that they may know that you are the God of all power and might[b], and there is no other who defends the race of Israel except you.
+  to: And bring about[a], upon all your nation and every tribe, recognition, so that they may know that you are the God of all power and might[b], and there is no other who defends the people of Israel except you.
+  rationale: Restored 3 chosen renderings preserving ἐπί+accusative, ἐπίγνωσις distinction from γνῶσις, and γένος as people.
+- timestamp: '2026-11-09T19:01:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And bring about[a], upon all your nation and every tribe, recognition, so that they may know that you are the God of all power and might[b], and there is no other who defends the people of Israel except you.
+  to: And bring your whole nation and every tribe to recognize that you are the God of all power and might, and that no one but you defends the people of Israel.
+  rationale: The automated revert rightly preserves recognition and “people of Israel,” rather than requiring “knowledge” and “race.” I keep those meanings while replacing the source-shaped syntax with a natural causative sentence; no maintainer revision is recorded.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -159,3 +158,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/009/014.job-50693.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:53Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Judith asks that the whole nation and every tribe recognize God’s complete power and his unique role as Israel’s defender.
+  meaning_decisions:
+  - source_phrase: ποίησον ἐπὶ πᾶν τὸ ἔθνος σου καὶ πάσης φυλῆς ἐπίγνωσιν, τοῦ εἰδῆσαι
+    prior_rendering: bring about, upon all your nation and every tribe, recognition, so that they may know
+    new_rendering: bring your whole nation and every tribe to recognize
+    rationale: The infinitive explains what the requested recognition consists of; a direct verbal construction carries both the causative petition and its intended knowledge without an unnatural abstract noun chain.
+  - source_phrase: οὐκ ἔστιν ἄλλος ὑπερασπίζων τοῦ γένους Ἰσραὴλ εἰ μὴ σύ
+    prior_rendering: there is no other who defends the people of Israel except you
+    new_rendering: no one but you defends the people of Israel
+    rationale: The shorter English construction preserves the emphatic exclusivity of God’s defense.
+  footnote_kinds: {}
+  history_weighed: The automated revert rightly preserves recognition and “people of Israel,” rather than requiring “knowledge” and “race.” I keep those meanings while replacing the source-shaped syntax with a natural causative sentence; no maintainer revision is recorded.

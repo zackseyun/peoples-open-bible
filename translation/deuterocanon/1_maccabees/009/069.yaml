@@ -25,12 +25,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And he became angry with those lawless men who had advised him to come into the country[a], and he killed many of them, and he decided to depart to his own land.
-  philosophy: optimal-equivalence
+  text: Bacchides became angry with the lawless men who had advised him to come into the country. His men killed many of them[a], and he decided to return to his own land.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek manuscripts as represented by Swete read literally, ''and they killed many of them.'' Because the surrounding verbs are singular and the sense is that the same leader acted, the main text renders the clause as singular: ''he killed many of them.'''
-    reason: textual_variant
+    text: Literally, “they killed many of them”; the subject of the killing is not explicitly named.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: ὠργίσθη
   chosen: became angry
@@ -108,7 +108,6 @@ revision_pass:
   timestamp: '2026-04-23T15:31:22Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -128,3 +127,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/009/069.job-48488.json
+revisions:
+- timestamp: '2026-11-09T18:52:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he became angry with those lawless men who had advised him to come into the country[a], and he killed many of them, and he decided to depart to his own land.
+  to: Bacchides became angry with the lawless men who had advised him to come into the country. His men killed many of them[a], and he decided to return to his own land.
+  rationale: The earlier note correctly recorded the plural killing verb, but the main text unnecessarily harmonized it to the surrounding singular verbs. The new wording preserves the plural action while identifying its likely agents, with the remaining uncertainty stated in the note.
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:29Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Bacchides turned angrily against the lawless men who had brought him into the country, many were killed by his forces, and he decided to leave.
+  meaning_decisions:
+  - source_phrase: ἀπέκτειναν ἐξ αὐτῶν πολλούς
+    prior_rendering: he killed many of them
+    new_rendering: His men killed many of them
+    rationale: The supplied text has a plural verb; Bacchides' forces are the natural contextual agents, so the translation need not change the verb to singular.
+  - source_phrase: τοῦ ἀπελθεῖν εἰς τὴν γῆν αὐτοῦ
+    prior_rendering: to depart to his own land
+    new_rendering: to return to his own land
+    rationale: He is deciding to leave this campaign and go back to his own territory.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier note correctly recorded the plural killing verb, but the main text unnecessarily harmonized it to the surrounding singular verbs. The new wording preserves the plural action while identifying its likely agents, with the remaining uncertainty stated in the note.

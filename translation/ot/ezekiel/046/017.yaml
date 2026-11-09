@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וְ/כִֽי יִתֵּ֨ן מַתָּנָ֜ה מִ/נַּחֲלָת֗/וֹ לְ/אַחַד֙ מֵֽ/עֲבָדָ֔י/ו וְ/הָ֤יְתָה לּ/וֹ֙ עַד שְׁנַ֣ת הַ/דְּר֔וֹר וְ/שָׁבַ֖ת לַ/נָּשִׂ֑יא אַ֚ךְ נַחֲלָת֔/וֹ בָּנָ֖י/ו לָ/הֶ֥ם תִּהְיֶֽה־־׃
 translation:
-  text: But if he gives a gift from his inheritance to one of his servants[a], it shall belong to him until the year of liberty; then it shall return to the prince. Only his inheritance belongs to his sons; it shall be theirs.
-  philosophy: optimal-equivalence
+  text: But if he gives a gift from his inheritance to one of his servants, it shall belong to that servant until the year of liberty[a]; then it shall return to the prince. The prince's inheritance shall belong permanently only to his sons.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the year of release'; this likely refers to the Jubilee-type restoration year, though the Hebrew here says 'liberty' rather than using the usual term 'Jubilee.'
-    reason: lexical_alternative
+    text: Probably the Jubilee year, when hereditary land returned to its original family; see Leviticus 25:10, 13.
+    reason: cultural_note
 lexical_decisions:
 - source_word: וְכִי
   chosen: But if
@@ -116,14 +116,20 @@ revisions:
   from: But if he gives a gift from his inheritance to one of his servants, it shall belong to him until the year of liberty; then it shall return to the prince. Only his inheritance belongs to his sons; it shall be theirs.
   to: But if he gives a gift from his inheritance to one of his servants, it shall be his until the year of liberty; then it shall return to the prince. Only his inheritance to his sons shall be theirs.
   rationale: 'Made the wording slightly more literal and natural: changed ''it shall belong to him'' to ''it shall be his,'' and restructured the final clause to reflect the Hebrew more closely: ''Only his inheritance to his sons shall be theirs.'''
-
 - timestamp: '2026-05-16T01:53:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But if he gives a gift from his inheritance to one of his servants[a], it shall be his until the year of liberty; then it shall return to the prince. Only his inheritance to his sons shall be theirs.'
-  to: 'But if he gives a gift from his inheritance to one of his servants[a], it shall belong to him until the year of liberty; then it shall return to the prince. Only his inheritance belongs to his sons; it shall be theirs.'
-  rationale: 'Azure substituted ''it shall be his'' — drafter''s explicit rejected alternative for chosen ''it shall belong to him'' (temporary-possession force). Also collapsed drafter''s two-clause final sentence without engaging emphasis rationale.'
+  from: But if he gives a gift from his inheritance to one of his servants[a], it shall be his until the year of liberty; then it shall return to the prince. Only his inheritance to his sons shall be theirs.
+  to: But if he gives a gift from his inheritance to one of his servants[a], it shall belong to him until the year of liberty; then it shall return to the prince. Only his inheritance belongs to his sons; it shall be theirs.
+  rationale: Azure substituted 'it shall be his' — drafter's explicit rejected alternative for chosen 'it shall belong to him' (temporary-possession force). Also collapsed drafter's two-clause final sentence without engaging emphasis rationale.
+- timestamp: '2026-11-09T17:41:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But if he gives a gift from his inheritance to one of his servants[a], it shall belong to him until the year of liberty; then it shall return to the prince. Only his inheritance belongs to his sons; it shall be theirs.
+  to: But if he gives a gift from his inheritance to one of his servants, it shall belong to that servant until the year of liberty[a]; then it shall return to the prince. The prince's inheritance shall belong permanently only to his sons.
+  rationale: I preserve the history's emphasis on temporary possession and its cautious identification of the year of liberty. The final clause now places 'only' with the sons, expressing the legal distinction that the recorded rationale intended.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -143,3 +149,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/046/017.job-64474.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:41:29Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A servant's gift of land returns to the prince in the year of liberty, whereas only the prince's sons retain hereditary ownership.
+  meaning_decisions:
+  - source_phrase: וְהָיְתָה לּוֹ
+    prior_rendering: it shall belong to him
+    new_rendering: it shall belong to that servant
+    rationale: Naming the recipient prevents the pronoun from being confused with the prince.
+  - source_phrase: אַךְ נַחֲלָתוֹ בָּנָיו לָהֶם תִּהְיֶה
+    prior_rendering: Only his inheritance belongs to his sons; it shall be theirs.
+    new_rendering: The prince's inheritance shall belong permanently only to his sons.
+    rationale: The restriction concerns which recipients retain hereditary ownership, not which possessions the sons can own; permanence is established by the contrast with the servant's temporary grant.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: I preserve the history's emphasis on temporary possession and its cautious identification of the year of liberty. The final clause now places 'only' with the sons, expressing the legal distinction that the recorded rationale intended.

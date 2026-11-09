@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/אֶת הָ/אַ֔יִל נִתַּ֖ח לִ/נְתָחָ֑י/ו וַ/יַּקְטֵ֤ר מֹשֶׁה֙ אֶת הָ/רֹ֔אשׁ וְ/אֶת הַ/נְּתָחִ֖ים וְ/אֶת הַ/פָּֽדֶר־־־־׃
 translation:
-  text: Then he cut the ram into its pieces[a], and Moses burned the head, the pieces, and the suet in smoke.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the suet' or 'the fat.' The Hebrew term refers to a fatty portion of the sacrificial animal; here it is rendered 'fat tail' in light of the ram offering context.
-    reason: lexical_alternative
+  text: Then he cut the ram into pieces, and Moses offered up the head, the pieces, and the suet in smoke.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: הָאַיִל
   chosen: the ram
@@ -71,14 +67,20 @@ revisions:
   from: Then he cut the ram into its pieces, and Moses burned the head, the pieces, and the fat tail in smoke.
   to: Then he cut the ram into its pieces, and Moses burned the head, the pieces, and the fat tail in smoke.
   rationale: Replaced 'fat tail' with 'suet' for lexical accuracy; the source has פדר, referring to fat/suet, not specifically the tail.
-
 - timestamp: '2026-05-18T02:58:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then he cut the ram into its pieces[a], and Moses burned the head, the pieces, and the suet in smoke.'
-  to: 'Then he cut the ram into its pieces[a], and Moses burned the head, the pieces, and the suet in smoke.'
+  from: Then he cut the ram into its pieces[a], and Moses burned the head, the pieces, and the suet in smoke.
+  to: Then he cut the ram into its pieces[a], and Moses burned the head, the pieces, and the suet in smoke.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the fat tail''].'
+- timestamp: '2026-11-09T18:17:43Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then he cut the ram into its pieces[a], and Moses burned the head, the pieces, and the suet in smoke.
+  to: Then he cut the ram into pieces, and Moses offered up the head, the pieces, and the suet in smoke.
+  rationale: The current 'suet' preserves the lexical correction supported by פדר, despite conflicting automated records about a revert to 'fat tail.' The outdated footnote defending 'fat tail' has been dropped.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -98,3 +100,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/008/020.job-45283.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:17:43Z'
+  change_level: refined
+  confidence: high
+  meaning: The ram was cut into pieces, and its head, pieces, and suet were offered in smoke.
+  meaning_decisions:
+  - source_phrase: נִתַּח לִנְתָחָיו
+    prior_rendering: cut the ram into its pieces
+    new_rendering: cut the ram into pieces
+    rationale: The Hebrew cognate construction describes cutting up the animal; English does not need the possessive.
+  - source_phrase: וַיַּקְטֵר
+    prior_rendering: burned ... in smoke
+    new_rendering: offered up ... in smoke
+    rationale: This expresses sacrificial burning in natural English while retaining the ascent of the offering in smoke.
+  footnote_kinds: {}
+  history_weighed: The current 'suet' preserves the lexical correction supported by פדר, despite conflicting automated records about a revert to 'fat tail.' The outdated footnote defending 'fat tail' has been dropped.

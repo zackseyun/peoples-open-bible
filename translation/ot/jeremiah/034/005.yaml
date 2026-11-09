@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: בְּ/שָׁל֣וֹם תָּמ֗וּת וּֽ/כְ/מִשְׂרְפ֣וֹת אֲ֠בוֹתֶי/ךָ הַ/מְּלָכִ֨ים הָ/רִֽאשֹׁנִ֜ים אֲשֶׁר הָי֣וּ לְ/פָנֶ֗י/ךָ כֵּ֚ן יִשְׂרְפוּ לָ֔/ךְ וְ/ה֥וֹי אָד֖וֹן יִסְפְּדוּ לָ֑/ךְ כִּֽי דָבָ֥ר אֲנִֽי דִבַּ֖רְתִּי נְאֻם יְהוָֽה־־־־־־׃ס
 translation:
-  text: You will die in peace[a]. And as spices were burned for your fathers, the former kings who were before you, so they will burn spices for you, and they will lament for you, saying, “Alas, lord!” For I have spoken the word[b], declares Yahweh.
-  philosophy: optimal-equivalence
+  text: You will die in peace. They will burn spices in your honor[a], as they did for your ancestors, the kings who reigned before you, and lament for you, saying, “Alas, lord!” For I myself have spoken this word, declares Yahweh.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'as funeral burnings were made for your fathers.' The Hebrew refers to ceremonial burnings in honor of deceased kings, likely of spices or aromatics, not the burning of the body.
+    text: The Hebrew refers to ceremonial funeral burnings in honor of deceased kings, probably of spices or other aromatics, rather than cremation.
     reason: cultural_note
-  - marker: b
-    text: Or 'Ah, lord!' The Hebrew is a formal cry of lament over a ruler.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: בְּשָׁלוֹם
   chosen: in peace
@@ -115,14 +112,20 @@ revisions:
   from: You will die in peace. And as spices were burned for your fathers, the former kings who were before you, so they will burn them for you, and they will lament for you, saying, “Alas, lord!” For I have spoken the word, declares the LORD.
   to: You will die in peace. And as spices were burned for your fathers, the former kings who were before you, so they will burn them for you, and they will lament for you, saying, “Alas, lord!” For I have spoken the word, declares the LORD.
   rationale: Added 'spices' after 'burn' in the second clause to avoid the unintended meaning 'burn you/them' and to reflect the Hebrew idiom consistently and naturally.
-
 - timestamp: '2026-05-18T02:56:41Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'You will die in peace[a]. And as spices were burned for your fathers, the former kings who were before you, so they will burn spices for you, and they will lament for you, saying, “Alas, lord!” For I have spoken the word[b], declares Yahweh.'
-  to: 'You will die in peace[a]. And as spices were burned for your fathers, the former kings who were before you, so they will burn spices for you, and they will lament for you, saying, “Alas, lord!” For I have spoken the word[b], declares Yahweh.'
+  from: You will die in peace[a]. And as spices were burned for your fathers, the former kings who were before you, so they will burn spices for you, and they will lament for you, saying, “Alas, lord!” For I have spoken the word[b], declares Yahweh.
+  to: You will die in peace[a]. And as spices were burned for your fathers, the former kings who were before you, so they will burn spices for you, and they will lament for you, saying, “Alas, lord!” For I have spoken the word[b], declares Yahweh.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''so they will burn them for you''].'
+- timestamp: '2026-11-09T20:30:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You will die in peace[a]. And as spices were burned for your fathers, the former kings who were before you, so they will burn spices for you, and they will lament for you, saying, “Alas, lord!” For I have spoken the word[b], declares Yahweh.
+  to: You will die in peace. They will burn spices in your honor[a], as they did for your ancestors, the kings who reigned before you, and lament for you, saying, “Alas, lord!” For I myself have spoken this word, declares Yahweh.
+  rationale: No MAINTAINER revision is recorded. I retain the current wording’s explicit “spices,” consistent with the review’s concern about misleading suggestions of cremation, while smoothing the royal-predecessor phrase and replacing the misplaced footnotes with one note on the funeral custom.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -146,3 +149,30 @@ cross_check:
     agree: 1
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/ot/jeremiah/034/005.job-38413.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:30:50Z'
+  change_level: refined
+  confidence: high
+  meaning: Yahweh assures Zedekiah that he will die in peace and be honored with the funeral rites and lamentation given to his royal ancestors.
+  meaning_decisions:
+  - source_phrase: וּכְמִשְׂרְפוֹת ... כֵּן יִשְׂרְפוּ לָךְ
+    prior_rendering: And as spices were burned for your fathers ... so they will burn spices for you
+    new_rendering: They will burn spices in your honor, as they did for your ancestors
+    rationale: The reordered comparison reads naturally in English, while “in your honor” makes the purpose of the royal funeral burnings explicit.
+  - source_phrase: אֲבוֹתֶיךָ הַמְּלָכִים הָרִאשֹׁנִים אֲשֶׁר הָיוּ לְפָנֶיךָ
+    prior_rendering: your fathers, the former kings who were before you
+    new_rendering: your ancestors, the kings who reigned before you
+    rationale: “Ancestors” conveys the dynastic sense of “fathers,” and “reigned before you” clarifies the royal succession without redundant English phrasing.
+  - source_phrase: כִּי דָבָר אֲנִי דִבַּרְתִּי
+    prior_rendering: For I have spoken the word
+    new_rendering: For I myself have spoken this word
+    rationale: The explicit Hebrew pronoun emphasizes Yahweh as the speaker; “this word” identifies the preceding promise as the assurance he has given.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: No MAINTAINER revision is recorded. I retain the current wording’s explicit “spices,” consistent with the review’s concern about misleading suggestions of cremation, while smoothing the royal-predecessor phrase and replacing the misplaced footnotes with one note on the funeral custom.

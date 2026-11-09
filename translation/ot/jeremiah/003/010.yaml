@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/גַם בְּ/כָל זֹ֗את לֹא שָׁ֨בָה אֵלַ֜/י בָּגוֹדָ֧ה אֲחוֹתָ֛/הּ יְהוּדָ֖ה בְּ/כָל לִבָּ֑/הּ כִּ֥י אִם בְּ/שֶׁ֖קֶר נְאֻם יְהוָֽה־־־־־־׃פ
 translation:
-  text: Yet in spite of all this[a], faithless Judah, her sister did not return to me with all her heart, but only in falsehood[b], declares Yahweh.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'treacherous Judah, her sister.' The Hebrew adjective can emphasize betrayal or unfaithfulness.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'but in falsehood' / 'but falsely,' indicating that Judah's return was insincere rather than wholehearted.
-    reason: lexical_alternative
+  text: “Yet in spite of all this, her treacherous sister Judah did not return to me with all her heart, but only pretended to,” declares Yahweh.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְגַם
   chosen: Yet
@@ -118,14 +111,20 @@ revisions:
   from: Yet in spite of all this, faithless Judah, her sister, did not return to me with all her heart, but only in falsehood, declares the LORD.
   to: Yet in spite of all this, her treacherous sister Judah did not return to me with all her heart, but only in falsehood, declares the LORD.
   rationale: Reordered and revised 'faithless Judah, her sister' to 'her treacherous sister Judah' to reflect the Hebrew appositional phrase more naturally and to better match בָּגוֹדָה ('treacherous'). Kept the rest unchanged.
-
 - timestamp: '2026-05-16T08:25:14Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Yet in spite of all this[a], her treacherous sister Judah did not return to me with all her heart, but only in falsehood[b], declares Yahweh.'
-  to: 'Yet in spite of all this[a], faithless Judah, her sister did not return to me with all her heart, but only in falsehood[b], declares Yahweh.'
-  rationale: 'Azure substituted ''treacherous'' (drafter''s explicit rejected_alternative for בָּגוֹדָה — drafter noted ''less natural here'') and reordered to ''her sister Judah'' (drafter''s explicit rejected_alternative for אֲחוֹתָהּ יְהוּדָה — drafter chose ''Judah, her sister'').'
+  from: Yet in spite of all this[a], her treacherous sister Judah did not return to me with all her heart, but only in falsehood[b], declares Yahweh.
+  to: Yet in spite of all this[a], faithless Judah, her sister did not return to me with all her heart, but only in falsehood[b], declares Yahweh.
+  rationale: Azure substituted 'treacherous' (drafter's explicit rejected_alternative for בָּגוֹדָה — drafter noted 'less natural here') and reordered to 'her sister Judah' (drafter's explicit rejected_alternative for אֲחוֹתָהּ יְהוּדָה — drafter chose 'Judah, her sister').
+- timestamp: '2026-11-09T17:55:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Yet in spite of all this[a], faithless Judah, her sister did not return to me with all her heart, but only in falsehood[b], declares Yahweh.
+  to: “Yet in spite of all this, her treacherous sister Judah did not return to me with all her heart, but only pretended to,” declares Yahweh.
+  rationale: The earlier review’s “her treacherous sister Judah” improves both the syntax and the contrast maintained elsewhere in the passage; the automated revert records no human editorial ruling against it. The documented explanation of “in falsehood” supports rendering the return as pretense.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -148,3 +147,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/003/010.job-67161.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:55:10Z'
+  change_level: refined
+  confidence: high
+  meaning: Despite everything she had witnessed, Judah’s apparent return to Yahweh was a pretense rather than wholehearted devotion.
+  meaning_decisions:
+  - source_phrase: בָּגוֹדָה אֲחוֹתָהּ יְהוּדָה
+    prior_rendering: faithless Judah, her sister
+    new_rendering: her treacherous sister Judah
+    rationale: The natural apposition preserves the sister relationship and consistently distinguishes Judah’s betrayal from Israel’s faithlessness.
+  - source_phrase: כִּי אִם בְּשֶׁקֶר
+    prior_rendering: but only in falsehood
+    new_rendering: but only pretended to
+    rationale: The falsehood consists specifically in an insincere return; the new wording makes that accusation explicit without adding an explanation.
+  footnote_kinds: {}
+  history_weighed: The earlier review’s “her treacherous sister Judah” improves both the syntax and the contrast maintained elsewhere in the passage; the automated revert records no human editorial ruling against it. The documented explanation of “in falsehood” supports rendering the return as pretense.

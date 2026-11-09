@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: αὕτη δέ ἐστιν ἡ αἰώνιος ζωὴ ἵνα γινώσκωσι σὲ τὸν μόνον ἀληθινὸν θεὸν καὶ ὃν ἀπέστειλας Ἰησοῦν Χριστόν.
 translation:
-  text: 'And this is eternal life: that they may know you[a], the only true God, and Jesus Christ whom you sent.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Greek title Christos means ‘Messiah’; here it appears in the conventional English personal-name form.
-    reason: alternative_reading
+  text: 'And this is eternal life: to know you, the only true God, and Jesus Christ whom you sent.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: αὕτη δέ ἐστιν
   chosen: And this is
@@ -108,10 +104,16 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "'And this is eternal life: that they may know you, the only true God, and Jesus Messiah whom you sent.'"
-  to: "'And this is eternal life: that they may know you, the only true God, and Jesus the Messiah whom you sent.'"
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
-
+  from: '''And this is eternal life: that they may know you, the only true God, and Jesus Messiah whom you sent.'''
+  to: '''And this is eternal life: that they may know you, the only true God, and Jesus the Messiah whom you sent.'''
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:10:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And this is eternal life: that they may know you[a], the only true God, and Jesus Christ whom you sent.'
+  to: 'And this is eternal life: to know you, the only true God, and Jesus Christ whom you sent.'
+  rationale: The naming history alternates among automated renderings, but the standing ruling and current wording support 'Jesus Christ' in this name construction. The earlier decision not to expand or soften 'the only true God' is retained.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -134,3 +136,21 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/high_scrutiny/nt/john/017/003.job-7479.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:10:37Z'
+  change_level: refined
+  confidence: high
+  meaning: Eternal life consists in knowing the Father, the only true God, and Jesus Christ whom he sent.
+  meaning_decisions:
+  - source_phrase: ἵνα γινώσκωσι
+    prior_rendering: that they may know
+    new_rendering: to know
+    rationale: This clause defines eternal life rather than expressing a possible outcome; the English infinitive conveys that defining relationship directly.
+  footnote_kinds: {}
+  history_weighed: The naming history alternates among automated renderings, but the standing ruling and current wording support 'Jesus Christ' in this name construction. The earlier decision not to expand or soften 'the only true God' is retained.

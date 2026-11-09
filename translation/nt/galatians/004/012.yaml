@@ -4,17 +4,11 @@ source:
   edition: SBLGNT
   text: Γίνεσθε ὡς ἐγώ, ὅτι κἀγὼ ὡς ὑμεῖς, ἀδελφοί, δέομαι ὑμῶν. οὐδέν με ἠδικήσατε·
 translation:
-  text: Become as I am[a], because I also am as you are, brothers; I beg you[c][b], you did me no wrong.
-  philosophy: optimal-equivalence
+  text: 'Brothers and sisters, I beg you: become like me, for I became like you[a]. You did me no wrong.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'like me.'
-    reason: lexical_alternative
-  - marker: b
-    text: '''Brothers'' here addresses the believing community and likely includes both men and women.'
-    reason: cultural_note
-  - marker: c
-    text: Or 'I too am as you are'; the Greek is elliptical, and 'became' is supplied to make the sense clear in context.
+    text: Or, “for I too am like you”; the Greek leaves the verb unstated in this clause.
     reason: alternative_reading
 lexical_decisions:
 - source_word: Γίνεσθε
@@ -100,14 +94,20 @@ revisions:
   from: Become as I am, because I also became as you are, brothers. I beg you, you did me no wrong.
   to: Become as I am, because I also became as you are, brothers. I beg you, you did me no wrong.
   rationale: Changed 'became' to 'am' for the second clause to reflect the Greek more directly, and adjusted punctuation for a more natural rendering while preserving all source elements.
-
 - timestamp: '2026-05-18T03:01:45Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Become as I am[a], because I also am as you are, brothers; I beg you[c][b], you did me no wrong.'
-  to: 'Become as I am[a], because I also am as you are, brothers; I beg you[c][b], you did me no wrong.'
+  from: Become as I am[a], because I also am as you are, brothers; I beg you[c][b], you did me no wrong.
+  to: Become as I am[a], because I also am as you are, brothers; I beg you[c][b], you did me no wrong.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I also became as you are''].'
+- timestamp: '2026-11-09T17:09:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Become as I am[a], because I also am as you are, brothers; I beg you[c][b], you did me no wrong.
+  to: 'Brothers and sisters, I beg you: become like me, for I became like you[a]. You did me no wrong.'
+  rationale: The first draft and lexical discussion support “became” in the elliptical clause, while the later “am” remains a genuine alternative. I render the community-wide address directly rather than preserving masculine form alone and explaining its scope in a note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -127,3 +127,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/galatians/004/012.job-54283.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:09:00Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Paul pleads with the Galatians to become like him, reminding them that he had become like them and that they had done him no wrong.
+  meaning_decisions:
+  - source_phrase: Γίνεσθε ὡς ἐγώ, ὅτι κἀγὼ ὡς ὑμεῖς
+    prior_rendering: Become as I am, because I also am as you are
+    new_rendering: become like me, for I became like you
+    rationale: Supplying “became” best expresses Paul’s prior identification with these Gentile believers, which grounds his appeal for them to share his present freedom; the stative alternative remains in a note.
+  - source_phrase: ἀδελφοί
+    prior_rendering: brothers
+    new_rendering: Brothers and sisters
+    rationale: The familial address embraces the believing community, including women; the English communicates that scope directly.
+  - source_phrase: ἀδελφοί, δέομαι ὑμῶν
+    prior_rendering: brothers; I beg you
+    new_rendering: 'Brothers and sisters, I beg you:'
+    rationale: Placing the address and entreaty first clearly attaches Paul’s urgent appeal to the command, rather than to the following statement that they did him no wrong.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and lexical discussion support “became” in the elliptical clause, while the later “am” remains a genuine alternative. I render the community-wide address directly rather than preserving masculine form alone and explaining its scope in a note.

@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/הָיָ֛ה אִם בִּ֥ן הַכּ֖וֹת הָ/רָשָׁ֑ע וְ/הִפִּיל֤/וֹ הַ/שֹּׁפֵט֙ וְ/הִכָּ֣ה/וּ לְ/פָנָ֔י/ו כְּ/דֵ֥י רִשְׁעָת֖/וֹ בְּ/מִסְפָּֽר־׃
 translation:
-  text: then[a], if the wicked man deserves to be beaten, the judge shall make him lie down and have him beaten before him, according to his wickedness, by number.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'according to the number,' that is, with a counted number of blows proportionate to the offense.
-    reason: lexical_alternative
+  text: If the guilty man deserves a beating, the judge shall make him lie down and have him beaten in his presence. The number of blows shall be proportionate to his offense.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: בִּן הַכּוֹת
   chosen: deserves to be beaten
@@ -86,14 +82,20 @@ revisions:
   from: then, if the wicked man deserves to be beaten, the judge shall make him lie down and have him beaten in his presence, according to his wickedness, by number.
   to: then, if the wicked man deserves to be beaten, the judge shall make him lie down and have him beaten in his presence, according to his wickedness, by number.
   rationale: Changed 'in his presence' to the more literal 'before him' to reflect the source wording more closely; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:56:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'then[a], if the wicked man deserves to be beaten, the judge shall make him lie down and have him beaten before him, according to his wickedness, by number.'
-  to: 'then[a], if the wicked man deserves to be beaten, the judge shall make him lie down and have him beaten before him, according to his wickedness, by number.'
+  from: then[a], if the wicked man deserves to be beaten, the judge shall make him lie down and have him beaten before him, according to his wickedness, by number.
+  to: then[a], if the wicked man deserves to be beaten, the judge shall make him lie down and have him beaten before him, according to his wickedness, by number.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in his presence''].'
+- timestamp: '2026-11-09T17:32:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: then[a], if the wicked man deserves to be beaten, the judge shall make him lie down and have him beaten before him, according to his wickedness, by number.
+  to: If the guilty man deserves a beating, the judge shall make him lie down and have him beaten in his presence. The number of blows shall be proportionate to his offense.
+  rationale: The first draft and lexical record support ‘in his presence,’ while the later source-transparent wording adds no meaning. I retain the established understanding that the judge supervises the beating and bring the earlier footnote’s explanation of proportionality into the text.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -113,3 +115,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/025/002.job-61803.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:32:40Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A guilty man sentenced to a beating must receive a counted punishment proportionate to his offense under the judge’s supervision.
+  meaning_decisions:
+  - source_phrase: אִם בִּן הַכּוֹת הָרָשָׁע
+    prior_rendering: if the wicked man deserves to be beaten
+    new_rendering: If the guilty man deserves a beating
+    rationale: The man is the party found guilty in the preceding verse, and the Hebrew idiom concerns liability to corporal punishment.
+  - source_phrase: לְפָנָיו
+    prior_rendering: before him
+    new_rendering: in his presence
+    rationale: The punishment takes place in the judge’s presence and under his oversight, not merely spatially in front of him.
+  - source_phrase: כְּדֵי רִשְׁעָתוֹ בְּמִסְפָּר
+    prior_rendering: according to his wickedness, by number
+    new_rendering: The number of blows shall be proportionate to his offense
+    rationale: The phrase requires counted blows corresponding to the seriousness of the offense; the prior wording leaves that relationship obscure.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical record support ‘in his presence,’ while the later source-transparent wording adds no meaning. I retain the established understanding that the judge supervises the beating and bring the earlier footnote’s explanation of proportionality into the text.

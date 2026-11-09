@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: πίστει Ἰωσὴφ τελευτῶν περὶ τῆς ἐξόδου τῶν υἱῶν Ἰσραὴλ ἐμνημόνευσεν, καὶ περὶ τῶν ὀστέων αὐτοῦ ἐνετείλατο.
 translation:
-  text: By faith Joseph, as he was nearing the end of his life[a], mentioned the exodus[b] of the sons of Israel and gave instructions concerning his bones.
-  philosophy: optimal-equivalence
+  text: By faith Joseph, as he was dying, spoke about the exodus of the Israelites and gave instructions concerning his bones[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'when he was dying.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the departure' of the sons of Israel.
-    reason: lexical_alternative
+    text: Genesis 50:24–25 records Joseph’s instructions to carry his bones out of Egypt when Israel departed.
+    reason: cross_reference
 lexical_decisions:
 - source_word: πίστει
   chosen: By faith
@@ -94,13 +91,12 @@ revisions:
   from: By faith Joseph, as he was nearing the end of his life, mentioned the exodus of the sons of Israel and gave instructions concerning his bones.
   to: By faith Joseph, when he was dying, mentioned the exodus of the sons of Israel and gave instructions concerning his bones.
   rationale: Replaced 'as he was nearing the end of his life' with the more direct and lexically precise 'when he was dying' to reflect τελευτῶν more closely, while keeping the rest of the verse intact.
-
 - timestamp: '2026-05-18T03:10:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'By faith Joseph[a], when he was dying[b], mentioned the exodus of the sons of Israel and gave instructions concerning his bones.'
-  to: 'By faith Joseph, as he was nearing the end of his life, mentioned the exodus of the sons of Israel and gave instructions concerning his bones.'
+  from: By faith Joseph[a], when he was dying[b], mentioned the exodus of the sons of Israel and gave instructions concerning his bones.
+  to: By faith Joseph, as he was nearing the end of his life, mentioned the exodus of the sons of Israel and gave instructions concerning his bones.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as he was nearing the end of his life''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -110,6 +106,13 @@ revisions:
   from: By faith Joseph, as he was nearing the end of his life, mentioned the exodus of the sons of Israel and gave instructions concerning his bones.
   to: By faith Joseph, as he was nearing the end of his life[a], mentioned the exodus[b] of the sons of Israel and gave instructions concerning his bones.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('as he was nearing the end of his life') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('the exodus') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:12:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: By faith Joseph, as he was nearing the end of his life[a], mentioned the exodus[b] of the sons of Israel and gave instructions concerning his bones.
+  to: By faith Joseph, as he was dying, spoke about the exodus of the Israelites and gave instructions concerning his bones[a].
+  rationale: The earlier review's direct rendering of Joseph's death is adopted despite the subsequent automated revert. The established terms 'exodus' and 'bones' remain, with the Genesis allusion explaining why the instructions matter.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -132,3 +135,30 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/hebrews/011/022.job-54553.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:34Z'
+  change_level: refined
+  confidence: high
+  meaning: At the end of his life, Joseph expressed faith in Israel's future exodus and gave directions about his bones.
+  meaning_decisions:
+  - source_phrase: τελευτῶν
+    prior_rendering: as he was nearing the end of his life
+    new_rendering: as he was dying
+    rationale: The participle places Joseph's words at his death, expressed directly and consistently with Jacob's situation in the preceding verse.
+  - source_phrase: τῶν υἱῶν Ἰσραὴλ
+    prior_rendering: the sons of Israel
+    new_rendering: the Israelites
+    rationale: This is the customary designation of Israel's people, not a reference restricted to male descendants.
+  - source_phrase: ἐμνημόνευσεν
+    prior_rendering: mentioned
+    new_rendering: spoke about
+    rationale: Joseph deliberately addressed the coming exodus; 'spoke about' avoids suggesting an incidental passing mention.
+  footnote_kinds:
+    a: cross_reference
+  history_weighed: The earlier review's direct rendering of Joseph's death is adopted despite the subsequent automated revert. The established terms 'exodus' and 'bones' remain, with the Genesis allusion explaining why the instructions matter.

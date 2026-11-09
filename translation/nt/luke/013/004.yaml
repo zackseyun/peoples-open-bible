@@ -4,14 +4,11 @@ source:
   edition: SBLGNT
   text: ἢ ἐκεῖνοι οἱ ⸀δεκαοκτὼ ἐφ’ οὓς ἔπεσεν ὁ πύργος ἐν τῷ Σιλωὰμ καὶ ἀπέκτεινεν αὐτούς, δοκεῖτε ὅτι ⸀αὐτοὶ ὀφειλέται ἐγένοντο παρὰ πάντας ⸀τοὺς ἀνθρώπους τοὺς ⸀κατοικοῦντας Ἰερουσαλήμ;
 translation:
-  text: Or those eighteen on whom the tower in Siloam fell and killed them—do you think that they became debtors beyond all the men living in Jerusalem?[a][b]
-  philosophy: optimal-equivalence
+  text: Or what about those eighteen who were killed when the tower at Siloam fell on them—do you think they were more guilty[a] than everyone else living in Jerusalem?
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'sinners' or 'worse offenders' for 'debtors'; the Greek uses ὀφειλέται, literally 'debtors,' likely in a moral sense.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'all the people living in Jerusalem.' The Greek ἀνθρώπους can refer to human beings generally.
+    text: Literally, “debtors,” here a metaphor for those accountable for sin.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἢ
@@ -129,14 +126,20 @@ revisions:
   from: Or those eighteen on whom the tower in Siloam fell and killed them—do you think that they became debtors beyond all the men living in Jerusalem?
   to: Or those eighteen on whom the tower in Siloam fell and killed them—do you think that they became worse offenders than all the people living in Jerusalem?
   rationale: Replaced 'debtors beyond all the men' with 'worse offenders than all the people' to reflect ὀφειλέται idiomatically in context as culpable/sinful rather than financially indebted, and updated 'men' to 'people' for the inclusive sense of ἀνθρώπους.
-
 - timestamp: '2026-05-18T03:01:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Or those eighteen on whom the tower in Siloam fell and killed them—do you think that they became worse offenders than all the people living in Jerusalem?[a][b]'
-  to: 'Or those eighteen on whom the tower in Siloam fell and killed them—do you think that they became debtors beyond all the men living in Jerusalem?[a][b]'
+  from: Or those eighteen on whom the tower in Siloam fell and killed them—do you think that they became worse offenders than all the people living in Jerusalem?[a][b]
+  to: Or those eighteen on whom the tower in Siloam fell and killed them—do you think that they became debtors beyond all the men living in Jerusalem?[a][b]
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''beyond all the men''].'
+- timestamp: '2026-11-09T17:12:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Or those eighteen on whom the tower in Siloam fell and killed them—do you think that they became debtors beyond all the men living in Jerusalem?[a][b]
+  to: Or what about those eighteen who were killed when the tower at Siloam fell on them—do you think they were more guilty[a] than everyone else living in Jerusalem?
+  rationale: The earlier review correctly identified moral culpability and the inclusive reference to Jerusalem's inhabitants; its reversal was automated. I build on those meaning-based gains while preserving the distinct debt metaphor in a note.
 cross_check:
   status: moderate_agreement
   agreement: 0.8
@@ -159,3 +162,30 @@ cross_check:
     major-issues: 1
     minor-issues: 1
   source_review: state/reviews/gemini/low_agreement_recheck/nt/luke/013/004.job-27747.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:20Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jesus asks whether the eighteen people killed by the falling tower were more guilty than Jerusalem's other inhabitants.
+  meaning_decisions:
+  - source_phrase: ἢ ἐκεῖνοι οἱ δεκαοκτὼ ἐφ’ οὓς ἔπεσεν ὁ πύργος ἐν τῷ Σιλωὰμ καὶ ἀπέκτεινεν αὐτούς
+    prior_rendering: Or those eighteen on whom the tower in Siloam fell and killed them
+    new_rendering: Or what about those eighteen who were killed when the tower at Siloam fell on them
+    rationale: This recasts the compressed introduction as a natural English question while retaining the tower, location, victims, and cause of death.
+  - source_phrase: αὐτοὶ ὀφειλέται ἐγένοντο
+    prior_rendering: they became debtors
+    new_rendering: they were more guilty
+    rationale: In parallel with verse 2, the debt language denotes moral liability, not financial indebtedness or guilt created by the disaster; the debt metaphor remains in a footnote.
+  - source_phrase: παρὰ πάντας τοὺς ἀνθρώπους τοὺς κατοικοῦντας Ἰερουσαλήμ
+    prior_rendering: beyond all the men living in Jerusalem
+    new_rendering: than everyone else living in Jerusalem
+    rationale: The phrase compares the victims with Jerusalem's other inhabitants generally, without limiting the comparison to males.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier review correctly identified moral culpability and the inclusive reference to Jerusalem's inhabitants; its reversal was automated. I build on those meaning-based gains while preserving the distinct debt metaphor in a note.

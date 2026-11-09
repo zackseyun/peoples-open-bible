@@ -4,14 +4,14 @@ source:
   edition: WLC
   text: וְ/שָׁפַט֙ בֵּ֣ין הַ/גּוֹיִ֔ם וְ/הוֹכִ֖יחַ לְ/עַמִּ֣ים רַבִּ֑ים וְ/כִתְּת֨וּ חַרְבוֹתָ֜/ם לְ/אִתִּ֗ים וַ/חֲנִיתֽוֹתֵי/הֶם֙ לְ/מַזְמֵר֔וֹת לֹא יִשָּׂ֨א ג֤וֹי אֶל גּוֹי֙ חֶ֔רֶב וְ/לֹא יִלְמְד֥וּ ע֖וֹד מִלְחָמָֽה־־־׃פ
 translation:
-  text: And he will judge between the nations and arbitrate for many peoples[a]; and they will beat their swords into plowshares and their spears into pruning hooks. Nation will not lift up sword against nation[b], and they will not learn war anymore.
-  philosophy: optimal-equivalence
+  text: He will judge between the nations and settle disputes for many peoples[a]; they will beat their swords into plowshares and their spears into pruning hooks. Nation will not raise a sword against nation, nor will they train for war anymore[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'rebuke many peoples' / 'arbitrate for many peoples.' The Hebrew verb can carry judicial or corrective force.
-    reason: lexical_alternative
+    text: Or, 'rebuke many peoples.'
+    reason: alternative_reading
   - marker: b
-    text: Or 'they will no longer learn war.' The Hebrew is literally 'they will not learn war anymore.'
+    text: Literally, 'they will not learn war anymore.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וְשָׁפַט
@@ -112,14 +112,20 @@ revisions:
   from: And he will judge between the nations and decide disputes for many peoples; and they will beat their swords into plowshares and their spears into pruning hooks. Nation will not lift up sword against nation, and they will not learn war anymore.
   to: And he will judge between the nations and decide disputes for many peoples; and they will beat their swords into plowshares and their spears into pruning hooks. Nation will not lift up sword against nation, and they will not learn war anymore.
   rationale: Changed 'decide disputes for many peoples' to 'arbitrate for many peoples' for a closer and more natural rendering of the verb meaning 'reprove/decide/arbitrate' without adding 'disputes,' which is not explicit in the source.
-
 - timestamp: '2026-05-17T20:21:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he will judge between the nations and arbitrate for many peoples[a]; and they will beat their swords into plowshares and their spears into pruning hooks. Nation will not lift up sword against nation[b], and they will not learn war anymore.'
-  to: 'And he will judge between the nations and arbitrate for many peoples[a]; and they will beat their swords into plowshares and their spears into pruning hooks. Nation will not lift up sword against nation[b], and they will not learn war anymore.'
+  from: And he will judge between the nations and arbitrate for many peoples[a]; and they will beat their swords into plowshares and their spears into pruning hooks. Nation will not lift up sword against nation[b], and they will not learn war anymore.
+  to: And he will judge between the nations and arbitrate for many peoples[a]; and they will beat their swords into plowshares and their spears into pruning hooks. Nation will not lift up sword against nation[b], and they will not learn war anymore.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''decide disputes''].'
+- timestamp: '2026-11-09T17:48:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he will judge between the nations and arbitrate for many peoples[a]; and they will beat their swords into plowshares and their spears into pruning hooks. Nation will not lift up sword against nation[b], and they will not learn war anymore.
+  to: He will judge between the nations and settle disputes for many peoples[a]; they will beat their swords into plowshares and their spears into pruning hooks. Nation will not raise a sword against nation, nor will they train for war anymore[b].
+  rationale: The draft's 'decide disputes' and the review's 'arbitrate' agree on judicial meaning; the objection to supplying 'disputes' concerned form rather than sense. I make that action explicit, retain the agricultural images, and clarify military learning as training.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -139,3 +145,27 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/isaiah/002/004.job-65965.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:48:48Z'
+  change_level: refined
+  confidence: high
+  meaning: Yahweh will adjudicate between nations, leading them to turn their weapons into farming tools and abandon warfare and its training.
+  meaning_decisions:
+  - source_phrase: וְהוֹכִיחַ לְעַמִּים רַבִּים
+    prior_rendering: arbitrate for many peoples
+    new_rendering: settle disputes for many peoples
+    rationale: The parallel with judging between nations establishes judicial resolution; naming the disputes makes the action clear without adding a new event.
+  - source_phrase: וְלֹא יִלְמְדוּ עוֹד מִלְחָמָה
+    prior_rendering: and they will not learn war anymore
+    new_rendering: nor will they train for war anymore
+    rationale: The expression concerns learning how to wage war, not simply learning about it or experiencing it; the literal wording remains in a note to preserve the contrast with divine teaching.
+  footnote_kinds:
+    a: alternative_meaning
+    b: literal_wording
+  history_weighed: The draft's 'decide disputes' and the review's 'arbitrate' agree on judicial meaning; the objection to supplying 'disputes' concerned form rather than sense. I make that action explicit, retain the agricultural images, and clarify military learning as training.

@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: τότε λέγει αὐτῷ ὁ Ἰησοῦς· ⸀Ὕπαγε, Σατανᾶ· γέγραπται γάρ· Κύριον τὸν θεόν σου προσκυνήσεις καὶ αὐτῷ μόνῳ λατρεύσεις.
 translation:
-  text: 'Then Jesus says to him, “Go away, Satan! For it is written: ‘You shall worship the Lord your God[a], and serve him only[b].’”'
-  philosophy: optimal-equivalence
+  text: 'Then Jesus said to him, “Go away, Satan! For it is written: ‘You shall worship the Lord your God and serve only him[a].’”'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “You shall bow down to the Lord your God.” The Greek verb can more literally denote prostration or bowing in reverence.
-    reason: lexical_alternative
-  - marker: b
-    text: The verb translated “serve” can specifically refer to sacred or religious service offered to God.
-    reason: lexical_alternative
+    text: See Deuteronomy 6:13.
+    reason: cross_reference
 lexical_decisions:
 - source_word: τότε
   chosen: Then
@@ -109,7 +106,6 @@ revisions:
   from: 'Then Jesus says to him, “Go away, Satan! For it is written: ‘You shall worship the Lord your God, and serve him only.’”'
   to: 'Then Jesus says to him, “Go away, Satan! For it is written: ‘You shall worship the Lord your God, and serve only him.’”'
   rationale: Adjusted word order from 'serve him only' to 'serve only him' to reflect the Greek emphasis on 'only' modifying 'him' more naturally and precisely in English.
-
 - timestamp: '2026-05-18T03:10:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -117,6 +113,13 @@ revisions:
   from: 'Then Jesus says to him[a], “Go away, Satan! For it is written: ‘You shall worship the Lord your God[b], and serve only him.’”'
   to: 'Then Jesus says to him, “Go away, Satan! For it is written: ‘You shall worship the Lord your God, and serve him only.’”'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''him only''].'
+- timestamp: '2026-11-09T17:14:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Then Jesus says to him, “Go away, Satan! For it is written: ‘You shall worship the Lord your God[a], and serve him only[b].’”'
+  to: 'Then Jesus said to him, “Go away, Satan! For it is written: ‘You shall worship the Lord your God and serve only him[a].’”'
+  rationale: The April revision clarified the exclusivity of “only him”; the later automated revert supplied no independent meaning-based reason to lose that clarity. I retain the distinction between worship and service and keep “Lord” in the quotation.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -138,3 +141,26 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/004/010.job-56701.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:14:23Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus dismissed Satan and affirmed that worship and service belong to God alone.
+  meaning_decisions:
+  - source_phrase: λέγει
+    prior_rendering: says
+    new_rendering: said
+    rationale: The historical present introduces speech within a past narrative, which English expresses naturally in the past tense.
+  - source_phrase: αὐτῷ μόνῳ λατρεύσεις
+    prior_rendering: serve him only
+    new_rendering: serve only him
+    rationale: Placing “only” before “him” makes clear that God alone is the recipient of this service.
+  footnote_kinds:
+    a: cross_reference
+  history_weighed: The April revision clarified the exclusivity of “only him”; the later automated revert supplied no independent meaning-based reason to lose that clarity. I retain the distinction between worship and service and keep “Lord” in the quotation.

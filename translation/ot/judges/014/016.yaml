@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/תֵּבְךְּ֩ אֵ֨שֶׁת שִׁמְשׁ֜וֹן עָלָ֗י/ו וַ/תֹּ֨אמֶר֙ רַק שְׂנֵאתַ֨/נִי֙ וְ/לֹ֣א אֲהַבְתָּ֔/נִי הַֽ/חִידָ֥ה חַ֨דְתָּ֙ לִ/בְנֵ֣י עַמִּ֔/י וְ/לִ֖/י לֹ֣א הִגַּ֑דְתָּה וַ/יֹּ֣אמֶר לָ֗/הּ הִנֵּ֨ה לְ/אָבִ֧/י וּ/לְ/אִמִּ֛/י לֹ֥א הִגַּ֖דְתִּי וְ/לָ֥/ךְ אַגִּֽיד־׃
 translation:
-  text: Then Samson’s wife wept before him and said[a], “You only hate me; you do not love me. You have posed the riddle to the sons of my people, but you have not told me.” And he said to her, “Look, I have not told my father or my mother, so should I tell you?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, “to the sons of my people.” The Hebrew is masculine and likely refers to the men of her people in this setting.
-    reason: lexical_alternative
+  text: Then Samson’s wife wept before him and said, “You only hate me; you do not love me. You have posed the riddle to the men of my people, but you have not told me the answer.” He said to her, “Look, I have not told my father or my mother, so should I tell you?”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַתֵּבְךְּ ... עָלָיו
   chosen: wept over him
@@ -110,14 +106,20 @@ revisions:
   from: Then Samson’s wife wept over him and said, “You only hate me; you do not love me. You have posed the riddle to the sons of my people, but you have not told me.” And he said to her, “Look, I have not told my father or my mother, so should I tell you?”
   to: Then Samson’s wife wept over him and said, “You only hate me; you do not love me. You have posed the riddle to the sons of my people, but you have not told me.” And he said to her, “Look, I have not told my father or my mother, so should I tell you?”
   rationale: Changed 'wept over him' to 'wept before him' for a more natural and accurate rendering of the Hebrew preposition in this context. No other changes needed.
-
 - timestamp: '2026-05-18T02:55:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Samson’s wife wept before him and said[a], “You only hate me; you do not love me. You have posed the riddle to the sons of my people, but you have not told me.” And he said to her, “Look, I have not told my father or my mother, so should I tell you?”'
-  to: 'Then Samson’s wife wept before him and said[a], “You only hate me; you do not love me. You have posed the riddle to the sons of my people, but you have not told me.” And he said to her, “Look, I have not told my father or my mother, so should I tell you?”'
+  from: Then Samson’s wife wept before him and said[a], “You only hate me; you do not love me. You have posed the riddle to the sons of my people, but you have not told me.” And he said to her, “Look, I have not told my father or my mother, so should I tell you?”
+  to: Then Samson’s wife wept before him and said[a], “You only hate me; you do not love me. You have posed the riddle to the sons of my people, but you have not told me.” And he said to her, “Look, I have not told my father or my mother, so should I tell you?”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''wept over him''].'
+- timestamp: '2026-11-09T18:13:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Samson’s wife wept before him and said[a], “You only hate me; you do not love me. You have posed the riddle to the sons of my people, but you have not told me.” And he said to her, “Look, I have not told my father or my mother, so should I tell you?”
+  to: Then Samson’s wife wept before him and said, “You only hate me; you do not love me. You have posed the riddle to the men of my people, but you have not told me the answer.” He said to her, “Look, I have not told my father or my mother, so should I tell you?”
+  rationale: I retain the current “wept before him,” which avoids the draft’s potentially misleading suggestion that she mourned over him. The earlier rationale identifies “sons of my people” as the Philistine men, so I express that sense directly and distinguish the riddle from its answer.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -137,3 +139,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/judges/014/016.job-69247.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:13:38Z'
+  change_level: refined
+  confidence: high
+  meaning: Samson’s wife tearfully accuses him of hating her because he has withheld the answer, but he replies that he has not even disclosed it to his parents.
+  meaning_decisions:
+  - source_phrase: לִבְנֵי עַמִּי
+    prior_rendering: to the sons of my people
+    new_rendering: to the men of my people
+    rationale: The phrase identifies her fellow Philistine men, not offspring; “men” preserves the contextual masculine reference without reproducing the kinship idiom.
+  - source_phrase: וְלִי לֹא הִגַּדְתָּה
+    prior_rendering: but you have not told me
+    new_rendering: but you have not told me the answer
+    rationale: She knows the riddle has been posed but complains that Samson has withheld its solution.
+  footnote_kinds: {}
+  history_weighed: I retain the current “wept before him,” which avoids the draft’s potentially misleading suggestion that she mourned over him. The earlier rationale identifies “sons of my people” as the Philistine men, so I express that sense directly and distinguish the riddle from its answer.

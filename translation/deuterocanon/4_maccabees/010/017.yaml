@@ -16,11 +16,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: When bloodthirsty and murderous and most savage Antiochus heard these things[a], he ordered his tongue to be cut out.
-  philosophy: optimal-equivalence
+  text: When the bloodthirsty, murderous, and utterly abominable[a] Antiochus heard this, he ordered the young man's tongue to be cut out.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek: ''most savage''; the rare superlative adjective intensifies Antiochus''s brutality and could also be rendered ''most cruel'' or ''most fierce.'''
+    text: Literally 'all-defiled'; the word shares its root with 'most defiled tyrant' in 10:10.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ταῦτα
@@ -110,7 +110,13 @@ revisions:
   from: When Antiochus, bloodthirsty and murderous and most savage, heard these things, he ordered his tongue to be cut out.
   to: When bloodthirsty and murderous and most savage Antiochus heard these things, he ordered his tongue to be cut out.
   rationale: Adjusted word order to more closely reflect the Greek appositional description of Antiochus without changing meaning. Kept 'his tongue' to reflect the Greek pronoun referring to the victim.
-
+- timestamp: '2026-11-09T22:10:11Z'
+  adjudicator: claude-opus-5.5-meaning-pass
+  reviewer_model: claude-opus-5-5
+  category: meaning_retranslation
+  from: When bloodthirsty and murderous and most savage Antiochus heard these things[a], he ordered his tongue to be cut out.
+  to: When the bloodthirsty, murderous, and utterly abominable[a] Antiochus heard this, he ordered the young man's tongue to be cut out.
+  rationale: The revision pass only reordered the epithets and there is no MAINTAINER revision. I kept the string of three condemning adjectives and corrected the third from what the root actually means; the old footnote rested on the misreading, so I replaced it.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -130,3 +136,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/010/017.job-49987.json
+meaning_pass:
+  run: full-v4-opus
+  model: claude-opus-5-5
+  deployment: claude-code-subscription
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: null
+  timestamp: '2026-11-09T22:10:11Z'
+  change_level: refined
+  confidence: medium
+  meaning: Enraged by the brother's defiance, the brutal and utterly defiled Antiochus orders the young man's tongue cut out.
+  meaning_decisions:
+  - source_phrase: πανμμερώτατος (= παμμιαρώτατος)
+    prior_rendering: most savage
+    new_rendering: utterly abominable
+    rationale: The supplied spelling is garbled; the word is the superlative of μιαρός, 'defiled, abominable' (as in μιαρώτατε τύραννε, 10:10), so it condemns Antiochus as utterly foul rather than merely fierce.
+  - source_phrase: τὴν γλῶτταν αὐτοῦ
+    prior_rendering: his tongue
+    new_rendering: the young man's tongue
+    rationale: Right after naming Antiochus, 'his tongue' could be misread as the king's own; naming the victim keeps the reference clear.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The revision pass only reordered the epithets and there is no MAINTAINER revision. I kept the string of three condemning adjectives and corrected the third from what the root actually means; the old footnote rested on the misreading, so I replaced it.

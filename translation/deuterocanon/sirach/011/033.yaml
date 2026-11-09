@@ -28,18 +28,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 11:33
 translation:
-  text: Before death[a], do not call a man blessed[b], for in his end a man is made known[c].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'The Greek parallel reads quite differently: ''Beware of an evildoer, for he devises evil, lest he put a blemish on you forever.'' This likely reflects a different textual form; the Hebrew is followed here as the primary witness.'
-    reason: alternative_reading
-  - marker: b
-    text: Or 'do not pronounce a man happy/fortunate.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'at his end a man is recognized' or 'becomes evident.'
-    reason: lexical_alternative
+  text: Do not call a man blessed before his death, for a man's end reveals who he is.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: לִפְנֵי מָוֶת
   chosen: Before death
@@ -143,13 +133,12 @@ revisions:
   from: Before death, do not call a man blessed, for in his end a man is made known.
   to: Before death, do not call a man blessed, for in his end a man is known.
   rationale: Changed 'is made known' to 'is known' for a more direct and natural rendering of the Hebrew, while preserving the sense. Kept 'call a man blessed' as an accurate rendering of תְּאַשֶּׁר גָּבֶר.
-
 - timestamp: '2026-05-18T03:09:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Before death[a], do not call a man blessed[c][b], for in his end a man is known.'
-  to: 'Before death, do not call a man blessed, for in his end a man is made known.'
+  from: Before death[a], do not call a man blessed[c][b], for in his end a man is known.
+  to: Before death, do not call a man blessed, for in his end a man is made known.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''is made known''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -159,6 +148,13 @@ revisions:
   from: Before death, do not call a man blessed, for in his end a man is made known.
   to: Before death[a], do not call a man blessed[b], for in his end a man is made known[c].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it; [b] restored to the position it held before an earlier revision pass dropped it; [c] anchored to ('is made known') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:06:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Before death[a], do not call a man blessed[b], for in his end a man is made known[c].
+  to: Do not call a man blessed before his death, for a man's end reveals who he is.
+  rationale: The history's debate over 'known' versus 'made known' points to disclosure rather than mere familiarity. I preserve that gain by expressing the end's revealing force directly and keeping the warning against judgment before death.
 cross_check:
   status: needs_review
   agreement: 0.2
@@ -178,3 +174,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/011/033.job-51280.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:13Z'
+  change_level: refined
+  confidence: high
+  meaning: A man's life should not be pronounced blessed before his death because its end reveals who he is.
+  meaning_decisions:
+  - source_phrase: לִפְנֵי מָוֶת
+    prior_rendering: Before death
+    new_rendering: before his death
+    rationale: The implied subject of death is made explicit so that the prohibition cannot be mistaken as referring to the reader's death.
+  - source_phrase: כִּי בְּאַחֲרִיתוֹ יִנָּכֵר אִישׁ
+    prior_rendering: for in his end a man is made known
+    new_rendering: for a man's end reveals who he is
+    rationale: The expression concerns the disclosure of a person's character or condition through his final outcome, not simply his becoming known to others.
+  footnote_kinds: {}
+  history_weighed: The history's debate over 'known' versus 'made known' points to disclosure rather than mere familiarity. I preserve that gain by expressing the end's revealing force directly and keeping the warning against judgment before death.

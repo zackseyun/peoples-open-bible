@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וַ/תּוֹרִדֵ֥/ם בַּ/חֶ֖בֶל בְּעַ֣ד הַֽ/חַלּ֑וֹן כִּ֤י בֵיתָ/הּ֙ בְּ/קִ֣יר הַֽ/חוֹמָ֔ה וּ/בַֽ/חוֹמָ֖ה הִ֥יא יוֹשָֽׁבֶת׃
 translation:
-  text: Then she let them down by a rope through the window[a], because her house was in the wall of the city, and she was living in the wall.
-  philosophy: optimal-equivalence
+  text: Then she lowered them through the window with a rope, because her house was built into the city wall[a], and that was where she lived.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'her house was on the city wall, and she lived on the wall.' The Hebrew describes her dwelling as situated in/within the wall structure.
-    reason: lexical_alternative
+    text: Or, “her house was on the city wall.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וַתּוֹרִדֵם
   chosen: Then she let them down
@@ -75,14 +75,20 @@ revisions:
   from: Then she let them down by a rope through the window, because her house was built into the wall, and she was living in the wall.
   to: Then she let them down by a rope through the window, because her house was built into the wall, and she was living in the wall.
   rationale: Revised 'was built into the wall' to 'was in the wall of the city' for closer alignment with the Hebrew, which states her house was in/on the wall; retained the final clause literally as 'she was living in the wall.'
-
 - timestamp: '2026-05-17T07:51:06Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then she let them down by a rope through the window[a], because her house was in the wall of the city, and she was living in the wall.'
-  to: 'Then she let them down by a rope through the window[a], because her house was in the wall of the city, and she was living in the wall.'
+  from: Then she let them down by a rope through the window[a], because her house was in the wall of the city, and she was living in the wall.
+  to: Then she let them down by a rope through the window[a], because her house was in the wall of the city, and she was living in the wall.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''her house was built into the wall''].'
+- timestamp: '2026-11-09T18:07:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then she let them down by a rope through the window[a], because her house was in the wall of the city, and she was living in the wall.
+  to: Then she lowered them through the window with a rope, because her house was built into the city wall[a], and that was where she lived.
+  rationale: The first draft and lexical rationale already recognized the architectural sense in 'built into the wall.' The later recorded rationales favored greater literalness but did not establish a better meaning, so that earlier clarification is restored.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -102,3 +108,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/joshua/002/015.job-68536.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:07:39Z'
+  change_level: refined
+  confidence: medium
+  meaning: Rahab lowers the men through her window with a rope because her dwelling forms part of the city wall.
+  meaning_decisions:
+  - source_phrase: וַתּוֹרִדֵם בַּחֶבֶל בְּעַד הַחַלּוֹן
+    prior_rendering: Then she let them down by a rope through the window
+    new_rendering: Then she lowered them through the window with a rope
+    rationale: '''Lowered'' and the reordered instrumental phrase clearly describe the escape through the window.'
+  - source_phrase: בֵיתָהּ בְּקִיר הַחוֹמָה וּבַחוֹמָה הִיא יוֹשָׁבֶת
+    prior_rendering: her house was in the wall of the city, and she was living in the wall
+    new_rendering: her house was built into the city wall[a], and that was where she lived
+    rationale: The source describes a dwelling associated structurally with the fortification, not someone living inside solid masonry; the serious alternative location is retained in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and lexical rationale already recognized the architectural sense in 'built into the wall.' The later recorded rationales favored greater literalness but did not establish a better meaning, so that earlier clarification is restored.

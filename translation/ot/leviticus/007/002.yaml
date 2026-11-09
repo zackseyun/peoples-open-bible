@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: בִּ/מְק֗וֹם אֲשֶׁ֤ר יִשְׁחֲטוּ֙ אֶת הָ֣/עֹלָ֔ה יִשְׁחֲט֖וּ אֶת הָ/אָשָׁ֑ם וְ/אֶת דָּמ֛/וֹ יִזְרֹ֥ק עַל הַ/מִּזְבֵּ֖חַ סָבִֽיב־־־־׃
 translation:
-  text: In the place where they slaughter the burnt offering[a], they shall slaughter the guilt offering, and he shall splash its blood against the altar all around.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'reparation offering' or 'compensation offering.' The Hebrew term emphasizes both guilt and the making of restitution.
-    reason: lexical_alternative
+  text: The guilt offering shall be slaughtered in the place where the burnt offering is slaughtered, and the priest shall splash its blood against the altar all around.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: בִּמְקוֹם
   chosen: In the place
@@ -102,14 +98,20 @@ revisions:
   from: In the place where they slaughter the burnt offering, they shall slaughter the guilt offering, and he shall splash its blood against the altar on all sides.
   to: In the place where they slaughter the burnt offering, they shall slaughter the guilt offering, and he shall splash its blood against the altar on all sides.
   rationale: Changed 'on all sides' to 'all around' for a more natural and standard rendering of סָבִיב while preserving the formal sense. No other changes needed.
-
 - timestamp: '2026-05-18T02:58:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'In the place where they slaughter the burnt offering[a], they shall slaughter the guilt offering, and he shall splash its blood against the altar all around.'
-  to: 'In the place where they slaughter the burnt offering[a], they shall slaughter the guilt offering, and he shall splash its blood against the altar all around.'
+  from: In the place where they slaughter the burnt offering[a], they shall slaughter the guilt offering, and he shall splash its blood against the altar all around.
+  to: In the place where they slaughter the burnt offering[a], they shall slaughter the guilt offering, and he shall splash its blood against the altar all around.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''on all sides''].'
+- timestamp: '2026-11-09T22:10:11Z'
+  adjudicator: claude-opus-5.5-meaning-pass
+  reviewer_model: claude-opus-5-5
+  category: meaning_retranslation
+  from: In the place where they slaughter the burnt offering[a], they shall slaughter the guilt offering, and he shall splash its blood against the altar all around.
+  to: The guilt offering shall be slaughtered in the place where the burnt offering is slaughtered, and the priest shall splash its blood against the altar all around.
+  rationale: No maintainer revision exists; the April pass's 'all around' was kept in the current text and is retained, while the reverted drafter wording carried no meaning-based argument against it.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -129,3 +131,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/007/002.job-45252.json
+meaning_pass:
+  run: full-v4-opus
+  model: claude-opus-5-5
+  deployment: claude-code-subscription
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: null
+  timestamp: '2026-11-09T22:10:11Z'
+  change_level: refined
+  confidence: high
+  meaning: The guilt offering must be slaughtered at the same place as the burnt offering, and the priest must splash its blood on every side of the altar.
+  meaning_decisions:
+  - source_phrase: בִּמְקוֹם אֲשֶׁר יִשְׁחֲטוּ אֶת־הָעֹלָה יִשְׁחֲטוּ אֶת־הָאָשָׁם
+    prior_rendering: In the place where they slaughter the burnt offering, they shall slaughter the guilt offering
+    new_rendering: The guilt offering shall be slaughtered in the place where the burnt offering is slaughtered
+    rationale: The Hebrew 'they' is impersonal; an English passive with the guilt offering as subject states the rule plainly.
+  - source_phrase: יִזְרֹק
+    prior_rendering: he shall splash
+    new_rendering: the priest shall splash
+    rationale: The unnamed 'he' is the officiating priest, named in verse 5; making the subject explicit avoids confusion with the impersonal 'they'.
+  - source_phrase: footnote on burnt offering
+    prior_rendering: note on 'reparation offering' attached to 'burnt offering'
+    new_rendering: dropped
+    rationale: The note was misplaced and repeats the note on the guilt offering already given in verse 1.
+  footnote_kinds: {}
+  history_weighed: No maintainer revision exists; the April pass's 'all around' was kept in the current text and is retained, while the reverted drafter wording carried no meaning-based argument against it.

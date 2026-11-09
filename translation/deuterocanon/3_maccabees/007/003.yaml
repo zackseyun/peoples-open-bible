@@ -16,15 +16,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: Some of our friends[a], being more constantly at our side out of malice, persuaded us that the Jews under our rule, after being gathered together in groups[b], should be punished with unusual penalties as rebels.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'in groups' or 'in organized bodies'; the Greek term can denote an organized body or association, and its precise force here is somewhat uncertain.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'with extraordinary punishments.' The Greek describes penalties as strange, foreign, or unusual.
-    reason: lexical_alternative
+  text: Some of our friends at court, acting out of malice and repeatedly pressing us, persuaded us to have the Jews under our rule gathered together in groups and punished as rebels with extraordinary penalties.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: φίλων
   chosen: friends
@@ -137,14 +130,20 @@ revisions:
   from: Some of our friends, being more constantly at our side out of malice, persuaded us that the Jews under our rule, after being gathered together as associations, should be punished with unusual penalties because they had revolted.
   to: Some of our friends, being more constantly at our side out of malice, persuaded us that the Jews under our rule, after being gathered together as associations, should be punished with unusual penalties because they had revolted.
   rationale: Revised 'as associations' to the more natural 'in groups' for τὰ συστήματα, and streamlined the final clause to 'as rebels' to reflect ἀποστάντων without the awkward 'because they had revolted.'
-
 - timestamp: '2026-05-16T19:22:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Some of our friends[a], being more constantly at our side out of malice, persuaded us that the Jews under our rule, after being gathered together in groups[b], should be punished with unusual penalties as rebels.'
-  to: 'Some of our friends[a], being more constantly at our side out of malice, persuaded us that the Jews under our rule, after being gathered together in groups[b], should be punished with unusual penalties as rebels.'
-  rationale: 'Restored drafter ''as associations'' (preserving the chosen rendering of τὰ συστήματα) and ''because they had revolted'' (preserving the chosen explicit causal clause for ἀποστάντων) per chosen renderings.'
+  from: Some of our friends[a], being more constantly at our side out of malice, persuaded us that the Jews under our rule, after being gathered together in groups[b], should be punished with unusual penalties as rebels.
+  to: Some of our friends[a], being more constantly at our side out of malice, persuaded us that the Jews under our rule, after being gathered together in groups[b], should be punished with unusual penalties as rebels.
+  rationale: Restored drafter 'as associations' (preserving the chosen rendering of τὰ συστήματα) and 'because they had revolted' (preserving the chosen explicit causal clause for ἀποστάντων) per chosen renderings.
+- timestamp: '2026-11-09T18:57:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Some of our friends[a], being more constantly at our side out of malice, persuaded us that the Jews under our rule, after being gathered together in groups[b], should be punished with unusual penalties as rebels.
+  to: Some of our friends at court, acting out of malice and repeatedly pressing us, persuaded us to have the Jews under our rule gathered together in groups and punished as rebels with extraordinary penalties.
+  rationale: I retain the current wording's gains in using 'in groups' and 'as rebels,' since the earlier 'because they had revolted' could present the accusation as established fact. The lexical record's court setting and repeated access support making the courtiers' persistent pressure explicit.
 cross_check:
   status: moderate_agreement
   agreement: 0.8
@@ -164,3 +163,33 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/007/003.job-49686.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:55Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The king says that malicious court associates repeatedly pressed him to gather the Jews under his rule and punish them as rebels with extraordinary penalties.
+  meaning_decisions:
+  - source_phrase: τῶν φίλων τινὲς
+    prior_rendering: Some of our friends
+    new_rendering: Some of our friends at court
+    rationale: The royal setting identifies these friends as court associates with access to the king, rather than merely private acquaintances.
+  - source_phrase: κατὰ κακοήθειαν πυκνότερον ἡμῖν παρακείμενοι
+    prior_rendering: being more constantly at our side out of malice
+    new_rendering: acting out of malice and repeatedly pressing us
+    rationale: In the persuasion context, the expression conveys persistent malicious pressure rather than merely physical proximity.
+  - source_phrase: συνέπεισαν ἡμᾶς εἰς τὸ τοὺς ὑπὸ τὴν βασιλείαν Ἰουδαίους συναθροίσαντας τὰ συστήματα κολάζεσθαι
+    prior_rendering: persuaded us that the Jews under our rule, after being gathered together in groups, should be punished
+    new_rendering: persuaded us to have the Jews under our rule gathered together in groups and punished
+    rationale: The English makes clear that the courtiers persuaded the king to authorize the gathering and punishment.
+  - source_phrase: ξενιζούσαις ἀποστάντων τιμωρίαις
+    prior_rendering: with unusual penalties as rebels
+    new_rendering: as rebels with extraordinary penalties
+    rationale: The wording preserves the alleged political offense while giving the exceptional punishments their rhetorical force.
+  footnote_kinds: {}
+  history_weighed: I retain the current wording's gains in using 'in groups' and 'as rebels,' since the earlier 'because they had revolted' could present the accusation as established fact. The lexical record's court setting and repeated access support making the courtiers' persistent pressure explicit.

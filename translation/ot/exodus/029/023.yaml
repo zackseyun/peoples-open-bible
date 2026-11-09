@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/כִכַּ֨ר לֶ֜חֶם אַחַ֗ת וַֽ/חַלַּ֨ת לֶ֥חֶם שֶׁ֛מֶן אַחַ֖ת וְ/רָקִ֣יק אֶחָ֑ד מִ/סַּל֙ הַ/מַּצּ֔וֹת אֲשֶׁ֖ר לִ/פְנֵ֥י יְהוָֽה׃
 translation:
-  text: and one loaf of bread[a], one cake of bread with oil, and one wafer, from the basket of unleavened bread that is before Yahweh.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Hebrew: ''YHWH''; alternatively rendered ''Yahweh.'''
-    reason: alternative_reading
+  text: You shall also take one loaf of bread, one cake of bread mixed with oil, and one wafer from the basket of unleavened bread before Yahweh.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: כִּכַּר לֶחֶם
   chosen: loaf of bread
@@ -85,14 +81,20 @@ revisions:
   from: and one loaf of bread, one cake of bread mixed with oil, and one wafer, from the basket of unleavened bread that is before the LORD.
   to: and one loaf of bread, one cake of bread mixed with oil, and one wafer, from the basket of unleavened bread that is before the LORD.
   rationale: Changed 'mixed with oil' to 'with oil' for closer lexical correspondence to the source without interpretive expansion. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:56:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and one loaf of bread[a], one cake of bread with oil, and one wafer, from the basket of unleavened bread that is before Yahweh.'
-  to: 'and one loaf of bread[a], one cake of bread with oil, and one wafer, from the basket of unleavened bread that is before Yahweh.'
+  from: and one loaf of bread[a], one cake of bread with oil, and one wafer, from the basket of unleavened bread that is before Yahweh.
+  to: and one loaf of bread[a], one cake of bread with oil, and one wafer, from the basket of unleavened bread that is before Yahweh.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''cake of bread mixed with oil''].'
+- timestamp: '2026-11-09T17:36:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and one loaf of bread[a], one cake of bread with oil, and one wafer, from the basket of unleavened bread that is before Yahweh.
+  to: You shall also take one loaf of bread, one cake of bread mixed with oil, and one wafer from the basket of unleavened bread before Yahweh.
+  rationale: The first draft and lexical rationale identify the cake as bread mixed with oil; the later review’s shorter 'with oil' is less clear in light of verse 2. I restore that clarity and supply the verb understood from verse 22.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -115,3 +117,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/029/023.job-63039.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:36:14Z'
+  change_level: refined
+  confidence: high
+  meaning: One item of each specified kind of unleavened bread is also to be taken from the basket before Yahweh.
+  meaning_decisions:
+  - source_phrase: וְכִכַּר לֶחֶם אַחַת
+    prior_rendering: and one loaf of bread
+    new_rendering: You shall also take one loaf of bread
+    rationale: The Hebrew continues the preceding instruction without repeating its verb; supplying the understood verb makes this verse a natural English sentence.
+  - source_phrase: חַלַּת לֶחֶם שֶׁמֶן
+    prior_rendering: one cake of bread with oil
+    new_rendering: one cake of bread mixed with oil
+    rationale: Verse 2 identifies this bread as prepared with oil mixed into it, distinguishing it from the wafers spread with oil.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale identify the cake as bread mixed with oil; the later review’s shorter 'with oil' is less clear in light of verse 2. I restore that clarity and supply the verb understood from verse 22.

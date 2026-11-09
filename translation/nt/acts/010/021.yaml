@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: καταβὰς δὲ Πέτρος πρὸς τοὺς ἄνδρας εἶπεν· Ἰδοὺ ἐγώ εἰμι ὃν ζητεῖτε· τίς ἡ αἰτία δι’ ἣν πάρεστε;
 translation:
-  text: So Peter went down to the men and said[a], “Look, I am the one you are looking for. Why are you here?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “What is the reason for which you are present?”
-    reason: lexical_alternative
+  text: So Peter went down to the men and said, “Look, I am the one you are looking for. Why are you here?”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: καταβὰς
   chosen: went down
@@ -82,14 +78,20 @@ revisions:
   from: So Peter went down to the men and said, “Look, I am the one you are looking for. For what reason are you here?”
   to: So Peter went down to the men and said, “Look, I am the one you are looking for. For what reason are you here?”
   rationale: Simplified 'For what reason are you here?' to the more natural formal English 'Why are you here?' while preserving the meaning of τίς ἡ αἰτία δι’ ἣν πάρεστε. No other changes.
-
 - timestamp: '2026-05-18T03:01:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So Peter went down to the men and said[a], “Look, I am the one you are looking for. Why are you here?”'
-  to: 'So Peter went down to the men and said[a], “Look, I am the one you are looking for. Why are you here?”'
+  from: So Peter went down to the men and said[a], “Look, I am the one you are looking for. Why are you here?”
+  to: So Peter went down to the men and said[a], “Look, I am the one you are looking for. Why are you here?”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''For what reason''].'
+- timestamp: '2026-11-09T17:07:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So Peter went down to the men and said[a], “Look, I am the one you are looking for. Why are you here?”
+  to: So Peter went down to the men and said, “Look, I am the one you are looking for. Why are you here?”
+  rationale: The current wording incorporates the review’s clear, natural question, 'Why are you here?' The earlier rationale for retaining an explicit noun meaning 'reason' does not establish any additional meaning that English 'why' loses.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -109,3 +111,17 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/010/021.job-46910.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:07:03Z'
+  change_level: kept
+  confidence: high
+  meaning: Peter went down, identified himself to the messengers, and asked why they were there.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The current wording incorporates the review’s clear, natural question, 'Why are you here?' The earlier rationale for retaining an explicit noun meaning 'reason' does not establish any additional meaning that English 'why' loses.

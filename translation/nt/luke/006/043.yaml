@@ -4,11 +4,11 @@ source:
   edition: SBLGNT
   text: Οὐ γάρ ἐστιν δένδρον καλὸν ποιοῦν καρπὸν σαπρόν, οὐδὲ ⸀πάλιν δένδρον σαπρὸν ποιοῦν καρπὸν καλόν.
 translation:
-  text: For there is no good tree producing rotten fruit, nor again a rotten tree[a] producing good fruit.
-  philosophy: optimal-equivalence
+  text: For no good tree bears bad fruit[a], and no bad tree bears good fruit.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'bad fruit' / 'a bad tree.' The Greek σαπρός can mean spoiled, rotten, or bad.
+    text: Literally, “rotten fruit”; the same word describes the tree in the second clause.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: Οὐ γάρ
@@ -104,13 +104,12 @@ revisions:
   from: For there is no good tree producing rotten fruit, nor again a rotten tree producing good fruit.
   to: For there is no good tree producing bad fruit, nor again a bad tree producing good fruit.
   rationale: Replaced 'rotten' with 'bad' for σαπρός to better fit natural English in this saying and to maintain balanced contrast with 'good.'
-
 - timestamp: '2026-05-18T03:10:38Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For there is no good tree producing bad fruit[a], nor again a bad tree producing good fruit.'
-  to: 'For there is no good tree producing rotten fruit, nor again a rotten tree producing good fruit.'
+  from: For there is no good tree producing bad fruit[a], nor again a bad tree producing good fruit.
+  to: For there is no good tree producing rotten fruit, nor again a rotten tree producing good fruit.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a rotten tree''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -120,6 +119,13 @@ revisions:
   from: For there is no good tree producing rotten fruit, nor again a rotten tree producing good fruit.
   to: For there is no good tree producing rotten fruit, nor again a rotten tree[a] producing good fruit.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('a rotten tree') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:12:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For there is no good tree producing rotten fruit, nor again a rotten tree[a] producing good fruit.
+  to: For no good tree bears bad fruit[a], and no bad tree bears good fruit.
+  rationale: An earlier review adopted “bad” before an automated revert restored “rotten,” with no maintainer ruling recorded. I adopt “bad” for the meaning-based distinction between poor quality and physical decay, while preserving the concrete agricultural image and its literal wording.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -142,3 +148,22 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/006/043.job-55409.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:19Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A tree’s quality determines the quality of its fruit, illustrating the correspondence between a person’s character and what that person produces.
+  meaning_decisions:
+  - source_phrase: καρπὸν σαπρόν ... δένδρον σαπρόν
+    prior_rendering: rotten fruit ... a rotten tree
+    new_rendering: bad fruit ... bad tree
+    rationale: Here the adjective describes the unsound quality of both tree and yield. “Rotten” can misleadingly suggest fully decayed wood or fruit that spoiled after growing, whereas the saying concerns the correspondence between a tree’s character and its produce; the decay wording is retained in a note.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: An earlier review adopted “bad” before an automated revert restored “rotten,” with no maintainer ruling recorded. I adopt “bad” for the meaning-based distinction between poor quality and physical decay, while preserving the concrete agricultural image and its literal wording.

@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: וַֽ/יִּלְכְּד֜וּ/הָ בַּ/יּ֤וֹם הַ/הוּא֙ וַ/יַּכּ֣וּ/הָ לְ/פִי חֶ֔רֶב וְ/אֵת֙ כָּל הַ/נֶּ֣פֶשׁ אֲשֶׁר בָּ֔/הּ בַּ/יּ֥וֹם הַ/ה֖וּא הֶחֱרִ֑ים כְּ/כֹ֥ל אֲשֶׁר עָשָׂ֖ה לְ/לָכִֽישׁ־־־־׃פ
 translation:
-  text: And they captured it that day and struck it with the edge of the sword[a], and every person who was in it he devoted to destruction that day[b], according to all that he had done to Lachish.
-  philosophy: optimal-equivalence
+  text: They captured it that day and put it to the sword. That same day Joshua devoted every person in it to destruction[a], just as he had done to Lachish.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew: ''every soul who was in it.'' Here ''soul'' means the persons in the city.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'he utterly destroyed'; the Hebrew verb denotes devoting something to destruction under the ban.
+    text: The Hebrew verb refers to placing someone or something under a sacred ban, here requiring destruction.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וַיִּלְכְּדוּהָ
@@ -92,14 +89,20 @@ revisions:
   from: And they captured it that day and struck it with the edge of the sword, and every person who was in it he devoted to destruction that day, according to all that he had done to Lachish.
   to: And they captured it that day and struck it with the edge of the sword, and every person who was in it they devoted to destruction that day, according to all that they had done to Lachish.
   rationale: Changed singular pronouns to plural ('he' to 'they') for consistency with the Hebrew verbs and the verse's subject.
-
 - timestamp: '2026-05-15T21:24:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they captured it that day and struck it with the edge of the sword[a], and every person who was in it they devoted to destruction that day[b], according to all that they had done to Lachish.'
-  to: 'And they captured it that day and struck it with the edge of the sword[a], and every person who was in it he devoted to destruction that day[b], according to all that he had done to Lachish.'
-  rationale: 'Hebrew הֶחֱרִים and עָשָׂה are 3ms (singular), referring to Joshua personally enacting the herem (consistent pattern across Josh 10:28, 30, 32, 35, 37, 39 — Joshua singular agent of ban even while army collectively fights). Drafter chose ''he'' to render the singular morphology. Azure pluralized to ''they'' on bare ''consistency with surrounding verbs'' grounds, misreading the grammatical shift.'
+  from: And they captured it that day and struck it with the edge of the sword[a], and every person who was in it they devoted to destruction that day[b], according to all that they had done to Lachish.
+  to: And they captured it that day and struck it with the edge of the sword[a], and every person who was in it he devoted to destruction that day[b], according to all that he had done to Lachish.
+  rationale: Hebrew הֶחֱרִים and עָשָׂה are 3ms (singular), referring to Joshua personally enacting the herem (consistent pattern across Josh 10:28, 30, 32, 35, 37, 39 — Joshua singular agent of ban even while army collectively fights). Drafter chose 'he' to render the singular morphology. Azure pluralized to 'they' on bare 'consistency with surrounding verbs' grounds, misreading the grammatical shift.
+- timestamp: '2026-11-09T18:09:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they captured it that day and struck it with the edge of the sword[a], and every person who was in it he devoted to destruction that day[b], according to all that he had done to Lachish.
+  to: They captured it that day and put it to the sword. That same day Joshua devoted every person in it to destruction[a], just as he had done to Lachish.
+  rationale: The earlier pluralizing review overlooked the singular הֶחֱרִים and עָשָׂה; the subsequent correction agrees with the source, so Joshua remains the singular subject of the ban and comparison. The established 'devoted to destruction' is retained, with a brief term note rather than the earlier redundant notes.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -119,3 +122,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/weighted_vocab/ot/joshua/010/035.job-15290.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:09:12Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Israel took Eglon that same day, and Joshua devoted all its inhabitants to destruction as he had done at Lachish.
+  meaning_decisions:
+  - source_phrase: וַיַּכּוּהָ לְפִי חֶרֶב
+    prior_rendering: struck it with the edge of the sword
+    new_rendering: put it to the sword
+    rationale: The natural English idiom conveys the killing expressed by the Hebrew sword formula.
+  - source_phrase: וְאֵת כָּל הַנֶּפֶשׁ אֲשֶׁר בָּהּ בַּיּוֹם הַהוּא הֶחֱרִים
+    prior_rendering: and every person who was in it he devoted to destruction that day
+    new_rendering: That same day Joshua devoted every person in it to destruction
+    rationale: Naming Joshua makes the source’s shift from the army’s plural action to its leader’s singular action clear, while normal English clause order preserves the repeated same-day emphasis.
+  - source_phrase: כְּכֹל אֲשֶׁר עָשָׂה לְלָכִישׁ
+    prior_rendering: according to all that he had done to Lachish
+    new_rendering: just as he had done to Lachish
+    rationale: The clause compares Eglon’s treatment with Lachish’s; 'just as' conveys that correspondence directly.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The earlier pluralizing review overlooked the singular הֶחֱרִים and עָשָׂה; the subsequent correction agrees with the source, so Joshua remains the singular subject of the ban and comparison. The established 'devoted to destruction' is retained, with a brief term note rather than the earlier redundant notes.

@@ -9,15 +9,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: He supplied the cities with provisions[a], and equipped them with implements of fortification[b], until the name of his glory was named to the end of the earth.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more idiomatically, 'his glorious name became known to the end of the earth.' The Greek reads more literally, 'the name of his glory was named.'
-    reason: lexical_alternative
-  - marker: b
-    text: The phrase 'implements of fortification' may refer broadly to defensive equipment or matériel for strengthening the cities.
-    reason: lexical_alternative
+  text: He supplied the cities with provisions and furnished them with defensive equipment, until his glorious name was known to the ends of the earth.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐχορήγησεν
   chosen: supplied
@@ -114,14 +107,20 @@ revisions:
   from: He supplied the cities with provisions, and equipped them with implements of fortification, until the name of his glory was named to the end of the earth.
   to: He supplied the cities with provisions, and furnished them with means of fortification, until the name of his glory was renowned to the ends of the earth.
   rationale: Replaced 'equipped them with implements of fortification' with 'furnished them with means of fortification' for more natural English while preserving the sense of defensive resources; changed 'was named to the end of the earth' to 'was renowned to the ends of the earth' to render the idiom more naturally and formally.
-
 - timestamp: '2026-05-15T14:24:26Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He supplied the cities with provisions[a], and furnished them with means of fortification[b], until the name of his glory was renowned to the ends of the earth.'
-  to: 'He supplied the cities with provisions[a], and equipped them with implements of fortification[b], until the name of his glory was named to the end of the earth.'
-  rationale: 'Restored 4 chosen renderings preserving ἔταξεν/ἐχορήγησεν distinction, σκεῦος concreteness, literal ὠνομάσθη.'
+  from: He supplied the cities with provisions[a], and furnished them with means of fortification[b], until the name of his glory was renowned to the ends of the earth.
+  to: He supplied the cities with provisions[a], and equipped them with implements of fortification[b], until the name of his glory was named to the end of the earth.
+  rationale: Restored 4 chosen renderings preserving ἔταξεν/ἐχορήγησεν distinction, σκεῦος concreteness, literal ὠνομάσθη.
+- timestamp: '2026-11-09T18:53:28Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He supplied the cities with provisions[a], and equipped them with implements of fortification[b], until the name of his glory was named to the end of the earth.
+  to: He supplied the cities with provisions and furnished them with defensive equipment, until his glorious name was known to the ends of the earth.
+  rationale: The earlier revision recognized the obscurity of the naming idiom, while the automated revert prioritized literal form and concrete equipment. I retain the equipment's concreteness but carry the idiom's meaning into the main text, as the earlier footnote already proposed.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -141,3 +140,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/014/010.job-48787.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:28Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Simon provisioned and equipped the cities for defense, and his glorious reputation became known throughout the earth.
+  meaning_decisions:
+  - source_phrase: ἔταξεν αὐτὰς ἐν σκεύεσιν ὀχυρώσεως
+    prior_rendering: equipped them with implements of fortification
+    new_rendering: furnished them with defensive equipment
+    rationale: The expression concerns concrete equipment for strengthening the cities' defenses, not necessarily tools used to construct fortifications.
+  - source_phrase: ὠνομάσθη τὸ ὄνομα τῆς δόξης αὐτοῦ
+    prior_rendering: the name of his glory was named
+    new_rendering: his glorious name was known
+    rationale: The repeated naming construction expresses widespread renown; the English keeps both 'name' and 'glorious' without reproducing an unintelligible genitive chain.
+  - source_phrase: ἕως ἄκρου γῆς
+    prior_rendering: to the end of the earth
+    new_rendering: to the ends of the earth
+    rationale: The ordinary English expression preserves the poetic image of fame reaching the earth's farthest limits.
+  footnote_kinds: {}
+  history_weighed: The earlier revision recognized the obscurity of the naming idiom, while the automated revert prioritized literal form and concrete equipment. I retain the equipment's concreteness but carry the idiom's meaning into the main text, as the earlier footnote already proposed.

@@ -4,21 +4,8 @@ source:
   edition: WLC
   text: אִם פָּקֹ֥ד יִפְקְדֵ֖/נִי אָבִ֑י/ךָ וְ/אָמַרְתָּ֗ נִשְׁאֹל֩ נִשְׁאַ֨ל מִמֶּ֤/נִּי דָוִד֙ לָ/רוּץ֙ בֵּֽית לֶ֣חֶם עִיר֔/וֹ כִּ֣י זֶ֧בַח הַ/יָּמִ֛ים שָׁ֖ם לְ/כָל הַ/מִּשְׁפָּחָֽה־־־׃
 translation:
-  text: If your father surely notices me[a], then say, ‘David earnestly asked leave of me to run to Bethlehem, his city[d][c][b], because the yearly sacrifice is there for the whole family.’
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'If your father surely misses me.' The Hebrew uses an infinitive absolute with a finite verb for emphasis.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'David urgently asked permission from me.' The Hebrew likewise uses an infinitive absolute with a finite verb for emphasis.
-    reason: lexical_alternative
-  - marker: c
-    text: Literally 'to run to Bethlehem'; the sense is to go there quickly.
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'the annual sacrifice.'
-    reason: lexical_alternative
+  text: If your father takes notice of my absence, say, ‘David earnestly asked my permission to hurry to Bethlehem, his hometown, because the yearly sacrifice for the whole family is taking place there.’
+  philosophy: dynamic
 lexical_decisions:
 - source_word: פָּקֹד יִפְקְדֵנִי
   chosen: definitely notices me
@@ -95,14 +82,20 @@ revisions:
   from: If your father definitely notices me, then say, ‘David earnestly asked leave of me to run to Bethlehem, his city, because the yearly sacrifice is there for the whole family.’
   to: If your father definitely notices me, then say, ‘David earnestly asked leave of me to run to Bethlehem, his city, because the yearly sacrifice is there for the whole family.’
   rationale: Changed 'definitely notices' to 'surely notices' for a more formal register while preserving the emphatic sense. No other changes needed.
-
 - timestamp: '2026-05-18T02:55:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If your father surely notices me[a], then say, ‘David earnestly asked leave of me to run to Bethlehem, his city[d][c][b], because the yearly sacrifice is there for the whole family.’'
-  to: 'If your father surely notices me[a], then say, ‘David earnestly asked leave of me to run to Bethlehem, his city[d][c][b], because the yearly sacrifice is there for the whole family.’'
+  from: If your father surely notices me[a], then say, ‘David earnestly asked leave of me to run to Bethlehem, his city[d][c][b], because the yearly sacrifice is there for the whole family.’
+  to: If your father surely notices me[a], then say, ‘David earnestly asked leave of me to run to Bethlehem, his city[d][c][b], because the yearly sacrifice is there for the whole family.’
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''definitely notices me''].'
+- timestamp: '2026-11-09T17:24:41Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If your father surely notices me[a], then say, ‘David earnestly asked leave of me to run to Bethlehem, his city[d][c][b], because the yearly sacrifice is there for the whole family.’
+  to: If your father takes notice of my absence, say, ‘David earnestly asked my permission to hurry to Bethlehem, his hometown, because the yearly sacrifice for the whole family is taking place there.’
+  rationale: The history’s changes between “definitely” and “surely” concern register rather than meaning, but its rationale correctly identifies David’s absence as the issue. The lexical record also supports an earnest request, hurried travel, and a yearly family sacrifice, all now carried directly in the text.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -122,3 +115,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/020/006.job-59257.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:24:41Z'
+  change_level: retranslated
+  confidence: high
+  meaning: David instructs Jonathan to explain his absence by saying he urgently requested permission to attend his family’s yearly sacrifice in Bethlehem.
+  meaning_decisions:
+  - source_phrase: פָּקֹד יִפְקְדֵנִי
+    prior_rendering: surely notices me
+    new_rendering: takes notice of my absence
+    rationale: Saul would be noticing that David is missing from the meal, not noticing David’s presence; “takes notice” retains the attentive force.
+  - source_phrase: נִשְׁאֹל נִשְׁאַל מִמֶּנִּי לָרוּץ
+    prior_rendering: earnestly asked leave of me to run
+    new_rendering: earnestly asked my permission to hurry
+    rationale: This preserves the emphatic request and haste without suggesting that the journey must literally be made by running.
+  - source_phrase: בֵּית לֶחֶם עִירוֹ
+    prior_rendering: Bethlehem, his city
+    new_rendering: Bethlehem, his hometown
+    rationale: Bethlehem is David’s place of origin and family home, not a city under his ownership or rule.
+  footnote_kinds: {}
+  history_weighed: The history’s changes between “definitely” and “surely” concern register rather than meaning, but its rationale correctly identifies David’s absence as the issue. The lexical record also supports an earnest request, hurried travel, and a yearly family sacrifice, all now carried directly in the text.

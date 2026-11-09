@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֣אמֶר אֲרַ֔וְנָה מַדּ֛וּעַ בָּ֥א אֲדֹנִֽ/י הַ/מֶּ֖לֶךְ אֶל עַבְדּ֑/וֹ וַ/יֹּ֨אמֶר דָּוִ֜ד לִ/קְנ֧וֹת מֵ/עִמְּ/ךָ֣ אֶת הַ/גֹּ֗רֶן לִ/בְנ֤וֹת מִזְבֵּ֨חַ֙ לַֽ/יהוָ֔ה וְ/תֵעָצַ֥ר הַ/מַּגֵּפָ֖ה מֵ/עַ֥ל הָ/עָֽם־־־׃
 translation:
-  text: And Araunah said[a], “Why has my lord the king come to his servant?” And David said, “To buy the threshing floor from you, to build an altar to Yahweh, so that the plague may be stopped from being upon the people.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'your servant.' The Hebrew literally has 'his servant,' reflecting formal courtly self-reference.
-    reason: lexical_alternative
+  text: Araunah asked, “Why have you come to your servant, my lord the king?” David replied, “To buy the threshing floor from you and build an altar to Yahweh, so that the plague may be lifted from the people.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: מַדּוּעַ
   chosen: Why
@@ -120,14 +116,20 @@ revisions:
   from: And Araunah said, “Why has my lord the king come to his servant?” And David said, “To buy the threshing floor from you, to build an altar to the LORD, so that the plague may be restrained from upon the people.”
   to: And Araunah said, “Why has my lord the king come to his servant?” And David said, “To buy the threshing floor from you, to build an altar to the LORD, so that the plague may be restrained from upon the people.”
   rationale: 'Revised the final clause for more natural and complete English: changed ''may be restrained from upon the people'' to ''may be stopped from being upon the people,'' more directly reflecting the Hebrew while avoiding awkward phrasing.'
-
 - timestamp: '2026-05-17T03:51:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Araunah said[a], “Why has my lord the king come to his servant?” And David said, “To buy the threshing floor from you, to build an altar to Yahweh, so that the plague may be stopped from being upon the people.”'
-  to: 'And Araunah said[a], “Why has my lord the king come to his servant?” And David said, “To buy the threshing floor from you, to build an altar to Yahweh, so that the plague may be stopped from being upon the people.”'
+  from: And Araunah said[a], “Why has my lord the king come to his servant?” And David said, “To buy the threshing floor from you, to build an altar to Yahweh, so that the plague may be stopped from being upon the people.”
+  to: And Araunah said[a], “Why has my lord the king come to his servant?” And David said, “To buy the threshing floor from you, to build an altar to Yahweh, so that the plague may be stopped from being upon the people.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from upon the people''].'
+- timestamp: '2026-11-09T17:28:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Araunah said[a], “Why has my lord the king come to his servant?” And David said, “To buy the threshing floor from you, to build an altar to Yahweh, so that the plague may be stopped from being upon the people.”
+  to: Araunah asked, “Why have you come to your servant, my lord the king?” David replied, “To buy the threshing floor from you and build an altar to Yahweh, so that the plague may be lifted from the people.”
+  rationale: The earlier revision recognized the need to improve the final clause but still preserved an unnatural Hebrew-shaped construction. I carried that clarification further and used the documented pragmatic meaning of Araunah’s courtly self-reference rather than its grammatical person.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -150,3 +152,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/ot/2_samuel/024/021.job-37570.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:38Z'
+  change_level: retranslated
+  confidence: high
+  meaning: David explains to Araunah that he has come to buy the threshing floor and build an altar so the plague may be removed from the people.
+  meaning_decisions:
+  - source_phrase: מַדּוּעַ בָּא אֲדֹנִי הַמֶּלֶךְ אֶל עַבְדּוֹ
+    prior_rendering: Why has my lord the king come to his servant?
+    new_rendering: Why have you come to your servant, my lord the king?
+    rationale: Araunah addresses David directly and refers deferentially to himself as the king’s servant; English second-person address makes those relationships clear while retaining the courtly honorific.
+  - source_phrase: וְתֵעָצַר הַמַּגֵּפָה מֵעַל הָעָם
+    prior_rendering: so that the plague may be stopped from being upon the people
+    new_rendering: so that the plague may be lifted from the people
+    rationale: The Hebrew describes the plague being halted and removed from those it afflicts; “lifted from” carries that meaning and the image of a burden removed in natural English.
+  footnote_kinds: {}
+  history_weighed: The earlier revision recognized the need to improve the final clause but still preserved an unnatural Hebrew-shaped construction. I carried that clarification further and used the documented pragmatic meaning of Araunah’s courtly self-reference rather than its grammatical person.

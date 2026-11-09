@@ -42,12 +42,8 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone PAZ extraction from the curated ADA stream, using Daniel 3:24-90 as the source span and renumbering it to PAZ 1:1-67.
 translation:
-  text: Give thanks to the Lord[a], for he is good, for his mercy endures forever.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'his steadfast love endures forever.' The Greek says 'his mercy is forever,' but the phrase may carry broader covenant-loyalty overtones in this liturgical refrain.
-    reason: lexical_alternative
+  text: Give thanks to the Lord, for he is good, for his mercy endures forever.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐξομολογεῖσθε
   chosen: Give thanks
@@ -123,14 +119,20 @@ revisions:
   from: Give thanks to the Lord, for he is good, for his mercy is forever.
   to: Give thanks to the Lord, for he is good, for his mercy is forever.
   rationale: Revised 'is forever' to 'endures forever' for more natural and standard rendering of εἰς τὸν αἰῶνα, while preserving the meaning and formal register.
-
 - timestamp: '2026-05-18T02:59:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Give thanks to the Lord[a], for he is good, for his mercy endures forever.'
-  to: 'Give thanks to the Lord[a], for he is good, for his mercy endures forever.'
+  from: Give thanks to the Lord[a], for he is good, for his mercy endures forever.
+  to: Give thanks to the Lord[a], for he is good, for his mercy endures forever.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''is forever''].'
+- timestamp: '2026-11-09T20:31:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Give thanks to the Lord[a], for he is good, for his mercy endures forever.
+  to: Give thanks to the Lord, for he is good, for his mercy endures forever.
+  rationale: The current 'endures forever' conveys lasting mercy more naturally than the first draft's 'is forever'; the automated revert notes give no meaning-based reason to undo it. I retain 'mercy' and omit the unnecessary alternative-wording note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -150,3 +152,17 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/prayer_of_azariah/001/066.job-50977.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:31:32Z'
+  change_level: kept
+  confidence: high
+  meaning: The worshipers are called to thank the Lord because he is good and his mercy never ends.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The current 'endures forever' conveys lasting mercy more naturally than the first draft's 'is forever'; the automated revert notes give no meaning-based reason to undo it. I retain 'mercy' and omit the unnecessary alternative-wording note.

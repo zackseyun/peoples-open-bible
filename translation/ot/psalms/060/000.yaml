@@ -4,18 +4,15 @@ source:
   edition: WLC
   text: לַ֭/מְנַצֵּחַ עַל שׁוּשַׁ֣ן עֵד֑וּת מִכְתָּ֖ם לְ/דָוִ֣ד לְ/לַמֵּֽד־׃ בְּ/הַצּוֹת֨/וֹ ׀ אֶ֥ת אֲרַ֣ם נַהֲרַיִם֮ וְ/אֶת־אֲרַ֪ם צ֫וֹבָ֥ה וַ/יָּ֤שָׁב יוֹאָ֗ב וַ/יַּ֣ךְ אֶת־אֱד֣וֹם בְּ/גֵיא־מֶ֑לַח שְׁנֵ֖ים עָשָׂ֣ר אָֽלֶף׃
 translation:
-  text: 'For the choirmaster: according to “Lily of Testimony.”[a] A miktam[b] of David[c], for teaching when he fought against Aram-naharaim and Aram-zobah, and Joab returned and struck down twelve thousand of Edom in the Valley of Salt.'
-  philosophy: optimal-equivalence
+  text: 'For the choirmaster: according to “Lily of Testimony[a]”. A miktam[b] of David, for instruction. When David fought against Aram-naharaim and Aram-zobah, Joab returned and struck down twelve thousand Edomites in the Valley of Salt.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or possibly, “to the tune of ‘Lily of Testimony.’” The Hebrew likely preserves a musical or liturgical title, but its exact sense is uncertain.
+    text: A musical or liturgical designation of uncertain meaning, possibly the name of a tune.
     reason: lexical_alternative
   - marker: b
-    text: The term “miktam” is a Hebrew genre label of uncertain meaning; some take it as a musical or literary designation rather than translating it.
+    text: Miktam is a Hebrew designation of uncertain meaning, perhaps a kind of poem or a musical term.
     reason: lexical_alternative
-  - marker: c
-    text: “Of David” may also mean “by David” or “for David”; the Hebrew construction can indicate authorship, association, or dedication.
-    reason: alternative_reading
 lexical_decisions:
 - source_word: לַמְנַצֵּחַ
   chosen: For the choirmaster
@@ -109,6 +106,13 @@ revisions:
   from: 'For the choirmaster: according to “Lily of Testimony.”[a] A miktam[b] of David[c], for teaching.'
   to: 'For the choirmaster: according to “Lily of Testimony.”[a] A miktam[b] of David[c], for teaching when he fought against Aram-naharaim and Aram-zobah, and Joab returned and struck down twelve thousand of Edom in the Valley of Salt.'
   rationale: Restored the second Masoretic superscription line and added it to the source payload. POB verse 0 intentionally combines WLC Psalm 60:1-2; the automated audit had mistaken the incomplete normalized source field for evidence that the historical notice was extraneous.
+- timestamp: '2026-11-09T18:42:09Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'For the choirmaster: according to “Lily of Testimony.”[a] A miktam[b] of David[c], for teaching when he fought against Aram-naharaim and Aram-zobah, and Joab returned and struck down twelve thousand of Edom in the Valley of Salt.'
+  to: 'For the choirmaster: according to “Lily of Testimony[a]”. A miktam[b] of David, for instruction. When David fought against Aram-naharaim and Aram-zobah, Joab returned and struck down twelve thousand Edomites in the Valley of Salt.'
+  rationale: The corpus-repair revision correctly restored the historical notice, which belongs to this combined superscription and remains intact. I retain the established musical terminology while separating the purpose statement from the campaign setting.
 cross_check:
   status: moderate_agreement
   agreement: 0.8
@@ -136,3 +140,27 @@ source_audit:
   scope: WLC Hebrew, immediate literary context, natural-English and interpretation-boundary review
   human_or_scholar_review: false
   review_summary: Verified against WLC Psalm 60:1-2. The normalized POB verse 0 combines both Masoretic superscription lines; the complete historical notice is retained and the source payload now includes both lines.
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:42:09Z'
+  change_level: refined
+  confidence: high
+  meaning: The heading assigns this instructional psalm to David and associates it with his campaigns against Aram and Joab's victory over Edom.
+  meaning_decisions:
+  - source_phrase: לְלַמֵּד־׃ בְּהַצּוֹתוֹ
+    prior_rendering: for teaching when he fought
+    new_rendering: for instruction. When David fought
+    rationale: Separating the instructional purpose from the historical notice prevents readers from understanding the fighting as the occasion when David was teaching.
+  - source_phrase: וַיַּךְ אֶת־אֱדוֹם ... שְׁנֵים עָשָׂר אָלֶף
+    prior_rendering: struck down twelve thousand of Edom
+    new_rendering: struck down twelve thousand Edomites
+    rationale: The number counts people from Edom, which the natural English demonym makes explicit.
+  footnote_kinds:
+    a: name_or_term
+    b: name_or_term
+  history_weighed: The corpus-repair revision correctly restored the historical notice, which belongs to this combined superscription and remains intact. I retain the established musical terminology while separating the purpose statement from the campaign setting.

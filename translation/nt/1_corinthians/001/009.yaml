@@ -4,18 +4,8 @@ source:
   edition: SBLGNT
   text: πιστὸς ὁ θεὸς δι’ οὗ ἐκλήθητε εἰς κοινωνίαν τοῦ υἱοῦ αὐτοῦ Ἰησοῦ Χριστοῦ τοῦ κυρίου ἡμῶν.
 translation:
-  text: God is faithful[a], by whom you were called into fellowship with his Son[c][b], Jesus Christ our Lord.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “through whom.”
-    reason: lexical_alternative
-  - marker: b
-    text: Or “participation” or “sharing.”
-    reason: lexical_alternative
-  - marker: c
-    text: Greek “Jesus the Messiah”; “Messiah” renders the title Χριστός.
-    reason: alternative_reading
+  text: God is faithful; he called you into fellowship with his Son, Jesus Christ our Lord.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: πιστὸς
   chosen: faithful
@@ -100,11 +90,17 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "God is faithful, by whom you were called into fellowship with his Son, Jesus Messiah our Lord."
-  to: "God is faithful, by whom you were called into fellowship with his Son, Jesus the Messiah our Lord."
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
+  from: God is faithful, by whom you were called into fellowship with his Son, Jesus Messiah our Lord.
+  to: God is faithful, by whom you were called into fellowship with his Son, Jesus the Messiah our Lord.
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:05:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: God is faithful[a], by whom you were called into fellowship with his Son[c][b], Jesus Christ our Lord.
+  to: God is faithful; he called you into fellowship with his Son, Jesus Christ our Lord.
+  rationale: The lexical decisions rightly preserve 'faithful' and the relational and participatory breadth of 'fellowship.' I retain those gains while replacing the awkward relative construction with a direct clause and applying the standing name-construction ruling.
 status: revised
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -127,3 +123,21 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/1_corinthians/001/009.job-52626.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:50Z'
+  change_level: refined
+  confidence: high
+  meaning: God’s faithfulness assures the Corinthians, whom he called into fellowship with his Son.
+  meaning_decisions:
+  - source_phrase: δι’ οὗ ἐκλήθητε
+    prior_rendering: by whom you were called
+    new_rendering: he called you
+    rationale: The active clause expresses the same divine agency in natural English and connects the calling clearly with the assertion of God’s faithfulness.
+  footnote_kinds: {}
+  history_weighed: The lexical decisions rightly preserve 'faithful' and the relational and participatory breadth of 'fellowship.' I retain those gains while replacing the awkward relative construction with a direct clause and applying the standing name-construction ruling.

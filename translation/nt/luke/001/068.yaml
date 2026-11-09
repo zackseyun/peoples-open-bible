@@ -4,11 +4,11 @@ source:
   edition: SBLGNT
   text: Εὐλογητὸς κύριος ὁ θεὸς τοῦ Ἰσραήλ, ὅτι ἐπεσκέψατο καὶ ἐποίησεν λύτρωσιν τῷ λαῷ αὐτοῦ,
 translation:
-  text: Blessed is the Lord, the God of Israel, because he has visited[a] and brought redemption to his people,
-  philosophy: optimal-equivalence
+  text: Blessed be the Lord, the God of Israel, for he has visited his people[a] and brought them redemption,
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'has come to help'; the Greek 'has visited' is a biblical expression for God's attentive intervention.
+    text: God’s “visiting” his people means coming to intervene on their behalf.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: Εὐλογητὸς
@@ -93,13 +93,12 @@ revisions:
   from: Blessed is the Lord, the God of Israel, because he has visited and brought redemption to his people,
   to: Blessed is the Lord, the God of Israel, because he has visited his people and brought redemption,
   rationale: 'Reordered the final clause to reflect the Greek more closely: ''visited his people and brought redemption'' rather than ''visited and brought redemption to his people.'' This preserves both verbs and keeps the object relationships clearer and more natural in English.'
-
 - timestamp: '2026-05-18T03:10:38Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Blessed is the Lord[a], the God of Israel, because he has visited his people and brought redemption,'
-  to: 'Blessed is the Lord, the God of Israel, because he has visited and brought redemption to his people,'
+  from: Blessed is the Lord[a], the God of Israel, because he has visited his people and brought redemption,
+  to: Blessed is the Lord, the God of Israel, because he has visited and brought redemption to his people,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to his people''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -109,6 +108,13 @@ revisions:
   from: Blessed is the Lord, the God of Israel, because he has visited and brought redemption to his people,
   to: Blessed is the Lord, the God of Israel, because he has visited[a] and brought redemption to his people,
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('has visited') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:12:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Blessed is the Lord, the God of Israel, because he has visited[a] and brought redemption to his people,
+  to: Blessed be the Lord, the God of Israel, for he has visited his people[a] and brought them redemption,
+  rationale: The earlier revision helpfully made “his people” the object of “visited”; the automated revert supplies no meaning-based reason to reject that gain. I retain the scriptural visitation language and explain its saving sense in a short note.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -130,3 +136,26 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/001/068.job-55225.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:20Z'
+  change_level: refined
+  confidence: high
+  meaning: Zechariah blesses Israel’s God for intervening on behalf of his people and bringing them redemption.
+  meaning_decisions:
+  - source_phrase: Εὐλογητὸς κύριος
+    prior_rendering: Blessed is the Lord
+    new_rendering: Blessed be the Lord
+    rationale: The opening is an acclamation of praise, which “Blessed be” expresses more unmistakably than a statement about God’s condition.
+  - source_phrase: ἐπεσκέψατο καὶ ἐποίησεν λύτρωσιν τῷ λαῷ αὐτοῦ
+    prior_rendering: has visited and brought redemption to his people
+    new_rendering: has visited his people and brought them redemption
+    rationale: Making the people the explicit recipients of both actions clarifies the divine visitation while preserving the weight of redemption.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The earlier revision helpfully made “his people” the object of “visited”; the automated revert supplies no meaning-based reason to reject that gain. I retain the scriptural visitation language and explain its saving sense in a short note.

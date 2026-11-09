@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: Οἴδαμεν δὲ ὅτι τοῖς ἀγαπῶσι τὸν θεὸν πάντα ⸀συνεργεῖ εἰς ἀγαθόν, τοῖς κατὰ πρόθεσιν κλητοῖς οὖσιν.
 translation:
-  text: And we know that for those who love God, all things[a] work together for good—for those who are called according to purpose[b].
-  philosophy: optimal-equivalence
+  text: And we know that for those who love God, all things work together for good[a]—for those who are called according to his purpose.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Some manuscripts read 'God works all things together for good.'
+    text: Some manuscripts read, “God works all things together for good.”
     reason: textual_variant
-  - marker: b
-    text: Or 'according to his purpose.'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: Οἴδαμεν
   chosen: we know
@@ -109,13 +106,12 @@ revisions:
   from: And we know that for those who love God, all things work together for good—for those who are called according to purpose.
   to: And we know that for those who love God, all things work together for good, for those who are called according to his purpose.
   rationale: Replaced the dash with a comma for smoother formal English and added 'his' before 'purpose' to reflect the idiomatic sense of κατὰ πρόθεσιν in context.
-
 - timestamp: '2026-05-18T03:10:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And we know that for those who love God[a], all things work together for good[b], for those who are called according to his purpose.'
-  to: 'And we know that for those who love God, all things work together for good—for those who are called according to purpose.'
+  from: And we know that for those who love God[a], all things work together for good[b], for those who are called according to his purpose.
+  to: And we know that for those who love God, all things work together for good—for those who are called according to purpose.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for those who are called according to purpose''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -125,6 +121,13 @@ revisions:
   from: And we know that for those who love God, all things work together for good—for those who are called according to purpose.
   to: And we know that for those who love God, all things[a] work together for good—for those who are called according to purpose[b].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('all things') because the note names that rendering; [b] anchored to ('purpose') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:17:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And we know that for those who love God, all things[a] work together for good—for those who are called according to purpose[b].
+  to: And we know that for those who love God, all things work together for good[a]—for those who are called according to his purpose.
+  rationale: The earlier review supplied 'his' for contextual clarity, and I retain that gain despite the automated revert. I preserve the source-based 'all things work together' and the significant manuscript alternative rather than imposing an explicit subject.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -146,3 +149,22 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/high_scrutiny/nt/romans/008/028.job-7854.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:17:29Z'
+  change_level: refined
+  confidence: high
+  meaning: All things work together for good for those who love God and are called according to his purpose.
+  meaning_decisions:
+  - source_phrase: τοῖς κατὰ πρόθεσιν κλητοῖς οὖσιν
+    prior_rendering: for those who are called according to purpose
+    new_rendering: for those who are called according to his purpose
+    rationale: The following verses identify God as the one whose purpose governs this calling; the possessive makes that understood relationship clear in English.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier review supplied 'his' for contextual clarity, and I retain that gain despite the automated revert. I preserve the source-based 'all things work together' and the significant manuscript alternative rather than imposing an explicit subject.

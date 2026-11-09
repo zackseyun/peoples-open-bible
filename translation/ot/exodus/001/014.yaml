@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יְמָרְר֨וּ אֶת חַיֵּי/הֶ֜ם בַּ/עֲבֹדָ֣ה קָשָׁ֗ה בְּ/חֹ֨מֶר֙ וּ/בִ/לְבֵנִ֔ים וּ/בְ/כָל עֲבֹדָ֖ה בַּ/שָּׂדֶ֑ה אֵ֚ת כָּל עֲבֹ֣דָתָ֔/ם אֲשֶׁר עָבְד֥וּ בָ/הֶ֖ם בְּ/פָֽרֶךְ־־־־׃
 translation:
-  text: And they made their lives bitter with hard labor in mortar and bricks and in every kind of field work—all their labor that they imposed on them with harshness[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'with ruthlessness' for 'with harshness.' The Hebrew term denotes severe, crushing oppression.
-    reason: lexical_alternative
+  text: They made their lives bitter with hard labor—work with mortar and bricks and every kind of work in the fields. The Egyptians were ruthless in all the labor they imposed on them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיְמָרְרוּ
   chosen: made ... bitter
@@ -87,14 +83,20 @@ revisions:
   from: And they made their lives bitter with hard labor in mortar and bricks and in every kind of field work. All their labor that they imposed on them was with harshness.
   to: And they made their lives bitter with hard labor in mortar and brick and in every kind of field work—all their labor that they imposed on them with harshness.
   rationale: Changed 'bricks' to 'brick' for a more natural material pairing with 'mortar,' and tightened the final clause by removing 'was' to better reflect the Hebrew construction while preserving the sense of imposed labor with harshness.
-
 - timestamp: '2026-05-16T03:09:22Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they made their lives bitter with hard labor in mortar and brick and in every kind of field work—all their labor that they imposed on them with harshness[a].'
-  to: 'And they made their lives bitter with hard labor in mortar and bricks and in every kind of field work—all their labor that they imposed on them with harshness[a].'
-  rationale: 'Azure singularized ''bricks'' to ''brick'' (material noun) — but Hebrew לְבֵנִים is genuinely plural. Drafter''s HALOT-grounded choice; ''brick'' not in rejected_alternatives.'
+  from: And they made their lives bitter with hard labor in mortar and brick and in every kind of field work—all their labor that they imposed on them with harshness[a].
+  to: And they made their lives bitter with hard labor in mortar and bricks and in every kind of field work—all their labor that they imposed on them with harshness[a].
+  rationale: Azure singularized 'bricks' to 'brick' (material noun) — but Hebrew לְבֵנִים is genuinely plural. Drafter's HALOT-grounded choice; 'brick' not in rejected_alternatives.
+- timestamp: '2026-11-09T17:33:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they made their lives bitter with hard labor in mortar and bricks and in every kind of field work—all their labor that they imposed on them with harshness[a].
+  to: They made their lives bitter with hard labor—work with mortar and bricks and every kind of work in the fields. The Egyptians were ruthless in all the labor they imposed on them.
+  rationale: I retain the meaningful bitterness image and the plural “bricks” preserved by the later revert. The final clause is recast to retain the documented summary of ruthless treatment without the earlier awkward English.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -114,3 +116,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/001/014.job-62289.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:33:15Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Egyptians make Israelite life bitter through hard construction and agricultural labor, treating them ruthlessly in every kind of work.
+  meaning_decisions:
+  - source_phrase: בְּחֹמֶר וּבִלְבֵנִים וּבְכָל עֲבֹדָה בַּשָּׂדֶה
+    prior_rendering: in mortar and bricks and in every kind of field work
+    new_rendering: work with mortar and bricks and every kind of work in the fields
+    rationale: The materials identify the construction work, while the following phrase extends the oppression to agricultural work.
+  - source_phrase: אֵת כָּל עֲבֹדָתָם אֲשֶׁר עָבְדוּ בָהֶם בְּפָרֶךְ
+    prior_rendering: all their labor that they imposed on them with harshness
+    new_rendering: The Egyptians were ruthless in all the labor they imposed on them
+    rationale: The resumptive clause emphasizes that ruthless treatment characterized all the compulsory labor; a complete English sentence makes that emphasis clear.
+  footnote_kinds: {}
+  history_weighed: I retain the meaningful bitterness image and the plural “bricks” preserved by the later revert. The final clause is recast to retain the documented summary of ruthless treatment without the earlier awkward English.

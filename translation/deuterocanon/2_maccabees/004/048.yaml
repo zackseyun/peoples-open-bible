@@ -23,18 +23,12 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: And he released Menelaus[a], the cause of all the evil, from among the accused; but for those wretched men—who, even if they had pleaded their case before Scythians[c][b], would have been acquitted—for them he decreed death.
-  philosophy: optimal-equivalence
+  text: The king acquitted Menelaus, who was responsible for all this evil. But he sentenced those unfortunate men to death, although they would have been acquitted even if they had pleaded their case before Scythians[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Literally, ''who, even if they had spoken before Scythians, would have been released uncondemned.'' The reference to Scythians heightens the irony: even a people stereotyped as harsh would have judged them innocent.'
+    text: Greek writers commonly portrayed Scythians as harsh and uncivilized.
     reason: cultural_note
-  - marker: b
-    text: Or 'would have been acquitted' for 'would have been released as innocent.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'he sentenced them to death.'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: τὸν ... αἴτιον
   chosen: the cause
@@ -115,14 +109,20 @@ revisions:
   from: And he released Menelaus, the cause of all the evil, from among those under accusation; but for those wretched men—who, even if they had pleaded their case before Scythians, would have been released as innocent—for these he decreed death.
   to: And he released Menelaus, the cause of all the evil, from among those under accusation; but for those wretched men—who, even if they had pleaded their case before Scythians, would have been released as innocent—for these he decreed death.
   rationale: Changed 'those under accusation' to 'the accused' for more natural formal English, and 'would have been released as innocent' to 'would have been acquitted' for a more precise rendering of ἀπελύθησαν ἀκατάγνωστοι.
-
 - timestamp: '2026-05-18T03:00:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he released Menelaus[a], the cause of all the evil, from among the accused; but for those wretched men—who, even if they had pleaded their case before Scythians[c][b], would have been acquitted—for them he decreed death.'
-  to: 'And he released Menelaus[a], the cause of all the evil, from among the accused; but for those wretched men—who, even if they had pleaded their case before Scythians[c][b], would have been acquitted—for them he decreed death.'
+  from: And he released Menelaus[a], the cause of all the evil, from among the accused; but for those wretched men—who, even if they had pleaded their case before Scythians[c][b], would have been acquitted—for them he decreed death.
+  to: And he released Menelaus[a], the cause of all the evil, from among the accused; but for those wretched men—who, even if they had pleaded their case before Scythians[c][b], would have been acquitted—for them he decreed death.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''would have been released as innocent''].'
+- timestamp: '2026-11-09T18:55:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he released Menelaus[a], the cause of all the evil, from among the accused; but for those wretched men—who, even if they had pleaded their case before Scythians[c][b], would have been acquitted—for them he decreed death.
+  to: The king acquitted Menelaus, who was responsible for all this evil. But he sentenced those unfortunate men to death, although they would have been acquitted even if they had pleaded their case before Scythians[a].
+  rationale: The earlier revision's 'would have been acquitted' accurately expresses the counterfactual verdict and is retained. The rationale against using acquittal for Menelaus gave excessive weight to surface form; the judicial setting supports release from charges, while the Scythian comparison needs only a short cultural note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -142,3 +142,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/004/048.job-49074.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:21Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The king acquits the guilty Menelaus but condemns the innocent representatives, whose case would have succeeded even before supposedly harsh outsiders.
+  meaning_decisions:
+  - source_phrase: τὸν τῆς ὅλης κακίας αἴτιον Μενέλαον
+    prior_rendering: Menelaus, the cause of all the evil
+    new_rendering: Menelaus, who was responsible for all this evil
+    rationale: The phrase assigns responsibility for the wrongdoing narrated here, rather than making an unrestricted claim about all evil.
+  - source_phrase: ἀπέλυσεν τῶν κατηγορημένων
+    prior_rendering: released ... from among the accused
+    new_rendering: acquitted
+    rationale: The legal construction describes release from the accusations or charges; it does not require picturing removal from a group of accused persons.
+  - source_phrase: τοῖς δὲ ταλαιπώροις ... τούτοις θάνατον ἀπέκρινεν
+    prior_rendering: but for those wretched men ... for them he decreed death
+    new_rendering: But he sentenced those unfortunate men to death
+    rationale: The men are pitiable victims, not morally wretched, and the natural judicial expression preserves the unjust death sentence without cumbersome repeated pronouns.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The earlier revision's 'would have been acquitted' accurately expresses the counterfactual verdict and is retained. The rationale against using acquittal for Menelaus gave excessive weight to surface form; the judicial setting supports release from charges, while the Scythian comparison needs only a short cultural note.

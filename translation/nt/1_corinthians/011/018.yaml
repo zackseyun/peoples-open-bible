@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: πρῶτον μὲν γὰρ συνερχομένων ὑμῶν ἐν ἐκκλησίᾳ ἀκούω σχίσματα ἐν ὑμῖν ὑπάρχειν, καὶ μέρος τι πιστεύω.
 translation:
-  text: For[a], in the first place, when you come together in assembly, I hear that divisions exist among you, and in part I believe it.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'in assembly' or 'in the church'; the Greek refers to the congregation gathered together, not specifically to a building.
-    reason: lexical_alternative
+  text: For, in the first place, I hear that there are divisions among you when you come together as a church, and I believe it in part.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: πρῶτον μὲν
   chosen: in the first place
@@ -98,14 +94,20 @@ revisions:
   from: For, in the first place, when you come together as a church, I hear that divisions exist among you, and in part I believe it.
   to: For, in the first place, when you come together as a church, I hear that divisions exist among you, and in part I believe it.
   rationale: Changed 'as a church' to 'in assembly' to more directly reflect ἐν ἐκκλησίᾳ without adding interpretive nuance. Kept the rest unchanged as accurate and natural.
-
 - timestamp: '2026-05-18T03:01:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For[a], in the first place, when you come together in assembly, I hear that divisions exist among you, and in part I believe it.'
-  to: 'For[a], in the first place, when you come together in assembly, I hear that divisions exist among you, and in part I believe it.'
+  from: For[a], in the first place, when you come together in assembly, I hear that divisions exist among you, and in part I believe it.
+  to: For[a], in the first place, when you come together in assembly, I hear that divisions exist among you, and in part I believe it.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as a church''].'
+- timestamp: '2026-11-09T17:08:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For[a], in the first place, when you come together in assembly, I hear that divisions exist among you, and in part I believe it.
+  to: For, in the first place, I hear that there are divisions among you when you come together as a church, and I believe it in part.
+  rationale: The history alternates between 'as a church' and 'in assembly' without a MAINTAINER ruling. I follow the original draft and documented contextual reasoning that the phrase means the congregation gathered as a church.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -127,3 +129,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/1_corinthians/011/018.job-52858.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:15Z'
+  change_level: refined
+  confidence: high
+  meaning: Paul partly believes reports that divisions mark the Corinthians’ gatherings as a church.
+  meaning_decisions:
+  - source_phrase: συνερχομένων ὑμῶν ἐν ἐκκλησίᾳ
+    prior_rendering: when you come together in assembly
+    new_rendering: when you come together as a church
+    rationale: The phrase describes the congregation gathering in its communal capacity, not merely people occupying an assembly or a building.
+  - source_phrase: ἀκούω σχίσματα ἐν ὑμῖν ὑπάρχειν
+    prior_rendering: I hear that divisions exist among you
+    new_rendering: I hear that there are divisions among you when you come together as a church
+    rationale: The reordered report makes clear that the divisions occur in their gatherings, rather than suggesting that Paul hears the report while gathering with them.
+  footnote_kinds: {}
+  history_weighed: The history alternates between 'as a church' and 'in assembly' without a MAINTAINER ruling. I follow the original draft and documented contextual reasoning that the phrase means the congregation gathered as a church.

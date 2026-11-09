@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וְ/עָבְי֣/וֹ טֶ֔פַח וּ/שְׂפָת/וֹ֙ כְּ/מַעֲשֵׂ֣ה שְׂפַת כּ֔וֹס פֶּ֖רַח שֽׁוֹשַׁנָּ֑ה מַחֲזִ֣יק בַּתִּ֔ים שְׁלֹ֥שֶׁת אֲלָפִ֖ים יָכִֽיל־׃ס
 translation:
-  text: Its thickness was a handbreadth[a], and its rim was like the work of the rim of a cup, like a lily blossom[b]. It could hold three thousand baths.
-  philosophy: optimal-equivalence
+  text: Its walls were a handbreadth thick, and its rim was shaped like the rim of a cup, like a lily blossom. It could hold three thousand baths[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: A bath was an ancient Hebrew unit of liquid measure.
+    text: A bath was a Hebrew liquid measure, approximately 22 liters, or about 6 US gallons.
     reason: cultural_note
-  - marker: b
-    text: 1 Kings 7:26 says the sea held two thousand baths. Chronicles here gives three thousand baths, likely reflecting either total capacity versus normal working volume, or a textual/tradition difference.
-    reason: cross_reference
 lexical_decisions:
 - source_word: עָבְיוֹ
   chosen: its thickness
@@ -99,14 +96,20 @@ revisions:
   from: Its thickness was a handbreadth, and its rim was made like the rim of a cup, like a lily blossom. It could hold three thousand baths.
   to: Its thickness was a handbreadth, and its rim was made like the rim of a cup, like a lily blossom. It could hold three thousand baths.
   rationale: Revised 'was made like' to 'was like' for closer adherence to the source, and retained the repeated 'rim' to reflect the Hebrew wording more fully.
-
 - timestamp: '2026-05-17T02:51:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Its thickness was a handbreadth[a], and its rim was like the work of the rim of a cup, like a lily blossom[b]. It could hold three thousand baths.'
-  to: 'Its thickness was a handbreadth[a], and its rim was like the work of the rim of a cup, like a lily blossom[b]. It could hold three thousand baths.'
+  from: Its thickness was a handbreadth[a], and its rim was like the work of the rim of a cup, like a lily blossom[b]. It could hold three thousand baths.
+  to: Its thickness was a handbreadth[a], and its rim was like the work of the rim of a cup, like a lily blossom[b]. It could hold three thousand baths.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was made like''].'
+- timestamp: '2026-11-09T17:23:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Its thickness was a handbreadth[a], and its rim was like the work of the rim of a cup, like a lily blossom[b]. It could hold three thousand baths.
+  to: Its walls were a handbreadth thick, and its rim was shaped like the rim of a cup, like a lily blossom. It could hold three thousand baths[a].
+  rationale: The first draft's 'was made like' and the lexical explanation support a comparison of crafted shape; the later source-transparent wording obscures that point. I retain the capacity statement, correctly anchor the unit note, and omit the earlier speculative explanation of the different figure in Kings.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -126,3 +129,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_chronicles/004/005.job-59573.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:37Z'
+  change_level: refined
+  confidence: high
+  meaning: The Sea had thick walls, a cup-like rim shaped like a lily blossom, and a capacity of three thousand baths.
+  meaning_decisions:
+  - source_phrase: וְעָבְיוֹ טֶפַח
+    prior_rendering: Its thickness was a handbreadth
+    new_rendering: Its walls were a handbreadth thick
+    rationale: Identifies the thickness as that of the vessel's walls, not its overall width.
+  - source_phrase: וּשְׂפָתוֹ כְּמַעֲשֵׂה שְׂפַת כּוֹס פֶּרַח שׁוֹשַׁנָּה
+    prior_rendering: and its rim was like the work of the rim of a cup, like a lily blossom
+    new_rendering: and its rim was shaped like the rim of a cup, like a lily blossom
+    rationale: Conveys crafted shape naturally while retaining both the cup comparison and the lily image.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The first draft's 'was made like' and the lexical explanation support a comparison of crafted shape; the later source-transparent wording obscures that point. I retain the capacity statement, correctly anchor the unit note, and omit the earlier speculative explanation of the different figure in Kings.

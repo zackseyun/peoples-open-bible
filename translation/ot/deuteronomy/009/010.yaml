@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּתֵּ֨ן יְהוָ֜ה אֵלַ֗/י אֶת שְׁנֵי֙ לוּחֹ֣ת הָֽ/אֲבָנִ֔ים כְּתֻבִ֖ים בְּ/אֶצְבַּ֣ע אֱלֹהִ֑ים וַ/עֲלֵי/הֶ֗ם כְּֽ/כָל הַ/דְּבָרִ֡ים אֲשֶׁ֣ר דִּבֶּר֩ יְהוָ֨ה עִמָּ/כֶ֥ם בָּ/הָ֛ר מִ/תּ֥וֹךְ הָ/אֵ֖שׁ בְּ/י֥וֹם הַ/קָּהָֽל־־׃
 translation:
-  text: And Yahweh gave me the two stone tablets[a], written with the finger of God[b], and on them were all the words that Yahweh had spoken to you on the mountain from the midst of the fire on the day of the assembly.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'by the finger of God.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'that the LORD spoke to you.' The Hebrew says 'with you.'
-    reason: lexical_alternative
+  text: Yahweh gave me the two stone tablets, written with the finger of God. On them were all the words Yahweh had spoken to you on the mountain from the midst of the fire on the day you were assembled.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: יְהוָה
   chosen: Yahweh
@@ -124,14 +117,20 @@ revisions:
   from: And the LORD gave me the two stone tablets, written with the finger of God, and on them were all the words that the LORD had spoken with you on the mountain from the midst of the fire on the day of the assembly.
   to: And the LORD gave me the two stone tablets, written with the finger of God, and on them were all the words that the LORD had spoken with you on the mountain from the midst of the fire on the day of the assembly.
   rationale: Changed 'spoken with you' to 'spoken to you' for more natural and contextually accurate English rendering of the Hebrew.
-
 - timestamp: '2026-05-18T02:55:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Yahweh gave me the two stone tablets[a], written with the finger of God[b], and on them were all the words that Yahweh had spoken to you on the mountain from the midst of the fire on the day of the assembly.'
-  to: 'And Yahweh gave me the two stone tablets[a], written with the finger of God[b], and on them were all the words that Yahweh had spoken to you on the mountain from the midst of the fire on the day of the assembly.'
+  from: And Yahweh gave me the two stone tablets[a], written with the finger of God[b], and on them were all the words that Yahweh had spoken to you on the mountain from the midst of the fire on the day of the assembly.
+  to: And Yahweh gave me the two stone tablets[a], written with the finger of God[b], and on them were all the words that Yahweh had spoken to you on the mountain from the midst of the fire on the day of the assembly.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that the LORD had spoken with you''].'
+- timestamp: '2026-11-09T17:32:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Yahweh gave me the two stone tablets[a], written with the finger of God[b], and on them were all the words that Yahweh had spoken to you on the mountain from the midst of the fire on the day of the assembly.
+  to: Yahweh gave me the two stone tablets, written with the finger of God. On them were all the words Yahweh had spoken to you on the mountain from the midst of the fire on the day you were assembled.
+  rationale: I retain the current “spoken to you,” which accurately expresses the address despite the conflicting automated record about “with you.” The documented decision to preserve “the finger of God” is also retained; sentence division improves readability without weakening the image.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -154,3 +153,21 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/009/010.job-61492.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:32:24Z'
+  change_level: refined
+  confidence: high
+  meaning: Yahweh gave Moses two tablets on which God had written all the words he spoke from the fire to assembled Israel.
+  meaning_decisions:
+  - source_phrase: בְּיוֹם הַקָּהָל
+    prior_rendering: on the day of the assembly
+    new_rendering: on the day you were assembled
+    rationale: Identifies the assembly as Israel’s gathering to hear Yahweh, rather than leaving it as an unexplained event label.
+  footnote_kinds: {}
+  history_weighed: I retain the current “spoken to you,” which accurately expresses the address despite the conflicting automated record about “with you.” The documented decision to preserve “the finger of God” is also retained; sentence division improves readability without weakening the image.

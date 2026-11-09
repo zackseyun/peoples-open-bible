@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וְ/עַתָּ֗ה אֱסֹף֙ אֶת יֶ֣תֶר הָ/עָ֔ם וַ/חֲנֵ֥ה עַל הָ/עִ֖יר וְ/לָכְדָ֑/הּ פֶּן אֶלְכֹּ֤ד אֲנִי֙ אֶת הָ/עִ֔יר וְ/נִקְרָ֥א שְׁמִ֖/י עָלֶֽי/הָ־־־־׃
 translation:
-  text: Now gather the rest of the troops[a], camp against the city, and capture it, lest I capture the city and it be called by my name.
-  philosophy: optimal-equivalence
+  text: Now gather the rest of the troops, lay siege to the city, and capture it. Otherwise I will capture it, and the honor of its capture will be mine[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more idiomatically, 'and it be called by my name.' The Hebrew literally says 'my name be called over it,' expressing that the honor for taking the city would be attributed to Joab.
+    text: Literally, “my name will be called over it”; this can also be understood as the city being named after Joab.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וְעַתָּה
@@ -88,14 +88,20 @@ revisions:
   from: Now gather the rest of the troops, camp against the city, and capture it, lest I capture the city and my name be called over it.
   to: Now gather the rest of the troops, camp against the city, and capture it, lest I capture the city and my name be called over it.
   rationale: Revised the final clause from 'my name be called over it' to the more natural and accurate 'it be called by my name,' reflecting the idiom of the city being named after the captor.
-
 - timestamp: '2026-05-17T04:21:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now gather the rest of the troops[a], camp against the city, and capture it, lest I capture the city and it be called by my name.'
-  to: 'Now gather the rest of the troops[a], camp against the city, and capture it, lest I capture the city and it be called by my name.'
+  from: Now gather the rest of the troops[a], camp against the city, and capture it, lest I capture the city and it be called by my name.
+  to: Now gather the rest of the troops[a], camp against the city, and capture it, lest I capture the city and it be called by my name.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and my name be called over it''].'
+- timestamp: '2026-11-09T17:28:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Now gather the rest of the troops[a], camp against the city, and capture it, lest I capture the city and it be called by my name.
+  to: Now gather the rest of the troops, lay siege to the city, and capture it. Otherwise I will capture it, and the honor of its capture will be mine[a].
+  rationale: The revisions alternate between two source-shaped naming expressions, while the lexical rationale explicitly identifies attribution of conquest and honor. I translate that contextual force and preserve the literal naming possibility in the note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -115,3 +121,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/012/028.job-45651.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:45Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Joab urges David to complete the conquest personally so that David, rather than Joab, receives the honor.
+  meaning_decisions:
+  - source_phrase: וַחֲנֵה עַל הָעִיר
+    prior_rendering: camp against the city
+    new_rendering: lay siege to the city
+    rationale: In this military setting, hostile encampment against the city means joining the siege to complete its capture.
+  - source_phrase: פֶּן אֶלְכֹּד אֲנִי אֶת הָעִיר וְנִקְרָא שְׁמִי עָלֶיהָ
+    prior_rendering: lest I capture the city and it be called by my name
+    new_rendering: Otherwise I will capture it, and the honor of its capture will be mine
+    rationale: The warning concerns whose name will be associated with the conquest; the main text conveys attribution of honor without asserting that the city must literally be renamed.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The revisions alternate between two source-shaped naming expressions, while the lexical rationale explicitly identifies attribution of conquest and honor. I translate that contextual force and preserve the literal naming possibility in the note.

@@ -42,12 +42,8 @@ source:
   validation: minor_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone PAZ extraction from the curated ADA stream, using Daniel 3:24-90 as the source span and renumbering it to PAZ 1:1-67.
 translation:
-  text: Blessed are you[a], Lord, the God of our fathers, and praised and highly exalted forever; and blessed is your holy, glorious name, and supremely praised and highly exalted through all the ages.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'the holy name of your glory.' The Greek phrase is compressed, and the main text renders its sense in natural English.
-    reason: lexical_alternative
+  text: Blessed are you, Lord, the God of our fathers, worthy of praise and highly exalted forever; blessed is your holy, glorious name, worthy of the highest praise and highly exalted through all the ages.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Εὐλογητὸς
   chosen: Blessed
@@ -152,14 +148,20 @@ revisions:
   from: Blessed are you, Lord, the God of our fathers, and praised and highly exalted forever; and blessed is your holy, glorious name, and supremely praised and highly exalted through all the ages.
   to: Blessed are you, Lord, the God of our fathers, and praised and highly exalted forever; and blessed is your holy name of glory, and exceedingly praised and highly exalted through all the ages.
   rationale: Revised 'your holy, glorious name' to 'your holy name of glory' to more closely reflect the Greek word order and genitive construction, and changed 'supremely praised' to 'exceedingly praised' for a more direct rendering of ὑπεραινετόν.
-
 - timestamp: '2026-05-16T14:07:25Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Blessed are you[a], Lord, the God of our fathers, and praised and highly exalted forever; and blessed is your holy name of glory, and exceedingly praised and highly exalted through all the ages.'
-  to: 'Blessed are you[a], Lord, the God of our fathers, and praised and highly exalted forever; and blessed is your holy, glorious name, and supremely praised and highly exalted through all the ages.'
-  rationale: 'Restored drafter ''your holy, glorious name'' (preserving English adjectival doubling) and ''supremely praised'' (preserving the chosen rendering of intensified ὑπερυμνητός) per chosen renderings.'
+  from: Blessed are you[a], Lord, the God of our fathers, and praised and highly exalted forever; and blessed is your holy name of glory, and exceedingly praised and highly exalted through all the ages.
+  to: Blessed are you[a], Lord, the God of our fathers, and praised and highly exalted forever; and blessed is your holy, glorious name, and supremely praised and highly exalted through all the ages.
+  rationale: Restored drafter 'your holy, glorious name' (preserving English adjectival doubling) and 'supremely praised' (preserving the chosen rendering of intensified ὑπερυμνητός) per chosen renderings.
+- timestamp: '2026-11-09T19:02:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Blessed are you[a], Lord, the God of our fathers, and praised and highly exalted forever; and blessed is your holy, glorious name, and supremely praised and highly exalted through all the ages.
+  to: Blessed are you, Lord, the God of our fathers, worthy of praise and highly exalted forever; blessed is your holy, glorious name, worthy of the highest praise and highly exalted through all the ages.
+  rationale: I retain the current 'your holy, glorious name,' which carries the compressed genitive more naturally than the source-transparent revision. The documented discussion of αἰνετός, especially in verse 31, supports making worthiness explicit while preserving the hymn's repeated exaltation and enduring duration.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -179,3 +181,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/prayer_of_azariah/001/029.job-50940.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:02:29Z'
+  change_level: refined
+  confidence: high
+  meaning: The three bless the God of their fathers and his holy, glorious name as worthy of enduring praise and supreme exaltation.
+  meaning_decisions:
+  - source_phrase: αἰνετὸς
+    prior_rendering: praised
+    new_rendering: worthy of praise
+    rationale: The adjective affirms that God deserves praise, not merely that praise is being offered.
+  - source_phrase: ὑπεραινετὸν
+    prior_rendering: supremely praised
+    new_rendering: worthy of the highest praise
+    rationale: This preserves both the adjective's force of deserving praise and its intensified degree.
+  footnote_kinds: {}
+  history_weighed: I retain the current 'your holy, glorious name,' which carries the compressed genitive more naturally than the source-transparent revision. The documented discussion of αἰνετός, especially in verse 31, supports making worthiness explicit while preserving the hymn's repeated exaltation and enduring duration.

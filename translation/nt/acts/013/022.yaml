@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ μεταστήσας αὐτὸν ἤγειρεν ⸂τὸν Δαυὶδ αὐτοῖς⸃ εἰς βασιλέα, ᾧ καὶ εἶπεν μαρτυρήσας· Εὗρον Δαυὶδ τὸν τοῦ Ἰεσσαί, ἄνδρα κατὰ τὴν καρδίαν μου, ὃς ποιήσει πάντα τὰ θελήματά μου.
 translation:
-  text: And after removing him[a], he raised up David for them as king, to whom he also bore witness and said, ‘I have found David the son of Jesse, a man according to my heart[b], who will do all my will.’
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more traditionally, “a man after my own heart.” The Greek more literally says “according to my heart.”
-    reason: lexical_alternative
-  - marker: b
-    text: Greek “all my wills,” with the noun in the plural; many English translations smooth this to “all my will.”
-    reason: lexical_alternative
+  text: 'After removing Saul, God raised up David as their king. He testified about him: ‘I have found David son of Jesse, a man after my own heart, who will do all my will.’'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: μεταστήσας
   chosen: after removing him
@@ -125,14 +118,20 @@ revisions:
   from: And after removing him, he raised up David for them as king, to whom he also bore witness and said, ‘I have found David the son of Jesse, a man according to my heart, who will do all my wills.’
   to: And after removing him, he raised up David for them as king, to whom he also bore witness and said, ‘I have found David the son of Jesse, a man according to my heart, who will do all my wills.’
   rationale: Changed ‘all my wills’ to ‘all my will’ for accurate rendering of the singular Greek τὰ θελήματά μου in idiomatic English. No other changes needed.
-
 - timestamp: '2026-05-18T03:00:06Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And after removing him[a], he raised up David for them as king, to whom he also bore witness and said, ‘I have found David the son of Jesse, a man according to my heart[b], who will do all my will.’'
-  to: 'And after removing him[a], he raised up David for them as king, to whom he also bore witness and said, ‘I have found David the son of Jesse, a man according to my heart[b], who will do all my will.’'
+  from: And after removing him[a], he raised up David for them as king, to whom he also bore witness and said, ‘I have found David the son of Jesse, a man according to my heart[b], who will do all my will.’
+  to: And after removing him[a], he raised up David for them as king, to whom he also bore witness and said, ‘I have found David the son of Jesse, a man according to my heart[b], who will do all my will.’
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''all my wills''].'
+- timestamp: '2026-11-09T17:08:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And after removing him[a], he raised up David for them as king, to whom he also bore witness and said, ‘I have found David the son of Jesse, a man according to my heart[b], who will do all my will.’
+  to: 'After removing Saul, God raised up David as their king. He testified about him: ‘I have found David son of Jesse, a man after my own heart, who will do all my will.’'
+  rationale: The current 'all my will' is idiomatic English for the Greek plural intentions, despite the automated review's mistaken claim that the Greek is singular. I retain 'raised up' but correct the direction of the testimony and use the established English heart idiom.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -152,3 +151,29 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/013/022.job-46495.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:29Z'
+  change_level: retranslated
+  confidence: high
+  meaning: God replaced Saul with David and testified that David was a man after his heart who would carry out his will.
+  meaning_decisions:
+  - source_phrase: καὶ μεταστήσας αὐτὸν ἤγειρεν τὸν Δαυὶδ αὐτοῖς εἰς βασιλέα
+    prior_rendering: And after removing him, he raised up David for them as king
+    new_rendering: After removing Saul, God raised up David as their king.
+    rationale: Naming Saul and God makes the change of kings unmistakable while retaining the scriptural language of raising up a ruler.
+  - source_phrase: ᾧ καὶ εἶπεν μαρτυρήσας
+    prior_rendering: to whom he also bore witness and said
+    new_rendering: He testified about him
+    rationale: The testimony concerns David; the prior wording misleadingly suggested that the quoted words were addressed to David.
+  - source_phrase: κατὰ τὴν καρδίαν μου
+    prior_rendering: according to my heart
+    new_rendering: after my own heart
+    rationale: The established English idiom conveys agreement with God's heart and intentions, with the following clause anchoring it in doing God's will.
+  footnote_kinds: {}
+  history_weighed: The current 'all my will' is idiomatic English for the Greek plural intentions, despite the automated review's mistaken claim that the Greek is singular. I retain 'raised up' but correct the direction of the testimony and use the established English heart idiom.

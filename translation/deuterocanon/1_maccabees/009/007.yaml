@@ -25,11 +25,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Judas saw[a] that his camp was failing, because the battle was pressing hard on him; and he was crushed in heart, because he had no time to gather them together.
-  philosophy: optimal-equivalence
+  text: Judas saw that his army was dwindling[a] and that battle was closing in on him. His heart was crushed, for he had no time to rally his men.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Greek wording after 'Judas saw' is terse and somewhat elliptical. The translation understands it to mean that Judas saw his own force giving way under pressure.
+    text: Literally, “that his army,” with no predicate; “was dwindling” is supplied from verse 6.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: παρεμβολὴ
@@ -104,13 +104,12 @@ revisions:
   from: And Judas saw that his camp was failing, because the battle was pressing hard on him; and he was crushed in heart, because he had no time to gather them together.
   to: And Judas saw that his camp was broken, because the battle was pressing hard on him; and he was crushed in heart, because he had no time to gather them together.
   rationale: Changed 'was failing' to 'was broken' for closer lexical correspondence to the Greek while preserving natural formal English. No other changes needed.
-
 - timestamp: '2026-05-18T03:09:47Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Judas saw that his camp was broken[a], because the battle was pressing hard on him; and he was crushed in heart, because he had no time to gather them together.'
-  to: 'And Judas saw that his camp was failing, because the battle was pressing hard on him; and he was crushed in heart, because he had no time to gather them together.'
+  from: And Judas saw that his camp was broken[a], because the battle was pressing hard on him; and he was crushed in heart, because he had no time to gather them together.
+  to: And Judas saw that his camp was failing, because the battle was pressing hard on him; and he was crushed in heart, because he had no time to gather them together.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that his camp was failing''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -120,6 +119,13 @@ revisions:
   from: And Judas saw that his camp was failing, because the battle was pressing hard on him; and he was crushed in heart, because he had no time to gather them together.
   to: And Judas saw[a] that his camp was failing, because the battle was pressing hard on him; and he was crushed in heart, because he had no time to gather them together.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('Judas saw') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:53:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Judas saw[a] that his camp was failing, because the battle was pressing hard on him; and he was crushed in heart, because he had no time to gather them together.
+  to: Judas saw that his army was dwindling[a] and that battle was closing in on him. His heart was crushed, for he had no time to rally his men.
+  rationale: The history recognizes the missing predicate but debated 'failing' versus 'broken'; verse 6 supports dwindling numbers rather than an already defeated army. The current crushed-heart image is retained, while the textual incompleteness is stated plainly in the note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -139,3 +145,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/009/007.job-48426.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:19Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Judas is heartbroken to see his force dwindling as battle approaches, with no time to rally his men.
+  meaning_decisions:
+  - source_phrase: ὅτι ἡ παρεμβολὴ αὐτοῦ
+    prior_rendering: that his camp was failing
+    new_rendering: that his army was dwindling
+    rationale: The incomplete clause is supplied from the preceding account of men leaving; the force, not its campsite, is diminishing.
+  - source_phrase: ὅτι ὁ πόλεμος ἔθλιβεν αὐτόν
+    prior_rendering: because the battle was pressing hard on him
+    new_rendering: and that battle was closing in on him
+    rationale: This is another circumstance Judas perceives, not necessarily the cause of his army’s collapse; the battle has not yet begun.
+  - source_phrase: συνετρίβη τῇ καρδίᾳ
+    prior_rendering: he was crushed in heart
+    new_rendering: His heart was crushed
+    rationale: The vivid image is preserved in natural English.
+  - source_phrase: συναγαγεῖν αὐτούς
+    prior_rendering: to gather them together
+    new_rendering: to rally his men
+    rationale: The military setting gives the gathering its sense of reassembling a disintegrating force.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The history recognizes the missing predicate but debated 'failing' versus 'broken'; verse 6 supports dwindling numbers rather than an already defeated army. The current crushed-heart image is retained, while the textual incompleteness is stated plainly in the note.

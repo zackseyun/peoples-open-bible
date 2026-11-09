@@ -14,12 +14,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: For the sun and the moon and the stars, being bright and sent out for needs[a], are obedient.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'for service' or 'for necessary uses'; the Greek phrase can denote usefulness in meeting needs or fulfilling appointed functions.
-    reason: lexical_alternative
+  text: For the sun, moon, and stars shine brightly and obediently serve the purposes for which they are sent.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἥλιος
   chosen: sun
@@ -99,13 +95,12 @@ revisions:
   from: For the sun and the moon and the stars, being bright and sent out for needs, are obedient.
   to: For the sun and the moon and the stars, being bright and sent out for service, are obedient.
   rationale: Replaced 'for needs' with 'for service' to better reflect ἐπὶ χρείας in natural formal English; retained the rest of the structure as accurate and complete.
-
 - timestamp: '2026-05-18T03:09:47Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For the sun and the moon and the stars[a], being bright and sent out for service, are obedient.'
-  to: 'For the sun and the moon and the stars, being bright and sent out for needs, are obedient.'
+  from: For the sun and the moon and the stars[a], being bright and sent out for service, are obedient.
+  to: For the sun and the moon and the stars, being bright and sent out for needs, are obedient.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for needs''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -115,6 +110,13 @@ revisions:
   from: For the sun and the moon and the stars, being bright and sent out for needs, are obedient.
   to: For the sun and the moon and the stars, being bright and sent out for needs[a], are obedient.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('for needs') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:02:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For the sun and the moon and the stars, being bright and sent out for needs[a], are obedient.
+  to: For the sun, moon, and stars shine brightly and obediently serve the purposes for which they are sent.
+  rationale: The earlier review’s 'for service' identifies the useful-function sense more clearly than 'for needs'; the automated revert supplies no meaning-based reason to reject that gain. The rendering preserves both commissioning and obedience without adding God’s name where this verse leaves the sender implicit.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -134,3 +136,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/letter_of_jeremiah/001/059.job-50898.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:02:29Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Unlike the idols, the bright heavenly bodies obey and perform the useful service for which they are sent.
+  meaning_decisions:
+  - source_phrase: ὄντα λαμπρὰ καὶ ἀποστελλόμενα ἐπὶ χρείας εὐήκοά εἰσιν
+    prior_rendering: being bright and sent out for needs, are obedient
+    new_rendering: shine brightly and obediently serve the purposes for which they are sent
+    rationale: The heavenly bodies are luminous, useful, and responsive to command; the new construction carries these connected meanings rather than leaving 'for needs' unexplained.
+  footnote_kinds: {}
+  history_weighed: The earlier review’s 'for service' identifies the useful-function sense more clearly than 'for needs'; the automated revert supplies no meaning-based reason to reject that gain. The rendering preserves both commissioning and obedience without adding God’s name where this verse leaves the sender implicit.

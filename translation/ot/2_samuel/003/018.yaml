@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וְ/עַתָּ֖ה עֲשׂ֑וּ כִּ֣י יְהוָ֗ה אָמַ֤ר אֶל דָּוִד֙ לֵ/אמֹ֔ר בְּ/יַ֣ד דָּוִ֣ד עַבְדִּ֗/י הוֹשִׁ֜יעַ אֶת עַמִּ֤/י יִשְׂרָאֵל֙ מִ/יַּ֣ד פְּלִשְׁתִּ֔ים וּ/מִ/יַּ֖ד כָּל אֹיְבֵי/הֶֽם־׀־־׃
 translation:
-  text: Now then[a], do it, for Yahweh has spoken concerning David, saying, ‘By the hand of my servant David I will save my people Israel from the hand of the Philistines and from the hand of all their enemies.’
-  philosophy: optimal-equivalence
+  text: Now do it, for Yahweh has said concerning David, ‘Through my servant David I will save my people Israel from the power of the Philistines and all their enemies[a].’”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'David my servant will save my people Israel from the hand of the Philistines and from the hand of all their enemies.' The Hebrew form may be taken with David as the grammatical subject rather than the LORD as the implied speaker acting through David.
-    reason: alternative_reading
+    text: Literally, “by the hand of David my servant ... from the hand of the Philistines and from the hand of all their enemies.”
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: וְעַתָּה
   chosen: Now then
@@ -115,14 +115,20 @@ revisions:
   from: Now then, do it, for the LORD has spoken to David, saying, ‘By the hand of my servant David I will save my people Israel from the hand of the Philistines and from the hand of all their enemies.’
   to: Now then, do it, for the LORD has spoken to David, saying, ‘By the hand of my servant David I will save my people Israel from the hand of the Philistines and from the hand of all their enemies.’
   rationale: Changed ‘spoken to David’ to ‘spoken concerning David’ to reflect the Hebrew אֶל דָּוִד here as speech about David rather than direct address to him. No other changes needed.
-
 - timestamp: '2026-05-17T05:51:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now then[a], do it, for Yahweh has spoken concerning David, saying, ‘By the hand of my servant David I will save my people Israel from the hand of the Philistines and from the hand of all their enemies.’'
-  to: 'Now then[a], do it, for Yahweh has spoken concerning David, saying, ‘By the hand of my servant David I will save my people Israel from the hand of the Philistines and from the hand of all their enemies.’'
+  from: Now then[a], do it, for Yahweh has spoken concerning David, saying, ‘By the hand of my servant David I will save my people Israel from the hand of the Philistines and from the hand of all their enemies.’
+  to: Now then[a], do it, for Yahweh has spoken concerning David, saying, ‘By the hand of my servant David I will save my people Israel from the hand of the Philistines and from the hand of all their enemies.’
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''has spoken to David, saying''].'
+- timestamp: '2026-11-09T17:27:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Now then[a], do it, for Yahweh has spoken concerning David, saying, ‘By the hand of my servant David I will save my people Israel from the hand of the Philistines and from the hand of all their enemies.’
+  to: Now do it, for Yahweh has said concerning David, ‘Through my servant David I will save my people Israel from the power of the Philistines and all their enemies[a].’”
+  rationale: I keep the current “concerning David” despite conflicting revision metadata, since the third-person description of David supports that sense. The divine speaker and the agency construction support retaining “I will save,” without relying on the earlier doctrinal rationale.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -144,3 +150,26 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_samuel/003/018.job-60940.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:27:55Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Abner urged the elders to act on their desire for David’s kingship because Yahweh had promised to save Israel through him.
+  meaning_decisions:
+  - source_phrase: בְּיַד דָּוִד עַבְדִּי
+    prior_rendering: By the hand of my servant David
+    new_rendering: Through my servant David
+    rationale: 'The hand construction expresses agency: David is the servant through whom the promised saving action will occur.'
+  - source_phrase: מִיַּד פְּלִשְׁתִּים וּמִיַּד כָּל אֹיְבֵיהֶם
+    prior_rendering: from the hand of the Philistines and from the hand of all their enemies
+    new_rendering: from the power of the Philistines and all their enemies
+    rationale: The repeated hand idiom refers to hostile power; the new wording makes the danger explicit while the note preserves the source’s repeated image.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: I keep the current “concerning David” despite conflicting revision metadata, since the third-person description of David supports that sense. The divine speaker and the agency construction support retaining “I will save,” without relying on the earlier doctrinal rationale.

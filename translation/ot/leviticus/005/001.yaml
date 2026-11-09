@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וְ/נֶ֣פֶשׁ כִּֽי תֶחֱטָ֗א וְ/שָֽׁמְעָה֙ ק֣וֹל אָלָ֔ה וְ/ה֣וּא עֵ֔ד א֥וֹ רָאָ֖ה א֣וֹ יָדָ֑ע אִם ל֥וֹא יַגִּ֖יד וְ/נָשָׂ֥א עֲוֺנֽ/וֹ־־׃
 translation:
-  text: If a person sins[a] because he hears a public adjuration and he is a witness—whether he has seen or otherwise knows—and he does not report it[b], then he shall bear his guilt.
-  philosophy: optimal-equivalence
+  text: If a person hears a solemn summons to testify[a] and is a witness—having seen the matter or otherwise knowing about it—but does not report it, he sins and shall bear his guilt.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'he hears the voice of an oath,' that is, a solemn sworn adjuration calling for testimony.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'he shall bear his iniquity.' The Hebrew idiom means he remains liable for the guilt of withholding testimony.
-    reason: lexical_alternative
+    text: Such a summons placed witnesses under an oath that invoked a curse for withholding testimony.
+    reason: cultural_note
 lexical_decisions:
 - source_word: נֶפֶשׁ
   chosen: a person
@@ -94,14 +91,20 @@ revisions:
   from: If a person sins because he hears a public adjuration and he is a witness—whether he has seen or otherwise knows—and he does not report it, then he shall bear his guilt.
   to: If a person sins, and hears the voice of an oath, and he is a witness, whether he has seen or known, if he does not report it, then he shall bear his guilt.
   rationale: Replaced 'because he hears a public adjuration' with the more literal 'and hears the voice of an oath' to better reflect the source without interpretive expansion; simplified 'whether he has seen or otherwise knows' to 'whether he has seen or known' for closer lexical correspondence and formal register.
-
 - timestamp: '2026-05-15T12:24:07Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If a person sins[a], and hears the voice of an oath, and he is a witness, whether he has seen or known, if he does not report it[b], then he shall bear his guilt.'
-  to: 'If a person sins[a] because he hears a public adjuration and he is a witness—whether he has seen or otherwise knows—and he does not report it[b], then he shall bear his guilt.'
-  rationale: 'Restored legal-context ''public adjuration'' and clarifying ''otherwise knows''.'
+  from: If a person sins[a], and hears the voice of an oath, and he is a witness, whether he has seen or known, if he does not report it[b], then he shall bear his guilt.
+  to: If a person sins[a] because he hears a public adjuration and he is a witness—whether he has seen or otherwise knows—and he does not report it[b], then he shall bear his guilt.
+  rationale: Restored legal-context 'public adjuration' and clarifying 'otherwise knows'.
+- timestamp: '2026-11-09T18:16:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If a person sins[a] because he hears a public adjuration and he is a witness—whether he has seen or otherwise knows—and he does not report it[b], then he shall bear his guilt.
+  to: If a person hears a solemn summons to testify[a] and is a witness—having seen the matter or otherwise knowing about it—but does not report it, he sins and shall bear his guilt.
+  rationale: The history correctly recognized a legal summons and knowledge extending beyond eyewitness observation. I preserve those gains rather than returning to 'the voice of an oath,' while correcting the misleading suggestion that hearing the summons causes the sin.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -121,3 +124,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/weighted_vocab/ot/leviticus/005/001.job-15652.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:16:46Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A witness who withholds what he knows after hearing a solemn summons to testify sins and bears responsibility for his wrongdoing.
+  meaning_decisions:
+  - source_phrase: וְנֶפֶשׁ כִּי תֶחֱטָא וְשָׁמְעָה קוֹל אָלָה
+    prior_rendering: If a person sins because he hears a public adjuration
+    new_rendering: If a person hears a solemn summons to testify ... he sins
+    rationale: Hearing the summons is not itself the sin; withholding testimony is. The reordered sentence makes that relationship clear and replaces an unfamiliar legal term with its meaning.
+  - source_phrase: וְהוּא עֵד אוֹ רָאָה אוֹ יָדָע אִם לֹא יַגִּיד
+    prior_rendering: and he is a witness—whether he has seen or otherwise knows—and he does not report it
+    new_rendering: and is a witness—having seen the matter or otherwise knowing about it—but does not report it
+    rationale: The witness’s knowledge is the reason he must testify; 'but' makes his failure to fulfill that obligation explicit.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The history correctly recognized a legal summons and knowledge extending beyond eyewitness observation. I preserve those gains rather than returning to 'the voice of an oath,' while correcting the misleading suggestion that hearing the summons causes the sin.

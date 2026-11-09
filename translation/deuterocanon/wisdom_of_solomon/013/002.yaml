@@ -10,18 +10,12 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: Instead[a], they considered either fire, or wind, or swift air, or the circle of the stars, or violent water, or the lights of heaven, to be gods[c][b], rulers of the world.
-  philosophy: optimal-equivalence
+  text: Instead, they regarded fire, wind, rushing air, the circle of stars[a], raging waters, or the lights of heaven as gods, rulers of the world.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'spirit' for 'wind' (Greek πνεῦμα); here the natural-elements context favors 'wind.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the circuit of the stars' for 'the circle of the stars.'
-    reason: lexical_alternative
-  - marker: c
-    text: Literally, 'presiding rulers of the world.'
-    reason: lexical_alternative
+    text: Or, 'the circuit of the stars,' referring to their circular course.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἀλλʼ ἢ
   chosen: Instead, ... either
@@ -127,14 +121,20 @@ revisions:
   from: Instead, they considered either fire, or wind, or swift air, or the circle of the stars, or violent water, or the lights of heaven, to be gods ruling the world.
   to: Instead, they considered either fire, or wind, or swift air, or the circle of the stars, or violent water, or the lights of heaven, to be gods ruling the world.
   rationale: Added a comma before 'rulers of the world' to reflect the appositional structure of the Greek ('gods, rulers of the world') more clearly and formally.
-
 - timestamp: '2026-05-18T03:00:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Instead[a], they considered either fire, or wind, or swift air, or the circle of the stars, or violent water, or the lights of heaven, to be gods[c][b], rulers of the world.'
-  to: 'Instead[a], they considered either fire, or wind, or swift air, or the circle of the stars, or violent water, or the lights of heaven, to be gods[c][b], rulers of the world.'
+  from: Instead[a], they considered either fire, or wind, or swift air, or the circle of the stars, or violent water, or the lights of heaven, to be gods[c][b], rulers of the world.
+  to: Instead[a], they considered either fire, or wind, or swift air, or the circle of the stars, or violent water, or the lights of heaven, to be gods[c][b], rulers of the world.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''ruling the world''].'
+- timestamp: '2026-11-09T19:12:18Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Instead[a], they considered either fire, or wind, or swift air, or the circle of the stars, or violent water, or the lights of heaven, to be gods[c][b], rulers of the world.
+  to: Instead, they regarded fire, wind, rushing air, the circle of stars[a], raging waters, or the lights of heaven as gods, rulers of the world.
+  rationale: The lexical discussion rightly favors 'wind' and preserves both supposed divinity and cosmic rule. The current apposition 'gods, rulers of the world' is retained; redundant synonym notes are dropped, and the astronomical alternative is attached to its proper phrase.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -154,3 +154,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/013/002.job-39211.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:12:18Z'
+  change_level: refined
+  confidence: high
+  meaning: Instead of recognizing the Creator, these people regarded natural forces and heavenly bodies as divine rulers of the world.
+  meaning_decisions:
+  - source_phrase: ταχινὸν ἀέρα
+    prior_rendering: swift air
+    new_rendering: rushing air
+    rationale: This conveys rapid movement naturally while preserving the source's distinction between wind and air.
+  - source_phrase: βίαιον ὕδωρ
+    prior_rendering: violent water
+    new_rendering: raging waters
+    rationale: The natural English expression retains the threatening force of water without restricting it to a particular sea or river.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The lexical discussion rightly favors 'wind' and preserves both supposed divinity and cosmic rule. The current apposition 'gods, rulers of the world' is retained; redundant synonym notes are dropped, and the astronomical alternative is attached to its proper phrase.

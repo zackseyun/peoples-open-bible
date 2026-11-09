@@ -28,15 +28,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 7:22
 translation:
-  text: Do you have livestock? Keep your eye on it[a]; and if it is profitable[b], keep it.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew 'if it is אֻמָּנָה'; the exact nuance of the adjective is uncertain, but the Greek parallel reads 'useful,' which supports the rendering here.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'see [with] your eyes.' The sense is to watch over or inspect your livestock carefully.
-    reason: lexical_alternative
+  text: Do you have livestock? Keep your eye on them, and if they are useful, keep them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: בְּהֵמָה
   chosen: livestock
@@ -115,14 +108,20 @@ revisions:
   from: Do you have livestock? Keep your eye on them; and if they are useful, keep them.
   to: Do you have livestock? Keep your eye on them; and if they are useful, keep them.
   rationale: Adjusted number to singular for consistency with the Hebrew singular noun, and changed 'useful' to 'profitable' to better reflect אֻמָּנָה in this context while keeping the wording natural and formal.
-
 - timestamp: '2026-05-16T12:07:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Do you have livestock? Keep your eye on it[a]; and if it is profitable[b], keep it.'
-  to: 'Do you have livestock? Keep your eye on it[a]; and if it is profitable[b], keep it.'
-  rationale: 'Restored drafter plural pronouns ''them'' for the livestock collective (matching the English plural ''livestock'' and useful aphoristic generality) per chosen renderings.'
+  from: Do you have livestock? Keep your eye on it[a]; and if it is profitable[b], keep it.
+  to: Do you have livestock? Keep your eye on it[a]; and if it is profitable[b], keep it.
+  rationale: Restored drafter plural pronouns 'them' for the livestock collective (matching the English plural 'livestock' and useful aphoristic generality) per chosen renderings.
+- timestamp: '2026-11-09T19:05:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Do you have livestock? Keep your eye on it[a]; and if it is profitable[b], keep it.
+  to: Do you have livestock? Keep your eye on them, and if they are useful, keep them.
+  rationale: The early draft and lexical notes favor 'useful' and plural pronouns for the English collective. The later rationale for 'profitable' narrows the advice beyond the available Greek support.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -142,3 +141,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/007/022.job-51163.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:05:42Z'
+  change_level: refined
+  confidence: high
+  meaning: Livestock should receive attentive oversight and be retained when they are useful.
+  meaning_decisions:
+  - source_phrase: אֻמָּנָה
+    prior_rendering: profitable
+    new_rendering: useful
+    rationale: The Greek parallel supports usefulness or serviceability, which is broader than financial profitability.
+  - source_phrase: בְּהֵמָה ... הִיא הַעֲמִידָהּ
+    prior_rendering: livestock ... it ... keep it
+    new_rendering: livestock ... them ... keep them
+    rationale: Plural pronouns naturally express the animals collectively in English without changing the instruction.
+  footnote_kinds: {}
+  history_weighed: The early draft and lexical notes favor 'useful' and plural pronouns for the English collective. The later rationale for 'profitable' narrows the advice beyond the available Greek support.

@@ -28,12 +28,8 @@ source:
   validation: no_reference
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Susanna extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: It is preferable for me to fall into your hands without doing it rather than to sin before the Lord[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Literally, 'not having done [it].' The Greek leaves the act implicit, referring back to the elders' demand.
-    reason: lexical_alternative
+  text: It is better for me to fall into your hands without doing this than to sin before the Lord.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: αἱρετόν
   chosen: preferable
@@ -127,14 +123,20 @@ revisions:
   from: It is preferable for me, if I do not do it, to fall into your hands rather than to sin before the Lord.
   to: It is preferable for me, if I do not do it, to fall into your hands rather than to sin before the Lord.
   rationale: 'Reordered the clause for more natural English and closer alignment with the Greek: ''without doing it'' renders μὴ πράξασαν more directly than ''if I do not do it,'' while preserving the sense.'
-
 - timestamp: '2026-05-18T02:59:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'It is preferable for me to fall into your hands without doing it rather than to sin before the Lord[a].'
-  to: 'It is preferable for me to fall into your hands without doing it rather than to sin before the Lord[a].'
+  from: It is preferable for me to fall into your hands without doing it rather than to sin before the Lord[a].
+  to: It is preferable for me to fall into your hands without doing it rather than to sin before the Lord[a].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''if I do not do it''].'
+- timestamp: '2026-11-09T19:09:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: It is preferable for me to fall into your hands without doing it rather than to sin before the Lord[a].
+  to: It is better for me to fall into your hands without doing this than to sin before the Lord.”
+  rationale: The current 'without doing it' preserves the review's useful correction of the earlier conditional rendering, and that gain is retained as 'without doing this.' The unnamed act remains dependent on context, so the earlier explanatory note is unnecessary.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -154,3 +156,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/susanna/001/025.job-52442.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:36Z'
+  change_level: refined
+  confidence: high
+  meaning: Susanna judged suffering at the elders' hands without complying preferable to sinning before the Lord.
+  meaning_decisions:
+  - source_phrase: αἱρετόν μοί ἐστιν
+    prior_rendering: It is preferable for me
+    new_rendering: It is better for me
+    rationale: The direct comparison better conveys the gravity of her choice than the more detached 'preferable.'
+  footnote_kinds: {}
+  history_weighed: The current 'without doing it' preserves the review's useful correction of the earlier conditional rendering, and that gain is retained as 'without doing this.' The unnamed act remains dependent on context, so the earlier explanatory note is unnecessary.

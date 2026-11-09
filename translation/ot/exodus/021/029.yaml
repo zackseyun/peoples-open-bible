@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/אִ֡ם שׁוֹר֩ נַגָּ֨ח ה֜וּא מִ/תְּמֹ֣ל שִׁלְשֹׁ֗ם וְ/הוּעַ֤ד בִּ/בְעָלָי/ו֙ וְ/לֹ֣א יִשְׁמְרֶ֔/נּוּ וְ/הֵמִ֥ית אִ֖ישׁ א֣וֹ אִשָּׁ֑ה הַ/שּׁוֹר֙ יִסָּקֵ֔ל וְ/גַם בְּעָלָ֖י/ו יוּמָֽת־׃
 translation:
-  text: But if the ox was accustomed to gore from yesterday and the day before[a], and its owner had been warned but did not keep it in, and it kills a man or a woman, the ox shall be stoned[b], and its owner also shall be put to death.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or "an ox accustomed to gore." The Hebrew participle describes an animal known for repeated goring.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, "from yesterday and the day before," a Hebrew idiom indicating prior, established behavior.
-    reason: cultural_note
+  text: But if an ox with a history of goring kills a man or a woman, and its owner had been warned but failed to restrain it, the ox shall be stoned to death, and its owner shall also be put to death.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: שׁוֹר
   chosen: ox
@@ -111,14 +104,20 @@ revisions:
   from: But if the ox was in the habit of goring from yesterday and the day before, and its owner had been warned but did not keep it in, and it kills a man or a woman, the ox shall be stoned, and its owner also shall be put to death.
   to: But if the ox was in the habit of goring from yesterday and the day before, and its owner had been warned but did not keep it in, and it kills a man or a woman, the ox shall be stoned, and its owner also shall be put to death.
   rationale: Changed 'was in the habit of goring' to 'was accustomed to gore' for a more formal and direct rendering of the source; retained the rest as accurate and natural.
-
 - timestamp: '2026-05-18T02:55:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But if the ox was accustomed to gore from yesterday and the day before[a], and its owner had been warned but did not keep it in, and it kills a man or a woman, the ox shall be stoned[b], and its owner also shall be put to death.'
-  to: 'But if the ox was accustomed to gore from yesterday and the day before[a], and its owner had been warned but did not keep it in, and it kills a man or a woman, the ox shall be stoned[b], and its owner also shall be put to death.'
+  from: But if the ox was accustomed to gore from yesterday and the day before[a], and its owner had been warned but did not keep it in, and it kills a man or a woman, the ox shall be stoned[b], and its owner also shall be put to death.
+  to: But if the ox was accustomed to gore from yesterday and the day before[a], and its owner had been warned but did not keep it in, and it kills a man or a woman, the ox shall be stoned[b], and its owner also shall be put to death.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the habit of goring''].'
+- timestamp: '2026-11-09T17:36:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But if the ox was accustomed to gore from yesterday and the day before[a], and its owner had been warned but did not keep it in, and it kills a man or a woman, the ox shall be stoned[b], and its owner also shall be put to death.
+  to: But if an ox with a history of goring kills a man or a woman, and its owner had been warned but failed to restrain it, the ox shall be stoned to death, and its owner shall also be put to death.
+  rationale: The recorded review and revert concern 'in the habit' versus 'accustomed,' but both establish repeated prior goring. I retain that meaning, translate the temporal idiom rather than its wording, and preserve the carefully distinguished capital penalties.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -138,3 +137,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/021/029.job-62804.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:36:00Z'
+  change_level: retranslated
+  confidence: high
+  meaning: If a previously dangerous ox kills someone after its warned owner failed to restrain it, both the ox and its owner face death.
+  meaning_decisions:
+  - source_phrase: שׁוֹר נַגָּח הוּא מִתְּמֹל שִׁלְשֹׁם
+    prior_rendering: the ox was accustomed to gore from yesterday and the day before
+    new_rendering: an ox with a history of goring
+    rationale: The Hebrew describes an established dangerous habit, not a precisely dated two-day history.
+  - source_phrase: וְלֹא יִשְׁמְרֶנּוּ
+    prior_rendering: did not keep it in
+    new_rendering: failed to restrain it
+    rationale: The obligation is to control the dangerous animal; the source does not limit the means to keeping it indoors or in an enclosure.
+  - source_phrase: הַשּׁוֹר יִסָּקֵל
+    prior_rendering: the ox shall be stoned
+    new_rendering: the ox shall be stoned to death
+    rationale: Makes the lethal judicial consequence explicit while preserving the distinction between the animal's specified execution method and the owner's unspecified method.
+  footnote_kinds: {}
+  history_weighed: The recorded review and revert concern 'in the habit' versus 'accustomed,' but both establish repeated prior goring. I retain that meaning, translate the temporal idiom rather than its wording, and preserve the carefully distinguished capital penalties.

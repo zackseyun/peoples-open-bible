@@ -4,18 +4,12 @@ source:
   edition: SBLGNT
   text: ἀπεκρίθησαν καὶ εἶπαν αὐτῷ· Ἐν ἁμαρτίαις σὺ ἐγεννήθης ὅλος, καὶ σὺ διδάσκεις ἡμᾶς; καὶ ἐξέβαλον αὐτὸν ἔξω.
 translation:
-  text: They answered and said to him[a], “You were born entirely in sins[c][b], and are you teaching us?” And they cast him out.
-  philosophy: optimal-equivalence
+  text: They replied, “You were full of sin from birth, and you dare to teach us?” Then they threw him out[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “You were born completely in sin.” The Greek is literally plural, “in sins,” preserving the force of the accusers’ insult.
-    reason: lexical_alternative
-  - marker: b
-    text: Or “they cast him out.” This may refer to expelling him from their presence, and in context may also imply exclusion from the synagogue community.
+    text: This may mean expulsion from their presence or exclusion from the synagogue community; see verse 22.
     reason: alternative_reading
-  - marker: c
-    text: Or 'entirely in sins'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ἀπεκρίθησαν καὶ εἶπαν
   chosen: They answered and said
@@ -92,9 +86,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'They answered and said to him[a], “You were born entirely in sins[c][b], and are you teaching us?” And they cast him out.'
-  to: 'They answered and said to him[a], “You were born entirely in sins[c][b], and are you teaching us?” And they cast him out.'
+  from: They answered and said to him[a], “You were born entirely in sins[c][b], and are you teaching us?” And they cast him out.
+  to: They answered and said to him[a], “You were born entirely in sins[c][b], and are you teaching us?” And they cast him out.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they threw him out''].'
+- timestamp: '2026-11-09T17:09:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: They answered and said to him[a], “You were born entirely in sins[c][b], and are you teaching us?” And they cast him out.
+  to: They replied, “You were full of sin from birth, and you dare to teach us?” Then they threw him out[a].
+  rationale: The automated history alternates between 'wholly' and 'entirely,' but neither fully clarifies that the insult concerns his whole condition from birth. I retain the history's refusal to specify whose sin is meant and its recognition that the expulsion may include synagogue exclusion.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T02:59:45Z'
@@ -123,3 +124,34 @@ cross_check:
     agree: 1
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/john/009/034.job-38540.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:09:34Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Pharisees reject the man's argument by condemning him as sinful from birth, indignantly refusing his instruction, and expelling him.
+  meaning_decisions:
+  - source_phrase: ἀπεκρίθησαν καὶ εἶπαν αὐτῷ
+    prior_rendering: They answered and said to him
+    new_rendering: They replied
+    rationale: The speech formula introduces one response, not two separate actions.
+  - source_phrase: Ἐν ἁμαρτίαις σὺ ἐγεννήθης ὅλος
+    prior_rendering: You were born entirely in sins
+    new_rendering: You were full of sin from birth
+    rationale: The accusation concerns the man's whole condition from birth, not the completeness of the act of being born; English 'sin' naturally carries the collective force of the Greek plural.
+  - source_phrase: καὶ σὺ διδάσκεις ἡμᾶς;
+    prior_rendering: and are you teaching us?
+    new_rendering: and you dare to teach us?
+    rationale: The emphatic pronouns and rhetorical question express outraged rejection of his presumed right to instruct them.
+  - source_phrase: καὶ ἐξέβαλον αὐτὸν ἔξω
+    prior_rendering: And they cast him out
+    new_rendering: Then they threw him out
+    rationale: This conveys the hostile expulsion directly and matches the wording of the same action in verse 35.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The automated history alternates between 'wholly' and 'entirely,' but neither fully clarifies that the insult concerns his whole condition from birth. I retain the history's refusal to specify whose sin is meant and its recognition that the expulsion may include synagogue exclusion.

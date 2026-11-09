@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: Κατὰ δὲ ἑορτὴν ἀπέλυεν αὐτοῖς ἕνα δέσμιον ⸂ὃν παρῃτοῦντο⸃.
 translation:
-  text: At the feast he would release for them one prisoner whom they asked for[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or "whom they asked for."
-    reason: lexical_alternative
+  text: At the Passover festival, Pilate would release one prisoner for the people—the one they asked for.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Κατὰ δὲ ἑορτὴν
   chosen: At the feast
@@ -69,13 +65,12 @@ revisions:
   from: Now at the feast he would release for them one prisoner whom they requested.
   to: Now at the feast he would release for them one prisoner whom they requested.
   rationale: Replaced 'requested' with 'asked for' to more directly reflect παρῃτοῦντο and improve naturalness while preserving the formal sense.
-
 - timestamp: '2026-05-18T03:00:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now at the feast he would release for them one prisoner whom they asked for[a].'
-  to: 'Now at the feast he would release for them one prisoner whom they asked for[a].'
+  from: Now at the feast he would release for them one prisoner whom they asked for[a].
+  to: Now at the feast he would release for them one prisoner whom they asked for[a].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''whom they requested''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -84,6 +79,13 @@ revisions:
   from: Now at the feast he would release for them one prisoner whom they asked for[a].
   to: At the feast he would release for them one prisoner whom they asked for[a].
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T19:14:09Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: At the feast he would release for them one prisoner whom they asked for[a].
+  to: At the Passover festival, Pilate would release one prisoner for the people—the one they asked for.
+  rationale: I retain the earlier gain “asked for” and the habitual “would release.” The later removal of introductory “Now” is also retained; the duplicated footnote contributes nothing.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -105,3 +107,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/mark/015/006.job-56594.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:14:09Z'
+  change_level: refined
+  confidence: high
+  meaning: Pilate customarily released one prisoner requested by the people at the Passover festival.
+  meaning_decisions:
+  - source_phrase: Κατὰ δὲ ἑορτήν
+    prior_rendering: At the feast
+    new_rendering: At the Passover festival
+    rationale: The chapter’s setting identifies the festival as Passover; naming it prevents “feast” from being mistaken for a particular meal.
+  - source_phrase: ἀπέλυεν αὐτοῖς ἕνα δέσμιον ὃν παρῃτοῦντο
+    prior_rendering: he would release for them one prisoner whom they asked for
+    new_rendering: Pilate would release one prisoner for the people—the one they asked for
+    rationale: The implied governor and beneficiaries are made explicit, and the sentence is reordered naturally while preserving both the customary practice and the people’s request.
+  footnote_kinds: {}
+  history_weighed: I retain the earlier gain “asked for” and the habitual “would release.” The later removal of introductory “Now” is also retained; the duplicated footnote contributes nothing.

@@ -10,12 +10,8 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: He brought them across the Red Sea, and led them through abundant water[a];
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'through much water.' The Greek phrase is literally 'through abundant/much water.'
-    reason: lexical_alternative
+  text: She brought them across the Red Sea and led them through vast waters.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: διεβίβασεν
   chosen: brought ... across
@@ -82,13 +78,12 @@ revisions:
   from: He brought them across the Red Sea, and led them through abundant water;
   to: He brought them across the Red Sea, and led them through much water;
   rationale: Changed 'abundant water' to 'much water' for a more natural and closer rendering of ὕδατος πολλοῦ, while preserving the formal tone and full sense of the Greek.
-
 - timestamp: '2026-05-18T03:10:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He brought them across the Red Sea[a], and led them through much water;'
-  to: 'He brought them across the Red Sea, and led them through abundant water;'
+  from: He brought them across the Red Sea[a], and led them through much water;
+  to: He brought them across the Red Sea, and led them through abundant water;
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''through abundant water''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -98,6 +93,13 @@ revisions:
   from: He brought them across the Red Sea, and led them through abundant water;
   to: He brought them across the Red Sea, and led them through abundant water[a];
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('through abundant water') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:11:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He brought them across the Red Sea, and led them through abundant water[a];
+  to: She brought them across the Red Sea and led them through vast waters.
+  rationale: The recorded revision and revert debated 'much' versus 'abundant,' but neither expresses the sea-sized mass as naturally as 'vast waters.' I retain the established Red Sea reference and crossing verbs while correcting the continuing subject to Wisdom.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -117,3 +119,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/010/018.job-39480.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:46Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Wisdom brought Israel across the Red Sea and led them through its vast waters.
+  meaning_decisions:
+  - source_phrase: διεβίβασεν … διήγαγεν
+    prior_rendering: He brought … led
+    new_rendering: She brought … led
+    rationale: Wisdom remains the implied subject of the continuing account.
+  - source_phrase: διʼ ὕδατος πολλοῦ
+    prior_rendering: through abundant water
+    new_rendering: through vast waters
+    rationale: The phrase evokes the great mass of sea water through which they passed, not an abundant supply of water. The English plural naturally expresses that mass.
+  footnote_kinds: {}
+  history_weighed: The recorded revision and revert debated 'much' versus 'abundant,' but neither expresses the sea-sized mass as naturally as 'vast waters.' I retain the established Red Sea reference and crossing verbs while correcting the continuing subject to Wisdom.

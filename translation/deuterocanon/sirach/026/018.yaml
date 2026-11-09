@@ -21,12 +21,12 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: A lamp shining brightly on a holy lampstand[a], and the beauty of a face at a steadfast age.
-  philosophy: optimal-equivalence
+  text: Like a lamp shining brightly on a holy lampstand is the beauty of a face in full maturity[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'in settled maturity.' The Greek phrase ἐπὶ ἡλικίᾳ στασίμῃ is somewhat idiomatic, combining age with the idea of stability or settledness.
-    reason: lexical_alternative
+    text: Or, 'the beauty of a face on a stately figure'; the Greek word can refer to age or stature.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: λύχνος
   chosen: lamp
@@ -95,14 +95,20 @@ revisions:
   from: A lamp shining brightly on a holy lampstand, and the beauty of a face at a mature age.
   to: A lamp shining brightly on a holy lampstand, and the beauty of a face at a mature age.
   rationale: Revised 'mature age' to 'steadfast age' to reflect στασίμῃ more closely as settled/steady rather than merely mature; retained the formal parallel structure.
-
 - timestamp: '2026-05-18T02:58:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'A lamp shining brightly on a holy lampstand[a], and the beauty of a face at a steadfast age.'
-  to: 'A lamp shining brightly on a holy lampstand[a], and the beauty of a face at a steadfast age.'
+  from: A lamp shining brightly on a holy lampstand[a], and the beauty of a face at a steadfast age.
+  to: A lamp shining brightly on a holy lampstand[a], and the beauty of a face at a steadfast age.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''at a mature age''].'
+- timestamp: '2026-11-09T20:07:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: A lamp shining brightly on a holy lampstand[a], and the beauty of a face at a steadfast age.
+  to: Like a lamp shining brightly on a holy lampstand is the beauty of a face in full maturity[a].
+  rationale: The first draft and lexical discussion understood the phrase as mature age; the later 'steadfast age' reflected the wording more than intelligible meaning. I restore maturity and retain the serious stature reading in a note.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -122,3 +128,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/026/018.job-51688.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:34Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The beauty of a face in full maturity is compared to a radiant lamp on a holy lampstand.
+  meaning_decisions:
+  - source_phrase: λύχνος ἐκλάμπων ἐπὶ λυχνίας ἁγίας, καὶ κάλλος προσώπου
+    prior_rendering: A lamp shining brightly on a holy lampstand, and the beauty of a face
+    new_rendering: Like a lamp shining brightly on a holy lampstand is the beauty of a face
+    rationale: The paired images form a comparison continuing verse 17; making that relationship explicit restores the verse's poetic sense.
+  - source_phrase: ἐπὶ ἡλικίᾳ στασίμῃ
+    prior_rendering: at a steadfast age
+    new_rendering: in full maturity
+    rationale: On the age reading, the phrase describes a settled, fully developed stage of life, not an age possessing moral steadfastness. The alternative reference to stature remains open in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and lexical discussion understood the phrase as mature age; the later 'steadfast age' reflected the wording more than intelligible meaning. I restore maturity and retain the serious stature reading in a note.

@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: כֹּ֣ה תֹאמְר֗וּ/ן אֶל חִזְקִיָּ֤הוּ מֶֽלֶךְ יְהוּדָה֙ לֵ/אמֹ֔ר אַל יַשִּׁאֲ/ךָ֣ אֱלֹהֶ֔י/ךָ אֲשֶׁ֥ר אַתָּ֛ה בֹּטֵ֥חַ בּ֖/וֹ לֵ/אמֹ֑ר לֹ֤א תִנָּתֵן֙ יְר֣וּשָׁלִַ֔ם בְּ/יַ֖ד מֶ֥לֶךְ אַשּֽׁוּר־־־׃
 translation:
-  text: 'Thus you shall say to Hezekiah king of Judah: ‘Do not let your God[a], in whom you trust, deceive you, saying, “Jerusalem will not be given into the hand of the king of Assyria.”’'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “your god”; Hebrew capitalization is not marked, and the Assyrian speaker is mocking Hezekiah’s trust.
-    reason: lexical_alternative
+  text: '“Tell Hezekiah king of Judah: ‘Do not let your God, in whom you trust, deceive you by saying, “Jerusalem will not fall into the hands of the king of Assyria.”'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: כֹּה
   chosen: Thus
@@ -115,7 +111,6 @@ revisions:
   from: 'Thus you shall say to Hezekiah king of Judah: ‘Do not let your God, in whom you trust, deceive you by saying, “Jerusalem will not be given into the hand of the king of Assyria.”’'
   to: 'Thus you shall say to Hezekiah king of Judah: ‘Do not let your God, in whom you trust, deceive you by saying, “Jerusalem will not be given into the hand of the king of Assyria.”’'
   rationale: Removed 'by' before 'saying' to more directly reflect the Hebrew construction and improve natural formal English.
-
 - timestamp: '2026-05-18T02:58:53Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -123,6 +118,13 @@ revisions:
   from: 'Thus you shall say to Hezekiah king of Judah: ‘Do not let your God[a], in whom you trust, deceive you, saying, “Jerusalem will not be given into the hand of the king of Assyria.”’'
   to: 'Thus you shall say to Hezekiah king of Judah: ‘Do not let your God[a], in whom you trust, deceive you, saying, “Jerusalem will not be given into the hand of the king of Assyria.”’'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''by saying''].'
+- timestamp: '2026-11-09T17:27:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Thus you shall say to Hezekiah king of Judah: ‘Do not let your God[a], in whom you trust, deceive you, saying, “Jerusalem will not be given into the hand of the king of Assyria.”’'
+  to: '“Tell Hezekiah king of Judah: ‘Do not let your God, in whom you trust, deceive you by saying, “Jerusalem will not fall into the hands of the king of Assyria.”'
+  rationale: The review and revert rationales differ over 'by saying'; I use the first draft’s wording because it clarifies the accusation. I retain capitalized 'God' for the referent and omit the capitalization note, which concerns English style rather than an alternative meaning.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -142,3 +144,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_kings/019/010.job-60761.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:27:22Z'
+  change_level: refined
+  confidence: high
+  meaning: The Assyrian king accuses Hezekiah’s God of deceiving him with the promise that Jerusalem will not come under Assyrian control.
+  meaning_decisions:
+  - source_phrase: כֹּה תֹאמְרוּן אֶל חִזְקִיָּהוּ מֶלֶךְ יְהוּדָה
+    prior_rendering: Thus you shall say to Hezekiah king of Judah
+    new_rendering: Tell Hezekiah king of Judah
+    rationale: The direct imperative conveys the royal instruction without a wooden messenger formula.
+  - source_phrase: לֵאמֹר
+    prior_rendering: saying
+    new_rendering: by saying
+    rationale: This makes clear that the alleged deception consists in the quoted assurance.
+  - source_phrase: לֹא תִנָּתֵן יְרוּשָׁלִַם בְּיַד מֶלֶךְ אַשּׁוּר
+    prior_rendering: Jerusalem will not be given into the hand of the king of Assyria
+    new_rendering: Jerusalem will not fall into the hands of the king of Assyria
+    rationale: The natural English idiom preserves the hand image and its meaning of coming under another’s power.
+  footnote_kinds: {}
+  history_weighed: The review and revert rationales differ over 'by saying'; I use the first draft’s wording because it clarifies the accusation. I retain capitalized 'God' for the referent and omit the capitalization note, which concerns English style rather than an alternative meaning.

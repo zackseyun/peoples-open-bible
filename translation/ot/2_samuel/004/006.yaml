@@ -4,12 +4,15 @@ source:
   edition: WLC
   text: וְ֠/הֵנָּה בָּ֜אוּ עַד תּ֤וֹךְ הַ/בַּ֨יִת֙ לֹקְחֵ֣י חִטִּ֔ים וַ/יַּכֻּ֖/הוּ אֶל הַ/חֹ֑מֶשׁ וְ/רֵכָ֛ב וּ/בַעֲנָ֥ה אָחִ֖י/ו נִמְלָֽטוּ־־׃
 translation:
-  text: And there they came into the midst of the house[a], taking wheat, and they struck him in the belly. Then Rekab and Baanah his brother escaped.
-  philosophy: optimal-equivalence
+  text: They went into the interior of the house as though to collect wheat[a] and struck him in the belly. Then Rechab and his brother Baanah escaped[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more traditionally, 'under the fifth rib.' The Hebrew expression likely refers more generally to the abdomen or belly.
-    reason: lexical_alternative
+    text: Literally, “taking wheat”; this may also be understood as their actual purpose rather than a pretext.
+    reason: alternative_reading
+  - marker: b
+    text: Some Greek manuscripts instead say that the woman guarding the entrance was cleaning wheat, grew drowsy, and fell asleep, and that the brothers slipped past her.
+    reason: textual_variant
 lexical_decisions:
 - source_word: וְהֵנָּה
   chosen: And there
@@ -87,14 +90,20 @@ revisions:
   from: And there they came into the middle of the house, as if taking wheat, and they struck him in the belly. Then Rekab and Baanah his brother escaped.
   to: And there they came into the middle of the house, as if taking wheat, and they struck him in the belly. Then Rekab and Baanah his brother escaped.
   rationale: Removed 'as if' to avoid adding interpretation not explicit in the source; changed 'middle' to the more formal 'midst' for register. Kept the rest substantially the same.
-
 - timestamp: '2026-05-15T20:54:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And there they came into the midst of the house[a], taking wheat, and they struck him in the belly. Then Rekab and Baanah his brother escaped.'
-  to: 'And there they came into the midst of the house[a], taking wheat, and they struck him in the belly. Then Rekab and Baanah his brother escaped.'
-  rationale: 'Drafter chose ''as if taking wheat'' for the elliptical participial לֹקְחֵי חִטִּים (encoding the narrative pretense/deception under which Rechab and Baanah gained entry to murder). Azure removed ''as if'' on generic anti-paraphrase grounds without engaging the ellipsis argument or the narrative context. Also ''middle'' → ''midst'' pure register preference.'
+  from: And there they came into the midst of the house[a], taking wheat, and they struck him in the belly. Then Rekab and Baanah his brother escaped.
+  to: And there they came into the midst of the house[a], taking wheat, and they struck him in the belly. Then Rekab and Baanah his brother escaped.
+  rationale: Drafter chose 'as if taking wheat' for the elliptical participial לֹקְחֵי חִטִּים (encoding the narrative pretense/deception under which Rechab and Baanah gained entry to murder). Azure removed 'as if' on generic anti-paraphrase grounds without engaging the ellipsis argument or the narrative context. Also 'middle' → 'midst' pure register preference.
+- timestamp: '2026-11-09T17:28:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And there they came into the midst of the house[a], taking wheat, and they struck him in the belly. Then Rekab and Baanah his brother escaped.
+  to: They went into the interior of the house as though to collect wheat[a] and struck him in the belly. Then Rechab and his brother Baanah escaped[b].
+  rationale: The first draft and the later revert rationale recognized wheat-taking as the pretext for entry; I follow that contextual reading rather than the intervening literalism. The abdomen wording is retained, and the substantially different Greek account is noted.
 cross_check:
   status: moderate_agreement
   agreement: 0.88
@@ -116,3 +125,27 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/ot/2_samuel/004/006.job-28858.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:20Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The brothers enter the house under the guise of collecting wheat, strike Ish-bosheth in the abdomen, and escape.
+  meaning_decisions:
+  - source_phrase: וְהֵנָּה בָּאוּ עַד תּוֹךְ הַבַּיִת
+    prior_rendering: And there they came into the midst of the house
+    new_rendering: They went into the interior of the house
+    rationale: The clause narrates their entry well inside the house; “And there” does not convey that movement clearly.
+  - source_phrase: לֹקְחֵי חִטִּים
+    prior_rendering: taking wheat
+    new_rendering: as though to collect wheat
+    rationale: In the assassination narrative, the elliptical phrase most plausibly describes the pretext for entry, while an actual wheat-collecting purpose remains possible.
+  footnote_kinds:
+    a: alternative_meaning
+    b: textual_variant
+  history_weighed: The first draft and the later revert rationale recognized wheat-taking as the pretext for entry; I follow that contextual reading rather than the intervening literalism. The abdomen wording is retained, and the substantially different Greek account is noted.

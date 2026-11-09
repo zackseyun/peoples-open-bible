@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יָּבֹ֨אוּ֙ אַנְשֵׁ֣י יְהוּדָ֔ה וַ/יִּמְשְׁחוּ שָׁ֧ם אֶת דָּוִ֛ד לְ/מֶ֖לֶךְ עַל בֵּ֣ית יְהוּדָ֑ה וַ/יַּגִּ֤דוּ לְ/דָוִד֙ לֵ/אמֹ֔ר אַנְשֵׁי֙ יָבֵ֣ישׁ גִּלְעָ֔ד אֲשֶׁ֥ר קָבְר֖וּ אֶת שָׁאֽוּל־־־־׃ס
 translation:
-  text: Then the men of Judah came[a], and there they anointed David king over the house of Judah. And they told David, saying, "The men of Jabesh-gilead were the ones who buried Saul."
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or simply, "who buried Saul."
-    reason: lexical_alternative
+  text: Then the men of Judah came and anointed David there as king over the people of Judah. They told David, “The men of Jabesh-gilead were the ones who buried Saul.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיָּבֹאוּ
   chosen: came
@@ -109,14 +105,20 @@ revisions:
   from: Then the men of Judah came, and there they anointed David king over the house of Judah. And they told David, saying, "The men of Jabesh-gilead were the ones who buried Saul."
   to: Then the men of Judah came, and there they anointed David king over the house of Judah. And they told David, saying, "It was the men of Jabesh-gilead who buried Saul."
   rationale: Improved the final clause for more natural formal English by rendering the Hebrew identification more directly as "It was the men of Jabesh-gilead who buried Saul" instead of "were the ones who buried Saul."
-
 - timestamp: '2026-05-15T21:09:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then the men of Judah came[a], and there they anointed David king over the house of Judah. And they told David, saying, "It was the men of Jabesh-gilead who buried Saul."'
-  to: 'Then the men of Judah came[a], and there they anointed David king over the house of Judah. And they told David, saying, "The men of Jabesh-gilead were the ones who buried Saul."'
-  rationale: 'Drafter chose ''were the ones who buried Saul'' to render the identificational force of the Hebrew relative clause אֲשֶׁר קָבְרוּ. Azure substituted ''It was the men ... who buried Saul'' (also a cleft, but stylistic preference replacing the drafter''s documented choice).'
+  from: Then the men of Judah came[a], and there they anointed David king over the house of Judah. And they told David, saying, "It was the men of Jabesh-gilead who buried Saul."
+  to: Then the men of Judah came[a], and there they anointed David king over the house of Judah. And they told David, saying, "The men of Jabesh-gilead were the ones who buried Saul."
+  rationale: Drafter chose 'were the ones who buried Saul' to render the identificational force of the Hebrew relative clause אֲשֶׁר קָבְרוּ. Azure substituted 'It was the men ... who buried Saul' (also a cleft, but stylistic preference replacing the drafter's documented choice).
+- timestamp: '2026-11-09T17:27:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then the men of Judah came[a], and there they anointed David king over the house of Judah. And they told David, saying, "The men of Jabesh-gilead were the ones who buried Saul."
+  to: Then the men of Judah came and anointed David there as king over the people of Judah. They told David, “The men of Jabesh-gilead were the ones who buried Saul.”
+  rationale: The earlier notes rightly emphasized Judah’s corporate identity, which “people of Judah” preserves without suggesting a royal household. I retained the report’s identifying emphasis rather than treating the history’s competing cleft formulations as a substantive disagreement.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -136,3 +138,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/002/004.job-46059.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:27:38Z'
+  change_level: refined
+  confidence: high
+  meaning: The men of Judah anoint David as their king and identify the men of Jabesh-gilead as Saul’s buriers.
+  meaning_decisions:
+  - source_phrase: עַל בֵּית יְהוּדָה
+    prior_rendering: over the house of Judah
+    new_rendering: over the people of Judah
+    rationale: Here “house” denotes Judah as a corporate people, not a royal dynasty or domestic household; the new wording makes the scope of David’s kingship clear.
+  footnote_kinds: {}
+  history_weighed: The earlier notes rightly emphasized Judah’s corporate identity, which “people of Judah” preserves without suggesting a royal household. I retained the report’s identifying emphasis rather than treating the history’s competing cleft formulations as a substantive disagreement.

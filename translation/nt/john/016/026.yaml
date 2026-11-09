@@ -4,18 +4,8 @@ source:
   edition: SBLGNT
   text: ἐν ἐκείνῃ τῇ ἡμέρᾳ ἐν τῷ ὀνόματί μου αἰτήσεσθε, καὶ οὐ λέγω ὑμῖν ὅτι ἐγὼ ἐρωτήσω τὸν πατέρα περὶ ὑμῶν·
 translation:
-  text: On that day you will ask in my name[a], and I do not say to you that I will ask the Father concerning you[c][b];
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'In that day.'
-    reason: lexical_alternative
-  - marker: b
-    text: 'The Greek uses two different verbs for ''ask'' in this verse: αἰτέω for the disciples'' asking and ἐρωτάω for Jesus'' asking of the Father.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'for you' / 'on your behalf.'
-    reason: lexical_alternative
+  text: On that day you will ask in my name, and I am not saying that I will ask the Father on your behalf.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐν ἐκείνῃ τῇ ἡμέρᾳ
   chosen: On that day
@@ -100,14 +90,20 @@ revisions:
   from: On that day you will ask in my name, and I am not saying to you that I will ask the Father concerning you;
   to: On that day you will ask in my name, and I am not saying to you that I will ask the Father concerning you;
   rationale: Changed 'I am not saying' to 'I do not say' to better reflect the present tense and maintain a more formal, natural translation style. No other changes needed.
-
 - timestamp: '2026-05-18T03:00:46Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'On that day you will ask in my name[a], and I do not say to you that I will ask the Father concerning you[c][b];'
-  to: 'On that day you will ask in my name[a], and I do not say to you that I will ask the Father concerning you[c][b];'
+  from: On that day you will ask in my name[a], and I do not say to you that I will ask the Father concerning you[c][b];
+  to: On that day you will ask in my name[a], and I do not say to you that I will ask the Father concerning you[c][b];
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I am not saying to you''].'
+- timestamp: '2026-11-09T17:11:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: On that day you will ask in my name[a], and I do not say to you that I will ask the Father concerning you[c][b];
+  to: On that day you will ask in my name, and I am not saying that I will ask the Father on your behalf.
+  rationale: The first draft's progressive “I am not saying” conveys the immediate disclaimer more naturally than the later formal recasting. I make the intercessory sense explicit without changing the disclaimer into a denial that Jesus will ever intercede.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -127,3 +123,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/high_scrutiny/nt/john/016/026.job-7469.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:11:11Z'
+  change_level: refined
+  confidence: high
+  meaning: The disciples will ask in Jesus' name, and he does not frame that promise as his asking the Father on their behalf.
+  meaning_decisions:
+  - source_phrase: οὐ λέγω ὑμῖν
+    prior_rendering: I do not say to you
+    new_rendering: I am not saying
+    rationale: The progressive naturally conveys what Jesus is disclaiming in this immediate statement; his audience is already explicit.
+  - source_phrase: περὶ ὑμῶν
+    prior_rendering: concerning you
+    new_rendering: on your behalf
+    rationale: In this request to the Father, the phrase concerns asking for the disciples, not merely asking about them.
+  footnote_kinds: {}
+  history_weighed: The first draft's progressive “I am not saying” conveys the immediate disclaimer more naturally than the later formal recasting. I make the intercessory sense explicit without changing the disclaimer into a denial that Jesus will ever intercede.

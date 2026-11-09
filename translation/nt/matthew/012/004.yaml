@@ -4,15 +4,15 @@ source:
   edition: SBLGNT
   text: πῶς εἰσῆλθεν εἰς τὸν οἶκον τοῦ θεοῦ καὶ τοὺς ἄρτους τῆς προθέσεως ⸂ἔφαγον, ὃ⸃ οὐκ ἐξὸν ἦν αὐτῷ φαγεῖν οὐδὲ τοῖς μετ’ αὐτοῦ, εἰ μὴ τοῖς ἱερεῦσιν μόνοις;
 translation:
-  text: how he entered into the house of God and ate the bread of the Presence[a], which it was not lawful for him to eat, nor for those with him[b], but only for the priests?
-  philosophy: optimal-equivalence
+  text: how he entered the house of God and they ate[a] the bread of the Presence[b], which was lawful only for the priests to eat, not for him or those with him?
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Some manuscripts/readings have 'he ate' instead of 'they ate.'
+    text: Some manuscripts read “he ate.”
     reason: textual_variant
   - marker: b
-    text: Or 'the showbread,' a traditional English rendering for the consecrated bread set before God.
-    reason: lexical_alternative
+    text: Sacred bread kept before God in the sanctuary.
+    reason: cultural_note
 lexical_decisions:
 - source_word: πῶς
   chosen: how
@@ -95,14 +95,20 @@ revisions:
   from: how he entered into the house of God and they ate the bread of the Presence, which it was not lawful for him to eat, nor for those with him, but only for the priests?
   to: how he entered into the house of God and they ate the bread of the Presence, which it was not lawful for him to eat, nor for those with him, but only for the priests?
   rationale: Changed 'they ate' to 'ate' to match the singular subject in Greek and improve accuracy; otherwise retained the draft wording.
-
 - timestamp: '2026-05-18T03:00:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'how he entered into the house of God and ate the bread of the Presence[a], which it was not lawful for him to eat, nor for those with him[b], but only for the priests?'
-  to: 'how he entered into the house of God and ate the bread of the Presence[a], which it was not lawful for him to eat, nor for those with him[b], but only for the priests?'
+  from: how he entered into the house of God and ate the bread of the Presence[a], which it was not lawful for him to eat, nor for those with him[b], but only for the priests?
+  to: how he entered into the house of God and ate the bread of the Presence[a], which it was not lawful for him to eat, nor for those with him[b], but only for the priests?
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they ate''].'
+- timestamp: '2026-11-09T17:14:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: how he entered into the house of God and ate the bread of the Presence[a], which it was not lawful for him to eat, nor for those with him[b], but only for the priests?
+  to: how he entered the house of God and they ate[a] the bread of the Presence[b], which was lawful only for the priests to eat, not for him or those with him?
+  rationale: The history is inconsistent about the verb’s number, but the first draft and documented lexical decision correctly recognize the supplied text’s plural reading. I restore “they ate” and retain the established sacred-bread terminology and priestly restriction.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -126,3 +132,27 @@ cross_check:
     agree: 2
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/nt/matthew/012/004.job-38608.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:14:34Z'
+  change_level: retranslated
+  confidence: high
+  meaning: David entered God’s house, and he and his companions ate sacred bread that the law reserved for priests.
+  meaning_decisions:
+  - source_phrase: ἔφαγον
+    prior_rendering: ate
+    new_rendering: they ate
+    rationale: The supplied SBLGNT text has a plural verb, explicitly including David’s companions in the eating.
+  - source_phrase: ὃ οὐκ ἐξὸν ἦν αὐτῷ φαγεῖν οὐδὲ τοῖς μετ’ αὐτοῦ, εἰ μὴ τοῖς ἱερεῦσιν μόνοις
+    prior_rendering: which it was not lawful for him to eat, nor for those with him, but only for the priests
+    new_rendering: which was lawful only for the priests to eat, not for him or those with him
+    rationale: Reordering makes the priestly restriction clear without the cumbersome impersonal construction, while retaining its legal force.
+  footnote_kinds:
+    a: textual_variant
+    b: cultural_background
+  history_weighed: The history is inconsistent about the verb’s number, but the first draft and documented lexical decision correctly recognize the supplied text’s plural reading. I restore “they ate” and retain the established sacred-bread terminology and priestly restriction.

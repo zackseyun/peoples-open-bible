@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּשְׁלַח֩ דָּוִ֨ד אֶת יָד֜/וֹ אֶל הַ/כֶּ֗לִי וַ/יִּקַּ֨ח מִ/שָּׁ֥ם אֶ֨בֶן֙ וַ/יְקַלַּ֔ע וַ/יַּ֥ךְ אֶת הַ/פְּלִשְׁתִּ֖י אֶל מִצְח֑/וֹ וַ/תִּטְבַּ֤ע הָ/אֶ֨בֶן֙ בְּ/מִצְח֔/וֹ וַ/יִּפֹּ֥ל עַל פָּנָ֖י/ו אָֽרְצָ/ה־־־־־׃
 translation:
-  text: Then David reached his hand into the bag[a], took a stone from there, slung it, and struck the Philistine on his forehead. The stone sank into his forehead[c][b], and he fell on his face to the ground.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'into the pouch.' The Hebrew term for the container is broad and contextually refers to the receptacle holding David's stones.
-    reason: lexical_alternative
-  - marker: b
-    text: Or, 'The stone embedded itself in his forehead.'
-    reason: lexical_alternative
-  - marker: c
-    text: Literally, 'he fell on his face to the ground.'
-    reason: lexical_alternative
+  text: Then David reached into the bag, took out a stone, slung it, and struck the Philistine on the forehead. The stone sank into his forehead, and he fell facedown to the ground.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּשְׁלַח ... אֶת יָדוֹ אֶל הַכֶּלִי
   chosen: reached his hand into the bag
@@ -89,14 +79,20 @@ revisions:
   from: Then David reached his hand into the bag, took a stone from there, slung it, and struck the Philistine on his forehead. The stone sank into his forehead, and he fell facedown to the ground.
   to: Then David reached his hand into the bag, took a stone from there, slung it, and struck the Philistine on his forehead. The stone sank into his forehead, and he fell facedown to the ground.
   rationale: Revised the final clause from 'fell facedown to the ground' to 'fell on his face to the ground' for closer adherence to the Hebrew wording and a more formal register.
-
 - timestamp: '2026-05-18T02:55:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then David reached his hand into the bag[a], took a stone from there, slung it, and struck the Philistine on his forehead. The stone sank into his forehead[c][b], and he fell on his face to the ground.'
-  to: 'Then David reached his hand into the bag[a], took a stone from there, slung it, and struck the Philistine on his forehead. The stone sank into his forehead[c][b], and he fell on his face to the ground.'
+  from: Then David reached his hand into the bag[a], took a stone from there, slung it, and struck the Philistine on his forehead. The stone sank into his forehead[c][b], and he fell on his face to the ground.
+  to: Then David reached his hand into the bag[a], took a stone from there, slung it, and struck the Philistine on his forehead. The stone sank into his forehead[c][b], and he fell on his face to the ground.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he fell facedown to the ground''].'
+- timestamp: '2026-11-09T17:23:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then David reached his hand into the bag[a], took a stone from there, slung it, and struck the Philistine on his forehead. The stone sank into his forehead[c][b], and he fell on his face to the ground.
+  to: Then David reached into the bag, took out a stone, slung it, and struck the Philistine on the forehead. The stone sank into his forehead, and he fell facedown to the ground.
+  rationale: The first draft used “fell facedown,” while the automated review preferred closer surface correspondence and the revert rationale favored the draft. I use “facedown” because it preserves the posture clearly, and retain the earlier choices “bag,” “slung,” and “sank into.”
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -116,3 +112,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/017/049.job-59191.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:38Z'
+  change_level: refined
+  confidence: high
+  meaning: David’s sling stone strikes Goliath’s forehead, sinks into it, and brings him facedown to the ground.
+  meaning_decisions:
+  - source_phrase: וַיִּשְׁלַח דָּוִד אֶת יָדוֹ אֶל הַכֶּלִי וַיִּקַּח מִשָּׁם אֶבֶן
+    prior_rendering: David reached his hand into the bag, took a stone from there
+    new_rendering: David reached into the bag, took out a stone
+    rationale: English already implies the use of his hand, and “took out” clearly expresses removal from the bag.
+  - source_phrase: וַיִּפֹּל עַל פָּנָיו אָרְצָה
+    prior_rendering: he fell on his face to the ground
+    new_rendering: he fell facedown to the ground
+    rationale: This conveys the same physical posture more naturally without losing the image.
+  footnote_kinds: {}
+  history_weighed: The first draft used “fell facedown,” while the automated review preferred closer surface correspondence and the revert rationale favored the draft. I use “facedown” because it preserves the posture clearly, and retain the earlier choices “bag,” “slung,” and “sank into.”

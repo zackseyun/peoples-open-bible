@@ -23,15 +23,12 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; kept canonical Baruch 1:1-5:9 only, with Letter of Jeremiah handled separately as LJE.
 translation:
-  text: And we did not entreat the favor of the Lord[b][a], that each one might turn from the thoughts of their evil heart.
-  philosophy: optimal-equivalence
+  text: Yet we did not plead for the Lord's favor so that each of us might turn from the thoughts of our evil hearts[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Literally, 'we did not entreat the face of the Lord.' The Greek idiom refers to seeking the Lord's favorable presence or mercy.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'from the devices/intentions of their evil heart.'
-    reason: lexical_alternative
+    text: Or, 'we did not plead for the Lord's favor by turning, each of us, from the thoughts of our evil hearts.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἐδεήθημεν
   chosen: seek the favor
@@ -134,14 +131,20 @@ revisions:
   from: And we did not seek the favor of the Lord, that each one might turn from the thoughts of their evil heart.
   to: And we did not seek the favor of the Lord, that each one might turn from the thoughts of their evil heart.
   rationale: Changed 'seek the favor of' to 'entreat the favor of' to better reflect ἐδεήθημεν ('implore/entreat') while preserving the formal tone. Kept the rest substantially the same.
-
 - timestamp: '2026-05-18T03:00:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And we did not entreat the favor of the Lord[b][a], that each one might turn from the thoughts of their evil heart.'
-  to: 'And we did not entreat the favor of the Lord[b][a], that each one might turn from the thoughts of their evil heart.'
+  from: And we did not entreat the favor of the Lord[b][a], that each one might turn from the thoughts of their evil heart.
+  to: And we did not entreat the favor of the Lord[b][a], that each one might turn from the thoughts of their evil heart.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''seek the favor''].'
+- timestamp: '2026-11-09T19:01:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And we did not entreat the favor of the Lord[b][a], that each one might turn from the thoughts of their evil heart.
+  to: Yet we did not plead for the Lord's favor so that each of us might turn from the thoughts of our evil hearts[a].
+  rationale: The review's stronger petition verb is sound, and 'plead for' preserves its force naturally. I retain the recorded purpose reading while noting the alternative connection between supplication and repentance.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -161,3 +164,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/baruch/002/008.job-50343.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:04Z'
+  change_level: refined
+  confidence: medium
+  meaning: The people failed to seek the Lord's favor in connection with each person's turning from the thoughts of an evil heart.
+  meaning_decisions:
+  - source_phrase: οὐκ ἐδεήθημεν τοῦ προσώπου Κυρίου
+    prior_rendering: we did not entreat the favor of the Lord
+    new_rendering: we did not plead for the Lord's favor
+    rationale: '''Plead for'' naturally expresses the earnest petition recognized by the earlier review.'
+  - source_phrase: τοῦ ἀποστρέψαι ἕκαστον ἀπὸ τῶν νοημάτων τῆς καρδίας αὐτῶν τῆς πονηρᾶς
+    prior_rendering: that each one might turn from the thoughts of their evil heart
+    new_rendering: so that each of us might turn from the thoughts of our evil hearts
+    rationale: The first-person wording identifies the individuals as members of the confessing community; the note preserves the serious alternative that turning describes how they should have sought God's favor.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The review's stronger petition verb is sound, and 'plead for' preserves its force naturally. I retain the recorded purpose reading while noting the alternative connection between supplication and repentance.

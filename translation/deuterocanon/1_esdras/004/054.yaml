@@ -21,12 +21,12 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: He also wrote concerning the provision[a] and the priestly robe, in which they minister in it.
-  philosophy: optimal-equivalence
+  text: He also wrote instructions for their support and for the priestly robe they wore when ministering[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'The Greek wording here is awkward: literally, ''the provision and the priestly robe, in which they minister in it.'' The pronoun likely refers to the robe, though the line may reflect a compressed or unstable textual form.'
-    reason: textual_variant
+    text: Or, “the priestly robe in which they ministered there”; the final Greek pronoun may refer to the city.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἔγραψεν
   chosen: wrote
@@ -110,13 +110,12 @@ revisions:
   from: He also wrote concerning the provision and the priestly robe, in which they minister in it.
   to: He also wrote concerning the provision and the priestly garment in which they minister there.
   rationale: Replaced 'robe' with 'garment' for a more general and accurate rendering of στολήν, removed the awkward double expression 'in which they minister in it,' and rendered ἐν αὐτῇ as 'there' for natural English while preserving the sense.
-
 - timestamp: '2026-05-18T03:09:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He also wrote concerning the provision and the priestly garment in which they minister there[a].'
-  to: 'He also wrote concerning the provision and the priestly robe, in which they minister in it.'
+  from: He also wrote concerning the provision and the priestly garment in which they minister there[a].
+  to: He also wrote concerning the provision and the priestly robe, in which they minister in it.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the priestly robe''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -126,6 +125,13 @@ revisions:
   from: He also wrote concerning the provision and the priestly robe, in which they minister in it.
   to: He also wrote concerning the provision[a] and the priestly robe, in which they minister in it.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('provision') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:51:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He also wrote concerning the provision[a] and the priestly robe, in which they minister in it.
+  to: He also wrote instructions for their support and for the priestly robe they wore when ministering[a].
+  rationale: An earlier review removed the redundant 'in which ... in it,' but an automated revert restored it without a meaning-based reason. I keep 'robe' and 'minister' while making the likely sense readable and noting the alternative pronoun reference.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -145,3 +151,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/004/054.job-47654.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:51:24Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The king also gives written instructions concerning support and the clothing used for priestly ministry.
+  meaning_decisions:
+  - source_phrase: ἔγραψεν ... τὴν χορηγίαν
+    prior_rendering: wrote concerning the provision
+    new_rendering: wrote instructions for their support
+    rationale: In the sequence of royal directives, this concerns authorized material support, not merely a written mention of provision.
+  - source_phrase: τὴν ἱερατικὴν στολὴν ἐν τίνι λατρεύουσιν ἐν αὐτῇ
+    prior_rendering: the priestly robe, in which they minister in it
+    new_rendering: the priestly robe they wore when ministering
+    rationale: The probable meaning is the attire used in priestly service; reproducing the redundant construction obscures that meaning in English.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: An earlier review removed the redundant 'in which ... in it,' but an automated revert restored it without a meaning-based reason. I keep 'robe' and 'minister' while making the likely sense readable and noting the alternative pronoun reference.

@@ -28,12 +28,15 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 25:18
 translation:
-  text: Her husband sits among his companions[a], and without sense he groans.
-  philosophy: optimal-equivalence
+  text: Her husband sits among his companions and groans in bewilderment[a][b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek parallel: ''Her husband will recline among his companions, and on hearing, he groaned bitterly.'' This reflects a notable divergence from the surviving Hebrew, especially in the second line.'
-    reason: alternative_reading
+    text: Literally, 'without his sense'; this difficult Hebrew expression may also mean 'without knowing why.'
+    reason: lexical_alternative
+  - marker: b
+    text: The Greek instead says that her husband reclines among his companions and, on hearing, groans bitterly.
+    reason: textual_variant
 lexical_decisions:
 - source_word: בַּעֲלָה
   chosen: her husband
@@ -112,14 +115,20 @@ revisions:
   from: Her husband sits among his companions, and without understanding he groans.
   to: Her husband sits among his companions, and without understanding he groans.
   rationale: Replaced 'understanding' with 'sense' to more naturally and directly reflect טַעַם here, while keeping the formal tone and structure of the verse.
-
 - timestamp: '2026-05-18T02:58:25Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Her husband sits among his companions[a], and without sense he groans.'
-  to: 'Her husband sits among his companions[a], and without sense he groans.'
+  from: Her husband sits among his companions[a], and without sense he groans.
+  to: Her husband sits among his companions[a], and without sense he groans.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''without understanding''].'
+- timestamp: '2026-11-09T19:07:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Her husband sits among his companions[a], and without sense he groans.
+  to: Her husband sits among his companions and groans in bewilderment[a][b].
+  rationale: The recorded discussion alternates between 'understanding' and 'sense,' but neither source-shaped phrase communicates the situation clearly. I followed its cognitive interpretation of the Hebrew while preserving both the expression's uncertainty and the Greek divergence in notes.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -139,3 +148,23 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/025/018.job-51662.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:07Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Her husband remains distressed and bewildered in the company of his friends.
+  meaning_decisions:
+  - source_phrase: וּבְלֹא טַעֲמוֹ יִתְאַנָּח
+    prior_rendering: and without sense he groans
+    new_rendering: and groans in bewilderment
+    rationale: The current wording can suggest that the husband is unintelligent; the documented understanding concerns his lack of comprehension amid distress.
+  footnote_kinds:
+    a: literal_wording
+    b: textual_variant
+  history_weighed: The recorded discussion alternates between 'understanding' and 'sense,' but neither source-shaped phrase communicates the situation clearly. I followed its cognitive interpretation of the Hebrew while preserving both the expression's uncertainty and the Greek divergence in notes.

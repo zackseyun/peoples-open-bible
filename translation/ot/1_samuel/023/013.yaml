@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יָּקָם֩ דָּוִ֨ד וַ/אֲנָשָׁ֜י/ו כְּ/שֵׁשׁ מֵא֣וֹת אִ֗ישׁ וַ/יֵּצְאוּ֙ מִ/קְּעִלָ֔ה וַ/יִּֽתְהַלְּכ֖וּ בַּ/אֲשֶׁ֣ר יִתְהַלָּ֑כוּ וּ/לְ/שָׁא֣וּל הֻגַּ֗ד כִּֽי נִמְלַ֤ט דָּוִד֙ מִ/קְּעִילָ֔ה וַ/יֶּחְדַּ֖ל לָ/צֵֽאת־־׃
 translation:
-  text: Then David arose with his men[a], about six hundred men, and they went out from Keilah and went wherever they could go. And it was told to Saul that David had escaped from Keilah[b], so he stopped going out.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'and wandered wherever they could wander' / 'and went about wherever they went.' The Hebrew idiom emphasizes continual movement from place to place.
-    reason: lexical_alternative
-  - marker: b
-    text: '''He stopped going out'' likely means Saul stopped going out in pursuit of David after learning David had escaped Keilah.'
-    reason: cultural_note
+  text: Then David and his men—about six hundred—set out from Keilah and moved from place to place wherever they could go. When Saul was told that David had escaped from Keilah, he called off his march to Keilah.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיָּקָם
   chosen: Then David arose
@@ -93,14 +86,20 @@ revisions:
   from: Then David arose with his men, about six hundred men, and they went out from Keilah and moved about wherever they could go. And it was told to Saul that David had escaped from Keilah, so he stopped going out.
   to: Then David arose with his men, about six hundred men, and they went out from Keilah and moved about wherever they could go. And it was told to Saul that David had escaped from Keilah, so he stopped going out.
   rationale: Replaced 'moved about' with 'went' for a more direct and natural rendering of the repeated verb, while preserving the sense of going wherever they could. No other changes needed.
-
 - timestamp: '2026-05-18T02:55:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then David arose with his men[a], about six hundred men, and they went out from Keilah and went wherever they could go. And it was told to Saul that David had escaped from Keilah[b], so he stopped going out.'
-  to: 'Then David arose with his men[a], about six hundred men, and they went out from Keilah and went wherever they could go. And it was told to Saul that David had escaped from Keilah[b], so he stopped going out.'
+  from: Then David arose with his men[a], about six hundred men, and they went out from Keilah and went wherever they could go. And it was told to Saul that David had escaped from Keilah[b], so he stopped going out.
+  to: Then David arose with his men[a], about six hundred men, and they went out from Keilah and went wherever they could go. And it was told to Saul that David had escaped from Keilah[b], so he stopped going out.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and moved about wherever they could go''].'
+- timestamp: '2026-11-09T17:23:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then David arose with his men[a], about six hundred men, and they went out from Keilah and went wherever they could go. And it was told to Saul that David had escaped from Keilah[b], so he stopped going out.
+  to: Then David and his men—about six hundred—set out from Keilah and moved from place to place wherever they could go. When Saul was told that David had escaped from Keilah, he called off his march to Keilah.
+  rationale: The earlier lexical rationale and first draft recognized continuing movement, which the current bare 'went' underexpresses. The earlier footnote also identified 'going out' as the military expedition; I put its locally specific meaning into the text so it does not conflict with Saul’s continued search in verse 14.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -120,3 +119,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/023/013.job-59339.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:38Z'
+  change_level: retranslated
+  confidence: high
+  meaning: David and his roughly six hundred men leave Keilah and keep moving, prompting Saul to cancel his march there.
+  meaning_decisions:
+  - source_phrase: וַיָּקָם ... וַיֵּצְאוּ מִקְּעִלָה
+    prior_rendering: David arose with his men ... and they went out from Keilah
+    new_rendering: David and his men ... set out from Keilah
+    rationale: The sequence marks their decisive departure, not an independently significant act of standing up.
+  - source_phrase: וַיִּתְהַלְּכוּ בַּאֲשֶׁר יִתְהַלָּכוּ
+    prior_rendering: went wherever they could go
+    new_rendering: moved from place to place wherever they could go
+    rationale: The construction describes unsettled, continuing movement rather than a single journey.
+  - source_phrase: וַיֶּחְדַּל לָצֵאת
+    prior_rendering: he stopped going out
+    new_rendering: he called off his march to Keilah
+    rationale: Saul abandons the planned expedition against David in Keilah, not all subsequent pursuit of David.
+  footnote_kinds: {}
+  history_weighed: The earlier lexical rationale and first draft recognized continuing movement, which the current bare 'went' underexpresses. The earlier footnote also identified 'going out' as the military expedition; I put its locally specific meaning into the text so it does not conflict with Saul’s continued search in verse 14.

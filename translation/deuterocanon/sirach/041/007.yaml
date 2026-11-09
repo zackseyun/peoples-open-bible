@@ -26,12 +26,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 41:7
 translation:
-  text: The children of a wicked father are cursed[a], for because of him they are a disgrace.
-  philosophy: optimal-equivalence
+  text: Children curse[a] their wicked father, because they suffer disgrace on his account.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek parallel: ''The children of an ungodly father are reproached, because of him they will be disgraced.'' The Hebrew more sharply suggests being cursed, while the Greek emphasizes reproach.'
-    reason: alternative_reading
+    text: The Greek uses the weaker expression “blame” or “reproach.”
+    reason: textual_variant
 lexical_decisions:
 - source_word: אב רשע
   chosen: a wicked father
@@ -114,14 +114,20 @@ revisions:
   from: The children of a wicked father are cursed, for because of him they are for disgrace.
   to: The children of a wicked father are cursed, for because of him they are for disgrace.
   rationale: Replaced 'are for disgrace' with the more natural and accurate 'are a disgrace' while preserving the sense of the Hebrew. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:58:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The children of a wicked father are cursed[a], for because of him they are a disgrace.'
-  to: 'The children of a wicked father are cursed[a], for because of him they are a disgrace.'
+  from: The children of a wicked father are cursed[a], for because of him they are a disgrace.
+  to: The children of a wicked father are cursed[a], for because of him they are a disgrace.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for disgrace''].'
+- timestamp: '2026-11-09T19:08:57Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The children of a wicked father are cursed[a], for because of him they are a disgrace.
+  to: Children curse[a] their wicked father, because they suffer disgrace on his account.
+  rationale: The earlier revisions improved “for disgrace” stylistically but left the mistaken passive construction intact. I retain the Hebrew's stronger curse language while correcting who curses whom, a reading also supported by the Greek verb's active meaning.
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -141,3 +147,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/041/007.job-52150.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:57Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Children curse their wicked father because his conduct exposes them to disgrace.
+  meaning_decisions:
+  - source_phrase: אב רשע יקוב ילד
+    prior_rendering: The children of a wicked father are cursed
+    new_rendering: Children curse their wicked father
+    rationale: The father is the fronted object and the child the subject of the active verb; the Greek likewise makes children the ones who blame their father. The prior passive rendering reversed the action.
+  - source_phrase: כי בגללו לחרפה
+    prior_rendering: for because of him they are a disgrace
+    new_rendering: because they suffer disgrace on his account
+    rationale: The children experience reproach because of their father; the verse does not simply declare that they themselves are disgraceful.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier revisions improved “for disgrace” stylistically but left the mistaken passive construction intact. I retain the Hebrew's stronger curse language while correcting who curses whom, a reading also supported by the Greek verb's active meaning.

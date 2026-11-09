@@ -10,15 +10,8 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: Then it was not enough for them to go astray concerning the knowledge of God[a], but also, living in a great war of ignorance[b], they call such great evils peace.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'to be led astray concerning the knowledge of God.' The Greek infinitive can be understood with a more passive nuance.
-    reason: lexical_alternative
-  - marker: b
-    text: The phrase 'a great war of ignorance' preserves the Greek metaphor; it describes life dominated by ignorance as though it were a state of warfare or deep conflict.
-    reason: cultural_note
+  text: It was not enough for them to go astray in their knowledge of God; they also live in a great war born of ignorance, yet call all these evils peace.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Εἶτʼ
   chosen: Then
@@ -131,14 +124,20 @@ revisions:
   from: Then it was not enough for them to go astray concerning the knowledge of God, but while living in a great war of ignorance, they call such great evils peace.
   to: Then it was not enough for them to go astray concerning the knowledge of God, but while living in a great war of ignorance, they call such great evils peace.
   rationale: Added 'also' to reflect καὶ and adjusted punctuation slightly for smoother, more natural English while preserving the source meaning.
-
 - timestamp: '2026-05-18T02:59:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then it was not enough for them to go astray concerning the knowledge of God[a], but also, living in a great war of ignorance[b], they call such great evils peace.'
-  to: 'Then it was not enough for them to go astray concerning the knowledge of God[a], but also, living in a great war of ignorance[b], they call such great evils peace.'
+  from: Then it was not enough for them to go astray concerning the knowledge of God[a], but also, living in a great war of ignorance[b], they call such great evils peace.
+  to: Then it was not enough for them to go astray concerning the knowledge of God[a], but also, living in a great war of ignorance[b], they call such great evils peace.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''while living''].'
+- timestamp: '2026-11-09T19:13:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then it was not enough for them to go astray concerning the knowledge of God[a], but also, living in a great war of ignorance[b], they call such great evils peace.
+  to: It was not enough for them to go astray in their knowledge of God; they also live in a great war born of ignorance, yet call all these evils peace.
+  rationale: The earlier decisions rightly preserve 'go astray' without assigning an external deceiver and insist on keeping the contrast between war and peace. I retain both, but clarify the genitive construction and the logical contrast rather than leaving them to explanatory notes.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -158,3 +157,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/014/022.job-39237.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:13:11Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Their false understanding of God is compounded by a life of conflict arising from ignorance, which they perversely describe as peace.
+  meaning_decisions:
+  - source_phrase: περὶ τὴν τοῦ θεοῦ γνῶσιν
+    prior_rendering: concerning the knowledge of God
+    new_rendering: in their knowledge of God
+    rationale: Makes clear that their own understanding and recognition of God have gone astray.
+  - source_phrase: ἀλλὰ καὶ μεγάλῳ ζῶντες ἀγνοίας πολέμῳ
+    prior_rendering: but also, living in a great war of ignorance
+    new_rendering: they also live in a great war born of ignorance
+    rationale: Retains the war metaphor while clarifying ignorance as the source of the conflict and making the additional accusation explicit.
+  - source_phrase: τὰ τοσαῦτα κακὰ εἰρήνην προσαγορεύουσιν
+    prior_rendering: they call such great evils peace
+    new_rendering: yet call all these evils peace
+    rationale: Makes the irony of calling warfare peace explicit and points naturally to the extensive catalog of evils that follows.
+  footnote_kinds: {}
+  history_weighed: The earlier decisions rightly preserve 'go astray' without assigning an external deceiver and insist on keeping the contrast between war and peace. I retain both, but clarify the genitive construction and the logical contrast rather than leaving them to explanatory notes.

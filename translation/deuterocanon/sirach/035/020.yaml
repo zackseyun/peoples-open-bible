@@ -28,15 +28,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 35:20
 translation:
-  text: The palate[a] tests the flavors of speech, and an understanding heart the flavors of falsehood.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'The palate tests the taste of speech, and a discerning heart the taste of lies.' The Hebrew repeats the taste metaphor in both halves of the line.
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek parallel in Swete differs substantially here ('Do not go on a path of stumbling...'), indicating a major textual divergence; the translation follows the extant Hebrew witness as the primary source for this verse.
-    reason: textual_variant
+  text: The palate tests the flavors of speech; a discerning heart tests the flavors of falsehood.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: חך
   chosen: the palate
@@ -118,13 +111,12 @@ revisions:
   from: The palate tests the flavors of speech, and an understanding heart the flavors of falsehood.
   to: The palate tests the flavors of food, and the heart understands the flavors of falsehood.
   rationale: Changed 'speech' to 'food' for lexical accuracy, since מטעמי in the first clause refers to tastes/flavors in parallel with the palate. Smoothed the second clause by rendering ולב מבין as 'and the heart understands' instead of 'and an understanding heart,' which more directly reflects the Hebrew verbal construction.
-
 - timestamp: '2026-05-18T03:09:42Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The palate tests the flavors of food[b][a], and the heart understands the flavors of falsehood.'
-  to: 'The palate tests the flavors of speech, and an understanding heart the flavors of falsehood.'
+  from: The palate tests the flavors of food[b][a], and the heart understands the flavors of falsehood.
+  to: The palate tests the flavors of speech, and an understanding heart the flavors of falsehood.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''an understanding heart''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -134,6 +126,13 @@ revisions:
   from: The palate tests the flavors of speech, and an understanding heart the flavors of falsehood.
   to: The palate[a] tests the flavors of speech, and an understanding heart the flavors of falsehood.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('the palate') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T20:12:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The palate[a] tests the flavors of speech, and an understanding heart the flavors of falsehood.
+  to: The palate tests the flavors of speech; a discerning heart tests the flavors of falsehood.
+  rationale: I retain 'speech' and the repeated flavor metaphor from the restored draft; the intervening automated revision did not establish that דבר means 'food' here. No maintainer revision is recorded, and the heart's implied act of testing is now stated explicitly.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -153,3 +152,21 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/035/020.job-51965.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:12:53Z'
+  change_level: refined
+  confidence: high
+  meaning: Speech can be tested like something tasted, and a discerning heart can distinguish falsehood.
+  meaning_decisions:
+  - source_phrase: ולב מבין מטעמי כזב
+    prior_rendering: and an understanding heart the flavors of falsehood
+    new_rendering: a discerning heart tests the flavors of falsehood
+    rationale: '''Discerning'' expresses the heart''s ability to distinguish deceptive speech, while repeating ''tests'' makes the implied action explicit in natural English without losing the tasting metaphor.'
+  footnote_kinds: {}
+  history_weighed: I retain 'speech' and the repeated flavor metaphor from the restored draft; the intervening automated revision did not establish that דבר means 'food' here. No maintainer revision is recorded, and the heart's implied act of testing is now stated explicitly.

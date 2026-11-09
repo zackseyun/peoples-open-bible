@@ -11,12 +11,8 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 6 = Addition F, segmented from Swete pages 796-797 with First1KGreek used only as a verse-anchor map.
 translation:
-  text: For I remembered the dream that I saw concerning these matters[a], for not a word of them has passed by.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'and not a word of them passed by,' possibly meaning that nothing from the dream failed to come about.
-    reason: lexical_alternative
+  text: 'For I remembered the dream I had about these events: not one detail of it has failed to come true.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐμνήσθην
   chosen: I remembered
@@ -91,14 +87,20 @@ revisions:
   from: For I remembered the dream that I saw about these matters, and not a word from them escaped notice.
   to: For I remembered the dream that I saw about these matters, and not a word from them escaped notice.
   rationale: Revised 'about' to 'concerning' for a more formal register, and replaced 'escaped notice' with 'has passed by' to more closely reflect παρῆλθεν ἀπ᾽ αὐτῶν λόγος without adding interpretation.
-
 - timestamp: '2026-05-16T15:37:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For I remembered the dream that I saw concerning these matters[a], for not a word of them has passed by.'
-  to: 'For I remembered the dream that I saw concerning these matters[a], for not a word of them has passed by.'
-  rationale: 'Restored drafter ''about these matters'' (preserving the chosen common English idiom) and ''not a word from them escaped notice'' (preserving the chosen rendering of παρῆλθεν as escaped notice) per chosen renderings.'
+  from: For I remembered the dream that I saw concerning these matters[a], for not a word of them has passed by.
+  to: For I remembered the dream that I saw concerning these matters[a], for not a word of them has passed by.
+  rationale: Restored drafter 'about these matters' (preserving the chosen common English idiom) and 'not a word from them escaped notice' (preserving the chosen rendering of παρῆλθεν as escaped notice) per chosen renderings.
+- timestamp: '2026-11-09T19:00:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For I remembered the dream that I saw concerning these matters[a], for not a word of them has passed by.
+  to: 'For I remembered the dream I had about these events: not one detail of it has failed to come true.'
+  rationale: The history alternated between ‘escaped notice’ and the more literal ‘passed by,’ while the current footnote acknowledged fulfillment. The ensuing interpretation of the dream supports bringing that fulfillment into the main text.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -118,3 +120,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/additions_to_esther/006/002.job-50304.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:00:33Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Mordecai recalls his earlier dream about these events and recognizes that every detail has come true.
+  meaning_decisions:
+  - source_phrase: τοῦ ἐνυπνίου οὗ εἶδον περὶ τῶν λόγων τούτων
+    prior_rendering: the dream that I saw concerning these matters
+    new_rendering: the dream I had about these events
+    rationale: English ordinarily speaks of having a dream, and the surrounding interpretation identifies these matters as the events of Esther’s story.
+  - source_phrase: οὐδὲ γὰρ παρῆλθεν ἀπʼ αὐτῶν λόγος
+    prior_rendering: for not a word of them has passed by
+    new_rendering: not one detail of it has failed to come true
+    rationale: The following verses match the dream’s details to actual events, making complete fulfillment, rather than unnoticed words, the best-supported meaning.
+  footnote_kinds: {}
+  history_weighed: The history alternated between ‘escaped notice’ and the more literal ‘passed by,’ while the current footnote acknowledged fulfillment. The ensuing interpretation of the dream supports bringing that fulfillment into the main text.

@@ -28,14 +28,11 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 35:24
 translation:
-  text: And again[a], if there is healing for the tongue[b], it is not among human beings.
-  philosophy: optimal-equivalence
+  text: If her speech also brings healing, her husband is more fortunate than other men[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'The extant Hebrew line in the supplied Cairo Geniza witness appears mismatched or corrupt at this verse; the translation therefore follows the Greek parallel, which reads coherently: ''Whoever trusts in the law gives heed to the commandments, and whoever trusts in the Lord will not be diminished.'''
-    reason: textual_variant
-  - marker: b
-    text: '''Will not be diminished'' could also be rendered ''will not be brought low'' or, more interpretively, ''will not lack.'''
+    text: Literally, “her husband is not among human beings,” a hyperbole expressing his exceptional good fortune.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ὁ πιστεύων / ה[implicit trust concept from parallel]
@@ -121,14 +118,20 @@ revisions:
   from: Whoever trusts in the law gives heed to the commandments, and whoever trusts in the Lord will not be diminished.
   to: Whoever trusts in the law gives heed to the commandments, and whoever trusts in the Lord will not be diminished.
   rationale: 'Replaced the unrelated draft with a translation that reflects the Hebrew text: rendered ועוד as ''And again,'' מרפא לשון as ''healing for the tongue,'' and אין אישהּ מבני אדם as ''it is not among human beings.'''
-
 - timestamp: '2026-05-15T13:54:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And again[a], if there is healing for the tongue[b], it is not among human beings.'
-  to: 'And again[a], if there is healing for the tongue[b], it is not among human beings.'
+  from: And again[a], if there is healing for the tongue[b], it is not among human beings.
+  to: And again[a], if there is healing for the tongue[b], it is not among human beings.
   rationale: 'Minor_mismatch: Hebrew mismatched; drafter chose Greek per documented theological_decision.'
+- timestamp: '2026-11-09T20:12:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And again[a], if there is healing for the tongue[b], it is not among human beings.
+  to: If her speech also brings healing, her husband is more fortunate than other men[a].
+  rationale: The later review correctly returned to the supplied Hebrew, but its rendering missed “her husband” and the connection with the preceding praise of a woman’s beauty. No MAINTAINER revision is recorded; I retain the later source alignment rather than the earlier law-and-trust draft, whose proposed Greek parallel does not fit the supplied passage.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -148,3 +151,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/035/024.job-51969.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:12:53Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A woman who adds healing speech to her beauty makes her husband exceptionally fortunate.
+  meaning_decisions:
+  - source_phrase: ועוד
+    prior_rendering: And again
+    new_rendering: also
+    rationale: The word adds a further quality to the woman’s beauty praised in the preceding verse; it does not introduce an unrelated observation.
+  - source_phrase: אם יש מרפא לשון
+    prior_rendering: if there is healing for the tongue
+    new_rendering: If her speech also brings healing
+    rationale: The phrase describes speech that heals or soothes, not a tongue that needs healing. Making the woman the implied speaker restores the connection with the preceding verse while retaining the healing image.
+  - source_phrase: אין אישהּ מבני אדם
+    prior_rendering: it is not among human beings
+    new_rendering: her husband is more fortunate than other men
+    rationale: אישהּ means “her husband,” with a feminine possessive suffix. In this praise of a woman’s qualities, the exaggerated statement that her husband is outside the ordinary human company expresses his exceptional good fortune.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The later review correctly returned to the supplied Hebrew, but its rendering missed “her husband” and the connection with the preceding praise of a woman’s beauty. No MAINTAINER revision is recorded; I retain the later source alignment rather than the earlier law-and-trust draft, whose proposed Greek parallel does not fit the supplied passage.

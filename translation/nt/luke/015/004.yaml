@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: Τίς ἄνθρωπος ἐξ ὑμῶν ἔχων ἑκατὸν πρόβατα καὶ ⸀ἀπολέσας ⸂ἐξ αὐτῶν ἓν⸃ οὐ καταλείπει τὰ ἐνενήκοντα ἐννέα ἐν τῇ ἐρήμῳ καὶ πορεύεται ἐπὶ τὸ ἀπολωλὸς ἕως εὕρῃ αὐτό;
 translation:
-  text: What man among you, having a hundred sheep and losing one of them, does not leave the ninety-nine in the open country[a] and go after the lost one until he finds it?
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'in the wilderness.' The Greek term can refer to open country, pastureland, or a deserted place.
-    reason: lexical_alternative
+  text: “If a man among you has a hundred sheep and loses one of them, will he not leave the ninety-nine in the open country and go after the lost sheep until he finds it?
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Τίς ἄνθρωπος ἐξ ὑμῶν
   chosen: What man among you
@@ -106,13 +102,12 @@ revisions:
   from: What man among you, having a hundred sheep and losing one of them, does not leave the ninety-nine in the open country and go after the lost one until he finds it?
   to: What man among you, having a hundred sheep and losing one of them, does not leave the ninety-nine in the wilderness and go after the lost one until he finds it?
   rationale: Changed 'open country' to 'the wilderness' for closer lexical correspondence to ἐν τῇ ἐρήμῳ; otherwise retained the draft.
-
 - timestamp: '2026-05-18T03:10:38Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'What man among you[a], having a hundred sheep and losing one of them, does not leave the ninety-nine in the wilderness and go after the lost one until he finds it?'
-  to: 'What man among you, having a hundred sheep and losing one of them, does not leave the ninety-nine in the open country and go after the lost one until he finds it?'
+  from: What man among you[a], having a hundred sheep and losing one of them, does not leave the ninety-nine in the wilderness and go after the lost one until he finds it?
+  to: What man among you, having a hundred sheep and losing one of them, does not leave the ninety-nine in the open country and go after the lost one until he finds it?
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the open country''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -122,6 +117,13 @@ revisions:
   from: What man among you, having a hundred sheep and losing one of them, does not leave the ninety-nine in the open country and go after the lost one until he finds it?
   to: What man among you, having a hundred sheep and losing one of them, does not leave the ninety-nine in the open country[a] and go after the lost one until he finds it?
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('in the open country') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:12:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: What man among you, having a hundred sheep and losing one of them, does not leave the ninety-nine in the open country[a] and go after the lost one until he finds it?
+  to: “If a man among you has a hundred sheep and loses one of them, will he not leave the ninety-nine in the open country and go after the lost sheep until he finds it?
+  rationale: The automated exchange between 'open country' and 'wilderness' carries little editorial weight; the shepherding context supports retaining 'open country.' I preserve the representative man, the numbers, and the search continuing until recovery.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -143,3 +145,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/015/004.job-55734.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:50Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jesus asks his hearers to recognize that a man would leave ninety-nine sheep to search until he finds the one he has lost.
+  meaning_decisions:
+  - source_phrase: Τίς ἄνθρωπος ἐξ ὑμῶν ἔχων ἑκατὸν πρόβατα καὶ ἀπολέσας ἐξ αὐτῶν ἓν οὐ καταλείπει
+    prior_rendering: What man among you, having a hundred sheep and losing one of them, does not leave
+    new_rendering: If a man among you has a hundred sheep and loses one of them, will he not leave
+    rationale: A conditional setup followed by a rhetorical question naturally conveys the expected affirmative answer without a chain of participles.
+  - source_phrase: τὸ ἀπολωλὸς
+    prior_rendering: the lost one
+    new_rendering: the lost sheep
+    rationale: The noun makes the established referent explicit while preserving the central image and the emphasis on its lost condition.
+  footnote_kinds: {}
+  history_weighed: The automated exchange between 'open country' and 'wilderness' carries little editorial weight; the shepherding context supports retaining 'open country.' I preserve the representative man, the numbers, and the search continuing until recovery.

@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: מִ/כֹּ֣ל אֲשֶׁר יֵצֵא֩ מִ/גֶּ֨פֶן הַ/יַּ֜יִן לֹ֣א תֹאכַ֗ל וְ/יַ֤יִן וְ/שֵׁכָר֙ אַל תֵּ֔שְׁתְּ וְ/כָל טֻמְאָ֖ה אַל תֹּאכַ֑ל כֹּ֥ל אֲשֶׁר צִוִּיתִ֖י/הָ תִּשְׁמֹֽר־־־־־׃
 translation:
-  text: She must not eat anything that comes from the grapevine[a], and she must not drink wine or strong drink, and she must not eat anything unclean. She must keep all that I commanded her.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Hebrew: ''from all that comes out of the vine of wine,'' that is, anything derived from the grapevine.'
-    reason: lexical_alternative
+  text: “She must not eat anything that comes from the grapevine, drink wine or other intoxicating drink, or eat anything unclean. She must obey everything I commanded her.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: מִכֹּל אֲשֶׁר יֵצֵא מִגֶּפֶן הַיַּיִן
   chosen: anything that comes from the vine of wine
@@ -100,14 +96,20 @@ revisions:
   from: She must not eat anything that comes from the vine of wine, and she must not drink wine or strong drink, and she must not eat anything unclean. She must keep all that I commanded her.
   to: She must not eat anything that comes from the vine of wine, and she must not drink wine or strong drink, and she must not eat anything unclean. She must keep all that I commanded her.
   rationale: Changed 'vine of wine' to 'grapevine' for more natural and accurate English while preserving the meaning. No other changes needed.
-
 - timestamp: '2026-05-18T02:55:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'She must not eat anything that comes from the grapevine[a], and she must not drink wine or strong drink, and she must not eat anything unclean. She must keep all that I commanded her.'
-  to: 'She must not eat anything that comes from the grapevine[a], and she must not drink wine or strong drink, and she must not eat anything unclean. She must keep all that I commanded her.'
+  from: She must not eat anything that comes from the grapevine[a], and she must not drink wine or strong drink, and she must not eat anything unclean. She must keep all that I commanded her.
+  to: She must not eat anything that comes from the grapevine[a], and she must not drink wine or strong drink, and she must not eat anything unclean. She must keep all that I commanded her.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''anything that comes from the vine of wine''].'
+- timestamp: '2026-11-09T18:13:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: She must not eat anything that comes from the grapevine[a], and she must not drink wine or strong drink, and she must not eat anything unclean. She must keep all that I commanded her.
+  to: “She must not eat anything that comes from the grapevine, drink wine or other intoxicating drink, or eat anything unclean. She must obey everything I commanded her.”
+  rationale: I retained the current 'grapevine' because the lexical record explicitly identifies it as the intended meaning despite the inconsistent automated reversion history. The comprehensive prohibitions and the biblical purity term 'unclean' are preserved.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -127,3 +129,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/judges/013/014.job-69232.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:13:27Z'
+  change_level: refined
+  confidence: high
+  meaning: The angel reiterates that Manoah’s wife must avoid grapevine products, intoxicating drinks, and unclean food, obeying every instruction he gave her.
+  meaning_decisions:
+  - source_phrase: יַיִן וְשֵׁכָר
+    prior_rendering: wine or strong drink
+    new_rendering: wine or other intoxicating drink
+    rationale: The prohibition includes intoxicating beverages besides wine; the new wording avoids suggesting that the Hebrew refers specifically to distilled spirits, without narrowing it to beer.
+  - source_phrase: כֹּל אֲשֶׁר צִוִּיתִיהָ תִּשְׁמֹר
+    prior_rendering: She must keep all that I commanded her.
+    new_rendering: She must obey everything I commanded her.
+    rationale: Here 'keep' means comply with the instructions, not merely retain or remember them.
+  footnote_kinds: {}
+  history_weighed: I retained the current 'grapevine' because the lexical record explicitly identifies it as the intended meaning despite the inconsistent automated reversion history. The comprehensive prohibitions and the biblical purity term 'unclean' are preserved.

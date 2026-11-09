@@ -21,15 +21,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Better is the life of a poor man under shelter than splendid food in another's house[a][b].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'The Greek participle translated in the clause ''under shelter'' is textually or lexically difficult here; taken strictly, it commonly means ''seeming'' or ''being thought.'' The rendering follows the proverb''s apparent sense: modest security is better than luxurious meals dependent on others.'
-    reason: textual_variant
-  - marker: b
-    text: Or 'splendid dishes among strangers' / 'in others' houses.' The Greek ἐν ἀλλοτρίοις can refer more generally to what belongs to others.
-    reason: lexical_alternative
+  text: Better a poor man's life beneath a roof of beams than lavish meals in someone else's house.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: κρείσσων
   chosen: Better is
@@ -127,17 +120,23 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'Better is the life of a poor man under shelter than splendid food in another man''s house.'
-  to: 'Better is the life of a poor man under shelter than splendid food in another man''s house.'
+  from: Better is the life of a poor man under shelter than splendid food in another man's house.
+  to: Better is the life of a poor man under shelter than splendid food in another man's house.
   rationale: Changed 'another man's house' to 'another's house' to reflect the plural/indefinite sense of ἐν ἀλλοτρίοις more naturally and avoid unnecessary gendering. Kept the rest unchanged as accurate and natural.
-
 - timestamp: '2026-05-18T02:58:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Better is the life of a poor man under shelter than splendid food in another''s house[a][b].'
-  to: 'Better is the life of a poor man under shelter than splendid food in another''s house[a][b].'
+  from: Better is the life of a poor man under shelter than splendid food in another's house[a][b].
+  to: Better is the life of a poor man under shelter than splendid food in another's house[a][b].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: ["in another man''s house"].'
+- timestamp: '2026-11-09T19:06:58Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Better is the life of a poor man under shelter than splendid food in another's house[a][b].
+  to: Better a poor man's life beneath a roof of beams than lavish meals in someone else's house.
+  rationale: The earlier history rightly identified the contrast between modest security and luxurious dependence. Its uncertainty note rests on misidentifying δοκῶν as a participle; recognizing the noun “beams” allows the concrete wording to be restored and the note dropped.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -157,3 +156,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/029/022.job-51772.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:58Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A poor man's modest sheltered life is better than luxurious meals enjoyed in dependence on someone else's household.
+  meaning_decisions:
+  - source_phrase: ὑπὸ σκέπην δοκῶν
+    prior_rendering: under shelter
+    new_rendering: beneath a roof of beams
+    rationale: Here δοκῶν is the genitive plural of δοκός, meaning “beam,” not a difficult participle meaning “seeming”; the phrase describes the roof sheltering the poor man.
+  - source_phrase: ἐδέσματα λαμπρὰ ἐν ἀλλοτρίοις
+    prior_rendering: splendid food in another's house
+    new_rendering: lavish meals in someone else's house
+    rationale: The plural noun denotes prepared dishes or meals, and the contrast concerns luxurious eating in another household.
+  footnote_kinds: {}
+  history_weighed: The earlier history rightly identified the contrast between modest security and luxurious dependence. Its uncertainty note rests on misidentifying δοκῶν as a participle; recognizing the noun “beams” allows the concrete wording to be restored and the note dropped.

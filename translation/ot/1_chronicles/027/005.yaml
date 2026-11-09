@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: שַׂ֣ר הַ/צָּבָ֤א הַ/שְּׁלִישִׁי֙ לַ/חֹ֣דֶשׁ הַ/שְּׁלִישִׁ֔י בְּנָיָ֧הוּ בֶן יְהוֹיָדָ֛ע הַ/כֹּהֵ֖ן רֹ֑אשׁ וְ/עַל֙ מַחֲלֻקְתּ֔/וֹ עֶשְׂרִ֥ים וְ/אַרְבָּעָ֖ה אָֽלֶף־׃
 translation:
-  text: The commander of the third division for the third month was Benaiah son of Jehoiada the chief[a], and in his division were twenty-four thousand.
-  philosophy: optimal-equivalence
+  text: Benaiah son of Jehoiada the priest[a] commanded the third division for the third month. His division numbered twenty-four thousand men.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'Benaiah son of Jehoiada the priest, chief'; the Hebrew can be read more literally this way, but the sense is likely that Jehoiada was a leading priest.
-    reason: lexical_alternative
+    text: Alternatively, Jehoiada is called “the chief priest”; the Hebrew word “chief” may describe Jehoiada rather than Benaiah.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: שַׂר הַצָּבָא
   chosen: the commander
@@ -74,14 +74,20 @@ revisions:
   from: The commander of the third division for the third month was Benaiah son of Jehoiada, the chief priest; and in his division were twenty-four thousand.
   to: The commander of the third division for the third month was Benaiah son of Jehoiada, the chief priest; and in his division were twenty-four thousand.
   rationale: Changed 'the chief priest' to 'the chief' to reflect the Hebrew more closely here and removed the unnecessary comma for smoother formal English.
-
 - timestamp: '2026-05-18T02:58:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The commander of the third division for the third month was Benaiah son of Jehoiada the chief[a], and in his division were twenty-four thousand.'
-  to: 'The commander of the third division for the third month was Benaiah son of Jehoiada the chief[a], and in his division were twenty-four thousand.'
+  from: The commander of the third division for the third month was Benaiah son of Jehoiada the chief[a], and in his division were twenty-four thousand.
+  to: The commander of the third division for the third month was Benaiah son of Jehoiada the chief[a], and in his division were twenty-four thousand.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the chief priest''].'
+- timestamp: '2026-11-09T17:20:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The commander of the third division for the third month was Benaiah son of Jehoiada the chief[a], and in his division were twenty-four thousand.
+  to: Benaiah son of Jehoiada the priest[a] commanded the third division for the third month. His division numbered twenty-four thousand men.
+  rationale: The recorded history and lexical notes alternate between “chief” and “chief priest,” but neither establishes a human editorial ruling, and the current text omits the explicit word “priest.” I restore that designation and preserve the disputed attachment of “chief” in a footnote.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -101,3 +107,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/1_chronicles/027/005.job-44715.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:20:06Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Benaiah son of Jehoiada the priest commanded the third month’s division of twenty-four thousand men.
+  meaning_decisions:
+  - source_phrase: בְּנָיָהוּ בֶן יְהוֹיָדָע הַכֹּהֵן רֹאשׁ
+    prior_rendering: Benaiah son of Jehoiada the chief
+    new_rendering: Benaiah son of Jehoiada the priest ... commanded
+    rationale: The source explicitly identifies a priest, which the current main text omits. The best contextual reading takes “chief” as describing Benaiah’s command role, while the alternative attachment to Jehoiada remains in a note.
+  - source_phrase: וְעַל מַחֲלֻקְתּוֹ עֶשְׂרִים וְאַרְבָּעָה אָלֶף
+    prior_rendering: and in his division were twenty-four thousand
+    new_rendering: His division numbered twenty-four thousand men
+    rationale: The clause states the military division’s strength.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The recorded history and lexical notes alternate between “chief” and “chief priest,” but neither establishes a human editorial ruling, and the current text omits the explicit word “priest.” I restore that designation and preserve the disputed attachment of “chief” in a footnote.

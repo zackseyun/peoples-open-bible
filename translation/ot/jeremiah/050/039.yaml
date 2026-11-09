@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: לָ/כֵ֗ן יֵשְׁב֤וּ צִיִּים֙ אֶת אִיִּ֔ים וְ/יָ֥שְׁבוּ בָ֖/הּ בְּנ֣וֹת יַֽעֲנָ֑ה וְ/לֹֽא תֵשֵׁ֥ב עוֹד֙ לָ/נֶ֔צַח וְ/לֹ֥א תִשְׁכּ֖וֹן עַד דּ֥וֹר וָ/דֽוֹר־־־׃
 translation:
-  text: Therefore desert creatures will dwell there with hyenas[a], and ostriches will dwell in her; she will never again be inhabited forever[c][b], nor will she be lived in from generation to generation.
-  philosophy: optimal-equivalence
+  text: Therefore desert creatures will dwell there with hyenas[a], and ostriches will dwell in her; she will never again be inhabited, nor will anyone live in her from generation to generation.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'with jackals' or 'with howling creatures'; the exact identification of the Hebrew terms for these desert animals is uncertain.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'daughters of the ostrich,' that is, ostriches. Older English versions sometimes render this as 'owls.'
-    reason: lexical_alternative
-  - marker: c
-    text: 'The city is personified as feminine in Hebrew: ''in her,'' ''she will not be inhabited.'''
-    reason: cultural_note
+    text: Or, 'jackals' or 'howling creatures'; the animal's exact identity is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: לָכֵן
   chosen: Therefore
@@ -101,14 +95,20 @@ revisions:
   from: Therefore desert creatures will live there with hyenas, and ostriches will dwell in her; she will never again be inhabited forever, nor will she be lived in from generation to generation.
   to: Therefore desert creatures will dwell there with hyenas, and ostriches will dwell in her; she will never again be inhabited, nor will she be dwelt in from generation to generation.
   rationale: Changed 'live' to 'dwell' for consistency, removed the redundant 'forever' after 'never again be inhabited,' and revised 'lived in' to the more formal 'dwelt in.'
-
 - timestamp: '2026-05-16T08:39:59Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Therefore desert creatures will dwell there with hyenas[a], and ostriches will dwell in her; she will never again be inhabited[c][b], nor will she be dwelt in from generation to generation.'
-  to: 'Therefore desert creatures will dwell there with hyenas[a], and ostriches will dwell in her; she will never again be inhabited forever[c][b], nor will she be lived in from generation to generation.'
-  rationale: 'Azure removed ''forever'' from drafter''s chosen ''never again be inhabited forever'' (drafter explicitly preserved ''forever'' to reflect emphatic permanence of לֹא תֵשֵׁב עוֹד לָנֶצַח) and substituted ''dwelt in'' for chosen ''lived in'' (Hebrew לֹא תִשְׁכּוֹן).'
+  from: Therefore desert creatures will dwell there with hyenas[a], and ostriches will dwell in her; she will never again be inhabited[c][b], nor will she be dwelt in from generation to generation.
+  to: Therefore desert creatures will dwell there with hyenas[a], and ostriches will dwell in her; she will never again be inhabited forever[c][b], nor will she be lived in from generation to generation.
+  rationale: Azure removed 'forever' from drafter's chosen 'never again be inhabited forever' (drafter explicitly preserved 'forever' to reflect emphatic permanence of לֹא תֵשֵׁב עוֹד לָנֶצַח) and substituted 'dwelt in' for chosen 'lived in' (Hebrew לֹא תִשְׁכּוֹן).
+- timestamp: '2026-11-09T18:01:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Therefore desert creatures will dwell there with hyenas[a], and ostriches will dwell in her; she will never again be inhabited forever[c][b], nor will she be lived in from generation to generation.
+  to: Therefore desert creatures will dwell there with hyenas[a], and ostriches will dwell in her; she will never again be inhabited, nor will anyone live in her from generation to generation.
+  rationale: The drafting rationale rightly insists on emphatic permanence, but that meaning is fully carried by 'never again' and the generational parallel. I therefore retain the gain of the earlier smoothing rather than the automated restoration of redundant English, while preserving the uncertain animal identification in a note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -128,3 +128,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/050/039.job-68236.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:01:47Z'
+  change_level: refined
+  confidence: high
+  meaning: Babylon will become a permanent haunt of desert animals rather than a place where people live.
+  meaning_decisions:
+  - source_phrase: וְלֹא תֵשֵׁב עוֹד לָנֶצַח
+    prior_rendering: she will never again be inhabited forever
+    new_rendering: she will never again be inhabited
+    rationale: '''Never again'' expresses permanent exclusion without the redundant ''forever,'' which could misleadingly suggest that only permanent habitation is forbidden.'
+  - source_phrase: וְלֹא תִשְׁכּוֹן עַד דּוֹר וָדוֹר
+    prior_rendering: nor will she be lived in from generation to generation
+    new_rendering: nor will anyone live in her from generation to generation
+    rationale: Recasts the awkward passive expression as natural English while keeping the poetic parallel and its enduring scope.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The drafting rationale rightly insists on emphatic permanence, but that meaning is fully carried by 'never again' and the generational parallel. I therefore retain the gain of the earlier smoothing rather than the automated restoration of redundant English, while preserving the uncertain animal identification in a note.

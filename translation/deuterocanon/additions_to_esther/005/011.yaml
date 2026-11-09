@@ -12,12 +12,12 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 5 = Addition E, segmented from Swete pages 790-792 with First1KGreek used only as a verse-anchor map.
 translation:
-  text: We have attained such goodwill toward every nation that he is proclaimed our father and is honored by all[a], continuing as the second person to the royal throne.
-  philosophy: optimal-equivalence
+  text: He received so much of the goodwill we show toward every nation that he was proclaimed our father[a], everyone bowed before him, and he remained second in rank to the royal throne.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more literally, 'bowed down to by all.' The Greek verb can denote prostration or homage before a superior.
-    reason: lexical_alternative
+    text: “Father” is an honorific title for a trusted royal adviser, not a statement of kinship.
+    reason: cultural_note
 lexical_decisions:
 - source_word: ἔτυχεν
   chosen: we have attained
@@ -126,14 +126,20 @@ revisions:
   from: We have attained such goodwill toward every nation that he is proclaimed our father and is continually honored by all as the second person to the royal throne.
   to: We have attained such goodwill toward every nation that he is proclaimed our father and is continually honored by all as the second person to the royal throne.
   rationale: Replaced 'continually honored' with 'is honored by all, continuing' to reflect διατελεῖν more directly with the following phrase; retained 'second person to the royal throne' as a formal rendering of τὸ δεύτερον τοῦ Βασιλικοῦ θρόνου πρόσωπον.
-
 - timestamp: '2026-05-18T02:59:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'We have attained such goodwill toward every nation that he is proclaimed our father and is honored by all[a], continuing as the second person to the royal throne.'
-  to: 'We have attained such goodwill toward every nation that he is proclaimed our father and is honored by all[a], continuing as the second person to the royal throne.'
+  from: We have attained such goodwill toward every nation that he is proclaimed our father and is honored by all[a], continuing as the second person to the royal throne.
+  to: We have attained such goodwill toward every nation that he is proclaimed our father and is honored by all[a], continuing as the second person to the royal throne.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''is continually''].'
+- timestamp: '2026-11-09T19:00:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: We have attained such goodwill toward every nation that he is proclaimed our father and is honored by all[a], continuing as the second person to the royal throne.
+  to: He received so much of the goodwill we show toward every nation that he was proclaimed our father[a], everyone bowed before him, and he remained second in rank to the royal throne.
+  rationale: The earlier deliberation rightly distinguished courtly homage from worship and recognized the continuing nature of Haman’s rank. However, its rendering of the main verb assigned the wrong subject, obscuring the entire account of Haman receiving favor.
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -153,3 +159,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/additions_to_esther/005/011.job-50289.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:00:40Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Haman received such generous royal favor that he gained an honored advisory title, universal homage, and rank immediately below the king.
+  meaning_decisions:
+  - source_phrase: ἔτυχεν ἧς ἔχομεν πρὸς πᾶν ἔθνος φιλανθρωπίας
+    prior_rendering: We have attained such goodwill toward every nation
+    new_rendering: He received so much of the goodwill we show toward every nation
+    rationale: The singular verb refers to Haman receiving royal benevolence; the first-person plural belongs to the relative clause describing the king’s goodwill.
+  - source_phrase: προσκυνούμενον ὑπὸ πάντων
+    prior_rendering: is honored by all
+    new_rendering: everyone bowed before him
+    rationale: The physical act of courtly homage is significant and can be stated directly without implying divine worship.
+  - source_phrase: τὸ δεύτερον τοῦ Βασιλικοῦ θρόνου πρόσωπον διατελεῖν
+    prior_rendering: continuing as the second person to the royal throne
+    new_rendering: he remained second in rank to the royal throne
+    rationale: The phrase denotes continuing political rank immediately below the monarch, not succession to the throne.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The earlier deliberation rightly distinguished courtly homage from worship and recognized the continuing nature of Haman’s rank. However, its rendering of the main verb assigned the wrong subject, obscuring the entire account of Haman receiving favor.

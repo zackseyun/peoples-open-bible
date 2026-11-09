@@ -20,12 +20,8 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: God of the fathers and Lord of your mercy[a], who made all things by your word,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Or ''by means of your command.'' Greek: ''by your word.'''
-    reason: lexical_alternative
+  text: God of our fathers and Lord of mercy, who made all things by your word,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: θεὲ
   chosen: God
@@ -110,14 +106,20 @@ revisions:
   from: God of the fathers and Lord of mercy, who made all things by your word,
   to: God of the fathers and Lord of mercy, who made all things by your word,
   rationale: Revised 'Lord of mercy' to 'Lord of your mercy' to reflect the explicit σου ('your') in the Greek. Kept the rest unchanged as accurate and natural.
-
 - timestamp: '2026-05-18T02:59:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'God of the fathers and Lord of your mercy[a], who made all things by your word,'
-  to: 'God of the fathers and Lord of your mercy[a], who made all things by your word,'
+  from: God of the fathers and Lord of your mercy[a], who made all things by your word,
+  to: God of the fathers and Lord of your mercy[a], who made all things by your word,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''of mercy''].'
+- timestamp: '2026-11-09T19:11:17Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: God of the fathers and Lord of your mercy[a], who made all things by your word,
+  to: God of our fathers and Lord of mercy, who made all things by your word,
+  rationale: The first draft and lexical discussion support the natural title “Lord of mercy”; the later insistence on “your” chiefly served formal correspondence. “By your word” is retained for its full creation resonance, and the misplaced, unnecessary command note is dropped.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -137,3 +139,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/009/001.job-39289.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:17Z'
+  change_level: refined
+  confidence: high
+  meaning: Solomon addresses the God of his ancestors, the Lord of mercy, who created everything by his word.
+  meaning_decisions:
+  - source_phrase: θεὲ πατέρων
+    prior_rendering: God of the fathers
+    new_rendering: God of our fathers
+    rationale: The prayer invokes the ancestral God of Israel; the implied possessive makes that relationship clear in English.
+  - source_phrase: Κύριε τοῦ ἐλέους σου
+    prior_rendering: Lord of your mercy
+    new_rendering: Lord of mercy
+    rationale: The idiomatic title conveys that mercy belongs to God without the awkward English suggestion that his mercy is a separate possession over which he rules.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical discussion support the natural title “Lord of mercy”; the later insistence on “your” chiefly served formal correspondence. “By your word” is retained for its full creation resonance, and the misplaced, unnecessary command note is dropped.

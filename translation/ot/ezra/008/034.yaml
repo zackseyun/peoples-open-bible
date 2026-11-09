@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: בְּ/מִסְפָּ֥ר בְּ/מִשְׁקָ֖ל לַ/כֹּ֑ל וַ/יִּכָּתֵ֥ב כָּֽל הַ/מִּשְׁקָ֖ל בָּ/עֵ֥ת הַ/הִֽיא־׃פ
 translation:
-  text: Everything was counted by number and by weight[a], and the total weight was recorded at that time.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'by number, by weight, for all; and all the weight was written at that time.'
-    reason: lexical_alternative
+  text: Everything was counted and weighed, and the total weight was recorded at that time.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: בְּמִסְפָּר
   chosen: counted by number
@@ -76,13 +72,12 @@ revisions:
   from: Everything was counted by number and by weight, and the total weight was recorded at that time.
   to: Everything was counted by number and by weight, and all the weight was recorded at that time.
   rationale: Changed 'the total weight' to 'all the weight' to more directly reflect כָּל הַמִּשְׁקָל ('all the weight') and preserve lexical accuracy.
-
 - timestamp: '2026-05-18T03:09:25Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Everything was counted by number and by weight[a], and all the weight was recorded at that time.'
-  to: 'Everything was counted by number and by weight, and the total weight was recorded at that time.'
+  from: Everything was counted by number and by weight[a], and all the weight was recorded at that time.
+  to: Everything was counted by number and by weight, and the total weight was recorded at that time.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the total weight''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -92,6 +87,13 @@ revisions:
   from: Everything was counted by number and by weight, and the total weight was recorded at that time.
   to: Everything was counted by number and by weight[a], and the total weight was recorded at that time.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('by weight') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:42:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Everything was counted by number and by weight[a], and the total weight was recorded at that time.
+  to: Everything was counted and weighed, and the total weight was recorded at that time.
+  rationale: I retained 'the total weight,' which conveys the administrative meaning more naturally than the review’s 'all the weight.' The opening now distinguishes counting from weighing without redundant wording.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -111,3 +113,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/ezra/008/034.job-42943.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:42:13Z'
+  change_level: refined
+  confidence: high
+  meaning: Every item is checked by count and weight, and the total weight is documented at the handover.
+  meaning_decisions:
+  - source_phrase: בְּמִסְפָּר בְּמִשְׁקָל לַכֹּל
+    prior_rendering: Everything was counted by number and by weight
+    new_rendering: Everything was counted and weighed
+    rationale: The paired expressions describe two complementary checks; English distinguishes them naturally as counting and weighing.
+  footnote_kinds: {}
+  history_weighed: I retained 'the total weight,' which conveys the administrative meaning more naturally than the review’s 'all the weight.' The opening now distinguishes counting from weighing without redundant wording.

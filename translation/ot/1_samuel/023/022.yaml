@@ -4,18 +4,15 @@ source:
   edition: WLC
   text: לְכוּ נָ֞א הָכִ֣ינוּ ע֗וֹד וּ/דְע֤וּ וּ/רְאוּ֙ אֶת מְקוֹמ/וֹ֙ אֲשֶׁ֣ר תִּֽהְיֶ֣ה רַגְל֔/וֹ מִ֥י רָאָ֖/הוּ שָׁ֑ם כִּ֚י אָמַ֣ר אֵלַ֔/י עָר֥וֹם יַעְרִ֖ם הֽוּא־־׃
 translation:
-  text: Please go and make further preparations[a], and know and see his place where his foot is, who has seen him there; for I am told[c][b], ‘He is very cunning.’
-  philosophy: optimal-equivalence
+  text: Please go and make further preparations. Find out and verify his whereabouts[a] and who has seen him there, for I am told[b] that he is very cunning.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Literally, 'where his foot is,' an idiom for his whereabouts or movements.
+    text: Literally, “his place, where his foot will be.”
     reason: lexical_alternative
   - marker: b
-    text: Or, 'for he said to me'; the Hebrew does not explicitly identify the subject of 'said.'
+    text: Or “he told me”; the Hebrew does not explicitly identify who spoke.
     reason: alternative_reading
-  - marker: c
-    text: Hebrew uses a cognate expression, literally something like 'cunningly he acts cunning,' for emphasis.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: הָכִינוּ עוֹד
   chosen: make further preparations
@@ -91,14 +88,20 @@ revisions:
   from: Please go and make further preparations, and know and see his place where his foot is, who has seen him there; for it was said to me, ‘He is very cunning.’
   to: Please go and make further preparations, and know and see the place where his foot is, who has seen him there; for I am told, ‘He is very cunning.’
   rationale: Adjusted 'his place' to 'the place' for more natural English and changed 'it was said to me' to 'I am told' to better reflect the direct sense. Retained the rest despite its difficulty to avoid over-paraphrase.
-
 - timestamp: '2026-05-16T04:40:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Please go and make further preparations[a], and know and see the place where his foot is, who has seen him there; for I am told[c][b], ‘He is very cunning.’'
-  to: 'Please go and make further preparations[a], and know and see his place where his foot is, who has seen him there; for I am told[c][b], ‘He is very cunning.’'
-  rationale: 'Azure stripped 3ms pronominal suffix on מְקוֹמוֹ (''his place'' → ''the place''). Drafter''s lexical_decision documents ''his place'' chosen over ''the place where he is'' to preserve the suffix.'
+  from: Please go and make further preparations[a], and know and see the place where his foot is, who has seen him there; for I am told[c][b], ‘He is very cunning.’
+  to: Please go and make further preparations[a], and know and see his place where his foot is, who has seen him there; for I am told[c][b], ‘He is very cunning.’
+  rationale: Azure stripped 3ms pronominal suffix on מְקוֹמוֹ ('his place' → 'the place'). Drafter's lexical_decision documents 'his place' chosen over 'the place where he is' to preserve the suffix.
+- timestamp: '2026-11-09T17:24:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Please go and make further preparations[a], and know and see his place where his foot is, who has seen him there; for I am told[c][b], ‘He is very cunning.’
+  to: Please go and make further preparations. Find out and verify his whereabouts[a] and who has seen him there, for I am told[b] that he is very cunning.
+  rationale: The review’s smoother “I am told” is retained, and the revert’s concern for the suffix is met by “his whereabouts.” The source-focused wording obscured the reconnaissance instructions; these are now stated directly, with the uncertain speaker left in a note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -118,3 +121,27 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/023/022.job-59348.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:24:15Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Saul asks the Ziphites to prepare further and verify David’s whereabouts and eyewitness reports because he has been told that David is very cunning.
+  meaning_decisions:
+  - source_phrase: וּדְעוּ וּרְאוּ אֶת מְקוֹמוֹ אֲשֶׁר תִּהְיֶה רַגְלוֹ
+    prior_rendering: know and see his place where his foot is
+    new_rendering: Find out and verify his whereabouts
+    rationale: The paired commands require careful reconnaissance, and the place-and-foot expression concerns David’s location or movements; the new wording preserves his possession while making the instruction intelligible.
+  - source_phrase: מִי רָאָהוּ שָׁם
+    prior_rendering: who has seen him there
+    new_rendering: and who has seen him there
+    rationale: Identifying witnesses is another part of what Saul commands them to ascertain, rather than an unattached question fragment.
+  footnote_kinds:
+    a: literal_wording
+    b: alternative_meaning
+  history_weighed: The review’s smoother “I am told” is retained, and the revert’s concern for the suffix is met by “his whereabouts.” The source-focused wording obscured the reconnaissance instructions; these are now stated directly, with the uncertain speaker left in a note.

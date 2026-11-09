@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֣אמֶר הַ/מֶּ֔לֶךְ מַהֲרוּ֙ אֶת הָמָ֔ן לַ/עֲשׂ֖וֹת אֶת דְּבַ֣ר אֶסְתֵּ֑ר וַ/יָּבֹ֤א הַ/מֶּ֨לֶךְ֙ וְ/הָמָ֔ן אֶל הַ/מִּשְׁתֶּ֖ה אֲשֶׁר עָשְׂתָ֥ה אֶסְתֵּֽר־־־־׃
 translation:
-  text: Then the king said[a], "Hurry, bring Haman, so that Esther's word may be done." So the king and Haman came to the banquet that Esther had prepared.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'to carry out Esther's word.' The Hebrew literally says 'to do the word of Esther,' where 'word' can mean her stated request or instruction.
-    reason: lexical_alternative
+  text: Then the king said, “Bring Haman quickly, so we can do as Esther has asked.” So the king and Haman came to the banquet that Esther had prepared.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: מַהֲרוּ
   chosen: Bring ... quickly
@@ -74,14 +70,20 @@ revisions:
   from: Then the king said, "Bring Haman quickly, so that Esther's request may be done." So the king and Haman came to the banquet that Esther had prepared.
   to: Then the king said, "Bring Haman quickly, so that Esther's request may be done." So the king and Haman came to the banquet that Esther had prepared.
   rationale: Changed 'Bring Haman quickly' to 'Hurry, bring Haman' to reflect the imperative more directly, and changed 'Esther's request' to 'Esther's word' for closer lexical correspondence to דְּבַר while keeping formal register. No other changes needed.
-
 - timestamp: '2026-05-17T21:36:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then the king said[a], "Hurry, bring Haman, so that Esther''s word may be done." So the king and Haman came to the banquet that Esther had prepared.'
-  to: 'Then the king said[a], "Hurry, bring Haman, so that Esther''s word may be done." So the king and Haman came to the banquet that Esther had prepared.'
+  from: Then the king said[a], "Hurry, bring Haman, so that Esther's word may be done." So the king and Haman came to the banquet that Esther had prepared.
+  to: Then the king said[a], "Hurry, bring Haman, so that Esther's word may be done." So the king and Haman came to the banquet that Esther had prepared.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: ["so that Esther''s request may be done"].'
+- timestamp: '2026-11-09T17:32:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then the king said[a], "Hurry, bring Haman, so that Esther's word may be done." So the king and Haman came to the banquet that Esther had prepared.
+  to: Then the king said, “Bring Haman quickly, so we can do as Esther has asked.” So the king and Haman came to the banquet that Esther had prepared.
+  rationale: The first draft and lexical rationale correctly identified Esther’s “word” as her request. The later review restored the literal noun for lexical correspondence, but I followed the contextual meaning and made the purpose clause natural English.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -101,3 +103,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/esther/005/005.job-42265.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:32:50Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The king ordered Haman to be brought promptly so that Esther’s invitation could be fulfilled, and both men attended her banquet.
+  meaning_decisions:
+  - source_phrase: מַהֲרוּ אֶת הָמָן לַעֲשׂוֹת אֶת דְּבַר אֶסְתֵּר
+    prior_rendering: Hurry, bring Haman, so that Esther’s word may be done
+    new_rendering: Bring Haman quickly, so we can do as Esther has asked
+    rationale: Esther’s “word” is her invitation, and “doing” it means complying with what she has asked; the active English sentence conveys the king’s urgent instruction without an opaque idiom.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale correctly identified Esther’s “word” as her request. The later review restored the literal noun for lexical correspondence, but I followed the contextual meaning and made the purpose clause natural English.

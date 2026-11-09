@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: עֲלֵ֗ה אֶל חִלְקִיָּ֨הוּ֙ הַ/כֹּהֵ֣ן הַ/גָּד֔וֹל וְ/יַתֵּ֣ם אֶת הַ/כֶּ֔סֶף הַ/מּוּבָ֖א בֵּ֣ית יְהוָ֑ה אֲשֶׁ֥ר אָסְפ֛וּ שֹׁמְרֵ֥י הַ/סַּ֖ף מֵ/אֵ֥ת הָ/עָֽם־־׃
 translation:
-  text: Go up to Hilkiah the high priest, and let him total the silver that has been brought into the house of Yahweh, which the keepers of the threshold[a] have collected from the people.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the doorkeepers'; literally 'the keepers of the threshold.'
-    reason: lexical_alternative
+  text: “Go up to Hilkiah the high priest and have him total the money brought into the temple of Yahweh—the money the doorkeepers have collected from the people.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: עֲלֵה
   chosen: Go up
@@ -111,13 +107,12 @@ revisions:
   from: Go up to Hilkiah the high priest, and let him total the silver that has been brought into the house of the LORD, which the keepers of the threshold have collected from the people.
   to: Go up to Hilkiah the high priest, and let him sum up the silver that has been brought into the house of the LORD, which the keepers of the threshold have collected from the people.
   rationale: Changed 'total' to 'sum up' for a more formal and natural rendering of the verb, while preserving the meaning. No other changes needed.
-
 - timestamp: '2026-05-18T03:09:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Go up to Hilkiah the high priest[a], and let him sum up the silver that has been brought into the house of Yahweh, which the keepers of the threshold have collected from the people.'
-  to: 'Go up to Hilkiah the high priest, and let him total the silver that has been brought into the house of Yahweh, which the keepers of the threshold have collected from the people.'
+  from: Go up to Hilkiah the high priest[a], and let him sum up the silver that has been brought into the house of Yahweh, which the keepers of the threshold have collected from the people.
+  to: Go up to Hilkiah the high priest, and let him total the silver that has been brought into the house of Yahweh, which the keepers of the threshold have collected from the people.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''let him total''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -127,6 +122,13 @@ revisions:
   from: Go up to Hilkiah the high priest, and let him total the silver that has been brought into the house of Yahweh, which the keepers of the threshold have collected from the people.
   to: Go up to Hilkiah the high priest, and let him total the silver that has been brought into the house of Yahweh, which the keepers of the threshold[a] have collected from the people.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('the keepers of the threshold') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:27:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Go up to Hilkiah the high priest, and let him total the silver that has been brought into the house of Yahweh, which the keepers of the threshold[a] have collected from the people.
+  to: “Go up to Hilkiah the high priest and have him total the money brought into the temple of Yahweh—the money the doorkeepers have collected from the people.
+  rationale: The automated debate between “total” and “sum up” establishes the accounting sense but gives no meaning-based reason to prefer the latter, so I retain “total.” I use the documented meanings “money,” “temple,” and “doorkeepers” directly in the text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -149,3 +151,29 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/low_agreement_recheck/ot/2_kings/022/004.job-28255.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:27:19Z'
+  change_level: refined
+  confidence: high
+  meaning: The king instructed Shaphan to have Hilkiah the high priest total the money the temple doorkeepers had collected from the people.
+  meaning_decisions:
+  - source_phrase: וְיַתֵּם אֶת הַכֶּסֶף
+    prior_rendering: let him total the silver
+    new_rendering: have him total the money
+    rationale: The king directs Shaphan to arrange the totaling of the funds. Here silver functions as money, so the financial sense belongs in the main text.
+  - source_phrase: בֵּית יְהוָה
+    prior_rendering: the house of Yahweh
+    new_rendering: the temple of Yahweh
+    rationale: The wording consistently identifies the building being repaired as the temple.
+  - source_phrase: שֹׁמְרֵי הַסַּף
+    prior_rendering: the keepers of the threshold
+    new_rendering: the doorkeepers
+    rationale: This is the temple officials’ role, not a description of people guarding a threshold as an object. The new wording carries the former footnote’s point directly.
+  footnote_kinds: {}
+  history_weighed: The automated debate between “total” and “sum up” establishes the accounting sense but gives no meaning-based reason to prefer the latter, so I retain “total.” I use the documented meanings “money,” “temple,” and “doorkeepers” directly in the text.

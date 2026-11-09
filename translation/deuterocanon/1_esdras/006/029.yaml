@@ -27,12 +27,12 @@ source:
     note: MT parallel is APPROXIMATE -- 1 Esdras sometimes expands, conflates, or reorders the Hebrew. Use the MT hebrew as a sanity check on proper names and phrasing; the Greek remains the primary source text.
     reference: ''
 translation:
-  text: Likewise also wheat and salt and wine and oil continually year by year[a], as the priests in Jerusalem may direct, are to be used up day by day without dispute,
-  philosophy: optimal-equivalence
+  text: Likewise, wheat, salt, wine, and oil are to be provided continually year after year for daily use, as the priests in Jerusalem direct, without objection[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'without fail' / 'without question.' The Greek adverb can emphasize either the absence of objection or the certainty of compliance.
-    reason: lexical_alternative
+    text: Or, “without fail.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: πυρὸν
   chosen: wheat
@@ -127,14 +127,20 @@ revisions:
   from: Likewise also wheat and salt and wine and oil continually year by year, as the priests in Jerusalem may direct, are to be used up day by day without dispute,
   to: Likewise also wheat and salt and wine and oil continually year by year, as the priests in Jerusalem may direct, are to be consumed day by day without fail,
   rationale: Changed 'used up' to the more formal 'consumed' for register and lexical fit with ἀναλίσκεσθαι, and changed 'without dispute' to 'without fail' to better reflect ἀναμφισβητήτως in context as unfailingly/without omission.
-
 - timestamp: '2026-05-16T15:22:19Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Likewise also wheat and salt and wine and oil continually year by year[a], as the priests in Jerusalem may direct, are to be consumed day by day without fail,'
-  to: 'Likewise also wheat and salt and wine and oil continually year by year[a], as the priests in Jerusalem may direct, are to be used up day by day without dispute,'
-  rationale: 'Restored drafter ''are to be used up'' (preserving the chosen English idiom) and ''without dispute'' (preserving the chosen rendering of ἀναμφισβητήτως) per chosen renderings.'
+  from: Likewise also wheat and salt and wine and oil continually year by year[a], as the priests in Jerusalem may direct, are to be consumed day by day without fail,
+  to: Likewise also wheat and salt and wine and oil continually year by year[a], as the priests in Jerusalem may direct, are to be used up day by day without dispute,
+  rationale: Restored drafter 'are to be used up' (preserving the chosen English idiom) and 'without dispute' (preserving the chosen rendering of ἀναμφισβητήτως) per chosen renderings.
+- timestamp: '2026-11-09T18:49:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Likewise also wheat and salt and wine and oil continually year by year[a], as the priests in Jerusalem may direct, are to be used up day by day without dispute,
+  to: Likewise, wheat, salt, wine, and oil are to be provided continually year after year for daily use, as the priests in Jerusalem direct, without objection[a].
+  rationale: The review and automated revert alternated between “used up” and “consumed,” and between “without dispute” and “without fail.” The funding context supports provision for daily use, while the lexical record's emphasis on unquestioned compliance favors “without objection” with “without fail” retained as an alternative.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -154,3 +160,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/006/029.job-47785.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:49:56Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The decree also provides an ongoing supply of wheat, salt, wine, and oil for daily use according to the Jerusalem priests' directions, without objection.
+  meaning_decisions:
+  - source_phrase: ἐνδελεχῶς κατʼ ἐνιαυτόν ... ἀναλίσκεσθαι καθʼ ἡμέραν
+    prior_rendering: continually year by year ... are to be used up day by day
+    new_rendering: are to be provided continually year after year for daily use
+    rationale: Continuing the allowance in verse 28, the decree funds recurring daily consumption; it does not require the priests to exhaust every supply each day.
+  - source_phrase: ἀναμφισβητήτως
+    prior_rendering: without dispute
+    new_rendering: without objection
+    rationale: The administrative context concerns compliance with the priests' requirements, not an instruction to avoid interpersonal disputes; the alternative sense of unfailing provision remains in the note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The review and automated revert alternated between “used up” and “consumed,” and between “without dispute” and “without fail.” The funding context supports provision for daily use, while the lexical record's emphasis on unquestioned compliance favors “without objection” with “without fail” retained as an alternative.

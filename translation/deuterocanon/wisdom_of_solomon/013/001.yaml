@@ -10,17 +10,52 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: 'For all men are by nature futile, in whom there was ignorance of God; and from the good things that are seen they were not able to know the One who is, nor by paying attention to his works did they recognize the craftsman.'
+  text: For all who are ignorant of God are by nature foolish. From the good things they see, they failed to know the One who is[a], and though they considered his works, they did not recognize the Craftsman.
+  philosophy: dynamic
+  footnotes:
+  - marker: a
+    text: An allusion to God's self-identification in Exodus 3:14.
+    reason: cross_reference
 revisions:
 - timestamp: '2026-05-18T04:00:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For all people are by nature foolish[a], in whom there was ignorance of God; and from the good things that are seen they were not able to know the One who is[c][b], nor by paying attention to his works did they recognize the craftsman.'
-  to: 'For all men are by nature futile, in whom there was ignorance of God; and from the good things that are seen they were not able to know the One who is, nor by paying attention to his works did they recognize the craftsman.'
+  from: For all people are by nature foolish[a], in whom there was ignorance of God; and from the good things that are seen they were not able to know the One who is[c][b], nor by paying attention to his works did they recognize the craftsman.
+  to: For all men are by nature futile, in whom there was ignorance of God; and from the good things that are seen they were not able to know the One who is, nor by paying attention to his works did they recognize the craftsman.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''futile'', ''all men'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+- timestamp: '2026-11-09T19:12:18Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For all men are by nature futile, in whom there was ignorance of God; and from the good things that are seen they were not able to know the One who is, nor by paying attention to his works did they recognize the craftsman.
+  to: For all who are ignorant of God are by nature foolish. From the good things they see, they failed to know the One who is[a], and though they considered his works, they did not recognize the Craftsman.
+  rationale: The first recorded draft used 'foolish,' while 'futile' and 'all men' were restored by an automated revert, not a MAINTAINER decision. The context supports recovering 'foolish' and making the qualifying clause explicit, while retaining 'the One who is' and the craftsman image.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T04:00:17Z'
   unchanged: false
   changes_summary: 'doctrine_realignment: Wisdom of Solomon 13:1 wholesale revert (2 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''futile'', ''all men'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh'
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:12:18Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Those who are ignorant of God show their folly by failing to recognize the One who is and the Craftsman behind the good things they see.
+  meaning_decisions:
+  - source_phrase: πάντες ἄνθρωποι φύσει, οἷς παρῆν θεοῦ ἀγνωσία
+    prior_rendering: all men are by nature futile, in whom there was ignorance of God
+    new_rendering: all who are ignorant of God are by nature foolish
+    rationale: The relative clause identifies the people being criticized; the verse does not indiscriminately characterize every human being.
+  - source_phrase: Μάταιοι
+    prior_rendering: futile
+    new_rendering: foolish
+    rationale: Here the word condemns the failure to reason from visible works to their maker; 'foolish' communicates that judgment more clearly than describing people themselves as 'futile.'
+  footnote_kinds:
+    a: cross_reference
+  history_weighed: The first recorded draft used 'foolish,' while 'futile' and 'all men' were restored by an automated revert, not a MAINTAINER decision. The context supports recovering 'foolish' and making the qualifying clause explicit, while retaining 'the One who is' and the craftsman image.

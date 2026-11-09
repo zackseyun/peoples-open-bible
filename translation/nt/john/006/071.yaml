@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ἔλεγεν δὲ τὸν Ἰούδαν Σίμωνος ⸀Ἰσκαριώτου· οὗτος γὰρ ἔμελλεν ⸂παραδιδόναι αὐτόν⸃, ⸀εἷς ἐκ τῶν δώδεκα.
 translation:
-  text: He was speaking about Judas[a], the son of Simon Iscariot, for this one was about to betray him, being one of the Twelve.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'hand him over.'
-    reason: lexical_alternative
+  text: He was speaking about Judas, the son of Simon Iscariot, for Judas would betray him, even though he was one of the Twelve.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἔλεγεν
   chosen: was speaking
@@ -17,7 +13,7 @@ lexical_decisions:
   - said
   - meant
   lexicon: BDAG
-  rationale: "Imperfect tense indicates ongoing or explanatory past action in context; 'was speaking about' fits the narrator's clarification better than the simpler 'said' and avoids the more interpretive 'meant.' Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'Imperfect tense indicates ongoing or explanatory past action in context; ''was speaking about'' fits the narrator''s clarification better than the simpler ''said'' and avoids the more interpretive ''meant.'' Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: δὲ
   chosen: Now
   alternatives:
@@ -102,14 +98,13 @@ revisions:
   from: Now he was speaking about Judas, the son of Simon Iscariot, for this one was about to betray him, being one of the Twelve.
   to: Now he was speaking about Judas, the son of Simon Iscariot, for he was about to betray him, one of the Twelve.
   rationale: Removed 'this one' for more natural English and dropped 'being' to make the final phrase read more smoothly while preserving the Greek sense.
-
 - timestamp: '2026-05-16T20:22:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now he was speaking about Judas[a], the son of Simon Iscariot, for he was about to betray him, one of the Twelve.'
-  to: 'Now he was speaking about Judas[a], the son of Simon Iscariot, for this one was about to betray him, being one of the Twelve.'
-  rationale: 'Restored drafter ''this one was about to betray him'' (preserving the chosen demonstrative) and ''being one of the Twelve'' (preserving the chosen participial appositive) per chosen renderings.'
+  from: Now he was speaking about Judas[a], the son of Simon Iscariot, for he was about to betray him, one of the Twelve.
+  to: Now he was speaking about Judas[a], the son of Simon Iscariot, for this one was about to betray him, being one of the Twelve.
+  rationale: Restored drafter 'this one was about to betray him' (preserving the chosen demonstrative) and 'being one of the Twelve' (preserving the chosen participial appositive) per chosen renderings.
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
   reviewer_model: codex
@@ -117,6 +112,13 @@ revisions:
   from: Now he was speaking about Judas[a], the son of Simon Iscariot, for this one was about to betray him, being one of the Twelve.
   to: He was speaking about Judas[a], the son of Simon Iscariot, for this one was about to betray him, being one of the Twelve.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:10:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He was speaking about Judas[a], the son of Simon Iscariot, for this one was about to betray him, being one of the Twelve.
+  to: He was speaking about Judas, the son of Simon Iscariot, for Judas would betray him, even though he was one of the Twelve.
+  rationale: Despite the later automated restoration, I retain the earlier review's aim of removing 'this one' and 'being,' while making the final phrase clearly refer to Judas. 'Would betray' avoids the unwarranted immediacy of 'was about to.'
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -139,3 +141,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/john/006/071.job-54877.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:10:22Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The narrator identifies Judas, son of Simon Iscariot, as the member of the Twelve who would betray Jesus.
+  meaning_decisions:
+  - source_phrase: οὗτος γὰρ ἔμελλεν παραδιδόναι αὐτόν
+    prior_rendering: for this one was about to betray him
+    new_rendering: for Judas would betray him
+    rationale: Naming Judas makes the subject unmistakable, while 'would betray' expresses the narrator's future-in-view without implying that the betrayal was immediately imminent.
+  - source_phrase: εἷς ἐκ τῶν δώδεκα
+    prior_rendering: being one of the Twelve
+    new_rendering: even though he was one of the Twelve
+    rationale: The closing phrase underscores the shocking contrast between Judas' membership in the chosen Twelve and his betrayal; the explicit connection also prevents an ambiguous apposition.
+  footnote_kinds: {}
+  history_weighed: Despite the later automated restoration, I retain the earlier review's aim of removing 'this one' and 'being,' while making the final phrase clearly refer to Judas. 'Would betray' avoids the unwarranted immediacy of 'was about to.'

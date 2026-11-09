@@ -20,14 +20,11 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: He will put on righteousness[a] as a breastplate, and will place sincere judgment[b] as a helmet;
-  philosophy: optimal-equivalence
+  text: He will put on righteousness as a breastplate and wear impartial judgment[a] as a helmet.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'justice as a breastplate.' Greek δικαιοσύνη can mean both 'righteousness' and 'justice.'
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'judgment without hypocrisy,' that is, judgment that is genuine and impartial.
+    text: Literally, 'judgment without hypocrisy.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐνδύσεται
@@ -112,13 +109,12 @@ revisions:
   from: He will put on righteousness as a breastplate, and will place sincere judgment as a helmet;
   to: He will put on righteousness as a breastplate, and will wear impartial judgment as a helmet;
   rationale: Changed 'will place' to 'will wear' for more natural English with armor imagery, and revised 'sincere judgment' to 'impartial judgment' to better reflect ἀνυπόκριτον with κρίσιν in this context.
-
 - timestamp: '2026-05-18T03:10:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He will put on righteousness as a breastplate[a], and will wear impartial judgment as a helmet[b];'
-  to: 'He will put on righteousness as a breastplate, and will place sincere judgment as a helmet;'
+  from: He will put on righteousness as a breastplate[a], and will wear impartial judgment as a helmet[b];
+  to: He will put on righteousness as a breastplate, and will place sincere judgment as a helmet;
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will place''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -128,6 +124,13 @@ revisions:
   from: He will put on righteousness as a breastplate, and will place sincere judgment as a helmet;
   to: He will put on righteousness[a] as a breastplate, and will place sincere judgment[b] as a helmet;
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('righteousness') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('judgment') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T20:12:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He will put on righteousness[a] as a breastplate, and will place sincere judgment[b] as a helmet;
+  to: He will put on righteousness as a breastplate and wear impartial judgment[a] as a helmet.
+  rationale: The April revision made the helmet clause idiomatic and clarified the judicial force of the adjective; the later automated revert offers no meaning-based reason to undo those gains. I retain 'righteousness' and preserve 'without hypocrisy' in a literal note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -147,3 +150,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/005/018.job-39564.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:12:06Z'
+  change_level: refined
+  confidence: high
+  meaning: God’s righteousness and genuine, impartial judgment will serve as his breastplate and helmet.
+  meaning_decisions:
+  - source_phrase: περιθήσεται κόρυθα
+    prior_rendering: will place ... as a helmet
+    new_rendering: wear ... as a helmet
+    rationale: The verb describes putting the helmet on himself, which 'will place' leaves incomplete in English.
+  - source_phrase: κρίσιν ἀνυπόκριτον
+    prior_rendering: sincere judgment
+    new_rendering: impartial judgment
+    rationale: In this judicial setting, the adjective describes judgment free from pretense or favoritism, not merely a sincerely held opinion; the literal note preserves its broader wording.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The April revision made the helmet clause idiomatic and clarified the judicial force of the adjective; the later automated revert offers no meaning-based reason to undo those gains. I retain 'righteousness' and preserve 'without hypocrisy' in a literal note.

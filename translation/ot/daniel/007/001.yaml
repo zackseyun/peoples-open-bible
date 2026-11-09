@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: בִּ/שְׁנַ֣ת חֲדָ֗ה לְ/בֵלְאשַׁצַּר֙ מֶ֣לֶךְ בָּבֶ֔ל דָּנִיֵּאל֙ חֵ֣לֶם חֲזָ֔ה וְ/חֶזְוֵ֥י רֵאשֵׁ֖/הּ עַֽל מִשְׁכְּבֵ֑/הּ בֵּ/אדַ֨יִן֙ חֶלְמָ֣/א כְתַ֔ב רֵ֥אשׁ מִלִּ֖ין אֲמַֽר־׃
 translation:
-  text: In the first year of Belshazzar king of Babylon[a], Daniel saw a dream and visions in his head while on his bed. Then he wrote down the dream—the summary of the words he told.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'Then he wrote the dream; he said the head of the words.' The Aramaic idiom likely means he recorded the main points or summary of the matter.
-    reason: lexical_alternative
+  text: In the first year of Belshazzar king of Babylon, Daniel had a dream and saw visions as he lay on his bed. Then he wrote down the dream and recounted its main points.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: בִּשְׁנַת חֲדָה
   chosen: In the first year
@@ -102,14 +98,20 @@ revisions:
   from: In the first year of Belshazzar king of Babylon, Daniel saw a dream and visions in his head while on his bed. Then he wrote down the dream—the summary of the words he told.
   to: In the first year of Belshazzar king of Babylon, Daniel saw a dream and visions of his head while on his bed. Then he wrote down the dream and told the sum of the matter.
   rationale: 'Revised two phrases for closer fidelity to the Aramaic: changed ''visions in his head'' to ''visions of his head'' and replaced the interpretive ''the summary of the words he told'' with the more literal ''and told the sum of the matter.'''
-
 - timestamp: '2026-05-16T04:10:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'In the first year of Belshazzar king of Babylon[a], Daniel saw a dream and visions of his head while on his bed. Then he wrote down the dream and told the sum of the matter.'
-  to: 'In the first year of Belshazzar king of Babylon[a], Daniel saw a dream and visions in his head while on his bed. Then he wrote down the dream—the summary of the words he told.'
-  rationale: 'Azure substituted ''of his head'' (drafter''s explicit rejected alternative for too-wooden literal) and restructured ''summary of the words he told'' to ''told the sum of the matter'' (both equally interpretive; no lexical correction).'
+  from: In the first year of Belshazzar king of Babylon[a], Daniel saw a dream and visions of his head while on his bed. Then he wrote down the dream and told the sum of the matter.
+  to: In the first year of Belshazzar king of Babylon[a], Daniel saw a dream and visions in his head while on his bed. Then he wrote down the dream—the summary of the words he told.
+  rationale: Azure substituted 'of his head' (drafter's explicit rejected alternative for too-wooden literal) and restructured 'summary of the words he told' to 'told the sum of the matter' (both equally interpretive; no lexical correction).
+- timestamp: '2026-11-09T17:30:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: In the first year of Belshazzar king of Babylon[a], Daniel saw a dream and visions in his head while on his bed. Then he wrote down the dream—the summary of the words he told.
+  to: In the first year of Belshazzar king of Babylon, Daniel had a dream and saw visions as he lay on his bed. Then he wrote down the dream and recounted its main points.
+  rationale: The earlier review and revert disagreed chiefly over source-transparent phrasing, with no MAINTAINER ruling recorded. I retain their shared understanding that Daniel recorded the dream’s principal contents, while removing English that obscures that meaning.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -131,3 +133,29 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/ot/daniel/007/001.job-28860.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:30:19Z'
+  change_level: retranslated
+  confidence: high
+  meaning: During Belshazzar’s first year, Daniel received a dream with visions and recorded its main contents.
+  meaning_decisions:
+  - source_phrase: חֵלֶם חֲזָה וְחֶזְוֵי רֵאשֵׁהּ
+    prior_rendering: saw a dream and visions in his head
+    new_rendering: had a dream and saw visions
+    rationale: English naturally speaks of having a dream and seeing visions; the dream setting already establishes that these are inward visions rather than ordinary sights.
+  - source_phrase: עַל מִשְׁכְּבֵהּ
+    prior_rendering: while on his bed
+    new_rendering: as he lay on his bed
+    rationale: Makes the understood posture explicit without adding a new event.
+  - source_phrase: רֵאשׁ מִלִּין אֲמַר
+    prior_rendering: the summary of the words he told
+    new_rendering: and recounted its main points
+    rationale: The idiom concerns the chief contents of the dream, not a summary of previously spoken words; the new wording also preserves the verb of recounting.
+  footnote_kinds: {}
+  history_weighed: The earlier review and revert disagreed chiefly over source-transparent phrasing, with no MAINTAINER ruling recorded. I retain their shared understanding that Daniel recorded the dream’s principal contents, while removing English that obscures that meaning.

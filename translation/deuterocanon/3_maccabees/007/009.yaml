@@ -16,17 +16,55 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: 'For know that if we devise any evil against these people, or grieve them in any way at all, we will have against us for vengeance in these matters, utterly without escape and forever, not a man but God Most High, the one who rules over all power. Farewell.'
+  text: For you must understand that if we plot any evil against these people or cause them any grief at all, we will have as our adversary not a man but God Most High, who rules over all power. He will take vengeance for these deeds, and there will never be any escape. Farewell.
+  philosophy: dynamic
 revisions:
 - timestamp: '2026-05-18T04:00:26Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For know that if we devise any evil against these people[a], or cause them grief in any way at all, we will have against us for vengeance in these matters, utterly without escape and forever, not a man but God Most High, the one who rules over all power[b]. Farewell.'
-  to: 'For know that if we devise any evil against these people, or grieve them in any way at all, we will have against us for vengeance in these matters, utterly without escape and forever, not a man but God Most High, the one who rules over all power. Farewell.'
+  from: For know that if we devise any evil against these people[a], or cause them grief in any way at all, we will have against us for vengeance in these matters, utterly without escape and forever, not a man but God Most High, the one who rules over all power[b]. Farewell.
+  to: For know that if we devise any evil against these people, or grieve them in any way at all, we will have against us for vengeance in these matters, utterly without escape and forever, not a man but God Most High, the one who rules over all power. Farewell.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''grieve'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+- timestamp: '2026-11-09T18:57:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For know that if we devise any evil against these people, or grieve them in any way at all, we will have against us for vengeance in these matters, utterly without escape and forever, not a man but God Most High, the one who rules over all power. Farewell.
+  to: For you must understand that if we plot any evil against these people or cause them any grief at all, we will have as our adversary not a man but God Most High, who rules over all power. He will take vengeance for these deeds, and there will never be any escape. Farewell.
+  rationale: The recorded revert preferred 'grieve' to 'cause them grief,' but it supplied no meaning-based reason for retaining the less natural construction. I preserve the grief, divine title, sovereignty, vengeance, and permanence while restructuring the warning.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T04:00:26Z'
   unchanged: false
   changes_summary: 'doctrine_realignment: 3 Maccabees 7:9 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''grieve'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote '
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:55Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The king warns that any further evil or grief inflicted on the Jews would bring God's inescapable vengeance against those responsible.
+  meaning_decisions:
+  - source_phrase: γινώσκετε γὰρ
+    prior_rendering: For know
+    new_rendering: For you must understand
+    rationale: This gives the imperative its natural English force as an official warning.
+  - source_phrase: ἐάν τι κακοτεχνήσωμεν πονηρόν, ἢ ἐπιλυπήσωμεν αὐτοὺς τὸ σύνολον
+    prior_rendering: if we devise any evil ... or grieve them in any way at all
+    new_rendering: if we plot any evil ... or cause them any grief at all
+    rationale: '''Plot'' conveys deliberately contrived wrongdoing, while the familiar construction ''cause them grief'' preserves the emotional harm.'
+  - source_phrase: οὐκ ἄνθρωπον, ἀλλὰ ... θεὸν ὕψιστον ἀντικείμενον ἡμῖν
+    prior_rendering: we will have against us ... not a man but God Most High
+    new_rendering: we will have as our adversary not a man but God Most High
+    rationale: The reordered clause makes the central human-versus-divine contrast immediately intelligible.
+  - source_phrase: ἐπʼ ἐκδίκησιν τῶν πραγμάτων κατὰ πᾶν ἀφεύκτως διὰ παντός
+    prior_rendering: for vengeance in these matters, utterly without escape and forever
+    new_rendering: He will take vengeance for these deeds, and there will never be any escape
+    rationale: A separate sentence carries the vengeance and comprehensive, continuing impossibility of escape without a cumbersome chain of modifiers.
+  footnote_kinds: {}
+  history_weighed: The recorded revert preferred 'grieve' to 'cause them grief,' but it supplied no meaning-based reason for retaining the less natural construction. I preserve the grief, divine title, sovereignty, vengeance, and permanence while restructuring the warning.

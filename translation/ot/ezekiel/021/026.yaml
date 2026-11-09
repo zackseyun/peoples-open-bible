@@ -4,17 +4,11 @@ source:
   edition: WLC
   text: כִּֽי עָמַ֨ד מֶלֶךְ בָּבֶ֜ל אֶל אֵ֣ם הַ/דֶּ֗רֶךְ בְּ/רֹ֛אשׁ שְׁנֵ֥י הַ/דְּרָכִ֖ים לִ/קְסָם קָ֑סֶם קִלְקַ֤ל בַּֽ/חִצִּים֙ שָׁאַ֣ל בַּ/תְּרָפִ֔ים רָאָ֖ה בַּ/כָּבֵֽד־־־־׃
 translation:
-  text: 'For the king of Babylon stands at the mother of the road[a], at the head of the two roads, to practice divination: he shakes the arrows, he consults the teraphim[c][b], he examines the liver.'
-  philosophy: optimal-equivalence
+  text: 'For the king of Babylon stands at the fork of the road, where the two roads begin, to practice divination: he shakes the arrows, consults images of his gods, and examines an animal’s liver[a].'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew literally, 'at the mother of the road,' an idiom for the branching point or fork in the road.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'he inquires of the household gods'; 'teraphim' refers to cultic images used for divination.
-    reason: cultural_note
-  - marker: c
-    text: That is, he practices divination by inspecting the liver.
+    text: Diviners inspected the liver of a sacrificed animal for omens.
     reason: cultural_note
 lexical_decisions:
 - source_word: כִּי
@@ -102,7 +96,6 @@ revisions:
   from: 'For the king of Babylon stands at the fork of the road, at the head of the two roads, to practice divination: he shakes the arrows, he consults the teraphim, he examines the liver.'
   to: 'For the king of Babylon stands at the fork of the road, at the head of the two roads, to practice divination: he shakes the arrows, he consults the teraphim, he examines the liver.'
   rationale: Replaced 'fork of the road' with the more literal 'mother of the road' to account for אֵם הַדֶּרֶךְ and avoid omitting the source term; retained the rest as accurate and natural.
-
 - timestamp: '2026-05-18T02:55:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -110,6 +103,13 @@ revisions:
   from: 'For the king of Babylon stands at the mother of the road[a], at the head of the two roads, to practice divination: he shakes the arrows, he consults the teraphim[c][b], he examines the liver.'
   to: 'For the king of Babylon stands at the mother of the road[a], at the head of the two roads, to practice divination: he shakes the arrows, he consults the teraphim[c][b], he examines the liver.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the fork of the road''].'
+- timestamp: '2026-11-09T17:39:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'For the king of Babylon stands at the mother of the road[a], at the head of the two roads, to practice divination: he shakes the arrows, he consults the teraphim[c][b], he examines the liver.'
+  to: 'For the king of Babylon stands at the fork of the road, where the two roads begin, to practice divination: he shakes the arrows, consults images of his gods, and examines an animal’s liver[a].'
+  rationale: The first draft and lexical rationale correctly rendered the road idiom as ‘fork’; the later source-transparency change to ‘mother’ obscured that meaning, so I restore it. I retain the three distinct divinatory practices while explaining the images and liver in accessible English.
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -129,3 +129,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/021/026.job-63836.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:39:04Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Babylon’s king stands at the fork and uses arrows, images of gods, and a liver to seek an omen about which route to take.
+  meaning_decisions:
+  - source_phrase: אֵם הַדֶּרֶךְ בְּרֹאשׁ שְׁנֵי הַדְּרָכִים
+    prior_rendering: at the mother of the road, at the head of the two roads
+    new_rendering: at the fork of the road, where the two roads begin
+    rationale: Both expressions locate the branching point; the English conveys their spatial meaning rather than reproducing unfamiliar body and family idioms.
+  - source_phrase: שָׁאַל בַּתְּרָפִים
+    prior_rendering: he consults the teraphim
+    new_rendering: consults images of his gods
+    rationale: The term denotes cult images consulted for divination; this communicates their function without requiring an unexplained transliteration or restricting them to domestic use.
+  - source_phrase: רָאָה בַּכָּבֵד
+    prior_rendering: he examines the liver
+    new_rendering: examines an animal’s liver
+    rationale: The divinatory setting implies an animal’s liver, a fact first hearers would have known but modern readers may not.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The first draft and lexical rationale correctly rendered the road idiom as ‘fork’; the later source-transparency change to ‘mother’ obscured that meaning, so I restore it. I retain the three distinct divinatory practices while explaining the images and liver in accessible English.

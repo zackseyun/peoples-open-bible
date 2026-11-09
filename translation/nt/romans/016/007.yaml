@@ -4,15 +4,15 @@ source:
   edition: SBLGNT
   text: ἀσπάσασθε Ἀνδρόνικον καὶ ⸀Ἰουνίαν τοὺς συγγενεῖς μου καὶ συναιχμαλώτους μου, οἵτινές εἰσιν ἐπίσημοι ἐν τοῖς ἀποστόλοις, οἳ καὶ πρὸ ἐμοῦ ⸀γέγοναν ἐν Χριστῷ.
 translation:
-  text: Greet Andronicus and Junia[a], my kinsmen and my fellow prisoners. They are notable among the apostles[b], and they were in Messiah before me.
-  philosophy: optimal-equivalence
+  text: Greet Andronicus and Junia, my fellow Jews[a] and my fellow prisoners. They are outstanding among the apostles[b], and they belonged to the Messiah before I did.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Junia: alternatively, ''Junias,'' a masculine name; the feminine reading is more likely from the Greek form and historical usage.'
+    text: Or 'my relatives.'
     reason: alternative_reading
   - marker: b
-    text: Or 'outstanding among the apostles'; the phrase may also be understood as 'well known to the apostles.'
-    reason: lexical_alternative
+    text: Or 'well known to the apostles.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἀσπάσασθε
   chosen: Greet
@@ -120,7 +120,13 @@ revisions:
   from: Greet Andronicus and Junia, my kinsmen and my fellow prisoners. They are notable among the apostles, and they were in Christ before me.
   to: Greet Andronicus and Junia, my kinsmen and my fellow prisoners. They are notable among the apostles, and they were in Messiah before me.
   rationale: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)
-
+- timestamp: '2026-11-09T17:18:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Greet Andronicus and Junia[a], my kinsmen and my fellow prisoners. They are notable among the apostles[b], and they were in Messiah before me.
+  to: Greet Andronicus and Junia, my fellow Jews[a] and my fellow prisoners. They are outstanding among the apostles[b], and they belonged to the Messiah before I did.
+  rationale: I retain Junia and preserve the later revision's stronger commendation rather than reverting to 'well known among.' The documented ambiguities about kinship and apostolic standing remain in notes, while the final clause makes their priority to Paul clear.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -143,3 +149,31 @@ cross_check:
   verdict_counts:
     minor-issues: 3
   source_review: state/reviews/gemini/high_scrutiny/nt/romans/016/007.job-8053.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:18:27Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Paul greets Andronicus and Junia as fellow Jews and fellow prisoners, commends their standing among the apostles, and recognizes that they belonged to the Messiah before he did.
+  meaning_decisions:
+  - source_phrase: τοὺς συγγενεῖς μου
+    prior_rendering: my kinsmen
+    new_rendering: my fellow Jews
+    rationale: Paul's broader ethnic use of this term in Romans supports fellow Jews here; the wording also avoids calling Junia a man, while the possibility of actual relatives remains in a note.
+  - source_phrase: ἐπίσημοι ἐν τοῖς ἀποστόλοις
+    prior_rendering: notable among the apostles
+    new_rendering: outstanding among the apostles
+    rationale: The adjective conveys distinction and high regard, not simply being noticed; the serious alternative that they were well known to the apostles remains in a note.
+  - source_phrase: πρὸ ἐμοῦ γέγοναν ἐν Χριστῷ
+    prior_rendering: they were in Messiah before me
+    new_rendering: they belonged to the Messiah before I did
+    rationale: The phrase describes their established relationship with the Messiah beginning earlier than Paul's; 'belonged to' makes that relationship and the temporal comparison clear.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: I retain Junia and preserve the later revision's stronger commendation rather than reverting to 'well known among.' The documented ambiguities about kinship and apostolic standing remain in notes, while the final clause makes their priority to Paul clear.

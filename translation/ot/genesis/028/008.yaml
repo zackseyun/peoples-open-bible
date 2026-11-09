@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יַּ֣רְא עֵשָׂ֔ו כִּ֥י רָע֖וֹת בְּנ֣וֹת כְּנָ֑עַן בְּ/עֵינֵ֖י יִצְחָ֥ק אָבִֽי/ו׃
 translation:
-  text: And Esau saw that the daughters of Canaan were evil in the eyes of Isaac his father[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'were bad in the eyes of Isaac his father.' The Hebrew adjective can mean 'bad' or 'evil,' but here likely refers to Isaac's unfavorable view of the Canaanite women as marriage partners.
-    reason: lexical_alternative
+  text: Esau realized that his father Isaac disapproved of Canaanite women as wives.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיַּרְא
   chosen: And ... saw
@@ -78,14 +74,20 @@ revisions:
   from: And Esau saw that the daughters of Canaan were displeasing in the eyes of Isaac his father.
   to: And Esau saw that the daughters of Canaan were displeasing in the eyes of Isaac his father.
   rationale: Changed 'displeasing' to 'evil' to more directly reflect רָעוֹת ('bad/evil') while preserving the formal expression 'in the eyes of Isaac his father.'
-
 - timestamp: '2026-05-17T11:21:19Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Esau saw that the daughters of Canaan were evil in the eyes of Isaac his father[a].'
-  to: 'And Esau saw that the daughters of Canaan were evil in the eyes of Isaac his father[a].'
+  from: And Esau saw that the daughters of Canaan were evil in the eyes of Isaac his father[a].
+  to: And Esau saw that the daughters of Canaan were evil in the eyes of Isaac his father[a].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''were displeasing''].'
+- timestamp: '2026-11-09T17:43:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Esau saw that the daughters of Canaan were evil in the eyes of Isaac his father[a].
+  to: Esau realized that his father Isaac disapproved of Canaanite women as wives.
+  rationale: The first draft and lexical rationale support the contextual sense “displeasing,” whereas the recorded push toward “evil” sought closer formal correspondence. Despite inconsistent revision/revert records, that contextual evidence supports disapproval of these women as wives; no MAINTAINER decision is recorded.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -108,3 +110,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/028/008.job-65187.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:43:29Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Esau realizes that his father Isaac regards Canaanite women as unacceptable wives.
+  meaning_decisions:
+  - source_phrase: וַיַּרְא עֵשָׂו
+    prior_rendering: And Esau saw
+    new_rendering: Esau realized
+    rationale: Here seeing describes the conclusion Esau draws from Isaac’s instructions and Jacob’s response.
+  - source_phrase: רָעוֹת בְּנוֹת כְּנָעַן בְּעֵינֵי יִצְחָק אָבִיו
+    prior_rendering: the daughters of Canaan were evil in the eyes of Isaac his father
+    new_rendering: his father Isaac disapproved of Canaanite women as wives
+    rationale: The evaluative idiom expresses Isaac’s disapproval in the immediate marriage context; “evil” can misleadingly turn that evaluation into a categorical assertion about the women’s moral character.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale support the contextual sense “displeasing,” whereas the recorded push toward “evil” sought closer formal correspondence. Despite inconsistent revision/revert records, that contextual evidence supports disapproval of these women as wives; no MAINTAINER decision is recorded.

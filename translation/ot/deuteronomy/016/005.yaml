@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: לֹ֥א תוּכַ֖ל לִ/זְבֹּ֣חַ אֶת הַ/פָּ֑סַח בְּ/אַחַ֣ד שְׁעָרֶ֔י/ךָ אֲשֶׁר יְהוָ֥ה אֱלֹהֶ֖י/ךָ נֹתֵ֥ן לָֽ/ךְ־־׃
 translation:
-  text: You may not sacrifice the Passover in any one of your gates that Yahweh your God is giving you[b][a],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the Passover sacrifice.'
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'gates,' a common metonym for a town or settlement.
-    reason: cultural_note
+  text: You may not sacrifice the Passover offering in any of the towns Yahweh your God is giving you,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: לֹא תוּכַל
   chosen: You may not
@@ -79,14 +72,20 @@ revisions:
   from: You may not sacrifice the Passover in one of your gates that the LORD your God is giving you,
   to: You may not sacrifice the Passover in one of your gates that the LORD your God is giving you,
   rationale: Changed 'one of your gates' to 'any one of your gates' to better reflect the prohibition with בְּאַחַד and improve natural English while preserving the formal sense.
-
 - timestamp: '2026-05-18T02:55:55Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'You may not sacrifice the Passover in any one of your gates that Yahweh your God is giving you[b][a],'
-  to: 'You may not sacrifice the Passover in any one of your gates that Yahweh your God is giving you[b][a],'
+  from: You may not sacrifice the Passover in any one of your gates that Yahweh your God is giving you[b][a],
+  to: You may not sacrifice the Passover in any one of your gates that Yahweh your God is giving you[b][a],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in one of your gates''].'
+- timestamp: '2026-11-09T17:31:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You may not sacrifice the Passover in any one of your gates that Yahweh your God is giving you[b][a],
+  to: You may not sacrifice the Passover offering in any of the towns Yahweh your God is giving you,
+  rationale: The earlier review emphasized the force of 'any' in the prohibition, which I retain. The lexical record identifies 'gates' as towns, so the main text now carries what the earlier note explained.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -108,3 +107,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/016/005.job-61634.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:31:51Z'
+  change_level: refined
+  confidence: high
+  meaning: Israel may not sacrifice the Passover offering in its local towns.
+  meaning_decisions:
+  - source_phrase: הַפָּסַח
+    prior_rendering: the Passover
+    new_rendering: the Passover offering
+    rationale: The object of sacrificial slaughter is the offering, not the festival itself; making this explicit also absorbs the earlier footnote.
+  - source_phrase: בְּאַחַד שְׁעָרֶיךָ
+    prior_rendering: in any one of your gates
+    new_rendering: in any of the towns
+    rationale: In this setting 'gates' stands for towns; the prohibition concerns local places of sacrifice, not merely town gateways.
+  footnote_kinds: {}
+  history_weighed: The earlier review emphasized the force of 'any' in the prohibition, which I retain. The lexical record identifies 'gates' as towns, so the main text now carries what the earlier note explained.

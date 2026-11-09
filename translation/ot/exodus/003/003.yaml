@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֣אמֶר מֹשֶׁ֔ה אָסֻֽרָה נָּ֣א וְ/אֶרְאֶ֔ה אֶת הַ/מַּרְאֶ֥ה הַ/גָּדֹ֖ל הַ/זֶּ֑ה מַדּ֖וּעַ לֹא יִבְעַ֥ר הַ/סְּנֶֽה־־־׃
 translation:
-  text: Then Moses said[a], “Let me turn aside and see this great sight, why the bush is not burned up.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “why the bush does not burn,” or “why the bush is not consumed.”
-    reason: lexical_alternative
+  text: Then Moses said, “Let me turn aside to look at this remarkable sight and see why the bush is not burning up.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: Then ... said
@@ -90,14 +86,20 @@ revisions:
   from: Then Moses said, “Let me turn aside and see this great sight—why the bush is not burning up.”
   to: Then Moses said, “Let me turn aside and see this great sight—why the bush is not burning up.”
   rationale: Changed em dash to comma for smoother formal style and revised 'is not burning up' to 'is not burned up' to more directly reflect the Hebrew passive/imperfect sense.
-
 - timestamp: '2026-05-18T02:55:41Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Moses said[a], “Let me turn aside and see this great sight, why the bush is not burned up.”'
-  to: 'Then Moses said[a], “Let me turn aside and see this great sight, why the bush is not burned up.”'
+  from: Then Moses said[a], “Let me turn aside and see this great sight, why the bush is not burned up.”
+  to: Then Moses said[a], “Let me turn aside and see this great sight, why the bush is not burned up.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''is not burning up''].'
+- timestamp: '2026-11-09T17:33:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Moses said[a], “Let me turn aside and see this great sight, why the bush is not burned up.”
+  to: Then Moses said, “Let me turn aside to look at this remarkable sight and see why the bush is not burning up.”
+  rationale: The first draft and lexical rationale correctly understood the question as asking why the burning bush is not burning up. I preserve that contextual insight rather than the later review's mistaken description of the Hebrew verb as passive.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -117,3 +119,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/003/003.job-62324.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:33:30Z'
+  change_level: refined
+  confidence: high
+  meaning: Moses decides to turn aside and investigate the remarkable sight of a burning bush that is not burning up.
+  meaning_decisions:
+  - source_phrase: אָסֻרָה נָּא וְאֶרְאֶה אֶת הַמַּרְאֶה הַגָּדֹל הַזֶּה
+    prior_rendering: Let me turn aside and see this great sight
+    new_rendering: Let me turn aside to look at this remarkable sight
+    rationale: The wording expresses Moses's intention to investigate and makes clear that the sight is extraordinary, rather than merely large.
+  - source_phrase: מַדּוּעַ לֹא יִבְעַר הַסְּנֶה
+    prior_rendering: why the bush is not burned up
+    new_rendering: and see why the bush is not burning up
+    rationale: The active verb concerns the bush's ongoing failure to burn up, and the added English connection makes the question the object of Moses's investigation.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale correctly understood the question as asking why the burning bush is not burning up. I preserve that contextual insight rather than the later review's mistaken description of the Hebrew verb as passive.

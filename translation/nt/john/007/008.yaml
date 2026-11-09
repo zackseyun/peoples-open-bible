@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: ὑμεῖς ἀνάβητε εἰς τὴν ⸀ἑορτήν· ἐγὼ ⸀οὐκ ἀναβαίνω εἰς τὴν ἑορτὴν ταύτην, ὅτι ὁ ⸂ἐμὸς καιρὸς⸃ οὔπω πεπλήρωται.
 translation:
-  text: You go up to the feast[a]. I am not going up to this feast[b], because my time has not yet come to fulfillment.
-  philosophy: optimal-equivalence
+  text: “You go up to the feast. I am not going up to this feast[a], because my time has not yet fully come.”
+  philosophy: dynamic
   footnotes:
   - marker: a
     text: Some manuscripts read, 'I am not yet going up to this feast.'
     reason: textual_variant
-  - marker: b
-    text: Or 'my appointed time has not yet been fulfilled.'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ἀνάβητε
   chosen: go up
@@ -84,14 +81,20 @@ revisions:
   from: You go up to the feast. I am not going up to this feast, because my time has not yet been fulfilled.
   to: You go up to the feast. I am not going up to this feast, because my time has not yet been fulfilled.
   rationale: Revised 'has not yet been fulfilled' to 'has not yet come to fulfillment' for more natural English while preserving the sense of πεπλήρωται. Kept 'go up' and 'feast' as accurate renderings.
-
 - timestamp: '2026-05-18T03:00:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'You go up to the feast[a]. I am not going up to this feast[b], because my time has not yet come to fulfillment.'
-  to: 'You go up to the feast[a]. I am not going up to this feast[b], because my time has not yet come to fulfillment.'
+  from: You go up to the feast[a]. I am not going up to this feast[b], because my time has not yet come to fulfillment.
+  to: You go up to the feast[a]. I am not going up to this feast[b], because my time has not yet come to fulfillment.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''has not yet been fulfilled''].'
+- timestamp: '2026-11-09T17:10:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You go up to the feast[a]. I am not going up to this feast[b], because my time has not yet come to fulfillment.
+  to: “You go up to the feast. I am not going up to this feast[a], because my time has not yet fully come.”
+  rationale: I preserve the documented decision to translate the supplied reading as 'not,' leaving its tension with Jesus' later departure unresolved. The current revision sought a more natural expression of fullness; 'fully come' carries that gain further.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -113,3 +116,22 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/john/007/008.job-54885.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:10:33Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus told his brothers to go to the feast but said he was not going because his time had not yet fully arrived.
+  meaning_decisions:
+  - source_phrase: ὁ ἐμὸς καιρὸς οὔπω πεπλήρωται
+    prior_rendering: my time has not yet come to fulfillment
+    new_rendering: my time has not yet fully come
+    rationale: The phrase concerns the fitting time reaching its fullness; this wording preserves that nuance without making the time sound like a prediction being fulfilled.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: I preserve the documented decision to translate the supplied reading as 'not,' leaving its tension with Jesus' later departure unresolved. The current revision sought a more natural expression of fullness; 'fully come' carries that gain further.

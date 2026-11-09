@@ -30,15 +30,12 @@ source:
     note: MT parallel is APPROXIMATE -- 1 Esdras sometimes expands, conflates, or reorders the Hebrew. Use the MT hebrew as a sanity check on proper names and phrasing; the Greek remains the primary source text.
     reference: ''
 translation:
-  text: But the nations of the land, joining themselves to[a] those in Judea and besieging them, hindered the building of the house[b].
-  philosophy: optimal-equivalence
+  text: But the peoples of the land kept harassing[a] and besieging those in Judea, hindering the building of the house.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Greek 'joining themselves to' is difficult; the phrase may also suggest 'pressing upon' or 'settling among' those in Judea. The sense in context is hostile involvement, clarified by 'besieging them.'
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek says simply 'to build'; 'the house' is supplied from the surrounding temple-rebuilding context.
-    reason: cross_reference
+    text: The first Greek participle is difficult; it may instead mean “settling among” or “attaching themselves to” those in Judea.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: τὰ ... ἔθνη τῆς γῆς
   chosen: the nations of the land
@@ -126,13 +123,12 @@ revisions:
   from: But the nations of the land, joining themselves to those in Judea and besieging them, hindered the building of the house.
   to: But the nations of the land, joining themselves to those in Judea and besieging them, hindered the building.
   rationale: Removed 'of the house' because οἰκοδομεῖν is simply 'to build/building' here, with no explicit object in the Greek. Kept the rest substantially unchanged as a natural rendering of the participial clauses.
-
 - timestamp: '2026-05-18T03:09:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But the nations of the land[a], joining themselves to those in Judea and besieging them[b], hindered the building.'
-  to: 'But the nations of the land, joining themselves to those in Judea and besieging them, hindered the building of the house.'
+  from: But the nations of the land[a], joining themselves to those in Judea and besieging them[b], hindered the building.
+  to: But the nations of the land, joining themselves to those in Judea and besieging them, hindered the building of the house.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the building of the house''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -142,6 +138,13 @@ revisions:
   from: But the nations of the land, joining themselves to those in Judea and besieging them, hindered the building of the house.
   to: But the nations of the land, joining themselves to[a] those in Judea and besieging them, hindered the building of the house[b].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('joining themselves to') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('the house') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:50:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But the nations of the land, joining themselves to[a] those in Judea and besieging them, hindered the building of the house[b].
+  to: But the peoples of the land kept harassing[a] and besieging those in Judea, hindering the building of the house.
+  rationale: The lexical record and existing note already acknowledge a hostile sense such as “pressing upon,” which the surrounding verbs strongly support. I retain the contextually supplied “house,” despite the automated review’s removal of it, because the infinitive plainly concerns this temple project.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -161,3 +164,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/005/069.job-47754.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:50:55Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The surrounding peoples subjected the Judeans to sustained hostile pressure and siege, obstructing the temple work.
+  meaning_decisions:
+  - source_phrase: τὰ δὲ ἔθνη τῆς γῆς
+    prior_rendering: But the nations of the land
+    new_rendering: But the peoples of the land
+    rationale: The phrase identifies local ethnic communities, not necessarily separate sovereign states.
+  - source_phrase: ἐπικοιμώμενα τοῖς ἐν τῇ Ἰουδαίᾳ καὶ πολιορκοῦντες
+    prior_rendering: joining themselves to those in Judea and besieging them
+    new_rendering: kept harassing and besieging those in Judea
+    rationale: The first participle is obscure, but the siege and obstruction establish hostile involvement; “joining themselves to” can misleadingly imply cooperation. The alternative relational reading remains in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The lexical record and existing note already acknowledge a hostile sense such as “pressing upon,” which the surrounding verbs strongly support. I retain the contextually supplied “house,” despite the automated review’s removal of it, because the infinitive plainly concerns this temple project.

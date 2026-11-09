@@ -25,12 +25,8 @@ source:
   confidence: high
   validation: no_reference
 translation:
-  text: And there was great distress in Israel[a], such as had not been since the day when a prophet was no longer seen among them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'such as had not happened since the day no prophet appeared to them.' The Greek passive 'was seen' can also be understood as 'appeared.'
-    reason: lexical_alternative
+  text: There was great distress in Israel, such as had not been known since prophets had ceased to appear among them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐγένετο
   chosen: there came to be
@@ -131,14 +127,20 @@ revisions:
   from: And there came to be great distress in Israel, such as had not been since the day a prophet was no longer seen among them.
   to: And there came to be great distress in Israel, such as had not been since the day a prophet was no longer seen among them.
   rationale: Replaced 'there came to be' with the more natural 'there was' while preserving the formal sense; added 'when' for smoother English. Kept 'was no longer seen among them' to reflect the Greek faithfully.
-
 - timestamp: '2026-05-18T02:58:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And there was great distress in Israel[a], such as had not been since the day when a prophet was no longer seen among them.'
-  to: 'And there was great distress in Israel[a], such as had not been since the day when a prophet was no longer seen among them.'
+  from: And there was great distress in Israel[a], such as had not been since the day when a prophet was no longer seen among them.
+  to: And there was great distress in Israel[a], such as had not been since the day when a prophet was no longer seen among them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''there came to be''].'
+- timestamp: '2026-11-09T18:53:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And there was great distress in Israel[a], such as had not been since the day when a prophet was no longer seen among them.
+  to: There was great distress in Israel, such as had not been known since prophets had ceased to appear among them.
+  rationale: The lexical and theological history explicitly supports a generic reference to the absence of prophets. The rendering keeps that historical claim without extending it into a general doctrine about prophecy.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -158,3 +160,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/009/027.job-48446.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:27Z'
+  change_level: refined
+  confidence: high
+  meaning: Israel experiences distress unmatched since the time when prophets ceased appearing among the people.
+  meaning_decisions:
+  - source_phrase: οὐκ ἐγένετο
+    prior_rendering: had not been
+    new_rendering: had not been known
+    rationale: This makes the historical comparison idiomatic without changing its claim of unprecedented distress during the stated period.
+  - source_phrase: ἀφʼ ἧς ἡμέρας οὐκ ὤφθη προφήτης αὐτοῖς
+    prior_rendering: since the day when a prophet was no longer seen among them
+    new_rendering: since prophets had ceased to appear among them
+    rationale: The singular 'a prophet' is generic and marks an era lacking prophetic presence, not the disappearance of one particular prophet.
+  footnote_kinds: {}
+  history_weighed: The lexical and theological history explicitly supports a generic reference to the absence of prophets. The rendering keeps that historical claim without extending it into a general doctrine about prophecy.

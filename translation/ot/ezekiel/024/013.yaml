@@ -4,14 +4,14 @@ source:
   edition: WLC
   text: בְּ/טֻמְאָתֵ֖/ךְ זִמָּ֑ה יַ֤עַן טִֽהַרְתִּי/ךְ֙ וְ/לֹ֣א טָהַ֔רְתְּ מִ/טֻּמְאָתֵ/ךְ֙ לֹ֣א תִטְהֲרִי ע֔וֹד עַד הֲנִיחִ֥/י אֶת חֲמָתִ֖/י בָּֽ/ךְ־־־׃
 translation:
-  text: In your uncleanness is lewdness[a]. Because I cleansed you, but you were not cleansed from your uncleanness[b], you will not be cleansed anymore until I have satisfied my wrath against you.
-  philosophy: optimal-equivalence
+  text: Your uncleanness is lewdness. Because I tried to cleanse you[a] and you did not become clean from your uncleanness, you will not be clean again until I have satisfied my wrath against you[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Or ''Because I cleansed you'' or ''Though I cleansed you.'' The Hebrew can be taken more formally, but the main text reflects the sense demanded by the following clause: ''but you were not cleansed.'''
+    text: Literally, “I cleansed you.”
     reason: lexical_alternative
   - marker: b
-    text: Literally 'until I cause my wrath to rest in/on you,' an idiom meaning that God's wrath is fully spent.
+    text: Literally, “until I cause my wrath to rest on you,” meaning until it is fully spent.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: בְּטֻמְאָתֵךְ
@@ -122,14 +122,20 @@ revisions:
   from: In your uncleanness is lewdness. Because I tried to cleanse you, but you were not cleansed from your uncleanness, you will not be cleansed anymore until I have satisfied my wrath against you.
   to: In your uncleanness is lewdness. Because I tried to cleanse you, but you were not cleansed from your uncleanness, you will not be cleansed anymore until I have satisfied my wrath against you.
   rationale: Changed 'I tried to cleanse you' to 'I cleansed you' for closer lexical accuracy to the Hebrew; retained the rest as natural and complete.
-
 - timestamp: '2026-05-18T02:55:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'In your uncleanness is lewdness[a]. Because I cleansed you, but you were not cleansed from your uncleanness[b], you will not be cleansed anymore until I have satisfied my wrath against you.'
-  to: 'In your uncleanness is lewdness[a]. Because I cleansed you, but you were not cleansed from your uncleanness[b], you will not be cleansed anymore until I have satisfied my wrath against you.'
+  from: In your uncleanness is lewdness[a]. Because I cleansed you, but you were not cleansed from your uncleanness[b], you will not be cleansed anymore until I have satisfied my wrath against you.
+  to: In your uncleanness is lewdness[a]. Because I cleansed you, but you were not cleansed from your uncleanness[b], you will not be cleansed anymore until I have satisfied my wrath against you.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I tried to cleanse you''].'
+- timestamp: '2026-11-09T22:10:11Z'
+  adjudicator: claude-opus-5.5-meaning-pass
+  reviewer_model: claude-opus-5-5
+  category: meaning_retranslation
+  from: In your uncleanness is lewdness[a]. Because I cleansed you, but you were not cleansed from your uncleanness[b], you will not be cleansed anymore until I have satisfied my wrath against you.
+  to: Your uncleanness is lewdness. Because I tried to cleanse you[a] and you did not become clean from your uncleanness, you will not be clean again until I have satisfied my wrath against you[b].
+  rationale: The recorded theological decision chose "I tried to cleanse you" and the automated revert restored it over an automated change to "I cleansed you"; that reasoning is followed, with the literal wording footnoted, and "satisfied my wrath" is kept with its literal idiom as elsewhere in Ezekiel.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -149,3 +155,31 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/024/013.job-63930.json
+meaning_pass:
+  run: full-v4-opus
+  model: claude-opus-5-5
+  deployment: claude-code-subscription
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: null
+  timestamp: '2026-11-09T22:10:11Z'
+  change_level: refined
+  confidence: high
+  meaning: Jerusalem's uncleanness is shameless lewdness; because she would not become clean when Yahweh sought to cleanse her, she will not be clean again until his wrath has run its full course against her.
+  meaning_decisions:
+  - source_phrase: בְּטֻמְאָתֵךְ זִמָּה
+    prior_rendering: In your uncleanness is lewdness.
+    new_rendering: Your uncleanness is lewdness.
+    rationale: The clause identifies what her defilement consists of; the plainer predication says that directly.
+  - source_phrase: יַעַן טִהַרְתִּיךְ
+    prior_rendering: Because I cleansed you
+    new_rendering: Because I tried to cleanse you
+    rationale: The next clause says she did not become clean, so the cleansing was attempted, not achieved; this restores the drafter's rendering, which the recorded theological decision chose and the revert preserved.
+  - source_phrase: לֹא תִטְהֲרִי עוֹד
+    prior_rendering: you will not be cleansed anymore
+    new_rendering: you will not be clean again
+    rationale: The verb is the simple stem, becoming clean, matching "you did not become clean" earlier in the verse.
+  footnote_kinds:
+    a: literal_wording
+    b: literal_wording
+  history_weighed: The recorded theological decision chose "I tried to cleanse you" and the automated revert restored it over an automated change to "I cleansed you"; that reasoning is followed, with the literal wording footnoted, and "satisfied my wrath" is kept with its literal idiom as elsewhere in Ezekiel.

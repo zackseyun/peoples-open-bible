@@ -17,18 +17,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And those encamped in the hill country around Bethulia turned to flight[a]; then the sons of Israel, every man a warrior[c][b], poured out against them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the Israelites'; Greek 'the sons of Israel.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'fled'; literally 'turned to flight.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'rushed out against them'; literally 'were poured out against them.'
-    reason: lexical_alternative
+  text: The troops encamped in the hill country around Bethulia also fled. Then all the fighting men of Israel poured out against them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: οἱ παρεμβεβληκότες
   chosen: those encamped
@@ -116,14 +106,20 @@ revisions:
   from: And those encamped in the hill country around Bethulia turned to flight; then the sons of Israel, every man who was a warrior, poured out against them.
   to: And those encamped in the hill country around Bethulia turned to flight; then the sons of Israel, every man who was a warrior, poured out against them.
   rationale: 'Removed the unnecessary relative clause ''who was'' for a more natural and formal rendering: ''every man a warrior.'''
-
 - timestamp: '2026-05-18T03:00:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And those encamped in the hill country around Bethulia turned to flight[a]; then the sons of Israel, every man a warrior[c][b], poured out against them.'
-  to: 'And those encamped in the hill country around Bethulia turned to flight[a]; then the sons of Israel, every man a warrior[c][b], poured out against them.'
+  from: And those encamped in the hill country around Bethulia turned to flight[a]; then the sons of Israel, every man a warrior[c][b], poured out against them.
+  to: And those encamped in the hill country around Bethulia turned to flight[a]; then the sons of Israel, every man a warrior[c][b], poured out against them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''every man who was a warrior''].'
+- timestamp: '2026-11-09T19:03:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And those encamped in the hill country around Bethulia turned to flight[a]; then the sons of Israel, every man a warrior[c][b], poured out against them.
+  to: The troops encamped in the hill country around Bethulia also fled. Then all the fighting men of Israel poured out against them.
+  rationale: The earlier revision shortened the warrior phrase but left its English potentially misleading. The new wording preserves its inclusive military scope and keeps the vivid “poured out” image supported by the lexical record.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -143,3 +139,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/015/003.job-50801.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:03:00Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The enemy troops around Bethulia also flee, and the Israelite fighting men pour out against them.
+  meaning_decisions:
+  - source_phrase: οἱ παρεμβεβληκότες … καὶ ἐτράπησαν εἰς φυγήν
+    prior_rendering: those encamped … turned to flight
+    new_rendering: The troops encamped … also fled
+    rationale: Identifies the military group and renders the flight idiom naturally, retaining the connection with the preceding rout.
+  - source_phrase: οἱ υἱοὶ Ἰσραὴλ πᾶς ἀνὴρ πολεμιστής
+    prior_rendering: the sons of Israel, every man a warrior
+    new_rendering: all the fighting men of Israel
+    rationale: The phrase identifies every Israelite fighting man; it does not assert that every Israelite man was a warrior.
+  footnote_kinds: {}
+  history_weighed: The earlier revision shortened the warrior phrase but left its English potentially misleading. The new wording preserves its inclusive military scope and keeps the vivid “poured out” image supported by the lexical record.

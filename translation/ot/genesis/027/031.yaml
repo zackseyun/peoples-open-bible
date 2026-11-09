@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: וַ/יַּ֤עַשׂ גַּם הוּא֙ מַטְעַמִּ֔ים וַ/יָּבֵ֖א לְ/אָבִ֑י/ו וַ/יֹּ֣אמֶר לְ/אָבִ֗י/ו יָקֻ֤ם אָבִ/י֙ וְ/יֹאכַל֙ מִ/צֵּ֣יד בְּנ֔/וֹ בַּ/עֲב֖וּר תְּבָרֲכַ֥/נִּי נַפְשֶֽׁ/ךָ־׃
 translation:
-  text: He too prepared tasty food and brought it to his father[a], and he said to his father, “Let my father rise and eat of his son's game[b], so that your soul may bless me.”
-  philosophy: optimal-equivalence
+  text: Esau too prepared tasty food and brought it to his father. He said, “Please rise, my father, and eat some of your son’s game, so that you may bless me[a].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'savory food.' The Hebrew term refers to specially prepared, flavorful dishes in this episode.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'your soul may bless me,' an idiom that can mean 'you may bless me,' but the main text preserves the Hebrew expression.
+    text: Literally, “so that your soul may bless me”; here “soul” refers to Isaac himself.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: מַטְעַמִּים
@@ -90,14 +87,20 @@ revisions:
   from: He too prepared tasty food and brought it to his father, and he said to his father, “Let my father rise and eat from his son's game, so that your soul may bless me.”
   to: He too prepared tasty food and brought it to his father, and he said to his father, “Let my father rise and eat from his son's game, so that your soul may bless me.”
   rationale: Changed 'eat from his son's game' to 'eat of his son's game' for more natural formal English while preserving the source sense. No other changes needed.
-
 - timestamp: '2026-05-17T10:42:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He too prepared tasty food and brought it to his father[a], and he said to his father, “Let my father rise and eat of his son''s game[b], so that your soul may bless me.”'
-  to: 'He too prepared tasty food and brought it to his father[a], and he said to his father, “Let my father rise and eat of his son''s game[b], so that your soul may bless me.”'
+  from: He too prepared tasty food and brought it to his father[a], and he said to his father, “Let my father rise and eat of his son's game[b], so that your soul may bless me.”
+  to: He too prepared tasty food and brought it to his father[a], and he said to his father, “Let my father rise and eat of his son's game[b], so that your soul may bless me.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: ["from his son''s game"].'
+- timestamp: '2026-11-09T17:43:41Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He too prepared tasty food and brought it to his father[a], and he said to his father, “Let my father rise and eat of his son's game[b], so that your soul may bless me.”
+  to: Esau too prepared tasty food and brought it to his father. He said, “Please rise, my father, and eat some of your son’s game, so that you may bless me[a].”
+  rationale: The earlier decisions rightly identify Esau’s respectful request and the parallel with Jacob’s meal. Their preference for literal 'your soul' is weighed against the contextual idiom documented in verse 19, which supports the same personal rendering here.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -119,3 +122,26 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/027/031.job-65166.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:43:41Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Esau prepares and brings the requested meal, respectfully asking his father to eat and bless him.
+  meaning_decisions:
+  - source_phrase: יָקֻם אָבִי וְיֹאכַל מִצֵּיד בְּנוֹ
+    prior_rendering: Let my father rise and eat of his son's game
+    new_rendering: Please rise, my father, and eat some of your son’s game
+    rationale: The third-person construction is a respectful request addressed to Isaac. Direct address with 'please' carries that courtesy naturally, while 'some of' expresses the partitive sense.
+  - source_phrase: תְּבָרֲכַנִּי נַפְשֶׁךָ
+    prior_rendering: your soul may bless me
+    new_rendering: you may bless me
+    rationale: The expression has the same personal sense as in Jacob’s request in verse 19. Consistent idiomatic rendering preserves the parallel between the brothers, with the source wording retained in a footnote.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier decisions rightly identify Esau’s respectful request and the parallel with Jacob’s meal. Their preference for literal 'your soul' is weighed against the contextual idiom documented in verse 19, which supports the same personal rendering here.

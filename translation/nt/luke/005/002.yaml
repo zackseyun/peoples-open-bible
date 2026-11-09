@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ εἶδεν ⸂δύο πλοῖα⸃ ἑστῶτα παρὰ τὴν λίμνην, οἱ δὲ ἁλιεῖς ⸂ἀπ’ αὐτῶν ἀποβάντες⸃ ⸀ἔπλυνον τὰ δίκτυα.
 translation:
-  text: And he saw two boats standing by the lake[a], but the fishermen, having gotten out of them, were washing the nets.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'having disembarked from them.'
-    reason: lexical_alternative
+  text: He saw two boats by the shore; the fishermen had gone ashore and were washing their nets.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: εἶδεν
   chosen: saw
@@ -86,14 +82,20 @@ revisions:
   from: And he saw two boats standing by the lake, but the fishermen had gotten out of them and were washing the nets.
   to: And he saw two boats standing by the lake, but the fishermen had gotten out of them and were washing the nets.
   rationale: Added commas and rendered the participial phrase more explicitly as 'having gotten out of them' to reflect the Greek structure more closely while preserving natural English.
-
 - timestamp: '2026-05-18T03:02:02Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he saw two boats standing by the lake[a], but the fishermen, having gotten out of them, were washing the nets.'
-  to: 'And he saw two boats standing by the lake[a], but the fishermen, having gotten out of them, were washing the nets.'
+  from: And he saw two boats standing by the lake[a], but the fishermen, having gotten out of them, were washing the nets.
+  to: And he saw two boats standing by the lake[a], but the fishermen, having gotten out of them, were washing the nets.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''had gotten out of them''].'
+- timestamp: '2026-11-09T17:11:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he saw two boats standing by the lake[a], but the fishermen, having gotten out of them, were washing the nets.
+  to: He saw two boats by the shore; the fishermen had gone ashore and were washing their nets.
+  rationale: The history records a preference for a source-shaped participle, while the first draft used a natural past-perfect construction. Neither automated entry establishes a meaning-based reason to preserve the participial wording, so I retain the sequence and ongoing washing in ordinary English.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -116,3 +118,29 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/005/002.job-55345.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:11:16Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus sees two boats at the shore whose fishermen have gone ashore and are washing their nets.
+  meaning_decisions:
+  - source_phrase: δύο πλοῖα ἑστῶτα παρὰ τὴν λίμνην
+    prior_rendering: two boats standing by the lake
+    new_rendering: two boats by the shore
+    rationale: The phrase locates stationary boats at the lake’s edge. English does not normally describe boats as standing, and no particular method of securing them is specified.
+  - source_phrase: ἀπ’ αὐτῶν ἀποβάντες
+    prior_rendering: having gotten out of them
+    new_rendering: had gone ashore
+    rationale: The fishermen have left the boats before the washing described here; the shoreline setting makes their destination clear.
+  - source_phrase: τὰ δίκτυα
+    prior_rendering: the nets
+    new_rendering: their nets
+    rationale: The fishermen’s ownership or use of these nets is understood in the Greek context and is naturally expressed with an English possessive.
+  footnote_kinds: {}
+  history_weighed: The history records a preference for a source-shaped participle, while the first draft used a natural past-perfect construction. Neither automated entry establishes a meaning-based reason to preserve the participial wording, so I retain the sequence and ongoing washing in ordinary English.

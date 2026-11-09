@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: בְּ/יוֹמ/וֹ֩ תִתֵּ֨ן שְׂכָר֜/וֹ וְֽ/לֹא תָב֧וֹא עָלָ֣י/ו הַ/שֶּׁ֗מֶשׁ כִּ֤י עָנִי֙ ה֔וּא וְ/אֵלָ֕י/ו ה֥וּא נֹשֵׂ֖א אֶת נַפְשׁ֑/וֹ וְ/לֹֽא יִקְרָ֤א עָלֶ֨י/ךָ֙ אֶל יְהוָ֔ה וְ/הָיָ֥ה בְ/ךָ֖ חֵֽטְא־־־־׃ס
 translation:
-  text: You shall give him his wages on his day[a], and the sun shall not go down on it, because he is poor and sets his life on it, so that he does not cry out against you to Yahweh, and it becomes sin in you.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'depends on it for his life.' The Hebrew literally says 'to it he lifts/carries his life,' an idiom expressing urgent dependence on the wage.
-    reason: lexical_alternative
+  text: You shall pay him his wages the same day, before the sun sets, because he is poor and depends on them to live. Otherwise he may cry out against you to Yahweh, and you will be guilty of sin.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: בְּיוֹמוֹ
   chosen: on his day
@@ -104,14 +100,20 @@ revisions:
   from: You shall give him his wages on his day, and the sun shall not go down on it, because he is poor and sets his life on it, so that he does not cry out against you to the LORD, and it becomes sin in you.
   to: You shall give him his wages on the same day, and the sun shall not go down on it, because he is poor and depends on it, lest he cry out against you to the LORD, and there be sin in you.
   rationale: Changed 'on his day' to 'on the same day' for natural English; changed 'sets his life on it' to 'depends on it' to reflect the idiom naturally; changed 'so that he does not cry out' to 'lest he cry out' to match the warning sense; changed 'it becomes sin in you' to 'there be sin in you' for more formal, natural rendering.
-
 - timestamp: '2026-05-15T11:39:06Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'You shall give him his wages on the same day[a], and the sun shall not go down on it, because he is poor and depends on it, lest he cry out against you to Yahweh, and there be sin in you.'
-  to: 'You shall give him his wages on his day[a], and the sun shall not go down on it, because he is poor and sets his life on it, so that he does not cry out against you to Yahweh, and it becomes sin in you.'
-  rationale: 'Restored Hebrew possessive ''on his day'', metaphor ''sets his life on it'', purposive ''so that he does not cry out'', becoming-aspect ''it becomes sin''.'
+  from: You shall give him his wages on the same day[a], and the sun shall not go down on it, because he is poor and depends on it, lest he cry out against you to Yahweh, and there be sin in you.
+  to: You shall give him his wages on his day[a], and the sun shall not go down on it, because he is poor and sets his life on it, so that he does not cry out against you to Yahweh, and it becomes sin in you.
+  rationale: Restored Hebrew possessive 'on his day', metaphor 'sets his life on it', purposive 'so that he does not cry out', becoming-aspect 'it becomes sin'.
+- timestamp: '2026-11-09T17:31:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You shall give him his wages on his day[a], and the sun shall not go down on it, because he is poor and sets his life on it, so that he does not cry out against you to Yahweh, and it becomes sin in you.
+  to: You shall pay him his wages the same day, before the sun sets, because he is poor and depends on them to live. Otherwise he may cry out against you to Yahweh, and you will be guilty of sin.
+  rationale: The earlier review correctly clarified same-day payment, dependence, and the warning, while the later automated revert chiefly restored Hebrew-shaped wording. I preserve the meaning documented by both passes, including the worker’s dependence for life and the employer’s responsibility for sin.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -133,3 +135,33 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/024/015.job-61794.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:31:30Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The employer must pay the poor worker before sunset because he depends on his wages to live, lest he appeal to Yahweh against the employer’s sin.
+  meaning_decisions:
+  - source_phrase: בְּיוֹמוֹ תִתֵּן שְׂכָרוֹ וְלֹא תָבוֹא עָלָיו הַשֶּׁמֶשׁ
+    prior_rendering: You shall give him his wages on his day, and the sun shall not go down on it
+    new_rendering: You shall pay him his wages the same day, before the sun sets
+    rationale: The instruction requires same-day payment before sunset; the prior possessive and pronoun obscure that deadline.
+  - source_phrase: וְאֵלָיו הוּא נֹשֵׂא אֶת נַפְשׁוֹ
+    prior_rendering: and sets his life on it
+    new_rendering: and depends on them to live
+    rationale: The idiom expresses the worker’s urgent dependence on his wages for subsistence, not a wager or deliberate risk.
+  - source_phrase: וְלֹא יִקְרָא עָלֶיךָ אֶל יְהוָה
+    prior_rendering: so that he does not cry out against you to Yahweh
+    new_rendering: Otherwise he may cry out against you to Yahweh
+    rationale: This presents the appeal to Yahweh as the consequence the employer must avoid by paying promptly.
+  - source_phrase: וְהָיָה בְךָ חֵטְא
+    prior_rendering: and it becomes sin in you
+    new_rendering: and you will be guilty of sin
+    rationale: The clause assigns responsibility for sin to the employer; it does not describe sin becoming an inward substance.
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly clarified same-day payment, dependence, and the warning, while the later automated revert chiefly restored Hebrew-shaped wording. I preserve the meaning documented by both passes, including the worker’s dependence for life and the employer’s responsibility for sin.

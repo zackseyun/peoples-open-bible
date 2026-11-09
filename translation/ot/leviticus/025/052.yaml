@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/אִם מְעַ֞ט נִשְׁאַ֧ר בַּ/שָּׁנִ֛ים עַד שְׁנַ֥ת הַ/יֹּבֵ֖ל וְ/חִשַּׁב ל֑/וֹ כְּ/פִ֣י שָׁנָ֔י/ו יָשִׁ֖יב אֶת גְּאֻלָּתֽ/וֹ־־־־׃
 translation:
-  text: But if few years remain until the Year of Jubilee, then he shall calculate with him; according to his years he shall repay his redemption[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'he shall pay back his redemption price.' The Hebrew expression refers to the amount required for his redemption, not redemption in an abstract sense.
-    reason: lexical_alternative
+  text: But if few years remain until the Year of Jubilee, he shall calculate with his buyer and repay his redemption price in proportion to those years.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: מְעַט
   chosen: few
@@ -74,13 +70,12 @@ revisions:
   from: But if few years remain until the Year of Jubilee, then he shall calculate with him; according to his years he shall repay his redemption.
   to: But if few years remain until the Year of Jubilee, then he shall calculate with him; according to his years he shall repay the amount for his redemption.
   rationale: Added 'the amount for' to make the idiomatic sense of 'repay his redemption' clearer in natural English while preserving the source meaning; retained the rest of the structure.
-
 - timestamp: '2026-05-18T03:00:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But if few years remain until the Year of Jubilee[a], then he shall calculate with him; according to his years he shall repay the amount for his redemption.'
-  to: 'But if few years remain until the Year of Jubilee, then he shall calculate with him; according to his years he shall repay his redemption.'
+  from: But if few years remain until the Year of Jubilee[a], then he shall calculate with him; according to his years he shall repay the amount for his redemption.
+  to: But if few years remain until the Year of Jubilee, then he shall calculate with him; according to his years he shall repay his redemption.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he shall repay his redemption''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -90,6 +85,13 @@ revisions:
   from: But if few years remain until the Year of Jubilee, then he shall calculate with him; according to his years he shall repay his redemption.
   to: But if few years remain until the Year of Jubilee, then he shall calculate with him; according to his years he shall repay his redemption[a].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('he shall repay his redemption') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:21:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But if few years remain until the Year of Jubilee, then he shall calculate with him; according to his years he shall repay his redemption[a].
+  to: But if few years remain until the Year of Jubilee, he shall calculate with his buyer and repay his redemption price in proportion to those years.
+  rationale: The earlier revision correctly made the monetary sense explicit, and its automated revert supplied no meaning-based reason to conceal that sense again. I retain “redemption” while stating that it is a price and clarifying which years determine it.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -109,3 +111,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/025/052.job-45238.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:21:48Z'
+  change_level: refined
+  confidence: high
+  meaning: When few years remain before the Jubilee, the Israelite and his buyer must calculate a redemption payment proportional to those remaining years.
+  meaning_decisions:
+  - source_phrase: וְחִשַּׁב לוֹ
+    prior_rendering: then he shall calculate with him
+    new_rendering: he shall calculate with his buyer
+    rationale: Naming the buyer makes the parties to the calculation unambiguous.
+  - source_phrase: כְּפִי שָׁנָיו
+    prior_rendering: according to his years
+    new_rendering: in proportion to those years
+    rationale: The phrase refers to the remaining service years just mentioned, not the man’s age or his years already served.
+  - source_phrase: יָשִׁיב אֶת גְּאֻלָּתוֹ
+    prior_rendering: he shall repay his redemption
+    new_rendering: repay his redemption price
+    rationale: The noun denotes the payment required for release, as the earlier footnote and the preceding verse both recognize.
+  footnote_kinds: {}
+  history_weighed: The earlier revision correctly made the monetary sense explicit, and its automated revert supplied no meaning-based reason to conceal that sense again. I retain “redemption” while stating that it is a price and clarifying which years determine it.

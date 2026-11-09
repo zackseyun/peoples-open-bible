@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: וְ/לַ/אֲבִיגַ֨יִל֙ אֵ֣שֶׁת נָבָ֔ל הִגִּ֧יד נַֽעַר אֶחָ֛ד מֵ/הַ/נְּעָרִ֖ים לֵ/אמֹ֑ר הִנֵּ֣ה שָׁלַח֩ דָּוִ֨ד מַלְאָכִ֧ים מֵֽ/הַ/מִּדְבָּ֛ר לְ/בָרֵ֥ךְ אֶת אֲדֹנֵ֖י/נוּ וַ/יָּ֥עַט בָּ/הֶֽם־׀־׃
 translation:
-  text: But one of the young men told Abigail[a], Nabal’s wife, saying, “Look, David sent messengers from the wilderness to greet our master[b], and he shouted at them.”
-  philosophy: optimal-equivalence
+  text: But one of Nabal’s servants told Abigail, Nabal’s wife, “Look, David sent messengers from the wilderness to greet our master, but he lashed out at them[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'to bless our master.' The Hebrew verb often means 'bless,' but here likely refers to offering a courteous greeting or blessing.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'he railed at them' / 'he flew at them.' The Hebrew verb is vivid and can suggest an aggressive outburst.
+    text: Literally, “he swooped down on them,” a vivid expression for his angry outburst.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וְלַאֲבִיגַיִל
@@ -112,14 +109,20 @@ revisions:
   from: But one of the young men told Abigail, Nabal’s wife, saying, “Look, David sent messengers from the wilderness to greet our master, and he screamed at them.”
   to: But one of the young men told Abigail, Nabal’s wife, saying, “Look, David sent messengers from the wilderness to greet our master, and he screamed at them.”
   rationale: Changed 'screamed at them' to 'shouted at them' for a more natural and appropriately formal rendering of the Hebrew verb, while preserving the sense of harsh verbal rejection.
-
 - timestamp: '2026-05-18T02:56:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But one of the young men told Abigail[a], Nabal’s wife, saying, “Look, David sent messengers from the wilderness to greet our master[b], and he shouted at them.”'
-  to: 'But one of the young men told Abigail[a], Nabal’s wife, saying, “Look, David sent messengers from the wilderness to greet our master[b], and he shouted at them.”'
+  from: But one of the young men told Abigail[a], Nabal’s wife, saying, “Look, David sent messengers from the wilderness to greet our master[b], and he shouted at them.”
+  to: But one of the young men told Abigail[a], Nabal’s wife, saying, “Look, David sent messengers from the wilderness to greet our master[b], and he shouted at them.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and he screamed at them''].'
+- timestamp: '2026-11-09T17:24:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But one of the young men told Abigail[a], Nabal’s wife, saying, “Look, David sent messengers from the wilderness to greet our master[b], and he shouted at them.”
+  to: But one of Nabal’s servants told Abigail, Nabal’s wife, “Look, David sent messengers from the wilderness to greet our master, but he lashed out at them[a].
+  rationale: The history alternates between “screamed” and “shouted,” but its lexical rationale consistently recognizes a vivid, abusive outburst. “Lashed out” carries that force without specifying vocal volume, while “greet” retains the contextual understanding of the blessing verb.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -139,3 +142,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/025/014.job-59385.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:24:12Z'
+  change_level: retranslated
+  confidence: high
+  meaning: One of Nabal’s servants tells Abigail that Nabal responded abusively to David’s courteous messengers.
+  meaning_decisions:
+  - source_phrase: נַעַר אֶחָד מֵהַנְּעָרִים
+    prior_rendering: one of the young men
+    new_rendering: one of Nabal’s servants
+    rationale: The speaker’s reference to “our master” identifies him as a member of Nabal’s household, not one of David’s returning messengers.
+  - source_phrase: וַיָּעַט בָּהֶם
+    prior_rendering: and he shouted at them
+    new_rendering: but he lashed out at them
+    rationale: The verb depicts a hostile attack, here expressed verbally; the new wording conveys abusive anger rather than merely loud speech and makes the contrast with the courteous greeting explicit.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The history alternates between “screamed” and “shouted,” but its lexical rationale consistently recognizes a vivid, abusive outburst. “Lashed out” carries that force without specifying vocal volume, while “greet” retains the contextual understanding of the blessing verb.

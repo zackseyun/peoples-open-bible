@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: ὑμεῖς δὲ βλέπετε· ⸀προείρηκα ὑμῖν πάντα.
 translation:
-  text: But you[a], watch out[b]; I have told you all things beforehand.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'be on guard' or 'see to it.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'I have said beforehand' or 'I have forewarned you of everything.'
-    reason: lexical_alternative
+  text: But you, be on guard; I have told you all this beforehand.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὑμεῖς
   chosen: you
@@ -83,14 +76,20 @@ revisions:
   from: But you, watch out; I have told you everything beforehand.
   to: But you, watch out; I have told you everything beforehand.
   rationale: Revised “everything” to “all things” for closer correspondence to πάντα while keeping natural formal English. Retained “watch out” and “beforehand” as accurate renderings of βλέπετε and προείρηκα.
-
 - timestamp: '2026-05-18T03:00:22Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But you[a], watch out[b]; I have told you all things beforehand.'
-  to: 'But you[a], watch out[b]; I have told you all things beforehand.'
+  from: But you[a], watch out[b]; I have told you all things beforehand.
+  to: But you[a], watch out[b]; I have told you all things beforehand.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''everything''].'
+- timestamp: '2026-11-09T17:13:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But you[a], watch out[b]; I have told you all things beforehand.
+  to: But you, be on guard; I have told you all this beforehand.
+  rationale: The history alternates between “everything” and “all things,” while the recorded rationale identifies the relevant warnings rather than exhaustive knowledge. “All this” carries that contextual gain, and the inherited synonym notes add nothing necessary.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -112,3 +111,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/mark/013/023.job-38751.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:13:45Z'
+  change_level: refined
+  confidence: high
+  meaning: The disciples must remain on guard because Jesus has warned them about these things in advance.
+  meaning_decisions:
+  - source_phrase: ὑμεῖς δὲ βλέπετε
+    prior_rendering: But you, watch out
+    new_rendering: But you, be on guard
+    rationale: The command calls for continuing vigilance against the deception just described, and the explicit “you” retains the contrast.
+  - source_phrase: προείρηκα ὑμῖν πάντα
+    prior_rendering: I have told you all things beforehand
+    new_rendering: I have told you all this beforehand
+    rationale: “All this” expresses the contextual scope of the warning rather than suggesting an exhaustive disclosure of every future detail.
+  footnote_kinds: {}
+  history_weighed: The history alternates between “everything” and “all things,” while the recorded rationale identifies the relevant warnings rather than exhaustive knowledge. “All this” carries that contextual gain, and the inherited synonym notes add nothing necessary.

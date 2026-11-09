@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: וַ/יַּאֲמֵ֥ן אָכִ֖ישׁ בְּ/דָוִ֣ד לֵ/אמֹ֑ר הַבְאֵ֤שׁ הִבְאִישׁ֙ בְּ/עַמּ֣/וֹ בְ/יִשְׂרָאֵ֔ל וְ/הָ֥יָה לִ֖/י לְ/עֶ֥בֶד עוֹלָֽם׃פ
 translation:
-  text: And Achish trusted David[a], saying, “He has surely made himself stink among his people in Israel[b], so he will be my servant forever.”
-  philosophy: optimal-equivalence
+  text: Achish trusted David, thinking, “He has made himself utterly abhorrent[a] to his people in Israel, so he will be my servant forever.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more idiomatically, “He has made himself utterly odious among his people in Israel.” The Hebrew literally says “made himself stink,” an idiom for becoming detestable.
-    reason: lexical_alternative
-  - marker: b
-    text: “Servant” here may also be rendered “slave,” but the context suggests ongoing vassal-like service to Achish rather than emphasizing chattel status.
+    text: Literally, “made himself stink.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וַיַּאֲמֵן
@@ -89,14 +86,20 @@ revisions:
   from: And Achish trusted David, saying, “He has surely made himself stink among his people in Israel, so he will be my servant forever.”
   to: And Achish trusted David, saying, “He has surely made himself odious among his people Israel, so he will be my servant forever.”
   rationale: Replaced the overly literal and awkward 'made himself stink among his people in Israel' with the more natural and accurate 'made himself odious among his people Israel.'
-
 - timestamp: '2026-05-16T05:09:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Achish trusted David[a], saying, “He has surely made himself odious among his people Israel[b], so he will be my servant forever.”'
-  to: 'And Achish trusted David[a], saying, “He has surely made himself stink among his people in Israel[b], so he will be my servant forever.”'
-  rationale: 'Azure substituted ''made himself odious'' — drafter''s first explicit rejected_alternative. Drafter chose literal ''stink'' metaphor to preserve Hebrew force/imagery. Azure also dropped preposition ''in'' before ''Israel'' (drafter chose ''in Israel'').'
+  from: And Achish trusted David[a], saying, “He has surely made himself odious among his people Israel[b], so he will be my servant forever.”
+  to: And Achish trusted David[a], saying, “He has surely made himself stink among his people in Israel[b], so he will be my servant forever.”
+  rationale: Azure substituted 'made himself odious' — drafter's first explicit rejected_alternative. Drafter chose literal 'stink' metaphor to preserve Hebrew force/imagery. Azure also dropped preposition 'in' before 'Israel' (drafter chose 'in Israel').
+- timestamp: '2026-11-09T17:24:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Achish trusted David[a], saying, “He has surely made himself stink among his people in Israel[b], so he will be my servant forever.”
+  to: Achish trusted David, thinking, “He has made himself utterly abhorrent[a] to his people in Israel, so he will be my servant forever.”
+  rationale: The earlier review’s 'odious' recovered the idiom’s meaning, while the automated revert prioritized its smell image. I preserve both gains by expressing abhorrence in the main text and the image in a note, while retaining 'in Israel,' 'servant,' and 'forever.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -116,3 +119,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/027/012.job-59445.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:24:13Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Achish trusts David because he believes David has made himself detestable to Israel and will therefore remain permanently in his service.
+  meaning_decisions:
+  - source_phrase: לאמר
+    prior_rendering: saying
+    new_rendering: thinking
+    rationale: The quotation expresses Achish’s reasoning for trusting David, without requiring an otherwise unidentified spoken conversation.
+  - source_phrase: הבאש הבאיש בעמו בישראל
+    prior_rendering: He has surely made himself stink among his people in Israel
+    new_rendering: He has made himself utterly abhorrent to his people in Israel
+    rationale: The emphatic smell idiom means that David has become detestable to his own people. 'Utterly abhorrent' conveys that force clearly, while the footnote preserves the source image.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier review’s 'odious' recovered the idiom’s meaning, while the automated revert prioritized its smell image. I preserve both gains by expressing abhorrence in the main text and the image in a note, while retaining 'in Israel,' 'servant,' and 'forever.'

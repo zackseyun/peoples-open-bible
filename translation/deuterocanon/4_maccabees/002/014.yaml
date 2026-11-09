@@ -18,12 +18,15 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: nor cutting down the cultivated plants of enemies[a], but preserving those of foes who have been destroyed, and raising up what has fallen.
-  philosophy: optimal-equivalence
+  text: Such a person does not cut down an enemy’s cultivated trees, but safeguards enemies’ property for those who have lost it[a] and helps lift up what has fallen[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'for those who have perished,' taking the dative participle more directly and leaving the possessive relation implicit.
-    reason: lexical_alternative
+    text: Or, “safeguards enemies’ property from its destroyers.”
+    reason: alternative_reading
+  - marker: b
+    text: These examples recall Deuteronomy 20:19 and Exodus 23:4–5; the latter commands returning an enemy’s straying animal and helping an animal lying under its load.
+    reason: cross_reference
 lexical_decisions:
 - source_word: μηδὲ
   chosen: nor
@@ -125,14 +128,20 @@ revisions:
   from: nor cutting down the cultivated plants of enemies, but preserving those of foes whose owners have been destroyed, and raising up what has fallen.
   to: nor cutting down the cultivated plants of enemies, but preserving those of foes whose owners have been destroyed, and raising up what has fallen.
   rationale: Replaced 'whose owners have been destroyed' with 'who have been destroyed' to reflect the Greek more directly and naturally, without adding 'owners,' which is not in the source.
-
 - timestamp: '2026-05-18T02:59:29Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'nor cutting down the cultivated plants of enemies[a], but preserving those of foes who have been destroyed, and raising up what has fallen.'
-  to: 'nor cutting down the cultivated plants of enemies[a], but preserving those of foes who have been destroyed, and raising up what has fallen.'
+  from: nor cutting down the cultivated plants of enemies[a], but preserving those of foes who have been destroyed, and raising up what has fallen.
+  to: nor cutting down the cultivated plants of enemies[a], but preserving those of foes who have been destroyed, and raising up what has fallen.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''whose owners have been destroyed''].'
+- timestamp: '2026-11-09T18:58:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: nor cutting down the cultivated plants of enemies[a], but preserving those of foes who have been destroyed, and raising up what has fallen.
+  to: Such a person does not cut down an enemy’s cultivated trees, but safeguards enemies’ property for those who have lost it[a] and helps lift up what has fallen[b].
+  rationale: The recorded revisions and automated reverts did not settle the compressed dative phrase, and no maintainer ruling is recorded. I depart from the destroyed-owner reading because the active participle and the surrounding legal examples better support restoring property to those who lost it.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -152,3 +161,31 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/002/014.job-49755.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:58:02Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: A person governed by reason spares enemies’ cultivated trees, safeguards their lost property, and helps raise what has fallen.
+  meaning_decisions:
+  - source_phrase: μηδὲ δενδροτομῶν τὰ ἥμερα τῶν πολεμίων φυτά
+    prior_rendering: nor cutting down the cultivated plants of enemies
+    new_rendering: Such a person does not cut down an enemy’s cultivated trees
+    rationale: The participle describes the conduct of the person whose hostility reason governs; supplying that subject makes the example intelligible. The tree-cutting verb and the allusion to Deuteronomy favor cultivated trees rather than plants generally.
+  - source_phrase: τὰ δὲ τῶν ἐχθρῶν τοῖς ἀπολέσασιν διασώζων
+    prior_rendering: but preserving those of foes who have been destroyed
+    new_rendering: but safeguards enemies’ property for those who have lost it
+    rationale: The active participle can describe people who have lost their property; it does not straightforwardly mean people who have been destroyed. This reading also fits the law’s command to return an enemy’s straying animal, while the serious alternative is noted.
+  - source_phrase: τὰ πεπτωκότα συνεγείρων
+    prior_rendering: raising up what has fallen
+    new_rendering: helps lift up what has fallen
+    rationale: The compound verb conveys assisting in raising something up. The object remains unspecified in the text, with the likely legal allusion supplied in a note.
+  footnote_kinds:
+    a: alternative_meaning
+    b: cross_reference
+  history_weighed: The recorded revisions and automated reverts did not settle the compressed dative phrase, and no maintainer ruling is recorded. I depart from the destroyed-owner reading because the active participle and the surrounding legal examples better support restoring property to those who lost it.

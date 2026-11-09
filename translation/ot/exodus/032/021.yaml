@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֤אמֶר מֹשֶׁה֙ אֶֽל אַהֲרֹ֔ן מֶֽה עָשָׂ֥ה לְ/ךָ֖ הָ/עָ֣ם הַ/זֶּ֑ה כִּֽי הֵבֵ֥אתָ עָלָ֖י/ו חֲטָאָ֥ה גְדֹלָֽה־־־׃
 translation:
-  text: Moses said to Aaron[a], “What did this people do to you, that you have brought a great sin upon them?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Or “you have brought a great sin upon it,” with the singular pronoun referring collectively to “the people.” English normally uses the plural sense: “them.”'
-    reason: lexical_alternative
+  text: Moses said to Aaron, “What did these people do to you that you have brought such a great sin upon them?”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: said
@@ -82,14 +78,20 @@ revisions:
   from: Moses said to Aaron, “What did this people do to you, that you have brought such a great sin upon them?”
   to: Moses said to Aaron, “What did this people do to you, that you have brought such a great sin upon them?”
   rationale: Removed 'such' for closer adherence to the source; otherwise retained the draft, which is accurate and natural.
-
 - timestamp: '2026-05-18T02:55:41Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Moses said to Aaron[a], “What did this people do to you, that you have brought a great sin upon them?”'
-  to: 'Moses said to Aaron[a], “What did this people do to you, that you have brought a great sin upon them?”'
+  from: Moses said to Aaron[a], “What did this people do to you, that you have brought a great sin upon them?”
+  to: Moses said to Aaron[a], “What did this people do to you, that you have brought a great sin upon them?”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''such a great sin''].'
+- timestamp: '2026-11-09T17:36:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Moses said to Aaron[a], “What did this people do to you, that you have brought a great sin upon them?”
+  to: Moses said to Aaron, “What did these people do to you that you have brought such a great sin upon them?”
+  rationale: The first draft’s ‘such a great sin’ captures the force of Moses’ rhetorical rebuke; the review’s removal was motivated by word-level correspondence rather than a difference in meaning. I retain the direct charge that Aaron brought sin upon the people and omit the unnecessary grammatical note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -109,3 +111,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/032/021.job-63124.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:36:07Z'
+  change_level: refined
+  confidence: high
+  meaning: Moses rebukes Aaron with a pointed question about why he has brought such a grave sin upon the people.
+  meaning_decisions:
+  - source_phrase: הָעָם הַזֶּה
+    prior_rendering: this people
+    new_rendering: these people
+    rationale: Uses natural English agreement for the collective group while preserving the demonstrative’s distancing force.
+  - source_phrase: חֲטָאָה גְדֹלָה
+    prior_rendering: a great sin
+    new_rendering: such a great sin
+    rationale: Restores the first draft’s idiomatic expression of the rebuke’s emotional weight without increasing the degree of sin beyond the source’s ‘great.’
+  footnote_kinds: {}
+  history_weighed: The first draft’s ‘such a great sin’ captures the force of Moses’ rhetorical rebuke; the review’s removal was motivated by word-level correspondence rather than a difference in meaning. I retain the direct charge that Aaron brought sin upon the people and omit the unnecessary grammatical note.

@@ -8,15 +8,8 @@ source:
   - 432
   confidence: high
 translation:
-  text: I went out to meet the foreigner[a], and he cursed me by his idols[b];
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “the Philistine.” The Greek says “the foreigner/one of another people,” a term often used for Philistines in the Septuagint.
-    reason: alternative_reading
-  - marker: b
-    text: Or, “he cursed me in the name of his idols.”
-    reason: lexical_alternative
+  text: I went out to meet the Philistine, and he cursed me in the name of his idols.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐξῆλθον
   chosen: came out
@@ -93,14 +86,20 @@ revisions:
   from: They came out to meet me, the foreigner, and he cursed me by his idols.
   to: They came out to meet me, the foreigner, and he cursed me by his idols.
   rationale: Corrected the subject from plural to singular ('I went out' for ἐξῆλθον), clarified that 'the foreigner' is the one being met rather than an appositive to 'me,' and retained the singular subject for 'he cursed me by his idols.'
-
 - timestamp: '2026-05-18T02:59:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'I went out to meet the foreigner[a], and he cursed me by his idols[b];'
-  to: 'I went out to meet the foreigner[a], and he cursed me by his idols[b];'
+  from: I went out to meet the foreigner[a], and he cursed me by his idols[b];
+  to: I went out to meet the foreigner[a], and he cursed me by his idols[b];
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''came out''].'
+- timestamp: '2026-11-09T19:01:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: I went out to meet the foreigner[a], and he cursed me by his idols[b];
+  to: I went out to meet the Philistine, and he cursed me in the name of his idols.
+  rationale: I retain the review's necessary correction to David as the singular subject. The earlier defense of 'foreigner' prioritized the term's general form over its established contextual sense, while the former footnote already supplied the clearer meaning of the curse.
 cross_check:
   status: high_agreement
   agreement: 0.94
@@ -120,3 +119,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/claude/claude_gap_closure_2026_05/deuterocanon/psalm_151/001/006.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:52Z'
+  change_level: retranslated
+  confidence: high
+  meaning: David went to confront the Philistine, who invoked his idols in cursing David.
+  meaning_decisions:
+  - source_phrase: τῷ ἀλλοφύλῳ
+    prior_rendering: the foreigner
+    new_rendering: the Philistine
+    rationale: In the Septuagint this term regularly designates a Philistine, and the David-and-Goliath context establishes that sense here; 'foreigner' obscures the understood identity.
+  - source_phrase: ἐν τοῖς εἰδώλοις αὐτοῦ
+    prior_rendering: by his idols
+    new_rendering: in the name of his idols
+    rationale: The phrase describes invoking the idols as the authority behind the curse, not cursing beside or through physical images.
+  footnote_kinds: {}
+  history_weighed: I retain the review's necessary correction to David as the singular subject. The earlier defense of 'foreigner' prioritized the term's general form over its established contextual sense, while the former footnote already supplied the clearer meaning of the curse.

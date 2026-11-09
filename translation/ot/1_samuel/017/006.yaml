@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וּ/מִצְחַ֥ת נְחֹ֖שֶׁת עַל רַגְלָ֑י/ו וְ/כִיד֥וֹן נְחֹ֖שֶׁת בֵּ֥ין כְּתֵפָֽי/ו־׃
 translation:
-  text: And he had bronze greaves on his legs[a], and a bronze javelin between his shoulders.
-  philosophy: optimal-equivalence
+  text: He wore bronze armor on his lower legs and carried a bronze javelin[a] slung across his back.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'a bronze spear'; the Hebrew term may refer to a lighter spear-like weapon. Some have also understood it as another kind of weapon, but 'javelin' best fits the context here.
-    reason: lexical_alternative
+    text: Or possibly, “curved sword”; the kind of weapon meant by the Hebrew term is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: מִצְחַת
   chosen: greaves
@@ -68,14 +68,20 @@ revisions:
   from: And he had bronze greaves on his legs, and a bronze javelin slung between his shoulders.
   to: And he had bronze greaves on his legs, and a bronze javelin slung between his shoulders.
   rationale: Removed 'slung,' which is not explicit in the source. Kept 'bronze greaves' and 'between his shoulders' as accurate, natural renderings.
-
 - timestamp: '2026-05-18T02:55:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he had bronze greaves on his legs[a], and a bronze javelin between his shoulders.'
-  to: 'And he had bronze greaves on his legs[a], and a bronze javelin between his shoulders.'
+  from: And he had bronze greaves on his legs[a], and a bronze javelin between his shoulders.
+  to: And he had bronze greaves on his legs[a], and a bronze javelin between his shoulders.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''slung between his shoulders''].'
+- timestamp: '2026-11-09T17:23:05Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he had bronze greaves on his legs[a], and a bronze javelin between his shoulders.
+  to: He wore bronze armor on his lower legs and carried a bronze javelin[a] slung across his back.
+  rationale: The draft and lexical rationale included 'slung,' while the automated review removed it because it was not explicit. I restore the implied carrying sense because it makes the position understandable, while preserving 'javelin' as the preferred but uncertain weapon identification.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -95,3 +101,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/017/006.job-59148.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:05Z'
+  change_level: refined
+  confidence: medium
+  meaning: Goliath’s equipment includes bronze protection for his lower legs and a bronze weapon carried on his back.
+  meaning_decisions:
+  - source_phrase: מִצְחַת נְחֹשֶׁת עַל רַגְלָיו
+    prior_rendering: bronze greaves on his legs
+    new_rendering: bronze armor on his lower legs
+    rationale: This states what greaves protect without requiring familiarity with the technical armor term.
+  - source_phrase: בֵּין כְּתֵפָיו
+    prior_rendering: between his shoulders
+    new_rendering: slung across his back
+    rationale: The phrase describes the weapon’s carrying position; the new wording conveys that position naturally rather than leaving its practical meaning unclear.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The draft and lexical rationale included 'slung,' while the automated review removed it because it was not explicit. I restore the implied carrying sense because it makes the position understandable, while preserving 'javelin' as the preferred but uncertain weapon identification.

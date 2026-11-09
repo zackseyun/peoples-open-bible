@@ -18,18 +18,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And when this happened[a], having heard that his fellow countrymen from the city were secretly going out and more frequently slipping away because of the misery of their brothers[c][b],
-  philosophy: optimal-equivalence
+  text: When this happened, the king heard that the Jews living in the city were slipping out in secret more and more often because of their brothers’ suffering[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Greek text at the phrase rendered 'because of the misery of their brothers' is difficult, especially the word transmitted as ἰχθεῖ. The translation follows the apparent contextual sense of the clause rather than a more literal but obscure rendering.
-    reason: textual_variant
-  - marker: b
-    text: Or 'his compatriots from the city.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'stealing away more often.'
-    reason: lexical_alternative
+    text: Or, “to escape the suffering their brothers were enduring”; the closing clause is difficult in the supplied Greek.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ὡς δὲ τοῦτο ἐγενήθη
   chosen: And when this happened
@@ -124,14 +118,20 @@ revisions:
   from: And when this happened, after hearing that his fellow countrymen from the city were secretly going out and slipping away more frequently because of the misery of their brothers,
   to: And when this happened, after hearing that his fellow countrymen from the city were secretly going out and slipping away more frequently because of the misery of their brothers,
   rationale: Adjusted word order for more natural English ('more frequently slipping away' instead of 'slipping away more frequently') while preserving the source sense; retained the incomplete sentence structure of the verse.
-
 - timestamp: '2026-05-18T02:59:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when this happened[a], having heard that his fellow countrymen from the city were secretly going out and more frequently slipping away because of the misery of their brothers[c][b],'
-  to: 'And when this happened[a], having heard that his fellow countrymen from the city were secretly going out and more frequently slipping away because of the misery of their brothers[c][b],'
+  from: And when this happened[a], having heard that his fellow countrymen from the city were secretly going out and more frequently slipping away because of the misery of their brothers[c][b],
+  to: And when this happened[a], having heard that his fellow countrymen from the city were secretly going out and more frequently slipping away because of the misery of their brothers[c][b],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''after hearing''].'
+- timestamp: '2026-11-09T18:56:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when this happened[a], having heard that his fellow countrymen from the city were secretly going out and more frequently slipping away because of the misery of their brothers[c][b],
+  to: When this happened, the king heard that the Jews living in the city were slipping out in secret more and more often because of their brothers’ suffering[a].
+  rationale: The earlier passes retained the causal understanding of the difficult closing clause, which remains plausible in the chapter’s account of grief. I retain that reading but correct the unsupported identification of the city’s Jews as the king’s fellow countrymen; no maintainer revision is recorded.
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -151,3 +151,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/004/012.job-49582.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:48Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The king hears that Jews living in the city are repeatedly slipping out in secret because of their imprisoned brothers’ suffering.
+  meaning_decisions:
+  - source_phrase: ἀκούσας τοὺς ἐκ τῆς πόλεως ὁμοεθνεῖς
+    prior_rendering: having heard that his fellow countrymen from the city
+    new_rendering: the king heard that the Jews living in the city
+    rationale: The people in the city share the nationality of the imprisoned Jews, not the king’s nationality; their reference to the prisoners as brothers confirms this relationship.
+  - source_phrase: κρυβῇ ἐκπορευομένους πυκνότερον ὑποδιδράσκειν
+    prior_rendering: were secretly going out and more frequently slipping away
+    new_rendering: were slipping out in secret more and more often
+    rationale: The overlapping expressions describe repeated clandestine departures, rather than two distinct actions.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier passes retained the causal understanding of the difficult closing clause, which remains plausible in the chapter’s account of grief. I retain that reading but correct the unsupported identification of the city’s Jews as the king’s fellow countrymen; no maintainer revision is recorded.

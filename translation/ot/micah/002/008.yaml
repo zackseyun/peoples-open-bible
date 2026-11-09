@@ -4,11 +4,14 @@ source:
   edition: WLC
   text: וְ/אֶתְמ֗וּל עַמִּ/י֙ לְ/אוֹיֵ֣ב יְקוֹמֵ֔ם מִ/מּ֣וּל שַׂלְמָ֔ה אֶ֖דֶר תַּפְשִׁט֑וּ/ן מֵ/עֹבְרִ֣ים בֶּ֔טַח שׁוּבֵ֖י מִלְחָמָֽה׃
 translation:
-  text: But lately my people have risen up as an enemy; from off the garment you strip the robe from those who pass by securely[a], those returning from war.
-  philosophy: optimal-equivalence
+  text: But lately my people have risen up as an enemy. You strip the outer robe[a] from those who pass by without fear, those returning from war[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'those who shrink from war' / 'those turned away from battle.' The Hebrew final phrase is difficult and may describe peaceful noncombatants rather than soldiers returning home.
+    text: Literally, “from before the garment you strip the robe”; the Hebrew wording about the garments is difficult.
+    reason: lexical_alternative
+  - marker: b
+    text: Or, “those who turn away from war,” possibly describing peaceful noncombatants.
     reason: alternative_reading
 lexical_decisions:
 - source_word: וְאֶתְמוּל
@@ -117,14 +120,20 @@ revisions:
   from: But lately my people have risen up like an enemy; you strip the robe from the garment of those who pass by securely, those returning from war.
   to: But lately my people have risen up like an enemy; you strip the robe from the garment of those who pass by securely, those returning from war.
   rationale: Changed 'like an enemy' to 'as an enemy' for closer lexical accuracy, and restored the phrase 'from off the garment' to account for מִמּוּל שַׂלְמָה, which was omitted in the draft.
-
 - timestamp: '2026-05-17T22:12:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But lately my people have risen up as an enemy; from off the garment you strip the robe from those who pass by securely[a], those returning from war.'
-  to: 'But lately my people have risen up as an enemy; from off the garment you strip the robe from those who pass by securely[a], those returning from war.'
+  from: But lately my people have risen up as an enemy; from off the garment you strip the robe from those who pass by securely[a], those returning from war.
+  to: But lately my people have risen up as an enemy; from off the garment you strip the robe from those who pass by securely[a], those returning from war.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''like an enemy''].'
+- timestamp: '2026-11-09T18:24:35Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But lately my people have risen up as an enemy; from off the garment you strip the robe from those who pass by securely[a], those returning from war.
+  to: But lately my people have risen up as an enemy. You strip the outer robe[a] from those who pass by without fear, those returning from war[b].
+  rationale: I retain “as an enemy” and the established returning-from-war reading, including its serious alternative. The review’s concern to account for the garment wording is honored in a literal note rather than by keeping an opaque construction in the main text.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -144,3 +153,27 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/micah/002/008.job-40031.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:24:35Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Yahweh accuses his people of acting like enemies by stripping clothing from unsuspecting travelers.
+  meaning_decisions:
+  - source_phrase: מִמּוּל שַׂלְמָה אֶדֶר תַּפְשִׁטוּן
+    prior_rendering: from off the garment you strip the robe
+    new_rendering: You strip the outer robe
+    rationale: The accusation concerns stripping away clothing; “outer robe” conveys the clothing image without presenting the difficult relation between the two garment terms as clear English. The literal construction remains in a note.
+  - source_phrase: מֵעֹבְרִים בֶּטַח
+    prior_rendering: from those who pass by securely
+    new_rendering: from those who pass by without fear
+    rationale: The travelers’ unsuspecting confidence, rather than actual protection from harm, heightens the accusation.
+  footnote_kinds:
+    a: literal_wording
+    b: alternative_meaning
+  history_weighed: I retain “as an enemy” and the established returning-from-war reading, including its serious alternative. The review’s concern to account for the garment wording is honored in a literal note rather than by keeping an opaque construction in the main text.

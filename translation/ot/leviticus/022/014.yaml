@@ -4,21 +4,8 @@ source:
   edition: WLC
   text: וְ/אִ֕ישׁ כִּֽי יֹאכַ֥ל קֹ֖דֶשׁ בִּ/שְׁגָגָ֑ה וְ/יָסַ֤ף חֲמִֽשִׁית/וֹ֙ עָלָ֔י/ו וְ/נָתַ֥ן לַ/כֹּהֵ֖ן אֶת הַ/קֹּֽדֶשׁ־־׃
 translation:
-  text: And if a man eats a holy thing unintentionally[d][c][b][a], then he shall add a fifth to it and give the holy thing to the priest.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'anyone' / 'a person'; Hebrew 'a man' (אִישׁ), a masculine singular legal formulation that may function generically.
-    reason: lexical_alternative
-  - marker: b
-    text: '''A holy thing'' refers to consecrated holy food or property reserved for priestly use.'
-    reason: cultural_note
-  - marker: c
-    text: Or 'by mistake' / 'in error.'
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'add a fifth of it to it'.
-    reason: previous_rendering
+  text: Anyone who unintentionally eats holy food must make restitution to the priest for it, adding a fifth of its value.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְ/אִישׁ
   chosen: a man
@@ -130,12 +117,18 @@ revisions:
   from: add a fifth of it to it
   to: add a fifth to it
   rationale: The current rendering is a very literal translation of the Hebrew `חֲמִשִׁיתוֹ עָלָיו`. However, the repetition of 'it' in the phrase 'add a fifth of it to it' is stylistically awkward in English. The suggested rewrite, 'add a fifth to it,' is more idiomatic and improves readability without losing any meaning, as the object of 'a fifth' is clear from the context. This phrasing is common in other modern English translations for clarity.
+- timestamp: '2026-11-09T18:22:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And if a man eats a holy thing unintentionally[d][c][b][a], then he shall add a fifth to it and give the holy thing to the priest.
+  to: Anyone who unintentionally eats holy food must make restitution to the priest for it, adding a fifth of its value.
+  rationale: The earlier revision rightly removed the awkward doubled 'it.' I carry that clarity further by stating the restitution required for food already eaten, while retaining the additional fifth.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:11:25Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -159,3 +152,29 @@ cross_check:
     agree: 2
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/ot/leviticus/022/014.job-38428.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:22:13Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Anyone who mistakenly eats holy food must compensate the priest for it and add one fifth of its value.
+  meaning_decisions:
+  - source_phrase: וְאִישׁ כִּי יֹאכַל
+    prior_rendering: And if a man eats
+    new_rendering: Anyone who eats
+    rationale: The masculine legal example states a general rule, not an exemption for women.
+  - source_phrase: קֹדֶשׁ
+    prior_rendering: a holy thing
+    new_rendering: holy food
+    rationale: The verb 'eat' and the surrounding household rules identify the consecrated material as food.
+  - source_phrase: וְיָסַף חֲמִשִׁיתוֹ עָלָיו וְנָתַן לַכֹּהֵן אֶת הַקֹּדֶשׁ
+    prior_rendering: then he shall add a fifth to it and give the holy thing to the priest
+    new_rendering: must make restitution to the priest for it, adding a fifth of its value
+    rationale: Food already consumed cannot simply be handed back; the instruction requires restitution plus an additional fifth, without specifying whether repayment is in money or in kind.
+  footnote_kinds: {}
+  history_weighed: The earlier revision rightly removed the awkward doubled 'it.' I carry that clarity further by stating the restitution required for food already eaten, while retaining the additional fifth.

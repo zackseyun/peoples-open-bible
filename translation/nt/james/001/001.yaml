@@ -4,18 +4,15 @@ source:
   edition: SBLGNT
   text: Ἰάκωβος θεοῦ καὶ κυρίου Ἰησοῦ Χριστοῦ δοῦλος ταῖς δώδεκα φυλαῖς ταῖς ἐν τῇ διασπορᾷ χαίρειν.
 translation:
-  text: 'James[a], a servant of God and of the Lord Jesus Christ[c][b], to the twelve tribes in the Dispersion: greetings.'
-  philosophy: optimal-equivalence
+  text: 'James, a servant[a] of God and of the Lord Jesus Christ, to the twelve tribes scattered among the nations[b]: Greetings.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Greek title Christos means ‘Messiah’; here it appears in the conventional English personal-name form.
-    reason: alternative_reading
-  - marker: b
-    text: Or 'servant.' The Greek δοῦλος denotes one who belongs to a master; 'slave' is used here to preserve that stronger sense.
+    text: Greek doulos denotes a servant who belongs to a master and can also mean “slave.”
     reason: lexical_alternative
-  - marker: c
-    text: That is, the Jewish people living outside the land of Israel.
-    reason: cultural_note
+  - marker: b
+    text: The address may refer to Jewish believers living outside Israel, or more broadly to God's people viewed as Israel scattered among the nations.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: Ἰάκωβος
   chosen: James
@@ -111,10 +108,16 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "'James, a slave of God and of the Lord Jesus Messiah, to the twelve tribes in the Dispersion: greetings.'"
-  to: "'James, a slave of God and of the Lord Jesus the Messiah, to the twelve tribes in the Dispersion: greetings.'"
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
-
+  from: '''James, a slave of God and of the Lord Jesus Messiah, to the twelve tribes in the Dispersion: greetings.'''
+  to: '''James, a slave of God and of the Lord Jesus the Messiah, to the twelve tribes in the Dispersion: greetings.'''
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:09:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'James[a], a servant of God and of the Lord Jesus Christ[c][b], to the twelve tribes in the Dispersion: greetings.'
+  to: 'James, a servant[a] of God and of the Lord Jesus Christ, to the twelve tribes scattered among the nations[b]: Greetings.'
+  rationale: The automated revisions alternated between servant/slave and Christ/Messiah; the standing rulings support retaining “servant” and treating “Jesus Christ” here as the composite name construction, with “Lord” carrying the explicit title. The earlier explanation of the Dispersion informs the clearer wording, but its identification of the recipients is qualified because the address admits a broader understanding.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -136,3 +139,23 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/james/001/001.job-54624.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:09:33Z'
+  change_level: refined
+  confidence: medium
+  meaning: James identifies himself as a servant belonging to God and the Lord Jesus Christ and greets the twelve tribes scattered abroad.
+  meaning_decisions:
+  - source_phrase: ταῖς δώδεκα φυλαῖς ταῖς ἐν τῇ διασπορᾷ
+    prior_rendering: to the twelve tribes in the Dispersion
+    new_rendering: to the twelve tribes scattered among the nations
+    rationale: Expresses the meaning of Dispersion without requiring familiarity with the technical term, while preserving the significant designation “twelve tribes.”
+  footnote_kinds:
+    a: name_or_term
+    b: alternative_meaning
+  history_weighed: The automated revisions alternated between servant/slave and Christ/Messiah; the standing rulings support retaining “servant” and treating “Jesus Christ” here as the composite name construction, with “Lord” carrying the explicit title. The earlier explanation of the Dispersion informs the clearer wording, but its identification of the recipients is qualified because the address admits a broader understanding.

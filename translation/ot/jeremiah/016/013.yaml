@@ -4,21 +4,8 @@ source:
   edition: WLC
   text: וְ/הֵטַלְתִּ֣י אֶתְ/כֶ֗ם מֵ/עַל֙ הָ/אָ֣רֶץ הַ/זֹּ֔את עַל הָ/אָ֕רֶץ אֲשֶׁר֙ לֹ֣א יְדַעְתֶּ֔ם אַתֶּ֖ם וַ/אֲבֽוֹתֵי/כֶ֑ם וַ/עֲבַדְתֶּם שָׁ֞ם אֶת אֱלֹהִ֤ים אֲחֵרִים֙ יוֹמָ֣ם וָ/לַ֔יְלָה אֲשֶׁ֛ר לֹֽא אֶתֵּ֥ן לָ/כֶ֖ם חֲנִינָֽה־־־־׃ס
 translation:
-  text: So I will cast you out from this land onto a land that neither you nor your fathers have known[a], and there you will serve other gods day and night[d][c][b], for I will show you no favor.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'cast you' or 'throw you.' The Hebrew verb is forceful, describing violent expulsion from the land.
-    reason: lexical_alternative
-  - marker: b
-    text: 'Or ''your ancestors.'' Hebrew: ''your fathers.'''
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'worship other gods.' The Hebrew verb commonly means 'serve' and can include worshipful service.
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'for I will grant you no grace/mercy.' The Hebrew noun denotes favor or graciousness.
-    reason: lexical_alternative
+  text: So I will cast you out of this land into a land that neither you nor your ancestors have known. There you will serve other gods day and night, for I will show you no favor.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְהֵטַלְתִּי
   chosen: I will hurl
@@ -110,14 +97,20 @@ revisions:
   from: So I will hurl you from this land onto a land that neither you nor your fathers have known, and there you will serve other gods day and night, for I will show you no favor.
   to: So I will hurl you from this land onto a land that neither you nor your fathers have known, and there you will serve other gods day and night, for I will show you no favor.
   rationale: Changed 'hurl' to 'cast ... out' to more naturally and accurately reflect the verb with the sense of expulsion from the land, while preserving the rest of the verse.
-
 - timestamp: '2026-05-18T02:56:36Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So I will cast you out from this land onto a land that neither you nor your fathers have known[a], and there you will serve other gods day and night[d][c][b], for I will show you no favor.'
-  to: 'So I will cast you out from this land onto a land that neither you nor your fathers have known[a], and there you will serve other gods day and night[d][c][b], for I will show you no favor.'
+  from: So I will cast you out from this land onto a land that neither you nor your fathers have known[a], and there you will serve other gods day and night[d][c][b], for I will show you no favor.
+  to: So I will cast you out from this land onto a land that neither you nor your fathers have known[a], and there you will serve other gods day and night[d][c][b], for I will show you no favor.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I will hurl''].'
+- timestamp: '2026-11-09T17:56:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So I will cast you out from this land onto a land that neither you nor your fathers have known[a], and there you will serve other gods day and night[d][c][b], for I will show you no favor.
+  to: So I will cast you out of this land into a land that neither you nor your ancestors have known. There you will serve other gods day and night, for I will show you no favor.
+  rationale: The history alternates between 'hurl' and 'cast out,' but the current 'cast out' already preserves forceful expulsion. I retain 'serve other gods' because its breadth preserves the grim irony of exile without specifying whether the service is voluntary or coerced.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -139,3 +132,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/016/013.job-67459.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:56:13Z'
+  change_level: refined
+  confidence: high
+  meaning: Yahweh will forcibly exile the people to an unfamiliar land, where they will serve other gods without receiving his favor.
+  meaning_decisions:
+  - source_phrase: מֵעַל הָאָרֶץ הַזֹּאת עַל הָאָרֶץ
+    prior_rendering: out from this land onto a land
+    new_rendering: out of this land into a land
+    rationale: Natural English directional expressions convey expulsion and relocation without suggesting a literal landing on a surface.
+  - source_phrase: אַתֶּם וַאֲבוֹתֵיכֶם
+    prior_rendering: you nor your fathers
+    new_rendering: you nor your ancestors
+    rationale: The unfamiliarity extends to the people’s ancestral generations.
+  footnote_kinds: {}
+  history_weighed: The history alternates between 'hurl' and 'cast out,' but the current 'cast out' already preserves forceful expulsion. I retain 'serve other gods' because its breadth preserves the grim irony of exile without specifying whether the service is voluntary or coerced.

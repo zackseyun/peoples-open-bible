@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: παραγενόμενος δέ τις ἀπήγγειλεν αὐτοῖς ὅτι Ἰδοὺ οἱ ἄνδρες οὓς ἔθεσθε ἐν τῇ φυλακῇ εἰσὶν ἐν τῷ ἱερῷ ἑστῶτες καὶ διδάσκοντες τὸν λαόν.
 translation:
-  text: But someone came and reported to them[a], “Look, the men whom you put in prison are standing in the temple and teaching the people.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “in the temple courts”; the Greek ἱερόν refers to the temple complex rather than specifically the inner sanctuary.
-    reason: lexical_alternative
+  text: Then someone came and reported to them, “Look, the men you put in prison are standing in the temple courts and teaching the people.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: παραγενόμενος
   chosen: came
@@ -134,14 +130,20 @@ revisions:
   from: But someone came and reported to them, “Look, the men whom you put in the prison are standing in the temple and teaching the people.”
   to: But someone came and reported to them, “Look, the men whom you put in the prison are standing in the temple and teaching the people.”
   rationale: Changed 'in the prison' to 'in prison' for more natural English while preserving the sense. No other changes needed.
-
 - timestamp: '2026-05-18T03:00:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But someone came and reported to them[a], “Look, the men whom you put in prison are standing in the temple and teaching the people.”'
-  to: 'But someone came and reported to them[a], “Look, the men whom you put in prison are standing in the temple and teaching the people.”'
+  from: But someone came and reported to them[a], “Look, the men whom you put in prison are standing in the temple and teaching the people.”
+  to: But someone came and reported to them[a], “Look, the men whom you put in prison are standing in the temple and teaching the people.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the prison''].'
+- timestamp: '2026-11-09T17:05:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But someone came and reported to them[a], “Look, the men whom you put in prison are standing in the temple and teaching the people.”
+  to: Then someone came and reported to them, “Look, the men you put in prison are standing in the temple courts and teaching the people.”
+  rationale: The review and revert debated 'in the prison' versus 'in prison'; I retain the idiomatic wording already in the current text. The existing temple footnote is now carried directly by 'temple courts.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -161,3 +163,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/005/025.job-47103.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:30Z'
+  change_level: refined
+  confidence: high
+  meaning: Someone informed the authorities that the imprisoned apostles were openly teaching in the temple courts.
+  meaning_decisions:
+  - source_phrase: παραγενόμενος δέ τις
+    prior_rendering: But someone came
+    new_rendering: Then someone came
+    rationale: The connective advances the narrative with new information rather than opposing the preceding statement.
+  - source_phrase: ἐν τῷ ἱερῷ
+    prior_rendering: in the temple
+    new_rendering: in the temple courts
+    rationale: This incorporates the existing clarification that the apostles were teaching publicly in the temple complex, not in the inner sanctuary.
+  footnote_kinds: {}
+  history_weighed: The review and revert debated 'in the prison' versus 'in prison'; I retain the idiomatic wording already in the current text. The existing temple footnote is now carried directly by 'temple courts.'

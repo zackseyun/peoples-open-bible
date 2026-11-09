@@ -9,12 +9,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And he said to them[a], “Do not be afraid; peace be with you. But bless God forever.”
-  philosophy: optimal-equivalence
+  text: He said to them, “Do not be afraid; peace will be yours[a]. But bless God forever.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'peace will be with you.' The Greek literally reads, 'peace to you will be.'
-    reason: lexical_alternative
+    text: Or, 'Peace be with you.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: Μὴ φοβεῖσθε
   chosen: Do not be afraid
@@ -91,14 +91,20 @@ revisions:
   from: And he said to them, “Do not be afraid; peace will be yours. But bless God forever.”
   to: And he said to them, “Do not be afraid; peace will be yours. But bless God forever.”
   rationale: Revised 'peace will be yours' to 'peace be with you' to more naturally and accurately reflect εἰρήνη ὑμῖν ἔσται in formal translation style. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:59:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he said to them[a], “Do not be afraid; peace be with you. But bless God forever.”'
-  to: 'And he said to them[a], “Do not be afraid; peace be with you. But bless God forever.”'
+  from: And he said to them[a], “Do not be afraid; peace be with you. But bless God forever.”
+  to: And he said to them[a], “Do not be afraid; peace be with you. But bless God forever.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''peace will be yours''].'
+- timestamp: '2026-11-09T19:10:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he said to them[a], “Do not be afraid; peace be with you. But bless God forever.”
+  to: He said to them, “Do not be afraid; peace will be yours[a]. But bless God forever.
+  rationale: The first recorded draft and the lexical discussion both favor the future assurance, although the current wording uses a greeting-style expression. I restore the assurance supported by the source and retain the greeting as a serious alternative.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -118,3 +124,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/tobit/012/017.job-52580.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:02Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Raphael reassures both men that they will have peace and tells them to bless God forever.
+  meaning_decisions:
+  - source_phrase: εἰρήνη ὑμῖν ἔσται
+    prior_rendering: peace be with you
+    new_rendering: peace will be yours
+    rationale: The future verb supports an assurance of peace following the command not to fear, rather than merely a conventional greeting or wish.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first recorded draft and the lexical discussion both favor the future assurance, although the current wording uses a greeting-style expression. I restore the assurance supported by the source and retain the greeting as a serious alternative.

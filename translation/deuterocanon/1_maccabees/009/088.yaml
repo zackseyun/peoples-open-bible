@@ -8,12 +8,8 @@ source:
   - 661
   validation: no_reference
 translation:
-  text: And it happened that when Alexander the king heard these words[a], he continued to honor Jonathan, and he sent him a clasp.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'a brooch' or 'a buckle'; the Greek term denotes a fastening ornament.
-    reason: lexical_alternative
+  text: When King Alexander heard what had happened, he gave Jonathan further honor and sent him a clasp
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐγένετο ὡς
   chosen: And it happened that when
@@ -88,14 +84,20 @@ revisions:
   from: And it happened that when Alexander the king heard these words, he went on to honor Jonathan, and he sent him a clasp.
   to: And it happened that when Alexander the king heard these words, he went on to honor Jonathan, and he sent him a clasp.
   rationale: Changed 'went on to honor' to 'continued to honor' for a more natural rendering of προσέθετο δοξάσαι while preserving the sense of adding further honor. No other changes needed.
-
 - timestamp: '2026-05-18T02:58:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And it happened that when Alexander the king heard these words[a], he continued to honor Jonathan, and he sent him a clasp.'
-  to: 'And it happened that when Alexander the king heard these words[a], he continued to honor Jonathan, and he sent him a clasp.'
+  from: And it happened that when Alexander the king heard these words[a], he continued to honor Jonathan, and he sent him a clasp.
+  to: And it happened that when Alexander the king heard these words[a], he continued to honor Jonathan, and he sent him a clasp.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''went on to''].'
+- timestamp: '2026-11-09T18:53:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And it happened that when Alexander the king heard these words[a], he continued to honor Jonathan, and he sent him a clasp.
+  to: When King Alexander heard what had happened, he gave Jonathan further honor and sent him a clasp
+  rationale: Both the draft’s “went on to” and the later “continued to” recognize additional honor; “further honor” states that result directly. The clasp remains connected to its material, which appears in the next supplied unit.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -115,3 +117,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/009/088.job-48507.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:45Z'
+  change_level: retranslated
+  confidence: high
+  meaning: On hearing of Jonathan’s achievements, King Alexander honored him further by sending him a clasp.
+  meaning_decisions:
+  - source_phrase: ἐγένετο ὡς
+    prior_rendering: And it happened that when
+    new_rendering: When
+    rationale: The narrative formula introduces the event but adds no separate occurrence that English needs to state.
+  - source_phrase: ἤκουσεν … τοὺς λόγους τούτους
+    prior_rendering: heard these words
+    new_rendering: heard what had happened
+    rationale: Alexander receives a report of the preceding events, not an identified quotation.
+  - source_phrase: προσέθετο δοξάσαι τὸν Ἰωναθάν
+    prior_rendering: he continued to honor Jonathan
+    new_rendering: he gave Jonathan further honor
+    rationale: The construction emphasizes additional honor, made concrete in the royal gift that follows.
+  footnote_kinds: {}
+  history_weighed: Both the draft’s “went on to” and the later “continued to” recognize additional honor; “further honor” states that result directly. The clasp remains connected to its material, which appears in the next supplied unit.

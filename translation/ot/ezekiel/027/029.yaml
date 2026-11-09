@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְֽ/יָרְד֞וּ מֵ/אָנִיּֽוֹתֵי/הֶ֗ם כֹּ֚ל תֹּפְשֵׂ֣י מָשׁ֔וֹט מַלָּחִ֕ים כֹּ֖ל חֹבְלֵ֣י הַ/יָּ֑ם אֶל הָ/אָ֖רֶץ יַעֲמֹֽדוּ־׃
 translation:
-  text: And all who handle the oar will come down from their ships[a]; the sailors, all the mariners of the sea[b], will stand on the land.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'all the rowers.' The Hebrew is literally 'all who handle the oar.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'all the mariners of the sea.'
-    reason: lexical_alternative
+  text: All who handle the oar will leave their ships; the sailors and all the sea’s pilots will stand on shore.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְיָרְדוּ
   chosen: will come down
@@ -85,14 +78,20 @@ revisions:
   from: And all who handle the oar will come down from their ships; the sailors, all the seamen of the sea, will stand on the land.
   to: And all who handle the oar will come down from their ships; the sailors, all the seamen of the sea, will stand on the land.
   rationale: Changed 'seamen' to 'mariners' for a more formal and natural register while preserving the meaning; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:54:47Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And all who handle the oar will come down from their ships[a]; the sailors, all the mariners of the sea[b], will stand on the land.'
-  to: 'And all who handle the oar will come down from their ships[a]; the sailors, all the mariners of the sea[b], will stand on the land.'
+  from: And all who handle the oar will come down from their ships[a]; the sailors, all the mariners of the sea[b], will stand on the land.
+  to: And all who handle the oar will come down from their ships[a]; the sailors, all the mariners of the sea[b], will stand on the land.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''all the seamen of the sea''].'
+- timestamp: '2026-11-09T17:39:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And all who handle the oar will come down from their ships[a]; the sailors, all the mariners of the sea[b], will stand on the land.
+  to: All who handle the oar will leave their ships; the sailors and all the sea’s pilots will stand on shore.
+  rationale: The recorded “seamen”/“mariners” revision concerned register rather than meaning. I retain the concrete oar image but distinguish the pilots consistently with the surrounding verses and express disembarkation idiomatically.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -112,3 +111,29 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/027/029.job-64003.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:39:55Z'
+  change_level: refined
+  confidence: high
+  meaning: Other seafarers will leave their ships and stand on shore in response to Tyre’s ruin.
+  meaning_decisions:
+  - source_phrase: וְיָרְדוּ מֵאָנִיּוֹתֵיהֶם
+    prior_rendering: will come down from their ships
+    new_rendering: will leave their ships
+    rationale: The movement is disembarkation, not necessarily a downward climb.
+  - source_phrase: כֹּל חֹבְלֵי הַיָּם
+    prior_rendering: all the mariners of the sea
+    new_rendering: all the sea’s pilots
+    rationale: The chapter distinguishes these navigators from ordinary sailors and rowers; this keeps that distinction consistent.
+  - source_phrase: אֶל הָאָרֶץ יַעֲמֹדוּ
+    prior_rendering: will stand on the land
+    new_rendering: will stand on shore
+    rationale: The maritime setting identifies the land as the shore where the seafarers stand after leaving their vessels.
+  footnote_kinds: {}
+  history_weighed: The recorded “seamen”/“mariners” revision concerned register rather than meaning. I retain the concrete oar image but distinguish the pilots consistently with the surrounding verses and express disembarkation idiomatically.

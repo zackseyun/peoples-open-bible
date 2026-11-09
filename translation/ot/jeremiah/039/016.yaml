@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: הָל֣וֹךְ וְ/אָמַרְתָּ֡ לְ/עֶבֶד מֶ֨לֶךְ הַ/כּוּשִׁ֜י לֵ/אמֹ֗ר כֹּֽה אָמַ֞ר יְהוָ֤ה צְבָאוֹת֙ אֱלֹהֵ֣י יִשְׂרָאֵ֔ל הִנְ/נִי֩ מבי אֶת דְּבָרַ֜/י אֶל הָ/עִ֥יר הַ/זֹּ֛את לְ/רָעָ֖ה וְ/לֹ֣א לְ/טוֹבָ֑ה וְ/הָי֥וּ לְ/פָנֶ֖י/ךָ בַּ/יּ֥וֹם הַ/הֽוּא־־־־׃
 translation:
-  text: 'Go and say to Ebed-melech the Cushite[a], ‘Thus says Yahweh of hosts, the God of Israel: Behold, I am bringing my words against this city for harm and not for good[b], and they will come to pass before you on that day.’'
-  philosophy: optimal-equivalence
+  text: '“Go and say to Ebed-melech the Cushite[a], ‘Thus says Yahweh of hosts, the God of Israel: I am about to fulfill my words against this city, bringing disaster and not good. On that day you will see them come true.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the Ethiopian.' The Hebrew says 'the Cushite.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'for disaster and not for good.'
-    reason: lexical_alternative
+    text: Cush was south of Egypt, chiefly in what is now Sudan.
+    reason: cultural_note
 lexical_decisions:
 - source_word: הָל֣וֹךְ וְאָמַרְתָּ
   chosen: Go and say
@@ -134,14 +131,20 @@ revisions:
   from: 'Go and say to Ebed-melech the Cushite, ‘Thus says the LORD of hosts, the God of Israel: Behold, I am bringing my words against this city for harm and not for good, and they will come to pass before you on that day.’'
   to: 'Go and say to Ebed-melech the Cushite, ‘Thus says the LORD of hosts, the God of Israel: Behold, I am bringing my words upon this city for harm and not for good, and they will be before you on that day.’'
   rationale: Changed “against” to “upon” to more closely reflect the preposition, and revised “they will come to pass before you” to the more literal “they will be before you,” preserving the Hebrew wording without interpretive expansion.
-
 - timestamp: '2026-05-16T07:55:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'Go and say to Ebed-melech the Cushite[a], ‘Thus says Yahweh of hosts, the God of Israel: Behold, I am bringing my words upon this city for harm and not for good[b], and they will be before you on that day.’'
   to: 'Go and say to Ebed-melech the Cushite[a], ‘Thus says Yahweh of hosts, the God of Israel: Behold, I am bringing my words against this city for harm and not for good[b], and they will come to pass before you on that day.’'
-  rationale: 'Azure substituted ''upon this city'' (drafter''s explicit rejected_alternative for אֶל הָעִיר — drafter chose ''against'' for hostile-direction context) and ''they will be before you'' (drafter''s explicit rejected_alternative — drafter chose ''come to pass before you'' for contextual sense of events occurring in his sight).'
+  rationale: Azure substituted 'upon this city' (drafter's explicit rejected_alternative for אֶל הָעִיר — drafter chose 'against' for hostile-direction context) and 'they will be before you' (drafter's explicit rejected_alternative — drafter chose 'come to pass before you' for contextual sense of events occurring in his sight).
+- timestamp: '2026-11-09T18:00:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Go and say to Ebed-melech the Cushite[a], ‘Thus says Yahweh of hosts, the God of Israel: Behold, I am bringing my words against this city for harm and not for good[b], and they will come to pass before you on that day.’'
+  to: '“Go and say to Ebed-melech the Cushite[a], ‘Thus says Yahweh of hosts, the God of Israel: I am about to fulfill my words against this city, bringing disaster and not good. On that day you will see them come true.'
+  rationale: The later history rightly restored the contextual senses 'against' and 'come to pass' after a more literal review obscured them. I retain those gains while making the enactment and witnessing of Yahweh’s words explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -163,3 +166,30 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/039/016.job-68001.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:00:30Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Yahweh instructed Jeremiah to tell Ebed-melech that he would witness the fulfillment of the announced disaster against Jerusalem.
+  meaning_decisions:
+  - source_phrase: הִנְנִי מֵבִיא אֶת דְּבָרַי אֶל הָעִיר הַזֹּאת
+    prior_rendering: Behold, I am bringing my words against this city
+    new_rendering: I am about to fulfill my words against this city
+    rationale: The words are announced judgments being enacted, not utterances being transported; the imminent construction retains the force of the announcement.
+  - source_phrase: לְרָעָה וְלֹא לְטוֹבָה
+    prior_rendering: for harm and not for good
+    new_rendering: bringing disaster and not good
+    rationale: The context concerns the city’s destruction, so 'disaster' conveys the scale and kind of harm intended.
+  - source_phrase: וְהָיוּ לְפָנֶיךָ בַּיּוֹם הַהוּא
+    prior_rendering: and they will come to pass before you on that day
+    new_rendering: On that day you will see them come true
+    rationale: Conveys the fulfillment occurring in Ebed-melech’s sight rather than reproducing an opaque spatial expression.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The later history rightly restored the contextual senses 'against' and 'come to pass' after a more literal review obscured them. I retain those gains while making the enactment and witnessing of Yahweh’s words explicit.

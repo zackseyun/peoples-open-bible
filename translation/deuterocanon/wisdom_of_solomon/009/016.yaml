@@ -20,15 +20,8 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: And we can scarcely guess the things on earth[a], and we find the things at hand with labor[b]; but who has traced out the things in the heavens?
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'what is at hand' for 'the things in our hands.' The Greek expression can refer to matters close by or readily accessible.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'searched out' for 'traced out.' The Greek verb suggests thorough investigation or tracking something out fully.
-    reason: lexical_alternative
+  text: We can scarcely guess at things on earth, and only with toil do we grasp what lies close at hand; but who has searched out the things in the heavens?
+  philosophy: dynamic
 lexical_decisions:
 - source_word: μόλις
   chosen: scarcely
@@ -126,14 +119,20 @@ revisions:
   from: And we can scarcely guess the things on earth, and we find the things in our hands with labor; but who has traced out the things in the heavens?
   to: And we can scarcely guess the things on earth, and we find the things in our hands with labor; but who has traced out the things in the heavens?
   rationale: Revised 'in our hands' to 'at hand' to better reflect the idiomatic sense of ἐν χερσίν as things readily accessible or before us, while preserving the formal tone and structure. No other changes needed.
-
 - timestamp: '2026-05-18T03:00:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And we can scarcely guess the things on earth[a], and we find the things at hand with labor[b]; but who has traced out the things in the heavens?'
-  to: 'And we can scarcely guess the things on earth[a], and we find the things at hand with labor[b]; but who has traced out the things in the heavens?'
+  from: And we can scarcely guess the things on earth[a], and we find the things at hand with labor[b]; but who has traced out the things in the heavens?
+  to: And we can scarcely guess the things on earth[a], and we find the things at hand with labor[b]; but who has traced out the things in the heavens?
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the things in our hands''].'
+- timestamp: '2026-11-09T19:11:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And we can scarcely guess the things on earth[a], and we find the things at hand with labor[b]; but who has traced out the things in the heavens?
+  to: We can scarcely guess at things on earth, and only with toil do we grasp what lies close at hand; but who has searched out the things in the heavens?
+  rationale: The recorded review correctly identifies 'at hand' as the idiomatic meaning of the Greek expression, despite the conflicting automated revert record. I keep that gain and follow the lexical evidence that the final verb denotes thorough investigation; the earlier synonym notes are no longer needed.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -153,3 +152,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/009/016.job-39287.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:40Z'
+  change_level: retranslated
+  confidence: high
+  meaning: People struggle to understand even earthly matters close at hand, so the question of who can search out heavenly things exposes a still greater limitation.
+  meaning_decisions:
+  - source_phrase: τὰ ἐν χερσὶν εὑρίσκομεν μετὰ πόνου
+    prior_rendering: we find the things at hand with labor
+    new_rendering: only with toil do we grasp what lies close at hand
+    rationale: In this argument about knowing and reasoning, the discovery is intellectual rather than the physical finding of objects; the wording also preserves the contrast between accessible matters and heavenly things.
+  - source_phrase: τίς ἐξιχνίασεν
+    prior_rendering: who has traced out
+    new_rendering: who has searched out
+    rationale: '''Searched out'' conveys thorough investigation more clearly than wording that can suggest drawing or mapping an outline.'
+  footnote_kinds: {}
+  history_weighed: The recorded review correctly identifies 'at hand' as the idiomatic meaning of the Greek expression, despite the conflicting automated revert record. I keep that gain and follow the lexical evidence that the final verb denotes thorough investigation; the earlier synonym notes are no longer needed.

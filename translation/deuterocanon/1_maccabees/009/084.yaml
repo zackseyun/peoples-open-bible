@@ -8,14 +8,11 @@ source:
   - 661
   validation: no_reference
 translation:
-  text: and he took their spoils[a], and he burned the temple of Dagon and its temple with fire[b]. And those who had fallen by the sword
-  philosophy: optimal-equivalence
+  text: it, seized their spoils, and set fire to the temple of Dagon and the city’s temple[a]. Those killed by the sword amounted,
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The surviving Greek excerpt for this verse appears incomplete at both the beginning and the end. The translation therefore reflects only the extant wording supplied here, and the final clause breaks off after 'came to.'
-    reason: textual_variant
-  - marker: b
-    text: Or 'its temple' for 'her temple'; the Greek uses a feminine pronoun, likely referring to a feminine antecedent such as the city.
+    text: Literally, “the temple of Dagon and its temple.” The feminine “its” apparently refers to the city; the repeated temple wording in the supplied Greek is unclear.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἔλαβεν
@@ -95,14 +92,20 @@ revisions:
   from: and he took their spoils, and he burned the temple of Dagon and her temple with fire. And those who had fallen by the sword came to
   to: and he took their spoils, and he burned the temple of Dagon and her temple with fire. And those who had fallen by the sword came to
   rationale: Changed 'her temple' to 'its temple' for natural English referring to the city; removed the unsupported words 'came to' because the Greek clause is incomplete here and they are not represented in the source provided.
-
 - timestamp: '2026-05-18T02:58:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and he took their spoils[a], and he burned the temple of Dagon and its temple with fire[b]. And those who had fallen by the sword'
-  to: 'and he took their spoils[a], and he burned the temple of Dagon and its temple with fire[b]. And those who had fallen by the sword'
+  from: and he took their spoils[a], and he burned the temple of Dagon and its temple with fire[b]. And those who had fallen by the sword
+  to: and he took their spoils[a], and he burned the temple of Dagon and its temple with fire[b]. And those who had fallen by the sword
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''her temple''].'
+- timestamp: '2026-11-09T18:53:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and he took their spoils[a], and he burned the temple of Dagon and its temple with fire[b]. And those who had fallen by the sword
+  to: it, seized their spoils, and set fire to the temple of Dagon and the city’s temple[a]. Those killed by the sword amounted,
+  rationale: I retain the improvement from gendered “her” to an English reference to the city, while flagging the unresolved temple repetition. Unlike the current text, I represent ἐγένοντο with “amounted,” leaving the total itself in the next unit.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -122,3 +125,34 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/009/084.job-48503.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:45Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Jonathan seized the spoils and burned the temples, and those killed by the sword were included in the casualty total.
+  meaning_decisions:
+  - source_phrase: αὐτῆς
+    prior_rendering: ''
+    new_rendering: it
+    rationale: This opening pronoun completes the surrounding-cities phrase begun in the preceding supplied unit.
+  - source_phrase: τὸ ἱερὸν αὐτῆς
+    prior_rendering: its temple
+    new_rendering: the city’s temple
+    rationale: The feminine pronoun most plausibly refers to Azotus; the note preserves the uncertainty and the source’s repetitive wording.
+  - source_phrase: ἐνεπύρισεν ἐν πυρί
+    prior_rendering: he burned … with fire
+    new_rendering: set fire to
+    rationale: The Greek construction describes burning emphatically; English does not need the redundant specification “with fire.”
+  - source_phrase: ἐγένοντο οἱ πεπτωκότες μαχαίρᾳ
+    prior_rendering: those who had fallen by the sword
+    new_rendering: Those killed by the sword amounted,
+    rationale: The source includes a verb introducing the casualty total, which is completed by the number in the next supplied unit.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: I retain the improvement from gendered “her” to an English reference to the city, while flagging the unresolved temple repetition. Unlike the current text, I represent ἐγένοντο with “amounted,” leaving the total itself in the next unit.

@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: λέγουσιν αὐτῷ· Κύριε, ἵνα ⸂ἀνοιγῶσιν οἱ ὀφθαλμοὶ ἡμῶν⸃.
 translation:
-  text: They said to him[a], “Lord, let our eyes be opened.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “Sir, that our eyes may be opened.”
-    reason: lexical_alternative
+  text: They said to him, “Lord, let our eyes be opened.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: λέγουσιν
   chosen: They said
@@ -75,14 +71,20 @@ revisions:
   from: They said to him, “Lord, that our eyes may be opened.”
   to: They said to him, “Lord, that our eyes may be opened.”
   rationale: Replaced 'that our eyes may be opened' with 'let our eyes be opened' to render ἵνα more naturally in this request context while preserving the formal tone and meaning.
-
 - timestamp: '2026-05-18T03:01:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'They said to him[a], “Lord, let our eyes be opened.”'
-  to: 'They said to him[a], “Lord, let our eyes be opened.”'
+  from: They said to him[a], “Lord, let our eyes be opened.”
+  to: They said to him[a], “Lord, let our eyes be opened.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''may be opened''].'
+- timestamp: '2026-11-09T17:15:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: They said to him[a], “Lord, let our eyes be opened.”
+  to: They said to him, “Lord, let our eyes be opened.”
+  rationale: The recorded review recognized that the earlier “that our eyes may be opened” needed to function naturally as a request. The current wording achieves that while retaining the eyes-opening image, so it stands.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -105,3 +107,17 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/020/033.job-57229.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:15:14Z'
+  change_level: kept
+  confidence: high
+  meaning: The blind men ask Jesus to open their eyes so that they can see.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The recorded review recognized that the earlier “that our eyes may be opened” needed to function naturally as a request. The current wording achieves that while retaining the eyes-opening image, so it stands.

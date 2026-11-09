@@ -4,15 +4,15 @@ source:
   edition: SBLGNT
   text: καὶ αὐτὸς παρήγγειλεν αὐτῷ μηδενὶ εἰπεῖν, ἀλλὰ ἀπελθὼν δεῖξον σεαυτὸν τῷ ἱερεῖ, καὶ προσένεγκε περὶ τοῦ καθαρισμοῦ σου καθὼς προσέταξεν Μωϋσῆς εἰς μαρτύριον αὐτοῖς.
 translation:
-  text: And he ordered him to tell no one[a], but go and show yourself to the priest, and offer for your cleansing as Moses commanded[b], for a testimony to them.
-  philosophy: optimal-equivalence
+  text: He ordered him, “Tell no one, but go and show yourself to the priest. Make the offering Moses commanded[a] for your cleansing, as a testimony to them[b].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'as a testimony to them'; the phrase may refer to testimony to the priests or others, and some understand it as evidence against them.
-    reason: alternative_reading
-  - marker: b
-    text: See Leviticus 14 for the offering Moses commanded for cleansing from leprosy.
+    text: See Leviticus 14:1–32.
     reason: cross_reference
+  - marker: b
+    text: Or, “as evidence against them”; “them” may refer to the priests or to others.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: παρήγγειλεν
   chosen: ordered
@@ -103,14 +103,20 @@ revisions:
   from: And he ordered him to tell no one, but, after going, show yourself to the priest and offer for your cleansing as Moses commanded, for a testimony to them.
   to: And he ordered him to tell no one, but, after going, show yourself to the priest and offer for your cleansing as Moses commanded, for a testimony to them.
   rationale: Removed 'after going' and rendered ἀπελθών more naturally as 'go and show yourself'; otherwise retained the draft's accurate wording and formal register.
-
 - timestamp: '2026-05-18T03:01:54Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he ordered him to tell no one[a], but go and show yourself to the priest, and offer for your cleansing as Moses commanded[b], for a testimony to them.'
-  to: 'And he ordered him to tell no one[a], but go and show yourself to the priest, and offer for your cleansing as Moses commanded[b], for a testimony to them.'
+  from: And he ordered him to tell no one[a], but go and show yourself to the priest, and offer for your cleansing as Moses commanded[b], for a testimony to them.
+  to: And he ordered him to tell no one[a], but go and show yourself to the priest, and offer for your cleansing as Moses commanded[b], for a testimony to them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''after going''].'
+- timestamp: '2026-11-09T17:12:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he ordered him to tell no one[a], but go and show yourself to the priest, and offer for your cleansing as Moses commanded[b], for a testimony to them.
+  to: He ordered him, “Tell no one, but go and show yourself to the priest. Make the offering Moses commanded[a] for your cleansing, as a testimony to them[b].”
+  rationale: I retain the history’s useful move from “after going” to “go and show yourself”; the automated revert supplies no meaning-based reason to restore the awkward construction. The documented uncertainty about “them” remains in the text and is explained in a correctly placed note.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -134,3 +140,27 @@ cross_check:
     major-issues: 1
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/luke/005/014.job-39005.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:07Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus orders the healed man to tell no one, present himself to the priest, and make the offering prescribed by Moses as a testimony to them.
+  meaning_decisions:
+  - source_phrase: μηδενὶ εἰπεῖν
+    prior_rendering: to tell no one
+    new_rendering: Tell no one
+    rationale: Putting all the instructions into direct speech avoids the current wording’s confusing shift from indirect reporting to commands addressed to the man.
+  - source_phrase: προσένεγκε περὶ τοῦ καθαρισμοῦ σου καθὼς προσέταξεν Μωϋσῆς
+    prior_rendering: offer for your cleansing as Moses commanded
+    new_rendering: Make the offering Moses commanded for your cleansing
+    rationale: The sacrificial context supplies the object of 'offer'; naming the offering makes the instruction clear while retaining its connection to ritual cleansing.
+  footnote_kinds:
+    a: cross_reference
+    b: alternative_meaning
+  history_weighed: I retain the history’s useful move from “after going” to “go and show yourself”; the automated revert supplies no meaning-based reason to restore the awkward construction. The documented uncertainty about “them” remains in the text and is explained in a correctly placed note.

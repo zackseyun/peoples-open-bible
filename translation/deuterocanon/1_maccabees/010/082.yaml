@@ -30,18 +30,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Simon deployed his force and joined battle with the phalanx[a], for the cavalry had been thrown into disorder[c][b]; and they were crushed by him and fled.
-  philosophy: optimal-equivalence
+  text: Simon then deployed his troops and engaged the enemy’s infantry phalanx, since the cavalry was worn out[a]. He crushed the infantry, and they fled.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'joined battle with the phalanx.'
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'the horse'; that is, the cavalry.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'was broken up' / 'was undone,' referring to the cavalry's loss of cohesion.
-    reason: lexical_alternative
+    text: Or “had fallen into disorder.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἐξέλυσεν
   chosen: deployed
@@ -130,14 +124,20 @@ revisions:
   from: And Simon deployed his force and engaged the phalanx, for the cavalry had been thrown into disorder; and they were crushed before him and fled.
   to: And Simon deployed his force and engaged the phalanx, for the cavalry had been thrown into disorder; and they were crushed before him and fled.
   rationale: Changed 'engaged the phalanx' to 'joined battle with the phalanx' for a more natural rendering of συνῆψεν πρὸς. Changed 'before him' to 'by him' to reflect ἀπ᾽ αὐτοῦ more directly.
-
 - timestamp: '2026-05-16T14:52:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Simon deployed his force and joined battle with the phalanx[a], for the cavalry had been thrown into disorder[c][b]; and they were crushed by him and fled.'
-  to: 'And Simon deployed his force and joined battle with the phalanx[a], for the cavalry had been thrown into disorder[c][b]; and they were crushed by him and fled.'
-  rationale: 'Restored drafter ''engaged the phalanx'' (preserving the chosen rendering of συνῆψεν as military engagement) and ''before him'' (preserving the chosen English idiom for ἀπ᾽ αὐτοῦ) per chosen renderings.'
+  from: And Simon deployed his force and joined battle with the phalanx[a], for the cavalry had been thrown into disorder[c][b]; and they were crushed by him and fled.
+  to: And Simon deployed his force and joined battle with the phalanx[a], for the cavalry had been thrown into disorder[c][b]; and they were crushed by him and fled.
+  rationale: Restored drafter 'engaged the phalanx' (preserving the chosen rendering of συνῆψεν as military engagement) and 'before him' (preserving the chosen English idiom for ἀπ᾽ αὐτοῦ) per chosen renderings.
+- timestamp: '2026-11-09T19:53:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Simon deployed his force and joined battle with the phalanx[a], for the cavalry had been thrown into disorder[c][b]; and they were crushed by him and fled.
+  to: Simon then deployed his troops and engaged the enemy’s infantry phalanx, since the cavalry was worn out[a]. He crushed the infantry, and they fled.
+  rationale: The history correctly recognizes deployment and combat against a phalanx, which I preserve. The preceding verse’s weariness favors 'worn out' over the earlier lexical preference for disorder, which is retained as an alternative.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -157,3 +157,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/010/082.job-48590.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:53:08Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: With the enemy cavalry weakened, Simon sends his troops against the infantry phalanx and defeats it, causing its soldiers to flee.
+  meaning_decisions:
+  - source_phrase: συνῆψεν πρὸς τὴν φάλαγγα
+    prior_rendering: joined battle with the phalanx
+    new_rendering: engaged the enemy’s infantry phalanx
+    rationale: '''Engaged'' naturally expresses entering combat, and ''infantry'' clarifies the formation’s contrast with the cavalry.'
+  - source_phrase: ἡ γὰρ ἵππος ἐξελύθη
+    prior_rendering: for the cavalry had been thrown into disorder
+    new_rendering: since the cavalry was worn out
+    rationale: The preceding verse expressly describes the horses growing weary, favoring physical weakening here; loss of cohesion remains a serious alternative.
+  - source_phrase: συνετρίβησαν ἀπʼ αὐτοῦ
+    prior_rendering: they were crushed by him
+    new_rendering: He crushed the infantry
+    rationale: The soldiers of the phalanx are defeated under Simon’s attack; naming them avoids making the cavalry the apparent object of the final assault.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history correctly recognizes deployment and combat against a phalanx, which I preserve. The preceding verse’s weariness favors 'worn out' over the earlier lexical preference for disorder, which is retained as an alternative.

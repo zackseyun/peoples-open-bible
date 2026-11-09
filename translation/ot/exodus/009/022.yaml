@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֨אמֶר יְהוָ֜ה אֶל מֹשֶׁה נְטֵ֤ה אֶת יָֽדְ/ךָ֙ עַל הַ/שָּׁמַ֔יִם וִ/יהִ֥י בָרָ֖ד בְּ/כָל אֶ֣רֶץ מִצְרָ֑יִם עַל הָ/אָדָ֣ם וְ/עַל הַ/בְּהֵמָ֗ה וְ/עַ֛ל כָּל עֵ֥שֶׂב הַ/שָּׂדֶ֖ה בְּ/אֶ֥רֶץ מִצְרָֽיִם־־־־־־־׃
 translation:
-  text: Then Yahweh said to Moses[a], “Stretch out your hand toward the sky[b], so that hail may come over all the land of Egypt—on man and on beast and on every plant of the field in the land of Egypt.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “toward heaven.” The Hebrew word can mean “sky” or “heaven(s),” but here it refers to the visible heavens from which the hail comes.
-    reason: lexical_alternative
-  - marker: b
-    text: “Man” here means human beings generally, in contrast with “beast.”
-    reason: lexical_alternative
+  text: Then Yahweh said to Moses, “Stretch out your hand toward the sky, so that hail may fall on all the land of Egypt—on people and animals and on every plant in the fields of Egypt.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: יְהוָה
   chosen: Yahweh
@@ -124,14 +117,20 @@ revisions:
   from: Then the LORD said to Moses, “Stretch out your hand toward the sky, so that hail may come over all the land of Egypt—on man and on beast and on every plant of the field in the land of Egypt.”
   to: Then the LORD said to Moses, “Stretch out your hand toward the sky, so that hail may fall on all the land of Egypt—on man and on beast and on every plant of the field in the land of Egypt.”
   rationale: Changed 'come over' to 'fall on' to more naturally and accurately express the action of hail while preserving the source meaning and formal register.
-
 - timestamp: '2026-05-16T03:09:22Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Yahweh said to Moses[a], “Stretch out your hand toward the sky[b], so that hail may fall on all the land of Egypt—on man and on beast and on every plant of the field in the land of Egypt.”'
-  to: 'Then Yahweh said to Moses[a], “Stretch out your hand toward the sky[b], so that hail may come over all the land of Egypt—on man and on beast and on every plant of the field in the land of Egypt.”'
-  rationale: 'Azure substituted ''fall on'' for drafter''s chosen ''come over'' (וִיהִי בָרָד jussive rendering documented in lexical_decisions). Style preference without engaging Hebrew grammar.'
+  from: Then Yahweh said to Moses[a], “Stretch out your hand toward the sky[b], so that hail may fall on all the land of Egypt—on man and on beast and on every plant of the field in the land of Egypt.”
+  to: Then Yahweh said to Moses[a], “Stretch out your hand toward the sky[b], so that hail may come over all the land of Egypt—on man and on beast and on every plant of the field in the land of Egypt.”
+  rationale: Azure substituted 'fall on' for drafter's chosen 'come over' (וִיהִי בָרָד jussive rendering documented in lexical_decisions). Style preference without engaging Hebrew grammar.
+- timestamp: '2026-11-09T17:34:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Yahweh said to Moses[a], “Stretch out your hand toward the sky[b], so that hail may come over all the land of Egypt—on man and on beast and on every plant of the field in the land of Egypt.”
+  to: Then Yahweh said to Moses, “Stretch out your hand toward the sky, so that hail may fall on all the land of Egypt—on people and animals and on every plant in the fields of Egypt.”
+  rationale: The earlier review’s 'fall on' accurately clarified the event without changing the result construction, despite the later automated revert. I retain the established hand gesture and meteorological 'sky,' and express the collective human–animal reference directly.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -153,3 +152,29 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/009/022.job-62490.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:34:52Z'
+  change_level: refined
+  confidence: high
+  meaning: Yahweh commands Moses to stretch his hand toward the sky so that hail will fall across Egypt upon people, animals, and field vegetation.
+  meaning_decisions:
+  - source_phrase: וִיהִי בָרָד בְּכָל אֶרֶץ מִצְרָיִם
+    prior_rendering: so that hail may come over all the land of Egypt
+    new_rendering: so that hail may fall on all the land of Egypt
+    rationale: The command-result relationship remains intact, while 'fall on' states clearly what hail does to the land.
+  - source_phrase: עַל הָאָדָם וְעַל הַבְּהֵמָה
+    prior_rendering: on man and on beast
+    new_rendering: on people and animals
+    rationale: The Hebrew names the human and animal populations collectively; the new wording makes that scope explicit.
+  - source_phrase: כָּל עֵשֶׂב הַשָּׂדֶה בְּאֶרֶץ מִצְרָיִם
+    prior_rendering: every plant of the field in the land of Egypt
+    new_rendering: every plant in the fields of Egypt
+    rationale: This expresses the agricultural location naturally while retaining the repeated identification of Egypt.
+  footnote_kinds: {}
+  history_weighed: The earlier review’s 'fall on' accurately clarified the event without changing the result construction, despite the later automated revert. I retain the established hand gesture and meteorological 'sky,' and express the collective human–animal reference directly.

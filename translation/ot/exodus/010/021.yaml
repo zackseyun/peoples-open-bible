@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֨אמֶר יְהוָ֜ה אֶל מֹשֶׁ֗ה נְטֵ֤ה יָֽדְ/ךָ֙ עַל הַ/שָּׁמַ֔יִם וִ֥/יהִי חֹ֖שֶׁךְ עַל אֶ֣רֶץ מִצְרָ֑יִם וְ/יָמֵ֖שׁ חֹֽשֶׁךְ־־־׃
 translation:
-  text: Then Yahweh said to Moses[a], “Stretch out your hand toward the sky, so that there may be darkness over the land of Egypt, and the darkness may be felt.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Hebrew: ''and darkness may be felt'' or possibly ''and one may feel darkness.'' The final clause uses a rare verb and emphasizes the darkness as palpable.'
-    reason: lexical_alternative
+  text: Then Yahweh said to Moses, “Stretch out your hand toward the sky so that darkness will cover the land of Egypt—darkness that can be felt.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: יְהוָה
   chosen: Yahweh
@@ -87,14 +83,20 @@ revisions:
   from: Then the LORD said to Moses, “Stretch out your hand toward the sky, so that there may be darkness over the land of Egypt, a darkness that can be felt.”
   to: Then the LORD said to Moses, “Stretch out your hand toward the sky, so that there may be darkness over the land of Egypt, a darkness that can be felt.”
   rationale: Replaced the appositional phrase 'a darkness that can be felt' with 'and the darkness may be felt' to more directly reflect the final Hebrew clause while preserving natural formal English.
-
 - timestamp: '2026-05-18T02:55:41Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Yahweh said to Moses[a], “Stretch out your hand toward the sky, so that there may be darkness over the land of Egypt, and the darkness may be felt.”'
-  to: 'Then Yahweh said to Moses[a], “Stretch out your hand toward the sky, so that there may be darkness over the land of Egypt, and the darkness may be felt.”'
+  from: Then Yahweh said to Moses[a], “Stretch out your hand toward the sky, so that there may be darkness over the land of Egypt, and the darkness may be felt.”
+  to: Then Yahweh said to Moses[a], “Stretch out your hand toward the sky, so that there may be darkness over the land of Egypt, and the darkness may be felt.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a darkness that can be felt''].'
+- timestamp: '2026-11-09T17:34:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Yahweh said to Moses[a], “Stretch out your hand toward the sky, so that there may be darkness over the land of Egypt, and the darkness may be felt.”
+  to: Then Yahweh said to Moses, “Stretch out your hand toward the sky so that darkness will cover the land of Egypt—darkness that can be felt.”
+  rationale: The first draft and lexical deliberation used the natural apposition “a darkness that can be felt.” I recover that gain rather than following the review’s preference for mirroring the Hebrew conjunction; the earlier note adds no distinct meaning.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -116,3 +118,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/010/021.job-62520.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:34:10Z'
+  change_level: refined
+  confidence: high
+  meaning: Yahweh commands Moses to raise his hand toward the sky to bring palpable darkness over Egypt.
+  meaning_decisions:
+  - source_phrase: וִיהִי חֹשֶׁךְ עַל אֶרֶץ מִצְרָיִם
+    prior_rendering: so that there may be darkness over the land of Egypt
+    new_rendering: so that darkness will cover the land of Egypt
+    rationale: The clause states the intended result of the commanded gesture; the new wording makes that result direct without suggesting uncertainty.
+  - source_phrase: וְיָמֵשׁ חֹשֶׁךְ
+    prior_rendering: and the darkness may be felt
+    new_rendering: darkness that can be felt
+    rationale: The final clause characterizes the darkness as palpable; an appositional phrase conveys that force more naturally than a separate clause suggesting another possible event.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical deliberation used the natural apposition “a darkness that can be felt.” I recover that gain rather than following the review’s preference for mirroring the Hebrew conjunction; the earlier note adds no distinct meaning.

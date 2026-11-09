@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/הָיָ֗ה בְּ/יוֹם֙ הַנְחִיל֣/וֹ אֶת בָּנָ֔י/ו אֵ֥ת אֲשֶׁר יִהְיֶ֖ה ל֑/וֹ לֹ֣א יוּכַ֗ל לְ/בַכֵּר֙ אֶת בֶּן הָ֣/אֲהוּבָ֔ה עַל פְּנֵ֥י בֶן הַ/שְּׂנוּאָ֖ה הַ/בְּכֹֽר־־־־־־׃
 translation:
-  text: And on the day he gives his sons as an inheritance what belongs to him[a], he may not treat the son of the loved wife as firstborn over the son of the hated wife, who is the firstborn.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the son of the unloved wife' or 'the less loved wife.' The Hebrew literally contrasts 'loved' and 'hated,' but in family-law contexts the latter can denote one who is comparatively less favored rather than actively detested.
-    reason: lexical_alternative
+  text: then, when he gives his property to his sons as an inheritance, he may not grant firstborn rights to the son of the loved wife in preference to the son of the unloved wife, who is the firstborn.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְהָיָה
   chosen: And ...
@@ -110,14 +106,20 @@ revisions:
   from: And on the day he gives his sons as an inheritance what belongs to him, he may not treat the son of the loved wife as firstborn over the son of the hated wife, who is the firstborn.
   to: And on the day he gives his inheritance to his sons, he may not treat the son of the loved wife as the firstborn over the son of the hated wife, who is the firstborn.
   rationale: Revised 'gives his sons as an inheritance what belongs to him' to the more accurate and natural 'gives his inheritance to his sons.' Added 'the' before 'firstborn' for natural English while preserving the Hebrew sense.
-
 - timestamp: '2026-05-16T06:09:51Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And on the day he gives his inheritance to his sons[a], he may not treat the son of the loved wife as the firstborn over the son of the hated wife, who is the firstborn.'
-  to: 'And on the day he gives his sons as an inheritance what belongs to him[a], he may not treat the son of the loved wife as firstborn over the son of the hated wife, who is the firstborn.'
-  rationale: 'Azure collapsed drafter''s two-phrase rendering of הַנְחִילוֹ+אֵת אֲשֶׁר יִהְיֶה לוֹ into ''gives his inheritance to his sons'' (functionally equivalent to rejected alt ''apportions inheritance to''). Also added ''the'' before ''firstborn'' for לְבַכֵּר (rejected alt).'
+  from: And on the day he gives his inheritance to his sons[a], he may not treat the son of the loved wife as the firstborn over the son of the hated wife, who is the firstborn.
+  to: And on the day he gives his sons as an inheritance what belongs to him[a], he may not treat the son of the loved wife as firstborn over the son of the hated wife, who is the firstborn.
+  rationale: Azure collapsed drafter's two-phrase rendering of הַנְחִילוֹ+אֵת אֲשֶׁר יִהְיֶה לוֹ into 'gives his inheritance to his sons' (functionally equivalent to rejected alt 'apportions inheritance to'). Also added 'the' before 'firstborn' for לְבַכֵּר (rejected alt).
+- timestamp: '2026-11-09T17:31:43Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And on the day he gives his sons as an inheritance what belongs to him[a], he may not treat the son of the loved wife as firstborn over the son of the hated wife, who is the firstborn.
+  to: then, when he gives his property to his sons as an inheritance, he may not grant firstborn rights to the son of the loved wife in preference to the son of the unloved wife, who is the firstborn.
+  rationale: The automated review recognized the awkward inheritance clause, while its policy revert defended source-form distinctions rather than a different meaning. I preserve the full property-and-inheritance content and use 'unloved' consistently for the same wife in verses 15–17.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -137,3 +139,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/021/016.job-61725.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:31:43Z'
+  change_level: retranslated
+  confidence: high
+  meaning: When assigning his estate to his sons, the father may not transfer firstborn rights to the loved wife's son at the expense of the actual firstborn.
+  meaning_decisions:
+  - source_phrase: וְהָיָה בְּיוֹם הַנְחִילוֹ אֶת בָּנָיו אֵת אֲשֶׁר יִהְיֶה לוֹ
+    prior_rendering: And on the day he gives his sons as an inheritance what belongs to him
+    new_rendering: then, when he gives his property to his sons as an inheritance
+    rationale: The wording clearly identifies the property as the inheritance and the sons as its recipients, while connecting the ruling to the preceding condition.
+  - source_phrase: לְבַכֵּר אֶת בֶּן הָאֲהוּבָה עַל פְּנֵי
+    prior_rendering: treat the son of the loved wife as firstborn over
+    new_rendering: grant firstborn rights to the son of the loved wife in preference to
+    rationale: The verb concerns conferring legal firstborn status, and the following phrase describes preferential treatment.
+  - source_phrase: בֶן הַשְּׂנוּאָה
+    prior_rendering: the son of the hated wife
+    new_rendering: the son of the unloved wife
+    rationale: The same wife and Hebrew term occur throughout verses 15–17; changing the English term in this verse misleadingly suggests a different relationship or degree of hostility.
+  footnote_kinds: {}
+  history_weighed: The automated review recognized the awkward inheritance clause, while its policy revert defended source-form distinctions rather than a different meaning. I preserve the full property-and-inheritance content and use 'unloved' consistently for the same wife in verses 15–17.

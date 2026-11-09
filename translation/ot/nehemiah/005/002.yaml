@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/יֵשׁ֙ אֲשֶׁ֣ר אֹמְרִ֔ים בָּנֵ֥י/נוּ וּ/בְנֹתֵ֖י/נוּ אֲנַ֣חְנוּ רַבִּ֑ים וְ/נִקְחָ֥ה דָגָ֖ן וְ/נֹאכְלָ֥ה וְ/נִחְיֶֽה׃
 translation:
-  text: And there were those who said[a], “We have many sons and daughters. Let us get grain, so that we may eat and live.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more smoothly, 'We have many sons and daughters.' The Hebrew more literally stacks the family members with 'we' and 'are many.'
-    reason: lexical_alternative
+  text: Some said, “There are many of us, including our sons and daughters. We must get grain so that we can eat and stay alive.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְיֵשׁ אֲשֶׁר אֹמְרִים
   chosen: And there were those who said
@@ -68,14 +64,20 @@ revisions:
   from: And there were those who said, “We, our sons, and our daughters are many. Let us get grain, so that we may eat and live.”
   to: And there were those who said, “We, our sons, and our daughters are many. Let us get grain, so that we may eat and live.”
   rationale: 'Revised the opening of the quotation for more natural English and closer sense: changed “We, our sons, and our daughters are many” to “We have many sons and daughters.” The rest is retained.'
-
 - timestamp: '2026-05-18T02:54:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And there were those who said[a], “We have many sons and daughters. Let us get grain, so that we may eat and live.”'
-  to: 'And there were those who said[a], “We have many sons and daughters. Let us get grain, so that we may eat and live.”'
+  from: And there were those who said[a], “We have many sons and daughters. Let us get grain, so that we may eat and live.”
+  to: And there were those who said[a], “We have many sons and daughters. Let us get grain, so that we may eat and live.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''We, our sons, and our daughters are many''].'
+- timestamp: '2026-11-09T18:25:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And there were those who said[a], “We have many sons and daughters. Let us get grain, so that we may eat and live.”
+  to: Some said, “There are many of us, including our sons and daughters. We must get grain so that we can eat and stay alive.”
+  rationale: The records debate the first draft's explicit inclusion of the parents against the smoother 'We have many sons and daughters.' I preserve the whole-family sense of the draft in natural English; the earlier note is unnecessary once the text carries that meaning.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -95,3 +97,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/nehemiah/005/002.job-42775.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:25:25Z'
+  change_level: retranslated
+  confidence: high
+  meaning: One group says that their numerous families need grain to survive.
+  meaning_decisions:
+  - source_phrase: בָּנֵינוּ וּבְנֹתֵינוּ אֲנַחְנוּ רַבִּים
+    prior_rendering: We have many sons and daughters.
+    new_rendering: There are many of us, including our sons and daughters.
+    rationale: The Hebrew includes the speakers themselves among the many people needing food, not only their children.
+  - source_phrase: וְנִקְחָה דָגָן וְנֹאכְלָה וְנִחְיֶה
+    prior_rendering: Let us get grain, so that we may eat and live.
+    new_rendering: We must get grain so that we can eat and stay alive.
+    rationale: The cohortatives express an urgent plea to obtain food, and 'stay alive' makes the immediate survival crisis clear.
+  footnote_kinds: {}
+  history_weighed: The records debate the first draft's explicit inclusion of the parents against the smoother 'We have many sons and daughters.' I preserve the whole-family sense of the draft in natural English; the earlier note is unnecessary once the text carries that meaning.

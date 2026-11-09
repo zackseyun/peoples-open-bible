@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: אֶ֚לֶף לַ/מַּטֶּ֔ה אֶ֖לֶף לַ/מַּטֶּ֑ה לְ/כֹל֙ מַטּ֣וֹת יִשְׂרָאֵ֔ל תִּשְׁלְח֖וּ לַ/צָּבָֽא׃
 translation:
-  text: A thousand from each tribe[a], from all the tribes of Israel, you shall send to the army.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'for military service.' The Hebrew לַצָּבָא can denote service in the military force, not merely movement toward a location.
-    reason: lexical_alternative
+  text: Send a thousand men from every tribe of Israel to war.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: אֶלֶף
   chosen: a thousand
@@ -75,14 +71,20 @@ revisions:
   from: A thousand from each tribe, a thousand from each tribe, from all the tribes of Israel, you shall send to the army.
   to: A thousand from each tribe, a thousand from each tribe, from all the tribes of Israel, you shall send to the army.
   rationale: Removed the duplicated phrase 'a thousand from each tribe' to produce natural English while preserving the distributive sense of the Hebrew.
-
 - timestamp: '2026-05-16T09:37:22Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'A thousand from each tribe[a], from all the tribes of Israel, you shall send to the army.'
-  to: 'A thousand from each tribe[a], from all the tribes of Israel, you shall send to the army.'
-  rationale: 'Restored drafter intentional repetition of ''A thousand from each tribe, a thousand from each tribe'' preserving Hebrew rhetorical force; azure compressed away the doublet.'
+  from: A thousand from each tribe[a], from all the tribes of Israel, you shall send to the army.
+  to: A thousand from each tribe[a], from all the tribes of Israel, you shall send to the army.
+  rationale: Restored drafter intentional repetition of 'A thousand from each tribe, a thousand from each tribe' preserving Hebrew rhetorical force; azure compressed away the doublet.
+- timestamp: '2026-11-09T18:32:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: A thousand from each tribe[a], from all the tribes of Israel, you shall send to the army.
+  to: Send a thousand men from every tribe of Israel to war.”
+  rationale: The history contains competing rationales about reproducing the repetition, but the current text already expresses it distributively rather than repeating the phrase. I retain that approach while making the command and its comprehensive scope direct.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -102,3 +104,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/031/004.job-41303.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:32:16Z'
+  change_level: refined
+  confidence: high
+  meaning: Every tribe of Israel must contribute a thousand men to the campaign.
+  meaning_decisions:
+  - source_phrase: אֶלֶף לַמַּטֶּה אֶלֶף לַמַּטֶּה לְכֹל מַטּוֹת יִשְׂרָאֵל תִּשְׁלְחוּ לַצָּבָא
+    prior_rendering: A thousand from each tribe, from all the tribes of Israel, you shall send to the army.
+    new_rendering: Send a thousand men from every tribe of Israel to war.
+    rationale: The repeated Hebrew construction assigns the same quota to every tribe; natural English expresses its full distributive scope with “a thousand men from every tribe.” “To war” identifies the purpose of their dispatch.
+  footnote_kinds: {}
+  history_weighed: The history contains competing rationales about reproducing the repetition, but the current text already expresses it distributively rather than repeating the phrase. I retain that approach while making the command and its comprehensive scope direct.

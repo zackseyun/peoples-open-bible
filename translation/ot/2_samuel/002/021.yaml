@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֧אמֶר ל֣/וֹ אַבְנֵ֗ר נְטֵ֤ה לְ/ךָ֙ עַל יְמִֽינְ/ךָ֙ א֣וֹ עַל שְׂמֹאלֶ֔/ךָ וֶ/אֱחֹ֣ז לְ/ךָ֗ אֶחָד֙ מֵֽ/הַ/נְּעָרִ֔ים וְ/קַח לְ/ךָ֖ אֶת חֲלִצָת֑/וֹ וְ/לֹֽא אָבָ֣ה עֲשָׂהאֵ֔ל לָ/ס֖וּר מֵ/אַחֲרָֽי/ו־־־־־׃
 translation:
-  text: Then Abner said to him[a], “Turn aside to your right or to your left, and seize one of the young men for yourself, and take his gear for yourself.” But Asahel was not willing to turn aside from following him.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “take his armor for yourself.” The Hebrew term likely refers to equipment stripped from a fallen fighter; the exact item is not fully certain.
-    reason: lexical_alternative
+  text: Then Abner said to him, “Turn aside to your right or left, seize one of the young soldiers, and take his gear for yourself.” But Asahel was unwilling to stop pursuing him.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: נְטֵה
   chosen: Turn aside
@@ -82,14 +78,20 @@ revisions:
   from: Then Abner said to him, “Turn aside to your right or to your left, and seize for yourself one of the young men, and take his gear for yourself.” But Asahel was not willing to turn aside from following him.
   to: Then Abner said to him, “Turn aside to your right or to your left, and seize one of the young men for yourself, and take his spoil for yourself.” But Asahel was not willing to turn aside from following him.
   rationale: Changed 'gear' to 'spoil' for better lexical accuracy of חֲלִיצָה in this context; slightly reordered 'for yourself' for more natural English while preserving the source sense.
-
 - timestamp: '2026-05-15T20:54:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Abner said to him[a], “Turn aside to your right or to your left, and seize one of the young men for yourself, and take his spoil for yourself.” But Asahel was not willing to turn aside from following him.'
-  to: 'Then Abner said to him[a], “Turn aside to your right or to your left, and seize one of the young men for yourself, and take his gear for yourself.” But Asahel was not willing to turn aside from following him.'
-  rationale: 'Drafter chose ''gear'' for חֲלִיצָה (from חָלַץ = strip/draw off; specifically equipment stripped from a fallen warrior) to avoid false precision, with ''spoil'' as explicit rejected alternative. Azure substituted the rejected alternative on bare ''better lexical accuracy'' claim — but ''spoil'' over-specifies toward general battlefield plunder, whereas the Hebrew specifically denotes stripped gear.'
+  from: Then Abner said to him[a], “Turn aside to your right or to your left, and seize one of the young men for yourself, and take his spoil for yourself.” But Asahel was not willing to turn aside from following him.
+  to: Then Abner said to him[a], “Turn aside to your right or to your left, and seize one of the young men for yourself, and take his gear for yourself.” But Asahel was not willing to turn aside from following him.
+  rationale: Drafter chose 'gear' for חֲלִיצָה (from חָלַץ = strip/draw off; specifically equipment stripped from a fallen warrior) to avoid false precision, with 'spoil' as explicit rejected alternative. Azure substituted the rejected alternative on bare 'better lexical accuracy' claim — but 'spoil' over-specifies toward general battlefield plunder, whereas the Hebrew specifically denotes stripped gear.
+- timestamp: '2026-11-09T17:28:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Abner said to him[a], “Turn aside to your right or to your left, and seize one of the young men for yourself, and take his gear for yourself.” But Asahel was not willing to turn aside from following him.
+  to: Then Abner said to him, “Turn aside to your right or left, seize one of the young soldiers, and take his gear for yourself.” But Asahel was unwilling to stop pursuing him.
+  rationale: The history’s defense of 'gear' rightly distinguishes stripped equipment from general plunder without specifying armor. I retain that gain while clarifying the combatants and the pursuit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -109,3 +111,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/002/021.job-46044.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:21Z'
+  change_level: refined
+  confidence: high
+  meaning: Abner urges Asahel to turn aside, seize a young soldier, and take his equipment, but Asahel will not abandon the pursuit.
+  meaning_decisions:
+  - source_phrase: וֶאֱחֹז לְךָ אֶחָד מֵהַנְּעָרִים
+    prior_rendering: and seize one of the young men for yourself
+    new_rendering: seize one of the young soldiers
+    rationale: These young men are combatants; identifying them as soldiers makes Abner’s proposed alternative clear, while the following clause retains Asahel’s personal gain.
+  - source_phrase: וְלֹא אָבָה עֲשָׂהאֵל לָסוּר מֵאַחֲרָיו
+    prior_rendering: But Asahel was not willing to turn aside from following him
+    new_rendering: But Asahel was unwilling to stop pursuing him
+    rationale: The phrase describes unwillingness to abandon a hostile pursuit, not ordinary following.
+  footnote_kinds: {}
+  history_weighed: The history’s defense of 'gear' rightly distinguishes stripped equipment from general plunder without specifying armor. I retain that gain while clarifying the combatants and the pursuit.

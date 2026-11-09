@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּאמֶר֩ ל֨/וֹ דָוִ֜ד אַל תִּירָ֗א כִּ֣י עָשֹׂה֩ אֶעֱשֶׂ֨ה עִמְּ/ךָ֥ חֶ֨סֶד֙ בַּֽ/עֲבוּר֙ יְהוֹנָתָ֣ן אָבִ֔י/ךָ וַ/הֲשִׁבֹתִ֣י לְ/ךָ֔ אֶֽת כָּל שְׂדֵ֖ה שָׁא֣וּל אָבִ֑י/ךָ וְ/אַתָּ֗ה תֹּ֥אכַל לֶ֛חֶם עַל שֻׁלְחָנִ֖/י תָּמִֽיד־־־־׃
 translation:
-  text: David said to him[a], “Do not be afraid, for I will surely show you kindness for the sake of Jonathan your father, and I will restore to you all the land of Saul your father[c][b], and you shall always eat bread at my table.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “steadfast love,” “loyal love,” or “covenant loyalty” for the Hebrew hesed.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew “Saul your father”; “father” can mean an ancestor, here Saul is Mephibosheth’s grandfather.
-    reason: lexical_alternative
-  - marker: c
-    text: Hebrew “eat bread at my table,” an idiom for ongoing provision and table fellowship.
-    reason: cultural_note
+  text: David said to him, “Do not be afraid, for I will surely show you kindness for the sake of your father Jonathan. I will restore to you all the land of your grandfather Saul, and you will always eat at my table.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: אַל תִּירָא
   chosen: Do not be afraid
@@ -110,14 +100,20 @@ revisions:
   from: David said to him, “Do not be afraid, for I will surely show you kindness for the sake of Jonathan your father, and I will restore to you all the land of Saul your grandfather, and you shall always eat bread at my table.”
   to: David said to him, “Do not be afraid, for I will surely show you kindness for the sake of Jonathan your father, and I will restore to you all the land of Saul your grandfather, and you shall always eat bread at my table.”
   rationale: Changed 'your grandfather' to 'your father' to match the source text as given. No other changes needed.
-
 - timestamp: '2026-05-17T04:51:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'David said to him[a], “Do not be afraid, for I will surely show you kindness for the sake of Jonathan your father, and I will restore to you all the land of Saul your father[c][b], and you shall always eat bread at my table.”'
-  to: 'David said to him[a], “Do not be afraid, for I will surely show you kindness for the sake of Jonathan your father, and I will restore to you all the land of Saul your father[c][b], and you shall always eat bread at my table.”'
+  from: David said to him[a], “Do not be afraid, for I will surely show you kindness for the sake of Jonathan your father, and I will restore to you all the land of Saul your father[c][b], and you shall always eat bread at my table.”
+  to: David said to him[a], “Do not be afraid, for I will surely show you kindness for the sake of Jonathan your father, and I will restore to you all the land of Saul your father[c][b], and you shall always eat bread at my table.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Saul your grandfather''].'
+- timestamp: '2026-11-09T17:28:35Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: David said to him[a], “Do not be afraid, for I will surely show you kindness for the sake of Jonathan your father, and I will restore to you all the land of Saul your father[c][b], and you shall always eat bread at my table.”
+  to: David said to him, “Do not be afraid, for I will surely show you kindness for the sake of your father Jonathan. I will restore to you all the land of your grandfather Saul, and you will always eat at my table.”
+  rationale: The first draft and lexical rationale correctly identify Saul as the grandfather; the later preference for “father” rests on preserving the source form rather than its meaning. I restore that clarification and retain the established emphatic assurance and rendering of kindness.
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -140,3 +136,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_samuel/009/007.job-60987.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:35Z'
+  change_level: retranslated
+  confidence: high
+  meaning: David reassures Mephibosheth that Jonathan’s memory guarantees him kindness, restoration of Saul’s land, and a permanent place at David’s table.
+  meaning_decisions:
+  - source_phrase: שָׁאוּל אָבִיךָ
+    prior_rendering: Saul your father
+    new_rendering: your grandfather Saul
+    rationale: The Hebrew term for father includes an ancestor; Saul is Mephibosheth’s grandfather, as the preceding genealogy establishes.
+  - source_phrase: וְאַתָּה תֹּאכַל לֶחֶם עַל שֻׁלְחָנִי תָּמִיד
+    prior_rendering: and you shall always eat bread at my table
+    new_rendering: and you will always eat at my table
+    rationale: “Eat bread” means partake of meals, not receive a diet restricted to bread; retaining the table preserves the promised provision and fellowship.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale correctly identify Saul as the grandfather; the later preference for “father” rests on preserving the source form rather than its meaning. I restore that clarification and retain the established emphatic assurance and rendering of kindness.

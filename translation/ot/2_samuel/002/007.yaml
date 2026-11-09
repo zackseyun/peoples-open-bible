@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וְ/עַתָּ֣ה תֶּחֱזַ֣קְנָה יְדֵי/כֶ֗ם וִֽ/הְיוּ֙ לִ/בְנֵי חַ֔יִל כִּי מֵ֖ת אֲדֹנֵי/כֶ֣ם שָׁא֑וּל וְ/גַם אֹתִ֗/י מָשְׁח֧וּ בֵית יְהוּדָ֛ה לְ/מֶ֖לֶךְ עֲלֵי/הֶֽם׀־־־־׃פ
 translation:
-  text: Let your hands be strong[a], and be valiant men, for your lord Saul is dead, and the house of Judah also has anointed me king over them.
-  philosophy: optimal-equivalence
+  text: Now be strong[a] and be valiant men, for your lord Saul is dead, and the people of Judah have also anointed me king over them.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'men of valor.' The Hebrew expression denotes courage and capability, often in a martial setting.
+    text: Literally, “let your hands be strong.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: תֶּחֱזַקְנָה יְדֵיכֶם
@@ -17,7 +17,7 @@ lexical_decisions:
   - strengthen your hands
   - be strong
   lexicon: HALOT
-  rationale: "The Hebrew idiom literally speaks of the hands being strong. Rendering it as 'let your hands be strong' preserves the concrete imagery while remaining natural in English. 'Strengthen your hands' is possible but sounds more causative than the Hebrew here. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'The Hebrew idiom literally speaks of the hands being strong. Rendering it as ''let your hands be strong'' preserves the concrete imagery while remaining natural in English. ''Strengthen your hands'' is possible but sounds more causative than the Hebrew here. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: וִהְיוּ
   chosen: and be
   alternatives:
@@ -110,7 +110,6 @@ revisions:
   from: Now let your hands be strong, and be valiant men, for your lord Saul is dead, and also the house of Judah has anointed me king over them.
   to: Now let your hands be strong, and be valiant men, for your lord Saul is dead, and the house of Judah also has anointed me king over them.
   rationale: Moved 'also' to modify 'the house of Judah' more naturally in English while preserving the Hebrew emphasis; otherwise retained the draft as accurate and complete.
-
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
   reviewer_model: codex
@@ -118,6 +117,13 @@ revisions:
   from: Now let your hands be strong[a], and be valiant men, for your lord Saul is dead, and the house of Judah also has anointed me king over them.
   to: Let your hands be strong[a], and be valiant men, for your lord Saul is dead, and the house of Judah also has anointed me king over them.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:27:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Let your hands be strong[a], and be valiant men, for your lord Saul is dead, and the house of Judah also has anointed me king over them.
+  to: Now be strong[a] and be valiant men, for your lord Saul is dead, and the people of Judah have also anointed me king over them.
+  rationale: The removal of “Now” was a formatting cleanup, but the supplied Hebrew explicitly contains וְעַתָּה, so I restore it. I retain “valiant men” while expressing the hand-strength idiom directly and preserving Judah’s corporate identity.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -137,3 +143,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/002/007.job-46040.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:27:38Z'
+  change_level: retranslated
+  confidence: high
+  meaning: David urges Saul’s former supporters to be strong and valiant in light of Saul’s death and his own anointing as Judah’s king.
+  meaning_decisions:
+  - source_phrase: וְעַתָּה
+    prior_rendering: ''
+    new_rendering: Now
+    rationale: The supplied Hebrew explicitly contains this transition, connecting David’s exhortation to his preceding blessing and promise.
+  - source_phrase: תֶּחֱזַקְנָה יְדֵיכֶם
+    prior_rendering: Let your hands be strong
+    new_rendering: be strong
+    rationale: The hand-strength expression urges resolve and readiness to act, not physical strengthening of the hands; the image is preserved in a footnote.
+  - source_phrase: בֵית יְהוּדָה
+    prior_rendering: the house of Judah
+    new_rendering: the people of Judah
+    rationale: The expression identifies the corporate people who have anointed David, rather than a royal household.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The removal of “Now” was a formatting cleanup, but the supplied Hebrew explicitly contains וְעַתָּה, so I restore it. I retain “valiant men” while expressing the hand-strength idiom directly and preserving Judah’s corporate identity.

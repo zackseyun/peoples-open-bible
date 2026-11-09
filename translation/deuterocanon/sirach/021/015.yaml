@@ -21,18 +21,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: If an intelligent man hears a wise word[a], he will praise it and add to it; a wasteful man heard it and rejected it[c][b], and he cast it behind his back.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'a wise saying.' The Greek λόγον σοφόν can refer to a wise utterance more broadly than a single word.
-    reason: lexical_alternative
-  - marker: b
-    text: The expression 'add to it' likely means to build on the wise saying by contributing further insight.
-    reason: lexical_alternative
-  - marker: c
-    text: The Greek for 'was displeased with it' is difficult; the sense in context is that he reacted negatively and dismissed what he heard.
-    reason: alternative_reading
+  text: If an intelligent man hears a wise saying, he will praise it and build on it; but a self-indulgent man hears it with displeasure and casts it behind his back.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: λόγον σοφόν
   chosen: a wise word
@@ -126,14 +116,20 @@ revisions:
   from: If an intelligent man hears a wise word, he will praise it and add to it; a wasteful man heard it and was displeased with it, and he threw it behind his back.
   to: If an intelligent man hears a wise word, he will praise it and add to it; a wasteful man heard it and was displeased with it, and he threw it behind his back.
   rationale: Changed 'was displeased with it' to 'rejected it' for better lexical accuracy of ἀπῄρεσεν αὐτῷ, and 'threw' to 'cast' for a more formal register.
-
 - timestamp: '2026-05-16T13:07:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If an intelligent man hears a wise word[a], he will praise it and add to it; a wasteful man heard it and rejected it[c][b], and he cast it behind his back.'
-  to: 'If an intelligent man hears a wise word[a], he will praise it and add to it; a wasteful man heard it and rejected it[c][b], and he cast it behind his back.'
-  rationale: 'Restored drafter ''was displeased with it'' (preserving the relational ἀπῄρεσεν αὐτῷ idiom) and ''threw it behind his back'' (vivid Hebrew/Greek gesture) per chosen renderings.'
+  from: If an intelligent man hears a wise word[a], he will praise it and add to it; a wasteful man heard it and rejected it[c][b], and he cast it behind his back.
+  to: If an intelligent man hears a wise word[a], he will praise it and add to it; a wasteful man heard it and rejected it[c][b], and he cast it behind his back.
+  rationale: Restored drafter 'was displeased with it' (preserving the relational ἀπῄρεσεν αὐτῷ idiom) and 'threw it behind his back' (vivid Hebrew/Greek gesture) per chosen renderings.
+- timestamp: '2026-11-09T19:07:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If an intelligent man hears a wise word[a], he will praise it and add to it; a wasteful man heard it and rejected it[c][b], and he cast it behind his back.
+  to: If an intelligent man hears a wise saying, he will praise it and build on it; but a self-indulgent man hears it with displeasure and casts it behind his back.
+  rationale: The draft and lexical record preserve displeasure before the final gesture of rejection, while the current text compresses both into 'rejected.' I restore that distinction and retain the vivid casting-behind-the-back image.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -153,3 +149,33 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/021/015.job-51543.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:40Z'
+  change_level: retranslated
+  confidence: high
+  meaning: An intelligent man welcomes wisdom and develops it further, while a self-indulgent man dislikes it and dismisses it.
+  meaning_decisions:
+  - source_phrase: λόγον σοφόν
+    prior_rendering: a wise word
+    new_rendering: a wise saying
+    rationale: The expression means an utterance of wisdom, not a single word; the new wording carries that sense directly.
+  - source_phrase: ἐπʼ αὐτὸν προσθήσει
+    prior_rendering: add to it
+    new_rendering: build on it
+    rationale: The wise hearer develops the insight further, rather than merely adding more words.
+  - source_phrase: ὁ σπαταλῶν
+    prior_rendering: a wasteful man
+    new_rendering: a self-indulgent man
+    rationale: The term describes dissipated, indulgent living, not simply careless use of possessions.
+  - source_phrase: ἤκουσεν ... καὶ ἀπῄρεσεν αὐτῷ
+    prior_rendering: heard it and rejected it
+    new_rendering: hears it with displeasure
+    rationale: This distinguishes his negative reaction from the subsequent gesture of rejection; the present tense expresses the proverbial pattern.
+  footnote_kinds: {}
+  history_weighed: The draft and lexical record preserve displeasure before the final gesture of rejection, while the current text compresses both into 'rejected.' I restore that distinction and retain the vivid casting-behind-the-back image.

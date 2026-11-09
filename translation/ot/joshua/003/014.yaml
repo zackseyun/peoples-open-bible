@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יְהִ֗י בִּ/נְסֹ֤עַ הָ/עָם֙ מֵ/אָ֣הֳלֵי/הֶ֔ם לַ/עֲבֹ֖ר אֶת הַ/יַּרְדֵּ֑ן וְ/הַ/כֹּהֲנִ֗ים נֹֽשְׂאֵ֛י הָ/אָר֥וֹן הַ/בְּרִ֖ית לִ/פְנֵ֥י הָ/עָֽם־׃
 translation:
-  text: And it happened[a], when the people set out from their tents to cross the Jordan, and the priests carrying the ark of the covenant were before the people,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'ahead of the people.'
-    reason: lexical_alternative
+  text: The people set out from their tents to cross the Jordan, with the priests carrying the ark of the covenant ahead of them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיְהִי
   chosen: And it happened
@@ -97,14 +93,20 @@ revisions:
   from: And it happened, when the people set out from their tents to cross the Jordan, with the priests carrying the ark of the covenant before the people,
   to: And it happened, when the people set out from their tents to cross the Jordan, with the priests carrying the ark of the covenant before the people,
   rationale: Replaced 'with the priests carrying' with 'and the priests carrying ... were before the people' to more directly reflect the Hebrew clause structure and avoid the slightly paraphrastic 'with.'
-
 - timestamp: '2026-05-17T07:36:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And it happened[a], when the people set out from their tents to cross the Jordan, and the priests carrying the ark of the covenant were before the people,'
-  to: 'And it happened[a], when the people set out from their tents to cross the Jordan, and the priests carrying the ark of the covenant were before the people,'
+  from: And it happened[a], when the people set out from their tents to cross the Jordan, and the priests carrying the ark of the covenant were before the people,
+  to: And it happened[a], when the people set out from their tents to cross the Jordan, and the priests carrying the ark of the covenant were before the people,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with the priests carrying''].'
+- timestamp: '2026-11-09T18:08:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And it happened[a], when the people set out from their tents to cross the Jordan, and the priests carrying the ark of the covenant were before the people,
+  to: The people set out from their tents to cross the Jordan, with the priests carrying the ark of the covenant ahead of them.
+  rationale: The first draft’s 'with' correctly understood the priests’ position as an accompanying circumstance; the later structural adjustment made the English less clear without changing the event. I restore that relationship and make the verse a complete narrative sentence.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -124,3 +126,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/joshua/003/014.job-68552.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:08:27Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The people leave their tents to cross the Jordan, with the covenant ark carried by priests ahead of them.
+  meaning_decisions:
+  - source_phrase: וַיְהִי בִּנְסֹעַ הָעָם מֵאָהֳלֵיהֶם לַעֲבֹר אֶת הַיַּרְדֵּן
+    prior_rendering: And it happened, when the people set out from their tents to cross the Jordan
+    new_rendering: The people set out from their tents to cross the Jordan
+    rationale: The narrative introduction and temporal construction can be rendered as a complete English statement of this verse’s event without importing the result from verse 16.
+  - source_phrase: וְהַכֹּהֲנִים נֹשְׂאֵי הָאָרוֹן הַבְּרִית לִפְנֵי הָעָם
+    prior_rendering: and the priests carrying the ark of the covenant were before the people
+    new_rendering: with the priests carrying the ark of the covenant ahead of them
+    rationale: The clause describes the accompanying arrangement of the procession, and 'ahead of' clearly expresses the priests’ position.
+  footnote_kinds: {}
+  history_weighed: The first draft’s 'with' correctly understood the priests’ position as an accompanying circumstance; the later structural adjustment made the English less clear without changing the event. I restore that relationship and make the verse a complete narrative sentence.

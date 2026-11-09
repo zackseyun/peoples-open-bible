@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/לֹֽא דִבֶּ֥ר שָׁא֛וּל מְא֖וּמָה בַּ/יּ֣וֹם הַ/ה֑וּא כִּ֤י אָמַר֙ מִקְרֶ֣ה ה֔וּא בִּלְתִּ֥י טָה֛וֹר ה֖וּא כִּֽי לֹ֥א טָהֽוֹר־־׃ס
 translation:
-  text: But Saul did not say anything that day[a], for he thought, “Something has happened; he is not clean—surely he is not clean.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “he is ceremonially unclean.” The Hebrew speaks of ritual cleanness in the context of the meal.
-    reason: lexical_alternative
+  text: But Saul said nothing that day, for he thought, “Something has happened to him; he is ritually unclean—surely he is unclean.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: דִבֶּר ... מְאוּמָה
   chosen: did not say anything
@@ -81,14 +77,20 @@ revisions:
   from: But Saul did not say anything that day, for he thought, “Something has happened to him; he is not clean—surely he is not clean.”
   to: But Saul did not say anything that day, for he thought, “Something has happened to him; he is not clean—surely he is not clean.”
   rationale: Removed 'to him' because it is not explicit in the source; otherwise retained the sense and formal register.
-
 - timestamp: '2026-05-18T02:55:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But Saul did not say anything that day[a], for he thought, “Something has happened; he is not clean—surely he is not clean.”'
-  to: 'But Saul did not say anything that day[a], for he thought, “Something has happened; he is not clean—surely he is not clean.”'
+  from: But Saul did not say anything that day[a], for he thought, “Something has happened; he is not clean—surely he is not clean.”
+  to: But Saul did not say anything that day[a], for he thought, “Something has happened; he is not clean—surely he is not clean.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Something has happened to him''].'
+- timestamp: '2026-11-09T17:23:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But Saul did not say anything that day[a], for he thought, “Something has happened; he is not clean—surely he is not clean.”
+  to: But Saul said nothing that day, for he thought, “Something has happened to him; he is ritually unclean—surely he is unclean.”
+  rationale: The first draft’s “to him” supplies a contextual reference that the review removed solely because it was not explicit. The documented identification of ritual impurity is retained and made clear in the main text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -108,3 +110,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/020/026.job-59272.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:39Z'
+  change_level: refined
+  confidence: high
+  meaning: Saul initially attributes David’s absence to ritual impurity and therefore makes no comment.
+  meaning_decisions:
+  - source_phrase: מִקְרֶה הוּא
+    prior_rendering: Something has happened
+    new_rendering: Something has happened to him
+    rationale: Saul is explaining the absent David’s condition; the implied personal reference is clear in context.
+  - source_phrase: בִּלְתִּי טָהוֹר הוּא כִּי לֹא טָהוֹר
+    prior_rendering: he is not clean—surely he is not clean
+    new_rendering: he is ritually unclean—surely he is unclean
+    rationale: The issue is eligibility to participate in the meal, not hygiene or moral character; the main text now carries the ritual sense previously confined to a note.
+  footnote_kinds: {}
+  history_weighed: The first draft’s “to him” supplies a contextual reference that the review removed solely because it was not explicit. The documented identification of ritual impurity is retained and made clear in the main text.

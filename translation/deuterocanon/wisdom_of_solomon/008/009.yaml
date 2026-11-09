@@ -10,15 +10,8 @@ source:
   validation: minor_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: So I decided to take her to live with me[a], knowing that she would be a counselor of good things for me[b], and a comfort in cares and grief.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'to marry her' / 'to take her as a wife'; the Greek more literally says 'to take her for living together,' using personified Wisdom imagery without an explicit marriage term in this verse.
-    reason: alternative_reading
-  - marker: b
-    text: Or 'an exhortation' or 'a consolation' in cares and grief.
-    reason: lexical_alternative
+  text: So I decided to share my life with her, knowing that she would counsel me in what is good and encourage me in cares and grief.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἔκρινα
   chosen: I decided
@@ -124,14 +117,20 @@ revisions:
   from: So I decided to take her to live with me, knowing that she would be a counselor of good things for me, and an encouragement in cares and grief.
   to: So I decided to take her to live with me, knowing that she would be a counselor of good things for me, and an encouragement in cares and grief.
   rationale: Changed 'an encouragement' to 'a comfort' to better reflect παραίνεσις in the context of 'cares and grief.'
-
 - timestamp: '2026-05-18T02:59:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So I decided to take her to live with me[a], knowing that she would be a counselor of good things for me[b], and a comfort in cares and grief.'
-  to: 'So I decided to take her to live with me[a], knowing that she would be a counselor of good things for me[b], and a comfort in cares and grief.'
+  from: So I decided to take her to live with me[a], knowing that she would be a counselor of good things for me[b], and a comfort in cares and grief.
+  to: So I decided to take her to live with me[a], knowing that she would be a counselor of good things for me[b], and a comfort in cares and grief.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''an encouragement''].'
+- timestamp: '2026-11-09T19:12:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So I decided to take her to live with me[a], knowing that she would be a counselor of good things for me[b], and a comfort in cares and grief.
+  to: So I decided to share my life with her, knowing that she would counsel me in what is good and encourage me in cares and grief.
+  rationale: The earlier discussion rightly connects shared life with the bridal imagery without insisting on an explicit marriage noun. I preserve that breadth and prefer the first draft’s encouragement sense because παραίνεσις includes supportive advice rather than consolation alone.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -151,3 +150,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/008/009.job-39322.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:12:10Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The speaker decides to share his life with wisdom because she will give good counsel and encouragement amid cares and grief.
+  meaning_decisions:
+  - source_phrase: ταύτην ἀγαγέσθαι πρὸς συμβίωσιν
+    prior_rendering: to take her to live with me
+    new_rendering: to share my life with her
+    rationale: This expresses the intended shared life naturally and sustains the bridal imagery without making the verse use an explicit marriage term.
+  - source_phrase: ἔσται μοι σύμβουλος ἀγαθῶν
+    prior_rendering: she would be a counselor of good things for me
+    new_rendering: she would counsel me in what is good
+    rationale: The new wording makes the purpose of her counsel intelligible while keeping 'good' broad enough to include moral goodness and practical benefit.
+  - source_phrase: παραίνεσις φροντίδων καὶ λύπης
+    prior_rendering: a comfort in cares and grief
+    new_rendering: encourage me in cares and grief
+    rationale: The term includes supportive counsel and exhortation, which 'encourage' carries more fully than comfort alone.
+  footnote_kinds: {}
+  history_weighed: The earlier discussion rightly connects shared life with the bridal imagery without insisting on an explicit marriage noun. I preserve that breadth and prefer the first draft’s encouragement sense because παραίνεσις includes supportive advice rather than consolation alone.

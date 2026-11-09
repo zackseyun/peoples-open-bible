@@ -4,14 +4,14 @@ source:
   edition: WLC
   text: וְ/אַתֶּ֨ם הַ/יּ֜וֹם מְאַסְתֶּ֣ם אֶת אֱלֹהֵי/כֶ֗ם אֲשֶׁר ה֣וּא מוֹשִׁ֣יעַ לָ/כֶם֮ מִ/כָּל רָעוֹתֵי/כֶ֣ם וְ/צָרֹֽתֵי/כֶם֒ וַ/תֹּ֣אמְרוּ ל֔/וֹ כִּי מֶ֖לֶךְ תָּשִׂ֣ים עָלֵ֑י/נוּ וְ/עַתָּ֗ה הִֽתְיַצְּבוּ֙ לִ/פְנֵ֣י יְהוָ֔ה לְ/שִׁבְטֵי/כֶ֖ם וּ/לְ/אַלְפֵי/כֶֽם־־־־׃
 translation:
-  text: But today you have rejected your God[a], who himself saves you from all your calamities and distresses, and you have said to him, ‘No[b], but set a king over us.’ So now present yourselves before Yahweh by your tribes and by your thousands.
-  philosophy: optimal-equivalence
+  text: But today you have rejected your God, who himself saves you from all your calamities and distresses, and you have said to him[a], ‘You must set a king over us.’ So now present yourselves before Yahweh by your tribes and clans[b].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'from all your calamities and distresses.' The Hebrew terms can refer to evils suffered, calamities, troubles, or afflictions.
-    reason: lexical_alternative
+    text: Some Hebrew manuscripts and ancient versions read, “You have said, ‘No! Set a king over us.’”
+    reason: textual_variant
   - marker: b
-    text: Or 'by your clans' or 'by your units of a thousand.' The Hebrew 'thousands' can denote social or military subdivisions, not only a literal number.
+    text: Literally, “thousands,” a term for tribal subdivisions that could be clans or military units rather than groups of exactly a thousand.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: מְאַסְתֶּם
@@ -124,14 +124,20 @@ revisions:
   from: But today you have rejected your God, who himself saves you from all your evils and distresses, and you have said to him, ‘No, set a king over us.’ So now present yourselves before the LORD by your tribes and by your thousands.
   to: But today you have rejected your God, who himself saves you from all your evils and distresses, and you have said to him, ‘No, set a king over us.’ So now present yourselves before the LORD by your tribes and by your thousands.
   rationale: Changed 'evils' to 'calamities' for more natural and contextually accurate rendering of רָעוֹת; added 'but' in 'No, but set a king over us' to reflect כִּי more fully.
-
 - timestamp: '2026-05-18T02:55:38Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But today you have rejected your God[a], who himself saves you from all your calamities and distresses, and you have said to him, ‘No[b], but set a king over us.’ So now present yourselves before Yahweh by your tribes and by your thousands.'
-  to: 'But today you have rejected your God[a], who himself saves you from all your calamities and distresses, and you have said to him, ‘No[b], but set a king over us.’ So now present yourselves before Yahweh by your tribes and by your thousands.'
+  from: But today you have rejected your God[a], who himself saves you from all your calamities and distresses, and you have said to him, ‘No[b], but set a king over us.’ So now present yourselves before Yahweh by your tribes and by your thousands.
+  to: But today you have rejected your God[a], who himself saves you from all your calamities and distresses, and you have said to him, ‘No[b], but set a king over us.’ So now present yourselves before Yahweh by your tribes and by your thousands.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from all your evils''].'
+- timestamp: '2026-11-09T17:23:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But today you have rejected your God[a], who himself saves you from all your calamities and distresses, and you have said to him, ‘No[b], but set a king over us.’ So now present yourselves before Yahweh by your tribes and by your thousands.
+  to: But today you have rejected your God, who himself saves you from all your calamities and distresses, and you have said to him[a], ‘You must set a king over us.’ So now present yourselves before Yahweh by your tribes and clans[b].”
+  rationale: The review correctly recognized calamities suffered rather than moral evils, so I retain the current “calamities” despite the automated revert rationale. I follow WLC’s “to him” and express the tribal subdivision by its contextual function rather than retaining the formally preferred “thousands.”
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -153,3 +159,27 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/010/019.job-58969.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:45Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Samuel rebukes Israel for rejecting their saving God by demanding a king and orders them to present themselves before Yahweh in their tribal divisions.
+  meaning_decisions:
+  - source_phrase: וַתֹּאמְרוּ לוֹ כִּי מֶלֶךְ תָּשִׂים עָלֵינוּ
+    prior_rendering: and you have said to him, ‘No, but set a king over us.’
+    new_rendering: and you have said to him[a], ‘You must set a king over us.’
+    rationale: WLC reads “to him,” not an explicit “No”; the emphatic demand carries the people’s insistence without supplying a negation from the alternative textual reading.
+  - source_phrase: לְשִׁבְטֵיכֶם וּלְאַלְפֵיכֶם
+    prior_rendering: by your tribes and by your thousands
+    new_rendering: by your tribes and clans[b]
+    rationale: The selection proceeds through tribal and family divisions, as verse 21 shows; unexplained “thousands” would suggest numerical groups rather than Israel’s social organization.
+  footnote_kinds:
+    a: textual_variant
+    b: literal_wording
+  history_weighed: The review correctly recognized calamities suffered rather than moral evils, so I retain the current “calamities” despite the automated revert rationale. I follow WLC’s “to him” and express the tribal subdivision by its contextual function rather than retaining the formally preferred “thousands.”

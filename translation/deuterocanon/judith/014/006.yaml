@@ -17,11 +17,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And they called Achior out of the house of Ozias. But when he came and saw the head of Holofernes in the hand of one man in the assembly of the people[a], he fell on his face, and his spirit failed.
-  philosophy: optimal-equivalence
+  text: They summoned Achior from Ozias’s house. When he arrived and saw Holofernes’s head in the hand of a man among the assembled people, he fell facedown and fainted[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'his breath left him' / 'he lost consciousness.' The Greek says literally, 'his spirit failed,' an idiom for physical collapse or fainting.
+    text: Literally, “his spirit failed.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐκάλεσαν
@@ -110,14 +110,20 @@ revisions:
   from: And they called Achior out of the house of Ozias. But when he came and saw the head of Holofernes in the hand of one man in the assembly of the people, he fell on his face, and his spirit failed.
   to: And they called Achior out of the house of Ozias. When he came and saw the head of Holofernes in the hand of a man in the assembly of the people, he fell on his face, and his spirit failed.
   rationale: Removed 'But' since ὡς δέ is better rendered simply as 'When' here, and changed 'one man' to 'a man' for more natural English while preserving ἀνδρὸς ἑνός.
-
 - timestamp: '2026-05-16T17:37:19Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they called Achior out of the house of Ozias. When he came and saw the head of Holofernes in the hand of a man in the assembly of the people[a], he fell on his face, and his spirit failed.'
-  to: 'And they called Achior out of the house of Ozias. But when he came and saw the head of Holofernes in the hand of one man in the assembly of the people[a], he fell on his face, and his spirit failed.'
-  rationale: 'Restored drafter ''But when he came'' (preserving the chosen adversative connector for ὡς δέ) and ''in the hand of one man'' (preserving the chosen explicit ''one'') per chosen renderings.'
+  from: And they called Achior out of the house of Ozias. When he came and saw the head of Holofernes in the hand of a man in the assembly of the people[a], he fell on his face, and his spirit failed.
+  to: And they called Achior out of the house of Ozias. But when he came and saw the head of Holofernes in the hand of one man in the assembly of the people[a], he fell on his face, and his spirit failed.
+  rationale: Restored drafter 'But when he came' (preserving the chosen adversative connector for ὡς δέ) and 'in the hand of one man' (preserving the chosen explicit 'one') per chosen renderings.
+- timestamp: '2026-11-09T19:02:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they called Achior out of the house of Ozias. But when he came and saw the head of Holofernes in the hand of one man in the assembly of the people[a], he fell on his face, and his spirit failed.
+  to: They summoned Achior from Ozias’s house. When he arrived and saw Holofernes’s head in the hand of a man among the assembled people, he fell facedown and fainted[a].
+  rationale: The earlier review’s “When” and “a man” better express the narrative transition and the indefinite reference than the automated restoration. The existing footnote already recognizes loss of consciousness, so I bring that meaning into the text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -137,3 +143,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/014/006.job-50785.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:02:01Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Achior is summoned from Ozias’s house and faints when he sees Holofernes’s head among the assembled people.
+  meaning_decisions:
+  - source_phrase: ἐν χειρὶ ἀνδρὸς ἑνὸς ἐν τῇ ἐκκλησίᾳ τοῦ λαοῦ
+    prior_rendering: in the hand of one man in the assembly of the people
+    new_rendering: in the hand of a man among the assembled people
+    rationale: The phrase locates the man holding the head within the gathered people; it does not establish a contrast between one holder and several.
+  - source_phrase: ἐξελύθη τὸ πνεῦμα αὐτοῦ
+    prior_rendering: his spirit failed
+    new_rendering: fainted
+    rationale: His collapse and subsequent lifting establish a physical reaction to shock, not death or a spiritual failure; the source expression remains in a footnote.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier review’s “When” and “a man” better express the narrative transition and the indefinite reference than the automated restoration. The existing footnote already recognizes loss of consciousness, so I bring that meaning into the text.

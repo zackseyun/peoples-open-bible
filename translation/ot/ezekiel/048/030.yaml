@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וְ/אֵ֖לֶּה תּוֹצְאֹ֣ת הָ/עִ֑יר מִ/פְּאַ֣ת צָפ֔וֹן חֲמֵ֥שׁ מֵא֛וֹת וְ/אַרְבַּ֥עַת אֲלָפִ֖ים מִדָּֽה׃
 translation:
-  text: 'And these are the exits of the city: on the north side[b][a], four thousand five hundred measures.'
-  philosophy: optimal-equivalence
+  text: These shall be the city's exits[a]. Its north side shall measure four thousand five hundred cubits.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the outgoings of the city.' The Hebrew term can denote the city's outward extents or exits.
-    reason: lexical_alternative
-  - marker: b
-    text: The Hebrew says 'five hundred and four thousand,' an order commonly rendered in English as 'four thousand five hundred.'
-    reason: lexical_alternative
+    text: Or, 'the city's boundaries.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וְאֵלֶּה
   chosen: And these are
@@ -83,7 +80,6 @@ revisions:
   from: 'And these are the exits of the city: on the north side, four thousand five hundred in measurement.'
   to: 'And these are the exits of the city: on the north side, four thousand five hundred in measurement.'
   rationale: Replaced 'in measurement' with 'measures' for a more natural and direct rendering of מִדָּה, while preserving the verse's formal register and meaning.
-
 - timestamp: '2026-05-18T02:55:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -91,6 +87,13 @@ revisions:
   from: 'And these are the exits of the city: on the north side[b][a], four thousand five hundred measures.'
   to: 'And these are the exits of the city: on the north side[b][a], four thousand five hundred measures.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in measurement''].'
+- timestamp: '2026-11-09T17:40:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And these are the exits of the city: on the north side[b][a], four thousand five hundred measures.'
+  to: These shall be the city's exits[a]. Its north side shall measure four thousand five hundred cubits.
+  rationale: The earlier passes debated 'measures' versus 'in measurement,' but neither clearly states the length in English. I retain the documented primary sense 'exits,' preserve the serious boundary alternative, and omit the note about Hebrew number order.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -110,3 +113,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/048/030.job-64529.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:40:33Z'
+  change_level: refined
+  confidence: high
+  meaning: The description turns to the city's exits and states that its northern side measures four thousand five hundred cubits.
+  meaning_decisions:
+  - source_phrase: מִפְּאַת צָפוֹן חֲמֵשׁ מֵאוֹת וְאַרְבַּעַת אֲלָפִים מִדָּה
+    prior_rendering: on the north side, four thousand five hundred measures
+    new_rendering: Its north side shall measure four thousand five hundred cubits
+    rationale: States the measured length as a complete clause and supplies the understood unit rather than treating 'measures' as an undefined unit.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier passes debated 'measures' versus 'in measurement,' but neither clearly states the length in English. I retain the documented primary sense 'exits,' preserve the serious boundary alternative, and omit the note about Hebrew number order.

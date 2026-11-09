@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: פְּקֻדֵי/הֶם֙ בְּ/מִסְפַּ֣ר כָּל זָכָ֔ר מִ/בֶּן חֹ֖דֶשׁ וָ/מָ֑עְלָ/ה פְּקֻ֣דֵי/הֶ֔ם שִׁבְעַ֥ת אֲלָפִ֖ים וַ/חֲמֵ֥שׁ מֵאֽוֹת־־׃
 translation:
-  text: Their numbered ones[a], according to the number of every male from a month old and upward, were seven thousand five hundred.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'those counted among them' for 'their numbered ones'; the Hebrew uses the same census term twice in the verse.
-    reason: lexical_alternative
+  text: The count of all males among them one month old or older was seven thousand five hundred.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: פְּקֻדֵיהֶם
   chosen: their numbered ones
@@ -67,14 +63,20 @@ revisions:
   from: Their numbered ones, by the number of every male from a month old and upward, their numbered ones were seven thousand five hundred.
   to: Their numbered ones, by the number of every male from a month old and upward, their numbered ones were seven thousand five hundred.
   rationale: Removed the redundant second occurrence of 'their numbered ones' and smoothed 'by the number' to 'according to the number' for more natural English while preserving the Hebrew sense.
-
 - timestamp: '2026-05-16T09:52:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Their numbered ones[a], according to the number of every male from a month old and upward, were seven thousand five hundred.'
-  to: 'Their numbered ones[a], according to the number of every male from a month old and upward, were seven thousand five hundred.'
-  rationale: 'Restored drafter repeated ''their numbered ones'' (preserving Hebrew bracketing structure) and ''by the number of'' per chosen renderings.'
+  from: Their numbered ones[a], according to the number of every male from a month old and upward, were seven thousand five hundred.
+  to: Their numbered ones[a], according to the number of every male from a month old and upward, were seven thousand five hundred.
+  rationale: Restored drafter repeated 'their numbered ones' (preserving Hebrew bracketing structure) and 'by the number of' per chosen renderings.
+- timestamp: '2026-11-09T18:27:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Their numbered ones[a], according to the number of every male from a month old and upward, were seven thousand five hundred.
+  to: The count of all males among them one month old or older was seven thousand five hundred.
+  rationale: The earlier review correctly identified redundant census phrasing, while the source-transparent revert supplied no meaning-based reason to preserve it. I retain the full scope, age threshold, and total, and drop the unnecessary synonym note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -94,3 +96,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/003/022.job-41846.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:27:36Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The census counted seven thousand five hundred Gershonite males aged one month or older.
+  meaning_decisions:
+  - source_phrase: פְּקֻדֵיהֶם בְּמִסְפַּר כָּל זָכָר ... פְּקֻדֵיהֶם
+    prior_rendering: Their numbered ones, according to the number of every male ... were
+    new_rendering: The count of all males among them ... was
+    rationale: The repeated census terminology introduces and resumes a single total; natural English can convey the entire census statement without the opaque expression 'numbered ones.'
+  - source_phrase: מִבֶּן חֹדֶשׁ וָמָעְלָה
+    prior_rendering: from a month old and upward
+    new_rendering: one month old or older
+    rationale: This states the inclusive minimum age directly.
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly identified redundant census phrasing, while the source-transparent revert supplied no meaning-based reason to preserve it. I retain the full scope, age threshold, and total, and drop the unnecessary synonym note.

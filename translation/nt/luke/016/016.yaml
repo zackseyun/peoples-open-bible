@@ -4,14 +4,11 @@ source:
   edition: SBLGNT
   text: Ὁ νόμος καὶ οἱ προφῆται ⸀μέχρι Ἰωάννου· ἀπὸ τότε ἡ βασιλεία τοῦ θεοῦ εὐαγγελίζεται καὶ πᾶς εἰς αὐτὴν βιάζεται.
 translation:
-  text: The Law and the Prophets were until John; from then on the kingdom of God is being proclaimed as good news, and everyone[b][a] is forcing his way into it.
-  philosophy: optimal-equivalence
+  text: The era of the Law and the Prophets lasted until John; since then, the kingdom of God has been proclaimed as good news, and everyone is forcing his way into it[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'everyone is pressing into it.' The Greek verb can convey forceful movement; the wording here reflects the sense of urgent entry into the kingdom.
-    reason: lexical_alternative
-  - marker: b
-    text: Some understand the final clause more negatively in light of a similar saying in Matthew 11:12, but here the Greek subject is 'everyone,' not 'the kingdom.'
+    text: Or 'everyone is being urged to enter it.' The Greek verb can be understood as middle or passive.
     reason: alternative_reading
 lexical_decisions:
 - source_word: Ὁ νόμος
@@ -107,13 +104,12 @@ revisions:
   from: The Law and the Prophets were until John; from then on the kingdom of God is being proclaimed as good news, and everyone is forcing his way into it.
   to: The Law and the Prophets were until John; from then on the kingdom of God is proclaimed as good news, and everyone is forcing his way into it.
   rationale: Changed 'is being proclaimed as good news' to 'is proclaimed as good news' for a more natural rendering of the present passive without unnecessary progressive aspect; retained the rest as accurate and complete.
-
 - timestamp: '2026-05-18T03:10:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The Law and the Prophets were until John[a]; from then on the kingdom of God is proclaimed as good news[b], and everyone is forcing his way into it.'
-  to: 'The Law and the Prophets were until John; from then on the kingdom of God is being proclaimed as good news, and everyone is forcing his way into it.'
+  from: The Law and the Prophets were until John[a]; from then on the kingdom of God is proclaimed as good news[b], and everyone is forcing his way into it.
+  to: The Law and the Prophets were until John; from then on the kingdom of God is being proclaimed as good news, and everyone is forcing his way into it.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''is being proclaimed as good news''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -123,6 +119,13 @@ revisions:
   from: The Law and the Prophets were until John; from then on the kingdom of God is being proclaimed as good news, and everyone is forcing his way into it.
   to: The Law and the Prophets were until John; from then on the kingdom of God is being proclaimed as good news, and everyone[b][a] is forcing his way into it.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('everyone') because the note names that rendering; [b] anchored to ('everyone') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:14:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The Law and the Prophets were until John; from then on the kingdom of God is being proclaimed as good news, and everyone[b][a] is forcing his way into it.
+  to: The era of the Law and the Prophets lasted until John; since then, the kingdom of God has been proclaimed as good news, and everyone is forcing his way into it[a].
+  rationale: The recorded revision and automated revert only alternate between progressive and simple present wording; neither resolves the opening ellipsis. I clarify the change of era from the chapter's context, retain the earlier forceful-entry reading, and give the serious passive alternative in a footnote.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -146,3 +149,26 @@ cross_check:
     agree: 2
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/016/016.job-55769.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:14:42Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Jesus identifies John as the turning point from the era of the Law and the Prophets to the proclamation of God's kingdom, into which people are pressing forcefully.
+  meaning_decisions:
+  - source_phrase: Ὁ νόμος καὶ οἱ προφῆται μέχρι Ἰωάννου
+    prior_rendering: The Law and the Prophets were until John
+    new_rendering: The era of the Law and the Prophets lasted until John
+    rationale: The compressed clause marks a historical turning point; the following verse rules out understanding it as the disappearance or failure of the Law itself.
+  - source_phrase: ἀπὸ τότε ἡ βασιλεία τοῦ θεοῦ εὐαγγελίζεται
+    prior_rendering: from then on the kingdom of God is being proclaimed as good news
+    new_rendering: since then, the kingdom of God has been proclaimed as good news
+    rationale: English present perfect naturally expresses proclamation beginning at that turning point and continuing into the present.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The recorded revision and automated revert only alternate between progressive and simple present wording; neither resolves the opening ellipsis. I clarify the change of era from the chapter's context, retain the earlier forceful-entry reading, and give the serious passive alternative in a footnote.

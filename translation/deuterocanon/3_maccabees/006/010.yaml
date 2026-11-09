@@ -20,15 +20,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But if our way of life in the place of our exile has been caught up in ungodliness[a], then, after rescuing us from the hand of our enemies, destroy us by whatever death you choose[b], Master.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'in our colony/settlement'; the Greek term can denote a colony or settlement, but here likely refers to the community's life in exile.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'Lord' or 'Sovereign' for 'Master'; the Greek address is δέσποτα, not κύριος.
-    reason: lexical_alternative
+  text: But if our way of life in exile has become entangled in ungodliness, first rescue us from the hand of our enemies; then, Master, put us to death in whatever way you choose.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀσεβείας
   chosen: ungodliness
@@ -140,14 +133,20 @@ revisions:
   from: But if our way of life in the place of our exile has been caught up in ungodliness, then, after rescuing us from the hand of our enemies, destroy us by whatever death you choose, Master.
   to: But if our way of life in exile has been marked by ungodliness, then, after rescuing us from the hand of our enemies, destroy us by whatever death you choose, Master.
   rationale: Revised 'in the place of our exile' to 'in exile' for more natural rendering of κατὰ τὴν ἀποικίαν, and changed 'has been caught up in ungodliness' to 'has been marked by ungodliness' for a more accurate and idiomatic rendering of ἐνέσχηκται.
-
 - timestamp: '2026-05-16T19:37:32Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But if our way of life in exile has been marked by ungodliness[a], then, after rescuing us from the hand of our enemies, destroy us by whatever death you choose[b], Master.'
-  to: 'But if our way of life in the place of our exile has been caught up in ungodliness[a], then, after rescuing us from the hand of our enemies, destroy us by whatever death you choose[b], Master.'
-  rationale: 'Restored drafter ''in the place of our exile'' (preserving the chosen explicit ''place of'') and ''has been caught up in ungodliness'' (preserving the chosen rendering) per chosen renderings.'
+  from: But if our way of life in exile has been marked by ungodliness[a], then, after rescuing us from the hand of our enemies, destroy us by whatever death you choose[b], Master.
+  to: But if our way of life in the place of our exile has been caught up in ungodliness[a], then, after rescuing us from the hand of our enemies, destroy us by whatever death you choose[b], Master.
+  rationale: Restored drafter 'in the place of our exile' (preserving the chosen explicit 'place of') and 'has been caught up in ungodliness' (preserving the chosen rendering) per chosen renderings.
+- timestamp: '2026-11-09T18:57:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But if our way of life in the place of our exile has been caught up in ungodliness[a], then, after rescuing us from the hand of our enemies, destroy us by whatever death you choose[b], Master.
+  to: But if our way of life in exile has become entangled in ungodliness, first rescue us from the hand of our enemies; then, Master, put us to death in whatever way you choose.
+  rationale: The earlier review usefully shortened the exile phrase, while the automated revert primarily defended source-shaped wording. I preserve the conditional acknowledgment of ungodliness and the demanding rescue-before-judgment sequence, but make both natural and explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -167,3 +166,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/006/010.job-49652.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:47Z'
+  change_level: retranslated
+  confidence: high
+  meaning: If the people have become implicated in ungodliness while in exile, Eleazar asks God to rescue them from their enemies first and then judge them with whatever death he chooses.
+  meaning_decisions:
+  - source_phrase: κατὰ τὴν ἀποικίαν
+    prior_rendering: in the place of our exile
+    new_rendering: in exile
+    rationale: The phrase describes their life away from their homeland; 'in exile' conveys that setting without an unnecessary reference to a 'place.'
+  - source_phrase: ἀσεβείας ... ἐνέσχηκται
+    prior_rendering: has been caught up in ungodliness
+    new_rendering: has become entangled in ungodliness
+    rationale: The perfect describes an existing state of involvement in ungodliness; 'entangled' makes that implication clearer.
+  - source_phrase: ῥυσάμενος ἡμᾶς ἀπὸ ἐχθρῶν χειρός ... ἀπόλεσον ἡμᾶς μόρῳ
+    prior_rendering: after rescuing us from the hand of our enemies, destroy us by whatever death you choose
+    new_rendering: first rescue us from the hand of our enemies; then ... put us to death in whatever way you choose
+    rationale: The participle establishes rescue before judgment, and μόρῳ specifies death; the revised imperatives state that stark sequence directly.
+  footnote_kinds: {}
+  history_weighed: The earlier review usefully shortened the exile phrase, while the automated revert primarily defended source-shaped wording. I preserve the conditional acknowledgment of ungodliness and the demanding rescue-before-judgment sequence, but make both natural and explicit.

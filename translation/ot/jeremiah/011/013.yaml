@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: כִּ֚י מִסְפַּ֣ר עָרֶ֔י/ךָ הָי֥וּ אֱלֹהֶ֖י/ךָ יְהוּדָ֑ה וּ/מִסְפַּ֞ר חֻצ֣וֹת יְרוּשָׁלִַ֗ם שַׂמְתֶּ֤ם מִזְבְּחוֹת֙ לַ/בֹּ֔שֶׁת מִזְבְּח֖וֹת לְ/קַטֵּ֥ר לַ/בָּֽעַל׃ס
 translation:
-  text: For your gods[a], O Judah, have become as numerous as your cities; and as numerous as the streets of Jerusalem, you have set up altars to Shame[b], altars to make offerings to Baal.
-  philosophy: optimal-equivalence
+  text: For your gods, O Judah, have become as numerous as your cities; you have set up as many altars as there are streets in Jerusalem—altars to Shame[a], altars for burning offerings to Baal.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew 'to Shame,' a contemptuous substitute for a pagan deity, likely referring to Baal.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'to burn incense to Baal.' The Hebrew verb often refers specifically to making a smoke offering.
+    text: “Shame” is a contemptuous name for Baal.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: כִּי
@@ -117,14 +114,20 @@ revisions:
   from: For your gods, Judah, have become as numerous as your cities; and as numerous as the streets of Jerusalem you have set up altars to Shame, altars to make offerings to Baal.
   to: For your gods, O Judah, have become as numerous as your cities; and as numerous as the streets of Jerusalem, you have set up altars to Shame, altars to burn incense to Baal.
   rationale: Added 'O' before 'Judah' for direct address, inserted a comma after 'Jerusalem' for clarity, and changed 'to make offerings' to 'to burn incense' to more precisely reflect לְקַטֵּר.
-
 - timestamp: '2026-05-16T08:09:59Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For your gods[a], O Judah, have become as numerous as your cities; and as numerous as the streets of Jerusalem, you have set up altars to Shame[b], altars to burn incense to Baal.'
-  to: 'For your gods[a], O Judah, have become as numerous as your cities; and as numerous as the streets of Jerusalem, you have set up altars to Shame[b], altars to make offerings to Baal.'
-  rationale: 'Azure substituted ''to burn incense'' — drafter''s explicit rejected_alternative. Drafter chose ''to make offerings'' because the Hebrew object is omitted, preferring broader rendering with specific alternative preserved in footnote.'
+  from: For your gods[a], O Judah, have become as numerous as your cities; and as numerous as the streets of Jerusalem, you have set up altars to Shame[b], altars to burn incense to Baal.
+  to: For your gods[a], O Judah, have become as numerous as your cities; and as numerous as the streets of Jerusalem, you have set up altars to Shame[b], altars to make offerings to Baal.
+  rationale: Azure substituted 'to burn incense' — drafter's explicit rejected_alternative. Drafter chose 'to make offerings' because the Hebrew object is omitted, preferring broader rendering with specific alternative preserved in footnote.
+- timestamp: '2026-11-09T17:55:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For your gods[a], O Judah, have become as numerous as your cities; and as numerous as the streets of Jerusalem, you have set up altars to Shame[b], altars to make offerings to Baal.
+  to: For your gods, O Judah, have become as numerous as your cities; you have set up as many altars as there are streets in Jerusalem—altars to Shame[a], altars for burning offerings to Baal.
+  rationale: The history rightly preserves the polemical name 'Shame' and cautions against specifying incense when the offering’s object is unstated. 'Burning offerings' retains that breadth while recovering the verb’s omitted smoke-producing action.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -144,3 +147,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/011/013.job-67363.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:55:49Z'
+  change_level: refined
+  confidence: high
+  meaning: Judah’s gods and altars to Baal have multiplied throughout its cities and Jerusalem’s streets.
+  meaning_decisions:
+  - source_phrase: וּמִסְפַּר חֻצוֹת יְרוּשָׁלִַם שַׂמְתֶּם מִזְבְּחוֹת
+    prior_rendering: and as numerous as the streets of Jerusalem, you have set up altars
+    new_rendering: you have set up as many altars as there are streets in Jerusalem
+    rationale: Natural English makes the numerical comparison explicit without changing its force.
+  - source_phrase: לְקַטֵּר לַבָּעַל
+    prior_rendering: to make offerings to Baal
+    new_rendering: for burning offerings to Baal
+    rationale: The verb specifies producing sacrificial smoke; 'burning offerings' preserves that action without narrowing the unspecified offering to incense.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The history rightly preserves the polemical name 'Shame' and cautions against specifying incense when the offering’s object is unstated. 'Burning offerings' retains that breadth while recovering the verb’s omitted smoke-producing action.

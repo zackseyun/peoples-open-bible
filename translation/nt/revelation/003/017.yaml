@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: ὅτι λέγεις ⸀ὅτι Πλούσιός εἰμι καὶ πεπλούτηκα καὶ ⸀οὐδὲν χρείαν ἔχω, καὶ οὐκ οἶδας ὅτι σὺ εἶ ὁ ταλαίπωρος ⸀καὶ ἐλεεινὸς καὶ πτωχὸς καὶ τυφλὸς καὶ γυμνός,
 translation:
-  text: because you say[a], ‘I am rich, and I have become wealthy[b], and I have need of nothing,’ and you do not know that you are wretched and pitiable and poor and blind and naked.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'I need nothing.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or, 'wretched' or 'miserable' for 'the wretched one.' The Greek includes the article, making the description especially pointed.
-    reason: lexical_alternative
+  text: For you say, ‘I am rich; I have become wealthy and need nothing,’ but you do not realize that you are wretched and pitiable and poor and blind and naked.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὅτι
   chosen: because
@@ -124,14 +117,20 @@ revisions:
   from: because you say, ‘I am rich, and I have become wealthy, and I have need of nothing,’ and you do not know that you are the wretched one, pitiable and poor and blind and naked.
   to: because you say, ‘I am rich, and I have become wealthy, and I have need of nothing,’ and you do not know that you are the wretched one, pitiable and poor and blind and naked.
   rationale: Removed ‘the’ and ‘one’ from ‘the wretched one’ to better reflect the Greek predicate adjectives in natural formal English; retained the rest unchanged.
-
 - timestamp: '2026-05-18T03:00:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'because you say[a], ‘I am rich, and I have become wealthy[b], and I have need of nothing,’ and you do not know that you are wretched and pitiable and poor and blind and naked.'
-  to: 'because you say[a], ‘I am rich, and I have become wealthy[b], and I have need of nothing,’ and you do not know that you are wretched and pitiable and poor and blind and naked.'
+  from: because you say[a], ‘I am rich, and I have become wealthy[b], and I have need of nothing,’ and you do not know that you are wretched and pitiable and poor and blind and naked.
+  to: because you say[a], ‘I am rich, and I have become wealthy[b], and I have need of nothing,’ and you do not know that you are wretched and pitiable and poor and blind and naked.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the wretched one''].'
+- timestamp: '2026-11-09T17:16:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: because you say[a], ‘I am rich, and I have become wealthy[b], and I have need of nothing,’ and you do not know that you are wretched and pitiable and poor and blind and naked.
+  to: For you say, ‘I am rich; I have become wealthy and need nothing,’ but you do not realize that you are wretched and pitiable and poor and blind and naked.
+  rationale: The history debates 'the wretched one,' but the supplied current wording already conveys the pointed accusation naturally as 'you are wretched.' I retain that wording and the cumulative series of accusations while clarifying the contrast with the church’s boast.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -151,3 +150,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/revelation/003/017.job-47404.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:16:23Z'
+  change_level: refined
+  confidence: high
+  meaning: The church boasts of wealth and complete self-sufficiency while failing to recognize its wretched poverty, blindness, and nakedness.
+  meaning_decisions:
+  - source_phrase: ὅτι
+    prior_rendering: because
+    new_rendering: For
+    rationale: The verse explains the rebuke; 'For' preserves that explanatory connection while allowing a complete English sentence.
+  - source_phrase: οὐδὲν χρείαν ἔχω
+    prior_rendering: I have need of nothing
+    new_rendering: need nothing
+    rationale: This is the natural English expression of the church’s emphatic claim of self-sufficiency.
+  - source_phrase: καὶ οὐκ οἶδας
+    prior_rendering: and you do not know
+    new_rendering: but you do not realize
+    rationale: The conjunction contrasts the church’s boast with its actual condition, and the knowing here concerns recognition of that condition.
+  footnote_kinds: {}
+  history_weighed: The history debates 'the wretched one,' but the supplied current wording already conveys the pointed accusation naturally as 'you are wretched.' I retain that wording and the cumulative series of accusations while clarifying the contrast with the church’s boast.

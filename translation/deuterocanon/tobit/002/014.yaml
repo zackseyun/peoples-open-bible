@@ -9,21 +9,15 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: But she said[a], “It was given to me as a gift in addition to my wages.” But I did not believe her, and I told her to give it back to its owners; and I was embarrassed before her. Then she answered and said to me, “Where are your acts of mercy and your righteous deeds? Behold[d][c][b], everything about you is known.”
-  philosophy: optimal-equivalence
+  text: She said, “It was given to me as a gift in addition to my wages.” But I did not believe her and kept telling her to return it to its owners. My face flushed as I spoke to her[a]. She replied, “Where are your acts of mercy and your righteous deeds? Look—everything about you is plain to see[b]!”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “along with my wages” / “as part of my wages.” The Greek phrase can indicate something given in connection with her pay; the context suggests she claims it was an extra gift rather than stolen property.
-    reason: lexical_alternative
+    text: The Greek describes reddening or flushing, which may express anger or shame.
+    reason: alternative_reading
   - marker: b
-    text: Greek “masters” (κυρίοις); here rendered “owners” because the context concerns returning disputed property to those who possessed it.
-    reason: lexical_alternative
-  - marker: c
-    text: The Greek literally refers to blushing or reddening; the sense in context is shame or embarrassment.
-    reason: lexical_alternative
-  - marker: d
-    text: Or “your almsgivings and your acts of righteousness.”
-    reason: lexical_alternative
+    text: 'Her terse rebuke can expose Tobit''s character or question what his good deeds have gained him: “Look at what all this has brought you!”'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: Δῶρον
   chosen: gift
@@ -143,14 +137,20 @@ revisions:
   from: But she said, “It was given to me as a gift in addition to my wages.” But I did not believe her, and I told her to give it back to its owners; and I became ashamed before her. Then she answered and said to me, “Where are your acts of mercy and your righteous deeds? Look—everything about you is known.”
   to: But she said, “It was given to me as a gift in addition to my wages.” But I did not believe her, and I told her to give it back to its owners; and I became ashamed before her. Then she answered and said to me, “Where are your acts of mercy and your righteous deeds? Look—everything about you is known.”
   rationale: Changed 'became ashamed' to 'was embarrassed' for more natural rendering of ἠρυθρίων, and 'Look' to 'Behold' for a more formal register matching the translation style.
-
 - timestamp: '2026-05-18T02:59:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But she said[a], “It was given to me as a gift in addition to my wages.” But I did not believe her, and I told her to give it back to its owners; and I was embarrassed before her. Then she answered and said to me, “Where are your acts of mercy and your righteous deeds? Behold[d][c][b], everything about you is known.”'
-  to: 'But she said[a], “It was given to me as a gift in addition to my wages.” But I did not believe her, and I told her to give it back to its owners; and I was embarrassed before her. Then she answered and said to me, “Where are your acts of mercy and your righteous deeds? Behold[d][c][b], everything about you is known.”'
+  from: But she said[a], “It was given to me as a gift in addition to my wages.” But I did not believe her, and I told her to give it back to its owners; and I was embarrassed before her. Then she answered and said to me, “Where are your acts of mercy and your righteous deeds? Behold[d][c][b], everything about you is known.”
+  to: But she said[a], “It was given to me as a gift in addition to my wages.” But I did not believe her, and I told her to give it back to its owners; and I was embarrassed before her. Then she answered and said to me, “Where are your acts of mercy and your righteous deeds? Behold[d][c][b], everything about you is known.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I became ashamed''].'
+- timestamp: '2026-11-09T19:10:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But she said[a], “It was given to me as a gift in addition to my wages.” But I did not believe her, and I told her to give it back to its owners; and I was embarrassed before her. Then she answered and said to me, “Where are your acts of mercy and your righteous deeds? Behold[d][c][b], everything about you is known.”
+  to: She said, “It was given to me as a gift in addition to my wages.” But I did not believe her and kept telling her to return it to its owners. My face flushed as I spoke to her[a]. She replied, “Where are your acts of mercy and your righteous deeds? Look—everything about you is plain to see[b]!”
+  rationale: The automated history alternates between shame and embarrassment, but the source's reddening can also express anger, so I preserve the image and note the uncertainty. I retain the earlier decisions on the extra gift, concrete righteous deeds, and the rebuke's unresolved force.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -170,3 +170,31 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/tobit/002/014.job-39148.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:12Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Anna defended the goat as an additional gift, but Tobit's persistent disbelief prompted her bitter challenge to his mercy and righteousness.
+  meaning_decisions:
+  - source_phrase: ἔλεγον ἀποδιδόναι
+    prior_rendering: I told her to give it back
+    new_rendering: kept telling her to return it
+    rationale: The imperfect presents his insistence as continuing despite her explanation.
+  - source_phrase: ἠρυθρίων πρὸς αὐτήν
+    prior_rendering: I was embarrassed before her
+    new_rendering: My face flushed as I spoke to her
+    rationale: The Greek describes reddening, but does not unambiguously distinguish shame from anger; the physical image preserves that uncertainty.
+  - source_phrase: ἰδοὺ γνωστὰ πάντα μετὰ σοῦ
+    prior_rendering: Behold, everything about you is known
+    new_rendering: Look—everything about you is plain to see
+    rationale: This gives the rebuke natural English force without identifying a particular observer or turning it into an explicit pronouncement of divine judgment.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: The automated history alternates between shame and embarrassment, but the source's reddening can also express anger, so I preserve the image and note the uncertainty. I retain the earlier decisions on the extra gift, concrete righteous deeds, and the rebuke's unresolved force.

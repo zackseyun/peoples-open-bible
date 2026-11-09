@@ -4,14 +4,14 @@ source:
   edition: WLC
   text: וְ/רָעוּ֙ בְּכוֹרֵ֣י דַלִּ֔ים וְ/אֶבְיוֹנִ֖ים לָ/בֶ֣טַח יִרְבָּ֑צוּ וְ/הֵמַתִּ֤י בָֽ/רָעָב֙ שָׁרְשֵׁ֔/ךְ וּ/שְׁאֵרִיתֵ֖/ךְ יַהֲרֹֽג׃
 translation:
-  text: The firstborn of the poor will graze[a], and the needy will lie down in safety; and I will kill your root with famine[b], and it will slay your remnant.
-  philosophy: optimal-equivalence
+  text: The poorest of the poor[a] will feed, and the needy will lie down in safety; but I will kill your root with famine, and it[b] will slay your remnant.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the poorest of the poor.' The Hebrew literally reads 'the firstborn of the poor,' which may function idiomatically as an intensification.
+    text: Literally, 'the firstborn of the poor,' understood here as an expression of extreme poverty.
     reason: lexical_alternative
   - marker: b
-    text: The Hebrew has 'he will slay your remnant.' The subject may be left indefinite, or understood as famine/personified judgment, rather than being made explicit in translation.
+    text: Or, 'he will slay your remnant,' referring to an unnamed agent of judgment rather than famine.
     reason: alternative_reading
 lexical_decisions:
 - source_word: וְרָעוּ
@@ -120,14 +120,20 @@ revisions:
   from: The firstborn of the poor will graze, and the needy will lie down in safety; but I will kill your root with famine, and he will slay your remnant.
   to: The firstborn of the poor will graze, and the needy will lie down in safety; but I will kill your root with famine, and he will slay your remnant.
   rationale: Changed 'but' to 'and' to reflect the Hebrew conjunction more neutrally, and changed 'he will slay your remnant' to 'it will slay your remnant' for clearer agreement with 'famine' as the implied subject.
-
 - timestamp: '2026-05-17T17:06:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The firstborn of the poor will graze[a], and the needy will lie down in safety; and I will kill your root with famine[b], and it will slay your remnant.'
-  to: 'The firstborn of the poor will graze[a], and the needy will lie down in safety; and I will kill your root with famine[b], and it will slay your remnant.'
+  from: The firstborn of the poor will graze[a], and the needy will lie down in safety; and I will kill your root with famine[b], and it will slay your remnant.
+  to: The firstborn of the poor will graze[a], and the needy will lie down in safety; and I will kill your root with famine[b], and it will slay your remnant.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he will slay''].'
+- timestamp: '2026-11-09T17:49:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The firstborn of the poor will graze[a], and the needy will lie down in safety; and I will kill your root with famine[b], and it will slay your remnant.
+  to: The poorest of the poor[a] will feed, and the needy will lie down in safety; but I will kill your root with famine, and it[b] will slay your remnant.
+  rationale: The first draft's contrasting 'but' fits the context better than the later neutral 'and.' The current reference to famine as 'it' remains the best-supported main reading, while the documented uncertainty about the final subject is preserved in a note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -147,3 +153,31 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/isaiah/014/030.job-66217.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:49:23Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The poorest and neediest will enjoy provision and safety, but Philistia will be destroyed by famine and lose even its remnant.
+  meaning_decisions:
+  - source_phrase: בְּכוֹרֵי דַלִּים
+    prior_rendering: The firstborn of the poor
+    new_rendering: The poorest of the poor
+    rationale: The phrase intensifies poverty rather than singling out the eldest children of poor families.
+  - source_phrase: וְרָעוּ
+    prior_rendering: will graze
+    new_rendering: will feed
+    rationale: '''Feed'' conveys provision for the poor while preserving the pastoral resonance with ''lie down''; ''graze'' can misleadingly suggest that they must eat grass.'
+  - source_phrase: וְהֵמַתִּי
+    prior_rendering: and I will kill
+    new_rendering: but I will kill
+    rationale: The conjunction introduces a sharp contrast between the vulnerable people's safety and Philistia's destruction.
+  footnote_kinds:
+    a: literal_wording
+    b: alternative_meaning
+  history_weighed: The first draft's contrasting 'but' fits the context better than the later neutral 'and.' The current reference to famine as 'it' remains the best-supported main reading, while the documented uncertainty about the final subject is preserved in a note.

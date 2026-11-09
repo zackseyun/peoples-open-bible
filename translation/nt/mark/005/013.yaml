@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ ἐπέτρεψεν ⸀αὐτοῖς. καὶ ἐξελθόντα τὰ πνεύματα τὰ ἀκάθαρτα εἰσῆλθον εἰς τοὺς χοίρους, καὶ ὥρμησεν ἡ ἀγέλη κατὰ τοῦ κρημνοῦ εἰς τὴν θάλασσαν, ⸀ὡς δισχίλιοι, καὶ ἐπνίγοντο ἐν τῇ θαλάσσῃ.
 translation:
-  text: And he permitted them[a]. Then the unclean spirits came out and entered the pigs, and the herd—about two thousand—rushed down the steep bank into the sea[b], and they drowned in the sea.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'down the cliff' or 'down the precipice'; the Greek term can denote a steep slope or precipice.
-    reason: lexical_alternative
-  - marker: b
-    text: Greek 'the sea.' This refers to the Sea of Galilee.
-    reason: cultural_note
+  text: Jesus gave them permission. Then the unclean spirits came out of the man and entered the pigs. The herd—about two thousand pigs—rushed down the steep bank into the sea and drowned there.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐπέτρεψεν αὐτοῖς
   chosen: he permitted them
@@ -113,14 +106,20 @@ revisions:
   from: And he permitted them. Then the unclean spirits came out and entered the pigs, and the herd—about two thousand—rushed down the steep bank into the sea, and they were drowned in the sea.
   to: And he permitted them. Then the unclean spirits came out and entered the pigs, and the herd—about two thousand—rushed down the steep bank into the sea, and they were drowned in the sea.
   rationale: Changed 'they were drowned' to 'they drowned' to reflect the intransitive Greek more naturally and accurately; otherwise retained the draft.
-
 - timestamp: '2026-05-18T03:00:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he permitted them[a]. Then the unclean spirits came out and entered the pigs, and the herd—about two thousand—rushed down the steep bank into the sea[b], and they drowned in the sea.'
-  to: 'And he permitted them[a]. Then the unclean spirits came out and entered the pigs, and the herd—about two thousand—rushed down the steep bank into the sea[b], and they drowned in the sea.'
+  from: And he permitted them[a]. Then the unclean spirits came out and entered the pigs, and the herd—about two thousand—rushed down the steep bank into the sea[b], and they drowned in the sea.
+  to: And he permitted them[a]. Then the unclean spirits came out and entered the pigs, and the herd—about two thousand—rushed down the steep bank into the sea[b], and they drowned in the sea.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they were drowned''].'
+- timestamp: '2026-11-09T17:13:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he permitted them[a]. Then the unclean spirits came out and entered the pigs, and the herd—about two thousand—rushed down the steep bank into the sea[b], and they drowned in the sea.
+  to: Jesus gave them permission. Then the unclean spirits came out of the man and entered the pigs. The herd—about two thousand pigs—rushed down the steep bank into the sea and drowned there.
+  rationale: The recorded review's preference for “drowned” over “were drowned” is retained because it avoids implying an external agent; the revert entry records no actual change. The balanced “steep bank” and the approximate number also remain.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -143,3 +142,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/mark/005/013.job-56224.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:13:13Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus permits the spirits to enter the pigs, and the herd of about two thousand rushes into the sea and drowns.
+  meaning_decisions:
+  - source_phrase: ἐξελθόντα τὰ πνεύματα τὰ ἀκάθαρτα
+    prior_rendering: the unclean spirits came out
+    new_rendering: the unclean spirits came out of the man
+    rationale: The understood source of their departure is made explicit, distinguishing their exit from the man from their entry into the pigs.
+  - source_phrase: ὥρμησεν ἡ ἀγέλη ... ὡς δισχίλιοι, καὶ ἐπνίγοντο ἐν τῇ θαλάσσῃ
+    prior_rendering: the herd—about two thousand—rushed down the steep bank into the sea, and they drowned in the sea
+    new_rendering: The herd—about two thousand pigs—rushed down the steep bank into the sea and drowned there
+    rationale: The number and drowning are explicitly attached to the pigs, not the spirits, and the repeated location is carried naturally by “there.”
+  footnote_kinds: {}
+  history_weighed: The recorded review's preference for “drowned” over “were drowned” is retained because it avoids implying an external agent; the revert entry records no actual change. The balanced “steep bank” and the approximate number also remain.

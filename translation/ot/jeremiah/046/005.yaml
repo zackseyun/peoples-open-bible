@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: מַדּ֣וּעַ רָאִ֗יתִי הֵ֣מָּה חַתִּים֮ נְסֹגִ֣ים אָחוֹר֒ וְ/גִבּוֹרֵי/הֶ֣ם יֻכַּ֔תּוּ וּ/מָנ֥וֹס נָ֖סוּ וְ/לֹ֣א הִפְנ֑וּ מָג֥וֹר מִ/סָּבִ֖יב נְאֻם יְהוָֽה־׃
 translation:
-  text: Why have I seen this? They are terrified[a], turning back; their warriors are crushed, and they have fled hastily and have not turned back. Terror is on every side[b], declares Yahweh.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'their mighty men are beaten down.'
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'fled in flight,' an emphatic expression for complete rout.
-    reason: lexical_alternative
+  text: Why do I see them terrified and retreating? Their warriors are crushed; they flee headlong without looking back. Terror is on every side, declares Yahweh.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: מַדּוּעַ
   chosen: Why
@@ -127,14 +120,20 @@ revisions:
   from: Why have I seen it? They are terrified, turning back; their warriors are crushed, and they have fled in flight and have not turned back. Terror is on every side, declares the LORD.
   to: Why have I seen it? They are terrified, turning back; their warriors are crushed, and they have fled in flight and have not turned back. Terror is on every side, declares the LORD.
   rationale: Changed 'it' to 'this' for a more natural rendering of the demonstrative, and revised 'fled in flight' to 'fled hastily' to avoid awkward English while preserving the emphatic sense of fleeing.
-
 - timestamp: '2026-05-18T02:57:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Why have I seen this? They are terrified[a], turning back; their warriors are crushed, and they have fled hastily and have not turned back. Terror is on every side[b], declares Yahweh.'
-  to: 'Why have I seen this? They are terrified[a], turning back; their warriors are crushed, and they have fled hastily and have not turned back. Terror is on every side[b], declares Yahweh.'
+  from: Why have I seen this? They are terrified[a], turning back; their warriors are crushed, and they have fled hastily and have not turned back. Terror is on every side[b], declares Yahweh.
+  to: Why have I seen this? They are terrified[a], turning back; their warriors are crushed, and they have fled hastily and have not turned back. Terror is on every side[b], declares Yahweh.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and they have fled in flight''].'
+- timestamp: '2026-11-09T18:00:17Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Why have I seen this? They are terrified[a], turning back; their warriors are crushed, and they have fled hastily and have not turned back. Terror is on every side[b], declares Yahweh.
+  to: Why do I see them terrified and retreating? Their warriors are crushed; they flee headlong without looking back. Terror is on every side, declares Yahweh.
+  rationale: The recorded discussion rightly recognizes an emphatic rout, despite an automated revert favoring “fled in flight”; “flee headlong” carries that force naturally. I retain Jeremiah's recurring declaration of terror on every side.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -156,3 +155,29 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/046/005.job-68098.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:00:17Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Egypt's army collapses into panic, retreating in defeat without looking back as terror surrounds it.
+  meaning_decisions:
+  - source_phrase: מַדּוּעַ רָאִיתִי הֵמָּה חַתִּים נְסֹגִים אָחוֹר
+    prior_rendering: Why have I seen this? They are terrified, turning back
+    new_rendering: Why do I see them terrified and retreating?
+    rationale: The question is tied directly to the startling sight of the troops in retreat; the present tense conveys the immediacy of the prophetic scene.
+  - source_phrase: וּמָנוֹס נָסוּ
+    prior_rendering: and they have fled hastily
+    new_rendering: they flee headlong
+    rationale: The emphatic construction describes a complete, panicked rout, not merely rapid movement.
+  - source_phrase: וְלֹא הִפְנוּ
+    prior_rendering: and have not turned back
+    new_rendering: without looking back
+    rationale: This expresses their uninterrupted flight and avoids the apparent contradiction between “turning back” and “have not turned back.”
+  footnote_kinds: {}
+  history_weighed: The recorded discussion rightly recognizes an emphatic rout, despite an automated revert favoring “fled in flight”; “flee headlong” carries that force naturally. I retain Jeremiah's recurring declaration of terror on every side.

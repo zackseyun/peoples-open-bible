@@ -17,15 +17,12 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: For wisdom is a spirit that loves humanity[a], and it will not acquit a blasphemer because of his lips; for God is witness of his inner motives[b], and a true observer of his heart and a hearer of his tongue.
-  philosophy: optimal-equivalence
+  text: For wisdom is a spirit that loves humanity, yet it will not acquit a blasphemer for the words of his lips; for God is a witness to his inmost being[a], sees his heart as it truly is, and hears what his tongue says.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Literally, 'his kidneys,' an idiom for the hidden inner self or motives.
+    text: Literally, 'his kidneys,' regarded as the seat of hidden feelings and desires.
     reason: lexical_alternative
-  - marker: b
-    text: Or 'will not hold guiltless a blasphemer for what comes from his lips.' The Greek phrase after 'blasphemer' is compressed and may be taken with causal force.
-    reason: alternative_reading
 lexical_decisions:
 - source_word: φιλάνθρωπον
   chosen: that loves humanity
@@ -149,14 +146,20 @@ revisions:
   from: For wisdom is a spirit that loves humanity, and it will not acquit a blasphemer because of his lips; for God is witness of his inner motives, and a true observer of his heart and a hearer of his tongue.
   to: For wisdom is a spirit that loves humanity, and it will not acquit a blasphemer for the words of his lips; for God is witness of his inner being, and a true observer of his heart and a hearer of his tongue.
   rationale: Changed 'because of his lips' to 'for the words of his lips' to reflect ἀπὸ χειλέων αὐτοῦ more naturally and accurately in context. Changed 'inner motives' to 'inner being' to better represent νεφρῶν literally and avoid interpretive narrowing.
-
 - timestamp: '2026-05-16T17:07:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For wisdom is a spirit that loves humanity[a], and it will not acquit a blasphemer for the words of his lips; for God is witness of his inner being[b], and a true observer of his heart and a hearer of his tongue.'
-  to: 'For wisdom is a spirit that loves humanity[a], and it will not acquit a blasphemer because of his lips; for God is witness of his inner motives[b], and a true observer of his heart and a hearer of his tongue.'
-  rationale: 'Restored drafter ''because of his lips'' (preserving the chosen causal rendering of ἀπὸ χειλέων αὐτοῦ) and ''inner motives'' (preserving the chosen ''motives'' rendering) per chosen renderings.'
+  from: For wisdom is a spirit that loves humanity[a], and it will not acquit a blasphemer for the words of his lips; for God is witness of his inner being[b], and a true observer of his heart and a hearer of his tongue.
+  to: For wisdom is a spirit that loves humanity[a], and it will not acquit a blasphemer because of his lips; for God is witness of his inner motives[b], and a true observer of his heart and a hearer of his tongue.
+  rationale: Restored drafter 'because of his lips' (preserving the chosen causal rendering of ἀπὸ χειλέων αὐτοῦ) and 'inner motives' (preserving the chosen 'motives' rendering) per chosen renderings.
+- timestamp: '2026-11-09T19:10:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For wisdom is a spirit that loves humanity[a], and it will not acquit a blasphemer because of his lips; for God is witness of his inner motives[b], and a true observer of his heart and a hearer of his tongue.
+  to: For wisdom is a spirit that loves humanity, yet it will not acquit a blasphemer for the words of his lips; for God is a witness to his inmost being[a], sees his heart as it truly is, and hears what his tongue says.
+  rationale: The recorded review correctly recognized the opacity of 'because of his lips' and the broader inward meaning of 'kidneys'; the subsequent automated revert supplied no meaning-based reason to reject those gains. I retain the judicial force of 'acquit' while expressing God's threefold scrutiny more naturally.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -176,3 +179,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/001/006.job-39323.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:56Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Although wisdom loves humanity, it does not excuse blasphemous speech, because God knows the speaker's inner life and hears his words.
+  meaning_decisions:
+  - source_phrase: καὶ οὐκ ἀθῳώσει βλάσφημον ἀπὸ χειλέων αὐτοῦ
+    prior_rendering: and it will not acquit a blasphemer because of his lips
+    new_rendering: yet it will not acquit a blasphemer for the words of his lips
+    rationale: The contrast makes clear that wisdom's love does not mean overlooking guilt, and the expanded reference to words identifies the speech for which the blasphemer is held accountable.
+  - source_phrase: τῶν νεφρῶν αὐτοῦ μάρτυς ὁ θεός
+    prior_rendering: God is witness of his inner motives
+    new_rendering: God is a witness to his inmost being
+    rationale: The kidneys represent the hidden inward self, including feelings and desires as well as motives; the broader wording preserves that range and retains the judicial image of a witness.
+  - source_phrase: τῆς καρδίας αὐτοῦ ἐπίσκοπος ἀληθής καὶ τῆς γλώσσης ἀκουστής
+    prior_rendering: a true observer of his heart and a hearer of his tongue
+    new_rendering: sees his heart as it truly is, and hears what his tongue says
+    rationale: Natural verbal clauses express God's reliable scrutiny and hearing while retaining the meaningful heart-and-tongue imagery.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The recorded review correctly recognized the opacity of 'because of his lips' and the broader inward meaning of 'kidneys'; the subsequent automated revert supplied no meaning-based reason to reject those gains. I retain the judicial force of 'acquit' while expressing God's threefold scrutiny more naturally.

@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וַ/יַּבֵּ֕ט וְ/הִנֵּ֧ה מְרַאֲשֹׁתָ֛י/ו עֻגַ֥ת רְצָפִ֖ים וְ/צַפַּ֣חַת מָ֑יִם וַ/יֹּ֣אכַל וַ/יֵּ֔שְׁתְּ וַ/יָּ֖שָׁב וַ/יִּשְׁכָּֽב׃
 translation:
-  text: He looked[a], and behold, at his head was a cake baked on hot stones and a jar of water. He ate and drank and lay down again.
-  philosophy: optimal-equivalence
+  text: He looked, and there beside his head were a round loaf baked on hot stones[a] and a jar of water. He ate and drank, then lay down again.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'a cake on coals.' The Hebrew רְצָפִים may refer to heated stones used for baking, though some translations render it more generally as 'coals.'
-    reason: lexical_alternative
+    text: Or, “baked on coals.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וַיַּבֵּט
   chosen: He looked
@@ -88,14 +88,20 @@ revisions:
   from: He looked, and behold, at his head was a cake baked on hot stones and a jar of water. He ate and drank, then lay down again.
   to: He looked, and behold, at his head was a cake baked on hot stones and a jar of water. He ate and drank, then lay down again.
   rationale: Removed 'then' to keep the coordination closer to the Hebrew sequence, while retaining the draft's accurate and natural rendering.
-
 - timestamp: '2026-05-18T02:56:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He looked[a], and behold, at his head was a cake baked on hot stones and a jar of water. He ate and drank and lay down again.'
-  to: 'He looked[a], and behold, at his head was a cake baked on hot stones and a jar of water. He ate and drank and lay down again.'
+  from: He looked[a], and behold, at his head was a cake baked on hot stones and a jar of water. He ate and drank and lay down again.
+  to: He looked[a], and behold, at his head was a cake baked on hot stones and a jar of water. He ate and drank and lay down again.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''then lay down again''].'
+- timestamp: '2026-11-09T17:22:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He looked[a], and behold, at his head was a cake baked on hot stones and a jar of water. He ate and drank and lay down again.
+  to: He looked, and there beside his head were a round loaf baked on hot stones[a] and a jar of water. He ate and drank, then lay down again.
+  rationale: I retain the documented hot-stone reading and its serious 'coals' alternative. The automated discussion of 'and' versus 'then' carries little semantic weight; 'then' naturally expresses the return to lying down.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -115,3 +121,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/019/006.job-58624.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:21Z'
+  change_level: refined
+  confidence: high
+  meaning: Elijah finds bread and water beside his head, eats and drinks, and lies down again.
+  meaning_decisions:
+  - source_phrase: עֻגַת רְצָפִים
+    prior_rendering: a cake baked on hot stones
+    new_rendering: a round loaf baked on hot stones
+    rationale: The food is a round bread-cake; 'loaf' avoids the modern suggestion of a sweet dessert.
+  - source_phrase: וְהִנֵּה מְרַאֲשֹׁתָיו
+    prior_rendering: and behold, at his head
+    new_rendering: and there beside his head
+    rationale: The English presentation directs attention to the discovered provisions while clearly locating them beside Elijah's head.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retain the documented hot-stone reading and its serious 'coals' alternative. The automated discussion of 'and' versus 'then' carries little semantic weight; 'then' naturally expresses the return to lying down.

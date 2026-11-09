@@ -42,12 +42,12 @@ source:
   validation: minor_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone PAZ extraction from the curated ADA stream, using Daniel 3:24-90 as the source span and renumbering it to PAZ 1:1-67.
 translation:
-  text: Let every power bless the Lord[a]; sing praise and highly exalt him forever.
-  philosophy: optimal-equivalence
+  text: Let all the powers of heaven[a] bless the Lord; sing praise to him and highly exalt him forever.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'all powers bless the Lord.' The Greek has singular δύναμις with πᾶσα, which may be understood distributively or collectively.
-    reason: lexical_alternative
+    text: Or, “the whole heavenly host.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: εὐλογείτω
   chosen: Let ... bless
@@ -135,7 +135,6 @@ revision_pass:
   timestamp: '2026-04-23T15:40:25Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -155,3 +154,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/prayer_of_azariah/001/038.job-50949.json
+revisions:
+- timestamp: '2026-11-09T19:01:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Let every power bless the Lord[a]; sing praise and highly exalt him forever.
+  to: Let all the powers of heaven[a] bless the Lord; sing praise to him and highly exalt him forever.
+  rationale: The earlier discussion kept 'power' broad and declined 'host'; I retain 'powers' but clarify their heavenly setting from the surrounding summons. The serious collective reading is preserved in a footnote.
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:48Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: All the powers of heaven are summoned to bless the Lord and exalt him in everlasting song.
+  meaning_decisions:
+  - source_phrase: πᾶσα ἡ δύναμις
+    prior_rendering: every power
+    new_rendering: all the powers of heaven
+    rationale: Within this heavenly portion of the litany, δύναμις refers to heavenly powers or a host; naming the realm prevents 'power' from sounding like abstract ability or earthly political authority.
+  - source_phrase: ὑμνεῖτε καὶ ὑπερυψοῦτε αὐτὸν
+    prior_rendering: sing praise and highly exalt him
+    new_rendering: sing praise to him and highly exalt him
+    rationale: Making the recipient of the singing explicit preserves the same clear refrain used in the surrounding verses.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier discussion kept 'power' broad and declined 'host'; I retain 'powers' but clarify their heavenly setting from the surrounding summons. The serious collective reading is preserved in a footnote.

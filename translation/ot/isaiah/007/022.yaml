@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/הָיָ֗ה מֵ/רֹ֛ב עֲשׂ֥וֹת חָלָ֖ב יֹאכַ֣ל חֶמְאָ֑ה כִּֽי חֶמְאָ֤ה וּ/דְבַשׁ֙ יֹאכֵ֔ל כָּל הַ/נּוֹתָ֖ר בְּ/קֶ֥רֶב הָ/אָֽרֶץ־־׃
 translation:
-  text: And it will happen that because of the abundance of milk he gives[a], he will eat curds; for everyone left in the midst of the land will eat curds and honey.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'butter and honey.' The Hebrew חֶמְאָה may refer more broadly to curdled or thickened milk products rather than specifically modern butter.
-    reason: lexical_alternative
+  text: Because the animals yield so much milk, he will eat curds; for everyone left in the land will eat curds and honey.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְהָיָה
   chosen: And it will happen
@@ -88,14 +84,20 @@ revisions:
   from: And it will happen that because of the abundance of milk he produces, he will eat curds; for everyone left in the midst of the land will eat curds and honey.
   to: And it will happen that because of the abundance of milk he produces, he will eat curds; for everyone left in the midst of the land will eat curds and honey.
   rationale: Changed 'produces' to 'gives' for a more natural and direct rendering of the verb, while preserving the sense. No other changes needed.
-
 - timestamp: '2026-05-17T17:51:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And it will happen that because of the abundance of milk he gives[a], he will eat curds; for everyone left in the midst of the land will eat curds and honey.'
-  to: 'And it will happen that because of the abundance of milk he gives[a], he will eat curds; for everyone left in the midst of the land will eat curds and honey.'
+  from: And it will happen that because of the abundance of milk he gives[a], he will eat curds; for everyone left in the midst of the land will eat curds and honey.
+  to: And it will happen that because of the abundance of milk he gives[a], he will eat curds; for everyone left in the midst of the land will eat curds and honey.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''milk he produces''].'
+- timestamp: '2026-11-09T17:47:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And it will happen that because of the abundance of milk he gives[a], he will eat curds; for everyone left in the midst of the land will eat curds and honey.
+  to: Because the animals yield so much milk, he will eat curds; for everyone left in the land will eat curds and honey.
+  rationale: The recorded changes between “produces” and “gives” did not address the unclear English subject. I retain the established dairy rendering and survivor language while making the animals’ role explicit from the preceding verse.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -115,3 +117,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/isaiah/007/022.job-66070.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:47:46Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The surviving inhabitants will eat curds and honey, with abundant milk supplied by the livestock kept alive.
+  meaning_decisions:
+  - source_phrase: וְהָיָה מֵרֹב עֲשׂוֹת חָלָב
+    prior_rendering: And it will happen that because of the abundance of milk he gives
+    new_rendering: Because the animals yield so much milk
+    rationale: The livestock of verse 21 supply the milk; making that implied subject explicit avoids suggesting that the man himself gives milk and removes the empty introductory formula.
+  - source_phrase: בְּקֶרֶב הָאָרֶץ
+    prior_rendering: in the midst of the land
+    new_rendering: in the land
+    rationale: Here the expression means within the land, not specifically in its geographical center.
+  footnote_kinds: {}
+  history_weighed: The recorded changes between “produces” and “gives” did not address the unclear English subject. I retain the established dairy rendering and survivor language while making the animals’ role explicit from the preceding verse.

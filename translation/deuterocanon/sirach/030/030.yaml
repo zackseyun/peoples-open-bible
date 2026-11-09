@@ -21,11 +21,11 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: For it is better that your children should beg from you than that you look to the hands of your sons[a].
-  philosophy: optimal-equivalence
+  text: For it is better for your children to ask you for support than for you to depend on your sons[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more idiomatically, 'than that you depend on your sons for support.' The Greek says literally, 'look to the hands of your sons.'
+    text: Literally, 'look to the hands of your sons.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: κρεῖσσον
@@ -118,14 +118,20 @@ revisions:
   from: For it is better that your children have to beg from you than that you look to the hands of your sons.
   to: For it is better that your children have to beg from you than that you look to the hands of your sons.
   rationale: Replaced 'have to beg' with 'should beg' for a more formal, natural rendering while preserving the sense of δεηθῆναί; retained 'look to the hands of your sons' as a literal and acceptable expression.
-
 - timestamp: '2026-05-18T02:59:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For it is better that your children should beg from you than that you look to the hands of your sons[a].'
-  to: 'For it is better that your children should beg from you than that you look to the hands of your sons[a].'
+  from: For it is better that your children should beg from you than that you look to the hands of your sons[a].
+  to: For it is better that your children should beg from you than that you look to the hands of your sons[a].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''have to beg''].'
+- timestamp: '2026-11-09T19:08:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For it is better that your children should beg from you than that you look to the hands of your sons[a].
+  to: For it is better for your children to ask you for support than for you to depend on your sons[a].
+  rationale: Earlier revisions mainly adjusted the formality of 'beg' while preserving the hands image. I retain the recorded distinction between children and sons but bring the already documented meaning of financial dependence into the text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -145,3 +151,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/030/030.job-51808.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:11Z'
+  change_level: retranslated
+  confidence: high
+  meaning: It is preferable for children to request their parent's support than for the parent to become dependent on his sons.
+  meaning_decisions:
+  - source_phrase: τὰ τέκνα δεηθῆναί σου
+    prior_rendering: that your children should beg from you
+    new_rendering: for your children to ask you for support
+    rationale: The verb can mean ask or entreat; the economic context identifies the request as one for support without implying begging in the street.
+  - source_phrase: σὲ ἐμβλέπειν εἰς χεῖρας υἱῶν σου
+    prior_rendering: that you look to the hands of your sons
+    new_rendering: for you to depend on your sons
+    rationale: Looking toward another's hands means depending on that person for provision. The main text states that meaning, and the note preserves the concrete image.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: Earlier revisions mainly adjusted the formality of 'beg' while preserving the hands image. I retain the recorded distinction between children and sons but bring the already documented meaning of financial dependence into the text.

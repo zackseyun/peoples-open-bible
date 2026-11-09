@@ -9,11 +9,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Before your eyes his mouth speaks sweetly[a], and he will marvel at your words; but afterward he will twist his mouth and, in regard to your words, he will cause offense.
-  philosophy: optimal-equivalence
+  text: In your presence he will flatter you and admire your words; but afterward he will twist his speech[a] and use your words to trip you up.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'he will give a stumbling block from your words' / 'he will use your words to trip you up.' The Greek σκάνδαλον can denote an offense or a cause of stumbling.
+    text: Literally, 'twist his mouth.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἀπέναντι τῶν ὀφθαλμῶν σου
@@ -99,14 +99,20 @@ revisions:
   from: Before your eyes his mouth speaks sweetly, and he will marvel at your words; but afterward he will twist his mouth and, in regard to your words, he will cause offense.
   to: Before your eyes his mouth speaks sweetly, and he will marvel at your words; but afterward he will twist his mouth and, at your words, he will take offense.
   rationale: Adjusted the final clause from 'in regard to your words, he will cause offense' to 'at your words, he will take offense' for more natural English and a better fit for δώσει σκάνδαλον in context.
-
 - timestamp: '2026-05-16T12:52:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Before your eyes his mouth speaks sweetly[a], and he will marvel at your words; but afterward he will twist his mouth and, at your words, he will take offense.'
-  to: 'Before your eyes his mouth speaks sweetly[a], and he will marvel at your words; but afterward he will twist his mouth and, in regard to your words, he will cause offense.'
-  rationale: 'Restored drafter ''in regard to your words, he will cause offense'' (preserving causal δίδωμι σκάνδαλον force) per chosen renderings.'
+  from: Before your eyes his mouth speaks sweetly[a], and he will marvel at your words; but afterward he will twist his mouth and, at your words, he will take offense.
+  to: Before your eyes his mouth speaks sweetly[a], and he will marvel at your words; but afterward he will twist his mouth and, in regard to your words, he will cause offense.
+  rationale: Restored drafter 'in regard to your words, he will cause offense' (preserving causal δίδωμι σκάνδαλον force) per chosen renderings.
+- timestamp: '2026-11-09T19:07:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Before your eyes his mouth speaks sweetly[a], and he will marvel at your words; but afterward he will twist his mouth and, in regard to your words, he will cause offense.
+  to: In your presence he will flatter you and admire your words; but afterward he will twist his speech[a] and use your words to trip you up.
+  rationale: The recorded revert rightly rejected 'take offense' and preserved the causal force of the final clause. I build on that gain by making the harmful use of the hearer's words explicit and correcting the earlier handling of 'your mouth.'
 cross_check:
   status: moderate_agreement
   agreement: 0.8
@@ -126,3 +132,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/027/023.job-51717.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:08Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The schemer flatters you to your face but later turns his speech against you and uses your own words to harm you.
+  meaning_decisions:
+  - source_phrase: ἀπέναντι τῶν ὀφθαλμῶν σου γλυκανεῖ στόμα σου
+    prior_rendering: Before your eyes his mouth speaks sweetly
+    new_rendering: In your presence he will flatter you
+    rationale: The supplied source says 'your mouth,' not 'his mouth'; the sweetening describes flattery directed at the hearer in a face-to-face encounter.
+  - source_phrase: διαστρέψει τὸ στόμα αὐτοῦ
+    prior_rendering: he will twist his mouth
+    new_rendering: he will twist his speech
+    rationale: The bodily expression conveys speech becoming crooked or hostile; retaining 'twist' preserves the metaphor while identifying its force.
+  - source_phrase: ἐν τοῖς λόγοις σου δώσει σκάνδαλον
+    prior_rendering: in regard to your words, he will cause offense
+    new_rendering: use your words to trip you up
+    rationale: The schemer makes the hearer's words an instrument of harm, rather than merely causing social offense or taking offense himself.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The recorded revert rightly rejected 'take offense' and preserved the causal force of the final clause. I build on that gain by making the harmful use of the hearer's words explicit and correcting the earlier handling of 'your mouth.'

@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֻּגַּד֙ לְ/מֶ֣לֶךְ מִצְרַ֔יִם כִּ֥י בָרַ֖ח הָ/עָ֑ם וַ֠/יֵּהָפֵךְ לְבַ֨ב פַּרְעֹ֤ה וַ/עֲבָדָי/ו֙ אֶל הָ/עָ֔ם וַ/יֹּֽאמרוּ֙ מַה זֹּ֣את עָשִׂ֔ינוּ כִּֽי שִׁלַּ֥חְנוּ אֶת יִשְׂרָאֵ֖ל מֵ/עָבְדֵֽ/נוּ־־־־׃
 translation:
-  text: It was reported to the king of Egypt that the people had fled[a], and the heart of Pharaoh and his servants was turned against the people, and they said, “What is this we have done[b], that we have let Israel go from serving us?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “the mind of Pharaoh and his servants was changed toward the people.”
-    reason: lexical_alternative
-  - marker: b
-    text: Or, “that we have released Israel from our service” or “from being our slaves.”
-    reason: lexical_alternative
+  text: When the king of Egypt was told that the people had fled, Pharaoh and his servants had a change of heart about the people. They said, “What have we done, letting Israel go so they no longer serve us as slaves?”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֻּגַּד
   chosen: It was reported
@@ -117,14 +110,20 @@ revisions:
   from: It was reported to the king of Egypt that the people had fled, and the heart of Pharaoh and of his servants was turned against the people, and they said, “What is this we have done, that we have let Israel go from serving us?”
   to: It was reported to the king of Egypt that the people had fled, and the heart of Pharaoh and of his servants was turned against the people, and they said, “What is this we have done, that we have let Israel go from serving us?”
   rationale: Removed the second 'of' before 'his servants' for smoother, more natural English. The draft is otherwise accurate and complete.
-
 - timestamp: '2026-05-18T02:54:42Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'It was reported to the king of Egypt that the people had fled[a], and the heart of Pharaoh and his servants was turned against the people, and they said, “What is this we have done[b], that we have let Israel go from serving us?”'
-  to: 'It was reported to the king of Egypt that the people had fled[a], and the heart of Pharaoh and his servants was turned against the people, and they said, “What is this we have done[b], that we have let Israel go from serving us?”'
+  from: It was reported to the king of Egypt that the people had fled[a], and the heart of Pharaoh and his servants was turned against the people, and they said, “What is this we have done[b], that we have let Israel go from serving us?”
+  to: It was reported to the king of Egypt that the people had fled[a], and the heart of Pharaoh and his servants was turned against the people, and they said, “What is this we have done[b], that we have let Israel go from serving us?”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the heart of Pharaoh and of his servants''].'
+- timestamp: '2026-11-09T17:34:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: It was reported to the king of Egypt that the people had fled[a], and the heart of Pharaoh and his servants was turned against the people, and they said, “What is this we have done[b], that we have let Israel go from serving us?”
+  to: When the king of Egypt was told that the people had fled, Pharaoh and his servants had a change of heart about the people. They said, “What have we done, letting Israel go so they no longer serve us as slaves?”
+  rationale: The earlier rationale rightly identifies both a reversal of attitude and the loss of service. Although it avoided naming slavery because the clause uses the verb serve, the established bondage context warrants making that understood status explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -146,3 +145,29 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/014/005.job-62609.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:34:25Z'
+  change_level: retranslated
+  confidence: high
+  meaning: On hearing that Israel has fled, Pharaoh and his servants reverse their attitude and regret releasing the people from slave service.
+  meaning_decisions:
+  - source_phrase: וַיֻּגַּד לְמֶלֶךְ מִצְרַיִם כִּי בָרַח הָעָם
+    prior_rendering: It was reported to the king of Egypt that the people had fled
+    new_rendering: When the king of Egypt was told that the people had fled
+    rationale: The report supplies the setting for the ensuing reversal; the temporal construction makes that narrative connection clear.
+  - source_phrase: וַיֵּהָפֵךְ לְבַב פַּרְעֹה וַעֲבָדָיו אֶל הָעָם
+    prior_rendering: the heart of Pharaoh and his servants was turned against the people
+    new_rendering: Pharaoh and his servants had a change of heart about the people
+    rationale: The idiom denotes a reversal of attitude toward Israel’s release; change of heart preserves the metaphor and expresses the reversal naturally.
+  - source_phrase: מַה זֹּאת עָשִׂינוּ כִּי שִׁלַּחְנוּ אֶת יִשְׂרָאֵל מֵעָבְדֵנוּ
+    prior_rendering: What is this we have done, that we have let Israel go from serving us?
+    new_rendering: What have we done, letting Israel go so they no longer serve us as slaves?
+    rationale: The question expresses alarm at losing Israel’s labor; the Exodus context establishes that this service was slavery, not voluntary employment.
+  footnote_kinds: {}
+  history_weighed: The earlier rationale rightly identifies both a reversal of attitude and the loss of service. Although it avoided naming slavery because the clause uses the verb serve, the established bondage context warrants making that understood status explicit.

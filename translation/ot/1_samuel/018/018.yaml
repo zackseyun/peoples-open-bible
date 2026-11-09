@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וַ/יֹּ֨אמֶר דָּוִ֜ד אֶל שָׁא֗וּל מִ֤י אָֽנֹכִי֙ וּ/מִ֣י חַיַּ֔/י מִשְׁפַּ֥חַת אָבִ֖/י בְּ/יִשְׂרָאֵ֑ל כִּֽי אֶהְיֶ֥ה חָתָ֖ן לַ/מֶּֽלֶךְ־־׃
 translation:
-  text: And David said to Saul[a], “Who am I, and what is my life, or my father’s family in Israel, that I should become the king’s son-in-law?”
-  philosophy: optimal-equivalence
+  text: David said to Saul, “Who am I, and what standing does my father’s family have in Israel[a], that I should become the king’s son-in-law?”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more literally, 'and what is my life?' The Hebrew expression may emphasize David's insignificance; the main text renders it in light of the following phrase, 'my father's family in Israel.'
-    reason: lexical_alternative
+    text: Alternatively, “and what is my life, or my father’s family in Israel?” The Hebrew expression is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: And ... said
@@ -77,14 +77,20 @@ revisions:
   from: And David said to Saul, “Who am I, and who are my relatives, my father’s family in Israel, that I should become the king’s son-in-law?”
   to: And David said to Saul, “Who am I, and who are my relatives, my father’s family in Israel, that I should become the king’s son-in-law?”
   rationale: Revised 'who are my relatives' to 'what is my life' to reflect the Hebrew more accurately, and retained 'my father’s family in Israel' as the parallel phrase. This is more lexically faithful while remaining natural English.
-
 - timestamp: '2026-05-18T02:56:43Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And David said to Saul[a], “Who am I, and what is my life, or my father’s family in Israel, that I should become the king’s son-in-law?”'
-  to: 'And David said to Saul[a], “Who am I, and what is my life, or my father’s family in Israel, that I should become the king’s son-in-law?”'
+  from: And David said to Saul[a], “Who am I, and what is my life, or my father’s family in Israel, that I should become the king’s son-in-law?”
+  to: And David said to Saul[a], “Who am I, and what is my life, or my father’s family in Israel, that I should become the king’s son-in-law?”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and who are my relatives''].'
+- timestamp: '2026-11-09T17:23:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And David said to Saul[a], “Who am I, and what is my life, or my father’s family in Israel, that I should become the king’s son-in-law?”
+  to: David said to Saul, “Who am I, and what standing does my father’s family have in Israel[a], that I should become the king’s son-in-law?”
+  rationale: The first draft and lexical discussion support a reference to David’s relatives, while the later rationale preferred “my life” for lexical transparency. The family apposition and narrative context favor the former understanding, without making the uncertain Hebrew appear settled.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -104,3 +110,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/018/018.job-59216.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:16Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: David expresses his sense that neither he nor his family has the standing to enter the royal family by marriage.
+  meaning_decisions:
+  - source_phrase: וּמִי חַיַּי מִשְׁפַּחַת אָבִי בְּיִשְׂרָאֵל
+    prior_rendering: and what is my life, or my father’s family in Israel
+    new_rendering: and what standing does my father’s family have in Israel
+    rationale: The reference to his father’s family and the parallel response in verse 23 favor a question about family standing; the disputed life-oriented reading remains in a footnote.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and lexical discussion support a reference to David’s relatives, while the later rationale preferred “my life” for lexical transparency. The family apposition and narrative context favor the former understanding, without making the uncertain Hebrew appear settled.

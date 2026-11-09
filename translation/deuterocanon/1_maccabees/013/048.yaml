@@ -9,15 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And he drove out from it every impurity[a], and settled in it men who practice the law, and fortified it[b], and built for himself a residence in it.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'every uncleanness' or 'every defilement.' The Greek can refer broadly to impurity, including ritual or moral contamination.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'fortified it' simply; the compound verb may imply additional strengthening.
-    reason: lexical_alternative
+  text: He purged the city of every impurity and settled there men who keep the law. He strengthened its fortifications and built himself a residence there.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐξέβαλεν
   chosen: drove out
@@ -111,14 +104,20 @@ revisions:
   from: And he drove out from it every impurity, and settled in it men who practice the law, and he fortified it further, and built for himself a residence in it.
   to: And he drove out from it every impurity, and settled in it men who practice the law, and he fortified it further, and built for himself a residence in it.
   rationale: Removed 'further,' which is not represented by the Greek; otherwise retained the draft's accurate and natural rendering.
-
 - timestamp: '2026-05-18T02:59:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he drove out from it every impurity[a], and settled in it men who practice the law, and fortified it[b], and built for himself a residence in it.'
-  to: 'And he drove out from it every impurity[a], and settled in it men who practice the law, and fortified it[b], and built for himself a residence in it.'
+  from: And he drove out from it every impurity[a], and settled in it men who practice the law, and fortified it[b], and built for himself a residence in it.
+  to: And he drove out from it every impurity[a], and settled in it men who practice the law, and fortified it[b], and built for himself a residence in it.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''fortified it further''].'
+- timestamp: '2026-11-09T18:53:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he drove out from it every impurity[a], and settled in it men who practice the law, and fortified it[b], and built for himself a residence in it.
+  to: He purged the city of every impurity and settled there men who keep the law. He strengthened its fortifications and built himself a residence there.
+  rationale: The lexical record supports broad impurity, male settlers, and actual observance of the law, all of which are retained. Its recognition of added fortification is more persuasive than the automated review’s categorical rejection of that nuance.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -138,3 +137,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/013/048.job-48772.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:34Z'
+  change_level: refined
+  confidence: high
+  meaning: Simon removes the city’s impurity, installs inhabitants who observe the law, strengthens its defenses, and builds a residence there.
+  meaning_decisions:
+  - source_phrase: ἐξέβαλεν ἐξ αὐτῆς πᾶσαν ἀκαθαρσίαν
+    prior_rendering: he drove out from it every impurity
+    new_rendering: He purged the city of every impurity
+    rationale: '''Purged'' naturally expresses decisive removal of impurity while preserving the broad religious sense.'
+  - source_phrase: οἵτινες τὸν νόμον ποιοῦσιν
+    prior_rendering: who practice the law
+    new_rendering: who keep the law
+    rationale: The phrase describes observance of the Jewish law; 'practice the law' can misleadingly suggest the legal profession.
+  - source_phrase: προσοχύρωσεν αὐτήν
+    prior_rendering: fortified it
+    new_rendering: strengthened its fortifications
+    rationale: The compound verb and the already fortified city support additional strengthening without specifying new structures.
+  footnote_kinds: {}
+  history_weighed: The lexical record supports broad impurity, male settlers, and actual observance of the law, all of which are retained. Its recognition of added fortification is more persuasive than the automated review’s categorical rejection of that nuance.

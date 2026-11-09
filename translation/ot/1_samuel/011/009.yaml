@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּאמְר֞וּ לַ/מַּלְאָכִ֣ים הַ/בָּאִ֗ים כֹּ֤ה תֹֽאמְרוּ/ן֙ לְ/אִישׁ֙ יָבֵ֣ישׁ גִּלְעָ֔ד מָחָ֛ר תִּהְיֶֽה לָ/כֶ֥ם תְּשׁוּעָ֖ה ב/חם הַ/שָּׁ֑מֶשׁ וַ/יָּבֹ֣אוּ הַ/מַּלְאָכִ֗ים וַ/יַּגִּ֛ידוּ לְ/אַנְשֵׁ֥י יָבֵ֖ישׁ וַ/יִּשְׂמָֽחוּ־׃
 translation:
-  text: 'They said to the messengers who were coming[a], “Thus you shall say to the men of Jabesh-gilead: Tomorrow, by the heat of the sun, you will have deliverance.” So the messengers came and told the men of Jabesh[b], and they rejoiced.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “to the man of Jabesh-gilead”; the Hebrew singular likely functions collectively for the inhabitants of the city.
-    reason: lexical_alternative
-  - marker: b
-    text: Or “when the sun is hot,” that is, around the hottest part of the day.
-    reason: lexical_alternative
+  text: They told the messengers who had come, “Say to the men of Jabesh-gilead, ‘Tomorrow, by the time the sun grows hot, you will have deliverance.’” The messengers returned and told the men of Jabesh, and they rejoiced.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: הַמַּלְאָכִים
   chosen: messengers
@@ -107,14 +100,20 @@ revisions:
   from: 'They said to the messengers who were coming, “This is what you shall say to the men of Jabesh-gilead: Tomorrow, by the heat of the sun, deliverance will be yours.” So the messengers came and told the men of Jabesh, and they rejoiced.'
   to: 'They said to the messengers who had come, “Thus you shall say to the men of Jabesh-gilead: Tomorrow, by the heat of the sun, you will have deliverance.” So the messengers came and told the men of Jabesh, and they rejoiced.'
   rationale: Adjusted 'who were coming' to 'who had come' to match the participle in context, changed 'This is what' to the more formal 'Thus,' and rendered 'deliverance will be yours' as 'you will have deliverance' for closer correspondence to the Hebrew while keeping natural English.
-
 - timestamp: '2026-05-15T11:24:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'They said to the messengers who had come[a], “Thus you shall say to the men of Jabesh-gilead: Tomorrow, by the heat of the sun, you will have deliverance.” So the messengers came and told the men of Jabesh[b], and they rejoiced.'
   to: 'They said to the messengers who were coming[a], “Thus you shall say to the men of Jabesh-gilead: Tomorrow, by the heat of the sun, you will have deliverance.” So the messengers came and told the men of Jabesh[b], and they rejoiced.'
-  rationale: 'Restored 3 chosen renderings (participial aspect, modern ''This is what'', Hebrew existential word-order).'
+  rationale: Restored 3 chosen renderings (participial aspect, modern 'This is what', Hebrew existential word-order).
+- timestamp: '2026-11-09T17:22:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'They said to the messengers who were coming[a], “Thus you shall say to the men of Jabesh-gilead: Tomorrow, by the heat of the sun, you will have deliverance.” So the messengers came and told the men of Jabesh[b], and they rejoiced.'
+  to: They told the messengers who had come, “Say to the men of Jabesh-gilead, ‘Tomorrow, by the time the sun grows hot, you will have deliverance.’” The messengers returned and told the men of Jabesh, and they rejoiced.
+  rationale: The April revision correctly understood the messengers as already present; the later automated revert does not outweigh that contextual reading. I retain “deliverance” while making the sun’s heat an intelligible time marker.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -134,3 +133,33 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/011/009.job-58986.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:51Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The messengers are sent back with a promise of deliverance the next day, bringing joy to Jabesh.
+  meaning_decisions:
+  - source_phrase: לַמַּלְאָכִים הַבָּאִים
+    prior_rendering: to the messengers who were coming
+    new_rendering: the messengers who had come
+    rationale: The messengers are now present to receive the reply; preserving participial form should not imply that they are still approaching.
+  - source_phrase: כֹּה תֹאמְרוּן
+    prior_rendering: Thus you shall say
+    new_rendering: Say
+    rationale: The construction instructs the messengers to relay the following message; nested quotation makes its boundaries clear.
+  - source_phrase: בְּחֹם הַשָּׁמֶשׁ
+    prior_rendering: by the heat of the sun
+    new_rendering: by the time the sun grows hot
+    rationale: The sun’s heat marks the promised time of rescue, not its cause or means; the wording avoids specifying an unsupported exact hour.
+  - source_phrase: וַיָּבֹאוּ הַמַּלְאָכִים
+    prior_rendering: So the messengers came
+    new_rendering: The messengers returned
+    rationale: In the narrative they go back to Jabesh with the reply.
+  footnote_kinds: {}
+  history_weighed: The April revision correctly understood the messengers as already present; the later automated revert does not outweigh that contextual reading. I retain “deliverance” while making the sun’s heat an intelligible time marker.

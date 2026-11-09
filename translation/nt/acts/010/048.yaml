@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: προσέταξεν ⸀δὲ αὐτοὺς ⸂ἐν τῷ ὀνόματι Ἰησοῦ Χριστοῦ βαπτισθῆναι⸃. τότε ἠρώτησαν αὐτὸν ἐπιμεῖναι ἡμέρας τινάς.
 translation:
-  text: So he ordered them to be baptized in the name of Jesus Christ[a]. Then they asked him to remain for some days.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Greek title Christos means ‘Messiah’; here it appears in the conventional English personal-name form.
-    reason: alternative_reading
+  text: So he ordered them to be baptized in the name of Jesus Christ. Then they asked him to remain for some days.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: προσέταξεν
   chosen: ordered
@@ -113,10 +109,16 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "So he ordered them to be baptized in the name of Jesus Messiah. Then they asked him to remain for some days."
-  to: "So he ordered them to be baptized in the name of Jesus the Messiah. Then they asked him to remain for some days."
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
-
+  from: So he ordered them to be baptized in the name of Jesus Messiah. Then they asked him to remain for some days.
+  to: So he ordered them to be baptized in the name of Jesus the Messiah. Then they asked him to remain for some days.
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:08:18Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So he ordered them to be baptized in the name of Jesus Christ[a]. Then they asked him to remain for some days.
+  to: So he ordered them to be baptized in the name of Jesus Christ. Then they asked him to remain for some days.
+  rationale: Although automated reversions preferred 'Jesus the Messiah,' the current 'Jesus Christ' follows the standing ruling for name constructions. The baptismal name expression and the unspecified duration of Peter's stay already convey the meaning well.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -138,3 +140,17 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/acts/010/048.job-53883.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:18Z'
+  change_level: kept
+  confidence: high
+  meaning: Peter ordered their baptism in the name of Jesus Christ, and they asked him to remain for a time.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: Although automated reversions preferred 'Jesus the Messiah,' the current 'Jesus Christ' follows the standing ruling for name constructions. The baptismal name expression and the unspecified duration of Peter's stay already convey the meaning well.

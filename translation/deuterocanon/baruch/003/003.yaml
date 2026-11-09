@@ -8,11 +8,11 @@ source:
   confidence: high
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; kept canonical Baruch 1:1-5:9 only, with Letter of Jeremiah handled separately as LJE.
 translation:
-  text: for you remain seated forever[a], and we are perishing forever.
-  philosophy: optimal-equivalence
+  text: For you sit enthroned forever[a], while we are perishing forever.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'sit enthroned forever.' The Greek literally says 'sitting/seated forever,' which may imply enthronement in context but does not explicitly mention a throne.
+    text: Literally, 'you sit forever.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ὅτι
@@ -96,13 +96,12 @@ revisions:
   from: for you remain seated forever, and we are perishing forever.
   to: for you sit forever, and we are perishing forever.
   rationale: Changed 'remain seated' to 'sit' for a more direct and natural rendering of καθήμενος while preserving the contrast with 'we are perishing forever.'
-
 - timestamp: '2026-05-18T03:10:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'for you sit forever[a], and we are perishing forever.'
-  to: 'for you remain seated forever, and we are perishing forever.'
+  from: for you sit forever[a], and we are perishing forever.
+  to: for you remain seated forever, and we are perishing forever.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''remain seated''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -112,6 +111,13 @@ revisions:
   from: for you remain seated forever, and we are perishing forever.
   to: for you remain seated forever[a], and we are perishing forever.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:01:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: for you remain seated forever[a], and we are perishing forever.
+  to: For you sit enthroned forever[a], while we are perishing forever.
+  rationale: Earlier decisions withheld 'enthroned' because no throne is expressly named. I go beyond that source-transparent restraint to convey the royal meaning of the posture, while preserving the literal wording in a note.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -131,3 +137,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/baruch/003/003.job-50373.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:13Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The prayer contrasts God's everlasting rule with the community's threatened, enduring ruin.
+  meaning_decisions:
+  - source_phrase: σὺ καθήμενος τὸν αἰῶνα
+    prior_rendering: you remain seated forever
+    new_rendering: you sit enthroned forever
+    rationale: In this divine address, everlasting sitting conveys God's abiding rule, not merely a physical posture.
+  - source_phrase: καὶ ἡμεῖς
+    prior_rendering: and we
+    new_rendering: while we
+    rationale: The conjunction sets God's permanence against the community's perishing; 'while' makes that contrast explicit.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: Earlier decisions withheld 'enthroned' because no throne is expressly named. I go beyond that source-transparent restraint to convey the royal meaning of the posture, while preserving the literal wording in a note.

@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וּ/מֵ/חֵ֨יק הָ/אָ֜רֶץ עַד הָ/עֲזָרָ֤ה הַ/תַּחְתּוֹנָה֙ שְׁתַּ֣יִם אַמּ֔וֹת וְ/רֹ֖חַב אַמָּ֣ה אֶחָ֑ת וּ/מֵ/הֳ/עֲזָרָ֨ה הַ/קְּטַנָּ֜ה עַד הָ/עֲזָרָ֤ה הַ/גְּדוֹלָה֙ אַרְבַּ֣ע אַמּ֔וֹת וְ/רֹ֖חַב הָ/אַמָּֽה־־׃
 translation:
-  text: And from the ledge of the ground to the lower platform shall be two cubits[a], with a width of one cubit; and from the smaller platform to the larger platform shall be four cubits[c][b], with a width of one cubit.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew חֵיק הָאָרֶץ is literally 'the bosom of the earth' and may refer to the altar's base, recess, or ground-level ledge.
-    reason: lexical_alternative
-  - marker: b
-    text: The Hebrew term עֲזָרָה in this passage refers to stepped structural levels of the altar; translations vary between 'ledge,' 'platform,' and the older architectural term 'settle.'
-    reason: lexical_alternative
-  - marker: c
-    text: The final phrase is literally 'and the width of the cubit,' likely meaning a width of one cubit, parallel to the earlier measurement.
-    reason: lexical_alternative
+  text: From the gutter at ground level to the lower platform is a rise of two cubits, with a ledge one cubit wide. From the smaller platform to the larger platform is a rise of four cubits, with a ledge one cubit wide.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: חֵיק הָאָרֶץ
   chosen: the ledge of the ground
@@ -102,14 +92,20 @@ revisions:
   from: And from the ledge of the ground up to the lower platform shall be two cubits, with a width of one cubit; and from the smaller platform up to the larger platform shall be four cubits, with the width of one cubit.
   to: And from the ledge of the ground up to the lower platform shall be two cubits, with a width of one cubit; and from the smaller platform up to the larger platform shall be four cubits, with the width of one cubit.
   rationale: Removed the added word 'up' for closer adherence to the source, and adjusted the second clause to 'with a width of one cubit' for smoother and more consistent English.
-
 - timestamp: '2026-05-18T02:55:45Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And from the ledge of the ground to the lower platform shall be two cubits[a], with a width of one cubit; and from the smaller platform to the larger platform shall be four cubits[c][b], with a width of one cubit.'
-  to: 'And from the ledge of the ground to the lower platform shall be two cubits[a], with a width of one cubit; and from the smaller platform to the larger platform shall be four cubits[c][b], with a width of one cubit.'
+  from: And from the ledge of the ground to the lower platform shall be two cubits[a], with a width of one cubit; and from the smaller platform to the larger platform shall be four cubits[c][b], with a width of one cubit.
+  to: And from the ledge of the ground to the lower platform shall be two cubits[a], with a width of one cubit; and from the smaller platform to the larger platform shall be four cubits[c][b], with a width of one cubit.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with the width of one cubit''].'
+- timestamp: '2026-11-09T17:44:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And from the ledge of the ground to the lower platform shall be two cubits[a], with a width of one cubit; and from the smaller platform to the larger platform shall be four cubits[c][b], with a width of one cubit.
+  to: From the gutter at ground level to the lower platform is a rise of two cubits, with a ledge one cubit wide. From the smaller platform to the larger platform is a rise of four cubits, with a ledge one cubit wide.
+  rationale: The initial draft’s upward language recognized the vertical measurements, although a later pass removed ‘up’ for closer formal correspondence. I make that vertical sense explicit, use the same term for the lower feature as in verse 13, and clarify the projecting ledge widths.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -129,3 +125,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/043/014.job-64397.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:44:36Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The altar rises two cubits to its lower platform and another four cubits to its larger platform, with a one-cubit-wide ledge at each stage.
+  meaning_decisions:
+  - source_phrase: מֵחֵיק הָאָרֶץ
+    prior_rendering: from the ledge of the ground
+    new_rendering: From the gutter at ground level
+    rationale: This refers back to the lower feature described in verse 13; using the same term makes that connection clear.
+  - source_phrase: עַד הָעֲזָרָה הַתַּחְתּוֹנָה שְׁתַּיִם אַמּוֹת ... עַד הָעֲזָרָה הַגְּדוֹלָה אַרְבַּע אַמּוֹת
+    prior_rendering: to the lower platform shall be two cubits ... to the larger platform shall be four cubits
+    new_rendering: to the lower platform is a rise of two cubits ... to the larger platform is a rise of four cubits
+    rationale: These are vertical distances between successive altar levels, not unspecified horizontal measurements.
+  - source_phrase: וְרֹחַב אַמָּה אֶחָת ... וְרֹחַב הָאַמָּה
+    prior_rendering: with a width of one cubit ... with a width of one cubit
+    new_rendering: with a ledge one cubit wide ... with a ledge one cubit wide
+    rationale: The one-cubit widths describe the projecting ledges at the successive levels, not the total width of the altar platforms.
+  footnote_kinds: {}
+  history_weighed: The initial draft’s upward language recognized the vertical measurements, although a later pass removed ‘up’ for closer formal correspondence. I make that vertical sense explicit, use the same term for the lower feature as in verse 13, and clarify the projecting ledge widths.

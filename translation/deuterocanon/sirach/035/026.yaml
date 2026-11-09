@@ -15,12 +15,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 35:26
 translation:
-  text: Who will trust an armed troop[a], leaping from city to city?
-  philosophy: optimal-equivalence
+  text: Who would trust an armed troop that keeps moving from city to city[a]?
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'The supplied Greek parallel for this verse differs completely: ''Understand that I have not labored for myself alone, but for all who seek instruction.'' The Hebrew witness is therefore followed here as the primary text.'
-    reason: textual_variant
+    text: Literally, “leaping from city to city.”
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: מי
   chosen: Who will
@@ -104,14 +104,20 @@ revisions:
   from: Who will trust a troop of an army, leaping from city to city?
   to: Who will trust a troop of an army, leaping from city to city?
   rationale: Replaced 'a troop of an army' with 'an armed troop' for more natural English while preserving the sense of a military band; retained the rest unchanged.
-
 - timestamp: '2026-05-18T02:58:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Who will trust an armed troop[a], leaping from city to city?'
-  to: 'Who will trust an armed troop[a], leaping from city to city?'
+  from: Who will trust an armed troop[a], leaping from city to city?
+  to: Who will trust an armed troop[a], leaping from city to city?
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''of an army''].'
+- timestamp: '2026-11-09T20:12:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Who will trust an armed troop[a], leaping from city to city?
+  to: Who would trust an armed troop that keeps moving from city to city[a]?
+  rationale: I retain the current “armed troop,” which improves on the first draft’s “troop of an army”; the automated revert offers no meaning-based reason to undo that gain, and no maintainer revision is recorded. The unrelated Greek quotation is omitted because the supplied record does not establish it as a textual variant of this proverb.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -131,3 +137,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/035/026.job-51970.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:12:53Z'
+  change_level: refined
+  confidence: high
+  meaning: An armed troop that keeps moving from city to city cannot be relied on.
+  meaning_decisions:
+  - source_phrase: מי יאמין
+    prior_rendering: Who will trust
+    new_rendering: Who would trust
+    rationale: The question challenges the wisdom of placing trust in such a troop rather than asking who will do so in the future.
+  - source_phrase: המדלג מעיר אל עיר
+    prior_rendering: leaping from city to city
+    new_rendering: that keeps moving from city to city
+    rationale: The movement conveys an unsettled, roaming existence, which grounds the comparison in the next verse; literal leaping would obscure that sense in English. The vivid source wording is preserved in a footnote.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: I retain the current “armed troop,” which improves on the first draft’s “troop of an army”; the automated revert offers no meaning-based reason to undo that gain, and no maintainer revision is recorded. The unrelated Greek quotation is omitted because the supplied record does not establish it as a textual variant of this proverb.

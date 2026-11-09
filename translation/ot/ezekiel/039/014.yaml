@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: וְ/אַנְשֵׁ֨י תָמִ֤יד יַבְדִּ֨ילוּ֙ עֹבְרִ֣ים בָּ/אָ֔רֶץ מְקַבְּרִ֣ים אֶת הָ/עֹבְרִ֗ים אֶת הַ/נּוֹתָרִ֛ים עַל פְּנֵ֥י הָ/אָ֖רֶץ לְ/טַֽהֲרָ֑/הּ מִ/קְצֵ֥ה שִׁבְעָֽה חֳדָשִׁ֖ים יַחְקֹֽרוּ־־־־׃
 translation:
-  text: And they will set apart men continually[a], who will pass through the land burying those who pass through, those left on the surface of the land, to cleanse it[c][b]. At the end of seven months they will make a search.
-  philosophy: optimal-equivalence
+  text: They will appoint men for ongoing duty to travel through the land and bury the bodies of the invaders still lying on the ground[a], to cleanse it. At the end of seven months they will make a thorough search.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'men regularly appointed'; the Hebrew literally has 'men of continuality,' indicating an ongoing assignment.
-    reason: lexical_alternative
-  - marker: b
-    text: The Hebrew repeats the verb 'pass through' ('burying those who passed through'). In context this likely refers to the dead left lying in the land, but the wording is difficult and may intentionally echo the searchers' passing through the land.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'they will search thoroughly' or 'they will investigate.'
-    reason: lexical_alternative
+    text: Or, “and, with the help of those passing through, bury the bodies still lying on the ground”; the Hebrew syntax is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: אַנְשֵׁי תָמִיד
   chosen: men continually
@@ -110,14 +104,20 @@ revisions:
   from: And they will set apart men continually, who will pass through the land burying those who passed through—those left on the surface of the land—to cleanse it. At the end of seven months they will make a search.
   to: And they will set apart men continually, who will pass through the land burying those who passed through—those left on the surface of the land—to cleanse it. At the end of seven months they will make a search.
   rationale: Adjusted tense from 'passed through' to 'pass through' for consistency with the Hebrew participle, and replaced the em dash with commas for smoother formal English while preserving the appositional structure.
-
 - timestamp: '2026-05-18T02:54:26Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they will set apart men continually[a], who will pass through the land burying those who pass through, those left on the surface of the land, to cleanse it[c][b]. At the end of seven months they will make a search.'
-  to: 'And they will set apart men continually[a], who will pass through the land burying those who pass through, those left on the surface of the land, to cleanse it[c][b]. At the end of seven months they will make a search.'
+  from: And they will set apart men continually[a], who will pass through the land burying those who pass through, those left on the surface of the land, to cleanse it[c][b]. At the end of seven months they will make a search.
+  to: And they will set apart men continually[a], who will pass through the land burying those who pass through, those left on the surface of the land, to cleanse it[c][b]. At the end of seven months they will make a search.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''those who passed through''].'
+- timestamp: '2026-11-09T17:39:57Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they will set apart men continually[a], who will pass through the land burying those who pass through, those left on the surface of the land, to cleanse it[c][b]. At the end of seven months they will make a search.
+  to: They will appoint men for ongoing duty to travel through the land and bury the bodies of the invaders still lying on the ground[a], to cleanse it. At the end of seven months they will make a thorough search.
+  rationale: The earlier draft recognized that the people being buried had already passed through, whereas the later participle-based wording obscured their death. I preserve that contextual gain, clarify the ongoing assignment, and footnote the competing interpretation of the difficult Hebrew construction.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -137,3 +137,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/039/014.job-64282.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:39:57Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Israel will appoint men to continue clearing away the invaders’ remains and will conduct a thorough search after seven months.
+  meaning_decisions:
+  - source_phrase: אַנְשֵׁי תָמִיד יַבְדִּילוּ
+    prior_rendering: they will set apart men continually
+    new_rendering: They will appoint men for ongoing duty
+    rationale: The expression describes men assigned to continuing work, rather than a continual repetition of the appointment itself.
+  - source_phrase: עֹבְרִים בָּאָרֶץ מְקַבְּרִים אֶת הָעֹבְרִים אֶת הַנּוֹתָרִים עַל פְּנֵי הָאָרֶץ
+    prior_rendering: who will pass through the land burying those who pass through, those left on the surface of the land
+    new_rendering: to travel through the land and bury the bodies of the invaders still lying on the ground
+    rationale: The burial context identifies the objects as dead members of the invading force, not living travelers; the serious alternative construction involving help from travelers is preserved in a footnote.
+  - source_phrase: יַחְקֹרוּ
+    prior_rendering: they will make a search
+    new_rendering: they will make a thorough search
+    rationale: The verb denotes searching out or investigating thoroughly, appropriate to the organized inspection for remaining human remains.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier draft recognized that the people being buried had already passed through, whereas the later participle-based wording obscured their death. I preserve that contextual gain, clarify the ongoing assignment, and footnote the competing interpretation of the difficult Hebrew construction.

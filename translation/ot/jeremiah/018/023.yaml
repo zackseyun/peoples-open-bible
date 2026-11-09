@@ -4,17 +4,11 @@ source:
   edition: WLC
   text: וְ/אַתָּ֣ה יְ֠הוָה יָדַ֜עְתָּ אֶֽת כָּל עֲצָתָ֤/ם עָלַ/י֙ לַ/מָּ֔וֶת אַל תְּכַפֵּר֙ עַל עֲוֺנָ֔/ם וְ/חַטָּאתָ֖/ם מִ/לְּ/פָנֶ֣י/ךָ אַל תֶּ֑מְחִי ו/היו מֻכְשָׁלִים֙ לְ/פָנֶ֔י/ךָ בְּ/עֵ֥ת אַפְּ/ךָ֖ עֲשֵׂ֥ה בָ/הֶֽם־־־־־׃ס
 translation:
-  text: But you[a], O Yahweh, know all their counsel against me for death. Do not cover over their iniquity, and do not blot out their sin from before you. Let them be made to stumble before you; in the time of your anger[c][b], act against them.
-  philosophy: optimal-equivalence
+  text: But you, O Yahweh, know all their plots to kill me. Do not forgive their iniquity, and do not blot out their sin from your sight. Let them be brought down before you[a]; in the time of your anger, act against them.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'against me to kill me' / 'for my death.' The Hebrew literally reads 'against me for death.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'forgive their iniquity.' The Hebrew verb can carry the sense of making atonement or covering over guilt; here the more literal metaphor is retained.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'May they stumble before you.'
+    text: Literally, “let them be made to stumble before you.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: יְהוָה
@@ -122,14 +116,20 @@ revisions:
   from: But you, O LORD, know all their counsel against me for death. Do not cover over their iniquity, and do not blot out their sin from before you. Let them be made to stumble before you; in the time of your anger, act against them.
   to: But you, O LORD, know all their counsel against me to death. Do not cover over their iniquity, and do not blot out their sin from before you. Let them stumble before you; in the time of your anger, act against them.
   rationale: Changed 'for death' to 'to death' for a more literal rendering of the Hebrew phrase, and simplified 'be made to stumble' to 'stumble' to reflect the passive/stative sense more naturally without adding causation.
-
 - timestamp: '2026-05-16T08:09:59Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But you[a], O Yahweh, know all their counsel against me to death. Do not cover over their iniquity, and do not blot out their sin from before you. Let them stumble before you; in the time of your anger[c][b], act against them.'
-  to: 'But you[a], O Yahweh, know all their counsel against me for death. Do not cover over their iniquity, and do not blot out their sin from before you. Let them be made to stumble before you; in the time of your anger[c][b], act against them.'
-  rationale: 'Azure substituted ''to death'' for drafter''s chosen ''for death'' (drafter chose literal compact rendering) and substituted ''stumble'' for ''be made to stumble'' (drafter''s documented Hophal-causative rendering of מֻכְשָׁלִים; rejected alt ''May they stumble'').'
+  from: But you[a], O Yahweh, know all their counsel against me to death. Do not cover over their iniquity, and do not blot out their sin from before you. Let them stumble before you; in the time of your anger[c][b], act against them.
+  to: But you[a], O Yahweh, know all their counsel against me for death. Do not cover over their iniquity, and do not blot out their sin from before you. Let them be made to stumble before you; in the time of your anger[c][b], act against them.
+  rationale: Azure substituted 'to death' for drafter's chosen 'for death' (drafter chose literal compact rendering) and substituted 'stumble' for 'be made to stumble' (drafter's documented Hophal-causative rendering of מֻכְשָׁלִים; rejected alt 'May they stumble').
+- timestamp: '2026-11-09T17:57:28Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But you[a], O Yahweh, know all their counsel against me for death. Do not cover over their iniquity, and do not blot out their sin from before you. Let them be made to stumble before you; in the time of your anger[c][b], act against them.
+  to: But you, O Yahweh, know all their plots to kill me. Do not forgive their iniquity, and do not blot out their sin from your sight. Let them be brought down before you[a]; in the time of your anger, act against them.
+  rationale: The revert’s concern to preserve murderous purpose and passive causation is well founded, though its English remained compressed. I retain both meanings while expressing the petition against forgiveness without wording that could suggest concealment.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -152,3 +152,34 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/018/023.job-67513.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:57:28Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jeremiah asks Yahweh, who knows his enemies’ murderous plans, not to forgive their guilt but to bring them down in anger.
+  meaning_decisions:
+  - source_phrase: כָּל עֲצָתָם עָלַי לַמָּוֶת
+    prior_rendering: all their counsel against me for death
+    new_rendering: all their plots to kill me
+    rationale: The compressed Hebrew describes deliberate plans for Jeremiah’s death, which this wording makes explicit.
+  - source_phrase: אַל תְּכַפֵּר עַל עֲוֺנָם
+    prior_rendering: Do not cover over their iniquity
+    new_rendering: Do not forgive their iniquity
+    rationale: In this prayer, the verb concerns removing or pardoning guilt; cover over can misleadingly suggest concealing wrongdoing.
+  - source_phrase: מִלְּפָנֶיךָ
+    prior_rendering: from before you
+    new_rendering: from your sight
+    rationale: This carries the sense of sin remaining before God in natural English while preserving the blotting-out image.
+  - source_phrase: וְהָיוּ מֻכְשָׁלִים לְפָנֶיךָ
+    prior_rendering: Let them be made to stumble before you
+    new_rendering: Let them be brought down before you
+    rationale: The passive causative petition asks for their downfall, not merely a temporary misstep. The source’s stumbling image is retained in a note.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The revert’s concern to preserve murderous purpose and passive causation is well founded, though its English remained compressed. I retain both meanings while expressing the petition against forgiveness without wording that could suggest concealment.

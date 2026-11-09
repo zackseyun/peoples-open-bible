@@ -23,15 +23,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: For he had entered the so-called Persepolis and attempted to rob the temple and seize control of the city[a]; therefore, when the crowds rushed to arms, they turned him back, and it happened that Antiochus, put to flight by the local inhabitants[b], made a shameful retreat.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'attempted sacrilegious plunder of the temple.' The Greek verb ἱεροσυλεῖν specifically refers to robbing a sacred place.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'to the help of weapons,' that is, they resorted to armed defense.
-    reason: lexical_alternative
+  text: He had entered the city called Persepolis and attempted to rob the temple and seize control of the city. But the crowds rose up and took up arms to defend themselves, and Antiochus, routed by the local inhabitants, made a shameful retreat.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: εἰσεληλύθει
   chosen: had entered
@@ -140,14 +133,20 @@ revisions:
   from: For he had entered the so-called Persepolis and attempted to rob the temple and seize control of the city; therefore, when the crowds rushed to arms, they turned him back, and it happened that Antiochus, put to flight by the local inhabitants, made a shameful retreat.
   to: For he had entered the so-called Persepolis and attempted to plunder the temple and take control of the city; therefore, when the crowds rushed forth, they turned to the defense of arms, and it happened that Antiochus, put to flight by the local inhabitants, made a shameful retreat.
   rationale: Adjusted 'rob the temple' to 'plunder the temple' for a more formal rendering of ἱεροσυλεῖν; changed 'rushed to arms' to 'rushed forth' and restored 'they turned to the defense of arms' to more fully reflect ἐπὶ τὴν τῶν ὅπλων βοήθειαν ἐτράπησαν; changed 'seize control' to 'take control' for slightly more natural formal English.
-
 - timestamp: '2026-05-15T15:09:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For he had entered the so-called Persepolis and attempted to plunder the temple and take control of the city[a]; therefore, when the crowds rushed forth, they turned to the defense of arms, and it happened that Antiochus, put to flight by the local inhabitants[b], made a shameful retreat.'
-  to: 'For he had entered the so-called Persepolis and attempted to rob the temple and seize control of the city[a]; therefore, when the crowds rushed to arms, they turned him back, and it happened that Antiochus, put to flight by the local inhabitants[b], made a shameful retreat.'
-  rationale: 'Restored 4 chosen renderings preserving cultic specificity, military force, idiomatic compactness, and active-voice reversal.'
+  from: For he had entered the so-called Persepolis and attempted to plunder the temple and take control of the city[a]; therefore, when the crowds rushed forth, they turned to the defense of arms, and it happened that Antiochus, put to flight by the local inhabitants[b], made a shameful retreat.
+  to: For he had entered the so-called Persepolis and attempted to rob the temple and seize control of the city[a]; therefore, when the crowds rushed to arms, they turned him back, and it happened that Antiochus, put to flight by the local inhabitants[b], made a shameful retreat.
+  rationale: Restored 4 chosen renderings preserving cultic specificity, military force, idiomatic compactness, and active-voice reversal.
+- timestamp: '2026-11-09T18:55:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For he had entered the so-called Persepolis and attempted to rob the temple and seize control of the city[a]; therefore, when the crowds rushed to arms, they turned him back, and it happened that Antiochus, put to flight by the local inhabitants[b], made a shameful retreat.
+  to: He had entered the city called Persepolis and attempted to rob the temple and seize control of the city. But the crowds rose up and took up arms to defend themselves, and Antiochus, routed by the local inhabitants, made a shameful retreat.
+  rationale: The earlier review correctly identified the reference to armed defense, though its proposed English was cumbersome. I preserve that gain while retaining the current wording's explicit temple robbery, seizure of control, and shameful retreat.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -167,3 +166,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/009/002.job-49214.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:51Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Antiochus’s attempt to rob the temple and take control of Persepolis ended in a humiliating defeat when its inhabitants resisted him with weapons.
+  meaning_decisions:
+  - source_phrase: τὴν λεγομένην Περσέπολιν
+    prior_rendering: the so-called Persepolis
+    new_rendering: the city called Persepolis
+    rationale: The Greek identifies the city's name without necessarily casting doubt on it; modern English 'so-called' can introduce unwarranted skepticism.
+  - source_phrase: τῶν πληθῶν ὁρμησάντων, ἐπὶ τὴν τῶν ὅπλων βοήθειαν ἐτράπησαν
+    prior_rendering: when the crowds rushed to arms, they turned him back
+    new_rendering: the crowds rose up and took up arms to defend themselves
+    rationale: The clause describes the people's recourse to armed defense; Antiochus's defeat is then stated explicitly in the following clause.
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly identified the reference to armed defense, though its proposed English was cumbersome. I preserve that gain while retaining the current wording's explicit temple robbery, seizure of control, and shameful retreat.

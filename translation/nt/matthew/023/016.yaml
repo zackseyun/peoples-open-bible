@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: Οὐαὶ ὑμῖν, ὁδηγοὶ τυφλοὶ οἱ λέγοντες· Ὃς ἂν ὀμόσῃ ἐν τῷ ναῷ, οὐδέν ἐστιν, ὃς δ’ ἂν ὀμόσῃ ἐν τῷ χρυσῷ τοῦ ναοῦ ὀφείλει.
 translation:
-  text: Woe to you[a], blind guides, who say, ‘Whoever swears by the temple, it is nothing[b]; but whoever swears by the gold of the temple is bound.’
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'Whoever swears in the temple.' Here 'by the temple' reflects the oath formula intended in context.
-    reason: lexical_alternative
-  - marker: b
-    text: 'Greek: ''it is nothing,'' that is, such an oath is treated as not binding.'
-    reason: lexical_alternative
+  text: Woe to you, blind guides! You say, ‘If anyone swears by the temple, the oath is not binding; but if anyone swears by the gold of the temple, he is bound by his oath.’
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Οὐαὶ
   chosen: Woe
@@ -96,14 +89,20 @@ revisions:
   from: Woe to you, blind guides, who say, ‘Whoever swears by the temple, it is nothing; but whoever swears by the gold of the temple is bound by his oath.’
   to: Woe to you, blind guides, who say, ‘Whoever swears by the temple, it is nothing; but whoever swears by the gold of the temple is bound by his oath.’
   rationale: Removed 'by his oath' because the Greek simply says 'is bound/owes' without explicitly repeating 'oath.' The rest of the draft is accurate and natural.
-
 - timestamp: '2026-05-18T03:01:02Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Woe to you[a], blind guides, who say, ‘Whoever swears by the temple, it is nothing[b]; but whoever swears by the gold of the temple is bound.’'
-  to: 'Woe to you[a], blind guides, who say, ‘Whoever swears by the temple, it is nothing[b]; but whoever swears by the gold of the temple is bound.’'
+  from: Woe to you[a], blind guides, who say, ‘Whoever swears by the temple, it is nothing[b]; but whoever swears by the gold of the temple is bound.’
+  to: Woe to you[a], blind guides, who say, ‘Whoever swears by the temple, it is nothing[b]; but whoever swears by the gold of the temple is bound.’
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''is bound by his oath''].'
+- timestamp: '2026-11-09T17:15:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Woe to you[a], blind guides, who say, ‘Whoever swears by the temple, it is nothing[b]; but whoever swears by the gold of the temple is bound.’
+  to: Woe to you, blind guides! You say, ‘If anyone swears by the temple, the oath is not binding; but if anyone swears by the gold of the temple, he is bound by his oath.’
+  rationale: The lexical record expressly identifies nonbinding and binding oaths as the contrast. Although an automated review objected to supplying “by his oath,” the source’s ellipsis and the passage’s argument justify making that understood meaning explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -126,3 +125,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/023/016.job-57318.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:15:37Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jesus condemns the blind guides for teaching that an oath invoking the temple is nonbinding while an oath invoking its gold creates an obligation.
+  meaning_decisions:
+  - source_phrase: Ὃς ἂν ὀμόσῃ ἐν τῷ ναῷ, οὐδέν ἐστιν
+    prior_rendering: Whoever swears by the temple, it is nothing
+    new_rendering: If anyone swears by the temple, the oath is not binding
+    rationale: The elliptical phrase concerns the oath’s binding force, not the value of the temple or the person swearing.
+  - source_phrase: ὀφείλει
+    prior_rendering: is bound
+    new_rendering: is bound by his oath
+    rationale: Making the understood obligation explicit gives the two contrasting rulings their clear legal meaning.
+  footnote_kinds: {}
+  history_weighed: The lexical record expressly identifies nonbinding and binding oaths as the contrast. Although an automated review objected to supplying “by his oath,” the source’s ellipsis and the passage’s argument justify making that understood meaning explicit.

@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֣אמֶר יְהוּדָ֗ה כָּשַׁל֙ כֹּ֣חַ הַ/סַּבָּ֔ל וְ/הֶ/עָפָ֖ר הַרְבֵּ֑ה וַ/אֲנַ֨חְנוּ֙ לֹ֣א נוּכַ֔ל לִ/בְנ֖וֹת בַּ/חוֹמָֽה׃
 translation:
-  text: And Judah said[a], “The strength of the burden-bearers has failed, and there is much rubble[b], and we are not able to build the wall.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the people of Judah said.' The singular proper name 'Judah' likely represents the community collectively.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'dust'; in context, likely the debris or rubble from the ruined city.
-    reason: lexical_alternative
+  text: The people of Judah said, “The load carriers’ strength has failed; there is so much rubble. We cannot rebuild the wall.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: יְהוּדָה
   chosen: Judah
@@ -101,14 +94,20 @@ revisions:
   from: And Judah said, “The strength of the burden-bearer has failed, and there is much rubble; and we are not able to build on the wall.”
   to: And Judah said, “The strength of the burden-bearer has failed, and there is much rubble; and we are not able to build on the wall.”
   rationale: Changed 'burden-bearer' to plural 'burden-bearers' to better reflect the collective sense; changed 'build on the wall' to 'build the wall' for more natural and accurate English; adjusted punctuation accordingly.
-
 - timestamp: '2026-05-18T02:54:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Judah said[a], “The strength of the burden-bearers has failed, and there is much rubble[b], and we are not able to build the wall.”'
-  to: 'And Judah said[a], “The strength of the burden-bearers has failed, and there is much rubble[b], and we are not able to build the wall.”'
+  from: And Judah said[a], “The strength of the burden-bearers has failed, and there is much rubble[b], and we are not able to build the wall.”
+  to: And Judah said[a], “The strength of the burden-bearers has failed, and there is much rubble[b], and we are not able to build the wall.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''on the wall''].'
+- timestamp: '2026-11-09T18:25:44Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Judah said[a], “The strength of the burden-bearers has failed, and there is much rubble[b], and we are not able to build the wall.”
+  to: The people of Judah said, “The load carriers’ strength has failed; there is so much rubble. We cannot rebuild the wall.”
+  rationale: The current text preserves the useful collective plural and the natural object “the wall.” The automated review and revert records conflict, but neither supplies a maintainer ruling; the complaint remains compressed rather than becoming explanatory prose.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -128,3 +127,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/nehemiah/004/004.job-42764.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:25:44Z'
+  change_level: refined
+  confidence: high
+  meaning: The people of Judah complained that the load carriers were exhausted and the rubble was too much for them to rebuild the wall.
+  meaning_decisions:
+  - source_phrase: וַיֹּאמֶר יְהוּדָה
+    prior_rendering: And Judah said
+    new_rendering: The people of Judah said
+    rationale: Judah denotes the community here, not an individual speaker; the expansion makes the collective reference explicit.
+  - source_phrase: כָּשַׁל כֹּחַ הַסַּבָּל
+    prior_rendering: The strength of the burden-bearers has failed
+    new_rendering: The load carriers’ strength has failed
+    rationale: The complaint concerns workers carrying construction materials; “load carriers” identifies their concrete task while retaining the force of exhausted strength.
+  - source_phrase: לִבְנוֹת בַּחוֹמָה
+    prior_rendering: to build the wall
+    new_rendering: rebuild the wall
+    rationale: In this setting, building the ruined wall means rebuilding it; the verb is rendered according to that established context.
+  footnote_kinds: {}
+  history_weighed: The current text preserves the useful collective plural and the natural object “the wall.” The automated review and revert records conflict, but neither supplies a maintainer ruling; the complaint remains compressed rather than becoming explanatory prose.

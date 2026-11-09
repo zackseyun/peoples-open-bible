@@ -29,12 +29,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And the king called the Jews to his aid[a], and they all gathered to him together; and they spread out in the city, and on that day they killed ten thousand in the city.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek literally, 'were scattered in the city'; the rendering 'spread out through the city' reflects the likely military sense in context.
-    reason: lexical_alternative
+  text: The king called the Jews to his aid, and they all gathered around him. They then spread out through the city and killed about one hundred thousand people in the city that day.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐκάλεσεν
   chosen: called
@@ -110,14 +106,20 @@ revisions:
   from: And the king called the Jews to his aid, and they all gathered to him together; and they spread out through the city, and on that day they killed ten thousand in the city.
   to: And the king called the Jews to his aid, and they all gathered to him together; and they spread out through the city, and on that day they killed ten thousand in the city.
   rationale: Changed 'through the city' to 'in the city' for closer alignment with ἐν τῇ πόλει. Kept the rest substantially the same, as it is accurate and natural.
-
 - timestamp: '2026-05-18T02:58:43Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the king called the Jews to his aid[a], and they all gathered to him together; and they spread out in the city, and on that day they killed ten thousand in the city.'
-  to: 'And the king called the Jews to his aid[a], and they all gathered to him together; and they spread out in the city, and on that day they killed ten thousand in the city.'
+  from: And the king called the Jews to his aid[a], and they all gathered to him together; and they spread out in the city, and on that day they killed ten thousand in the city.
+  to: And the king called the Jews to his aid[a], and they all gathered to him together; and they spread out in the city, and on that day they killed ten thousand in the city.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''spread out through''].'
+- timestamp: '2026-11-09T18:53:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the king called the Jews to his aid[a], and they all gathered to him together; and they spread out in the city, and on that day they killed ten thousand in the city.
+  to: The king called the Jews to his aid, and they all gathered around him. They then spread out through the city and killed about one hundred thousand people in the city that day.
+  rationale: The earlier passes weighed 'in' versus 'through' for the troops’ dispersal; I use 'through' for the military movement. The supplied Greek says 'ten myriads' (100,000), so I correct the current count despite the earlier lexical note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -137,3 +139,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/011/047.job-48644.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:23Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Jews rally to the king’s aid, spread through the city, and kill about one hundred thousand people that day.
+  meaning_decisions:
+  - source_phrase: διεσπάρησαν ἐν τῇ πόλει
+    prior_rendering: they spread out in the city
+    new_rendering: They then spread out through the city
+    rationale: The narrative describes their dispersal through the city for fighting, not their being scattered by an enemy.
+  - source_phrase: εἰς μυριάδας δέκα
+    prior_rendering: ten thousand
+    new_rendering: about one hundred thousand people
+    rationale: The supplied source reads 'ten myriads,' which is 100,000, not 10,000; the numerical construction supports an approximate count.
+  footnote_kinds: {}
+  history_weighed: The earlier passes weighed 'in' versus 'through' for the troops’ dispersal; I use 'through' for the military movement. The supplied Greek says 'ten myriads' (100,000), so I correct the current count despite the earlier lexical note.

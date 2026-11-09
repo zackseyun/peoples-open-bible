@@ -4,17 +4,11 @@ source:
   edition: WLC
   text: כִּ֤י נָבָל֙ נְבָלָ֣ה יְדַבֵּ֔ר וְ/לִבּ֖/וֹ יַעֲשֶׂה אָ֑וֶן לַ/עֲשׂ֣וֹת חֹ֗נֶף וּ/לְ/דַבֵּ֤ר אֶל יְהוָה֙ תּוֹעָ֔ה לְ/הָרִיק֙ נֶ֣פֶשׁ רָעֵ֔ב וּ/מַשְׁקֶ֥ה צָמֵ֖א יַחְסִֽיר־־׃
 translation:
-  text: 'For a fool speaks folly[a], and his heart devises iniquity: to practice godlessness and to speak error against Yahweh[c][b], to leave the hungry person empty and to withhold drink from the thirsty.'
-  philosophy: optimal-equivalence
+  text: 'For a fool speaks folly, and his heart devises iniquity: he practices godlessness, speaks falsehood against Yahweh[a], leaves the hungry unfed, and withholds drink from the thirsty.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'hypocrisy' for 'godlessness' (חֹנֶף); the Hebrew term can denote impiety expressed as irreligion or as hypocritical wickedness.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'the hungry נפשׁ'; that is, the hungry person/life, not necessarily 'soul' in a narrow English sense.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'to speak falsehood concerning the LORD' for 'to speak error against the LORD.'
+    text: Or, 'speaks falsehood about Yahweh.'
     reason: alternative_reading
 lexical_decisions:
 - source_word: נָבָל
@@ -109,7 +103,6 @@ revisions:
   from: 'For a fool speaks folly, and his heart works iniquity: to practice godlessness and to speak error against the LORD, to leave the hungry person empty and to withhold drink from the thirsty.'
   to: 'For a fool speaks folly, and his heart works iniquity: to practice godlessness and to speak error against the LORD, to leave the hungry person empty and to withhold drink from the thirsty.'
   rationale: Changed 'works iniquity' to 'devises iniquity' to better reflect the sense of the heart planning or producing evil in more natural formal English. No other changes needed.
-
 - timestamp: '2026-05-17T19:36:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -117,6 +110,13 @@ revisions:
   from: 'For a fool speaks folly[a], and his heart devises iniquity: to practice godlessness and to speak error against Yahweh[c][b], to leave the hungry person empty and to withhold drink from the thirsty.'
   to: 'For a fool speaks folly[a], and his heart devises iniquity: to practice godlessness and to speak error against Yahweh[c][b], to leave the hungry person empty and to withhold drink from the thirsty.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and his heart works iniquity''].'
+- timestamp: '2026-11-09T17:50:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'For a fool speaks folly[a], and his heart devises iniquity: to practice godlessness and to speak error against Yahweh[c][b], to leave the hungry person empty and to withhold drink from the thirsty.'
+  to: 'For a fool speaks folly, and his heart devises iniquity: he practices godlessness, speaks falsehood against Yahweh[a], leaves the hungry unfed, and withholds drink from the thirsty.'
+  rationale: I retain the current 'his heart devises iniquity' and the documented choice of 'godlessness' rather than the narrower 'hypocrisy.' The recorded automated reverts provide no new meaning-based argument against those choices; the explanatory list is recast for clarity.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -139,3 +139,30 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/isaiah/032/006.job-66501.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:50:22Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The fool's speech and inward intentions reveal his corruption through godlessness, false speech against Yahweh, and deprivation of the hungry and thirsty.
+  meaning_decisions:
+  - source_phrase: לַעֲשׂוֹת חֹנֶף ... וּמַשְׁקֶה צָמֵא יַחְסִיר
+    prior_rendering: to practice godlessness ... and to withhold drink from the thirsty
+    new_rendering: he practices godlessness ... and withholds drink from the thirsty
+    rationale: The list explains the fool's deliberate corruption; explicit finite clauses make its subject and explanatory relationship clear in English.
+  - source_phrase: וּלְדַבֵּר אֶל יְהוָה תּוֹעָה
+    prior_rendering: to speak error against Yahweh
+    new_rendering: speaks falsehood against Yahweh
+    rationale: '''Falsehood'' conveys morally corrupt and misleading speech more clearly than ''error,'' which can suggest an innocent mistake.'
+  - source_phrase: לְהָרִיק נֶפֶשׁ רָעֵב
+    prior_rendering: to leave the hungry person empty
+    new_rendering: leaves the hungry unfed
+    rationale: The phrase describes depriving hungry people of food; 'unfed' carries that embodied need without the unclear English description of an 'empty' person.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retain the current 'his heart devises iniquity' and the documented choice of 'godlessness' rather than the narrower 'hypocrisy.' The recorded automated reverts provide no new meaning-based argument against those choices; the explanatory list is recast for clarity.

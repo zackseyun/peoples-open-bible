@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וְ/הִשְׁלַחְתִּ֨י בָ/כֶ֜ם אֶת חַיַּ֤ת הַ/שָּׂדֶה֙ וְ/שִׁכְּלָ֣ה אֶתְ/כֶ֔ם וְ/הִכְרִ֨יתָה֙ אֶת בְּהֶמְתְּ/כֶ֔ם וְ/הִמְעִ֖יטָה אֶתְ/כֶ֑ם וְ/נָשַׁ֖מּוּ דַּרְכֵי/כֶֽם־־׃
 translation:
-  text: And I will send against you the wild animals of the field[a], and they will bereave you, cut off your livestock, reduce your number[c][b], and your roads will become desolate.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the beasts of the field.'
-    reason: lexical_alternative
-  - marker: b
-    text: 'Hebrew idiom: ''bereave you,'' that is, deprive you of children.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'your ways will be desolate,' though here the sense is likely your roads or travel routes becoming deserted.
-    reason: lexical_alternative
+  text: I will send wild animals against you; they will bereave you of your children, destroy your livestock, and reduce your numbers. Your roads will lie deserted.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְהִשְׁלַחְתִּי
   chosen: And I will send
@@ -102,14 +92,20 @@ revisions:
   from: And I will send against you the wild animals of the field, and they will bereave you of children, cut off your livestock, reduce your number, and your roads will become desolate.
   to: And I will send against you the wild animals of the field, and they will bereave you of children, cut off your livestock, reduce your number, and your roads will become desolate.
   rationale: Removed 'of children' after 'bereave you' because the Hebrew does not explicitly state children here; retained the rest with minor consistency and natural-English review.
-
 - timestamp: '2026-05-18T02:57:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I will send against you the wild animals of the field[a], and they will bereave you, cut off your livestock, reduce your number[c][b], and your roads will become desolate.'
-  to: 'And I will send against you the wild animals of the field[a], and they will bereave you, cut off your livestock, reduce your number[c][b], and your roads will become desolate.'
+  from: And I will send against you the wild animals of the field[a], and they will bereave you, cut off your livestock, reduce your number[c][b], and your roads will become desolate.
+  to: And I will send against you the wild animals of the field[a], and they will bereave you, cut off your livestock, reduce your number[c][b], and your roads will become desolate.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and they will bereave you of children''].'
+- timestamp: '2026-11-09T18:22:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I will send against you the wild animals of the field[a], and they will bereave you, cut off your livestock, reduce your number[c][b], and your roads will become desolate.
+  to: I will send wild animals against you; they will bereave you of your children, destroy your livestock, and reduce your numbers. Your roads will lie deserted.
+  rationale: The first draft and lexical deliberation explicitly supplied the children implied by שׁכל, while the automated review objected because no separate noun names them. I restore that clarification because it conveys the verb’s ordinary meaning here; no maintainer ruling is recorded.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -129,3 +125,33 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/026/022.job-45481.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:22:30Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Yahweh will send wild animals that kill Israel’s children and livestock, diminish the population, and leave the roads deserted.
+  meaning_decisions:
+  - source_phrase: חַיַּת הַשָּׂדֶה
+    prior_rendering: the wild animals of the field
+    new_rendering: wild animals
+    rationale: The Hebrew expression identifies wild animals in contrast to the domesticated livestock named next; “of the field” is unnecessary to convey that distinction in English.
+  - source_phrase: וְשִׁכְּלָה אֶתְכֶם
+    prior_rendering: they will bereave you
+    new_rendering: they will bereave you of your children
+    rationale: The verb conventionally expresses the loss of children; supplying its understood object prevents the English from becoming less specific than the Hebrew.
+  - source_phrase: וְהִכְרִיתָה אֶת בְּהֶמְתְּכֶם
+    prior_rendering: cut off your livestock
+    new_rendering: destroy your livestock
+    rationale: Here “cut off” means kill or destroy, not separate the livestock from their owners.
+  - source_phrase: וְנָשַׁמּוּ דַּרְכֵיכֶם
+    prior_rendering: your roads will become desolate
+    new_rendering: Your roads will lie deserted
+    rationale: The diminished population and dangerous animals leave the travel routes empty; “deserted” makes that consequence clear.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical deliberation explicitly supplied the children implied by שׁכל, while the automated review objected because no separate noun names them. I restore that clarification because it conveys the verb’s ordinary meaning here; no maintainer ruling is recorded.

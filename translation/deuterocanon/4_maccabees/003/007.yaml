@@ -19,15 +19,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: For when David, attacking the foreigners[a] throughout the whole day, killed many of them along with the soldiers of the nation[b],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the Philistines.' The Greek reads 'the foreigners' (ἀλλόφυλοι), a term often used in biblical Greek for Philistines, but the wording here is not the proper ethnic name itself.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'with the soldiers of his people.' The Greek literally says 'with the soldiers of the nation.'
-    reason: lexical_alternative
+  text: For David had spent the whole day attacking the Philistines and had killed many of them alongside the soldiers of his people.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐπεὶ γὰρ
   chosen: For when
@@ -104,13 +97,12 @@ revisions:
   from: For when David, attacking the foreigners throughout the whole day, killed many of them along with the soldiers of the nation,
   to: For when David, attacking the foreigners throughout the whole day, killed many of them with the soldiers of the nation,
   rationale: Changed 'along with' to 'with' for a more natural and direct rendering of μετὰ, while preserving the sense that David acted together with the nation's soldiers.
-
 - timestamp: '2026-05-18T03:10:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For when David[a], attacking the foreigners throughout the whole day, killed many of them with the soldiers of the nation[b],'
-  to: 'For when David, attacking the foreigners throughout the whole day, killed many of them along with the soldiers of the nation,'
+  from: For when David[a], attacking the foreigners throughout the whole day, killed many of them with the soldiers of the nation[b],
+  to: For when David, attacking the foreigners throughout the whole day, killed many of them along with the soldiers of the nation,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''along with the soldiers of the nation''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -120,6 +112,13 @@ revisions:
   from: For when David, attacking the foreigners throughout the whole day, killed many of them along with the soldiers of the nation,
   to: For when David, attacking the foreigners[a] throughout the whole day, killed many of them along with the soldiers of the nation[b],
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('the foreigners') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('along with the soldiers of the nation') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:57:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For when David, attacking the foreigners[a] throughout the whole day, killed many of them along with the soldiers of the nation[b],
+  to: For David had spent the whole day attacking the Philistines and had killed many of them alongside the soldiers of his people.
+  rationale: I retained the history’s emphasis on David acting together with his people’s soldiers. The biblical episode and established Greek usage outweigh the earlier preference for the generic “foreigners,” so the main text identifies the Philistines directly.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -139,3 +138,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/003/007.job-49772.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:39Z'
+  change_level: retranslated
+  confidence: high
+  meaning: David had fought the Philistines throughout the day and, together with his people’s soldiers, killed many of them.
+  meaning_decisions:
+  - source_phrase: ἐπεὶ γὰρ διʼ ὅλης ἡμέρας προσβάλλων ... πολλοὺς αὐτῶν ἀπέκτεινεν
+    prior_rendering: For when David, attacking ... throughout the whole day, killed many of them
+    new_rendering: For David had spent the whole day attacking ... and had killed many of them
+    rationale: The past-perfect narration conveys the action preceding his evening arrival without reproducing a cumbersome subordinate construction across verse boundaries.
+  - source_phrase: τοῖς ἀλλοφύλοις
+    prior_rendering: the foreigners
+    new_rendering: the Philistines
+    rationale: This is the customary biblical Greek designation for the Philistines, and the David-and-water episode establishes that identification.
+  - source_phrase: μετὰ τῶν τοῦ ἔθνους στρατιωτῶν
+    prior_rendering: along with the soldiers of the nation
+    new_rendering: alongside the soldiers of his people
+    rationale: The nation is David’s own people, and “alongside” clearly conveys that their soldiers participated with him rather than being among those killed.
+  footnote_kinds: {}
+  history_weighed: I retained the history’s emphasis on David acting together with his people’s soldiers. The biblical episode and established Greek usage outweigh the earlier preference for the generic “foreigners,” so the main text identifies the Philistines directly.

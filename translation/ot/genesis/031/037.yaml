@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: כִּֽי מִשַּׁ֣שְׁתָּ אֶת כָּל כֵּלַ֗/י מַה מָּצָ֨אתָ֙ מִ/כֹּ֣ל כְּלֵי בֵיתֶ֔/ךָ שִׂ֣ים כֹּ֔ה נֶ֥גֶד אַחַ֖/י וְ/אַחֶ֑י/ךָ וְ/יוֹכִ֖יחוּ בֵּ֥ין שְׁנֵֽי/נוּ־־־־־׃
 translation:
-  text: Since you have searched through all my goods[a], what have you found of all the goods of your house? Set it here before my brothers and your brothers[b], and let them judge between the two of us.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “let them judge between the two of us.” The Hebrew verb can carry a judicial or arbitral sense.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'from all the goods of your house'.
-    reason: previous_rendering
+  text: Since you have searched through all my goods, what have you found that belongs to your household? Set it here before my kinsmen and yours, and let them judge between the two of us.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: מִשַּׁשְׁתָּ
   chosen: have searched through
@@ -109,9 +102,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Since you have searched through all my goods[a], what have you found of all the goods of your house? Set it here before my brothers and your brothers[b], and let them judge between the two of us.'
-  to: 'Since you have searched through all my goods[a], what have you found of all the goods of your house? Set it here before my brothers and your brothers[b], and let them judge between the two of us.'
+  from: Since you have searched through all my goods[a], what have you found of all the goods of your house? Set it here before my brothers and your brothers[b], and let them judge between the two of us.
+  to: Since you have searched through all my goods[a], what have you found of all the goods of your house? Set it here before my brothers and your brothers[b], and let them judge between the two of us.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''let them decide''].'
+- timestamp: '2026-11-09T17:44:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Since you have searched through all my goods[a], what have you found of all the goods of your house? Set it here before my brothers and your brothers[b], and let them judge between the two of us.
+  to: Since you have searched through all my goods, what have you found that belongs to your household? Set it here before my kinsmen and yours, and let them judge between the two of us.
+  rationale: The earlier review correctly identified the ownership sense of the property phrase, and that gain is preserved. I retain the current judicial wording while making the broader kinship sense recognized in the lexical discussion explicit.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-17T09:41:11Z'
@@ -138,3 +138,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/ot/genesis/031/037.job-37702.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:44:34Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jacob challenges Laban to produce any stolen property before their kinsmen and let them judge the dispute.
+  meaning_decisions:
+  - source_phrase: מִכֹּל כְּלֵי בֵיתֶךָ
+    prior_rendering: of all the goods of your house
+    new_rendering: that belongs to your household
+    rationale: Jacob is asking which of the possessions searched belong to Laban, not where the search occurred; the ownership question is now explicit.
+  - source_phrase: אַחַי וְאַחֶיךָ
+    prior_rendering: my brothers and your brothers
+    new_rendering: my kinsmen and yours
+    rationale: The men present are members of the parties’ kin groups, not necessarily their literal siblings.
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly identified the ownership sense of the property phrase, and that gain is preserved. I retain the current judicial wording while making the broader kinship sense recognized in the lexical discussion explicit.

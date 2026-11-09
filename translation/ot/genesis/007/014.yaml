@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: הֵ֜מָּה וְ/כָל הַֽ/חַיָּ֣ה לְ/מִינָ֗/הּ וְ/כָל הַ/בְּהֵמָה֙ לְ/מִינָ֔/הּ וְ/כָל הָ/רֶ֛מֶשׂ הָ/רֹמֵ֥שׂ עַל הָ/אָ֖רֶץ לְ/מִינֵ֑/הוּ וְ/כָל הָ/ע֣וֹף לְ/מִינֵ֔/הוּ כֹּ֖ל צִפּ֥וֹר כָּל כָּנָֽף־־־־־־׃
 translation:
-  text: they[a], and every wild animal according to its kind, and every livestock animal according to its kind, and every creeping thing that creeps on the earth according to its kind[b], and every bird according to its kind—every winged bird.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Literally, 'every bird, every wing.' The Hebrew uses appositional classification language to emphasize all winged birds.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'livestock animal'.
-    reason: previous_rendering
+  text: They entered along with wild animals of every kind, livestock of every kind, creeping creatures of every kind on the earth, and birds of every kind—every winged creature.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: הֵמָּה
   chosen: they
@@ -108,9 +101,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'they[a], and every wild animal according to its kind, and every livestock animal according to its kind, and every creeping thing that creeps on the earth according to its kind[b], and every bird according to its kind—every winged bird.'
-  to: 'they[a], and every wild animal according to its kind, and every livestock animal according to its kind, and every creeping thing that creeps on the earth according to its kind[b], and every bird according to its kind—every winged bird.'
+  from: they[a], and every wild animal according to its kind, and every livestock animal according to its kind, and every creeping thing that creeps on the earth according to its kind[b], and every bird according to its kind—every winged bird.
+  to: they[a], and every wild animal according to its kind, and every livestock animal according to its kind, and every creeping thing that creeps on the earth according to its kind[b], and every bird according to its kind—every winged bird.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''every winged creature''].'
+- timestamp: '2026-11-09T17:41:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: they[a], and every wild animal according to its kind, and every livestock animal according to its kind, and every creeping thing that creeps on the earth according to its kind[b], and every bird according to its kind—every winged bird.
+  to: They entered along with wild animals of every kind, livestock of every kind, creeping creatures of every kind on the earth, and birds of every kind—every winged creature.
+  rationale: The recorded reviews identify the awkwardness of “livestock animal” and disagree about the final winged-creature phrase. I retain the documented animal distinctions and the lexical decision “every winged creature,” giving little weight to automated reverts without a recorded meaning-based argument.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-17T09:21:06Z'
@@ -139,3 +139,29 @@ cross_check:
     major-issues: 1
     minor-issues: 3
   source_review: state/reviews/gemini/v31_recheck_applied/ot/genesis/007/014.job-37685.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:41:32Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Noah’s family entered with representatives of every kind of land animal and bird.
+  meaning_decisions:
+  - source_phrase: הֵמָּה וְכָל
+    prior_rendering: they, and every
+    new_rendering: They entered along with
+    rationale: The Hebrew continues the entry described in verse 13; supplying its understood verb makes this verse a complete English sentence without adding another event.
+  - source_phrase: כָל הַחַיָּה לְמִינָהּ ... כָל הַבְּהֵמָה לְמִינָהּ ... כָל הָרֶמֶשׂ הָרֹמֵשׂ ... לְמִינֵהוּ
+    prior_rendering: every wild animal according to its kind ... every livestock animal according to its kind ... every creeping thing that creeps ... according to its kind
+    new_rendering: wild animals of every kind ... livestock of every kind ... creeping creatures of every kind
+    rationale: This expresses the comprehensive range of kinds represented in the ark without suggesting that every individual animal entered or reproducing unnecessary cognate repetition.
+  - source_phrase: כֹּל צִפּוֹר כָּל כָּנָף
+    prior_rendering: every winged bird
+    new_rendering: every winged creature
+    rationale: The final phrase literally invokes “every wing” and emphasizes the comprehensiveness of the winged creatures included, rather than merely repeating that birds have wings.
+  footnote_kinds: {}
+  history_weighed: The recorded reviews identify the awkwardness of “livestock animal” and disagree about the final winged-creature phrase. I retain the documented animal distinctions and the lexical decision “every winged creature,” giving little weight to automated reverts without a recorded meaning-based argument.

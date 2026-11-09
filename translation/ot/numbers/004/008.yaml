@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וּ/פָרְשׂ֣וּ עֲלֵי/הֶ֗ם בֶּ֚גֶד תּוֹלַ֣עַת שָׁנִ֔י וְ/כִסּ֣וּ אֹת֔/וֹ בְּ/מִכְסֵ֖ה ע֣וֹר תָּ֑חַשׁ וְ/שָׂמ֖וּ אֶת בַּדָּֽי/ו־׃
 translation:
-  text: They shall spread over them a cloth of scarlet yarn, and cover it with a covering of tahash skin[a], and put its poles in place.
-  philosophy: optimal-equivalence
+  text: They shall spread a scarlet cloth over these items, cover the table with a leather covering[a], and put its carrying poles in place.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew tahash; the exact animal or material is uncertain. Traditional renderings include 'badger skin,' 'porpoise skin,' or more generally 'fine leather.'
+    text: Hebrew tahash skin; the animal or type of leather intended is uncertain.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וּפָרְשׂוּ
@@ -96,13 +96,12 @@ revisions:
   from: They shall spread over them a cloth of scarlet yarn, and cover it with a covering of tahash skin, and put its poles in place.
   to: They shall spread over them a cloth of scarlet, and cover it with a covering of tahash skin, and put its poles in place.
   rationale: Changed 'scarlet yarn' to 'scarlet' to more directly reflect the Hebrew phrase without adding 'yarn,' which is not explicit here. Retained 'tahash skin' as a formal transliteration and kept the rest unchanged.
-
 - timestamp: '2026-05-18T03:09:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'They shall spread over them a cloth of scarlet[a], and cover it with a covering of tahash skin, and put its poles in place.'
-  to: 'They shall spread over them a cloth of scarlet yarn, and cover it with a covering of tahash skin, and put its poles in place.'
+  from: They shall spread over them a cloth of scarlet[a], and cover it with a covering of tahash skin, and put its poles in place.
+  to: They shall spread over them a cloth of scarlet yarn, and cover it with a covering of tahash skin, and put its poles in place.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''scarlet yarn''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -112,6 +111,13 @@ revisions:
   from: They shall spread over them a cloth of scarlet yarn, and cover it with a covering of tahash skin, and put its poles in place.
   to: They shall spread over them a cloth of scarlet yarn, and cover it with a covering of tahash skin[a], and put its poles in place.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('tahash skin') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:28:44Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: They shall spread over them a cloth of scarlet yarn, and cover it with a covering of tahash skin[a], and put its poles in place.
+  to: They shall spread a scarlet cloth over these items, cover the table with a leather covering[a], and put its carrying poles in place.
+  rationale: The scarlet wording was changed and automatically reverted, but neither action was a maintainer decision; I preserve the dyed-fabric meaning rather than the unnecessary yarn specification. The earlier lexical explanation correctly identifies the shift from the contents to the table, which the main text now makes clear.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -131,3 +137,34 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/004/008.job-41904.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:28:44Z'
+  change_level: refined
+  confidence: high
+  meaning: The priests must place scarlet cloth over the table’s contents, cover the table with protective hide, and position its carrying poles.
+  meaning_decisions:
+  - source_phrase: בֶּגֶד תּוֹלַעַת שָׁנִי
+    prior_rendering: a cloth of scarlet yarn
+    new_rendering: a scarlet cloth
+    rationale: The phrase identifies scarlet-dyed fabric; 'cloth' already supplies the textile meaning, without requiring a separate specification of yarn.
+  - source_phrase: עֲלֵיהֶם ... וְכִסּוּ אֹתוֹ
+    prior_rendering: over them ... and cover it
+    new_rendering: over these items, cover the table
+    rationale: The plural refers to the table’s contents, while the singular returns to the table as a unit; naming the referents prevents 'it' from being mistaken for the cloth.
+  - source_phrase: בְּמִכְסֵה עוֹר תָּחַשׁ
+    prior_rendering: with a covering of tahash skin
+    new_rendering: with a leather covering
+    rationale: A neutral English material term carries the covering’s meaning, while the note preserves the uncertain Hebrew designation consistently with the surrounding verses.
+  - source_phrase: בַּדָּיו
+    prior_rendering: its poles
+    new_rendering: its carrying poles
+    rationale: The transport function of the poles is made explicit.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The scarlet wording was changed and automatically reverted, but neither action was a maintainer decision; I preserve the dyed-fabric meaning rather than the unnecessary yarn specification. The earlier lexical explanation correctly identifies the shift from the contents to the table, which the main text now makes clear.

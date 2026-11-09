@@ -4,12 +4,15 @@ source:
   edition: WLC
   text: וְ/אִ֗ישׁ לֹֽא אַכְרִ֤ית לְ/ךָ֙ מֵ/עִ֣ם מִזְבְּחִ֔/י לְ/כַלּ֥וֹת אֶת עֵינֶ֖י/ךָ וְ/לַ/אֲדִ֣יב אֶת נַפְשֶׁ֑/ךָ וְ/כָל מַרְבִּ֥ית בֵּיתְ/ךָ֖ יָמ֥וּתוּ אֲנָשִֽׁים־־־־׃
 translation:
-  text: But I will not cut off every man of yours from beside my altar[a], to make your eyes fail and your soul grieve; and all the increase of your house will die by the sword of men.
-  philosophy: optimal-equivalence
+  text: Yet I will not cut off every man of your family from my altar, so that your eyes will fail with grief and your soul will be filled with sorrow; all your descendants will die in the prime of life[a][b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'will die in the prime of life.' The Hebrew literally says 'will die as men.'
-    reason: alternative_reading
+    text: Literally, “will die as men,” apparently contrasting full manhood with old age.
+    reason: lexical_alternative
+  - marker: b
+    text: The Septuagint and a Dead Sea Scroll read, “will die by the sword.”
+    reason: textual_variant
 lexical_decisions:
 - source_word: וְאִישׁ
   chosen: every man
@@ -97,14 +100,20 @@ revisions:
   from: But I will not cut off every man of yours from beside my altar, to make your eyes fail and your soul grieve; and all the increase of your house will die as men.
   to: But I will not cut off every man of yours from beside my altar, to make your eyes fail and your soul grieve; and all the increase of your house will die as men.
   rationale: Added 'by the sword' to account for the idiomatic force of the final Hebrew phrase, clarifying that the members of Eli's house will die violently at the hands of men rather than simply 'die as men.'
-
 - timestamp: '2026-05-18T02:55:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But I will not cut off every man of yours from beside my altar[a], to make your eyes fail and your soul grieve; and all the increase of your house will die by the sword of men.'
-  to: 'But I will not cut off every man of yours from beside my altar[a], to make your eyes fail and your soul grieve; and all the increase of your house will die by the sword of men.'
+  from: But I will not cut off every man of yours from beside my altar[a], to make your eyes fail and your soul grieve; and all the increase of your house will die by the sword of men.
+  to: But I will not cut off every man of yours from beside my altar[a], to make your eyes fail and your soul grieve; and all the increase of your house will die by the sword of men.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will die as men''].'
+- timestamp: '2026-11-09T17:23:17Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But I will not cut off every man of yours from beside my altar[a], to make your eyes fail and your soul grieve; and all the increase of your house will die by the sword of men.
+  to: Yet I will not cut off every man of your family from my altar, so that your eyes will fail with grief and your soul will be filled with sorrow; all your descendants will die in the prime of life[a][b].
+  rationale: The current sword wording follows a manuscript reading rather than the supplied WLC text, despite the earlier review presenting it as an idiomatic clarification. The recorded lexical discussion itself favored 'as men' with 'in the prime of life' as its likely sense, so I render that contextual meaning and retain the sword reading as a textual variant.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -126,3 +135,35 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/002/033.job-58816.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:17Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Yahweh will leave members of Eli's family at his altar as a source of anguish, but the family's descendants will die before old age.
+  meaning_decisions:
+  - source_phrase: וְאִישׁ לֹא אַכְרִית לְךָ מֵעִם מִזְבְּחִי
+    prior_rendering: But I will not cut off every man of yours from beside my altar
+    new_rendering: Yet I will not cut off every man of your family from my altar
+    rationale: The men belong to Eli's family, and remaining at the altar concerns continuing priestly proximity and service rather than merely standing beside it.
+  - source_phrase: לְכַלּוֹת אֶת עֵינֶיךָ וְלַאֲדִיב אֶת נַפְשֶׁךָ
+    prior_rendering: to make your eyes fail and your soul grieve
+    new_rendering: so that your eyes will fail with grief and your soul will be filled with sorrow
+    rationale: The purpose clauses describe consuming anguish; the revision clarifies the emotional force while retaining both eyes and soul.
+  - source_phrase: וְכָל מַרְבִּית בֵּיתְךָ
+    prior_rendering: and all the increase of your house
+    new_rendering: all your descendants
+    rationale: The family's 'increase' means its descendants, not growing wealth or an expanding building.
+  - source_phrase: יָמוּתוּ אֲנָשִׁים
+    prior_rendering: will die by the sword of men
+    new_rendering: will die in the prime of life
+    rationale: The supplied Hebrew contains no sword. Its terse wording most likely contrasts death in full manhood with the old age denied in verses 31–32; the manuscript reading mentioning the sword is preserved separately.
+  footnote_kinds:
+    a: literal_wording
+    b: textual_variant
+  history_weighed: The current sword wording follows a manuscript reading rather than the supplied WLC text, despite the earlier review presenting it as an idiomatic clarification. The recorded lexical discussion itself favored 'as men' with 'in the prime of life' as its likely sense, so I render that contextual meaning and retain the sword reading as a textual variant.

@@ -17,15 +17,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Achior[a], the leader of all the sons of Ammon, said to him, “Let my lord now hear a word from the mouth of your servant, and I will tell you the truth about the people who dwell in this hill country near you[b], and no falsehood will come from the mouth of your servant.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “of all the Ammonites.” The Greek literally says “of all the sons of Ammon.”
-    reason: lexical_alternative
-  - marker: b
-    text: Or “from your servant’s mouth.” The Greek literally says “from the mouth of your servant.”
-    reason: lexical_alternative
+  text: Achior, the leader of all the Ammonites, said to him, “My lord, please listen to your servant. I will tell you the truth about the people who live in this hill country near you. Your servant will speak no falsehood.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἀχιὼρ
   chosen: Achior
@@ -141,14 +134,20 @@ revisions:
   from: And Achior, the leader of all the sons of Ammon, said to him, “Let my lord now hear a word from the mouth of your servant, and I will tell you the truth about the people who dwell in this hill country near you; and no falsehood will come out of the mouth of your servant.”
   to: And Achior, the leader of all the sons of Ammon, said to him, “Let my lord now hear a word from the mouth of your servant, and I will tell you the truth about the people who dwell in this hill country near you; and no falsehood will come out of the mouth of your servant.”
   rationale: Removed the semicolon before the final clause to better reflect the continuous Greek syntax. Kept the draft otherwise unchanged as accurate, complete, and natural.
-
 - timestamp: '2026-05-18T03:00:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Achior[a], the leader of all the sons of Ammon, said to him, “Let my lord now hear a word from the mouth of your servant, and I will tell you the truth about the people who dwell in this hill country near you[b], and no falsehood will come from the mouth of your servant.”'
-  to: 'And Achior[a], the leader of all the sons of Ammon, said to him, “Let my lord now hear a word from the mouth of your servant, and I will tell you the truth about the people who dwell in this hill country near you[b], and no falsehood will come from the mouth of your servant.”'
+  from: And Achior[a], the leader of all the sons of Ammon, said to him, “Let my lord now hear a word from the mouth of your servant, and I will tell you the truth about the people who dwell in this hill country near you[b], and no falsehood will come from the mouth of your servant.”
+  to: And Achior[a], the leader of all the sons of Ammon, said to him, “Let my lord now hear a word from the mouth of your servant, and I will tell you the truth about the people who dwell in this hill country near you[b], and no falsehood will come from the mouth of your servant.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''no falsehood will come out''].'
+- timestamp: '2026-11-09T19:01:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Achior[a], the leader of all the sons of Ammon, said to him, “Let my lord now hear a word from the mouth of your servant, and I will tell you the truth about the people who dwell in this hill country near you[b], and no falsehood will come from the mouth of your servant.”
+  to: Achior, the leader of all the Ammonites, said to him, “My lord, please listen to your servant. I will tell you the truth about the people who live in this hill country near you. Your servant will speak no falsehood.
+  rationale: Earlier changes mainly concerned punctuation and whether falsehood 'comes out'; the lexical discussion correctly identifies 'your servant' as courtly self-reference. I retain that deference and the solemn assurance while making the speech formulas natural English.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -168,3 +167,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/005/005.job-50571.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:29Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Achior respectfully asks Holofernes to hear his truthful account of the nearby Israelites.
+  meaning_decisions:
+  - source_phrase: πάντων υἱῶν Ἀμμών
+    prior_rendering: all the sons of Ammon
+    new_rendering: all the Ammonites
+    rationale: The phrase identifies the people under Achior’s leadership, not specifically their male descendants.
+  - source_phrase: Ἀκουσάτω δὴ λόγον ὁ κύριός μου ἐκ στόματος τοῦ δούλου σου
+    prior_rendering: Let my lord now hear a word from the mouth of your servant
+    new_rendering: My lord, please listen to your servant
+    rationale: This is a deferential request for a superior’s attention; the natural English preserves both the request and Achior’s courtly self-reference.
+  - source_phrase: οὐκ ἐξελεύσεται ψεῦδος ἐκ τοῦ στόματος τοῦ δούλου σου
+    prior_rendering: no falsehood will come from the mouth of your servant
+    new_rendering: Your servant will speak no falsehood
+    rationale: The expression solemnly guarantees truthful speech; retaining the mouth construction adds no necessary meaning in English.
+  footnote_kinds: {}
+  history_weighed: Earlier changes mainly concerned punctuation and whether falsehood 'comes out'; the lexical discussion correctly identifies 'your servant' as courtly self-reference. I retain that deference and the solemn assurance while making the speech formulas natural English.

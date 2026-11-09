@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: גְּמַלִּ֧ים מֵינִיק֛וֹת וּ/בְנֵי/הֶ֖ם שְׁלֹשִׁ֑ים פָּר֤וֹת אַרְבָּעִים֙ וּ/פָרִ֣ים עֲשָׂרָ֔ה אֲתֹנֹ֣ת עֶשְׂרִ֔ים וַ/עְיָרִ֖ם עֲשָׂרָֽה׃
 translation:
-  text: thirty nursing camels and their young[a], forty cows and ten bulls, twenty female donkeys and ten foals.
-  philosophy: optimal-equivalence
+  text: thirty nursing camels with their young, forty cows and ten bulls, twenty female donkeys and ten male donkeys[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'ten donkey colts' or 'ten foals'; the Hebrew term can refer to a young donkey, but in this livestock list it likely denotes male donkeys paired with the female donkeys.
-    reason: lexical_alternative
+    text: Or “ten donkey colts”; the Hebrew term can refer to a young male donkey.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: גְּמַלִּים
   chosen: camels
@@ -95,14 +95,20 @@ revisions:
   from: thirty nursing camels and their young, forty cows and ten bulls, twenty female donkeys and ten male donkeys.
   to: thirty nursing camels and their young, forty cows and ten bulls, twenty female donkeys and ten male donkeys.
   rationale: Changed the final phrase from 'ten male donkeys' to 'ten foals' to reflect וַעְיָרִם more accurately as young donkeys/foals rather than adult males.
-
 - timestamp: '2026-05-17T11:51:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'thirty nursing camels and their young[a], forty cows and ten bulls, twenty female donkeys and ten foals.'
-  to: 'thirty nursing camels and their young[a], forty cows and ten bulls, twenty female donkeys and ten foals.'
+  from: thirty nursing camels and their young[a], forty cows and ten bulls, twenty female donkeys and ten foals.
+  to: thirty nursing camels and their young[a], forty cows and ten bulls, twenty female donkeys and ten foals.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and ten male donkeys''].'
+- timestamp: '2026-11-09T17:44:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: thirty nursing camels and their young[a], forty cows and ten bulls, twenty female donkeys and ten foals.
+  to: thirty nursing camels with their young, forty cows and ten bulls, twenty female donkeys and ten male donkeys[a].
+  rationale: The first draft and lexical discussion favored male donkeys because of the inventory’s female–male pairings, whereas the later review favored foals without a recorded text change. I return to the contextual reading while preserving donkey colts as a serious alternative.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -124,3 +130,26 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/032/016.job-65322.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:44:39Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The gift also includes nursing camels with their young, cows and bulls, and female and male donkeys.
+  meaning_decisions:
+  - source_phrase: גְּמַלִּים מֵינִיקוֹת וּבְנֵיהֶם שְׁלֹשִׁים
+    prior_rendering: thirty nursing camels and their young
+    new_rendering: thirty nursing camels with their young
+    rationale: “With” makes clear that the young accompany the thirty nursing mothers.
+  - source_phrase: וַעְיָרִם עֲשָׂרָה
+    prior_rendering: and ten foals
+    new_rendering: and ten male donkeys
+    rationale: The term can denote male donkeys without specifying that they are foals, and the inventory’s repeated female–male pairings favor that understanding; the age-specific alternative is retained in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and lexical discussion favored male donkeys because of the inventory’s female–male pairings, whereas the later review favored foals without a recorded text change. I return to the contextual reading while preserving donkey colts as a serious alternative.

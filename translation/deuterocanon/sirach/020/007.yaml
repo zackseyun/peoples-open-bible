@@ -28,12 +28,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 20:7
 translation:
-  text: A wise man keeps silent until the right time[a], but a fool does not observe the right time.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Or, ''does not observe the proper time.'' The Hebrew literally says ''does not keep time.'' The Greek parallel for this verse reads quite differently: ''The one who abounds in speech will be detested, and the one who acts high-handedly will be hated.'''
-    reason: alternative_reading
+  text: A wise man keeps silent until the right time to speak, but a fool pays no attention to timing.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: חָכָם
   chosen: a wise man
@@ -105,14 +101,20 @@ revisions:
   from: A wise man keeps silent until the right time, but a fool does not keep time.
   to: A wise man keeps silent until the right time, but a fool does not keep time.
   rationale: Revised the second clause from 'does not keep time' to 'does not observe the right time' for clearer, more natural English and closer correspondence to the Hebrew idiom of keeping/observing the proper time.
-
 - timestamp: '2026-05-18T02:58:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'A wise man keeps silent until the right time[a], but a fool does not observe the right time.'
-  to: 'A wise man keeps silent until the right time[a], but a fool does not observe the right time.'
+  from: A wise man keeps silent until the right time[a], but a fool does not observe the right time.
+  to: A wise man keeps silent until the right time[a], but a fool does not observe the right time.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''does not keep time''].'
+- timestamp: '2026-11-09T20:33:43Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: A wise man keeps silent until the right time[a], but a fool does not observe the right time.
+  to: A wise man keeps silent until the right time to speak, but a fool pays no attention to timing.
+  rationale: The review's concern that 'keep time' obscures the Hebrew idiom supports retaining the current wording's emphasis on appropriate timing rather than returning to the first draft. No maintainer revision is recorded; the earlier footnote's explanation of the idiom is now unnecessary.
 cross_check:
   status: needs_review
   agreement: 0.7
@@ -132,3 +134,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/020/007.job-51504.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:33:43Z'
+  change_level: refined
+  confidence: high
+  meaning: A wise person waits for the appropriate moment to speak, while a fool speaks without regard for timing.
+  meaning_decisions:
+  - source_phrase: עַד עֵת
+    prior_rendering: until the right time
+    new_rendering: until the right time to speak
+    rationale: The surrounding sayings concern speech and silence, so making the implied action explicit clarifies what the wise person is waiting for.
+  - source_phrase: לֹא יִשְׁמוֹר עֵת
+    prior_rendering: does not observe the right time
+    new_rendering: pays no attention to timing
+    rationale: This expresses the fool's disregard for the appropriate moment in natural English, preserving the contrast with the wise person's restraint.
+  footnote_kinds: {}
+  history_weighed: The review's concern that 'keep time' obscures the Hebrew idiom supports retaining the current wording's emphasis on appropriate timing rather than returning to the first draft. No maintainer revision is recorded; the earlier footnote's explanation of the idiom is now unnecessary.

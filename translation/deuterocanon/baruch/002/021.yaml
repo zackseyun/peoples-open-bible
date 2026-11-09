@@ -8,18 +8,8 @@ source:
   confidence: high
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; kept canonical Baruch 1:1-5:9 only, with Letter of Jeremiah handled separately as LJE.
 translation:
-  text: 'Thus says the Lord: Bow your shoulder and serve the king of Babylon[c][b][a], and dwell on the land that I gave to your fathers.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'Bend your shoulder.' The image is one of submitting oneself to imposed service.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'settle on the land' / 'remain on the land.' Greek 'sit' here functions idiomatically for residing.
-    reason: lexical_alternative
-  - marker: c
-    text: 'Or ''your ancestors.'' Greek: ''your fathers.'''
-    reason: lexical_alternative
+  text: 'Thus says the Lord: “Bend your shoulders in submission and serve the king of Babylon, and remain in the land that I gave to your fathers.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Οὕτως εἶπεν
   chosen: Thus says
@@ -131,7 +121,6 @@ revisions:
   from: 'Thus says the Lord: Bow your shoulder and work for the king of Babylon, and dwell on the land that I gave to your fathers.'
   to: 'Thus says the Lord: Bow your shoulder and work for the king of Babylon, and dwell on the land that I gave to your fathers.'
   rationale: Changed 'work for' to 'serve' for a more natural and accurate rendering of ἐργάσασθε in this context; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:59:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -139,6 +128,13 @@ revisions:
   from: 'Thus says the Lord: Bow your shoulder and serve the king of Babylon[c][b][a], and dwell on the land that I gave to your fathers.'
   to: 'Thus says the Lord: Bow your shoulder and serve the king of Babylon[c][b][a], and dwell on the land that I gave to your fathers.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''work for''].'
+- timestamp: '2026-11-09T19:00:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Thus says the Lord: Bow your shoulder and serve the king of Babylon[c][b][a], and dwell on the land that I gave to your fathers.'
+  to: 'Thus says the Lord: “Bend your shoulders in submission and serve the king of Babylon, and remain in the land that I gave to your fathers.'
+  rationale: The review's preference for “serve” correctly captures political subjection, so I retain that gain over the first draft's “work for.” I clarify the shoulder image and residence command without importing the wording of a parallel prophetic passage.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -158,3 +154,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/baruch/002/021.job-50356.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:00:32Z'
+  change_level: refined
+  confidence: high
+  meaning: God commanded the people to submit to Babylon's king and remain in the land he gave their fathers.
+  meaning_decisions:
+  - source_phrase: Κλίνατε τὸν ὦμον ὑμῶν
+    prior_rendering: Bow your shoulder
+    new_rendering: Bend your shoulders in submission
+    rationale: The shoulder image expresses acceptance of imposed service; the clarification makes that meaning intelligible while preserving the bodily image.
+  - source_phrase: καθίσατε ἐπὶ τὴν γῆν
+    prior_rendering: dwell on the land
+    new_rendering: remain in the land
+    rationale: The command concerns continuing to reside in the ancestral land under Babylonian authority, not settling somewhere new.
+  footnote_kinds: {}
+  history_weighed: The review's preference for “serve” correctly captures political subjection, so I retain that gain over the first draft's “work for.” I clarify the shoulder image and residence command without importing the wording of a parallel prophetic passage.

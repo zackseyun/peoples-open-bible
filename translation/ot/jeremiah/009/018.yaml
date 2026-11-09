@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: כִּ֣י ק֥וֹל נְהִ֛י נִשְׁמַ֥ע מִ/צִּיּ֖וֹן אֵ֣יךְ שֻׁדָּ֑דְנוּ בֹּ֤שְׁנֽוּ מְאֹד֙ כִּֽי עָזַ֣בְנוּ אָ֔רֶץ כִּ֥י הִשְׁלִ֖יכוּ מִשְׁכְּנוֹתֵֽי/נוּ־׃ס
 translation:
-  text: 'For the sound of wailing is heard from Zion: “How we are devastated! We are utterly ashamed[a], because we have left the land[c][b], because they have cast down our dwellings.”'
-  philosophy: optimal-equivalence
+  text: 'For the sound of wailing is heard from Zion: “How devastated we are! We are utterly ashamed, for we have had to leave the land, and our homes have been torn down[a].”'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “we have been plundered” for “we have been devastated.” The Hebrew verb can emphasize either ruin in general or despoiling by an enemy.
-    reason: lexical_alternative
-  - marker: b
-    text: Or “because we have abandoned the land.” The Hebrew may describe either forced departure or forsaking the land; the context of lament favors departure under judgment.
-    reason: lexical_alternative
-  - marker: c
-    text: Or “our homes” or “our habitations” for “our dwellings.”
-    reason: lexical_alternative
+    text: Alternatively, the final clause may mean “because our dwellings have cast us out.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: כִּי
   chosen: For
@@ -116,7 +110,6 @@ revisions:
   from: 'For the sound of wailing is heard from Zion: “How we have been devastated! We are utterly ashamed, because we have left the land, because they have cast down our dwellings.”'
   to: 'For the sound of wailing is heard from Zion: “How we have been devastated! We are utterly ashamed, because we have left the land, because they have cast down our dwellings.”'
   rationale: Changed 'have been devastated' to 'are devastated' to better reflect the exclamatory perfect in natural English while preserving the sense. No other changes needed.
-
 - timestamp: '2026-05-18T02:57:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -124,6 +117,13 @@ revisions:
   from: 'For the sound of wailing is heard from Zion: “How we are devastated! We are utterly ashamed[a], because we have left the land[c][b], because they have cast down our dwellings.”'
   to: 'For the sound of wailing is heard from Zion: “How we are devastated! We are utterly ashamed[a], because we have left the land[c][b], because they have cast down our dwellings.”'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''we have been devastated''].'
+- timestamp: '2026-11-09T21:36:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'For the sound of wailing is heard from Zion: “How we are devastated! We are utterly ashamed[a], because we have left the land[c][b], because they have cast down our dwellings.”'
+  to: 'For the sound of wailing is heard from Zion: “How devastated we are! We are utterly ashamed, for we have had to leave the land, and our homes have been torn down[a].”'
+  rationale: No MAINTAINER revision is recorded; the automated tense change and revert carry little weight. The lexical deliberations support retaining devastation and shame while clarifying forced departure and expressing the destruction of dwellings in natural English.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -143,3 +143,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/009/018.job-67322.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T21:36:20Z'
+  change_level: refined
+  confidence: medium
+  meaning: Wailing rises from Zion as the people lament their devastation, profound shame, forced departure from the land, and the destruction of their homes.
+  meaning_decisions:
+  - source_phrase: כִּי עָזַבְנוּ אָרֶץ
+    prior_rendering: because we have left the land
+    new_rendering: for we have had to leave the land
+    rationale: The surrounding judgment and lament indicate departure under duress, not a voluntary abandonment of the homeland; the translation makes that implication explicit.
+  - source_phrase: כִּי הִשְׁלִיכוּ מִשְׁכְּנוֹתֵינוּ
+    prior_rendering: because they have cast down our dwellings
+    new_rendering: and our homes have been torn down
+    rationale: The passive construction conveys the destruction naturally without an unexplained “they”; both clauses remain reasons for the people's shame. The serious alternative that the dwellings themselves cast the people out is preserved in a footnote.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: No MAINTAINER revision is recorded; the automated tense change and revert carry little weight. The lexical deliberations support retaining devastation and shame while clarifying forced departure and expressing the destruction of dwellings in natural English.

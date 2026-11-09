@@ -25,15 +25,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But they turned away from him[a], saying, “We certainly cannot do it. Instead, let us save our own lives for now. Let us return with our brothers and fight against them[b], but we are few.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'they rejected him,' since the Greek expression can imply refusing his counsel rather than merely physically turning away.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Lives'' translates Greek ''souls'' (psychas), a common idiom for preserving one''s life in danger.'
-    reason: lexical_alternative
+  text: But they tried to dissuade him, saying, “We certainly cannot! Let us save our own lives for now, then return with our brothers and fight them. As we are, we are too few.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀπέστρεψαν αὐτόν
   chosen: they turned away from him
@@ -133,14 +126,20 @@ revisions:
   from: But they turned away from him, saying, “We certainly cannot do it. Instead, let us save our own lives for now. Let us return with our brothers, and let us fight against them; but we are few.”
   to: But they turned back from him, saying, “We certainly cannot do it. Instead, let us save our own lives for now. Let us return with our brothers and fight against them, for we are few.”
   rationale: Changed 'turned away from him' to 'turned back from him' for closer lexical sense of ἀπέστρεψαν. Smoothed the final clause from 'but we are few' to 'for we are few' to reflect the explanatory force more naturally in English, and removed an unnecessary comma before 'and fight.'
-
 - timestamp: '2026-05-15T14:24:26Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But they turned back from him[a], saying, “We certainly cannot do it. Instead, let us save our own lives for now. Let us return with our brothers and fight against them[b], for we are few.”'
-  to: 'But they turned away from him[a], saying, “We certainly cannot do it. Instead, let us save our own lives for now. Let us return with our brothers and fight against them[b], but we are few.”'
-  rationale: 'Restored 2 chosen renderings preserving relational refusal and adversative δέ.'
+  from: But they turned back from him[a], saying, “We certainly cannot do it. Instead, let us save our own lives for now. Let us return with our brothers and fight against them[b], for we are few.”
+  to: But they turned away from him[a], saying, “We certainly cannot do it. Instead, let us save our own lives for now. Let us return with our brothers and fight against them[b], but we are few.”
+  rationale: Restored 2 chosen renderings preserving relational refusal and adversative δέ.
+- timestamp: '2026-11-09T18:53:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But they turned away from him[a], saying, “We certainly cannot do it. Instead, let us save our own lives for now. Let us return with our brothers and fight against them[b], but we are few.”
+  to: But they tried to dissuade him, saying, “We certainly cannot! Let us save our own lives for now, then return with our brothers and fight them. As we are, we are too few.”
+  rationale: The earlier notes already recognize refusal of Judas’s counsel as the sense of 'turned away,' so that meaning is now carried in the text. The history’s dispute over 'but' and 'for' is resolved by expressing the contrast between their present numbers and their proposed return with brothers.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -160,3 +159,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/009/009.job-48428.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:19Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The remaining men urge Judas to withdraw temporarily and return with their brothers because their present force is too small.
+  meaning_decisions:
+  - source_phrase: ἀπέστρεψαν αὐτόν
+    prior_rendering: they turned away from him
+    new_rendering: they tried to dissuade him
+    rationale: Their speech attempts to turn Judas from his proposed attack, rather than describing their physical departure.
+  - source_phrase: σώσωμεν τὰς ἑαυτῶν ψυχὰς τὸ νῦν· ἐπιστρέψωμεν μετὰ τῶν ἀδελφῶν ἡμῶν
+    prior_rendering: let us save our own lives for now. Let us return with our brothers
+    new_rendering: Let us save our own lives for now, then return with our brothers
+    rationale: 'The proposed sequence is made explicit: survive the present danger and return accompanied by reinforcements.'
+  - source_phrase: ἡμεῖς δὲ ὀλίγοι
+    prior_rendering: but we are few
+    new_rendering: As we are, we are too few
+    rationale: Their present small force is contrasted with the larger company they propose bringing back.
+  footnote_kinds: {}
+  history_weighed: The earlier notes already recognize refusal of Judas’s counsel as the sense of 'turned away,' so that meaning is now carried in the text. The history’s dispute over 'but' and 'for' is resolved by expressing the contrast between their present numbers and their proposed return with brothers.

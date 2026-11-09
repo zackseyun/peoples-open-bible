@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/הִקְרִיתֶ֤ם לָ/כֶם֙ עָרִ֔ים עָרֵ֥י מִקְלָ֖ט תִּהְיֶ֣ינָה לָ/כֶ֑ם וְ/נָ֥ס שָׁ֨מָּ/ה֙ רֹצֵ֔חַ מַכֵּה נֶ֖פֶשׁ בִּ/שְׁגָגָֽה־׃
 translation:
-  text: then you shall designate cities for yourselves[a]; they shall be cities of refuge for you, and the manslayer who strikes down a person unintentionally[b] shall flee there.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'appoint' or 'set apart' cities for yourselves.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'the manslayer who strikes down a person unintentionally'; that is, one guilty of unintentional homicide, not deliberate murder.
-    reason: alternative_reading
+  text: you shall designate cities of refuge for yourselves, where anyone who kills a person unintentionally may flee.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְהִקְרִיתֶם
   chosen: you shall designate
@@ -102,13 +95,12 @@ revisions:
   from: then you shall designate cities for yourselves; they shall be cities of refuge for you, and the manslayer who strikes down a person unintentionally shall flee there.
   to: then you shall designate cities for yourselves; they shall be cities of refuge for you, and the manslayer who kills a person unintentionally shall flee there.
   rationale: Changed 'strikes down a person' to 'kills a person' for more direct lexical accuracy with מַכֵּה נֶפֶשׁ in this context, while keeping the rest of the verse intact.
-
 - timestamp: '2026-05-18T03:09:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'then you shall designate cities for yourselves[a]; they shall be cities of refuge for you[b], and the manslayer who kills a person unintentionally shall flee there.'
-  to: 'then you shall designate cities for yourselves; they shall be cities of refuge for you, and the manslayer who strikes down a person unintentionally shall flee there.'
+  from: then you shall designate cities for yourselves[a]; they shall be cities of refuge for you[b], and the manslayer who kills a person unintentionally shall flee there.
+  to: then you shall designate cities for yourselves; they shall be cities of refuge for you, and the manslayer who strikes down a person unintentionally shall flee there.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who strikes down a person''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -118,6 +110,13 @@ revisions:
   from: then you shall designate cities for yourselves; they shall be cities of refuge for you, and the manslayer who strikes down a person unintentionally shall flee there.
   to: then you shall designate cities for yourselves[a]; they shall be cities of refuge for you, and the manslayer who strikes down a person unintentionally[b] shall flee there.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it; [b] anchored to ('the manslayer who strikes down a person unintentionally') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:33:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: then you shall designate cities for yourselves[a]; they shall be cities of refuge for you, and the manslayer who strikes down a person unintentionally[b] shall flee there.
+  to: you shall designate cities of refuge for yourselves, where anyone who kills a person unintentionally may flee.
+  rationale: An earlier review proposed 'kills,' but an automated revert restored 'strikes down' for source transparency. The recorded distinction between unintentional homicide and murder remains essential; I preserve it while stating the death and refuge function directly.
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -138,3 +137,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/035/011.job-41961.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:33:00Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Israel must designate refuge cities to which anyone who kills a person unintentionally may flee.
+  meaning_decisions:
+  - source_phrase: וְהִקְרִיתֶם לָכֶם עָרִים עָרֵי מִקְלָט תִּהְיֶינָה לָכֶם
+    prior_rendering: then you shall designate cities for yourselves; they shall be cities of refuge for you
+    new_rendering: you shall designate cities of refuge for yourselves
+    rationale: The designation and resulting status describe one provision, which English can state directly without losing either element.
+  - source_phrase: וְנָס שָׁמָּה רֹצֵחַ מַכֵּה נֶפֶשׁ בִּשְׁגָגָה
+    prior_rendering: the manslayer who strikes down a person unintentionally shall flee there
+    new_rendering: where anyone who kills a person unintentionally may flee
+    rationale: The clause explains the protection the cities make available; 'kills' states the lethal result explicitly, and 'unintentionally' preserves the decisive legal qualification.
+  footnote_kinds: {}
+  history_weighed: An earlier review proposed 'kills,' but an automated revert restored 'strikes down' for source transparency. The recorded distinction between unintentional homicide and murder remains essential; I preserve it while stating the death and refuge function directly.

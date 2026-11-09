@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּ֤חַר לְ/מֹשֶׁה֙ מְאֹ֔ד וַ/יֹּ֨אמֶר֙ אֶל יְהוָ֔ה אַל תֵּ֖פֶן אֶל מִנְחָתָ֑/ם לֹ֠א חֲמ֨וֹר אֶחָ֤ד מֵ/הֶם֙ נָשָׂ֔אתִי וְ/לֹ֥א הֲרֵעֹ֖תִי אֶת אַחַ֥ד מֵ/הֶֽם־־־־׃
 translation:
-  text: Then Moses became very angry and said to Yahweh, “Do not turn toward their offering[a]. I have not taken a single donkey from them, nor have I harmed any one of them.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'Do not regard their offering' or 'Do not accept their offering.' The Hebrew literally says, 'Do not turn toward their offering.'
-    reason: lexical_alternative
+  text: Then Moses became very angry and said to Yahweh, “Do not look with favor on their offering. I have not taken a single donkey from them, nor have I harmed any one of them.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּחַר לְמֹשֶׁה מְאֹד
   chosen: Then Moses became very angry
@@ -82,13 +78,12 @@ revisions:
   from: Then Moses became very angry and said to the LORD, “Do not turn toward their offering. I have not taken a single donkey from them, nor have I harmed any one of them.”
   to: Then Moses became very angry and said to the LORD, “Do not regard their offering. I have not taken a single donkey from them, nor have I harmed any one of them.”
   rationale: Changed 'turn toward' to 'regard' for a more natural and accurate rendering of the idiom 'do not turn to/regard their offering.'
-
 - timestamp: '2026-05-18T03:09:19Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Moses became very angry and said to Yahweh[a], “Do not regard their offering. I have not taken a single donkey from them, nor have I harmed any one of them.”'
-  to: 'Then Moses became very angry and said to Yahweh, “Do not turn toward their offering. I have not taken a single donkey from them, nor have I harmed any one of them.”'
+  from: Then Moses became very angry and said to Yahweh[a], “Do not regard their offering. I have not taken a single donkey from them, nor have I harmed any one of them.”
+  to: Then Moses became very angry and said to Yahweh, “Do not turn toward their offering. I have not taken a single donkey from them, nor have I harmed any one of them.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Do not turn toward their offering''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -98,6 +93,13 @@ revisions:
   from: Then Moses became very angry and said to Yahweh, “Do not turn toward their offering. I have not taken a single donkey from them, nor have I harmed any one of them.”
   to: Then Moses became very angry and said to Yahweh, “Do not turn toward their offering[a]. I have not taken a single donkey from them, nor have I harmed any one of them.”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('Do not turn toward their offering') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:30:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Moses became very angry and said to Yahweh, “Do not turn toward their offering[a]. I have not taken a single donkey from them, nor have I harmed any one of them.”
+  to: Then Moses became very angry and said to Yahweh, “Do not look with favor on their offering. I have not taken a single donkey from them, nor have I harmed any one of them.”
+  rationale: The recorded review correctly sought the idiom’s meaning, although its “regard” was later automatically reverted. I retain that gain more explicitly with “look with favor,” while keeping Moses’ concrete denial of taking even one donkey.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -118,3 +120,21 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/016/015.job-41566.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:30:46Z'
+  change_level: refined
+  confidence: high
+  meaning: Angered by their accusations, Moses asks Yahweh not to favor their offering and denies having exploited or harmed them.
+  meaning_decisions:
+  - source_phrase: אַל תֵּפֶן אֶל מִנְחָתָם
+    prior_rendering: Do not turn toward their offering
+    new_rendering: Do not look with favor on their offering
+    rationale: Moses is asking Yahweh to withhold favorable regard, not merely to refrain from turning or noticing. “Offering” remains broad because the verse does not specify its kind.
+  footnote_kinds: {}
+  history_weighed: The recorded review correctly sought the idiom’s meaning, although its “regard” was later automatically reverted. I retain that gain more explicitly with “look with favor,” while keeping Moses’ concrete denial of taking even one donkey.

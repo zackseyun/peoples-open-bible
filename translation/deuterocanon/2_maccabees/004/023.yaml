@@ -23,12 +23,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But after a period of three years[a], Jason sent Menelaus, the brother of the aforementioned Simon, to carry the money to the king and to deliver memoranda concerning necessary matters.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'to finalize written reports concerning necessary matters.' The Greek ὑπομνηματισμοὺς can refer to memoranda or written reports, and the exact administrative nuance is uncertain.
-    reason: lexical_alternative
+  text: Three years later, Jason sent Menelaus, the brother of Simon mentioned earlier, to take the money to the king and submit memoranda on urgent matters.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Μετὰ δὲ τριετῆ χρόνον
   chosen: But after a period of three years
@@ -104,14 +100,20 @@ revisions:
   from: But after a period of three years, Jason sent Menelaus, the brother of the aforementioned Simon, to carry the money to the king and to complete memoranda concerning necessary matters.
   to: But after a period of three years, Jason sent Menelaus, the brother of the aforementioned Simon, to carry the money to the king and to complete memoranda concerning necessary matters.
   rationale: Replaced "complete memoranda" with "deliver memoranda" to better reflect the sense of ὑπομνηματισμοὺς τελέσοντα in context as presenting or submitting reports/memoranda, while preserving formal register and completeness.
-
 - timestamp: '2026-05-18T02:59:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But after a period of three years[a], Jason sent Menelaus, the brother of the aforementioned Simon, to carry the money to the king and to deliver memoranda concerning necessary matters.'
-  to: 'But after a period of three years[a], Jason sent Menelaus, the brother of the aforementioned Simon, to carry the money to the king and to deliver memoranda concerning necessary matters.'
+  from: But after a period of three years[a], Jason sent Menelaus, the brother of the aforementioned Simon, to carry the money to the king and to deliver memoranda concerning necessary matters.
+  to: But after a period of three years[a], Jason sent Menelaus, the brother of the aforementioned Simon, to carry the money to the king and to deliver memoranda concerning necessary matters.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to complete memoranda''].'
+- timestamp: '2026-11-09T18:55:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But after a period of three years[a], Jason sent Menelaus, the brother of the aforementioned Simon, to carry the money to the king and to deliver memoranda concerning necessary matters.
+  to: Three years later, Jason sent Menelaus, the brother of Simon mentioned earlier, to take the money to the king and submit memoranda on urgent matters.
+  rationale: The recorded passes disagree about completing versus delivering memoranda, while the current text favors delivery. I build on that gain with “submit,” retaining the written administrative character without claiming a precise procedure.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -131,3 +133,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/004/023.job-49049.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:02Z'
+  change_level: refined
+  confidence: high
+  meaning: Three years later, Jason sent Simon’s brother Menelaus to bring money to the king and submit memoranda about urgent business.
+  meaning_decisions:
+  - source_phrase: περὶ πραγμάτων ἀναγκαίων ὑπομνηματισμοὺς τελέσοντα
+    prior_rendering: to deliver memoranda concerning necessary matters
+    new_rendering: submit memoranda on urgent matters
+    rationale: In this court mission, the administrative task is naturally expressed as submitting memoranda; “urgent matters” conveys business requiring attention rather than the opaque “necessary matters.”
+  footnote_kinds: {}
+  history_weighed: The recorded passes disagree about completing versus delivering memoranda, while the current text favors delivery. I build on that gain with “submit,” retaining the written administrative character without claiming a precise procedure.

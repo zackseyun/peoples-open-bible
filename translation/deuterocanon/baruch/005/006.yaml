@@ -18,14 +18,11 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; kept canonical Baruch 1:1-5:9 only, with Letter of Jeremiah handled separately as LJE.
 translation:
-  text: For they went out from you on foot[a], being led away by enemies, but God brings them to you[b], carried with glory as on a royal throne.
-  philosophy: optimal-equivalence
+  text: For they left you on foot, led away by enemies, but God brings them back to you, carried in glory as on a royal throne[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'God leads them in to you'; the Greek verb is literally 'brings in' or 'leads in,' here in the context of return from exile.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'borne' or 'lifted up'; the image contrasts their going out on foot with an honored, exalted return.
+    text: Literally, “like a royal throne.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐξῆλθον
@@ -131,14 +128,20 @@ revisions:
   from: For they went out from you on foot, being led away by enemies, but God brings them back to you, carried with glory as on a royal throne.
   to: For they went out from you on foot, being led away by enemies, but God brings them back to you, carried with glory as on a royal throne.
   rationale: Removed 'back' because it is not explicit in the Greek; otherwise retained the draft's accurate and natural rendering.
-
 - timestamp: '2026-05-18T03:00:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For they went out from you on foot[a], being led away by enemies, but God brings them to you[b], carried with glory as on a royal throne.'
-  to: 'For they went out from you on foot[a], being led away by enemies, but God brings them to you[b], carried with glory as on a royal throne.'
+  from: For they went out from you on foot[a], being led away by enemies, but God brings them to you[b], carried with glory as on a royal throne.
+  to: For they went out from you on foot[a], being led away by enemies, but God brings them to you[b], carried with glory as on a royal throne.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''brings them back''].'
+- timestamp: '2026-11-09T18:59:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For they went out from you on foot[a], being led away by enemies, but God brings them to you[b], carried with glory as on a royal throne.
+  to: For they left you on foot, led away by enemies, but God brings them back to you, carried in glory as on a royal throne[a].
+  rationale: The first draft and lexical rationale used back, whereas an automated review removed it solely because it was not explicit in the Greek. The verse’s own departure-and-return contrast justifies restoring it; the inherited royal-throne image is retained, with its compressed literal form noted.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -158,3 +161,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/baruch/005/006.job-50451.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:45Z'
+  change_level: refined
+  confidence: medium
+  meaning: The children who left Jerusalem on foot under enemy control are being brought home by God in royal glory.
+  meaning_decisions:
+  - source_phrase: εἰσάγει δὲ αὐτοὺς ὁ θεὸς πρὸς σέ
+    prior_rendering: but God brings them to you
+    new_rendering: but God brings them back to you
+    rationale: Back expresses the return already established by their departure from Jerusalem earlier in this same verse.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The first draft and lexical rationale used back, whereas an automated review removed it solely because it was not explicit in the Greek. The verse’s own departure-and-return contrast justifies restoring it; the inherited royal-throne image is retained, with its compressed literal form noted.

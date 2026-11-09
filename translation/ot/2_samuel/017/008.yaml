@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: וַ/יֹּ֣אמֶר חוּשַׁ֗י אַתָּ֣ה יָ֠דַעְתָּ אֶת אָבִ֨י/ךָ וְ/אֶת אֲנָשָׁ֜י/ו כִּ֧י גִבֹּרִ֣ים הֵ֗מָּה וּ/מָרֵ֥י נֶ֨פֶשׁ֙ הֵ֔מָּה כְּ/דֹ֥ב שַׁכּ֖וּל בַּ/שָּׂדֶ֑ה וְ/אָבִ֨י/ךָ֙ אִ֣ישׁ מִלְחָמָ֔ה וְ/לֹ֥א יָלִ֖ין אֶת הָ/עָֽם־־־׃
 translation:
-  text: Hushai said[a], “You know your father and his men, that they are mighty men and bitter of soul, like a bear robbed of her cubs in the field. And your father is a man of war[b]; he will not spend the night with the troops.”
-  philosophy: optimal-equivalence
+  text: Hushai said, “You know that your father and his men are mighty warriors, filled with bitter rage[a] like a bear robbed of her cubs in the open country. Your father is an experienced warrior; he will not spend the night with the troops.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'fierce' or 'embittered'; literally 'bitter of soul.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'he will not lodge with the people'; here 'people' likely refers to David's fighting force.
+    text: Literally, “bitter of soul.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: גִבֹּרִים
@@ -92,14 +89,20 @@ revisions:
   from: Hushai said, “You know your father and his men, that they are mighty men and bitter of soul, like a bear robbed of her cubs in the field. And your father is a man of war; he will not spend the night with the troops.”
   to: Hushai said, “You know your father and his men, that they are mighty men and fierce, like a bear robbed of her cubs in the field. And your father is a man of war; he will not spend the night with the people.”
   rationale: Replaced 'bitter of soul' with 'fierce' for more natural and contextually accurate English; changed 'troops' to 'the people' to reflect the Hebrew more directly. Kept the rest substantially unchanged.
-
 - timestamp: '2026-05-15T20:54:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Hushai said[a], “You know your father and his men, that they are mighty men and fierce, like a bear robbed of her cubs in the field. And your father is a man of war[b]; he will not spend the night with the people.”'
-  to: 'Hushai said[a], “You know your father and his men, that they are mighty men and bitter of soul, like a bear robbed of her cubs in the field. And your father is a man of war[b]; he will not spend the night with the troops.”'
-  rationale: 'Drafter chose ''bitter of soul'' for מָרֵי נֶפֶשׁ to preserve the Hebrew idiom and emotional intensity, with ''fierce'' as explicit rejected alternative. Drafter chose ''troops'' for עָם specifically for military context (not generic ''people''). Azure substituted both with rejected alternatives on bare stylistic grounds.'
+  from: Hushai said[a], “You know your father and his men, that they are mighty men and fierce, like a bear robbed of her cubs in the field. And your father is a man of war[b]; he will not spend the night with the people.”
+  to: Hushai said[a], “You know your father and his men, that they are mighty men and bitter of soul, like a bear robbed of her cubs in the field. And your father is a man of war[b]; he will not spend the night with the troops.”
+  rationale: Drafter chose 'bitter of soul' for מָרֵי נֶפֶשׁ to preserve the Hebrew idiom and emotional intensity, with 'fierce' as explicit rejected alternative. Drafter chose 'troops' for עָם specifically for military context (not generic 'people'). Azure substituted both with rejected alternatives on bare stylistic grounds.
+- timestamp: '2026-11-09T17:29:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Hushai said[a], “You know your father and his men, that they are mighty men and bitter of soul, like a bear robbed of her cubs in the field. And your father is a man of war[b]; he will not spend the night with the troops.”
+  to: Hushai said, “You know that your father and his men are mighty warriors, filled with bitter rage[a] like a bear robbed of her cubs in the open country. Your father is an experienced warrior; he will not spend the night with the troops.
+  rationale: The revision and revert show why merely “fierce” loses the bitterness and why “troops” is contextually appropriate. I preserve those gains, express the wounded ferocity as “bitter rage,” and retain the soul image in a note.
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -121,3 +124,34 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_samuel/017/008.job-61032.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:29:01Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Hushai argues that David and his men are formidable and dangerously embittered warriors, and that David’s military experience will keep him from lodging with the troops.
+  meaning_decisions:
+  - source_phrase: אַתָּה יָדַעְתָּ אֶת־אָבִיךָ וְאֶת־אֲנָשָׁיו כִּי גִבֹּרִים הֵמָּה
+    prior_rendering: You know your father and his men, that they are mighty men
+    new_rendering: You know that your father and his men are mighty warriors
+    rationale: Natural English makes the content of Absalom’s knowledge explicit, and the military context establishes that their might is that of warriors.
+  - source_phrase: וּמָרֵי נֶפֶשׁ הֵמָּה
+    prior_rendering: bitter of soul
+    new_rendering: filled with bitter rage
+    rationale: The bereaved-bear comparison presents wounded, dangerous fury, not merely a bitter temperament; the footnote retains the soul wording.
+  - source_phrase: בַּשָּׂדֶה
+    prior_rendering: in the field
+    new_rendering: in the open country
+    rationale: The setting is the open countryside, not necessarily a cultivated field.
+  - source_phrase: אִישׁ מִלְחָמָה
+    prior_rendering: a man of war
+    new_rendering: an experienced warrior
+    rationale: Hushai appeals to David’s practiced military judgment as the reason he would avoid the obvious camp.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The revision and revert show why merely “fierce” loses the bitterness and why “troops” is contextually appropriate. I preserve those gains, express the wounded ferocity as “bitter rage,” and retain the soul image in a note.

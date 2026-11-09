@@ -28,15 +28,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 31:2
 translation:
-  text: Like[a] one who grasps at a shadow and pursues the wind, so is one who clings to dreams[b].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'The extant Hebrew witness aligned here in Kahana reads a substantially different line: ''An evil faithful one will stir up reproach, and one who conceals a secret is a friend like oneself.'' Because the Hebrew and Greek do not match at this verse reference, the main text follows the Greek witness for 31:2.'
-    reason: textual_variant
-  - marker: b
-    text: Or 'one who pays attention to dreams' or 'one who holds fast to dreams.'
-    reason: lexical_alternative
+  text: Anxiety about livelihood disrupts sleep, and severe illness keeps sleep away.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὡς
   chosen: Like
@@ -125,13 +118,12 @@ revisions:
   from: Like one who grasps at a shadow and pursues the wind, so is one who clings to dreams.
   to: Anxiety about livelihood disturbs sleep, and severe illness disturbs sleep.
   rationale: 'Replaced the unrelated draft with a translation that reflects the Hebrew: rendered דאגת מחיה as ''Anxiety about livelihood,'' מחלי חזק as ''severe illness,'' and preserved the repeated תפריע נומה as ''disturbs sleep'' for completeness and consistency.'
-
 - timestamp: '2026-05-15T13:10:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Anxiety about livelihood disturbs sleep[b][a], and severe illness disturbs sleep.'
-  to: 'Like one who grasps at a shadow and pursues the wind, so is one who clings to dreams.'
+  from: Anxiety about livelihood disturbs sleep[b][a], and severe illness disturbs sleep.
+  to: Like one who grasps at a shadow and pursues the wind, so is one who clings to dreams.
   rationale: 'Restored Greek-primary ''Like one who grasps at a shadow'' (validation: major_mismatch).'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -141,6 +133,13 @@ revisions:
   from: Like one who grasps at a shadow and pursues the wind, so is one who clings to dreams.
   to: Like[a] one who grasps at a shadow and pursues the wind, so is one who clings to dreams[b].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('Like') because the note names that rendering; [b] anchored to ('dreams') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:07:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Like[a] one who grasps at a shadow and pursues the wind, so is one who clings to dreams[b].
+  to: Anxiety about livelihood disrupts sleep, and severe illness keeps sleep away.
+  rationale: The substantive review translated the Hebrew line about worry and illness, whereas the automated revert restored the differently aligned Greek saying. Literary continuity favors the review's decision; the additional friendship saying in the supplied record appears displaced and is not treated as part of this verse.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -160,3 +159,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/031/002.job-51820.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:23Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Both anxiety about livelihood and severe illness interfere with sleep.
+  meaning_decisions:
+  - source_phrase: דאגת מחיה תפריע נומה, ומחלי חזק תפריע נומה
+    prior_rendering: Like one who grasps at a shadow and pursues the wind, so is one who clings to dreams.
+    new_rendering: Anxiety about livelihood disrupts sleep, and severe illness keeps sleep away.
+    rationale: The supplied Hebrew continues the preceding verse's concern with lost sleep; the earlier Greek-based simile belongs to a differently aligned discussion of dreams.
+  footnote_kinds: {}
+  history_weighed: The substantive review translated the Hebrew line about worry and illness, whereas the automated revert restored the differently aligned Greek saying. Literary continuity favors the review's decision; the additional friendship saying in the supplied record appears displaced and is not treated as part of this verse.

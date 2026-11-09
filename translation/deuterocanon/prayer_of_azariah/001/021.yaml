@@ -42,18 +42,12 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone PAZ extraction from the curated ADA stream, using Daniel 3:24-90 as the source span and renumbering it to PAZ 1:1-67.
 translation:
-  text: And let all who show evil to your servants be put to shame[a], and let them be disgraced from all their dominion[c][b], and let their strength be broken.
-  philosophy: optimal-equivalence
+  text: Let all who do evil to your servants be put to shame; let them be disgraced and stripped of all their dominion[a], and let their strength be broken.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'your servants.' The Greek is 'your slaves' (τοῖς δούλοις σου), emphasizing belonging to God.
+    text: Or, 'let them be disgraced despite all their power.'
     reason: alternative_reading
-  - marker: b
-    text: Or 'those who inflict evil on your slaves.' The Greek participle literally means 'those who show evil' toward them.
-    reason: lexical_alternative
-  - marker: c
-    text: The phrase 'from all their dominion' may also be understood more loosely as 'in all their power' or 'despite all their dominion.'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐντραπείησαν
   chosen: be put to shame
@@ -156,7 +150,13 @@ revisions:
   from: And let all who show evil to your servants be put to shame, and let them be disgraced from all their dominion, and let their strength be broken.
   to: And let all who show evil to your slaves be put to shame, and let them be disgraced from all their dominion, and let their strength be broken.
   rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md policy)
-
+- timestamp: '2026-11-09T19:02:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And let all who show evil to your servants be put to shame[a], and let them be disgraced from all their dominion[c][b], and let their strength be broken.
+  to: Let all who do evil to your servants be put to shame; let them be disgraced and stripped of all their dominion[a], and let their strength be broken.
+  rationale: The older slave/servant reversals are superseded by the standing ruling to use 'servant,' which also matches the current text. The history acknowledges uncertainty in the dominion clause; I replace its opaque English with the best-supported sense and preserve the alternative in a footnote.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -176,3 +176,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/prayer_of_azariah/001/021.job-50932.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:02:29Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Azariah asks that those who do evil to God's servants be disgraced, deprived of their dominion, and have their strength broken.
+  meaning_decisions:
+  - source_phrase: οἱ ἐνδεικνύμενοι τοῖς δούλοις σου κακά
+    prior_rendering: all who show evil to your servants
+    new_rendering: all who do evil to your servants
+    rationale: The phrase describes hostile deeds against God's servants, not merely displaying evil for them to see.
+  - source_phrase: καταισχυνθείησαν ἀπὸ πάσης τῆς δυναστείας
+    prior_rendering: let them be disgraced from all their dominion
+    new_rendering: let them be disgraced and stripped of all their dominion
+    rationale: The separation expressed by ἀπό most plausibly depicts disgrace accompanied by loss of ruling power. Because the construction is difficult, the serious alternative of disgrace despite their power is retained in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The older slave/servant reversals are superseded by the standing ruling to use 'servant,' which also matches the current text. The history acknowledges uncertainty in the dominion clause; I replace its opaque English with the best-supported sense and preserve the alternative in a footnote.

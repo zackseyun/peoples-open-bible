@@ -30,15 +30,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And I also give, year by year, fifteen thousand shekels of silver from the king[a]’s account, from the places that belong to him[b].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'from the king’s revenue' or 'from the king’s treasury'; the Greek phrase literally reads 'from the king’s account/reckoning.'
-    reason: lexical_alternative
-  - marker: b
-    text: 'The final phrase may refer to districts or localities from which the funds are drawn: literally, ''from the places that belong [to him].'''
-    reason: lexical_alternative
+  text: I also grant fifteen thousand shekels of silver each year from the king’s revenues, drawn from the territories that belong to him.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: κἀγὼ
   chosen: And I also
@@ -112,13 +105,12 @@ revisions:
   from: And I also give, year by year, fifteen thousand shekels of silver from the king’s account, from the places that belong to him.
   to: And I also give, year by year, fifteen thousand shekels of silver from the king’s revenues, from the places that belong to him.
   rationale: Changed “account” to “revenues” for better lexical accuracy and more natural formal English for τοῦ λόγου τοῦ βασιλέως in this financial context; otherwise retained the draft.
-
 - timestamp: '2026-05-18T03:09:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I also give[a], year by year, fifteen thousand shekels of silver from the king’s revenues[b], from the places that belong to him.'
-  to: 'And I also give, year by year, fifteen thousand shekels of silver from the king’s account, from the places that belong to him.'
+  from: And I also give[a], year by year, fifteen thousand shekels of silver from the king’s revenues[b], from the places that belong to him.
+  to: And I also give, year by year, fifteen thousand shekels of silver from the king’s account, from the places that belong to him.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from the king’s account''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -128,6 +120,13 @@ revisions:
   from: And I also give, year by year, fifteen thousand shekels of silver from the king’s account, from the places that belong to him.
   to: And I also give, year by year, fifteen thousand shekels of silver from the king[a]’s account, from the places that belong to him[b].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('from the king') because the note quotes that phrase from the rendering; [b] anchored to ('from the places that belong to him') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:53:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I also give, year by year, fifteen thousand shekels of silver from the king[a]’s account, from the places that belong to him[b].
+  to: I also grant fifteen thousand shekels of silver each year from the king’s revenues, drawn from the territories that belong to him.
+  rationale: The earlier review’s 'revenues' conveyed the fiscal meaning more clearly than 'account.' The subsequent automated revert supplies no stronger contextual reason to abandon that improvement.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -147,3 +146,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/010/040.job-48548.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:20Z'
+  change_level: refined
+  confidence: high
+  meaning: Demetrius promises an annual grant of fifteen thousand silver shekels from royal revenues supplied by his territories.
+  meaning_decisions:
+  - source_phrase: ἀπὸ τοῦ λόγου τοῦ βασιλέως
+    prior_rendering: from the king’s account
+    new_rendering: from the king’s revenues
+    rationale: The royal account is the financial source of the grant, not merely an accounting record.
+  - source_phrase: ἀπὸ τῶν τόπων τῶν ἀνηκόντων
+    prior_rendering: from the places that belong to him
+    new_rendering: drawn from the territories that belong to him
+    rationale: These places are territorial sources of royal income; 'drawn from' clarifies how this phrase relates to the grant.
+  footnote_kinds: {}
+  history_weighed: The earlier review’s 'revenues' conveyed the fiscal meaning more clearly than 'account.' The subsequent automated revert supplies no stronger contextual reason to abandon that improvement.

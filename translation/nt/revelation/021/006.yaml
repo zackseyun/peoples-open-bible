@@ -4,14 +4,14 @@ source:
   edition: SBLGNT
   text: καὶ εἶπέν μοι· ⸂Γέγοναν. ἐγὼ⸃ τὸ Ἄλφα καὶ τὸ Ὦ, ἡ ἀρχὴ καὶ τὸ τέλος. ἐγὼ τῷ διψῶντι δώσω ἐκ τῆς πηγῆς τοῦ ὕδατος τῆς ζωῆς δωρεάν.
 translation:
-  text: And he said to me[a], “It is done. I am the Alpha and the Omega, the beginning and the end[b]. To the one who is thirsty I will give from the spring of the water of life freely.”
-  philosophy: optimal-equivalence
+  text: And he said to me, “It is done[a]. I am the Alpha and the Omega[b], the beginning and the end. To anyone who is thirsty I will give a drink from the spring of the water of life, without cost.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, traditionally, “It is done.” The Greek verb is plural (“they have come to pass” / “these things have come to pass”).
-    reason: alternative_reading
+    text: Literally, “They have come to pass.” The Greek plural refers to the announced realities.
+    reason: lexical_alternative
   - marker: b
-    text: Or “without cost” or “as a gift.”
+    text: Alpha and Omega are the first and last letters of the Greek alphabet.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: Γέγοναν
@@ -97,14 +97,20 @@ revisions:
   from: And he said to me, “They have come to pass. I am the Alpha and the Omega, the beginning and the end. To the one who is thirsty I will give from the spring of the water of life freely.”
   to: And he said to me, “They have come to pass. I am the Alpha and the Omega, the beginning and the end. To the one who is thirsty I will give from the spring of the water of life freely.”
   rationale: Changed “They have come to pass” to “It is done” to better reflect Γέγοναν in this context and standard formal English usage. The rest is accurate and natural.
-
 - timestamp: '2026-05-18T03:00:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he said to me[a], “It is done. I am the Alpha and the Omega, the beginning and the end[b]. To the one who is thirsty I will give from the spring of the water of life freely.”'
-  to: 'And he said to me[a], “It is done. I am the Alpha and the Omega, the beginning and the end[b]. To the one who is thirsty I will give from the spring of the water of life freely.”'
+  from: And he said to me[a], “It is done. I am the Alpha and the Omega, the beginning and the end[b]. To the one who is thirsty I will give from the spring of the water of life freely.”
+  to: And he said to me[a], “It is done. I am the Alpha and the Omega, the beginning and the end[b]. To the one who is thirsty I will give from the spring of the water of life freely.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''They have come to pass''].'
+- timestamp: '2026-11-09T17:17:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he said to me[a], “It is done. I am the Alpha and the Omega, the beginning and the end[b]. To the one who is thirsty I will give from the spring of the water of life freely.”
+  to: And he said to me, “It is done[a]. I am the Alpha and the Omega[b], the beginning and the end. To anyone who is thirsty I will give a drink from the spring of the water of life, without cost.
+  rationale: Earlier passes alternated between the plural-sensitive 'They have come to pass' and the idiomatic 'It is done'; I retain the current declaration and recover the plural in a note. The previously documented no-cost sense is now explicit in the main text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -124,3 +130,27 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/revelation/021/006.job-47381.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:17:03Z'
+  change_level: refined
+  confidence: high
+  meaning: God declares the announced realities accomplished, identifies himself as the beginning and end, and promises the water of life without cost to anyone who thirsts.
+  meaning_decisions:
+  - source_phrase: τῷ διψῶντι
+    prior_rendering: To the one who is thirsty
+    new_rendering: To anyone who is thirsty
+    rationale: The singular expression describes whoever meets this condition rather than one particular thirsty person.
+  - source_phrase: δώσω ἐκ τῆς πηγῆς τοῦ ὕδατος τῆς ζωῆς δωρεάν
+    prior_rendering: I will give from the spring of the water of life freely
+    new_rendering: I will give a drink from the spring of the water of life, without cost
+    rationale: A drink is the understood gift to the thirsty person, and 'without cost' conveys δωρεάν more precisely than 'freely,' which can also suggest abundance or willingness.
+  footnote_kinds:
+    a: literal_wording
+    b: name_or_term
+  history_weighed: Earlier passes alternated between the plural-sensitive 'They have come to pass' and the idiomatic 'It is done'; I retain the current declaration and recover the plural in a note. The previously documented no-cost sense is now explicit in the main text.

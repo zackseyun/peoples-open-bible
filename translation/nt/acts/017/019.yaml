@@ -4,14 +4,11 @@ source:
   edition: SBLGNT
   text: ἐπιλαβόμενοί ⸀τε αὐτοῦ ἐπὶ τὸν Ἄρειον Πάγον ἤγαγον, λέγοντες· Δυνάμεθα γνῶναι τίς ἡ καινὴ αὕτη ἡ ὑπὸ σοῦ λαλουμένη διδαχή;
 translation:
-  text: So they took hold of him and brought him to the Areopagus[b], saying, “May we know what this new teaching is that is being spoken by you[a]?”
-  philosophy: optimal-equivalence
+  text: So they took hold of him and brought him to the Areopagus[a], saying, “May we know what this new teaching is that you are presenting?
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'that you are speaking.' The Greek more literally says, 'the teaching being spoken by you.'
-    reason: lexical_alternative
-  - marker: b
-    text: '''Areopagus'' may refer to the hill itself or to the council associated with it; traditional English also has ''Mars Hill.'''
+    text: The Areopagus was an Athenian council and the hill associated with it; the name here may refer to either.
     reason: cultural_note
 lexical_decisions:
 - source_word: ἐπιλαβόμενοί
@@ -113,13 +110,12 @@ revisions:
   from: So they took hold of him and brought him to the Areopagus, saying, “May we know what this new teaching is that is being spoken by you?”
   to: So they took hold of him and brought him to the Areopagus, saying, “May we know what this new teaching is that you are speaking?”
   rationale: Replaced the awkward passive phrase 'that is being spoken by you' with the more natural and accurate 'that you are speaking,' which better reflects the Greek while preserving the formal tone.
-
 - timestamp: '2026-05-18T03:10:25Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So they took hold of him and brought him to the Areopagus[a], saying[b], “May we know what this new teaching is that you are speaking?”'
-  to: 'So they took hold of him and brought him to the Areopagus, saying, “May we know what this new teaching is that is being spoken by you?”'
+  from: So they took hold of him and brought him to the Areopagus[a], saying[b], “May we know what this new teaching is that you are speaking?”
+  to: So they took hold of him and brought him to the Areopagus, saying, “May we know what this new teaching is that is being spoken by you?”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that is being spoken by you''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -129,6 +125,13 @@ revisions:
   from: So they took hold of him and brought him to the Areopagus, saying, “May we know what this new teaching is that is being spoken by you?”
   to: So they took hold of him and brought him to the Areopagus[b], saying, “May we know what this new teaching is that is being spoken by you[a]?”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('that is being spoken by you') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('Areopagus') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:08:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So they took hold of him and brought him to the Areopagus[b], saying, “May we know what this new teaching is that is being spoken by you[a]?”
+  to: So they took hold of him and brought him to the Areopagus[a], saying, “May we know what this new teaching is that you are presenting?
+  rationale: The earlier review correctly identified the passive English as awkward, and the automated revert offers no meaning-based reason to retain it. I preserve the firm but not explicitly hostile action and leave the place-versus-council question open.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -148,3 +151,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/017/019.job-46862.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:24Z'
+  change_level: refined
+  confidence: high
+  meaning: The philosophers take Paul to the Areopagus and ask him to explain the unfamiliar teaching he is presenting.
+  meaning_decisions:
+  - source_phrase: ἡ ὑπὸ σοῦ λαλουμένη διδαχή
+    prior_rendering: the teaching ... that is being spoken by you
+    new_rendering: the teaching ... that you are presenting
+    rationale: The passive construction identifies the teaching Paul is communicating, not a special manner of speaking; an active clause carries that meaning naturally.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The earlier review correctly identified the passive English as awkward, and the automated revert offers no meaning-based reason to retain it. I preserve the firm but not explicitly hostile action and leave the place-versus-council question open.

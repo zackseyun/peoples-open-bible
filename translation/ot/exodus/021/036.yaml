@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: א֣וֹ נוֹדַ֗ע כִּ֠י שׁ֣וֹר נַגָּ֥ח הוּא֙ מִ/תְּמ֣וֹל שִׁלְשֹׁ֔ם וְ/לֹ֥א יִשְׁמְרֶ֖/נּוּ בְּעָלָ֑י/ו שַׁלֵּ֨ם יְשַׁלֵּ֥ם שׁוֹר֙ תַּ֣חַת הַ/שּׁ֔וֹר וְ/הַ/מֵּ֖ת יִֽהְיֶה לּֽ/וֹ־׃ס
 translation:
-  text: Or if it was known that the ox was accustomed to gore from yesterday and the day before[a], and its owner did not keep it in, he must surely pay ox for ox[c][b], and the dead animal will be his.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Hebrew: ''from yesterday and the day before,'' an idiom meaning the ox had previously shown this behavior.'
-    reason: cultural_note
-  - marker: b
-    text: Or 'accustomed to gore.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'the carcass will be his.'
-    reason: lexical_alternative
+  text: But if it was known that the ox had a history of goring and its owner failed to restrain it, the owner must make restitution, ox for ox, and the dead animal shall belong to him.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: א֣וֹ
   chosen: Or
@@ -117,14 +107,20 @@ revisions:
   from: Or if it was known that the ox was in the habit of goring from yesterday and the day before, and its owner did not keep it in, he must surely pay ox for ox, and the dead animal will be his.
   to: Or if it was known that the ox was in the habit of goring from yesterday and the day before, and its owner did not keep it in, he must surely pay ox for ox, and the dead animal will be his.
   rationale: Changed 'was in the habit of goring' to 'was accustomed to gore' for a more formal and natural rendering while preserving the sense. No other changes needed.
-
 - timestamp: '2026-05-18T02:55:41Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Or if it was known that the ox was accustomed to gore from yesterday and the day before[a], and its owner did not keep it in, he must surely pay ox for ox[c][b], and the dead animal will be his.'
-  to: 'Or if it was known that the ox was accustomed to gore from yesterday and the day before[a], and its owner did not keep it in, he must surely pay ox for ox[c][b], and the dead animal will be his.'
+  from: Or if it was known that the ox was accustomed to gore from yesterday and the day before[a], and its owner did not keep it in, he must surely pay ox for ox[c][b], and the dead animal will be his.
+  to: Or if it was known that the ox was accustomed to gore from yesterday and the day before[a], and its owner did not keep it in, he must surely pay ox for ox[c][b], and the dead animal will be his.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the habit of goring''].'
+- timestamp: '2026-11-09T17:36:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Or if it was known that the ox was accustomed to gore from yesterday and the day before[a], and its owner did not keep it in, he must surely pay ox for ox[c][b], and the dead animal will be his.
+  to: But if it was known that the ox had a history of goring and its owner failed to restrain it, the owner must make restitution, ox for ox, and the dead animal shall belong to him.
+  rationale: As in verse 29, the recorded review and revert differ only over expressions for habitual goring, not its meaning. I render that meaning consistently across both verses and retain the documented allocation of the dead animal to the liable owner.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -144,3 +140,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/021/036.job-62810.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:36:00Z'
+  change_level: retranslated
+  confidence: high
+  meaning: An owner who fails to restrain an ox known for goring must compensate ox for ox and receives the dead animal.
+  meaning_decisions:
+  - source_phrase: שׁוֹר נַגָּח הוּא מִתְּמֹל שִׁלְשֹׁם
+    prior_rendering: the ox was accustomed to gore from yesterday and the day before
+    new_rendering: the ox had a history of goring
+    rationale: Conveys the established prior behavior rather than implying that exactly two previous days are legally decisive.
+  - source_phrase: וְלֹא יִשְׁמְרֶנּוּ בְּעָלָיו
+    prior_rendering: its owner did not keep it in
+    new_rendering: its owner failed to restrain it
+    rationale: Expresses failure to control the dangerous animal without restricting the means of control to confinement.
+  - source_phrase: שַׁלֵּם יְשַׁלֵּם שׁוֹר תַּחַת הַשּׁוֹר
+    prior_rendering: he must surely pay ox for ox
+    new_rendering: the owner must make restitution, ox for ox
+    rationale: Identifies the responsible party and conveys the mandatory restitution while preserving the source's compact equivalence formula.
+  footnote_kinds: {}
+  history_weighed: As in verse 29, the recorded review and revert differ only over expressions for habitual goring, not its meaning. I render that meaning consistently across both verses and retain the documented allocation of the dead animal to the liable owner.

@@ -9,15 +9,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: On that day priests fell in battle[a], because they wanted to act bravely[b], when they went out into battle without counsel.
-  philosophy: optimal-equivalence
+  text: On that day, as he sought to distinguish himself by his valor[a], priests fell in battle when they rashly went out to fight.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'to distinguish himself' or 'to perform a heroic deed.' The Greek verb conveys showing valor.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'without deliberation' or 'rashly.' The Greek literally means 'without counsel.'
-    reason: lexical_alternative
+    text: The supplied Greek has singular “he,” apparently referring to Judas; a plural reading instead attributes the desire to distinguish themselves to the priests.
+    reason: textual_variant
 lexical_decisions:
 - source_word: ἔπεσαν
   chosen: fell
@@ -113,14 +110,20 @@ revisions:
   from: On that day priests fell in battle, because he wanted to act bravely, when they went out into the battle without counsel.
   to: On that day priests fell in battle, because he wanted to act bravely, when they went out into the battle without counsel.
   rationale: Changed 'he wanted' to 'they wanted' to match the plural subject implied by the context and the infinitive construction; removed the second 'the' before 'battle' for more natural English.
-
 - timestamp: '2026-05-16T15:07:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'On that day priests fell in battle[a], because they wanted to act bravely[b], when they went out into battle without counsel.'
-  to: 'On that day priests fell in battle[a], because they wanted to act bravely[b], when they went out into battle without counsel.'
-  rationale: 'Restored drafter ''because he wanted'' (singular subject) and ''into the battle'' (definite article preserving the chosen rendering) per chosen renderings.'
+  from: On that day priests fell in battle[a], because they wanted to act bravely[b], when they went out into battle without counsel.
+  to: On that day priests fell in battle[a], because they wanted to act bravely[b], when they went out into battle without counsel.
+  rationale: Restored drafter 'because he wanted' (singular subject) and 'into the battle' (definite article preserving the chosen rendering) per chosen renderings.
+- timestamp: '2026-11-09T18:52:05Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: On that day priests fell in battle[a], because they wanted to act bravely[b], when they went out into battle without counsel.
+  to: On that day, as he sought to distinguish himself by his valor[a], priests fell in battle when they rashly went out to fight.
+  rationale: The recorded draft and lexical discussion preserve the singular subject, whereas the review changed it to a plural on contextual grounds. I follow the supplied singular source, explain the consequential plural reading in a note, and retain the uncertainty of the circumstantial connection.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -140,3 +143,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/005/067.job-48273.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:05Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Priests died after rashly entering battle as Judas apparently sought to distinguish himself by his valor.
+  meaning_decisions:
+  - source_phrase: βουλομένου αὐτοῦ ἀνδραγαθῆσαι
+    prior_rendering: because they wanted to act bravely
+    new_rendering: as he sought to distinguish himself by his valor
+    rationale: The supplied source has a singular subject, which cannot simply be changed to the priests; “as” preserves the circumstantial construction without forcing a precise causal explanation, and the verb concerns distinguished valor rather than courage alone.
+  - source_phrase: ἐν τῷ αὐτοὺς ἐξελθεῖν εἰς τὸν πόλεμον ἀβουλεύτως
+    prior_rendering: when they went out into battle without counsel
+    new_rendering: when they rashly went out to fight
+    rationale: The adverb characterizes their entry into battle as ill-considered, without necessarily identifying a particular adviser whom they failed to consult.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The recorded draft and lexical discussion preserve the singular subject, whereas the review changed it to a plural on contextual grounds. I follow the supplied singular source, explain the consequential plural reading in a note, and retain the uncertainty of the circumstantial connection.

@@ -23,15 +23,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But the all-seeing Lord, the God of Israel, struck him with an incurable[a] and unseen blow; and just as he finished speaking, an unrelenting pain in his bowels seized him, with bitter torments in his inner parts[b],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'with an incurable and invisible plague/stroke.' Greek πληγή can denote a blow, stroke, or plague-like affliction.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'an unhealable pain of the entrails, and bitter torments of the inner parts.'
-    reason: lexical_alternative
+  text: But the all-seeing Lord, the God of Israel, struck him with an incurable and unseen blow. Just as he finished speaking, incurable pain in his bowels seized him, along with bitter torment deep within his body.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: παντεπόπτης
   chosen: all-seeing
@@ -154,13 +147,12 @@ revisions:
   from: But the all-seeing Lord, the God of Israel, struck him with an incurable and unseen blow; and just as he finished speaking, an unrelenting pain in his bowels seized him, with bitter torments in his inner parts,
   to: But the all-seeing Lord, the God of Israel, struck him with an incurable and unseen blow; and just as he finished speaking, an incurable pain in his bowels seized him, and bitter torments in his inner parts,
   rationale: Changed 'unrelenting' to 'incurable' to reflect ἀνήκεστος more accurately and to preserve consistency with the earlier 'incurable' for ἀνιάτῳ. Kept the rest substantially unchanged.
-
 - timestamp: '2026-05-18T03:10:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But the all-seeing Lord[a], the God of Israel, struck him with an incurable and unseen blow; and just as he finished speaking, an incurable pain in his bowels seized him, and bitter torments in his inner parts[b],'
-  to: 'But the all-seeing Lord, the God of Israel, struck him with an incurable and unseen blow; and just as he finished speaking, an unrelenting pain in his bowels seized him, with bitter torments in his inner parts,'
+  from: But the all-seeing Lord[a], the God of Israel, struck him with an incurable and unseen blow; and just as he finished speaking, an incurable pain in his bowels seized him, and bitter torments in his inner parts[b],
+  to: But the all-seeing Lord, the God of Israel, struck him with an incurable and unseen blow; and just as he finished speaking, an unrelenting pain in his bowels seized him, with bitter torments in his inner parts,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''unrelenting''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -170,6 +162,13 @@ revisions:
   from: But the all-seeing Lord, the God of Israel, struck him with an incurable and unseen blow; and just as he finished speaking, an unrelenting pain in his bowels seized him, with bitter torments in his inner parts,
   to: But the all-seeing Lord, the God of Israel, struck him with an incurable[a] and unseen blow; and just as he finished speaking, an unrelenting pain in his bowels seized him, with bitter torments in his inner parts[b],
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('incurable') because the note names that rendering; [b] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:55:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But the all-seeing Lord, the God of Israel, struck him with an incurable[a] and unseen blow; and just as he finished speaking, an unrelenting pain in his bowels seized him, with bitter torments in his inner parts[b],
+  to: But the all-seeing Lord, the God of Israel, struck him with an incurable and unseen blow. Just as he finished speaking, incurable pain in his bowels seized him, along with bitter torment deep within his body.
+  rationale: I recover the earlier review's lexical correction to 'incurable' despite the automated revert. The current wording's direct divine agency, all-seeing title, and image of an unseen blow are retained.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -189,3 +188,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/009/005.job-49217.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:51Z'
+  change_level: refined
+  confidence: high
+  meaning: Immediately after Antiochus’s threat, the all-seeing God of Israel struck him with an unseen, incurable affliction that caused terrible internal pain.
+  meaning_decisions:
+  - source_phrase: ἀνήκεστος τῶν σπλάγχνων ἀλγηδών
+    prior_rendering: an unrelenting pain in his bowels
+    new_rendering: incurable pain in his bowels
+    rationale: The adjective describes pain beyond remedy, not merely pain that continues without interruption.
+  - source_phrase: πικραὶ τῶν ἔνδον βάσανοι
+    prior_rendering: bitter torments in his inner parts
+    new_rendering: bitter torment deep within his body
+    rationale: This makes the bodily location clear in natural English while preserving the severity and internal character of the suffering.
+  footnote_kinds: {}
+  history_weighed: I recover the earlier review's lexical correction to 'incurable' despite the automated revert. The current wording's direct divine agency, all-seeing title, and image of an unseen blow are retained.

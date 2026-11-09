@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יְהִ֨י כַ/אֲשֶׁר תַּ֜מּוּ כָּל אַנְשֵׁ֧י הַ/מִּלְחָמָ֛ה לָ/מ֖וּת מִ/קֶּ֥רֶב הָ/עָֽם־־׃ס
 translation:
-  text: And when all the men of war had finished dying from among the people,[a]
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the fighting men.' The Hebrew is literally 'the men of war.'
-    reason: lexical_alternative
+  text: When all the fighting men of that generation had died and were no longer among the people,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיְהִי
   chosen: And ... it happened / And when
@@ -87,14 +83,20 @@ revisions:
   from: And when all the men of war had finished dying from among the people,
   to: And when all the men of war had died from among the people,
   rationale: Replaced 'had finished dying' with 'had died' for more natural and formal English while preserving the sense of completion in context.
-
 - timestamp: '2026-05-18T02:55:54Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when all the men of war had died from among the people,[a]'
-  to: 'And when all the men of war had finished dying from among the people,[a]'
+  from: And when all the men of war had died from among the people,[a]
+  to: And when all the men of war had finished dying from among the people,[a]
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''had finished''].'
+- timestamp: '2026-11-09T18:31:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when all the men of war had finished dying from among the people,[a]
+  to: When all the fighting men of that generation had died and were no longer among the people,
+  rationale: The April revision correctly recognized that 'had died' conveys completed dying in natural English; the later wholesale revert adds no meaning-based objection. I keep the generational focus established in verse 14 and the removal from among the people.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -114,3 +116,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/002/016.job-61318.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:31:29Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The death of the last fighting men of the judged generation sets the scene for Yahweh’s next instructions.
+  meaning_decisions:
+  - source_phrase: כַאֲשֶׁר תַּמּוּ כָּל אַנְשֵׁי הַמִּלְחָמָה לָמוּת מִקֶּרֶב הָעָם
+    prior_rendering: And when all the men of war had finished dying from among the people
+    new_rendering: When all the fighting men of that generation had died and were no longer among the people
+    rationale: '''All ... had died'' fully conveys the completion of the dying process; the contextual identification ''of that generation'' prevents the mistaken impression that Israel now had no fighting men, and the final clause preserves their disappearance from the community.'
+  footnote_kinds: {}
+  history_weighed: The April revision correctly recognized that 'had died' conveys completed dying in natural English; the later wholesale revert adds no meaning-based objection. I keep the generational focus established in verse 14 and the removal from among the people.

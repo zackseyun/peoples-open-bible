@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: רְאוּ֩ הִפַּ֨לְתִּי לָ/כֶ֜ם אֶֽת הַ֠/גּוֹיִם הַ/נִּשְׁאָרִ֥ים הָ/אֵ֛לֶּה בְּ/נַחֲלָ֖ה לְ/שִׁבְטֵי/כֶ֑ם מִן הַ/יַּרְדֵּ֗ן וְ/כָל הַ/גּוֹיִם֙ אֲשֶׁ֣ר הִכְרַ֔תִּי וְ/הַ/יָּ֥ם הַ/גָּד֖וֹל מְב֥וֹא הַ/שָּֽׁמֶשׁ־־־׃
 translation:
-  text: See[a], I have allotted to you these nations that remain as an inheritance for your tribes, from the Jordan, along with all the nations that I have cut off, to the Great Sea toward the going down of the sun.
-  philosophy: optimal-equivalence
+  text: See, I have allotted to your tribes as an inheritance the land from the Jordan to the Great Sea[a] in the west—the territory of these nations that remain, along with that of all the nations I have destroyed.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew: ''toward the going down of the sun,'' that is, toward the west.'
-    reason: lexical_alternative
+    text: The Mediterranean Sea.
+    reason: cultural_note
 lexical_decisions:
 - source_word: רְאוּ
   chosen: See
@@ -88,14 +88,20 @@ revisions:
   from: See, I have allotted to you these nations that remain as an inheritance for your tribes, from the Jordan, along with all the nations that I have cut off, to the Great Sea toward the going down of the sun.
   to: See, I have allotted to you these remaining nations as an inheritance for your tribes, from the Jordan, with all the nations that I have cut off, to the Great Sea toward the going down of the sun.
   rationale: Changed 'nations that remain' to 'remaining nations' for more natural formal English; retained the structure and wording otherwise.
-
 - timestamp: '2026-05-15T21:09:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'See[a], I have allotted to you these remaining nations as an inheritance for your tribes, from the Jordan, with all the nations that I have cut off, to the Great Sea toward the going down of the sun.'
-  to: 'See[a], I have allotted to you these nations that remain as an inheritance for your tribes, from the Jordan, along with all the nations that I have cut off, to the Great Sea toward the going down of the sun.'
-  rationale: 'Drafter chose ''these nations that remain'' (preferring the participial verb-phrase form over ''these remaining nations'' which was the explicit rejected alternative). Drafter chose ''along with'' to connect appositionally. Azure substituted both rejected alternatives on bare ''natural formal English'' grounds.'
+  from: See[a], I have allotted to you these remaining nations as an inheritance for your tribes, from the Jordan, with all the nations that I have cut off, to the Great Sea toward the going down of the sun.
+  to: See[a], I have allotted to you these nations that remain as an inheritance for your tribes, from the Jordan, along with all the nations that I have cut off, to the Great Sea toward the going down of the sun.
+  rationale: Drafter chose 'these nations that remain' (preferring the participial verb-phrase form over 'these remaining nations' which was the explicit rejected alternative). Drafter chose 'along with' to connect appositionally. Azure substituted both rejected alternatives on bare 'natural formal English' grounds.
+- timestamp: '2026-11-09T18:11:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: See[a], I have allotted to you these nations that remain as an inheritance for your tribes, from the Jordan, along with all the nations that I have cut off, to the Great Sea toward the going down of the sun.
+  to: See, I have allotted to your tribes as an inheritance the land from the Jordan to the Great Sea[a] in the west—the territory of these nations that remain, along with that of all the nations I have destroyed.
+  rationale: The recorded review and automated revert chiefly dispute source-shaped phrasing rather than the inheritance’s meaning, and neither is a maintainer decision. I retain 'these nations that remain' and 'along with,' but clarify the territorial inheritance and state its boundaries together.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -115,3 +121,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/joshua/023/004.job-68963.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:11:14Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Joshua has assigned the tribes an inheritance extending from the Jordan to the western sea, including both conquered territory and territory still occupied by other nations.
+  meaning_decisions:
+  - source_phrase: הִפַּלְתִּי לָכֶם אֶת הַגּוֹיִם הַנִּשְׁאָרִים הָאֵלֶּה בְּנַחֲלָה לְשִׁבְטֵיכֶם
+    prior_rendering: I have allotted to you these nations that remain as an inheritance for your tribes
+    new_rendering: I have allotted to your tribes as an inheritance the land ...—the territory of these nations that remain
+    rationale: The nations stand for the territory they occupy, as the following verse’s 'their land' confirms; making this explicit prevents readers from understanding the peoples themselves as the inherited possession.
+  - source_phrase: מִן הַיַּרְדֵּן ... וְהַיָּם הַגָּדוֹל מְבוֹא הַשָּׁמֶשׁ
+    prior_rendering: from the Jordan, along with all the nations that I have cut off, to the Great Sea toward the going down of the sun
+    new_rendering: from the Jordan to the Great Sea in the west
+    rationale: Keeping the boundaries together clarifies the territorial extent, while 'in the west' conveys the geographical meaning of the sunset expression.
+  - source_phrase: וְכָל הַגּוֹיִם אֲשֶׁר הִכְרַתִּי
+    prior_rendering: along with all the nations that I have cut off
+    new_rendering: along with that of all the nations I have destroyed
+    rationale: The territorial reference remains explicit, and 'destroyed' conveys the military elimination of these nations rather than suggesting their isolation or exclusion.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The recorded review and automated revert chiefly dispute source-shaped phrasing rather than the inheritance’s meaning, and neither is a maintainer decision. I retain 'these nations that remain' and 'along with,' but clarify the territorial inheritance and state its boundaries together.

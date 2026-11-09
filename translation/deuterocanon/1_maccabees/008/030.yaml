@@ -23,15 +23,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But if[a], after these terms, these people and those decide to add or to remove anything, they will do so by their own choice[b], and whatever they add or remove will be valid.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the one party and the other'; the Greek literally repeats demonstratives, referring to both sides of the agreement.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Valid'' could also be rendered ''binding'' or ''in force'' in this legal context.'
-    reason: lexical_alternative
+  text: But if both parties later decide to add to or take away from these terms, they may do so at their own discretion, and whatever they add or remove shall be binding.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: λόγους
   chosen: terms
@@ -108,14 +101,20 @@ revisions:
   from: But if, after these terms, these people and those decide to add or to remove anything, they will do so by their own choice, and whatever they add or remove will be valid.
   to: But if, after these terms, these and those decide to add or remove anything, they will do so of their own choice, and whatever they add or remove will be valid.
   rationale: Adjusted 'these people and those' to the more literal and natural 'these and those'; simplified 'add or to remove' to 'add or remove'; and rendered ἐξ αἱρέσεως αὐτῶν more idiomatically as 'of their own choice.'
-
 - timestamp: '2026-05-15T14:24:26Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But if[a], after these terms, these and those decide to add or remove anything, they will do so of their own choice[b], and whatever they add or remove will be valid.'
-  to: 'But if[a], after these terms, these people and those decide to add or to remove anything, they will do so by their own choice[b], and whatever they add or remove will be valid.'
-  rationale: 'Restored 3 chosen renderings (intelligible bilateral reference, parallel infinitives, instrumental ἐξ).'
+  from: But if[a], after these terms, these and those decide to add or remove anything, they will do so of their own choice[b], and whatever they add or remove will be valid.
+  to: But if[a], after these terms, these people and those decide to add or to remove anything, they will do so by their own choice[b], and whatever they add or remove will be valid.
+  rationale: Restored 3 chosen renderings (intelligible bilateral reference, parallel infinitives, instrumental ἐξ).
+- timestamp: '2026-11-09T18:52:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But if[a], after these terms, these people and those decide to add or to remove anything, they will do so by their own choice[b], and whatever they add or remove will be valid.
+  to: But if both parties later decide to add to or take away from these terms, they may do so at their own discretion, and whatever they add or remove shall be binding.
+  rationale: The previous rationale correctly recognizes a bilateral reference and legally valid amendments, but its demonstrative wording remains obscure. I express those meanings directly without suggesting that either party may amend the treaty unilaterally.
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -135,3 +134,33 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/008/030.job-48417.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:51Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Both parties may jointly change the terms later, and their agreed changes will have legal force.
+  meaning_decisions:
+  - source_phrase: οὗτοι καὶ οὗτοι
+    prior_rendering: these people and those
+    new_rendering: both parties
+    rationale: The repeated demonstratives identify the two parties to the agreement, not two otherwise unspecified groups.
+  - source_phrase: μετὰ τοὺς λόγους τούτους
+    prior_rendering: after these terms
+    new_rendering: later ... these terms
+    rationale: This expresses subsequent amendment of the stated terms without the unclear temporal phrase “after these terms.”
+  - source_phrase: ποιήσονται ἐξ αἱρέσεως αὐτῶν
+    prior_rendering: they will do so by their own choice
+    new_rendering: they may do so at their own discretion
+    rationale: In the legal provision, the future authorizes amendments proceeding from the parties' own decision.
+  - source_phrase: ἔσται κύρια
+    prior_rendering: will be valid
+    new_rendering: shall be binding
+    rationale: The agreed amendments have operative legal force, which “binding” states directly.
+  footnote_kinds: {}
+  history_weighed: The previous rationale correctly recognizes a bilateral reference and legally valid amendments, but its demonstrative wording remains obscure. I express those meanings directly without suggesting that either party may amend the treaty unilaterally.

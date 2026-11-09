@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: לְ/אַרְבַּ֨ע רוּח֜וֹת מְדָד֗/וֹ ח֤וֹמָה ל/וֹ֙ סָבִ֣יב סָבִ֔יב אֹ֚רֶךְ חֲמֵ֣שׁ מֵא֔וֹת וְ/רֹ֖חַב חֲמֵ֣שׁ מֵא֑וֹת לְ/הַבְדִּ֕יל בֵּ֥ין הַ/קֹּ֖דֶשׁ לְ/חֹֽל׀׃
 translation:
-  text: He measured it on the four sides[a]; it had a wall all around, five hundred cubits long and five hundred cubits wide[b], to make a separation between the holy and the common.
-  philosophy: optimal-equivalence
+  text: He measured it on all four sides. A wall surrounded it, five hundred reeds long and five hundred reeds wide[a], to separate the holy from the common.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'toward the four directions' or 'on the four winds.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'between the holy and the profane.' The Hebrew contrasts what is holy with what is common, that is, not set apart as holy.
-    reason: lexical_alternative
+    text: The Hebrew states no unit in this verse; 'reeds' follows verses 16–19. 'Cubits' is another understanding, following the alternative readings of those measurements.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: לְאַרְבַּע רוּחוֹת
   chosen: on the four sides
@@ -86,14 +83,20 @@ revisions:
   from: He measured it on the four sides; it had a wall all around, five hundred long and five hundred wide, to make a separation between the holy and the common.
   to: He measured it on the four sides; it had a wall all around, five hundred long and five hundred wide, to make a separation between the holy and the common.
   rationale: Added 'cubits' after both measurements for completeness and clarity, since the Hebrew gives the dimensions explicitly; otherwise retained the draft wording.
-
 - timestamp: '2026-05-18T02:55:45Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He measured it on the four sides[a]; it had a wall all around, five hundred cubits long and five hundred cubits wide[b], to make a separation between the holy and the common.'
-  to: 'He measured it on the four sides[a]; it had a wall all around, five hundred cubits long and five hundred cubits wide[b], to make a separation between the holy and the common.'
+  from: He measured it on the four sides[a]; it had a wall all around, five hundred cubits long and five hundred cubits wide[b], to make a separation between the holy and the common.
+  to: He measured it on the four sides[a]; it had a wall all around, five hundred cubits long and five hundred cubits wide[b], to make a separation between the holy and the common.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''five hundred long and five hundred wide''].'
+- timestamp: '2026-11-09T17:39:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He measured it on the four sides[a]; it had a wall all around, five hundred cubits long and five hundred cubits wide[b], to make a separation between the holy and the common.
+  to: He measured it on all four sides. A wall surrounded it, five hundred reeds long and five hundred reeds wide[a], to separate the holy from the common.
+  rationale: The draft and lexical rationale correctly observed that this verse states no unit; the later automated addition of 'cubits' is unsupported by its Hebrew wording and conflicts with the preceding main-text measurements. I supply 'reeds' from that immediate context, while noting the alternative, and retain the documented distinction between 'common' and morally 'profane.'
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -115,3 +118,26 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/042/020.job-64383.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:39:34Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The measured enclosure is square, with a surrounding wall that separates holy space from common space.
+  meaning_decisions:
+  - source_phrase: אֹרֶךְ חֲמֵשׁ מֵאוֹת וְרֹחַב חֲמֵשׁ מֵאוֹת
+    prior_rendering: five hundred cubits long and five hundred cubits wide
+    new_rendering: five hundred reeds long and five hundred reeds wide
+    rationale: The verse itself omits the unit, but the immediately preceding measurements specify reeds; supplying cubits silently changes the scale of the same enclosure.
+  - source_phrase: לְהַבְדִּיל בֵּין הַקֹּדֶשׁ לְחֹל
+    prior_rendering: to make a separation between the holy and the common
+    new_rendering: to separate the holy from the common
+    rationale: The direct English verb preserves the wall's purpose and the distinction between sacred and ordinary space without implying moral wickedness.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The draft and lexical rationale correctly observed that this verse states no unit; the later automated addition of 'cubits' is unsupported by its Hebrew wording and conflicts with the preceding main-text measurements. I supply 'reeds' from that immediate context, while noting the alternative, and retain the documented distinction between 'common' and morally 'profane.'

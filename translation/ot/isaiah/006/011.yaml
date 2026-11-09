@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וָ/אֹמַ֕ר עַד מָתַ֖י אֲדֹנָ֑/י וַ/יֹּ֡אמֶר עַ֣ד אֲשֶׁר֩ אִם שָׁא֨וּ עָרִ֜ים מֵ/אֵ֣ין יוֹשֵׁ֗ב וּ/בָתִּים֙ מֵ/אֵ֣ין אָדָ֔ם וְ/הָ/אֲדָמָ֖ה תִּשָּׁאֶ֥ה שְׁמָמָֽה־־׃
 translation:
-  text: Then I said[a], “Until when, Lord?” And he said, “Until cities lie waste, without inhabitant, and houses without man, and the land is laid waste[b], a desolation.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “How long, Lord?”
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew “houses without man”; that is, without anyone in them.
-    reason: lexical_alternative
+  text: Then I said, “How long, Lord?” He answered, “Until cities lie waste without inhabitants, houses are left without people, and the land is utterly desolate.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וָאֹמַר
   chosen: Then I said
@@ -115,14 +108,20 @@ revisions:
   from: Then I said, “Until when, Lord?” And he said, “Until cities lie ruined, without inhabitant, and houses without man, and the land is laid waste into desolation.”
   to: Then I said, “Until when, Lord?” And he said, “Until cities lie waste, without inhabitant, and houses without people, and the land is laid waste, a desolation.”
   rationale: 'Adjusted wording for closer lexical accuracy and more natural formal English: changed ''ruined'' to ''waste,'' ''without man'' to ''without people,'' and ''is laid waste into desolation'' to ''is laid waste, a desolation'' to better reflect the Hebrew.'
-
 - timestamp: '2026-05-15T09:53:51Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then I said[a], “Until when, Lord?” And he said, “Until cities lie waste, without inhabitant, and houses without people, and the land is laid waste[b], a desolation.”'
-  to: 'Then I said[a], “Until when, Lord?” And he said, “Until cities lie waste, without inhabitant, and houses without man, and the land is laid waste[b], a desolation.”'
-  rationale: 'Restored DOCTRINE.md §4 gender-accurate ''without man'' for אָדָם.'
+  from: Then I said[a], “Until when, Lord?” And he said, “Until cities lie waste, without inhabitant, and houses without people, and the land is laid waste[b], a desolation.”
+  to: Then I said[a], “Until when, Lord?” And he said, “Until cities lie waste, without inhabitant, and houses without man, and the land is laid waste[b], a desolation.”
+  rationale: Restored DOCTRINE.md §4 gender-accurate 'without man' for אָדָם.
+- timestamp: '2026-11-09T17:47:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then I said[a], “Until when, Lord?” And he said, “Until cities lie waste, without inhabitant, and houses without man, and the land is laid waste[b], a desolation.”
+  to: Then I said, “How long, Lord?” He answered, “Until cities lie waste without inhabitants, houses are left without people, and the land is utterly desolate.
+  rationale: The earlier review’s “without people” accurately conveyed the generic human sense, and the later restoration of “without man” was an automated policy revert, not a maintainer judgment. I recover that clarity and express the accumulated desolation naturally while preserving the oracle’s three parallel clauses.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -142,3 +141,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/isaiah/006/011.job-66049.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:47:48Z'
+  change_level: retranslated
+  confidence: high
+  meaning: When Isaiah asked how long this judgment would last, the Lord answered that it would continue until the cities, houses, and land were devastated and emptied of inhabitants.
+  meaning_decisions:
+  - source_phrase: עַד מָתַי
+    prior_rendering: Until when
+    new_rendering: How long
+    rationale: Isaiah asks about the duration of the commission and judgment; “How long” is the natural English question, and the answer still supplies its endpoint with “Until.”
+  - source_phrase: וּבָתִּים מֵאֵין אָדָם
+    prior_rendering: and houses without man
+    new_rendering: houses are left without people
+    rationale: אָדָם refers here to human inhabitants generally, not specifically men; the new wording makes the complete depopulation clear.
+  - source_phrase: וְהָאֲדָמָה תִּשָּׁאֶה שְׁמָמָה
+    prior_rendering: and the land is laid waste, a desolation
+    new_rendering: and the land is utterly desolate
+    rationale: The noun reinforces the devastation expressed by the verb; “utterly desolate” carries that intensification without an awkward English apposition.
+  footnote_kinds: {}
+  history_weighed: The earlier review’s “without people” accurately conveyed the generic human sense, and the later restoration of “without man” was an automated policy revert, not a maintainer judgment. I recover that clarity and express the accumulated desolation naturally while preserving the oracle’s three parallel clauses.

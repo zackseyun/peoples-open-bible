@@ -21,15 +21,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Evil is the man with an envious eye[b][a], turning away his face and despising lives.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'the man with an evil eye.' The Greek idiom can refer to a begrudging, envious disposition.
-    reason: lexical_alternative
-  - marker: b
-    text: Or, 'souls' or 'persons.'
-    reason: lexical_alternative
+  text: A man with a grudging eye is evil; he turns his face away and despises other people.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: πονηρὸς
   chosen: evil
@@ -116,14 +109,20 @@ revisions:
   from: Evil is the man with an envious eye, turning away his face and looking down on lives.
   to: Evil is the man with an envious eye, turning away his face and looking down on lives.
   rationale: Replaced 'looking down on' with 'despising' to more directly reflect ὑπερορῶν in a formal register while preserving the verse's concise structure.
-
 - timestamp: '2026-05-18T02:57:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Evil is the man with an envious eye[b][a], turning away his face and despising lives.'
-  to: 'Evil is the man with an envious eye[b][a], turning away his face and despising lives.'
+  from: Evil is the man with an envious eye[b][a], turning away his face and despising lives.
+  to: Evil is the man with an envious eye[b][a], turning away his face and despising lives.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''looking down on''].'
+- timestamp: '2026-11-09T19:06:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Evil is the man with an envious eye[b][a], turning away his face and despising lives.
+  to: A man with a grudging eye is evil; he turns his face away and despises other people.
+  rationale: I retain the review's useful 'despises,' which conveys contempt directly. The earlier lexical discussion already recognized that 'souls' means persons here and that the eye idiom concerns a begrudging disposition.
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -143,3 +142,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/014/008.job-51333.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:00Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The grudging person is evil, turning away from other people and treating them with contempt.
+  meaning_decisions:
+  - source_phrase: ὁ βασκαίνων ὀφθαλμῷ
+    prior_rendering: the man with an envious eye
+    new_rendering: A man with a grudging eye
+    rationale: The passage concerns begrudging provision and refusing generosity; 'grudging' carries that emphasis while preserving the eye image.
+  - source_phrase: ὑπερορῶν ψυχάς
+    prior_rendering: despising lives
+    new_rendering: despises other people
+    rationale: Here 'souls' denotes people, not abstract lives or disembodied souls; the new wording makes the objects of his contempt clear.
+  footnote_kinds: {}
+  history_weighed: I retain the review's useful 'despises,' which conveys contempt directly. The earlier lexical discussion already recognized that 'souls' means persons here and that the eye idiom concerns a begrudging disposition.

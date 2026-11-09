@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/אַתָּ֣ה בֶן אָדָ֔ם צֹפֶ֥ה נְתַתִּ֖י/ךָ לְ/בֵ֣ית יִשְׂרָאֵ֑ל וְ/שָׁמַעְתָּ֤ מִ/פִּ/י֙ דָּבָ֔ר וְ/הִזְהַרְתָּ֥ אֹתָ֖/ם מִמֶּֽ/נִּי־׃
 translation:
-  text: And you[a], son of man, I have made you a watchman for the house of Israel[b]; when you hear a word from my mouth, you shall warn them from me.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'I have appointed you a watchman for the house of Israel.'
-    reason: lexical_alternative
-  - marker: b
-    text: '''Son of man'' is Ezekiel''s recurring form of address; alternatively, ''mortal'' or ''human one.'''
-    reason: lexical_alternative
+  text: As for you, son of man, I have made you a watchman for the house of Israel. When you hear a word from my mouth, you must give them my warning.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: בֶן אָדָם
   chosen: son of man
@@ -115,14 +108,20 @@ revisions:
   from: And you, son of man, I have made you a watchman for the house of Israel; when you hear a word from my mouth, you shall warn them from me.
   to: And you, son of man, I have made you a watchman for the house of Israel; and you shall hear a word from my mouth and warn them from me.
   rationale: Replaced 'when you hear' with 'and you shall hear' to reflect the Hebrew conjunction and verbal sequence more directly, preserving completeness and formal tone.
-
 - timestamp: '2026-05-16T02:54:14Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And you[a], son of man, I have made you a watchman for the house of Israel[b]; and you shall hear a word from my mouth and warn them from me.'
-  to: 'And you[a], son of man, I have made you a watchman for the house of Israel[b]; when you hear a word from my mouth, you shall warn them from me.'
-  rationale: 'Azure substituted ''and you shall hear'' for drafter''s chosen temporal ''when you hear'' (waw-perfect rationale documented). Drafter engaged Hebrew grammar; azure asserts rejected alternative.'
+  from: And you[a], son of man, I have made you a watchman for the house of Israel[b]; and you shall hear a word from my mouth and warn them from me.
+  to: And you[a], son of man, I have made you a watchman for the house of Israel[b]; when you hear a word from my mouth, you shall warn them from me.
+  rationale: Azure substituted 'and you shall hear' for drafter's chosen temporal 'when you hear' (waw-perfect rationale documented). Drafter engaged Hebrew grammar; azure asserts rejected alternative.
+- timestamp: '2026-11-09T20:31:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And you[a], son of man, I have made you a watchman for the house of Israel[b]; when you hear a word from my mouth, you shall warn them from me.
+  to: As for you, son of man, I have made you a watchman for the house of Israel. When you hear a word from my mouth, you must give them my warning.
+  rationale: The review changed 'when you hear' to 'and you shall hear' for formal correspondence, but the subsequent revert and recorded grammatical rationale support the temporal wording. I retain 'when you hear' and clarify that Ezekiel must deliver God’s warning.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -142,3 +141,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/033/007.job-64128.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:31:12Z'
+  change_level: refined
+  confidence: high
+  meaning: God has appointed Ezekiel as Israel’s watchman, requiring him to communicate the warnings he receives from God.
+  meaning_decisions:
+  - source_phrase: וְאַתָּה
+    prior_rendering: And you
+    new_rendering: As for you
+    rationale: The emphatic address turns from the illustrative watchman to Ezekiel and applies the role to him.
+  - source_phrase: וְהִזְהַרְתָּ אֹתָם מִמֶּנִּי
+    prior_rendering: you shall warn them from me
+    new_rendering: you must give them my warning
+    rationale: The commission imposes a duty, and the warning originates with God. The new wording conveys both without the unnatural English construction 'warn them from me.'
+  footnote_kinds: {}
+  history_weighed: The review changed 'when you hear' to 'and you shall hear' for formal correspondence, but the subsequent revert and recorded grammatical rationale support the temporal wording. I retain 'when you hear' and clarify that Ezekiel must deliver God’s warning.

@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: אֵ֠לֶּה יַֽעַמְד֞וּ לְ/בָרֵ֤ךְ אֶת הָ/עָם֙ עַל הַ֣ר גְּרִזִ֔ים בְּ/עָבְרְ/כֶ֖ם אֶת הַ/יַּרְדֵּ֑ן שִׁמְעוֹן֙ וְ/לֵוִ֣י וִֽ/יהוּדָ֔ה וְ/יִשָּׂשכָ֖ר וְ/יוֹסֵ֥ף וּ/בִנְיָמִֽן־־־׃
 translation:
-  text: 'These shall stand on Mount Gerizim to bless the people when you cross the Jordan: Simeon[a], Levi, Judah, Issachar, Joseph, and Benjamin.'
-  philosophy: optimal-equivalence
+  text: '“When you have crossed the Jordan, these tribes shall stand on Mount Gerizim to bless the people: Simeon, Levi, Judah, Issachar, Joseph[a], and Benjamin.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Joseph here represents the Joseph tribes, Ephraim and Manasseh, in the tribal listing.
-    reason: cross_reference
+    text: Joseph here represents the tribes descended from his sons, Ephraim and Manasseh.
+    reason: cultural_note
 lexical_decisions:
 - source_word: אֵלֶּה
   chosen: These
@@ -115,7 +115,6 @@ revisions:
   from: 'These shall stand on Mount Gerizim to bless the people, when you have crossed over the Jordan: Simeon, Levi, Judah, Issachar, Joseph, and Benjamin.'
   to: 'These shall stand on Mount Gerizim to bless the people, when you have crossed over the Jordan: Simeon, Levi, Judah, Issachar, Joseph, and Benjamin.'
   rationale: Changed 'when you have crossed over the Jordan' to 'when you cross the Jordan' to reflect the Hebrew infinitive construct more naturally and directly. Removed 'over' for smoother English without loss of meaning.
-
 - timestamp: '2026-05-18T02:55:47Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -123,6 +122,13 @@ revisions:
   from: 'These shall stand on Mount Gerizim to bless the people when you cross the Jordan: Simeon[a], Levi, Judah, Issachar, Joseph, and Benjamin.'
   to: 'These shall stand on Mount Gerizim to bless the people when you cross the Jordan: Simeon[a], Levi, Judah, Issachar, Joseph, and Benjamin.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''when you have crossed over''].'
+- timestamp: '2026-11-09T17:31:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'These shall stand on Mount Gerizim to bless the people when you cross the Jordan: Simeon[a], Levi, Judah, Issachar, Joseph, and Benjamin.'
+  to: '“When you have crossed the Jordan, these tribes shall stand on Mount Gerizim to bless the people: Simeon, Levi, Judah, Issachar, Joseph[a], and Benjamin.'
+  rationale: The first draft used “when you have crossed,” while the automated review favored a more direct construction; the setting supports the first draft’s explicit sequence. I preserve all six tribal names, retain Joseph without replacing him with his sons, and attach the explanatory note to Joseph rather than Simeon.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -142,3 +148,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/027/012.job-61844.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:31:39Z'
+  change_level: refined
+  confidence: high
+  meaning: After Israel crosses the Jordan, six named tribes must stand on Mount Gerizim to bless the people.
+  meaning_decisions:
+  - source_phrase: אֵלֶּה יַעַמְדוּ
+    prior_rendering: These shall stand
+    new_rendering: these tribes shall stand
+    rationale: The names designate tribes rather than the long-deceased men who founded them; stating the understood subject prevents a modern reader from mistaking the list for individuals.
+  - source_phrase: בְּעָבְרְכֶם אֶת הַיַּרְדֵּן
+    prior_rendering: when you cross the Jordan
+    new_rendering: When you have crossed the Jordan
+    rationale: The mountain ceremony takes place inside the land after the crossing; the completed English construction expresses that understood sequence.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The first draft used “when you have crossed,” while the automated review favored a more direct construction; the setting supports the first draft’s explicit sequence. I preserve all six tribal names, retain Joseph without replacing him with his sons, and attach the explanatory note to Joseph rather than Simeon.

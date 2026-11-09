@@ -17,15 +17,12 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: For the Spirit of the Lord has filled the inhabited world[b][a], and that which holds all things together has knowledge of every utterance.
-  philosophy: optimal-equivalence
+  text: For the Spirit of the Lord has filled the inhabited world; it holds all things together[a] and knows every utterance.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'what contains all things' or 'the one who holds all things together.' The Greek expression is a neuter participle and can emphasize either containing, sustaining, or holding together all things.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'has knowledge of voice.' The sense is that God's all-pervading Spirit is aware of every utterance.
-    reason: lexical_alternative
+    text: Or, 'encompasses all things.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: πνεῦμα
   chosen: Spirit
@@ -126,14 +123,20 @@ revisions:
   from: For the Spirit of the Lord has filled the inhabited world, and that which holds all things together has knowledge of every voice.
   to: For the Spirit of the Lord has filled the inhabited world, and that which holds all things together has knowledge of every voice.
   rationale: Changed 'every voice' to 'every utterance' for a more natural and precise rendering of φωνῆς in this context; retained the rest as accurate and complete.
-
 - timestamp: '2026-05-18T03:00:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For the Spirit of the Lord has filled the inhabited world[b][a], and that which holds all things together has knowledge of every utterance.'
-  to: 'For the Spirit of the Lord has filled the inhabited world[b][a], and that which holds all things together has knowledge of every utterance.'
+  from: For the Spirit of the Lord has filled the inhabited world[b][a], and that which holds all things together has knowledge of every utterance.
+  to: For the Spirit of the Lord has filled the inhabited world[b][a], and that which holds all things together has knowledge of every utterance.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''of every voice''].'
+- timestamp: '2026-11-09T19:10:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For the Spirit of the Lord has filled the inhabited world[b][a], and that which holds all things together has knowledge of every utterance.
+  to: For the Spirit of the Lord has filled the inhabited world; it holds all things together[a] and knows every utterance.
+  rationale: I retain the current 'every utterance,' which the review rightly connected with the surrounding concern about speech. The earlier caution about the neuter participle does not require an anonymous English subject, since it can refer directly to 'Spirit' without resolving later theological questions.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -153,3 +156,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/001/007.job-39326.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:56Z'
+  change_level: refined
+  confidence: high
+  meaning: The Lord's world-filling Spirit holds all things together and knows everything that is said.
+  meaning_decisions:
+  - source_phrase: τὸ συνέχον τὰ πάντα
+    prior_rendering: that which holds all things together
+    new_rendering: it holds all things together
+    rationale: The neuter participle naturally refers back to the grammatically neuter 'Spirit'; an explicit pronoun clarifies the connection without imposing a later personal or doctrinal definition.
+  - source_phrase: γνῶσιν ἔχει φωνῆς
+    prior_rendering: has knowledge of every utterance
+    new_rendering: knows every utterance
+    rationale: The direct verb carries the same comprehensive knowledge more naturally in English.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retain the current 'every utterance,' which the review rightly connected with the surrounding concern about speech. The earlier caution about the neuter participle does not require an anonymous English subject, since it can refer directly to 'Spirit' without resolving later theological questions.

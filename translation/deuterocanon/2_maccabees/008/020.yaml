@@ -24,11 +24,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: 'And the engagement in Babylonia against the Galatians had gone this way: when all who came to the need were eight thousand[a], together with four thousand Macedonians, and the Macedonians were at a loss, the six thousand destroyed the one hundred twenty thousand because of the help coming to them from heaven, and they received great advantage.'
-  philosophy: optimal-equivalence
+  text: 'He also recalled the battle in Babylonia against the Galatians: eight thousand men had come to meet the emergency, together with four thousand Macedonians[a]. When the Macedonians were at a loss, the six thousand destroyed one hundred twenty thousand enemies through the help they received from heaven and benefited greatly.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'Gauls.' The Greek ethnic term can be rendered either way depending on whether the emphasis is on the Anatolian Galatians or their broader Celtic identity.
+    text: Alternatively, the four thousand Macedonians may be included in the eight thousand. The later reference to six thousand is unexplained in this Greek text.
     reason: alternative_reading
 lexical_decisions:
 - source_word: παράταξιν
@@ -132,14 +132,20 @@ revisions:
   from: 'And the engagement in Babylonia against the Galatians had gone this way: when all who came to the need were eight thousand, together with four thousand Macedonians, and the Macedonians were at a loss, the six thousand destroyed the one hundred twenty thousand because of the help coming to them from heaven, and they received great advantage.'
   to: 'And the battle in Babylonia against the Galatians went this way: when all who had come to the aid were eight thousand, together with four thousand Macedonians, and the Macedonians were hard pressed, the six thousand destroyed the one hundred twenty thousand because of the help coming to them from heaven, and they received great advantage.'
   rationale: 'Revised several phrases for accuracy and natural English: ''engagement'' to ''battle,'' ''had gone this way'' to ''went this way,'' ''came to the need'' to ''had come to the aid,'' and ''were at a loss'' to ''were hard pressed.'' Kept the numerical details and formal register while improving readability.'
-
 - timestamp: '2026-05-15T15:09:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'And the battle in Babylonia against the Galatians went this way: when all who had come to the aid were eight thousand[a], together with four thousand Macedonians, and the Macedonians were hard pressed, the six thousand destroyed the one hundred twenty thousand because of the help coming to them from heaven, and they received great advantage.'
   to: 'And the engagement in Babylonia against the Galatians had gone this way: when all who came to the need were eight thousand[a], together with four thousand Macedonians, and the Macedonians were at a loss, the six thousand destroyed the one hundred twenty thousand because of the help coming to them from heaven, and they received great advantage.'
-  rationale: 'Restored 4 chosen renderings; azure substituted drafter''s explicitly rejected alternatives on stylistic grounds.'
+  rationale: Restored 4 chosen renderings; azure substituted drafter's explicitly rejected alternatives on stylistic grounds.
+- timestamp: '2026-11-09T18:55:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And the engagement in Babylonia against the Galatians had gone this way: when all who came to the need were eight thousand[a], together with four thousand Macedonians, and the Macedonians were at a loss, the six thousand destroyed the one hundred twenty thousand because of the help coming to them from heaven, and they received great advantage.'
+  to: 'He also recalled the battle in Babylonia against the Galatians: eight thousand men had come to meet the emergency, together with four thousand Macedonians[a]. When the Macedonians were at a loss, the six thousand destroyed one hundred twenty thousand enemies through the help they received from heaven and benefited greatly.'
+  rationale: The earlier readability revision correctly recognized the difficulty of 'came to the need,' despite its automated reversal. I translate the emergency idiom naturally, retain 'were at a loss,' and preserve rather than reconcile the supplied troop numbers.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -159,3 +165,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/008/020.job-49196.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:37Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Judas also recalled a victory over an enormous Galatian force in Babylonia, where help from heaven enabled a much smaller force to prevail despite the Macedonians' difficulty.
+  meaning_decisions:
+  - source_phrase: καὶ τὴν ἐν τῇ Βαβυλωνίᾳ τὴν πρὸς τοὺς Γαλάτας παράταξιν γενομένην
+    prior_rendering: And the engagement in Babylonia against the Galatians had gone this way
+    new_rendering: He also recalled the battle in Babylonia against the Galatians
+    rationale: The verse continues Judas's recounting of earlier help; stating that connection avoids treating the example as a disconnected narrative.
+  - source_phrase: ἐπὶ τὴν χρείαν ἦλθον
+    prior_rendering: came to the need
+    new_rendering: had come to meet the emergency
+    rationale: The expression means responding to a crisis; the prior wording does not communicate that idiom naturally in English.
+  - source_phrase: διὰ τὴν γινομένην αὐτοῖς ἀπʼ οὐρανοῦ βοήθειαν, καὶ ὠφέλειαν πολλὴν ἔλαβον
+    prior_rendering: because of the help coming to them from heaven, and they received great advantage
+    new_rendering: through the help they received from heaven and benefited greatly
+    rationale: This preserves both divine assistance and the broad benefit gained, without narrowing that benefit to plunder or strategic advantage.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier readability revision correctly recognized the difficulty of 'came to the need,' despite its automated reversal. I translate the emergency idiom naturally, retain 'were at a loss,' and preserve rather than reconcile the supplied troop numbers.

@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וְ/עַתָּה֙ הַשְׁכֵּ֣ם בַּ/בֹּ֔קֶר וְ/עַבְדֵ֥י אֲדֹנֶ֖י/ךָ אֲשֶׁר בָּ֣אוּ אִתָּ֑/ךְ וְ/הִשְׁכַּמְתֶּ֣ם בַּ/בֹּ֔קֶר וְ/א֥וֹר לָ/כֶ֖ם וָ/לֵֽכוּ־׃
 translation:
-  text: Now rise early in the morning[a], you and your master's servants who came with you. When you rise early in the morning and it is light for you, go.
-  philosophy: optimal-equivalence
+  text: Now you and your master's servants[a] who came with you must rise early in the morning and leave as soon as it is light.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'when daylight comes for you, go' / 'at daybreak, go.' The Hebrew clause is literally 'and it is light for you.'
-    reason: lexical_alternative
+    text: Achish still identifies David's men as Saul's servants.
+    reason: cultural_note
 lexical_decisions:
 - source_word: וְעַתָּה
   chosen: Now
@@ -90,14 +90,20 @@ revisions:
   from: Now rise early in the morning, you and your master's servants who came with you. When you rise early in the morning and it is light for you, go.
   to: Now rise early in the morning, you and your master's servants who came with you. Rise early in the morning, and when it is light for you, go.
   rationale: Removed the repeated explicit subject 'you' in the second clause for more natural English while preserving the Hebrew sequence; kept both occurrences of 'rise early in the morning' to reflect the repetition in the source.
-
 - timestamp: '2026-05-16T05:09:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now rise early in the morning[a], you and your master''s servants who came with you. Rise early in the morning, and when it is light for you, go.'
-  to: 'Now rise early in the morning[a], you and your master''s servants who came with you. When you rise early in the morning and it is light for you, go.'
-  rationale: 'Azure substituted imperative ''Rise early'' for drafter''s chosen ''When you rise early'' (functionally equivalent to rejected ''and rise early'') and recast ''and it is light'' as ''when it is light'' (mirrors rejected pattern). Drafter chose temporal-instruction framing.'
+  from: Now rise early in the morning[a], you and your master's servants who came with you. Rise early in the morning, and when it is light for you, go.
+  to: Now rise early in the morning[a], you and your master's servants who came with you. When you rise early in the morning and it is light for you, go.
+  rationale: Azure substituted imperative 'Rise early' for drafter's chosen 'When you rise early' (functionally equivalent to rejected 'and rise early') and recast 'and it is light' as 'when it is light' (mirrors rejected pattern). Drafter chose temporal-instruction framing.
+- timestamp: '2026-11-09T17:23:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Now rise early in the morning[a], you and your master's servants who came with you. When you rise early in the morning and it is light for you, go.
+  to: Now you and your master's servants[a] who came with you must rise early in the morning and leave as soon as it is light.”
+  rationale: The review and revert debate whether the repeated rising clause should be imperative or temporal, but both recognize the same departure sequence. I express that sequence directly and retain the identification of the accompanying men as their master's servants.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -117,3 +123,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/029/010.job-59478.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:56Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Achish orders David and the accompanying servants of his master to rise early and depart at first light.
+  meaning_decisions:
+  - source_phrase: הַשְׁכֵּם בַּבֹּקֶר ... וְהִשְׁכַּמְתֶּם בַּבֹּקֶר
+    prior_rendering: rise early in the morning ... When you rise early in the morning
+    new_rendering: must rise early in the morning
+    rationale: The repeated instruction emphasizes an early departure; a single direct command conveys its force naturally without duplicating the same action.
+  - source_phrase: וְאוֹר לָכֶם וָלֵכוּ
+    prior_rendering: and it is light for you, go
+    new_rendering: and leave as soon as it is light
+    rationale: Daylight is the departure signal, not a special kind of light experienced by the travelers.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The review and revert debate whether the repeated rising clause should be imperative or temporal, but both recognize the same departure sequence. I express that sequence directly and retain the identification of the accompanying men as their master's servants.

@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וָ/אֶשְׁמַ֥ע קוֹל אָדָ֖ם בֵּ֣ין אוּלָ֑י וַ/יִּקְרָא֙ וַ/יֹּאמַ֔ר גַּבְרִיאֵ֕ל הָבֵ֥ן לְ/הַלָּ֖ז אֶת הַ/מַּרְאֶֽה־־׃
 translation:
-  text: And I heard the voice of a man between the banks of the Ulai[a], and he called out and said, “Gabriel[c][b], make this one understand the vision.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'a human voice.' The Hebrew says literally 'the voice of a man.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or, 'between Ulai' / 'between the sides of the Ulai,' likely referring to the space between its banks.
-    reason: lexical_alternative
-  - marker: c
-    text: Or, 'make this one understand the vision.'
-    reason: lexical_alternative
+  text: I heard a man's voice from between the banks of the Ulai calling out, “Gabriel, make this man understand the vision.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וָאֶשְׁמַע
   chosen: And I heard
@@ -100,14 +90,20 @@ revisions:
   from: And I heard the voice of a man between the banks of the Ulai, and he called out and said, “Gabriel, make this man understand the vision.”
   to: And I heard the voice of a man between the banks of the Ulai, and he called out and said, “Gabriel, make this man understand the vision.”
   rationale: Changed “this man” to “this one” to more directly reflect the demonstrative in the source without adding “man,” which is not explicit in that phrase. Kept the rest unchanged as accurate and natural.
-
 - timestamp: '2026-05-18T02:56:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I heard the voice of a man between the banks of the Ulai[a], and he called out and said, “Gabriel[c][b], make this one understand the vision.”'
-  to: 'And I heard the voice of a man between the banks of the Ulai[a], and he called out and said, “Gabriel[c][b], make this one understand the vision.”'
+  from: And I heard the voice of a man between the banks of the Ulai[a], and he called out and said, “Gabriel[c][b], make this one understand the vision.”
+  to: And I heard the voice of a man between the banks of the Ulai[a], and he called out and said, “Gabriel[c][b], make this one understand the vision.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''this man''].'
+- timestamp: '2026-11-09T17:30:17Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I heard the voice of a man between the banks of the Ulai[a], and he called out and said, “Gabriel[c][b], make this one understand the vision.”
+  to: I heard a man's voice from between the banks of the Ulai calling out, “Gabriel, make this man understand the vision.”
+  rationale: The history alternates between 'this man' and 'this one'; the lexical rationale favors the more idiomatic 'this man,' which clearly refers to Daniel. The redundant and misplaced footnotes are dropped.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -127,3 +123,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/daniel/008/016.job-44079.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:30:17Z'
+  change_level: refined
+  confidence: high
+  meaning: Daniel hears a man's voice from between the banks of the Ulai commanding Gabriel to give him understanding of the vision.
+  meaning_decisions:
+  - source_phrase: קוֹל אָדָם בֵּין אוּלָי
+    prior_rendering: the voice of a man between the banks of the Ulai
+    new_rendering: a man's voice from between the banks of the Ulai
+    rationale: Clarifies the location from which the voice is heard without identifying its speaker.
+  - source_phrase: וַיִּקְרָא וַיֹּאמַר
+    prior_rendering: and he called out and said
+    new_rendering: calling out
+    rationale: A single English speech introduction carries both the audible summons and the words spoken.
+  - source_phrase: לְהַלָּז
+    prior_rendering: this one
+    new_rendering: this man
+    rationale: The demonstrative refers to Daniel, and supplying 'man' makes that reference natural without changing its content.
+  footnote_kinds: {}
+  history_weighed: The history alternates between 'this man' and 'this one'; the lexical rationale favors the more idiomatic 'this man,' which clearly refers to Daniel. The redundant and misplaced footnotes are dropped.

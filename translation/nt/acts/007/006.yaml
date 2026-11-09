@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ἐλάλησεν ⸀δὲ οὕτως ὁ θεὸς ὅτι ἔσται τὸ σπέρμα αὐτοῦ πάροικον ἐν γῇ ἀλλοτρίᾳ, καὶ δουλώσουσιν αὐτὸ καὶ κακώσουσιν ἔτη τετρακόσια·
 translation:
-  text: 'But God spoke in this way: that his offspring would be a foreign resident in a strange land[a], and they would enslave it and mistreat it for four hundred years.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Or more idiomatically, ''his descendants would be foreigners in a strange land, and they would enslave them and mistreat them for four hundred years.'' The Greek uses a collective singular: ''offspring ... it.'''
-    reason: lexical_alternative
+  text: God told him that his offspring would live as foreigners in a land not their own, and that the people there would enslave them and mistreat them for four hundred years.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐλάλησεν δὲ οὕτως
   chosen: But God spoke in this way
@@ -108,14 +104,20 @@ revisions:
   from: 'But God spoke in this way: that his offspring would be a foreign resident in a strange land, and they would enslave it and mistreat it for four hundred years.'
   to: 'But God spoke in this way: that his offspring would be sojourners in a foreign land, and they would enslave them and mistreat them for four hundred years.'
   rationale: Revised 'a foreign resident in a strange land' to 'sojourners in a foreign land' for more natural and accurate rendering of πάροικον ἐν γῇ ἀλλοτρίᾳ; changed 'it' to 'them' to match the collective sense of 'offspring' and the Greek object pronoun.
-
 - timestamp: '2026-05-15T16:54:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'But God spoke in this way: that his offspring would be sojourners in a foreign land[a], and they would enslave them and mistreat them for four hundred years.'
   to: 'But God spoke in this way: that his offspring would be a foreign resident in a strange land[a], and they would enslave it and mistreat it for four hundred years.'
-  rationale: 'Restored 3 chosen renderings preserving singular πάροικον, ἀλλοτρίᾳ ''strange'', and documented theological_decision for collective singular αὐτό.'
+  rationale: Restored 3 chosen renderings preserving singular πάροικον, ἀλλοτρίᾳ 'strange', and documented theological_decision for collective singular αὐτό.
+- timestamp: '2026-11-09T18:06:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'But God spoke in this way: that his offspring would be a foreign resident in a strange land[a], and they would enslave it and mistreat it for four hundred years.'
+  to: God told him that his offspring would live as foreigners in a land not their own, and that the people there would enslave them and mistreat them for four hundred years.
+  rationale: The earlier revision improved the collective pronouns, but an automated revert restored the singular for formal correspondence rather than contextual meaning. I retain 'offspring' as the promise-language while using human plural pronouns and bringing the earlier footnote's clarification into the text.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -135,3 +137,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/007/006.job-46587.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:06:50Z'
+  change_level: retranslated
+  confidence: high
+  meaning: God foretold that Abraham's offspring would live as foreigners in another people's land and suffer enslavement and mistreatment for four hundred years.
+  meaning_decisions:
+  - source_phrase: ἐλάλησεν δὲ οὕτως ὁ θεὸς ὅτι
+    prior_rendering: 'But God spoke in this way: that'
+    new_rendering: God told him that
+    rationale: The phrase introduces what God told Abraham; the cumbersome introductory formula contributes no additional meaning in English.
+  - source_phrase: τὸ σπέρμα αὐτοῦ πάροικον ... δουλώσουσιν αὐτὸ καὶ κακώσουσιν
+    prior_rendering: his offspring would be a foreign resident ... they would enslave it and mistreat it
+    new_rendering: his offspring would live as foreigners ... the people there would enslave them and mistreat them
+    rationale: The singular Greek forms refer collectively to human descendants, while the unnamed enslavers are the inhabitants of the foreign land; English plural agreement and an explicit subject convey those referents accurately.
+  - source_phrase: ἐν γῇ ἀλλοτρίᾳ
+    prior_rendering: in a strange land
+    new_rendering: in a land not their own
+    rationale: The land belongs to others; the expression concerns outsider status rather than unfamiliar or unusual surroundings.
+  footnote_kinds: {}
+  history_weighed: The earlier revision improved the collective pronouns, but an automated revert restored the singular for formal correspondence rather than contextual meaning. I retain 'offspring' as the promise-language while using human plural pronouns and bringing the earlier footnote's clarification into the text.

@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: אִישׁ֩ כִּֽי יִדֹּ֨ר נֶ֜דֶר לַֽ/יהוָ֗ה אֽוֹ הִשָּׁ֤בַע שְׁבֻעָה֙ לֶ/אְסֹ֤ר אִסָּר֙ עַל נַפְשׁ֔/וֹ לֹ֥א יַחֵ֖ל דְּבָר֑/וֹ כְּ/כָל הַ/יֹּצֵ֥א מִ/פִּ֖י/ו יַעֲשֶֽׂה־־־־׃
 translation:
-  text: If a man makes a vow to Yahweh, or swears an oath to bind himself by a pledge[a], he shall not break his word[b]; he shall do according to all that has gone out from his mouth.
-  philosophy: optimal-equivalence
+  text: If a man makes a vow to Yahweh or swears an oath imposing an obligation on himself, he must not break his word[a]; he must do everything he has promised.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'to bind himself by an obligation.' The Hebrew expression is literally 'to bind a binding obligation upon himself.'
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'he shall not profane his word.'
+    text: Literally, “he must not profane his word.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: אִישׁ
@@ -112,13 +109,12 @@ revisions:
   from: If a man makes a vow to the LORD, or swears an oath to bind himself by a pledge, he shall not break his word; he shall do according to all that has gone out from his mouth.
   to: If a man makes a vow to the LORD, or swears an oath to bind himself with a binding obligation, he shall not break his word; he shall do according to all that has gone out from his mouth.
   rationale: Revised 'bind himself by a pledge' to 'bind himself with a binding obligation' to more closely reflect לֶאְסֹר אִסָּר ('to bind a binding obligation') rather than introducing 'pledge,' which is less precise here. Kept the rest unchanged as accurate and natural.
-
 - timestamp: '2026-05-18T03:09:19Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If a man makes a vow to Yahweh[a], or swears an oath to bind himself with a binding obligation, he shall not break his word[b]; he shall do according to all that has gone out from his mouth.'
-  to: 'If a man makes a vow to Yahweh, or swears an oath to bind himself by a pledge, he shall not break his word; he shall do according to all that has gone out from his mouth.'
+  from: If a man makes a vow to Yahweh[a], or swears an oath to bind himself with a binding obligation, he shall not break his word[b]; he shall do according to all that has gone out from his mouth.
+  to: If a man makes a vow to Yahweh, or swears an oath to bind himself by a pledge, he shall not break his word; he shall do according to all that has gone out from his mouth.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to bind himself by a pledge''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -128,6 +124,13 @@ revisions:
   from: If a man makes a vow to Yahweh, or swears an oath to bind himself by a pledge, he shall not break his word; he shall do according to all that has gone out from his mouth.
   to: If a man makes a vow to Yahweh, or swears an oath to bind himself by a pledge[a], he shall not break his word[b]; he shall do according to all that has gone out from his mouth.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('to bind himself by a pledge') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('he shall not break his word') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:32:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If a man makes a vow to Yahweh, or swears an oath to bind himself by a pledge[a], he shall not break his word[b]; he shall do according to all that has gone out from his mouth.
+  to: If a man makes a vow to Yahweh or swears an oath imposing an obligation on himself, he must not break his word[a]; he must do everything he has promised.
+  rationale: The recorded review usefully identified “obligation” as more precise than “pledge”; the later automated revert supplies no stronger meaning-based reason to reject that gain. I retain “break his word” and its literal footnote to preserve the sacred force of the promise.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -148,3 +151,30 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/030/003.job-41322.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:32:51Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A man who makes a vow to Yahweh or binds himself by an oath must fulfill everything he has promised.
+  meaning_decisions:
+  - source_phrase: הִשָּׁבַע שְׁבֻעָה לֶאְסֹר אִסָּר עַל נַפְשׁוֹ
+    prior_rendering: swears an oath to bind himself by a pledge
+    new_rendering: swears an oath imposing an obligation on himself
+    rationale: The oath creates a self-imposed obligation; this wording distinguishes that obligation from the vow without reproducing the cognate binding construction.
+  - source_phrase: לֹא יַחֵל דְּבָרוֹ
+    prior_rendering: he shall not break his word
+    new_rendering: he must not break his word
+    rationale: “Must” states the binding requirement directly in contemporary English.
+  - source_phrase: כְּכָל הַיֹּצֵא מִפִּיו יַעֲשֶׂה
+    prior_rendering: he shall do according to all that has gone out from his mouth
+    new_rendering: he must do everything he has promised
+    rationale: In this legal context, the words issuing from his mouth are his spoken commitments, all of which he must fulfill.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The recorded review usefully identified “obligation” as more precise than “pledge”; the later automated revert supplies no stronger meaning-based reason to reject that gain. I retain “break his word” and its literal footnote to preserve the sacred force of the promise.

@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: Ἰερουσαλὴμ Ἰερουσαλήμ, ἡ ⸀ἀποκτείνουσα τοὺς προφήτας καὶ λιθοβολοῦσα τοὺς ἀπεσταλμένους πρὸς αὐτήν— ποσάκις ἠθέλησα ἐπισυναγαγεῖν τὰ τέκνα σου, ὃν τρόπον ⸂ὄρνις ἐπισυνάγει⸃ τὰ νοσσία ⸀αὐτῆς ὑπὸ τὰς πτέρυγας, καὶ οὐκ ἠθελήσατε;
 translation:
-  text: Jerusalem[a], Jerusalem, the one who kills the prophets and stones those sent to her—how often I wanted to gather your children together, the way a hen gathers her chicks under her wings[b], and you were not willing!
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'who kills the prophets and stones those sent to her.'
-    reason: lexical_alternative
-  - marker: b
-    text: '''A hen'' translates a Greek word that can mean ''bird'' more generally, but the context of gathering young under wings points specifically to a hen.'
-    reason: lexical_alternative
+  text: Jerusalem, Jerusalem, you who kill the prophets and stone those sent to you—how often I wanted to gather your children together as a hen gathers her chicks under her wings, but you were not willing!
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἰερουσαλὴμ Ἰερουσαλήμ
   chosen: Jerusalem, Jerusalem
@@ -142,14 +135,20 @@ revisions:
   from: Jerusalem, Jerusalem, the one killing the prophets and stoning those sent to her—how often I wanted to gather your children together, the way a hen gathers her chicks under her wings, and you were not willing!
   to: Jerusalem, Jerusalem, the one killing the prophets and stoning those sent to her—how often I wanted to gather your children together, the way a hen gathers her chicks under her wings, and you were not willing!
   rationale: Changed 'the one killing' to 'the one who kills' for more natural formal English while preserving the participial sense. No other changes needed.
-
 - timestamp: '2026-05-18T02:59:52Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Jerusalem[a], Jerusalem, the one who kills the prophets and stones those sent to her—how often I wanted to gather your children together, the way a hen gathers her chicks under her wings[b], and you were not willing!'
-  to: 'Jerusalem[a], Jerusalem, the one who kills the prophets and stones those sent to her—how often I wanted to gather your children together, the way a hen gathers her chicks under her wings[b], and you were not willing!'
+  from: Jerusalem[a], Jerusalem, the one who kills the prophets and stones those sent to her—how often I wanted to gather your children together, the way a hen gathers her chicks under her wings[b], and you were not willing!
+  to: Jerusalem[a], Jerusalem, the one who kills the prophets and stones those sent to her—how often I wanted to gather your children together, the way a hen gathers her chicks under her wings[b], and you were not willing!
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the one killing''].'
+- timestamp: '2026-11-09T17:15:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Jerusalem[a], Jerusalem, the one who kills the prophets and stones those sent to her—how often I wanted to gather your children together, the way a hen gathers her chicks under her wings[b], and you were not willing!
+  to: Jerusalem, Jerusalem, you who kill the prophets and stone those sent to you—how often I wanted to gather your children together as a hen gathers her chicks under her wings, but you were not willing!
+  rationale: The readability review favored a relative clause over 'the one killing'; I carry that gain further with direct address. I retain the hen image and the genuine contrast between Jesus' desire and Jerusalem's unwillingness without resolving broader theological questions.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -171,3 +170,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/023/037.job-57336.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:15:27Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus laments Jerusalem's violence against God's messengers and its refusal of his repeated desire to gather and shelter its children.
+  meaning_decisions:
+  - source_phrase: ἡ ἀποκτείνουσα τοὺς προφήτας καὶ λιθοβολοῦσα τοὺς ἀπεσταλμένους πρὸς αὐτήν
+    prior_rendering: the one who kills the prophets and stones those sent to her
+    new_rendering: you who kill the prophets and stone those sent to you
+    rationale: Direct address expresses the personified city's identity naturally in English and connects smoothly with 'your children' and the final 'you.'
+  - source_phrase: καὶ οὐκ ἠθελήσατε
+    prior_rendering: and you were not willing
+    new_rendering: but you were not willing
+    rationale: The conjunction introduces a sharp contrast between Jesus' desire and Jerusalem's refusal; 'but' carries that relationship explicitly.
+  footnote_kinds: {}
+  history_weighed: The readability review favored a relative clause over 'the one killing'; I carry that gain further with direct address. I retain the hen image and the genuine contrast between Jesus' desire and Jerusalem's unwillingness without resolving broader theological questions.

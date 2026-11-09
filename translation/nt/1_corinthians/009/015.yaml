@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: Ἐγὼ δὲ ⸂οὐ κέχρημαι οὐδενὶ⸃ τούτων. οὐκ ἔγραψα δὲ ταῦτα ἵνα οὕτως γένηται ἐν ἐμοί, καλὸν γάρ μοι μᾶλλον ἀποθανεῖν ἤ— τὸ καύχημά μου ⸂οὐδεὶς κενώσει⸃.
 translation:
-  text: But I have made use of none of these things[a]. Yet I did not write these things so that it should be done this way for me[b], for I would rather die than—no one will nullify my boasting.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more explicitly from the context, 'none of these rights.'
-    reason: lexical_alternative
-  - marker: b
-    text: 'The Greek breaks off after ''than—'' and then resumes: ''my boasting no one will empty.'' Many translations smooth the sense as ''than have anyone empty my boasting.'''
-    reason: alternative_reading
+  text: But I have made use of none of these rights. I am not writing this to secure such support for myself, for I would rather die than—no one will take away my ground for boasting!
+  philosophy: dynamic
 lexical_decisions:
 - source_word: κέχρημαι
   chosen: have made use of
@@ -92,14 +85,20 @@ revisions:
   from: But I have made use of none of these things. And I did not write these things so that it should be done this way for me, for I would rather die than—no one will empty my boasting.
   to: But I have made use of none of these things. And I did not write these things so that it should be done this way for me, for I would rather die than—no one will empty my boasting.
   rationale: Changed 'And' to 'Yet' for smoother contrast, and revised 'empty my boasting' to 'nullify my boasting' for a more accurate and natural rendering of κενώσει in this context.
-
 - timestamp: '2026-05-18T03:01:38Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But I have made use of none of these things[a]. Yet I did not write these things so that it should be done this way for me[b], for I would rather die than—no one will nullify my boasting.'
-  to: 'But I have made use of none of these things[a]. Yet I did not write these things so that it should be done this way for me[b], for I would rather die than—no one will nullify my boasting.'
+  from: But I have made use of none of these things[a]. Yet I did not write these things so that it should be done this way for me[b], for I would rather die than—no one will nullify my boasting.
+  to: But I have made use of none of these things[a]. Yet I did not write these things so that it should be done this way for me[b], for I would rather die than—no one will nullify my boasting.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will empty''].'
+- timestamp: '2026-11-09T17:11:31Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But I have made use of none of these things[a]. Yet I did not write these things so that it should be done this way for me[b], for I would rather die than—no one will nullify my boasting.
+  to: But I have made use of none of these rights. I am not writing this to secure such support for myself, for I would rather die than—no one will take away my ground for boasting!
+  rationale: The history correctly identifies the support rights and the basis of Paul’s boast, although earlier wording left both less explicit. I retain the deliberately broken sentence because the recorded rationale shows that its abruptness conveys Paul’s emotional resolve.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -119,3 +118,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/1_corinthians/009/015.job-52797.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:11:31Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Paul has declined his rights to support and is not requesting payment, since he fiercely values his ground for boasting in preaching without charge.
+  meaning_decisions:
+  - source_phrase: οὐδενὶ τούτων
+    prior_rendering: none of these things
+    new_rendering: none of these rights
+    rationale: The preceding argument identifies these as rights to material support; naming that referent removes an unnecessary ambiguity.
+  - source_phrase: οὐκ ἔγραψα δὲ ταῦτα ἵνα οὕτως γένηται ἐν ἐμοί
+    prior_rendering: Yet I did not write these things so that it should be done this way for me
+    new_rendering: I am not writing this to secure such support for myself
+    rationale: 'The epistolary statement concerns the purpose of the present discussion: Paul is not making an indirect request for support.'
+  - source_phrase: τὸ καύχημά μου οὐδεὶς κενώσει
+    prior_rendering: no one will nullify my boasting
+    new_rendering: no one will take away my ground for boasting
+    rationale: Paul means the basis of his boast, not merely boastful speech; taking that basis away naturally conveys the metaphorical force of emptying it.
+  footnote_kinds: {}
+  history_weighed: The history correctly identifies the support rights and the basis of Paul’s boast, although earlier wording left both less explicit. I retain the deliberately broken sentence because the recorded rationale shows that its abruptness conveys Paul’s emotional resolve.

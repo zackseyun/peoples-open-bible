@@ -8,15 +8,8 @@ source:
   confidence: high
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; kept canonical Baruch 1:1-5:9 only, with Letter of Jeremiah handled separately as LJE.
 translation:
-  text: And Baruch read the words of this book in the hearing of Jeconiah[b] son of Jehoiakim, king of Judah, and in the hearing of all the people who came to the book[a],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or possibly, 'who came to the reading' or 'who came to the scroll.' The Greek phrase 'who came to the book' is unusual, so a more interpretive rendering is possible.
-    reason: lexical_alternative
-  - marker: b
-    text: Jeconiah is the Greek-form name; the same king is often identified in English as Jehoiachin.
-    reason: alternative_reading
+  text: Baruch read the words of this book aloud to Jeconiah son of Jehoiakim, king of Judah, and to all the people who had gathered for the reading,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀνέγνω
   chosen: read
@@ -88,13 +81,12 @@ revisions:
   from: And Baruch read the words of this book in the hearing of Jeconiah son of Jehoiakim, king of Judah, and in the hearing of all the people who came to the book,
   to: And Baruch read the words of this book in the hearing of Jeconiah son of Jehoiakim, king of Judah, and in the hearing of all the people who had come to the book,
   rationale: Changed 'came' to 'had come' to better reflect the participle τῶν ἐρχομένων in context as those present/arrived. Kept 'in the hearing of' for ἐν ὠσὶν and retained 'to the book' as the most literal rendering within the verse.
-
 - timestamp: '2026-05-18T03:10:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Baruch read the words of this book in the hearing of Jeconiah son of Jehoiakim[a], king of Judah, and in the hearing of all the people who had come to the book[b],'
-  to: 'And Baruch read the words of this book in the hearing of Jeconiah son of Jehoiakim, king of Judah, and in the hearing of all the people who came to the book,'
+  from: And Baruch read the words of this book in the hearing of Jeconiah son of Jehoiakim[a], king of Judah, and in the hearing of all the people who had come to the book[b],
+  to: And Baruch read the words of this book in the hearing of Jeconiah son of Jehoiakim, king of Judah, and in the hearing of all the people who came to the book,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who came to the book''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -104,6 +96,13 @@ revisions:
   from: And Baruch read the words of this book in the hearing of Jeconiah son of Jehoiakim, king of Judah, and in the hearing of all the people who came to the book,
   to: And Baruch read the words of this book in the hearing of Jeconiah[b] son of Jehoiakim, king of Judah, and in the hearing of all the people who came to the book[a],
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('who came to the book') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('Jeconiah') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:59:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Baruch read the words of this book in the hearing of Jeconiah[b] son of Jehoiakim, king of Judah, and in the hearing of all the people who came to the book[a],
+  to: Baruch read the words of this book aloud to Jeconiah son of Jehoiakim, king of Judah, and to all the people who had gathered for the reading,
+  rationale: The earlier review recognized that the people were already assembled, while the subsequent automated revert restored the more literal wording without a meaning-based argument. The recorded alternative 'who came to the reading' supplies the contextual sense adopted here, so its footnote is no longer needed.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -123,3 +122,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/baruch/001/003.job-50316.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:46Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Baruch publicly read the book to King Jeconiah and the people who had assembled to hear it.
+  meaning_decisions:
+  - source_phrase: ἀνέγνω ... ἐν ὠσὶν
+    prior_rendering: read ... in the hearing of
+    new_rendering: read ... aloud to
+    rationale: This directly expresses the public, audible reading conveyed by the Greek idiom.
+  - source_phrase: τῶν ἐρχομένων πρὸς τὴν βίβλον
+    prior_rendering: who came to the book
+    new_rendering: who had gathered for the reading
+    rationale: In this setting, coming to the book means assembling to hear it read, not approaching a physical object.
+  footnote_kinds: {}
+  history_weighed: The earlier review recognized that the people were already assembled, while the subsequent automated revert restored the more literal wording without a meaning-based argument. The recorded alternative 'who came to the reading' supplies the contextual sense adopted here, so its footnote is no longer needed.

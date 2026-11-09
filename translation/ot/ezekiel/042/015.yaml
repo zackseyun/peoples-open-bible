@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/כִלָּ֗ה אֶת מִדּוֹת֙ הַ/בַּ֣יִת הַ/פְּנִימִ֔י וְ/הוֹצִיאַ֨/נִי֙ דֶּ֣רֶךְ הַ/שַּׁ֔עַר אֲשֶׁ֥ר פָּנָ֖י/ו דֶּ֣רֶךְ הַ/קָּדִ֑ים וּ/מְדָד֖/וֹ סָבִ֥יב סָבִֽיב־׀׃
 translation:
-  text: When he had finished measuring the inner house[a], he brought me out by way of the gate that faced east[b], and he measured it all around.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the inner house.' The Hebrew uses 'house' in temple-vision context for the sacred structure.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'the gate whose face was toward the east.'
-    reason: lexical_alternative
+  text: When he had finished measuring the inside of the temple complex, he brought me out through the gate that faced east and measured the complex all around.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְכִלָּה
   chosen: When he had finished
@@ -93,14 +86,20 @@ revisions:
   from: When he had finished measuring the inner temple, he brought me out by way of the gate that faced east, and he measured it all around.
   to: When he had finished measuring the inner temple, he brought me out by way of the gate that faced east, and he measured it all around.
   rationale: Changed 'inner temple' to 'inner house' for closer lexical correspondence to the Hebrew 'house' while keeping the rest of the verse natural and complete.
-
 - timestamp: '2026-05-18T02:54:32Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When he had finished measuring the inner house[a], he brought me out by way of the gate that faced east[b], and he measured it all around.'
-  to: 'When he had finished measuring the inner house[a], he brought me out by way of the gate that faced east[b], and he measured it all around.'
+  from: When he had finished measuring the inner house[a], he brought me out by way of the gate that faced east[b], and he measured it all around.
+  to: When he had finished measuring the inner house[a], he brought me out by way of the gate that faced east[b], and he measured it all around.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the inner temple''].'
+- timestamp: '2026-11-09T17:39:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When he had finished measuring the inner house[a], he brought me out by way of the gate that faced east[b], and he measured it all around.
+  to: When he had finished measuring the inside of the temple complex, he brought me out through the gate that faced east and measured the complex all around.
+  rationale: The first draft and lexical record favored 'inner temple,' whereas the automated review preferred 'inner house' solely for lexical correspondence. With no maintainer ruling, I preserve the draft's identification of the temple and clarify the interior-to-perimeter transition established by the context.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -120,3 +119,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/042/015.job-64380.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:39:34Z'
+  change_level: retranslated
+  confidence: high
+  meaning: After completing the measurements inside the temple complex, the guide takes Ezekiel through the eastern gate to measure the complex around its outside.
+  meaning_decisions:
+  - source_phrase: הַבַּיִת הַפְּנִימִי
+    prior_rendering: the inner house
+    new_rendering: the inside of the temple complex
+    rationale: In this transition from the interior survey to the enclosing boundary, 'house' refers to the temple complex, not a dwelling or merely its innermost room.
+  - source_phrase: וּמְדָדוֹ סָבִיב סָבִיב
+    prior_rendering: and he measured it all around
+    new_rendering: and measured the complex all around
+    rationale: Naming the object prevents 'it' from being read as the immediately preceding gate; the following verses measure the surrounding boundary.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical record favored 'inner temple,' whereas the automated review preferred 'inner house' solely for lexical correspondence. With no maintainer ruling, I preserve the draft's identification of the temple and clarify the interior-to-perimeter transition established by the context.

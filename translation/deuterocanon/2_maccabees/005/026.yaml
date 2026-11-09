@@ -22,12 +22,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And he confined all the Jews to the spectacle[a], and, rushing into the city with weapons, he brought down a considerable slaughter.
-  philosophy: optimal-equivalence
+  text: He trapped all the Jews at the public spectacle[a], then rushed into the city with his armed troops and killed large numbers of people.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'to the festival' or 'to the public show'; the Greek θεωρία can denote a viewing occasion or festival spectacle.
-    reason: lexical_alternative
+    text: Or, 'at the festival gathering'; the Greek can refer to a viewing occasion or a festival.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: θεωρίαν
   chosen: the spectacle
@@ -104,13 +104,12 @@ revisions:
   from: And he confined all the Jews to the spectacle, and, rushing into the city with weapons, he brought down a considerable slaughter.
   to: And he confined all the Jews to the spectacle, and, rushing into the city with weapons, he caused a considerable slaughter.
   rationale: Replaced 'brought down a considerable slaughter' with 'caused a considerable slaughter' for more natural formal English while preserving the sense of κατέστησεν πλήθη.
-
 - timestamp: '2026-05-18T03:10:02Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he confined all the Jews to the spectacle[a], and, rushing into the city with weapons, he caused a considerable slaughter.'
-  to: 'And he confined all the Jews to the spectacle, and, rushing into the city with weapons, he brought down a considerable slaughter.'
+  from: And he confined all the Jews to the spectacle[a], and, rushing into the city with weapons, he caused a considerable slaughter.
+  to: And he confined all the Jews to the spectacle, and, rushing into the city with weapons, he brought down a considerable slaughter.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''brought down a considerable slaughter''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -120,6 +119,13 @@ revisions:
   from: And he confined all the Jews to the spectacle, and, rushing into the city with weapons, he brought down a considerable slaughter.
   to: And he confined all the Jews to the spectacle[a], and, rushing into the city with weapons, he brought down a considerable slaughter.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:54:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he confined all the Jews to the spectacle[a], and, rushing into the city with weapons, he brought down a considerable slaughter.
+  to: He trapped all the Jews at the public spectacle[a], then rushed into the city with his armed troops and killed large numbers of people.
+  rationale: The earlier review recognized that 'brought down a considerable slaughter' was unnatural, but its improvement was automatically reverted and carries no maintainer authority. I retained the confinement conveyed by the supplied source text and translated the large-scale killing directly.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -139,3 +145,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/005/026.job-49102.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:54:40Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Apollonius trapped the Jews gathered at the spectacle and then entered the city with armed troops, killing many people.
+  meaning_decisions:
+  - source_phrase: τοὺς Ἰουδαίους πάντας ἐπὶ τὴν θεωρίαν συνεκέκλεισεν
+    prior_rendering: he confined all the Jews to the spectacle
+    new_rendering: He trapped all the Jews at the public spectacle
+    rationale: The verb denotes hemming people in; 'confined ... to the spectacle' does not communicate that action naturally in English.
+  - source_phrase: σὺν τοῖς ὅπλοις
+    prior_rendering: with weapons
+    new_rendering: with his armed troops
+    rationale: The army and the preceding order to arm establish the collective military force accompanying his entry.
+  - source_phrase: ἱκανὰ κατέστησεν πλήθη
+    prior_rendering: he brought down a considerable slaughter
+    new_rendering: killed large numbers of people
+    rationale: In this violent context the compressed expression describes bringing down many people; the new wording states that result without an unnatural English construction.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review recognized that 'brought down a considerable slaughter' was unnatural, but its improvement was automatically reverted and carries no maintainer authority. I retained the confinement conveyed by the supplied source text and translated the large-scale killing directly.

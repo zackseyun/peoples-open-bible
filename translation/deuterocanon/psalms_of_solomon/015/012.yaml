@@ -8,12 +8,8 @@ source:
   - 804
   validation: swete_direct
 translation:
-  text: Their inheritance will not be found for their children,[a]
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “Their inheritance will not be found among/to their children,” that is, it will not pass on to their descendants.
-    reason: lexical_alternative
+  text: Their children will have no inheritance from them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: κληρονομία
   chosen: inheritance
@@ -64,14 +60,20 @@ revisions:
   from: Their inheritance will not be found for their children,
   to: Their inheritance will not be found by their children,
   rationale: Changed 'for their children' to 'by their children' to reflect the dative more naturally and accurately in English.
-
 - timestamp: '2026-05-18T02:59:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Their inheritance will not be found by their children,[a]'
-  to: 'Their inheritance will not be found for their children,[a]'
+  from: Their inheritance will not be found by their children,[a]
+  to: Their inheritance will not be found for their children,[a]
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for their children''].'
+- timestamp: '2026-11-09T19:04:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Their inheritance will not be found for their children,[a]
+  to: Their children will have no inheritance from them.
+  rationale: Both recorded versions remained tied to “will not be found,” while the earlier footnote correctly recognized the failure of inheritance to pass to descendants. I bring that meaning into the text rather than leaving it for readers to reconstruct.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -91,3 +93,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/phase10_greek_apocrypha/deuterocanon/psalms_of_solomon/015/012.job-73258.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:04:00Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The sinners’ estate will not survive to provide an inheritance for their children.
+  meaning_decisions:
+  - source_phrase: ἡ κληρονομία αὐτῶν οὐχ εὑρεθήσεται τοῖς τέκνοις αὐτῶν
+    prior_rendering: Their inheritance will not be found for their children
+    new_rendering: Their children will have no inheritance from them
+    rationale: The dative concerns what will be available to the children, not who discovers it; the verse says that the sinners’ inheritance will not remain to pass down.
+  footnote_kinds: {}
+  history_weighed: Both recorded versions remained tied to “will not be found,” while the earlier footnote correctly recognized the failure of inheritance to pass to descendants. I bring that meaning into the text rather than leaving it for readers to reconstruct.

@@ -23,15 +23,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: A man accustomed to words of reproach will never be disciplined all his days[a][b].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'insulting words' or 'words of abuse' for 'words of reproach.'
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek says literally 'will certainly not be disciplined,' using an emphatic negation.
-    reason: lexical_alternative
+  text: A man who makes a habit of abusive speech will never learn discipline as long as he lives.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἄνθρωπος
   chosen: A man
@@ -103,14 +96,20 @@ revisions:
   from: A man who becomes accustomed to words of reproach will never be disciplined all his days.
   to: A man who becomes accustomed to words of reproach will never be disciplined all his days.
   rationale: Simplified 'who becomes accustomed to' to 'accustomed to' for more natural English while preserving the sense of the Greek habitual participle.
-
 - timestamp: '2026-05-18T02:57:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'A man accustomed to words of reproach will never be disciplined all his days[a][b].'
-  to: 'A man accustomed to words of reproach will never be disciplined all his days[a][b].'
+  from: A man accustomed to words of reproach will never be disciplined all his days[a][b].
+  to: A man accustomed to words of reproach will never be disciplined all his days[a][b].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who becomes accustomed''].'
+- timestamp: '2026-11-09T19:06:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: A man accustomed to words of reproach will never be disciplined all his days[a][b].
+  to: A man who makes a habit of abusive speech will never learn discipline as long as he lives.
+  rationale: The history recognizes both habitual formation and moral correction as central. The new wording makes those meanings explicit and incorporates the earlier note about insulting speech into the text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -130,3 +129,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/023/015.job-51598.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:14Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A man habitually given to abusive speech will remain morally undisciplined throughout his life.
+  meaning_decisions:
+  - source_phrase: συνεθιζόμενος λόγοις ὀνειδισμοῦ
+    prior_rendering: accustomed to words of reproach
+    new_rendering: who makes a habit of abusive speech
+    rationale: The context concerns the speaker's habitual insulting language, not legitimate rebuke or reproach directed at him.
+  - source_phrase: ἐν πάσαις ταῖς ἡμέραις αὐτοῦ οὐ μὴ παιδευθῇ
+    prior_rendering: will never be disciplined all his days
+    new_rendering: will never learn discipline as long as he lives
+    rationale: The warning concerns failure to acquire moral discipline, not exemption from punishment; the emphatic negation and lifelong scope remain.
+  footnote_kinds: {}
+  history_weighed: The history recognizes both habitual formation and moral correction as central. The new wording makes those meanings explicit and incorporates the earlier note about insulting speech into the text.

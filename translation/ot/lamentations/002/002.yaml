@@ -4,17 +4,11 @@ source:
   edition: WLC
   text: בִּלַּ֨ע אֲדֹנָ֜/י לא חָמַ֗ל אֵ֚ת כָּל נְא֣וֹת יַעֲקֹ֔ב הָרַ֧ס בְּ/עֶבְרָת֛/וֹ מִבְצְרֵ֥י בַת יְהוּדָ֖ה הִגִּ֣יעַ לָ/אָ֑רֶץ חִלֵּ֥ל מַמְלָכָ֖ה וְ/שָׂרֶֽי/הָ־־׃ס
 translation:
-  text: The Lord has swallowed up[a], without pity, all the pastures of Jacob; in his wrath he has torn down the strongholds of daughter Judah; he has brought them down to the ground[c][b]; he has defiled the kingdom and its princes.
-  philosophy: optimal-equivalence
+  text: The Lord has swallowed up all the dwellings of Jacob without pity; in his wrath he has torn down the strongholds of Daughter Judah and brought them to the ground; he has brought dishonor on the kingdom and its princes[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the dwellings of Jacob' or 'the habitations of Jacob.' The Hebrew term can refer to pastures or dwelling places.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'daughter Judah,' a poetic personification of Judah.
-    reason: cultural_note
-  - marker: c
-    text: Or 'has profaned the kingdom and its princes.'
+    text: Literally, “he has profaned the kingdom and its princes.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: בִּלַּע
@@ -128,14 +122,20 @@ revisions:
   from: The Lord has swallowed up, without pity, all the pastures of Jacob; in his wrath he has torn down the strongholds of daughter Judah; he has brought them down to the ground; he has defiled the kingdom and its princes.
   to: The Lord has swallowed up, without pity, all the habitations of Jacob; in his wrath he has torn down the strongholds of the daughter of Judah; he has brought them down to the ground; he has defiled the kingdom and its princes.
   rationale: Changed 'pastures' to 'habitations' for נְאוֹת, which here refers to dwellings/settlements rather than grazing places; added 'the daughter of Judah' for more natural formal rendering of בַת יְהוּדָה.
-
 - timestamp: '2026-05-16T01:37:20Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The Lord has swallowed up[a], without pity, all the habitations of Jacob; in his wrath he has torn down the strongholds of the daughter of Judah; he has brought them down to the ground[c][b]; he has defiled the kingdom and its princes.'
-  to: 'The Lord has swallowed up[a], without pity, all the pastures of Jacob; in his wrath he has torn down the strongholds of daughter Judah; he has brought them down to the ground[c][b]; he has defiled the kingdom and its princes.'
-  rationale: 'Azure substituted ''habitations'' (drafter''s first rejected alternative for נְאוֹת יַעֲקֹב — drafter chose ''pastures'' for concrete imagery) and ''the daughter of Judah'' (rejected for chosen ''daughter Judah'' poetic form).'
+  from: The Lord has swallowed up[a], without pity, all the habitations of Jacob; in his wrath he has torn down the strongholds of the daughter of Judah; he has brought them down to the ground[c][b]; he has defiled the kingdom and its princes.
+  to: The Lord has swallowed up[a], without pity, all the pastures of Jacob; in his wrath he has torn down the strongholds of daughter Judah; he has brought them down to the ground[c][b]; he has defiled the kingdom and its princes.
+  rationale: Azure substituted 'habitations' (drafter's first rejected alternative for נְאוֹת יַעֲקֹב — drafter chose 'pastures' for concrete imagery) and 'the daughter of Judah' (rejected for chosen 'daughter Judah' poetic form).
+- timestamp: '2026-11-09T18:16:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The Lord has swallowed up[a], without pity, all the pastures of Jacob; in his wrath he has torn down the strongholds of daughter Judah; he has brought them down to the ground[c][b]; he has defiled the kingdom and its princes.
+  to: The Lord has swallowed up all the dwellings of Jacob without pity; in his wrath he has torn down the strongholds of Daughter Judah and brought them to the ground; he has brought dishonor on the kingdom and its princes[a].
+  rationale: The substantive review correctly identified the inhabited-settlement sense of נְאוֹת; the later automated revert defended the original imagery without supplying stronger contextual evidence. I adopt that contextual gain as dwellings and retain the swallowing image and Judah’s personification.
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -155,3 +155,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/lamentations/002/002.job-46298.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:16:11Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Without pity, the Lord has destroyed Judah’s settlements and defenses and brought its kingdom and princes into dishonor.
+  meaning_decisions:
+  - source_phrase: נְאוֹת יַעֲקֹב
+    prior_rendering: the pastures of Jacob
+    new_rendering: the dwellings of Jacob
+    rationale: The surrounding destruction of strongholds and the kingdom favors inhabited settlements rather than grazing land.
+  - source_phrase: חִלֵּל מַמְלָכָה וְשָׂרֶיהָ
+    prior_rendering: he has defiled the kingdom and its princes
+    new_rendering: he has brought dishonor on the kingdom and its princes
+    rationale: Here profaning means degrading the kingdom and its rulers from their honored standing; defiled can misleadingly suggest moral contamination.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The substantive review correctly identified the inhabited-settlement sense of נְאוֹת; the later automated revert defended the original imagery without supplying stronger contextual evidence. I adopt that contextual gain as dwellings and retain the swallowing image and Judah’s personification.

@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: וּ/מִ֨סְכְּנ֔וֹת לִ/תְבוּאַ֥ת דָּגָ֖ן וְ/תִיר֣וֹשׁ וְ/יִצְהָ֑ר וְ/אֻֽרָוֺת֙ לְ/כָל בְּהֵמָ֣ה וּ/בְהֵמָ֔ה וַ/עֲדָרִ֖ים לָ/אֲוֵרֽוֹת־׃
 translation:
-  text: storehouses for the produce of grain[a], new wine, and oil, and stalls for all kinds of animals[c][b], and folds for the flocks.
-  philosophy: optimal-equivalence
+  text: He also built storehouses for grain, new wine, and olive oil, stalls for all kinds of livestock, and pens for the flocks[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'storage cities' for מִסְכְּנוֹת, if the term is taken more literally as larger storage complexes rather than simply storehouses.
-    reason: lexical_alternative
-  - marker: b
-    text: '''New wine'' translates תִירוֹשׁ, a term often distinguished from more general words for wine in agricultural lists.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'pens' or 'enclosures' for 'folds.'
-    reason: lexical_alternative
+    text: Or, “and flocks for the pens”; the final Hebrew phrase is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: מִסְכְּנוֹת
   chosen: storehouses
@@ -107,14 +101,20 @@ revisions:
   from: storehouses for the produce of grain, new wine, and oil, and stalls for every kind of animal, and flocks in folds.
   to: storehouses for the produce of grain, new wine, and oil, and stalls for every kind of animal, and flocks in folds.
   rationale: Adjusted 'every kind of animal' to 'all kinds of animals' for more natural English and added 'for' before 'the flocks' to reflect the parallel structure more clearly.
-
 - timestamp: '2026-05-17T02:51:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'storehouses for the produce of grain[a], new wine, and oil, and stalls for all kinds of animals[c][b], and folds for the flocks.'
-  to: 'storehouses for the produce of grain[a], new wine, and oil, and stalls for all kinds of animals[c][b], and folds for the flocks.'
+  from: storehouses for the produce of grain[a], new wine, and oil, and stalls for all kinds of animals[c][b], and folds for the flocks.
+  to: storehouses for the produce of grain[a], new wine, and oil, and stalls for all kinds of animals[c][b], and folds for the flocks.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for every kind of animal''].'
+- timestamp: '2026-11-09T17:26:31Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: storehouses for the produce of grain[a], new wine, and oil, and stalls for all kinds of animals[c][b], and folds for the flocks.
+  to: He also built storehouses for grain, new wine, and olive oil, stalls for all kinds of livestock, and pens for the flocks[a].
+  rationale: The revisions sought smoother inventory wording and clearer parallelism, which are retained. The documented domestic-animal sense is now explicit, and the uncertain final phrase is noted rather than treated as settled.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -134,3 +134,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_chronicles/032/028.job-60169.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:26:31Z'
+  change_level: refined
+  confidence: medium
+  meaning: Hezekiah established storage for agricultural produce and housing for his livestock.
+  meaning_decisions:
+  - source_phrase: וּמִסְכְּנוֹת לִתְבוּאַת
+    prior_rendering: storehouses for the produce of
+    new_rendering: He also built storehouses for
+    rationale: The subject and construction verb are understood from the preceding verse; supplying them makes this verse readable while the listed commodities already convey agricultural produce.
+  - source_phrase: יִצְהָר
+    prior_rendering: oil
+    new_rendering: olive oil
+    rationale: The agricultural term refers to olive oil, not oil in the unrestricted modern sense.
+  - source_phrase: לְכָל בְּהֵמָה וּבְהֵמָה
+    prior_rendering: for all kinds of animals
+    new_rendering: for all kinds of livestock
+    rationale: The context and noun identify domesticated livestock rather than animals generally.
+  - source_phrase: וַעֲדָרִים לָאֲוֵרוֹת
+    prior_rendering: and folds for the flocks
+    new_rendering: and pens for the flocks[a]
+    rationale: Pens clearly conveys livestock enclosures; the note acknowledges the serious alternative suggested by the difficult Hebrew syntax.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The revisions sought smoother inventory wording and clearer parallelism, which are retained. The documented domestic-animal sense is now explicit, and the uncertain final phrase is noted rather than treated as settled.

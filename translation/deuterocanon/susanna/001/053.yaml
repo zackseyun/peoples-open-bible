@@ -10,14 +10,11 @@ source:
   validation: normalized_direct_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Susanna extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: formerly[a], while you were rendering unjust judgments and condemning the innocent, but releasing the guilty, though the Lord says[b], ‘You shall not put to death the innocent and righteous.’
-  philosophy: optimal-equivalence
+  text: In the past you rendered unjust judgments, condemning the innocent while releasing the guilty, even though the Lord says, ‘You shall not put to death the innocent and righteous[a].’”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more literally, “while judging unjust judgments.” The Greek uses a cognate expression for emphasis.
-    reason: lexical_alternative
-  - marker: b
-    text: 'The closing quotation echoes the legal language of Exod 23:7 in the Greek tradition: do not put to death the innocent and righteous.'
+    text: Exodus 23:7.
     reason: cross_reference
 lexical_decisions:
 - source_word: πρότερον
@@ -126,14 +123,20 @@ revisions:
   from: formerly, while you were judging unjust judgments and condemning the innocent, but releasing the guilty, though the Lord says, ‘You shall not put to death the innocent and righteous.’
   to: formerly, while you were judging unjust judgments and condemning the innocent, but releasing the guilty, though the Lord says, ‘You shall not put to death the innocent and righteous.’
   rationale: Changed 'judging unjust judgments' to 'rendering unjust judgments' for more natural formal English while preserving the Greek sense. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:59:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'formerly[a], while you were rendering unjust judgments and condemning the innocent, but releasing the guilty, though the Lord says[b], ‘You shall not put to death the innocent and righteous.’'
-  to: 'formerly[a], while you were rendering unjust judgments and condemning the innocent, but releasing the guilty, though the Lord says[b], ‘You shall not put to death the innocent and righteous.’'
+  from: formerly[a], while you were rendering unjust judgments and condemning the innocent, but releasing the guilty, though the Lord says[b], ‘You shall not put to death the innocent and righteous.’
+  to: formerly[a], while you were rendering unjust judgments and condemning the innocent, but releasing the guilty, though the Lord says[b], ‘You shall not put to death the innocent and righteous.’
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''while you were judging unjust judgments''].'
+- timestamp: '2026-11-09T19:10:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: formerly[a], while you were rendering unjust judgments and condemning the innocent, but releasing the guilty, though the Lord says[b], ‘You shall not put to death the innocent and righteous.’
+  to: In the past you rendered unjust judgments, condemning the innocent while releasing the guilty, even though the Lord says, ‘You shall not put to death the innocent and righteous[a].’”
+  rationale: The earlier review's “rendering unjust judgments” already improves on the draft's cognate repetition and is retained. The recorded rationale also correctly identifies the contrast with the Lord's command, which “even though” makes explicit.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -153,3 +156,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/susanna/001/053.job-52470.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:49Z'
+  change_level: refined
+  confidence: high
+  meaning: Daniel accuses the elder of condemning innocent people and releasing guilty people in defiance of the Lord's command against wrongful execution.
+  meaning_decisions:
+  - source_phrase: πρότερον, κρίνων κρίσεις ἀδίκους
+    prior_rendering: formerly, while you were rendering unjust judgments
+    new_rendering: In the past you rendered unjust judgments
+    rationale: This gives the temporal expression its place in this verse and turns the Greek participial continuation into a clear English sentence without changing the accusation.
+  footnote_kinds:
+    a: cross_reference
+  history_weighed: The earlier review's “rendering unjust judgments” already improves on the draft's cognate repetition and is retained. The recorded rationale also correctly identifies the contrast with the Lord's command, which “even though” makes explicit.

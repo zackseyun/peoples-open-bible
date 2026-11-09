@@ -4,12 +4,12 @@ source:
   edition: SBLGNT
   text: αὐτὸς δὲ εἰδὼς αὐτῶν τὰ διανοήματα εἶπεν αὐτοῖς· Πᾶσα βασιλεία ἐφ’ ἑαυτὴν διαμερισθεῖσα ἐρημοῦται, καὶ οἶκος ἐπὶ οἶκον πίπτει.
 translation:
-  text: But he[a], knowing their thoughts, said to them, “Every kingdom divided against itself is laid waste, and a house falls upon a house.”
-  philosophy: optimal-equivalence
+  text: But Jesus knew their thoughts and said to them, “Every kingdom divided against itself is laid waste, and a divided household falls[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'household falls against household.' The Greek οἶκος can mean either a physical house or a household/family.
-    reason: lexical_alternative
+    text: Literally, 'and house falls upon house'; this may instead describe houses collapsing on one another as a kingdom is devastated.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: εἰδὼς
   chosen: knowing
@@ -95,14 +95,20 @@ revisions:
   from: But he, knowing their thoughts, said to them, “Every kingdom divided against itself is laid waste, and house falls upon house.”
   to: But he, knowing their thoughts, said to them, “Every kingdom divided against itself is laid waste, and house falls upon house.”
   rationale: 'Added the article in the final clause for more natural and complete English: ''and a house falls upon a house.'''
-
 - timestamp: '2026-05-18T03:00:55Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But he[a], knowing their thoughts, said to them, “Every kingdom divided against itself is laid waste, and a house falls upon a house.”'
-  to: 'But he[a], knowing their thoughts, said to them, “Every kingdom divided against itself is laid waste, and a house falls upon a house.”'
+  from: But he[a], knowing their thoughts, said to them, “Every kingdom divided against itself is laid waste, and a house falls upon a house.”
+  to: But he[a], knowing their thoughts, said to them, “Every kingdom divided against itself is laid waste, and a house falls upon a house.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''house falls upon house''].'
+- timestamp: '2026-11-09T17:18:35Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But he[a], knowing their thoughts, said to them, “Every kingdom divided against itself is laid waste, and a house falls upon a house.”
+  to: But Jesus knew their thoughts and said to them, “Every kingdom divided against itself is laid waste, and a divided household falls[a].
+  rationale: Earlier passes preserved the concrete wording because the clause is ambiguous, and I retain their strong 'is laid waste.' I prefer the household reading in the argument about internal division, but preserve the earlier image as a serious alternative rather than treating it as settled.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -126,3 +132,22 @@ cross_check:
     agree: 1
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/nt/luke/011/017.job-27732.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:18:35Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Knowing their thoughts, Jesus explains that internal division brings ruin to kingdoms and households.
+  meaning_decisions:
+  - source_phrase: καὶ οἶκος ἐπὶ οἶκον πίπτει
+    prior_rendering: and a house falls upon a house
+    new_rendering: and a divided household falls
+    rationale: This understands 'house' as a household and carries forward the division stated in the first clause, yielding a coherent parallel maxim. The compressed literal wording and the physical-collapse interpretation remain in the footnote.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: Earlier passes preserved the concrete wording because the clause is ambiguous, and I retain their strong 'is laid waste.' I prefer the household reading in the argument about internal division, but preserve the earlier image as a serious alternative rather than treating it as settled.

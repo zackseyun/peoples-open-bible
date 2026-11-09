@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וַ/יַּ֣עַשׂ חַ֔יִל וַ/יַּ֖ךְ אֶת עֲמָלֵ֑ק וַ/יַּצֵּ֥ל אֶת יִשְׂרָאֵ֖ל מִ/יַּ֥ד שֹׁסֵֽ/הוּ־־׃ס
 translation:
-  text: He fought valiantly and struck Amalek[c][b][a], and he delivered Israel from the hand of those who plundered it.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew 'did valor/strength,' an idiom meaning he acted bravely or achieved military success.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'Amalek,' referring to the Amalekite people.
-    reason: lexical_alternative
-  - marker: c
-    text: Hebrew 'from the hand of his plunderer'; the singular is naturally understood collectively with 'Israel.'
-    reason: lexical_alternative
+  text: He fought valiantly and defeated the Amalekites, and he delivered Israel from the hand of those who plundered it.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיַּעַשׂ חַיִל
   chosen: fought valiantly
@@ -81,14 +71,20 @@ revisions:
   from: He fought valiantly and struck Amalek, and he delivered Israel from the hand of those who plundered them.
   to: He fought valiantly and struck Amalek, and he delivered Israel from the hand of those who plundered them.
   rationale: Changed 'them' to 'it' to match the singular referent 'Israel' in the Hebrew. Retained the rest as accurate and natural.
-
 - timestamp: '2026-05-18T02:55:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He fought valiantly and struck Amalek[c][b][a], and he delivered Israel from the hand of those who plundered it.'
-  to: 'He fought valiantly and struck Amalek[c][b][a], and he delivered Israel from the hand of those who plundered it.'
+  from: He fought valiantly and struck Amalek[c][b][a], and he delivered Israel from the hand of those who plundered it.
+  to: He fought valiantly and struck Amalek[c][b][a], and he delivered Israel from the hand of those who plundered it.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''those who plundered them''].'
+- timestamp: '2026-11-09T17:23:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He fought valiantly and struck Amalek[c][b][a], and he delivered Israel from the hand of those who plundered it.
+  to: He fought valiantly and defeated the Amalekites, and he delivered Israel from the hand of those who plundered it.
+  rationale: The earlier decisions correctly interpret the opening as valor in battle and identify Amalek as a collective people. I make that military and collective sense explicit, while retaining the current reference to Israel as “it” and the resonant deliverance wording.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -108,3 +104,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/014/048.job-59085.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:33Z'
+  change_level: refined
+  confidence: high
+  meaning: Saul fights valiantly, defeats the Amalekites, and delivers Israel from its plunderers.
+  meaning_decisions:
+  - source_phrase: וַיַּךְ אֶת עֲמָלֵק
+    prior_rendering: struck Amalek
+    new_rendering: defeated the Amalekites
+    rationale: The military summary concerns defeating the Amalekite people, not striking an individual named Amalek.
+  footnote_kinds: {}
+  history_weighed: The earlier decisions correctly interpret the opening as valor in battle and identify Amalek as a collective people. I make that military and collective sense explicit, while retaining the current reference to Israel as “it” and the resonant deliverance wording.

@@ -16,15 +16,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: On it, while being stretched out with measured care[a] and disjointed[b], he was being burned underneath.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'carefully' or 'methodically'; the Greek adverb emphasizes deliberate, regulated action in the torture.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'having his joints dislocated' or 'with his limbs wrenched apart'; the Greek verb refers to violent dislocation of the body's joints or vertebrae.
-    reason: lexical_alternative
+  text: On it they methodically stretched him taut and dislocated his joints while burning him from below.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐφ' οὗ
   chosen: On it
@@ -93,13 +86,12 @@ revisions:
   from: On it, while being stretched out with measured care and disjointed, he was being burned underneath.
   to: On it, while being stretched out methodically and disjointed, he was being burned underneath.
   rationale: Replaced 'with measured care' with 'methodically' for more natural English while preserving the sense of εὐμελῶς; retained the rest of the wording as accurate and complete.
-
 - timestamp: '2026-05-18T03:10:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'On it[a], while being stretched out methodically and disjointed[b], he was being burned underneath.'
-  to: 'On it, while being stretched out with measured care and disjointed, he was being burned underneath.'
+  from: On it[a], while being stretched out methodically and disjointed[b], he was being burned underneath.
+  to: On it, while being stretched out with measured care and disjointed, he was being burned underneath.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with measured care''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -109,6 +101,13 @@ revisions:
   from: On it, while being stretched out with measured care and disjointed, he was being burned underneath.
   to: On it, while being stretched out with measured care[a] and disjointed[b], he was being burned underneath.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('with measured care') because the note's quoted alternative matches the lexical decision rendered there; [b] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:00:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: On it, while being stretched out with measured care[a] and disjointed[b], he was being burned underneath.
+  to: On it they methodically stretched him taut and dislocated his joints while burning him from below.
+  rationale: The earlier review's 'methodically' clearly conveys deliberately regulated torture, and the later wholesale revert supplies no new meaning-based objection to it. The earlier notes about dislocation and burning from below are now expressed directly.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -128,3 +127,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/011/018.job-50016.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:00:06Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The torturers deliberately stretch and dislocate the brother's body on the wheel while burning him from below.
+  meaning_decisions:
+  - source_phrase: κατατεινόμενος εὐμελῶς
+    prior_rendering: while being stretched out with measured care
+    new_rendering: they methodically stretched him taut
+    rationale: This conveys both the deliberate regulation of the torture and the bodily tension, using the torturers already understood as the agents.
+  - source_phrase: ἐκσφονδυλιζόμενος
+    prior_rendering: disjointed
+    new_rendering: dislocated his joints
+    rationale: The anatomical action is clearer than 'disjointed,' which commonly describes incoherent speech or thought in contemporary English.
+  - source_phrase: ὑπεκαίετο
+    prior_rendering: he was being burned underneath
+    new_rendering: while burning him from below
+    rationale: This preserves the simultaneous burning and clearly identifies its direction rather than suggesting only an affected part of his body.
+  footnote_kinds: {}
+  history_weighed: The earlier review's 'methodically' clearly conveys deliberately regulated torture, and the later wholesale revert supplies no new meaning-based objection to it. The earlier notes about dislocation and burning from below are now expressed directly.

@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וּ/לְ/כֹ֣ם מְהוֹדְעִ֗ין דִּ֣י כָל כָּהֲנַיָּ֣/א וְ֠/לֵוָיֵ/א זַמָּ֨רַיָּ֤/א תָרָֽעַיָּ/א֙ נְתִ֣ינַיָּ֔/א וּ/פָ֣לְחֵ֔י בֵּ֖ית אֱלָהָ֣/א דְנָ֑ה מִנְדָּ֤ה בְלוֹ֙ וַ/הֲלָ֔ךְ לָ֥א שַׁלִּ֖יט לְ/מִרְמֵ֥א עֲלֵי/הֹֽם־׃
 translation:
-  text: And we make known to you that it is not permitted to impose tribute[a], tax, or toll on any of the priests, Levites, singers, gatekeepers, temple servants[b], or servants of this house of God.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'Nethinim,' a traditional transliteration of נְתִינַיָּא.
-    reason: lexical_alternative
-  - marker: b
-    text: 'The three fiscal terms likely distinguish different kinds of imperial levy: ''tribute, tax, or toll'' could also be rendered ''tribute, custom, or transit duty.'''
-    reason: lexical_alternative
+  text: We also make known to you that no tribute, tax, or toll may be imposed on any of the priests, Levites, singers, gatekeepers, temple servants, or other servants of this house of God.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: מְהוֹדְעִין
   chosen: we make known
@@ -119,14 +112,20 @@ revisions:
   from: And we make known to you that it is not permitted to impose tribute, tax, or toll on any of the priests, Levites, singers, gatekeepers, temple servants, or other servants of this house of God.
   to: And we make known to you that it is not permitted to impose tribute, tax, or toll on any of the priests, Levites, singers, gatekeepers, temple servants, or other servants of this house of God.
   rationale: Removed 'other' before 'servants,' since the source simply says 'servants of this house of God' and does not explicitly add 'other.'
-
 - timestamp: '2026-05-18T02:57:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And we make known to you that it is not permitted to impose tribute[a], tax, or toll on any of the priests, Levites, singers, gatekeepers, temple servants[b], or servants of this house of God.'
-  to: 'And we make known to you that it is not permitted to impose tribute[a], tax, or toll on any of the priests, Levites, singers, gatekeepers, temple servants[b], or servants of this house of God.'
+  from: And we make known to you that it is not permitted to impose tribute[a], tax, or toll on any of the priests, Levites, singers, gatekeepers, temple servants[b], or servants of this house of God.
+  to: And we make known to you that it is not permitted to impose tribute[a], tax, or toll on any of the priests, Levites, singers, gatekeepers, temple servants[b], or servants of this house of God.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''other servants of this house of God''].'
+- timestamp: '2026-11-09T17:41:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And we make known to you that it is not permitted to impose tribute[a], tax, or toll on any of the priests, Levites, singers, gatekeepers, temple servants[b], or servants of this house of God.
+  to: We also make known to you that no tribute, tax, or toll may be imposed on any of the priests, Levites, singers, gatekeepers, temple servants, or other servants of this house of God.
+  rationale: The first draft and lexical rationale used 'other servants' to distinguish the final category, while a recorded review objected that 'other' was not explicit in the source. I retain the contextual distinction supported by the list; no maintainer revision governs this choice.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -146,3 +145,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/ezra/007/024.job-42909.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:41:30Z'
+  change_level: refined
+  confidence: high
+  meaning: All the listed temple personnel, including other temple servants, are exempt from imperial levies.
+  meaning_decisions:
+  - source_phrase: וּפָלְחֵי בֵּית אֱלָהָא דְנָה
+    prior_rendering: or servants of this house of God
+    new_rendering: or other servants of this house of God
+    rationale: '''Other'' distinguishes the concluding general category from the specifically named temple-servant group without excluding anyone covered by the decree.'
+  - source_phrase: מִנְדָּה בְלוֹ וַהֲלָךְ לָא שַׁלִּיט לְמִרְמֵא עֲלֵיהֹם
+    prior_rendering: it is not permitted to impose tribute, tax, or toll on
+    new_rendering: no tribute, tax, or toll may be imposed on
+    rationale: The revised legal construction states the comprehensive exemption directly while preserving all three fiscal terms.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale used 'other servants' to distinguish the final category, while a recorded review objected that 'other' was not explicit in the source. I retain the contextual distinction supported by the list; no maintainer revision governs this choice.

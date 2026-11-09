@@ -22,12 +22,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And when he arrived there[a], he called together his fellow countrymen and the priests, stood them before the altar, and sent for those from the citadel.
-  philosophy: optimal-equivalence
+  text: When he arrived there, he assembled his fellow countrymen, had the priests stand before the altar[a], and sent for those in the citadel.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more specifically, 'those from the Acra,' the fortified stronghold in Jerusalem.
-    reason: lexical_alternative
+    text: Alternatively, he assembled both his fellow countrymen and the priests and had them all stand before the altar.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: παραγενόμενος
   chosen: when he arrived
@@ -114,14 +114,20 @@ revisions:
   from: And when he arrived there, he called together his fellow countrymen and the priests, stood before the altar, and sent for those from the citadel.
   to: And when he arrived there, he called together his fellow countrymen and the priests, stood before the altar, and sent for those from the citadel.
   rationale: Changed 'stood before the altar' to 'stood them before the altar' to reflect the transitive sense of στῆσας with the assembled countrymen and priests as its object.
-
 - timestamp: '2026-05-18T02:58:55Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when he arrived there[a], he called together his fellow countrymen and the priests, stood them before the altar, and sent for those from the citadel.'
-  to: 'And when he arrived there[a], he called together his fellow countrymen and the priests, stood them before the altar, and sent for those from the citadel.'
+  from: And when he arrived there[a], he called together his fellow countrymen and the priests, stood them before the altar, and sent for those from the citadel.
+  to: And when he arrived there[a], he called together his fellow countrymen and the priests, stood them before the altar, and sent for those from the citadel.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''stood before the altar''].'
+- timestamp: '2026-11-09T18:56:18Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when he arrived there[a], he called together his fellow countrymen and the priests, stood them before the altar, and sent for those from the citadel.
+  to: When he arrived there, he assembled his fellow countrymen, had the priests stand before the altar[a], and sent for those in the citadel.
+  rationale: The review correctly recognized the transitive force of στῆσας, despite the draft’s intransitive interpretation and the later automated revert. I preserve that gain while taking the priests as its immediate object rather than automatically including the whole assembly.
 cross_check:
   status: moderate_agreement
   agreement: 0.8
@@ -141,3 +147,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/015/031.job-49465.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:18Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: On reaching Jerusalem, Judas gathers his countrymen, positions the priests before the altar, and summons the citadel’s occupants.
+  meaning_decisions:
+  - source_phrase: συγκαλεσάμενος τοὺς ὁμοεθνεῖς καὶ τοὺς ἱερεῖς πρὸ τοῦ θυσιαστηρίου στῆσας
+    prior_rendering: he called together his fellow countrymen and the priests, stood them before the altar
+    new_rendering: he assembled his fellow countrymen, had the priests stand before the altar
+    rationale: The most natural division assigns the countrymen to the summoning verb and the priests to the transitive verb meaning “set standing”; the broader scope remains in a footnote.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The review correctly recognized the transitive force of στῆσας, despite the draft’s intransitive interpretation and the later automated revert. I preserve that gain while taking the priests as its immediate object rather than automatically including the whole assembly.

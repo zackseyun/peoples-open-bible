@@ -22,17 +22,56 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: 'And after casting out a multitude unburied, he himself became unwept, and shared in no burial at all, nor in his ancestral tomb.'
+  text: He who had cast out a multitude of bodies unburied was himself unmourned and received neither a funeral of any kind nor the customary burial rites of his ancestors[a].
+  philosophy: dynamic
+  footnotes:
+  - marker: a
+    text: Other Greek texts read 'ancestral tomb' instead of 'ancestral custom.'
+    reason: textual_variant
 revisions:
 - timestamp: '2026-05-18T04:00:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And after casting out a multitude unburied[a], he himself became unwept, and had no share in burial of any kind, nor in his ancestral tomb.'
-  to: 'And after casting out a multitude unburied, he himself became unwept, and shared in no burial at all, nor in his ancestral tomb.'
+  from: And after casting out a multitude unburied[a], he himself became unwept, and had no share in burial of any kind, nor in his ancestral tomb.
+  to: And after casting out a multitude unburied, he himself became unwept, and shared in no burial at all, nor in his ancestral tomb.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''at all'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+- timestamp: '2026-11-09T18:55:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And after casting out a multitude unburied, he himself became unwept, and shared in no burial at all, nor in his ancestral tomb.
+  to: He who had cast out a multitude of bodies unburied was himself unmourned and received neither a funeral of any kind nor the customary burial rites of his ancestors[a].
+  rationale: The recorded revision changed only the phrasing of the denied burial and did not address 'ancestral tomb.' I follow the supplied Greek’s reference to ancestral custom and note the textual reading behind the familiar alternative.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T04:00:17Z'
   unchanged: false
   changes_summary: 'doctrine_realignment: 2 Maccabees 5:10 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''at all'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote '
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:15Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jason, who had denied burial to many victims, died without mourning, a funeral, or his ancestral burial rites.
+  meaning_decisions:
+  - source_phrase: ὁ πλῆθος ἀτάφων ἐκρίψας
+    prior_rendering: after casting out a multitude unburied
+    new_rendering: He who had cast out a multitude of bodies unburied
+    rationale: The bodies of Jason’s victims are the understood object, and stating this makes the burial reversal clear.
+  - source_phrase: ἀπένθητος ἐγενήθη
+    prior_rendering: he himself became unwept
+    new_rendering: was himself unmourned
+    rationale: The term denotes the absence of mourning, not merely the absence of tears.
+  - source_phrase: κηδείας οὐδ᾽ ἥτινος οὔτε πατρῴου νόμου μετέσχεν
+    prior_rendering: shared in no burial at all, nor in his ancestral tomb
+    new_rendering: received neither a funeral of any kind nor the customary burial rites of his ancestors
+    rationale: The supplied source reads νόμου, 'custom' or 'law,' rather than 'tomb'; it therefore refers to ancestral observances, while κηδεία denotes funeral care or rites.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The recorded revision changed only the phrasing of the denied burial and did not address 'ancestral tomb.' I follow the supplied Greek’s reference to ancestral custom and note the textual reading behind the familiar alternative.

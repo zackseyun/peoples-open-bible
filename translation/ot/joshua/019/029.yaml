@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: וְ/שָׁ֤ב הַ/גְּבוּל֙ הָֽ/רָמָ֔ה וְ/עַד עִ֖יר מִבְצַר צֹ֑ר וְ/שָׁ֤ב הַ/גְּבוּל֙ חֹסָ֔ה ו/יהיו תֹצְאֹתָ֛י/ו הַ/יָּ֖מָּ/ה מֵ/חֶ֥בֶל אַכְזִֽיבָ/ה־־׃
 translation:
-  text: Then the border turned to Ramah[a], and to the fortified city of Tyre; then the border turned to Hosah, and its boundary points were at the sea[b], from the region of Achzib.
-  philosophy: optimal-equivalence
+  text: Then the border turned to Ramah and reached the fortified city of Tyre. It turned again to Hosah and ran from the region of Achzib to its endpoint at the sea[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'westward'; the Hebrew literally says 'toward the sea,' a common geographic expression for the western direction.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'from the district/territory of Achzib.'
+    text: Literally, “its endpoints were toward the sea from the region of Achzib.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וְשָׁב
@@ -91,14 +88,20 @@ revisions:
   from: Then the border turned to Ramah, and to the fortified city of Tyre; then the border turned to Hosah, and its boundary points were toward the sea from the region of Achzib.
   to: Then the border turned to Ramah, and to the fortified city of Tyre; then the border turned to Hosah, and its boundary points were toward the sea from the region of Achzib.
   rationale: Adjusted 'toward the sea' to 'at the sea' for closer alignment with the Hebrew, and added a comma for clearer phrasing. Retained 'boundary points' for תֹצְאֹתָיו and 'region of Achzib' for מֵחֶבֶל אַכְזִיב.
-
 - timestamp: '2026-05-17T07:36:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then the border turned to Ramah[a], and to the fortified city of Tyre; then the border turned to Hosah, and its boundary points were at the sea[b], from the region of Achzib.'
-  to: 'Then the border turned to Ramah[a], and to the fortified city of Tyre; then the border turned to Hosah, and its boundary points were at the sea[b], from the region of Achzib.'
+  from: Then the border turned to Ramah[a], and to the fortified city of Tyre; then the border turned to Hosah, and its boundary points were at the sea[b], from the region of Achzib.
+  to: Then the border turned to Ramah[a], and to the fortified city of Tyre; then the border turned to Hosah, and its boundary points were at the sea[b], from the region of Achzib.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''toward the sea''].'
+- timestamp: '2026-11-09T19:09:57Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then the border turned to Ramah[a], and to the fortified city of Tyre; then the border turned to Hosah, and its boundary points were at the sea[b], from the region of Achzib.
+  to: Then the border turned to Ramah and reached the fortified city of Tyre. It turned again to Hosah and ran from the region of Achzib to its endpoint at the sea[a].
+  rationale: The recorded passes differ over “toward” versus “at” the sea, with no maintainer ruling; the endpoint formula supports a termination at the sea. The region of Achzib remains the stated point from which this final extent is described, and a literal note preserves the compressed source wording.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -118,3 +121,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/joshua/019/029.job-68881.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:57Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Asher’s border turned to Ramah, reached fortified Tyre, turned to Hosah, and reached the sea from the region of Achzib.
+  meaning_decisions:
+  - source_phrase: וְעַד עִיר מִבְצַר צֹר
+    prior_rendering: and to the fortified city of Tyre
+    new_rendering: and reached the fortified city of Tyre
+    rationale: The implied reaching is made explicit so that Tyre is clearly a limit reached by the border, rather than another object of the verb “turned.”
+  - source_phrase: וַיִּהְיוּ תֹצְאֹתָיו הַיָּמָּה מֵחֶבֶל אַכְזִיבָה
+    prior_rendering: and its boundary points were at the sea, from the region of Achzib
+    new_rendering: and ran from the region of Achzib to its endpoint at the sea
+    rationale: The boundary formula denotes termination, not unspecified boundary points. Reordering preserves the stated movement from the region of Achzib toward the sea while making the compressed geographical relation readable.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The recorded passes differ over “toward” versus “at” the sea, with no maintainer ruling; the endpoint formula supports a termination at the sea. The region of Achzib remains the stated point from which this final extent is described, and a literal note preserves the compressed source wording.

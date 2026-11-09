@@ -11,15 +11,8 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 4 = Addition D, segmented from Swete pages 784-785 with manual phrase anchors derived from the Swete transcription.
 translation:
-  text: blushing in the full bloom of her beauty[a], and her face was cheerful as if affectionate[b], but her heart was constricted from fear.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'flushed at the height of her beauty.' The Greek combines a participle meaning 'reddening/blushing' with a phrase for beauty at its peak.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'her face was bright and pleasing.' The phrase 'as if beloved' preserves the Greek's comparative wording more closely.
-    reason: lexical_alternative
+  text: was flushed in the full bloom of her beauty; her face looked cheerful and welcoming, but her heart was gripped by fear.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐρυθριῶσα
   lemma: ἐρυθριάω
@@ -102,14 +95,20 @@ revisions:
   from: blushing in the full bloom of her beauty, and her face was cheerful, as if beloved, but her heart was constricted from fear.
   to: blushing in the full bloom of her beauty, and her face was cheerful, as if beloved, but her heart was constricted from fear.
   rationale: Changed 'as if beloved' to 'as if affectionate' to better reflect προσφιλές as describing her face's friendly/pleasing expression rather than her being loved. Removed the comma before 'as if affectionate' for smoother English.
-
 - timestamp: '2026-05-18T02:59:20Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'blushing in the full bloom of her beauty[a], and her face was cheerful as if affectionate[b], but her heart was constricted from fear.'
-  to: 'blushing in the full bloom of her beauty[a], and her face was cheerful as if affectionate[b], but her heart was constricted from fear.'
+  from: blushing in the full bloom of her beauty[a], and her face was cheerful as if affectionate[b], but her heart was constricted from fear.
+  to: blushing in the full bloom of her beauty[a], and her face was cheerful as if affectionate[b], but her heart was constricted from fear.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as if beloved''].'
+- timestamp: '2026-11-09T18:59:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: blushing in the full bloom of her beauty[a], and her face was cheerful as if affectionate[b], but her heart was constricted from fear.
+  to: was flushed in the full bloom of her beauty; her face looked cheerful and welcoming, but her heart was gripped by fear.
+  rationale: The review's move away from 'as if beloved' correctly recognized that the phrase describes her expression, although 'as if affectionate' remained awkward. The bloom of beauty and the contrast between face and heart are preserved.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -129,3 +128,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/additions_to_esther/004/005.job-50267.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:36Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Esther's blooming beauty and cheerful, welcoming expression conceal a heart gripped by fear.
+  meaning_decisions:
+  - source_phrase: τὸ πρόσωπον αὐτῆς ἱλαρὸν ὡς προσφιλές
+    prior_rendering: her face was cheerful as if affectionate
+    new_rendering: her face looked cheerful and welcoming
+    rationale: The phrase describes her outwardly pleasing expression, which contrasts with her inward fear, rather than uncertainty about whether she feels affection.
+  - source_phrase: ἡ καρδία αὐτῆς ἀπεστενωμένη ἀπὸ τοῦ φόβου
+    prior_rendering: her heart was constricted from fear
+    new_rendering: her heart was gripped by fear
+    rationale: The natural English image retains the force of inward pressure and distress.
+  footnote_kinds: {}
+  history_weighed: The review's move away from 'as if beloved' correctly recognized that the phrase describes her expression, although 'as if affectionate' remained awkward. The bloom of beauty and the contrast between face and heart are preserved.

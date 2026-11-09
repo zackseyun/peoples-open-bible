@@ -23,15 +23,12 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: Gain faith with your neighbor in poverty[a], so that in his good things you may be filled together. In a time of distress remain with him[b], so that you may inherit along with him in his inheritance.
-  philosophy: optimal-equivalence
+  text: Win your neighbor’s trust when he is poor[a], so that you may share his abundance with him. Stand by him in a time of distress, so that you may share with him in his inheritance.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'Gain trust with your neighbor in poverty'; πίστις here may carry the relational sense of trust or faithfulness, not only faith in an abstract sense.
-    reason: lexical_alternative
-  - marker: b
-    text: '''His good things'' may also be understood as ''his prosperity'' or ''his goods.'''
-    reason: lexical_alternative
+    text: Or, “Win your neighbor’s trust in your poverty”; the Greek does not specify whose poverty is meant.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: πίστιν κτῆσαι
   chosen: Gain faith
@@ -137,14 +134,20 @@ revisions:
   from: Gain faith with your neighbor in poverty, so that in his good things you may be filled together. In a time of distress remain with him, so that you may inherit along with him in his inheritance.
   to: Gain trust with your neighbor in poverty, so that in his good things you may be filled together. In a time of distress remain with him, so that you may inherit with him in his inheritance.
   rationale: Changed 'faith' to 'trust' for more natural and contextually accurate rendering of πίστιν here, and simplified 'inherit along with him' to 'inherit with him' for more natural formal English while preserving συνκληρονομήσῃς.
-
 - timestamp: '2026-05-16T11:52:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Gain trust with your neighbor in poverty[a], so that in his good things you may be filled together. In a time of distress remain with him[b], so that you may inherit with him in his inheritance.'
-  to: 'Gain faith with your neighbor in poverty[a], so that in his good things you may be filled together. In a time of distress remain with him[b], so that you may inherit along with him in his inheritance.'
-  rationale: 'Restored drafter ''Gain faith'' (πίστιν as faith/loyalty bond) and ''inherit along with him'' (preserving idiomatic Hebrew/Greek companionship) per chosen renderings.'
+  from: Gain trust with your neighbor in poverty[a], so that in his good things you may be filled together. In a time of distress remain with him[b], so that you may inherit with him in his inheritance.
+  to: Gain faith with your neighbor in poverty[a], so that in his good things you may be filled together. In a time of distress remain with him[b], so that you may inherit along with him in his inheritance.
+  rationale: Restored drafter 'Gain faith' (πίστιν as faith/loyalty bond) and 'inherit along with him' (preserving idiomatic Hebrew/Greek companionship) per chosen renderings.
+- timestamp: '2026-11-09T19:06:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Gain faith with your neighbor in poverty[a], so that in his good things you may be filled together. In a time of distress remain with him[b], so that you may inherit along with him in his inheritance.
+  to: Win your neighbor’s trust when he is poor[a], so that you may share his abundance with him. Stand by him in a time of distress, so that you may share with him in his inheritance.
+  rationale: The earlier review correctly identified the relational meaning “trust”; the later automated revert favored a default term rather than the meaning established by this context. I retain the history’s emphasis on companionship and joint inheritance while making both natural in English.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -164,3 +167,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/022/023.job-51579.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:19Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Loyalty to a neighbor during poverty and distress establishes the trust through which one can later share that neighbor’s abundance and inheritance.
+  meaning_decisions:
+  - source_phrase: πίστιν κτῆσαι
+    prior_rendering: Gain faith
+    new_rendering: Win your neighbor’s trust
+    rationale: In this interpersonal setting, πίστις is the trust established through loyalty, not religious faith.
+  - source_phrase: ἐν πτωχείᾳ μετὰ τοῦ πλησίον
+    prior_rendering: with your neighbor in poverty
+    new_rendering: when he is poor
+    rationale: The parallel command to stand by him in distress and the reference to his later good things favor the neighbor’s poverty; the other serious understanding is footnoted.
+  - source_phrase: ἐν τοῖς ἀγαθοῖς αὐτοῦ ὁμοῦ πλησθῇς
+    prior_rendering: in his good things you may be filled together
+    new_rendering: you may share his abundance with him
+    rationale: This conveys shared satisfaction from the neighbor’s good things rather than leaving “be filled together” unexplained.
+  - source_phrase: διάμενε αὐτῷ ... ἐν τῇ κληρονομίᾳ αὐτοῦ συνκληρονομήσῃς
+    prior_rendering: remain with him ... inherit along with him in his inheritance
+    new_rendering: Stand by him ... share with him in his inheritance
+    rationale: “Stand by” expresses steadfast support, and the inheritance wording retains joint participation rather than suggesting inheritance after the friend’s death.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review correctly identified the relational meaning “trust”; the later automated revert favored a default term rather than the meaning established by this context. I retain the history’s emphasis on companionship and joint inheritance while making both natural in English.

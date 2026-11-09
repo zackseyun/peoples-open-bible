@@ -19,15 +19,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: Give from your bread to the hungry[a], and from your clothing to the naked. Whatever may abound to you, do as almsgiving[b], and do not let your eye be envious when you do almsgiving.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more idiomatically, 'Whatever you have in abundance, give as alms.'
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'do not let your eye be envious'; that is, do not begrudge giving alms.
-    reason: lexical_alternative
+  text: Share your bread with the hungry and your clothing with the naked. Give whatever you have to spare as alms, and do not give with a grudging eye.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐκ τοῦ ἄρτου σου δίδου
   chosen: Give from your bread
@@ -134,7 +127,6 @@ revisions:
   from: Give from your bread to the hungry, and from your clothing to the naked. Whatever may abound to you, do as almsgiving, and do not let your eye be envious when you do almsgiving.
   to: Give from your bread to the hungry, and from your garments to the naked. Whatever may be left over for you, make into almsgiving, and do not let your eye be begrudging when you give alms.
   rationale: 'Revised several phrases for lexical accuracy and natural English: changed ''clothing'' to ''garments'' for ἱμάτια; rendered περισσεύσῃ as ''may be left over for you'' instead of ''may abound to you''; changed ''do as almsgiving'' to ''make into almsgiving''; and replaced ''be envious'' with ''be begrudging'' to better reflect φθονεσάτω in this context. Also varied the final clause to more natural English: ''when you give alms.'''
-
 - timestamp: '2026-05-14T00:00:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -142,6 +134,13 @@ revisions:
   from: Give from your bread to the hungry, and from your garments to the naked. Whatever may be left over for you, make into almsgiving, and do not let your eye be begrudging when you give alms.
   to: Give from your bread to the hungry, and from your clothing to the naked. Whatever may abound to you, do as almsgiving, and do not let your eye be envious when you do almsgiving.
   rationale: 'Restored 5 drafter choices that azure overrode with explicitly-rejected alternatives: ''clothing'' (not ''garments''), ''may abound to you'', ''do as almsgiving'', ''be envious'', ''when you do almsgiving''.'
+- timestamp: '2026-11-09T19:10:28Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Give from your bread to the hungry[a], and from your clothing to the naked. Whatever may abound to you, do as almsgiving[b], and do not let your eye be envious when you do almsgiving.
+  to: Share your bread with the hungry and your clothing with the naked. Give whatever you have to spare as alms, and do not give with a grudging eye.
+  rationale: The earlier review identified surplus and begrudging as the contextual meanings, though an automated revert restored the more literal expressions. I follow those meaning-based gains, retain the established bread, clothing, and eye images, and drop notes whose points are now carried by the text.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -161,3 +160,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/tobit/004/016.job-39104.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:28Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Tobit tells his son to share food and clothing with those in need and give his surplus as alms without begrudging it.
+  meaning_decisions:
+  - source_phrase: ἐκ τοῦ ἄρτου σου δίδου … καὶ ἐκ τῶν ἱματίων σου
+    prior_rendering: Give from your bread … and from your clothing
+    new_rendering: Share your bread … and your clothing
+    rationale: The partitive construction calls for sharing one's possessions; 'share' conveys that directly while retaining the concrete bread and clothing.
+  - source_phrase: πᾶν ὃ ἐὰν περισσεύσῃ σοι ποίει ἐλεημοσύνην
+    prior_rendering: Whatever may abound to you, do as almsgiving
+    new_rendering: Give whatever you have to spare as alms
+    rationale: The phrase concerns surplus resources used for charitable giving, not the otherwise unclear action of 'doing' abundance as almsgiving.
+  - source_phrase: μὴ φθονεσάτω σου ὁ ὀφθαλμὸς ἐν τῷ ποιεῖν σε ἐλεημοσύνην
+    prior_rendering: do not let your eye be envious when you do almsgiving
+    new_rendering: do not give with a grudging eye
+    rationale: The eye idiom warns against begrudging one's gift, not envying another person's possessions; the image is retained with its sense made clear.
+  footnote_kinds: {}
+  history_weighed: The earlier review identified surplus and begrudging as the contextual meanings, though an automated revert restored the more literal expressions. I follow those meaning-based gains, retain the established bread, clothing, and eye images, and drop notes whose points are now carried by the text.

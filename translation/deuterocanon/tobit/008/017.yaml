@@ -16,18 +16,12 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: Blessed are you[a], because you have made me rejoice, and it has not happened to me as I suspected; rather, according to your abundant mercy, you have acted with us. Blessed are you, because you have shown mercy to two only children. Show them mercy, Master[c][b]; bring their life to completion in health with gladness and mercy.
-  philosophy: optimal-equivalence
+  text: Blessed are you, because you have made me rejoice. Things have not turned out as I feared; instead, you have dealt with us according to your abundant mercy. Blessed are you, because you have shown mercy to these two only children[a]. Show them mercy, Master; grant that they may live out their lives in health, with gladness and mercy.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'it did not happen to me as I supposed.' The Greek verb can express suspicion or supposition; the context suggests anxious expectation.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Two only children'' means that each of the couple was an only child in his or her family.'
+    text: Each was the only child of his or her parents.
     reason: cultural_note
-  - marker: c
-    text: Or 'bring their lives to completion' or 'grant that they may complete their life.' The Greek uses a collective singular 'life.'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: εὐλογητὸς
   chosen: Blessed
@@ -157,14 +151,20 @@ revisions:
   from: Blessed are you, because you have made me rejoice, and it has not happened to me as I suspected; rather, according to your abundant mercy, you have acted with us. Blessed are you, because you have shown mercy to two only children. Show them mercy, Master; bring their life to completion in health with gladness and mercy.
   to: Blessed are you, because you have made me rejoice, and it has not happened to me as I expected; rather, according to your abundant mercy, you have dealt with us. Blessed are you, because you have had mercy on two only children. Show them mercy, Master; bring their life to completion in health with gladness and mercy.
   rationale: Revised 'suspected' to 'expected' for more natural sense of ὑπενόουν here, 'acted with us' to 'dealt with us' for more idiomatic rendering of ἐποίησας μεθʼ ἡμῶν, and 'shown mercy to' to 'had mercy on' for more direct correspondence with ἠλέησας.
-
 - timestamp: '2026-05-15T14:13:41Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Blessed are you[a], because you have made me rejoice, and it has not happened to me as I expected; rather, according to your abundant mercy, you have dealt with us. Blessed are you, because you have had mercy on two only children. Show them mercy, Master[c][b]; bring their life to completion in health with gladness and mercy.'
-  to: 'Blessed are you[a], because you have made me rejoice, and it has not happened to me as I suspected; rather, according to your abundant mercy, you have acted with us. Blessed are you, because you have shown mercy to two only children. Show them mercy, Master[c][b]; bring their life to completion in health with gladness and mercy.'
-  rationale: 'Restored 3 chosen renderings; azure picked drafter''s rejected alternatives on stylistic grounds.'
+  from: Blessed are you[a], because you have made me rejoice, and it has not happened to me as I expected; rather, according to your abundant mercy, you have dealt with us. Blessed are you, because you have had mercy on two only children. Show them mercy, Master[c][b]; bring their life to completion in health with gladness and mercy.
+  to: Blessed are you[a], because you have made me rejoice, and it has not happened to me as I suspected; rather, according to your abundant mercy, you have acted with us. Blessed are you, because you have shown mercy to two only children. Show them mercy, Master[c][b]; bring their life to completion in health with gladness and mercy.
+  rationale: Restored 3 chosen renderings; azure picked drafter's rejected alternatives on stylistic grounds.
+- timestamp: '2026-11-09T19:11:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Blessed are you[a], because you have made me rejoice, and it has not happened to me as I suspected; rather, according to your abundant mercy, you have acted with us. Blessed are you, because you have shown mercy to two only children. Show them mercy, Master[c][b]; bring their life to completion in health with gladness and mercy.
+  to: Blessed are you, because you have made me rejoice. Things have not turned out as I feared; instead, you have dealt with us according to your abundant mercy. Blessed are you, because you have shown mercy to these two only children[a]. Show them mercy, Master; grant that they may live out their lives in health, with gladness and mercy.”
+  rationale: The automated revert restored suspected and acted with us, but the recorded rationale and the grave scene support apprehension and merciful treatment more clearly. I preserve shown mercy, abundant mercy, Master, and the family significance of only children while clarifying the request for a full lifespan.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -184,3 +184,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/tobit/008/017.job-52516.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:02Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Raguel thanks God for replacing his feared outcome with joy and mercy and asks for the couple to live out their lives in health, gladness, and mercy.
+  meaning_decisions:
+  - source_phrase: οὐκ ἐγένετό μοι καθὼς ὑπενόουν
+    prior_rendering: it has not happened to me as I suspected
+    new_rendering: Things have not turned out as I feared
+    rationale: Raguel’s grave digging establishes a feared expectation of death, not suspicion about someone’s conduct.
+  - source_phrase: ἐποίησας μεθʼ ἡμῶν
+    prior_rendering: you have acted with us
+    new_rendering: you have dealt with us
+    rationale: The idiom describes God’s treatment of the family; acted with us can misleadingly suggest that God and the family acted together.
+  - source_phrase: συντέλεσον τὴν ζωὴν αὐτῶν
+    prior_rendering: bring their life to completion
+    new_rendering: grant that they may live out their lives
+    rationale: The prayer asks for a full lifespan, not for their lives to be ended; the plural is natural English for the shared course of their lives.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The automated revert restored suspected and acted with us, but the recorded rationale and the grave scene support apprehension and merciful treatment more clearly. I preserve shown mercy, abundant mercy, Master, and the family significance of only children while clarifying the request for a full lifespan.

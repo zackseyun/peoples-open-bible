@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: אֵת֩ אֲשֶׁ֨ר יֶחֱטָ֥א אִישׁ֙ לְ/רֵעֵ֔/הוּ וְ/נָֽשָׁא ב֥/וֹ אָלָ֖ה לְ/הַֽאֲלֹת֑/וֹ וּ/בָ֗א אָלָ֛ה לִ/פְנֵ֥י מִֽזְבַּחֲ/ךָ֖ בַּ/בַּ֥יִת הַ/זֶּֽה־׃
 translation:
-  text: If a man sins against his neighbor[a], and an oath is laid on him to make him swear, and the oath comes before your altar in this house,
-  philosophy: optimal-equivalence
+  text: If someone sins against a neighbor and is required to swear an oath[a], and that oath is pronounced before your altar in this house,
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'a curse'; the Hebrew term can refer to the oath itself or to the curse invoked if the oath is broken.
+    text: The Hebrew term includes the curse invoked against a person who swears falsely.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: יֶחֱטָא
@@ -95,14 +95,20 @@ revisions:
   from: If a man sins against his neighbor, and an oath is laid on him to make him swear, and the oath comes before your altar in this house,
   to: If a man sins against his neighbor, and is made to swear an oath, and the oath comes before your altar in this house,
   rationale: Revised 'an oath is laid on him to make him swear' to the more natural and direct 'is made to swear an oath,' which better reflects the Hebrew while preserving formal register. No other changes needed.
-
 - timestamp: '2026-05-16T06:54:47Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If a man sins against his neighbor[a], and is made to swear an oath, and the oath comes before your altar in this house,'
-  to: 'If a man sins against his neighbor[a], and an oath is laid on him to make him swear, and the oath comes before your altar in this house,'
-  rationale: 'Azure collapsed two documented drafter choices (''an oath is laid on him'' for וְנָשָׂא בוֹ אָלָה preserving Hebrew passive syntax with אָלָה as subject; ''to make him swear'' for Hiphil לְהַאֲלֹתוֹ) into ''is made to swear an oath'' — functionally equivalent to rejected alt ''he is put under an oath''.'
+  from: If a man sins against his neighbor[a], and is made to swear an oath, and the oath comes before your altar in this house,
+  to: If a man sins against his neighbor[a], and an oath is laid on him to make him swear, and the oath comes before your altar in this house,
+  rationale: Azure collapsed two documented drafter choices ('an oath is laid on him' for וְנָשָׂא בוֹ אָלָה preserving Hebrew passive syntax with אָלָה as subject; 'to make him swear' for Hiphil לְהַאֲלֹתוֹ) into 'is made to swear an oath' — functionally equivalent to rejected alt 'he is put under an oath'.
+- timestamp: '2026-11-09T17:22:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If a man sins against his neighbor[a], and an oath is laid on him to make him swear, and the oath comes before your altar in this house,
+  to: If someone sins against a neighbor and is required to swear an oath[a], and that oath is pronounced before your altar in this house,
+  rationale: The earlier review identified the redundancy in 'an oath is laid on him to make him swear'; the later automated revert defended source syntax rather than a different meaning. I retain the oath as the subject of the final clause while stating the legal procedure plainly.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -122,3 +128,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/008/031.job-58271.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:38Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Solomon presents the case of wrongdoing between neighbors that is brought before God's altar through a required judicial oath.
+  meaning_decisions:
+  - source_phrase: אִישׁ לְרֵעֵהוּ
+    prior_rendering: a man ... against his neighbor
+    new_rendering: someone ... against a neighbor
+    rationale: The expression introduces a representative legal case rather than limiting the petition to a particular man.
+  - source_phrase: וְנָשָׂא בוֹ אָלָה לְהַאֲלֹתוֹ
+    prior_rendering: an oath is laid on him to make him swear
+    new_rendering: is required to swear an oath
+    rationale: The Hebrew describes imposing a judicial oath; the new wording states that requirement directly without redundant English.
+  - source_phrase: וּבָא אָלָה
+    prior_rendering: and the oath comes
+    new_rendering: and that oath is pronounced
+    rationale: The oath remains the subject, but its coming before the altar is expressed as the oath's actual presentation there.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The earlier review identified the redundancy in 'an oath is laid on him to make him swear'; the later automated revert defended source syntax rather than a different meaning. I retain the oath as the subject of the final clause while stating the legal procedure plainly.

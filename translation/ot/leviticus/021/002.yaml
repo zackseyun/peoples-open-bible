@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: כִּ֚י אִם לִ/שְׁאֵר֔/וֹ הַ/קָּרֹ֖ב אֵלָ֑י/ו לְ/אִמּ֣/וֹ וּ/לְ/אָבִ֔י/ו וְ/לִ/בְנ֥/וֹ וּ/לְ/בִתּ֖/וֹ וּ/לְ/אָחִֽי/ו־׃
 translation:
-  text: 'except for his close relative who is nearest to him: for his mother[a], for his father, for his son, for his daughter, and for his brother—'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew שְׁאֵר literally has the sense of 'flesh' or 'kin'; thus 'close relative' could also be rendered 'blood relative' or 'flesh-kin.'
-    reason: lexical_alternative
+  text: 'except for his nearest relatives: his mother, his father, his son, his daughter, and his brother,'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: כִּי אִם
   chosen: except for
@@ -79,14 +75,20 @@ revisions:
   from: 'except for his close relative who is nearest to him: for his mother, for his father, for his son, for his daughter, and for his brother—'
   to: 'except for his close relative who is nearest to him: his mother, his father, his son, his daughter, and his brother—'
   rationale: Removed repeated 'for' before each family member to better reflect the Hebrew list and improve natural English while preserving the meaning.
-
 - timestamp: '2026-05-15T12:24:07Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'except for his close relative who is nearest to him: his mother[a], his father, his son, his daughter, and his brother—'
   to: 'except for his close relative who is nearest to him: for his mother[a], for his father, for his son, for his daughter, and for his brother—'
-  rationale: 'Restored anaphoric ל-preposition chain (''for his mother, for his father...'').'
+  rationale: Restored anaphoric ל-preposition chain ('for his mother, for his father...').
+- timestamp: '2026-11-09T18:20:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'except for his close relative who is nearest to him: for his mother[a], for his father, for his son, for his daughter, and for his brother—'
+  to: 'except for his nearest relatives: his mother, his father, his son, his daughter, and his brother,'
+  rationale: The earlier review correctly recognized that repeated 'for' was unnecessary in English. The later automated revert restored the Hebrew preposition pattern, but that pattern contributes no additional meaning here.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -106,3 +108,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/021/002.job-45525.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:20:46Z'
+  change_level: refined
+  confidence: high
+  meaning: The prohibition allows an exception for the priest’s nearest relatives, including his parents, children, and brother.
+  meaning_decisions:
+  - source_phrase: לִשְׁאֵרוֹ הַקָּרֹב אֵלָיו
+    prior_rendering: for his close relative who is nearest to him
+    new_rendering: for his nearest relatives
+    rationale: The singular Hebrew expression introduces a class of close kin, which the following list identifies; the English plural conveys that function without redundancy.
+  - source_phrase: לְאִמּוֹ וּלְאָבִיו וְלִבְנוֹ וּלְבִתּוֹ וּלְאָחִיו
+    prior_rendering: for his mother, for his father, for his son, for his daughter, and for his brother
+    new_rendering: his mother, his father, his son, his daughter, and his brother
+    rationale: One introductory 'for' governs the entire English list without changing the scope of the exceptions.
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly recognized that repeated 'for' was unnecessary in English. The later automated revert restored the Hebrew preposition pattern, but that pattern contributes no additional meaning here.

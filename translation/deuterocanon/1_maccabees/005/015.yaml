@@ -9,11 +9,14 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: saying[a], “A gathering has been assembled against them from Ptolemais and Tyre and Sidon and all Galilee of the foreigners, to wipe us out.”
-  philosophy: optimal-equivalence
+  text: They said, “A force from Ptolemais, Tyre, Sidon, and the foreign peoples throughout Galilee[a] has assembled against our people[b] to wipe us out.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “all Galilee of the Gentiles.” The Greek says “all Galilee of the foreigners,” using a term for people of another nation.
+    text: Literally, 'all Galilee of the foreigners.'
+    reason: lexical_alternative
+  - marker: b
+    text: Literally, 'against them ... to wipe us out'; the report shifts from third person to first person.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: Ἐπισυνήχθη
@@ -96,14 +99,20 @@ revisions:
   from: saying, “A gathering has been assembled against them from Ptolemais and Tyre and Sidon and all Galilee of the foreigners, to wipe us out.”
   to: saying, “A force has gathered against them from Ptolemais and Tyre and Sidon and all Galilee of the Gentiles, to wipe us out.”
   rationale: Replaced 'A gathering has been assembled' with the more natural and accurate 'A force has gathered.' Rendered ἀλλοφύλων as 'the Gentiles' instead of 'the foreigners' for more idiomatic formal translation in this context. Kept the shift from 'them' to 'us' as in the Greek.
-
 - timestamp: '2026-05-15T14:45:07Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'saying[a], “A force has gathered against them from Ptolemais and Tyre and Sidon and all Galilee of the Gentiles, to wipe us out.”'
-  to: 'saying[a], “A gathering has been assembled against them from Ptolemais and Tyre and Sidon and all Galilee of the foreigners, to wipe us out.”'
-  rationale: 'Restored passive voice of ἐπισυνήχθη and ethnically-political ''foreigners'' over theological ''Gentiles''.'
+  from: saying[a], “A force has gathered against them from Ptolemais and Tyre and Sidon and all Galilee of the Gentiles, to wipe us out.”
+  to: saying[a], “A gathering has been assembled against them from Ptolemais and Tyre and Sidon and all Galilee of the foreigners, to wipe us out.”
+  rationale: Restored passive voice of ἐπισυνήχθη and ethnically-political 'foreigners' over theological 'Gentiles'.
+- timestamp: '2026-11-09T18:52:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: saying[a], “A gathering has been assembled against them from Ptolemais and Tyre and Sidon and all Galilee of the foreigners, to wipe us out.”
+  to: They said, “A force from Ptolemais, Tyre, Sidon, and the foreign peoples throughout Galilee[a] has assembled against our people[b] to wipe us out.”
+  rationale: The recorded review’s 'force' is a sound clarification, while the revert’s concern to preserve an ethnic rather than doctrinal category is honored by 'foreign peoples.' The source’s third-person-to-first-person shift is documented rather than left as an unexplained English antecedent.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -123,3 +132,31 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/005/015.job-48221.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:29Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The Galilean messengers reported that a hostile force from the coastal cities and foreign peoples throughout Galilee had assembled to destroy their community.
+  meaning_decisions:
+  - source_phrase: Ἐπισυνήχθη
+    prior_rendering: A gathering has been assembled
+    new_rendering: A force ... has assembled
+    rationale: The implied collective is a hostile force; the new wording conveys its mobilization without the unnatural repetition of gathering and assembling.
+  - source_phrase: πάσης Γαλιλαίας ἀλλοφύλων
+    prior_rendering: all Galilee of the foreigners
+    new_rendering: the foreign peoples throughout Galilee
+    rationale: The phrase identifies the non-Israelite population of the region as a source of the hostile gathering, not foreigners in the modern sense of recent arrivals.
+  - source_phrase: ἐπʼ αὐτούς
+    prior_rendering: against them
+    new_rendering: against our people
+    rationale: The intended targets are the messengers’ fellow Israelites; naming them makes the report intelligible while a note preserves the source’s pronoun shift.
+  footnote_kinds:
+    a: literal_wording
+    b: literal_wording
+  history_weighed: The recorded review’s 'force' is a sound clarification, while the revert’s concern to preserve an ethnic rather than doctrinal category is honored by 'foreign peoples.' The source’s third-person-to-first-person shift is documented rather than left as an unexplained English antecedent.

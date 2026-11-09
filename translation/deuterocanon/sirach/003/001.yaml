@@ -14,12 +14,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 3:1
 translation:
-  text: Listen[a], children, to a father's instruction, and do so that you may live.
-  philosophy: optimal-equivalence
+  text: Listen, children, to a father's instruction, and put it into practice so that you may live[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek: ''Listen to me, your father ... so that you may be saved.'' The Hebrew witness reads more generically, ''to a father''s instruction ... so that you may live.'''
-    reason: alternative_reading
+    text: 'Greek: “Listen to me, your father, children, and act accordingly, so that you may be saved.”'
+    reason: textual_variant
 lexical_decisions:
 - source_word: שִׁמְעוּ
   chosen: Listen
@@ -114,17 +114,23 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'Listen, children, to a father''s instruction, and act accordingly so that you may live.'
-  to: 'Listen, children, to a father''s instruction, and act accordingly so that you may live.'
+  from: Listen, children, to a father's instruction, and act accordingly so that you may live.
+  to: Listen, children, to a father's instruction, and act accordingly so that you may live.
   rationale: Replaced 'act accordingly' with 'do' to more directly reflect וַעֲשׂוּ ('and do'), while keeping the sentence natural and formal.
-
 - timestamp: '2026-05-18T02:59:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Listen[a], children, to a father''s instruction, and do so that you may live.'
-  to: 'Listen[a], children, to a father''s instruction, and do so that you may live.'
+  from: Listen[a], children, to a father's instruction, and do so that you may live.
+  to: Listen[a], children, to a father's instruction, and do so that you may live.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''act accordingly''].'
+- timestamp: '2026-11-09T19:04:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Listen[a], children, to a father's instruction, and do so that you may live.
+  to: Listen, children, to a father's instruction, and put it into practice so that you may live[a].
+  rationale: The first draft's 'act accordingly' recognized the implied connection between listening and doing. I preserve that clarity rather than the later source-shaped 'do,' while retaining the Hebrew's 'live' and noting the Greek difference.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -144,3 +150,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/003/001.job-51028.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:04:37Z'
+  change_level: refined
+  confidence: high
+  meaning: Children are urged to listen to a father's instruction and practice it so that they may live.
+  meaning_decisions:
+  - source_phrase: וַעֲשׂוּ
+    prior_rendering: and do
+    new_rendering: and put it into practice
+    rationale: The implied object is the father's instruction; making it explicit prevents the English from sounding incomplete.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The first draft's 'act accordingly' recognized the implied connection between listening and doing. I preserve that clarity rather than the later source-shaped 'do,' while retaining the Hebrew's 'live' and noting the Greek difference.

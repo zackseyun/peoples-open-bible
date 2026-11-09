@@ -4,12 +4,12 @@ source:
   edition: SBLGNT
   text: ὅτι μιᾷ ὥρᾳ ἠρημώθη ὁ τοσοῦτος πλοῦτος. Καὶ πᾶς κυβερνήτης καὶ πᾶς ὁ ἐπὶ τόπον πλέων, καὶ ναῦται καὶ ὅσοι τὴν θάλασσαν ἐργάζονται, ἀπὸ μακρόθεν ἔστησαν
 translation:
-  text: for in one hour such great wealth has been laid waste. And every shipmaster, and everyone sailing to a place[a], and sailors, and as many as work the sea, stood far off
-  philosophy: optimal-equivalence
+  text: For in one hour such great wealth has been laid waste.” And every shipmaster, everyone traveling by sea[a], sailors, and all who make their living from the sea stood far off.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'everyone sailing for a port' or 'everyone who sails anywhere.' The Greek phrase is somewhat idiomatic and may refer broadly to those traveling by sea to destinations.
-    reason: lexical_alternative
+    text: Or, “everyone sailing from port to port”; the Greek expression may refer to coastal shipping.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ὅτι
   chosen: for
@@ -110,13 +110,12 @@ revisions:
   from: for in one hour such great wealth has been laid waste. And every shipmaster, and everyone sailing to a place, and sailors, and as many as work the sea, stood far off
   to: for in one hour such great wealth has been laid waste. And every shipmaster, and everyone sailing anywhere, and sailors, and as many as work the sea, stood far off
   rationale: Revised 'everyone sailing to a place' to 'everyone sailing anywhere' to better reflect the Greek expression for those traveling by sea generally, while preserving the formal register and structure.
-
 - timestamp: '2026-05-18T03:10:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'for in one hour such great wealth has been laid waste. And every shipmaster[a], and everyone sailing anywhere, and sailors, and as many as work the sea, stood far off'
-  to: 'for in one hour such great wealth has been laid waste. And every shipmaster, and everyone sailing to a place, and sailors, and as many as work the sea, stood far off'
+  from: for in one hour such great wealth has been laid waste. And every shipmaster[a], and everyone sailing anywhere, and sailors, and as many as work the sea, stood far off
+  to: for in one hour such great wealth has been laid waste. And every shipmaster, and everyone sailing to a place, and sailors, and as many as work the sea, stood far off
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''everyone sailing to a place''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -126,6 +125,13 @@ revisions:
   from: for in one hour such great wealth has been laid waste. And every shipmaster, and everyone sailing to a place, and sailors, and as many as work the sea, stood far off
   to: for in one hour such great wealth has been laid waste. And every shipmaster, and everyone sailing to a place[a], and sailors, and as many as work the sea, stood far off
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('everyone sailing to a place') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:17:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: for in one hour such great wealth has been laid waste. And every shipmaster, and everyone sailing to a place[a], and sailors, and as many as work the sea, stood far off
+  to: For in one hour such great wealth has been laid waste.” And every shipmaster, everyone traveling by sea[a], sailors, and all who make their living from the sea stood far off.
+  rationale: The earlier review rightly recognized that “sailing to a place” needed idiomatic clarification; its automated reversal supplies no stronger meaning-based reason to retain that wording. I preserve the distinct maritime groups and note the uncertainty concerning the second group.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -145,3 +151,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/revelation/018/017.job-47297.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:17:46Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Babylon’s immense wealth is ruined in one hour, and the maritime community stands far away.
+  meaning_decisions:
+  - source_phrase: πᾶς ὁ ἐπὶ τόπον πλέων
+    prior_rendering: everyone sailing to a place
+    new_rendering: everyone traveling by sea
+    rationale: The prior wording reproduces an obscure Greek expression without conveying a recognizable group in English. The broad rendering identifies sea travelers without restricting them to passengers or coastal traders.
+  - source_phrase: ὅσοι τὴν θάλασσαν ἐργάζονται
+    prior_rendering: as many as work the sea
+    new_rendering: all who make their living from the sea
+    rationale: The expression describes people whose livelihood depends on maritime work, broader than sailors alone.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review rightly recognized that “sailing to a place” needed idiomatic clarification; its automated reversal supplies no stronger meaning-based reason to retain that wording. I preserve the distinct maritime groups and note the uncertainty concerning the second group.

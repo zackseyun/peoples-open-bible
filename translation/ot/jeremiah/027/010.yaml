@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: כִּ֣י שֶׁ֔קֶר הֵ֖ם נִבְּאִ֣ים לָ/כֶ֑ם לְמַ֨עַן הַרְחִ֤יק אֶתְ/כֶם֙ מֵ/עַ֣ל אַדְמַתְ/כֶ֔ם וְ/הִדַּחְתִּ֥י אֶתְ/כֶ֖ם וַ/אֲבַדְתֶּֽם׃
 translation:
-  text: For they are prophesying lies to you[a], in order to remove you from your land; and I will drive you out[c][b], and you will perish.
-  philosophy: optimal-equivalence
+  text: For they are prophesying lies to you that will lead to your being removed far from your land[a]; I will drive you out, and you will perish.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'falsehood' instead of 'a lie.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'send you far away from your land.'
-    reason: lexical_alternative
-  - marker: c
-    text: 'The Hebrew shifts to explicit divine agency: ''and I will drive you out, and you will perish.'''
-    reason: cross_reference
+    text: Or, “in order to remove you far from your land,” understanding the clause as purpose rather than result.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: שֶׁקֶר
   chosen: a lie
@@ -94,14 +88,20 @@ revisions:
   from: For they are prophesying a lie to you, in order to remove you far from your land; and I will drive you out, and you will perish.
   to: For they are prophesying a lie to you, in order to remove you far from your land; and I will drive you out, and you will perish.
   rationale: Changed 'a lie' to 'lies' for more natural rendering of שקר in this context, and removed 'far' since it is not explicitly present in the source. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:57:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For they are prophesying lies to you[a], in order to remove you from your land; and I will drive you out[c][b], and you will perish.'
-  to: 'For they are prophesying lies to you[a], in order to remove you from your land; and I will drive you out[c][b], and you will perish.'
+  from: For they are prophesying lies to you[a], in order to remove you from your land; and I will drive you out[c][b], and you will perish.
+  to: For they are prophesying lies to you[a], in order to remove you from your land; and I will drive you out[c][b], and you will perish.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''remove you far from your land''].'
+- timestamp: '2026-11-09T17:57:43Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For they are prophesying lies to you[a], in order to remove you from your land; and I will drive you out[c][b], and you will perish.
+  to: For they are prophesying lies to you that will lead to your being removed far from your land[a]; I will drive you out, and you will perish.
+  rationale: I retain the reviewed plural “lies,” but the root רחק supports the draft’s “far” despite the review’s deletion. The earlier rationale allowed both purpose and result; I express the threatened result and record the purposive alternative while preserving Yahweh’s explicit agency.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -121,3 +121,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/027/010.job-67696.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:57:43Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The deceptive prophecies will lead to the nations’ removal from their lands, and Yahweh himself will drive them out to perish.
+  meaning_decisions:
+  - source_phrase: לְמַעַן הַרְחִיק אֶתְכֶם
+    prior_rendering: in order to remove you
+    new_rendering: that will lead to your being removed far
+    rationale: In this warning, the clause most naturally describes the disastrous result of the false assurances rather than asserting the prophets’ conscious intention to cause exile; the purposive understanding remains in a footnote.
+  - source_phrase: הַרְחִיק
+    prior_rendering: remove
+    new_rendering: being removed far
+    rationale: The causative form of the root meaning distance conveys removal far away, a force obscured by the current wording.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retain the reviewed plural “lies,” but the root רחק supports the draft’s “far” despite the review’s deletion. The earlier rationale allowed both purpose and result; I express the threatened result and record the purposive alternative while preserving Yahweh’s explicit agency.

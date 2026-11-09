@@ -4,18 +4,8 @@ source:
   edition: SBLGNT
   text: ἰδὼν δὲ ὁ Πιλᾶτος ὅτι οὐδὲν ὠφελεῖ ἀλλὰ μᾶλλον θόρυβος γίνεται λαβὼν ὕδωρ ἀπενίψατο τὰς χεῖρας ⸀ἀπέναντι τοῦ ὄχλου λέγων· Ἀθῷός εἰμι ἀπὸ τοῦ ⸀αἵματος τούτου· ὑμεῖς ὄψεσθε.
 translation:
-  text: So when Pilate saw that he was gaining nothing[a], but rather that a riot was developing, he took water and washed his hands before the crowd, saying, “I am innocent of this blood[b][c]; you yourselves will see to it.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'an uproar was arising' or 'a disturbance was happening.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'see to it yourselves'; literally 'you will see.'
-    reason: lexical_alternative
-  - marker: c
-    text: Literally 'I am innocent from this blood.' The expression means freedom from responsibility for a person's death.
-    reason: lexical_alternative
+  text: So when Pilate saw that he was accomplishing nothing and that a riot was developing instead, he took water and washed his hands before the crowd, saying, “I am innocent of this man’s blood; the responsibility is yours.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἰδὼν δὲ
   chosen: So when ... saw
@@ -105,17 +95,23 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'So when Pilate saw that he was gaining nothing, but rather that a riot was developing, he took water and washed his hands before the crowd, saying, “I am innocent of this man''s blood; you yourselves will see to it.”'
-  to: 'So when Pilate saw that he was gaining nothing, but rather that a riot was developing, he took water and washed his hands before the crowd, saying, “I am innocent of this man''s blood; you yourselves will see to it.”'
+  from: So when Pilate saw that he was gaining nothing, but rather that a riot was developing, he took water and washed his hands before the crowd, saying, “I am innocent of this man's blood; you yourselves will see to it.”
+  to: So when Pilate saw that he was gaining nothing, but rather that a riot was developing, he took water and washed his hands before the crowd, saying, “I am innocent of this man's blood; you yourselves will see to it.”
   rationale: Removed 'man's' to reflect the Greek more precisely, which says simply 'this blood.' No other changes needed.
-
 - timestamp: '2026-05-18T03:01:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So when Pilate saw that he was gaining nothing[a], but rather that a riot was developing, he took water and washed his hands before the crowd, saying, “I am innocent of this blood[c][b]; you yourselves will see to it.”'
-  to: 'So when Pilate saw that he was gaining nothing[a], but rather that a riot was developing, he took water and washed his hands before the crowd, saying, “I am innocent of this blood[c][b]; you yourselves will see to it.”'
+  from: So when Pilate saw that he was gaining nothing[a], but rather that a riot was developing, he took water and washed his hands before the crowd, saying, “I am innocent of this blood[c][b]; you yourselves will see to it.”
+  to: So when Pilate saw that he was gaining nothing[a], but rather that a riot was developing, he took water and washed his hands before the crowd, saying, “I am innocent of this blood[c][b]; you yourselves will see to it.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: ["of this man''s blood"].'
+- timestamp: '2026-11-09T17:16:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So when Pilate saw that he was gaining nothing[a], but rather that a riot was developing, he took water and washed his hands before the crowd, saying, “I am innocent of this blood[b][c]; you yourselves will see to it.”
+  to: So when Pilate saw that he was accomplishing nothing and that a riot was developing instead, he took water and washed his hands before the crowd, saying, “I am innocent of this man’s blood; the responsibility is yours.”
+  rationale: The first draft and lexical rationale recognized that “this man’s blood” conveys the implied referent, although later automated passes favored greater literalness. I retain the public handwashing and Pilate’s claim without endorsing his innocence, and make the responsibility idiom explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -138,3 +134,29 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/027/024.job-57510.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:16:48Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Seeing his efforts fail and a riot develop, Pilate publicly washed his hands and declared that responsibility for Jesus’ death belonged to the crowd rather than himself.
+  meaning_decisions:
+  - source_phrase: οὐδὲν ὠφελεῖ ἀλλὰ μᾶλλον θόρυβος γίνεται
+    prior_rendering: he was gaining nothing, but rather that a riot was developing
+    new_rendering: he was accomplishing nothing and that a riot was developing instead
+    rationale: The clause concerns the failure of Pilate’s efforts, not personal gain, and contrasts that failure with the developing disturbance.
+  - source_phrase: ἀπὸ τοῦ αἵματος τούτου
+    prior_rendering: of this blood
+    new_rendering: of this man’s blood
+    rationale: The blood refers to Jesus’ death; the implied human referent makes the expression natural while retaining the blood image that continues in verse 25.
+  - source_phrase: ὑμεῖς ὄψεσθε
+    prior_rendering: you yourselves will see to it
+    new_rendering: the responsibility is yours
+    rationale: This idiom places the matter and its responsibility on the hearers; it is not a prediction about what they will see.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale recognized that “this man’s blood” conveys the implied referent, although later automated passes favored greater literalness. I retain the public handwashing and Pilate’s claim without endorsing his innocence, and make the responsibility idiom explicit.

@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יָּשֻׁ֣בוּ הַ/מַּ֗יִם וַ/יְכַסּ֤וּ אֶת הָ/רֶ֨כֶב֙ וְ/אֶת הַ/פָּ֣רָשִׁ֔ים לְ/כֹל֙ חֵ֣יל פַּרְעֹ֔ה הַ/בָּאִ֥ים אַחֲרֵי/הֶ֖ם בַּ/יָּ֑ם לֹֽא נִשְׁאַ֥ר בָּ/הֶ֖ם עַד אֶחָֽד־־־־׃
 translation:
-  text: And the waters returned and covered the chariots and the horsemen[a], all the army of Pharaoh that had gone after them into the sea; not one of them remained.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'the cavalry' for 'the horsemen.'
-    reason: lexical_alternative
+  text: The waters returned and covered the chariots and the horsemen—all of Pharaoh’s army that had followed the Israelites into the sea. Not one of them survived.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיָּשֻׁבוּ
   chosen: returned
@@ -94,14 +90,20 @@ revisions:
   from: And the waters returned and covered the chariots and the horsemen—all the army of Pharaoh that had gone in after them into the sea. Not one of them remained.
   to: And the waters returned and covered the chariots and the horsemen—all the army of Pharaoh that had gone in after them into the sea. Not one of them remained.
   rationale: Adjusted punctuation to avoid an unnecessary sentence break and rendered the final clause more smoothly. Kept 'had gone after them into the sea' as a natural equivalent of the source.
-
 - timestamp: '2026-05-16T02:54:14Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the waters returned and covered the chariots and the horsemen[a], all the army of Pharaoh that had gone after them into the sea; not one of them remained.'
-  to: 'And the waters returned and covered the chariots and the horsemen[a], all the army of Pharaoh that had gone after them into the sea; not one of them remained.'
-  rationale: 'Azure dropped ''in'' from drafter''s chosen ''had gone in'' (preserves הַבָּאִים entry-motion sense documented in lexical_decisions) and replaced em-dash + sentence break with comma+semicolon (no lexical basis).'
+  from: And the waters returned and covered the chariots and the horsemen[a], all the army of Pharaoh that had gone after them into the sea; not one of them remained.
+  to: And the waters returned and covered the chariots and the horsemen[a], all the army of Pharaoh that had gone after them into the sea; not one of them remained.
+  rationale: Azure dropped 'in' from drafter's chosen 'had gone in' (preserves הַבָּאִים entry-motion sense documented in lexical_decisions) and replaced em-dash + sentence break with comma+semicolon (no lexical basis).
+- timestamp: '2026-11-09T17:34:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the waters returned and covered the chariots and the horsemen[a], all the army of Pharaoh that had gone after them into the sea; not one of them remained.
+  to: The waters returned and covered the chariots and the horsemen—all of Pharaoh’s army that had followed the Israelites into the sea. Not one of them survived.
+  rationale: The recorded changes chiefly concern punctuation and ‘gone in,’ not the extent of the destruction. I preserve the documented restriction to the force that entered the sea and express the final clause as the absence of survivors.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -121,3 +123,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/014/028.job-62629.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:34:38Z'
+  change_level: refined
+  confidence: high
+  meaning: The returning waters cover every part of Pharaoh’s force that entered the sea after Israel, leaving no survivors.
+  meaning_decisions:
+  - source_phrase: הַבָּאִים אַחֲרֵיהֶם בַּיָּם
+    prior_rendering: that had gone after them into the sea
+    new_rendering: that had followed the Israelites into the sea
+    rationale: This names the people being pursued and preserves entry into the sea without redundant directional wording.
+  - source_phrase: לֹא נִשְׁאַר בָּהֶם עַד אֶחָד
+    prior_rendering: not one of them remained
+    new_rendering: Not one of them survived
+    rationale: The context makes clear that no member of the pursuing force remained alive, rather than merely remaining in a place.
+  footnote_kinds: {}
+  history_weighed: The recorded changes chiefly concern punctuation and ‘gone in,’ not the extent of the destruction. I preserve the documented restriction to the force that entered the sea and express the final clause as the absence of survivors.

@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/הֶ/חָל֣וּץ הֹלֵ֔ךְ לִ/פְנֵי֙ הַ/כֹּ֣הֲנִ֔ים תקעו הַ/שּֽׁוֹפָר֑וֹת וְ/הַֽ/מְאַסֵּ֗ף הֹלֵךְ֙ אַחֲרֵ֣י הָ/אָר֔וֹן הָל֖וֹךְ וְ/תָק֥וֹעַ בַּ/שּׁוֹפָרֽוֹת׃
 translation:
-  text: And the armed men were going before the priests who were blowing the trumpets[a], and the rear guard was going behind the ark, while they kept blowing the trumpets.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew shofarot, specifically horns, often rendered 'ram's horns.'
-    reason: lexical_alternative
+  text: The armed men marched ahead of the priests blowing the trumpets, and the rear guard followed the ark. The priests kept blowing the trumpets as they marched.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: הֶחָלוּץ
   chosen: the armed men
@@ -98,14 +94,20 @@ revisions:
   from: And the armed men were going before the priests who were blowing the trumpets, and the rear guard was going behind the ark, continually blowing the trumpets.
   to: And the armed men were going before the priests who were blowing the trumpets, and the rear guard was going behind the ark, continually blowing the trumpets.
   rationale: Replaced 'continually blowing' with 'while they kept blowing' to reflect the Hebrew infinitive absolute construction more naturally in formal English without adding emphasis beyond the source.
-
 - timestamp: '2026-05-17T07:06:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the armed men were going before the priests who were blowing the trumpets[a], and the rear guard was going behind the ark, while they kept blowing the trumpets.'
-  to: 'And the armed men were going before the priests who were blowing the trumpets[a], and the rear guard was going behind the ark, while they kept blowing the trumpets.'
+  from: And the armed men were going before the priests who were blowing the trumpets[a], and the rear guard was going behind the ark, while they kept blowing the trumpets.
+  to: And the armed men were going before the priests who were blowing the trumpets[a], and the rear guard was going behind the ark, while they kept blowing the trumpets.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''continually blowing''].'
+- timestamp: '2026-11-09T18:08:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the armed men were going before the priests who were blowing the trumpets[a], and the rear guard was going behind the ark, while they kept blowing the trumpets.
+  to: The armed men marched ahead of the priests blowing the trumpets, and the rear guard followed the ark. The priests kept blowing the trumpets as they marched.
+  rationale: The earlier review rightly sought to express continuing trumpet blasts naturally, despite the inconsistent revert record. I retain that gain and remove the remaining pronoun ambiguity; the horn note is unnecessary after the instruments have already been identified.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -125,3 +127,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/joshua/006/009.job-68579.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:08:38Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The armed men led the trumpet-blowing priests, the rear guard followed the ark, and the priests continued sounding the trumpets throughout the march.
+  meaning_decisions:
+  - source_phrase: הֶחָלוּץ הֹלֵךְ לִפְנֵי הַכֹּהֲנִים ... וְהַמְאַסֵּף הֹלֵךְ אַחֲרֵי הָאָרוֹן
+    prior_rendering: the armed men were going before the priests ... and the rear guard was going behind the ark
+    new_rendering: The armed men marched ahead of the priests ... and the rear guard followed the ark
+    rationale: Conveys the procession's order through clear English movement verbs.
+  - source_phrase: הָלוֹךְ וְתָקוֹעַ בַּשּׁוֹפָרוֹת
+    prior_rendering: while they kept blowing the trumpets
+    new_rendering: The priests kept blowing the trumpets as they marched
+    rationale: Preserves the continuing action and explicitly identifies the priests as the trumpet blowers, avoiding an apparent reference to the rear guard.
+  footnote_kinds: {}
+  history_weighed: The earlier review rightly sought to express continuing trumpet blasts naturally, despite the inconsistent revert record. I retain that gain and remove the remaining pronoun ambiguity; the horn note is unnecessary after the instruments have already been identified.

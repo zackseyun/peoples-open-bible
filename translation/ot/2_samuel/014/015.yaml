@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ֠/עַתָּה אֲשֶׁר בָּ֜אתִי לְ/דַבֵּ֨ר אֶל הַ/מֶּ֤לֶךְ אֲדֹנִ/י֙ אֶת הַ/דָּבָ֣ר הַ/זֶּ֔ה כִּ֥י יֵֽרְאֻ֖/נִי הָ/עָ֑ם וַ/תֹּ֤אמֶר שִׁפְחָֽתְ/ךָ֙ אֲדַבְּרָה נָּ֣א אֶל הַ/מֶּ֔לֶךְ אוּלַ֛י יַעֲשֶׂ֥ה הַ/מֶּ֖לֶךְ אֶת דְּבַ֥ר אֲמָתֽ/וֹ־־־־־־׃
 translation:
-  text: And now I have come to speak this matter to my lord the king[a], because the people have frightened me. And your servant said, ‘Please let me speak to the king[b]; perhaps the king will do the word of his servant.’
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'because the people made me afraid.' The Hebrew verb is causative ('frightened me'), not 'the people fear me.'
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'the word of his maidservant.' That is, her request or plea.
-    reason: lexical_alternative
+  text: “Now I have come to speak to my lord the king about this matter because the people have frightened me. So your servant thought, ‘Let me speak to the king; perhaps the king will grant his servant’s request.’”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְעַתָּה
   chosen: And now
@@ -103,7 +96,6 @@ revisions:
   from: And now I have come to speak this matter to my lord the king, because the people have frightened me. So your servant said, ‘Please, let me speak to the king; perhaps the king will do the word of his servant.’
   to: And now I have come to speak this word to my lord the king, because the people have made me afraid. And your servant said, ‘Please let me speak to the king; perhaps the king will do the word of his maidservant.’
   rationale: 'Adjusted wording for closer lexical accuracy and consistency: ''this matter'' to ''this word,'' ''have frightened me'' to ''have made me afraid,'' and ''his servant'' to ''his maidservant'' to reflect the feminine term and maintain consistency with ''your servant.'''
-
 - timestamp: '2026-05-14T00:00:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -111,6 +103,13 @@ revisions:
   from: And now I have come to speak this word to my lord the king, because the people have made me afraid. And your servant said, ‘Please let me speak to the king; perhaps the king will do the word of his maidservant.’
   to: And now I have come to speak this matter to my lord the king, because the people have frightened me. So your servant said, ‘Please, let me speak to the king; perhaps the king will do the word of his servant.’
   rationale: Restored 'this matter' (דָּבָר as case/request), 'have frightened me' (piel causative), and 'his servant' (drafter chose over 'maidservant') per documented lexical rationale.
+- timestamp: '2026-11-09T17:29:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And now I have come to speak this matter to my lord the king[a], because the people have frightened me. And your servant said, ‘Please let me speak to the king[b]; perhaps the king will do the word of his servant.’
+  to: “Now I have come to speak to my lord the king about this matter because the people have frightened me. So your servant thought, ‘Let me speak to the king; perhaps the king will grant his servant’s request.’”
+  rationale: The later history rightly restored “matter,” the causative “frightened me,” and the natural courtly “servant.” I retain those decisions while bringing the earlier note’s explanation of her request into the main text.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -130,3 +129,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/014/015.job-45705.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:29:20Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Returning to her claimed circumstances, the woman says that fear of the people led her to seek the king’s help.
+  meaning_decisions:
+  - source_phrase: וַתֹּאמֶר שִׁפְחָתְךָ אֲדַבְּרָה נָּא אֶל הַמֶּלֶךְ
+    prior_rendering: And your servant said, ‘Please let me speak to the king’
+    new_rendering: So your servant thought, ‘Let me speak to the king’
+    rationale: She recounts her own deliberation before approaching the king, not a request previously addressed to an unidentified listener.
+  - source_phrase: יַעֲשֶׂה הַמֶּלֶךְ אֶת דְּבַר אֲמָתוֹ
+    prior_rendering: the king will do the word of his servant
+    new_rendering: the king will grant his servant’s request
+    rationale: Doing her word means acting on the petition she brings; “grant the request” carries that sense naturally.
+  footnote_kinds: {}
+  history_weighed: The later history rightly restored “matter,” the causative “frightened me,” and the natural courtly “servant.” I retain those decisions while bringing the earlier note’s explanation of her request into the main text.

@@ -9,15 +9,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: Pitiful indeed was the complete prostration of the crowd[a], and the expectation of the high priest[b], who was in great agony—
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Greek source line is truncated after προσδο-. The translation 'expectation' reflects the visible beginning of the word and the immediate syntax, but the exact form is not fully preserved in the provided line.
-    reason: textual_variant
-  - marker: b
-    text: '''Collapse'' translates a term that can more literally suggest falling forward or prostration; the wording may include both physical falling and emotional breakdown.'
-    reason: lexical_alternative
+  text: 'It was a pitiful sight: the whole crowd prostrate in prayer and the high priest waiting in great anguish.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐλεεινή
   chosen: Pitiful indeed
@@ -92,14 +85,20 @@ revisions:
   from: Pitiful indeed was the complete collapse of the crowd, and the expectation of the high priest, who was in great agony—
   to: Pitiful indeed was the complete collapse of the crowd, and the expectation of the high priest, who was in great agony—
   rationale: Changed 'collapse' to 'prostration' to more closely reflect πρόπτωσιν ('falling/prostration') while preserving the incomplete ending of the verse.
-
 - timestamp: '2026-05-18T02:59:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Pitiful indeed was the complete prostration of the crowd[a], and the expectation of the high priest[b], who was in great agony—'
-  to: 'Pitiful indeed was the complete prostration of the crowd[a], and the expectation of the high priest[b], who was in great agony—'
+  from: Pitiful indeed was the complete prostration of the crowd[a], and the expectation of the high priest[b], who was in great agony—
+  to: Pitiful indeed was the complete prostration of the crowd[a], and the expectation of the high priest[b], who was in great agony—
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''collapse''].'
+- timestamp: '2026-11-09T18:55:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Pitiful indeed was the complete prostration of the crowd[a], and the expectation of the high priest[b], who was in great agony—
+  to: 'It was a pitiful sight: the whole crowd prostrate in prayer and the high priest waiting in great anguish.'
+  rationale: 'The revision to ''prostration'' better fits the prayer scene than the first draft''s potentially misleading ''collapse.'' The apparent truncation is a line-break artifact: προσδο- continues as κίαν in the next supplied record, so no uncertainty note or unfinished ending is needed.'
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -119,3 +118,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/003/021.job-49007.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:15Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The crowd's united prostration and the high priest's anguished waiting form a deeply pitiable sight.
+  meaning_decisions:
+  - source_phrase: τὴν τοῦ πλήθους παμμιγῆ πρόπτωσιν
+    prior_rendering: the complete prostration of the crowd
+    new_rendering: the whole crowd prostrate in prayer
+    rationale: Expresses the crowd's all-inclusive participation and preserves the physical posture appropriate to the prayer scene.
+  - source_phrase: τήν τε τοῦ μεγάλως ἀγωνιῶντος ἀρχιερέως προσδο-
+    prior_rendering: the expectation of the high priest, who was in great agony—
+    new_rendering: the high priest waiting in great anguish
+    rationale: Renders anxious expectation intelligibly without specifying an outcome the author leaves unstated; the following supplied record completes προσδοκίαν.
+  footnote_kinds: {}
+  history_weighed: 'The revision to ''prostration'' better fits the prayer scene than the first draft''s potentially misleading ''collapse.'' The apparent truncation is a line-break artifact: προσδο- continues as κίαν in the next supplied record, so no uncertainty note or unfinished ending is needed.'

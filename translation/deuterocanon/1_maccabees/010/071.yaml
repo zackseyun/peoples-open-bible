@@ -30,15 +30,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Now then[a], if you trust in your forces, come down to us in the plain, and let us meet there[b], because with me is the strength of the cities.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'let us engage one another there'; the Greek expression can suggest direct confrontation in context.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the forces of the cities.' The Greek phrase may refer collectively to military support drawn from the cities.
-    reason: lexical_alternative
+  text: Now then, if you trust in your forces, come down to us on the plain and let us face one another in battle there, for I have the forces of the cities with me.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: πέποιθας
   chosen: you trust
@@ -113,14 +106,20 @@ revisions:
   from: Now then, if you trust in your forces, come down to us into the plain, and let us meet one another there, because with me there is the strength of the cities.
   to: Now then, if you trust in your forces, come down to us into the plain, and let us meet one another there, because with me there is the strength of the cities.
   rationale: Changed 'into the plain' to 'in the plain' for natural English, removed 'one another' as unnecessary with 'meet,' and adjusted word order to 'with me is' for a more formal register while preserving the Greek sense.
-
 - timestamp: '2026-05-18T02:59:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now then[a], if you trust in your forces, come down to us in the plain, and let us meet there[b], because with me is the strength of the cities.'
-  to: 'Now then[a], if you trust in your forces, come down to us in the plain, and let us meet there[b], because with me is the strength of the cities.'
+  from: Now then[a], if you trust in your forces, come down to us in the plain, and let us meet there[b], because with me is the strength of the cities.
+  to: Now then[a], if you trust in your forces, come down to us in the plain, and let us meet there[b], because with me is the strength of the cities.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''let us meet one another''].'
+- timestamp: '2026-11-09T18:53:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Now then[a], if you trust in your forces, come down to us in the plain, and let us meet there[b], because with me is the strength of the cities.
+  to: Now then, if you trust in your forces, come down to us on the plain and let us face one another in battle there, for I have the forces of the cities with me.
+  rationale: The earlier lexical rationale acknowledges direct confrontation and military support but leaves both largely implicit in the English. Those contextual meanings, previously relegated to alternatives, are now expressed in the main text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -140,3 +139,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/010/071.job-48579.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:38Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Apollonius challenges Jonathan to fight on the plain, boasting that the cities' forces support him.
+  meaning_decisions:
+  - source_phrase: συγκριθῶμεν ἑαυτοῖς ἐκεῖ
+    prior_rendering: let us meet there
+    new_rendering: let us face one another in battle there
+    rationale: This is a challenge to military confrontation, not an invitation to a meeting or negotiation.
+  - source_phrase: μετʼ ἐμοῦ ἐστιν δύναμις τῶν πόλεων
+    prior_rendering: with me is the strength of the cities
+    new_rendering: I have the forces of the cities with me
+    rationale: In this military setting the singular noun denotes collective armed strength supplied by the cities.
+  footnote_kinds: {}
+  history_weighed: The earlier lexical rationale acknowledges direct confrontation and military support but leaves both largely implicit in the English. Those contextual meanings, previously relegated to alternatives, are now expressed in the main text.

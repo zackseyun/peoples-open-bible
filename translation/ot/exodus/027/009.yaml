@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/עָשִׂ֕יתָ אֵ֖ת חֲצַ֣ר הַ/מִּשְׁכָּ֑ן לִ/פְאַ֣ת נֶֽגֶב תֵּ֠ימָנָ/ה קְלָעִ֨ים לֶ/חָצֵ֜ר שֵׁ֣שׁ מָשְׁזָ֗ר מֵאָ֤ה בָֽ/אַמָּה֙ אֹ֔רֶךְ לַ/פֵּאָ֖ה הָ/אֶחָֽת־׃
 translation:
-  text: And you shall make the court of the tabernacle. For the south side[a], southward, there shall be hangings for the court of finely twisted linen, a hundred cubits long for one side.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'curtains' for 'hangings.' The Hebrew term refers to fabric panels forming the court boundary.
-    reason: lexical_alternative
+  text: You shall make the courtyard of the tabernacle. For its south side, make hangings of fine linen made from twisted yarn, a hundred cubits long.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: חֲצַר
   chosen: court
@@ -88,14 +84,20 @@ revisions:
   from: And you shall make the court of the tabernacle. On the south side, southward, there shall be hangings for the court of finely twisted linen, a hundred cubits long for one side.
   to: And you shall make the court of the tabernacle. On the south side, southward, there shall be hangings for the court of finely twisted linen, a hundred cubits long for one side.
   rationale: Changed 'On the south side' to 'For the south side' to more directly reflect the construction introducing the specifications for that side. Retained the rest as accurate and natural.
-
 - timestamp: '2026-05-18T02:55:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And you shall make the court of the tabernacle. For the south side[a], southward, there shall be hangings for the court of finely twisted linen, a hundred cubits long for one side.'
-  to: 'And you shall make the court of the tabernacle. For the south side[a], southward, there shall be hangings for the court of finely twisted linen, a hundred cubits long for one side.'
+  from: And you shall make the court of the tabernacle. For the south side[a], southward, there shall be hangings for the court of finely twisted linen, a hundred cubits long for one side.
+  to: And you shall make the court of the tabernacle. For the south side[a], southward, there shall be hangings for the court of finely twisted linen, a hundred cubits long for one side.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''On the south side, southward''].'
+- timestamp: '2026-11-09T17:37:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And you shall make the court of the tabernacle. For the south side[a], southward, there shall be hangings for the court of finely twisted linen, a hundred cubits long for one side.
+  to: You shall make the courtyard of the tabernacle. For its south side, make hangings of fine linen made from twisted yarn, a hundred cubits long.
+  rationale: The automated history's competing 'On' and 'For' preferences concern source form rather than a substantive difference in meaning, and no maintainer ruling is recorded. I retain the established southern orientation, linen hangings, and measurement while making the specification natural and unambiguous in English.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -115,3 +117,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/027/009.job-62970.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:37:08Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Moses is to make the tabernacle courtyard with a hundred cubits of fine linen hangings along its south side.
+  meaning_decisions:
+  - source_phrase: חֲצַר הַמִּשְׁכָּן
+    prior_rendering: the court of the tabernacle
+    new_rendering: the courtyard of the tabernacle
+    rationale: '''Courtyard'' clearly identifies the enclosed outdoor area rather than leaving ''court'' open to unrelated English senses.'
+  - source_phrase: לִפְאַת נֶגֶב תֵּימָנָה ... לַפֵּאָה הָאֶחָת
+    prior_rendering: For the south side, southward ... for one side
+    new_rendering: For its south side
+    rationale: The repeated directional wording identifies one southern boundary; the English carries that orientation without an awkward repetition.
+  - source_phrase: שֵׁשׁ מָשְׁזָר
+    prior_rendering: finely twisted linen
+    new_rendering: fine linen made from twisted yarn
+    rationale: This distinguishes the quality of the linen from the twisting of the yarn used to make it.
+  footnote_kinds: {}
+  history_weighed: The automated history's competing 'On' and 'For' preferences concern source form rather than a substantive difference in meaning, and no maintainer ruling is recorded. I retain the established southern orientation, linen hangings, and measurement while making the specification natural and unambiguous in English.

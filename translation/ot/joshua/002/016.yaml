@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/תֹּ֤אמֶר לָ/הֶם֙ הָ/הָ֣רָ/ה לֵּ֔כוּ פֶּֽן יִפְגְּע֥וּ בָ/כֶ֖ם הָ/רֹדְפִ֑ים וְ/נַחְבֵּתֶ֨ם שָׁ֜מָּ/ה שְׁלֹ֣שֶׁת יָמִ֗ים עַ֚ד שׁ֣וֹב הָ/רֹֽדְפִ֔ים וְ/אַחַ֖ר תֵּלְכ֥וּ לְ/דַרְכְּ/כֶֽם־׃
 translation:
-  text: And she said to them[a], "Go to the hill country, lest the pursuers encounter you, and hide yourselves there three days, until the pursuers return[b]. Afterward you may go on your way."
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or "to the mountain"; the Hebrew can refer either to a specific mountain or to the surrounding hill country.
-    reason: lexical_alternative
-  - marker: b
-    text: Or "meet you" or "come upon you"; the verb can denote encountering someone, here with hostile intent because of the context of pursuit.
-    reason: lexical_alternative
+  text: She said to them, “Go to the hill country so that the pursuers do not come upon you. Hide there for three days, until the pursuers return. Then you may go on your way.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: הָהָרָה
   chosen: to the hill country
@@ -113,7 +106,13 @@ revisions:
   from: And she said to them, "Go to the hill country, lest the pursuers encounter you there, and hide yourselves there three days, until the pursuers return. Afterward you may go on your way."
   to: And she said to them, "Go to the hill country, lest the pursuers encounter you, and hide yourselves there three days, until the pursuers return. Afterward you may go on your way."
   rationale: Removed 'there' after 'encounter you' because it is not in the source; retained the rest as accurate and natural.
-
+- timestamp: '2026-11-09T18:07:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And she said to them[a], "Go to the hill country, lest the pursuers encounter you, and hide yourselves there three days, until the pursuers return[b]. Afterward you may go on your way."
+  to: She said to them, “Go to the hill country so that the pursuers do not come upon you. Hide there for three days, until the pursuers return. Then you may go on your way.”
+  rationale: The recorded revision correctly removed 'there' from the encounter clause, since that addition could imply that the hill country was where the pursuers would find them. The regional rendering 'hill country' and the subsequent instructions are retained; the earlier notes mainly supplied equivalent expressions.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -133,3 +132,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/joshua/002/016.job-68537.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:07:39Z'
+  change_level: refined
+  confidence: high
+  meaning: Rahab directs the men to avoid their pursuers by hiding in the hill country for three days before continuing their journey.
+  meaning_decisions:
+  - source_phrase: פֶּן יִפְגְּעוּ בָכֶם הָרֹדְפִים
+    prior_rendering: lest the pursuers encounter you
+    new_rendering: so that the pursuers do not come upon you
+    rationale: This expresses the precaution naturally while preserving an encounter with hostile pursuers rather than changing it to overtaking.
+  - source_phrase: וְנַחְבֵּתֶם שָׁמָּה שְׁלֹשֶׁת יָמִים
+    prior_rendering: and hide yourselves there three days
+    new_rendering: Hide there for three days
+    rationale: A separate imperative gives the hiding instruction its proper force, and 'for' naturally expresses the duration.
+  footnote_kinds: {}
+  history_weighed: The recorded revision correctly removed 'there' from the encounter clause, since that addition could imply that the hill country was where the pursuers would find them. The regional rendering 'hill country' and the subsequent instructions are retained; the earlier notes mainly supplied equivalent expressions.

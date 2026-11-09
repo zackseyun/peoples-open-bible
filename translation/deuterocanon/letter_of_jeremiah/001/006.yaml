@@ -14,12 +14,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: For my angel is with you, and he himself is seeking your lives[a].
-  philosophy: optimal-equivalence
+  text: For my angel is with you, and he himself[a] watches over your lives.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'your souls.' The Greek ψυχαί can mean 'souls,' 'lives,' or 'persons.'
-    reason: lexical_alternative
+    text: Or, “I myself”; the pronoun can be understood as referring to God rather than to the angel.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἄγγελός
   chosen: angel
@@ -92,13 +92,12 @@ revisions:
   from: For my angel is with you, and he himself is seeking your lives.
   to: For my angel is with you, and he himself is seeking your souls.
   rationale: Changed 'lives' to 'souls' to more directly reflect τὰς ψυχὰς and preserve the formal register; retained the rest as accurate and natural.
-
 - timestamp: '2026-05-18T03:09:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For my angel is with you[a], and he himself is seeking your souls.'
-  to: 'For my angel is with you, and he himself is seeking your lives.'
+  from: For my angel is with you[a], and he himself is seeking your souls.
+  to: For my angel is with you, and he himself is seeking your lives.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''your lives''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -108,6 +107,13 @@ revisions:
   from: For my angel is with you, and he himself is seeking your lives.
   to: For my angel is with you, and he himself is seeking your lives[a].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('your lives') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:03:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For my angel is with you, and he himself is seeking your lives[a].
+  to: For my angel is with you, and he himself[a] watches over your lives.
+  rationale: The recorded revisions debated “lives” versus “souls,” while the lexical notes recognize protective concern as the verb’s contextual sense. I retain “lives” and express that concern directly, while noting the serious alternative understanding of the pronoun.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -127,3 +133,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/letter_of_jeremiah/001/006.job-50845.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:03:10Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: God reassures the exiles that his angel is with them and personally watches over their lives.
+  meaning_decisions:
+  - source_phrase: ἐκζητῶν τὰς ψυχὰς ὑμῶν
+    prior_rendering: is seeking your lives
+    new_rendering: watches over your lives
+    rationale: In this reassurance, seeking expresses protective concern; the current English can instead suggest pursuit with hostile intent.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The recorded revisions debated “lives” versus “souls,” while the lexical notes recognize protective concern as the verb’s contextual sense. I retain “lives” and express that concern directly, while noting the serious alternative understanding of the pronoun.

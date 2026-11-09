@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וַ/יַּקְהֵ֣ל דָּוִ֣יד אֶת כָּל שָׂרֵ֣י יִשְׂרָאֵ֡ל שָׂרֵ֣י הַ/שְּׁבָטִ֣ים וְ/שָׂרֵ֣י הַ/מַּחְלְק֣וֹת הַ/מְשָׁרְתִ֪ים אֶת הַ/מֶּ֟לֶךְ וְ/שָׂרֵ֣י הָ/אֲלָפִ֣ים וְ/שָׂרֵ֣י הַ/מֵּא֡וֹת וְ/שָׂרֵ֣י כָל רְכוּשׁ וּ/מִקְנֶה֩ לַ/מֶּ֨לֶךְ וּ/לְ/בָנָ֜י/ו עִם הַ/סָּרִיסִ֧ים וְ/הַ/גִּבּוֹרִ֛ים וּֽ/לְ/כָל גִּבּ֥וֹר חָ֖יִל אֶל יְרוּשָׁלִָֽם־־־־־׀־־־׃
 translation:
-  text: 'Then David assembled at Jerusalem all the leaders of Israel: the leaders of the tribes[a], the leaders of the divisions that served the king, the commanders of thousands and of hundreds, and the leaders over all the property and livestock belonging to the king and to his sons, together with the officials, the mighty men, and every mighty man of valor.'
-  philosophy: optimal-equivalence
+  text: 'Then David assembled all the leaders of Israel in Jerusalem: the tribal leaders, the leaders of the divisions that served the king, the commanders of thousands and hundreds, and those in charge of all the property and livestock belonging to the king and his sons, together with the court officials[a], the mighty warriors, and all the valiant fighting men.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'eunuchs'; the Hebrew term can refer either to literal eunuchs or more generally to royal court officials.
-    reason: lexical_alternative
+    text: Or, “eunuchs”; the Hebrew term can also refer more generally to royal court officials.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וַיַּקְהֵל
   chosen: assembled
@@ -123,7 +123,6 @@ revisions:
   from: 'Then David assembled at Jerusalem all the leaders of Israel: the leaders of the tribes, the leaders of the divisions that served the king, the commanders of thousands and of hundreds, and the leaders over all the property and livestock belonging to the king and to his sons, together with the court officials, the mighty men, and every mighty man of valor.'
   to: 'Then David assembled at Jerusalem all the leaders of Israel: the leaders of the tribes, the leaders of the divisions that served the king, the commanders of thousands and of hundreds, and the leaders over all the property and livestock belonging to the king and to his sons, together with the court officials, the mighty men, and every mighty man of valor.'
   rationale: Changed 'court officials' to 'officials' for closer lexical accuracy to the Hebrew 'sarisim' without adding interpretation. Otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:57:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -131,6 +130,13 @@ revisions:
   from: 'Then David assembled at Jerusalem all the leaders of Israel: the leaders of the tribes[a], the leaders of the divisions that served the king, the commanders of thousands and of hundreds, and the leaders over all the property and livestock belonging to the king and to his sons, together with the officials, the mighty men, and every mighty man of valor.'
   to: 'Then David assembled at Jerusalem all the leaders of Israel: the leaders of the tribes[a], the leaders of the divisions that served the king, the commanders of thousands and of hundreds, and the leaders over all the property and livestock belonging to the king and to his sons, together with the officials, the mighty men, and every mighty man of valor.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the court officials''].'
+- timestamp: '2026-11-09T17:21:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Then David assembled at Jerusalem all the leaders of Israel: the leaders of the tribes[a], the leaders of the divisions that served the king, the commanders of thousands and of hundreds, and the leaders over all the property and livestock belonging to the king and to his sons, together with the officials, the mighty men, and every mighty man of valor.'
+  to: 'Then David assembled all the leaders of Israel in Jerusalem: the tribal leaders, the leaders of the divisions that served the king, the commanders of thousands and hundreds, and those in charge of all the property and livestock belonging to the king and his sons, together with the court officials[a], the mighty warriors, and all the valiant fighting men.'
+  rationale: The first draft and lexical notes support “court officials,” whereas the automated discussion favored a less specific term for source-transparency. I retain the administrative distinctions and make the martial sense of the closing titles clearer.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -150,3 +156,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/1_chronicles/028/001.job-44821.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:21:03Z'
+  change_level: refined
+  confidence: high
+  meaning: David assembled Israel’s tribal, military, administrative, and court leaders in Jerusalem.
+  meaning_decisions:
+  - source_phrase: וְשָׂרֵי כָל רְכוּשׁ וּמִקְנֶה
+    prior_rendering: and the leaders over all the property and livestock
+    new_rendering: and those in charge of all the property and livestock
+    rationale: These officials administered royal possessions; the new wording identifies their responsibility more naturally.
+  - source_phrase: הַסָּרִיסִים
+    prior_rendering: the officials
+    new_rendering: the court officials[a]
+    rationale: The royal setting identifies their court function, while the footnote preserves the possible sense of eunuchs.
+  - source_phrase: וְהַגִּבּוֹרִים וּלְכָל גִּבּוֹר חָיִל
+    prior_rendering: the mighty men, and every mighty man of valor
+    new_rendering: the mighty warriors, and all the valiant fighting men
+    rationale: The military sense is made explicit without losing the distinction between the two listed groups.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and lexical notes support “court officials,” whereas the automated discussion favored a less specific term for source-transparency. I retain the administrative distinctions and make the martial sense of the closing titles clearer.

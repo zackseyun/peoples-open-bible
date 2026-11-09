@@ -22,12 +22,12 @@ source:
     note: MT parallel is APPROXIMATE -- 1 Esdras sometimes expands, conflates, or reorders the Hebrew. Use the MT hebrew as a sanity check on proper names and phrasing; the Greek remains the primary source text.
     reference: ''
 translation:
-  text: And he said to the Levites[a], the holy servants of Israel, “Sanctify yourselves to the Lord in the place of the holy ark of the Lord, in the house that Solomon son of David the king built.”
-  philosophy: optimal-equivalence
+  text: He said to the Levites, Israel’s holy servants, “Sanctify yourselves[a] for the Lord where the Lord’s holy ark is kept, in the temple that King Solomon son of David built.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Greek reads, 'Sanctify them for the Lord,' with an unclear referent for 'them.' The Hebrew parallel instead reads more clearly, 'Put the holy ark in the house that Solomon son of David, king of Israel, built.'
-    reason: alternative_reading
+    text: Literally, “Sanctify them”; the referent of the Greek pronoun is uncertain.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: Λευείταις
   chosen: Levites
@@ -136,14 +136,20 @@ revisions:
   from: And he said to the Levites, the holy servants of Israel, “Sanctify them for the Lord in the place of the holy ark of the Lord, in the house that Solomon son of David the king built.”
   to: And he said to the Levites, the holy servants of Israel, “Sanctify them for the Lord in the place of the holy ark of the Lord, in the house that Solomon son of David the king built.”
   rationale: Changed “them” to “yourselves” to reflect the Greek αὐτούς as referring to the Levites themselves in this context; otherwise retained the draft wording.
-
 - timestamp: '2026-05-18T02:59:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he said to the Levites[a], the holy servants of Israel, “Sanctify yourselves to the Lord in the place of the holy ark of the Lord, in the house that Solomon son of David the king built.”'
-  to: 'And he said to the Levites[a], the holy servants of Israel, “Sanctify yourselves to the Lord in the place of the holy ark of the Lord, in the house that Solomon son of David the king built.”'
+  from: And he said to the Levites[a], the holy servants of Israel, “Sanctify yourselves to the Lord in the place of the holy ark of the Lord, in the house that Solomon son of David the king built.”
+  to: And he said to the Levites[a], the holy servants of Israel, “Sanctify yourselves to the Lord in the place of the holy ark of the Lord, in the house that Solomon son of David the king built.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for the Lord''].'
+- timestamp: '2026-11-09T18:49:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he said to the Levites[a], the holy servants of Israel, “Sanctify yourselves to the Lord in the place of the holy ark of the Lord, in the house that Solomon son of David the king built.”
+  to: He said to the Levites, Israel’s holy servants, “Sanctify yourselves[a] for the Lord where the Lord’s holy ark is kept, in the temple that King Solomon son of David built.
+  rationale: I retain the current contextual reading 'yourselves,' while preserving the first draft’s genuine pronoun difficulty in a note. The differing Chronicles wording does not justify replacing the supplied Greek with an instruction to move the ark.
 cross_check:
   status: needs_review
   agreement: 0.7
@@ -163,3 +169,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/001/003.job-47458.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:49:27Z'
+  change_level: refined
+  confidence: medium
+  meaning: Josiah addresses Israel’s dedicated Levites and calls for sanctification to the Lord at the holy ark’s location in Solomon’s temple.
+  meaning_decisions:
+  - source_phrase: ἐν τῇ θέσει τῆς ἁγίας κιβωτοῦ τοῦ κυρίου
+    prior_rendering: in the place of the holy ark of the Lord
+    new_rendering: where the Lord’s holy ark is kept
+    rationale: Clarifies the locative sense and avoids suggesting that the Levites replace the ark.
+  - source_phrase: ἐν τῷ οἴκῳ ᾧ ᾠκοδόμησεν Σαλωμὼν ὁ τοῦ Δαυεὶδ ὁ βασιλεύς
+    prior_rendering: in the house that Solomon son of David the king built
+    new_rendering: in the temple that King Solomon son of David built
+    rationale: Identifies the building and attaches the royal title clearly to Solomon.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: I retain the current contextual reading 'yourselves,' while preserving the first draft’s genuine pronoun difficulty in a note. The differing Chronicles wording does not justify replacing the supplied Greek with an instruction to move the ark.

@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: לֹֽא תִזְבַּ֥ח עַל חָמֵ֖ץ דַּם זִבְחִ֑/י וְ/לֹֽא יָלִ֥ין חֵֽלֶב חַגִּ֖/י עַד בֹּֽקֶר־־־־־־׃
 translation:
-  text: You shall not sacrifice the blood of my sacrifice with anything leavened[b][a], and the fat of my feast shall not remain until morning.
-  philosophy: optimal-equivalence
+  text: You shall not offer the blood of my sacrifice with anything leavened, nor leave the fat of my festival sacrifice[a] until morning.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'with leaven' / 'upon leaven.' The Hebrew preposition is literally 'upon,' but in this sacrificial context it likely means the sacrifice must not be offered in association with anything leavened.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'festival' for 'feast.' The Hebrew term refers to a sacred festival celebration.
+    text: Literally, “the fat of my feast.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: תִזְבַּח
@@ -90,14 +87,20 @@ revisions:
   from: You shall not sacrifice the blood of my sacrifice with anything leavened, and the fat of my feast shall not remain overnight until morning.
   to: You shall not sacrifice the blood of my sacrifice with anything leavened, and the fat of my feast shall not remain overnight until morning.
   rationale: Removed 'overnight' because it is redundant with 'until morning' and not explicitly present in the source; otherwise retained the draft's accurate wording.
-
 - timestamp: '2026-05-18T02:55:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'You shall not sacrifice the blood of my sacrifice with anything leavened[b][a], and the fat of my feast shall not remain until morning.'
-  to: 'You shall not sacrifice the blood of my sacrifice with anything leavened[b][a], and the fat of my feast shall not remain until morning.'
+  from: You shall not sacrifice the blood of my sacrifice with anything leavened[b][a], and the fat of my feast shall not remain until morning.
+  to: You shall not sacrifice the blood of my sacrifice with anything leavened[b][a], and the fat of my feast shall not remain until morning.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''shall not remain overnight''].'
+- timestamp: '2026-11-09T17:35:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You shall not sacrifice the blood of my sacrifice with anything leavened[b][a], and the fat of my feast shall not remain until morning.
+  to: You shall not offer the blood of my sacrifice with anything leavened, nor leave the fat of my festival sacrifice[a] until morning.
+  rationale: I retain the current wording’s removal of redundant 'overnight,' as supported by the earlier review. The lexical discussion rightly preserves explicit blood and fat; I clarify their sacrificial setting rather than reproduce the compressed English.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -117,3 +120,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/023/018.job-62855.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:35:48Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Sacrificial blood must not be offered with anything leavened, and the fat of festival sacrifices must not be left until morning.
+  meaning_decisions:
+  - source_phrase: תִזְבַּח ... דַּם זִבְחִי
+    prior_rendering: sacrifice the blood of my sacrifice
+    new_rendering: offer the blood of my sacrifice
+    rationale: The blood is offered in the act of sacrifice; English 'sacrifice the blood' obscures that distinction.
+  - source_phrase: וְלֹא יָלִין חֵלֶב חַגִּי עַד בֹּקֶר
+    prior_rendering: the fat of my feast shall not remain until morning
+    new_rendering: nor leave the fat of my festival sacrifice until morning
+    rationale: The compressed reference is to sacrificial fat associated with the festival, not the fat of a meal in general.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: I retain the current wording’s removal of redundant 'overnight,' as supported by the earlier review. The lexical discussion rightly preserves explicit blood and fat; I clarify their sacrificial setting rather than reproduce the compressed English.

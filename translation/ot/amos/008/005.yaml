@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: לֵ/אמֹ֗ר מָתַ֞י יַעֲבֹ֤ר הַ/חֹ֨דֶשׁ֙ וְ/נַשְׁבִּ֣ירָה שֶּׁ֔בֶר וְ/הַ/שַּׁבָּ֖ת וְ/נִפְתְּחָה בָּ֑ר לְ/הַקְטִ֤ין אֵיפָה֙ וּ/לְ/הַגְדִּ֣יל שֶׁ֔קֶל וּ/לְ/עַוֵּ֖ת מֹאזְנֵ֥י מִרְמָֽה־׃
 translation:
-  text: saying[a], “When will the new moon be over, so that we may sell grain, and the Sabbath, so that we may offer wheat for sale—making the ephah small and the shekel large[b], and distorting deceitful scales?”
-  philosophy: optimal-equivalence
+  text: saying, “When will the new moon festival be over so we can sell grain, and the Sabbath so we can offer grain for sale? We will give short measures of grain, use heavier weights for payment[a], and cheat with rigged scales,
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the month' for 'the new moon'; here the context favors the festival observance rather than the calendar month.
+    text: 'Literally, “making the ephah small and the shekel large”: the grain measure was reduced, while the weight used to weigh out payment was increased.'
     reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'making the ephah small and the shekel large'—that is, giving less product and demanding more payment.
-    reason: cultural_note
 lexical_decisions:
 - source_word: הַחֹדֶשׁ
   chosen: the new moon
@@ -103,14 +100,20 @@ revisions:
   from: saying, “When will the new moon be over, so that we may sell grain, and the Sabbath, so that we may offer wheat for sale—making the ephah small and the shekel large, and distorting deceitful scales?”
   to: saying, “When will the new moon be over, so that we may sell grain, and the Sabbath, so that we may offer grain for sale—making the ephah small and the shekel large, and falsifying deceitful scales?”
   rationale: Changed 'wheat' to 'grain' for consistency with the Hebrew terms for selling grain, and revised 'distorting deceitful scales' to 'falsifying deceitful scales' for a more natural rendering of the verb meaning to twist/pervert balances.
-
 - timestamp: '2026-05-16T06:39:46Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'saying[a], “When will the new moon be over, so that we may sell grain, and the Sabbath, so that we may offer grain for sale—making the ephah small and the shekel large[b], and falsifying deceitful scales?”'
-  to: 'saying[a], “When will the new moon be over, so that we may sell grain, and the Sabbath, so that we may offer wheat for sale—making the ephah small and the shekel large[b], and distorting deceitful scales?”'
-  rationale: 'Azure substituted ''grain'' (drafter''s rejected alt for בָּר — drafter chose concrete commodity ''wheat'') and ''falsifying'' (rejected alt for עוה — drafter chose ''distorting'' to preserve physical-bending imagery).'
+  from: saying[a], “When will the new moon be over, so that we may sell grain, and the Sabbath, so that we may offer grain for sale—making the ephah small and the shekel large[b], and falsifying deceitful scales?”
+  to: saying[a], “When will the new moon be over, so that we may sell grain, and the Sabbath, so that we may offer wheat for sale—making the ephah small and the shekel large[b], and distorting deceitful scales?”
+  rationale: Azure substituted 'grain' (drafter's rejected alt for בָּר — drafter chose concrete commodity 'wheat') and 'falsifying' (rejected alt for עוה — drafter chose 'distorting' to preserve physical-bending imagery).
+- timestamp: '2026-11-09T17:30:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: saying[a], “When will the new moon be over, so that we may sell grain, and the Sabbath, so that we may offer wheat for sale—making the ephah small and the shekel large[b], and distorting deceitful scales?”
+  to: saying, “When will the new moon festival be over so we can sell grain, and the Sabbath so we can offer grain for sale? We will give short measures of grain, use heavier weights for payment[a], and cheat with rigged scales,
+  rationale: The automated review recognized the broader sense grain and the falsification of balances, while the later policy revert defended wheat and the physical-bending wording. With no maintainer ruling recorded, I follow the contextual meaning and make the measurement fraud understandable in the main text.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -130,3 +133,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/amos/008/005.job-61191.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:30:22Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The merchants impatiently wait for sacred observances to end so they can resume trading and cheat buyers by giving less grain and taking more payment.
+  meaning_decisions:
+  - source_phrase: הַחֹדֶשׁ
+    prior_rendering: the new moon
+    new_rendering: the new moon festival
+    rationale: The merchants resent a religious observance that interrupts trading, not the moon's appearance itself.
+  - source_phrase: וְנִפְתְּחָה בָּר
+    prior_rendering: so that we may offer wheat for sale
+    new_rendering: so we can offer grain for sale
+    rationale: The term denotes grain without establishing wheat as the particular crop.
+  - source_phrase: לְהַקְטִין אֵיפָה וּלְהַגְדִּיל שֶׁקֶל
+    prior_rendering: making the ephah small and the shekel large
+    new_rendering: We will give short measures of grain, use heavier weights for payment
+    rationale: 'The translation states the two complementary frauds: less grain is delivered, and more payment is taken by manipulating the weight standard.'
+  - source_phrase: וּלְעַוֵּת מֹאזְנֵי מִרְמָה
+    prior_rendering: and distorting deceitful scales
+    new_rendering: and cheat with rigged scales
+    rationale: The construction describes falsifying balances to defraud customers, not merely physically bending scales.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The automated review recognized the broader sense grain and the falsification of balances, while the later policy revert defended wheat and the physical-bending wording. With no maintainer ruling recorded, I follow the contextual meaning and make the measurement fraud understandable in the main text.

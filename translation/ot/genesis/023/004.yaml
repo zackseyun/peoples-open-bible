@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: גֵּר וְ/תוֹשָׁ֥ב אָנֹכִ֖י עִמָּ/כֶ֑ם תְּנ֨וּ לִ֤/י אֲחֻזַּת קֶ֨בֶר֙ עִמָּ/כֶ֔ם וְ/אֶקְבְּרָ֥ה מֵתִ֖/י מִ/לְּ/פָנָֽ/י־־׃
 translation:
-  text: I am a foreigner and a sojourner among you[a]. Give me a burial site among you[b], so that I may bury my dead out of my sight.
-  philosophy: optimal-equivalence
+  text: “I am a foreigner residing among you[a]. Grant me property here for a burial place, so that I may bury my dead wife out of my sight.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'a burial site'; the Hebrew phrase includes the sense of a property holding or possession, not merely a place to dig a grave.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'from before me.'
-    reason: lexical_alternative
+    text: A resident foreigner did not have the inherited land rights of the native community.
+    reason: cultural_note
 lexical_decisions:
 - source_word: גֵּר
   chosen: foreigner
@@ -92,14 +89,20 @@ revisions:
   from: I am a foreigner and a sojourner among you. Give me a burial property among you, so that I may bury my dead out of my sight.
   to: I am a foreigner and a sojourner among you. Give me a burial property among you, so that I may bury my dead out of my sight.
   rationale: Changed 'burial property' to 'burial site' for more natural English while preserving the sense of a burial holding/place. Kept the rest unchanged.
-
 - timestamp: '2026-05-17T08:21:07Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'I am a foreigner and a sojourner among you[a]. Give me a burial site among you[b], so that I may bury my dead out of my sight.'
-  to: 'I am a foreigner and a sojourner among you[a]. Give me a burial site among you[b], so that I may bury my dead out of my sight.'
+  from: I am a foreigner and a sojourner among you[a]. Give me a burial site among you[b], so that I may bury my dead out of my sight.
+  to: I am a foreigner and a sojourner among you[a]. Give me a burial site among you[b], so that I may bury my dead out of my sight.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a burial property''].'
+- timestamp: '2026-11-09T17:43:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: I am a foreigner and a sojourner among you[a]. Give me a burial site among you[b], so that I may bury my dead out of my sight.
+  to: “I am a foreigner residing among you[a]. Grant me property here for a burial place, so that I may bury my dead wife out of my sight.”
+  rationale: The history alternates between “burial site” and “burial property,” but the documented lexical reasoning rightly emphasizes a property holding. That legal meaning is now explicit in the main text, making the earlier property note unnecessary.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -121,3 +124,30 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/023/004.job-65027.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:43:50Z'
+  change_level: retranslated
+  confidence: high
+  meaning: As a foreign resident, Abraham asks the community to grant him property where he can bury his deceased wife.
+  meaning_decisions:
+  - source_phrase: גֵּר וְתוֹשָׁב אָנֹכִי עִמָּכֶם
+    prior_rendering: I am a foreigner and a sojourner among you
+    new_rendering: I am a foreigner residing among you
+    rationale: The paired terms identify Abraham as an outsider who lives among them, rather than merely a traveler passing through.
+  - source_phrase: תְּנוּ לִי אֲחֻזַּת קֶבֶר עִמָּכֶם
+    prior_rendering: Give me a burial site among you
+    new_rendering: Grant me property here for a burial place
+    rationale: Abraham requests a landholding for burial, not simply permission to use a grave; ownership is central to the negotiation.
+  - source_phrase: מֵתִי
+    prior_rendering: my dead
+    new_rendering: my dead wife
+    rationale: The singular expression refers to Sarah, and supplying “wife” makes that reference clear in English.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The history alternates between “burial site” and “burial property,” but the documented lexical reasoning rightly emphasizes a property holding. That legal meaning is now explicit in the main text, making the earlier property note unnecessary.

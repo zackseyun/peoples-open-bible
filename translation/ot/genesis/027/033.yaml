@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֶּחֱרַ֨ד יִצְחָ֣ק חֲרָדָה֮ גְּדֹלָ֣ה עַד מְאֹד֒ וַ/יֹּ֡אמֶר מִֽי אֵפ֡וֹא ה֣וּא הַ/צָּֽד צַיִד֩ וַ/יָּ֨בֵא לִ֜/י וָ/אֹכַ֥ל מִ/כֹּ֛ל בְּ/טֶ֥רֶם תָּב֖וֹא וָ/אֲבָרֲכֵ֑/הוּ גַּם בָּר֖וּךְ יִהְיֶֽה־־־־׃
 translation:
-  text: Then Isaac trembled with a very great trembling and said[a], “Who then was it who hunted game and brought it to me, and I ate from all of it before you came and blessed him? Yes, and he will be blessed.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “Indeed, he shall be blessed.”
-    reason: lexical_alternative
+  text: Then Isaac trembled violently and said, “Who, then, was it who hunted game and brought it to me? Before you came, I ate some of everything and blessed him. Indeed, he will remain blessed.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֶּחֱרַד
   chosen: trembled
@@ -100,14 +96,20 @@ revisions:
   from: Then Isaac trembled with a very great trembling and said, “Who then was it who hunted game and brought it to me, so that I ate from all of it before you came and blessed him? Yes, and he will be blessed.”
   to: Then Isaac trembled with a very great trembling and said, “Who then was it who hunted game and brought it to me, and I ate from all of it before you came and I blessed him? Yes, and he will be blessed.”
   rationale: Replaced 'so that' with 'and' to reflect the Hebrew sequence more directly, and changed 'blessed him' to 'I blessed him' to account explicitly for the first-person verb.
-
 - timestamp: '2026-05-15T22:10:53Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Isaac trembled with a very great trembling and said[a], “Who then was it who hunted game and brought it to me, and I ate from all of it before you came and I blessed him? Yes, and he will be blessed.”'
-  to: 'Then Isaac trembled with a very great trembling and said[a], “Who then was it who hunted game and brought it to me, and I ate from all of it before you came and blessed him? Yes, and he will be blessed.”'
-  rationale: 'Drafter chose ''and blessed him'' for וָאֲבָרֲכֵהוּ, explicitly documented that English can omit the explicit pronoun naturally when subject is clear from context. Azure added ''I'' on bare ''account explicitly for first-person verb'' grounds, overriding the drafter''s documented reasoning.'
+  from: Then Isaac trembled with a very great trembling and said[a], “Who then was it who hunted game and brought it to me, and I ate from all of it before you came and I blessed him? Yes, and he will be blessed.”
+  to: Then Isaac trembled with a very great trembling and said[a], “Who then was it who hunted game and brought it to me, and I ate from all of it before you came and blessed him? Yes, and he will be blessed.”
+  rationale: Drafter chose 'and blessed him' for וָאֲבָרֲכֵהוּ, explicitly documented that English can omit the explicit pronoun naturally when subject is clear from context. Azure added 'I' on bare 'account explicitly for first-person verb' grounds, overriding the drafter's documented reasoning.
+- timestamp: '2026-11-09T17:44:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Isaac trembled with a very great trembling and said[a], “Who then was it who hunted game and brought it to me, and I ate from all of it before you came and blessed him? Yes, and he will be blessed.”
+  to: Then Isaac trembled violently and said, “Who, then, was it who hunted game and brought it to me? Before you came, I ate some of everything and blessed him. Indeed, he will remain blessed.”
+  rationale: The revisions retained the sequence of eating and blessing, while the documented interpretation identified the closing declaration as confirmation that the blessing stands. I preserve both points while expressing the shock and affirmation more naturally.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -131,3 +133,29 @@ cross_check:
     major-issues: 3
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/027/033.job-65168.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:44:25Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Deeply shaken, Isaac realizes that he has blessed someone else and declares that the blessing will stand.
+  meaning_decisions:
+  - source_phrase: וַיֶּחֱרַד יִצְחָק חֲרָדָה גְּדֹלָה עַד מְאֹד
+    prior_rendering: Isaac trembled with a very great trembling
+    new_rendering: Isaac trembled violently
+    rationale: The repeated Hebrew root intensifies Isaac's physical and emotional shock; a strong English adverb conveys that force without an unnatural cognate repetition.
+  - source_phrase: וָאֹכַל מִכֹּל
+    prior_rendering: I ate from all of it
+    new_rendering: I ate some of everything
+    rationale: This preserves the partitive sense while making clear that Isaac ate from everything presented, not necessarily that he consumed it all.
+  - source_phrase: גַּם בָּרוּךְ יִהְיֶה
+    prior_rendering: Yes, and he will be blessed
+    new_rendering: Indeed, he will remain blessed
+    rationale: In context Isaac emphatically confirms that the blessing already pronounced remains effective.
+  footnote_kinds: {}
+  history_weighed: The revisions retained the sequence of eating and blessing, while the documented interpretation identified the closing declaration as confirmation that the blessing stands. I preserve both points while expressing the shock and affirmation more naturally.

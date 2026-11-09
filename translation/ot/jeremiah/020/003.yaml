@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וַֽ/יְהִי֙ מִֽ/מָּחֳרָ֔ת וַ/יֹּצֵ֥א פַשְׁח֛וּר אֶֽת יִרְמְיָ֖הוּ מִן הַ/מַּהְפָּ֑כֶת וַ/יֹּ֨אמֶר אֵלָ֜י/ו יִרְמְיָ֗הוּ לֹ֤א פַשְׁחוּר֙ קָרָ֤א יְהוָה֙ שְׁמֶ֔/ךָ כִּ֖י אִם מָג֥וֹר מִ/סָּבִֽיב־־־׃פ
 translation:
-  text: And it happened the next day[a], when Pashhur brought Jeremiah out of the stocks, that Jeremiah said to him, “Yahweh has not called your name Pashhur, but Terror on Every Side.”
-  philosophy: optimal-equivalence
+  text: The next day, when Pashhur released Jeremiah from the stocks, Jeremiah said to him, “Yahweh has not named you Pashhur, but Terror on Every Side[a].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew: ''Magor-missabib,'' a wordplay meaning ''terror on every side'' or ''terror all around.'''
+    text: Hebrew Magor-missabib, meaning “terror on every side.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: מִמָּחֳרָת
@@ -92,14 +92,20 @@ revisions:
   from: And it happened the next day, when Pashhur let Jeremiah out of the stocks, that Jeremiah said to him, “The LORD has not called your name Pashhur, but Terror on Every Side.”
   to: And it happened the next day, when Pashhur let Jeremiah out of the stocks, that Jeremiah said to him, “The LORD has not called your name Pashhur, but Terror on Every Side.”
   rationale: Changed 'let Jeremiah out of the stocks' to 'brought Jeremiah out of the stocks' for closer lexical correspondence to the source verb while preserving natural English.
-
 - timestamp: '2026-05-18T02:56:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And it happened the next day[a], when Pashhur brought Jeremiah out of the stocks, that Jeremiah said to him, “Yahweh has not called your name Pashhur, but Terror on Every Side.”'
-  to: 'And it happened the next day[a], when Pashhur brought Jeremiah out of the stocks, that Jeremiah said to him, “Yahweh has not called your name Pashhur, but Terror on Every Side.”'
+  from: And it happened the next day[a], when Pashhur brought Jeremiah out of the stocks, that Jeremiah said to him, “Yahweh has not called your name Pashhur, but Terror on Every Side.”
+  to: And it happened the next day[a], when Pashhur brought Jeremiah out of the stocks, that Jeremiah said to him, “Yahweh has not called your name Pashhur, but Terror on Every Side.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''when Pashhur let Jeremiah out of the stocks''].'
+- timestamp: '2026-11-09T17:56:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And it happened the next day[a], when Pashhur brought Jeremiah out of the stocks, that Jeremiah said to him, “Yahweh has not called your name Pashhur, but Terror on Every Side.”
+  to: The next day, when Pashhur released Jeremiah from the stocks, Jeremiah said to him, “Yahweh has not named you Pashhur, but Terror on Every Side[a].”
+  rationale: Earlier passes alternated between 'let out' and 'brought out,' while the lexical discussion also recognized 'released' as the sense of the causative verb. I preserve the established translated name and make the naming formula natural English.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -122,3 +128,30 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/020/003.job-67530.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:56:46Z'
+  change_level: refined
+  confidence: high
+  meaning: When Pashhur released him the next day, Jeremiah announced that Yahweh had given Pashhur a name signifying surrounding terror.
+  meaning_decisions:
+  - source_phrase: וַיְהִי מִמָּחֳרָת
+    prior_rendering: And it happened the next day
+    new_rendering: The next day
+    rationale: The Hebrew construction advances the narrative to the following day; it does not require a separate statement that something happened.
+  - source_phrase: וַיֹּצֵא פַשְׁחוּר אֶת יִרְמְיָהוּ מִן הַמַּהְפָּכֶת
+    prior_rendering: when Pashhur brought Jeremiah out of the stocks
+    new_rendering: when Pashhur released Jeremiah from the stocks
+    rationale: The causative verb describes release from restraint, not primarily movement from one location to another.
+  - source_phrase: לֹא פַשְׁחוּר קָרָא יְהוָה שְׁמֶךָ כִּי אִם מָגוֹר מִסָּבִיב
+    prior_rendering: Yahweh has not called your name Pashhur, but Terror on Every Side
+    new_rendering: Yahweh has not named you Pashhur, but Terror on Every Side
+    rationale: The idiom concerns divine naming, not calling out someone's existing name.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: Earlier passes alternated between 'let out' and 'brought out,' while the lexical discussion also recognized 'released' as the sense of the causative verb. I preserve the established translated name and make the naming formula natural English.

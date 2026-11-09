@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/אָֽמַרְתָּ֙ לְ/עַבְדְּ/ךָ֣ לְ/יַעֲקֹ֔ב מִנְחָ֥ה הִוא֙ שְׁלוּחָ֔ה לַֽ/אדֹנִ֖/י לְ/עֵשָׂ֑ו וְ/הִנֵּ֥ה גַם ה֖וּא אַחֲרֵֽי/נוּ־׃
 translation:
-  text: Then you shall say[a], ‘Your servant Jacob's gift is sent to my lord, to Esau; and look[b], he also is behind us.’
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Or ''present'' or ''tribute'' for ''gift'' (Hebrew: minḥah), a term used here for a conciliatory offering to Esau.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'he is coming after us.'
-    reason: lexical_alternative
+  text: then say, ‘They belong to your servant Jacob. They are a gift sent to my lord Esau. Look, Jacob himself is coming behind us.’”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְאָֽמַרְתָּ
   chosen: Then you shall say
@@ -92,14 +85,20 @@ revisions:
   from: Then you shall say, ‘Your servant Jacob’s gift is sent to my lord, to Esau; and look, he also is behind us.’
   to: Then you shall say, ‘It is a gift sent to my lord Esau from your servant Jacob; and look, he also is behind us.’
   rationale: 'Reordered the clause to reflect the Hebrew more naturally and accurately: the gift is identified first, then said to be sent to ''my lord Esau'' from ''your servant Jacob.'' Also removed the extra comma before ''to Esau'' and kept ''look'' for הִנֵּה.'
-
 - timestamp: '2026-05-15T22:10:53Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then you shall say[a], ‘It is a gift sent to my lord Esau from your servant Jacob; and look[b], he also is behind us.’'
-  to: 'Then you shall say[a], ‘Your servant Jacob''s gift is sent to my lord, to Esau; and look[b], he also is behind us.’'
-  rationale: 'Drafter chose the possessive ''Your servant Jacob''s gift'' to reflect Hebrew syntax genitively and preserve the humility formula. Drafter chose ''to my lord, to Esau'' with comma to preserve the apposition of לַאדֹנִי לְעֵשָׂו. Azure restructured to prepositional ''from your servant Jacob'' and stripped the appositive comma.'
+  from: Then you shall say[a], ‘It is a gift sent to my lord Esau from your servant Jacob; and look[b], he also is behind us.’
+  to: Then you shall say[a], ‘Your servant Jacob's gift is sent to my lord, to Esau; and look[b], he also is behind us.’
+  rationale: Drafter chose the possessive 'Your servant Jacob's gift' to reflect Hebrew syntax genitively and preserve the humility formula. Drafter chose 'to my lord, to Esau' with comma to preserve the apposition of לַאדֹנִי לְעֵשָׂו. Azure restructured to prepositional 'from your servant Jacob' and stripped the appositive comma.
+- timestamp: '2026-11-09T17:44:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then you shall say[a], ‘Your servant Jacob's gift is sent to my lord, to Esau; and look[b], he also is behind us.’
+  to: then say, ‘They belong to your servant Jacob. They are a gift sent to my lord Esau. Look, Jacob himself is coming behind us.’”
+  rationale: The earlier review improved the gift formula, while the later automated revert defended literal syntax; neither was a maintainer ruling. I preserve the deferential titles but make the ownership answer explicit because it responds directly to Esau’s question.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -123,3 +122,29 @@ cross_check:
     major-issues: 2
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/032/019.job-65323.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:44:47Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The servant is to identify the animals as Jacob’s property and gift to Esau and announce that Jacob himself is following.
+  meaning_decisions:
+  - source_phrase: לְעַבְדְּךָ לְיַעֲקֹב
+    prior_rendering: Your servant Jacob's gift
+    new_rendering: They belong to your servant Jacob.
+    rationale: The possessive construction answers Esau’s question about who owns the animals; making that answer explicit restores the dialogue’s progression.
+  - source_phrase: מִנְחָה הִוא שְׁלוּחָה לַאדֹנִי לְעֵשָׂו
+    prior_rendering: gift is sent to my lord, to Esau
+    new_rendering: They are a gift sent to my lord Esau.
+    rationale: The animals collectively constitute the gift, and “my lord Esau” naturally carries the respectful apposition without duplicating the preposition.
+  - source_phrase: וְהִנֵּה גַם הוּא אַחֲרֵינוּ
+    prior_rendering: and look, he also is behind us
+    new_rendering: Look, Jacob himself is coming behind us.
+    rationale: The announcement emphasizes that Jacob himself follows the gift; naming him and expressing the movement make the message clear.
+  footnote_kinds: {}
+  history_weighed: The earlier review improved the gift formula, while the later automated revert defended literal syntax; neither was a maintainer ruling. I preserve the deferential titles but make the ownership answer explicit because it responds directly to Esau’s question.

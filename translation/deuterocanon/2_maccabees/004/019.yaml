@@ -23,12 +23,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Jason the vile man sent Antiochians from Jerusalem[a] as envoys, carrying three hundred silver drachmas for the sacrifice to Heracles; but those who carried them requested that they not be used for sacrifice,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'as from Jerusalem,' possibly emphasizing that they were sent in a representative capacity from Jerusalem.
-    reason: lexical_alternative
+  text: The vile Jason sent envoys from Jerusalem who held Antiochian citizenship, carrying three hundred silver drachmas for the sacrifice to Heracles; but the bearers requested that the money not be used for sacrifice,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: μιερὸς
   chosen: the vile man
@@ -131,13 +127,12 @@ revisions:
   from: Jason the vile man sent Antiochians from Jerusalem as envoys, carrying three hundred silver drachmas for the sacrifice to Heracles; but those who carried them requested that they not be used for sacrifice,
   to: Jason the vile man sent Antiochian envoys from Jerusalem, carrying three hundred silver drachmas for the sacrifice to Heracles; but those who carried them requested that they not be used for sacrifice,
   rationale: Changed 'Antiochians from Jerusalem as envoys' to 'Antiochian envoys from Jerusalem' to better reflect the Greek word order and syntax. Kept the rest substantially the same.
-
 - timestamp: '2026-05-18T03:10:02Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Jason the vile man sent Antiochian envoys from Jerusalem[a], carrying three hundred silver drachmas for the sacrifice to Heracles; but those who carried them requested that they not be used for sacrifice,'
-  to: 'Jason the vile man sent Antiochians from Jerusalem as envoys, carrying three hundred silver drachmas for the sacrifice to Heracles; but those who carried them requested that they not be used for sacrifice,'
+  from: Jason the vile man sent Antiochian envoys from Jerusalem[a], carrying three hundred silver drachmas for the sacrifice to Heracles; but those who carried them requested that they not be used for sacrifice,
+  to: Jason the vile man sent Antiochians from Jerusalem as envoys, carrying three hundred silver drachmas for the sacrifice to Heracles; but those who carried them requested that they not be used for sacrifice,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Antiochians''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -147,6 +142,13 @@ revisions:
   from: Jason the vile man sent Antiochians from Jerusalem as envoys, carrying three hundred silver drachmas for the sacrifice to Heracles; but those who carried them requested that they not be used for sacrifice,
   to: Jason the vile man sent Antiochians from Jerusalem[a] as envoys, carrying three hundred silver drachmas for the sacrifice to Heracles; but those who carried them requested that they not be used for sacrifice,
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('from Jerusalem') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:55:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Jason the vile man sent Antiochians from Jerusalem[a] as envoys, carrying three hundred silver drachmas for the sacrifice to Heracles; but those who carried them requested that they not be used for sacrifice,
+  to: The vile Jason sent envoys from Jerusalem who held Antiochian citizenship, carrying three hundred silver drachmas for the sacrifice to Heracles; but the bearers requested that the money not be used for sacrifice,
+  rationale: The earlier revisions chiefly rearranged “Antiochians” and “envoys,” without resolving the civic meaning established in verse 9. I retain the narrator’s forceful condemnation of Jason and clarify the delegates’ citizenship rather than merely their word order.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -166,3 +168,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/004/019.job-49045.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:02Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jason sent Jerusalem’s Antiochian citizen-delegates with money for a sacrifice to Heracles, but the bearers requested that it not be used for sacrifice.
+  meaning_decisions:
+  - source_phrase: θεωροὺς ὡς ἀπʼ Ἱεροσολύμων Ἀντιοχέας
+    prior_rendering: Antiochians from Jerusalem as envoys
+    new_rendering: envoys from Jerusalem who held Antiochian citizenship
+    rationale: In light of verse 9, these are Jerusalem residents enrolled as Antiochian citizens, not simply visitors from Antioch; making their civic status explicit prevents that misunderstanding.
+  - source_phrase: ἃς καὶ ἠξίωσαν οἱ παρακομίζοντες μὴ χρησθαι εἰς θυσίαν
+    prior_rendering: but those who carried them requested that they not be used for sacrifice
+    new_rendering: but the bearers requested that the money not be used for sacrifice
+    rationale: Naming the money removes the distracting chain of plural pronouns without changing the request.
+  footnote_kinds: {}
+  history_weighed: The earlier revisions chiefly rearranged “Antiochians” and “envoys,” without resolving the civic meaning established in verse 9. I retain the narrator’s forceful condemnation of Jason and clarify the delegates’ citizenship rather than merely their word order.

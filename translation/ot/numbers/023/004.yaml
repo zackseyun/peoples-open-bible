@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּקָּ֥ר אֱלֹהִ֖ים אֶל בִּלְעָ֑ם וַ/יֹּ֣אמֶר אֵלָ֗י/ו אֶת שִׁבְעַ֤ת הַֽ/מִּזְבְּחֹת֙ עָרַ֔כְתִּי וָ/אַ֛עַל פָּ֥ר וָ/אַ֖יִל בַּ/מִּזְבֵּֽחַ־־׃
 translation:
-  text: And God met with Balaam[a], and he said to him, “I have arranged the seven altars and offered a bull and a ram on the altar.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'God encountered Balaam'; the Hebrew verb can denote an encounter and in some contexts carries a nuance of happening upon.
-    reason: lexical_alternative
+  text: God met with Balaam, and Balaam said to him, “I have prepared the seven altars and offered a bull and a ram on each altar.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּקָּר
   chosen: met with
@@ -100,14 +96,20 @@ revisions:
   from: And God met with Balaam, and he said to him, “I have arranged the seven altars and offered a bull and a ram on the altar.”
   to: And God met Balaam, and he said to him, “I have arranged the seven altars and offered a bull and a ram on each altar.”
   rationale: Changed 'met with Balaam' to 'met Balaam' for a more direct rendering, and added 'each' before 'altar' to reflect the distributive sense implied by the seven altars and the singular 'altar' in the final phrase.
-
 - timestamp: '2026-05-16T09:22:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And God met Balaam[a], and he said to him, “I have arranged the seven altars and offered a bull and a ram on each altar.”'
-  to: 'And God met with Balaam[a], and he said to him, “I have arranged the seven altars and offered a bull and a ram on the altar.”'
-  rationale: 'Restored drafter ''met with Balaam'' (וַיִּקָּר divine-encounter sense) and singular ''on the altar'' per Hebrew בַּמִּזְבֵּחַ without distributive expansion.'
+  from: And God met Balaam[a], and he said to him, “I have arranged the seven altars and offered a bull and a ram on each altar.”
+  to: And God met with Balaam[a], and he said to him, “I have arranged the seven altars and offered a bull and a ram on the altar.”
+  rationale: Restored drafter 'met with Balaam' (וַיִּקָּר divine-encounter sense) and singular 'on the altar' per Hebrew בַּמִּזְבֵּחַ without distributive expansion.
+- timestamp: '2026-11-09T18:31:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And God met with Balaam[a], and he said to him, “I have arranged the seven altars and offered a bull and a ram on the altar.”
+  to: God met with Balaam, and Balaam said to him, “I have prepared the seven altars and offered a bull and a ram on each altar.”
+  rationale: The review recognized the distributive sense of “each altar,” but an automated revert removed it to preserve the Hebrew singular; the passage’s meaning supports restoring it. I retain “met with,” while making the speaker explicit and expressing the altars’ readiness naturally.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -129,3 +131,29 @@ cross_check:
     major-issues: 1
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/023/004.job-40956.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:31:52Z'
+  change_level: refined
+  confidence: high
+  meaning: God meets Balaam, who reports that he has prepared the seven altars and offered a bull and a ram on each.
+  meaning_decisions:
+  - source_phrase: וַיֹּאמֶר אֵלָיו
+    prior_rendering: and he said to him
+    new_rendering: and Balaam said to him
+    rationale: The speaker is Balaam, although God is the preceding grammatical subject; naming Balaam prevents an English reader from assigning the speech to God.
+  - source_phrase: עָרַכְתִּי
+    prior_rendering: I have arranged
+    new_rendering: I have prepared
+    rationale: The report concerns making the altars ready for sacrifice, not merely their spatial arrangement.
+  - source_phrase: בַּמִּזְבֵּחַ
+    prior_rendering: on the altar
+    new_rendering: on each altar
+    rationale: The singular phrase distributes the offerings across the seven altars, as established by the ritual’s quantities.
+  footnote_kinds: {}
+  history_weighed: The review recognized the distributive sense of “each altar,” but an automated revert removed it to preserve the Hebrew singular; the passage’s meaning supports restoring it. I retain “met with,” while making the speaker explicit and expressing the altars’ readiness naturally.

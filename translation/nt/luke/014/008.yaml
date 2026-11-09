@@ -4,17 +4,11 @@ source:
   edition: SBLGNT
   text: Ὅταν κληθῇς ὑπό τινος εἰς γάμους, μὴ κατακλιθῇς εἰς τὴν πρωτοκλισίαν, μήποτε ἐντιμότερός σου ᾖ κεκλημένος ὑπ’ αὐτοῦ
 translation:
-  text: When you are invited by someone to a wedding feast[a], do not recline in the place of honor[c][b], lest someone more honored than you has been invited by him.
-  philosophy: optimal-equivalence
+  text: “When someone invites you to a wedding feast, do not take the place of honor[a], for the host may have invited someone more distinguished than you.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'to a wedding.' The Greek plural can refer to the wedding festivities, especially the banquet.
-    reason: lexical_alternative
-  - marker: b
-    text: That is, the most honored place at the table.
-    reason: cultural_note
-  - marker: c
-    text: Ancient formal meals commonly involved reclining rather than sitting upright.
+    text: Places at a banquet reflected social rank; guests commonly reclined on couches.
     reason: cultural_note
 lexical_decisions:
 - source_word: Ὅταν
@@ -108,13 +102,12 @@ revisions:
   from: When you are invited by someone to a wedding feast, do not recline in the place of honor, lest someone more honored than you has been invited by him.
   to: When you are invited by someone to a wedding feast, do not recline in the place of honor, lest someone more honored than you may have been invited by him.
   rationale: Changed 'has been invited' to 'may have been invited' to better reflect the subjunctive sense after 'lest.'
-
 - timestamp: '2026-05-18T03:10:38Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When you are invited by someone to a wedding feast[a], do not recline in the place of honor[c][b], lest someone more honored than you may have been invited by him.'
-  to: 'When you are invited by someone to a wedding feast, do not recline in the place of honor, lest someone more honored than you has been invited by him.'
+  from: When you are invited by someone to a wedding feast[a], do not recline in the place of honor[c][b], lest someone more honored than you may have been invited by him.
+  to: When you are invited by someone to a wedding feast, do not recline in the place of honor, lest someone more honored than you has been invited by him.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''has been invited''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -124,6 +117,13 @@ revisions:
   from: When you are invited by someone to a wedding feast, do not recline in the place of honor, lest someone more honored than you has been invited by him.
   to: When you are invited by someone to a wedding feast[a], do not recline in the place of honor[c][b], lest someone more honored than you has been invited by him.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('to a wedding feast') because the note's quoted alternative matches the lexical decision rendered there; [b] restored to the position it held before an earlier revision pass dropped it; [c] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:12:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When you are invited by someone to a wedding feast[a], do not recline in the place of honor[c][b], lest someone more honored than you has been invited by him.
+  to: “When someone invites you to a wedding feast, do not take the place of honor[a], for the host may have invited someone more distinguished than you.
+  rationale: The review's proposed 'may have been invited' correctly recognized the clause's uncertainty, despite the subsequent automated revert. I preserve that meaning-based gain and the established wedding-feast setting.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -146,3 +146,26 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/014/008.job-55705.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:14Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jesus warns guests not to claim the place of honor because someone of greater standing may also have been invited.
+  meaning_decisions:
+  - source_phrase: μὴ κατακλιθῇς εἰς τὴν πρωτοκλισίαν
+    prior_rendering: do not recline in the place of honor
+    new_rendering: do not take the place of honor
+    rationale: The command concerns claiming a prestigious dining place rather than bodily posture; the note preserves the ancient reclining setting.
+  - source_phrase: μήποτε ἐντιμότερός σου ᾖ κεκλημένος ὑπ’ αὐτοῦ
+    prior_rendering: lest someone more honored than you has been invited by him
+    new_rendering: for the host may have invited someone more distinguished than you
+    rationale: The clause warns of a possibility, not an established fact; naming the host also clarifies the agent of the invitation.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The review's proposed 'may have been invited' correctly recognized the clause's uncertainty, despite the subsequent automated revert. I preserve that meaning-based gain and the established wedding-feast setting.

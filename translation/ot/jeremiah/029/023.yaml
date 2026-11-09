@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: יַ֡עַן אֲשֶׁר֩ עָשׂ֨וּ נְבָלָ֜ה בְּ/יִשְׂרָאֵ֗ל וַ/יְנַֽאֲפוּ֙ אֶת נְשֵׁ֣י רֵֽעֵי/הֶ֔ם וַ/יְדַבְּר֨וּ דָבָ֤ר בִּ/שְׁמִ/י֙ שֶׁ֔קֶר אֲשֶׁ֖ר ל֣וֹא צִוִּיתִ֑/ם וְ/אָנֹכִ֛י הו ידע וָ/עֵ֖ד נְאֻם יְהוָֽה־־׃ס
 translation:
-  text: because they have committed an outrageous act in Israel[a], and have committed adultery with their neighbors’ wives, and have spoken in my name a lie that I did not command them. And I am the one who knows and is a witness[c][b], declares Yahweh.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'have done a disgraceful thing' or 'have committed folly.' The Hebrew נְבָלָה denotes a morally outrageous, disgraceful act.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'among Israel.'
-    reason: lexical_alternative
-  - marker: c
-    text: 'Or ''And I know, and I am witness.'' The Hebrew is emphatic: ''And I, I am he who knows and is witness.'''
-    reason: lexical_alternative
+  text: 'This is because they have committed an outrageous act among the people of Israel: they have committed adultery with their neighbors’ wives and spoken lies in my name that I did not command them to speak. I myself know what they have done and am a witness, declares Yahweh.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: יַעַן אֲשֶׁר
   chosen: because
@@ -120,14 +110,20 @@ revisions:
   from: because they have committed an outrageous act in Israel, and have committed adultery with their neighbors’ wives, and have spoken in my name a lie that I did not command them. And I am the one who knows and is a witness, declares the LORD.
   to: because they have committed a disgraceful act in Israel, and have committed adultery with their neighbors’ wives, and have spoken in my name a lie that I did not command them. And I am the one who knows and am a witness, declares the LORD.
   rationale: Changed 'outrageous act' to 'disgraceful act' for a more standard rendering of נְבָלָה, and adjusted 'is a witness' to 'am a witness' for grammatical agreement with 'I am the one who knows.'
-
 - timestamp: '2026-05-16T08:09:59Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'because they have committed a disgraceful act in Israel[a], and have committed adultery with their neighbors’ wives, and have spoken in my name a lie that I did not command them. And I am the one who knows and am a witness[c][b], declares Yahweh.'
-  to: 'because they have committed an outrageous act in Israel[a], and have committed adultery with their neighbors’ wives, and have spoken in my name a lie that I did not command them. And I am the one who knows and is a witness[c][b], declares Yahweh.'
-  rationale: 'Azure substituted ''disgraceful act'' (drafter''s rejected alt for נְבָלָה — drafter chose ''outrageous'' for moral shock) and ''am a witness'' (drafter chose ''is a witness'' for forensic third-person concord with head noun ''the one'').'
+  from: because they have committed a disgraceful act in Israel[a], and have committed adultery with their neighbors’ wives, and have spoken in my name a lie that I did not command them. And I am the one who knows and am a witness[c][b], declares Yahweh.
+  to: because they have committed an outrageous act in Israel[a], and have committed adultery with their neighbors’ wives, and have spoken in my name a lie that I did not command them. And I am the one who knows and is a witness[c][b], declares Yahweh.
+  rationale: Azure substituted 'disgraceful act' (drafter's rejected alt for נְבָלָה — drafter chose 'outrageous' for moral shock) and 'am a witness' (drafter chose 'is a witness' for forensic third-person concord with head noun 'the one').
+- timestamp: '2026-11-09T18:59:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: because they have committed an outrageous act in Israel[a], and have committed adultery with their neighbors’ wives, and have spoken in my name a lie that I did not command them. And I am the one who knows and is a witness[c][b], declares Yahweh.
+  to: 'This is because they have committed an outrageous act among the people of Israel: they have committed adultery with their neighbors’ wives and spoken lies in my name that I did not command them to speak. I myself know what they have done and am a witness, declares Yahweh.'
+  rationale: I retain 'outrageous act,' preserving the moral shock defended in the history rather than adopting the reverted 'disgraceful act.' The witness clause is reshaped for clarity while retaining the emphasis and forensic meaning recognized by both earlier passes.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -149,3 +145,29 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/029/023.job-67744.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:19Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Their punishment is deserved because they have committed adultery and falsely claimed divine authority, and Yahweh personally knows and witnesses their wrongdoing.
+  meaning_decisions:
+  - source_phrase: בישראל
+    prior_rendering: in Israel
+    new_rendering: among the people of Israel
+    rationale: The offenders are in Babylon, so Israel here identifies the community rather than locating their acts within the land.
+  - source_phrase: וידברו דבר בשמי שקר אשר לוא צויתים
+    prior_rendering: have spoken in my name a lie that I did not command them
+    new_rendering: spoken lies in my name that I did not command them to speak
+    rationale: Natural English word order and the supplied infinitive clarify that Yahweh never authorized their false message.
+  - source_phrase: ואנכי הוא ידע ועד
+    prior_rendering: And I am the one who knows and is a witness
+    new_rendering: I myself know what they have done and am a witness
+    rationale: The wording preserves emphatic divine knowledge and the forensic role of witness while making the understood object of that knowledge explicit.
+  footnote_kinds: {}
+  history_weighed: I retain 'outrageous act,' preserving the moral shock defended in the history rather than adopting the reverted 'disgraceful act.' The witness clause is reshaped for clarity while retaining the emphasis and forensic meaning recognized by both earlier passes.

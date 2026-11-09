@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: καίπερ ἐγὼ ἔχων πεποίθησιν καὶ ἐν σαρκί. Εἴ τις δοκεῖ ἄλλος πεποιθέναι ἐν σαρκί, ἐγὼ μᾶλλον·
 translation:
-  text: Though I myself have confidence even in the flesh. If anyone else thinks he has confidence in the flesh[a], I have more.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Or “confidence in human credentials” / “confidence in outward status.” Greek: “in the flesh.”'
-    reason: lexical_alternative
+  text: 'Yet I myself have grounds for confidence even in the flesh. If anyone else thinks he has grounds for confidence in the flesh, I have more:'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: καίπερ
   chosen: Although
@@ -98,11 +94,17 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Though I myself have confidence even in the flesh. If anyone else thinks he has confidence in the flesh[a], I have more.'
-  to: 'Though I myself have confidence even in the flesh. If anyone else thinks he has confidence in the flesh[a], I have more.'
+  from: Though I myself have confidence even in the flesh. If anyone else thinks he has confidence in the flesh[a], I have more.
+  to: Though I myself have confidence even in the flesh. If anyone else thinks he has confidence in the flesh[a], I have more.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Although''].'
+- timestamp: '2026-11-09T17:16:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Though I myself have confidence even in the flesh. If anyone else thinks he has confidence in the flesh[a], I have more.
+  to: 'Yet I myself have grounds for confidence even in the flesh. If anyone else thinks he has grounds for confidence in the flesh, I have more:'
+  rationale: Earlier review and revert notes focus on 'Though' versus 'Although,' not the more consequential meaning of confidence. The lexical record and Paul's list support grounds for reliance, so I make that explicit without implying he now relies on the flesh.
 status: revised
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -124,3 +126,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/philippians/003/004.job-57631.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:16:13Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Although Paul rejects reliance on human credentials, he possesses stronger grounds for such confidence than anyone who might challenge him.
+  meaning_decisions:
+  - source_phrase: καίπερ ἐγὼ ἔχων πεποίθησιν καὶ ἐν σαρκί
+    prior_rendering: Though I myself have confidence even in the flesh.
+    new_rendering: Yet I myself have grounds for confidence even in the flesh.
+    rationale: Paul possesses credentials on which he could rely, rather than exercising the confidence he has just rejected; 'yet' also expresses the concession without leaving a sentence fragment.
+  - source_phrase: Εἴ τις δοκεῖ ἄλλος πεποιθέναι ἐν σαρκί, ἐγὼ μᾶλλον
+    prior_rendering: If anyone else thinks he has confidence in the flesh, I have more.
+    new_rendering: 'If anyone else thinks he has grounds for confidence in the flesh, I have more:'
+    rationale: The comparison concerns grounds for reliance, as the ensuing list demonstrates; the colon introduces those credentials.
+  footnote_kinds: {}
+  history_weighed: Earlier review and revert notes focus on 'Though' versus 'Although,' not the more consequential meaning of confidence. The lexical record and Paul's list support grounds for reliance, so I make that explicit without implying he now relies on the flesh.

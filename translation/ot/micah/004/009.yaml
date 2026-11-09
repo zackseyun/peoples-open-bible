@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: עַתָּ֕ה לָ֥/מָּה תָרִ֖יעִי רֵ֑עַ הֲ/מֶ֣לֶךְ אֵֽין בָּ֗/ךְ אִֽם יוֹעֲצֵ/ךְ֙ אָבָ֔ד כִּֽי הֶחֱזִיקֵ֥/ךְ חִ֖יל כַּ/יּוֹלֵדָֽה־־־׃
 translation:
-  text: Why do you cry out so loudly? Is there no king in you? Has your counselor perished[c][b][a], that labor pains have seized you like a woman giving birth?
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'raise a loud shout' / 'cry aloud.' The Hebrew verb can denote a loud outcry or shout; here it likely expresses anguished crying.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'Is there no king in you?'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'have taken hold of you' or 'have gripped you.'
-    reason: lexical_alternative
+  text: Now why do you cry out so loudly? Do you have no king? Has your counselor perished, that labor pains have seized you like a woman giving birth?
+  philosophy: dynamic
 lexical_decisions:
 - source_word: תָרִיעִי
   chosen: cry out so loudly
@@ -24,7 +14,7 @@ lexical_decisions:
   - shout aloud
   - cry aloud
   lexicon: HALOT
-  rationale: "Hiphil of רוע/ריע can denote raising a loud cry or shout. In this context of distress, 'cry out so loudly' captures both the volume and lament-like force better than a neutral 'shout.' Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'Hiphil of רוע/ריע can denote raising a loud cry or shout. In this context of distress, ''cry out so loudly'' captures both the volume and lament-like force better than a neutral ''shout.'' Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: רֵעַ
   chosen: so loudly
   alternatives:
@@ -111,14 +101,13 @@ revisions:
   from: Now why do you cry out so loudly? Is there no king in you? Has your counselor perished, that labor pains have seized you like a woman giving birth?
   to: Now why do you cry out loudly? Is there no king in you? Has your counselor perished, that labor pains have seized you like a woman giving birth?
   rationale: Removed 'so' before 'loudly' for closer lexical fidelity; otherwise retained the draft.
-
 - timestamp: '2026-05-15T23:54:01Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now why do you cry out loudly? Is there no king in you? Has your counselor perished[c][b][a], that labor pains have seized you like a woman giving birth?'
-  to: 'Now why do you cry out so loudly? Is there no king in you? Has your counselor perished[c][b][a], that labor pains have seized you like a woman giving birth?'
-  rationale: 'Azure dropped ''so'' from drafter''s chosen ''cry out so loudly''. Drafter explicitly combined תָרִיעִי + רֵעַ into ''cry out so loudly'' with documented rationale that the adverb captures intensity.'
+  from: Now why do you cry out loudly? Is there no king in you? Has your counselor perished[c][b][a], that labor pains have seized you like a woman giving birth?
+  to: Now why do you cry out so loudly? Is there no king in you? Has your counselor perished[c][b][a], that labor pains have seized you like a woman giving birth?
+  rationale: Azure dropped 'so' from drafter's chosen 'cry out so loudly'. Drafter explicitly combined תָרִיעִי + רֵעַ into 'cry out so loudly' with documented rationale that the adverb captures intensity.
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
   reviewer_model: codex
@@ -126,6 +115,13 @@ revisions:
   from: Now why do you cry out so loudly? Is there no king in you? Has your counselor perished[c][b][a], that labor pains have seized you like a woman giving birth?
   to: Why do you cry out so loudly? Is there no king in you? Has your counselor perished[c][b][a], that labor pains have seized you like a woman giving birth?
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T18:24:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Why do you cry out so loudly? Is there no king in you? Has your counselor perished[c][b][a], that labor pains have seized you like a woman giving birth?
+  to: Now why do you cry out so loudly? Do you have no king? Has your counselor perished, that labor pains have seized you like a woman giving birth?
+  rationale: I retain the history's emphasis on the intensity of Zion's cry and its childbirth imagery. The automated cleanup removed “Now” on the mistaken premise that no explicit temporal word was present; the supplied Hebrew requires restoring it.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -145,3 +141,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/micah/004/009.job-40011.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:24:15Z'
+  change_level: refined
+  confidence: high
+  meaning: The prophet questions Zion's anguished cries by asking whether she has lost her king and counselor.
+  meaning_decisions:
+  - source_phrase: עַתָּה לָמָּה
+    prior_rendering: Why
+    new_rendering: Now why
+    rationale: The source explicitly contains “now,” which marks the transition from promised restoration to Zion's distress.
+  - source_phrase: הֲמֶלֶךְ אֵין בָּךְ
+    prior_rendering: Is there no king in you?
+    new_rendering: Do you have no king?
+    rationale: This naturally expresses the question about the personified city's leadership without the misleading suggestion of a king inside an individual woman.
+  footnote_kinds: {}
+  history_weighed: I retain the history's emphasis on the intensity of Zion's cry and its childbirth imagery. The automated cleanup removed “Now” on the mistaken premise that no explicit temporal word was present; the supplied Hebrew requires restoring it.

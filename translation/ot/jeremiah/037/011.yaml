@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/הָיָ֗ה בְּ/הֵֽעָלוֹת֙ חֵ֣יל הַ/כַּשְׂדִּ֔ים מֵ/עַ֖ל יְרֽוּשָׁלִָ֑ם מִ/פְּנֵ֖י חֵ֥יל פַּרְעֹֽה׃ס
 translation:
-  text: When the army of the Chaldeans had gone up from Jerusalem because of Pharaoh’s army,[a]
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'when the army of the Chaldeans went up from Jerusalem'; in context this refers to their lifting the siege and withdrawing because of Pharaoh’s army.
-    reason: lexical_alternative
+  text: When the Babylonian army had withdrawn from Jerusalem because of Pharaoh’s army,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְהָיָה
   chosen: '...'
@@ -18,7 +14,7 @@ lexical_decisions:
   - And it came to pass
   - Now ...
   lexicon: HALOT
-  rationale: "This narrative wayyiqtol introduces a new scene or development. In modern English, a simple discourse marker like 'Now' conveys the transition naturally without archaic formulae. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'This narrative wayyiqtol introduces a new scene or development. In modern English, a simple discourse marker like ''Now'' conveys the transition naturally without archaic formulae. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: בְּהֵעָלוֹת
   chosen: when ... had withdrawn
   alternatives:
@@ -82,7 +78,6 @@ revisions:
   from: Now when the army of the Chaldeans had withdrawn from Jerusalem because of Pharaoh’s army,
   to: Now when the army of the Chaldeans had gone up from Jerusalem because of Pharaoh’s army,
   rationale: Changed 'withdrawn' to 'gone up' to more directly reflect the Hebrew verb while preserving the sentence fragment structure.
-
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
   reviewer_model: codex
@@ -90,6 +85,13 @@ revisions:
   from: Now when the army of the Chaldeans had gone up from Jerusalem because of Pharaoh’s army,[a]
   to: When the army of the Chaldeans had gone up from Jerusalem because of Pharaoh’s army,[a]
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:58:43Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When the army of the Chaldeans had gone up from Jerusalem because of Pharaoh’s army,[a]
+  to: When the Babylonian army had withdrawn from Jerusalem because of Pharaoh’s army,
+  rationale: The first draft and lexical rationale correctly rendered the siege movement as withdrawal; the later automated review changed it solely to mirror the Hebrew verb. I restore the meaning-based rendering and preserve the dependent clause whose main action remains in verse 12.
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -109,3 +111,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/037/011.job-67950.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:58:43Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The following events took place when the Babylonian army had withdrawn from Jerusalem because of Pharaoh’s army.
+  meaning_decisions:
+  - source_phrase: חֵיל הַכַּשְׂדִּים
+    prior_rendering: the army of the Chaldeans
+    new_rendering: the Babylonian army
+    rationale: This consistently identifies the besieging force as Babylon’s army.
+  - source_phrase: בְּהֵעָלוֹת ... מֵעַל יְרוּשָׁלִָם
+    prior_rendering: had gone up from Jerusalem
+    new_rendering: had withdrawn from Jerusalem
+    rationale: The military idiom means withdrawing from the siege, not moving upward or traveling north.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale correctly rendered the siege movement as withdrawal; the later automated review changed it solely to mirror the Hebrew verb. I restore the meaning-based rendering and preserve the dependent clause whose main action remains in verse 12.

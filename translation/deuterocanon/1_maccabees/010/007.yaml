@@ -30,12 +30,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Jonathan came to Jerusalem[a], and read the letters in the hearing of all the people and those in the citadel.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more specifically, 'those in the Acra,' the fortified stronghold in Jerusalem.
-    reason: lexical_alternative
+  text: Jonathan came to Jerusalem and read the letters aloud to all the people and to those from the citadel.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἦλθεν
   chosen: came
@@ -109,14 +105,20 @@ revisions:
   from: And Jonathan came to Jerusalem, and read the letters in the hearing of all the people and those from the citadel.
   to: And Jonathan came to Jerusalem, and read the letters in the hearing of all the people and those from the citadel.
   rationale: Changed 'from the citadel' to 'in the citadel' to more naturally and accurately reflect τῶν ἐκ τῆς ἄκρας in context; retained the rest unchanged.
-
 - timestamp: '2026-05-18T02:59:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Jonathan came to Jerusalem[a], and read the letters in the hearing of all the people and those in the citadel.'
-  to: 'And Jonathan came to Jerusalem[a], and read the letters in the hearing of all the people and those in the citadel.'
+  from: And Jonathan came to Jerusalem[a], and read the letters in the hearing of all the people and those in the citadel.
+  to: And Jonathan came to Jerusalem[a], and read the letters in the hearing of all the people and those in the citadel.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''those from the citadel''].'
+- timestamp: '2026-11-09T18:52:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Jonathan came to Jerusalem[a], and read the letters in the hearing of all the people and those in the citadel.
+  to: Jonathan came to Jerusalem and read the letters aloud to all the people and to those from the citadel.
+  rationale: The history alternated between “from” and “in”; the supplied Greek and original lexical rationale favor “from.” The earlier note about the Acra is unnecessary once the citadel has been identified in verse 6.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -136,3 +138,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/010/007.job-48515.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:20Z'
+  change_level: refined
+  confidence: high
+  meaning: Jonathan publicly read Demetrius’s letters in Jerusalem to the people and those from the citadel.
+  meaning_decisions:
+  - source_phrase: ἀνέγνω ... εἰς τὰ ὦτα παντὸς τοῦ λαοῦ
+    prior_rendering: read the letters in the hearing of all the people
+    new_rendering: read the letters aloud to all the people
+    rationale: The hearing idiom describes public oral reading, which this wording conveys directly.
+  - source_phrase: τῶν ἐκ τῆς ἄκρας
+    prior_rendering: those in the citadel
+    new_rendering: those from the citadel
+    rationale: The Greek identifies people associated with or coming from the citadel, not necessarily listeners remaining inside it.
+  footnote_kinds: {}
+  history_weighed: The history alternated between “from” and “in”; the supplied Greek and original lexical rationale favor “from.” The earlier note about the Acra is unnecessary once the citadel has been identified in verse 6.

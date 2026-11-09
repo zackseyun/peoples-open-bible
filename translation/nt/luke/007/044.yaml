@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ στραφεὶς πρὸς τὴν γυναῖκα τῷ Σίμωνι ἔφη· Βλέπεις ταύτην τὴν γυναῖκα; εἰσῆλθόν σου εἰς τὴν οἰκίαν, ὕδωρ ⸀μοι ἐπὶ ⸀πόδας οὐκ ἔδωκας· αὕτη δὲ τοῖς δάκρυσιν ἔβρεξέν μου τοὺς πόδας καὶ ταῖς ⸀θριξὶν αὐτῆς ἐξέμαξεν.
 translation:
-  text: And turning toward the woman[a], he said to Simon, “Do you see this woman? I entered your house; you gave me no water for my feet, but she wet my feet with her tears and wiped them with her hair.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more formally, 'you gave me no water upon my feet.' The sense is the customary provision of water for foot washing.
-    reason: lexical_alternative
+  text: Turning toward the woman, he said to Simon, “Do you see this woman? I entered your house; you gave me no water to wash my feet, but she wet my feet with her tears and wiped them with her hair.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: στραφεὶς
   chosen: turning toward
@@ -101,14 +97,20 @@ revisions:
   from: And turning toward the woman, he said to Simon, “Do you see this woman? I entered your house; you gave me no water for my feet, but she has wet my feet with her tears and wiped them with her hair.”
   to: And turning toward the woman, he said to Simon, “Do you see this woman? I entered your house; you gave me no water for my feet, but she has wet my feet with her tears and wiped them with her hair.”
   rationale: Changed 'has wet' to 'wet' for better narrative tense consistency with the Greek aorists and the surrounding past narration. No other changes needed.
-
 - timestamp: '2026-05-18T03:00:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And turning toward the woman[a], he said to Simon, “Do you see this woman? I entered your house; you gave me no water for my feet, but she wet my feet with her tears and wiped them with her hair.”'
-  to: 'And turning toward the woman[a], he said to Simon, “Do you see this woman? I entered your house; you gave me no water for my feet, but she wet my feet with her tears and wiped them with her hair.”'
+  from: And turning toward the woman[a], he said to Simon, “Do you see this woman? I entered your house; you gave me no water for my feet, but she wet my feet with her tears and wiped them with her hair.”
+  to: And turning toward the woman[a], he said to Simon, “Do you see this woman? I entered your house; you gave me no water for my feet, but she wet my feet with her tears and wiped them with her hair.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''has wet my feet with her tears''].'
+- timestamp: '2026-11-09T17:12:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And turning toward the woman[a], he said to Simon, “Do you see this woman? I entered your house; you gave me no water for my feet, but she wet my feet with her tears and wiped them with her hair.”
+  to: Turning toward the woman, he said to Simon, “Do you see this woman? I entered your house; you gave me no water to wash my feet, but she wet my feet with her tears and wiped them with her hair.
+  rationale: The earlier note identifies the water’s purpose as foot washing, so I bring that point into the text rather than retaining a note. I keep the current past-tense wording for the woman’s actions; the conflicting automated tense comments supply no meaning-based reason to change it.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -131,3 +133,21 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/low_agreement_recheck/nt/luke/007/044.job-27714.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:23Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus directs Simon’s attention to the woman and contrasts Simon’s lack of foot-washing water with her tears and hair.
+  meaning_decisions:
+  - source_phrase: ὕδωρ μοι ἐπὶ πόδας οὐκ ἔδωκας
+    prior_rendering: you gave me no water for my feet
+    new_rendering: you gave me no water to wash my feet
+    rationale: The purpose of the water was understood by the first hearers; making that purpose explicit does not imply that Simon himself was expected to perform the washing.
+  footnote_kinds: {}
+  history_weighed: The earlier note identifies the water’s purpose as foot washing, so I bring that point into the text rather than retaining a note. I keep the current past-tense wording for the woman’s actions; the conflicting automated tense comments supply no meaning-based reason to change it.

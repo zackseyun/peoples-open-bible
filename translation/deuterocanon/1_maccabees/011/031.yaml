@@ -29,12 +29,15 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: We have also written to you a copy of the letter that Lasthenes wrote to our kinsman concerning you[a], so that you may see it.
-  philosophy: optimal-equivalence
+  text: We have also sent you a copy of the letter that Lasthenes wrote to our Kinsman[a] concerning you[b], so that you may read it.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'to our relative.' The Greek συγγενής can denote a blood relative, a kinsman, or an honored associate/compatriot depending on context.
-    reason: lexical_alternative
+    text: Kinsman could be an honorary designation at a royal court and need not indicate a blood relative.
+    reason: cultural_note
+  - marker: b
+    text: The letter in verses 32–37 suggests the intended sense may be “the letter we wrote to Lasthenes our Kinsman concerning you.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: τὸ ἀντίγραφον
   chosen: a copy
@@ -109,7 +112,6 @@ revision_pass:
   timestamp: '2026-04-23T15:31:51Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.8
@@ -129,3 +131,35 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/011/031.job-48628.json
+revisions:
+- timestamp: '2026-11-09T18:54:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: We have also written to you a copy of the letter that Lasthenes wrote to our kinsman concerning you[a], so that you may see it.
+  to: We have also sent you a copy of the letter that Lasthenes wrote to our Kinsman[a] concerning you[b], so that you may read it.
+  rationale: The earlier rendering follows the supplied Greek in making Lasthenes the writer, and I retain that reading rather than silently repairing it to match the following letter. The contextual difficulty is substantial enough to preserve the alternative understanding in a note.
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:54:10Z'
+  change_level: refined
+  confidence: medium
+  meaning: Demetrius provides the recipients with a copy of a letter concerning them so that they can read it.
+  meaning_decisions:
+  - source_phrase: γεγράφαμεν καὶ πρὸς ὑμᾶς
+    prior_rendering: We have also written to you a copy
+    new_rendering: We have also sent you a copy
+    rationale: In this letter, the completed act of writing the copy to the recipients means that the king is furnishing it to them.
+  - source_phrase: ὅπως ἰδῆτε
+    prior_rendering: so that you may see it
+    new_rendering: so that you may read it
+    rationale: Seeing the supplied document means examining its written contents.
+  footnote_kinds:
+    a: cultural_background
+    b: alternative_meaning
+  history_weighed: The earlier rendering follows the supplied Greek in making Lasthenes the writer, and I retain that reading rather than silently repairing it to match the following letter. The contextual difficulty is substantial enough to preserve the alternative understanding in a note.

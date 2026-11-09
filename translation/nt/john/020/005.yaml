@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ παρακύψας βλέπει κείμενα τὰ ὀθόνια, οὐ μέντοι εἰσῆλθεν.
 translation:
-  text: And stooping to look in[a], he sees the linen cloths lying there, yet he did not enter.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'he sees the linen cloths lying'; the Greek participle may be taken closely with 'linen cloths' without explicitly supplying 'there.'
-    reason: lexical_alternative
+  text: He stooped to look in and saw the linen cloths lying there, yet he did not enter.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: παρακύψας
   chosen: stooping to look in
@@ -77,14 +73,20 @@ revisions:
   from: And stooping to look in, he sees the linen cloths lying there, yet he did not go in.
   to: And stooping to look in, he sees the linen cloths lying there, yet he did not go in.
   rationale: Replaced 'go in' with 'enter' for a more formal register and closer correspondence to the Greek; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:59:36Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And stooping to look in[a], he sees the linen cloths lying there, yet he did not enter.'
-  to: 'And stooping to look in[a], he sees the linen cloths lying there, yet he did not enter.'
+  from: And stooping to look in[a], he sees the linen cloths lying there, yet he did not enter.
+  to: And stooping to look in[a], he sees the linen cloths lying there, yet he did not enter.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he did not go in''].'
+- timestamp: '2026-11-09T18:10:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And stooping to look in[a], he sees the linen cloths lying there, yet he did not enter.
+  to: He stooped to look in and saw the linen cloths lying there, yet he did not enter.
+  rationale: The history supports retaining the physical act of stooping and the distinction between looking and entering. I keep the current “enter”; the earlier footnote concerned only an optional English adverb and adds no meaningful alternative.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -104,3 +106,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/high_scrutiny/nt/john/020/005.job-7589.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:10:53Z'
+  change_level: refined
+  confidence: high
+  meaning: The other disciple looked into the tomb and saw the linen cloths, but did not enter.
+  meaning_decisions:
+  - source_phrase: καὶ παρακύψας βλέπει
+    prior_rendering: And stooping to look in, he sees
+    new_rendering: He stooped to look in and saw
+    rationale: Finite past-tense verbs make the action natural in English while preserving both the bodily movement and the act of looking inside.
+  footnote_kinds: {}
+  history_weighed: The history supports retaining the physical act of stooping and the distinction between looking and entering. I keep the current “enter”; the earlier footnote concerned only an optional English adverb and adds no meaningful alternative.

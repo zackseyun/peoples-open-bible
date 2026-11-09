@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: כִּֽי יִתֵּן֩ אִ֨ישׁ אֶל רֵעֵ֜/הוּ כֶּ֤סֶף אֽוֹ כֵלִים֙ לִ/שְׁמֹ֔ר וְ/גֻנַּ֖ב מִ/בֵּ֣ית הָ/אִ֑ישׁ אִם יִמָּצֵ֥א הַ/גַּנָּ֖ב יְשַׁלֵּ֥ם שְׁנָֽיִם־־־־׃
 translation:
-  text: If a man gives his neighbor money or goods to keep[a], and it is stolen from the man's house, if the thief is found[c][b], he shall pay double.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew 'silver'; here used in the sense of money.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'articles' or 'objects' for 'goods.'
-    reason: lexical_alternative
-  - marker: c
-    text: Literally 'he shall repay twofold.'
-    reason: lexical_alternative
+  text: If a man entrusts money or goods to his neighbor for safekeeping and the property is stolen from the neighbor’s house, the thief shall pay double if he is found.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: כִּי
   chosen: If
@@ -98,7 +88,6 @@ revision_pass:
   timestamp: '2026-04-23T10:31:58Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -118,3 +107,37 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/022/006.job-62817.json
+revisions:
+- timestamp: '2026-11-09T17:36:09Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If a man gives his neighbor money or goods to keep[a], and it is stolen from the man's house, if the thief is found[c][b], he shall pay double.
+  to: If a man entrusts money or goods to his neighbor for safekeeping and the property is stolen from the neighbor’s house, the thief shall pay double if he is found.
+  rationale: The earlier decisions already recognized entrusting property for safekeeping and identified the house as the custodian's. Those contextual meanings now shape the sentence directly; the established choices 'money,' 'goods,' and 'pay double' remain.
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:36:09Z'
+  change_level: retranslated
+  confidence: high
+  meaning: When property entrusted to a neighbor is stolen from that neighbor's house, the thief owes double repayment if found.
+  meaning_decisions:
+  - source_phrase: יִתֵּן אִישׁ אֶל רֵעֵהוּ כֶּסֶף אוֹ כֵלִים לִשְׁמֹר
+    prior_rendering: a man gives his neighbor money or goods to keep
+    new_rendering: a man entrusts money or goods to his neighbor for safekeeping
+    rationale: The transaction is custody, not a gift or transfer of ownership.
+  - source_phrase: וְגֻנַּב מִבֵּית הָאִישׁ
+    prior_rendering: it is stolen from the man's house
+    new_rendering: the property is stolen from the neighbor’s house
+    rationale: Explicit references identify both the stolen property and the custodian's house.
+  - source_phrase: אִם יִמָּצֵא הַגַּנָּב יְשַׁלֵּם שְׁנָיִם
+    prior_rendering: if the thief is found, he shall pay double
+    new_rendering: the thief shall pay double if he is found
+    rationale: Reordering the condition removes the nested 'if' structure and makes the responsible party explicit.
+  footnote_kinds: {}
+  history_weighed: The earlier decisions already recognized entrusting property for safekeeping and identified the house as the custodian's. Those contextual meanings now shape the sentence directly; the established choices 'money,' 'goods,' and 'pay double' remain.

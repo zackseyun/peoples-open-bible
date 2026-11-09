@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: לֹ֣א דֻכְּא֔וּ עַ֖ד הַ/יּ֣וֹם הַ/זֶּ֑ה וְ/לֹ֣א יָרְא֗וּ וְ/לֹֽא הָלְכ֤וּ בְ/תֽוֹרָתִ/י֙ וּ/בְ/חֻקֹּתַ֔/י אֲשֶׁר נָתַ֥תִּי לִ/פְנֵי/כֶ֖ם וְ/לִ/פְנֵ֥י אֲבוֹתֵי/כֶֽם־־׃ס
 translation:
-  text: They have not been humbled to this day[a], and they have not feared[b], and they have not walked in my law and in my statutes that I set before you and before your fathers.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'have not been crushed,' 'have not become contrite,' or interpretively, 'have not repented.'
-    reason: lexical_alternative
-  - marker: b
-    text: '''Your fathers'' refers to the earlier generations to whom the same law and statutes were given; alternatively, ''your ancestors.'''
-    reason: lexical_alternative
+  text: They have not been humbled to this day; they have not feared me or lived according to my law and my statutes, which I set before you and your fathers.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: דֻכְּאוּ
   chosen: have not been humbled
@@ -105,14 +98,20 @@ revisions:
   from: They have not been humbled to this day, and they have not feared, and they have not walked in my law and in my statutes that I set before you and before your fathers.
   to: They have not been humbled to this day, and they have not feared, and they have not walked in my law and in my statutes that I set before them and before their fathers.
   rationale: Changed 'you' and 'your fathers' to 'them' and 'their fathers' to match the third-person reference in context and the source wording more naturally in English; otherwise retained the draft.
-
 - timestamp: '2026-05-16T08:09:59Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'They have not been humbled to this day[a], and they have not feared[b], and they have not walked in my law and in my statutes that I set before them and before their fathers.'
-  to: 'They have not been humbled to this day[a], and they have not feared[b], and they have not walked in my law and in my statutes that I set before you and before your fathers.'
-  rationale: 'Azure changed 2mp suffixes לִפְנֵיכֶם / אֲבוֹתֵיכֶם (''before you / your fathers'') to 3p (''before them / their fathers''). Hebrew suffixes are unambiguously 2mp; Yahweh addresses Egyptian diaspora directly throughout Jeremiah 44.'
+  from: They have not been humbled to this day[a], and they have not feared[b], and they have not walked in my law and in my statutes that I set before them and before their fathers.
+  to: They have not been humbled to this day[a], and they have not feared[b], and they have not walked in my law and in my statutes that I set before you and before your fathers.
+  rationale: Azure changed 2mp suffixes לִפְנֵיכֶם / אֲבוֹתֵיכֶם ('before you / your fathers') to 3p ('before them / their fathers'). Hebrew suffixes are unambiguously 2mp; Yahweh addresses Egyptian diaspora directly throughout Jeremiah 44.
+- timestamp: '2026-11-09T17:59:59Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: They have not been humbled to this day[a], and they have not feared[b], and they have not walked in my law and in my statutes that I set before you and before your fathers.
+  to: They have not been humbled to this day; they have not feared me or lived according to my law and my statutes, which I set before you and your fathers.
+  rationale: I retain “humbled” rather than replacing it with the narrower implication “repented.” The later revert correctly restored the source’s second-person “you” and “your fathers”; that shift remains, rather than repeating the earlier review’s unsupported change to third person.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -132,3 +131,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/044/010.job-68071.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:59:59Z'
+  change_level: refined
+  confidence: high
+  meaning: The people remain unhumbled, without fear of Yahweh, and disobedient to the law and statutes he set before them and their fathers.
+  meaning_decisions:
+  - source_phrase: וְלֹא יָרְאוּ
+    prior_rendering: and they have not feared
+    new_rendering: they have not feared me
+    rationale: Supplies Yahweh as the contextually understood object of fear, avoiding an incomplete English expression while retaining the weight of fear rather than reducing it to respect.
+  - source_phrase: וְלֹא הָלְכוּ בְתוֹרָתִי וּבְחֻקֹּתַי
+    prior_rendering: and they have not walked in my law and in my statutes
+    new_rendering: or lived according to my law and my statutes
+    rationale: Renders the conduct idiom as a failure to order their lives by Yahweh’s law, not merely a failure to perform isolated commands.
+  footnote_kinds: {}
+  history_weighed: I retain “humbled” rather than replacing it with the narrower implication “repented.” The later revert correctly restored the source’s second-person “you” and “your fathers”; that shift remains, rather than repeating the earlier review’s unsupported change to third person.

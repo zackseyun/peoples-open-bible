@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יְהִ֛י בַּ/יּ֥וֹם הַ/שֵּׁנִ֖י לְ/הָמִ֣ית אֶת גְּדַלְיָ֑הוּ וְ/אִ֖ישׁ לֹ֥א יָדָֽע־׃
 translation:
-  text: And it happened on the second day after he had killed Gedaliah[a], when no man yet knew it,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Hebrew: ''and no man knew.'' The object (''it,'' referring to Gedaliah''s killing) is implied in the Hebrew and supplied in English for clarity.'
-    reason: lexical_alternative
+  text: The day after Ishmael killed Gedaliah, the news had not yet spread.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיְהִי
   chosen: And it happened
@@ -71,14 +67,20 @@ revisions:
   from: And it happened on the second day after he had killed Gedaliah, when no man yet knew it,
   to: And it happened on the second day after he had killed Gedaliah, and no man knew it,
   rationale: Removed 'yet' for closer lexical accuracy, and replaced 'when' with 'and' to reflect the Hebrew coordination more directly while keeping natural English.
-
 - timestamp: '2026-05-16T07:39:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And it happened on the second day after he had killed Gedaliah[a], and no man knew it,'
-  to: 'And it happened on the second day after he had killed Gedaliah[a], when no man yet knew it,'
-  rationale: 'Azure substituted ''and no man'' (drafter''s explicit rejected_alternative for וְאִישׁ — drafter chose ''when no man'' as idiomatic) and dropped ''yet'' (drafter''s documented stative sense ''ongoing state that the news had not become known'').'
+  from: And it happened on the second day after he had killed Gedaliah[a], and no man knew it,
+  to: And it happened on the second day after he had killed Gedaliah[a], when no man yet knew it,
+  rationale: Azure substituted 'and no man' (drafter's explicit rejected_alternative for וְאִישׁ — drafter chose 'when no man' as idiomatic) and dropped 'yet' (drafter's documented stative sense 'ongoing state that the news had not become known').
+- timestamp: '2026-11-09T19:00:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And it happened on the second day after he had killed Gedaliah[a], when no man yet knew it,
+  to: The day after Ishmael killed Gedaliah, the news had not yet spread.
+  rationale: The earlier rationale rightly recognized continuing secrecy, so the sense conveyed by “yet” remains despite the intervening review. I depart from its formal “second day” wording because English “second day after” can imply a later date than the Hebrew day-counting indicates.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -98,3 +100,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/041/004.job-68022.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:00:04Z'
+  change_level: retranslated
+  confidence: high
+  meaning: On the day after Gedaliah’s murder, word of what had happened had not yet spread.
+  meaning_decisions:
+  - source_phrase: וַיְהִי בַּיּוֹם הַשֵּׁנִי לְהָמִית אֶת גְּדַלְיָהוּ
+    prior_rendering: And it happened on the second day after he had killed Gedaliah
+    new_rendering: The day after Ishmael killed Gedaliah
+    rationale: The day of the killing is counted as the first day, making the second day the following day; the prior English can suggest a two-day interval.
+  - source_phrase: וְאִישׁ לֹא יָדָע
+    prior_rendering: when no man yet knew it
+    new_rendering: the news had not yet spread
+    rationale: The statement concerns the murder remaining unknown beyond those involved, explaining why the travelers could be deceived; it is not a claim that even the killers knew nothing.
+  footnote_kinds: {}
+  history_weighed: The earlier rationale rightly recognized continuing secrecy, so the sense conveyed by “yet” remains despite the intervening review. I depart from its formal “second day” wording because English “second day after” can imply a later date than the Hebrew day-counting indicates.

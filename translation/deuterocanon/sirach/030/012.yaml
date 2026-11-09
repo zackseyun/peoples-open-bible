@@ -28,15 +28,15 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 30:12
 translation:
-  text: Bend his neck in his youth[a], and break his loins while he is still small[b], lest he become stubborn and bring you bitterness of soul.
-  philosophy: optimal-equivalence
+  text: Bend his head down while he is young, and beat his sides while he is still small[a], lest he grow stubborn[b] and rebel against you, bringing you bitterness of soul.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew reads 'break his loins,' while the Greek parallel reads 'crush his sides/ribs.' The main text follows the extant Hebrew witness, with the Greek used to clarify the disciplinary sense where the Hebrew line is difficult.
-    reason: textual_variant
+    text: Literally, “split his loins”; the Greek has “crush his sides.” The wording depicts severe corporal discipline.
+    reason: lexical_alternative
   - marker: b
-    text: The clause rendered 'lest he become stubborn' reflects a difficult Hebrew reading in the Cairo Geniza text; the Greek parallel more clearly supports the sense 'lest he become hardened.'
-    reason: alternative_reading
+    text: The Hebrew clause is difficult; the Greek supports “become hardened.”
+    reason: textual_variant
 lexical_decisions:
 - source_word: כוף
   chosen: Bend
@@ -134,14 +134,20 @@ revisions:
   from: Bend his neck in his youth, and break his loins while he is still small, lest he become stubborn and rebel against you, and bring you bitterness of soul.
   to: Bend his neck in his youth, and break his loins while he is still small, lest he become stubborn and rebel against you, and bring you bitterness of soul.
   rationale: Removed 'and rebel against you' because it is not represented in the Hebrew. Kept the rest essentially unchanged as a formal rendering of the source.
-
 - timestamp: '2026-05-18T02:58:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Bend his neck in his youth[a], and break his loins while he is still small[b], lest he become stubborn and bring you bitterness of soul.'
-  to: 'Bend his neck in his youth[a], and break his loins while he is still small[b], lest he become stubborn and bring you bitterness of soul.'
+  from: Bend his neck in his youth[a], and break his loins while he is still small[b], lest he become stubborn and bring you bitterness of soul.
+  to: Bend his neck in his youth[a], and break his loins while he is still small[b], lest he become stubborn and bring you bitterness of soul.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and rebel against you''].'
+- timestamp: '2026-11-09T19:07:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Bend his neck in his youth[a], and break his loins while he is still small[b], lest he become stubborn and bring you bitterness of soul.
+  to: Bend his head down while he is young, and beat his sides while he is still small[a], lest he grow stubborn[b] and rebel against you, bringing you bitterness of soul.
+  rationale: The first draft included rebellion, and the lexical record correctly identifies its Hebrew basis; the later rationale for removing it is contradicted by the supplied source. I restore that content and retain concrete, severe disciplinary imagery, while making its action intelligible in English.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -161,3 +167,31 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/030/012.job-51790.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:50Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The father is urged to impose severe physical discipline early so that his son does not become stubborn, rebel, and cause deep distress.
+  meaning_decisions:
+  - source_phrase: כוף ראשו בנערותו
+    prior_rendering: Bend his neck in his youth
+    new_rendering: Bend his head down while he is young
+    rationale: The Hebrew names his head; the revised wording preserves the bodily image of bringing him into submission without substituting another body part.
+  - source_phrase: ובקע מתניו כשהוא קטן
+    prior_rendering: and break his loins while he is still small
+    new_rendering: and beat his sides while he is still small
+    rationale: The disciplinary context and Greek parallel support severe beating; this conveys the bodily force without making the expression sound like a technical instruction to fracture bones. The stronger literal wording remains in a note.
+  - source_phrase: ומרה בך
+    prior_rendering: not represented in the current text
+    new_rendering: and rebel against you
+    rationale: This clause is present in the supplied Hebrew and supported by the Greek, so it must not be omitted.
+  footnote_kinds:
+    a: literal_wording
+    b: textual_variant
+  history_weighed: The first draft included rebellion, and the lexical record correctly identifies its Hebrew basis; the later rationale for removing it is contradicted by the supplied source. I restore that content and retain concrete, severe disciplinary imagery, while making its action intelligible in English.

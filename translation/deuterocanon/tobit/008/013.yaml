@@ -16,12 +16,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: And the maidservant entered[a], opening the door,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the servant girl entered, having opened the door.' The Greek participle ἀνοίξασα expresses action preceding the main verb.
-    reason: lexical_alternative
+  text: The servant girl opened the door and entered.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: καὶ
   chosen: And
@@ -88,14 +84,20 @@ revisions:
   from: And the maidservant entered after opening the door,
   to: And the maidservant entered after opening the door,
   rationale: Replaced 'after opening' with 'opening' to reflect the participle more directly and naturally without adding a temporal nuance beyond the Greek.
-
 - timestamp: '2026-05-18T02:58:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the maidservant entered[a], opening the door,'
-  to: 'And the maidservant entered[a], opening the door,'
+  from: And the maidservant entered[a], opening the door,
+  to: And the maidservant entered[a], opening the door,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''after opening''].'
+- timestamp: '2026-11-09T19:11:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the maidservant entered[a], opening the door,
+  to: The servant girl opened the door and entered.
+  rationale: The history debates after opening versus opening, while the lexical record recognizes the door opening as antecedent to entry. Two coordinated verbs preserve that sequence without requiring a grammatical footnote.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -115,3 +117,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/tobit/008/013.job-52512.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:02Z'
+  change_level: refined
+  confidence: high
+  meaning: The servant girl opens the door and enters the couple’s room.
+  meaning_decisions:
+  - source_phrase: εἰσῆλθεν ἡ παιδίσκη ἀνοίξασα τὴν θύραν
+    prior_rendering: the maidservant entered, opening the door
+    new_rendering: The servant girl opened the door and entered
+    rationale: Putting the actions in their understood order conveys the participle naturally and uses the same designation for the servant as the preceding verse.
+  footnote_kinds: {}
+  history_weighed: The history debates after opening versus opening, while the lexical record recognizes the door opening as antecedent to entry. Two coordinated verbs preserve that sequence without requiring a grammatical footnote.

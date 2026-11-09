@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: כָּל אֵ֜לֶּה אֲבָנִ֤ים יְקָרֹת֙ כְּ/מִדֹּ֣ת גָּזִ֔ית מְגֹרָר֥וֹת בַּ/מְּגֵרָ֖ה מִ/בַּ֣יִת וּ/מִ/ח֑וּץ וּ/מִ/מַּסָּד֙ עַד הַ/טְּפָח֔וֹת וּ/מִ/ח֖וּץ עַד הֶ/חָצֵ֥ר הַ/גְּדוֹלָֽה־־־׃
 translation:
-  text: All these were costly stones[a], cut according to measure, sawed with a saw on the inside and on the outside, from the foundation to the coping[b], and on the outside as far as the great court.
-  philosophy: optimal-equivalence
+  text: All these structures were made of costly stones, cut to size and sawed on their inner and outer faces. This stonework extended from the foundations to the tops of the walls[a] and outward as far as the great courtyard.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'precious stones.' Here the sense is likely expensive, high-quality building stones rather than gemstones.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'to the tĕfaḥot'; the exact architectural feature is uncertain. It may refer to the upper finishing, such as the coping or top course.
-    reason: lexical_alternative
+    text: The Hebrew architectural term is uncertain; it may refer to the coping or to roof beams.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: אֲבָנִים יְקָרֹת
   chosen: costly stones
@@ -84,14 +81,20 @@ revisions:
   from: All these were costly stones, cut according to measure, sawed with a saw on the inner and outer faces, from the foundation to the coping, and on the outside as far as the great court.
   to: All these were costly stones, cut according to measure, sawed with a saw on the inner and outer faces, from the foundation to the coping, and on the outside as far as the great court.
   rationale: Adjusted 'on the inner and outer faces' to 'on the inside and on the outside' for closer correspondence to the Hebrew and more natural formal English.
-
 - timestamp: '2026-05-18T02:56:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'All these were costly stones[a], cut according to measure, sawed with a saw on the inside and on the outside, from the foundation to the coping[b], and on the outside as far as the great court.'
-  to: 'All these were costly stones[a], cut according to measure, sawed with a saw on the inside and on the outside, from the foundation to the coping[b], and on the outside as far as the great court.'
+  from: All these were costly stones[a], cut according to measure, sawed with a saw on the inside and on the outside, from the foundation to the coping[b], and on the outside as far as the great court.
+  to: All these were costly stones[a], cut according to measure, sawed with a saw on the inside and on the outside, from the foundation to the coping[b], and on the outside as far as the great court.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''on the inner and outer faces''].'
+- timestamp: '2026-11-09T17:22:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: All these were costly stones[a], cut according to measure, sawed with a saw on the inside and on the outside, from the foundation to the coping[b], and on the outside as far as the great court.
+  to: All these structures were made of costly stones, cut to size and sawed on their inner and outer faces. This stonework extended from the foundations to the tops of the walls[a] and outward as far as the great courtyard.
+  rationale: The first draft’s 'inner and outer faces' and its lexical rationale explain the finished masonry more clearly than the later automated wording. I retain 'costly' and preserve uncertainty about the upper architectural feature in a note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -111,3 +114,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/007/009.job-58203.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:04Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Carefully sized and finished costly stone was used throughout the structures, from their foundations upward and outward to the great courtyard.
+  meaning_decisions:
+  - source_phrase: כָּל אֵלֶּה אֲבָנִים יְקָרֹת
+    prior_rendering: All these were costly stones
+    new_rendering: All these structures were made of costly stones
+    rationale: The implied subject is the buildings and associated structures, not a collection of stones.
+  - source_phrase: כְּמִדֹּת גָּזִית מְגֹרָרוֹת בַּמְּגֵרָה מִבַּיִת וּמִחוּץ
+    prior_rendering: cut according to measure, sawed with a saw on the inside and on the outside
+    new_rendering: cut to size and sawed on their inner and outer faces
+    rationale: This conveys specified dimensions and finished surfaces without repeating the instrument already implied by 'sawed.'
+  - source_phrase: וּמִמַּסָּד עַד הַטְּפָחוֹת וּמִחוּץ עַד הֶחָצֵר הַגְּדוֹלָה
+    prior_rendering: from the foundation to the coping, and on the outside as far as the great court
+    new_rendering: This stonework extended from the foundations to the tops of the walls and outward as far as the great courtyard
+    rationale: The extent of the stone construction is stated explicitly, and the unfamiliar, uncertain upper architectural feature is rendered by its likely location.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft’s 'inner and outer faces' and its lexical rationale explain the finished masonry more clearly than the later automated wording. I retain 'costly' and preserve uncertainty about the upper architectural feature in a note.

@@ -29,15 +29,15 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 47:21
 translation:
-  text: to divide the people into two tribes[b][a], and from Ephraim a lawless kingdom.
-  philosophy: optimal-equivalence
+  text: Thus the people were divided into two tribal groups[a], and a lawless kingdom arose from Ephraim[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek: ''for rule to become divided, and from Ephraim to begin a disobedient kingdom.'' The Hebrew more explicitly says ''to divide the people into two tribes.'''
-    reason: alternative_reading
-  - marker: b
-    text: Or 'a violent kingdom' or 'a rebellious kingdom.' Hebrew חמס can denote violence or wrongdoing; the Greek parallel emphasizes disobedience/rebellion.
+    text: Literally, 'two tribes'; the context concerns the division into the southern and northern kingdoms.
     reason: lexical_alternative
+  - marker: b
+    text: Or, 'a violent kingdom'; the Hebrew term includes violence and wrongdoing.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: לחלק
   chosen: to divide
@@ -136,14 +136,20 @@ revisions:
   from: to divide the people into two tribes, and from Ephraim to raise up a lawless kingdom.
   to: to divide the people into two tribes, and from Ephraim to raise up a lawless kingdom.
   rationale: Removed 'to raise up,' which is not represented in the Hebrew. Kept the verbless second clause more closely aligned to the source while preserving natural English.
-
 - timestamp: '2026-05-18T02:59:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'to divide the people into two tribes[b][a], and from Ephraim a lawless kingdom.'
-  to: 'to divide the people into two tribes[b][a], and from Ephraim a lawless kingdom.'
+  from: to divide the people into two tribes[b][a], and from Ephraim a lawless kingdom.
+  to: to divide the people into two tribes[b][a], and from Ephraim a lawless kingdom.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to raise up a lawless kingdom''].'
+- timestamp: '2026-11-09T19:10:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: to divide the people into two tribes[b][a], and from Ephraim a lawless kingdom.
+  to: Thus the people were divided into two tribal groups[a], and a lawless kingdom arose from Ephraim[b].
+  rationale: Retained 'lawless' as the established broad moral characterization, while noting the Hebrew's more concrete violent sense. The earlier objection to supplying a verb favored formal correspondence; the context and Greek support the emergence already implicit in the Hebrew clause.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -163,3 +169,31 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/047/021.job-52313.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:32Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Solomon's failures resulted in the people's division into two tribal groupings and the emergence of a lawless kingdom from Ephraim.
+  meaning_decisions:
+  - source_phrase: לחלק העם
+    prior_rendering: to divide the people
+    new_rendering: Thus the people were divided
+    rationale: The infinitive continues the consequences described in the preceding verse, not an instruction or a stated intention to divide the people.
+  - source_phrase: לשני שבטים
+    prior_rendering: into two tribes
+    new_rendering: into two tribal groups
+    rationale: The political split was between two groupings of tribes, not a reduction of Israel to two individual tribes; the literal wording is retained in a note.
+  - source_phrase: ומאפרים ממלכת חמס
+    prior_rendering: and from Ephraim a lawless kingdom
+    new_rendering: and a lawless kingdom arose from Ephraim
+    rationale: The compressed Hebrew implies the emergence of the northern kingdom. Supplying 'arose' completes the English sentence without adding a new event.
+  footnote_kinds:
+    a: literal_wording
+    b: alternative_meaning
+  history_weighed: Retained 'lawless' as the established broad moral characterization, while noting the Hebrew's more concrete violent sense. The earlier objection to supplying a verb favored formal correspondence; the context and Greek support the emergence already implicit in the Hebrew clause.

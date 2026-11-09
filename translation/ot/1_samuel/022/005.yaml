@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּאמֶר֩ גָּ֨ד הַ/נָּבִ֜יא אֶל דָּוִ֗ד לֹ֤א תֵשֵׁב֙ בַּ/מְּצוּדָ֔ה לֵ֥ךְ וּ/בָֽאתָ לְּ/ךָ֖ אֶ֣רֶץ יְהוּדָ֑ה וַ/יֵּ֣לֶךְ דָּוִ֔ד וַ/יָּבֹ֖א יַ֥עַר חָֽרֶת־־׃ס
 translation:
-  text: Then Gad the prophet said to David[a], “Do not stay in the stronghold. Go and come for yourself to the land of Judah.” So David went and came to the forest of Hereth.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “go to the land of Judah.” The Hebrew verb can be rendered either “come/enter” or more generally “go to,” depending on context.
-    reason: lexical_alternative
+  text: Then Gad the prophet said to David, “Do not stay in the stronghold. Leave and go into the land of Judah.” So David went into the forest of Hereth.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: הַנָּבִיא
   chosen: the prophet
@@ -87,14 +83,20 @@ revisions:
   from: Then Gad the prophet said to David, “Do not stay in the stronghold. Go and enter the land of Judah.” So David went and entered the forest of Hereth.
   to: Then Gad the prophet said to David, “Do not stay in the stronghold. Go and enter the land of Judah.” So David went and entered the forest of Hereth.
   rationale: Revised 'enter' to 'come' in both clauses to reflect the Hebrew verb בוא consistently. Added 'for yourself' to account for לְךָ without expanding beyond the source.
-
 - timestamp: '2026-05-18T02:55:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Gad the prophet said to David[a], “Do not stay in the stronghold. Go and come for yourself to the land of Judah.” So David went and came to the forest of Hereth.'
-  to: 'Then Gad the prophet said to David[a], “Do not stay in the stronghold. Go and come for yourself to the land of Judah.” So David went and came to the forest of Hereth.'
+  from: Then Gad the prophet said to David[a], “Do not stay in the stronghold. Go and come for yourself to the land of Judah.” So David went and came to the forest of Hereth.
+  to: Then Gad the prophet said to David[a], “Do not stay in the stronghold. Go and come for yourself to the land of Judah.” So David went and came to the forest of Hereth.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and enter the land of Judah''].'
+- timestamp: '2026-11-09T17:23:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Gad the prophet said to David[a], “Do not stay in the stronghold. Go and come for yourself to the land of Judah.” So David went and came to the forest of Hereth.
+  to: Then Gad the prophet said to David, “Do not stay in the stronghold. Leave and go into the land of Judah.” So David went into the forest of Hereth.
+  rationale: The first recorded draft and lexical rationale correctly recognized entry into Judah and treated the personal dative idiomatically. The later source-shaped “come for yourself” obscures that meaning; neither conflicting automated pass was a MAINTAINER decision.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -114,3 +116,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/022/005.job-59308.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:20Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Gad tells David to leave the stronghold and enter Judah, and David follows the instruction by going into the forest of Hereth.
+  meaning_decisions:
+  - source_phrase: לֵךְ וּבָאתָ לְּךָ אֶרֶץ יְהוּדָה
+    prior_rendering: Go and come for yourself to the land of Judah
+    new_rendering: Leave and go into the land of Judah
+    rationale: Conveys departure and entry into Judah; the personal dative does not mean that David must travel alone or for his own benefit.
+  - source_phrase: וַיֵּלֶךְ דָּוִד וַיָּבֹא יַעַר חָרֶת
+    prior_rendering: So David went and came to the forest of Hereth
+    new_rendering: So David went into the forest of Hereth
+    rationale: Combines the movement verbs naturally while retaining arrival within the forest.
+  footnote_kinds: {}
+  history_weighed: The first recorded draft and lexical rationale correctly recognized entry into Judah and treated the personal dative idiomatically. The later source-shaped “come for yourself” obscures that meaning; neither conflicting automated pass was a MAINTAINER decision.

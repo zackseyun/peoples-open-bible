@@ -4,15 +4,15 @@ source:
   edition: SBLGNT
   text: ὁ θεὸς τῶν πατέρων ἡμῶν ἤγειρεν Ἰησοῦν, ὃν ὑμεῖς διεχειρίσασθε κρεμάσαντες ἐπὶ ξύλου·
 translation:
-  text: The God of our fathers raised up Jesus[b][a], whom you killed by hanging on a tree.
-  philosophy: optimal-equivalence
+  text: The God of our fathers raised Jesus from the dead[a], whom you killed by hanging him on a tree[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'raised.' The verb can refer to resurrection here, though the Greek does not explicitly say 'from the dead' in this verse.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'on a cross.' The Greek says 'on a tree,' likely echoing Deuteronomy 21:23.
+    text: Or, “raised up Jesus,” understood as bringing him forward as a deliverer.
     reason: alternative_reading
+  - marker: b
+    text: “Hanging on a tree” recalls Deuteronomy 21:22–23; here it refers to crucifixion.
+    reason: cross_reference
 lexical_decisions:
 - source_word: ὁ θεὸς
   chosen: The God
@@ -96,14 +96,20 @@ revisions:
   from: The God of our fathers raised up Jesus, whom you put to death by hanging on a tree.
   to: The God of our fathers raised up Jesus, whom you put to death by hanging on a tree.
   rationale: Changed 'put to death' to 'killed' for a more direct rendering of διεχειρίσασθε while keeping the instrumental phrase 'by hanging on a tree.'
-
 - timestamp: '2026-05-18T03:01:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The God of our fathers raised up Jesus[b][a], whom you killed by hanging on a tree.'
-  to: 'The God of our fathers raised up Jesus[b][a], whom you killed by hanging on a tree.'
+  from: The God of our fathers raised up Jesus[b][a], whom you killed by hanging on a tree.
+  to: The God of our fathers raised up Jesus[b][a], whom you killed by hanging on a tree.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''put to death''].'
+- timestamp: '2026-11-09T17:05:41Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The God of our fathers raised up Jesus[b][a], whom you killed by hanging on a tree.
+  to: The God of our fathers raised Jesus from the dead[a], whom you killed by hanging him on a tree[b].
+  rationale: Earlier deliberation rightly preserves “tree” for its Deuteronomy echo and recognizes resurrection as the contextual sense of “raised up.” I make resurrection explicit while retaining the documented deliverer reading in a note; the automated kill/put-to-death reversions carry little meaning-based weight.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -123,3 +129,23 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/005/030.job-47070.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:41Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The God whom Israel’s fathers worshiped raised Jesus from death, reversing the council’s action in having him crucified.
+  meaning_decisions:
+  - source_phrase: ἤγειρεν Ἰησοῦν
+    prior_rendering: raised up Jesus
+    new_rendering: raised Jesus from the dead
+    rationale: The contrast between their killing Jesus and God’s raising him, followed by his exaltation, strongly favors resurrection; explicit English carries that meaning without requiring readers to infer it from an ambiguous expression.
+  footnote_kinds:
+    a: alternative_meaning
+    b: cross_reference
+  history_weighed: Earlier deliberation rightly preserves “tree” for its Deuteronomy echo and recognizes resurrection as the contextual sense of “raised up.” I make resurrection explicit while retaining the documented deliverer reading in a note; the automated kill/put-to-death reversions carry little meaning-based weight.

@@ -11,15 +11,8 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 1 = Addition A, segmented from Swete pages 772-773 with First1KGreek used only as a verse-anchor map.
 translation:
-  text: And the king wrote these words as a memorial[b][a], and Mordecai wrote concerning these words.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'for a memorial' or 'for remembrance.' The Greek εἰς μνημόσυνον can emphasize either a commemorative memorial or a written record preserved for remembrance.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'concerning these matters.' The Greek λόγοι can mean 'words' or, more broadly, 'matters/things' depending on context.
-    reason: lexical_alternative
+  text: The king recorded these events so they would be remembered, and Mordecai also wrote about them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἔγραψεν
   chosen: wrote
@@ -75,7 +68,6 @@ revision_pass:
   timestamp: '2026-04-23T15:37:42Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -95,3 +87,37 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/additions_to_esther/001/015.job-50224.json
+revisions:
+- timestamp: '2026-11-09T18:59:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the king wrote these words as a memorial[b][a], and Mordecai wrote concerning these words.
+  to: The king recorded these events so they would be remembered, and Mordecai also wrote about them.
+  rationale: The lexical discussion recognizes both 'events/matters' and a written record preserved for remembrance, but preferred wording that exposed the Greek forms. Those contextual meanings now govern the translation, while the two distinct acts of writing remain intact.
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:22Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The king recorded the events to preserve their memory, and Mordecai also wrote about them.
+  meaning_decisions:
+  - source_phrase: ἔγραψεν ὁ βασιλεὺς τοὺς λόγους τούτους
+    prior_rendering: the king wrote these words
+    new_rendering: the king recorded these events
+    rationale: The phrase refers to the preceding events and their written account, not to a set of quoted words.
+  - source_phrase: εἰς μνημόσυνον
+    prior_rendering: as a memorial
+    new_rendering: so they would be remembered
+    rationale: The purpose is preservation in memory through a written record; the new wording avoids suggesting a separate monument.
+  - source_phrase: Μαρδοχαῖος ἔγραψεν περὶ τῶν λόγων τούτων
+    prior_rendering: Mordecai wrote concerning these words
+    new_rendering: Mordecai also wrote about them
+    rationale: Mordecai likewise wrote about the events, rather than commenting on the king’s wording.
+  footnote_kinds: {}
+  history_weighed: The lexical discussion recognizes both 'events/matters' and a written record preserved for remembrance, but preferred wording that exposed the Greek forms. Those contextual meanings now govern the translation, while the two distinct acts of writing remain intact.

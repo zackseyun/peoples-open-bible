@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֤אמֶר מֶֽלֶךְ יִשְׂרָאֵל֙ אֶל עֲבָדָ֔י/ו הַ/יְדַעְתֶּ֕ם כִּֽי לָ֖/נוּ רָמֹ֣ת גִּלְעָ֑ד וַ/אֲנַ֣חְנוּ מַחְשִׁ֔ים מִ/קַּ֣חַת אֹתָ֔/הּ מִ/יַּ֖ד מֶ֥לֶךְ אֲרָֽם־־־׃
 translation:
-  text: And the king of Israel said to his servants[a], “Do you know that Ramoth-gilead belongs to us[b], yet we are doing nothing to take it from the hand of the king of Aram?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, “we are silent from taking it.” The Hebrew idiom conveys culpable inaction.
-    reason: lexical_alternative
-  - marker: b
-    text: Aram is the Hebrew name often rendered “Syria” in older English translations.
-    reason: alternative_reading
+  text: The king of Israel said to his officials, “Do you know that Ramoth-gilead belongs to us, yet we are doing nothing to take it back from the king of Aram?”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: עֲבָדָיו
   chosen: his servants
@@ -89,14 +82,20 @@ revisions:
   from: And the king of Israel said to his servants, “Do you know that Ramoth-gilead belongs to us, yet we are doing nothing to take it from the hand of the king of Aram?”
   to: And the king of Israel said to his servants, “Do you know that Ramoth-gilead belongs to us, yet we are keeping silent instead of taking it from the hand of the king of Aram?”
   rationale: Replaced 'doing nothing' with 'keeping silent instead of taking it' to more closely reflect מַחְשִׁים ('being silent/remaining inactive') and the infinitive construction, while preserving natural formal English.
-
 - timestamp: '2026-05-16T06:54:47Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the king of Israel said to his servants[a], “Do you know that Ramoth-gilead belongs to us[b], yet we are keeping silent instead of taking it from the hand of the king of Aram?”'
-  to: 'And the king of Israel said to his servants[a], “Do you know that Ramoth-gilead belongs to us[b], yet we are doing nothing to take it from the hand of the king of Aram?”'
-  rationale: 'Azure substituted ''keeping silent'' — maps to drafter''s explicit rejected_alternative ''we are silent''. Drafter chose ''doing nothing'' to capture idiomatic culpable inaction over literal silence.'
+  from: And the king of Israel said to his servants[a], “Do you know that Ramoth-gilead belongs to us[b], yet we are keeping silent instead of taking it from the hand of the king of Aram?”
+  to: And the king of Israel said to his servants[a], “Do you know that Ramoth-gilead belongs to us[b], yet we are doing nothing to take it from the hand of the king of Aram?”
+  rationale: Azure substituted 'keeping silent' — maps to drafter's explicit rejected_alternative 'we are silent'. Drafter chose 'doing nothing' to capture idiomatic culpable inaction over literal silence.
+- timestamp: '2026-11-09T17:22:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the king of Israel said to his servants[a], “Do you know that Ramoth-gilead belongs to us[b], yet we are doing nothing to take it from the hand of the king of Aram?”
+  to: The king of Israel said to his officials, “Do you know that Ramoth-gilead belongs to us, yet we are doing nothing to take it back from the king of Aram?”
+  rationale: The review and subsequent revert debated literal silence versus culpable inaction; I retain the well-supported “doing nothing.” The documented court setting supports “officials,” and the territorial claim supports “take it back.”
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -116,3 +115,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/022/003.job-58712.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:10Z'
+  change_level: refined
+  confidence: high
+  meaning: The king of Israel reminds his court that Ramoth-gilead belongs to Israel and reproaches their failure to recover it from Aram.
+  meaning_decisions:
+  - source_phrase: עֲבָדָיו
+    prior_rendering: his servants
+    new_rendering: his officials
+    rationale: The king is addressing members of his court about national policy; “officials” conveys their function rather than suggesting domestic servants.
+  - source_phrase: מִקַּחַת אֹתָהּ מִיַּד מֶלֶךְ אֲרָם
+    prior_rendering: to take it from the hand of the king of Aram
+    new_rendering: to take it back from the king of Aram
+    rationale: The hand idiom means possession or control, while the preceding claim that the city belongs to Israel makes this an attempt to recover it.
+  footnote_kinds: {}
+  history_weighed: The review and subsequent revert debated literal silence versus culpable inaction; I retain the well-supported “doing nothing.” The documented court setting supports “officials,” and the territorial claim supports “take it back.”

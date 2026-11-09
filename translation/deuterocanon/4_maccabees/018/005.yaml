@@ -16,12 +16,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And the tyrant Antiochus has been punished also on earth[a], and is punished with eternal things; for he was utterly unable to compel the people of Jerusalem to adopt foreign ways and to abandon the customs of their fathers' nation,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'is punished eternally' or 'is punished with everlasting punishments.' The Greek has an elliptical expression with 'eternal' and does not state the noun explicitly.
-    reason: lexical_alternative
+  text: The tyrant Antiochus has been punished on earth and is also undergoing eternal punishment, for he was utterly unable to compel the people of Jerusalem to adopt foreign ways and abandon their people's ancestral way of life.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: τύραννος
   chosen: tyrant
@@ -133,14 +129,20 @@ revisions:
   from: And the tyrant Antiochus has been punished also on earth, and is punished with eternal things; for he was utterly unable to compel the people of Jerusalem to adopt foreign ways and to abandon the customs of their fathers’ nation,
   to: And the tyrant Antiochus has been punished also on earth, and is punished eternally; for he was utterly unable to compel the people of Jerusalem to adopt foreign ways and to depart from the customs of their fathers,
   rationale: Replaced 'with eternal things' with 'eternally' for natural and accurate rendering of ἀϊδίων in context; changed 'abandon the customs of their fathers’ nation' to 'depart from the customs of their fathers' to better reflect ἐκδιαιτηθῆναι without adding 'nation,' which is not explicit in English here. Retained the trailing comma to match the Greek sentence continuation.
-
 - timestamp: '2026-05-15T15:55:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the tyrant Antiochus has been punished also on earth[a], and is punished eternally; for he was utterly unable to compel the people of Jerusalem to adopt foreign ways and to depart from the customs of their fathers,'
-  to: 'And the tyrant Antiochus has been punished also on earth[a], and is punished with eternal things; for he was utterly unable to compel the people of Jerusalem to adopt foreign ways and to abandon the customs of their fathers'' nation,'
-  rationale: 'Restored 2 chosen renderings; azure dropped ἐθνῶν (in Greek) and resolved deliberate ἀϊδίων ellipsis.'
+  from: And the tyrant Antiochus has been punished also on earth[a], and is punished eternally; for he was utterly unable to compel the people of Jerusalem to adopt foreign ways and to depart from the customs of their fathers,
+  to: And the tyrant Antiochus has been punished also on earth[a], and is punished with eternal things; for he was utterly unable to compel the people of Jerusalem to adopt foreign ways and to abandon the customs of their fathers' nation,
+  rationale: Restored 2 chosen renderings; azure dropped ἐθνῶν (in Greek) and resolved deliberate ἀϊδίων ellipsis.
+- timestamp: '2026-11-09T18:59:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the tyrant Antiochus has been punished also on earth[a], and is punished with eternal things; for he was utterly unable to compel the people of Jerusalem to adopt foreign ways and to abandon the customs of their fathers' nation,
+  to: The tyrant Antiochus has been punished on earth and is also undergoing eternal punishment, for he was utterly unable to compel the people of Jerusalem to adopt foreign ways and abandon their people's ancestral way of life.
+  rationale: The April revision rightly identified 'with eternal things' as opaque English. The later automated revert's concern about retaining ἐθνῶν is respected through 'their people's,' without preserving an ellipsis that English readers cannot understand.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -160,3 +162,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/018/005.job-50190.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:42Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Antiochus suffered earthly punishment and undergoes eternal punishment, having completely failed to force Jerusalem's people to abandon their ancestral identity and way of life.
+  meaning_decisions:
+  - source_phrase: καὶ ἀϊδίων κολάζεται
+    prior_rendering: and is punished with eternal things
+    new_rendering: and is also undergoing eternal punishment
+    rationale: The omitted noun is supplied by the verb of punishment and its contrast with earthly punishment. 'Eternal things' obscures rather than preserves the meaning of this ordinary compression.
+  - source_phrase: τῶν πατρίων ἐθνῶν ἐκδιαιτηθῆναι
+    prior_rendering: to abandon the customs of their fathers' nation
+    new_rendering: abandon their people's ancestral way of life
+    rationale: This conveys separation from ancestral communal life and practice while retaining the people-related sense of the transmitted ἐθνῶν.
+  footnote_kinds: {}
+  history_weighed: The April revision rightly identified 'with eternal things' as opaque English. The later automated revert's concern about retaining ἐθνῶν is respected through 'their people's,' without preserving an ellipsis that English readers cannot understand.

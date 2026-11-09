@@ -28,15 +28,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 37:23
 translation:
-  text: A wise man instructs his own people, and the fruits of his understanding are trustworthy.[a][b]
-  philosophy: optimal-equivalence
+  text: From the root of the heart's plans, four branches blossom[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'The surviving Hebrew here is difficult and differs sharply from the Greek. The main text follows the clearer Greek witness: ''A wise man instructs his own people, and the fruits of his understanding are trustworthy.'''
-    reason: textual_variant
-  - marker: b
-    text: Hebrew witness literally preserves an obscure phrase, approximately 'the uprooting/crown of the schemes of the heart; four shoulders(?) will blossom,' but the wording is uncertain and likely corrupt or poorly preserved.
-    reason: alternative_reading
+    text: 'The Hebrew is difficult: approximately, ''root of the plans of the heart; four shoulders blossom.'' ''Shoulders'' is understood here as branches.'
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: עקרת תחבולות לבב
   chosen: '[not followed in main text]'
@@ -122,14 +119,20 @@ revisions:
   from: A wise man instructs his own people, and the fruits of his understanding are trustworthy.
   to: The root of the plans of the heart—four branches will flourish.
   rationale: 'Replaced the unrelated draft with a rendering that reflects the Hebrew: עקרת as ''root,'' תחבולות לבב as ''plans of the heart,'' and ארבעה שכמים יפרחו as ''four branches will flourish.'''
-
 - timestamp: '2026-05-15T13:25:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The root of the plans of the heart—four branches will flourish[a][b].'
-  to: 'A wise man instructs his own people, and the fruits of his understanding are trustworthy.[a][b]'
-  rationale: 'Azure dismissed Greek-primary draft as ''unrelated''; PHILOSOPHY.md mandates Greek when Hebrew obscure.'
+  from: The root of the plans of the heart—four branches will flourish[a][b].
+  to: A wise man instructs his own people, and the fruits of his understanding are trustworthy.[a][b]
+  rationale: Azure dismissed Greek-primary draft as 'unrelated'; PHILOSOPHY.md mandates Greek when Hebrew obscure.
+- timestamp: '2026-11-09T19:08:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: A wise man instructs his own people, and the fruits of his understanding are trustworthy.[a][b]
+  to: From the root of the heart's plans, four branches blossom[a].
+  rationale: The Hebrew-based revision recovered the root-and-branches image, but an automated revert reinstated a Greek saying from another position in the chapter. The four outcomes named in verse 24 make the Hebrew image intelligible here, so I build on that revision rather than the revert.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -149,3 +152,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/037/023.job-52035.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:07Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The plans of the heart give rise to four kinds of outcome.
+  meaning_decisions:
+  - source_phrase: עקרת תחבולות לבב, ארבעה שכמים יפרחו
+    prior_rendering: A wise man instructs his own people, and the fruits of his understanding are trustworthy.
+    new_rendering: From the root of the heart's plans, four branches blossom
+    rationale: 'The Hebrew''s plant image connects the heart''s planning with the four outcomes named immediately afterward: good, evil, life, and death; the current wording follows a Greek saying from a different position in the chapter.'
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The Hebrew-based revision recovered the root-and-branches image, but an automated revert reinstated a Greek saying from another position in the chapter. The four outcomes named in verse 24 make the Hebrew image intelligible here, so I build on that revision rather than the revert.

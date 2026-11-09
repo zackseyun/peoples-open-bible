@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: λέγοντες· Κύριε, ἐμνήσθημεν ὅτι ἐκεῖνος ὁ πλάνος εἶπεν ἔτι ζῶν· Μετὰ τρεῖς ἡμέρας ἐγείρομαι·
 translation:
-  text: saying[a], “Sir, we remember that that deceiver said while he was still alive, ‘After three days I rise.’”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'After three days I will rise' or 'After three days I will be raised.' The Greek reads a present-form verb, 'I am raised.'
-    reason: alternative_reading
+  text: 'They said, “Sir, we remember what that deceiver said while he was still alive: ‘After three days I will be raised.’'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: λέγοντες
   chosen: saying
@@ -103,9 +99,9 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'saying[a], “Lord, we remember that that deceiver said while he was still alive[b], ‘After three days I rise.’”'
-  to: 'saying[a], “Lord, we remember that that deceiver said while he was still alive[b], ‘After three days I rise.’”'
-  rationale: 'Restored drafter ''while still alive'' (preserving the chosen compact temporal phrase) and ''I am raised'' (preserving the chosen passive rendering) per chosen renderings.'
+  from: saying[a], “Lord, we remember that that deceiver said while he was still alive[b], ‘After three days I rise.’”
+  to: saying[a], “Lord, we remember that that deceiver said while he was still alive[b], ‘After three days I rise.’”
+  rationale: Restored drafter 'while still alive' (preserving the chosen compact temporal phrase) and 'I am raised' (preserving the chosen passive rendering) per chosen renderings.
 - timestamp: '2026-08-27T21:08:39Z'
   adjudicator: source-audit
   reviewer_model: gpt-5.6-sol
@@ -115,6 +111,13 @@ revisions:
   from: saying[a], “Lord, we remember that that deceiver said while he was still alive, ‘After three days I rise.’”
   to: saying[a], “Sir, we remember that that deceiver said while he was still alive, ‘After three days I rise.’”
   rationale: Although 'Lord' is the default for κύριος, using it to address the Roman governor Pilate is unnatural in English and introduces unintended religious overtones. 'Sir' is the standard English equivalent for respectful address to a secular authority. The Greek ἐγείρομαι is a futuristic present. While the theological note aims to preserve the present tense, the English simple present passive ('I am raised') struggles to convey future certainty and sounds unnatural here. English typically requires a future auxiliary ('will be raised') or an active present ('I rise') to express this idiomatically.
+- timestamp: '2026-11-09T17:16:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: saying[a], “Sir, we remember that that deceiver said while he was still alive, ‘After three days I rise.’”
+  to: 'They said, “Sir, we remember what that deceiver said while he was still alive: ‘After three days I will be raised.’'
+  rationale: The latest source audit rightly replaced “Lord” with the secular address “Sir” and recognized the resurrection verb as a futuristic present. I retain those gains but carry the future meaning into idiomatic English rather than preserving a present-tense form for its own sake.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-16T20:52:28Z'
@@ -141,3 +144,21 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/matthew/027/063.job-38632.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:16:12Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The leaders reminded Pilate that Jesus, whom they called a deceiver, had predicted that he would be raised after three days.
+  meaning_decisions:
+  - source_phrase: Μετὰ τρεῖς ἡμέρας ἐγείρομαι
+    prior_rendering: After three days I rise
+    new_rendering: After three days I will be raised
+    rationale: The present form predicts a future resurrection; English expresses that meaning naturally with “will,” while the passive agrees with Matthew’s resurrection predictions and the claim quoted in the following verse.
+  footnote_kinds: {}
+  history_weighed: The latest source audit rightly replaced “Lord” with the secular address “Sir” and recognized the resurrection verb as a futuristic present. I retain those gains but carry the future meaning into idiomatic English rather than preserving a present-tense form for its own sake.

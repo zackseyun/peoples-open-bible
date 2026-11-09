@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/אַתָּ֛ה בָּ/חֳלָיִ֥ים רַבִּ֖ים בְּ/מַחֲלֵ֣ה מֵעֶ֑י/ךָ עַד יֵצְא֤וּ מֵעֶ֨י/ךָ֙ מִן הַ/חֹ֔לִי יָמִ֖ים עַל יָמִֽים־־־׃
 translation:
-  text: And you yourself will suffer many illnesses[a], with a disease of your bowels, until your bowels come out because of the disease[b], day after day.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'your intestines' for 'your bowels'; the Hebrew term refers to the inner organs.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'days upon days,' an idiom meaning 'day after day' or 'for many days.'
-    reason: lexical_alternative
+  text: And you yourself will be gravely ill with a disease of your intestines, suffering day after day until your intestines come out because of the disease.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְאַתָּה
   chosen: And you yourself
@@ -86,14 +79,20 @@ revisions:
   from: And you yourself will suffer many illnesses, with a disease of your bowels, until your bowels come out because of the disease, day after day.
   to: And you yourself will suffer from many illnesses, from a disease of your bowels, until your bowels come out because of the disease, day after day.
   rationale: Added 'from' after 'suffer' for natural English and adjusted 'with a disease' to 'from a disease' to better reflect the Hebrew construction while preserving the formal sense.
-
 - timestamp: '2026-05-15T19:54:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And you yourself will suffer from many illnesses[a], from a disease of your bowels, until your bowels come out because of the disease[b], day after day.'
-  to: 'And you yourself will suffer many illnesses[a], with a disease of your bowels, until your bowels come out because of the disease[b], day after day.'
+  from: And you yourself will suffer from many illnesses[a], from a disease of your bowels, until your bowels come out because of the disease[b], day after day.
+  to: And you yourself will suffer many illnesses[a], with a disease of your bowels, until your bowels come out because of the disease[b], day after day.
   rationale: 'Drafter chose ''with a disease'' for בְּמַחֲלֵה (the bet preposition is instrumental/associative, NOT separative). Azure substituted ''from a disease'' claiming it ''better reflects the Hebrew construction'' — factually wrong direction: ''from'' maps to מִן, not ב (which is correctly used later in the same verse for מִן הַחֹלִי = ''because of the disease'').'
+- timestamp: '2026-11-09T17:25:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And you yourself will suffer many illnesses[a], with a disease of your bowels, until your bowels come out because of the disease[b], day after day.
+  to: And you yourself will be gravely ill with a disease of your intestines, suffering day after day until your intestines come out because of the disease.”
+  rationale: The review and revert concentrated on the preposition introducing the disease; “ill with” preserves its associative force naturally. I retain the emphatic personal address and the graphic outcome, but clarify severity and the attachment of the duration phrase.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -113,3 +112,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_chronicles/021/015.job-59934.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:25:25Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Jehoram himself will endure prolonged, severe intestinal illness until his intestines come out because of the disease.
+  meaning_decisions:
+  - source_phrase: בָּחֳלָיִים רַבִּים בְּמַחֲלֵה
+    prior_rendering: will suffer many illnesses, with a disease
+    new_rendering: will be gravely ill with a disease
+    rationale: The following singular disease explains the affliction; the plural expression conveys its severity without requiring a list of separate illnesses.
+  - source_phrase: מֵעֶיךָ
+    prior_rendering: your bowels
+    new_rendering: your intestines
+    rationale: In this concrete medical description, “intestines” makes the bodily catastrophe unmistakable and matches the terminology already used in verse 18.
+  - source_phrase: עַד יֵצְאוּ מֵעֶיךָ מִן הַחֹלִי יָמִים עַל יָמִים
+    prior_rendering: until your bowels come out because of the disease, day after day
+    new_rendering: suffering day after day until your intestines come out because of the disease
+    rationale: The duration belongs to the prolonged illness leading to its culmination, not to repeated daily expulsion of the intestines.
+  footnote_kinds: {}
+  history_weighed: The review and revert concentrated on the preposition introducing the disease; “ill with” preserves its associative force naturally. I retain the emphatic personal address and the graphic outcome, but clarify severity and the attachment of the duration phrase.

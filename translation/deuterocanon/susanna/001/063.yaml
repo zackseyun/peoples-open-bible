@@ -10,12 +10,12 @@ source:
   validation: normalized_direct_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Susanna extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: And Hilkiah and his wife praised their daughter[a], along with Joakim her husband and all their relatives, because no shameful deed was found in her.
-  philosophy: optimal-equivalence
+  text: Hilkiah and his wife, along with Joakim her husband and all their relatives, praised God[a] for their daughter, because she was found to have done nothing shameful.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Greek simply says 'praised'; 'God' is implicit in the context and supplied for clarity.
-    reason: lexical_alternative
+    text: Or, “spoke in praise of their daughter”; the Greek leaves the object of “praised” unstated.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: Χελκίας
   chosen: Hilkiah
@@ -107,14 +107,20 @@ revisions:
   from: And Hilkiah and his wife praised God concerning their daughter, along with Joakim her husband and all their relatives, because no shameful deed was found in her.
   to: And Hilkiah and his wife praised God concerning their daughter, along with Joakim her husband and all their relatives, because no shameful deed was found in her.
   rationale: Removed 'God' because it is not in the Greek text; retained the sense of περὶ τῆς θυγατρὸς αὐτῶν as praise concerning/for their daughter in natural English.
-
 - timestamp: '2026-05-16T14:07:25Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Hilkiah and his wife praised their daughter[a], along with Joakim her husband and all their relatives, because no shameful deed was found in her.'
-  to: 'And Hilkiah and his wife praised their daughter[a], along with Joakim her husband and all their relatives, because no shameful deed was found in her.'
-  rationale: 'Restored drafter ''praised God concerning their daughter'' (preserving the chosen explicit theological object) per chosen renderings.'
+  from: And Hilkiah and his wife praised their daughter[a], along with Joakim her husband and all their relatives, because no shameful deed was found in her.
+  to: And Hilkiah and his wife praised their daughter[a], along with Joakim her husband and all their relatives, because no shameful deed was found in her.
+  rationale: Restored drafter 'praised God concerning their daughter' (preserving the chosen explicit theological object) per chosen renderings.
+- timestamp: '2026-11-09T19:10:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Hilkiah and his wife praised their daughter[a], along with Joakim her husband and all their relatives, because no shameful deed was found in her.
+  to: Hilkiah and his wife, along with Joakim her husband and all their relatives, praised God[a] for their daughter, because she was found to have done nothing shameful.
+  rationale: The draft and documented decisions supply God as the implied object, whereas the later text removes him even though its footnote still assumes that supply. The preceding praise of God supports restoring the draft's meaning, with the genuine alternative acknowledged rather than concealed.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -134,3 +140,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/susanna/001/063.job-52480.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:49Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Susanna's parents, husband, and relatives praise God because she has been found innocent of the shameful conduct alleged against her.
+  meaning_decisions:
+  - source_phrase: ᾔνεσαν περὶ τῆς θυγατρὸς αὐτῶν
+    prior_rendering: praised their daughter
+    new_rendering: praised God for their daughter
+    rationale: The Greek says that they gave praise concerning their daughter, without naming its object; the assembly's praise of God in verse 60 makes God the best-supported implied object here, while the alternative is noted.
+  - source_phrase: οὐχ εὑρέθη ἐν αὐτῇ αἰσχρὸν πρᾶγμα
+    prior_rendering: no shameful deed was found in her
+    new_rendering: she was found to have done nothing shameful
+    rationale: This expresses the result of the inquiry naturally, preserving the finding that the accusation against her was unfounded.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The draft and documented decisions supply God as the implied object, whereas the later text removes him even though its footnote still assumes that supply. The preceding praise of God supports restoring the draft's meaning, with the genuine alternative acknowledged rather than concealed.

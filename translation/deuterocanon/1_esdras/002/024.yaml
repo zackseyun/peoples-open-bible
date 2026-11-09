@@ -23,18 +23,12 @@ source:
     note: MT parallel is APPROXIMATE -- 1 Esdras sometimes expands, conflates, or reorders the Hebrew. Use the MT hebrew as a sanity check on proper names and phrasing; the Greek remains the primary source text.
     reference: ''
 translation:
-  text: So now I have ordered that those men be stopped from building the city[a], and that care be taken that nothing further be done beyond this[c][b], and that the evil matter may not advance any more to the harm of kings.
-  philosophy: optimal-equivalence
+  text: So now I have ordered that those men be stopped from rebuilding the city. Care must be taken that nothing is done contrary to this order[a] and that this evil does not progress any further and cause trouble for kings.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'that nothing be done contrary to this.' The Greek phrase can point either to action beyond the king's order or action against it.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'to trouble kings.' The phrase refers to causing disturbance or injury to royal authority.
-    reason: lexical_alternative
-  - marker: c
-    text: Contextually, 'building the city' likely refers to rebuilding, but the Greek text itself says simply 'build the city.'
-    reason: lexical_alternative
+    text: Or, “that nothing further is done beyond this.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἐπέταξα
   chosen: I have ordered
@@ -132,14 +126,20 @@ revisions:
   from: So now I have ordered that those men be stopped from building the city, and that care be taken that nothing further be done beyond this, so that the evil matter may not advance any more to the harm of kings.
   to: So now I have ordered that those men be stopped from building the city, and that care be taken that nothing further be done beyond this, and that this evil may not proceed any further to the detriment of kings.
   rationale: Replaced 'the evil matter' with 'this evil' for closer lexical correspondence, and 'to the harm of kings' with 'to the detriment of kings' for a more formal register. Also adjusted the final clause to more directly reflect 'may not proceed any further.'
-
 - timestamp: '2026-05-15T14:45:07Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So now I have ordered that those men be stopped from building the city[a], and that care be taken that nothing further be done beyond this[c][b], and that this evil may not proceed any further to the detriment of kings.'
-  to: 'So now I have ordered that those men be stopped from building the city[a], and that care be taken that nothing further be done beyond this[c][b], and that the evil matter may not advance any more to the harm of kings.'
-  rationale: 'Restored 3 chosen renderings; azure inserted demonstrative absent from Greek and softened ἐνοχλέω.'
+  from: So now I have ordered that those men be stopped from building the city[a], and that care be taken that nothing further be done beyond this[c][b], and that this evil may not proceed any further to the detriment of kings.
+  to: So now I have ordered that those men be stopped from building the city[a], and that care be taken that nothing further be done beyond this[c][b], and that the evil matter may not advance any more to the harm of kings.
+  rationale: Restored 3 chosen renderings; azure inserted demonstrative absent from Greek and softened ἐνοχλέω.
+- timestamp: '2026-11-09T18:49:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So now I have ordered that those men be stopped from building the city[a], and that care be taken that nothing further be done beyond this[c][b], and that the evil matter may not advance any more to the harm of kings.
+  to: So now I have ordered that those men be stopped from rebuilding the city. Care must be taken that nothing is done contrary to this order[a] and that this evil does not progress any further and cause trouble for kings.
+  rationale: The history preserves the real ambiguity between action beyond the decree and action contrary to it, so the alternative remains noted. Its concern to preserve the concrete evil affair and disturbance of kings is retained, while source-shaped phrasing is replaced with clear English.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -159,3 +159,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/002/024.job-47534.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:49:32Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Artaxerxes orders the rebuilding stopped and requires precautions against disobedience and further trouble for kings.
+  meaning_decisions:
+  - source_phrase: τοῦ οἰκοδομῆσαι τὴν πόλιν
+    prior_rendering: from building the city
+    new_rendering: from rebuilding the city
+    rationale: The order concerns restoration of the devastated city, not its first construction.
+  - source_phrase: ὅπως μηθὲν παρὰ ταῦτα γένηται
+    prior_rendering: that nothing further be done beyond this
+    new_rendering: that nothing is done contrary to this order
+    rationale: In a royal prohibition, the strongest contextual sense is preventing action contrary to the decree; the serious alternative sense is retained in a note.
+  - source_phrase: μὴ προβῇ ἐπὶ πλεῖον τὰ τῆς κακίας εἰς τὸ βασιλεῖς ἐνοχλῆσαι
+    prior_rendering: the evil matter may not advance any more to the harm of kings
+    new_rendering: this evil does not progress any further and cause trouble for kings
+    rationale: The phrase concerns the alleged evil affair growing into further disturbance of royal authority; “cause trouble” conveys the verb without requiring actual injury.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history preserves the real ambiguity between action beyond the decree and action contrary to it, so the alternative remains noted. Its concern to preserve the concrete evil affair and disturbance of kings is retained, while source-shaped phrasing is replaced with clear English.

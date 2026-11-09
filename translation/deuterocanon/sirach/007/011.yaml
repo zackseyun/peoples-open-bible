@@ -28,12 +28,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 7:11
 translation:
-  text: Do not despise a man in bitterness of spirit[a]; remember that there is one who exalts and humbles.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Hebrew: ''there is one who raises up and humbles''; Greek parallel: ''there is one who humbles and exalts.'' The main text follows the Greek-supported order because it better fits the verse''s warning not to despise the distressed.'
-    reason: textual_variant
+  text: Do not despise someone in anguish of spirit; remember that God exalts and humbles.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: אַל תִּבֶז
   chosen: Do not despise
@@ -120,14 +116,20 @@ revisions:
   from: Do not despise a man in bitterness of spirit; remember that there is one who humbles and exalts.
   to: Do not despise a man in bitterness of spirit; remember that there is one who humbles and exalts.
   rationale: 'Reordered the final verbs to match the Hebrew sequence more closely: ''exalts and humbles'' instead of ''humbles and exalts.'''
-
 - timestamp: '2026-05-18T02:57:58Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Do not despise a man in bitterness of spirit[a]; remember that there is one who exalts and humbles.'
-  to: 'Do not despise a man in bitterness of spirit[a]; remember that there is one who exalts and humbles.'
+  from: Do not despise a man in bitterness of spirit[a]; remember that there is one who exalts and humbles.
+  to: Do not despise a man in bitterness of spirit[a]; remember that there is one who exalts and humbles.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''one who humbles and exalts''].'
+- timestamp: '2026-11-09T19:05:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Do not despise a man in bitterness of spirit[a]; remember that there is one who exalts and humbles.
+  to: Do not despise someone in anguish of spirit; remember that God exalts and humbles.
+  rationale: The history's disagreement about verb order does not change the point, and I keep the current Hebrew order. I depart from the earlier preference for an unnamed subject because explicit reference to God better conveys what the first hearers would have understood.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -147,3 +149,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/007/011.job-51152.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:05:37Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A distressed person must not be despised, because God can raise people up or bring them low.
+  meaning_decisions:
+  - source_phrase: לֶאֱנוֹשׁ
+    prior_rendering: a man
+    new_rendering: someone
+    rationale: The term denotes a human being in frailty, not an exclusively male category.
+  - source_phrase: בְּמַר רוּחַ
+    prior_rendering: in bitterness of spirit
+    new_rendering: in anguish of spirit
+    rationale: The phrase concerns bitter distress, not the resentful disposition that “bitterness” can suggest to a modern reader.
+  - source_phrase: כִּי יֵשׁ מֵרִים וּמַשְׁפִּיל
+    prior_rendering: that there is one who exalts and humbles
+    new_rendering: that God exalts and humbles
+    rationale: The context clearly identifies the unnamed agent as God; making that understood subject explicit prevents the warning from sounding like a reference to an unspecified human patron.
+  footnote_kinds: {}
+  history_weighed: The history's disagreement about verb order does not change the point, and I keep the current Hebrew order. I depart from the earlier preference for an unnamed subject because explicit reference to God better conveys what the first hearers would have understood.

@@ -17,12 +17,12 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: and to defile the sanctuary and the holy ones;[a]
-  philosophy: optimal-equivalence
+  text: and to defile the sanctuary and the holy people[a];
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the saints' or 'holy people.' The Greek literally says 'the holy ones.'
-    reason: lexical_alternative
+    text: Or, 'the priests,' understood as those consecrated to God.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: μιᾶναι
   chosen: to defile
@@ -84,14 +84,20 @@ revisions:
   from: and to defile the sanctuary and the holy ones;
   to: and to defile the sanctuary and the holy things;
   rationale: Changed 'the holy ones' to 'the holy things' to better reflect the neuter plural ἁγίους in context and maintain lexical accuracy.
-
 - timestamp: '2026-05-18T03:09:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and to defile the sanctuary and the holy things;[a]'
-  to: 'and to defile the sanctuary and the holy ones;[a]'
+  from: and to defile the sanctuary and the holy things;[a]
+  to: and to defile the sanctuary and the holy ones;[a]
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the holy ones''].'
+- timestamp: '2026-11-09T18:50:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and to defile the sanctuary and the holy ones;[a]
+  to: and to defile the sanctuary and the holy people[a];
+  rationale: The review's switch to 'holy things' relied on incorrectly identifying ἁγίους as neuter. I preserve the personal reference established by the draft and current wording, while noting the possible reference specifically to priests.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -111,3 +117,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/001/046.job-47997.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:50:51Z'
+  change_level: refined
+  confidence: medium
+  meaning: The orders require the defilement of both the sanctuary and people consecrated to God.
+  meaning_decisions:
+  - source_phrase: ἁγίους
+    prior_rendering: the holy ones
+    new_rendering: the holy people
+    rationale: The masculine plural points to people; 'holy people' makes that reference clear without restricting it to a particular group.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The review's switch to 'holy things' relied on incorrectly identifying ἁγίους as neuter. I preserve the personal reference established by the draft and current wording, while noting the possible reference specifically to priests.

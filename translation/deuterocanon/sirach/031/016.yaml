@@ -28,12 +28,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 31:16
 translation:
-  text: For because of every matter the eye trembles[a], and from the face tears will flow.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'The surviving Hebrew here differs sharply from the Greek tradition, which reads: ''The one who fears the Lord will certainly not be timid, and will certainly not be cowardly, because he himself is his hope.'' The main text follows the extant Hebrew witness.'
-    reason: textual_variant
+  text: For the eye trembles at everything, and tears stream down the face.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: כי
   chosen: For because
@@ -114,14 +110,20 @@ revisions:
   from: For because of every matter the eye trembles, and from the face tears will flow.
   to: For because of every matter the eye trembles, and tears flow from the face.
   rationale: Adjusted word order in the second clause to more natural formal English while preserving the source sense; retained the draft's lexical choices otherwise.
-
 - timestamp: '2026-05-16T12:22:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For because of every matter the eye trembles[a], and tears flow from the face.'
-  to: 'For because of every matter the eye trembles[a], and from the face tears will flow.'
-  rationale: 'Restored drafter word order ''and from the face tears will flow'' preserving Hebrew parallel structure (causal-trigger then bodily-effect) per chosen renderings.'
+  from: For because of every matter the eye trembles[a], and tears flow from the face.
+  to: For because of every matter the eye trembles[a], and from the face tears will flow.
+  rationale: Restored drafter word order 'and from the face tears will flow' preserving Hebrew parallel structure (causal-trigger then bodily-effect) per chosen renderings.
+- timestamp: '2026-11-09T19:07:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For because of every matter the eye trembles[a], and from the face tears will flow.
+  to: For the eye trembles at everything, and tears stream down the face.
+  rationale: The review improved the second clause's English order, but the automated revert restored the source-shaped inversion. I retain the bodily images while choosing natural English and avoid the differently aligned Greek note.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -141,3 +143,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/031/016.job-51834.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:23Z'
+  change_level: refined
+  confidence: medium
+  meaning: The eye is readily disturbed, and tears flow down the face.
+  meaning_decisions:
+  - source_phrase: כי זה מפני כל דבר תזוע עין
+    prior_rendering: For because of every matter the eye trembles
+    new_rendering: For the eye trembles at everything
+    rationale: A single explanatory connective and a natural expression for the eye's disturbance carry the sense without redundant causal wording.
+  - source_phrase: ומפנים דמעה תדמע
+    prior_rendering: and from the face tears will flow
+    new_rendering: and tears stream down the face
+    rationale: The habitual bodily response is expressed naturally in English, preserving the face and the force of the Hebrew's repeated tear language.
+  footnote_kinds: {}
+  history_weighed: The review improved the second clause's English order, but the automated revert restored the source-shaped inversion. I retain the bodily images while choosing natural English and avoid the differently aligned Greek note.

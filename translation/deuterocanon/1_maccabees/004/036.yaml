@@ -25,15 +25,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Then Judas and his brothers said[a], “Look, our enemies have been crushed[b]. Let us go up to cleanse the sanctuary and dedicate it.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'dedicate it'; the Greek verb can mean 'dedicate' or 'inaugurate,' but here the context is the renewed dedication of the defiled temple.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Go up'' preserves the Greek wording, likely reflecting ascent to Jerusalem and the temple mount.'
-    reason: cultural_note
+  text: Then Judas and his brothers said, “Look, our enemies have been crushed. Let us go up to cleanse the sanctuary and rededicate it.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Εἶπεν
   chosen: said
@@ -148,14 +141,20 @@ revisions:
   from: Then Judas and his brothers said, “Look, our enemies have been crushed. Let us go up to cleanse the sanctuary and rededicate it.”
   to: Then Judas and his brothers said, “Look, our enemies have been crushed. Let us go up to cleanse the sanctuary and rededicate it.”
   rationale: Changed “rededicate it” to “dedicate it” to reflect the Greek ἐγκαινίσαι more directly without adding the prefix ‘re-’ not explicit in the source. Kept the rest unchanged as accurate and natural.
-
 - timestamp: '2026-05-18T02:59:14Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Judas and his brothers said[a], “Look, our enemies have been crushed[b]. Let us go up to cleanse the sanctuary and dedicate it.”'
-  to: 'Then Judas and his brothers said[a], “Look, our enemies have been crushed[b]. Let us go up to cleanse the sanctuary and dedicate it.”'
+  from: Then Judas and his brothers said[a], “Look, our enemies have been crushed[b]. Let us go up to cleanse the sanctuary and dedicate it.”
+  to: Then Judas and his brothers said[a], “Look, our enemies have been crushed[b]. Let us go up to cleanse the sanctuary and dedicate it.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''rededicate''].'
+- timestamp: '2026-11-09T18:51:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Judas and his brothers said[a], “Look, our enemies have been crushed[b]. Let us go up to cleanse the sanctuary and dedicate it.”
+  to: Then Judas and his brothers said, “Look, our enemies have been crushed. Let us go up to cleanse the sanctuary and rededicate it.”
+  rationale: The first draft and documented meaning decisions correctly recognized renewed dedication. I restore that gain rather than follow the later argument that English must omit re- because the Greek does not express it separately.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -175,3 +174,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/004/036.job-48181.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:51:36Z'
+  change_level: refined
+  confidence: high
+  meaning: With the invading enemies defeated, Judas and his brothers proposed cleansing and renewing the dedication of the sanctuary.
+  meaning_decisions:
+  - source_phrase: ἐγκαινίσαι
+    prior_rendering: dedicate it
+    new_rendering: rededicate it
+    rationale: The sanctuary had already been dedicated and was now being restored after defilement; rededicate conveys the action in its actual context.
+  footnote_kinds: {}
+  history_weighed: The first draft and documented meaning decisions correctly recognized renewed dedication. I restore that gain rather than follow the later argument that English must omit re- because the Greek does not express it separately.

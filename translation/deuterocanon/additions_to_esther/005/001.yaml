@@ -12,12 +12,8 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 5 = Addition E, segmented from Swete pages 790-792 with First1KGreek used only as a verse-anchor map.
 translation:
-  text: 'The following is a copy of the letter: Great King Artaxerxes to the rulers of the provinces of the one hundred twenty-seven satrapies from India to Ethiopia[a], and to those who are loyal to our interests: greetings.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'to those who think our things'—that is, those who support or favor the king's cause.
-    reason: lexical_alternative
+  text: 'The following is a copy of the letter: Great King Artaxerxes to the governors of the one hundred twenty-seven provinces from India to Ethiopia, and to those who are loyal to our interests: greetings.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀντίγραφον
   chosen: copy
@@ -110,7 +106,13 @@ revisions:
   from: 'The following is a copy of the letter: Great King Artaxerxes to the rulers of the provinces, from India to Ethiopia, of one hundred twenty-seven satrapies, and to those who are loyal to our interests: greetings.'
   to: 'The following is a copy of the letter: Great King Artaxerxes to the rulers of the provinces of the one hundred twenty-seven satrapies from India to Ethiopia, and to those who are loyal to our interests: greetings.'
   rationale: 'Reordered the phrase about the satrapies and geographic range to more closely reflect the Greek and improve clarity: ''the rulers of the provinces of the one hundred twenty-seven satrapies from India to Ethiopia.'''
-
+- timestamp: '2026-11-09T19:00:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'The following is a copy of the letter: Great King Artaxerxes to the rulers of the provinces of the one hundred twenty-seven satrapies from India to Ethiopia[a], and to those who are loyal to our interests: greetings.'
+  to: 'The following is a copy of the letter: Great King Artaxerxes to the governors of the one hundred twenty-seven provinces from India to Ethiopia, and to those who are loyal to our interests: greetings.'
+  rationale: The revision rightly connected the geographic span with the numbered administrative divisions. I preserve that connection while removing the apparent duplication of territorial levels.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -130,3 +132,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/additions_to_esther/005/001.job-50279.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:00:40Z'
+  change_level: refined
+  confidence: high
+  meaning: A copy of Artaxerxes’ royal letter addresses the governors throughout his empire and those loyal to his interests.
+  meaning_decisions:
+  - source_phrase: ἑκατὸν εἴκοσι ἑπτὰ σατραπείαις χωρῶν ἄρχουσι
+    prior_rendering: the rulers of the provinces of the one hundred twenty-seven satrapies
+    new_rendering: the governors of the one hundred twenty-seven provinces
+    rationale: The recipients govern the empire’s numbered territorial divisions; the prior wording misleadingly suggests provinces nested within satrapies.
+  footnote_kinds: {}
+  history_weighed: The revision rightly connected the geographic span with the numbered administrative divisions. I preserve that connection while removing the apparent duplication of territorial levels.

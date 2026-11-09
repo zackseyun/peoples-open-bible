@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/תֹּ֨אמֶר֙ שְׁבִ֣י בִתִּ֔/י עַ֚ד אֲשֶׁ֣ר תֵּֽדְעִ֔י/ן אֵ֖יךְ יִפֹּ֣ל דָּבָ֑ר כִּ֣י לֹ֤א יִשְׁקֹט֙ הָ/אִ֔ישׁ כִּֽי אִם כִּלָּ֥ה הַ/דָּבָ֖ר הַ/יּֽוֹם־־׃
 translation:
-  text: Then she said[a], “Wait, my daughter, until you learn how the matter will fall out[b], for the man will not rest unless he has settled the matter today.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “how the matter will turn out.” The Hebrew idiom is literally “how the matter will fall.”
-    reason: lexical_alternative
-  - marker: b
-    text: “The man” refers to Boaz, though the Hebrew keeps the expression indefinite rather than naming him here.
-    reason: cross_reference
+  text: Then she said, “Wait, my daughter, until you learn how the matter will turn out, for the man will not rest until he has settled it today.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: שְׁבִי
   chosen: Wait
@@ -108,14 +101,20 @@ revisions:
   from: Then she said, “Wait, my daughter, until you learn how the matter will fall out, for the man will not rest unless he has settled the matter today.”
   to: Then she said, “Sit still, my daughter, until you learn how the matter will turn out, for the man will not rest unless he has finished the matter today.”
   rationale: Revised 'Wait' to 'Sit still' for closer lexical accuracy to שְׁבִי; changed 'fall out' to 'turn out' for more natural English; changed 'settled' to 'finished' to reflect כִּלָּה more directly.
-
 - timestamp: '2026-05-16T07:25:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then she said[a], “Sit still, my daughter, until you learn how the matter will turn out[b], for the man will not rest unless he has finished the matter today.”'
-  to: 'Then she said[a], “Wait, my daughter, until you learn how the matter will fall out[b], for the man will not rest unless he has settled the matter today.”'
+  from: Then she said[a], “Sit still, my daughter, until you learn how the matter will turn out[b], for the man will not rest unless he has finished the matter today.”
+  to: Then she said[a], “Wait, my daughter, until you learn how the matter will fall out[b], for the man will not rest unless he has settled the matter today.”
   rationale: 'Azure substituted THREE documented rejected_alternatives: ''Sit still'' (variant of rejected ''Sit'' for שְׁבִי — drafter chose pragmatic ''Wait''), ''turn out'' (exact rejected alt for יִפֹּל דָּבָר — drafter chose metaphor-preserving ''fall out''), and ''finished'' (rejected for כִּלָּה — drafter chose legal-relational ''settled'').'
+- timestamp: '2026-11-09T18:47:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then she said[a], “Wait, my daughter, until you learn how the matter will fall out[b], for the man will not rest unless he has settled the matter today.”
+  to: Then she said, “Wait, my daughter, until you learn how the matter will turn out, for the man will not rest until he has settled it today.”
+  rationale: The review’s “turn out” conveys the idiom better than the reverted “fall out,” while the original “Wait” and “settled” fit the context better than “Sit still” and “finished.” I retain those contextual choices and clarify the endpoint of Boaz’s determination.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -135,3 +134,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/ruth/003/018.job-42369.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:47:42Z'
+  change_level: refined
+  confidence: high
+  meaning: Naomi tells Ruth to wait for the outcome because she is confident Boaz will resolve the matter that very day.
+  meaning_decisions:
+  - source_phrase: אֵיךְ יִפֹּל דָּבָר
+    prior_rendering: how the matter will fall out
+    new_rendering: how the matter will turn out
+    rationale: “Turn out” conveys the outcome idiom clearly; “fall out” now commonly suggests a quarrel or something physically falling.
+  - source_phrase: כִּי אִם כִּלָּה הַדָּבָר הַיּוֹם
+    prior_rendering: unless he has settled the matter today
+    new_rendering: until he has settled it today
+    rationale: In this context the construction identifies the completion that will end Boaz’s efforts, and “until” communicates that temporal force naturally.
+  footnote_kinds: {}
+  history_weighed: The review’s “turn out” conveys the idiom better than the reverted “fall out,” while the original “Wait” and “settled” fit the context better than “Sit still” and “finished.” I retain those contextual choices and clarify the endpoint of Boaz’s determination.

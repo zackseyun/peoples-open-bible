@@ -4,12 +4,12 @@ source:
   edition: SBLGNT
   text: περιπεσόντες δὲ εἰς τόπον διθάλασσον ⸀ἐπέκειλαν τὴν ναῦν, καὶ ἡ μὲν πρῷρα ἐρείσασα ἔμεινεν ἀσάλευτος, ἡ δὲ πρύμνα ἐλύετο ὑπὸ τῆς ⸀βίας.
 translation:
-  text: But falling into a place where two seas met[a], they ran the ship aground; and the bow, having stuck fast, remained immovable, but the stern was being broken up by the force.
-  philosophy: optimal-equivalence
+  text: But they ran into a place where two seas met[a] and ran the ship aground. The bow stuck fast and remained immovable, while the stern was being broken apart by the force of the waves.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'a place between two seas.' The Greek expression is rare and may refer to a channel, sandbar, or meeting point of two bodies or currents of water.
-    reason: lexical_alternative
+    text: Or, “a place exposed to the sea on both sides”; the rare expression may describe a shoal or reef.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: περιπεσόντες
   chosen: falling into
@@ -98,14 +98,20 @@ revisions:
   from: But falling into a place where two seas met, they ran the ship aground; and the bow, having stuck fast, remained immovable, but the stern was being broken up by the force of the waves.
   to: But falling into a place where two seas met, they ran the ship aground; and the bow, having stuck fast, remained immovable, but the stern was being broken up by the force of the waves.
   rationale: Removed 'of the waves' because it is not explicit in the Greek; retained the rest as accurate and natural.
-
 - timestamp: '2026-05-18T03:00:06Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But falling into a place where two seas met[a], they ran the ship aground; and the bow, having stuck fast, remained immovable, but the stern was being broken up by the force.'
-  to: 'But falling into a place where two seas met[a], they ran the ship aground; and the bow, having stuck fast, remained immovable, but the stern was being broken up by the force.'
+  from: But falling into a place where two seas met[a], they ran the ship aground; and the bow, having stuck fast, remained immovable, but the stern was being broken up by the force.
+  to: But falling into a place where two seas met[a], they ran the ship aground; and the bow, having stuck fast, remained immovable, but the stern was being broken up by the force.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''by the force of the waves''].'
+- timestamp: '2026-11-09T18:07:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But falling into a place where two seas met[a], they ran the ship aground; and the bow, having stuck fast, remained immovable, but the stern was being broken up by the force.
+  to: But they ran into a place where two seas met[a] and ran the ship aground. The bow stuck fast and remained immovable, while the stern was being broken apart by the force of the waves.
+  rationale: The first draft and lexical rationale supplied “of the waves,” whereas an automated review removed it for lack of an explicit Greek noun. The meaning-based priority supports restoring that contextual clarity, while the uncertain geographical expression remains qualified by a footnote.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -125,3 +131,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/027/041.job-46754.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:07:24Z'
+  change_level: refined
+  confidence: medium
+  meaning: The ship runs aground with its bow firmly lodged while the waves break its stern apart.
+  meaning_decisions:
+  - source_phrase: περιπεσόντες δὲ εἰς τόπον διθάλασσον
+    prior_rendering: But falling into a place where two seas met
+    new_rendering: But they ran into a place where two seas met
+    rationale: Describes the ship’s adverse encounter naturally without suggesting that it literally fell into a location or specifying the obstruction’s composition.
+  - source_phrase: ὑπὸ τῆς βίας
+    prior_rendering: by the force
+    new_rendering: by the force of the waves
+    rationale: Names the force understood from the maritime setting rather than leaving its source unstated in English.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and lexical rationale supplied “of the waves,” whereas an automated review removed it for lack of an explicit Greek noun. The meaning-based priority supports restoring that contextual clarity, while the uncertain geographical expression remains qualified by a footnote.

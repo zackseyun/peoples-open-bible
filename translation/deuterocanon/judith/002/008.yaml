@@ -14,12 +14,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And their wounded will fill their ravines and the wadis[a], and a river overflowing will be filled with their dead;
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “the winter torrents” or “the streambeds.” The Greek term refers to a seasonal torrent channel.
-    reason: lexical_alternative
+  text: Their wounded will fill their ravines and seasonal streambeds, and an overflowing river will be filled with their dead.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: τραυματίαι
   chosen: wounded
@@ -92,13 +88,12 @@ revisions:
   from: And their wounded will fill their ravines and the wadis, and a river overflowing will be filled with their dead;
   to: And their wounded will fill their ravines and the wadis, and an overflowing river will be filled with their dead;
   rationale: Changed 'a river overflowing' to 'an overflowing river' for more natural English while preserving the Greek sense. No other changes needed.
-
 - timestamp: '2026-05-18T03:10:07Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And their wounded will fill their ravines and the wadis[a], and an overflowing river will be filled with their dead;'
-  to: 'And their wounded will fill their ravines and the wadis, and a river overflowing will be filled with their dead;'
+  from: And their wounded will fill their ravines and the wadis[a], and an overflowing river will be filled with their dead;
+  to: And their wounded will fill their ravines and the wadis, and a river overflowing will be filled with their dead;
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a river overflowing''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -108,6 +103,13 @@ revisions:
   from: And their wounded will fill their ravines and the wadis, and a river overflowing will be filled with their dead;
   to: And their wounded will fill their ravines and the wadis[a], and a river overflowing will be filled with their dead;
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:00:58Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And their wounded will fill their ravines and the wadis[a], and a river overflowing will be filled with their dead;
+  to: Their wounded will fill their ravines and seasonal streambeds, and an overflowing river will be filled with their dead.
+  rationale: I adopt the earlier review’s natural 'an overflowing river'; the automated revert supplies no meaning-based objection to that improvement. The seasonal-channel meaning documented for 'wadis' is preserved in clear English.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -127,3 +129,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/002/008.job-50520.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:00:58Z'
+  change_level: refined
+  confidence: high
+  meaning: The king threatens casualties so numerous that the wounded will fill ravines and streambeds and the dead will fill a flooding river.
+  meaning_decisions:
+  - source_phrase: τοὺς χειμάρρους
+    prior_rendering: the wadis
+    new_rendering: seasonal streambeds
+    rationale: This expresses the seasonal torrent-channel sense without requiring familiarity with the regional term 'wadi.'
+  footnote_kinds: {}
+  history_weighed: I adopt the earlier review’s natural 'an overflowing river'; the automated revert supplies no meaning-based objection to that improvement. The seasonal-channel meaning documented for 'wadis' is preserved in clear English.

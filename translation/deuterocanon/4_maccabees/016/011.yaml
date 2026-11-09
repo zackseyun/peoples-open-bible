@@ -20,12 +20,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: who[a], even if I were not to die, would bury some one of my sons. But with this lament the holy and God-fearing mother bewailed none of them,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Greek abruptly shifts into the first person ('even if I were not to die'), likely reflecting the mother's own voice or a compressed quotation-like expression; some translators smooth the sense to third person.
-    reason: lexical_alternative
+  text: Not even when I die will I have one of my sons to bury me.” But the holy and God-fearing mother did not lament any of them in this way.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἣ
   chosen: who
@@ -133,14 +129,20 @@ revisions:
   from: who, even if I were not to die, would bury some one of my sons. But with this lament the holy and God-fearing mother bewailed none of them,
   to: who, even if I were not to die, would bury one of my six sons. But with this lament the holy and God-fearing mother bewailed none of them,
   rationale: Revised “some one of my sons” to “one of my six sons” to reflect τῶν υἱῶν ἕξω τινά more accurately and naturally. Left the rest unchanged.
-
 - timestamp: '2026-05-16T19:07:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'who[a], even if I were not to die, would bury one of my six sons. But with this lament the holy and God-fearing mother bewailed none of them,'
-  to: 'who[a], even if I were not to die, would bury some one of my sons. But with this lament the holy and God-fearing mother bewailed none of them,'
-  rationale: 'Restored drafter ''some one of my sons'' (preserving the chosen indefinite + ''sons'' rendering) per chosen renderings.'
+  from: who[a], even if I were not to die, would bury one of my six sons. But with this lament the holy and God-fearing mother bewailed none of them,
+  to: who[a], even if I were not to die, would bury some one of my sons. But with this lament the holy and God-fearing mother bewailed none of them,
+  rationale: Restored drafter 'some one of my sons' (preserving the chosen indefinite + 'sons' rendering) per chosen renderings.
+- timestamp: '2026-11-09T18:59:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: who[a], even if I were not to die, would bury some one of my sons. But with this lament the holy and God-fearing mother bewailed none of them,
+  to: Not even when I die will I have one of my sons to bury me.” But the holy and God-fearing mother did not lament any of them in this way.
+  rationale: 'Neither prior version correctly parsed the opening: ἕξω is ''I will have,'' not ''six,'' and the burial participle describes a son burying her. I corrected the direction of burial and the scope of the negation while retaining the distinction between the imagined lament and her actual conduct.'
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -160,3 +162,29 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/016/011.job-50147.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:52Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The imagined lament ends with the fear that no son will remain to bury her, but the author declares that the holy mother did not lament her sons in this way.
+  meaning_decisions:
+  - source_phrase: ἣ οὐδʼ ἂν ἀποθάνω
+    prior_rendering: who, even if I were not to die
+    new_rendering: Not even when I die
+    rationale: The negation belongs to the statement about having a son to bury her, not to the possibility of her dying; the relative continuation can naturally become an independent English sentence.
+  - source_phrase: θάπτοντα τῶν υἱῶν ἕξω τινά
+    prior_rendering: would bury some one of my sons
+    new_rendering: will I have one of my sons to bury me
+    rationale: ἕξω means 'I will have,' and θάπτοντα describes the son who would perform the burial; the prior wording reversed who buries whom.
+  - source_phrase: ἀλλὰ τούτῳ τῷ θρήνῳ οὐδένα ὀλοφύρετο
+    prior_rendering: But with this lament ... bewailed none of them
+    new_rendering: But ... did not lament any of them in this way
+    rationale: Clearly marks the preceding speech as an imagined lament rather than the mother's actual response.
+  footnote_kinds: {}
+  history_weighed: 'Neither prior version correctly parsed the opening: ἕξω is ''I will have,'' not ''six,'' and the burial participle describes a son burying her. I corrected the direction of burial and the scope of the negation while retaining the distinction between the imagined lament and her actual conduct.'

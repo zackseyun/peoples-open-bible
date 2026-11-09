@@ -4,21 +4,15 @@ source:
   edition: SBLGNT
   text: Ἀδελφοί μου, μὴ ἐν προσωπολημψίαις ἔχετε τὴν πίστιν τοῦ κυρίου ἡμῶν Ἰησοῦ Χριστοῦ τῆς δόξης;
 translation:
-  text: My brothers[d][c][b][a], do not hold the faith of our Lord Jesus Christ with partiality.
-  philosophy: optimal-equivalence
+  text: My brothers and sisters, do not let favoritism accompany your faith in our Lord Jesus the Messiah[a], the Lord of glory[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'brothers and sisters'; the Greek says 'brothers' but addresses the believing community more broadly.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the faith in our Lord Jesus the Messiah.' The Greek construction can be understood in more than one way.
+    text: Or, “the faith of our Lord Jesus the Messiah.”
     reason: alternative_reading
-  - marker: c
-    text: Or 'our glorious Lord Jesus the Messiah.'
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'our Lord Jesus the Messiah, the Lord of glory'.
-    reason: previous_rendering
+  - marker: b
+    text: Or, “our glorious Lord Jesus the Messiah.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: Ἀδελφοί μου
   chosen: My brothers
@@ -119,15 +113,21 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "My brothers, do not hold the faith of our Lord Jesus Messiah with partiality."
-  to: "My brothers, do not hold the faith of our Lord Jesus the Messiah with partiality."
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
+  from: My brothers, do not hold the faith of our Lord Jesus Messiah with partiality.
+  to: My brothers, do not hold the faith of our Lord Jesus the Messiah with partiality.
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:09:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: My brothers[d][c][b][a], do not hold the faith of our Lord Jesus Christ with partiality.
+  to: My brothers and sisters, do not let favoritism accompany your faith in our Lord Jesus the Messiah[a], the Lord of glory[b].
+  rationale: The latest recorded revisions restore the titular form “Jesus the Messiah,” which I retain. I depart from the automated removal of glory because it omitted source content, returning to the first draft's weighty rendering while preserving “glorious Lord” as an alternative.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:44:45Z'
   unchanged: false
   changes_summary: 'Removed ''glorious'' to avoid an interpretive rendering of τῆς δόξης in this construction, and changed ''Messiah'' to ''Christ'' for more standard formal register and consistency. Also removed the comma for smoother English. [Regression fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)]'
-
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -149,3 +149,35 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/james/002/001.job-39022.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:09:19Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Faith in the glorious Lord Jesus the Messiah must not be accompanied by favoritism.
+  meaning_decisions:
+  - source_phrase: Ἀδελφοί μου
+    prior_rendering: My brothers
+    new_rendering: My brothers and sisters
+    rationale: The address embraces the believing community, including the sisters explicitly mentioned in verse 15; the English conveys that scope rather than only the masculine grammatical form.
+  - source_phrase: μὴ ἐν προσωπολημψίαις ἔχετε τὴν πίστιν
+    prior_rendering: do not hold the faith ... with partiality
+    new_rendering: do not let favoritism accompany your faith
+    rationale: James prohibits practicing faith while treating people preferentially according to status; the new construction states that incompatibility naturally.
+  - source_phrase: τοῦ κυρίου ἡμῶν Ἰησοῦ Χριστοῦ
+    prior_rendering: of our Lord Jesus Christ
+    new_rendering: in our Lord Jesus the Messiah
+    rationale: The believers' faith is most naturally directed toward the Lord here, rather than being Jesus' own faith; the genitive alternative remains in a footnote. The latest recorded revisions also recognize Messiah as a title in this construction.
+  - source_phrase: τῆς δόξης
+    prior_rendering: Omitted from the main text
+    new_rendering: the Lord of glory
+    rationale: The source expressly attributes glory to Jesus, contrasting his true majesty with the outward splendor favored in the assembly; omitting it loses substantive content.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: The latest recorded revisions restore the titular form “Jesus the Messiah,” which I retain. I depart from the automated removal of glory because it omitted source content, returning to the first draft's weighty rendering while preserving “glorious Lord” as an alternative.

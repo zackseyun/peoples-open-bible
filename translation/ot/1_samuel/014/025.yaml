@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/כָל הָ/אָ֖רֶץ בָּ֣אוּ בַ/יָּ֑עַר וַ/יְהִ֥י דְבַ֖שׁ עַל פְּנֵ֥י הַ/שָּׂדֶֽה־־׃
 translation:
-  text: And all the people of the land entered the forest[b][a], and there was honey on the surface of the ground.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew literally, 'all the land entered the forest'; the translation makes explicit the likely collective sense, 'the people of the land.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'on the face of the field.' The Hebrew idiom may refer to honey lying across the visible ground surface.
-    reason: lexical_alternative
+  text: All the troops entered the forest, and there was honey on the ground.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְ/כָל הָ/אָ֖רֶץ
   chosen: all the people of the land
@@ -78,14 +71,20 @@ revisions:
   from: Now all the people of the land entered the forest, and there was honey on the surface of the ground.
   to: And all the land came into the forest, and there was honey on the surface of the field.
   rationale: 'Revised to reflect the Hebrew more closely: changed ''Now'' to ''And,'' kept ''all the land'' rather than ''the people of the land,'' rendered the verb more literally as ''came into,'' and translated שדה as ''field'' rather than ''ground.'''
-
 - timestamp: '2026-05-16T04:55:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And all the land came into the forest[b][a], and there was honey on the surface of the field.'
-  to: 'And all the people of the land entered the forest[b][a], and there was honey on the surface of the ground.'
-  rationale: 'Azure substituted ''all the land'' (drafter''s rejected alt; drafter chose metonymic ''all the people of the land'') and ''on the face of the field'' (drafter''s rejected alt; drafter chose ''surface of the ground'' because forest context makes שָׂדֶה misleading).'
+  from: And all the land came into the forest[b][a], and there was honey on the surface of the field.
+  to: And all the people of the land entered the forest[b][a], and there was honey on the surface of the ground.
+  rationale: Azure substituted 'all the land' (drafter's rejected alt; drafter chose metonymic 'all the people of the land') and 'on the face of the field' (drafter's rejected alt; drafter chose 'surface of the ground' because forest context makes שָׂדֶה misleading).
+- timestamp: '2026-11-09T17:23:41Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And all the people of the land entered the forest[b][a], and there was honey on the surface of the ground.
+  to: All the troops entered the forest, and there was honey on the ground.
+  rationale: The draft and revert correctly understood “all the land” as referring to people and preferred “ground” in the forest setting. I preserve those gains and identify the people by their role in this scene.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -108,3 +107,21 @@ cross_check:
     agree: 1
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/014/025.job-59062.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:41Z'
+  change_level: refined
+  confidence: high
+  meaning: The entire fighting force enters a forest where honey is available on the ground.
+  meaning_decisions:
+  - source_phrase: כָל הָאָרֶץ
+    prior_rendering: all the people of the land
+    new_rendering: All the troops
+    rationale: The land stands for its people, specifically the force participating in this pursuit, rather than every inhabitant of the country.
+  footnote_kinds: {}
+  history_weighed: The draft and revert correctly understood “all the land” as referring to people and preferred “ground” in the forest setting. I preserve those gains and identify the people by their role in this scene.

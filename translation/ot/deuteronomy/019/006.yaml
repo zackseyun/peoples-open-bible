@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: פֶּן יִרְדֹּף֩ גֹּאֵ֨ל הַ/דָּ֜ם אַחֲרֵ֣י הָ/רֹצֵ֗חַ כִּי יֵחַם֮ לְבָב/וֹ֒ וְ/הִשִּׂיג֛/וֹ כִּֽי יִרְבֶּ֥ה הַ/דֶּ֖רֶךְ וְ/הִכָּ֣ה/וּ נָ֑פֶשׁ וְ/ל/וֹ֙ אֵ֣ין מִשְׁפַּט מָ֔וֶת כִּ֠י לֹ֣א שֹׂנֵ֥א ה֛וּא ל֖/וֹ מִ/תְּמ֥וֹל שִׁלְשֽׁוֹם־־־־׃
 translation:
-  text: otherwise the avenger of blood may pursue the manslayer[a], because his heart is hot, and overtake him because the way is long, and strike him dead, though he did not deserve the death penalty[b], since he had not hated him previously.
-  philosophy: optimal-equivalence
+  text: Otherwise, the avenger of blood[a], burning with anger, could pursue the killer, overtake him because the journey to the city is long, and strike him dead, even though the killer did not deserve the death penalty, since he had not previously hated the person he killed.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Literally, 'because his heart is hot.' The Hebrew idiom expresses inflamed anger.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'from yesterday or the day before,' a Hebrew idiom meaning 'previously' or 'formerly.'
-    reason: lexical_alternative
+    text: A member of the victim’s family who had the recognized role of avenging the death.
+    reason: cultural_note
 lexical_decisions:
 - source_word: פֶּן
   chosen: otherwise
@@ -109,14 +106,20 @@ revisions:
   from: otherwise the avenger of blood may pursue the manslayer, because his heart is hot, and overtake him because the way is long, and strike him dead, though he had no sentence of death, since he had not hated him previously.
   to: otherwise the avenger of blood may pursue the manslayer, because his heart is hot, and overtake him because the way is long, and strike him dead, though he had no sentence of death, since he had not hated him previously.
   rationale: Replaced 'had no sentence of death' with 'did not deserve the death penalty' for more natural and accurate English while preserving the legal sense of 'there is not for him a judgment of death.'
-
 - timestamp: '2026-05-18T02:55:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'otherwise the avenger of blood may pursue the manslayer[a], because his heart is hot, and overtake him because the way is long, and strike him dead, though he did not deserve the death penalty[b], since he had not hated him previously.'
-  to: 'otherwise the avenger of blood may pursue the manslayer[a], because his heart is hot, and overtake him because the way is long, and strike him dead, though he did not deserve the death penalty[b], since he had not hated him previously.'
+  from: otherwise the avenger of blood may pursue the manslayer[a], because his heart is hot, and overtake him because the way is long, and strike him dead, though he did not deserve the death penalty[b], since he had not hated him previously.
+  to: otherwise the avenger of blood may pursue the manslayer[a], because his heart is hot, and overtake him because the way is long, and strike him dead, though he did not deserve the death penalty[b], since he had not hated him previously.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''though he had no sentence of death''].'
+- timestamp: '2026-11-09T17:31:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: otherwise the avenger of blood may pursue the manslayer[a], because his heart is hot, and overtake him because the way is long, and strike him dead, though he did not deserve the death penalty[b], since he had not hated him previously.
+  to: Otherwise, the avenger of blood[a], burning with anger, could pursue the killer, overtake him because the journey to the city is long, and strike him dead, even though the killer did not deserve the death penalty, since he had not previously hated the person he killed.
+  rationale: The review’s rationale supports the current 'did not deserve the death penalty,' which expresses legal non-liability more clearly than the first draft’s potentially procedural 'had no sentence of death.' I preserve that gain while clarifying the anger idiom and the participants.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -136,3 +139,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/019/006.job-61682.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:31:29Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Without accessible refuge, an enraged family avenger could kill the accidental killer during a long flight even though that killer is not liable to death.
+  meaning_decisions:
+  - source_phrase: כִּי יֵחַם לְבָבוֹ
+    prior_rendering: because his heart is hot
+    new_rendering: burning with anger
+    rationale: The Hebrew describes inflamed anger; the English preserves the heat image while stating the emotion it conveys.
+  - source_phrase: יִרְדֹּף ... אַחֲרֵי הָרֹצֵחַ
+    prior_rendering: may pursue the manslayer
+    new_rendering: could pursue the killer
+    rationale: '''Could'' makes the feared possibility distinct from legal permission, while ''killer'' identifies the participant without using a technical term.'
+  - source_phrase: כִּי יִרְבֶּה הַדֶּרֶךְ
+    prior_rendering: because the way is long
+    new_rendering: because the journey to the city is long
+    rationale: The distance to refuge is the danger in view and explains the preceding requirement to provide roads and distribute the cities.
+  - source_phrase: כִּי לֹא שֹׂנֵא הוּא לוֹ מִתְּמֹל שִׁלְשֹׁם
+    prior_rendering: since he had not hated him previously
+    new_rendering: since he had not previously hated the person he killed
+    rationale: Explicitly identifying the deceased prevents readers from taking the final pronoun as referring to the avenger.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The review’s rationale supports the current 'did not deserve the death penalty,' which expresses legal non-liability more clearly than the first draft’s potentially procedural 'had no sentence of death.' I preserve that gain while clarifying the anger idiom and the participants.

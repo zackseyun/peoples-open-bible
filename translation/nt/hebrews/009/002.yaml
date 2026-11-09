@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: σκηνὴ γὰρ κατεσκευάσθη ἡ πρώτη ἐν ᾗ ἥ τε λυχνία καὶ ἡ τράπεζα καὶ ἡ πρόθεσις τῶν ἄρτων, ἥτις λέγεται Ἅγια·
 translation:
-  text: For a first tabernacle was prepared[a], in which were the lampstand and the table and the bread of the Presence[b], which is called the Holy Place.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the bread of the Presence'; traditionally 'the showbread.'
-    reason: lexical_alternative
-  - marker: b
-    text: Greek 'Holy Places,' here referring to the first room of the tabernacle, that is, the Holy Place.
-    reason: lexical_alternative
+  text: For the first room of the tabernacle was furnished with the lampstand, the table, and the bread of the Presence. It is called the Holy Place.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: σκηνὴ
   chosen: tabernacle
@@ -104,14 +97,20 @@ revisions:
   from: For a first tabernacle was prepared, in which were the lampstand and the table and the presentation of the bread, which is called the Holy Place.
   to: For a first tabernacle was prepared, in which were the lampstand and the table and the presentation of the bread, which is called the Holy Place.
   rationale: Replaced 'the presentation of the bread' with 'the bread of the Presence' for a more accurate and natural rendering of ἡ πρόθεσις τῶν ἄρτων, while preserving the formal structure of the verse.
-
 - timestamp: '2026-05-18T03:00:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For a first tabernacle was prepared[a], in which were the lampstand and the table and the bread of the Presence[b], which is called the Holy Place.'
-  to: 'For a first tabernacle was prepared[a], in which were the lampstand and the table and the bread of the Presence[b], which is called the Holy Place.'
+  from: For a first tabernacle was prepared[a], in which were the lampstand and the table and the bread of the Presence[b], which is called the Holy Place.
+  to: For a first tabernacle was prepared[a], in which were the lampstand and the table and the bread of the Presence[b], which is called the Holy Place.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the presentation of the bread''].'
+- timestamp: '2026-11-09T17:09:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For a first tabernacle was prepared[a], in which were the lampstand and the table and the bread of the Presence[b], which is called the Holy Place.
+  to: For the first room of the tabernacle was furnished with the lampstand, the table, and the bread of the Presence. It is called the Holy Place.
+  rationale: I retain the current “bread of the Presence,” whose identification is supported by the earlier review despite inconsistent automated revert records. The lexical history already recognizes that “first” denotes a compartment; the new wording makes that meaning explicit and removes the misaligned notes.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -131,3 +130,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/hebrews/009/002.job-54478.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:09:16Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The tabernacle’s first room, called the Holy Place, was furnished with the lampstand, table, and bread of the Presence.
+  meaning_decisions:
+  - source_phrase: σκηνὴ γὰρ κατεσκευάσθη ἡ πρώτη
+    prior_rendering: For a first tabernacle was prepared
+    new_rendering: For the first room of the tabernacle was furnished
+    rationale: The author describes the first compartment of one tabernacle, not a separate or earlier tabernacle; “furnished” conveys its preparation with the objects immediately listed.
+  - source_phrase: ἐν ᾗ ... ἥτις λέγεται Ἅγια
+    prior_rendering: in which were ... which is called the Holy Place
+    new_rendering: with ... It is called the Holy Place
+    rationale: Separating the naming clause makes clear that “Holy Place” names the room, not the bread or furnishings.
+  footnote_kinds: {}
+  history_weighed: I retain the current “bread of the Presence,” whose identification is supported by the earlier review despite inconsistent automated revert records. The lexical history already recognizes that “first” denotes a compartment; the new wording makes that meaning explicit and removes the misaligned notes.

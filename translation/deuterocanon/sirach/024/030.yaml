@@ -23,18 +23,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: And I[c][b], like a canal from a river, and like a water channel, went out into a garden[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'paradise.' The Greek word can denote a garden, park, or paradise; here the immediate image is of irrigation flowing into a cultivated garden.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'And I too, like a canal from a river, and like a watercourse, came out into a garden.'.
-    reason: previous_rendering
-  - marker: c
-    text: Or 'And I, like a canal from a river, and like a watercourse, went out into a garden.'.
-    reason: previous_rendering
+  text: As for me, I flowed into a garden like a canal from a river, like a water channel.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: κἀγώ
   chosen: And I
@@ -136,8 +126,8 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I[a], like a canal from a river, and like a watercourse[c][b], went out into a garden.'
-  to: 'And I, like a canal from a river, and like a water channel, went out into a garden.'
+  from: And I[a], like a canal from a river, and like a watercourse[c][b], went out into a garden.
+  to: And I, like a canal from a river, and like a water channel, went out into a garden.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''water channel''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -147,6 +137,13 @@ revisions:
   from: And I, like a canal from a river, and like a water channel, went out into a garden.
   to: And I[c][b], like a canal from a river, and like a water channel, went out into a garden[a].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('garden') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('And I') because the note names that rendering; [c] anchored to ('And I') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:06:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I[c][b], like a canal from a river, and like a water channel, went out into a garden[a].
+  to: As for me, I flowed into a garden like a canal from a river, like a water channel.
+  rationale: The revisions rightly distinguish an artificial water channel from a natural watercourse and retain garden rather than importing the later associations of paradise. I preserve those choices while making the metaphorical movement clearer.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:09:32Z'
@@ -171,3 +168,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/024/030.job-51640.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:30Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The author portrays himself as an irrigation channel bringing wisdom from its abundant source into a garden.
+  meaning_decisions:
+  - source_phrase: κἀγὼ
+    prior_rendering: And I
+    new_rendering: As for me
+    rationale: This signals the author's turn to his own role after describing Wisdom's inexhaustible abundance.
+  - source_phrase: ὡς διῶρυξ ἀπὸ ποταμοῦ, καὶ ὡς ὑδραγωγὸς ἐξῆλθον εἰς παράδεισον
+    prior_rendering: like a canal from a river, and like a water channel, went out into a garden
+    new_rendering: I flowed into a garden like a canal from a river, like a water channel
+    rationale: The reordered sentence makes the irrigation metaphor clear rather than momentarily suggesting that the speaker physically walked into a garden.
+  footnote_kinds: {}
+  history_weighed: The revisions rightly distinguish an artificial water channel from a natural watercourse and retain garden rather than importing the later associations of paradise. I preserve those choices while making the metaphorical movement clearer.

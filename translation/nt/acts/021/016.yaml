@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: συνῆλθον δὲ καὶ τῶν μαθητῶν ἀπὸ Καισαρείας σὺν ἡμῖν, ἄγοντες παρ’ ᾧ ξενισθῶμεν Μνάσωνί τινι Κυπρίῳ, ἀρχαίῳ μαθητῇ.
 translation:
-  text: And some of the disciples from Caesarea also went with us[a], bringing us to Mnason, a certain Cypriot, an early disciple[b], with whom we were to stay.
-  philosophy: optimal-equivalence
+  text: Some of the disciples from Caesarea also accompanied us, taking us to stay with Mnason, a man from Cyprus and a longtime disciple[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'leading us to Mnason … with whom we might lodge' or 'taking us to the house of Mnason.' The Greek participle and lodging verb can be understood in slightly different but closely related ways.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'a longtime disciple.' The phrase may mean that Mnason had been a disciple for a long time, possibly from the early days of the movement.
-    reason: lexical_alternative
+    text: Or, “one of the early disciples.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: συνῆλθον
   chosen: went with
@@ -100,13 +97,12 @@ revisions:
   from: And some of the disciples from Caesarea also went with us, bringing us to Mnason, a certain Cypriot, an early disciple, with whom we were to stay.
   to: And some of the disciples from Caesarea also went with us, bringing us to a certain Mnason of Cyprus, an early disciple, with whom we were to stay.
   rationale: 'Reordered the appositional phrase for more natural English and closer alignment with the Greek: ''a certain Mnason of Cyprus'' instead of ''Mnason, a certain Cypriot.'' Kept ''early disciple'' and ''with whom we were to stay'' as accurate renderings.'
-
 - timestamp: '2026-05-18T03:10:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And some of the disciples from Caesarea also went with us[a], bringing us to a certain Mnason of Cyprus, an early disciple[b], with whom we were to stay.'
-  to: 'And some of the disciples from Caesarea also went with us, bringing us to Mnason, a certain Cypriot, an early disciple, with whom we were to stay.'
+  from: And some of the disciples from Caesarea also went with us[a], bringing us to a certain Mnason of Cyprus, an early disciple[b], with whom we were to stay.
+  to: And some of the disciples from Caesarea also went with us, bringing us to Mnason, a certain Cypriot, an early disciple, with whom we were to stay.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Mnason, a certain''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -116,6 +112,13 @@ revisions:
   from: And some of the disciples from Caesarea also went with us, bringing us to Mnason, a certain Cypriot, an early disciple, with whom we were to stay.
   to: And some of the disciples from Caesarea also went with us[a], bringing us to Mnason, a certain Cypriot, an early disciple[b], with whom we were to stay.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it; [b] anchored to ('an early disciple') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:09:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And some of the disciples from Caesarea also went with us[a], bringing us to Mnason, a certain Cypriot, an early disciple[b], with whom we were to stay.
+  to: Some of the disciples from Caesarea also accompanied us, taking us to stay with Mnason, a man from Cyprus and a longtime disciple[a].
+  rationale: The earlier review rightly identified the awkward introduction of Mnason, though its reordering was automatically reverted. The lexical discussion supports long-standing discipleship while cautioning against asserting that he was among the first disciples.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -135,3 +138,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/021/016.job-46992.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:09:30Z'
+  change_level: refined
+  confidence: high
+  meaning: Disciples from Caesarea accompanied the travelers and took them to lodge with Mnason, a Cypriot who had long been a disciple.
+  meaning_decisions:
+  - source_phrase: ἄγοντες παρ’ ᾧ ξενισθῶμεν Μνάσωνί τινι Κυπρίῳ
+    prior_rendering: bringing us to Mnason, a certain Cypriot ... with whom we were to stay
+    new_rendering: taking us to stay with Mnason, a man from Cyprus
+    rationale: The intended hospitality is brought directly into the travel clause, and Mnason is introduced without the awkward placement of “a certain.”
+  - source_phrase: ἀρχαίῳ μαθητῇ
+    prior_rendering: an early disciple
+    new_rendering: a longtime disciple
+    rationale: This clearly expresses discipleship of long standing without claiming that Mnason belonged to the very first group; the early-period interpretation remains in a footnote.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review rightly identified the awkward introduction of Mnason, though its reordering was automatically reverted. The lexical discussion supports long-standing discipleship while cautioning against asserting that he was among the first disciples.

@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/נֹ֕חַ בֶּן שֵׁ֥שׁ מֵא֖וֹת שָׁנָ֑ה וְ/הַ/מַּבּ֣וּל הָיָ֔ה מַ֖יִם עַל הָ/אָֽרֶץ־־׃
 translation:
-  text: Noah was six hundred years old[b][a], and the flood was upon the earth.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'And Noah was six hundred years old, and the flood was waters upon the earth.' The Hebrew is more literally structured, but the main text gives the idiomatic sense.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the land' instead of 'the earth.'
-    reason: alternative_reading
+  text: Noah was six hundred years old when the floodwaters came upon the earth.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְ/נֹחַ
   chosen: Noah
@@ -20,7 +13,7 @@ lexical_decisions:
   - And Noah
   - Now Noah
   lexicon: HALOT
-  rationale: "The conjunction וְ can be rendered simply as 'and,' but in English narrative style here 'Now' smoothly marks a transition while preserving the discourse-linking force. 'Noah' is a personal name and is therefore transliterated, per translation philosophy. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'The conjunction וְ can be rendered simply as ''and,'' but in English narrative style here ''Now'' smoothly marks a transition while preserving the discourse-linking force. ''Noah'' is a personal name and is therefore transliterated, per translation philosophy. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: בֶּן שֵׁשׁ מֵאוֹת שָׁנָה
   chosen: was six hundred years old
   alternatives:
@@ -84,13 +77,12 @@ revisions:
   from: Now Noah was six hundred years old when the floodwaters came upon the earth.
   to: Now Noah was six hundred years old when the floodwaters came upon the earth.
   rationale: Replaced 'when the floodwaters came upon the earth' with the more literal 'and the flood was upon the earth' to better reflect the Hebrew wording and avoid adding 'came' and 'waters' beyond the source.
-
 - timestamp: '2026-05-17T09:21:06Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now Noah was six hundred years old[b][a], and the flood was upon the earth.'
-  to: 'Now Noah was six hundred years old[b][a], and the flood was upon the earth.'
+  from: Now Noah was six hundred years old[b][a], and the flood was upon the earth.
+  to: Now Noah was six hundred years old[b][a], and the flood was upon the earth.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the floodwaters''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -99,6 +91,13 @@ revisions:
   from: Now Noah was six hundred years old[b][a], and the flood was upon the earth.
   to: Noah was six hundred years old[b][a], and the flood was upon the earth.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:41:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Noah was six hundred years old[b][a], and the flood was upon the earth.
+  to: Noah was six hundred years old when the floodwaters came upon the earth.
+  rationale: The first recorded draft already conveyed the temporal relationship clearly. The later literalizing rationale is unpersuasive because “waters” is present in the Hebrew; I retain the subsequent cleanup’s omission of a leading “Now.”
 cross_check:
   status: moderate_agreement
   agreement: 0.88
@@ -121,3 +120,21 @@ cross_check:
   verdict_counts:
     minor-issues: 3
   source_review: state/reviews/gemini/low_agreement_recheck/ot/genesis/007/006.job-28811.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:41:32Z'
+  change_level: refined
+  confidence: high
+  meaning: Noah was six hundred years old when the flood began on the earth.
+  meaning_decisions:
+  - source_phrase: וְנֹחַ בֶּן שֵׁשׁ מֵאוֹת שָׁנָה וְהַמַּבּוּל הָיָה מַיִם עַל הָאָרֶץ
+    prior_rendering: Noah was six hundred years old, and the flood was upon the earth
+    new_rendering: Noah was six hundred years old when the floodwaters came upon the earth
+    rationale: The age supplies the temporal setting for the flood; “when” makes that relationship clear, and “floodwaters” incorporates the source’s explicit word for waters.
+  footnote_kinds: {}
+  history_weighed: The first recorded draft already conveyed the temporal relationship clearly. The later literalizing rationale is unpersuasive because “waters” is present in the Hebrew; I retain the subsequent cleanup’s omission of a leading “Now.”

@@ -14,12 +14,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: For when war and calamities come upon them[a], the priests consult among themselves where they may hide with them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: That is, the idols or images mentioned throughout the surrounding passage.
-    reason: cross_reference
+  text: For when war and calamities come upon the idols, the priests consult among themselves about where they can hide with them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὅταν
   chosen: when
@@ -117,14 +113,20 @@ revisions:
   from: For when war and disasters come upon them, the priests consult among themselves where they may hide themselves with them.
   to: For when war and disasters come upon them, the priests consult among themselves where they may hide themselves with them.
   rationale: Changed 'disasters' to 'calamities' for a more formal rendering of κακά, and removed the redundant reflexive 'themselves' after 'hide' for more natural English while preserving the Greek sense.
-
 - timestamp: '2026-05-16T14:07:25Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For when war and calamities come upon them[a], the priests consult among themselves where they may hide with them.'
-  to: 'For when war and calamities come upon them[a], the priests consult among themselves where they may hide with them.'
-  rationale: 'Restored drafter ''disasters'' (preserving common English for κακά) and reflexive ''hide themselves'' (preserving the explicit reflexive force) per chosen renderings.'
+  from: For when war and calamities come upon them[a], the priests consult among themselves where they may hide with them.
+  to: For when war and calamities come upon them[a], the priests consult among themselves where they may hide with them.
+  rationale: Restored drafter 'disasters' (preserving common English for κακά) and reflexive 'hide themselves' (preserving the explicit reflexive force) per chosen renderings.
+- timestamp: '2026-11-09T19:03:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For when war and calamities come upon them[a], the priests consult among themselves where they may hide with them.
+  to: For when war and calamities come upon the idols, the priests consult among themselves about where they can hide with them.
+  rationale: I retain 'calamities' and the natural reflexive sense of 'hide' already present in the current wording. The recorded note identifying the idols is now incorporated into the text, and the automated reversals do not require restoring a redundant 'themselves.'
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -144,3 +146,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/letter_of_jeremiah/001/048.job-50887.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:03:14Z'
+  change_level: refined
+  confidence: high
+  meaning: When war or calamity threatens the idols, their priests must plan where to hide together with them.
+  meaning_decisions:
+  - source_phrase: ἐπʼ αὐτά
+    prior_rendering: upon them
+    new_rendering: upon the idols
+    rationale: Making the referent explicit distinguishes the threatened idols from the priests who must arrange their concealment.
+  - source_phrase: βουλεύονται πρὸς ἑαυτοὺς οἱ ἱερεῖς ποῦ συγκαρυβῶσι μετʼ αὐτῶν
+    prior_rendering: the priests consult among themselves where they may hide with them
+    new_rendering: the priests consult among themselves about where they can hide with them
+    rationale: The revised syntax makes the content of their consultation clear while retaining the irony of priests hiding together with their gods.
+  footnote_kinds: {}
+  history_weighed: I retain 'calamities' and the natural reflexive sense of 'hide' already present in the current wording. The recorded note identifying the idols is now incorporated into the text, and the automated reversals do not require restoring a redundant 'themselves.'

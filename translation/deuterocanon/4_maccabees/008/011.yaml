@@ -18,12 +18,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: And I pity your beauty. Will you not consider this—that nothing lies before you[a], if you disobey, except to die amid tortures?
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek literally, 'except to die with tortures'; the phrase means death accompanied by torture, hence 'to die amid tortures.'
-    reason: lexical_alternative
+  text: I pity you because of your beauty as well. Will you not consider that if you disobey me, nothing awaits you but death under torture?”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: εὐμορφίας
   chosen: beauty
@@ -108,14 +104,20 @@ revisions:
   from: And I pity your beauty. Will you not consider this—that nothing lies before you, if you disobey me, except to die amid tortures?
   to: And I pity your beauty. Will you not consider this—that nothing lies before you, if you disobey me, except to die amid tortures?
   rationale: Removed 'me' because it is not explicit in the Greek. Retained the rest as accurate and natural, including 'lies before you' for ἀπόκειται and 'amid tortures' for μετὰ στρεβλῶν.
-
 - timestamp: '2026-05-18T02:59:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I pity your beauty. Will you not consider this—that nothing lies before you[a], if you disobey, except to die amid tortures?'
-  to: 'And I pity your beauty. Will you not consider this—that nothing lies before you[a], if you disobey, except to die amid tortures?'
+  from: And I pity your beauty. Will you not consider this—that nothing lies before you[a], if you disobey, except to die amid tortures?
+  to: And I pity your beauty. Will you not consider this—that nothing lies before you[a], if you disobey, except to die amid tortures?
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''if you disobey me''].'
+- timestamp: '2026-11-09T18:58:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I pity your beauty. Will you not consider this—that nothing lies before you[a], if you disobey, except to die amid tortures?
+  to: I pity you because of your beauty as well. Will you not consider that if you disobey me, nothing awaits you but death under torture?”
+  rationale: The first draft and lexical rationale correctly identify the implied “me,” despite a review removing it solely because it was unstated. I restore that contextual clarity and replace the misleading suggestion that beauty itself is being pitied.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -135,3 +137,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/008/011.job-49920.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:58:33Z'
+  change_level: refined
+  confidence: high
+  meaning: The tyrant also invokes their beauty and demands that they recognize death under torture as the only consequence of disobeying him.
+  meaning_decisions:
+  - source_phrase: καὶ τῆς εὐμορφίας οἰκτείρομαι
+    prior_rendering: And I pity your beauty
+    new_rendering: I pity you because of your beauty as well
+    rationale: The brothers are the objects of pity; their beauty is another reason he gives for pitying them.
+  - source_phrase: ὑμῖν ἀπειθήσασιν
+    prior_rendering: if you disobey
+    new_rendering: if you disobey me
+    rationale: The object of disobedience is unmistakably the speaking tyrant, and supplying it makes the threat direct.
+  - source_phrase: πλὴν τοῦ μετὰ στρεβλῶν ἀποθανεῖν ἀπόκειται
+    prior_rendering: nothing lies before you ... except to die amid tortures
+    new_rendering: nothing awaits you but death under torture
+    rationale: This is the natural English expression for the sole threatened outcome, retaining both death and accompanying torture.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale correctly identify the implied “me,” despite a review removing it solely because it was unstated. I restore that contextual clarity and replace the misleading suggestion that beauty itself is being pitied.

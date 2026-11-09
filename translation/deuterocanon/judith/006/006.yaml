@@ -9,18 +9,15 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: and then the iron of my army and the people of my servants will pass through your sides[a], and you will fall among their wounded when they return[c][b];
-  philosophy: optimal-equivalence
+  text: Then the troops who serve me will pierce your sides with my army’s iron weapons[a], and you will fall among Israel’s wounded when they return[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Greek 'the iron of my army' likely uses 'iron' as a metonym for weaponry or armed force; alternatively, it could be rendered more interpretively as 'the swords of my army.'
+    text: Literally, “the iron of my army and the people of my servants will pass through your sides.”
     reason: lexical_alternative
   - marker: b
-    text: The phrase 'your sides' could also be rendered 'your flanks' or 'your ribs,' depending on whether the addressee is heard more corporately or more personally.
-    reason: lexical_alternative
-  - marker: c
-    text: The Greek text is vivid but somewhat compressed in 'you will fall among their wounded'; this likely means the addressee will be counted among those wounded by Holofernes' forces.
-    reason: lexical_alternative
+    text: Literally, “among their wounded when they return.” “They” may refer to the attacking troops returning or to the Israelites turning back.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: διελεύσεται
   chosen: will pass through
@@ -107,14 +104,20 @@ revisions:
   from: and then the iron of my army and the people of my attendants will pass through your sides, and you will fall among their wounded when they return.
   to: and then the iron of my army and the people of my attendants will pass through your sides, and you will fall among their wounded when they return.
   rationale: Changed 'attendants' to 'servants' for a more direct rendering of θεραπόντων and retained the rest essentially unchanged; preserved the final semicolon to match the source punctuation.
-
 - timestamp: '2026-05-18T02:59:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and then the iron of my army and the people of my servants will pass through your sides[a], and you will fall among their wounded when they return[c][b];'
-  to: 'and then the iron of my army and the people of my servants will pass through your sides[a], and you will fall among their wounded when they return[c][b];'
+  from: and then the iron of my army and the people of my servants will pass through your sides[a], and you will fall among their wounded when they return[c][b];
+  to: and then the iron of my army and the people of my servants will pass through your sides[a], and you will fall among their wounded when they return[c][b];
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the people of my attendants''].'
+- timestamp: '2026-11-09T19:02:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and then the iron of my army and the people of my servants will pass through your sides[a], and you will fall among their wounded when they return[c][b];
+  to: Then the troops who serve me will pierce your sides with my army’s iron weapons[a], and you will fall among Israel’s wounded when they return[b].
+  rationale: The earlier notes identify “iron” as weaponry and acknowledge the compressed casualty language; these insights are now carried into natural English. The source’s plural “when they return” is retained rather than silently resolving its uncertain referent.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -134,3 +137,27 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/006/006.job-50596.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:02:03Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Holofernes threatens that his troops will pierce Achior with their weapons and that Achior will fall among the casualties of Israel’s defeat.
+  meaning_decisions:
+  - source_phrase: διελεύσεται ὁ σίδηρος τῆς στρατείας μου καὶ ὁ λαὸς τῶν θεραπόντων μου τὰς πλευράς σου
+    prior_rendering: the iron of my army and the people of my servants will pass through your sides
+    new_rendering: the troops who serve me will pierce your sides with my army’s iron weapons
+    rationale: The compressed construction joins the armed men and their weapons in one threat; natural English identifies the troops as agents and the iron weapons as what pierces Achior.
+  - source_phrase: ἐν τοῖς τραυματίαις αὐτῶν
+    prior_rendering: among their wounded
+    new_rendering: among Israel’s wounded
+    rationale: The surrounding threat sends Achior to share Israel’s destruction, making Israel the best-supported referent for the casualties among whom he will fall.
+  footnote_kinds:
+    a: literal_wording
+    b: alternative_meaning
+  history_weighed: The earlier notes identify “iron” as weaponry and acknowledge the compressed casualty language; these insights are now carried into natural English. The source’s plural “when they return” is retained rather than silently resolving its uncertain referent.

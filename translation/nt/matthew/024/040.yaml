@@ -4,12 +4,12 @@ source:
   edition: SBLGNT
   text: τότε ⸂δύο ἔσονται⸃ ἐν τῷ ἀγρῷ, ⸀εἷς παραλαμβάνεται καὶ ⸁εἷς ἀφίεται·
 translation:
-  text: Then two men will be in the field; one is taken[a] and one is left.
-  philosophy: optimal-equivalence
+  text: Then two men will be in the field; one will be taken[a] and one will be left.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'one is taken along.' The verb itself does not by itself specify whether the taking is for rescue or for judgment.
-    reason: lexical_alternative
+    text: The text does not specify whether being taken means being rescued or being removed for judgment.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: τότε
   chosen: Then
@@ -85,14 +85,20 @@ revisions:
   from: Then two men will be in the field; one is taken and one is left.
   to: Then two will be in the field; one is taken and one is left.
   rationale: Removed 'men' because the Greek says only 'two,' without specifying gender. Kept the rest unchanged for accuracy and naturalness.
-
 - timestamp: '2026-05-18T03:10:20Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then two will be in the field[a]; one is taken and one is left.'
-  to: 'Then two men will be in the field; one is taken and one is left.'
+  from: Then two will be in the field[a]; one is taken and one is left.
+  to: Then two men will be in the field; one is taken and one is left.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''two men will be''].'
+- timestamp: '2026-11-09T17:16:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then two men will be in the field; one is taken[a] and one is left.
+  to: Then two men will be in the field; one will be taken[a] and one will be left.
+  rationale: The automated review removed 'men,' but the masculine pronouns and the contrasting female example in verse 41 support retaining it. I preserve the documented neutrality of 'taken' and 'left' while making the future setting consistent in English.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -114,3 +120,22 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/024/040.job-57374.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:16:20Z'
+  change_level: refined
+  confidence: high
+  meaning: At that time, two men together in a field will be separated, with one taken and the other left.
+  meaning_decisions:
+  - source_phrase: εἷς παραλαμβάνεται καὶ εἷς ἀφίεται
+    prior_rendering: one is taken and one is left
+    new_rendering: one will be taken and one will be left
+    rationale: Renders the vivid Greek presents consistently with the explicitly future setting in natural English, without interpreting either person's fate.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The automated review removed 'men,' but the masculine pronouns and the contrasting female example in verse 41 support retaining it. I preserve the documented neutrality of 'taken' and 'left' while making the future setting consistent in English.

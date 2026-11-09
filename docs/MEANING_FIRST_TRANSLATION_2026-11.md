@@ -59,7 +59,10 @@ canon, and the setting the first hearers shared.
 - **Instructions:** [`tools/prompts/pob_meaning_first_v4.md`](../tools/prompts/pob_meaning_first_v4.md).
   Its SHA-256 is recorded in every verse's `meaning_pass` block.
 - **Tool:** [`tools/pob_meaning_pass.py`](../tools/pob_meaning_pass.py)
-  (`translate`, `report`, `apply`).
+  (`translate`, `report`, `export`, `import`, `apply`).
+- **Second model for refused verses:** Claude Opus 5.5 translated the verses
+  Azure would not process, from request bundles that `export` writes with the
+  same user message the Azure path sends. `import` validated the answers.
 - **Pilot:** 15 passages across every genre were reviewed before the full run.
   Pilot feedback produced the "know" ruling and the "meaning is not the same as
   sounding modern" principle above.
@@ -76,7 +79,25 @@ retranslated), and the translator's confidence.
 
 ## Scope
 
-COVERAGE_PLACEHOLDER
+This pass covers the 66 books of the Protestant canon and the deuterocanonical
+books: 37,295 verses, translated in 2,694 passages.
+
+- **36,858 verses** received the meaning-first pass: 11,666 retranslated,
+  17,608 refined, and 7,584 kept word for word. A kept verse still gets a
+  `meaning_pass` record, but no revision entry, because its wording did not
+  change.
+- **173 of those** were translated by Claude Opus 5.5 with the same
+  instructions and the same per-verse context. Azure's content filter refused
+  them (mostly passages describing violence or sexual sin), or repeatedly cut
+  the reply off. Their revision entries and `meaning_pass` blocks name that
+  model (`adjudicator: claude-opus-5.5-meaning-pass`).
+- **437 verses keep their previous wording** for now, because a test or a
+  recorded decision pins their exact text: 229 by tests, 145 by applied
+  textual-restoration decisions, 59 by the repentance and reorientation
+  terminology decisions, and 4 by tools. Changing them needs a separate review
+  that updates those records together with the wording. The list is in
+  [`MEANING_PASS_HELD_VERSES_2026-11.txt`](MEANING_PASS_HELD_VERSES_2026-11.txt).
+- The extra-canonical books are not part of this pass.
 
 The Simplified People's Open Bible (SPOB) is derived from POB and will be
 regenerated from the new text in a separate pass. Other-language editions are

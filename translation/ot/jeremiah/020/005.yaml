@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וְ/נָתַתִּ֗י אֶת כָּל חֹ֨סֶן֙ הָ/עִ֣יר הַ/זֹּ֔את וְ/אֶת כָּל יְגִיעָ֖/הּ וְ/אֶת כָּל יְקָרָ֑/הּ וְ/אֵ֨ת כָּל אוֹצְר֜וֹת מַלְכֵ֣י יְהוּדָ֗ה אֶתֵּן֙ בְּ/יַ֣ד אֹֽיְבֵי/הֶ֔ם וּ/בְזָזוּ/ם֙ וּ/לְקָח֔וּ/ם וֶ/הֱבִיא֖וּ/ם בָּבֶֽלָ/ה־־־־־־־׃
 translation:
-  text: And I will give all the wealth of this city[a], all its gains, all its precious things, and all the treasures of the kings of Judah into the hand of their enemies. They will plunder them, take them[c][b], and bring them to Babylon.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'all its labor' or 'all its produce' for 'all its gains.' The Hebrew term can refer either to labor itself or to what that labor yields.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'all its valuables' for 'all its precious things.'
-    reason: lexical_alternative
-  - marker: c
-    text: Hebrew 'into the hand of,' an idiom meaning into the control or power of.
-    reason: cultural_note
+  text: I will hand over all the wealth of this city, all the fruit of its labor, all its precious things, and all the treasures of the kings of Judah to their enemies. They will plunder them, take them, and bring them to Babylon.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: חֹסֶן
   chosen: wealth
@@ -102,14 +92,20 @@ revisions:
   from: And I will give all the wealth of this city, all its gains, all its precious things, and all the treasures of the kings of Judah into the hand of their enemies. They will plunder them, take them, and bring them to Babylon.
   to: And I will give all the wealth of this city, all its produce, all its precious things, and all the treasures of the kings of Judah into the hand of their enemies. They will plunder them, seize them, and bring them to Babylon.
   rationale: Revised 'gains' to 'produce' for יְגִיעָהּ, which more naturally reflects the city's yield/labor; revised 'take' to 'seize' for a slightly more formal register alongside 'plunder.'
-
 - timestamp: '2026-05-16T08:09:59Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I will give all the wealth of this city[a], all its produce, all its precious things, and all the treasures of the kings of Judah into the hand of their enemies. They will plunder them, seize them[c][b], and bring them to Babylon.'
-  to: 'And I will give all the wealth of this city[a], all its gains, all its precious things, and all the treasures of the kings of Judah into the hand of their enemies. They will plunder them, take them[c][b], and bring them to Babylon.'
-  rationale: 'Azure substituted ''produce'' (drafter''s explicit rejected_alternative for יְגִיעָהּ — drafter chose ''gains'' for accumulated spoil sense) and ''seize them'' (rejected_alternative for וּלְקָחוּם — drafter chose ''take them'' to avoid redundancy with following transport verb).'
+  from: And I will give all the wealth of this city[a], all its produce, all its precious things, and all the treasures of the kings of Judah into the hand of their enemies. They will plunder them, seize them[c][b], and bring them to Babylon.
+  to: And I will give all the wealth of this city[a], all its gains, all its precious things, and all the treasures of the kings of Judah into the hand of their enemies. They will plunder them, take them[c][b], and bring them to Babylon.
+  rationale: Azure substituted 'produce' (drafter's explicit rejected_alternative for יְגִיעָהּ — drafter chose 'gains' for accumulated spoil sense) and 'seize them' (rejected_alternative for וּלְקָחוּם — drafter chose 'take them' to avoid redundancy with following transport verb).
+- timestamp: '2026-11-09T17:56:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I will give all the wealth of this city[a], all its gains, all its precious things, and all the treasures of the kings of Judah into the hand of their enemies. They will plunder them, take them[c][b], and bring them to Babylon.
+  to: I will hand over all the wealth of this city, all the fruit of its labor, all its precious things, and all the treasures of the kings of Judah to their enemies. They will plunder them, take them, and bring them to Babylon.
+  rationale: The review and revert debated 'produce' versus 'gains'; both recognized the tangible results of labor, which the new wording makes clear without restricting them to agricultural produce. I retain the deliberated sequence 'plunder ... take ... bring.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -129,3 +125,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/020/005.job-67532.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:56:46Z'
+  change_level: refined
+  confidence: high
+  meaning: Yahweh will surrender Jerusalem's accumulated wealth and Judah's royal treasures to enemies who will plunder them and take them to Babylon.
+  meaning_decisions:
+  - source_phrase: וְנָתַתִּי ... אֶתֵּן בְּיַד אֹיְבֵיהֶם
+    prior_rendering: I will give ... into the hand of their enemies
+    new_rendering: I will hand over ... to their enemies
+    rationale: This conveys the surrender of the city's assets to enemy control without reproducing the Hebrew construction.
+  - source_phrase: כָּל יְגִיעָהּ
+    prior_rendering: all its gains
+    new_rendering: all the fruit of its labor
+    rationale: The objects being plundered are the tangible results of the city's labor, not labor itself or gains unrelated to work.
+  footnote_kinds: {}
+  history_weighed: The review and revert debated 'produce' versus 'gains'; both recognized the tangible results of labor, which the new wording makes clear without restricting them to agricultural produce. I retain the deliberated sequence 'plunder ... take ... bring.'

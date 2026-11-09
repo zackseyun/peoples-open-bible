@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וַ/תָּבוֹא֩ הָ/אִשָּׁ֨ה אֶל כָּל הָ/עָ֜ם בְּ/חָכְמָתָ֗/הּ וַֽ/יִּכְרְת֞וּ אֶת רֹ֨אשׁ שֶׁ֤בַע בֶּן בִּכְרִי֙ וַ/יַּשְׁלִ֣כוּ אֶל יוֹאָ֔ב וַ/יִּתְקַע֙ בַּ/שּׁוֹפָ֔ר וַ/יָּפֻ֥צוּ מֵֽ/עַל הָ/עִ֖יר אִ֣ישׁ לְ/אֹהָלָ֑י/ו וְ/יוֹאָ֛ב שָׁ֥ב יְרוּשָׁלִַ֖ם אֶל הַ/מֶּֽלֶךְ־־־־־־־׃ס
 translation:
-  text: Then the woman went to all the people in her wisdom[a], and they cut off the head of Sheba son of Bichri and threw it to Joab. Then he blew the trumpet, and they dispersed from the city, each man to his tent; and Joab returned to Jerusalem to the king.
-  philosophy: optimal-equivalence
+  text: Then the woman went to all the people and gave them wise counsel. They cut off the head of Sheba son of Bichri and threw it to Joab. Then he blew the trumpet, and the troops dispersed from the city, each man returning home[a]; Joab returned to the king in Jerusalem.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew: ''each man to his tent,'' a stock idiom for dispersing to one''s own place.'
-    reason: cultural_note
+    text: Literally, “each man to his tents,” a conventional expression for dispersing to one’s own place.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: וַתָּבוֹא
   chosen: went
@@ -120,14 +120,20 @@ revisions:
   from: Then the woman went to all the people with her wisdom, and they cut off the head of Sheba son of Bichri and threw it to Joab. Then he blew the trumpet, and they dispersed from the city, each man to his tent; and Joab returned to Jerusalem to the king.
   to: Then the woman went to all the people with her wisdom, and they cut off the head of Sheba son of Bichri and threw it to Joab. Then he blew the trumpet, and they dispersed from the city, each man to his tent; and Joab returned to Jerusalem to the king.
   rationale: Changed 'with her wisdom' to 'in her wisdom' for a more natural rendering of the Hebrew while preserving the sense. No other changes needed.
-
 - timestamp: '2026-05-17T05:06:38Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then the woman went to all the people in her wisdom[a], and they cut off the head of Sheba son of Bichri and threw it to Joab. Then he blew the trumpet, and they dispersed from the city, each man to his tent; and Joab returned to Jerusalem to the king.'
-  to: 'Then the woman went to all the people in her wisdom[a], and they cut off the head of Sheba son of Bichri and threw it to Joab. Then he blew the trumpet, and they dispersed from the city, each man to his tent; and Joab returned to Jerusalem to the king.'
+  from: Then the woman went to all the people in her wisdom[a], and they cut off the head of Sheba son of Bichri and threw it to Joab. Then he blew the trumpet, and they dispersed from the city, each man to his tent; and Joab returned to Jerusalem to the king.
+  to: Then the woman went to all the people in her wisdom[a], and they cut off the head of Sheba son of Bichri and threw it to Joab. Then he blew the trumpet, and they dispersed from the city, each man to his tent; and Joab returned to Jerusalem to the king.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with her wisdom''].'
+- timestamp: '2026-11-09T17:28:28Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then the woman went to all the people in her wisdom[a], and they cut off the head of Sheba son of Bichri and threw it to Joab. Then he blew the trumpet, and they dispersed from the city, each man to his tent; and Joab returned to Jerusalem to the king.
+  to: Then the woman went to all the people and gave them wise counsel. They cut off the head of Sheba son of Bichri and threw it to Joab. Then he blew the trumpet, and the troops dispersed from the city, each man returning home[a]; Joab returned to the king in Jerusalem.
+  rationale: The recorded debate between “with her wisdom” and “in her wisdom” preserves the importance of her wise action but does not make that action clear. The lexical record identifies the tents phrase as a dispersal idiom, which supports translating its meaning while retaining its wording in a note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -147,3 +153,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/020/022.job-45813.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:28Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The woman’s wise counsel leads the people to execute Sheba, after which Joab dismisses the besieging troops and returns to David.
+  meaning_decisions:
+  - source_phrase: וַתָּבוֹא הָאִשָּׁה אֶל כָּל הָעָם בְּחָכְמָתָהּ
+    prior_rendering: the woman went to all the people in her wisdom
+    new_rendering: the woman went to all the people and gave them wise counsel
+    rationale: In the context of her negotiation and the people’s response, her wisdom is exercised through counsel; making that understood action explicit avoids an obscure description of how she went.
+  - source_phrase: וַיָּפֻצוּ מֵעַל הָעִיר
+    prior_rendering: they dispersed from the city
+    new_rendering: the troops dispersed from the city
+    rationale: The dispersing group is Joab’s army, not the townspeople who have just executed Sheba.
+  - source_phrase: אִישׁ לְאֹהָלָיו
+    prior_rendering: each man to his tent
+    new_rendering: each man returning home
+    rationale: The dismissal formula means returning to one’s own dwelling, not necessarily to a literal military tent; the traditional image is preserved in a note.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The recorded debate between “with her wisdom” and “in her wisdom” preserves the importance of her wise action but does not make that action clear. The lexical record identifies the tents phrase as a dispersal idiom, which supports translating its meaning while retaining its wording in a note.

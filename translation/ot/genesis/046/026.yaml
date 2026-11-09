@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: כָּל הַ֠/נֶּפֶשׁ הַ/בָּאָ֨ה לְ/יַעֲקֹ֤ב מִצְרַ֨יְמָ/ה֙ יֹצְאֵ֣י יְרֵכ֔/וֹ מִ/לְּ/בַ֖ד נְשֵׁ֣י בְנֵי יַעֲקֹ֑ב כָּל נֶ֖פֶשׁ שִׁשִּׁ֥ים וָ/שֵֽׁשׁ־־־׃
 translation:
-  text: All the persons belonging to Jacob who came to Egypt[a], who came from his loins, besides the wives of Jacob’s sons[b], were sixty-six persons in all.
-  philosophy: optimal-equivalence
+  text: Jacob’s descendants[a] who came to Egypt numbered sixty-six persons in all, not counting the wives of Jacob’s sons.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew literally, 'those coming out of his thigh,' an idiom for biological descendants.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'all the souls ... sixty-six.' Here 'soul' is a Hebrew way of counting persons.
+    text: Literally, “those who came from his thigh,” a Hebrew expression for biological descent.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: כָּל הַנֶּפֶשׁ
@@ -77,14 +74,20 @@ revisions:
   from: All the persons who came with Jacob to Egypt, who came from his loins, besides the wives of Jacob’s sons, were sixty-six persons in all.
   to: All the persons who came with Jacob to Egypt, who came from his loins, besides the wives of Jacob’s sons, were sixty-six persons in all.
   rationale: Changed 'came with Jacob' to 'belonging to Jacob who came to Egypt' to better reflect the Hebrew construction and avoid implying only physical accompaniment; retained the rest with minor smoothing.
-
 - timestamp: '2026-05-17T08:36:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'All the persons belonging to Jacob who came to Egypt[a], who came from his loins, besides the wives of Jacob’s sons[b], were sixty-six persons in all.'
-  to: 'All the persons belonging to Jacob who came to Egypt[a], who came from his loins, besides the wives of Jacob’s sons[b], were sixty-six persons in all.'
+  from: All the persons belonging to Jacob who came to Egypt[a], who came from his loins, besides the wives of Jacob’s sons[b], were sixty-six persons in all.
+  to: All the persons belonging to Jacob who came to Egypt[a], who came from his loins, besides the wives of Jacob’s sons[b], were sixty-six persons in all.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who came with Jacob to Egypt''].'
+- timestamp: '2026-11-09T17:45:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: All the persons belonging to Jacob who came to Egypt[a], who came from his loins, besides the wives of Jacob’s sons[b], were sixty-six persons in all.
+  to: Jacob’s descendants[a] who came to Egypt numbered sixty-six persons in all, not counting the wives of Jacob’s sons.
+  rationale: The history debated 'with Jacob' against 'belonging to Jacob,' with later automated records pulling in different directions. Naming Jacob’s descendants directly preserves the family relationship without adding an accompaniment claim; the sixty-six count and exclusion remain unchanged.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -108,3 +111,26 @@ cross_check:
     agree: 1
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/046/026.job-65698.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:45:29Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Sixty-six of Jacob’s descendants came to Egypt, excluding his sons’ wives from the count.
+  meaning_decisions:
+  - source_phrase: כָּל הַנֶּפֶשׁ הַבָּאָה לְיַעֲקֹב מִצְרַיְמָה יֹצְאֵי יְרֵכוֹ
+    prior_rendering: All the persons belonging to Jacob who came to Egypt, who came from his loins
+    new_rendering: Jacob’s descendants who came to Egypt
+    rationale: The descent idiom identifies the people being counted; the concise English formulation conveys both their relationship to Jacob and their coming to Egypt.
+  - source_phrase: מִלְּבַד נְשֵׁי בְנֵי יַעֲקֹב
+    prior_rendering: besides the wives of Jacob’s sons
+    new_rendering: not counting the wives of Jacob’s sons
+    rationale: '''Not counting'' makes the exclusion unambiguous, whereas ''besides'' can suggest an additional group included in the total.'
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The history debated 'with Jacob' against 'belonging to Jacob,' with later automated records pulling in different directions. Naming Jacob’s descendants directly preserves the family relationship without adding an accompaniment claim; the sixty-six count and exclusion remain unchanged.

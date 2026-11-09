@@ -18,12 +18,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And after saying these things[a], the holy man nobly gave himself over to the tortures, and he stood firm by reason for the law, even to the tortures of death.
-  philosophy: optimal-equivalence
+  text: After saying this, the holy man died nobly under torture[a]. Sustained by reason, he stood firm for the sake of the law even through the agonies of death.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Greek verb rendered 'gave himself over to the tortures' is rare and difficult; it may also suggest that he met death or the ordeal in direct confrontation.
-    reason: lexical_alternative
+    text: Or, “died nobly in defiance of the tortures”; the Greek verb is rare and difficult.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: καὶ ταῦτα εἰπὼν
   chosen: And after saying these things
@@ -136,14 +136,20 @@ revisions:
   from: And after saying these things, the holy man nobly gave himself over to the tortures, and he stood firm in his reasoning for the law, even to the tortures of death.
   to: And after saying these things, the holy man nobly gave himself over to the tortures, and he stood firm in his reasoning for the law, even to the tortures of death.
   rationale: Revised 'in his reasoning' to 'by reason' to better reflect τῷ λογισμῷ as the faculty/principle of reason rather than his personal thought process; retained the rest as accurate and natural.
-
 - timestamp: '2026-05-18T03:00:34Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And after saying these things[a], the holy man nobly gave himself over to the tortures, and he stood firm by reason for the law, even to the tortures of death.'
-  to: 'And after saying these things[a], the holy man nobly gave himself over to the tortures, and he stood firm by reason for the law, even to the tortures of death.'
+  from: And after saying these things[a], the holy man nobly gave himself over to the tortures, and he stood firm by reason for the law, even to the tortures of death.
+  to: And after saying these things[a], the holy man nobly gave himself over to the tortures, and he stood firm by reason for the law, even to the tortures of death.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in his reasoning''].'
+- timestamp: '2026-11-09T20:33:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And after saying these things[a], the holy man nobly gave himself over to the tortures, and he stood firm by reason for the law, even to the tortures of death.
+  to: After saying this, the holy man died nobly under torture[a]. Sustained by reason, he stood firm for the sake of the law even through the agonies of death.
+  rationale: I retain the current text's “reason,” supported by the earlier review's distinction between the governing faculty and a personal thought process. The recorded uncertainty about the rare verb warrants a note, but the source and narrative context favor stating his death explicitly rather than retaining “gave himself over.”
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -163,3 +169,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/006/030.job-49880.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:33:23Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The holy man dies nobly under torture, sustained by reason in his faithfulness to the law to the very end.
+  meaning_decisions:
+  - source_phrase: εὐγενῶς ταῖς βασάνοις ἐναντεθάνει
+    prior_rendering: nobly gave himself over to the tortures
+    new_rendering: died nobly under torture
+    rationale: The verb's death element and the conclusion of the martyrdom account favor explicitly stating that he died, rather than merely that he surrendered himself to torture; its possible emphasis on defiance is preserved in a note.
+  - source_phrase: ἀντέστη τῷ λογισμῷ διὰ τὸν νόμον
+    prior_rendering: he stood firm by reason for the law
+    new_rendering: Sustained by reason, he stood firm for the sake of the law
+    rationale: This makes the instrumental role of reason and his devotion to the law clear in natural English, while retaining the book's central philosophical term.
+  - source_phrase: μέχρι τῶν θανάτου βασάνων
+    prior_rendering: even to the tortures of death
+    new_rendering: even through the agonies of death
+    rationale: The phrase marks the fullest extent of his endurance, including death's final torments; the new wording conveys that force without an opaque English genitive.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retain the current text's “reason,” supported by the earlier review's distinction between the governing faculty and a personal thought process. The recorded uncertainty about the rare verb warrants a note, but the source and narrative context favor stating his death explicitly rather than retaining “gave himself over.”

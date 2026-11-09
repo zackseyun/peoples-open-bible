@@ -16,12 +16,12 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: And after heating sharp spits[a], they applied them to his back; and after piercing his sides, they burned his entrails from it.
-  philosophy: optimal-equivalence
+  text: They heated sharp spits and applied them to his back; then they pierced his sides and burned away his entrails[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Literally, 'from him.' The phrase likely describes the burning as reaching into his inner parts after his sides were pierced; hence 'from within.'
-    reason: lexical_alternative
+    text: Or, 'burned his entrails from within'; the final Greek phrase is difficult.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ὀβελίσκους
   chosen: spits
@@ -116,14 +116,20 @@ revisions:
   from: And after heating sharp spits, they applied them to his back; and after piercing his sides, they burned his entrails from within.
   to: And after heating sharp spits, they applied them to his back; and after piercing his sides, they burned his entrails from within.
   rationale: Replaced 'from within' with the more literal 'from it' to reflect ἀπʼ αὐτοῦ without interpretive expansion; retained the rest as accurate and natural.
-
 - timestamp: '2026-05-18T02:59:29Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And after heating sharp spits[a], they applied them to his back; and after piercing his sides, they burned his entrails from it.'
-  to: 'And after heating sharp spits[a], they applied them to his back; and after piercing his sides, they burned his entrails from it.'
+  from: And after heating sharp spits[a], they applied them to his back; and after piercing his sides, they burned his entrails from it.
+  to: And after heating sharp spits[a], they applied them to his back; and after piercing his sides, they burned his entrails from it.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from within''].'
+- timestamp: '2026-11-09T19:00:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And after heating sharp spits[a], they applied them to his back; and after piercing his sides, they burned his entrails from it.
+  to: They heated sharp spits and applied them to his back; then they pierced his sides and burned away his entrails[a].
+  rationale: The history oscillated between 'from within' and the opaque 'from it' without a stable recorded text change. I render the bodily destruction as 'burned away' and retain the inward-burning interpretation because the final Greek phrase remains difficult.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -143,3 +149,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/011/019.job-50017.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:00:06Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The torturers apply heated spits to his back and pierce his sides, burning his internal organs.
+  meaning_decisions:
+  - source_phrase: ἀπʼ αὐτοῦ τὰ σπλάγχνα διέκαιον
+    prior_rendering: they burned his entrails from it
+    new_rendering: burned away his entrails
+    rationale: This understands the phrase as destructive burning away from his body, rather than leaving an unintelligible 'from it'; the earlier inward-burning interpretation remains in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history oscillated between 'from within' and the opaque 'from it' without a stable recorded text change. I render the bodily destruction as 'burned away' and retain the inward-burning interpretation because the final Greek phrase remains difficult.

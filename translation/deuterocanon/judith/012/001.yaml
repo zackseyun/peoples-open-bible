@@ -17,15 +17,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And he ordered that she be brought in where his silverware was kept[b][a], and he directed that food be prepared for her from his own dishes and that she drink from his wine.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'his silver vessels.' The Greek term can denote silver articles generally; in this banquet setting it likely refers to tableware or serving vessels.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'that a table be spread for her from his delicacies.' The Greek verb and noun together can be rendered more formally as laying out his prepared dishes.
-    reason: lexical_alternative
+  text: Holofernes ordered her to be brought into the place where his silver vessels were kept, and directed that she be served some of his own prepared dishes and given his wine to drink.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐκέλευσεν
   chosen: he ordered
@@ -114,14 +107,20 @@ revisions:
   from: And he ordered that she be brought in where his silverware was kept, and he directed that food be prepared for her from his own dishes and that she drink from his wine.
   to: And he ordered that she be brought in where his silver was kept, and he directed that food be set before her from his own provisions and that she drink from his wine.
   rationale: Revised 'silverware' to 'silver' for lexical accuracy, since the Greek refers to silver/treasure rather than table utensils. Changed 'food be prepared' to 'food be set before her' to reflect the sense of arranging/serving, and 'from his own dishes' to 'from his own provisions' to better match the Greek term for prepared foods.
-
 - timestamp: '2026-05-15T15:24:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he ordered that she be brought in where his silver was kept[b][a], and he directed that food be set before her from his own provisions and that she drink from his wine.'
-  to: 'And he ordered that she be brought in where his silverware was kept[b][a], and he directed that food be prepared for her from his own dishes and that she drink from his wine.'
-  rationale: 'Restored 3 chosen renderings; azure misread ἀργυρώματα (silver vessels) and ὀψοποιήματα (prepared dishes).'
+  from: And he ordered that she be brought in where his silver was kept[b][a], and he directed that food be set before her from his own provisions and that she drink from his wine.
+  to: And he ordered that she be brought in where his silverware was kept[b][a], and he directed that food be prepared for her from his own dishes and that she drink from his wine.
+  rationale: Restored 3 chosen renderings; azure misread ἀργυρώματα (silver vessels) and ὀψοποιήματα (prepared dishes).
+- timestamp: '2026-11-09T19:02:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he ordered that she be brought in where his silverware was kept[b][a], and he directed that food be prepared for her from his own dishes and that she drink from his wine.
+  to: Holofernes ordered her to be brought into the place where his silver vessels were kept, and directed that she be served some of his own prepared dishes and given his wine to drink.
+  rationale: The earlier review correctly recognized the action as serving food, but its generic 'silver' and 'provisions' weakened the more specific nouns. I retain the recorded understanding of silver vessels and prepared dishes while clarifying the serving instruction.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -141,3 +140,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/012/001.job-50740.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:02:21Z'
+  change_level: refined
+  confidence: high
+  meaning: Holofernes orders Judith to be brought where his silver vessels are kept and served food and wine from his own supply.
+  meaning_decisions:
+  - source_phrase: τὰ ἀργυρώματα αὐτοῦ
+    prior_rendering: his silverware
+    new_rendering: his silver vessels
+    rationale: This preserves the contextual sense of silver articles used for serving without suggesting only modern cutlery.
+  - source_phrase: καταστρῶσαι αὐτῇ ἀπὸ τῶν ὀψοποιημάτων αὐτοῦ
+    prior_rendering: that food be prepared for her from his own dishes
+    new_rendering: that she be served some of his own prepared dishes
+    rationale: The instruction concerns setting out already prepared food for Judith, rather than preparing new food from other dishes.
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly recognized the action as serving food, but its generic 'silver' and 'provisions' weakened the more specific nouns. I retain the recorded understanding of silver vessels and prepared dishes while clarifying the serving instruction.

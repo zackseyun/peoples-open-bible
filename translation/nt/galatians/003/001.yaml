@@ -4,18 +4,8 @@ source:
   edition: SBLGNT
   text: Ὦ ἀνόητοι Γαλάται, τίς ὑμᾶς ⸀ἐβάσκανεν, οἷς κατ’ ὀφθαλμοὺς Ἰησοῦς Χριστὸς ⸀προεγράφη ἐσταυρωμένος;
 translation:
-  text: You foolish Galatians[a], who has bewitched you[c][b], before whose eyes Jesus Christ was publicly portrayed as crucified?
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Or: ''who has deceived you?'' The verb literally evokes bewitching or casting a spell.'
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek title Christos means ‘Messiah’; here it appears in the conventional English personal-name form.
-    reason: lexical_alternative
-  - marker: c
-    text: 'Or: ''was clearly set forth'' or ''was publicly placarded as crucified.'''
-    reason: lexical_alternative
+  text: You foolish Galatians! Who has bewitched you? Jesus Christ was vividly portrayed before your eyes as crucified.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀνόητοι
   chosen: foolish
@@ -99,10 +89,16 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "You foolish Galatians, who has bewitched you, before whose eyes Jesus Messiah was publicly portrayed as crucified?"
-  to: "You foolish Galatians, who has bewitched you, before whose eyes Jesus the Messiah was publicly portrayed as crucified?"
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
-
+  from: You foolish Galatians, who has bewitched you, before whose eyes Jesus Messiah was publicly portrayed as crucified?
+  to: You foolish Galatians, who has bewitched you, before whose eyes Jesus the Messiah was publicly portrayed as crucified?
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:23:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You foolish Galatians[a], who has bewitched you[c][b], before whose eyes Jesus Christ was publicly portrayed as crucified?
+  to: You foolish Galatians! Who has bewitched you? Jesus Christ was vividly portrayed before your eyes as crucified.
+  rationale: The earlier revision reshaped the sentence to mirror the Greek relative clause; I restore direct English sentences while preserving the vivid imagery. The mechanical title reversions yield to the standing rule for 'Jesus Christ' in a name construction.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -125,3 +121,21 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/galatians/003/001.job-54249.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:15Z'
+  change_level: refined
+  confidence: high
+  meaning: Paul rebukes the Galatians for falling under a misleading influence despite the vivid proclamation of Jesus Christ’s crucifixion to them.
+  meaning_decisions:
+  - source_phrase: οἷς κατ’ ὀφθαλμοὺς Ἰησοῦς Χριστὸς προεγράφη ἐσταυρωμένος
+    prior_rendering: before whose eyes Jesus Christ was publicly portrayed as crucified
+    new_rendering: Jesus Christ was vividly portrayed before your eyes as crucified
+    rationale: A separate sentence makes the contrast with their present foolishness clear. 'Vividly portrayed' communicates the force of the proclamation without suggesting that they witnessed the crucifixion itself.
+  footnote_kinds: {}
+  history_weighed: The earlier revision reshaped the sentence to mirror the Greek relative clause; I restore direct English sentences while preserving the vivid imagery. The mechanical title reversions yield to the standing rule for 'Jesus Christ' in a name construction.

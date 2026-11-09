@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּ֤פֶן כֹּה֙ וָ/כֹ֔ה וַ/יַּ֖רְא כִּ֣י אֵ֣ין אִ֑ישׁ וַ/יַּךְ֙ אֶת הַ/מִּצְרִ֔י וַֽ/יִּטְמְנֵ֖/הוּ בַּ/חֽוֹל־׃
 translation:
-  text: He looked this way and that[a], and when he saw that there was no one there, he struck down the Egyptian and hid him in the sand.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'that no one was there.' The Hebrew reads literally 'that there was no man,' but the phrase may function generically for the absence of any person.
-    reason: lexical_alternative
+  text: He looked this way and that, and when he saw that no one else was there, he struck down the Egyptian and hid his body in the sand.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּפֶן
   chosen: He looked
@@ -79,14 +75,20 @@ revisions:
   from: He looked this way and that, and when he saw that there was no man there, he struck down the Egyptian and hid him in the sand.
   to: He looked this way and that, and when he saw that there was no man there, he struck down the Egyptian and hid him in the sand.
   rationale: Changed 'no man there' to 'no one there' for more natural English while preserving the meaning; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:55:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He looked this way and that[a], and when he saw that there was no one there, he struck down the Egyptian and hid him in the sand.'
-  to: 'He looked this way and that[a], and when he saw that there was no one there, he struck down the Egyptian and hid him in the sand.'
+  from: He looked this way and that[a], and when he saw that there was no one there, he struck down the Egyptian and hid him in the sand.
+  to: He looked this way and that[a], and when he saw that there was no one there, he struck down the Egyptian and hid him in the sand.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''when he saw that there was no man there''].'
+- timestamp: '2026-11-09T17:34:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He looked this way and that[a], and when he saw that there was no one there, he struck down the Egyptian and hid him in the sand.
+  to: He looked this way and that, and when he saw that no one else was there, he struck down the Egyptian and hid his body in the sand.
+  rationale: The current wording's 'no one' preserves the automated review's useful recognition that אִישׁ is generic here, despite the conflicting revert entry. I retain 'struck down' and concealment in the sand, clarifying only the other people and the dead body.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -106,3 +108,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/002/012.job-62308.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:34:33Z'
+  change_level: refined
+  confidence: high
+  meaning: After looking around and seeing no one else nearby, Moses killed the Egyptian and concealed his body in the sand.
+  meaning_decisions:
+  - source_phrase: וַיַּרְא כִּי אֵין אִישׁ
+    prior_rendering: when he saw that there was no one there
+    new_rendering: when he saw that no one else was there
+    rationale: Moses, the Egyptian, and the Hebrew are already present. 'Else' expresses the understood absence of other people rather than suggesting the scene was empty.
+  - source_phrase: וַיִּטְמְנֵהוּ
+    prior_rendering: hid him
+    new_rendering: hid his body
+    rationale: The Egyptian has been killed, as the narrative subsequently confirms. Naming the body makes the lethal result and the concealment clear without changing 'hide' into a formal burial.
+  footnote_kinds: {}
+  history_weighed: The current wording's 'no one' preserves the automated review's useful recognition that אִישׁ is generic here, despite the conflicting revert entry. I retain 'struck down' and concealment in the sand, clarifying only the other people and the dead body.

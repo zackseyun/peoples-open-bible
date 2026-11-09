@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: Καί τις ἀνὴρ ⸂ἀδύνατος ἐν Λύστροις⸃ τοῖς ποσὶν ἐκάθητο, χωλὸς ἐκ κοιλίας μητρὸς ⸀αὐτοῦ, ὃς οὐδέποτε ⸀περιεπάτησεν.
 translation:
-  text: And in Lystra a certain man was sitting[a], powerless in his feet, lame from his mother's womb, who had never walked.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'without strength in his feet.' The Greek emphasizes lack of strength before stating explicitly that he was lame.
-    reason: lexical_alternative
+  text: In Lystra a man was sitting, unable to use his feet. He had been lame from birth and had never walked.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Καί
   chosen: And
@@ -83,17 +79,23 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'And in Lystra a certain man was sitting there, powerless in his feet, lame from his mother''s womb, who had never walked.'
-  to: 'And in Lystra a certain man was sitting there, powerless in his feet, lame from his mother''s womb, who had never walked.'
+  from: And in Lystra a certain man was sitting there, powerless in his feet, lame from his mother's womb, who had never walked.
+  to: And in Lystra a certain man was sitting there, powerless in his feet, lame from his mother's womb, who had never walked.
   rationale: Removed 'there,' which is not represented in the Greek. Retained the rest as accurate and natural.
-
 - timestamp: '2026-05-18T03:00:41Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And in Lystra a certain man was sitting[a], powerless in his feet, lame from his mother''s womb, who had never walked.'
-  to: 'And in Lystra a certain man was sitting[a], powerless in his feet, lame from his mother''s womb, who had never walked.'
+  from: And in Lystra a certain man was sitting[a], powerless in his feet, lame from his mother's womb, who had never walked.
+  to: And in Lystra a certain man was sitting[a], powerless in his feet, lame from his mother's womb, who had never walked.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was sitting there''].'
+- timestamp: '2026-11-09T17:07:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And in Lystra a certain man was sitting[a], powerless in his feet, lame from his mother's womb, who had never walked.
+  to: In Lystra a man was sitting, unable to use his feet. He had been lame from birth and had never walked.
+  rationale: The recorded discussion focused on whether the dispensable word 'there' should remain; I follow the current text in omitting it. The lexical rationale’s concern to preserve Luke’s layered description is maintained, while its source-shaped expressions become natural English.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -113,3 +115,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/014/008.job-46527.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:07:13Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A man sitting in Lystra could not use his feet, had been lame from birth, and had never walked.
+  meaning_decisions:
+  - source_phrase: ἀδύνατος ... τοῖς ποσὶν
+    prior_rendering: powerless in his feet
+    new_rendering: unable to use his feet
+    rationale: The phrase describes physical incapacity; the new wording communicates that clearly while retaining the separate statements about his congenital condition and never having walked.
+  - source_phrase: ἐκ κοιλίας μητρὸς αὐτοῦ
+    prior_rendering: from his mother's womb
+    new_rendering: from birth
+    rationale: This is the conventional expression for a congenital condition, not an independently significant womb image in this narrative.
+  footnote_kinds: {}
+  history_weighed: The recorded discussion focused on whether the dispensable word 'there' should remain; I follow the current text in omitting it. The lexical rationale’s concern to preserve Luke’s layered description is maintained, while its source-shaped expressions become natural English.

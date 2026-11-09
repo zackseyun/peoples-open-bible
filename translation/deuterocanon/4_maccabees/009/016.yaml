@@ -16,17 +16,47 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: 'And when the bodyguards were saying, “Agree to eat, so that you may be released,”'
+  text: The bodyguards kept telling him, “Agree to eat the forbidden meat, so that you can be released.”
+  philosophy: dynamic
 revisions:
 - timestamp: '2026-05-18T04:00:26Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when the bodyguards were saying[a], “Confess that you will eat, so that you may be released,”'
-  to: 'And when the bodyguards were saying, “Agree to eat, so that you may be released,”'
+  from: And when the bodyguards were saying[a], “Confess that you will eat, so that you may be released,”
+  to: And when the bodyguards were saying, “Agree to eat, so that you may be released,”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Agree'', ''to eat'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+- timestamp: '2026-11-09T18:58:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when the bodyguards were saying, “Agree to eat, so that you may be released,”
+  to: The bodyguards kept telling him, “Agree to eat the forbidden meat, so that you can be released.”
+  rationale: The history’s change from “Confess that you will eat” to “Agree to eat” correctly identifies the demanded concession, and I retain it. The added object supplies only the situation already known to the first hearers.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T04:00:26Z'
   unchanged: false
   changes_summary: 'doctrine_realignment: 4 Maccabees 9:16 wholesale revert (2 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Agree'', ''to eat'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, '
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:58:50Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The bodyguards urge the eldest brother to agree to eat the forbidden meat so that he can be released.
+  meaning_decisions:
+  - source_phrase: τῶν δορυφόρων λεγόντων
+    prior_rendering: And when the bodyguards were saying
+    new_rendering: The bodyguards kept telling him
+    rationale: An independent English sentence preserves the ongoing appeal and supplies its obvious recipient without leaving a dangling introductory clause.
+  - source_phrase: Ὁμολόγησον φαγεῖν
+    prior_rendering: Agree to eat
+    new_rendering: Agree to eat the forbidden meat
+    rationale: The object of eating is already established in the narrative; supplying it makes clear that they demand unlawful compliance, not ordinary nourishment.
+  footnote_kinds: {}
+  history_weighed: The history’s change from “Confess that you will eat” to “Agree to eat” correctly identifies the demanded concession, and I retain it. The added object supplies only the situation already known to the first hearers.

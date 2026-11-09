@@ -4,11 +4,11 @@ source:
   edition: SBLGNT
   text: ἐν οἷς ἐστε καὶ ὑμεῖς κλητοὶ Ἰησοῦ Χριστοῦ,
 translation:
-  text: among whom you also are[a], called of Jesus Christ,
-  philosophy: optimal-equivalence
+  text: You too are among them, called to belong to Jesus Christ[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'called by Jesus the Messiah,' or more literally, 'called ones of Jesus the Messiah.'
+    text: Or, 'called by Jesus Christ.'
     reason: alternative_reading
 lexical_decisions:
 - source_word: ἐν οἷς
@@ -90,11 +90,17 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "among whom you also are, called of Jesus Messiah,"
-  to: "among whom you also are, called of Jesus the Messiah,"
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
+  from: among whom you also are, called of Jesus Messiah,
+  to: among whom you also are, called of Jesus the Messiah,
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:17:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: among whom you also are[a], called of Jesus Christ,
+  to: You too are among them, called to belong to Jesus Christ[a].
+  rationale: The first draft and the lexical and theological discussions support 'called to belong to,' which the later revision replaced primarily for formal transparency. I restore that clearer meaning while following the standing name-construction ruling and retaining 'called by' as an alternative.
 status: revised
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -117,3 +123,26 @@ cross_check:
     agree: 2
     minor-issues: 1
   source_review: state/reviews/gemini/high_scrutiny/nt/romans/001/006.job-7646.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:17:55Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Roman believers are included among the nations Paul serves and are called to belong to Jesus Christ.
+  meaning_decisions:
+  - source_phrase: ἐν οἷς ἐστε καὶ ὑμεῖς
+    prior_rendering: among whom you also are
+    new_rendering: You too are among them
+    rationale: A direct sentence makes the Romans' inclusion in the preceding missionary scope clear without changing the reference.
+  - source_phrase: κλητοὶ Ἰησοῦ Χριστοῦ
+    prior_rendering: called of Jesus Christ
+    new_rendering: called to belong to Jesus Christ
+    rationale: The genitive most naturally identifies those who belong to Jesus through divine calling. 'Called of' is obscure in contemporary English; the alternative agency reading is footnoted.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and the lexical and theological discussions support 'called to belong to,' which the later revision replaced primarily for formal transparency. I restore that clearer meaning while following the standing name-construction ruling and retaining 'called by' as an alternative.

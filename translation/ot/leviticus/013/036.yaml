@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/רָאָ֨/הוּ֙ הַ/כֹּהֵ֔ן וְ/הִנֵּ֛ה פָּשָׂ֥ה הַ/נֶּ֖תֶק בָּ/ע֑וֹר לֹֽא יְבַקֵּ֧ר הַ/כֹּהֵ֛ן לַ/שֵּׂעָ֥ר הַ/צָּהֹ֖ב טָמֵ֥א הֽוּא־׃
 translation:
-  text: And if the priest examines him[a], and behold, the scaly infection has spread in the skin, the priest need not look for the yellow hair; he is unclean.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the itch' for the Hebrew term referring to a scaly skin condition, especially on the head or beard.
-    reason: lexical_alternative
+  text: then the priest shall examine him. If he finds that the scaly patch has spread over the skin, he need not look for yellow hair; the person is unclean.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְרָאָהוּ
   chosen: and the priest examines him
@@ -95,14 +91,20 @@ revisions:
   from: and the priest examines him, and behold, the scaly infection has spread in the skin, the priest need not look for the yellow hair; he is unclean.
   to: and the priest examines him, and behold, the scaly infection has spread in the skin, the priest need not look for the yellow hair; he is unclean.
   rationale: Changed the opening conjunction to 'And if' to reflect the Hebrew conditional context more naturally and formally; capitalized the initial word for standard English sentence form. The rest is accurate and complete.
-
 - timestamp: '2026-05-18T02:56:42Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And if the priest examines him[a], and behold, the scaly infection has spread in the skin, the priest need not look for the yellow hair; he is unclean.'
-  to: 'And if the priest examines him[a], and behold, the scaly infection has spread in the skin, the priest need not look for the yellow hair; he is unclean.'
+  from: And if the priest examines him[a], and behold, the scaly infection has spread in the skin, the priest need not look for the yellow hair; he is unclean.
+  to: And if the priest examines him[a], and behold, the scaly infection has spread in the skin, the priest need not look for the yellow hair; he is unclean.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and the priest examines him''].'
+- timestamp: '2026-11-09T18:18:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And if the priest examines him[a], and behold, the scaly infection has spread in the skin, the priest need not look for the yellow hair; he is unclean.
+  to: then the priest shall examine him. If he finds that the scaly patch has spread over the skin, he need not look for yellow hair; the person is unclean.
+  rationale: The recorded opening changes concern connective wording and carry little substantive weight. I retain the lexical and theological conclusions that spreading makes further inspection for yellow hair unnecessary and that uncleanness belongs to the affected person.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -122,3 +124,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/013/036.job-45107.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:18:46Z'
+  change_level: refined
+  confidence: high
+  meaning: If renewed examination confirms that the patch has spread, the person is unclean whether or not yellow hair is present.
+  meaning_decisions:
+  - source_phrase: וְרָאָהוּ הַכֹּהֵן וְהִנֵּה
+    prior_rendering: And if the priest examines him, and behold
+    new_rendering: then the priest shall examine him. If he finds that
+    rationale: The priest's examination follows the case introduced in verse 35, and the observed finding governs the verdict.
+  - source_phrase: פָּשָׂה הַנֶּתֶק בָּעוֹר
+    prior_rendering: the scaly infection has spread in the skin
+    new_rendering: the scaly patch has spread over the skin
+    rationale: This preserves the visible spread criterion without asserting an infectious cause.
+  - source_phrase: טָמֵא הוּא
+    prior_rendering: he is unclean
+    new_rendering: the person is unclean
+    rationale: The explicit subject prevents the verdict from appearing to refer to the priest, who is the subject of the preceding clause.
+  footnote_kinds: {}
+  history_weighed: The recorded opening changes concern connective wording and carry little substantive weight. I retain the lexical and theological conclusions that spreading makes further inspection for yellow hair unnecessary and that uncleanness belongs to the affected person.

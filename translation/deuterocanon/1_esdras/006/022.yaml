@@ -27,14 +27,11 @@ source:
     note: MT parallel is APPROXIMATE -- 1 Esdras sometimes expands, conflates, or reorders the Hebrew. Use the MT hebrew as a sanity check on proper names and phrasing; the Greek remains the primary source text.
     reference: ''
 translation:
-  text: 'Then King Darius ordered a search to be made in the archives kept in Babylon[a], and in Ecbatana, the fortress in the land of Media[b], a scroll was found in which these things had been recorded:'
-  philosophy: optimal-equivalence
+  text: 'Then King Darius ordered a search of the archives in Babylon. In the citadel at Ecbatana, in the land of Media, a record[a] was found with the following written in it:'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the citadel' for 'the fortress' (Greek τῇ βάρει), referring to the fortified administrative center at Ecbatana.
-    reason: lexical_alternative
-  - marker: b
-    text: Greek literally, 'a place was found in which these things had been recorded,' introducing the contents of the memorandum in the next verse.
+    text: Literally, “a place was found in which the following had been recorded.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: προσέταξεν
@@ -144,7 +141,6 @@ revisions:
   from: 'Then King Darius ordered a search to be made in the archives deposited in Babylon, and in Ecbatana, the fortress in the land of Media, a place was found in which these things had been recorded:'
   to: 'Then King Darius ordered a search to be made in the archives deposited in Babylon, and in Ecbatana, the fortress in the land of Media, a place was found in which these things had been recorded:'
   rationale: Changed 'deposited' to 'kept' for more natural rendering of the archives, and changed 'a place was found' to 'a scroll was found' to reflect the likely sense of τόπος here in context as a written record/document rather than a physical place.
-
 - timestamp: '2026-05-18T02:59:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -152,6 +148,13 @@ revisions:
   from: 'Then King Darius ordered a search to be made in the archives kept in Babylon[a], and in Ecbatana, the fortress in the land of Media[b], a scroll was found in which these things had been recorded:'
   to: 'Then King Darius ordered a search to be made in the archives kept in Babylon[a], and in Ecbatana, the fortress in the land of Media[b], a scroll was found in which these things had been recorded:'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''deposited''].'
+- timestamp: '2026-11-09T18:50:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Then King Darius ordered a search to be made in the archives kept in Babylon[a], and in Ecbatana, the fortress in the land of Media[b], a scroll was found in which these things had been recorded:'
+  to: 'Then King Darius ordered a search of the archives in Babylon. In the citadel at Ecbatana, in the land of Media, a record[a] was found with the following written in it:'
+  rationale: The earlier review rightly recognized that a literal “place” would obscure the documentary discovery, but “scroll” specifies a form not stated in this Greek witness. I preserve its meaning-based improvement with the less specific “record” and retain the unusual literal wording in a correctly placed footnote.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -171,3 +174,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/006/022.job-47778.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:50:23Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Darius ordered the Babylonian archives searched, and the relevant written record was found at Ecbatana’s citadel in Media.
+  meaning_decisions:
+  - source_phrase: ἐν Ἐκβατάνοις τῇ βάρει
+    prior_rendering: in Ecbatana, the fortress
+    new_rendering: In the citadel at Ecbatana
+    rationale: The wording locates the discovery at the fortified administrative center rather than ambiguously identifying the whole city as a fortress.
+  - source_phrase: τόπος ἐν ᾧ ὑπομνημάτιστο τάδε
+    prior_rendering: a scroll was found in which these things had been recorded
+    new_rendering: a record was found with the following written in it
+    rationale: The context establishes a written record, but the supplied Greek does not specify a scroll; “the following” naturally introduces the contents quoted next.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier review rightly recognized that a literal “place” would obscure the documentary discovery, but “scroll” specifies a form not stated in this Greek witness. I preserve its meaning-based improvement with the less specific “record” and retain the unusual literal wording in a correctly placed footnote.

@@ -10,17 +10,48 @@ source:
   validation: no_reference
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Susanna extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: 'And as she was being led away to be put to death, God stirred up the holy spirit of a younger boy whose name was Daniel.'
+  text: As she was being led away to be put to death, God stirred up the holy spirit[a] of a young boy named Daniel.
+  philosophy: dynamic
+  footnotes:
+  - marker: a
+    text: Alternatively, the phrase may refer to God’s holy Spirit at work in Daniel.
+    reason: alternative_reading
 revisions:
 - timestamp: '2026-05-18T04:00:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And as she was being led away to be put to death[a], God stirred up the holy spirit of a young boy whose name was Daniel.'
-  to: 'And as she was being led away to be put to death, God stirred up the holy spirit of a younger boy whose name was Daniel.'
+  from: And as she was being led away to be put to death[a], God stirred up the holy spirit of a young boy whose name was Daniel.
+  to: And as she was being led away to be put to death, God stirred up the holy spirit of a younger boy whose name was Daniel.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''younger'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+- timestamp: '2026-11-09T19:09:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And as she was being led away to be put to death, God stirred up the holy spirit of a younger boy whose name was Daniel.
+  to: As she was being led away to be put to death, God stirred up the holy spirit[a] of a young boy named Daniel.
+  rationale: The first recorded wording correctly used “young boy,” and the automated revert supplies no contextual reason for “younger.” I preserve the source’s holy-spirit language without resolving its theological ambiguity and note the serious alternative understanding.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T04:00:08Z'
   unchanged: false
   changes_summary: 'doctrine_realignment: Susanna 1:45 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''younger'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote'
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:56Z'
+  change_level: refined
+  confidence: medium
+  meaning: As Susanna was being taken to execution, God stirred the holy spirit of the young Daniel to intervene.
+  meaning_decisions:
+  - source_phrase: παιδαρίου νεωτέρου
+    prior_rendering: a younger boy
+    new_rendering: a young boy
+    rationale: The comparative describes Daniel’s youth in contrast to the elders; English “younger boy” misleadingly suggests comparison with another boy.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first recorded wording correctly used “young boy,” and the automated revert supplies no contextual reason for “younger.” I preserve the source’s holy-spirit language without resolving its theological ambiguity and note the serious alternative understanding.

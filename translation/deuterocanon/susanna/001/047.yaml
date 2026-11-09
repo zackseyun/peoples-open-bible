@@ -10,12 +10,8 @@ source:
   validation: no_reference
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Susanna extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: Then all the people turned to him and said[a], “What is this word that you have spoken?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “What is this statement that you have spoken?” The Greek λόγος can mean “word,” “statement,” or “matter.”
-    reason: lexical_alternative
+  text: Then all the people turned to him and asked, “What do you mean by this?”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐπέστρεψεν
   lemma: ἐπιστρέφω
@@ -73,7 +69,6 @@ revision_pass:
   timestamp: '2026-04-23T15:46:56Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -93,3 +88,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/susanna/001/047.job-52464.json
+revisions:
+- timestamp: '2026-11-09T19:09:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then all the people turned to him and said[a], “What is this word that you have spoken?”
+  to: Then all the people turned to him and asked, “What do you mean by this?”
+  rationale: The earlier lexical record correctly identifies λόγος as Daniel’s statement but favors “word” primarily for source transparency. The new question conveys the crowd’s actual request directly, making the synonym footnote unnecessary.
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:56Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Everyone turned toward Daniel and asked him to explain his declaration.
+  meaning_decisions:
+  - source_phrase: Τίς ὁ λόγος οὗτος ὃν σὺ λελάληκας;
+    prior_rendering: What is this word that you have spoken?
+    new_rendering: What do you mean by this?
+    rationale: The people are asking about the meaning of Daniel’s declaration, not an individual word; the immediate context makes the reference to what he has just said clear.
+  footnote_kinds: {}
+  history_weighed: The earlier lexical record correctly identifies λόγος as Daniel’s statement but favors “word” primarily for source transparency. The new question conveys the crowd’s actual request directly, making the synonym footnote unnecessary.

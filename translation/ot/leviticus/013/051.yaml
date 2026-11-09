@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וְ/רָאָ֨ה אֶת הַ/נֶּ֜גַע בַּ/יּ֣וֹם הַ/שְּׁבִיעִ֗י כִּֽי פָשָׂ֤ה הַ/נֶּ֨גַע֙ בַּ֠/בֶּגֶד אֽוֹ בַ/שְּׁתִ֤י אֽוֹ בָ/עֵ֨רֶב֙ א֣וֹ בָ/ע֔וֹר לְ/כֹ֛ל אֲשֶׁר יֵעָשֶׂ֥ה הָ/ע֖וֹר לִ/מְלָאכָ֑ה צָרַ֧עַת מַמְאֶ֛רֶת הַ/נֶּ֖גַע טָמֵ֥א הֽוּא־־־־־׃
 translation:
-  text: On the seventh day he shall examine the infection[a], and if the infection has spread in the garment, or in the warp, or in the woof, or in the leather, in anything for which leather is made for work, the infection is a destructive skin disease[c][b]; it is unclean.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew tsaraʿat, traditionally rendered 'leprosy,' but the term in Leviticus covers a broader range of impurity conditions and can apply even to garments and leather.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'weft' for 'woof.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'in any article made of leather.'
-    reason: lexical_alternative
+  text: On the seventh day he shall examine the spot. If it has spread in the garment, the warp or weft threads, or the leather, regardless of what the leather has been made into, it is destructive, defiling contamination; the item is unclean.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְרָאָה
   chosen: he shall examine
@@ -125,14 +115,20 @@ revisions:
   from: On the seventh day he shall examine the infection, and if the infection has spread in the garment, or in the warp, or in the woof, or in the leather, in anything for which leather is used as workmanship, the infection is a destructive skin disease; it is unclean.
   to: On the seventh day he shall examine the infection, and if the infection has spread in the garment, or in the warp, or in the woof, or in the leather, in anything for which leather is used as workmanship, the infection is a destructive skin disease; it is unclean.
   rationale: Revised the final leather clause from 'used as workmanship' to 'made for work' to more closely reflect the Hebrew wording and improve naturalness while preserving formality. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:57:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'On the seventh day he shall examine the infection[a], and if the infection has spread in the garment, or in the warp, or in the woof, or in the leather, in anything for which leather is made for work, the infection is a destructive skin disease[c][b]; it is unclean.'
-  to: 'On the seventh day he shall examine the infection[a], and if the infection has spread in the garment, or in the warp, or in the woof, or in the leather, in anything for which leather is made for work, the infection is a destructive skin disease[c][b]; it is unclean.'
+  from: On the seventh day he shall examine the infection[a], and if the infection has spread in the garment, or in the warp, or in the woof, or in the leather, in anything for which leather is made for work, the infection is a destructive skin disease[c][b]; it is unclean.
+  to: On the seventh day he shall examine the infection[a], and if the infection has spread in the garment, or in the warp, or in the woof, or in the leather, in anything for which leather is made for work, the infection is a destructive skin disease[c][b]; it is unclean.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in anything for which leather is used as workmanship''].'
+- timestamp: '2026-11-09T18:18:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: On the seventh day he shall examine the infection[a], and if the infection has spread in the garment, or in the warp, or in the woof, or in the leather, in anything for which leather is made for work, the infection is a destructive skin disease[c][b]; it is unclean.
+  to: On the seventh day he shall examine the spot. If it has spread in the garment, the warp or weft threads, or the leather, regardless of what the leather has been made into, it is destructive, defiling contamination; the item is unclean.
+  rationale: The history’s attempted improvement from “used as workmanship” to “made for work” left the comprehensive leather clause obscure; I express its scope directly. I preserve the earlier decision that the outbreak is destructive, while following its broader-category reasoning beyond the unsuitable phrase “skin disease.”
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -152,3 +148,37 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/013/051.job-45095.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:18:27Z'
+  change_level: retranslated
+  confidence: high
+  meaning: If the spot has spread by the seventh day in any listed material, including leather made into any kind of article, it is destructive contamination and the item is unclean.
+  meaning_decisions:
+  - source_phrase: הַנֶּגַע
+    prior_rendering: the infection
+    new_rendering: the spot
+    rationale: The priest observes the spread of a visible mark; “spot” avoids assuming an infectious mechanism.
+  - source_phrase: לְכֹל אֲשֶׁר יֵעָשֶׂה הָעוֹר לִמְלָאכָה
+    prior_rendering: in anything for which leather is made for work
+    new_rendering: regardless of what the leather has been made into
+    rationale: The clause extends the regulation to every manufactured use of leather, not merely leather intended for labor.
+  - source_phrase: צָרַעַת מַמְאֶרֶת הַנֶּגַע
+    prior_rendering: the infection is a destructive skin disease
+    new_rendering: it is destructive, defiling contamination
+    rationale: The damaging condition affects material rather than human skin; the rendering retains “destructive” and expresses the impurity category without medical misidentification.
+  - source_phrase: טָמֵא הוּא
+    prior_rendering: it is unclean
+    new_rendering: the item is unclean
+    rationale: The explicit subject makes clear that the affected article receives the unclean status.
+  - source_phrase: בַשְּׁתִי אוֹ בָעֵרֶב
+    prior_rendering: in the warp, or in the woof
+    new_rendering: the warp or weft threads
+    rationale: The shared preposition and explicit “threads” preserve the textile categories in more intelligible English.
+  footnote_kinds: {}
+  history_weighed: The history’s attempted improvement from “used as workmanship” to “made for work” left the comprehensive leather clause obscure; I express its scope directly. I preserve the earlier decision that the outbreak is destructive, while following its broader-category reasoning beyond the unsuitable phrase “skin disease.”

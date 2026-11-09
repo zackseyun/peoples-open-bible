@@ -26,12 +26,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And he remained there for many days[a], because great grief came over him, and he thought that he was dying.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'great grief was renewed upon him.' The Greek verb emphasizes that his sorrow returned or was revived.
-    reason: lexical_alternative
+  text: He remained there for many days, because great grief came over him again, and he thought he was dying.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἦν ἐκεῖ
   chosen: he remained there
@@ -113,14 +109,20 @@ revisions:
   from: And he remained there for many days, because great grief came over him again, and he thought that he was dying.
   to: And he remained there for many days, because great grief came over him again, and he thought that he was dying.
   rationale: Removed 'again,' since the Greek does not explicitly indicate repetition here; retained the rest as accurate and natural.
-
 - timestamp: '2026-05-18T02:59:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he remained there for many days[a], because great grief came over him, and he thought that he was dying.'
-  to: 'And he remained there for many days[a], because great grief came over him, and he thought that he was dying.'
+  from: And he remained there for many days[a], because great grief came over him, and he thought that he was dying.
+  to: And he remained there for many days[a], because great grief came over him, and he thought that he was dying.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''came over him again''].'
+- timestamp: '2026-11-09T18:52:58Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he remained there for many days[a], because great grief came over him, and he thought that he was dying.
+  to: He remained there for many days, because great grief came over him again, and he thought he was dying.
+  rationale: The first recorded draft and the lexical rationale both recognize renewal in the verb, despite the inconsistent later records and current omission of “again.” I restore that sense in the text, making the earlier footnote unnecessary.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -140,3 +142,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/006/009.job-48283.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:58Z'
+  change_level: refined
+  confidence: high
+  meaning: Antiochus remains there for many days as grief overwhelms him again and he believes he is dying.
+  meaning_decisions:
+  - source_phrase: ἀνεκαινίσθη ἐπ᾽ αὐτὸν λύπη μεγάλη
+    prior_rendering: great grief came over him
+    new_rendering: great grief came over him again
+    rationale: The verb expresses renewal of grief, a sense missing from the current main text.
+  footnote_kinds: {}
+  history_weighed: The first recorded draft and the lexical rationale both recognize renewal in the verb, despite the inconsistent later records and current omission of “again.” I restore that sense in the text, making the earlier footnote unnecessary.

@@ -4,12 +4,12 @@ source:
   edition: SBLGNT
   text: οὐ γὰρ ὡς ὑμεῖς ὑπολαμβάνετε οὗτοι μεθύουσιν, ἔστιν γὰρ ὥρα τρίτη τῆς ἡμέρας,
 translation:
-  text: For these are not drunk[a], as you suppose, for it is the third hour of the day.
-  philosophy: optimal-equivalence
+  text: These people are not drunk, as you suppose, since it is only about nine in the morning[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: That is, about nine in the morning by Jewish reckoning.
-    reason: cultural_note
+    text: Literally, 'the third hour of the day,' counting from sunrise.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: οὐ γὰρ
   chosen: For ... not
@@ -74,14 +74,20 @@ revisions:
   from: For these are not drunk, as you suppose, since it is the third hour of the day.
   to: For these are not drunk, as you suppose, since it is the third hour of the day.
   rationale: Replaced 'since' with 'for' to more directly reflect γάρ and preserve the formal, argumentative flow of the Greek.
-
 - timestamp: '2026-05-18T03:00:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For these are not drunk[a], as you suppose, for it is the third hour of the day.'
-  to: 'For these are not drunk[a], as you suppose, for it is the third hour of the day.'
+  from: For these are not drunk[a], as you suppose, for it is the third hour of the day.
+  to: For these are not drunk[a], as you suppose, for it is the third hour of the day.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''since it is the third hour of the day''].'
+- timestamp: '2026-11-09T19:07:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For these are not drunk[a], as you suppose, for it is the third hour of the day.
+  to: These people are not drunk, as you suppose, since it is only about nine in the morning[a].
+  rationale: The earlier footnote already supplied the correct modern time, while the revisions chiefly debated formal representation of the connective. I bring the time into the text, retain the causal connection with 'since,' and preserve the ancient reckoning in a note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -101,3 +107,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/002/015.job-47126.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:10Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Peter rejects the accusation of drunkenness by pointing out that it is still only about nine in the morning.
+  meaning_decisions:
+  - source_phrase: οὗτοι
+    prior_rendering: these
+    new_rendering: These people
+    rationale: English needs a clear personal referent here; 'people' identifies the accused group without narrowing it to the apostles or to men.
+  - source_phrase: ἔστιν γὰρ ὥρα τρίτη τῆς ἡμέρας
+    prior_rendering: for it is the third hour of the day
+    new_rendering: since it is only about nine in the morning
+    rationale: Modern clock language lets readers immediately understand Peter's appeal to the early hour; 'only' expresses the argumentative force of mentioning the time.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier footnote already supplied the correct modern time, while the revisions chiefly debated formal representation of the connective. I bring the time into the text, retain the causal connection with 'since,' and preserve the ancient reckoning in a note.

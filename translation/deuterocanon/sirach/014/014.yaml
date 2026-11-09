@@ -28,12 +28,15 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 14:14
 translation:
-  text: Do not deprive yourself of a good day, and do not let your share[a] in a good desire pass you by.
-  philosophy: optimal-equivalence
+  text: Do not deprive yourself of a good day's enjoyment[a], and do not let your share of good things you desire[b] pass you by.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Hebrew witness also includes a bracketed clause, 'and do not withhold good from yourself,' but its wording is uncertain in the presented source and may be secondary; the Greek parallel instead reads, 'and do not let your share in a good desire pass you by.'
+    text: The Hebrew presentation includes the bracketed restatement, 'Do not withhold good from yourself,' and another difficult form warning against encroaching on a brother's portion and coveting a neighbor's treasures.
     reason: textual_variant
+  - marker: b
+    text: Literally in Greek, 'a share of good desire.'
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: אַל תִּמְנַע / μὴ ἀφυστερήσῃς
   chosen: Do not deprive yourself of
@@ -120,13 +123,12 @@ revisions:
   from: Do not deprive yourself of a good day, and do not let your share in a good desire pass you by.
   to: Do not deprive yourself of a good day, and do not let a desirable share pass you by.
   rationale: 'Revised the second clause for closer lexical alignment with ובהלקח...אל תעבר and חמוד: replaced interpretive ''your share in a good desire'' with the more natural and accurate ''a desirable share,'' while retaining the sense of ''do not let ... pass you by.'''
-
 - timestamp: '2026-05-18T03:09:34Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Do not deprive yourself of a good day[a], and do not let a desirable share pass you by.'
-  to: 'Do not deprive yourself of a good day, and do not let your share in a good desire pass you by.'
+  from: Do not deprive yourself of a good day[a], and do not let a desirable share pass you by.
+  to: Do not deprive yourself of a good day, and do not let your share in a good desire pass you by.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a good desire''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -136,6 +138,13 @@ revisions:
   from: Do not deprive yourself of a good day, and do not let your share in a good desire pass you by.
   to: Do not deprive yourself of a good day, and do not let your share[a] in a good desire pass you by.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('share') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:06:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Do not deprive yourself of a good day, and do not let your share[a] in a good desire pass you by.
+  to: Do not deprive yourself of a good day's enjoyment[a], and do not let your share of good things you desire[b] pass you by.
+  rationale: I retain the earlier decision to use the coherent Greek-supported second clause, while acknowledging more fully the differing Hebrew material. The review correctly recognized that 'a good desire' was unclear; the new wording preserves both the desired good and the person's share in it.
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -155,3 +164,31 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/014/014.job-51339.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:00Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Do not deny yourself the present day's enjoyment or miss your share of desirable good things.
+  meaning_decisions:
+  - source_phrase: מִטּוֹבַת יוֹם
+    prior_rendering: a good day
+    new_rendering: a good day's enjoyment
+    rationale: The Hebrew concerns the good available in a day, not merely having a day turn out well; the new wording expresses participation in that good.
+  - source_phrase: μερὶς ἐπιθυμίας ἀγαθῆς
+    prior_rendering: your share in a good desire
+    new_rendering: your share of good things you desire
+    rationale: In this exhortation to enjoy one's portion, the phrase concerns desired good available for enjoyment, not possessing a share in an abstract mental desire.
+  - source_phrase: וּבְהִלֶּקַח אָח אַל תְּעַבֵּר, וַחֲמוּד רֵעַ אַל תַּחְמֹד
+    prior_rendering: Not represented
+    new_rendering: A textual note describes the difficult Hebrew form concerning a brother's portion and a neighbor's treasures.
+    rationale: The additional Hebrew wording should be acknowledged, but its difficulty and divergence from the Greek-supported clause make a textual note preferable to combining competing forms in the main text.
+  footnote_kinds:
+    a: textual_variant
+    b: literal_wording
+  history_weighed: I retain the earlier decision to use the coherent Greek-supported second clause, while acknowledging more fully the differing Hebrew material. The review correctly recognized that 'a good desire' was unclear; the new wording preserves both the desired good and the person's share in it.

@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ἀλλ’ ἵνα μὴ ἐπὶ πλεῖον διανεμηθῇ εἰς τὸν λαόν, ⸀ἀπειλησώμεθα αὐτοῖς μηκέτι λαλεῖν ἐπὶ τῷ ὀνόματι τούτῳ μηδενὶ ἀνθρώπων.
 translation:
-  text: But so that it may not spread any further among the people, let us warn them[a] not to speak any longer to anyone in this name.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'let us threaten them.' The Greek verb carries an overtone of intimidation by authorities.
-    reason: lexical_alternative
+  text: But to keep this from spreading any further among the people, let us threaten them and tell them not to speak to anyone again in this name.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: διανεμηθῇ
   chosen: may not spread
@@ -89,13 +85,12 @@ revisions:
   from: But so that it may not spread any further among the people, let us warn them not to speak any longer to anyone in this name.
   to: But so that it may not spread any further among the people, let us threaten them not to speak any longer to anyone in this name.
   rationale: Changed 'warn' to 'threaten' for lexical accuracy of ἀπειλησώμεθα; otherwise retained the draft wording.
-
 - timestamp: '2026-05-18T03:10:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But so that it may not spread any further among the people[a], let us threaten them not to speak any longer to anyone in this name.'
-  to: 'But so that it may not spread any further among the people, let us warn them not to speak any longer to anyone in this name.'
+  from: But so that it may not spread any further among the people[a], let us threaten them not to speak any longer to anyone in this name.
+  to: But so that it may not spread any further among the people, let us warn them not to speak any longer to anyone in this name.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''let us warn them''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -105,6 +100,13 @@ revisions:
   from: But so that it may not spread any further among the people, let us warn them not to speak any longer to anyone in this name.
   to: But so that it may not spread any further among the people, let us warn them[a] not to speak any longer to anyone in this name.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('let us warn them') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:05:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But so that it may not spread any further among the people, let us warn them[a] not to speak any longer to anyone in this name.
+  to: But to keep this from spreading any further among the people, let us threaten them and tell them not to speak to anyone again in this name.”
+  rationale: The review correctly identified the coercive force of the verb; the later automated revert was not a maintainer decision. I retain that gain while avoiding the awkward construction 'threaten them not to speak.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -124,3 +126,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/004/017.job-47052.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:11Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The council proposes using threats to stop further speech in Jesus' name and prevent its spread among the people.
+  meaning_decisions:
+  - source_phrase: ἀπειλησώμεθα αὐτοῖς μηκέτι λαλεῖν
+    prior_rendering: let us warn them not to speak any longer
+    new_rendering: let us threaten them and tell them not to speak ... again
+    rationale: The verb explicitly denotes threats, not merely warning; the compound English construction naturally expresses both the intimidation and the prohibition conveyed by it.
+  footnote_kinds: {}
+  history_weighed: The review correctly identified the coercive force of the verb; the later automated revert was not a maintainer decision. I retain that gain while avoiding the awkward construction 'threaten them not to speak.'

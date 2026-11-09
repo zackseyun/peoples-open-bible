@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: Πᾶς ὁ πιστεύων ὅτι Ἰησοῦς ἐστιν ὁ χριστὸς ἐκ τοῦ θεοῦ γεγέννηται, καὶ πᾶς ὁ ἀγαπῶν τὸν γεννήσαντα ἀγαπᾷ ⸀καὶ τὸν γεγεννημένον ἐξ αὐτοῦ.
 translation:
-  text: Everyone who believes that Jesus is the Messiah has been born of God[b][a], and everyone who loves the one who fathered him also loves the one born of him.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'the Christ.' The Greek title Χριστός is rendered 'Messiah' here to preserve its meaning as a title.
-    reason: alternative_reading
-  - marker: b
-    text: Or, 'the one who begot him ... the one begotten of him.' The Greek uses forms of the same verb throughout this verse.
-    reason: lexical_alternative
+  text: Everyone who believes that Jesus is the Messiah has been born of God, and everyone who loves the Father also loves his children.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Πᾶς ὁ πιστεύων
   chosen: Everyone who believes
@@ -104,14 +97,20 @@ revisions:
   from: Everyone who believes that Jesus is the Messiah has been born of God, and everyone who loves the one who fathered him also loves the one born of him.
   to: Everyone who believes that Jesus is the Messiah has been born of God, and everyone who loves the one who begot also loves the one begotten of him.
   rationale: Replaced 'fathered him' with 'begot' and 'the one born of him' with 'the one begotten of him' to more closely reflect the Greek participles and avoid the added object 'him' not explicit in the source.
-
 - timestamp: '2026-05-16T22:37:19Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Everyone who believes that Jesus is the Messiah has been born of God[b][a], and everyone who loves the one who begot also loves the one begotten of him.'
-  to: 'Everyone who believes that Jesus is the Messiah has been born of God[b][a], and everyone who loves the one who fathered him also loves the one born of him.'
-  rationale: 'Restored drafter ''the one who fathered him'' (preserving the chosen ''fathered'' rendering with explicit object) and ''the one born of him'' (preserving the chosen ''born of'' rendering) per chosen renderings.'
+  from: Everyone who believes that Jesus is the Messiah has been born of God[b][a], and everyone who loves the one who begot also loves the one begotten of him.
+  to: Everyone who believes that Jesus is the Messiah has been born of God[b][a], and everyone who loves the one who fathered him also loves the one born of him.
+  rationale: Restored drafter 'the one who fathered him' (preserving the chosen 'fathered' rendering with explicit object) and 'the one born of him' (preserving the chosen 'born of' rendering) per chosen renderings.
+- timestamp: '2026-11-09T17:06:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Everyone who believes that Jesus is the Messiah has been born of God[b][a], and everyone who loves the one who fathered him also loves the one born of him.
+  to: Everyone who believes that Jesus is the Messiah has been born of God, and everyone who loves the Father also loves his children.
+  rationale: I retain the history's established 'Messiah' and 'has been born of God.' The revisions focused on formal correspondence in the second clause; the immediate context supports making its family relationship explicit instead.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -133,3 +132,21 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/nt/1_john/005/001.job-27886.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:06:40Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Everyone who believes Jesus is the Messiah is born of God, and loving God as Father entails loving his children.
+  meaning_decisions:
+  - source_phrase: τὸν γεννήσαντα ... τὸν γεγεννημένον ἐξ αὐτοῦ
+    prior_rendering: the one who fathered him ... the one born of him
+    new_rendering: the Father ... his children
+    rationale: Verse 2 identifies those born of God as God's children, so the generic singular refers here to fellow believers rather than exclusively to Jesus. Father and children make the family relationship clear while retaining the birth image established in the first clause.
+  footnote_kinds: {}
+  history_weighed: I retain the history's established 'Messiah' and 'has been born of God.' The revisions focused on formal correspondence in the second clause; the immediate context supports making its family relationship explicit instead.

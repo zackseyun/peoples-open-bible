@@ -4,11 +4,14 @@ source:
   edition: WLC
   text: וַ/יַּרְכֵּ֣ב אֹת֗/וֹ בְּ/מִרְכֶּ֤בֶת הַ/מִּשְׁנֶה֙ אֲשֶׁר ל֔/וֹ וַ/יִּקְרְא֥וּ לְ/פָנָ֖י/ו אַבְרֵ֑ךְ וְ/נָת֣וֹן אֹת֔/וֹ עַ֖ל כָּל אֶ֥רֶץ מִצְרָֽיִם־־׃
 translation:
-  text: He had him ride in the second chariot that he had[a], and they cried out before him, “Abrek!” And he set him over all the land of Egypt.
-  philosophy: optimal-equivalence
+  text: Pharaoh had Joseph ride in his second chariot[a], and they called out ahead of him, “Abrek[b]!” Thus he set him over all the land of Egypt.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: “Abrek” is a difficult term of uncertain meaning, possibly an Egyptian or Hebrew acclamation. Many understand it as something like “Bow the knee!”
+    text: The chariot next in rank to Pharaoh’s own.
+    reason: cultural_note
+  - marker: b
+    text: An acclamation of uncertain meaning, possibly “Bow the knee!” or “Make way!”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וַיַּרְכֵּב
@@ -76,14 +79,20 @@ revisions:
   from: He had him ride in the second chariot that he had, and they cried out before him, “Abrek!” So he set him over all the land of Egypt.
   to: He had him ride in the second chariot that he had, and they cried out before him, “Abrek!” So he set him over all the land of Egypt.
   rationale: Replaced “So” with “And” to more directly reflect the Hebrew conjunction and maintain formal register; otherwise retained the draft, including the transliterated cry “Abrek!”.
-
 - timestamp: '2026-05-17T08:36:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He had him ride in the second chariot that he had[a], and they cried out before him, “Abrek!” And he set him over all the land of Egypt.'
-  to: 'He had him ride in the second chariot that he had[a], and they cried out before him, “Abrek!” And he set him over all the land of Egypt.'
+  from: He had him ride in the second chariot that he had[a], and they cried out before him, “Abrek!” And he set him over all the land of Egypt.
+  to: He had him ride in the second chariot that he had[a], and they cried out before him, “Abrek!” And he set him over all the land of Egypt.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''So he set him''].'
+- timestamp: '2026-11-09T17:45:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He had him ride in the second chariot that he had[a], and they cried out before him, “Abrek!” And he set him over all the land of Egypt.
+  to: Pharaoh had Joseph ride in his second chariot[a], and they called out ahead of him, “Abrek[b]!” Thus he set him over all the land of Egypt.
+  rationale: The first draft’s concluding “So” and the lexical discussion support a summarizing connection; the later conjunction-only changes carry little meaning-based weight. I retain “Abrek” because the recorded uncertainty does not justify presenting one proposed meaning as certain.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -105,3 +114,27 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/041/043.job-65556.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:45:45Z'
+  change_level: refined
+  confidence: medium
+  meaning: Pharaoh publicly installs Joseph as Egypt’s ruler under him through an honored chariot procession and an accompanying acclamation.
+  meaning_decisions:
+  - source_phrase: וַיַּרְכֵּב אֹתוֹ בְּמִרְכֶּבֶת הַמִּשְׁנֶה אֲשֶׁר לוֹ
+    prior_rendering: He had him ride in the second chariot that he had
+    new_rendering: Pharaoh had Joseph ride in his second chariot
+    rationale: Naming the implied participants removes pronoun confusion, while the note explains that “second” concerns rank.
+  - source_phrase: וְנָתוֹן אֹתוֹ
+    prior_rendering: And he set him
+    new_rendering: Thus he set him
+    rationale: The concluding clause summarizes the public installation accomplished through these acts rather than introducing another separate appointment.
+  footnote_kinds:
+    a: cultural_background
+    b: name_or_term
+  history_weighed: The first draft’s concluding “So” and the lexical discussion support a summarizing connection; the later conjunction-only changes carry little meaning-based weight. I retain “Abrek” because the recorded uncertainty does not justify presenting one proposed meaning as certain.

@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: Εὐλογητὸς ὁ θεὸς καὶ πατὴρ τοῦ κυρίου ἡμῶν Ἰησοῦ Χριστοῦ, ὁ κατὰ τὸ πολὺ αὐτοῦ ἔλεος ἀναγεννήσας ἡμᾶς εἰς ἐλπίδα ζῶσαν δι’ ἀναστάσεως Ἰησοῦ Χριστοῦ ἐκ νεκρῶν,
 translation:
-  text: Blessed be the God and Father of our Lord Jesus Christ[a], who according to his great mercy has caused us to be born again to a living hope through the resurrection of Jesus Christ from the dead[b],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Greek title Christos means ‘Messiah’; here it appears in the conventional English personal-name form.
-    reason: alternative_reading
-  - marker: b
-    text: Or 'has given us new birth.' The Greek verb keeps the imagery of being begotten or born again.
-    reason: lexical_alternative
+  text: Blessed be the God and Father of our Lord Jesus Christ, who in his great mercy has given us new birth into a living hope through the resurrection of Jesus Christ from the dead,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Εὐλογητὸς
   chosen: Blessed be
@@ -118,10 +111,16 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "Blessed be the God and Father of our Lord Jesus Messiah, who according to his great mercy has caused us to be born again to a living hope through the resurrection of Jesus Messiah from the dead,"
-  to: "Blessed be the God and Father of our Lord Jesus the Messiah, who according to his great mercy has caused us to be born again to a living hope through the resurrection of Jesus the Messiah from the dead,"
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
-
+  from: Blessed be the God and Father of our Lord Jesus Messiah, who according to his great mercy has caused us to be born again to a living hope through the resurrection of Jesus Messiah from the dead,
+  to: Blessed be the God and Father of our Lord Jesus the Messiah, who according to his great mercy has caused us to be born again to a living hope through the resurrection of Jesus the Messiah from the dead,
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T20:36:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Blessed be the God and Father of our Lord Jesus Christ[a], who according to his great mercy has caused us to be born again to a living hope through the resurrection of Jesus Christ from the dead[b],
+  to: Blessed be the God and Father of our Lord Jesus Christ, who in his great mercy has given us new birth into a living hope through the resurrection of Jesus Christ from the dead,
+  rationale: The history consistently preserves God’s agency, the birth image, and living hope; the revised phrasing retains these gains without treating the earlier stylistic preference for 'to' as a semantic requirement. No MAINTAINER revision is recorded, and the current 'Jesus Christ' is retained under the standing ruling for name constructions despite earlier automated changes to 'Messiah'.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -143,3 +142,29 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/1_peter/001/003.job-53123.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:36:21Z'
+  change_level: refined
+  confidence: high
+  meaning: Peter praises the God and Father of our Lord Jesus Christ for mercifully giving believers new birth into a living hope through Jesus Christ’s resurrection from the dead.
+  meaning_decisions:
+  - source_phrase: κατὰ τὸ πολὺ αὐτοῦ ἔλεος
+    prior_rendering: according to his great mercy
+    new_rendering: in his great mercy
+    rationale: Expresses naturally that God’s act proceeds from and accords with his abundant mercy, without the administrative sound that 'according to' can have in contemporary English.
+  - source_phrase: ἀναγεννήσας ἡμᾶς
+    prior_rendering: has caused us to be born again
+    new_rendering: has given us new birth
+    rationale: Preserves God’s explicit agency and the image of birth while avoiding a cumbersome causative construction; the completed act remains a present reality for believers.
+  - source_phrase: εἰς ἐλπίδα ζῶσαν
+    prior_rendering: to a living hope
+    new_rendering: into a living hope
+    rationale: With 'given us new birth,' 'into' naturally expresses the resulting life characterized by hope, while retaining the meaningful image of hope as living.
+  footnote_kinds: {}
+  history_weighed: The history consistently preserves God’s agency, the birth image, and living hope; the revised phrasing retains these gains without treating the earlier stylistic preference for 'to' as a semantic requirement. No MAINTAINER revision is recorded, and the current 'Jesus Christ' is retained under the standing ruling for name constructions despite earlier automated changes to 'Messiah'.

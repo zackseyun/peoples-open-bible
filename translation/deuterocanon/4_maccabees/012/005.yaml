@@ -18,12 +18,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But if you are persuaded[a], you will be a friend, and you will have charge of the affairs of the kingdom.
-  philosophy: optimal-equivalence
+  text: But if you obey, you will be my friend[a] and have charge of the affairs of the kingdom.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'you will have charge of the affairs of the kingdom.' The Greek term rendered 'oversight' can denote administration or leadership.
-    reason: lexical_alternative
+    text: In royal usage, “friend” could designate a favored courtier or adviser.
+    reason: cultural_note
 lexical_decisions:
 - source_word: πεισθεὶς
   chosen: if you are persuaded
@@ -93,14 +93,20 @@ revisions:
   from: But if you are persuaded, you will be a friend, and you will have oversight of the affairs of the kingdom.
   to: But if you are persuaded, you will be a friend, and you will have oversight of the affairs of the kingdom.
   rationale: Replaced 'have oversight of' with 'have charge of' for a more natural and direct rendering of ἀφήγησιν πραγμάτων while preserving the sense of authority over the kingdom's affairs.
-
 - timestamp: '2026-05-18T03:00:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But if you are persuaded[a], you will be a friend, and you will have charge of the affairs of the kingdom.'
-  to: 'But if you are persuaded[a], you will be a friend, and you will have charge of the affairs of the kingdom.'
+  from: But if you are persuaded[a], you will be a friend, and you will have charge of the affairs of the kingdom.
+  to: But if you are persuaded[a], you will be a friend, and you will have charge of the affairs of the kingdom.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''oversight''].'
+- timestamp: '2026-11-09T18:59:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But if you are persuaded[a], you will be a friend, and you will have charge of the affairs of the kingdom.
+  to: But if you obey, you will be my friend[a] and have charge of the affairs of the kingdom.”
+  rationale: The history supports both administrative authority and the courtly significance of “friend.” I retain the current improvement “have charge of” and replace the redundant earlier note with the cultural information needed to understand the offer.
 cross_check:
   status: moderate_agreement
   agreement: 0.8
@@ -120,3 +126,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/012/005.job-50030.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:15Z'
+  change_level: refined
+  confidence: high
+  meaning: The tyrant promises the boy royal favor and authority over the kingdom’s affairs if he obeys.
+  meaning_decisions:
+  - source_phrase: πεισθεὶς δὲ
+    prior_rendering: But if you are persuaded
+    new_rendering: But if you obey
+    rationale: The condition answers the preceding threat and means compliance with the tyrant’s demand, not merely a change of opinion.
+  - source_phrase: φίλος ἔσῃ
+    prior_rendering: you will be a friend
+    new_rendering: you will be my friend
+    rationale: The implied relationship is to the king; the note preserves the royal status conveyed by the promise.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The history supports both administrative authority and the courtly significance of “friend.” I retain the current improvement “have charge of” and replace the redundant earlier note with the cultural information needed to understand the offer.

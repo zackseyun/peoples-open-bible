@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: קַח בִּ֭גְד/וֹ כִּי עָ֣רַב זָ֑ר וּ/בְעַ֖ד נָכְרִיָּ֣ה חַבְלֵֽ/הוּ־־׃
 translation:
-  text: Take his garment, for he has put up security for a stranger; take a pledge from him for a foreign woman.[a]
-  philosophy: optimal-equivalence
+  text: Take his garment as security, for he has guaranteed a stranger’s debt; take a pledge from him if he has done so for a foreign woman[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: “Foreign woman” translates a Hebrew term that can mean a non-Israelite woman or, in Proverbs, a socially or morally illicit woman; the broader wording is retained here.
-    reason: lexical_alternative
+    text: The Hebrew term can also describe an adulterous woman, as elsewhere in Proverbs.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: קַח
   chosen: Take
@@ -111,6 +111,13 @@ revisions:
   from: Take his garment[a], for he has put up security for a stranger[b]; and hold it in pledge for a foreign woman.
   to: Take his garment, for he has put up security for a stranger; take a pledge from him for a foreign woman.[a]
   rationale: The suffix on חַבְלֵהוּ is masculine singular and refers to the surety, not to “garment.” “Hold it in pledge” therefore supplies the wrong referent. “Take a pledge from him” naturally renders the pledge-taking verb while preserving the explicit personal suffix.
+- timestamp: '2026-11-09T18:36:31Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Take his garment, for he has put up security for a stranger; take a pledge from him for a foreign woman.[a]
+  to: Take his garment as security, for he has guaranteed a stranger’s debt; take a pledge from him if he has done so for a foreign woman[a].
+  rationale: The later audit corrected the personal suffix so that collateral is taken from the guarantor rather than the garment being treated as the suffix’s referent. That correction is preserved, and the financial transaction is clarified without narrowing “foreign woman” to an adulteress.
 source_audit:
   status: revised
   reviewed_at: '2026-08-28T22:19:03Z'
@@ -119,3 +126,30 @@ source_audit:
   scope: WLC Hebrew, immediate literary context, natural-English and interpretation-boundary review
   human_or_scholar_review: false
   review_summary: The suffix on חַבְלֵהוּ is masculine singular and refers to the surety, not to “garment.” “Hold it in pledge” therefore supplies the wrong referent. “Take a pledge from him” naturally renders the pledge-taking verb while preserving the explicit personal suffix.
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:36:31Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Require collateral from someone who has exposed himself to financial risk by guaranteeing an outsider’s debt.
+  meaning_decisions:
+  - source_phrase: קַח בִּגְדוֹ
+    prior_rendering: Take his garment
+    new_rendering: Take his garment as security
+    rationale: The parallel command to take a pledge establishes that the garment is collateral, not something to be taken arbitrarily.
+  - source_phrase: כִּי עָרַב זָר
+    prior_rendering: for he has put up security for a stranger
+    new_rendering: for he has guaranteed a stranger’s debt
+    rationale: The verb describes assuming responsibility for another person’s debt, which is distinct from already providing collateral.
+  - source_phrase: וּבְעַד נָכְרִיָּה חַבְלֵהוּ
+    prior_rendering: take a pledge from him for a foreign woman
+    new_rendering: take a pledge from him if he has done so for a foreign woman
+    rationale: The second clause carries forward the act of guaranteeing a debt; making that connection explicit clarifies why collateral is required from the man.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The later audit corrected the personal suffix so that collateral is taken from the guarantor rather than the garment being treated as the suffix’s referent. That correction is preserved, and the financial transaction is clarified without narrowing “foreign woman” to an adulteress.

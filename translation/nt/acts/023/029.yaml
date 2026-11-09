@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: ὃν εὗρον ἐγκαλούμενον περὶ ζητημάτων τοῦ νόμου αὐτῶν, μηδὲν ⸀δὲ ἄξιον θανάτου ἢ δεσμῶν ⸂ἔχοντα ἔγκλημα⸃.
 translation:
-  text: I found that he was being accused concerning questions of their law[b][a], but charged with nothing deserving death or imprisonment.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'about disputed matters of their law.'
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'nothing worthy of death or chains.'
-    reason: lexical_alternative
+  text: I found that the accusations against him concerned disputes about their law, but none warranted death or imprisonment.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐγκαλούμενον
   chosen: was being accused
@@ -78,14 +71,20 @@ revisions:
   from: I found that he was being accused about questions of their law, but charged with nothing deserving death or imprisonment.
   to: I found that he was being accused about questions of their law, but charged with nothing deserving death or imprisonment.
   rationale: Changed 'about' to 'concerning' for a more formal and natural rendering of περὶ; otherwise retained the draft, which accurately reflects the Greek.
-
 - timestamp: '2026-05-18T03:00:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'I found that he was being accused concerning questions of their law[b][a], but charged with nothing deserving death or imprisonment.'
-  to: 'I found that he was being accused concerning questions of their law[b][a], but charged with nothing deserving death or imprisonment.'
+  from: I found that he was being accused concerning questions of their law[b][a], but charged with nothing deserving death or imprisonment.
+  to: I found that he was being accused concerning questions of their law[b][a], but charged with nothing deserving death or imprisonment.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''about questions''].'
+- timestamp: '2026-11-09T17:08:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: I found that he was being accused concerning questions of their law[b][a], but charged with nothing deserving death or imprisonment.
+  to: I found that the accusations against him concerned disputes about their law, but none warranted death or imprisonment.
+  rationale: The recorded review and revert mainly concerned “about” versus “concerning,” which does not affect the meaning. I bring the existing note’s “disputed matters” into the text and preserve the important distinction between accusations and established guilt.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -105,3 +104,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/023/029.job-46426.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:20Z'
+  change_level: refined
+  confidence: high
+  meaning: Lysias concludes that the accusations concern disputes within Jewish law and do not warrant death or imprisonment.
+  meaning_decisions:
+  - source_phrase: περὶ ζητημάτων τοῦ νόμου αὐτῶν
+    prior_rendering: concerning questions of their law
+    new_rendering: concerned disputes about their law
+    rationale: The matters are contested interpretations or issues within their law, not merely unanswered questions.
+  - source_phrase: μηδὲν δὲ ἄξιον θανάτου ἢ δεσμῶν ἔχοντα ἔγκλημα
+    prior_rendering: but charged with nothing deserving death or imprisonment
+    new_rendering: but none warranted death or imprisonment
+    rationale: The compressed construction evaluates the charges’ legal consequences without asserting conviction or a general verdict of innocence.
+  footnote_kinds: {}
+  history_weighed: The recorded review and revert mainly concerned “about” versus “concerning,” which does not affect the meaning. I bring the existing note’s “disputed matters” into the text and preserve the important distinction between accusations and established guilt.

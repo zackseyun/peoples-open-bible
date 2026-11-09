@@ -10,15 +10,8 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: But the thing made by hands is accursed[a], both it and the one who made it, because the one made it[b], but the perishable thing was called god.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more explicitly in context, 'the idol made by hands.' The Greek expression is literally 'what is made by hands.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'was called a god.'
-    reason: alternative_reading
+  text: 'But the idol made by human hands is accursed, and so is its maker: the maker fashioned it, and the perishable thing was called a god.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: χειρόποιητον
   chosen: what is made by hands
@@ -107,14 +100,20 @@ revisions:
   from: But what is made by hands is accursed, both it and the one who made it, because he was at work on it, but the perishable thing was called god.
   to: But what is made by hands is accursed, both it and the one who made it, because he was at work on it, but the perishable thing was called god.
   rationale: Replaced 'what is made by hands' with the more literal 'the thing made by hands' for χειρόποιητον, and clarified the contrast with 'the one who made it' to reflect ὁ μὲν ... τὸ δὲ. Removed the awkward 'he was at work on it' in favor of the more direct 'the one made it.'
-
 - timestamp: '2026-05-16T17:07:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But the thing made by hands is accursed[a], both it and the one who made it, because the one made it[b], but the perishable thing was called god.'
-  to: 'But the thing made by hands is accursed[a], both it and the one who made it, because the one made it[b], but the perishable thing was called god.'
-  rationale: 'Restored drafter ''what is made by hands'' (preserving the chosen rendering of χειρόποιητον) and ''was at work on it'' (preserving the chosen rendering) per chosen renderings.'
+  from: But the thing made by hands is accursed[a], both it and the one who made it, because the one made it[b], but the perishable thing was called god.
+  to: But the thing made by hands is accursed[a], both it and the one who made it, because the one made it[b], but the perishable thing was called god.
+  rationale: Restored drafter 'what is made by hands' (preserving the chosen rendering of χειρόποιητον) and 'was at work on it' (preserving the chosen rendering) per chosen renderings.
+- timestamp: '2026-11-09T19:12:59Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But the thing made by hands is accursed[a], both it and the one who made it, because the one made it[b], but the perishable thing was called god.
+  to: 'But the idol made by human hands is accursed, and so is its maker: the maker fashioned it, and the perishable thing was called a god.'
+  rationale: The revisions tried to clarify the maker-object pairing but left an awkward explanation. I retain the recorded emphasis on human manufacture and perishability, while making the contextual idol reference explicit rather than keeping it only in a footnote.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -134,3 +133,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/014/008.job-39244.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:12:59Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Unlike wood serving righteousness, a handmade idol and its maker are accursed because a human fashioned the object and a perishable thing was given divine status.
+  meaning_decisions:
+  - source_phrase: τὸ χειρόποιητον
+    prior_rendering: the thing made by hands
+    new_rendering: the idol made by human hands
+    rationale: The referent is specifically an idol; leaving it as any handmade thing could wrongly suggest that all human craftsmanship is accursed, contrary to the preceding verses.
+  - source_phrase: ὅτι ὁ μὲν ἠργάζετο, τὸ δὲ φθαρτὸν θεὸς ὠνομάσθη
+    prior_rendering: because the one made it, but the perishable thing was called god
+    new_rendering: the maker fashioned it, and the perishable thing was called a god
+    rationale: The paired clauses explain the curse on maker and object respectively. “A god” is natural English for the divine status falsely assigned to the object.
+  footnote_kinds: {}
+  history_weighed: The revisions tried to clarify the maker-object pairing but left an awkward explanation. I retain the recorded emphasis on human manufacture and perishability, while making the contextual idol reference explicit rather than keeping it only in a footnote.

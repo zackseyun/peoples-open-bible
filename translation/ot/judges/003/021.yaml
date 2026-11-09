@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּשְׁלַ֤ח אֵהוּד֙ אֶת יַ֣ד שְׂמֹאל֔/וֹ וַ/יִּקַּח֙ אֶת הַ/חֶ֔רֶב מֵ/עַ֖ל יֶ֣רֶךְ יְמִינ֑/וֹ וַ/יִּתְקָעֶ֖/הָ בְּ/בִטְנֽ/וֹ־־׃
 translation:
-  text: Then Ehud reached with his left hand[a], took the sword from his right thigh[b], and thrust it into his belly.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'thrust it into his abdomen.'
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'the sword'; context may suggest a short sword or dagger.
-    reason: lexical_alternative
+  text: Then Ehud reached with his left hand, took the sword from his right thigh, and thrust it into Eglon’s belly.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּשְׁלַח
   chosen: reached
@@ -84,14 +77,20 @@ revisions:
   from: Then Ehud reached with his left hand, took the sword from his right thigh, and drove it into his belly.
   to: Then Ehud reached with his left hand, took the sword from his right thigh, and drove it into his belly.
   rationale: Changed 'drove it' to 'thrust it' for a more natural and formally appropriate rendering of the verb, while preserving the sense. All source elements are otherwise represented.
-
 - timestamp: '2026-05-18T02:56:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Ehud reached with his left hand[a], took the sword from his right thigh[b], and thrust it into his belly.'
-  to: 'Then Ehud reached with his left hand[a], took the sword from his right thigh[b], and thrust it into his belly.'
+  from: Then Ehud reached with his left hand[a], took the sword from his right thigh[b], and thrust it into his belly.
+  to: Then Ehud reached with his left hand[a], took the sword from his right thigh[b], and thrust it into his belly.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''drove it into''].'
+- timestamp: '2026-11-09T18:12:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Ehud reached with his left hand[a], took the sword from his right thigh[b], and thrust it into his belly.
+  to: Then Ehud reached with his left hand, took the sword from his right thigh, and thrust it into Eglon’s belly.
+  rationale: The recorded disagreement between 'drove' and 'thrust' does not change the action’s force, and the current 'thrust' already works well. I preserve the crucial left-hand/right-thigh detail and clarify only whose belly is struck.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -111,3 +110,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/judges/003/021.job-69025.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:12:33Z'
+  change_level: refined
+  confidence: high
+  meaning: Ehud draws the sword from his right thigh with his left hand and thrusts it into Eglon’s belly.
+  meaning_decisions:
+  - source_phrase: בְּבִטְנוֹ
+    prior_rendering: into his belly
+    new_rendering: into Eglon’s belly
+    rationale: The preceding possessives refer to Ehud, but this one refers to Eglon; naming him prevents a misleading English pronoun sequence.
+  footnote_kinds: {}
+  history_weighed: The recorded disagreement between 'drove' and 'thrust' does not change the action’s force, and the current 'thrust' already works well. I preserve the crucial left-hand/right-thigh detail and clarify only whose belly is struck.

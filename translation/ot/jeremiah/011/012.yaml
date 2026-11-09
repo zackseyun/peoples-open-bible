@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/הָֽלְכ֞וּ עָרֵ֣י יְהוּדָ֗ה וְ/יֹשְׁבֵי֙ יְר֣וּשָׁלִַ֔ם וְ/זָֽעֲקוּ֙ אֶל הָ֣/אֱלֹהִ֔ים אֲשֶׁ֛ר הֵ֥ם מְקַטְּרִ֖ים לָ/הֶ֑ם וְ/הוֹשֵׁ֛עַ לֹֽא יוֹשִׁ֥יעוּ לָ/הֶ֖ם בְּ/עֵ֥ת רָעָתָֽ/ם־־׃
 translation:
-  text: Then the cities of Judah and the inhabitants of Jerusalem will go and cry out to the gods to whom they burn incense[a], but they will certainly not save them in the time of their trouble.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'in the time of their calamity' or 'in the time of their disaster.'
-    reason: lexical_alternative
+  text: Then the people in the cities of Judah and the inhabitants of Jerusalem will go and cry out to the gods to whom they burn incense, but those gods will certainly not save them when disaster strikes.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְהָלְכוּ
   chosen: Then ... will go
@@ -92,14 +88,20 @@ revisions:
   from: Then the cities of Judah and the inhabitants of Jerusalem will go and cry out to the gods to whom they burn incense, but they will certainly not save them in the time of their trouble.
   to: Then the cities of Judah and the inhabitants of Jerusalem will go and cry out to the gods to whom they burn incense, but they will not save them at the time of their trouble.
   rationale: Removed 'certainly' because the Hebrew does not require that intensifier, and revised 'in the time' to 'at the time' for a more natural rendering of the temporal phrase.
-
 - timestamp: '2026-05-16T08:09:59Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then the cities of Judah and the inhabitants of Jerusalem will go and cry out to the gods to whom they burn incense[a], but they will not save them at the time of their trouble.'
-  to: 'Then the cities of Judah and the inhabitants of Jerusalem will go and cry out to the gods to whom they burn incense[a], but they will certainly not save them in the time of their trouble.'
-  rationale: 'Azure dropped ''certainly'' (drafter chose to render infinitive-absolute emphatic הוֹשֵׁעַ לֹא יוֹשִׁיעוּ) and substituted ''at the time'' for chosen ''in the time'' (rejected alt cluster).'
+  from: Then the cities of Judah and the inhabitants of Jerusalem will go and cry out to the gods to whom they burn incense[a], but they will not save them at the time of their trouble.
+  to: Then the cities of Judah and the inhabitants of Jerusalem will go and cry out to the gods to whom they burn incense[a], but they will certainly not save them in the time of their trouble.
+  rationale: Azure dropped 'certainly' (drafter chose to render infinitive-absolute emphatic הוֹשֵׁעַ לֹא יוֹשִׁיעוּ) and substituted 'at the time' for chosen 'in the time' (rejected alt cluster).
+- timestamp: '2026-11-09T17:55:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then the cities of Judah and the inhabitants of Jerusalem will go and cry out to the gods to whom they burn incense[a], but they will certainly not save them in the time of their trouble.
+  to: Then the people in the cities of Judah and the inhabitants of Jerusalem will go and cry out to the gods to whom they burn incense, but those gods will certainly not save them when disaster strikes.
+  rationale: The revert's defense of 'certainly' is supported by the Hebrew infinitive absolute, so I retain its emphasis rather than follow the intervening revision. I clarify the city's inhabitants and the gods as subjects, and bring the disaster connection into the main text, making the earlier note redundant.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -122,3 +124,29 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/011/012.job-67362.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:55:12Z'
+  change_level: refined
+  confidence: high
+  meaning: Judah and Jerusalem will appeal to the gods they worship, but those gods will certainly not save them from the disaster.
+  meaning_decisions:
+  - source_phrase: עָרֵי יְהוּדָה
+    prior_rendering: the cities of Judah
+    new_rendering: the people in the cities of Judah
+    rationale: The cities stand for their inhabitants, who are the ones going to the gods and crying for help.
+  - source_phrase: וְהוֹשֵׁעַ לֹא יוֹשִׁיעוּ לָהֶם
+    prior_rendering: but they will certainly not save them
+    new_rendering: but those gods will certainly not save them
+    rationale: Naming the subject prevents the consecutive plural pronouns from obscuring who fails to save whom, while retaining the emphatic negation.
+  - source_phrase: בְּעֵת רָעָתָם
+    prior_rendering: in the time of their trouble
+    new_rendering: when disaster strikes
+    rationale: The phrase refers to the destructive calamity announced in the preceding verse, not merely to ordinary difficulty.
+  footnote_kinds: {}
+  history_weighed: The revert's defense of 'certainly' is supported by the Hebrew infinitive absolute, so I retain its emphasis rather than follow the intervening revision. I clarify the city's inhabitants and the gods as subjects, and bring the disaster connection into the main text, making the earlier note redundant.

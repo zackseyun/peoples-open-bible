@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וַ/יָּבֹ֨א יְהוֹשָׁפָ֣ט וְ/עַמּ/וֹ֮ לָ/בֹ֣ז אֶת שְׁלָלָ/ם֒ וַ/יִּמְצְאוּ֩ בָ/הֶ֨ם לָ/רֹ֜ב וּ/רְכ֤וּשׁ וּ/פְגָרִים֙ וּ/כְלֵ֣י חֲמֻד֔וֹת וַ/יְנַצְּל֥וּ לָ/הֶ֖ם לְ/אֵ֣ין מַשָּׂ֑א וַ/יִּֽהְי֞וּ יָמִ֧ים שְׁלוֹשָׁ֛ה בֹּזְזִ֥ים אֶת הַ/שָּׁלָ֖ל כִּ֥י רַב הֽוּא־־־׃
 translation:
-  text: Then Jehoshaphat and his people came to plunder their spoil[a], and they found among them in abundance goods, garments, and desirable articles; and they took for themselves more than they could carry. They were three days plundering the spoil, because it was so much.
-  philosophy: optimal-equivalence
+  text: Then Jehoshaphat and his people came to take plunder from them. They found abundant goods and valuable articles among the corpses[a], and they took more for themselves than they could carry. They spent three days gathering the plunder, because there was so much.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew: ''corpses.'' Some ancient witnesses and translations reflect a reading such as ''garments'' or omit the term to smooth the sense of the inventory, but the Masoretic Text reads ''corpses,'' likely indicating the fallen enemy bodies among whom the spoil was found.'
+    text: The Hebrew lists 'goods, corpses, and valuable articles.' Some Hebrew manuscripts and the Vulgate read 'garments' instead of 'corpses.'
     reason: textual_variant
 lexical_decisions:
 - source_word: לָבֹז
@@ -111,14 +111,20 @@ revisions:
   from: Then Jehoshaphat and his people came to plunder their spoil, and they found among them in abundance goods, corpses, and desirable articles; and they stripped off for themselves more than they could carry. They were three days plundering the spoil, because it was so much.
   to: Then Jehoshaphat and his people came to plunder their spoil, and they found among them in abundance goods, corpses, and desirable articles; and they stripped off for themselves more than they could carry. They were three days plundering the spoil, because it was so much.
   rationale: Changed 'corpses' to 'garments' to reflect the likely reading here; changed 'stripped off for themselves' to the more natural 'took for themselves' while preserving the sense.
-
 - timestamp: '2026-05-17T02:06:36Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Jehoshaphat and his people came to plunder their spoil[a], and they found among them in abundance goods, garments, and desirable articles; and they took for themselves more than they could carry. They were three days plundering the spoil, because it was so much.'
-  to: 'Then Jehoshaphat and his people came to plunder their spoil[a], and they found among them in abundance goods, garments, and desirable articles; and they took for themselves more than they could carry. They were three days plundering the spoil, because it was so much.'
+  from: Then Jehoshaphat and his people came to plunder their spoil[a], and they found among them in abundance goods, garments, and desirable articles; and they took for themselves more than they could carry. They were three days plundering the spoil, because it was so much.
+  to: Then Jehoshaphat and his people came to plunder their spoil[a], and they found among them in abundance goods, garments, and desirable articles; and they took for themselves more than they could carry. They were three days plundering the spoil, because it was so much.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they stripped off for themselves''].'
+- timestamp: '2026-11-09T17:25:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Jehoshaphat and his people came to plunder their spoil[a], and they found among them in abundance goods, garments, and desirable articles; and they took for themselves more than they could carry. They were three days plundering the spoil, because it was so much.
+  to: Then Jehoshaphat and his people came to take plunder from them. They found abundant goods and valuable articles among the corpses[a], and they took more for themselves than they could carry. They spent three days gathering the plunder, because there was so much.
+  rationale: The review favored 'garments,' but the first draft and lexical deliberation correctly recognized that the supplied Masoretic text reads 'corpses.' I restore that source reading while clarifying its contextual function, and retain the current natural 'took' rather than the earlier awkward 'stripped off.'
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -138,3 +144,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_chronicles/020/025.job-59910.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:25:24Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Jehoshaphat and his people find so much valuable plunder among the fallen enemies that it exceeds their carrying capacity and takes three days to collect.
+  meaning_decisions:
+  - source_phrase: לָבֹז אֶת שְׁלָלָם
+    prior_rendering: to plunder their spoil
+    new_rendering: to take plunder from them
+    rationale: Clarifies that they are taking the defeated enemies’ possessions and removes an unnatural repetition.
+  - source_phrase: וַיִּמְצְאוּ בָהֶם לָרֹב וּרְכוּשׁ וּפְגָרִים וּכְלֵי חֲמֻדוֹת
+    prior_rendering: they found among them in abundance goods, garments, and desirable articles
+    new_rendering: They found abundant goods and valuable articles among the corpses
+    rationale: The supplied source reads 'corpses,' not 'garments.' In this plundering scene, the corpses are understood as the setting of the goods rather than themselves items of spoil; the awkward Hebrew list and the garment variant are disclosed in the note.
+  - source_phrase: וַיִּהְיוּ יָמִים שְׁלוֹשָׁה בֹּזְזִים אֶת הַשָּׁלָל
+    prior_rendering: They were three days plundering the spoil
+    new_rendering: They spent three days gathering the plunder
+    rationale: Expresses the duration naturally and conveys the collection of battlefield possessions already established as plunder.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The review favored 'garments,' but the first draft and lexical deliberation correctly recognized that the supplied Masoretic text reads 'corpses.' I restore that source reading while clarifying its contextual function, and retain the current natural 'took' rather than the earlier awkward 'stripped off.'

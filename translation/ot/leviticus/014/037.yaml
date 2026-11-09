@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/רָאָ֣ה אֶת הַ/נֶּ֗גַע וְ/הִנֵּ֤ה הַ/נֶּ֨גַע֙ בְּ/קִירֹ֣ת הַ/בַּ֔יִת שְׁקַֽעֲרוּרֹת֙ יְרַקְרַקֹּ֔ת א֖וֹ אֲדַמְדַּמֹּ֑ת וּ/מַרְאֵי/הֶ֥ן שָׁפָ֖ל מִן הַ/קִּֽיר־־׃
 translation:
-  text: He shall examine the infection, and if the infection is in the walls of the house as sunken areas[a], greenish or reddish, and their appearance is deeper than the wall[b],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'depressions' for 'sunken areas.'
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'lower than the wall'; that is, appearing recessed below the wall surface.
-    reason: lexical_alternative
+  text: He shall examine the affected area, and if he finds greenish or reddish sunken spots in the walls of the house that appear recessed below the wall surface,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְרָאָה
   chosen: He shall examine
@@ -99,20 +92,19 @@ revisions:
   from: He shall examine the infection, and if the infection is in the walls of the house as sunken areas, greenish or reddish, and their appearance is deeper than the wall,
   to: He shall examine the infection, and if the infection is in the walls of the house as sunken areas, greenish or reddish, and their appearance is deeper than the wall,
   rationale: 'Adjusted the phrasing for more natural English and closer lexical fit: changed ''is in the walls of the house as sunken areas'' to ''in the walls of the house consists of greenish or reddish depressions,'' which better reflects the Hebrew term for depressed/sunken spots while preserving the formal register.'
-
 - timestamp: '2026-05-18T02:57:55Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He shall examine the infection[a], and if the infection in the walls of the house consists of greenish or reddish depressions, and their appearance is deeper than the wall[b],'
-  to: 'He shall examine the infection[a], and if the infection in the walls of the house consists of greenish or reddish depressions, and their appearance is deeper than the wall[b],'
+  from: He shall examine the infection[a], and if the infection in the walls of the house consists of greenish or reddish depressions, and their appearance is deeper than the wall[b],
+  to: He shall examine the infection[a], and if the infection in the walls of the house consists of greenish or reddish depressions, and their appearance is deeper than the wall[b],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text.'
 - timestamp: '2026-05-18T03:00:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He shall examine the infection[a], and if the infection in the walls of the house consists of greenish or reddish depressions, and their appearance is deeper than the wall[b],'
-  to: 'He shall examine the infection, and if the infection is in the walls of the house as sunken areas, greenish or reddish, and their appearance is deeper than the wall,'
+  from: He shall examine the infection[a], and if the infection in the walls of the house consists of greenish or reddish depressions, and their appearance is deeper than the wall[b],
+  to: He shall examine the infection, and if the infection is in the walls of the house as sunken areas, greenish or reddish, and their appearance is deeper than the wall,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''sunken areas''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -122,6 +114,13 @@ revisions:
   from: He shall examine the infection, and if the infection is in the walls of the house as sunken areas, greenish or reddish, and their appearance is deeper than the wall,
   to: He shall examine the infection, and if the infection is in the walls of the house as sunken areas[a], greenish or reddish, and their appearance is deeper than the wall[b],
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('sunken areas') because the note's quoted alternative matches the lexical decision rendered there; [b] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:22:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He shall examine the infection, and if the infection is in the walls of the house as sunken areas[a], greenish or reddish, and their appearance is deeper than the wall[b],
+  to: He shall examine the affected area, and if he finds greenish or reddish sunken spots in the walls of the house that appear recessed below the wall surface,
+  rationale: No MAINTAINER revision is recorded; I retain the documented interpretation of the spots as sunken and their colors as greenish or reddish. The earlier revision’s concern for natural syntax and the existing surface-depth footnote inform the clarification, while the automated revert offers no meaning-based reason to retain the awkward construction.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -141,3 +140,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/014/037.job-45161.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:22:56Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The priest must examine the affected area to see whether it contains greenish or reddish sunken spots that appear recessed below the wall surface.
+  meaning_decisions:
+  - source_phrase: הַנֶּגַע
+    prior_rendering: the infection
+    new_rendering: the affected area
+    rationale: The term identifies the affliction or its visible manifestation without specifying its biological cause; 'affected area' avoids implying a medically established infection.
+  - source_phrase: וְהִנֵּה הַנֶּגַע בְּקִירֹת הַבַּיִת שְׁקַעֲרוּרֹת יְרַקְרַקֹּת אוֹ אֲדַמְדַּמֹּת
+    prior_rendering: and if the infection is in the walls of the house as sunken areas, greenish or reddish
+    new_rendering: and if he finds greenish or reddish sunken spots in the walls of the house
+    rationale: The revised syntax presents the condition discovered during inspection in natural English while retaining the location, sunken appearance, and colors.
+  - source_phrase: וּמַרְאֵיהֶן שָׁפָל מִן הַקִּיר
+    prior_rendering: and their appearance is deeper than the wall
+    new_rendering: that appear recessed below the wall surface
+    rationale: The comparison concerns the surrounding wall surface, not the wall’s thickness; the main text now carries the clarification previously supplied by a footnote.
+  footnote_kinds: {}
+  history_weighed: No MAINTAINER revision is recorded; I retain the documented interpretation of the spots as sunken and their colors as greenish or reddish. The earlier revision’s concern for natural syntax and the existing surface-depth footnote inform the clarification, while the automated revert offers no meaning-based reason to retain the awkward construction.

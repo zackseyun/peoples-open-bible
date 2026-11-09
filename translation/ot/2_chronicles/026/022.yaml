@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/יֶ֨תֶר֙ דִּבְרֵ֣י עֻזִּיָּ֔הוּ הָ/רִאשֹׁנִ֖ים וְ/הָ/אֲחֲרֹנִ֑ים כָּתַ֛ב יְשַֽׁעְיָ֥הוּ בֶן אָמ֖וֹץ הַ/נָּבִֽיא־׃
 translation:
-  text: The rest of the acts of Uzziah[a], first and last, Isaiah son of Amoz the prophet wrote.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'the words of Uzziah, the first and the last.' Here 'words' is a Hebrew annal-style expression meaning the events or acts of his reign.
-    reason: lexical_alternative
+  text: The prophet Isaiah son of Amoz recorded the rest of Uzziah’s acts, from first to last.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְיֶתֶר
   chosen: The rest of
@@ -18,7 +14,7 @@ lexical_decisions:
   - The remainder of
   - Now the rest of
   lexicon: HALOT
-  rationale: "יֶתֶר denotes what remains or is left over. In this chronicler formula, 'the rest of' is idiomatic English. 'Now' renders the prefixed conjunction smoothly in narrative transition without overstating coordination. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'יֶתֶר denotes what remains or is left over. In this chronicler formula, ''the rest of'' is idiomatic English. ''Now'' renders the prefixed conjunction smoothly in narrative transition without overstating coordination. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: דִּבְרֵי
   chosen: the acts of
   alternatives:
@@ -91,13 +87,12 @@ revisions:
   from: Now the rest of the acts of Uzziah, from first to last, Isaiah son of Amoz the prophet wrote.
   to: Now the rest of the acts of Uzziah, from first to last, Isaiah son of Amoz the prophet wrote.
   rationale: Changed 'from first to last' to 'first and last' for closer correspondence to the source and more standard formal translation style; otherwise retained the draft.
-
 - timestamp: '2026-05-17T02:36:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now the rest of the acts of Uzziah[a], first and last, Isaiah son of Amoz the prophet wrote.'
-  to: 'Now the rest of the acts of Uzziah[a], first and last, Isaiah son of Amoz the prophet wrote.'
+  from: Now the rest of the acts of Uzziah[a], first and last, Isaiah son of Amoz the prophet wrote.
+  to: Now the rest of the acts of Uzziah[a], first and last, Isaiah son of Amoz the prophet wrote.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from first to last''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -106,6 +101,13 @@ revisions:
   from: Now the rest of the acts of Uzziah[a], first and last, Isaiah son of Amoz the prophet wrote.
   to: The rest of the acts of Uzziah[a], first and last, Isaiah son of Amoz the prophet wrote.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:25:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The rest of the acts of Uzziah[a], first and last, Isaiah son of Amoz the prophet wrote.
+  to: The prophet Isaiah son of Amoz recorded the rest of Uzziah’s acts, from first to last.
+  rationale: The first draft and later revert rationale favor “from first to last”; the intervening revision preferred the less explicit form for source correspondence. I restore the idiom’s full temporal scope and respect the later cleanup by not reintroducing a leading “Now.”
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -125,3 +127,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_chronicles/026/022.job-60039.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:25:11Z'
+  change_level: refined
+  confidence: high
+  meaning: The prophet Isaiah son of Amoz recorded the other acts of Uzziah across the full span of his reign.
+  meaning_decisions:
+  - source_phrase: הָרִאשֹׁנִים וְהָאֲחֲרֹנִים
+    prior_rendering: first and last
+    new_rendering: from first to last
+    rationale: The paired expression covers the entire temporal span, not merely the earliest and latest acts considered separately.
+  - source_phrase: כָּתַב יְשַׁעְיָהוּ בֶן אָמוֹץ הַנָּבִיא
+    prior_rendering: Isaiah son of Amoz the prophet wrote
+    new_rendering: The prophet Isaiah son of Amoz recorded
+    rationale: Natural subject-first order clarifies that Isaiah is the prophet, and “recorded” conveys the writing of a historical account in this royal-summary formula.
+  footnote_kinds: {}
+  history_weighed: The first draft and later revert rationale favor “from first to last”; the intervening revision preferred the less explicit form for source correspondence. I restore the idiom’s full temporal scope and respect the later cleanup by not reintroducing a leading “Now.”

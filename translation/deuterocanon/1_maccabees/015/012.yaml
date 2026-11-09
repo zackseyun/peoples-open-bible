@@ -9,15 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: For he knew that troubles had gathered against him[b][a], and the forces had abandoned him.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'calamities had gathered against him.' The Greek verb suggests hostile forces or troubles having assembled in a concentrated way.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the troops had left him.' The Greek 'the forces' is a military term and likely refers to his armed support.
-    reason: lexical_alternative
+  text: For he knew that troubles had gathered against him and that his troops had abandoned him.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ᾔδει
   chosen: he knew
@@ -92,14 +85,20 @@ revisions:
   from: For he knew that troubles had massed against him, and the forces had abandoned him.
   to: For he knew that troubles had massed against him, and the forces had abandoned him.
   rationale: Changed 'massed' to 'gathered' for more natural English while preserving the sense of troubles assembling against him.
-
 - timestamp: '2026-05-18T02:59:02Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For he knew that troubles had gathered against him[b][a], and the forces had abandoned him.'
-  to: 'For he knew that troubles had gathered against him[b][a], and the forces had abandoned him.'
+  from: For he knew that troubles had gathered against him[b][a], and the forces had abandoned him.
+  to: For he knew that troubles had gathered against him[b][a], and the forces had abandoned him.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''had massed''].'
+- timestamp: '2026-11-09T18:53:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For he knew that troubles had gathered against him[b][a], and the forces had abandoned him.
+  to: For he knew that troubles had gathered against him and that his troops had abandoned him.
+  rationale: I keep the current 'troubles had gathered against him,' which preserves the concentration of adversity without the draft’s less natural 'troubles had massed.' The earlier hesitation over 'his' reflects source-form concerns rather than uncertainty about whose troops abandoned him.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -119,3 +118,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/015/012.job-48838.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:51Z'
+  change_level: refined
+  confidence: high
+  meaning: Tryphon flees because he knows that adversity has gathered against him and that his military support has deserted him.
+  meaning_decisions:
+  - source_phrase: ἀφῆκαν αὐτὸν αἱ δυνάμεις
+    prior_rendering: the forces had abandoned him
+    new_rendering: his troops had abandoned him
+    rationale: The context identifies these forces as Tryphon’s military supporters; the possessive makes that understood relationship explicit.
+  footnote_kinds: {}
+  history_weighed: I keep the current 'troubles had gathered against him,' which preserves the concentration of adversity without the draft’s less natural 'troubles had massed.' The earlier hesitation over 'his' reflects source-form concerns rather than uncertainty about whose troops abandoned him.

@@ -21,15 +21,12 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: Go out[a], sojourner, from the place of honor, for my brother has become my guest[b], and I need the lodging.
-  philosophy: optimal-equivalence
+  text: “Leave the place of honor[a], stranger; my brother has come to stay, and I need the guest room.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'from the honored place' or more literally 'from before the face of honor.' The Greek expression is unusual, and the sense is likely that the sojourner must leave a prominent or honored spot to make room for another guest.
-    reason: lexical_alternative
-  - marker: b
-    text: The final phrase could also be rendered 'I need hospitality' or 'there is need of lodging.' The Greek emphasizes the necessity created by receiving another guest.
-    reason: lexical_alternative
+    text: Or, “Make way for someone more honored.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἔξελθε
   chosen: Go out
@@ -116,14 +113,20 @@ revisions:
   from: Go out, sojourner, from the place of honor; my brother has become my guest, and I need the lodging.
   to: Go out, sojourner, from before honor, for my brother has become a guest to me; there is need of lodging.
   rationale: 'Revised to reflect the Greek more closely: removed interpretive ''place of'' before ''honor,'' rendered ἐπεξενώταί μοι as ''has become a guest to me'' rather than ''has become my guest,'' and translated χρεία τῆς ξενίας more literally as ''there is need of lodging.'''
-
 - timestamp: '2026-05-15T13:39:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Go out[a], sojourner, from before honor, for my brother has become a guest to me[b]; there is need of lodging.'
-  to: 'Go out[a], sojourner, from the place of honor, for my brother has become my guest[b], and I need the lodging.'
-  rationale: 'Restored 3 chosen renderings; azure''s sole rationale was ''more literal'' (stylistic preference).'
+  from: Go out[a], sojourner, from before honor, for my brother has become a guest to me[b]; there is need of lodging.
+  to: Go out[a], sojourner, from the place of honor, for my brother has become my guest[b], and I need the lodging.
+  rationale: Restored 3 chosen renderings; azure's sole rationale was 'more literal' (stylistic preference).
+- timestamp: '2026-11-09T19:06:58Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Go out[a], sojourner, from the place of honor, for my brother has become my guest[b], and I need the lodging.
+  to: “Leave the place of honor[a], stranger; my brother has come to stay, and I need the guest room.”
+  rationale: The automated revert correctly rejected the review's awkward “from before honor” and impersonal wording about lodging. I build from the restored contextual interpretation, retaining “place of honor” while noting the serious alternative that an honored person must be given precedence.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -143,3 +146,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/029/027.job-51777.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:58Z'
+  change_level: refined
+  confidence: medium
+  meaning: The outsider is told to surrender his lodging because the host gives priority to his visiting brother.
+  meaning_decisions:
+  - source_phrase: ἔξελθε, πάροικε
+    prior_rendering: Go out, sojourner
+    new_rendering: Leave … stranger
+    rationale: The command expels the dependent resident, and “stranger” retains the same exclusionary address used in the preceding verse.
+  - source_phrase: ἐπεξενώταί μοι ὁ ἀδελφός
+    prior_rendering: my brother has become my guest
+    new_rendering: my brother has come to stay
+    rationale: The brother's arrival as a lodging guest creates the need that the speaker uses to justify the outsider's displacement.
+  - source_phrase: χρεία τῆς ξενίας
+    prior_rendering: I need the lodging
+    new_rendering: I need the guest room
+    rationale: The concrete need is accommodation for the visiting brother; “guest room” makes the reason for expelling the resident clear.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The automated revert correctly rejected the review's awkward “from before honor” and impersonal wording about lodging. I build from the restored contextual interpretation, retaining “place of honor” while noting the serious alternative that an honored person must be given precedence.

@@ -4,12 +4,12 @@ source:
   edition: SBLGNT
   text: καὶ ἐγένοντο ἀστραπαὶ καὶ ⸂φωναὶ καὶ βρονταί⸃, καὶ σεισμὸς ⸀ἐγένετο μέγας, οἷος οὐκ ἐγένετο ἀφ’ οὗ ⸂ἄνθρωποι ἐγένοντο⸃ ἐπὶ τῆς γῆς τηλικοῦτος σεισμὸς οὕτω μέγας,
 translation:
-  text: And there were flashes of lightning and sounds and peals of thunder, and there was a great earthquake, such as had not happened since[a] men came to be on the earth—so great was that earthquake.
-  philosophy: optimal-equivalence
+  text: There were flashes of lightning, rumblings[a], and peals of thunder. A great earthquake struck—an earthquake so mighty and so great that nothing like it had occurred since human beings first lived on the earth.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'since people came to be on the earth' or 'since human beings came to be on the earth.'
-    reason: lexical_alternative
+    text: Or, “voices.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἀστραπαὶ
   chosen: flashes of lightning
@@ -111,13 +111,12 @@ revisions:
   from: And there were flashes of lightning and sounds and peals of thunder, and there was a great earthquake, such as had not happened since men came to be on the earth—so great was that earthquake.
   to: And there were flashes of lightning and sounds and peals of thunder, and there was a great earthquake, such as had not happened since people came to be on the earth—so great was that earthquake.
   rationale: Replaced 'men' with 'people' for accurate inclusive sense of ἄνθρωποι while preserving the formal register; otherwise left the draft unchanged.
-
 - timestamp: '2026-05-18T03:10:20Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And there were flashes of lightning and sounds and peals of thunder[a], and there was a great earthquake, such as had not happened since people came to be on the earth—so great was that earthquake.'
-  to: 'And there were flashes of lightning and sounds and peals of thunder, and there was a great earthquake, such as had not happened since men came to be on the earth—so great was that earthquake.'
+  from: And there were flashes of lightning and sounds and peals of thunder[a], and there was a great earthquake, such as had not happened since people came to be on the earth—so great was that earthquake.
+  to: And there were flashes of lightning and sounds and peals of thunder, and there was a great earthquake, such as had not happened since men came to be on the earth—so great was that earthquake.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''men came to be on the earth''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -127,6 +126,13 @@ revisions:
   from: And there were flashes of lightning and sounds and peals of thunder, and there was a great earthquake, such as had not happened since men came to be on the earth—so great was that earthquake.
   to: And there were flashes of lightning and sounds and peals of thunder, and there was a great earthquake, such as had not happened since[a] men came to be on the earth—so great was that earthquake.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('since') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:16:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And there were flashes of lightning and sounds and peals of thunder, and there was a great earthquake, such as had not happened since[a] men came to be on the earth—so great was that earthquake.
+  to: There were flashes of lightning, rumblings[a], and peals of thunder. A great earthquake struck—an earthquake so mighty and so great that nothing like it had occurred since human beings first lived on the earth.
+  rationale: The earlier review correctly recognized that ἄνθρωποι refers to humanity, while the automated revert restored “men” for formal correspondence. I retain the meaning-based gain with “human beings” and preserve the source's emphatic description of the earthquake.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -146,3 +152,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/revelation/016/018.job-47334.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:16:33Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Lightning and thunderous sounds accompany an earthquake of unprecedented magnitude in human history.
+  meaning_decisions:
+  - source_phrase: φωναὶ
+    prior_rendering: sounds
+    new_rendering: rumblings
+    rationale: In the sequence of lightning and thunder, the noun most likely denotes rumbling sounds; the possible sense “voices” is preserved in a note.
+  - source_phrase: ἄνθρωποι ἐγένοντο ἐπὶ τῆς γῆς
+    prior_rendering: men came to be on the earth
+    new_rendering: human beings first lived on the earth
+    rationale: The comparison concerns humanity's entire presence on earth, not males specifically; the new wording conveys that scope naturally.
+  - source_phrase: οἷος οὐκ ἐγένετο ... τηλικοῦτος σεισμὸς οὕτω μέγας
+    prior_rendering: such as had not happened ... so great was that earthquake
+    new_rendering: an earthquake so mighty and so great that nothing like it had occurred
+    rationale: The restructured comparison preserves both the unprecedented magnitude and the emphatic accumulation of descriptions.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review correctly recognized that ἄνθρωποι refers to humanity, while the automated revert restored “men” for formal correspondence. I retain the meaning-based gain with “human beings” and preserve the source's emphatic description of the earthquake.

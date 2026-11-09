@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וַ/יֹּ֕אמֶר כִּ֚י אֶת שֶׁ֣בַע כְּבָשֹׂ֔ת תִּקַּ֖ח מִ/יָּדִ֑/י בַּ/עֲבוּר֙ תִּֽהְיֶה לִּ֣/י לְ/עֵדָ֔ה כִּ֥י חָפַ֖רְתִּי אֶת הַ/בְּאֵ֥ר הַ/זֹּֽאת־־־׃
 translation:
-  text: And he said[a], “You are to take these seven ewe lambs from my hand, so that it may serve as a witness for me that I dug this well.”
-  philosophy: optimal-equivalence
+  text: And he said, “Accept these seven ewe lambs from me, so that your acceptance will serve as a witness for me[a] that I dug this well.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'they may be a witness for me.' The Hebrew verb is singular, while the immediate referent is the seven ewe lambs; the singular may treat them collectively or refer to the act/arrangement as the witness.
+    text: Literally, “so that it may serve as a witness for me”; the singular may refer to the transaction or to the lambs considered as a group.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וַיֹּאמֶר
@@ -102,14 +102,20 @@ revisions:
   from: And he said, “You are to take these seven ewe lambs from my hand, so that it may serve as a witness for me that I dug this well.”
   to: And he said, “You are to take these seven ewe lambs from my hand, so that they may be a witness for me that I dug this well.”
   rationale: Changed “it may serve as a witness” to “they may be a witness” to match the plural subject “seven ewe lambs” and the Hebrew verb; otherwise retained the draft.
-
 - timestamp: '2026-05-15T22:10:53Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he said[a], “You are to take these seven ewe lambs from my hand, so that they may be a witness for me that I dug this well.”'
-  to: 'And he said[a], “You are to take these seven ewe lambs from my hand, so that it may serve as a witness for me that I dug this well.”'
-  rationale: 'Drafter chose ''it may serve as a witness'' to honor the Hebrew singular verb תִּהְיֶה (3fs, treating the collective arrangement as a single witness, documented in footnote). Azure pluralized to ''they may be a witness'' falsely claiming the Hebrew verb is plural — but תִּהְיֶה is unambiguously singular.'
+  from: And he said[a], “You are to take these seven ewe lambs from my hand, so that they may be a witness for me that I dug this well.”
+  to: And he said[a], “You are to take these seven ewe lambs from my hand, so that it may serve as a witness for me that I dug this well.”
+  rationale: Drafter chose 'it may serve as a witness' to honor the Hebrew singular verb תִּהְיֶה (3fs, treating the collective arrangement as a single witness, documented in footnote). Azure pluralized to 'they may be a witness' falsely claiming the Hebrew verb is plural — but תִּהְיֶה is unambiguously singular.
+- timestamp: '2026-11-09T17:43:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he said[a], “You are to take these seven ewe lambs from my hand, so that it may serve as a witness for me that I dug this well.”
+  to: And he said, “Accept these seven ewe lambs from me, so that your acceptance will serve as a witness for me[a] that I dug this well.”
+  rationale: The automated reversion correctly noted that תִּהְיֶה is singular, contrary to the earlier review’s grammatical claim. I preserve that collective or transactional understanding, clarify the implied subject, and retain the other possible reference in a note.
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -131,3 +137,26 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/021/030.job-64998.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:43:49Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Abraham asks Abimelech to accept the seven lambs as an acknowledgment that Abraham dug the well.
+  meaning_decisions:
+  - source_phrase: אֶת שֶׁבַע כְּבָשֹׂת תִּקַּח מִיָּדִי
+    prior_rendering: You are to take these seven ewe lambs from my hand
+    new_rendering: Accept these seven ewe lambs from me
+    rationale: The instruction concerns accepting a formal transfer whose significance Abraham explains; “from my hand” denotes transfer from Abraham.
+  - source_phrase: בַּעֲבוּר תִּהְיֶה לִּי לְעֵדָה
+    prior_rendering: so that it may serve as a witness for me
+    new_rendering: so that your acceptance will serve as a witness for me
+    rationale: Making the understood transaction explicit removes the unclear antecedent of “it” while retaining the singular witness and the testimony on Abraham’s behalf.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The automated reversion correctly noted that תִּהְיֶה is singular, contrary to the earlier review’s grammatical claim. I preserve that collective or transactional understanding, clarify the implied subject, and retain the other possible reference in a note.

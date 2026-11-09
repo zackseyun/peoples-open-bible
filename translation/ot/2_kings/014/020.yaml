@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּשְׂא֥וּ אֹת֖/וֹ עַל הַ/סּוּסִ֑ים וַ/יִּקָּבֵ֧ר בִּ/ירוּשָׁלִַ֛ם עִם אֲבֹתָ֖י/ו בְּ/עִ֥יר דָּוִֽד־־׃
 translation:
-  text: They carried him on horses[b][a], and he was buried in Jerusalem with his fathers in the city of David.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'upon horses.' The Hebrew wording is literal and may describe transport of the body by horse-borne conveyance.
-    reason: lexical_alternative
-  - marker: b
-    text: '''With his fathers'' is a traditional burial formula, meaning he was buried with his royal ancestors.'
-    reason: cultural_note
+  text: They carried his body on horses, and he was buried in Jerusalem with his ancestors in the city of David.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּשְׂאוּ
   chosen: They carried
@@ -72,14 +65,20 @@ revisions:
   from: They carried him on the horses, and he was buried in Jerusalem with his fathers in the city of David.
   to: They carried him on the horses, and he was buried in Jerusalem with his fathers in the city of David.
   rationale: Removed the article from 'the horses' to better reflect the Hebrew idiom 'on horses' and improve natural English; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:57:38Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'They carried him on horses[b][a], and he was buried in Jerusalem with his fathers in the city of David.'
-  to: 'They carried him on horses[b][a], and he was buried in Jerusalem with his fathers in the city of David.'
+  from: They carried him on horses[b][a], and he was buried in Jerusalem with his fathers in the city of David.
+  to: They carried him on horses[b][a], and he was buried in Jerusalem with his fathers in the city of David.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''on the horses''].'
+- timestamp: '2026-11-09T17:26:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: They carried him on horses[b][a], and he was buried in Jerusalem with his fathers in the city of David.
+  to: They carried his body on horses, and he was buried in Jerusalem with his ancestors in the city of David.
+  rationale: The recorded automated passes concern the article before “horses” and provide no substantive reason to alter the current transport wording. I retain “on horses” and carry the existing note about ancestral burial into the main text.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -99,3 +98,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_kings/014/020.job-60621.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:26:34Z'
+  change_level: refined
+  confidence: high
+  meaning: Amaziah’s body was transported on horses and buried with his ancestors in Jerusalem’s city of David.
+  meaning_decisions:
+  - source_phrase: וַיִּשְׂאוּ אֹתוֹ עַל הַסּוּסִים
+    prior_rendering: They carried him on horses
+    new_rendering: They carried his body on horses
+    rationale: The preceding verse establishes that Amaziah is dead, so the pronoun refers to his body; making that explicit prevents the transport from sounding like a living king’s journey.
+  - source_phrase: עִם אֲבֹתָיו
+    prior_rendering: with his fathers
+    new_rendering: with his ancestors
+    rationale: In this burial notice, the phrase refers to his ancestral burial company rather than to multiple immediate fathers.
+  footnote_kinds: {}
+  history_weighed: The recorded automated passes concern the article before “horses” and provide no substantive reason to alter the current transport wording. I retain “on horses” and carry the existing note about ancestral burial into the main text.

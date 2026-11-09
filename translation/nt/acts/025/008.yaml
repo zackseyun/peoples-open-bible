@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ⸂τοῦ Παύλου ἀπολογουμένου⸃ ὅτι Οὔτε εἰς τὸν νόμον τῶν Ἰουδαίων οὔτε εἰς τὸ ἱερὸν οὔτε εἰς Καίσαρά τι ἥμαρτον.
 translation:
-  text: 'Paul made his defense: “I have sinned in nothing against either the law of the Jews[a], or the temple, or Caesar.”'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “I have committed no offense against either the law of the Jews or the temple or Caesar.”
-    reason: lexical_alternative
+  text: 'Paul made his defense: “I have committed no offense against the law of the Jews, the temple, or Caesar.”'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀπολογουμένου
   chosen: replied in his defense
@@ -93,9 +89,8 @@ revisions:
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Paul replied in his defense, “I have sinned in nothing against either the law of the Jews, or the temple, or Caesar.”
-  to: 'Paul replied in his defense, “I have sinned in nothing against either the law of the Jews, or the temple, or Caesar.”'
+  to: Paul replied in his defense, “I have sinned in nothing against either the law of the Jews, or the temple, or Caesar.”
   rationale: Revised the opening to more directly reflect ἀπολογουμένου as 'made his defense' rather than the more interpretive 'replied in his defense.'
-
 - timestamp: '2026-05-18T03:00:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -103,6 +98,13 @@ revisions:
   from: 'Paul made his defense: “I have sinned in nothing against either the law of the Jews[a], or the temple, or Caesar.”'
   to: 'Paul made his defense: “I have sinned in nothing against either the law of the Jews[a], or the temple, or Caesar.”'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''replied in his defense''].'
+- timestamp: '2026-11-09T17:07:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Paul made his defense: “I have sinned in nothing against either the law of the Jews[a], or the temple, or Caesar.”'
+  to: 'Paul made his defense: “I have committed no offense against the law of the Jews, the temple, or Caesar.”'
+  rationale: I retained the current opening, “Paul made his defense,” despite conflicting no-change history entries. The earlier rationale favored “sinned” for lexical continuity, but its own recognition of the forensic context supports “committed no offense” as the clearer meaning here.
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -124,3 +126,21 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/nt/acts/025/008.job-27965.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:07:16Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Paul defended himself by denying any offense against Jewish law, the temple, or Caesar.
+  meaning_decisions:
+  - source_phrase: Οὔτε εἰς τὸν νόμον τῶν Ἰουδαίων οὔτε εἰς τὸ ἱερὸν οὔτε εἰς Καίσαρά τι ἥμαρτον
+    prior_rendering: I have sinned in nothing against either the law of the Jews, or the temple, or Caesar
+    new_rendering: I have committed no offense against the law of the Jews, the temple, or Caesar
+    rationale: The verb here denies wrongdoing in the three areas under accusation. “Committed no offense” conveys that moral and legal denial naturally without making the statement sound like a broader claim of sinlessness.
+  footnote_kinds: {}
+  history_weighed: I retained the current opening, “Paul made his defense,” despite conflicting no-change history entries. The earlier rationale favored “sinned” for lexical continuity, but its own recognition of the forensic context supports “committed no offense” as the clearer meaning here.

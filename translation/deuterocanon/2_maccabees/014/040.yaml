@@ -24,12 +24,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: For he thought that by arresting him he would bring disaster on these people[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more formally, 'For it seemed that by arresting that one he would cause calamity for these men.'
-    reason: lexical_alternative
+  text: For he thought that by arresting Razis he would bring disaster on the Jews.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἔδοξεν
   chosen: he thought
@@ -103,14 +99,20 @@ revisions:
   from: For he thought that by arresting that man he would bring disaster on these people.
   to: For he thought that by arresting that man he would bring disaster on these people.
   rationale: Replaced 'that man' with 'him' for a more natural and direct rendering of ἐκεῖνον, while preserving the sense and formal register.
-
 - timestamp: '2026-05-18T02:59:26Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For he thought that by arresting him he would bring disaster on these people[a].'
-  to: 'For he thought that by arresting him he would bring disaster on these people[a].'
+  from: For he thought that by arresting him he would bring disaster on these people[a].
+  to: For he thought that by arresting him he would bring disaster on these people[a].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that man''].'
+- timestamp: '2026-11-09T18:55:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For he thought that by arresting him he would bring disaster on these people[a].
+  to: For he thought that by arresting Razis he would bring disaster on the Jews.
+  rationale: The earlier alternation between “that man” and “him” did not alter the meaning. I retained the established causal sense and made both referents explicit rather than preserving demonstratives that are less clear in English; no maintainer revision was supplied.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -130,3 +132,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/014/040.job-49428.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:49Z'
+  change_level: refined
+  confidence: high
+  meaning: Nicanor expects the arrest of this revered elder to inflict disaster on the Jewish community.
+  meaning_decisions:
+  - source_phrase: ἐκεῖνον συλλαβὼν τούτοις ἐνεργάσασθαι συμφοράν
+    prior_rendering: by arresting him he would bring disaster on these people
+    new_rendering: by arresting Razis he would bring disaster on the Jews
+    rationale: Naming the understood referents makes clear that Nicanor intends to harm the whole community by seizing its honored elder.
+  footnote_kinds: {}
+  history_weighed: The earlier alternation between “that man” and “him” did not alter the meaning. I retained the established causal sense and made both referents explicit rather than preserving demonstratives that are less clear in English; no maintainer revision was supplied.

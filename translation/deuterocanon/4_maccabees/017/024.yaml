@@ -9,18 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And it made them noble and courageous in infantry combat and siege warfare[a], and after sacking them[c][b], he conquered all the enemies.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'for infantry battle'; the Greek literally refers to fighting on foot.
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek participle means 'after sacking' or 'after devastating' and commonly has cities or strongholds in view.
-    reason: lexical_alternative
-  - marker: c
-    text: The Greek leaves the subject compressed and somewhat implicit in this clause; the English preserves that abruptness rather than specifying a subject from the wider context.
-    reason: alternative_reading
+  text: He thus had soldiers who were valiant and courageous in infantry combat and siege warfare; after sacking cities, he conquered all his enemies.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἔσχεν
   chosen: it made
@@ -119,14 +109,20 @@ revisions:
   from: And it made them noble and courageous in hand-to-hand combat and siege warfare, and after sacking cities he conquered all the enemies.
   to: And it made them noble and courageous in hand-to-hand combat and siege warfare, and after sacking cities he conquered all the enemies.
   rationale: Replaced 'hand-to-hand combat' with 'infantry combat' to reflect πεζομαχίαν more accurately. Adjusted 'after sacking cities' to 'after sacking them' because the object is implicit rather than explicitly 'cities' in Greek.
-
 - timestamp: '2026-05-16T19:07:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And it made them noble and courageous in infantry combat and siege warfare[a], and after sacking them[c][b], he conquered all the enemies.'
-  to: 'And it made them noble and courageous in infantry combat and siege warfare[a], and after sacking them[c][b], he conquered all the enemies.'
-  rationale: 'Restored drafter ''in hand-to-hand combat'' (preserving the chosen rendering of πεζομαχίαν) and ''after sacking cities'' (preserving the chosen explicit object) per chosen renderings.'
+  from: And it made them noble and courageous in infantry combat and siege warfare[a], and after sacking them[c][b], he conquered all the enemies.
+  to: And it made them noble and courageous in infantry combat and siege warfare[a], and after sacking them[c][b], he conquered all the enemies.
+  rationale: Restored drafter 'in hand-to-hand combat' (preserving the chosen rendering of πεζομαχίαν) and 'after sacking cities' (preserving the chosen explicit object) per chosen renderings.
+- timestamp: '2026-11-09T18:59:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And it made them noble and courageous in infantry combat and siege warfare[a], and after sacking them[c][b], he conquered all the enemies.
+  to: He thus had soldiers who were valiant and courageous in infantry combat and siege warfare; after sacking cities, he conquered all his enemies.
+  rationale: The earlier review correctly distinguished infantry combat from hand-to-hand fighting, and the first draft reasonably supplied “cities” with the sacking verb. Rather than preserving an unexplained “it/he” shift, I follow the continuous context of Antiochus and his soldiers.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -146,3 +142,33 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/017/024.job-50185.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:11Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The example strengthened Antiochus’s soldiers for infantry and siege warfare, and he went on to sack cities and conquer his enemies.
+  meaning_decisions:
+  - source_phrase: ἔσχεν τε αὐτοὺς
+    prior_rendering: And it made them
+    new_rendering: He thus had soldiers who were
+    rationale: The continuing subject is Antiochus and the object is his soldiers from verse 23; the verb describes the resulting condition of his troops without an unexplained shift from “it” to “he.”
+  - source_phrase: γενναίους
+    prior_rendering: noble
+    new_rendering: valiant
+    rationale: In this military setting the adjective describes martial spirit and bravery, not a claim that the tyrant’s soldiers had acquired moral nobility.
+  - source_phrase: ἐκπορθήσας
+    prior_rendering: after sacking them
+    new_rendering: after sacking cities
+    rationale: Sacking ordinarily concerns cities or fortified places; supplying the contextual object avoids making “them” appear to refer to the soldiers.
+  - source_phrase: πάντας τοὺς πολεμίους
+    prior_rendering: all the enemies
+    new_rendering: all his enemies
+    rationale: The enemies are those opposed to Antiochus in the military campaigns being described.
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly distinguished infantry combat from hand-to-hand fighting, and the first draft reasonably supplied “cities” with the sacking verb. Rather than preserving an unexplained “it/he” shift, I follow the continuous context of Antiochus and his soldiers.

@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/אֵ֨לֶּה פְקוּדֵ֣י הַ/לֵּוִי֮ לְ/מִשְׁפְּחֹתָ/ם֒ לְ/גֵרְשׁ֗וֹן מִשְׁפַּ֨חַת֙ הַ/גֵּ֣רְשֻׁנִּ֔י לִ/קְהָ֕ת מִשְׁפַּ֖חַת הַ/קְּהָתִ֑י לִ/מְרָרִ֕י מִשְׁפַּ֖חַת הַ/מְּרָרִֽי׃
 translation:
-  text: 'And these were the numbered ones[a] of Levi by their clans: of Gershon, the clan of the Gershonites; of Kohath, the clan of the Kohathites; of Merari, the clan of the Merarites.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'those counted' or 'those registered.' The Hebrew refers to persons enrolled in the census, not merely the abstract act of counting.
-    reason: lexical_alternative
+  text: 'These were the Levites counted by clan: the Gershonite clan, descended from Gershon; the Kohathite clan, descended from Kohath; the Merarite clan, descended from Merari.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: פְקוּדֵי
   chosen: the numbered ones
@@ -102,7 +98,6 @@ revisions:
   from: 'And these were the numbered ones of Levi by their clans: of Gershon, the clan of the Gershonites; of Kohath, the clan of the Kohathites; of Merari, the clan of the Merarites.'
   to: 'And these were the numbered Levites by their clans: of Gershon, the clan of the Gershonites; of Kohath, the clan of the Kohathites; of Merari, the clan of the Merarites.'
   rationale: Replaced 'the numbered ones of Levi' with 'the numbered Levites' for more natural and accurate English while preserving the meaning.
-
 - timestamp: '2026-05-18T03:09:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -118,6 +113,13 @@ revisions:
   from: 'And these were the numbered ones of Levi by their clans: of Gershon, the clan of the Gershonites; of Kohath, the clan of the Kohathites; of Merari, the clan of the Merarites.'
   to: 'And these were the numbered ones[a] of Levi by their clans: of Gershon, the clan of the Gershonites; of Kohath, the clan of the Kohathites; of Merari, the clan of the Merarites.'
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('the numbered ones') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:31:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And these were the numbered ones[a] of Levi by their clans: of Gershon, the clan of the Gershonites; of Kohath, the clan of the Kohathites; of Merari, the clan of the Merarites.'
+  to: 'These were the Levites counted by clan: the Gershonite clan, descended from Gershon; the Kohathite clan, descended from Kohath; the Merarite clan, descended from Merari.'
+  rationale: The earlier revision correctly recognized that 'numbered Levites' is clearer than 'numbered ones of Levi'; its automated revert offers no contrary meaning-based evidence. I retained that clarity and made the ancestral relationships explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -137,3 +139,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/026/057.job-41717.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:31:38Z'
+  change_level: refined
+  confidence: high
+  meaning: The Levites were counted by their ancestral clans of Gershon, Kohath, and Merari.
+  meaning_decisions:
+  - source_phrase: וְאֵלֶּה פְקוּדֵי הַלֵּוִי לְמִשְׁפְּחֹתָם
+    prior_rendering: And these were the numbered ones of Levi by their clans
+    new_rendering: These were the Levites counted by clan
+    rationale: The collective designation refers to the Levites being registered, not to Levi personally or to an abstract act of counting.
+  - source_phrase: לְגֵרְשׁוֹן ... לִקְהָת ... לִמְרָרִי
+    prior_rendering: of Gershon ... of Kohath ... of Merari
+    new_rendering: descended from Gershon ... descended from Kohath ... descended from Merari
+    rationale: The repeated census construction identifies each clan’s ancestor.
+  footnote_kinds: {}
+  history_weighed: The earlier revision correctly recognized that 'numbered Levites' is clearer than 'numbered ones of Levi'; its automated revert offers no contrary meaning-based evidence. I retained that clarity and made the ancestral relationships explicit.

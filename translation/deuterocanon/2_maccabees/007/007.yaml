@@ -24,15 +24,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: When the first had died in this way[a], they brought the second to the mockery; and after tearing off the skin of his head with the hair, they asked[b], “Will you eat before your body is punished limb by limb?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'the skin of the head'; English 'scalp' is a possible rendering.
-    reason: lexical_alternative
-  - marker: b
-    text: The question implies eating what had been forbidden under the ancestral law, as the surrounding context makes clear.
-    reason: cross_reference
+  text: After the first brother had died in this way, they brought the second forward to be mocked. They tore off the skin of his head, hair and all, and asked him, “Will you eat, rather than have your body punished limb by limb?”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Μεταλλάξαντος
   chosen: had died
@@ -145,7 +138,13 @@ revisions:
   from: When the first had died in this way, they brought the second to the mockery; and after tearing off the skin of his head with the hair, they were asking, “Will you eat before your body is punished limb by limb?”
   to: When the first had died in this way, they brought the second to the mockery; and after tearing off the skin of his head with the hair, they asked, “Will you eat before your body is punished limb by limb?”
   rationale: Changed 'they were asking' to 'they asked' for a more natural narrative flow in English.
-
+- timestamp: '2026-11-09T22:10:11Z'
+  adjudicator: claude-opus-5.5-meaning-pass
+  reviewer_model: claude-opus-5-5
+  category: meaning_retranslation
+  from: When the first had died in this way[a], they brought the second to the mockery; and after tearing off the skin of his head with the hair, they asked[b], “Will you eat before your body is punished limb by limb?”
+  to: After the first brother had died in this way, they brought the second forward to be mocked. They tore off the skin of his head, hair and all, and asked him, “Will you eat, rather than have your body punished limb by limb?”
+  rationale: The revision's simple 'they asked' is kept; there is no maintainer decision, and the wording otherwise builds on the current text.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -165,3 +164,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/007/007.job-49141.json
+meaning_pass:
+  run: full-v4-opus
+  model: claude-opus-5-5
+  deployment: claude-code-subscription
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: null
+  timestamp: '2026-11-09T22:10:11Z'
+  change_level: refined
+  confidence: high
+  meaning: After the first brother died, the torturers brought out the second, tore off his scalp, and demanded whether he would eat rather than be tortured limb by limb.
+  meaning_decisions:
+  - source_phrase: ἦγον ἐπὶ τὸν ἐμπαιγμόν
+    prior_rendering: they brought the second to the mockery
+    new_rendering: they brought the second forward to be mocked
+    rationale: '''To the mockery'' is not natural English; the sense is that he was brought out to be made an object of cruel mockery.'
+  - source_phrase: πρὸ τοῦ τιμωρηθῆναι κατὰ μέλος τὸ σῶμα
+    prior_rendering: before your body is punished limb by limb
+    new_rendering: rather than have your body punished limb by limb
+    rationale: The question offers eating as the way to escape the torture; 'before' could suggest he will be tortured anyway.
+  - source_phrase: footnotes
+    prior_rendering: notes on 'skin of the head' and on what he is to eat
+    new_rendering: dropped
+    rationale: The scalping and the forbidden food are both clear from the text and from verse 1.
+  footnote_kinds: {}
+  history_weighed: The revision's simple 'they asked' is kept; there is no maintainer decision, and the wording otherwise builds on the current text.

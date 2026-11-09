@@ -13,15 +13,12 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: And he built around Ecbatana walls of cut stone[a], three cubits wide and six cubits long[b], and he made the wall seventy cubits high and its
-  philosophy: optimal-equivalence
+  text: Arphaxad built walls around Ecbatana from cut stones, each three cubits[a] wide and six cubits long. He made the wall seventy cubits high.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The supplied Greek text for this verse is truncated after 'and its' (καὶ τὸ). The English therefore preserves the incomplete ending rather than reconstructing the missing words from another edition.
-    reason: textual_variant
-  - marker: b
-    text: Or 'at Ecbatana.' The Greek prepositional phrase is somewhat compressed, but the context clearly describes fortifying the city.
-    reason: lexical_alternative
+    text: A cubit was roughly 18 inches (45 centimeters).
+    reason: cultural_note
 lexical_decisions:
 - source_word: ᾠκοδόμησεν
   chosen: built
@@ -95,7 +92,6 @@ revision_pass:
   timestamp: '2026-04-23T15:38:42Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -115,3 +111,38 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/001/002.job-50498.json
+revisions:
+- timestamp: '2026-11-09T19:01:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he built around Ecbatana walls of cut stone[a], three cubits wide and six cubits long[b], and he made the wall seventy cubits high and its
+  to: Arphaxad built walls around Ecbatana from cut stones, each three cubits[a] wide and six cubits long. He made the wall seventy cubits high.
+  rationale: The lexical record already recognizes that the smaller dimensions belong to the stones. The earlier treatment of the ending as missing text is unnecessary because verse 3 supplies its continuation.
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:04Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Arphaxad fortified Ecbatana with enormous cut stones and a wall seventy cubits high.
+  meaning_decisions:
+  - source_phrase: καὶ ᾠκοδόμησεν
+    prior_rendering: And he built
+    new_rendering: Arphaxad built
+    rationale: Names the understood subject so that readers do not mistakenly attribute the fortifications to Nebuchadnezzar.
+  - source_phrase: τείχη ἐκ λίθων λελαξευμένων, εἰς πλάτος πηχῶν τριῶν καὶ εἰς μῆκος πηχῶν ἕξ
+    prior_rendering: walls of cut stone, three cubits wide and six cubits long
+    new_rendering: walls ... from cut stones, each three cubits wide and six cubits long
+    rationale: Makes clear that these dimensions describe the stones, not the walls.
+  - source_phrase: καὶ τὸ
+    prior_rendering: and its
+    new_rendering: ''
+    rationale: This introduces the wall-width measurement supplied in verse 3; ending the sentence here avoids an English fragment without transferring that measurement.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The lexical record already recognizes that the smaller dimensions belong to the stones. The earlier treatment of the ending as missing text is unnecessary because verse 3 supplies its continuation.

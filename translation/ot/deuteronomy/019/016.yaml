@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: כִּֽי יָק֥וּם עֵד חָמָ֖ס בְּ/אִ֑ישׁ לַ/עֲנ֥וֹת בּ֖/וֹ סָרָֽה־־׃
 translation:
-  text: If a malicious witness rises up against a man to testify against him of rebellion[b][a],
-  philosophy: optimal-equivalence
+  text: If a malicious witness comes forward to accuse someone of wrongdoing[a],
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'a false witness.' The Hebrew phrase literally reads 'a witness of violence/wrong,' which can denote a malicious or false accuser in court.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'rebellion' or 'apostasy.' The Hebrew word can refer to serious deviation or defection; here it is rendered more generally as 'wrongdoing' to fit the legal setting.
-    reason: lexical_alternative
+    text: Or “rebellion.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: כִּי
   chosen: If
@@ -97,14 +94,20 @@ revisions:
   from: If a malicious witness rises up against a man to testify against him of wrongdoing,
   to: If a malicious witness rises up against a man to testify against him of wrongdoing,
   rationale: Changed 'wrongdoing' to 'rebellion' to more closely reflect סָרָה, which denotes defiance or rebellion rather than general wrongdoing. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:55:55Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If a malicious witness rises up against a man to testify against him of rebellion[b][a],'
-  to: 'If a malicious witness rises up against a man to testify against him of rebellion[b][a],'
+  from: If a malicious witness rises up against a man to testify against him of rebellion[b][a],
+  to: If a malicious witness rises up against a man to testify against him of rebellion[b][a],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''wrongdoing''].'
+- timestamp: '2026-11-09T17:31:05Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If a malicious witness rises up against a man to testify against him of rebellion[b][a],
+  to: If a malicious witness comes forward to accuse someone of wrongdoing[a],
+  rationale: The first draft and documented lexical decision favored 'wrongdoing,' whereas an automated review argued for 'rebellion' and the revert record is inconsistent with the current text. The general judicial context favors the broader rendering, while the review’s lexical concern is preserved as an alternative.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -124,3 +127,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/019/016.job-61687.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:31:05Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: A malicious accusation against another person must be dealt with through the judicial procedure that follows.
+  meaning_decisions:
+  - source_phrase: יָקוּם עֵד חָמָס בְּאִישׁ לַעֲנוֹת בּוֹ
+    prior_rendering: a malicious witness rises up against a man to testify against him
+    new_rendering: a malicious witness comes forward to accuse someone
+    rationale: The construction describes a witness bringing an accusation in court; the new wording conveys that action without suggesting a physical rising or confrontation.
+  - source_phrase: סָרָה
+    prior_rendering: rebellion
+    new_rendering: wrongdoing
+    rationale: The surrounding law addresses malicious accusations generally, without specifying political rebellion or religious apostasy; the narrower understanding remains in a footnote.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and documented lexical decision favored 'wrongdoing,' whereas an automated review argued for 'rebellion' and the revert record is inconsistent with the current text. The general judicial context favors the broader rendering, while the review’s lexical concern is preserved as an alternative.

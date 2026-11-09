@@ -29,18 +29,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 43:18
 translation:
-  text: The appearance of snow[b][a] dazzles the eyes[c], and at its falling the heart is amazed.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew 'whiteness' could be read here, but the Greek parallel and the weather context strongly support 'snow.'
-    reason: lexical_alternative
-  - marker: b
-    text: The Hebrew line about its 'rain/shower' is textually awkward in context; the Greek parallel supports understanding the phrase as the snow's falling or precipitation.
-    reason: textual_variant
-  - marker: c
-    text: Masada preserves a different neighboring line in this section ('and the sight amazes the heart'), showing some instability in the arrangement of these cola among Hebrew witnesses.
-    reason: textual_variant
+  text: The appearance of snow dazzles the eyes, and at its falling the heart is amazed.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: תואר
   chosen: appearance
@@ -115,13 +105,12 @@ revisions:
   from: The appearance of snow dazzles the eyes, and at its falling the heart is amazed.
   to: The appearance of snow dazzles the eyes, and at its falling the heart trembles.
   rationale: Changed “is amazed” to “trembles” to better reflect יהמה (“roars, is agitated, trembles”) and preserve the vivid emotional force of the Hebrew. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T03:09:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The appearance of snow dazzles the eyes[c][b][a], and at its falling the heart trembles.'
-  to: 'The appearance of snow dazzles the eyes, and at its falling the heart is amazed.'
+  from: The appearance of snow dazzles the eyes[c][b][a], and at its falling the heart trembles.
+  to: The appearance of snow dazzles the eyes, and at its falling the heart is amazed.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the heart is amazed''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -131,6 +120,13 @@ revisions:
   from: The appearance of snow dazzles the eyes, and at its falling the heart is amazed.
   to: The appearance of snow[b][a] dazzles the eyes[c], and at its falling the heart is amazed.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('snow') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('snow') because the note names that rendering; [c] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:09:17Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The appearance of snow[b][a] dazzles the eyes[c], and at its falling the heart is amazed.
+  to: The appearance of snow dazzles the eyes, and at its falling the heart is amazed.
+  rationale: The Hebrew and Greek together support the established wording about snow and inward astonishment. The proposed change to 'trembles' would narrow that response unnecessarily, so I retain 'is amazed' and remove the overlapping textual notes.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -150,3 +146,17 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/043/018.job-52208.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:17Z'
+  change_level: kept
+  confidence: high
+  meaning: The brilliance of snow dazzles the eyes, and its falling fills the heart with astonishment.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The Hebrew and Greek together support the established wording about snow and inward astonishment. The proposed change to 'trembles' would narrow that response unnecessarily, so I retain 'is amazed' and remove the overlapping textual notes.

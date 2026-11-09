@@ -20,15 +20,8 @@ source:
     note: NOT an ancient Hebrew witness. Neubauer's 1878 Hebrew is a back-translation from an Aramaic Munich MS. The actual ancient evidence is Qumran 4Q196-200 (Aramaic), published in DJD XIX (not redistributable). Use for translation reference only; do not treat as Vorlage.
     reference: TOB 1:7
 translation:
-  text: And I would give them to the priests[a], the sons of Aaron, for the altar, from the produce; I would give the tenth to the sons of Levi who minister in Jerusalem[b], and I would sell the second tenth and go and spend it in Jerusalem each year.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more idiomatically, 'the tithe' and 'the second tithe.' The Greek reads literally 'the tenth' and 'the second tenth.'
-    reason: lexical_alternative
-  - marker: b
-    text: The verb rendered 'I would sell' can also be understood as converting the second tenth into money before going to Jerusalem to spend it there.
-    reason: alternative_reading
+  text: I would give these offerings from the produce to the priests, the descendants of Aaron, for the altar. I would give the tithe to the Levites who ministered in Jerusalem, and I would sell the second tithe and go to Jerusalem each year to spend the proceeds.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐδίδουν
   chosen: I would give
@@ -149,14 +142,20 @@ revisions:
   from: And I would give them to the priests, the sons of Aaron, for the altar from the produce; I would give the tenth to the sons of Levi who minister in Jerusalem, and I would sell the second tenth, and go and spend it in Jerusalem each year.
   to: And I would give them to the priests, the sons of Aaron, for the altar from the produce; I would give the tenth to the sons of Levi who minister in Jerusalem, and I would sell the second tenth, and go and spend it in Jerusalem each year.
   rationale: Added a comma after 'altar' for clarity and removed the unnecessary comma before 'and go' to improve natural English flow while preserving the source meaning.
-
 - timestamp: '2026-05-18T02:59:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I would give them to the priests[a], the sons of Aaron, for the altar, from the produce; I would give the tenth to the sons of Levi who minister in Jerusalem[b], and I would sell the second tenth and go and spend it in Jerusalem each year.'
-  to: 'And I would give them to the priests[a], the sons of Aaron, for the altar, from the produce; I would give the tenth to the sons of Levi who minister in Jerusalem[b], and I would sell the second tenth and go and spend it in Jerusalem each year.'
+  from: And I would give them to the priests[a], the sons of Aaron, for the altar, from the produce; I would give the tenth to the sons of Levi who minister in Jerusalem[b], and I would sell the second tenth and go and spend it in Jerusalem each year.
+  to: And I would give them to the priests[a], the sons of Aaron, for the altar, from the produce; I would give the tenth to the sons of Levi who minister in Jerusalem[b], and I would sell the second tenth and go and spend it in Jerusalem each year.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for the altar from the produce''].'
+- timestamp: '2026-11-09T19:11:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I would give them to the priests[a], the sons of Aaron, for the altar, from the produce; I would give the tenth to the sons of Levi who minister in Jerusalem[b], and I would sell the second tenth and go and spend it in Jerusalem each year.
+  to: I would give these offerings from the produce to the priests, the descendants of Aaron, for the altar. I would give the tithe to the Levites who ministered in Jerusalem, and I would sell the second tithe and go to Jerusalem each year to spend the proceeds.
+  rationale: The recorded passes chiefly changed commas without resolving the compressed altar clause. I retain the pattern of repeated giving and the sale of the second tithe, but put the distinctions already acknowledged in the notes directly into the text.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -176,3 +175,33 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/tobit/001/007.job-39042.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:02Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Tobit regularly gave the priestly offerings and the Levites' tithe, and sold the second tithe to spend its proceeds in Jerusalem each year.
+  meaning_decisions:
+  - source_phrase: ἐδίδουν αὐτὰς τοῖς ἱερεῦσιν ... πρὸς τὸ θυσιαστήριον τῶν γενημάτων
+    prior_rendering: I would give them to the priests ... for the altar, from the produce
+    new_rendering: I would give these offerings from the produce to the priests ... for the altar
+    rationale: Reordering the compressed phrase makes clear that the produce supplies the offerings and that the gifts are given to the priests for the altar.
+  - source_phrase: τοῖς υἱοῖς Ἀαρὼν ... τοῖς υἱοῖς Λευεί
+    prior_rendering: the sons of Aaron ... the sons of Levi
+    new_rendering: the descendants of Aaron ... the Levites
+    rationale: These are hereditary priestly and Levitical groups, not only the immediate sons of the two ancestors.
+  - source_phrase: τὴν δεκάτην ... τὴν δευτέραν δεκάτην
+    prior_rendering: the tenth ... the second tenth
+    new_rendering: the tithe ... the second tithe
+    rationale: The context identifies distinct prescribed tithes; the established English term communicates their religious function more clearly than bare ordinal fractions.
+  - source_phrase: ἀπεπρατιζόμην ... ἐδαπάνων αὐτὰ
+    prior_rendering: I would sell ... and ... spend it
+    new_rendering: I would sell ... to spend the proceeds
+    rationale: The money received from selling the second tithe is what Tobit spends in Jerusalem, not the produce itself.
+  footnote_kinds: {}
+  history_weighed: The recorded passes chiefly changed commas without resolving the compressed altar clause. I retain the pattern of repeated giving and the sale of the second tithe, but put the distinctions already acknowledged in the notes directly into the text.

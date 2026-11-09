@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: אַ֡ף לֹ֣א אֶל אֶרֶץ֩ זָבַ֨ת חָלָ֤ב וּ/דְבַשׁ֙ הֲבִ֣יאֹתָ֔/נוּ וַ/תִּ֨תֶּן לָ֔/נוּ נַחֲלַ֖ת שָׂדֶ֣ה וָ/כָ֑רֶם הַ/עֵינֵ֞י הָ/אֲנָשִׁ֥ים הָ/הֵ֛ם תְּנַקֵּ֖ר לֹ֥א נַעֲלֶֽה־־׃
 translation:
-  text: Indeed[a], you have not brought us into a land flowing with milk and honey, nor have you given us an inheritance of fields and vineyards. Will you gouge out the eyes of these men? We will not come up.
-  philosophy: optimal-equivalence
+  text: Moreover, you have not brought us into a land flowing with milk and honey, nor have you given us an inheritance of fields and vineyards. Do you think you can blind these men to the truth[a]? We will not come up.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'Will you blind these men?' The Hebrew idiom is literally 'gouge out the eyes,' which may also imply treating them as if they were blind to the truth.
+    text: Literally, “Will you gouge out the eyes of these men?” The image likely accuses Moses of deception, though literal blinding as punishment is also a possible meaning.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: אַף לֹא
@@ -79,14 +79,20 @@ revisions:
   from: Indeed, you have not brought us into a land flowing with milk and honey, nor have you given us an inheritance of field and vineyard. Will you gouge out the eyes of these men? We will not come up.
   to: Indeed, you have not brought us into a land flowing with milk and honey, nor have you given us an inheritance of field and vineyard. Will you gouge out the eyes of these men? We will not come up.
   rationale: Adjusted 'field and vineyard' to 'fields and vineyards' to better reflect the collective sense in natural English while preserving the source meaning. No other changes needed.
-
 - timestamp: '2026-05-18T02:57:46Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Indeed[a], you have not brought us into a land flowing with milk and honey, nor have you given us an inheritance of fields and vineyards. Will you gouge out the eyes of these men? We will not come up.'
-  to: 'Indeed[a], you have not brought us into a land flowing with milk and honey, nor have you given us an inheritance of fields and vineyards. Will you gouge out the eyes of these men? We will not come up.'
+  from: Indeed[a], you have not brought us into a land flowing with milk and honey, nor have you given us an inheritance of fields and vineyards. Will you gouge out the eyes of these men? We will not come up.
+  to: Indeed[a], you have not brought us into a land flowing with milk and honey, nor have you given us an inheritance of fields and vineyards. Will you gouge out the eyes of these men? We will not come up.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''nor have you given us an inheritance of field and vineyard''].'
+- timestamp: '2026-11-09T18:30:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Indeed[a], you have not brought us into a land flowing with milk and honey, nor have you given us an inheritance of fields and vineyards. Will you gouge out the eyes of these men? We will not come up.
+  to: Moreover, you have not brought us into a land flowing with milk and honey, nor have you given us an inheritance of fields and vineyards. Do you think you can blind these men to the truth[a]? We will not come up.”
+  rationale: I retain the current plural “fields and vineyards,” which conveys the collective Hebrew nouns naturally. The earlier note recognized deception behind the eye-gouging image; I make that likely sense explicit while preserving the alternative rather than treating the idiom as certain.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -106,3 +112,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/016/014.job-41557.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:30:46Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: They accuse Moses of failing to deliver the promised land and inheritance, challenge any attempt to conceal that failure, and repeat their refusal to come.
+  meaning_decisions:
+  - source_phrase: אַף לֹא
+    prior_rendering: Indeed, you have not
+    new_rendering: Moreover, you have not
+    rationale: This connects the failure to deliver the promised inheritance with the preceding accusations as an additional grievance.
+  - source_phrase: הַעֵינֵי הָאֲנָשִׁים הָהֵם תְּנַקֵּר
+    prior_rendering: Will you gouge out the eyes of these men?
+    new_rendering: Do you think you can blind these men to the truth?
+    rationale: In this complaint about visible failure, deception is the best-supported idiomatic sense. The blindness image remains in the text, while the footnote preserves the violent literal wording and the serious alternative of physical punishment.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: I retain the current plural “fields and vineyards,” which conveys the collective Hebrew nouns naturally. The earlier note recognized deception behind the eye-gouging image; I make that likely sense explicit while preserving the alternative rather than treating the idiom as certain.

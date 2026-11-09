@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/תַּ֨עַן אֶסְתֵּ֤ר הַ/מַּלְכָּה֙ וַ/תֹּאמַ֔ר אִם מָצָ֨אתִי חֵ֤ן בְּ/עֵינֶ֨י/ךָ֙ הַ/מֶּ֔לֶךְ וְ/אִם עַל הַ/מֶּ֖לֶךְ ט֑וֹב תִּנָּֽתֶן לִ֤/י נַפְשִׁ/י֙ בִּ/שְׁאֵ֣לָתִ֔/י וְ/עַמִּ֖/י בְּ/בַקָּשָׁתִֽ/י־־־־׃
 translation:
-  text: Then Queen Esther answered and said[a], “If I have found favor in your eyes, O king, and if it pleases the king, let my life be given me at my petition, and my people at my request.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or more idiomatically, “grant me my life at my petition, and my people at my request.” The Hebrew more literally says, “let my life be given to me.”
-    reason: lexical_alternative
+  text: Then Queen Esther replied, “If I have found favor with you, Your Majesty, and if it pleases you, spare my life—that is my petition—and spare my people—that is my request.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַתַּעַן
   chosen: answered
@@ -99,14 +95,20 @@ revisions:
   from: Then Queen Esther answered and said, “If I have found favor in your eyes, O king, and if it pleases the king, let my life be given to me at my petition, and my people at my request.”
   to: Then Queen Esther answered and said, “If I have found favor in your eyes, O king, and if it pleases the king, let my life be given to me at my petition, and my people at my request.”
   rationale: Removed 'to' from 'be given to me' for more natural formal English while preserving the Hebrew sense; otherwise retained the draft.
-
 - timestamp: '2026-05-17T21:21:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Queen Esther answered and said[a], “If I have found favor in your eyes, O king, and if it pleases the king, let my life be given me at my petition, and my people at my request.”'
-  to: 'Then Queen Esther answered and said[a], “If I have found favor in your eyes, O king, and if it pleases the king, let my life be given me at my petition, and my people at my request.”'
+  from: Then Queen Esther answered and said[a], “If I have found favor in your eyes, O king, and if it pleases the king, let my life be given me at my petition, and my people at my request.”
+  to: Then Queen Esther answered and said[a], “If I have found favor in your eyes, O king, and if it pleases the king, let my life be given me at my petition, and my people at my request.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''let my life be given to me''].'
+- timestamp: '2026-11-09T17:33:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Queen Esther answered and said[a], “If I have found favor in your eyes, O king, and if it pleases the king, let my life be given me at my petition, and my people at my request.”
+  to: Then Queen Esther replied, “If I have found favor with you, Your Majesty, and if it pleases you, spare my life—that is my petition—and spare my people—that is my request.”
+  rationale: The earlier decisions correctly identify nephesh here as life and recognize “grant me my life” as the idiomatic meaning, but prefer the passive for source transparency. With no maintainer revision, I carry that established meaning directly into the text and remove the now-unnecessary note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -128,3 +130,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/esther/007/003.job-62271.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:33:24Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Esther respectfully asks the king to spare her life and the lives of her people.
+  meaning_decisions:
+  - source_phrase: אִם מָצָאתִי חֵן בְּעֵינֶיךָ הַמֶּלֶךְ וְאִם עַל הַמֶּלֶךְ טוֹב
+    prior_rendering: If I have found favor in your eyes, O king, and if it pleases the king
+    new_rendering: If I have found favor with you, Your Majesty, and if it pleases you
+    rationale: Natural English courtly address preserves Esther’s deference without reproducing the Hebrew shifts between direct address and third-person reference.
+  - source_phrase: תִּנָּתֶן לִי נַפְשִׁי בִּשְׁאֵלָתִי וְעַמִּי בְּבַקָּשָׁתִי
+    prior_rendering: let my life be given me at my petition, and my people at my request
+    new_rendering: spare my life—that is my petition—and spare my people—that is my request
+    rationale: Esther is asking to be spared from death, not to receive life or possession of her people; the English makes the understood plea explicit while preserving her response to the king’s paired questions.
+  footnote_kinds: {}
+  history_weighed: The earlier decisions correctly identify nephesh here as life and recognize “grant me my life” as the idiomatic meaning, but prefer the passive for source transparency. With no maintainer revision, I carry that established meaning directly into the text and remove the now-unnecessary note.

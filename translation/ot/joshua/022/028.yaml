@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/נֹּ֕אמֶר וְ/הָיָ֗ה כִּֽי יֹאמְר֥וּ אֵלֵ֛י/נוּ וְ/אֶל דֹּרֹתֵ֖י/נוּ מָחָ֑ר וְ/אָמַ֡רְנוּ רְא֣וּ אֶת תַּבְנִית֩ מִזְבַּ֨ח יְהוָ֜ה אֲשֶׁר עָשׂ֣וּ אֲבוֹתֵ֗י/נוּ לֹ֤א לְ/עוֹלָה֙ וְ/לֹ֣א לְ/זֶ֔בַח כִּי עֵ֣ד ה֔וּא בֵּינֵ֖י/נוּ וּ/בֵינֵי/כֶֽם־־־־־׃
 translation:
-  text: 'So we said[a], ‘If they should say to us or to our generations in time to come, then we will say: “Look at the pattern of the altar of Yahweh, which our fathers made—not for burnt offering and not for sacrifice, but it is a witness between us and you.”’'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'copy,' 'model,' or 'representation' of the altar of the LORD.' The Hebrew term refers to a form or pattern, indicating this altar was a replica serving as testimony rather than the authorized sacrificial altar itself.
-    reason: lexical_alternative
+  text: So we said, ‘If in time to come they say this to us or to our descendants, we will answer, “Look at this replica of Yahweh’s altar, which our fathers made—not for burnt offerings and not for sacrifices, but as a witness between us and you.”’
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַנֹּאמֶר
   chosen: So we said
@@ -129,14 +125,20 @@ revisions:
   from: 'So we said, ‘If they should say to us or to our generations in time to come, then we will say: “Look at the pattern of the altar of the LORD, which our fathers made—not for burnt offering and not for sacrifice, but it is a witness between us and you.”’'
   to: 'So we said, ‘If they should say to us or to our generations in time to come, then we will say: “Look at the pattern of the altar of the LORD, which our fathers made—not for burnt offering or for sacrifice, but as a witness between us and you.”’'
   rationale: Adjusted the final clause from 'but it is a witness' to 'but as a witness' for more natural English and closer alignment with the Hebrew כי עד הוא; also smoothed 'not for burnt offering and not for sacrifice' to 'not for burnt offering or for sacrifice.'
-
 - timestamp: '2026-05-15T21:09:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'So we said[a], ‘If they should say to us or to our generations in time to come, then we will say: “Look at the pattern of the altar of Yahweh, which our fathers made—not for burnt offering or for sacrifice, but as a witness between us and you.”’'
   to: 'So we said[a], ‘If they should say to us or to our generations in time to come, then we will say: “Look at the pattern of the altar of Yahweh, which our fathers made—not for burnt offering and not for sacrifice, but it is a witness between us and you.”’'
-  rationale: 'Drafter chose ''not for burnt offering and not for sacrifice'' to mirror the doubled negation לֹא...וְלֹא for emphasis. Drafter chose ''but it is a witness'' to render the verbless clause כִּי עֵד הוּא (preserving the predicate pronoun). Azure collapsed both — ''and not''→''or'', ''it is''→''as'' — losing both structural features.'
+  rationale: Drafter chose 'not for burnt offering and not for sacrifice' to mirror the doubled negation לֹא...וְלֹא for emphasis. Drafter chose 'but it is a witness' to render the verbless clause כִּי עֵד הוּא (preserving the predicate pronoun). Azure collapsed both — 'and not'→'or', 'it is'→'as' — losing both structural features.
+- timestamp: '2026-11-09T18:10:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'So we said[a], ‘If they should say to us or to our generations in time to come, then we will say: “Look at the pattern of the altar of Yahweh, which our fathers made—not for burnt offering and not for sacrifice, but it is a witness between us and you.”’'
+  to: So we said, ‘If in time to come they say this to us or to our descendants, we will answer, “Look at this replica of Yahweh’s altar, which our fathers made—not for burnt offerings and not for sacrifices, but as a witness between us and you.”’
+  rationale: The automated review and revert debated syntax rather than the altar’s function; I preserve the emphatic denial of both sacrificial uses without requiring the earlier clause structure. The lexical notes themselves identify a replica, whose meaning is clearer in the main text than ‘pattern’ with a footnote.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -156,3 +158,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/weighted_vocab/ot/joshua/022/028.job-15349.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:10:47Z'
+  change_level: retranslated
+  confidence: high
+  meaning: If their descendants are challenged, they can point to the replica altar as evidence of their shared worship rather than as an altar intended for sacrifice.
+  meaning_decisions:
+  - source_phrase: יֹאמְרוּ אֵלֵינוּ וְאֶל דּוֹרֹתֵינוּ מָחָר
+    prior_rendering: they should say to us or to our generations in time to come
+    new_rendering: in time to come they say this to us or to our descendants
+    rationale: ‘This’ supplies the understood accusation from the preceding verses, and ‘descendants’ identifies the people addressed rather than treating generations as abstract periods.
+  - source_phrase: תַּבְנִית מִזְבַּח יְהוָה
+    prior_rendering: the pattern of the altar of Yahweh
+    new_rendering: this replica of Yahweh’s altar
+    rationale: The tribes point to a constructed likeness of the sanctuary altar, not to a design or set of building instructions; ‘replica’ carries that meaning directly.
+  - source_phrase: לֹא לְעוֹלָה וְלֹא לְזֶבַח כִּי עֵד הוּא
+    prior_rendering: not for burnt offering and not for sacrifice, but it is a witness
+    new_rendering: not for burnt offerings and not for sacrifices, but as a witness
+    rationale: The construction contrasts the altar’s rejected uses with its actual purpose; natural English can express that purpose without preserving the Hebrew predicate pronoun.
+  footnote_kinds: {}
+  history_weighed: The automated review and revert debated syntax rather than the altar’s function; I preserve the emphatic denial of both sacrificial uses without requiring the earlier clause structure. The lexical notes themselves identify a replica, whose meaning is clearer in the main text than ‘pattern’ with a footnote.

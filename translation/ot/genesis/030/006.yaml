@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וַ/תֹּ֤אמֶר רָחֵל֙ דָּנַ֣/נִּי אֱלֹהִ֔ים וְ/גַם֙ שָׁמַ֣ע בְּ/קֹלִ֔/י וַ/יִּתֶּן לִ֖/י בֵּ֑ן עַל כֵּ֛ן קָרְאָ֥ה שְׁמ֖/וֹ דָּֽן־־׃
 translation:
-  text: Then Rachel said[a], “God has judged me, and has also heard my voice and given me a son.” Therefore she called his name Dan.
-  philosophy: optimal-equivalence
+  text: Then Rachel said, “God has ruled in my favor; he has also listened to me and given me a son.” Therefore she named him Dan[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Dan sounds like the Hebrew verb for 'judge' or 'has judged.'
+    text: Dan is related to the Hebrew word for “judge,” echoing Rachel’s statement that God has ruled in her favor.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: דָּנַנִּי
@@ -82,14 +82,20 @@ revisions:
   from: Then Rachel said, “God has judged my case, and has also heard my voice and given me a son.” Therefore she called his name Dan.
   to: Then Rachel said, “God has judged my case, and has also heard my voice and given me a son.” Therefore she called his name Dan.
   rationale: Changed 'judged my case' to 'judged me' for closer lexical correspondence to דָּנַנִּי while keeping natural English. No other changes needed.
-
 - timestamp: '2026-05-17T10:16:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Rachel said[a], “God has judged me, and has also heard my voice and given me a son.” Therefore she called his name Dan.'
-  to: 'Then Rachel said[a], “God has judged me, and has also heard my voice and given me a son.” Therefore she called his name Dan.'
+  from: Then Rachel said[a], “God has judged me, and has also heard my voice and given me a son.” Therefore she called his name Dan.
+  to: Then Rachel said[a], “God has judged me, and has also heard my voice and given me a son.” Therefore she called his name Dan.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''has judged my case''].'
+- timestamp: '2026-11-09T17:44:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Rachel said[a], “God has judged me, and has also heard my voice and given me a son.” Therefore she called his name Dan.
+  to: Then Rachel said, “God has ruled in my favor; he has also listened to me and given me a son.” Therefore she named him Dan[a].
+  rationale: The first draft’s “judged my case” and its rationale rightly recognized judicial action on Rachel’s behalf. I carry that gain further by making the favorable verdict explicit, rather than following the later source-transparency preference for “judged me.”
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -113,3 +119,30 @@ cross_check:
     agree: 1
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/030/006.job-65234.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:44:01Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Rachel regarded the birth as God’s favorable judgment and response to her appeal, and named the son Dan accordingly.
+  meaning_decisions:
+  - source_phrase: דָּנַנִּי אֱלֹהִים
+    prior_rendering: God has judged me
+    new_rendering: God has ruled in my favor
+    rationale: Rachel describes a favorable judicial decision, not condemnation; the gift of a son establishes the positive sense while the legal image remains intact.
+  - source_phrase: שָׁמַע בְּקֹלִי
+    prior_rendering: heard my voice
+    new_rendering: listened to me
+    rationale: The idiom means that God attended to Rachel’s appeal, rather than merely perceiving its sound.
+  - source_phrase: קָרְאָה שְׁמוֹ דָּן
+    prior_rendering: she called his name Dan
+    new_rendering: she named him Dan[a]
+    rationale: This is the natural English naming formula; the note, rather than the Hebrew-shaped construction, preserves the name’s connection to Rachel’s explanation.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The first draft’s “judged my case” and its rationale rightly recognized judicial action on Rachel’s behalf. I carry that gain further by making the favorable verdict explicit, rather than following the later source-transparency preference for “judged me.”

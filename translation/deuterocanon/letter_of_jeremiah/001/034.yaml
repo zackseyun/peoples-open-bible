@@ -14,14 +14,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Likewise[a], they are certainly not able to give either wealth or bronze; if someone makes a vow to them and does not pay it back[b], they will certainly not seek it.
-  philosophy: optimal-equivalence
+  text: Likewise, they cannot possibly give either wealth or money[a]; if someone makes a vow to them but does not fulfill it, they will never demand its fulfillment.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'copper,' possibly implying money or valuables made from bronze.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'they will certainly not demand it.' The Greek literally says 'seek it.'
+    text: Literally, “bronze” or “copper,” here likely referring to money.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ὡσαύτως
@@ -110,14 +107,20 @@ revisions:
   from: Likewise, they are certainly not able to give either wealth or bronze; if someone makes a vow to them and does not pay it back, they will certainly not seek it.
   to: Likewise, they are not able to give either wealth or bronze; if someone makes a vow to them and does not pay it, they will certainly not demand it.
   rationale: Removed the awkward emphasis 'certainly' from the first clause, changed 'pay it back' to the more natural and accurate 'pay it' for a vow, and rendered ἐπιζητήσωσιν as 'demand it' rather than 'seek it' to better fit the context.
-
 - timestamp: '2026-05-15T14:24:26Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Likewise[a], they are not able to give either wealth or bronze; if someone makes a vow to them and does not pay it[b], they will certainly not demand it.'
-  to: 'Likewise[a], they are certainly not able to give either wealth or bronze; if someone makes a vow to them and does not pay it back[b], they will certainly not seek it.'
-  rationale: 'Restored 3 chosen renderings (οὐ μή emphatic, ἀπο- prefix, drafter''s seek over rejected demand).'
+  from: Likewise[a], they are not able to give either wealth or bronze; if someone makes a vow to them and does not pay it[b], they will certainly not demand it.
+  to: Likewise[a], they are certainly not able to give either wealth or bronze; if someone makes a vow to them and does not pay it back[b], they will certainly not seek it.
+  rationale: Restored 3 chosen renderings (οὐ μή emphatic, ἀπο- prefix, drafter's seek over rejected demand).
+- timestamp: '2026-11-09T19:02:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Likewise[a], they are certainly not able to give either wealth or bronze; if someone makes a vow to them and does not pay it back[b], they will certainly not seek it.
+  to: Likewise, they cannot possibly give either wealth or money[a]; if someone makes a vow to them but does not fulfill it, they will never demand its fulfillment.
+  rationale: The review correctly recognized the vow’s fulfillment and the idols’ inability to demand it, while the automated revert favored literal prefixes and “seek.” I retain the revert’s concern for emphatic negation but adopt the contextually clearer meanings; no maintainer ruling is recorded.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -137,3 +140,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/letter_of_jeremiah/001/034.job-50873.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:02:39Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The idols cannot bestow material wealth or demand that a worshiper fulfill a promised vow.
+  meaning_decisions:
+  - source_phrase: πλοῦτον … χαλκόν
+    prior_rendering: wealth or bronze
+    new_rendering: wealth or money
+    rationale: In this context of material benefits, the named metal likely represents money; the note preserves the wording and the uncertainty.
+  - source_phrase: οὐ μὴ δύνωνται δοῦναι
+    prior_rendering: they are certainly not able to give
+    new_rendering: they cannot possibly give
+    rationale: This preserves the emphatic denial in a more natural English construction.
+  - source_phrase: μὴ ἀποδῷ
+    prior_rendering: does not pay it back
+    new_rendering: does not fulfill it
+    rationale: The object is a vow, not a loan; fulfilling what was promised is the relevant sense of the verb.
+  - source_phrase: οὐ μὴ ἐπιζητήσωσιν
+    prior_rendering: they will certainly not seek it
+    new_rendering: they will never demand its fulfillment
+    rationale: The verb concerns requiring the promised offering, not searching for a missing object; “never” retains the force of the negation.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The review correctly recognized the vow’s fulfillment and the idols’ inability to demand it, while the automated revert favored literal prefixes and “seek.” I retain the revert’s concern for emphatic negation but adopt the contextually clearer meanings; no maintainer ruling is recorded.

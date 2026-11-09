@@ -4,15 +4,15 @@ source:
   edition: SBLGNT
   text: ὁ γὰρ ἐσθίων καὶ ⸀πίνων κρίμα ἑαυτῷ ἐσθίει καὶ πίνει μὴ διακρίνων τὸ ⸀σῶμα.
 translation:
-  text: For the one who eats and drinks eats and drinks judgment on himself[b][a], not discerning the body.
-  philosophy: optimal-equivalence
+  text: For whoever eats and drinks without discerning the body[a][b] eats and drinks judgment on themselves.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Some manuscripts read 'the Lord's body' instead of 'the body.'
-    reason: textual_variant
-  - marker: b
-    text: Or 'distinguishing the body'; this may refer to recognizing the significance of the Lord's Supper, the gathered body of believers, or both.
+    text: “The body” may refer to Christ’s body in the supper, to the church as his body, or to both.
     reason: alternative_reading
+  - marker: b
+    text: Some manuscripts read “the Lord’s body” rather than “the body.”
+    reason: textual_variant
 lexical_decisions:
 - source_word: κρίμα
   chosen: judgment
@@ -90,14 +90,20 @@ revisions:
   from: For the one who eats and drinks eats and drinks judgment on himself if he does not discern the body.
   to: For the one who eats and drinks eats and drinks judgment on himself if he does not discern the body.
   rationale: Replaced the conditional phrase 'if he does not discern' with the participial construction 'not discerning' to reflect the Greek more closely and naturally; added a comma for clarity.
-
 - timestamp: '2026-05-18T03:01:38Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For the one who eats and drinks eats and drinks judgment on himself[b][a], not discerning the body.'
-  to: 'For the one who eats and drinks eats and drinks judgment on himself[b][a], not discerning the body.'
+  from: For the one who eats and drinks eats and drinks judgment on himself[b][a], not discerning the body.
+  to: For the one who eats and drinks eats and drinks judgment on himself[b][a], not discerning the body.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''if he does not discern''].'
+- timestamp: '2026-11-09T17:08:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For the one who eats and drinks eats and drinks judgment on himself[b][a], not discerning the body.
+  to: For whoever eats and drinks without discerning the body[a][b] eats and drinks judgment on themselves.
+  rationale: The earlier draft and lexical rationale make the conditional force explicit, and 'without discerning' restores that clarity. I retain the unqualified 'body,' its serious interpretive alternatives, and 'judgment' rather than final condemnation.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -120,3 +126,27 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/1_corinthians/011/029.job-52869.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:15Z'
+  change_level: refined
+  confidence: medium
+  meaning: Eating and drinking without discerning the body brings judgment on the participant.
+  meaning_decisions:
+  - source_phrase: ὁ γὰρ ἐσθίων καὶ πίνων ... μὴ διακρίνων τὸ σῶμα
+    prior_rendering: For the one who eats and drinks ... not discerning the body
+    new_rendering: For whoever eats and drinks without discerning the body
+    rationale: Placing the qualifying phrase with the participant makes clear that judgment attends eating and drinking without discernment, rather than eating and drinking as such.
+  - source_phrase: ἑαυτῷ
+    prior_rendering: on himself
+    new_rendering: on themselves
+    rationale: The warning concerns any participant; singular 'themselves' maintains the reflexive individual reference.
+  footnote_kinds:
+    a: alternative_meaning
+    b: textual_variant
+  history_weighed: The earlier draft and lexical rationale make the conditional force explicit, and 'without discerning' restores that clarity. I retain the unqualified 'body,' its serious interpretive alternatives, and 'judgment' rather than final condemnation.

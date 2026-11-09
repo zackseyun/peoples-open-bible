@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: אֶ֨ת כַּסְפְּ/ךָ֔ לֹֽא תִתֵּ֥ן ל֖/וֹ בְּ/נֶ֑שֶׁךְ וּ/בְ/מַרְבִּ֖ית לֹא תִתֵּ֥ן אָכְלֶֽ/ךָ־־־׃
 translation:
-  text: You shall not lend him your money at interest[b][a], nor give him your food for increase.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'your silver.' Hebrew כֶּסֶף can mean both 'silver' and 'money'; here it refers to money used in lending.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'at increase.' The Hebrew term can denote gain or increase taken from what is supplied, especially in parallel with 'interest.'
-    reason: lexical_alternative
+  text: Do not lend him your money at interest or your food on condition that he repay more than you gave him.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: כַּסְפְּךָ
   lemma: כֶּסֶף
@@ -77,14 +70,20 @@ revisions:
   from: You shall not lend him your money at interest, nor give him your food for profit.
   to: You shall not lend him your money at interest, nor give him your food for profit.
   rationale: Changed 'for profit' to 'for increase' to more closely reflect וּבְמַרְבִּית and to maintain a more formal, source-near rendering.
-
 - timestamp: '2026-05-18T02:58:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'You shall not lend him your money at interest[b][a], nor give him your food for increase.'
-  to: 'You shall not lend him your money at interest[b][a], nor give him your food for increase.'
+  from: You shall not lend him your money at interest[b][a], nor give him your food for increase.
+  to: You shall not lend him your money at interest[b][a], nor give him your food for increase.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for profit''].'
+- timestamp: '2026-11-09T18:22:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You shall not lend him your money at interest[b][a], nor give him your food for increase.
+  to: Do not lend him your money at interest or your food on condition that he repay more than you gave him.
+  rationale: The history’s competing 'profit' and 'increase' renderings both recognize an added economic return, but neither makes the food-loan arrangement fully clear. I preserve 'money at interest' and state what the additional repayment means.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -104,3 +103,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/025/037.job-45210.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:22:00Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Neither money nor food may be lent to the needy Israelite on terms requiring an additional return.
+  meaning_decisions:
+  - source_phrase: וּבְמַרְבִּית לֹא תִתֵּן אָכְלֶךָ
+    prior_rendering: nor give him your food for increase
+    new_rendering: or your food on condition that he repay more than you gave him
+    rationale: The parallel with lending money establishes a food loan whose prohibited 'increase' is repayment beyond the amount supplied.
+  footnote_kinds: {}
+  history_weighed: The history’s competing 'profit' and 'increase' renderings both recognize an added economic return, but neither makes the food-loan arrangement fully clear. I preserve 'money at interest' and state what the additional repayment means.

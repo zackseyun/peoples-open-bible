@@ -17,18 +17,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But the sons of Israel[a], returning from the slaughter, took possession of the rest, and the villages and hamlets in the hill country and in the plain took much plunder[c][b], for there was a very great quantity.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the Israelites' for 'the sons of Israel.' The Greek is more literally 'sons of Israel.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'villages and farmsteads.' The term translated 'hamlets' refers to rural dwellings or small country settlements.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'much spoil.'
-    reason: lexical_alternative
+  text: When the Israelites returned from the slaughter, they took possession of what was left. The people in the villages and hamlets of the hill country and the plain took a great deal of plunder, for there was an enormous amount of it.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: οἱ ... υἱοὶ Ἰσραήλ
   chosen: the sons of Israel
@@ -118,14 +108,20 @@ revisions:
   from: But the sons of Israel, returning from the slaughter, took possession of the rest, and the villages and hamlets in the hill country and in the plain seized much plunder, for there was a very great quantity.
   to: But the sons of Israel, returning from the slaughter, took possession of the rest, and the villages and hamlets in the hill country and in the plain seized much plunder, for there was a very great quantity.
   rationale: Changed 'seized much plunder' to 'took much plunder' for more natural formal English and better consistency with the surrounding phrasing; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:59:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But the sons of Israel[a], returning from the slaughter, took possession of the rest, and the villages and hamlets in the hill country and in the plain took much plunder[c][b], for there was a very great quantity.'
-  to: 'But the sons of Israel[a], returning from the slaughter, took possession of the rest, and the villages and hamlets in the hill country and in the plain took much plunder[c][b], for there was a very great quantity.'
+  from: But the sons of Israel[a], returning from the slaughter, took possession of the rest, and the villages and hamlets in the hill country and in the plain took much plunder[c][b], for there was a very great quantity.
+  to: But the sons of Israel[a], returning from the slaughter, took possession of the rest, and the villages and hamlets in the hill country and in the plain took much plunder[c][b], for there was a very great quantity.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''seized much plunder''].'
+- timestamp: '2026-11-09T19:03:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But the sons of Israel[a], returning from the slaughter, took possession of the rest, and the villages and hamlets in the hill country and in the plain took much plunder[c][b], for there was a very great quantity.
+  to: When the Israelites returned from the slaughter, they took possession of what was left. The people in the villages and hamlets of the hill country and the plain took a great deal of plunder, for there was an enormous amount of it.
+  rationale: The earlier review correctly preferred natural wording for taking plunder, and that gain is retained. The lexical record supports both possession of what remained and the broad rural-settlement sense of “hamlets.”
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -145,3 +141,33 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/015/007.job-50805.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:03:00Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The returning Israelites take possession of what remains, and people throughout the villages and hamlets acquire abundant plunder.
+  meaning_decisions:
+  - source_phrase: οἱ δὲ υἱοὶ Ἰσραὴλ ἀναστρέψαντες ἀπὸ τῆς κοπῆς
+    prior_rendering: But the sons of Israel, returning from the slaughter
+    new_rendering: When the Israelites returned from the slaughter
+    rationale: Renders the ethnic idiom naturally and makes the temporal connection explicit.
+  - source_phrase: ἐκυρίευσαν τῶν λοιπῶν
+    prior_rendering: took possession of the rest
+    new_rendering: took possession of what was left
+    rationale: Makes the contextual reference to what remained intelligible without unnecessarily specifying its contents.
+  - source_phrase: αἱ κῶμαι καὶ ἐπαύλεις … ἐκράτησαν πολλῶν λαφύρων
+    prior_rendering: the villages and hamlets … took much plunder
+    new_rendering: The people in the villages and hamlets … took a great deal of plunder
+    rationale: Makes explicit the inhabitants represented by their settlements.
+  - source_phrase: ἦν γὰρ πλῆθος πολὺ σφόδρα
+    prior_rendering: for there was a very great quantity
+    new_rendering: for there was an enormous amount of it
+    rationale: Preserves the emphatic abundance and identifies what is abundant.
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly preferred natural wording for taking plunder, and that gain is retained. The lexical record supports both possession of what remained and the broad rural-settlement sense of “hamlets.”

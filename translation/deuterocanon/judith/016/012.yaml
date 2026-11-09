@@ -15,14 +15,11 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: The sons of maidens pierced them through[a], and wounded them like the children of deserters[b]; they perished before the battle line of my Lord.
-  philosophy: optimal-equivalence
+  text: The sons of young women pierced them through and wounded them as though they were deserters’ children; they perished at the hands of my Lord’s army[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'wounded them like children of deserters.' The Greek phrase with 'runaway/deserter' is difficult and may evoke weakness, instability, or disgrace.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'they perished from the battle line of my Lord' / 'out of the battle array of my Lord.' The prepositional phrase is somewhat difficult in Greek.
+    text: Or 'they perished before my Lord’s battle line.' Literally, 'they perished from the battle array of my Lord.'
     reason: alternative_reading
 lexical_decisions:
 - source_word: υἱοὶ κορασίων
@@ -123,14 +120,20 @@ revisions:
   from: The sons of young women pierced them through, and wounded them like runaway children; they perished before the battle line of my Lord.
   to: The sons of young women pierced them through, and wounded them like runaway children; they perished before the battle line of my Lord.
   rationale: Replaced 'young women' with 'maidens' for a more formal/literal rendering of κορασίων, and 'runaway children' with 'the children of deserters' to reflect αὐτομολούντων more accurately. Kept the rest substantially unchanged.
-
 - timestamp: '2026-05-18T02:59:20Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The sons of maidens pierced them through[a], and wounded them like the children of deserters[b]; they perished before the battle line of my Lord.'
-  to: 'The sons of maidens pierced them through[a], and wounded them like the children of deserters[b]; they perished before the battle line of my Lord.'
+  from: The sons of maidens pierced them through[a], and wounded them like the children of deserters[b]; they perished before the battle line of my Lord.
+  to: The sons of maidens pierced them through[a], and wounded them like the children of deserters[b]; they perished before the battle line of my Lord.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''The sons of young women''].'
+- timestamp: '2026-11-09T19:02:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The sons of maidens pierced them through[a], and wounded them like the children of deserters[b]; they perished before the battle line of my Lord.
+  to: The sons of young women pierced them through and wounded them as though they were deserters’ children; they perished at the hands of my Lord’s army[a].
+  rationale: The first draft and lexical discussion support 'young women'; I preserve the later gain that the deserters are parents rather than simply runaway children. I read ἐκ as expressing the cause of defeat, while retaining the earlier spatial reading in a note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -150,3 +153,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/016/012.job-50826.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:02:03Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Sons of young women pierced and wounded the enemy as though they were deserters’ children, and the Lord’s army brought about their destruction.
+  meaning_decisions:
+  - source_phrase: υἱοὶ κορασίων
+    prior_rendering: The sons of maidens
+    new_rendering: The sons of young women
+    rationale: '''Young women'' preserves the mothers’ youth without suggesting the contradictory modern sense of virgins bearing sons.'
+  - source_phrase: ὡς παῖδας αὐτομολούντων ἐτίτρωσκον
+    prior_rendering: wounded them like the children of deserters
+    new_rendering: wounded them as though they were deserters’ children
+    rationale: The comparison most naturally describes the victims, not the manner in which deserters’ children would attack; the new wording clarifies that relation while retaining the difficult image.
+  - source_phrase: ἀπώλοντο ἐκ παρατάξεως κυρίου μου
+    prior_rendering: they perished before the battle line of my Lord
+    new_rendering: they perished at the hands of my Lord’s army
+    rationale: Reading ἐκ causally makes the Lord’s military array the source of the enemy’s destruction; the note preserves both the formation image and the earlier spatial interpretation.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and lexical discussion support 'young women'; I preserve the later gain that the deserters are parents rather than simply runaway children. I read ἐκ as expressing the cause of defeat, while retaining the earlier spatial reading in a note.

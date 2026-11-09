@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: οἱ δὲ ἀκούσαντες ἐδόξαζον τὸν ⸀θεόν, ⸂εἶπόν τε⸃ αὐτῷ· Θεωρεῖς, ἀδελφέ, πόσαι μυριάδες εἰσὶν ⸂ἐν τοῖς Ἰουδαίοις⸃ τῶν πεπιστευκότων, καὶ πάντες ζηλωταὶ τοῦ νόμου ὑπάρχουσιν·
 translation:
-  text: When they heard this[a], they glorified God, and they said to him, “You see, brother, how many myriads there are among the Jews who have believed[b], and they are all zealous for the law.”
-  philosophy: optimal-equivalence
+  text: When they heard this, they glorified God. Then they said to him, “You see, brother, how many tens of thousands[a] of Jews have believed, and they are all zealous for the law.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “how many tens of thousands.” The Greek μυριάδες can denote units of ten thousand or, more generally, a very large number.
-    reason: lexical_alternative
-  - marker: b
-    text: Or “among the Judeans,” if taken geographically rather than ethnically/religiously.
-    reason: lexical_alternative
+    text: Or, “thousands”; the Greek expression can indicate a very large number without specifying a precise count.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἀκούσαντες
   chosen: when they heard this
@@ -126,14 +123,20 @@ revisions:
   from: When they heard this, they glorified God, and they said to him, “You see, brother, how many thousands there are among the Jews who have believed, and they are all zealous for the law.”
   to: When they heard this, they glorified God, and they said to him, “You see, brother, how many thousands there are among the Jews who have believed, and they are all zealous for the law.”
   rationale: Replaced 'thousands' with 'myriads' to more closely reflect μυριάδες and preserve the emphatic large-number expression in the Greek. No other changes needed.
-
 - timestamp: '2026-05-18T03:00:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When they heard this[a], they glorified God, and they said to him, “You see, brother, how many myriads there are among the Jews who have believed[b], and they are all zealous for the law.”'
-  to: 'When they heard this[a], they glorified God, and they said to him, “You see, brother, how many myriads there are among the Jews who have believed[b], and they are all zealous for the law.”'
+  from: When they heard this[a], they glorified God, and they said to him, “You see, brother, how many myriads there are among the Jews who have believed[b], and they are all zealous for the law.”
+  to: When they heard this[a], they glorified God, and they said to him, “You see, brother, how many myriads there are among the Jews who have believed[b], and they are all zealous for the law.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''how many thousands''].'
+- timestamp: '2026-11-09T17:09:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When they heard this[a], they glorified God, and they said to him, “You see, brother, how many myriads there are among the Jews who have believed[b], and they are all zealous for the law.”
+  to: When they heard this, they glorified God. Then they said to him, “You see, brother, how many tens of thousands[a] of Jews have believed, and they are all zealous for the law.
+  rationale: The review rationale sought to preserve the large-number force of μυριάδες, while the first draft preferred the natural English “thousands.” The rendering preserves that numerical weight without using the opaque “myriads,” and retains “glorified” and “zealous.”
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -153,3 +156,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/021/020.job-46994.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:09:30Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The leaders glorified God for Paul’s report and pointed out the great number of Jewish believers who remained zealous for the law.
+  meaning_decisions:
+  - source_phrase: πόσαι μυριάδες εἰσὶν ἐν τοῖς Ἰουδαίοις τῶν πεπιστευκότων
+    prior_rendering: how many myriads there are among the Jews who have believed
+    new_rendering: how many tens of thousands of Jews have believed
+    rationale: “Tens of thousands” conveys the scale of the Greek expression in recognizable English, while the footnote preserves its possible less-exact use.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The review rationale sought to preserve the large-number force of μυριάδες, while the first draft preferred the natural English “thousands.” The rendering preserves that numerical weight without using the opaque “myriads,” and retains “glorified” and “zealous.”

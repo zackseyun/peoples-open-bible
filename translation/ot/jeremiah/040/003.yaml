@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יָּבֵ֥א וַ/יַּ֛עַשׂ יְהוָ֖ה כַּ/אֲשֶׁ֣ר דִּבֵּ֑ר כִּֽי חֲטָאתֶ֤ם לַֽ/יהוָה֙ וְ/לֹֽא שְׁמַעְתֶּ֣ם בְּ/קוֹל֔/וֹ וְ/הָיָ֥ה לָ/כֶ֖ם דבר הַ/זֶּֽה־־׃
 translation:
-  text: And Yahweh has brought it about and has done just as he said[a], because you sinned against Yahweh and did not listen to his voice[b]; therefore this thing has happened to you.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'did not obey his voice.' The Hebrew idiom 'listen to his voice' often carries the sense of obedience.
-    reason: lexical_alternative
-  - marker: b
-    text: Or, 'this disaster has come upon you.' Hebrew 'this thing' can refer more specifically to the calamity just described.
-    reason: lexical_alternative
+  text: Yahweh has brought it about and done just as he said. You, the people of Judah, sinned against Yahweh and did not obey him; that is why this disaster has come upon you.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיָּבֵא
   chosen: has brought it about
@@ -114,14 +107,20 @@ revisions:
   from: And the LORD has brought it about and has done just as he said, because you sinned against the LORD and did not listen to his voice; so this thing has happened to you.
   to: And the LORD has brought it about and has done just as he said, because you sinned against the LORD and did not listen to his voice; so this thing has happened to you.
   rationale: Replaced 'so' with 'therefore' for a more formal register while preserving the causal sense. No other changes needed.
-
 - timestamp: '2026-05-18T02:57:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Yahweh has brought it about and has done just as he said[a], because you sinned against Yahweh and did not listen to his voice[b]; therefore this thing has happened to you.'
-  to: 'And Yahweh has brought it about and has done just as he said[a], because you sinned against Yahweh and did not listen to his voice[b]; therefore this thing has happened to you.'
+  from: And Yahweh has brought it about and has done just as he said[a], because you sinned against Yahweh and did not listen to his voice[b]; therefore this thing has happened to you.
+  to: And Yahweh has brought it about and has done just as he said[a], because you sinned against Yahweh and did not listen to his voice[b]; therefore this thing has happened to you.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''so this thing has happened to you''].'
+- timestamp: '2026-11-09T17:59:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Yahweh has brought it about and has done just as he said[a], because you sinned against Yahweh and did not listen to his voice[b]; therefore this thing has happened to you.
+  to: Yahweh has brought it about and done just as he said. You, the people of Judah, sinned against Yahweh and did not obey him; that is why this disaster has come upon you.
+  rationale: The history’s changes between 'so' and 'therefore' concern register rather than meaning. The documented alternatives already recognize obedience and disaster as the contextual senses; I bring those senses into the text and make the plural address clear.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -143,3 +142,29 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/040/003.job-68005.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:59:20Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The captain explains that Yahweh fulfilled his announced judgment because the people of Judah sinned against him and refused to obey him.
+  meaning_decisions:
+  - source_phrase: חֲטָאתֶם לַיהוָה
+    prior_rendering: you sinned against Yahweh
+    new_rendering: You, the people of Judah, sinned against Yahweh
+    rationale: The Hebrew switches from addressing Jeremiah in the singular to addressing the community in the plural; making that shift explicit prevents the English from sounding like an accusation directed only at Jeremiah.
+  - source_phrase: וְלֹא שְׁמַעְתֶּם בְּקוֹלוֹ
+    prior_rendering: and did not listen to his voice
+    new_rendering: and did not obey him
+    rationale: In this account of sin and judgment, the idiom means refusal to heed and obey Yahweh, not merely failure to hear him.
+  - source_phrase: וְהָיָה לָכֶם דָּבָר הַזֶּה
+    prior_rendering: therefore this thing has happened to you
+    new_rendering: that is why this disaster has come upon you
+    rationale: The demonstrative refers to the disaster announced in the preceding verse, and the clause states its cause and consequence rather than an unspecified event.
+  footnote_kinds: {}
+  history_weighed: The history’s changes between 'so' and 'therefore' concern register rather than meaning. The documented alternatives already recognize obedience and disaster as the contextual senses; I bring those senses into the text and make the plural address clear.

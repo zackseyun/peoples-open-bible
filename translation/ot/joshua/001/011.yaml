@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: עִבְר֣וּ בְּ/קֶ֣רֶב הַֽ/מַּחֲנֶ֗ה וְ/צַוּ֤וּ אֶת הָ/עָם֙ לֵ/אמֹ֔ר הָכִ֥ינוּ לָ/כֶ֖ם צֵידָ֑ה כִּ֞י בְּ/ע֣וֹד שְׁלֹ֣שֶׁת יָמִ֗ים אַתֶּם֙ עֹֽבְרִים֙ אֶת הַ/יַּרְדֵּ֣ן הַ/זֶּ֔ה לָ/בוֹא֙ לָ/רֶ֣שֶׁת אֶת הָ/אָ֔רֶץ אֲשֶׁר֙ יְהוָ֣ה אֱלֹֽהֵי/כֶ֔ם נֹתֵ֥ן לָ/כֶ֖ם לְ/רִשְׁתָּֽ/הּ׀־׀־־׃ס
 translation:
-  text: Go through the midst of the camp and command the people[a], saying, ‘Prepare provisions for yourselves, because within three days you are crossing this Jordan to go in to take possession of the land that Yahweh your God is giving you to possess it.’
-  philosophy: optimal-equivalence
+  text: '“Go through the camp and command the people: ‘Prepare provisions for yourselves, because in three days[a] you will cross this Jordan River to enter and take possession of the land that Yahweh your God is giving you as your possession.’”'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “in three more days” / “after three days.” The Hebrew expression indicates a short remaining period before the crossing; “within three days” best captures the sense here.
-    reason: lexical_alternative
+    text: Or, “within three days.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: עִבְרוּ
   chosen: Go through
@@ -132,14 +132,20 @@ revisions:
   from: Go through the midst of the camp and command the people, saying, ‘Prepare provisions for yourselves, because within three days you are crossing this Jordan to go in to take possession of the land that the LORD your God is giving you to possess it.’
   to: Pass through the midst of the camp and command the people, saying, ‘Prepare provisions for yourselves, because within three days you are crossing this Jordan to go in to possess the land that the LORD your God is giving you to possess it.’
   rationale: Changed ‘Go through’ to ‘Pass through’ for a more formal register and changed ‘take possession of’ to ‘possess’ for closer lexical correspondence and consistency with the final clause.
-
 - timestamp: '2026-05-15T21:24:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Pass through the midst of the camp and command the people[a], saying, ‘Prepare provisions for yourselves, because within three days you are crossing this Jordan to go in to possess the land that Yahweh your God is giving you to possess it.’'
-  to: 'Go through the midst of the camp and command the people[a], saying, ‘Prepare provisions for yourselves, because within three days you are crossing this Jordan to go in to take possession of the land that Yahweh your God is giving you to possess it.’'
-  rationale: 'Drafter chose ''Go through'' for עִבְרוּ as natural modern English over ''Pass through'' (rejected alternative). Drafter chose ''to take possession of'' for the conquest infinitive לָרֶשֶׁת to convey the inheritance/conquest force of ירשׁ over bare ''possess''. Azure substituted both rejected alternatives.'
+  from: Pass through the midst of the camp and command the people[a], saying, ‘Prepare provisions for yourselves, because within three days you are crossing this Jordan to go in to possess the land that Yahweh your God is giving you to possess it.’
+  to: Go through the midst of the camp and command the people[a], saying, ‘Prepare provisions for yourselves, because within three days you are crossing this Jordan to go in to take possession of the land that Yahweh your God is giving you to possess it.’
+  rationale: Drafter chose 'Go through' for עִבְרוּ as natural modern English over 'Pass through' (rejected alternative). Drafter chose 'to take possession of' for the conquest infinitive לָרֶשֶׁת to convey the inheritance/conquest force of ירשׁ over bare 'possess'. Azure substituted both rejected alternatives.
+- timestamp: '2026-11-09T18:07:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Go through the midst of the camp and command the people[a], saying, ‘Prepare provisions for yourselves, because within three days you are crossing this Jordan to go in to take possession of the land that Yahweh your God is giving you to possess it.’
+  to: '“Go through the camp and command the people: ‘Prepare provisions for yourselves, because in three days[a] you will cross this Jordan River to enter and take possession of the land that Yahweh your God is giving you as your possession.’”'
+  rationale: I retained “Go through” and “take possession of,” the gains defended in the recorded deliberation. The source’s remaining-time expression supports “in three days” more directly than “within three days,” so I made that change while preserving the latter as an alternative.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -159,3 +165,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/weighted_vocab/ot/joshua/001/011.job-15202.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:07:39Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Joshua orders the officials to tell the people to prepare provisions for their imminent crossing of the Jordan and possession of the land Yahweh is giving them.
+  meaning_decisions:
+  - source_phrase: בְּקֶרֶב הַמַּחֲנֶה
+    prior_rendering: through the midst of the camp
+    new_rendering: through the camp
+    rationale: The phrase directs the officials to move among the people in the camp; it does not specially emphasize the camp’s center.
+  - source_phrase: כִּי בְּעוֹד שְׁלֹשֶׁת יָמִים אַתֶּם עֹבְרִים
+    prior_rendering: because within three days you are crossing
+    new_rendering: because in three days[a] you will cross
+    rationale: The Hebrew announces a short remaining interval before a planned crossing, rather than clearly setting a maximum deadline; the alternative is retained in a correctly placed note.
+  - source_phrase: אֶת הַיַּרְדֵּן הַזֶּה
+    prior_rendering: this Jordan
+    new_rendering: this Jordan River
+    rationale: Adding “River” makes the geographical reference natural in English while retaining the demonstrative’s immediacy.
+  - source_phrase: לָבוֹא לָרֶשֶׁת ... נֹתֵן לָכֶם לְרִשְׁתָּהּ
+    prior_rendering: to go in to take possession of ... is giving you to possess it
+    new_rendering: to enter and take possession of ... is giving you as your possession
+    rationale: The revised clauses express entry followed by possession and the purpose of Yahweh’s gift without the awkward repeated infinitives.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retained “Go through” and “take possession of,” the gains defended in the recorded deliberation. The source’s remaining-time expression supports “in three days” more directly than “within three days,” so I made that change while preserving the latter as an alternative.

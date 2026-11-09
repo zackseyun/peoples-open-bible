@@ -18,14 +18,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: even though most were still in the country—some still assembled in their houses[b][a], and others also in the place—since the situation had become impossible for all the generals over Egypt.
-  philosophy: optimal-equivalence
+  text: Yet most of the Jews were still in the countryside, some still gathered in their homes and others at the gathering place[a], since the task had become impossible for all the commanders throughout Egypt.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'most were still throughout the land.'
-    reason: lexical_alternative
-  - marker: b
-    text: The phrase 'others also in the place' is elliptical in Greek and may refer to others assembled in a particular locality or public place.
+    text: Literally, “at the place”; the precise location is uncertain.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: καίπερ
@@ -99,14 +96,20 @@ revisions:
   from: even though most were still in the country—some still gathered in their houses, and others also in the place—since all the generals over Egypt found the situation impossible.
   to: even though most were still in the country—some still gathered in their houses, and others also in the place—since all the generals over Egypt found the situation impossible.
   rationale: Changed 'gathered' to 'assembled' for a slightly more formal rendering of συνεστηκότων, and revised 'found the situation impossible' to 'the situation had become impossible for all the generals over Egypt' to reflect καθεστῶτος more directly and naturally.
-
 - timestamp: '2026-05-18T02:59:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'even though most were still in the country—some still assembled in their houses[b][a], and others also in the place—since the situation had become impossible for all the generals over Egypt.'
-  to: 'even though most were still in the country—some still assembled in their houses[b][a], and others also in the place—since the situation had become impossible for all the generals over Egypt.'
+  from: even though most were still in the country—some still assembled in their houses[b][a], and others also in the place—since the situation had become impossible for all the generals over Egypt.
+  to: even though most were still in the country—some still assembled in their houses[b][a], and others also in the place—since the situation had become impossible for all the generals over Egypt.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''some still gathered in their houses''].'
+- timestamp: '2026-11-09T18:56:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: even though most were still in the country—some still assembled in their houses[b][a], and others also in the place—since the situation had become impossible for all the generals over Egypt.
+  to: Yet most of the Jews were still in the countryside, some still gathered in their homes and others at the gathering place[a], since the task had become impossible for all the commanders throughout Egypt.
+  rationale: The earlier discussion supports people remaining assembled and an operation that had become impossible for the responsible officials. I retain those gains but clarify the rural setting and elliptical location, keeping its uncertainty in a short note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -126,3 +129,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/004/018.job-49588.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:48Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Most Jews are still in the countryside, at home or gathered elsewhere, because the task has overwhelmed the commanders throughout Egypt.
+  meaning_decisions:
+  - source_phrase: καίπερ ὄντων ἔτι κατὰ τὴν χώραν τῶν πλειόνων
+    prior_rendering: even though most were still in the country
+    new_rendering: Yet most of the Jews were still in the countryside
+    rationale: The verse contrasts the overwhelming registration with the fact that most Jews still remained outside the city; “countryside” avoids suggesting another nation.
+  - source_phrase: τῶν δὲ καὶ κατὰ τὸν τόπον
+    prior_rendering: and others also in the place
+    new_rendering: and others at the gathering place
+    rationale: The shared participle concerns people gathered together; the rendering supplies that connection without identifying the uncertain site.
+  - source_phrase: ὡς ἀδυνάτου καθεστῶτος πᾶσιν τοῖς ἐπ᾽ Αἴγυπτον στρατηγοῖς
+    prior_rendering: since the situation had become impossible for all the generals over Egypt
+    new_rendering: since the task had become impossible for all the commanders throughout Egypt
+    rationale: The impossibility concerns the operation being carried out, and the officials exercise command across Egypt rather than collectively holding one command over the entire country.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier discussion supports people remaining assembled and an operation that had become impossible for the responsible officials. I retain those gains but clarify the rural setting and elliptical location, keeping its uncertainty in a short note.

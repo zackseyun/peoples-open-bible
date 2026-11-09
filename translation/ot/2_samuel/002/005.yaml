@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּשְׁלַ֤ח דָּוִד֙ מַלְאָכִ֔ים אֶל אַנְשֵׁ֖י יָבֵ֣ישׁ גִּלְעָ֑ד וַ/יֹּ֣אמֶר אֲלֵי/הֶ֗ם בְּרֻכִ֤ים אַתֶּם֙ לַֽ/יהוָ֔ה אֲשֶׁ֨ר עֲשִׂיתֶ֜ם הַ/חֶ֣סֶד הַ/זֶּ֗ה עִם אֲדֹֽנֵי/כֶם֙ עִם שָׁא֔וּל וַֽ/תִּקְבְּר֖וּ אֹתֽ/וֹ־־־׃
 translation:
-  text: Then David sent messengers to the men of Jabesh-gilead and said to them[a], “Blessed are you by Yahweh, because you have shown this kindness to your lord, to Saul[b], and have buried him.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “Blessed are you by the LORD.”
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew hesed; often denotes kindness, loyalty, or faithful love.
-    reason: lexical_alternative
+  text: 'Then David sent messengers to the men of Jabesh-gilead with this message: “May Yahweh bless you for the loyal kindness you have shown your lord Saul by burying him.”'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: מַלְאָכִים
   chosen: messengers
@@ -97,14 +90,20 @@ revisions:
   from: Then David sent messengers to the men of Jabesh-gilead and said to them, “May you be blessed by the LORD, because you have shown this kindness to your lord, to Saul, and have buried him.”
   to: Then David sent messengers to the men of Jabesh-gilead and said to them, “May you be blessed by the LORD, because you have shown this kindness to your lord, to Saul, and have buried him.”
   rationale: Revised 'May you be blessed by the LORD' to 'Blessed are you by the LORD' to more directly reflect the Hebrew passive participle בְּרֻכִים rather than a wish. No other changes needed.
-
 - timestamp: '2026-05-17T06:06:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then David sent messengers to the men of Jabesh-gilead and said to them[a], “Blessed are you by Yahweh, because you have shown this kindness to your lord, to Saul[b], and have buried him.”'
-  to: 'Then David sent messengers to the men of Jabesh-gilead and said to them[a], “Blessed are you by Yahweh, because you have shown this kindness to your lord, to Saul[b], and have buried him.”'
+  from: Then David sent messengers to the men of Jabesh-gilead and said to them[a], “Blessed are you by Yahweh, because you have shown this kindness to your lord, to Saul[b], and have buried him.”
+  to: Then David sent messengers to the men of Jabesh-gilead and said to them[a], “Blessed are you by Yahweh, because you have shown this kindness to your lord, to Saul[b], and have buried him.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''May you be blessed by the LORD''].'
+- timestamp: '2026-11-09T17:27:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then David sent messengers to the men of Jabesh-gilead and said to them[a], “Blessed are you by Yahweh, because you have shown this kindness to your lord, to Saul[b], and have buried him.”
+  to: 'Then David sent messengers to the men of Jabesh-gilead with this message: “May Yahweh bless you for the loyal kindness you have shown your lord Saul by burying him.”'
+  rationale: The history weighs the participial form against the formula’s benedictory force; the first draft and lexical rationale support the blessing used here. I also retain the documented recognition that hesed describes a concrete act of loyalty to Saul.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -127,3 +126,29 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_samuel/002/005.job-60938.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:27:38Z'
+  change_level: retranslated
+  confidence: high
+  meaning: David sends a blessing to the men of Jabesh-gilead for the loyal kindness they showed Saul by burying him.
+  meaning_decisions:
+  - source_phrase: וַיִּשְׁלַח דָּוִד מַלְאָכִים ... וַיֹּאמֶר אֲלֵיהֶם
+    prior_rendering: David sent messengers ... and said to them
+    new_rendering: David sent messengers ... with this message
+    rationale: David addresses the men through his messengers; the new construction makes that communication clear without implying his presence in Jabesh-gilead.
+  - source_phrase: בְּרֻכִים אַתֶּם לַיהוָה
+    prior_rendering: Blessed are you by Yahweh
+    new_rendering: May Yahweh bless you
+    rationale: This is a spoken blessing formula, and the English benediction conveys its force more naturally than the passive participial construction.
+  - source_phrase: עֲשִׂיתֶם הַחֶסֶד הַזֶּה ... וַתִּקְבְּרוּ אֹתוֹ
+    prior_rendering: you have shown this kindness ... and have buried him
+    new_rendering: the loyal kindness you have shown ... by burying him
+    rationale: The burial is the act of kindness being commended, not an unrelated additional deed; “loyal kindness” also preserves the allegiance expressed by hesed in this setting.
+  footnote_kinds: {}
+  history_weighed: The history weighs the participial form against the formula’s benedictory force; the first draft and lexical rationale support the blessing used here. I also retain the documented recognition that hesed describes a concrete act of loyalty to Saul.

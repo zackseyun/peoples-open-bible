@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֣אמֶר אֶל הַ/מֶּ֗לֶךְ אַל יַחֲשָׁב לִ֣/י אֲדֹנִ/י֮ עָוֺן֒ וְ/אַל תִּזְכֹּ֗ר אֵ֚ת אֲשֶׁ֣ר הֶעֱוָ֣ה עַבְדְּ/ךָ֔ בַּ/יּ֕וֹם אֲשֶׁר יָׄצָ֥ׄאׄ אֲדֹנִֽ/י הַ/מֶּ֖לֶךְ מִ/ירֽוּשָׁלִָ֑ם לָ/שׂ֥וּם הַ/מֶּ֖לֶךְ אֶל לִבּֽ/וֹ־־־־־־־׃
 translation:
-  text: And he said to the king[a], “Do not let my lord count me guilty, and do not remember how your servant did wrong on the day my lord the king went out from Jerusalem[b], so that the king should take it to heart.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “do not count iniquity to me”; the Hebrew idiom is literally forensic in form.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew “set it on his heart,” an idiom meaning to take something seriously or hold it against someone.
-    reason: lexical_alternative
+  text: He said to the king, “My lord, do not hold me guilty. Do not remember the wrong your servant did on the day my lord the king left Jerusalem or hold it against me.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: יַחֲשָׁב לִי עָוֺן
   chosen: hold me guilty
@@ -100,14 +93,20 @@ revisions:
   from: And he said to the king, “Do not let my lord hold me guilty, and do not remember how your servant did wrong on the day my lord the king went out from Jerusalem, so that the king should take it to heart.”
   to: And he said to the king, “Do not let my lord hold me guilty, and do not remember how your servant did wrong on the day my lord the king went out from Jerusalem, so that the king should take it to heart.”
   rationale: Changed 'hold me guilty' to 'count me guilty' for a more direct rendering of the Hebrew idiom 'reckon imiquity/guilt to me,' while preserving the rest of the verse as accurate and natural.
-
 - timestamp: '2026-05-17T05:36:06Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he said to the king[a], “Do not let my lord count me guilty, and do not remember how your servant did wrong on the day my lord the king went out from Jerusalem[b], so that the king should take it to heart.”'
-  to: 'And he said to the king[a], “Do not let my lord count me guilty, and do not remember how your servant did wrong on the day my lord the king went out from Jerusalem[b], so that the king should take it to heart.”'
+  from: And he said to the king[a], “Do not let my lord count me guilty, and do not remember how your servant did wrong on the day my lord the king went out from Jerusalem[b], so that the king should take it to heart.”
+  to: And he said to the king[a], “Do not let my lord count me guilty, and do not remember how your servant did wrong on the day my lord the king went out from Jerusalem[b], so that the king should take it to heart.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''hold me guilty''].'
+- timestamp: '2026-11-09T17:29:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he said to the king[a], “Do not let my lord count me guilty, and do not remember how your servant did wrong on the day my lord the king went out from Jerusalem[b], so that the king should take it to heart.”
+  to: He said to the king, “My lord, do not hold me guilty. Do not remember the wrong your servant did on the day my lord the king left Jerusalem or hold it against me.”
+  rationale: The first draft’s 'hold me guilty' and its explanation of the forensic idiom are persuasive. The earlier final clause obscured the scope of Shimei’s negative request, so the source and context require a substantive correction.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -127,3 +126,29 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/019/020.job-45938.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:29:02Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Shimei asks David not to reckon his wrongdoing against him or act on the offense he committed when David left Jerusalem.
+  meaning_decisions:
+  - source_phrase: אַל יַחֲשָׁב לִי אֲדֹנִי עָוֺן
+    prior_rendering: Do not let my lord count me guilty
+    new_rendering: My lord, do not hold me guilty
+    rationale: Direct address preserves Shimei’s deference while expressing his plea not to be held accountable for the offense.
+  - source_phrase: וְאַל תִּזְכֹּר ... לָשׂוּם הַמֶּלֶךְ אֶל לִבּוֹ
+    prior_rendering: do not remember ... so that the king should take it to heart
+    new_rendering: Do not remember ... or hold it against me
+    rationale: 'The final phrase remains under the negative plea: Shimei asks David not to keep the offense in mind against him, not positively to take it to heart.'
+  - source_phrase: יָצָא ... מִירוּשָׁלָם
+    prior_rendering: went out from Jerusalem
+    new_rendering: left Jerusalem
+    rationale: This naturally conveys the departure without preserving an unnecessary Hebrew movement construction.
+  footnote_kinds: {}
+  history_weighed: The first draft’s 'hold me guilty' and its explanation of the forensic idiom are persuasive. The earlier final clause obscured the scope of Shimei’s negative request, so the source and context require a substantive correction.

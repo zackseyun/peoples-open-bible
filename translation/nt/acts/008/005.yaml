@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: Φίλιππος δὲ κατελθὼν εἰς ⸀τὴν πόλιν τῆς Σαμαρείας ἐκήρυσσεν αὐτοῖς τὸν χριστόν.
 translation:
-  text: Philip went down to the city of Samaria and proclaimed the Messiah to them[a][b].
-  philosophy: optimal-equivalence
+  text: Philip went down to the city of Samaria[a] and proclaimed the Messiah to them.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'a city of Samaria.' The Greek can be understood as referring either to a particular city in Samaria or more generally to one of the cities of the Samaritan region.
+    text: Or, “a city in Samaria”; the reference may be to a city in the region rather than the city named Samaria.
     reason: alternative_reading
-  - marker: b
-    text: Or 'to the city of Samaria'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: δὲ
   chosen: Now
@@ -20,7 +17,7 @@ lexical_decisions:
   - And
   - But
   lexicon: BDAG
-  rationale: "Rendered as a mild connective advancing the narrative. 'Now' gives natural English discourse flow without overstating contrast. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'Rendered as a mild connective advancing the narrative. ''Now'' gives natural English discourse flow without overstating contrast. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: κατελθὼν
   chosen: went down
   alternatives:
@@ -91,7 +88,7 @@ revisions:
   rationale: Changed 'a city of Samaria' to 'the city of Samaria' to reflect the Greek article, and changed 'the Messiah' to 'the Christ' for closer lexical correspondence to τὸν χριστόν in this context.
 - timestamp: '2026-04-23T12:00:00Z'
   adjudicator: claude-sonnet-4-6-regression-fix
-  reviewer_model:
+  reviewer_model: null
   category: regression_fix
   from: Now Philip went down to the city of Samaria and proclaimed the Christ to them.
   to: Now Philip went down to the city of Samaria and proclaimed the Messiah to them.
@@ -103,12 +100,18 @@ revisions:
   from: Now Philip went down to the city of Samaria and proclaimed the Messiah to them[a][b].
   to: Philip went down to the city of Samaria and proclaimed the Messiah to them[a][b].
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:06:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Philip went down to the city of Samaria and proclaimed the Messiah to them[a][b].
+  to: Philip went down to the city of Samaria[a] and proclaimed the Messiah to them.
+  rationale: The history alternates between 'a city' and 'the city,' with the later review favoring the definite wording found in the supplied Greek text. I retain that wording with the serious alternative in a single note, and keep 'Messiah' under the standing title ruling.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:40:02Z'
   unchanged: false
   changes_summary: 'Changed ''a city of Samaria'' to ''the city of Samaria'' to reflect the Greek article, and changed ''the Messiah'' to ''the Christ'' for closer lexical correspondence to τὸν χριστόν in this context. [Regression fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)]'
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -132,3 +135,18 @@ cross_check:
     major-issues: 1
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/acts/008/005.job-38684.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:06:47Z'
+  change_level: kept
+  confidence: medium
+  meaning: Philip went down to a city in Samaria and publicly proclaimed the Messiah to its people.
+  meaning_decisions: []
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history alternates between 'a city' and 'the city,' with the later review favoring the definite wording found in the supplied Greek text. I retain that wording with the serious alternative in a single note, and keep 'Messiah' under the standing title ruling.

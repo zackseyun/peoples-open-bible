@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/כָל בְּשָׂרָ/ם֙ וְ/גַבֵּ/הֶ֔ם וִֽ/ידֵי/הֶ֖ם וְ/כַנְפֵי/הֶ֑ם וְ/הָ/אֽוֹפַנִּ֗ים מְלֵאִ֤ים עֵינַ֨יִם֙ סָבִ֔יב לְ/אַרְבַּעְתָּ֖/ם אוֹפַנֵּי/הֶֽם־׃
 translation:
-  text: And all their bodies[a], their backs, their hands, their wings[b], and the wheels were full of eyes all around—the wheels belonging to the four of them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'their flesh.'
-    reason: lexical_alternative
-  - marker: b
-    text: The final clause may be rendered more compactly, 'their four wheels' or 'the wheels of the four of them.'
-    reason: lexical_alternative
+  text: Their whole bodies—their backs, hands, and wings—and the wheels belonging to all four of them were full of eyes all around.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: בְּשָׂרָם
   lemma: בָּשָׂר
@@ -90,14 +83,20 @@ revisions:
   from: And all their bodies, their backs, their hands, their wings, and the wheels were full of eyes all around—the wheels belonging to the four of them.
   to: And all their bodies, their backs, their hands, their wings, and the wheels were full of eyes all around—the wheels of the four of them.
   rationale: Changed 'belonging to the four of them' to the more natural and formal 'of the four of them' while preserving the Hebrew sense. Kept the rest unchanged as accurate and complete.
-
 - timestamp: '2026-05-16T02:38:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And all their bodies[a], their backs, their hands, their wings[b], and the wheels were full of eyes all around—the wheels of the four of them.'
-  to: 'And all their bodies[a], their backs, their hands, their wings[b], and the wheels were full of eyes all around—the wheels belonging to the four of them.'
-  rationale: 'Azure substituted ''of the four of them'' — drafter''s explicit rejected alternative for לְאַרְבַּעְתָּם. Drafter chose ''belonging to'' for lamed relational/associative expansion.'
+  from: And all their bodies[a], their backs, their hands, their wings[b], and the wheels were full of eyes all around—the wheels of the four of them.
+  to: And all their bodies[a], their backs, their hands, their wings[b], and the wheels were full of eyes all around—the wheels belonging to the four of them.
+  rationale: Azure substituted 'of the four of them' — drafter's explicit rejected alternative for לְאַרְבַּעְתָּם. Drafter chose 'belonging to' for lamed relational/associative expansion.
+- timestamp: '2026-11-09T17:38:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And all their bodies[a], their backs, their hands, their wings[b], and the wheels were full of eyes all around—the wheels belonging to the four of them.
+  to: Their whole bodies—their backs, hands, and wings—and the wheels belonging to all four of them were full of eyes all around.
+  rationale: The review and revert differed over how to express the wheels’ association with the four cherubim. I retain that explicit association but place it beside 'wheels' so the sentence reads as one coherent description.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -117,3 +116,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/010/012.job-63553.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:38:00Z'
+  change_level: refined
+  confidence: high
+  meaning: The cherubim’s entire bodies and the wheels associated with all four of them are full of eyes on every side.
+  meaning_decisions:
+  - source_phrase: וְכָל בְּשָׂרָם וְגַבֵּהֶם וִידֵיהֶם וְכַנְפֵיהֶם
+    prior_rendering: And all their bodies, their backs, their hands, their wings
+    new_rendering: Their whole bodies—their backs, hands, and wings—
+    rationale: The anatomical list describes the comprehensive extent of the eyes; the English apposition makes that scope clear without changing the image.
+  - source_phrase: וְהָאוֹפַנִּים ... לְאַרְבַּעְתָּם אוֹפַנֵּיהֶם
+    prior_rendering: and the wheels were full of eyes all around—the wheels belonging to the four of them
+    new_rendering: and the wheels belonging to all four of them were full of eyes all around
+    rationale: The closing phrase clarifies which wheels are meant, so its relational meaning is placed directly beside 'wheels' rather than left as a detached repetition.
+  footnote_kinds: {}
+  history_weighed: The review and revert differed over how to express the wheels’ association with the four cherubim. I retain that explicit association but place it beside 'wheels' so the sentence reads as one coherent description.

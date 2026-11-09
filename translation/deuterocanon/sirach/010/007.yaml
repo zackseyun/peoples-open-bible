@@ -28,12 +28,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 10:7
 translation:
-  text: Pride is hateful to the Lord and to men[a], and from both comes oppressive wrongdoing.
-  philosophy: optimal-equivalence
+  text: Pride is hateful to the Lord and to human beings; oppression is an offense against them both[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek: ''Pride is hateful before the Lord and men, and from both it will commit unjust things.'' The Hebrew more naturally yields the sense that oppressive wrongdoing proceeds from pride''s offense before both God and humans.'
-    reason: alternative_reading
+    text: 'The Hebrew second line is compressed and difficult: literally, ''from both, transgression, oppression.'''
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: שְׂנוּאָה
   chosen: is hateful
@@ -135,14 +135,20 @@ revisions:
   from: Pride is hateful to the Lord and to men, and from both comes oppressive wrongdoing.
   to: Pride is hateful to the Lord and to men, and oppression is wrongdoing to both of them.
   rationale: 'Revised the second clause to reflect the Hebrew more closely: מַעַל עֹשֶׁק is not ''comes oppressive wrongdoing'' but identifies oppression as a wrongful act/offense, and וּמִשְּׁנֵיהֶם refers to ''both of them'' rather than source/origin.'
-
 - timestamp: '2026-05-16T13:07:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Pride is hateful to the Lord and to men[a], and oppression is wrongdoing to both of them.'
-  to: 'Pride is hateful to the Lord and to men[a], and from both comes oppressive wrongdoing.'
-  rationale: 'Restored drafter ''from both comes oppressive wrongdoing'' (preserving the chosen rendering of מַעַל עֹשֶׁק as oppressive transgression flowing from both sides) per chosen renderings.'
+  from: Pride is hateful to the Lord and to men[a], and oppression is wrongdoing to both of them.
+  to: Pride is hateful to the Lord and to men[a], and from both comes oppressive wrongdoing.
+  rationale: Restored drafter 'from both comes oppressive wrongdoing' (preserving the chosen rendering of מַעַל עֹשֶׁק as oppressive transgression flowing from both sides) per chosen renderings.
+- timestamp: '2026-11-09T19:04:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Pride is hateful to the Lord and to men[a], and from both comes oppressive wrongdoing.
+  to: Pride is hateful to the Lord and to human beings; oppression is an offense against them both[a].
+  rationale: The substantive automated revision correctly identified the problem with making wrongdoing proceed from God and people. Its later policy revert supplies no meaning-based reason to restore that reading, so I preserve the correction while acknowledging the difficult Hebrew.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -162,3 +168,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/010/007.job-51223.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:04:45Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Both God and human beings hate pride and regard oppression as an offense.
+  meaning_decisions:
+  - source_phrase: וַאֲנָשִׁים
+    prior_rendering: and to men
+    new_rendering: and to human beings
+    rationale: The contrast is between the Lord and humanity, not between the Lord and males specifically; this conveys the representative sense recognized in the earlier deliberation.
+  - source_phrase: וּמִשְּׁנֵיהֶם מַעַל עֹשֶׁק
+    prior_rendering: and from both comes oppressive wrongdoing
+    new_rendering: oppression is an offense against them both
+    rationale: The prior wording wrongly makes God and human beings the sources of oppressive wrongdoing. In context, both are parties against whom oppression offends.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The substantive automated revision correctly identified the problem with making wrongdoing proceed from God and people. Its later policy revert supplies no meaning-based reason to restore that reading, so I preserve the correction while acknowledging the difficult Hebrew.

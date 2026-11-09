@@ -4,18 +4,15 @@ source:
   edition: SBLGNT
   text: ἣν ἄραντες βοηθείαις ἐχρῶντο ὑποζωννύντες τὸ πλοῖον· φοβούμενοί τε μὴ εἰς τὴν Σύρτιν ἐκπέσωσιν, χαλάσαντες τὸ σκεῦος, οὕτως ἐφέροντο.
 translation:
-  text: After hoisting it up[a], they used supporting cables to undergird the ship; and fearing that they might run aground on the Syrtis[c][b], they lowered the sea anchor and so were driven along.
-  philosophy: optimal-equivalence
+  text: After hoisting the boat aboard, they reinforced the ship by passing cables under its hull. Afraid of being driven onto the Syrtis sandbanks[a], they lowered the sea anchor[b] and so were driven along.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'frapping cables'; the Greek literally speaks of using 'supports' to undergird the ship.
-    reason: lexical_alternative
-  - marker: b
-    text: The Syrtis was a notorious area of shoals or sandbanks off the North African coast.
+    text: The Syrtis lay off the North African coast.
     reason: cultural_note
-  - marker: c
-    text: Or 'they lowered the tackle' or 'they lowered the sea anchor'; the Greek says 'the gear/equipment,' and the exact nautical reference is uncertain.
-    reason: lexical_alternative
+  - marker: b
+    text: Or 'they lowered the gear,' possibly referring to a sail; the exact nautical equipment is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἣν
   chosen: it
@@ -109,14 +106,20 @@ revisions:
   from: After hoisting it up, they used supporting cables to undergird the ship; and fearing that they might run aground on the Syrtis, they lowered the gear and so were driven along.
   to: After hoisting it up, they used supporting cables to undergird the ship; and fearing that they might run aground on the Syrtis, they lowered the gear and so were driven along.
   rationale: Replaced "the gear" with "the sea anchor" to reflect the likely sense of τὸ σκεῦος here more precisely and naturally in context; otherwise retained the draft.
-
 - timestamp: '2026-05-18T03:00:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'After hoisting it up[a], they used supporting cables to undergird the ship; and fearing that they might run aground on the Syrtis[c][b], they lowered the sea anchor and so were driven along.'
-  to: 'After hoisting it up[a], they used supporting cables to undergird the ship; and fearing that they might run aground on the Syrtis[c][b], they lowered the sea anchor and so were driven along.'
+  from: After hoisting it up[a], they used supporting cables to undergird the ship; and fearing that they might run aground on the Syrtis[c][b], they lowered the sea anchor and so were driven along.
+  to: After hoisting it up[a], they used supporting cables to undergird the ship; and fearing that they might run aground on the Syrtis[c][b], they lowered the sea anchor and so were driven along.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they lowered the gear''].'
+- timestamp: '2026-11-09T17:08:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: After hoisting it up[a], they used supporting cables to undergird the ship; and fearing that they might run aground on the Syrtis[c][b], they lowered the sea anchor and so were driven along.
+  to: After hoisting the boat aboard, they reinforced the ship by passing cables under its hull. Afraid of being driven onto the Syrtis sandbanks[a], they lowered the sea anchor[b] and so were driven along.
+  rationale: The first draft and lexical record leave the equipment unidentified, while the current text chooses a sea anchor; I retain that likely identification but give the substantial alternative in a note. The automated reversal supplies no independent evidence about the nautical meaning.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -136,3 +139,31 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/027/017.job-46759.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:38Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The crew brought the small boat aboard, reinforced the ship, and lowered equipment to avoid being driven onto the Syrtis sandbanks.
+  meaning_decisions:
+  - source_phrase: ἣν ἄραντες
+    prior_rendering: After hoisting it up
+    new_rendering: After hoisting the boat aboard
+    rationale: Makes the pronoun’s referent and the destination of the hoisting explicit, as the nautical context requires.
+  - source_phrase: βοηθείαις ἐχρῶντο ὑποζωννύντες τὸ πλοῖον
+    prior_rendering: they used supporting cables to undergird the ship
+    new_rendering: they reinforced the ship by passing cables under its hull
+    rationale: States both the reinforcing purpose and the concrete action in accessible English.
+  - source_phrase: φοβούμενοί τε μὴ εἰς τὴν Σύρτιν ἐκπέσωσιν
+    prior_rendering: and fearing that they might run aground on the Syrtis
+    new_rendering: Afraid of being driven onto the Syrtis sandbanks
+    rationale: Identifies the geographical hazard and makes clear that the feared grounding would result from the storm driving them there.
+  footnote_kinds:
+    a: cultural_background
+    b: alternative_meaning
+  history_weighed: The first draft and lexical record leave the equipment unidentified, while the current text chooses a sea anchor; I retain that likely identification but give the substantial alternative in a note. The automated reversal supplies no independent evidence about the nautical meaning.

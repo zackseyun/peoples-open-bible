@@ -10,17 +10,52 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: 'And I rejoiced in them all, because wisdom leads them; but I did not know that she is their mother.'
+  text: And I rejoiced in them all, because wisdom led them to me[a], though I had not known that she was their mother.
+  philosophy: dynamic
+  footnotes:
+  - marker: a
+    text: Or “because wisdom governs them.”
+    reason: alternative_reading
 revisions:
 - timestamp: '2026-05-18T04:00:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I rejoiced in them all[a], because wisdom leads them; but I did not know that she is the source of these things.'
-  to: 'And I rejoiced in them all, because wisdom leads them; but I did not know that she is their mother.'
+  from: And I rejoiced in them all[a], because wisdom leads them; but I did not know that she is the source of these things.
+  to: And I rejoiced in them all, because wisdom leads them; but I did not know that she is their mother.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''mother'', ''their'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+- timestamp: '2026-11-09T19:11:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I rejoiced in them all, because wisdom leads them; but I did not know that she is their mother.
+  to: And I rejoiced in them all, because wisdom led them to me[a], though I had not known that she was their mother.
+  rationale: The recorded “mother”/“source” fluctuation is an automated revert, not a maintainer ruling, but “mother” best preserves the personification here. I clarify wisdom’s leadership in light of the good things that came with her in verse 11.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T04:00:21Z'
   unchanged: false
   changes_summary: 'doctrine_realignment: Wisdom of Solomon 7:12 wholesale revert (2 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''mother'', ''their'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, '
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:55Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The speaker rejoiced in the good things wisdom brought, having previously failed to recognize that she was their source.
+  meaning_decisions:
+  - source_phrase: ὅτι αὐτῶν ἡγεῖται σοφία
+    prior_rendering: because wisdom leads them
+    new_rendering: because wisdom led them to me
+    rationale: In the context of the good things arriving with wisdom, her leadership can mean that she brings them along; the serious alternative of governing them is retained in a note.
+  - source_phrase: ἠγνόουν δὲ αὐτὴν γένεσίν εἶναι τούτων
+    prior_rendering: but I did not know that she is their mother
+    new_rendering: though I had not known that she was their mother
+    rationale: The wording distinguishes the speaker’s earlier ignorance from his present recognition, while preserving motherhood as the image of wisdom generating these goods.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The recorded “mother”/“source” fluctuation is an automated revert, not a maintainer ruling, but “mother” best preserves the personification here. I clarify wisdom’s leadership in light of the good things that came with her in verse 11.

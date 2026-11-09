@@ -18,18 +18,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: After he had spoken against the tyrant’s persuasions in this way[c][b][a], the bodyguards came forward and harshly dragged Eleazar to the tortures.
-  philosophy: optimal-equivalence
+  text: After Eleazar had countered the tyrant’s appeals in this way, the bodyguards came forward and harshly dragged him to the instruments of torture[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'appeals' for 'persuasions'; the Greek term can denote exhortation or encouragement, but here it refers to the tyrant's attempts to induce compliance.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'spear-bearers,' a term used for armed royal attendants; 'bodyguards' gives the sense in context.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'harshly'/'cruelly' for 'bitterly'; the adverb emphasizes the severity of their treatment.
-    reason: lexical_alternative
+    text: Or, “to the place of torture.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: Τοῦτον τὸν τρόπον
   chosen: in this way
@@ -123,14 +117,20 @@ revisions:
   from: After he had spoken against the tyrant’s persuasions in this way, the bodyguards came forward and bitterly dragged Eleazar to the tortures.
   to: After he had spoken against the tyrant’s persuasions in this way, the bodyguards came forward and bitterly dragged Eleazar to the tortures.
   rationale: Replaced 'bitterly' with 'harshly' for a more natural adverbial rendering of πικρῶς in this context, while preserving the sense of cruel treatment. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T03:00:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'After he had spoken against the tyrant’s persuasions in this way[c][b][a], the bodyguards came forward and harshly dragged Eleazar to the tortures.'
-  to: 'After he had spoken against the tyrant’s persuasions in this way[c][b][a], the bodyguards came forward and harshly dragged Eleazar to the tortures.'
+  from: After he had spoken against the tyrant’s persuasions in this way[c][b][a], the bodyguards came forward and harshly dragged Eleazar to the tortures.
+  to: After he had spoken against the tyrant’s persuasions in this way[c][b][a], the bodyguards came forward and harshly dragged Eleazar to the tortures.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''bitterly''].'
+- timestamp: '2026-11-09T20:33:41Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: After he had spoken against the tyrant’s persuasions in this way[c][b][a], the bodyguards came forward and harshly dragged Eleazar to the tortures.
+  to: After Eleazar had countered the tyrant’s appeals in this way, the bodyguards came forward and harshly dragged him to the instruments of torture[a].
+  rationale: The review rationales disagree over “bitterly” and “harshly”; I retain the current “harshly” because it clearly describes cruel treatment. No maintainer revision is recorded, and the lexical evidence supports clarifying Eleazar’s opposing reply, the tyrant’s appeals, and the destination of the dragging.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -150,3 +150,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/006/001.job-49851.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:33:41Z'
+  change_level: refined
+  confidence: high
+  meaning: After Eleazar rejects the tyrant’s appeals, the bodyguards violently drag him to be tortured.
+  meaning_decisions:
+  - source_phrase: ἀντιρρητορεύσαντα
+    prior_rendering: he had spoken against
+    new_rendering: Eleazar had countered
+    rationale: The verb describes an opposing rhetorical response; “countered” conveys that force naturally, while naming Eleazar makes the opening subject clear.
+  - source_phrase: ταῖς τοῦ τυράννου παρηγορίαις
+    prior_rendering: the tyrant’s persuasions
+    new_rendering: the tyrant’s appeals
+    rationale: These are the tyrant’s efforts to persuade Eleazar to comply; “appeals” expresses this naturally without suggesting benign encouragement.
+  - source_phrase: ἐπὶ τὰ βασανιστήρια
+    prior_rendering: to the tortures
+    new_rendering: to the instruments of torture
+    rationale: The phrase identifies the destination toward which Eleazar is dragged, most plausibly the torture apparatus, rather than the suffering itself; the possible reference to a place of torture is noted.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The review rationales disagree over “bitterly” and “harshly”; I retain the current “harshly” because it clearly describes cruel treatment. No maintainer revision is recorded, and the lexical evidence supports clarifying Eleazar’s opposing reply, the tyrant’s appeals, and the destination of the dragging.

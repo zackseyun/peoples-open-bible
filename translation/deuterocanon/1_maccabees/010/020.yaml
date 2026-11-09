@@ -30,18 +30,12 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: And now today we have appointed you high priest of your nation[c][b][a], and to be called the king’s Friend—and they sent him a purple robe and a crown of gold—and to take our side and maintain friendship with us.
-  philosophy: optimal-equivalence
+  text: Today we have appointed you high priest of your nation and granted you the title of the king’s Friend[a].” They sent him a purple robe and a gold crown. “You are to take our side and maintain friendship with us.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'friend of the king.' The Greek may reflect an official court title in Hellenistic usage.
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek text shifts here from first-person royal speech ('we have appointed') to third-person narration ('they sent him'), and the translation preserves that shift.
-    reason: textual_variant
-  - marker: c
-    text: Literally 'think our things'; the idiom means to favor our interests or side with us.
-    reason: lexical_alternative
+    text: “Friend” was an official title of honor at Hellenistic royal courts.
+    reason: cultural_note
 lexical_decisions:
 - source_word: καθεστάκαμέν
   chosen: we have appointed
@@ -155,7 +149,13 @@ revisions:
   from: And now today we have appointed you high priest of your nation, and that you be called the king’s Friend—and they sent him a purple robe and a crown of gold—and that you take our side and maintain friendship with us.
   to: And now today we have appointed you high priest of your nation, and to be called the king’s Friend—and they sent him a purple robe and a crown of gold—and to take our side and maintain friendship with us.
   rationale: Replaced 'and that you be called' with 'and to be called' and 'and that you take' with 'and to take' to better reflect the Greek infinitives and improve natural English while preserving the formal sense.
-
+- timestamp: '2026-11-09T18:53:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And now today we have appointed you high priest of your nation[c][b][a], and to be called the king’s Friend—and they sent him a purple robe and a crown of gold—and to take our side and maintain friendship with us.
+  to: Today we have appointed you high priest of your nation and granted you the title of the king’s Friend[a].” They sent him a purple robe and a gold crown. “You are to take our side and maintain friendship with us.”
+  rationale: The revision favored English infinitives to mirror the Greek, but that left the appointment and its conditions syntactically unclear. I preserve the earlier gains concerning the court title, political allegiance, and third-person narrative interruption.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -175,3 +175,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/010/020.job-48528.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:11Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Alexander appoints Jonathan high priest and a royal Friend, sends him insignia of honor, and requires his political allegiance.
+  meaning_decisions:
+  - source_phrase: καὶ φίλον βασιλέως καλεῖσθαι
+    prior_rendering: and to be called the king’s Friend
+    new_rendering: and granted you the title of the king’s Friend
+    rationale: The infinitive expresses the conferral of an official title; making that relationship explicit avoids an incomplete English appointment formula.
+  - source_phrase: καὶ ἀπέστειλαν αὐτῷ πορφύραν καὶ στέφανον χρυσοῦν
+    prior_rendering: —and they sent him a purple robe and a crown of gold—
+    new_rendering: They sent him a purple robe and a gold crown.
+    rationale: Separating the narrator’s statement from the royal quotation makes the source’s change of speaker intelligible without changing its third-person plural subject.
+  - source_phrase: καὶ φρονεῖν τὰ ἡμῶν καὶ συντηρεῖν φιλίαν πρὸς ἡμᾶς
+    prior_rendering: and to take our side and maintain friendship with us
+    new_rendering: You are to take our side and maintain friendship with us
+    rationale: These infinitives state the allegiance expected of Jonathan in connection with his appointment, not additional offices to which he is appointed.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The revision favored English infinitives to mirror the Greek, but that left the appointment and its conditions syntactically unclear. I preserve the earlier gains concerning the court title, political allegiance, and third-person narrative interruption.

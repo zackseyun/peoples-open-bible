@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וְ/עֹרֹ֨ת אֵילִ֧ם מְאָדָּמִ֛ים וְ/עֹרֹ֥ת תְּחָשִׁ֖ים וַ/עֲצֵ֥י שִׂטִּֽים׃
 translation:
-  text: and rams’ skins dyed red[a], and hides of sea cows, and acacia wood.
-  philosophy: optimal-equivalence
+  text: rams’ skins dyed red, tahash hides[a], and acacia wood;
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Hebrew term translated “fine leather” (תְּחָשִׁים) is uncertain; it has also been rendered “goatskin leather,” “porpoise skins,” or “dugong skins.”
+    text: The meaning of Hebrew tahash is uncertain; it may name an animal, possibly a sea cow, or a kind of specially prepared leather.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: עֹרֹת
@@ -68,14 +68,20 @@ revisions:
   from: and rams’ skins dyed red, and fine leather, and acacia wood.
   to: and rams’ skins dyed red, and fine leather, and acacia wood.
   rationale: Replaced 'fine leather' with 'hides of sea cows' to more directly reflect תְּחָשִׁים rather than an interpretive paraphrase; retained the rest unchanged.
-
 - timestamp: '2026-05-18T02:55:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and rams’ skins dyed red[a], and hides of sea cows, and acacia wood.'
-  to: 'and rams’ skins dyed red[a], and hides of sea cows, and acacia wood.'
+  from: and rams’ skins dyed red[a], and hides of sea cows, and acacia wood.
+  to: and rams’ skins dyed red[a], and hides of sea cows, and acacia wood.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''fine leather''].'
+- timestamp: '2026-11-09T17:36:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and rams’ skins dyed red[a], and hides of sea cows, and acacia wood.
+  to: rams’ skins dyed red, tahash hides[a], and acacia wood;
+  rationale: The history alternates between 'fine leather' and 'hides of sea cows,' while the lexical discussion explicitly acknowledges uncertainty and no maintainer ruling resolves it. I preserve the certain material, hides, without asserting either a particular species or an uncertain quality designation.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -95,3 +101,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/035/007.job-63196.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:36:00Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The offerings are also to include red-dyed ram skins, tahash hides, and acacia wood.
+  meaning_decisions:
+  - source_phrase: עֹרֹת תְּחָשִׁים
+    prior_rendering: hides of sea cows
+    new_rendering: tahash hides
+    rationale: The source certainly specifies hides, but the identifying term remains disputed. Retaining the term with an explanatory note avoids presenting one proposed animal identification as certain.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The history alternates between 'fine leather' and 'hides of sea cows,' while the lexical discussion explicitly acknowledges uncertainty and no maintainer ruling resolves it. I preserve the certain material, hides, without asserting either a particular species or an uncertain quality designation.

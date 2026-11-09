@@ -4,15 +4,15 @@ source:
   edition: WLC
   text: הָ/אֹ֣מְרִ֔ים לֹ֥א בְ/קָר֖וֹב בְּנ֣וֹת בָּתִּ֑ים הִ֣יא הַ/סִּ֔יר וַ/אֲנַ֖חְנוּ הַ/בָּשָֽׂר׃
 translation:
-  text: who say[a], ‘It is not near to build houses. This city is the pot[b], and we are the meat.’
-  philosophy: optimal-equivalence
+  text: They say, ‘It is not yet time to build houses[a]. This city is the pot, and we are the meat[b].’
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, “It is not soon to build houses,” or “Not soon is the building of houses.” The Hebrew is elliptical.
-    reason: lexical_alternative
+    text: Or, “Isn’t it time to build houses?” The opening Hebrew clause is compressed and its interpretation is uncertain.
+    reason: alternative_reading
   - marker: b
-    text: Hebrew “the flesh.” In this cooking metaphor, “meat” conveys the image more naturally in English.
-    reason: lexical_alternative
+    text: A cooking pot shields its contents from direct flame; the leaders appear to be claiming that Jerusalem’s walls will protect them.
+    reason: cultural_note
 lexical_decisions:
 - source_word: הָאֹמְרִים
   chosen: who say
@@ -79,14 +79,20 @@ revisions:
   from: who say, ‘The time is not near to build houses. This city is the pot, and we are the meat.’
   to: who say, ‘The time is not near to build houses. This city is the pot, and we are the meat.’
   rationale: Revised the opening clause from ‘The time is not near’ to ‘It is not near’ to more closely reflect the Hebrew/Greek wording without adding ‘time,’ which is not explicit in the source. Retained the rest as accurate and natural.
-
 - timestamp: '2026-05-18T02:54:47Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'who say[a], ‘It is not near to build houses. This city is the pot[b], and we are the meat.’'
-  to: 'who say[a], ‘It is not near to build houses. This city is the pot[b], and we are the meat.’'
+  from: who say[a], ‘It is not near to build houses. This city is the pot[b], and we are the meat.’
+  to: who say[a], ‘It is not near to build houses. This city is the pot[b], and we are the meat.’
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''The time is not near''].'
+- timestamp: '2026-11-09T17:37:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: who say[a], ‘It is not near to build houses. This city is the pot[b], and we are the meat.’
+  to: They say, ‘It is not yet time to build houses[a]. This city is the pot, and we are the meat[b].’
+  rationale: The recorded debate chiefly concerns whether to supply “time”; withholding it produced unclear English. I retain the history’s negative reading while acknowledging the serious interrogative alternative and preserving the pot-and-meat image.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -106,3 +112,27 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/011/003.job-63565.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:37:56Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The leaders say that it is not yet time to build houses and apparently regard Jerusalem as a pot that protects them.
+  meaning_decisions:
+  - source_phrase: הָאֹמְרִים
+    prior_rendering: who say
+    new_rendering: They say
+    rationale: A separate English sentence naturally continues the description of the same leaders without leaving the verse as a fragment.
+  - source_phrase: לֹא בְקָרוֹב בְּנוֹת בָּתִּים
+    prior_rendering: It is not near to build houses.
+    new_rendering: It is not yet time to build houses
+    rationale: The Hebrew leaves the temporal relationship compressed; English needs “time” to make the inherited negative reading intelligible. The serious interrogative reading is preserved in a footnote.
+  footnote_kinds:
+    a: alternative_meaning
+    b: cultural_background
+  history_weighed: The recorded debate chiefly concerns whether to supply “time”; withholding it produced unclear English. I retain the history’s negative reading while acknowledging the serious interrogative alternative and preserving the pot-and-meat image.

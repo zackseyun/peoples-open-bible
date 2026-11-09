@@ -22,15 +22,8 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: Instead of this punishment[a], you did good to your people; for a strange craving of appetite[b], you prepared quail as food for them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'In place of that punishment, you did good to your people.'
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'for a strange craving of appetite, a taste'; the Greek is compressed and emphasizes an unusual desire for food.
-    reason: lexical_alternative
+  text: 'In contrast to that punishment, you did good to your people: you prepared quail as food, an unusual delicacy to satisfy their craving.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀνθʼ ἧς κολάσεως
   chosen: Instead of this punishment
@@ -125,14 +118,20 @@ revisions:
   from: 'Instead of this punishment, you benefited your people: to satisfy a strange craving of appetite, you prepared quail as food for them;'
   to: 'Instead of this punishment, you benefited your people: to satisfy a strange craving of appetite, you prepared quail as food for them;'
   rationale: Revised 'benefited' to 'did good to' for a more direct rendering of εὐεργετήσας, and adjusted 'to satisfy' to 'for' to avoid adding purpose language not explicit in the Greek. Retained 'strange craving of appetite' and 'quail as food for them' as natural and complete.
-
 - timestamp: '2026-05-18T02:59:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Instead of this punishment[a], you did good to your people; for a strange craving of appetite[b], you prepared quail as food for them.'
-  to: 'Instead of this punishment[a], you did good to your people; for a strange craving of appetite[b], you prepared quail as food for them.'
+  from: Instead of this punishment[a], you did good to your people; for a strange craving of appetite[b], you prepared quail as food for them.
+  to: Instead of this punishment[a], you did good to your people; for a strange craving of appetite[b], you prepared quail as food for them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you benefited''].'
+- timestamp: '2026-11-09T19:12:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Instead of this punishment[a], you did good to your people; for a strange craving of appetite[b], you prepared quail as food for them.
+  to: 'In contrast to that punishment, you did good to your people: you prepared quail as food, an unusual delicacy to satisfy their craving.'
+  rationale: I retain the current rendering “did good to” and the identification of the food as quail. The earlier concern about adding purpose language is outweighed by the force of εἰς, while the supplied syntax corrects the attachment of “strange” to the craving.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -152,3 +151,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/016/002.job-39427.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:12:56Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: In contrast to Egypt’s punishment, God benefited his people by providing quail as an unusual food to satisfy their craving.
+  meaning_decisions:
+  - source_phrase: ἀνθʼ ἧς κολάσεως
+    prior_rendering: Instead of this punishment
+    new_rendering: In contrast to that punishment
+    rationale: The phrase contrasts Egypt’s treatment with Israel’s provision rather than suggesting that a punishment intended for Israel was replaced.
+  - source_phrase: εἰς ἐπιθυμίαν ὀρέξεως ξένην γεῦσιν
+    prior_rendering: for a strange craving of appetite
+    new_rendering: an unusual delicacy to satisfy their craving
+    rationale: The adjective ξένην describes the taste, not the craving; the purpose construction concerns satisfying their desire for food.
+  footnote_kinds: {}
+  history_weighed: I retain the current rendering “did good to” and the identification of the food as quail. The earlier concern about adding purpose language is outweighed by the force of εἰς, while the supplied syntax corrects the attachment of “strange” to the craving.

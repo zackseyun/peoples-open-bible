@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּשְׁלַ֣ח יִשְׂרָאֵ֣ל מַלְאָכִ֣ים אֶל מֶלֶךְ֩ אֱד֨וֹם לֵ/אמֹ֜ר אֶעְבְּרָה נָּ֣א בְ/אַרְצֶ֗/ךָ וְ/לֹ֤א שָׁמַע֙ מֶ֣לֶךְ אֱד֔וֹם וְ/גַ֨ם אֶל מֶ֧לֶךְ מוֹאָ֛ב שָׁלַ֖ח וְ/לֹ֣א אָבָ֑ה וַ/יֵּ֥שֶׁב יִשְׂרָאֵ֖ל בְּ/קָדֵֽשׁ׀־׀־־׃
 translation:
-  text: Then Israel sent messengers to the king of Edom[a], saying, ‘Please let us pass through your land,’ but the king of Edom did not listen. And he also sent to the king of Moab, but he was unwilling[b], so Israel remained at Kadesh.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew 'Please let me pass' uses a first-person singular form, with Israel speaking corporately as a single entity; some English translations render it 'let us pass.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'he refused' / 'he did not consent' for 'he was unwilling.'
-    reason: lexical_alternative
+  text: Then Israel sent messengers to the king of Edom, saying, ‘Please let us pass through your land,’ but the king of Edom would not grant their request. Israel also sent messengers to the king of Moab, but he refused, so Israel remained at Kadesh.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּשְׁלַח
   chosen: sent
@@ -117,14 +110,20 @@ revisions:
   from: Then Israel sent messengers to the king of Edom, saying, ‘Please let me pass through your land,’ but the king of Edom did not listen. He also sent to the king of Moab, but he was unwilling, so Israel remained at Kadesh.
   to: Then Israel sent messengers to the king of Edom, saying, ‘Please let me pass through your land,’ but the king of Edom did not listen. He also sent to the king of Moab, but he was unwilling, so Israel remained at Kadesh.
   rationale: Changed ‘let me pass’ to ‘let us pass’ to match Israel as the speaker. Added ‘And’ at the start of the second clause for closer correspondence to the source. Kept the rest substantially unchanged as accurate and natural.
-
 - timestamp: '2026-05-18T02:55:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Israel sent messengers to the king of Edom[a], saying, ‘Please let us pass through your land,’ but the king of Edom did not listen. And he also sent to the king of Moab, but he was unwilling[b], so Israel remained at Kadesh.'
-  to: 'Then Israel sent messengers to the king of Edom[a], saying, ‘Please let us pass through your land,’ but the king of Edom did not listen. And he also sent to the king of Moab, but he was unwilling[b], so Israel remained at Kadesh.'
+  from: Then Israel sent messengers to the king of Edom[a], saying, ‘Please let us pass through your land,’ but the king of Edom did not listen. And he also sent to the king of Moab, but he was unwilling[b], so Israel remained at Kadesh.
+  to: Then Israel sent messengers to the king of Edom[a], saying, ‘Please let us pass through your land,’ but the king of Edom did not listen. And he also sent to the king of Moab, but he was unwilling[b], so Israel remained at Kadesh.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Please let me pass''].'
+- timestamp: '2026-11-09T18:12:57Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Israel sent messengers to the king of Edom[a], saying, ‘Please let us pass through your land,’ but the king of Edom did not listen. And he also sent to the king of Moab, but he was unwilling[b], so Israel remained at Kadesh.
+  to: Then Israel sent messengers to the king of Edom, saying, ‘Please let us pass through your land,’ but the king of Edom would not grant their request. Israel also sent messengers to the king of Moab, but he refused, so Israel remained at Kadesh.
+  rationale: The earlier review recognized that corporate Israel naturally says “us” in English, while the automated revert favored the grammatical singular. I keep the current “us” and make explicit the refusal and subject continuity identified by the lexical discussion.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -144,3 +143,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/judges/011/017.job-69199.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:12:57Z'
+  change_level: refined
+  confidence: high
+  meaning: Israel requested passage through Edom and Moab, but both kings refused, leaving Israel at Kadesh.
+  meaning_decisions:
+  - source_phrase: וְלֹא שָׁמַע מֶלֶךְ אֱדוֹם
+    prior_rendering: but the king of Edom did not listen
+    new_rendering: but the king of Edom would not grant their request
+    rationale: In this diplomatic setting, hearing means responding favorably to the request, not merely receiving the words.
+  - source_phrase: וְגַם אֶל מֶלֶךְ מוֹאָב שָׁלַח
+    prior_rendering: And he also sent to the king of Moab
+    new_rendering: Israel also sent messengers to the king of Moab
+    rationale: The prior pronoun could mistakenly refer to Edom’s king; the new wording identifies Israel and supplies the understood object.
+  - source_phrase: וְלֹא אָבָה
+    prior_rendering: but he was unwilling
+    new_rendering: but he refused
+    rationale: The king’s unwillingness is his refusal of the request, which is the event being reported.
+  footnote_kinds: {}
+  history_weighed: The earlier review recognized that corporate Israel naturally says “us” in English, while the automated revert favored the grammatical singular. I keep the current “us” and make explicit the refusal and subject continuity identified by the lexical discussion.

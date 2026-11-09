@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יַּזְעֵ֗ק וַ/יֹּ֨אמֶר֙ בְּ/נִֽינְוֵ֔ה מִ/טַּ֧עַם הַ/מֶּ֛לֶךְ וּ/גְדֹלָ֖י/ו לֵ/אמֹ֑ר הָ/אָדָ֨ם וְ/הַ/בְּהֵמָ֜ה הַ/בָּקָ֣ר וְ/הַ/צֹּ֗אן אַֽל יִטְעֲמוּ֙ מְא֔וּמָה אַ֨ל יִרְע֔וּ וּ/מַ֖יִם אַל יִשְׁתּֽוּ־־־׃
 translation:
-  text: 'And he proclaimed and said in Nineveh[a], by decree of the king and his nobles: “Let neither man nor beast, herd nor flock, taste anything. Let them not graze[b], and let them not drink water.”'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the king and his nobles' or 'the king and his officials.' The Hebrew literally says 'the king and his great ones.'
-    reason: lexical_alternative
-  - marker: b
-    text: '''Man'' renders Hebrew adam here as a collective term for human beings, in contrast with animals; alternatively, ''humankind.'''
-    reason: lexical_alternative
+  text: 'He had this proclamation issued in Nineveh: “By decree of the king and his nobles, neither people nor animals—neither herds nor flocks—may taste anything. The animals must not graze, and none may drink water.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיַּזְעֵק
   chosen: he proclaimed
@@ -123,7 +116,6 @@ revisions:
   from: 'And he proclaimed and said in Nineveh, by decree of the king and his great ones: “Let neither man nor beast, herd nor flock, taste anything. Let them not graze, and let them not drink water.”'
   to: 'And he proclaimed and said in Nineveh, by decree of the king and his great ones: “Let neither man nor beast, herd nor flock, taste anything. Let them not graze, and let them not drink water.”'
   rationale: Changed 'his great ones' to 'his nobles' for more natural and accurate formal English rendering of the king's leading officials; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:56:20Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -131,6 +123,13 @@ revisions:
   from: 'And he proclaimed and said in Nineveh[a], by decree of the king and his nobles: “Let neither man nor beast, herd nor flock, taste anything. Let them not graze[b], and let them not drink water.”'
   to: 'And he proclaimed and said in Nineveh[a], by decree of the king and his nobles: “Let neither man nor beast, herd nor flock, taste anything. Let them not graze[b], and let them not drink water.”'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the king and his great ones''].'
+- timestamp: '2026-11-09T18:07:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And he proclaimed and said in Nineveh[a], by decree of the king and his nobles: “Let neither man nor beast, herd nor flock, taste anything. Let them not graze[b], and let them not drink water.”'
+  to: 'He had this proclamation issued in Nineveh: “By decree of the king and his nobles, neither people nor animals—neither herds nor flocks—may taste anything. The animals must not graze, and none may drink water.'
+  rationale: The current 'nobles' preserves the review's gain over 'great ones' and needs no explanatory note. The earlier generic 'man' followed source form, but 'people' more clearly conveys the decree's comprehensive human scope.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -150,3 +149,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jonah/003/007.job-68513.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:07:48Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The king issues a decree with his nobles requiring Nineveh's people and livestock to abstain completely from food and water.
+  meaning_decisions:
+  - source_phrase: וַיַּזְעֵק וַיֹּאמֶר בְּנִינְוֵה
+    prior_rendering: And he proclaimed and said in Nineveh
+    new_rendering: He had this proclamation issued in Nineveh
+    rationale: The causative verb describes the king arranging a public announcement; the paired speech verbs do not require separate English verbs.
+  - source_phrase: הָאָדָם וְהַבְּהֵמָה הַבָּקָר וְהַצֹּאן
+    prior_rendering: man nor beast, herd nor flock
+    new_rendering: people nor animals—neither herds nor flocks
+    rationale: The contrast concerns the entire human population and its livestock, not males alone; the punctuation identifies herds and flocks as the animal categories.
+  - source_phrase: אַל יִרְעוּ וּמַיִם אַל יִשְׁתּוּ
+    prior_rendering: Let them not graze, and let them not drink water
+    new_rendering: The animals must not graze, and none may drink water
+    rationale: The understood subject of grazing is the livestock, while the prohibition on water applies to both people and animals.
+  footnote_kinds: {}
+  history_weighed: The current 'nobles' preserves the review's gain over 'great ones' and needs no explanatory note. The earlier generic 'man' followed source form, but 'people' more clearly conveys the decree's comprehensive human scope.

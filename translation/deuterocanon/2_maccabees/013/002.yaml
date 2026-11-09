@@ -25,15 +25,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: 'and with him Lysias[a], the guardian and overseer of affairs, each having a Greek force: eleven myriads of infantry, five thousand three hundred cavalry, twenty-two elephants[b], and three hundred scythed chariots.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek 'eleven myriads of infantry' = 110,000 foot soldiers. The translation retains the Greek numerical expression for transparency.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the regent and the one in charge of affairs.' The Greek titles for Lysias indicate entrusted guardianship and administrative authority.
-    reason: alternative_reading
+  text: Lysias, the king’s guardian and chief administrator, accompanied him. Each commanded a Greek force of 110,000 foot soldiers, 5,300 cavalry, 22 elephants, and 300 chariots fitted with scythe blades.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: σὺν αὐτῷ
   chosen: with him
@@ -118,7 +111,6 @@ revisions:
   from: 'and with him Lysias, the guardian and administrator of affairs, each having a Greek force: eleven myriads of infantry, five thousand three hundred cavalry, twenty-two elephants, and three hundred scythed chariots.'
   to: 'and with him Lysias, the guardian and administrator of affairs, each having a Greek force: eleven myriads of infantry, five thousand three hundred cavalry, twenty-two elephants, and three hundred scythed chariots.'
   rationale: Changed 'administrator of affairs' to 'overseer of affairs' for a more direct rendering of ἐπὶ τῶν πραγμάτων while keeping the formal register. The rest is accurate and complete.
-
 - timestamp: '2026-05-18T02:59:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -126,6 +118,13 @@ revisions:
   from: 'and with him Lysias[a], the guardian and overseer of affairs, each having a Greek force: eleven myriads of infantry, five thousand three hundred cavalry, twenty-two elephants[b], and three hundred scythed chariots.'
   to: 'and with him Lysias[a], the guardian and overseer of affairs, each having a Greek force: eleven myriads of infantry, five thousand three hundred cavalry, twenty-two elephants[b], and three hundred scythed chariots.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and administrator of affairs''].'
+- timestamp: '2026-11-09T18:56:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'and with him Lysias[a], the guardian and overseer of affairs, each having a Greek force: eleven myriads of infantry, five thousand three hundred cavalry, twenty-two elephants[b], and three hundred scythed chariots.'
+  to: Lysias, the king’s guardian and chief administrator, accompanied him. Each commanded a Greek force of 110,000 foot soldiers, 5,300 cavalry, 22 elephants, and 300 chariots fitted with scythe blades.
+  rationale: The administrator/overseer revisions preserve the same underlying office; I make its state authority clearer while retaining guardianship. The earlier insistence on 'myriads' served source transparency rather than numerical understanding, so I give the actual number.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -145,3 +144,33 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/013/002.job-49364.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:19Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Lysias accompanied the king as his guardian and chief administrator, and each commanded an enormous Greek military force.
+  meaning_decisions:
+  - source_phrase: τὸν ἐπίτροπον καὶ ἐπὶ τῶν πραγμάτων
+    prior_rendering: the guardian and overseer of affairs
+    new_rendering: the king’s guardian and chief administrator
+    rationale: 'These are Lysias’s court responsibilities: guardianship of the young king and authority over state administration, not unspecified oversight.'
+  - source_phrase: ἕκαστον ἔχοντα δύναμιν Ἑλληνικὴν
+    prior_rendering: each having a Greek force
+    new_rendering: Each commanded a Greek force
+    rationale: In this military setting, having a force means commanding it; 'each' is retained rather than treating the following figures as a combined total.
+  - source_phrase: πεζῶν μυριάδας ἕνδεκα
+    prior_rendering: eleven myriads of infantry
+    new_rendering: 110,000 foot soldiers
+    rationale: A myriad is exactly ten thousand here, whereas modern English often uses 'myriads' for an indefinite multitude.
+  - source_phrase: ἅρματα δὲ δρεπανηφόρα τριακόσια
+    prior_rendering: three hundred scythed chariots
+    new_rendering: 300 chariots fitted with scythe blades
+    rationale: The expanded wording makes the chariots’ weaponry intelligible without requiring knowledge of an ancient military term.
+  footnote_kinds: {}
+  history_weighed: The administrator/overseer revisions preserve the same underlying office; I make its state authority clearer while retaining guardianship. The earlier insistence on 'myriads' served source transparency rather than numerical understanding, so I give the actual number.

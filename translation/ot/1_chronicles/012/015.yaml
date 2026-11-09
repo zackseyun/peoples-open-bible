@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: אֵ֥לֶּה מִ/בְּנֵי גָ֖ד רָאשֵׁ֣י הַ/צָּבָ֑א אֶחָ֤ד לְ/מֵאָה֙ הַ/קָּטָ֔ן וְ/הַ/גָּד֖וֹל לְ/אָֽלֶף־׃
 translation:
-  text: These were from the sons of Gad[a], heads of the army; the least was for a hundred, and the greatest for a thousand.
-  philosophy: optimal-equivalence
+  text: These Gadites were army commanders; the least of them was a match for a hundred men, and the greatest for a thousand[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more literally, 'one for a hundred, and the great one for a thousand'—an idiom expressing military prowess or effectiveness.
-    reason: lexical_alternative
+    text: Or 'the lowest-ranking commanded a hundred men, and the highest-ranking a thousand.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: אֵלֶּה
   chosen: These were
@@ -78,14 +78,20 @@ revisions:
   from: These were from the sons of Gad, heads of the army; the least was a match for a hundred, and the greatest for a thousand.
   to: These were from the sons of Gad, heads of the army; the least was a match for a hundred, and the greatest for a thousand.
   rationale: Removed 'a match for' to stay closer to the Hebrew, which simply states numerical proportion ('one for a hundred ... and the great one for a thousand') without the added idiom.
-
 - timestamp: '2026-05-18T02:57:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'These were from the sons of Gad[a], heads of the army; the least was for a hundred, and the greatest for a thousand.'
-  to: 'These were from the sons of Gad[a], heads of the army; the least was for a hundred, and the greatest for a thousand.'
+  from: These were from the sons of Gad[a], heads of the army; the least was for a hundred, and the greatest for a thousand.
+  to: These were from the sons of Gad[a], heads of the army; the least was for a hundred, and the greatest for a thousand.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the least was a match for a hundred''].'
+- timestamp: '2026-11-09T17:19:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: These were from the sons of Gad[a], heads of the army; the least was for a hundred, and the greatest for a thousand.
+  to: These Gadites were army commanders; the least of them was a match for a hundred men, and the greatest for a thousand[a].
+  rationale: The first draft and lexical rationale understood the numbers as military prowess, whereas the later literalizing wording leaves their relationship unclear. I restore 'a match for' and note the alternative command interpretation; no maintainer ruling settles the ambiguity.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -108,3 +114,26 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_chronicles/012/015.job-57831.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:19:39Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: These Gadite commanders possessed extraordinary fighting strength, with even the least being a match for a hundred men.
+  meaning_decisions:
+  - source_phrase: אֵלֶּה מִבְּנֵי גָד רָאשֵׁי הַצָּבָא
+    prior_rendering: These were from the sons of Gad, heads of the army
+    new_rendering: These Gadites were army commanders
+    rationale: The source identifies tribal affiliation and military leadership, not literal sons or anatomical heads.
+  - source_phrase: אֶחָד לְמֵאָה הַקָּטָן וְהַגָּדוֹל לְאָלֶף
+    prior_rendering: the least was for a hundred, and the greatest for a thousand
+    new_rendering: the least of them was a match for a hundred men, and the greatest for a thousand
+    rationale: The surrounding praise of their prowess supports a comparison of fighting strength; the serious alternative of command over military units is noted.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and lexical rationale understood the numbers as military prowess, whereas the later literalizing wording leaves their relationship unclear. I restore 'a match for' and note the alternative command interpretation; no maintainer ruling settles the ambiguity.

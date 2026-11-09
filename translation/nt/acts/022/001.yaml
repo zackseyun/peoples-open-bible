@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: Ἄνδρες ἀδελφοὶ καὶ πατέρες, ἀκούσατέ μου τῆς πρὸς ὑμᾶς νυνὶ ἀπολογίας.
 translation:
-  text: Men[a], brothers and fathers, hear now my defense to you.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'hear the defense I now make to you.'
-    reason: lexical_alternative
+  text: “Brothers and fathers, listen to the defense I now make before you.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἄνδρες
   chosen: Men
@@ -85,14 +81,20 @@ revisions:
   from: Men, brothers and fathers, hear my defense now before you.
   to: Men, brothers and fathers, hear my defense now before you.
   rationale: 'Reordered the phrasing to reflect the Greek more naturally and accurately: moved ''now'' before ''my defense'' and rendered πρὸς ὑμᾶς as ''to you'' rather than ''before you.'''
-
 - timestamp: '2026-05-18T03:00:06Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Men[a], brothers and fathers, hear now my defense to you.'
-  to: 'Men[a], brothers and fathers, hear now my defense to you.'
+  from: Men[a], brothers and fathers, hear now my defense to you.
+  to: Men[a], brothers and fathers, hear now my defense to you.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''before you''].'
+- timestamp: '2026-11-09T17:08:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Men[a], brothers and fathers, hear now my defense to you.
+  to: “Brothers and fathers, listen to the defense I now make before you.”
+  rationale: The first draft and lexical discussion support 'before you' as natural public-address language. The automated review and revert record no clear substantive gain, so the rendering follows the contextual force of the address.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -112,3 +114,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/022/001.job-46542.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:00Z'
+  change_level: refined
+  confidence: high
+  meaning: Paul respectfully asks his fellow Jews and their older, honored members to hear his defense.
+  meaning_decisions:
+  - source_phrase: Ἄνδρες ἀδελφοὶ καὶ πατέρες
+    prior_rendering: Men, brothers and fathers
+    new_rendering: Brothers and fathers
+    rationale: The introductory 'men' belongs to the customary respectful address rather than naming an additional group; the natural English address preserves kinship and respect.
+  - source_phrase: ἀκούσατέ μου τῆς πρὸς ὑμᾶς νυνὶ ἀπολογίας
+    prior_rendering: hear now my defense to you
+    new_rendering: listen to the defense I now make before you
+    rationale: This expresses the defense’s present delivery and its direction toward the audience without reproducing the compressed Greek construction.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical discussion support 'before you' as natural public-address language. The automated review and revert record no clear substantive gain, so the rendering follows the contextual force of the address.

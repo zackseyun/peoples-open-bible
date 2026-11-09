@@ -23,15 +23,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And he sent him and Alcimus the ungodly[a], and established the priesthood for him[b], and commanded him to carry out vengeance on the sons of Israel.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'appointed him to the priesthood.' The Greek literally says 'established the priesthood for him,' referring to Alcimus's installation in priestly office.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'against the sons of Israel.' The preposition may be understood as indicating the people within whom the vengeance was to be carried out, with hostile force implied by the context.
-    reason: alternative_reading
+  text: The king sent Bacchides and the ungodly Alcimus. Alcimus was appointed high priest, and the king commanded Bacchides to take vengeance on the Israelites.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀπέστειλεν
   chosen: sent
@@ -132,14 +125,20 @@ revisions:
   from: And he sent him, and Alcimus the ungodly, and established the priesthood for him, and commanded him to carry out vengeance among the sons of Israel.
   to: And he sent him, and Alcimus the ungodly, and established the priesthood for him, and commanded him to carry out vengeance among the sons of Israel.
   rationale: Removed the unnecessary comma after 'him' for smoother syntax and changed 'among the sons of Israel' to 'on the sons of Israel' to better reflect the sense of executing vengeance against them.
-
 - timestamp: '2026-05-18T02:58:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he sent him and Alcimus the ungodly[a], and established the priesthood for him[b], and commanded him to carry out vengeance on the sons of Israel.'
-  to: 'And he sent him and Alcimus the ungodly[a], and established the priesthood for him[b], and commanded him to carry out vengeance on the sons of Israel.'
+  from: And he sent him and Alcimus the ungodly[a], and established the priesthood for him[b], and commanded him to carry out vengeance on the sons of Israel.
+  to: And he sent him and Alcimus the ungodly[a], and established the priesthood for him[b], and commanded him to carry out vengeance on the sons of Israel.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''among the sons of Israel''].'
+- timestamp: '2026-11-09T18:52:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he sent him and Alcimus the ungodly[a], and established the priesthood for him[b], and commanded him to carry out vengeance on the sons of Israel.
+  to: The king sent Bacchides and the ungodly Alcimus. Alcimus was appointed high priest, and the king commanded Bacchides to take vengeance on the Israelites.
+  rationale: The review's “on” correctly conveyed the hostile direction of the vengeance and is retained. The recorded explanations identify installation in the high priesthood, while the supplied Greek's plural appointment verb favors a passive English clause over the current singular attribution.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -159,3 +158,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/007/009.job-48346.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:19Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The king sent Bacchides and the ungodly Alcimus, authorized Alcimus's high priesthood, and ordered Bacchides to take vengeance on Israel.
+  meaning_decisions:
+  - source_phrase: καὶ ἔστησαν αὐτῷ τὴν ἱερωσύνην
+    prior_rendering: and established the priesthood for him
+    new_rendering: Alcimus was appointed high priest
+    rationale: The phrase concerns Alcimus's appointment to an existing office, not the establishment of a new priesthood; the passive avoids inventing a precise subject for the Greek plural verb.
+  - source_phrase: ἐνετείλατο αὐτῷ ποιῆσαι τὴν ἐκδίκησιν
+    prior_rendering: commanded him to carry out vengeance
+    new_rendering: the king commanded Bacchides to take vengeance
+    rationale: The military commission belongs to Bacchides; explicit names distinguish him from Alcimus, the recipient of the priestly office.
+  - source_phrase: ἐν τοῖς υἱοῖς Ἰσραήλ
+    prior_rendering: on the sons of Israel
+    new_rendering: on the Israelites
+    rationale: This is a conventional designation for Israel's people, not a restriction to male descendants.
+  footnote_kinds: {}
+  history_weighed: The review's “on” correctly conveyed the hostile direction of the vengeance and is retained. The recorded explanations identify installation in the high priesthood, while the supplied Greek's plural appointment verb favors a passive English clause over the current singular attribution.

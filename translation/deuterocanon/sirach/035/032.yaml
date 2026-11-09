@@ -8,12 +8,8 @@ source:
   - 729
   validation: no_reference
 translation:
-  text: On the day the days of your life are completed[a], and at the time of your death, distribute your inheritance.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'at the end of your life'; the Greek literally speaks of the completion of the days of your life.
-    reason: lexical_alternative
+  text: At the end of your life, at the time of your death, distribute your estate.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐν ἡμέρᾳ
   chosen: On the day
@@ -100,14 +96,20 @@ revisions:
   from: On the day your life's days are completed, and at the time of your death, distribute the inheritance.
   to: On the day your life's days are completed, and at the time of your death, distribute the inheritance.
   rationale: Made the phrasing more formally aligned with the Greek by rendering the repeated 'days' explicitly and adding 'your' before 'inheritance' for natural English and completeness.
-
 - timestamp: '2026-05-16T13:22:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'On the day the days of your life are completed[a], and at the time of your death, distribute your inheritance.'
-  to: 'On the day the days of your life are completed[a], and at the time of your death, distribute your inheritance.'
-  rationale: 'Restored drafter "your life''s days" (compact possessive) and ''distribute the inheritance'' (preserving the definite article) per chosen renderings.'
+  from: On the day the days of your life are completed[a], and at the time of your death, distribute your inheritance.
+  to: On the day the days of your life are completed[a], and at the time of your death, distribute your inheritance.
+  rationale: Restored drafter "your life's days" (compact possessive) and 'distribute the inheritance' (preserving the definite article) per chosen renderings.
+- timestamp: '2026-11-09T20:11:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: On the day the days of your life are completed[a], and at the time of your death, distribute your inheritance.
+  to: At the end of your life, at the time of your death, distribute your estate.
+  rationale: The recorded passes favored preserving the repeated 'days' and inheritance terminology, but neither records a maintainer decision. I retain the explicit reference to death and the command to distribute, while replacing source-shaped wording with clearer English.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -127,3 +129,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/035/032.job-51976.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:11:20Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Keep control of your property until the end of your life, then distribute it as an inheritance.
+  meaning_decisions:
+  - source_phrase: ἐν ἡμέρᾳ συντελείας ἡμερῶν ζωῆς σου
+    prior_rendering: On the day the days of your life are completed
+    new_rendering: At the end of your life
+    rationale: The repeated reference to days expresses the completion of one's lifetime, not a distinct calendar date. The simpler English conveys that meaning while the following clause preserves the emphasis on death.
+  - source_phrase: διάδος κληρονομίαν
+    prior_rendering: distribute your inheritance
+    new_rendering: distribute your estate
+    rationale: In this context, the property is what the owner will leave to heirs, not necessarily an inheritance the owner has received. 'Estate' makes that direction of transfer clear while 'distribute' retains the sense of apportioning it.
+  footnote_kinds: {}
+  history_weighed: The recorded passes favored preserving the repeated 'days' and inheritance terminology, but neither records a maintainer decision. I retain the explicit reference to death and the command to distribute, while replacing source-shaped wording with clearer English.

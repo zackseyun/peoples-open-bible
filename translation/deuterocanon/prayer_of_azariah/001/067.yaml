@@ -42,15 +42,8 @@ source:
   validation: minor_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone PAZ extraction from the curated ADA stream, using Daniel 3:24-90 as the source span and renumbering it to PAZ 1:1-67.
 translation:
-  text: Bless the Lord[a], all you who fear the Lord, the God of gods; sing praise and give thanks, for his mercy is forever[b], even forever and ever.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'all you who worship the Lord' or 'all you who revere the Lord.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'for his steadfast love endures forever.'
-    reason: lexical_alternative
+  text: Bless the God of gods, all you who revere the Lord; sing praise to him and give him thanks, for his mercy endures forever, even forever and ever.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: εὐλογεῖτε
   chosen: Bless
@@ -148,7 +141,13 @@ revisions:
   from: Bless, all you who fear the Lord, the God of gods; sing praise and give thanks, for his mercy is forever, even forever and ever.
   to: Bless the Lord, all you who fear the Lord, the God of gods; sing praise and give thanks, for his mercy is forever, even forever and ever.
   rationale: Added 'the Lord' after 'Bless' to account for the implied object in Greek and improve completeness; otherwise retained the draft's wording.
-
+- timestamp: '2026-11-09T20:31:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Bless the Lord[a], all you who fear the Lord, the God of gods; sing praise and give thanks, for his mercy is forever[b], even forever and ever.
+  to: Bless the God of gods, all you who revere the Lord; sing praise to him and give him thanks, for his mercy endures forever, even forever and ever.
+  rationale: The earlier review correctly repaired the incomplete command by making its object explicit. I preserve that clarity using the expressed Greek object, 'the God of gods,' and refine the wording for reverential devotion and enduring mercy.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -168,3 +167,29 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/prayer_of_azariah/001/067.job-50978.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:31:32Z'
+  change_level: retranslated
+  confidence: high
+  meaning: All who revere the Lord are called to bless the God of gods in song and thanksgiving because his mercy lasts forever and ever.
+  meaning_decisions:
+  - source_phrase: εὐλογεῖτε, πάντες οἱ σεβόμενοι τὸν κύριον, τὸν θεὸν τῶν θεῶν
+    prior_rendering: Bless the Lord, all you who fear the Lord, the God of gods
+    new_rendering: Bless the God of gods, all you who revere the Lord
+    rationale: The God of gods is the expressed object of the blessing, while those who revere the Lord are the people addressed; reordering makes these relationships clear without adding a second occurrence of 'the Lord.'
+  - source_phrase: οἱ σεβόμενοι τὸν κύριον
+    prior_rendering: you who fear the Lord
+    new_rendering: you who revere the Lord
+    rationale: The verb denotes reverential devotion or worship, not fear as such; 'revere' directly conveys the disposition expressed here.
+  - source_phrase: εἰς τὸν αἰῶνα τὸ ἔλεος αὐτοῦ
+    prior_rendering: his mercy is forever
+    new_rendering: his mercy endures forever
+    rationale: This naturally expresses the permanence of his mercy and preserves the connection with the preceding thanksgiving refrain.
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly repaired the incomplete command by making its object explicit. I preserve that clarity using the expressed Greek object, 'the God of gods,' and refine the wording for reverential devotion and enduring mercy.

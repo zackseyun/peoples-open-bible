@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: הַ/עַ֨יִט צָב֤וּעַ נַחֲלָתִ/י֙ לִ֔/י הַ/עַ֖יִט סָבִ֣יב עָלֶ֑י/הָ לְכ֗וּ אִסְפ֛וּ כָּל חַיַּ֥ת הַ/שָּׂדֶ֖ה הֵתָ֥יוּ לְ/אָכְלָֽה־׃
 translation:
-  text: Is my inheritance to me a speckled bird of prey? Are the birds of prey against her all around? Go[a], gather all the beasts of the field[b]; bring them to devour.
-  philosophy: optimal-equivalence
+  text: Is my inheritance to me a speckled bird of prey[a]? Are birds of prey surrounding her on every side? Go, gather all the beasts of the field; bring them to devour her.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'hyena.' Some interpreters take the repeated Hebrew word עַיִט here in connection with a predator such as a hyena, yielding a sense like 'Is my inheritance to me like a speckled hyena?' The main text follows the more common sense 'bird of prey.'
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew literally, 'Is my inheritance to me a speckled bird of prey? the bird of prey around her.' The singular 'bird of prey' may function collectively.
-    reason: lexical_alternative
+    text: Or, “a hyena”; the Hebrew description of the predator is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: הַעַיִט
   chosen: bird of prey
@@ -102,14 +99,20 @@ revisions:
   from: Is my inheritance to me a speckled bird of prey? Are the birds of prey all around her? Go, gather all the beasts of the field; bring them to devour.
   to: Is my inheritance to me a speckled bird of prey? Are the birds of prey all around her? Go, gather all the beasts of the field; bring them to devour.
   rationale: Changed 'all around her' to 'against her all around' to more closely reflect סָבִיב עָלֶיהָ ('around/against her') and preserve the adversative sense.
-
 - timestamp: '2026-05-18T02:56:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Is my inheritance to me a speckled bird of prey? Are the birds of prey against her all around? Go[a], gather all the beasts of the field[b]; bring them to devour.'
-  to: 'Is my inheritance to me a speckled bird of prey? Are the birds of prey against her all around? Go[a], gather all the beasts of the field[b]; bring them to devour.'
+  from: Is my inheritance to me a speckled bird of prey? Are the birds of prey against her all around? Go[a], gather all the beasts of the field[b]; bring them to devour.
+  to: Is my inheritance to me a speckled bird of prey? Are the birds of prey against her all around? Go[a], gather all the beasts of the field[b]; bring them to devour.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the birds of prey all around her''].'
+- timestamp: '2026-11-09T17:56:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Is my inheritance to me a speckled bird of prey? Are the birds of prey against her all around? Go[a], gather all the beasts of the field[b]; bring them to devour.
+  to: Is my inheritance to me a speckled bird of prey[a]? Are birds of prey surrounding her on every side? Go, gather all the beasts of the field; bring them to devour her.
+  rationale: The review correctly emphasized the surrounding birds’ hostility; “surrounding her” and the explicit object of “devour” preserve that force in natural English. I retain the preferred bird imagery and leave the serious hyena interpretation in a footnote.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -129,3 +132,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/012/009.job-67378.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:56:13Z'
+  change_level: refined
+  confidence: medium
+  meaning: Yahweh pictures his inheritance as an unusually marked predator surrounded by other predators and summons wild beasts to devour her.
+  meaning_decisions:
+  - source_phrase: הַעַיִט סָבִיב עָלֶיהָ
+    prior_rendering: Are the birds of prey against her all around?
+    new_rendering: Are birds of prey surrounding her on every side?
+    rationale: The collective noun describes encircling predators; this natural English wording retains the threatening image without the awkward placement of “against her all around.”
+  - source_phrase: הֵתָיוּ לְאָכְלָה
+    prior_rendering: bring them to devour
+    new_rendering: bring them to devour her
+    rationale: The inheritance is the understood prey, and supplying the object makes the summons clear without adding a new target.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The review correctly emphasized the surrounding birds’ hostility; “surrounding her” and the explicit object of “devour” preserve that force in natural English. I retain the preferred bird imagery and leave the serious hyena interpretation in a footnote.

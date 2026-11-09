@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ ἐφάνησαν ἐνώπιον αὐτῶν ὡσεὶ λῆρος τὰ ῥήματα ⸀ταῦτα, καὶ ἠπίστουν αὐταῖς.
 translation:
-  text: And these words seemed like nonsense[a] to them, and they did not believe the women.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'like an idle tale' or 'like delirious talk.' The Greek λῆρος refers to speech regarded as senseless or absurd.
-    reason: lexical_alternative
+  text: And these words seemed like nonsense to them, and they did not believe the women.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐφάνησαν
   chosen: seemed
@@ -77,13 +73,12 @@ revisions:
   from: And these words seemed like nonsense to them, and they did not believe the women.
   to: And these words seemed like nonsense to them, and they did not believe them.
   rationale: Replaced 'the women' with 'them' to match the Greek pronoun αὐταῖς more directly and preserve the verse's wording without interpretive expansion.
-
 - timestamp: '2026-05-18T03:10:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And these words seemed like nonsense to them[a], and they did not believe them.'
-  to: 'And these words seemed like nonsense to them, and they did not believe the women.'
+  from: And these words seemed like nonsense to them[a], and they did not believe them.
+  to: And these words seemed like nonsense to them, and they did not believe the women.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the women''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -93,6 +88,13 @@ revisions:
   from: And these words seemed like nonsense to them, and they did not believe the women.
   to: And these words seemed like nonsense[a] to them, and they did not believe the women.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('like nonsense') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:13:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And these words seemed like nonsense[a] to them, and they did not believe the women.
+  to: And these words seemed like nonsense to them, and they did not believe the women.
+  rationale: The review replaced “the women” with “them” for formal correspondence, and an automated revert restored it; neither is a maintainer ruling. “The women” clearly identifies the Greek feminine pronoun’s referent, and “nonsense” needs no synonym note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -114,3 +116,17 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/024/011.job-56059.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:13:19Z'
+  change_level: kept
+  confidence: high
+  meaning: The apostles regarded the women’s words as nonsense and did not believe them.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The review replaced “the women” with “them” for formal correspondence, and an automated revert restored it; neither is a maintainer ruling. “The women” clearly identifies the Greek feminine pronoun’s referent, and “nonsense” needs no synonym note.

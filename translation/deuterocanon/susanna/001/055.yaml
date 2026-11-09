@@ -10,14 +10,11 @@ source:
   validation: normalized_direct_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Susanna extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: Then Daniel said[a], “You have lied rightly against your own head; for already an angel of God, having received a sentence from God[b], will split you in two.”
-  philosophy: optimal-equivalence
+  text: Then Daniel said, “You have told a fine lie—one that brings judgment on your own head! For an angel of God has already received a sentence from God and will split you in two[a].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Or “You have lied well/rightly against your own head.” The wording is likely ironic: the false testimony has brought judgment back on the speaker himself.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or “having received a decision/order from God.” The Greek term can denote a spoken declaration or judicial pronouncement; here the judicial sense fits the context.
+    text: In Greek, “mastic tree” (schinos, verse 54) echoes “will split” (schisei).
     reason: lexical_alternative
 lexical_decisions:
 - source_word: Ὀρθῶς
@@ -111,14 +108,20 @@ revisions:
   from: Then Daniel said, “You have lied correctly against your own head; for already an angel of God, having received a sentence from God, will split you in two.”
   to: Then Daniel said, “You have lied correctly against your own head; for already an angel of God, having received a sentence from God, will split you in two.”
   rationale: Changed 'correctly' to 'rightly' for a more natural and formal rendering of Ὀρθῶς while preserving the ironic force. Kept the rest substantially the same, including 'against your own head' and 'having received a sentence from God,' which accurately reflect the Greek.
-
 - timestamp: '2026-05-18T02:58:55Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Daniel said[a], “You have lied rightly against your own head; for already an angel of God, having received a sentence from God[b], will split you in two.”'
-  to: 'Then Daniel said[a], “You have lied rightly against your own head; for already an angel of God, having received a sentence from God[b], will split you in two.”'
+  from: Then Daniel said[a], “You have lied rightly against your own head; for already an angel of God, having received a sentence from God[b], will split you in two.”
+  to: Then Daniel said[a], “You have lied rightly against your own head; for already an angel of God, having received a sentence from God[b], will split you in two.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''correctly''].'
+- timestamp: '2026-11-09T19:10:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Daniel said[a], “You have lied rightly against your own head; for already an angel of God, having received a sentence from God[b], will split you in two.”
+  to: Then Daniel said, “You have told a fine lie—one that brings judgment on your own head! For an angel of God has already received a sentence from God and will split you in two[a].”
+  rationale: The history's shift between “correctly” and “rightly” never fully communicates the irony to an English reader, although the recorded rationale identifies it correctly. I retain the concrete angelic agency and judicial sentence, and add the previously unrepresented tree-and-punishment wordplay.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -138,3 +141,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/susanna/001/055.job-52472.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:49Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Daniel declares that the first elder's lie has brought judgment upon himself and that God's angel will execute the divine sentence.
+  meaning_decisions:
+  - source_phrase: Ὀρθῶς ἔψευσαι εἰς τὴν σεαυτοῦ κεφαλήν
+    prior_rendering: You have lied rightly against your own head
+    new_rendering: You have told a fine lie—one that brings judgment on your own head
+    rationale: 'The apparent praise is ironic: the lie condemns its speaker. The new wording conveys the irony and explains the consequence while retaining the image of judgment returning upon his own head.'
+  - source_phrase: ἤδη γὰρ ἄγγελος τοῦ θεοῦ λαβὼν φάσιν παρὰ τοῦ θεοῦ
+    prior_rendering: for already an angel of God, having received a sentence from God
+    new_rendering: For an angel of God has already received a sentence from God
+    rationale: A finite English clause makes clear that the divine sentence has already been received, while its execution remains impending.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The history's shift between “correctly” and “rightly” never fully communicates the irony to an English reader, although the recorded rationale identifies it correctly. I retain the concrete angelic agency and judicial sentence, and add the previously unrepresented tree-and-punishment wordplay.

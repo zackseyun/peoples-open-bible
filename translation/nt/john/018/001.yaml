@@ -4,11 +4,11 @@ source:
   edition: SBLGNT
   text: Ταῦτα ⸀εἰπὼν Ἰησοῦς ἐξῆλθεν σὺν τοῖς μαθηταῖς αὐτοῦ πέραν τοῦ χειμάρρου ⸀τοῦ Κεδρὼν ὅπου ἦν κῆπος, εἰς ὃν εἰσῆλθεν αὐτὸς καὶ οἱ μαθηταὶ αὐτοῦ.
 translation:
-  text: After saying these things[a], Jesus went out with his disciples across the Kidron Valley, where there was a garden, into which he and his disciples entered.
-  philosophy: optimal-equivalence
+  text: After saying these things, Jesus went out with his disciples and crossed the Kidron Valley[a]. He and his disciples entered a garden there.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'across the Kidron ravine' or 'beyond the brook Kidron.' The Greek term refers to a seasonal watercourse.
+    text: Literally, “the Kidron stream,” a seasonal watercourse in the valley.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: Ταῦτα εἰπὼν
@@ -83,14 +83,20 @@ revisions:
   from: After saying these things, Jesus went out with his disciples across the Kidron brook, where there was a garden, into which he and his disciples entered.
   to: After saying these things, Jesus went out with his disciples across the Kidron brook, where there was a garden, into which he and his disciples entered.
   rationale: Changed 'brook' to 'Valley' to better reflect the likely sense of χειμάρρου τοῦ Κεδρών as the Kidron ravine/valley in natural formal English; otherwise retained the draft.
-
 - timestamp: '2026-05-18T03:00:47Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'After saying these things[a], Jesus went out with his disciples across the Kidron Valley, where there was a garden, into which he and his disciples entered.'
-  to: 'After saying these things[a], Jesus went out with his disciples across the Kidron Valley, where there was a garden, into which he and his disciples entered.'
+  from: After saying these things[a], Jesus went out with his disciples across the Kidron Valley, where there was a garden, into which he and his disciples entered.
+  to: After saying these things[a], Jesus went out with his disciples across the Kidron Valley, where there was a garden, into which he and his disciples entered.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''across the Kidron brook''].'
+- timestamp: '2026-11-09T17:10:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: After saying these things[a], Jesus went out with his disciples across the Kidron Valley, where there was a garden, into which he and his disciples entered.
+  to: After saying these things, Jesus went out with his disciples and crossed the Kidron Valley[a]. He and his disciples entered a garden there.
+  rationale: The record alternates between “brook” and “Valley” without a maintainer ruling; I retain the current “Kidron Valley” and explain the seasonal stream in a correctly placed note. The sentence structure changes, but the movement and destination remain the same.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -110,3 +116,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/high_scrutiny/nt/john/018/001.job-7503.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:10:53Z'
+  change_level: refined
+  confidence: high
+  meaning: After finishing his words, Jesus went with his disciples across the Kidron and entered a garden with them.
+  meaning_decisions:
+  - source_phrase: ἐξῆλθεν σὺν τοῖς μαθηταῖς αὐτοῦ πέραν τοῦ χειμάρρου τοῦ Κεδρὼν … εἰς ὃν εἰσῆλθεν αὐτὸς καὶ οἱ μαθηταὶ αὐτοῦ
+    prior_rendering: went out with his disciples across the Kidron Valley, where there was a garden, into which he and his disciples entered
+    new_rendering: went out with his disciples and crossed the Kidron Valley. He and his disciples entered a garden there
+    rationale: Two direct English sentences convey the departure, crossing, and entry without the cumbersome chain of relative clauses.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The record alternates between “brook” and “Valley” without a maintainer ruling; I retain the current “Kidron Valley” and explain the seasonal stream in a correctly placed note. The sentence structure changes, but the movement and destination remain the same.

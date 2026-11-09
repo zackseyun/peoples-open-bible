@@ -23,12 +23,12 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: Who will set whips over my thoughts[a], and the discipline of wisdom over my heart, so that they may not spare me for my ignorances, and may not overlook their sins?
-  philosophy: optimal-equivalence
+  text: Who will set whips over my thoughts and wisdom's discipline over my heart, so that they will not spare me for my unwitting faults or ever overlook my sins[a],
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek: ''their sins.'' The wording is difficult in context after ''my ignorances''; some would understand the sense as ''my sins'' or otherwise smooth the pronoun.'
-    reason: alternative_reading
+    text: Literally, “their sins,” apparently referring to the sins of the thoughts and heart just mentioned.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: τίς
   chosen: Who will
@@ -156,14 +156,20 @@ revisions:
   from: Who will set whips over my thoughts, and the discipline of wisdom over my heart, so that they may not spare me for my ignorances, and may not pass over their sins?
   to: Who will set whips over my thoughts, and the discipline of wisdom over my heart, so that they may not spare me for my ignorances, and may not pass over their sins?
   rationale: Changed 'pass over' to 'overlook' for more natural formal English while preserving the sense of παρῇ. Retained 'their sins' as in the Greek.
-
 - timestamp: '2026-05-18T02:58:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Who will set whips over my thoughts[a], and the discipline of wisdom over my heart, so that they may not spare me for my ignorances, and may not overlook their sins?'
-  to: 'Who will set whips over my thoughts[a], and the discipline of wisdom over my heart, so that they may not spare me for my ignorances, and may not overlook their sins?'
+  from: Who will set whips over my thoughts[a], and the discipline of wisdom over my heart, so that they may not spare me for my ignorances, and may not overlook their sins?
+  to: Who will set whips over my thoughts[a], and the discipline of wisdom over my heart, so that they may not spare me for my ignorances, and may not overlook their sins?
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''may not pass over''].'
+- timestamp: '2026-11-09T19:07:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Who will set whips over my thoughts[a], and the discipline of wisdom over my heart, so that they may not spare me for my ignorances, and may not overlook their sins?
+  to: Who will set whips over my thoughts and wisdom's discipline over my heart, so that they will not spare me for my unwitting faults or ever overlook my sins[a],
+  rationale: The earlier deliberation rightly preserves the severe images of whips and discipline and recognizes the difficulty of “their sins.” I retain those images, but the earlier preference for source-transparent “ignorances” and an unexplained pronoun yields to clearer contextual English, with the pronoun documented in a note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -183,3 +189,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/023/002.job-51585.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:02Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The speaker longs for rigorous discipline of his thoughts and heart that will correct his unwitting faults and leave no sin unchecked.
+  meaning_decisions:
+  - source_phrase: ἐπὶ τοῖς ἀγνοήμασίν μου
+    prior_rendering: for my ignorances
+    new_rendering: for my unwitting faults
+    rationale: The term concerns faults arising from ignorance, not multiple kinds of intellectual ignorance; the new wording preserves its distinction from sins generally.
+  - source_phrase: τὰ ἁμαρτήματά αὐτῶν
+    prior_rendering: their sins
+    new_rendering: my sins
+    rationale: In this first-person prayer, the sins belong to the speaker's inner life; the unexplained English pronoun obscures that sense, while a footnote preserves the difficult source wording.
+  - source_phrase: οὐ μὴ παρῇ
+    prior_rendering: may not overlook
+    new_rendering: or ever overlook
+    rationale: The negative scope of the preceding clause carries through, and “ever” conveys the emphatic refusal to let sins pass unchecked.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier deliberation rightly preserves the severe images of whips and discipline and recognizes the difficulty of “their sins.” I retain those images, but the earlier preference for source-transparent “ignorances” and an unexplained pronoun yields to clearer contextual English, with the pronoun documented in a note.

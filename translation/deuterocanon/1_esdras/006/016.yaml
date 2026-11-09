@@ -27,15 +27,8 @@ source:
     note: MT parallel is APPROXIMATE -- 1 Esdras sometimes expands, conflates, or reorders the Hebrew. Use the MT hebrew as a sanity check on proper names and phrasing; the Greek remains the primary source text.
     reference: ''
 translation:
-  text: In the first year of Cyrus reigning over the land of Babylonia, King Cyrus wrote[a] that this house[b] should be built,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'King Cyrus issued a decree that this house be built.' The Greek literally says 'wrote ... to build this house,' which in context refers to a royal written order.
-    reason: lexical_alternative
-  - marker: b
-    text: '''This house'' refers to the temple in Jerusalem.'
-    reason: cross_reference
+  text: But in the first year of his reign over Babylonia, King Cyrus issued a written order that this temple be rebuilt.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐν δὲ τῷ πρώτῳ ἔτει
   chosen: In the first year
@@ -44,7 +37,7 @@ lexical_decisions:
   - In the first year
   - Now in the first year
   lexicon: LSJ
-  rationale: "ἐν with the dative marks time ('in'), while δέ is lightly connective. 'Now' preserves the discourse transition without overstating contrast. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'ἐν with the dative marks time (''in''), while δέ is lightly connective. ''Now'' preserves the discourse transition without overstating contrast. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: βασιλεύοντος Κύρου
   chosen: of Cyrus reigning
   alternatives:
@@ -132,13 +125,12 @@ revisions:
   from: Now in the first year of Cyrus reigning over the land of Babylonia, King Cyrus wrote that this house should be built,
   to: Now in the first year of Cyrus reigning over the land of Babylonia, King Cyrus wrote to build this house,
   rationale: Replaced 'wrote that this house should be built' with 'wrote to build this house' for a closer rendering of the infinitive οἰκοδομῆσαι without adding 'should be.'
-
 - timestamp: '2026-05-18T03:09:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now in the first year of Cyrus reigning over the land of Babylonia[a], King Cyrus wrote to build this house[b],'
-  to: 'Now in the first year of Cyrus reigning over the land of Babylonia, King Cyrus wrote that this house should be built,'
+  from: Now in the first year of Cyrus reigning over the land of Babylonia[a], King Cyrus wrote to build this house[b],
+  to: Now in the first year of Cyrus reigning over the land of Babylonia, King Cyrus wrote that this house should be built,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that this house should be built''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -155,6 +147,13 @@ revisions:
   from: In the first year of Cyrus reigning over the land of Babylonia, King Cyrus wrote that this house should be built,
   to: In the first year of Cyrus reigning over the land of Babylonia, King Cyrus wrote[a] that this house[b] should be built,
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('wrote') because the note names that rendering; [b] anchored to ('This house') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:50:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: In the first year of Cyrus reigning over the land of Babylonia, King Cyrus wrote[a] that this house[b] should be built,
+  to: But in the first year of his reign over Babylonia, King Cyrus issued a written order that this temple be rebuilt.
+  rationale: The history correctly preferred a content clause over the unnatural “wrote to build,” and I preserve that gain. I go beyond the earlier reluctance to name the directive or reconstruction because both are established by the immediate context, while respecting the cleanup that removed a merely formulaic opening “Now.”
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -174,3 +173,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/006/016.job-47772.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:50:23Z'
+  change_level: retranslated
+  confidence: high
+  meaning: In his first year ruling Babylonia, King Cyrus gave written authorization to rebuild the temple.
+  meaning_decisions:
+  - source_phrase: ἐν … τῷ πρώτῳ ἔτει βασιλεύοντος Κύρου χώρας Βαβυλωνίας
+    prior_rendering: In the first year of Cyrus reigning over the land of Babylonia
+    new_rendering: in the first year of his reign over Babylonia
+    rationale: The natural English construction preserves the important qualification that this was Cyrus’s first year ruling Babylonia.
+  - source_phrase: ἔγραψεν βασιλεὺς Κῦρος
+    prior_rendering: King Cyrus wrote
+    new_rendering: King Cyrus issued a written order
+    rationale: In this administrative context the writing is a royal directive, not merely a statement about the temple.
+  - source_phrase: οἰκοδομῆσαι τὸν οἶκον τοῦτον
+    prior_rendering: that this house should be built
+    new_rendering: that this temple be rebuilt
+    rationale: The preceding destruction establishes that the authorized building is reconstruction of the temple.
+  footnote_kinds: {}
+  history_weighed: The history correctly preferred a content clause over the unnatural “wrote to build,” and I preserve that gain. I go beyond the earlier reluctance to name the directive or reconstruction because both are established by the immediate context, while respecting the cleanup that removed a merely formulaic opening “Now.”

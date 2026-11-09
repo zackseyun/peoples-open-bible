@@ -4,17 +4,11 @@ source:
   edition: WLC
   text: וְ/הִשְׁקֵיתִ֨י אֶ֧רֶץ צָפָתְ/ךָ֛ מִ/דָּמְ/ךָ֖ אֶל הֶֽ/הָרִ֑ים וַ/אֲפִקִ֖ים יִמָּלְא֥וּ/ן מִמֶּֽ/ךָּ־׃
 translation:
-  text: I will drench the land with your flowing blood up to the mountains[c][b][a], and the ravines will be filled with you.
-  philosophy: optimal-equivalence
+  text: I will make the land drink your flowing blood[a], all the way to the mountains, and the watercourses will be filled with you.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'I will water the land of your outpouring with your blood.' The Hebrew expression is difficult; the translation 'your flowing blood' brings out the likely sense in context.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'channels' or 'riverbeds' for 'ravines.'
-    reason: lexical_alternative
-  - marker: c
-    text: Literally 'the ravines will be filled from you,' likely meaning with your blood or remains.
+    text: The Hebrew word translated 'flowing' occurs only here; it probably means what pours out of the body.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וְהִשְׁקֵיתִי
@@ -98,14 +92,20 @@ revisions:
   from: I will drench the land with your flowing blood up to the mountains, and the ravines will be filled with you.
   to: I will drench the land with your blood up to the mountains, and the ravines will be filled with you.
   rationale: Removed 'flowing' because it is not clearly represented in the source; retained the rest as accurate and natural.
-
 - timestamp: '2026-05-16T02:38:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'I will drench the land with your blood up to the mountains[c][b][a], and the ravines will be filled with you.'
-  to: 'I will drench the land with your flowing blood up to the mountains[c][b][a], and the ravines will be filled with you.'
-  rationale: 'Azure stripped ''flowing'' from drafter''s chosen ''your flowing blood'' — drafter''s interpretive gloss for the difficult noun צָפָתְךָ (what gushes from the slain body). Asserted absence of source basis without engaging.'
+  from: I will drench the land with your blood up to the mountains[c][b][a], and the ravines will be filled with you.
+  to: I will drench the land with your flowing blood up to the mountains[c][b][a], and the ravines will be filled with you.
+  rationale: Azure stripped 'flowing' from drafter's chosen 'your flowing blood' — drafter's interpretive gloss for the difficult noun צָפָתְךָ (what gushes from the slain body). Asserted absence of source basis without engaging.
+- timestamp: '2026-11-09T22:10:11Z'
+  adjudicator: claude-opus-5.5-meaning-pass
+  reviewer_model: claude-opus-5-5
+  category: meaning_retranslation
+  from: I will drench the land with your flowing blood up to the mountains[c][b][a], and the ravines will be filled with you.
+  to: I will make the land drink your flowing blood[a], all the way to the mountains, and the watercourses will be filled with you.
+  rationale: The 2026-04-23 pass removed 'flowing', and the 2026-05-16 revert restored it as the drafter's gloss for the rare צָפָתְךָ; I keep 'flowing blood' and replace three stacked notes with one on the difficult word.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -125,3 +125,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/032/006.job-64097.json
+meaning_pass:
+  run: full-v4-opus
+  model: claude-opus-5-5
+  deployment: claude-code-subscription
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: null
+  timestamp: '2026-11-09T22:10:11Z'
+  change_level: refined
+  confidence: medium
+  meaning: Pharaoh's blood will soak the land as far as the mountains, and the watercourses will be filled with his remains instead of water.
+  meaning_decisions:
+  - source_phrase: וְהִשְׁקֵיתִי אֶרֶץ
+    prior_rendering: I will drench the land
+    new_rendering: I will make the land drink
+    rationale: הִשְׁקָה is to give drink or irrigate; the land of the Nile, once watered by the river, will be watered with Pharaoh's blood. 'Make the land drink' keeps that grim irony.
+  - source_phrase: וַאֲפִקִים
+    prior_rendering: the ravines
+    new_rendering: the watercourses
+    rationale: אֲפִיקִים are stream channels; filled with him instead of water, they continue the image of the river monster, which 'ravines' loses.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The 2026-04-23 pass removed 'flowing', and the 2026-05-16 revert restored it as the drafter's gloss for the rare צָפָתְךָ; I keep 'flowing blood' and replace three stacked notes with one on the difficult word.

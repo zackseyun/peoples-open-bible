@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: Ἀγαγόντες δὲ αὐτοὺς ἔστησαν ἐν τῷ συνεδρίῳ. καὶ ἐπηρώτησεν αὐτοὺς ὁ ἀρχιερεὺς
 translation:
-  text: After bringing them in[a], they stood them before the council, and the high priest questioned them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the Sanhedrin.' The Greek term συνέδριον refers to the Jewish ruling council.
-    reason: alternative_reading
+  text: After bringing the apostles in, they had them stand before the council, and the high priest questioned them,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἀγαγόντες
   chosen: After bringing them in
@@ -82,13 +78,12 @@ revisions:
   from: After bringing them in, they stood them before the council, and the high priest questioned them.
   to: After bringing them in, they set them before the council, and the high priest questioned them.
   rationale: Changed 'stood them' to 'set them' for natural English while preserving the meaning of placing them before the council.
-
 - timestamp: '2026-05-18T03:10:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'After bringing them in[a], they set them before the council, and the high priest questioned them.'
-  to: 'After bringing them in, they stood them before the council, and the high priest questioned them.'
+  from: After bringing them in[a], they set them before the council, and the high priest questioned them.
+  to: After bringing them in, they stood them before the council, and the high priest questioned them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they stood them before''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -98,6 +93,13 @@ revisions:
   from: After bringing them in, they stood them before the council, and the high priest questioned them.
   to: After bringing them in[a], they stood them before the council, and the high priest questioned them.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:05:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: After bringing them in[a], they stood them before the council, and the high priest questioned them.
+  to: After bringing the apostles in, they had them stand before the council, and the high priest questioned them,
+  rationale: The automated review changed 'stood them' to 'set them,' and the later revert restored the original; neither is a maintainer ruling. 'Had them stand' retains the original’s concrete courtroom detail while achieving the review’s intended improvement in English.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -117,3 +119,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/005/027.job-47075.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:30Z'
+  change_level: refined
+  confidence: high
+  meaning: The officers presented the apostles standing before the council, where the high priest questioned them.
+  meaning_decisions:
+  - source_phrase: ἔστησαν ἐν τῷ συνεδρίῳ
+    prior_rendering: they stood them before the council
+    new_rendering: they had them stand before the council
+    rationale: This retains the concrete standing posture and the officers’ causative action while using natural English.
+  footnote_kinds: {}
+  history_weighed: The automated review changed 'stood them' to 'set them,' and the later revert restored the original; neither is a maintainer ruling. 'Had them stand' retains the original’s concrete courtroom detail while achieving the review’s intended improvement in English.

@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וַ/יֹּ֤אמֶר יְהוָה֙ אֶל מֹשֶׁ֔ה אֱמֹ֥ר אֶל הַ/כֹּהֲנִ֖ים בְּנֵ֣י אַהֲרֹ֑ן וְ/אָמַרְתָּ֣ אֲלֵ/הֶ֔ם לְ/נֶ֥פֶשׁ לֹֽא יִטַּמָּ֖א בְּ/עַמָּֽי/ו־־־׃
 translation:
-  text: 'And Yahweh said to Moses[a], “Speak to the priests, the sons of Aaron[b], and say to them: None shall make himself unclean for a dead person among his people,”'
-  philosophy: optimal-equivalence
+  text: 'Yahweh said to Moses, “Speak to the priests, the sons of Aaron, and tell them: No priest shall make himself ritually unclean for a dead person[a] among his people,'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew 'for a dead person'; literally 'for a נפשׁ (nephesh)' in this purity-law context, an idiom for a corpse or dead person.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'shall not become unclean' or 'shall not defile himself.' The Hebrew refers to ritual impurity from contact with the dead.
-    reason: lexical_alternative
+    text: Contact with a human corpse, including entering a tent where one lay, brought ritual uncleanness (Numbers 19:11–14).
+    reason: cultural_note
 lexical_decisions:
 - source_word: יְהוָה
   chosen: Yahweh
@@ -86,7 +83,6 @@ revisions:
   from: 'And the LORD said to Moses, “Speak to the priests, the sons of Aaron, and say to them: A priest shall not make himself unclean for a dead person among his people,”'
   to: 'And the LORD said to Moses, “Speak to the priests, the sons of Aaron, and say to them: A priest shall not make himself unclean for a dead person among his people,”'
   rationale: Replaced “A priest shall not” with “None shall” to reflect the plural address to the priests more accurately while preserving the formal tone and meaning.
-
 - timestamp: '2026-05-18T02:58:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -94,6 +90,13 @@ revisions:
   from: 'And Yahweh said to Moses[a], “Speak to the priests, the sons of Aaron[b], and say to them: None shall make himself unclean for a dead person among his people,”'
   to: 'And Yahweh said to Moses[a], “Speak to the priests, the sons of Aaron[b], and say to them: None shall make himself unclean for a dead person among his people,”'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''shall not make himself unclean''].'
+- timestamp: '2026-11-09T18:20:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And Yahweh said to Moses[a], “Speak to the priests, the sons of Aaron[b], and say to them: None shall make himself unclean for a dead person among his people,”'
+  to: 'Yahweh said to Moses, “Speak to the priests, the sons of Aaron, and tell them: No priest shall make himself ritually unclean for a dead person[a] among his people,'
+  rationale: The history consistently identifies corpse impurity rather than moral defilement as the subject. The automated disagreement over 'A priest' and 'None' adds little interpretive weight; 'No priest' states the intended subject clearly.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -113,3 +116,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/weighted_vocab/ot/leviticus/021/001.job-15832.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:20:46Z'
+  change_level: refined
+  confidence: high
+  meaning: Yahweh instructs Moses to tell Aaron’s priestly sons that they must not incur ritual uncleanness on account of a death among their people.
+  meaning_decisions:
+  - source_phrase: לְנֶפֶשׁ לֹא יִטַּמָּא
+    prior_rendering: None shall make himself unclean for a dead person
+    new_rendering: No priest shall make himself ritually unclean for a dead person
+    rationale: Naming the implied subject makes the prohibition clear, while 'ritually' distinguishes corpse impurity from moral corruption.
+  - source_phrase: אֱמֹר ... וְאָמַרְתָּ
+    prior_rendering: Speak ... and say
+    new_rendering: Speak ... and tell them
+    rationale: This preserves both stages of the instruction in natural English.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The history consistently identifies corpse impurity rather than moral defilement as the subject. The automated disagreement over 'A priest' and 'None' adds little interpretive weight; 'No priest' states the intended subject clearly.

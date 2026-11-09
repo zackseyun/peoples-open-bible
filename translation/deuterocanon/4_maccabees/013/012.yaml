@@ -16,12 +16,12 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: But he kept saying[a], “Remember from whom you come, and by what father's hand you are to be slaughtered.”
-  philosophy: optimal-equivalence
+  text: Another said, “Remember your ancestry, and the father at whose hand the sacrifice was to be offered[a]—
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'Remember where you are from.' The Greek expression can denote place of origin, but here likely points to family lineage.
-    reason: lexical_alternative
+    text: The appeal to Abraham and Isaac continues in verse 13; see Genesis 22:1–19, where the sacrifice is prepared but not carried out.
+    reason: cross_reference
 lexical_decisions:
 - source_word: ὁ δὲ ἔλεγεν
   chosen: But he kept saying
@@ -109,14 +109,20 @@ revisions:
   from: But he kept saying, “Remember from whom you come, and by what father's hand you are to be slaughtered.”
   to: But he kept saying, “Remember from where you are, and by whose father's hand you are to be slaughtered.”
   rationale: Revised 'from whom you come' to 'from where you are' to reflect πόθεν more directly, and changed 'what father's hand' to 'whose father's hand' to match τίνος idiomatically and accurately.
-
 - timestamp: '2026-05-16T18:37:47Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But he kept saying[a], “Remember from where you are, and by whose father''s hand you are to be slaughtered.”'
-  to: 'But he kept saying[a], “Remember from whom you come, and by what father''s hand you are to be slaughtered.”'
-  rationale: 'Restored drafter ''Remember from whom you come'' (preserving the chosen relational origin idiom) and "what father''s hand" (preserving the chosen interrogative form) per chosen renderings.'
+  from: But he kept saying[a], “Remember from where you are, and by whose father's hand you are to be slaughtered.”
+  to: But he kept saying[a], “Remember from whom you come, and by what father's hand you are to be slaughtered.”
+  rationale: Restored drafter 'Remember from whom you come' (preserving the chosen relational origin idiom) and "what father's hand" (preserving the chosen interrogative form) per chosen renderings.
+- timestamp: '2026-11-09T18:58:59Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But he kept saying[a], “Remember from whom you come, and by what father's hand you are to be slaughtered.”
+  to: Another said, “Remember your ancestry, and the father at whose hand the sacrifice was to be offered[a]—
+  rationale: The history’s preference for familial origin is sound, but its treatment of this verse in isolation incorrectly made the brothers the objects of their father’s slaughter. Reading the sentence through verse 13 restores the Abraham-and-Isaac allusion without moving Isaac’s name into verse 12.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -136,3 +142,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/013/012.job-50057.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:58:59Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Another brother appeals to their ancestry and recalls the father involved in Isaac’s impending sacrifice, continuing his thought into verse 13.
+  meaning_decisions:
+  - source_phrase: ὁ δὲ ἔλεγεν
+    prior_rendering: But he kept saying
+    new_rendering: Another said
+    rationale: This continues the sequence of different brothers speaking in verse 11, rather than introducing an adversative statement by an unidentified “he.”
+  - source_phrase: πόθεν ἐστέ
+    prior_rendering: from whom you come
+    new_rendering: your ancestry
+    rationale: The appeal concerns their ancestral identity, as the following reference to Abraham and Isaac confirms.
+  - source_phrase: τίνος πατρὸς χειρὶ σφαγιασθῆναι
+    prior_rendering: by what father's hand you are to be slaughtered
+    new_rendering: the father at whose hand the sacrifice was to be offered
+    rationale: The infinitive belongs to the recollection of Isaac completed in verse 13, not to a claim that the brothers will be killed by their own father; sacrificial wording also preserves the force of σφαγιασθῆναι.
+  footnote_kinds:
+    a: cross_reference
+  history_weighed: The history’s preference for familial origin is sound, but its treatment of this verse in isolation incorrectly made the brothers the objects of their father’s slaughter. Reading the sentence through verse 13 restores the Abraham-and-Isaac allusion without moving Isaac’s name into verse 12.

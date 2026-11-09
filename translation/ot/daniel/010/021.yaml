@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: אֲבָל֙ אַגִּ֣יד לְ/ךָ֔ אֶת הָ/רָשׁ֥וּם בִּ/כְתָ֖ב אֱמֶ֑ת וְ/אֵ֨ין אֶחָ֜ד מִתְחַזֵּ֤ק עִמִּ/י֙ עַל אֵ֔לֶּה כִּ֥י אִם מִיכָאֵ֖ל שַׂרְ/כֶֽם־־־׃פ
 translation:
-  text: But I will tell you what is recorded in the writing of truth[a]. And there is no one who stands firmly with me against these except Michael[b], your prince.
-  philosophy: optimal-equivalence
+  text: But I will tell you what is recorded in the book of truth. No one stands firm with me against these princes[a] except Michael, the prince of your people.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'what is written in the writing of truth.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'who supports me in these matters.' The Hebrew expression may denote standing strong alongside someone, and 'these' may refer either to hostile powers or to the matters under discussion.
+    text: Or “supports me in these matters,” taking “these” to refer to the matters being revealed rather than the opposing princes.
     reason: alternative_reading
 lexical_decisions:
 - source_word: אֲבָל
@@ -111,14 +108,20 @@ revisions:
   from: But I will tell you what is recorded in the book of truth. And there is no one who stands firmly with me against these except Michael, your prince.
   to: But I will tell you what is recorded in the book of truth. And there is no one who stands firmly with me against these except Michael, your prince.
   rationale: Changed 'book of truth' to 'writing of truth' to more closely reflect the singular 'writing/document' in the source while preserving formal register. Kept the rest unchanged as accurate and natural.
-
 - timestamp: '2026-05-18T02:55:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But I will tell you what is recorded in the writing of truth[a]. And there is no one who stands firmly with me against these except Michael[b], your prince.'
-  to: 'But I will tell you what is recorded in the writing of truth[a]. And there is no one who stands firmly with me against these except Michael[b], your prince.'
+  from: But I will tell you what is recorded in the writing of truth[a]. And there is no one who stands firmly with me against these except Michael[b], your prince.
+  to: But I will tell you what is recorded in the writing of truth[a]. And there is no one who stands firmly with me against these except Michael[b], your prince.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the book of truth''].'
+- timestamp: '2026-11-09T17:30:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But I will tell you what is recorded in the writing of truth[a]. And there is no one who stands firmly with me against these except Michael[b], your prince.
+  to: But I will tell you what is recorded in the book of truth. No one stands firm with me against these princes[a] except Michael, the prince of your people.
+  rationale: The first draft's “book of truth” better conveys the written record than the later automated “writing of truth,” so I restore it. I preserve the earlier adversarial reading of “against these” while clarifying the national scope of the plural “your.”
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -140,3 +143,30 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/daniel/010/021.job-61255.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:30:16Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The messenger will disclose the book of truth's contents, and only Michael, the prince of Daniel's people, stands with him against the opposing princes.
+  meaning_decisions:
+  - source_phrase: בִּכְתָב אֱמֶת
+    prior_rendering: in the writing of truth
+    new_rendering: in the book of truth
+    rationale: The phrase names a written record, not the activity or style of writing; “book” preserves that image intelligibly in English.
+  - source_phrase: וְאֵין אֶחָד מִתְחַזֵּק עִמִּי עַל אֵלֶּה
+    prior_rendering: And there is no one who stands firmly with me against these
+    new_rendering: No one stands firm with me against these princes
+    rationale: The immediate context identifies the opposing princes as the most likely referent, while the footnote preserves the serious alternative.
+  - source_phrase: שַׂרְכֶם
+    prior_rendering: your prince
+    new_rendering: the prince of your people
+    rationale: The Hebrew “your” is plural and identifies Michael with Daniel's people, rather than presenting him as Daniel's personal prince.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft's “book of truth” better conveys the written record than the later automated “writing of truth,” so I restore it. I preserve the earlier adversarial reading of “against these” while clarifying the national scope of the plural “your.”

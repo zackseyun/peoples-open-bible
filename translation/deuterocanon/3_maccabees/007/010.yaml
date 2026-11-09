@@ -16,18 +16,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: But when they received this letter[a], they did not immediately hasten about the departure; instead, they urged the king that those from the Jewish race who had willfully transgressed the law of the holy God might, through them[c][b], receive the punishment that was due.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the return' instead of 'the departure'; the Greek term can be understood from either the perspective of leaving the present place or going back to a prior one.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'those from the race of the Jews.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'might suffer at their hands the punishment that was due.'
-    reason: lexical_alternative
+  text: When the Jews received this letter, they did not immediately hurry to leave. Instead, they petitioned the king for permission to inflict the punishment due on those of their own people who had willfully transgressed the law of the holy God.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Λαβόντες
   chosen: when they received
@@ -132,14 +122,20 @@ revisions:
   from: But when they received this letter, they did not immediately hasten about the departure; instead, they urged the king that those from the Jewish race who had willfully transgressed the law of the holy God might, through them, receive the punishment that was due.
   to: But when they received this letter, they did not immediately hasten for the departure; instead, they urged the king that those of the Jewish race who had willfully transgressed the law of the holy God might, through them, receive the punishment that was due.
   rationale: Changed 'about the departure' to 'for the departure' for more natural English, and 'from the Jewish race' to 'of the Jewish race' for smoother formal style. Kept the rest as accurate and complete.
-
 - timestamp: '2026-05-16T19:22:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But when they received this letter[a], they did not immediately hasten for the departure; instead, they urged the king that those of the Jewish race who had willfully transgressed the law of the holy God might, through them[c][b], receive the punishment that was due.'
-  to: 'But when they received this letter[a], they did not immediately hasten about the departure; instead, they urged the king that those from the Jewish race who had willfully transgressed the law of the holy God might, through them[c][b], receive the punishment that was due.'
-  rationale: 'Restored drafter ''they did not immediately hasten about the departure'' (preserving the chosen ''about'' preposition) and ''those from the Jewish race'' (preserving the chosen explicit ''from'') per chosen renderings.'
+  from: But when they received this letter[a], they did not immediately hasten for the departure; instead, they urged the king that those of the Jewish race who had willfully transgressed the law of the holy God might, through them[c][b], receive the punishment that was due.
+  to: But when they received this letter[a], they did not immediately hasten about the departure; instead, they urged the king that those from the Jewish race who had willfully transgressed the law of the holy God might, through them[c][b], receive the punishment that was due.
+  rationale: Restored drafter 'they did not immediately hasten about the departure' (preserving the chosen 'about' preposition) and 'those from the Jewish race' (preserving the chosen explicit 'from') per chosen renderings.
+- timestamp: '2026-11-09T18:57:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But when they received this letter[a], they did not immediately hasten about the departure; instead, they urged the king that those from the Jewish race who had willfully transgressed the law of the holy God might, through them[c][b], receive the punishment that was due.
+  to: When the Jews received this letter, they did not immediately hurry to leave. Instead, they petitioned the king for permission to inflict the punishment due on those of their own people who had willfully transgressed the law of the holy God.
+  rationale: The review recognized the need to improve the departure wording, but the automated revert restored its awkward preposition without clarifying meaning. I retain willful transgression and deserved punishment, and bring the earlier note's 'at their hands' into the main text as an explicit request to administer punishment.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -159,3 +155,33 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/007/010.job-49693.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:55Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Jews delay their departure to ask the king for permission to punish members of their own people who deliberately transgressed God's law.
+  meaning_decisions:
+  - source_phrase: Λαβόντες δὲ τὴν ἐπιστολὴν ταύτην
+    prior_rendering: But when they received this letter
+    new_rendering: When the Jews received this letter
+    rationale: The narrative returns from the letter to the Jews; naming them prevents readers from mistaking the officials addressed in the letter for the subject.
+  - source_phrase: οὐκ ἐσπούδασαν εὐθέως περὶ τὴν ἄφοδον
+    prior_rendering: they did not immediately hasten about the departure
+    new_rendering: they did not immediately hurry to leave
+    rationale: This directly expresses their delay in setting out without reproducing the Greek prepositional construction.
+  - source_phrase: τοὺς ἐκ τοῦ γένους τῶν Ἰουδαίων
+    prior_rendering: those from the Jewish race
+    new_rendering: those of their own people
+    rationale: The phrase identifies fellow Jews within their own people, without suggesting modern racial categories.
+  - source_phrase: τὸν βασιλέα προσηξίωσαν ... τυχεῖν διʼ αὐτῶν τῆς ὀφειλομένης κολάσεως
+    prior_rendering: they urged the king ... might, through them, receive the punishment that was due
+    new_rendering: they petitioned the king for permission to inflict the punishment due
+    rationale: The request is for the faithful Jews themselves to administer the punishment, as the king's response in verse 12 confirms.
+  footnote_kinds: {}
+  history_weighed: The review recognized the need to improve the departure wording, but the automated revert restored its awkward preposition without clarifying meaning. I retain willful transgression and deserved punishment, and bring the earlier note's 'at their hands' into the main text as an explicit request to administer punishment.

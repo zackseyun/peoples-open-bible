@@ -17,12 +17,12 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: For so great an organization[a], lacking no knowledge, must not be overlooked.
-  philosophy: optimal-equivalence
+  text: For they believed that so large a community, innocent of any wrongdoing[a], would not be disregarded in this way.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more literally, 'for such a great system/body, being ignorant of nothing, must not be overlooked.'
-    reason: lexical_alternative
+    text: Or, 'ignorant of nothing'; the Greek verb can also describe an error or offense committed in ignorance.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: μὴ ... παροραθήσεσθαι
   chosen: must not be disregarded
@@ -96,14 +96,20 @@ revisions:
   from: For so great an organization, having overlooked nothing, must not be disregarded.
   to: For so great an organization, having overlooked nothing, must not be disregarded.
   rationale: 'Revised to better reflect the Greek: changed ''must not be disregarded'' to ''must not be overlooked'' for παροραθήσεσθαι, and replaced ''having overlooked nothing'' with ''lacking no knowledge'' to more directly represent μηδὲν ἠγνοηκός.'
-
 - timestamp: '2026-05-16T19:37:32Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For so great an organization[a], lacking no knowledge, must not be overlooked.'
-  to: 'For so great an organization[a], lacking no knowledge, must not be overlooked.'
-  rationale: 'Restored drafter ''must not be disregarded'' (preserving the chosen rendering of παροραθήσεσθαι) and ''having overlooked nothing'' (preserving the chosen rendering) per chosen renderings.'
+  from: For so great an organization[a], lacking no knowledge, must not be overlooked.
+  to: For so great an organization[a], lacking no knowledge, must not be overlooked.
+  rationale: Restored drafter 'must not be disregarded' (preserving the chosen rendering of παροραθήσεσθαι) and 'having overlooked nothing' (preserving the chosen rendering) per chosen renderings.
+- timestamp: '2026-11-09T18:56:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For so great an organization[a], lacking no knowledge, must not be overlooked.
+  to: For they believed that so large a community, innocent of any wrongdoing[a], would not be disregarded in this way.
+  rationale: The history moved from 'having overlooked nothing' to 'lacking no knowledge,' but neither establishes that the referent is an administrative organization. The narrative supports the Jews as a blameless community and this clause as the Greeks' reason for expecting change.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -123,3 +129,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/003/009.job-49549.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:49Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The Greeks expected a change because they believed that such a large, blameless community would not simply be disregarded.
+  meaning_decisions:
+  - source_phrase: τηλικοῦτο σύστημα
+    prior_rendering: so great an organization
+    new_rendering: so large a community
+    rationale: In this narrative, the organized body is the Jewish community, not an administrative institution.
+  - source_phrase: μηδὲν ἠγνοηκός
+    prior_rendering: lacking no knowledge
+    new_rendering: innocent of any wrongdoing
+    rationale: The verb can refer to an error or offense. The context concerns the injustice of persecuting a loyal community, rather than its possession of comprehensive knowledge.
+  - source_phrase: μὴ γὰρ οὕτω παροραθήσεσθαι
+    prior_rendering: For … must not be overlooked
+    new_rendering: For they believed that … would not be disregarded in this way
+    rationale: The future infinitive continues the expectation expressed in verse 8. It gives the observers' reason for expecting change rather than issuing a detached command, and οὕτω describes the manner of disregard.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history moved from 'having overlooked nothing' to 'lacking no knowledge,' but neither establishes that the referent is an administrative organization. The narrative supports the Jews as a blameless community and this clause as the Greeks' reason for expecting change.

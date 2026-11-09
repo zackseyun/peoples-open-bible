@@ -4,18 +4,15 @@ source:
   edition: WLC
   text: וַ/יֹּ֣אמֶר אֶפְרַ֔יִם אַ֣ךְ עָשַׁ֔רְתִּי מָצָ֥אתִי א֖וֹן לִ֑/י כָּל יְגִיעַ֕/י לֹ֥א יִמְצְאוּ לִ֖/י עָוֺ֥ן אֲשֶׁר חֵֽטְא־־־׃
 translation:
-  text: And Ephraim said[a], “Surely I have become rich; I have found wealth for myself[c][b]. In all my labor they will not find in me iniquity that is sin.”
-  philosophy: optimal-equivalence
+  text: And Ephraim said, “Surely I have become rich; I have found wealth[a] for myself. In all I have earned, no one will find in me any iniquity that counts as sin[b].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “I have found strength for myself”; the Hebrew word can mean strength, wealth, or substance, but here likely refers to material wealth.
+    text: The Hebrew words for “wealth” and “iniquity” sound alike.
     reason: lexical_alternative
   - marker: b
-    text: Or “In all my gains they will not find any iniquity in me that would be sin.” The Hebrew of this clause is compressed and allows slightly different construals.
+    text: Or, “any iniquity or sin.” The final Hebrew phrase is compressed.
     reason: alternative_reading
-  - marker: c
-    text: Or 'iniquity that is sin'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: אַךְ
   chosen: Surely
@@ -104,9 +101,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Ephraim said[a], “Surely I have become rich; I have found wealth for myself[c][b]. In all my labor they will not find in me iniquity that is sin.”'
-  to: 'And Ephraim said[a], “Surely I have become rich; I have found wealth for myself[c][b]. In all my labor they will not find in me iniquity that is sin.”'
+  from: And Ephraim said[a], “Surely I have become rich; I have found wealth for myself[c][b]. In all my labor they will not find in me iniquity that is sin.”
+  to: And Ephraim said[a], “Surely I have become rich; I have found wealth for myself[c][b]. In all my labor they will not find in me iniquity that is sin.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''all my labors''].'
+- timestamp: '2026-11-09T17:48:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Ephraim said[a], “Surely I have become rich; I have found wealth for myself[c][b]. In all my labor they will not find in me iniquity that is sin.”
+  to: And Ephraim said, “Surely I have become rich; I have found wealth[a] for myself. In all I have earned, no one will find in me any iniquity that counts as sin[b].”
+  rationale: The earlier clarity revision correctly recognized the difficulty of “iniquity that is sin,” although its claim about a specifically punishable offense went beyond what is certain. I recover its useful qualifying sense while retaining the alternative reading as an emphatic denial of all iniquity and sin.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-17T20:36:10Z'
@@ -134,3 +138,27 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/ot/hosea/012/009.job-37930.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:48:02Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Ephraim boasts of his wealth and claims that no sinful iniquity can be found in what he has earned.
+  meaning_decisions:
+  - source_phrase: כָּל יְגִיעַי
+    prior_rendering: In all my labor
+    new_rendering: In all I have earned
+    rationale: In this boast about accumulated wealth, the noun most naturally refers to the proceeds of labor.
+  - source_phrase: לֹא יִמְצְאוּ לִי עָוֹן אֲשֶׁר חֵטְא
+    prior_rendering: they will not find in me iniquity that is sin
+    new_rendering: no one will find in me any iniquity that counts as sin
+    rationale: The unspecified plural expresses a general denial that anyone can find culpability, and “counts as sin” makes the qualifying construction intelligible without imposing a particular legal distinction.
+  footnote_kinds:
+    a: name_or_term
+    b: alternative_meaning
+  history_weighed: The earlier clarity revision correctly recognized the difficulty of “iniquity that is sin,” although its claim about a specifically punishable offense went beyond what is certain. I recover its useful qualifying sense while retaining the alternative reading as an emphatic denial of all iniquity and sin.

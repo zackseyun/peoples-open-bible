@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: וַ/יַּ֤עַשׂ לַ/מִּזְבֵּ֨חַ֙ מִכְבָּ֔ר מַעֲשֵׂ֖ה רֶ֣שֶׁת נְחֹ֑שֶׁת תַּ֧חַת כַּרְכֻּבּ֛/וֹ מִ/לְּ/מַ֖טָּה עַד חֶצְיֽ/וֹ־׃
 translation:
-  text: He made for the altar a grating[a], a network of bronze, under its ledge, beneath[c][b], up to its halfway point.
-  philosophy: optimal-equivalence
+  text: He made a bronze mesh grating for the altar beneath its ledge, reaching halfway up the altar[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'a grate, the work of a net, of bronze.'
-    reason: lexical_alternative
-  - marker: b
-    text: The Hebrew term for the altar's structural feature may also be rendered 'rim,' 'molding,' or 'surround.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'from below to its middle.'
-    reason: lexical_alternative
+    text: Or, 'extending halfway down the altar.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וַיַּעַשׂ
   chosen: He made
@@ -104,14 +98,20 @@ revisions:
   from: He made for the altar a grating, a network of bronze, under its ledge, beneath, reaching halfway up it.
   to: He made for the altar a grating, a network of bronze, under its ledge, beneath, reaching halfway up it.
   rationale: Replaced the more interpretive 'reaching halfway up it' with the more literal 'up to its halfway point' to better reflect the source while keeping natural English.
-
 - timestamp: '2026-05-18T02:56:03Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He made for the altar a grating[a], a network of bronze, under its ledge, beneath[c][b], up to its halfway point.'
-  to: 'He made for the altar a grating[a], a network of bronze, under its ledge, beneath[c][b], up to its halfway point.'
+  from: He made for the altar a grating[a], a network of bronze, under its ledge, beneath[c][b], up to its halfway point.
+  to: He made for the altar a grating[a], a network of bronze, under its ledge, beneath[c][b], up to its halfway point.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''reaching halfway up it''].'
+- timestamp: '2026-11-09T17:36:18Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He made for the altar a grating[a], a network of bronze, under its ledge, beneath[c][b], up to its halfway point.
+  to: He made a bronze mesh grating for the altar beneath its ledge, reaching halfway up the altar[a].
+  rationale: The first draft’s 'reaching halfway up it' conveys the spatial sense more clearly than the later source-shaped wording. The automated review and revert provide no maintainer ruling, so I restore that clarity while acknowledging the disputed direction in a note.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -131,3 +131,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/038/004.job-63284.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:36:18Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: A bronze mesh grating was made for the altar beneath its ledge, reaching the altar’s midpoint.
+  meaning_decisions:
+  - source_phrase: מִכְבָּר מַעֲשֵׂה רֶשֶׁת נְחֹשֶׁת
+    prior_rendering: a grating, a network of bronze
+    new_rendering: a bronze mesh grating
+    rationale: The second phrase describes the grating’s netlike construction, not another object; 'mesh grating' communicates that relationship directly.
+  - source_phrase: תַּחַת כַּרְכֻּבּוֹ מִלְּמַטָּה עַד חֶצְיוֹ
+    prior_rendering: under its ledge, beneath, up to its halfway point
+    new_rendering: beneath its ledge, reaching halfway up the altar
+    rationale: The natural spatial description identifies the altar as the reference point and removes an unexplained repetition of 'beneath'; the serious alternative concerning the direction of extension is noted.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft’s 'reaching halfway up it' conveys the spatial sense more clearly than the later source-shaped wording. The automated review and revert provide no maintainer ruling, so I restore that clarity while acknowledging the disputed direction in a note.

@@ -4,18 +4,12 @@ source:
   edition: SBLGNT
   text: διὰ πάσης προσευχῆς καὶ δεήσεως, προσευχόμενοι ἐν παντὶ καιρῷ ἐν πνεύματι, καὶ εἰς ⸀αὐτὸ ἀγρυπνοῦντες ἐν πάσῃ προσκαρτερήσει καὶ δεήσει περὶ πάντων τῶν ἁγίων,
 translation:
-  text: with every prayer and petition, praying at all times in the Spirit[a], and for this very thing staying alert with all perseverance[c] in petition for all the saints[b],
-  philosophy: optimal-equivalence
+  text: Pray in the Spirit at all times with every kind of prayer and petition. To this end, stay alert and persevere in prayer for all the saints[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'in spirit.' The Greek may be read more generally, but in context it likely refers to the Holy Spirit.
-    reason: alternative_reading
-  - marker: b
-    text: '''Saints'' here means all God''s holy people, that is, all believers.'
+    text: “Saints” means God's holy people, the whole community of believers.
     reason: lexical_alternative
-  - marker: c
-    text: Or 'with all perseverance and petition'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: διὰ πάσης προσευχῆς καὶ δεήσεως
   chosen: with every prayer and petition
@@ -119,8 +113,8 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'with every prayer and petition[a], praying at all times in the Spirit, and to this end staying alert with all perseverance and petition for all the saints[c][b],'
-  to: 'with every prayer and petition, praying at all times in the Spirit, and for this very thing staying alert with all perseverance in petition for all the saints,'
+  from: with every prayer and petition[a], praying at all times in the Spirit, and to this end staying alert with all perseverance and petition for all the saints[c][b],
+  to: with every prayer and petition, praying at all times in the Spirit, and for this very thing staying alert with all perseverance in petition for all the saints,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for this very thing''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -130,6 +124,13 @@ revisions:
   from: with every prayer and petition, praying at all times in the Spirit, and for this very thing staying alert with all perseverance in petition for all the saints,
   to: with every prayer and petition, praying at all times in the Spirit[a], and for this very thing staying alert with all perseverance[c] in petition for all the saints[b],
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('in the Spirit') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('Saints') because the note quotes that phrase from the rendering; [c] anchored to ('with all perseverance') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:07:54Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: with every prayer and petition, praying at all times in the Spirit[a], and for this very thing staying alert with all perseverance[c] in petition for all the saints[b],
+  to: Pray in the Spirit at all times with every kind of prayer and petition. To this end, stay alert and persevere in prayer for all the saints[a].
+  rationale: The reviews differed over whether perseverance and petition should be formally coordinated, but both recognized sustained prayer as the meaning. I retain that gain and the later review's clearer 'to this end'; the automated revert supplies no meaning-based reason to restore 'for this very thing.'
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:10:33Z'
@@ -156,3 +157,30 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/ephesians/006/018.job-38839.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:07:54Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Believers are to pray in the Spirit on every occasion, remaining watchful and persistent in prayer for all God's holy people.
+  meaning_decisions:
+  - source_phrase: διὰ πάσης προσευχῆς καὶ δεήσεως, προσευχόμενοι ἐν παντὶ καιρῷ ἐν πνεύματι
+    prior_rendering: with every prayer and petition, praying at all times in the Spirit
+    new_rendering: Pray in the Spirit at all times with every kind of prayer and petition
+    rationale: The direct exhortation carries the participle's force, and 'every kind' expresses the comprehensive range of prayer rather than suggesting a count of individual prayers.
+  - source_phrase: καὶ εἰς αὐτὸ ἀγρυπνοῦντες
+    prior_rendering: and for this very thing staying alert
+    new_rendering: To this end, stay alert
+    rationale: The phrase connects vigilance with the purpose of sustained prayer; 'to this end' expresses that connection naturally.
+  - source_phrase: ἐν πάσῃ προσκαρτερήσει καὶ δεήσει περὶ πάντων τῶν ἁγίων
+    prior_rendering: with all perseverance in petition for all the saints
+    new_rendering: and persevere in prayer for all the saints
+    rationale: The coordinated nouns describe persistent praying; the verbal construction conveys their combined force without an awkward abstract chain.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The reviews differed over whether perseverance and petition should be formally coordinated, but both recognized sustained prayer as the meaning. I retain that gain and the later review's clearer 'to this end'; the automated revert supplies no meaning-based reason to restore 'for this very thing.'

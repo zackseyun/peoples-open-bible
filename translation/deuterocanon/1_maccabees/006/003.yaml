@@ -26,12 +26,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And he came and sought to take the city and plunder it[a], but he was not able, because the plan became known to those from the city.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the matter became known' or 'the scheme became known.' Greek λόγος can refer broadly to a word, report, matter, or plan; here the context favors his intended action becoming known to the city's people.
-    reason: lexical_alternative
+  text: So he went there and tried to capture and plunder the city, but he could not, because its inhabitants had learned of his plan.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: καταλαβεῖν
   chosen: to take
@@ -104,14 +100,20 @@ revisions:
   from: And he came and sought to take the city and plunder it, but he was not able, because the plan became known to those from the city.
   to: And he came and sought to take the city and plunder it, but he was not able, because the matter became known to those in the city.
   rationale: Changed “plan” to “matter” for a more neutral rendering of λόγος, and “those from the city” to “those in the city” for more natural English matching the context.
-
 - timestamp: '2026-05-16T14:37:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he came and sought to take the city and plunder it[a], but he was not able, because the matter became known to those in the city.'
-  to: 'And he came and sought to take the city and plunder it[a], but he was not able, because the plan became known to those from the city.'
-  rationale: 'Restored drafter ''the plan'' (preserving the chosen rendering of λόγος as plan/scheme) and ''those from the city'' (preserving Greek partitive idiom) per chosen renderings.'
+  from: And he came and sought to take the city and plunder it[a], but he was not able, because the matter became known to those in the city.
+  to: And he came and sought to take the city and plunder it[a], but he was not able, because the plan became known to those from the city.
+  rationale: Restored drafter 'the plan' (preserving the chosen rendering of λόγος as plan/scheme) and 'those from the city' (preserving Greek partitive idiom) per chosen renderings.
+- timestamp: '2026-11-09T18:52:58Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he came and sought to take the city and plunder it[a], but he was not able, because the plan became known to those from the city.
+  to: So he went there and tried to capture and plunder the city, but he could not, because its inhabitants had learned of his plan.
+  rationale: The review’s improvement to the description of the city’s people was useful, while the lexical rationale supports retaining “plan” rather than the less informative “matter.” The later automated revert supplies no meaning-based reason to restore the awkward partitive wording.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -131,3 +133,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/006/003.job-48277.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:58Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Antiochus attempts to capture and plunder the city but fails because its inhabitants discover his plan.
+  meaning_decisions:
+  - source_phrase: ἦλθεν καὶ ἐζήτει καταλαβεῖν τὴν πόλιν καὶ προνομεῦσαι αὐτήν
+    prior_rendering: he came and sought to take the city and plunder it
+    new_rendering: he went there and tried to capture and plunder the city
+    rationale: The verbs describe an attempted military seizure, which this wording states directly.
+  - source_phrase: ἐγνώσθη ὁ λόγος τοῖς ἐκ τῆς πόλεως
+    prior_rendering: the plan became known to those from the city
+    new_rendering: its inhabitants had learned of his plan
+    rationale: The city’s own people discovered his intention; “those from the city” can misleadingly suggest people who had left it.
+  footnote_kinds: {}
+  history_weighed: The review’s improvement to the description of the city’s people was useful, while the lexical rationale supports retaining “plan” rather than the less informative “matter.” The later automated revert supplies no meaning-based reason to restore the awkward partitive wording.

@@ -8,15 +8,8 @@ source:
   - 661
   validation: no_reference
 translation:
-  text: to Azotus[a], and they entered Beth-dagon, their idol temple, to be saved[b]. And Jonathan burned Azotus and the cities around it.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Azotus is the Greek name for Ashdod.
-    reason: lexical_alternative
-  - marker: b
-    text: Or possibly, more literally, 'their idol'; the Greek likely refers to the idol sanctuary at Beth-dagon rather than only to a statue.
-    reason: lexical_alternative
+  text: Azotus, where they entered Beth-dagon, their idol temple, seeking safety. Jonathan set fire to Azotus and the cities around
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἄζωτον
   chosen: Azotus
@@ -104,14 +97,20 @@ revisions:
   from: to Azotus, and they entered into Beth-dagon, their idol temple, to be saved. And Jonathan burned Azotus and the cities around it.
   to: to Azotus, and they entered into Beth-dagon, their idol temple, to be saved. And Jonathan burned Azotus and the cities around it.
   rationale: Removed the unnecessary 'into' before 'Beth-dagon' for more natural English while preserving the sense. Retained 'idol temple' to represent τὸ εἴδωλον αὐτῶν in a natural way.
-
 - timestamp: '2026-05-18T02:58:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'to Azotus[a], and they entered Beth-dagon, their idol temple, to be saved[b]. And Jonathan burned Azotus and the cities around it.'
-  to: 'to Azotus[a], and they entered Beth-dagon, their idol temple, to be saved[b]. And Jonathan burned Azotus and the cities around it.'
+  from: to Azotus[a], and they entered Beth-dagon, their idol temple, to be saved[b]. And Jonathan burned Azotus and the cities around it.
+  to: to Azotus[a], and they entered Beth-dagon, their idol temple, to be saved[b]. And Jonathan burned Azotus and the cities around it.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they entered into''].'
+- timestamp: '2026-11-09T18:53:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: to Azotus[a], and they entered Beth-dagon, their idol temple, to be saved[b]. And Jonathan burned Azotus and the cities around it.
+  to: Azotus, where they entered Beth-dagon, their idol temple, seeking safety. Jonathan set fire to Azotus and the cities around
+  rationale: I retain the earlier recognition that Beth-dagon is an idol temple and that “saved” means physical safety here. The divided ending remains across the supplied boundary rather than importing its pronoun from the next unit.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -131,3 +130,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/009/083.job-48502.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:45Z'
+  change_level: refined
+  confidence: high
+  meaning: The fugitives sought safety in Beth-dagon at Azotus, while Jonathan set fire to Azotus and its surrounding cities.
+  meaning_decisions:
+  - source_phrase: τοῦ σωθῆναι
+    prior_rendering: to be saved
+    new_rendering: seeking safety
+    rationale: The fugitives seek physical protection in the sanctuary; the phrase does not describe spiritual salvation.
+  - source_phrase: ἐνεπύρισεν
+    prior_rendering: burned
+    new_rendering: set fire to
+    rationale: The verb describes setting the places ablaze without independently asserting their complete destruction.
+  - source_phrase: τὰς πόλεις τὰς κύκλῳ
+    prior_rendering: the cities around it
+    new_rendering: the cities around
+    rationale: The pronoun completing this phrase occurs in the next supplied unit and is translated there.
+  footnote_kinds: {}
+  history_weighed: I retain the earlier recognition that Beth-dagon is an idol temple and that “saved” means physical safety here. The divided ending remains across the supplied boundary rather than importing its pronoun from the next unit.

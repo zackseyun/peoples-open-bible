@@ -21,15 +21,15 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: He who acquires a wife begins an acquisition[b][a], a helper corresponding to him and a pillar of rest.
-  philosophy: optimal-equivalence
+  text: 'A man who acquires a wife begins to build his household[a]: she is a helper suited to him[b] and a pillar on which he can rest.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'begins a possession' or 'begins property'; the Greek uses a cognate wordplay between 'acquires' and 'acquisition/possession.'
+    text: Literally, 'begins an acquisition' or 'begins a possession,' repeating the root of 'acquires.'
     reason: lexical_alternative
   - marker: b
-    text: Literally 'according to him,' that is, corresponding to him or suited to him.
-    reason: lexical_alternative
+    text: The phrase 'a helper suited to him' echoes Genesis 2:18.
+    reason: cross_reference
 lexical_decisions:
 - source_word: ὁ κτώμενος
   chosen: He who acquires
@@ -129,14 +129,20 @@ revisions:
   from: 'He who acquires a wife begins an acquisition: a helper fit for him and a pillar of rest.'
   to: 'He who acquires a wife begins an acquisition: a helper fit for him and a pillar of rest.'
   rationale: Replaced the colon with a comma for smoother syntax and changed 'fit for him' to 'corresponding to him' to more closely reflect κατʼ αὐτόν in a formal register.
-
 - timestamp: '2026-05-18T02:59:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He who acquires a wife begins an acquisition[b][a], a helper corresponding to him and a pillar of rest.'
-  to: 'He who acquires a wife begins an acquisition[b][a], a helper corresponding to him and a pillar of rest.'
+  from: He who acquires a wife begins an acquisition[b][a], a helper corresponding to him and a pillar of rest.
+  to: He who acquires a wife begins an acquisition[b][a], a helper corresponding to him and a pillar of rest.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''fit for him''].'
+- timestamp: '2026-11-09T19:08:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He who acquires a wife begins an acquisition[b][a], a helper corresponding to him and a pillar of rest.
+  to: 'A man who acquires a wife begins to build his household[a]: she is a helper suited to him[b] and a pillar on which he can rest.'
+  rationale: The first draft's 'fit for him' already conveyed suitability better than the later source-transparent 'corresponding to him.' The acquisition wordplay is retained in a note, while the household context and pillar image guide the main text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -156,3 +162,31 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/036/026.job-52009.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:00Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Acquiring a wife begins the establishment of a household and brings a suitable helper and a strong support for rest.
+  meaning_decisions:
+  - source_phrase: ὁ κτώμενος γυναῖκα ἐνάρχεται κτήσεως
+    prior_rendering: He who acquires a wife begins an acquisition
+    new_rendering: A man who acquires a wife begins to build his household
+    rationale: In the domestic context, the beginning of possessions concerns establishing a household; the English 'begins an acquisition' does not communicate that sense, so the cognate wording is preserved in a note.
+  - source_phrase: βοηθὸν κατʼ αὐτόν
+    prior_rendering: a helper corresponding to him
+    new_rendering: she is a helper suited to him
+    rationale: The wife is explicitly identified as the helper, and 'suited to him' expresses the relational correspondence naturally.
+  - source_phrase: στύλον ἀναπαύσεως
+    prior_rendering: a pillar of rest
+    new_rendering: a pillar on which he can rest
+    rationale: The architectural support image remains, while the relationship between the pillar and the husband's rest becomes intelligible in English.
+  footnote_kinds:
+    a: literal_wording
+    b: cross_reference
+  history_weighed: The first draft's 'fit for him' already conveyed suitability better than the later source-transparent 'corresponding to him.' The acquisition wordplay is retained in a note, while the household context and pillar image guide the main text.

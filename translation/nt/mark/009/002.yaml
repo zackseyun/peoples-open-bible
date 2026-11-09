@@ -4,18 +4,8 @@ source:
   edition: SBLGNT
   text: Καὶ μετὰ ἡμέρας ἓξ παραλαμβάνει ὁ Ἰησοῦς τὸν Πέτρον καὶ τὸν Ἰάκωβον ⸀καὶ Ἰωάννην, καὶ ἀναφέρει αὐτοὺς εἰς ὄρος ὑψηλὸν κατ’ ἰδίαν μόνους. καὶ μετεμορφώθη ἔμπροσθεν αὐτῶν,
 translation:
-  text: And after six days[a], Jesus takes Peter and James and John, and brings them up onto a high mountain by themselves. And he was transfigured before them[c][b],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'six days later.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or, 'privately, alone.' The Greek uses two expressions for separation, emphasizing that Jesus took only these three with him.
-    reason: lexical_alternative
-  - marker: c
-    text: Or, 'was transformed before them.'
-    reason: alternative_reading
+  text: Six days later, Jesus took Peter, James, and John with him and led them up a high mountain by themselves. He was transfigured before them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: μετὰ ἡμέρας ἓξ
   lemma: μετά
@@ -94,14 +84,20 @@ revisions:
   from: And after six days, Jesus takes Peter and James and John, and brings them up onto a high mountain by themselves alone. And he was transfigured before them,
   to: And after six days, Jesus takes Peter and James and John, and brings them up onto a high mountain by themselves alone. And he was transfigured before them,
   rationale: Removed the redundant 'alone' since κατ’ ἰδίαν and μόνους are adequately conveyed by 'by themselves' in natural English; otherwise retained the draft.
-
 - timestamp: '2026-05-18T03:01:03Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And after six days[a], Jesus takes Peter and James and John, and brings them up onto a high mountain by themselves. And he was transfigured before them[c][b],'
-  to: 'And after six days[a], Jesus takes Peter and James and John, and brings them up onto a high mountain by themselves. And he was transfigured before them[c][b],'
+  from: And after six days[a], Jesus takes Peter and James and John, and brings them up onto a high mountain by themselves. And he was transfigured before them[c][b],
+  to: And after six days[a], Jesus takes Peter and James and John, and brings them up onto a high mountain by themselves. And he was transfigured before them[c][b],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''by themselves alone''].'
+- timestamp: '2026-11-09T17:13:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And after six days[a], Jesus takes Peter and James and John, and brings them up onto a high mountain by themselves. And he was transfigured before them[c][b],
+  to: Six days later, Jesus took Peter, James, and John with him and led them up a high mountain by themselves. He was transfigured before them.
+  rationale: I retain the documented choice 'transfigured' and the emphasis on the group's separation from everyone else. The reviews and automated reverts concerning redundant expressions of isolation provide no meaning-based reason to expand 'by themselves.'
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -123,3 +119,21 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/mark/009/002.job-38771.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:13:53Z'
+  change_level: refined
+  confidence: high
+  meaning: Six days later, Jesus takes Peter, James, and John away from the others to a high mountain, where they witness his transfiguration.
+  meaning_decisions:
+  - source_phrase: παραλαμβάνει ὁ Ἰησοῦς ... καὶ ἀναφέρει αὐτούς
+    prior_rendering: Jesus takes ... and brings them up onto
+    new_rendering: Jesus took ... with him and led them up
+    rationale: Consistent past-tense narration carries the historical presents naturally, while 'with him' makes the accompaniment explicit and 'led them up' clearly conveys the ascent.
+  footnote_kinds: {}
+  history_weighed: I retain the documented choice 'transfigured' and the emphasis on the group's separation from everyone else. The reviews and automated reverts concerning redundant expressions of isolation provide no meaning-based reason to expand 'by themselves.'

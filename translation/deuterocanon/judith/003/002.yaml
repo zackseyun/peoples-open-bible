@@ -16,15 +16,8 @@ source:
   confidence: high
   validation: no_reference
 translation:
-  text: Look[a], we, the servants of Nebuchodonosor the great king, lie before you[b]; deal with us as is pleasing in your sight.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more idiomatically, 'as pleases you.' The Greek literally says 'as is pleasing before your face.'
-    reason: lexical_alternative
-  - marker: b
-    text: '''Nebuchodonosor'' follows the Greek form of the name in the source text; many English Bibles use ''Nebuchadnezzar.'''
-    reason: alternative_reading
+  text: Look, we, the servants of Nebuchadnezzar the great king, are at your disposal; deal with us as you please.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἰδοὺ
   chosen: Look
@@ -105,14 +98,20 @@ revisions:
   from: Look, we, the servants of King Nebuchodonosor the great king, are laid before you; use us as is pleasing before you.
   to: Look, we, the servants of King Nebuchodonosor the great king, are laid before you; use us as is pleasing before you.
   rationale: Removed the added second 'king' after the proper name, revised 'are laid before you' to the more natural 'lie before you,' and changed 'use us as is pleasing before you' to 'deal with us as is pleasing in your sight' for more accurate and natural rendering of χρῆσαι ἡμῖν ... τῷ προσώπῳ σου.
-
 - timestamp: '2026-05-16T18:22:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Look[a], we, the servants of Nebuchodonosor the great king, lie before you[b]; deal with us as is pleasing in your sight.'
-  to: 'Look[a], we, the servants of Nebuchodonosor the great king, lie before you[b]; deal with us as is pleasing in your sight.'
-  rationale: 'Restored drafter ''are laid before you'' (preserving the chosen passive force of κεῖνται) and ''use us as is pleasing before you'' (preserving the chosen rendering with explicit ''use us'' and ''before you'') per chosen renderings.'
+  from: Look[a], we, the servants of Nebuchodonosor the great king, lie before you[b]; deal with us as is pleasing in your sight.
+  to: Look[a], we, the servants of Nebuchodonosor the great king, lie before you[b]; deal with us as is pleasing in your sight.
+  rationale: Restored drafter 'are laid before you' (preserving the chosen passive force of κεῖνται) and 'use us as is pleasing before you' (preserving the chosen rendering with explicit 'use us' and 'before you') per chosen renderings.
+- timestamp: '2026-11-09T19:01:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Look[a], we, the servants of Nebuchodonosor the great king, lie before you[b]; deal with us as is pleasing in your sight.
+  to: Look, we, the servants of Nebuchadnezzar the great king, are at your disposal; deal with us as you please.
+  rationale: I retain the review’s removal of the duplicated royal title and its useful choice of 'deal with us.' The automated reverts favored source-shaped expressions, but the submission idioms are clearer when their meaning is stated directly.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -132,3 +131,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/003/002.job-50542.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:29Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The speakers declare themselves servants of Nebuchadnezzar and place themselves entirely at Holofernes’ disposal.
+  meaning_decisions:
+  - source_phrase: Ναβουχοδονοσὸρ
+    prior_rendering: Nebuchodonosor
+    new_rendering: Nebuchadnezzar
+    rationale: Uses the recognizable English name, consistently with verse 8 and the standing instruction on proper names.
+  - source_phrase: παρακείμεθα ἐνώπιόν σου
+    prior_rendering: lie before you
+    new_rendering: are at your disposal
+    rationale: The expression conveys unconditional availability and submission, not necessarily a physical posture.
+  - source_phrase: καθὼς ἀρεστόν ἐστιν τῷ προσώπῳ σου
+    prior_rendering: as is pleasing in your sight
+    new_rendering: as you please
+    rationale: Carries the deferential permission expressed by the face idiom in natural English.
+  footnote_kinds: {}
+  history_weighed: I retain the review’s removal of the duplicated royal title and its useful choice of 'deal with us.' The automated reverts favored source-shaped expressions, but the submission idioms are clearer when their meaning is stated directly.

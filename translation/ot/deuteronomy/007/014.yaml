@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: בָּר֥וּךְ תִּֽהְיֶ֖ה מִ/כָּל הָ/עַמִּ֑ים לֹא יִהְיֶ֥ה בְ/ךָ֛ עָקָ֥ר וַֽ/עֲקָרָ֖ה וּ/בִ/בְהֶמְתֶּֽ/ךָ־־׃
 translation:
-  text: You will be blessed above all peoples[a]; there will not be among you a barren man or woman[b], or among your livestock.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'more than all peoples.' The Hebrew preposition can mark comparison here.
-    reason: lexical_alternative
-  - marker: b
-    text: 'Hebrew explicitly has both masculine and feminine forms: ''a barren man or woman.'''
-    reason: lexical_alternative
+  text: You will be blessed above all peoples; no man or woman among you will be barren, nor will any of your livestock.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: בָּרוּךְ
   chosen: blessed
@@ -97,14 +90,20 @@ revisions:
   from: You will be blessed above all peoples; there will not be among you a barren man or woman, or among your livestock.
   to: You will be blessed above all peoples; there will not be among you a barren male or female, or among your livestock.
   rationale: Replaced 'man or woman' with 'male or female' to more directly reflect the Hebrew terms and to avoid implying only humans in contrast with the following livestock phrase. The rest is accurate and natural.
-
 - timestamp: '2026-05-16T05:40:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'You will be blessed above all peoples[a]; there will not be among you a barren male or female[b], or among your livestock.'
-  to: 'You will be blessed above all peoples[a]; there will not be among you a barren man or woman[b], or among your livestock.'
-  rationale: 'Azure substituted ''male or female'' — drafter''s rejected_alternatives territory (''sterile male'', ''infertile male''). Drafter chose ''man or woman'' to preserve Hebrew masculine/feminine pairing without over-medicalizing.'
+  from: You will be blessed above all peoples[a]; there will not be among you a barren male or female[b], or among your livestock.
+  to: You will be blessed above all peoples[a]; there will not be among you a barren man or woman[b], or among your livestock.
+  rationale: Azure substituted 'male or female' — drafter's rejected_alternatives territory ('sterile male', 'infertile male'). Drafter chose 'man or woman' to preserve Hebrew masculine/feminine pairing without over-medicalizing.
+- timestamp: '2026-11-09T17:30:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You will be blessed above all peoples[a]; there will not be among you a barren man or woman[b], or among your livestock.
+  to: You will be blessed above all peoples; no man or woman among you will be barren, nor will any of your livestock.
+  rationale: The review and subsequent revert debated 'man or woman' versus 'male or female.' I retain the explicit human pairing favored by the current text and clarify the livestock clause without introducing medical terminology.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -124,3 +123,21 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/007/014.job-61458.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:30:56Z'
+  change_level: refined
+  confidence: high
+  meaning: Israel will be blessed above all other peoples, with no barrenness among its men, women, or livestock.
+  meaning_decisions:
+  - source_phrase: לֹא יִהְיֶה בְךָ עָקָר וַעֲקָרָה וּבִבְהֶמְתֶּךָ
+    prior_rendering: there will not be among you a barren man or woman, or among your livestock
+    new_rendering: no man or woman among you will be barren, nor will any of your livestock
+    rationale: The complete English construction makes clear that the absence of barrenness extends to livestock as well as to men and women.
+  footnote_kinds: {}
+  history_weighed: The review and subsequent revert debated 'man or woman' versus 'male or female.' I retain the explicit human pairing favored by the current text and clarify the livestock clause without introducing medical terminology.

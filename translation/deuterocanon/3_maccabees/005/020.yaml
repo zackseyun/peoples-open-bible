@@ -9,18 +9,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Having a savagery worse than Phalaris[a], he said that they should be thankful to sleep today; but, once they had been kept alive until the coming day[c][b], prepare the elephants in the same way for the destruction of the lawless Jews.
-  philosophy: optimal-equivalence
+  text: More savage than Phalaris[a], the king said, “They have my sleep to thank for their survival today. Keep them alive until tomorrow, and prepare the elephants in the same way to destroy the lawless Jews.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Phalaris was remembered in Greek tradition as a notoriously cruel ruler; the comparison intensifies the king's brutality.
+    text: Phalaris was a Greek tyrant remembered for notorious cruelty.
     reason: cultural_note
-  - marker: b
-    text: Or 'that they should count today's sleep as a favor.' The Greek idiom means they were to regard being allowed to sleep today as something for which they owed thanks.
-    reason: lexical_alternative
-  - marker: c
-    text: '''Lawless'' renders a hostile epithet in the speaker''s words; alternatively, ''unlawful'' or ''impious.'''
-    reason: alternative_reading
 lexical_decisions:
 - source_word: ὠμότητα
   chosen: savagery
@@ -130,14 +124,20 @@ revisions:
   from: Having a savagery worse than Phalaris, he said that they should be thankful to sleep today; but, once they had been kept alive until the coming day, prepare the elephants in the same way for the destruction of the lawless Jews.
   to: Having a cruelty worse than Phalaris, he said that they should be grateful for today's respite in sleep; but, having been kept alive until the approaching day, prepare the elephants in the same way for the destruction of the lawless Jews.
   rationale: 'Refined wording for lexical accuracy and natural English: changed ''savagery'' to ''cruelty'' for ὠμότης, rendered τὸ τῆς σήμερον ὕπνῳ χάριν ἔχειν as ''be grateful for today''s respite in sleep'' rather than ''be thankful to sleep today,'' and adjusted ''coming day'' to ''approaching day'' for ὑποτέλλουσαν. Retained the imperative ''prepare the elephants'' and overall formal register.'
-
 - timestamp: '2026-05-15T16:24:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Having a cruelty worse than Phalaris[a], he said that they should be grateful for today''s respite in sleep; but, having been kept alive until the approaching day[c][b], prepare the elephants in the same way for the destruction of the lawless Jews.'
-  to: 'Having a savagery worse than Phalaris[a], he said that they should be thankful to sleep today; but, once they had been kept alive until the coming day[c][b], prepare the elephants in the same way for the destruction of the lawless Jews.'
-  rationale: 'Restored 3 chosen renderings; ''cruelty'' was rejected alternative, ''respite'' unanchored in ὕπνῳ.'
+  from: Having a cruelty worse than Phalaris[a], he said that they should be grateful for today's respite in sleep; but, having been kept alive until the approaching day[c][b], prepare the elephants in the same way for the destruction of the lawless Jews.
+  to: Having a savagery worse than Phalaris[a], he said that they should be thankful to sleep today; but, once they had been kept alive until the coming day[c][b], prepare the elephants in the same way for the destruction of the lawless Jews.
+  rationale: Restored 3 chosen renderings; 'cruelty' was rejected alternative, 'respite' unanchored in ὕπνῳ.
+- timestamp: '2026-11-09T18:56:43Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Having a savagery worse than Phalaris[a], he said that they should be thankful to sleep today; but, once they had been kept alive until the coming day[c][b], prepare the elephants in the same way for the destruction of the lawless Jews.
+  to: More savage than Phalaris[a], the king said, “They have my sleep to thank for their survival today. Keep them alive until tomorrow, and prepare the elephants in the same way to destroy the lawless Jews.”
+  rationale: The earlier review recognized that the gratitude clause needed clarification, but “respite in sleep” still obscured whose sleep was meant. I retain the savagery, Phalaris comparison, and hostile epithet while making the connection to the king’s sleep explicit.
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -157,3 +157,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/005/020.job-49611.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:43Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The king savagely credits his sleep with the Jews’ survival that day and orders their destruction by elephants the next day.
+  meaning_decisions:
+  - source_phrase: τὸ τῆς σήμερον ὕπνῳ χάριν ἔχειν αὐτούς
+    prior_rendering: they should be thankful to sleep today
+    new_rendering: They have my sleep to thank for their survival today
+    rationale: Sleep is what they owe thanks to, not a favor allowing them to sleep; verses 11–12 identify the king’s sleep as the cause of the delay.
+  - source_phrase: συντηρηθέντας δὲ εἰς τὴν ὑποτέλλουσαν ἡμέραν … ἑτοίμασον
+    prior_rendering: but, once they had been kept alive until the coming day, prepare
+    new_rendering: Keep them alive until tomorrow, and prepare
+    rationale: Expresses the king’s command clearly without the awkward shift from indirect narration into an unexplained imperative.
+  - source_phrase: ἐπὶ τὸν τῶν ἀθεμίτων Ἰουδαίων ἀφανισμόν
+    prior_rendering: for the destruction of the lawless Jews
+    new_rendering: to destroy the lawless Jews
+    rationale: Uses a strong verbal construction and places the hostile epithet unmistakably within the persecutor’s speech.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The earlier review recognized that the gratitude clause needed clarification, but “respite in sleep” still obscured whose sleep was meant. I retain the savagery, Phalaris comparison, and hostile epithet while making the connection to the king’s sleep explicit.

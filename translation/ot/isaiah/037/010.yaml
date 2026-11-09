@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: כֹּ֣ה תֹאמְר֗וּ/ן אֶל חִזְקִיָּ֤הוּ מֶֽלֶךְ יְהוּדָה֙ לֵ/אמֹ֔ר אַל יַשִּֽׁאֲ/ךָ֣ אֱלֹהֶ֔י/ךָ אֲשֶׁ֥ר אַתָּ֛ה בּוֹטֵ֥חַ בּ֖/וֹ לֵ/אמֹ֑ר לֹ֤א תִנָּתֵן֙ יְר֣וּשָׁלִַ֔ם בְּ/יַ֖ד מֶ֥לֶךְ אַשּֽׁוּר־־־׃
 translation:
-  text: 'Thus you shall say to Hezekiah king of Judah: ‘Do not let your God[a], in whom you trust, deceive you, saying[b], “Jerusalem will not be given into the hand of the king of Assyria.”’'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “mislead you.” The Hebrew verb can mean “deceive” or “lead astray.”
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew “into the hand of,” an idiom meaning “into the power of.”
-    reason: lexical_alternative
+  text: '“Tell Hezekiah king of Judah: ‘Do not let your God, in whom you trust, deceive you by saying, “Jerusalem will not be handed over to the king of Assyria.”'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: כֹּה
   chosen: Thus
@@ -130,7 +123,6 @@ revisions:
   from: 'Thus you shall say to Hezekiah king of Judah: ‘Do not let your God, in whom you trust, deceive you by saying, “Jerusalem will not be given into the hand of the king of Assyria.”’'
   to: 'Thus you shall say to Hezekiah king of Judah: ‘Do not let your God, in whom you trust, deceive you by saying, “Jerusalem will not be given into the hand of the king of Assyria.”’'
   rationale: Replaced 'deceive you by saying' with 'deceive you, saying' for a more natural and formally precise rendering of the participial construction, while preserving the meaning.
-
 - timestamp: '2026-05-17T18:24:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -138,6 +130,13 @@ revisions:
   from: 'Thus you shall say to Hezekiah king of Judah: ‘Do not let your God[a], in whom you trust, deceive you, saying[b], “Jerusalem will not be given into the hand of the king of Assyria.”’'
   to: 'Thus you shall say to Hezekiah king of Judah: ‘Do not let your God[a], in whom you trust, deceive you, saying[b], “Jerusalem will not be given into the hand of the king of Assyria.”’'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''by saying''].'
+- timestamp: '2026-11-09T17:50:41Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Thus you shall say to Hezekiah king of Judah: ‘Do not let your God[a], in whom you trust, deceive you, saying[b], “Jerusalem will not be given into the hand of the king of Assyria.”’'
+  to: '“Tell Hezekiah king of Judah: ‘Do not let your God, in whom you trust, deceive you by saying, “Jerusalem will not be handed over to the king of Assyria.”'
+  rationale: The draft and lexical rationale support 'by saying,' despite the inconsistent no-change revision records. The hostile accusation 'deceive' is retained at full strength, and the main text now carries the former footnote's explanation of the hand idiom.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -157,3 +156,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/isaiah/037/010.job-66590.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:50:41Z'
+  change_level: refined
+  confidence: high
+  meaning: The Assyrian king tells Hezekiah not to trust his God's assurance that Jerusalem will escape Assyrian control.
+  meaning_decisions:
+  - source_phrase: כֹּה תֹאמְרוּן אֶל חִזְקִיָּהוּ מֶלֶךְ יְהוּדָה
+    prior_rendering: Thus you shall say to Hezekiah king of Judah
+    new_rendering: Tell Hezekiah king of Judah
+    rationale: The source gives an instruction to the messengers, which the direct imperative conveys naturally.
+  - source_phrase: לֵאמֹר
+    prior_rendering: saying
+    new_rendering: by saying
+    rationale: This explicitly connects the alleged deception with the assurance quoted next.
+  - source_phrase: לֹא תִנָּתֵן יְרוּשָׁלִַם בְּיַד מֶלֶךְ אַשּׁוּר
+    prior_rendering: Jerusalem will not be given into the hand of the king of Assyria
+    new_rendering: Jerusalem will not be handed over to the king of Assyria
+    rationale: The idiom means being placed under the king's control; 'handed over' carries that meaning while preserving the sense of transfer.
+  footnote_kinds: {}
+  history_weighed: The draft and lexical rationale support 'by saying,' despite the inconsistent no-change revision records. The hostile accusation 'deceive' is retained at full strength, and the main text now carries the former footnote's explanation of the hand idiom.

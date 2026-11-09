@@ -4,11 +4,14 @@ source:
   edition: SBLGNT
   text: οἴδαμεν δὲ ὅτι ὁ υἱὸς τοῦ θεοῦ ἥκει, καὶ δέδωκεν ἡμῖν διάνοιαν ἵνα ⸀γινώσκωμεν τὸν ἀληθινόν· καὶ ἐσμὲν ἐν τῷ ἀληθινῷ, ἐν τῷ υἱῷ αὐτοῦ Ἰησοῦ Χριστῷ. οὗτός ἐστιν ὁ ἀληθινὸς θεὸς καὶ ζωὴ αἰώνιος.
 translation:
-  text: And we know that the Son of God has come and has given us understanding so that we may know the True One; and we are in the True One[a], in his Son Jesus Christ. This one is the true God and eternal life.
-  philosophy: optimal-equivalence
+  text: And we know that the Son of God has come and has given us understanding so that we may know the One who is true. We are united with the One who is true through our union with his Son Jesus Christ[a]. He[b] is the true God and eternal life.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'This one is the true God and eternal life.' The demonstrative may refer specifically to Jesus the Messiah, though some understand it to refer to 'the True One' (the Father) in the preceding clause.
+    text: Literally, “we are in the True One, in his Son Jesus Christ.”
+    reason: lexical_alternative
+  - marker: b
+    text: The Greek says “This one,” most naturally referring to Jesus Christ; some understand it to refer to the Father, the One who is true.
     reason: alternative_reading
 lexical_decisions:
 - source_word: οἴδαμεν
@@ -129,10 +132,16 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "And we know that the Son of God has come and has given us understanding so that we may know the True One; and we are in the True One, in his Son Jesus Messiah. This one is the true God and eternal life."
-  to: "And we know that the Son of God has come and has given us understanding so that we may know the True One; and we are in the True One, in his Son Jesus the Messiah. This one is the true God and eternal life."
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
-
+  from: And we know that the Son of God has come and has given us understanding so that we may know the True One; and we are in the True One, in his Son Jesus Messiah. This one is the true God and eternal life.
+  to: And we know that the Son of God has come and has given us understanding so that we may know the True One; and we are in the True One, in his Son Jesus the Messiah. This one is the true God and eternal life.
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:05:57Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And we know that the Son of God has come and has given us understanding so that we may know the True One; and we are in the True One[a], in his Son Jesus Christ. This one is the true God and eternal life.
+  to: And we know that the Son of God has come and has given us understanding so that we may know the One who is true. We are united with the One who is true through our union with his Son Jesus Christ[a]. He[b] is the true God and eternal life.
+  rationale: The later wording used “This one” to preserve the demonstrative force; I use natural “He” without explicitly naming the disputed antecedent and record the alternative in a note. The current “Jesus Christ” follows the standing name-construction ruling despite the history's title-restoration passes.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -155,3 +164,31 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/low_agreement_recheck/nt/1_john/005/020.job-27888.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:57Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The Son has come to enable believers to know the true God and share union with him through the Son, whom the closing statement most naturally identifies as the true God and eternal life.
+  meaning_decisions:
+  - source_phrase: τὸν ἀληθινόν / τῷ ἀληθινῷ
+    prior_rendering: the True One
+    new_rendering: the One who is true
+    rationale: The expanded phrase makes the personal description natural English while preserving the repeated “true” that connects this verse with the final contrast against idols.
+  - source_phrase: ἐσμὲν ἐν τῷ ἀληθινῷ, ἐν τῷ υἱῷ αὐτοῦ Ἰησοῦ Χριστῷ
+    prior_rendering: we are in the True One, in his Son Jesus Christ
+    new_rendering: We are united with the One who is true through our union with his Son Jesus Christ
+    rationale: The repeated “in” describes relational union, not location; the second phrase explains how union with the Father is realized in his Son.
+  - source_phrase: οὗτός ἐστιν
+    prior_rendering: This one is
+    new_rendering: He is
+    rationale: English naturally resumes a personal antecedent with “He”; the note retains the demonstrative wording and the serious disagreement about its referent.
+  footnote_kinds:
+    a: literal_wording
+    b: alternative_meaning
+  history_weighed: The later wording used “This one” to preserve the demonstrative force; I use natural “He” without explicitly naming the disputed antecedent and record the alternative in a note. The current “Jesus Christ” follows the standing name-construction ruling despite the history's title-restoration passes.

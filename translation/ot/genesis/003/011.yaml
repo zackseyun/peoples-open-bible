@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֕אמֶר מִ֚י הִגִּ֣יד לְ/ךָ֔ כִּ֥י עֵירֹ֖ם אָ֑תָּה הֲ/מִן הָ/עֵ֗ץ אֲשֶׁ֧ר צִוִּיתִ֛י/ךָ לְ/בִלְתִּ֥י אֲכָל מִמֶּ֖/נּוּ אָכָֽלְתָּ־־׃
 translation:
-  text: And he said[b][a], “Who told you that you were naked? Have you eaten from the tree from which I commanded you not to eat?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more formally, 'Did you eat from the tree ... ?' The Hebrew perfect can be represented in English either with a simple past or a present perfect in this context.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'from it.' English idiom often says 'eat from the tree' rather than 'eat from it' or 'eat of it.'
-    reason: lexical_alternative
+  text: God asked, “Who told you that you were naked? Have you eaten from the tree I commanded you not to eat from?”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: And he said
@@ -113,14 +106,20 @@ revisions:
   from: And he said, “Who told you that you were naked? Have you eaten from the tree that I commanded you not to eat from?”
   to: And he said, “Who told you that you were naked? Have you eaten from the tree that I commanded you not to eat from?”
   rationale: Replaced the second 'from' construction with 'from which I commanded you not to eat' for more natural formal English while preserving the source meaning and completeness.
-
 - timestamp: '2026-05-17T11:51:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he said[b][a], “Who told you that you were naked? Have you eaten from the tree from which I commanded you not to eat?”'
-  to: 'And he said[b][a], “Who told you that you were naked? Have you eaten from the tree from which I commanded you not to eat?”'
+  from: And he said[b][a], “Who told you that you were naked? Have you eaten from the tree from which I commanded you not to eat?”
+  to: And he said[b][a], “Who told you that you were naked? Have you eaten from the tree from which I commanded you not to eat?”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that I commanded you''].'
+- timestamp: '2026-11-09T17:41:43Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he said[b][a], “Who told you that you were naked? Have you eaten from the tree from which I commanded you not to eat?”
+  to: God asked, “Who told you that you were naked? Have you eaten from the tree I commanded you not to eat from?”
+  rationale: The later review preferred a more formal relative clause, but the first draft's construction is more natural here. I also make the established speaker explicit rather than follow the earlier source-transparency rationale against doing so.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -142,3 +141,21 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/003/011.job-64620.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:41:43Z'
+  change_level: refined
+  confidence: high
+  meaning: God questions the man's awareness of his nakedness and asks whether he has eaten from the forbidden tree.
+  meaning_decisions:
+  - source_phrase: וַיֹּאמֶר
+    prior_rendering: And he said
+    new_rendering: God asked
+    rationale: The context establishes God as the speaker, and naming him makes the change of speaker clear after the man's answer.
+  footnote_kinds: {}
+  history_weighed: The later review preferred a more formal relative clause, but the first draft's construction is more natural here. I also make the established speaker explicit rather than follow the earlier source-transparency rationale against doing so.

@@ -8,14 +8,14 @@ source:
   confidence: high
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone PAZ extraction from the curated ADA stream, using Daniel 3:24-90 as the source span and renumbering it to PAZ 1:1-67.
 translation:
-  text: As with whole burnt offerings of rams and bulls[a], and as with tens of thousands of fat lambs, so let our sacrifice be before you today and make atonement before you, for there is no shame for those who have put their trust in you[b], and let it be brought to completion before you.
-  philosophy: optimal-equivalence
+  text: May our sacrifice today be accepted before you like whole burnt offerings of rams and bulls, like tens of thousands of fat lambs. May it make atonement as we follow you[a], for those who have put their trust in you will not be put to shame. May we follow you wholeheartedly[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Greek literally repeats a phrase that can mean 'behind you'; in context it is best understood idiomatically as 'before you' or 'in your presence.'
-    reason: lexical_alternative
+    text: The Greek is difficult, literally 'make atonement behind you'; another understanding is 'may it make atonement in your presence.'
+    reason: alternative_reading
   - marker: b
-    text: Or 'may it be accepted before you.' The Greek verb can carry sacrificial atonement/appeasement force.
+    text: 'The Greek is compressed: ''bring to completion behind you''; alternatively, ''may our sacrifice be brought to completion in your presence.'''
     reason: alternative_reading
 lexical_decisions:
 - source_word: ὁλοκαυτώμασι
@@ -137,14 +137,20 @@ revisions:
   from: As with whole burnt offerings of rams and bulls, and as with tens of thousands of fat lambs, so let our sacrifice be before you today, and may it make atonement in your presence, for there is no shame for those who have put their trust in you, and may it be brought to completion in your presence.
   to: As with whole burnt offerings of rams and bulls, and as with tens of thousands of fat lambs, so let our sacrifice be before you today, and may it make atonement in your presence, for there is no shame for those who have put their trust in you, and may it be brought to completion in your presence.
   rationale: Replaced 'in your presence' with the more literal and consistent 'before you'; removed the extra 'may it' before 'make atonement' to better match the Greek flow; and adjusted the final clause to 'let it be brought to completion before you' for smoother, more consistent formal English.
-
 - timestamp: '2026-05-18T02:58:55Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'As with whole burnt offerings of rams and bulls[a], and as with tens of thousands of fat lambs, so let our sacrifice be before you today and make atonement before you, for there is no shame for those who have put their trust in you[b], and let it be brought to completion before you.'
-  to: 'As with whole burnt offerings of rams and bulls[a], and as with tens of thousands of fat lambs, so let our sacrifice be before you today and make atonement before you, for there is no shame for those who have put their trust in you[b], and let it be brought to completion before you.'
+  from: As with whole burnt offerings of rams and bulls[a], and as with tens of thousands of fat lambs, so let our sacrifice be before you today and make atonement before you, for there is no shame for those who have put their trust in you[b], and let it be brought to completion before you.
+  to: As with whole burnt offerings of rams and bulls[a], and as with tens of thousands of fat lambs, so let our sacrifice be before you today and make atonement before you, for there is no shame for those who have put their trust in you[b], and let it be brought to completion before you.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in your presence''].'
+- timestamp: '2026-11-09T19:04:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: As with whole burnt offerings of rams and bulls[a], and as with tens of thousands of fat lambs, so let our sacrifice be before you today and make atonement before you, for there is no shame for those who have put their trust in you[b], and let it be brought to completion before you.
+  to: May our sacrifice today be accepted before you like whole burnt offerings of rams and bulls, like tens of thousands of fat lambs. May it make atonement as we follow you[a], for those who have put their trust in you will not be put to shame. May we follow you wholeheartedly[b].
+  rationale: I retain the history’s abundant-sacrifice comparison and atonement language, but ὄπισθέν σου normally means 'behind/after you,' not simply 'before you.' The next verse’s explicit following of God supports reading the difficult clauses in terms of following him; the earlier presence-based readings remain in the notes.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -164,3 +170,35 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/prayer_of_azariah/001/017.job-50928.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:04:14Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: They ask that their present sacrifice be received like abundant animal offerings, make atonement as they follow God, and accompany wholehearted devotion, trusting that those who rely on him will not be disgraced.
+  meaning_decisions:
+  - source_phrase: ὡς ἐν ὁλοκαυτώμασι ... οὕτω γενέσθω ἡμῶν ἡ θυσία ἐνώπιόν σου σήμερον
+    prior_rendering: As with whole burnt offerings ... so let our sacrifice be before you today
+    new_rendering: May our sacrifice today be accepted before you like whole burnt offerings
+    rationale: 'Makes explicit the comparison’s point: their present sacrifice is to receive the favorable reception associated with abundant animal offerings.'
+  - source_phrase: καὶ ἐξιλάσαι ὄπισθέν σου
+    prior_rendering: and make atonement before you
+    new_rendering: May it make atonement as we follow you
+    rationale: Makes the proposed sacrificial subject explicit and takes 'behind you' in its following sense rather than treating it as an established synonym for 'before you'; the difficult alternative is noted.
+  - source_phrase: οὐκ ἔστιν αἰσχύνη τοῖς πεποιθόσιν ἐπὶ σοί
+    prior_rendering: there is no shame for those who have put their trust in you
+    new_rendering: those who have put their trust in you will not be put to shame
+    rationale: Expresses assurance that reliance on God will not end in disgrace, rather than suggesting believers never presently experience shame.
+  - source_phrase: καὶ τελειῶσαι ὄπισθέν σου
+    prior_rendering: and let it be brought to completion before you
+    new_rendering: May we follow you wholeheartedly
+    rationale: Reads completion together with 'behind you' as complete devotion in following God, supported by the next verse; the sacrifice-completion reading remains in a note.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: I retain the history’s abundant-sacrifice comparison and atonement language, but ὄπισθέν σου normally means 'behind/after you,' not simply 'before you.' The next verse’s explicit following of God supports reading the difficult clauses in terms of following him; the earlier presence-based readings remain in the notes.

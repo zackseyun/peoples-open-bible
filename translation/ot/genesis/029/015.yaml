@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֤אמֶר לָבָן֙ לְ/יַעֲקֹ֔ב הֲ/כִי אָחִ֣/י אַ֔תָּה וַ/עֲבַדְתַּ֖/נִי חִנָּ֑ם הַגִּ֥ידָ/ה לִּ֖/י מַה מַּשְׂכֻּרְתֶּֽ/ךָ־־׃
 translation:
-  text: Then Laban said to Jacob[a], “Because you are my relative, should you work for me for nothing? Tell me, what your wages should be.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew 'my brother'; here used in the broader sense of a relative or kinsman.
-    reason: lexical_alternative
+  text: Then Laban said to Jacob, “Should you work for me without pay just because you are my relative? Tell me what your wages should be.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: הֲכִי
   chosen: Because
@@ -78,14 +74,20 @@ revisions:
   from: Then Laban said to Jacob, “Because you are my relative, should you work for me for nothing? Tell me, what should your wages be?”
   to: Then Laban said to Jacob, “Because you are my relative, should you work for me for nothing? Tell me, what should your wages be?”
   rationale: Adjusted the final clause from a direct question to an imperative plus indirect question, more closely reflecting 'Tell me what your wages should be.'
-
 - timestamp: '2026-05-17T11:06:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Laban said to Jacob[a], “Because you are my relative, should you work for me for nothing? Tell me, what your wages should be.”'
-  to: 'Then Laban said to Jacob[a], “Because you are my relative, should you work for me for nothing? Tell me, what your wages should be.”'
+  from: Then Laban said to Jacob[a], “Because you are my relative, should you work for me for nothing? Tell me, what your wages should be.”
+  to: Then Laban said to Jacob[a], “Because you are my relative, should you work for me for nothing? Tell me, what your wages should be.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''what should your wages be''].'
+- timestamp: '2026-11-09T17:43:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Laban said to Jacob[a], “Because you are my relative, should you work for me for nothing? Tell me, what your wages should be.”
+  to: Then Laban said to Jacob, “Should you work for me without pay just because you are my relative? Tell me what your wages should be.”
+  rationale: I retain 'relative' and the revised indirect question 'what your wages should be,' removing the stray comma. The rhetorical construction is clarified without judging Laban’s sincerity beyond what this verse says.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -108,3 +110,21 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/029/015.job-65211.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:43:39Z'
+  change_level: refined
+  confidence: high
+  meaning: Laban says that their family relationship should not require Jacob to work without payment and asks him to name his wages.
+  meaning_decisions:
+  - source_phrase: הֲכִי אָחִי אַתָּה וַעֲבַדְתַּנִי חִנָּם
+    prior_rendering: Because you are my relative, should you work for me for nothing?
+    new_rendering: Should you work for me without pay just because you are my relative?
+    rationale: The reordered question clearly denies that kinship is a sufficient reason for unpaid labor; 'without pay' avoids the possible sense of working to no purpose.
+  footnote_kinds: {}
+  history_weighed: I retain 'relative' and the revised indirect question 'what your wages should be,' removing the stray comma. The rhetorical construction is clarified without judging Laban’s sincerity beyond what this verse says.

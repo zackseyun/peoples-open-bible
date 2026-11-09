@@ -17,12 +17,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And there was a rush in the camp[a], for her arrival was reported through the tents; and they came and gathered around her as she stood outside the tent of Holofernes, until they announced her to him.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'her presence was cried out through the tents.' The Greek verb suggests vocal spreading of the news, and παρουσία can mean either 'presence' or, contextually, 'arrival.'
-    reason: lexical_alternative
+  text: A crowd came rushing together in the camp, for word of her arrival spread from tent to tent. They gathered around her as she stood outside Holofernes’ tent, until her presence was announced to him.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐγένετο συνδρομή
   chosen: there was a rush
@@ -115,14 +111,20 @@ revisions:
   from: And there was a rush in the camp, for her arrival was reported through the tents; and they came and gathered around her as she stood outside the tent of Holofernes, until they announced her to him.
   to: And there was a stir in the camp, for her arrival was spread through the tents; and they came and surrounded her as she stood outside the tent of Holofernes, until they reported her to him.
   rationale: Revised 'rush' to 'stir' for συνδρομή, 'was reported through the tents' to 'was spread through the tents' for διεβοήθη, 'gathered around' to 'surrounded' for ἐκύκλουν, and 'announced her to him' to 'reported her to him' for more natural and accurate formal English.
-
 - timestamp: '2026-05-15T15:39:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And there was a stir in the camp[a], for her arrival was spread through the tents; and they came and surrounded her as she stood outside the tent of Holofernes, until they reported her to him.'
-  to: 'And there was a rush in the camp[a], for her arrival was reported through the tents; and they came and gathered around her as she stood outside the tent of Holofernes, until they announced her to him.'
-  rationale: 'Restored 4 chosen renderings preserving συνδρομή physical sense, βοάω vocal root, non-hostile gathering, and herald idiom.'
+  from: And there was a stir in the camp[a], for her arrival was spread through the tents; and they came and surrounded her as she stood outside the tent of Holofernes, until they reported her to him.
+  to: And there was a rush in the camp[a], for her arrival was reported through the tents; and they came and gathered around her as she stood outside the tent of Holofernes, until they announced her to him.
+  rationale: Restored 4 chosen renderings preserving συνδρομή physical sense, βοάω vocal root, non-hostile gathering, and herald idiom.
+- timestamp: '2026-11-09T19:01:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And there was a rush in the camp[a], for her arrival was reported through the tents; and they came and gathered around her as she stood outside the tent of Holofernes, until they announced her to him.
+  to: A crowd came rushing together in the camp, for word of her arrival spread from tent to tent. They gathered around her as she stood outside Holofernes’ tent, until her presence was announced to him.
+  rationale: The review favored “stir,” while the revert stressed actual rushing together and a non-hostile gathering; I preserve those contextual gains. The spreading report is expressed naturally as word passing from tent to tent.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -142,3 +144,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/010/018.job-50711.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:47Z'
+  change_level: retranslated
+  confidence: high
+  meaning: News of Judith’s arrival draws a crowd around her outside Holofernes’ tent while her presence is reported to him.
+  meaning_decisions:
+  - source_phrase: ἐγένετο συνδρομὴ ἐν τῇ παρεμβολῇ
+    prior_rendering: there was a rush in the camp
+    new_rendering: A crowd came rushing together in the camp
+    rationale: The noun describes people converging, not merely an unspecified bustle or sudden movement.
+  - source_phrase: διεβοήθη ... εἰς τὰ σκηνώματα ἡ παρουσία αὐτῆς
+    prior_rendering: her arrival was reported through the tents
+    new_rendering: word of her arrival spread from tent to tent
+    rationale: This naturally describes the spreading report that draws the crowd, without suggesting that the arrival itself moves through the tents.
+  - source_phrase: ἕως προσήγγειλαν αὐτῷ περὶ αὐτῆς
+    prior_rendering: until they announced her to him
+    new_rendering: until her presence was announced to him
+    rationale: The passive avoids making the surrounding crowd the definite subject of the announcement and expresses the notification of a waiting visitor.
+  footnote_kinds: {}
+  history_weighed: The review favored “stir,” while the revert stressed actual rushing together and a non-hostile gathering; I preserve those contextual gains. The spreading report is expressed naturally as word passing from tent to tent.

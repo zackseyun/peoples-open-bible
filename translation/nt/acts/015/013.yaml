@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: μετὰ δὲ τὸ σιγῆσαι αὐτοὺς ἀπεκρίθη Ἰάκωβος λέγων· Ἄνδρες ἀδελφοί, ἀκούσατέ μου.
 translation:
-  text: And after they became silent[a], James answered, saying, “Brothers[b], listen to me.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “after they fell silent.” The Greek expression marks the point after the previous speakers had stopped speaking.
-    reason: lexical_alternative
-  - marker: b
-    text: The address is literally “Men, brothers,” a formal masculine vocative. In context it addresses the assembled brothers, though the wider gathering included others as well.
-    reason: cultural_note
+  text: After Barnabas and Paul finished speaking, James responded, “Brothers, listen to me.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: μετὰ δὲ τὸ σιγῆσαι αὐτοὺς
   chosen: And after they became silent
@@ -85,14 +78,20 @@ revisions:
   from: And after they became silent, James answered, saying, “Men, brothers, listen to me.”
   to: And after they became silent, James answered, saying, “Men, brothers, listen to me.”
   rationale: Replaced the overly literal and unnatural address “Men, brothers” with the natural formal rendering “Brothers,” while preserving the sense of Ἄνδρες ἀδελφοί. No other changes needed.
-
 - timestamp: '2026-05-18T03:01:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And after they became silent[a], James answered, saying, “Brothers[b], listen to me.”'
-  to: 'And after they became silent[a], James answered, saying, “Brothers[b], listen to me.”'
+  from: And after they became silent[a], James answered, saying, “Brothers[b], listen to me.”
+  to: And after they became silent[a], James answered, saying, “Brothers[b], listen to me.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Men, brothers''].'
+- timestamp: '2026-11-09T17:08:05Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And after they became silent[a], James answered, saying, “Brothers[b], listen to me.”
+  to: After Barnabas and Paul finished speaking, James responded, “Brothers, listen to me.
+  rationale: The current 'Brothers' conveys the formal address more naturally than the first draft's 'Men, brothers,' and the automated revert does not establish a maintainer ruling. I also carry the existing footnote's explanation that the previous speakers had finished into the text.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -112,3 +111,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/015/013.job-46452.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:05Z'
+  change_level: refined
+  confidence: high
+  meaning: When Barnabas and Paul finished their account, James addressed the assembly and asked them to listen.
+  meaning_decisions:
+  - source_phrase: μετὰ δὲ τὸ σιγῆσαι αὐτούς
+    prior_rendering: And after they became silent
+    new_rendering: After Barnabas and Paul finished speaking
+    rationale: The previous speakers stopped speaking; this is not another description of the assembly falling silent.
+  - source_phrase: ἀπεκρίθη Ἰάκωβος λέγων
+    prior_rendering: James answered, saying
+    new_rendering: James responded
+    rationale: James responds to the preceding discussion, rather than answering a direct question; one English verb conveys the Greek speech formula.
+  footnote_kinds: {}
+  history_weighed: The current 'Brothers' conveys the formal address more naturally than the first draft's 'Men, brothers,' and the automated revert does not establish a maintainer ruling. I also carry the existing footnote's explanation that the previous speakers had finished into the text.

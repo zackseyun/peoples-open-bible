@@ -4,18 +4,12 @@ source:
   edition: SBLGNT
   text: τὸ μυστήριον τοῦτο μέγα ἐστίν, ἐγὼ δὲ λέγω εἰς Χριστὸν καὶ εἰς τὴν ἐκκλησίαν.
 translation:
-  text: This mystery is great[c][b][a], but I am speaking with reference to Messiah and the church.
-  philosophy: optimal-equivalence
+  text: This mystery[a] is great, but I am speaking about the Messiah and the church.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'This mystery is profound.' The Greek more literally says 'great,' which may denote greatness or significance rather than merely depth.
+    text: Here “mystery” means a divine truth once hidden and now revealed.
     reason: lexical_alternative
-  - marker: b
-    text: Greek 'Christ'; rendered 'Messiah' here because Χριστός functions as a title in this context.
-    reason: alternative_reading
-  - marker: c
-    text: Or 'with reference to the Messiah and to the church'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: μυστήριον
   chosen: mystery
@@ -106,12 +100,18 @@ revisions:
   from: This mystery is great, but I am speaking with reference to Christ and the church.
   to: This mystery is great, but I am speaking with reference to Messiah and the church.
   rationale: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)
+- timestamp: '2026-11-09T17:08:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: This mystery is great[c][b][a], but I am speaking with reference to Messiah and the church.
+  to: This mystery[a] is great, but I am speaking about the Messiah and the church.
+  rationale: I retain the earlier improvement that removed the duplicated preposition and the decision not to narrow the mystery’s referent. “Great” and “mystery” remain, with a brief lexical note to prevent “mystery” from being understood merely as a puzzle.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:43:30Z'
   unchanged: false
   changes_summary: 'Replaced ''the Messiah'' with ''Christ'' to reflect Χριστόν more naturally and consistently in formal translation; retained the rest of the wording. [Regression fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)]'
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -135,3 +135,22 @@ cross_check:
     agree: 2
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/nt/ephesians/005/032.job-38848.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:27Z'
+  change_level: refined
+  confidence: medium
+  meaning: Paul calls this mystery great and clarifies that he is speaking about the Messiah and the church.
+  meaning_decisions:
+  - source_phrase: ἐγὼ δὲ λέγω εἰς Χριστὸν καὶ εἰς τὴν ἐκκλησίαν
+    prior_rendering: but I am speaking with reference to Messiah and the church
+    new_rendering: but I am speaking about the Messiah and the church
+    rationale: “Speaking about” naturally conveys the reference construction without narrowing exactly how the preceding mystery relates to marriage, the quotation, or the Messiah and the church.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: I retain the earlier improvement that removed the duplicated preposition and the decision not to narrow the mystery’s referent. “Great” and “mystery” remain, with a brief lexical note to prevent “mystery” from being understood merely as a puzzle.

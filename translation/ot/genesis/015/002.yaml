@@ -4,12 +4,15 @@ source:
   edition: WLC
   text: וַ/יֹּ֣אמֶר אַבְרָ֗ם אֲדֹנָ֤/י יֱהוִה֙ מַה תִּתֶּן לִ֔/י וְ/אָנֹכִ֖י הוֹלֵ֣ךְ עֲרִירִ֑י וּ/בֶן מֶ֣שֶׁק בֵּיתִ֔/י ה֖וּא דַּמֶּ֥שֶׂק אֱלִיעֶֽזֶר־־־׃
 translation:
-  text: But Abram said[a], “Lord Yahweh, what will you give me, since I am going childless, and the heir of my house is Eliezer of Damascus?”
-  philosophy: optimal-equivalence
+  text: But Abram said, “Lord Yahweh, what will you give me, since I remain childless[a] and the heir to my estate[b] is Eliezer of Damascus?”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew 'the son of mesheq of my house,' an unusual expression; possibly 'the steward of my house' or 'the possessor/heir of my house.'
-    reason: lexical_alternative
+    text: Or, “since I am going to die childless.”
+    reason: alternative_reading
+  - marker: b
+    text: Or, “the steward of my household”; the Hebrew expression is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: But ... said
@@ -100,14 +103,20 @@ revisions:
   from: But Abram said, “Lord GOD, what will you give me, since I am going childless, and the heir of my house is Eliezer of Damascus?”
   to: But Abram said, “Lord Yahweh, what will you give me, since I am going childless, and the son of possession of my house is Eliezer of Damascus?”
   rationale: Changed 'GOD' to 'Yahweh' to reflect the divine name more precisely, and replaced 'the heir of my house' with 'the son of possession of my house' to more fully represent the Hebrew wording without omitting the underlying expression.
-
 - timestamp: '2026-05-15T21:39:51Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But Abram said[a], “Lord Yahweh, what will you give me, since I am going childless, and the son of possession of my house is Eliezer of Damascus?”'
-  to: 'But Abram said[a], “Lord Yahweh, what will you give me, since I am going childless, and the heir of my house is Eliezer of Damascus?”'
-  rationale: 'Drafter chose ''the heir of my house'' for the obscure בֶּן מֶשֶׁק as the contextually clearest rendering, with the literal ''son of possession of my house'' preserved in footnote (deliberate clarity-over-literalism decision). Azure substituted the footnoted-literal form without engaging the rationale. (Lord GOD→Lord Yahweh change retained as doctrinal.)'
+  from: But Abram said[a], “Lord Yahweh, what will you give me, since I am going childless, and the son of possession of my house is Eliezer of Damascus?”
+  to: But Abram said[a], “Lord Yahweh, what will you give me, since I am going childless, and the heir of my house is Eliezer of Damascus?”
+  rationale: Drafter chose 'the heir of my house' for the obscure בֶּן מֶשֶׁק as the contextually clearest rendering, with the literal 'son of possession of my house' preserved in footnote (deliberate clarity-over-literalism decision). Azure substituted the footnoted-literal form without engaging the rationale. (Lord GOD→Lord Yahweh change retained as doctrinal.)
+- timestamp: '2026-11-09T17:42:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But Abram said[a], “Lord Yahweh, what will you give me, since I am going childless, and the heir of my house is Eliezer of Damascus?”
+  to: But Abram said, “Lord Yahweh, what will you give me, since I remain childless[a] and the heir to my estate[b] is Eliezer of Damascus?”
+  rationale: The recorded return from “son of possession” to “heir” rightly recognized that the obscure expression must be read in its inheritance context. I retain that gain and “Lord Yahweh,” while preserving the possible stewardship reading in a properly placed note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -131,3 +140,27 @@ cross_check:
     agree: 1
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/015/002.job-64854.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:42:21Z'
+  change_level: refined
+  confidence: medium
+  meaning: Abram questions what Yahweh's gift will mean while he remains childless and Eliezer of Damascus stands to inherit his estate.
+  meaning_decisions:
+  - source_phrase: וְאָנֹכִי הוֹלֵךְ עֲרִירִי
+    prior_rendering: since I am going childless
+    new_rendering: since I remain childless
+    rationale: The Hebrew describes Abram's continuing condition as he proceeds through life; the prior English idiom is unclear. The possible stronger reference to dying childless is preserved in a note.
+  - source_phrase: בֶן מֶשֶׁק בֵּיתִי
+    prior_rendering: the heir of my house
+    new_rendering: the heir to my estate
+    rationale: The inheritance concern in verses 2–4 supports the existing interpretation as an heir, while “estate” makes clear that “house” is not merely a building.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: The recorded return from “son of possession” to “heir” rightly recognized that the obscure expression must be read in its inheritance context. I retain that gain and “Lord Yahweh,” while preserving the possible stewardship reading in a properly placed note.

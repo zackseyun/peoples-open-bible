@@ -9,15 +9,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And after these things Tryphon came to enter the city and wipe it out[a], and he encircled the road to Adora[b]; and Simon and his camp marched opposite him to every place where he went.
-  philosophy: optimal-equivalence
+  text: After this Tryphon advanced to invade Jerusalem and destroy it. He took a roundabout route toward Adora[a], while Simon and his army matched his movements wherever he went.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'blocked the road to Adora.' The Greek literally says 'encircled the road to Adora,' which may describe a military maneuver intended to cut off access.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'marched alongside him' or 'advanced opposite him.' The Greek verb suggests Simon's force matched Tryphon's movements from place to place.
-    reason: lexical_alternative
+    text: Or, 'he surrounded the road to Adora.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: μετὰ ταῦτα
   chosen: after these things
@@ -114,14 +111,20 @@ revisions:
   from: And after these things Tryphon came to enter the city and wipe it out, and he encircled the road to Adora; and Simon and his camp moved opposite him to every place where he went.
   to: And after these things Tryphon came to enter the city and wipe it out, and he encircled the road to Adora; and Simon and his camp moved opposite him to every place where he went.
   rationale: Changed 'moved opposite him' to 'marched opposite him' for a more natural and contextually appropriate rendering of ἀντιπαρῆγεν, while preserving the sense of military counter-movement. No other changes needed.
-
 - timestamp: '2026-05-18T02:59:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And after these things Tryphon came to enter the city and wipe it out[a], and he encircled the road to Adora[b]; and Simon and his camp marched opposite him to every place where he went.'
-  to: 'And after these things Tryphon came to enter the city and wipe it out[a], and he encircled the road to Adora[b]; and Simon and his camp marched opposite him to every place where he went.'
+  from: And after these things Tryphon came to enter the city and wipe it out[a], and he encircled the road to Adora[b]; and Simon and his camp marched opposite him to every place where he went.
+  to: And after these things Tryphon came to enter the city and wipe it out[a], and he encircled the road to Adora[b]; and Simon and his camp marched opposite him to every place where he went.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''moved opposite him''].'
+- timestamp: '2026-11-09T18:53:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And after these things Tryphon came to enter the city and wipe it out[a], and he encircled the road to Adora[b]; and Simon and his camp marched opposite him to every place where he went.
+  to: After this Tryphon advanced to invade Jerusalem and destroy it. He took a roundabout route toward Adora[a], while Simon and his army matched his movements wherever he went.
+  rationale: The earlier review rightly recognized military counter-movement, which I preserve without the awkward 'marched opposite him.' I depart from the lexical preference for 'encircled the road' because the narrative better supports a roundabout march, while retaining the other understanding in a note.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -141,3 +144,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/013/020.job-48744.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:48Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Tryphon advances intending to destroy Jerusalem, taking a roundabout route while Simon's army counters his movements.
+  meaning_decisions:
+  - source_phrase: ἦλθεν Τρύφων τοῦ ἐμβατεῦσαι εἰς τὴν πόλιν καὶ ἐκτρῖψαι αὐτήν
+    prior_rendering: Tryphon came to enter the city and wipe it out
+    new_rendering: Tryphon advanced to invade Jerusalem and destroy it
+    rationale: The purpose clause describes a hostile advance, not a completed entry; Jerusalem is the city understood from the surrounding narrative.
+  - source_phrase: ἐκύκλωσεν ὁδὸν τὴν εἰς Ἄδωρά
+    prior_rendering: he encircled the road to Adora
+    new_rendering: He took a roundabout route toward Adora
+    rationale: In this account of troop movements, the phrase is best understood as a circling or indirect march rather than encircling a road; the serious alternative is noted.
+  - source_phrase: Σίμων καὶ ἡ παρεμβολὴ αὐτοῦ ἀντιπαρῆγεν αὐτῷ εἰς πάντα τόπον οὗ ἐπορεύετο
+    prior_rendering: Simon and his camp marched opposite him to every place where he went
+    new_rendering: Simon and his army matched his movements wherever he went
+    rationale: The moving camp is the army, and the compound verb describes tactical counter-movement rather than an attack or a stationary encampment.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review rightly recognized military counter-movement, which I preserve without the awkward 'marched opposite him.' I depart from the lexical preference for 'encircled the road' because the narrative better supports a roundabout march, while retaining the other understanding in a note.

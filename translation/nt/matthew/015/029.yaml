@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: Καὶ μεταβὰς ἐκεῖθεν ὁ Ἰησοῦς ἦλθεν παρὰ τὴν θάλασσαν τῆς Γαλιλαίας, καὶ ἀναβὰς εἰς τὸ ὄρος ἐκάθητο ἐκεῖ.
 translation:
-  text: And departing from there[a], Jesus came along the Sea of Galilee, and after going up on the mountain[b], he sat there.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'beside the Sea of Galilee.' The Greek preposition can denote movement along or location beside the shore.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'he sat there.' The Greek imperfect may be rendered more simply, but 'was sitting' better preserves the ongoing sense.
-    reason: lexical_alternative
+  text: Jesus left there and went along the shore of the Sea of Galilee. He went up the mountain and sat there.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: μεταβὰς
   chosen: after departing
@@ -91,14 +84,20 @@ revisions:
   from: And after departing from there, Jesus came along the Sea of Galilee, and after going up on the mountain, he was sitting there.
   to: And after departing from there, Jesus came along the Sea of Galilee, and after going up on the mountain, he was sitting there.
   rationale: Removed 'after' before 'departing' for a more direct rendering of the participle, and changed 'he was sitting there' to 'he sat there' to better reflect the aorist verb in natural formal English.
-
 - timestamp: '2026-05-16T20:52:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And departing from there[a], Jesus came along the Sea of Galilee, and after going up on the mountain[b], he sat there.'
-  to: 'And departing from there[a], Jesus came along the Sea of Galilee, and after going up on the mountain[b], he sat there.'
-  rationale: 'Restored drafter ''after departing'' (preserving the chosen aorist-participial ''after'' rendering) and ''he was sitting there'' (preserving the chosen imperfect rendering) per chosen renderings.'
+  from: And departing from there[a], Jesus came along the Sea of Galilee, and after going up on the mountain[b], he sat there.
+  to: And departing from there[a], Jesus came along the Sea of Galilee, and after going up on the mountain[b], he sat there.
+  rationale: Restored drafter 'after departing' (preserving the chosen aorist-participial 'after' rendering) and 'he was sitting there' (preserving the chosen imperfect rendering) per chosen renderings.
+- timestamp: '2026-11-09T17:15:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And departing from there[a], Jesus came along the Sea of Galilee, and after going up on the mountain[b], he sat there.
+  to: Jesus left there and went along the shore of the Sea of Galilee. He went up the mountain and sat there.
+  rationale: 'The aspect-focused review and automated revert carry less weight than the narrative sense: “sat there” can describe the continuing posture expressed by the imperfect. I retain the documented shoreline movement and mountain setting while simplifying the sentence structure.'
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -121,3 +120,29 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/015/029.job-57085.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:15:03Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus leaves that region, travels along the Sea of Galilee, and sits on the mountain.
+  meaning_decisions:
+  - source_phrase: μεταβὰς ἐκεῖθεν
+    prior_rendering: departing from there
+    new_rendering: left there
+    rationale: A direct finite verb conveys the departure naturally while preserving the sequence of travel.
+  - source_phrase: ἦλθεν παρὰ τὴν θάλασσαν τῆς Γαλιλαίας
+    prior_rendering: came along the Sea of Galilee
+    new_rendering: went along the shore of the Sea of Galilee
+    rationale: “Along the shore” makes clear that the movement is beside the lake rather than across its water.
+  - source_phrase: καὶ ἀναβὰς εἰς τὸ ὄρος ἐκάθητο ἐκεῖ
+    prior_rendering: and after going up on the mountain, he sat there
+    new_rendering: He went up the mountain and sat there
+    rationale: Coordinated finite verbs convey the ascent followed by the seated posture without cumbersome participial phrasing.
+  footnote_kinds: {}
+  history_weighed: 'The aspect-focused review and automated revert carry less weight than the narrative sense: “sat there” can describe the continuing posture expressed by the imperfect. I retain the documented shoreline movement and mountain setting while simplifying the sentence structure.'

@@ -21,12 +21,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: Question a friend[a], perhaps he did not do it; and if he did do something, so that he may not add to it.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'Reprove a friend … lest he add to it.' The opening verb can mean 'reprove' or 'confront,' and the final clause may be understood more sharply as a warning against repeating or increasing the act.
-    reason: lexical_alternative
+  text: Question a friend—he may not have done it. If he has done something wrong, correct him so that he does not do it again.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἔλεγξον
   chosen: Question
@@ -104,14 +100,20 @@ revisions:
   from: 'Question a friend: perhaps he did not do it; and if he did do something, so that he may not add to it.'
   to: Question a friend, lest perhaps he did not do it; and if he did do it, so that he may not do it again.
   rationale: Added 'lest perhaps' to reflect μή ποτε more accurately, and revised the final clause from 'add to it' to 'do it again' for more natural English sense of προσθῇ in context.
-
 - timestamp: '2026-05-16T13:08:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Question a friend[a], lest perhaps he did not do it; and if he did do it, so that he may not do it again.'
-  to: 'Question a friend[a], perhaps he did not do it; and if he did do something, so that he may not add to it.'
-  rationale: 'Restored drafter words ''perhaps'', ''did do something'', and ''add to it'' (preserving the chosen lexical decisions); left azure''s comma-punctuation in place to keep YAML stable.'
+  from: Question a friend[a], lest perhaps he did not do it; and if he did do it, so that he may not do it again.
+  to: Question a friend[a], perhaps he did not do it; and if he did do something, so that he may not add to it.
+  rationale: Restored drafter words 'perhaps', 'did do something', and 'add to it' (preserving the chosen lexical decisions); left azure's comma-punctuation in place to keep YAML stable.
+- timestamp: '2026-11-09T19:07:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Question a friend[a], perhaps he did not do it; and if he did do something, so that he may not add to it.
+  to: Question a friend—he may not have done it. If he has done something wrong, correct him so that he does not do it again.
+  rationale: The first draft and lexical notes favor inquiry before condemnation, which I retain; the review's 'do it again' correctly explains προσθῇ despite its later automated reversal. I make the corrective purpose explicit rather than leaving an unfinished English purpose clause.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -131,3 +133,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/019/012.job-51479.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:00Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Ask a friend about an alleged act before assuming guilt, and if he did wrong, correct him to prevent repetition.
+  meaning_decisions:
+  - source_phrase: καὶ εἴ τι ἐποίησεν, μή ποτε προσθῇ
+    prior_rendering: and if he did do something, so that he may not add to it
+    new_rendering: If he has done something wrong, correct him so that he does not do it again
+    rationale: Wrongdoing is implicit in the allegation, and προσθῇ means continuing or repeating the act; repeating the corrective force of the opening imperative completes the purpose clause naturally in English.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical notes favor inquiry before condemnation, which I retain; the review's 'do it again' correctly explains προσθῇ despite its later automated reversal. I make the corrective purpose explicit rather than leaving an unfinished English purpose clause.

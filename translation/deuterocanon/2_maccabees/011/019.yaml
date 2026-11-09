@@ -24,12 +24,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: If[a], then, you maintain your goodwill in these matters, I will also continue from now on to try to be the cause of good things for you.
-  philosophy: optimal-equivalence
+  text: If, then, you maintain your goodwill toward the government[a], I too will try to secure benefits for you in the future.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'I will henceforth try to be the cause of benefits for you.' The Greek adjective αἰτιαῖος carries the sense of being causally responsible for something.
-    reason: lexical_alternative
+    text: Or, “your goodwill in these matters.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: συντηρήσητε
   chosen: maintain
@@ -109,14 +109,20 @@ revisions:
   from: If, then, you maintain your goodwill in these matters, I will also continue from now on to try to be responsible for good things for you.
   to: If, then, you maintain your goodwill in these matters, I will also continue from now on to try to be responsible for good things for you.
   rationale: Replaced 'be responsible for good things' with 'be the cause of good things' to reflect αἰτιαῖος more naturally and accurately in formal English; retained the rest of the wording.
-
 - timestamp: '2026-05-18T02:59:26Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If[a], then, you maintain your goodwill in these matters, I will also continue from now on to try to be the cause of good things for you.'
-  to: 'If[a], then, you maintain your goodwill in these matters, I will also continue from now on to try to be the cause of good things for you.'
+  from: If[a], then, you maintain your goodwill in these matters, I will also continue from now on to try to be the cause of good things for you.
+  to: If[a], then, you maintain your goodwill in these matters, I will also continue from now on to try to be the cause of good things for you.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''responsible for''].'
+- timestamp: '2026-11-09T18:56:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If[a], then, you maintain your goodwill in these matters, I will also continue from now on to try to be the cause of good things for you.
+  to: If, then, you maintain your goodwill toward the government[a], I too will try to secure benefits for you in the future.
+  rationale: The history correctly preserves goodwill, future effort, and responsibility for beneficial results, but its wording remains needlessly abstract. I express those results directly and note the serious broader understanding of “the affairs.”
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -136,3 +142,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/011/019.job-49298.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:00Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Lysias makes his future efforts to secure benefits for the Jews conditional on their continued goodwill toward the royal government.
+  meaning_decisions:
+  - source_phrase: τὴν εἰς τὰ πράγματα εὔνοιαν
+    prior_rendering: your goodwill in these matters
+    new_rendering: your goodwill toward the government
+    rationale: In royal diplomatic correspondence, “the affairs” can designate the administration or government; this best explains the reciprocal assurance, while the broader reading remains in a note.
+  - source_phrase: καὶ εἰς τὸ λοιπόν πειράσομαι αἰτιαῖος ἀγαθῶν γίνεσθαι
+    prior_rendering: I will also continue from now on to try to be the cause of good things for you
+    new_rendering: I too will try to secure benefits for you in the future
+    rationale: This conveys Lysias’s promise to work toward beneficial outcomes without turning his attempted assistance into a guarantee.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history correctly preserves goodwill, future effort, and responsibility for beneficial results, but its wording remains needlessly abstract. I express those results directly and note the serious broader understanding of “the affairs.”

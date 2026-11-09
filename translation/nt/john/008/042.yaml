@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: ⸀εἶπεν αὐτοῖς ὁ Ἰησοῦς· Εἰ ὁ θεὸς πατὴρ ὑμῶν ἦν ἠγαπᾶτε ἂν ἐμέ, ἐγὼ γὰρ ἐκ τοῦ θεοῦ ἐξῆλθον καὶ ἥκω· οὐδὲ γὰρ ἀπ’ ἐμαυτοῦ ἐλήλυθα, ἀλλ’ ἐκεῖνός με ἀπέστειλεν.
 translation:
-  text: Jesus said to them[a], “If God were your Father, you would love me, because I came from God and am here. For I have not come from myself[b], but he sent me.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more formally, “because I proceeded from God and have come.”
-    reason: lexical_alternative
-  - marker: b
-    text: Or, “For I have not come on my own.” The Greek can emphasize either source (“from myself”) or independent initiative.
-    reason: lexical_alternative
+  text: Jesus said to them, “If God were your Father, you would love me, because I came from God and am here. For I have not come on my own initiative, but he sent me.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Εἰ ... ἦν ... ἠγαπᾶτε ἂν
   chosen: If God were your Father, you would love me
@@ -100,14 +93,20 @@ revisions:
   from: Jesus said to them, “If God were your Father, you would love me, because I came from God and am here. For I have not come from myself, but he sent me.”
   to: Jesus said to them, “If God were your Father, you would love me, for I came from God and am here. For I have not come on my own, but he sent me.”
   rationale: Adjusted 'because' to 'for' for a more formal connective, and revised 'have not come from myself' to the more natural and accurate 'have not come on my own' for οὐδὲ...ἀπ’ ἐμαυτοῦ ἐλήλυθα. Kept the rest substantially unchanged.
-
 - timestamp: '2026-05-16T20:22:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Jesus said to them[a], “If God were your Father, you would love me, for I came from God and am here. For I have not come on my own[b], but he sent me.”'
-  to: 'Jesus said to them[a], “If God were your Father, you would love me, because I came from God and am here. For I have not come from myself[b], but he sent me.”'
-  rationale: 'Restored drafter ''because I came from God'' (preserving the chosen causal connector) and ''For I have not come from myself'' (preserving the chosen ''from myself'' rendering) per chosen renderings.'
+  from: Jesus said to them[a], “If God were your Father, you would love me, for I came from God and am here. For I have not come on my own[b], but he sent me.”
+  to: Jesus said to them[a], “If God were your Father, you would love me, because I came from God and am here. For I have not come from myself[b], but he sent me.”
+  rationale: Restored drafter 'because I came from God' (preserving the chosen causal connector) and 'For I have not come from myself' (preserving the chosen 'from myself' rendering) per chosen renderings.
+- timestamp: '2026-11-09T17:10:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Jesus said to them[a], “If God were your Father, you would love me, because I came from God and am here. For I have not come from myself[b], but he sent me.”
+  to: Jesus said to them, “If God were your Father, you would love me, because I came from God and am here. For I have not come on my own initiative, but he sent me.”
+  rationale: The earlier review identified the initiative sense, but an automated revert restored the source-transparent “from myself.” The sending clause favors stating that initiative explicitly while retaining the current causal connector and origin language.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -130,3 +129,21 @@ cross_check:
   verdict_counts:
     minor-issues: 3
   source_review: state/reviews/gemini/v31_full_coverage/nt/john/008/042.job-54948.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:10:50Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus says that if God were their Father they would love him, because he came from God and was sent by God rather than acting independently.
+  meaning_decisions:
+  - source_phrase: οὐδὲ γὰρ ἀπ’ ἐμαυτοῦ ἐλήλυθα
+    prior_rendering: For I have not come from myself
+    new_rendering: For I have not come on my own initiative
+    rationale: The contrast with “he sent me” identifies independent initiative as the immediate sense; the preceding clause already preserves Jesus’ origin in God.
+  footnote_kinds: {}
+  history_weighed: The earlier review identified the initiative sense, but an automated revert restored the source-transparent “from myself.” The sending clause favors stating that initiative explicitly while retaining the current causal connector and origin language.

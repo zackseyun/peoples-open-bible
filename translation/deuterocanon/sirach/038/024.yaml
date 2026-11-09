@@ -30,12 +30,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 38:24
 translation:
-  text: The wisdom of a scribe comes with the opportunity for leisure, and the one who is less occupied with his work will become wise.[a]
-  philosophy: optimal-equivalence
+  text: How can a man who handles an oxgoad and takes pride in its spear-like shaft[a] become wise?
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The surviving Hebrew text of this line is difficult and does not map cleanly onto the Greek. The translation follows the clearer Greek sense here, especially 'scribe' and the idea that wisdom comes through leisure.
-    reason: textual_variant
+    text: The final Hebrew expression is difficult; it appears to describe the goad as a spear used to drive cattle.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: חכם / יתחכם || σοφία / σοφισθήσεται
   chosen: wisdom / will become wise
@@ -109,14 +109,20 @@ revisions:
   from: The wisdom of a scribe comes with the opportunity for leisure, and the one who is less occupied with his work will become wise.
   to: How can one who holds the plow become wise, and who boasts in the shaft of the goad?
   rationale: 'Replaced the draft, which reflected a different textual tradition, with a rendering that follows the provided Hebrew: ''holds the plow'' for תומך מלמד, ''become wise'' for יתחכם, and ''boasts in the shaft of the goad'' for ומתפאר בחתנית מסעיר.'
-
 - timestamp: '2026-05-15T13:10:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'How can one who holds the plow become wise[a], and who boasts in the shaft of the goad?'
-  to: 'The wisdom of a scribe comes with the opportunity for leisure, and the one who is less occupied with his work will become wise.[a]'
-  rationale: 'Restored Greek-primary translation (PHILOSOPHY.md Sirach policy) over azure''s Hebrew-literal override.'
+  from: How can one who holds the plow become wise[a], and who boasts in the shaft of the goad?
+  to: The wisdom of a scribe comes with the opportunity for leisure, and the one who is less occupied with his work will become wise.[a]
+  rationale: Restored Greek-primary translation (PHILOSOPHY.md Sirach policy) over azure's Hebrew-literal override.
+- timestamp: '2026-11-09T19:08:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The wisdom of a scribe comes with the opportunity for leisure, and the one who is less occupied with his work will become wise.[a]
+  to: How can a man who handles an oxgoad and takes pride in its spear-like shaft[a] become wise?
+  rationale: The earlier review recognized the farming question, but its automatic reversal restored a Greek leisure proverb that repeats the previous verse's subject rather than translating this supplied Hebrew. The source and its continuation in verse 25 therefore outweigh that restoration; I also correct the review's “plow” to “oxgoad.”
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -136,3 +142,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/038/024.job-52067.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:49Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The author questions how a farmer absorbed in handling his cattle-driving tools can acquire the wisdom cultivated by a scribe.
+  meaning_decisions:
+  - source_phrase: מה יתחכם תומך מלמד
+    prior_rendering: The wisdom of a scribe comes with the opportunity for leisure
+    new_rendering: How can a man who handles an oxgoad ... become wise?
+    rationale: The supplied Hebrew asks an agricultural question; מלמד denotes an oxgoad, not a scribe, and the following verse continues the farmer's work.
+  - source_phrase: ומתפאר בחתנית מסעיר
+    prior_rendering: and the one who is less occupied with his work will become wise
+    new_rendering: and takes pride in its spear-like shaft
+    rationale: Despite difficulty in the technical wording, this clause describes pride in a cattle-driving implement, not reduced occupation or leisure.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier review recognized the farming question, but its automatic reversal restored a Greek leisure proverb that repeats the previous verse's subject rather than translating this supplied Hebrew. The source and its continuation in verse 25 therefore outweigh that restoration; I also correct the review's “plow” to “oxgoad.”

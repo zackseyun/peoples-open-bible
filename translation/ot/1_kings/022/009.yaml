@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וַ/יִּקְרָא֙ מֶ֣לֶךְ יִשְׂרָאֵ֔ל אֶל סָרִ֖יס אֶחָ֑ד וַ/יֹּ֕אמֶר מַהֲרָ֖/ה מִיכָ֥יְהוּ בֶן יִמְלָֽה־־׃
 translation:
-  text: Then the king of Israel called one officer and said[a], “Bring Micaiah son of Imlah quickly.”
-  philosophy: optimal-equivalence
+  text: Then the king of Israel called a court official[a] and said, “Bring Micaiah son of Imlah quickly.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew saris can mean 'eunuch' or more generally 'court official/officer.' Here the broader administrative sense is likely.
-    reason: lexical_alternative
+    text: Or, “a eunuch.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וַיִּקְרָא
   chosen: called
@@ -66,14 +66,20 @@ revisions:
   from: Then the king of Israel called one officer and said, “Quickly bring Micaiah son of Imlah.”
   to: Then the king of Israel called one officer and said, “Quickly bring Micaiah son of Imlah.”
   rationale: 'Adjusted word order to reflect the Hebrew adverb more naturally in formal English: ''Bring Micaiah son of Imlah quickly.'''
-
 - timestamp: '2026-05-18T02:56:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then the king of Israel called one officer and said[a], “Bring Micaiah son of Imlah quickly.”'
-  to: 'Then the king of Israel called one officer and said[a], “Bring Micaiah son of Imlah quickly.”'
+  from: Then the king of Israel called one officer and said[a], “Bring Micaiah son of Imlah quickly.”
+  to: Then the king of Israel called one officer and said[a], “Bring Micaiah son of Imlah quickly.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Quickly bring''].'
+- timestamp: '2026-11-09T17:22:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then the king of Israel called one officer and said[a], “Bring Micaiah son of Imlah quickly.”
+  to: Then the king of Israel called a court official[a] and said, “Bring Micaiah son of Imlah quickly.”
+  rationale: I retain the current command’s urgency rather than revisiting the history’s minor word-order changes. The lexical discussion supports the court-office sense while leaving the possible meaning “eunuch” in a correctly placed note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -93,3 +99,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/022/009.job-58717.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:10Z'
+  change_level: refined
+  confidence: high
+  meaning: The king orders a court official to bring Micaiah without delay.
+  meaning_decisions:
+  - source_phrase: סָרִיס אֶחָד
+    prior_rendering: one officer
+    new_rendering: a court official
+    rationale: The official’s royal service is clear, whereas “officer” can suggest a specifically military position.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retain the current command’s urgency rather than revisiting the history’s minor word-order changes. The lexical discussion supports the court-office sense while leaving the possible meaning “eunuch” in a correctly placed note.

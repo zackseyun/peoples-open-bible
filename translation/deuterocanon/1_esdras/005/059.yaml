@@ -30,12 +30,8 @@ source:
     note: MT parallel is APPROXIMATE -- 1 Esdras sometimes expands, conflates, or reorders the Hebrew. Use the MT hebrew as a sanity check on proper names and phrasing; the Greek remains the primary source text.
     reference: ''
 translation:
-  text: And all the people sounded trumpets and shouted with a loud voice, praising the Lord because of the raising up of the house of the Lord[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'because of the rebuilding of the house of the Lord.' The Greek says 'raising up,' which can refer more broadly to the temple's being erected or restored.
-    reason: lexical_alternative
+  text: All the people sounded trumpets and raised a great shout, praising the Lord for the rebuilding of the house of the Lord.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: πᾶς ὁ λαός
   chosen: all the people
@@ -133,13 +129,12 @@ revisions:
   from: And all the people sounded trumpets and shouted with a loud voice, praising the Lord because of the raising up of the house of the Lord.
   to: And all the people sounded trumpets and shouted with a loud voice, praising the Lord for the rebuilding of the house of the Lord.
   rationale: Replaced 'because of the raising up of' with 'for the rebuilding of' to render ἐπὶ τῇ ἐγέρσει more naturally and accurately in context.
-
 - timestamp: '2026-05-18T03:09:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And all the people sounded trumpets and shouted with a loud voice[a], praising the Lord for the rebuilding of the house of the Lord.'
-  to: 'And all the people sounded trumpets and shouted with a loud voice, praising the Lord because of the raising up of the house of the Lord.'
+  from: And all the people sounded trumpets and shouted with a loud voice[a], praising the Lord for the rebuilding of the house of the Lord.
+  to: And all the people sounded trumpets and shouted with a loud voice, praising the Lord because of the raising up of the house of the Lord.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''because of the raising up''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -149,6 +144,13 @@ revisions:
   from: And all the people sounded trumpets and shouted with a loud voice, praising the Lord because of the raising up of the house of the Lord.
   to: And all the people sounded trumpets and shouted with a loud voice, praising the Lord because of the raising up of the house of the Lord[a].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('the house of the Lord') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:50:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And all the people sounded trumpets and shouted with a loud voice, praising the Lord because of the raising up of the house of the Lord[a].
+  to: All the people sounded trumpets and raised a great shout, praising the Lord for the rebuilding of the house of the Lord.
+  rationale: The earlier review correctly identified “rebuilding” as the contextual meaning, while the automated reversion chiefly restored source-transparent phrasing. I adopt that clarity and retain the weighty temple image “house of the Lord.”
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -168,3 +170,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/005/059.job-47744.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:50:55Z'
+  change_level: refined
+  confidence: high
+  meaning: The whole community celebrated the rebuilding of the Lord’s house with trumpets, loud shouting, and praise.
+  meaning_decisions:
+  - source_phrase: ἐβόησαν φωνῇ μεγάλῃ
+    prior_rendering: shouted with a loud voice
+    new_rendering: raised a great shout
+    rationale: This is the community’s loud collective acclamation, expressed without a source-shaped repetition of shouting and voice.
+  - source_phrase: ἐπὶ τῇ ἐγέρσει τοῦ οἴκου Κυρίου
+    prior_rendering: because of the raising up of the house of the Lord
+    new_rendering: for the rebuilding of the house of the Lord
+    rationale: In this construction narrative, “raising up” means rebuilding the temple; the English does not imply that the entire project was already finished.
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly identified “rebuilding” as the contextual meaning, while the automated reversion chiefly restored source-transparent phrasing. I adopt that clarity and retain the weighty temple image “house of the Lord.”

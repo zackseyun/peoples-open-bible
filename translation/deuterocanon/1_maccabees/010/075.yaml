@@ -30,15 +30,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And he encamped against Joppa[a], and those from the city shut him out, because a garrison of Apollonius was in Joppa[b]; and they fought against it.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'those from the city shut him out.' The Greek phrase is literally 'those from the city.'
-    reason: lexical_alternative
-  - marker: b
-    text: The final 'it' refers to Joppa, the city.
-    reason: lexical_alternative
+  text: Jonathan encamped against Joppa, but the people of the city shut him out because Apollonius had a garrison there. So Jonathan and his men attacked the city.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: παρενέβαλεν ἐπὶ Ἰόππην
   chosen: encamped against Joppa
@@ -105,14 +98,20 @@ revisions:
   from: And he encamped against Joppa, but the men from the city shut him out, because a garrison of Apollonius was in Joppa; so they fought against it.
   to: And he encamped against Joppa, but the men from the city shut him out, because a garrison of Apollonius was in Joppa; so they fought against it.
   rationale: Replaced 'but' and 'so' with 'and' to reflect the Greek coordination more closely, and changed 'the men from the city' to 'those from the city' for a more literal rendering.
-
 - timestamp: '2026-05-18T02:59:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he encamped against Joppa[a], and those from the city shut him out, because a garrison of Apollonius was in Joppa[b]; and they fought against it.'
-  to: 'And he encamped against Joppa[a], and those from the city shut him out, because a garrison of Apollonius was in Joppa[b]; and they fought against it.'
+  from: And he encamped against Joppa[a], and those from the city shut him out, because a garrison of Apollonius was in Joppa[b]; and they fought against it.
+  to: And he encamped against Joppa[a], and those from the city shut him out, because a garrison of Apollonius was in Joppa[b]; and they fought against it.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the men from the city''].'
+- timestamp: '2026-11-09T19:53:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he encamped against Joppa[a], and those from the city shut him out, because a garrison of Apollonius was in Joppa[b]; and they fought against it.
+  to: Jonathan encamped against Joppa, but the people of the city shut him out because Apollonius had a garrison there. So Jonathan and his men attacked the city.
+  rationale: The first draft’s 'but' and 'so' better convey the narrative connections than the later source-transparent coordination. The lexical discussion also correctly identifies the final object as Joppa, which the main text now names directly.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -132,3 +131,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/010/075.job-48583.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:53:08Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Joppa refuses Jonathan entry because it contains Apollonius’s garrison, so Jonathan and his men attack the city.
+  meaning_decisions:
+  - source_phrase: καὶ ἀπέκλεισαν αὐτὸν οἱ ἐκ τῆς πόλεως
+    prior_rendering: and those from the city shut him out
+    new_rendering: but the people of the city shut him out
+    rationale: The inhabitants refuse the approaching commander entry; the contrast and the identity of those refusing him are made explicit.
+  - source_phrase: ὅτι φρουρὰ Ἀπολλωνίου ἐν Ἰόππῃ
+    prior_rendering: because a garrison of Apollonius was in Joppa
+    new_rendering: because Apollonius had a garrison there
+    rationale: This naturally expresses the garrison’s allegiance without repeating the place-name.
+  - source_phrase: καὶ ἐπολέμησαν αὐτήν
+    prior_rendering: and they fought against it
+    new_rendering: So Jonathan and his men attacked the city
+    rationale: 'The Greek changes subjects: Jonathan’s force, not the inhabitants just mentioned, attacks Joppa; naming both parties prevents a misleading English pronoun.'
+  footnote_kinds: {}
+  history_weighed: The first draft’s 'but' and 'so' better convey the narrative connections than the later source-transparent coordination. The lexical discussion also correctly identifies the final object as Joppa, which the main text now names directly.

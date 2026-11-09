@@ -8,11 +8,11 @@ source:
   confidence: high
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone PAZ extraction from the curated ADA stream, using Daniel 3:24-90 as the source span and renumbering it to PAZ 1:1-67.
 translation:
-  text: And now we follow after you with our whole heart[a], and we fear you, and we seek your face.
-  philosophy: optimal-equivalence
+  text: Now we follow you with our whole heart; we fear you and seek your face[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'we seek your presence.' The Greek literally says 'we seek your face,' a biblical idiom for seeking God's favor or presence.
+    text: Seeking God's face means seeking his presence and favor.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: καὶ νῦν
@@ -95,14 +95,20 @@ revisions:
   from: And now we continue to follow you with our whole heart, and we fear you, and we seek your face.
   to: And now we continue to follow you with our whole heart, and we fear you, and we seek your face.
   rationale: Revised 'continue to follow you' to 'follow after you' to reflect ἐξακολουθοῦμεν more directly and naturally without adding the aspectual nuance 'continue.'
-
 - timestamp: '2026-05-18T02:59:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And now we follow after you with our whole heart[a], and we fear you, and we seek your face.'
-  to: 'And now we follow after you with our whole heart[a], and we fear you, and we seek your face.'
+  from: And now we follow after you with our whole heart[a], and we fear you, and we seek your face.
+  to: And now we follow after you with our whole heart[a], and we fear you, and we seek your face.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''we continue to follow''].'
+- timestamp: '2026-11-09T19:02:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And now we follow after you with our whole heart[a], and we fear you, and we seek your face.
+  to: Now we follow you with our whole heart; we fear you and seek your face[a].
+  rationale: The history supports wholehearted allegiance without establishing that the verb requires the added sense 'continue.' I retain the weight of 'fear' and the biblical image of seeking God's face, while removing redundant connective wording.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -122,3 +128,18 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/prayer_of_azariah/001/018.job-50929.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:02:29Z'
+  change_level: refined
+  confidence: high
+  meaning: The speakers affirm their wholehearted allegiance to God, their reverent fear of him, and their desire for his presence and favor.
+  meaning_decisions: []
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The history supports wholehearted allegiance without establishing that the verb requires the added sense 'continue.' I retain the weight of 'fear' and the biblical image of seeking God's face, while removing redundant connective wording.

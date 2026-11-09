@@ -4,18 +4,12 @@ source:
   edition: SBLGNT
   text: εἰδὼς ὅτι ταχινή ἐστιν ἡ ἀπόθεσις τοῦ σκηνώματός μου, καθὼς καὶ ὁ κύριος ἡμῶν Ἰησοῦς Χριστὸς ἐδήλωσέν μοι·
 translation:
-  text: knowing that the putting off of my tent is near[c][b][a], just as our Lord Jesus Christ made clear to me.
-  philosophy: optimal-equivalence
+  text: For I know that I will soon lay aside my tent[a], just as our Lord Jesus Christ made clear to me.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the removal of my tent'; that is, Peter speaks of his coming death with the metaphor of laying aside a temporary dwelling.
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek title Christos means ‘Messiah’; here it appears in the conventional English personal-name form.
+    text: Or 'that I will lay aside my tent suddenly'; the adjective can describe swiftness rather than nearness.
     reason: alternative_reading
-  - marker: c
-    text: Or 'is soon'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: εἰδὼς
   chosen: knowing
@@ -131,15 +125,21 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "knowing that the putting off of my tent is near, just as our Lord Jesus Messiah made clear to me."
-  to: "knowing that the putting off of my tent is near, just as our Lord Jesus the Messiah made clear to me."
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
+  from: knowing that the putting off of my tent is near, just as our Lord Jesus Messiah made clear to me.
+  to: knowing that the putting off of my tent is near, just as our Lord Jesus the Messiah made clear to me.
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:05:17Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: knowing that the putting off of my tent is near[c][b][a], just as our Lord Jesus Christ made clear to me.
+  to: For I know that I will soon lay aside my tent[a], just as our Lord Jesus Christ made clear to me.
+  rationale: The revision from 'is soon' to 'is near' improved the English while retaining impending death; the new verbal construction preserves that gain. The automated Christ/Messiah reversals carry little interpretive weight, and the standing ruling supports the current name construction 'Jesus Christ.'
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:38:15Z'
   unchanged: false
   changes_summary: 'Replaced ''Messiah'' with ''Christ'' to reflect the Greek Χριστός in this epistolary context and maintain formal register and likely consistency with surrounding usage. No other changes needed. [Regression fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)]'
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -162,3 +162,22 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/nt/2_peter/001/014.job-38890.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:17Z'
+  change_level: refined
+  confidence: medium
+  meaning: Peter knows that his death is near, as the Lord Jesus Christ has made clear to him.
+  meaning_decisions:
+  - source_phrase: εἰδὼς ὅτι ταχινή ἐστιν ἡ ἀπόθεσις τοῦ σκηνώματός μου
+    prior_rendering: knowing that the putting off of my tent is near
+    new_rendering: For I know that I will soon lay aside my tent
+    rationale: A complete causal sentence makes Peter’s reason for reminding them explicit; the verbal phrasing preserves the bodily metaphor without the awkward noun construction or the misleading everyday sense of 'putting off' as delaying.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The revision from 'is soon' to 'is near' improved the English while retaining impending death; the new verbal construction preserves that gain. The automated Christ/Messiah reversals carry little interpretive weight, and the standing ruling supports the current name construction 'Jesus Christ.'

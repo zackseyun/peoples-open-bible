@@ -28,18 +28,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 40:1
 translation:
-  text: Great toil is allotted[c][b][a], and a heavy burden upon the children of man—from the day they come forth from their mother’s womb until the day they return to the mother of all.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Greek: ''a heavy yoke upon the sons of Adam.'' The Hebrew is more compressed here; ''heavy burden'' reflects the sense without forcing the exact metaphor into the main text.'
-    reason: lexical_alternative
-  - marker: b
-    text: 'The Greek parallel expands the verse: ''from the day they come forth from their mother’s womb until the day of burial in the mother of all.'' The Hebrew witness here is shorter.'
-    reason: alternative_reading
-  - marker: c
-    text: '''The mother of all'' is a figurative way of referring to the earth as the common destination of burial.'
-    reason: cultural_note
+  text: God has allotted great toil; a heavy yoke rests on all humanity—
+  philosophy: dynamic
 lexical_decisions:
 - source_word: עסק גדול
   chosen: Great toil
@@ -138,14 +128,20 @@ revisions:
   from: Great toil is allotted, and a heavy burden upon the children of man—from the day they come forth from their mother’s womb until the day they return to the mother of all.
   to: Great toil is allotted, and a heavy burden is upon the children of man.
   rationale: Removed the added phrase about birth and death, which is not present in the provided Hebrew. Added 'is' before 'upon' for natural English while preserving the source sense.
-
 - timestamp: '2026-05-16T11:52:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Great toil is allotted[c][b][a], and a heavy burden is upon the children of man.'
-  to: 'Great toil is allotted[c][b][a], and a heavy burden upon the children of man—from the day they come forth from their mother’s womb until the day they return to the mother of all.'
-  rationale: 'Restored drafter ''from the day they come forth from their mother''s womb until the day they return to the mother of all'' preserving traditional and Hebrew-supported birth-to-death framing per chosen renderings.'
+  from: Great toil is allotted[c][b][a], and a heavy burden is upon the children of man.
+  to: Great toil is allotted[c][b][a], and a heavy burden upon the children of man—from the day they come forth from their mother’s womb until the day they return to the mother of all.
+  rationale: Restored drafter 'from the day they come forth from their mother's womb until the day they return to the mother of all' preserving traditional and Hebrew-supported birth-to-death framing per chosen renderings.
+- timestamp: '2026-11-09T19:09:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Great toil is allotted[c][b][a], and a heavy burden upon the children of man—from the day they come forth from their mother’s womb until the day they return to the mother of all.
+  to: God has allotted great toil; a heavy yoke rests on all humanity—
+  rationale: The April revision correctly recognized that the birth-to-death wording belongs outside this Hebrew verse; the later automated restoration added it back without resolving the duplication with verse 2. I retain that boundary correction and make the Hebrew agency explicit.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -165,3 +161,29 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/040/001.job-52114.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:07Z'
+  change_level: retranslated
+  confidence: high
+  meaning: God has assigned humanity a life of great toil under a heavy burden.
+  meaning_decisions:
+  - source_phrase: חלק אל
+    prior_rendering: is allotted
+    new_rendering: God has allotted
+    rationale: The Hebrew most naturally names God as the one who apportions the toil; the passive wording concealed that agency.
+  - source_phrase: ועל כבד על בני אדם
+    prior_rendering: a heavy burden upon the children of man
+    new_rendering: a heavy yoke rests on all humanity
+    rationale: The yoke remains an intelligible image of imposed hardship, while 'all humanity' clearly expresses the universal scope.
+  - source_phrase: עסק גדול חלק אל, ועל כבד על בני אדם.
+    prior_rendering: Great toil is allotted ... from the day they come forth from their mother’s womb until the day they return to the mother of all.
+    new_rendering: God has allotted great toil; a heavy yoke rests on all humanity—
+    rationale: The supplied Hebrew places the birth-to-death span in verse 2; removing its duplication here preserves the given verse boundaries.
+  footnote_kinds: {}
+  history_weighed: The April revision correctly recognized that the birth-to-death wording belongs outside this Hebrew verse; the later automated restoration added it back without resolving the duplication with verse 2. I retain that boundary correction and make the Hebrew agency explicit.

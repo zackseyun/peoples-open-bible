@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: בֶּן אָדָ֗ם כתוב לְ/ךָ֙ אֶת שֵׁ֣ם הַ/יּ֔וֹם אֶת עֶ֖צֶם הַ/יּ֣וֹם הַ/זֶּ֑ה סָמַ֤ךְ מֶֽלֶךְ בָּבֶל֙ אֶל יְר֣וּשָׁלִַ֔ם בְּ/עֶ֖צֶם הַ/יּ֥וֹם הַ/זֶּֽה־־־־־־׃
 translation:
-  text: 'Son of man[a], write down for yourself the name of the day[c][b], this very day: the king of Babylon has laid siege against Jerusalem on this very day.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more idiomatically, 'write down the date.' Literally, 'write for yourself the name of the day.'
-    reason: lexical_alternative
-  - marker: b
-    text: The Hebrew says literally, 'this very day' / 'on this very day,' repeating the phrase for emphasis.
-    reason: lexical_alternative
-  - marker: c
-    text: Or, 'has come against Jerusalem.' The Hebrew verb here is rendered in context as the beginning of the Babylonian siege.
-    reason: alternative_reading
+  text: 'Son of man, write down for yourself the date of this very day: the king of Babylon has laid siege to Jerusalem on this very day.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: בֶּן אָדָם
   chosen: Son of man
@@ -93,14 +83,20 @@ revisions:
   from: 'Son of man, write down for yourself the name of the day, this very day: the king of Babylon has laid siege against Jerusalem on this very day.'
   to: 'Son of man, write down for yourself the name of the day, this very day: the king of Babylon has laid siege to Jerusalem on this very day.'
   rationale: Changed 'laid siege against Jerusalem' to the more natural and standard 'laid siege to Jerusalem.'
-
 - timestamp: '2026-05-16T01:40:46Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'Son of man[a], write down for yourself the name of the day[c][b], this very day: the king of Babylon has laid siege to Jerusalem on this very day.'
   to: 'Son of man[a], write down for yourself the name of the day[c][b], this very day: the king of Babylon has laid siege against Jerusalem on this very day.'
-  rationale: 'Azure substituted ''to Jerusalem'' — drafter''s explicit rejected alternative. Drafter chose ''against Jerusalem'' because אֶל with a hostile military verb calls for ''against'' in English.'
+  rationale: Azure substituted 'to Jerusalem' — drafter's explicit rejected alternative. Drafter chose 'against Jerusalem' because אֶל with a hostile military verb calls for 'against' in English.
+- timestamp: '2026-11-09T20:36:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Son of man[a], write down for yourself the name of the day[c][b], this very day: the king of Babylon has laid siege against Jerusalem on this very day.'
+  to: 'Son of man, write down for yourself the date of this very day: the king of Babylon has laid siege to Jerusalem on this very day.'
+  rationale: The history contains no maintainer revision; its emphasis on the exact date and the beginning of the siege is preserved. The earlier revision’s “laid siege to” is preferable to the automated revert because the English construction already conveys hostility, while “the date” carries the meaning acknowledged in the lexical rationale.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -120,3 +116,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/024/002.job-63921.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:36:19Z'
+  change_level: refined
+  confidence: high
+  meaning: Yahweh commands Ezekiel to record the exact date because the king of Babylon has begun besieging Jerusalem that very day.
+  meaning_decisions:
+  - source_phrase: אֶת שֵׁם הַיּוֹם אֶת עֶצֶם הַיּוֹם הַזֶּה
+    prior_rendering: the name of the day, this very day
+    new_rendering: the date of this very day
+    rationale: The command concerns recording the precise calendar date, not naming a weekday; the new wording conveys the idiom while retaining its emphasis.
+  - source_phrase: סָמַךְ מֶלֶךְ בָּבֶל אֶל יְרוּשָׁלִַם
+    prior_rendering: the king of Babylon has laid siege against Jerusalem
+    new_rendering: the king of Babylon has laid siege to Jerusalem
+    rationale: “Lay siege to” is the natural English construction and fully expresses the hostile military action intended by the Hebrew.
+  footnote_kinds: {}
+  history_weighed: The history contains no maintainer revision; its emphasis on the exact date and the beginning of the siege is preserved. The earlier revision’s “laid siege to” is preferable to the automated revert because the English construction already conveys hostility, while “the date” carries the meaning acknowledged in the lexical rationale.

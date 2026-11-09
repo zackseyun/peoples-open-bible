@@ -16,11 +16,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: For reason does not rule over one's own passions[a], but over those things opposed to justice and courage and self-control and prudence; and over these, not so as to destroy them, but so as not to yield to them.
-  philosophy: optimal-equivalence
+  text: For reason does not master its own weaknesses[a], but the passions that oppose justice, courage, self-control, and prudence. Its mastery does not eliminate these passions, but keeps us from yielding to them.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'righteousness' instead of 'justice' for δικαιοσύνη.
+    text: Literally, “its own passions,” referring here to deficiencies such as forgetfulness and ignorance.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: λογισμός
@@ -133,17 +133,23 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'For reason does not rule over a person''s own passions, but over those things that oppose justice and courage and self-control and prudence; and over these, not so as to destroy them, but so as not to yield to them.'
-  to: 'For reason does not rule over a person''s own passions, but over those things that oppose justice and courage and self-control and prudence; and over these, not so as to destroy them, but so as not to yield to them.'
+  from: For reason does not rule over a person's own passions, but over those things that oppose justice and courage and self-control and prudence; and over these, not so as to destroy them, but so as not to yield to them.
+  to: For reason does not rule over a person's own passions, but over those things that oppose justice and courage and self-control and prudence; and over these, not so as to destroy them, but so as not to yield to them.
   rationale: Replaced 'a person's' with 'one's' for a more formal and concise rendering, and streamlined 'those things that oppose' to 'those things opposed to' for more natural formal English while preserving the Greek sense.
-
 - timestamp: '2026-05-18T02:59:29Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For reason does not rule over one''s own passions[a], but over those things opposed to justice and courage and self-control and prudence; and over these, not so as to destroy them, but so as not to yield to them.'
-  to: 'For reason does not rule over one''s own passions[a], but over those things opposed to justice and courage and self-control and prudence; and over these, not so as to destroy them, but so as not to yield to them.'
+  from: For reason does not rule over one's own passions[a], but over those things opposed to justice and courage and self-control and prudence; and over these, not so as to destroy them, but so as not to yield to them.
+  to: For reason does not rule over one's own passions[a], but over those things opposed to justice and courage and self-control and prudence; and over these, not so as to destroy them, but so as not to yield to them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''those things that oppose justice and courage and self-control and prudence''].'
+- timestamp: '2026-11-09T18:57:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For reason does not rule over one's own passions[a], but over those things opposed to justice and courage and self-control and prudence; and over these, not so as to destroy them, but so as not to yield to them.
+  to: For reason does not master its own weaknesses[a], but the passions that oppose justice, courage, self-control, and prudence. Its mastery does not eliminate these passions, but keeps us from yielding to them.
+  rationale: The recorded review and revert address surface phrasing but do not resolve the misleading reference to 'one's own passions.' The preceding objection and the Greek reflexive require identifying these as reason's own weaknesses, while the documented cardinal-virtue terminology remains sound.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -163,3 +169,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/001/006.job-49712.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:40Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Reason masters passions opposed to the virtues, not its own mental weaknesses, and its mastery means resisting those passions rather than eliminating them.
+  meaning_decisions:
+  - source_phrase: τῶν ἑαυτοῦ παθῶν
+    prior_rendering: one's own passions
+    new_rendering: its own weaknesses
+    rationale: The reflexive refers to reason itself, not to a person's passions generally; verse 5 identifies the relevant weaknesses as forgetfulness and ignorance.
+  - source_phrase: τῶν τῆς δικαιοσύνης καὶ ἀνδρείας καὶ σωφροσύνης καὶ φρονήσεως ἐναντίων
+    prior_rendering: those things opposed to justice and courage and self-control and prudence
+    new_rendering: the passions that oppose justice, courage, self-control, and prudence
+    rationale: The omitted noun is supplied from the preceding clause, clarifying that the contrast concerns two categories of affliction rather than unspecified things.
+  - source_phrase: οὐχ ὥστε αὐτὰ καταλῦσαι, ἀλλʼ ὥστε αὐτοῖς μὴ εἴξαι
+    prior_rendering: not so as to destroy them, but so as not to yield to them
+    new_rendering: Its mastery does not eliminate these passions, but keeps us from yielding to them
+    rationale: 'This makes the author''s essential qualification clear: mastery is resistance to the passions, not their disappearance.'
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The recorded review and revert address surface phrasing but do not resolve the misleading reference to 'one's own passions.' The preceding objection and the Greek reflexive require identifying these as reason's own weaknesses, while the documented cardinal-virtue terminology remains sound.

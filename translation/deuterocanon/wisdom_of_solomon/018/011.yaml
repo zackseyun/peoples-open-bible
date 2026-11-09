@@ -21,12 +21,12 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: And servant and master alike were punished with the same judgment[a], and the commoner suffered the same things as the king.
-  philosophy: optimal-equivalence
+  text: The same punishment fell on servant[a] and master alike, and the commoner suffered the same things as the king.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'an equal penalty'; Greek δίκη can denote punishment, penalty, or justice depending on context.
-    reason: lexical_alternative
+    text: The Greek refers to an enslaved person, contrasted here with the master.
+    reason: cultural_note
 lexical_decisions:
 - source_word: ὁμοία
   chosen: the same
@@ -121,14 +121,20 @@ revisions:
   from: And the same punishment came on slave and master alike, and the commoner suffered the same things as the king.
   to: And the same punishment came on slave and master alike, and the commoner suffered the same things as the king.
   rationale: 'Revised to reflect the Greek more closely: rendered δίκη as ''judgment'' rather than ''punishment came on,'' kept the participial sense of κολασθείς with ''were punished,'' and preserved the parallel structure more formally with ''slave and master alike'' and ''the commoner suffered the same things as the king.'''
-
 - timestamp: '2026-05-18T03:00:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And slave and master alike were punished with the same judgment[a], and the commoner suffered the same things as the king.'
-  to: 'And slave and master alike were punished with the same judgment[a], and the commoner suffered the same things as the king.'
+  from: And slave and master alike were punished with the same judgment[a], and the commoner suffered the same things as the king.
+  to: And slave and master alike were punished with the same judgment[a], and the commoner suffered the same things as the king.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''punishment''].'
+- timestamp: '2026-11-09T19:13:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And servant and master alike were punished with the same judgment[a], and the commoner suffered the same things as the king.
+  to: The same punishment fell on servant[a] and master alike, and the commoner suffered the same things as the king.
+  rationale: The first draft and lexical rationale support the concrete 'punishment' rather than the current formal construction. The standing ruling requires 'servant' in the text, overriding the older preference for 'slave'; a note preserves the bonded-status contrast central to the verse.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -148,3 +154,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/018/011.job-39366.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:13:20Z'
+  change_level: refined
+  confidence: high
+  meaning: The punishment fell equally across Egypt’s social ranks, from servant to master and commoner to king.
+  meaning_decisions:
+  - source_phrase: ὁμοία δὲ δίκη δοῦλος ἅμα δεσπότῃ κολασθείς
+    prior_rendering: And servant and master alike were punished with the same judgment
+    new_rendering: The same punishment fell on servant and master alike
+    rationale: The elliptical Greek describes an equal penal outcome. The new wording conveys that directly without the cumbersome repetition of being punished with a judgment.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The first draft and lexical rationale support the concrete 'punishment' rather than the current formal construction. The standing ruling requires 'servant' in the text, overriding the older preference for 'slave'; a note preserves the bonded-status contrast central to the verse.

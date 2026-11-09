@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: Μήτι τὸ ὕδωρ ⸂δύναται κωλῦσαί⸃ τις τοῦ μὴ βαπτισθῆναι τούτους οἵτινες τὸ πνεῦμα τὸ ἅγιον ἔλαβον ⸀ὡς καὶ ἡμεῖς;
 translation:
-  text: Surely no one can withhold the water so that these people should not be baptized[b][a], can they? For they have received the Holy Spirit just as we have.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'forbid the water' or 'prevent these people from being baptized.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'can he?'.
-    reason: previous_rendering
+  text: “Surely no one can withhold the water for baptizing these people, can they? For they have received the Holy Spirit just as we have.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Μήτι
   chosen: Surely ... can he?
@@ -111,9 +104,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Surely no one can withhold the water so that these people should not be baptized[b][a], can they? For they have received the Holy Spirit just as we have.'
-  to: 'Surely no one can withhold the water so that these people should not be baptized[b][a], can they? For they have received the Holy Spirit just as we have.'
+  from: Surely no one can withhold the water so that these people should not be baptized[b][a], can they? For they have received the Holy Spirit just as we have.
+  to: Surely no one can withhold the water so that these people should not be baptized[b][a], can they? For they have received the Holy Spirit just as we have.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for baptizing''].'
+- timestamp: '2026-11-09T17:08:18Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Surely no one can withhold the water so that these people should not be baptized[b][a], can they? For they have received the Holy Spirit just as we have.
+  to: “Surely no one can withhold the water for baptizing these people, can they? For they have received the Holy Spirit just as we have.”
+  rationale: The earlier preference for 'for baptizing' captures the prevention construction without the later wording's double negative. I also retain the review's idiomatic 'can they?' and the explicit connection between Spirit reception and eligibility for baptism.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:00:15Z'
@@ -141,3 +141,21 @@ cross_check:
   verdict_counts:
     minor-issues: 3
   source_review: state/reviews/gemini/v31_recheck_applied/nt/acts/010/047.job-38699.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:18Z'
+  change_level: refined
+  confidence: high
+  meaning: Because these Gentiles have received the Holy Spirit just as the Jewish believers did, Peter insists that no one can legitimately deny them water baptism.
+  meaning_decisions:
+  - source_phrase: τὸ ὕδωρ δύναται κωλῦσαί τις τοῦ μὴ βαπτισθῆναι τούτους
+    prior_rendering: no one can withhold the water so that these people should not be baptized
+    new_rendering: no one can withhold the water for baptizing these people
+    rationale: The prevention construction concerns denying water baptism; the new wording conveys that sense without the cumbersome double negative.
+  footnote_kinds: {}
+  history_weighed: The earlier preference for 'for baptizing' captures the prevention construction without the later wording's double negative. I also retain the review's idiomatic 'can they?' and the explicit connection between Spirit reception and eligibility for baptism.

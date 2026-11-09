@@ -27,15 +27,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And when Jonathan saw that the time was favorable to him[b][a], he chose men and sent them to Rome to establish and renew the friendship with them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'that the opportunity favored him' or 'that the time was working in his favor.' The Greek expression is somewhat idiomatic, indicating that circumstances were advantageous to Jonathan.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Friendship'' here likely refers to formal diplomatic relations, not merely private affection.'
-    reason: cultural_note
+  text: When Jonathan saw that circumstances favored him, he chose men and sent them to Rome to confirm and renew friendly relations with the Romans.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἰδὼν
   chosen: when ... saw
@@ -124,14 +117,20 @@ revisions:
   from: And when Jonathan saw that the time was working with him, he chose men and sent them to Rome to establish and renew the friendship with them.
   to: And when Jonathan saw that the time was working with him, he chose men and sent them to Rome to establish and renew the friendship with them.
   rationale: Revised 'the time was working with him' to 'the time was favorable to him' for more natural and accurate rendering of ὁ καιρὸς αὐτῷ συνεργεῖ. Kept the rest essentially unchanged.
-
 - timestamp: '2026-05-18T02:59:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when Jonathan saw that the time was favorable to him[b][a], he chose men and sent them to Rome to establish and renew the friendship with them.'
-  to: 'And when Jonathan saw that the time was favorable to him[b][a], he chose men and sent them to Rome to establish and renew the friendship with them.'
+  from: And when Jonathan saw that the time was favorable to him[b][a], he chose men and sent them to Rome to establish and renew the friendship with them.
+  to: And when Jonathan saw that the time was favorable to him[b][a], he chose men and sent them to Rome to establish and renew the friendship with them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was working with him''].'
+- timestamp: '2026-11-09T18:53:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when Jonathan saw that the time was favorable to him[b][a], he chose men and sent them to Rome to establish and renew the friendship with them.
+  to: When Jonathan saw that circumstances favored him, he chose men and sent them to Rome to confirm and renew friendly relations with the Romans.
+  rationale: The earlier review correctly recognized the favorable-circumstances idiom, and the lexical record identifies the friendship as diplomatic. I carry both points directly into the text rather than retaining explanatory footnotes.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -151,3 +150,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/012/001.job-48672.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:14Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jonathan takes advantage of favorable circumstances to send representatives to Rome and strengthen their existing diplomatic friendship.
+  meaning_decisions:
+  - source_phrase: ὁ καιρὸς αὐτῷ συνεργεῖ
+    prior_rendering: the time was favorable to him
+    new_rendering: circumstances favored him
+    rationale: The expression describes an advantageous situation, not time itself acting on Jonathan's behalf.
+  - source_phrase: στῆσαι καὶ ἀνανεῶσαι
+    prior_rendering: to establish and renew
+    new_rendering: to confirm and renew
+    rationale: The relationship already exists; the mission is to put it on a firm footing again, not establish it for the first time.
+  - source_phrase: τὴν πρὸς αὐτοὺς φιλίαν
+    prior_rendering: the friendship with them
+    new_rendering: friendly relations with the Romans
+    rationale: The context is diplomatic, and naming the Romans makes the relationship's other party explicit.
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly recognized the favorable-circumstances idiom, and the lexical record identifies the friendship as diplomatic. I carry both points directly into the text rather than retaining explanatory footnotes.

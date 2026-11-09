@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: וַ/יֹּ֣אמֶר אֵלַ֡/י דָּנִיֵּ֣אל אִישׁ חֲ֠מֻדוֹת הָבֵ֨ן בַּ/דְּבָרִ֜ים אֲשֶׁר֩ אָנֹכִ֨י דֹבֵ֤ר אֵלֶ֨י/ךָ֙ וַ/עֲמֹ֣ד עַל עָמְדֶ֔/ךָ כִּ֥י עַתָּ֖ה שֻׁלַּ֣חְתִּי אֵלֶ֑י/ךָ וּ/בְ/דַבְּר֥/וֹ עִמִּ֛/י אֶת הַ/דָּבָ֥ר הַ/זֶּ֖ה עָמַ֥דְתִּי מַרְעִֽיד־־־׃
 translation:
-  text: And he said to me[a], “Daniel, man greatly beloved, understand the words that I am speaking to you, and stand in your place, for now I have been sent to you.” And when he spoke this word to me[c][b], I stood trembling.
-  philosophy: optimal-equivalence
+  text: Then he said to me, “Daniel, man greatly beloved[a], understand the words I am speaking to you and stand upright, for I have now been sent to you.” When he said this to me, I stood up trembling.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “highly esteemed man.” The Hebrew expression literally describes Daniel as a man of preciousness or desirability, functioning here as an honorific.
-    reason: lexical_alternative
-  - marker: b
-    text: Or “stand upright” or “stand at your station.” The Hebrew idiom is literally “stand upon your standing/place.”
-    reason: lexical_alternative
-  - marker: c
-    text: Or “when he spoke this message to me.” Hebrew has “this word,” which can also mean “this matter” or “this message.”
-    reason: lexical_alternative
+    text: Or, “highly esteemed man.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: אִישׁ חֲמֻדוֹת
   chosen: man greatly beloved
@@ -109,14 +103,20 @@ revisions:
   from: And he said to me, “Daniel, man greatly beloved, understand the words that I am speaking to you, and stand in your place, for now I have been sent to you.” And when he spoke this word with me, I stood trembling.
   to: And he said to me, “Daniel, man greatly beloved, understand the words that I am speaking to you, and stand in your place, for now I have been sent to you.” And when he spoke this word with me, I stood trembling.
   rationale: Changed 'with me' to 'to me' for more natural and accurate English; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:55:22Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he said to me[a], “Daniel, man greatly beloved, understand the words that I am speaking to you, and stand in your place, for now I have been sent to you.” And when he spoke this word to me[c][b], I stood trembling.'
-  to: 'And he said to me[a], “Daniel, man greatly beloved, understand the words that I am speaking to you, and stand in your place, for now I have been sent to you.” And when he spoke this word to me[c][b], I stood trembling.'
+  from: And he said to me[a], “Daniel, man greatly beloved, understand the words that I am speaking to you, and stand in your place, for now I have been sent to you.” And when he spoke this word to me[c][b], I stood trembling.
+  to: And he said to me[a], “Daniel, man greatly beloved, understand the words that I am speaking to you, and stand in your place, for now I have been sent to you.” And when he spoke this word to me[c][b], I stood trembling.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''when he spoke this word with me''].'
+- timestamp: '2026-11-09T17:30:57Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he said to me[a], “Daniel, man greatly beloved, understand the words that I am speaking to you, and stand in your place, for now I have been sent to you.” And when he spoke this word to me[c][b], I stood trembling.
+  to: Then he said to me, “Daniel, man greatly beloved[a], understand the words I am speaking to you and stand upright, for I have now been sent to you.” When he said this to me, I stood up trembling.
+  rationale: The later review’s “to me” rightly makes the address natural, and I retain “greatly beloved” with the serious “highly esteemed” alternative. Although earlier rationale favored “stand in your place,” Daniel’s movement from hands and knees to standing makes the command physical here.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -136,3 +136,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/daniel/010/011.job-44178.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:30:57Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The speaker addressed Daniel as greatly beloved, commanded him to understand and stand upright, and Daniel rose trembling.
+  meaning_decisions:
+  - source_phrase: וַעֲמֹד עַל עָמְדֶךָ
+    prior_rendering: stand in your place
+    new_rendering: stand upright
+    rationale: Daniel is on his hands and knees, and his immediate response is to stand; the command concerns taking an upright posture rather than remaining at a location or assuming an unstated office.
+  - source_phrase: וּבְדַבְּרוֹ עִמִּי אֶת הַדָּבָר הַזֶּה עָמַדְתִּי מַרְעִיד
+    prior_rendering: when he spoke this word to me, I stood trembling
+    new_rendering: When he said this to me, I stood up trembling
+    rationale: “This word” refers to the preceding address as a whole, and “stood up” makes Daniel’s response to the command explicit.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The later review’s “to me” rightly makes the address natural, and I retain “greatly beloved” with the serious “highly esteemed” alternative. Although earlier rationale favored “stand in your place,” Daniel’s movement from hands and knees to standing makes the command physical here.

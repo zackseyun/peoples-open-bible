@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/כִֽי יָמ֥וּךְ אָחִ֛י/ךָ עִמָּ֖/ךְ וְ/נִמְכַּר לָ֑/ךְ לֹא תַעֲבֹ֥ד בּ֖/וֹ עֲבֹ֥דַת עָֽבֶד־־־׃
 translation:
-  text: And if your brother becomes poor with you and sells himself to you[b][a], you shall not make him serve as a servant.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Literally, 'you shall not make him serve the service of a slave.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or, 'and is sold to you'; the Hebrew idiom can be expressed passively, though in context it refers to a poor man selling himself into debt service.
-    reason: alternative_reading
+  text: If an Israelite brother living among you becomes poor and sells himself to you, you must not subject him to slave labor.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְ/כִי
   chosen: And if
@@ -95,14 +88,20 @@ revisions:
   from: And if your brother becomes poor while with you and sells himself to you, you shall not make him serve as a slave.
   to: And if your brother becomes poor while with you and sells himself to you, you shall not make him serve as a slave.
   rationale: Changed 'while with you' to 'with you' for a more direct and natural rendering of the source without adding nuance; retained the rest as accurate and complete.
-
 - timestamp: '2026-05-18T02:58:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And if your brother becomes poor with you and sells himself to you[b][a], you shall not make him serve as a slave.'
-  to: 'And if your brother becomes poor with you and sells himself to you[b][a], you shall not make him serve as a slave.'
+  from: And if your brother becomes poor with you and sells himself to you[b][a], you shall not make him serve as a slave.
+  to: And if your brother becomes poor with you and sells himself to you[b][a], you shall not make him serve as a slave.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''while with you''].'
+- timestamp: '2026-11-09T18:22:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And if your brother becomes poor with you and sells himself to you[b][a], you shall not make him serve as a servant.
+  to: If an Israelite brother living among you becomes poor and sells himself to you, you must not subject him to slave labor.
+  rationale: The first draft and lexical discussion correctly identified slavery as the contrast, whereas the current 'serve as a servant' obscures it. I retain the supported interpretation of self-sale and restore the force of the labor prohibition.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -122,3 +121,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/025/039.job-45228.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:22:00Z'
+  change_level: retranslated
+  confidence: high
+  meaning: An Israelite who sells himself because of poverty must not be subjected to the labor imposed on a slave.
+  meaning_decisions:
+  - source_phrase: אָחִיךָ עִמָּךְ
+    prior_rendering: your brother ... with you
+    new_rendering: an Israelite brother living among you
+    rationale: This makes the communal scope of the kinship term clear while preserving its familial force.
+  - source_phrase: לֹא תַעֲבֹד בּוֹ עֲבֹדַת עָבֶד
+    prior_rendering: you shall not make him serve as a servant
+    new_rendering: you must not subject him to slave labor
+    rationale: The verse does not prohibit all service, since verse 40 requires him to work; it prohibits the bonded labor associated with slave status.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical discussion correctly identified slavery as the contrast, whereas the current 'serve as a servant' obscures it. I retain the supported interpretation of self-sale and restore the force of the labor prohibition.

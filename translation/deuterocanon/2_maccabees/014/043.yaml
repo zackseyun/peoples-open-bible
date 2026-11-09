@@ -24,14 +24,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But since he had not succeeded in the blow because of the urgency of the struggle[a], and the crowds were rushing in within the gates[b], he ran up bravely onto the wall and hurled himself manfully down into the crowds.
-  philosophy: optimal-equivalence
+  text: But in the haste of the struggle his sword thrust had failed to kill him. As the troops rushed in through the gateways, he ran bravely up onto the wall and courageously[a] hurled himself down into the crowd.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'had not accomplished his purpose with the blow'; the Greek wording suggests that his initial self-inflicted strike did not achieve its intended result.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'threw himself down courageously.' The Greek says 'manfully,' using a specifically masculine-coded term for boldness.
+    text: Literally, “manfully,” expressing manly courage.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: τῇ ... πληγῇ
@@ -135,14 +132,20 @@ revisions:
   from: But since he had not succeeded in the blow because of the urgency of the struggle, and the crowds were rushing in inside the gates, he ran up bravely onto the wall and hurled himself manfully down into the crowds.
   to: But since he had not succeeded in the blow because of the urgency of the struggle, and the crowds were rushing in inside the gates, he ran up bravely onto the wall and hurled himself manfully down into the crowds.
   rationale: Changed 'inside the gates' to 'within the gates' for a more natural rendering of ἔσω τῶν θυρωμάτων while preserving the sense. No other changes needed.
-
 - timestamp: '2026-05-18T03:00:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But since he had not succeeded in the blow because of the urgency of the struggle[a], and the crowds were rushing in within the gates[b], he ran up bravely onto the wall and hurled himself manfully down into the crowds.'
-  to: 'But since he had not succeeded in the blow because of the urgency of the struggle[a], and the crowds were rushing in within the gates[b], he ran up bravely onto the wall and hurled himself manfully down into the crowds.'
+  from: But since he had not succeeded in the blow because of the urgency of the struggle[a], and the crowds were rushing in within the gates[b], he ran up bravely onto the wall and hurled himself manfully down into the crowds.
+  to: But since he had not succeeded in the blow because of the urgency of the struggle[a], and the crowds were rushing in within the gates[b], he ran up bravely onto the wall and hurled himself manfully down into the crowds.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''were rushing in inside the gates''].'
+- timestamp: '2026-11-09T18:55:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But since he had not succeeded in the blow because of the urgency of the struggle[a], and the crowds were rushing in within the gates[b], he ran up bravely onto the wall and hurled himself manfully down into the crowds.
+  to: But in the haste of the struggle his sword thrust had failed to kill him. As the troops rushed in through the gateways, he ran bravely up onto the wall and courageously[a] hurled himself down into the crowd.
+  rationale: The earlier note correctly recognized that the blow failed to achieve its purpose, and that meaning is now explicit. The documented masculine nuance of the final adverb is retained in a footnote rather than lost; no maintainer revision was supplied.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -162,3 +165,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/014/043.job-49431.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:49Z'
+  change_level: retranslated
+  confidence: high
+  meaning: When his hurried sword thrust fails to kill him and the attackers break in, Razis courageously runs onto the wall and throws himself down toward them.
+  meaning_decisions:
+  - source_phrase: τῇ δὲ πληγῇ μὴ κατευκτήσας διὰ τὴν τοῦ ἀγῶνος σπουδήν
+    prior_rendering: he had not succeeded in the blow because of the urgency of the struggle
+    new_rendering: in the haste of the struggle his sword thrust had failed to kill him
+    rationale: The intended result and the cause of failure are understood from the preceding action; stating them avoids the opaque expression “succeeded in the blow.”
+  - source_phrase: τῶν ὄχλων ἔσω τῶν θυρωμάτων εἰσβαλλόντων
+    prior_rendering: the crowds were rushing in within the gates
+    new_rendering: the troops rushed in through the gateways
+    rationale: The phrase describes the attackers breaking into the enclosure, not a crowd already moving around inside it.
+  - source_phrase: ἀνδρωδῶς
+    prior_rendering: manfully
+    new_rendering: courageously
+    rationale: The main text carries the adverb’s praise of courage in contemporary English; the note preserves its specifically masculine expression.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier note correctly recognized that the blow failed to achieve its purpose, and that meaning is now explicit. The documented masculine nuance of the final adverb is retained in a footnote rather than lost; no maintainer revision was supplied.

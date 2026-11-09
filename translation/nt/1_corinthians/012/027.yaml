@@ -4,25 +4,15 @@ source:
   edition: SBLGNT
   text: Ὑμεῖς δέ ἐστε σῶμα Χριστοῦ καὶ μέλη ἐκ μέρους.
 translation:
-  text: You are the body of Messiah[c][b][a], and members individually.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the body of Christ.' The Greek title Χριστός can be rendered 'Messiah' or 'Christ'; here it is translated as a title.
-    reason: alternative_reading
-  - marker: b
-    text: Literally 'members from a part' or 'members in particular'; the sense is that each of you is a member within the whole body.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'and individually members of it'.
-    reason: previous_rendering
+  text: Together you are the body of the Messiah, and each of you is a member of it.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ὑμεῖς
   chosen: you
   alternatives:
   - you yourselves
   lexicon: BDAG
-  rationale: "Second-person plural pronoun, explicitly stated for emphasis. English 'you' captures the plural addressees; the emphatic force is conveyed by word order with 'Now you are' rather than an overly heavy 'you yourselves'. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'Second-person plural pronoun, explicitly stated for emphasis. English ''you'' captures the plural addressees; the emphatic force is conveyed by word order with ''Now you are'' rather than an overly heavy ''you yourselves''. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: δέ
   chosen: Now
   alternatives:
@@ -100,7 +90,7 @@ revisions:
   rationale: Replaced 'Messiah' with 'Christ' to reflect Χριστοῦ more naturally in this Pauline context and removed 'its' since it is not explicit in the Greek; retained 'individually' for ἐκ μέρους.
 - timestamp: '2026-04-23T12:00:00Z'
   adjudicator: claude-sonnet-4-6-regression-fix
-  reviewer_model:
+  reviewer_model: null
   category: regression_fix
   from: Now you are the body of Christ, and members individually.
   to: Now you are the body of Messiah, and members individually.
@@ -112,12 +102,18 @@ revisions:
   from: Now you are the body of Messiah[c][b][a], and members individually.
   to: You are the body of Messiah[c][b][a], and members individually.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:05:41Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You are the body of Messiah[c][b][a], and members individually.
+  to: Together you are the body of the Messiah, and each of you is a member of it.
+  rationale: The earliest wording and the first review both made membership in the body explicit; I recover that clarity, which the later source-transparency review removed. I retain the prescribed “Messiah” and the cleanup's omission of a leading “Now.”
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:35:21Z'
   unchanged: false
   changes_summary: 'Replaced ''Messiah'' with ''Christ'' to reflect Χριστοῦ more naturally in this Pauline context and removed ''its'' since it is not explicit in the Greek; retained ''individually'' for ἐκ μέρους. [Regression fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)]'
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -140,3 +136,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/nt/1_corinthians/012/027.job-39028.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:41Z'
+  change_level: refined
+  confidence: high
+  meaning: The Corinthians collectively constitute the Messiah's body, and each person belongs to it as a member.
+  meaning_decisions:
+  - source_phrase: Ὑμεῖς δέ ἐστε σῶμα Χριστοῦ
+    prior_rendering: You are the body of Messiah
+    new_rendering: Together you are the body of the Messiah
+    rationale: The plural address identifies the community collectively as one body; “together” prevents the English singular-or-plural “you” from obscuring that contrast.
+  - source_phrase: καὶ μέλη ἐκ μέρους
+    prior_rendering: and members individually
+    new_rendering: and each of you is a member of it
+    rationale: The distributive expression means that each person is a member within the collective body. A complete clause makes both individual membership and its relation to the body explicit.
+  footnote_kinds: {}
+  history_weighed: The earliest wording and the first review both made membership in the body explicit; I recover that clarity, which the later source-transparency review removed. I retain the prescribed “Messiah” and the cleanup's omission of a leading “Now.”

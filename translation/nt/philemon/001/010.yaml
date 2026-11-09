@@ -4,14 +4,11 @@ source:
   edition: SBLGNT
   text: παρακαλῶ σε περὶ τοῦ ἐμοῦ τέκνου, ὃν ἐγέννησα ἐν τοῖς ⸀δεσμοῖς Ὀνήσιμον,
 translation:
-  text: I appeal to you concerning my child[a], Onesimus, whom I fathered in my chains[b],
-  philosophy: optimal-equivalence
+  text: I appeal to you for my child, to whom I became a father in the faith while I was in chains[a]—Onesimus,
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'whom I became a father to in my imprisonment.' The Greek uses a birth/begetting metaphor for Paul's spiritual relationship to Onesimus.
-    reason: lexical_alternative
-  - marker: b
-    text: '''In my chains'' may also be understood as ''in imprisonment''; the Greek keeps the concrete image of bonds.'
+    text: Literally, “whom I fathered in chains.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: παρακαλῶ
@@ -84,14 +81,20 @@ revisions:
   from: I appeal to you concerning my own child, Onesimus, whom I fathered in my chains,
   to: I appeal to you concerning my own child, Onesimus, whom I fathered in my chains,
   rationale: Removed 'own' because ἐμοῦ here is adequately conveyed by 'my' and 'my own child' is slightly overstated. Kept 'fathered' for the begetting metaphor and 'in my chains' as a natural rendering of ἐν τοῖς δεσμοῖς.
-
 - timestamp: '2026-05-18T03:01:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'I appeal to you concerning my child[a], Onesimus, whom I fathered in my chains[b],'
-  to: 'I appeal to you concerning my child[a], Onesimus, whom I fathered in my chains[b],'
+  from: I appeal to you concerning my child[a], Onesimus, whom I fathered in my chains[b],
+  to: I appeal to you concerning my child[a], Onesimus, whom I fathered in my chains[b],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''concerning my own child''].'
+- timestamp: '2026-11-09T17:16:28Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: I appeal to you concerning my child[a], Onesimus, whom I fathered in my chains[b],
+  to: I appeal to you for my child, to whom I became a father in the faith while I was in chains[a]—Onesimus,
+  rationale: The history disputes “my” versus “my own,” but the current “my child” adequately carries the affection. I go beyond the earlier preference for an unexplained begetting metaphor because “fathered” alone can sound biological in English, while retaining the source’s image in a note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -113,3 +116,30 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/nt/philemon/001/010.job-28038.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:16:28Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Paul pleads for Onesimus as his spiritual child, having become his father in the faith during his imprisonment.
+  meaning_decisions:
+  - source_phrase: παρακαλῶ σε περὶ τοῦ ἐμοῦ τέκνου
+    prior_rendering: I appeal to you concerning my child
+    new_rendering: I appeal to you for my child
+    rationale: Paul is pleading on the child’s behalf, not merely introducing a subject for discussion.
+  - source_phrase: ὃν ἐγέννησα ἐν τοῖς δεσμοῖς
+    prior_rendering: whom I fathered in my chains
+    new_rendering: to whom I became a father in the faith while I was in chains
+    rationale: The first hearers understood spiritual parenthood; “in the faith” makes that meaning unmistakable without replacing the family metaphor with an account of conversion. The chains remain as Paul’s concrete description of imprisonment.
+  - source_phrase: τοῦ ἐμοῦ τέκνου, ὃν ἐγέννησα ἐν τοῖς δεσμοῖς Ὀνήσιμον
+    prior_rendering: my child, Onesimus, whom I fathered in my chains
+    new_rendering: my child, to whom I became a father in the faith while I was in chains—Onesimus
+    rationale: 'Naming Onesimus after describing the relationship preserves the appeal’s force: Philemon first hears him presented as Paul’s child.'
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The history disputes “my” versus “my own,” but the current “my child” adequately carries the affection. I go beyond the earlier preference for an unexplained begetting metaphor because “fathered” alone can sound biological in English, while retaining the source’s image in a note.

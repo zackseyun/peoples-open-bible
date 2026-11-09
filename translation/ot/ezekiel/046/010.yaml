@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְֽ/הַ/נָּשִׂ֑יא בְּ/תוֹכָ֤/ם בְּ/בוֹאָ/ם֙ יָב֔וֹא וּ/בְ/צֵאתָ֖/ם יֵצֵֽאוּ׃
 translation:
-  text: And the prince shall be among them[a]; when they enter, he shall enter, and when they go out[b], he shall go out.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'in their midst.'
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'they shall go out'; the sense is that the prince departs with them.
-    reason: lexical_alternative
+  text: The prince shall be among them; when they enter, he shall enter, and when they go out, they shall go out together.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: הַנָּשִׂיא
   chosen: the prince
@@ -85,14 +78,20 @@ revisions:
   from: And the prince shall be among them; when they enter, he shall enter, and when they go out, they shall go out together.
   to: And the prince shall be among them; when they enter, he shall enter, and when they go out, they shall go out together.
   rationale: Changed the final clause from 'they shall go out together' to 'he shall go out' to match the singular verb and the Hebrew, which states that the prince goes out with them, not that they go out together.
-
 - timestamp: '2026-05-18T02:54:29Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the prince shall be among them[a]; when they enter, he shall enter, and when they go out[b], he shall go out.'
-  to: 'And the prince shall be among them[a]; when they enter, he shall enter, and when they go out[b], he shall go out.'
+  from: And the prince shall be among them[a]; when they enter, he shall enter, and when they go out[b], he shall go out.
+  to: And the prince shall be among them[a]; when they enter, he shall enter, and when they go out[b], he shall go out.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they shall go out together''].'
+- timestamp: '2026-11-09T17:39:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the prince shall be among them[a]; when they enter, he shall enter, and when they go out[b], he shall go out.
+  to: The prince shall be among them; when they enter, he shall enter, and when they go out, they shall go out together.
+  rationale: The first draft and lexical rationale correctly recognize the plural final verb; the automated review's claim that it is singular conflicts with the supplied source. I therefore restore the shared-departure wording, which also carries the point of the current footnote.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -112,3 +111,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/046/010.job-64469.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:39:48Z'
+  change_level: refined
+  confidence: high
+  meaning: The prince remains among the people, entering when they enter and departing together with them.
+  meaning_decisions:
+  - source_phrase: וּבְצֵאתָם יֵצֵאוּ
+    prior_rendering: and when they go out, he shall go out
+    new_rendering: and when they go out, they shall go out together
+    rationale: The supplied Hebrew has a plural final verb, and the prince's position among the people makes their shared departure the contextual sense.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale correctly recognize the plural final verb; the automated review's claim that it is singular conflicts with the supplied source. I therefore restore the shared-departure wording, which also carries the point of the current footnote.

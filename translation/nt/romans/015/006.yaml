@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: ἵνα ὁμοθυμαδὸν ἐν ἑνὶ στόματι δοξάζητε τὸν θεὸν καὶ πατέρα τοῦ κυρίου ἡμῶν Ἰησοῦ Χριστοῦ.
 translation:
-  text: so that with one accord and with one mouth you may glorify the God and Father of our Lord Jesus Christ[a][b].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or more idiomatically, 'with one voice.' The Greek reads 'with one mouth,' emphasizing unified praise.
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek title Christos means ‘Messiah’; here it appears in the conventional English personal-name form.
-    reason: alternative_reading
+  text: so that with one accord and one voice you may glorify the God and Father of our Lord Jesus Christ.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἵνα
   chosen: so that
@@ -97,10 +90,16 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "so that with one accord and with one mouth you may glorify the God and Father of our Lord Jesus Messiah."
-  to: "so that with one accord and with one mouth you may glorify the God and Father of our Lord Jesus the Messiah."
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
-
+  from: so that with one accord and with one mouth you may glorify the God and Father of our Lord Jesus Messiah.
+  to: so that with one accord and with one mouth you may glorify the God and Father of our Lord Jesus the Messiah.
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:19:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: so that with one accord and with one mouth you may glorify the God and Father of our Lord Jesus Christ[a][b].
+  to: so that with one accord and one voice you may glorify the God and Father of our Lord Jesus Christ.
+  rationale: I retain the revision's 'with one accord,' which conveys shared purpose more fully than the first draft's 'together.' The earlier note already identifies 'with one voice' as the natural English equivalent, and the standing ruling supports the current 'Jesus Christ.'
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -124,3 +123,21 @@ cross_check:
     agree: 1
     minor-issues: 2
   source_review: state/reviews/gemini/high_scrutiny/nt/romans/015/006.job-8019.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:19:21Z'
+  change_level: refined
+  confidence: high
+  meaning: The believers' harmony should lead them to glorify the God and Father of Jesus Christ in united praise.
+  meaning_decisions:
+  - source_phrase: ἐν ἑνὶ στόματι
+    prior_rendering: with one mouth
+    new_rendering: one voice
+    rationale: The English idiom conveys the same unified expression of praise without making the community's shared speech sound like a physical mouth.
+  footnote_kinds: {}
+  history_weighed: I retain the revision's 'with one accord,' which conveys shared purpose more fully than the first draft's 'together.' The earlier note already identifies 'with one voice' as the natural English equivalent, and the standing ruling supports the current 'Jesus Christ.'

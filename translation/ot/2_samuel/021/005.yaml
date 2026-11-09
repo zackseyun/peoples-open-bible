@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּֽאמְרוּ֙ אֶל הַ/מֶּ֔לֶךְ הָ/אִישׁ֙ אֲשֶׁ֣ר כִּלָּ֔/נוּ וַ/אֲשֶׁ֖ר דִּמָּה לָ֑/נוּ נִשְׁמַ֕דְנוּ מֵֽ/הִתְיַצֵּ֖ב בְּ/כָל גְּבֻ֥ל יִשְׂרָאֵֽל־־־׃
 translation:
-  text: They said to the king[a], “The man who consumed us, and who planned against us[b], so that we should be destroyed from having a place within all the territory of Israel—”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'who devised against us.' The Hebrew verb can carry the sense of planning or scheming.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'from standing/establishing ourselves in all the territory of Israel,' that is, from continuing to have a place anywhere in Israel.
-    reason: lexical_alternative
+  text: They said to the king, “As for the man who devastated us and plotted to wipe us out so that we would have no place anywhere in Israel—
+  philosophy: dynamic
 lexical_decisions:
 - source_word: כִּלָּנוּ
   chosen: consumed us
@@ -79,14 +72,20 @@ revisions:
   from: They said to the king, “The man who consumed us, and who planned against us so as to destroy us from having a place within all the territory of Israel—”
   to: They said to the king, “The man who consumed us, and who planned against us, so that we should be destroyed from remaining within all the territory of Israel—”
   rationale: 'Adjusted the final clause for closer lexical accuracy and more natural English: rendered the result clause explicitly as ''so that we should be destroyed'' and translated מֵהִתְיַצֵּב more directly as ''from remaining'' rather than ''from having a place.'''
-
 - timestamp: '2026-05-15T20:54:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'They said to the king[a], “The man who consumed us, and who planned against us[b], so that we should be destroyed from remaining within all the territory of Israel—”'
-  to: 'They said to the king[a], “The man who consumed us, and who planned against us[b], so that we should be destroyed from having a place within all the territory of Israel—”'
-  rationale: 'Drafter chose ''from having a place'' for the Hithpael מֵהִתְיַצֵּב (התייצב = stationing/establishing oneself, settled presence) over ''from remaining'' (listed rejected alternative). Azure substituted the rejected alternative on bare ''more directly'' grounds without engaging the התייצב semantic argument.'
+  from: They said to the king[a], “The man who consumed us, and who planned against us[b], so that we should be destroyed from remaining within all the territory of Israel—”
+  to: They said to the king[a], “The man who consumed us, and who planned against us[b], so that we should be destroyed from having a place within all the territory of Israel—”
+  rationale: Drafter chose 'from having a place' for the Hithpael מֵהִתְיַצֵּב (התייצב = stationing/establishing oneself, settled presence) over 'from remaining' (listed rejected alternative). Azure substituted the rejected alternative on bare 'more directly' grounds without engaging the התייצב semantic argument.
+- timestamp: '2026-11-09T17:28:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: They said to the king[a], “The man who consumed us, and who planned against us[b], so that we should be destroyed from having a place within all the territory of Israel—”
+  to: They said to the king, “As for the man who devastated us and plotted to wipe us out so that we would have no place anywhere in Israel—
+  rationale: The later recorded rationale correctly defended “having a place” as continued established presence, rather than merely “remaining.” I preserve that gain while replacing the awkward destruction construction, and leave the speech open because the request continues in verse 6.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -106,3 +105,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/021/005.job-45979.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:47Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The Gibeonites accuse Saul of devastating their community and plotting to eliminate their existence anywhere in Israel.
+  meaning_decisions:
+  - source_phrase: הָאִישׁ אֲשֶׁר כִּלָּנוּ
+    prior_rendering: The man who consumed us
+    new_rendering: As for the man who devastated us
+    rationale: “Devastated” conveys the destructive assault on a community whose survivors are speaking, while “As for” expresses the topic construction that continues into verse 6.
+  - source_phrase: וַאֲשֶׁר דִּמָּה לָנוּ נִשְׁמַדְנוּ
+    prior_rendering: and who planned against us, so that we should be destroyed
+    new_rendering: and plotted to wipe us out
+    rationale: The clauses identify Saul’s hostile plan as their extermination, not merely an unspecified plan against them.
+  - source_phrase: מֵהִתְיַצֵּב בְּכָל גְּבֻל יִשְׂרָאֵל
+    prior_rendering: from having a place within all the territory of Israel
+    new_rendering: so that we would have no place anywhere in Israel
+    rationale: The phrase concerns the elimination of their settled presence throughout Israel, not destruction confined to its boundary.
+  footnote_kinds: {}
+  history_weighed: The later recorded rationale correctly defended “having a place” as continued established presence, rather than merely “remaining.” I preserve that gain while replacing the awkward destruction construction, and leave the speech open because the request continues in verse 6.

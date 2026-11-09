@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֨אמֶר אֱלֹהִ֤ים לְ/יִשְׂרָאֵל֙ בְּ/מַרְאֹ֣ת הַ/לַּ֔יְלָה וַ/יֹּ֖אמֶר יַעֲקֹ֣ב יַעֲקֹ֑ב וַ/יֹּ֖אמֶר הִנֵּֽ/נִי׀׀׃
 translation:
-  text: And God spoke to Israel in visions of the night and said[a], “Jacob, Jacob.” And he said[b], “Here I am.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'in night visions.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'spoke to Israel in visions of the night and said'.
-    reason: previous_rendering
+  text: 'God spoke to Israel in visions of the night: “Jacob, Jacob!” Jacob replied, “Here I am.”'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: spoke / said
@@ -82,12 +75,18 @@ revisions:
   from: And God said to Israel in visions of the night, “Jacob, Jacob.” And he said, “Here I am.”
   to: And God spoke to Israel in visions of the night and said, “Jacob, Jacob.” And he said, “Here I am.”
   rationale: Changed 'said' to 'spoke' in the first clause for smoother English with the repeated 'and said' that follows; retained all source elements and formal register.
+- timestamp: '2026-11-09T17:45:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And God spoke to Israel in visions of the night and said[a], “Jacob, Jacob.” And he said[b], “Here I am.”
+  to: 'God spoke to Israel in visions of the night: “Jacob, Jacob!” Jacob replied, “Here I am.”'
+  rationale: The automated revisions alternated between compressing and restoring the repeated speech introduction. The earlier rationale for compression better serves natural English, while the established Israel/Jacob alternation remains intact.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:46:21Z'
   unchanged: false
   changes_summary: Changed 'said' to 'spoke' in the first clause for smoother English with the repeated 'and said' that follows; retained all source elements and formal register.
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -110,3 +109,25 @@ cross_check:
   verdict_counts:
     minor-issues: 3
   source_review: state/reviews/gemini/v31_recheck_applied/ot/genesis/046/002.job-37627.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:45:16Z'
+  change_level: refined
+  confidence: high
+  meaning: God addresses Israel personally in night visions, and Jacob responds to his summons.
+  meaning_decisions:
+  - source_phrase: וַיֹּאמֶר אֱלֹהִים לְיִשְׂרָאֵל ... וַיֹּאמֶר
+    prior_rendering: And God spoke to Israel in visions of the night and said
+    new_rendering: 'God spoke to Israel in visions of the night:'
+    rationale: The two speech-introducing verbs describe one speech event; English punctuation conveys their function without redundant wording.
+  - source_phrase: וַיֹּאמֶר הִנֵּנִי
+    prior_rendering: And he said, “Here I am.”
+    new_rendering: Jacob replied, “Here I am.”
+    rationale: Naming Jacob makes the change of speaker immediately clear while retaining the conventional response of availability.
+  footnote_kinds: {}
+  history_weighed: The automated revisions alternated between compressing and restoring the repeated speech introduction. The earlier rationale for compression better serves natural English, while the established Israel/Jacob alternation remains intact.

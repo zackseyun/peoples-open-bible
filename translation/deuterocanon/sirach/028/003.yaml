@@ -28,12 +28,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 28:3
 translation:
-  text: A man keeps anger against a man, and seeks healing from the Lord[a]?
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The supplied Hebrew witness for this reference reads, 'I weighed everything in the pan of scales, and I did not find anything lighter than bran/chaff,' which does not match the context here. The translation therefore follows the Greek witness for Sirach 28:3.
-    reason: textual_variant
+  text: How can anyone harbor anger against another person and still seek healing from the Lord?
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἄνθρωπος
   chosen: a man
@@ -119,13 +115,12 @@ revisions:
   from: A man keeps anger against a man, and seeks healing from the Lord?
   to: I weighed everything in the balance, and found nothing lighter than bran.
   rationale: 'Replaced the unrelated draft with a translation that matches the Hebrew: rendered הַכֹּל שָׁקַלְתִּי as ''I weighed everything,'' בְכַף מֹאזְנַיִם as ''in the balance,'' and וְלֹא מָצָאתִי קַל מִסֻבִּין as ''and found nothing lighter than bran.'''
-
 - timestamp: '2026-05-18T03:09:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'I weighed everything in the balance[a], and found nothing lighter than bran.'
-  to: 'A man keeps anger against a man, and seeks healing from the Lord?'
+  from: I weighed everything in the balance[a], and found nothing lighter than bran.
+  to: A man keeps anger against a man, and seeks healing from the Lord?
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from the Lord''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -135,6 +130,13 @@ revisions:
   from: A man keeps anger against a man, and seeks healing from the Lord?
   to: A man keeps anger against a man, and seeks healing from the Lord[a]?
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] the note comments on the verse as a whole rather than a single phrase, so it is anchored at the end of the verse. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:07:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: A man keeps anger against a man, and seeks healing from the Lord[a]?
+  to: How can anyone harbor anger against another person and still seek healing from the Lord?
+  rationale: I follow the history's restored Greek verse rather than the unrelated Hebrew statement about weighing things. The recorded choice of 'healing' rightly preserves a breadth that 'forgiveness' alone would lose.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -154,3 +156,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/028/003.job-51727.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:15Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Harboring anger against another human being is inconsistent with seeking healing from the Lord.
+  meaning_decisions:
+  - source_phrase: ἄνθρωπος ἀνθρώπῳ συντηρεῖ ὀργήν
+    prior_rendering: A man keeps anger against a man
+    new_rendering: anyone harbor anger against another person
+    rationale: '''Harbor anger'' expresses deliberate, continuing retention; the generic human nouns do not restrict the warning to men.'
+  - source_phrase: καὶ παρὰ Κυρίου ζητεῖ ἴασιν
+    prior_rendering: and seeks healing from the Lord?
+    new_rendering: How can … and still seek healing from the Lord?
+    rationale: The rhetorical question challenges the contradiction between retained anger and the appeal for divine healing.
+  footnote_kinds: {}
+  history_weighed: I follow the history's restored Greek verse rather than the unrelated Hebrew statement about weighing things. The recorded choice of 'healing' rightly preserves a breadth that 'forgiveness' alone would lose.

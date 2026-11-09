@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: עַל הַ/יּ֗וֹם הַ/בָּא֙ לִ/שְׁד֣וֹד אֶת כָּל פְּלִשְׁתִּ֔ים לְ/הַכְרִ֤ית לְ/צֹר֙ וּ/לְ/צִיד֔וֹן כֹּ֖ל שָׂרִ֣יד עֹזֵ֑ר כִּֽי שֹׁדֵ֤ד יְהוָה֙ אֶת פְּלִשְׁתִּ֔ים שְׁאֵרִ֖ית אִ֥י כַפְתּֽוֹר־־־־־׃
 translation:
-  text: because of the day that is coming to devastate all the Philistines[a], to cut off from Tyre and Sidon every surviving helper. For Yahweh is devastating the Philistines, the remnant of the island of Caphtor.
-  philosophy: optimal-equivalence
+  text: For the day is coming when all the Philistines will be devastated and every remaining ally of Tyre and Sidon will be cut off. For Yahweh is devastating the Philistines, the remnant from the island of Caphtor[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or "the remnant of the island of Caphtor."
-    reason: lexical_alternative
+    text: Caphtor was the Philistines' ancestral homeland, commonly identified with Crete.
+    reason: cultural_note
 lexical_decisions:
 - source_word: עַל הַיּוֹם הַבָּא
   chosen: because of the day that is coming
@@ -109,14 +109,20 @@ revisions:
   from: because of the day that is coming to devastate all the Philistines, to cut off from Tyre and Sidon every surviving helper. For the LORD is devastating the Philistines, the remnant of the coastland of Caphtor.
   to: because of the day that is coming to devastate all the Philistines, to cut off from Tyre and Sidon every surviving helper. For the LORD is devastating the Philistines, the remnant of the coastland of Caphtor.
   rationale: Changed 'coastland' to 'island' for אִי, which more directly denotes an island/coastland and fits Caphtor better here. Kept the rest as accurate and natural.
-
 - timestamp: '2026-05-18T02:57:01Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'because of the day that is coming to devastate all the Philistines[a], to cut off from Tyre and Sidon every surviving helper. For Yahweh is devastating the Philistines, the remnant of the island of Caphtor.'
-  to: 'because of the day that is coming to devastate all the Philistines[a], to cut off from Tyre and Sidon every surviving helper. For Yahweh is devastating the Philistines, the remnant of the island of Caphtor.'
+  from: because of the day that is coming to devastate all the Philistines[a], to cut off from Tyre and Sidon every surviving helper. For Yahweh is devastating the Philistines, the remnant of the island of Caphtor.
+  to: because of the day that is coming to devastate all the Philistines[a], to cut off from Tyre and Sidon every surviving helper. For Yahweh is devastating the Philistines, the remnant of the island of Caphtor.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the remnant of the coastland of Caphtor''].'
+- timestamp: '2026-11-09T18:00:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: because of the day that is coming to devastate all the Philistines[a], to cut off from Tyre and Sidon every surviving helper. For Yahweh is devastating the Philistines, the remnant of the island of Caphtor.
+  to: For the day is coming when all the Philistines will be devastated and every remaining ally of Tyre and Sidon will be cut off. For Yahweh is devastating the Philistines, the remnant from the island of Caphtor[a].
+  rationale: The history is inconsistent about 'island' and 'coastland'; I retained the current 'island,' which fits Caphtor, without adding a competing geographical identification to the text. The earlier rationale for aid coming from Tyre and Sidon reverses the contextual relationship, so I clarified those cities as the beneficiaries of the remaining allies.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -139,3 +145,30 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/047/004.job-68125.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:00:04Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Yahweh's coming devastation of the Philistines, whose homeland was Caphtor, will also remove the remaining allies on whom Tyre and Sidon could depend.
+  meaning_decisions:
+  - source_phrase: עַל הַיּוֹם הַבָּא לִשְׁדֹד אֶת כָּל פְּלִשְׁתִּים
+    prior_rendering: because of the day that is coming to devastate all the Philistines
+    new_rendering: For the day is coming when all the Philistines will be devastated
+    rationale: This gives the causal continuation a natural English sentence while retaining the coming day of devastation.
+  - source_phrase: לְהַכְרִית לְצֹר וּלְצִידוֹן כֹּל שָׂרִיד עֹזֵר
+    prior_rendering: to cut off from Tyre and Sidon every surviving helper
+    new_rendering: every remaining ally of Tyre and Sidon will be cut off
+    rationale: Tyre and Sidon are the recipients of the helpers' aid, not its source; the judgment removes the remaining allies available to those cities.
+  - source_phrase: שְׁאֵרִית אִי כַפְתּוֹר
+    prior_rendering: the remnant of the island of Caphtor
+    new_rendering: the remnant from the island of Caphtor
+    rationale: '''From'' clarifies that the phrase identifies the Philistines by their ancestral origin, rather than locating the people being devastated on Caphtor itself.'
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The history is inconsistent about 'island' and 'coastland'; I retained the current 'island,' which fits Caphtor, without adding a competing geographical identification to the text. The earlier rationale for aid coming from Tyre and Sidon reverses the contextual relationship, so I clarified those cities as the beneficiaries of the remaining allies.

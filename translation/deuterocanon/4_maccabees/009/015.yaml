@@ -16,12 +16,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: Most defiled tyrant[a], enemy of heavenly justice, and savage-minded man, you are not torturing me in this way because I have committed murder, nor because I have acted impiously, but because I am defending the divine law.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'enemy of heavenly judgment.' The Greek term can refer either to justice in a broad sense or to judicial punishment.
-    reason: lexical_alternative
+  text: “Most defiled tyrant, enemy of heavenly justice and cruel-hearted man! You are torturing me this way not because I have committed murder or acted impiously, but because I am defending the divine law.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: μιερώτατε
   chosen: most defiled
@@ -121,14 +117,20 @@ revisions:
   from: Most defiled tyrant, enemy of heavenly justice, and savage-minded man, you are not torturing me in this way because I have murdered anyone, nor because I have acted impiously, but because I am defending the divine law.
   to: Most defiled tyrant, enemy of heavenly justice, and savage-minded man, you are not torturing me in this way because I have murdered anyone, nor because I have acted impiously, but because I am defending the divine law.
   rationale: Revised 'because I have murdered anyone' to 'because I have committed murder' for closer lexical correspondence to the Greek and more formal register. Retained the rest as accurate and natural.
-
 - timestamp: '2026-05-18T03:00:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Most defiled tyrant[a], enemy of heavenly justice, and savage-minded man, you are not torturing me in this way because I have committed murder, nor because I have acted impiously, but because I am defending the divine law.'
-  to: 'Most defiled tyrant[a], enemy of heavenly justice, and savage-minded man, you are not torturing me in this way because I have committed murder, nor because I have acted impiously, but because I am defending the divine law.'
+  from: Most defiled tyrant[a], enemy of heavenly justice, and savage-minded man, you are not torturing me in this way because I have committed murder, nor because I have acted impiously, but because I am defending the divine law.
+  to: Most defiled tyrant[a], enemy of heavenly justice, and savage-minded man, you are not torturing me in this way because I have committed murder, nor because I have acted impiously, but because I am defending the divine law.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''have murdered anyone''].'
+- timestamp: '2026-11-09T18:58:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Most defiled tyrant[a], enemy of heavenly justice, and savage-minded man, you are not torturing me in this way because I have committed murder, nor because I have acted impiously, but because I am defending the divine law.
+  to: “Most defiled tyrant, enemy of heavenly justice and cruel-hearted man! You are torturing me this way not because I have committed murder or acted impiously, but because I am defending the divine law.”
+  rationale: The history’s alternatives for murder convey the same denial, so I retain the current “committed murder.” I also preserve defilement, heavenly justice, impiety, and defense of the divine law; the note on justice versus judgment is unnecessary because “justice” retains the broader moral and judicial sense.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -148,3 +150,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/009/015.job-49953.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:58:50Z'
+  change_level: refined
+  confidence: high
+  meaning: The eldest brother condemns the tyrant for torturing him not for wrongdoing but for defending the divine law.
+  meaning_decisions:
+  - source_phrase: ὠμόφρον
+    prior_rendering: savage-minded man
+    new_rendering: cruel-hearted man
+    rationale: The compound condemns the tyrant’s cruel disposition; “cruel-hearted” communicates that naturally rather than reproducing the Greek compound’s form.
+  - source_phrase: οὐκ ἀνδροφονήσαντά με ... οὐδὲ ἀσεβήσαντα, ἀλλὰ ... προασπίζοντα
+    prior_rendering: you are not torturing me in this way because I have committed murder, nor because I have acted impiously, but because I am defending
+    new_rendering: You are torturing me this way not because I have committed murder or acted impiously, but because I am defending
+    rationale: The reordered negation makes unmistakable that he is being tortured and that the contrast concerns the reason for it.
+  footnote_kinds: {}
+  history_weighed: The history’s alternatives for murder convey the same denial, so I retain the current “committed murder.” I also preserve defilement, heavenly justice, impiety, and defense of the divine law; the note on justice versus judgment is unnecessary because “justice” retains the broader moral and judicial sense.

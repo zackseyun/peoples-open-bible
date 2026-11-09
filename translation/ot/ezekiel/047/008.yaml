@@ -4,18 +4,15 @@ source:
   edition: WLC
   text: וַ/יֹּ֣אמֶר אֵלַ֗/י הַ/מַּ֤יִם הָ/אֵ֨לֶּה֙ יוֹצְאִ֗ים אֶל הַ/גְּלִילָה֙ הַ/קַּדְמוֹנָ֔ה וְ/יָרְד֖וּ עַל הָֽ/עֲרָבָ֑ה וּ/בָ֣אוּ הַ/יָּ֔מָּ/ה אֶל הַ/יָּ֥מָּ/ה הַ/מּֽוּצָאִ֖ים ו/נרפאו הַ/מָּֽיִם־־־׃
 translation:
-  text: Then he said to me[a], “These waters flow out toward the eastern district and go down into the Arabah; then they enter the sea. and when they are brought out into the sea[c][b], the waters are healed.”
-  philosophy: optimal-equivalence
+  text: Then he said to me, “These waters flow out toward the eastern region and go down into the Arabah[a], then enter the Dead Sea[b]. When they empty into the sea, the sea’s waters are healed.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the Dead Sea.' The Hebrew expression is difficult and is commonly understood as referring to the salt sea east of Judah.
-    reason: alternative_reading
+    text: The Arabah is the Jordan rift valley, which includes the Dead Sea.
+    reason: cultural_note
   - marker: b
-    text: Or 'the waters become fresh.' The Hebrew says literally, 'the waters are healed.'
+    text: Literally, 'the sea,' here the salty Dead Sea. The difficult Hebrew wording that follows appears to describe the river water emptying into it.
     reason: lexical_alternative
-  - marker: c
-    text: Or 'the sea of stagnant waters'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: הַמַּיִם הָאֵלֶּה
   chosen: these waters
@@ -95,9 +92,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then he said to me[a], “These waters flow out toward the eastern region and go down into the Arabah; then they enter the sea. When they are emptied into the sea[c][b], the waters are healed.”'
-  to: 'Then he said to me[a], “These waters flow out toward the eastern district and go down into the Arabah; then they enter the sea. and when they are brought out into the sea[c][b], the waters are healed.”'
-  rationale: 'Azure substituted ''eastern region'' (drafter''s rejected alternative for גְּלִילָה — drafter chose ''district'' per HALOT) and ''emptied'' for the tier-2 Hophal participle rendering ''brought out'' (not in alternatives).'
+  from: Then he said to me[a], “These waters flow out toward the eastern region and go down into the Arabah; then they enter the sea. When they are emptied into the sea[c][b], the waters are healed.”
+  to: Then he said to me[a], “These waters flow out toward the eastern district and go down into the Arabah; then they enter the sea. and when they are brought out into the sea[c][b], the waters are healed.”
+  rationale: Azure substituted 'eastern region' (drafter's rejected alternative for גְּלִילָה — drafter chose 'district' per HALOT) and 'emptied' for the tier-2 Hophal participle rendering 'brought out' (not in alternatives).
+- timestamp: '2026-11-09T17:40:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then he said to me[a], “These waters flow out toward the eastern district and go down into the Arabah; then they enter the sea. and when they are brought out into the sea[c][b], the waters are healed.”
+  to: Then he said to me, “These waters flow out toward the eastern region and go down into the Arabah[a], then enter the Dead Sea[b]. When they empty into the sea, the sea’s waters are healed.
+  rationale: The source-grounded review rightly rejected 'stagnant waters,' and the later review’s 'emptied into the sea' better conveyed the apparent action than 'brought out.' I build on those gains despite the automated revert, retain the healing metaphor, and acknowledge the difficult Hebrew in a note.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-16T02:08:57Z'
@@ -122,3 +126,35 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/047/008.job-64489.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:40:37Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The guide explains that the water flows east through the Arabah into the Dead Sea and heals the sea’s waters.
+  meaning_decisions:
+  - source_phrase: הַגְּלִילָה הַקַּדְמוֹנָה
+    prior_rendering: the eastern district
+    new_rendering: the eastern region
+    rationale: '''Region'' conveys the geographical area without suggesting a formally defined administrative district.'
+  - source_phrase: וּבָאוּ הַיָּמָּה
+    prior_rendering: then they enter the sea
+    new_rendering: then enter the Dead Sea
+    rationale: The eastward descent through the Arabah identifies the sea, and that identification is essential to understanding the extraordinary restoration.
+  - source_phrase: אֶל הַיָּמָּה הַמּוּצָאִים
+    prior_rendering: and when they are brought out into the sea
+    new_rendering: When they empty into the sea
+    rationale: This conveys the apparent action of the difficult Hebrew phrase rather than reproducing an unclear passive construction.
+  - source_phrase: וְנרפאו הַמָּיִם
+    prior_rendering: the waters are healed
+    new_rendering: the sea’s waters are healed
+    rationale: The water receiving healing belongs to the sea, not to the life-giving river flowing from the sanctuary.
+  footnote_kinds:
+    a: cultural_background
+    b: literal_wording
+  history_weighed: The source-grounded review rightly rejected 'stagnant waters,' and the later review’s 'emptied into the sea' better conveyed the apparent action than 'brought out.' I build on those gains despite the automated revert, retain the healing metaphor, and acknowledge the difficult Hebrew in a note.

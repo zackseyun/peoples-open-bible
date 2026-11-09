@@ -18,15 +18,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: O reasoning[a], tyrant over the passions of children! And godliness is to a mother[b] more longed-for than children.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Greek is highly compressed and rhetorically abrupt. The opening exclamation may also be rendered, 'O reason, tyrant over the passions,' with 'of children' taken differently in the line's syntax.
-    reason: alternative_reading
-  - marker: b
-    text: Or 'piety is more desirable to a mother than children.'
-    reason: lexical_alternative
+  text: O reason, tyrant over parental love! O godliness, dearer to a mother than her children!
+  philosophy: dynamic
 lexical_decisions:
 - source_word: λογισμέ
   chosen: reasoning
@@ -123,14 +116,13 @@ revisions:
   from: O reasoning, tyrant over the passions of children! And godliness is to a mother more longed-for than children.
   to: O reason, tyrant over the passions, more longed for than children, and godliness to a mother than children.
   rationale: Revised λογισμός to 'reason' for more natural lexical accuracy; removed 'of children' after 'passions' since τέκνων modifies the comparison in the second clause, not πάθη; adjusted the second clause to reflect the Greek comparison more closely without interpretive expansion.
-
 - timestamp: '2026-05-15T15:39:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'O reason[a], tyrant over the passions, more longed for than children[b], and godliness to a mother than children.'
-  to: 'O reasoning[a], tyrant over the passions of children! And godliness is to a mother more longed-for than children.'
-  rationale: 'Restored 3 chosen renderings preserving λογισμός active sense, syntactic position, and ποθεινοτέρα in the Greek.'
+  from: O reason[a], tyrant over the passions, more longed for than children[b], and godliness to a mother than children.
+  to: O reasoning[a], tyrant over the passions of children! And godliness is to a mother more longed-for than children.
+  rationale: Restored 3 chosen renderings preserving λογισμός active sense, syntactic position, and ποθεινοτέρα in the Greek.
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
   reviewer_model: claude-opus-5
@@ -139,6 +131,13 @@ revisions:
   from: O reasoning[a], tyrant over the passions of children! And godliness is to a mother more longed-for than children.
   to: O reasoning[a], tyrant over the passions of children! And godliness is to a mother[b] more longed-for than children.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [b] anchored to ('to a mother') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:59:54Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: O reasoning[a], tyrant over the passions of children! And godliness is to a mother[b] more longed-for than children.
+  to: O reason, tyrant over parental love! O godliness, dearer to a mother than her children!
+  rationale: The review’s choice of 'reason' helps communicate the book’s governing faculty, but its rearrangement did not clarify the whole sentence. The surrounding account supports understanding the disputed phrase as parental affection rather than preserving the revert’s misleading 'passions of children.'
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -158,3 +157,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/015/001.job-50105.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:54Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The author celebrates reason’s mastery over parental love and the mother’s greater love for godliness.
+  meaning_decisions:
+  - source_phrase: λογισμὲ τέκνων παθῶν τύραννε
+    prior_rendering: reasoning, tyrant over the passions of children
+    new_rendering: reason, tyrant over parental love
+    rationale: The paragraph concerns the mother’s feelings for her children, not passions experienced by the children themselves; 'reason' names the governing faculty while preserving the striking tyrant metaphor.
+  - source_phrase: καὶ εὐσέβεια μητρὶ τέκνων ποθεινοτέρα
+    prior_rendering: And godliness is to a mother more longed-for than children
+    new_rendering: O godliness, dearer to a mother than her children
+    rationale: The parallel exclamation conveys the rhetorical praise and the comparative force of her love more naturally than 'more longed-for.'
+  footnote_kinds: {}
+  history_weighed: The review’s choice of 'reason' helps communicate the book’s governing faculty, but its rearrangement did not clarify the whole sentence. The surrounding account supports understanding the disputed phrase as parental affection rather than preserving the revert’s misleading 'passions of children.'

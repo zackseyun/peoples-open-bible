@@ -4,11 +4,14 @@ source:
   edition: SBLGNT
   text: προσδεχόμενοι τὴν μακαρίαν ἐλπίδα καὶ ἐπιφάνειαν τῆς δόξης τοῦ μεγάλου θεοῦ καὶ σωτῆρος ἡμῶν ⸂Ἰησοῦ Χριστοῦ⸃,
 translation:
-  text: as we await the blessed hope and the appearing of the glory of our great God and Savior[a], Jesus Christ,
-  philosophy: optimal-equivalence
+  text: as we await the blessed hope[a]—the appearing of the glory of our great God and Savior, Jesus Christ[b],
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, less likely, 'the glory of the great God and of our Savior Jesus the Messiah,' taking 'God' and 'Savior' as two distinct referents rather than a single title for Jesus.
+    text: Or 'the blessed hope and the appearing of the glory,' joining the two rather than explicitly identifying them.
+    reason: alternative_reading
+  - marker: b
+    text: Less likely, 'the glory of the great God and of our Savior Jesus Christ,' understanding God and Jesus as two distinct referents.
     reason: alternative_reading
 lexical_decisions:
 - source_word: προσδεχόμενοι
@@ -101,10 +104,16 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "as we await the blessed hope and the appearing of the glory of our great God and Savior, Jesus Messiah,"
-  to: "as we await the blessed hope and the appearing of the glory of our great God and Savior, Jesus the Messiah,"
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
-
+  from: as we await the blessed hope and the appearing of the glory of our great God and Savior, Jesus Messiah,
+  to: as we await the blessed hope and the appearing of the glory of our great God and Savior, Jesus the Messiah,
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:18:35Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: as we await the blessed hope and the appearing of the glory of our great God and Savior[a], Jesus Christ,
+  to: as we await the blessed hope[a]—the appearing of the glory of our great God and Savior, Jesus Christ[b],
+  rationale: The unified designation of Jesus as 'our great God and Savior' remains the best-supported grammatical reading, with the serious alternative retained. The current 'Jesus Christ' also stands under the ruling for name constructions, despite the history's automated oscillation over 'Messiah.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -127,3 +136,23 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/titus/002/013.job-57768.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:18:35Z'
+  change_level: refined
+  confidence: medium
+  meaning: Believers live in the present age while awaiting their blessed hope, the manifestation of the glory of Jesus Christ, their great God and Savior.
+  meaning_decisions:
+  - source_phrase: τὴν μακαρίαν ἐλπίδα καὶ ἐπιφάνειαν τῆς δόξης
+    prior_rendering: the blessed hope and the appearing of the glory
+    new_rendering: the blessed hope—the appearing of the glory
+    rationale: The appearing is most naturally the anticipated event that constitutes the blessed hope; the alternative coordination is preserved in a footnote.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: The unified designation of Jesus as 'our great God and Savior' remains the best-supported grammatical reading, with the serious alternative retained. The current 'Jesus Christ' also stands under the ruling for name constructions, despite the history's automated oscillation over 'Messiah.'

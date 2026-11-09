@@ -21,12 +21,8 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: But the discordant cry of enemies echoed back[a], and the pitiful lament for children being mourned was carried abroad.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the piteous cries of children being mourned spread abroad.' The Greek phrase οἰκτρὰ διεφέρετο θρηνουμένων παίδων can be rendered with slightly different English structuring while preserving the same sense.
-    reason: lexical_alternative
+  text: But the discordant cry of their enemies echoed back, and piteous laments for their children spread far and wide.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀντήχει
   chosen: echoed back
@@ -128,14 +124,20 @@ revisions:
   from: But the discordant cry of enemies echoed back, and the pitiful sound of children being mourned was carried abroad.
   to: But the discordant cry of enemies echoed back, and the pitiful sound of children being mourned was carried abroad.
   rationale: Changed 'sound' to 'lament' to better reflect θρηνουμένων, preserving the sense of mourning; retained the rest as accurate and natural.
-
 - timestamp: '2026-05-18T02:59:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But the discordant cry of enemies echoed back[a], and the pitiful lament for children being mourned was carried abroad.'
-  to: 'But the discordant cry of enemies echoed back[a], and the pitiful lament for children being mourned was carried abroad.'
+  from: But the discordant cry of enemies echoed back[a], and the pitiful lament for children being mourned was carried abroad.
+  to: But the discordant cry of enemies echoed back[a], and the pitiful lament for children being mourned was carried abroad.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''pitiful sound''].'
+- timestamp: '2026-11-09T19:13:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But the discordant cry of enemies echoed back[a], and the pitiful lament for children being mourned was carried abroad.
+  to: But the discordant cry of their enemies echoed back, and piteous laments for their children spread far and wide.
+  rationale: I retain the current wording’s gain of 'lament' over the first draft’s less specific 'sound,' despite the automated revert rationale. The important acoustic contrast with the preceding praise remains in 'discordant' and 'echoed back.'
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -155,3 +157,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/018/010.job-39365.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:13:20Z'
+  change_level: refined
+  confidence: high
+  meaning: In contrast to Israel’s united praise, the enemies’ discordant cries and laments for their dead children spread widely.
+  meaning_decisions:
+  - source_phrase: οἰκτρὰ διεφέρετο θρηνουμένων παίδων
+    prior_rendering: the pitiful lament for children being mourned was carried abroad
+    new_rendering: piteous laments for their children spread far and wide
+    rationale: The children are the objects of mourning, not the mourners. The new wording makes that relationship natural and avoids 'abroad' being mistaken for transmission to another country; 'piteous' expresses sorrow that evokes pity rather than contempt.
+  footnote_kinds: {}
+  history_weighed: I retain the current wording’s gain of 'lament' over the first draft’s less specific 'sound,' despite the automated revert rationale. The important acoustic contrast with the preceding praise remains in 'discordant' and 'echoed back.'

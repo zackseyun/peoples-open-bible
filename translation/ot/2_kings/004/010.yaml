@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: נַֽעֲשֶׂה נָּ֤א עֲלִיַּת קִיר֙ קְטַנָּ֔ה וְ/נָשִׂ֨ים ל֥/וֹ שָׁ֛ם מִטָּ֥ה וְ/שֻׁלְחָ֖ן וְ/כִסֵּ֣א וּ/מְנוֹרָ֑ה וְ/הָיָ֛ה בְּ/בֹא֥/וֹ אֵלֵ֖י/נוּ יָס֥וּר שָֽׁמָּ/ה־־׃
 translation:
-  text: Please let us make a small upper room on the wall[a], and let us put there for him a bed, a table, a chair, and a lampstand; and whenever he comes to us[b], he can turn in there.
-  philosophy: optimal-equivalence
+  text: Please let us build a small upper room with walls[a] and put a bed, a table, a chair, and a lampstand there for him. Then whenever he comes to us, he can stay there.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'a small upper chamber with a wall' or simply 'a small upper room.' The Hebrew phrase is somewhat compact, and 'on the wall' preserves its concrete wording.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'he may turn aside there.' The Hebrew verb often means 'turn aside' and here refers to stopping there for lodging.
-    reason: lexical_alternative
+    text: Or, “a small upper room built against the wall”; the exact arrangement is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: נַעֲשֶׂה נָּא
   chosen: Please let us make
@@ -95,14 +92,20 @@ revisions:
   from: Please let us make a small upper room on the wall, and let us put there for him a bed, a table, a chair, and a lampstand; then whenever he comes to us, he can turn in there.
   to: Please let us make a small upper room on the wall, and let us put there for him a bed, a table, a chair, and a lampstand; then whenever he comes to us, he can turn in there.
   rationale: Replaced 'then whenever' with 'and whenever' to reflect the simple conjunction more naturally and formally. No other changes needed.
-
 - timestamp: '2026-05-18T02:58:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Please let us make a small upper room on the wall[a], and let us put there for him a bed, a table, a chair, and a lampstand; and whenever he comes to us[b], he can turn in there.'
-  to: 'Please let us make a small upper room on the wall[a], and let us put there for him a bed, a table, a chair, and a lampstand; and whenever he comes to us[b], he can turn in there.'
+  from: Please let us make a small upper room on the wall[a], and let us put there for him a bed, a table, a chair, and a lampstand; and whenever he comes to us[b], he can turn in there.
+  to: Please let us make a small upper room on the wall[a], and let us put there for him a bed, a table, a chair, and a lampstand; and whenever he comes to us[b], he can turn in there.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''then whenever he comes to us''].'
+- timestamp: '2026-11-09T17:26:05Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Please let us make a small upper room on the wall[a], and let us put there for him a bed, a table, a chair, and a lampstand; and whenever he comes to us[b], he can turn in there.
+  to: Please let us build a small upper room with walls[a] and put a bed, a table, a chair, and a lampstand there for him. Then whenever he comes to us, he can stay there.”
+  rationale: The earlier deliberation preserves the important upper-room and wall details but acknowledges uncertainty about their relationship. I retained both while choosing the better-supported enclosed-room sense, noting the architectural alternative and preserving all four furnishings.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -122,3 +125,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_kings/004/010.job-60343.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:26:05Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: She proposes building and furnishing a small enclosed upper room so that Elisha can lodge with them whenever he visits.
+  meaning_decisions:
+  - source_phrase: נַעֲשֶׂה נָּא עֲלִיַּת קִיר קְטַנָּה
+    prior_rendering: Please let us make a small upper room on the wall
+    new_rendering: Please let us build a small upper room with walls[a]
+    rationale: The compact architectural expression most plausibly describes a walled upper chamber; “on the wall” gives modern readers an uncertain and potentially misleading picture.
+  - source_phrase: יָסוּר שָׁמָּה
+    prior_rendering: he can turn in there
+    new_rendering: he can stay there
+    rationale: The furnishings show that the proposed stopping place is lodging, not merely another meal stop; “stay there” carries that purpose clearly.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier deliberation preserves the important upper-room and wall details but acknowledges uncertainty about their relationship. I retained both while choosing the better-supported enclosed-room sense, noting the architectural alternative and preserving all four furnishings.

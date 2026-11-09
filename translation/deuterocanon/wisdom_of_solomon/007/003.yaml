@@ -10,14 +10,11 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: And I too, when I was born, drew in the common air[a], and fell upon the earth that suffers alike with all[b]; and my first voice was the same as everyone's, as I cried.
-  philosophy: optimal-equivalence
+  text: I too, when I was born, breathed the air we all share and fell upon the earth that shares our frailty[a]; my first sound, like everyone else’s, was a cry.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the air shared by all.' The Greek phrase emphasizes that the speaker entered the same human life as everyone else.
-    reason: lexical_alternative
-  - marker: b
-    text: The adjective rendered 'that suffers alike with all' can also mean 'subject to the same experiences' or 'of like condition.'
+    text: Literally, “the earth of like condition.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: γενόμενος
@@ -110,16 +107,15 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'And I too, when I was born, drew in the common air, and fell upon the earth that suffers alike with all; and my first voice was the same as everyone''s, as I cried.'
-  to: 'And I too, when I was born, drew in the common air, and fell upon the earth that is subject to the same sufferings; and my first voice was the same as everyone''s, as I cried.'
+  from: And I too, when I was born, drew in the common air, and fell upon the earth that suffers alike with all; and my first voice was the same as everyone's, as I cried.
+  to: And I too, when I was born, drew in the common air, and fell upon the earth that is subject to the same sufferings; and my first voice was the same as everyone's, as I cried.
   rationale: Revised 'that suffers alike with all' to 'that is subject to the same sufferings' for a more accurate rendering of ὁμοιοπαθῆ and more natural formal English. Kept the rest substantially unchanged.
-
 - timestamp: '2026-05-18T03:10:02Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I too[a], when I was born, drew in the common air, and fell upon the earth that is subject to the same sufferings; and my first voice was the same as everyone''s[b], as I cried.'
-  to: 'And I too, when I was born, drew in the common air, and fell upon the earth that suffers alike with all; and my first voice was the same as everyone''s, as I cried.'
+  from: And I too[a], when I was born, drew in the common air, and fell upon the earth that is subject to the same sufferings; and my first voice was the same as everyone's[b], as I cried.
+  to: And I too, when I was born, drew in the common air, and fell upon the earth that suffers alike with all; and my first voice was the same as everyone's, as I cried.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''upon the earth that suffers alike with all''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -129,6 +125,13 @@ revisions:
   from: And I too, when I was born, drew in the common air, and fell upon the earth that suffers alike with all; and my first voice was the same as everyone's, as I cried.
   to: And I too, when I was born, drew in the common air[a], and fell upon the earth that suffers alike with all[b]; and my first voice was the same as everyone's, as I cried.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('the common air') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('that suffers alike with all') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:11:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I too, when I was born, drew in the common air[a], and fell upon the earth that suffers alike with all[b]; and my first voice was the same as everyone's, as I cried.
+  to: I too, when I was born, breathed the air we all share and fell upon the earth that shares our frailty[a]; my first sound, like everyone else’s, was a cry.
+  rationale: Both the automated revision and its revert recognized the unusual description of the earth, but neither supplied a maintainer ruling. I preserve that image rather than reducing it to “the same earth,” while clarifying the shared vulnerability emphasized throughout the paragraph.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -148,3 +151,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/007/003.job-39271.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:55Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The speaker entered the same vulnerable earthly life as everyone else, breathing the shared air and crying at birth.
+  meaning_decisions:
+  - source_phrase: ἔσπασα τὸν κοινὸν ἀέρα
+    prior_rendering: drew in the common air
+    new_rendering: breathed the air we all share
+    rationale: “Common” means shared by everyone, not ordinary or inferior; the new wording makes the repeated emphasis on common humanity explicit.
+  - source_phrase: ἐπὶ τὴν ὁμοιοπαθῆ κατέπεσον γῆν
+    prior_rendering: fell upon the earth that suffers alike with all
+    new_rendering: fell upon the earth that shares our frailty
+    rationale: The adjective describes a shared condition or susceptibility; the mortality context supports frailty while retaining the personification of the earth.
+  - source_phrase: πρώτην φωνὴν τὴν ὁμοίαν πᾶσιν ἶσα κλαίων
+    prior_rendering: my first voice was the same as everyone's, as I cried
+    new_rendering: my first sound, like everyone else’s, was a cry
+    rationale: The first utterance is a newborn’s cry, not a distinctive speaking voice; the new wording preserves the universal comparison.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: Both the automated revision and its revert recognized the unusual description of the earth, but neither supplied a maintainer ruling. I preserve that image rather than reducing it to “the same earth,” while clarifying the shared vulnerability emphasized throughout the paragraph.

@@ -22,15 +22,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 1:22
 translation:
-  text: Until the appointed time, the patient one[b] will endure, and afterward joy will be repaid to him.[a]
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'The supplied Hebrew witness in Zone 1 appears mismatched at this verse; the English here follows the Greek text: ''Until the appointed time, the patient one will endure, and afterward joy will be repaid to him.'''
-    reason: textual_variant
-  - marker: b
-    text: Or 'the long-suffering one' for 'the patient one.'
-    reason: lexical_alternative
+  text: Blessed is the man who draws near to her and delights in her precepts.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἕως καιροῦ
   chosen: Until the appointed time
@@ -117,14 +110,20 @@ revisions:
   from: Until the appointed time, the patient one will endure, and afterward joy will be repaid to him.
   to: Blessed is the man who draws near to her, and who delights in her precepts.
   rationale: 'Replaced the draft entirely to match the Hebrew source: rendered אַשְׁרֵי אֱנוֹשׁ as ''Blessed is the man,'' יִקְרַב אֵלֶיהָ as ''who draws near to her,'' and וּפְקוּדֶיהָ יִשְׁתַּעֲשַׁע as ''and who delights in her precepts.'''
-
 - timestamp: '2026-05-15T13:25:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Blessed is the man who draws near to her[b][a], and who delights in her precepts.'
-  to: 'Until the appointed time, the patient one[b] will endure, and afterward joy will be repaid to him.[a]'
+  from: Blessed is the man who draws near to her[b][a], and who delights in her precepts.
+  to: Until the appointed time, the patient one[b] will endure, and afterward joy will be repaid to him.[a]
   rationale: 'Major_mismatch: azure went Hebrew despite documented theological_decision for Greek base.'
+- timestamp: '2026-11-09T19:04:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Until the appointed time, the patient one[b] will endure, and afterward joy will be repaid to him.[a]
+  to: Blessed is the man who draws near to her and delights in her precepts.
+  rationale: The April revision translated this Hebrew line accurately, but an automated revert restored a documented Greek-base choice. Because the supplied Hebrew continues the preceding verse coherently, mismatch alone is not sufficient reason to replace it with a different saying.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -144,3 +143,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/001/022.job-51000.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:04:24Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The person who draws near to wisdom and delights in her precepts is blessed.
+  meaning_decisions:
+  - source_phrase: אַשְׁרֵי אֱנוֹשׁ יִקְרַב אֵלֶיהָ, וּפְקוּדֶיהָ יִשְׁתַּעֲשַׁע
+    prior_rendering: Until the appointed time, the patient one will endure, and afterward joy will be repaid to him.
+    new_rendering: Blessed is the man who draws near to her and delights in her precepts.
+    rationale: The current wording translates a different Greek saying, not the supplied Hebrew, which continues the preceding beatitude about wisdom and introduces delight in her instruction.
+  footnote_kinds: {}
+  history_weighed: The April revision translated this Hebrew line accurately, but an automated revert restored a documented Greek-base choice. Because the supplied Hebrew continues the preceding verse coherently, mismatch alone is not sufficient reason to replace it with a different saying.

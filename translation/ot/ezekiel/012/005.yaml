@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: לְ/עֵינֵי/הֶ֖ם חֲתָר לְ/ךָ֣ בַ/קִּ֑יר וְ/הוֹצֵאתָ֖ בּֽ/וֹ־׃
 translation:
-  text: Before their eyes[a], dig through the wall, and bring out through it.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'In their sight, dig through the wall and take your baggage out through it.'
-    reason: lexical_alternative
+  text: Before their eyes, dig an opening through the wall and bring your baggage out through it.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: לְעֵינֵיהֶם
   chosen: Before their eyes
@@ -74,14 +70,20 @@ revisions:
   from: Before their eyes, dig through the wall for yourself, and bring your baggage out through it.
   to: Before their eyes, dig through the wall for yourself, and bring your baggage out through it.
   rationale: Removed 'for yourself' and 'your baggage,' which are not present in the source text of this verse. Kept the imperative/action sequence and the final 'through it' to reflect the Hebrew closely and naturally.
-
 - timestamp: '2026-05-18T02:55:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Before their eyes[a], dig through the wall, and bring out through it.'
-  to: 'Before their eyes[a], dig through the wall, and bring out through it.'
+  from: Before their eyes[a], dig through the wall, and bring out through it.
+  to: Before their eyes[a], dig through the wall, and bring out through it.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for yourself''].'
+- timestamp: '2026-11-09T17:37:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Before their eyes[a], dig through the wall, and bring out through it.
+  to: Before their eyes, dig an opening through the wall and bring your baggage out through it.
+  rationale: The first draft supplied 'your baggage,' while a later automated review removed it for source-form reasons. I restore that contextual object because the current English leaves a transitive verb incomplete; no maintainer ruling requires the omission.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -101,3 +103,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/012/005.job-63590.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:37:37Z'
+  change_level: refined
+  confidence: high
+  meaning: Ezekiel must visibly dig an opening through the wall and take his baggage through it.
+  meaning_decisions:
+  - source_phrase: חֲתָר לְךָ בַקִּיר
+    prior_rendering: dig through the wall
+    new_rendering: dig an opening through the wall
+    rationale: The opening is the immediate result required by the following instruction, and stating it makes the physical action clear.
+  - source_phrase: וְהוֹצֵאתָ בוֹ
+    prior_rendering: and bring out through it
+    new_rendering: and bring your baggage out through it
+    rationale: The Hebrew leaves the object implicit, but English needs it; the surrounding verses clearly supply the baggage.
+  footnote_kinds: {}
+  history_weighed: The first draft supplied 'your baggage,' while a later automated review removed it for source-form reasons. I restore that contextual object because the current English leaves a transitive verb incomplete; no maintainer ruling requires the omission.

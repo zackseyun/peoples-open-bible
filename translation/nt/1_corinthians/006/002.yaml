@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: ⸀ἢ οὐκ οἴδατε ὅτι οἱ ἅγιοι τὸν κόσμον κρινοῦσιν; καὶ εἰ ἐν ὑμῖν κρίνεται ὁ κόσμος, ἀνάξιοί ἐστε κριτηρίων ἐλαχίστων;
 translation:
-  text: Or do you not know that the saints will judge the world? And if the world is judged by you[b][a], are you unworthy of the smallest courts?
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Or ''among you'': the Greek phrase can be read more literally as ''if the world is judged among you,'' but the sense in context is that the saints participate in judging the world.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the least important cases' for 'the smallest law courts.'
-    reason: lexical_alternative
+  text: Or do you not know that God's holy people will judge the world? If the world will be judged by you, are you unfit to decide even the most trivial cases?
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἢ
   chosen: Or
@@ -118,14 +111,20 @@ revisions:
   from: Or do you not know that the saints will judge the world? And if the world is judged by you, are you unworthy of the smallest law courts?
   to: Or do you not know that the saints will judge the world? And if the world is judged by you, are you unworthy of the smallest law courts?
   rationale: Changed 'law courts' to 'courts' for closer lexical accuracy, since the Greek says simply 'courts/judgments' without specifying 'law.'
-
 - timestamp: '2026-05-18T03:01:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Or do you not know that the saints will judge the world? And if the world is judged by you[b][a], are you unworthy of the smallest courts?'
-  to: 'Or do you not know that the saints will judge the world? And if the world is judged by you[b][a], are you unworthy of the smallest courts?'
+  from: Or do you not know that the saints will judge the world? And if the world is judged by you[b][a], are you unworthy of the smallest courts?
+  to: Or do you not know that the saints will judge the world? And if the world is judged by you[b][a], are you unworthy of the smallest courts?
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''law courts''].'
+- timestamp: '2026-11-09T17:09:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Or do you not know that the saints will judge the world? And if the world is judged by you[b][a], are you unworthy of the smallest courts?
+  to: Or do you not know that God's holy people will judge the world? If the world will be judged by you, are you unfit to decide even the most trivial cases?
+  rationale: The history already recognized 'least important cases' as a possible meaning despite favoring court terminology. The automated court/law-court changes and revert add little semantic evidence, so the contextual contrast governs the rendering.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -145,3 +144,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/1_corinthians/006/002.job-52716.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:09:36Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Because God's holy people will judge the world, they should be fit to decide even minor disputes.
+  meaning_decisions:
+  - source_phrase: οἱ ἅγιοι
+    prior_rendering: the saints
+    new_rendering: God's holy people
+    rationale: This continues the designation of the whole believing community used in verse 1 while retaining its holiness.
+  - source_phrase: εἰ ἐν ὑμῖν κρίνεται ὁ κόσμος
+    prior_rendering: if the world is judged by you
+    new_rendering: If the world will be judged by you
+    rationale: The preceding future statement establishes that the present-tense conditional refers to their coming participation in judgment.
+  - source_phrase: ἀνάξιοί ἐστε κριτηρίων ἐλαχίστων
+    prior_rendering: are you unworthy of the smallest courts
+    new_rendering: are you unfit to decide even the most trivial cases
+    rationale: Paul contrasts the significance of the cases, not the physical size of courts; 'unfit' preserves his challenge to their worthiness for judicial responsibility.
+  footnote_kinds: {}
+  history_weighed: The history already recognized 'least important cases' as a possible meaning despite favoring court terminology. The automated court/law-court changes and revert add little semantic evidence, so the contextual contrast governs the rendering.

@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וַ/יֹּ֣אמֶר לָ/הֶ֔ם הַ/יְדַעְתֶּ֖ם אֶת לָבָ֣ן בֶּן נָח֑וֹר וַ/יֹּאמְר֖וּ יָדָֽעְנוּ־־׃
 translation:
-  text: He said to them[a], “Do you know Laban son of Nahor?” They said, “We know him.”
-  philosophy: optimal-equivalence
+  text: He said to them, “Do you know Laban, the grandson of Nahor[a]?” They said, “We know him.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew: ''We know,'' with ''him'' implied by the context.'
+    text: Literally, “son of Nahor.” Laban was Nahor’s grandson through Bethuel (Genesis 22:20–23; 24:29).
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וַיֹּאמֶר
@@ -79,14 +79,20 @@ revisions:
   from: He said to them, “Do you know Laban son of Nahor?” They said, “We do know him.”
   to: He said to them, “Do you know Laban son of Nahor?” They said, “We do know him.”
   rationale: Removed the emphatic 'do' in the reply for a more natural and formally appropriate rendering while preserving the meaning.
-
 - timestamp: '2026-05-17T11:06:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He said to them[a], “Do you know Laban son of Nahor?” They said, “We know him.”'
-  to: 'He said to them[a], “Do you know Laban son of Nahor?” They said, “We know him.”'
+  from: He said to them[a], “Do you know Laban son of Nahor?” They said, “We know him.”
+  to: He said to them[a], “Do you know Laban son of Nahor?” They said, “We know him.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''We do know him''].'
+- timestamp: '2026-11-09T17:43:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He said to them[a], “Do you know Laban son of Nahor?” They said, “We know him.”
+  to: He said to them, “Do you know Laban, the grandson of Nahor[a]?” They said, “We know him.”
+  rationale: I retain the current reply 'We know him,' without the first draft’s unnecessary emphatic 'do.' The lexical preference for literal 'son' yields to the family relationship established elsewhere in Genesis, with the Hebrew wording preserved in a note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -108,3 +114,22 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/029/005.job-65203.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:43:39Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jacob asks whether the shepherds know Laban of Nahor’s family, and they confirm that they do.
+  meaning_decisions:
+  - source_phrase: בֶּן נָחוֹר
+    prior_rendering: son of Nahor
+    new_rendering: the grandson of Nahor
+    rationale: Hebrew 'son' can identify a descendant; Genesis establishes that Laban was Bethuel’s son and Nahor’s grandson, so the narrower English 'son' would misstate the relationship.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: I retain the current reply 'We know him,' without the first draft’s unnecessary emphatic 'do.' The lexical preference for literal 'son' yields to the family relationship established elsewhere in Genesis, with the Hebrew wording preserved in a note.

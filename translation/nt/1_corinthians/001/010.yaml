@@ -4,23 +4,11 @@ source:
   edition: SBLGNT
   text: Παρακαλῶ δὲ ὑμᾶς, ἀδελφοί, διὰ τοῦ ὀνόματος τοῦ κυρίου ἡμῶν Ἰησοῦ Χριστοῦ ἵνα τὸ αὐτὸ λέγητε πάντες, καὶ μὴ ᾖ ἐν ὑμῖν σχίσματα, ἦτε δὲ κατηρτισμένοι ἐν τῷ αὐτῷ νοῒ καὶ ἐν τῇ αὐτῇ γνώμῃ.
 translation:
-  text: I urge you[a], brothers, by the name of our Lord Jesus Christ, that you all say the same thing, and that there be no divisions among you[e][d][c][b], but that you be joined together in the same mind and in the same judgment.
-  philosophy: optimal-equivalence
+  text: I urge you, brothers and sisters, in the name of our Lord Jesus Christ, to all agree with one another and have no divisions among you, but to be united[a] in mind and judgment.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or brothers and sisters; the Greek masculine plural may address the whole believing community.
-    reason: cultural_note
-  - marker: b
-    text: Messiah, traditionally 'Christ.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'there be no schisms among you.'
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'be restored' or 'be mended together.'
-    reason: lexical_alternative
-  - marker: e
-    text: Or 'the same judgment' or 'the same conviction.'
+    text: Literally, 'be mended' or 'be restored.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: Παρακαλῶ
@@ -29,7 +17,7 @@ lexical_decisions:
   - I appeal to
   - I exhort
   lexicon: BDAG
-  rationale: "παρακαλέω here introduces a pastoral appeal rather than a bare command. 'I urge' is natural modern English and preserves the apostolic earnestness. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'παρακαλέω here introduces a pastoral appeal rather than a bare command. ''I urge'' is natural modern English and preserves the apostolic earnestness. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: ἀδελφοί
   chosen: brothers
   alternatives:
@@ -131,7 +119,7 @@ revisions:
   rationale: Replaced 'the Messiah' with 'Christ' for closer correspondence to Χριστοῦ and more formal register; changed 'speak the same thing' to 'say the same thing' for a more direct rendering of λέγητε; changed 'purpose' to 'judgment' to better reflect γνώμῃ.
 - timestamp: '2026-04-23T12:00:00Z'
   adjudicator: claude-sonnet-4-6-regression-fix
-  reviewer_model:
+  reviewer_model: null
   category: regression_fix
   from: Now I urge you, brothers, by the name of our Lord Jesus Christ, that you all say the same thing, and that there be no divisions among you, but that you be joined together in the same mind and in the same judgment.
   to: Now I urge you, brothers, by the name of our Lord Jesus Messiah, that you all say the same thing, and that there be no divisions among you, but that you be joined together in the same mind and in the same judgment.
@@ -147,11 +135,17 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "I urge you, brothers, by the name of our Lord Jesus Messiah, that you all say the same thing, and that there be no divisions among you, but that you be joined together in the same mind and in the same judgment."
-  to: "I urge you, brothers, by the name of our Lord Jesus the Messiah, that you all say the same thing, and that there be no divisions among you, but that you be joined together in the same mind and in the same judgment."
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
+  from: I urge you, brothers, by the name of our Lord Jesus Messiah, that you all say the same thing, and that there be no divisions among you, but that you be joined together in the same mind and in the same judgment.
+  to: I urge you, brothers, by the name of our Lord Jesus the Messiah, that you all say the same thing, and that there be no divisions among you, but that you be joined together in the same mind and in the same judgment.
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:05:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: I urge you[a], brothers, by the name of our Lord Jesus Christ, that you all say the same thing, and that there be no divisions among you[e][d][c][b], but that you be joined together in the same mind and in the same judgment.
+  to: I urge you, brothers and sisters, in the name of our Lord Jesus Christ, to all agree with one another and have no divisions among you, but to be united[a] in mind and judgment.
+  rationale: The review’s move from 'purpose' to 'judgment' is retained. The earlier preference for masculine wording and literal 'say the same thing' reflected source transparency; the mixed congregation and the idiom’s call for agreement now determine the English.
 status: revised
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -173,3 +167,34 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/1_corinthians/001/010.job-52627.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:50Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Paul appeals to the whole congregation under Jesus’ authority to abandon divisions and recover agreement in thought and judgment.
+  meaning_decisions:
+  - source_phrase: ἀδελφοί
+    prior_rendering: brothers
+    new_rendering: brothers and sisters
+    rationale: Paul addresses the whole congregation, including its women; this carries the familial and inclusive meaning directly rather than leaving modern readers to infer it from a masculine English term.
+  - source_phrase: διὰ τοῦ ὀνόματος
+    prior_rendering: by the name of
+    new_rendering: in the name of
+    rationale: This is the natural English expression for an appeal made under the Lord’s authority.
+  - source_phrase: τὸ αὐτὸ λέγητε πάντες
+    prior_rendering: that you all say the same thing
+    new_rendering: to all agree with one another
+    rationale: The Greek expression calls for agreement, not identical repeated wording; the following factional slogans show the disagreement Paul intends them to overcome.
+  - source_phrase: ἦτε δὲ κατηρτισμένοι ἐν τῷ αὐτῷ νοῒ καὶ ἐν τῇ αὐτῇ γνώμῃ
+    prior_rendering: but that you be joined together in the same mind and in the same judgment
+    new_rendering: but to be united in mind and judgment
+    rationale: This expresses repaired communal unity naturally while retaining the distinction between mind and judgment; the mending image is preserved in a footnote.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The review’s move from 'purpose' to 'judgment' is retained. The earlier preference for masculine wording and literal 'say the same thing' reflected source transparency; the mixed congregation and the idiom’s call for agreement now determine the English.

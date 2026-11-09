@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֨אמֶר֙ אַבְשָׁל֔וֹם וָ/לֹ֕א יֵֽלֶךְ נָ֥א אִתָּ֖/נוּ אַמְנ֣וֹן אָחִ֑/י וַ/יֹּ֤אמֶר ל/וֹ֙ הַ/מֶּ֔לֶךְ לָ֥/מָּה יֵלֵ֖ךְ עִמָּֽ/ךְ־׃
 translation:
-  text: Then Absalom said[a], “If not, please let my brother Amnon go with us.” But the king said to him, “Why should he go with you?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more explicitly, 'If you will not, please let Amnon my brother go with us.' The Hebrew is elliptical.
-    reason: lexical_alternative
+  text: Then Absalom said, “If you will not go, please let my brother Amnon go with us.” But the king asked him, “Why should he go with you?”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: Then ... said / But ... said
@@ -84,14 +80,20 @@ revisions:
   from: Then Absalom said, “If not, please let Amnon my brother go with us.” But the king said to him, “Why should he go with you?”
   to: Then Absalom said, “If not, please let Amnon my brother go with us.” But the king said to him, “Why should he go with you?”
   rationale: Adjusted word order from 'Amnon my brother' to 'my brother Amnon' for more natural formal English while preserving the source meaning.
-
 - timestamp: '2026-05-17T04:21:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Absalom said[a], “If not, please let my brother Amnon go with us.” But the king said to him, “Why should he go with you?”'
-  to: 'Then Absalom said[a], “If not, please let my brother Amnon go with us.” But the king said to him, “Why should he go with you?”'
+  from: Then Absalom said[a], “If not, please let my brother Amnon go with us.” But the king said to him, “Why should he go with you?”
+  to: Then Absalom said[a], “If not, please let my brother Amnon go with us.” But the king said to him, “Why should he go with you?”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Amnon my brother''].'
+- timestamp: '2026-11-09T17:28:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Absalom said[a], “If not, please let my brother Amnon go with us.” But the king said to him, “Why should he go with you?”
+  to: Then Absalom said, “If you will not go, please let my brother Amnon go with us.” But the king asked him, “Why should he go with you?”
+  rationale: The earlier note explicitly identifies the omitted condition as David’s refusal to go, so I place that meaning in the text and drop the note. I retain the current natural order 'my brother Amnon' despite the conflicting automated revision records.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -111,3 +113,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/013/026.job-45656.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:47Z'
+  change_level: refined
+  confidence: high
+  meaning: Absalom asked that Amnon accompany him instead, and David questioned that request.
+  meaning_decisions:
+  - source_phrase: וָלֹא
+    prior_rendering: If not
+    new_rendering: If you will not go
+    rationale: The supplied words express the antecedent of the Hebrew ellipsis, already explained in the earlier footnote.
+  footnote_kinds: {}
+  history_weighed: The earlier note explicitly identifies the omitted condition as David’s refusal to go, so I place that meaning in the text and drop the note. I retain the current natural order 'my brother Amnon' despite the conflicting automated revision records.

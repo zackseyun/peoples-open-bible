@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יָּ֣קָם דָּוִ֗ד וְ/כָל הָ/עָם֙ אֲשֶׁ֣ר אִתּ֔/וֹ וַ/יַּעַבְר֖וּ אֶת הַ/יַּרְדֵּ֑ן עַד א֣וֹר הַ/בֹּ֗קֶר עַד אַחַד֙ לֹ֣א נֶעְדָּ֔ר אֲשֶׁ֥ר לֹא עָבַ֖ר אֶת הַ/יַּרְדֵּֽן־־־־־־׃
 translation:
-  text: Then David arose[a], and all the people who were with him, and they crossed the Jordan. By morning light, not one was missing who had not crossed the Jordan.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'until the light of morning'; the Hebrew phrase preserves the imagery of morning light while indicating the time by which the crossing was completed.
-    reason: lexical_alternative
+  text: Then David and all the people with him set out and crossed the Jordan. By morning light, everyone had crossed; not one person was left behind.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיָּקָם
   chosen: arose
@@ -74,14 +70,20 @@ revisions:
   from: Then David arose, and all the people who were with him, and they crossed the Jordan. By the light of morning, not one was missing who had not crossed the Jordan.
   to: Then David arose, and all the people who were with him, and they crossed the Jordan. By the light of morning, not one was missing who had not crossed the Jordan.
   rationale: Changed 'By the light of morning' to the more natural 'By morning light.'
-
 - timestamp: '2026-05-17T05:21:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then David arose[a], and all the people who were with him, and they crossed the Jordan. By morning light, not one was missing who had not crossed the Jordan.'
-  to: 'Then David arose[a], and all the people who were with him, and they crossed the Jordan. By morning light, not one was missing who had not crossed the Jordan.'
+  from: Then David arose[a], and all the people who were with him, and they crossed the Jordan. By morning light, not one was missing who had not crossed the Jordan.
+  to: Then David arose[a], and all the people who were with him, and they crossed the Jordan. By morning light, not one was missing who had not crossed the Jordan.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''By the light of morning''].'
+- timestamp: '2026-11-09T17:28:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then David arose[a], and all the people who were with him, and they crossed the Jordan. By morning light, not one was missing who had not crossed the Jordan.
+  to: Then David and all the people with him set out and crossed the Jordan. By morning light, everyone had crossed; not one person was left behind.
+  rationale: The history consistently understood morning as the deadline by which the crossing was complete, and “By morning light” already expresses that well. I retain it but replace the source-shaped negative construction with its unequivocal meaning.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -104,3 +106,25 @@ cross_check:
     major-issues: 1
     minor-issues: 1
   source_review: state/reviews/gemini/low_agreement_recheck/ot/2_samuel/017/022.job-28849.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:30Z'
+  change_level: retranslated
+  confidence: high
+  meaning: David acted on the warning, and everyone accompanying him had crossed the Jordan by morning.
+  meaning_decisions:
+  - source_phrase: וַיָּקָם דָּוִד וְכָל הָעָם אֲשֶׁר אִתּוֹ וַיַּעַבְרוּ
+    prior_rendering: Then David arose, and all the people who were with him, and they crossed
+    new_rendering: Then David and all the people with him set out and crossed
+    rationale: Makes the joint subject clear and conveys their immediate departure rather than emphasizing the act of standing up.
+  - source_phrase: עַד אַחַד לֹא נֶעְדָּר אֲשֶׁר לֹא עָבַר אֶת הַיַּרְדֵּן
+    prior_rendering: not one was missing who had not crossed the Jordan
+    new_rendering: everyone had crossed; not one person was left behind
+    rationale: Unpacks the compressed negative construction, whose prior English could suggest that some people remained uncrossed.
+  footnote_kinds: {}
+  history_weighed: The history consistently understood morning as the deadline by which the crossing was complete, and “By morning light” already expresses that well. I retain it but replace the source-shaped negative construction with its unequivocal meaning.

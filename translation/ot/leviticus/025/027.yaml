@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/חִשַּׁב֙ אֶת שְׁנֵ֣י מִמְכָּר֔/וֹ וְ/הֵשִׁיב֙ אֶת הָ֣/עֹדֵ֔ף לָ/אִ֖ישׁ אֲשֶׁ֣ר מָֽכַר ל֑/וֹ וְ/שָׁ֖ב לַ/אֲחֻזָּתֽ/וֹ־־־׃
 translation:
-  text: then he shall calculate the years since its sale and return the surplus[a] to the man to whom he sold it, and he shall return to his property[b].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the remainder' or 'the excess.' The Hebrew refers to the amount left over after calculating the value of the unused years.
-    reason: lexical_alternative
-  - marker: b
-    text: '''His property'' refers to his landed possession, likely his hereditary holding within Israel.'
-    reason: cultural_note
+  text: then he shall calculate the years since its sale and repay the buyer the portion of the purchase price for the years remaining; then he shall return to his ancestral land.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְחִשַּׁב
   chosen: then he shall calculate
@@ -93,13 +86,12 @@ revisions:
   from: then he shall calculate the years since its sale and return the surplus to the man to whom he sold it, and he shall return to his property.
   to: then he shall calculate the years of its sale and return the surplus to the man to whom he sold it, and he shall return to his property.
   rationale: Changed 'the years since its sale' to 'the years of its sale' for closer alignment with the Hebrew, which refers to the years of the sale rather than explicitly 'since' the sale.
-
 - timestamp: '2026-05-18T03:00:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'then he shall calculate the years of its sale and return the surplus to the man to whom he sold it[b][a], and he shall return to his property.'
-  to: 'then he shall calculate the years since its sale and return the surplus to the man to whom he sold it, and he shall return to his property.'
+  from: then he shall calculate the years of its sale and return the surplus to the man to whom he sold it[b][a], and he shall return to his property.
+  to: then he shall calculate the years since its sale and return the surplus to the man to whom he sold it, and he shall return to his property.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the years since its sale''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -109,6 +101,13 @@ revisions:
   from: then he shall calculate the years since its sale and return the surplus to the man to whom he sold it, and he shall return to his property.
   to: then he shall calculate the years since its sale and return the surplus[a] to the man to whom he sold it, and he shall return to his property[b].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('the surplus') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('His property') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:21:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: then he shall calculate the years since its sale and return the surplus[a] to the man to whom he sold it, and he shall return to his property[b].
+  to: then he shall calculate the years since its sale and repay the buyer the portion of the purchase price for the years remaining; then he shall return to his ancestral land.
+  rationale: The latest actual revision restores 'years since its sale,' which accurately conveys the elapsed-year calculation and is retained. The lexical and footnote explanations establish the remaining balance and hereditary holding, so those meanings are now explicit in the text.
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -128,3 +127,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/025/027.job-45204.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:21:25Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The seller must account for the years already elapsed, repay the buyer for the remaining years, and return to his ancestral holding.
+  meaning_decisions:
+  - source_phrase: וְהֵשִׁיב אֶת הָעֹדֵף לָאִישׁ אֲשֶׁר מָכַר לוֹ
+    prior_rendering: return the surplus to the man to whom he sold it
+    new_rendering: repay the buyer the portion of the purchase price for the years remaining
+    rationale: The amount repaid is the balance after allowing for the years the buyer has already held the land; 'surplus' alone does not explain which amount is due.
+  - source_phrase: וְשָׁב לַאֲחֻזָּתוֹ
+    prior_rendering: and he shall return to his property
+    new_rendering: then he shall return to his ancestral land
+    rationale: The return follows repayment and restores the seller to his hereditary landholding, not merely to unspecified property.
+  footnote_kinds: {}
+  history_weighed: The latest actual revision restores 'years since its sale,' which accurately conveys the elapsed-year calculation and is retained. The lexical and footnote explanations establish the remaining balance and hereditary holding, so those meanings are now explicit in the text.

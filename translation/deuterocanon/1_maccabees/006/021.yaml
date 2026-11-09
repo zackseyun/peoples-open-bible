@@ -26,12 +26,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And they came out from it[a], from the confinement, and some of the ungodly from Israel joined them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'from the siege' or 'from being shut in'; the Greek term emphasizes confinement or enclosure.
-    reason: lexical_alternative
+  text: Some of those in the citadel broke out through the siege, and some of the ungodly from Israel joined them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐξῆλθον
   chosen: came out
@@ -124,14 +120,20 @@ revisions:
   from: And they came out of it from the confinement, and some of the ungodly from Israel joined them.
   to: And they came out of it from the confinement, and some of the ungodly from Israel joined them.
   rationale: Adjusted 'out of it' to 'from it' for slightly more natural rendering while preserving the double ἐξ; otherwise retained the draft as accurate and complete.
-
 - timestamp: '2026-05-18T02:59:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they came out from it[a], from the confinement, and some of the ungodly from Israel joined them.'
-  to: 'And they came out from it[a], from the confinement, and some of the ungodly from Israel joined them.'
+  from: And they came out from it[a], from the confinement, and some of the ungodly from Israel joined them.
+  to: And they came out from it[a], from the confinement, and some of the ungodly from Israel joined them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''out of it''].'
+- timestamp: '2026-11-09T18:52:58Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they came out from it[a], from the confinement, and some of the ungodly from Israel joined them.
+  to: Some of those in the citadel broke out through the siege, and some of the ungodly from Israel joined them.
+  rationale: Earlier passes concentrated on preserving the repeated prepositions and left “confinement” unnecessarily generic. The continuing siege later in the chapter clarifies the escape, while the earlier theological decision rightly supports retaining “ungodly.”
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -151,3 +153,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/006/021.job-48295.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:58Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A group escapes from the besieged citadel and is joined by ungodly people from within Israel.
+  meaning_decisions:
+  - source_phrase: ἐξῆλθον ἐξ αὐτοῦ ἐκ τοῦ συγκλεισμοῦ
+    prior_rendering: they came out from it, from the confinement
+    new_rendering: Some of those in the citadel broke out through the siege
+    rationale: The context identifies both the citadel and the military enclosure; because the siege continues afterward, this is an escaping group rather than the withdrawal of the entire garrison.
+  footnote_kinds: {}
+  history_weighed: Earlier passes concentrated on preserving the repeated prepositions and left “confinement” unnecessarily generic. The continuing siege later in the chapter clarifies the escape, while the earlier theological decision rightly supports retaining “ungodly.”

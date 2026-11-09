@@ -23,12 +23,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: As for the holy city[a], which he had been hurrying to make level with the ground and to build into a mass grave, he will declare it free.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'a common grave' or 'a burial place for many.' The Greek term denotes a grave for many dead; 'mass grave' is chosen for clarity and force.
-    reason: lexical_alternative
+  text: He would declare the holy city free, though he had been hurrying there to level it to the ground and turn it into a mass grave.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἁγίαν πόλιν
   chosen: the holy city
@@ -114,14 +110,20 @@ revisions:
   from: As for the holy city, which he had been hurrying to make level with the ground and to build into a mass grave, he will declare it free.
   to: As for the holy city, which he had been hurrying to level to the ground and to make a mass grave, he will declare it free.
   rationale: 'Revised two phrases for closer lexical accuracy and more natural English: changed ''make level with the ground'' to ''level to the ground'' and ''to build into a mass grave'' to ''to make a mass grave,'' since the Greek speaks of making the city level and making it a burial place.'
-
 - timestamp: '2026-05-16T16:07:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'As for the holy city[a], which he had been hurrying to level to the ground and to make a mass grave, he will declare it free.'
-  to: 'As for the holy city[a], which he had been hurrying to make level with the ground and to build into a mass grave, he will declare it free.'
-  rationale: 'Restored drafter ''to make level with the ground'' (preserving the chosen idiomatic English ''make level'') and ''to build into a mass grave'' (preserving the chosen ''build'' verb) per chosen renderings.'
+  from: As for the holy city[a], which he had been hurrying to level to the ground and to make a mass grave, he will declare it free.
+  to: As for the holy city[a], which he had been hurrying to make level with the ground and to build into a mass grave, he will declare it free.
+  rationale: Restored drafter 'to make level with the ground' (preserving the chosen idiomatic English 'make level') and 'to build into a mass grave' (preserving the chosen 'build' verb) per chosen renderings.
+- timestamp: '2026-11-09T18:55:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: As for the holy city[a], which he had been hurrying to make level with the ground and to build into a mass grave, he will declare it free.
+  to: He would declare the holy city free, though he had been hurrying there to level it to the ground and turn it into a mass grave.
+  rationale: The earlier review correctly sought clearer wording for leveling the city and making it a mass grave; the automated revert supplied no stronger meaning-based reason for the cumbersome phrasing. I retain 'holy city,' 'mass grave,' and the restrained description of its promised freedom.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -141,3 +143,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/009/014.job-49226.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:51Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Antiochus promised to declare Jerusalem free instead of carrying out his plan to destroy it and turn it into a mass grave.
+  meaning_decisions:
+  - source_phrase: ἐλευθέραν ἀναδείξει
+    prior_rendering: he will declare it free
+    new_rendering: He would declare the holy city free
+    rationale: English reported speech requires 'would' here, consistently with the promises that follow; the city's promised status remains unspecified beyond 'free.'
+  - source_phrase: σπεύδων παρεγίνετο ἰσόπεδον ποιῆσαι καὶ πολυάνδριον οἰκοδομῆσαι
+    prior_rendering: he had been hurrying to make level with the ground and to build into a mass grave
+    new_rendering: he had been hurrying there to level it to the ground and turn it into a mass grave
+    rationale: The wording restores the implied movement toward the city and conveys its intended destruction and conversion without the unnatural expression 'build into.'
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly sought clearer wording for leveling the city and making it a mass grave; the automated revert supplied no stronger meaning-based reason for the cumbersome phrasing. I retain 'holy city,' 'mass grave,' and the restrained description of its promised freedom.

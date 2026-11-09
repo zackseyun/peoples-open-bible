@@ -4,17 +4,11 @@ source:
   edition: WLC
   text: וָ/אֵ֡רֶא וְ/הִנֵּה֩ ר֨וּחַ סְעָרָ֜ה בָּאָ֣ה מִן הַ/צָּפ֗וֹן עָנָ֤ן גָּדוֹל֙ וְ/אֵ֣שׁ מִתְלַקַּ֔חַת וְ/נֹ֥גַֽהּ ל֖/וֹ סָבִ֑יב וּ/מִ֨/תּוֹכָ֔/הּ כְּ/עֵ֥ין הַ/חַשְׁמַ֖ל מִ/תּ֥וֹךְ הָ/אֵֽשׁ־׃
 translation:
-  text: And I looked[a], and behold, a storm wind was coming from the north, a great cloud with fire flashing continually, and brightness all around it; and from its midst was something like the appearance of glowing metal[c][b], from the midst of the fire.
-  philosophy: optimal-equivalence
+  text: 'I looked, and there was a storm wind coming from the north: a great cloud with fire flashing continually and brightness all around it. At its center, within the fire, was something like glowing metal[a].'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'a whirlwind.' The Hebrew phrase can denote a violent windstorm; traditional English often has 'whirlwind.'
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew hashmal, a rare term of uncertain meaning; possibly 'electrum' or 'amber-like glow.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'fire infolding itself' (traditional rendering). The Hebrew expression is difficult and may describe fire in continual, self-intensifying motion.
+    text: Hebrew hashmal, an uncertain term, possibly electrum—a gold-and-silver alloy—or amber.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וָאֵרֶא
@@ -124,14 +118,20 @@ revisions:
   from: 'And I looked, and behold, a storm wind was coming from the north: a great cloud, with fire flashing continually, and brightness around it; and from its midst was something like the appearance of glowing metal, from the midst of the fire.'
   to: 'And I looked, and behold, a storm wind was coming from the north: a great cloud, with fire flashing continually, and brightness around it; and from its midst was something like the appearance of glowing metal, from the midst of the fire.'
   rationale: Removed the colon after 'north' for smoother syntax and changed 'around it' to 'all around it' to reflect סָבִיב more naturally. Otherwise retained the accurate rendering.
-
 - timestamp: '2026-05-18T02:54:26Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I looked[a], and behold, a storm wind was coming from the north, a great cloud with fire flashing continually, and brightness all around it; and from its midst was something like the appearance of glowing metal[c][b], from the midst of the fire.'
-  to: 'And I looked[a], and behold, a storm wind was coming from the north, a great cloud with fire flashing continually, and brightness all around it; and from its midst was something like the appearance of glowing metal[c][b], from the midst of the fire.'
+  from: And I looked[a], and behold, a storm wind was coming from the north, a great cloud with fire flashing continually, and brightness all around it; and from its midst was something like the appearance of glowing metal[c][b], from the midst of the fire.
+  to: And I looked[a], and behold, a storm wind was coming from the north, a great cloud with fire flashing continually, and brightness all around it; and from its midst was something like the appearance of glowing metal[c][b], from the midst of the fire.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''brightness around it''].'
+- timestamp: '2026-11-09T17:37:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I looked[a], and behold, a storm wind was coming from the north, a great cloud with fire flashing continually, and brightness all around it; and from its midst was something like the appearance of glowing metal[c][b], from the midst of the fire.
+  to: 'I looked, and there was a storm wind coming from the north: a great cloud with fire flashing continually and brightness all around it. At its center, within the fire, was something like glowing metal[a].'
+  rationale: The recorded passes mainly concern punctuation and “all around,” not a change in interpretation. I retain the documented storm wind, continually flashing fire, and uncertain metallic appearance, but remove syntax that obscures their spatial relationship.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -154,3 +154,26 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/001/004.job-63388.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:37:14Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Ezekiel saw a radiant, fiery storm approaching from the north, with something resembling glowing metal at its center.
+  meaning_decisions:
+  - source_phrase: וָאֵרֶא וְהִנֵּה
+    prior_rendering: And I looked, and behold
+    new_rendering: I looked, and there was
+    rationale: The wording presents the scene vividly before the reader without retaining an archaic attention marker.
+  - source_phrase: וּמִתּוֹכָהּ כְּעֵין הַחַשְׁמַל מִתּוֹךְ הָאֵשׁ
+    prior_rendering: and from its midst was something like the appearance of glowing metal, from the midst of the fire
+    new_rendering: At its center, within the fire, was something like glowing metal
+    rationale: The two spatial phrases describe the same central sight within the fiery phenomenon. Reordering them clarifies the layered scene while preserving the cautious comparison.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The recorded passes mainly concern punctuation and “all around,” not a change in interpretation. I retain the documented storm wind, continually flashing fire, and uncertain metallic appearance, but remove syntax that obscures their spatial relationship.

@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יָּ֣נָס יוֹתָ֔ם וַ/יִּבְרַ֖ח וַ/יֵּ֣לֶךְ בְּאֵ֑רָ/ה וַ/יֵּ֣שֶׁב שָׁ֔ם מִ/פְּנֵ֖י אֲבִימֶ֥לֶךְ אָחִֽי/ו׃פ
 translation:
-  text: Then Jotham fled and escaped and went to Beer[a], and he lived there away from Abimelech his brother.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'Beerah.' The Hebrew place name בְּאֵרָה may be represented in English either as 'Beer' or 'Beerah.'
-    reason: lexical_alternative
+  text: Then Jotham fled and escaped to Beer, where he lived out of fear of his brother Abimelech.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיָּנָס
   chosen: fled
@@ -71,14 +67,20 @@ revisions:
   from: Then Jotham fled and escaped and went to Beer, and he lived there because of Abimelech his brother.
   to: Then Jotham fled and escaped and went to Beer, and he lived there because of Abimelech his brother.
   rationale: Replaced 'because of' with 'away from' to more naturally and accurately reflect 'from/before the face of' (מִפְּנֵי) in this context.
-
 - timestamp: '2026-05-18T02:56:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Jotham fled and escaped and went to Beer[a], and he lived there away from Abimelech his brother.'
-  to: 'Then Jotham fled and escaped and went to Beer[a], and he lived there away from Abimelech his brother.'
+  from: Then Jotham fled and escaped and went to Beer[a], and he lived there away from Abimelech his brother.
+  to: Then Jotham fled and escaped and went to Beer[a], and he lived there away from Abimelech his brother.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''because of''].'
+- timestamp: '2026-11-09T18:13:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Jotham fled and escaped and went to Beer[a], and he lived there away from Abimelech his brother.
+  to: Then Jotham fled and escaped to Beer, where he lived out of fear of his brother Abimelech.
+  rationale: The history considers both the causal sense, 'because of,' and the separation expressed by 'away from.' The new wording carries both through the reason for Jotham’s flight; the directional ending on Beer does not require an alternative place-name note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -98,3 +100,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/judges/009/021.job-69143.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:13:13Z'
+  change_level: refined
+  confidence: high
+  meaning: Jotham escapes to Beer and lives there because he fears his brother Abimelech.
+  meaning_decisions:
+  - source_phrase: וַיָּנָס יוֹתָם וַיִּבְרַח וַיֵּלֶךְ בְּאֵרָה
+    prior_rendering: Then Jotham fled and escaped and went to Beer
+    new_rendering: Then Jotham fled and escaped to Beer
+    rationale: The verbs describe one escape journey; the destination can attach directly to the flight without losing its urgency.
+  - source_phrase: וַיֵּשֶׁב שָׁם מִפְּנֵי אֲבִימֶלֶךְ אָחִיו
+    prior_rendering: and he lived there away from Abimelech his brother
+    new_rendering: where he lived out of fear of his brother Abimelech
+    rationale: The context establishes that Abimelech's threat, not merely physical distance, explains Jotham's residence there.
+  footnote_kinds: {}
+  history_weighed: The history considers both the causal sense, 'because of,' and the separation expressed by 'away from.' The new wording carries both through the reason for Jotham’s flight; the directional ending on Beer does not require an alternative place-name note.

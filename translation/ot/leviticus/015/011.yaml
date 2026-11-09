@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/כֹ֨ל אֲשֶׁ֤ר יִגַּע בּ/וֹ֙ הַ/זָּ֔ב וְ/יָדָ֖י/ו לֹא שָׁטַ֣ף בַּ/מָּ֑יִם וְ/כִבֶּ֧ס בְּגָדָ֛י/ו וְ/רָחַ֥ץ בַּ/מַּ֖יִם וְ/טָמֵ֥א עַד הָ/עָֽרֶב־־־׃
 translation:
-  text: And everyone whom the man with the discharge touches[a], without having washed his hands in water, shall wash his clothes and bathe in water, and be unclean until the evening.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'if he has not rinsed his hands in water.' The Hebrew clause may be read as stating the condition under which the touch transmits impurity.
-    reason: lexical_alternative
+  text: If the man with the discharge touches someone without first rinsing his hands in water, the person he touches shall wash their clothes and bathe in water and shall remain unclean until evening.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: הַזָּב
   chosen: the man with the discharge
@@ -92,14 +88,20 @@ revisions:
   from: And everyone whom the man with the discharge touches, without having rinsed his hands in water, shall wash his clothes and bathe in water, and be unclean until the evening.
   to: And everyone whom the man with the discharge touches, without having rinsed his hands in water, shall wash his clothes and bathe in water, and be unclean until the evening.
   rationale: Changed 'rinsed' to 'washed' for a more natural and standard rendering of the verb, while preserving the meaning. No other changes needed.
-
 - timestamp: '2026-05-18T02:56:42Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And everyone whom the man with the discharge touches[a], without having washed his hands in water, shall wash his clothes and bathe in water, and be unclean until the evening.'
-  to: 'And everyone whom the man with the discharge touches[a], without having washed his hands in water, shall wash his clothes and bathe in water, and be unclean until the evening.'
+  from: And everyone whom the man with the discharge touches[a], without having washed his hands in water, shall wash his clothes and bathe in water, and be unclean until the evening.
+  to: And everyone whom the man with the discharge touches[a], without having washed his hands in water, shall wash his clothes and bathe in water, and be unclean until the evening.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''without having rinsed his hands in water''].'
+- timestamp: '2026-11-09T18:19:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And everyone whom the man with the discharge touches[a], without having washed his hands in water, shall wash his clothes and bathe in water, and be unclean until the evening.
+  to: If the man with the discharge touches someone without first rinsing his hands in water, the person he touches shall wash their clothes and bathe in water and shall remain unclean until evening.
+  rationale: The automated records are inconsistent about the change between 'rinsed' and 'washed,' but the lexical rationale supports 'rinsed' for שׁטף. I retain the recognized condition and make both its subject and the person required to wash explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -119,3 +121,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/015/011.job-45063.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:19:19Z'
+  change_level: refined
+  confidence: high
+  meaning: Anyone touched by the affected man before he rinses his hands must wash their clothes and bathe, but remains unclean until evening.
+  meaning_decisions:
+  - source_phrase: וְכֹל אֲשֶׁר יִגַּע בּוֹ הַזָּב וְיָדָיו לֹא שָׁטַף בַּמָּיִם
+    prior_rendering: And everyone whom the man with the discharge touches, without having washed his hands in water
+    new_rendering: If the man with the discharge touches someone without first rinsing his hands in water
+    rationale: The conditional wording clearly identifies the affected man as the one whose hands have not been rinsed before the contact.
+  - source_phrase: שָׁטַף
+    prior_rendering: washed
+    new_rendering: rinsing
+    rationale: The verb denotes rinsing or washing off, distinct from laundering clothes and bathing the body later in the verse.
+  - source_phrase: וְכִבֶּס בְּגָדָיו ... וְטָמֵא עַד הָעָרֶב
+    prior_rendering: shall wash his clothes ... and be unclean until the evening
+    new_rendering: the person he touches shall wash their clothes ... and shall remain unclean until evening
+    rationale: The explicit subject prevents confusing the touched person's obligations with those of the man with the discharge and preserves the continuing impurity.
+  footnote_kinds: {}
+  history_weighed: The automated records are inconsistent about the change between 'rinsed' and 'washed,' but the lexical rationale supports 'rinsed' for שׁטף. I retain the recognized condition and make both its subject and the person required to wash explicit.

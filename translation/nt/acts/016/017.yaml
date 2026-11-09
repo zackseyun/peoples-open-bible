@@ -4,11 +4,14 @@ source:
   edition: SBLGNT
   text: αὕτη ⸀κατακολουθοῦσα τῷ Παύλῳ καὶ ἡμῖν ἔκραζεν λέγουσα· Οὗτοι οἱ ἄνθρωποι δοῦλοι τοῦ θεοῦ τοῦ ὑψίστου εἰσίν, οἵτινες καταγγέλλουσιν ⸀ὑμῖν ὁδὸν σωτηρίας.
 translation:
-  text: She kept following Paul and us and crying out[a], saying, “These men are servants of the Most High God, who are proclaiming to you the way of salvation.”
-  philosophy: optimal-equivalence
+  text: She kept following Paul and us and crying out, “These men are servants[a] of the Most High God. They are proclaiming to you the way of salvation[b].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “the way of salvation.” The Greek reads literally “a/the way of salvation”; the noun 'way' has no article here, so the wording may be understood as either indefinite or definite in English.
+    text: Greek doulos, a servant bound to a master.
+    reason: lexical_alternative
+  - marker: b
+    text: Or, “a way of salvation.”
     reason: alternative_reading
 lexical_decisions:
 - source_word: κατακολουθοῦσα
@@ -87,14 +90,20 @@ revisions:
   from: She kept following Paul and us and crying out, saying, “These men are slaves of the Most High God, who are proclaiming to you a way of salvation.”
   to: She kept following Paul and us and crying out, saying, “These men are slaves of the Most High God, who are proclaiming to you a way of salvation.”
   rationale: Changed “a way of salvation” to “the way of salvation” to reflect the anarthrous Greek idiom more naturally and accurately in context. No other changes needed.
-
 - timestamp: '2026-05-18T03:00:41Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'She kept following Paul and us and crying out[a], saying, “These men are slaves of the Most High God, who are proclaiming to you the way of salvation.”'
-  to: 'She kept following Paul and us and crying out[a], saying, “These men are slaves of the Most High God, who are proclaiming to you the way of salvation.”'
+  from: She kept following Paul and us and crying out[a], saying, “These men are slaves of the Most High God, who are proclaiming to you the way of salvation.”
+  to: She kept following Paul and us and crying out[a], saying, “These men are slaves of the Most High God, who are proclaiming to you the way of salvation.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a way of salvation''].'
+- timestamp: '2026-11-09T17:06:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: She kept following Paul and us and crying out[a], saying, “These men are servants of the Most High God, who are proclaiming to you the way of salvation.”
+  to: She kept following Paul and us and crying out, “These men are servants[a] of the Most High God. They are proclaiming to you the way of salvation[b].”
+  rationale: The records alternate between “a way” and “the way”; the absence of a Greek article does not by itself require an indefinite English rendering. I retain the current contextual rendering, note the serious alternative, and follow the standing ruling to keep “servants” in the main text.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -116,3 +125,23 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/acts/016/017.job-53928.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:06:52Z'
+  change_level: refined
+  confidence: medium
+  meaning: The girl repeatedly follows the missionaries and loudly identifies them as servants of the Most High God who announce the way of salvation.
+  meaning_decisions:
+  - source_phrase: οἵτινες καταγγέλλουσιν ὑμῖν ὁδὸν σωτηρίας
+    prior_rendering: who are proclaiming to you the way of salvation
+    new_rendering: They are proclaiming to you the way of salvation
+    rationale: A separate sentence makes the missionaries the unmistakable subject while retaining the public proclamation and the image of salvation’s way.
+  footnote_kinds:
+    a: name_or_term
+    b: alternative_meaning
+  history_weighed: The records alternate between “a way” and “the way”; the absence of a Greek article does not by itself require an indefinite English rendering. I retain the current contextual rendering, note the serious alternative, and follow the standing ruling to keep “servants” in the main text.

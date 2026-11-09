@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וַ/תַּ֣עַשׂ הָ/אָ֔רֶץ בְּ/שֶׁ֖בַע שְׁנֵ֣י הַ/שָּׂבָ֑ע לִ/קְמָצִֽים׃
 translation:
-  text: During the seven years of abundance[a], the land produced by handfuls.
-  philosophy: optimal-equivalence
+  text: During the seven years of abundance, the land yielded bountiful harvests[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'by handfuls.' The Hebrew לִקְמָצִים uses a noun meaning 'handfuls' or 'fistfuls' to describe the abundance of the land's yield.
+    text: Literally, “by handfuls,” an expression describing the plentiful yield.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וַתַּעַשׂ
@@ -61,14 +61,20 @@ revisions:
   from: During the seven years of abundance, the land produced in handfuls.
   to: During the seven years of abundance, the land produced in handfuls.
   rationale: Changed 'in handfuls' to 'by handfuls' for a more natural rendering of לִקְמָצִים while preserving the image of abundant production.
-
 - timestamp: '2026-05-17T08:36:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'During the seven years of abundance[a], the land produced by handfuls.'
-  to: 'During the seven years of abundance[a], the land produced by handfuls.'
+  from: During the seven years of abundance[a], the land produced by handfuls.
+  to: During the seven years of abundance[a], the land produced by handfuls.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in handfuls''].'
+- timestamp: '2026-11-09T17:45:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: During the seven years of abundance[a], the land produced by handfuls.
+  to: During the seven years of abundance, the land yielded bountiful harvests[a].
+  rationale: The earlier passes debated “in” versus “by” while agreeing that the expression describes plentiful production. I carry that agreed meaning into the text and retain the source image in a note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -90,3 +96,22 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/041/047.job-65559.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:45:45Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Egypt’s land yielded exceptionally plentiful harvests during the seven years of abundance.
+  meaning_decisions:
+  - source_phrase: וַתַּעַשׂ הָאָרֶץ ... לִקְמָצִים
+    prior_rendering: the land produced by handfuls
+    new_rendering: the land yielded bountiful harvests
+    rationale: The handfuls expression communicates extraordinary agricultural abundance, whereas English “by handfuls” can suggest small quantities or a method of handling the crop.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier passes debated “in” versus “by” while agreeing that the expression describes plentiful production. I carry that agreed meaning into the text and retain the source image in a note.

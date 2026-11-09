@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֣אמֶר פַּרְעֹ֔ה הֵן רַבִּ֥ים עַתָּ֖ה עַ֣ם הָ/אָ֑רֶץ וְ/הִשְׁבַּתֶּ֥ם אֹתָ֖/ם מִ/סִּבְלֹתָֽ/ם־׃
 translation:
-  text: Pharaoh said[a], “Look, the people of the land are now many, and you are making them rest from their burdens.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'you have made them cease from their labors' or 'you are causing them to rest from their burdens.' The Hebrew verb is causative ('make cease/stop') and can be rendered in several close ways depending on how explicitly the labor context is brought out.
-    reason: lexical_alternative
+  text: Pharaoh said, “Look, there are now so many of these people in the land, and you are giving them rest from their forced labor.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: הֵן
   chosen: Look
@@ -74,14 +70,20 @@ revisions:
   from: Pharaoh said, “Look, the people of the land are now many, and you are making them stop from their burdens.”
   to: Pharaoh said, “Look, the people of the land are now many, and you are making them stop from their burdens.”
   rationale: Changed 'stop from their burdens' to 'rest from their burdens' for more accurate and natural rendering of the causative verb meaning 'cause to cease/rest' in context.
-
 - timestamp: '2026-05-18T02:55:03Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Pharaoh said[a], “Look, the people of the land are now many, and you are making them rest from their burdens.”'
-  to: 'Pharaoh said[a], “Look, the people of the land are now many, and you are making them rest from their burdens.”'
+  from: Pharaoh said[a], “Look, the people of the land are now many, and you are making them rest from their burdens.”
+  to: Pharaoh said[a], “Look, the people of the land are now many, and you are making them rest from their burdens.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you are making them stop''].'
+- timestamp: '2026-11-09T17:34:26Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Pharaoh said[a], “Look, the people of the land are now many, and you are making them rest from their burdens.”
+  to: Pharaoh said, “Look, there are now so many of these people in the land, and you are giving them rest from their forced labor.”
+  rationale: The recorded rationales differ over “stop” and “rest,” while the current text uses “rest.” I retain that sense without treating Pharaoh’s complaint as approval of their respite, and clarify the labor obligations he means.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -101,3 +103,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/005/005.job-62374.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:34:26Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Pharaoh objects that Moses and Aaron are giving a large population of Israelite laborers relief from their forced labor.
+  meaning_decisions:
+  - source_phrase: הֵן רַבִּים עַתָּה עַם הָאָרֶץ
+    prior_rendering: Look, the people of the land are now many
+    new_rendering: Look, there are now so many of these people in the land
+    rationale: In context Pharaoh means the Israelite population living in Egypt, not Egypt’s entire population; the English makes that reference clearer and preserves his emphatic observation.
+  - source_phrase: וְהִשְׁבַּתֶּם אֹתָם מִסִּבְלֹתָם
+    prior_rendering: and you are making them rest from their burdens
+    new_rendering: and you are giving them rest from their forced labor
+    rationale: The causative verb describes relief from imposed labor; the revised wording retains “rest” while identifying the burdens concretely.
+  footnote_kinds: {}
+  history_weighed: The recorded rationales differ over “stop” and “rest,” while the current text uses “rest.” I retain that sense without treating Pharaoh’s complaint as approval of their respite, and clarify the labor obligations he means.

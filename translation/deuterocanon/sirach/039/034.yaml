@@ -28,14 +28,14 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 39:34
 translation:
-  text: Do not say[a], “This is bad[b]; what is this?” for everything will prevail in its time.
-  philosophy: optimal-equivalence
+  text: Do not say, “This is worse than that[a],” for everything will prove good in its time[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Hebrew wording is somewhat difficult here; the Greek parallel clarifies the sense as 'This is worse than that.'
-    reason: textual_variant
+    text: The difficult Hebrew reads literally, “This is bad; what is this?” The Greek gives the comparative sense, “This is worse than that.”
+    reason: lexical_alternative
   - marker: b
-    text: Or 'everything will prosper in its time' or 'everything will be approved in its time.'
+    text: Literally, “everything will prevail in its time”; the Greek reads “everything will be found good in its time.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: אל
@@ -140,14 +140,20 @@ revisions:
   from: Do not say, “This is worse than that,” for everything will prove good in its time.
   to: Do not say, “This is worse than that,” for everything will prove good in its time.
   rationale: 'Revised to reflect the Hebrew more closely: replaced interpretive “worse than that” with “This is bad; what is this?” to account for זה רע מה זה, and changed “will prove good” to “will prevail” for יגביר without importing “good.”'
-
 - timestamp: '2026-05-16T12:22:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Do not say[a], “This is bad[b]; what is this?” for everything will prevail in its time.'
-  to: 'Do not say[a], “This is bad[b]; what is this?” for everything will prevail in its time.'
-  rationale: 'Restored drafter ''This is worse than that'' (comparative force) and ''will prove good in its time'' (preserving יגבר as positive proof) per chosen renderings.'
+  from: Do not say[a], “This is bad[b]; what is this?” for everything will prevail in its time.
+  to: Do not say[a], “This is bad[b]; what is this?” for everything will prevail in its time.
+  rationale: Restored drafter 'This is worse than that' (comparative force) and 'will prove good in its time' (preserving יגבר as positive proof) per chosen renderings.
+- timestamp: '2026-11-09T19:08:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Do not say[a], “This is bad[b]; what is this?” for everything will prevail in its time.
+  to: Do not say, “This is worse than that[a],” for everything will prove good in its time[b].
+  rationale: The first draft and recorded lexical deliberation used the Greek to clarify the difficult Hebrew; the later source-literal wording obscures both the comparison and the conclusion. I restore that meaning while preserving the Hebrew wording in notes.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -167,3 +173,27 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/039/034.job-52112.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:30Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: One should not declare one of God's works worse than another, because each proves good at its fitting time.
+  meaning_decisions:
+  - source_phrase: זה רע מה זה
+    prior_rendering: This is bad; what is this?
+    new_rendering: This is worse than that
+    rationale: The difficult Hebrew is best understood through the Greek's explicit comparison, which fits the warning against judging God's works apart from their proper occasions.
+  - source_phrase: הכל בעתו יגביר
+    prior_rendering: everything will prevail in its time
+    new_rendering: everything will prove good in its time
+    rationale: The Greek's evaluative rendering and the preceding affirmation that all God's works are good clarify the conclusion; the Hebrew's strength-oriented wording remains in a note.
+  footnote_kinds:
+    a: literal_wording
+    b: literal_wording
+  history_weighed: The first draft and recorded lexical deliberation used the Greek to clarify the difficult Hebrew; the later source-literal wording obscures both the comparison and the conclusion. I restore that meaning while preserving the Hebrew wording in notes.

@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: διὰ τί; ὅτι οὐκ ἀγαπῶ ὑμᾶς; ὁ θεὸς οἶδεν.
 translation:
-  text: Why? Because I do not love you? God knows[a] I do.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'God knows.' The Greek leaves the implied answer to the rhetorical question unstated.
-    reason: lexical_alternative
+  text: Why? Because I do not love you? God knows I do.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: διὰ τί
   chosen: Why?
@@ -71,13 +67,12 @@ revisions:
   from: Why? Because I do not love you? God knows I do.
   to: Why? Because I do not love you? God knows.
   rationale: Removed 'I do' because it is not present in the Greek; retained the rhetorical questions and the concise concluding statement.
-
 - timestamp: '2026-05-18T03:10:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Why? Because I do not love you? God knows[a].'
-  to: 'Why? Because I do not love you? God knows I do.'
+  from: Why? Because I do not love you? God knows[a].
+  to: Why? Because I do not love you? God knows I do.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''knows I do''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -87,6 +82,13 @@ revisions:
   from: Why? Because I do not love you? God knows I do.
   to: Why? Because I do not love you? God knows[a] I do.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:05:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Why? Because I do not love you? God knows[a] I do.
+  to: Why? Because I do not love you? God knows I do.
+  rationale: 'The history records the removal and subsequent restoration of ''I do.'' Its restoration is justified by meaning: the positive answer is unmistakably implied, and the current English carries it without unnecessary expansion.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -108,3 +110,17 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/2_corinthians/011/011.job-53571.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:25Z'
+  change_level: kept
+  confidence: high
+  meaning: Paul rejects the suggestion that his refusal of support reflects a lack of love and appeals to God's knowledge of his love.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: 'The history records the removal and subsequent restoration of ''I do.'' Its restoration is justified by meaning: the positive answer is unmistakably implied, and the current English carries it without unnecessary expansion.'

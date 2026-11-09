@@ -4,14 +4,14 @@ source:
   edition: WLC
   text: לָ/כֵ֣ן חַי אָ֗נִי נְאֻם֙ אֲדֹנָ֣/י יְהוִ֔ה כִּֽי לְ/דָ֥ם אֶעֶשְׂ/ךָ֖ וְ/דָ֣ם יִרְדֲּפֶ֑/ךָ אִם לֹ֥א דָ֛ם שָׂנֵ֖אתָ וְ/דָ֥ם יִרְדֲּפֶֽ/ךָ־־־׃
 translation:
-  text: Therefore[a], as I live, declares the Lord GOD, I will make you blood, and blood will pursue you. Surely you have not hated blood[b], so blood will pursue you.
-  philosophy: optimal-equivalence
+  text: Therefore, as I live, declares the Lord Yahweh, I will give you over to bloodshed[a], and bloodshed will pursue you. Since you did not hate bloodshed[b], bloodshed will pursue you.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more literally, 'I will make you blood'; the Hebrew likely evokes both bloodshed and bloodguilt through repeated wordplay on 'blood.'
+    text: Literally, “I will make you blood.”
     reason: lexical_alternative
   - marker: b
-    text: Hebrew 'blood'; here the sense is likely 'bloodshed' or violent bloodguilt.
+    text: The Hebrew word for blood, dam, plays on the name Edom.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: לָכֵן
@@ -102,14 +102,20 @@ revisions:
   from: Therefore, as I live, declares the Lord GOD, I will make you blood, and blood will pursue you. Since you did not hate bloodshed, blood will pursue you.
   to: Therefore, as I live, declares the Lord GOD, I will make you blood, and blood will pursue you. Since you did not hate bloodshed, blood will pursue you.
   rationale: 'Revised the final clause to reflect the Hebrew more closely: changed ''Since you did not hate bloodshed'' to ''Surely you have not hated blood,'' preserving the emphatic conditional form and the repeated term ''blood'' rather than introducing ''bloodshed.'''
-
 - timestamp: '2026-05-18T02:54:42Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Therefore[a], as I live, declares the Lord GOD, I will make you blood, and blood will pursue you. Surely you have not hated blood[b], so blood will pursue you.'
-  to: 'Therefore[a], as I live, declares the Lord GOD, I will make you blood, and blood will pursue you. Surely you have not hated blood[b], so blood will pursue you.'
+  from: Therefore[a], as I live, declares the Lord GOD, I will make you blood, and blood will pursue you. Surely you have not hated blood[b], so blood will pursue you.
+  to: Therefore[a], as I live, declares the Lord GOD, I will make you blood, and blood will pursue you. Surely you have not hated blood[b], so blood will pursue you.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you did not hate bloodshed''].'
+- timestamp: '2026-11-09T22:10:11Z'
+  adjudicator: claude-opus-5.5-meaning-pass
+  reviewer_model: claude-opus-5-5
+  category: meaning_retranslation
+  from: Therefore[a], as I live, declares the Lord GOD, I will make you blood, and blood will pursue you. Surely you have not hated blood[b], so blood will pursue you.
+  to: Therefore, as I live, declares the Lord Yahweh, I will give you over to bloodshed[a], and bloodshed will pursue you. Since you did not hate bloodshed[b], bloodshed will pursue you.
+  rationale: The April pass changed the drafter’s “Since you did not hate bloodshed” to “Surely you have not hated blood,” and the May revert restored the drafter’s wording as chosen; I follow the drafter’s causal reading and extend “bloodshed” to all four occurrences so the repetition stays intact.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -131,3 +137,35 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/ot/ezekiel/035/006.job-28540.json
+meaning_pass:
+  run: full-v4-opus
+  model: claude-opus-5-5
+  deployment: claude-code-subscription
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: null
+  timestamp: '2026-11-09T22:10:11Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Yahweh swears that Edom, which did not shrink from shedding blood, will itself be given over to bloodshed and hunted down by it.
+  meaning_decisions:
+  - source_phrase: לְדָם אֶעֶשְׂךָ
+    prior_rendering: I will make you blood
+    new_rendering: I will give you over to bloodshed
+    rationale: The terse Hebrew means that Edom is destined for violent death; “make you blood” is opaque in English. The literal wording is kept in the footnote.
+  - source_phrase: דָם (four times)
+    prior_rendering: blood
+    new_rendering: bloodshed
+    rationale: Here the word means shed blood and the guilt of violence; one English word is used all four times to keep the hammering repetition, and the footnote preserves the wordplay on Edom.
+  - source_phrase: אִם לֹא דָם שָׂנֵאתָ
+    prior_rendering: Surely you have not hated blood, so
+    new_rendering: Since you did not hate bloodshed,
+    rationale: 'The clause gives the reason for the sentence: Edom loved violence. This follows the first draft’s reading.'
+  - source_phrase: אֲדֹנָי יְהוִה
+    prior_rendering: the Lord GOD
+    new_rendering: the Lord Yahweh
+    rationale: Standing ruling on the divine name.
+  footnote_kinds:
+    a: literal_wording
+    b: name_or_term
+  history_weighed: The April pass changed the drafter’s “Since you did not hate bloodshed” to “Surely you have not hated blood,” and the May revert restored the drafter’s wording as chosen; I follow the drafter’s causal reading and extend “bloodshed” to all four occurrences so the repetition stays intact.

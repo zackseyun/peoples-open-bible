@@ -30,12 +30,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 45:17
 translation:
-  text: And he gave him his commandments[a], and granted him authority in statute and judgment, to teach Jacob his testimonies and to enlighten Israel with his law.
-  philosophy: optimal-equivalence
+  text: He was to burn offerings as a pleasing aroma and a memorial[a], and to make atonement for the people of Israel. God gave him his commandments and authority in matters of law and judgment.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'The extant Cairo Geniza Hebrew for this verse is shorter: ''He gave him his commandments, and granted him authority in statute and judgment.'' The clauses ''to teach Jacob his testimonies and to enlighten Israel with his law'' are supported by the Greek witness and are included here because the Hebrew line appears abbreviated.'
-    reason: textual_variant
+    text: The 'memorial' is the portion of an offering burned on the altar; see Leviticus 2:2.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: ויתן לו מצותיו
   chosen: He gave him his commandments
@@ -120,14 +120,20 @@ revisions:
   from: He gave him his commandments, and granted him authority in statute and judgment, to teach Jacob his testimonies and to enlighten Israel with his law.
   to: He gave him his commandments, and granted him authority in statute and judgment, to teach Jacob his testimonies and to enlighten Israel with his law.
   rationale: Added the initial conjunction "And" to reflect the Hebrew ויתן. The rest of the draft is accurate and natural.
-
 - timestamp: '2026-05-18T02:57:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he gave him his commandments[a], and granted him authority in statute and judgment, to teach Jacob his testimonies and to enlighten Israel with his law.'
-  to: 'And he gave him his commandments[a], and granted him authority in statute and judgment, to teach Jacob his testimonies and to enlighten Israel with his law.'
+  from: And he gave him his commandments[a], and granted him authority in statute and judgment, to teach Jacob his testimonies and to enlighten Israel with his law.
+  to: And he gave him his commandments[a], and granted him authority in statute and judgment, to teach Jacob his testimonies and to enlighten Israel with his law.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''He gave him his commandments''].'
+- timestamp: '2026-11-09T19:09:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he gave him his commandments[a], and granted him authority in statute and judgment, to teach Jacob his testimonies and to enlighten Israel with his law.
+  to: He was to burn offerings as a pleasing aroma and a memorial[a], and to make atonement for the people of Israel. God gave him his commandments and authority in matters of law and judgment.
+  rationale: 'Earlier decisions treated this Hebrew record as shorter than the Greek, overlooking its opening sacrificial clauses. The supplied source outweighs that rationale: I restore those clauses and do not supplement this verse with teaching material assigned to the next Hebrew record.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -147,3 +153,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/045/017.job-52263.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:55Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Aaron was commissioned to offer sacrifices and make atonement for Israel, and God gave him commandments and legal authority.
+  meaning_decisions:
+  - source_phrase: ולהקטיר ריח ניחח ואזכרה, ולכפר על בני ישראל
+    prior_rendering: Not rendered.
+    new_rendering: He was to burn offerings as a pleasing aroma and a memorial, and to make atonement for the people of Israel.
+    rationale: These sacrificial purposes are explicitly present at the beginning of the supplied Hebrew record and must not be omitted. 'Burn offerings' supplies the understood sacrificial object rather than suggesting that an aroma itself is burned.
+  - source_phrase: ויתן לו מצותיו, וימשילהו בחוק ומשפט
+    prior_rendering: And he gave him his commandments, and granted him authority in statute and judgment
+    new_rendering: God gave him his commandments and authority in matters of law and judgment.
+    rationale: The divine giver is made explicit, and the compressed legal expression becomes natural English without implying royal authority or the power to alter God's law.
+  - source_phrase: διδάξαι τὸν Ἰακὼβ τὰ μαρτύρια ... καὶ ἐν νόμῳ αὐτοῦ φωτῖσαι Ἰσραήλ
+    prior_rendering: to teach Jacob his testimonies and to enlighten Israel with his law.
+    new_rendering: Not included in this verse.
+    rationale: These Greek supplementary clauses are not in this verse's supplied Hebrew. The Hebrew teaching clause belongs to the supplied record for verse 18 and is translated there.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: 'Earlier decisions treated this Hebrew record as shorter than the Greek, overlooking its opening sacrificial clauses. The supplied source outweighs that rationale: I restore those clauses and do not supplement this verse with teaching material assigned to the next Hebrew record.'

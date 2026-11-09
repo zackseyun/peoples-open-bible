@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֥אמֶר יְהוֹנָתָ֖ן חָלִ֣ילָ/ה לָּ֑/ךְ כִּ֣י אִם יָדֹ֣עַ אֵדַ֗ע כִּֽי כָלְתָ֨ה הָ/רָעָ֜ה מֵ/עִ֤ם אָבִ/י֙ לָ/ב֣וֹא עָלֶ֔י/ךָ וְ/לֹ֥א אֹתָ֖/הּ אַגִּ֥יד לָֽ/ךְ׀־־׃ס
 translation:
-  text: Jonathan said[a], “Far be it from you! If I knew for certain that evil had been determined by my father to come upon you, would I not tell you?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the harm was fixed' / 'the evil was complete.' The Hebrew expression may denote that Saul's harmful intent had become settled or fully formed.
-    reason: lexical_alternative
+  text: Jonathan said, “Never! If I knew for certain that my father was determined to harm you, would I not tell you?”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: חָלִילָה לָּךְ
   chosen: Far be it from you!
@@ -85,14 +81,20 @@ revisions:
   from: Jonathan said, “Far be it from you! If I knew for certain that evil had been determined by my father to come upon you, would I not tell you?”
   to: Jonathan said, “Far be it from me! If I knew for certain that my father had determined to bring evil upon you, would I not tell you?”
   rationale: Changed 'from you' to 'from me' for lexical accuracy with לָּךְ in this idiom; reordered the clause slightly to reflect 'my father had determined to bring evil upon you' more naturally while preserving the source meaning.
-
 - timestamp: '2026-05-15T11:24:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Jonathan said[a], “Far be it from me! If I knew for certain that my father had determined to bring evil upon you, would I not tell you?”'
-  to: 'Jonathan said[a], “Far be it from you! If I knew for certain that evil had been determined by my father to come upon you, would I not tell you?”'
-  rationale: 'Restored 2nd-person dative לָּךְ and Hebrew word-order with passive determination.'
+  from: Jonathan said[a], “Far be it from me! If I knew for certain that my father had determined to bring evil upon you, would I not tell you?”
+  to: Jonathan said[a], “Far be it from you! If I knew for certain that evil had been determined by my father to come upon you, would I not tell you?”
+  rationale: Restored 2nd-person dative לָּךְ and Hebrew word-order with passive determination.
+- timestamp: '2026-11-09T17:24:41Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Jonathan said[a], “Far be it from you! If I knew for certain that evil had been determined by my father to come upon you, would I not tell you?”
+  to: Jonathan said, “Never! If I knew for certain that my father was determined to harm you, would I not tell you?”
+  rationale: The revision and revert disputed the dative and passive wording. “Never!” carries the repudiation without changing “you” to “me,” while the active wording expresses the settled harmful intent recognized throughout the record.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -112,3 +114,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/020/009.job-59260.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:24:41Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jonathan emphatically assures David that he would tell him if he knew Saul had resolved to harm him.
+  meaning_decisions:
+  - source_phrase: חָלִילָה לָּךְ
+    prior_rendering: Far be it from you!
+    new_rendering: Never!
+    rationale: This is an emphatic repudiation of the alarming possibility David has raised; the English expression need not reproduce the Hebrew dative.
+  - source_phrase: כָלְתָה הָרָעָה מֵעִם אָבִי לָבוֹא עָלֶיךָ
+    prior_rendering: evil had been determined by my father to come upon you
+    new_rendering: my father was determined to harm you
+    rationale: The clause concerns Saul’s settled intention to harm David, which active English conveys without an awkward passive chain.
+  footnote_kinds: {}
+  history_weighed: The revision and revert disputed the dative and passive wording. “Never!” carries the repudiation without changing “you” to “me,” while the active wording expresses the settled harmful intent recognized throughout the record.

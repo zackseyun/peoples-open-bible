@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: οὐ μόνον δὲ τοῦτο κινδυνεύει ἡμῖν τὸ μέρος εἰς ἀπελεγμὸν ἐλθεῖν, ἀλλὰ καὶ τὸ τῆς μεγάλης θεᾶς ⸂Ἀρτέμιδος ἱερὸν⸃ εἰς οὐθὲν λογισθῆναι, μέλλειν ⸀τε καὶ καθαιρεῖσθαι ⸂τῆς μεγαλειότητος⸃ αὐτῆς, ἣν ὅλη ἡ Ἀσία καὶ ἡ οἰκουμένη σέβεται.
 translation:
-  text: And not only is this trade of ours in danger of coming into disrepute, but also the temple of the great goddess Artemis may be counted as nothing, and even her majesty[b]—whom all Asia and the world[a] worships—may be brought down.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the inhabited world.' The Greek often refers to the populated world, especially the wider Roman world.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'her magnificence' or 'her greatness.' The Greek expression refers to Artemis's exalted status or splendor being brought down.
-    reason: lexical_alternative
+  text: Not only is our trade in danger of falling into disrepute, but the temple of the great goddess Artemis may also be counted as nothing. She herself, whom all Asia and the world worship, may even be stripped of her majesty.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: κινδυνεύει
   chosen: is in danger
@@ -112,13 +105,12 @@ revisions:
   from: And not only is this trade of ours in danger of coming into disrepute, but also the temple of the great goddess Artemis may be counted as nothing, and even her majesty—whom all Asia and the world worships—may be brought down.
   to: And not only is this trade of ours in danger of coming into disrepute, but also the temple of the great goddess Artemis may be counted as nothing, and even her majesty—whom all Asia and the world worship—may be brought down.
   rationale: Changed 'worships' to 'worship' to agree with the compound subject 'all Asia and the world.'
-
 - timestamp: '2026-05-18T03:10:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And not only is this trade of ours in danger of coming into disrepute[a], but also the temple of the great goddess Artemis may be counted as nothing[b], and even her majesty—whom all Asia and the world worship—may be brought down.'
-  to: 'And not only is this trade of ours in danger of coming into disrepute, but also the temple of the great goddess Artemis may be counted as nothing, and even her majesty—whom all Asia and the world worships—may be brought down.'
+  from: And not only is this trade of ours in danger of coming into disrepute[a], but also the temple of the great goddess Artemis may be counted as nothing[b], and even her majesty—whom all Asia and the world worship—may be brought down.
+  to: And not only is this trade of ours in danger of coming into disrepute, but also the temple of the great goddess Artemis may be counted as nothing, and even her majesty—whom all Asia and the world worships—may be brought down.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''worships''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -128,6 +120,13 @@ revisions:
   from: And not only is this trade of ours in danger of coming into disrepute, but also the temple of the great goddess Artemis may be counted as nothing, and even her majesty—whom all Asia and the world worships—may be brought down.
   to: And not only is this trade of ours in danger of coming into disrepute, but also the temple of the great goddess Artemis may be counted as nothing, and even her majesty[b]—whom all Asia and the world[a] worships—may be brought down.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('the world') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('her majesty') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:07:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And not only is this trade of ours in danger of coming into disrepute, but also the temple of the great goddess Artemis may be counted as nothing, and even her majesty[b]—whom all Asia and the world[a] worships—may be brought down.
+  to: Not only is our trade in danger of falling into disrepute, but the temple of the great goddess Artemis may also be counted as nothing. She herself, whom all Asia and the world worship, may even be stripped of her majesty.”
+  rationale: The earlier review correctly repaired the agreement of “Asia and the world worship,” and the automated revert supplies no meaning-based reason to undo that repair. The lexical record also recognizes Artemis's loss of majesty as the sense of the difficult construction, so I make her its explicit subject while preserving Demetrius's sweeping claim.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -147,3 +146,21 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/019/027.job-46962.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:07:07Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Demetrius warns that Paul's influence threatens both the reputation of their trade and the honor of Artemis and her temple.
+  meaning_decisions:
+  - source_phrase: μέλλειν τε καὶ καθαιρεῖσθαι τῆς μεγαλειότητος αὐτῆς, ἣν ὅλη ἡ Ἀσία καὶ ἡ οἰκουμένη σέβεται
+    prior_rendering: even her majesty—whom all Asia and the world worships—may be brought down
+    new_rendering: She herself, whom all Asia and the world worship, may even be stripped of her majesty
+    rationale: Artemis, not the abstraction “majesty,” is the one worshiped; the compressed Greek describes her feared loss of exalted status. The new wording also gives the compound English subject its proper verb agreement.
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly repaired the agreement of “Asia and the world worship,” and the automated revert supplies no meaning-based reason to undo that repair. The lexical record also recognizes Artemis's loss of majesty as the sense of the difficult construction, so I make her its explicit subject while preserving Demetrius's sweeping claim.

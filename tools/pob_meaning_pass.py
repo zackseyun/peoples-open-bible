@@ -351,7 +351,7 @@ def call_model(system: str, user: str, *, deployment: str, effort: str, tier: st
     url = f"{endpoint}/openai/deployments/{deployment}/chat/completions?api-version={API_VERSION}"
     body: dict[str, Any] = {
         "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
-        "max_completion_tokens": 32000,
+        "max_completion_tokens": 64000,
         "reasoning_effort": effort,
         "response_format": {
             "type": "json_schema",

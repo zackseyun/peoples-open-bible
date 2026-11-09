@@ -136,7 +136,13 @@ class FullRepairBatch10Test(unittest.TestCase):
             with patch.object(reader,'EXTRA_CANONICAL_ROOT',root):before=reader.export_extra_canonical_book('ENO')
             after=reader.export_extra_canonical_book('ENO')
         before={c['chapter']:c for c in before['chapters']};after={c['chapter']:c for c in after['chapters']}
-        self.assertEqual(sorted(set(after)-set(before)),[18]);self.assertFalse(set(before)-set(after))
+        from tools.enoch import batch39_evidence as successor
+        added=[18]
+        if (t.APPLICATIONS/successor.NAME/'application.json').is_file():
+            successor.verify_current()
+            added.append(66)  # Its restored 66:2 now completes the chapter with retained B10 66:3.
+            self.assertEqual([v['verse'] for v in after[66]['verses']],[1,2,3])
+        self.assertEqual(sorted(set(after)-set(before)),added);self.assertFalse(set(before)-set(after))
         self.assertEqual({c:d for c,d in after.items() if c not in {*FULL,*PARTIAL}},{c:d for c,d in before.items() if c not in {*FULL,*PARTIAL}})
         self.assertEqual([v['verse'] for v in after[18]['verses']],list(range(1,17)))
 

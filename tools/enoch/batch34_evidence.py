@@ -33,18 +33,8 @@ def prior_postmap():
     return m, expected
 
 
-def verify_fixed_postmap(expected, actual):
-    """Only the original B34 map or the exact approved 52:8 successor."""
-    if expected.get('052/008.yaml') != '53aaf4b10056413fe1adf895504fe7036739018fd87fb089feafd07660fa48aa':
-        raise ValueError('B34 52:8 preimage differs')
-    successor = dict(expected)
-    successor['052/008.yaml'] = '6ed95c749033803e5bc930f39824157c79105e1d5bb5a69db1cf7044e533f0b2'
-    if actual != expected and actual != successor:
-        raise ValueError('Canonical changes exceed fixed B34 or exact 52:8 successor')
-    return actual
-
-
-def verify_current():
+def historical_postmap():
+    """Prove B34's immutable full map and still-current own44, not later edits."""
     package = t.APPLICATIONS/NAME
     if t.sha((package/'manifest.json').read_bytes()) != MANIFEST_SHA:
         raise ValueError('Fixed B34 manifest differs')
@@ -78,9 +68,23 @@ def verify_current():
             t.sha((package/'original-count41-44-index.json').read_bytes()) != count.INDEX_SHA):
         raise ValueError('B34 existing structural-only count binding differs')
     proof = t.verify(package, applied=True, check_corpus=False)
-    actual = verify_fixed_postmap(expected, t.corpus_hashes())
-    return {**proof, 'prior_historical_postmap': before, 'historical_postmap': expected, 'current_postmap': actual,
+    return {**proof, 'manifest': m, 'prior_historical_postmap': before, 'current_postmap': expected,
             'new_language_review_units': 1, 'new_structural_count_votes': 0}
+
+
+def verify_current():
+    proof = historical_postmap()
+    from tools.enoch import batch35_evidence as successor
+    if (t.APPLICATIONS/successor.NAME/'application.json').is_file():
+        current = successor.verify_current()['actual_current_postmap']
+        name = successor.NAME
+    else:
+        # An absent/unapplied B35 proposal licenses no later canonical drift.
+        t.verify(t.APPLICATIONS/NAME, applied=True, check_corpus=True)
+        current = proof['current_postmap']
+        name = None
+    return {**proof, 'actual_current_postmap': current,
+            'verified_current_successor': name}
 
 
 def verify_batch33_postmap_or_fixed_successor():
@@ -94,12 +98,59 @@ def verify_batch33_postmap_or_fixed_successor():
 
 
 def assert_current_progress(case, report):
-    """Keep old478/36 claims unless the exact sole44 successor is installed."""
+    """Advance counts only through verified, exact applied successors."""
     if (t.APPLICATIONS/NAME/'application.json').is_file():
-        verify_current()
-        case.assertEqual(report['current_units_with_imported_review_evidence'], 479)
-        case.assertEqual(len(report['chapters_with_complete_imported_selected_edition_review']), 37)
+        proof = verify_current()
+        from tools.enoch import batch35_evidence as successor
+        installed = proof['verified_current_successor'] == successor.NAME
+        from tools.enoch import batch36_evidence as next_successor
+        extended = installed and (t.APPLICATIONS/next_successor.NAME/'application.json').is_file()
+        if extended:
+            next_successor.verify_current()
+        from tools.enoch import batch38_evidence
+        added_1_9 = extended and (t.APPLICATIONS/batch38_evidence.NAME/'application.json').is_file()
+        if added_1_9:
+            batch38_evidence.verify_current()
+            row = next(row for row in report['chapters'] if row['chapter'] == 1)
+            case.assertEqual(row['current_units_with_imported_review_evidence'], [1, 3, 4, 5, 6, 7, 8, 9])
+            case.assertFalse(row['selected_edition_chapter_review_complete'])
+        from tools.enoch import batch39_evidence
+        added_b39 = added_1_9 and (t.APPLICATIONS/batch39_evidence.NAME/'application.json').is_file()
+        if added_b39:
+            batch39_evidence.verify_current()
+            for chapter, units in ((7, list(range(1, 7))), (66, [1, 2, 3])):
+                row = next(row for row in report['chapters'] if row['chapter'] == chapter)
+                case.assertEqual(row['current_units_with_imported_review_evidence'], units)
+                case.assertTrue(row['selected_edition_chapter_review_complete'])
+        from tools.enoch import batch40_evidence
+        added_b40 = added_b39 and (t.APPLICATIONS/batch40_evidence.NAME/'application.json').is_file()
+        if added_b40:
+            batch40_evidence.verify_current()
+            row = next(row for row in report['chapters'] if row['chapter']==32)
+            case.assertEqual(row['current_units_with_imported_review_evidence'],list(range(1,7)))
+            case.assertTrue(row['selected_edition_chapter_review_complete'])
+        from tools.enoch import batch41_evidence
+        added_b41 = added_b40 and (t.APPLICATIONS/batch41_evidence.NAME/'application.json').is_file()
+        if added_b41:
+            batch41_evidence.verify_current()
+            for chapter, units in ((2,[1,2,3]),(3,[1])):
+                row = next(row for row in report['chapters'] if row['chapter']==chapter)
+                case.assertEqual(row['current_units_with_imported_review_evidence'],units)
+                case.assertTrue(row['selected_edition_chapter_review_complete'])
+        case.assertEqual(report['current_units_with_imported_review_evidence'],
+                         (486 if extended else 485 if installed else 479) + int(added_1_9)
+                         + 3*int(added_b39) + 2*int(added_b40) + 2*int(added_b41))
+        case.assertEqual(len(report['chapters_with_complete_imported_selected_edition_review']),
+                         37 + 2*int(added_b39) + int(added_b40) + 2*int(added_b41))
         case.assertIn(44, report['chapters_with_complete_imported_selected_edition_review'])
+        if installed:
+            case.assertEqual(report['canonical_file_count'], 966 + int(added_b39) + int(added_b40))
+            for c, units in successor.ACCEPTED_UNITS.items():
+                case.assertNotIn(c, report['chapters_with_complete_imported_selected_edition_review'])
+                row = next(row for row in report['chapters'] if row['chapter'] == c)
+                wanted_units = sorted(set(units) | ({3} if extended and c == 96 else set()))
+                case.assertEqual(row['current_units_with_imported_review_evidence'], wanted_units)
+                case.assertFalse(row['selected_edition_chapter_review_complete'])
     else:
         case.assertEqual(report['current_units_with_imported_review_evidence'], 478)
         case.assertEqual(len(report['chapters_with_complete_imported_selected_edition_review']), 36)

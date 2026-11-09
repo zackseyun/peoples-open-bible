@@ -1,4 +1,4 @@
-import hashlib,io,json,re,subprocess,tarfile,unittest
+import hashlib,json,re,subprocess,unittest
 from pathlib import Path
 import yaml
 from jsonschema import Draft202012Validator
@@ -6,7 +6,6 @@ from tools import audit_footnotes
 from tools.enoch import verse_parser, legacy44_evidence as legacy44
 from tools.enoch import bounded_application as t
 ROOT=Path(__file__).resolve().parents[1];TARGET=ROOT/'translation/extra_canonical/1_enoch/044/001.yaml';RECEIPT=ROOT/'sources/textual_restoration/applications/enoch44_1.2026-10-06.v1.json'
-INSTALL_44='a3681961d91c1eb1a609e12cec312a644148f9bb'
 BASE='21faf461feba9970d651bb70fa8d88aabeab43fe'
 class Enoch441Application(unittest.TestCase):
  def setUp(self):
@@ -32,22 +31,18 @@ class Enoch441Application(unittest.TestCase):
   package=matches[0];manifest=t.load_manifest(package)
   self.assertEqual(manifest['references'],[legacy44.REF])
   self.assertEqual(manifest['retirements'],[])
-  self.assertEqual(t.verify(package,applied=True)['references'],[legacy44.REF])
+  self.assertEqual(t.verify(package,applied=True,check_corpus=False)['references'],[legacy44.REF])
+  from tools.enoch import batch34_evidence
+  self.assertEqual(package.name,batch34_evidence.NAME)
+  chain=batch34_evidence.verify_current()
   receipt=json.loads((package/'application.json').read_text())
   self.assertEqual(receipt['status'],'applied_verified')
   self.assertEqual(receipt['manifest_sha256'],t.sha((package/'manifest.json').read_bytes()))
   expected=dict(manifest['canonical_baseline_sha256']);expected['044/001.yaml']=manifest['files']['044-001.candidate.yaml']
   self.assertEqual(len(expected),966);self.assertEqual(receipt['canonical_after_sha256'],expected)
-  # Verify the exact corpus at the installation commit, not today's corpus.
-  prefix=str(TARGET.relative_to(ROOT).parents[1])+'/'
-  raw=subprocess.check_output(['git','archive',INSTALL_44,prefix],cwd=ROOT)
-  with tarfile.open(fileobj=io.BytesIO(raw)) as archive:
-   installed={m.name.removeprefix(prefix):hashlib.sha256(archive.extractfile(m).read()).hexdigest()
-              for m in archive if m.isfile() and re.fullmatch(prefix+r'[0-9]{3}/[0-9]{3}\.yaml',m.name)}
-  self.assertEqual(installed,expected)
-  # The legacy OCR is checked above; the successor is paired against native pages.
-  current=yaml.safe_load(TARGET.read_text())
-  reviewed=yaml.safe_load((package/'044-001.candidate.yaml').read_text())
-  self.assertEqual(current['source']['text'],reviewed['source']['text'])
+  self.assertEqual(chain['current_postmap'],expected)
+  self.assertEqual(chain['actual_current_postmap'],t.corpus_hashes())
+  rows,_=verse_parser.parse_chapter(44);current=yaml.safe_load(TARGET.read_text())
+  self.assertEqual(rows[0].text,current['source']['text'])
   self.assertEqual(current['enoch_witnesses']['available_witnesses'][0]['text'],current['source']['text'])
 if __name__=='__main__':unittest.main()

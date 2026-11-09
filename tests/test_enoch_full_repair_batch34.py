@@ -21,44 +21,43 @@ def record():return yaml.load((t.TRANSLATION/'044/001.yaml').read_bytes(),Loader
 def write_json(path,data):path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
 
 class Batch34Test(unittest.TestCase):
- def test_fixed_postmap_rejects_unrelated_or_unpinned_edits(self):
-  expected=json.loads((P/'application.json').read_text())['canonical_after_sha256']
-  self.assertEqual(b.verify_fixed_postmap(expected,expected),expected)
-  successor=dict(expected);successor['052/008.yaml']='6ed95c749033803e5bc930f39824157c79105e1d5bb5a69db1cf7044e533f0b2'
-  self.assertEqual(b.verify_fixed_postmap(expected,successor),successor)
-  for key in ('044/001.yaml','052/008.yaml','013/006.yaml','001/001.yaml'):
-   bad=dict(successor);bad[key]='0'*64
-   with self.assertRaises(ValueError):b.verify_fixed_postmap(expected,bad)
-  for bad in (dict(successor, unexpected='0'*64), {k:v for k,v in successor.items() if k!='001/001.yaml'}):
-   with self.assertRaises(ValueError):b.verify_fixed_postmap(expected,bad)
-
- def test_integrated_fixed_postmap_rejects_drift(self):
-  expected=json.loads((P/'application.json').read_text())['canonical_after_sha256']
-  for key in ('044/001.yaml','013/006.yaml','052/008.yaml','001/001.yaml'):
-   bad=dict(expected);bad[key]='0'*64
-   with patch.object(t,'corpus_hashes',return_value=bad):
-    with self.assertRaises(ValueError):b.verify_current()
-  bad=dict(expected);bad.pop('001/001.yaml')
-  with patch.object(t,'corpus_hashes',return_value=bad):
-   with self.assertRaises(ValueError):b.verify_current()
-  bad=dict(expected,extra='0'*64)
-  with patch.object(t,'corpus_hashes',return_value=bad):
-   with self.assertRaises(ValueError):b.verify_current()
-  bad=dict(expected);bad['052/008.yaml']='0'*64
-  with self.assertRaises(ValueError):b.verify_fixed_postmap(bad,expected)
  def package_fixture(self,root):
   p=Path(root)/b.NAME;shutil.copytree(P,p);return p,json.loads((p/'manifest.json').read_text())
  def test_exact_one_change_full966_receipt_and_actual_git_preimage(self):
   self.assertEqual(t.sha((P/'manifest.json').read_bytes()),SHA)
   proof=b.verify_current();m=t.load_manifest(P);_,before=b.prior_postmap()
   self.assertEqual(m['canonical_baseline_sha256'],before);self.assertEqual(len(before),966)
-  self.assertEqual({k for k,v in proof['historical_postmap'].items()if before[k]!=v},{'044/001.yaml'})
+  self.assertEqual({k for k,v in proof['current_postmap'].items()if before[k]!=v},{'044/001.yaml'})
   self.assertEqual(m['references'],[b.REF]);self.assertEqual(m['retirements'],[])
   self.assertEqual(m['source_baseline_git_commit'],'5a6633695bfcc3264f508974c104ad556892c036')
   self.assertEqual(before['044/001.yaml'],legacy.AFTER_SHA)
   t.verify_git_preimage(m,'044/001.yaml',legacy.AFTER_SHA)
   receipt=json.loads((P/'application.json').read_text())
-  self.assertEqual(b.verify_fixed_postmap(receipt['canonical_after_sha256'],t.corpus_hashes()),t.corpus_hashes())
+  self.assertEqual(receipt['canonical_after_sha256'],proof['current_postmap'])
+  self.assertEqual(proof['actual_current_postmap'],t.corpus_hashes())
+  if proof['verified_current_successor']:
+   from tools.enoch import batch35_evidence as successor
+   self.assertEqual(proof['verified_current_successor'],successor.NAME)
+   extra = set(successor.CHANGED_PATHS)
+   from tools.enoch import batch36_evidence as next_successor
+   if (t.APPLICATIONS/next_successor.NAME/'application.json').is_file():
+    next_successor.verify_current();extra |= next_successor.CHANGED_PATHS
+    from tools.enoch import batch37_evidence as last_successor
+    if (t.APPLICATIONS/last_successor.NAME/'application.json').is_file():
+     last_successor.verify_current();extra |= last_successor.CHANGED_PATHS
+     from tools.enoch import batch38_evidence
+     if (t.APPLICATIONS/batch38_evidence.NAME/'application.json').is_file():
+      batch38_evidence.verify_current();extra |= batch38_evidence.CHANGED_PATHS
+      from tools.enoch import batch39_evidence
+      if (t.APPLICATIONS/batch39_evidence.NAME/'application.json').is_file():
+       batch39_evidence.verify_current();extra |= batch39_evidence.CHANGED_PATHS
+       from tools.enoch import batch40_evidence
+       if (t.APPLICATIONS/batch40_evidence.NAME/'application.json').is_file():
+        batch40_evidence.verify_current();extra |= batch40_evidence.CHANGED_PATHS
+        from tools.enoch import batch41_evidence
+        if (t.APPLICATIONS/batch41_evidence.NAME/'application.json').is_file():
+         batch41_evidence.verify_current();extra |= batch41_evidence.CHANGED_PATHS
+   self.assertEqual({k for k,v in proof['actual_current_postmap'].items()if proof['current_postmap'].get(k)!=v},extra)
   self.assertTrue(receipt['unrelated_canonical_files_unchanged_at_application'])
   self.assertFalse(receipt['deployed_by_transaction'])
  def test_legacy_descriptor_preserves_parent_only_history(self):
@@ -121,12 +120,10 @@ class Batch34Test(unittest.TestCase):
   self.assertEqual(out['source_critical']['text'],SOURCE);self.assertEqual(out['source_critical']['confidence'],'low')
   self.assertEqual(reader._enoch_expected_verse_map()[44],[1])
   self.assertEqual(t.sha((t.ROOT/'tools/export_mobile_bible.py').read_bytes()),'2258f72485099fe1014152eeb29394324415940467c2edd9d9da0d48a4a113c3')
- def test_progress479_37_with_no_full_book_claim(self):
+ def test_current_progress_follows_only_exact_installed_successors(self):
   from tools.enoch.full_repair_progress import build
-  report=build();self.assertEqual(report['canonical_file_count'],966)
-  self.assertEqual(report['current_units_with_imported_review_evidence'],479)
-  self.assertEqual(len(report['chapters_with_complete_imported_selected_edition_review']),37)
-  self.assertIn(44,report['chapters_with_complete_imported_selected_edition_review'])
+  report=build()
+  b.assert_current_progress(self,report)
   self.assertEqual(report['evidence_inventory_warnings'],[]);self.assertFalse(report['completion_proven'])
  def test_rehashed_source_english_and_each_explanation_rejected(self):
   for mode in ['source','English','notea','noteb']:

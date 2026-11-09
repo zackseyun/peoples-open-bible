@@ -370,7 +370,7 @@ def call_model(system: str, user: str, *, deployment: str, effort: str, tier: st
             with urllib.request.urlopen(req, timeout=3600) as resp:
                 return json.loads(resp.read().decode("utf-8"))
         except urllib.error.HTTPError as exc:
-            detail = exc.read().decode("utf-8", "replace")[:600]
+            detail = exc.read().decode("utf-8", "replace")[:6000]
             if exc.code in (408, 429, 500, 502, 503, 504) and attempt < 7:
                 wait = float(exc.headers.get("retry-after") or delay) + random.uniform(0, 3)
                 log(f"  http {exc.code}; retry in {wait:.0f}s")
@@ -468,35 +468,69 @@ def plan_jobs(args: argparse.Namespace) -> list[dict[str, Any]]:
     return jobs
 
 
-def job_complete(out: pathlib.Path) -> bool:
+def job_complete(out: pathlib.Path, retry_filtered: bool = False) -> bool:
     """A finished output with every verse present; partial outputs get redone."""
     if not out.exists():
         return False
     try:
-        return not json.loads(out.read_text()).get("missing")
+        res = json.loads(out.read_text())
     except (OSError, json.JSONDecodeError):
         return False
+    return not res.get("missing") and not (retry_filtered and res.get("content_filtered"))
+
+
+def filter_categories(results: Any) -> str:
+    """Names of the content-filter categories Azure marked filtered."""
+    if not isinstance(results, dict):
+        return ""
+    return ",".join(sorted(k for k, v in results.items() if isinstance(v, dict) and v.get("filtered")))
+
+
+def error_filter_categories(message: str) -> str:
+    """Pull filtered category names out of a content_filter 400 error body."""
+    try:
+        body = json.loads(message.split(": ", 1)[1])
+        inner = body["error"].get("innererror", {}).get("content_filter_result")
+        return filter_categories(inner)
+    except (IndexError, KeyError, ValueError, AttributeError, TypeError):
+        return ""
 
 
 def run_job(job: dict[str, Any], args: argparse.Namespace, system: str, prompt_sha: str) -> dict[str, Any]:
     out: pathlib.Path = job["out"]
-    if job_complete(out) and not args.force:
+    retry_filtered = getattr(args, "retry_filtered", False)
+    if job_complete(out, retry_filtered) and not args.force:
         return json.loads(out.read_text())
     ctxs = job["contexts"]
     want = [c["id"] for c in ctxs]
-    user = build_user_message(job["label"], job["chapter"], job["chapter_text"], ctxs)
     started = time.time()
-    responses = []
+    responses: list[dict[str, Any]] = []
     got: dict[str, dict[str, Any]] = {}
     passage_note = ""
-    pending = list(ctxs)
+    if out.exists() and not args.force:
+        # Keep the verses an earlier attempt already got; redo only the rest.
+        try:
+            prev = json.loads(out.read_text())
+            got = {v["id"]: v for v in prev.get("verses") or [] if v.get("id") in want}
+            responses = list(prev.get("requests") or [])
+            passage_note = prev.get("passage_note") or ""
+        except (OSError, json.JSONDecodeError):
+            pass
+    pending = [c for c in ctxs if c["id"] not in got]
+    user = build_user_message(job["label"], job["chapter"], job["chapter_text"], pending)
     filtered: list[str] = []
     blocked = False
 
+    filter_detail: dict[str, str] = {}
+
     def record(resp: dict[str, Any]) -> None:
-        responses.append({"usage": resp.get("usage"), "model": resp.get("model"),
-                          "service_tier": resp.get("service_tier"),
-                          "finish_reason": resp["choices"][0].get("finish_reason")})
+        choice = resp["choices"][0]
+        entry = {"usage": resp.get("usage"), "model": resp.get("model"),
+                 "service_tier": resp.get("service_tier"),
+                 "finish_reason": choice.get("finish_reason")}
+        if choice.get("finish_reason") == "content_filter":
+            entry["filter"] = filter_categories(choice.get("content_filter_results"))
+        responses.append(entry)
 
     for attempt in range(3):
         try:
@@ -511,8 +545,13 @@ def run_job(job: dict[str, Any], args: argparse.Namespace, system: str, prompt_s
         try:
             parsed = json.loads(content)
         except json.JSONDecodeError as exc:
-            log(f"  {out.name}: unparseable response (finish_reason="
-                f"{resp['choices'][0].get('finish_reason')}, {len(content)} chars): {exc}; retrying")
+            reason = resp["choices"][0].get("finish_reason")
+            log(f"  {out.name}: unparseable response (finish_reason={reason}, {len(content)} chars): {exc}")
+            if reason == "content_filter":
+                # The output filter cut the reply off; long passages trip it again
+                # and again, so go straight to one verse at a time.
+                blocked = True
+                break
             continue
         passage_note = passage_note or parsed.get("passage_note", "")
         for v in parsed.get("verses") or []:
@@ -528,6 +567,7 @@ def run_job(job: dict[str, Any], args: argparse.Namespace, system: str, prompt_s
         # Azure's prompt filter tripped on the passage. Retry each verse alone with
         # only its neighbours as context; record verses that are still blocked.
         log(f"  {out.name}: content filter; retrying {len(pending)} verse(s) one at a time")
+        last_filter = ""
         for c in list(pending):
             num = int(str(c["id"]).rsplit(".", 1)[1])
             window = "\n".join(
@@ -540,19 +580,24 @@ def run_job(job: dict[str, Any], args: argparse.Namespace, system: str, prompt_s
                 except RuntimeError as exc:
                     if "content_filter" not in str(exc):
                         raise
-                    filtered.append(c["id"])
+                    filter_detail[c["id"]] = "prompt: " + error_filter_categories(str(exc))
                     break
                 record(resp)
                 try:
                     parsed = json.loads(resp["choices"][0]["message"].get("content") or "{}")
                 except json.JSONDecodeError:
+                    if resp["choices"][0].get("finish_reason") == "content_filter":
+                        filter_detail[c["id"]] = "output: " + responses[-1].get("filter", "")
                     continue
                 passage_note = passage_note or parsed.get("passage_note", "")
                 for v in parsed.get("verses") or []:
                     if v.get("id") == c["id"] and not validate_verse(v):
                         got[c["id"]] = v
                 if c["id"] in got:
+                    filter_detail.pop(c["id"], None)
                     break
+            if c["id"] not in got and c["id"] in filter_detail:
+                filtered.append(c["id"])
         pending = [c for c in ctxs if c["id"] not in got and c["id"] not in filtered]
     usage_total = sum(usage_cost(r["usage"] or {}, args.tier) for r in responses)
     result = {
@@ -572,6 +617,7 @@ def run_job(job: dict[str, Any], args: argparse.Namespace, system: str, prompt_s
         "verses": [got[i] for i in want if i in got],
         "missing": [c["id"] for c in pending],
         "content_filtered": filtered,
+        "content_filter_detail": {i: filter_detail[i] for i in filtered if i in filter_detail},
     }
     out.parent.mkdir(parents=True, exist_ok=True)
     tmp = out.with_suffix(".tmp")
@@ -584,7 +630,7 @@ def cmd_translate(args: argparse.Namespace) -> int:
     system = PROMPT_PATH.read_text(encoding="utf-8")
     prompt_sha = sha256(system)
     jobs = plan_jobs(args)
-    todo = [j for j in jobs if args.force or not job_complete(j["out"])]
+    todo = [j for j in jobs if args.force or not job_complete(j["out"], args.retry_filtered)]
     log(f"run={args.run} jobs={len(jobs)} todo={len(todo)} verses={sum(len(j['files']) for j in todo)} "
         f"deployment={args.deployment} effort={args.effort} tier={args.tier}")
     if args.dry_run:
@@ -679,11 +725,17 @@ SCHEMA_REASON = {
 
 def cmd_apply(args: argparse.Namespace) -> int:
     run_dir = STATE / args.run
-    changed = skipped = 0
+    changed = skipped = held = 0
+    hold: set[str] = set()
+    if getattr(args, "hold", None):
+        hold = {ln.split("#")[0].strip() for ln in pathlib.Path(args.hold).read_text().splitlines()} - {""}
     for f in sorted(run_dir.rglob("*.json")):
         res = json.loads(f.read_text())
         by_id = {v["id"]: v for v in res.get("verses") or []}
         for rel in res.get("paths") or []:
+            if rel in hold:
+                held += 1
+                continue
             path = ROOT / rel
             rec = load_yaml(path)
             new = by_id.get(rec.get("id"))
@@ -695,6 +747,7 @@ def cmd_apply(args: argparse.Namespace) -> int:
             if (rec.get("meaning_pass") or {}).get("run") == args.run:
                 skipped += 1
                 continue
+            old_notes = [(x.get("marker"), (x.get("text") or "").strip()) for x in tr.get("footnotes") or []]
             tr["text"] = new["text"].strip()
             tr["philosophy"] = "dynamic"
             footnotes = [{"marker": n["marker"], "text": n["text"].strip(), "reason": SCHEMA_REASON[n["reason"]]}
@@ -703,15 +756,18 @@ def cmd_apply(args: argparse.Namespace) -> int:
                 tr["footnotes"] = footnotes
             else:
                 tr.pop("footnotes", None)
-            rec.setdefault("revisions", []).append({
-                "timestamp": res["timestamp"],
-                "adjudicator": "gpt-6.1-sol-meaning-pass",
-                "reviewer_model": res.get("model"),
-                "category": "meaning_retranslation",
-                "from": old_text,
-                "to": tr["text"],
-                "rationale": new.get("history_weighed") or "",
-            })
+            # A verse the pass reviewed but left word-for-word unchanged gets the
+            # meaning_pass record only, not an empty revision.
+            if tr["text"] != old_text.strip() or [(n["marker"], n["text"]) for n in footnotes] != old_notes:
+                rec.setdefault("revisions", []).append({
+                    "timestamp": res["timestamp"],
+                    "adjudicator": "gpt-6.1-sol-meaning-pass",
+                    "reviewer_model": res.get("model"),
+                    "category": "meaning_retranslation",
+                    "from": old_text,
+                    "to": tr["text"],
+                    "rationale": new.get("history_weighed") or "",
+                })
             rec["meaning_pass"] = {
                 "run": args.run,
                 "model": res.get("model"),
@@ -732,7 +788,7 @@ def cmd_apply(args: argparse.Namespace) -> int:
             tmp.write_text(rendered, encoding="utf-8")
             tmp.replace(path)
             changed += 1
-    print(f"applied={changed} skipped={skipped}")
+    print(f"applied={changed} skipped={skipped} held={held}")
     return 0
 
 
@@ -749,6 +805,7 @@ def main(argv: list[str] | None = None) -> int:
     t.add_argument("--workers", type=int, default=4)
     t.add_argument("--budget", type=float, default=0.0, help="stop starting new requests past this USD estimate")
     t.add_argument("--force", action="store_true")
+    t.add_argument("--retry-filtered", action="store_true", help="also redo verses an earlier attempt lost to the content filter")
     t.add_argument("--dry-run", action="store_true")
     t.set_defaults(func=cmd_translate)
     r = sub.add_parser("report")
@@ -756,6 +813,7 @@ def main(argv: list[str] | None = None) -> int:
     r.set_defaults(func=cmd_report)
     a = sub.add_parser("apply", help="write a finished run into translation/ YAML (explicit step)")
     a.add_argument("--run", required=True)
+    a.add_argument("--hold", help="file of verse paths (translation/...yaml) to leave untouched, one per line")
     a.set_defaults(func=cmd_apply)
     args = ap.parse_args(argv)
     return args.func(args)

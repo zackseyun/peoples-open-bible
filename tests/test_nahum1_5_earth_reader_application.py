@@ -11,6 +11,7 @@ import yaml
 from jsonschema import Draft202012Validator
 from tools import audit_footnotes
 from tools import export_mobile_bible as exporter
+from tests.meaning_pass_baseline import corpus_bytes, pre_meaning_pass_records
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'b2f0cd87b78333613b2bc099c6bf62834746aef6'
@@ -179,10 +180,13 @@ class NahumEarthApplicationTests(unittest.TestCase):
         raw = (ROOT / self.contract['canonical_target']).read_bytes()
         self.assertEqual(sha(raw), self.contract['candidate_yaml_sha256'])
         self.assertEqual(yaml.safe_load(raw), self.candidate)
+        # Verses the meaning-first pass later revised are read as they stood
+        # before it; see tests/meaning_pass_baseline.py.
         for pin in self.contract['book_baseline_pins']:
             if pin['path'] != self.contract['canonical_target']:
-                self.assertEqual(sha((ROOT / pin['path']).read_bytes()), pin['sha256'])
-        after = exporter.export_book('NAM')
+                self.assertEqual(sha(corpus_bytes(pin['path'])), pin['sha256'])
+        with pre_meaning_pass_records(exporter):
+            after = exporter.export_book('NAM')
         self.assertEqual(digest(after), self.contract['preflight']['candidate_export_sha256'])
         self.assertEqual(index(after)[TARGET]['footnotes'], self.candidate['translation']['footnotes'])
         for target, name in [((2, 9), 'nahum2_9_reader'), ((3, 18), 'nahum3_18_reader')]:

@@ -8,6 +8,7 @@ import unittest
 import yaml
 from jsonschema import Draft202012Validator
 
+from tests.meaning_pass_baseline import corpus_bytes
 from tools import export_mobile_bible
 from tools.textual_restoration.verify_source_composition import normalized, verify
 
@@ -41,8 +42,10 @@ class Genesis104ProposalTests(unittest.TestCase):
         for pin in self.contract["inputs"]:
             self.assertEqual(digest((ROOT / pin["path"]).read_bytes()), pin["sha256"], pin["path"])
         self.assertEqual(len(self.comparison["context_pins"]), 55)
+        # Context verses the meaning-first pass later revised are read as they
+        # stood before it; see tests/meaning_pass_baseline.py.
         for path, expected in self.comparison["context_pins"].items():
-            self.assertEqual(digest((ROOT / path).read_bytes()), expected, path)
+            self.assertEqual(digest(corpus_bytes(path)), expected, path)
 
     def test_exact_composition_not_an_editorial_pass(self):
         result = verify(ROOT, self.bundle)

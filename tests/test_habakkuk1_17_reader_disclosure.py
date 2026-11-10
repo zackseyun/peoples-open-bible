@@ -12,6 +12,7 @@ import yaml
 from jsonschema import Draft202012Validator
 from tools import audit_footnotes
 from tools import export_mobile_bible as exporter
+from tests.meaning_pass_baseline import corpus_bytes, pre_meaning_pass_records
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = '6017ffa06c1fc8eee2247ce01308df131fcfc557'
@@ -208,10 +209,13 @@ class Habakkuk117ReaderDisclosureTests(unittest.TestCase):
     def test_applied_current_complete_export_and_receipt(self):
         self.assertEqual((ROOT / self.target['canonical_target']).read_bytes(), self.candidate_raw)
         self.assertEqual(audit_footnotes.audit_one(ROOT / self.target['canonical_target'])['status'], 'ok')
+        # Verses the meaning-first pass later revised are read as they stood
+        # before it; see tests/meaning_pass_baseline.py.
         for path, pin in self.contract['book_baseline_pins'].items():
             if path != self.target['canonical_target']:
-                self.assertEqual(sha((ROOT / path).read_bytes()), pin, path)
-        after = exporter.export_book('HAB')
+                self.assertEqual(sha(corpus_bytes(path)), pin, path)
+        with pre_meaning_pass_records(exporter):
+            after = exporter.export_book('HAB')
         self.assertEqual(len(index(after)), 56)
         self.assertEqual(digest(after), self.contract['preflight']['candidate_export_sha256'])
         self.assertEqual(index(after)[KEY]['footnotes'], self.candidate['translation']['footnotes'])

@@ -13,6 +13,7 @@ from unittest.mock import patch
 import yaml
 from jsonschema import Draft202012Validator
 from tools import export_mobile_bible as exporter
+from tests.meaning_pass_baseline import corpus_bytes, pre_meaning_pass_records
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -213,7 +214,9 @@ class Lamentations17ReaderApplicationTests(unittest.TestCase):
             self.assertFalse(self.contract['review_contract'][field])
 
     def test_live_book_is_exact_baseline_or_candidate(self):
-        live_raw = {str(p.relative_to(ROOT)): p.read_bytes()
+        # Verses the meaning-first pass later revised are read as they stood
+        # before it; see tests/meaning_pass_baseline.py.
+        live_raw = {str(p.relative_to(ROOT)): corpus_bytes(p)
                     for p in (ROOT / 'translation/ot/lamentations').rglob('*.yaml')}
         self.assertEqual(set(live_raw), set(self.raw), 'Lamentations record path set changed')
         current = sha(live_raw[TARGET])
@@ -223,7 +226,8 @@ class Lamentations17ReaderApplicationTests(unittest.TestCase):
         self.assertEqual({p: sha(raw) for p, raw in live_raw.items()}, expected_raw,
                          'Unrelated Lamentations bytes changed')
         selected = self.candidate if current == self.item['candidate_sha256'] else self.before[KEY]
-        live = exporter.export_book('LAM')
+        with pre_meaning_pass_records(exporter):
+            live = exporter.export_book('LAM')
         def overlay(code, chapter, verse):
             self.assertEqual(code, 'LAM')
             return selected if (chapter, verse) == KEY else self.before[(chapter, verse)]

@@ -11,6 +11,7 @@ import yaml
 from jsonschema import Draft202012Validator
 from tools import audit_footnotes
 from tools import export_mobile_bible as exporter
+from tests.meaning_pass_baseline import corpus_bytes, pre_meaning_pass_records
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'b4fdc5b8ae007e9771907e9be692ae6208442b89'
@@ -153,6 +154,12 @@ class Exodus42426ApplicationTests(unittest.TestCase):
             self.assertFalse(assessment['boundaries'][key])
 
     def test_actual_full_exodus_export_isolates_three_units_and_keeps_all_notes(self):
+        # Verses the meaning-first pass later revised are read as they stood
+        # before it; see tests/meaning_pass_baseline.py.
+        with pre_meaning_pass_records(exporter):
+            self._check_full_exodus_export()
+
+    def _check_full_exodus_export(self):
         after = exporter.export_book('EXO')
         loader = exporter.load_translation_record
         def baseline_loader(code, chapter, verse):
@@ -185,7 +192,7 @@ class Exodus42426ApplicationTests(unittest.TestCase):
         self.assertEqual(current_paths, old_blobs.keys())
         manifest = {}
         for path, blob in old_blobs.items():
-            raw = (ROOT / path).read_bytes()
+            raw = corpus_bytes(path)
             self.assertEqual(hashlib.sha1(f'blob {len(raw)}\0'.encode() + raw).hexdigest(), blob, path)
             manifest[path] = sha(raw)
         self.assertEqual(self.receipt['preflight']['other_verse_files'], len(old_blobs))
